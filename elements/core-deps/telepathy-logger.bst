@@ -1,0 +1,11 @@
+kind: autotools
+sources:
+- kind: git
+  url: git_freedesktop_org:telepathy/telepathy-logger
+  track: master
+depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/gtk-doc.bst
+- core-deps/telepathy-glib.bst
+- base.bst

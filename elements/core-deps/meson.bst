@@ -1,0 +1,9 @@
+kind: distutils
+sources:
+- kind: tar
+  url: github_tar:mesonbuild/meson/releases/download/0.44.0/meson-0.44.0.tar.gz
+  ref: 50f9b12b77272ef6ab064d26b7e06667f07fa9f931e6a20942bba2216ba4281b
+depends:
+- base.bst
+variables:
+  python: python3

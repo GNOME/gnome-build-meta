@@ -1,0 +1,10 @@
+kind: meson
+sources:
+- kind: git
+  url: gitlab_gnome_org:aplazas/libmanette.git
+  track: master
+depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/meson.bst
+- base.bst

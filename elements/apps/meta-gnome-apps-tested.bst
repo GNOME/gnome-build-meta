@@ -1,0 +1,21 @@
+kind: stack
+depends:
+- apps/accerciser.bst
+- apps/bijiben.bst
+- apps/dconf-editor.bst
+- apps/devhelp.bst
+- apps/evolution.bst
+- apps/ghex.bst
+- apps/gitg.bst
+- apps/gnome-builder.bst
+- apps/gnome-devel-docs.bst
+- apps/gnome-dictionary.bst
+- apps/gnome-multi-writer.bst
+- apps/gnome-nettool.bst
+- apps/gnome-recipes.bst
+- apps/gnome-sound-recorder.bst
+- apps/gnome-tweak-tool.bst
+- apps/meta-gnome-games.bst
+- apps/nautilus-sendto.bst
+- apps/polari.bst
+- base.bst

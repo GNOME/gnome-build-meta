@@ -1,0 +1,9 @@
+kind: autotools
+sources:
+- kind: git
+  url: git_gnome_org:libgovirt
+  track: master
+depends:
+- core-deps/gobject-introspection.bst
+- core-deps/librest.bst
+- base.bst

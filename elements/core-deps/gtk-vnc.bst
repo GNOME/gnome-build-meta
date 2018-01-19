@@ -1,0 +1,13 @@
+kind: autotools
+sources:
+- kind: git
+  url: git_gnome_org:gtk-vnc
+  track: master
+depends:
+- core-deps/gdk-pixbuf.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/vala.bst
+- base.bst
+variables:
+  conf-local: --with-gtk=3.0 --enable-vala

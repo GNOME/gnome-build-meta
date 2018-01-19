@@ -1,0 +1,12 @@
+kind: autotools
+sources:
+- kind: git
+  url: git_gnome_org:clutter-gst
+  track: clutter-gst-3.0
+depends:
+- core-deps/clutter.bst
+- core-deps/cogl.bst
+- core-deps/gobject-introspection.bst
+- core-deps/gst-plugins-base.bst
+- core-deps/gstreamer.bst
+- base.bst

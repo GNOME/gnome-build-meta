@@ -1,0 +1,11 @@
+kind: meson
+sources:
+- kind: git
+  url: github_com:hughsie/libgusb.git
+  track: master
+depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/meson.bst
+- core-deps/vala.bst
+- base.bst

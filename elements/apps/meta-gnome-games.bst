@@ -1,0 +1,20 @@
+kind: stack
+depends:
+- apps/five-or-more.bst
+- apps/four-in-a-row.bst
+- apps/gnome-chess.bst
+- apps/gnome-klotski.bst
+- apps/gnome-mahjongg.bst
+- apps/gnome-mines.bst
+- apps/gnome-nibbles.bst
+- apps/gnome-robots.bst
+- apps/gnome-sudoku.bst
+- apps/gnome-taquin.bst
+- apps/gnome-tetravex.bst
+- apps/hitori.bst
+- apps/iagno.bst
+- apps/lightsoff.bst
+- apps/quadrapassel.bst
+- apps/swell-foop.bst
+- apps/tali.bst
+- base.bst

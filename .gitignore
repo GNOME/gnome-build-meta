@@ -1,0 +1,2 @@
+# Ignore buildstream local state
+.bst
