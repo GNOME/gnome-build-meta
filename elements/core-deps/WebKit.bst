@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.19.6.tar.xz
-  ref: c97c87a0db3814f97812edeadc79c330affa51eb43dadbdc7a764b01db38d82b
+  url: webkitgtk_org:webkitgtk-2.19.90.tar.xz
+  ref: 18819bdf6660ce49609ca2bcc46572ae7a1fb657e1296adc4f199869ed43542b
 depends:
 - core-deps/brotli.bst
 - core-deps/geoclue.bst
