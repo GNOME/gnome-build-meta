@@ -30,7 +30,6 @@ depends:
 - world/hitori.bst
 - world/iagno.bst
 - world/jsonrpc-glib.bst
-- world/libdazzle.bst
 - world/libgit2-glib.bst
 - world/libgit2.bst
 - world/libgnome-games-support.bst

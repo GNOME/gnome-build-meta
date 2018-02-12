@@ -9,6 +9,7 @@ depends:
 - core-deps/gspell.bst
 - core-deps/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
+- core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/librsvg.bst
 - core-deps/meson.bst
@@ -19,7 +20,6 @@ depends:
 - world/devhelp.bst
 - world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst
-- world/libdazzle.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
 - base.bst

@@ -78,6 +78,7 @@ depends:
 - core-deps/json-glib.bst
 - core-deps/libchamplain.bst
 - core-deps/libcroco.bst
+- core-deps/libdazzle.bst
 - core-deps/libgdata.bst
 - core-deps/libgee.bst
 - core-deps/libgepub.bst
