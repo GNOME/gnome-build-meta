@@ -10,4 +10,5 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gtk+-3.bst
 - core-deps/meson.bst
+- core/gsettings-desktop-schemas.bst
 - base.bst
