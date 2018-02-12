@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:gitg
   track: master
 depends:
-- apps/libgit2-glib.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
@@ -17,4 +16,5 @@ depends:
 - core-deps/pygobject.bst
 - core-deps/vala.bst
 - core/gsettings-desktop-schemas.bst
+- world/libgit2-glib.bst
 - base.bst
