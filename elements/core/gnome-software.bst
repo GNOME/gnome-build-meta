@@ -7,6 +7,7 @@ depends:
 - core-deps/PackageKit.bst
 - core-deps/appstream-glib.bst
 - core-deps/glib.bst
+- core-deps/gspell.bst
 - core-deps/gtk+-3.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
