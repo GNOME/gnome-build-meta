@@ -8,7 +8,6 @@ depends:
 - core-deps/appstream-glib.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
-- core-deps/gettext.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst

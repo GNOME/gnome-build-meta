@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:nautilus
   track: master
 depends:
-- core-deps/gettext.bst
 - core-deps/glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gtk+-3.bst

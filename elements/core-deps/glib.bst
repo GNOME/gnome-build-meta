@@ -5,7 +5,6 @@ sources:
   track: master
   ref: f8ee429db7f0f89464df0c622ba3950a8f21bf15
 depends:
-- core-deps/gettext.bst
 - core-deps/gtk-doc.bst
 - base.bst
 variables:
