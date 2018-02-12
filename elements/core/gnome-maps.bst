@@ -10,6 +10,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
+- core-deps/glib-networking.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
@@ -17,6 +18,5 @@ depends:
 - core-deps/libgee.bst
 - core-deps/libgfbgraph.bst
 - core-deps/librsvg.bst
-- core/glib-networking.bst
 - core/gnome-desktop.bst
 - base.bst
