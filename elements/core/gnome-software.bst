@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/PackageKit.bst
 - core-deps/appstream-glib.bst
-- core-deps/fwupd.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/libsecret.bst
@@ -16,4 +15,4 @@ depends:
 - core/gsettings-desktop-schemas.bst
 - base.bst
 variables:
-  meson-local: -Denable-rpm=false
+  meson-local: -Denable-rpm=false -Denable-fwupd=false

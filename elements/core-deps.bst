@@ -26,7 +26,6 @@ depends:
 - core-deps/enchant-2.bst
 - core-deps/evolution-data-server.bst
 - core-deps/folks.bst
-- core-deps/fwupd.bst
 - core-deps/gcab.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
