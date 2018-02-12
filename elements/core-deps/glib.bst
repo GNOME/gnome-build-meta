@@ -3,7 +3,6 @@ sources:
 - kind: git
   url: git_gnome_org:glib
   track: master
-  ref: f8ee429db7f0f89464df0c622ba3950a8f21bf15
 depends:
 - core-deps/gtk-doc.bst
 - base.bst

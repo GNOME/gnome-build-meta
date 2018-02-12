@@ -3,7 +3,6 @@ sources:
 - kind: git
   url: git_gnome_org:pango
   track: master
-  ref: 0f75002573abfe6494efec5973d07d23167da579
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
