@@ -16,4 +16,4 @@ depends:
 - core/gsettings-desktop-schemas.bst
 - base.bst
 variables:
-  meson-local: -Denable-rpm=false -Denable-fwupd=false
+  meson-local: -Denable-rpm=false -Denable-fwupd=false -Denable-flatpak=false
