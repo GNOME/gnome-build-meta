@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:network-manager-applet
   track: master
 depends:
+- core-deps/NetworkManager.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
@@ -12,7 +13,6 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/mobile-broadband-provider-info.bst
-- core/NetworkManager.bst
 - core/gnome-bluetooth.bst
 - base.bst
 variables:

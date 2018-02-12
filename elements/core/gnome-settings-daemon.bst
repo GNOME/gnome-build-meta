@@ -4,6 +4,8 @@ sources:
   url: git_gnome_org:gnome-settings-daemon
   track: master
 depends:
+- core-deps/NetworkManager.bst
+- core-deps/PackageKit.bst
 - core-deps/colord.bst
 - core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
@@ -15,9 +17,7 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/librsvg.bst
 - core-deps/libwacom.bst
-- core/NetworkManager.bst
-- core/PackageKit.bst
+- core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
-- core/upower.bst
 - base.bst

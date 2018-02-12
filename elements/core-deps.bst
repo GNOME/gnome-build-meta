@@ -1,11 +1,16 @@
 kind: stack
 depends:
 - core-deps/ModemManager.bst
+- core-deps/NetworkManager.bst
+- core-deps/PackageKit.bst
 - core-deps/WebKit.bst
+- core-deps/accountsservice.bst
 - core-deps/appstream-glib.bst
 - core-deps/atk.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
+- core-deps/at-spi2-atk.bst
+- core-deps/at-spi2-core.bst
 - core-deps/babl.bst
 - core-deps/brotli.bst
 - core-deps/cairomm-1.0.bst
@@ -17,6 +22,7 @@ depends:
 - core-deps/cogl.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
+- core-deps/dconf.bst
 - core-deps/enchant-2.bst
 - core-deps/evolution-data-server.bst
 - core-deps/folks.bst
@@ -127,6 +133,7 @@ depends:
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
 - core-deps/uhttpmock.bst
+- core-deps/upower.bst
 - core-deps/vala.bst
 - core-deps/vte.bst
 - core-deps/wayland-protocols.bst

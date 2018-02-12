@@ -1,8 +1,8 @@
 kind: stack
 depends:
+- core-deps/dconf.bst
 - core-deps/librsvg.bst
 - core/adwaita-icon-theme.bst
-- core/dconf.bst
 - core/gdm.bst
 - core/glib-networking.bst
 - core/gnome-backgrounds.bst

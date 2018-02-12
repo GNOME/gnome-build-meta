@@ -4,12 +4,12 @@ sources:
   url: git_gnome_org:gdm
   track: master
 depends:
+- core-deps/accountsservice.bst
+- core-deps/dconf.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
+- core-deps/upower.bst
 - core-deps/yelp-tools.bst
-- core/accountsservice.bst
-- core/dconf.bst
-- core/upower.bst
 - base.bst
 variables:
   conf-local: ''

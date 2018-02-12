@@ -4,7 +4,9 @@ sources:
   url: git_gnome_org:gnome-initial-setup
   track: master
 depends:
+- core-deps/NetworkManager.bst
 - core-deps/WebKit.bst
+- core-deps/accountsservice.bst
 - core-deps/geoclue.bst
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
@@ -12,12 +14,10 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst
 - core-deps/libgweather.bst
-- core/NetworkManager.bst
-- core/accountsservice.bst
+- core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
 - core/network-manager-applet.bst
-- core/upower.bst
 - base.bst

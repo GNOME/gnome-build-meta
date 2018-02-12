@@ -8,7 +8,6 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/m4-common.bst
 - core-deps/vala.bst
-- core/glib-networking.bst
 - base.bst
 variables:
   conf-local: --disable-tls-check

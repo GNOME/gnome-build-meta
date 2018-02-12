@@ -1,5 +1,7 @@
 kind: stack
 depends:
+- core-deps/NetworkManager.bst
+- core-deps/PackageKit.bst
 - core-deps/WebKit.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gjs.bst
@@ -9,8 +11,6 @@ depends:
 - core-deps/libpeas.bst
 - core-deps/pygobject.bst
 - core-deps/telepathy-glib.bst
-- core/NetworkManager.bst
-- core/PackageKit.bst
+- core-deps/upower.bst
 - core/meta-gnome-devel-platform.bst
-- core/upower.bst
 - base.bst

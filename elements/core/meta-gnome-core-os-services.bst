@@ -1,7 +1,7 @@
 kind: stack
 depends:
-- core/NetworkManager.bst
-- core/PackageKit.bst
-- core/accountsservice.bst
-- core/upower.bst
+- core-deps/NetworkManager.bst
+- core-deps/PackageKit.bst
+- core-deps/accountsservice.bst
+- core-deps/upower.bst
 - base.bst

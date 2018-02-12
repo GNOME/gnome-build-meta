@@ -1,14 +1,8 @@
 kind: stack
 depends:
-- core/NetworkManager.bst
-- core/PackageKit.bst
-- core/accountsservice.bst
 - core/adwaita-icon-theme.bst
-- core/at-spi2-atk.bst
-- core/at-spi2-core.bst
 - core/baobab.bst
 - core/cheese.bst
-- core/dconf.bst
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
@@ -69,6 +63,5 @@ depends:
 - core/sushi.bst
 - core/telepathy-mission-control.bst
 - core/totem.bst
-- core/upower.bst
 - core/vino.bst
 - core/yelp.bst

@@ -5,6 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/ModemManager.bst
+- core-deps/NetworkManager.bst
+- core-deps/accountsservice.bst
 - core-deps/clutter-gtk.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
@@ -23,8 +25,7 @@ depends:
 - core-deps/libgtop.bst
 - core-deps/libwacom.bst
 - core-deps/sound-theme-freedesktop.bst
-- core/NetworkManager.bst
-- core/accountsservice.bst
+- core-deps/upower.bst
 - core/cheese.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
@@ -32,5 +33,4 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/gsettings-desktop-schemas.bst
 - core/network-manager-applet.bst
-- core/upower.bst
 - base.bst

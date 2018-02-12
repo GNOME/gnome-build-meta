@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:gnome-software
   track: master
 depends:
+- core-deps/PackageKit.bst
 - core-deps/appstream-glib.bst
 - core-deps/fwupd.bst
 - core-deps/glib.bst
@@ -11,7 +12,6 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/meson.bst
-- core/PackageKit.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

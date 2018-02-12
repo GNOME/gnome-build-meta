@@ -4,6 +4,8 @@ sources:
   url: git_gnome_org:tracker-miners
   track: master
 depends:
+- core-deps/NetworkManager.bst
+- core-deps/dconf.bst
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
 - core-deps/gst-plugins-base.bst
@@ -13,6 +15,4 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
-- core/NetworkManager.bst
-- core/dconf.bst
 - base.bst

@@ -4,6 +4,9 @@ sources:
   url: git_gnome_org:gnome-shell
   track: master
 depends:
+- core-deps/NetworkManager.bst
+- core-deps/accountsservice.bst
+- core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gcr.bst
 - core-deps/gjs.bst
@@ -19,14 +22,11 @@ depends:
 - core-deps/meson.bst
 - core-deps/telepathy-glib.bst
 - core-deps/telepathy-logger.bst
-- core/NetworkManager.bst
-- core/accountsservice.bst
+- core-deps/upower.bst
 - core/adwaita-icon-theme.bst
-- core/dconf.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - core/mutter.bst
-- core/upower.bst
 - base.bst
