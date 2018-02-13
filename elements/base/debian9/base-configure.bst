@@ -1,6 +1,6 @@
 kind: script
 depends:
-- filename: base/base-system.bst
+- filename: base/debian9/base-system.bst
   type: build
 
 variables:

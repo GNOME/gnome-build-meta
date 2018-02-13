@@ -7,3 +7,9 @@ depends:
 - core-deps/gettext.bst
 - core-deps/yelp-tools.bst
 - base.bst
+
+variables:
+  (?):
+  - base == 'freedesktop1.8':
+      conf-local:
+        "--with-xml-catalog=/usr/etc/xml/catalog"

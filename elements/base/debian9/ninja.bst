@@ -14,7 +14,7 @@ sources:
   ref: e234a7bdb6c42f4539c0ab09b624f191287c2c10
 
 depends:
-- base/base-configure.bst
+- base/debian9/base-configure.bst
 - base/linker-priority.bst
 
 environment:
