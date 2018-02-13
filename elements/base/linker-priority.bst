@@ -3,5 +3,3 @@ description: An element to ensure that /usr/lib is always the priority linker pa
 sources:
 - kind: local
   path: files/linker-priority
-depends:
-- base/base-configure.bst
