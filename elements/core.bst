@@ -9,6 +9,7 @@ depends:
 - core/file-roller.bst
 - core/gdm.bst
 - core/gedit.bst
+- core/glib-networking.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
 - core/gnome-boxes.bst

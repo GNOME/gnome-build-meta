@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/meson.bst
+- core/gsettings-desktop-schemas.bst
 - base.bst
 variables:
-  meson-local: -Dinstalled_tests=true -Dgnome_proxy_support=false
+  meson-local: -Dinstalled_tests=true

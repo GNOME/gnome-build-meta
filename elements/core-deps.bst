@@ -37,7 +37,6 @@ depends:
 - core-deps/glib.bst
 - core-deps/glibmm-2.4.bst
 - core-deps/glibmm.bst
-- core-deps/glib-networking.bst
 - core-deps/gmime3.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-common.bst

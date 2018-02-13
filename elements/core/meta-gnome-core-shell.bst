@@ -1,10 +1,10 @@
 kind: stack
 depends:
 - core-deps/dconf.bst
-- core-deps/glib-networking.bst
 - core-deps/librsvg.bst
 - core/adwaita-icon-theme.bst
 - core/gdm.bst
+- core/glib-networking.bst
 - core/gnome-backgrounds.bst
 - core/gnome-color-manager.bst
 - core/gnome-control-center.bst
