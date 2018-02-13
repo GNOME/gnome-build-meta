@@ -32,6 +32,7 @@ depends:
 - core-deps/gegl.bst
 - core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
+- core-deps/gettext.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
 - core-deps/glibmm-2.4.bst
