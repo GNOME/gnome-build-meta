@@ -1,7 +1,7 @@
 kind: import
 sources:
 - kind: ostree
-  url: gnome7:crates
+  url: ostree-gnome:crates
   track: crates-vendoring
 config:
   source: vendor
