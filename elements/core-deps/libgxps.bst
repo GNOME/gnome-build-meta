@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:libgxps
-  track: master
+- url: https://download.gnome.org/sources/libgxps/0.3/libgxps-0.3.0.tar.xz
+  kind: tar
+  ref: 412b1343bd31fee41f7204c47514d34c563ae34dafa4cc710897366bd6cd0fae
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

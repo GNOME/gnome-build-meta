@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-contacts
-  track: master
+- url: https://download.gnome.org/sources/gnome-contacts/3.27/gnome-contacts-3.27.90.tar.xz
+  kind: tar
+  ref: 3736f9b05b00af7badb7a7895c4106e21489e91cce5d7c1869797c4041b10fac
 depends:
 - core-deps/folks.bst
 - core-deps/glib.bst

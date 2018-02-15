@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-shell
-  track: master
+- url: https://download.gnome.org/sources/gnome-shell/3.27/gnome-shell-3.27.1.tar.xz
+  kind: tar
+  ref: 1972d39d1bb1ab708da3534911ac1f89acf45801b7c2cdc9ff9515f4eae17cc6
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst

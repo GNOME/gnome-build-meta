@@ -3,6 +3,7 @@ sources:
 - kind: ostree
   url: gnome7:crates
   track: crates-vendoring
+  ref: df52970a3821dcdbc59c683a405591a9ecdd263dea955e1825b878af019b96e2
 config:
   source: vendor
   target: '%{datadir}/crates'

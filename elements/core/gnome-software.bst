@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-software
-  track: master
+- url: https://download.gnome.org/sources/gnome-software/3.27/gnome-software-3.27.4.tar.xz
+  kind: tar
+  ref: 218de65c22401567a37803155e43e6bc8ffcce25b8d239dd83185ee57e277272
 depends:
 - core-deps/PackageKit.bst
 - core-deps/appstream-glib.bst

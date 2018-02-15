@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:libsecret
-  track: master
+- url: https://download.gnome.org/sources/libsecret/0.18/libsecret-0.18.5.tar.xz
+  kind: tar
+  ref: 9ce7bd8dd5831f2786c935d82638ac428fa085057cc6780aba0e39375887ccb3
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

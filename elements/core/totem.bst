@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:totem
-  track: master
+- url: https://download.gnome.org/sources/totem/3.26/totem-3.26.0.tar.xz
+  kind: tar
+  ref: e32fb9a68097045e75c87ad1b8177f5c01aea2a13dcb3b2e71a0f9570fe9ee13
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:libchamplain
-  track: master
+- url: https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.16.tar.xz
+  kind: tar
+  ref: 4a7e31cf7889669aebf04631543af64435edd989685159b804911c6005db908d
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst

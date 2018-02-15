@@ -6,7 +6,6 @@ depends:
 - core/epiphany.bst
 - core/evince.bst
 - core/file-roller.bst
-- core/gedit.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
@@ -14,7 +13,6 @@ depends:
 - core/gnome-clocks.bst
 - core/gnome-contacts.bst
 - core/gnome-disk-utility.bst
-- core/gnome-documents.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
 - core/gnome-maps.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-settings-daemon
-  track: master
+- url: https://download.gnome.org/sources/gnome-settings-daemon/3.27/gnome-settings-daemon-3.27.90.tar.xz
+  kind: tar
+  ref: 4d3d17035aacc5d3646ac4c7e65551a0e6c687e2130a49aa6c37df3e4c5d10bf
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:libmediaart
-  track: master
+- url: https://download.gnome.org/sources/libmediaart/1.9/libmediaart-1.9.4.tar.xz
+  kind: tar
+  ref: a57be017257e4815389afe4f58fdacb6a50e74fd185452b23a652ee56b04813d
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst

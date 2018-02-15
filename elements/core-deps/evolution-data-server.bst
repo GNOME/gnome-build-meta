@@ -1,8 +1,8 @@
 kind: cmake
 sources:
-- kind: git
-  url: git_gnome_org:evolution-data-server
-  track: master
+- url: https://download.gnome.org/sources/evolution-data-server/3.27/evolution-data-server-3.27.90.tar.xz
+  kind: tar
+  ref: 76ea5fe632453dc38835d791adea7dbc2abf0f69552635cf1d868df7bc49537b
 depends:
 - core-deps/WebKit.bst
 - core-deps/gcr.bst

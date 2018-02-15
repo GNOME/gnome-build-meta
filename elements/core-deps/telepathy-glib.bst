@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:telepathy/telepathy-glib
-  track: master
+- url: http://telepathy.freedesktop.org/releases/telepathy-glib/telepathy-glib-0.24.1.tar.gz
+  kind: tar
+  ref: 9e0df1d8f857e0270cf0b32e2d1ca5a24aa7282873361785d573f72ad7f7d5eb
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

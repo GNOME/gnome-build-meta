@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-common
-  track: master
+- url: https://download.gnome.org/sources/gnome-common/3.18/gnome-common-3.18.0.tar.xz
+  kind: tar
+  ref: 22569e370ae755e04527b76328befc4c73b62bfd4a572499fde116b8318af8cf
 depends:
 - base.bst

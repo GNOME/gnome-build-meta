@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:tracker-miners
-  track: master
+- url: https://download.gnome.org/sources/tracker-miners/2.0/tracker-miners-2.0.4.tar.xz
+  kind: tar
+  ref: 4626646167e405be5f8b3f831c82cfcdf86ba20d3598fca41ea8c4a8b8a8e956
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst

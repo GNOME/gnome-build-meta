@@ -61,7 +61,6 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/gtk-vnc.bst
 - core-deps/gtkmm-3.bst
-- core-deps/gtkmm.bst
 - core-deps/gtksourceview-3.bst
 - core-deps/gtksourceview.bst
 - core-deps/gupnp-av.bst
