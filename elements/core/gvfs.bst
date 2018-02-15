@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gvfs
-  track: master
+- url: https://download.gnome.org/sources/gvfs/1.35/gvfs-1.35.90.tar.xz
+  kind: tar
+  ref: f7f5dfebeb77779b56bbb476da1a02f7ca2f30bbea34041a8c9faebc17ae6d7b
 depends:
 - core-deps/gcr.bst
 - core-deps/glib.bst

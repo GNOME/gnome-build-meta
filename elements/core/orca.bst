@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:orca
-  track: master
+- url: https://download.gnome.org/sources/orca/3.27/orca-3.27.3.tar.xz
+  kind: tar
+  ref: 237a5ac01fb62067e72b91ed18e8364d1063e14df6b5e257d619a5bc1d6b4401
 depends:
 - core-deps/at-spi2-atk.bst
 - core-deps/gobject-introspection.bst

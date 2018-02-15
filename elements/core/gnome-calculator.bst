@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-calculator
-  track: master
+- url: https://download.gnome.org/sources/gnome-calculator/3.27/gnome-calculator-3.27.90.tar.xz
+  kind: tar
+  ref: 0d40e624c34da6bdf9980217b7acf5d150092407bf9303227883fd3c3563ed27
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/glib.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:epiphany
-  track: master
+- url: https://download.gnome.org/sources/epiphany/3.27/epiphany-3.27.90.tar.xz
+  kind: tar
+  ref: 873dceef99f0fc455645238d1ce4f274083266c2201b75951be633799b205a60
 depends:
 - core-deps/WebKit.bst
 - core-deps/appstream-glib.bst

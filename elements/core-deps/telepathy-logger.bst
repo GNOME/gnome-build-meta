@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:telepathy/telepathy-logger
-  track: master
+- url: http://telepathy.freedesktop.org/releases/telepathy-logger/telepathy-logger-0.8.2.tar.bz2
+  kind: tar
+  ref: 8fcad534d653b1b365132c5b158adae947810ffbae9843f72dd1797966415dae
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

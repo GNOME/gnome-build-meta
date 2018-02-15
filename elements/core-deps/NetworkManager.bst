@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- url: https://download.gnome.org/sources/NetworkManager/1.10/NetworkManager-1.10.4.tar.xz
+  kind: tar
+  ref: 7de0a7b77c2590a44195da4630b55d61be907f69ea1f3f1bd38da076ebad35fe
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

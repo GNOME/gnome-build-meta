@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-disk-utility
-  track: master
+- url: https://download.gnome.org/sources/gnome-disk-utility/3.27/gnome-disk-utility-3.27.90.tar.xz
+  kind: tar
+  ref: 3a17f2818196cbf094d4aefd7bf4a63b434b2cd985c88e85c91f0fcd2d7fb3e1
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/glib.bst

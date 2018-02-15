@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-bluetooth
-  track: master
+- url: https://download.gnome.org/sources/gnome-bluetooth/3.26/gnome-bluetooth-3.26.1.tar.xz
+  kind: tar
+  ref: 1d2c7b94fc76a833dad0d4d91344e9a5a7b4aad740c5a90944bd25c5be7e784f
 depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst

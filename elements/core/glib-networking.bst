@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:glib-networking
-  track: master
+- url: https://download.gnome.org/sources/glib-networking/2.55/glib-networking-2.55.90.tar.xz
+  kind: tar
+  ref: ff0e5bd686d0b956f335d7a0188e8cbebeddf5ade934601d959457d07e34cb08
 depends:
 - core-deps/glib.bst
 - core-deps/meson.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: github_com:hughsie/colord.git
-  track: master
+- url: http://www.freedesktop.org/software/colord/releases/colord-1.4.1.tar.xz
+  kind: tar
+  ref: 2b068fc8298265a7a3b68e7516c7a263394cff57579af0d1c0fb6b7429230555
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

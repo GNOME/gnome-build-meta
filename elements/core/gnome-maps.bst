@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-maps
-  track: master
+- url: https://download.gnome.org/sources/gnome-maps/3.27/gnome-maps-3.27.90.tar.xz
+  kind: tar
+  ref: 40bbd382209c091539eb2c362a98b84d13441bacde663832d190bbc2e0f1d334
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst

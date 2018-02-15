@@ -8,7 +8,6 @@ depends:
 - core/evince.bst
 - core/file-roller.bst
 - core/gdm.bst
-- core/gedit.bst
 - core/glib-networking.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
@@ -22,7 +21,6 @@ depends:
 - core/gnome-control-center.bst
 - core/gnome-desktop.bst
 - core/gnome-disk-utility.bst
-- core/gnome-documents.bst
 - core/gnome-font-viewer.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-initial-setup.bst
