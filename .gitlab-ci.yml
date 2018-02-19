@@ -26,6 +26,13 @@ before_script:
     paths:
       - "${XDG_CACHE_HOME}/buildstream/sources/"
 
+# Store artifacts so we can inspect build failures
+.bst_artifacts: &bst_artifacts
+  artifacts:
+    when: always
+    paths:
+      - ${CI_PROJECT_DIR}/cache/buildstream/logs
+
 
 
 bst-build-gnome-core:
@@ -34,3 +41,4 @@ bst-build-gnome-core:
   script:
     - ${BST} build --track-all core.bst
   <<: *bst_cache
+  <<: *bst_artifacts
