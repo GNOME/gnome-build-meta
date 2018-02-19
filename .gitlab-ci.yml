@@ -1,0 +1,36 @@
+image: buildstream/buildstream-fedora:master-47-e8de57f
+
+variables:
+  # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
+  # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
+  XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
+  GET_SOURCES_ATTEMPTS: 3
+  BST: 'bst --colors'
+  BST_SHA: '2643b095c59db6e8cbc2b8620c2ad820c7a5636d' #  1.1.0
+
+stages:
+  - build
+
+before_script:
+  - git clone https://gitlab.com/BuildStream/buildstream.git
+  # Use specific version of BuildStream
+  - git -C buildstream/ checkout $BST_SHA
+  - pip3 install buildstream
+
+# Store all the downloaded git and ostree repos in the distributed cache.
+# This saves us fetching them from the different repos and further afield
+# on every build.
+.bst_cache: &bst_cache
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+
+
+
+bst-build-gnome-core:
+  stage: build
+  dependencies: []
+  script:
+    - ${BST} build --track-all core.bst
+  <<: *bst_cache
