@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/gdk-pixbuf.bst
-- core-deps/gettext.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst

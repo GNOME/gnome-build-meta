@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:glib
   track: master
 depends:
-- core-deps/gettext.bst
 - core-deps/gtk-doc.bst
 - base.bst
 variables:
