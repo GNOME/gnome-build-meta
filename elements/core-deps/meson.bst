@@ -7,3 +7,9 @@ depends:
 - base.bst
 variables:
   python: python3
+
+  # FIXME: this is to work around an issue with directories that overlap files
+  # It effectively switches off the element for builds against Freedesktop SDK
+  (?):
+    - base == 'freedesktop1.8':
+        python-install: 'true'
