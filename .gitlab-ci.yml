@@ -42,3 +42,5 @@ bst-build-gnome-core:
     - ${BST} build --track-all core.bst
   <<: *bst_cache
   <<: *bst_artifacts
+  only:
+    - master
