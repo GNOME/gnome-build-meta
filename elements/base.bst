@@ -3,7 +3,6 @@ description: Abstract base system providing dependencies for GNOME.
 depends:
 - base/base-configure.bst
 - base/linker-priority.bst
-- base/ninja.bst
 public:
   bst:
     integration-commands:
