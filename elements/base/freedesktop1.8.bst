@@ -8,5 +8,7 @@ description: |
 depends:
 - junction: base/freedesktop1.8/freedesktop-sdk-junction.bst
   filename: desktop-image.bst
+- junction: base/freedesktop1.8/freedesktop-sdk-junction.bst
+  filename: vm/linux-vm-boot/systemd.bst
 - base/crates.bst
 - base/linker-priority.bst
