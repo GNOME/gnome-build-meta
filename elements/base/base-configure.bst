@@ -48,3 +48,7 @@ config:
         ! -wholename "/usr/share/doc/*/libstdc++/user/libstdc++.tag" \
         -exec rm -f {} \;
     find /usr/share/doc -type d -empty -delete
+
+  - |
+    # Add a default nameserver to the runtime
+    echo "nameserver 8.8.8.8" > /etc/resolv.conf
