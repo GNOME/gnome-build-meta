@@ -8,5 +8,5 @@ public:
   bst:
     integration-commands:
     - ldconfig
-    - update-mime-database %{prefix}/share/mime
+    - PKGSYSTEM_ENABLE_FSYNC=0 update-mime-database %{prefix}/share/mime
     - update-desktop-database -v
