@@ -12,6 +12,7 @@ stages:
   - build
 
 before_script:
+  - modprobe fuse
   - git clone https://gitlab.com/BuildStream/buildstream.git
   # Use specific version of BuildStream
   - git -C buildstream/ checkout $BST_SHA
