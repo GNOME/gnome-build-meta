@@ -5,4 +5,5 @@ sources:
   ref: 6e10a007c55ccf782cbb39a47779f79e2aa0e2c44e797f8f5517b03af76166c4
 depends:
 - core-deps/glib.bst
+- core-deps/graphviz.bst
 - base.bst
