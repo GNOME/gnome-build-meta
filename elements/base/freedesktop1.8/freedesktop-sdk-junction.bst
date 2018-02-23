@@ -4,7 +4,7 @@ sources:
 - kind: git
   url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk/
   track: sam/systemd
-  ref: d6fda6836360c391dc451e0b0f18eadc148760a5
+  ref: 386cc8f9310a1f7280f028486908967e2cfa1359
 
 config:
   options:
