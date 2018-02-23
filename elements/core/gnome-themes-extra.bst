@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-themes-standard
+  url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
   track: master
 depends:
 - core-deps/cantarell-fonts.bst
