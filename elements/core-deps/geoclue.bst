@@ -11,3 +11,10 @@ depends:
 - base.bst
 variables:
   conf-local: ''
+
+(?):
+  - base == "freedesktop1.8":
+      # We need to provide avahi-client and avahi-glib to use the
+      # network NMEA source.
+      variables:
+        conf-local: --disable-nmea-source
