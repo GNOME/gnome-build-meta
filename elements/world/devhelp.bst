@@ -9,4 +9,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/gtk-doc.bst
 - core-deps/m4-common.bst
+- core/gsettings-desktop-schemas.bst
 - base.bst
