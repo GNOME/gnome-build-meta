@@ -5,4 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
+- core-deps/graphviz.bst
 - base.bst
