@@ -6,4 +6,5 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gtk-doc.bst
+- core-deps/libgudev.bst
 - base.bst
