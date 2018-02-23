@@ -13,3 +13,7 @@ public:
   bst:
     integration-commands:
     - gdk-pixbuf-query-loaders --update-cache
+(?):
+- base == 'freedesktop1.8':
+    environment:
+      XML_CATALOG_FILES: /usr/etc/xml/catalog
