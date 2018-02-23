@@ -13,4 +13,4 @@ depends:
 - base.bst
 variables:
   conf-local: PYTHON=python3 --with-udev-dir=/usr/lib/udev  --with-crypto=gnutls --disable-more-warnings
-    --disable-json-validation --disable-ovs
+    --disable-json-validation --disable-ovs --without-libnm-glib
