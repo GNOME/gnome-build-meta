@@ -4,6 +4,7 @@ sources:
   kind: tar
   ref: 1353a4cf5227299294955d0c6232326b346b087ebac6496241d54ca5d2e2abc3
 depends:
+- core-deps/fribidi.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
