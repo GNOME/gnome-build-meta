@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-tweak-tool
+  url: gitlab_gnome_org:GNOME/gnome-tweaks.git
   track: master
 depends:
 - core-deps/librsvg.bst
