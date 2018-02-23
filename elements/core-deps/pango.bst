@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:pango
   track: master
 depends:
+- core-deps/fribidi.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
