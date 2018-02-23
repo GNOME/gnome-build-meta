@@ -7,3 +7,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - base.bst
+(?):
+- base == 'freedesktop1.8':
+    environment:
+      XML_CATALOG_FILES: /usr/etc/xml/catalog
