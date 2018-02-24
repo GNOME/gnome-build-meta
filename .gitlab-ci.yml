@@ -6,7 +6,7 @@ variables:
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST: 'bst --colors'
-  BST_SHA: '2643b095c59db6e8cbc2b8620c2ad820c7a5636d' #  1.1.0
+  BST_SHA: '9632eafb970cab601cc647b4df05f92518882d25' #  1.1.0-30-g9632eaf
 
 stages:
   - build
