@@ -17,7 +17,7 @@ before_script:
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
-  - pip3 install buildstream
+  - pip3 install buildstream/
 
 
 
