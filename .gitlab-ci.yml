@@ -1,4 +1,4 @@
-image: buildstream/buildstream-fedora:master-47-e8de57f
+image: buildstream/buildstream-fedora:master-51-9632eaf
 
 variables:
   # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
