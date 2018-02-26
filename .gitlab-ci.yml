@@ -26,6 +26,7 @@ bst-build-gnome-core:
   dependencies: []
   script:
     - ${BST} build --track-all core.bst
+    - ${BST} build --track-all world.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
