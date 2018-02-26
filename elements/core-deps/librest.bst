@@ -7,3 +7,8 @@ depends:
 - core-deps/glib.bst
 - core-deps/libsoup.bst
 - base.bst
+
+variables:
+  (?):
+    - base == "freedesktop1.8":
+      conf-local: --with-ca-certificates=/usr/share/ca-certificates
