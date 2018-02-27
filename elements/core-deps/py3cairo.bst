@@ -5,5 +5,3 @@ sources:
   ref: 47a14a6a2f8dadb649229f099ac712a5f3d0a22e14877165a203d8a0de09ad63
 depends:
 - base.bst
-variables:
-  python: python3
