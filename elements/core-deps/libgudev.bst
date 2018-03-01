@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
+- core-deps/gnome-common.bst
 - core-deps/gobject-introspection.bst
 - base.bst
 variables:
