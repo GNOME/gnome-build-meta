@@ -7,3 +7,8 @@ depends:
 - base.bst
 variables:
   conf-local: --disable-documentation
+public:
+  bst:
+    overlap-whitelist:
+    - |
+      **
