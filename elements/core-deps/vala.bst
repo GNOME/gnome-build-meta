@@ -6,3 +6,8 @@ sources:
 depends:
 - core-deps/glib.bst
 - base.bst
+public:
+  bst:
+    overlap-whitelist:
+    - |
+      **
