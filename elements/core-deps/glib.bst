@@ -12,3 +12,6 @@ public:
   bst:
     integration-commands:
     - glib-compile-schemas %{prefix}/share/glib-2.0/schemas
+    overlap-whitelist:
+    - |
+      **
