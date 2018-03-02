@@ -21,3 +21,7 @@ config:
     (<):
     - cp -a "%{datadir}/crates" "%{build-root}/cargo-crates"
     - rm rust/Cargo.lock || true
+public:
+  bst:
+    overlap-whitelist:
+    - usr/share/thumbnailers/librsvg.thumbnailer
