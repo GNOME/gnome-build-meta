@@ -24,7 +24,6 @@ depends:
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
 - core/gnome-terminal.bst
-- core/gnome-todo.bst
 - core/gnome-weather.bst
 - core/nautilus.bst
 - core/simple-scan.bst

@@ -26,6 +26,7 @@ depends:
 - world/gnome-sudoku.bst
 - world/gnome-taquin.bst
 - world/gnome-tetravex.bst
+- world/gnome-todo.bst
 - world/gnome-tweaks.bst
 - world/hitori.bst
 - world/iagno.bst

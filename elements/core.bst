@@ -41,7 +41,6 @@ depends:
 - core/gnome-system-monitor.bst
 - core/gnome-terminal.bst
 - core/gnome-themes-extra.bst
-- core/gnome-todo.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
 - core/gnome-weather.bst
