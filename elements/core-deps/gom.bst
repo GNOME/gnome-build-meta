@@ -7,4 +7,5 @@ depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
 - core-deps/meson.bst
+- core-deps/pygobject.bst
 - base.bst
