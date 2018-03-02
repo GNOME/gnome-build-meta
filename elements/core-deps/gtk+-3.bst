@@ -27,3 +27,6 @@ public:
         fi
       done
     - gtk-query-immodules-3.0 --update-cache
+    overlap-whitelist:
+    - |
+      usr/bin/gtk-update-icon-cache
