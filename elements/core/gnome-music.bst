@@ -9,6 +9,7 @@ depends:
 - core-deps/grilo.bst
 - core-deps/gtk+-3.bst
 - core-deps/libmediaart.bst
+- core-deps/meson.bst
 - core-deps/pygobject.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
