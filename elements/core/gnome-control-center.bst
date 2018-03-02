@@ -24,6 +24,7 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libwacom.bst
+- core-deps/meson.bst
 - core-deps/sound-theme-freedesktop.bst
 - core-deps/upower.bst
 - core/cheese.bst
