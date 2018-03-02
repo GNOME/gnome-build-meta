@@ -17,6 +17,7 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/librsvg.bst
 - core-deps/libwacom.bst
+- core-deps/meson.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
