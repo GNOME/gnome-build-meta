@@ -6,5 +6,6 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
+- core-deps/m4-common.bst
 - core-deps/vala.bst
 - base.bst
