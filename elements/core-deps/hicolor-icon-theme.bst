@@ -5,3 +5,7 @@ sources:
   ref: 9cc45ac3318c31212ea2d8cb99e64020732393ee7630fa6c1810af5f987033cc
 depends:
 - base.bst
+public:
+  bst:
+    overlap-whitelist:
+    - usr/share/icons/hicolor/index.theme
