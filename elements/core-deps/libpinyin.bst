@@ -10,6 +10,7 @@ sources:
   directory: data
 depends:
 - core-deps/glib.bst
+- core-deps/gnome-common.bst
 - base.bst
 variables:
   conf-local: --with-dbm=KyotoCabinet
