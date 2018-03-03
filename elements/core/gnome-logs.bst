@@ -7,5 +7,6 @@ depends:
 - core-deps/appstream-glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

@@ -11,5 +11,6 @@ depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libpeas.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

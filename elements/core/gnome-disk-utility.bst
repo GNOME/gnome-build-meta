@@ -10,5 +10,6 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/meson.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-settings-daemon.bst
 - base.bst

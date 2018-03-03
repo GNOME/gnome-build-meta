@@ -12,6 +12,7 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/meson.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

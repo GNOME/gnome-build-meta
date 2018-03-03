@@ -13,6 +13,7 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libgweather.bst
 - core-deps/m4-common.bst
+- core/adwaita-icon-theme.bst
 - base.bst
 variables:
   conf-local: --disable-dogtail

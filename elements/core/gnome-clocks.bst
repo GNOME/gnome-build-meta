@@ -12,5 +12,6 @@ depends:
 - core-deps/meson.bst
 - core-deps/vala.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - base.bst

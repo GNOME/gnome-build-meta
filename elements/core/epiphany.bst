@@ -18,5 +18,6 @@ depends:
 - core-deps/m4-common.bst
 - core-deps/meson.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/glib-networking.bst
 - base.bst

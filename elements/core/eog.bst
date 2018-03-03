@@ -12,6 +12,7 @@ depends:
 - core-deps/librsvg.bst
 - core-deps/meson.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

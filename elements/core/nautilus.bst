@@ -11,6 +11,7 @@ depends:
 - core-deps/pango.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

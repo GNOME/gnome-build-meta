@@ -11,4 +11,5 @@ depends:
 - core-deps/meson.bst
 - core-deps/vala.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - base.bst

@@ -7,4 +7,5 @@ depends:
 - core-deps/appstream-glib.bst
 - core-deps/gjs.bst
 - core-deps/gtk+-3.bst
+- core/adwaita-icon-theme.bst
 - base.bst

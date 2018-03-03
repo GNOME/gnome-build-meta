@@ -12,5 +12,6 @@ depends:
 - core-deps/pygobject.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core/adwaita-icon-theme.bst
 - core/gvfs.bst
 - base.bst

@@ -26,6 +26,7 @@ depends:
 - core-deps/libwacom.bst
 - core-deps/sound-theme-freedesktop.bst
 - core-deps/upower.bst
+- core/adwaita-icon-theme.bst
 - core/cheese.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst

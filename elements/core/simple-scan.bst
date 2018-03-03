@@ -12,4 +12,5 @@ depends:
 - core-deps/libgusb.bst
 - core-deps/meson.bst
 - core-deps/vala.bst
+- core/adwaita-icon-theme.bst
 - base.bst

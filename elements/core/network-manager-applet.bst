@@ -13,6 +13,7 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/mobile-broadband-provider-info.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-bluetooth.bst
 - base.bst
 variables:

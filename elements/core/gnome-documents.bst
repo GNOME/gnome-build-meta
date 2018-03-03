@@ -18,6 +18,7 @@ depends:
 - core-deps/meson.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core/adwaita-icon-theme.bst
 - core/evince.bst
 - core/gnome-desktop.bst
 - base.bst

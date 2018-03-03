@@ -15,6 +15,7 @@ depends:
 - core-deps/iso-codes.bst
 - core-deps/libgweather.bst
 - core-deps/upower.bst
+- core/adwaita-icon-theme.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst

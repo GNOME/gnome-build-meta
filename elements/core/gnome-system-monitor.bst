@@ -9,4 +9,5 @@ depends:
 - core-deps/gtkmm-3.bst
 - core-deps/libgtop.bst
 - core-deps/librsvg.bst
+- core/adwaita-icon-theme.bst
 - base.bst

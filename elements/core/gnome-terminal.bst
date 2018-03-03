@@ -11,6 +11,7 @@ depends:
 - core-deps/librsvg.bst
 - core-deps/vte.bst
 - core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-shell.bst
 - core/gsettings-desktop-schemas.bst
 - core/nautilus.bst

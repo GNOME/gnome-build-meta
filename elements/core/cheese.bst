@@ -17,5 +17,6 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/librsvg.bst
 - core-deps/vala.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - base.bst

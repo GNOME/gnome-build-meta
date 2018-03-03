@@ -19,5 +19,6 @@ depends:
 - core-deps/libgfbgraph.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core/adwaita-icon-theme.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

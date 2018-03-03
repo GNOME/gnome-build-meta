@@ -9,4 +9,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/m4-common.bst
 - core-deps/yelp-xsl.bst
+- core/adwaita-icon-theme.bst
 - base.bst

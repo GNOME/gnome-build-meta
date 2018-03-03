@@ -17,6 +17,7 @@ depends:
 - core-deps/libgee.bst
 - core-deps/libgfbgraph.bst
 - core-deps/librsvg.bst
+- core/adwaita-icon-theme.bst
 - core/glib-networking.bst
 - core/gnome-desktop.bst
 - base.bst
