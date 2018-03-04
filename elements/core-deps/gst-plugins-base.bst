@@ -10,3 +10,5 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/meson.bst
 - base.bst
+variables:
+  meson-local: -Ddisable_gtkdoc=true
