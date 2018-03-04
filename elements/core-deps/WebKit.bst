@@ -4,6 +4,7 @@ sources:
 # Reminder: remove -DUSE_UPOWER=OFF when upgrading to 2.19.92
 # https://trac.webkit.org/changeset/228888/webkit
   url: webkitgtk_org:webkitgtk-2.19.91.tar.xz
+  ref: cc1ccc8522bc44e05bf2a7f25b486758298e9ebfbad09fd8a0b5909e45c35c93
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
