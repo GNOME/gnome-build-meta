@@ -6,4 +6,6 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/graphviz.bst
+- filename: core-deps/vala-tarball.bst
+  type: build
 - base.bst
