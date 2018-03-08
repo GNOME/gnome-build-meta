@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/gobject-introspection.bst
 - core-deps/libgudev.bst
+- core-deps/libusb.bst
 - base.bst
 variables:
   conf-local: ''
