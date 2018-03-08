@@ -4,5 +4,6 @@ sources:
   url: git_gnome_org:gnome-video-effects
   track: master
 depends:
+- core-deps/gnome-common.bst
 - core-deps/gstreamer.bst
 - base.bst
