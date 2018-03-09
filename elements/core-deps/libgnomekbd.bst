@@ -5,4 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/gtk+-3.bst
+- core-deps/libxklavier.bst
 - base.bst
