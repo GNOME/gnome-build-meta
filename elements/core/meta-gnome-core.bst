@@ -3,7 +3,7 @@ depends:
 - core-deps/atkmm.bst
 - core-deps/cairomm.bst
 - core-deps/gtk+.bst
-- core-deps/gtkmm.bst
+- core-deps/gtkmm-3.bst
 - core-deps/gtksourceview.bst
 - core-deps/gupnp-igd.bst
 - core-deps/libsigcplusplus.bst
