@@ -8,5 +8,6 @@ depends:
 - core-deps/json-glib.bst
 - core-deps/meson.bst
 - core-deps/upower.bst
+- core-deps/xmlto.bst
 - core/gnome-desktop.bst
 - base.bst
