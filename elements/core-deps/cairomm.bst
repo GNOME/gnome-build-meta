@@ -6,3 +6,5 @@ sources:
 depends:
 - core-deps/libsigcplusplus.bst
 - base.bst
+variables:
+  conf-local: --disable-documentation
