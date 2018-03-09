@@ -8,4 +8,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst
 - core-deps/m4-common.bst
+- core-deps/vala.bst
 - base.bst
