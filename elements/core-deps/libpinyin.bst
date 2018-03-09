@@ -9,6 +9,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
+- core-deps/kyotocabinet.bst
 - base.bst
 variables:
   conf-local: --with-dbm=KyotoCabinet
