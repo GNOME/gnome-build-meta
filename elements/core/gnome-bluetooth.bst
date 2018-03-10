@@ -7,6 +7,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/gtk-doc.bst
+- core-deps/libcanberra.bst
 - core-deps/libnotify.bst
 - core-deps/meson.bst
 - base.bst
