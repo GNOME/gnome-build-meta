@@ -4,6 +4,8 @@ sources:
   url: github_com:hughsie/colord.git
   track: master
 depends:
+- filename: core-deps/argyll.bst
+  type: build
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/libgudev.bst
