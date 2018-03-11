@@ -8,7 +8,6 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/m4-common.bst
-- core-deps/iso-codes.bst
 - core-deps/yelp-tools.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

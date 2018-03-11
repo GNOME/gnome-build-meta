@@ -12,7 +12,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
-- core-deps/iso-codes.bst
 - core-deps/libgweather.bst
 - core-deps/upower.bst
 - core/adwaita-icon-theme.bst

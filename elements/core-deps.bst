@@ -72,8 +72,6 @@ depends:
 - core-deps/ibus-anthy.bst
 - core-deps/ibus-hangul.bst
 - core-deps/ibus-libpinyin.bst
-- core-deps/ibus.bst
-- core-deps/iso-codes.bst
 - core-deps/json-glib.bst
 - core-deps/libchamplain.bst
 - core-deps/libcroco.bst
