@@ -17,7 +17,6 @@ depends:
 - core-deps/gst-plugins-good.bst
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
-- core-deps/iso-codes.bst
 - core-deps/libpeas.bst
 - core-deps/meson.bst
 - core-deps/totem-pl-parser.bst

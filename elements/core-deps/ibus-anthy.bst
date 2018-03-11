@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- core-deps/ibus.bst
 - base.bst
 variables:
   conf-local: --enable-private-png=yes --with-python=python3
