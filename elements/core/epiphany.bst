@@ -10,7 +10,6 @@ depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
-- core-deps/iso-codes.bst
 - core-deps/json-glib.bst
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
