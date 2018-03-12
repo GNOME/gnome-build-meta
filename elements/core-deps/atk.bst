@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git
   url: git_gnome_org:atk
