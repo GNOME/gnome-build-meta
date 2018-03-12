@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.19.92.tar.xz
-  ref: 22b79a525376d09e7a6acc8becffabbac1759906592375767216b9b2c0d871e8
+  url: webkitgtk_org:webkitgtk-2.20.0.tar.xz
+  ref: 57f640f720bd9a8a7207f3321cf803a15c2f207b4e7b75ff1be17bc1eeb00a3c
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
