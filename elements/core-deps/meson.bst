@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: tar
-  url: github_tar:mesonbuild/meson/releases/download/0.44.1/meson-0.44.1.tar.gz
-  ref: 2ea1a721574adb23160b6481191bcc1173f374e02b0ff3bb0ae85d988d97e4fa
+  url: github_tar:mesonbuild/meson/releases/download/0.45.0/meson-0.45.0.tar.gz
+  ref: 3455abbc30a3fbd9cc8abb6d5fcdc42ce618665b95ac2c3ad7792a4a6ba47ce4
 depends:
 - base.bst
