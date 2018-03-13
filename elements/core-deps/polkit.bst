@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/mozjs24.bst
+- core-deps/pam.bst
 - base.bst
 variables:
   conf-local:
