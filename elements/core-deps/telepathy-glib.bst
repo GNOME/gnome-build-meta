@@ -4,6 +4,7 @@ sources:
   url: git_freedesktop_org:telepathy/telepathy-glib
   track: master
 depends:
+- core-deps/avahi.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/vala.bst
