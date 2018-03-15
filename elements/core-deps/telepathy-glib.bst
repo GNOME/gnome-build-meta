@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/avahi.bst
+- core-deps/dbus-glib.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/vala.bst
