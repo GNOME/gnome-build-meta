@@ -3,6 +3,8 @@ sources:
 - kind: git
   url: github_com:hughsie/colord.git
   track: master
+- kind: patch
+  path: files/colord/dont-require-docbook2man.patch
 depends:
 - filename: core-deps/argyll.bst
   type: build
