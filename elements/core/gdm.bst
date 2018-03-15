@@ -8,8 +8,9 @@ depends:
 - core-deps/dconf.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/upower.bst
 - core-deps/yelp-tools.bst
 - base.bst
 variables:
-  conf-local: ''
+  conf-local: --with-plymouth=no
