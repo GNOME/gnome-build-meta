@@ -10,8 +10,9 @@ depends:
 variables:
   conf-local:
     --enable-libsystemd-login=yes
-public:
-  bst:
-    integration-commands:
-      - groupadd -fg 27 polkitd
-      - useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27  -g polkitd -s /bin/false polkitd
+# freedesktop sdk doesn't have useradd and groupadd
+# public:
+#   bst:
+#     integration-commands:
+#       - groupadd -fg 27 polkitd
+#       - useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27  -g polkitd -s /bin/false polkitd
