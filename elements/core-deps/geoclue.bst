@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/ModemManager.bst
+- core-deps/avahi.bst
 - core-deps/glib.bst
 - core-deps/json-glib.bst
 - core-deps/libsoup.bst
