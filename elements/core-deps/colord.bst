@@ -11,6 +11,7 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/meson.bst
+- core-deps/polkit.bst
 - core-deps/vala.bst
 - base.bst
 
