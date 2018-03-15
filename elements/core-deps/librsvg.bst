@@ -1,9 +1,10 @@
 kind: autotools
-# FIXME: https://gitlab.gnome.org/GNOME/librsvg/issues/226
+# FIXME: https://gitlab.gnome.org/GNOME/gnome-build-meta/issues/24
 sources:
-- url: https://download.gnome.org/sources/librsvg/2.42/librsvg-2.42.3.tar.xz
+- url: https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.20.tar.xz
   kind: tar
-  ref: 704f2c44b9b170fc5498de36a161d01ca8f584ba9c42654b98565a7b7bcbe657
+  ref: cff4dd3c3b78bfe99d8fcfad3b8ba1eee3289a0823c0e118d78106be6b84c92b
+  etag: '"1b6918-56069b63f7d40"'
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
@@ -17,8 +18,8 @@ depends:
   type: build
 variables:
   conf-local: --enable-vala=yes
-config:
-  configure-commands:
-    (<):
-    - cp -a "%{datadir}/crates" "%{build-root}/cargo-crates"
-    - rm rust/Cargo.lock || true
+# config:
+#   configure-commands:
+#     (<):
+#     - cp -a "%{datadir}/crates" "%{build-root}/cargo-crates"
+#     - rm rust/Cargo.lock || true
