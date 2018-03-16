@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:eog
   track: master
 depends:
+- core-deps/exempi.bst
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
