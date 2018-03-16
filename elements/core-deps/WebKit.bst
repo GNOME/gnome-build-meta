@@ -5,6 +5,7 @@ sources:
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
+- core-deps/enchant-2.bst
 - core-deps/geoclue.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gst-libav.bst
