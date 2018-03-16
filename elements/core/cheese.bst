@@ -14,6 +14,7 @@ depends:
 - core-deps/gst-plugins-good.bst
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
 - core-deps/librsvg.bst
 - core-deps/vala.bst
