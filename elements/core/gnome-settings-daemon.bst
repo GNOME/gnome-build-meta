@@ -11,6 +11,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
 - core-deps/libgweather.bst
 - core-deps/libnotify.bst
