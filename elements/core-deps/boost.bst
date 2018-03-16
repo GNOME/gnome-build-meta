@@ -1,0 +1,15 @@
+kind: manual
+sources:
+- kind: tar
+  url: https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.bz2
+  ref: 5721818253e6a0989583192f96782c4a98eb6204965316df9f5ad75819225ca9
+  etag: '"b2dfbd6c717be4a7bb2d88018eaccf75:1513212020.81321"'
+depends:
+- base.bst
+config:
+  configure-commands:
+    - ./bootstrap.sh --includedir=%{install-root}%{includedir} --libdir=%{install-root}%{libdir}
+  build-commands:
+    - ./b2 -q -j%{max-jobs} --build-dir=_build link=shared stage
+  install-commands:
+    - ./b2 -q --build-dir=_build link=shared install
