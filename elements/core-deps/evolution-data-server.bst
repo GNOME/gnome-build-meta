@@ -10,8 +10,10 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
+- core-deps/libical.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
+- core-deps/openldap.bst
 - core-deps/vala.bst
 - base.bst
 variables:
