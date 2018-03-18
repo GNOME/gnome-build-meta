@@ -9,6 +9,7 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libsecret.bst
 - core-deps/libsecret.bst
+- core-deps/poppler.bst
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
 - core/nautilus.bst
