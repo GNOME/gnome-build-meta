@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_com:libosinfo/libosinfo.git
   track: master
+- kind: local
+  path: files/libosinfo/pci.ids
+- kind: local
+  path: files/libosinfo/usb.ids
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
