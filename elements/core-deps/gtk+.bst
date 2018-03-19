@@ -10,6 +10,9 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/graphene.bst
+- core-deps/gst-plugins-bad.bst
+- core-deps/gst-plugins-base.bst
+- core-deps/gstreamer.bst
 - core-deps/gtk-doc.bst
 - core-deps/m4-common.bst
 - core-deps/meson.bst
