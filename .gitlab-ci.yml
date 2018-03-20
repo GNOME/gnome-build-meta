@@ -24,6 +24,8 @@ before_script:
 bst-build-gnome-core:
   stage: build
   dependencies: []
+  tags:
+    - non_aws
   script:
     - ${BST} build --track-all core.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
