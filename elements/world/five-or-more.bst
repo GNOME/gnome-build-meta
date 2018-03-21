@@ -8,4 +8,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/librsvg.bst
 - core-deps/yelp-tools.bst
+- world/libgnome-games-support.bst
 - base.bst
