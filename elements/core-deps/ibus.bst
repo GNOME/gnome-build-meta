@@ -2,7 +2,6 @@ kind: autotools
 sources:
 - kind: tar
   url: github_tar:ibus/ibus/releases/download/1.5.17/ibus-1.5.17.tar.gz
-  ref: 0347a8055977ca458e8add750af5f9b76e1a524844cc3b0e2fad70ce153dd219
 depends:
 - core-deps/dconf.bst
 - core-deps/glib.bst
