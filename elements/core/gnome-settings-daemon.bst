@@ -12,6 +12,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/ibus.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
 - core-deps/libgweather.bst
 - core-deps/libnotify.bst
