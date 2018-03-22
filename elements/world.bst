@@ -9,6 +9,7 @@ depends:
 - world/four-in-a-row.bst
 - world/ghex.bst
 - world/gitg.bst
+- world/glade.bst
 - world/gnome-builder.bst
 - world/gnome-chess.bst
 - world/gnome-code-assistance.bst
