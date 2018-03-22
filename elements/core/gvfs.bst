@@ -8,11 +8,13 @@ depends:
 - core-deps/gcr.bst
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/libbluray.bst
 - core-deps/libgdata.bst
 - core-deps/libgudev.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
+- core-deps/libusb.bst
 - core-deps/meson.bst
 - core-deps/polkit.bst
 - core-deps/udisks2.bst
