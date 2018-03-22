@@ -10,6 +10,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libgdata.bst
 - core-deps/libgudev.bst
+- core-deps/libimobiledevice.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/meson.bst
