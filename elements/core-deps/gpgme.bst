@@ -1,0 +1,6 @@
+kind: autotools
+sources:
+- kind: tar
+  url: https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.10.0.tar.bz2
+depends:
+- base.bst

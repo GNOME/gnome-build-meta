@@ -14,6 +14,7 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/meson.bst
 - core-deps/polkit.bst
+- core-deps/udisks2.bst
 - base.bst
 variables:
   meson-local: -Dsystemduserunitdir=no -Dtmpfilesdir=no -Dinstalled_tests=true -Ddbus_service_dir=/usr/share/dbus-1/services
