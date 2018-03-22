@@ -4,7 +4,5 @@ sources:
   url: github_tar:choehwanjin/ibus-hangul/releases/download/1.5.0/ibus-hangul-1.5.0.tar.gz
 depends:
 - core-deps/ibus.bst
+- core-deps/libhangul.bst
 - base.bst
-config:
-  configure-commands:
-  - '%{configure} %{conf-args}'
