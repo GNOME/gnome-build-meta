@@ -10,7 +10,8 @@ depends:
 - base.bst
 variables:
   command-subdir: _build
-  configure: %{build-root}/js/src/configure
+  autogen: ''
+  conf-cmd: '%{build-root}/js/src/configure'
   conf-local: >
     --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc
     --disable-warnings-as-errors
