@@ -17,6 +17,7 @@ depends:
 - core-deps/libusb.bst
 - core-deps/meson.bst
 - core-deps/polkit.bst
+- core-deps/samba.bst
 - core-deps/udisks2.bst
 - base.bst
 variables:
