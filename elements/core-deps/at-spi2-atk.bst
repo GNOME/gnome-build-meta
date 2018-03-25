@@ -7,5 +7,4 @@ depends:
 - core-deps/atk.bst
 - core-deps/at-spi2-core.bst
 - core-deps/glib.bst
-- core-deps/meson.bst
 - base.bst

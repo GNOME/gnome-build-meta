@@ -11,7 +11,6 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libpeas.bst
 - core-deps/librsvg.bst
-- core-deps/meson.bst
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst

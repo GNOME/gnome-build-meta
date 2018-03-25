@@ -13,7 +13,6 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
-- core-deps/meson.bst
 - core-deps/spice-gtk.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst

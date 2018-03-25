@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
-- core-deps/meson.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst
 variables:

@@ -5,5 +5,4 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
-- core-deps/meson.bst
 - base.bst

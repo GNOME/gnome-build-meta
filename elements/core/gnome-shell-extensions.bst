@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/librsvg.bst
-- core-deps/meson.bst
 - core/gnome-menus.bst
 - core/gnome-shell.bst
 - base.bst

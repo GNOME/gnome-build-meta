@@ -6,5 +6,4 @@ sources:
 depends:
 - core-deps/clutter.bst
 - core-deps/gtk+-3.bst
-- core-deps/meson.bst
 - base.bst

@@ -11,7 +11,6 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libchamplain.bst
 - core-deps/libgee.bst
-- core-deps/meson.bst
 - core-deps/telepathy-glib.bst
 - core-deps/vala.bst
 - core/adwaita-icon-theme.bst

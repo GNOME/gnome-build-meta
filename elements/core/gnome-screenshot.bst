@@ -7,6 +7,5 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/libcanberra.bst
-- core-deps/meson.bst
 - core/adwaita-icon-theme.bst
 - base.bst
