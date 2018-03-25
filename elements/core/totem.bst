@@ -19,7 +19,6 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst
 - core-deps/libpeas.bst
-- core-deps/meson.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst

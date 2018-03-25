@@ -9,7 +9,6 @@ depends:
 - core-deps/gsound.bst
 - core-deps/gtk+-3.bst
 - core-deps/libgweather.bst
-- core-deps/meson.bst
 - core-deps/vala.bst
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst

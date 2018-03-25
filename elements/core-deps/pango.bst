@@ -9,5 +9,4 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - core-deps/harfbuzz.bst
-- core-deps/meson.bst
 - base.bst

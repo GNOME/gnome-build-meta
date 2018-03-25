@@ -19,7 +19,6 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libsoup.bst
 - core-deps/m4-common.bst
-- core-deps/meson.bst
 - core-deps/sassc.bst
 - core-deps/telepathy-glib.bst
 - core-deps/telepathy-logger.bst
