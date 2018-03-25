@@ -1,13 +1,10 @@
-kind: autotools
+kind: distutils
 sources:
 - kind: git
-  url: git_gnome_org:pygobject
+  url: gitlab_gnome_org:GNOME/pygobject.git
   track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- core-deps/m4-common.bst
 - core-deps/py3cairo.bst
 - base.bst
-variables:
-  conf-local: --with-python=python3
