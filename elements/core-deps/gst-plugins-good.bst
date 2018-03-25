@@ -7,5 +7,4 @@ depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/gst-plugins-base.bst
 - core-deps/libgudev.bst
-- core-deps/meson.bst
 - base.bst

@@ -7,5 +7,4 @@ depends:
 - core-deps/WebKit.bst
 - core-deps/glib.bst
 - core-deps/libsoup.bst
-- core-deps/meson.bst
 - base.bst

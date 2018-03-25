@@ -8,5 +8,4 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/libsoup.bst
-- core-deps/meson.bst
 - base.bst

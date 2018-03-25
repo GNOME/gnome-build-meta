@@ -15,7 +15,6 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/libusb.bst
-- core-deps/meson.bst
 - core-deps/polkit.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst

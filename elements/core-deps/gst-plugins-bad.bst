@@ -6,5 +6,4 @@ sources:
 depends:
 - core-deps/graphene.bst
 - core-deps/gst-plugins-base.bst
-- core-deps/meson.bst
 - base.bst
