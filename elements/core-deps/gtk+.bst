@@ -15,7 +15,6 @@ depends:
 - core-deps/gstreamer.bst
 - core-deps/gtk-doc.bst
 - core-deps/m4-common.bst
-- core-deps/meson.bst
 - core-deps/pango.bst
 - core-deps/wayland-protocols.bst
 - core-deps/wayland.bst

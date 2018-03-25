@@ -12,7 +12,6 @@ depends:
 - core-deps/json-glib.bst
 - core-deps/libsoup.bst
 - core-deps/libyaml.bst
-- core-deps/meson.bst
 - base.bst
 variables:
   meson-local: -Dstemmer=false -Drpm=false

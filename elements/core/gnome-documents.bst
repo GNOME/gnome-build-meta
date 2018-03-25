@@ -15,7 +15,6 @@ depends:
 - core-deps/libgepub.bst
 - core-deps/libzapojit.bst
 - core-deps/m4-common.bst
-- core-deps/meson.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
 - core/adwaita-icon-theme.bst

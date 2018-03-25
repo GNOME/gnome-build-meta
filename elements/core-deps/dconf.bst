@@ -5,6 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
-- core-deps/meson.bst
 - core-deps/vala.bst
 - base.bst

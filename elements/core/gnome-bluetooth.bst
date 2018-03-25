@@ -9,5 +9,4 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/libcanberra.bst
 - core-deps/libnotify.bst
-- core-deps/meson.bst
 - base.bst

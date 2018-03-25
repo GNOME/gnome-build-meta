@@ -9,5 +9,4 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/json-glib.bst
 - core-deps/libsoup.bst
-- core-deps/meson.bst
 - base.bst

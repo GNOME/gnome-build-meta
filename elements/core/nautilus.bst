@@ -8,7 +8,6 @@ depends:
 - core-deps/glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gtk+-3.bst
-- core-deps/meson.bst
 - core-deps/pango.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst

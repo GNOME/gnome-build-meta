@@ -8,7 +8,6 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst
 - core-deps/libgudev.bst
-- core-deps/meson.bst
 - base.bst
 variables:
   meson-local: -Ddisable_gtkdoc=true

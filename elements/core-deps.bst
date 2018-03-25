@@ -109,7 +109,6 @@ depends:
 - core-deps/libwacom.bst
 - core-deps/libzapojit.bst
 - core-deps/m4-common.bst
-- core-deps/meson.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
