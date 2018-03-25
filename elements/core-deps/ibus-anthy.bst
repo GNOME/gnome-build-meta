@@ -6,7 +6,6 @@ depends:
 - core-deps/anthy.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- core-deps/ibus.bst
 - core-deps/pygobject.bst
 - base.bst
 variables:

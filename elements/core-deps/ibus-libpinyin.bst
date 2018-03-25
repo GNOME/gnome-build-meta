@@ -3,7 +3,6 @@ sources:
 - kind: tar
   url: github_tar:libpinyin/ibus-libpinyin/archive/1.9.0.tar.gz
 depends:
-- core-deps/ibus.bst
 - core-deps/libpinyin.bst
 - base.bst
 variables:
