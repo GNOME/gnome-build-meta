@@ -6,5 +6,5 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- core-deps/py3cairo.bst
+- core-deps/pycairo.bst
 - base.bst

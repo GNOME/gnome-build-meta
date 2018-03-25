@@ -119,7 +119,7 @@ depends:
 - core-deps/pangomm.bst
 - core-deps/pcre2.bst
 - core-deps/phodav.bst
-- core-deps/py3cairo.bst
+- core-deps/pycairo.bst
 - core-deps/pyatspi2.bst
 - core-deps/pygobject.bst
 - core-deps/sound-theme-freedesktop.bst
