@@ -14,5 +14,5 @@ depends:
 
 variables:
   meson-local: |
-    -Dbash-completion=false \
+    -Dbash_completion=false \
     -Dvapi=true
