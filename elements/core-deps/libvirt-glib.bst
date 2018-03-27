@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
+- core-deps/libvirt.bst
 - core-deps/vala.bst
 - base.bst
 variables:
