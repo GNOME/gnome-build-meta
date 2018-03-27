@@ -11,5 +11,8 @@ depends:
 - core-deps/meson.bst
 - core-deps/vala.bst
 - base.bst
+
 variables:
-  meson-local: -Denable-bash-completion=false -Denable-vala=true
+  meson-local: |
+    -Dbash-completion=false \
+    -Dvapi=true
