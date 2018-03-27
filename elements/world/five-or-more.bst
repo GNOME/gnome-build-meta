@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:five-or-more
+  url: gitlab_gnome_org:GNOME/five-or-more.git
   track: master
 depends:
 - core-deps/appstream-glib.bst
