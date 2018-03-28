@@ -11,6 +11,7 @@ depends:
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
 - core-deps/libgdata.bst
+- core-deps/libgphoto2.bst
 - core-deps/libgudev.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libsecret.bst
