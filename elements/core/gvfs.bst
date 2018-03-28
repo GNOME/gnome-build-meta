@@ -15,6 +15,7 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
+- core-deps/libnfs.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/libusb.bst
