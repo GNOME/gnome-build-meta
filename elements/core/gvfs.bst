@@ -9,6 +9,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
+- core-deps/libcdio-paranoia.bst
 - core-deps/libgdata.bst
 - core-deps/libgudev.bst
 - core-deps/libimobiledevice.bst
