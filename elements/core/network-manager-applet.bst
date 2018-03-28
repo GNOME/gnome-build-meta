@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/glib.bst
+- core-deps/ModemManager.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
 - core-deps/iso-codes.bst
