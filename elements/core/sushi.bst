@@ -14,5 +14,6 @@ depends:
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
+- core-deps/libmusicbrainz.bst
 - core/evince.bst
 - base.bst
