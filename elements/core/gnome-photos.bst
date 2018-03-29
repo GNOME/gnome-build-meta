@@ -8,6 +8,7 @@ depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
+- core-deps/gexiv2.bst
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
