@@ -23,6 +23,8 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libwacom.bst
+- core-deps/pwquality.bst
+- core-deps/samba.bst
 - core-deps/sound-theme-freedesktop.bst
 - core-deps/upower.bst
 - core/adwaita-icon-theme.bst
