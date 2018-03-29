@@ -11,5 +11,6 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libgusb.bst
 - core-deps/vala.bst
+- core-deps/sane-backends.bst
 - core/adwaita-icon-theme.bst
 - base.bst
