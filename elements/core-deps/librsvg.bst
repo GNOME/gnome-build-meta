@@ -12,12 +12,5 @@ depends:
 - core-deps/pango.bst
 - core-deps/vala.bst
 - base.bst
-- filename: base/crates.bst
-  type: build
 variables:
   conf-local: --enable-vala=yes
-# config:
-#   configure-commands:
-#     (<):
-#     - cp -a "%{datadir}/crates" "%{build-root}/cargo-crates"
-#     - rm rust/Cargo.lock || true
