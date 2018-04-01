@@ -8,7 +8,6 @@ depends:
   filename: desktop-image.bst
 - junction: base/freedesktop-sdk-junction.bst
   filename: vm/linux-vm-boot/systemd.bst
-- base/crates.bst
 - base/linker-priority.bst
 public:
   bst:
