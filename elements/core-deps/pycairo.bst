@@ -6,9 +6,3 @@ depends:
 - base.bst
 variables:
   python: python3
-config:
-  install-commands:
-    (>):
-      # There's no way to get the setup.py to install this in the right place.
-      - mkdir -p %{install-root}/usr/%{lib}/
-      - mv %{install-root}/usr/lib/pkgconfig/ %{install-root}/usr/%{lib}/
