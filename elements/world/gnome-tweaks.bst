@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/librsvg.bst
-- core-deps/meson.bst
 - core-deps/pygobject.bst
 - core/gnome-shell.bst
 - core/nautilus.bst

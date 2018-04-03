@@ -8,5 +8,4 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - core-deps/gtk+-3.bst
-- core-deps/meson.bst
 - base.bst

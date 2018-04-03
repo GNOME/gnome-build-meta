@@ -12,7 +12,6 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/librsvg.bst
-- core-deps/meson.bst
 - core-deps/pygobject.bst
 - core-deps/vala.bst
 - core-deps/vte.bst

@@ -8,5 +8,4 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
 - core-deps/libgusb.bst
-- core-deps/meson.bst
 - base.bst

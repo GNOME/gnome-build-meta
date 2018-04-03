@@ -8,6 +8,5 @@ depends:
 - core-deps/dconf.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
-- core-deps/meson.bst
 - core-deps/vala.bst
 - base.bst

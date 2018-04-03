@@ -10,5 +10,4 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gtk+-3.bst
 - core-deps/libpeas.bst
-- core-deps/meson.bst
 - base.bst
