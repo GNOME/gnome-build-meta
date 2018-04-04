@@ -7,7 +7,7 @@ sources:
   path: files/polkit/sysusers.conf
   directory: data
 depends:
-- core-deps/mozjs24.bst
+- core-deps/mozjs52.bst
 - core-deps/pam.bst
 - base.bst
 variables:
