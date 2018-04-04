@@ -25,7 +25,7 @@ bst-build-gnome-core:
   stage: build
   dependencies: []
   tags:
-    - do
+    - non_aws
   script:
     # this should be removed as soon as buildstream supports junctions with project.refs
     - sed -i s/project.refs/inline/ project.conf
@@ -46,4 +46,4 @@ bst-build-gnome-core:
     paths:
       - ${CI_PROJECT_DIR}/cache/buildstream/logs
   only:
-    - master
+    - freedesktop-sdk-base
