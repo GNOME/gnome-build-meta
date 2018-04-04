@@ -27,7 +27,12 @@ bst-build-gnome-core:
   tags:
     - do
   script:
-    - ${BST} build --track-all core.bst
+    # this should be removed as soon as buildstream supports junctions with project.refs
+    - sed -i s/project.refs/inline/ project.conf
+    # this can be removed when bst plays nicer with junctions, but it should be harmless
+    - ${BST} track base/freedesktop-sdk-junction.bst
+    # don't track the elements in freedesktop-sdk
+    - ${BST} build --track-all --track-except base.bst core.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
