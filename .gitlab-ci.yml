@@ -54,5 +54,3 @@ bst-build-gnome-core:
     when: always
     paths:
       - ${CI_PROJECT_DIR}/cache/buildstream/logs
-  only:
-    - master
