@@ -11,6 +11,15 @@ variables:
 stages:
   - build
 
+
+# Store all the downloaded git and ostree repos in the cache.
+# This saves us fetching them on every build
+cache:
+  key: bst
+  paths:
+    - "${XDG_CACHE_HOME}/buildstream/sources/"
+
+
 before_script:
   # Remove any installed buildstream binary
   - pip3 uninstall -y buildstream
