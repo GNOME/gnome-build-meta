@@ -10,4 +10,4 @@ config:
   build-commands:
   - jam -q -fJambase -j%{max-jobs}
   install-commands:
-  - jam -q -fJambase -j%{max-jobs} DESTDIR=/buildstream/install PREFIX=/usr install
+  - jam -q -fJambase -j%{max-jobs} DESTDIR=%{install-root} PREFIX=%{prefix} install
