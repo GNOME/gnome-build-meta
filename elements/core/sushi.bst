@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:sushi
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst

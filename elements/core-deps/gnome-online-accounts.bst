@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-online-accounts
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/gtk+-3.bst
 - core-deps/json-glib.bst
 - core-deps/librest.bst

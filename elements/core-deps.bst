@@ -3,7 +3,7 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/accountsservice.bst
 - core-deps/appstream-glib.bst
 - core-deps/atk.bst

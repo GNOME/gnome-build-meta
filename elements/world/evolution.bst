@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:evolution
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/atk.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gcr.bst

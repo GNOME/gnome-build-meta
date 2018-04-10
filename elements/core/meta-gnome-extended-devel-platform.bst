@@ -2,7 +2,7 @@ kind: stack
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gjs.bst
 - core-deps/gstreamer.bst

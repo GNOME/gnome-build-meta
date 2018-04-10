@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:bijiben
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/appstream-glib.bst
 - core-deps/clutter-gtk.bst
 - core-deps/evolution-data-server.bst

@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:evolution-data-server
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/gcr.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gtk+-3.bst
