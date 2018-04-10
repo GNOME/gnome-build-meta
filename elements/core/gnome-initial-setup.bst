@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/accountsservice.bst
 - core-deps/geoclue.bst
 - core-deps/glib.bst

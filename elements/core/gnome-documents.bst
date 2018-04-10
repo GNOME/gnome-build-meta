@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-documents
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst

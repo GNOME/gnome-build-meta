@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:epiphany
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/appstream-glib.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst

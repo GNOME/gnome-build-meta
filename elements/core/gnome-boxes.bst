@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-boxes
   track: master
 depends:
-- core-deps/WebKit.bst
+- core-deps/WebKitGTK+.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/gtk-vnc.bst
