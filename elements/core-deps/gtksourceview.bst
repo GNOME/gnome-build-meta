@@ -5,6 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/gtk+-3.bst
-- core-deps/m4-common.bst
 - core-deps/vala.bst
 - base.bst

@@ -7,7 +7,6 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
 - core-deps/colord.bst
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst

@@ -9,7 +9,6 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/glib.bst
 - core-deps/gnome-autoar.bst

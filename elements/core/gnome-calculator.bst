@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:gnome-calculator
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/gtksourceview-3.bst

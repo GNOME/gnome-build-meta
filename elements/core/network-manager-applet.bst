@@ -9,7 +9,6 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
-- core-deps/iso-codes.bst
 - core-deps/libgudev.bst
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst

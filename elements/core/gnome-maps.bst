@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst

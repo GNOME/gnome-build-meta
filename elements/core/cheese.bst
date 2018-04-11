@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:cheese
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
 - core-deps/glib.bst

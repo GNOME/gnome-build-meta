@@ -11,7 +11,6 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - core-deps/pango.bst
-- core-deps/wayland-protocols.bst
 - core-deps/wayland.bst
 - base.bst
 variables:

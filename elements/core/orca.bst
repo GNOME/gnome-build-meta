@@ -9,6 +9,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/pyatspi2.bst
 - core-deps/pygobject.bst
-- core-deps/speech-dispatcher.bst
 - core-deps/yelp-tools.bst
 - base.bst

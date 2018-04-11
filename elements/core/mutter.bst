@@ -15,7 +15,6 @@ depends:
 - core-deps/pango.bst
 - core-deps/upower.bst
 - core-deps/wayland.bst
-- core-deps/zenity.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - base.bst

@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:gnome-todo
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/evolution-data-server.bst
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst

@@ -5,6 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/gtk+-3.bst
-- core-deps/m4-common.bst
 - filename: core/adwaita-icon-theme.bst
   type: runtime

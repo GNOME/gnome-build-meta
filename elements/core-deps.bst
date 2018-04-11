@@ -5,7 +5,6 @@ depends:
 - core-deps/PackageKit.bst
 - core-deps/WebKitGTK+.bst
 - core-deps/accountsservice.bst
-- core-deps/appstream-glib.bst
 - core-deps/atk.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
@@ -30,7 +29,6 @@ depends:
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
 - core-deps/gegl.bst
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
@@ -68,11 +66,9 @@ depends:
 - core-deps/gupnp-igd.bst
 - core-deps/gupnp.bst
 - core-deps/harfbuzz.bst
-- core-deps/hicolor-icon-theme.bst
 - core-deps/ibus-anthy.bst
 - core-deps/ibus-hangul.bst
 - core-deps/ibus-libpinyin.bst
-- core-deps/iso-codes.bst
 - core-deps/json-glib.bst
 - core-deps/libchamplain.bst
 - core-deps/libcroco.bst
@@ -107,7 +103,6 @@ depends:
 - core-deps/libvirt-glib.bst
 - core-deps/libwacom.bst
 - core-deps/libzapojit.bst
-- core-deps/m4-common.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
@@ -115,13 +110,10 @@ depends:
 - core-deps/pango.bst
 - core-deps/pangomm-1.4.bst
 - core-deps/pangomm.bst
-- core-deps/pcre2.bst
 - core-deps/phodav.bst
 - core-deps/pycairo.bst
 - core-deps/pyatspi2.bst
 - core-deps/pygobject.bst
-- core-deps/sound-theme-freedesktop.bst
-- core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
 - core-deps/telepathy-glib.bst
@@ -133,9 +125,7 @@ depends:
 - core-deps/upower.bst
 - core-deps/vala.bst
 - core-deps/vte.bst
-- core-deps/wayland-protocols.bst
 - core-deps/wayland.bst
 - core-deps/woff2.bst
 - core-deps/yelp-tools.bst
 - core-deps/yelp-xsl.bst
-- core-deps/zenity.bst

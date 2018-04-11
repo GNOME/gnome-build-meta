@@ -8,5 +8,4 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
-- core-deps/harfbuzz.bst
 - base.bst

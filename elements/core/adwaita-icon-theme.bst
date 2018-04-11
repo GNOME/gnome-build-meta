@@ -6,6 +6,5 @@ sources:
 depends:
 - core-deps/gnome-common.bst
 - core-deps/gtk+-3.bst
-- core-deps/hicolor-icon-theme.bst
 - core-deps/librsvg.bst
 - base.bst

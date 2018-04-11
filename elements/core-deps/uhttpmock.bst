@@ -6,5 +6,4 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/libsoup.bst
-- core-deps/m4-common.bst
 - base.bst

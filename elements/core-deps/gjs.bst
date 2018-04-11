@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/gobject-introspection.bst
-- core-deps/m4-common.bst
 - core-deps/mozjs52.bst
 - base.bst
 variables:

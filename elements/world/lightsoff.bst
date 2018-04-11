@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:lightsoff
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst
 - core-deps/gtk+-3.bst

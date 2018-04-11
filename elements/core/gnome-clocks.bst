@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:gnome-clocks
   track: master
 depends:
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
 - core-deps/gtk+-3.bst

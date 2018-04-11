@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/WebKitGTK+.bst
-- core-deps/appstream-glib.bst
 - core-deps/clutter-gtk.bst
 - core-deps/evolution-data-server.bst
 - core-deps/glib.bst

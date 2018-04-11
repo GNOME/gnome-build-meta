@@ -4,7 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/polari.git
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

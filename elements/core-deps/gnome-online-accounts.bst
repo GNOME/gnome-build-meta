@@ -11,6 +11,5 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
-- core-deps/m4-common.bst
 - core-deps/telepathy-glib.bst
 - base.bst

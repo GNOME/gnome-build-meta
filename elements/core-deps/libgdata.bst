@@ -11,6 +11,5 @@ depends:
 - core-deps/json-glib.bst
 - core-deps/liboauth.bst
 - core-deps/libsoup.bst
-- core-deps/m4-common.bst
 - core-deps/uhttpmock.bst
 - base.bst

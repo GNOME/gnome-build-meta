@@ -4,7 +4,6 @@ sources:
   url: git_gnome_org:totem
   track: master
 depends:
-- core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst
@@ -17,7 +16,6 @@ depends:
 - core-deps/gst-plugins-good.bst
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
-- core-deps/iso-codes.bst
 - core-deps/libpeas.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/yelp-tools.bst
