@@ -8,13 +8,11 @@ depends:
 - core-deps/appstream-glib.bst
 - core-deps/atk.bst
 - core-deps/atkmm-1.6.bst
-- core-deps/atkmm.bst
 - core-deps/at-spi2-atk.bst
 - core-deps/at-spi2-core.bst
 - core-deps/babl.bst
 - core-deps/brotli.bst
 - core-deps/cairomm-1.0.bst
-- core-deps/cairomm.bst
 - core-deps/cantarell-fonts.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
@@ -35,7 +33,6 @@ depends:
 - core-deps/gjs.bst
 - core-deps/glib.bst
 - core-deps/glibmm-2.4.bst
-- core-deps/glibmm.bst
 - core-deps/gmime3.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-common.bst
@@ -60,7 +57,6 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/gtk-vnc.bst
 - core-deps/gtkmm-3.bst
-- core-deps/gtkmm.bst
 - core-deps/gtksourceview-3.bst
 - core-deps/gtksourceview.bst
 - core-deps/gupnp-av.bst
@@ -103,7 +99,6 @@ depends:
 - core-deps/librsvg.bst
 - core-deps/libsecret.bst
 - core-deps/libsigcplusplus-2.0.bst
-- core-deps/libsigcplusplus.bst
 - core-deps/libsoup.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libwacom.bst
@@ -116,7 +111,6 @@ depends:
 - core-deps/osinfo-db-tools.bst
 - core-deps/pango.bst
 - core-deps/pangomm-1.4.bst
-- core-deps/pangomm.bst
 - core-deps/pcre2.bst
 - core-deps/phodav.bst
 - core-deps/py3cairo.bst
