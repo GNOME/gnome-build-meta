@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-plugins-base
-  track: master
+- url: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.0.tar.xz
+  kind: tar
+  ref: 7e904660ff56e02b036cf7fdfb77a50a540828ca9d2614d69ba931772e5b6940
 depends:
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst

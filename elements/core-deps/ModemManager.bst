@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:ModemManager/ModemManager.git
-  track: master
+- url: http://www.freedesktop.org/software/ModemManager/ModemManager-1.7.991.tar.xz
+  kind: tar
+  ref: 4e366243bd4983f2e6efe35cb901cf5da51939307b5d6299fe622a9fcf411745
 depends:
 - core-deps/glib.bst
 - core-deps/gtk-doc.bst

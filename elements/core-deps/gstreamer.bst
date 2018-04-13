@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gstreamer
-  track: master
+- url: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.0.tar.xz
+  kind: tar
+  ref: fc361367f0d4b780a868a8833f9f30b9c9f4ac9faea4e6b251db8b4b0398466e
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

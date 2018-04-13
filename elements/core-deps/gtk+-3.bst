@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gtk+
-  track: gtk-3-22
+- url: https://download.gnome.org/sources/gtk+/3.22/gtk+-3.22.29.tar.xz
+  kind: tar
+  ref: a07d64b939fcc034a066b7723fdf9b24e92c9cfb6a8497593f3471fe56fbbbf8
 depends:
 - core-deps/atk.bst
 - core-deps/at-spi2-atk.bst

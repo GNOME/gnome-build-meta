@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-online-accounts
-  track: master
+- url: https://download.gnome.org/sources/gnome-online-accounts/3.28/gnome-online-accounts-3.28.0.tar.xz
+  kind: tar
+  ref: 87bc4ef307604f1ce4f09f6e5c9996ef8d37ca5e0a3bf76f6b27d71844adb40c
 depends:
 - core-deps/WebKit.bst
 - core-deps/gtk+-3.bst

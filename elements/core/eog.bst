@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:eog
-  track: master
+- url: https://download.gnome.org/sources/eog/3.28/eog-3.28.1.tar.xz
+  kind: tar
+  ref: 78d52c9295c1a67386461bfdf4f1803eca31f4757df3dc1022cad5d649277aec
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst

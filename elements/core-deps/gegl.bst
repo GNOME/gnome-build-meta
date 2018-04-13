@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gegl
-  track: master
+- url: http://ftp.gimp.org/pub/gegl/0.3/gegl-0.3.30.tar.bz2
+  kind: tar
+  ref: f8b4a93ad2c5187efcc7d9a665ef626a362587eb701eebccf21b13616791e551
 depends:
 - core-deps/babl.bst
 - core-deps/gdk-pixbuf.bst

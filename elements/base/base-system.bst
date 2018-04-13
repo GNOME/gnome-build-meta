@@ -6,7 +6,7 @@ kind: import
       url: ostree-gnome:repo
       gpg-key: keys/gnome-base.gpg
       track: debian/testing/amd64
-      ref: 21ffaf453fded072dec48b1ac1e7b2087a10ed0ec9c59ca6decac52e84f719bc
+      ref: d4588096c9662772ddf0d03296a546bc659e76bf3f3462895bf2e529d22f2c8c
 - arch == "i386":
     sources:
     - kind: ostree

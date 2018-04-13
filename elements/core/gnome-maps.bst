@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-maps
-  track: master
+- url: https://download.gnome.org/sources/gnome-maps/3.28/gnome-maps-3.28.1.tar.xz
+  kind: tar
+  ref: a509a938cb8c255322916a1da7ac9fa633298c613b2c2e098c28335fc40ebda7
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst

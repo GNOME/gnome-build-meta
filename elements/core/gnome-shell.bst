@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-shell
-  track: master
+- url: https://download.gnome.org/sources/gnome-shell/3.28/gnome-shell-3.28.0.tar.xz
+  kind: tar
+  ref: c7dec00d3c2b26e16611aac99630e3d41842179e9ec30cc873233b56c080ba4e
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst

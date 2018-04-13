@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_gnome_org:gnome-calculator
-  track: master
+- url: https://download.gnome.org/sources/gnome-calculator/3.28/gnome-calculator-3.28.1.tar.xz
+  kind: tar
+  ref: 2cee9ef809cea1adbbcc8de65e05f0bb7ed8e78cd2c1a3a1105fba59d36df717
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/glib.bst

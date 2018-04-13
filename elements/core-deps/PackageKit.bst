@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: github_com:hughsie/PackageKit.git
-  track: master
+- url: http://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.9.tar.xz
+  kind: tar
+  ref: a49ffa7ee4f023589a3520afd498a951eb10e2e0b81972c9f767d27a6addbf47
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/glib.bst

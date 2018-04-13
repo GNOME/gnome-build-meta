@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: github_com:hughsie/appstream-glib.git
-  track: master
+- url: http://people.freedesktop.org/~hughsient/appstream-glib/releases/appstream-glib-0.7.7.tar.xz
+  kind: tar
+  ref: bc979456c4ff6bc7434115ef20718d9f7c79cae5110f15d6fe5fae53a5fe800a
 depends:
 - core-deps/gcab.bst
 - core-deps/gdk-pixbuf.bst

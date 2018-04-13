@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:evince
-  track: master
+- url: https://download.gnome.org/sources/evince/3.28/evince-3.28.2.tar.xz
+  kind: tar
+  ref: 0955d22d85c9f6d322b6cbb464f1cc4c352db619017ec95dad4cc5c3440f73e1
 depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst

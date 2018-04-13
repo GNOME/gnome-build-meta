@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:adwaita-icon-theme
-  track: master
+- url: https://download.gnome.org/sources/adwaita-icon-theme/3.28/adwaita-icon-theme-3.28.0.tar.xz
+  kind: tar
+  ref: 7aae8c1dffd6772fd1a21a3d365a0ea28b7c3988bdbbeafbf8742cda68242150
 depends:
 - core-deps/gnome-common.bst
 - core-deps/gtk+-3.bst

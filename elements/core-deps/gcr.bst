@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gcr
-  track: master
+- url: https://download.gnome.org/sources/gcr/3.28/gcr-3.28.0.tar.xz
+  kind: tar
+  ref: 15e175d1da7ec486d59749ba34906241c442898118ce224a7b70bf2e849faf0b
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
