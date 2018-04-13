@@ -6,3 +6,5 @@ sources:
 depends:
 - core-deps/lvm2.bst
 - base.bst
+variables:
+  make: make -j1
