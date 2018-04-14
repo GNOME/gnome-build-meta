@@ -67,7 +67,6 @@ depends:
 - core/rygel.bst
 - core/simple-scan.bst
 - core/sushi.bst
-- core/telepathy-mission-control.bst
 - core/totem.bst
 - core/vino.bst
 - core/yelp.bst

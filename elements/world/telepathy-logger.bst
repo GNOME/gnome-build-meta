@@ -7,5 +7,5 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
-- core-deps/telepathy-glib.bst
+- world/telepathy-glib.bst
 - base.bst

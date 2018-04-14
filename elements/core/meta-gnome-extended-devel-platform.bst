@@ -10,7 +10,6 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libpeas.bst
 - core-deps/pygobject.bst
-- core-deps/telepathy-glib.bst
 - core-deps/upower.bst
 - core/meta-gnome-devel-platform.bst
 - base.bst
