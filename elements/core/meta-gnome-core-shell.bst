@@ -1,16 +1,20 @@
+# The core set is not expected to change as frequently as core-deps or
+# world. Adding or removing elements from here should be approved by
+# release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
 depends:
-- core-deps/dconf.bst
-- core-deps/librsvg.bst
 - core/adwaita-icon-theme.bst
 - core/gdm.bst
 - core/glib-networking.bst
 - core/gnome-backgrounds.bst
+- core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
 - core/gnome-control-center.bst
+- core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-initial-setup.bst
 - core/gnome-keyring.bst
+- core/gnome-menus.bst
 - core/gnome-session.bst
 - core/gnome-settings-daemon.bst
 - core/gnome-shell-extensions.bst
@@ -22,8 +26,10 @@ depends:
 - core/gvfs.bst
 - core/mousetweaks.bst
 - core/mutter.bst
+- core/network-manager-applet.bst
 - core/orca.bst
 - core/rygel.bst
+- core/sushi.bst
 - core/telepathy-mission-control.bst
 - core/vino.bst
 - base.bst
