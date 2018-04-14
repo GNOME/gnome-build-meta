@@ -30,6 +30,5 @@ depends:
 - core/orca.bst
 - core/rygel.bst
 - core/sushi.bst
-- core/telepathy-mission-control.bst
 - core/vino.bst
 - base.bst
