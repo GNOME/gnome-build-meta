@@ -116,8 +116,6 @@ depends:
 - core-deps/pygobject.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
-- core-deps/telepathy-glib.bst
-- core-deps/telepathy-logger.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
