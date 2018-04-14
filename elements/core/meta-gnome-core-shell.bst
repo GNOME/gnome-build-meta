@@ -24,6 +24,5 @@ depends:
 - core/mutter.bst
 - core/orca.bst
 - core/rygel.bst
-- core/telepathy-mission-control.bst
 - core/vino.bst
 - base.bst
