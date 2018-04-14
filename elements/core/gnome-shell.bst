@@ -20,8 +20,6 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/sassc.bst
 - core-deps/startup-notification.bst
-- core-deps/telepathy-glib.bst
-- core-deps/telepathy-logger.bst
 - core-deps/upower.bst
 - core/adwaita-icon-theme.bst
 - core/gdm.bst

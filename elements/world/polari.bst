@@ -9,5 +9,5 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gspell.bst
 - core-deps/gtk+-3.bst
-- core-deps/telepathy-glib.bst
+- world/telepathy-glib.bst
 - base.bst

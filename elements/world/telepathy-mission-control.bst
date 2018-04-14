@@ -7,7 +7,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/glib.bst
 - core-deps/gtk-doc.bst
-- core-deps/telepathy-glib.bst
+- world/telepathy-glib.bst
 - base.bst
 variables:
   conf-local: --disable-upower

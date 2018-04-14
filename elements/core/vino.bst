@@ -10,5 +10,4 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
-- core-deps/telepathy-glib.bst
 - base.bst

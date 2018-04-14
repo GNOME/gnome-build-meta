@@ -43,4 +43,7 @@ depends:
 - world/quadrapassel.bst
 - world/swell-foop.bst
 - world/tali.bst
+- world/telepathy-glib.bst
+- world/telepathy-logger.bst
+- world/telepathy-mission-control.bst
 - world/template-glib.bst
