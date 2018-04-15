@@ -18,6 +18,8 @@ cache:
   key: bst
   paths:
     - "${XDG_CACHE_HOME}/buildstream/sources/"
+    # Also save project.refs, this should save redownloading most tarballs
+    - "${CI_PROJECT_DIR}/project.refs"
 
 
 before_script:
@@ -46,6 +48,7 @@ bst-build-gnome-core:
     key: bst
     paths:
       - "${XDG_CACHE_HOME}/buildstream/sources/"
+      - "${CI_PROJECT_DIR}/project.refs"
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
