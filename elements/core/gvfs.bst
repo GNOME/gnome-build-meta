@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:gvfs
   track: master
 depends:
+- core-deps/avahi.bst
 - core-deps/fuse.bst
 - core-deps/gcr.bst
 - core-deps/glib.bst
