@@ -5,7 +5,7 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST: 'bst --colors'
+  BST: 'bst'
   BST_SHA: 'e91dc8336074d22126e559a29e23ef2d52c5506a' #  1.1.2
 
 stages:
