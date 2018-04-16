@@ -1,3 +1,7 @@
+# Elements listed here must be a dependency of something in GNOME core.
+# Feel free to add anything here that's needed by a core module. You
+# can even include modules that are present in the base system (the
+# freedesktop-sdk) if newer versions are required.
 kind: stack
 depends:
 - core-deps/ModemManager.bst

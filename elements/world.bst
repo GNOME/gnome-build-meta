@@ -1,3 +1,7 @@
+# Feel free to add anything you want to world, as long as it's vaguely
+# GNOME-related. Any needed dependencies should be added here, in world,
+# as well. world does not receive continuous integration testing, and it
+# is not released by the GNOME release team.
 kind: stack
 depends:
 - world/accerciser.bst
