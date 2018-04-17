@@ -1,7 +1,7 @@
 kind: cmake
+# FIXME: Rehost elsewhere to use https
 sources:
-- kind: git
-  url: https://git.assembla.com/portaudio.git
-  track: pa_stable_v190600_20161030
+- kind: tar
+  url: http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
 depends:
 - base.bst
