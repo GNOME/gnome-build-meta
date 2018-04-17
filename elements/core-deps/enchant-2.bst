@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_tar:AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz
+  url: github_com:AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz
 depends:
 - core-deps/glib.bst
 - base.bst
