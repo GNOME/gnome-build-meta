@@ -118,6 +118,7 @@ depends:
 - core-deps/pycairo.bst
 - core-deps/pyatspi2.bst
 - core-deps/pygobject.bst
+- core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
 - core-deps/totem-pl-parser.bst
