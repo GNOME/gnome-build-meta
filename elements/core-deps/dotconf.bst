@@ -1,7 +1,6 @@
 kind: autotools
 sources:
-- kind: git
-  url: https://github.com/williamh/dotconf
-  track: master
+- kind: tar
+  url: github_tar:williamh/dotconf/archive/v1.3.tar.gz
 depends:
 - base.bst
