@@ -30,8 +30,6 @@ before_script:
 .buil-template: &build
   stage: build
   dependencies: []
-  tags:
-    - do
   script:
     # this should be removed as soon as buildstream supports junctions with project.refs
     - sed -i s/project.refs/inline/ project.conf
@@ -52,6 +50,14 @@ before_script:
     paths:
       - ${CI_PROJECT_DIR}/cache/buildstream/logs
 
-build-gnome-core:
+build-gnome-core-x86_64:
+  tags:
+    - do
   image: buildstream/buildstream-fedora:master-51-9632eaf
+  <<: *build
+
+build-gnome-core-aarch64
+  image: buildstream/buildstream-fedora:aarch64-master-79-c1c09e3
+  tags:
+    - aarch64
   <<: *build
