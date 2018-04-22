@@ -5,3 +5,5 @@ sources:
 depends:
 - core-deps/boost.bst
 - base.bst
+variables:
+  autogen: autoreconf -ivf
