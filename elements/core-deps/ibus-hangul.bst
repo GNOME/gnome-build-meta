@@ -4,4 +4,9 @@ sources:
   url: github_com:choehwanjin/ibus-hangul/releases/download/1.5.0/ibus-hangul-1.5.0.tar.gz
 depends:
 - core-deps/libhangul.bst
+- core-deps/gnome-common.bst
 - base.bst
+variables:
+  autogen: |
+    NOCONFIGURE=1 ./autogen.sh
+    intltoolize --force
