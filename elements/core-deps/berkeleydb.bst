@@ -5,5 +5,6 @@ sources:
 depends:
 - base.bst
 variables:
-  autogen: ''
+  # autoreconf doesn't work for this package
+  autogen: cp /usr/share/automake*/config.{sub,guess} dist/
   conf-cmd: ./dist/configure
