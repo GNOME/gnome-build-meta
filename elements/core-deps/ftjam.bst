@@ -5,7 +5,4 @@ sources:
 depends:
 - base.bst
 variables:
-  autogen: |
-    pushd builds/unix
-    autoreconf -ivf
-    popd
+  autogen: cp /usr/share/automake*/config.{sub,guess} builds/unix
