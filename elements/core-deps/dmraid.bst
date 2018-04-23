@@ -7,4 +7,5 @@ depends:
 - core-deps/lvm2.bst
 - base.bst
 variables:
+  autogen: autoreconf -ivf
   make: make -j1
