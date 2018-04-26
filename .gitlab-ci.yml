@@ -38,7 +38,8 @@ before_script:
     logdir: ${BST_LOGS}
 
     # Keep building and find all the errors
-    on-error: continue
+    scheduler:
+      on-error: continue
 
     # Get a lot of output in case of errors
     logging:
