@@ -12,3 +12,5 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-aux: build-aux
