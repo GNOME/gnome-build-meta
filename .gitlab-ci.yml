@@ -30,6 +30,9 @@ before_script:
   - git -C buildstream/ checkout $BST_SHA
   - pip3 install buildstream/
 
+  # Ensure the log directory exists
+  - mkdir -p ${BST_LOGS}
+
   # Generate a build.conf which configures the build
   - |
     cat > ${CI_PROJECT_DIR}/build.conf << EOF
