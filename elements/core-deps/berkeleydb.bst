@@ -6,5 +6,5 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  autogen: ''
+  conf-aux: dist/
   conf-cmd: ./dist/configure
