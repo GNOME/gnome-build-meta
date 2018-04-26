@@ -9,14 +9,3 @@ depends:
 - core-deps/libusb.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: ''
-config:
-  configure-commands:
-  - |-
-    if [ ! -x autogen.sh ]; then
-      configure="./configure"
-    else
-      configure="./autogen.sh"
-    fi
-    ${configure} %{conf-args}
