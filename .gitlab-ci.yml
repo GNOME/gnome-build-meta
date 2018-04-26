@@ -31,7 +31,7 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} build --track-all core.bst
+    - ${BST} --on-error continue build --track-all core.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
