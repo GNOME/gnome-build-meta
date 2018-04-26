@@ -7,6 +7,3 @@ depends:
 - base.bst
 variables:
   conf-local: --with-hunspell --with-hunspell-dir=/usr/share/myspell
-config:
-  configure-commands:
-  - '%{configure} %{conf-args}'
