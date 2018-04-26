@@ -6,7 +6,7 @@ variables:
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST_LOGS: "${CI_PROJECT_DIR}/logs"
-  BST: "bst --config ${CI_PROJECT_DIR}/build.conf --log-file ${CI_PROJECT_DIR}/logs/build.log --colors"
+  BST: "bst --config ${CI_PROJECT_DIR}/build.conf --log-file ${BST_LOGS}/build.log --colors"
   BST_SHA: '06ae434a7017edbf67bf46c3fe2e327466801787' #  1.1.3
 
 stages:
