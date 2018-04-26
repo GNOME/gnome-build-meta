@@ -3,7 +3,8 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST: 'bst'
+  BST_LOGS: "${CI_PROJECT_DIR}/logs"
+  BST: "bst --config ${CI_PROJECT_DIR}/build.conf --log-file ${CI_PROJECT_DIR}/logs/build.log --colors"
   BST_SHA: 'bc5a40e3dccbe1cb8066171fc2c0a4a5abeaa31e' #  1.1.3-177-gbc5a40e3
 
 stages:
@@ -21,11 +22,14 @@ cache:
 before_script:
   # Remove any installed buildstream binary
   - pip3 uninstall -y buildstream
+
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
   - pip3 install buildstream/
 
+  # Ensure the log directory exists
+  - mkdir -p ${BST_LOGS}
 
 .build-template: &build
   stage: build
@@ -43,7 +47,7 @@ before_script:
   artifacts:
     when: always
     paths:
-      - ${CI_PROJECT_DIR}/cache/buildstream/logs
+      - ${BST_LOGS}
 
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-51-9632eaf
