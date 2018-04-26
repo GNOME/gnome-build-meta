@@ -5,6 +5,3 @@ sources:
 depends:
 - core-deps/libsigcplusplus-2.0.bst
 - base.bst
-config:
-  configure-commands:
-  - '%{configure} %{conf-args}'
