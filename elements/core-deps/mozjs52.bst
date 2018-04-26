@@ -8,6 +8,6 @@ variables:
   command-subdir: _build
   conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc
     AUTOCONF=autoconf
-config:
-  configure-commands:
-  - '%{build-root}/js/src/configure %{conf-args}'
+  conf-cmd: '%{build-root}/js/src/configure'
+  # not a real autotools project
+  autogen: ''
