@@ -5,5 +5,5 @@ sources:
 depends:
 - base.bst
 variables:
-  autogen: ''
+  conf-aux: dist/
   conf-cmd: ./dist/configure
