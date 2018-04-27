@@ -4,16 +4,16 @@ sources:
   url: git_freedesktop_org:NetworkManager/NetworkManager.git
   track: master
 depends:
-- core-deps/dbus-glib.bst
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk-doc.bst
+- sdk/dbus-glib.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - core-deps/iptables.bst
-- core-deps/libgudev.bst
+- sdk/libgudev.bst
 - core-deps/libndp.bst
 - core-deps/ppp.bst
-- core-deps/pygobject.bst
-- core-deps/vala.bst
+- sdk/pygobject.bst
+- sdk/vala.bst
 - base.bst
 variables:
   conf-local: PYTHON=python3 --with-udev-dir=/usr/lib/udev  --with-crypto=gnutls --disable-more-warnings

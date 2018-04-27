@@ -4,9 +4,9 @@ sources:
   url: git_freedesktop_org:accountsservice
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/polkit.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/polkit.bst
 - base.bst
 variables:
   conf-local: ''

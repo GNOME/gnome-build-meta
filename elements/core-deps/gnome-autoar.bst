@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:gnome-autoar
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - base.bst

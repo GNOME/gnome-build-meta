@@ -4,7 +4,7 @@ sources:
   url: git_freedesktop_org:libmbim/libmbim.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk-doc.bst
-- core-deps/libgudev.bst
+- sdk/glib.bst
+- sdk/gtk-doc.bst
+- sdk/libgudev.bst
 - base.bst

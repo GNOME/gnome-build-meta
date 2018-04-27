@@ -5,15 +5,15 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/glib.bst
+- sdk/glib.bst
 - core-deps/ModemManager.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
-- core-deps/libgudev.bst
-- core-deps/libnotify.bst
-- core-deps/libsecret.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
+- sdk/libgudev.bst
+- sdk/libnotify.bst
+- sdk/libsecret.bst
 - core-deps/mobile-broadband-provider-info.bst
-- core/adwaita-icon-theme.bst
+- sdk/adwaita-icon-theme.bst
 - core/gnome-bluetooth.bst
 - base.bst
 variables:

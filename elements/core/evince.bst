@@ -4,14 +4,14 @@ sources:
   url: git_gnome_org:evince
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - core-deps/libgxps.bst
-- core-deps/libsecret.bst
-- core-deps/libsecret.bst
+- sdk/libsecret.bst
+- sdk/libsecret.bst
 - core-deps/poppler.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - core/nautilus.bst
 - base.bst
 variables:

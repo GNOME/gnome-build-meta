@@ -4,19 +4,19 @@ sources:
   url: git_gnome_org:gnome-boxes
   track: master
 depends:
-- core-deps/WebKitGTK+.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/WebKitGTK+.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - core-deps/gtk-vnc.bst
-- core-deps/json-glib.bst
+- sdk/json-glib.bst
 - core-deps/libgovirt.bst
-- core-deps/libgudev.bst
+- sdk/libgudev.bst
 - core-deps/libosinfo.bst
-- core-deps/libsecret.bst
+- sdk/libsecret.bst
 - core-deps/libvirt-glib.bst
 - core-deps/spice-gtk.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
-- core-deps/vala.bst
-- core/adwaita-icon-theme.bst
+- sdk/vala.bst
+- sdk/adwaita-icon-theme.bst
 - base.bst

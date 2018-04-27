@@ -4,12 +4,12 @@ sources:
   url: git_gnome_org:gnome-calculator
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
-- core-deps/libsoup.bst
+- sdk/libsoup.bst
 - core-deps/mpc.bst
-- core-deps/vala.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/vala.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - base.bst

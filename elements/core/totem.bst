@@ -4,24 +4,24 @@ sources:
   url: git_gnome_org:totem
   track: master
 depends:
-- core-deps/clutter-gst.bst
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
+- sdk/clutter-gst.bst
+- sdk/clutter-gtk.bst
+- sdk/clutter.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/gst-plugins-bad.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gst-plugins-good.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
+- sdk/gst-plugins-bad.bst
+- sdk/gst-plugins-base.bst
+- sdk/gst-plugins-good.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
 - core-deps/libpeas.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/gsettings-desktop-schemas.bst
 - base.bst
 variables:
   meson-local: -Dwith-plugins=none

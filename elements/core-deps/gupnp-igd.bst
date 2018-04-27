@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gupnp-igd
   track: master
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - core-deps/gupnp.bst
 - base.bst
 variables:

@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-menus
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
 - base.bst

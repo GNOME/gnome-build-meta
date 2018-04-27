@@ -6,7 +6,7 @@ sources:
 depends:
 - core-deps/atkmm.bst
 - core-deps/cairomm.bst
-- core-deps/glib.bst
+- sdk/glib.bst
 - core-deps/gtk+.bst
 - core-deps/pangomm.bst
 - base.bst

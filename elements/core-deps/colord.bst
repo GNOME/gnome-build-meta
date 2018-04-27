@@ -8,12 +8,12 @@ sources:
 depends:
 - filename: core-deps/argyll.bst
   type: build
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/libgudev.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/libgudev.bst
 - core-deps/libgusb.bst
-- core-deps/polkit.bst
-- core-deps/vala.bst
+- sdk/polkit.bst
+- sdk/vala.bst
 - base.bst
 
 variables:

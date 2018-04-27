@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:glibmm
   track: glibmm-2-54
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - core-deps/libsigcplusplus-2.0.bst
 - base.bst
 variables:

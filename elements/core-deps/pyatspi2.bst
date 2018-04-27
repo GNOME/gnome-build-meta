@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:pyatspi2
   track: master
 depends:
-- core-deps/at-spi2-core.bst
-- core-deps/pygobject.bst
+- sdk/at-spi2-core.bst
+- sdk/pygobject.bst
 - base.bst
 variables:
   conf-local: --with-python=python3

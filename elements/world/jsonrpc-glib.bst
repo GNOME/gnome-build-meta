@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/jsonrpc-glib.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/json-glib.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/json-glib.bst
 - base.bst

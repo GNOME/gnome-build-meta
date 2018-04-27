@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:glibmm
   track: master
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - core-deps/libsigcplusplus.bst
 - base.bst
 variables:

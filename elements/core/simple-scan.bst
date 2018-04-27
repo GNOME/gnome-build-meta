@@ -6,11 +6,11 @@ sources:
 depends:
 - core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - core-deps/libgusb.bst
-- core-deps/vala.bst
+- sdk/vala.bst
 - core-deps/sane-backends.bst
-- core/adwaita-icon-theme.bst
+- sdk/adwaita-icon-theme.bst
 - base.bst

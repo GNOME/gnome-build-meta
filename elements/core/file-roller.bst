@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:file-roller
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - base.bst

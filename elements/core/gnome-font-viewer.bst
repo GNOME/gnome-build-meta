@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:gnome-font-viewer
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core/adwaita-icon-theme.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - base.bst
