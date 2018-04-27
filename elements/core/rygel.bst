@@ -10,5 +10,5 @@ depends:
 - core-deps/libgee.bst
 - core-deps/libmediaart.bst
 - core-deps/tracker.bst
-- core-deps/vala.bst
+- sdk/vala.bst
 - base.bst

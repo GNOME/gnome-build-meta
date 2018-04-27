@@ -5,16 +5,16 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/WebKitGTK+.bst
+- sdk/WebKitGTK+.bst
 - core-deps/accountsservice.bst
-- core-deps/glib.bst
-- core-deps/gnome-online-accounts.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
+- sdk/glib.bst
+- sdk/gnome-online-accounts.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
 - core-deps/libgweather.bst
 - core-deps/pwquality.bst
 - core-deps/upower.bst
-- core/adwaita-icon-theme.bst
+- sdk/adwaita-icon-theme.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst

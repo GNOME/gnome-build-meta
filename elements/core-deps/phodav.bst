@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:phodav
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/libsoup.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/libsoup.bst
 - base.bst

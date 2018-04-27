@@ -6,11 +6,11 @@ sources:
 depends:
 - core-deps/colord-gtk.bst
 - core-deps/exiv2.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/libcanberra.bst
-- core-deps/vte.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/libcanberra.bst
+- sdk/vte.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - base.bst

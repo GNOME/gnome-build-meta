@@ -4,14 +4,14 @@ sources:
   url: git_gnome_org:gnome-music
   track: master
 depends:
-- core-deps/gobject-introspection.bst
+- sdk/gobject-introspection.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/gtk+-3.bst
+- sdk/gtk+-3.bst
 - core-deps/libmediaart.bst
-- core-deps/pygobject.bst
+- sdk/pygobject.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
-- core/adwaita-icon-theme.bst
-- core/gvfs.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/gvfs.bst
 - base.bst

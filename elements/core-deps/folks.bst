@@ -4,11 +4,11 @@ sources:
   url: git_gnome_org:folks
   track: master
 depends:
-- core-deps/dbus-glib.bst
+- sdk/dbus-glib.bst
 - core-deps/evolution-data-server.bst
-- core-deps/gobject-introspection.bst
+- sdk/gobject-introspection.bst
 - core-deps/libgee.bst
-- core-deps/vala.bst
+- sdk/vala.bst
 - base.bst
 variables:
   conf-local: --enable-eds-backend --disable-libsocialweb-backend --disable-telepathy-backend --disable-fatal-warnings

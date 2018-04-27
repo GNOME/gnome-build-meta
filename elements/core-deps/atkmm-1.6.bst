@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:atkmm
   track: atkmm-2-24
 depends:
-- core-deps/atk.bst
+- sdk/atk.bst
 - core-deps/glibmm-2.4.bst
 - base.bst
 variables:

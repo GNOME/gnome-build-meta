@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:four-in-a-row
   track: master
 depends:
-- core-deps/gtk+-3.bst
-- core-deps/librsvg.bst
-- core-deps/yelp-tools.bst
+- sdk/gtk+-3.bst
+- sdk/librsvg.bst
+- sdk/yelp-tools.bst
 - base.bst

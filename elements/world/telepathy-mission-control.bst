@@ -5,8 +5,8 @@ sources:
   track: telepathy-mission-control-5.16
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/glib.bst
-- core-deps/gtk-doc.bst
+- sdk/glib.bst
+- sdk/gtk-doc.bst
 - world/telepathy-glib.bst
 - base.bst
 variables:

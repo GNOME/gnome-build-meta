@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gom
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/pygobject.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/pygobject.bst
 - base.bst

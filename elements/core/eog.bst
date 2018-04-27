@@ -5,14 +5,14 @@ sources:
   track: master
 depends:
 - core-deps/exempi.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
 - core-deps/libpeas.bst
-- core-deps/librsvg.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
+- sdk/librsvg.bst
+- sdk/yelp-tools.bst
+- sdk/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/gsettings-desktop-schemas.bst
 - base.bst

@@ -4,18 +4,18 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-builder.git
   track: master
 depends:
-- core-deps/gjs.bst
-- core-deps/glib.bst
+- sdk/gjs.bst
+- sdk/glib.bst
 - core-deps/gspell.bst
-- core-deps/gtk+-3.bst
+- sdk/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
-- core-deps/librsvg.bst
-- core-deps/pygobject.bst
-- core-deps/vala.bst
-- core-deps/vte.bst
-- core/gvfs.bst
+- sdk/librsvg.bst
+- sdk/pygobject.bst
+- sdk/vala.bst
+- sdk/vte.bst
+- sdk/gvfs.bst
 - world/devhelp.bst
 - world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst

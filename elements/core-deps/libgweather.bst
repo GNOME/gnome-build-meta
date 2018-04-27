@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/geocode-glib.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/libsoup.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/libsoup.bst
 - base.bst

@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:libgnome-games-support
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - core-deps/libgee.bst
-- core-deps/vala.bst
+- sdk/vala.bst
 - base.bst
