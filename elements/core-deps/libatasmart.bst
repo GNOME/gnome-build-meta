@@ -4,3 +4,5 @@ sources:
   url: http://0pointer.de/public/libatasmart-0.19.tar.xz
 depends:
 - base.bst
+variables:
+  conf-aux: build-aux

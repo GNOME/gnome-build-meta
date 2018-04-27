@@ -4,3 +4,5 @@ sources:
   url: http://bitmath.org/code/mtdev/mtdev-1.1.5.tar.bz2
 depends:
 - base.bst
+variables:
+  conf-aux: config-aux
