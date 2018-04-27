@@ -5,3 +5,5 @@ sources:
 depends:
 - core-deps/berkeleydb.bst
 - base.bst
+variables:
+  conf-aux: build
