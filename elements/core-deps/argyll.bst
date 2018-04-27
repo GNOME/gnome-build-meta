@@ -7,6 +7,9 @@ depends:
   type: build
 - base.bst
 config:
+  configure-commands:
+  - cp /usr/share/automake*/config.{sub,guess} jpeg/
+  - cp /usr/share/automake*/config.{sub,guess} tiff/config/
   build-commands:
   - jam -q -fJambase -j%{max-jobs}
   install-commands:
