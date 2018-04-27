@@ -9,3 +9,4 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   make: make -j1
+  conf-aux: autoconf
