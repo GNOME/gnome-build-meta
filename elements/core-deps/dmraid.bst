@@ -8,3 +8,4 @@ depends:
 - base.bst
 variables:
   make: make -j1
+  conf-aux: autoconf
