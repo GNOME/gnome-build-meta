@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-characters
   track: master
 depends:
-- core-deps/gjs.bst
-- core-deps/gtk+-3.bst
-- core/adwaita-icon-theme.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/gjs.bst
+- sdk/gtk+-3.bst
 - base.bst

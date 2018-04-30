@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gspell
   track: master
 depends:
-- core-deps/enchant-2.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/enchant-2.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - base.bst

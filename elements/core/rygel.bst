@@ -4,11 +4,11 @@ sources:
   url: git_gnome_org:rygel
   track: master
 depends:
+- core-deps/gupnp.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
-- core-deps/gupnp.bst
 - core-deps/libgee.bst
 - core-deps/libmediaart.bst
 - core-deps/tracker.bst
-- core-deps/vala.bst
+- sdk/vala.bst
 - base.bst

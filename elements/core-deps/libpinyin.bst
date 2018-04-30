@@ -7,9 +7,9 @@ sources:
   base-dir: ''
   directory: data
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
 - core-deps/kyotocabinet.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
 - base.bst
 variables:
   conf-local: --with-dbm=KyotoCabinet

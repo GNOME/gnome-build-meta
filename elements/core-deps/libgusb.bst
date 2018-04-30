@@ -4,8 +4,8 @@ sources:
   url: github_com:hughsie/libgusb.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/libusb.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/libusb.bst
+- sdk/vala.bst
 - base.bst

@@ -4,6 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/template-glib.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
 - base.bst

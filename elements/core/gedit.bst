@@ -10,7 +10,7 @@ depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview-3.bst
 - core-deps/libpeas.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/yelp-tools.bst
 - base.bst

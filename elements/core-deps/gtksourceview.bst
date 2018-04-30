@@ -4,6 +4,6 @@ sources:
   url: git_gnome_org:gtksourceview
   track: master
 depends:
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - base.bst

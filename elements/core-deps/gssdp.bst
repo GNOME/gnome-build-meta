@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:gssdp
   track: gssdp_1.0
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/libsoup.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/libsoup.bst
 - base.bst
 config:
   build-commands:

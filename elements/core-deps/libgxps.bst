@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:libgxps
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
 - base.bst

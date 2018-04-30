@@ -4,5 +4,5 @@ sources:
   url: git_gnome_org:nautilus-sendto
   track: master
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - base.bst

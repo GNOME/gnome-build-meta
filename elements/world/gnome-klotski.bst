@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:gnome-klotski
   track: master
 depends:
-- core-deps/gtk+-3.bst
-- core-deps/librsvg.bst
-- core-deps/yelp-tools.bst
+- sdk/gtk+-3.bst
+- sdk/librsvg.bst
+- sdk/yelp-tools.bst
 - world/libgnome-games-support.bst
 - base.bst
