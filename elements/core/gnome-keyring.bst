@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-keyring
   track: master
 depends:
-- core-deps/gcr.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- sdk/gcr.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - base.bst

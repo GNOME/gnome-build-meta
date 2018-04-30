@@ -4,10 +4,10 @@ sources:
   url: git_gnome_org:lightsoff
   track: master
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
-- core-deps/gtk+-3.bst
-- core-deps/librsvg.bst
-- core-deps/vala.bst
-- core-deps/yelp-tools.bst
+- sdk/clutter.bst
+- sdk/clutter-gtk.bst
+- sdk/gtk+-3.bst
+- sdk/librsvg.bst
+- sdk/vala.bst
+- sdk/yelp-tools.bst
 - base.bst

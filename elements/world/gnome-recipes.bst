@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/gnome-autoar.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
-- core-deps/gtk+-3.bst
+- sdk/gnome-online-accounts.bst
+- sdk/gtk+-3.bst
 - base.bst

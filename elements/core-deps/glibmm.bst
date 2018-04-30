@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:glibmm
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/libsigcplusplus.bst
+- sdk/glib.bst
 - base.bst
 variables:
   conf-local: --enable-maintainer-mode

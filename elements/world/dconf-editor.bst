@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:dconf-editor
   track: master
 depends:
-- core-deps/dconf.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/dconf.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - base.bst

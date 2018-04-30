@@ -4,6 +4,6 @@ sources:
   url: git_gnome_org:gmime
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk-doc.bst
+- sdk/glib.bst
+- sdk/gtk-doc.bst
 - base.bst

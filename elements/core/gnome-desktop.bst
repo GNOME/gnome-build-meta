@@ -4,11 +4,11 @@ sources:
   url: git_gnome_org:gnome-desktop
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/yelp-tools.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/gtk+-3.bst
+- sdk/yelp-tools.bst
 - base.bst
 variables:
   conf-local: --with-gnome-distributor=gnome-build-meta

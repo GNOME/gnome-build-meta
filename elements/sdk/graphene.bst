@@ -1,0 +1,9 @@
+kind: meson
+sources:
+- kind: git
+  url: github_com:ebassi/graphene.git
+  track: master
+depends:
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- base.bst

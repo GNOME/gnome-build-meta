@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-dictionary
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/yelp-tools.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/yelp-tools.bst
 - base.bst

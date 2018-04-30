@@ -4,16 +4,16 @@ sources:
   url: git_gnome_org:sushi
   track: master
 depends:
-- core-deps/WebKitGTK+.bst
-- core-deps/clutter-gst.bst
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
-- core-deps/gjs.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
+- sdk/WebKitGTK+.bst
+- sdk/clutter.bst
+- sdk/clutter-gst.bst
+- sdk/clutter-gtk.bst
+- sdk/gjs.bst
+- sdk/gobject-introspection.bst
+- sdk/gst-plugins-base.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
 - base.bst

@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:gnome-bluetooth
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/gtk-doc.bst
-- core-deps/libcanberra.bst
-- core-deps/libnotify.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/gtk-doc.bst
+- sdk/libcanberra.bst
+- sdk/libnotify.bst
 - base.bst

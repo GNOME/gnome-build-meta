@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-shell-extensions.git
   track: master
 depends:
-- core-deps/librsvg.bst
 - core/gnome-menus.bst
 - core/gnome-shell.bst
+- sdk/librsvg.bst
 - base.bst
 variables:
   meson-local: -Dextension_set=classic

@@ -5,14 +5,14 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/dconf.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gstreamer.bst
 - core-deps/libgrss.bst
 - core-deps/libgsf.bst
-- core-deps/libsecret.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
+- sdk/dconf.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gst-plugins-base.bst
+- sdk/gstreamer.bst
+- sdk/libsecret.bst
 - base.bst

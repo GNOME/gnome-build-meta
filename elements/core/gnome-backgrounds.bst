@@ -4,5 +4,5 @@ sources:
   url: git_gnome_org:gnome-backgrounds
   track: master
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - base.bst
