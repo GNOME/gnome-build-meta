@@ -10,6 +10,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/json-glib.bst
+- core-deps/libdazzle.bst
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
