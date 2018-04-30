@@ -4,13 +4,13 @@ sources:
   url: git_gnome_org:gnome-weather
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/gjs.bst
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
 - core-deps/libgweather.bst
-- core/adwaita-icon-theme.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/gdk-pixbuf.bst
+- sdk/gjs.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
 - base.bst
 variables:
   conf-local: --disable-dogtail

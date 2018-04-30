@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:geocode-glib
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk-doc.bst
-- core-deps/json-glib.bst
-- core-deps/libsoup.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
+- sdk/json-glib.bst
+- sdk/libsoup.bst
 - base.bst

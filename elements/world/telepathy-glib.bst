@@ -4,11 +4,11 @@ sources:
   url: git_freedesktop_org:telepathy/telepathy-glib
   track: master
 depends:
-- core-deps/avahi.bst
-- core-deps/dbus-glib.bst
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/vala.bst
+- sdk/avahi.bst
+- sdk/dbus-glib.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/vala.bst
 - base.bst
 variables:
   conf-local: --enable-vala-bindings --disable-fatal-warnings

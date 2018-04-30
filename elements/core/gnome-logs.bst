@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:gnome-logs
   track: master
 depends:
-- core-deps/gtk+-3.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/gtk+-3.bst
+- sdk/yelp-tools.bst
 - base.bst

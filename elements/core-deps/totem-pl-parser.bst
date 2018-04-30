@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:totem-pl-parser
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/gmime3.bst
-- core-deps/gobject-introspection.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
 - base.bst

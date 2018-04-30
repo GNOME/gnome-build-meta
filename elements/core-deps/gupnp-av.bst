@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gupnp-av
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
 - core-deps/gupnp.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
 - base.bst

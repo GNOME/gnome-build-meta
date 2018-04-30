@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:libgovirt
   track: master
 depends:
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
-- core-deps/librest.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
+- sdk/librest.bst
 - base.bst

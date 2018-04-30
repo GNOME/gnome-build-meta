@@ -4,10 +4,10 @@ sources:
   url: git_gnome_org:gsound
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/libcanberra.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/libcanberra.bst
+- sdk/vala.bst
 - base.bst
 variables:
   conf-local: --disable-gtk-doc
