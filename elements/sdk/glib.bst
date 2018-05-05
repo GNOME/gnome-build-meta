@@ -4,7 +4,8 @@ sources:
   url: git_gnome_org:glib
   track: master
 depends:
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - base.bst
 variables:
   conf-local: --enable-installed-tests --disable-libmount

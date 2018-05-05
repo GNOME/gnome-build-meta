@@ -6,11 +6,13 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gobject-introspection.bst
 - sdk/libcroco.bst
 - sdk/pango.bst
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
 - base.bst
 variables:
   conf-local: --enable-vala=yes

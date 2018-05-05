@@ -6,7 +6,8 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
 - base.bst
 variables:
   conf-local: --enable-introspection=yes
