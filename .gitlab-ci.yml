@@ -36,7 +36,7 @@ bst-build-gnome-core:
   tags:
     - do
   script:
-    - ${BST} build --track-all core.bst
+    - ${BST} build --track-all core.bst flatpak-runtimes.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
