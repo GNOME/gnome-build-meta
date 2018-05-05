@@ -21,6 +21,7 @@ cache:
 
 
 before_script:
+  - git submodule update --init
   # Remove any installed buildstream binary
   - pip3 uninstall -y buildstream
   # Use specific version of BuildStream
@@ -36,7 +37,7 @@ bst-build-gnome-core:
   tags:
     - do
   script:
-    - ${BST} build --track-all core.bst
+    - ${BST} build --track-all core.bst flatpak-runtimes.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
