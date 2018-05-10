@@ -6,4 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- base.bst
+- filename: desktop/dbus.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

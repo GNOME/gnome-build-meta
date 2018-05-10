@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 environment:
   CC: gcc -std=c99

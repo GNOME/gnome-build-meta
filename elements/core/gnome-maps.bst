@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst
+- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/gjs.bst
 - core-deps/glib.bst
@@ -19,4 +20,5 @@ depends:
 - core/adwaita-icon-theme.bst
 - core/glib-networking.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

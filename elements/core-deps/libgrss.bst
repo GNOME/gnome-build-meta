@@ -6,4 +6,5 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

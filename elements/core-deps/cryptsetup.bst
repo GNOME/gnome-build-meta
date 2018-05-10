@@ -7,4 +7,5 @@ depends:
 - core-deps/json-c.bst
 - core-deps/lvm2.bst
 - core-deps/popt.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

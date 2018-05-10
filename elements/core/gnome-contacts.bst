@@ -15,6 +15,7 @@ depends:
 - core/adwaita-icon-theme.bst
 - core/cheese.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dtelepathy=false

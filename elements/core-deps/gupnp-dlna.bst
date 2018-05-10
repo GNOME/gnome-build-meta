@@ -9,4 +9,5 @@ depends:
 - core-deps/gst-plugins-good.bst
 - core-deps/gstreamer.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

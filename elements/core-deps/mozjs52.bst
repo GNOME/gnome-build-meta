@@ -3,7 +3,8 @@ sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-52.2.1gnome1.tar.gz
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   command-subdir: _build
   conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc

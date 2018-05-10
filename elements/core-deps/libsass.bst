@@ -1,7 +1,8 @@
 kind: autotools
 
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 
 sources:
 - kind: tar

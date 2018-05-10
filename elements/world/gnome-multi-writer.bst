@@ -8,4 +8,5 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk+-3.bst
 - core-deps/libgusb.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

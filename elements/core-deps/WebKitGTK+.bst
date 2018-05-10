@@ -6,6 +6,7 @@ depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
 - core-deps/enchant-2.bst
+- core-deps/geoclue.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gst-libav.bst
 - core-deps/gst-plugins-bad.bst
@@ -18,6 +19,11 @@ depends:
 - core-deps/pango.bst
 - core-deps/wayland.bst
 - core-deps/woff2.bst
-- base.bst
+- filename: desktop/hyphen.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xt.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF

@@ -6,4 +6,5 @@ sources:
 depends:
 - core-deps/clutter.bst
 - core-deps/gtk+-3.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

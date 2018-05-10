@@ -7,4 +7,5 @@ depends:
 - core-deps/atk.bst
 - core-deps/at-spi2-core.bst
 - core-deps/glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

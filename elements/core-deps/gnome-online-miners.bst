@@ -11,4 +11,5 @@ depends:
 - core-deps/libgfbgraph.bst
 - core-deps/libzapojit.bst
 - core-deps/tracker.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

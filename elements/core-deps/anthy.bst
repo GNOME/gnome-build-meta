@@ -3,4 +3,5 @@ sources:
 - kind: tar
   url: http://http.debian.net/debian/pool/main/a/anthy/anthy_0.3.orig.tar.gz
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

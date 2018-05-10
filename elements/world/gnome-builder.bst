@@ -21,6 +21,7 @@ depends:
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dwith_sysmon=false -Dwith_sysprof=false

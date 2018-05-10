@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/WebKitGTK+.bst
+- core-deps/appstream-glib.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
@@ -17,4 +18,5 @@ depends:
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
 - core/glib-networking.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -15,4 +15,7 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
-- base.bst
+- filename: desktop/libseccomp.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -7,6 +7,7 @@ depends:
 - core-deps/gstreamer.bst
 - core-deps/gtk+-3.bst
 - core-deps/libgudev.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Ddisable_gtkdoc=true

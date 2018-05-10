@@ -7,7 +7,8 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/libgudev.bst
 - core-deps/libusb.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: ''
 config:

@@ -1,15 +1,14 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libchamplain
+  url: git_freedesktop_org:geoclue
   track: master
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
+- core-deps/ModemManager.bst
+- core-deps/avahi.bst
 - core-deps/glib.bst
-- core-deps/gtk+-3.bst
+- core-deps/json-glib.bst
+- core-deps/libnotify.bst
 - core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: --enable-vala

@@ -3,6 +3,7 @@ sources:
 - kind: tar
   url: github_com:libgit2/libgit2/archive/v0.26.0.tar.gz
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DTHREADSAFE:BOOL=1

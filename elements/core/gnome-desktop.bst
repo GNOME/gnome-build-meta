@@ -9,6 +9,9 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/yelp-tools.bst
 - core/gsettings-desktop-schemas.bst
-- base.bst
+- filename: desktop/libseccomp.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-gnome-distributor=gnome-build-meta

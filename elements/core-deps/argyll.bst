@@ -5,7 +5,20 @@ sources:
 depends:
 - filename: core-deps/ftjam.bst
   type: build
-- base.bst
+- filename: desktop/xorg-lib-x11.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xdmcp.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xrandr.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xinerama.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xscrnsaver.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xxf86vm.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 config:
   build-commands:
   - jam -q -fJambase -j%{max-jobs}

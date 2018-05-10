@@ -9,7 +9,8 @@ depends:
 - core-deps/openldap.bst
 - core-deps/libtirpc.bst
 - core-deps/rpcsvc-proto.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 config:
   configure-commands:
   - ./configure --enable-fhs --prefix=%{prefix} --exec-prefix=%{exec_prefix} --bindir=%{bindir}

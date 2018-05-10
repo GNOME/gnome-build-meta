@@ -11,4 +11,5 @@ depends:
 - core-deps/pygobject.bst
 - core-deps/speech-dispatcher.bst
 - core-deps/yelp-tools.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

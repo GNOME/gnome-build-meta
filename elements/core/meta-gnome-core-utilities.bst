@@ -35,4 +35,5 @@ depends:
 - core/simple-scan.bst
 - core/totem.bst
 - core/yelp.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

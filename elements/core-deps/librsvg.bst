@@ -11,6 +11,7 @@ depends:
 - core-deps/libcroco.bst
 - core-deps/pango.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-vala=yes

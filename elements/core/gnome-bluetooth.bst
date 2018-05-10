@@ -9,4 +9,5 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/libcanberra.bst
 - core-deps/libnotify.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

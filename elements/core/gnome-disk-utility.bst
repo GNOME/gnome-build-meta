@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:gnome-disk-utility
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/libdvdread.bst
@@ -13,4 +14,5 @@ depends:
 - core-deps/udisks2.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-settings-daemon.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -6,4 +6,5 @@ sources:
 depends:
 - core-deps/gnome-common.bst
 - core-deps/gstreamer.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

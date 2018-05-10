@@ -11,4 +11,5 @@ depends:
 - core-deps/librsvg.bst
 - core-deps/polkit.bst
 - core/adwaita-icon-theme.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

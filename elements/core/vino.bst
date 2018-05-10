@@ -10,4 +10,11 @@ depends:
 - core-deps/libnotify.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: desktop/xorg-lib-ice.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-sm.bst
+  junction: freedesktop-sdk.bst
+- filename: vm/linux-vm-boot/systemd.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

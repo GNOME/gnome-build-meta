@@ -9,6 +9,7 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gssdp.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-context-manager=network-manager

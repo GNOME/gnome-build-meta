@@ -5,4 +5,5 @@ sources:
 - kind: patch
   path: files/kyotocabinet/cpp-14.patch
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

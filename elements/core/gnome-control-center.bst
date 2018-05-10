@@ -33,4 +33,5 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/gsettings-desktop-schemas.bst
 - core/network-manager-applet.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

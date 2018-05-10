@@ -4,4 +4,5 @@ sources:
   url: git_gnome_org:mobile-broadband-provider-info
   track: master
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

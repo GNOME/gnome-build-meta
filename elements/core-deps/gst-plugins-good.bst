@@ -7,4 +7,5 @@ depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/gst-plugins-base.bst
 - core-deps/libgudev.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

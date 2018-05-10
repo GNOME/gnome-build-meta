@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:totem
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst
@@ -22,6 +23,7 @@ depends:
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dwith-plugins=none

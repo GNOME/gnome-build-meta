@@ -16,4 +16,5 @@ depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

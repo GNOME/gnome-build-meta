@@ -14,7 +14,8 @@ depends:
 - core-deps/ppp.bst
 - core-deps/pygobject.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: PYTHON=python3 --with-udev-dir=/usr/lib/udev  --with-crypto=gnutls --disable-more-warnings
     --disable-json-validation --disable-ovs

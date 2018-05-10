@@ -19,4 +19,7 @@ depends:
 - core/adwaita-icon-theme.bst
 - core/evince.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: desktop/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

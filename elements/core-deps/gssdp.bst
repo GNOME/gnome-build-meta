@@ -7,7 +7,8 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 config:
   build-commands:
   - '%{make} CFLAGS=-Wno-error'

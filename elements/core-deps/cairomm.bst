@@ -5,6 +5,9 @@ sources:
   track: master
 depends:
 - core-deps/libsigcplusplus.bst
-- base.bst
+- filename: desktop/cairo.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-documentation

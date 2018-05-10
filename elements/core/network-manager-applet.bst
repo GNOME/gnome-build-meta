@@ -15,7 +15,8 @@ depends:
 - core-deps/mobile-broadband-provider-info.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-bluetooth.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-more-warnings=no --disable-migration --without-bluetooth --without-team
     --without-selinux

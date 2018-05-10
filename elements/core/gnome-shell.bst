@@ -27,4 +27,5 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - core/mutter.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
