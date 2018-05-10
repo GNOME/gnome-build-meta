@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:quadrapassel
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/clutter-gtk.bst
 - core-deps/clutter.bst
 - core-deps/gtk+-3.bst
@@ -11,4 +12,5 @@ depends:
 - core-deps/vala.bst
 - core-deps/yelp-tools.bst
 - world/libmanette.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

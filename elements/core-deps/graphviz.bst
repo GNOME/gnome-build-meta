@@ -3,7 +3,10 @@ sources:
 - kind: tar
   url: https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/graphviz.tar.gz
 depends:
-- base.bst
+- core-deps/gdk-pixbuf.bst
+- core-deps/pango.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 public:
   bst:
     integration-commands:

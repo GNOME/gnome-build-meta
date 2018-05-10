@@ -4,6 +4,7 @@ sources:
   url: git_freedesktop_org:wayland/wayland
   track: master
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-documentation

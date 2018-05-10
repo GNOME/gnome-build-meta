@@ -14,7 +14,8 @@ depends:
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 
 variables:
   meson-local: |

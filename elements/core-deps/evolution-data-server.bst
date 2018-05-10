@@ -15,7 +15,8 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/openldap.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DENABLE_INTROSPECTION=ON -DENABLE_VALA_BINDINGS=ON -DENABLE_UOA=OFF
     -DENABLE_GOOGLE_AUTH=OFF -DLIB_INSTALL_DIR=%{libdir}

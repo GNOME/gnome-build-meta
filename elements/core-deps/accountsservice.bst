@@ -7,6 +7,5 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/polkit.bst
-- base.bst
-variables:
-  conf-local: ''
+- filename: base.bst
+  junction: freedesktop-sdk.bst

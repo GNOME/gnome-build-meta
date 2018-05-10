@@ -8,4 +8,5 @@ depends:
 - core-deps/pygobject.bst
 - core/gnome-shell.bst
 - core/nautilus.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

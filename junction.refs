@@ -1,4 +1,4 @@
 projects:
   gnome:
-    base/freedesktop-sdk-junction.bst:
+    freedesktop-sdk.bst:
     - ref: 08951cbce5152f53c7755279935a1147e4b923b5

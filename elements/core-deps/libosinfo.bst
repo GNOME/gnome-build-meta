@@ -13,6 +13,7 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/osinfo-db-tools.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-werror=no

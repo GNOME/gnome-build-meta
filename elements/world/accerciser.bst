@@ -10,4 +10,5 @@ depends:
 - core-deps/pyatspi2.bst
 - core-deps/pygobject.bst
 - core-deps/yelp-tools.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

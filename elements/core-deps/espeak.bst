@@ -3,8 +3,9 @@ sources:
 - kind: zip
   url: downloads.sourceforge.net:espeak/espeak/espeak-1.48/espeak-1.48.04-source.zip
 depends:
-- base.bst
 - core-deps/portaudio.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 config:
   configure-commands:
   - cp -f src/portaudio19.h src/portaudio.h

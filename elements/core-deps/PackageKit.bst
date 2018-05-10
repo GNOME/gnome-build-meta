@@ -9,7 +9,8 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin
     --disable-bash-completion --disable-gtk-module

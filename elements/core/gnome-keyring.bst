@@ -7,4 +7,5 @@ depends:
 - core-deps/gcr.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

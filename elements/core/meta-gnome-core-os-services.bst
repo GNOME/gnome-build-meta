@@ -7,4 +7,5 @@ depends:
 - core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

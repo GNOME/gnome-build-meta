@@ -9,4 +9,5 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gst-plugins-base.bst
 - core-deps/gstreamer.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

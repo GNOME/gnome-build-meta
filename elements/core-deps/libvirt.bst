@@ -7,4 +7,5 @@ depends:
 - core-deps/libtirpc.bst
 - core-deps/portablexdr.bst
 - core-deps/lvm2.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

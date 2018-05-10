@@ -11,6 +11,7 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/upower.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-unicode-support=libicu --with-bash-completion-dir=/usr/share/bash-completion/completions

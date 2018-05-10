@@ -9,4 +9,5 @@ depends:
 - core-deps/json-glib.bst
 - core-deps/librest.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -8,4 +8,5 @@ depends:
 - core-deps/graphviz.bst
 - filename: core-deps/vala-tarball.bst
   type: build
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

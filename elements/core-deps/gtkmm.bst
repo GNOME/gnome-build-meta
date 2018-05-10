@@ -9,6 +9,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+.bst
 - core-deps/pangomm.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-maintainer-mode

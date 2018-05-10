@@ -7,6 +7,7 @@ depends:
 - core-deps/librsvg.bst
 - core/gnome-menus.bst
 - core/gnome-shell.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dextension_set=classic

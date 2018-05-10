@@ -9,6 +9,7 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/libgee.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-eds-backend --disable-libsocialweb-backend --disable-telepathy-backend --disable-fatal-warnings

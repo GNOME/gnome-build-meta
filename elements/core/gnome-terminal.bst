@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:gnome-terminal
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/dconf.bst
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
@@ -14,6 +15,9 @@ depends:
 - core/gnome-shell.bst
 - core/gsettings-desktop-schemas.bst
 - core/nautilus.bst
-- base.bst
+- filename: desktop/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-migration

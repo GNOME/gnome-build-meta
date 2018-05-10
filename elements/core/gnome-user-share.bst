@@ -8,4 +8,5 @@ depends:
 - core-deps/libnotify.bst
 - core/gnome-bluetooth.bst
 - core/nautilus.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

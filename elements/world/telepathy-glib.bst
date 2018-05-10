@@ -9,6 +9,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-vala-bindings --disable-fatal-warnings

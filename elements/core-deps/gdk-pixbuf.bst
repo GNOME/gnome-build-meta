@@ -7,7 +7,10 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
-- base.bst
+- filename: desktop/shared-mime-info.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 public:
   bst:
     integration-commands:

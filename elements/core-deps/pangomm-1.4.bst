@@ -8,6 +8,7 @@ depends:
 - core-deps/cairomm-1.0.bst
 - core-deps/glibmm-2.4.bst
 - core-deps/pango.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-maintainer-mode

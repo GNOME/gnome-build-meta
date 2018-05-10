@@ -8,6 +8,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk-doc.bst
 - world/telepathy-glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-upower

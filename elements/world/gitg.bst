@@ -17,4 +17,5 @@ depends:
 - core-deps/vala.bst
 - core/gsettings-desktop-schemas.bst
 - world/libgit2-glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

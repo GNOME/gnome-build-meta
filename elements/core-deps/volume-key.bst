@@ -7,4 +7,5 @@ sources:
 depends:
 - core-deps/cryptsetup.bst
 - core-deps/gpgme.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

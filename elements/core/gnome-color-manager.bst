@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:gnome-color-manager
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/colord-gtk.bst
 - core-deps/exiv2.bst
 - core-deps/glib.bst
@@ -13,4 +14,5 @@ depends:
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

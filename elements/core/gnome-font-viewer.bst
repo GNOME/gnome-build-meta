@@ -8,4 +8,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -9,6 +9,7 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gcr.bst
 - core-deps/gdk-pixbuf.bst
+- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/glib.bst
 - core-deps/gnome-autoar.bst
@@ -22,6 +23,7 @@ depends:
 - core-deps/yelp-tools.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DENABLE_LIBCRYPTUI=OFF -DENABLE_PST_IMPORT=OFF -DENABLE_YTNEF=OFF

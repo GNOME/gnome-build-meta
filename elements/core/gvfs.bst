@@ -23,6 +23,7 @@ depends:
 - core-deps/polkit.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dsystemduserunitdir=no -Dtmpfilesdir=no -Dinstalled_tests=true -Ddbus_service_dir=/usr/share/dbus-1/services

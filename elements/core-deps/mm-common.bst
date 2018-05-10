@@ -24,6 +24,7 @@ sources:
   path: files/mm-common/libstdc++.tag
   directory: doctags/
 depends:
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-network

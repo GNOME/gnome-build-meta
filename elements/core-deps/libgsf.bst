@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --without-bonobo --without-gnome-vfs --enable-introspection

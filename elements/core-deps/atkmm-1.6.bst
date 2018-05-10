@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/atk.bst
 - core-deps/glibmm-2.4.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-maintainer-mode

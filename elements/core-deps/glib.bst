@@ -5,7 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/gtk-doc.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-installed-tests --disable-libmount
 public:

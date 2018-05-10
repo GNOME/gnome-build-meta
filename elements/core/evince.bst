@@ -13,6 +13,7 @@ depends:
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
 - core/nautilus.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-introspection

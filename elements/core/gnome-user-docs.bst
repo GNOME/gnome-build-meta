@@ -5,4 +5,5 @@ sources:
   track: master
 depends:
 - core-deps/yelp-tools.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

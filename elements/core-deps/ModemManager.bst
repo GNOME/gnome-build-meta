@@ -9,6 +9,7 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libmbim.bst
 - core-deps/libqmi.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-udev-base-dir=/usr/lib/udev  --disable-more-warnings

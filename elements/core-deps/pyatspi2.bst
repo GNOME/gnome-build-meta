@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/pygobject.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-python=python3

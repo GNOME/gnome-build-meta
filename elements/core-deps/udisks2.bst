@@ -7,4 +7,5 @@ depends:
 - core-deps/libatasmart.bst
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

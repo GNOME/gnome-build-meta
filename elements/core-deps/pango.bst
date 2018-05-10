@@ -8,4 +8,11 @@ depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
-- base.bst
+- filename: desktop/cairo.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/harfbuzz.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/fontconfig.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

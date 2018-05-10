@@ -4,4 +4,7 @@ sources:
   url: git_gnome_org:yelp-xsl
   track: master
 depends:
-- base.bst
+- filename: desktop/itstools.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

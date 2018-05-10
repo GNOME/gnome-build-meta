@@ -8,4 +8,5 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - world/telepathy-glib.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -16,6 +16,7 @@ depends:
 - core-deps/gtk-doc.bst
 - core-deps/pango.bst
 - core-deps/wayland.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Denable-broadway-backend=true

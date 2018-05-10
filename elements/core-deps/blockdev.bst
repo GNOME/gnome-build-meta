@@ -10,4 +10,7 @@ depends:
 - core-deps/lvm2.bst
 - core-deps/parted.bst
 - core-deps/volume-key.bst
-- base.bst
+- filename: vm/linux-vm-boot/systemd.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

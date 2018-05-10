@@ -19,4 +19,5 @@ depends:
 - core-deps/tracker.bst
 - core-deps/vala.bst
 - core/adwaita-icon-theme.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

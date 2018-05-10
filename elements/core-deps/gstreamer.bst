@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: -Ddisable_gtkdoc=true

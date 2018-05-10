@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/libsigcplusplus-2.0.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-maintainer-mode

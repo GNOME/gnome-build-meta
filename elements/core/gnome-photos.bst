@@ -22,4 +22,7 @@ depends:
 - core-deps/tracker.bst
 - core/adwaita-icon-theme.bst
 - core/gsettings-desktop-schemas.bst
-- base.bst
+- filename: desktop/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

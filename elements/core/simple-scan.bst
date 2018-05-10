@@ -13,4 +13,5 @@ depends:
 - core-deps/vala.bst
 - core-deps/sane-backends.bst
 - core/adwaita-icon-theme.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

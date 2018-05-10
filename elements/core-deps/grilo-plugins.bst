@@ -18,4 +18,5 @@ depends:
 - core-deps/libsoup.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

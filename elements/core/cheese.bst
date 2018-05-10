@@ -4,6 +4,7 @@ sources:
   url: git_gnome_org:cheese
   track: master
 depends:
+- core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
 - core-deps/glib.bst
@@ -19,4 +20,5 @@ depends:
 - core-deps/vala.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

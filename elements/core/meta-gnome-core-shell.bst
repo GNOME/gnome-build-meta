@@ -31,4 +31,5 @@ depends:
 - core/rygel.bst
 - core/sushi.bst
 - core/vino.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

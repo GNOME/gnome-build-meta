@@ -6,7 +6,9 @@ depends:
 - core-deps/anthy.bst
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
+- core-deps/ibus.bst
 - core-deps/pygobject.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-private-png=yes --with-python=python3

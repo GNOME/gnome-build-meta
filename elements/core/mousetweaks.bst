@@ -6,4 +6,9 @@ sources:
 depends:
 - core-deps/gtk+-3.bst
 - core/gsettings-desktop-schemas.bst
-- base.bst
+- filename: desktop/xorg-lib-xcursor.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xtst.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

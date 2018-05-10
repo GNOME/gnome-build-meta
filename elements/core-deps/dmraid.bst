@@ -5,6 +5,7 @@ sources:
   base-dir: dmraid/1.0.0.rc16-3/dmraid
 depends:
 - core-deps/lvm2.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   make: make -j1

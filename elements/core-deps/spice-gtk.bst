@@ -9,6 +9,7 @@ depends:
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-smartcard --enable-vala --enable-webdav

@@ -10,6 +10,7 @@ depends:
 - core-deps/librest.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-telepathy

@@ -8,6 +8,7 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/libvirt.bst
 - core-deps/vala.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-werror=no

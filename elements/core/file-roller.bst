@@ -8,4 +8,5 @@ depends:
 - core-deps/gtk+-3.bst
 - core-deps/yelp-tools.bst
 - core/adwaita-icon-theme.bst
-- base.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst
