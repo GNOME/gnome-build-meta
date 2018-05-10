@@ -132,3 +132,4 @@ depends:
 - core-deps/woff2.bst
 - core-deps/yelp-tools.bst
 - core-deps/yelp-xsl.bst
+- core-deps/zenity.bst
