@@ -1,11 +1,12 @@
 kind: autotools
 sources:
-- kind: tar
-  url: https://download.gnome.org/sources/atk/2.29/atk-2.29.1.tar.xz
-  ref: 1aa7707c6297c1797fe4d79a22a57ede4d5586b0f7a3b30e886d7ca9d75f20da
+- url: https://download.gnome.org/sources/atk/2.28/atk-2.28.1.tar.xz
+  kind: tar
+  ref: cd3a1ea6ecc268a2497f0cd018e970860de24a6d42086919d6bf6c8e8d53f4fc
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - core-deps/meson.bst
 - base.bst
+
