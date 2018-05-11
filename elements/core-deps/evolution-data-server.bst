@@ -8,6 +8,7 @@ depends:
 - core-deps/gcr.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/libical.bst
