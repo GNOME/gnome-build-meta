@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/glib.bst
+- core-deps/gspell.bst
 - core-deps/gtk+-3.bst
 - core-deps/libgxps.bst
 - core-deps/libsecret.bst
