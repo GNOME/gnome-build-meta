@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gnome-system-monitor/3.28/gnome-system-monitor-3.28.1.tar.xz
-  kind: tar
-  ref: 873f10d9282ea28892e9076eebd81daedf3a982945b22d79e50fd4ec6a69b771
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-system-monitor/3.28/gnome-system-monitor-3.28.2.tar.xz
+  ref: eb87863f2505ae4ad693b3b6fe79817b6a9d57f6ed7de98bb2dbf95610b29198
 depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst

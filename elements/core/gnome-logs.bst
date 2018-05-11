@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gnome-logs/3.28/gnome-logs-3.28.0.tar.xz
-  kind: tar
-  ref: cbe03758b7936a2c54470b5dd13ba6c2d972c23107563949af560b76fe9a7c48
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-logs/3.28/gnome-logs-3.28.2.tar.xz
+  ref: e0ad07b66f77d581cc7e4e76da5d4131f9244fb50559de9315bff59c4be11563
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/gtk+-3.bst

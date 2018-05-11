@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gnome-initial-setup/3.28/gnome-initial-setup-3.28.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.28/gnome-initial-setup-3.28.0.tar.xz
   ref: b9de6a9fb618b886e2d7c34cb15f39ad34fb5cb7c4b4541caf813ee70462d8eb
 depends:
 - core-deps/NetworkManager.bst

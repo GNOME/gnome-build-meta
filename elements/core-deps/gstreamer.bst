@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.0.tar.xz
-  kind: tar
+- kind: tar
+  url: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.0.tar.xz
   ref: fc361367f0d4b780a868a8833f9f30b9c9f4ac9faea4e6b251db8b4b0398466e
 depends:
 - core-deps/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/rygel/0.36/rygel-0.36.1.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/rygel/0.36/rygel-0.36.1.tar.xz
   ref: a67fdd801f6e4121ae44cfffabc0f35fff487cab173b6c6f052449ad7b5fb820
 depends:
 - core-deps/gupnp-av.bst

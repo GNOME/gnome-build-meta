@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gnome-music/3.28/gnome-music-3.28.1.tar.xz
-  kind: tar
-  ref: ddf9d53c99791cb00e641aba1205efc8b3ec23a83ba54e7a134988435db37c75
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-music/3.28/gnome-music-3.28.2.1.tar.xz
+  ref: bbf4556b77a97d86b586eeb3015482d800c46bcd293adbda0438ca0871bc9b26
 depends:
 - core-deps/gobject-introspection.bst
 - core-deps/grilo-plugins.bst

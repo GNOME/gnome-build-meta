@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/libdazzle/3.28/libdazzle-3.28.1.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/libdazzle/3.28/libdazzle-3.28.1.tar.xz
   ref: 627cdbd1fda815ad8308f8a01ba9a23d4a8fd11cc783e40d6eadbffba2bc4912
 depends:
 - core-deps/glib.bst

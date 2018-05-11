@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gnome-boxes/3.28/gnome-boxes-3.28.2.tar.xz
-  kind: tar
-  ref: 41656ee54998c5ea6d270c5cf2e5cccfafcecd4ab9e3a414c87542a233375a77
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-boxes/3.28/gnome-boxes-3.28.4.tar.xz
+  ref: 92acd62d3a0fca02997a70341a5d5e81b2f976d1214df472b4106cdef0ffe88c
 depends:
 - core-deps/WebKit.bst
 - core-deps/glib.bst

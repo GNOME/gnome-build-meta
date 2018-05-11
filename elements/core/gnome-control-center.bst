@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gnome-control-center/3.28/gnome-control-center-3.28.1.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-control-center/3.28/gnome-control-center-3.28.1.tar.xz
   ref: c65e56d42e2f8d1fd93ea0afe8c4eafcd4594adc45e2b0d8c069d0f557485738
 depends:
 - core-deps/ModemManager.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/libzapojit/0.0/libzapojit-0.0.3.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/libzapojit/0.0/libzapojit-0.0.3.tar.xz
   ref: 3d25f99329105abb99d1e9651b0aa1842065456ea54c22970a7330e9f3d1c37e
 depends:
 - core-deps/glib.bst

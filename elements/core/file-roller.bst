@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/file-roller/3.28/file-roller-3.28.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/file-roller/3.28/file-roller-3.28.0.tar.xz
   ref: c17139b46dd4c566ae70a7e3cb930b16e46597c7f9931757fcab900e5015f696
 depends:
 - core-deps/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/tracker/2.0/tracker-2.0.3.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/tracker/2.0/tracker-2.0.3.tar.xz
   ref: 5a2fb274c128ec67a920944937b5147ceaf5db16fef6691ea22c4cb841e20580
 depends:
 - core-deps/NetworkManager.bst

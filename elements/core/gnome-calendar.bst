@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gnome-calendar/3.28/gnome-calendar-3.28.1.tar.xz
-  kind: tar
-  ref: 06e7d5d47194dea9f4121f9b9859201e3406a680b35cf6f77fb2502cadfd4cc9
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-calendar/3.28/gnome-calendar-3.28.2.tar.xz
+  ref: dcf72dd7850a8a29dd16ebd2594acd83ac9c35b83f9f6ee87a7c3ae49eeddc74
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/evolution-data-server.bst

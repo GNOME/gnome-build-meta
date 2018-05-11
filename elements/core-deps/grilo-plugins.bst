@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.5.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.5.tar.xz
   ref: 2977827b8ecb3e15535236180e57dc35e85058d111349bdb6a1597e62a5068fb
 depends:
 - core-deps/gmime3.bst

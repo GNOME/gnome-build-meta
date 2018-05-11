@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/vte/0.52/vte-0.52.1.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/vte/0.52/vte-0.52.1.tar.xz
   ref: b0fd4c34905adcb77a1c8a2e4fc1677c79f1115aaea49705b9c8976523386ad3
 depends:
 - core-deps/glib.bst

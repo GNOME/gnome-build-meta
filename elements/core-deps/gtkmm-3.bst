@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gtkmm/3.22/gtkmm-3.22.2.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gtkmm/3.22/gtkmm-3.22.2.tar.xz
   ref: 91afd98a31519536f5f397c2d79696e3d53143b80b75778521ca7b48cb280090
 depends:
 - core-deps/atkmm-1.6.bst

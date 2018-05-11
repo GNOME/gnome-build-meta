@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/geocode-glib/3.25/geocode-glib-3.25.4.1.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/geocode-glib/3.25/geocode-glib-3.25.4.1.tar.xz
   ref: f10169262c313dfaa21acf00687c01e0aaf52983524648e8b9e8e42c052dd778
 depends:
 - core-deps/glib.bst

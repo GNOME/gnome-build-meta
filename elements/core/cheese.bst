@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/cheese/3.28/cheese-3.28.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/cheese/3.28/cheese-3.28.0.tar.xz
   ref: 5c1e7a2e1fccc1b0c7b636fb03f2ae83862e2feaebadb94be37c3758182eaa19
 depends:
 - core-deps/appstream-glib.bst

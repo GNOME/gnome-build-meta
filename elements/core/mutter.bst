@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/mutter/3.28/mutter-3.28.0.tar.xz
-  kind: tar
-  ref: 58fffc8025f21fb6da27bd2189b6db4d20c54f950b1a46aa7f7cbf0a82d386b0
+- kind: tar
+  url: https://download.gnome.org/sources/mutter/3.28/mutter-3.28.2.tar.xz
+  ref: affa89b9c2b8fe500b7bc560ab1121fea80f90787bc0b04dc04f6bba7fd0f045
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst

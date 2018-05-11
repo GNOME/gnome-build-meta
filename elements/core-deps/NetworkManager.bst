@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/NetworkManager/1.11/NetworkManager-1.11.2.tar.xz
-  kind: tar
-  ref: db10f984e08c46704a6bf2646dd7476f01bf496ee80b2d150f08486c78673463
+- kind: tar
+  url: https://download.gnome.org/sources/NetworkManager/1.10/NetworkManager-1.10.6.tar.xz
+  ref: 6af0b1e856a3725f88791f55c4fbb04105dc0b20dbf182aaec8aad16481fac76
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

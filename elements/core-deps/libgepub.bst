@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/libgepub/0.6/libgepub-0.6.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/libgepub/0.6/libgepub-0.6.0.tar.xz
   ref: c78a395cc1d9c57b4485958ed83ffb96ed442750cfafa7797dd6d986b9f7b399
 depends:
 - core-deps/WebKit.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gnome-characters/3.28/gnome-characters-3.28.0.tar.xz
-  kind: tar
-  ref: c0d5cfb41ca1d2a32ab5d37cf77840935ef1bb7ed59bcd69e72acff3b4170993
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-characters/3.28/gnome-characters-3.28.2.tar.xz
+  ref: 8016f974f4fcdd207f1a3784b2e82c66ebe62451ced0d03fd3bc181e87b0d512
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/gjs.bst

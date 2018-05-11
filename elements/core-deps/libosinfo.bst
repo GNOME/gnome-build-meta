@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
-  kind: tar
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.1.0.tar.gz
   ref: 600f43a4a8dae5086a01a3d44bcac2092b5fa1695121289806d544fb287d3136
 depends:
 - core-deps/glib.bst

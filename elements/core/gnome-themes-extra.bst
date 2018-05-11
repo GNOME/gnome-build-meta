@@ -1,7 +1,7 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz
   ref: 7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819
 depends:
 - core-deps/cantarell-fonts.bst

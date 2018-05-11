@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/vala/0.40/vala-0.40.3.tar.xz
-  kind: tar
-  ref: 6d4f1f0b2edaa0d4aa96f72735a9845e6b1acf80a0a2ae494b5d43e07833119e
+- kind: tar
+  url: https://download.gnome.org/sources/vala/0.40/vala-0.40.4.tar.xz
+  ref: 379354a2a2f7ee5c4d6e0f5e88b0e32620dcd5f51972baf6d90d9f18eb689198
 depends:
 - core-deps/glib.bst
 - base.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- url: https://download.gnome.org/sources/sushi/3.24/sushi-3.24.0.tar.xz
-  kind: tar
-  ref: f90bb95172664486f8d529995007fd12f0df9d0c998e20658b6203f46ce70d48
+- kind: tar
+  url: https://download.gnome.org/sources/sushi/3.28/sushi-3.28.3.tar.xz
+  ref: 3c2e5ae4a6553563fb06bcc3bd59b61a6d891cc9a3fad724f805e483c968cdfb
 depends:
 - core-deps/WebKit.bst
 - core-deps/clutter-gst.bst

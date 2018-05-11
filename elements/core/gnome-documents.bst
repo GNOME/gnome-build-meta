@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gnome-documents/3.28/gnome-documents-3.28.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-documents/3.28/gnome-documents-3.28.0.tar.xz
   ref: 0a320e9713c2ebbf345f9865e19ba7a4e56ecc144da3bdd74000c8345f2a989c
 depends:
 - core-deps/WebKit.bst

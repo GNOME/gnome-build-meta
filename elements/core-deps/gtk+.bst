@@ -1,7 +1,7 @@
 kind: meson
 sources:
-- url: https://download.gnome.org/sources/gtk+/3.93/gtk+-3.93.0.tar.xz
-  kind: tar
+- kind: tar
+  url: https://download.gnome.org/sources/gtk+/3.93/gtk+-3.93.0.tar.xz
   ref: 4215d724c751b4999348d812d30261bcdfe52e41db1e20e8f3cefc7e80736251
 depends:
 - core-deps/atk.bst
