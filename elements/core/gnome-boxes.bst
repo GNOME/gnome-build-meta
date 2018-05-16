@@ -21,3 +21,5 @@ depends:
 - core/adwaita-icon-theme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: -Drdp=false
