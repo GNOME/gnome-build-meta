@@ -8,3 +8,4 @@ depends:
 variables:
   # polkit expects the headers there, and the configure script tries to put them there but is buggy
   conf-local: --includedir=/usr/include/security
+  conf-aux: build-aux

@@ -13,3 +13,4 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-smartcard --enable-vala --enable-webdav
+  conf-aux: build-aux

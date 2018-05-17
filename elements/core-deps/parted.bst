@@ -6,3 +6,5 @@ depends:
 - core-deps/lvm2.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-aux: build-aux
