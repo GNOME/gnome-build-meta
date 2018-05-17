@@ -9,3 +9,5 @@ depends:
 - core-deps/gpgme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-aux: admin

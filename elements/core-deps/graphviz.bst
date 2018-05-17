@@ -7,6 +7,8 @@ depends:
 - core-deps/pango.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-aux: config
 public:
   bst:
     integration-commands:
