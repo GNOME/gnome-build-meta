@@ -12,4 +12,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-gtk=3.0 --enable-vala
+  conf-local: --with-gtk=3.0 --enable-vala --disable-werror
