@@ -2,7 +2,7 @@ kind: junction
 sources:
 - kind: git
   url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk/
-  track: gnome
+  track: master
 config:
   options:
     target_arch: '%{arch}'
