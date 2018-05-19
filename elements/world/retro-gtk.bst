@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:GNOME/retro-gtk.git
   track: master
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/clutter-gtk.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
