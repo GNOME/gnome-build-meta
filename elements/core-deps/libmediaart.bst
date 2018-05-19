@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:GNOME/libmediaart
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gtk-doc.bst
-- core-deps/vala.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gtk-doc.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
