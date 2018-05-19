@@ -9,7 +9,8 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/pango.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
