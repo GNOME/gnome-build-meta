@@ -7,9 +7,9 @@ sources:
   path: files/polkit/sysusers.conf
   directory: data
 depends:
-- core-deps/gobject-introspection.bst
-- core-deps/gtk-doc.bst
 - core-deps/mozjs52.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst

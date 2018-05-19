@@ -4,25 +4,25 @@ sources:
   url: gitlab_gnome_org:GNOME/evolution
   track: master
 depends:
-- core-deps/WebKitGTK+.bst
-- core-deps/atk.bst
 - core-deps/evolution-data-server.bst
-- core-deps/gcr.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
-- core-deps/glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
-- core-deps/libnotify.bst
-- core-deps/libsoup.bst
-- core-deps/yelp-tools.bst
 - core/gnome-desktop.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/WebKitGTK+.bst
+- sdk/atk.bst
+- sdk/gcr.bst
+- sdk/gdk-pixbuf.bst
+- sdk/geoclue.bst
+- sdk/glib.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
+- sdk/libnotify.bst
+- sdk/libsoup.bst
+- sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

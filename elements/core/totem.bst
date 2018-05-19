@@ -4,25 +4,25 @@ sources:
   url: gitlab_gnome_org:GNOME/totem
   track: master
 depends:
-- core-deps/appstream-glib.bst
-- core-deps/clutter-gst.bst
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/gst-plugins-bad.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gst-plugins-good.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
 - core-deps/libpeas.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- core/gsettings-desktop-schemas.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/appstream-glib.bst
+- sdk/clutter-gst.bst
+- sdk/clutter-gtk.bst
+- sdk/clutter.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/gst-plugins-bad.bst
+- sdk/gst-plugins-base.bst
+- sdk/gst-plugins-good.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
+- sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
