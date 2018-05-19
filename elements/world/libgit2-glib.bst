@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:GNOME/libgit2-glib
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/pygobject.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/pygobject.bst
+- sdk/vala.bst
 - world/libgit2.bst
 - world/libssh2.bst
 - filename: base.bst
