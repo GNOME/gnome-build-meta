@@ -5,7 +5,8 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
   type: build
