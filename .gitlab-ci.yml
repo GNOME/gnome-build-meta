@@ -5,6 +5,8 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '970c6696f2eef0bde282f82eb95ae4708ccbf308' #  1.1.6
+  BST_EXTERNAL_SHA: '1622d57dfbde94f6cee84e1d8dfd430c86040251' # 0.3.1
+  FLATPAK_BRANCH: master
 
 stages:
   - build
@@ -26,6 +28,14 @@ before_script:
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
   - pip3 install buildstream/
+
+  # install bst-external nedded for the flatpak_image plugin
+  - git clone https://gitlab.com/BuildStream/bst-external.git
+  - git -C bst-external/ checkout $BST_EXTERNAL_SHA
+  - pip3 install bst-external/
+
+  # and flatpak to export the flatpak runtimes
+  - dnf install -y flatpak
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -52,7 +62,17 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} -o arch "${ARCH}" build --track-all core.bst
+    - ${BST} -o arch "${ARCH}" build --track-all core.bst flatpak-runtimes.bst
+    - |
+      mkdir runtimes
+
+      for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
+        bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
+        flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
+      done
+
+    # TODO: push the resulting runtime to sdk.gnome.org
+
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
