@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:GNOME/libzapojit
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/json-glib.bst
 - core-deps/librest.bst
-- core-deps/libsoup.bst
+- sdk/glib.bst
+- sdk/json-glib.bst
+- sdk/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

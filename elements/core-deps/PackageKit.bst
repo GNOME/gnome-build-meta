@@ -5,10 +5,10 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
