@@ -4,12 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/bijiben
   track: master
 depends:
-- core-deps/WebKitGTK+.bst
-- core-deps/appstream-glib.bst
-- core-deps/clutter-gtk.bst
 - core-deps/evolution-data-server.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
 - core-deps/tracker.bst
+- sdk/WebKitGTK+.bst
+- sdk/appstream-glib.bst
+- sdk/clutter-gtk.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
