@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:GNOME/pangomm
   track: master
 depends:
-- core-deps/atk.bst
 - core-deps/cairomm.bst
 - core-deps/glibmm.bst
-- core-deps/pango.bst
+- sdk/atk.bst
+- sdk/pango.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

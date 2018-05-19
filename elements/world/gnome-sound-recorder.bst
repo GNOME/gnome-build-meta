@@ -4,12 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-sound-recorder
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/gjs.bst
-- core-deps/glib.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gst-plugins-good.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk+-3.bst
+- sdk/gdk-pixbuf.bst
+- sdk/gjs.bst
+- sdk/glib.bst
+- sdk/gst-plugins-base.bst
+- sdk/gst-plugins-good.bst
+- sdk/gstreamer.bst
+- sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
