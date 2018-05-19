@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/atkmm
   track: master
 depends:
-- core-deps/atk.bst
 - core-deps/glibmm.bst
+- sdk/atk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

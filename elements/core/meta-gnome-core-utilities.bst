@@ -34,6 +34,6 @@ depends:
 - core/nautilus.bst
 - core/simple-scan.bst
 - core/totem.bst
-- core/yelp.bst
+- sdk/yelp.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
