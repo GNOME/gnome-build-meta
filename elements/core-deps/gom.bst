@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gom
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/pygobject.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

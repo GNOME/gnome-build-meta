@@ -5,12 +5,12 @@ sources:
   track: master
 depends:
 - core-deps/babl.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
 - core-deps/graphviz.bst
-- core-deps/json-glib.bst
-- core-deps/librsvg.bst
-- core-deps/pango.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/json-glib.bst
+- sdk/librsvg.bst
+- sdk/pango.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
