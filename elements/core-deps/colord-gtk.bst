@@ -5,9 +5,9 @@ sources:
   track: master
 depends:
 - core-deps/colord.bst
-- core-deps/glib.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
