@@ -7,7 +7,8 @@ depends:
 - sdk/fribidi.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/fontconfig.bst
