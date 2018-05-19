@@ -5,8 +5,10 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gtk+-3.bst
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst

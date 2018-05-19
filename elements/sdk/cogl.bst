@@ -8,7 +8,8 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gstreamer.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/pango.bst
 - sdk/wayland.bst
 - filename: base.bst
