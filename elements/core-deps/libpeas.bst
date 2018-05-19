@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/libpeas
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
-- core-deps/pygobject.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
+- sdk/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

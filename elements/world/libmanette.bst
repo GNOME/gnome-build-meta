@@ -4,10 +4,10 @@ sources:
   url: gitlab_gnome_org:aplazas/libmanette.git
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/libevdev.bst
 - core-deps/libgudev.bst
-- core-deps/gobject-introspection.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
