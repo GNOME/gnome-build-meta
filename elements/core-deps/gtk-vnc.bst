@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/gtk-vnc
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
