@@ -5,6 +5,7 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: 'bc5a40e3dccbe1cb8066171fc2c0a4a5abeaa31e' #  1.1.3-177-gbc5a40e3
+  FLATPAK_BRANCH: next
 
 stages:
   - build
@@ -30,11 +31,28 @@ before_script:
   # Ensure the log directory exists
   - mkdir -p logs
 
+  # for the flatpak runtimes
+  - dnf install -y flatpak
+
 .build-template: &build
   stage: build
   dependencies: []
   script:
-    - ${BST} build --track-all core.bst
+    - ${BST} build --track-all core.bst flatpak-runtimes.bst
+    - |
+      mkdir runtimes
+
+      for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
+        bst checkout "flatpak/${runtime}.bst" "runtimes/${runtime}";
+        flatpak build-export --files=files repo/ runtimes/${runtime} ${FLATPAK_BRANCH};
+      done
+    - |
+      mkdir flatpak-bundles
+
+      for runtime in org.gnome.Platform org.gnome.Platform.Locale org.gnome.Sdk org.gnome.Sdk.Debug org.gnome.Sdk.Docs org.gnome.Sdk.Locale; do
+        flatpak build-bundle --runtime repo/ flatpak-bundles/$runtime.flatpak $runtime next
+      done
+
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
@@ -47,6 +65,7 @@ before_script:
     when: always
     paths:
       - logs
+      - flatpak-bundles
 
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-51-9632eaf
