@@ -6,9 +6,9 @@ sources:
 depends:
 - core-deps/atkmm.bst
 - core-deps/cairomm.bst
-- core-deps/glib.bst
 - core-deps/gtk+.bst
 - core-deps/pangomm.bst
+- sdk/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/libdazzle.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
-- core-deps/gtk+-3.bst
-- core-deps/vala.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

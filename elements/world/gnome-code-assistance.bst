@@ -4,6 +4,6 @@ sources:
   url: git_gnome_org:gnome-code-assistance
   track: master
 depends:
-- core-deps/vala.bst
+- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
