@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:libgsf
   track: master
 depends:
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

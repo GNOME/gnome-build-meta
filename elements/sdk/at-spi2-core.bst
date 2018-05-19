@@ -1,0 +1,12 @@
+kind: meson
+sources:
+- kind: git
+  url: git_gnome_org:at-spi2-core
+  track: master
+depends:
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- filename: desktop/dbus.bst
+  junction: freedesktop-sdk.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

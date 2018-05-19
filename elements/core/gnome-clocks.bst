@@ -4,14 +4,14 @@ sources:
   url: git_gnome_org:gnome-clocks
   track: master
 depends:
-- core-deps/geoclue.bst
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
-- core-deps/gtk+-3.bst
 - core-deps/libgweather.bst
-- core-deps/vala.bst
-- core-deps/yelp-tools.bst
-- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/geoclue.bst
+- sdk/gtk+-3.bst
+- sdk/vala.bst
+- sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
