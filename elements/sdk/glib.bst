@@ -4,7 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/glib
   track: master
 depends:
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
