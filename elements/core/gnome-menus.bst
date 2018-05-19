@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-menus
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
