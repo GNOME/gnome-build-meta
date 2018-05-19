@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:gupnp-igd
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/gupnp.bst
+- sdk/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
