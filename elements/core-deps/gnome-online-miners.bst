@@ -4,12 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-online-miners
   track: master
 depends:
-- core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
 - core-deps/libzapojit.bst
 - core-deps/tracker.bst
+- sdk/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
