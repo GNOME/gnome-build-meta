@@ -4,18 +4,18 @@ sources:
   url: gitlab_gnome_org:GNOME/gtk+
   track: master
 depends:
-- core-deps/atk.bst
-- core-deps/at-spi2-atk.bst
-- core-deps/gdk-pixbuf.bst
-- core-deps/glib.bst
-- core-deps/gobject-introspection.bst
 - core-deps/graphene.bst
-- core-deps/gst-plugins-bad.bst
-- core-deps/gst-plugins-base.bst
-- core-deps/gstreamer.bst
-- core-deps/gtk-doc.bst
-- core-deps/pango.bst
-- core-deps/wayland.bst
+- sdk/at-spi2-atk.bst
+- sdk/atk.bst
+- sdk/gdk-pixbuf.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
+- sdk/gst-plugins-bad.bst
+- sdk/gst-plugins-base.bst
+- sdk/gstreamer.bst
+- sdk/gtk-doc.bst
+- sdk/pango.bst
+- sdk/wayland.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
