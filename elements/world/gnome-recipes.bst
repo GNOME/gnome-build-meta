@@ -7,6 +7,6 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
-- core-deps/gtk+-3.bst
+- sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
