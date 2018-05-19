@@ -4,11 +4,11 @@ sources:
   url: git_freedesktop_org:ModemManager/ModemManager.git
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gtk-doc.bst
 - core-deps/libgudev.bst
 - core-deps/libmbim.bst
 - core-deps/libqmi.bst
+- sdk/glib.bst
+- sdk/gtk-doc.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

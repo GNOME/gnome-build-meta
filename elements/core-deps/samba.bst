@@ -5,8 +5,8 @@ sources:
 - kind: patch
   path: files/samba/fix-root-build.patch
 depends:
-- core-deps/openldap.bst
 - core-deps/libtirpc.bst
+- core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
