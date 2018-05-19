@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/libgudev
   track: master
 depends:
-- core-deps/glib.bst
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
+- sdk/glib.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
 - filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
