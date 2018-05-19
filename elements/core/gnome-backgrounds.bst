@@ -4,6 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-backgrounds
   track: master
 depends:
-- core-deps/glib.bst
+- sdk/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

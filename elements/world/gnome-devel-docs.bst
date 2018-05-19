@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-devel-docs
   track: master
 depends:
-- core-deps/gnome-common.bst
-- core-deps/yelp-tools.bst
+- sdk/gnome-common.bst
+- sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

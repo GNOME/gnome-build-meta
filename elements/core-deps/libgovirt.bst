@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/libgovirt
   track: master
 depends:
-- core-deps/gnome-common.bst
-- core-deps/gobject-introspection.bst
 - core-deps/librest.bst
+- sdk/gnome-common.bst
+- sdk/gobject-introspection.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
