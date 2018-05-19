@@ -4,7 +4,7 @@ sources:
   url: github_com:lathiat/avahi/releases/download/v0.7/avahi-0.7.tar.gz
 depends:
 - core-deps/libdaemon.bst
-- core-deps/gtk+-3.bst
+- sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

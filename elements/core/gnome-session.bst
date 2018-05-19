@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-session
   track: master
 depends:
-- core-deps/gtk+-3.bst
-- core-deps/json-glib.bst
 - core-deps/upower.bst
 - core-deps/xmlto.bst
 - core/gnome-desktop.bst
+- sdk/gtk+-3.bst
+- sdk/json-glib.bst
 - filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-sm.bst
