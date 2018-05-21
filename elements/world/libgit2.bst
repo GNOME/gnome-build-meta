@@ -6,4 +6,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DTHREADSAFE:BOOL=1
+  cmake-local: -DLIB_INSTALL_DIR:PATH=%{libdir} -DTHREADSAFE:BOOL=1
