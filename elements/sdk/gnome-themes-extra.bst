@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
   track: master
 depends:
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/cantarell-fonts.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst

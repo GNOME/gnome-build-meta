@@ -6,6 +6,8 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
