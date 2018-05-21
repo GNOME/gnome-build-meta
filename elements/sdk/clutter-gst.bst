@@ -9,5 +9,7 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gstreamer.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
