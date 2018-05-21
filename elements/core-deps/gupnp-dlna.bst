@@ -8,6 +8,9 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gstreamer.bst
-- sdk/vala.bst
+- filename: sdk/gtk-doc.bst
+  type: build
+- filename: sdk/vala.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
