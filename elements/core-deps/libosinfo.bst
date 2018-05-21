@@ -11,6 +11,8 @@ depends:
 - core-deps/osinfo-db-tools.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libsoup.bst
 - sdk/vala.bst
 - filename: base.bst
