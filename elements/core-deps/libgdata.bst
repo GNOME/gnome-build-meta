@@ -10,6 +10,8 @@ depends:
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - filename: base.bst
