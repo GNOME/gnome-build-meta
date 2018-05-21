@@ -5,9 +5,13 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/json-glib.bst
 - sdk/libnotify.bst
 - sdk/libsoup.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

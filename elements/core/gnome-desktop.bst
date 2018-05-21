@@ -6,9 +6,14 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/yelp-tools.bst
+- filename: sdk/gtk-doc.bst
+  type: build
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
