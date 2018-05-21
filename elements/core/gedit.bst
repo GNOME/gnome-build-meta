@@ -11,7 +11,11 @@ depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gsettings-desktop-schemas.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
