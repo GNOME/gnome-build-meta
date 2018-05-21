@@ -9,6 +9,8 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/yelp-xsl.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
