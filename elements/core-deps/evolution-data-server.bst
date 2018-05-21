@@ -4,18 +4,18 @@ sources:
   url: git_gnome_org:evolution-data-server
   track: master
 depends:
+- core-deps/WebKitGTK+.bst
+- core-deps/gcr.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/libical.bst
+- core-deps/libsecret.bst
+- core-deps/libsoup.bst
 - core-deps/openldap.bst
-- sdk/WebKitGTK+.bst
-- sdk/gcr.bst
-- sdk/gtk+-3.bst
-- sdk/libcanberra.bst
-- sdk/libsecret.bst
-- sdk/libsoup.bst
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

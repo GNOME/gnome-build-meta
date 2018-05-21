@@ -4,19 +4,19 @@ sources:
   url: git_gnome_org:epiphany
   track: master
 depends:
+- core-deps/WebKitGTK+.bst
+- core-deps/appstream-glib.bst
+- core-deps/gcr.bst
+- core-deps/gdk-pixbuf.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/json-glib.bst
 - core-deps/libdazzle.bst
-- sdk/WebKitGTK+.bst
-- sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
-- sdk/gcr.bst
-- sdk/gdk-pixbuf.bst
-- sdk/glib-networking.bst
-- sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/json-glib.bst
-- sdk/libnotify.bst
-- sdk/libsecret.bst
-- sdk/libsoup.bst
-- sdk/yelp-tools.bst
+- core-deps/libnotify.bst
+- core-deps/libsecret.bst
+- core-deps/libsoup.bst
+- core-deps/yelp-tools.bst
+- core/adwaita-icon-theme.bst
+- core/glib-networking.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

@@ -1,0 +1,11 @@
+kind: meson
+sources:
+- kind: git
+  url: git_gnome_org:atk
+  track: master
+depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/gtk-doc.bst
+- filename: base.bst
+  junction: freedesktop-sdk.bst

@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:gspell
   track: master
 depends:
-- sdk/enchant-2.bst
-- sdk/gtk+-3.bst
-- sdk/vala.bst
+- core-deps/enchant-2.bst
+- core-deps/gtk+-3.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

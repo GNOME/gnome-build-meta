@@ -8,11 +8,11 @@ sources:
 - kind: local
   path: files/libosinfo/usb.ids
 depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/libsoup.bst
 - core-deps/osinfo-db-tools.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/libsoup.bst
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

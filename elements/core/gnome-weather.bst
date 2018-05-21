@@ -4,15 +4,15 @@ sources:
   url: git_gnome_org:gnome-weather
   track: master
 depends:
+- core-deps/appstream-glib.bst
+- core-deps/gdk-pixbuf.bst
+- core-deps/geoclue.bst
+- core-deps/gjs.bst
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/gtk+-3.bst
 - core-deps/libgweather.bst
-- sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
-- sdk/gdk-pixbuf.bst
-- sdk/geoclue.bst
-- sdk/gjs.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/gtk+-3.bst
+- core/adwaita-icon-theme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

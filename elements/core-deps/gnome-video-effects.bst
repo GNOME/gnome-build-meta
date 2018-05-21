@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gnome-video-effects
   track: master
 depends:
-- sdk/gnome-common.bst
-- sdk/gstreamer.bst
+- core-deps/gnome-common.bst
+- core-deps/gstreamer.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

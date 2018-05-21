@@ -3,7 +3,9 @@
 # release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
 depends:
+- core/adwaita-icon-theme.bst
 - core/gdm.bst
+- core/glib-networking.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
@@ -17,8 +19,11 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/gnome-shell-extensions.bst
 - core/gnome-shell.bst
+- core/gnome-themes-extra.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
+- core/gsettings-desktop-schemas.bst
+- core/gvfs.bst
 - core/mousetweaks.bst
 - core/mutter.bst
 - core/network-manager-applet.bst
@@ -26,10 +31,5 @@ depends:
 - core/rygel.bst
 - core/sushi.bst
 - core/vino.bst
-- sdk/adwaita-icon-theme.bst
-- sdk/glib-networking.bst
-- sdk/gnome-themes-extra.bst
-- sdk/gsettings-desktop-schemas.bst
-- sdk/gvfs.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

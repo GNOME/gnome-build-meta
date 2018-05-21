@@ -4,18 +4,18 @@ sources:
   url: git_gnome_org:gitg
   track: master
 depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/gtk+-3.bst
 - core-deps/gtksourceview-3.bst
+- core-deps/json-glib.bst
 - core-deps/libgee.bst
 - core-deps/libpeas.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
-- sdk/json-glib.bst
-- sdk/libsecret.bst
-- sdk/libsoup.bst
-- sdk/pygobject.bst
-- sdk/vala.bst
+- core-deps/libsecret.bst
+- core-deps/libsoup.bst
+- core-deps/pygobject.bst
+- core-deps/vala.bst
+- core/gsettings-desktop-schemas.bst
 - world/libgit2-glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

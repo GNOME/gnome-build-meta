@@ -4,10 +4,10 @@ sources:
   url: git_gnome_org:gupnp-dlna
   track: master
 depends:
-- sdk/glib.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
-- sdk/vala.bst
+- core-deps/glib.bst
+- core-deps/gst-plugins-base.bst
+- core-deps/gst-plugins-good.bst
+- core-deps/gstreamer.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

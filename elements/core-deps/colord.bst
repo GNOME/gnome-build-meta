@@ -8,12 +8,12 @@ sources:
 depends:
 - filename: core-deps/argyll.bst
   type: build
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 

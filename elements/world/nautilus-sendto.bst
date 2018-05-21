@@ -4,6 +4,6 @@ sources:
   url: git_gnome_org:nautilus-sendto
   track: master
 depends:
-- sdk/glib.bst
+- core-deps/glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

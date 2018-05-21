@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:glade
   track: master
 depends:
-- filename: sdk/adwaita-icon-theme.bst
+- core-deps/gtk+-3.bst
+- core-deps/gnome-common.bst
+- filename: core/adwaita-icon-theme.bst
   type: runtime
-- sdk/gnome-common.bst
-- sdk/gtk+-3.bst

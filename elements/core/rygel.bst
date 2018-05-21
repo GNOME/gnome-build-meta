@@ -10,6 +10,6 @@ depends:
 - core-deps/libgee.bst
 - core-deps/libmediaart.bst
 - core-deps/tracker.bst
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

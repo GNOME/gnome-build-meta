@@ -4,21 +4,21 @@ sources:
   url: git_gnome_org:cheese
   track: master
 depends:
+- core-deps/appstream-glib.bst
+- core-deps/clutter-gst.bst
+- core-deps/clutter-gtk.bst
+- core-deps/glib.bst
 - core-deps/gnome-video-effects.bst
+- core-deps/gst-plugins-bad.bst
+- core-deps/gst-plugins-base.bst
+- core-deps/gst-plugins-good.bst
+- core-deps/gstreamer.bst
+- core-deps/gtk+-3.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
+- core-deps/librsvg.bst
+- core-deps/vala.bst
+- core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
-- sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
-- sdk/clutter-gst.bst
-- sdk/clutter-gtk.bst
-- sdk/glib.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
-- sdk/gtk+-3.bst
-- sdk/libcanberra.bst
-- sdk/librsvg.bst
-- sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

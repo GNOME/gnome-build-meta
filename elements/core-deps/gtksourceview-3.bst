@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gtksourceview
   track: gnome-3-24
 depends:
-- sdk/gtk+-3.bst
-- sdk/vala.bst
+- core-deps/gtk+-3.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

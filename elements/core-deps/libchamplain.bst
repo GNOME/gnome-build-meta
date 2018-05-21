@@ -4,11 +4,11 @@ sources:
   url: git_gnome_org:libchamplain
   track: master
 depends:
-- sdk/clutter-gtk.bst
-- sdk/clutter.bst
-- sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libsoup.bst
+- core-deps/clutter-gtk.bst
+- core-deps/clutter.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

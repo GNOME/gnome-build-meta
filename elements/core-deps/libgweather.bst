@@ -5,8 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/geocode-glib.bst
-- sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libsoup.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

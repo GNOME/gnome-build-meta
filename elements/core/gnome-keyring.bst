@@ -4,10 +4,8 @@ sources:
   url: git_gnome_org:gnome-keyring
   track: master
 depends:
-- sdk/gcr.bst
-- sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
-- sdk/gtk+-3.bst
+- core-deps/gcr.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

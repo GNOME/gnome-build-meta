@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:tali
   track: master
 depends:
-- sdk/appstream-glib.bst
-- sdk/gtk+-3.bst
-- sdk/librsvg.bst
-- sdk/yelp-tools.bst
+- core-deps/appstream-glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/librsvg.bst
+- core-deps/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

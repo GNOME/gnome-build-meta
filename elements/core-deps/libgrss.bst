@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:libgrss
   track: master
 depends:
-- sdk/glib.bst
-- sdk/libsoup.bst
+- core-deps/glib.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

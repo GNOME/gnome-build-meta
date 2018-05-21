@@ -4,10 +4,10 @@ sources:
   url: git_gnome_org:libgfbgraph
   track: master
 depends:
+- core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/json-glib.bst
 - core-deps/librest.bst
-- sdk/glib.bst
-- sdk/json-glib.bst
-- sdk/libsoup.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

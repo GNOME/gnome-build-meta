@@ -4,7 +4,7 @@ sources:
   url: gitlab_com:libosinfo/osinfo-db-tools.git
   track: master
 depends:
-- sdk/glib.bst
-- sdk/gnome-common.bst
+- core-deps/glib.bst
+- core-deps/gnome-common.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

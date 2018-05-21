@@ -4,10 +4,8 @@ sources:
   url: git_gnome_org:mousetweaks
   track: master
 depends:
-- filename: sdk/gnome-common.bst
-  type: build
-- sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
+- core-deps/gtk+-3.bst
+- core/gsettings-desktop-schemas.bst
 - filename: desktop/xorg-lib-xcursor.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xtst.bst

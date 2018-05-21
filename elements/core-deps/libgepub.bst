@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:libgepub
   track: master
 depends:
-- sdk/WebKitGTK+.bst
-- sdk/glib.bst
-- sdk/libsoup.bst
+- core-deps/WebKitGTK+.bst
+- core-deps/glib.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

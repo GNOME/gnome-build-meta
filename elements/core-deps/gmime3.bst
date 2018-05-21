@@ -4,7 +4,7 @@ sources:
   url: git_gnome_org:gmime
   track: master
 depends:
-- sdk/glib.bst
-- sdk/gtk-doc.bst
+- core-deps/glib.bst
+- core-deps/gtk-doc.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

@@ -1,3 +1,0 @@
-[submodule "bst-external"]
-	path = bst-external
-	url = https://gitlab.com/BuildStream/bst-external.git

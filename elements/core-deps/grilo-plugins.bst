@@ -11,12 +11,12 @@ depends:
 - core-deps/gssdp.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp.bst
+- core-deps/json-glib.bst
 - core-deps/libgdata.bst
 - core-deps/libmediaart.bst
 - core-deps/librest.bst
+- core-deps/libsoup.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
-- sdk/json-glib.bst
-- sdk/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

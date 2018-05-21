@@ -4,8 +4,8 @@ sources:
   url: git_gnome_org:pyatspi2
   track: master
 depends:
-- sdk/at-spi2-core.bst
-- sdk/pygobject.bst
+- core-deps/at-spi2-core.bst
+- core-deps/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

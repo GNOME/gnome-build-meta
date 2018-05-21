@@ -4,10 +4,8 @@ sources:
   url: git_gnome_org:libgtop
   track: master
 depends:
-- sdk/glib.bst
-- sdk/gnome-common.bst
-- filename: sdk/gtk-doc.bst
-  type: build
+- core-deps/glib.bst
+- core-deps/gnome-common.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 environment:

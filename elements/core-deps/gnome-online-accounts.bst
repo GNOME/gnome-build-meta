@@ -4,12 +4,12 @@ sources:
   url: git_gnome_org:gnome-online-accounts
   track: master
 depends:
+- core-deps/WebKitGTK+.bst
+- core-deps/gtk+-3.bst
+- core-deps/json-glib.bst
 - core-deps/librest.bst
-- sdk/WebKitGTK+.bst
-- sdk/gtk+-3.bst
-- sdk/json-glib.bst
-- sdk/libsecret.bst
-- sdk/libsoup.bst
+- core-deps/libsecret.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

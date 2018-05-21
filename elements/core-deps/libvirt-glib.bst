@@ -4,12 +4,10 @@ sources:
   url: github_com:libvirt/libvirt-glib.git
   track: master
 depends:
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
 - core-deps/libvirt.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:gnome-characters
   track: master
 depends:
-- sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
-- sdk/gjs.bst
-- sdk/gtk+-3.bst
+- core-deps/appstream-glib.bst
+- core-deps/gjs.bst
+- core-deps/gtk+-3.bst
+- core/adwaita-icon-theme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

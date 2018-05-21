@@ -5,11 +5,11 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
-- sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libnotify.bst
-- sdk/libsecret.bst
-- sdk/libsoup.bst
+- core-deps/glib.bst
+- core-deps/gtk+-3.bst
+- core-deps/libnotify.bst
+- core-deps/libsecret.bst
+- core-deps/libsoup.bst
 - filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-sm.bst

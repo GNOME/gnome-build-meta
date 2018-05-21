@@ -5,12 +5,12 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/dconf.bst
+- core-deps/glib.bst
+- core-deps/json-glib.bst
+- core-deps/libsoup.bst
 - core-deps/upower.bst
-- sdk/dconf.bst
-- sdk/glib.bst
-- sdk/json-glib.bst
-- sdk/libsoup.bst
-- sdk/vala.bst
+- core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

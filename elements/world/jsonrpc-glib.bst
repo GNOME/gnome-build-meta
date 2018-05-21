@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/jsonrpc-glib.git
   track: master
 depends:
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/json-glib.bst
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/json-glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

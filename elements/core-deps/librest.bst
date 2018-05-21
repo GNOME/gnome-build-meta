@@ -4,9 +4,7 @@ sources:
   url: git_gnome_org:librest
   track: librest-0-7
 depends:
-- sdk/glib.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- sdk/libsoup.bst
+- core-deps/glib.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

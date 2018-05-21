@@ -4,9 +4,9 @@ sources:
   url: git_gnome_org:gssdp
   track: gssdp_1.0
 depends:
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/libsoup.bst
+- core-deps/glib.bst
+- core-deps/gobject-introspection.bst
+- core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 config:
