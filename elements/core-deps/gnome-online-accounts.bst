@@ -10,6 +10,8 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
