@@ -9,5 +9,7 @@ depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst

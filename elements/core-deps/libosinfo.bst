@@ -13,6 +13,8 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

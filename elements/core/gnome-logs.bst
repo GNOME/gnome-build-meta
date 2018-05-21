@@ -9,6 +9,8 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
