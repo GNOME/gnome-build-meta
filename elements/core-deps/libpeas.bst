@@ -5,9 +5,12 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
