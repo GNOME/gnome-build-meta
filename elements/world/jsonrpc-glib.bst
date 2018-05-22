@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
+- core-deps/vala.bst
 - core-deps/json-glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
