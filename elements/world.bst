@@ -41,6 +41,7 @@ depends:
 - world/libgit2.bst
 - world/libgnome-games-support.bst
 - world/libmanette.bst
+- world/libssh2.bst
 - world/lightsoff.bst
 - world/nautilus-sendto.bst
 - world/polari.bst
