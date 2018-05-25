@@ -5,7 +5,6 @@ sources:
 - kind: patch
   path: files/samba/fix-root-build.patch
 depends:
-- core-deps/pam.bst
 - core-deps/openldap.bst
 - core-deps/libtirpc.bst
 - core-deps/rpcsvc-proto.bst
