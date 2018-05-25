@@ -5,6 +5,7 @@
 kind: stack
 depends:
 - world/accerciser.bst
+- world/amtk.bst
 - world/bijiben.bst
 - world/dconf-editor.bst
 - world/devhelp.bst
