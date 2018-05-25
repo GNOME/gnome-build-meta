@@ -170,7 +170,6 @@ depends:
 - core-deps/openjpeg.bst
 - core-deps/openldap.bst
 - core-deps/osinfo-db-tools.bst
-- core-deps/pam.bst
 - core-deps/pango.bst
 - core-deps/pangomm-1.4.bst
 - core-deps/pangomm.bst

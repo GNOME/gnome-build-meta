@@ -10,7 +10,6 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - core-deps/mozjs52.bst
-- core-deps/pam.bst
 - filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
