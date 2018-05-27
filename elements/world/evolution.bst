@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: git
-  url: git_gnome_org:evolution
+  url: gitlab_gnome_org:evolution
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

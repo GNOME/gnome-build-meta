@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:file-roller
+  url: gitlab_gnome_org:file-roller
   track: master
 depends:
 - core-deps/glib.bst

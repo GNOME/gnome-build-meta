@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-robots
+  url: gitlab_gnome_org:gnome-robots
   track: master
 depends:
 - core-deps/appstream-glib.bst

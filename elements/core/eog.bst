@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:eog
+  url: gitlab_gnome_org:eog
   track: master
 depends:
 - core-deps/exempi.bst

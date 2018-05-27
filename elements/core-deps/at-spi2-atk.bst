@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:at-spi2-atk
+  url: gitlab_gnome_org:at-spi2-atk
   track: master
 depends:
 - core-deps/atk.bst

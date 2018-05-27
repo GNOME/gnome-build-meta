@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libpeas
+  url: gitlab_gnome_org:libpeas
   track: master
 depends:
 - core-deps/glib.bst

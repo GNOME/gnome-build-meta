@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gspell
+  url: gitlab_gnome_org:gspell
   track: master
 depends:
 - core-deps/enchant-2.bst

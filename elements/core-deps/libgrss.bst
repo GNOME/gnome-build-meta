@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libgrss
+  url: gitlab_gnome_org:libgrss
   track: master
 depends:
 - core-deps/glib.bst

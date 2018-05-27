@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:iagno
+  url: gitlab_gnome_org:iagno
   track: master
 depends:
 - core-deps/appstream-glib.bst

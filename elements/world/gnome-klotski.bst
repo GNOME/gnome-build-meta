@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-klotski
+  url: gitlab_gnome_org:gnome-klotski
   track: master
 depends:
 - core-deps/appstream-glib.bst

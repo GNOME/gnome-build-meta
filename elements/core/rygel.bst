@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:rygel
+  url: gitlab_gnome_org:rygel
   track: master
 depends:
 - core-deps/gupnp-av.bst

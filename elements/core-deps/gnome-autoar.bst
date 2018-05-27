@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-autoar
+  url: gitlab_gnome_org:gnome-autoar
   track: master
 depends:
 - core-deps/glib.bst

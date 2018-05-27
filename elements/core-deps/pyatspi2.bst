@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:pyatspi2
+  url: gitlab_gnome_org:pyatspi2
   track: master
 depends:
 - core-deps/at-spi2-core.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:tracker
+  url: gitlab_gnome_org:tracker
   track: master
 depends:
 - core-deps/NetworkManager.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libgnome-games-support
+  url: gitlab_gnome_org:libgnome-games-support
   track: master
 depends:
 - core-deps/glib.bst

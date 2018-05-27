@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-disk-utility
+  url: gitlab_gnome_org:gnome-disk-utility
   track: master
 depends:
 - core-deps/appstream-glib.bst

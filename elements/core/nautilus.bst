@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:nautilus
+  url: gitlab_gnome_org:nautilus
   track: master
 depends:
 - core-deps/gexiv2.bst

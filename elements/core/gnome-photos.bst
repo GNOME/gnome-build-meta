@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-photos
+  url: gitlab_gnome_org:gnome-photos
   track: master
 depends:
 - core-deps/babl.bst

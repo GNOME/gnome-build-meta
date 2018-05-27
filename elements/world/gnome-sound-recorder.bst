@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-sound-recorder
+  url: gitlab_gnome_org:gnome-sound-recorder
   track: master
 depends:
 - core-deps/gdk-pixbuf.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gvfs
+  url: gitlab_gnome_org:gvfs
   track: master
 depends:
 - core-deps/avahi.bst

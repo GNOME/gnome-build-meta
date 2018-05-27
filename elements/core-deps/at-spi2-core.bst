@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:at-spi2-core
+  url: gitlab_gnome_org:at-spi2-core
   track: master
 depends:
 - core-deps/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:pangomm
+  url: gitlab_gnome_org:pangomm
   track: master
 depends:
 - core-deps/atk.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:atk
+  url: gitlab_gnome_org:atk
   track: master
 depends:
 - core-deps/glib.bst

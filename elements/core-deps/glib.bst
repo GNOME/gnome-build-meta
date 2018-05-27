@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:glib
+  url: gitlab_gnome_org:glib
   track: master
 depends:
 - core-deps/gtk-doc.bst

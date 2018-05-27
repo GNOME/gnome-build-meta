@@ -1,11 +1,11 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gedit
+  url: gitlab_gnome_org:gedit
   track: master
   submodules:
     libgd:
-      url: git_gnome_org:libgd
+      url: gitlab_gnome_org:libgd
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview-3.bst

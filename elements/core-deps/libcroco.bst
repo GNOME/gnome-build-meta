@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libcroco
+  url: gitlab_gnome_org:libcroco
   track: master
 depends:
 - core-deps/glib.bst

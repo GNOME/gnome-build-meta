@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gssdp
+  url: gitlab_gnome_org:gssdp
   track: gssdp_1.0
 depends:
 - core-deps/glib.bst

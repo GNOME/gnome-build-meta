@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:atkmm
+  url: gitlab_gnome_org:atkmm
   track: atkmm-2-24
 depends:
 - core-deps/atk.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:glib-networking
+  url: gitlab_gnome_org:glib-networking
   track: master
 depends:
 - core-deps/glib.bst

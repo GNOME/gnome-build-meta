@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:ghex
+  url: gitlab_gnome_org:ghex
   track: master
 depends:
 - core-deps/glib.bst

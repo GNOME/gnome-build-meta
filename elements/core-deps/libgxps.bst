@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:libgxps
+  url: gitlab_gnome_org:libgxps
   track: master
 depends:
 - core-deps/glib.bst

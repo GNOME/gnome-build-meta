@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-documents
+  url: gitlab_gnome_org:gnome-documents
   track: master
 depends:
 - core-deps/WebKitGTK+.bst
