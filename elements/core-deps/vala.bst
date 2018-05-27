@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:vala
+  url: gitlab_gnome_org:GNOME/vala
   track: master
 depends:
 - core-deps/glib.bst

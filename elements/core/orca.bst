@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:orca
+  url: gitlab_gnome_org:GNOME/orca
   track: master
 depends:
 - core-deps/at-spi2-atk.bst

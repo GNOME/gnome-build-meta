@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_gnome_org:gnome-common
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-common/3.18/gnome-common-3.18.0.tar.xz
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:phodav
+  url: gitlab_gnome_org:GNOME/phodav
   track: master
 depends:
 - core-deps/glib.bst

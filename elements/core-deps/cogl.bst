@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:cogl
+  url: gitlab_gnome_org:GNOME/cogl
   track: cogl-1.22
 depends:
 - core-deps/glib.bst
