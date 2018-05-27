@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gsettings-desktop-schemas
+  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas
   track: master
 depends:
 - core-deps/glib.bst

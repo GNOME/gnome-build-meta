@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:clutter
+  url: gitlab_gnome_org:GNOME/clutter
   track: master
 depends:
 - core-deps/atk.bst

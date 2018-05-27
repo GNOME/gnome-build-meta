@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-terminal
+  url: gitlab_gnome_org:GNOME/gnome-terminal
   track: master
 depends:
 - core-deps/appstream-glib.bst

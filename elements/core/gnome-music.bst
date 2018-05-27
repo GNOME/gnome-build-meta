@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-music
+  url: gitlab_gnome_org:GNOME/gnome-music
   track: master
 depends:
 - core-deps/gobject-introspection.bst

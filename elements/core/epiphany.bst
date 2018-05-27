@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:epiphany
+  url: gitlab_gnome_org:GNOME/epiphany
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

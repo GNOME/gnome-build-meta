@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:lightsoff
+  url: gitlab_gnome_org:GNOME/lightsoff
   track: master
 depends:
 - core-deps/appstream-glib.bst

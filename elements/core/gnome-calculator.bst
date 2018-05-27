@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-calculator
+  url: gitlab_gnome_org:GNOME/gnome-calculator
   track: master
 depends:
 - core-deps/appstream-glib.bst

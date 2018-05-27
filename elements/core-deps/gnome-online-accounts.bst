@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-online-accounts
+  url: gitlab_gnome_org:GNOME/gnome-online-accounts
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

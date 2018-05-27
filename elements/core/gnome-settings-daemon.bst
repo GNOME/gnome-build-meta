@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-settings-daemon
+  url: gitlab_gnome_org:GNOME/gnome-settings-daemon
   track: master
 depends:
 - core-deps/NetworkManager.bst

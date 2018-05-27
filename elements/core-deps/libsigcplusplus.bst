@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libsigcplusplus
+  url: gitlab_gnome_org:GNOME/libsigcplusplus
   track: master
 depends:
 - core-deps/mm-common.bst

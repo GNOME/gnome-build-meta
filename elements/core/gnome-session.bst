@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-session
+  url: gitlab_gnome_org:GNOME/gnome-session
   track: master
 depends:
 - core-deps/gtk+-3.bst
