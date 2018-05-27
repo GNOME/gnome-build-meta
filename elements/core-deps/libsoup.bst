@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libsoup
+  url: gitlab_gnome_org:GNOME/libsoup
   track: master
 depends:
 - core-deps/glib.bst

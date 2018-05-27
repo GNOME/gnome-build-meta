@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gtk-vnc
+  url: gitlab_gnome_org:GNOME/gtk-vnc
   track: master
 depends:
 - core-deps/gdk-pixbuf.bst

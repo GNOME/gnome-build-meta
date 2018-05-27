@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libgovirt
+  url: gitlab_gnome_org:GNOME/libgovirt
   track: master
 depends:
 - core-deps/gnome-common.bst

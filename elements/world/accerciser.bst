@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:accerciser
+  url: gitlab_gnome_org:GNOME/accerciser
   track: master
 depends:
 - core-deps/at-spi2-atk.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gupnp-dlna
+  url: gitlab_gnome_org:GNOME/gupnp-dlna
   track: master
 depends:
 - core-deps/glib.bst
