@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:bijiben
+  url: gitlab_gnome_org:GNOME/bijiben
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:glibmm
+  url: gitlab_gnome_org:GNOME/glibmm
   track: master
 depends:
 - core-deps/glib.bst

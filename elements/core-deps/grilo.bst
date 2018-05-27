@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:grilo
+  url: gitlab_gnome_org:GNOME/grilo
   track: master
 depends:
 - core-deps/glib.bst

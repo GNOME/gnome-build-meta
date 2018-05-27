@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: https://git.gnome.org/libzapojit
+  url: gitlab_gnome_org:GNOME/libzapojit
   track: master
 depends:
 - core-deps/glib.bst

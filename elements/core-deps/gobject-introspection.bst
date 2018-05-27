@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gobject-introspection
+  url: gitlab_gnome_org:GNOME/gobject-introspection
   track: master
 depends:
 - core-deps/glib.bst

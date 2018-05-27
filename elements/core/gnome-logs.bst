@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-logs
+  url: gitlab_gnome_org:GNOME/gnome-logs
   track: master
 depends:
 - core-deps/appstream-glib.bst
