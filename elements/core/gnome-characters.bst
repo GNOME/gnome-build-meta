@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-characters
+  url: gitlab_gnome_org:GNOME/gnome-characters
   track: master
 depends:
 - core-deps/appstream-glib.bst

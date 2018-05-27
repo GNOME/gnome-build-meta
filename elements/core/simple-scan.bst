@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:simple-scan
+  url: gitlab_gnome_org:GNOME/simple-scan
   track: master
 depends:
 - core-deps/PackageKit.bst

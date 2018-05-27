@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:sushi
+  url: gitlab_gnome_org:GNOME/sushi
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

@@ -18,7 +18,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:mm-common
+  url: gitlab_gnome_org:GNOME/mm-common
   track: master
 - kind: local
   path: files/mm-common/libstdc++.tag

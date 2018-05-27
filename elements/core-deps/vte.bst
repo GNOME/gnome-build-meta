@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:vte
+  url: gitlab_gnome_org:GNOME/vte
   track: master
 depends:
 - core-deps/glib.bst

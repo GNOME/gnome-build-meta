@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-control-center
+  url: gitlab_gnome_org:GNOME/gnome-control-center
   track: master
 depends:
 - core-deps/ModemManager.bst

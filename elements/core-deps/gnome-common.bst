@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-common
+  url: gitlab_gnome_org:GNOME/gnome-common
   track: master
 depends:
 - filename: base.bst
