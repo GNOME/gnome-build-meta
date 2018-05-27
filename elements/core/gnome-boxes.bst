@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:gnome-boxes
+  url: gitlab_gnome_org:GNOME/gnome-boxes
   track: master
 depends:
 - core-deps/WebKitGTK+.bst

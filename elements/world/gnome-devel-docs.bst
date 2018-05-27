@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-devel-docs
+  url: gitlab_gnome_org:GNOME/gnome-devel-docs
   track: master
 depends:
 - core-deps/gnome-common.bst

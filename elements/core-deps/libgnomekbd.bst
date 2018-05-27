@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libgnomekbd
+  url: gitlab_gnome_org:GNOME/libgnomekbd
   track: master
 depends:
 - core-deps/gtk+-3.bst

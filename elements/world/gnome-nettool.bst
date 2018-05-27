@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-nettool
+  url: gitlab_gnome_org:GNOME/gnome-nettool
   track: master
 depends:
 - core-deps/glib.bst

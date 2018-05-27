@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_gnome_org:clutter-gtk
+  url: gitlab_gnome_org:GNOME/clutter-gtk
   track: master
 depends:
 - core-deps/clutter.bst

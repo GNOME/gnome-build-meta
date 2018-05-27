@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:gnome-desktop
+  url: gitlab_gnome_org:GNOME/gnome-desktop
   track: master
 depends:
 - core-deps/gdk-pixbuf.bst
