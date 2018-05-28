@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_gnome_org:libsigcplusplus
+  url: github_com:libsigcplusplus/libsigcplusplus.git
   track: libsigc++-2-10
 depends:
 - core-deps/mm-common.bst
