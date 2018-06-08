@@ -5,6 +5,10 @@ sources:
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 variables:
   command-subdir: _build
   conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc
