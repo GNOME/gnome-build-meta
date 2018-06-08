@@ -15,6 +15,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 variables:
   conf-local: --enable-cogl-gst --disable-maintainer-flags --enable-xlib-egl-platform
     --enable-wayland-egl-platform --enable-wayland-egl-server --enable-kms-egl-platform
