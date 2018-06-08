@@ -14,6 +14,10 @@ depends:
   type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 variables:
   conf-local: --disable-3g-source --disable-cdma-source --disable-modem-gps-source
     --disable-nmea-source
