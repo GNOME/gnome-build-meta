@@ -15,6 +15,10 @@ depends:
 - sdk/wayland.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 variables:
   conf-local: --enable-installed-tests --disable-maintainer-flags --enable-egl-backend
     --enable-evdev-input --enable-wayland-backend --enable-wayland-compositor
