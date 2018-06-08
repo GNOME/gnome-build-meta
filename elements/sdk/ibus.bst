@@ -11,6 +11,10 @@ depends:
 - sdk/libnotify.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 variables:
   conf-local: --disable-tests --disable-gconf --enable-dconf --disable-memconf --disable-ui
     --disable-gtk2 --disable-schema-compile --with-python=python3 --disable-emoji-dict
