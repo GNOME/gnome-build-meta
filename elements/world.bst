@@ -21,6 +21,7 @@ depends:
 - world/gnome-devel-docs.bst
 - world/gnome-dictionary.bst
 - world/gnome-games.bst
+- world/gnome-internet-radio-locator.bst
 - world/gnome-klotski.bst
 - world/gnome-mahjongg.bst
 - world/gnome-mines.bst
