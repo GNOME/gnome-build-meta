@@ -47,6 +47,7 @@ depends:
 - world/polari.bst
 - world/qqwing.bst
 - world/quadrapassel.bst
+- world/retro-gtk.bst
 - world/swell-foop.bst
 - world/tali.bst
 - world/telepathy-glib.bst
