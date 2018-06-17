@@ -1,4 +1,4 @@
 projects:
   gnome:
     freedesktop-sdk.bst:
-    - ref: 8e869703bbe3c1d295714f2bde5cee89d15877a6
+    - ref: 2c0afd895267f3fe1ac9c2f851c81316cd3e5e9b
