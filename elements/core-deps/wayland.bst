@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:wayland/wayland
-  track: master
+- kind: tar
+  url: https://wayland.freedesktop.org/releases/wayland-1.15.0.tar.xz
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
