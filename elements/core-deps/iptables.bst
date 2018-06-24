@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://www.netfilter.org/projects/iptables/files/iptables-1.6.2.tar.bz2
+  url: https://people.gnome.org/~mcatanzaro/tarballs-needing-help/iptables_1.6.2.orig.tar.bz2
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
