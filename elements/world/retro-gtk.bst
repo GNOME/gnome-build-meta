@@ -8,7 +8,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst
 - core-deps/vala.bst
-- filename: desktop/pulseaudio.bst
+- filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
