@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-52.2.1gnome1.tar.gz
+  url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-52.6.0gnome1.tar.xz
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
