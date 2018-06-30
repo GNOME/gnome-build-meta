@@ -130,26 +130,29 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/mythes.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/openal.bst
-  junction: freedesktop-sdk.bst
+# brings in sdl
+#- filename: desktop/openal.bst
+#  junction: freedesktop-sdk.bst
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/os-release.bst
-  junction: freedesktop-sdk.bst
+# brings in appstream-glib
+#- filename: desktop/os-release.bst
+#  junction: freedesktop-sdk.bst
 - filename: desktop/pixman.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/sdl2-image.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/sdl2-mixer.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/sdl2-net.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/sdl2-ttf.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/sdl2.bst
-  junction: freedesktop-sdk.bst
+# bring in ibus
+# - filename: desktop/sdl2-image.bst
+#   junction: freedesktop-sdk.bst
+# - filename: desktop/sdl2-mixer.bst
+#   junction: freedesktop-sdk.bst
+# - filename: desktop/sdl2-net.bst
+#   junction: freedesktop-sdk.bst
+# - filename: desktop/sdl2-ttf.bst
+#   junction: freedesktop-sdk.bst
+# - filename: desktop/sdl2.bst
+#   junction: freedesktop-sdk.bst
 - filename: desktop/shared-mime-info.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/sound-theme-freedesktop.bst
