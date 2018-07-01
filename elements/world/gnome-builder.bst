@@ -8,7 +8,7 @@ depends:
 - core-deps/glib.bst
 - core-deps/gspell.bst
 - core-deps/gtk+-3.bst
-- core-deps/gtksourceview-3.bst
+- core-deps/gtksourceview.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/librsvg.bst
