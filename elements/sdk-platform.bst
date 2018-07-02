@@ -47,6 +47,11 @@ depends:
 - sdk/pango.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
+- sdk/sdl2-image.bst
+- sdk/sdl2-mixer.bst
+- sdk/sdl2-net.bst
+- sdk/sdl2-ttf.bst
+- sdk/sdl2.bst
 - sdk/vte.bst
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
