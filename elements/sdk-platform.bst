@@ -39,6 +39,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/mozjs60.bst
+- sdk/os-release.bst
 - sdk/pango.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
