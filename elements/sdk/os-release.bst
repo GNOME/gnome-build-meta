@@ -1,0 +1,35 @@
+kind: manual
+sources:
+- kind: local
+  path: files/os-release
+depends:
+- filename: sdk/appstream-glib.bst
+  type: build
+- filename: base.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+config:
+  build-commands:
+    - |
+      for i in *.in; do
+        sed "s/@@SDK_BRANCH@@/%{branch}/g" "${i}" >"$(basename "${i}" .in)"
+      done
+
+  install-commands:
+    - |
+      mkdir -p "%{install-root}%{indep-libdir}"
+      install os-release "%{install-root}%{indep-libdir}"
+
+      mkdir -p "%{install-root}%{sysconfdir}"
+      install issue "%{install-root}%{sysconfdir}"
+      install issue.net "%{install-root}%{sysconfdir}"
+
+      mkdir -p "%{install-root}%{datadir}/appdata"
+      install org.gnome.Platform.appdata.xml "%{install-root}%{datadir}/appdata"
+      install org.gnome.Sdk.appdata.xml "%{install-root}%{datadir}/appdata"
+
+      appstream-compose --basename=org.gnome.Platform --prefix=%{install-root}%{prefix} --origin=flatpak org.gnome.Platform
+      appstream-compose --basename=org.gnome.Sdk --prefix=%{install-root}%{prefix} --origin=flatpak org.gnome.Sdk
