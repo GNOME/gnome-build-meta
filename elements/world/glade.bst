@@ -8,3 +8,5 @@ depends:
 - core-deps/gnome-common.bst
 - filename: core/adwaita-icon-theme.bst
   type: runtime
+- filename: core-deps/cantarell-fonts.bst
+  type: runtime
