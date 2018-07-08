@@ -48,7 +48,7 @@ before_script:
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-51-9632eaf
   tags:
-    - do
+    - jenkins
   <<: *build
 
 build-gnome-core-aarch64:
