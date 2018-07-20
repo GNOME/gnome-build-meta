@@ -8,7 +8,7 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-installed-tests --disable-libmount
+  conf-local: --enable-installed-tests --disable-libmount --with-python=python3
 public:
   bst:
     integration-commands:
