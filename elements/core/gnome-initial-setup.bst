@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.28/gnome-initial-setup-3.28.0.tar.xz
+  ref: b9de6a9fb618b886e2d7c34cb15f39ad34fb5cb7c4b4541caf813ee70462d8eb
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/WebKitGTK+.bst

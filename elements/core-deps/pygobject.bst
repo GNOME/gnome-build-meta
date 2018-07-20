@@ -1,8 +1,8 @@
 kind: distutils
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/pygobject.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/pygobject/3.29/pygobject-3.29.2.tar.xz
+  ref: 8d77b1ac1d7c88929ac9f5793837f7933e80cdd27523a47d38cdf2cf03c1f4a1
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

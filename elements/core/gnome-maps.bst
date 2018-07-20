@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-maps
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-maps/3.29/gnome-maps-3.29.4.tar.xz
+  ref: b9d260c515ab7a9ee6e32f7f7041eb844fb72905ad51407bd806bb69b3f28c28
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst

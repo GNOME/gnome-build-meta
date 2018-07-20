@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-boxes
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-boxes/3.29/gnome-boxes-3.29.3.tar.xz
+  ref: c692f21917f10368ee8322f797dacd94996210a2c26c821fe46382738042a92c
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/glib.bst

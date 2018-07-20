@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/grilo-plugins
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.6.tar.xz
+  ref: d9e07ec0aeb1e52270b6a3629c9f040d6f40808834aa3c8e2da90fecb7c31275
 depends:
 - core-deps/gmime3.bst
 - core-deps/gnome-online-accounts.bst

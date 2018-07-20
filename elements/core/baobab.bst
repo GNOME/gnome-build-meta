@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/baobab
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/baobab/3.29/baobab-3.29.1.tar.xz
+  ref: 74a9db167f8d386b9f62c46e49a96ee9bb49369743b12cf8f3df4479ddd24f1c
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/glib.bst

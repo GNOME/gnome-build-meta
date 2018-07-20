@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/NetworkManager/1.13/NetworkManager-1.13.1.tar.xz
+  ref: 8f6b23cde3ef03cafb4a6820c07e5be4d919e372d1f87f7078bdb88c86da1bf7
 depends:
 - core-deps/dbus-glib.bst
 - core-deps/glib.bst

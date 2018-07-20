@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-documents
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-documents/3.28/gnome-documents-3.28.1.tar.xz
+  ref: f50226f3c08dc7e2069d3365335fc1ab187b0939f04ab55e97aca7b70c111ac4
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/gjs.bst

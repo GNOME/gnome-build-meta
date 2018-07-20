@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - url: https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.20.tar.xz
   kind: tar
+  ref: cff4dd3c3b78bfe99d8fcfad3b8ba1eee3289a0823c0e118d78106be6b84c92b
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libnotify
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz
+  ref: 9cb4ce315b2655860c524d46b56010874214ec27e854086c1a1d0260137efc04
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst

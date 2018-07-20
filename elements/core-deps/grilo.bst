@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/grilo
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/grilo/0.3/grilo-0.3.5.tar.xz
+  ref: 49ffc8854ef25b4f038bbbcf734ea060a8dc681fdff5ec5e9a1cbaa002fc373a
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst

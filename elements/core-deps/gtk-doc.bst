@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtk-doc
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gtk-doc/1.28/gtk-doc-1.28.tar.xz
+  ref: 911e29e302252c96128965ee1f4067d5431a88e00ad1023a8bc1d6b922af5715
 depends:
 - core-deps/yelp-tools.bst
 - filename: base.bst

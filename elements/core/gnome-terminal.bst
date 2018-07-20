@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-terminal
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-terminal/3.28/gnome-terminal-3.28.2.tar.xz
+  ref: a283dca4980eecf9184a55aac03fef99f85748461ff190423a2253f3b4557279
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/dconf.bst

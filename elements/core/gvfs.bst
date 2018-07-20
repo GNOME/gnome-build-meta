@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gvfs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gvfs/1.37/gvfs-1.37.4.tar.xz
+  ref: fdc7dc569f0e1f05b40ebe9ca478da1bdcf42579d316a3ab62f630d8e1cc8a17
 depends:
 - core-deps/avahi.bst
 - core-deps/fuse.bst

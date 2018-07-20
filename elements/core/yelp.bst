@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/yelp
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/yelp/3.28/yelp-3.28.1.tar.xz
+  ref: e88a5d05af20e497c50430b36fb523f8fda79a986359a6b7bd25910a2d2e7c0c
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/appstream-glib.bst

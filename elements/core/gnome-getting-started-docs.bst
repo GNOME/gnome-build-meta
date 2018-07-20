@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-getting-started-docs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-getting-started-docs/3.28/gnome-getting-started-docs-3.28.2.tar.xz
+  ref: 2eda72c5e399736dee86e8c56f5f42d87058943ff0b4cbca35f2ab932d59e06d
 depends:
 - core-deps/yelp-tools.bst
 - filename: base.bst
