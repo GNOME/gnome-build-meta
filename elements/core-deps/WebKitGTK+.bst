@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.21.4.tar.xz
+  url: webkitgtk_org:webkitgtk-2.21.5.tar.xz
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
