@@ -20,4 +20,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Denable-rpm=false -Denable-fwupd=false -Denable-flatpak=false
+  meson-local: -Dfwupd=false -Dflatpak=false
