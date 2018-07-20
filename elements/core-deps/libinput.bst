@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:wayland/libinput.git
-  track: master
+- kind: tar
+  url: http://www.freedesktop.org/software/libinput/libinput-1.11.2.tar.xz
+  ref: 6b36e1163d306c292ec8359b35aa65431cd29d0a5254923775e8019ff5018107
 depends:
 - core-deps/gtk+-3.bst
 - core-deps/libevdev.bst

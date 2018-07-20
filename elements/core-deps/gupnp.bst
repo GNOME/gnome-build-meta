@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gupnp
-  track: gupnp-1.0
+- kind: tar
+  url: https://download.gnome.org/sources/gupnp/1.0/gupnp-1.0.2.tar.xz
+  ref: 5173fda779111c6b01cd4a5e41b594322be9d04f8c74d3361f0a0c2069c77610
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/glib.bst

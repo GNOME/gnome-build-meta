@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/file-roller
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/file-roller/3.29/file-roller-3.29.1.tar.xz
+  ref: 6a8556effb9db4fc02881c600e861630e8f1019ca9863aa07e82e8676c7a9fce
 depends:
 - core-deps/glib.bst
 - core-deps/gtk+-3.bst

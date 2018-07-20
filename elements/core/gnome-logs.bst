@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-logs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-logs/3.29/gnome-logs-3.29.4.tar.xz
+  ref: b306208977f7f3f89dd7ae3613dd7118a89875f2d806bf79be0c34f8798e2809
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/gtk+-3.bst

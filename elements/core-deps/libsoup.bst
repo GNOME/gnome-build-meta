@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libsoup
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libsoup/2.63/libsoup-2.63.2.tar.xz
+  ref: 3931f8ae282f010fa0d6c31841751d7c4bff72f116d13f34a5bf98a96550a4f9
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst

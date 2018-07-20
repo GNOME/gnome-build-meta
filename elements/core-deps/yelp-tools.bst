@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/yelp-tools
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/yelp-tools/3.28/yelp-tools-3.28.0.tar.xz
+  ref: 82dbfeea2359dfef8ee92c7580c7f03768d12f9bf67d839f03a5e9b0686dc1ac
 depends:
 - core-deps/yelp-xsl.bst
 - filename: base.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/tracker
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/tracker/2.0/tracker-2.0.4.tar.xz
+  ref: ce2f0db52666592d313a04ce14663110eafa8ab08dc213b53e790281362dccd5
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst
