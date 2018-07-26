@@ -37,4 +37,12 @@
       <gnome:userid>jjardon</gnome:userid>
     </foaf:Person>
   </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Abderrahim Kitouni</foaf:name>
+      <foaf:mbox rdf:resource="mailto:akitouni@gnome.org" />
+      <gnome:userid>akitouni</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
 </Project>
