@@ -46,7 +46,7 @@ before_script:
       - ${CI_PROJECT_DIR}/cache/buildstream/logs
 
 build-gnome-core-x86_64:
-  image: buildstream/buildstream-fedora:master-51-9632eaf
+  image: buildstream/buildstream-fedora:master-103-1016dcb4
   tags:
     - do
   <<: *build
