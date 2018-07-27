@@ -19,6 +19,7 @@ cache:
 
 
 before_script:
+  - dnf upgrade gnupg2
   # Remove any installed buildstream binary
   - pip3 uninstall -y buildstream
   # Use specific version of BuildStream
