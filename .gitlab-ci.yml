@@ -32,6 +32,7 @@ before_script:
   stage: build
   dependencies: []
   script:
+    - ${BST} fetch freedesktop-sdk.bst:bootstrap-import.bst
     - ${BST} build --track-all core.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
