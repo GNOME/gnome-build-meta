@@ -1,0 +1,88 @@
+From cab3a61ec735def50941dffcda598a73a83d5162 Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Sat, 28 Jul 2018 21:47:52 +0100
+Subject: [PATCH] Revert "Merge branch '113-fix-memory-leaks' into 'master'"
+
+This reverts commit a7dd50e4e3b8b65780cf3cb6282fb483f137e211, reversing
+changes made to 3670539091a02de93868af869923e54a276bb029.
+---
+ tests/gimarshallingtests.c | 15 +++++++++------
+ tests/scanner/regress.c    | 22 +++++++++-------------
+ 2 files changed, 18 insertions(+), 19 deletions(-)
+
+diff --git a/tests/gimarshallingtests.c b/tests/gimarshallingtests.c
+index 4465bcb6..4005acae 100644
+--- a/tests/gimarshallingtests.c
++++ b/tests/gimarshallingtests.c
+@@ -5371,12 +5371,15 @@ gi_marshalling_tests_properties_object_finalize (GObject *obj)
+   GIMarshallingTestsPropertiesObject *self;
+   self = GI_MARSHALLING_TESTS_PROPERTIES_OBJECT (obj);
+ 
+-  g_clear_pointer (&self->some_strv, g_strfreev);
+-  g_clear_pointer (&self->some_boxed_struct, gi_marshalling_tests_boxed_struct_free);
+-  g_clear_pointer (&self->some_variant, g_variant_unref);
+-  g_clear_pointer (&self->some_boxed_glist, g_list_free);
+-  g_clear_pointer (&self->some_gvalue, g_boxed_free);
+-  g_clear_object (&self->some_object);
++  if (self->some_strv != NULL) {
++    g_strfreev (self->some_strv);
++    self->some_strv = NULL;
++  }
++
++  if (self->some_gvalue) {
++    g_boxed_free (G_TYPE_VALUE, self->some_gvalue);
++    self->some_gvalue = NULL;
++  }
+ 
+   G_OBJECT_CLASS (gi_marshalling_tests_properties_object_parent_class)->finalize (obj);
+ }
+diff --git a/tests/scanner/regress.c b/tests/scanner/regress.c
+index 29652caa..e1da3d17 100644
+--- a/tests/scanner/regress.c
++++ b/tests/scanner/regress.c
+@@ -2135,9 +2135,15 @@ regress_test_obj_set_property (GObject      *object,
+ 
+     case PROP_TEST_OBJ_LIST:
+     case PROP_TEST_OBJ_LIST_OLD:
+-      g_list_free_full (self->list, g_free);
+-      list = g_value_get_pointer (value);
+-      self->list = g_list_copy_deep (list, (GCopyFunc) g_strdup, NULL);
++      if (self->list != NULL)
++        {
++          for (list = self->list; list != NULL; list = g_list_next (list))
++            g_free (list->data);
++          g_list_free (self->list);
++        }
++      self->list = NULL;
++      for (list = g_value_get_pointer (value); list != NULL; list = g_list_next (list))
++        self->list = g_list_append (self->list, g_strdup (list->data));
+       break;
+ 
+     case PROP_TEST_OBJ_INT:
+@@ -2153,7 +2159,6 @@ regress_test_obj_set_property (GObject      *object,
+       break;
+ 
+     case PROP_TEST_OBJ_STRING:
+-      g_clear_pointer (&self->string, g_free);
+       self->string = g_value_dup_string (value);
+       break;
+ 
+@@ -2251,15 +2256,6 @@ regress_test_obj_dispose (GObject *gobject)
+       self->boxed = NULL;
+     }
+ 
+-  if (self->list)
+-    {
+-      g_list_free_full (self->list, g_free);
+-      self->list = NULL;
+-    }
+-
+-  g_clear_pointer (&self->hash_table, g_hash_table_unref);
+-  g_clear_pointer (&self->string, g_free);
+-
+   /* Chain up to the parent class */
+   G_OBJECT_CLASS (regress_test_obj_parent_class)->dispose (gobject);
+ }
+-- 
+2.11.0
+
