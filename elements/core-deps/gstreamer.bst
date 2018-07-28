@@ -8,5 +8,3 @@ depends:
 - core-deps/gobject-introspection.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  meson-local: -Ddisable_gtkdoc=true

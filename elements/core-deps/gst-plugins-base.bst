@@ -9,5 +9,3 @@ depends:
 - core-deps/libgudev.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  meson-local: -Ddisable_gtkdoc=true
