@@ -54,9 +54,8 @@ build-gnome-core-x86_64:
     - do
   <<: *build
 
-# https://gitlab.gnome.org/Infrastructure/GitLab/issues/295
-#build-gnome-core-aarch64:
-#  image: buildstream/buildstream-fedora:aarch64-master-79-c1c09e3
-#  tags:
-#    - aarch64
-#  <<: *build
+build-gnome-core-aarch64:
+  image: buildstream/buildstream-fedora:aarch64-master-79-c1c09e3
+  tags:
+    - aarch64
+  <<: *build
