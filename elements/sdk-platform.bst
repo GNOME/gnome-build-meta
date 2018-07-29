@@ -1,6 +1,7 @@
 kind: stack
 depends:
 - sdk/WebKitGTK+.bst
+- sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/at-spi2-core.bst
