@@ -17,6 +17,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/jq.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/mercurial.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland-protocols.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-proto-xcb.bst
