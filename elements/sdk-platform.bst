@@ -84,6 +84,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/dictionaries.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/emoji-one-font.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/flatpak-xdg-utils.bst
@@ -93,6 +95,10 @@ depends:
 - filename: desktop/freetype.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gnu-free-fonts.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/google-crosextra-caladea.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/google-crosextra-carlito.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/graphite2.bst
   junction: freedesktop-sdk.bst
@@ -140,6 +146,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/openal.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/opencl.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/pixman.bst
@@ -175,8 +183,6 @@ depends:
 - filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-pciaccess.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-pthread-stubs.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-sm.bst
   junction: freedesktop-sdk.bst
