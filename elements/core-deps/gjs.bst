@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/gobject-introspection.bst
-- core-deps/mozjs52.bst
+- core-deps/mozjs60.bst
 - filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
