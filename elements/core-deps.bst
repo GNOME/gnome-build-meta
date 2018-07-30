@@ -163,6 +163,7 @@ depends:
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
+- core-deps/mozjs60.bst
 - core-deps/mpc.bst
 - core-deps/mpfr.bst
 - core-deps/mtdev.bst
