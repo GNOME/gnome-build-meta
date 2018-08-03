@@ -47,6 +47,7 @@ before_script:
     when: always
     paths:
       - logs
+      - project.refs
 
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-51-9632eaf
