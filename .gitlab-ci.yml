@@ -50,13 +50,13 @@ before_script:
       - project.refs
 
 build-gnome-core-x86_64:
-  image: buildstream/buildstream-fedora:master-51-9632eaf
+  image: buildstream/buildstream-fedora:master-107-4e1160a9
   tags:
     - do
   <<: *build
 
 build-gnome-core-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-79-c1c09e3
+  image: buildstream/buildstream-fedora:aarch64-master-107-4e1160a9
   tags:
     - aarch64
   allow_failure: true
