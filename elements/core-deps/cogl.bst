@@ -10,7 +10,8 @@ depends:
 - core-deps/gstreamer.bst
 - core-deps/gtk-doc.bst
 - core-deps/pango.bst
-- core-deps/wayland.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

@@ -14,13 +14,14 @@ depends:
 - core-deps/libinput.bst
 - core-deps/pango.bst
 - core-deps/upower.bst
-- core-deps/wayland.bst
 - core-deps/zenity.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
 - filename: desktop/xorg-lib-xcursor.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xtst.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
