@@ -11,7 +11,8 @@ depends:
 - core-deps/gobject-introspection.bst
 - core-deps/gtk-doc.bst
 - core-deps/pango.bst
-- core-deps/wayland.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libepoxy.bst

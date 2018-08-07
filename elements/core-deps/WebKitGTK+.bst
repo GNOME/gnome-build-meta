@@ -17,8 +17,9 @@ depends:
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
 - core-deps/pango.bst
-- core-deps/wayland.bst
 - core-deps/woff2.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/hyphen.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xt.bst

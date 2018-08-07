@@ -205,7 +205,6 @@ depends:
 - core-deps/valgrind.bst
 - core-deps/volume-key.bst
 - core-deps/vte.bst
-- core-deps/wayland.bst
 - core-deps/woff2.bst
 - core-deps/xmlto.bst
 - core-deps/yelp-tools.bst
