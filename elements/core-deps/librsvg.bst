@@ -17,6 +17,8 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/approx/approx-0.3.0.crate
 - kind: crate
+  url: https://static.crates.io/crates/arrayvec/arrayvec-0.4.7.crate
+- kind: crate
   url: https://static.crates.io/crates/atty/atty-0.2.10.crate
 - kind: crate
   url: https://static.crates.io/crates/backtrace/backtrace-0.3.9.crate
@@ -52,6 +54,12 @@ sources:
   url: https://static.crates.io/crates/criterion-plot/criterion-plot-0.2.4.crate
 - kind: crate
   url: https://static.crates.io/crates/criterion-stats/criterion-stats-0.2.4.crate
+- kind: crate
+  url: https://static.crates.io/crates/crossbeam-deque/crossbeam-deque-0.2.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/crossbeam-epoch/crossbeam-epoch-0.3.1.crate
+- kind: crate
+  url: https://static.crates.io/crates/crossbeam-utils/crossbeam-utils-0.2.2.crate
 - kind: crate
   url: https://static.crates.io/crates/cssparser/cssparser-0.24.0.crate
 - kind: crate
@@ -107,7 +115,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/memchr/memchr-2.0.1.crate
 - kind: crate
+  url: https://static.crates.io/crates/memoffset/memoffset-0.2.1.crate
+- kind: crate
   url: https://static.crates.io/crates/nalgebra/nalgebra-0.16.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/nodrop/nodrop-0.1.12.crate
 - kind: crate
   url: https://static.crates.io/crates/num-complex/num-complex-0.2.0.crate
 - kind: crate
@@ -161,6 +173,10 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rawpointer/rawpointer-0.1.0.crate
 - kind: crate
+  url: https://static.crates.io/crates/rayon/rayon-1.0.2.crate
+- kind: crate
+  url: https://static.crates.io/crates/rayon-core/rayon-core-1.4.1.crate
+- kind: crate
   url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.40.crate
 - kind: crate
   url: https://static.crates.io/crates/redox_termios/redox_termios-0.1.1.crate
@@ -170,6 +186,8 @@ sources:
   url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.1.crate
 - kind: crate
   url: https://static.crates.io/crates/rustc-demangle/rustc-demangle-0.1.9.crate
+- kind: crate
+  url: https://static.crates.io/crates/scopeguard/scopeguard-0.3.3.crate
 - kind: crate
   url: https://static.crates.io/crates/serde/serde-1.0.70.crate
 - kind: crate
