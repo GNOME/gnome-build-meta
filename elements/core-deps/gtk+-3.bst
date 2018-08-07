@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtk+
+  url: gitlab_gnome_org:GNOME/gtk
   track: gtk-3-22
 depends:
 - core-deps/atk.bst
