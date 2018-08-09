@@ -254,6 +254,8 @@ depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst
   type: build
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/gobject-introspection.bst
 - sdk/libcroco.bst
 - sdk/pango.bst
