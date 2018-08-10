@@ -43,7 +43,6 @@ depends:
 - core-deps/exempi.bst
 - core-deps/exiv2.bst
 - core-deps/folks.bst
-- core-deps/fribidi.bst
 - core-deps/ftjam.bst
 - core-deps/fuse.bst
 - core-deps/gcab.bst
