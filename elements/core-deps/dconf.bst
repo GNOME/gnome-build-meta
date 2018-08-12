@@ -6,5 +6,10 @@ sources:
 depends:
 - core-deps/glib.bst
 - core-deps/vala.bst
+- filename: desktop/dbus.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: -Dbash_completion=false
