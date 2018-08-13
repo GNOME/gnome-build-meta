@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-boxes
-  track: master
+  track: abderrahim/fix-parallel-build
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/glib.bst
