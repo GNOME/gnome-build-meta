@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://ftp.gnu.org/gnu/parted/parted-3.2.tar.xz
+  url: ftp_gnu_org:parted/parted-3.2.tar.xz
 depends:
 - core-deps/lvm2.bst
 - filename: base.bst
