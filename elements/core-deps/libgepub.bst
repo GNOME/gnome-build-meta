@@ -1,11 +1,11 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgepub
-  track: master
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/glib.bst
 - core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: c78a395cc1d9c57b4485958ed83ffb96ed442750cfafa7797dd6d986b9f7b399
+  url: https://download.gnome.org/sources/libgepub/0.6/libgepub-0.6.0.tar.xz

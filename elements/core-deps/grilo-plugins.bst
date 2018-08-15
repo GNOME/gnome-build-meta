@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/grilo-plugins
-  track: master
 depends:
 - core-deps/gmime3.bst
 - core-deps/gnome-online-accounts.bst
@@ -20,3 +15,8 @@ depends:
 - core-deps/tracker.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: fc2f3bbc319136e53e1efb6659fa65b6af45db114b6621008f9abba64fad6820
+  url: https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.7.tar.xz

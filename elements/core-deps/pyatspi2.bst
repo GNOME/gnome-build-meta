@@ -1,12 +1,12 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/pyatspi2
-  track: master
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 9f82bd3646b40293f1027317505592cca8cb2def3c3ae931baa586162d99a6cf
+  url: https://download.gnome.org/sources/pyatspi/2.29/pyatspi-2.29.90.tar.xz
 variables:
   conf-local: --with-python=python3

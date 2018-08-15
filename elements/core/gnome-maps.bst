@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-maps
-  track: master
 depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst
@@ -22,3 +17,8 @@ depends:
 - core/gnome-desktop.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 6d08676f006f0fe1c808714fef964fba948c1da61c660e5629b459b3e6a41731
+  url: https://download.gnome.org/sources/gnome-maps/3.29/gnome-maps-3.29.91.tar.xz

@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/nautilus
-  track: master
 depends:
 - core-deps/gexiv2.bst
 - core-deps/glib.bst
@@ -16,5 +11,10 @@ depends:
 - core/gsettings-desktop-schemas.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 59be0a0a773502b97790ecfcaa98d19ec2a40ac39bc8121fa2957a8f154ac9a6
+  url: https://download.gnome.org/sources/nautilus/3.29/nautilus-3.29.90.1.tar.xz
 variables:
   meson-local: -Dselinux=false

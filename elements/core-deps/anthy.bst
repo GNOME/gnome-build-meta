@@ -1,7 +1,8 @@
-kind: autotools
-sources:
-- kind: tar
-  url: http://http.debian.net/debian/pool/main/a/anthy/anthy_0.3.orig.tar.gz
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 5dae9f0755df76b48a7f606553dd06d85313ec77cea3724fcd2c6ebeecf53d69
+  url: http://http.debian.net/debian/pool/main/a/anthy/anthy_0.3.orig.tar.gz

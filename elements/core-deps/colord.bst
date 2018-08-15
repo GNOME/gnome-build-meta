@@ -1,10 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: github_com:hughsie/colord.git
-  track: master
-- kind: patch
-  path: files/colord/dont-require-docbook2man.patch
 depends:
 - filename: core-deps/argyll.bst
   type: build
@@ -16,7 +9,13 @@ depends:
 - core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-
+kind: meson
+sources:
+- kind: tar
+  ref: 9a8e669ee1ea31632bee636cc57353f703c2ea9b64cd6e02bbaabe9a1e549df7
+  url: http://www.freedesktop.org/software/colord/releases/colord-1.4.3.tar.xz
+- kind: patch
+  path: files/colord/dont-require-docbook2man.patch
 variables:
   meson-local: |
     -Dbash_completion=false \

@@ -1,10 +1,10 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/json-glib.git
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 2d7709a44749c7318599a6829322e081915bdc73f5be5045882ed120bb686dc8
+  url: https://download.gnome.org/sources/json-glib/1.4/json-glib-1.4.2.tar.xz

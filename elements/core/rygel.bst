@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/rygel
-  track: master
 depends:
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
@@ -13,3 +8,8 @@ depends:
 - core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: a67fdd801f6e4121ae44cfffabc0f35fff487cab173b6c6f052449ad7b5fb820
+  url: https://download.gnome.org/sources/rygel/0.36/rygel-0.36.1.tar.xz

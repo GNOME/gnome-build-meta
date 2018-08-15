@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/cheese
-  track: master
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
@@ -22,3 +17,8 @@ depends:
 - core/gnome-desktop.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 5c1e7a2e1fccc1b0c7b636fb03f2ae83862e2feaebadb94be37c3758182eaa19
+  url: https://download.gnome.org/sources/cheese/3.28/cheese-3.28.0.tar.xz

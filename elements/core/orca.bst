@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/orca
-  track: master
 depends:
 - core-deps/at-spi2-atk.bst
 - core-deps/gobject-introspection.bst
@@ -13,3 +8,8 @@ depends:
 - core-deps/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 1d2fd5aa00cd821d7af9e2ea6e07112c346c3c726d79c2a6b4222c609b6afeec
+  url: https://download.gnome.org/sources/orca/3.29/orca-3.29.4.tar.xz

@@ -1,7 +1,3 @@
-kind: autotools
-sources:
-- kind: tar
-  url: people_freedesktop_org:~svu/libxklavier-5.4.tar.bz2
 depends:
 - core-deps/gobject-introspection.bst
 - filename: desktop/xorg-lib-x11.bst
@@ -12,5 +8,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 17a34194df5cbcd3b7bfd0f561d95d1f723aa1c87fca56bc2c209514460a9320
+  url: people_freedesktop_org:~svu/libxklavier-5.4.tar.bz2
 variables:
   conf-aux: build-aux

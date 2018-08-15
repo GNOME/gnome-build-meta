@@ -1,10 +1,10 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-video-effects
-  track: master
 depends:
 - core-deps/gnome-common.bst
 - core-deps/gstreamer.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 5a7ee0f5ade4b7d921f1b99f3b97d7d7bb830f2fef0f1daee20a7a1867708219
+  url: https://download.gnome.org/sources/gnome-video-effects/0.4/gnome-video-effects-0.4.3.tar.xz

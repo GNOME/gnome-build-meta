@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtk
-  track: gtk-3-24
 depends:
 - core-deps/atk.bst
 - core-deps/at-spi2-atk.bst
@@ -31,9 +26,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend
-    --enable-wayland-backend
+kind: autotools
 public:
   bst:
     integration-commands:
@@ -44,3 +37,10 @@ public:
         fi
       done
     - gtk-query-immodules-3.0 --update-cache
+sources:
+- kind: tar
+  ref: 65813efa5e0f681c522cc3fc8a966e142b2470caf31484b40d310466a2ca7ed3
+  url: https://download.gnome.org/sources/gtk+/3.23/gtk+-3.23.2.tar.xz
+variables:
+  conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend
+    --enable-wayland-backend

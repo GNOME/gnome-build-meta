@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtkmm
-  track: gtkmm-3-22
 depends:
 - core-deps/atkmm-1.6.bst
 - core-deps/cairomm-1.0.bst
@@ -11,5 +6,10 @@ depends:
 - core-deps/pangomm-1.4.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 91afd98a31519536f5f397c2d79696e3d53143b80b75778521ca7b48cb280090
+  url: https://download.gnome.org/sources/gtkmm/3.22/gtkmm-3.22.2.tar.xz
 variables:
   conf-local: --enable-maintainer-mode

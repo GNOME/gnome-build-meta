@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: github_com:hughsie/libgusb.git
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
@@ -10,3 +5,8 @@ depends:
 - core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: d8e7950f99b6ae4c3e9b8c65f3692b9635289e6cff8de40c4af41b2e9b348edc
+  url: http://people.freedesktop.org/~hughsient/releases/libgusb-0.3.0.tar.xz

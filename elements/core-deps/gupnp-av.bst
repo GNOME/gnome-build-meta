@@ -1,11 +1,11 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gupnp-av
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gobject-introspection.bst
 - core-deps/gupnp.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 8038ef84dddbe7ad91c205bf91dddf684f072df8623f39b6555a6bb72837b85a
+  url: https://download.gnome.org/sources/gupnp-av/0.12/gupnp-av-0.12.10.tar.xz

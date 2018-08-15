@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-boxes
-  track: master
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/glib.bst
@@ -21,5 +16,10 @@ depends:
 - core/adwaita-icon-theme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 051c4519365d45cd104970a7c152cf0a3caf4bf028b62dff078fa59b24221c2e
+  url: https://download.gnome.org/sources/gnome-boxes/3.29/gnome-boxes-3.29.91.tar.xz
 variables:
   meson-local: -Drdp=false
