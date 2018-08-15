@@ -1,30 +1,13 @@
-# This module depends on the Doxygen .tag file for libstdc++.
-#
-# If libstdc++ in the base system was built with documentation enabled,
-# we can get this file from the base system.
-#
-# mm-common's build system provides the option of download the file, in
-# case it's not available in the base system. At time of writing this
-# comment, the build system fetched the file from here:
-#
-#   http://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/libstdc++.tag
-#
-# BuildStream requires that all downloads are done outside the sandbox.
-# In theory we could inject the remote file into the sandbox but BuildStream
-# currently lacks an appropriate source plugin:
-#
-#   https://gitlab.com/BuildStream/buildstream/issues/163
-
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mm-common
-  track: master
-- kind: local
-  path: files/mm-common/libstdc++.tag
-  directory: doctags/
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: ceffdcce1e5b52742884c233ec604bf6fded12eea9da077ce7a62c02c87e7c0b
+  url: https://download.gnome.org/sources/mm-common/0.9/mm-common-0.9.12.tar.xz
+- directory: doctags/
+  kind: local
+  path: files/mm-common/libstdc++.tag
 variables:
   conf-local: --disable-network

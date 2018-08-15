@@ -1,7 +1,3 @@
-kind: cmake
-sources:
-- kind: tar
-  url: webkitgtk_org:webkitgtk-2.21.5.tar.xz
 depends:
 - core-deps/at-spi2-core.bst
 - core-deps/brotli.bst
@@ -26,5 +22,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: cmake
+sources:
+- kind: tar
+  ref: c31ec8c701dc174a6898fc78f08b549ec986abb5e6c7e86db46680a9ee45821f
+  url: webkitgtk_org:webkitgtk-2.21.5.tar.xz
 variables:
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF

@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/totem
-  track: master
 depends:
 - core-deps/appstream-glib.bst
 - core-deps/clutter-gst.bst
@@ -25,5 +20,10 @@ depends:
 - core/gsettings-desktop-schemas.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: cf8c49941f37e326353e5ede621350f78d2658f7cef73bf92aeedfa1a98e9ed2
+  url: https://download.gnome.org/sources/totem/3.26/totem-3.26.2.tar.xz
 variables:
   meson-local: -Dwith-plugins=none

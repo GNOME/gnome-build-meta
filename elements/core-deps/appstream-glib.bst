@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: github_com:hughsie/appstream-glib.git
-  track: master
 depends:
 - core-deps/gcab.bst
 - core-deps/gdk-pixbuf.bst
@@ -14,5 +9,10 @@ depends:
 - core-deps/libyaml.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: bacab112fc15f37932570ac8287ba050b0a1d0fdc842913f8b8345f6de128bc9
+  url: http://people.freedesktop.org/~hughsient/appstream-glib/releases/appstream-glib-0.7.12.tar.xz
 variables:
   meson-local: -Dstemmer=false -Drpm=false

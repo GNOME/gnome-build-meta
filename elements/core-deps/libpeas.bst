@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libpeas
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
@@ -11,5 +6,10 @@ depends:
 - core-deps/pygobject.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 5b2fc0f53962b25bca131a5ec0139e6fef8e254481b6e777975f7a1d2702a962
+  url: https://download.gnome.org/sources/libpeas/1.22/libpeas-1.22.0.tar.xz
 variables:
   conf-local: --enable-python3

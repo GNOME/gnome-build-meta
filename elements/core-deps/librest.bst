@@ -1,10 +1,10 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/librest
-  track: librest-0-7
 depends:
 - core-deps/glib.bst
 - core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9
+  url: https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz

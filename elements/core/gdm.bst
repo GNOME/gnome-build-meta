@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gdm
-  track: master
 depends:
 - core-deps/accountsservice.bst
 - core-deps/dconf.bst
@@ -13,5 +8,10 @@ depends:
 - core-deps/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: e02a0998b580b05dae16a398ec68f94d7281517126be7727c9b86fc8aecac71f
+  url: https://download.gnome.org/sources/gdm/3.29/gdm-3.29.91.tar.xz
 variables:
   conf-local: --with-plymouth=no

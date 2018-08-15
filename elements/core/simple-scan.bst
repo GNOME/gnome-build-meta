@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/simple-scan
-  track: master
 depends:
 - core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst
@@ -15,3 +10,8 @@ depends:
 - core/adwaita-icon-theme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 60bc7a583772e080b7e61f66c197738d5541b793f3ed55acb971bbfebe3ddfd0
+  url: https://download.gnome.org/sources/simple-scan/3.29/simple-scan-3.29.91.tar.xz

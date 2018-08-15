@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/tracker-miners
-  track: master
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst
@@ -19,3 +14,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 8cdff2be40f178e1ca7f5f06b03b4a5cbf234e897cb92eeb98de3ac5fef545fc
+  url: https://download.gnome.org/sources/tracker-miners/2.1/tracker-miners-2.1.0.tar.xz

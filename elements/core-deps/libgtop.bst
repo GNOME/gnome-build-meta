@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgtop
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
@@ -10,3 +5,8 @@ depends:
   junction: freedesktop-sdk.bst
 environment:
   CC: gcc -std=c99
+kind: autotools
+sources:
+- kind: tar
+  ref: 4f6c0e62bb438abfd16b4559cd2eca0251de19e291c888cdc4dc88e5ffebb612
+  url: https://download.gnome.org/sources/libgtop/2.38/libgtop-2.38.0.tar.xz

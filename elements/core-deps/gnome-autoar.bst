@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-autoar
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-common.bst
@@ -11,3 +6,8 @@ depends:
 - core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 5de9db0db028cd6cab7c2fec46ba90965474ecf9cd68cfd681a6488cf1fb240a
+  url: https://download.gnome.org/sources/gnome-autoar/0.2/gnome-autoar-0.2.3.tar.xz

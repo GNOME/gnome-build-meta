@@ -1,7 +1,8 @@
-kind: autotools
-sources:
-- kind: tar
-  url: github_com:williamh/dotconf/archive/v1.3.tar.gz
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 7f1ecf40de1ad002a065a321582ed34f8c14242309c3547ad59710ae3c805653
+  url: github_com:williamh/dotconf/archive/v1.3.tar.gz

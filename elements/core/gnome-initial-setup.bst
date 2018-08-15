@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup
-  track: master
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/WebKitGTK+.bst
@@ -23,3 +18,8 @@ depends:
 - core/network-manager-applet.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 44dd7b21d2b4973563aa43fc5b710d5e1d293721e993351a5a7427556070861c
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.29/gnome-initial-setup-3.29.1.tar.xz

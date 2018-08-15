@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/pangomm
-  track: pangomm-2-40
 depends:
 - core-deps/atk.bst
 - core-deps/cairomm-1.0.bst
@@ -10,5 +5,10 @@ depends:
 - core-deps/pango.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 9762ee2a2d5781be6797448d4dd2383ce14907159b30bc12bf6b08e7227be3af
+  url: https://download.gnome.org/sources/pangomm/2.40/pangomm-2.40.1.tar.xz
 variables:
   conf-local: --enable-maintainer-mode

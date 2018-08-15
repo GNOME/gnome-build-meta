@@ -1,11 +1,11 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/totem-pl-parser
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gmime3.bst
 - core-deps/gobject-introspection.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 6ae2c4b8acaf052af21b8db256b6314385de031ba721a2dbdb361e90d4b4b74c
+  url: https://download.gnome.org/sources/totem-pl-parser/3.26/totem-pl-parser-3.26.1.tar.xz

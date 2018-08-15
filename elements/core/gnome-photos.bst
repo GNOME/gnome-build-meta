@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-photos
-  track: master
 depends:
 - core-deps/babl.bst
 - core-deps/gdk-pixbuf.bst
@@ -26,3 +21,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: cfa0db2c0e0af13883f9f18fdd6370767c7cc9edb52307f660847da3502f0034
+  url: https://download.gnome.org/sources/gnome-photos/3.29/gnome-photos-3.29.4.tar.xz

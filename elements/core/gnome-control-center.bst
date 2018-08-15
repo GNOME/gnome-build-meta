@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-control-center
-  track: master
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -35,3 +30,8 @@ depends:
 - core/network-manager-applet.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 07f65561c03db797e51b14c07a9b2c07261a94bbc910642cb70b0547ee58f409
+  url: https://download.gnome.org/sources/gnome-control-center/3.29/gnome-control-center-3.29.90.tar.xz

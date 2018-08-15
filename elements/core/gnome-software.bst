@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-software
-  track: master
 depends:
 - core-deps/PackageKit.bst
 - core-deps/appstream-glib.bst
@@ -19,5 +14,10 @@ depends:
 - core/gsettings-desktop-schemas.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: ad642749dc46b666ae16eb87691d20e7592acdc42ce5b521a0b9f43e0df31a05
+  url: https://download.gnome.org/sources/gnome-software/3.29/gnome-software-3.29.1.tar.xz
 variables:
   meson-local: -Dfwupd=false -Dflatpak=false

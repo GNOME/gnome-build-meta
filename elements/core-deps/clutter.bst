@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/clutter
-  track: master
 depends:
 - core-deps/atk.bst
 - core-deps/cogl.bst
@@ -16,6 +11,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: e7233314983055e9018f94f56882e29e7fc34d8d35de030789fdcd9b2d0e2e56
+  url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.2.tar.xz
 variables:
   conf-local: --enable-installed-tests --disable-maintainer-flags --enable-egl-backend
     --enable-evdev-input --enable-wayland-backend --enable-wayland-compositor

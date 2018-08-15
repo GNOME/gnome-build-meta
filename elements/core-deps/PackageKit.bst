@@ -1,8 +1,6 @@
-kind: autotools
-sources:
-- kind: git
-  url: github_com:hughsie/PackageKit.git
-  track: master
+config:
+  build-commands:
+  - '%{make} CFLAGS=-Wno-error'
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/glib.bst
@@ -11,9 +9,11 @@ depends:
 - core-deps/polkit.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 4bc4061420e6fc831e1eeab167bc3e096da0d132282fbd0d1d9a5426c4aa4ed7
+  url: http://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.10.tar.xz
 variables:
   conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin
     --disable-bash-completion --disable-gtk-module
-config:
-  build-commands:
-  - '%{make} CFLAGS=-Wno-error'

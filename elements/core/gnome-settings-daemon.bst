@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-settings-daemon
-  track: master
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
@@ -29,3 +24,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 833dc913639f5d9b19e962c36be748e30d8844ebcc0e16f1e42db54e76d1eb18
+  url: https://download.gnome.org/sources/gnome-settings-daemon/3.29/gnome-settings-daemon-3.29.90.1.tar.xz

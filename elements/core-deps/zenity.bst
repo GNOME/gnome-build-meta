@@ -1,11 +1,11 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/zenity
-  track: master
 depends:
 - core-deps/gtk+-3.bst
 - core-deps/gnome-common.bst
 - core-deps/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: db179354721fb4e2d5c418e0dc41f09c831a6b2dd440e33f7743dfc266de8a6b
+  url: https://download.gnome.org/sources/zenity/3.28/zenity-3.28.1.tar.xz

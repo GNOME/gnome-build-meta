@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gvfs
-  track: master
 depends:
 - core-deps/avahi.bst
 - core-deps/fuse.bst
@@ -25,5 +20,10 @@ depends:
 - core-deps/udisks2.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 5d39075f01ba640d6e296669251e40f10ad2a608a142df109ed05f0ea6c73822
+  url: https://download.gnome.org/sources/gvfs/1.37/gvfs-1.37.90.tar.xz
 variables:
   meson-local: -Dsystemduserunitdir=no -Dtmpfilesdir=no -Dinstalled_tests=true -Ddbus_service_dir=/usr/share/dbus-1/services

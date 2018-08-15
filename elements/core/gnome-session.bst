@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-session
-  track: master
 depends:
 - core-deps/gtk+-3.bst
 - core-deps/json-glib.bst
@@ -15,3 +10,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: e348ff52c88d2b1a125b0278027cc782c8ad08412c14e6f7529dcaa173a2cae5
+  url: https://download.gnome.org/sources/gnome-session/3.29/gnome-session-3.29.90.tar.xz

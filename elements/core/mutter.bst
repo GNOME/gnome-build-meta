@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mutter
-  track: master
 depends:
 - core-deps/gdk-pixbuf.bst
 - core-deps/glib.bst
@@ -25,6 +20,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 9516339eaf65395e0ffeb814a566e194ff00576af848e5761e3b3a441493860d
+  url: https://download.gnome.org/sources/mutter/3.29/mutter-3.29.90.tar.xz
 variables:
   conf-local: --enable-compile-warnings=maximum --enable-installed-tests --enable-xlib-egl-platform
     --enable-wayland-egl-platform --enable-wayland-egl-server --enable-kms-egl-platform

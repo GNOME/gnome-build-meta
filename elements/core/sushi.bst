@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/sushi
-  track: master
 depends:
 - core-deps/WebKitGTK+.bst
 - core-deps/clutter-gst.bst
@@ -18,3 +13,8 @@ depends:
 - core/evince.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 3c2e5ae4a6553563fb06bcc3bd59b61a6d891cc9a3fad724f805e483c968cdfb
+  url: https://download.gnome.org/sources/sushi/3.28/sushi-3.28.3.tar.xz

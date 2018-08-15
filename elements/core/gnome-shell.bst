@@ -1,8 +1,3 @@
-kind: meson
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-shell
-  track: master
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -29,3 +24,8 @@ depends:
 - core/mutter.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: meson
+sources:
+- kind: tar
+  ref: 7b634dfeb7ed759688b219ab9df5abddd1106f3768bcda3b26dcae651bf4e9e8
+  url: https://download.gnome.org/sources/gnome-shell/3.29/gnome-shell-3.29.90.tar.xz

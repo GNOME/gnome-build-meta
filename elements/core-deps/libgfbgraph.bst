@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgfbgraph
-  track: master
 depends:
 - core-deps/glib.bst
 - core-deps/gnome-online-accounts.bst
@@ -11,3 +6,8 @@ depends:
 - core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: da1179083cde2b649d7491c745250a00d292e390fd620b7dd2dd95a122dae0b6
+  url: https://download.gnome.org/sources/gfbgraph/0.2/gfbgraph-0.2.3.tar.xz

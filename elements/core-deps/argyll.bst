@@ -1,9 +1,8 @@
-kind: manual
-sources:
-- kind: zip
-  url: http://www.argyllcms.com/Argyll_V2.0.0_src.zip
-- kind: patch
-  path: files/argyll/fix-aarch64-build.patch
+config:
+  build-commands:
+  - jam -q -fJambase -j%{max-jobs}
+  install-commands:
+  - jam -q -fJambase -j%{max-jobs} DESTDIR=%{install-root} PREFIX=%{prefix} install
 depends:
 - filename: core-deps/ftjam.bst
   type: build
@@ -21,8 +20,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-config:
-  build-commands:
-  - jam -q -fJambase -j%{max-jobs}
-  install-commands:
-  - jam -q -fJambase -j%{max-jobs} DESTDIR=%{install-root} PREFIX=%{prefix} install
+kind: manual
+sources:
+- kind: zip
+  ref: 5492896c040b406892864c467466ad6b50eb62954b5874ef0eb9174d1764ff41
+  url: http://www.argyllcms.com/Argyll_V2.0.0_src.zip
+- kind: patch
+  path: files/argyll/fix-aarch64-build.patch

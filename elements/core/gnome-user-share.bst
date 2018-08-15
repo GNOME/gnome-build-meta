@@ -1,8 +1,3 @@
-kind: autotools
-sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-user-share
-  track: master
 depends:
 - core-deps/gtk+-3.bst
 - core-deps/libnotify.bst
@@ -10,3 +5,8 @@ depends:
 - core/nautilus.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+kind: autotools
+sources:
+- kind: tar
+  ref: 09d4d31258f684db43f07a0a9e1fb784c4a7c5504d5b818afcda57da58b69213
+  url: https://download.gnome.org/sources/gnome-user-share/3.28/gnome-user-share-3.28.0.tar.xz
