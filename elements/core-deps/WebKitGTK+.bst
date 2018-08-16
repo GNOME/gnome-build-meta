@@ -28,3 +28,6 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF
+public:
+  cpe:
+    product: webkitgtk+  
