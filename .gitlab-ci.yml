@@ -62,13 +62,13 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} build --track-all core.bst flatpak-runtimes.bst
+    - ${BST} -o arch "$ARCH" build --track-all core.bst flatpak-runtimes.bst
     - |
       mkdir runtimes
 
       for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
-        bst checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}";
-        flatpak build-export --files=files repo/ runtimes/${runtime} ${FLATPAK_BRANCH};
+        bst -o arch "$ARCH" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}";
+        flatpak build-export --arch "$ARCH" --files=files repo/ "runtimes/${runtime}"" ${FLATPAK_BRANCH};
       done
 
     # TODO: push the resulting runtime to sdk.gnome.org
@@ -91,6 +91,16 @@ build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-107-4e1160a9
   tags:
     - do
+  variables:
+    ARCH: x86_64
+  <<: *build
+
+build-gnome-core-i386:
+  image: buildstream/buildstream-fedora:master-107-4e1160a9
+  tags:
+    - do
+  variables:
+    ARCH: i386
   <<: *build
 
 build-gnome-core-aarch64:
@@ -98,4 +108,6 @@ build-gnome-core-aarch64:
   tags:
     - aarch64
   allow_failure: true
+  variables:
+    ARCH: aarch64
   <<: *build
