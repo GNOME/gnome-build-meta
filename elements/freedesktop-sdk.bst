@@ -6,4 +6,6 @@ sources:
 config:
   options:
     target_arch: '%{arch}'
-  path: sdk/
+    (?):
+    - arch == 'i386':
+        target_arch: i586
