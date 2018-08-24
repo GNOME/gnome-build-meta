@@ -52,7 +52,7 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} build --track-all core.bst
+    - ${BST} build -o arch "${ARCH}" --track-all core.bst
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
   # on every build.
@@ -69,13 +69,17 @@ before_script:
 
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *build
   tags:
     - do
-  <<: *build
+  variables:
+    ARCH: x86_64
 
 build-gnome-core-aarch64:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *build
   tags:
     - aarch64
+  variables:
+    ARCH: aarch64
   allow_failure: true
-  <<: *build
