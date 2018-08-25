@@ -75,13 +75,13 @@ build-gnome-core-x86_64:
   variables:
     ARCH: x86_64
 
-build-gnome-core-i586:
+build-gnome-core-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
     - do
   variables:
-    ARCH: i586
+    ARCH: i386
   allow_failure: true
 
 build-gnome-core-aarch64:
