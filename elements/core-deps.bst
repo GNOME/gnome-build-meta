@@ -201,7 +201,6 @@ depends:
 - core-deps/uhttpmock.bst
 - core-deps/upower.bst
 - core-deps/vala.bst
-- core-deps/valgrind.bst
 - core-deps/volume-key.bst
 - core-deps/vte.bst
 - core-deps/woff2.bst

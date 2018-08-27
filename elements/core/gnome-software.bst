@@ -13,7 +13,6 @@ depends:
 - core-deps/liboauth.bst
 - core-deps/libsecret.bst
 - core-deps/libsoup.bst
-- core-deps/valgrind.bst
 - core/adwaita-icon-theme.bst
 - core/gnome-desktop.bst
 - core/gsettings-desktop-schemas.bst
