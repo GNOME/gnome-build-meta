@@ -29,9 +29,9 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   (?):
-    - target_arch == "i386":
+    - arch == "i386":
         webkitgtk_target: "-DCMAKE_SYSTEM_PROCESSOR=i586"
-    - target_arch == "arm":
+    - arch == "arm":
         webkitgtk_target: "-DCMAKE_SYSTEM_PROCESSOR=arm -DENABLE_JIT=OFF"
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF ${webkitgtk_target}
   max-jobs: 2
