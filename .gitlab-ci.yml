@@ -97,7 +97,7 @@ build-gnome-core-arm:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
   <<: *build
   tags:
-    - aarch64
+    - armhf
   variables:
     ARCH: arm
   allow_failure: true
