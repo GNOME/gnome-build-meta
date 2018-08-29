@@ -6,6 +6,7 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
+  mozjs_target: ''
   (?):
     - arch == "i386":
         mozjs_target: "--host=i586-unknown-linux-gnu"
@@ -14,7 +15,7 @@ variables:
   command-subdir: _build
 config:
   configure-commands:
-  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc AUTOCONF=autoconf ${mozjs_target}
+  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc AUTOCONF=autoconf %{mozjs_target}
   build-commands:
   - make
   install-commands:
