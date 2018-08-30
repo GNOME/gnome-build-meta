@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gdk-pixbuf
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gdk-pixbuf/2.37/gdk-pixbuf-2.37.92.tar.xz
+  ref: bd7692b69354e151369f3b874631257d24a73d9b086db246079e389a5d45281e
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

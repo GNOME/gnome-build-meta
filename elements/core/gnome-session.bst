@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-session
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-session/3.29/gnome-session-3.29.92.tar.xz
+  ref: 8aaebc385e7b2166c51dc6e0fd70081ae2535defee935e327e70f238edcb50e2
 depends:
 - core-deps/upower.bst
 - core-deps/xmlto.bst

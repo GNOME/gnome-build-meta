@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-contacts
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-contacts/3.29/gnome-contacts-3.29.92.tar.xz
+  ref: c708af13a6771a9468c4c4c8d02ad3adf256e182b91688a40f656c43f4740d11
 depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst

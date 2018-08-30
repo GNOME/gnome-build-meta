@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/network-manager-applet
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/network-manager-applet/1.8/network-manager-applet-1.8.16.tar.xz
+  ref: 62a3a1d1a810d286f44484b8405cbacbe17f44b050fffce6ae3a51ef099cb452
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst

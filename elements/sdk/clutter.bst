@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/clutter
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.2.tar.xz
+  ref: e7233314983055e9018f94f56882e29e7fc34d8d35de030789fdcd9b2d0e2e56
 depends:
 - sdk/atk.bst
 - sdk/cogl.bst

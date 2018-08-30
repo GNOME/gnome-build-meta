@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:geoclue
-  track: master
+- kind: tar
+  url: http://www.freedesktop.org/software/geoclue/releases/2.4/geoclue-2.4.12.tar.xz
+  ref: 05d0e2ec077a685de2a9c63973fe6d18366ca53881d1f0750110b93c5c68caca
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst

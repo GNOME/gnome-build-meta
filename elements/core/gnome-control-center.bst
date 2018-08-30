@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-control-center
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-control-center/3.29/gnome-control-center-3.29.92.tar.xz
+  ref: 7e1905a1489390d26d17b15ee69135adac2090f215cdb6fb9c806b3ddd775223
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst

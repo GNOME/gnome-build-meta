@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/nautilus
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/nautilus/3.29/nautilus-3.29.92.tar.xz
+  ref: 369785f70d2b6e317fba6dc913ad9b50ee37499bc035e32600ca288393895c26
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst

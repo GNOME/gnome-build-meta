@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-documents
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-documents/3.29/gnome-documents-3.29.91.tar.xz
+  ref: 1bc1a23798ac4e00b545a9a70101446121bb62c092e3e7c6a8cb6377dc9683c4
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst

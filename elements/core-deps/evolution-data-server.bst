@@ -1,8 +1,8 @@
 kind: cmake
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/evolution-data-server
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/evolution-data-server/3.29/evolution-data-server-3.29.92.tar.xz
+  ref: 0a0c0a6b48ecf54ca2802737530fafc96e346010451a04b439198e06c2ca9045
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libgdata.bst

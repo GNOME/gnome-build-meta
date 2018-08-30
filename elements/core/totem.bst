@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/totem
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/totem/3.26/totem-3.26.2.tar.xz
+  ref: cf8c49941f37e326353e5ede621350f78d2658f7cef73bf92aeedfa1a98e9ed2
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

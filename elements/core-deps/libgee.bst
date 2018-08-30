@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgee
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.1.tar.xz
+  ref: bb2802d29a518e8c6d2992884691f06ccfcc25792a5686178575c7111fea4630
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

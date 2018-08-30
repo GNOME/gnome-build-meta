@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/orca
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/orca/3.29/orca-3.29.4.tar.xz
+  ref: 1d2fd5aa00cd821d7af9e2ea6e07112c346c3c726d79c2a6b4222c609b6afeec
 depends:
 - core-deps/pyatspi2.bst
 - core-deps/speech-dispatcher.bst

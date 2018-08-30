@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/vala
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/vala/0.41/vala-0.41.92.tar.xz
+  ref: 95d35d87a707d1abddc3de3655f8ee2d0deedcb9e7dd1100301ec53178ff65f2
 - kind: patch
   path: files/vala/libvaladoc-Allow-disabling-the-graphviz-dependency.patch
 depends:

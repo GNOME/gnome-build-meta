@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gvfs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gvfs/1.37/gvfs-1.37.92.tar.xz
+  ref: d9e3b1c75cf00ba2f23fef57b273cdf1a5a823f102b88bd1f0c413c0b63257b0
 depends:
 - sdk/glib.bst
 - filename: desktop/dbus.bst

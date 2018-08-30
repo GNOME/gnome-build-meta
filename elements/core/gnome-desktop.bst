@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-desktop
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-desktop/3.29/gnome-desktop-3.29.91.tar.xz
+  ref: e8e027a0a26bf0f8e1805166fcd0826216dcae3d3421892117a84a532e1a464f
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

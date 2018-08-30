@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/librsvg.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/librsvg/2.44/librsvg-2.44.1.tar.xz
+  ref: 8af2ea5a612a756d3228ec36fbd1cbbd0c35f6bc862886627360ca85a60ba33a
 - kind: local
   directory: .cargo/
   path: files/librsvg/config

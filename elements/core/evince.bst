@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/evince
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/evince/3.29/evince-3.29.92.tar.xz
+  ref: 62f2664cac6b37a0f7213d50937221a16d071451347fda5faa4d3121571ad4c1
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst

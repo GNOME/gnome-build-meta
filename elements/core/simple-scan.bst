@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/simple-scan
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/simple-scan/3.29/simple-scan-3.29.92.tar.xz
+  ref: 8f409296993061cbf9911f624739a8fe1bd158cde8f8e77dba086e4f5c93a3f8
 depends:
 - core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst

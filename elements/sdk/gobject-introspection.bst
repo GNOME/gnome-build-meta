@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gobject-introspection
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gobject-introspection/1.57/gobject-introspection-1.57.3.tar.xz
+  ref: e6487e6f18930dd7fa2504c0425938e065c643bdf007424987490d80890f1363
 depends:
 - sdk/glib.bst
 - filename: base.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-software
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-software/3.29/gnome-software-3.29.92.tar.xz
+  ref: 02f81573708a74907e1c2f1aaadbbc1c2ad4d6e66c5fa36c3d0c76b815582116
 depends:
 - core-deps/PackageKit.bst
 - core-deps/gspell.bst
