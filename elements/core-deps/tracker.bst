@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/tracker
@@ -13,5 +13,8 @@ depends:
 - core-deps/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+
 variables:
-  conf-local: --with-unicode-support=libicu --with-bash-completion-dir=/usr/share/bash-completion/completions
+  meson-local: |
+    -Dunicode_support=icu \
+    -Dbash_completion=${prefix}/share/bash-completion/completions
