@@ -257,9 +257,9 @@ depends:
 - core-deps/libcroco.bst
 - core-deps/pango.bst
 - core-deps/vala.bst
-- filename: rust/cargo.bst
+- filename: extensions/rust/cargo.bst
   junction: freedesktop-sdk.bst
-- filename: rust/rust.bst
+- filename: extensions/rust/rust.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
