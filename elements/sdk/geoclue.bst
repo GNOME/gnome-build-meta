@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: http://www.freedesktop.org/software/geoclue/releases/2.4/geoclue-2.4.12.tar.xz
@@ -19,8 +19,8 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  meson-local: |
-    -D3g-source=false \
-    -Dcdma-source=false \
-    -Dmodem-gps-source=false \
-    -Dnmea-source=false
+  conf-local: |
+    --disable-3g-source \
+    --disable-cdma-source \
+    --disable-modem-gps-source \
+    --disable-nmea-source
