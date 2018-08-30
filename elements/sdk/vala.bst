@@ -9,6 +9,8 @@ depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
   type: build
+- filename:  core-deps/graphviz.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -16,4 +18,4 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  conf-local: --enable-unversioned --disable-graphviz
+  conf-local: --enable-unversioned
