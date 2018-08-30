@@ -26,4 +26,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dwith-plugins=none
+  meson-local: -Denable-vala=no
