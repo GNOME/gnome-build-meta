@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-online-accounts
@@ -12,5 +12,3 @@ depends:
 - core-deps/libsoup.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: --disable-telepathy
