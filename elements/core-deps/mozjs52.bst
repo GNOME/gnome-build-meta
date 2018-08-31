@@ -11,7 +11,7 @@ variables:
     - arch == "i386":
         mozjs_target: "--host=i586-unknown-linux-gnu"
     - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnu"
+        mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
   conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc %{mozjs_target}
     AUTOCONF=autoconf

@@ -15,7 +15,7 @@ variables:
     - arch == "i386":
         mozjs_target: "--host=i586-unknown-linux-gnu"
     - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnu"
+        mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
 config:
   configure-commands:
