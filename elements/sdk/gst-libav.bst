@@ -11,3 +11,15 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+
+variables:
+  target_specific: ''
+  (?):
+    - arch == "i386":
+        target_specific: "--build=i586-unknown-linux-gnu"
+    - arch == "arm":
+        target_specific: "--build=arm-unknown-linux-gnueabi"
+
+  conf-local: |
+    --with-system-libav \
+    %{target_specific}
