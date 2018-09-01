@@ -4,7 +4,7 @@ variables:
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '970c6696f2eef0bde282f82eb95ae4708ccbf308' #  1.1.6
+  BST_SHA: '301a393cb6499b3f869d74827a9e8dc61b97d00e' #  1.1.7
   BST_EXTERNAL_SHA: '1622d57dfbde94f6cee84e1d8dfd430c86040251' # 0.3.1
   FLATPAK_BRANCH: master
 
