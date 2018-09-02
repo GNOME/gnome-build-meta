@@ -9,7 +9,8 @@ sources:
 depends:
 - core-deps/mozjs52.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst

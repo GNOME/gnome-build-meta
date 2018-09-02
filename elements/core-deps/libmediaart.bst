@@ -6,7 +6,8 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
