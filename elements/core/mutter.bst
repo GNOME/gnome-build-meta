@@ -13,7 +13,8 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/json-glib.bst
 - sdk/pango.bst
 - sdk/zenity.bst

@@ -6,7 +6,8 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
 - filename: vm/linux-vm-boot/systemd.bst
