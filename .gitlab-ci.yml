@@ -91,7 +91,7 @@ build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
+    - ubuntu
   variables:
     ARCH: x86_64
 
@@ -99,7 +99,7 @@ build-gnome-core-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
+    - ubuntu
   variables:
     ARCH: i386
   allow_failure: true
