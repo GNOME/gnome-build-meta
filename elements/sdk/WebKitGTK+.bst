@@ -38,4 +38,3 @@ variables:
     - arch == "arm":
         webkitgtk_target: "-DCMAKE_SYSTEM_PROCESSOR=arm -DENABLE_JIT=OFF"
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_target}
-  max-jobs: 2
