@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.29/gnome-initial-setup-3.29.92.tar.xz
+  ref: 6e865cfee270391946e8e5ba3d0ef81d1e8c648562e5a9462fb48c85f9119da4
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst

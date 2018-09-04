@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtk
-  track: gtk-3-24
+- kind: tar
+  url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.0.tar.xz
+  ref: 02e991389277206253d79884d10e5aa06fd78fdf7a5096799dbe3c97a05e32a8
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst

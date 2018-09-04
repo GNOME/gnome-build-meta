@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libpeas
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libpeas/1.22/libpeas-1.22.0.tar.xz
+  ref: 5b2fc0f53962b25bca131a5ec0139e6fef8e254481b6e777975f7a1d2702a962
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst

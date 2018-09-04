@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gjs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gjs/1.54/gjs-1.54.0.tar.xz
+  ref: e22c63f4dbf243d7a5a6660f6443ca3e5768695a48fc9fdf078bce7cf7aa657d
 depends:
 - sdk/gobject-introspection.bst
 - sdk/mozjs60.bst

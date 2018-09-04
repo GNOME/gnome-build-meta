@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gmime
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gmime/3.2/gmime-3.2.0.tar.xz
+  ref: 75ec6033f9192488ff37745792c107b3d0ab0a36c2d3e4f732901a771755d7e0
 depends:
 - sdk/glib.bst
 - sdk/gtk-doc.bst

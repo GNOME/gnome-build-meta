@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/file-roller
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/file-roller/3.30/file-roller-3.30.0.tar.xz
+  ref: 190b20fc624f682ebb798db6c382e466c1820f9e027d56010760d71dba614ff5
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst

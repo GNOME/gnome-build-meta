@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-boxes
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-boxes/3.30/gnome-boxes-3.30.0.tar.xz
+  ref: dc0126e6869b898d54f033aa842e44bb51b0cefb2354c181395edebee4dae2c3
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst

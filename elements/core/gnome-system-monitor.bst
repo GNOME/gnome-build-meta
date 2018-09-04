@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-system-monitor
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-system-monitor/3.30/gnome-system-monitor-3.30.0.tar.xz
+  ref: 08a17fe1f8f6c01cb5a777bb3a622a3d54068f0b5f779bbf6ecb68b98a291e3c
 depends:
 - core-deps/gtkmm-3.bst
 - core-deps/libgtop.bst
