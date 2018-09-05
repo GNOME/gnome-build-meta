@@ -6,10 +6,15 @@ variables:
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '301a393cb6499b3f869d74827a9e8dc61b97d00e' #  1.1.7
   BST_EXTERNAL_SHA: '1622d57dfbde94f6cee84e1d8dfd430c86040251' # 0.3.1
+  BST_RELEASES_SERVER_ADDRESS: 'gbm.gnome.org'
   FLATPAK_BRANCH: master
 
 stages:
   - build
+  - publish_x86_64
+  - publish_i586
+  - publish_aarch64
+  - publish_arm
 
 
 # Store all the downloaded git and ostree repos in the cache.
@@ -37,6 +42,9 @@ before_script:
   # and flatpak to export the flatpak runtimes
   - dnf install -y flatpak
 
+  # install gpg to sign the ostree artifacts
+  - dnf install -y gpg
+
   # Ensure the log directory exists
   - mkdir -p logs
 
@@ -45,6 +53,19 @@ before_script:
     if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
        echo "$GITLAB_CAS_PUSH_CERT" > client.crt
        echo "$GITLAB_CAS_PUSH_KEY" > client.key
+    fi
+
+
+  # Private key stored as a protected variable that allows pushing to
+  # gbm.gnome.org
+  # FIXME: Protect the key
+  - |
+    if [ -z "$GITLAB_SSH_KEY" ]; then
+        echo >&2 "Private key for gbm.gnome.org is not available."
+    else
+        echo "$GITLAB_SSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
     fi
 
     cat >> build.conf << EOF
@@ -63,6 +84,13 @@ before_script:
   dependencies: []
   script:
     - ${BST} -o arch "${ARCH}" build --track-all core.bst flatpak-runtimes.bst
+
+    # Clone the gbm OSTree repo locally
+    - ostree init --repo=repo --mode=archive-z2
+    - ostree remote add --repo=repo origin "https://${BST_RELEASES_SERVER_ADDRESS}/repo/" --no-gpg-verify
+    - ostree pull --repo=repo origin --mirror
+
+    # Build the runtimes
     - |
       mkdir runtimes
 
@@ -71,7 +99,14 @@ before_script:
         flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
-    # TODO: push the resulting runtime to sdk.gnome.org
+    # push the resulting runtimes to gbm.gnome.org
+    # FIXME: Only push from protected branches
+    - export OSTREE_PUSH_SHA='9aa82b67325786a810653155b952a17b7ccc436a'
+    - git clone https://github.com/ssssam/ostree-push.git
+    - git -C ostree-push/ checkout "${OSTREE_PUSH_SHA}"
+    # Trust the host key of the release server.
+    - ssh-keyscan "${BST_RELEASES_SERVER_ADDRESS}" >> ~/.ssh/known_hosts
+    - ostree-push/ostree-push --repo=repo ssh://gbm@"${BST_RELEASES_SERVER_ADDRESS}"
 
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
