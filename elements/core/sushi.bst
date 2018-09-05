@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/sushi/3.30/sushi-3.30.0.tar.xz
