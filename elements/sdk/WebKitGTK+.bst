@@ -2,6 +2,10 @@ kind: cmake
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.22.1.tar.xz
+- kind: local
+  path: files/webkitgtk/toolchain.i386
+- kind: local
+  path: files/webkitgtk/toolchain.arm
 depends:
 - sdk/at-spi2-core.bst
 - sdk/brotli.bst
@@ -31,11 +35,11 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  webkitgtk_target: ''
+  webkitgtk_toolchain: ''
   (?):
     - arch == "i386":
-        webkitgtk_target: "-DCMAKE_SYSTEM_PROCESSOR=i586"
+        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
     - arch == "arm":
-        webkitgtk_target: "-DCMAKE_SYSTEM_PROCESSOR=arm -DENABLE_JIT=OFF"
-  cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_target}
+        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
+  cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_toolchain}
   max-jobs: 2
