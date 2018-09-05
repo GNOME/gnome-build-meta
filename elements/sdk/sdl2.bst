@@ -5,6 +5,7 @@ sources:
 - kind: patch
   path: files/sdl2/sdl2-unity-fix.patch
 depends:
+- sdk/fcitx.bst
 - sdk/ibus.bst
 - filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
