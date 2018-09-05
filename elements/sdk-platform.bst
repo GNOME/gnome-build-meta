@@ -15,6 +15,7 @@ depends:
 - sdk/dbus-glib.bst
 - sdk/dconf.bst
 - sdk/enchant-2.bst
+- sdk/ffmpeg.bst
 - sdk/gcab.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
@@ -62,7 +63,7 @@ depends:
 # update our reference to add any new elements.
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
-# appstream-glib, at-spi2-*, atk, dconf, gcab, gdk-pixbuf, geoclue2, glib-networking,
+# appstream-glib, at-spi2-*, atk, dconf, ffmpeg, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
 # libsoup, os-release, pango, sdl2* and zenity.
 
@@ -87,8 +88,6 @@ depends:
 - filename: desktop/dictionaries.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/emoji-one-font.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/flatpak-xdg-utils.bst
   junction: freedesktop-sdk.bst
