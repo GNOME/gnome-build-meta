@@ -4,6 +4,7 @@ sources:
   url: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.2.tar.xz
   ref: a4b7e80ba869f599307449b17c9e00b5d1e94d3ba1d8a1a386b8770b2ef01c7c
 depends:
+- sdk/opus.bst
 - sdk/pango.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
@@ -18,15 +19,6 @@ depends:
   type: runtime
 - filename: desktop/alsa-lib.bst
   junction: freedesktop-sdk.bst
-- filename: base/libogg.bst
-  junction: freedesktop-sdk.bst
-- filename: base/libtheora.bst
-  junction: freedesktop-sdk.bst
-- filename: base/libvorbis.bst
-  junction: freedesktop-sdk.bst
-  # FIXME
-  # - filename: base/opus.bst
-  # junction: freedesktop-sdk.bst
 
 variables:
   meson-local: |
