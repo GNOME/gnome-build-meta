@@ -4,6 +4,7 @@ sources:
   url: git_freedesktop_org:gstreamer/gst-plugins-good
   track: master
 depends:
+- sdk/libsoup.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsoup.bst
@@ -15,6 +16,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+- filename: desktop/lame.bst
+  junction: freedesktop-sdk.bst
+
 variables:
   meson-local: |
     -Dsoup=enabled \
