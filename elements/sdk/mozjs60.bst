@@ -2,6 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-60.1.0.tar.bz2
+  ref: 834ffe877fdbbd81315ae3c101221fa404096c354483a86c1a02ece19fca68fd
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
