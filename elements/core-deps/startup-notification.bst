@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: http://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
+  ref: 3c391f7e930c583095045cd2d10eb73a64f085c7fde9d260f2652c7cb3cfbe4a
 depends:
 - filename: desktop/xcb-util.bst
   junction: freedesktop-sdk.bst

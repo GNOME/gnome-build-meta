@@ -3,6 +3,7 @@ sources:
 - kind: git
   url: https://git.ffmpeg.org/ffmpeg.git
   track: n4.0.2
+  ref: fb012fd6a887085be657782b5c000769eebb5c69
 depends:
 - sdk/sdl2.bst
 - filename: desktop/fontconfig.bst
