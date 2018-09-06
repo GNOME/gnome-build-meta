@@ -5,9 +5,15 @@ sources:
   track: master
 depends:
 - sdk/gst-plugins-base.bst
+- sdk/librsvg.bst
+- sdk/opus.bst
+- filename: desktop/vulkan.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+variables:
+  meson-local: -Dopus=enabled -Drsvg=enabled -Dvulkan=enabled
