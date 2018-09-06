@@ -6,9 +6,23 @@ sources:
 depends:
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- sdk/gobject-introspection.bst
+- filename: desktop/orc.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+
+variables:
+  meson-local: |
+    -Dogg=enabled \
+    -Dopus=enabled \
+    -Dvorbis=enabled \
+    -Dalsa=enabled \
+    -Dorc=enabled \
+    -Dx11=enabled \
+    -Dxshm=enabled \
+    -Dxvideo=enabled
