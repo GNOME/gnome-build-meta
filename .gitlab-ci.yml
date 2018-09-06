@@ -6,7 +6,9 @@ variables:
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '301a393cb6499b3f869d74827a9e8dc61b97d00e' #  1.1.7
   BST_EXTERNAL_SHA: '1622d57dfbde94f6cee84e1d8dfd430c86040251' # 0.3.1
+  OSTREE_RELENG_SHA: 'd7d3984914389849bffec689b243512304dd1aec' # v2016.1-15-gd7d3984
   FLATPAK_BRANCH: master
+  FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
 stages:
   - build
@@ -34,8 +36,12 @@ before_script:
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
 
-  # and flatpak to export the flatpak runtimes
+  # flatpak to export the flatpak runtimes
   - dnf install -y flatpak
+
+  # and ostree-releng-scripts for the rsync-repos script to push the result
+  - git clone https://github.com/ostreedev/ostree-releng-scripts.git
+  - git -C ostree-releng-scripts/ checkout "${OSTREE_RELENG_SHA}"
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -58,11 +64,31 @@ before_script:
           push: true
     EOF
 
+  # and ssh key for pushing to the flatpak repo
+  # FIXME: Protect the key
+  - |
+    if [ -n "$GITLAB_SSH_KEY" ]; then
+        mkdir -p ~/.ssh
+        echo "$GITLAB_SSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+
+        # Trust the host key of the release server.
+        ssh-keyscan vpn.gbm-builder.gnome.org >> ~/.ssh/known_hosts
+    fi
+
 .build-template: &build
   stage: build
   dependencies: []
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
+
+    # Clone the gbm OSTree repo locally
+    - ostree init --repo=repo --mode=archive
+    - ostree remote add --repo=repo origin "https://${FLATPAK_SERVER_ADDRESS}/repo/" --no-gpg-verify
+    - ostree pull --repo=repo origin --mirror
+
+    # Build the runtimes
     - |
       mkdir runtimes
 
@@ -71,7 +97,9 @@ before_script:
         flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
-    # TODO: push the resulting runtime to sdk.gnome.org
+    # push the resulting runtimes to gbm.gnome.org
+    # FIXME: Only push from protected branches
+    - ostree-releng-scripts/rsync-repos --src repo/ --dest gbm@vpn.gbm-builder.gnome.org:public_html/repo/
 
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
