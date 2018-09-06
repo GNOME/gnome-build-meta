@@ -1,8 +1,22 @@
 kind: autotools
 sources:
-- kind: tar
-  url: http://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.2.tar.xz
-  ref: 8a351c39c5cfc2bbd31ca434ec4a290a730a26efbdea962fdd8306dce5c576de
+  - kind: git
+    url: freedesktop:gstreamer/gst-libav
+    track: master
+    # Latest stable release doesn't support our ffmpeg, this is the closest commit
+    # to 1.14.2 which supports ffmpeg n4.0.2 with minimal patching
+    ref: 3b6597188ad25cca84ae5caa7b08767a5b4cfee7 # 1.14.0-39-g3b65971
+    submodules:
+      common:
+        url: git_freedesktop_org:gstreamer/common
+      gst-libs/ext/libav:
+        url: https://git.ffmpeg.org/ffmpeg.git
+      gst-libs/ext/gas-preprocessor:
+        url: git://git.libav.org/gas-preprocessor.git
+  - kind: patch
+    path: files/gst-libav/stop-caching-codecs.patch
+  - kind: patch
+    path: files/gst-libav/fix-api.patch
 depends:
 - sdk/gst-plugins-base.bst
 - sdk/ffmpeg.bst
