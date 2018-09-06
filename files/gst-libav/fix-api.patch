@@ -1,0 +1,52 @@
+From 92e17eb716a6c69718c74497877b0dc4e82d7d56 Mon Sep 17 00:00:00 2001
+From: Thomas Coldrick <othko97@gmail.com>
+Date: Wed, 15 Aug 2018 19:58:31 +0100
+Subject: [PATCH] Patch to build on freedesktop-sdk
+
+---
+ configure.ac            |  4 ++--
+ ext/libav/gstavviddec.c | 13 -------------
+ 2 files changed, 2 insertions(+), 15 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 1e8c353..21bfedb 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -45,8 +45,8 @@ AG_GST_LIBTOOL_PREPARE
+ AS_LIBTOOL(GST, 1500, 0, 1500)
+ 
+ dnl *** required versions of GStreamer stuff ***
+-GST_REQ=1.15.0.1
+-GST_PBREQ=1.15.0.1
++GST_REQ=1.14.2
++GST_PBREQ=1.14.2
+ 
+ ORC_REQ=0.4.16
+ ORC_CHECK([$ORC_REQ])
+diff --git a/ext/libav/gstavviddec.c b/ext/libav/gstavviddec.c
+index e3ae04f..09fcc7b 100644
+--- a/ext/libav/gstavviddec.c
++++ b/ext/libav/gstavviddec.c
+@@ -1592,19 +1592,6 @@ gst_ffmpegviddec_video_frame (GstFFMpegVidDec * ffmpegdec,
+           GST_VIDEO_BUFFER_FLAG_INTERLACED);
+   }
+ 
+-  {
+-    AVFrameSideData *side_data =
+-        av_frame_get_side_data (ffmpegdec->picture, AV_FRAME_DATA_A53_CC);
+-    if (side_data) {
+-      GST_LOG_OBJECT (ffmpegdec, "Found CC of size %d", side_data->size);
+-      GST_MEMDUMP ("A53 CC", side_data->data, side_data->size);
+-      out_frame->output_buffer =
+-          gst_buffer_make_writable (out_frame->output_buffer);
+-      gst_buffer_add_video_caption_meta (out_frame->output_buffer,
+-          GST_VIDEO_CAPTION_TYPE_CEA708_RAW, side_data->data, side_data->size);
+-    }
+-  }
+-
+   /* cleaning time */
+   /* so we decoded this frame, frames preceding it in decoding order
+    * that still do not have a buffer allocated seem rather useless,
+-- 
+2.18.0
+
