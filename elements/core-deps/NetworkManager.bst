@@ -11,7 +11,8 @@ depends:
 - sdk/dbus-glib.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/pygobject.bst
 - sdk/vala.bst
 - filename: base.bst

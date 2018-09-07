@@ -6,7 +6,8 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - sdk/glib.bst
-- sdk/gtk-doc.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - world/telepathy-glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
