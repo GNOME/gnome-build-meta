@@ -98,6 +98,7 @@ before_script:
       done
 
     # push the resulting runtimes to gbm.gnome.org
+    - rsync -rlpt --include=/objects --include=/objects/** --include=/deltas --include=/deltas/** --exclude=* repo/ gbm@vpn.gbm-builder.gnome.org:public_html/repo/ --ignore-existing
     # FIXME: Only push from protected branches
     - ostree-releng-scripts/rsync-repos --src repo/ --dest gbm@vpn.gbm-builder.gnome.org:public_html/repo/
 
