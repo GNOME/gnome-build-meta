@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.2.tar.xz
@@ -21,15 +21,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+
 variables:
-  meson-local: |
-    -Dgio=enabled \
-    -Dpango=enabled \
-    -Dogg=enabled \
-    -Dopus=enabled \
-    -Dorc=enabled \
-    -Dtheora=enabled \
-    -Dalsa=enabled \
-    -Dx11=enabled \
-    -Dxshm=enabled \
-    -Dxvideo=enabled
+  conf-local: |
+    --enable-experimental \
+    --enable-introspection \
+    --enable-orc
