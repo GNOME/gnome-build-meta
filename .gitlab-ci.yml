@@ -88,6 +88,11 @@ before_script:
     - ostree remote add --repo=repo origin "https://${FLATPAK_SERVER_ADDRESS}/repo/" --no-gpg-verify
     - ostree pull --repo=repo origin --mirror
 
+    - ssh gbm@gbm.gnome.org
+    - ls -alR
+    - exit
+    - exit
+
     # Build the runtimes
     - |
       mkdir runtimes
