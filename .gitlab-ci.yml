@@ -74,7 +74,7 @@ before_script:
         ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
 
         # Trust the host key of the release server.
-        ssh-keyscan vpn.gbm-builder.gnome.org >> ~/.ssh/known_hosts
+        ssh-keyscan gbm.gnome.org >> ~/.ssh/known_hosts
     fi
 
 .build-template: &build
@@ -87,6 +87,11 @@ before_script:
     - ostree init --repo=repo --mode=archive
     - ostree remote add --repo=repo origin "https://${FLATPAK_SERVER_ADDRESS}/repo/" --no-gpg-verify
     - ostree pull --repo=repo origin --mirror
+
+    - ssh gbm@gbm.gnome.org
+    - ls -alR
+    - exit
+    - exit
 
     # Build the runtimes
     - |
