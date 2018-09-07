@@ -11,6 +11,8 @@ depends:
 - sdk/libsoup.bst
 - filename: desktop/lame.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/mpg123.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
