@@ -1,0 +1,258 @@
+#!/usr/bin/python3
+
+# Copyright (c) 2018 - Mathieu Bridon <bochecha@daitauha.fr>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+import argparse
+import os
+import shutil
+import subprocess
+import sys
+
+from contextlib import contextmanager
+from fnmatch import fnmatch
+
+
+HERE = os.path.dirname(__file__)
+ABI_SUPPRESSION_FILE = os.path.join(os.path.dirname(__file__), 'abidiff-suppressions.ini')
+
+
+class AbiCheckResult:
+    def __init__(self, abi_was_broken, details):
+        self.abi_was_broken = abi_was_broken
+        self.details = details
+
+
+def get_parser():
+    parser = argparse.ArgumentParser(
+        description='Compare the ABI of two revisions',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument(
+        '--old', default='master',
+        help='the previous revision, considered the reference')
+    parser.add_argument(
+        '--new', default=get_current_revision(),
+        help='the new revision, to compare to the reference')
+
+    return parser
+
+
+def format_title(title, level):
+    box = {
+        1: {
+            'tl': '╔', 'tr': '╗', 'bl': '╚', 'br': '╝', 'h': '═', 'v': '║',
+        },
+        2: {
+            'tl': '┌', 'tr': '┐', 'bl': '└', 'br': '┘', 'h': '─', 'v': '│',
+        },
+    }[level]
+    hline = box['h'] * (len(title) + 2)
+
+    return '\n'.join([
+        f"{box['tl']}{hline}{box['tr']}",
+        f"{box['v']} {title} {box['v']}",
+        f"{box['bl']}{hline}{box['br']}",
+    ])
+
+
+def check_command(cmd):
+    try:
+        subprocess.check_call(cmd, stdout=subprocess.DEVNULL)
+    except FileNotFoundError:
+        sys.exit(f'Please install the {cmd[0]} command')
+
+
+def sanity_check():
+    check_command(['abidiff', '--version'])
+    check_command(['bst', '--version'])
+    check_command(['file', '--version'])
+    check_command(['git', '--version'])
+    check_command(['objdump', '--version'])
+
+
+def sanitize_revision(revision):
+    return revision.replace('/', '-')
+
+
+def is_shared_lib(path):
+    out = subprocess.check_output(['file', '--mime-type', path], encoding='utf-8').strip()
+
+    return out.endswith(': application/x-sharedlib')
+
+
+def get_current_revision():
+    revision = subprocess.check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], encoding='utf-8').strip()
+
+    if revision == 'HEAD':
+        # This is a detached HEAD, get the commit hash
+        revision = subprocess.check_output(['git', 'rev-parse', 'HEAD']).strip().decode('utf-8')
+
+    return revision
+
+
+@contextmanager
+def checkout_git_revision(revision):
+    current_revision = get_current_revision()
+    subprocess.check_call(['git', 'checkout', '-q', revision])
+
+    try:
+        yield
+    finally:
+        subprocess.check_call(['git', 'checkout', '-q', current_revision])
+
+
+def bst(args):
+    cmd = ['bst', '--colors'] + args
+    subprocess.check_call(cmd, encoding='utf-8')
+
+
+def checkout_tree(name):
+    os.makedirs('runtimes', exist_ok=True)
+    checkout_dir = os.path.join('runtimes', f'abi-{sanitize_revision(name)}')
+    print(format_title(f'Building and checking out {name}', level=1), end='\n\n', flush=True)
+
+    with checkout_git_revision(name):
+        bst(['build', 'core.bst', 'flatpak-runtimes.bst'])
+        bst(['checkout', '--hardlinks', 'flatpak/sdk.bst', checkout_dir])
+        print(flush=True)
+
+    return checkout_dir
+
+
+def get_soname(path):
+    out = subprocess.check_output(['objdump', '-x', path], encoding='utf-8', stderr=subprocess.STDOUT).strip()
+
+    for line in out.split('\n'):
+        if 'SONAME' in line:
+            return line.split()[-1]
+
+
+def get_library_key(path):
+    soname = get_soname(path)
+
+    if soname is None:
+        return os.path.basename(path)
+
+    # Some libraries share a soname. For example all the libvdpau_* from mesa
+    # all have soname='libvdpau_gallium.so'. This should help disambiguate them
+    basename = os.path.basename(path).rsplit('.so', 1)[0]
+
+    return f'{soname}:{basename}'
+
+
+def get_libraries(tree):
+    seen = set()
+    libs = {}
+
+    libdir = os.path.join(tree, 'usr', 'lib')
+
+    for dirpath, dirnames, filenames in os.walk(libdir):
+        for filename in sorted(filenames):
+            if not fnmatch(filename, 'lib*.so'):
+                continue
+
+            library = os.path.join(dirpath, filename)
+            realpath = os.path.relpath(os.path.realpath(library))
+
+            if realpath in seen:
+                # There were symlinks, no need to compare more than once
+                continue
+
+            seen.add(realpath)
+
+            if not is_shared_lib(realpath):
+                continue
+
+            lib_key = get_library_key(realpath)
+
+            if lib_key in libs:
+                raise NotImplementedError(f'How did this happen? We had more than one {lib_key} library')
+
+            libs[lib_key] = os.path.relpath(realpath, start=tree)
+
+    return libs
+
+
+def compare_abi(old_library, old_debug_dir, old_include_dir, new_library, new_debug_dir, new_include_dir):
+    result = subprocess.run([
+            'abidiff', '--no-added-syms',
+            '--drop-private-types', '--headers-dir1', old_include_dir, '--headers-dir2', new_include_dir,
+            '--suppressions', ABI_SUPPRESSION_FILE,
+            '--debug-info-dir1', old_debug_dir, '--debug-info-dir2', new_debug_dir,
+            old_library, new_library,
+        ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding='utf-8')
+    out = result.stdout.strip()
+
+    return AbiCheckResult(bool(result.returncode), out)
+
+
+def compare_tree_abis(old_checkout, new_checkout):
+    print(format_title('Comparing ABIs', level=1), end='\n\n', flush=True)
+    success = True
+
+    old_libs = get_libraries(old_checkout)
+    new_libs = get_libraries(new_checkout)
+
+    for lib_key, old_relpath in old_libs.items():
+        try:
+            new_relpath = new_libs[lib_key]
+
+        except KeyError:
+            title = format_title(f'ABI Break: {lib_key}', level=2)
+            print(f'{title}\n\nLibrary does not exist any more in {new_checkout}\n', file=sys.stderr, flush=True)
+            success = False
+            continue
+
+        old_library = os.path.join(old_checkout, old_relpath)
+        old_debug_dir = os.path.dirname(os.path.join(old_checkout, 'usr', 'lib', 'debug', f'{old_relpath}.debug'))
+        old_include_dir = os.path.join(old_checkout, 'usr', 'include')
+
+        new_library = os.path.join(new_checkout, new_relpath)
+        new_debug_dir = os.path.dirname(os.path.join(new_checkout, 'usr', 'lib', 'debug', f'{new_relpath}.debug'))
+        new_include_dir = os.path.join(new_checkout, 'usr', 'include')
+
+        result = compare_abi(old_library, old_debug_dir, old_include_dir, new_library, new_debug_dir, new_include_dir)
+
+        if result.abi_was_broken:
+            title = format_title(f'ABI Break: {lib_key}', level=2)
+            print(f'{title}\n\n{result.details}\n', file=sys.stderr, flush=True)
+            success = False
+
+        elif result.details:
+            title = format_title(f'Ignored ABI Changes: {lib_key}', level=2)
+            print(f'{title}\n\n{result.details}\n', flush=True)
+
+    return success
+
+
+if __name__ == '__main__':
+    sanity_check()
+
+    args = get_parser().parse_args()
+
+    old_sdk = checkout_tree(args.old)
+    new_sdk = checkout_tree(args.new)
+    abi_compatible = compare_tree_abis(old_sdk, new_sdk)
+
+    if abi_compatible:
+        print(format_title(f'Hurray! {args.old} and {args.new} are ABI-compatible!', level=2), flush=True)
+
+    shutil.rmtree(old_sdk)
+    shutil.rmtree(new_sdk)
+
+    returncode = 0 if abi_compatible else 1
+    sys.exit(returncode)
