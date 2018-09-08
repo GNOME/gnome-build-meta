@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-desktop
@@ -19,4 +19,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-gnome-distributor=gnome-build-meta
+  meson-local: -Dgnome-distributor=gnome-build-meta
