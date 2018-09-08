@@ -8,6 +8,8 @@ depends:
 - core-deps/upower.bst
 - sdk/dconf.bst
 - sdk/glib.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - sdk/vala.bst

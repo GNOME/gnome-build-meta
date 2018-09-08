@@ -13,6 +13,8 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - filename: base.bst
