@@ -8,5 +8,7 @@ depends:
 - core/nautilus.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst

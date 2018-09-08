@@ -11,6 +11,8 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libsecret.bst
 - sdk/yelp-tools.bst
 - filename: base.bst

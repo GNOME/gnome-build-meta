@@ -22,6 +22,8 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: desktop/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst

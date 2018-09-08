@@ -18,5 +18,7 @@ depends:
 - core-deps/tracker.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst

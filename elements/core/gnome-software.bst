@@ -14,6 +14,8 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - filename: base.bst

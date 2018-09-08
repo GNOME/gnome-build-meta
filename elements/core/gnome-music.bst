@@ -15,5 +15,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/pygobject.bst
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
