@@ -7,6 +7,7 @@ variables:
   BST_SHA: '301a393cb6499b3f869d74827a9e8dc61b97d00e' #  1.1.7
   BST_EXTERNAL_SHA: '1622d57dfbde94f6cee84e1d8dfd430c86040251' # 0.3.1
   FLATPAK_BRANCH: master
+  RUNTIME_VERSION: "staging-3-30"
 
 stages:
   - build
@@ -36,6 +37,9 @@ before_script:
 
   # and flatpak to export the flatpak runtimes
   - dnf install -y flatpak
+
+  # Install libabigail for the ABI checker
+  - dnf install -y libabigail --enablerepo=updates-testing
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -70,6 +74,9 @@ before_script:
         bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
         flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
+
+    # Check the ABI
+    - ./utils/check-abi --old=${RUNTIME_VERSION} --new=${CI_COMMIT_SHA}
 
     # TODO: push the resulting runtime to sdk.gnome.org
 
