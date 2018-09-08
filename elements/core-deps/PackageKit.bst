@@ -9,6 +9,8 @@ depends:
 - core-deps/polkit.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:

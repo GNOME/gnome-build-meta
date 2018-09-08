@@ -19,6 +19,8 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/vala.bst
+- filename: sdk/yelp-tools.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
