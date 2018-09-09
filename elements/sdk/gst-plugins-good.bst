@@ -19,6 +19,16 @@ depends:
   type: runtime
 variables:
   meson-local: |
-    -Dsoup=enabled \
-    -Dlame=enabled \
-    -Dpulse=enabled
+    -Daalib=disabled \
+    -Ddv1394=disabled \
+    -Ddv=disabled \
+    -Dexamples=disabled \
+    -Djack=disabled \
+    -Dlibcaca=disabled \
+    -Dmpg123=disabled \
+    -Dqt5=disabled \
+    -Dshout2=disabled \
+    -Dtaglib=disabled \
+    -Dtwolame=disabled \
+    -Dv4l2=disabled \
+    -Dwavpack=disabled
