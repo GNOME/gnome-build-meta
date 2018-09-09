@@ -9,6 +9,8 @@ depends:
 - sdk/opus.bst
 - filename: desktop/vulkan.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/libfdk-aac.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -26,7 +28,7 @@ variables:
     -Ddts=disabled \
     -Dfaac=disabled \
     -Dfaad=disabled \
-    -Dfdkaac=disabled \
+    -Dfdkaac=enabled \
     -Dflite=disabled \
     -Dfluidsynth=disabled \
     -Dgsm=disabled \
