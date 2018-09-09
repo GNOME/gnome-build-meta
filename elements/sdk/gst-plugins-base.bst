@@ -9,6 +9,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/opus.bst
 - sdk/pango.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: desktop/alsa-lib.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/orc.bst
@@ -26,6 +28,5 @@ variables:
     -Dcdparanoia=disabled \
     -Dexamples=disabled \
     -Dgl-graphene=disabled \
-    -Dgtk_doc=disabled \
     -Dlibvisual=disabled \
     -Dvorbis=disabled

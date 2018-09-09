@@ -6,6 +6,8 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -16,5 +18,4 @@ variables:
   meson-local: |
     -Dbash-completion=disabled \
     -Dexamples=disabled \
-    -Dgtk_doc=disabled \
     -Dlibunwind=disabled
