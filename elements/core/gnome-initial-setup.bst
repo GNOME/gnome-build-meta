@@ -23,3 +23,5 @@ depends:
 - sdk/gtk+-3.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: -Dcheese=disabled
