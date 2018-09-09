@@ -7,6 +7,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsoup.bst
+- sdk/wavpack.bst
 - filename: desktop/lame.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
@@ -31,5 +32,4 @@ variables:
     -Dshout2=disabled \
     -Dtaglib=disabled \
     -Dtwolame=disabled \
-    -Dv4l2=disabled \
-    -Dwavpack=disabled
+    -Dv4l2=disabled
