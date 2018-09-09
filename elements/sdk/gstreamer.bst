@@ -12,3 +12,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
+variables:
+  meson-local: |
+    -Dbash-completion=disabled \
+    -Dexamples=disabled \
+    -Dgtk_doc=disabled \
+    -Dlibunwind=disabled
