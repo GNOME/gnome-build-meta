@@ -23,13 +23,9 @@ depends:
   type: runtime
 variables:
   meson-local: |
-    -Dgio=enabled \
-    -Dpango=enabled \
-    -Dogg=enabled \
-    -Dopus=enabled \
-    -Dalsa=enabled \
-    -Dorc=enabled \
-    -Dtheora=enabled \
-    -Dx11=enabled \
-    -Dxshm=enabled \
-    -Dxvideo=enabled
+    -Dcdparanoia=disabled \
+    -Dexamples=disabled \
+    -Dgl-graphene=disabled \
+    -Dgtk_doc=disabled \
+    -Dlibvisual=disabled \
+    -Dvorbis=disabled
