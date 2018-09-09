@@ -11,6 +11,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/mpg123.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -25,7 +27,6 @@ variables:
     -Dexamples=disabled \
     -Djack=disabled \
     -Dlibcaca=disabled \
-    -Dmpg123=disabled \
     -Dqt5=disabled \
     -Dshout2=disabled \
     -Dtaglib=disabled \
