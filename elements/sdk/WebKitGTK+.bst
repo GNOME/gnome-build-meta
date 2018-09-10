@@ -42,7 +42,7 @@ variables:
     - arch == "arm":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
   cmake-local: -DCMAKE_BUILD_TYPE=Release -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_toolchain}
-  max-jobs: 2
 environment:
   CFLAGS: '-g1'
   CXXFLAGS: '-g1'
+  JOBS: '-j2'
