@@ -23,6 +23,10 @@ depends:
   junction: freedesktop-sdk.bst
 config:
   build-commands:
-  - jam -q -fJambase -j%{max-jobs}
+  - jam -q -fJambase -j${JOBS}
   install-commands:
-  - jam -q -fJambase -j%{max-jobs} DESTDIR=%{install-root} PREFIX=%{prefix} install
+  - jam -q -fJambase -j${JOBS} DESTDIR=%{install-root} PREFIX=%{prefix} install
+environment:
+  JOBS: %{max-jobs}
+environment-nocache:
+- JOBS
