@@ -29,4 +29,4 @@ variables:
     -Dexamples=disabled \
     -Dgl-graphene=disabled \
     -Dlibvisual=disabled \
-    -Dvorbis=disabled
+    -Dtremor=disabled
