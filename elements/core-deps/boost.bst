@@ -9,6 +9,10 @@ config:
   configure-commands:
     - ./bootstrap.sh --includedir=%{install-root}%{includedir} --libdir=%{install-root}%{libdir}
   build-commands:
-    - ./b2 -q -j%{max-jobs} --build-dir=_build link=shared stage
+    - ./b2 -q -j${JOBS} --build-dir=_build link=shared stage
   install-commands:
     - ./b2 -q --build-dir=_build link=shared install
+environment:
+  JOBS: %{max-jobs}
+environment-nocache:
+- JOBS
