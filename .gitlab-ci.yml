@@ -114,7 +114,10 @@ before_script:
 
     # push the resulting runtimes to gbm.gnome.org
     # FIXME: Only push from protected branches
-    - ostree-releng-scripts/rsync-repos --src repo/ --dest gbm-builder.gnome.org:public_html/repo/
+    - |
+      if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
+        ostree-releng-scripts/rsync-repos --src repo/ --dest gbm-builder.gnome.org:public_html/repo/
+      fi
 
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
