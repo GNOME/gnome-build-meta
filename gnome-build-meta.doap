@@ -44,5 +44,12 @@
       <gnome:userid>akitouni</gnome:userid>
     </foaf:Person>
   </maintainer>
+    <maintainer>
+    <foaf:Person>
+      <foaf:name>Jordan Petridis</foaf:name>
+      <foaf:mbox rdf:resource="mailto:jpetridis@gnome.org" />
+      <gnome:userid>jpetridis</gnome:userid>
+    </foaf:Person>
+  </maintainer>
 
 </Project>
