@@ -8,6 +8,7 @@ depends:
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/opus.bst
+- sdk/libvorbis.bst
 - sdk/pango.bst
 - filename: sdk/gtk-doc.bst
   type: build
@@ -29,4 +30,4 @@ variables:
     -Dexamples=disabled \
     -Dgl-graphene=disabled \
     -Dlibvisual=disabled \
-    -Dvorbis=disabled
+    -Dtremor=disabled
