@@ -126,7 +126,7 @@ def checkout_tree(name):
     print(format_title(f'Building and checking out {name}', level=1), end='\n\n', flush=True)
 
     with checkout_git_revision(name):
-        bst(['build', 'core.bst', 'flatpak-runtimes.bst'])
+        bst(['build', 'flatpak-runtimes.bst'])
         bst(['checkout', '--hardlinks', 'flatpak/sdk.bst', checkout_dir])
         print(flush=True)
 
