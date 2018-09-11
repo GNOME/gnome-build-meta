@@ -101,7 +101,7 @@ before_script:
     # Clone the gbm OSTree repo locally
     - ostree init --repo=repo --mode=archive
     - ostree remote add --repo=repo origin "https://${FLATPAK_SERVER_ADDRESS}/repo/" --no-gpg-verify
-    - ostree pull --repo=repo origin --mirror
+    - ostree pull --repo=repo origin --mirror --commit-metadata-only
 
     # Build the runtimes
     - |
