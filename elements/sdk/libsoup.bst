@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/libsoup
@@ -18,4 +18,4 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  conf-local: --disable-tls-check
+  meson-local: -Dtls_check=false
