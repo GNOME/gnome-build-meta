@@ -16,6 +16,6 @@ depends:
   type: runtime
 variables:
   meson-local: |
-    -Dbash-completion=disabled \
-    -Dexamples=disabled \
-    -Dlibunwind=disabled
+    -Ddisable_examples=true \
+    -Ddisable_unwind=true
+
