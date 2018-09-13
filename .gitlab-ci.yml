@@ -6,7 +6,7 @@ variables:
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '301a393cb6499b3f869d74827a9e8dc61b97d00e' #  1.1.7
   BST_EXTERNAL_SHA: 'ab9b37b5b52a7b2f62ddf17a68b76512da538291' # 0.5.0
-  OSTREE_RELENG_SHA: 'd7d3984914389849bffec689b243512304dd1aec' # v2016.1-15-gd7d3984
+  OSTREE_PUSH_SHA: '9aa82b67325786a810653155b952a17b7ccc436a'
   FLATPAK_BRANCH: master
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
@@ -36,12 +36,12 @@ before_script:
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
 
-  # flatpak to export the flatpak runtimes, and rsync needed by rsync-repos
-  - dnf install -y flatpak rsync
+  # flatpak to export the flatpak runtimes, and sshfs needed by ostree-push
+  - dnf install -y flatpak sshfs
 
-  # and ostree-releng-scripts for the rsync-repos script to push the result
-  - git clone https://github.com/ostreedev/ostree-releng-scripts.git
-  - git -C ostree-releng-scripts/ checkout "${OSTREE_RELENG_SHA}"
+  # and ostree-push to push the result
+  - git clone https://github.com/ssssam/ostree-push.git
+  - git -C ostree-push/ checkout "${OSTREE_PUSH_SHA}"
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -116,7 +116,7 @@ before_script:
     # FIXME: Only push from protected branches
     - |
       if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
-        ostree-releng-scripts/rsync-repos --src repo/ --dest gbm-builder.gnome.org:public_html/repo/
+        ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/
       fi
 
   # Store all the downloaded git and ostree repos in the distributed cache.
