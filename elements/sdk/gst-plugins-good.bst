@@ -9,11 +9,15 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsoup.bst
+- filename: desktop/cairo.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/lame.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/mpg123.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/libpulse.bst
+- filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
@@ -24,15 +28,11 @@ depends:
 
 variables:
   conf-local: |
+    --enable-cairo \
     --enable-experimental \
     --enable-introspection \
-    --enable-pulse \
     --enable-lame \
     --enable-soup \
     --enable-orc \
-    --disable-monoscope \
-    --disable-aalib \
-    --enable-cairo \
-    --disable-libcaca \
-    --disable-jack \
+    --enable-pulse \
     --with-default-visualizer=autoaudiosink
