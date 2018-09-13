@@ -21,9 +21,3 @@ config:
   - make
   install-commands:
   - DESTDIR=%{install-root} make install
-environment:
-  MAKEFLAGS: -j%{max-jobs}
-  V: 1
-environment-nocache:
-- MAKEFLAGS
-- V
