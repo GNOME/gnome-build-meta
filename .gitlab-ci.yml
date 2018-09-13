@@ -112,11 +112,14 @@ before_script:
         flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
+    # Push only our branches to avoid races with jobs for other arches/flatpak branches
+    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
+
     # push the resulting runtimes to gbm.gnome.org
     # FIXME: Only push from protected branches
     - |
       if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
-        ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/
+        ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/ ${BRANCHES}
       fi
 
   # Store all the downloaded git and ostree repos in the distributed cache.
