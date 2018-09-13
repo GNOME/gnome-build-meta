@@ -7,11 +7,14 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
-- sdk/opus.bst
 - sdk/pango.bst
-- filename: desktop/alsa-lib.bst
-  junction: freedesktop-sdk.bst
+# FIXME: remove opus from the GNOME SDK
+# once the fd.o junction is updated to 18.08.9+
+# see base/opus.bst
+- sdk/opus.bst
 - filename: desktop/orc.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
@@ -21,9 +24,13 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
   type: runtime
-
 variables:
   conf-local: |
     --enable-experimental \
     --enable-introspection \
-    --enable-orc
+    --enable-ogg \
+    --enable-opus \
+    --enable-orc \
+    --enable-pango \
+    --enable-theora \
+    --enable-vorbis
