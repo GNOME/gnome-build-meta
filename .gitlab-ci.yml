@@ -96,7 +96,7 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
+    - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
     # Clone the gbm OSTree repo locally
     - ostree init --repo=repo --mode=archive
@@ -121,6 +121,8 @@ before_script:
       if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
         ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/ ${BRANCHES}
       fi
+
+    - ${BST} -o arch "${ARCH}" build core.bst
 
   # Store all the downloaded git and ostree repos in the distributed cache.
   # This saves us fetching them from the different repos and further afield
