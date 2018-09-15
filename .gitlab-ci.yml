@@ -128,6 +128,7 @@ build-gnome-core-arm:
   stage: build
   dependencies: []
   script:
+    - dnf install -y python2-requests
     - git clone https://gitlab.gnome.org/GNOME/releng.git
     - releng/tools/smoketesting/convert-to-tarballs.py -d .
     - ${BST} -o arch "${ARCH}" build core.bst
