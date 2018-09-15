@@ -115,11 +115,12 @@ before_script:
     # Push only our branches to avoid races with jobs for other arches/flatpak branches
     - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
 
-    # push the resulting runtimes to gbm.gnome.org
-    # FIXME: Only push from protected branches
+    # Push the resulting runtimes to gbm.gnome.org
+    # Assume there will be no branch name collisions,
+    # the ssh key is available only on protected branches
     - |
-      if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
-        ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/ ${BRANCHES}
+      if [ -z "$GITLAB_SSH_KEY" ]; then
+        ostree-releng-scripts/rsync-repos --src repo/ --dest gbm-builder.gnome.org:public_html/repo/
       fi
 
     - ${BST} -o arch "${ARCH}" build core.bst
