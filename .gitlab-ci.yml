@@ -121,3 +121,66 @@ build-gnome-core-arm:
   variables:
     ARCH: arm
   allow_failure: true
+
+
+
+.release-template: &release
+  stage: build
+  dependencies: []
+  script:
+    - git clone https://gitlab.gnome.org/GNOME/releng.git
+    - releng/tools/smoketesting/convert-to-tarballs.py -d .
+    - ${BST} -o arch "${ARCH}" build core.bst
+
+  # Store all the downloaded git and ostree repos in the distributed cache.
+  # This saves us fetching them from the different repos and further afield
+  # on every build.
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  # Store artifacts so we can inspect build failures
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
+
+release-gnome-core-x86_64:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *release
+  tags:
+    - do
+  variables:
+    ARCH: x86_64
+  when: manual
+
+release-gnome-core-i386:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *release
+  tags:
+    - do
+  variables:
+    ARCH: i386
+  allow_failure: true
+  when: manual
+
+release-gnome-core-aarch64:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *release
+  tags:
+    - aarch64
+  variables:
+    ARCH: aarch64
+  allow_failure: true
+  when: manual
+
+release-gnome-core-arm:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *release
+  tags:
+    - armhf
+  variables:
+    ARCH: arm
+  allow_failure: true
+  when: manual
