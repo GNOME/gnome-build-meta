@@ -112,10 +112,10 @@ before_script:
         flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
-    # push the resulting runtimes to gbm.gnome.org
-    # FIXME: Only push from protected branches
+    # Assume there will be no branch name collisions,
+    # the ssh key is available only on protected branches
     - |
-      if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
+      if [ -z "$GITLAB_SSH_KEY" ]; then
         ostree-releng-scripts/rsync-repos --src repo/ --dest gbm-builder.gnome.org:public_html/repo/
       fi
 
