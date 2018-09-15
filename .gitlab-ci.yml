@@ -60,8 +60,7 @@ before_script:
           push: true
     EOF
 
-  # and ssh key for pushing to the flatpak repo
-  # FIXME: Protect the key
+  # add ssh key for pushing to the flatpak repo
   - |
     if [ -n "$GITLAB_SSH_KEY" ]; then
         mkdir -p ~/.ssh
@@ -105,10 +104,11 @@ before_script:
 
     - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
 
-    # push the resulting runtimes to gbm.gnome.org
-    # FIXME: Only push from protected branches
+    # Push the resulting runtimes to gbm.gnome.org
+    # Assume there will be no branch name collisions,
+    # the ssh key is available only on protected branches
     - |
-      if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
+      if [ -n "$GITLAB_SSH_KEY" ]; then
         rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
         ssh gbm-builder.gnome.org flatpak-export/export-flatpak.sh incoming/repo-${CI_JOB_ID} ${BRANCHES}
         ssh gbm-builder.gnome.org rm -rf incoming/runtimes-${CI_JOB_ID}
