@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: git_freedesktop_org:geoclue
@@ -20,7 +20,7 @@ depends:
   type: runtime
 variables:
   conf-local: |
-    --disable-3g-source \
-    --disable-cdma-source \
-    --disable-modem-gps-source \
-    --disable-nmea-source
+    -D3g-source=false \
+    -Dcdma-source=false \
+    -Dmodem-gps-source=false \
+    -Dnmea-source=false
