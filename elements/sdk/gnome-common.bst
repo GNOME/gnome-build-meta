@@ -6,7 +6,8 @@ sources:
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
-  type: build
-- filename: base-platform.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
+config:
+  install-commands:
+    (>):
+    - rm %{install-root}%{datadir}/aclocal/ax_check_enable_debug.m4
+    - rm %{install-root}%{datadir}/aclocal/ax_code_coverage.m4
