@@ -36,12 +36,8 @@ before_script:
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
 
-  # flatpak to export the flatpak runtimes, and sshfs needed by ostree-push
-  - dnf install -y flatpak sshfs
-
-  # and ostree-push to push the result
-  - git clone https://github.com/ssssam/ostree-push.git
-  - git -C ostree-push/ checkout "${OSTREE_PUSH_SHA}"
+  # and rsync to copy the flatpak runtimes over to gbm-builder.gnome.org
+  - dnf install -y rsync
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -98,28 +94,21 @@ before_script:
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
-    # Clone the gbm OSTree repo locally
-    - ostree init --repo=repo --mode=archive
-    - ostree remote add --repo=repo origin "https://${FLATPAK_SERVER_ADDRESS}/repo/" --no-gpg-verify
-    - ostree pull --repo=repo origin --mirror --commit-metadata-only
-
-    # Build the runtimes
+    # checkout the runtimes
     - |
       mkdir runtimes
 
       for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
         bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
-        flatpak build-export --arch="${ARCH}" --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
-
-    # Push only our branches to avoid races with jobs for other arches/flatpak branches
-    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
 
     # push the resulting runtimes to gbm.gnome.org
     # FIXME: Only push from protected branches
     - |
       if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
-        ostree-push/ostree-push.sh --repo repo/ gbm-builder.gnome.org:public_html/repo/ ${BRANCHES}
+        rsync -a runtimes gbm-builder.gnome.org:incoming/runtimes-${CI_JOB_ID}
+        ssh gbm-builder.gnome.org flatpak-export/export-flatpak.sh ${ARCH} ${FLATPAK_BRANCH} incoming/runtimes-${CI_JOB_ID}
+        ssh gbm-builder.gnome.org rm -rf incoming/runtimes-${CI_JOB_ID}
       fi
 
     - ${BST} -o arch "${ARCH}" build core.bst
