@@ -7,14 +7,8 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  mozjs_target: ''
-  (?):
-    - arch == "i386":
-        mozjs_target: "--host=i586-unknown-linux-gnu"
-    - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
-  conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc %{mozjs_target}
+  conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc
     AUTOCONF=autoconf
   conf-cmd: '%{build-root}/js/src/configure'
   # not a real autotools project
