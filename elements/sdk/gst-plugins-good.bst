@@ -29,7 +29,14 @@ depends:
   type: runtime
 
 variables:
+  host: ''
+  (?):
+  - arch == "i386":
+      host: --host=i586-unknown-linux-gnu
+  - arch == "arm":
+      host: --host=arm-unknown-linux-gnueabi
   conf-local: |
+    %{host} \
     --enable-cairo \
     --enable-experimental \
     --enable-introspection \
