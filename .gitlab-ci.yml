@@ -11,6 +11,10 @@ variables:
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
 stages:
+  - flatpak_x86_64
+  - flatpak_i386
+  - flatpak_arm
+  - flatpak_aarch64
   - build
 
 
@@ -88,9 +92,7 @@ before_script:
 
     fi
 
-.build-template: &build
-  stage: build
-  dependencies: []
+.flatpak-template: &flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
@@ -111,6 +113,61 @@ before_script:
         ssh gbm-builder.gnome.org rm -rf incoming/runtimes-${CI_JOB_ID}
       fi
 
+  # Store all the downloaded git and ostree repos in the distributed cache.
+  # This saves us fetching them from the different repos and further afield
+  # on every build.
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  # Store artifacts so we can inspect build failures
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
+
+build-flatpak-runtimes-x86_64:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *flatpak
+  stage: flatpak_x86_64
+  tags:
+    - do
+    - progress
+  variables:
+    ARCH: x86_64
+
+build-flatpak-runtimes-i386:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *flatpak
+  stage: flatpak_i386
+  tags:
+    - do
+  variables:
+    ARCH: i386
+
+build-flatpak-runtimes-aarch64:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *flatpak
+  stage: flatpak_aarch64
+  tags:
+    - aarch64
+  variables:
+    ARCH: aarch64
+
+build-flatpak-runtimes-arm:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *flatpak
+  stage: flatpak_arm
+  tags:
+    - armhf
+  variables:
+    ARCH: arm
+
+.build-template: &build
+  stage: build
+  dependencies: []
+  script:
     - ${BST} -o arch "${ARCH}" build core.bst
 
   # Store all the downloaded git and ostree repos in the distributed cache.
