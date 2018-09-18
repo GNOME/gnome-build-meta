@@ -11,10 +11,7 @@ variables:
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
 stages:
-  - flatpak_x86_64
-  - flatpak_i386
-  - flatpak_arm
-  - flatpak_aarch64
+  - flatpak
   - build
 
 
@@ -93,6 +90,7 @@ before_script:
     fi
 
 .flatpak-template: &flatpak
+  stage: flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
@@ -133,7 +131,6 @@ before_script:
 build-flatpak-runtimes-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
-  stage: flatpak_x86_64
   tags:
     - do
     - progress
@@ -143,7 +140,6 @@ build-flatpak-runtimes-x86_64:
 build-flatpak-runtimes-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
-  stage: flatpak_i386
   tags:
     - do
   variables:
@@ -152,7 +148,6 @@ build-flatpak-runtimes-i386:
 build-flatpak-runtimes-aarch64:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
   <<: *flatpak
-  stage: flatpak_aarch64
   tags:
     - aarch64
   variables:
@@ -161,7 +156,6 @@ build-flatpak-runtimes-aarch64:
 build-flatpak-runtimes-arm:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
   <<: *flatpak
-  stage: flatpak_arm
   tags:
     - armhf
   variables:
