@@ -40,8 +40,8 @@ before_script:
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
 
-  # and rsync to copy the flatpak runtimes over to gbm-builder.gnome.org
-  - dnf install -y rsync
+  # flatpak and rsync to generate and transfer the flatpak runtimes
+  - dnf install -y flatpak rsync
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -102,14 +102,17 @@ before_script:
 
       for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
         bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
+        flatpak build-export --arch="${ARCH}" --no-update-summary --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
+
+    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
 
     # push the resulting runtimes to gbm.gnome.org
     # FIXME: Only push from protected branches
     - |
       if [[ ${CI_COMMIT_REF_NAME} == "staging-3-30" ]]; then
-        rsync -a runtimes/ gbm-builder.gnome.org:incoming/runtimes-${CI_JOB_ID}
-        ssh gbm-builder.gnome.org flatpak-export/export-flatpak.sh ${ARCH} ${FLATPAK_BRANCH} incoming/runtimes-${CI_JOB_ID}
+        rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
+        ssh gbm-builder.gnome.org flatpak-export/export-flatpak.sh incoming/runtimes-${CI_JOB_ID} ${BRANCHES}
         ssh gbm-builder.gnome.org rm -rf incoming/runtimes-${CI_JOB_ID}
       fi
 
