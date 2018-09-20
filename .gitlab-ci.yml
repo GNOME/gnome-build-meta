@@ -91,7 +91,7 @@ before_script:
   stage: build
   dependencies: []
   script:
-    - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
+    - ${BST} -o arch "${ARCH}" build --track-all core.bst flatpak-runtimes.bst
 
     # checkout the runtimes
     - |
