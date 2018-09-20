@@ -61,8 +61,7 @@ before_script:
           push: true
     EOF
 
-  # and ssh key for pushing to the flatpak repo
-  # FIXME: Protect the key
+  # add ssh key for pushing to the flatpak repo
   - |
     if [ -n "$GITLAB_SSH_KEY" ]; then
         mkdir -p ~/.ssh
