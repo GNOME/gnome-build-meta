@@ -7,3 +7,7 @@ sources:
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+- filename: base/openssl-1.0.bst
+  type: build
+- filename: base/openssl-1.0-runtime-only.bst
+  type: runtime
