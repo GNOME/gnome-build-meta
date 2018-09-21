@@ -109,9 +109,9 @@ before_script:
     # the ssh key is available only on protected branches
     - |
       if [ -n "$GITLAB_SSH_KEY" ]; then
-        rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-        ssh gbm-builder.gnome.org flatpak-export/export-flatpak.sh incoming/repo-${CI_JOB_ID} ${BRANCHES}
-        ssh gbm-builder.gnome.org rm -rf incoming/runtimes-${CI_JOB_ID}
+        rsync -a repo/ gbm-builder.gnome.org:incoming-nightly/repo-${CI_JOB_ID}
+        ssh gbm-builder.gnome.org flatpak-export-nightly/export-flatpak.sh incoming-nightly/repo-${CI_JOB_ID} ${BRANCHES}
+        ssh gbm-builder.gnome.org rm -rf incoming-nightly/runtimes-${CI_JOB_ID}
       fi
 
   # Store all the downloaded git and ostree repos in the distributed cache.
