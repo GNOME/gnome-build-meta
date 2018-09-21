@@ -49,6 +49,7 @@ variables:
     -Dresindvd=disabled \
     -Drtmp=disabled \
     -Dsbc=disabled \
+    -Dsctp=disabled \
     -Dsoundtouch=disabled \
     -Dspandsp=disabled \
     -Dsrt=disabled \
