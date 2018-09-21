@@ -30,6 +30,11 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/ibus.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: |
+    -Ddocumentation=true
