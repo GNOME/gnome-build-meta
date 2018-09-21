@@ -16,3 +16,4 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-dbm=KyotoCabinet
+  notparallel: True
