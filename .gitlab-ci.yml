@@ -91,7 +91,7 @@ before_script:
 .flatpak-template: &flatpak
   stage: flatpak
   script:
-    - ${BST} -o arch "${ARCH}" build --track-all flatpak-runtimes.bst
+    - ${BST} -o arch "${ARCH}" build --track-all core.bst flatpak-runtimes.bst
 
     # checkout the runtimes
     - |
