@@ -11,9 +11,6 @@ depends:
 - core-deps/colord.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
-- core-deps/ibus-anthy.bst
-- core-deps/ibus-hangul.bst
-- core-deps/ibus-libpinyin.bst
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libwacom.bst
@@ -33,5 +30,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- sdk/ibus.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
