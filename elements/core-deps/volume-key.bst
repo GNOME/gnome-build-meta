@@ -6,7 +6,6 @@ sources:
   path: files/volume-key/volume_key-0.3.9-config.h.patch
 depends:
 - core-deps/cryptsetup.bst
-- core-deps/gpgme.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
