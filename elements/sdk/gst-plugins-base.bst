@@ -7,7 +7,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
-- sdk/opus.bst
 - sdk/pango.bst
 - filename: sdk/gtk-doc.bst
   type: build

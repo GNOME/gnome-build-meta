@@ -6,7 +6,6 @@ sources:
 depends:
 - sdk/gst-plugins-base.bst
 - sdk/librsvg.bst
-- sdk/opus.bst
 - filename: desktop/vulkan.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libfdk-aac.bst

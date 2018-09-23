@@ -111,7 +111,6 @@ depends:
 - core-deps/libsass.bst
 - core-deps/libsigcplusplus-2.0.bst
 - core-deps/libsigcplusplus.bst
-- core-deps/libtirpc.bst
 - core-deps/libusb.bst
 - core-deps/libusbmuxd.bst
 - core-deps/libvirt-glib.bst
@@ -138,7 +137,6 @@ depends:
 - core-deps/plist.bst
 - core-deps/polkit.bst
 - core-deps/poppler.bst
-- core-deps/popt.bst
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst
 - core-deps/ppp.bst
