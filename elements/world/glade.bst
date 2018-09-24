@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/glade
   track: master
 depends:
-- filename: core-deps/cantarell-fonts.bst
+- filename: sdk/cantarell-fonts.bst
   type: runtime
 - filename: sdk/adwaita-icon-theme.bst
   type: runtime
