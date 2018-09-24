@@ -7,7 +7,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
-- sdk/opus.bst
 - sdk/pango.bst
 - filename: sdk/gtk-doc.bst
   type: build
@@ -16,6 +15,8 @@ depends:
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xv.bst
+  junction: freedesktop-sdk.bst
+- filename: base/opus.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
