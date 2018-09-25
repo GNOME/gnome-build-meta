@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-photos
@@ -28,3 +28,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: |
+    -Dinstalled_tests=false \
+    -Ddogtail=false
