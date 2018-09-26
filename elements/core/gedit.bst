@@ -8,7 +8,7 @@ sources:
       url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/gspell.bst
-- core-deps/gtksourceview-3.bst
+- core-deps/gtksourceview.bst
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
 - filename: sdk/gnome-common.bst
