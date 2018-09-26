@@ -25,4 +25,4 @@ config:
   - make
   install-commands:
   - make -j1 DESTDIR="%{install-root}" install
-
+  - rm %{install-root}%{libdir}/libjs_static.ajs
