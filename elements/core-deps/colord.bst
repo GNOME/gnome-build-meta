@@ -6,8 +6,6 @@ sources:
 - kind: patch
   path: files/colord/dont-require-docbook2man.patch
 depends:
-- filename: core-deps/argyll.bst
-  type: build
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
@@ -19,5 +17,7 @@ depends:
 
 variables:
   meson-local: |
+    -Dargyllcms_sensor=false \
     -Dbash_completion=false \
+    -Dlibcolordcompat=false \
     -Dvapi=true
