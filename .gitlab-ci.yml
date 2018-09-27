@@ -11,6 +11,7 @@ variables:
 stages:
   - track
   - build
+  - flatpak
 
 
 # Store all the downloaded git and ostree repos in the cache.
@@ -98,6 +99,18 @@ before_script:
   stage: build
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
+  <<: *cache
+  # Store artifacts so we can inspect build failures
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
+
+.flatpak-template: &flatpak
+  stage: flatpak
+  script:
+    - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
     # checkout the runtimes
     - |
@@ -174,3 +187,35 @@ build-gnome-core-arm:
   variables:
     ARCH: arm
   allow_failure: true
+
+flatpak-x86_64:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *flatpak
+  tags:
+    - do
+  variables:
+    ARCH: x86_64
+
+flatpak-i386:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  <<: *flatpak
+  tags:
+    - do
+  variables:
+    ARCH: i386
+
+flatpak-aarch64:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *flatpak
+  tags:
+    - aarch64
+  variables:
+    ARCH: aarch64
+
+flatpak-arm:
+  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  <<: *flatpak
+  tags:
+    - armhf
+  variables:
+    ARCH: arm
