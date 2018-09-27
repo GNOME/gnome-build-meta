@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-calculator
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-calculator/3.30/gnome-calculator-3.30.1.tar.xz
+  ref: ec7aac474da1beea07e4d23c227b282ae0270d2488d940bba455b25064657f62
 depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/mpc.bst

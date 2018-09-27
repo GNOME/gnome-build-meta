@@ -62,7 +62,7 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/ibus-anthy.bst
 - core-deps/ibus-hangul.bst
-- core-deps/ibus-libpinyin.bst
+#- core-deps/ibus-libpinyin.bst   Removed because libpinyin build is crashing
 - core-deps/iptables.bst
 - core-deps/json-c.bst
 - core-deps/kmod.bst
@@ -105,7 +105,7 @@ depends:
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
 - core-deps/libpeas.bst
-- core-deps/libpinyin.bst
+#- core-deps/libpinyin.bst    Removed because build is crashing
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsass.bst

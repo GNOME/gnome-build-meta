@@ -27,7 +27,7 @@ depends:
 - sdk/gnome-themes-extra.bst
 - sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gst-libav.bst
+#- sdk/gst-libav.bst                      broken
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst

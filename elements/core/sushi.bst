@@ -1,8 +1,8 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/sushi
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/sushi/3.30/sushi-3.30.0.tar.xz
+  ref: d2da55498770c7b6bb7858aa1eef5c591fcbbf36aa24fc879f8e8c930b8fea7e
 depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libmusicbrainz.bst

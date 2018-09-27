@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtk-vnc
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gtk-vnc/0.9/gtk-vnc-0.9.0.tar.xz
+  ref: 3a9a88426809a5df2c14353cd9839b8c8163438cb708b31d8048c79d180fcab7
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

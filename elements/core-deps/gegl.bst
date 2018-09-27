@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gegl
-  track: master
+- kind: tar
+  url: https://ftp.gimp.org/pub/gegl/0.4/gegl-0.4.8.tar.bz2
+  ref: 719468eec56ac5b191626a0cb6238f3abe9117e80594890c246acdc89183ae49
 depends:
 - core-deps/babl.bst
 - core-deps/graphviz.bst

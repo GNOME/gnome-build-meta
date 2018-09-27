@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-plugins-good
-  track: master
+- kind: tar
+  url: https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.3.tar.xz
+  ref: 5112bce6af0be62760687ca47873c90ce4d65d3fe920a3adf8145db7b07bff5d
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst

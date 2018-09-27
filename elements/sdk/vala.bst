@@ -1,13 +1,15 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/vala
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/vala/0.42/vala-0.42.2.tar.xz
+  ref: 9e89aa42152b1cef551568f827aa2deea2a9b5487d78c91474c8617b618e5f07
 - kind: patch
   path: files/vala/libvaladoc-Allow-disabling-the-graphviz-dependency.patch
 depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
+  type: build
+- filename: core-deps/graphviz.bst
   type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst

@@ -1,8 +1,8 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-desktop
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.0.tar.xz
+  ref: 45494f6af18d9125a0fd1024f7442fcc5d3219fca79527d4aa1906e37af795fd
 depends:
 - core-deps/libgudev.bst
 - sdk/gdk-pixbuf.bst

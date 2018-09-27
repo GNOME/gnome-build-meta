@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://www.libsdl.org/release/SDL2-2.0.8.tar.gz
+  ref: edc77c57308661d576e843344d8638e025a7818bff73f8fbfab09c3c5fd092ec
 - kind: patch
   path: files/sdl2/sdl2-unity-fix.patch
 depends:
@@ -41,6 +42,6 @@ public:
     split-rules:
       devel:
         (>):
-          - "%{bindir}/sdl2-config"
-          - "%{libdir}/libSDL2.so"
+        - "%{bindir}/sdl2-config"
+        - "%{libdir}/libSDL2.so"
 

@@ -1,12 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-settings-daemon
-  track: master
-  submodules:
-    libgnome-volume-control:
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control
-
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-settings-daemon/3.30/gnome-settings-daemon-3.30.0.tar.xz
+  ref: 9c084a45909bd35b8d8849918648dfa0357b185d82a1dc05e64011a46f9f6463
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst

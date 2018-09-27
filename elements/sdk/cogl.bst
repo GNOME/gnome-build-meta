@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/cogl
-  track: cogl-1.22
+- kind: tar
+  url: https://download.gnome.org/sources/cogl/1.22/cogl-1.22.2.tar.xz
+  ref: 39a718cdb64ea45225a7e94f88dddec1869ab37a21b339ad058a9d898782c00d
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

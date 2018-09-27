@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:upower
-  track: master
+- kind: tar
+  url: https://upower.freedesktop.org/releases/upower-0.99.7.tar.xz
+  ref: 24bcc2f6ab25a2533bac70b587bcb019e591293076920f5b5e04bdedc140a401
 depends:
 - core-deps/libgudev.bst
 - core-deps/libusb.bst
