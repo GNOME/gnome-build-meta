@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: zip
-  url: http://www.argyllcms.com/Argyll_V2.0.0_src.zip
+  url: http://www.argyllcms.com/Argyll_V2.0.1_src.zip
 - kind: patch
   path: files/argyll/fix-aarch64-build.patch
 depends:
