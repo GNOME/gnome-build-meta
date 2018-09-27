@@ -85,6 +85,15 @@ before_script:
 
     fi
 
+.cache-template: &cache
+  # Store all the downloaded sources in the distributed cache. This saves
+  # us fetching them from the different repos and further afield
+  # on every build.
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+
 .build-template: &build
   stage: build
   script:
@@ -114,13 +123,7 @@ before_script:
         ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID} ${BRANCHES}
       fi
 
-  # Store all the downloaded git and ostree repos in the distributed cache.
-  # This saves us fetching them from the different repos and further afield
-  # on every build.
-  cache:
-    key: bst
-    paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  <<: *cache
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
@@ -135,12 +138,7 @@ track:
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
 
-  # Store all the downloaded sources in the distributed cache, so that later
-  # jobs don't need to redownload them.
-  cache:
-    key: bst
-    paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  <<: *cache
   # don't run on stable branches
   except:
     - /^gnome-\d-\d\d$/
