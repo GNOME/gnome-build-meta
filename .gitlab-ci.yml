@@ -12,15 +12,6 @@ stages:
   - track
   - build
 
-
-# Store all the downloaded git and ostree repos in the cache.
-# This saves us fetching them on every build
-cache:
-  key: bst
-  paths:
-    - "${XDG_CACHE_HOME}/buildstream/sources/"
-
-
 before_script:
   # Remove any installed buildstream binary
   - pip3 uninstall -y buildstream
@@ -85,8 +76,22 @@ before_script:
 
     fi
 
+.cache-template: &cache
+  # Store all the downloaded sources in the distributed cache, so that later
+  # jobs don't need to redownload them.
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
+
 .build-template: &build
   stage: build
+  <<: *cache
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
 
@@ -108,37 +113,12 @@ before_script:
         ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c config/nightly.json incoming/repo-${CI_JOB_ID} ${BRANCHES}
       fi
 
-  # Store all the downloaded git and ostree repos in the distributed cache.
-  # This saves us fetching them from the different repos and further afield
-  # on every build.
-  cache:
-    key: bst
-    paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
-  # Store artifacts so we can inspect build failures
-  artifacts:
-    when: always
-    paths:
-      - logs
-      - project.refs
-
 track:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   stage: track
+  <<: *cache
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
-
-  # Store all the downloaded sources in the distributed cache, so that later
-  # jobs don't need to redownload them.
-  cache:
-    key: bst
-    paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
-  artifacts:
-    when: always
-    paths:
-      - logs
-      - project.refs
 
 
 build-gnome-core-x86_64:
