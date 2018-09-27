@@ -39,7 +39,7 @@ config:
     # bst doesn't support inheriting extensions
     # When syncing, skip the Debug, Docs and Locale extensions
     'Extension org.freedesktop.Platform.GL':
-      versions: "1.6;1.4"
+      versions: "18.08;1.6;1.4"
       version: "1.4"
       directory: "%{lib}/GL"
       subdirectories: "true"
