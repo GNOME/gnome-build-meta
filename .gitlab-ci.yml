@@ -9,6 +9,7 @@ variables:
   FLATPAK_BRANCH: master
 
 stages:
+  - track
   - build
 
 
@@ -87,9 +88,8 @@ before_script:
 
 .build-template: &build
   stage: build
-  dependencies: []
   script:
-    - ${BST} -o arch "${ARCH}" build --track-all core.bst flatpak-runtimes.bst
+    - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
 
     # checkout the runtimes
     - |
@@ -122,6 +122,25 @@ before_script:
     paths:
       - logs
       - project.refs
+
+track:
+  image: buildstream/buildstream-fedora:master-113-499df6a5
+  stage: track
+  script:
+    - ${BST} track --deps all core.bst flatpak-runtimes.bst
+
+  # Store all the downloaded sources in the distributed cache, so that later
+  # jobs don't need to redownload them.
+  cache:
+    key: bst
+    paths:
+      - "${XDG_CACHE_HOME}/buildstream/sources/"
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
+
 
 build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
