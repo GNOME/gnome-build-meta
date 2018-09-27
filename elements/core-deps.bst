@@ -9,7 +9,6 @@ depends:
 - core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
 - core-deps/anthy.bst
-- core-deps/argyll.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
 - core-deps/avahi.bst
