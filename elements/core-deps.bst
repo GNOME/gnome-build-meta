@@ -9,7 +9,6 @@ depends:
 - core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
 - core-deps/anthy.bst
-- core-deps/argyll.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
 - core-deps/avahi.bst
@@ -29,7 +28,6 @@ depends:
 - core-deps/exempi.bst
 - core-deps/exiv2.bst
 - core-deps/folks.bst
-- core-deps/ftjam.bst
 - core-deps/fuse.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
