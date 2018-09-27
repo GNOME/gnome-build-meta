@@ -26,7 +26,8 @@ config:
 
     # Copied from sdk/elements/platform.bst from freedesktop-sdk because
     # bst doesn't support inheriting extensions.
-    # When syncing, skip the Locale extension
+    # When syncing, skip the Locale extension, and add the freedesktop-sdk
+    # version to extensions that don't have a version
     'Extension org.freedesktop.Platform.GL':
       versions: "18.08;1.6;1.4"
       version: "1.4"
@@ -41,10 +42,12 @@ config:
 
     'Extension org.freedesktop.Platform.Timezones':
       directory: "share/zoneinfo"
+      version: 18.08
 
     'Extension org.freedesktop.Platform.GStreamer':
       directory: "lib/extensions/gstreamer-1.0"
       subdirectories: "true"
+      version: 18.08
 
     'Extension org.freedesktop.Platform.Icontheme':
       directory: "share/runtime/share/icons"
@@ -64,9 +67,10 @@ config:
       autodelete: "false"
       no-autodownload: "true"
       download-if: "have-intel-gpu"
+      version: 18.08
 
     'Extension org.freedesktop.Platform.html5-codecs':
       directory: "%{lib}/ffmpeg"
       add-ld-path: "lib"
       autodelete: "false"
-
+      version: 18.08
