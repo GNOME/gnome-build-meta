@@ -20,4 +20,6 @@ variables:
     -Dargyllcms_sensor=false \
     -Dbash_completion=false \
     -Dlibcolordcompat=false \
+    -Dtests=false \
+    -Dinstalled_tests=false \
     -Dvapi=true
