@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/librsvg/2.44/librsvg-2.44.2.tar.xz
-  ref: 4eec96cc53ed499417dac3db9b4604f80a76f377f8f791641c458df1d7a3631f
+  url: https://download.gnome.org/sources/librsvg/2.44/librsvg-2.44.6.tar.xz
+  ref: 93925c4c1798dc9a5082dbb5f5e051e82396549e5d31ebdf9e981fefc6c21d17
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
