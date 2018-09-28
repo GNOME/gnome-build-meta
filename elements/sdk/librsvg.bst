@@ -28,6 +28,8 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  conf-local: --enable-vala
+  conf-local: |
+      --enable-gtk-doc \
+      --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
