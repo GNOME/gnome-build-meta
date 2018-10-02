@@ -13,7 +13,7 @@ depends:
 - core-deps/grilo.bst
 - core-deps/ibus-anthy.bst
 - core-deps/ibus-hangul.bst
-- core-deps/ibus-libpinyin.bst
+# - core-deps/ibus-libpinyin.bst     Its just not building
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libwacom.bst
