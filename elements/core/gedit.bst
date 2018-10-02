@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gedit/3.30/gedit-3.30.0.tar.xz
-  ref: bd5c26499f988a1d608591beadb4eb408697dc8c2a61cde9909aeec71e2aef79
+  url: https://download.gnome.org/sources/gedit/3.30/gedit-3.30.1.tar.xz
+  ref: 5c16d82b5fb93b10dc81a1bc8daa509b498779ae1db5381600a4765c99826d3f
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview-3.bst
