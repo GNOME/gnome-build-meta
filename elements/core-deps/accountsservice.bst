@@ -7,5 +7,7 @@ depends:
 - core-deps/polkit.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: desktop/dbus.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
