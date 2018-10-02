@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-photos/3.29/gnome-photos-3.29.92.tar.xz
-  ref: 9d8658fb564363a8b17cbd742840c5d68394abf7be09ee756b074ec7cd1cb05c
+  url: https://download.gnome.org/sources/gnome-photos/3.30/gnome-photos-3.30.0.tar.xz
+  ref: 67325584a2f46649e2d70b084cd996a883301ad9274d3746a0eb634315bf148e
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst
