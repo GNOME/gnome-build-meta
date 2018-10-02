@@ -87,7 +87,15 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/fuchsia-zircon-sys/fuchsia-zircon-sys-0.3.3.crate
 - kind: crate
+  url: https://static.crates.io/crates/gdk-pixbuf/gdk-pixbuf-0.4.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/gdk-pixbuf-sys/gdk-pixbuf-sys-0.6.0.crate
+- kind: crate
   url: https://static.crates.io/crates/generic-array/generic-array-0.11.1.crate
+- kind: crate
+  url: https://static.crates.io/crates/gio/gio-0.4.1.crate
+- kind: crate
+  url: https://static.crates.io/crates/gio-sys/gio-sys-0.6.0.crate
 - kind: crate
   url: https://static.crates.io/crates/glib/glib-0.5.0.crate
 - kind: crate
