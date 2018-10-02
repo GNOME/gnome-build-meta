@@ -1,8 +1,8 @@
 kind: distutils
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/pygobject/3.30/pygobject-3.30.0.tar.xz
-  ref: 7d20ba1475df922f4c26c69274ab89f7e7730d2101e46846caaddc53afd56bd0
+  url: https://download.gnome.org/sources/pygobject/3.30/pygobject-3.30.1.tar.xz
+  ref: e1335b70e36885bf1ae207ec1283a369b8fc3e080688046c1edb5a676edc11ce
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

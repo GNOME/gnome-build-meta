@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-user-docs/3.28/gnome-user-docs-3.28.2.tar.xz
-  ref: 8d6919447f54266049d39808a03d11a56ab4a5fb0a537e79936fd112decbe13d
+  url: https://download.gnome.org/sources/gnome-user-docs/3.30/gnome-user-docs-3.30.1.tar.xz
+  ref: 59f52202b5c9b5125f70279d5a23c735e0d994b7e0bf8d83afa66339037d633b
 depends:
 - sdk/yelp-tools.bst
 - filename: base.bst
