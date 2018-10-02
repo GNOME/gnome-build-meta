@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-initial-setup/3.29/gnome-initial-setup-3.29.92.tar.xz
-  ref: 6e865cfee270391946e8e5ba3d0ef81d1e8c648562e5a9462fb48c85f9119da4
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.30/gnome-initial-setup-3.30.0.tar.xz
+  ref: 53cad86ce408766f0d2295cfdaf55ac9b98d7d66c66f7beeac43e2e395656951
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -21,5 +21,10 @@ depends:
 - sdk/glib.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- sdk/ibus.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: |
+    -Dcheese=disabled \
+    -Dsoftware-sources=disabled

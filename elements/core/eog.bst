@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/eog/3.28/eog-3.28.3.tar.xz
-  ref: 37aeddfbf440751fce23bfae491184e3b5c618ebf9d56f491bac37896ada48d2
+  url: https://download.gnome.org/sources/eog/3.28/eog-3.28.4.tar.xz
+  ref: a55ca3bd077a3dd7682b6c636538266185e52d1419efc02c04d874f0071d38f3
 depends:
 - core-deps/exempi.bst
 - core-deps/libpeas.bst

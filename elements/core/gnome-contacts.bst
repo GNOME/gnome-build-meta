@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-contacts/3.30/gnome-contacts-3.30.tar.xz
-  ref: acad6b4d7cf3cbb01a285d6bfbe1e2d9eaa7d4992fa94884bf620668084eaa33
+  url: https://download.gnome.org/sources/gnome-contacts/3.30/gnome-contacts-3.30.1.tar.xz
+  ref: 095500f62992890bd47329635981e36219db1ebd52f27d7bb3f7503a96bc3fee
 depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst

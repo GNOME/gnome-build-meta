@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/NetworkManager/1.13/NetworkManager-1.13.3.tar.xz
-  ref: 4fce640d4f3bdabd9f6ce154597b419a303f24823c4089febbfcd7794baf2988
+  url: https://download.gnome.org/sources/NetworkManager/1.14/NetworkManager-1.14.0.tar.xz
+  ref: bdb216eac0f34a6d7e95e455fe1a8a718f80f2a9dd9a377a75672c7338807230
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst
