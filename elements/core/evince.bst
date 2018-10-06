@@ -9,6 +9,8 @@ depends:
 - core-deps/poppler.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
+- filename: sdk/appstream-glib.bst
+  type: build
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
