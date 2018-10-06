@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/libcue.bst
 - core-deps/libgrss.bst
 - core-deps/libgsf.bst
 - core-deps/totem-pl-parser.bst

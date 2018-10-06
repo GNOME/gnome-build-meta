@@ -71,6 +71,7 @@ depends:
 - core-deps/libcdio-paranoia.bst
 - core-deps/libcdio.bst
 - core-deps/libchamplain.bst
+- core-deps/libcue.bst
 - core-deps/libdaemon.bst
 - core-deps/libdazzle.bst
 - core-deps/libdvdread.bst
