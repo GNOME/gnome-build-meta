@@ -111,11 +111,19 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/itoa/itoa-0.4.3.crate
 - kind: crate
+  url: https://static.crates.io/crates/kernel32-sys/kernel32-sys-0.2.2.crate
+- kind: crate
+  url: https://static.crates.io/crates/language-tags/language-tags-0.2.2.crate
+- kind: crate
+  url: https://static.crates.io/crates/lazy_static/lazy_static-0.2.11.crate
+- kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-1.1.0.crate
 - kind: crate
   url: https://static.crates.io/crates/libc/libc-0.2.43.crate
 - kind: crate
   url: https://static.crates.io/crates/libm/libm-0.1.2.crate
+- kind: crate
+  url: https://static.crates.io/crates/locale_config/locale_config-0.2.2.crate
 - kind: crate
   url: https://static.crates.io/crates/log/log-0.4.5.crate
 - kind: crate
@@ -191,7 +199,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/redox_termios/redox_termios-0.1.1.crate
 - kind: crate
+  url: https://static.crates.io/crates/regex/regex-0.2.11.crate
+- kind: crate
   url: https://static.crates.io/crates/regex/regex-1.0.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.5.6.crate
 - kind: crate
   url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.2.crate
 - kind: crate
@@ -263,7 +275,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/walkdir/walkdir-2.2.5.crate
 - kind: crate
+  url: https://static.crates.io/crates/winapi/winapi-0.2.8.crate
+- kind: crate
   url: https://static.crates.io/crates/winapi/winapi-0.3.6.crate
+- kind: crate
+  url: https://static.crates.io/crates/winapi-build/winapi-build-0.1.1.crate
 - kind: crate
   url: https://static.crates.io/crates/winapi-i686-pc-windows-gnu/winapi-i686-pc-windows-gnu-0.4.0.crate
 - kind: crate
