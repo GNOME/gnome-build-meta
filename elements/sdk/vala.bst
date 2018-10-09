@@ -15,3 +15,4 @@ depends:
   type: runtime
 variables:
   conf-local: --enable-unversioned --disable-valadoc
+  make: make bootstrap
