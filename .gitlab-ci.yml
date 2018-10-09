@@ -8,6 +8,9 @@ variables:
   BST_EXTERNAL_SHA: 'ab9b37b5b52a7b2f62ddf17a68b76512da538291' # 0.5.0
   FLATPAK_BRANCH: master
 
+  GNOME_SERVER_BASTION: 'bastion.gnome.org'
+  GNOME_SERVER_GBM_BUILDER: 'vpn.gbm-builder.gnome.org'
+
 stages:
   - track
   - build
@@ -79,10 +82,8 @@ before_script:
     EOF
 
         # Trust the host key of the jump host and release server
-        cat > ~/.ssh/known_hosts << EOF
-    |1|Ec1eaTSoDQshjIpoIPouJCw40R4=|wG59JbBlwNW2K3kznnH7OUZYEhA= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAz8HWpA/W/0c/jV9+nU9zyZVUjw8flLksl6BNkcM3s12AMJXTG6qLJ+qVeQwI20eDkTioLLQYgOmMsmmFsO68vlivuxHYfAvjFHui6TkDVGXJS3lPGyOCqVwRmpyG0GnrfRWdsdgrYEo6sGbParkRb/ZfXxOuUXg3wWXMmeMyWXhkb09b1uYZTUjuruJpJTQ9kIC3CH8bdl7oiq2ffd+KdAykTkzkq+kFNizNRe0uBKtkcDgYpAZGOPCEJjpjwvDrWinXoE7rvE8zMfAv2/CP5AM4D+8yHrFgWz9tOexJyNsfJAZmQjg5rWuoeYow9tTVNWVloRU3tvF8OvVprgwPAw==
-    |1|DdY9PAqPg4LrkwIatwAUs3JLOXU=|fJqmuz18y1bJLarIIqckB1dH/ts= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAGixpYwAfvRyHOlqpKnrpo3iG5zPjQNL0hcay90SlNMfZ4W6+QUoFTZ/rQXDQFbBrOgTXzFDEQxKxxo350n6dw=
-    EOF
+        ssh-keyscan "${GNOME_SERVER_BASTION}" >> ~/.ssh/known_hosts
+        ssh-keyscan "${GNOME_SERVER_GBM_BUILDER}" >> ~/.ssh/known_hosts
 
     fi
 
