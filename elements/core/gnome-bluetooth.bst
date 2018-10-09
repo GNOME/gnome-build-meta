@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-bluetooth
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-bluetooth/3.28/gnome-bluetooth-3.28.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst

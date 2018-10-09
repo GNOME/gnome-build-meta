@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-libav
-  track: master
+- kind: tar
+  url: https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.14.4.tar.xz
 depends:
 - sdk/gst-plugins-base.bst
 - sdk/ffmpeg.bst

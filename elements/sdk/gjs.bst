@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gjs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gjs/1.55/gjs-1.55.1.tar.xz
 depends:
 - sdk/gobject-introspection.bst
 - sdk/mozjs60.bst

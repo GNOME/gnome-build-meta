@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtkmm
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gtkmm/3.93/gtkmm-3.93.0.tar.xz
 depends:
 - core-deps/atkmm.bst
 - core-deps/cairomm.bst

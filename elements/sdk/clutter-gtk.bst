@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/clutter-gtk
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
 depends:
 - sdk/clutter.bst
 - sdk/gtk+-3.bst

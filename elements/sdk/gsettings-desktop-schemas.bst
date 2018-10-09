@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gsettings-desktop-schemas/3.28/gsettings-desktop-schemas-3.28.1.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst

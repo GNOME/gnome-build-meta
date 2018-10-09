@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-initial-setup/3.30/gnome-initial-setup-3.30.0.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -24,6 +23,4 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local:
-    -Dcheese=disabled
-    -Dsoftware-sources=disabled
+  meson-local: -Dcheese=disabled -Dsoftware-sources=disabled

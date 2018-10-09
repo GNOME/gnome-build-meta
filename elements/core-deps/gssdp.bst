@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gssdp
-  track: gssdp_1.0
+- kind: tar
+  url: https://download.gnome.org/sources/gssdp/1.0/gssdp-1.0.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/NetworkManager/1.15/NetworkManager-1.15.1.tar.xz
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst

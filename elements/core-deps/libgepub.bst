@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgepub
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgepub/0.6/libgepub-0.6.0.tar.xz
 depends:
 - sdk/WebKitGTK+.bst
 - sdk/glib.bst

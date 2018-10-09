@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-terminal
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-terminal/3.30/gnome-terminal-3.30.1.tar.xz
 depends:
 - core/gnome-shell.bst
 - core/nautilus.bst

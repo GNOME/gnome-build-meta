@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: github_com:libvirt/libvirt-glib.git
-  track: master
+- kind: tar
+  url: https://libvirt.org/sources/glib/libvirt-glib-1.0.0.tar.gz
 depends:
 - core-deps/libvirt.bst
 - sdk/glib.bst

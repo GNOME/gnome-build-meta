@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_com:libosinfo/osinfo-db-tools.git
-  track: master
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.2.0.tar.gz
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst

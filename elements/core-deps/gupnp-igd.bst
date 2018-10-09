@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gupnp-igd
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gupnp-igd/0.2/gupnp-igd-0.2.5.tar.xz
 depends:
 - core-deps/gupnp.bst
 - sdk/glib.bst

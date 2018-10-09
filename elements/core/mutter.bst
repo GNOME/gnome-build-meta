@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mutter
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/mutter/3.30/mutter-3.30.1.tar.xz
 depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtk
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gtk+/3.94/gtk+-3.94.0.tar.xz
 depends:
 - core-deps/graphene.bst
 - sdk/at-spi2-atk.bst

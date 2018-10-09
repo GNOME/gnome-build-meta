@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:libqmi.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/libqmi/libqmi-1.20.2.tar.xz
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst

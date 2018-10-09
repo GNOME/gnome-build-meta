@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/glib
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/glib/2.58/glib-2.58.1.tar.xz
 depends:
 - filename: sdk/gtk-doc.bst
   type: build

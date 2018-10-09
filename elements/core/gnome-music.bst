@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-music
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-music/3.31/gnome-music-3.31.1.tar.xz
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

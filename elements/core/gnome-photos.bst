@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-photos
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-photos/3.30/gnome-photos-3.30.1.tar.xz
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst

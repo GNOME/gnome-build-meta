@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgtop
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgtop/2.38/libgtop-2.38.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst

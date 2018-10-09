@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/phodav
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/phodav/2.2/phodav-2.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst

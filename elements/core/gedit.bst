@@ -1,11 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gedit
-  track: master
-  submodules:
-    libgd:
-      url: gitlab_gnome_org:GNOME/libgd
+- kind: tar
+  url: https://download.gnome.org/sources/gedit/3.31/gedit-3.31.0.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst

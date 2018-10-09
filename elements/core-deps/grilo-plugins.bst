@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/grilo-plugins
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.8.tar.xz
 depends:
 - core-deps/gmime3.bst
 - core-deps/gnome-online-accounts.bst

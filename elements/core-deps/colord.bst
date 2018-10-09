@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: github_com:hughsie/colord.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/colord/releases/colord-1.4.3.tar.xz
 - kind: patch
   path: files/colord/dont-require-docbook2man.patch
 depends:

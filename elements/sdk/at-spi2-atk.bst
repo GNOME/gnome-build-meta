@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/at-spi2-atk
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/at-spi2-atk/2.30/at-spi2-atk-2.30.0.tar.xz
 depends:
 - sdk/at-spi2-core.bst
 - sdk/atk.bst

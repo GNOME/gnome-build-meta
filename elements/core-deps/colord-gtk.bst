@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: github_com:hughsie/colord-gtk.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/colord/releases/colord-gtk-0.1.26.tar.xz
 depends:
 - core-deps/colord.bst
 - sdk/glib.bst
