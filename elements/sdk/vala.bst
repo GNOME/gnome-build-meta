@@ -3,8 +3,6 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/vala
   track: master
-- kind: patch
-  path: files/vala/libvaladoc-Allow-disabling-the-graphviz-dependency.patch
 depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
@@ -16,4 +14,4 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  conf-local: --enable-unversioned --disable-graphviz
+  conf-local: --enable-unversioned --disable-valadoc
