@@ -14,7 +14,7 @@ depends:
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-libav.bst
+#- sdk/gst-libav.bst		broken
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
