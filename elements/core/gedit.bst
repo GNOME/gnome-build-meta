@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gedit/3.31/gedit-3.31.0.tar.xz
+  url: https://download.gnome.org/sources/gedit/3.31/gedit-3.31.1.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst
