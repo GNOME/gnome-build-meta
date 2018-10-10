@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/tracker/2.1/tracker-2.1.5.tar.xz
+  url: https://download.gnome.org/sources/tracker/2.1/tracker-2.1.4.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/upower.bst
