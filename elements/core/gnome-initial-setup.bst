@@ -20,6 +20,7 @@ depends:
 - sdk/glib.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- sdk/ibus.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
