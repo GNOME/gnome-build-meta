@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/gnome-photos/3.30/gnome-photos-3.30.1.tar.xz
@@ -27,7 +27,3 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
-variables:
-  meson-local: |
-    -Dinstalled_tests=false \
-    -Ddogtail=false
