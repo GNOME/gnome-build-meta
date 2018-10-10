@@ -27,5 +27,10 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-compile-warnings=maximum --enable-installed-tests --enable-xlib-egl-platform
-    --enable-wayland-egl-platform --enable-wayland-egl-server --enable-kms-egl-platform
+  conf-local: |
+    --enable-compile-warnings=maximum \
+    --enable-installed-tests \
+    --enable-xlib-egl-platform \
+    --enable-wayland-egl-platform \
+    --enable-wayland-egl-server \
+    --enable-kms-egl-platform
