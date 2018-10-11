@@ -5,7 +5,10 @@ sources:
   track: master
 depends:
 - sdk/gobject-introspection.bst
+- sdk/gtk+-3.bst
 - sdk/mozjs60.bst
+- filename: desktop/cairo.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
