@@ -4,7 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/zenity
   track: master
 depends:
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst
 - filename: base.bst
