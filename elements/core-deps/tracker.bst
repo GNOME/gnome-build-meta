@@ -18,5 +18,6 @@ depends:
 
 variables:
   meson-local: |
+    -Ddocs=false \
     -Dunicode_support=icu \
     -Dbash_completion=${prefix}/share/bash-completion/completions
