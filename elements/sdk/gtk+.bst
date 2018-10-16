@@ -27,3 +27,9 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Denable-broadway-backend=true
+public:
+  bst:
+    overlap-whitelist:
+    # provided by gtk3 as well
+    - '%{datadir}/gettext/its/gtkbuilder.*'
+    - '%{datadir}/glib-2.0/schemas/org.gtk.*'
