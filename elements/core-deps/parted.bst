@@ -13,3 +13,7 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}%{infodir}/dir"
