@@ -1,4 +1,4 @@
 projects:
   gnome:
     freedesktop-sdk.bst:
-    - ref: 3d013cc2f43ed38bf5f1dc096e33f6b2f1b3e721 # freedesktop-sdk-18.08.13
+    - ref: 4a53110957ce5bcada9e6360eed1d2f8acb0269e # freedesktop-sdk-18.08.14 + meson 0.48.1
