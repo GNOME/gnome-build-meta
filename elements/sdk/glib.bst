@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/glib
@@ -13,7 +13,7 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  conf-local: --enable-installed-tests --disable-libmount
+  meson-local: -Dinstalled-tests=true -Dselinux=false
 public:
   bst:
     integration-commands:
