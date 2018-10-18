@@ -5,3 +5,7 @@ sources:
 depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}%{infodir}/dir"
