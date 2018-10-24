@@ -8,6 +8,7 @@ depends:
 - core-deps/gspell.bst
 - core-deps/libgudev.bst
 - core-deps/liboauth.bst
+- core-deps/xmlb.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
