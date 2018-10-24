@@ -157,3 +157,4 @@ depends:
 - core-deps/upower.bst
 - core-deps/volume-key.bst
 - core-deps/xmlto.bst
+- core-deps/xmlb.bst
