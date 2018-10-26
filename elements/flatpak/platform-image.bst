@@ -9,8 +9,8 @@ depends:
   junction: freedesktop-sdk.bst
   type: build
 config:
-  include:
-  - runtime
+  exclude:
+  - devel
 public:
   bst:
     split-rules:
