@@ -20,11 +20,6 @@ depends:
 - filename: debug-app-link.bst
   junction: freedesktop-sdk.bst
   type: build
-
-config:
-  include:
-  - runtime
-  - devel
 public:
   bst:
     split-rules:
