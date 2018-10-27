@@ -10,6 +10,8 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/pwquality.bst
 - core-deps/upower.bst
+- filename: core-deps/meson-0-47.bst
+  type: build
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
