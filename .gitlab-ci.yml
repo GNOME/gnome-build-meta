@@ -96,10 +96,10 @@ before_script:
     - |
       for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
         bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
-        flatpak build-export --arch="${ARCH}" --no-update-summary --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
+        flatpak build-export --arch="${FLATPAK_ARCH}" --no-update-summary --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
-    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
+    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${FLATPAK_ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
 
     # Push the resulting runtimes to gbm.gnome.org
     # Assume there will be no branch name collisions,
@@ -132,6 +132,7 @@ build-flatpak-runtimes-x86_64:
     - progress
   variables:
     ARCH: x86_64
+    FLATPAK_ARCH: x86_64
 
 build-flatpak-runtimes-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
@@ -139,7 +140,8 @@ build-flatpak-runtimes-i386:
   tags:
     - do
   variables:
-    ARCH: i386
+    ARCH: i686
+    FLATPAK_ARCH: i386
 
 build-flatpak-runtimes-aarch64:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
@@ -148,6 +150,7 @@ build-flatpak-runtimes-aarch64:
     - aarch64
   variables:
     ARCH: aarch64
+    FLATPAK_ARCH: aarch64
 
 build-flatpak-runtimes-arm:
   image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
@@ -156,6 +159,7 @@ build-flatpak-runtimes-arm:
     - armhf
   variables:
     ARCH: arm
+    FLATPAK_ARCH: arm
 
 .build-template: &build
   stage: build
