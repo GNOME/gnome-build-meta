@@ -9,4 +9,4 @@ config:
       name: org.gnome.Sdk.Locale
 
     ExtensionOf:
-      ref: runtime/org.gnome.Sdk/%{arch}/%{branch}
+      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{branch}
