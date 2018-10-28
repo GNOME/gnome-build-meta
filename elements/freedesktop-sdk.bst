@@ -8,5 +8,5 @@ config:
   options:
     target_arch: '%{arch}'
     (?):
-    - arch == 'i386':
-        target_arch: i586
+      - arch == 'i686':
+          target_arch: 'i686'

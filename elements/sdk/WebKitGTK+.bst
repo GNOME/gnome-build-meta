@@ -40,7 +40,7 @@ depends:
 variables:
   webkitgtk_toolchain: ''
   (?):
-    - arch == "i386":
+    - arch == "i686":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
     - arch == "arm":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
