@@ -11,8 +11,8 @@ config:
   metadata:
     Runtime:
       name: org.gnome.Sdk
-      runtime: org.gnome.Platform/%{arch}/%{branch}
-      sdk: org.gnome.Sdk/%{arch}/%{branch}
+      runtime: org.gnome.Platform/%{gcc_arch}/%{branch}
+      sdk: org.gnome.Sdk/%{gcc_arch}/%{branch}
 
     Environment:
       GI_TYPELIB_PATH: /app/lib/girepository-1.0

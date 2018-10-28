@@ -33,7 +33,7 @@ variables:
   ffmpeg-libdir: "%{libdir}"
   ffmpeg-arch: "%{arch}"
   (?):
-  - arch == "i386":
+  - arch == "i686":
         ffmpeg-arch: x86
 
   conf-local: |
