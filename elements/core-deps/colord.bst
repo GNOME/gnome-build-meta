@@ -3,8 +3,6 @@ sources:
 - kind: git
   url: github_com:hughsie/colord.git
   track: master
-- kind: patch
-  path: files/colord/dont-require-docbook2man.patch
 depends:
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
@@ -21,4 +19,5 @@ variables:
     -Dargyllcms_sensor=false \
     -Dbash_completion=false \
     -Dlibcolordcompat=false \
+    -Dman=false \
     -Dvapi=true
