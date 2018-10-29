@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: http://www.freedesktop.org/software/colord/releases/colord-1.4.3.tar.xz
+  url: https://www.freedesktop.org/software/colord/releases/colord-1.4.3.tar.xz
   ref: 9a8e669ee1ea31632bee636cc57353f703c2ea9b64cd6e02bbaabe9a1e549df7
 - kind: patch
   path: files/colord/dont-require-docbook2man.patch

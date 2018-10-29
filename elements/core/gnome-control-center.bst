@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-control-center/3.30/gnome-control-center-3.30.0.tar.xz
+  url: https://download.gnome.org/sources/gnome-control-center/3.30/gnome-control-center-3.30.1.tar.xz
   ref: 01fccc50b12e2d5906a3dc21f2009f5663360c9666f17bfd7c8a301fe730afe5
 depends:
 - core-deps/ModemManager.bst

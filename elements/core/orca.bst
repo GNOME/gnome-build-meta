@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/orca/3.30/orca-3.30.0.tar.xz
+  url: https://download.gnome.org/sources/orca/3.30/orca-3.30.1.tar.xz
   ref: 49e6d90057d5916daeea8b9edd21f6ccaaae1609799d0188622e4217ffb1582b
 depends:
 - core-deps/pyatspi2.bst

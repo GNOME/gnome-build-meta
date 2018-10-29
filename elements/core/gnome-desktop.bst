@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.0.tar.xz
+  url: https://download.gnome.org/sources/gnome-desktop/3.30/gnome-desktop-3.30.2.tar.xz
   ref: 45494f6af18d9125a0fd1024f7442fcc5d3219fca79527d4aa1906e37af795fd
 depends:
 - sdk/gdk-pixbuf.bst

@@ -2,7 +2,7 @@ kind: autotools
 sources:
 # https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/85
 - kind: tar
-  url: https://www.freedesktop.org/software/ModemManager/ModemManager-1.8.0.tar.xz
+  url: https://www.freedesktop.org/software/ModemManager/ModemManager-1.8.2.tar.xz
   ref: 18abe34421aa3b52ff47d4ba93aa282f8f8944717dd644a5c0c81eeeac9c7eb1
 depends:
 - core-deps/libgudev.bst
