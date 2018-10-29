@@ -8,8 +8,8 @@ depends:
 variables:
   mozjs_target: ''
   (?):
-    - arch == "i386":
-        mozjs_target: "--host=i586-unknown-linux-gnu"
+    - arch == "i686":
+        mozjs_target: "--host=i686-unknown-linux-gnu"
     - arch == "arm":
         mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
