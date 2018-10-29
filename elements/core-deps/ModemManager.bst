@@ -3,7 +3,7 @@ sources:
 # https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/85
 - kind: tar
   url: https://www.freedesktop.org/software/ModemManager/ModemManager-1.8.2.tar.xz
-  ref: 18abe34421aa3b52ff47d4ba93aa282f8f8944717dd644a5c0c81eeeac9c7eb1
+  ref: 96f2a5f0ed15532b4c4c185b756fdc0326e7c2027cea26a1264f91e098260f80
 depends:
 - core-deps/libgudev.bst
 - core-deps/libmbim.bst

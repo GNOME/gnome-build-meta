@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/vte/0.54/vte-0.54.2.tar.xz
-  ref: a724fa0543c689e30a3d0ff07e4195a86dc7c4fe57b469be97c7c87f27604e53
+  ref: 527d48b5131af1a0835006b7538fd3b243847bebc76b66bafa84457a98153834
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
