@@ -41,6 +41,7 @@ variables:
     -Dlv2=disabled \
     -Dmpeg2enc=disabled \
     -Dmplex=disabled \
+    -Dmsdk=disabled \
     -Dmusepack=disabled \
     -Dneon=disabled \
     -Dopencv=disabled \
