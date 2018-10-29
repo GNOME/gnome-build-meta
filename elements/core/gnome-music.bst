@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/gnome-music/3.30/gnome-music-3.30.2.tar.xz
-  ref: 0415d832cb393f0378d5ce3858f78cd7028d5fe5b669dbaea4c280612c51a3d9
+  ref: 2d01813d99e6b7758fcd9609c16fb0deecb76ba4ef939fdd8a301c8f736a2fb5
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

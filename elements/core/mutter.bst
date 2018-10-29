@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/mutter/3.30/mutter-3.30.1.tar.xz
-  ref: 994a795bb9356e1ffaf3649a61a566a341367a4ddd1405dc851606009c9591c1
+  ref: b5519969a3ff3005632f1de984ec00c4d2b3986d01c31c1a19acfc93dd0c9c24
 depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst

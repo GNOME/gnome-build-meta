@@ -2,7 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: https://ffmpeg.org/releases/ffmpeg-4.0.2.tar.xz
-  ref: fb012fd6a887085be657782b5c000769eebb5c69
+  ref: a95c0cc9eb990e94031d2183f2e6e444cc61c99f6f182d1575c433d62afb2f97
 depends:
 - sdk/sdl2.bst
 - filename: desktop/fontconfig.bst
