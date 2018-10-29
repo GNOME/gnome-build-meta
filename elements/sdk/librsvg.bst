@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/librsvg/2.44/librsvg-2.44.7.tar.xz
+  url: https://download.gnome.org/sources/librsvg/2.44/librsvg-2.44.8.tar.xz
   ref: aafd1c651b293bc09305ec9ae558e4fbcd4b9be6e7e27a003d48324af993b23e
 depends:
 - sdk/gdk-pixbuf.bst
@@ -29,7 +29,7 @@ depends:
   type: runtime
 variables:
   conf-local: |
-      --enable-gtk-doc \
-      --enable-vala
+    --enable-gtk-doc \
+    --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
