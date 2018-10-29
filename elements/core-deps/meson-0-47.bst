@@ -10,7 +10,6 @@ variables:
   pip: pip3
 
 sources:
-- kind: git
-  url: https://github.com/mesonbuild/meson.git
-  track: 0.47.2
-  ref: 0a5ff338012a00f32c3aa9d8773835accc3e4e5b    # 0.47.2
+- kind: tar
+  url: https://github.com/mesonbuild/meson/releases/download/0.47.2/meson-0.47.2.tar.gz
+  ref: 92d8afd921751261e36151643464efd3394162f69efbe8cd53e0a66b1cf395eb
