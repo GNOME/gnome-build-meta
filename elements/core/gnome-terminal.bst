@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/gnome-terminal/3.30/gnome-terminal-3.30.2.tar.xz
-  ref: e90720d4581da29d7c47d35d4fe81b46a9b4fbdb85e3b6b67dec298552b13228
+  ref: 6b1fc2720e3bfc592645d41e38d0d3a0f2bdf5ef7bce490b2d5c8ba39f395e38
 depends:
 - core/gnome-shell.bst
 - core/nautilus.bst

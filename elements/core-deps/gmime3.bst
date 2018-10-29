@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/gmime/3.2/gmime-3.2.1.tar.xz
-  ref: 75ec6033f9192488ff37745792c107b3d0ab0a36c2d3e4f732901a771755d7e0
+  ref: 56fe6f4f10dc7ee31cc026fd433a06972301cc4ef2d2f6ce78d2dfdfa9b2c560
 depends:
 - sdk/glib.bst
 - sdk/gtk-doc.bst

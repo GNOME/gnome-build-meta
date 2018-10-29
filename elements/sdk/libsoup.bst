@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/libsoup/2.64/libsoup-2.64.2.tar.xz
-  ref: 359bd02a909bfd43f68712146e9c4f4c643bffa84e513d8b0af1be215a92e1f3
+  ref: 75ddc194a5b1d6f25033bb9d355f04bfe5c03e0e1c71ed0774104457b3a786c6
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
