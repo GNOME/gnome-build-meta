@@ -25,6 +25,7 @@ variables:
     -Dbluez=disabled \
     -Dbs2b=disabled \
     -Dchromaprint=disabled \
+    -Dcurl-ssh2=disabled \
     -Ddirectfb=disabled \
     -Ddts=disabled \
     -Dfaac=disabled \
