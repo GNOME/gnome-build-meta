@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.14.3.tar.xz
+  url: https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.14.4.tar.xz
   ref: b2224e5d9c1b85ad51233f6135524bb9e16a9172d395edc79c73b89094659fd5
 depends:
 - sdk/gstreamer.bst

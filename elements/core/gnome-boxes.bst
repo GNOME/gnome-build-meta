@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-boxes/3.30/gnome-boxes-3.30.1.tar.xz
+  url: https://download.gnome.org/sources/gnome-boxes/3.30/gnome-boxes-3.30.2.tar.xz
   ref: bb7431a15b1d7fd41825cd2cbdd8aeca0ed1a589769fa1ae7dc494eb45e2b351
 depends:
 - core-deps/gtk-vnc.bst
