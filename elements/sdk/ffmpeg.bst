@@ -1,8 +1,7 @@
 kind: manual
 sources:
-- kind: git
-  url: https://git.ffmpeg.org/ffmpeg.git
-  track: n4.0.2
+- kind: tar
+  url: https://ffmpeg.org/releases/ffmpeg-4.0.2.tar.xz
   ref: fb012fd6a887085be657782b5c000769eebb5c69
 depends:
 - sdk/sdl2.bst
@@ -29,12 +28,12 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 variables:
-  ffmpeg-prefix: "%{prefix}"
-  ffmpeg-libdir: "%{libdir}"
-  ffmpeg-arch: "%{arch}"
+  ffmpeg-prefix: '%{prefix}'
+  ffmpeg-libdir: '%{libdir}'
+  ffmpeg-arch: '%{arch}'
   (?):
   - arch == "i686":
-        ffmpeg-arch: x86
+      ffmpeg-arch: x86
 
   conf-local: |
     --prefix="%{ffmpeg-prefix}" \
@@ -85,11 +84,11 @@ public:
     split-rules:
       devel:
         (>):
-        - "%{libdir}/libavdevice.so"
-        - "%{libdir}/libavcodec.so"
-        - "%{libdir}/libswscale.so"
-        - "%{libdir}/libpostproc.so"
-        - "%{libdir}/libavutil.so"
-        - "%{libdir}/libavfilter.so"
-        - "%{libdir}/libavformat.so"
-        - "%{libdir}/libswresample.so"
+        - '%{libdir}/libavdevice.so'
+        - '%{libdir}/libavcodec.so'
+        - '%{libdir}/libswscale.so'
+        - '%{libdir}/libpostproc.so'
+        - '%{libdir}/libavutil.so'
+        - '%{libdir}/libavfilter.so'
+        - '%{libdir}/libavformat.so'
+        - '%{libdir}/libswresample.so'

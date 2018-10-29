@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gjs/1.54/gjs-1.54.1.tar.xz
+  url: https://download.gnome.org/sources/gjs/1.54/gjs-1.54.2.tar.xz
   ref: b197fe5812a0449f73f7a93ac85a4ee4941916bcf071ea39a67ddd231dc868bc
 depends:
 - sdk/gobject-introspection.bst
