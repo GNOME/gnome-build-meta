@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/accountsservice/accountsservice-0.6.54.tar.xz
-  ref: 035928f5dea46f2220657e0bd669bc7fac45165b700c0a81b2b66ff2c3dbc74a
+  ref: 26e9062c84797e9604182d0efdb2231cb01c98c3c9b0fea601ca79a2802d21ac
 depends:
 - core-deps/polkit.bst
 - sdk/glib.bst

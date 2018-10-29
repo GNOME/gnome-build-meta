@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/NetworkManager/1.14/NetworkManager-1.14.4.tar.xz
-  ref: bdb216eac0f34a6d7e95e455fe1a8a718f80f2a9dd9a377a75672c7338807230
+  ref: 35a3ede4c7d12d6212033c9e44cb82b7692f38063b53a067567f02f5937c8c18
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst

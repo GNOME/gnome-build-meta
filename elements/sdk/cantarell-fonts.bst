@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/cantarell-fonts/0.111/cantarell-fonts-0.111.tar.xz
-  ref: 9b9e6e824fee7a809129f2238710f09d4ef4c6fe8fd7db1969bb5e228c3f7ee5
+  ref: 858b2bc196ee851c8e5a76376097bc75f23bc01b29591c30ed3a550e23b41716
 depends:
 - sdk/appstream-glib.bst
 - filename: base.bst

@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/evince/3.30/evince-3.30.2.tar.xz
-  ref: cbd02d1c515fd7f17af1c96935e456d6ccba4d612d2d972a12079cc6b24e8cb9
+  ref: a95bbdeb452c9cc910bba751e7c782ce60ffe7972c461bccbe8bbcdb8ca5f24c
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst
