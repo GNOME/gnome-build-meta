@@ -1,0 +1,36 @@
+From 1bc95b0ebd1a05e626c68b03d0c9f6c1e5b826e7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Mon, 29 Oct 2018 21:51:14 +0200
+Subject: [PATCH] meson: avoid unkown variables in the msdk tests
+
+---
+ sys/msdk/meson.build | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/sys/msdk/meson.build b/sys/msdk/meson.build
+index fa4fa3cc3..afbee4f48 100644
+--- a/sys/msdk/meson.build
++++ b/sys/msdk/meson.build
+@@ -30,6 +30,9 @@ else
+   msdk_sources += ['msdk_libva.c', 'gstmsdkallocator_libva.c']
+ endif
+ 
++have_msdk = false
++msdk_dep = []
++
+ msdk_option = get_option('msdk')
+ if msdk_option.disabled()
+   subdir_done()
+@@ -41,9 +44,6 @@ if msdk_root == '' and msdk_option.enabled()
+   error('msdk plugin enabled but Intel Media SDK not found: neither INTELMEDIASDKROOT nor MFX_HOME were set')
+ endif
+ 
+-have_msdk = false
+-msdk_dep = []
+-
+ if msdk_root != ''
+   msdk_libdir = [msdk_root + '/lib/lin_x64', msdk_root + '/lib/x64']
+   msdk_incdir = include_directories(msdk_root + '/include')
+-- 
+2.17.2
+
