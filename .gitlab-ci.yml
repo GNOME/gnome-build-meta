@@ -196,7 +196,7 @@ build-gnome-core-i386:
   tags:
     - do
   variables:
-    ARCH: i386
+    ARCH: i686
   allow_failure: true
 
 build-gnome-core-aarch64:
