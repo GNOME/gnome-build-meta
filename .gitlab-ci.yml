@@ -5,7 +5,7 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: "10abe77fe8d77385d86f225b503d9185f4ef7f3a" #  1.2.3
-  BST_EXTERNAL_SHA: 'ab9b37b5b52a7b2f62ddf17a68b76512da538291' # 0.5.0
+  BST_EXTERNAL_SHA: '13da037801c27b028114cc63fdb93eab243e6851' # 0.6.2
   FLATPAK_BRANCH: master
 
 stages:
