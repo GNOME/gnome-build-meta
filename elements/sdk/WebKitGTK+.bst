@@ -30,12 +30,20 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xt.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/gperf.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/python2.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/ruby.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   webkitgtk_toolchain: ''
   (?):
