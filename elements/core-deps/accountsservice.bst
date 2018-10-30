@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/accountsservice/accountsservice-0.6.54.tar.xz
