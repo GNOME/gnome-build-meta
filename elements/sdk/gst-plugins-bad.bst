@@ -14,12 +14,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: base/opus.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   meson-local: |
     -Daom=disabled \
