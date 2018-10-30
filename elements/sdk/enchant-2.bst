@@ -6,11 +6,10 @@ depends:
 - sdk/glib.bst
 - filename: desktop/hunspell.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-local: --with-hunspell --with-hunspell-dir=/usr/share/myspell

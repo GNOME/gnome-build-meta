@@ -6,12 +6,11 @@ sources:
 depends:
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   meson-local: -Dinstalled-tests=true -Dselinux=false
 public:

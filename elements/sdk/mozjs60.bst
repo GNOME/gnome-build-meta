@@ -3,12 +3,11 @@ sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-60.1.0.tar.bz2
 depends:
-- filename: base.bst
+- filename: base/python2.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   mozjs_target: ''
   (?):

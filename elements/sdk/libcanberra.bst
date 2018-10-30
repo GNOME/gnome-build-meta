@@ -6,11 +6,10 @@ depends:
 - sdk/gtk+-3.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-aux: build-aux
