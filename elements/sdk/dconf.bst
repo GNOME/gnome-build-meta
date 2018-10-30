@@ -12,11 +12,13 @@ depends:
 - filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base.bst
+- filename: base/docbook-xsl.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   meson-local: -Dbash_completion=false
