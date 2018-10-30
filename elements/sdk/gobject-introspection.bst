@@ -5,11 +5,13 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- filename: base.bst
+- filename: base/bison.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-local: --with-python=python3

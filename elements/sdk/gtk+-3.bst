@@ -30,12 +30,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xinerama.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend
     --enable-wayland-backend

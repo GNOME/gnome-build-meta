@@ -7,12 +7,17 @@ depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
   type: build
-- filename: base.bst
+- filename: base/bison.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/git-minimal.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-local: --enable-unversioned --disable-valadoc
   make: make bootstrap

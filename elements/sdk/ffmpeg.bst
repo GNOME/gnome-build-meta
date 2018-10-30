@@ -21,12 +21,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/nasm.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   ffmpeg-prefix: "%{prefix}"
   ffmpeg-libdir: "%{libdir}"

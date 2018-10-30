@@ -5,11 +5,7 @@ sources:
 depends:
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   python: python3
