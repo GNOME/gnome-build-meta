@@ -9,11 +9,13 @@ depends:
   type: build
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: base.bst
+- filename: base/intltool.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-  type: runtime
 variables:
   conf-local: --disable-gtk2-engine
