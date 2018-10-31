@@ -166,7 +166,7 @@ build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
+    - packet
   variables:
     ARCH: x86_64
 
@@ -174,7 +174,7 @@ build-gnome-core-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
+    - packet
   variables:
     ARCH: i686
   allow_failure: true
@@ -201,7 +201,7 @@ flatpak-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
   tags:
-    - do
+    - packet
   variables:
     ARCH: x86_64
     FLATPAK_ARCH: x86_64
@@ -210,7 +210,7 @@ flatpak-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
   tags:
-    - do
+    - packet
   variables:
     ARCH: i686
     FLATPAK_ARCH: i386
