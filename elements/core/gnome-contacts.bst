@@ -8,6 +8,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
 - core-deps/libgee.bst
+- core-deps/libhandy.bst
 - core/cheese.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
