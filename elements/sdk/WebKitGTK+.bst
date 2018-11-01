@@ -48,4 +48,3 @@ variables:
 environment:
   CFLAGS: '-g1'
   CXXFLAGS: '-g1'
-  JOBS: '-j2'
