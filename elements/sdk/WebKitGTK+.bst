@@ -40,10 +40,12 @@ variables:
   webkitgtk_toolchain: ''
   (?):
     - arch == "i686":
-        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
+        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
     - arch == "arm":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
-  cmake-local: -DCMAKE_BUILD_TYPE=Release -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_toolchain}
-environment:
-  CFLAGS: '-g1'
-  CXXFLAGS: '-g1'
+  cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF %{webkitgtk_toolchain}
+(?):
+- arch == "i686":
+    environment:
+      CFLAGS: '-g1'
+      CXXFLAGS: '-g1'
