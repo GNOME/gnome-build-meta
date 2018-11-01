@@ -128,8 +128,7 @@ build-flatpak-runtimes-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
   tags:
-    - do
-    - progress
+    - x86_64
   variables:
     ARCH: x86_64
     FLATPAK_ARCH: x86_64
@@ -138,7 +137,7 @@ build-flatpak-runtimes-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *flatpak
   tags:
-    - do
+    - x86_64
   variables:
     ARCH: i686
     FLATPAK_ARCH: i386
@@ -185,8 +184,7 @@ build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
-    - progress
+    - x86_64
   variables:
     ARCH: x86_64
 
@@ -194,7 +192,7 @@ build-gnome-core-i386:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   <<: *build
   tags:
-    - do
+    - x86_64
   variables:
     ARCH: i686
   allow_failure: true
