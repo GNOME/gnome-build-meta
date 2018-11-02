@@ -11,7 +11,6 @@ depends:
 - core-deps/anthy.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
-- core-deps/avahi.bst
 - core-deps/babl.bst
 - core-deps/berkeleydb.bst
 - core-deps/blockdev.bst
@@ -28,7 +27,6 @@ depends:
 - core-deps/exempi.bst
 - core-deps/exiv2.bst
 - core-deps/folks.bst
-- core-deps/fuse.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
@@ -54,7 +52,6 @@ depends:
 - core-deps/gtksourceview.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
-- core-deps/gupnp-igd.bst
 - core-deps/gupnp.bst
 - core-deps/ibus-anthy.bst
 - core-deps/ibus-hangul.bst
@@ -64,13 +61,9 @@ depends:
 - core-deps/kmod.bst
 - core-deps/kyotocabinet.bst
 - core-deps/libatasmart.bst
-- core-deps/libbluray.bst
 - core-deps/libbytesize.bst
-- core-deps/libcdio-paranoia.bst
-- core-deps/libcdio.bst
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
-- core-deps/libdaemon.bst
 - core-deps/libdazzle.bst
 - core-deps/libdvdread.bst
 - core-deps/libevdev.bst
@@ -80,7 +73,6 @@ depends:
 - core-deps/libgfbgraph.bst
 - core-deps/libgnomekbd.bst
 - core-deps/libgovirt.bst
-- core-deps/libgphoto2.bst
 - core-deps/libgrss.bst
 - core-deps/libgsf.bst
 - core-deps/libgtop.bst
@@ -90,14 +82,11 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libhangul.bst
 - core-deps/libical.bst
-- core-deps/libimobiledevice.bst
 - core-deps/libinput.bst
 - core-deps/libmbim.bst
 - core-deps/libmediaart.bst
-- core-deps/libmtp.bst
 - core-deps/libmusicbrainz.bst
 - core-deps/libndp.bst
-- core-deps/libnfs.bst
 - core-deps/libnl.bst
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
@@ -110,14 +99,13 @@ depends:
 - core-deps/libsigcplusplus.bst
 - core-deps/libtirpc.bst
 - core-deps/libusb.bst
-- core-deps/libusbmuxd.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
 - core-deps/libwacom.bst
 - core-deps/libxklavier.bst
-- core-deps/libyaml.bst
 - core-deps/libzapojit.bst
 - core-deps/lvm2.bst
+- core-deps/meson-0-47.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
@@ -132,7 +120,6 @@ depends:
 - core-deps/pangomm.bst
 - core-deps/parted.bst
 - core-deps/phodav.bst
-- core-deps/plist.bst
 - core-deps/polkit.bst
 - core-deps/poppler.bst
 - core-deps/popt.bst
