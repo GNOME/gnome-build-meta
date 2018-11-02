@@ -1,9 +1,9 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://www.libimobiledevice.org/downloads/libimobiledevice-1.2.0.tar.bz2
+  url: ftp_gnu_org:libcdio/libcdio-paranoia-10.2+0.94+2.tar.gz
 depends:
-- core-deps/libusbmuxd.bst
+- world/libcdio.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

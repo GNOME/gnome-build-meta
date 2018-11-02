@@ -3,7 +3,7 @@ sources:
 - kind: tar
   url: github_com:lathiat/avahi/releases/download/v0.7/avahi-0.7.tar.gz
 depends:
-- core-deps/libdaemon.bst
+- world/libdaemon.bst
 - sdk/gtk+-3.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
