@@ -31,5 +31,3 @@ depends:
 - sdk/gnome-themes-extra.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gvfs.bst
-- filename: base.bst
-  junction: freedesktop-sdk.bst

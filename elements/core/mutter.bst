@@ -24,7 +24,13 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: base/intltool.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-compile-warnings=maximum --enable-installed-tests --enable-xlib-egl-platform

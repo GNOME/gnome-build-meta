@@ -8,5 +8,8 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst
-- filename: base.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

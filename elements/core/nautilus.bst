@@ -14,7 +14,10 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/pango.bst
-- filename: base.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dselinux=false
