@@ -4,5 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/babl
   track: master
 depends:
-- filename: base.bst
+- filename: base/git-minimal.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

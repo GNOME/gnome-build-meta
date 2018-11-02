@@ -5,7 +5,10 @@ sources:
 depends:
 - core-deps/libdaemon.bst
 - sdk/gtk+-3.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-distro=none --disable-qt3 --disable-qt4 --disable-gtk

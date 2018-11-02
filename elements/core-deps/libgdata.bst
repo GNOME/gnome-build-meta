@@ -14,5 +14,8 @@ depends:
   type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

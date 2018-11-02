@@ -6,7 +6,10 @@ sources:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-python=python3
