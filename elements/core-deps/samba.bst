@@ -8,7 +8,10 @@ depends:
 - core-deps/libtirpc.bst
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
-- filename: base.bst
+- filename: base/python2.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   configure-commands:

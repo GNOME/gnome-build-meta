@@ -3,5 +3,8 @@ sources:
 - kind: tar
   url: github_com:williamh/dotconf/archive/v1.3.tar.gz
 depends:
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
