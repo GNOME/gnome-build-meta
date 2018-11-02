@@ -21,7 +21,10 @@ depends:
 - sdk/vala.bst
 - filename: sdk/yelp-tools.bst
   type: build
-- filename: base.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Drdp=false

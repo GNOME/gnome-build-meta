@@ -19,7 +19,13 @@ depends:
   type: build
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- filename: base.bst
+- filename: base/valgrind.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dfwupd=false -Dflatpak=false
