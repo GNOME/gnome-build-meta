@@ -7,7 +7,10 @@ sources:
   path: files/libmusicbrainz/cmake-ninja.patch
 depends:
 - core-deps/neon.bst
-- filename: base.bst
+- filename: base/buildsystem-cmake.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DLIB_SUFFIX="/%{gcc_triplet}"

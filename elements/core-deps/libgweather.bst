@@ -10,5 +10,8 @@ depends:
 - sdk/libsoup.bst
 - filename: sdk/vala.bst
   type: build
-- filename: base.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

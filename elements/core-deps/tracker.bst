@@ -13,9 +13,14 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: base.bst
+- filename: base/python2.bst
   junction: freedesktop-sdk.bst
-
+  type: build
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
+  junction: freedesktop-sdk.bst
 variables:
   meson-local: |
     -Ddocs=false \

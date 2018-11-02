@@ -16,7 +16,16 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: base.bst
+- filename: base/gperf.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/intltool.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-cmake.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DENABLE_INTROSPECTION=ON -DENABLE_VALA_BINDINGS=ON -DENABLE_UOA=OFF

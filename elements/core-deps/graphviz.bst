@@ -5,7 +5,10 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/pango.bst
-- filename: base.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: config

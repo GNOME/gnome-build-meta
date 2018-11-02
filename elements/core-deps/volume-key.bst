@@ -7,7 +7,12 @@ sources:
 depends:
 - core-deps/cryptsetup.bst
 - core-deps/gpgme.bst
-- filename: base.bst
+- filename: base/python2.bst
+  junction: freedesktop-sdk.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: admin
