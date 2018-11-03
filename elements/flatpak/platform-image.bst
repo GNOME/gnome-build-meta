@@ -11,6 +11,7 @@ depends:
 config:
   exclude:
   - devel
+  - extra
 public:
   bst:
     split-rules:
