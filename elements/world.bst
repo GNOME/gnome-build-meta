@@ -6,6 +6,7 @@ kind: stack
 depends:
 - world/accerciser.bst
 - world/amtk.bst
+- world/anthy.bst
 - world/avahi.bst
 - world/bijiben.bst
 - world/dconf-editor.bst
@@ -41,7 +42,11 @@ depends:
 - world/gupnp-igd.bst
 - world/hitori.bst
 - world/iagno.bst
+- world/ibus-anthy.bst
+- world/ibus-hangul.bst
+- world/ibus-libpinyin.bst
 - world/jsonrpc-glib.bst
+- world/kyotocabinet.bst
 - world/libbluray.bst
 - world/libcdio-paranoia.bst
 - world/libcdio.bst
@@ -50,10 +55,12 @@ depends:
 - world/libgit2.bst
 - world/libgnome-games-support.bst
 - world/libgphoto2.bst
+- world/libhangul.bst
 - world/libimobiledevice.bst
 - world/libmanette.bst
 - world/libmtp.bst
 - world/libnfs.bst
+- world/libpinyin.bst
 - world/libssh2.bst
 - world/libusbmuxd.bst
 - world/libyaml.bst

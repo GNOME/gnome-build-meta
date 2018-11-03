@@ -1,10 +1,13 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:libpinyin/ibus-libpinyin/releases/download/1.10.0/ibus-libpinyin-1.10.0.tar.gz
+  url: github_com:ibus/ibus-anthy/releases/download/1.5.6/ibus-anthy-1.5.6.tar.gz
 depends:
-- core-deps/libpinyin.bst
+- sdk/glib.bst
+- sdk/gobject-introspection.bst
 - sdk/ibus.bst
+- sdk/pygobject.bst
+- world/anthy.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -17,4 +20,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-lua-extension --with-python=python3
+  conf-local: --enable-private-png=yes --with-python=python3

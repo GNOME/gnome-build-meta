@@ -7,9 +7,9 @@ sources:
   base-dir: ''
   directory: data
 depends:
-- core-deps/kyotocabinet.bst
 - sdk/glib.bst
 - sdk/gnome-common.bst
+- world/kyotocabinet.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -8,7 +8,6 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
-- core-deps/anthy.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
 - core-deps/babl.bst
@@ -53,13 +52,9 @@ depends:
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
-- core-deps/ibus-anthy.bst
-- core-deps/ibus-hangul.bst
-- core-deps/ibus-libpinyin.bst
 - core-deps/iptables.bst
 - core-deps/json-c.bst
 - core-deps/kmod.bst
-- core-deps/kyotocabinet.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst
 - core-deps/libchamplain.bst
@@ -81,7 +76,6 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/libgxps.bst
 - core-deps/libhandy.bst
-- core-deps/libhangul.bst
 - core-deps/libical.bst
 - core-deps/libinput.bst
 - core-deps/libmbim.bst
@@ -92,7 +86,6 @@ depends:
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
 - core-deps/libpeas.bst
-- core-deps/libpinyin.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsass.bst

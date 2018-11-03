@@ -1,13 +1,10 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:ibus/ibus-anthy/releases/download/1.5.6/ibus-anthy-1.5.6.tar.gz
+  url: github_com:choehwanjin/ibus-hangul/releases/download/1.5.0/ibus-hangul-1.5.0.tar.gz
 depends:
-- core-deps/anthy.bst
-- sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/ibus.bst
-- sdk/pygobject.bst
+- world/libhangul.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -19,5 +16,3 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: --enable-private-png=yes --with-python=python3

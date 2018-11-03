@@ -1,10 +1,10 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:choehwanjin/ibus-hangul/releases/download/1.5.0/ibus-hangul-1.5.0.tar.gz
+  url: github_com:libpinyin/ibus-libpinyin/releases/download/1.10.0/ibus-libpinyin-1.10.0.tar.gz
 depends:
-- core-deps/libhangul.bst
 - sdk/ibus.bst
+- world/libpinyin.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -16,3 +16,5 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-local: --disable-lua-extension --with-python=python3
