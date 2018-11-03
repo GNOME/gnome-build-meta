@@ -20,6 +20,9 @@ depends:
 - filename: debug-app-link.bst
   junction: freedesktop-sdk.bst
   type: build
+config:
+  exclude:
+  - extra
 public:
   bst:
     split-rules:
