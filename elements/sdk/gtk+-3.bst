@@ -24,6 +24,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/xorg-lib-xcursor.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xdamage.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xi.bst
