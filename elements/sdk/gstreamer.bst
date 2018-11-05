@@ -17,7 +17,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Dbash-completion=disabled \
-    -Dexamples=disabled \
+  meson-local: >
+    -Dbash-completion=disabled
+    -Dexamples=disabled
     -Dlibunwind=disabled
