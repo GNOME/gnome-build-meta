@@ -13,6 +13,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/mpg123.bst
   junction: freedesktop-sdk.bst
+- filename: base/wavpack.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -30,5 +32,4 @@ variables:
     -Dshout2=disabled \
     -Dtaglib=disabled \
     -Dtwolame=disabled \
-    -Dv4l2=disabled \
-    -Dwavpack=disabled
+    -Dv4l2=disabled
