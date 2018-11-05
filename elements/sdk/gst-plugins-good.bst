@@ -21,6 +21,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
+- filename: base/wavpack.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
