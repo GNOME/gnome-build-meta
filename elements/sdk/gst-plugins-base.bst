@@ -24,9 +24,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Dcdparanoia=disabled \
-    -Dexamples=disabled \
-    -Dgl-graphene=disabled \
-    -Dlibvisual=disabled \
+  meson-local: >
+    -Dcdparanoia=disabled
+    -Dexamples=disabled
+    -Dgl-graphene=disabled
+    -Dlibvisual=disabled
     -Dtremor=disabled

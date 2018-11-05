@@ -21,15 +21,15 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Daalib=disabled \
-    -Ddv1394=disabled \
-    -Ddv=disabled \
-    -Dexamples=disabled \
-    -Djack=disabled \
-    -Dlibcaca=disabled \
-    -Dqt5=disabled \
-    -Dshout2=disabled \
-    -Dtaglib=disabled \
-    -Dtwolame=disabled \
+  meson-local: >
+    -Daalib=disabled
+    -Ddv1394=disabled
+    -Ddv=disabled
+    -Dexamples=disabled
+    -Djack=disabled
+    -Dlibcaca=disabled
+    -Dqt5=disabled
+    -Dshout2=disabled
+    -Dtaglib=disabled
+    -Dtwolame=disabled
     -Dv4l2=disabled
