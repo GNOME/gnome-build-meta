@@ -3,8 +3,6 @@ sources:
 - kind: git
   url: git_freedesktop_org:gstreamer/gst-plugins-bad
   track: master
-- kind: patch
-  path: files/gst-plugins-bad/0001-meson-avoid-unkown-variables-in-the-msdk-tests.patch
 depends:
 - sdk/gst-plugins-base.bst
 - sdk/librsvg.bst
