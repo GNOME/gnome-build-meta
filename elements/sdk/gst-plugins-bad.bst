@@ -1,67 +1,63 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-plugins-bad
-  track: master
+- kind: tar
+  url: gstreamer:gst-plugins-bad/gst-plugins-bad-1.14.4.tar.xz
 depends:
+- filename: sdk/gobject-introspection.bst
+  type: build
 - sdk/gst-plugins-base.bst
 - sdk/librsvg.bst
-- filename: desktop/vulkan.bst
+- filename: desktop/orc.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/libdrm.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libfdk-aac.bst
   junction: freedesktop-sdk.bst
-- filename: base/opus.bst
+- filename: desktop/libglvnd.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: desktop/libvdpau.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/mesa.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/openal.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/vulkan.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/wayland-protocols.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >
-    -Daom=disabled
-    -Dassrender=disabled
-    -Dbluez=disabled
-    -Dbs2b=disabled
-    -Dchromaprint=disabled
-    -Dcurl-ssh2=disabled
-    -Ddirectfb=disabled
-    -Ddts=disabled
-    -Dfaac=disabled
-    -Dfaad=disabled
-    -Dflite=disabled
-    -Dfluidsynth=disabled
-    -Dgsm=disabled
-    -Diqa=disabled
-    -Dkate=disabled
-    -Dladspa=disabled
-    -Dlibde265=disabled
-    -Dlibmms=disabled
-    -Dlv2=disabled
-    -Dmpeg2enc=disabled
-    -Dmplex=disabled
-    -Dmsdk=disabled
-    -Dmusepack=disabled
-    -Dneon=disabled
-    -Dnvdec=disabled
-    -Dnvenc=disabled
-    -Dopencv=disabled
-    -Dopenh264=disabled
-    -Dopenjpeg=disabled
-    -Dopensles=disabled
-    -Dresindvd=disabled
-    -Drtmp=disabled
-    -Dsbc=disabled
-    -Dsctp=disabled
-    -Dsoundtouch=disabled
-    -Dspandsp=disabled
-    -Dsrt=disabled
-    -Dsrtp=disabled
-    -Duvch264=disabled
-    -Dvoaacenc=disabled
-    -Dwasapi=disabled
-    -Dwebrtc=disabled
-    -Dwebrtcdsp=disabled
-    -Dwpe=disabled
-    -Dx265=disabled
-    -Dzbar=disabled
+  conf-local: |
+    --enable-experimental \
+    --enable-introspection \
+    --enable-orc \
+    --enable-wayland
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgstbadallocators-1.0.so'
+        - '%{libdir}/libgstbadbase-1.0.so'
+        - '%{libdir}/libgstcodecparsers-1.0.so'
+        - '%{libdir}/libgstplayer-1.0.so'
+        - '%{libdir}/libgstbadvideo-1.0.so'
+        - '%{libdir}/libgstbadaudio-1.0.so'
+        - '%{libdir}/libgstmpegts-1.0.so'
+        - '%{libdir}/libgstadaptivedemux-1.0.so'
+        - '%{libdir}/libgstinsertbin-1.0.so'
+        - '%{libdir}/libgsturidownloader-1.0.so'
+        - '%{libdir}/libgstbasecamerabinsrc-1.0.so'
+        - '%{libdir}/libgstphotography-1.0.so'
+        - '%{libdir}/libgstisoff-1.0.so'
+        - '%{libdir}/libgstwebrtc-1.0.so'
+        - '%{libdir}/libgstwayland-1.0.so'
