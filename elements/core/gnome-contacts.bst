@@ -11,10 +11,11 @@ depends:
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
 - sdk/vala.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

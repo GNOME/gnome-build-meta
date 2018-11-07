@@ -36,11 +36,12 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/ibus.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

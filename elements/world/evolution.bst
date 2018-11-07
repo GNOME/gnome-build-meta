@@ -18,11 +18,12 @@ depends:
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsoup.bst
 - sdk/yelp-tools.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
