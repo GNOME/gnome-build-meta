@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git
-  url: https://gitlab.gnome.org/GNOME/tracker.git
-  track: 2.1.5
-  ref: ccf6034b223b1e5a57bd5791006e08d107b02dc2
+- kind: tar
+  url: https://download.gnome.org/sources/tracker/2.1/tracker-2.1.6.tar.xz
+  ref: 982bd0abe62a2a7e72c7f7efb7935dd33e1860265e3c7ceb90ef5150f0557f90
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/upower.bst
