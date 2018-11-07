@@ -12,9 +12,10 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - sdk/gtk-doc.bst
 - sdk/pango.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst

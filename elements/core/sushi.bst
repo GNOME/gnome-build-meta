@@ -14,7 +14,8 @@ depends:
 - sdk/gjs.bst
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

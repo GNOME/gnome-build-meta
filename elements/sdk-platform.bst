@@ -30,7 +30,6 @@ depends:
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
@@ -102,6 +101,8 @@ depends:
 - filename: desktop/google-crosextra-carlito.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/graphite2.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/harfbuzz.bst
   junction: freedesktop-sdk.bst
