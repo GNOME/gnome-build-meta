@@ -12,11 +12,12 @@ depends:
 - sdk/graphene.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
 - filename: desktop/cups.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst

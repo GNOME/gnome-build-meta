@@ -15,7 +15,6 @@ depends:
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
@@ -23,6 +22,8 @@ depends:
 - sdk/librsvg.bst
 - filename: sdk/vala.bst
   type: build
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build

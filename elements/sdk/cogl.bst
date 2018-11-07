@@ -7,10 +7,11 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst

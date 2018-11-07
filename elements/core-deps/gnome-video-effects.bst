@@ -5,7 +5,8 @@ sources:
   track: master
 depends:
 - sdk/gnome-common.bst
-- sdk/gstreamer.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
