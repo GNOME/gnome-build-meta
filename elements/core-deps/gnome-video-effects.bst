@@ -5,6 +5,7 @@ sources:
   ref: 5a7ee0f5ade4b7d921f1b99f3b97d7d7bb830f2fef0f1daee20a7a1867708219
 depends:
 - sdk/gnome-common.bst
-- sdk/gstreamer.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

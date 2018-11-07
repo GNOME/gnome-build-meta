@@ -7,10 +7,12 @@ depends:
 - sdk/clutter.bst
 - sdk/cogl.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build
