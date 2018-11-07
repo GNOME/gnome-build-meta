@@ -1,0 +1,46 @@
+From 2c371f17af1695bd42f572d5ccdb837152b8b67a Mon Sep 17 00:00:00 2001
+From: Thomas Coldrick <othko97@gmail.com>
+Date: Thu, 8 Nov 2018 17:46:53 +0000
+Subject: [PATCH] gst-libav-stop-caching-codecs
+
+---
+ ext/libav/gstav.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/ext/libav/gstav.c b/ext/libav/gstav.c
+index 2a88230..bfd19a1 100644
+--- a/ext/libav/gstav.c
++++ b/ext/libav/gstav.c
+@@ -138,6 +138,8 @@ gst_ffmpeg_log_callback (void *ptr, int level, const char *fmt, va_list vl)
+ static gboolean
+ plugin_init (GstPlugin * plugin)
+ {
++  char libdir[30];
++  char path[100];
+   GST_DEBUG_CATEGORY_INIT (ffmpeg_debug, "libav", 0, "libav elements");
+ 
+   /* Bail if not FFmpeg. We can no longer ensure operation with Libav */
+@@ -155,6 +157,20 @@ plugin_init (GstPlugin * plugin)
+   /* build global ffmpeg param/property info */
+   gst_ffmpeg_cfg_init ();
+ 
++  strcpy(libdir, "/usr/lib/");
++  strcat(libdir, TRIPLET);
++  strcpy(path, libdir);
++  strcat(path, ":/usr/local/lib:");
++  strcat(path, libdir);
++  strcat(path, "/ffmpeg/lib");
++
++  gst_plugin_add_dependency_simple (plugin, NULL,
++      path,
++      "libavcodec.so.58,"
++      "libavformat.so.58,"
++      "libswscale.so.5",
++      GST_PLUGIN_DEPENDENCY_FLAG_NONE);
++
+   gst_ffmpegaudenc_register (plugin);
+   gst_ffmpegvidenc_register (plugin);
+   gst_ffmpegauddec_register (plugin);
+-- 
+2.19.1
+
