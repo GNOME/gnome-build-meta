@@ -10,11 +10,15 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - sdk/gtk-doc.bst
 - sdk/pango.bst
+- sdk/graphene.bst
+- filename: desktop/gstreamer-plugins-bad.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
