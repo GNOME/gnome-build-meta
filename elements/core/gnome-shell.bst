@@ -22,11 +22,13 @@ depends:
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/libcroco.bst
 - sdk/libsoup.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build

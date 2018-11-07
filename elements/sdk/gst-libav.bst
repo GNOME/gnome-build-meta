@@ -4,8 +4,9 @@ sources:
   url: git_freedesktop_org:gstreamer/gst-libav
   track: master
 depends:
-- sdk/gst-plugins-base.bst
 - sdk/ffmpeg.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
