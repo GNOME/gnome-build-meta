@@ -1,32 +1,55 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-plugins-base
-  track: master
+- kind: tar
+  url: gstreamer:gst-plugins-base/gst-plugins-base-1.14.4.tar.xz
 depends:
-- sdk/gobject-introspection.bst
-- sdk/gstreamer.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/pango.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: desktop/alsa-lib.bst
-  junction: freedesktop-sdk.bst
 - filename: desktop/orc.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
-- filename: base/opus.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+  type: build
+- filename: base/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >
-    -Dcdparanoia=disabled
-    -Dexamples=disabled
-    -Dgl-graphene=disabled
-    -Dlibvisual=disabled
-    -Dtremor=disabled
+  conf-local: |
+    --enable-experimental \
+    --enable-introspection \
+    --enable-ogg \
+    --enable-opus \
+    --enable-orc \
+    --enable-pango \
+    --enable-theora \
+    --enable-vorbis
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgstfft-1.0.so'
+        - '%{libdir}/libgstrtp-1.0.so'
+        - '%{libdir}/libgstsdp-1.0.so'
+        - '%{libdir}/libgstvideo-1.0.so'
+        - '%{libdir}/libgstapp-1.0.so'
+        - '%{libdir}/libgstriff-1.0.so'
+        - '%{libdir}/libgstrtsp-1.0.so'
+        - '%{libdir}/libgstallocators-1.0.so'
+        - '%{libdir}/libgsttag-1.0.so'
+        - '%{libdir}/libgstaudio-1.0.so'
+        - '%{libdir}/libgstpbutils-1.0.so'
+        - '%{libdir}/libgstgl-1.0.so'
