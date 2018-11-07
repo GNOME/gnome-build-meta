@@ -29,10 +29,6 @@ depends:
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gst-libav.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
 - sdk/gtk+.bst
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
@@ -67,7 +63,7 @@ depends:
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
 # appstream-glib, at-spi2-*, atk, dconf, fcitx, ffmpeg, gcab, gdk-pixbuf, geoclue2, glib-networking,
-# gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
+# gobject-introspection, gtk3, ibus, json-glib, libcroco, librsvg,
 # libsoup, os-release, pango, sdl2* and zenity.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
@@ -107,6 +103,16 @@ depends:
 - filename: desktop/google-crosextra-carlito.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/graphite2.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-bad.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-good.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-ugly.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/harfbuzz.bst
   junction: freedesktop-sdk.bst

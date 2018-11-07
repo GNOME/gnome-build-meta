@@ -10,13 +10,16 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gstreamer.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
 - filename: desktop/cups.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-bad.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst

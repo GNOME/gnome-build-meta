@@ -5,13 +5,16 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
-- sdk/gstreamer.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: sdk/vala.bst
   type: build
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-good.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

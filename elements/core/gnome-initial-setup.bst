@@ -21,8 +21,9 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
-- sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

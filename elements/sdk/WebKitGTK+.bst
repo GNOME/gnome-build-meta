@@ -15,15 +15,18 @@ depends:
 - sdk/geoclue.bst
 - sdk/gobject-introspection.bst
 - sdk/gst-libav.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/pango.bst
 - sdk/woff2.bst
+- filename: desktop/gstreamer-plugins-bad.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-good.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/hyphen.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
