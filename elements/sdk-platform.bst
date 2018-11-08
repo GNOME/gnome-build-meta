@@ -16,7 +16,6 @@ depends:
 - sdk/dconf.bst
 - sdk/enchant-2.bst
 - sdk/fcitx.bst
-- sdk/ffmpeg.bst
 - sdk/gcab.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
@@ -50,11 +49,6 @@ depends:
 - sdk/pango.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
-- sdk/sdl2-image.bst
-- sdk/sdl2-mixer.bst
-- sdk/sdl2-net.bst
-- sdk/sdl2-ttf.bst
-- sdk/sdl2.bst
 - sdk/vte.bst
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
@@ -66,9 +60,9 @@ depends:
 # update our reference to add any new elements.
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
-# appstream-glib, at-spi2-*, atk, dconf, fcitx, ffmpeg, gcab, gdk-pixbuf, geoclue2, glib-networking,
+# appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
-# libsoup, os-release, pango, sdl2* and zenity.
+# libsoup, os-release, pango and zenity.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
@@ -91,6 +85,8 @@ depends:
 - filename: desktop/dictionaries.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/emoji-one-font.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/flatpak-xdg-utils.bst
   junction: freedesktop-sdk.bst
@@ -161,6 +157,16 @@ depends:
 - filename: desktop/pixman.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/sdl2-image.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/sdl2-mixer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/sdl2-net.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/sdl2-ttf.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/sdl2.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/shared-mime-info.bst
   junction: freedesktop-sdk.bst
