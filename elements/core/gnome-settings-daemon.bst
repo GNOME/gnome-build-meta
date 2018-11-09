@@ -24,7 +24,6 @@ depends:
 - sdk/ibus.bst
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- sdk/librsvg.bst
 - filename: desktop/alsa-lib.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/cups.bst
