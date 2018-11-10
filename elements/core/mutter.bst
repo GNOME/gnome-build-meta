@@ -3,6 +3,9 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/mutter
   track: master
+- kind: local
+  path: files/mutter/meta-default-modes.h
+  directory: src
 depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
