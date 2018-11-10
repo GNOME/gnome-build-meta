@@ -1,9 +1,11 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/mutter
   track: master
 depends:
+- core/gnome-settings-daemon.bst
+- core-deps/startup-notification.bst
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
@@ -29,11 +31,11 @@ depends:
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-compile-warnings=maximum --enable-installed-tests --enable-xlib-egl-platform
-    --enable-wayland-egl-platform --enable-wayland-egl-server --enable-kms-egl-platform
+  meson-local:
+    -Dremote_desktop=false
