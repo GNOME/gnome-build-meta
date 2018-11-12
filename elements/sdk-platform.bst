@@ -41,7 +41,6 @@ depends:
 - sdk/libcanberra.bst
 - sdk/libcroco.bst
 - sdk/libnotify.bst
-- sdk/libpsl.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
@@ -159,6 +158,8 @@ depends:
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/pixman.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/libpsl.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
