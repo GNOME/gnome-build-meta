@@ -148,6 +148,8 @@ before_script:
 track:
   image: buildstream/buildstream-fedora:master-113-499df6a5
   stage: track
+  tags:
+    - osuosl
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
 
