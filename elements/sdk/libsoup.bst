@@ -8,9 +8,10 @@ depends:
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- sdk/libpsl.bst
 - filename: sdk/vala.bst
   type: build
+- filename: desktop/libpsl.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
   type: build

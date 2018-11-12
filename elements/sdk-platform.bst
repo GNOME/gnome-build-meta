@@ -38,7 +38,6 @@ depends:
 - sdk/libcanberra.bst
 - sdk/libcroco.bst
 - sdk/libnotify.bst
-- sdk/libpsl.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
