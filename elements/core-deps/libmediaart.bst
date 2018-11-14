@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/libmediaart
@@ -9,10 +9,10 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-qt
+  meson-local: -Dimage_library=gdk-pixbuf
