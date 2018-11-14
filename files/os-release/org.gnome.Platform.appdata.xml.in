@@ -7,7 +7,29 @@
   <project_license>GPL-2.0+</project_license>
   <name>GNOME Application Platform version @@SDK_BRANCH@@</name>
   <summary>Shared libraries used by GNOME applications</summary>
+  <description>
+    <p>
+      The GNOME runtime is appropriate for any application that uses the
+      GNOME platform.
+      The runtime is layered on top of the Freedesktop runtime and adds the
+      GNOME platform, including:
+    </p>
+    <ul>
+      <li>Clutter</li>
+      <li>Gjs</li>
+      <li>GObject Introspection</li>
+      <li>GStreamer</li>
+      <li>GVFS</li>
+      <li>Libnotify</li>
+      <li>Libsecret</li>
+      <li>LibSoup</li>
+      <li>PyGObject</li>
+      <li>Vala</li>
+      <li>WebKitGTK</li>
+    </ul>
+  </description>
   <url type="homepage">http://www.gnome.org/</url>
   <project_group>GNOME</project_group>
+  <update_contact>richard@hughsie.com</update_contact>
 </component>
 
