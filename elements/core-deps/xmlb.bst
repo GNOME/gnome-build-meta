@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: https://github.com/hughsie/libxmlb.git
-  track: master
+- kind: tar
+  url: https://github.com/hughsie/libxmlb/archive/0.1.4.tar.gz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
