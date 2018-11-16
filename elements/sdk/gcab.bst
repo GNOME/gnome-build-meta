@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gcab
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gcab/1.1/gcab-1.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

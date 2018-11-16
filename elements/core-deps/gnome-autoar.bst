@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-autoar
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-autoar/0.2/gnome-autoar-0.2.3.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst

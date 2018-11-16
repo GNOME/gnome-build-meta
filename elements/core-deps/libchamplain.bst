@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libchamplain
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.16.tar.xz
 depends:
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst

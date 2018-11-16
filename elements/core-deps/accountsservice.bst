@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:accountsservice
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/accountsservice/accountsservice-0.6.54.tar.xz
 depends:
 - core-deps/polkit.bst
 - sdk/glib.bst

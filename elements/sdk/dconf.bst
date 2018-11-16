@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/dconf
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/dconf/0.30/dconf-0.30.1.tar.xz
 - kind: patch
   path: files/dconf/dconf-override.patch
 depends:

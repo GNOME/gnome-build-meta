@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gst-plugins-base
-  track: master
+- kind: tar
+  url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.4.tar.xz
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gstreamer.bst
@@ -24,9 +23,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >
-    -Dcdparanoia=disabled
-    -Dexamples=disabled
-    -Dgl-graphene=disabled
-    -Dlibvisual=disabled
-    -Dtremor=disabled
+  meson-local: "-Dcdparanoia=disabled -Dexamples=disabled -Dgl-graphene=disabled -Dlibvisual=disabled\
+    \ -Dtremor=disabled\n"
