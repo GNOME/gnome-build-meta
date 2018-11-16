@@ -1,8 +1,7 @@
 kind: pip
 sources:
-- kind: git
-  url: https://github.com/mesonbuild/meson.git
-  track: 0.47.2
+- kind: tar
+  url: https://github.com/mesonbuild/meson/releases/download/0.47.2/meson-0.47.2.tar.gz
 depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
