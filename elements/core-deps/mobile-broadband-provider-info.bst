@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mobile-broadband-provider-info
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/mobile-broadband-provider-info/20170310/mobile-broadband-provider-info-20170310.tar.xz
 depends:
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst

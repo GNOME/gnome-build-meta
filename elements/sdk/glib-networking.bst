@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/glib-networking
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/glib-networking/2.59/glib-networking-2.59.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

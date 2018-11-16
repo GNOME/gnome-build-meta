@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: git_freedesktop_org:gstreamer/gstreamer
-  track: master
+- kind: tar
+  url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.14.4.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -17,7 +16,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >
-    -Dbash-completion=disabled
-    -Dexamples=disabled
-    -Dlibunwind=disabled
+  meson-local: "-Dbash-completion=disabled -Dexamples=disabled -Dlibunwind=disabled\n"

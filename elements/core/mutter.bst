@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mutter
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/mutter/3.31/mutter-3.31.2.tar.xz
 - kind: local
   path: files/mutter/meta-default-modes.h
   directory: src

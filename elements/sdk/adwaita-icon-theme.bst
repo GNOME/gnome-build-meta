@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/adwaita-icon-theme
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/adwaita-icon-theme/3.31/adwaita-icon-theme-3.31.1.tar.xz
 depends:
 - filename: sdk/gnome-common.bst
   type: build

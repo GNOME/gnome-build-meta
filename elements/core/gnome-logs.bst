@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-logs
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-logs/3.31/gnome-logs-3.31.2.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
