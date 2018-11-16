@@ -28,7 +28,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gst-libav.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
