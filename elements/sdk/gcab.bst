@@ -13,5 +13,8 @@ depends:
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: base/git.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
