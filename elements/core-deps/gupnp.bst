@@ -1,7 +1,7 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gupnp/1.1/gupnp-1.1.0.tar.xz
+  url: https://download.gnome.org/sources/gupnp/1.0/gupnp-1.0.3.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst
@@ -10,10 +10,10 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dcontext_manager=network-manager
+  conf-local: --with-context-manager=network-manager
