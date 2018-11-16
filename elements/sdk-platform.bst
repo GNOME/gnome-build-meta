@@ -88,6 +88,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/fftw.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/flatpak-xdg-utils.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/fontconfig.bst
@@ -114,6 +116,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/lame.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/libclc.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/libdatrie.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libdrm.bst
@@ -125,6 +129,8 @@ depends:
 - filename: desktop/libglvnd.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libproxy.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/libpsl.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
