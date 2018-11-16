@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/rygel
   track: master
 depends:
+- core-deps/gssdp.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
