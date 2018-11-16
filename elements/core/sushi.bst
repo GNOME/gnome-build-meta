@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/sushi/3.30/sushi-3.30.0.tar.xz
@@ -15,7 +15,10 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
