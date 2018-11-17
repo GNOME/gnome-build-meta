@@ -9,7 +9,7 @@ sources:
 # The following is generated using utils/generate_cargo_dependencies.py
 # it needs to be updated whenever Cargo.lock changes
 - kind: crate
-  url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.6.8.crate
+  url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.6.9.crate
 - kind: crate
   url: https://static.crates.io/crates/alga/alga-0.7.2.crate
 - kind: crate
@@ -25,23 +25,19 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/backtrace-sys/backtrace-sys-0.1.24.crate
 - kind: crate
-  url: https://static.crates.io/crates/bitflags/bitflags-0.9.1.crate
-- kind: crate
   url: https://static.crates.io/crates/bitflags/bitflags-1.0.4.crate
 - kind: crate
-  url: https://static.crates.io/crates/byteorder/byteorder-1.2.6.crate
+  url: https://static.crates.io/crates/byteorder/byteorder-1.2.7.crate
 - kind: crate
-  url: https://static.crates.io/crates/c_vec/c_vec-1.3.2.crate
+  url: https://static.crates.io/crates/cairo-rs/cairo-rs-0.5.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/cairo-rs/cairo-rs-0.4.1.crate
-- kind: crate
-  url: https://static.crates.io/crates/cairo-sys-rs/cairo-sys-rs-0.6.0.crate
+  url: https://static.crates.io/crates/cairo-sys-rs/cairo-sys-rs-0.7.0.crate
 - kind: crate
   url: https://static.crates.io/crates/cast/cast-0.2.2.crate
 - kind: crate
   url: https://static.crates.io/crates/cc/cc-1.0.25.crate
 - kind: crate
-  url: https://static.crates.io/crates/cfg-if/cfg-if-0.1.5.crate
+  url: https://static.crates.io/crates/cfg-if/cfg-if-0.1.6.crate
 - kind: crate
   url: https://static.crates.io/crates/chrono/chrono-0.4.6.crate
 - kind: crate
@@ -61,9 +57,9 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/crossbeam-utils/crossbeam-utils-0.2.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/cssparser/cssparser-0.24.0.crate
+  url: https://static.crates.io/crates/cssparser/cssparser-0.25.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/cssparser-macros/cssparser-macros-0.3.4.crate
+  url: https://static.crates.io/crates/cssparser-macros/cssparser-macros-0.3.5.crate
 - kind: crate
   url: https://static.crates.io/crates/csv/csv-1.0.2.crate
 - kind: crate
@@ -77,31 +73,47 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/either/either-1.5.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/failure/failure-0.1.2.crate
+  url: https://static.crates.io/crates/encoding/encoding-0.2.33.crate
 - kind: crate
-  url: https://static.crates.io/crates/failure_derive/failure_derive-0.1.2.crate
+  url: https://static.crates.io/crates/encoding-index-japanese/encoding-index-japanese-1.20141219.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/encoding-index-korean/encoding-index-korean-1.20141219.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/encoding-index-simpchinese/encoding-index-simpchinese-1.20141219.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/encoding-index-singlebyte/encoding-index-singlebyte-1.20141219.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/encoding-index-tradchinese/encoding-index-tradchinese-1.20141219.5.crate
+- kind: crate
+  url: https://static.crates.io/crates/encoding_index_tests/encoding_index_tests-0.1.4.crate
+- kind: crate
+  url: https://static.crates.io/crates/failure/failure-0.1.3.crate
+- kind: crate
+  url: https://static.crates.io/crates/failure_derive/failure_derive-0.1.3.crate
 - kind: crate
   url: https://static.crates.io/crates/float-cmp/float-cmp-0.4.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/fragile/fragile-0.3.0.crate
 - kind: crate
   url: https://static.crates.io/crates/fuchsia-zircon/fuchsia-zircon-0.3.3.crate
 - kind: crate
   url: https://static.crates.io/crates/fuchsia-zircon-sys/fuchsia-zircon-sys-0.3.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/gdk-pixbuf/gdk-pixbuf-0.4.0.crate
+  url: https://static.crates.io/crates/gdk-pixbuf/gdk-pixbuf-0.5.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gdk-pixbuf-sys/gdk-pixbuf-sys-0.6.0.crate
+  url: https://static.crates.io/crates/gdk-pixbuf-sys/gdk-pixbuf-sys-0.7.0.crate
 - kind: crate
   url: https://static.crates.io/crates/generic-array/generic-array-0.11.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/gio/gio-0.4.1.crate
+  url: https://static.crates.io/crates/gio/gio-0.5.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/gio-sys/gio-sys-0.6.0.crate
+  url: https://static.crates.io/crates/gio-sys/gio-sys-0.7.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/glib/glib-0.5.0.crate
+  url: https://static.crates.io/crates/glib/glib-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/glib-sys/glib-sys-0.6.0.crate
+  url: https://static.crates.io/crates/glib-sys/glib-sys-0.7.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gobject-sys/gobject-sys-0.6.0.crate
+  url: https://static.crates.io/crates/gobject-sys/gobject-sys-0.7.0.crate
 - kind: crate
   url: https://static.crates.io/crates/handlebars/handlebars-0.32.4.crate
 - kind: crate
@@ -117,7 +129,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-0.2.11.crate
 - kind: crate
-  url: https://static.crates.io/crates/lazy_static/lazy_static-1.1.0.crate
+  url: https://static.crates.io/crates/lazy_static/lazy_static-1.2.0.crate
 - kind: crate
   url: https://static.crates.io/crates/libc/libc-0.2.43.crate
 - kind: crate
@@ -125,21 +137,21 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/locale_config/locale_config-0.2.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/log/log-0.4.5.crate
+  url: https://static.crates.io/crates/log/log-0.4.6.crate
 - kind: crate
   url: https://static.crates.io/crates/matches/matches-0.1.8.crate
 - kind: crate
-  url: https://static.crates.io/crates/matrixmultiply/matrixmultiply-0.1.14.crate
+  url: https://static.crates.io/crates/matrixmultiply/matrixmultiply-0.1.15.crate
 - kind: crate
-  url: https://static.crates.io/crates/memchr/memchr-2.1.0.crate
+  url: https://static.crates.io/crates/memchr/memchr-2.1.1.crate
 - kind: crate
   url: https://static.crates.io/crates/memoffset/memoffset-0.2.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/nalgebra/nalgebra-0.16.4.crate
+  url: https://static.crates.io/crates/nalgebra/nalgebra-0.16.10.crate
 - kind: crate
-  url: https://static.crates.io/crates/nodrop/nodrop-0.1.12.crate
+  url: https://static.crates.io/crates/nodrop/nodrop-0.1.13.crate
 - kind: crate
-  url: https://static.crates.io/crates/num-complex/num-complex-0.2.0.crate
+  url: https://static.crates.io/crates/num-complex/num-complex-0.2.1.crate
 - kind: crate
   url: https://static.crates.io/crates/num-integer/num-integer-0.1.39.crate
 - kind: crate
@@ -147,15 +159,15 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/num_cpus/num_cpus-1.8.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/owning_ref/owning_ref-0.3.3.crate
+  url: https://static.crates.io/crates/owning_ref/owning_ref-0.4.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pango/pango-0.4.0.crate
+  url: https://static.crates.io/crates/pango/pango-0.5.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pango-sys/pango-sys-0.6.0.crate
+  url: https://static.crates.io/crates/pango-sys/pango-sys-0.7.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pangocairo/pangocairo-0.5.0.crate
+  url: https://static.crates.io/crates/pangocairo/pangocairo-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.7.0.crate
+  url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.8.0.crate
 - kind: crate
   url: https://static.crates.io/crates/pest/pest-1.0.6.crate
 - kind: crate
@@ -171,7 +183,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/pkg-config/pkg-config-0.3.14.crate
 - kind: crate
-  url: https://static.crates.io/crates/proc-macro2/proc-macro2-0.4.19.crate
+  url: https://static.crates.io/crates/proc-macro2/proc-macro2-0.4.24.crate
 - kind: crate
   url: https://static.crates.io/crates/procedural-masquerade/procedural-masquerade-0.1.6.crate
 - kind: crate
@@ -179,7 +191,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/quote/quote-0.3.15.crate
 - kind: crate
-  url: https://static.crates.io/crates/quote/quote-0.6.8.crate
+  url: https://static.crates.io/crates/quote/quote-0.6.10.crate
 - kind: crate
   url: https://static.crates.io/crates/rand/rand-0.4.3.crate
 - kind: crate
@@ -191,41 +203,41 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rawpointer/rawpointer-0.1.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/rayon/rayon-1.0.2.crate
+  url: https://static.crates.io/crates/rayon/rayon-1.0.3.crate
 - kind: crate
   url: https://static.crates.io/crates/rayon-core/rayon-core-1.4.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.40.crate
+  url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.42.crate
 - kind: crate
   url: https://static.crates.io/crates/redox_termios/redox_termios-0.1.1.crate
 - kind: crate
   url: https://static.crates.io/crates/regex/regex-0.2.11.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex/regex-1.0.5.crate
+  url: https://static.crates.io/crates/regex/regex-1.0.6.crate
 - kind: crate
   url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.5.6.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.2.crate
+  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.3.crate
 - kind: crate
   url: https://static.crates.io/crates/rustc-demangle/rustc-demangle-0.1.9.crate
 - kind: crate
-  url: https://static.crates.io/crates/ryu/ryu-0.2.6.crate
+  url: https://static.crates.io/crates/ryu/ryu-0.2.7.crate
 - kind: crate
-  url: https://static.crates.io/crates/same-file/same-file-1.0.3.crate
+  url: https://static.crates.io/crates/same-file/same-file-1.0.4.crate
 - kind: crate
   url: https://static.crates.io/crates/scopeguard/scopeguard-0.3.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/serde/serde-1.0.79.crate
+  url: https://static.crates.io/crates/serde/serde-1.0.80.crate
 - kind: crate
-  url: https://static.crates.io/crates/serde_derive/serde_derive-1.0.79.crate
+  url: https://static.crates.io/crates/serde_derive/serde_derive-1.0.80.crate
 - kind: crate
-  url: https://static.crates.io/crates/serde_json/serde_json-1.0.31.crate
+  url: https://static.crates.io/crates/serde_json/serde_json-1.0.33.crate
 - kind: crate
-  url: https://static.crates.io/crates/simplelog/simplelog-0.5.2.crate
+  url: https://static.crates.io/crates/simplelog/simplelog-0.5.3.crate
 - kind: crate
   url: https://static.crates.io/crates/siphasher/siphasher-0.2.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/smallvec/smallvec-0.6.5.crate
+  url: https://static.crates.io/crates/smallvec/smallvec-0.6.6.crate
 - kind: crate
   url: https://static.crates.io/crates/stable_deref_trait/stable_deref_trait-1.1.1.crate
 - kind: crate
@@ -233,13 +245,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/syn/syn-0.11.11.crate
 - kind: crate
-  url: https://static.crates.io/crates/syn/syn-0.14.9.crate
-- kind: crate
-  url: https://static.crates.io/crates/syn/syn-0.15.7.crate
+  url: https://static.crates.io/crates/syn/syn-0.15.21.crate
 - kind: crate
   url: https://static.crates.io/crates/synom/synom-0.11.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/synstructure/synstructure-0.9.0.crate
+  url: https://static.crates.io/crates/synstructure/synstructure-0.10.1.crate
 - kind: crate
   url: https://static.crates.io/crates/term/term-0.5.1.crate
 - kind: crate
@@ -255,7 +265,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/typenum/typenum-1.10.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/ucd-util/ucd-util-0.1.1.crate
+  url: https://static.crates.io/crates/ucd-util/ucd-util-0.1.3.crate
 - kind: crate
   url: https://static.crates.io/crates/unicode-width/unicode-width-0.1.5.crate
 - kind: crate
@@ -265,7 +275,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/unreachable/unreachable-1.0.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/utf8-ranges/utf8-ranges-1.0.1.crate
+  url: https://static.crates.io/crates/utf8-ranges/utf8-ranges-1.0.2.crate
 - kind: crate
   url: https://static.crates.io/crates/vec_map/vec_map-0.8.1.crate
 - kind: crate
@@ -273,7 +283,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/void/void-1.0.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/walkdir/walkdir-2.2.5.crate
+  url: https://static.crates.io/crates/walkdir/walkdir-2.2.7.crate
 - kind: crate
   url: https://static.crates.io/crates/winapi/winapi-0.2.8.crate
 - kind: crate
