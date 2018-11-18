@@ -65,6 +65,8 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/csv-core/csv-core-0.1.4.crate
 - kind: crate
+  url: https://static.crates.io/crates/data-url/data-url-0.1.0.crate
+- kind: crate
   url: https://static.crates.io/crates/downcast-rs/downcast-rs-1.0.3.crate
 - kind: crate
   url: https://static.crates.io/crates/dtoa/dtoa-0.4.3.crate
