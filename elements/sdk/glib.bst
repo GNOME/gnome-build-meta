@@ -12,7 +12,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dinstalled-tests=true -Dselinux=false
+  meson-local:
+    -Dinstalled-tests=true
+    -Dselinux=disabled
 public:
   bst:
     integration-commands:
