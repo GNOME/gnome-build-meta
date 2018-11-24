@@ -146,7 +146,7 @@ before_script:
 
 
 track:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   stage: track
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
@@ -163,7 +163,7 @@ track:
 
 
 build-gnome-core-x86_64:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
     - packet
@@ -171,7 +171,7 @@ build-gnome-core-x86_64:
     ARCH: x86_64
 
 build-gnome-core-i386:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
     - packet
@@ -180,7 +180,7 @@ build-gnome-core-i386:
   allow_failure: true
 
 build-gnome-core-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *build
   tags:
     - aarch64
@@ -189,7 +189,7 @@ build-gnome-core-aarch64:
   allow_failure: true
 
 build-gnome-core-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *build
   tags:
     - armhf
@@ -198,7 +198,7 @@ build-gnome-core-arm:
   allow_failure: true
 
 flatpak-x86_64:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
     - packet
@@ -207,7 +207,7 @@ flatpak-x86_64:
     FLATPAK_ARCH: x86_64
 
 flatpak-i386:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
     - packet
@@ -216,7 +216,7 @@ flatpak-i386:
     FLATPAK_ARCH: i386
 
 flatpak-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *flatpak
   tags:
     - aarch64
@@ -225,7 +225,7 @@ flatpak-aarch64:
     FLATPAK_ARCH: aarch64
 
 flatpak-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *flatpak
   tags:
     - armhf
