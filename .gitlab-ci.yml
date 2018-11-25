@@ -125,7 +125,7 @@ before_script:
       - project.refs
 
 build-flatpak-runtimes-x86_64:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
     - x86_64
@@ -134,7 +134,7 @@ build-flatpak-runtimes-x86_64:
     FLATPAK_ARCH: x86_64
 
 build-flatpak-runtimes-i386:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
     - x86_64
@@ -143,7 +143,7 @@ build-flatpak-runtimes-i386:
     FLATPAK_ARCH: i386
 
 build-flatpak-runtimes-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *flatpak
   tags:
     - aarch64
@@ -152,7 +152,7 @@ build-flatpak-runtimes-aarch64:
     FLATPAK_ARCH: aarch64
 
 build-flatpak-runtimes-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *flatpak
   tags:
     - armhf
@@ -181,7 +181,7 @@ build-flatpak-runtimes-arm:
       - project.refs
 
 build-gnome-core-x86_64:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
     - x86_64
@@ -189,7 +189,7 @@ build-gnome-core-x86_64:
     ARCH: x86_64
 
 build-gnome-core-i386:
-  image: buildstream/buildstream-fedora:master-113-499df6a5
+  image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
     - x86_64
@@ -198,7 +198,7 @@ build-gnome-core-i386:
   allow_failure: true
 
 build-gnome-core-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *build
   tags:
     - aarch64
@@ -207,7 +207,7 @@ build-gnome-core-aarch64:
   allow_failure: true
 
 build-gnome-core-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-113-499df6a5
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
   <<: *build
   tags:
     - armhf
