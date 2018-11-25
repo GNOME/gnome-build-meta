@@ -4,6 +4,7 @@ sources:
   url: git_freedesktop_org:gstreamer/gst-plugins-good
   track: master
 depends:
+- sdk/gtk+-3.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsoup.bst
