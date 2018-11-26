@@ -43,6 +43,8 @@ variables:
     -Dmsdk=disabled
     -Dmusepack=disabled
     -Dneon=disabled
+    -Dnvdec=disabled
+    -Dnvenc=disabled
     -Dopencv=disabled
     -Dopenh264=disabled
     -Dopenjpeg=disabled
