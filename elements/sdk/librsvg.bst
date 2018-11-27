@@ -119,6 +119,8 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/handlebars/handlebars-0.32.4.crate
 - kind: crate
+  url: https://static.crates.io/crates/idna/idna-0.1.5.crate
+- kind: crate
   url: https://static.crates.io/crates/itertools/itertools-0.7.8.crate
 - kind: crate
   url: https://static.crates.io/crates/itertools-num/itertools-num-0.1.2.crate
@@ -170,6 +172,8 @@ sources:
   url: https://static.crates.io/crates/pangocairo/pangocairo-0.6.0.crate
 - kind: crate
   url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.8.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/percent-encoding/percent-encoding-1.0.1.crate
 - kind: crate
   url: https://static.crates.io/crates/pest/pest-1.0.6.crate
 - kind: crate
@@ -269,6 +273,10 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/ucd-util/ucd-util-0.1.3.crate
 - kind: crate
+  url: https://static.crates.io/crates/unicode-bidi/unicode-bidi-0.3.4.crate
+- kind: crate
+  url: https://static.crates.io/crates/unicode-normalization/unicode-normalization-0.1.7.crate
+- kind: crate
   url: https://static.crates.io/crates/unicode-width/unicode-width-0.1.5.crate
 - kind: crate
   url: https://static.crates.io/crates/unicode-xid/unicode-xid-0.0.4.crate
@@ -276,6 +284,8 @@ sources:
   url: https://static.crates.io/crates/unicode-xid/unicode-xid-0.1.0.crate
 - kind: crate
   url: https://static.crates.io/crates/unreachable/unreachable-1.0.0.crate
+- kind: crate
+  url: https://static.crates.io/crates/url/url-1.7.2.crate
 - kind: crate
   url: https://static.crates.io/crates/utf8-ranges/utf8-ranges-1.0.2.crate
 - kind: crate
