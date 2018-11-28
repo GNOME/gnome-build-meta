@@ -86,7 +86,7 @@ before_script:
 
     fi
 
-.cache-template: &cache
+.cache-template:
   # Store all the downloaded sources in the distributed cache. This saves
   # us fetching them from the different repos and further afield
   # on every build.
@@ -95,11 +95,11 @@ before_script:
     paths:
       - "${XDG_CACHE_HOME}/buildstream/sources/"
 
-.build-template: &build
+.build-template:
+  extends: .cache-template
   stage: build
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
-  <<: *cache
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
@@ -107,7 +107,8 @@ before_script:
       - logs
       - project.refs
 
-.flatpak-template: &flatpak
+.flatpak-template:
+  extends: .cache-template
   stage: flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
@@ -136,7 +137,6 @@ before_script:
         ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID} ${BRANCHES}
       fi
 
-  <<: *cache
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
@@ -146,12 +146,11 @@ before_script:
 
 
 track:
+  extends: .cache-template
   image: buildstream/buildstream-fedora:master-123-abef70fe
   stage: track
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
-
-  <<: *cache
   # don't run on stable branches
   except:
     - /^gnome-\d-\d\d$/
@@ -163,16 +162,16 @@ track:
 
 
 build-gnome-core-x86_64:
+  extends: .build-template
   image: buildstream/buildstream-fedora:master-123-abef70fe
-  <<: *build
   tags:
     - packet
   variables:
     ARCH: x86_64
 
 build-gnome-core-i386:
+  extends: .build-template
   image: buildstream/buildstream-fedora:master-123-abef70fe
-  <<: *build
   tags:
     - packet
   variables:
@@ -180,8 +179,8 @@ build-gnome-core-i386:
   allow_failure: true
 
 build-gnome-core-aarch64:
+  extends: .build-template
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  <<: *build
   tags:
     - aarch64
   variables:
@@ -189,8 +188,8 @@ build-gnome-core-aarch64:
   allow_failure: true
 
 build-gnome-core-arm:
+  extends: .build-template
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  <<: *build
   tags:
     - armhf
   variables:
@@ -198,8 +197,8 @@ build-gnome-core-arm:
   allow_failure: true
 
 flatpak-x86_64:
+  extends: .flatpak-template
   image: buildstream/buildstream-fedora:master-123-abef70fe
-  <<: *flatpak
   tags:
     - packet
   variables:
@@ -207,8 +206,8 @@ flatpak-x86_64:
     FLATPAK_ARCH: x86_64
 
 flatpak-i386:
+  extends: .flatpak-template
   image: buildstream/buildstream-fedora:master-123-abef70fe
-  <<: *flatpak
   tags:
     - packet
   variables:
@@ -216,8 +215,8 @@ flatpak-i386:
     FLATPAK_ARCH: i386
 
 flatpak-aarch64:
+  extends: .flatpak-template
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  <<: *flatpak
   tags:
     - aarch64
   variables:
@@ -225,8 +224,8 @@ flatpak-aarch64:
     FLATPAK_ARCH: aarch64
 
 flatpak-arm:
+  extends: .flatpak-template
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  <<: *flatpak
   tags:
     - armhf
   variables:
