@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/libvirt-4.1.0.tar.xz
+  url: https://libvirt.org/sources/libvirt-4.9.0.tar.xz
 depends:
 - core-deps/libnl.bst
 - core-deps/libtirpc.bst
