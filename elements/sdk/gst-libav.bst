@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: git_freedesktop_org:gstreamer/gst-libav
   track: master
+  submodules:
+    common:
+      checkout: True
+      url: git_freedesktop_org:gstreamer/common
 depends:
 - sdk/gst-plugins-base.bst
 - filename: desktop/ffmpeg.bst
