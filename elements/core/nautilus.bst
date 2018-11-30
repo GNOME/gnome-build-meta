@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/nautilus
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:libgd
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
