@@ -19,4 +19,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-introspection=yes
+  conf-local: --enable-introspection --disable-vala
