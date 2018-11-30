@@ -7,7 +7,7 @@ depends:
 - core-deps/libtirpc.bst
 - core-deps/portablexdr.bst
 - core-deps/lvm2.bst
-- filename: base/python2.bst
+- filename: base/python3.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/buildsystem-autotools.bst
