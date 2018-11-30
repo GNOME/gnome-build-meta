@@ -17,7 +17,7 @@ depends:
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/python2.bst
+- filename: base/python3.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/buildsystem-autotools.bst
@@ -27,7 +27,7 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin
-    --disable-bash-completion --disable-gtk-module
+    --disable-bash-completion --disable-gtk-module --enable-python3
 config:
   build-commands:
   - '%{make} CFLAGS=-Wno-error'
