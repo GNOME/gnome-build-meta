@@ -4,7 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-settings-daemon
   track: master
   submodules:
-    libgnome-volume-control:
+    subprojects/gvc:
+      checkout: True
       url: gitlab_gnome_org:GNOME/libgnome-volume-control
 
 depends:
