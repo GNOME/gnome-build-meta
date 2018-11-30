@@ -13,6 +13,3 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-- filename: base/python2.bst
-  junction: freedesktop-sdk.bst
-  type: build
