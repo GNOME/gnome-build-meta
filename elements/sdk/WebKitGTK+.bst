@@ -54,7 +54,7 @@ variables:
   webkitgtk_toolchain: ''
   (?):
     - arch == "i686":
-        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
+        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i686
     - arch == "arm":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
   cmake-local:
