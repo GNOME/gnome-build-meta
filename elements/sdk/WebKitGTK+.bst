@@ -11,7 +11,7 @@ sources:
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
-  path: files/webkitgtk/toolchain.i386
+  path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
 depends:
@@ -54,7 +54,7 @@ variables:
   webkitgtk_toolchain: ''
   (?):
     - arch == "i686":
-        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i386
+        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i686
     - arch == "arm":
         webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
   cmake-local:
