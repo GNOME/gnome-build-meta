@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/libdazzle.bst
+- core-deps/libhandy.bst
 - sdk/WebKitGTK+.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
