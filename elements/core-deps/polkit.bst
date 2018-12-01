@@ -7,7 +7,7 @@ sources:
   path: files/polkit/sysusers.conf
   directory: data
 depends:
-- core-deps/mozjs52.bst
+- core-deps/mozjs60.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
