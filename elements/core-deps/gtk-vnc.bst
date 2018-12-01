@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gtk-vnc
   track: master
+  submodules:
+    src/keycodemapdb:
+      checkout: True
+      url: gitlab_com:keycodemap/keycodemapdb.git
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
