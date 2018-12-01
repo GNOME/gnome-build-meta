@@ -5,6 +5,7 @@ sources:
   track: master
   submodules:
     libgd:
+      checkout: True
       url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/gspell.bst
