@@ -3,6 +3,13 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-music
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
+    subprojets/shared-modules:
+      checkout: True
+      url: github_com:flathub/shared-modules
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
