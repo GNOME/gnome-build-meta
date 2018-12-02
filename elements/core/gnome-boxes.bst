@@ -4,9 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-boxes
   track: master
   submodules:
-    libgd:
+    subprojects/gtk-frdp:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/gtk-frdp
+    subprojects/libovf-glib:
+      checkout: True
+      url: felipeborges/libovf-glib
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst
