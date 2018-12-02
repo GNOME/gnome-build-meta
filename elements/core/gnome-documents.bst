@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-documents
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
