@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-photos
   track: master
+  submodules:
+    libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst
