@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/totem
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
