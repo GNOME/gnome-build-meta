@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-boxes
   track: master
+  submodules:
+    libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst
