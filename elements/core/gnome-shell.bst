@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-shell
   track: master
+  submodules:
+    subprojects/gvc:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgnome-volume-control
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
