@@ -1,0 +1,38 @@
+From 494e4abb7a5130376d3cdb41a5e3963650b8659f Mon Sep 17 00:00:00 2001
+From: rpm-build <rpm-build>
+Date: Mon, 16 Jul 2018 06:34:53 +0200
+Subject: [PATCH] Fix the broken build due to python2
+
+/builddir/build/BUILD/webkitgtk-2.21.4/Tools/gtk/generate-gtkdoc
+/usr/bin/env: 'python': No such file or directory
+---
+ Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl | 2 +-
+ Tools/gtk/generate-gtkdoc                                      | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl b/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
+index 4bb7037d..3071b45f 100755
+--- a/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
++++ b/Source/WebInspectorUI/Scripts/copy-user-interface-resources.pl
+@@ -155,7 +155,7 @@ my $inspectorLicense = <<'EOF';
+ EOF
+ 
+ my $perl = $^X;
+-my $python = ($OSNAME =~ /cygwin/) ? "/usr/bin/python" : "python";
++my $python = ($OSNAME =~ /cygwin/) ? "/usr/bin/python2" : "python2";
+ my $derivedSourcesDir = $ENV{'DERIVED_SOURCES_DIR'};
+ my $scriptsRoot = File::Spec->catdir($ENV{'SRCROOT'}, 'Scripts');
+ my $sharedScriptsRoot = File::Spec->catdir($ENV{'JAVASCRIPTCORE_PRIVATE_HEADERS_DIR'});
+diff --git a/Tools/gtk/generate-gtkdoc b/Tools/gtk/generate-gtkdoc
+index 45c23dfb..a3f82984 100755
+--- a/Tools/gtk/generate-gtkdoc
++++ b/Tools/gtk/generate-gtkdoc
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2.7
+ # Copyright (C) 2011 Igalia S.L.
+ #
+ # This library is free software; you can redistribute it and/or
+-- 
+2.17.1
+
