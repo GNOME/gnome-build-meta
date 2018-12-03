@@ -8,6 +8,8 @@ sources:
   path: files/webkitgtk/toolchain.i386
 - kind: local
   path: files/webkitgtk/toolchain.arm
+- kind: local
+  path: files/webkitgtk/python2.patch
 depends:
 - sdk/at-spi2-core.bst
 - sdk/brotli.bst
@@ -31,9 +33,6 @@ depends:
 - filename: desktop/xorg-lib-xt.bst
   junction: freedesktop-sdk.bst
 - filename: base/gperf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/python2.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/ruby.bst
