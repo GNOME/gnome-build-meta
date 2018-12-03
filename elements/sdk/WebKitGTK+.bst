@@ -33,9 +33,6 @@ depends:
 - filename: base/gperf.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/python2.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/ruby.bst
   junction: freedesktop-sdk.bst
   type: build
