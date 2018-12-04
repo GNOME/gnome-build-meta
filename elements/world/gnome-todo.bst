@@ -9,6 +9,6 @@ depends:
 - core-deps/libpeas.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
+- sdk/gtk+.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
