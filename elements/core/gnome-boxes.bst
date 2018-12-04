@@ -19,6 +19,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/vala.bst
+- sdk/vte.bst
 - filename: sdk/yelp-tools.bst
   type: build
 - filename: base/buildsystem-meson.bst
