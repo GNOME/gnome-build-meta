@@ -166,7 +166,8 @@ build-gnome-core-x86_64:
   image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
-    - packet
+    - x86_64
+    - gnome-build-meta
   variables:
     ARCH: x86_64
 
@@ -174,7 +175,8 @@ build-gnome-core-i386:
   image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *build
   tags:
-    - packet
+    - x86_64
+    - gnome-build-meta
   variables:
     ARCH: i686
   allow_failure: true
@@ -184,6 +186,7 @@ build-gnome-core-aarch64:
   <<: *build
   tags:
     - aarch64
+    - gnome-build-meta
   variables:
     ARCH: aarch64
   allow_failure: true
@@ -193,6 +196,7 @@ build-gnome-core-arm:
   <<: *build
   tags:
     - armhf
+    - gnome-build-meta
   variables:
     ARCH: arm
   allow_failure: true
@@ -201,7 +205,8 @@ flatpak-x86_64:
   image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
-    - packet
+    - x86_64
+    - gnome-build-meta
   variables:
     ARCH: x86_64
     FLATPAK_ARCH: x86_64
@@ -210,7 +215,8 @@ flatpak-i386:
   image: buildstream/buildstream-fedora:master-123-abef70fe
   <<: *flatpak
   tags:
-    - packet
+    - x86_64
+    - gnome-build-meta
   variables:
     ARCH: i686
     FLATPAK_ARCH: i386
@@ -220,6 +226,7 @@ flatpak-aarch64:
   <<: *flatpak
   tags:
     - aarch64
+    - gnome-build-meta
   variables:
     ARCH: aarch64
     FLATPAK_ARCH: aarch64
@@ -229,6 +236,7 @@ flatpak-arm:
   <<: *flatpak
   tags:
     - armhf
+    - gnome-build-meta
   variables:
     ARCH: arm
     FLATPAK_ARCH: arm
