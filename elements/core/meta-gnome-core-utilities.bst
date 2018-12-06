@@ -20,7 +20,6 @@ depends:
 - core/gnome-clocks.bst
 - core/gnome-contacts.bst
 - core/gnome-disk-utility.bst
-- core/gnome-documents.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
 - core/gnome-maps.bst
