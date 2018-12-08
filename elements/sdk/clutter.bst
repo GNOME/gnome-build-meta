@@ -12,6 +12,8 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
+- filename: desktop/libxkbcommon.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
