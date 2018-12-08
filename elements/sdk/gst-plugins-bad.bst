@@ -62,5 +62,6 @@ variables:
     -Dwasapi=disabled
     -Dwebrtc=disabled
     -Dwebrtcdsp=disabled
+    -Dwpe=disabled
     -Dx265=disabled
     -Dzbar=disabled
