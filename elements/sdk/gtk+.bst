@@ -19,6 +19,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/libepoxy.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/libxkbcommon.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
