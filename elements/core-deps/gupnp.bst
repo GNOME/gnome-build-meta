@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gupnp
-  track: gupnp-1.0
+  track: master
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst

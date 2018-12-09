@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gssdp
-  track: gssdp_1.0
+  track: master
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
