@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gssdp
@@ -11,11 +11,8 @@ depends:
 - sdk/libsoup.bst
 - filename: sdk/vala.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-config:
-  build-commands:
-  - '%{make} CFLAGS=-Wno-error'
