@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gobject-introspection/1.58/gobject-introspection-1.58.0.tar.xz
-  ref: 27c1590a32749de0a5481ce897772547043e94bccba4bc0a7edb3d8513e401ec
+  url: https://download.gnome.org/sources/gobject-introspection/1.58/gobject-introspection-1.58.2.tar.xz
+  ref: 2a5e0f69459af7ca4c41b8f4e19d9c80ddf877834bb0e7fdd420e2495ae2eda8
 depends:
 - sdk/glib.bst
 - filename: base.bst

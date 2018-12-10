@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.11.tar.xz
-  ref: 38c059b9db11180e2fa2607a4688f5a8310267afd58a6475817f004f8ae5263a
+  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.12.tar.xz
+  ref: 1f4554becf5df0a4d8c51d6757b9401c7ee95bf2dd6f3a73575a8ddd4cd09a01
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/libgudev.bst
