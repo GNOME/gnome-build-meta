@@ -16,3 +16,5 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: -Dsniffer=false
