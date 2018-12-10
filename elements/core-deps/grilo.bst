@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/grilo/0.3/grilo-0.3.6.tar.xz
-  ref: 1e65ca82dd58020451417fde79310d4b940adc3f63ab59997419c52ed3bc9c91
+  url: https://download.gnome.org/sources/grilo/0.3/grilo-0.3.7.tar.xz
+  ref: ea3baf71692df177649a968635ed2bc39855c34c327274245c240f726831e9b7
 depends:
 - core-deps/totem-pl-parser.bst
 - sdk/glib.bst

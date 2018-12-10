@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gdm/3.30/gdm-3.30.1.tar.xz
-  ref: 4b3d11856adf9fc26b43b2742c196e9e9dc2d2a5eff8bb34d906537288e2732f
+  url: https://download.gnome.org/sources/gdm/3.30/gdm-3.30.2.tar.xz
+  ref: be90ede158fd5d2ff0b97db617ffd77c1033964824cb04fcfac0865c8c6f56c1
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst

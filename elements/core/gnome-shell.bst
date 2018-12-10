@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-shell/3.30/gnome-shell-3.30.1.tar.xz
-  ref: fcdf879781b86a88ad0430e84e4d882cf7b3ac26af9f16f666a980b8f96c5fe1
+  url: https://download.gnome.org/sources/gnome-shell/3.30/gnome-shell-3.30.2.tar.xz
+  ref: 22632c9bbccef11fe3130fc8d642e37de223d089e004bdb58dae309a38694c4d
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
