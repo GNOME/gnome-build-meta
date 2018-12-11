@@ -153,6 +153,7 @@ track:
 
   <<: *cache
   tags:
+    - x86_64
     - gnome-build-meta
   # don't run on stable branches
   except:
