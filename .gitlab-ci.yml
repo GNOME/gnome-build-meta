@@ -152,6 +152,8 @@ track:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
 
   <<: *cache
+  tags:
+    - gnome-build-meta
   # don't run on stable branches
   except:
     - /^gnome-\d-\d\d$/
