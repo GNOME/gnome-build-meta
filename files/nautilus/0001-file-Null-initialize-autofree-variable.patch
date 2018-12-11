@@ -1,0 +1,25 @@
+From 1ef858421972a1355f78c2376b684dd8290e14a8 Mon Sep 17 00:00:00 2001
+From: Ernestas Kulik <ekulik@redhat.com>
+Date: Tue, 11 Dec 2018 10:52:50 +0100
+Subject: [PATCH] file: Null-initialize autofree variable
+
+---
+ src/nautilus-file.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/nautilus-file.c b/src/nautilus-file.c
+index b39dd1d8e..4a2068948 100644
+--- a/src/nautilus-file.c
++++ b/src/nautilus-file.c
+@@ -2199,7 +2199,7 @@ real_batch_rename (GList                         *files,
+ 
+     for (l1 = files, l2 = new_names; l1 != NULL && l2 != NULL; l1 = l1->next, l2 = l2->next)
+     {
+-        g_autofree gchar *new_file_name;
++        g_autofree gchar *new_file_name = NULL;
+         file = NAUTILUS_FILE (l1->data);
+         new_name = l2->data;
+ 
+-- 
+2.20.0
+

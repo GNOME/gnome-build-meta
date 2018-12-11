@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: https://download.gnome.org/sources/nautilus/3.30/nautilus-3.30.4.tar.xz
   ref: 419f7c27f9f445815f865647a44b5aa75f7b34ada5cf3247f9ead682f6de8ab9
+- kind: patch
+  path: files/nautilus/0001-file-Null-initialize-autofree-variable.patch
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
