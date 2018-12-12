@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/libchamplain.bst
 - core-deps/libgee.bst
 - core-deps/libhandy.bst
 - core/cheese.bst
