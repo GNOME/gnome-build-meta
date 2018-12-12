@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gcab/1.1/gcab-1.1.tar.xz
-  ref: 192b2272c2adfde43595e5c62388854bca8a404bc796585b638e81774dd62950
+  url: https://download.gnome.org/sources/gcab/1.2/gcab-1.2.tar.xz
+  ref: 5a2d96fe7e69e42d363c31cf2370d7afa3bb69cec984d4128322ea40e62c100d
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

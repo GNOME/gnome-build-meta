@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-maps/3.30/gnome-maps-3.30.2.1.tar.xz
-  ref: a7d0d369bb44b78faa43a889f32f2410e235420825d04db06c20ca22cdd81806
+  url: https://download.gnome.org/sources/gnome-maps/3.30/gnome-maps-3.30.3.tar.xz
+  ref: d826c82c261db473b5330f1f2f6093fe67502b6c2e811797d90bb2efc3363368
 depends:
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst
