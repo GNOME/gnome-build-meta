@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/PackageKit.bst
 - core-deps/gspell.bst
+- core-deps/gnome-online-accounts.bst
 - core-deps/libgudev.bst
 - core-deps/liboauth.bst
 - core-deps/xmlb.bst
