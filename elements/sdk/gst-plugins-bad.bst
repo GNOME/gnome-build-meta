@@ -10,7 +10,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/libfdk-aac.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/openal.bst
+  junction: freedesktop-sdk.bst
 - filename: base/opus.bst
+  junction: freedesktop-sdk.bst
+- filename: base/sndfile.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
@@ -49,7 +53,6 @@ variables:
     -Dnvdec=disabled
     -Dnvenc=disabled
     -Dofa=disabled
-    -Dopenal=disabled
     -Dopencv=disabled
     -Dopenexr=disabled
     -Dopenh264=disabled
@@ -68,6 +71,7 @@ variables:
     -Dteletext=disabled
     -Dtinyalsa=disabled
     -Duvch264=disabled
+    -Dvdpau=disabled
     -Dvoaacenc=disabled
     -Dvoamrwbenc=disabled
     -Dwasapi=disabled

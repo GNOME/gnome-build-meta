@@ -32,6 +32,5 @@ variables:
     -Dqt5=disabled
     -Dshout2=disabled
     -Dtaglib=disabled
-    -Dtinyalsa=disabled
     -Dtwolame=disabled
     -Dv4l2=disabled
