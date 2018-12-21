@@ -10,15 +10,10 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   mozjs_target: ''
-  (?):
-    - arch == "i686":
-        mozjs_target: "--host=i686-unknown-linux-gnu"
-    - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
 config:
   configure-commands:
-  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc AUTOCONF=autoconf %{mozjs_target}
+  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc AUTOCONF=autoconf
   build-commands:
   - make
   install-commands:
