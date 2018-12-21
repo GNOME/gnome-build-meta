@@ -13,14 +13,8 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   mozjs_target: ''
-  (?):
-    - arch == "i686":
-        mozjs_target: "--host=i686-unknown-linux-gnu"
-    - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnueabi"
   command-subdir: _build
-  conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc %{mozjs_target}
-    AUTOCONF=autoconf
+  conf-local: --enable-posix-nspr-emulation --with-system-zlib --with-intl-api --disable-jemalloc AUTOCONF=autoconf
   conf-cmd: '%{build-root}/js/src/configure'
   # not a real autotools project
   autogen: ''
