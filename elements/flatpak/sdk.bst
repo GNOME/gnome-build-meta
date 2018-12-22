@@ -26,7 +26,6 @@ config:
 
     Extension org.gnome.Sdk.Docs:
       directory: share/runtime/docs
-      bundle: true
       autodelete: true
       no-autodownload: true
 
