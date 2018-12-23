@@ -18,6 +18,8 @@ config:
     - |
       mkdir -p "%{install-root}%{indep-libdir}"
       install os-release "%{install-root}%{indep-libdir}"
+      mkdir -p "%{install-root}%{sysconfdir}"
+      ln -s "$(realpath --relative-to="%{install-root}%{sysconfdir}" "%{install-root}%{indep-libdir}/os-release")" %{install-root}%{syscondir}/os-release
 
       mkdir -p "%{install-root}%{sysconfdir}"
       install issue "%{install-root}%{sysconfdir}"
