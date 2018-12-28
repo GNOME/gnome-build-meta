@@ -115,7 +115,6 @@ depends:
 - core-deps/parted.bst
 - core-deps/phodav.bst
 - core-deps/polkit.bst
-- core-deps/poppler.bst
 - core-deps/popt.bst
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst

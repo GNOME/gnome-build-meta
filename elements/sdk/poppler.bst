@@ -1,3 +1,9 @@
+# WARNING WARNING WARNING
+#
+# poppler's C++ API does not provide a stable API or ABI. The poppler-glib API,
+# however, is stable. Applications using the GNOME runtime should only use the
+# poppler-glib API. Applications using the C++ API will break in future updates.
+#
 kind: cmake
 sources:
 - kind: tar
