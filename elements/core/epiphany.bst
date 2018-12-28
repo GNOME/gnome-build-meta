@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
+- core/evince.bst
 - sdk/WebKitGTK+.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
@@ -18,6 +19,8 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/openjpeg.bst
+- sdk/poppler.bst
 - sdk/yelp-tools.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
