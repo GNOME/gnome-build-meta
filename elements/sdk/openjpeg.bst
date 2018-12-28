@@ -8,6 +8,8 @@ sources:
   path: files/openjpeg/CVE-2018-6616.patch
 - kind: patch
   path: files/openjpeg/CVE-2018-18088.patch
+- kind: patch
+  path: files/openjpeg/fix-cmake-config.patch
 depends:
 - filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst

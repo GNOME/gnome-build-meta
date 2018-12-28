@@ -1,0 +1,31 @@
+From 24fd3ce777a64b8b315cfe1ee642ec7b1cc6aa97 Mon Sep 17 00:00:00 2001
+From: Libor Bukata <libor.bukata@oracle.com>
+Date: Fri, 31 Aug 2018 12:57:40 +0200
+Subject: [PATCH] The change makes a relative path to header files always
+ correct regardless of the number of sub- directories in
+ OPENJPEG_INSTALL_PACKAGE_DIR variable.
+
+---
+ cmake/OpenJPEGConfig.cmake.in | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/cmake/OpenJPEGConfig.cmake.in b/cmake/OpenJPEGConfig.cmake.in
+index b20294ca5..2925108ad 100644
+--- a/cmake/OpenJPEGConfig.cmake.in
++++ b/cmake/OpenJPEGConfig.cmake.in
+@@ -26,8 +26,13 @@ get_filename_component(SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+ if(EXISTS ${SELF_DIR}/OpenJPEGTargets.cmake)
+   # This is an install tree
+   include(${SELF_DIR}/OpenJPEGTargets.cmake)
+-  get_filename_component(OPENJPEG_INCLUDE_ROOT "${SELF_DIR}/../../@OPENJPEG_INSTALL_INCLUDE_DIR@" ABSOLUTE)
+-  set(OPENJPEG_INCLUDE_DIRS ${OPENJPEG_INCLUDE_ROOT})
++
++  # We find a relative path from the PKG directory to header files.
++  set(PKG_DIR "@CMAKE_INSTALL_PREFIX@/@OPENJPEG_INSTALL_PACKAGE_DIR@")
++  set(INC_DIR "@CMAKE_INSTALL_PREFIX@/@OPENJPEG_INSTALL_INCLUDE_DIR@")
++  file(RELATIVE_PATH PKG_TO_INC_RPATH "${PKG_DIR}" "${INC_DIR}")
++
++  get_filename_component(OPENJPEG_INCLUDE_DIRS "${SELF_DIR}/${PKG_TO_INC_RPATH}" ABSOLUTE)
+ 
+ else()
+   if(EXISTS ${SELF_DIR}/OpenJPEGExports.cmake)
