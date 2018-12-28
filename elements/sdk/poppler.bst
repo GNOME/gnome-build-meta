@@ -9,8 +9,8 @@ sources:
 - kind: tar
   url: https://poppler.freedesktop.org/poppler-0.72.0.tar.xz
 depends:
-- core-deps/openjpeg.bst
 - sdk/gobject-introspection.bst
+- sdk/openjpeg.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: desktop/cairo.bst
