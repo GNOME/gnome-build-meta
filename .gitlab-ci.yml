@@ -112,14 +112,7 @@ before_script:
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
-    # checkout the runtimes
-    - |
-      for runtime in platform platform-locale sdk sdk-debug sdk-docs sdk-locale; do
-        bst -o arch "${ARCH}" checkout --hardlinks "flatpak/${runtime}.bst" "runtimes/${runtime}"
-        flatpak build-export --arch="${FLATPAK_ARCH}" --no-update-summary --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
-      done
-
-    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${FLATPAK_ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
+    - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
 
     # Push the resulting runtimes to gbm.gnome.org
     # Assume there will be no branch name collisions,
@@ -133,7 +126,7 @@ before_script:
         fi
 
         rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-        ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID} ${BRANCHES}
+        ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
       fi
 
   <<: *cache
@@ -212,7 +205,6 @@ flatpak-x86_64:
     - gnome-build-meta
   variables:
     ARCH: x86_64
-    FLATPAK_ARCH: x86_64
 
 flatpak-i386:
   image: buildstream/buildstream-fedora:master-123-abef70fe
@@ -222,7 +214,6 @@ flatpak-i386:
     - gnome-build-meta
   variables:
     ARCH: i686
-    FLATPAK_ARCH: i386
 
 flatpak-aarch64:
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
@@ -232,7 +223,6 @@ flatpak-aarch64:
     - gnome-build-meta
   variables:
     ARCH: aarch64
-    FLATPAK_ARCH: aarch64
 
 flatpak-arm:
   image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
@@ -242,4 +232,3 @@ flatpak-arm:
     - gnome-build-meta
   variables:
     ARCH: arm
-    FLATPAK_ARCH: arm
