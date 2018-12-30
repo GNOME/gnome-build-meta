@@ -1,8 +1,22 @@
-kind: stack
+kind: flatpak_repo
 depends:
-- flatpak/platform.bst
-- flatpak/platform-locale.bst
-- flatpak/sdk.bst
-- flatpak/sdk-debug.bst
-- flatpak/sdk-docs.bst
-- flatpak/sdk-locale.bst
+- filename: flatpak/platform.bst
+  type: build
+- filename: flatpak/platform-locale.bst
+  type: build
+- filename: flatpak/sdk.bst
+  type: build
+- filename: flatpak/sdk-debug.bst
+  type: build
+- filename: flatpak/sdk-docs.bst
+  type: build
+- filename: flatpak/sdk-locale.bst
+  type: build
+- filename: deploy-tools/flatpak.bst
+  junction: freedesktop-sdk.bst
+  type: build
+
+config:
+  environment:
+    - deploy-tools/flatpak.bst
+  arch: '%{gcc_arch}'
