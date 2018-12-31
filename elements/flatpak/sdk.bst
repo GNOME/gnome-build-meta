@@ -35,6 +35,12 @@ config:
       autodelete: true
       locale-subset: true
 
+    Extension org.gnome.Sdk.Extension:
+      subdirectories: 'true'
+      directory: lib/sdk
+      no-autodownload: 'true'
+      add-ld-path: lib
+
     # Copied from sdk/elements/sdk.bst from freedesktop-sdk because
     # bst doesn't support inheriting extensions
     # When syncing, skip the Debug, Docs and Locale extensions, and
