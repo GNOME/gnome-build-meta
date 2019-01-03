@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: https://download.fcitx-im.org/fcitx/fcitx-4.2.9.6.tar.xz
+  url: https://gitlab.com/fcitx/fcitx/-/archive/4.2.9.6/fcitx-4.2.9.6.tar.gz
   ref: d55eee3f094037b5c32f0c5397d585fdf932cbc7d2091ed6f78fd7a9ae512c47
 depends:
 - sdk/gtk+-3.bst
