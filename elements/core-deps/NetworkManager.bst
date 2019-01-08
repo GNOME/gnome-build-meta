@@ -27,5 +27,11 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: PYTHON=python3 --with-udev-dir=/usr/lib/udev  --with-crypto=gnutls --disable-more-warnings
-    --disable-json-validation --disable-ovs
+  conf-local: >
+    PYTHON=python3
+    --with-udev-dir=/usr/lib/udev
+    --with-crypto=gnutls
+    --enable-introspection
+    --disable-more-warnings
+    --disable-json-validation
+    --disable-ovs
