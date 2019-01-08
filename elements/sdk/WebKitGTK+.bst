@@ -1,13 +1,7 @@
 kind: cmake
 sources:
-# WARNING: soup-session-test.patch and i686-build.patch
-# should both be removed when upgrading to 2.23.2!
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.23.1.tar.xz
-- kind: patch
-  path: files/webkitgtk/soup-session-test.patch
-- kind: patch
-  path: files/webkitgtk/i686-build.patch
+  url: webkitgtk_org:webkitgtk-2.23.2.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
