@@ -7,7 +7,8 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- sdk/yelp-tools.bst
 - world/libgnome-games-support.bst
 - filename: base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
