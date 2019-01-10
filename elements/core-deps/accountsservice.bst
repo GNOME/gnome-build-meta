@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_freedesktop_org:accountsservice
+  url: git_freedesktop_org:accountsservice/accountsservice.git
   track: master
 depends:
 - core-deps/polkit.bst

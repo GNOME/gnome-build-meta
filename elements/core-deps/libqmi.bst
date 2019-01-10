@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:libqmi.git
+  url: git_freedesktop_org:mobile-broadband/libqmi.git
   track: master
 depends:
 - core-deps/libgudev.bst
