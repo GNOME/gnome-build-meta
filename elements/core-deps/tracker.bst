@@ -13,9 +13,6 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: base/python2.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -28,4 +25,5 @@ variables:
   meson-local: |
     -Ddocs=false \
     -Dunicode_support=icu \
+    -Dfunctional_tests=false \
     -Dbash_completion=${prefix}/share/bash-completion/completions
