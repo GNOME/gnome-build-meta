@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: git
-  url: https://anongit.freedesktop.org/git/polkit.git
-  track: master
+  url: https://gitlab.freedesktop.org/ebassi/polkit.git
+  track: mozjs-60
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data
