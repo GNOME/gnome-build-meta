@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:libmbim/libmbim.git
+  url: git_freedesktop_org:mobile-broadband/libmbim.git
   track: master
 depends:
 - core-deps/libgudev.bst

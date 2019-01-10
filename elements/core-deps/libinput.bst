@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_freedesktop_org:wayland/libinput.git
+  url: git_freedesktop_org:libinput/libinput.git
   track: master
 depends:
 - core-deps/libevdev.bst

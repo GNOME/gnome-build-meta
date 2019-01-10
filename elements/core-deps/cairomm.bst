@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:cairomm
+  url: git_freedesktop_org:cairo/cairomm.git
   track: master
 depends:
 - core-deps/libsigcplusplus.bst
