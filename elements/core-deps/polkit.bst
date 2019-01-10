@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: https://anongit.freedesktop.org/git/polkit.git
+  url: git_freedesktop_org:polkit.git
   track: master
 - kind: local
   path: files/polkit/sysusers.conf
