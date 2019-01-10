@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:upower
+  url: git_freedesktop_org:upower/upower.git
   track: master
 depends:
 - core-deps/libgudev.bst
