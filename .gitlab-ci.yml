@@ -105,23 +105,48 @@ before_script:
   stage: flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
-
     - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
 
     # Push the resulting runtimes to gbm.gnome.org
     # Assume there will be no branch name collisions,
     # the ssh key is available only on protected branches
-    - |
-      if [ -n "$GITLAB_SSH_KEY" ]; then
-        if [ "$FLATPAK_BRANCH" = master ]; then
-          CONFIG_FILE=config/nightly.json
-        else
-          CONFIG_FILE=config/stable.json
-        fi
+    - rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
+    - ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
 
-        rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-        ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
-      fi
+.flatpak-nightly-template:
+  extends: .flatpak-template
+  environment:
+    name: nightly
+  variables:
+    CONFIG_FILE: config/nightly.json
+  only:
+    refs:
+      - master
+    variables:
+      - $GITLAB_SSH_KEY
+  except:
+    variables:
+      - $EMERGENCY
+
+.flatpak-stable-template:
+  extends: .flatpak-template
+  environment:
+    name: stable
+  variables:
+    CONFIG_FILE: config/stable.json
+  only:
+    refs:
+      - /^gnome-\d-\d\d$/
+    variables:
+      - $GITLAB_SSH_KEY
+
+.flatpak-emergency-template:
+  extends: .flatpak-nightly-template
+  when: manual
+  only:
+    variables:
+      - $GITLAB_SSH_KEY
+      - $EMERGENCY
 
 #
 # Architecture specific settings
@@ -196,18 +221,52 @@ build-gnome-core-arm:
   <<: *arm
 
 
-flatpak-x86_64:
-  extends: .flatpak-template
+flatpak-nightly-x86_64:
+  extends: .flatpak-nightly-template
   <<: *x86_64
 
-flatpak-i386:
-  extends: .flatpak-template
+flatpak-nightly-i386:
+  extends: .flatpak-nightly-template
   <<: *i686
 
-flatpak-aarch64:
-  extends: .flatpak-template
+flatpak-nightly-aarch64:
+  extends: .flatpak-nightly-template
   <<: *aarch64
 
-flatpak-arm:
-  extends: .flatpak-template
+flatpak-nightly-arm:
+  extends: .flatpak-nightly-template
+  <<: *arm
+
+
+flatpak-stable-x86_64:
+  extends: .flatpak-stable-template
+  <<: *x86_64
+
+flatpak-stable-i386:
+  extends: .flatpak-stable-template
+  <<: *i686
+
+flatpak-stable-aarch64:
+  extends: .flatpak-stable-template
+  <<: *aarch64
+
+flatpak-stable-arm:
+  extends: .flatpak-stable-template
+  <<: *arm
+
+
+flatpak-emergency-x86_64:
+  extends: .flatpak-emergency-template
+  <<: *x86_64
+
+flatpak-emergency-i386:
+  extends: .flatpak-emergency-template
+  <<: *i686
+
+flatpak-emergency-aarch64:
+  extends: .flatpak-emergency-template
+  <<: *aarch64
+
+flatpak-emergency-arm:
+  extends: .flatpak-emergency-template
   <<: *arm
