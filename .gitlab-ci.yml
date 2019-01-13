@@ -123,13 +123,6 @@ before_script:
         ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
       fi
 
-  # Store artifacts so we can inspect build failures
-  artifacts:
-    when: always
-    paths:
-      - logs
-      - project.refs
-
 #
 # Architecture specific settings
 #
