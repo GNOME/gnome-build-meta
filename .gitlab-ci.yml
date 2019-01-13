@@ -86,6 +86,10 @@ before_script:
 
     fi
 
+#
+# Templates shared by multiple jobs
+#
+
 .cache-template:
   # Store all the downloaded sources in the distributed cache. This saves
   # us fetching them from the different repos and further afield
@@ -137,16 +141,52 @@ before_script:
       - logs
       - project.refs
 
+#
+# Architecture specific settings
+#
 
-track:
-  extends: .cache-template
+.x86_64: &x86_64
   image: buildstream/buildstream-fedora:master-123-abef70fe
-  stage: track
-  script:
-    - ${BST} track --deps all core.bst flatpak-runtimes.bst
   tags:
     - x86_64
     - gnome-build-meta
+  variables:
+    ARCH: x86_64
+
+.i686: &i686
+  image: buildstream/buildstream-fedora:master-123-abef70fe
+  tags:
+    - x86_64
+    - gnome-build-meta
+  variables:
+    ARCH: i686
+
+.aarch64: &aarch64
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  tags:
+    - aarch64
+    - gnome-build-meta
+  variables:
+    ARCH: aarch64
+
+.arm: &arm
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  tags:
+    - armhf
+    - gnome-build-meta
+  variables:
+    ARCH: arm
+
+#
+# "Real" CI jobs
+#
+
+track:
+  extends: .cache-template
+  <<: *x86_64
+  stage: track
+  script:
+    - ${BST} track --deps all core.bst flatpak-runtimes.bst
   # don't run on stable branches
   except:
     - /^gnome-\d-\d\d$/
@@ -159,72 +199,33 @@ track:
 
 build-gnome-core-x86_64:
   extends: .build-template
-  image: buildstream/buildstream-fedora:master-123-abef70fe
-  tags:
-    - x86_64
-    - gnome-build-meta
-  variables:
-    ARCH: x86_64
+  <<: *x86_64
 
 build-gnome-core-i386:
   extends: .build-template
-  image: buildstream/buildstream-fedora:master-123-abef70fe
-  tags:
-    - x86_64
-    - gnome-build-meta
-  variables:
-    ARCH: i686
+  <<: *i686
 
 build-gnome-core-aarch64:
   extends: .build-template
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  tags:
-    - aarch64
-    - gnome-build-meta
-  variables:
-    ARCH: aarch64
+  <<: *aarch64
 
 build-gnome-core-arm:
   extends: .build-template
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  tags:
-    - armhf
-    - gnome-build-meta
-  variables:
-    ARCH: arm
+  <<: *arm
+
 
 flatpak-x86_64:
   extends: .flatpak-template
-  image: buildstream/buildstream-fedora:master-123-abef70fe
-  tags:
-    - x86_64
-    - gnome-build-meta
-  variables:
-    ARCH: x86_64
+  <<: *x86_64
 
 flatpak-i386:
   extends: .flatpak-template
-  image: buildstream/buildstream-fedora:master-123-abef70fe
-  tags:
-    - x86_64
-    - gnome-build-meta
-  variables:
-    ARCH: i686
+  <<: *i686
 
 flatpak-aarch64:
   extends: .flatpak-template
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  tags:
-    - aarch64
-    - gnome-build-meta
-  variables:
-    ARCH: aarch64
+  <<: *aarch64
 
 flatpak-arm:
   extends: .flatpak-template
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
-  tags:
-    - armhf
-    - gnome-build-meta
-  variables:
-    ARCH: arm
+  <<: *arm
