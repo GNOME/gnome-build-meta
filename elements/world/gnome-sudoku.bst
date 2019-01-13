@@ -9,7 +9,8 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- sdk/yelp-tools.bst
 - world/qqwing.bst
 - filename: base.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst

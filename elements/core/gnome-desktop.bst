@@ -13,8 +13,8 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: sdk/yelp-tools.bst
-  type: build
+- filename: desktop/itstools.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst

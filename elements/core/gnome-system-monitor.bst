@@ -11,10 +11,10 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: sdk/yelp-tools.bst
-  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst

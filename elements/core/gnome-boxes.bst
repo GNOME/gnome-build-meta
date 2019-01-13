@@ -27,12 +27,12 @@ depends:
 - sdk/libsecret.bst
 - sdk/vala.bst
 - sdk/vte.bst
-- filename: sdk/yelp-tools.bst
-  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Drdp=false

@@ -26,7 +26,6 @@ depends:
 - sdk/gst-plugins-good.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
-- sdk/yelp-tools.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -34,6 +33,8 @@ depends:
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Denable-vala=no
