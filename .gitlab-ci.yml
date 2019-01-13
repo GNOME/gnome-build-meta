@@ -174,7 +174,6 @@ build-gnome-core-i386:
     - gnome-build-meta
   variables:
     ARCH: i686
-  allow_failure: true
 
 build-gnome-core-aarch64:
   extends: .build-template
@@ -184,7 +183,6 @@ build-gnome-core-aarch64:
     - gnome-build-meta
   variables:
     ARCH: aarch64
-  allow_failure: true
 
 build-gnome-core-arm:
   extends: .build-template
@@ -194,7 +192,6 @@ build-gnome-core-arm:
     - gnome-build-meta
   variables:
     ARCH: arm
-  allow_failure: true
 
 flatpak-x86_64:
   extends: .flatpak-template
