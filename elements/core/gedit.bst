@@ -13,15 +13,14 @@ depends:
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libsoup.bst
-- sdk/yelp-tools.bst
-- filename: base/git-minimal.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: base/git-minimal.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base-platform.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
