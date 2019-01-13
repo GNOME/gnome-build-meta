@@ -90,17 +90,7 @@ before_script:
 # Templates shared by multiple jobs
 #
 
-.cache-template:
-  # Store all the downloaded sources in the distributed cache. This saves
-  # us fetching them from the different repos and further afield
-  # on every build.
-  cache:
-    key: bst
-    paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
-
 .build-template:
-  extends: .cache-template
   stage: build
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
@@ -112,7 +102,6 @@ before_script:
       - project.refs
 
 .flatpak-template:
-  extends: .cache-template
   stage: flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
@@ -182,7 +171,6 @@ before_script:
 #
 
 track:
-  extends: .cache-template
   <<: *x86_64
   stage: track
   script:
