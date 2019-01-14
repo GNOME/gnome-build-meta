@@ -193,6 +193,7 @@ track:
   stage: track
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
+  retry: 2
   # don't run on stable branches
   except:
     - /^gnome-\d-\d\d$/
