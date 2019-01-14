@@ -36,9 +36,6 @@ before_script:
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
 
-  # flatpak and rsync to generate and transfer the flatpak runtimes
-  - dnf install -y flatpak rsync
-
   # Ensure the log directory exists
   - mkdir -p logs
 
@@ -104,6 +101,9 @@ before_script:
 .flatpak-template:
   stage: flatpak
   script:
+    # flatpak and rsync to generate and transfer the flatpak runtimes
+    - dnf install -y flatpak rsync
+
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
     - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
 
