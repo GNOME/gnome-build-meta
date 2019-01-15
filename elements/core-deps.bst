@@ -99,7 +99,6 @@ depends:
 - core-deps/libxklavier.bst
 - core-deps/libzapojit.bst
 - core-deps/lvm2.bst
-- core-deps/meson-0-47.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
