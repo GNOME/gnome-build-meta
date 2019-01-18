@@ -63,7 +63,6 @@ depends:
 - core-deps/libdvdread.bst
 - core-deps/libevdev.bst
 - core-deps/libgdata.bst
-- core-deps/libgee.bst
 - core-deps/libgepub.bst
 - core-deps/libgfbgraph.bst
 - core-deps/libgnomekbd.bst
