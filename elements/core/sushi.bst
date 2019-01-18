@@ -6,7 +6,6 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/gtksourceview.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
 - sdk/WebKitGTK.bst
@@ -17,5 +16,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

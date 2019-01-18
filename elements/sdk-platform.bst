@@ -31,6 +31,7 @@ depends:
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
+- sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
 - sdk/json-glib.bst

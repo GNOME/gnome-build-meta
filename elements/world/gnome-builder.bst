@@ -5,12 +5,12 @@ sources:
   track: master
 depends:
 - core-deps/gspell.bst
-- core-deps/gtksourceview.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
 - sdk/pygobject.bst
