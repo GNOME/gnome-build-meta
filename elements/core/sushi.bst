@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/sushi.git
   track: master
 depends:
-- core-deps/gtksourceview.bst
+- sdk/gtksourceview.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
 - sdk/WebKitGTK.bst
