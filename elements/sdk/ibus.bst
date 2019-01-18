@@ -5,8 +5,6 @@ sources:
 depends:
 - sdk/dconf.bst
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
