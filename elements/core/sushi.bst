@@ -4,7 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/sushi.git
   track: master
 depends:
-- core-deps/gtksourceview.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
 - sdk/WebKitGTK.bst
@@ -15,6 +14,7 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
