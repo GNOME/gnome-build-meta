@@ -8,7 +8,6 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
-- core-deps/libgee.bst
 - core-deps/libgfbgraph.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -19,6 +18,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- sdk/libgee.bst
 - sdk/librsvg.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
