@@ -13,10 +13,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gspell.bst
-- core-deps/gtksourceview.bst
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
+- sdk/gtksourceview.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
