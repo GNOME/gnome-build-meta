@@ -32,6 +32,7 @@ depends:
 - sdk/gstreamer-vaapi.bst
 - sdk/gtk.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
 - sdk/json-glib.bst

@@ -9,10 +9,10 @@ sources:
       url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/gspell.bst
-- core-deps/gtksourceview.bst
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
+- sdk/gtksourceview.bst
 - sdk/libsoup.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
