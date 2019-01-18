@@ -7,6 +7,9 @@ sources:
     subprojects/libgd:
       checkout: True
       url: gitlab_gnome_org:GNOME/libgd
+    flatpak/shared-modules:
+      checkout: False
+      url: github_com:flathub/shared-modules
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
