@@ -145,8 +145,8 @@ before_script:
   when: manual
   only:
     variables:
-      - $GITLAB_SSH_KEY
       - $EMERGENCY
+  except: []
 
 #
 # Architecture specific settings
