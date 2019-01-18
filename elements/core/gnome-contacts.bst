@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/libgee.bst
 - core-deps/libhandy.bst
 - core/cheese.bst
 - core/gnome-desktop.bst
@@ -14,6 +13,7 @@ depends:
 - sdk/glib.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
+- sdk/libgee.bst
 - sdk/vala.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst

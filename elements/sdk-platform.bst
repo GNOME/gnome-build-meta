@@ -39,6 +39,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libcanberra.bst
 - sdk/libcroco.bst
+- sdk/libgee.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
