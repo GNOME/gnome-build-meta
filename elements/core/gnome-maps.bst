@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
 - core-deps/libgee.bst
 - core-deps/libgfbgraph.bst
@@ -18,6 +17,7 @@ depends:
 - sdk/glib-networking.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - filename: base/buildsystem-meson.bst

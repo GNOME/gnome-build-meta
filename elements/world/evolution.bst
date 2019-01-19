@@ -7,7 +7,6 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
@@ -17,6 +16,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst

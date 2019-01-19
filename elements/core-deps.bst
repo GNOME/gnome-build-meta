@@ -33,7 +33,6 @@ depends:
 - core-deps/glibmm.bst
 - core-deps/gmime3.bst
 - core-deps/gnome-autoar.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/gnome-video-effects.bst
 - core-deps/gom.bst

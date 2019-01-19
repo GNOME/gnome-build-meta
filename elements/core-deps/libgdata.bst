@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/libgdata
   track: master
 depends:
-- core-deps/gnome-online-accounts.bst
 - core-deps/liboauth.bst
 - core-deps/uhttpmock.bst
 - sdk/gcr.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build

@@ -16,7 +16,6 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
@@ -35,6 +34,7 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst

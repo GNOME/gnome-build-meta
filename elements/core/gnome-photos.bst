@@ -12,7 +12,6 @@ depends:
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
@@ -24,6 +23,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - filename: desktop/desktop-file-utils.bst

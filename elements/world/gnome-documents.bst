@@ -8,7 +8,6 @@ sources:
       checkout: True
       url: gitlab_gnome_org:GNOME/libgd
 depends:
-- core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/libgdata.bst
 - core-deps/libgepub.bst
@@ -21,6 +20,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gjs.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - filename: desktop/desktop-file-utils.bst

@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/PackageKit.bst
 - core-deps/gspell.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libgudev.bst
 - core-deps/liboauth.bst
 - core-deps/xmlb.bst
@@ -14,6 +13,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst

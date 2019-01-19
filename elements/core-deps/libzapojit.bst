@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/libzapojit
   track: master
 depends:
-- core-deps/gnome-online-accounts.bst
 - core-deps/librest.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - filename: sdk/gnome-common.bst
   type: build
 - filename: sdk/gtk-doc.bst

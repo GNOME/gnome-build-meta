@@ -4,13 +4,13 @@ sources:
   url: gitlab_gnome_org:GNOME/evolution-data-server
   track: master
 depends:
-- core-deps/gnome-online-accounts.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/libical.bst
 - core-deps/openldap.bst
 - sdk/WebKitGTK+.bst
 - sdk/gcr.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst
 - sdk/libsecret.bst

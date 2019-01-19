@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/gmime3.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/gom.bst
 - core-deps/grilo.bst
 - core-deps/gssdp.bst
@@ -16,6 +15,7 @@ depends:
 - core-deps/librest.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
+- sdk/gnome-online-accounts.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - filename: base/buildsystem-meson.bst

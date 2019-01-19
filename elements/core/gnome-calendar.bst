@@ -5,11 +5,11 @@ sources:
   track: master
 depends:
 - core-deps/evolution-data-server.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libdazzle.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - filename: base/buildsystem-meson.bst

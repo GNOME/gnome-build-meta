@@ -6,7 +6,6 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libgweather.bst
 - core-deps/pwquality.bst
 - core-deps/upower.bst
@@ -19,6 +18,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gstreamer.bst
 - sdk/gtk+-3.bst
 - sdk/ibus.bst

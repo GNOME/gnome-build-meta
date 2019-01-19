@@ -24,6 +24,7 @@ depends:
 - sdk/glib-networking.bst
 - sdk/glib.bst
 - sdk/gnome-themes-extra.bst
+- sdk/gnome-online-accounts.bst
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
