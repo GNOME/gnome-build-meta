@@ -21,8 +21,7 @@ depends:
 variables:
   meson-local: >
     -Dgtk_doc=true
-    -Dintrospection=true
     -Dvapi=true
     -Dtests=true
     -Dexamples=false
-    -Dglade_catalog=false
+    -Dglade_catalog=disabled
