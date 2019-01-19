@@ -8,7 +8,7 @@ sources:
       checkout: True
       url: gitlab_gnome_org:GNOME/libgd
     subprojets/shared-modules:
-      checkout: True
+      checkout: False
       url: github_com:flathub/shared-modules
 depends:
 - core-deps/grilo-plugins.bst
