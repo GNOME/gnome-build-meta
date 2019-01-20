@@ -22,3 +22,11 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+
+public:
+  bst:
+    integration-commands:
+    - |
+      update-desktop-database
