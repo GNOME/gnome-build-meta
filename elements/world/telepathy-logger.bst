@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:telepathy/telepathy-logger
+  url: github_com:TelepathyIM/telepathy-logger
   track: master
 depends:
 - sdk/glib.bst
