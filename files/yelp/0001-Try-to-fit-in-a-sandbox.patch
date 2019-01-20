@@ -4,6 +4,8 @@ Date: Thu, 16 Mar 2017 15:44:48 -0400
 Subject: [PATCH] Try to fit in a sandbox
 
 When running in another apps sandbox, use an app name that works.
+
+https://gitlab.gnome.org/GNOME/yelp/issues/123
 ---
  src/yelp-application.c | 17 ++++++++++++++++-
  1 file changed, 16 insertions(+), 1 deletion(-)
