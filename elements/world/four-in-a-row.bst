@@ -6,7 +6,10 @@ sources:
 depends:
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
+- sdk/libcanberra.bst
 - sdk/librsvg.bst
+- filename: sdk/vala.bst
+  type: build
 - sdk/yelp-tools.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
