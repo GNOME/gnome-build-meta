@@ -314,8 +314,6 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/gobject-introspection.bst
