@@ -7,8 +7,6 @@ depends:
 - core-deps/libgudev.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
