@@ -5,8 +5,6 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gobject-introspection.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
