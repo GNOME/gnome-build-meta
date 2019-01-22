@@ -24,7 +24,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
-  type: build
+  type: runtime
 
 public:
   bst:
