@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-settings-daemon/3.30/gnome-settings-daemon-3.30.1.2.tar.xz
+  url: https://download.gnome.org/sources/gnome-settings-daemon/3.30/gnome-settings-daemon-3.30.2.tar.xz
   ref: 5cdcf64f6e41fe1816e719850709e8e7a53a11460955f2be77fcee9c80812d1d
 depends:
 - core-deps/NetworkManager.bst

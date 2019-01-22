@@ -1,10 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.2.tar.xz
+  url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.4.tar.xz
   ref: 5b3b05e427cc928d103561ed2e91b2b2881fe88b1f167b0b1c9990da6aac8892
-- kind: patch
-  path: files/gtk3/0001-Revert-Fix-deprecation-warnings.patch
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst

@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.3.tar.xz
+  url: https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.4.tar.xz
   ref: a39c12bfc14f72a1a577a63ab1f6d4a3b77ca25df8cdc7996261993b98be3ce0
 depends:
 - core-deps/gnome-online-accounts.bst

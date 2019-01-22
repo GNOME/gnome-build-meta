@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.0.tar.xz
+  url: https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.1.tar.xz
   ref: 27d9d88942aa02a1f8d003dfe515483d8483f216ba1e297a8ef67a42cf4bcfc3
 depends:
 - core-deps/librest.bst
