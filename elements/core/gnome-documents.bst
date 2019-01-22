@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-documents/3.30/gnome-documents-3.30.0.tar.xz
-  ref: 066a4aba215926d5c5b0db1c083eba3e40c2a888c9017973af8faac4ae9c907d
+  url: https://download.gnome.org/sources/gnome-documents/3.30/gnome-documents-3.30.1.tar.xz
+  ref: 66191078f42adf50e4aa4cfba5a6564afd17e26f2c8fb3d71acd7b2ea29b0ffd
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst

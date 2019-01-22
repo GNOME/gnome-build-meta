@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.gnome.org/sources/cairomm/1.12/cairomm-1.12.0.tar.xz
-  ref: a54ada8394a86182525c0762e6f50db6b9212a2109280d13ec6a0b29bfd1afe6
+  ref: 6ccbc0ff58ef833c06068fd17bf866c9a2198bb5724f9de36566f2cb06fd4b13
 depends:
 - core-deps/libsigcplusplus-2.0.bst
 - filename: desktop/cairo.bst

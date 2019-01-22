@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libsecret/0.18/libsecret-0.18.6.tar.xz
-  ref: 5efbc890ba41a323ffe0599cd260fd12bd8eb62a04aa1bd1b2762575d253d66f
+  url: https://download.gnome.org/sources/libsecret/0.18/libsecret-0.18.7.tar.xz
+  ref: 0d66fe1fc4561b3e046ee281d7c5a703a9baac88a8c4fb42ebc739d31dabd487
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
