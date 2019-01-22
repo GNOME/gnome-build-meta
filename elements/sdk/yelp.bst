@@ -3,6 +3,8 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/yelp
   track: master
+- kind: patch
+  path: files/yelp/0001-Try-to-fit-in-a-sandbox.patch
 depends:
 - sdk/WebKitGTK+.bst
 - sdk/adwaita-icon-theme.bst
