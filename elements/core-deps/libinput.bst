@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libinput/libinput-1.12.3.tar.xz
-  ref: f266ff861a2e7a97e1402c4345e3547b900efde68adbd40e56403e2617fee255
+  url: https://www.freedesktop.org/software/libinput/libinput-1.12.6.tar.xz
+  ref: 12b4023a3fc683d3d8127db573bdf925a2ef366615042f69c87e57c32a50f45d
 depends:
 - core-deps/libevdev.bst
 - core-deps/libwacom.bst

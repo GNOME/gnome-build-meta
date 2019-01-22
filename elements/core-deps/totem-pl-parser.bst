@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/totem-pl-parser/3.26/totem-pl-parser-3.26.1.tar.xz
-  ref: 6ae2c4b8acaf052af21b8db256b6314385de031ba721a2dbdb361e90d4b4b74c
+  url: https://download.gnome.org/sources/totem-pl-parser/3.26/totem-pl-parser-3.26.2.tar.xz
+  ref: d386acf965a44597e25ddee4a42ccde3c649a55b657e3a605648815b70861c3a
 depends:
 - core-deps/gmime3.bst
 - sdk/glib.bst

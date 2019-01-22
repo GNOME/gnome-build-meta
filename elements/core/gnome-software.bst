@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-software/3.30/gnome-software-3.30.5.tar.xz
-  ref: 22a183f7af2ee77f243a00eebea0e32ab54cfe0abb3597e7d7a8cf8511105d34
+  url: https://download.gnome.org/sources/gnome-software/3.30/gnome-software-3.30.6.tar.xz
+  ref: 54630cdcde67cc571905a2ef5918fb7697f6aff80d937340440869f65c0c9002
 depends:
 - core-deps/PackageKit.bst
 - core-deps/gspell.bst
