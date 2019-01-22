@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: https://download.gnome.org/sources/yelp/3.30/yelp-3.30.0.tar.xz
   ref: 647fb00a592e92c95815d59e86016339ef1bd1a0aea309bd3367962005480a18
+- kind: patch
+  path: files/yelp/0001-Try-to-fit-in-a-sandbox.patch
 depends:
 - sdk/WebKitGTK+.bst
 - sdk/adwaita-icon-theme.bst
