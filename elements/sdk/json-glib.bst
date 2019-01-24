@@ -5,7 +5,10 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
