@@ -25,3 +25,5 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: -Denable-lua-factory=no
