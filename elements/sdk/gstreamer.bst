@@ -19,5 +19,6 @@ depends:
 variables:
   meson-local: >
     -Dbash-completion=disabled
+    -Ddbghelp=disabled
     -Dexamples=disabled
     -Dlibunwind=disabled
