@@ -4,10 +4,6 @@ sources:
   url: webkitgtk_org:webkitgtk-2.23.3.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
-- kind: local
-  path: files/webkitgtk/toolchain.i686
-- kind: local
-  path: files/webkitgtk/toolchain.arm
 depends:
 - sdk/at-spi2-core.bst
 - sdk/brotli.bst
@@ -45,17 +41,15 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  webkitgtk_toolchain: ''
+  webkitgtk-extra: ''
   (?):
-    - arch == "i686":
-        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i686
-    - arch == "arm":
-        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
+  - arch == "i686":
+      webkitgtk-extra: -DCMAKE_BUILD_TYPE=Release
   cmake-local:
     -DPORT=GTK
     -DENABLE_PLUGIN_PROCESS_GTK2=OFF
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-    %{webkitgtk_toolchain}
+    %{webkitgtk-extra}
 (?):
 - arch == "i686":
     environment:
