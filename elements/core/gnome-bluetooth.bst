@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-bluetooth
   track: master
+  submodules:
+    subprojects/libhandy:
+      url: purism:Librem5/libhandy.git
+      checkout: True
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
