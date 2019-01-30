@@ -2,6 +2,13 @@ kind: cmake
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.23.3.tar.xz
+# When upgrading to next release:
+# * Remove bug-193903.patch (including from files/)
+# * Add dependency on sdk/openjpeg.bst
+# * Delete this comment
+# * Remember to create a merge request rather than pushing directly :)
+- kind: patch
+  path: files/webkitgtk/bug-193903.patch
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
