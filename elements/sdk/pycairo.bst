@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: tar
-  url: github_com:pygobject/pycairo/releases/download/v1.16.3/pycairo-1.16.3.tar.gz
+  url: github_com:pygobject/pycairo/releases/download/v1.18.0/pycairo-1.18.0.tar.gz
 depends:
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
