@@ -1,0 +1,345 @@
+diff --git a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
+index 50f83ba2b8d..e224a1e6573 100644
+--- a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
++++ b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBase.cpp
+@@ -1579,6 +1579,13 @@ void webkitWebViewBaseExitAcceleratedCompositingMode(WebKitWebViewBase* webkitWe
+         webkitWebViewBase->priv->acceleratedBackingStore->update(LayerTreeContext());
+ }
+ 
++bool webkitWebViewBaseMakeGLContextCurrent(WebKitWebViewBase* webkitWebViewBase)
++{
++    if (webkitWebViewBase->priv->acceleratedBackingStore)
++        return webkitWebViewBase->priv->acceleratedBackingStore->makeContextCurrent();
++    return false;
++}
++
+ void webkitWebViewBaseDidRelaunchWebProcess(WebKitWebViewBase* webkitWebViewBase)
+ {
+     // Queue a resize to ensure the new DrawingAreaProxy is resized.
+diff --git a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBasePrivate.h b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBasePrivate.h
+index a24d67a69ff..8dde69b1bb8 100644
+--- a/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBasePrivate.h
++++ b/Source/WebKit/UIProcess/API/gtk/WebKitWebViewBasePrivate.h
+@@ -67,6 +67,7 @@ void webkitWebViewBaseResetClickCounter(WebKitWebViewBase*);
+ void webkitWebViewBaseEnterAcceleratedCompositingMode(WebKitWebViewBase*, const WebKit::LayerTreeContext&);
+ void webkitWebViewBaseUpdateAcceleratedCompositingMode(WebKitWebViewBase*, const WebKit::LayerTreeContext&);
+ void webkitWebViewBaseExitAcceleratedCompositingMode(WebKitWebViewBase*);
++bool webkitWebViewBaseMakeGLContextCurrent(WebKitWebViewBase*);
+ void webkitWebViewBaseDidRelaunchWebProcess(WebKitWebViewBase*);
+ void webkitWebViewBasePageClosed(WebKitWebViewBase*);
+ 
+diff --git a/Source/WebKit/UIProcess/WebPageProxy.h b/Source/WebKit/UIProcess/WebPageProxy.h
+index a5ec160591a..92770cb2a15 100644
+--- a/Source/WebKit/UIProcess/WebPageProxy.h
++++ b/Source/WebKit/UIProcess/WebPageProxy.h
+@@ -759,6 +759,7 @@ public:
+     PlatformWidget viewWidget();
+     const WebCore::Color& backgroundColor() const { return m_backgroundColor; }
+     void setBackgroundColor(const WebCore::Color& color) { m_backgroundColor = color; }
++    bool makeGLContextCurrent();
+ #endif
+ 
+ #if PLATFORM(WIN)
+diff --git a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.h b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.h
+index 3de3b5dfaf4..e350507aacc 100644
+--- a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.h
++++ b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStore.h
+@@ -46,6 +46,7 @@ public:
+ 
+     virtual void update(const LayerTreeContext&) { }
+     virtual bool paint(cairo_t*, const WebCore::IntRect&);
++    virtual bool makeContextCurrent() { return false; }
+ 
+ protected:
+     AcceleratedBackingStore(WebPageProxy&);
+diff --git a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.cpp b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.cpp
+index 216362cb23f..1e6dfe6d902 100644
+--- a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.cpp
++++ b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.cpp
+@@ -31,7 +31,7 @@
+ #include "WaylandCompositor.h"
+ #include "WebPageProxy.h"
+ #include <WebCore/CairoUtilities.h>
+-#include <WebCore/RefPtrCairo.h>
++#include <WebCore/GLContext.h>
+ 
+ #if USE(OPENGL_ES)
+ #include <GLES2/gl2.h>
+@@ -60,31 +60,43 @@ AcceleratedBackingStoreWayland::~AcceleratedBackingStoreWayland()
+     WaylandCompositor::singleton().unregisterWebPage(m_webPage);
+ }
+ 
+-#if GTK_CHECK_VERSION(3, 16, 0)
+-bool AcceleratedBackingStoreWayland::canGdkUseGL() const
++void AcceleratedBackingStoreWayland::tryEnsureGLContext()
+ {
+-    static bool initialized = false;
+-    static bool canCreateGLContext = false;
+-
+-    if (initialized)
+-        return canCreateGLContext;
++    if (m_glContextInitialized)
++        return;
+ 
+-    initialized = true;
++    m_glContextInitialized = true;
+ 
++#if GTK_CHECK_VERSION(3, 16, 0)
+     GUniqueOutPtr<GError> error;
+-    GdkWindow* gdkWindow = gtk_widget_get_window(m_webPage.viewWidget());
+-    GRefPtr<GdkGLContext> gdkContext(gdk_window_create_gl_context(gdkWindow, &error.outPtr()));
+-    if (!gdkContext) {
+-        g_warning("GDK is not able to create a GL context, falling back to glReadPixels (slow!): %s", error->message);
+-        return false;
++    m_gdkGLContext = adoptGRef(gdk_window_create_gl_context(gtk_widget_get_window(m_webPage.viewWidget()), &error.outPtr()));
++    if (m_gdkGLContext) {
++#if USE(OPENGL_ES)
++        gdk_gl_context_set_use_es(m_gdkGLContext.get(), TRUE);
++#endif
++        return;
+     }
+ 
+-    canCreateGLContext = true;
++    g_warning("GDK is not able to create a GL context, falling back to glReadPixels (slow!): %s", error->message);
++#endif
+ 
+-    return true;
++    m_glContext = GLContext::createOffscreenContext();
+ }
++
++bool AcceleratedBackingStoreWayland::makeContextCurrent()
++{
++    tryEnsureGLContext();
++
++#if GTK_CHECK_VERSION(3, 16, 0)
++    if (m_gdkGLContext) {
++        gdk_gl_context_make_current(m_gdkGLContext.get());
++        return true;
++    }
+ #endif
+ 
++    return m_glContext ? m_glContext->makeContextCurrent() : false;
++}
++
+ bool AcceleratedBackingStoreWayland::paint(cairo_t* cr, const IntRect& clipRect)
+ {
+     GLuint texture;
+@@ -96,13 +108,15 @@ bool AcceleratedBackingStoreWayland::paint(cairo_t* cr, const IntRect& clipRect)
+     AcceleratedBackingStore::paint(cr, clipRect);
+ 
+ #if GTK_CHECK_VERSION(3, 16, 0)
+-    if (canGdkUseGL()) {
++    if (m_gdkGLContext) {
+         gdk_cairo_draw_from_gl(cr, gtk_widget_get_window(m_webPage.viewWidget()), texture, GL_TEXTURE, m_webPage.deviceScaleFactor(), 0, 0, textureSize.width(), textureSize.height());
+         cairo_restore(cr);
+         return true;
+     }
+ #endif
+ 
++    ASSERT(m_glContext);
++
+     if (!m_surface || cairo_image_surface_get_width(m_surface.get()) != textureSize.width() || cairo_image_surface_get_height(m_surface.get()) != textureSize.height())
+         m_surface = adoptRef(cairo_image_surface_create(CAIRO_FORMAT_ARGB32, textureSize.width(), textureSize.height()));
+ 
+diff --git a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.h b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.h
+index de6048aefd9..9202045bcca 100644
+--- a/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.h
++++ b/Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreWayland.h
+@@ -31,6 +31,13 @@
+ 
+ #include <WebCore/RefPtrCairo.h>
+ #include <gtk/gtk.h>
++#include <wtf/glib/GRefPtr.h>
++
++typedef struct _GdkGLContext GdkGLContext;
++
++namespace WebCore {
++class GLContext;
++}
+ 
+ namespace WebKit {
+ 
+@@ -42,16 +49,20 @@ public:
+     static std::unique_ptr<AcceleratedBackingStoreWayland> create(WebPageProxy&);
+     ~AcceleratedBackingStoreWayland();
+ 
+-#if GTK_CHECK_VERSION(3, 16, 0)
+-    bool canGdkUseGL() const;
+-#endif
+-
+ private:
+     AcceleratedBackingStoreWayland(WebPageProxy&);
+ 
++    void tryEnsureGLContext();
++
+     bool paint(cairo_t*, const WebCore::IntRect&) override;
++    bool makeContextCurrent() override;
+ 
+     RefPtr<cairo_surface_t> m_surface;
++    bool m_glContextInitialized { false };
++#if GTK_CHECK_VERSION(3, 16, 0)
++    GRefPtr<GdkGLContext> m_gdkGLContext;
++#endif
++    std::unique_ptr<WebCore::GLContext> m_glContext;
+ };
+ 
+ } // namespace WebKit
+diff --git a/Source/WebKit/UIProcess/gtk/WaylandCompositor.cpp b/Source/WebKit/UIProcess/gtk/WaylandCompositor.cpp
+index 6da99830534..dc8d53cafbb 100644
+--- a/Source/WebKit/UIProcess/gtk/WaylandCompositor.cpp
++++ b/Source/WebKit/UIProcess/gtk/WaylandCompositor.cpp
+@@ -34,6 +34,7 @@
+ #include <WebCore/GLContext.h>
+ #include <WebCore/PlatformDisplayWayland.h>
+ #include <WebCore/Region.h>
++#include <gtk/gtk.h>
+ #include <wayland-server-protocol.h>
+ #include <wtf/UUID.h>
+ 
+@@ -146,12 +147,6 @@ IntSize WaylandCompositor::Buffer::size() const
+ WaylandCompositor::Surface::Surface()
+     : m_image(EGL_NO_IMAGE_KHR)
+ {
+-    glGenTextures(1, &m_texture);
+-    glBindTexture(GL_TEXTURE_2D, m_texture);
+-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+ }
+ 
+ WaylandCompositor::Surface::~Surface()
+@@ -168,11 +163,6 @@ WaylandCompositor::Surface::~Surface()
+ 
+     if (m_buffer)
+         m_buffer->unuse();
+-
+-    if (m_image != EGL_NO_IMAGE_KHR)
+-        eglDestroyImage(PlatformDisplay::sharedDisplay().eglDisplay(), m_image);
+-
+-    glDeleteTextures(1, &m_texture);
+ }
+ 
+ void WaylandCompositor::Surface::setWebPage(WebPageProxy* webPage)
+@@ -182,12 +172,31 @@ void WaylandCompositor::Surface::setWebPage(WebPageProxy* webPage)
+         flushFrameCallbacks();
+         gtk_widget_remove_tick_callback(m_webPage->viewWidget(), m_tickCallbackID);
+         m_tickCallbackID = 0;
++
++        if (m_webPage->makeGLContextCurrent()) {
++            if (m_image != EGL_NO_IMAGE_KHR)
++                eglDestroyImage(PlatformDisplay::sharedDisplay().eglDisplay(), m_image);
++            if (m_texture)
++                glDeleteTextures(1, &m_texture);
++        }
++
++        m_image = EGL_NO_IMAGE_KHR;
++        m_texture = 0;
+     }
+ 
+     m_webPage = webPage;
+     if (!m_webPage)
+         return;
+ 
++    if (m_webPage->makeGLContextCurrent()) {
++        glGenTextures(1, &m_texture);
++        glBindTexture(GL_TEXTURE_2D, m_texture);
++        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
++        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
++        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
++        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
++    }
++
+     m_tickCallbackID = gtk_widget_add_tick_callback(m_webPage->viewWidget(), [](GtkWidget*, GdkFrameClock*, gpointer userData) -> gboolean {
+         auto* surface = static_cast<Surface*>(userData);
+         surface->flushFrameCallbacks();
+@@ -232,7 +241,10 @@ void WaylandCompositor::Surface::requestFrame(struct wl_resource* resource)
+ 
+ bool WaylandCompositor::Surface::prepareTextureForPainting(unsigned& texture, IntSize& textureSize)
+ {
+-    if (m_image == EGL_NO_IMAGE_KHR)
++    if (!m_texture || m_image == EGL_NO_IMAGE_KHR)
++        return false;
++
++    if (!m_webPage || !m_webPage->makeGLContextCurrent())
+         return false;
+ 
+     glBindTexture(GL_TEXTURE_2D, m_texture);
+@@ -263,7 +275,7 @@ void WaylandCompositor::Surface::flushPendingFrameCallbacks()
+ 
+ void WaylandCompositor::Surface::commit()
+ {
+-    if (!m_webPage) {
++    if (!m_webPage || !m_webPage->makeGLContextCurrent()) {
+         makePendingBufferCurrent();
+         flushPendingFrameCallbacks();
+         return;
+@@ -400,11 +412,11 @@ bool WaylandCompositor::initializeEGL()
+         return false;
+     }
+ 
+-    m_eglContext = GLContext::createOffscreenContext();
+-    if (!m_eglContext)
++    std::unique_ptr<WebCore::GLContext> eglContext = GLContext::createOffscreenContext();
++    if (!eglContext)
+         return false;
+ 
+-    if (!m_eglContext->makeContextCurrent())
++    if (!eglContext->makeContextCurrent())
+         return false;
+ 
+ #if USE(OPENGL_ES)
+diff --git a/Source/WebKit/UIProcess/gtk/WaylandCompositor.h b/Source/WebKit/UIProcess/gtk/WaylandCompositor.h
+index f6bf21d9e2a..14819f8fac4 100644
+--- a/Source/WebKit/UIProcess/gtk/WaylandCompositor.h
++++ b/Source/WebKit/UIProcess/gtk/WaylandCompositor.h
+@@ -30,7 +30,6 @@
+ #include "WebPageProxy.h"
+ #include <WebCore/RefPtrCairo.h>
+ #include <WebCore/WlUniquePtr.h>
+-#include <gtk/gtk.h>
+ #include <wayland-server.h>
+ #include <wtf/HashMap.h>
+ #include <wtf/NeverDestroyed.h>
+@@ -41,10 +40,6 @@
+ 
+ typedef void *EGLImageKHR;
+ 
+-namespace WebCore {
+-class GLContext;
+-}
+-
+ namespace WebKit {
+ 
+ class WebPageProxy;
+@@ -96,7 +91,7 @@ public:
+ 
+         WeakPtr<Buffer> m_buffer;
+         WeakPtr<Buffer> m_pendingBuffer;
+-        unsigned m_texture;
++        unsigned m_texture { 0 };
+         EGLImageKHR m_image;
+         WebCore::IntSize m_imageSize;
+         Vector<wl_resource*> m_pendingFrameCallbackList;
+@@ -129,7 +124,6 @@ private:
+     WebCore::WlUniquePtr<struct wl_global> m_compositorGlobal;
+     WebCore::WlUniquePtr<struct wl_global> m_webkitgtkGlobal;
+     GRefPtr<GSource> m_eventSource;
+-    std::unique_ptr<WebCore::GLContext> m_eglContext;
+     HashMap<WebPageProxy*, WeakPtr<Surface>> m_pageMap;
+ };
+ 
+diff --git a/Source/WebKit/UIProcess/gtk/WebPageProxyGtk.cpp b/Source/WebKit/UIProcess/gtk/WebPageProxyGtk.cpp
+index 82c68476005..0a8a177cfe0 100644
+--- a/Source/WebKit/UIProcess/gtk/WebPageProxyGtk.cpp
++++ b/Source/WebKit/UIProcess/gtk/WebPageProxyGtk.cpp
+@@ -154,4 +154,9 @@ void WebPageProxy::getCenterForZoomGesture(const WebCore::IntPoint& centerInView
+ }
+ #endif
+ 
++bool WebPageProxy::makeGLContextCurrent()
++{
++    return webkitWebViewBaseMakeGLContextCurrent(WEBKIT_WEB_VIEW_BASE(viewWidget()));
++}
++
+ } // namespace WebKit
