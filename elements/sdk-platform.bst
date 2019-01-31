@@ -44,7 +44,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/mozjs60.bst
-- sdk/openjpeg.bst
 - sdk/os-release.bst
 - sdk/pango.bst
 - sdk/poppler.bst

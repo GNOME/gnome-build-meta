@@ -105,6 +105,7 @@ depends:
 - core-deps/mpfr.bst
 - core-deps/mtdev.bst
 - core-deps/neon.bst
+- core-deps/openjpeg.bst
 - core-deps/openldap.bst
 - core-deps/osinfo-db-tools.bst
 - core-deps/pangomm-1.4.bst
