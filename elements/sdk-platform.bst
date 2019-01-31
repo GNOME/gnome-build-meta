@@ -46,7 +46,6 @@ depends:
 - sdk/mozjs60.bst
 - sdk/os-release.bst
 - sdk/pango.bst
-- sdk/poppler.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/vte.bst
