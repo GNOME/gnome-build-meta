@@ -10,6 +10,8 @@ sources:
 - kind: patch
   path: files/webkitgtk/bug-193903.patch
 - kind: patch
+  path: files/webkitgtk/python3.patch
+- kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
@@ -38,9 +40,6 @@ depends:
 - filename: desktop/xorg-lib-xt.bst
   junction: freedesktop-sdk.bst
 - filename: base/gperf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/python2.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/ruby.bst
