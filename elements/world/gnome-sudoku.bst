@@ -8,7 +8,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- sdl/libgee.bst
+- sdk/libgee.bst
 - world/qqwing.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
