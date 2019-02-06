@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/libnotify
@@ -13,7 +13,7 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
