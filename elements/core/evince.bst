@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/evince
@@ -16,13 +16,11 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsecret.bst
-- filename: desktop/itstools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-meson.bst
+- sdk/yelp-tools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Ddjvu=disabled -Ddvi=disabled
+  conf-local: --enable-introspection
