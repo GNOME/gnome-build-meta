@@ -18,6 +18,7 @@ depends:
 - core-deps/colord.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
+- core-deps/gsound.bst
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
