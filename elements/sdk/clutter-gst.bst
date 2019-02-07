@@ -7,7 +7,7 @@ depends:
 - sdk/clutter.bst
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
-- sdk/gobject-introspection.bs
+- sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - filename: sdk/gtk-doc.bst
   type: build
