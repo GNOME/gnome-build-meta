@@ -1,8 +1,9 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/vala
   track: master
+  track-tags: True
 depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
