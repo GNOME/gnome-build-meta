@@ -10,7 +10,6 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gnome-common.bst
 - sdk/gtk+-3.bst
 - sdk/vala.bst
 - filename: base/intltool.bst
