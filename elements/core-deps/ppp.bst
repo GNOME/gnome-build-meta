@@ -11,4 +11,4 @@ depends:
 variables:
   # not a real autotools project
   autogen: ''
-  make-install: make -j1 INSTROOT="%{install-root}" install
+  make-install: make -j1 INSTROOT="%{install-root}" BINDIR="%{install-root}%{bindir}" install
