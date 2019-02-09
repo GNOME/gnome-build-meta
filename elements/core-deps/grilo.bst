@@ -8,6 +8,8 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/libsoup.bst
 - sdk/vala.bst
 - filename: base/buildsystem-meson.bst
