@@ -11,11 +11,12 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
 - sdk/glib.bst
-- sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/pango.bst
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-bad.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
