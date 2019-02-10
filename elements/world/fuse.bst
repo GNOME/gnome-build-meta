@@ -10,3 +10,5 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+environment:
+  MOUNT_FUSE_PATH: '%{sbindir}'
