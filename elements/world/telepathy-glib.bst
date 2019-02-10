@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - world/avahi.bst
-- sdk/dbus-glib.bst
+- world/dbus-glib.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
