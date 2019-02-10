@@ -15,6 +15,8 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/pango.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
