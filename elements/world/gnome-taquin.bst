@@ -6,6 +6,7 @@ sources:
 depends:
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
+- sdk/libcanberra.bst
 - sdk/librsvg.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
