@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
+- core-deps/libhandy.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
 - sdk/adwaita-icon-theme.bst
