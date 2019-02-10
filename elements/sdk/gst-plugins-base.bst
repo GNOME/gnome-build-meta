@@ -1,51 +1,34 @@
-kind: autotools
-sources:
-- kind: tar
-  url: gstreamer:gst-plugins-base/gst-plugins-base-1.14.4.tar.xz
+kind: filter
 depends:
-- filename: sdk/gobject-introspection.bst
+- filename: desktop/gstreamer-plugins-base.bst
+  junction: freedesktop-sdk.bst
   type: build
-- sdk/pango.bst
+- filename: bootstrap-import.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
+  type: runtime
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
+  type: runtime
 - filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
+  type: runtime
+- filename: sdk/pango.bst
+  type: runtime
 - filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+  type: runtime
+- filename: base/libogg.bst
   junction: freedesktop-sdk.bst
-  type: build
-- filename: base/gettext.bst
+  type: runtime
+- filename: base/libtheora.bst
   junction: freedesktop-sdk.bst
-  type: build
-- filename: base-platform.bst
+  type: runtime
+- filename: base/libvorbis.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: |
-    --enable-experimental \
-    --enable-introspection \
-    --enable-ogg \
-    --enable-opus \
-    --enable-orc \
-    --enable-pango \
-    --enable-theora \
-    --enable-vorbis
-public:
-  bst:
-    split-rules:
-      devel:
-        (>):
-        - '%{libdir}/libgstfft-1.0.so'
-        - '%{libdir}/libgstrtp-1.0.so'
-        - '%{libdir}/libgstsdp-1.0.so'
-        - '%{libdir}/libgstvideo-1.0.so'
-        - '%{libdir}/libgstapp-1.0.so'
-        - '%{libdir}/libgstriff-1.0.so'
-        - '%{libdir}/libgstrtsp-1.0.so'
-        - '%{libdir}/libgstallocators-1.0.so'
-        - '%{libdir}/libgsttag-1.0.so'
-        - '%{libdir}/libgstaudio-1.0.so'
-        - '%{libdir}/libgstpbutils-1.0.so'
-        - '%{libdir}/libgstgl-1.0.so'
+  type: runtime
+- filename: base/opus.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
