@@ -1,8 +1,9 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-online-miners.git
   track: master
+  track-tags: True
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
