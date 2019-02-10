@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.4.tar.xz
-  ref: d84f59ff02a87cc90c9df4a572a13eca4e3506e2bf511e2b9cbdb4526fa0cb9c
+  url: https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.5.tar.xz
+  ref: e1da1fdd06aa53ea851b55eb28252d04defd7657854ba1157139bc4696a4bcad
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
