@@ -25,7 +25,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-libav.bst
 - sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
