@@ -16,6 +16,7 @@ depends:
 - sdk/libsoup.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
+- world/gtkspell.bst
 - world/libgit2-glib.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
