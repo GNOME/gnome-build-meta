@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/vala/0.42/vala-0.42.4.tar.xz
-  ref: b528906d080ac5b6043285a82c194c988e495c70da71ae19c1fc7811509f4f1e
+  url: https://download.gnome.org/sources/vala/0.42/vala-0.42.5.tar.xz
+  ref: 8c33b4abc0573d364781bbfe54a1668ed34956902e471191a31cf05dc87c6e12
 - kind: patch
   path: files/vala/0001-build-Allow-disabling-the-build-of-valadoc.patch
 depends:
