@@ -10,6 +10,8 @@ depends:
   type: runtime
 - sdk/gnome-common.bst
 - sdk/gtk+-3.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
