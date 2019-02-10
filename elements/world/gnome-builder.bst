@@ -21,6 +21,8 @@ depends:
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
+- filename: desktop/llvm6.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
