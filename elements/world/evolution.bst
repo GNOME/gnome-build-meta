@@ -22,6 +22,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsoup.bst
 - sdk/yelp-tools.bst
+- world/gtkspell.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
