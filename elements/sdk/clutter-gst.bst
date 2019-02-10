@@ -8,10 +8,11 @@ depends:
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-plugins-base.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
