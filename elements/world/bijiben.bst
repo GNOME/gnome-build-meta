@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/bijiben
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/tracker.bst
