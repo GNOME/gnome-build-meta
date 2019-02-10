@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/four-in-a-row
@@ -6,7 +6,13 @@ sources:
 depends:
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
+- sdk/libcanberra.bst
 - sdk/librsvg.bst
+- filename: sdk/vala.bst
+  type: build
 - sdk/yelp-tools.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
