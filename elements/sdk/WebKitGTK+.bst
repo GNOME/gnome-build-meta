@@ -23,7 +23,6 @@ depends:
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
@@ -32,6 +31,8 @@ depends:
 - sdk/pango.bst
 - sdk/woff2.bst
 - filename: desktop/gstreamer-libav.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-bad.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/hyphen.bst
   junction: freedesktop-sdk.bst

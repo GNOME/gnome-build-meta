@@ -27,7 +27,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+.bst
 - sdk/gtk+-3.bst
@@ -106,6 +105,8 @@ depends:
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer-libav.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-bad.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
