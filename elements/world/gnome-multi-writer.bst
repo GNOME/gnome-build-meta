@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/libgusb.bst
+- core-deps/udisks2.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
