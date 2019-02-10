@@ -12,5 +12,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - sdk/gtk+-3.bst
+- filename: desktop/itstools.bst
+  junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
