@@ -8,6 +8,7 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
 - sdk/gtk+-3.bst
+- sdk/libcanberra.bst
 - sdk/libgee.bst
 - sdk/librsvg.bst
 - sdk/vala.bst
