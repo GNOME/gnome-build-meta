@@ -13,9 +13,10 @@ depends:
 - sdk/dconf.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
