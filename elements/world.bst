@@ -40,6 +40,7 @@ depends:
 - world/gnome-tetravex.bst
 - world/gnome-todo.bst
 - world/gnome-tweaks.bst
+- world/gtkspell.bst
 - world/gupnp-igd.bst
 - world/hitori.bst
 - world/iagno.bst
