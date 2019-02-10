@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/pyatspi2.bst
+- sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/gnome-common.bst
 - sdk/gtk+-3.bst
