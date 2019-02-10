@@ -110,6 +110,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-vaapi.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/harfbuzz.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/hicolor-icon-theme.bst
