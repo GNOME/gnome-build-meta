@@ -3,6 +3,10 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/recipes.git
   track: master
+  submodules:
+    subprojects/libgd:
+      checkout: True
+      url: gitlab_gnome_org:GNOME/libgd
 depends:
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
