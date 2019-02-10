@@ -5,11 +5,12 @@ sources:
 depends:
 - filename: sdk/gobject-introspection.bst
   type: build
-- sdk/gst-plugins-base.bst
 - sdk/librsvg.bst
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libdrm.bst
   junction: freedesktop-sdk.bst

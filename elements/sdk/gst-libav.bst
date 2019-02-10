@@ -14,10 +14,11 @@ sources:
 - kind: patch
   path: files/gst-libav/gst-libav-decoders-fix-draining.patch
 depends:
-- sdk/gst-plugins-base.bst
 - filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
