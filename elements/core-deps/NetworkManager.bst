@@ -8,7 +8,6 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libndp.bst
 - core-deps/ppp.bst
-- sdk/dbus-glib.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
