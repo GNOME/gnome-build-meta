@@ -9,5 +9,6 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- sdk/libcanberra.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
