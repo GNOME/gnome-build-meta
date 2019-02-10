@@ -6,7 +6,6 @@ depends:
 - filename: sdk/gobject-introspection.bst
   type: build
 - sdk/gdk-pixbuf.bst
-- sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/libsoup.bst
 - filename: desktop/cairo.bst
@@ -20,6 +19,8 @@ depends:
 - filename: desktop/mpg123.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
