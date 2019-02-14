@@ -26,6 +26,7 @@ depends:
 - core-deps/pwquality.bst
 - core-deps/samba.bst
 - core-deps/upower.bst
+- core-deps/udisks2.bst
 - core/cheese.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
