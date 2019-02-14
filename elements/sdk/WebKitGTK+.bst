@@ -1,16 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.23.3.tar.xz
-# When upgrading to next release:
-# * Remove bug-193903.patch and python3.patch (including from files/)
-# * Add dependency on core-deps/openjpeg.bst
-# * Delete this comment
-# * Remember to create a merge request rather than pushing directly :)
-- kind: patch
-  path: files/webkitgtk/bug-193903.patch
-- kind: patch
-  path: files/webkitgtk/python3.patch
+  url: webkitgtk_org:webkitgtk-2.23.90.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -18,6 +9,7 @@ sources:
 - kind: local
   path: files/webkitgtk/toolchain.arm
 depends:
+- core-deps/openjpeg.bst
 - sdk/at-spi2-core.bst
 - sdk/brotli.bst
 - sdk/enchant-2.bst
