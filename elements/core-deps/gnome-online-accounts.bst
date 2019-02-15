@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - core-deps/librest.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
