@@ -48,7 +48,7 @@ variables:
     - arch == "i686":
         webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i686
     - arch == "arm":
-        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
+        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm -DUSE_LD_GOLD=OFF
   cmake-local:
     -DPORT=GTK
     -DENABLE_PLUGIN_PROCESS_GTK2=OFF
