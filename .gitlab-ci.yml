@@ -8,6 +8,11 @@ variables:
   BST_EXTERNAL_SHA: '0.8.0-0-g762ea216b751bf89ac15350e1cb98542963bbf33'
   FLATPAK_BRANCH: master
 
+  # Docker Images
+  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
+  DOCKER_AMD64: "${DOCKER_REGISTRY}/amd64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
+  DOCKER_AARCH64: "${DOCKER_REGISTRY}/aarch64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
+
 stages:
   - track
   - build
@@ -23,9 +28,6 @@ cache:
 
 
 before_script:
-  # Remove any installed buildstream binary
-  - pip3 uninstall -y buildstream
-
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
@@ -101,9 +103,6 @@ before_script:
 .flatpak-template:
   stage: flatpak
   script:
-    # flatpak and rsync to generate and transfer the flatpak runtimes
-    - dnf install -y flatpak rsync
-
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
     - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
 
@@ -153,7 +152,7 @@ before_script:
 #
 
 .x86_64: &x86_64
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: "${DOCKER_AMD64}"
   tags:
     - x86_64
     - gnome-build-meta
@@ -161,7 +160,7 @@ before_script:
     ARCH: x86_64
 
 .i686: &i686
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: "${DOCKER_AMD64}"
   tags:
     - x86_64
     - gnome-build-meta
@@ -169,7 +168,7 @@ before_script:
     ARCH: i686
 
 .aarch64: &aarch64
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: "${DOCKER_AARCH64}"
   tags:
     - aarch64
     - gnome-build-meta
@@ -177,7 +176,7 @@ before_script:
     ARCH: aarch64
 
 .arm: &arm
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: "${DOCKER_AARCH64}"
   tags:
     - armhf
     - gnome-build-meta
