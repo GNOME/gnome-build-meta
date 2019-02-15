@@ -1,12 +1,14 @@
-variables:
+variables:/
   # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '1.2.3-0-g10abe77fe8d77385d86f225b503d9185f4ef7f3a'
-  BST_EXTERNAL_SHA: '0.8.0-0-g762ea216b751bf89ac15350e1cb98542963bbf33'
   FLATPAK_BRANCH: master
+
+  # Docker Images
+  DOCKER_AMD64: "latest-extra-master-47624343"
+  DOCKER_AARCH64: "aarch64-latest-extra-master-47624343"
 
 stages:
   - track
@@ -23,19 +25,6 @@ cache:
 
 
 before_script:
-  # Remove any installed buildstream binary
-  - pip3 uninstall -y buildstream
-
-  # Use specific version of BuildStream
-  - git clone https://gitlab.com/BuildStream/buildstream.git
-  - git -C buildstream/ checkout $BST_SHA
-  - pip3 install buildstream/
-
-  # install bst-external nedded for the flatpak_image plugin
-  - git clone https://gitlab.com/BuildStream/bst-external.git
-  - git -C bst-external/ checkout $BST_EXTERNAL_SHA
-  - pip3 install bst-external/
-
   # Ensure the log directory exists
   - mkdir -p logs
 
@@ -153,7 +142,7 @@ before_script:
 #
 
 .x86_64: &x86_64
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: "${DOCKER_AMD64}"
   tags:
     - x86_64
     - gnome-build-meta
@@ -161,7 +150,7 @@ before_script:
     ARCH: x86_64
 
 .i686: &i686
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: "${DOCKER_AMD64}"
   tags:
     - x86_64
     - gnome-build-meta
@@ -169,7 +158,7 @@ before_script:
     ARCH: i686
 
 .aarch64: &aarch64
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: "${DOCKER_AARCH64}"
   tags:
     - aarch64
     - gnome-build-meta
@@ -177,7 +166,7 @@ before_script:
     ARCH: aarch64
 
 .arm: &arm
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: "${DOCKER_AARCH64}"
   tags:
     - armhf
     - gnome-build-meta
