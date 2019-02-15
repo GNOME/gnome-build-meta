@@ -19,7 +19,7 @@ depends:
 - core-deps/spice-gtk.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst

@@ -7,7 +7,7 @@ depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst

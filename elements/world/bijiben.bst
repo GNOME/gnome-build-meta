@@ -10,7 +10,7 @@ sources:
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/tracker.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
