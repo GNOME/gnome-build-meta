@@ -11,7 +11,7 @@ depends:
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/atk.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst

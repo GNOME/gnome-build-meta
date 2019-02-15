@@ -9,7 +9,7 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/libical.bst
 - core-deps/openldap.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst

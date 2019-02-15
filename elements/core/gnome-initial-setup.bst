@@ -15,7 +15,7 @@ depends:
 - core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
 - core/network-manager-applet.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
