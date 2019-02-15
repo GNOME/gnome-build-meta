@@ -6,7 +6,7 @@ sources:
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/gcr.bst

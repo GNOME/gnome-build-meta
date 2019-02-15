@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/devhelp
   track: master
 depends:
-- sdk/WebKitGTK+.bst
+- sdk/WebKitGTK.bst
 - sdk/appstream-glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
