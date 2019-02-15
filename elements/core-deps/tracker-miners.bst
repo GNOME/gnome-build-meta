@@ -12,7 +12,7 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libosinfo.bst
 - core-deps/poppler.bst
-- core-deps/openjpeg.bst
+- sdk/openjpeg.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
 - sdk/dconf.bst
