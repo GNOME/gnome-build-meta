@@ -9,7 +9,6 @@ sources:
 - kind: local
   path: files/webkitgtk/toolchain.arm
 depends:
-- core-deps/openjpeg.bst
 - sdk/at-spi2-core.bst
 - sdk/brotli.bst
 - sdk/enchant-2.bst
@@ -23,6 +22,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/openjpeg.bst
 - sdk/pango.bst
 - sdk/woff2.bst
 - filename: desktop/hyphen.bst
