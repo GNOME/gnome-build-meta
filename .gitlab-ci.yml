@@ -110,23 +110,8 @@ before_script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
     - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
 
-    # Push the resulting runtimes to gbm.gnome.org
-    # Assume there will be no branch name collisions,
-    # the ssh key is available only on protected branches
-    - rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-    - ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
-
 .flatpak-nightly-template:
   extends: .flatpak-template
-  environment:
-    name: nightly/${ARCH}
-  variables:
-    CONFIG_FILE: config/nightly.json
-  only:
-    refs:
-      - master
-    variables:
-      - $GITLAB_SSH_KEY
   except:
     variables:
       - $EMERGENCY
