@@ -4,10 +4,15 @@ sources:
   url: gitlab_gnome_org:GNOME/tracker-miners
   track: master
 depends:
+- core-deps/gexiv2.bst
 - core-deps/NetworkManager.bst
 - core-deps/libcue.bst
 - core-deps/libgrss.bst
 - core-deps/libgsf.bst
+- core-deps/libgxps.bst
+- core-deps/libosinfo.bst
+- core-deps/poppler.bst
+- core-deps/openjpeg.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
 - sdk/dconf.bst
@@ -27,3 +32,11 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: >
+    -Dxmp=disabled
+    -Dexif=disabled
+    -Diptc=disabled
+    -Dtiff=disabled
+    -Dtaglib=disabled
+    -Dgif=disabled
