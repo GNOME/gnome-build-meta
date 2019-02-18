@@ -59,6 +59,10 @@ variables:
     environment:
       CFLAGS: '-g1'
       CXXFLAGS: '-g1'
+- arch == "arm":
+    environment:
+      CFLAGS: '-g1'
+      CXXFLAGS: '-g1'
 public:
   cpe:
     product: webkitgtk+
