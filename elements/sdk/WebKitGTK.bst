@@ -45,17 +45,15 @@ depends:
 variables:
   webkitgtk_toolchain: ''
   (?):
-    - arch == "i686":
-        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.i686
-    - arch == "arm":
-        webkitgtk_toolchain: -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
+    - arch == "i686" or arch == "arm":
+        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   cmake-local:
     -DPORT=GTK
     -DENABLE_PLUGIN_PROCESS_GTK2=OFF
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     %{webkitgtk_toolchain}
 (?):
-- arch == "i686":
+- arch == "i686" or arch == "arm":
     environment:
       CFLAGS: '-g1'
       CXXFLAGS: '-g1'
