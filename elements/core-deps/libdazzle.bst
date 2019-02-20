@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libdazzle.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libdazzle/3.31/libdazzle-3.31.90.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

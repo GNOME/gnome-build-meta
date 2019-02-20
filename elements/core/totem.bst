@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/totem
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
-    flatpak/shared-modules:
-      checkout: False
-      url: github_com:flathub/shared-modules
+- kind: tar
+  url: https://download.gnome.org/sources/totem/3.31/totem-3.31.91.tar.xz
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

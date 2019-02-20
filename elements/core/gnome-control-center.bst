@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-control-center
-  track: master
-  submodules:
-    subprojects/gvc:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control
-    subprojets/libhandy:
-      checkout: True
-      url: purism:Librem5/libhandy.git
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-control-center/3.31/gnome-control-center-3.31.90.tar.xz
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst

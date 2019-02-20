@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgxps
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgxps/0.3/libgxps-0.3.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

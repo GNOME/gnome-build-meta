@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-menus
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-menus/3.31/gnome-menus-3.31.90.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst
