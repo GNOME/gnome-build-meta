@@ -21,19 +21,14 @@ config:
 
     Extension org.gnome.Sdk.Debug:
       directory: lib/debug
-      autodelete: true
-      no-autodownload: true
 
     Extension org.gnome.Sdk.Docs:
       directory: share/runtime/docs
-      bundle: true
-      autodelete: true
-      no-autodownload: true
+      autodelete: 'true'
+      no-autodownload: 'true'
 
     Extension org.gnome.Sdk.Locale:
       directory: share/runtime/locale
-      autodelete: true
-      locale-subset: true
 
     # Copied from sdk/elements/sdk.bst from freedesktop-sdk because
     # bst doesn't support inheriting extensions

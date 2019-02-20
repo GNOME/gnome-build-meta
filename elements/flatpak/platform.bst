@@ -21,8 +21,6 @@ config:
 
     Extension org.gnome.Platform.Locale:
       directory: share/runtime/locale
-      autodelete: true
-      locale-subset: true
 
     # Copied from sdk/elements/platform.bst from freedesktop-sdk because
     # bst doesn't support inheriting extensions.
