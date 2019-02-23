@@ -25,9 +25,9 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/byteorder/byteorder-1.3.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/cairo-rs/cairo-rs-0.5.0.crate
+  url: https://static.crates.io/crates/cairo-rs/cairo-rs-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/cairo-sys-rs/cairo-sys-rs-0.7.0.crate
+  url: https://static.crates.io/crates/cairo-sys-rs/cairo-sys-rs-0.8.0.crate
 - kind: crate
   url: https://static.crates.io/crates/cast/cast-0.2.2.crate
 - kind: crate
@@ -63,7 +63,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/dtoa-short/dtoa-short-0.3.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/either/either-1.5.0.crate
+  url: https://static.crates.io/crates/either/either-1.5.1.crate
 - kind: crate
   url: https://static.crates.io/crates/encoding/encoding-0.2.33.crate
 - kind: crate
@@ -85,21 +85,21 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/fuchsia-cprng/fuchsia-cprng-0.1.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/gdk-pixbuf/gdk-pixbuf-0.5.0.crate
+  url: https://static.crates.io/crates/gdk-pixbuf/gdk-pixbuf-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gdk-pixbuf-sys/gdk-pixbuf-sys-0.7.0.crate
+  url: https://static.crates.io/crates/gdk-pixbuf-sys/gdk-pixbuf-sys-0.8.0.crate
 - kind: crate
   url: https://static.crates.io/crates/generic-array/generic-array-0.12.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gio/gio-0.5.1.crate
+  url: https://static.crates.io/crates/gio/gio-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gio-sys/gio-sys-0.7.0.crate
+  url: https://static.crates.io/crates/gio-sys/gio-sys-0.8.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/glib/glib-0.6.1.crate
+  url: https://static.crates.io/crates/glib/glib-0.7.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/glib-sys/glib-sys-0.7.0.crate
+  url: https://static.crates.io/crates/glib-sys/glib-sys-0.8.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/gobject-sys/gobject-sys-0.7.0.crate
+  url: https://static.crates.io/crates/gobject-sys/gobject-sys-0.8.0.crate
 - kind: crate
   url: https://static.crates.io/crates/idna/idna-0.1.5.crate
 - kind: crate
@@ -129,7 +129,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/memoffset/memoffset-0.2.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/nalgebra/nalgebra-0.17.1.crate
+  url: https://static.crates.io/crates/nalgebra/nalgebra-0.17.2.crate
 - kind: crate
   url: https://static.crates.io/crates/nodrop/nodrop-0.1.13.crate
 - kind: crate
@@ -141,13 +141,13 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/owning_ref/owning_ref-0.4.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pango/pango-0.5.0.crate
+  url: https://static.crates.io/crates/pango/pango-0.6.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pango-sys/pango-sys-0.7.0.crate
+  url: https://static.crates.io/crates/pango-sys/pango-sys-0.8.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pangocairo/pangocairo-0.6.0.crate
+  url: https://static.crates.io/crates/pangocairo/pangocairo-0.7.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.8.0.crate
+  url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.9.0.crate
 - kind: crate
   url: https://static.crates.io/crates/percent-encoding/percent-encoding-1.0.1.crate
 - kind: crate
