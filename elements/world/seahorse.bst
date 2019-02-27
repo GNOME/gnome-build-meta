@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/seahorse
   track: master
 depends:
+- core-deps/avahi.bst
 - core-deps/openldap.bst
 - core-deps/pwquality.bst
 - sdk/glib.bst
@@ -15,7 +16,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- world/avahi.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/itstools.bst
