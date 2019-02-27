@@ -7,7 +7,6 @@ depends:
 - world/accerciser.bst
 - world/amtk.bst
 - world/anthy.bst
-- world/avahi.bst
 - world/bijiben.bst
 - world/dconf-editor.bst
 - world/devhelp.bst
@@ -52,7 +51,6 @@ depends:
 - world/libbluray.bst
 - world/libcdio-paranoia.bst
 - world/libcdio.bst
-- world/libdaemon.bst
 - world/libgit2-glib.bst
 - world/libgit2.bst
 - world/libgnome-games-support.bst

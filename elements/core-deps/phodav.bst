@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/phodav
   track: master
 depends:
+- core-deps/avahi.bst
 - sdk/glib.bst
 - sdk/gnome-common.bst
 - filename: sdk/gtk-doc.bst
