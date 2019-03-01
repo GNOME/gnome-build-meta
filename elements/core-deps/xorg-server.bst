@@ -10,6 +10,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/pixman.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/systemd.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland-protocols.bst
@@ -24,8 +26,6 @@ depends:
 - filename: desktop/xorg-proto-xorgproto.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: vm/linux-vm-boot/systemd.bst
-  junction: freedesktop-sdk.bst
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
