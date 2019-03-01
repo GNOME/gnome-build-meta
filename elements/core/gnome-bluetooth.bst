@@ -14,7 +14,7 @@ depends:
   type: build
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- filename: vm/linux-vm-boot/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
