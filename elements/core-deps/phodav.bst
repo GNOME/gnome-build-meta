@@ -11,7 +11,7 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
-- filename: vm/linux-vm-boot/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst

@@ -3,7 +3,7 @@ sources:
 - kind: tar
   url: http://0pointer.de/public/libatasmart-0.19.tar.xz
 depends:
-- filename: vm/linux-vm-boot/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
