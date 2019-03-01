@@ -10,11 +10,11 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- filename: desktop/systemd.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-sm.bst
-  junction: freedesktop-sdk.bst
-- filename: vm/linux-vm-boot/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst

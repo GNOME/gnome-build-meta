@@ -11,7 +11,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst
-- filename: vm/linux-vm-boot/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
