@@ -5,11 +5,14 @@ sources:
   track: master
 depends:
 - core-deps/avahi.bst
+- core-deps/libgudev.bst
 - sdk/glib.bst
 - sdk/gnome-common.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
+- filename: vm/linux-vm-boot/systemd.bst
+  junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -17,6 +20,9 @@ depends:
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base/git.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
