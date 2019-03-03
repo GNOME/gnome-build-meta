@@ -4,8 +4,8 @@ variables:
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '10abe77fe8d77385d86f225b503d9185f4ef7f3a' #  1.2.3
-  BST_EXTERNAL_SHA: '0.8.0-0-g762ea216b751bf89ac15350e1cb98542963bbf33'
+  BST_SHA: '1.2.4-3-g79bbefe26a3fcd13d3de558aed6b5b4d5bc1235a'
+  BST_EXTERNAL_SHA: '0.9.0-0-g63a19e8068bd777bd9cd59b1a9442f9749ea5a85'
   FLATPAK_BRANCH: "3.30"
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
