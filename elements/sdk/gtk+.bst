@@ -25,6 +25,9 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/wayland-protocols.bst
+  type: build
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
