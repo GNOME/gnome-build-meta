@@ -12,8 +12,6 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: desktop/wayland.bst
-  junction: freedesktop-sdk.bst
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libepoxy.bst
@@ -21,6 +19,10 @@ depends:
 - filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/mesa.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: desktop/wayland-protocols.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
