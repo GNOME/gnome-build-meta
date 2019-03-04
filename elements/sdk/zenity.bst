@@ -13,3 +13,6 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/wayland-protocols.bst
+  type: build
+  junction: freedesktop-sdk.bst
