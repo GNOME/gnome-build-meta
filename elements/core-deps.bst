@@ -107,6 +107,7 @@ depends:
 - core-deps/mpc.bst
 - core-deps/mpfr.bst
 - core-deps/mtdev.bst
+- core-deps/ndctl.bst
 - core-deps/neon.bst
 - core-deps/openldap.bst
 - core-deps/osinfo-db-tools.bst
