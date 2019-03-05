@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:storaged-project/libblockdev/releases/download/2.16-1/libblockdev-2.16.tar.gz
+  url: github_com:storaged-project/libblockdev/releases/download/2.21-1/libblockdev-2.21.tar.gz
 depends:
 - core-deps/cryptsetup.bst
 - core-deps/dmraid.bst
@@ -17,3 +17,5 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+variables:
+  conf-local: --without-vdo  --without-nvdimm
