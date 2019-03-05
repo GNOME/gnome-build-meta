@@ -10,7 +10,9 @@ variables:
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
 stages:
+  - prepare_flatpak
   - flatpak
+  - finish_flatpak
   - build
 
 
@@ -60,32 +62,57 @@ before_script:
           push: true
     EOF
 
-  # and ssh key for pushing to the flatpak repo
-  # FIXME: Protect the key
-  - |
-    if [ -n "$GITLAB_SSH_KEY" ]; then
-        mkdir -p ~/.ssh
+  # flat-manager-client to push to flathub
+  - git clone https://github.com/flatpak/flat-manager
 
-        echo "$GITLAB_SSH_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+flathub-prepare:
+  stage: prepare_flatpak
+  script:
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" create https://hub.flathub.org/ stable > build.txt
+  artifacts:
+    paths:
+      - build.txt
+  only:
+    variables:
+      - $FLATHUB_REPO_TOKEN
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  tags:
+    - armhf
+    - gnome-build-meta
+  variables:
+    ARCH: arm
 
-        cat >> ~/.ssh/config << EOF
-    Host gbm-builder.gnome.org
-        User gbm
-        ProxyJump bastion.gnome.org
-        Hostname vpn.gbm-builder.gnome.org
+flathub-finish:
+  stage: finish_flatpak
+  script:
+    # the `|| true` is to work around instability in the flathub infrastructure
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" commit --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" publish --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" purge $(cat build.txt)
+  only:
+    variables:
+      - $FLATHUB_REPO_TOKEN
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  tags:
+    - armhf
+    - gnome-build-meta
+  variables:
+    ARCH: arm
 
-    Host bastion.gnome.org
-        User gbm
-    EOF
-
-        # Trust the host key of the jump host and release server
-        cat > ~/.ssh/known_hosts << EOF
-    |1|Ec1eaTSoDQshjIpoIPouJCw40R4=|wG59JbBlwNW2K3kznnH7OUZYEhA= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAz8HWpA/W/0c/jV9+nU9zyZVUjw8flLksl6BNkcM3s12AMJXTG6qLJ+qVeQwI20eDkTioLLQYgOmMsmmFsO68vlivuxHYfAvjFHui6TkDVGXJS3lPGyOCqVwRmpyG0GnrfRWdsdgrYEo6sGbParkRb/ZfXxOuUXg3wWXMmeMyWXhkb09b1uYZTUjuruJpJTQ9kIC3CH8bdl7oiq2ffd+KdAykTkzkq+kFNizNRe0uBKtkcDgYpAZGOPCEJjpjwvDrWinXoE7rvE8zMfAv2/CP5AM4D+8yHrFgWz9tOexJyNsfJAZmQjg5rWuoeYow9tTVNWVloRU3tvF8OvVprgwPAw==
-    |1|DdY9PAqPg4LrkwIatwAUs3JLOXU=|fJqmuz18y1bJLarIIqckB1dH/ts= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAGixpYwAfvRyHOlqpKnrpo3iG5zPjQNL0hcay90SlNMfZ4W6+QUoFTZ/rQXDQFbBrOgTXzFDEQxKxxo350n6dw=
-    EOF
-
-    fi
+flathub-finish-failed:
+  stage: finish_flatpak
+  script:
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" purge $(cat build.txt)
+  when: on_failure
+  only:
+    variables:
+      - $FLATHUB_REPO_TOKEN
+  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  tags:
+    - armhf
+    - gnome-build-meta
+  variables:
+    ARCH: arm
 
 .flatpak-template: &flatpak
   stage: flatpak
@@ -99,15 +126,10 @@ before_script:
         flatpak build-export --arch="${FLATPAK_ARCH}" --no-update-summary --files=files repo/ "runtimes/${runtime}" "${FLATPAK_BRANCH}"
       done
 
-    - BRANCHES=$(find repo/refs/heads/ -type f | grep "${FLATPAK_ARCH}/${FLATPAK_BRANCH}" | sed s,repo/refs/heads/,,)
-
-    # Push the resulting runtimes to gbm.gnome.org
-    # Assume there will be no branch name collisions,
-    # the ssh key is available only on protected branches
     - |
-      if [ -n "$GITLAB_SSH_KEY" ]; then
-        rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-        ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c config/stable.json incoming/repo-${CI_JOB_ID} ${BRANCHES}
+      if [ -n "$FLATPAK_REPO_TOKEN" ]; then
+        flatpak build-update-repo --generate-static-deltas repo/
+        flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" push $(cat build.txt) repo/
       fi
 
   # Store all the downloaded git and ostree repos in the distributed cache.
