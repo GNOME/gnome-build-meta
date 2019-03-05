@@ -13,6 +13,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- core/gnome-desktop.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
