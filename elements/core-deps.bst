@@ -98,6 +98,7 @@ depends:
 - core-deps/libvirt.bst
 - core-deps/libwacom.bst
 - core-deps/libxklavier.bst
+- core-deps/libyaml.bst
 - core-deps/libzapojit.bst
 - core-deps/lvm2.bst
 - core-deps/mm-common.bst

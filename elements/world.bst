@@ -63,7 +63,6 @@ depends:
 - world/libpinyin.bst
 - world/libssh2.bst
 - world/libusbmuxd.bst
-- world/libyaml.bst
 - world/lightsoff.bst
 - world/nautilus-sendto.bst
 - world/plist.bst
