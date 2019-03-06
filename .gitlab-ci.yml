@@ -127,7 +127,7 @@ flathub-finish-failed:
       done
 
     - |
-      if [ -n "$FLATPAK_REPO_TOKEN" ]; then
+      if [ -n "$FLATHUB_REPO_TOKEN" ]; then
         flatpak build-update-repo --generate-static-deltas repo/
         flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" push $(cat build.txt) repo/
       fi
