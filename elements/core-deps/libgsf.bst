@@ -8,9 +8,6 @@ depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
