@@ -15,9 +15,6 @@ depends:
   type: build
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
