@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/glibmm
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/glibmm/2.59/glibmm-2.59.1.tar.xz
 depends:
 - core-deps/libsigcplusplus.bst
 - sdk/glib.bst

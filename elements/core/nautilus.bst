@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/nautilus
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+- kind: tar
+  url: https://download.gnome.org/sources/nautilus/3.31/nautilus-3.31.90.tar.xz
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst

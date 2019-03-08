@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_com:libosinfo/libosinfo.git
-  track: master
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.4.0.tar.gz
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local

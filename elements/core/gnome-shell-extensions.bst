@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-shell-extensions.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-shell-extensions/3.31/gnome-shell-extensions-3.31.92.tar.xz
 depends:
 - core/gnome-menus.bst
 - core/gnome-shell.bst

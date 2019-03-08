@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gobject-introspection
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gobject-introspection/1.59/gobject-introspection-1.59.5.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst
@@ -16,5 +15,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >
-    -Dgtk_doc=true
+  conf-local: "-Dgtk_doc=true\n"

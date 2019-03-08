@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-online-miners
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-online-miners/3.30/gnome-online-miners-3.30.0.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst

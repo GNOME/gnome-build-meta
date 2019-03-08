@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gssdp
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gssdp/1.1/gssdp-1.1.3.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
