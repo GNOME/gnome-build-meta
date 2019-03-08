@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/atk
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/atk/2.31/atk-2.31.92.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

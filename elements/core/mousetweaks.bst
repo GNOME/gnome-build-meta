@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mousetweaks
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/mousetweaks/3.31/mousetweaks-3.31.92.tar.xz
 depends:
 - filename: sdk/gnome-common.bst
   type: build

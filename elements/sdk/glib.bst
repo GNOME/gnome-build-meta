@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/glib
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/glib/2.60/glib-2.60.0.tar.xz
 depends:
 - filename: sdk/gtk-doc.bst
   type: build
@@ -12,9 +11,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local:
-    -Dinstalled-tests=true
-    -Dselinux=disabled
+  meson-local: -Dinstalled-tests=true -Dselinux=disabled
 public:
   bst:
     integration-commands:

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gsettings-desktop-schemas/3.31/gsettings-desktop-schemas-3.31.92.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
