@@ -6,8 +6,6 @@ sources:
 depends:
 - sdk/gcr.bst
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gtk+-3.bst
 - filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
