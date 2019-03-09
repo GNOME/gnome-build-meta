@@ -6,7 +6,6 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/gnome-common.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
