@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gnome-common.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: base/texinfo.bst
