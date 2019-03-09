@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- sdk/gnome-common.bst
 - sdk/gobject-introspection.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
