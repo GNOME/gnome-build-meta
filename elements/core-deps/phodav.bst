@@ -7,7 +7,6 @@ depends:
 - core-deps/avahi.bst
 - core-deps/libgudev.bst
 - sdk/glib.bst
-- sdk/gnome-common.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
