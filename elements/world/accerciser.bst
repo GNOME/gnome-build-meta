@@ -8,6 +8,7 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/gnome-common.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst

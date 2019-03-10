@@ -18,6 +18,8 @@ depends:
 - sdk/dconf.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - filename: desktop/gstreamer.bst
