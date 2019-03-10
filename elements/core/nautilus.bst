@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/nautilus
+  url: gitlab_gnome_org:GNOME/nautilus.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/swell-foop
+  url: gitlab_gnome_org:GNOME/swell-foop.git
   track: master
 depends:
 - sdk/appstream-glib.bst

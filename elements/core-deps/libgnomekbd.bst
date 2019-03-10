@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgnomekbd
+  url: gitlab_gnome_org:GNOME/libgnomekbd.git
   track: master
 depends:
 - core-deps/libxklavier.bst

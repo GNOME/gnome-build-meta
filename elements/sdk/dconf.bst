@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/dconf
+  url: gitlab_gnome_org:GNOME/dconf.git
   track: master
 - kind: patch
   path: files/dconf/dconf-override.patch

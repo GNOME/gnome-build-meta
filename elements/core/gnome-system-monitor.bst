@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-system-monitor
+  url: gitlab_gnome_org:GNOME/gnome-system-monitor.git
   track: master
 depends:
 - core-deps/gtkmm-3.bst

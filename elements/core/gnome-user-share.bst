@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-user-share
+  url: gitlab_gnome_org:GNOME/gnome-user-share.git
   track: master
 depends:
 - core/gnome-bluetooth.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:telepathy/telepathy-glib
+  url: git_freedesktop_org:telepathy/telepathy-glib.git
   track: master
 depends:
 - core-deps/avahi.bst

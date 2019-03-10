@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-contacts
+  url: gitlab_gnome_org:GNOME/gnome-contacts.git
   track: master
 depends:
 - core-deps/folks.bst

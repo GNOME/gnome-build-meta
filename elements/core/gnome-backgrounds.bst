@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-backgrounds
+  url: gitlab_gnome_org:GNOME/gnome-backgrounds.git
   track: master
 depends:
 - sdk/glib.bst

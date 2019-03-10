@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup
+  url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
   track: master
 depends:
 - core-deps/NetworkManager.bst

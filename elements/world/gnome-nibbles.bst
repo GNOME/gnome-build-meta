@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-nibbles
+  url: gitlab_gnome_org:GNOME/gnome-nibbles.git
   track: master
 depends:
 - sdk/appstream-glib.bst

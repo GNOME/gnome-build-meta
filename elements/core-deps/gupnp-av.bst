@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gupnp-av
+  url: gitlab_gnome_org:GNOME/gupnp-av.git
   track: master
 depends:
 - core-deps/gupnp.bst

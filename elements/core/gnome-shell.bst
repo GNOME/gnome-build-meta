@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-shell
+  url: gitlab_gnome_org:GNOME/gnome-shell.git
   track: master
   submodules:
     subprojects/gvc:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control
+      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst

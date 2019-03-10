@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/librest
+  url: gitlab_gnome_org:GNOME/librest.git
   track: librest-0-7
 depends:
 - sdk/glib.bst

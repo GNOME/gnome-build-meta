@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/atkmm
+  url: gitlab_gnome_org:GNOME/atkmm.git
   track: atkmm-2-24
 depends:
 - core-deps/glibmm-2.4.bst

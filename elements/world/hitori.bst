@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/hitori
+  url: gitlab_gnome_org:GNOME/hitori.git
   track: master
 depends:
 - sdk/appstream-glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/adwaita-icon-theme
+  url: gitlab_gnome_org:GNOME/adwaita-icon-theme.git
   track: master
 depends:
 - filename: sdk/gnome-common.bst

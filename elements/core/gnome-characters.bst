@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-characters
+  url: gitlab_gnome_org:GNOME/gnome-characters.git
   track: master
 depends:
 - sdk/adwaita-icon-theme.bst

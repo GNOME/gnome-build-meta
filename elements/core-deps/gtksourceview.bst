@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtksourceview
+  url: gitlab_gnome_org:GNOME/gtksourceview.git
   track: master
 depends:
 - sdk/gtk+-3.bst

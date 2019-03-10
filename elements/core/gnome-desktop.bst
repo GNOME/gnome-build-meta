@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-desktop
+  url: gitlab_gnome_org:GNOME/gnome-desktop.git
   track: master
 depends:
 - core-deps/libgudev.bst

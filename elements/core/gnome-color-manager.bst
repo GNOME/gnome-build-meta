@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-color-manager
+  url: gitlab_gnome_org:GNOME/gnome-color-manager.git
   track: master
 depends:
 - core-deps/colord-gtk.bst

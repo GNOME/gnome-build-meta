@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-bluetooth
+  url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
   track: master
   submodules:
     subprojects/libhandy:

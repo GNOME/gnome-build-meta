@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-calendar
+  url: gitlab_gnome_org:GNOME/gnome-calendar.git
   track: master
 depends:
 - core-deps/evolution-data-server.bst

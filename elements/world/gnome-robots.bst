@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-robots
+  url: gitlab_gnome_org:GNOME/gnome-robots.git
   track: master
 depends:
 - sdk/appstream-glib.bst

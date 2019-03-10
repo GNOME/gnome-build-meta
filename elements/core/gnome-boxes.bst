@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-boxes
+  url: gitlab_gnome_org:GNOME/gnome-boxes.git
   track: master
   submodules:
     subprojects/gtk-frdp:

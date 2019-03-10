@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gupnp
+  url: gitlab_gnome_org:GNOME/gupnp.git
   track: master
 depends:
 - core-deps/NetworkManager.bst

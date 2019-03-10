@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgee
+  url: gitlab_gnome_org:GNOME/libgee.git
   track: master
 depends:
 - sdk/glib.bst

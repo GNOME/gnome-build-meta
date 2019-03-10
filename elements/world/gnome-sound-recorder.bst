@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-sound-recorder
+  url: gitlab_gnome_org:GNOME/gnome-sound-recorder.git
   track: master
 depends:
 - sdk/gdk-pixbuf.bst

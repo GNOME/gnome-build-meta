@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/evince
+  url: gitlab_gnome_org:GNOME/evince.git
   track: master
 depends:
 - core-deps/gspell.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/tracker-miners
+  url: gitlab_gnome_org:GNOME/tracker-miners.git
   track: master
 depends:
 - core-deps/gexiv2.bst

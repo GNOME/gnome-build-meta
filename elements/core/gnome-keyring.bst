@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-keyring
+  url: gitlab_gnome_org:GNOME/gnome-keyring.git
   track: master
 depends:
 - sdk/gcr.bst

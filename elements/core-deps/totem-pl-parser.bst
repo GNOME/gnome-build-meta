@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/totem-pl-parser
+  url: gitlab_gnome_org:GNOME/totem-pl-parser.git
   track: master
 depends:
 - core-deps/gmime3.bst

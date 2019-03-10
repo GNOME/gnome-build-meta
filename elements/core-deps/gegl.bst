@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gegl
+  url: gitlab_gnome_org:GNOME/gegl.git
   track: master
 depends:
 - core-deps/babl.bst

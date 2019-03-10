@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtk-doc
+  url: gitlab_gnome_org:GNOME/gtk-doc.git
   track: master
 depends:
 - sdk/yelp-tools.bst

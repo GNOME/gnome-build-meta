@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-code-assistance
+  url: gitlab_gnome_org:GNOME/gnome-code-assistance.git
   track: master
 depends:
 - sdk/vala.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gobject-introspection
+  url: gitlab_gnome_org:GNOME/gobject-introspection.git
   track: master
 depends:
 - sdk/glib.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgepub
+  url: gitlab_gnome_org:GNOME/libgepub.git
   track: master
 depends:
 - sdk/WebKitGTK.bst

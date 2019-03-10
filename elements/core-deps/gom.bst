@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gom
+  url: gitlab_gnome_org:GNOME/gom.git
   track: master
 depends:
 - sdk/gdk-pixbuf.bst

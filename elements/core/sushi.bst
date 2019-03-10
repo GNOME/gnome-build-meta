@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/sushi
+  url: gitlab_gnome_org:GNOME/sushi.git
   track: master
 depends:
 - core-deps/gtksourceview-3.bst

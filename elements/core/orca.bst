@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/orca
+  url: gitlab_gnome_org:GNOME/orca.git
   track: master
 depends:
 - core-deps/pyatspi2.bst

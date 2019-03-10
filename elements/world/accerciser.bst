@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/accerciser
+  url: gitlab_gnome_org:GNOME/accerciser.git
   track: master
 depends:
 - core-deps/pyatspi2.bst

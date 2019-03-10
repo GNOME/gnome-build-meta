@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/file-roller
+  url: gitlab_gnome_org:GNOME/file-roller.git
   track: master
 depends:
 - sdk/adwaita-icon-theme.bst

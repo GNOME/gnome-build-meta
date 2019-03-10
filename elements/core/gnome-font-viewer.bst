@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-font-viewer
+  url: gitlab_gnome_org:GNOME/gnome-font-viewer.git
   track: master
 depends:
 - core/gnome-desktop.bst

@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-documents
+  url: gitlab_gnome_org:GNOME/gnome-documents.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst

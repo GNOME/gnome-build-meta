@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/tracker
+  url: gitlab_gnome_org:GNOME/tracker.git
   track: master
 depends:
 - core-deps/NetworkManager.bst

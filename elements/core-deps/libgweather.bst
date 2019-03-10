@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgweather
+  url: gitlab_gnome_org:GNOME/libgweather.git
   track: master
 depends:
 - core-deps/geocode-glib.bst

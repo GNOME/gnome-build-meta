@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-menus
+  url: gitlab_gnome_org:GNOME/gnome-menus.git
   track: master
 depends:
 - sdk/glib.bst

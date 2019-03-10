@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/yelp
+  url: gitlab_gnome_org:GNOME/yelp.git
   track: master
 depends:
 - sdk/WebKitGTK.bst

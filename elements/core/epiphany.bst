@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/epiphany
+  url: gitlab_gnome_org:GNOME/epiphany.git
   track: master
 depends:
 - core-deps/libdazzle.bst

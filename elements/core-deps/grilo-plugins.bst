@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/grilo-plugins
+  url: gitlab_gnome_org:GNOME/grilo-plugins.git
   track: master
 depends:
 - core-deps/gmime3.bst

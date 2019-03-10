@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtk
+  url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
 depends:
 - sdk/at-spi2-atk.bst

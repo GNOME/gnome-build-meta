@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-clocks
+  url: gitlab_gnome_org:GNOME/gnome-clocks.git
   track: master
 depends:
 - core-deps/geocode-glib.bst

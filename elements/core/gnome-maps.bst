@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-maps
+  url: gitlab_gnome_org:GNOME/gnome-maps.git
   track: master
 depends:
 - core-deps/folks.bst

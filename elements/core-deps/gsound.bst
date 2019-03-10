@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gsound
+  url: gitlab_gnome_org:GNOME/gsound.git
   track: master
 depends:
 - sdk/glib.bst

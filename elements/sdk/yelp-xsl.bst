@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/yelp-xsl
+  url: gitlab_gnome_org:GNOME/yelp-xsl.git
   track: master
 depends:
 - filename: desktop/itstools.bst

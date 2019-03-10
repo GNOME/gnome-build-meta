@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/rygel
+  url: gitlab_gnome_org:GNOME/rygel.git
   track: master
 depends:
 - core-deps/gssdp.bst

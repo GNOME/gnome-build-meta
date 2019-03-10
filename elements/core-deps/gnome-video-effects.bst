@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-video-effects
+  url: gitlab_gnome_org:GNOME/gnome-video-effects.git
   track: master
 depends:
 - filename: sdk/gnome-common.bst

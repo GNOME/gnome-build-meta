@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libchamplain
+  url: gitlab_gnome_org:GNOME/libchamplain.git
   track: master
 depends:
 - sdk/clutter-gtk.bst

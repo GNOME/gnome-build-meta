@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libsecret
+  url: gitlab_gnome_org:GNOME/libsecret.git
   track: master
 depends:
 - sdk/glib.bst

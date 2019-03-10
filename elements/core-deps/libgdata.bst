@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgdata
+  url: gitlab_gnome_org:GNOME/libgdata.git
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst

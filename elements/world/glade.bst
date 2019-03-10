@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/glade
+  url: gitlab_gnome_org:GNOME/glade.git
   track: master
 depends:
 - filename: sdk/cantarell-fonts.bst

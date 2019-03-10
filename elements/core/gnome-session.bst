@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-session
+  url: gitlab_gnome_org:GNOME/gnome-session.git
   track: master
 depends:
 - core-deps/upower.bst

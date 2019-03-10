@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: git_freedesktop_org:gstreamer/gstreamer
+  url: git_freedesktop_org:gstreamer/gstreamer.git
   track: master
 depends:
 - sdk/glib.bst

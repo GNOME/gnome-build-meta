@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/phodav
+  url: gitlab_gnome_org:GNOME/phodav.git
   track: master
 depends:
 - core-deps/avahi.bst

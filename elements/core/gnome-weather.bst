@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-weather
+  url: gitlab_gnome_org:GNOME/gnome-weather.git
   track: master
 depends:
 - core-deps/libgweather.bst

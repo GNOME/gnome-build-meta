@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/nautilus-sendto
+  url: gitlab_gnome_org:GNOME/nautilus-sendto.git
   track: master
 depends:
 - sdk/appstream-glib.bst

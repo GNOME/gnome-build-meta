@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/tali
+  url: gitlab_gnome_org:GNOME/tali.git
   track: master
 depends:
 - sdk/gtk+-3.bst

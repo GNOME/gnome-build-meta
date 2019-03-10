@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gitg
+  url: gitlab_gnome_org:GNOME/gitg.git
   track: master
 depends:
 - core-deps/gtksourceview-3.bst

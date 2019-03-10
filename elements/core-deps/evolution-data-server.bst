@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/evolution-data-server
+  url: gitlab_gnome_org:GNOME/evolution-data-server.git
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst

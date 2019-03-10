@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gdm
+  url: gitlab_gnome_org:GNOME/gdm.git
   track: master
 depends:
 - core-deps/accountsservice.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-klotski
+  url: gitlab_gnome_org:GNOME/gnome-klotski.git
   track: master
 depends:
 - sdk/appstream-glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/vino
+  url: gitlab_gnome_org:GNOME/vino.git
   track: master
 depends:
 - core-deps/NetworkManager.bst

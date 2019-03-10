@@ -1,15 +1,15 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/totem
+  url: gitlab_gnome_org:GNOME/totem.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/libgd.git
     flatpak/shared-modules:
       checkout: False
-      url: github_com:flathub/shared-modules
+      url: github_com:flathub/shared-modules.git
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

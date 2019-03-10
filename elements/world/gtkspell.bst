@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_code_sf_net:p/gtkspell/gtkspell
+  url: git_code_sf_net:p/gtkspell/gtkspell.git
   track: master
 depends:
 - sdk/enchant-2.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-settings-daemon
+  url: gitlab_gnome_org:GNOME/gnome-settings-daemon.git
   track: master
   submodules:
     subprojects/gvc:

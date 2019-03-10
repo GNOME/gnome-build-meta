@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-multi-writer
+  url: gitlab_gnome_org:GNOME/gnome-multi-writer.git
   track: master
 depends:
 - core-deps/libgusb.bst

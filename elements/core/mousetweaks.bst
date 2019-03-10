@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/mousetweaks
+  url: gitlab_gnome_org:GNOME/mousetweaks.git
   track: master
 depends:
 - sdk/gsettings-desktop-schemas.bst

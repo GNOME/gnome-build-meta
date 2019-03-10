@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libnotify
+  url: gitlab_gnome_org:GNOME/libnotify.git
   track: master
 depends:
 - sdk/glib.bst

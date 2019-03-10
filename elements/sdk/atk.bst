@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/atk
+  url: gitlab_gnome_org:GNOME/atk.git
   track: master
 depends:
 - sdk/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/pangomm
+  url: gitlab_gnome_org:GNOME/pangomm.git
   track: master
 depends:
 - core-deps/cairomm.bst

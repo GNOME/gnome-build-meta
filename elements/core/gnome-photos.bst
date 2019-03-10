@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-photos
+  url: gitlab_gnome_org:GNOME/gnome-photos.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst

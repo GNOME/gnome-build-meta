@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gjs
+  url: gitlab_gnome_org:GNOME/gjs.git
   track: master
 depends:
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-software
+  url: gitlab_gnome_org:GNOME/gnome-software.git
   track: master
 depends:
 - core-deps/PackageKit.bst

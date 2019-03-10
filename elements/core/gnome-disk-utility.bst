@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility
+  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
   track: master
 depends:
 - core-deps/libdvdread.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-online-accounts
+  url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
   track: master
 depends:
 - core-deps/librest.bst

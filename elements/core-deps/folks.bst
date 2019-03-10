@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/folks
+  url: gitlab_gnome_org:GNOME/folks.git
   track: master
 depends:
 - core-deps/evolution-data-server.bst

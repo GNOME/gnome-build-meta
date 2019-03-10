@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libgsf
+  url: gitlab_gnome_org:GNOME/libgsf.git
   track: master
 depends:
 - sdk/gdk-pixbuf.bst

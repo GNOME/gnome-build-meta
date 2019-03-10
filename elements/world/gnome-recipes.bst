@@ -6,7 +6,7 @@ sources:
   submodules:
     subprojects/libgd:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgd
+      url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst

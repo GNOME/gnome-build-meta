@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/cheese
+  url: gitlab_gnome_org:GNOME/cheese.git
   track: master
 depends:
 - core-deps/gnome-video-effects.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-online-miners
+  url: gitlab_gnome_org:GNOME/gnome-online-miners.git
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst

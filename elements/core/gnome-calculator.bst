@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-calculator
+  url: gitlab_gnome_org:GNOME/gnome-calculator.git
   track: master
 depends:
 - core-deps/gtksourceview.bst

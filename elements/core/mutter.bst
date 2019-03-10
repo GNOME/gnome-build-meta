@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/mutter
+  url: gitlab_gnome_org:GNOME/mutter.git
   track: master
 depends:
 - core/gnome-settings-daemon.bst

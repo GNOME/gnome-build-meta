@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-todo
+  url: gitlab_gnome_org:GNOME/gnome-todo.git
   track: master
 depends:
 - core-deps/evolution-data-server.bst

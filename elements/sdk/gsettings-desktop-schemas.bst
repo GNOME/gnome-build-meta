@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas
+  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas.git
   track: master
 depends:
 - sdk/glib.bst

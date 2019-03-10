@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/network-manager-applet
+  url: gitlab_gnome_org:GNOME/network-manager-applet.git
   track: master
 depends:
 - core-deps/ModemManager.bst

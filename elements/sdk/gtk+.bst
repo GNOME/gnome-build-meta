@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtk
+  url: gitlab_gnome_org:GNOME/gtk.git
   track: master
 depends:
 - sdk/at-spi2-atk.bst

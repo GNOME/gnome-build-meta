@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: git_freedesktop_org:telepathy/telepathy-mission-control
+  url: git_freedesktop_org:telepathy/telepathy-mission-control.git
   track: telepathy-mission-control-5.16
 depends:
 - core-deps/NetworkManager.bst

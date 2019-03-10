@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/babl
+  url: gitlab_gnome_org:GNOME/babl.git
   track: master
 depends:
 - filename: base/git-minimal.bst

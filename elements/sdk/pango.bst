@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/pango
+  url: gitlab_gnome_org:GNOME/pango.git
   track: master
 depends:
 - sdk/glib.bst

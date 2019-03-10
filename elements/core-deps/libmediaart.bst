@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/libmediaart
+  url: gitlab_gnome_org:GNOME/libmediaart.git
   track: master
 depends:
 - sdk/gdk-pixbuf.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/clutter-gst
+  url: gitlab_gnome_org:GNOME/clutter-gst.git
   track: clutter-gst-3.0
 depends:
 - sdk/clutter.bst

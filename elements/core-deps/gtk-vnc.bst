@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gtk-vnc
+  url: gitlab_gnome_org:GNOME/gtk-vnc.git
   track: master
   submodules:
     src/keycodemapdb:

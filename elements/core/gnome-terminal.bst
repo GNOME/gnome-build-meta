@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-terminal
+  url: gitlab_gnome_org:GNOME/gnome-terminal.git
   track: master
 depends:
 - core/gnome-shell.bst

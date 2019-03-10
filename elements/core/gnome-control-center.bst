@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/gnome-control-center
+  url: gitlab_gnome_org:GNOME/gnome-control-center.git
   track: master
   submodules:
     subprojects/gvc:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control
+      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
     subprojets/libhandy:
       checkout: True
       url: purism:Librem5/libhandy.git
