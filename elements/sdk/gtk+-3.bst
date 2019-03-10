@@ -6,6 +6,7 @@ sources:
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
+- sdk/default-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
