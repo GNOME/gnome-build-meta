@@ -6,6 +6,8 @@ sources:
 depends:
 - core/gnome-bluetooth.bst
 - core/nautilus.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - filename: sdk/yelp-tools.bst
