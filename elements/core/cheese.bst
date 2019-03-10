@@ -12,6 +12,8 @@ depends:
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst

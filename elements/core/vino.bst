@@ -6,6 +6,8 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - sdk/glib.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
