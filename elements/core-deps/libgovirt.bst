@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/librest.bst
 - sdk/gnome-common.bst
+  type: build
 - sdk/gobject-introspection.bst
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst

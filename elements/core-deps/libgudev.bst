@@ -6,6 +6,7 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst
+  type: build
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build

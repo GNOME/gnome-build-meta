@@ -9,6 +9,7 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gnome-common.bst
+  type: build
 - world/kyotocabinet.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
