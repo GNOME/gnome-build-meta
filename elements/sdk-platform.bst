@@ -14,6 +14,7 @@ depends:
 - sdk/cogl.bst
 - sdk/dbus-glib.bst
 - sdk/dconf.bst
+- sdk/default-icon-theme.bst
 - sdk/enchant-2.bst
 - sdk/fcitx.bst
 - sdk/gcab.bst
