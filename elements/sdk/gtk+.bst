@@ -19,6 +19,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
+- filename: desktop/hicolor-icon-theme.bst
+  junction: freedesktop-sdk.bst
 - filename: desktop/libepoxy.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/libxkbcommon.bst
