@@ -4,7 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-video-effects
   track: master
 depends:
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
