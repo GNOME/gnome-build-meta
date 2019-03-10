@@ -1,16 +1,13 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.8.0.tar.gz
+  url: https://download.samba.org/pub/samba/rc/samba-4.10.0rc4.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 depends:
 - core-deps/libtirpc.bst
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
-- filename: base/python2.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
@@ -19,7 +16,7 @@ config:
       --sbindir=%{sbindir} --sysconfdir=%{sysconfdir} --datadir=%{datadir}
       --includedir=%{includedir} --libdir=%{libdir} --libexecdir=%{libexecdir}
       --localstatedir=%{localstatedir} --sharedstatedir=%{sharedstatedir}
-      --mandir=%{mandir} --infodir=%{infodir}
+      --mandir=%{mandir} --infodir=%{infodir} --without-json
   build-commands:
   - make
   install-commands:
