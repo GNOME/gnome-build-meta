@@ -16,7 +16,9 @@ variables:
 stages:
   - track
   - build
+  - prepare_flatpak
   - flatpak
+  - finish_flatpak
 
 
 # Store all the downloaded git and ostree repos in the cache.
@@ -85,6 +87,15 @@ before_script:
 
     fi
 
+  # flat-manager-client to push to flathub
+  - git clone https://github.com/flatpak/flat-manager
+
+  - |
+    if [ -n "$FLATHUB_REPO_TOKEN" ]; then
+      export REPO_TOKEN=$FLATHUB_REPO_TOKEN
+      export FLAT_MANAGER_SERVER=https://hub.flathub.org/
+    fi
+
 #
 # Templates shared by multiple jobs
 #
@@ -128,16 +139,18 @@ before_script:
       - $EMERGENCY
 
 .flatpak-stable-template:
-  extends: .flatpak-template
-  environment:
-    name: ${FLATPAK_BRANCH}/${ARCH}
-  variables:
-    CONFIG_FILE: config/stable.json
+  stage: flatpak
+  script:
+    - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
+
+    - |
+      if [ -n "$REPO_TOKEN" ]; then
+        bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
+        flatpak build-update-repo --generate-static-deltas repo/
+        flat-manager/flat-manager-client push $(cat build.txt) repo/
+      fi
   only:
-    refs:
-      - /^gnome-\d-\d\d$/
-    variables:
-      - $GITLAB_SSH_KEY
+    - /^gnome-\d-\d\d$/
 
 .flatpak-emergency-template:
   extends: .flatpak-nightly-template
@@ -220,6 +233,18 @@ build-gnome-core-arm:
   <<: *arm
 
 
+flathub-prepare:
+  stage: prepare_flatpak
+  script:
+    - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER stable > build.txt
+  artifacts:
+    paths:
+      - build.txt
+  only:
+    - /^gnome-\d-\d\d$/
+  <<: *x86_64
+
+
 flatpak-nightly-x86_64:
   extends: .flatpak-nightly-template
   <<: *x86_64
@@ -269,3 +294,25 @@ flatpak-emergency-aarch64:
 flatpak-emergency-arm:
   extends: .flatpak-emergency-template
   <<: *arm
+
+
+flathub-finish:
+  stage: finish_flatpak
+  script:
+    # the `|| true` is to work around instability in the flathub infrastructure
+    # https://github.com/flatpak/flat-manager/issues/2
+    - flat-manager/flat-manager-client commit --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client publish --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client purge $(cat build.txt)
+  only:
+    - /^gnome-\d-\d\d$/
+  <<: *x86_64
+
+flathub-finish-failed:
+  stage: finish_flatpak
+  script:
+    - flat-manager/flat-manager-client purge $(cat build.txt)
+  when: on_failure
+  only:
+    - /^gnome-\d-\d\d$/
+  <<: *x86_64
