@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/zenity.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/zenity/3.30/zenity-3.30.0.tar.xz
 depends:
 - filename: sdk/gnome-common.bst
   type: build

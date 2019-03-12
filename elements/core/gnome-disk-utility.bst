@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-disk-utility/3.32/gnome-disk-utility-3.32.0.tar.xz
 depends:
 - core-deps/libdvdread.bst
 - core-deps/pwquality.bst

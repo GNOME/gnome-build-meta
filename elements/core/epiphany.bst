@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/epiphany.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/epiphany/3.32/epiphany-3.32.0.tar.xz
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst

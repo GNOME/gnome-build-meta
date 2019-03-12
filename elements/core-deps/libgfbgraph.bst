@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgfbgraph.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gfbgraph/0.2/gfbgraph-0.2.3.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/librest.bst

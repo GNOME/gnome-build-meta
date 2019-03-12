@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/pyatspi2.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/pyatspi/2.32/pyatspi-2.32.0.tar.xz
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst

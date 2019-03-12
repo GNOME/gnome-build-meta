@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/tracker-miners/2.2/tracker-miners-2.2.1.tar.xz
 depends:
 - core-deps/gexiv2.bst
 - core-deps/NetworkManager.bst
@@ -33,10 +32,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >
-    -Dxmp=disabled
-    -Dexif=disabled
-    -Diptc=disabled
-    -Dtiff=disabled
-    -Dtaglib=disabled
-    -Dgif=disabled
+  meson-local: "-Dxmp=disabled -Dexif=disabled -Diptc=disabled -Dtiff=disabled -Dtaglib=disabled\
+    \ -Dgif=disabled\n"

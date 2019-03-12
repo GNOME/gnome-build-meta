@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-shell.git
-  track: master
-  submodules:
-    subprojects/gvc:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-shell/3.32/gnome-shell-3.32.0.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst

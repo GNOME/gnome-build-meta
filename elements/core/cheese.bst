@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/cheese.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/cheese/3.32/cheese-3.32.0.tar.xz
 depends:
 - core-deps/gnome-video-effects.bst
 - core-deps/libgudev.bst

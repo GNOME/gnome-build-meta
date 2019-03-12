@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgsf.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgsf/1.14/libgsf-1.14.45.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

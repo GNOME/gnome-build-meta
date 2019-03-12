@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgweather.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.0.tar.xz
 depends:
 - core-deps/geocode-glib.bst
 - sdk/glib.bst

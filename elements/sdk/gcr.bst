@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gcr.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/gcr/3.28/gcr-3.28.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst

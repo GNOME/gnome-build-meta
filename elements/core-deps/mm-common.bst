@@ -17,9 +17,8 @@
 
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mm-common.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/mm-common/0.9/mm-common-0.9.12.tar.xz
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/

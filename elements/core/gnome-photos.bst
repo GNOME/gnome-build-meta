@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-photos.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd.git
+- kind: tar
+  url: https://download.gnome.org/sources/gnome-photos/3.31/gnome-photos-3.31.91.tar.xz
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst
