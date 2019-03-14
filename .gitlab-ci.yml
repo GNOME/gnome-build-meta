@@ -61,37 +61,14 @@ before_script:
           push: true
     EOF
 
-  # and ssh key for pushing to the flatpak repo
-  - |
-    if [ -n "$GITLAB_SSH_KEY" ]; then
-        mkdir -p ~/.ssh
-
-        echo "$GITLAB_SSH_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-
-        cat >> ~/.ssh/config << EOF
-    Host gbm-builder.gnome.org
-        User gbm
-        ProxyJump bastion.gnome.org
-        Hostname vpn.gbm-builder.gnome.org
-
-    Host bastion.gnome.org
-        User gbm
-    EOF
-
-        # Trust the host key of the jump host and release server
-        cat > ~/.ssh/known_hosts << EOF
-    |1|Ec1eaTSoDQshjIpoIPouJCw40R4=|wG59JbBlwNW2K3kznnH7OUZYEhA= ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAz8HWpA/W/0c/jV9+nU9zyZVUjw8flLksl6BNkcM3s12AMJXTG6qLJ+qVeQwI20eDkTioLLQYgOmMsmmFsO68vlivuxHYfAvjFHui6TkDVGXJS3lPGyOCqVwRmpyG0GnrfRWdsdgrYEo6sGbParkRb/ZfXxOuUXg3wWXMmeMyWXhkb09b1uYZTUjuruJpJTQ9kIC3CH8bdl7oiq2ffd+KdAykTkzkq+kFNizNRe0uBKtkcDgYpAZGOPCEJjpjwvDrWinXoE7rvE8zMfAv2/CP5AM4D+8yHrFgWz9tOexJyNsfJAZmQjg5rWuoeYow9tTVNWVloRU3tvF8OvVprgwPAw==
-    |1|DdY9PAqPg4LrkwIatwAUs3JLOXU=|fJqmuz18y1bJLarIIqckB1dH/ts= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAGixpYwAfvRyHOlqpKnrpo3iG5zPjQNL0hcay90SlNMfZ4W6+QUoFTZ/rQXDQFbBrOgTXzFDEQxKxxo350n6dw=
-    EOF
-
-    fi
-
   # flat-manager-client to push to flathub
   - git clone https://github.com/flatpak/flat-manager
 
   - |
-    if [ -n "$FLATHUB_REPO_TOKEN" ]; then
+    if [ "$FLATPAK_BRANCH" = master ] && [ -n "$NIGHTLY_REPO_TOKEN" ]; then
+      export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
+      export FLAT_MANAGER_SERVER=https://gbm.gnome.org/
+    elif [ "$FLATPAK_BRANCH" != master ] && [ -n "$FLATHUB_REPO_TOKEN" ]; then
       export REPO_TOKEN=$FLATHUB_REPO_TOKEN
       export FLAT_MANAGER_SERVER=https://hub.flathub.org/
     fi
@@ -115,50 +92,16 @@ before_script:
   stage: flatpak
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
+
     - bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
-
-    # Push the resulting runtimes to gbm.gnome.org
-    # Assume there will be no branch name collisions,
-    # the ssh key is available only on protected branches
-    - rsync -a repo/ gbm-builder.gnome.org:incoming/repo-${CI_JOB_ID}
-    - ssh gbm-builder.gnome.org gbm-flatpak-scripts/import-commits -c "${CONFIG_FILE}" incoming/repo-${CI_JOB_ID}
-
-.flatpak-nightly-template:
-  extends: .flatpak-template
-  environment:
-    name: nightly/${ARCH}
-  variables:
-    CONFIG_FILE: config/nightly.json
+    - flatpak build-update-repo --generate-static-deltas repo/
+    - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
-    refs:
-      - master
-    variables:
-      - $GITLAB_SSH_KEY
+    - master
+    - /^gnome-\d-\d\d$/
   except:
     variables:
       - $EMERGENCY
-
-.flatpak-stable-template:
-  stage: flatpak
-  script:
-    - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
-
-    - |
-      if [ -n "$REPO_TOKEN" ]; then
-        bst -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
-        flatpak build-update-repo --generate-static-deltas repo/
-        flat-manager/flat-manager-client push $(cat build.txt) repo/
-      fi
-  only:
-    - /^gnome-\d-\d\d$/
-
-.flatpak-emergency-template:
-  extends: .flatpak-nightly-template
-  when: manual
-  only:
-    variables:
-      - $EMERGENCY
-  except: []
 
 #
 # Architecture specific settings
@@ -233,7 +176,7 @@ build-gnome-core-arm:
   <<: *arm
 
 
-flathub-prepare:
+flapak-prepare:
   stage: prepare_flatpak
   script:
     - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER stable > build.txt
@@ -241,62 +184,32 @@ flathub-prepare:
     paths:
       - build.txt
   only:
+    - master
     - /^gnome-\d-\d\d$/
+  except:
+    variables:
+      - $EMERGENCY
   <<: *x86_64
 
 
-flatpak-nightly-x86_64:
-  extends: .flatpak-nightly-template
+flatpak-x86_64:
+  extends: .flatpak-template
   <<: *x86_64
 
-flatpak-nightly-i386:
-  extends: .flatpak-nightly-template
+flatpak-i386:
+  extends: .flatpak-template
   <<: *i686
 
-flatpak-nightly-aarch64:
-  extends: .flatpak-nightly-template
+flatpak-aarch64:
+  extends: .flatpak-template
   <<: *aarch64
 
-flatpak-nightly-arm:
-  extends: .flatpak-nightly-template
+flatpak-arm:
+  extends: .flatpak-template
   <<: *arm
 
 
-flatpak-stable-x86_64:
-  extends: .flatpak-stable-template
-  <<: *x86_64
-
-flatpak-stable-i386:
-  extends: .flatpak-stable-template
-  <<: *i686
-
-flatpak-stable-aarch64:
-  extends: .flatpak-stable-template
-  <<: *aarch64
-
-flatpak-stable-arm:
-  extends: .flatpak-stable-template
-  <<: *arm
-
-
-flatpak-emergency-x86_64:
-  extends: .flatpak-emergency-template
-  <<: *x86_64
-
-flatpak-emergency-i386:
-  extends: .flatpak-emergency-template
-  <<: *i686
-
-flatpak-emergency-aarch64:
-  extends: .flatpak-emergency-template
-  <<: *aarch64
-
-flatpak-emergency-arm:
-  extends: .flatpak-emergency-template
-  <<: *arm
-
-
-flathub-finish:
+flatpak-finish:
   stage: finish_flatpak
   script:
     # the `|| true` is to work around instability in the flathub infrastructure
@@ -305,14 +218,22 @@ flathub-finish:
     - flat-manager/flat-manager-client publish --wait $(cat build.txt) || true
     - flat-manager/flat-manager-client purge $(cat build.txt)
   only:
+    - master
     - /^gnome-\d-\d\d$/
+  except:
+    variables:
+      - $EMERGENCY
   <<: *x86_64
 
-flathub-finish-failed:
+flatpak-finish-failed:
   stage: finish_flatpak
   script:
     - flat-manager/flat-manager-client purge $(cat build.txt)
   when: on_failure
   only:
+    - master
     - /^gnome-\d-\d\d$/
+  except:
+    variables:
+      - $EMERGENCY
   <<: *x86_64
