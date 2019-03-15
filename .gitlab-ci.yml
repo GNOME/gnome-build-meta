@@ -6,7 +6,7 @@ variables:
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.2.4-3-g79bbefe26a3fcd13d3de558aed6b5b4d5bc1235a'
   BST_EXTERNAL_SHA: '0.9.0-0-g63a19e8068bd777bd9cd59b1a9442f9749ea5a85'
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: '3.32'
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
