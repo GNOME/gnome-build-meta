@@ -123,7 +123,6 @@ depends:
 - core-deps/pwquality.bst
 - core-deps/pyatspi2.bst
 - core-deps/rpcsvc-proto.bst
-- core-deps/samba.bst
 - core-deps/sane-backends.bst
 - core-deps/sassc.bst
 - core-deps/speech-dispatcher.bst
