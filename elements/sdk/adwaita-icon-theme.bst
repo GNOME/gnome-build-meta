@@ -4,8 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/adwaita-icon-theme.git
   track: master
 depends:
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - filename: base/buildsystem-autotools.bst
