@@ -11,8 +11,6 @@ depends:
 - core-deps/libzapojit.bst
 - core-deps/tracker.bst
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
