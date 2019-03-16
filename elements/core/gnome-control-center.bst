@@ -24,7 +24,6 @@ depends:
 - core-deps/libhandy.bst
 - core-deps/libwacom.bst
 - core-deps/pwquality.bst
-- core-deps/samba.bst
 - core-deps/upower.bst
 - core-deps/udisks2.bst
 - core/cheese.bst
