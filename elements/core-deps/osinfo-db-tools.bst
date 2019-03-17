@@ -6,9 +6,6 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
