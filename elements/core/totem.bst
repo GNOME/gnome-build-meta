@@ -30,9 +30,6 @@ depends:
 - sdk/gtk+-3.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
