@@ -8,9 +8,6 @@ depends:
 - filename: sdk/gnome-common.bst
   type: build
 - sdk/gobject-introspection.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
