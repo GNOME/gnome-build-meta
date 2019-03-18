@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/cogl.git
-  track: cogl-1.22
+  track: jjardon/static_inline
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
