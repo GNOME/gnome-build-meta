@@ -7,6 +7,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+  type: build
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
