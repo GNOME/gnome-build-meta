@@ -8,7 +8,7 @@ sources:
   directory: data
 depends:
 - sdk/glib.bst
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
   type: build
 - world/kyotocabinet.bst
 - filename: base/buildsystem-autotools.bst

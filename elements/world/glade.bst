@@ -8,7 +8,7 @@ depends:
   type: runtime
 - filename: sdk/adwaita-icon-theme.bst
   type: runtime
-- sdk/gnome-common.bst
+- filename: sdk/gnome-common.bst
   type: build
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst

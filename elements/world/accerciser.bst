@@ -7,11 +7,11 @@ depends:
 - core-deps/pyatspi2.bst
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
-- sdk/gnome-common.bst
-  type: build
 - sdk/gtk+-3.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
+- filename: sdk/gnome-common.bst
+  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
