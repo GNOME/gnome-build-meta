@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas.git
   track: master
 - kind: patch
