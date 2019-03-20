@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: github_com:hughsie/libgusb.git
   track: master
 depends:

@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: git_freedesktop_org:NetworkManager/NetworkManager.git
   track: master
 depends:
