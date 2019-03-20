@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: github_com:hughsie/PackageKit.git
   track: master
 depends:
