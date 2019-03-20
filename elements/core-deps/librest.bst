@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/librest.git
   track: librest-0-7
 depends:

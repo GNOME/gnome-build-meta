@@ -1,6 +1,6 @@
 kind: distutils
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/pygobject.git
   track: master
 depends:
