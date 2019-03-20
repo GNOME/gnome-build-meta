@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: git_freedesktop_org:accountsservice/accountsservice.git
   track: master
 depends:

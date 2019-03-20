@@ -160,20 +160,68 @@ track:
       - logs
       - project.refs
 
+track-tags:
+  <<: *x86_64
+  stage: track
+  script:
+    - |
+      sed -i "s/track-tags: False/track-tags: True/" project.conf
+      ${BST} track --deps all core.bst flatpak-runtimes.bst
+  retry: 2
+  # don't run on stable branches
+  except:
+    - /^gnome-\d-\d\d$/
+  artifacts:
+    when: always
+    paths:
+      - logs
+      - project.refs
 
 build-gnome-core-x86_64:
+  dependencies:
+    - track
   extends: .build-template
   <<: *x86_64
 
 build-gnome-core-i386:
+  dependencies:
+    - track
   extends: .build-template
   <<: *i686
 
 build-gnome-core-aarch64:
+  dependencies:
+    - track
   extends: .build-template
   <<: *aarch64
 
 build-gnome-core-arm:
+  dependencies:
+    - track
+  extends: .build-template
+  <<: *arm
+
+build-gnome-core-x86_64-tag:
+  dependencies:
+    - track-tags
+  extends: .build-template
+  <<: *x86_64
+
+build-gnome-core-i386-tag:
+  dependencies:
+    - track-tags
+  extends: .build-template
+  <<: *i686
+
+build-gnome-core-aarch64-tag:
+  dependencies:
+    - track-tags
+  extends: .build-template
+  <<: *aarch64
+
+build-gnome-core-arm-tag:
+  dependencies:
+    - track-tags
   extends: .build-template
   <<: *arm
 
