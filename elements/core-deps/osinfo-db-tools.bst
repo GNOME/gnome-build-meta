@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_com:libosinfo/osinfo-db-tools.git
   track: master
 depends:
