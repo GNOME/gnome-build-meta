@@ -11,7 +11,5 @@ depends:
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - filename: base.bst
   junction: freedesktop-sdk.bst
