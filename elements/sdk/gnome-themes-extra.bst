@@ -5,8 +5,6 @@ sources:
   track: master
 depends:
 - sdk/cantarell-fonts.bst
-- filename: sdk/gnome-common.bst
-  type: build
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - filename: base/intltool.bst
