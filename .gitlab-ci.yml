@@ -210,8 +210,6 @@ cve_report:
   artifacts:
     paths:
       - "${CI_PROJECT_DIR}/cve-reports"
-  only:
-    - master
 
 track:
   <<: *x86_64
