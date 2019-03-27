@@ -194,6 +194,7 @@ cve_report:
   script:
     - pip3 install --user lxml
 
+    - ${BST} track --deps all platform-manifest.bst sdk-manifest.bst
     - ${BST} build platform-manifest.bst
     - ${BST} build sdk-manifest.bst
 
