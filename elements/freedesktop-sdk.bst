@@ -1,7 +1,7 @@
 kind: junction
 sources:
 - kind: git
-  url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk/
+  url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk.git
   track: 18.08
 config:
   options:

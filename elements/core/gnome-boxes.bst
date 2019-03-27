@@ -6,10 +6,10 @@ sources:
   submodules:
     subprojects/gtk-frdp:
       checkout: True
-      url: gitlab_gnome_org:GNOME/gtk-frdp
+      url: gitlab_gnome_org:GNOME/gtk-frdp.git
     subprojects/libovf-glib:
       checkout: True
-      url: gitlab_gnome_org:felipeborges/libovf-glib
+      url: gitlab_gnome_org:felipeborges/libovf-glib.git
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst

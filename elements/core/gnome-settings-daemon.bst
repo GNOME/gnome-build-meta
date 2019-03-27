@@ -6,7 +6,7 @@ sources:
   submodules:
     subprojects/gvc:
       checkout: True
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control
+      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
 
 depends:
 - core-deps/NetworkManager.bst
