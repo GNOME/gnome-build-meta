@@ -14,6 +14,7 @@ variables:
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/aarch64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
 
 stages:
+  - reports
   - track
   - build
   - prepare_flatpak
@@ -199,6 +200,32 @@ before_script:
 #
 # "Real" CI jobs
 #
+
+cve_report:
+  <<: *x86_64
+  stage: reports
+  script:
+    - pip3 install --user lxml
+
+    - ${BST} track --deps all platform-manifest.bst sdk-manifest.bst
+    - ${BST} build platform-manifest.bst
+    - ${BST} build sdk-manifest.bst
+
+    - ${BST} checkout platform-manifest.bst platform-manifest/
+    - ${BST} checkout sdk-manifest.bst sdk-manifest/
+
+    - mkdir -p "${XDG_CACHE_HOME}/cve"
+    - cd "${XDG_CACHE_HOME}/cve"
+    - python3 "${CI_PROJECT_DIR}/utils/update-local-cve-database.py"
+
+    - mkdir -p "${CI_PROJECT_DIR}/cve-reports"
+    - python3 "${CI_PROJECT_DIR}/utils/generate-cve-report.py" "${CI_PROJECT_DIR}/sdk-manifest/usr/manifest.json" "${CI_PROJECT_DIR}/cve-reports/sdk.html"
+    - python3 "${CI_PROJECT_DIR}/utils/generate-cve-report.py" "${CI_PROJECT_DIR}/platform-manifest/usr/manifest.json" "${CI_PROJECT_DIR}/cve-reports/platform.html"
+  artifacts:
+    paths:
+      - "${CI_PROJECT_DIR}/cve-reports"
+  only:
+    - gnome-3-32
 
 track:
   <<: *x86_64
