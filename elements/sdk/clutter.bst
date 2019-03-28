@@ -3,6 +3,7 @@ sources:
 - kind: tar
   url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.2.tar.xz
 depends:
+- sdk/gtk+-3.bst
 - sdk/atk.bst
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
@@ -22,4 +23,4 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-installed-tests --disable-maintainer-flags --enable-egl-backend
-    --enable-evdev-input --enable-wayland-backend --enable-wayland-compositor
+    --enable-evdev-input --enable-wayland-backend --enable-wayland-compositor -enable-gdk-backend
