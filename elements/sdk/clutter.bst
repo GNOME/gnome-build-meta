@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/clutter.git
   track: master
 depends:
+- sdk/gtk+-3.bst
 - sdk/atk.bst
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
