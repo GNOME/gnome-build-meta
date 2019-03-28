@@ -3,11 +3,13 @@ sources:
 - kind: tar
   url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.2.tar.xz
 depends:
+- sdk/gtk+-3.bst
 - sdk/atk.bst
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- core-deps/libinput.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
