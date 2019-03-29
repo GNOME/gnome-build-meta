@@ -9,6 +9,11 @@ variables:
   FLATPAK_BRANCH: "3.30"
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
+  # Docker Images
+  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
+  DOCKER_AMD64: "${DOCKER_REGISTRY}/amd64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
+  DOCKER_AARCH64: "${DOCKER_REGISTRY}/aarch64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
+
 stages:
   - prepare_flatpak
   - flatpak
@@ -25,9 +30,6 @@ cache:
 
 
 before_script:
-  # Remove any installed buildstream binary
-  - pip3 uninstall -y buildstream
-
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
@@ -37,9 +39,6 @@ before_script:
   - git clone https://gitlab.com/BuildStream/bst-external.git
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
-
-  # flatpak and rsync to generate and transfer the flatpak runtimes
-  - dnf install -y flatpak rsync
 
   # Ensure the log directory exists
   - mkdir -p logs
@@ -75,7 +74,7 @@ flathub-prepare:
   only:
     variables:
       - $FLATHUB_REPO_TOKEN
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   tags:
     - armhf
     - gnome-build-meta
@@ -92,7 +91,7 @@ flathub-finish:
   only:
     variables:
       - $FLATHUB_REPO_TOKEN
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   tags:
     - armhf
     - gnome-build-meta
@@ -107,7 +106,7 @@ flathub-finish-failed:
   only:
     variables:
       - $FLATHUB_REPO_TOKEN
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   tags:
     - armhf
     - gnome-build-meta
@@ -147,7 +146,7 @@ flathub-finish-failed:
       - project.refs
 
 build-flatpak-runtimes-x86_64:
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: $DOCKER_AMD64
   <<: *flatpak
   tags:
     - x86_64
@@ -157,7 +156,7 @@ build-flatpak-runtimes-x86_64:
     FLATPAK_ARCH: x86_64
 
 build-flatpak-runtimes-i386:
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: $DOCKER_AMD64
   <<: *flatpak
   tags:
     - x86_64
@@ -167,7 +166,7 @@ build-flatpak-runtimes-i386:
     FLATPAK_ARCH: i386
 
 build-flatpak-runtimes-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   <<: *flatpak
   tags:
     - aarch64
@@ -177,7 +176,7 @@ build-flatpak-runtimes-aarch64:
     FLATPAK_ARCH: aarch64
 
 build-flatpak-runtimes-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   <<: *flatpak
   tags:
     - armhf
@@ -207,7 +206,7 @@ build-flatpak-runtimes-arm:
       - project.refs
 
 build-gnome-core-x86_64:
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: $DOCKER_AMD64
   <<: *build
   tags:
     - x86_64
@@ -216,7 +215,7 @@ build-gnome-core-x86_64:
     ARCH: x86_64
 
 build-gnome-core-i386:
-  image: buildstream/buildstream-fedora:master-123-abef70fe
+  image: $DOCKER_AMD64
   <<: *build
   tags:
     - x86_64
@@ -226,7 +225,7 @@ build-gnome-core-i386:
   allow_failure: true
 
 build-gnome-core-aarch64:
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   <<: *build
   tags:
     - aarch64
@@ -236,7 +235,7 @@ build-gnome-core-aarch64:
   allow_failure: true
 
 build-gnome-core-arm:
-  image: buildstream/buildstream-fedora:aarch64-master-123-abef70fe
+  image: $DOCKER_AARCH64
   <<: *build
   tags:
     - armhf
