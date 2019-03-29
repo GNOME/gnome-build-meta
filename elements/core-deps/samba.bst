@@ -8,6 +8,9 @@ depends:
 - core-deps/libtirpc.bst
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
+- filename: base/perl.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base/pkg-config.bst
   junction: freedesktop-sdk.bst
   type: build
