@@ -31,7 +31,7 @@ depends:
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
-- sdk/gtk+.bst
+- sdk/gtk.bst
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
