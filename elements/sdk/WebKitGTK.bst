@@ -34,6 +34,9 @@ depends:
 - filename: base/gperf.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: base/perl.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base/ruby.bst
   junction: freedesktop-sdk.bst
   type: build
