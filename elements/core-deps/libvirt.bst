@@ -6,7 +6,8 @@ depends:
 - core-deps/libnl.bst
 - core-deps/libtirpc.bst
 - core-deps/portablexdr.bst
-- core-deps/lvm2.bst
+- filename: vm/deploy-tools/lvm2.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
