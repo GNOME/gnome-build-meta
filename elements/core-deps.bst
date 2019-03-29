@@ -100,7 +100,6 @@ depends:
 - core-deps/libxklavier.bst
 - core-deps/libyaml.bst
 - core-deps/libzapojit.bst
-- core-deps/lvm2.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mozjs52.bst
@@ -113,7 +112,6 @@ depends:
 - core-deps/osinfo-db-tools.bst
 - core-deps/pangomm-1.4.bst
 - core-deps/pangomm.bst
-- core-deps/parted.bst
 - core-deps/phodav.bst
 - core-deps/polkit.bst
 - core-deps/poppler.bst

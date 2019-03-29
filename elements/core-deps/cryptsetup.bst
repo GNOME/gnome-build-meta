@@ -5,8 +5,9 @@ sources:
   url: https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/cryptsetup-1.7.5.tar.xz
 depends:
 - core-deps/json-c.bst
-- core-deps/lvm2.bst
 - core-deps/popt.bst
+- filename: vm/deploy-tools/lvm2.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
