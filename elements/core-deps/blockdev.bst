@@ -10,8 +10,8 @@ depends:
 - core-deps/libyaml.bst
 - core-deps/lvm2.bst
 - core-deps/ndctl.bst
-- core-deps/parted.bst
 - core-deps/volume-key.bst
+- filename: vm/deploy-tools/parted.bst
 - filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst

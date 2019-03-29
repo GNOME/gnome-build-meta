@@ -112,7 +112,6 @@ depends:
 - core-deps/osinfo-db-tools.bst
 - core-deps/pangomm-1.4.bst
 - core-deps/pangomm.bst
-- core-deps/parted.bst
 - core-deps/phodav.bst
 - core-deps/polkit.bst
 - core-deps/poppler.bst
