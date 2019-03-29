@@ -6,5 +6,8 @@ depends:
 - filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: base/perl.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
