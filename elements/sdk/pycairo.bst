@@ -5,6 +5,9 @@ sources:
 depends:
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
+- filename: base/pkg-config.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
