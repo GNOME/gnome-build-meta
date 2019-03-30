@@ -3,8 +3,5 @@ sources:
 - kind: tar
   url: https://sites.google.com/site/libnfstarballs/li/libnfs-2.0.0.tar.gz
 depends:
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst

@@ -6,9 +6,6 @@ sources:
   path: files/parted/include-sysmacros.patch
 depends:
 - core-deps/lvm2.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:

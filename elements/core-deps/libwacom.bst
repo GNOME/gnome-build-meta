@@ -5,8 +5,5 @@ sources:
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
