@@ -14,9 +14,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/gettext.bst
   junction: freedesktop-sdk.bst
   type: build

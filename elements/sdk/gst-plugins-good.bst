@@ -21,9 +21,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 # should be in base-platform
 - filename: base/wavpack.bst
   junction: freedesktop-sdk.bst

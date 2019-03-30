@@ -5,9 +5,6 @@ sources:
 - kind: patch
   path: files/fuse/fuse-kernel-h-clean-includes.patch
 depends:
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 environment:

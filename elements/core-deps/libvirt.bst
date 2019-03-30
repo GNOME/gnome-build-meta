@@ -7,9 +7,6 @@ depends:
 - core-deps/libtirpc.bst
 - core-deps/portablexdr.bst
 - core-deps/lvm2.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:

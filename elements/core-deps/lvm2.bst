@@ -3,9 +3,6 @@ sources:
 - kind: tar
   url: https://www.sourceware.org/pub/lvm2/LVM2.2.02.177.tgz
 depends:
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
