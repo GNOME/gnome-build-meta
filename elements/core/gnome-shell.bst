@@ -35,6 +35,9 @@ depends:
 - filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: base/perl.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
