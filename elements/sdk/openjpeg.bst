@@ -1,4 +1,10 @@
 kind: cmake
+public:
+  cpe:
+    patches:
+    - CVE-2018-5785
+    - CVE-2018-6616
+    - CVE-2018-18088
 sources:
 - kind: tar
   url: github_com:uclouvain/openjpeg/archive/v2.3.0.tar.gz
