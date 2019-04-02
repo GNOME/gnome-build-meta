@@ -15,12 +15,12 @@ variables:
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/aarch64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
 
 stages:
-  - reports
   - track
   - build
   - prepare_flatpak
   - flatpak
   - finish_flatpak
+  - reports
 
 
 # Store all the downloaded git and ostree repos in the cache.
