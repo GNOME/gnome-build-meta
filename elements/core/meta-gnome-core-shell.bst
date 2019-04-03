@@ -19,7 +19,6 @@ depends:
 - core/gnome-shell.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
-- core/mousetweaks.bst
 - core/mutter.bst
 - core/network-manager-applet.bst
 - core/orca.bst
