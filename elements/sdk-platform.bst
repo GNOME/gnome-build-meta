@@ -146,7 +146,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/llvm6.bst
+- filename: desktop/llvm7.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
