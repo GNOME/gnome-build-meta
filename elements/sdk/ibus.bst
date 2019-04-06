@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:ibus/ibus/releases/download/1.5.17/ibus-1.5.17.tar.gz
+  url: github_com:ibus/ibus/releases/download/1.5.20/ibus-1.5.20.tar.gz
 depends:
 - sdk/dconf.bst
 - sdk/glib.bst
