@@ -30,6 +30,7 @@ depends:
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
+- sdk/gstreamer-vaapi.bst
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
