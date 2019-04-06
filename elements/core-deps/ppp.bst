@@ -5,7 +5,7 @@ sources:
 - kind: patch
   path: files/ppp/use-openssl.patch
 depends:
-- filename: base/openssl.bst
+- filename: bootstrap/openssl.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base/buildsystem-autotools.bst
