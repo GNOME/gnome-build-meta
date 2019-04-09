@@ -1,8 +1,10 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.24.0.tar.xz
-  ref: 2e4ad1503fe482ceb5a83cf70ac9cd42f37eb718555a4d6844fe4c59a9214407
+  url: webkitgtk_org:webkitgtk-2.24.1.tar.xz
+  ref: 53cb8eaad2ca4caaae663d68331b83fd27d5bd5f6c5388d6ea3c455e338f396d
+- kind: patch
+  path: files/webkitgtk/webkitgtk-2-24-1-revert-sse2.patch
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
