@@ -16,10 +16,13 @@ depends:
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
 - sdk/gobject-introspection.bst
-- sdk/gst-libav.bst
-- sdk/gst-plugins-bad.bst
+- filename: sdk/gst-libav.bst
+  type: runtime
+- filename: sdk/gst-plugins-bad.bst
+  type: runtime
 - sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
+- filename: sdk/gst-plugins-good.bst
+  type: runtime
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
