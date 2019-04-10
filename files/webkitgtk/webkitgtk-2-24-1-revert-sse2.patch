@@ -1,7 +1,7 @@
-Index: /trunk/CMakeLists.txt
+Index: /CMakeLists.txt
 ===================================================================
---- /trunk/CMakeLists.txt	(revision 244137)
-+++ /trunk/CMakeLists.txt	(revision 244138)
+--- /CMakeLists.txt	(revision 244137)
++++ /CMakeLists.txt	(revision 244138)
 @@ -115,14 +115,4 @@
  endif ()
  
@@ -17,10 +17,10 @@ Index: /trunk/CMakeLists.txt
 -
  # -----------------------------------------------------------------------------
  # Determine the operating system
-Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp
+Index: /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp
 ===================================================================
---- /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 244137)
-+++ /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 244138)
+--- /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 244137)
++++ /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 244138)
 @@ -168,4 +168,9 @@
  static_assert(sizeof(Probe::State) == PROBE_SIZE, "Probe::State::size's matches ctiMasmProbeTrampoline");
  static_assert((PROBE_EXECUTOR_OFFSET + PTR_SIZE) <= (PROBE_SIZE + OUT_SIZE), "Must have room after ProbeContext to stash the probe handler");
@@ -43,10 +43,10 @@ Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp
 +MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse2CheckState = CPUIDCheckState::NotChecked;
  MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse4_1CheckState = CPUIDCheckState::NotChecked;
  MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse4_2CheckState = CPUIDCheckState::NotChecked;
-Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
+Index: /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
 ===================================================================
---- /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 244137)
-+++ /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 244138)
+--- /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 244137)
++++ /Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 244138)
 @@ -4198,4 +4198,33 @@
  #endif
  
@@ -89,7 +89,7 @@ Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
      JS_EXPORT_PRIVATE static CPUIDCheckState s_sse4_2CheckState;
 Index: unk/Source/cmake/FindSSE2.cmake
 ===================================================================
---- /trunk/Source/cmake/FindSSE2.cmake	(revision 244137)
+--- /Source/cmake/FindSSE2.cmake	(revision 244137)
 +++ 	(revision )
 @@ -1,65 +1,0 @@
 -#################################
