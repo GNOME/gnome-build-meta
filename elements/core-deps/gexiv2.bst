@@ -1,7 +1,7 @@
-kind: autotools
+kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gexiv2/0.10/gexiv2-0.10.8.tar.xz
+  url: gnome_downloads:gexiv2/0.12/gexiv2-0.12.0.tar.xz
 depends:
 - core-deps/exiv2.bst
 - filename: base/buildsystem-autotools.bst
