@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-video-effects/0.4/gnome-video-effects-0.4.3.tar.xz
+  url: gnome_downloads:gnome-video-effects/0.4/gnome-video-effects-0.4.3.tar.xz
 depends:
 - filename: sdk/gnome-common.bst
   type: build

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/folks/0.11/folks-0.11.4.tar.xz
+  url: gnome_downloads:folks/0.11/folks-0.11.4.tar.xz
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/dbus-glib.bst

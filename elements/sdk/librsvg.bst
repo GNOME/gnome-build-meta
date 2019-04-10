@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/librsvg/2.45/librsvg-2.45.5.tar.xz
+  url: gnome_downloads:librsvg/2.45/librsvg-2.45.5.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

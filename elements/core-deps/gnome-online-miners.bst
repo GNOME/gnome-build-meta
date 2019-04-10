@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-online-miners/3.30/gnome-online-miners-3.30.0.tar.xz
+  url: gnome_downloads:gnome-online-miners/3.30/gnome-online-miners-3.30.0.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/atkmm/2.24/atkmm-2.24.3.tar.xz
+  url: gnome_downloads:atkmm/2.24/atkmm-2.24.3.tar.xz
 depends:
 - core-deps/glibmm-2.4.bst
 - sdk/atk.bst

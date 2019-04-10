@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libgtop/2.40/libgtop-2.40.0.tar.xz
+  url: gnome_downloads:libgtop/2.40/libgtop-2.40.0.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst

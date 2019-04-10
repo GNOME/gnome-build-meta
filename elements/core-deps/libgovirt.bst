@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libgovirt/0.3/libgovirt-0.3.4.tar.xz
+  url: gnome_downloads:libgovirt/0.3/libgovirt-0.3.4.tar.xz
 depends:
 - core-deps/librest.bst
 - filename: sdk/gnome-common.bst

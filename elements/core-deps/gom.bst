@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gom/0.3/gom-0.3.3.tar.xz
+  url: gnome_downloads:gom/0.3/gom-0.3.3.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz
+  url: gnome_downloads:rest/0.8/rest-0.8.1.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst

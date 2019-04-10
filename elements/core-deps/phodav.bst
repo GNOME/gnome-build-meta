@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/phodav/2.3/phodav-2.3.tar.xz
+  url: gnome_downloads:phodav/2.3/phodav-2.3.tar.xz
 depends:
 - core-deps/avahi.bst
 - core-deps/libgudev.bst

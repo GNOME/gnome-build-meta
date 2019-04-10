@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libgepub/0.6/libgepub-0.6.0.tar.xz
+  url: gnome_downloads:libgepub/0.6/libgepub-0.6.0.tar.xz
 depends:
 - sdk/WebKitGTK.bst
 - sdk/glib.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gsound/1.0/gsound-1.0.2.tar.xz
+  url: gnome_downloads:gsound/1.0/gsound-1.0.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

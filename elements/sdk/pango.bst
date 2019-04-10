@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/pango/1.43/pango-1.43.0.tar.xz
+  url: gnome_downloads:pango/1.42/pango-1.42.4.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

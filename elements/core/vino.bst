@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/vino/3.22/vino-3.22.0.tar.xz
+  url: gnome_downloads:vino/3.22/vino-3.22.0.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - sdk/glib.bst

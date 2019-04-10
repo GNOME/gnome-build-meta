@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libmediaart/1.9/libmediaart-1.9.4.tar.xz
+  url: gnome_downloads:libmediaart/1.9/libmediaart-1.9.4.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-photos/3.31/gnome-photos-3.31.91.tar.xz
+  url: gnome_downloads:gnome-photos/3.32/gnome-photos-3.32.0.tar.xz
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst

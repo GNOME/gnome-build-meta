@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-color-manager/3.32/gnome-color-manager-3.32.0.tar.xz
+  url: gnome_downloads:gnome-color-manager/3.32/gnome-color-manager-3.32.0.tar.xz
 depends:
 - core-deps/colord-gtk.bst
 - core-deps/exiv2.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-calculator/3.32/gnome-calculator-3.32.0.tar.xz
+  url: gnome_downloads:gnome-calculator/3.32/gnome-calculator-3.32.1.tar.xz
 depends:
 - core-deps/gtksourceview.bst
 - core-deps/mpc.bst

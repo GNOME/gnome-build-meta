@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gnome-keyring/3.31/gnome-keyring-3.31.91.tar.xz
+  url: gnome_downloads:gnome-keyring/3.31/gnome-keyring-3.31.91.tar.xz
 depends:
 - sdk/gcr.bst
 - sdk/glib.bst

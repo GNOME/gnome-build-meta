@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
+  url: gnome_downloads:startup-notification/0.12/startup-notification-0.12.tar.xz
 depends:
 - filename: desktop/xcb-util.bst
   junction: freedesktop-sdk.bst

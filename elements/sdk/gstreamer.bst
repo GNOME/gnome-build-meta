@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.15.2.tar.xz
+  url: gstreamer:gstreamer/gstreamer-1.14.4.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

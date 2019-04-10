@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz
+  url: gnome_downloads:libnotify/0.7/libnotify-0.7.8.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst

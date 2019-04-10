@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/tracker-miners/2.2/tracker-miners-2.2.1.tar.xz
+  url: gnome_downloads:tracker-miners/2.2/tracker-miners-2.2.1.tar.xz
 depends:
 - core-deps/gexiv2.bst
 - core-deps/NetworkManager.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/adwaita-icon-theme/3.31/adwaita-icon-theme-3.31.91.tar.xz
+  url: gnome_downloads:adwaita-icon-theme/3.32/adwaita-icon-theme-3.32.0.tar.xz
 depends:
 - filename: sdk/gnome-common.bst
   type: build

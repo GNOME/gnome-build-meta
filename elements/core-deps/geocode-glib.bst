@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.0.tar.xz
+  url: gnome_downloads:geocode-glib/3.26/geocode-glib-3.26.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

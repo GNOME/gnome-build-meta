@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libzapojit/0.0/libzapojit-0.0.3.tar.xz
+  url: gnome_downloads:libzapojit/0.0/libzapojit-0.0.3.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/librest.bst

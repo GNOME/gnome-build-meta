@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/gupnp-av/0.12/gupnp-av-0.12.11.tar.xz
+  url: gnome_downloads:gupnp-av/0.12/gupnp-av-0.12.11.tar.xz
 depends:
 - core-deps/gupnp.bst
 - sdk/glib.bst

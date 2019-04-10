@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/rygel/0.38/rygel-0.38.0.tar.xz
+  url: gnome_downloads:rygel/0.38/rygel-0.38.0.tar.xz
 depends:
 - core-deps/gssdp.bst
 - core-deps/gupnp-av.bst

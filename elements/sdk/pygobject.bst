@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/pygobject/3.32/pygobject-3.32.0.tar.xz
+  url: gnome_downloads:pygobject/3.32/pygobject-3.32.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

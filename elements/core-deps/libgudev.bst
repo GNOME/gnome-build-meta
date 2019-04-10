@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/libgudev/232/libgudev-232.tar.xz
+  url: gnome_downloads:libgudev/232/libgudev-232.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst
