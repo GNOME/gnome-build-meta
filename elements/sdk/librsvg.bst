@@ -11,9 +11,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.6.10.crate
 - kind: crate
+  url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.7.3.crate
+- kind: crate
   url: https://static.crates.io/crates/alga/alga-0.8.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/approx/approx-0.3.1.crate
+  url: https://static.crates.io/crates/approx/approx-0.3.2.crate
 - kind: crate
   url: https://static.crates.io/crates/arrayvec/arrayvec-0.4.10.crate
 - kind: crate
@@ -47,11 +49,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/crossbeam-utils/crossbeam-utils-0.2.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/cssparser/cssparser-0.25.2.crate
+  url: https://static.crates.io/crates/cssparser/cssparser-0.25.3.crate
 - kind: crate
   url: https://static.crates.io/crates/cssparser-macros/cssparser-macros-0.3.5.crate
 - kind: crate
-  url: https://static.crates.io/crates/csv/csv-1.0.5.crate
+  url: https://static.crates.io/crates/csv/csv-1.0.6.crate
 - kind: crate
   url: https://static.crates.io/crates/csv-core/csv-core-0.1.5.crate
 - kind: crate
@@ -63,7 +65,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/dtoa-short/dtoa-short-0.3.2.crate
 - kind: crate
-  url: https://static.crates.io/crates/either/either-1.5.1.crate
+  url: https://static.crates.io/crates/either/either-1.5.2.crate
 - kind: crate
   url: https://static.crates.io/crates/encoding/encoding-0.2.33.crate
 - kind: crate
@@ -115,7 +117,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-1.3.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/libc/libc-0.2.50.crate
+  url: https://static.crates.io/crates/libc/libc-0.2.51.crate
 - kind: crate
   url: https://static.crates.io/crates/libm/libm-0.1.2.crate
 - kind: crate
@@ -129,7 +131,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/memoffset/memoffset-0.2.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/nalgebra/nalgebra-0.17.2.crate
+  url: https://static.crates.io/crates/nalgebra/nalgebra-0.17.3.crate
 - kind: crate
   url: https://static.crates.io/crates/nodrop/nodrop-0.1.13.crate
 - kind: crate
@@ -197,17 +199,17 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rdrand/rdrand-0.4.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.51.crate
+  url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.52.crate
 - kind: crate
   url: https://static.crates.io/crates/redox_termios/redox_termios-0.1.1.crate
 - kind: crate
   url: https://static.crates.io/crates/regex/regex-0.2.11.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex/regex-1.1.2.crate
+  url: https://static.crates.io/crates/regex/regex-1.1.5.crate
 - kind: crate
   url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.5.6.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.5.crate
+  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.6.crate
 - kind: crate
   url: https://static.crates.io/crates/ryu/ryu-0.2.7.crate
 - kind: crate
@@ -215,9 +217,9 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/scopeguard/scopeguard-0.3.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/serde/serde-1.0.89.crate
+  url: https://static.crates.io/crates/serde/serde-1.0.90.crate
 - kind: crate
-  url: https://static.crates.io/crates/serde_derive/serde_derive-1.0.89.crate
+  url: https://static.crates.io/crates/serde_derive/serde_derive-1.0.90.crate
 - kind: crate
   url: https://static.crates.io/crates/serde_json/serde_json-1.0.39.crate
 - kind: crate
@@ -227,7 +229,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/stable_deref_trait/stable_deref_trait-1.1.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/syn/syn-0.15.27.crate
+  url: https://static.crates.io/crates/syn/syn-0.15.30.crate
 - kind: crate
   url: https://static.crates.io/crates/termion/termion-1.5.1.crate
 - kind: crate
@@ -257,7 +259,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/winapi/winapi-0.2.8.crate
 - kind: crate
-  url: https://static.crates.io/crates/winapi/winapi-0.3.6.crate
+  url: https://static.crates.io/crates/winapi/winapi-0.3.7.crate
 - kind: crate
   url: https://static.crates.io/crates/winapi-build/winapi-build-0.1.1.crate
 - kind: crate
