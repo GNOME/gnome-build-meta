@@ -4,7 +4,7 @@ sources:
   url: gnome_downloads:gexiv2/0.12/gexiv2-0.12.0.tar.xz
 depends:
 - core-deps/exiv2.bst
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
