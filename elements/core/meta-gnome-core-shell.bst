@@ -18,7 +18,8 @@ depends:
 - core/gnome-shell-extensions.bst
 - core/gnome-shell.bst
 - core/gnome-user-docs.bst
-- core/gnome-user-share.bst
+# Broken:
+#- core/gnome-user-share.bst
 - core/mutter.bst
 - core/network-manager-applet.bst
 - core/orca.bst
