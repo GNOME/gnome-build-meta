@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gnome-user-share.git
@@ -7,10 +7,11 @@ depends:
 - core/gnome-bluetooth.bst
 - core/nautilus.bst
 - sdk/gtk+-3.bst
-- sdk/libnotify.bst
 - filename: sdk/yelp-tools.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: desktop/systemd.bst
+  junction: freedesktop-sdk.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
