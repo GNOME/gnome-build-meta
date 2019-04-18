@@ -10,8 +10,7 @@ depends:
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/gstreamer-plugins-bad.bst
-  junction: freedesktop-sdk.bst
+- filename: sdk/gst-plugins-bad.bst
   type: runtime
 - filename: desktop/libdrm.bst
   junction: freedesktop-sdk.bst
