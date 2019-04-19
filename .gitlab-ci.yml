@@ -155,9 +155,10 @@ track:
   script:
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
   retry: 2
-  # don't run on stable branches
-  except:
-    - /^gnome-\d-\d\d$/
+  # only run on branches targeting master
+  only:
+    variables:
+      - $FLATPAK_BRANCH == 'master'
   artifacts:
     when: always
     paths:
