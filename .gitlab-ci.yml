@@ -265,6 +265,10 @@ cve_report:
     - mkdir -p ../cve-reports
     - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
     - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+  cache:
+    key: cve
+    paths:
+      - cve
   artifacts:
     paths:
       - cve-reports
