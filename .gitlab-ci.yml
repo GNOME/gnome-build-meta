@@ -220,10 +220,8 @@ flatpak-finish:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-    # the `|| true` is to work around instability in the flathub infrastructure
-    # https://github.com/flatpak/flat-manager/issues/2
-    - flat-manager/flat-manager-client commit --wait $(cat build.txt) || true
-    - flat-manager/flat-manager-client publish --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client commit --wait $(cat build.txt)
+    - flat-manager/flat-manager-client publish --wait $(cat build.txt)
     - flat-manager/flat-manager-client purge $(cat build.txt)
   only:
     - master
