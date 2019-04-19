@@ -270,3 +270,4 @@ cve_report:
       - "${CI_PROJECT_DIR}/cve-reports"
   only:
     - master
+    - /^gnome-\d-\d\d$/
