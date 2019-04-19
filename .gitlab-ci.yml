@@ -24,28 +24,28 @@ stages:
 
 
 before_script:
-  # Use specific version of BuildStream
-  - git clone https://gitlab.com/BuildStream/buildstream.git
-  - git -C buildstream/ checkout $BST_SHA
-  - pip3 install buildstream/
-
-  # install bst-external nedded for the flatpak_image plugin
-  - git clone https://gitlab.com/BuildStream/bst-external.git
-  - git -C bst-external/ checkout $BST_EXTERNAL_SHA
-  - pip3 install bst-external/
-
-  # Ensure the log directory exists
-  - mkdir -p logs
-
-  # Setup certificate for pushing to the cache
   - |
-    if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
-       echo "$GITLAB_CAS_PUSH_CERT" > client.crt
-       echo "$GITLAB_CAS_PUSH_KEY" > client.key
-    fi
+    if [ -n "$NEED_BST"]; then
+      # Use specific version of BuildStream
+      git clone https://gitlab.com/BuildStream/buildstream.git
+      git -C buildstream/ checkout $BST_SHA
+      pip3 install buildstream/
 
-    cat >> build.conf << EOF
+      # install bst-external nedded for the flatpak_image plugin
+      git clone https://gitlab.com/BuildStream/bst-external.git
+      git -C bst-external/ checkout $BST_EXTERNAL_SHA
+      pip3 install bst-external/
 
+      # Ensure the log directory exists
+      mkdir -p logs
+
+      # Setup certificate for pushing to the cache
+      if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
+        echo "$GITLAB_CAS_PUSH_CERT" > client.crt
+        echo "$GITLAB_CAS_PUSH_KEY" > client.key
+      fi
+
+      cat >> build.conf << EOF
     projects:
       gnome:
         artifacts:
@@ -55,18 +55,22 @@ before_script:
           push: true
     EOF
 
-  # flat-manager-client to push to flathub
-  - git clone https://github.com/flatpak/flat-manager
+    fi
 
+  # flat-manager-client to push to flathub
   - |
-    if [ "$FLATPAK_BRANCH" = master ] && [ -n "$NIGHTLY_REPO_TOKEN" ]; then
-      export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
-      export FLAT_MANAGER_SERVER=https://gbm.gnome.org/
-      export FLAT_MANAGER_REPO=nightly
-    elif [ "$FLATPAK_BRANCH" != master ] && [ -n "$FLATHUB_REPO_TOKEN" ]; then
-      export REPO_TOKEN=$FLATHUB_REPO_TOKEN
-      export FLAT_MANAGER_SERVER=https://hub.flathub.org/
-      export FLAT_MANAGER_REPO=stable
+    if [ -n "$NEED_FLATMGR" ]
+      git clone https://github.com/flatpak/flat-manager
+
+      if [ "$FLATPAK_BRANCH" = master ] && [ -n "$NIGHTLY_REPO_TOKEN" ]; then
+        export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
+        export FLAT_MANAGER_SERVER=https://gbm.gnome.org/
+        export FLAT_MANAGER_REPO=nightly
+      elif [ "$FLATPAK_BRANCH" != master ] && [ -n "$FLATHUB_REPO_TOKEN" ]; then
+        export REPO_TOKEN=$FLATHUB_REPO_TOKEN
+        export FLAT_MANAGER_SERVER=https://hub.flathub.org/
+        export FLAT_MANAGER_REPO=stable
+      fi
     fi
 
 #
@@ -148,6 +152,8 @@ before_script:
 #
 
 track:
+  VARIABLES:
+    NEED_BST: yes
   <<: *x86_64
   stage: track
   script:
