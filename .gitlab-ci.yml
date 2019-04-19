@@ -95,7 +95,7 @@ before_script:
   stage: flatpak
   dependencies: [track, flatpak-prepare]
   script:
-    - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
+    - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
 
     - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
     - flatpak build-update-repo --generate-static-deltas repo/
@@ -253,7 +253,7 @@ cve_report:
   script:
     - pip3 install --user lxml
 
-    - ${BST} build platform-manifest.bst sdk-manifest.bst
+    - ${BST} pull platform-manifest.bst sdk-manifest.bst
 
     - ${BST} checkout platform-manifest.bst platform-manifest/
     - ${BST} checkout sdk-manifest.bst sdk-manifest/
