@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/folks.git
@@ -9,13 +9,13 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/libgee.bst
 - sdk/vala.bst
-- filename: base/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/intltool.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-eds-backend --disable-libsocialweb-backend --disable-telepathy-backend --disable-fatal-warnings
+  meson-local:
+    -Deds_backend=true
+    -Dlibsocialweb_backend=false
+    -Dtelepathy_backend=false
