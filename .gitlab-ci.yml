@@ -83,6 +83,7 @@ before_script:
 
 .build-template:
   stage: build
+  dependencies: [track]
   script:
     - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst platform-manifest.bst sdk-manifest.bst
   # Store artifacts so we can inspect build failures
@@ -94,6 +95,7 @@ before_script:
 
 .flatpak-template:
   stage: flatpak
+  dependencies: [track, flatpak-prepare]
   script:
     - ${BST} -o arch "${ARCH}" build flatpak-runtimes.bst
 
@@ -180,8 +182,9 @@ build-gnome-core-arm:
   <<: *arm
 
 
-flapak-prepare:
+flatpak-prepare:
   stage: prepare_flatpak
+  dependencies: []
   script:
     - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
@@ -215,6 +218,7 @@ flatpak-arm:
 
 flatpak-finish:
   stage: finish_flatpak
+  dependencies: [flatpak-prepare]
   script:
     # the `|| true` is to work around instability in the flathub infrastructure
     # https://github.com/flatpak/flat-manager/issues/2
@@ -231,6 +235,7 @@ flatpak-finish:
 
 flatpak-finish-failed:
   stage: finish_flatpak
+  dependencies: [flatpak-prepare]
   script:
     - flat-manager/flat-manager-client purge $(cat build.txt)
   when: on_failure
@@ -246,6 +251,7 @@ flatpak-finish-failed:
 cve_report:
   <<: *x86_64
   stage: reports
+  dependencies: [track]
   script:
     - pip3 install --user lxml
 
