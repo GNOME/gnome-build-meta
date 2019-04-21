@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gtksourceview.git
@@ -8,7 +8,7 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
