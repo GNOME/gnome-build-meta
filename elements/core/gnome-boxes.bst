@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-boxes.git
-  track: master
-  submodules:
-    subprojects/gtk-frdp:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/gtk-frdp.git
-    subprojects/libovf-glib:
-      checkout: True
-      url: gitlab_gnome_org:felipeborges/libovf-glib.git
+- kind: tar
+  url: gnome_downloads:gnome-boxes/3.32/gnome-boxes-3.32.0.2.tar.xz
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst

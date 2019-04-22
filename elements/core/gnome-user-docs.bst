@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-user-docs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-user-docs/3.32/gnome-user-docs-3.32.1.tar.xz
 depends:
 - sdk/yelp-tools.bst
 - filename: base/buildsystem-autotools.bst
