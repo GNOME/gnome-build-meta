@@ -17,6 +17,9 @@ depends:
   type: build
 - sdk/libnotify.bst
 - sdk/libsecret.bst
+- filename: base/intltool.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
