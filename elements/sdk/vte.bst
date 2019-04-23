@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:vte/0.56/vte-0.56.1.tar.xz
@@ -12,7 +12,7 @@ depends:
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
