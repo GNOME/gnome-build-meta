@@ -1,0 +1,179 @@
+From ca9db0bfdb9b78e48e2fd078c6c5aa86bea102b5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sun, 17 Mar 2019 17:33:00 -0700
+Subject: [PATCH] cogl/deprecated/cogl-fixed.h: Use "static inline" instead
+ G_INLINE_FUNC
+
+---
+ cogl/deprecated/cogl-fixed.c | 45 -------------------
+ cogl/deprecated/cogl-fixed.h | 85 ++++++++++++++----------------------
+ 2 files changed, 32 insertions(+), 98 deletions(-)
+
+diff --git a/cogl/deprecated/cogl-fixed.c b/cogl/deprecated/cogl-fixed.c
+index bdae6cdf..24a6b106 100644
+--- a/cogl/deprecated/cogl-fixed.c
++++ b/cogl/deprecated/cogl-fixed.c
+@@ -818,51 +818,6 @@ cogl_sqrti (int number)
+ #endif
+ }
+ 
+-CoglFixed
+-cogl_fixed_mul (CoglFixed a,
+-                CoglFixed b)
+-{
+-#if defined(__arm__) && !defined(__thumb__)
+-  /* This provides about 12% speedeup on the gcc -O2 optimised
+-   * C version
+-   *
+-   * Based on code found in the following thread:
+-   * http://lists.mplayerhq.hu/pipermail/ffmpeg-devel/2006-August/014405.html
+-   */
+-  int res_low, res_hi;
+-
+-  __asm__ ("smull %0, %1, %2, %3     \n"
+-           "mov   %0, %0,     lsr %4 \n"
+-           "add   %1, %0, %1, lsl %5 \n"
+-           : "=&r"(res_hi), "=&r"(res_low) \
+-           : "r"(a), "r"(b), "i"(COGL_FIXED_Q), "i"(32 - COGL_FIXED_Q));
+-
+-  return (CoglFixed) res_low;
+-#else
+-  int64_t r = (int64_t) a * (int64_t) b;
+-
+-  return (CoglFixed) (r >> COGL_FIXED_Q);
+-#endif
+-}
+-
+-CoglFixed
+-cogl_fixed_div (CoglFixed a,
+-                CoglFixed b)
+-{
+-  return (CoglFixed) ((((int64_t) a) << COGL_FIXED_Q) / b);
+-}
+-
+-CoglFixed
+-cogl_fixed_mul_div (CoglFixed a,
+-                    CoglFixed b,
+-                    CoglFixed c)
+-{
+-  CoglFixed ab = cogl_fixed_mul (a, b);
+-  CoglFixed quo = cogl_fixed_div (ab, c);
+-
+-  return quo;
+-}
+-
+ /*
+  * The log2x() and pow2x() functions
+  *
+diff --git a/cogl/deprecated/cogl-fixed.h b/cogl/deprecated/cogl-fixed.h
+index 73d0ed59..106c5138 100644
+--- a/cogl/deprecated/cogl-fixed.h
++++ b/cogl/deprecated/cogl-fixed.h
+@@ -536,18 +536,44 @@ cogl_fixed_atan2 (CoglFixed a,
+ /*< public >*/
+ 
+ /* Fixed point math routines */
+-G_INLINE_FUNC CoglFixed
++static inline CoglFixed
+ cogl_fixed_mul (CoglFixed a,
+-                CoglFixed b);
++                CoglFixed b)
++{
++# ifdef __arm__
++    int res_low, res_hi;
++
++    __asm__ ("smull %0, %1, %2, %3     \n"
++             "mov   %0, %0,     lsr %4 \n"
++             "add   %1, %0, %1, lsl %5 \n"
++             : "=r"(res_hi), "=r"(res_low)\
++             : "r"(a), "r"(b), "i"(COGL_FIXED_Q), "i"(32 - COGL_FIXED_Q));
++
++    return (CoglFixed) res_low;
++# else
++    long long r = (long long) a * (long long) b;
++
++    return (unsigned int)(r >> COGL_FIXED_Q);
++# endif
++}
+ 
+-G_INLINE_FUNC CoglFixed
++static inline CoglFixed
+ cogl_fixed_div (CoglFixed a,
+-                CoglFixed b);
++                CoglFixed b)
++{
++  return (CoglFixed) ((((int64_t) a) << COGL_FIXED_Q) / b);
++}
+ 
+-G_INLINE_FUNC CoglFixed
++static inline CoglFixed
+ cogl_fixed_mul_div (CoglFixed a,
+                     CoglFixed b,
+-                    CoglFixed c);
++                    CoglFixed c)
++{
++  CoglFixed ab = cogl_fixed_mul (a, b);
++  CoglFixed quo = cogl_fixed_div (ab, c);
++
++  return quo;
++}
+ 
+ /**
+  * COGL_SQRTI_ARG_MAX:
+@@ -750,53 +776,6 @@ cogl_angle_tan (CoglAngle angle);
+ CoglFixed
+ cogl_angle_cos (CoglAngle angle);
+ 
+-/*< private >*/
+-
+-#if defined (G_CAN_INLINE)
+-G_INLINE_FUNC CoglFixed
+-cogl_fixed_mul (CoglFixed a,
+-                CoglFixed b)
+-{
+-# ifdef __arm__
+-    int res_low, res_hi;
+-
+-    __asm__ ("smull %0, %1, %2, %3     \n"
+-	     "mov   %0, %0,     lsr %4 \n"
+-	     "add   %1, %0, %1, lsl %5 \n"
+-	     : "=r"(res_hi), "=r"(res_low)\
+-	     : "r"(a), "r"(b), "i"(COGL_FIXED_Q), "i"(32 - COGL_FIXED_Q));
+-
+-    return (CoglFixed) res_low;
+-# else
+-    long long r = (long long) a * (long long) b;
+-
+-    return (unsigned int)(r >> COGL_FIXED_Q);
+-# endif
+-}
+-#endif
+-
+-#if defined (G_CAN_INLINE)
+-G_INLINE_FUNC CoglFixed
+-cogl_fixed_div (CoglFixed a,
+-                CoglFixed b)
+-{
+-  return (CoglFixed) ((((int64_t) a) << COGL_FIXED_Q) / b);
+-}
+-#endif
+-
+-#if defined(G_CAN_INLINE)
+-G_INLINE_FUNC CoglFixed
+-cogl_fixed_mul_div (CoglFixed a,
+-                    CoglFixed b,
+-                    CoglFixed c)
+-{
+-  CoglFixed ab = cogl_fixed_mul (a, b);
+-  CoglFixed quo = cogl_fixed_div (ab, c);
+-
+-  return quo;
+-}
+-#endif
+-
+ CoglFixed
+ cogl_double_to_fixed (double value);
+ 
+-- 
+2.21.0
+
