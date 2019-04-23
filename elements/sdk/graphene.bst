@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: github_com:ebassi/graphene.git
-  track: master
+- kind: tar
+  url: gnome_downloads:graphene/1.8/graphene-1.8.6.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

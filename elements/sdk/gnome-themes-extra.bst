@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz
 depends:
 - sdk/cantarell-fonts.bst
 - sdk/gtk+-3.bst
