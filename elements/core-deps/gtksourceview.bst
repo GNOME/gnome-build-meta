@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gtksourceview/4.2/gtksourceview-4.2.0.tar.xz
@@ -7,10 +7,8 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-variables:
-  meson-local: "-Dinstall_tests=true -Dgtk_doc=true\n"
