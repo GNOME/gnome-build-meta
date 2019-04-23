@@ -2,6 +2,8 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:cogl/1.22/cogl-1.22.2.tar.xz
+- kind: patch
+  path: files/cogl/0001-cogl-deprecated-cogl-fixed.h-Use-static-inline-inste.patch
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
