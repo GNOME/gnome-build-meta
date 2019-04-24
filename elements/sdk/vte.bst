@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/vte.git
-  track: master
+- kind: tar
+  url: https://gitlab.gnome.org/GNOME/vte/-/archive/0.57.0/vte-0.57.0.tar.bz2
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
