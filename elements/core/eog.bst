@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/eog.git
-  track: master
+- kind: tar
+  url: gnome_downloads:eog/3.32/eog-3.32.1.tar.xz
 depends:
 - core-deps/exempi.bst
 - core-deps/libpeas.bst

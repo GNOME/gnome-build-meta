@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libgrss.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgrss/0.7/libgrss-0.7.0.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst
