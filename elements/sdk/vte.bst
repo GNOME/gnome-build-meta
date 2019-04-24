@@ -18,5 +18,3 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
-variables:
-  conf-local: --enable-introspection=yes
