@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/mutter.git
-  track: master
+- kind: tar
+  url: gnome_downloads:mutter/3.32/mutter-3.32.1.tar.xz
 depends:
 - core/gnome-settings-daemon.bst
 - core-deps/startup-notification.bst
@@ -34,5 +33,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local:
-    -Dremote_desktop=false
+  meson-local: -Dremote_desktop=false

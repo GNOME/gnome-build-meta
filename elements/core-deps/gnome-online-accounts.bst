@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.32/gnome-online-accounts-3.32.0.tar.xz
 depends:
 - core-deps/librest.bst
 - sdk/WebKitGTK.bst
