@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/folks.git
-  track: master
+- kind: tar
+  url: gnome_downloads:folks/0.12/folks-0.12.1.tar.xz
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/dbus-glib.bst
@@ -15,7 +14,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local:
-    -Deds_backend=true
-    -Dlibsocialweb_backend=false
-    -Dtelepathy_backend=false
+  meson-local: -Deds_backend=true -Dlibsocialweb_backend=false -Dtelepathy_backend=false
