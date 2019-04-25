@@ -11,6 +11,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libsoup.bst
+- sdk/libgee.bst
 - sdk/vala.bst
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
