@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/clutter.git
@@ -18,7 +18,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
