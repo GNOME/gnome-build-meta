@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/3.32/gnome-desktop-3.32.1.2.tar.xz
+  url: https://gitlab.gnome.org/GNOME/gnome-desktop/-/archive/3.33.1/gnome-desktop-3.33.1.tar.bz2
 depends:
 - core-deps/libgudev.bst
 - sdk/gdk-pixbuf.bst
