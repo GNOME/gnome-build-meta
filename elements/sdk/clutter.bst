@@ -1,7 +1,8 @@
-kind: autotools
+kind: meson
 sources:
-- kind: tar
-  url: gnome_downloads:clutter/1.26/clutter-1.26.2.tar.xz
+- kind: git
+  url: gitlab_gnome_org:GNOME/clutter.git
+  track: master
 depends:
 - sdk/atk.bst
 - sdk/cogl.bst
@@ -12,11 +13,12 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
+- core-deps/libinput.bst
 - filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
