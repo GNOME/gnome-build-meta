@@ -1,7 +1,8 @@
 kind: autotools
 sources:
-- kind: tar
-  url: gnome_downloads:clutter-gst/3.0/clutter-gst-3.0.27.tar.xz
+- kind: git
+  url: gitlab_gnome_org:GNOME/clutter-gst.git
+  track: clutter-gst-3.0
 depends:
 - sdk/clutter.bst
 - sdk/cogl.bst
