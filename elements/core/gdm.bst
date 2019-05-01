@@ -3,6 +3,9 @@ sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gdm.git
   track: master
+- kind: local
+  path: files/gdm
+  directory: gdm-config
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -17,4 +20,15 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-plymouth=no
+  sysusersdir: "%{libdir}/sysusers.d"
+  conf-local: |
+    --with-pam-prefix=%{sysconfdir} \
+    --with-default-pam-config=redhat \
+    --with-run-dir=/run/gdm \
+    --with-plymouth=no
+
+config:
+  install-commands:
+    (>):
+    - mkdir -p %{install-root}%{sysusersdir}
+    - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
