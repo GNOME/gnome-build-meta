@@ -53,6 +53,6 @@ public:
           gtk-update-icon-cache --quiet $dir
         fi
       done
-    - gtk-query-immodules-3.0 --update-cache
+    - gtk-query-immodules-3.0 --update-cache || true
   cpe:
     product: gtk+
