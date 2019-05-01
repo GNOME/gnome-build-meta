@@ -4,9 +4,6 @@ depends:
 - filename: vm/base-filesystem.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: desktop.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: base/util-linux.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -34,14 +31,13 @@ depends:
 - filename: vm/linux-vm-boot/shadow.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: vm/linux-vm-boot/weston.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: vm/systemd-firstboot-integration.bst
   junction: freedesktop-sdk.bst
   type: build
 
 # And add GNOME core on top !
+- filename: sdk.bst
+  type: build
 - filename: core.bst
   type: build
 
