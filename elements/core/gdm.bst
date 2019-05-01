@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gdm.git
   track: master
+- kind: local
+  path: files/gdm
+  directory: gdm-config
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -17,5 +20,16 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
+  sysusersdir: "%{prefix}/lib/sysusers.d"
   conf-local: >-
+    --enable-wayland-support
+    --with-pam-prefix=%{sysconfdir}
+    --with-default-pam-config=lfs
+    --with-run-dir=/run/gdm
     --with-plymouth=no
+
+config:
+  install-commands:
+    (>):
+    - mkdir -p %{install-root}%{sysusersdir}
+    - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
