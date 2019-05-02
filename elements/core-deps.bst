@@ -54,7 +54,6 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/iptables.bst
 - core-deps/json-c.bst
-- core-deps/kmod.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst
 - core-deps/libchamplain.bst
