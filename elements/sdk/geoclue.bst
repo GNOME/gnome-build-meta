@@ -11,6 +11,9 @@ depends:
 - sdk/libsoup.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

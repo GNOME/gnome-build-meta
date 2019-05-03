@@ -10,6 +10,11 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/libgcrypt.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

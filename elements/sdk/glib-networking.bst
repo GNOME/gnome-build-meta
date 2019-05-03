@@ -6,8 +6,15 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
+- filename: components/ca-certificates.bst
+  junction: freedesktop-sdk.bst
+- filename: components/gnutls.bst
+  junction: freedesktop-sdk.bst
 - filename: components/libproxy.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

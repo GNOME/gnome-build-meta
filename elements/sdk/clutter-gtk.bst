@@ -5,6 +5,9 @@ sources:
 depends:
 - sdk/clutter.bst
 - sdk/gtk+-3.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
