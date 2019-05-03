@@ -3,8 +3,8 @@ sources:
 - kind: tar
   url: github_com:google/brotli/archive/v1.0.5.tar.gz
 depends:
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

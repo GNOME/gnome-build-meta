@@ -5,5 +5,5 @@ sources:
   track: master
 depends:
 - sdk/yelp-tools.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

@@ -9,7 +9,7 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - world/telepathy-glib.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

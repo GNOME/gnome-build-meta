@@ -7,16 +7,16 @@ depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
   type: build
-- filename: base/bison.bst
+- filename: components/bison.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/git-minimal.bst
+- filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

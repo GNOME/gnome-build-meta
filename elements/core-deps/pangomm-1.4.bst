@@ -8,13 +8,13 @@ depends:
 - core-deps/glibmm-2.4.bst
 - sdk/atk.bst
 - sdk/pango.bst
-- filename: base/perl-xml-parser.bst
+- filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

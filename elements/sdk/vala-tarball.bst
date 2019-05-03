@@ -3,13 +3,16 @@ sources:
 - kind: tar
   url: gnome_downloads:vala/0.36/vala-0.36.18.tar.xz
 depends:
-- filename: base/bison.bst
+- filename: components/bison.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: components/flex.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux

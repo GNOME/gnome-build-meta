@@ -4,8 +4,8 @@ sources:
   url: http://www.libimobiledevice.org/downloads/libusbmuxd-1.0.10.tar.bz2
 depends:
 - world/plist.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
