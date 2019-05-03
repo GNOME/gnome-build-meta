@@ -8,5 +8,5 @@ depends:
 - core/nautilus.bst
 - sdk/librsvg.bst
 - sdk/pygobject.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

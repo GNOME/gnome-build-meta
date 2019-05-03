@@ -10,16 +10,16 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
-- filename: desktop/systemd.bst
+- filename: components/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: base/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/git.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: components/git.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
