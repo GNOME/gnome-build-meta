@@ -22,6 +22,7 @@ depends:
 variables:
   sysusersdir: "%{prefix}/lib/sysusers.d"
   conf-local: |
+    --enable-wayland-support \
     --with-pam-prefix=%{sysconfdir} \
     --with-default-pam-config=redhat \
     --with-run-dir=/run/gdm \
