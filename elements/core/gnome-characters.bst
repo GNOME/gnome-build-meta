@@ -8,10 +8,11 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/gjs.bst
 - sdk/gtk+-3.bst
+- filename: components/itstools.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
