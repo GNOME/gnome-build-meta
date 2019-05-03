@@ -7,14 +7,14 @@ depends:
 - sdk/openjpeg.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: desktop/cairo.bst
+- filename: components/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/fontconfig.bst
+- filename: components/fontconfig.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/freetype.bst
+- filename: components/freetype.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

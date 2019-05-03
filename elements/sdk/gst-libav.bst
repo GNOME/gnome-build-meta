@@ -1,15 +1,15 @@
 kind: filter
 depends:
-- filename: desktop/gstreamer-libav.bst
+- filename: components/gstreamer-libav.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/orc.bst
+- filename: components/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/gst-plugins-base.bst

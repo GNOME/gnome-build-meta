@@ -14,16 +14,16 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsoup.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/git-minimal.bst
+- filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/perl.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
