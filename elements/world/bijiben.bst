@@ -15,7 +15,7 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

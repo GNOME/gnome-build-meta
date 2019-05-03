@@ -1,4 +1,4 @@
 projects:
   gnome:
     freedesktop-sdk.bst:
-    - ref: freedesktop-sdk-18.08.32-0-gdc56d18c8f1cd6b64395aba7e75d1f7303b7b51d
+    - ref: 18.08-branchpoint-1403-g1835e641063c77ef7941bd9aac3488a99f9cffda
