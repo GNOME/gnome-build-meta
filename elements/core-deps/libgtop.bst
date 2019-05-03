@@ -7,13 +7,13 @@ depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base/texinfo.bst
+- filename: components/texinfo.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 environment:
   CC: gcc -std=c99
