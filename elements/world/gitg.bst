@@ -18,5 +18,5 @@ depends:
 - sdk/vala.bst
 - world/gtkspell.bst
 - world/libgit2-glib.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

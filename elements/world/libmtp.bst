@@ -4,8 +4,8 @@ sources:
   url: downloads.sourceforge.net:libmtp/libmtp/1.1.15/libmtp-1.1.15.tar.gz
 depends:
 - core-deps/libusb.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

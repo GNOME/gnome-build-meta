@@ -18,7 +18,7 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

@@ -24,9 +24,9 @@ depends:
 - world/template-glib.bst
 - filename: deploy-tools/flatpak.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/llvm6.bst
+- filename: components/llvm6.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dwith_sysmon=false -Dplugin_sysprof=false
