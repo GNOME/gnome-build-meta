@@ -4,15 +4,12 @@ depends:
 - filename: vm/base-filesystem.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: sdk.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/util-linux.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/man-db-generate.bst
-  junction: freedesktop-sdk.bst
-  type: build
+#- filename: components/man-db-generate.bst
+#  junction: freedesktop-sdk.bst
+#  type: build
 - filename: split-locales.bst
   junction: freedesktop-sdk.bst
   type: build
