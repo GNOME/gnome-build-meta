@@ -12,10 +12,15 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/vala.bst
+- filename: components/cyrus-sasl.bst
+  junction: freedesktop-sdk.bst
 - filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: components/perl-xml-parser.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/gnutls.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: public-stacks/buildsystem-autotools.bst

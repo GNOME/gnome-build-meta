@@ -14,6 +14,10 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
+- filename: components/lcms.bst
+  junction: freedesktop-sdk.bst
+- filename: components/libexif.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

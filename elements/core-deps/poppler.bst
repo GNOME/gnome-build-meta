@@ -13,6 +13,10 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/freetype.bst
   junction: freedesktop-sdk.bst
+- filename: components/jpeg.bst
+  junction: freedesktop-sdk.bst
+- filename: components/nss.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
