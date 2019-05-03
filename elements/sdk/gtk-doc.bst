@@ -7,10 +7,10 @@ depends:
 - sdk/yelp-tools.bst
 - filename: sdk/python-pygments.bst
   type: runtime
-- filename: base/docbook-xsl.bst
+- filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

@@ -23,16 +23,16 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- filename: desktop/desktop-file-utils.bst
+- filename: components/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
-- filename: base/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/git-minimal.bst
+- filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

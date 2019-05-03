@@ -4,8 +4,8 @@ sources:
   url: https://libopenraw.freedesktop.org/download/exempi-2.4.5.tar.bz2
 depends:
 - core-deps/boost.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
