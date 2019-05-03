@@ -10,16 +10,16 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/wayland.bst
+- filename: components/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xcomposite.bst
+- filename: components/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-cogl-gst --disable-maintainer-flags --enable-xlib-egl-platform
