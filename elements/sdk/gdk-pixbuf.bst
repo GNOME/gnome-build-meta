@@ -8,14 +8,14 @@ depends:
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: desktop/shared-mime-info.bst
+- filename: components/shared-mime-info.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-x11.bst
+- filename: components/xorg-lib-x11.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 public:
   bst:

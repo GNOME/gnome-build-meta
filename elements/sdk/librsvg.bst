@@ -305,18 +305,15 @@ depends:
 - sdk/pango.bst
 - filename: sdk/vala.bst
   type: build
-- filename: desktop/cairo.bst
+- filename: components/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: extensions/rust/cargo.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: extensions/rust/rust.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: |

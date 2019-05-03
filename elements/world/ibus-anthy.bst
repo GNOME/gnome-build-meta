@@ -8,13 +8,13 @@ depends:
 - sdk/ibus.bst
 - sdk/pygobject.bst
 - world/anthy.bst
-- filename: base/perl-xml-parser.bst
+- filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-private-png=yes --with-python=python3

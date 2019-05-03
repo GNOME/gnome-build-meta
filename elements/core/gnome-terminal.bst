@@ -15,15 +15,15 @@ depends:
 - sdk/librsvg.bst
 - sdk/vte.bst
 - sdk/yelp-tools.bst
-- filename: desktop/desktop-file-utils.bst
+- filename: components/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-autotools.bst
+- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-migration
