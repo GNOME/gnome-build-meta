@@ -12,6 +12,9 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/libxkbcommon.bst
   junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
