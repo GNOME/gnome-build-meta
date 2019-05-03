@@ -36,6 +36,12 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/xorg-lib-xinerama.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -15,6 +15,9 @@ depends:
 - filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/libxslt.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -285,6 +285,9 @@ depends:
   type: build
 - filename: components/cairo.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: extensions/rust/rust.bst
   junction: freedesktop-sdk.bst
   type: build
