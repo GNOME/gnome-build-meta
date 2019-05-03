@@ -34,6 +34,8 @@ depends:
 - filename: vm/systemd-firstboot-integration.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: vm/linux-pam-config.bst
+  type: build
 
 # And add GNOME core on top !
 - filename: sdk.bst
