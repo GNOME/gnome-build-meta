@@ -30,16 +30,16 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcroco.bst
 - sdk/libsoup.bst
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/perl.bst
+- filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

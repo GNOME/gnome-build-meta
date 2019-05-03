@@ -3,10 +3,10 @@ sources:
 - kind: tar
   url: http://libndp.org/files/libndp-1.6.tar.gz
 depends:
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux
