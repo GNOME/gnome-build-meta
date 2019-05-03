@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
   track: master
+- kind: local
+  path: files/gnome-initial-setup
+  directory: gnome-initial-setup-config
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -30,6 +33,13 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
+  sysusersdir: "%{prefix}/lib/sysusers.d"
   meson-local: >-
     -Dcheese=disabled
     -Dsoftware-sources=disabled
+
+config:
+  install-commands:
+    (>):
+    - mkdir -p %{install-root}%{sysusersdir}
+    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf %{install-root}%{sysusersdir}/gnome-initial-setup.conf
