@@ -20,8 +20,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
 - sdk/librsvg.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

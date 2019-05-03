@@ -25,17 +25,17 @@ depends:
 - sdk/ibus.bst
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- filename: desktop/alsa-lib.bst
+- filename: components/alsa-lib.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/cups.bst
+- filename: components/cups.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xtst.bst
+- filename: components/xorg-lib-xtst.bst
   junction: freedesktop-sdk.bst
-- filename: base/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
