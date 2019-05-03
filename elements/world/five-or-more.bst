@@ -8,7 +8,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - world/libgnome-games-support.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst

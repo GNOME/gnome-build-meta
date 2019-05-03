@@ -5,12 +5,12 @@ sources:
 depends:
 - core-deps/json-c.bst
 - core-deps/kmod.bst
-- filename: desktop/systemd.bst
+- filename: components/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

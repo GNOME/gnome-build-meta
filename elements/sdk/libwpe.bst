@@ -3,12 +3,12 @@ sources:
 - kind: tar
   url: github_com:WebPlatformForEmbedded/libwpe/releases/download/1.3.1/libwpe-1.3.1.tar.xz
 depends:
-- filename: desktop/libxkbcommon.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/mesa.bst
-  junction: freedesktop-sdk.bst
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: components/libxkbcommon.bst
+  junction: freedesktop-sdk.bst
+- filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst

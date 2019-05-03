@@ -30,25 +30,25 @@ depends:
 - sdk/pango.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
-- filename: desktop/hyphen.bst
+- filename: components/hyphen.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/wayland.bst
+- filename: components/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xt.bst
+- filename: components/xorg-lib-xt.bst
   junction: freedesktop-sdk.bst
-- filename: base/gperf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/perl.bst
+- filename: components/gperf.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/ruby.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-cmake.bst
+- filename: components/ruby.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-cmake.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   webkitgtk_toolchain: ''
