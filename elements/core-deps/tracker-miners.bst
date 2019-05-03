@@ -22,6 +22,8 @@ depends:
 - sdk/libsecret.bst
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
+- filename: components/libflac.bst
+  junction: freedesktop-sdk.bst
 - filename: components/libseccomp.bst
   junction: freedesktop-sdk.bst
 - filename: components/intltool.bst

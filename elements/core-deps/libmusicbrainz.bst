@@ -7,6 +7,8 @@ sources:
   path: files/libmusicbrainz/cmake-ninja.patch
 depends:
 - core-deps/neon.bst
+- filename: components/libxml2.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build

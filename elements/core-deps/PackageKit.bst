@@ -8,6 +8,8 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
