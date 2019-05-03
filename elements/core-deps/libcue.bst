@@ -3,13 +3,13 @@ sources:
 - kind: tar
   url: https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz
 depends:
-- filename: base/bison.bst
+- filename: components/bison.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: |

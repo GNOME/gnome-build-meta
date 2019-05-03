@@ -9,5 +9,5 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

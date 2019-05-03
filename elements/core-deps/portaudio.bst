@@ -4,8 +4,8 @@ sources:
 - kind: tar
   url: http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
 depends:
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

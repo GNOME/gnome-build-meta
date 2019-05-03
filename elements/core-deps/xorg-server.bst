@@ -4,32 +4,32 @@ sources:
   url: https://www.x.org/releases/individual/xserver/xorg-server-1.20.3.tar.bz2
 depends:
 - core-deps/xfont2.bst
-- filename: desktop/libdrm.bst
+- filename: components/libdrm.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/libepoxy.bst
+- filename: components/libepoxy.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/pixman.bst
+- filename: components/pixman.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/systemd.bst
+- filename: components/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/wayland.bst
+- filename: components/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/wayland-protocols.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: desktop/xorg-lib-pciaccess.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xkbfile.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xshmfence.bst
-  junction: freedesktop-sdk.bst
-- filename: desktop/xorg-proto-xorgproto.bst
+- filename: components/wayland-protocols.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: components/xorg-lib-pciaccess.bst
+  junction: freedesktop-sdk.bst
+- filename: components/xorg-lib-xkbfile.bst
+  junction: freedesktop-sdk.bst
+- filename: components/xorg-lib-xshmfence.bst
+  junction: freedesktop-sdk.bst
+- filename: components/xorg-proto-xorgproto.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local:

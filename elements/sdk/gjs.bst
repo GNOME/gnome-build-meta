@@ -7,14 +7,14 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/mozjs60.bst
-- filename: desktop/cairo.bst
+- filename: components/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/dbus.bst
+- filename: components/dbus.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-installed-tests

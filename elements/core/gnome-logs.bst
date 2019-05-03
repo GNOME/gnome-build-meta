@@ -8,12 +8,12 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- filename: desktop/systemd.bst
+- filename: components/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
