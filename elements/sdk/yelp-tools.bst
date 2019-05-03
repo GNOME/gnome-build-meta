@@ -8,6 +8,9 @@ depends:
 - filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
