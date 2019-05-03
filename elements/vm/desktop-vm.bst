@@ -7,9 +7,9 @@ depends:
 - filename: base/util-linux.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/man-db-generate.bst
-  junction: freedesktop-sdk.bst
-  type: build
+#- filename: base/man-db-generate.bst
+#  junction: freedesktop-sdk.bst
+#  type: build
 - filename: split-locales.bst
   junction: freedesktop-sdk.bst
   type: build
