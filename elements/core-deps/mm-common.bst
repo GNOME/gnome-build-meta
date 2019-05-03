@@ -24,6 +24,12 @@ sources:
   path: files/mm-common/libstdc++.tag
   directory: doctags/
 depends:
+- filename: components/tar.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/gzip.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

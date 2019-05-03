@@ -4,10 +4,17 @@ sources:
   url: gitlab_gnome_org:GNOME/gtk-doc.git
   track: master
 depends:
-- sdk/yelp-tools.bst
 - filename: sdk/python-pygments.bst
   type: runtime
+- filename: components/itstools.bst
+  junction: freedesktop-sdk.bst
+- filename: components/docbook-xml.bst
+  junction: freedesktop-sdk.bst
 - filename: components/docbook-xsl.bst
+  junction: freedesktop-sdk.bst
+- filename: components/pkg-config.bst
+  junction: freedesktop-sdk.bst
+- filename: components/python3.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
