@@ -8,10 +8,12 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: public-stacks/buildsystem-cmake.bst
+- filename: components/libxml2.bst
+  junction: freedesktop-sdk.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/perl.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
