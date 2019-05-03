@@ -28,14 +28,14 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Denable-vala=no

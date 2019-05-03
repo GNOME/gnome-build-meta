@@ -5,13 +5,13 @@ sources:
 depends:
 - core-deps/libdaemon.bst
 - sdk/gtk+-3.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/intltool.bst
+- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-distro=none --disable-qt3 --disable-qt4 --disable-gtk
