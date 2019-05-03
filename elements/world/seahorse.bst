@@ -16,9 +16,9 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
 - filename: sdk/cantarell-fonts.bst
   type: runtime

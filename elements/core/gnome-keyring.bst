@@ -7,13 +7,13 @@ depends:
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: base/docbook-xsl.bst
+- filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/openssh.bst
+- filename: components/openssh.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

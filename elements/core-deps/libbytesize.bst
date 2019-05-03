@@ -4,8 +4,8 @@ sources:
   url: github_com:storaged-project/libbytesize/releases/download/1.2/libbytesize-1.2.tar.gz
 depends:
 - core-deps/mpfr.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
