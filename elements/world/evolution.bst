@@ -23,9 +23,9 @@ depends:
 - sdk/libsoup.bst
 - sdk/yelp-tools.bst
 - world/gtkspell.bst
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DENABLE_LIBCRYPTUI=OFF -DENABLE_PST_IMPORT=OFF -DENABLE_YTNEF=OFF -DENABLE_TEXT_HIGHLIGHT=OFF

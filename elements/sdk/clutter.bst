@@ -12,14 +12,14 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
-- filename: desktop/libxkbcommon.bst
+- filename: components/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/wayland.bst
+- filename: components/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-installed-tests --disable-maintainer-flags --enable-egl-backend

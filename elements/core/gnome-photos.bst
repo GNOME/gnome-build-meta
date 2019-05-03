@@ -26,17 +26,17 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- filename: desktop/desktop-file-utils.bst
+- filename: components/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
-- filename: base/git-minimal.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: |

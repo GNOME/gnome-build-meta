@@ -17,10 +17,10 @@ sources:
 - kind: patch
   path: files/openjpeg/fix-cmake-config.patch
 depends:
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: -DOPENJPEG_INSTALL_LIB_DIR=%{lib}

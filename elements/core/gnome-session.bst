@@ -9,15 +9,15 @@ depends:
 - core/gnome-desktop.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- filename: desktop/xorg-lib-ice.bst
+- filename: components/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-sm.bst
+- filename: components/xorg-lib-sm.bst
   junction: freedesktop-sdk.bst
-- filename: base/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-meson.bst
+- filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
