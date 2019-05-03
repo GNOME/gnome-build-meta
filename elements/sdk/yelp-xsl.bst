@@ -4,13 +4,16 @@ sources:
   url: gitlab_gnome_org:GNOME/yelp-xsl.git
   track: master
 depends:
-- filename: desktop/itstools.bst
+- filename: components/itstools.bst
   junction: freedesktop-sdk.bst
-- filename: base/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: base/buildsystem-autotools.bst
+- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: public-stacks/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

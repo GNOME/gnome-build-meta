@@ -4,16 +4,16 @@ sources:
   url: people_freedesktop_org:~svu/libxklavier-5.4.tar.bz2
 depends:
 - sdk/gobject-introspection.bst
-- filename: desktop/xorg-app-xkbcomp.bst
+- filename: components/xorg-app-xkbcomp.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-x11.bst
+- filename: components/xorg-lib-x11.bst
   junction: freedesktop-sdk.bst
-- filename: desktop/xorg-lib-xi.bst
+- filename: components/xorg-lib-xi.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux
