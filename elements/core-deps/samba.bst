@@ -29,6 +29,7 @@ config:
   - make
   install-commands:
   - DESTDIR=%{install-root} make install
+  - mv %{install-root}/var/run %{install-root}/run
 environment:
   MAKEFLAGS: -j%{max-jobs}
   V: 1
