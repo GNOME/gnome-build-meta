@@ -9,8 +9,7 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
-- filename: core-deps/xorg-server.bst
-  type: build
+- core-deps/xorg-server.bst
 - core/gnome-desktop.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
