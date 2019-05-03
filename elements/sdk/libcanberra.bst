@@ -6,6 +6,8 @@ depends:
 - sdk/gtk+-3.bst
 - filename: components/libpulse.bst
   junction: freedesktop-sdk.bst
+- filename: components/libtool.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
