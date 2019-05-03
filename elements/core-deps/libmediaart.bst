@@ -6,9 +6,12 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
 - filename: sdk/gtk-doc.bst
   type: build
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
