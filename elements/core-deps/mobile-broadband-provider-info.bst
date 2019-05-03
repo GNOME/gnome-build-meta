@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/mobile-broadband-provider-info.git
   track: master
 depends:
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

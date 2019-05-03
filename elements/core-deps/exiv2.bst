@@ -3,8 +3,8 @@ sources:
 - kind: tar
   url: github_com:Exiv2/exiv2/archive/v0.26.tar.gz
 depends:
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

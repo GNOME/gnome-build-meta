@@ -11,16 +11,16 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: base/intltool.bst
+- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/perl-xml-parser.bst
+- filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin

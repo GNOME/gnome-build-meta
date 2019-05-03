@@ -3,10 +3,10 @@ sources:
 - kind: tar
   url: https://www.sourceware.org/pub/lvm2/LVM2.2.02.177.tgz
 depends:
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-dmeventd --enable-cmdlib --enable-pkgconfig

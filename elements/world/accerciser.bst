@@ -11,5 +11,5 @@ depends:
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
