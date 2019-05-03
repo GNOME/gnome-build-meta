@@ -7,6 +7,8 @@ depends:
 - core-deps/libatasmart.bst
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
+- filename: sdk/gtk-doc.bst
+  type: build
 - filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
