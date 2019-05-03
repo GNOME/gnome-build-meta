@@ -1,51 +1,51 @@
 kind: filter
 depends:
-- filename: desktop/gstreamer-plugins-bad.bst
+- filename: components/gstreamer-plugins-bad.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/orc.bst
+- filename: components/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/gstreamer.bst
+- filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/gst-plugins-base.bst
   type: runtime
-- filename: desktop/libdrm.bst
+- filename: components/libdrm.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/libfdk-aac.bst
+- filename: components/libfdk-aac.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/libglvnd.bst
+- filename: components/libglvnd.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/librsvg.bst
   type: runtime
-- filename: desktop/libvdpau.bst
+- filename: components/libvdpau.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/mesa.bst
+- filename: components/mesa.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/openal.bst
+- filename: components/openal.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/vulkan.bst
+- filename: components/vulkan.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: desktop/wayland.bst
+- filename: components/wayland.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: base/curl.bst
+- filename: components/curl.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: base/libwebp.bst
+- filename: components/libwebp.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: base/sndfile.bst
+- filename: components/sndfile.bst
   junction: freedesktop-sdk.bst
   type: runtime

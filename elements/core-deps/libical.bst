@@ -3,11 +3,11 @@ sources:
 - kind: tar
   url: github_com:libical/libical/releases/download/v3.0.3/libical-3.0.3.tar.gz
 depends:
-- filename: base/buildsystem-cmake.bst
+- filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/perl.bst
+- filename: components/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
