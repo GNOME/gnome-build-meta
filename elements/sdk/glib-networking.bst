@@ -6,12 +6,12 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- filename: desktop/libproxy.bst
+- filename: components/libproxy.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

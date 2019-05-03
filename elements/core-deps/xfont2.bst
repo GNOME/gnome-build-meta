@@ -5,10 +5,10 @@ sources:
 depends:
 - core-deps/fontenc.bst
 - core-deps/font-util.bst
-- filename: desktop/freetype.bst
+- filename: components/freetype.bst
   junction: freedesktop-sdk.bst
-- filename: base/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
