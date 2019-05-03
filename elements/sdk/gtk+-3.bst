@@ -39,7 +39,7 @@ depends:
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend

@@ -10,7 +10,7 @@ depends:
 - filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: -Dstemmer=false

@@ -23,7 +23,7 @@ depends:
 - filename: base/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 - filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst

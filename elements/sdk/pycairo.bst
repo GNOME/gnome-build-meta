@@ -8,7 +8,7 @@ depends:
 - filename: base/pkg-config.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   python: python3

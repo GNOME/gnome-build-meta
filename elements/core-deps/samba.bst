@@ -16,7 +16,7 @@ depends:
 - filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 config:
   configure-commands:

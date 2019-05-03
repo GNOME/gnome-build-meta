@@ -11,7 +11,7 @@ depends:
 - filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base-platform.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: --with-distro=none --disable-qt3 --disable-qt4 --disable-gtk
