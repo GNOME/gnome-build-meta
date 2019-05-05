@@ -140,6 +140,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libogg.bst
   junction: freedesktop-sdk.bst
+- filename: components/libnice.bst
+  junction: freedesktop-sdk.bst
 - filename: components/libpng.bst
   junction: freedesktop-sdk.bst
 - filename: components/libsamplerate.bst
@@ -317,8 +319,6 @@ depends:
 - filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
 - filename: components/mpg123.bst
-  junction: freedesktop-sdk.bst
-- filename: components/multiarch-links.bst
   junction: freedesktop-sdk.bst
 - filename: components/mythes.bst
   junction: freedesktop-sdk.bst
