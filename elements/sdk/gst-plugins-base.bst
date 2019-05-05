@@ -12,9 +12,6 @@ depends:
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/mesa.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
 - filename: sdk/pango.bst
   type: runtime
 - filename: components/xorg-lib-xv.bst
@@ -30,5 +27,8 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/opus.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
   type: runtime
