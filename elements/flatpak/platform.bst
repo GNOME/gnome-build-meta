@@ -27,7 +27,8 @@ config:
     # When syncing, skip the Locale extension, and add the freedesktop-sdk
     # version to extensions that don't have a version
     Extension org.freedesktop.Platform.GL:
-      versions: "18.08;1.4"
+      # 1.4 is for Nvidia drivers
+      versions: "19.08;1.4"
       version: "1.4"
       directory: "%{lib}/GL"
       subdirectories: "true"
@@ -40,12 +41,12 @@ config:
 
     Extension org.freedesktop.Platform.Timezones:
       directory: share/zoneinfo
-      version: 18.08
+      version: 19.08
 
     Extension org.freedesktop.Platform.GStreamer:
       directory: lib/extensions/gstreamer-1.0
       subdirectories: 'true'
-      version: 18.08
+      version: 19.08
 
     Extension org.freedesktop.Platform.Icontheme:
       directory: share/runtime/share/icons
@@ -66,10 +67,10 @@ config:
       autodelete: 'false'
       no-autodownload: 'true'
       download-if: have-intel-gpu
-      version: 18.08
+      version: 19.08
 
-    Extension org.freedesktop.Platform.html5-codecs:
+    Extension org.freedesktop.Platform.ffmpeg-html5:
       directory: '%{lib}/ffmpeg'
       add-ld-path: lib
       autodelete: 'false'
-      version: 18.08
+      version: 19.08
