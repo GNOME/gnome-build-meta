@@ -9,10 +9,16 @@ depends:
 - filename: components/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
+- filename: components/frei0r.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/gst-plugins-base.bst
+  type: runtime
+- filename: components/ladspa-sdk.bst
+  junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/libdrm.bst
   junction: freedesktop-sdk.bst
@@ -23,13 +29,10 @@ depends:
 - filename: components/libglvnd.bst
   junction: freedesktop-sdk.bst
   type: runtime
+- filename: components/libnice.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: sdk/librsvg.bst
-  type: runtime
-- filename: components/libvdpau.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/mesa.bst
-  junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/openal.bst
   junction: freedesktop-sdk.bst
