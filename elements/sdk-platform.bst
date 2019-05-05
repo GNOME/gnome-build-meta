@@ -188,6 +188,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/opus.bst
   junction: freedesktop-sdk.bst
+- filename: components/osmesa.bst
+  junction: freedesktop-sdk.bst
 - filename: components/p11-kit.bst
   junction: freedesktop-sdk.bst
 - filename: components/pcre2.bst
@@ -312,7 +314,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/llvm8.bst
   junction: freedesktop-sdk.bst
-- filename: components/mesa.bst
+- filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
 - filename: components/mpg123.bst
   junction: freedesktop-sdk.bst

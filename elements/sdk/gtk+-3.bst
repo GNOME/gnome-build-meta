@@ -20,7 +20,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: components/mesa.bst
+- filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
   junction: freedesktop-sdk.bst
