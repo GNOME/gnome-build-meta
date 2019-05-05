@@ -6,6 +6,17 @@ sources:
 depends:
 - filename: sdk/gtk-doc.bst
   type: build
+- filename: components/libffi.bst
+  junction: freedesktop-sdk.bst
+- filename: components/util-linux.bst
+  junction: freedesktop-sdk.bst
+- filename: components/pcre.bst
+  junction: freedesktop-sdk.bst
+- filename: components/python3.bst
+  junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
