@@ -17,6 +17,11 @@ depends:
 - filename: components/gettext.bst
   junction: freedesktop-sdk.bst
   type: build
+# a dummy dependency so our glib is always staged
+# on top of freedesktop-sdk version
+- filename: components/glib.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
