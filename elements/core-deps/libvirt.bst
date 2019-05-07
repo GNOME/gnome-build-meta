@@ -6,6 +6,8 @@ depends:
 - core-deps/libnl.bst
 - core-deps/portablexdr.bst
 - core-deps/lvm2.bst
+- filename: components/gnutls.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

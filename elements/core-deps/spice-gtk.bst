@@ -9,7 +9,10 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- sdk/vala.bst
+- filename: sdk/vala.bst
+  type: build
+- filename: components/libdrm.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
