@@ -1,15 +1,15 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.115.tar.gz
+  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data
 depends:
-- core-deps/mozjs52.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- sdk/mozjs60.bst
 - filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: base/intltool.bst
