@@ -11,6 +11,9 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

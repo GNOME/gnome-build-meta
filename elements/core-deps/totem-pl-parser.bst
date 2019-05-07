@@ -6,7 +6,17 @@ sources:
 depends:
 - core-deps/gmime3.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
+- filename: components/libarchive.bst
+  junction: freedesktop-sdk.bst
+- filename: components/libgcrypt.bst
+  junction: freedesktop-sdk.bst
+- filename: components/libxml2.bst
+  junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

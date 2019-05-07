@@ -11,6 +11,12 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst
 - sdk/yelp-tools.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

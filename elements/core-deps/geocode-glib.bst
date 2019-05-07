@@ -10,6 +10,9 @@ depends:
   type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

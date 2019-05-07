@@ -6,6 +6,15 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/libarchive.bst
+  junction: freedesktop-sdk.bst
+- filename: components/libxml2.bst
+  junction: freedesktop-sdk.bst
+- filename: components/libxslt.bst
+  junction: freedesktop-sdk.bst
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build

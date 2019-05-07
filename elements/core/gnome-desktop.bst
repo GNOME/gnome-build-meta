@@ -11,10 +11,15 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- filename: components/iso-codes.bst
+  junction: freedesktop-sdk.bst
 - filename: components/itstools.bst
   junction: freedesktop-sdk.bst
 - filename: components/libseccomp.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

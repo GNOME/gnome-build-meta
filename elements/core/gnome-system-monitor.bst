@@ -11,6 +11,9 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -21,5 +21,8 @@ depends:
 - filename: components/git.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

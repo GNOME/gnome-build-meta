@@ -8,6 +8,9 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst

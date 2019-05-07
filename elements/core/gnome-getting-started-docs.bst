@@ -5,6 +5,9 @@ sources:
   track: master
 depends:
 - sdk/yelp-tools.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

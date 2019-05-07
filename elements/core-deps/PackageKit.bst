@@ -8,6 +8,8 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
+- filename: sdk/gobject-introspection.bst
+  type: build
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
@@ -15,6 +17,9 @@ depends:
   junction: freedesktop-sdk.bst
   type: build
 - filename: components/perl-xml-parser.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: components/which.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: public-stacks/buildsystem-autotools.bst

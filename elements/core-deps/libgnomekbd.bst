@@ -6,6 +6,9 @@ sources:
 depends:
 - core-deps/libxklavier.bst
 - sdk/gtk+-3.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

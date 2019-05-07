@@ -6,6 +6,9 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -16,6 +16,9 @@ depends:
 - sdk/libnotify.bst
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

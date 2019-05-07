@@ -10,6 +10,9 @@ depends:
 - filename: components/texinfo.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

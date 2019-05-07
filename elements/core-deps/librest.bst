@@ -8,6 +8,11 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst
+- filename: components/ca-certificates.bst
+  junction: freedesktop-sdk.bst
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
