@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gtksourceview/3.24/gtksourceview-3.24.10.tar.xz
+  url: gnome_downloads:gtksourceview/3.24/gtksourceview-3.24.11.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
