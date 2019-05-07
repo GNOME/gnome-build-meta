@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.32/gnome-terminal-3.32.1.tar.xz
+  url: gnome_downloads:gnome-terminal/3.32/gnome-terminal-3.32.2.tar.xz
 depends:
 - core/gnome-shell.bst
 - core/nautilus.bst

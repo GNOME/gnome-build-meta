@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp/3.32/yelp-3.32.1.tar.xz
+  url: gnome_downloads:yelp/3.32/yelp-3.32.2.tar.xz
 depends:
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
