@@ -19,3 +19,4 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+meson-local: -Delogind=disabled
