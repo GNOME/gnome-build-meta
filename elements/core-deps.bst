@@ -22,7 +22,6 @@ depends:
 - core-deps/cryptsetup.bst
 - core-deps/dmraid.bst
 - core-deps/dotconf.bst
-- core-deps/espeak.bst
 - core-deps/evolution-data-server.bst
 - core-deps/exempi.bst
 - core-deps/exiv2.bst
@@ -82,7 +81,6 @@ depends:
 - core-deps/libmusicbrainz.bst
 - core-deps/libndp.bst
 - core-deps/libnl.bst
-- core-deps/liboauth.bst
 - core-deps/libosinfo.bst
 - core-deps/libpeas.bst
 - core-deps/libqmi.bst
@@ -93,7 +91,6 @@ depends:
 - core-deps/libusb.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
-- core-deps/libwacom.bst
 - core-deps/libxklavier.bst
 - core-deps/libyaml.bst
 - core-deps/libzapojit.bst

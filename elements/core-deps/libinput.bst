@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/libevdev.bst
-- core-deps/libwacom.bst
 - core-deps/mtdev.bst
 - sdk/gtk+-3.bst
 - filename: base/buildsystem-meson.bst

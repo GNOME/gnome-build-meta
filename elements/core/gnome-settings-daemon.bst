@@ -15,7 +15,6 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/libgudev.bst
 - core-deps/libgweather.bst
-- core-deps/libwacom.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - sdk/geoclue.bst

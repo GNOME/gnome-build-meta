@@ -22,7 +22,6 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
-- core-deps/libwacom.bst
 - core-deps/pwquality.bst
 - core-deps/samba.bst
 - core-deps/upower.bst
