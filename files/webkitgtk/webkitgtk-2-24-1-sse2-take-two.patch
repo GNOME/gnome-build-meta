@@ -1,0 +1,172 @@
+Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp
+===================================================================
+--- /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 245126)
++++ /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.cpp	(revision 245127)
+@@ -168,9 +168,4 @@
+ static_assert(sizeof(Probe::State) == PROBE_SIZE, "Probe::State::size's matches ctiMasmProbeTrampoline");
+ static_assert((PROBE_EXECUTOR_OFFSET + PTR_SIZE) <= (PROBE_SIZE + OUT_SIZE), "Must have room after ProbeContext to stash the probe handler");
+-
+-#if CPU(X86)
+-// SSE2 is a hard requirement on x86.
+-static_assert(isSSE2Present(), "SSE2 support is required in JavaScriptCore");
+-#endif
+ 
+ #undef PROBE_OFFSETOF
+@@ -793,5 +788,4 @@
+         {
+             CPUID cpuid = getCPUID(0x1);
+-            s_sse2CheckState = (cpuid[3] & (1 << 26)) ? CPUIDCheckState::Set : CPUIDCheckState::Clear;
+             s_sse4_1CheckState = (cpuid[2] & (1 << 19)) ? CPUIDCheckState::Set : CPUIDCheckState::Clear;
+             s_sse4_2CheckState = (cpuid[2] & (1 << 20)) ? CPUIDCheckState::Set : CPUIDCheckState::Clear;
+@@ -810,5 +804,4 @@
+ }
+ 
+-MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse2CheckState = CPUIDCheckState::NotChecked;
+ MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse4_1CheckState = CPUIDCheckState::NotChecked;
+ MacroAssemblerX86Common::CPUIDCheckState MacroAssemblerX86Common::s_sse4_2CheckState = CPUIDCheckState::NotChecked;
+Index: /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h
+===================================================================
+--- /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 245126)
++++ /trunk/Source/JavaScriptCore/assembler/MacroAssemblerX86Common.h	(revision 245127)
+@@ -4198,33 +4198,4 @@
+ #endif
+ 
+-#if CPU(X86)
+-#if OS(MAC_OS_X)
+-
+-    // All X86 Macs are guaranteed to support at least SSE2,
+-    static bool isSSE2Present()
+-    {
+-        return true;
+-    }
+-
+-#else // OS(MAC_OS_X)
+-    static bool isSSE2Present()
+-    {
+-        if (s_sse2CheckState == CPUIDCheckState::NotChecked)
+-            collectCPUFeatures();
+-        return s_sse2CheckState == CPUIDCheckState::Set;
+-    }
+-
+-#endif // OS(MAC_OS_X)
+-#elif !defined(NDEBUG) // CPU(X86)
+-
+-    // On x86-64 we should never be checking for SSE2 in a non-debug build,
+-    // but non debug add this method to keep the asserts above happy.
+-    static bool isSSE2Present()
+-    {
+-        return true;
+-    }
+-
+-#endif
+-
+     using CPUID = std::array<unsigned, 4>;
+     static CPUID getCPUID(unsigned level);
+@@ -4232,5 +4203,4 @@
+     JS_EXPORT_PRIVATE static void collectCPUFeatures();
+ 
+-    JS_EXPORT_PRIVATE static CPUIDCheckState s_sse2CheckState;
+     JS_EXPORT_PRIVATE static CPUIDCheckState s_sse4_1CheckState;
+     JS_EXPORT_PRIVATE static CPUIDCheckState s_sse4_2CheckState;
+Index: /trunk/Source/cmake/DetectSSE2.cmake
+===================================================================
+--- /trunk/Source/cmake/DetectSSE2.cmake	(revision 245127)
++++ /trunk/Source/cmake/DetectSSE2.cmake	(revision 245127)
+@@ -0,0 +1,61 @@
++#################################
++# Check for the presence of SSE2.
++#
++# Once done, this will define:
++# - SSE2_SUPPORT_FOUND - the system supports (at least) SSE2.
++#
++# Copyright (c) 2014, Pablo Fernandez Alcantarilla, Jesus Nuevo
++# Copyright (c) 2019, Igalia S.L.
++#
++# Redistribution and use in source and binary forms, with or without modification,
++# are permitted provided that the following conditions are met:
++#
++#   * Redistributions of source code must retain the above copyright notice,
++#     this list of conditions and the following disclaimer.
++#
++#   * Redistributions in binary form must reproduce the above copyright notice,
++#     this list of conditions and the following disclaimer in the documentation
++#     and/or other materials provided with the distribution.
++#
++#   * Neither the name of the copyright holders nor the names of its contributors
++#     may be used to endorse or promote products derived from this software without
++#     specific prior written permission.
++#
++# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
++# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
++# SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
++# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
++# TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
++# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
++# WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++set(SSE2_SUPPORT_FOUND FALSE)
++
++macro(CHECK_FOR_SSE2)
++    include(CheckCXXSourceRuns)
++
++    check_cxx_source_runs("
++        #include <emmintrin.h>
++        int main ()
++        {
++            __m128d a, b;
++            double vals[2] = {0};
++            a = _mm_loadu_pd (vals);
++            b = _mm_add_pd (a,a);
++            _mm_storeu_pd (vals,b);
++            return 0;
++        }"
++        HAVE_SSE2_EXTENSIONS)
++
++    if (COMPILER_IS_GCC_OR_CLANG OR (MSVC AND NOT CMAKE_CL_64))
++        if (HAVE_SSE2_EXTENSIONS)
++            set(SSE2_SUPPORT_FOUND TRUE)
++            message(STATUS "Found SSE2 extensions")
++        endif ()
++    endif ()
++
++endmacro(CHECK_FOR_SSE2)
++
++CHECK_FOR_SSE2()
+Index: /trunk/Source/cmake/WebKitCompilerFlags.cmake
+===================================================================
+--- /trunk/Source/cmake/WebKitCompilerFlags.cmake	(revision 245126)
++++ /trunk/Source/cmake/WebKitCompilerFlags.cmake	(revision 245127)
+@@ -144,4 +144,13 @@
+     if (CMAKE_COMPILER_IS_GNUCXX)
+         WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-Wno-expansion-to-defined)
++    endif ()
++
++    # Force SSE2 fp on x86 builds.
++    if (WTF_CPU_X86 AND NOT CMAKE_CROSSCOMPILING)
++        WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-msse2 -mfpmath=sse)
++        include(DetectSSE2)
++        if (NOT SSE2_SUPPORT_FOUND)
++            message(FATAL_ERROR "SSE2 support is required to compile WebKit")
++        endif ()
+     endif ()
+ endif ()
+Index: /trunk/Tools/Scripts/webkitdirs.pm
+===================================================================
+--- /trunk/Tools/Scripts/webkitdirs.pm	(revision 245126)
++++ /trunk/Tools/Scripts/webkitdirs.pm	(revision 245127)
+@@ -2227,13 +2227,4 @@
+     push @args, '"' . $cmakeSourceDir . '"';
+ 
+-    # Compiler options to keep floating point values consistent
+-    # between 32-bit and 64-bit architectures. This makes us use SSE
+-    # when our architecture is 32-bit ('i686') or when it's not but
+-    # the user has requested a 32-bit build.
+-    if ((architecture() eq "i686" || (architecture() eq "x86_64" && shouldBuild32Bit())) && !isCrossCompilation() && !isAnyWindows()) {
+-        $ENV{'CFLAGS'} = "-march=pentium4 -msse2 -mfpmath=sse " . ($ENV{'CFLAGS'} || "");
+-        $ENV{'CXXFLAGS'} = "-march=pentium4 -msse2 -mfpmath=sse " . ($ENV{'CXXFLAGS'} || "");
+-    }
+-
+     # We call system("cmake @args") instead of system("cmake", @args) so that @args is
+     # parsed for shell metacharacters.
