@@ -6,6 +6,7 @@ sources:
   path: files/webkitgtk/webkitgtk-2-24-1-revert-sse2.patch
 - kind: patch
   path: files/webkitgtk/webkitgtk-2-24-1-sse2-take-two.patch
+  strip-level: 2
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
