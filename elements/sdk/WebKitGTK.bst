@@ -5,6 +5,9 @@ sources:
 - kind: patch
   path: files/webkitgtk/webkitgtk-2-24-1-revert-sse2.patch
 - kind: patch
+  path: files/webkitgtk/webkitgtk-2-24-1-sse2-take-two.patch
+  strip-level: 2
+- kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
@@ -61,10 +64,14 @@ variables:
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     %{webkitgtk_toolchain}
 (?):
-- arch == "i686" or arch == "arm":
+- arch == "i686":
     environment:
-      CFLAGS: '-g1'
-      CXXFLAGS: '-g1'
+      CFLAGS: '%{flags_i686} -g1'
+      CXXFLAGS: '%{flags_i686} -g1'
+- arch == "arm":
+    environment:
+      CFLAGS: '%{flags_arm} -g1'
+      CXXFLAGS: '%{flags_arm} -g1'
 public:
   cpe:
     product: webkitgtk+
