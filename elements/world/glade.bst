@@ -4,6 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/glade.git
   track: master
 depends:
+- sdk/WebKitGTK.bst
+- sdk/pygobject.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+- filename: base/buildsystem-cmake.bst
+  junction: freedesktop-sdk.bst
 - filename: sdk/cantarell-fonts.bst
   type: runtime
 - filename: sdk/adwaita-icon-theme.bst
