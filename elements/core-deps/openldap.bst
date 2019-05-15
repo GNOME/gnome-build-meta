@@ -14,3 +14,7 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build
+config:
+  install-commands:
+    (>):
+    - mv %{install-root}/var/run %{install-root}
