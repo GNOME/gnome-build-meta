@@ -6,6 +6,19 @@ sources:
 depends:
 - filename: sdk/gtk-doc.bst
   type: build
+- filename: components/libffi.bst
+  junction: freedesktop-sdk.bst
+- filename: components/util-linux.bst
+  junction: freedesktop-sdk.bst
+- filename: components/pcre.bst
+  junction: freedesktop-sdk.bst
+- filename: components/python3.bst
+  junction: freedesktop-sdk.bst
+# a dummy dependency so our glib is always staged
+# on top of freedesktop-sdk version
+- filename: components/glib.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
