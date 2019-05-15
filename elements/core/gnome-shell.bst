@@ -43,3 +43,5 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+environment:
+  LD_LIBRARY_PATH: '%{libdir}/GL/default/lib'
