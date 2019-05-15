@@ -9,8 +9,6 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
-- filename: core-deps/xorg-server.bst
-  type: build
 - core/gnome-desktop.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -26,7 +24,11 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/xorg-lib-xtst.bst
   junction: freedesktop-sdk.bst
+- filename: components/xorg-server.bst
+  junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: extensions/mesa/gbm.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
@@ -37,3 +39,5 @@ variables:
   meson-local: >-
     -Dprofiler=false
     -Dremote_desktop=false
+environment:
+  PKG_CONFIG_PATH: '%{libdir}/GL/default/lib/pkgconfig'
