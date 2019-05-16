@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/libsoup.git
-  track: master
+  track: gnome-3-32
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
