@@ -11,6 +11,8 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+- filename: sdk/vala.bst
+  type: build
 variables:
   cmake-local:
     -DICAL_GLIB=ON -DICAL_GLIB_VAPI=ON -DGOBJECT_INTROSPECTION=ON
