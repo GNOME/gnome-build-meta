@@ -21,4 +21,4 @@ variables:
   meson-local: |
     -Dtls_check=false \
     -Dvapi=true \
-    -Ddocs=true
+    -Dgtk_doc=true
