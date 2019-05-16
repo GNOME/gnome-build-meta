@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/librsvg.git
-  track: master
+  track: librsvg-2.44
 - kind: local
   directory: .cargo/
   path: files/librsvg/config
