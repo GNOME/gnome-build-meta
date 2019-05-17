@@ -15,4 +15,7 @@ depends:
   type: build
 variables:
   cmake-local:
-    -DICAL_GLIB=ON -DICAL_GLIB_VAPI=ON -DGOBJECT_INTROSPECTION=ON
+    -DENABLE_GTK_DOC=OFF
+    -DICAL_GLIB=ON
+    -DICAL_GLIB_VAPI=ON
+    -DGOBJECT_INTROSPECTION=ON
