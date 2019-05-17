@@ -1,10 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.24.1.tar.xz
-  ref: 53cb8eaad2ca4caaae663d68331b83fd27d5bd5f6c5388d6ea3c455e338f396d
-- kind: patch
-  path: files/webkitgtk/webkitgtk-2-24-1-revert-sse2.patch
+  url: webkitgtk_org:webkitgtk-2.24.2.tar.xz
+  ref: 019cb1f0d05bf6148b72c7a85734bcd006388a1c14132843ef9a1b2cb7b4321c
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -51,10 +49,14 @@ variables:
         webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.arm
   cmake-local: -DPORT=GTK -DENABLE_PLUGIN_PROCESS_GTK2=OFF -DUSE_OPENJPEG=OFF %{webkitgtk_toolchain}
 (?):
-- arch == "i686" or arch == "arm":
+- arch == "i686":
     environment:
-      CFLAGS: '-g1'
-      CXXFLAGS: '-g1'
+      CFLAGS: '%{flags_i686} -g1'
+      CXXFLAGS: '%{flags_i686} -g1'
+- arch == "arm":
+    environment:
+      CFLAGS: '%{flags_arm} -g1'
+      CXXFLAGS: '%{flags_arm} -g1'
 public:
   cpe:
     product: webkitgtk+
