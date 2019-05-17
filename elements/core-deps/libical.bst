@@ -16,6 +16,6 @@ depends:
 variables:
   cmake-local:
     -DENABLE_GTK_DOC=OFF
+    -DGOBJECT_INTROSPECTION=ON
     -DICAL_GLIB=ON
     -DICAL_GLIB_VAPI=ON
-    -DGOBJECT_INTROSPECTION=ON
