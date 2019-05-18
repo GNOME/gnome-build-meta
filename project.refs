@@ -160,7 +160,7 @@ projects:
     core-deps/libtirpc.bst:
     - ref: 86c3a78fc1bddefa96111dd233124c703b22a78884203c55c3e06b3be6a0fd5e
     sdk/WebKitGTK.bst:
-    - ref: 53cb8eaad2ca4caaae663d68331b83fd27d5bd5f6c5388d6ea3c455e338f396d
+    - ref: 019cb1f0d05bf6148b72c7a85734bcd006388a1c14132843ef9a1b2cb7b4321c
     - {}
     - {}
     - {}
