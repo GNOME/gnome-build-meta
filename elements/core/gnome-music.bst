@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gnome-music.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd.git
-    subprojects/shared-modules:
-      checkout: False
-      url: github_com:flathub/shared-modules.git
+- kind: tar
+  url: gnome_downloads:gnome-music/3.33/gnome-music-3.33.2.tar.xz
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/gtksourceview.git
-  track: gnome-3-24
+- kind: tar
+  url: gnome_downloads:gtksourceview/3.24/gtksourceview-3.24.11.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst

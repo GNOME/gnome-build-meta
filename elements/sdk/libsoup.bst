@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/libsoup.git
-  track: gnome-3-32
+- kind: tar
+  url: gnome_downloads:libsoup/2.66/libsoup-2.66.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

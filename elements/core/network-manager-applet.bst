@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/network-manager-applet.git
-  track: master
+- kind: tar
+  url: gnome_downloads:network-manager-applet/1.8/network-manager-applet-1.8.20.tar.xz
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
