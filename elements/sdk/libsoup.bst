@@ -19,7 +19,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: sdk/brotli.bst
 variables:
-  meson-local: |
-    -Dtls_check=false \
-    -Dvapi=true \
+  meson-local: >-
+    -Dtls_check=false
+    -Dvapi=true
     -Dgtk_doc=true

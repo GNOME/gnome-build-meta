@@ -42,7 +42,10 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend
+  conf-local: >-
+    --enable-broadway-backend
+    --enable-installed-tests
+    --enable-x11-backend
     --enable-wayland-backend
 public:
   bst:

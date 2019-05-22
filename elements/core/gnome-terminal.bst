@@ -26,4 +26,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-migration
+  conf-local: >-
+    --disable-migration

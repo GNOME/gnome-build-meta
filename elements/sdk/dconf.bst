@@ -21,4 +21,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dbash_completion=false
+  meson-local: >-
+    -Dbash_completion=false

@@ -26,7 +26,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >
+  conf-local: >-
     PYTHON=python3
     --with-udev-dir=/usr/lib/udev
     --with-crypto=gnutls

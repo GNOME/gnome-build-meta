@@ -6,4 +6,5 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DBUILD_SHARED_LIBS=1
+  cmake-local: >-
+    -DBUILD_SHARED_LIBS=1

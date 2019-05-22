@@ -28,5 +28,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DENABLE_INTROSPECTION=ON -DENABLE_VALA_BINDINGS=ON -DENABLE_UOA=OFF
-    -DENABLE_GOOGLE_AUTH=OFF -DLIB_INSTALL_DIR=%{libdir}
+  cmake-local: >-
+    -DENABLE_INTROSPECTION=ON
+    -DENABLE_VALA_BINDINGS=ON
+    -DENABLE_UOA=OFF
+    -DENABLE_GOOGLE_AUTH=OFF
+    -DLIB_INSTALL_DIR=%{libdir}

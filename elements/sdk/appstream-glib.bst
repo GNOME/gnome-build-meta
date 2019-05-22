@@ -27,4 +27,8 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dstemmer=false -Drpm=false -Dfonts=false -Ddep11=false
+  meson-local: >-
+    -Dstemmer=false
+    -Drpm=false
+    -Dfonts=false
+    -Ddep11=false

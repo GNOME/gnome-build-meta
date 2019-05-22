@@ -24,4 +24,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dselinux=false
+  meson-local: >-
+    -Dselinux=false

@@ -23,5 +23,10 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-more-warnings=no --disable-migration --without-bluetooth --without-team
-    --without-selinux --without-libnm-gtk
+  conf-local: >-
+    --enable-more-warnings=no
+    --disable-migration
+    --without-bluetooth
+    --without-team
+    --without-selinux
+    --without-libnm-gtk

@@ -13,4 +13,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dextension_set=classic
+  meson-local: >-
+    -Dextension_set=classic

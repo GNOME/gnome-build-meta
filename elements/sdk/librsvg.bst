@@ -316,8 +316,8 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: |
-      --disable-gtk-doc \
-      --enable-vala
+  conf-local: >-
+    --disable-gtk-doc
+    --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin

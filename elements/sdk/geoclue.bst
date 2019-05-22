@@ -17,8 +17,8 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -D3g-source=false \
-    -Dcdma-source=false \
-    -Dmodem-gps-source=false \
+  meson-local: >-
+    -D3g-source=false
+    -Dcdma-source=false
+    -Dmodem-gps-source=false
     -Dnmea-source=false

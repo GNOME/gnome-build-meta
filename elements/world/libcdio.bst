@@ -9,4 +9,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --without-cdda-player
+  conf-local: >-
+    --without-cdda-player

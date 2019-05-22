@@ -28,4 +28,8 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DENABLE_LIBCRYPTUI=OFF -DENABLE_PST_IMPORT=OFF -DENABLE_YTNEF=OFF -DENABLE_TEXT_HIGHLIGHT=OFF
+  cmake-local: >-
+    -DENABLE_LIBCRYPTUI=OFF
+    -DENABLE_PST_IMPORT=OFF
+    -DENABLE_YTNEF=OFF
+    -DENABLE_TEXT_HIGHLIGHT=OFF

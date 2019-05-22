@@ -20,4 +20,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dlibelogind=disabled
+  meson-local: >-
+    -Dlibelogind=disabled

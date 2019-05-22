@@ -23,8 +23,14 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin
-    --disable-bash-completion --disable-gtk-module --enable-python3
+  conf-local: >-
+    --disable-vala
+    --disable-tests
+    --disable-qt
+    --disable-browser-plugin
+    --disable-bash-completion
+    --disable-gtk-module
+    --enable-python3
 config:
   build-commands:
   - '%{make} CFLAGS=-Wno-error'

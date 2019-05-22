@@ -11,6 +11,6 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: admin
-  conf-local: >
+  conf-local: >-
     --without-python
     --with-python3

@@ -29,4 +29,6 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dwith_sysmon=false -Dplugin_sysprof=false
+  meson-local: >-
+    -Dwith_sysmon=false
+    -Dplugin_sysprof=false

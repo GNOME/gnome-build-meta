@@ -16,4 +16,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-gtk2-engine
+  conf-local: >-
+    --disable-gtk2-engine

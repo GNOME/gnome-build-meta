@@ -18,9 +18,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Dargyllcms_sensor=false \
-    -Dbash_completion=false \
-    -Dlibcolordcompat=false \
-    -Dman=false \
+  meson-local: >-
+    -Dargyllcms_sensor=false
+    -Dbash_completion=false
+    -Dlibcolordcompat=false
+    -Dman=false
     -Dvapi=true

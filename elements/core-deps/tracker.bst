@@ -19,9 +19,9 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Ddocs=false \
-    -Dunicode_support=icu \
-    -Dfunctional_tests=false \
-    -Dstemmer=disabled \
+  meson-local: >-
+    -Ddocs=false
+    -Dunicode_support=icu
+    -Dfunctional_tests=false
+    -Dstemmer=disabled
     -Dbash_completion=${prefix}/share/bash-completion/completions

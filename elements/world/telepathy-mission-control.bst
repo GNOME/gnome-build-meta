@@ -12,4 +12,5 @@ depends:
 - filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-upower
+  conf-local: >-
+    --disable-upower

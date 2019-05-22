@@ -17,4 +17,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dcontext_manager=network-manager
+  meson-local: >-
+    -Dcontext_manager=network-manager
