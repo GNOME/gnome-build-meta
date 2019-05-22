@@ -35,4 +35,5 @@ depends:
 - filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Drdp=false
+  meson-local: >-
+    -Drdp=false

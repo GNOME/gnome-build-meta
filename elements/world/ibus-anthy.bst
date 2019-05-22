@@ -17,4 +17,6 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-private-png=yes --with-python=python3
+  conf-local: >-
+    --enable-private-png=yes
+    --with-python=python3

@@ -17,4 +17,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --without-bonobo --without-gnome-vfs --enable-introspection
+  conf-local: >-
+    --without-bonobo
+    --without-gnome-vfs
+    --enable-introspection

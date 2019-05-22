@@ -18,7 +18,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: |
-    -Dtls_check=false \
-    -Dvapi=true \
+  meson-local: >-
+    -Dtls_check=false
+    -Dvapi=true
     -Dgtk_doc=true

@@ -12,4 +12,6 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-hunspell --with-hunspell-dir=/usr/share/myspell
+  conf-local: >-
+    --with-hunspell
+    --with-hunspell-dir=/usr/share/myspell

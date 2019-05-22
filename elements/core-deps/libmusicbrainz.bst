@@ -13,4 +13,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DLIB_SUFFIX="/%{gcc_triplet}"
+  cmake-local: >-
+    -DLIB_SUFFIX="/%{gcc_triplet}"

@@ -14,4 +14,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-espeak
+  conf-local: >-
+    --with-espeak

@@ -35,4 +35,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Denable-broadway-backend=true
+  meson-local: >-
+    -Denable-broadway-backend=true

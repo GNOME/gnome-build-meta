@@ -13,21 +13,21 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: |
-    -DLIB_INSTALL_DIR=%{libdir} \
-    -DSYSCONFDIR=%{sysconfdir} \
-    -DENABLE_QT=Off \
-    -DENABLE_PINYIN=Off \
-    -DENABLE_TABLE=Off \
-    -DENABLE_GIR=Off \
-    -DENABLE_GTK3_IM_MODULE=On \
-    -DENABLE_OPENCC=Off \
-    -DENABLE_CAIRO=Off \
-    -DENABLE_SPELL=Off \
-    -DENABLE_GTK2_IM_MODULE=Off \
-    -DENABLE_LIBXML2=Off \
-    -DENABLE_X11=Off \
-    -DENABLE_ENCHANT=Off \
+  cmake-local: >-
+    -DLIB_INSTALL_DIR=%{libdir}
+    -DSYSCONFDIR=%{sysconfdir}
+    -DENABLE_QT=Off
+    -DENABLE_PINYIN=Off
+    -DENABLE_TABLE=Off
+    -DENABLE_GIR=Off
+    -DENABLE_GTK3_IM_MODULE=On
+    -DENABLE_OPENCC=Off
+    -DENABLE_CAIRO=Off
+    -DENABLE_SPELL=Off
+    -DENABLE_GTK2_IM_MODULE=Off
+    -DENABLE_LIBXML2=Off
+    -DENABLE_X11=Off
+    -DENABLE_ENCHANT=Off
     -DENABLE_PRESAGE=Off
 public:
   bst:

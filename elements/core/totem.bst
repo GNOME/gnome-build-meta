@@ -38,4 +38,5 @@ depends:
 - filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Denable-vala=no
+  meson-local: >-
+    -Denable-vala=no

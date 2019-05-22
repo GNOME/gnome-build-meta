@@ -12,4 +12,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-python=python3
+  conf-local: >-
+    --with-python=python3

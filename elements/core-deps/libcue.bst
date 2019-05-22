@@ -12,5 +12,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: |
+  cmake-local: >-
     -DBUILD_SHARED_LIBS=ON

@@ -13,4 +13,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --without-keyutils --without-bash --disable-docs
+  conf-local: >-
+    --without-keyutils
+    --without-bash
+    --disable-docs

@@ -16,4 +16,6 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --with-udev-base-dir=/usr/lib/udev  --disable-more-warnings
+  conf-local: >-
+    --with-udev-base-dir=/usr/lib/udev
+    --disable-more-warnings

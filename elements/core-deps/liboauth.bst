@@ -9,4 +9,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-nss
+  conf-local: >-
+    --enable-nss

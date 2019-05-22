@@ -21,4 +21,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dgnome-distributor=gnome-build-meta
+  meson-local: >-
+    -Dgnome-distributor=gnome-build-meta

@@ -13,5 +13,6 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --disable-bdjava-jar
+  conf-local: >-
+    --disable-bdjava-jar
   conf-aux: build-aux

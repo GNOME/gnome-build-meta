@@ -15,7 +15,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local:
+  meson-local: >-
     -Deds_backend=true
     -Dlibsocialweb_backend=false
     -Dtelepathy_backend=false

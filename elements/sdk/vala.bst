@@ -19,5 +19,7 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: --enable-unversioned --disable-valadoc
+  conf-local: >-
+    --enable-unversioned
+    --disable-valadoc
   make: make bootstrap

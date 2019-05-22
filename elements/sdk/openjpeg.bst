@@ -23,4 +23,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  cmake-local: -DOPENJPEG_INSTALL_LIB_DIR=%{lib}
+  cmake-local: >-
+    -DOPENJPEG_INSTALL_LIB_DIR=%{lib}
