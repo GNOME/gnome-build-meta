@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/libsoup.git
-  track: gnome-3-32
+  track: master
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -17,6 +17,7 @@ depends:
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
+- filename: sdk/brotli.bst
 variables:
   meson-local: |
     -Dtls_check=false \
