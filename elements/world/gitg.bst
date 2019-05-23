@@ -4,7 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/gitg.git
   track: master
 depends:
-- core-deps/gtksourceview-3.bst
 - core-deps/libpeas.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -16,6 +15,7 @@ depends:
 - sdk/libsoup.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
+- world/gtksourceview-3.bst
 - world/gtkspell.bst
 - world/libgit2-glib.bst
 - filename: base.bst
