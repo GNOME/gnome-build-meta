@@ -15,14 +15,14 @@ depends:
 - core/gedit.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
-- core/gnome-calendar.bst
+#- core/gnome-calendar.bst
 - core/gnome-characters.bst
 - core/gnome-clocks.bst
 - core/gnome-contacts.bst
 - core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
-- core/gnome-maps.bst
+#- core/gnome-maps.bst
 - core/gnome-music.bst
 - core/gnome-photos.bst
 - core/gnome-screenshot.bst
