@@ -307,9 +307,6 @@ depends:
   type: build
 - filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: extensions/rust/cargo.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: extensions/rust/rust.bst
   junction: freedesktop-sdk.bst
   type: build
