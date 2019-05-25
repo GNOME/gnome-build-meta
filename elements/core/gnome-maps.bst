@@ -3,7 +3,6 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-maps/3.33/gnome-maps-3.33.2.tar.xz
 depends:
-- core-deps/folks.bst
 - core-deps/geocode-glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
