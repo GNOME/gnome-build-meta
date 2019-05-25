@@ -15,7 +15,7 @@ depends:
 - core/gedit.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
-- core/gnome-calendar.bst
+#- core/gnome-calendar.bst
 - core/gnome-characters.bst
 - core/gnome-clocks.bst
 - core/gnome-contacts.bst
