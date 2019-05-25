@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:glib/2.61/glib-2.61.0.tar.xz
+  url: gnome_downloads:glib/2.61/glib-2.61.1.tar.xz
 depends:
 - filename: sdk/gtk-doc.bst
   type: build

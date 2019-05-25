@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell-extensions/3.33/gnome-shell-extensions-3.33.1.tar.xz
+  url: gnome_downloads:gnome-shell-extensions/3.33/gnome-shell-extensions-3.33.2.tar.xz
 depends:
 - core/gnome-menus.bst
 - core/gnome-shell.bst
