@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/avahi.bst
-- sdk/dbus-glib.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
@@ -13,6 +12,7 @@ depends:
 - sdk/vala.bst
 - filename: base.bst
   junction: freedesktop-sdk.bst
+- world/dbus-glib.bst
 variables:
   conf-local: >-
     --enable-vala-bindings
