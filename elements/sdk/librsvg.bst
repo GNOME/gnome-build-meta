@@ -13,7 +13,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.7.3.crate
 - kind: crate
-  url: https://static.crates.io/crates/alga/alga-0.8.2.crate
+  url: https://static.crates.io/crates/alga/alga-0.9.1.crate
 - kind: crate
   url: https://static.crates.io/crates/approx/approx-0.3.2.crate
 - kind: crate
@@ -21,7 +21,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/atty/atty-0.2.11.crate
 - kind: crate
-  url: https://static.crates.io/crates/autocfg/autocfg-0.1.2.crate
+  url: https://static.crates.io/crates/autocfg/autocfg-0.1.4.crate
 - kind: crate
   url: https://static.crates.io/crates/bitflags/bitflags-1.0.4.crate
 - kind: crate
@@ -119,7 +119,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-1.3.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/libc/libc-0.2.54.crate
+  url: https://static.crates.io/crates/libc/libc-0.2.55.crate
 - kind: crate
   url: https://static.crates.io/crates/libm/libm-0.1.3.crate
 - kind: crate
@@ -139,7 +139,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/memoffset/memoffset-0.2.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/nalgebra/nalgebra-0.17.3.crate
+  url: https://static.crates.io/crates/nalgebra/nalgebra-0.18.0.crate
 - kind: crate
   url: https://static.crates.io/crates/new_debug_unreachable/new_debug_unreachable-1.0.3.crate
 - kind: crate
@@ -147,7 +147,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/num-complex/num-complex-0.2.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/num-traits/num-traits-0.2.6.crate
+  url: https://static.crates.io/crates/num-traits/num-traits-0.2.8.crate
 - kind: crate
   url: https://static.crates.io/crates/num_cpus/num_cpus-1.10.0.crate
 - kind: crate
@@ -259,7 +259,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/thread_local/thread_local-0.3.6.crate
 - kind: crate
-  url: https://static.crates.io/crates/tinytemplate/tinytemplate-1.0.1.crate
+  url: https://static.crates.io/crates/tinytemplate/tinytemplate-1.0.2.crate
 - kind: crate
   url: https://static.crates.io/crates/typenum/typenum-1.10.0.crate
 - kind: crate
