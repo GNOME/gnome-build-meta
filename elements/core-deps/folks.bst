@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/folks.git
-  track: master
+  track: tchaik/56-dbus-glib-dep
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/gobject-introspection.bst
