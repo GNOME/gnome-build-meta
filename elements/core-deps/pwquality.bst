@@ -8,11 +8,12 @@ depends:
 - filename: components/python3.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/linux-pam.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --with-python-binary=python3
+  conf-local: --with-python-binary=python3 --with-securedir=%{libdir}/security
