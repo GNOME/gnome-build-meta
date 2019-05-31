@@ -17,5 +17,10 @@ depends:
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/linux-pam.bst
+  junction: freedesktop-sdk.bst
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+
+variables:
+  conf-local: --with-pam-dir=%{libdir}/security
