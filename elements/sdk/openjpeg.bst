@@ -1,15 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:uclouvain/openjpeg/archive/v2.3.0.tar.gz
-- kind: patch
-  path: files/openjpeg/CVE-2018-5785.patch
-- kind: patch
-  path: files/openjpeg/CVE-2018-6616.patch
-- kind: patch
-  path: files/openjpeg/CVE-2018-18088.patch
-- kind: patch
-  path: files/openjpeg/fix-cmake-config.patch
+  url: github_com:uclouvain/openjpeg/archive/v2.3.1.tar.gz
 depends:
 - filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
