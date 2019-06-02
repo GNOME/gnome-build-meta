@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: git_code_sf_net:p/gtkspell/gtkspell.git
   track: master
 depends:
