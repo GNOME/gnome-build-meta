@@ -153,6 +153,7 @@ track:
   stage: track
   script:
     - "sed -i 's/track-tags: False/track-tags: ${BST_TRACK_TAGS}/' project.conf"
+    - cat project.conf
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
   retry: 2
   # only run on branches targeting master
