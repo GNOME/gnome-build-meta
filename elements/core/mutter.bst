@@ -35,4 +35,5 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-
+    -Dprofiler=false
     -Dremote_desktop=false
