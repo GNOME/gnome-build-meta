@@ -1,6 +1,6 @@
 kind: cmake
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/evolution.git
   track: master
 depends:

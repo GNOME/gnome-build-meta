@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/gtksourceview.git
   track: gnome-3-24
 depends:

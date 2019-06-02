@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: git_freedesktop_org:libinput/libinput.git
   track: master
 depends:

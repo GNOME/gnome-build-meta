@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: github_com:libsigcplusplus/libsigcplusplus.git
   track: master
 depends:
