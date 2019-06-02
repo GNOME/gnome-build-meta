@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/at-spi2-core.git
   track: master
 depends:

@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:aplazas/libmanette.git
   track: master
 depends:

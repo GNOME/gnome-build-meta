@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/dconf.git
   track: master
 - kind: patch

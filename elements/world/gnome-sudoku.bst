@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-sudoku.git
   track: master
 depends:
