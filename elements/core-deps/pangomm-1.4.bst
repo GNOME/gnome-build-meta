@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git
+- kind: git_tag
   url: gitlab_gnome_org:GNOME/pangomm.git
   track: pangomm-2-42
 depends:
