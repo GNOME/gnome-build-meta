@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/gtkmm.git
-  track: gtkmm-3-22
+  track: gtkmm-3-24
 depends:
 - core-deps/atkmm-1.6.bst
 - core-deps/cairomm-1.0.bst
