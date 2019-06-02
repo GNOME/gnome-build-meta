@@ -57,6 +57,7 @@ variables:
     -DPORT=GTK
     -DENABLE_PLUGIN_PROCESS_GTK2=OFF
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+    -DENABLE_DARK_MODE_CSS=OFF
     %{webkitgtk_toolchain}
 (?):
 - arch == "i686":
