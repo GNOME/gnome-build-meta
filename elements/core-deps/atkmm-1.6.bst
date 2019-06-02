@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git
   url: gitlab_gnome_org:GNOME/atkmm.git
-  track: atkmm-2-24
+  track: atkmm-2-28
 depends:
 - core-deps/glibmm-2.4.bst
 - sdk/atk.bst
