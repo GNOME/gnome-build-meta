@@ -6,10 +6,14 @@ depends:
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
 - sdk/glib.bst
+- sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- sdk/json-glib.bst
 - sdk/vala.bst
+- filename: desktop/gstreamer.bst
+  junction: freedesktop-sdk.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
