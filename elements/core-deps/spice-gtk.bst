@@ -9,6 +9,7 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
+- sdk/json-glib.bst
 - sdk/vala.bst
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
