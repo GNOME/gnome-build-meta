@@ -152,7 +152,7 @@ track:
   <<: *x86_64
   stage: track
   script:
-    - sed -i "s/track-tags\: False/track-tags\: ${BST_TRACK_TAGS}/" project.conf
+    - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
     - cat project.conf
     - ${BST} track --deps all core.bst flatpak-runtimes.bst
   retry: 2
