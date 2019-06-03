@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: spice:gtk/spice-gtk-0.34.tar.bz2
+  url: spice:gtk/spice-gtk-0.35.tar.bz2
 depends:
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
