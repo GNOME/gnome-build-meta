@@ -128,7 +128,7 @@ projects:
     sdk/gst-plugins-bad.bst:
     - ref: 910b4e0e2e897e8b6d06767af1779d70057c309f67292f485ff988d087aa0de5
     sdk/openjpeg.bst:
-    - ref: 3dc787c1bb6023ba846c2a0d9b1f6e179f1cd255172bde9eb75b01f1e6c7d71a
+    - ref: 63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9
     - {}
     - {}
     - {}
