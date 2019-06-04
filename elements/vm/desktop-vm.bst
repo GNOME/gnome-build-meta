@@ -34,7 +34,7 @@ depends:
 - filename: vm/linux-vm-boot/shadow.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: vm/systemd-firstboot-integration.bst
+- filename: vm/boot-integration.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: vm/mesa-default.bst
