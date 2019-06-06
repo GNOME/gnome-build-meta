@@ -107,6 +107,7 @@ before_script:
   except:
     variables:
       - $EMERGENCY
+      - $BST_TRACK_TAG == "true"
 
 #
 # Architecture specific settings
