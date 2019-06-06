@@ -104,6 +104,8 @@ before_script:
   only:
     - master
     - /^gnome-\d-\d\d$/
+    variables:
+      - $BST_TRACK_TAG == "False"
   except:
     variables:
       - $EMERGENCY
