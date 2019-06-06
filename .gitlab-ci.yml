@@ -102,8 +102,11 @@ before_script:
     - flatpak build-update-repo --generate-static-deltas repo/
     - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+    refs:
+      - master
+      - /^gnome-\d-\d\d$/
+    variables:
+      - $BST_TRACK_TAG == "False"
   except:
     variables:
       - $EMERGENCY
