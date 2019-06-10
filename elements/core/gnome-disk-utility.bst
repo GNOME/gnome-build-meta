@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/libdvdread.bst
-- core-deps/pwquality.bst
 - core-deps/udisks2.bst
 - core/gnome-settings-daemon.bst
 - sdk/adwaita-icon-theme.bst
@@ -14,6 +13,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
+- filename: components/pwquality.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
