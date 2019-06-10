@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: github_com:hughsie/colord-gtk.git
@@ -16,11 +16,12 @@ depends:
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-autotools.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-vala
+  conf-meson: >-
+    -Dman=false
+    -Dvapi=true
