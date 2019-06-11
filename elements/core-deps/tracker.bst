@@ -24,4 +24,4 @@ variables:
     -Dunicode_support=icu
     -Dfunctional_tests=false
     -Dstemmer=disabled
-    -Dbash_completion=${prefix}/share/bash-completion/completions
+    -Dbash_completion=%{datadir}/bash-completion/completions
