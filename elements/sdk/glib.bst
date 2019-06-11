@@ -13,6 +13,7 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-
+    -Dgtk_doc=true
     -Dinstalled-tests=true
     -Dselinux=disabled
 public:
