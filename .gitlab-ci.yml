@@ -107,7 +107,7 @@ before_script:
   except:
     variables:
       - $EMERGENCY
-      - $BST_TRACK_TAG != "False"
+      - $BST_TRACK_TAGS != "False"
 
 #
 # Architecture specific settings
@@ -199,7 +199,7 @@ flatpak-prepare:
   except:
     variables:
       - $EMERGENCY
-      - $BST_TRACK_TAG != "False"
+      - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 
@@ -233,7 +233,7 @@ flatpak-finish:
   except:
     variables:
       - $EMERGENCY
-      - $BST_TRACK_TAG != "False"
+      - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 flatpak-finish-failed:
@@ -248,7 +248,7 @@ flatpak-finish-failed:
   except:
     variables:
       - $EMERGENCY
-      - $BST_TRACK_TAG != "False"
+      - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 
