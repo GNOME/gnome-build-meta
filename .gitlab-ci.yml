@@ -102,14 +102,12 @@ before_script:
     - flatpak build-update-repo --generate-static-deltas repo/
     - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
-    refs:
-      - master
-      - /^gnome-\d-\d\d$/
-    variables:
-      - $BST_TRACK_TAG == "False"
+    - master
+    - /^gnome-\d-\d\d$/
   except:
     variables:
       - $EMERGENCY
+      - $BST_TRACK_TAG != "False"
 
 #
 # Architecture specific settings
@@ -201,6 +199,7 @@ flatpak-prepare:
   except:
     variables:
       - $EMERGENCY
+      - $BST_TRACK_TAG != "False"
   <<: *x86_64
 
 
@@ -234,6 +233,7 @@ flatpak-finish:
   except:
     variables:
       - $EMERGENCY
+      - $BST_TRACK_TAG != "False"
   <<: *x86_64
 
 flatpak-finish-failed:
@@ -248,6 +248,7 @@ flatpak-finish-failed:
   except:
     variables:
       - $EMERGENCY
+      - $BST_TRACK_TAG != "False"
   <<: *x86_64
 
 
