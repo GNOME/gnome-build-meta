@@ -5,7 +5,7 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.2.4-3-g79bbefe26a3fcd13d3de558aed6b5b4d5bc1235a'
-  BST_EXTERNAL_SHA: '0.9.0-0-g63a19e8068bd777bd9cd59b1a9442f9749ea5a85'
+  BST_EXTERNAL_SHA: '0.13.0-0-g6121d1909f80379776e7cff21faaf91adfc779e2'
   FLATPAK_BRANCH: '3.32'
 
   # Docker Images
