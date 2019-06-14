@@ -4,6 +4,12 @@ depends:
   type: build
 - filename: flatpak/platform-locale.bst
   type: build
+- filename: flatpak-images/platform-vaapi.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: flatpak-images/platform-html5.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: flatpak/sdk.bst
   type: build
 - filename: flatpak/sdk-debug.bst
