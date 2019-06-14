@@ -20,3 +20,4 @@ config:
   environment:
     - deploy-tools/flatpak.bst
   arch: '%{gcc_arch}'
+  repo-mode: bare-user-only
