@@ -37,6 +37,7 @@ depends:
 - sdk/gvfs.bst
 - sdk/ibus.bst
 - sdk/json-glib.bst
+- sdk/krb5.bst
 - sdk/libcanberra.bst
 - sdk/libcroco.bst
 - sdk/libgee.bst
@@ -110,8 +111,6 @@ depends:
 - filename: components/iso-codes.bst
   junction: freedesktop-sdk.bst
 - filename: components/jpeg.bst
-  junction: freedesktop-sdk.bst
-- filename: components/krb5.bst
   junction: freedesktop-sdk.bst
 - filename: components/ladspa-sdk.bst
   junction: freedesktop-sdk.bst
