@@ -44,6 +44,7 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/libwpe.bst
 - sdk/mozjs60.bst
 - sdk/openjpeg.bst
 - sdk/os-release.bst
@@ -52,6 +53,7 @@ depends:
 - sdk/pygobject.bst
 - sdk/vte.bst
 - sdk/woff2.bst
+- sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
 - sdk/zenity.bst
