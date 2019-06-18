@@ -3,6 +3,7 @@ sources:
 - kind: git_tag
   url: git_freedesktop_org:NetworkManager/NetworkManager.git
   track: master
+
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst
@@ -31,6 +32,10 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+- filename: components/systemd.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+
 variables:
   conf-local: >-
     PYTHON=python3
@@ -40,3 +45,10 @@ variables:
     --disable-more-warnings
     --disable-json-validation
     --disable-ovs
+
+public:
+  bst:
+    integration-commands:
+    - |
+      # Automatically start NetworkManager at boot time
+      systemctl enable NetworkManager
