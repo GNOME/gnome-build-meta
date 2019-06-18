@@ -6,6 +6,7 @@ sources:
 - kind: local
   path: files/gdm
   directory: gdm-config
+
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -19,6 +20,10 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+- filename: components/systemd.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+
 variables:
   sysusersdir: "%{prefix}/lib/sysusers.d"
   pamdir: "%{sysconfdir}/pam.d"
@@ -40,3 +45,10 @@ config:
       for conffile in `find gdm-config/ -name "*.pam"`; do
         install -m 644 $conffile %{install-root}%{pamdir}/$(basename ${conffile%.pam})
       done
+
+public:
+  bst:
+    integration-commands:
+    - |
+      # Automatically start gdm at boot time
+      systemctl enable gdm
