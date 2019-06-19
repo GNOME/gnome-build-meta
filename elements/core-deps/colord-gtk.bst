@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/colord/releases/colord-gtk-0.1.26.tar.xz
@@ -15,10 +15,11 @@ depends:
 - filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: base/buildsystem-meson.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Dman=false -Dvapi=true
+  conf-local: >-
+    --enable-vala
