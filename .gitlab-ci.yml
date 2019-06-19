@@ -99,6 +99,16 @@ before_script:
     - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
 
     - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
+
+    - |
+      case $FLAT_MANAGER_SERVER in *flathub*)
+        for ref in $(ostree refs --repo repo/); do
+          case $ref in runtimes/org.freedesktop.Platform.*)
+            ostree refs --repo repo/ --delete $ref
+          esac
+        done
+        ostree prune --repo repo/ --refs-only
+      esac
     - flatpak build-update-repo --generate-static-deltas repo/
     - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
