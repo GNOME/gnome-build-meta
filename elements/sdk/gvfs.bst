@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gvfs/1.41/gvfs-1.41.2.tar.xz
+  url: gnome_downloads:gvfs/1.41/gvfs-1.41.3.tar.xz
 depends:
 - sdk/glib.bst
 - filename: desktop/dbus.bst
