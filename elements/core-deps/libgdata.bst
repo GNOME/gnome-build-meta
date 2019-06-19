@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgdata.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgdata/0.17/libgdata-0.17.9.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/liboauth.bst

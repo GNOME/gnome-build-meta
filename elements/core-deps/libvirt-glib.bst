@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:libvirt/libvirt-glib.git
-  track: master
+- kind: tar
+  url: https://libvirt.org/sources/glib/libvirt-glib-2.0.0.tar.gz
 depends:
 - core-deps/libvirt.bst
 - sdk/glib.bst
@@ -19,5 +18,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  conf-local: --enable-werror=no

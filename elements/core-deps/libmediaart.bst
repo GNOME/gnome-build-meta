@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libmediaart.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libmediaart/1.9/libmediaart-1.9.4.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -15,5 +14,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-qt
+  conf-local: --disable-qt

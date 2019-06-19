@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/vala.git
-  track: master
+- kind: tar
+  url: gnome_downloads:vala/0.45/vala-0.45.2.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
@@ -19,7 +18,5 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-unversioned
-    --disable-valadoc
+  conf-local: --enable-unversioned --disable-valadoc
   make: make bootstrap

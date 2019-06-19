@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdm/3.32/gdm-3.32.0.tar.xz
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -17,5 +16,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --with-plymouth=no
+  conf-local: --with-plymouth=no

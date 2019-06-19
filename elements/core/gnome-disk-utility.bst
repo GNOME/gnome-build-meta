@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/3.32/gnome-disk-utility-3.32.1.tar.xz
 depends:
 - core-deps/libdvdread.bst
 - core-deps/pwquality.bst
@@ -20,5 +19,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dlibelogind=disabled
+  meson-local: -Dlibelogind=disabled

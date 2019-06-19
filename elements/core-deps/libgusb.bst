@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:hughsie/libgusb.git
-  track: master
+- kind: tar
+  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.0.tar.xz
 depends:
 - core-deps/libusb.bst
 - sdk/glib.bst

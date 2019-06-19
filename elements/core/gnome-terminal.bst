@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-terminal.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-terminal/3.32/gnome-terminal-3.32.2.tar.xz
 depends:
 - core/gnome-shell.bst
 - core/nautilus.bst
@@ -26,5 +25,4 @@ depends:
 - filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-migration
+  conf-local: --disable-migration
