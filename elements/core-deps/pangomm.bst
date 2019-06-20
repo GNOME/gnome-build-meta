@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pangomm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pangomm/2.43/pangomm-2.43.1.tar.xz
 depends:
 - core-deps/cairomm.bst
 - core-deps/glibmm.bst

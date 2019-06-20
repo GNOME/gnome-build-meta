@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-font-viewer.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-font-viewer/3.32/gnome-font-viewer-3.32.0.tar.xz
 depends:
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
