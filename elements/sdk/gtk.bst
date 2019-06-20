@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtk/3.96/gtk-3.96.0.tar.xz
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst

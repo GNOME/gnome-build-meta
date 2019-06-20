@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtksourceview.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtksourceview/4.3/gtksourceview-4.3.1.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst

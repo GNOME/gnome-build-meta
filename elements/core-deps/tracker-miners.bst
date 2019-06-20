@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tracker-miners/2.2/tracker-miners-2.2.2.tar.xz
 depends:
 - core-deps/gexiv2.bst
 - core-deps/NetworkManager.bst

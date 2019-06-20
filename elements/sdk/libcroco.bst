@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libcroco.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libcroco/0.6/libcroco-0.6.13.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst

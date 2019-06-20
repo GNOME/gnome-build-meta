@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/phodav.git
-  track: master
+- kind: tar
+  url: gnome_downloads:phodav/2.3/phodav-2.3.tar.xz
 depends:
 - core-deps/avahi.bst
 - core-deps/libgudev.bst

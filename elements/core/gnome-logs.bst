@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-logs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-logs/3.33/gnome-logs-3.33.2.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
