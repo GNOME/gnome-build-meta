@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:folks/0.12/folks-0.12.1.tar.xz
+  url: gnome_downloads:folks/0.13/folks-0.13.1.tar.xz
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/dbus-glib.bst
