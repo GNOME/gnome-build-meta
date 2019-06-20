@@ -7,7 +7,6 @@ depends:
 - core-deps/gexiv2.bst
 - core-deps/NetworkManager.bst
 - core-deps/libcue.bst
-- core-deps/libgrss.bst
 - core-deps/libgsf.bst
 - core-deps/libgxps.bst
 - core-deps/libosinfo.bst
@@ -37,6 +36,7 @@ variables:
     -Dxmp=disabled
     -Dexif=disabled
     -Diptc=disabled
+    -Dminer_rss=false
     -Dtiff=disabled
     -Dtaglib=disabled
     -Dgif=disabled
