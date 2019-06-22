@@ -12,7 +12,7 @@ depends:
   type: build
 - sdk/json-glib.bst
 - sdk/vala.bst
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: components/libdrm.bst
   junction: freedesktop-sdk.bst
