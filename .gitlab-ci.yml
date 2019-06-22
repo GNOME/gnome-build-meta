@@ -97,17 +97,19 @@ before_script:
   dependencies: [track, flatpak-prepare]
   script:
     - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
 
-    - ostree init --repo repo/ --mode archive
+    - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst repo/
+
     - |
-      # remove freedesktop refs if we're pushing to flathub, push everything otherwise
       case $FLAT_MANAGER_SERVER in *flathub*)
-        export REFS=$(ostree refs --repo checkout-repo/ | grep -v org.freedesktop.Platform)
+        for ref in $(ostree refs --repo repo/); do
+          case $ref in runtimes/org.freedesktop.Platform.*)
+            ostree refs --repo repo/ --delete $ref
+          esac
+        done
+        ostree prune --repo repo/ --refs-only
       esac
-    - flatpak build-commit-from --src-repo=checkout-repo/ repo/ $REFS
     - flatpak build-update-repo --generate-static-deltas repo/
-
     - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
     - master
