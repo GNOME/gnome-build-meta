@@ -235,6 +235,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/zip.bst
   junction: freedesktop-sdk.bst
+- filename: components/shared-library-guard.bst
+  junction: freedesktop-sdk.bst
 - filename: components/alsa-lib.bst
   junction: freedesktop-sdk.bst
 - filename: components/alsa-plugins.bst
