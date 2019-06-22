@@ -11,7 +11,8 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: sdk/krb5.bst
+- filename: components/krb5.bst
+  junction: freedesktop-sdk.bst
 - filename: components/libpsl.bst
   junction: freedesktop-sdk.bst
 - filename: components/libxml2.bst
