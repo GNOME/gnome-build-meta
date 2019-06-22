@@ -23,6 +23,7 @@ depends:
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
 - core-deps/libwacom.bst
+- core-deps/pwquality.bst
 - core-deps/samba.bst
 - core-deps/upower.bst
 - core-deps/udisks2.bst
@@ -41,8 +42,6 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/ibus.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
