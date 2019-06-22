@@ -38,3 +38,4 @@ variables:
     --enable-xlib-egl-platform
     --enable-wayland-egl-platform
     --enable-wayland-egl-server
+    --enable-kms-egl-platform
