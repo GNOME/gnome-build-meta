@@ -2,7 +2,7 @@ kind: compose
 depends:
 - filename: sdk.bst
   type: build
-- filename: multiarch-sdk.bst
+- filename: components/man-db-generate.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: split-locales.bst
@@ -12,6 +12,9 @@ depends:
   junction: freedesktop-sdk.bst
   type: build
 - filename: flatpak-builder-configuration.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: multiarch-debugdir.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: debug-app-link.bst
