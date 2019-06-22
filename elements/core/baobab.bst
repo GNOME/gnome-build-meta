@@ -9,8 +9,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: sdk/vala.bst
-  type: build
+- sdk/vala.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -13,10 +13,6 @@ depends:
 - filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/gnutls.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pcre2.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -8,14 +8,10 @@ depends:
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
+- sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: components/lcms.bst
-  junction: freedesktop-sdk.bst
+- sdk/vala.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

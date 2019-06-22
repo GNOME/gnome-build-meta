@@ -7,8 +7,7 @@ depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: sdk/vala.bst
-  type: build
+- sdk/vala.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

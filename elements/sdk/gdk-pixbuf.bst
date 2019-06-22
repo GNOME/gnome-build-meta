@@ -5,19 +5,12 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
+- sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: components/shared-mime-info.bst
   junction: freedesktop-sdk.bst
 - filename: components/xorg-lib-x11.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libtiff.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libpng.bst
-  junction: freedesktop-sdk.bst
-- filename: components/jpeg.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst

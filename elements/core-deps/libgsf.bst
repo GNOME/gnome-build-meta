@@ -6,8 +6,6 @@ sources:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: components/perl-xml-parser.bst

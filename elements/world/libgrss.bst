@@ -5,8 +5,6 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/libsoup.bst

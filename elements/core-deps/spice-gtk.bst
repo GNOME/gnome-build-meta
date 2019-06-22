@@ -14,8 +14,6 @@ depends:
 - sdk/vala.bst
 - filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/libdrm.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

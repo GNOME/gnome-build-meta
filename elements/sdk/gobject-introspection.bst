@@ -10,9 +10,6 @@ depends:
 - filename: components/bison.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/flex.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

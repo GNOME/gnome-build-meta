@@ -4,10 +4,6 @@ sources:
   url: github_com:storaged-project/libbytesize/releases/download/1.2/libbytesize-1.2.tar.gz
 depends:
 - core-deps/mpfr.bst
-- filename: components/python3.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pcre.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

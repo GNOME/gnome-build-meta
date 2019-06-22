@@ -18,8 +18,6 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -13,8 +13,6 @@ depends:
   type: build
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: components/linux-pam.bst
-  junction: freedesktop-sdk.bst
 - filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build

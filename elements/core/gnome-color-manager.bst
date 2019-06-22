@@ -13,8 +13,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst
 - sdk/vte.bst
-- filename: components/libexif.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -5,6 +5,9 @@ sources:
 depends:
 - filename: sdk/python2.bst
   type: build
+- filename: components/which.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/autoconf.bst
   junction: freedesktop-sdk.bst
   type: build

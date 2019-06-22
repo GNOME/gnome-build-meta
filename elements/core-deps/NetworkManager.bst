@@ -14,18 +14,12 @@ depends:
   type: build
 - sdk/pygobject.bst
 - sdk/vala.bst
-- filename: components/curl.bst
-  junction: freedesktop-sdk.bst
 - filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/gnutls.bst
-  junction: freedesktop-sdk.bst
-- filename: components/nss.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

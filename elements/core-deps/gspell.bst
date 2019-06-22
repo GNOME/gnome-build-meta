@@ -10,8 +10,6 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

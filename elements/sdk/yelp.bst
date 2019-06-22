@@ -12,13 +12,14 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/yelp-xsl.bst
-- filename: components/desktop-file-utils.bst
-  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+- filename: components/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+
 public:
   bst:
     integration-commands:

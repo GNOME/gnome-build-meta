@@ -24,8 +24,6 @@ depends:
 - sdk/librsvg.bst
 - filename: sdk/vala.bst
   type: build
-- filename: sdk/yelp-tools.bst
-  type: build
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: components/intltool.bst

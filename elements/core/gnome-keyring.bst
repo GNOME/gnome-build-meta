@@ -10,8 +10,6 @@ depends:
 - filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
 - filename: components/openssh.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst

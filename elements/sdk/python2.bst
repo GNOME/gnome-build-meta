@@ -27,6 +27,3 @@ variables:
     --enable-loadable-sqlite-extensions \
     --with-dbmliborder=gdbm \
     --enable-unicode=ucs4
-config:
-  install-commands:
-    - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'

@@ -5,13 +5,9 @@ sources:
 depends:
 - sdk/dconf.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
+- sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

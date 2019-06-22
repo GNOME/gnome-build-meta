@@ -13,6 +13,9 @@ depends:
 - sdk/libsoup.bst
 - filename: components/docbook-xsl.bst
   junction: freedesktop-sdk.bst
+- filename: components/gettext.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/gperf.bst
   junction: freedesktop-sdk.bst
   type: build

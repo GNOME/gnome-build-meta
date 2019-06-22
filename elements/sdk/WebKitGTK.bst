@@ -32,12 +32,6 @@ depends:
 - sdk/wpebackend-fdo.bst
 - filename: components/hyphen.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtasn1.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libwebp.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
   junction: freedesktop-sdk.bst
 - filename: components/xorg-lib-xt.bst
