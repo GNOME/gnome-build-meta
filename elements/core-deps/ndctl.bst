@@ -4,8 +4,7 @@ sources:
   url: github_com:pmem/ndctl/archive/v64.1.tar.gz
 depends:
 - core-deps/json-c.bst
-- filename: vm/linux-vm-boot/kmod.bst
-  junction: freedesktop-sdk.bst
+- core-deps/kmod.bst
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
