@@ -19,17 +19,17 @@ depends:
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/libseccomp.bst
+- filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

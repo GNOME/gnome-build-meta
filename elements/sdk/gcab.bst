@@ -10,11 +10,11 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/git.bst
+- filename: base/git.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

@@ -10,7 +10,7 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

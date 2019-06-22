@@ -12,34 +12,34 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: components/cairo.bst
+- filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: components/hicolor-icon-theme.bst
+- filename: desktop/hicolor-icon-theme.bst
   junction: freedesktop-sdk.bst
-- filename: components/libepoxy.bst
+- filename: desktop/libepoxy.bst
   junction: freedesktop-sdk.bst
-- filename: components/libxkbcommon.bst
+- filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: components/mesa-headers.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland-protocols.bst
+- filename: desktop/wayland-protocols.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcomposite.bst
+- filename: desktop/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcursor.bst
+- filename: desktop/xorg-lib-xcursor.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xdamage.bst
+- filename: desktop/xorg-lib-xdamage.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xi.bst
+- filename: desktop/xorg-lib-xi.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xinerama.bst
+- filename: desktop/xorg-lib-xinerama.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

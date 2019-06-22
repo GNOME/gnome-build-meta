@@ -11,8 +11,8 @@ depends:
 - filename: sdk/vala.bst
   type: build
 - sdk/yelp-tools.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

@@ -12,17 +12,17 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- filename: components/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-ice.bst
+- filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-sm.bst
+- filename: desktop/xorg-lib-sm.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

@@ -19,7 +19,7 @@ depends:
 - sdk/vala.bst
 - world/libmanette.bst
 - world/retro-gtk.bst
-- filename: components/hicolor-icon-theme.bst
+- filename: desktop/hicolor-icon-theme.bst
   junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

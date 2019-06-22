@@ -11,7 +11,7 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - world/telepathy-glib.bst
-- filename: components/itstools.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

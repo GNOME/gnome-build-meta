@@ -7,8 +7,8 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/pycairo.bst
-- filename: components/pkg-config.bst
+- filename: base/pkg-config.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

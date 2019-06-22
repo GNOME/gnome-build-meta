@@ -10,16 +10,16 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
-- filename: components/intltool.bst
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/perl-xml-parser.bst
+- filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

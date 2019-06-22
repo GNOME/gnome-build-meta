@@ -3,7 +3,7 @@ sources:
 - kind: tar
   url: https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.bz2
 depends:
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   configure-commands:

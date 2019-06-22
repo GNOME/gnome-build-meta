@@ -1,34 +1,34 @@
 kind: filter
 depends:
-- filename: components/gstreamer-plugins-base.bst
+- filename: desktop/gstreamer-plugins-base.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/orc.bst
+- filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/mesa.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/pango.bst
   type: runtime
-- filename: components/xorg-lib-xv.bst
+- filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/libogg.bst
+- filename: base/libogg.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/libtheora.bst
+- filename: base/libtheora.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/libvorbis.bst
+- filename: base/libvorbis.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/opus.bst
+- filename: base/opus.bst
   junction: freedesktop-sdk.bst
   type: runtime

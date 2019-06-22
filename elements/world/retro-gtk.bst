@@ -8,7 +8,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/vala.bst
-- filename: components/libpulse.bst
+- filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

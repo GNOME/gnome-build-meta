@@ -3,10 +3,10 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-common/3.18/gnome-common-3.18.0.tar.xz
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   install-commands:

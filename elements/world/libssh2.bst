@@ -3,7 +3,7 @@ sources:
 - kind: tar
   url: github_com:libssh2/libssh2/archive/libssh2-1.8.0.tar.gz
 depends:
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: >-

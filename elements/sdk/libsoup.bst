@@ -10,12 +10,12 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: components/libpsl.bst
+- filename: desktop/libpsl.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 - filename: sdk/brotli.bst
 variables:

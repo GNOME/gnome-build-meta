@@ -5,7 +5,7 @@ sources:
 depends:
 - filename: sdk/appstream-glib.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   build-commands:

@@ -7,10 +7,10 @@ sources:
   path: files/libmusicbrainz/cmake-ninja.patch
 depends:
 - core-deps/neon.bst
-- filename: public-stacks/buildsystem-cmake.bst
+- filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: >-

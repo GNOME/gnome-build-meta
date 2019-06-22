@@ -3,10 +3,10 @@ sources:
 - kind: tar
   url: https://www.freedesktop.org/software/libevdev/libevdev-1.6.0.tar.xz
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux

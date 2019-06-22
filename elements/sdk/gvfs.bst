@@ -5,12 +5,12 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
-- filename: components/dbus.bst
+- filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

@@ -16,16 +16,16 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: components/gperf.bst
+- filename: base/gperf.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/intltool.bst
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-cmake.bst
+- filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: >-

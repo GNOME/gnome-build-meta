@@ -69,357 +69,191 @@ depends:
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
-- filename: mtab.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
-- filename: components/ca-certificates.bst
+- filename: desktop/alsa-lib.bst
   junction: freedesktop-sdk.bst
-- filename: components/cracklib.bst
+- filename: desktop/alsa-plugins.bst
   junction: freedesktop-sdk.bst
-- filename: components/curl.bst
+- filename: desktop/aspell.bst
   junction: freedesktop-sdk.bst
-- filename: components/cyrus-sasl.bst
+- filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: components/e2fsprogs.bst
+- filename: desktop/cups.bst
   junction: freedesktop-sdk.bst
-- filename: components/expat.bst
+- filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
-- filename: components/flex.bst
+- filename: desktop/dejavu-fonts.bst
   junction: freedesktop-sdk.bst
-- filename: components/frei0r.bst
+- filename: desktop/dictionaries.bst
   junction: freedesktop-sdk.bst
-- filename: components/gdbm.bst
+- filename: desktop/emoji-one-font.bst
   junction: freedesktop-sdk.bst
-- filename: components/gettext.bst
+- filename: desktop/ffmpeg.bst
   junction: freedesktop-sdk.bst
-- filename: components/giflib.bst
+- filename: desktop/fftw.bst
   junction: freedesktop-sdk.bst
-- filename: components/glib.bst
+- filename: desktop/flatpak-xdg-utils.bst
   junction: freedesktop-sdk.bst
-- filename: components/gmp.bst
+- filename: desktop/fontconfig.bst
   junction: freedesktop-sdk.bst
-- filename: components/gnupg.bst
+- filename: desktop/freetype.bst
   junction: freedesktop-sdk.bst
-- filename: components/gnutls.bst
+- filename: desktop/fribidi.bst
   junction: freedesktop-sdk.bst
-- filename: components/gzip.bst
+- filename: desktop/gnu-free-fonts.bst
   junction: freedesktop-sdk.bst
-- filename: components/gpgme.bst
+- filename: desktop/google-crosextra-caladea.bst
   junction: freedesktop-sdk.bst
-- filename: components/iana-config.bst
+- filename: desktop/google-crosextra-carlito.bst
   junction: freedesktop-sdk.bst
-- filename: components/icu.bst
+- filename: desktop/graphite2.bst
   junction: freedesktop-sdk.bst
-- filename: components/iso-codes.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/jpeg.bst
+- filename: desktop/harfbuzz.bst
   junction: freedesktop-sdk.bst
-- filename: components/krb5.bst
+- filename: desktop/hicolor-icon-theme.bst
   junction: freedesktop-sdk.bst
-- filename: components/ladspa-sdk.bst
+- filename: desktop/hunspell.bst
   junction: freedesktop-sdk.bst
-- filename: components/lcms.bst
+- filename: desktop/hyphen.bst
   junction: freedesktop-sdk.bst
-- filename: components/less.bst
+- filename: desktop/lame.bst
   junction: freedesktop-sdk.bst
-- filename: components/libarchive.bst
+- filename: desktop/libclc.bst
   junction: freedesktop-sdk.bst
-- filename: components/libassuan.bst
+- filename: desktop/libdatrie.bst
   junction: freedesktop-sdk.bst
-- filename: components/libcap.bst
+- filename: desktop/libdrm.bst
   junction: freedesktop-sdk.bst
-- filename: components/libexif.bst
+- filename: desktop/libepoxy.bst
   junction: freedesktop-sdk.bst
-- filename: components/libffi.bst
+- filename: desktop/liberation-fonts.bst
   junction: freedesktop-sdk.bst
-- filename: components/libflac.bst
+- filename: desktop/libglvnd.bst
   junction: freedesktop-sdk.bst
-- filename: components/libgcrypt.bst
+- filename: desktop/libproxy.bst
   junction: freedesktop-sdk.bst
-- filename: components/libgpg-error.bst
+- filename: desktop/libpsl.bst
   junction: freedesktop-sdk.bst
-- filename: components/libksba.bst
+- filename: desktop/libseccomp.bst
   junction: freedesktop-sdk.bst
-- filename: components/libidn2.bst
+- filename: desktop/libthai.bst
   junction: freedesktop-sdk.bst
-- filename: components/libogg.bst
+- filename: desktop/libva-vdpau-driver.bst
   junction: freedesktop-sdk.bst
-- filename: components/libpng.bst
+- filename: desktop/libva.bst
   junction: freedesktop-sdk.bst
-- filename: components/libsamplerate.bst
+- filename: desktop/libvdpau.bst
   junction: freedesktop-sdk.bst
-- filename: components/libselinux.bst
+- filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtasn1.bst
+- filename: desktop/llvm6.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtheora.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtiff.bst
+- filename: desktop/mpg123.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtirpc.bst
+- filename: desktop/multiarch-links.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtool.bst
+- filename: desktop/mythes.bst
   junction: freedesktop-sdk.bst
-- filename: components/libunistring.bst
+- filename: desktop/openal.bst
   junction: freedesktop-sdk.bst
-- filename: components/libvorbis.bst
+- filename: desktop/opencl.bst
   junction: freedesktop-sdk.bst
-- filename: components/libvpx.bst
+- filename: desktop/orc.bst
   junction: freedesktop-sdk.bst
-- filename: components/libwebp.bst
+- filename: desktop/pixman.bst
   junction: freedesktop-sdk.bst
-- filename: components/libxml2.bst
+- filename: desktop/libpulse.bst
   junction: freedesktop-sdk.bst
-- filename: components/libxslt.bst
+- filename: desktop/sdl2-image.bst
   junction: freedesktop-sdk.bst
-- filename: components/linux-pam.bst
+- filename: desktop/sdl2-mixer.bst
   junction: freedesktop-sdk.bst
-- filename: components/locales.bst
+- filename: desktop/sdl2-net.bst
   junction: freedesktop-sdk.bst
-- filename: components/lzip.bst
+- filename: desktop/sdl2-ttf.bst
   junction: freedesktop-sdk.bst
-- filename: components/nano.bst
+- filename: desktop/sdl2.bst
   junction: freedesktop-sdk.bst
-- filename: components/nettle.bst
+- filename: desktop/shared-mime-info.bst
   junction: freedesktop-sdk.bst
-- filename: components/npth.bst
+- filename: desktop/sound-theme-freedesktop.bst
   junction: freedesktop-sdk.bst
-- filename: components/nspr.bst
+- filename: desktop/vulkan.bst
   junction: freedesktop-sdk.bst
-- filename: components/nss.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: components/nsswitch-config.bst
+- filename: desktop/xcb-util-cursor.bst
   junction: freedesktop-sdk.bst
-- filename: components/opus.bst
+- filename: desktop/xcb-util-image.bst
   junction: freedesktop-sdk.bst
-- filename: components/osmesa.bst
+- filename: desktop/xcb-util-keysyms.bst
   junction: freedesktop-sdk.bst
-- filename: components/p11-kit.bst
+- filename: desktop/xcb-util-renderutil.bst
   junction: freedesktop-sdk.bst
-- filename: components/pcre2.bst
+- filename: desktop/xcb-util-wm.bst
   junction: freedesktop-sdk.bst
-- filename: components/pcre.bst
+- filename: desktop/xcb-util.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3.bst
+- filename: desktop/xdg-user-dirs.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3-pip.bst
+- filename: desktop/xorg-app-xkbcomp.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3-setuptools.bst
+- filename: desktop/xorg-data-xkeyboard-config.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3-six.bst
+- filename: desktop/xorg-lib-ice.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3-usercustomize.bst
+- filename: desktop/xorg-lib-pciaccess.bst
   junction: freedesktop-sdk.bst
-- filename: components/python3-sitecustomize.bst
+- filename: desktop/xorg-lib-sm.bst
   junction: freedesktop-sdk.bst
-- filename: components/tar.bst
+- filename: desktop/xorg-lib-x11.bst
   junction: freedesktop-sdk.bst
-- filename: components/sndfile.bst
+- filename: desktop/xorg-lib-xau.bst
   junction: freedesktop-sdk.bst
-- filename: components/sqlite.bst
+- filename: desktop/xorg-lib-xcb.bst
   junction: freedesktop-sdk.bst
-- filename: components/speex.bst
+- filename: desktop/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
-- filename: components/speexdsp.bst
+- filename: desktop/xorg-lib-xcursor.bst
   junction: freedesktop-sdk.bst
-- filename: components/tzdata.bst
+- filename: desktop/xorg-lib-xdamage.bst
   junction: freedesktop-sdk.bst
-- filename: components/unzip.bst
+- filename: desktop/xorg-lib-xdmcp.bst
   junction: freedesktop-sdk.bst
-- filename: components/util-linux.bst
+- filename: desktop/xorg-lib-xext.bst
   junction: freedesktop-sdk.bst
-- filename: components/which.bst
+- filename: desktop/xorg-lib-xfixes.bst
   junction: freedesktop-sdk.bst
-- filename: components/xz.bst
+- filename: desktop/xorg-lib-xft.bst
   junction: freedesktop-sdk.bst
-- filename: components/zip.bst
+- filename: desktop/xorg-lib-xi.bst
   junction: freedesktop-sdk.bst
-- filename: components/shared-library-guard.bst
+- filename: desktop/xorg-lib-xinerama.bst
   junction: freedesktop-sdk.bst
-- filename: components/alsa-lib.bst
+- filename: desktop/xorg-lib-xkbfile.bst
   junction: freedesktop-sdk.bst
-- filename: components/alsa-plugins.bst
+- filename: desktop/xorg-lib-xpm.bst
   junction: freedesktop-sdk.bst
-- filename: components/aspell.bst
+- filename: desktop/xorg-lib-xrandr.bst
   junction: freedesktop-sdk.bst
-- filename: components/cairo.bst
+- filename: desktop/xorg-lib-xrender.bst
   junction: freedesktop-sdk.bst
-- filename: components/cups.bst
+- filename: desktop/xorg-lib-xscrnsaver.bst
   junction: freedesktop-sdk.bst
-- filename: components/dbus.bst
+- filename: desktop/xorg-lib-xshmfence.bst
   junction: freedesktop-sdk.bst
-- filename: components/dejavu-fonts.bst
+- filename: desktop/xorg-lib-xt.bst
   junction: freedesktop-sdk.bst
-- filename: components/dictionaries.bst
+- filename: desktop/xorg-lib-xtrans.bst
   junction: freedesktop-sdk.bst
-- filename: components/emoji-one-font.bst
+- filename: desktop/xorg-lib-xtst.bst
   junction: freedesktop-sdk.bst
-- filename: components/ffmpeg.bst
+- filename: desktop/xorg-lib-xv.bst
   junction: freedesktop-sdk.bst
-- filename: components/fftw.bst
-  junction: freedesktop-sdk.bst
-- filename: components/flatpak-xdg-utils.bst
-  junction: freedesktop-sdk.bst
-- filename: components/fontconfig.bst
-  junction: freedesktop-sdk.bst
-- filename: components/freetype.bst
-  junction: freedesktop-sdk.bst
-- filename: components/fribidi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gnu-free-fonts.bst
-  junction: freedesktop-sdk.bst
-- filename: components/google-crosextra-caladea.bst
-  junction: freedesktop-sdk.bst
-- filename: components/google-crosextra-carlito.bst
-  junction: freedesktop-sdk.bst
-- filename: components/graphite2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/harfbuzz.bst
-  junction: freedesktop-sdk.bst
-- filename: components/hicolor-icon-theme.bst
-  junction: freedesktop-sdk.bst
-- filename: components/hunspell.bst
-  junction: freedesktop-sdk.bst
-- filename: components/hyphen.bst
-  junction: freedesktop-sdk.bst
-- filename: components/lame.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libclc.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libdatrie.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libdrm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libepoxy.bst
-  junction: freedesktop-sdk.bst
-- filename: components/liberation-fonts.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libglvnd.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libproxy.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libpsl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libseccomp.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libsystemd.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libthai.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libva-vdpau-driver.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libva.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libvdpau.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxkbcommon.bst
-  junction: freedesktop-sdk.bst
-- filename: components/llvm8.bst
-  junction: freedesktop-sdk.bst
-- filename: components/mesa-headers.bst
-  junction: freedesktop-sdk.bst
-- filename: components/mpg123.bst
-  junction: freedesktop-sdk.bst
-- filename: components/multiarch-links.bst
-  junction: freedesktop-sdk.bst
-- filename: components/mythes.bst
-  junction: freedesktop-sdk.bst
-- filename: components/openal.bst
-  junction: freedesktop-sdk.bst
-- filename: components/opencl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/orc.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pciutils.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pixman.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libpulse.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sdl2-image.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sdl2-mixer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sdl2-net.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sdl2-ttf.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sdl2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/shared-mime-info.bst
-  junction: freedesktop-sdk.bst
-- filename: components/vulkan.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util-cursor.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util-image.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util-keysyms.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util-renderutil.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util-wm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xcb-util.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xdg-user-dirs.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-app-xkbcomp.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-data-xkeyboard-config.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-ice.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-pciaccess.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-sm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-x11.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xau.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcb.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcomposite.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcursor.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xdamage.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xdmcp.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xext.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xfixes.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xft.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xinerama.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xkbfile.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xpm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xrandr.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xrender.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xscrnsaver.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xshmfence.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xt.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xtrans.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xtst.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xv.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xxf86vm.bst
+- filename: desktop/xorg-lib-xxf86vm.bst
   junction: freedesktop-sdk.bst

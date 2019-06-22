@@ -5,7 +5,7 @@ sources:
   track: master
 depends:
 - sdk/gtk+-3.bst
-- filename: components/itstools.bst
+- filename: desktop/itstools.bst
   junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

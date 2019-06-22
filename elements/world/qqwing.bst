@@ -3,5 +3,5 @@ sources:
 - kind: tar
   url: qqwing:qqwing-1.3.4.tar.gz
 depends:
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

@@ -10,13 +10,13 @@ depends:
   type: build
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: components/docbook-xsl.bst
+- filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

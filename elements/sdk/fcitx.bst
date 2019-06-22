@@ -4,13 +4,13 @@ sources:
   url: https://gitlab.com/fcitx/fcitx/-/archive/4.2.9.6/fcitx-4.2.9.6.tar.gz
 depends:
 - sdk/gtk+-3.bst
-- filename: components/extra-cmake-modules.bst
+- filename: desktop/extra-cmake-modules.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-cmake.bst
+- filename: base/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   cmake-local: >-

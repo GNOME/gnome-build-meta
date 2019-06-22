@@ -7,13 +7,13 @@ depends:
 - core-deps/libatasmart.bst
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
-- filename: components/docbook-xsl.bst
+- filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-aux: build-aux

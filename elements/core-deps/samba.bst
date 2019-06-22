@@ -7,16 +7,16 @@ sources:
 depends:
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
-- filename: components/perl.bst
+- filename: base/perl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/pkg-config.bst
+- filename: base/pkg-config.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/docbook-xsl.bst
+- filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   configure-commands:

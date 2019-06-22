@@ -14,10 +14,10 @@ depends:
   type: build
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- filename: components/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

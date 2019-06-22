@@ -10,5 +10,5 @@ depends:
 - sdk/librsvg.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

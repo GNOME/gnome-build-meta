@@ -12,10 +12,10 @@ depends:
 - core-deps/ndctl.bst
 - core-deps/parted.bst
 - core-deps/volume-key.bst
-- filename: components/systemd.bst
+- filename: desktop/systemd.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

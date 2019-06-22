@@ -22,16 +22,16 @@ depends:
 - sdk/json-glib.bst
 - sdk/pango.bst
 - sdk/zenity.bst
-- filename: components/xorg-lib-xcursor.bst
+- filename: desktop/xorg-lib-xcursor.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xtst.bst
+- filename: desktop/xorg-lib-xtst.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

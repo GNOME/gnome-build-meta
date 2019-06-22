@@ -10,16 +10,16 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcomposite.bst
+- filename: desktop/xorg-lib-xcomposite.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

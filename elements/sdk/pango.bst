@@ -8,16 +8,16 @@ depends:
 - sdk/gobject-introspection.bst
 - filename: sdk/gtk-doc.bst
   type: build
-- filename: components/cairo.bst
+- filename: desktop/cairo.bst
   junction: freedesktop-sdk.bst
-- filename: components/fontconfig.bst
+- filename: desktop/fontconfig.bst
   junction: freedesktop-sdk.bst
-- filename: components/fribidi.bst
+- filename: desktop/fribidi.bst
   junction: freedesktop-sdk.bst
-- filename: components/harfbuzz.bst
+- filename: desktop/harfbuzz.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

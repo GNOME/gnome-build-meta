@@ -9,16 +9,16 @@ depends:
 - sdk/glib.bst
 - filename: sdk/vala.bst
   type: build
-- filename: components/dbus.bst
+- filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/docbook-xsl.bst
+- filename: base/docbook-xsl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

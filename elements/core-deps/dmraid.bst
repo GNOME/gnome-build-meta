@@ -5,10 +5,10 @@ sources:
   base-dir: dmraid/1.0.0.rc16-3/dmraid
 depends:
 - core-deps/lvm2.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   make: make -j1

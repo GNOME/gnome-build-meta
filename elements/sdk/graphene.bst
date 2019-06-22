@@ -6,8 +6,8 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

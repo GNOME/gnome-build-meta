@@ -9,5 +9,5 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - world/telepathy-glib.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst

@@ -15,24 +15,24 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pango.bst
-- filename: components/cups.bst
+- filename: desktop/cups.bst
   junction: freedesktop-sdk.bst
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/hicolor-icon-theme.bst
+- filename: desktop/hicolor-icon-theme.bst
   junction: freedesktop-sdk.bst
-- filename: components/libepoxy.bst
+- filename: desktop/libepoxy.bst
   junction: freedesktop-sdk.bst
-- filename: components/libxkbcommon.bst
+- filename: desktop/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
+- filename: desktop/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: components/wayland-protocols.bst
+- filename: desktop/wayland-protocols.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-

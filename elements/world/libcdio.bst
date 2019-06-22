@@ -3,10 +3,10 @@ sources:
 - kind: tar
   url: ftp_gnu_org:libcdio/libcdio-2.0.0.tar.gz
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

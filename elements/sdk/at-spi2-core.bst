@@ -6,10 +6,10 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: components/dbus.bst
+- filename: desktop/dbus.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: base/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

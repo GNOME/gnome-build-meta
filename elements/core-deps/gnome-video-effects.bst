@@ -6,16 +6,16 @@ sources:
 depends:
 - filename: sdk/gnome-common.bst
   type: build
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/perl-xml-parser.bst
+- filename: base/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst

@@ -5,10 +5,13 @@ sources:
 - kind: patch
   path: files/ppp/use-openssl.patch
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/openssl.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   # not a real autotools project

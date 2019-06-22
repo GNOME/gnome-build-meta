@@ -2,7 +2,7 @@ kind: compose
 depends:
 - filename: sdk.bst
   type: build
-- filename: components/man-db-generate.bst
+- filename: base/man-db-generate.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: split-locales.bst

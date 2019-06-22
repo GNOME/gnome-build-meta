@@ -4,12 +4,12 @@ sources:
   url: github_com:AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz
 depends:
 - sdk/glib.bst
-- filename: components/hunspell.bst
+- filename: desktop/hunspell.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-

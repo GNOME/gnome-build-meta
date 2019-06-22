@@ -4,7 +4,7 @@ sources:
   url: downloads.sourceforge.net:espeak/espeak/espeak-1.48/espeak-1.48.04-source.zip
 depends:
 - core-deps/portaudio.bst
-- filename: bootstrap-import.bst
+- filename: base-platform.bst
   junction: freedesktop-sdk.bst
 config:
   configure-commands:

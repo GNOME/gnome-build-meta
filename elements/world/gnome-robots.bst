@@ -10,5 +10,5 @@ depends:
 - sdk/librsvg.bst
 - sdk/yelp-tools.bst
 - world/libgnome-games-support.bst
-- filename: bootstrap-import.bst
+- filename: base.bst
   junction: freedesktop-sdk.bst
