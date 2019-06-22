@@ -1,26 +1,29 @@
 kind: filter
 
 depends:
-- filename: components/gstreamer-vaapi.bst
+- filename: desktop/gstreamer-vaapi.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: sdk/gst-plugins-bad.bst
-  type: runtime
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/gstreamer.bst
+- filename: desktop/gstreamer.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/libdrm.bst
+- filename: sdk/gst-plugins-bad.bst
+  type: runtime
+- filename: desktop/libdrm.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/libva.bst
+- filename: desktop/libva.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/wayland.bst
+- filename: desktop/mesa.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/xorg-lib-x11.bst
+- filename: desktop/wayland.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: desktop/xorg-lib-x11.bst
   junction: freedesktop-sdk.bst
   type: runtime
