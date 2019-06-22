@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/avahi.bst
 - core-deps/openldap.bst
+- core-deps/pwquality.bst
 - sdk/glib.bst
 - sdk/gcr.bst
 - sdk/gobject-introspection.bst
@@ -15,8 +16,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 - filename: components/itstools.bst
