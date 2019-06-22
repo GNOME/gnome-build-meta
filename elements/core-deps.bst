@@ -115,6 +115,7 @@ depends:
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst
 - core-deps/ppp.bst
+- core-deps/pwquality.bst
 - core-deps/pyatspi2.bst
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
