@@ -2,6 +2,11 @@ kind: flatpak_image
 depends:
 - filename: flatpak/platform-image.bst
   type: build
+
+variables:
+  # Obtain the versions of the flatpak extensions
+  (@): freedesktop-sdk.bst:include/versions.yml
+
 config:
   directory: '%{prefix}'
   exclude:
@@ -28,7 +33,7 @@ config:
     # version to extensions that don't have a version
     Extension org.freedesktop.Platform.GL:
       # 1.4 is for Nvidia drivers
-      versions: "19.08;1.4"
+      versions: "%{freedesktop-sdk-flatpak-branch};1.4"
       version: "1.4"
       directory: "%{lib}/GL"
       subdirectories: "true"
@@ -41,12 +46,12 @@ config:
 
     Extension org.freedesktop.Platform.Timezones:
       directory: share/zoneinfo
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.GStreamer:
       directory: lib/extensions/gstreamer-1.0
       subdirectories: 'true'
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.Icontheme:
       directory: share/runtime/share/icons
@@ -67,10 +72,10 @@ config:
       autodelete: 'false'
       no-autodownload: 'true'
       download-if: have-intel-gpu
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.ffmpeg-html5:
       directory: '%{lib}/ffmpeg'
       add-ld-path: lib
       autodelete: 'false'
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
