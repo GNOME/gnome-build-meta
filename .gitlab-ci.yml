@@ -78,7 +78,8 @@ before_script:
   stage: build
   dependencies: [track]
   script:
-    - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst platform-manifest.bst sdk-manifest.bst
+    - ${BST} -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst
+      platform-manifest.bst sdk-manifest.bst
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
   cache: &bst-cache
@@ -96,16 +97,21 @@ before_script:
   stage: flatpak
   dependencies: [track, flatpak-prepare]
   script:
+    - ostree init --repo repo/ --mode archive
+
     - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
     - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
+    - flatpak build-commit-from --src-repo=checkout-repo/ repo/
+    - rm -rf checkout-repo/
 
-    - ostree init --repo repo/ --mode archive
     - |
-      # remove freedesktop refs if we're pushing to flathub, push everything otherwise
-      case $FLAT_MANAGER_SERVER in *flathub*)
-        export REFS=$(ostree refs --repo checkout-repo/ | grep -v org.freedesktop.Platform)
-      esac
-    - flatpak build-commit-from --src-repo=checkout-repo/ repo/ $REFS
+      if test $FLAT_MANAGER_REPO == nightly; then
+          ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
+          ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
+          flatpak build-commit-from --src-repo=checkout-repo/ repo/
+          rm -rf checkout-repo/
+      fi
+
     - flatpak build-update-repo --generate-static-deltas repo/
 
     - flat-manager/flat-manager-client push $(cat build.txt) repo/
