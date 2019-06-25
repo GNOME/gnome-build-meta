@@ -5,6 +5,11 @@ depends:
 - filename: linker-debuginfo.bst
   junction: freedesktop-sdk.bst
   type: build
+
+variables:
+  # Obtain the versions of the flatpak extensions
+  (@): freedesktop-sdk.bst:include/versions.yml
+
 config:
   directory: '%{prefix}'
   exclude:
@@ -40,7 +45,7 @@ config:
     # a version.
     Extension org.freedesktop.Platform.GL:
       # 1.4 is for Nvidia drivers
-      versions: "19.08;1.4"
+      versions: "%{freedesktop-sdk-flatpak-branch};1.4"
       version: "1.4"
       directory: "%{lib}/GL"
       subdirectories: "true"
@@ -53,12 +58,12 @@ config:
 
     Extension org.freedesktop.Platform.Timezones:
       directory: share/zoneinfo
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.GStreamer:
       directory: lib/extensions/gstreamer-1.0
       subdirectories: 'true'
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.Icontheme:
       directory: share/runtime/share/icons
@@ -77,18 +82,18 @@ config:
     Extension org.freedesktop.Platform.ffmpeg-html5:
       directory: '%{lib}/ffmpeg'
       add-ld-path: lib
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Sdk.Extension:
       subdirectories: 'true'
       directory: lib/sdk
       no-autodownload: 'true'
       add-ld-path: lib
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.VAAPI.Intel:
       directory: '%{lib}/dri/intel-vaapi-driver'
       autodelete: 'false'
       no-autodownload: 'true'
       download-if: have-intel-gpu
-      version: 19.08
+      version: '%{freedesktop-sdk-flatpak-branch}'
