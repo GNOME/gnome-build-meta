@@ -10,5 +10,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtk-doc.bst
 - world/amtk.bst
-- filename: base.bst
+- filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
