@@ -291,6 +291,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/winapi-x86_64-pc-windows-gnu/winapi-x86_64-pc-windows-gnu-0.4.0.crate
 - kind: crate
+  url: https://static.crates.io/crates/xml-rs/xml-rs-0.8.0.crate
 # end generated
 depends:
 - sdk/gdk-pixbuf.bst
