@@ -153,8 +153,6 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/numtoa/numtoa-0.1.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/owning_ref/owning_ref-0.4.0.crate
-- kind: crate
   url: https://static.crates.io/crates/pango/pango-0.6.0.crate
 - kind: crate
   url: https://static.crates.io/crates/pango-sys/pango-sys-0.8.0.crate
@@ -211,6 +209,8 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rayon-core/rayon-core-1.4.1.crate
 - kind: crate
+  url: https://static.crates.io/crates/rctree/rctree-0.3.3.crate
+- kind: crate
   url: https://static.crates.io/crates/rdrand/rdrand-0.4.0.crate
 - kind: crate
   url: https://static.crates.io/crates/redox_syscall/redox_syscall-0.1.54.crate
@@ -240,8 +240,6 @@ sources:
   url: https://static.crates.io/crates/siphasher/siphasher-0.2.3.crate
 - kind: crate
   url: https://static.crates.io/crates/smallvec/smallvec-0.6.9.crate
-- kind: crate
-  url: https://static.crates.io/crates/stable_deref_trait/stable_deref_trait-1.1.1.crate
 - kind: crate
   url: https://static.crates.io/crates/string_cache/string_cache-0.7.3.crate
 - kind: crate
@@ -293,7 +291,6 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/winapi-x86_64-pc-windows-gnu/winapi-x86_64-pc-windows-gnu-0.4.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/xml-rs/xml-rs-0.8.0.crate
 # end generated
 depends:
 - sdk/gdk-pixbuf.bst
