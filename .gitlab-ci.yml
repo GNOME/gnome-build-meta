@@ -262,6 +262,21 @@ flatpak-finish-failed:
   <<: *x86_64
 
 
+# Build the bootable image, this is currently only supported for x86_64
+#
+# This is run in the flaptak stage so that it can reuse artifacts
+# which were built in the build stage
+#
+build-gnome-image-x86_64:
+  <<: *x86_64
+  stage: flatpak
+  dependencies: [track]
+  script:
+    - ${BST} -o arch "${ARCH}" build vm/desktop-vm-image-x86_64.bst
+  cache: *bst-cache
+  artifacts: *logging-artifacts
+
+
 cve_report:
   <<: *x86_64
   stage: reports
