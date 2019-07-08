@@ -5,6 +5,7 @@ sources:
   track: master
 depends:
 - sdk/glib.bst
+- sdk/gsettings-desktop-schemas.bst
 - filename: components/dbus.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
