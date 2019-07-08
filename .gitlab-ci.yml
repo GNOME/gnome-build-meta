@@ -195,6 +195,18 @@ build-gnome-core-arm:
   <<: *arm
 
 
+# Build the bootable image, this is currently only supported for x86_64
+#
+build-gnome-image-x86_64:
+  <<: *x86_64
+  stage: build
+  dependencies: [track]
+  script:
+    - ${BST} -o arch "${ARCH}" build elements/vm/desktop-vm-image-x86_64.bst
+  cache: *bst-cache
+  artifacts: *logging-artifacts
+
+
 flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
