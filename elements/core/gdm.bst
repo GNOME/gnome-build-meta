@@ -21,10 +21,10 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   sysusersdir: "%{prefix}/lib/sysusers.d"
+  pamdir: "%{sysconfdir}/pam.d"
   conf-local: >-
     --enable-wayland-support
     --with-pam-prefix=%{sysconfdir}
-    --with-default-pam-config=lfs
     --with-run-dir=/run/gdm
     --with-plymouth=no
 
@@ -33,3 +33,10 @@ config:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
     - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
+
+    - mkdir -p %{pamdir}
+    - |
+      # Our configuration is similar to redhat but without selinux
+      for conffile in `find gdm-config/ -name "*.pam"`; do
+        install -m 644 $conffile %{install-root}%{pamdir}/$(basename ${conffile%.pam})
+      done
