@@ -28,7 +28,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
   junction: freedesktop-sdk.bst
-- filename: extensions/mesa/gbm.bst
+- filename: components/dummy-gbm.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
@@ -39,5 +39,3 @@ variables:
   meson-local: >-
     -Dprofiler=false
     -Dremote_desktop=false
-environment:
-  PKG_CONFIG_PATH: '%{libdir}/GL/default/lib/pkgconfig'
