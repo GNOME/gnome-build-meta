@@ -4,7 +4,7 @@ projects:
     - ref: 88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1
     - {}
     sdk/yelp-tools.bst:
-    - ref: 99a7c312a5fcb427870dc198af02801eb0f8ea63317e20110fc0303eb44636e3
+    - ref: 183856b5ed0b0bb2c05dd1204af023946ed436943e35e789afb0295e5e71e8f9
     core-deps/iptables.bst:
     - ref: 55d02dfa46263343a401f297d44190f2a3e5113c8933946f094ed40237053733
     sdk/pycairo.bst:
@@ -20,7 +20,7 @@ projects:
     sdk/gnome-common.bst:
     - ref: 22569e370ae755e04527b76328befc4c73b62bfd4a572499fde116b8318af8cf
     sdk/gobject-introspection.bst:
-    - ref: d844d1499ecd36f3ec8a3573616186d36626ec0c9a7981939e99aa02e9c824b3
+    - ref: ffdfe2368fb2e34a547898b01aac0520d52d8627fdeb1c306559bcb503ab5e9c
     core-deps/libgudev.bst:
     - ref: ee4cb2b9c573cdf354f6ed744f01b111d4b5bed3503ffa956cefff50489c7860
     core-deps/libndp.bst:
@@ -30,7 +30,7 @@ projects:
     sdk/atk.bst:
     - ref: cb41feda7fe4ef0daa024471438ea0219592baf7c291347e5a858bb64e4091cc
     sdk/pygobject.bst:
-    - ref: 32c99def94b8dea5ce9e4bc99576ef87591ea779b4db77cfdca7af81b76d04d8
+    - ref: c39ca2a28364b57fa00549c6e836346031e6b886c3ceabfd8ab4b4fed0a83611
     core-deps/NetworkManager.bst:
     - ref: 0d477d4dd08ebe7fe089e0a1141b61a09c38c98498cf3a112cba2be97d166f1f
     core-deps/accountsservice.bst:
@@ -49,7 +49,7 @@ projects:
     core-deps/libusb.bst:
     - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
     sdk/vala.bst:
-    - ref: 8553b422484af88be1685d8b47f7b0df36ae4477c3e77e89ab22276ffed1eae9
+    - ref: ab9f1756af7460aa1e39c9a7388f5492a4252a3cd9c76b02f2033f1dedcd793a
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
@@ -85,7 +85,7 @@ projects:
     core-deps/geocode-glib.bst:
     - ref: 5baa6ab76a76c9fc567e4c32c3af2cd1d1784934c255bc5a62c512e6af6bde1c
     sdk/libsoup.bst:
-    - ref: 4a2cb6c1174540af13661636035992c2b179dfcb39f4d3fa7bee3c7e355c43ff
+    - ref: bd2ea602eba642509672812f3c99b77cbec2f3de02ba1cc8cb7206bf7de0ae2a
     core-deps/exiv2.bst:
     - ref: 51cffa8d19d67e1da6c1d0f570a75b8f6c814113367318c2c0407691888c5f01
     sdk/vte.bst:
@@ -222,7 +222,7 @@ projects:
     core-deps/mobile-broadband-provider-info.bst:
     - ref: 2cba10f82b8e6aec46b871c1f7d20086ecc17e1168f18e588a6a37770fa3c59b
     sdk/gtk+-3.bst:
-    - ref: 666962de9b9768fe9ca785b0e2f42c8b9db3868a12fa9b356b167238d70ac799
+    - ref: 35a8f107e2b90fda217f014c0c15cb20a6a66678f6fd7e36556d469372c01b03
     core/cheese.bst:
     - ref: 7b9ad1da8bb475a9e71ae69a5832786a75e860f0af927637540574fd49d595f6
     sdk/gcr.bst:
