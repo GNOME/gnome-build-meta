@@ -6,8 +6,9 @@ sources:
 depends:
 - sdk/WebKitGTK.bst
 - sdk/pygobject.bst
-- filename: base/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
+  type: build
 - filename: sdk/cantarell-fonts.bst
   type: runtime
 - filename: sdk/adwaita-icon-theme.bst
