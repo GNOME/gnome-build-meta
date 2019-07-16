@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp-tools/3.32/yelp-tools-3.32.1.tar.xz
+  url: gnome_downloads:yelp-tools/3.32/yelp-tools-3.32.2.tar.xz
 depends:
 - sdk/yelp-xsl.bst
 - filename: base/intltool.bst
