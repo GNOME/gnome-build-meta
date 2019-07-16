@@ -5,5 +5,8 @@ sources:
   track: master
 depends:
 - sdk/vala.bst
+- filename: public-stacks/buildsystem-autotools.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

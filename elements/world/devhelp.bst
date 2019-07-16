@@ -10,5 +10,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtk-doc.bst
 - world/amtk.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

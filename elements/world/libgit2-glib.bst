@@ -10,5 +10,8 @@ depends:
 - sdk/vala.bst
 - world/libgit2.bst
 - world/libssh2.bst
+- filename: public-stacks/buildsystem-meson.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst

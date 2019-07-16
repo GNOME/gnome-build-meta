@@ -4,6 +4,9 @@ sources:
   url: github_com:libgit2/libgit2/archive/v0.26.3.tar.gz
 depends:
 - world/libssh2.bst
+- filename: public-stacks/buildsystem-cmake.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
