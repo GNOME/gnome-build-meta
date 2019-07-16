@@ -7,6 +7,9 @@ sources:
     subprojects/libgd:
       checkout: True
       url: gitlab_gnome_org:GNOME/libgd.git
+    subprojects/gfm:
+      checkout: True
+      url: gitlab_gnome_org:mschraal/gfm.git
     subprojects/shared-modules:
       checkout: False
       url: github_com:flathub/shared-modules.git
