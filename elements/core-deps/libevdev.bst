@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libevdev/libevdev-1.6.0.tar.xz
+  url: https://www.freedesktop.org/software/libevdev/libevdev-1.8.0.tar.xz
 depends:
 - filename: base/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
