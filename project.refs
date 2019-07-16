@@ -14,7 +14,7 @@ projects:
     sdk/yelp-xsl.bst:
     - ref: cac31bc150545d6aa0de15dce04560cbf591008d17a783a1d1d9cdd47b147f04
     sdk/glib.bst:
-    - ref: 2ef15475060addfda0443a7e8a52b28a10d5e981e82c083034061daf9a8f80d9
+    - ref: 2b941ec5dcb92e5ea83fe42f9eb55a827bc8a12c153ad2489d551c31d04733dd
     sdk/gtk-doc.bst:
     - ref: 14578e002496567276d310a62c9ffd6c56ee8806ce5079ffb0b81c4111f586b1
     sdk/gnome-common.bst:
