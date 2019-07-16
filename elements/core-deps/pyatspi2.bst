@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:pyatspi/2.32/pyatspi-2.32.1.tar.xz
+  url: gnome_downloads:pyatspi/2.33/pyatspi-2.33.92.tar.xz
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst
