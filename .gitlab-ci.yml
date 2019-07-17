@@ -30,6 +30,10 @@ before_script:
   - git -C buildstream/ checkout $BST_SHA
   - pip3 install buildstream/
 
+  # XXX
+  - |
+    echo "Max jobs will be: $(( $(nproc) / 4 ))"
+
   # install bst-external nedded for the flatpak_image plugin
   - git clone https://gitlab.com/BuildStream/bst-external.git
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
