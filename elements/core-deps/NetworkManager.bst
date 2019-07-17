@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- kind: tar
+  url: gnome_downloads:NetworkManager/1.19/NetworkManager-1.19.5.tar.xz
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst
@@ -32,11 +31,5 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    PYTHON=python3
-    --with-udev-dir=/usr/lib/udev
-    --with-crypto=gnutls
-    --enable-introspection
-    --disable-more-warnings
-    --disable-json-validation
-    --disable-ovs
+  conf-local: PYTHON=python3 --with-udev-dir=/usr/lib/udev --with-crypto=gnutls --enable-introspection
+    --disable-more-warnings --disable-json-validation --disable-ovs

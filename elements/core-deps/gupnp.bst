@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gupnp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gupnp/1.2/gupnp-1.2.1.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst
@@ -17,5 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dcontext_manager=network-manager
+  meson-local: -Dcontext_manager=network-manager

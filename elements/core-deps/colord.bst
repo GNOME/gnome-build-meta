@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:hughsie/colord.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/colord/releases/colord-1.4.4.tar.xz
 depends:
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
@@ -22,9 +21,5 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dargyllcms_sensor=false
-    -Dbash_completion=false
-    -Dlibcolordcompat=false
-    -Dman=false
-    -Dvapi=true
+  meson-local: -Dargyllcms_sensor=false -Dbash_completion=false -Dlibcolordcompat=false
+    -Dman=false -Dvapi=true

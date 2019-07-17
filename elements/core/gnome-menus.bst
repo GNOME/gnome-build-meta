@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-menus.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-menus/3.32/gnome-menus-3.32.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

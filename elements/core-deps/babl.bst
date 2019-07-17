@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/babl.git
-  track: master
+- kind: tar
+  url: https://ftp.gimp.org/pub/babl/0.1/babl-0.1.66.tar.bz2
 depends:
 - filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst

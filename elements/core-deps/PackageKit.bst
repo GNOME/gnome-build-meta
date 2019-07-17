@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:hughsie/PackageKit.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.12.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/libgudev.bst
@@ -25,14 +24,8 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-vala
-    --disable-tests
-    --disable-qt
-    --disable-browser-plugin
-    --disable-bash-completion
-    --disable-gtk-module
-    --enable-python3
+  conf-local: --disable-vala --disable-tests --disable-qt --disable-browser-plugin
+    --disable-bash-completion --disable-gtk-module --enable-python3
 config:
   build-commands:
   - '%{make} CFLAGS=-Wno-error'
