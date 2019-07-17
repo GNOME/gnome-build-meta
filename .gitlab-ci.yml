@@ -25,6 +25,10 @@ stages:
 
 
 before_script:
+
+  # XXX Debug
+  - echo "Max jobs will be: $(( $(nproc) / 4 ))"
+
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
