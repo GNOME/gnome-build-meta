@@ -6,6 +6,7 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
+- sdk/libsoup.bst
 - filename: components/libarchive.bst
   junction: freedesktop-sdk.bst
 - filename: components/libxml2.bst
