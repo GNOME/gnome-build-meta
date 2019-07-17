@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gssdp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gssdp/1.2/gssdp-1.2.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -17,5 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dsniffer=false
+  meson-local: -Dsniffer=false

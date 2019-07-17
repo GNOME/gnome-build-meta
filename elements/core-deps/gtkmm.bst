@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtkmm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtkmm/3.95/gtkmm-3.95.1.tar.xz
 depends:
 - core-deps/atkmm.bst
 - core-deps/cairomm.bst
@@ -19,5 +18,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-maintainer-mode
+  conf-local: --enable-maintainer-mode

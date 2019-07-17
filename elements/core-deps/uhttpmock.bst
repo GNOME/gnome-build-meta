@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:pwithnall/uhttpmock.git
-  track: master
+- kind: tar
+  url: https://tecnocode.co.uk/downloads/uhttpmock/uhttpmock-0.5.1.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst

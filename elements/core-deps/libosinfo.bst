@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_com:libosinfo/libosinfo.git
-  track: master
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.5.0.tar.gz
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
@@ -24,5 +23,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  conf-local: --enable-werror=no

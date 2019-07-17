@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gegl.git
-  track: master
+- kind: tar
+  url: https://ftp.gimp.org/pub/gegl/0.4/gegl-0.4.16.tar.bz2
 depends:
 - core-deps/babl.bst
 - core-deps/graphviz.bst
@@ -17,6 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --without-libavformat
-    --without-jasper
+  conf-local: --without-libavformat --without-jasper

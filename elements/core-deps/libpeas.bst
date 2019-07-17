@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libpeas.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libpeas/1.22/libpeas-1.22.0.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst
@@ -24,5 +23,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-python3
+  conf-local: --enable-python3

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-backgrounds.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-backgrounds/3.32/gnome-backgrounds-3.32.0.tar.xz
 depends:
 - sdk/glib.bst
 - filename: public-stacks/buildsystem-meson.bst

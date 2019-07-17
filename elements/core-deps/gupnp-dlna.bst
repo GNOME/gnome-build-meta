@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gupnp-dlna.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gupnp-dlna/0.10/gupnp-dlna-0.10.5.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst

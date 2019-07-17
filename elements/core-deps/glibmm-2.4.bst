@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glibmm.git
-  track: glibmm-2-60
+- kind: tar
+  url: gnome_downloads:glibmm/2.60/glibmm-2.60.0.tar.xz
 depends:
 - core-deps/libsigcplusplus-2.0.bst
 - sdk/glib.bst
@@ -15,5 +14,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-maintainer-mode
+  conf-local: --enable-maintainer-mode
