@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgudev.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgudev/232/libgudev-232.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -16,5 +15,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-umockdev
+  conf-local: --disable-umockdev

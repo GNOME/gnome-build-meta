@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gspell.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gspell/1.8/gspell-1.8.1.tar.xz
 depends:
 - sdk/enchant-2.bst
 - sdk/gtk+-3.bst

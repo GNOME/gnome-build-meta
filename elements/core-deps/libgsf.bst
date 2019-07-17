@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgsf.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgsf/1.14/libgsf-1.14.46.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -19,7 +18,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --without-bonobo
-    --without-gnome-vfs
-    --enable-introspection
+  conf-local: --without-bonobo --without-gnome-vfs --enable-introspection
