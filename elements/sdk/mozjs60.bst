@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-60.1.0.tar.bz2
+  url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-60.8.0.tar.bz2
 depends:
 - filename: sdk/python2.bst
   type: build
