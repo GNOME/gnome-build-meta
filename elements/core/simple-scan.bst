@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:simple-scan/3.33/simple-scan-3.33.3.tar.xz
+  url: gnome_downloads:simple-scan/3.33/simple-scan-3.33.4.tar.xz
 depends:
 - core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst

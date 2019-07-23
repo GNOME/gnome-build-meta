@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell/3.33/gnome-shell-3.33.3.tar.xz
+  url: gnome_downloads:gnome-shell/3.33/gnome-shell-3.33.4.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
