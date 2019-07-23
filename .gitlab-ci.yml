@@ -23,8 +23,8 @@ stages:
   - finish_flatpak
   - reports
 
-
-before_script:
+default:
+  before_script:
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
