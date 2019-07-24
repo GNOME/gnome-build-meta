@@ -10,9 +10,6 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
