@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-robots.git
   track: master
 depends:
+- core-deps/gsound.bst
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/librsvg.bst
 - sdk/yelp-tools.bst
 - world/libgnome-games-support.bst

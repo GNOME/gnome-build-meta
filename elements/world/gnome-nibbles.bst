@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-nibbles.git
   track: master
 depends:
+- core-deps/gsound.bst
 - sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/libgee.bst
 - sdk/librsvg.bst
 - sdk/vala.bst
