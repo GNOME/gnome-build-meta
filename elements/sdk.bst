@@ -44,8 +44,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/help2man.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
 - filename: components/libpipeline.bst
   junction: freedesktop-sdk.bst
 - filename: components/m4.bst

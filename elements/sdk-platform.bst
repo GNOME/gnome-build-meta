@@ -79,6 +79,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/cyrus-sasl.bst
   junction: freedesktop-sdk.bst
+- filename: components/dummy-gbm.bst
+  junction: freedesktop-sdk.bst
 - filename: components/e2fsprogs.bst
   junction: freedesktop-sdk.bst
 - filename: components/expat.bst
@@ -155,8 +157,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libtiff.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtirpc.bst
-  junction: freedesktop-sdk.bst
 - filename: components/libtool.bst
   junction: freedesktop-sdk.bst
 - filename: components/libunistring.bst
@@ -170,8 +170,6 @@ depends:
 - filename: components/libxml2.bst
   junction: freedesktop-sdk.bst
 - filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
-- filename: components/linux-pam.bst
   junction: freedesktop-sdk.bst
 - filename: components/locales.bst
   junction: freedesktop-sdk.bst
@@ -329,6 +327,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/pciutils.bst
   junction: freedesktop-sdk.bst
+- filename: components/pipewire.bst
+  junction: freedesktop-sdk.bst
 - filename: components/pixman.bst
   junction: freedesktop-sdk.bst
 - filename: components/libpulse.bst
@@ -348,6 +348,8 @@ depends:
 - filename: components/vulkan.bst
   junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: components/webrtc-audio-processing.bst
   junction: freedesktop-sdk.bst
 - filename: components/xcb-util-cursor.bst
   junction: freedesktop-sdk.bst
