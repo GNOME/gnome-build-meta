@@ -10,9 +10,6 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/gnutls.bst
   junction: freedesktop-sdk.bst
 - filename: components/pcre2.bst
