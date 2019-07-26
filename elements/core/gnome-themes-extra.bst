@@ -4,12 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
   track: master
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/cantarell-fonts.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -3,11 +3,10 @@ sources:
 - kind: tar
   url: github_com:libpinyin/ibus-libpinyin/releases/download/1.11.1/ibus-libpinyin-1.11.1.tar.gz
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/ibus.bst
 - world/libpinyin.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -5,6 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst
   type: build
@@ -18,9 +20,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/xorg-lib-sm.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

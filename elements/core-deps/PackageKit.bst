@@ -5,6 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/NetworkManager.bst
+- filename: core-deps/intltool.bst
+  type: build
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
@@ -12,9 +14,6 @@ depends:
   type: build
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
-  type: build
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
   type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
