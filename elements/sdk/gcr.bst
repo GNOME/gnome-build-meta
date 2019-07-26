@@ -10,9 +10,6 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/p11-kit.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
