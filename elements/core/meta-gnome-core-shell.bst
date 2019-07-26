@@ -17,6 +17,7 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/gnome-shell-extensions.bst
 - core/gnome-shell.bst
+- core/gnome-themes-extra.bst
 - core/gnome-user-docs.bst
 # Broken:
 #- core/gnome-user-share.bst
@@ -28,6 +29,5 @@ depends:
 - core/vino.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib-networking.bst
-- sdk/gnome-themes-extra.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gvfs.bst
