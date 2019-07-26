@@ -4,13 +4,12 @@ sources:
   url: gitlab_gnome_org:GNOME/gtksourceview.git
   track: gnome-3-24
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - filename: sdk/vala.bst
-  type: build
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
   type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst

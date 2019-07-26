@@ -5,6 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst
+- filename: core-deps/intltool.bst
+  type: build
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/libical.bst
@@ -17,9 +19,6 @@ depends:
 - sdk/libsoup.bst
 - sdk/vala.bst
 - filename: components/gperf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: public-stacks/buildsystem-cmake.bst

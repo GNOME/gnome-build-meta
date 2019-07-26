@@ -23,7 +23,6 @@ depends:
 - sdk/gjs.bst
 - sdk/glib-networking.bst
 - sdk/glib.bst
-- sdk/gnome-themes-extra.bst
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
@@ -50,6 +49,7 @@ depends:
 - sdk/openjpeg.bst
 - sdk/os-release.bst
 - sdk/pango.bst
+- sdk/pipewire.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/vte.bst
@@ -66,7 +66,7 @@ depends:
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
 # appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
-# libsoup, os-release, pango and zenity.
+# libsoup, os-release, pango pipewire and zenity.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
@@ -79,6 +79,8 @@ depends:
 - filename: components/curl.bst
   junction: freedesktop-sdk.bst
 - filename: components/cyrus-sasl.bst
+  junction: freedesktop-sdk.bst
+- filename: components/dummy-gbm.bst
   junction: freedesktop-sdk.bst
 - filename: components/e2fsprogs.bst
   junction: freedesktop-sdk.bst
@@ -156,8 +158,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libtiff.bst
   junction: freedesktop-sdk.bst
-- filename: components/libtirpc.bst
-  junction: freedesktop-sdk.bst
 - filename: components/libtool.bst
   junction: freedesktop-sdk.bst
 - filename: components/libunistring.bst
@@ -171,8 +171,6 @@ depends:
 - filename: components/libxml2.bst
   junction: freedesktop-sdk.bst
 - filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
-- filename: components/linux-pam.bst
   junction: freedesktop-sdk.bst
 - filename: components/locales.bst
   junction: freedesktop-sdk.bst
@@ -349,6 +347,8 @@ depends:
 - filename: components/vulkan.bst
   junction: freedesktop-sdk.bst
 - filename: components/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: components/webrtc-audio-processing.bst
   junction: freedesktop-sdk.bst
 - filename: components/xcb-util-cursor.bst
   junction: freedesktop-sdk.bst

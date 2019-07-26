@@ -5,6 +5,8 @@ sources:
   track: master
 depends:
 - core-deps/gnome-video-effects.bst
+- filename: core-deps/intltool.bst
+  type: build
 - core-deps/libgudev.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -28,9 +30,6 @@ depends:
   type: build
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
