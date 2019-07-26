@@ -49,6 +49,7 @@ depends:
 - sdk/openjpeg.bst
 - sdk/os-release.bst
 - sdk/pango.bst
+- sdk/pipewire.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/vte.bst
@@ -65,7 +66,7 @@ depends:
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
 # appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
-# libsoup, os-release, pango and zenity.
+# libsoup, os-release, pango pipewire and zenity.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
@@ -326,8 +327,6 @@ depends:
 - filename: components/orc.bst
   junction: freedesktop-sdk.bst
 - filename: components/pciutils.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pipewire.bst
   junction: freedesktop-sdk.bst
 - filename: components/pixman.bst
   junction: freedesktop-sdk.bst
