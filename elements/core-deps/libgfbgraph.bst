@@ -5,15 +5,14 @@ sources:
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst
+- filename: core-deps/intltool.bst
+  type: build
 - core-deps/librest.bst
 - sdk/glib.bst
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

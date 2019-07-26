@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-terminal.git
   track: master
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - core/gnome-shell.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
@@ -17,9 +19,6 @@ depends:
 - sdk/yelp-tools.bst
 - filename: components/desktop-file-utils.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/libpeas.git
   track: master
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/glib.bst
 - filename: sdk/gnome-common.bst
   type: build
@@ -12,9 +14,6 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pygobject.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build

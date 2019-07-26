@@ -4,6 +4,8 @@ sources:
   url: git_freedesktop_org:NetworkManager/NetworkManager.git
   track: master
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - core-deps/iptables.bst
 - core-deps/libgudev.bst
 - core-deps/libndp.bst
@@ -16,16 +18,13 @@ depends:
 - sdk/vala.bst
 - filename: components/curl.bst
   junction: freedesktop-sdk.bst
-- filename: components/intltool.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: components/gnutls.bst
   junction: freedesktop-sdk.bst
 - filename: components/nss.bst
   junction: freedesktop-sdk.bst
+- filename: components/perl-xml-parser.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build

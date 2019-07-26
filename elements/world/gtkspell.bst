@@ -4,6 +4,8 @@ sources:
   url: git_code_sf_net:p/gtkspell/gtkspell.git
   track: master
 depends:
+- filename: core-deps/intltool.bst
+  type: build
 - sdk/enchant-2.bst
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
@@ -11,9 +13,6 @@ depends:
 - filename: sdk/vala.bst
   type: build
 - filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/intltool.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
