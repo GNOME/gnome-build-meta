@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/evolution-data-server.bst
-- sdk/dbus-glib.bst
 - sdk/gobject-introspection.bst
 - sdk/libgee.bst
 - sdk/vala.bst
