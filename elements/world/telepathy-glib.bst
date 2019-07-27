@@ -11,6 +11,7 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/vala.bst
+- world/dbus-glib.bst
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
