@@ -7,7 +7,7 @@ depends:
 - filename: core-deps/intltool.bst
   type: build
 - sdk/glib.bst
-- filename: sdk/gnome-common.bst
+- filename: core-deps/gnome-common.bst
   type: build
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
