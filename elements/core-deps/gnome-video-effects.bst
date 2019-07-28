@@ -6,7 +6,7 @@ sources:
 depends:
 - filename: core-deps/intltool.bst
   type: build
-- filename: sdk/gnome-common.bst
+- filename: core-deps/gnome-common.bst
   type: build
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
