@@ -25,6 +25,10 @@ stages:
 
 default:
   before_script:
+
+  # Install pytoml for our plugin
+  - pip3 install pytoml
+
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
