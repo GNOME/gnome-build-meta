@@ -25,12 +25,24 @@ stages:
 
 default:
   before_script:
+
+  # Make sure we've got our submodules
+  - git submodule update --init
+
+  # Install some dependencies for our plugins
+  - pip3 install pytoml requests
+
   # Use specific version of BuildStream
   - git clone https://gitlab.com/BuildStream/buildstream.git
   - git -C buildstream/ checkout $BST_SHA
   - pip3 install buildstream/
 
-  # install bst-external nedded for the flatpak_image plugin
+  # Install bst-external nedded for the flatpak_image plugin
+  #
+  # FIXME: This is only needed by the junctioned freedesktop-sdk,
+  #        once freedesktop-sdk pulls in the plugins as submodules
+  #        too, then this installation of bst-external can go away
+  #
   - git clone https://gitlab.com/BuildStream/bst-external.git
   - git -C bst-external/ checkout $BST_EXTERNAL_SHA
   - pip3 install bst-external/
