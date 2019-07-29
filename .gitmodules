@@ -1,0 +1,3 @@
+[submodule "plugins"]
+	path = plugins
+	url = https://gitlab.com/BuildStream/bst-external.git
