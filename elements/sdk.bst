@@ -45,6 +45,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libpipeline.bst
   junction: freedesktop-sdk.bst
+- filename: components/linux-pam.bst
+  junction: freedesktop-sdk.bst
 - filename: components/m4.bst
   junction: freedesktop-sdk.bst
 - filename: components/man-db.bst
