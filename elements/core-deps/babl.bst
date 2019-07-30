@@ -7,7 +7,7 @@ depends:
 - filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
