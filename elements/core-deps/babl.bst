@@ -7,6 +7,8 @@ depends:
 - filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/lcms.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
