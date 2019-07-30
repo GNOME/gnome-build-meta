@@ -1,0 +1,25 @@
+From 8296a767bbb7a63090b9866e57197b752058dd1f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Tue, 30 Jul 2019 14:38:05 +0100
+Subject: [PATCH] babl/meson.build: Use python3
+
+---
+ babl/meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/babl/meson.build b/babl/meson.build
+index 72b0e9b..54258e3 100644
+--- a/babl/meson.build
++++ b/babl/meson.build
+@@ -7,7 +7,7 @@ version_script_target = custom_target(version_script,
+   input : [ export_symbols, ] ,
+   output: [ version_script ] ,
+   command: [
+-  'python',
++  'python3',
+   join_paths(meson.source_root(), 'gen_babl_map.py'),
+   export_symbols,
+   version_script,
+-- 
+2.22.0
+
