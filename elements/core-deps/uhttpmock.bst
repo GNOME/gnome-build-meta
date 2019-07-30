@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: github_com:pwithnall/uhttpmock.git
+  url: gitlab_com:uhttpmock/uhttpmock.git
   track: master
 depends:
 - sdk/glib.bst
