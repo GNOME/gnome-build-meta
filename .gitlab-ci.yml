@@ -30,6 +30,8 @@ default:
 
   # Lets see em
   - ls plugins
+  - ls plugins/bst_external
+  - ls plugins/bst_external/sources
 
   # Install some dependencies for our plugins
   - pip3 install pytoml requests
