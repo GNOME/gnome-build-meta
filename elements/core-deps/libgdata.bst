@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libgdata.git
+  ref: f54d68f961015f85595b956ff0143a6ee0c41ff7
   track: master
 depends:
 - core-deps/gnome-online-accounts.bst
