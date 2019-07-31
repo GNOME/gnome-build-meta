@@ -26,8 +26,7 @@ default:
   before_script:
 
   # Make sure we've got our submodules
-  - git submodule init
-  - git submodule fetch
+  - git submodule update --init
 
   # Lets see em
   - ls plugins
