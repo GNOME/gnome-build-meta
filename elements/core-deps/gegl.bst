@@ -5,7 +5,6 @@ sources:
   track: master
 depends:
 - core-deps/babl.bst
-- core-deps/graphviz.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
@@ -18,5 +17,6 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-
+    --without-graphviz
     --without-libavformat
     --without-jasper
