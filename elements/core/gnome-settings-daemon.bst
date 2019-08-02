@@ -9,6 +9,7 @@ sources:
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
 
 depends:
+- core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
 - core-deps/colord.bst
@@ -18,6 +19,7 @@ depends:
 - core-deps/libwacom.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
+- sdk/gcr.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
