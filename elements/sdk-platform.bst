@@ -171,8 +171,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libxslt.bst
   junction: freedesktop-sdk.bst
-- filename: components/linux-pam.bst
-  junction: freedesktop-sdk.bst
 - filename: components/locales.bst
   junction: freedesktop-sdk.bst
 - filename: components/lzip.bst
