@@ -62,7 +62,7 @@ default:
   - |
     if [ "$FLATPAK_BRANCH" = master ] && [ -n "$NIGHTLY_REPO_TOKEN" ]; then
       export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
-      export FLAT_MANAGER_SERVER=https://gbm.gnome.org/
+      export FLAT_MANAGER_SERVER=https://nightly.gnome.org/
       export FLAT_MANAGER_REPO=nightly
     elif [ "$FLATPAK_BRANCH" != master ] && [ -n "$FLATHUB_REPO_TOKEN" ]; then
       export REPO_TOKEN=$FLATHUB_REPO_TOKEN
