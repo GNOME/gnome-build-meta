@@ -4,9 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/four-in-a-row.git
   track: master
 depends:
+- core-deps/gsound.bst
 - sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/librsvg.bst
 - filename: sdk/vala.bst
   type: build
