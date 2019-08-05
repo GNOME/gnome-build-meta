@@ -1,12 +1,10 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/cheese.git
   track: master
 depends:
 - core-deps/gnome-video-effects.bst
-- filename: core-deps/intltool.bst
-  type: build
 - core-deps/libgudev.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -14,8 +12,6 @@ depends:
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
-- filename: core-deps/gnome-common.bst
-  type: build
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
@@ -30,7 +26,7 @@ depends:
   type: build
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
