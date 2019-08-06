@@ -17,3 +17,7 @@ depends:
   junction: freedesktop-sdk.bst
 environment:
   CC: gcc -std=c99
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}/usr/share/info/dir"
