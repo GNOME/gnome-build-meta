@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gtk-vnc.git
   track: master
   submodules:
-    src/keycodemapdb:
+    subprojects/keycodemapdb:
       checkout: true
       url: gitlab_com:keycodemap/keycodemapdb.git
 depends:
