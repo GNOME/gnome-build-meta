@@ -10,6 +10,8 @@ depends:
 - filename: sdk/gtk-doc.bst
   type: build
 - sdk/pygobject.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -20,4 +22,8 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-
-    --enable-python3
+    -Dpython3=true
+    -Dintrospection=true
+    -Dvapi=true
+    -Dwidgetry=true
+    -Dgtk_doc=true
