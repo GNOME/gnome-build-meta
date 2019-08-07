@@ -6,6 +6,7 @@ sources:
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
+- sdk/libsoup.bst
 - filename: components/dbus.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
@@ -28,7 +29,7 @@ variables:
     -Dgoa=false
     -Dgoogle=false
     -Dgphoto2=false
-    -Dhttp=false
+    -Dhttp=true
     -Dmtp=false
     -Dnfs=false
     -Dsftp=false
