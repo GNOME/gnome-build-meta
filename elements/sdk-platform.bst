@@ -299,7 +299,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libseccomp.bst
   junction: freedesktop-sdk.bst
-- filename: components/libsystemd.bst
+- filename: components/systemd-libs.bst
   junction: freedesktop-sdk.bst
 - filename: components/libthai.bst
   junction: freedesktop-sdk.bst
