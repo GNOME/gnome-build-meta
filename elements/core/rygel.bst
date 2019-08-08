@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/rygel.git
@@ -12,7 +12,7 @@ depends:
 - core-deps/tracker.bst
 - sdk/libgee.bst
 - sdk/vala.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
