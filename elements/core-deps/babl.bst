@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/babl.git
   track: master
 depends:
+- filename: sdk/gobject-introspection.bst
+  type: build
 - filename: components/git-minimal.bst
   junction: freedesktop-sdk.bst
   type: build
