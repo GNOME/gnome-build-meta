@@ -83,7 +83,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/encoding_index_tests/encoding_index_tests-0.1.4.crate
 - kind: crate
-  url: https://static.crates.io/crates/float-cmp/float-cmp-0.4.0.crate
+  url: https://static.crates.io/crates/float-cmp/float-cmp-0.5.2.crate
 - kind: crate
   url: https://static.crates.io/crates/fragile/fragile-0.3.0.crate
 - kind: crate
