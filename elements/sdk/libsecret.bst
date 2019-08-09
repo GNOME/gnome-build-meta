@@ -10,6 +10,9 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
+- filename: components/valgrind.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/libgcrypt.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
