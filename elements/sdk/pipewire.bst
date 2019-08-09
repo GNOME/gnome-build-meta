@@ -21,7 +21,7 @@ depends:
 - filename: components/ffmpeg.bst
   junction: freedesktop-sdk.bst
   type: runtime
-- filename: components/systemd-libs.bst
+- filename: components/libsystemd.bst
   junction: freedesktop-sdk.bst
   type: runtime
 
