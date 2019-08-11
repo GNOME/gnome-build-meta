@@ -20,3 +20,7 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+
+variables:
+  meson-local: >-
+    -Dgtk_doc=false
