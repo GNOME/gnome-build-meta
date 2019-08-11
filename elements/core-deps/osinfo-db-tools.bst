@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_com:libosinfo/osinfo-db-tools.git
-  track: master
+- kind: tar
+  url: gitlab_com:libosinfo/osinfo-db-tools/-/archive/v1.6.0/osinfo-db-tools-v1.6.0.tar.gz
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
