@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_com:libosinfo/osinfo-db-tools.git
   track: master
+- kind: patch
+  path: files/osinfo-db-tools/0001-build-Use-a-minimum-gettext-requirement-rather-than-.patch
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
