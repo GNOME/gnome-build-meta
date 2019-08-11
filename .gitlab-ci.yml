@@ -3,7 +3,7 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'False'
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.3.1-0-gb7a6624fbfbd82d2daa42f5a5570cbb4fbc729d2'
