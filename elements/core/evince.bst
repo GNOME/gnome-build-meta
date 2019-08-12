@@ -24,5 +24,5 @@ depends:
   junction: freedesktop-sdk.bst
 variables:
   meson-local: >-
-    -djvu=disabled
+    -Ddjvu=disabled
     -Dintrospection=true
