@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/evince.git
@@ -17,11 +17,11 @@ depends:
   type: build
 - sdk/libsecret.bst
 - sdk/yelp-tools.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-introspection
+  meson-local: >-
+    -Dintrospection=true
