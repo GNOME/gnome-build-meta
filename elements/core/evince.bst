@@ -25,4 +25,5 @@ depends:
 variables:
   meson-local: >-
     -Ddjvu=disabled
+    -Ddvi=disabled
     -Dintrospection=true
