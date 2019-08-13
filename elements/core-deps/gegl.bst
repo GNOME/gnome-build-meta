@@ -10,13 +10,13 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
   conf-local: >-
-    --without-graphviz
-    --without-libavformat
-    --without-jasper
+    -Dgraphviz=disabled
+    -Dlibav=disabled
+    -Djasper=disabled
