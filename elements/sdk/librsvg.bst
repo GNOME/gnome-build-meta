@@ -9,7 +9,7 @@ sources:
 # The following is generated using utils/generate_cargo_dependencies.py
 # it needs to be updated whenever Cargo.lock changes
 - kind: crate
-  url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.7.4.crate
+  url: https://static.crates.io/crates/aho-corasick/aho-corasick-0.7.6.crate
 - kind: crate
   url: https://static.crates.io/crates/alga/alga-0.9.1.crate
 - kind: crate
@@ -23,7 +23,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/bitflags/bitflags-1.1.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/bstr/bstr-0.2.6.crate
+  url: https://static.crates.io/crates/bstr/bstr-0.2.7.crate
 - kind: crate
   url: https://static.crates.io/crates/byteorder/byteorder-1.3.2.crate
 - kind: crate
@@ -107,7 +107,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/gobject-sys/gobject-sys-0.9.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/idna/idna-0.1.5.crate
+  url: https://static.crates.io/crates/idna/idna-0.2.0.crate
 - kind: crate
   url: https://static.crates.io/crates/itertools/itertools-0.8.0.crate
 - kind: crate
@@ -117,7 +117,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-1.3.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/libc/libc-0.2.60.crate
+  url: https://static.crates.io/crates/libc/libc-0.2.61.crate
 - kind: crate
   url: https://static.crates.io/crates/libm/libm-0.1.4.crate
 - kind: crate
@@ -157,7 +157,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/pangocairo-sys/pangocairo-sys-0.10.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/percent-encoding/percent-encoding-1.0.1.crate
+  url: https://static.crates.io/crates/percent-encoding/percent-encoding-2.1.0.crate
 - kind: crate
   url: https://static.crates.io/crates/phf/phf-0.7.24.crate
 - kind: crate
@@ -183,7 +183,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rand_core/rand_core-0.3.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/rand_core/rand_core-0.4.0.crate
+  url: https://static.crates.io/crates/rand_core/rand_core-0.4.2.crate
 - kind: crate
   url: https://static.crates.io/crates/rand_hc/rand_hc-0.1.0.crate
 - kind: crate
@@ -209,11 +209,11 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/rdrand/rdrand-0.4.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex/regex-1.2.0.crate
+  url: https://static.crates.io/crates/regex/regex-1.2.1.crate
 - kind: crate
   url: https://static.crates.io/crates/regex-automata/regex-automata-0.1.8.crate
 - kind: crate
-  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.10.crate
+  url: https://static.crates.io/crates/regex-syntax/regex-syntax-0.6.11.crate
 - kind: crate
   url: https://static.crates.io/crates/rustc_version/rustc_version-0.2.3.crate
 - kind: crate
@@ -243,7 +243,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/string_cache_shared/string_cache_shared-0.3.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/syn/syn-0.15.42.crate
+  url: https://static.crates.io/crates/syn/syn-0.15.44.crate
 - kind: crate
   url: https://static.crates.io/crates/tendril/tendril-0.4.1.crate
 - kind: crate
@@ -255,8 +255,6 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/typenum/typenum-1.10.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/ucd-util/ucd-util-0.1.5.crate
-- kind: crate
   url: https://static.crates.io/crates/unicode-bidi/unicode-bidi-0.3.4.crate
 - kind: crate
   url: https://static.crates.io/crates/unicode-normalization/unicode-normalization-0.1.8.crate
@@ -265,11 +263,9 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/unicode-xid/unicode-xid-0.1.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/url/url-1.7.2.crate
+  url: https://static.crates.io/crates/url/url-2.1.0.crate
 - kind: crate
   url: https://static.crates.io/crates/utf-8/utf-8-0.7.5.crate
-- kind: crate
-  url: https://static.crates.io/crates/utf8-ranges/utf8-ranges-1.0.3.crate
 - kind: crate
   url: https://static.crates.io/crates/walkdir/walkdir-2.2.9.crate
 - kind: crate
