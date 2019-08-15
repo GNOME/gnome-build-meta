@@ -27,3 +27,4 @@ variables:
     -Ddjvu=disabled
     -Ddvi=disabled
     -Dintrospection=true
+    -Dgtk_doc=false
