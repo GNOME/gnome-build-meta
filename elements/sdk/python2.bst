@@ -30,3 +30,4 @@ variables:
 config:
   install-commands:
     - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'
+    - rm %{install-root}%{bindir}/2to3
