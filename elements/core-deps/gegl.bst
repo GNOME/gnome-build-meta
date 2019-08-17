@@ -11,6 +11,8 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- filename: sdk/python2.bst
+  type: build
 - filename: sdk/vala.bst
   type: build
 - filename: components/sdl2.bst
@@ -33,5 +35,6 @@ variables:
     -Dlua=disabled
     -Dmrg=disabled
     -Dopenexr=disabled
+    -Dpygobject=disabled
     -Dumfpack=disabled
     -Dwebp=disabled
