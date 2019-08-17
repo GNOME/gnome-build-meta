@@ -117,7 +117,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/lazy_static/lazy_static-1.3.0.crate
 - kind: crate
-  url: https://static.crates.io/crates/libc/libc-0.2.61.crate
+  url: https://static.crates.io/crates/libc/libc-0.2.62.crate
 - kind: crate
   url: https://static.crates.io/crates/libm/libm-0.1.4.crate
 - kind: crate
@@ -127,7 +127,7 @@ sources:
 - kind: crate
   url: https://static.crates.io/crates/mac/mac-0.1.1.crate
 - kind: crate
-  url: https://static.crates.io/crates/markup5ever/markup5ever-0.8.1.crate
+  url: https://static.crates.io/crates/markup5ever/markup5ever-0.9.0.crate
 - kind: crate
   url: https://static.crates.io/crates/matches/matches-0.1.8.crate
 - kind: crate
