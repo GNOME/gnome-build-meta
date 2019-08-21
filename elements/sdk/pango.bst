@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pango.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pango/1.44/pango-1.44.5.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

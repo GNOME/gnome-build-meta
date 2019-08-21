@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libnotify.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libnotify/0.7/libnotify-0.7.8.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

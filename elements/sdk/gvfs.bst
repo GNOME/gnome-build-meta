@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gvfs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gvfs/1.41/gvfs-1.41.91.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

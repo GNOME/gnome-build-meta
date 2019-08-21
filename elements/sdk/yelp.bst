@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/yelp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:yelp/3.32/yelp-3.32.2.tar.xz
 depends:
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst

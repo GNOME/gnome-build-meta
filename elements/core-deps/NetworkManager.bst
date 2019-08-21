@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- kind: tar
+  url: gnome_downloads:NetworkManager/1.21/NetworkManager-1.21.1.tar.xz
 depends:
 - filename: core-deps/intltool.bst
   type: build

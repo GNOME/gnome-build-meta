@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-characters.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-characters/3.32/gnome-characters-3.32.1.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
