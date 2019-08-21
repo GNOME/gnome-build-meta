@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_com:libosinfo/osinfo-db-tools.git
-  track: master
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.6.0.tar.gz
 - kind: patch
   path: files/osinfo-db-tools/0001-build-Use-a-minimum-gettext-requirement-rather-than-.patch
 depends:

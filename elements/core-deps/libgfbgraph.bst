@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgfbgraph.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gfbgraph/0.2/gfbgraph-0.2.3.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - filename: core-deps/intltool.bst

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/evince.git
-  track: master
+- kind: tar
+  url: gnome_downloads:evince/3.32/evince-3.32.0.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst

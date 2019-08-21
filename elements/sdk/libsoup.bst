@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsoup.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsoup/2.67/libsoup-2.67.92.tar.xz
 depends:
 - sdk/brotli.bst
 - sdk/glib.bst

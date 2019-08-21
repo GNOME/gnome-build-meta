@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/3.33/gnome-disk-utility-3.33.91.tar.xz
 depends:
 - core-deps/libdvdread.bst
 - core-deps/udisks2.bst

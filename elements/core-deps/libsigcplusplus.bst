@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:libsigcplusplus/libsigcplusplus.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsigc++/2.99/libsigc++-2.99.13.tar.xz
 depends:
 - core-deps/mm-common.bst
 - filename: public-stacks/buildsystem-autotools.bst
