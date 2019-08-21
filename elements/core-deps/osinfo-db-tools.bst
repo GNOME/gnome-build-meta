@@ -2,8 +2,6 @@ kind: autotools
 sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.6.0.tar.gz
-- kind: patch
-  path: files/osinfo-db-tools/0001-build-Use-a-minimum-gettext-requirement-rather-than-.patch
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
