@@ -11,6 +11,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/evolution-data-server.bst
+- core-deps/gnome-autoar.bst
 - core-deps/libgnomekbd.bst
 - core-deps/sassc.bst
 - core-deps/startup-notification.bst
@@ -30,6 +31,9 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcroco.bst
 - sdk/libsoup.bst
+- filename: components/asciidoc.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: components/gstreamer.bst
   junction: freedesktop-sdk.bst
 - filename: components/docbook-xsl.bst
