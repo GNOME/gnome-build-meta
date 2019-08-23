@@ -13,7 +13,6 @@ depends:
   type: build
 - filename: components/libarchive.bst
   junction: freedesktop-sdk.bst
-  type: build
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
