@@ -9,6 +9,7 @@ variables:
   BST_SHA: '1.3.1-0-gb7a6624fbfbd82d2daa42f5a5570cbb4fbc729d2'
   BST_EXTERNAL_SHA: '0.14.0-0-g003f1f1e7ead60627ef4242a6d785704ede44358'
   FLATPAK_BRANCH: master
+  STABLE_ABI: false
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -292,6 +293,19 @@ cve_report:
   artifacts:
     paths:
       - cve-reports
+  only:
+    - master
+    - /^gnome-\d-\d\d$/
+
+check_abi:
+  <<: *x86_64
+  stage: reports
+  dependencies: [build]
+  script:
+    - if [ $STABLE_ABI != 'false' ]; then \
+        REFERENCE=$(git merge-base origin/$FLATPAK_BRANCH) \
+        ./utils/check-abi --old=$REFERENCE --new=HEAD abi/abi-image.bst
+      fi
   only:
     - master
     - /^gnome-\d-\d\d$/
