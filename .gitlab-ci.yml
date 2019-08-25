@@ -15,6 +15,8 @@ variables:
   DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
+  GIT_SUBMODULE_STRATEGY: "recursive"
+
 stages:
 - track
 - build
@@ -86,6 +88,11 @@ default:
 
         ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    fi
+  - |
+    if test "$FLATPAK_BRANCH" != 'master' -a "$CI_COMMIT_REF_NAME" != /^gnome-\d-\d\d$/; then
+        REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
+        ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
