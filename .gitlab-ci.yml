@@ -9,6 +9,7 @@ variables:
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   DOCKER_IMAGE_ID: '80f4a16af18b8641874fe037710dcaad4710ff50'
   FLATPAK_BRANCH: master
+  STABLE_ABI: false
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -316,3 +317,16 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+
+check_abi:
+  <<: *x86_64
+  stage: reports
+  dependencies: [build]
+  script:
+    - if [ $STABLE_ABI != 'false' ]; then \
+        REFERENCE=$(git merge-base origin/$FLATPAK_BRANCH HEAD) \
+        ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
+      fi
+  only:
+    - master
+    - /^gnome-\d-\d\d$/
