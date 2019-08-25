@@ -15,9 +15,12 @@ variables:
   DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
+  GIT_SUBMODULE_STRATEGY: "recursive"
+
 stages:
 - track
 - build
+- abi_check
 - prepare_flatpak
 - flatpak
 - finish_flatpak
@@ -102,6 +105,27 @@ default:
     - project.refs
     - image
     expire_in: 1 week
+
+.abi-template:
+  stage: abi_check
+  script:
+  - ${BST} -o arch "${ARCH}" build flatpak/platform-image.bst flatpak/sdk-image.bst
+  - export REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD)
+  - ./utils/buildstream-abi-checker/check-abi --suppressions=utils/abidiff-suppressions.ini --old="${REFERENCE}" --new=HEAD abi/abi-image.bst
+  cache: &bst-cache
+    key: bst-$FLATPAK_BRANCH
+    paths:
+    - "${XDG_CACHE_HOME}/buildstream/sources/"
+  # Store artifacts so we can inspect build failures
+  artifacts: &logging-artifacts
+    when: always
+    paths:
+    - logs
+    - project.refs
+    expire_in: 1 week
+  rules:
+  - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^gnome-\d-\d\d$/'
+    when: always
 
 .flatpak-template:
   stage: flatpak
@@ -212,6 +236,22 @@ build-gnome-core-aarch64:
 
 build-gnome-core-arm:
   extends: .build-template
+  <<: *arm
+
+abi-check-x86_64:
+  extends: .abi-template
+  <<: *x86_64
+
+abi-check-i386:
+  extends: .abi-template
+  <<: *i686
+
+abi-check-aarch64:
+  extends: .abi-template
+  <<: *aarch64
+
+abi-check-core-arm:
+  extends: .abi-template
   <<: *arm
 
 
