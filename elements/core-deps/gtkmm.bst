@@ -9,7 +9,6 @@ depends:
 - core-deps/pangomm.bst
 - sdk/glib.bst
 - sdk/gtk.bst
-- filename: base/perl-xml-parser.bst
 - filename: components/perl-xml-parser.bst
   junction: freedesktop-sdk.bst
   type: build
