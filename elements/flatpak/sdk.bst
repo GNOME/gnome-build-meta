@@ -2,7 +2,7 @@ kind: flatpak_image
 depends:
 - filename: flatpak/sdk-image.bst
   type: build
-- filename: linker-debuginfo.bst
+- filename: integration/linker-debuginfo.bst
   junction: freedesktop-sdk.bst
   type: build
 
