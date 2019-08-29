@@ -69,7 +69,7 @@ depends:
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
-- filename: mtab.bst
+- filename: integration/mtab.bst
   junction: freedesktop-sdk.bst
 - filename: components/ca-certificates.bst
   junction: freedesktop-sdk.bst
@@ -311,7 +311,7 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/libxkbcommon.bst
   junction: freedesktop-sdk.bst
-- filename: components/llvm8.bst
+- filename: components/llvm.bst
   junction: freedesktop-sdk.bst
 - filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
