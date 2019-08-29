@@ -2,19 +2,19 @@ kind: compose
 depends:
 - filename: sdk.bst
   type: build
-- filename: multiarch-sdk.bst
+- filename: multiarch/multiarch-sdk.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: split-locales.bst
+- filename: integration/split-locales.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: split-docs.bst
+- filename: integration/split-docs.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: flatpak-builder-configuration.bst
+- filename: integration/flatpak-builder-configuration.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: debug-app-link.bst
+- filename: integration/debug-app-link.bst
   junction: freedesktop-sdk.bst
   type: build
 config:
