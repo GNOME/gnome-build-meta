@@ -69,7 +69,7 @@ depends:
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 
-- filename: mtab.bst
+- filename: integration/mtab.bst
   junction: freedesktop-sdk.bst
 - filename: components/ca-certificates.bst
   junction: freedesktop-sdk.bst
