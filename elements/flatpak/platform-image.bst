@@ -2,20 +2,21 @@ kind: compose
 depends:
 - filename: sdk-platform.bst
   type: build
-- filename: multiarch-platform.bst
+- filename: multiarch/multiarch-platform.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: split-locales.bst
+- filename: integration/split-locales.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: split-docs.bst
+- filename: integration/split-docs.bst
   junction: freedesktop-sdk.bst
   type: build
 config:
   exclude:
   - devel
   - extra
-  - static
+  - static-blocklist
+  - vm-only
 public:
   bst:
     split-rules:
