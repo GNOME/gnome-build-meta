@@ -83,8 +83,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/jq.bst
   junction: freedesktop-sdk.bst
-- filename: components/libva-utils.bst
-  junction: freedesktop-sdk.bst
 - filename: components/wayland-protocols.bst
   junction: freedesktop-sdk.bst
 - filename: components/xorg-proto-xcb.bst
