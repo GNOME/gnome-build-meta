@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/colord/releases/colord-gtk-0.1.26.tar.xz
+  url: https://www.freedesktop.org/software/colord/releases/colord-gtk-0.2.0.tar.xz
 depends:
 - core-deps/colord.bst
 - sdk/glib.bst
