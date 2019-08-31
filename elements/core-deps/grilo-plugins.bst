@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:grilo-plugins/0.3/grilo-plugins-0.3.8.tar.xz
+  url: gnome_downloads:grilo-plugins/0.3/grilo-plugins-0.3.9.tar.xz
 depends:
 - core-deps/gmime3.bst
 - core-deps/gnome-online-accounts.bst

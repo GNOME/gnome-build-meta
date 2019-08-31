@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://ftp.gimp.org/pub/babl/0.1/babl-0.1.62.tar.bz2
+  url: https://ftp.gimp.org/pub/babl/0.1/babl-0.1.72.tar.xz
 depends:
 - filename: base/git-minimal.bst
   junction: freedesktop-sdk.bst
