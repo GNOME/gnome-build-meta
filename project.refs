@@ -16,7 +16,7 @@ projects:
     sdk/glib.bst:
     - ref: ff8fab8d8deaa4fd0536c90f90d9769a09071779c7e6183907f6855645bffb6c
     sdk/gtk-doc.bst:
-    - ref: de0ef034fb17cb21ab0c635ec730d19746bce52984a6706e7bbec6fb5e0b907c
+    - ref: 14578e002496567276d310a62c9ffd6c56ee8806ce5079ffb0b81c4111f586b1
     sdk/gnome-common.bst:
     - ref: 22569e370ae755e04527b76328befc4c73b62bfd4a572499fde116b8318af8cf
     sdk/gobject-introspection.bst:

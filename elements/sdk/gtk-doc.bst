@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gtk-doc/1.32/gtk-doc-1.32.tar.xz
+  url: gnome_downloads:gtk-doc/1.29/gtk-doc-1.29.tar.xz
 depends:
 - sdk/yelp-tools.bst
 - filename: base/docbook-xsl.bst
