@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/amtk.git
-  track: master
+- kind: tar
+  url: gnome_downloads:amtk/5.0/amtk-5.0.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
