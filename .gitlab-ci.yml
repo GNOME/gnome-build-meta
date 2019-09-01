@@ -152,6 +152,8 @@ before_script:
       fi
   only:
     - /^gnome-\d-\d\d$/
+  except:
+    - schedules
 
 .flatpak-emergency-template:
   extends: .flatpak-nightly-template
@@ -270,6 +272,8 @@ flathub-prepare:
       - build.txt
   only:
     - /^gnome-\d-\d\d$/
+  except:
+    - schedules
   <<: *x86_64
 
 
@@ -334,6 +338,8 @@ flathub-finish:
     - flat-manager/flat-manager-client purge $(cat build.txt)
   only:
     - /^gnome-\d-\d\d$/
+  except:
+    - schedules
   <<: *x86_64
 
 flathub-finish-failed:
@@ -343,4 +349,6 @@ flathub-finish-failed:
   when: on_failure
   only:
     - /^gnome-\d-\d\d$/
+  except:
+    - schedules
   <<: *x86_64
