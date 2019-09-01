@@ -2,6 +2,9 @@ kind: flatpak_image
 depends:
 - filename: flatpak/sdk-image.bst
   type: build
+- filename: integration/sdk-integration.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: integration/linker-debuginfo.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -52,7 +55,7 @@ config:
       no-autodownload: "true"
       autodelete: "false"
       add-ld-path: "lib"
-      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri"
+      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d"
       download-if: "active-gl-driver"
       enable-if: "active-gl-driver"
 
@@ -81,7 +84,7 @@ config:
 
     Extension org.freedesktop.Platform.ffmpeg-html5:
       directory: '%{lib}/ffmpeg'
-      add-ld-path: lib
+      add-ld-path: "."
       version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Sdk.Extension:
