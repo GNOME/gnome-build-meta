@@ -17,12 +17,12 @@ variables:
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
 stages:
-  - track
-  - build
-  - prepare_flatpak
-  - flatpak
-  - finish_flatpak
-  - reports
+- track
+- build
+- prepare_flatpak
+- flatpak
+- finish_flatpak
+- reports
 
 default:
   before_script:
@@ -92,50 +92,50 @@ default:
   stage: build
   dependencies: [track]
   script:
-    - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst
-      platform-manifest.bst sdk-manifest.bst
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
+    flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
   cache: &bst-cache
     key: bst-$FLATPAK_BRANCH
     paths:
-      - "${XDG_CACHE_HOME}/buildstream/sources/"
+    - "${XDG_CACHE_HOME}/buildstream/sources/"
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
     paths:
-      - logs
-      - project.refs
+    - logs
+    - project.refs
 
 .flatpak-template:
   stage: flatpak
   dependencies: [track, flatpak-prepare]
   script:
-    - ostree init --repo repo/ --mode archive
+  - ostree init --repo repo/ --mode archive
 
-    - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
-    - flatpak build-commit-from --src-repo=checkout-repo/ repo/
-    - rm -rf checkout-repo/
+  - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
+  - flatpak build-commit-from --src-repo=checkout-repo/ repo/
+  - rm -rf checkout-repo/
 
-    - |
-      if test $FLAT_MANAGER_REPO == nightly; then
-          ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
-          ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
-          flatpak build-commit-from --src-repo=checkout-repo/ repo/
-          rm -rf checkout-repo/
-      fi
+  - |
+    if test $FLAT_MANAGER_REPO == nightly; then
+        ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
+        ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
+        flatpak build-commit-from --src-repo=checkout-repo/ repo/
+        rm -rf checkout-repo/
+    fi
 
-    - flatpak build-update-repo --generate-static-deltas repo/
+  - flatpak build-update-repo --generate-static-deltas repo/
 
-    - flat-manager/flat-manager-client push $(cat build.txt) repo/
+  - flat-manager/flat-manager-client push $(cat build.txt) repo/
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+  - master
+  - /^gnome-\d-\d\d$/
   except:
     variables:
-      - $EMERGENCY
-      - $BST_TRACK_TAGS != "False"
+    - $EMERGENCY
+    - $BST_TRACK_TAGS != "False"
 
 #
 # Architecture specific settings
@@ -144,32 +144,32 @@ default:
 .x86_64: &x86_64
   image: "${DOCKER_AMD64}"
   tags:
-    - x86_64
-    - gnome-build-meta
+  - x86_64
+  - gnome-build-meta
   variables:
     ARCH: x86_64
 
 .i686: &i686
   image: "${DOCKER_AMD64}"
   tags:
-    - x86_64
-    - gnome-build-meta
+  - x86_64
+  - gnome-build-meta
   variables:
     ARCH: i686
 
 .aarch64: &aarch64
   image: "${DOCKER_AARCH64}"
   tags:
-    - aarch64
-    - gnome-build-meta
+  - aarch64
+  - gnome-build-meta
   variables:
     ARCH: aarch64
 
 .arm: &arm
   image: "${DOCKER_AARCH64}"
   tags:
-    - armhf
-    - gnome-build-meta
+  - armhf
+  - gnome-build-meta
   variables:
     ARCH: arm
 
@@ -181,19 +181,19 @@ track:
   <<: *x86_64
   stage: track
   script:
-    - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-    - ${BST} track --deps all core.bst flatpak-runtimes.bst
+  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst
   retry: 2
   # only run on branches targeting master
   only:
     variables:
-      - $FLATPAK_BRANCH == 'master'
+    - $FLATPAK_BRANCH == 'master'
   cache: *bst-cache
   artifacts:
     when: always
     paths:
-      - logs
-      - project.refs
+    - logs
+    - project.refs
 
 
 build-gnome-core-x86_64:
@@ -217,17 +217,18 @@ flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
   script:
-    - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+  - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
+    > build.txt
   artifacts:
     paths:
-      - build.txt
+    - build.txt
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+  - master
+  - /^gnome-\d-\d\d$/
   except:
     variables:
-      - $EMERGENCY
-      - $BST_TRACK_TAGS != "False"
+    - $EMERGENCY
+    - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 
@@ -252,31 +253,31 @@ flatpak-finish:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-    - flat-manager/flat-manager-client commit --wait $(cat build.txt)
-    - flat-manager/flat-manager-client publish --wait $(cat build.txt)
-    - flat-manager/flat-manager-client purge $(cat build.txt)
+  - flat-manager/flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager/flat-manager-client publish --wait $(cat build.txt)
+  - flat-manager/flat-manager-client purge $(cat build.txt)
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+  - master
+  - /^gnome-\d-\d\d$/
   except:
     variables:
-      - $EMERGENCY
-      - $BST_TRACK_TAGS != "False"
+    - $EMERGENCY
+    - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 flatpak-finish-failed:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-    - flat-manager/flat-manager-client purge $(cat build.txt)
+  - flat-manager/flat-manager-client purge $(cat build.txt)
   when: on_failure
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+  - master
+  - /^gnome-\d-\d\d$/
   except:
     variables:
-      - $EMERGENCY
-      - $BST_TRACK_TAGS != "False"
+    - $EMERGENCY
+    - $BST_TRACK_TAGS != "False"
   <<: *x86_64
 
 
@@ -285,27 +286,27 @@ cve_report:
   stage: reports
   dependencies: [track]
   script:
-    - pip3 install --user lxml
+  - pip3 install --user lxml
 
-    - ${BST} pull platform-manifest.bst sdk-manifest.bst
+  - ${BST} pull platform-manifest.bst sdk-manifest.bst
 
-    - ${BST} checkout platform-manifest.bst platform-manifest/
-    - ${BST} checkout sdk-manifest.bst sdk-manifest/
+  - ${BST} checkout platform-manifest.bst platform-manifest/
+  - ${BST} checkout sdk-manifest.bst sdk-manifest/
 
-    - mkdir -p cve
-    - cd cve
-    - ../utils/update-local-cve-database.py
+  - mkdir -p cve
+  - cd cve
+  - ../utils/update-local-cve-database.py
 
-    - mkdir -p ../cve-reports
-    - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-    - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+  - mkdir -p ../cve-reports
+  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
+  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
   cache:
     key: cve
     paths:
-      - cve
+    - cve
   artifacts:
     paths:
-      - cve-reports
+    - cve-reports
   only:
-    - master
-    - /^gnome-\d-\d\d$/
+  - master
+  - /^gnome-\d-\d\d$/
