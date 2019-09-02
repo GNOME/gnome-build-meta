@@ -85,6 +85,8 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/wayland-protocols.bst
   junction: freedesktop-sdk.bst
+- filename: components/xdg-portal-interfaces.bst
+  junction: freedesktop-sdk.bst
 - filename: components/xorg-proto-xcb.bst
   junction: freedesktop-sdk.bst
 - filename: components/xorg-proto-xorgproto.bst

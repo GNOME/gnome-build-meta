@@ -2,6 +2,9 @@ kind: flatpak_image
 depends:
 - filename: flatpak/platform-image.bst
   type: build
+- filename: integration/platform-integration.bst
+  junction: freedesktop-sdk.bst
+  type: build
 
 variables:
   # Obtain the versions of the flatpak extensions

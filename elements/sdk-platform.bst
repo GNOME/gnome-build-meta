@@ -187,8 +187,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/nsswitch-config.bst
   junction: freedesktop-sdk.bst
-- filename: components/openssh.bst
-  junction: freedesktop-sdk.bst
 - filename: components/opus.bst
   junction: freedesktop-sdk.bst
 - filename: components/osmesa.bst
@@ -324,6 +322,8 @@ depends:
 - filename: components/openal.bst
   junction: freedesktop-sdk.bst
 - filename: components/opencl.bst
+  junction: freedesktop-sdk.bst
+- filename: components/openssh.bst
   junction: freedesktop-sdk.bst
 - filename: components/orc.bst
   junction: freedesktop-sdk.bst

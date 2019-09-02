@@ -2,6 +2,9 @@ kind: flatpak_image
 depends:
 - filename: flatpak/sdk-image.bst
   type: build
+- filename: integration/sdk-integration.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: integration/linker-debuginfo.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -52,7 +55,7 @@ config:
       no-autodownload: "true"
       autodelete: "false"
       add-ld-path: "lib"
-      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri"
+      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d"
       download-if: "active-gl-driver"
       enable-if: "active-gl-driver"
 
@@ -81,7 +84,7 @@ config:
 
     Extension org.freedesktop.Platform.ffmpeg-html5:
       directory: '%{lib}/ffmpeg'
-      add-ld-path: lib
+      add-ld-path: "."
       version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Sdk.Extension:
@@ -97,3 +100,39 @@ config:
       no-autodownload: 'true'
       download-if: have-intel-gpu
       version: '%{freedesktop-sdk-flatpak-branch}'
+
+    (?):
+    - arch in ["x86_64", "aarch64"]:
+        Extension org.gnome.Sdk.Compat.arm:
+          directory: 'lib/arm-linux-gnueabihf'
+          autodelete: 'true'
+          no-autodownload: 'true'
+          add-ld-path: '.'
+
+        Extension org.gnome.Sdk.Compat.arm.Debug:
+          directory: 'lib/arm-linux-gnueabihf'
+          autodelete: 'true'
+          no-autodownload: 'true'
+
+    - arch == "x86_64":
+        Extension org.gnome.Sdk.Compat.i386:
+          directory: 'lib/i386-linux-gnu'
+          autodelete: 'true'
+          no-autodownload: 'true'
+          add-ld-path: '.'
+
+        Extension org.gnome.Sdk.Compat.i386.Debug:
+          directory: 'lib/debug/usr/lib/i386-linux-gnu'
+          autodelete: 'true'
+          no-autodownload: 'true'
+
+        Extension org.gnome.Sdk.Compat.aarch64:
+          directory: 'lib/aarch64-linux-gnu'
+          autodelete: 'true'
+          no-autodownload: 'true'
+          add-ld-path: '.'
+
+        Extension org.gnome.Sdk.Compat.aarch64.Debug:
+          directory: "lib/debug/usr/lib/aarch64-linux-gnu"
+          autodelete: 'true'
+          no-autodownload: 'true'
