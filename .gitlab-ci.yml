@@ -6,8 +6,8 @@ variables:
   BST_STRICT: '--no-strict'
   BST_TRACK_TAGS: 'False'
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '1.3.1-0-gb7a6624fbfbd82d2daa42f5a5570cbb4fbc729d2'
-  BST_EXTERNAL_SHA: '0.14.0-0-g003f1f1e7ead60627ef4242a6d785704ede44358'
+  BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
+  BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
   FLATPAK_BRANCH: master
 
   # Docker Images
