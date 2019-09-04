@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/rygel.git
-  track: master
+- kind: tar
+  url: gnome_downloads:rygel/0.38/rygel-0.38.1.tar.xz
 depends:
 - core-deps/gssdp.bst
 - core-deps/gupnp-av.bst

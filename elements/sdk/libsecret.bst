@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsecret.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsecret/0.18/libsecret-0.18.8.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -22,5 +21,4 @@ depends:
   junction: freedesktop-sdk.bst
 
 variables:
-  meson-local: >-
-    -Dgtk_doc=false
+  meson-local: -Dgtk_doc=false

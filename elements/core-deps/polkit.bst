@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:polkit/polkit.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data
@@ -26,8 +25,7 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-libsystemd-login=yes
+  conf-local: --enable-libsystemd-login=yes
 config:
   install-commands:
     (>):

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-shell-extensions.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-shell-extensions/3.33/gnome-shell-extensions-3.33.91.tar.xz
 depends:
 - core/gnome-menus.bst
 - core/gnome-shell.bst
@@ -13,5 +12,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dextension_set=classic
+  meson-local: -Dextension_set=classic

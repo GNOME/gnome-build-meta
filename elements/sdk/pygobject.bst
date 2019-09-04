@@ -1,8 +1,7 @@
 kind: distutils
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pygobject.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pygobject/3.33/pygobject-3.33.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: gtk-3-24
+- kind: tar
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.11.tar.xz
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -42,10 +41,7 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-broadway-backend
-    --enable-installed-tests
-    --enable-x11-backend
+  conf-local: --enable-broadway-backend --enable-installed-tests --enable-x11-backend
     --enable-wayland-backend
 public:
   bst:
