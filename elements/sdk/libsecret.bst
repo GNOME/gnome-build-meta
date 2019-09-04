@@ -21,5 +21,4 @@ depends:
   junction: freedesktop-sdk.bst
 
 variables:
-  meson-local: >-
-    -Dgtk_doc=false
+  meson-local: -Dgtk_doc=false

@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
-  track: master
-  submodules:
-    subprojects/libhandy:
-      url: purism:Librem5/libhandy.git
-      checkout: True
+- kind: tar
+  url: gnome_downloads:gnome-bluetooth/3.33/gnome-bluetooth-3.33.90.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst

@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:mobile-broadband/libqmi.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/libqmi/libqmi-1.22.4.tar.xz
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst
@@ -14,5 +13,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-more-warnings=no
+  conf-local: --enable-more-warnings=no

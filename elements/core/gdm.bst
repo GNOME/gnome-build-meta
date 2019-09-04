@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdm/3.33/gdm-3.33.92.tar.xz
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -17,5 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --with-plymouth=no
+  conf-local: --with-plymouth=no
