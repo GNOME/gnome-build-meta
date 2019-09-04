@@ -1,8 +1,7 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsecret.git
-  track: master
+  url: gnome_downloads:libsecret/0.18/libsecret-0.18.8.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
