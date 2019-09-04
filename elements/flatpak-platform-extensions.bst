@@ -14,7 +14,7 @@ depends:
   type: build
 variables:
   # Obtain the versions of the flatpak extensions
-  (@): freedesktop-sdk.bst:include/versions.yml
+  (@): freedesktop-sdk.bst:include/_private/versions.yml
 
 config:
   environment:
