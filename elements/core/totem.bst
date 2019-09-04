@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/totem.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd.git
-    flatpak/shared-modules:
-      checkout: False
-      url: github_com:flathub/shared-modules.git
+- kind: tar
+  url: gnome_downloads:totem/3.33/totem-3.33.90.tar.xz
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
@@ -38,5 +30,4 @@ depends:
 - filename: components/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Denable-vala=no
+  meson-local: -Denable-vala=no

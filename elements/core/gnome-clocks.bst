@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-clocks.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-clocks/3.33/gnome-clocks-3.33.1.tar.xz
 depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tracker/2.2/tracker-2.2.99.0.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/upower.bst
@@ -19,9 +18,5 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Ddocs=false
-    -Dunicode_support=icu
-    -Dfunctional_tests=false
-    -Dstemmer=disabled
+  meson-local: -Ddocs=false -Dunicode_support=icu -Dfunctional_tests=false -Dstemmer=disabled
     -Dbash_completion=%{datadir}/bash-completion/completions

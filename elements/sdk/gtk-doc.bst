@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk-doc.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtk-doc/1.32/gtk-doc-1.32.tar.xz
 depends:
 - filename: sdk/python-pygments.bst
   type: runtime
