@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: tar
   url: gnome_downloads:libsecret/0.18/libsecret-0.18.8.tar.xz
 depends:
 - sdk/glib.bst
