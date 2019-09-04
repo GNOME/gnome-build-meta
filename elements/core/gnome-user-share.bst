@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-user-share.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-user-share/3.33/gnome-user-share-3.33.1.tar.xz
 depends:
 - core/gnome-bluetooth.bst
 - core/nautilus.bst

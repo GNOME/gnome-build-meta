@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/baobab.git
-  track: master
+- kind: tar
+  url: gnome_downloads:baobab/3.32/baobab-3.32.0.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
