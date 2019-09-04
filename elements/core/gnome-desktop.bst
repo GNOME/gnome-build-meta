@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-desktop.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-desktop/3.33/gnome-desktop-3.33.92.1.tar.xz
 depends:
 - core-deps/libgudev.bst
 - sdk/gdk-pixbuf.bst
@@ -23,5 +22,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dgnome-distributor=gnome-build-meta
+  meson-local: -Dgnome-distributor=gnome-build-meta

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libgdata/0.17/libgdata-0.17.10.tar.xz
+  url: gnome_downloads:libgdata/0.17/libgdata-0.17.11.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/liboauth.bst

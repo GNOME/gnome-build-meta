@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: tar
   url: gnome_downloads:libsecret/0.18/libsecret-0.18.8.tar.xz
 depends:
 - sdk/glib.bst
@@ -14,12 +14,11 @@ depends:
   type: build
 - filename: components/libgcrypt.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
+- filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 
 variables:
-  meson-local: >-
-    -Dgtk_doc=false
+  meson-local: -Dgtk_doc=false
