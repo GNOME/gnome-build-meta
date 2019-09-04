@@ -15,7 +15,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --without-graphviz
-    --without-libavformat
-    --without-jasper
+  conf-local: --without-graphviz --without-libavformat --without-jasper
