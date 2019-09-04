@@ -1,14 +1,11 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_com:libosinfo/libosinfo.git
-  track: master
+- kind: tar
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
   path: files/libosinfo/usb.ids
-- kind: patch
-  path: files/libosinfo/0001-build-Use-a-minimum-gettext-requirement-rather-than-.patch
 depends:
 - core-deps/osinfo-db-tools.bst
 - sdk/glib.bst
