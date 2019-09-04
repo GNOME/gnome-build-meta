@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gjs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gjs/1.57/gjs-1.57.92.tar.xz
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
@@ -17,5 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-installed-tests
+  conf-local: --enable-installed-tests
