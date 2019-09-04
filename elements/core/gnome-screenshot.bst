@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-screenshot.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-screenshot/3.33/gnome-screenshot-3.33.90.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst

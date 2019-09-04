@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-terminal.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-terminal/3.33/gnome-terminal-3.33.90.tar.xz
 depends:
 - filename: core-deps/intltool.bst
   type: build
@@ -25,5 +24,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-migration
+  conf-local: --disable-migration

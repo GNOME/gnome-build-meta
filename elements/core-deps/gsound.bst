@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gsound.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gsound/1.0/gsound-1.0.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -17,5 +16,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-gtk-doc
+  conf-local: --disable-gtk-doc

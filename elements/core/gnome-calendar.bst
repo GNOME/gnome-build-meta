@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-calendar.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-calendar/3.33/gnome-calendar-3.33.4.tar.xz
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
