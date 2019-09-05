@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsoup.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsoup/2.67/libsoup-2.67.93.tar.xz
 depends:
 - sdk/brotli.bst
 - sdk/glib.bst
@@ -28,7 +27,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dtls_check=false
-    -Dgtk_doc=true
-    -Dntlm=disabled
+  meson-local: -Dtls_check=false -Dgtk_doc=true -Dntlm=disabled

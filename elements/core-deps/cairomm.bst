@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:cairo/cairomm.git
-  track: master
+- kind: tar
+  url: cairo_org:releases/cairomm-1.15.5.tar.gz
 depends:
 - core-deps/libsigcplusplus.bst
 - filename: components/cairo.bst
@@ -13,5 +12,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-documentation
+  conf-local: --disable-documentation
