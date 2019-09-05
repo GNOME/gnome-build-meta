@@ -1,9 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/librsvg.git
-  track: master
-- kind: cargo
+- kind: tar
+  url: gnome_downloads:librsvg/2.45/librsvg-2.45.92.tar.xz
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -25,8 +23,6 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-gtk-doc
-    --enable-vala
+  conf-local: --disable-gtk-doc --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin

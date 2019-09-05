@@ -1,15 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-boxes.git
-  track: master
-  submodules:
-    subprojects/gtk-frdp:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/gtk-frdp.git
-    subprojects/libovf-glib:
-      checkout: True
-      url: gitlab_gnome_org:felipeborges/libovf-glib.git
+- kind: tar
+  url: gnome_downloads:gnome-boxes/3.33/gnome-boxes-3.33.90.tar.xz
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst
@@ -35,5 +27,4 @@ depends:
 - filename: components/itstools.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Drdp=false
+  meson-local: -Drdp=false

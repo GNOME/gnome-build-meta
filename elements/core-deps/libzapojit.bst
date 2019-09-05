@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libzapojit.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libzapojit/0.0/libzapojit-0.0.3.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - filename: core-deps/intltool.bst
