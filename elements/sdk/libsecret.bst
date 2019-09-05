@@ -1,7 +1,8 @@
-kind: autotools
+kind: meson
 sources:
-- kind: tar
-  url: gnome_downloads:libsecret/0.18/libsecret-0.18.8.tar.xz
+- kind: git_tag
+  url: gitlab_gnome_org:GNOME/libsecret.git
+  track: master
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -14,7 +15,7 @@ depends:
   type: build
 - filename: components/libgcrypt.bst
   junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
