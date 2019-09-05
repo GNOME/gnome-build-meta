@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/sushi.git
-  track: master
+- kind: tar
+  url: gnome_downloads:sushi/3.33/sushi-3.33.90.tar.xz
 depends:
 - core-deps/gtksourceview.bst
 - core-deps/libmusicbrainz.bst

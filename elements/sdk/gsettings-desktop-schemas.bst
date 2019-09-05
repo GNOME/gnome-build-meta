@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gsettings-desktop-schemas.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gsettings-desktop-schemas/3.33/gsettings-desktop-schemas-3.33.90.tar.xz
 - kind: patch
   path: files/gsettings-desktop-schemas/0001-Revert-schemas-change-default-monospaced-and-documen.patch
 depends:

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtksourceview.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtksourceview/4.3/gtksourceview-4.3.92.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst
@@ -15,6 +14,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dinstall_tests=true
-    -Dgtk_doc=true
+  meson-local: -Dinstall_tests=true -Dgtk_doc=true

@@ -22,5 +22,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-introspection
+  conf-local: --enable-introspection
