@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gedit.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd.git
+- kind: tar
+  url: gnome_downloads:gedit/3.33/gedit-3.33.92.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst

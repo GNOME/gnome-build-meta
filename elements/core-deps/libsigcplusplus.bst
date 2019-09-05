@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:libsigcplusplus/libsigcplusplus.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsigc++/3.0/libsigc++-3.0.0.tar.xz
 depends:
 - core-deps/mm-common.bst
 - filename: public-stacks/buildsystem-autotools.bst
@@ -11,5 +10,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --disable-documentation
+  conf-local: --disable-documentation

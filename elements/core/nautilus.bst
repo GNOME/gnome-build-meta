@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/nautilus.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gitlab_gnome_org:GNOME/libgd.git
+- kind: tar
+  url: gnome_downloads:nautilus/3.33/nautilus-3.33.90.tar.xz
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
@@ -24,5 +19,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dselinux=false
+  meson-local: -Dselinux=false

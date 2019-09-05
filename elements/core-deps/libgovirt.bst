@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgovirt.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgovirt/0.3/libgovirt-0.3.6.tar.xz
 depends:
 - core-deps/librest.bst
 - sdk/gobject-introspection.bst
