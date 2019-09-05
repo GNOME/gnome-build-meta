@@ -3,6 +3,3 @@ plugins/__pycache__
 
 # Ignore BuildStream local state
 .bst
-
-# Never commit project.refs
-project.refs
