@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/vino.git
-  track: master
+- kind: tar
+  url: gnome_downloads:vino/3.22/vino-3.22.0.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - filename: core-deps/intltool.bst
