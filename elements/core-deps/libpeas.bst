@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libpeas.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libpeas/1.23/libpeas-1.23.92.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -21,9 +20,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    -Dpython3=true
-    -Dintrospection=true
-    -Dvapi=true
-    -Dwidgetry=true
-    -Dgtk_doc=true
+  conf-local: -Dpython3=true -Dintrospection=true -Dvapi=true -Dwidgetry=true -Dgtk_doc=true

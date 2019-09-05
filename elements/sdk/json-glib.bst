@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/json-glib.git
-  track: master
+- kind: tar
+  url: gnome_downloads:json-glib/1.4/json-glib-1.4.4.tar.xz
 depends:
 - sdk/glib.bst
 - filename: sdk/gobject-introspection.bst

@@ -23,5 +23,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  conf-local: --enable-werror=no

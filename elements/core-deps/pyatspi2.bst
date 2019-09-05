@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pyatspi2.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pyatspi/2.33/pyatspi-2.33.92.tar.xz
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst
@@ -15,5 +14,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --with-python=python3
+  conf-local: --with-python=python3
