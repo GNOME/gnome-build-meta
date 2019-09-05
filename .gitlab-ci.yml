@@ -3,13 +3,13 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'False'
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
   BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
   DOCKER_IMAGE_ID: '1a534a96f9144ca8ee87cee1fef97faa7c396533'
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: 3.34beta
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
