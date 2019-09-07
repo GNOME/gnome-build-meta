@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/ppp/ppp-2.4.7.tar.gz
+  url: gnome_download:teams/releng/tarballs-needing-help/ppp/ppp-2.4.7.tar.gz
 - kind: patch
   path: files/ppp/use-openssl.patch
 depends:
