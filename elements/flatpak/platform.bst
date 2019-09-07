@@ -76,9 +76,3 @@ config:
       no-autodownload: 'true'
       download-if: have-intel-gpu
       version: '%{freedesktop-sdk-flatpak-branch}'
-
-    Extension org.freedesktop.Platform.ffmpeg-html5:
-      directory: '%{lib}/ffmpeg'
-      add-ld-path: lib
-      autodelete: 'false'
-      version: '%{freedesktop-sdk-flatpak-branch}'
