@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.8.0.tar.gz
+  url: gnome_download:teams/releng/tarballs-needing-help/samba/samba-4.8.0.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 depends:
