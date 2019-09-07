@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.8.0.tar.gz
+  url: gnome_download:teams/releng/tarballs-needing-help/samba/samba-4.10.2.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 depends:
@@ -25,7 +25,7 @@ config:
       --sbindir=%{sbindir} --sysconfdir=%{sysconfdir} --datadir=%{datadir}
       --includedir=%{includedir} --libdir=%{libdir} --libexecdir=%{libexecdir}
       --localstatedir=%{localstatedir} --sharedstatedir=%{sharedstatedir}
-      --mandir=%{mandir} --infodir=%{infodir}
+      --mandir=%{mandir} --infodir=%{infodir} --without-ad-dc --without-json
   build-commands:
   - make
   install-commands:
