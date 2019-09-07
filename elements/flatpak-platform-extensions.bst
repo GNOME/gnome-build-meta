@@ -3,9 +3,6 @@ depends:
 - filename: flatpak-images/platform-vaapi.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: flatpak-images/platform-ffmpeg-html5.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: flatpak-images/mesa.bst
   junction: freedesktop-sdk.bst
   type: build
