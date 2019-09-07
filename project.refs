@@ -199,7 +199,7 @@ projects:
     - ref: 858b589c22297cacdf437f3baff6f04b333087521ab274f7ab677cb8c6bb78e4
     - {}
     core-deps/samba.bst:
-    - ref: 87d9b585dbd8628e79aabb6e621a94bd20a072a00762e78e0899fad22fc18fb7
+    - ref: 878cfdc51b74fafb604399c381c690b325061eb63fc17a188a505e96fa8f5e84
     - {}
     core-deps/libatasmart.bst:
     - ref: 61f0ea345f63d28ab2ff0dc352c22271661b66bf09642db3a4049ac9dbdb0f8d
