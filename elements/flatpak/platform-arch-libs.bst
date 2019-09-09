@@ -2,6 +2,9 @@ kind: flatpak_image
 depends:
 - filename: flatpak/platform-image.bst
   type: build
+- filename: integration/compat-gl-dir.bst
+  junction: freedesktop-sdk.bst
+  type: build
 
 config:
   directory: '%{libdir}'
