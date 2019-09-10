@@ -57,6 +57,7 @@ variables:
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     -DUSE_WPE_RENDERER=OFF
+    -DENABLE_MEDIA_SOURCE=OFF
     %{webkitgtk_toolchain}
 (?):
 - arch == "i686":
