@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gsettings-desktop-schemas/3.33/gsettings-desktop-schemas-3.33.90.tar.xz
+  url: gnome_downloads:gsettings-desktop-schemas/3.34/gsettings-desktop-schemas-3.34.0.tar.xz
 - kind: patch
   path: files/gsettings-desktop-schemas/0001-Revert-schemas-change-default-monospaced-and-documen.patch
 depends:

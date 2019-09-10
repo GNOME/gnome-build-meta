@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:glib-networking/2.61/glib-networking-2.61.92.tar.xz
+  url: gnome_downloads:glib-networking/2.62/glib-networking-2.62.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

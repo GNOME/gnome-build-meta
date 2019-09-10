@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gspell/1.8/gspell-1.8.1.tar.xz
+  url: gnome_downloads:gspell/1.8/gspell-1.8.2.tar.xz
 depends:
 - sdk/enchant-2.bst
 - sdk/gtk+-3.bst

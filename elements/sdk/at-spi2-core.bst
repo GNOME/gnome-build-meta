@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:at-spi2-core/2.33/at-spi2-core-2.33.92.tar.xz
+  url: gnome_downloads:at-spi2-core/2.34/at-spi2-core-2.34.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:cheese/3.33/cheese-3.33.90.1.tar.xz
+  url: gnome_downloads:cheese/3.34/cheese-3.34.0.tar.xz
 depends:
 - core-deps/gnome-video-effects.bst
 - core-deps/libgudev.bst

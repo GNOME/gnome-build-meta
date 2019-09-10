@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-logs/3.33/gnome-logs-3.33.2.tar.xz
+  url: gnome_downloads:gnome-logs/3.34/gnome-logs-3.34.0.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
