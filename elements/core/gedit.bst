@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/3.33/gedit-3.33.92.tar.xz
+  url: gnome_downloads:gedit/3.34/gedit-3.34.0.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst

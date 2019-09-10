@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:orca/3.33/orca-3.33.91.tar.xz
+  url: gnome_downloads:orca/3.34/orca-3.34.0.tar.xz
 depends:
 - core-deps/pyatspi2.bst
 - core-deps/speech-dispatcher.bst

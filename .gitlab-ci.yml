@@ -9,7 +9,7 @@ variables:
   BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
   BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
   DOCKER_IMAGE_ID: '1a534a96f9144ca8ee87cee1fef97faa7c396533'
-  FLATPAK_BRANCH: 3.34beta
+  FLATPAK_BRANCH: '3.34'
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"

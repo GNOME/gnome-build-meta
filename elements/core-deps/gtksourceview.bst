@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtksourceview/4.3/gtksourceview-4.3.92.tar.xz
+  url: gnome_downloads:gtksourceview/4.4/gtksourceview-4.4.0.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: sdk/gtk-doc.bst

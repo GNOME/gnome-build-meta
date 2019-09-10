@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:vte/0.57/vte-0.57.90.tar.xz
+  url: gnome_downloads:vte/0.58/vte-0.58.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst

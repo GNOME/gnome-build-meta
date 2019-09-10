@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:atk/2.33/atk-2.33.3.tar.xz
+  url: gnome_downloads:atk/2.34/atk-2.34.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

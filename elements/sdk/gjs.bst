@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gjs/1.57/gjs-1.57.92.tar.xz
+  url: gnome_downloads:gjs/1.58/gjs-1.58.0.tar.xz
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
