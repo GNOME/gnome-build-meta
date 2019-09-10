@@ -56,6 +56,7 @@ variables:
   cmake-local:
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+    -DENABLE_WPE_RENDERER=OFF
     %{webkitgtk_toolchain}
 (?):
 - arch == "i686":
