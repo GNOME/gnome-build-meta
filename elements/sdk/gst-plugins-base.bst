@@ -29,6 +29,18 @@ depends:
 - filename: components/opus.bst
   junction: freedesktop-sdk.bst
   type: runtime
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/alsa-lib.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/sdl2.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: components/mesa-headers.bst
   junction: freedesktop-sdk.bst
+  type: runtime
+- filename: sdk/gtk+-3.bst
+  type: runtime
+- filename: sdk/gdk-pixbuf.bst
   type: runtime
