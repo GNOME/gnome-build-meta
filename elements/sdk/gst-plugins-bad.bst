@@ -6,6 +6,9 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
   type: runtime
+- filename: components/aom.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: components/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
@@ -34,6 +37,9 @@ depends:
   type: runtime
 - filename: sdk/librsvg.bst
   type: runtime
+- filename: components/noopenh264.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: components/openal.bst
   junction: freedesktop-sdk.bst
   type: runtime
@@ -41,6 +47,9 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/wayland.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/webrtc-audio-processing.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/curl.bst

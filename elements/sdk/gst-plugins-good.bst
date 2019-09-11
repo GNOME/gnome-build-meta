@@ -9,6 +9,9 @@ depends:
 - filename: components/cairo.bst
   junction: freedesktop-sdk.bst
   type: runtime
+- filename: components/jpeg.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
 - filename: components/orc.bst
   junction: freedesktop-sdk.bst
   type: runtime
@@ -19,6 +22,12 @@ depends:
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: sdk/libsoup.bst
+  type: runtime
+- filename: components/libpng.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/libvpx.bst
+  junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/mpg123.bst
   junction: freedesktop-sdk.bst
@@ -33,6 +42,9 @@ depends:
 - filename: sdk/gst-plugins-base.bst
   type: runtime
 - filename: components/libflac.bst
+  junction: freedesktop-sdk.bst
+  type: runtime
+- filename: components/speex.bst
   junction: freedesktop-sdk.bst
   type: runtime
 - filename: components/wavpack.bst
