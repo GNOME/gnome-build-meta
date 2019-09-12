@@ -4,7 +4,7 @@ projects:
     - ref: 88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1
     - {}
     sdk/yelp-tools.bst:
-    - ref: 99a7c312a5fcb427870dc198af02801eb0f8ea63317e20110fc0303eb44636e3
+    - ref: 183856b5ed0b0bb2c05dd1204af023946ed436943e35e789afb0295e5e71e8f9
     core-deps/iptables.bst:
     - ref: 55d02dfa46263343a401f297d44190f2a3e5113c8933946f094ed40237053733
     sdk/pycairo.bst:
@@ -14,13 +14,13 @@ projects:
     sdk/yelp-xsl.bst:
     - ref: cac31bc150545d6aa0de15dce04560cbf591008d17a783a1d1d9cdd47b147f04
     sdk/glib.bst:
-    - ref: 2b941ec5dcb92e5ea83fe42f9eb55a827bc8a12c153ad2489d551c31d04733dd
+    - ref: 8b12c0af569afd3b71200556ad751bad4cf4bf7bc4b5f880638459a42ca86310
     sdk/gtk-doc.bst:
     - ref: 14578e002496567276d310a62c9ffd6c56ee8806ce5079ffb0b81c4111f586b1
     sdk/gnome-common.bst:
     - ref: 22569e370ae755e04527b76328befc4c73b62bfd4a572499fde116b8318af8cf
     sdk/gobject-introspection.bst:
-    - ref: d844d1499ecd36f3ec8a3573616186d36626ec0c9a7981939e99aa02e9c824b3
+    - ref: ffdfe2368fb2e34a547898b01aac0520d52d8627fdeb1c306559bcb503ab5e9c
     core-deps/libgudev.bst:
     - ref: ee4cb2b9c573cdf354f6ed744f01b111d4b5bed3503ffa956cefff50489c7860
     core-deps/libndp.bst:
@@ -30,7 +30,7 @@ projects:
     sdk/atk.bst:
     - ref: cb41feda7fe4ef0daa024471438ea0219592baf7c291347e5a858bb64e4091cc
     sdk/pygobject.bst:
-    - ref: 32c99def94b8dea5ce9e4bc99576ef87591ea779b4db77cfdca7af81b76d04d8
+    - ref: c39ca2a28364b57fa00549c6e836346031e6b886c3ceabfd8ab4b4fed0a83611
     core-deps/NetworkManager.bst:
     - ref: 0d477d4dd08ebe7fe089e0a1141b61a09c38c98498cf3a112cba2be97d166f1f
     core-deps/accountsservice.bst:
@@ -49,7 +49,7 @@ projects:
     core-deps/libusb.bst:
     - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
     sdk/vala.bst:
-    - ref: 8553b422484af88be1685d8b47f7b0df36ae4477c3e77e89ab22276ffed1eae9
+    - ref: bf1ff4f59d5de2d626e98e98ef81cb75dc1e6a27610a7de4133597c430f1bd7c
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
@@ -60,7 +60,7 @@ projects:
     core-deps/libgusb.bst:
     - ref: d8e7950f99b6ae4c3e9b8c65f3692b9635289e6cff8de40c4af41b2e9b348edc
     sdk/gdk-pixbuf.bst:
-    - ref: f19ff836ba991031610dcc53774e8ca436160f7d981867c8c3a37acfe493ab3a
+    - ref: 73fa651ec0d89d73dd3070b129ce2203a66171dfc0bd2caa3570a9c93d2d0781
     sdk/libcanberra.bst:
     - ref: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
     core/gnome-bluetooth.bst:
@@ -85,7 +85,7 @@ projects:
     core-deps/geocode-glib.bst:
     - ref: 5baa6ab76a76c9fc567e4c32c3af2cd1d1784934c255bc5a62c512e6af6bde1c
     sdk/libsoup.bst:
-    - ref: 4a2cb6c1174540af13661636035992c2b179dfcb39f4d3fa7bee3c7e355c43ff
+    - ref: 56d2cffb845daf51317411a6c56fead9a586447667aa949c6db6a4fbcf996236
     core-deps/exiv2.bst:
     - ref: 51cffa8d19d67e1da6c1d0f570a75b8f6c814113367318c2c0407691888c5f01
     sdk/vte.bst:
@@ -221,7 +221,7 @@ projects:
     core-deps/mobile-broadband-provider-info.bst:
     - ref: 2cba10f82b8e6aec46b871c1f7d20086ecc17e1168f18e588a6a37770fa3c59b
     sdk/gtk+-3.bst:
-    - ref: 666962de9b9768fe9ca785b0e2f42c8b9db3868a12fa9b356b167238d70ac799
+    - ref: dba7658d0a2e1bfad8260f5210ca02988f233d1d86edacb95eceed7eca982895
     core/cheese.bst:
     - ref: 7b9ad1da8bb475a9e71ae69a5832786a75e860f0af927637540574fd49d595f6
     sdk/gcr.bst:
@@ -340,7 +340,7 @@ projects:
     - ref: 6749259e89bbb273f3f5ad7acdffb7c47a2cf8fcaeab4c4695484cef5f4c6b46
     - {}
     sdk/libgee.bst:
-    - ref: bb2802d29a518e8c6d2992884691f06ccfcc25792a5686178575c7111fea4630
+    - ref: 9e035c4b755f46bfae70ba81cdcf8328b03f554373cec8c816e8b5680f85353c
     core/rygel.bst:
     - ref: acabf2114f3759c8ec6745d79e4c2e0728d115a83f540c1715667cc6210a7e0e
     core-deps/gtksourceview-3.bst:
@@ -372,7 +372,7 @@ projects:
     core-deps/libdazzle.bst:
     - ref: 413f8dfb8706760e0c649e2994bd10524ac0736601dd03ad2036293bed3bf141
     sdk/gvfs.bst:
-    - ref: 927af496efee4767f1ba12694190f9c93bc512a44854e88dbb6f5792abfad6b1
+    - ref: bdefe8fec6a1097f0c126fa2a4533667c98a86e237ac640518000e16b363971e
     core/file-roller.bst:
     - ref: 1cab0847845b3236725a99f81a638c504d06ac0576c7a947824208e498383547
     core-deps/gtksourceview.bst:
