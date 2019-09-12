@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgee/0.20/libgee-0.20.1.tar.xz
+  url: gnome_downloads:libgee/0.20/libgee-0.20.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
