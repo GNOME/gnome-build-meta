@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:sushi/3.32/sushi-3.32.0.tar.xz
+  url: gnome_downloads:sushi/3.32/sushi-3.32.1.tar.xz
 depends:
 - core-deps/gtksourceview-3.bst
 - core-deps/libmusicbrainz.bst
