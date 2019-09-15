@@ -9,6 +9,8 @@ depends:
   type: build
 - filename: sdk/vala.bst
   type: build
+- filename: components/fribidi.bst
+  junction: freedesktop-sdk.bst
 - filename: components/gnutls.bst
   junction: freedesktop-sdk.bst
 - filename: components/pcre2.bst
