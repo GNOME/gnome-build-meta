@@ -1,7 +1,7 @@
-kind: autotools
+kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:evince/3.32/evince-3.32.0.tar.xz
+  url: gnome_downloads:evince/3.34/evince-3.34.0.tar.xz
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst
@@ -16,11 +16,14 @@ depends:
   type: build
 - sdk/libsecret.bst
 - sdk/yelp-tools.bst
-- filename: public-stacks/buildsystem-autotools.bst
+- filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  conf-local: >-
-    --enable-introspection
+  meson-local: >-
+    -Dintrospection=true
+    -Dgtk_doc=true
+    -Ddbus=true
+    -Dgspell=true
