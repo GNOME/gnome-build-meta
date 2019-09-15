@@ -26,7 +26,6 @@ depends:
 - core/orca.bst
 - core/rygel.bst
 - core/sushi.bst
-- core/vino.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib-networking.bst
 - sdk/gsettings-desktop-schemas.bst
