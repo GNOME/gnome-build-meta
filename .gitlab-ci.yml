@@ -110,6 +110,8 @@ default:
         # corrupt the local artifact cache.
         #
         ${BST} checkout --hardlinks vm/desktop-vm-image-x86_64.bst image
+        qemu-img convert -f raw -O qcow image/sda.img image/sda.qcow2
+        rm image/sda.img
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
