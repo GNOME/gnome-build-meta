@@ -5,6 +5,7 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_STRICT: '--no-strict'
   BST_TRACK_TAGS: 'False'
+  BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
   BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
@@ -94,6 +95,23 @@ default:
   script:
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
     flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+  - |
+    # Only run this build for x86_64, instead of building it somewhere else
+    if [ "${ARCH}" == "x86_64" ]; then
+        #
+        # Don't try to push the resulting artifacts, the huge image doesnt
+        # work well with the artifact cache right now.
+        #
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/desktop-vm-image-x86_64.bst
+
+        # Checkout the image for the gitlab artifact.
+        #
+        # Accept using hardlinks here as the upload will not
+        # corrupt the local artifact cache.
+        #
+        ${BST} checkout --hardlinks vm/desktop-vm-image-x86_64.bst image
+    fi
+
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
   cache: &bst-cache
@@ -101,11 +119,13 @@ default:
     paths:
     - "${XDG_CACHE_HOME}/buildstream/sources/"
   # Store artifacts so we can inspect build failures
-  artifacts:
+  artifacts: &logging-artifacts
     when: always
     paths:
     - logs
     - project.refs
+    - image
+    expire_in: 1 week
 
 .flatpak-template:
   stage: flatpak
@@ -189,11 +209,7 @@ track:
     variables:
     - $FLATPAK_BRANCH == 'master'
   cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - project.refs
+  artifacts: *logging-artifacts
 
 
 build-gnome-core-x86_64:
