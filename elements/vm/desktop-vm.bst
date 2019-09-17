@@ -33,7 +33,7 @@ depends:
   type: build
 
 # And add GNOME core on top !
-- filename: sdk.bst
+- filename: sdk-platform.bst
   type: build
 - filename: core.bst
   type: build
