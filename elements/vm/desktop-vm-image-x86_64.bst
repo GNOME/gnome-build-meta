@@ -18,7 +18,7 @@ variables:
   # This is the smallest boot partition I managed to make.
   boot-size: 38912K
 
-  rootfs-size: 5G
+  rootfs-size: 4G
   sector-size: 512
   swap-size: 40K
 
