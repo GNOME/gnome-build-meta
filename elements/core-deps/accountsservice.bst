@@ -7,6 +7,8 @@ depends:
 - core-deps/polkit.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- filename: sdk/vala.bst
+  type: build
 - filename: components/dbus.bst
   junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-meson.bst
