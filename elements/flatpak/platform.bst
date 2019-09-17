@@ -83,3 +83,4 @@ config:
       directory: '%{lib}/openh264'
       add-ld-path: extra
       autodelete: 'false'
+      version: '%{freedesktop-sdk-flatpak-branch}'
