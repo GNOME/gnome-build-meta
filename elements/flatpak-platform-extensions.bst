@@ -6,6 +6,9 @@ depends:
 - filename: flatpak-images/mesa.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: flatpak-images/platform-openh264-conditional.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: deploy-tools/flatpak.bst
   junction: freedesktop-sdk.bst
   type: build
