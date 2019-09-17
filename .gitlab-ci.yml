@@ -125,6 +125,7 @@ default:
     - logs
     - project.refs
     - image
+    expire_in: 1 week
 
 .flatpak-template:
   stage: flatpak
