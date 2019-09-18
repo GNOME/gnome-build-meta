@@ -45,6 +45,12 @@ variables:
   conf-local: |
     --disable-rpath --with-system-et --with-system-ss
 
+config:
+  install-commands:
+    (>):
+    - mkdir -p %{install-root}%{sysconfdir}
+    - install -m 644 krb5-config/krb5.conf %{install-root}%{sysconfdir}/krb5.conf
+
 sources:
 - kind: tar
   url: https://kerberos.org/dist/krb5/1.16/krb5-1.16.2.tar.gz
