@@ -43,7 +43,7 @@ variables:
   conf-global: |
     --disable-static --host=%{triplet} --build=%{triplet}
   conf-local: |
-    --disable-rpath --with-system-et --with-system-ss
+    --disable-rpath --with-system-et --with-system-ss DEFCCNAME=KCM:
 
 sources:
 - kind: tar
