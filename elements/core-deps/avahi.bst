@@ -20,3 +20,8 @@ variables:
     --disable-gtk
     --disable-python
     --disable-mono
+config:
+  install-commands:
+    (>):
+    - echo "NoShowIn=GNOME" >> "%{install-root}%{datadir}/applications/bvnc.desktop"
+    - echo "NoShowIn=GNOME" >> "%{install-root}%{datadir}/applications/bssh.desktop"
