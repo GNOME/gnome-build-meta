@@ -11,7 +11,6 @@ sources:
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
-- core-deps/PackageKit.bst
 - core-deps/colord.bst
 - core-deps/geocode-glib.bst
 - core-deps/libgudev.bst

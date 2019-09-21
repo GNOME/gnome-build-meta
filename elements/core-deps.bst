@@ -6,7 +6,6 @@ kind: stack
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
-- core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst

@@ -4,7 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/simple-scan.git
   track: master
 depends:
-- core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst
 - core-deps/libgusb.bst
 - core-deps/sane-backends.bst

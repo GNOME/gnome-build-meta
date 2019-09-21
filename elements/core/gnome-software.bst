@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-software.git
   track: master
 depends:
-- core-deps/PackageKit.bst
 - core-deps/gspell.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libgudev.bst
 - core-deps/liboauth.bst
+- core-deps/polkit.bst
 - core-deps/xmlb.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -30,3 +30,4 @@ variables:
     -Dfwupd=false
     -Dflatpak=false
     -Dvalgrind=false
+    -Dpackagekit=false
