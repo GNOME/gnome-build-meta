@@ -25,7 +25,19 @@ variables:
     --disable-memconf
     --disable-ui
     --disable-gtk2
-    --disable-schema-compile
+    --disable-schemas-compile
     --with-python=python3
+    --disable-setup
     --disable-emoji-dict
+    --disable-appindicator
+    --disable-glibtest
     --disable-unicode-dict
+    --disable-python2
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libibus-1.0.so'
+        - '%{bindir}/ibus'
