@@ -25,7 +25,30 @@ variables:
     --disable-memconf
     --disable-ui
     --disable-gtk2
-    --disable-schema-compile
-    --with-python=python3
+    --disable-schemas-compile
+    --disable-xim
+    --disable-setup
     --disable-emoji-dict
+    --disable-appindicator
+    --disable-glibtest
     --disable-unicode-dict
+    --disable-python2
+
+config:
+  install-commands:
+    (>):
+    - |
+      rm -r "%{install-root}%{bindir}"
+      rm -r "%{install-root}%{datadir}/bash-completion"
+      rm -r "%{install-root}%{datadir}/dbus-1"
+      rm -r "%{install-root}%{datadir}/icons"
+      rm -r "%{install-root}%{datadir}/man"
+      rm -r "%{install-root}%{datadir}/ibus"
+      echo "NoShowIn=GNOME" >> "%{install-root}%{datadir}/applications/org.freedesktop.IBus.Setup.desktop"
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libibus-1.0.so'

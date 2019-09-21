@@ -20,3 +20,14 @@ variables:
     --disable-gtk
     --disable-python
     --disable-mono
+config:
+  install-commands:
+    (>):
+    - |
+      dekstop-file-install --delete-original
+      --dir "%{install-root}%{datadir}/applications"
+      "%{install-root}{%datadir}/applications/bssh.desktop"
+    - |
+      dekstop-file-install --delete-original
+      --dir "%{install-root}%{datadir}/applications"
+      "%{install-root}{%datadir}/applications/bvnc.desktop"

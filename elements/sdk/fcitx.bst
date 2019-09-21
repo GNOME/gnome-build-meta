@@ -7,6 +7,9 @@ depends:
 - filename: components/extra-cmake-modules.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/desktop-file-utils.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: public-stacks/buildsystem-cmake.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -38,3 +41,19 @@ public:
         - "%{libdir}/libfcitx-gclient.so"
         - "%{libdir}/libfcitx-config.so"
         - "%{libdir}/libfcitx-utils.so"
+
+config:
+  install-commands:
+    (>):
+    - |
+      dekstop-file-install --delete-original
+      --dir "%{install-root}%{datadir}/applications"
+      "%{install-root}{%datadir}/applications/fcitx-skin-installer.desktop"
+    - |
+      dekstop-file-install --delete-original
+      --dir "%{install-root}%{datadir}/applications"
+      "%{install-root}{%datadir}/applications/fcitx-configtool.desktop"
+    - |
+      dekstop-file-install --delete-original
+      --dir "%{install-root}%{datadir}/applications"
+      "%{install-root}{%datadir}/applications/fcitx.desktop"
