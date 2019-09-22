@@ -26,3 +26,5 @@ config:
     - |
       install -Dm644 -t "%{install-root}%{indep-libdir}/sysusers.d" \
                      extra/avahi.conf
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/bvnc.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/bssh.desktop"
