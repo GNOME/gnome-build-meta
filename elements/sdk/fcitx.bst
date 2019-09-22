@@ -38,3 +38,10 @@ public:
         - "%{libdir}/libfcitx-gclient.so"
         - "%{libdir}/libfcitx-config.so"
         - "%{libdir}/libfcitx-utils.so"
+
+config:
+  install-commands:
+    (>):
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/fcitx-skin-installer.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/fcitx-configtool.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/fcitx.desktop"

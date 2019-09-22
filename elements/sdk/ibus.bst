@@ -41,3 +41,7 @@ variables:
     --enable-wayland
     --enable-introspection
 
+config:
+  install-commands:
+    (>):
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/org.freedesktop.IBus.Setup.desktop"
