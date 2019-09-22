@@ -29,6 +29,7 @@ variables:
     -DENABLE_X11=Off
     -DENABLE_ENCHANT=Off
     -DENABLE_PRESAGE=Off
+    -DENABLE_XDG_AUTOSTART=Off
 public:
   bst:
     split-rules:
