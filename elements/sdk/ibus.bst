@@ -7,11 +7,17 @@ depends:
 - sdk/glib.bst
 - filename: sdk/gobject-introspection.bst
   type: build
+- filename: sdk/gtk-doc.bst
+  type: build
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - filename: components/iso-codes.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/wayland.bst
+  junction: freedesktop-sdk.bst
+- filename: components/wayland-protocols.bst
+  junction: freedesktop-sdk.bst
 - filename: public-stacks/buildsystem-autotools.bst
   junction: freedesktop-sdk.bst
   type: build
@@ -21,11 +27,17 @@ variables:
   conf-local: >-
     --disable-tests
     --disable-gconf
-    --enable-dconf
     --disable-memconf
     --disable-ui
     --disable-gtk2
-    --disable-schema-compile
-    --with-python=python3
     --disable-emoji-dict
+    --disable-appindicator
+    --disable-glibtest
     --disable-unicode-dict
+    --disable-python2
+    --with-python=python3
+    --enable-dconf
+    --enable-gtk-doc
+    --enable-wayland
+    --enable-introspection
+
