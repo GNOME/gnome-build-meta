@@ -17,3 +17,9 @@ variables:
     --disable-gtk
     --disable-python
     --disable-mono
+
+config:
+  install-commands:
+    (>):
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/bvnc.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/bssh.desktop"
