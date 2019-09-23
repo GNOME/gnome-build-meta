@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.26.0.tar.xz
+  url: webkitgtk_org:webkitgtk-2.26.1.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -57,7 +57,6 @@ variables:
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     -DUSE_WPE_RENDERER=OFF
-    -DENABLE_MEDIA_SOURCE=OFF
     %{webkitgtk_toolchain}
 (?):
 - arch == "i686":
