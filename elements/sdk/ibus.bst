@@ -28,6 +28,7 @@ variables:
   conf-local: >-
     --disable-tests
     --disable-gconf
+    --disable-dconf
     --disable-memconf
     --disable-ui
     --disable-gtk2
@@ -37,7 +38,7 @@ variables:
     --disable-unicode-dict
     --disable-python2
     --with-python=python3
-    --enable-dconf
+    --enable-schema-compile
     --enable-gtk-doc
     --enable-wayland
     --enable-introspection
