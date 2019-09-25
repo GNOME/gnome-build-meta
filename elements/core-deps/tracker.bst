@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tracker.git
-  track: master
+  track: 'tracker-2.3'
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/upower.bst
