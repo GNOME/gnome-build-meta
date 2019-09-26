@@ -3,16 +3,12 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libgxps.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- filename: components/libarchive.bst
-  junction: freedesktop-sdk.bst
-- filename: components/lcms.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

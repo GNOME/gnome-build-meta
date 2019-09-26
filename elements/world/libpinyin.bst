@@ -6,15 +6,13 @@ sources:
   url: downloads.sourceforge.net:libpinyin/models/model17.text.tar.gz
   base-dir: ''
   directory: data
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
 - world/kyotocabinet.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --with-dbm=KyotoCabinet
-  notparallel: True
+  notparallel: true

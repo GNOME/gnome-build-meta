@@ -2,10 +2,8 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:google/woff2/archive/v1.0.2.tar.gz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - sdk/brotli.bst
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

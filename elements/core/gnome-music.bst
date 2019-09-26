@@ -5,14 +5,16 @@ sources:
   track: master
   submodules:
     subprojects/libgd:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
     subprojects/gfm:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:mschraal/gfm.git
     subprojects/shared-modules:
-      checkout: False
+      checkout: false
       url: github_com:flathub/shared-modules.git
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
@@ -25,10 +27,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/pygobject.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -1,20 +1,12 @@
 kind: autotools
 
+build-depends:
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/e2fsprogs.bst
-  junction: freedesktop-sdk.bst
-
+- freedesktop-sdk.bst:components/e2fsprogs.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:
     split-rules:
@@ -34,7 +26,7 @@ public:
         - '%{libdir}/libverto.so'
   cpe:
     product: kerberos
-    version: '5-1.16.1'
+    version: 5-1.16.1
 
 variables:
   command-subdir: src

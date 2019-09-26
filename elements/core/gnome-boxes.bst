@@ -5,11 +5,13 @@ sources:
   track: master
   submodules:
     subprojects/gtk-frdp:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/gtk-frdp.git
     subprojects/libovf-glib:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:felipeborges/libovf-glib.git
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst
@@ -27,13 +29,8 @@ depends:
 - sdk/libsecret.bst
 - sdk/vala.bst
 - sdk/vte.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Drdp=false

@@ -3,16 +3,14 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/folks.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/gobject-introspection.bst
 - sdk/libgee.bst
 - sdk/vala.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Deds_backend=true

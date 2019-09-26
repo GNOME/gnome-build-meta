@@ -3,17 +3,12 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gcr.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: components/p11-kit.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/p11-kit.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

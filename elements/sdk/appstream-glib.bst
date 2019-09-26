@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: github_com:hughsie/appstream-glib.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:components/gperf.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/gcab.bst
 - sdk/gdk-pixbuf.bst
@@ -11,18 +14,9 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: components/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gperf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/libarchive.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dstemmer=false

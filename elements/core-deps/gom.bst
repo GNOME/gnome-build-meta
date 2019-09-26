@@ -3,12 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gom.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

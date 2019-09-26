@@ -3,21 +3,14 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/vte.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: components/fribidi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gnutls.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pcre2.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/fribidi.bst
+- freedesktop-sdk.bst:components/gnutls.bst
+- freedesktop-sdk.bst:components/pcre2.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

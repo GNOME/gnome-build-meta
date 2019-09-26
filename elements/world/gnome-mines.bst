@@ -9,7 +9,5 @@ depends:
 - sdk/librsvg.bst
 - sdk/vala.bst
 - world/libgnome-games-support.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

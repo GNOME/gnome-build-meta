@@ -2,12 +2,13 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: 'tracker-miners-2.3'
+  track: tracker-miners-2.3
+build-depends:
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gexiv2.bst
-- filename: core-deps/intltool.bst
-  type: build
 - core-deps/libcue.bst
 - core-deps/libgsf.bst
 - core-deps/libgxps.bst
@@ -21,17 +22,10 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - sdk/openjpeg.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libflac.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libseccomp.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/libflac.bst
+- freedesktop-sdk.bst:components/libseccomp.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dxmp=disabled

@@ -5,11 +5,13 @@ sources:
   track: master
   submodules:
     subprojects/libgd:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
     flatpak/shared-modules:
-      checkout: False
+      checkout: false
       url: github_com:flathub/shared-modules.git
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
@@ -28,15 +30,9 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Denable-vala=no

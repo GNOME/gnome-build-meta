@@ -2,25 +2,21 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:evince/3.32/evince-3.32.0.tar.xz
+build-depends:
+- sdk/appstream-glib.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst
 - core-deps/poppler.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
-- filename: sdk/appstream-glib.bst
-  type: build
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libsecret.bst
 - sdk/yelp-tools.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --enable-introspection

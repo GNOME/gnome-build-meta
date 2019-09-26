@@ -3,13 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/at-spi2-core.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: components/dbus.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

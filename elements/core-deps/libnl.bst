@@ -2,17 +2,11 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:thom311/libnl/releases/download/libnl3_4_0/libnl-3.4.0.tar.gz
+build-depends:
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/flex.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-aux: build-aux

@@ -3,24 +3,18 @@ sources:
 - kind: git_tag
   url: github_com:hughsie/colord.git
   track: master
+build-depends:
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: components/lcms.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dargyllcms_sensor=false

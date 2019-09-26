@@ -2,13 +2,9 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:startup-notification/0.12/startup-notification-0.12.tar.xz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: components/xcb-util.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-x11.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/xcb-util.bst
+- freedesktop-sdk.bst:components/xorg-lib-x11.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

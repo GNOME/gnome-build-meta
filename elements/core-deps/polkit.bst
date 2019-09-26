@@ -6,25 +6,17 @@ sources:
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data
+build-depends:
+- core-deps/intltool.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: core-deps/intltool.bst
-  type: build
 - sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/mozjs60.bst
-- filename: components/linux-pam.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/systemd.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/linux-pam.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --enable-libsystemd-login=yes

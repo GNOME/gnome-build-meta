@@ -3,11 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-menus.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

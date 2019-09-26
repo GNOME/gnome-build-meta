@@ -1,45 +1,19 @@
 kind: filter
 
-depends:
-- filename: components/gstreamer-plugins-base.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/orc.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: sdk/pango.bst
-  type: runtime
-- filename: components/xorg-lib-xv.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/libogg.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/libtheora.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/libvorbis.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/opus.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/alsa-lib.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/sdl2.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/mesa-headers.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: sdk/gtk+-3.bst
-  type: runtime
-- filename: sdk/gdk-pixbuf.bst
-  type: runtime
+build-depends:
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
+runtime-depends:
+- sdk/gdk-pixbuf.bst
+- sdk/gtk+-3.bst
+- sdk/pango.bst
+- freedesktop-sdk.bst:components/alsa-lib.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/libogg.bst
+- freedesktop-sdk.bst:components/libtheora.bst
+- freedesktop-sdk.bst:components/libvorbis.bst
+- freedesktop-sdk.bst:components/mesa-headers.bst
+- freedesktop-sdk.bst:components/opus.bst
+- freedesktop-sdk.bst:components/orc.bst
+- freedesktop-sdk.bst:components/sdl2.bst
+- freedesktop-sdk.bst:components/xorg-lib-xv.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

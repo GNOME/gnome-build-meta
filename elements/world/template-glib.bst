@@ -3,18 +3,12 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/template-glib.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- filename: components/flex.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

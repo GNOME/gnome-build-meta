@@ -3,13 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_com:uhttpmock/uhttpmock.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libsoup.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

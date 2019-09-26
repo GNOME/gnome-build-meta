@@ -5,7 +5,7 @@ sources:
   track: master
   submodules:
     subprojects/libgd:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
 depends:
 - core-deps/evolution-data-server.bst
@@ -15,7 +15,5 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-internet-radio-locator.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
 depends:
 - core-deps/geocode-glib.bst
 - core-deps/libchamplain.bst
@@ -15,10 +17,6 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/pango.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

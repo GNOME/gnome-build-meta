@@ -2,15 +2,11 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:Igalia/WPEBackend-fdo/releases/download/1.3.1/wpebackend-fdo-1.3.1.tar.xz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/mesa-headers.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
 - sdk/glib.bst
 - sdk/libwpe.bst
+- freedesktop-sdk.bst:components/mesa-headers.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
