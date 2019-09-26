@@ -10,7 +10,5 @@ depends:
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - world/qqwing.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -5,8 +5,12 @@ sources:
   track: master
   submodules:
     subprojects/libgd:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
+build-depends:
+- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst
@@ -14,16 +18,5 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsoup.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/git-minimal.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

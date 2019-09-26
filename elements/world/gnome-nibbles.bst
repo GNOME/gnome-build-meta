@@ -14,5 +14,4 @@ depends:
 - sdk/vala.bst
 - sdk/yelp-tools.bst
 - world/libgnome-games-support.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

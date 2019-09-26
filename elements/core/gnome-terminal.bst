@@ -3,9 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-terminal.git
   track: master
+build-depends:
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: core-deps/intltool.bst
-  type: build
 - core/gnome-shell.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
@@ -17,13 +18,8 @@ depends:
 - sdk/librsvg.bst
 - sdk/vte.bst
 - sdk/yelp-tools.bst
-- filename: components/desktop-file-utils.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-migration

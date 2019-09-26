@@ -3,11 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/adwaita-icon-theme.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

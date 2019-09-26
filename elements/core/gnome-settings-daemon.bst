@@ -5,9 +5,12 @@ sources:
   track: master
   submodules:
     subprojects/gvc:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
 
+build-depends:
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -27,17 +30,7 @@ depends:
 - sdk/ibus.bst
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- filename: components/alsa-lib.bst
-  junction: freedesktop-sdk.bst
-- filename: components/cups.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xtst.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/alsa-lib.bst
+- freedesktop-sdk.bst:components/cups.bst
+- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

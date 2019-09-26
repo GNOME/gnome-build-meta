@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/epiphany.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
@@ -18,12 +20,6 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/iso-codes.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

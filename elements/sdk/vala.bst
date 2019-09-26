@@ -3,24 +3,15 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/vala.git
   track: master
+build-depends:
+- sdk/vala-tarball.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- filename: sdk/vala-tarball.bst
-  type: build
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/flex.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/git-minimal.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --enable-unversioned

@@ -2,16 +2,12 @@ kind: cmake
 sources:
 - kind: tar
   url: https://gitlab.com/fcitx/fcitx/-/archive/4.2.9.6/fcitx-4.2.9.6.tar.gz
+build-depends:
+- freedesktop-sdk.bst:components/extra-cmake-modules.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - sdk/gtk+-3.bst
-- filename: components/extra-cmake-modules.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
     -DLIB_INSTALL_DIR=%{libdir}
@@ -34,7 +30,7 @@ public:
     split-rules:
       devel:
         (>):
-        - "%{libdir}/libfcitx-core.so"
-        - "%{libdir}/libfcitx-gclient.so"
-        - "%{libdir}/libfcitx-config.so"
-        - "%{libdir}/libfcitx-utils.so"
+        - '%{libdir}/libfcitx-core.so'
+        - '%{libdir}/libfcitx-gclient.so'
+        - '%{libdir}/libfcitx-config.so'
+        - '%{libdir}/libfcitx-utils.so'

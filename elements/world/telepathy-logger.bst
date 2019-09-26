@@ -3,11 +3,10 @@ sources:
 - kind: git_tag
   url: github_com:TelepathyIM/telepathy-logger.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - world/telepathy-glib.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

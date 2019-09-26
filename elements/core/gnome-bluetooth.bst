@@ -6,18 +6,14 @@ sources:
   submodules:
     subprojects/libhandy:
       url: purism:Librem5/libhandy.git
-      checkout: True
+      checkout: true
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libcanberra.bst
 - sdk/libnotify.bst
-- filename: components/systemd.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

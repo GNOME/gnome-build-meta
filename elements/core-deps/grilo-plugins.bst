@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/grilo-plugins.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gmime3.bst
 - core-deps/gnome-online-accounts.bst
@@ -18,13 +20,8 @@ depends:
 - core-deps/tracker.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Denable-lua-factory=no

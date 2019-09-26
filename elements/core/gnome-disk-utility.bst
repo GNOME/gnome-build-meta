@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libdvdread.bst
 - core-deps/udisks2.bst
@@ -13,13 +15,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dlibelogind=disabled

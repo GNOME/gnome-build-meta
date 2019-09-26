@@ -2,21 +2,16 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:ibus/ibus/releases/download/1.5.20/ibus-1.5.20.tar.gz
+build-depends:
+- sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/iso-codes.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/dconf.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-tests

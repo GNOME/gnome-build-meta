@@ -2,14 +2,11 @@ kind: autotools
 sources:
 - kind: tar
   url: cairo_org:releases/cairomm-1.13.1.tar.gz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/libsigcplusplus-2.0.bst
-- filename: components/cairo.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-aux: build

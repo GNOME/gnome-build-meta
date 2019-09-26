@@ -22,12 +22,9 @@ depends:
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
-- filename: deploy-tools/flatpak.bst
-  junction: freedesktop-sdk.bst
-- filename: components/llvm.bst
-  junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:deploy-tools/flatpak.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dwith_sysmon=false

@@ -3,30 +3,20 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libsoup.git
   track: master
+build-depends:
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/brotli.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: sdk/krb5.bst
-- filename: components/libpsl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxml2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sqlite.bst
-  junction: freedesktop-sdk.bst
-- filename: components/python3.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- sdk/krb5.bst
+- freedesktop-sdk.bst:components/libpsl.bst
+- freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:components/sqlite.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dtls_check=false

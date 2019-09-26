@@ -3,27 +3,18 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gdk-pixbuf.git
   track: master
+build-depends:
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: components/shared-mime-info.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-x11.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libtiff.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libpng.bst
-  junction: freedesktop-sdk.bst
-- filename: components/jpeg.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/jpeg.bst
+- freedesktop-sdk.bst:components/libpng.bst
+- freedesktop-sdk.bst:components/libtiff.bst
+- freedesktop-sdk.bst:components/shared-mime-info.bst
+- freedesktop-sdk.bst:components/xorg-lib-x11.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:
     integration-commands:

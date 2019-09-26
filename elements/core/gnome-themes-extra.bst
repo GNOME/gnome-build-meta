@@ -3,17 +3,14 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
   track: master
+build-depends:
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: core-deps/intltool.bst
-  type: build
 - sdk/cantarell-fonts.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-gtk2-engine

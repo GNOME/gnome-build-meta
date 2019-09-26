@@ -3,9 +3,7 @@ kind: cmake
 sources:
 - kind: tar
   url: http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

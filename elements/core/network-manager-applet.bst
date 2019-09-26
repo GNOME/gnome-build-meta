@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/network-manager-applet.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -13,17 +16,10 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libnotify.bst
 - sdk/libsecret.bst
-- filename: components/iso-codes.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/iso-codes.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --enable-more-warnings=no

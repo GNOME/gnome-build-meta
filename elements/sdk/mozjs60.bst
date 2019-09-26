@@ -2,24 +2,19 @@ kind: manual
 sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-60.8.0.tar.bz2
+build-depends:
+- sdk/python2.bst
+- freedesktop-sdk.bst:components/autoconf.bst
+- freedesktop-sdk.bst:components/perl.bst
 depends:
-- filename: sdk/python2.bst
-  type: build
-- filename: components/autoconf.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   mozjs_target: ''
   (?):
-    - arch == "i686":
-        mozjs_target: "--host=i686-unknown-linux-gnu"
-    - arch == "arm":
-        mozjs_target: "--host=arm-unknown-linux-gnueabi"
+  - arch == "i686":
+      mozjs_target: --host=i686-unknown-linux-gnu
+  - arch == "arm":
+      mozjs_target: --host=arm-unknown-linux-gnueabi
   command-subdir: _build
 config:
   configure-commands:

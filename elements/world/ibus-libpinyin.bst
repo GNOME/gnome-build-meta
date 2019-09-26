@@ -2,19 +2,14 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:libpinyin/ibus-libpinyin/releases/download/1.11.1/ibus-libpinyin-1.11.1.tar.gz
+build-depends:
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: core-deps/intltool.bst
-  type: build
 - sdk/ibus.bst
 - world/libpinyin.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-lua-extension

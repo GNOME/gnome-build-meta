@@ -3,38 +3,30 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/mutter.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core/gnome-settings-daemon.bst
-- core-deps/startup-notification.bst
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
+- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
+- core/gnome-settings-daemon.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/json-glib.bst
 - sdk/pango.bst
 - sdk/zenity.bst
-- filename: components/xorg-lib-xcursor.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xtst.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-server.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
-- filename: components/dummy-gbm.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
+- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
+- freedesktop-sdk.bst:components/xorg-server.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dprofiler=false

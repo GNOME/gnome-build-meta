@@ -4,17 +4,11 @@ sources:
   url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
 - kind: patch
   path: files/intltool/intltool-perl-5.22-compatibility.patch
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+runtime-depends:
+- freedesktop-sdk.bst:components/gettext.bst
 depends:
-- filename: components/gettext.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

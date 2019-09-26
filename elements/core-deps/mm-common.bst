@@ -23,18 +23,12 @@ sources:
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/
+build-depends:
+- freedesktop-sdk.bst:components/gzip.bst
+- freedesktop-sdk.bst:components/tar.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: components/tar.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/gzip.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-network

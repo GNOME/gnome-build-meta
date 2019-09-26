@@ -5,8 +5,13 @@ sources:
   track: master
   submodules:
     subprojects/gvc:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+build-depends:
+- freedesktop-sdk.bst:components/asciidoc.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -31,19 +36,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcroco.bst
 - sdk/libsoup.bst
-- filename: components/asciidoc.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

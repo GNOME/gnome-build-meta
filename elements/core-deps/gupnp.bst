@@ -3,19 +3,16 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gupnp.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libsoup.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dcontext_manager=network-manager

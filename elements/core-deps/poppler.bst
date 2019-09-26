@@ -2,23 +2,15 @@ kind: cmake
 sources:
 - kind: tar
   url: https://poppler.freedesktop.org/poppler-0.72.0.tar.xz
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - sdk/gobject-introspection.bst
 - sdk/openjpeg.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: components/cairo.bst
-  junction: freedesktop-sdk.bst
-- filename: components/fontconfig.bst
-  junction: freedesktop-sdk.bst
-- filename: components/freetype.bst
-  junction: freedesktop-sdk.bst
-- filename: components/jpeg.bst
-  junction: freedesktop-sdk.bst
-- filename: components/nss.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/fontconfig.bst
+- freedesktop-sdk.bst:components/freetype.bst
+- freedesktop-sdk.bst:components/jpeg.bst
+- freedesktop-sdk.bst:components/nss.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

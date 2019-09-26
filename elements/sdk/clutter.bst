@@ -2,6 +2,9 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:clutter/1.26/clutter-1.26.2.tar.xz
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/atk.bst
 - sdk/cogl.bst
@@ -9,18 +12,10 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/json-glib.bst
-- filename: components/libxkbcommon.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/libxkbcommon.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --enable-installed-tests
