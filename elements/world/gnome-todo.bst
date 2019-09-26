@@ -10,5 +10,4 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

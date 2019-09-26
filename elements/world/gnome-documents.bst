@@ -5,8 +5,12 @@ sources:
   track: master
   submodules:
     subprojects/libgd:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
+build-depends:
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
@@ -23,16 +27,5 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- filename: components/desktop-file-utils.bst
-  junction: freedesktop-sdk.bst
-- filename: components/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/git-minimal.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

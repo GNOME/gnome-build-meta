@@ -1,47 +1,35 @@
 kind: flatpak_repo
-depends:
-- filename: deploy-tools/flatpak.bst
-  junction: freedesktop-sdk.bst
-  type: build
+build-depends:
+- freedesktop-sdk.bst:deploy-tools/flatpak.bst
 (?):
 # platform and sdk should not be built on i686
 - arch != 'i686':
-    depends:
+    build-depends:
       (>):
-      - filename: flatpak/platform.bst
-        type: build
-      - filename: flatpak/platform-locale.bst
-        type: build
-      - filename: flatpak/sdk.bst
-        type: build
-      - filename: flatpak/sdk-debug.bst
-        type: build
-      - filename: flatpak/sdk-docs.bst
-        type: build
-      - filename: flatpak/sdk-locale.bst
-        type: build
+      - flatpak/platform.bst
+      - flatpak/platform-locale.bst
+      - flatpak/sdk.bst
+      - flatpak/sdk-debug.bst
+      - flatpak/sdk-docs.bst
+      - flatpak/sdk-locale.bst
 
 # platform compat is only built on 32 bit
 - arch in ('i686', 'arm'):
-    depends:
+    build-depends:
       (>):
-      - filename: flatpak/platform-arch-libs.bst
-        type: build
-      - filename: flatpak/platform-arch-libs-debug.bst
-        type: build
+      - flatpak/platform-arch-libs.bst
+      - flatpak/platform-arch-libs-debug.bst
 
 # sdk compat is not built on x86_64
 - arch != 'x86_64':
-    depends:
+    build-depends:
       (>):
-      - filename: flatpak/sdk-arch-libs.bst
-        type: build
-      - filename: flatpak/sdk-arch-libs-debug.bst
-        type: build
+      - flatpak/sdk-arch-libs.bst
+      - flatpak/sdk-arch-libs-debug.bst
 
 config:
   environment:
-    - deploy-tools/flatpak.bst
+  - deploy-tools/flatpak.bst
   arch: '%{gcc_arch}'
   repo-mode: bare-user-only
   (?):

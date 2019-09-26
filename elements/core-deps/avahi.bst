@@ -2,16 +2,13 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:lathiat/avahi/releases/download/v0.7/avahi-0.7.tar.gz
+build-depends:
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: core-deps/intltool.bst
-  type: build
 - core-deps/libdaemon.bst
 - sdk/gtk+-3.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --with-distro=none

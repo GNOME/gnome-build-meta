@@ -3,21 +3,15 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libzapojit.git
   track: master
+build-depends:
+- core-deps/intltool.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/gnome-online-accounts.bst
-- filename: core-deps/intltool.bst
-  type: build
 - core-deps/librest.bst
 - sdk/glib.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

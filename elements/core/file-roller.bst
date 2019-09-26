@@ -3,15 +3,11 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/file-roller.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -2,15 +2,12 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- filename: components/hunspell.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/hunspell.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --with-hunspell

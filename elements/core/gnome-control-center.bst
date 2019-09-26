@@ -5,11 +5,14 @@ sources:
   track: master
   submodules:
     subprojects/gvc:
-      checkout: True
+      checkout: true
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
     subprojets/libhandy:
-      checkout: True
+      checkout: true
       url: purism:Librem5/libhandy.git
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -24,8 +27,8 @@ depends:
 - core-deps/libhandy.bst
 - core-deps/libwacom.bst
 - core-deps/samba.bst
-- core-deps/upower.bst
 - core-deps/udisks2.bst
+- core-deps/upower.bst
 - core/cheese.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
@@ -38,18 +41,10 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/ibus.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Ddocumentation=true

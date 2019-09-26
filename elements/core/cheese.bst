@@ -3,6 +3,11 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/cheese.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- sdk/yelp-tools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gnome-video-effects.bst
 - core-deps/libgudev.bst
@@ -16,18 +21,7 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/libcanberra.bst
 - sdk/librsvg.bst
-- filename: sdk/vala.bst
-  type: build
-- filename: sdk/yelp-tools.bst
-  type: build
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

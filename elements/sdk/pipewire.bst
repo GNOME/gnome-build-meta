@@ -1,30 +1,15 @@
 kind: filter
 
-depends:
-- filename: components/pipewire.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: sdk/gst-plugins-base.bst
-  type: runtime
-- filename: components/alsa-lib.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/dbus.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/sdl2.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/ffmpeg.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: components/systemd-libs.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-
+build-depends:
+- freedesktop-sdk.bst:components/pipewire.bst
+runtime-depends:
+- sdk/gst-plugins-base.bst
+- freedesktop-sdk.bst:components/alsa-lib.bst
+- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/ffmpeg.bst
+- freedesktop-sdk.bst:components/sdl2.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:
     split-rules:

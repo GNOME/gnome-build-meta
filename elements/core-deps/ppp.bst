@@ -4,12 +4,10 @@ sources:
   url: gnome_download:teams/releng/tarballs-needing-help/ppp/ppp-2.4.7.tar.gz
 - kind: patch
   path: files/ppp/use-openssl.patch
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   # not a real autotools project
   autogen: ''

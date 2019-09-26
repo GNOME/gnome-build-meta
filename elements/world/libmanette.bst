@@ -9,5 +9,4 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

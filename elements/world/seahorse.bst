@@ -3,11 +3,14 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/seahorse.git
   track: master
+runtime-depends:
+- sdk/adwaita-icon-theme.bst
+- sdk/cantarell-fonts.bst
 depends:
 - core-deps/avahi.bst
 - core-deps/openldap.bst
-- sdk/glib.bst
 - sdk/gcr.bst
+- sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
@@ -15,13 +18,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
-- filename: sdk/cantarell-fonts.bst
-  type: runtime
-- filename: sdk/adwaita-icon-theme.bst
-  type: runtime
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

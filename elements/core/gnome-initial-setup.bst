@@ -6,6 +6,8 @@ sources:
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -23,17 +25,11 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/ibus.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pwquality.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  sysusersdir: "%{prefix}/lib/sysusers.d"
+  sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
     -Dcheese=disabled
     -Dsoftware-sources=disabled

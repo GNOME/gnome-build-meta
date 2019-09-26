@@ -2,9 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:thkukuk/rpcsvc-proto/archive/v1.3.1.tar.gz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-calculator.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gtksourceview.bst
 - core-deps/mpc.bst
@@ -10,13 +12,8 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libsoup.bst
 - sdk/libgee.bst
+- sdk/libsoup.bst
 - sdk/vala.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

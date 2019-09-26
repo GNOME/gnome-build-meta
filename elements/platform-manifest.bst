@@ -1,8 +1,6 @@
 kind: collect_manifest
 
-depends:
-  - filename: sdk-platform.bst
-    type: build
-
+build-depends:
+- sdk-platform.bst
 config:
-  path: "/usr/manifest.json"
+  path: /usr/manifest.json

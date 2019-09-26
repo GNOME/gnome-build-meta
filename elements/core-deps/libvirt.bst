@@ -2,27 +2,18 @@ kind: autotools
 sources:
 - kind: tar
   url: https://libvirt.org/sources/libvirt-4.9.0.tar.xz
+build-depends:
+- freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/libnl.bst
-- core-deps/portablexdr.bst
 - core-deps/lvm2.bst
-- filename: components/gnutls.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libtirpc.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/libxml2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/python3.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- core-deps/portablexdr.bst
+- freedesktop-sdk.bst:components/gnutls.bst
+- freedesktop-sdk.bst:components/libtirpc.bst
+- freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-aux: build-aux
 config:

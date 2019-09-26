@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-maps.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst
@@ -20,8 +22,4 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
 - sdk/librsvg.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

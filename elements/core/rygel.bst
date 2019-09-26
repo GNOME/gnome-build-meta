@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/rygel.git
   track: master
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gssdp.bst
 - core-deps/gupnp-av.bst
@@ -12,8 +14,4 @@ depends:
 - core-deps/tracker.bst
 - sdk/libgee.bst
 - sdk/vala.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

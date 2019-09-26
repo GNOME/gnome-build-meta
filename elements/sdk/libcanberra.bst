@@ -2,16 +2,12 @@ kind: autotools
 sources:
 - kind: tar
   url: http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gtk+-3.bst
-- filename: components/libpulse.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libtool.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/libpulse.bst
+- freedesktop-sdk.bst:components/libtool.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-aux: build-aux

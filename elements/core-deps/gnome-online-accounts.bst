@@ -3,22 +3,18 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/librest.bst
 - sdk/WebKitGTK.bst
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- filename: sdk/vala.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-telepathy

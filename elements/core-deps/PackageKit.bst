@@ -3,26 +3,19 @@ sources:
 - kind: git_tag
   url: github_com:hughsie/PackageKit.git
   track: master
+build-depends:
+- core-deps/intltool.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/NetworkManager.bst
-- filename: core-deps/intltool.bst
-  type: build
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-vala

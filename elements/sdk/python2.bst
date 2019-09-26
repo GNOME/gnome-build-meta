@@ -2,22 +2,15 @@ kind: autotools
 sources:
 - kind: tar
   url: https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tar.xz
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- filename: components/expat.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libffi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gdbm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/sqlite.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xz.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  type: build
-  junction: freedesktop-sdk.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/expat.bst
+- freedesktop-sdk.bst:components/gdbm.bst
+- freedesktop-sdk.bst:components/libffi.bst
+- freedesktop-sdk.bst:components/sqlite.bst
+- freedesktop-sdk.bst:components/xz.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: |
     --enable-shared \
@@ -29,5 +22,5 @@ variables:
     --enable-unicode=ucs4
 config:
   install-commands:
-    - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'
-    - rm %{install-root}%{bindir}/2to3
+  - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'
+  - rm %{install-root}%{bindir}/2to3

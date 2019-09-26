@@ -8,5 +8,4 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
 - sdk/vala.bst
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

@@ -2,20 +2,15 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:brailcom/speechd/releases/download/0.9.0/speech-dispatcher-0.9.0.tar.gz
+build-depends:
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- sdk/glib.bst
 - core-deps/dotconf.bst
 - core-deps/espeak.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/sndfile.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- sdk/glib.bst
+- freedesktop-sdk.bst:components/sndfile.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --with-espeak

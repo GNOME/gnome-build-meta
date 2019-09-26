@@ -2,18 +2,12 @@ kind: cmake
 sources:
 - kind: tar
   url: https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz
+build-depends:
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: components/flex.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
     -DBUILD_SHARED_LIBS=ON

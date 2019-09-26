@@ -3,15 +3,12 @@ sources:
 - kind: git_tag
   url: github_com:hughsie/libgusb.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libusb.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/vala.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

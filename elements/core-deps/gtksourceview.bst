@@ -3,17 +3,13 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtksourceview.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/gtk+-3.bst
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dinstall_tests=true

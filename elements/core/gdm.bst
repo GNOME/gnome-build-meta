@@ -6,6 +6,8 @@ sources:
 - kind: local
   path: files/gdm
   directory: gdm-config
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -14,14 +16,10 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst
 - sdk/yelp-tools.bst
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  sysusersdir: "%{prefix}/lib/sysusers.d"
-  pamdir: "%{sysconfdir}/pam.d"
+  sysusersdir: '%{prefix}/lib/sysusers.d'
+  pamdir: '%{sysconfdir}/pam.d'
   conf-local: >-
     --enable-wayland-support
     --with-pam-prefix=%{sysconfdir}

@@ -3,44 +3,29 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/pango.bst
-- filename: components/cairo.bst
-  junction: freedesktop-sdk.bst
-- filename: components/hicolor-icon-theme.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libepoxy.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxkbcommon.bst
-  junction: freedesktop-sdk.bst
-- filename: components/mesa-headers.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland-protocols.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcomposite.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xcursor.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xdamage.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-lib-xinerama.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/hicolor-icon-theme.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libxkbcommon.bst
+- freedesktop-sdk.bst:components/mesa-headers.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/xorg-lib-xcomposite.bst
+- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
+- freedesktop-sdk.bst:components/xorg-lib-xdamage.bst
+- freedesktop-sdk.bst:components/xorg-lib-xi.bst
+- freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dbroadway_backend=true

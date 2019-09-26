@@ -4,26 +4,19 @@ sources:
   url: gitlab_gnome_org:GNOME/librsvg.git
   track: master
 - kind: cargo
+build-depends:
+- sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:extensions/rust/rust.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/gobject-introspection.bst
 - sdk/libcroco.bst
 - sdk/pango.bst
-- filename: sdk/vala.bst
-  type: build
-- filename: components/cairo.bst
-  junction: freedesktop-sdk.bst
-- filename: extensions/rust/rust.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --disable-gtk-doc

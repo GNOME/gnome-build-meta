@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: master
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -12,28 +15,15 @@ depends:
 - sdk/graphene.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
-- filename: sdk/gtk-doc.bst
-  type: build
 - sdk/pango.bst
-- filename: components/cups.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gstreamer.bst
-  junction: freedesktop-sdk.bst
-- filename: components/hicolor-icon-theme.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libepoxy.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxkbcommon.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland-protocols.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/cups.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/hicolor-icon-theme.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libxkbcommon.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Denable-broadway-backend=true

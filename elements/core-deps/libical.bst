@@ -2,24 +2,17 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:libical/libical/releases/download/v3.0.5/libical-3.0.5.tar.gz
+build-depends:
+- sdk/gobject-introspection.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - sdk/glib.bst
-- filename: sdk/gobject-introspection.bst
-  type: build
-- filename: sdk/vala.bst
-  type: build
-- filename: components/libxml2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  cmake-local:
+  cmake-local: >-
     -DENABLE_GTK_DOC=OFF
     -DGOBJECT_INTROSPECTION=ON
     -DICAL_GLIB=ON

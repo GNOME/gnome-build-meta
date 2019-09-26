@@ -2,21 +2,14 @@ kind: autotools
 sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.6.0.tar.gz
+build-depends:
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- filename: components/libarchive.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxml2.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libxslt.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: public-stacks/buildsystem-autotools.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

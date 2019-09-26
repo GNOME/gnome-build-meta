@@ -11,85 +11,44 @@ depends:
 # This should be kept in sync with desktop.bst from freedesktop-sdk whenever we
 # update our reference.
 # elements we remove: platform and gtk-doc.
-- filename: components/autoconf-archive.bst
-  junction: freedesktop-sdk.bst
-- filename: components/autoconf.bst
-  junction: freedesktop-sdk.bst
-- filename: components/automake.bst
-  junction: freedesktop-sdk.bst
-- filename: components/bc.bst
-  junction: freedesktop-sdk.bst
-- filename: components/bison.bst
-  junction: freedesktop-sdk.bst
-- filename: components/ccache.bst
-  junction: freedesktop-sdk.bst
-- filename: components/cmake.bst
-  junction: freedesktop-sdk.bst
-- filename: components/cpio.bst
-  junction: freedesktop-sdk.bst
-- filename: components/docbook-xml.bst
-  junction: freedesktop-sdk.bst
-- filename: components/docbook-xsl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/ed.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gdb.bst
-  junction: freedesktop-sdk.bst
-- filename: components/git.bst
-  junction: freedesktop-sdk.bst
-- filename: components/gperf.bst
-  junction: freedesktop-sdk.bst
-- filename: components/groff.bst
-  junction: freedesktop-sdk.bst
-- filename: components/help2man.bst
-  junction: freedesktop-sdk.bst
-- filename: components/libpipeline.bst
-  junction: freedesktop-sdk.bst
-- filename: components/m4.bst
-  junction: freedesktop-sdk.bst
-- filename: components/man-db.bst
-  junction: freedesktop-sdk.bst
-- filename: components/man-pages-posix.bst
-  junction: freedesktop-sdk.bst
-- filename: components/man-pages.bst
-  junction: freedesktop-sdk.bst
-- filename: components/meson.bst
-  junction: freedesktop-sdk.bst
-- filename: components/nasm.bst
-  junction: freedesktop-sdk.bst
-- filename: components/ninja.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl.bst
-  junction: freedesktop-sdk.bst
-- filename: components/perl-xml-parser.bst
-  junction: freedesktop-sdk.bst
-- filename: components/openssh.bst
-  junction: freedesktop-sdk.bst
-- filename: components/patch.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pkg-config.bst
-  junction: freedesktop-sdk.bst
-- filename: components/ruby.bst
-  junction: freedesktop-sdk.bst
-- filename: components/strace.bst
-  junction: freedesktop-sdk.bst
-- filename: components/texinfo.bst
-  junction: freedesktop-sdk.bst
-- filename: components/valgrind.bst
-  junction: freedesktop-sdk.bst
-- filename: components/desktop-file-utils.bst
-  junction: freedesktop-sdk.bst
-- filename: components/itstools.bst
-  junction: freedesktop-sdk.bst
-- filename: components/jq.bst
-  junction: freedesktop-sdk.bst
-- filename: components/wayland-protocols.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xdg-portal-interfaces.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-proto-xcb.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-proto-xorgproto.bst
-  junction: freedesktop-sdk.bst
-- filename: components/xorg-util-macros.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/autoconf-archive.bst
+- freedesktop-sdk.bst:components/autoconf.bst
+- freedesktop-sdk.bst:components/automake.bst
+- freedesktop-sdk.bst:components/bc.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/ccache.bst
+- freedesktop-sdk.bst:components/cmake.bst
+- freedesktop-sdk.bst:components/cpio.bst
+- freedesktop-sdk.bst:components/docbook-xml.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/ed.bst
+- freedesktop-sdk.bst:components/gdb.bst
+- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/gperf.bst
+- freedesktop-sdk.bst:components/groff.bst
+- freedesktop-sdk.bst:components/help2man.bst
+- freedesktop-sdk.bst:components/libpipeline.bst
+- freedesktop-sdk.bst:components/m4.bst
+- freedesktop-sdk.bst:components/man-db.bst
+- freedesktop-sdk.bst:components/man-pages-posix.bst
+- freedesktop-sdk.bst:components/man-pages.bst
+- freedesktop-sdk.bst:components/meson.bst
+- freedesktop-sdk.bst:components/nasm.bst
+- freedesktop-sdk.bst:components/ninja.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
+- freedesktop-sdk.bst:components/openssh.bst
+- freedesktop-sdk.bst:components/patch.bst
+- freedesktop-sdk.bst:components/pkg-config.bst
+- freedesktop-sdk.bst:components/ruby.bst
+- freedesktop-sdk.bst:components/strace.bst
+- freedesktop-sdk.bst:components/texinfo.bst
+- freedesktop-sdk.bst:components/valgrind.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
+- freedesktop-sdk.bst:components/xdg-portal-interfaces.bst
+- freedesktop-sdk.bst:components/xorg-proto-xcb.bst
+- freedesktop-sdk.bst:components/xorg-proto-xorgproto.bst
+- freedesktop-sdk.bst:components/xorg-util-macros.bst

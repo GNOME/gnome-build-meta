@@ -5,15 +5,12 @@ sources:
 # this patch has been merged upstream and can be removed when this is updated
 - kind: patch
   path: files/libmusicbrainz/cmake-ninja.patch
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - core-deps/neon.bst
-- filename: components/libxml2.bst
-  junction: freedesktop-sdk.bst
-- filename: public-stacks/buildsystem-cmake.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
     -DLIB_SUFFIX="/%{gcc_triplet}"
