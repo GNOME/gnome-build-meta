@@ -12,5 +12,7 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
+  meson-local: >-
     -Dgtk_doc=true
+    -Dcairo=disabled
+    -Ddoctool=disabled
