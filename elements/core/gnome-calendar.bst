@@ -5,7 +5,6 @@ sources:
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- freedesktop-sdk.bst:components/git.bst
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
