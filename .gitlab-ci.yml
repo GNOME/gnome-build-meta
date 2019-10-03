@@ -205,7 +205,7 @@ track:
   retry: 2
   # only run on branches targeting master
   rules:
-  - if: $FLATPAK_BRANCH == 'master'
+  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
   cache: *bst-cache
   artifacts: *logging-artifacts
 
