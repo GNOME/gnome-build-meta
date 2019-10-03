@@ -151,7 +151,7 @@ default:
   - flatpak build-update-repo --generate-static-deltas repo/
 
   - flat-manager/flat-manager-client push $(cat build.txt) repo/
-  rules:
+  rules: &flatpak-publish-rules
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
@@ -236,10 +236,7 @@ flatpak-prepare:
   artifacts:
     paths:
     - build.txt
-  rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-    when: never
-  - if: $CI_COMMIT_REF_NAME == 'master' || $CI_COMMIT_REF_NAME ~= /^gnome-\d-\d\d$/
+  rules: *flatpak-publish-rules
   <<: *x86_64
 
 
@@ -267,10 +264,7 @@ flatpak-finish:
   - flat-manager/flat-manager-client commit --wait $(cat build.txt)
   - flat-manager/flat-manager-client publish --wait $(cat build.txt)
   - flat-manager/flat-manager-client purge $(cat build.txt)
-  rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-    when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME ~= /^gnome-\d-\d\d$/
+  rules: *flatpak-publish-rules
   <<: *x86_64
 
 flatpak-finish-failed:
