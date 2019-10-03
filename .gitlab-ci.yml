@@ -151,13 +151,10 @@ default:
   - flatpak build-update-repo --generate-static-deltas repo/
 
   - flat-manager/flat-manager-client push $(cat build.txt) repo/
-  only:
-  - master
-  - /^gnome-\d-\d\d$/
-  except:
-    variables:
-    - $EMERGENCY
-    - $BST_TRACK_TAGS != "False"
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
 
 #
 # Architecture specific settings
@@ -207,9 +204,8 @@ track:
   - ${BST} track --deps all core.bst flatpak-runtimes.bst
   retry: 2
   # only run on branches targeting master
-  only:
-    variables:
-    - $FLATPAK_BRANCH == 'master'
+  rules:
+  - if: $FLATPAK_BRANCH == 'master'
   cache: *bst-cache
   artifacts: *logging-artifacts
 
@@ -240,13 +236,10 @@ flatpak-prepare:
   artifacts:
     paths:
     - build.txt
-  only:
-  - master
-  - /^gnome-\d-\d\d$/
-  except:
-    variables:
-    - $EMERGENCY
-    - $BST_TRACK_TAGS != "False"
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == 'master' || $CI_COMMIT_REF_NAME ~= /^gnome-\d-\d\d$/
   <<: *x86_64
 
 
@@ -274,13 +267,10 @@ flatpak-finish:
   - flat-manager/flat-manager-client commit --wait $(cat build.txt)
   - flat-manager/flat-manager-client publish --wait $(cat build.txt)
   - flat-manager/flat-manager-client purge $(cat build.txt)
-  only:
-  - master
-  - /^gnome-\d-\d\d$/
-  except:
-    variables:
-    - $EMERGENCY
-    - $BST_TRACK_TAGS != "False"
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME ~= /^gnome-\d-\d\d$/
   <<: *x86_64
 
 flatpak-finish-failed:
@@ -288,14 +278,11 @@ flatpak-finish-failed:
   dependencies: [flatpak-prepare]
   script:
   - flat-manager/flat-manager-client purge $(cat build.txt)
-  when: on_failure
-  only:
-  - master
-  - /^gnome-\d-\d\d$/
-  except:
-    variables:
-    - $EMERGENCY
-    - $BST_TRACK_TAGS != "False"
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+    when: on_failure
   <<: *x86_64
 
 
@@ -325,6 +312,5 @@ cve_report:
   artifacts:
     paths:
     - cve-reports
-  only:
-  - master
-  - /^gnome-\d-\d\d$/
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
