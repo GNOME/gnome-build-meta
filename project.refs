@@ -28,7 +28,7 @@ projects:
     sdk/at-spi2-core.bst:
     - ref: d629cdbd674e539f8912028512af583990938c7b49e25184c126b00121ef11c6
     sdk/vala.bst:
-    - ref: a10a3b9d60bdfe3349afd3778cd4518b1eb517b59134a70ab5ac845432220c17
+    - ref: 92070393e8102da29e07b29fcb808d021600a25f8a2a69c852470ec8d97740bc
     core-deps/NetworkManager.bst:
     - ref: e624c5c9df107177d48c9682b1a9660149cb63267c91f4da3b2577c23b5ab1ce
     sdk/atk.bst:
