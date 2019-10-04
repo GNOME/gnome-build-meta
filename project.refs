@@ -38,7 +38,7 @@ projects:
     core-deps/PackageKit.bst:
     - ref: 1f4554becf5df0a4d8c51d6757b9401c7ee95bf2dd6f3a73575a8ddd4cd09a01
     sdk/vala-tarball.bst:
-    - ref: 0947c63c1c5a3d7447f8db955e75636ec99f956e23203a0bf0c318ffa64e4b33
+    - ref: be960a87841d85ff76cbd0e10eb691675190e54bd690d76982b3fb94a1fc67a7
     sdk/pango.bst:
     - ref: 1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
     core-deps/upower.bst:
@@ -49,7 +49,7 @@ projects:
     core-deps/libusb.bst:
     - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
     sdk/vala.bst:
-    - ref: bf1ff4f59d5de2d626e98e98ef81cb75dc1e6a27610a7de4133597c430f1bd7c
+    - ref: 347754fbfae52f00ade6a290fd6a29ce6825a7ef5ea107e782aeef6f1261f738
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
