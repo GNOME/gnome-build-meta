@@ -24,7 +24,7 @@ projects:
     sdk/python2.bst:
     - ref: f222ef602647eecb6853681156d32de4450a2c39f4de93bd5b20235f2e660ed7
     sdk/vala-tarball.bst:
-    - ref: 0947c63c1c5a3d7447f8db955e75636ec99f956e23203a0bf0c318ffa64e4b33
+    - ref: be960a87841d85ff76cbd0e10eb691675190e54bd690d76982b3fb94a1fc67a7
     sdk/at-spi2-core.bst:
     - ref: d629cdbd674e539f8912028512af583990938c7b49e25184c126b00121ef11c6
     sdk/vala.bst:
