@@ -38,7 +38,7 @@ projects:
     core-deps/PackageKit.bst:
     - ref: 1f4554becf5df0a4d8c51d6757b9401c7ee95bf2dd6f3a73575a8ddd4cd09a01
     sdk/vala-tarball.bst:
-    - ref: 0947c63c1c5a3d7447f8db955e75636ec99f956e23203a0bf0c318ffa64e4b33
+    - ref: be960a87841d85ff76cbd0e10eb691675190e54bd690d76982b3fb94a1fc67a7
     sdk/pango.bst:
     - ref: 1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
     core-deps/upower.bst:
