@@ -12,5 +12,3 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build-aux

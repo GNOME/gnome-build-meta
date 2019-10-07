@@ -12,7 +12,6 @@ depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-aux: admin
   conf-local: >-
     --without-python
     --with-python3

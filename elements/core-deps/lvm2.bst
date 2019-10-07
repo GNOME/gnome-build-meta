@@ -15,4 +15,3 @@ variables:
     --with-staticdir=%{sbindir}
     --with-usrlibdir=%{libdir}
     --with-usrsbindir=%{sbindir}
-  conf-aux: autoconf

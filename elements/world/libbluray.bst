@@ -11,4 +11,3 @@ depends:
 variables:
   conf-local: >-
     --disable-bdjava-jar
-  conf-aux: build-aux

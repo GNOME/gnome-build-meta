@@ -8,5 +8,3 @@ depends:
 - core-deps/libsigcplusplus-2.0.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build

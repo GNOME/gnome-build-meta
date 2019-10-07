@@ -14,8 +14,6 @@ depends:
 - freedesktop-sdk.bst:components/libtirpc.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build-aux
 config:
   install-commands:
     (>):

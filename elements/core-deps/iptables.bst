@@ -9,4 +9,3 @@ depends:
 variables:
   conf-local: >-
     --disable-nftables
-  conf-aux: build-aux
