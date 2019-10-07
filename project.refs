@@ -126,7 +126,7 @@ projects:
     sdk/libsecret.bst:
     - ref: 8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a
     sdk/wpebackend-fdo.bst:
-    - ref: b0d136aa9ce9f94b1d06b258ed68c4a7b588b2e692d448d9c6eedb72edf56739
+    - ref: a919ca4a5bc445f9419a5b7f3781cfc98e5abcf5d7259eb1869f5ab20fd18baf
     sdk/appstream-glib.bst:
     - ref: 7e27947de3742fcc02a96a22fb91e137a49cd55234c407a246476f3624a92a9f
     core/gnome-settings-daemon.bst:
@@ -150,7 +150,7 @@ projects:
     core-deps/gsound.bst:
     - ref: bba8ff30eea815037e53bee727bbd5f0b6a2e74d452a7711b819a7c444e78e53
     sdk/libwpe.bst:
-    - ref: 5d5e23ce48b35278201b3b88e5b1a89bd54b38391721b4e74ce472c3905df8b0
+    - ref: 09849dfb34877354f34f318e138971cf22e677b2179e1f0a8ea00ab0b7bd8e9b
     core-deps/libgnomekbd.bst:
     - ref: f7ca02631576e9b88aee1b1bae37ac1488b80ee7975f20a97f29e761a7172679
     sdk/WebKitGTK.bst:

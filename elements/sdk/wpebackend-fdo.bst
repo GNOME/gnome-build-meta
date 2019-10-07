@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:Igalia/WPEBackend-fdo/releases/download/1.3.1/wpebackend-fdo-1.3.1.tar.xz
+  url: github_com:Igalia/WPEBackend-fdo/releases/download/1.4.0/wpebackend-fdo-1.4.0.tar.xz
 depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
