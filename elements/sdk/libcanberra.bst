@@ -9,5 +9,3 @@ depends:
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build-aux

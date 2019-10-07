@@ -9,8 +9,6 @@ depends:
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/libtool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: config
 public:
   bst:
     integration-commands:

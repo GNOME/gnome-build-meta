@@ -7,5 +7,4 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-aux: dist/
   conf-cmd: ./dist/configure
