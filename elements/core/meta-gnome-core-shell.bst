@@ -22,7 +22,6 @@ depends:
 # Broken:
 #- core/gnome-user-share.bst
 - core/mutter.bst
-- core/network-manager-applet.bst
 - core/orca.bst
 - core/rygel.bst
 - core/sushi.bst
