@@ -29,8 +29,6 @@ depends:
 - filename: components/opus.bst
   junction: freedesktop-sdk.bst
   type: runtime
-  junction: freedesktop-sdk.bst
-  type: runtime
 - filename: components/alsa-lib.bst
   junction: freedesktop-sdk.bst
   type: runtime
