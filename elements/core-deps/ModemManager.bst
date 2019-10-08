@@ -2,7 +2,7 @@ kind: autotools
 sources:
 # https://gitlab.freedesktop.org/mobile-broadband/ModemManager/issues/85
 - kind: tar
-  url: https://www.freedesktop.org/software/ModemManager/ModemManager-1.10.4.tar.xz
+  url: https://www.freedesktop.org/software/ModemManager/ModemManager-1.10.6.tar.xz
 depends:
 - core-deps/libgudev.bst
 - core-deps/libmbim.bst

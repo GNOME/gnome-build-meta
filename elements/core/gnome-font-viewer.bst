@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-font-viewer/3.33/gnome-font-viewer-3.33.90.tar.xz
+  url: gnome_downloads:gnome-font-viewer/3.34/gnome-font-viewer-3.34.0.tar.xz
 depends:
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst

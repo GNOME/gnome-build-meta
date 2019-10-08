@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-session/3.33/gnome-session-3.33.92.tar.xz
+  url: gnome_downloads:gnome-session/3.34/gnome-session-3.34.1.tar.xz
 depends:
 - core-deps/upower.bst
 - core-deps/xmlto.bst
