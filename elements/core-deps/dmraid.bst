@@ -10,4 +10,3 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   make: make -j1
-  conf-aux: autoconf

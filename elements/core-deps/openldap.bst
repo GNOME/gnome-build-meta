@@ -8,8 +8,6 @@ build-depends:
 depends:
 - core-deps/berkeleydb.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build
 config:
   install-commands:
     (>):

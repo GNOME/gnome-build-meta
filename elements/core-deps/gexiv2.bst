@@ -8,5 +8,3 @@ depends:
 - core-deps/exiv2.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build-aux

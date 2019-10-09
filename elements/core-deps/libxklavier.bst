@@ -12,5 +12,3 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xi.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  conf-aux: build-aux

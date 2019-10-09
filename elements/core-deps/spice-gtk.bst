@@ -21,4 +21,3 @@ variables:
     --disable-smartcard
     --enable-vala
     --enable-webdav
-  conf-aux: build-aux
