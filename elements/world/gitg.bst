@@ -4,6 +4,9 @@ sources:
   url: gitlab_gnome_org:GNOME/gitg.git
   track: master
 depends:
+- core-deps/gspell.bst
+- core-deps/gtksourceview.bst
+- core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -15,7 +18,6 @@ depends:
 - sdk/libsoup.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/gtksourceview-3.bst
-- world/gtkspell.bst
 - world/libgit2-glib.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
