@@ -16,6 +16,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
