@@ -13,5 +13,5 @@ depends:
 variables:
   meson-local: >-
     -Dgtk_doc=true
-    -Dcairo=disabled
-    -Ddoctool=disabled
+    -Dcairo=false
+    -Ddoctool=false
