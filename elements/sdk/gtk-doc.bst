@@ -3,7 +3,7 @@ sources:
 - kind: tar
   url: gnome_downloads:gtk-doc/1.32/gtk-doc-1.32.tar.xz
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/python-pygments.bst
 - freedesktop-sdk.bst:components/docbook-xml.bst
@@ -12,8 +12,3 @@ depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Dtests=false
-    -Dcmake_support=true
-    -Dautotools_support=true
