@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libchamplain.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libchamplain/0.12/libchamplain-0.12.19.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

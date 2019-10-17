@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/network-manager-applet.git
-  track: master
+- kind: tar
+  url: gnome_downloads:network-manager-applet/1.8/network-manager-applet-1.8.24.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

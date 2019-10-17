@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:libinput/libinput.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/libinput/libinput-1.14.2.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
