@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk-doc.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtk-doc/1.32/gtk-doc-1.32.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

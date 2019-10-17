@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gobject-introspection.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gobject-introspection/1.62/gobject-introspection-1.62.0.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/bison.bst

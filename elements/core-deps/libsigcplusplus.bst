@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:libsigcplusplus/libsigcplusplus.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsigc++/3.0/libsigc++-3.0.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
