@@ -1,10 +1,13 @@
-kind: autotools
+kind: meson
 sources:
 - kind: tar
-  url: sourceforge_net:linuxwacom/files/libwacom/libwacom-0.23.tar.bz2
+  url: github_com:linuxwacom/libwacom/releases/download/libwacom-1.1/libwacom-1.1.tar.bz2
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -Dtests=false
