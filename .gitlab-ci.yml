@@ -304,8 +304,6 @@ cve_report:
   stage: reports
   dependencies: [track]
   script:
-  - pip3 install --user lxml
-
   - ${BST} pull platform-manifest.bst sdk-manifest.bst
 
   - ${BST} checkout platform-manifest.bst platform-manifest/
