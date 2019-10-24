@@ -18,3 +18,16 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+(?):
+- arch == "x86_64":
+    environment:
+      CXXFLAGS: '%{flags_x86_64} -fno-exceptions'
+- arch == "i686":
+    environment:
+      CXXFLAGS: '%{flags_i686} -fno-exceptions'
+- arch == "arm":
+    environment:
+      CXXFLAGS: '%{flags_arm} -fno-exceptions'
+- arch == "aarch64":
+    environment:
+      CXXFLAGS: '%{flags_aarch64} -fno-exceptions'
