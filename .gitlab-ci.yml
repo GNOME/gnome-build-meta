@@ -6,6 +6,7 @@ variables:
   BST: "bst --config build.conf --log-file logs/build.log --colors"
   BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
   BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
+  FLAT_MANAGER_SHA: '0.3.5-0-g754f9aa3b539191da395a53b710df1051772eda1'
   FLATPAK_BRANCH: '3.32'
 
   # Docker Images
@@ -91,6 +92,7 @@ before_script:
 
   # flat-manager-client to push to flathub
   - git clone https://github.com/flatpak/flat-manager
+  - git -C flat-manager/ checkout $FLAT_MANAGER_SHA
 
   - |
     if [ -n "$FLATHUB_REPO_TOKEN" ]; then
