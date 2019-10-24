@@ -210,11 +210,7 @@ cve_report:
   <<: *x86_64
   stage: reports
   script:
-    - pip3 install --user lxml
-
-    - ${BST} track --deps all platform-manifest.bst sdk-manifest.bst
-    - ${BST} build platform-manifest.bst
-    - ${BST} build sdk-manifest.bst
+    - ${BST} build platform-manifest.bst sdk-manifest.bst
 
     - ${BST} checkout platform-manifest.bst platform-manifest/
     - ${BST} checkout sdk-manifest.bst sdk-manifest/
