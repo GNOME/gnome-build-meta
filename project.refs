@@ -39,7 +39,7 @@ projects:
     - ref: 67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd
     - {}
     sdk/pango.bst:
-    - ref: 3e1e41ba838737e200611ff001e3b304c2ca4cdbba63d200a20db0b0ddc0f86c
+    - ref: 66a5b6cc13db73efed67b8e933584509f8ddb7b10a8a40c3850ca4a985ea1b1f
     core-deps/accountsservice.bst:
     - ref: ff2b2419a7e06bd9cb335ffe391c7409b49a0f0130b890bd54692a3986699c9b
     sdk/gdk-pixbuf.bst:
