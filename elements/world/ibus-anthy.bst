@@ -3,7 +3,6 @@ sources:
 - kind: tar
   url: github_com:ibus/ibus-anthy/releases/download/1.5.11/ibus-anthy-1.5.11.tar.gz
 build-depends:
-- freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
