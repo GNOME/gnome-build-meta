@@ -24,3 +24,9 @@ variables:
     --with-python=python3
     --disable-emoji-dict
     --disable-unicode-dict
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libibus-1.0.so'

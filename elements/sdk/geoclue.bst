@@ -17,3 +17,9 @@ variables:
     -Dcdma-source=false
     -Dmodem-gps-source=false
     -Dnmea-source=false
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgeoclue-2.so'

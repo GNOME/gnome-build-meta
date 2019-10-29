@@ -24,3 +24,21 @@ runtime-depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/webrtc-audio-processing.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgstadaptivedemux-1.0.so'
+        - '%{libdir}/libgstbadaudio-1.0.so'
+        - '%{libdir}/libgstbasecamerabinsrc-1.0.so'
+        - '%{libdir}/libgstcodecparsers-1.0.so'
+        - '%{libdir}/libgstinsertbin-1.0.so'
+        - '%{libdir}/libgstisoff-1.0.so'
+        - '%{libdir}/libgstmpegts-1.0.so'
+        - '%{libdir}/libgstphotography-1.0.so'
+        - '%{libdir}/libgstplayer-1.0.so'
+        - '%{libdir}/libgstsctp-1.0.so'
+        - '%{libdir}/libgsturidownloader-1.0.so'
+        - '%{libdir}/libgstwayland-1.0.so'
+        - '%{libdir}/libgstwebrtc-1.0.so'

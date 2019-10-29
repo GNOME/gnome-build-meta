@@ -23,3 +23,9 @@ variables:
     -Drpm=false
     -Dfonts=false
     -Ddep11=false
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libappstream-glib.so'

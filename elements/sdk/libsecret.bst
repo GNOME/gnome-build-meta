@@ -16,3 +16,9 @@ depends:
 variables:
   meson-local: >-
     -Dgtk_doc=false
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libsecret-1.so'

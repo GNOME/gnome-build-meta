@@ -9,3 +9,9 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libcroco-0.6.so'

@@ -12,3 +12,9 @@ variables:
   conf-local: >-
     --with-hunspell
     --with-hunspell-dir=/usr/share/myspell
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libenchant-2.so'

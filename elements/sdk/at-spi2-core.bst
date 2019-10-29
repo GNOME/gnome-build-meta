@@ -10,3 +10,9 @@ depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libatspi.so'

@@ -9,3 +9,10 @@ depends:
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libcanberra-gtk3.so'
+        - '%{libdir}/libcanberra.so'

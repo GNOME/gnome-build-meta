@@ -12,3 +12,12 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgck-1.so'
+        - '%{libdir}/libgcr-3.so'
+        - '%{libdir}/libgcr-base-3.so'
+        - '%{libdir}/libgcr-ui-3.so'
