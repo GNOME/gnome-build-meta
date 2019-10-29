@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/glib.git
-  track: master
+  track: param-value-default
 depends:
 - filename: sdk/gtk-doc.bst
   type: build
