@@ -17,3 +17,9 @@ depends:
 variables:
   meson-local: >-
     -Dbash_completion=false
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libdconf.so'

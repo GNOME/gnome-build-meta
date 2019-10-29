@@ -11,3 +11,9 @@ depends:
 - sdk/atk.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libatk-bridge-2.0.so'

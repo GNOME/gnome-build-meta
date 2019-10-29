@@ -10,3 +10,9 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgee-0.8.so'

@@ -14,3 +14,9 @@ depends:
 variables:
   meson-local: >-
     -Ddocbook_docs=disabled
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libnotify.so'

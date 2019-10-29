@@ -6,3 +6,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libbrotlicommon.so'
+        - '%{libdir}/libbrotlidec.so'
+        - '%{libdir}/libbrotlienc.so'

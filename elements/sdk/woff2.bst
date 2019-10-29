@@ -7,3 +7,11 @@ build-depends:
 depends:
 - sdk/brotli.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libwoff2common.so'
+        - '%{libdir}/libwoff2dec.so'
+        - '%{libdir}/libwoff2enc.so'

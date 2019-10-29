@@ -27,3 +27,11 @@ variables:
     --enable-xlib-egl-platform
     --enable-wayland-egl-platform
     --enable-wayland-egl-server
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libcogl-pango.so'
+        - '%{libdir}/libcogl-path.so'
+        - '%{libdir}/libcogl.so'

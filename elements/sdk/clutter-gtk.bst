@@ -8,3 +8,9 @@ depends:
 - sdk/clutter.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libclutter-gtk-1.0.so'

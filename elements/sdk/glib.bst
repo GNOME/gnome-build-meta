@@ -35,3 +35,11 @@ public:
     - glib-compile-schemas %{prefix}/share/glib-2.0/schemas
     overlap-whitelist:
     - '**'
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgio-2.0.so'
+        - '%{libdir}/libglib-2.0.so'
+        - '%{libdir}/libgmodule-2.0.so'
+        - '%{libdir}/libgobject-2.0.so'
+        - '%{libdir}/libgthread-2.0.so'

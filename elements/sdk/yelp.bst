@@ -20,3 +20,7 @@ public:
     integration-commands:
     - |
       update-desktop-database
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libyelp.so'

@@ -28,3 +28,9 @@ depends:
 - arch == "aarch64":
     environment:
       CXXFLAGS: "%{flags_aarch64} -fno-exceptions"
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libvte-2.91.so'
