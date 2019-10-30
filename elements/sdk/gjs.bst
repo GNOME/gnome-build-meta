@@ -15,3 +15,9 @@ depends:
 variables:
   conf-local: >-
     --enable-installed-tests
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgjs.so'

@@ -27,3 +27,9 @@ depends:
 variables:
   meson-local: >-
     -Denable-broadway-backend=true
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgtk-4.so'

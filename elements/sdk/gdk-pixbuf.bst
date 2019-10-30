@@ -19,3 +19,8 @@ public:
   bst:
     integration-commands:
     - gdk-pixbuf-query-loaders --update-cache
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgdk_pixbuf-2.0.so'
+        - '%{libdir}/libgdk_pixbuf_xlib-2.0.so'

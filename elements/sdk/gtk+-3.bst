@@ -46,5 +46,11 @@ public:
         fi
       done
     - gtk-query-immodules-3.0 --update-cache
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libgailutil-3.so'
+        - '%{libdir}/libgdk-3.so'
+        - '%{libdir}/libgtk-3.so'
   cpe:
     product: gtk+

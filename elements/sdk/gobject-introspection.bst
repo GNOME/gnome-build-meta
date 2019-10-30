@@ -16,3 +16,11 @@ variables:
     -Dgtk_doc=true
     -Dcairo=disabled
     -Ddoctool=disabled
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{datadir}/gobject-introspection-1.0'
+        - '%{datadir}/gobject-introspection-1.0/**'
+        - '%{libdir}/libgirepository-1.0.so'

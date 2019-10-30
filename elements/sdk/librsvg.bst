@@ -23,3 +23,9 @@ variables:
     --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/librsvg-2.so'

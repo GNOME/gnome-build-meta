@@ -14,3 +14,11 @@ depends:
 - freedesktop-sdk.bst:components/fribidi.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libpango-1.0.so'
+        - '%{libdir}/libpangocairo-1.0.so'
+        - '%{libdir}/libpangoft2-1.0.so'

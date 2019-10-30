@@ -9,3 +9,11 @@ depends:
 variables:
   cmake-local: >-
     -DOPENJPEG_INSTALL_LIB_DIR=%{lib}
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libopenjp2.so'
+        - '%{libdir}/openjpeg-2.3'
+        - '%{libdir}/openjpeg-2.3/**'

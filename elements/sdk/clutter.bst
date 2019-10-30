@@ -25,3 +25,10 @@ variables:
     --enable-wayland-backend
     --enable-wayland-compositor
     --enable-gdk-backend
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libclutter-1.0.so'
+        - '%{libdir}/libclutter-glx-1.0.so'

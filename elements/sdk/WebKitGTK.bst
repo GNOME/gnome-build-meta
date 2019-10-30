@@ -59,5 +59,11 @@ variables:
       CFLAGS: '%{flags_arm} -g1'
       CXXFLAGS: '%{flags_arm} -g1'
 public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libjavascriptcoregtk-4.0.so'
+        - '%{libdir}/libwebkit2gtk-4.0.so'
   cpe:
     product: webkitgtk+
