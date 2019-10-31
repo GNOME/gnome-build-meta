@@ -15,7 +15,7 @@
 #
 #   https://gitlab.com/BuildStream/buildstream/issues/163
 
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/mm-common.git
@@ -24,11 +24,10 @@ sources:
   path: files/mm-common/libstdc++.tag
   directory: doctags/
 build-depends:
-- freedesktop-sdk.bst:components/gzip.bst
-- freedesktop-sdk.bst:components/tar.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-network
+  meson-local: >-
+    -Duse-network=false
