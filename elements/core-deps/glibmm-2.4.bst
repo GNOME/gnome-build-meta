@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/glibmm.git
-  track: glibmm-2-60
+  track: glibmm-2-62
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
