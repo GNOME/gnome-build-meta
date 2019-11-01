@@ -34,7 +34,6 @@ depends:
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
-- core/network-manager-applet.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/clutter-gtk.bst
 - sdk/gdk-pixbuf.bst
