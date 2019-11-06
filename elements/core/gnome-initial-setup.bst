@@ -13,12 +13,12 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libgweather.bst
+- core-deps/libnma.bst
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
-- core/network-manager-applet.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst

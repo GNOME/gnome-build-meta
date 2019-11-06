@@ -63,6 +63,7 @@ depends:
 - world/libssh2.bst
 - world/libusbmuxd.bst
 - world/lightsoff.bst
+- world/network-manager-applet.bst
 - world/plist.bst
 - world/polari.bst
 - world/qqwing.bst

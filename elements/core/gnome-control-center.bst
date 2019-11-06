@@ -25,6 +25,7 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
+- core-deps/libnma.bst
 - core-deps/libwacom.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
@@ -34,7 +35,6 @@ depends:
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
-- core/network-manager-applet.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/clutter-gtk.bst
 - sdk/gdk-pixbuf.bst
