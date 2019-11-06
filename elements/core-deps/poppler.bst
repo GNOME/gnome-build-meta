@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: https://poppler.freedesktop.org/poppler-0.72.0.tar.xz
+  url: https://poppler.freedesktop.org/poppler-0.82.0.tar.xz
 depends:
 - sdk/gobject-introspection.bst
 - sdk/openjpeg.bst
