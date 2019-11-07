@@ -12,9 +12,11 @@ build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/amtk.bst
 - core-deps/gspell.bst
 - core-deps/gtksourceview.bst
 - core-deps/libpeas.bst
+- core-deps/tepl.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsoup.bst
