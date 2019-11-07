@@ -8,6 +8,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
+- core-deps/amtk.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/atkmm.bst
 - core-deps/avahi.bst
@@ -124,6 +125,7 @@ depends:
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
 - core-deps/startup-notification.bst
+- core-deps/tepl.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
