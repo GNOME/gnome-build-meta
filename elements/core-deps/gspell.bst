@@ -1,7 +1,8 @@
 kind: autotools
 sources:
-- kind: tar
-  url: gnome_downloads:gspell/1.8/gspell-1.8.1.tar.xz
+- kind: git_tag
+  url: gitlab_gnome_org:GNOME/gspell.git
+  track: master
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
