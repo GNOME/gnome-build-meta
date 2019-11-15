@@ -100,6 +100,8 @@ default:
   - |
     # Only run this build for x86_64, instead of building it somewhere else
     if [ "${ARCH}" == "x86_64" ]; then
+        ${BST} build openh264-extension.bst:flatpak-repo.bst
+
         #
         # Don't try to push the resulting artifacts, the huge image doesnt
         # work well with the artifact cache right now.
@@ -146,6 +148,14 @@ default:
     if test $FLAT_MANAGER_REPO == nightly; then
         ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
         ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
+        flatpak build-commit-from --src-repo=checkout-repo/ repo/
+        rm -rf checkout-repo/
+    fi
+
+  - |
+    if test $FLAT_MANAGER_REPO == nightly -a $ARCH == x86_64; then
+        ${BST} pull openh264-extension.bst:flatpak-repo.bst
+        ${BST} checkout --hardlinks openh264-extension.bst:flatpak-repo.bst checkout-repo/
         flatpak build-commit-from --src-repo=checkout-repo/ repo/
         rm -rf checkout-repo/
     fi
