@@ -1,5 +1,7 @@
 kind: compose
 depends:
+- filename: platform-manifest.bst
+  type: build
 - filename: sdk-platform.bst
   type: build
 - filename: multiarch/multiarch-platform.bst
