@@ -97,6 +97,7 @@ default:
   script:
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
     flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+    openh264-extension.bst:flatpak-repo.bst
   - |
     # Only run this build for x86_64, instead of building it somewhere else
     if [ "${ARCH}" == "x86_64" ]; then
@@ -146,6 +147,14 @@ default:
     if test $FLAT_MANAGER_REPO == nightly; then
         ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
         ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
+        flatpak build-commit-from --src-repo=checkout-repo/ repo/
+        rm -rf checkout-repo/
+    fi
+
+  - |
+    if test $FLAT_MANAGER_REPO == nightly -a $ARCH == x86_64; then
+        ${BST} -o arch "${ARCH}" pull openh264-extension.bst:flatpak-repo.bst
+        ${BST} -o arch "${ARCH}" checkout --hardlinks openh264-extension.bst:flatpak-repo.bst checkout-repo/
         flatpak build-commit-from --src-repo=checkout-repo/ repo/
         rm -rf checkout-repo/
     fi
