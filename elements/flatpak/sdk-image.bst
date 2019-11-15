@@ -2,6 +2,8 @@ kind: compose
 depends:
 - filename: sdk.bst
   type: build
+- filename: sdk-manifest.bst
+  type: build
 - filename: multiarch/multiarch-sdk.bst
   junction: freedesktop-sdk.bst
   type: build
