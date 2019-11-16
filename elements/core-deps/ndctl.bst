@@ -7,7 +7,7 @@ build-depends:
 depends:
 - core-deps/json-c.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:vm/linux-vm-boot/kmod.bst
+- freedesktop-sdk.bst:components/kmod.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
