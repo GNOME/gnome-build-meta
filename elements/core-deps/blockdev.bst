@@ -14,5 +14,5 @@ depends:
 - core-deps/parted.bst
 - core-deps/volume-key.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:vm/linux-vm-boot/kmod.bst
+- freedesktop-sdk.bst:components/kmod.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
