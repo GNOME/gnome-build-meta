@@ -28,3 +28,4 @@ variables:
     -DENABLE_UOA=OFF
     -DENABLE_GOOGLE_AUTH=OFF
     -DLIB_INSTALL_DIR=%{libdir}
+    -DSYSCONF_INSTALL_DIR=%{sysconfdir}
