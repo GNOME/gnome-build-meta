@@ -10,8 +10,6 @@ depends:
   junction: freedesktop-sdk.bst
 - filename: components/util-linux.bst
   junction: freedesktop-sdk.bst
-- filename: components/pcre.bst
-  junction: freedesktop-sdk.bst
 - filename: components/python3.bst
   junction: freedesktop-sdk.bst
 # a dummy dependency so our glib is always staged

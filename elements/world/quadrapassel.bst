@@ -12,5 +12,5 @@ depends:
 - sdk/librsvg.bst
 - sdk/vala.bst
 - world/libmanette.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

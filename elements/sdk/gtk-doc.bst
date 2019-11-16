@@ -9,7 +9,7 @@ depends:
 - sdk/python-pygments.bst
 - freedesktop-sdk.bst:components/docbook-xml.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

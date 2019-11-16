@@ -31,7 +31,7 @@ depends:
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
