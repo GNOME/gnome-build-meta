@@ -28,3 +28,7 @@ variables:
     -DENABLE_UOA=OFF
     -DENABLE_GOOGLE_AUTH=OFF
     -DLIB_INSTALL_DIR=%{libdir}
+config:
+  install-commands:
+    (>):
+    - mv "%{install-root}%{prefix}/etc" "%{install-root}%{sysconfdir}"
