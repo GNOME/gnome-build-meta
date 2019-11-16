@@ -11,6 +11,7 @@ build-depends:
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
+- core-deps/plymouth.bst
 - sdk/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
@@ -24,7 +25,7 @@ variables:
     --enable-wayland-support
     --with-pam-prefix=%{sysconfdir}
     --with-run-dir=/run/gdm
-    --with-plymouth=no
+    --with-plymouth=yes
 
 config:
   install-commands:
