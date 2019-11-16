@@ -22,7 +22,7 @@ depends:
 - filename: components/xorg-server.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: vm/linux-vm-boot/shadow.bst
+- filename: components/shadow.bst
   junction: freedesktop-sdk.bst
   type: build
 - filename: vm/boot-integration.bst
