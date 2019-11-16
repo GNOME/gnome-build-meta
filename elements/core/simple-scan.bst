@@ -6,7 +6,6 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst
 - core-deps/libgusb.bst
 - core-deps/sane-backends.bst
