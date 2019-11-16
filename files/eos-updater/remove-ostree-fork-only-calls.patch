@@ -1,0 +1,36 @@
+diff --git a/configure.ac b/configure.ac
+index 39dc486..dce47f6 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -97,6 +97,11 @@ PKG_CHECK_MODULES([JSON_GLIB],
+ PKG_CHECK_MODULES([OSTREE],
+                   [ostree-1 >= $OSTREE_REQUIRED_VERSION])
+ 
++ac_save_LIBS=$LIBS
++LIBS="$ac_save_LIBS $OSTREE_LIBS"
++AC_CHECK_FUNCS([ostree_repo_get_commit_sizes])
++LIBS=$ac_save_LIBS
++
+ PKG_CHECK_MODULES([SOUP],
+                   [libsoup-2.4])
+ 
+diff --git a/eos-updater/poll-common.c b/eos-updater/poll-common.c
+index 70ef609..3161189 100644
+--- a/eos-updater/poll-common.c
++++ b/eos-updater/poll-common.c
+@@ -1204,6 +1204,7 @@ metadata_fetch_finished (GObject *object,
+       eos_updater_set_update_label (updater, label ? label : "");
+       eos_updater_set_update_message (updater, message ? message : "");
+ 
++#ifdef HAVE_OSTREE_REPO_GET_COMMIT_SIZES
+       if (ostree_repo_get_commit_sizes (repo, info->checksum,
+                                         &new_archived, &new_unpacked,
+                                         NULL,
+@@ -1219,6 +1220,7 @@ metadata_fetch_finished (GObject *object,
+           eos_updater_set_downloaded_bytes (updater, 0);
+         }
+       else /* no size data available (may or may not be an error) */
++#endif
+         {
+           eos_updater_set_full_download_size (updater, -1);
+           eos_updater_set_full_unpacked_size (updater, -1);
