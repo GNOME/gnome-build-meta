@@ -7,7 +7,9 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/PackageKit.bst
+#- core-deps/PackageKit.bst
+- core-deps/eos-updater.bst
+- core-deps/polkit.bst
 - core-deps/flatpak.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
@@ -28,3 +30,7 @@ variables:
   meson-local: >-
     -Dfwupd=false
     -Dvalgrind=false
+    -Dpolkit=true
+    -Dflatpak=true
+    -Deos_updater=true
+    -Dpackagekit=false
