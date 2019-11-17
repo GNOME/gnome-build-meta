@@ -3,6 +3,9 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-software.git
   track: master
+  #FIXME: fix eos-updater and gnome-software upstream to use the "osname"
+- kind: patch
+  path: files/gnome-software/eos-updater-gnome-os.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
