@@ -33,3 +33,9 @@ variables:
     -Dflatpak=true
     -Deos_updater=true
     -Dpackagekit=false
+config:
+  configure-commands:
+    (<):
+    #FIXME: fix eos-updater and gnome-software upstream to use the "osname"
+    - |
+      sed -i 's/Endless OS/GNOME OS/' plugins/eos-updater/gs-plugin-eos-updater.c po/*.po
