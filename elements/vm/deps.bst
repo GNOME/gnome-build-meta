@@ -1,0 +1,27 @@
+kind: stack
+
+runtime-depends:
+- freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:components/tzdata.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/xorg-server.bst
+- freedesktop-sdk.bst:components/shadow.bst
+- freedesktop-sdk.bst:vm/mesa-default.bst
+
+- core-deps/flatpak.bst
+- vm/initramfs.bst
+- vm/ostree-config.bst
+- core-deps/plymouth.bst
+- core-deps/avahi.bst
+- core-deps/eos-updater.bst
+- core-deps/kbd.bst
+
+- freedesktop-sdk.bst:vm/config/pulseaudio.bst
+- freedesktop-sdk.bst:vm/config/sudo.bst
+- freedesktop-sdk.bst:vm/config/journald.bst
+- vm/flathub-config.bst
+
+# And add GNOME core on top !
+- sdk-platform.bst
+- core.bst
+- core/systemd-presets.bst
