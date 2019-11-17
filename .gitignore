@@ -6,3 +6,9 @@ plugins/__pycache__
 
 # Never commit project.refs
 project.refs
+
+checkout/disk.qcow2
+ostree-repo
+ostree-gpg
+ostree-config.yml
+gnome.gpg
