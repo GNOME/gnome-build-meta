@@ -1,0 +1,821 @@
+diff --git a/plugins/eos-updater/gs-plugin-eos-updater.c b/plugins/eos-updater/gs-plugin-eos-updater.c
+index f38eee50..0d3e3c21 100644
+--- a/plugins/eos-updater/gs-plugin-eos-updater.c
++++ b/plugins/eos-updater/gs-plugin-eos-updater.c
+@@ -558,10 +558,10 @@ gs_plugin_setup (GsPlugin *plugin,
+ 	gs_app_set_scope (app, AS_APP_SCOPE_SYSTEM);
+ 	gs_app_set_kind (app, AS_APP_KIND_OS_UPGRADE);
+ 	/* TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/ */
+-	gs_app_set_name (app, GS_APP_QUALITY_LOWEST, _("Endless OS"));
++	gs_app_set_name (app, GS_APP_QUALITY_LOWEST, _("GNOME OS"));
+ 	gs_app_set_summary (app, GS_APP_QUALITY_NORMAL,
+ 			    /* TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/ */
+-			    _("An Endless OS update with new features and fixes."));
++			    _("A GNOME OS update with new features and fixes."));
+ 	/* ensure that the version doesn't appear as (NULL) in the banner, it
+ 	 * should be changed to the right value when it changes in the eos-updater */
+ 	gs_app_set_version (app, "");
+diff --git a/po/ca.po b/po/ca.po
+index 36a3460a..8522badd 100644
+--- a/po/ca.po
++++ b/po/ca.po
+@@ -4367,14 +4367,14 @@ msgstr "Inclou millores de rendiment, d'estabilitat i de seguretat."
+ msgid "Downloading featured images…"
+ msgstr "S'estan baixant les imatges destacades…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+ "Una actualització major del sistema operatiu Endless, amb noves "
+ "funcionalitat i més polida."
+diff --git a/po/cs.po b/po/cs.po
+index 4c3af4d3..022e4bed 100644
+--- a/po/cs.po
++++ b/po/cs.po
+@@ -4338,15 +4338,15 @@ msgstr "Zahrnuje zdokonalení výkonu, stability a bezpečnosti."
+ msgid "Downloading featured images…"
+ msgstr "Stahují se obrázky k významným aplikacím…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Aktualizace Endless OS s novými funkcemi a vylepšeními."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Aktualizace GNOME OS s novými funkcemi a vylepšeními."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/da.po b/po/da.po
+index 1c11e9df..95c7bc44 100644
+--- a/po/da.po
++++ b/po/da.po
+@@ -4340,16 +4340,16 @@ msgstr "Inkluderer forbedringer af ydelse, stabilitet og sikkerhed."
+ msgid "Downloading featured images…"
+ msgstr "Henter udvalgte billeder …"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "En Endless OS-opdatering med nye funktioner og rettelser."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "En GNOME OS-opdatering med nye funktioner og rettelser."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/de.po b/po/de.po
+index 09217590..4f7f07d9 100644
+--- a/po/de.po
++++ b/po/de.po
+@@ -4446,16 +4446,16 @@ msgstr "Beinhaltet Leistungs-, Stabilitäts- und Sicherheitsverbesserungen."
+ msgid "Downloading featured images…"
+ msgstr "Vorgestellte Bilder werden heruntergeladen …"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+-"Eine Aktualisierung von Endless OS mit neuen Funktionen und Fehlerbehebungen."
++"Eine Aktualisierung von GNOME OS mit neuen Funktionen und Fehlerbehebungen."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/el.po b/po/el.po
+index 5d68c63d..e19efe56 100644
+--- a/po/el.po
++++ b/po/el.po
+@@ -4392,15 +4392,15 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Λήψη εικόνων δημοφιλέστερων…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Μια ενημέρωση του Endless OS με νέες δυνατότητες και επιδιορθώσεις."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Μια ενημέρωση του GNOME OS με νέες δυνατότητες και επιδιορθώσεις."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/en_GB.po b/po/en_GB.po
+index 106e9397..8329ceee 100644
+--- a/po/en_GB.po
++++ b/po/en_GB.po
+@@ -4306,16 +4306,16 @@ msgstr "Includes performance, stability and security improvements."
+ msgid "Downloading featured images…"
+ msgstr "Downloading featured images…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "A GNOME OS update with new features and fixes."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/es.po b/po/es.po
+index 366ff1df..99ca73db 100644
+--- a/po/es.po
++++ b/po/es.po
+@@ -4359,16 +4359,16 @@ msgstr "Incluye mejoras en el rendimiento, la estabilidad y la seguridad."
+ msgid "Downloading featured images…"
+ msgstr "Descargando imágenes destacadas…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+-"Una actualización mayor de Endless OS, con características nuevas y "
++"Una actualización mayor de GNOME OS, con características nuevas y "
+ "correcciones."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/eu.po b/po/eu.po
+index ea190548..49a33383 100644
+--- a/po/eu.po
++++ b/po/eu.po
+@@ -4176,15 +4176,15 @@ msgstr "Errendimenduaren, egonkortasunaren eta segurtasunaren hobekuntzak ditu."
+ msgid "Downloading featured images…"
+ msgstr "Nabarmendutako irudiak deskargatzen…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Endless OS eguneraketa bat, eginbide eta akatsen zuzenketa berriekin."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "GNOME OS eguneraketa bat, eginbide eta akatsen zuzenketa berriekin."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/fa.po b/po/fa.po
+index b870423a..484ba6b4 100644
+--- a/po/fa.po
++++ b/po/fa.po
+@@ -4237,14 +4237,14 @@ msgstr "شامل بهینه‌سازی‌های کارایی، پایداری و
+ msgid "Downloading featured images…"
+ msgstr "بارگیری تصویرهای ویژه…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
++msgid "GNOME OS"
+ msgstr "سیستم‌عامل اندلس"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+ "یک به‌روز رساین سیستم‌عامل اندلس، همراه با امکانات جدید و بهینه‌سازی‌های بیش‌تر."
+ 
+diff --git a/po/fi.po b/po/fi.po
+index 2c3937ce..16ee2aac 100644
+--- a/po/fi.po
++++ b/po/fi.po
+@@ -4324,15 +4324,15 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Ladataan nostokuvia…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Endless OS -päivitys uusin ominaisuuksin ja parannuksin."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "GNOME OS -päivitys uusin ominaisuuksin ja parannuksin."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/fr.po b/po/fr.po
+index 1adf1cd2..a00fcdaa 100644
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -4395,22 +4395,22 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Téléchargement des images mises en avant…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+-"Une mise à jour d’Endless OS, avec de nouvelles fonctionnalités et "
++"Une mise à jour d’GNOME OS, avec de nouvelles fonctionnalités et "
+ "corrections."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+ msgstr ""
+-"Le service de mise à jour d’Endless OS n’a pas pu récupérer et appliquer la "
++"Le service de mise à jour d’GNOME OS n’a pas pu récupérer et appliquer la "
+ "mise à niveau."
+ 
+ #: plugins/epiphany/org.gnome.Software.Plugin.Epiphany.metainfo.xml.in:6
+diff --git a/po/fur.po b/po/fur.po
+index b03d437f..cb8a23f5 100644
+--- a/po/fur.po
++++ b/po/fur.po
+@@ -4351,15 +4351,15 @@ msgstr "Al inclût mioraments di prestazion, stabilitât e sigurece."
+ msgid "Downloading featured images…"
+ msgstr "Daûr a discjariâ lis imagjins in risalt…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Un inzornament di Endless OS cun gnovis funzionalitâts e mioraments."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Un inzornament di GNOME OS cun gnovis funzionalitâts e mioraments."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/gl.po b/po/gl.po
+index 702c4b41..555a2d48 100644
+--- a/po/gl.po
++++ b/po/gl.po
+@@ -4349,16 +4349,16 @@ msgstr "Inclúe melloras no rendemento, estabilidade e de seguridade."
+ msgid "Downloading featured images…"
+ msgstr "Descargando as imaxes destacadas…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+-"Hai unha anovación de Endless OS, con novas características e melloras."
++"Hai unha anovación de GNOME OS, con novas características e melloras."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/hr.po b/po/hr.po
+index 97ad9a57..1db6f974 100644
+--- a/po/hr.po
++++ b/po/hr.po
+@@ -4333,15 +4333,15 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Preuzimanje potrebnih slika…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Endless OS nadopuna, s novim značajkama i popravcima."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "GNOME OS nadopuna, s novim značajkama i popravcima."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/hu.po b/po/hu.po
+index 42163400..ff3ef99a 100644
+--- a/po/hu.po
++++ b/po/hu.po
+@@ -4360,16 +4360,16 @@ msgstr "Teljesítménybeli, stabilitási és biztonsági javításokat tartalmaz
+ msgid "Downloading featured images…"
+ msgstr "Kiemelt képek letöltése…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Egy Endless OS frissítés új funkciókkal és javításokkal."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Egy GNOME OS frissítés új funkciókkal és javításokkal."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/id.po b/po/id.po
+index d39d11e6..8094b52e 100644
+--- a/po/id.po
++++ b/po/id.po
+@@ -4333,15 +4333,15 @@ msgstr "Memuat perbaikan kinerja, stabilitas, dan keamanan."
+ msgid "Downloading featured images…"
+ msgstr "Mengunduh gambar pilihan…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Pemutakhiran Endless OS dengan fitur dan perbaikan baru."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Pemutakhiran GNOME OS dengan fitur dan perbaikan baru."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/it.po b/po/it.po
+index 3638677d..979d7012 100644
+--- a/po/it.po
++++ b/po/it.po
+@@ -4390,16 +4390,16 @@ msgstr "Include miglioramenti di prestazioni, stabilità e sicurezza."
+ msgid "Downloading featured images…"
+ msgstr "Scaricamento immagini in evidenza…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Un aggiornamento di Endless OS con nuove funzionalità e correzioni."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Un aggiornamento di GNOME OS con nuove funzionalità e correzioni."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/ja.po b/po/ja.po
+index 9212708a..bd974f75 100644
+--- a/po/ja.po
++++ b/po/ja.po
+@@ -4277,14 +4277,14 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr ""
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
++msgid "GNOME OS"
+ msgstr ""
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/ko.po b/po/ko.po
+index f7fd3320..1eb0e705 100644
+--- a/po/ko.po
++++ b/po/ko.po
+@@ -4240,15 +4240,15 @@ msgstr "성능, 안정성, 보안 개선 요소가 있습니다."
+ msgid "Downloading featured images…"
+ msgstr "추천 그림 다운로드 중…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "새 기능과 수정 사항이 들어있는 Endless OS 업데이트입니다."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "새 기능과 수정 사항이 들어있는 GNOME OS 업데이트입니다."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/lt.po b/po/lt.po
+index 79f8bf8d..911e53f4 100644
+--- a/po/lt.po
++++ b/po/lt.po
+@@ -4337,16 +4337,16 @@ msgstr "Turi našumo, stabilumo bei saugumo patobulinimus."
+ msgid "Downloading featured images…"
+ msgstr "Parsiunčiami siūlomų programų paveikslėliai…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Endless OS atnaujinimas su naujomis ypatybėmis ir taisymais."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "GNOME OS atnaujinimas su naujomis ypatybėmis ir taisymais."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/mjw.po b/po/mjw.po
+index ff4efb7d..3a5c9748 100644
+--- a/po/mjw.po
++++ b/po/mjw.po
+@@ -4161,14 +4161,14 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr ""
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/nb.po b/po/nb.po
+index cdef6c31..80730f4d 100644
+--- a/po/nb.po
++++ b/po/nb.po
+@@ -4264,14 +4264,14 @@ msgstr "Inneholder forbedringer for ytelse, stabilitet og sikkerhet."
+ msgid "Downloading featured images…"
+ msgstr "Laster ned utvalgte bilder …"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
++msgid "GNOME OS"
+ msgstr "Endless operativsystem"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr "En operativsystemoppdatering for Endless med ny funksjonalitet og feilrettinger."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/nl.po b/po/nl.po
+index 742c2b3c..d5978e5f 100644
+--- a/po/nl.po
++++ b/po/nl.po
+@@ -4387,16 +4387,16 @@ msgstr "Inclusief verbeteringen voor prestatie, stabiliteit en veiligheid."
+ msgid "Downloading featured images…"
+ msgstr "Afbeeldingen worden gedownload…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Een Endless OS-update, met nieuwe functies en verbeteringen."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Een GNOME OS-update, met nieuwe functies en verbeteringen."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/pa.po b/po/pa.po
+index cacc9c63..2386f866 100644
+--- a/po/pa.po
++++ b/po/pa.po
+@@ -4388,16 +4388,16 @@ msgstr "ਕਾਰਗੁਜ਼ਾਰੀ, ਸਥਿਰਤਾ ਅਤੇ ਸੁਰੱ
+ msgid "Downloading featured images…"
+ msgstr "…ਫੀਚਰ ਈਮੇਜ਼ ਡਾਊਨਲੋਡ ਕੀਤੇ ਜਾ ਰਹੇ ਹਨ"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+ #| msgid "A major upgrade, with new features and added polish."
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "ਵੱਡਾ ਅੱਪਗਰੇਡ, ਨਵੇਂ ਫ਼ੀਚਰਾਂ ਅਤੇ ਕੀਤੇ ਸੁਧਾਰਾਂ ਨਾਲ Endless OS ਅੱਪਡੇਟ ਹੈ।"
++msgid "A GNOME OS update with new features and fixes."
++msgstr "ਵੱਡਾ ਅੱਪਗਰੇਡ, ਨਵੇਂ ਫ਼ੀਚਰਾਂ ਅਤੇ ਕੀਤੇ ਸੁਧਾਰਾਂ ਨਾਲ GNOME OS ਅੱਪਡੇਟ ਹੈ।"
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/pl.po b/po/pl.po
+index 6c15e2c2..1abdc7f9 100644
+--- a/po/pl.po
++++ b/po/pl.po
+@@ -4398,16 +4398,16 @@ msgstr "Zawierają ulepszenia wydajności, stabilności i bezpieczeństwa."
+ msgid "Downloading featured images…"
+ msgstr "Pobieranie obrazów polecanych programów…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr ""
+-"Aktualizacja systemu Endless OS, dodająca nowe funkcje i naprawiająca błędy."
++"Aktualizacja systemu GNOME OS, dodająca nowe funkcje i naprawiająca błędy."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/pt_BR.po b/po/pt_BR.po
+index 1b4d56f2..cb23797f 100644
+--- a/po/pt_BR.po
++++ b/po/pt_BR.po
+@@ -4372,15 +4372,15 @@ msgstr "Inclui melhorias de desempenho, estabilidade e segurança."
+ msgid "Downloading featured images…"
+ msgstr "Baixando imagens de destaques…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Uma atualização do Endless OS com com novos recursos e correções."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Uma atualização do GNOME OS com com novos recursos e correções."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/ro.po b/po/ro.po
+index 64ebace0..07579de5 100644
+--- a/po/ro.po
++++ b/po/ro.po
+@@ -4358,14 +4358,14 @@ msgstr "Include îmbunătățiri de performanță, stabilitate și securitate."
+ msgid "Downloading featured images…"
+ msgstr "Se descarcă imaginile recomandărilor…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
++msgid "GNOME OS"
+ msgstr "OS Endless"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr "O înnoire OS Endless cu funcționalități noi și revizuiri."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/sl.po b/po/sl.po
+index 3a240d29..32924a4f 100644
+--- a/po/sl.po
++++ b/po/sl.po
+@@ -4370,14 +4370,14 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Poteka prejemanje zaslonskih slik programov …"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr "Posodobitev Endles OS z novimi zmožnostmi."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/sr.po b/po/sr.po
+index 77935992..68c1524b 100644
+--- a/po/sr.po
++++ b/po/sr.po
+@@ -4379,14 +4379,14 @@ msgstr ""
+ msgid "Downloading featured images…"
+ msgstr "Преузимам издвојене слике…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
++msgid "GNOME OS"
+ msgstr "Ендлес ОС"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
++msgid "A GNOME OS update with new features and fixes."
+ msgstr "Надоградња за Ендлес ОС, са новим функцијама и додатим исправкама."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+diff --git a/po/sv.po b/po/sv.po
+index 3983a79d..374ba4d5 100644
+--- a/po/sv.po
++++ b/po/sv.po
+@@ -4329,15 +4329,15 @@ msgstr "Innehåller prestanda-, stabilitets- och säkerhetsförbättringar."
+ msgid "Downloading featured images…"
+ msgstr "Hämtar bilder i blickfånget…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "En Endless OS-uppdatering med nya funktioner och fixar."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "En GNOME OS-uppdatering med nya funktioner och fixar."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
+diff --git a/po/tr.po b/po/tr.po
+index 33c836e3..c2031068 100644
+--- a/po/tr.po
++++ b/po/tr.po
+@@ -4294,15 +4294,15 @@ msgstr "Performans, kararlılık ve güvenlik geliştirmeleri içerir."
+ msgid "Downloading featured images…"
+ msgstr "Vitrin resimleri indiriliyor…"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:561
+-msgid "Endless OS"
+-msgstr "Endless OS"
++msgid "GNOME OS"
++msgstr "GNOME OS"
+ 
+-#. TRANSLATORS: ‘Endless OS’ is a brand name; https://endlessos.com/
++#. TRANSLATORS: ‘GNOME OS’ is a brand name; https://endlessos.com/
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:564
+-msgid "An Endless OS update with new features and fixes."
+-msgstr "Yeni özellikler ve düzeltmeler içeren Endless OS güncellemesi."
++msgid "A GNOME OS update with new features and fixes."
++msgstr "Yeni özellikler ve düzeltmeler içeren GNOME OS güncellemesi."
+ 
+ #: plugins/eos-updater/gs-plugin-eos-updater.c:825
+ msgid "EOS update service could not fetch and apply the update."
