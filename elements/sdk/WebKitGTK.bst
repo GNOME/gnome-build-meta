@@ -4,6 +4,8 @@ sources:
   url: webkitgtk_org:webkitgtk-2.26.2.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
+- kind: patch
+  path: files/webkitgtk/u16-next-syntax.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local

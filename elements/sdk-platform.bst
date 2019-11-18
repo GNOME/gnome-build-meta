@@ -131,7 +131,6 @@ depends:
 - freedesktop-sdk.bst:components/osmesa.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:components/pcre2.bst
-- freedesktop-sdk.bst:components/pcre.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/python3-pip.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst

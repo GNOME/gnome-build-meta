@@ -8,5 +8,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
