@@ -7,10 +7,7 @@ variables:
   BST_TRACK_TAGS: 'False'
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '1.4.0-0-gf8ca130adb632614ebff8453fd91d4c96e87221d'
-  BST_EXTERNAL_SHA: '0.18.0-0-g755206670c87a2999132025d24b0d0aacc611ef2'
-  FLAT_MANAGER_SHA: '0.3.5-0-g754f9aa3b539191da395a53b710df1051772eda1'
-  DOCKER_IMAGE_ID: '1a534a96f9144ca8ee87cee1fef97faa7c396533'
+  DOCKER_IMAGE_ID: 'e593f441b6ac7536b0e35a4354dc20c6c123f6b5'
   FLATPAK_BRANCH: master
 
   # Docker Images
@@ -28,16 +25,6 @@ stages:
 
 default:
   before_script:
-  # Use specific version of BuildStream
-  - git clone https://gitlab.com/BuildStream/buildstream.git
-  - git -C buildstream/ checkout $BST_SHA
-  - pip3 install buildstream/
-
-  # install bst-external nedded for the flatpak_image plugin
-  - git clone https://gitlab.com/BuildStream/bst-external.git
-  - git -C bst-external/ checkout $BST_EXTERNAL_SHA
-  - pip3 install bst-external/
-
   # Ensure the log directory exists
   - mkdir -p logs
 
@@ -58,10 +45,6 @@ default:
           client-cert: client.crt
           push: true
     EOF
-
-  # flat-manager-client to push to flathub
-  - git clone https://github.com/flatpak/flat-manager
-  - git -C flat-manager/ checkout $FLAT_MANAGER_SHA
 
   - |
     case "$FLATPAK_BRANCH" in
