@@ -145,7 +145,7 @@ default:
 
   - flatpak build-update-repo --generate-static-deltas repo/
 
-  - flat-manager/flat-manager-client push $(cat build.txt) repo/
+  - flat-manager-client push $(cat build.txt) repo/
   only:
   - master
   - /^gnome-\d-\d\d$/
@@ -230,7 +230,7 @@ flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
   script:
-  - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
+  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
     > build.txt
   artifacts:
     paths:
@@ -266,9 +266,9 @@ flatpak-finish:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-  - flat-manager/flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager/flat-manager-client publish --wait $(cat build.txt)
-  - flat-manager/flat-manager-client purge $(cat build.txt)
+  - flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager-client publish --wait $(cat build.txt)
+  - flat-manager-client purge $(cat build.txt)
   only:
   - master
   - /^gnome-\d-\d\d$/
@@ -282,7 +282,7 @@ flatpak-finish-failed:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-  - flat-manager/flat-manager-client purge $(cat build.txt)
+  - flat-manager-client purge $(cat build.txt)
   when: on_failure
   only:
   - master
