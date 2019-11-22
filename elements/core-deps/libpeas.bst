@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libpeas/1.24/libpeas-1.24.0.tar.xz
+  url: gnome_downloads:libpeas/1.24/libpeas-1.24.1.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libmbim/libmbim-1.20.0.tar.xz
+  url: https://www.freedesktop.org/software/libmbim/libmbim-1.20.2.tar.xz
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst
