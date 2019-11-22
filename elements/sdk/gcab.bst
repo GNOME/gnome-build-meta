@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gcab/1.2/gcab-1.2.tar.xz
+  url: gnome_downloads:gcab/1.3/gcab-1.3.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

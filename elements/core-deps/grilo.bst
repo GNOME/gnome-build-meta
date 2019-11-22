@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:grilo/0.3/grilo-0.3.10.tar.xz
+  url: gnome_downloads:grilo/0.3/grilo-0.3.9.tar.xz
 depends:
 - core-deps/totem-pl-parser.bst
 - sdk/glib.bst
