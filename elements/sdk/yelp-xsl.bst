@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp-xsl/3.34/yelp-xsl-3.34.0.tar.xz
+  url: gnome_downloads:yelp-xsl/3.34/yelp-xsl-3.34.2.tar.xz
 depends:
 - filename: components/itstools.bst
   junction: freedesktop-sdk.bst
