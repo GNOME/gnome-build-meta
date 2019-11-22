@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-screenshot/3.33/gnome-screenshot-3.33.90.tar.xz
+  url: gnome_downloads:gnome-screenshot/3.34/gnome-screenshot-3.34.0.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
