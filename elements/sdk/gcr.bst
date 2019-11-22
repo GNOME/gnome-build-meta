@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gcr/3.33/gcr-3.33.4.tar.xz
+  url: gnome_downloads:gcr/3.34/gcr-3.34.0.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
