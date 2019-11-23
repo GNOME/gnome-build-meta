@@ -24,9 +24,6 @@ depends:
 - sdk/zenity.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
-- freedesktop-sdk.bst:components/xorg-server.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
