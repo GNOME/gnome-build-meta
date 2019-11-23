@@ -16,7 +16,6 @@ variables:
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
 stages:
-- track
 - build
 - prepare_flatpak
 - flatpak
@@ -76,7 +75,6 @@ default:
 
 .build-template:
   stage: build
-  dependencies: [track]
   interruptible: true
   script:
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
@@ -106,7 +104,7 @@ default:
 
 .flatpak-template:
   stage: flatpak
-  dependencies: [track, flatpak-prepare]
+  dependencies: [flatpak-prepare]
   script:
   - ostree init --repo repo/ --mode archive
 
@@ -178,21 +176,6 @@ default:
 #
 # "Real" CI jobs
 #
-
-track:
-  <<: *x86_64
-  stage: track
-  interruptible: true
-  script:
-  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst
-  retry: 2
-  # only run on branches targeting master
-  rules:
-  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
-  cache: *bst-cache
-  artifacts: *logging-artifacts
-
 
 build-gnome-core-x86_64:
   extends: .build-template
@@ -266,7 +249,6 @@ flatpak-finish-failed:
 cve_report:
   <<: *x86_64
   stage: reports
-  dependencies: [track]
   script:
   - ${BST} pull platform-manifest.bst sdk-manifest.bst
 
