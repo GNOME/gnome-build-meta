@@ -12,8 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-runtime-depends:
-- core-deps/libgnomekbd.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -21,7 +19,6 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/libcroco.bst
 - core-deps/sassc.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
