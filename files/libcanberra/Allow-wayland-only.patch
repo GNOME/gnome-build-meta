@@ -1,0 +1,161 @@
+From cd5949d6542bd7ff5123aac666812172bc9c507a Mon Sep 17 00:00:00 2001
+From: Michael Meeks <michael.meeks@suse.com>
+Date: Fri, 9 Nov 2012 16:16:40 +0000
+Subject: [PATCH] gtk: Don't assume all GdkDisplays are GdkX11Displays:
+ broadway/wayland
+
+---
+ src/canberra-gtk-module.c | 23 ++++++++++++++++++++---
+ src/canberra-gtk.c        | 15 +++++++++++++--
+ 2 files changed, 33 insertions(+), 5 deletions(-)
+
+diff --git a/src/canberra-gtk-module.c b/src/canberra-gtk-module.c
+index 67791f0..b1ce812 100644
+--- a/src/canberra-gtk-module.c
++++ b/src/canberra-gtk-module.c
+@@ -25,8 +25,10 @@
+ #endif
+ 
+ #include <gtk/gtk.h>
++#ifdef GDK_WINDOWING_X11
+ #include <gdk/gdkx.h>
+ #include <X11/Xatom.h>
++#endif
+ 
+ #include "canberra-gtk.h"
+ 
+@@ -300,12 +302,16 @@ static SoundEventData* filter_sound_event(SoundEventData *d) {
+ }
+ 
+ static gint window_get_desktop(GdkDisplay *d, GdkWindow *w) {
++        gint ret = -1;
++#ifdef GDK_IS_X11_DISPLAY
+         Atom type_return;
+         gint format_return;
+         gulong nitems_return;
+         gulong bytes_after_return;
+         guchar *data = NULL;
+-        gint ret = -1;
++
++        if (!GDK_IS_X11_DISPLAY(d))
++                return 0;
+ 
+         if (XGetWindowProperty(GDK_DISPLAY_XDISPLAY(d), GDK_WINDOW_XID(w),
+                                gdk_x11_get_xatom_by_name_for_display(d, "_NET_WM_DESKTOP"),
+@@ -323,17 +329,22 @@ static gint window_get_desktop(GdkDisplay *d, GdkWindow *w) {
+ 
+         if (type_return != None && data != NULL)
+                 XFree(data);
++#endif
+ 
+         return ret;
+ }
+ 
+ static gint display_get_desktop(GdkDisplay *d) {
++        gint ret = -1;
++#ifdef GDK_IS_X11_DISPLAY
+         Atom type_return;
+         gint format_return;
+         gulong nitems_return;
+         gulong bytes_after_return;
+         guchar *data = NULL;
+-        gint ret = -1;
++
++        if (!GDK_IS_X11_DISPLAY(d))
++                return 0;
+ 
+         if (XGetWindowProperty(GDK_DISPLAY_XDISPLAY(d), DefaultRootWindow(GDK_DISPLAY_XDISPLAY(d)),
+                                gdk_x11_get_xatom_by_name_for_display(d, "_NET_CURRENT_DESKTOP"),
+@@ -352,19 +363,24 @@ static gint display_get_desktop(GdkDisplay *d) {
+ 
+         if (type_return != None && data != NULL)
+                 XFree(data);
++#endif
+ 
+         return ret;
+ }
+ 
+ static gboolean window_is_xembed(GdkDisplay *d, GdkWindow *w) {
++        gboolean ret = FALSE;
++#ifdef GDK_IS_X11_DISPLAY
+         Atom type_return;
+         gint format_return;
+         gulong nitems_return;
+         gulong bytes_after_return;
+         guchar *data = NULL;
+-        gboolean ret = FALSE;
+         Atom xembed;
+ 
++        if (!GDK_IS_X11_DISPLAY(d))
++                return FALSE;
++
+         /* Gnome Panel applets are XEMBED windows. We need to make sure we
+          * ignore them */
+ 
+@@ -392,6 +408,7 @@ static gboolean window_is_xembed(GdkDisplay *d, GdkWindow *w) {
+ 
+         if (type_return != None && data != NULL)
+                 XFree(data);
++#endif
+ 
+         return ret;
+ }
+diff --git a/src/canberra-gtk.c b/src/canberra-gtk.c
+index 34446f5..afa0a28 100644
+--- a/src/canberra-gtk.c
++++ b/src/canberra-gtk.c
+@@ -26,8 +26,10 @@
+ 
+ #include <gtk/gtk.h>
+ #include <gdk/gdk.h>
++#ifdef GDK_WINDOWING_X11
+ #include <gdk/gdkx.h>
+ #include <X11/Xatom.h>
++#endif
+ 
+ #include "canberra.h"
+ #include "canberra-gtk.h"
+@@ -178,12 +180,16 @@ static GtkWindow* get_toplevel(GtkWidget *w) {
+ }
+ 
+ static gint window_get_desktop(GdkDisplay *d, GdkWindow *w) {
++        gint ret = -1;
++#ifdef GDK_IS_X11_DISPLAY
+         Atom type_return;
+         gint format_return;
+         gulong nitems_return;
+         gulong bytes_after_return;
+         guchar *data = NULL;
+-        gint ret = -1;
++
++        if (!GDK_IS_X11_DISPLAY(d))
++                return 0;
+ 
+         if (XGetWindowProperty(GDK_DISPLAY_XDISPLAY(d), GDK_WINDOW_XID(w),
+                                gdk_x11_get_xatom_by_name_for_display(d, "_NET_WM_DESKTOP"),
+@@ -201,6 +207,7 @@ static gint window_get_desktop(GdkDisplay *d, GdkWindow *w) {
+ 
+         if (type_return != None && data != NULL)
+                 XFree(data);
++#endif
+ 
+         return ret;
+ }
+@@ -258,9 +265,13 @@ int ca_gtk_proplist_set_for_widget(ca_proplist *p, GtkWidget *widget) {
+                 GdkDisplay *display = NULL;
+                 gint x = -1, y = -1, width = -1, height = -1, screen_width = -1, screen_height = -1;
+ 
+-                if ((dw = gtk_widget_get_window(GTK_WIDGET(w))))
++                dw = gtk_widget_get_window(GTK_WIDGET(w));
++#ifdef GDK_IS_X11_DISPLAY
++		if (dw) {
+                         if ((ret = ca_proplist_setf(p, CA_PROP_WINDOW_X11_XID, "%lu", (unsigned long) GDK_WINDOW_XID(dw))) < 0)
+                                 return ret;
++		}
++#endif
+ 
+                 if ((display = gtk_widget_get_display(GTK_WIDGET(w)))) {
+                         if ((t = gdk_display_get_name(display)))
+-- 
+2.23.0
+
