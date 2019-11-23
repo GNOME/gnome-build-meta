@@ -9,9 +9,7 @@ depends:
 - core/baobab.bst
 - core/cheese.bst
 - core/eog.bst
-- core/epiphany.bst
 - core/evince.bst
-- core/file-roller.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
