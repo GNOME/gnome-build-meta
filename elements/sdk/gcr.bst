@@ -12,6 +12,9 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  conf-local: >-
+    --without-gtk
 public:
   bst:
     split-rules:
