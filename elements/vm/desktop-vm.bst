@@ -19,9 +19,6 @@ depends:
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
   type: build
-- filename: components/xorg-server.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: vm/linux-vm-boot/shadow.bst
   junction: freedesktop-sdk.bst
   type: build

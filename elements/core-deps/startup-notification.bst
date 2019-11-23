@@ -5,6 +5,4 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- freedesktop-sdk.bst:components/xcb-util.bst
-- freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
