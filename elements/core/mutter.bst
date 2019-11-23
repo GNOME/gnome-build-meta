@@ -23,7 +23,6 @@ runtime-depends:
 depends:
 - core-deps/colord.bst
 - core-deps/libdisplay-info.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -53,3 +52,5 @@ variables:
   meson-local: >-
     -Dxwayland_initfd=enabled
     -Dprofiler=true
+    -Dtests=false
+    -Dstartup_notification=false
