@@ -14,6 +14,8 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
+    --enable-gtk3
+    --enable-wayland
     --disable-tests
     --disable-gconf
     --enable-dconf
@@ -24,6 +26,7 @@ variables:
     --with-python=python3
     --disable-emoji-dict
     --disable-unicode-dict
+    --disable-xim
 public:
   bst:
     split-rules:
