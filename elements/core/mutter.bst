@@ -9,7 +9,6 @@ build-depends:
 depends:
 - core-deps/libgudev.bst
 - core-deps/libinput.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -29,3 +28,4 @@ variables:
   meson-local: >-
     -Dprofiler=false
     -Dremote_desktop=false
+    -Dstartup_notification=false
