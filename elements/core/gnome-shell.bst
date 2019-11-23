@@ -16,15 +16,11 @@ build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
-runtime-depends:
-- core-deps/libgnomekbd.bst
-
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
