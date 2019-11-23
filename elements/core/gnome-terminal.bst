@@ -7,6 +7,7 @@ build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- core-deps/vte.bst
 - core/gnome-shell.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
@@ -16,7 +17,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- sdk/vte.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

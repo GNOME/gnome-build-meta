@@ -134,5 +134,6 @@ depends:
 - core-deps/uhttpmock.bst
 - core-deps/upower.bst
 - core-deps/volume-key.bst
+- core-deps/vte.bst
 - core-deps/xmlb.bst
 - core-deps/xmlto.bst
