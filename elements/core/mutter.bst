@@ -8,7 +8,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -32,4 +31,5 @@ depends:
 variables:
   meson-local: >-
     -Dremote_desktop=false
+    -Dstartup_notification=false
     -Dxwayland_initfd=disabled
