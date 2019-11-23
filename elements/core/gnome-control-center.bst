@@ -14,7 +14,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/libgnomekbd.bst
 - core-deps/power-profiles-daemon.bst
 
 depends:

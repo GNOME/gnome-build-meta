@@ -15,7 +15,6 @@ runtime-depends:
 - core/gnome-control-center.bst
 
 depends:
-- core-deps/startup-notification.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
@@ -40,5 +39,6 @@ depends:
 
 variables:
   meson-local: >-
+    -Dstartup_notification=false
     -Dxwayland_initfd=disabled
     -Dprofiler=false

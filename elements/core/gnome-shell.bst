@@ -17,7 +17,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/libgnomekbd.bst
 - sdk/geoclue.bst
 
 depends:
@@ -26,7 +25,6 @@ depends:
 - core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst

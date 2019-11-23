@@ -60,7 +60,6 @@ depends:
 - core-deps/libgdata.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libgit2.bst
-- core-deps/libgnomekbd.bst
 - core-deps/libgsf.bst
 - core-deps/libgtop.bst
 - core-deps/libgusb.bst
@@ -81,7 +80,6 @@ depends:
 - core-deps/libssh2.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
-- core-deps/libxklavier.bst
 - core-deps/lmdb.bst
 - core-deps/malcontent.bst
 - core-deps/mm-common.bst
