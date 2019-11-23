@@ -15,7 +15,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/sdl2.bst
-- freedesktop-sdk.bst:components/xorg-lib-xv.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:

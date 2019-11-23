@@ -41,7 +41,6 @@ depends:
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   webkitgtk_toolchain: ''

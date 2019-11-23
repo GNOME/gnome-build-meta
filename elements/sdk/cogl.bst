@@ -13,12 +13,6 @@ depends:
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-x11.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcomposite.bst
-- freedesktop-sdk.bst:components/xorg-lib-xdamage.bst
-- freedesktop-sdk.bst:components/xorg-lib-xext.bst
-- freedesktop-sdk.bst:components/xorg-lib-xfixes.bst
-- freedesktop-sdk.bst:components/xorg-lib-xrandr.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
