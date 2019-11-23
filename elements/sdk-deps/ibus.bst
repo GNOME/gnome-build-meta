@@ -43,6 +43,7 @@ variables:
     --enable-vala
     --enable-gtk4
     --enable-systemd
+    --disable-xim
 
 public:
   bst:
