@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: people_freedesktop_org:~hughsient/appstream-glib/releases/appstream-glib-0.7.15.tar.xz
+  url: people_freedesktop_org:~hughsient/appstream-glib/releases/appstream-glib-0.7.16.tar.xz
 depends:
 - sdk/gcab.bst
 - sdk/gdk-pixbuf.bst
