@@ -65,7 +65,6 @@ depends:
 - core-deps/libevdev.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
-- core-deps/libgnomekbd.bst
 - core-deps/libgsf.bst
 - core-deps/libgtop.bst
 - core-deps/libgudev.bst
@@ -93,7 +92,6 @@ depends:
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
 - core-deps/libwacom.bst
-- core-deps/libxklavier.bst
 - core-deps/libyaml.bst
 - core-deps/libzapojit.bst
 - core-deps/lvm2.bst
