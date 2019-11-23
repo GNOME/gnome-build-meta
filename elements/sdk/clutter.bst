@@ -25,6 +25,7 @@ variables:
     --enable-wayland-backend
     --enable-wayland-compositor
     --enable-gdk-backend
+    --disable-x11-backend
 public:
   bst:
     split-rules:
