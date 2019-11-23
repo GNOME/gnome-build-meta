@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
+- kind: patch
+  path: files/gtk/0001-deprecated-gtkstatusicon.c-Add-a-case-for-others-way.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
