@@ -1,0 +1,25 @@
+From eef8656a4ca9dede1ee09e1deb2e06e858e03453 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sat, 23 Nov 2019 23:43:32 +0900
+Subject: [PATCH] deprecated/gtkstatusicon.c: Add a case for others: wayland
+ for example
+
+---
+ gtk/deprecated/gtkstatusicon.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/gtk/deprecated/gtkstatusicon.c b/gtk/deprecated/gtkstatusicon.c
+index 28535df491..148a84f585 100644
+--- a/gtk/deprecated/gtkstatusicon.c
++++ b/gtk/deprecated/gtkstatusicon.c
+@@ -2258,6 +2258,7 @@ gtk_status_icon_is_embedded (GtkStatusIcon *status_icon)
+ #ifdef GDK_WINDOWING_QUARTZ
+   return TRUE;
+ #endif
++  return TRUE;
+ }
+ 
+ /**
+-- 
+2.23.0
+
