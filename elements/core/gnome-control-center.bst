@@ -13,6 +13,8 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+runtime-depends:
+- core-deps/libgnomekbd.bst
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -22,7 +24,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/gsound.bst
-- core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
 - core-deps/libnma.bst
