@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.18/NetworkManager-1.18.1.tar.xz
+  url: gnome_downloads:NetworkManager/1.18/NetworkManager-1.18.4.tar.xz
 depends:
 - core-deps/iptables.bst
 - core-deps/libgudev.bst
