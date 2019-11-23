@@ -49,7 +49,7 @@ projects:
     core-deps/libusb.bst:
     - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
     sdk/vala.bst:
-    - ref: bf1ff4f59d5de2d626e98e98ef81cb75dc1e6a27610a7de4133597c430f1bd7c
+    - ref: 5af4f487b434f8580c01666c60c8660ba186989fdd891670cc64269cea6e571b
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
@@ -75,21 +75,21 @@ projects:
     core/gnome-desktop.bst:
     - ref: 099f71b29310c999c28f2bf272c846bbd7efc8c6c438b37d15f374230ce92d2e
     sdk/gcab.bst:
-    - ref: 5a2d96fe7e69e42d363c31cf2370d7afa3bb69cec984d4128322ea40e62c100d
+    - ref: 10304cc8f6b550cf9f53fb3cebfb529c49394e982ef7e66e3fca9776c60a68e7
     sdk/libcroco.bst:
     - ref: 767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4
     sdk/json-glib.bst:
     - ref: 720c5f4379513dc11fd97dc75336eb0c0d3338c53128044d9fabec4374f4bc47
     sdk/appstream-glib.bst:
-    - ref: 7e27947de3742fcc02a96a22fb91e137a49cd55234c407a246476f3624a92a9f
+    - ref: 04f290d73bc865071112076b8a3345df2730783a16af976fe3becfd2f50d5992
     core-deps/geocode-glib.bst:
     - ref: 5baa6ab76a76c9fc567e4c32c3af2cd1d1784934c255bc5a62c512e6af6bde1c
     sdk/libsoup.bst:
-    - ref: 56d2cffb845daf51317411a6c56fead9a586447667aa949c6db6a4fbcf996236
+    - ref: 8308984f1eee1c4f8c113a9c1763b2b22d981bd811b0cc82a9f3f1aa63228779
     core-deps/exiv2.bst:
     - ref: 51cffa8d19d67e1da6c1d0f570a75b8f6c814113367318c2c0407691888c5f01
     sdk/vte.bst:
-    - ref: 17a1d4bc8848f1d2acfa4c20aaa24b9bac49f057b8909c56d3dafec2e2332648
+    - ref: 8bb06176e2a921491509f529e99853c68face1a3d70cc8862cf9203015a5118f
     core-deps/libwacom.bst:
     - ref: a08ac59ff26dbdf5888a6ad7bd97a66741807cda6bb1c7e7f299a555129c3162
     core/gnome-color-manager.bst:
@@ -221,7 +221,7 @@ projects:
     core-deps/mobile-broadband-provider-info.bst:
     - ref: 2cba10f82b8e6aec46b871c1f7d20086ecc17e1168f18e588a6a37770fa3c59b
     sdk/gtk+-3.bst:
-    - ref: dba7658d0a2e1bfad8260f5210ca02988f233d1d86edacb95eceed7eca982895
+    - ref: 1384eba5614fed160044ae0d32369e3df7b4f517b03f4b1f24d383e528f4be83
     core/cheese.bst:
     - ref: 7b9ad1da8bb475a9e71ae69a5832786a75e860f0af927637540574fd49d595f6
     sdk/gcr.bst:
