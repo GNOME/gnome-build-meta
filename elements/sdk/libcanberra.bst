@@ -13,6 +13,10 @@ depends:
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  conf-local: >-
+    --disable-gtk
+    --disable-gtk3
 public:
   bst:
     split-rules:
