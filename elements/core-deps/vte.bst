@@ -8,6 +8,7 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/boost.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/fribidi.bst
