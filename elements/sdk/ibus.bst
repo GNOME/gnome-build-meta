@@ -20,6 +20,7 @@ variables:
     --disable-memconf
     --disable-ui
     --disable-gtk2
+    --disable-gtk3
     --disable-schema-compile
     --with-python=python3
     --disable-emoji-dict
