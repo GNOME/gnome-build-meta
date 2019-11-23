@@ -31,10 +31,10 @@ variables:
     --disable-setup
     --disable-ui
     --disable-unicode-dict
+    --disable-xim
     --with-python=python3
     --enable-wayland
     --enable-introspection
-
 public:
   bst:
     split-rules:
