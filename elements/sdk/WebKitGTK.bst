@@ -38,7 +38,6 @@ depends:
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   webkitgtk_toolchain: ''
