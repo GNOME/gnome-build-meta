@@ -13,8 +13,6 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-runtime-depends:
-- core-deps/libgnomekbd.bst
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
