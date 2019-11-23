@@ -31,5 +31,4 @@ depends:
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/cups.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
