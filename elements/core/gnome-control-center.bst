@@ -37,7 +37,6 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/clutter-gtk.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
