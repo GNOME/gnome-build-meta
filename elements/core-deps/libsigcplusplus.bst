@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libsigc++/2.99/libsigc++-2.99.12.tar.xz
+  url: gnome_downloads:libsigc++/3.0/libsigc++-3.0.0.tar.xz
 depends:
 - core-deps/mm-common.bst
 - filename: base/buildsystem-autotools.bst
