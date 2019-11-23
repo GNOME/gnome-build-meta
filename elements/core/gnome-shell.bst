@@ -17,7 +17,6 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
-- core-deps/libgnomekbd.bst
 - core-deps/sassc.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst

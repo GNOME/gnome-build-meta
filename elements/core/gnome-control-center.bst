@@ -22,7 +22,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/gsound.bst
-- core-deps/libgnomekbd.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
 - core-deps/libnma.bst
