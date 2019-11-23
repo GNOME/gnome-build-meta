@@ -16,9 +16,10 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
+    --disable-glx
     --disable-cogl-gst
     --disable-maintainer-flags
-    --enable-xlib-egl-platform
+    --disable-xlib-egl-platform
     --enable-wayland-egl-platform
     --enable-wayland-egl-server
 public:
