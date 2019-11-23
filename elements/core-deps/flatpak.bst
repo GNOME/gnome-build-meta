@@ -27,7 +27,6 @@ depends:
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:components/xorg-lib-xau.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 runtime-depends:
