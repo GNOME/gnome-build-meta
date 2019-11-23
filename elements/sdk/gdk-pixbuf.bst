@@ -14,6 +14,9 @@ depends:
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/shared-mime-info.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -Dx11=false
 public:
   bst:
     integration-commands:
