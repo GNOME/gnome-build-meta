@@ -12,6 +12,7 @@ depends:
 - world/evolution.bst
 - world/five-or-more.bst
 - world/four-in-a-row.bst
+- world/fuse.bst
 - world/ghex.bst
 - world/gitg.bst
 - world/glade.bst
