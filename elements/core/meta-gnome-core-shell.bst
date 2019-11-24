@@ -4,7 +4,6 @@
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#technical-conditions-to-enter-gnome-core
 kind: stack
 depends:
-- core/gdm.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
