@@ -22,7 +22,6 @@ depends:
 - core/gnome-maps.bst
 - core/gnome-music.bst
 - core/gnome-photos.bst
-- core/gnome-screenshot.bst
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
 - core/gnome-terminal.bst
