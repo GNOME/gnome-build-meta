@@ -144,7 +144,7 @@ projects:
     core-deps/gmime3.bst:
     - ref: fb7556501f85c3bf3e65fdd82697cbc4fa4b55dccd33ad14239ce0197e78ba59
     core-deps/totem-pl-parser.bst:
-    - ref: c1576f551a67c2b3632a3dbea5d8b3e9966558af0cfeed58f07cec04728364f0
+    - ref: 0efd01b8a0a9770d52fe7354d298874ed845449b88f3f78f49290729fc2d448d
     core-deps/grilo.bst:
     - ref: 7e44b2e74c31ed24eb97e43265a9e41effe8660287b02295111805c7bda7f1e8
     core-deps/gsound.bst:
