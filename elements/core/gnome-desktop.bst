@@ -3,6 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-desktop.git
   track: master
+- kind: patch
+  path: files/gnome-desktop/0001-crossfade-remove-gdkx-x-dependency.patch
+- kind: patch
+  path: files/gnome-desktop/0002-gnomebg-remove-gdkx-x-dependency.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
