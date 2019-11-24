@@ -1,0 +1,41 @@
+From 7a4234dd62d20544f0aae51131690ee8152fd729 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sun, 24 Nov 2019 19:47:16 +0900
+Subject: [PATCH] gnome-idle-monitor.c: Remove gdkx dependency
+
+---
+ libgnome-desktop/gnome-idle-monitor.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/libgnome-desktop/gnome-idle-monitor.c b/libgnome-desktop/gnome-idle-monitor.c
+index d7583a2b..2f8c5485 100644
+--- a/libgnome-desktop/gnome-idle-monitor.c
++++ b/libgnome-desktop/gnome-idle-monitor.c
+@@ -25,7 +25,9 @@
+ 
+ #include <glib.h>
+ #include <glib/gi18n-lib.h>
++#ifdef GDK_WINDOWING_X11
+ #include <gdk/gdkx.h>
++#endif
+ #include <gdk/gdk.h>
+ #if defined(GDK_WINDOWING_WAYLAND)
+ #include <gdk/gdkwayland.h>
+@@ -208,8 +210,14 @@ gnome_idle_monitor_set_property (GObject      *object,
+ 
+ 		g_free (monitor->priv->path);
+ 		if (monitor->priv->device) {
++#ifdef GDK_WINDOWING_X11
++		if(GDK_IS_X11_DISPLAY(gdk_display_get_default())){
+ 			monitor->priv->path = g_strdup_printf ("/org/gnome/Mutter/IdleMonitor/Device%d",
+ 							       gdk_x11_device_get_id (monitor->priv->device));
++#else
++			monitor->priv->path = g_strdup_printf ("/org/gnome/Mutter/IdleMonitor/Device%s",
++							       gdk_device_get_product_id (monitor->priv->device));
++#endif
+ 		} else {
+ 			monitor->priv->path = g_strdup ("/org/gnome/Mutter/IdleMonitor/Core");
+ 		}
+-- 
+2.23.0
+
