@@ -18,7 +18,6 @@ depends:
 - core-deps/librest.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst
-- core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-keyring.bst
 - sdk/adwaita-icon-theme.bst
