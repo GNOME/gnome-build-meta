@@ -1,0 +1,27 @@
+From 8a7e90c2082746426a1cef3a852c51d9e7e1b64f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sun, 24 Nov 2019 18:56:15 +0900
+Subject: [PATCH] libgnome-desktop/gnome-rr-config.c: Remove unneded gdkx
+ headers
+
+---
+ libgnome-desktop/gnome-rr-config.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/libgnome-desktop/gnome-rr-config.c b/libgnome-desktop/gnome-rr-config.c
+index 610cb43c..d30d7ea9 100644
+--- a/libgnome-desktop/gnome-rr-config.c
++++ b/libgnome-desktop/gnome-rr-config.c
+@@ -33,9 +33,6 @@
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ 
+-#include <X11/Xlib.h>
+-#include <gdk/gdkx.h>
+-
+ #include "gnome-rr-config.h"
+ 
+ #include "gnome-rr-private.h"
+-- 
+2.23.0
+
