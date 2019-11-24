@@ -1,0 +1,118 @@
+From 6740c72e91a4631d52a0f68c004018e7d46f46d0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sun, 24 Nov 2019 21:33:25 +0900
+Subject: [PATCH] Remove unneded includes so It's possible to compile on
+ wayland-only system
+
+---
+ eel/eel-gtk-extensions.c             | 3 ---
+ src/nautilus-application.c           | 2 +-
+ src/nautilus-canvas-container.c      | 4 +---
+ src/nautilus-canvas-dnd.c            | 2 +-
+ src/nautilus-files-view.c            | 2 +-
+ src/nautilus-mime-actions.c          | 1 -
+ src/nautilus-shell-search-provider.c | 2 +-
+ 7 files changed, 5 insertions(+), 11 deletions(-)
+
+diff --git a/eel/eel-gtk-extensions.c b/eel/eel-gtk-extensions.c
+index f95eaa3d6..45b072db3 100644
+--- a/eel/eel-gtk-extensions.c
++++ b/eel/eel-gtk-extensions.c
+@@ -29,10 +29,7 @@
+ #include "eel-glib-extensions.h"
+ #include "eel-string.h"
+ 
+-#include <X11/Xlib.h>
+-#include <X11/Xatom.h>
+ #include <gdk/gdk.h>
+-#include <gdk/gdkx.h>
+ #include <gtk/gtk.h>
+ #include <glib/gi18n-lib.h>
+ #include <math.h>
+diff --git a/src/nautilus-application.c b/src/nautilus-application.c
+index fb2833372..17f1da59a 100644
+--- a/src/nautilus-application.c
++++ b/src/nautilus-application.c
+@@ -29,7 +29,7 @@
+ #include <eel/eel-gtk-extensions.h>
+ #include <eel/eel-stock-dialogs.h>
+ #include <fcntl.h>
+-#include <gdk/gdkx.h>
++#include <gdk/gdk.h>
+ #include <gio/gio.h>
+ #include <glib/gi18n.h>
+ #include <glib/gstdio.h>
+diff --git a/src/nautilus-canvas-container.c b/src/nautilus-canvas-container.c
+index 1035fa2b8..932439ffe 100644
+--- a/src/nautilus-canvas-container.c
++++ b/src/nautilus-canvas-container.c
+@@ -29,14 +29,12 @@
+ #include <eel/eel-gtk-extensions.h>
+ #include <eel/eel-vfs-extensions.h>
+ #include <gdk/gdkkeysyms.h>
+-#include <gdk/gdkx.h>
++#include <gdk/gdk.h>
+ #include <glib/gi18n.h>
+ #include <gtk/gtk.h>
+ #include <math.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <X11/Xlib.h>
+-#include <X11/Xatom.h>
+ 
+ #define DEBUG_FLAG NAUTILUS_DEBUG_CANVAS_CONTAINER
+ #include "nautilus-debug.h"
+diff --git a/src/nautilus-canvas-dnd.c b/src/nautilus-canvas-dnd.c
+index c5a51bca5..9d5a5c67b 100644
+--- a/src/nautilus-canvas-dnd.c
++++ b/src/nautilus-canvas-dnd.c
+@@ -45,7 +45,7 @@
+ #include <eel/eel-string.h>
+ #include <eel/eel-vfs-extensions.h>
+ #include <gdk/gdkkeysyms.h>
+-#include <gdk/gdkx.h>
++#include <gdk/gdk.h>
+ #include <gtk/gtk.h>
+ #include <glib/gi18n.h>
+ 
+diff --git a/src/nautilus-files-view.c b/src/nautilus-files-view.c
+index 1a1089ac6..db84bd191 100644
+--- a/src/nautilus-files-view.c
++++ b/src/nautilus-files-view.c
+@@ -33,7 +33,7 @@
+ #include <fcntl.h>
+ #include <gdesktop-enums.h>
+ #include <gdk/gdkkeysyms.h>
+-#include <gdk/gdkx.h>
++#include <gdk/gdk.h>
+ #include <gio/gio.h>
+ #include <glib/gi18n.h>
+ #include <glib/gstdio.h>
+diff --git a/src/nautilus-mime-actions.c b/src/nautilus-mime-actions.c
+index 83c66044e..d5a068d3c 100644
+--- a/src/nautilus-mime-actions.c
++++ b/src/nautilus-mime-actions.c
+@@ -23,7 +23,6 @@
+ 
+ #include <eel/eel-stock-dialogs.h>
+ #include <eel/eel-string.h>
+-#include <gdk/gdkx.h>
+ #include <glib.h>
+ #include <glib/gi18n.h>
+ #include <glib/gstdio.h>
+diff --git a/src/nautilus-shell-search-provider.c b/src/nautilus-shell-search-provider.c
+index 056737478..e9cd5003b 100644
+--- a/src/nautilus-shell-search-provider.c
++++ b/src/nautilus-shell-search-provider.c
+@@ -26,7 +26,7 @@
+ #include <gio/gio.h>
+ #include <string.h>
+ #include <glib/gi18n.h>
+-#include <gdk/gdkx.h>
++#include <gdk/gdk.h>
+ 
+ #include "nautilus-file.h"
+ #include "nautilus-file-utilities.h"
+-- 
+2.23.0
+
