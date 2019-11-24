@@ -22,7 +22,6 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
 - core-deps/upower.bst
-- core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
