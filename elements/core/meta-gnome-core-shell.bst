@@ -3,7 +3,6 @@
 # release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
 depends:
-- core/gdm.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
