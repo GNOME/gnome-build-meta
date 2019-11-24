@@ -7,6 +7,8 @@ sources:
     subprojects/libgd:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
+- kind: patch
+  path: files/nautilus/0001-Remove-unneded-includes-so-It-s-possible-to-compile-.patch
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
