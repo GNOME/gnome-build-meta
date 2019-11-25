@@ -8,6 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/PackageKit.bst
+- core-deps/flatpak.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - core-deps/libgudev.bst
@@ -26,5 +27,4 @@ depends:
 variables:
   meson-local: >-
     -Dfwupd=false
-    -Dflatpak=false
     -Dvalgrind=false
