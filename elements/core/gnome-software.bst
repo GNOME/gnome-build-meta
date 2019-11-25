@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/3.34/gnome-software-3.34.1.tar.xz
+  url: gnome_downloads:gnome-software/3.34/gnome-software-3.34.2.tar.xz
 depends:
 - core-deps/PackageKit.bst
 - core-deps/gspell.bst
