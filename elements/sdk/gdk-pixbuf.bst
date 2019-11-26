@@ -13,7 +13,6 @@ depends:
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/shared-mime-info.bst
-- freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:
@@ -23,4 +22,3 @@ public:
       devel:
         (>):
         - '%{libdir}/libgdk_pixbuf-2.0.so'
-        - '%{libdir}/libgdk_pixbuf_xlib-2.0.so'
