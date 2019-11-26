@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz
+  url: tarballs_needing_help:libcanberra-0.30.tar.xz
 depends:
 - sdk/gtk+-3.bst
 - filename: components/libpulse.bst
