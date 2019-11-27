@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://0pointer.de/public/libatasmart-0.19.tar.xz
+  url: tarballs_needing_help:libatasmart-0.19.tar.xz
 depends:
 - filename: components/systemd.bst
   junction: freedesktop-sdk.bst
