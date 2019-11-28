@@ -20,6 +20,7 @@ depends:
 - core-deps/spice-gtk.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core-deps/vte.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -27,7 +28,6 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/vala.bst
-- sdk/vte.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
