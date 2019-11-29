@@ -19,6 +19,7 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
+- core-deps/libcroco.bst
 - core-deps/sassc.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
@@ -35,7 +36,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
-- sdk/libcroco.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

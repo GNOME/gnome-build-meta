@@ -13,7 +13,6 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/libcroco.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
