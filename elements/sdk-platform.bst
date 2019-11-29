@@ -36,7 +36,6 @@ depends:
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libcanberra.bst
-- sdk/libcroco.bst
 - sdk/libgee.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
@@ -62,7 +61,7 @@ depends:
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
 # appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
-# gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, libcroco, librsvg,
+# gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, librsvg,
 # libsoup, os-release, pango pipewire and zenity.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
