@@ -3,6 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tali.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/itstools.bst
