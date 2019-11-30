@@ -5,13 +5,13 @@ sources:
   track: master
 depends:
 - core-deps/gspell.bst
-- core-deps/gtksourceview.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - sdk/libsecret.bst
