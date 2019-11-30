@@ -6,6 +6,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- core-deps/intltool.bst
 
 depends:
 - core-deps/evolution-data-server.bst
