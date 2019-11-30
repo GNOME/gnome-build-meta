@@ -81,7 +81,7 @@ projects:
     sdk/libcroco.bst:
     - ref: 0.6.13-1-g0c11405855ff5f3072a9a2dbb858d9344e069a4c
     core/gnome-desktop.bst:
-    - ref: 3.34.1-3-g6ba4b11e95f8927379173dfbf036e928c4048345
+    - ref: 3.35.2-8-g2006957354987417a08546fc8a900ea0519df3e6
     sdk/krb5.bst:
     - ref: 9f721e1fe593c219174740c71de514c7228a97d23eb7be7597b2ae14e487f027
     - {}
@@ -814,7 +814,7 @@ projects:
     core-deps/pyatspi2.bst:
     - ref: PYATSPI_2_34_0-4-g4ca0381b544a1b84ee1fe15802548a8dd2204d5f
     sdk/gtk+-3.bst:
-    - ref: 3.24.12-78-g3804d7a0cad18e1b064c02269509a9f5edd47b11
+    - ref: 3.24.13-53-gd0c351468ba3cbeed17a62bea66d334a25e13700
     - {}
     core-deps/gssdp.bst:
     - ref: gssdp-1.2.1-3-geb0c3480c8ff779b59436bb3adb09040c13495fc
@@ -920,7 +920,7 @@ projects:
     core-deps/gom.bst:
     - ref: 0.3.3-14-g320df01c77c5cf6327040421454837277e4d6ee3
     core/nautilus.bst:
-    - ref: 3.35.2-0-g11088272dd00edf794270c6ab2efe9e1b2241b3c
+    - ref: 3.35.2-1-g70393e321cfd8b1e27e2c627793daeb43f478682
     core/gnome-contacts.bst:
     - ref: 3.34-8-g1db54cdfa66ae7bfc8b1f5a757aeee65f6b670e6
     core/gnome-disk-utility.bst:
@@ -982,7 +982,7 @@ projects:
     core-deps/glibmm-2.4.bst:
     - ref: 2.62.0-13-gd7cc9644e1d75ff3244b01fbeadb27e79e404c03
     sdk/gtk.bst:
-    - ref: 3.96.0-1856-ge3860d25e94a8f84b0dd855b5f6a1947180964e0
+    - ref: 3.96.0-2268-g1e2c03beee543f4988d707dc0c7b9629abebfbb6
     core/gnome-software.bst:
     - ref: 3.34.0-118-g38da5e9bc3d1d6fdd5733e71b632a819d5824bc3
     core/simple-scan.bst:
@@ -997,3 +997,9 @@ projects:
     - ref: 3.34.0-0-g7740922640e77af3c96e4362db496b90b138cda3
     core/totem.bst:
     - ref: V_3_34_0-57-g086c6d895e3c5227953efcaa1cc6ed8fd6b2184b
+    core-deps/libcroco.bst:
+    - ref: 0.6.13-1-g0c11405855ff5f3072a9a2dbb858d9344e069a4c
+    core-deps/vte.bst:
+    - ref: 0.59.0-84-g9a6dded6e975e11877976ca46713644d4e4adaae
+    sdk/gtksourceview.bst:
+    - ref: 4.4.0-103-g688e90c68207704a464de87703afcb6b6e5c0458
