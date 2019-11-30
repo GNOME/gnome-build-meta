@@ -4,6 +4,7 @@ sources:
   url: github_com:TelepathyIM/telepathy-logger.git
   track: master
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst
 depends:
