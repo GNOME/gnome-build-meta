@@ -3,6 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/quadrapassel.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/gsound.bst
 - sdk/appstream-glib.bst
