@@ -81,7 +81,7 @@ projects:
     sdk/libcroco.bst:
     - ref: 0.6.13-1-g0c11405855ff5f3072a9a2dbb858d9344e069a4c
     core/gnome-desktop.bst:
-    - ref: 3.34.1-3-g6ba4b11e95f8927379173dfbf036e928c4048345
+    - ref: 3.35.2-8-g2006957354987417a08546fc8a900ea0519df3e6
     sdk/krb5.bst:
     - ref: 9f721e1fe593c219174740c71de514c7228a97d23eb7be7597b2ae14e487f027
     - {}
@@ -920,7 +920,7 @@ projects:
     core-deps/gom.bst:
     - ref: 0.3.3-14-g320df01c77c5cf6327040421454837277e4d6ee3
     core/nautilus.bst:
-    - ref: 3.35.2-0-g11088272dd00edf794270c6ab2efe9e1b2241b3c
+    - ref: 3.35.2-1-g70393e321cfd8b1e27e2c627793daeb43f478682
     core/gnome-contacts.bst:
     - ref: 3.34-8-g1db54cdfa66ae7bfc8b1f5a757aeee65f6b670e6
     core/gnome-disk-utility.bst:
@@ -997,3 +997,7 @@ projects:
     - ref: 3.34.0-0-g7740922640e77af3c96e4362db496b90b138cda3
     core/totem.bst:
     - ref: V_3_34_0-57-g086c6d895e3c5227953efcaa1cc6ed8fd6b2184b
+    core-deps/libcroco.bst:
+    - ref: 0.6.13-1-g0c11405855ff5f3072a9a2dbb858d9344e069a4c
+    core-deps/vte.bst:
+    - ref: 0.59.0-84-g9a6dded6e975e11877976ca46713644d4e4adaae
