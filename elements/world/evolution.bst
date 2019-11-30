@@ -13,6 +13,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/gspell.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
