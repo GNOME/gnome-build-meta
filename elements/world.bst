@@ -49,6 +49,7 @@ depends:
 - world/libbluray.bst
 - world/libcdio-paranoia.bst
 - world/libcdio.bst
+- world/libgepub.bst
 - world/libgit2-glib.bst
 - world/libgit2.bst
 - world/libgnome-games-support.bst
