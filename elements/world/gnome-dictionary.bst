@@ -6,6 +6,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
 
 depends:
 - sdk/glib.bst
