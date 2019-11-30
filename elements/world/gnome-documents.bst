@@ -15,7 +15,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/libgdata.bst
-- core-deps/libgepub.bst
 - core-deps/libzapojit.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
@@ -27,5 +26,6 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
+- world/libgepub.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
