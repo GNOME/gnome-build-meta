@@ -1,10 +1,10 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gjs.git
   track: master
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
@@ -13,8 +13,8 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-installed-tests
+  meson-local: >-
+    -Dprofiler=disabled
 public:
   bst:
     split-rules:
