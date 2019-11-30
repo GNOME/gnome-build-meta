@@ -7,6 +7,10 @@ sources:
     subprojects/libgd:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
