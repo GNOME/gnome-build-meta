@@ -3,6 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/dconf-editor.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/appstream-glib.bst
 - sdk/dconf.bst
