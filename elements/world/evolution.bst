@@ -3,6 +3,10 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/evolution.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/geocode-glib.bst
