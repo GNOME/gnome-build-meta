@@ -67,7 +67,7 @@ projects:
     - ref: 288b04260f7040b0e004a8d59c773cfb4e32df4f1b4a0f9d705c51afccc95ead
     - {}
     sdk/gtk+-3.bst:
-    - ref: 1384eba5614fed160044ae0d32369e3df7b4f517b03f4b1f24d383e528f4be83
+    - ref: 4c775c38cf1e3c534ef0ca52ca6c7a890fe169981af66141c713e054e68930a9
     core/gnome-bluetooth.bst:
     - ref: e867e67423e1dc78c56c2ea11dec066ce0254238d559e4777c80fa2935eb6baf
     core-deps/libgusb.bst:
