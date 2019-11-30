@@ -10,6 +10,7 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/libgudev.bst
+- core-deps/libnma.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core/gnome-bluetooth.bst
 - sdk/adwaita-icon-theme.bst
