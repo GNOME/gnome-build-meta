@@ -4,6 +4,7 @@ sources:
   url: github_com:TelepathyIM/telepathy-glib.git
   track: master
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - sdk/gtk-doc.bst
 depends:
 - core-deps/avahi.bst
