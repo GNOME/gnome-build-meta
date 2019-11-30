@@ -12,8 +12,8 @@ build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-runtime-depends:
-- core/gdm.bst
+#runtime-depends:
+#- core/gdm.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
