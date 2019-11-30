@@ -4,6 +4,7 @@ sources:
   url: github_com:TelepathyIM/telepathy-logger.git
   track: master
 build-depends:
+- core-deps/intltool.bst
 - sdk/gtk-doc.bst
 depends:
 - sdk/glib.bst
