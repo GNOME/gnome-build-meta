@@ -10,3 +10,4 @@ depends:
 - sdk/glib.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/libarchive.bst

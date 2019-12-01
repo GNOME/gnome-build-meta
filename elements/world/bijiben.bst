@@ -7,8 +7,13 @@ sources:
     subprojects/libgd:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/evolution-data-server.bst
+- core-deps/libhandy.bst
 - core-deps/tracker.bst
 - sdk/WebKitGTK.bst
 - sdk/appstream-glib.bst

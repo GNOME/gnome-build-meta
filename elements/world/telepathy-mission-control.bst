@@ -4,6 +4,7 @@ sources:
   url: github_com:TelepathyIM/telepathy-mission-control.git
   track: telepathy-mission-control-5.16
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - sdk/gtk-doc.bst
 depends:
 - core-deps/NetworkManager.bst

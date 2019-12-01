@@ -3,6 +3,11 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-sudoku.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/vala.bst
+
 depends:
 - sdk/appstream-glib.bst
 - sdk/glib.bst

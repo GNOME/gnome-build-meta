@@ -3,11 +3,17 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/evolution.git
   track: master
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- core-deps/intltool.bst
+
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/gspell.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
