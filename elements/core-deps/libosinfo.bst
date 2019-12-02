@@ -1,7 +1,8 @@
-kind: autotools
+kind: meson
 sources:
-- kind: tar
-  url: https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
+- kind: git_tag
+  url: gitlab_com:libosinfo/libosinfo.git
+  track: master
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
@@ -9,7 +10,7 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/osinfo-db-tools.bst
 - sdk/glib.bst
@@ -18,5 +19,5 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  meson-local: >-
+    -Denable-tests=false
