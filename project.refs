@@ -1001,3 +1001,5 @@ projects:
     - ref: 0.6.13-1-g0c11405855ff5f3072a9a2dbb858d9344e069a4c
     core-deps/vte.bst:
     - ref: 0.59.0-84-g9a6dded6e975e11877976ca46713644d4e4adaae
+    sdk/gtksourceview.bst:
+    - ref: 4.4.0-103-g688e90c68207704a464de87703afcb6b6e5c0458
