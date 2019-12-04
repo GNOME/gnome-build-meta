@@ -118,7 +118,7 @@ projects:
     sdk/mozjs60.bst:
     - ref: 697331336c3d65b80ded9ca87b4a8ceb804e5342b476eaa133ac638102a9dc5d
     sdk/gcr.bst:
-    - ref: 3.34.0-5-g29f1845c6a65376d4084da1775383ce8505be257
+    - ref: 3.34.0-12-g09bc92e65bbf32bfa39c767e1a19cf061ade2737
     sdk/enchant-2.bst:
     - ref: abd8e915675cff54c0d4da5029d95c528362266557c61c7149d53fa069b8076d
     core-deps/librest.bst:

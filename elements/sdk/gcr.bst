@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gcr.git
-  track: master
+  track: wip/nielsdg/lose-x11-dependency
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
