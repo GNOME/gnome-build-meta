@@ -85,22 +85,8 @@ default:
     if [ "${ARCH}" == "x86_64" ]; then
         ${BST} build openh264-extension.bst:flatpak-repo.bst
 
-        # FIXME: reenable the vm build
-        # https://gitlab.gnome.org/GNOME/gnome-build-meta/merge_requests/470#note_666498
-        #
-        # Don't try to push the resulting artifacts, the huge image doesnt
-        # work well with the artifact cache right now.
-        #
-        # ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/desktop-vm-image-x86_64.bst
-
-        # Checkout the image for the gitlab artifact.
-        #
-        # Accept using hardlinks here as the upload will not
-        # corrupt the local artifact cache.
-        #
-        # ${BST} checkout --hardlinks vm/desktop-vm-image-x86_64.bst image
-        # qemu-img convert -f raw -O qcow2 image/sda.img image/sda.qcow2
-        # rm image/sda.img
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+        ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -201,7 +187,7 @@ track:
   stage: track
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst
   retry: 2
   # only run on branches targeting master
   only:
