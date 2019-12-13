@@ -9,9 +9,6 @@ build-depends:
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
 
-  (@):
-  - ostree-config.yml
-
 environment:
   OSTREE_REPO: "%{install-root}/ostree/repo"
 

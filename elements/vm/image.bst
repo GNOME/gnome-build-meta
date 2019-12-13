@@ -17,9 +17,6 @@ variables:
   - arch == "aarch64":
       linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
 
-  (@):
-  - ostree-config.yml
-
   sysroot: "%{build-root}/sysroot"
 
 environment:
@@ -106,6 +103,6 @@ config:
 sources:
 - kind: ostree_mirror
   gpg: gnome.gpg
-  path: ostree-repo
+  url: https://nightly.gnome.org/
   match: 'gnome-os-*'
   directory: source-repo

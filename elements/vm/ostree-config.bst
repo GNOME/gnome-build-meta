@@ -8,10 +8,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - core-deps/ostree.bst
 
-variables:
-  (@):
-  - ostree-config.yml
-
 config:
   build-commands:
   - |
