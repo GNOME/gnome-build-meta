@@ -22,6 +22,8 @@ stages:
 - flatpak
 - finish_flatpak
 - reports
+- publish_ostree
+- build_bootable_image
 
 default:
   before_script:
@@ -85,20 +87,7 @@ default:
     if [ "${ARCH}" == "x86_64" ]; then
         ${BST} build openh264-extension.bst:flatpak-repo.bst
 
-        #
-        # Don't try to push the resulting artifacts, the huge image doesnt
-        # work well with the artifact cache right now.
-        #
-        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/desktop-vm-image-x86_64.bst
-
-        # Checkout the image for the gitlab artifact.
-        #
-        # Accept using hardlinks here as the upload will not
-        # corrupt the local artifact cache.
-        #
-        ${BST} checkout --hardlinks vm/desktop-vm-image-x86_64.bst image
-        qemu-img convert -f raw -O qcow2 image/sda.img image/sda.qcow2
-        rm image/sda.img
+        ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/repo.bst
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -199,7 +188,7 @@ track:
   stage: track
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/repo.bst
   retry: 2
   # only run on branches targeting master
   only:
@@ -321,3 +310,49 @@ cve_report:
   only:
   - master
   - /^gnome-\d-\d\d$/
+
+publish_ostree_x86_64:
+  stage: publish_ostree
+  dependencies: [track]
+  script:
+  - |
+    if [ -n "${GBM_SSH_KEY}" ]; then
+      mkdir -p ~/.ssh
+      rm -f ~/.ssh/id_rsa
+      touch ~/.ssh/id_rsa
+      chmod 600 ~/.ssh/id_rsa
+      echo "${GBM_SSH_KEY}" | base64 --decode >>~/.ssh/id_rsa
+      cat >~/.ssh/known_hosts <<EOF
+    |1|aok+cG86yan2cP42RSwCy2E7X+8=|KBvi7XIpU/CgWzQvRLOVQ+c7+50= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAGixpYwAfvRyHOlqpKnrpo3iG5zPjQNL0hcay90SlNMfZ4W6+QUoFTZ/rQXDQFbBrOgTXzFDEQxKxxo350n6dw=
+    EOF
+    fi
+
+  - |
+    OSTREE_BRANCH="$(bst show --format "%{vars}" --deps none vm/repo.bst | sed '/ostree-branch: /{;s///;q;};d')"
+  - BUILD_BRANCH="${OSTREE_BRANCH}-${CI_COMMIT_SHA}"
+  - ${BST} build vm/repo.bst
+  - ${BST} checkout --hardlinks vm/repo.bst import-repo
+  - ostree --repo=import-repo/ostree/repo refs -A --create="${BUILD_BRANCH}" "${OSTREE_BRANCH}"
+  - ostree-push --repo=import-repo/ostree/repo "${GBM_PUSH_ADDRESS}:incoming-repo" "${BUILD_BRANCH}"
+  - ssh "${GBM_PUSH_ADDRESS}" commit "${BUILD_BRANCH}" "${OSTREE_BRANCH}"
+  variables:
+    ARCH: x86_64
+  only:
+  - master
+  # For testing only:
+  - valentindavid/gnome-os-ostree
+
+build_bootable_image_x86_64:
+  stage: build_bootable_image
+  dependencies: [track]
+  script:
+  - ${BST} -o arch "${ARCH}" track vm/image.bst
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+  - ${BST} -o arch "${ARCH}" checkout vm/image.bst image
+  variables:
+    ARCH: x86_64
+  only:
+  - master
+  # For testing only:
+  - valentindavid/gnome-os-ostree
+  artifacts: *logging-artifacts
