@@ -1,0 +1,313 @@
+diff --git a/src/libostree/ostree-sysroot-cleanup.c b/src/libostree/ostree-sysroot-cleanup.c
+index ef95d13c..33756f7d 100644
+--- a/src/libostree/ostree-sysroot-cleanup.c
++++ b/src/libostree/ostree-sysroot-cleanup.c
+@@ -216,6 +216,15 @@ cleanup_other_bootversions (OstreeSysroot       *self,
+   const int cleanup_subbootversion = self->subbootversion == 0 ? 1 : 0;
+   /* Reusable buffer for path */
+   g_autoptr(GString) buf = g_string_new ("");
++  struct stat stbuf;
++
++  if ((glnx_fstatat_allow_noent (self->sysroot_fd, "boot/loader", &stbuf, AT_SYMLINK_NOFOLLOW, error))
++      && (!S_ISLNK (stbuf.st_mode)))
++    {
++      g_string_truncate (buf, 0); g_string_append_printf (buf, "boot/loader.%d", self->bootversion);
++      if (!glnx_shutil_rm_rf_at (self->sysroot_fd, buf->str, cancellable, error))
++        return FALSE;
++    }
+ 
+   /* These directories are for the other major version */
+   g_string_truncate (buf, 0); g_string_append_printf (buf, "boot/loader.%d", cleanup_bootversion);
+diff --git a/src/libostree/ostree-sysroot-deploy.c b/src/libostree/ostree-sysroot-deploy.c
+index a09c354b..8a32e090 100644
+--- a/src/libostree/ostree-sysroot-deploy.c
++++ b/src/libostree/ostree-sysroot-deploy.c
+@@ -1829,38 +1829,89 @@ install_deployment_kernel (OstreeSysroot   *sysroot,
+   return TRUE;
+ }
+ 
+-/* We generate the symlink on disk, then potentially do a syncfs() to ensure
+- * that it (and everything else we wrote) has hit disk. Only after that do we
+- * rename it into place.
+- */
+ static gboolean
+-prepare_new_bootloader_link (OstreeSysroot  *sysroot,
+-                             int             current_bootversion,
+-                             int             new_bootversion,
+-                             GCancellable   *cancellable,
+-                             GError        **error)
++prepare_new_bootloader_dir (OstreeSysroot  *sysroot,
++                            int             current_bootversion,
++                            int             new_bootversion,
++                            GCancellable   *cancellable,
++                            GError        **error)
+ {
+-  GLNX_AUTO_PREFIX_ERROR ("Preparing final bootloader swap", error);
++  glnx_autofd int boot_dfd = -1;
++
++  GLNX_AUTO_PREFIX_ERROR ("Preparing new bootloader directory", error);
+   g_assert ((current_bootversion == 0 && new_bootversion == 1) ||
+             (current_bootversion == 1 && new_bootversion == 0));
+ 
+-  g_autofree char *new_target = g_strdup_printf ("loader.%d", new_bootversion);
++  if (!glnx_opendirat (sysroot->sysroot_fd, "boot", TRUE, &boot_dfd, error))
++    return FALSE;
+ 
+-  /* We shouldn't actually need to replace but it's easier to reuse
+-     that code */
+-  if (!symlink_at_replace (new_target, sysroot->sysroot_fd, "boot/loader.tmp",
+-                           cancellable, error))
++  g_autofree char *loader_dir_name = g_strdup_printf ("loader.%d", new_bootversion);
++
++  if (!glnx_shutil_mkdir_p_at (boot_dfd, loader_dir_name, 0755,
++                               cancellable, error))
++    return FALSE;
++
++  g_autofree char *version_name = g_strdup_printf ("%s/version", loader_dir_name);
++
++  if (!glnx_file_replace_contents_at (boot_dfd, version_name,
++                                      (guint8*)loader_dir_name, strlen(loader_dir_name),
++                                      0, cancellable, error))
+     return FALSE;
+ 
+   return TRUE;
+ }
+ 
++static gboolean
++renameat2_exchange (int         olddirfd,
++                    const char *oldpath,
++                    int         newdirfd,
++                    const char *newpath,
++                    gboolean   *is_atomic,
++                    GError    **error)
++{
++  if (renameat2(olddirfd, oldpath, newdirfd, newpath, RENAME_EXCHANGE) == 0)
++    return TRUE;
++  else
++    {
++      if ((errno == EINVAL)
++          || (errno == ENOSYS))
++        {
++          if (glnx_renameat2_exchange (olddirfd, oldpath, newdirfd, newpath) == 0)
++            {
++              is_atomic = FALSE;
++              return TRUE;
++            }
++        }
++    }
++
++  if (errno != ENOENT)
++    return glnx_throw_errno_prefix (error, "renameat2");
++
++  if (renameat2(olddirfd, oldpath, newdirfd, newpath, RENAME_NOREPLACE) == 0)
++    return TRUE;
++  else
++    {
++      if ((errno == EINVAL)
++          || (errno == ENOSYS))
++        {
++          if (glnx_renameat2_noreplace (olddirfd, oldpath, newdirfd, newpath) == 0)
++            {
++              is_atomic = FALSE;
++              return TRUE;
++            }
++        }
++    }
++
++  return glnx_throw_errno_prefix (error, "renameat2");
++}
++
+ /* Update the /boot/loader symlink to point to /boot/loader.$new_bootversion */
+ static gboolean
+ swap_bootloader (OstreeSysroot  *sysroot,
+                  OstreeBootloader *bootloader,
+                  int             current_bootversion,
+                  int             new_bootversion,
++                 gboolean       *is_atomic,
+                  GCancellable   *cancellable,
+                  GError        **error)
+ {
+@@ -1873,11 +1924,8 @@ swap_bootloader (OstreeSysroot  *sysroot,
+   if (!glnx_opendirat (sysroot->sysroot_fd, "boot", TRUE, &boot_dfd, error))
+     return FALSE;
+ 
+-  /* The symlink was already written, and we used syncfs() to ensure
+-   * its data is in place.  Renaming now should give us atomic semantics;
+-   * see https://bugzilla.gnome.org/show_bug.cgi?id=755595
+-   */
+-  if (!glnx_renameat (boot_dfd, "loader.tmp", boot_dfd, "loader", error))
++  g_autofree char *new_target = g_strdup_printf ("loader.%d", new_bootversion);
++  if (!renameat2_exchange(boot_dfd, new_target, boot_dfd, "loader", is_atomic, error))
+     return FALSE;
+ 
+   /* Now we explicitly fsync this directory, even though it
+@@ -2098,6 +2146,7 @@ write_deployments_bootswap (OstreeSysroot     *self,
+                             OstreeSysrootWriteDeploymentsOpts *opts,
+                             OstreeBootloader  *bootloader,
+                             SyncStats         *out_syncstats,
++                            gboolean          *is_atomic,
+                             GCancellable      *cancellable,
+                             GError           **error)
+ {
+@@ -2160,15 +2209,16 @@ write_deployments_bootswap (OstreeSysroot     *self,
+         return glnx_prefix_error (error, "Bootloader write config");
+     }
+ 
+-  if (!prepare_new_bootloader_link (self, self->bootversion, new_bootversion,
+-                                    cancellable, error))
++  if (!prepare_new_bootloader_dir (self, self->bootversion, new_bootversion,
++                                   cancellable, error))
+     return FALSE;
+ 
+   if (!full_system_sync (self, out_syncstats, cancellable, error))
+     return FALSE;
+ 
+   if (!swap_bootloader (self, bootloader, self->bootversion, new_bootversion,
+-                        cancellable, error))
++                        is_atomic, cancellable, error))
++
+     return FALSE;
+ 
+   return TRUE;
+@@ -2407,7 +2457,8 @@ ostree_sysroot_write_deployments_with_options (OstreeSysroot     *self,
+ 
+       /* Note equivalent of try/finally here */
+       gboolean success = write_deployments_bootswap (self, new_deployments, opts, bootloader,
+-                                                     &syncstats, cancellable, error);
++                                                     &syncstats, &bootloader_is_atomic,
++                                                     cancellable, error);
+       /* Below here don't set GError until the if (!success) check */
+       if (boot_was_ro_mount)
+         {
+diff --git a/src/libostree/ostree-sysroot.c b/src/libostree/ostree-sysroot.c
+index 1c9dbf37..5973db1f 100644
+--- a/src/libostree/ostree-sysroot.c
++++ b/src/libostree/ostree-sysroot.c
+@@ -432,6 +432,60 @@ compare_loader_configs_for_sorting (gconstpointer  a_pp,
+   return compare_boot_loader_configs (a, b);
+ }
+ 
++static gboolean
++read_current_bootversion (OstreeSysroot *self,
++                          int           *out_bootversion,
++                          GCancellable  *cancellable,
++                          GError       **error)
++{
++  int ret_bootversion;
++  struct stat stbuf;
++
++  if (!glnx_fstatat_allow_noent (self->sysroot_fd, "boot/loader", &stbuf, AT_SYMLINK_NOFOLLOW, error))
++    return FALSE;
++  if (errno == ENOENT)
++    {
++      ret_bootversion = 0;
++    }
++  else
++    {
++      if (!S_ISLNK (stbuf.st_mode))
++        {
++          gsize len;
++          g_autofree char* version_content = glnx_file_get_contents_utf8_at(self->sysroot_fd, "boot/loader/version",
++                                                                            &len, cancellable, error);
++          if (version_content == NULL) {
++            return FALSE;
++          }
++          if (len != 8)
++            return glnx_throw (error, "Invalid version in boot/loader/version");
++          else if (g_strcmp0 (version_content, "loader.0") == 0)
++            ret_bootversion = 0;
++          else if (g_strcmp0 (version_content, "loader.1") == 0)
++            ret_bootversion = 1;
++          else
++            return glnx_throw (error, "Invalid version in boot/loader/version");
++        }
++      else
++        {
++          /* Backward compatibility with boot symbolic links */
++          g_autofree char *target =
++            glnx_readlinkat_malloc (self->sysroot_fd, "boot/loader", cancellable, error);
++          if (!target)
++            return FALSE;
++          if (g_strcmp0 (target, "loader.0") == 0)
++            ret_bootversion = 0;
++          else if (g_strcmp0 (target, "loader.1") == 0)
++            ret_bootversion = 1;
++          else
++            return glnx_throw (error, "Invalid target '%s' in boot/loader", target);
++        }
++    }
++
++  *out_bootversion = ret_bootversion;
++  return TRUE;
++}
++
+ gboolean
+ _ostree_sysroot_read_boot_loader_configs (OstreeSysroot *self,
+                                           int            bootversion,
+@@ -445,12 +499,22 @@ _ostree_sysroot_read_boot_loader_configs (OstreeSysroot *self,
+   g_autoptr(GPtrArray) ret_loader_configs =
+     g_ptr_array_new_with_free_func ((GDestroyNotify)g_object_unref);
+ 
+-  g_autofree char *entries_path = g_strdup_printf ("boot/loader.%d/entries", bootversion);
++  g_autofree char *entries_path = NULL;
++  int current_version;
++  if (!read_current_bootversion (self, &current_version, cancellable, error))
++    return FALSE;
++
++  if (current_version == bootversion)
++    entries_path = g_strdup ("boot/loader/entries");
++  else
++    entries_path = g_strdup_printf ("boot/loader.%d/entries", bootversion);
++
+   gboolean entries_exists;
+   g_auto(GLnxDirFdIterator) dfd_iter = { 0, };
+   if (!ot_dfd_iter_init_allow_noent (self->sysroot_fd, entries_path,
+                                      &dfd_iter, &entries_exists, error))
+     return FALSE;
++
+   if (!entries_exists)
+     {
+       /* Note early return */
+@@ -490,42 +554,6 @@ _ostree_sysroot_read_boot_loader_configs (OstreeSysroot *self,
+   return TRUE;
+ }
+ 
+-static gboolean
+-read_current_bootversion (OstreeSysroot *self,
+-                          int           *out_bootversion,
+-                          GCancellable  *cancellable,
+-                          GError       **error)
+-{
+-  int ret_bootversion;
+-  struct stat stbuf;
+-
+-  if (!glnx_fstatat_allow_noent (self->sysroot_fd, "boot/loader", &stbuf, AT_SYMLINK_NOFOLLOW, error))
+-    return FALSE;
+-  if (errno == ENOENT)
+-    {
+-      ret_bootversion = 0;
+-    }
+-  else
+-    {
+-      if (!S_ISLNK (stbuf.st_mode))
+-        return glnx_throw (error, "Not a symbolic link: boot/loader");
+-
+-      g_autofree char *target =
+-        glnx_readlinkat_malloc (self->sysroot_fd, "boot/loader", cancellable, error);
+-      if (!target)
+-        return FALSE;
+-      if (g_strcmp0 (target, "loader.0") == 0)
+-        ret_bootversion = 0;
+-      else if (g_strcmp0 (target, "loader.1") == 0)
+-        ret_bootversion = 1;
+-      else
+-        return glnx_throw (error, "Invalid target '%s' in boot/loader", target);
+-    }
+-
+-  *out_bootversion = ret_bootversion;
+-  return TRUE;
+-}
+-
+ static gboolean
+ load_origin (OstreeSysroot   *self,
+              OstreeDeployment *deployment,
