@@ -10,6 +10,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/gnupg.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 public:
