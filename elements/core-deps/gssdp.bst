@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gssdp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gssdp/1.2/gssdp-1.2.2.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
