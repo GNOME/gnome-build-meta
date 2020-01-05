@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gcr.git
@@ -6,7 +6,7 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
