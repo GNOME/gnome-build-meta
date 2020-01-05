@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgee.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgee/0.20/libgee-0.20.2.tar.xz
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

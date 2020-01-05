@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-getting-started-docs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-getting-started-docs/3.34/gnome-getting-started-docs-3.34.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

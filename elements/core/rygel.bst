@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/rygel.git
-  track: master
+- kind: tar
+  url: gnome_downloads:rygel/0.38/rygel-0.38.3.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
