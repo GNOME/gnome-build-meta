@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/file-roller.git
-  track: master
+- kind: tar
+  url: gnome_downloads:file-roller/3.35/file-roller-3.35.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
