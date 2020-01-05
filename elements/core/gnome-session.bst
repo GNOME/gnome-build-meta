@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-session.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-session/3.34/gnome-session-3.34.2.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

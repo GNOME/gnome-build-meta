@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgxps.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgxps/0.3/libgxps-0.3.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
