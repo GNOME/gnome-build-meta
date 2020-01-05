@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/zenity.git
-  track: master
+- kind: tar
+  url: gnome_downloads:zenity/3.32/zenity-3.32.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
