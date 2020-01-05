@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gcab.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gcab/1.4/gcab-1.4.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
