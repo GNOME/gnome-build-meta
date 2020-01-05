@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:hughsie/colord-gtk.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/colord/releases/colord-gtk-0.2.0.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
