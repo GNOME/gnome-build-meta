@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gegl.git
-  track: master
+- kind: tar
+  url: https://ftp.gimp.org/pub/gegl/0.4/gegl-0.4.18.tar.xz
 depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst

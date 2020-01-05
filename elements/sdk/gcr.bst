@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gcr.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gcr/3.34/gcr-3.34.0.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

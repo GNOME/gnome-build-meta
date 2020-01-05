@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.6.0.tar.gz
+  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.7.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
