@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdk-pixbuf.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdk-pixbuf/2.40/gdk-pixbuf-2.40.0.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
@@ -13,6 +12,7 @@ depends:
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/shared-mime-info.bst
+- freedesktop-sdk.bst:components/xorg-lib-xi.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 public:
   bst:

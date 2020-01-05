@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glibmm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:glibmm/2.63/glibmm-2.63.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

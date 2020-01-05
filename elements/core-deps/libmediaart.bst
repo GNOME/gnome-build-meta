@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libmediaart.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libmediaart/1.9/libmediaart-1.9.4.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
