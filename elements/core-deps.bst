@@ -58,7 +58,6 @@ depends:
 - core-deps/libbytesize.bst
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
-- core-deps/libcroco.bst
 - core-deps/libdaemon.bst
 - core-deps/libdazzle.bst
 - core-deps/libdvdread.bst
