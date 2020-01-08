@@ -17,7 +17,7 @@ projects:
     sdk/pygobject.bst:
     - ref: 87e2c9aa785f352ef111dcc5f63df9b85cf6e05e52ff04f803ffbebdacf5271a
     sdk/glib.bst:
-    - ref: 4400adc9f0d3ffcfe8e84225210370ce3f9853afb81812ddadb685325aa655c4
+    - ref: 4c84030d77fa9712135dfa8036ad663925655ae95b1d19399b6200e869925bbc
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
@@ -60,7 +60,7 @@ projects:
     sdk/yelp-xsl.bst:
     - ref: 0c3fe6146113df26fb1295901b1c7baed9f0fe67a87f4345e11543aefe7cb7ad
     core-deps/PackageKit.bst:
-    - ref: 1f4554becf5df0a4d8c51d6757b9401c7ee95bf2dd6f3a73575a8ddd4cd09a01
+    - ref: 88b64130cca54a4e7a223d2ccf1b80cf5a19375fdd8bbb54498d16c3a2a221b7
     sdk/libcanberra.bst:
     - ref: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
     sdk/gsettings-desktop-schemas.bst:
@@ -71,17 +71,17 @@ projects:
     core/gnome-bluetooth.bst:
     - ref: e867e67423e1dc78c56c2ea11dec066ce0254238d559e4777c80fa2935eb6baf
     core-deps/libgusb.bst:
-    - ref: 4b677a372e97748970b1bb3dac076da2d051e4376c5960e77b7159701c851fed
+    - ref: fda14755b96c5014d688e75f31b4262e8c65c29ce69642beb07da461d4a98e5e
     core/gdm.bst:
     - ref: e85df657aa8d9361af4fb122014d8f123a93bfe45a7662fba2b373d839dbd8d3
     core-deps/colord-gtk.bst:
     - ref: 2a4cfae08bc69f000f40374934cd26f4ae86d286ce7de89f1622abc59644c717
     core/gnome-desktop.bst:
-    - ref: c1dbeb5666dad27166c769e48e2ab41dd5ed74718ea35eb57c8488790662dc5a
+    - ref: acc2efc847574fd21d8f200679f111c2b1eb5ae2c041e0034e7c18450a7d9c6d
     sdk/libcroco.bst:
     - ref: 767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4
     sdk/gcab.bst:
-    - ref: 10304cc8f6b550cf9f53fb3cebfb529c49394e982ef7e66e3fca9776c60a68e7
+    - ref: 67a5fa9be6c923fbc9197de6332f36f69a33dadc9016a2b207859246711c048f
     sdk/json-glib.bst:
     - ref: 720c5f4379513dc11fd97dc75336eb0c0d3338c53128044d9fabec4374f4bc47
     core-deps/colord.bst:
@@ -91,11 +91,11 @@ projects:
     sdk/vte.bst:
     - ref: 22dcb54ac2ad1a56ab0a745e16ccfeb383f0b5860b5bfa1784561216f98d4975
     sdk/libsoup.bst:
-    - ref: 51ad3001a946fe3bcf29b692dc9ffe05cdf702ea6ca0ee8c3099a99a2f4e3933
+    - ref: 534bb08e35b0ff3702f3adfde87d3441e27c12f9f5ec351f056fe04cba02bafb
     core/gnome-color-manager.bst:
     - ref: 7c3c178faacfcbf11d56de22cd265946a7d58aa10e3cd968c2938e2fbf50fdee
     core-deps/libmbim.bst:
-    - ref: 550fb69e5e57f7646f8eb9ed8d24e44ea869ad846be9c162893f12e43528059b
+    - ref: ac2708a409b09f1f6f1786a8a9e39c36619aa8d6f285ea943daa7a48ea36d3e8
     sdk/brotli.bst:
     - ref: 3d5bedd48edb909fe3b87cb99f7d139b987ef6f1616b7e22d74e928270a2fd20
     core-deps/exiv2.bst:
@@ -130,13 +130,13 @@ projects:
     sdk/appstream-glib.bst:
     - ref: 04f290d73bc865071112076b8a3345df2730783a16af976fe3becfd2f50d5992
     core/gnome-settings-daemon.bst:
-    - ref: 9981a20babf8da7744b7fbe175b9e36078bf08f3bf65fe5aedeb82cfe27ac11f
+    - ref: 9fbae67e217e53b99e4f9e7d392c91ffbe31253941c9b136ef09c2d9db7ad7ed
     sdk/woff2.bst:
     - ref: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
     sdk/openjpeg.bst:
     - ref: 63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9
     core-deps/libqmi.bst:
-    - ref: aeb69f90c273467cce246176cba0967c6413f1995a976992770a597c4fe28c79
+    - ref: 4ae4e476f960dbc0d04b1c0368776eb78edffd4421f3e4c074bb2bfb6375b282
     core-deps/gnome-online-accounts.bst:
     - ref: 4832ca8e48d3a497fc676e7b6f146009ab4206995362977b9805aa39f164783a
     core-deps/libwacom.bst:
@@ -144,7 +144,7 @@ projects:
     core-deps/gmime3.bst:
     - ref: fb7556501f85c3bf3e65fdd82697cbc4fa4b55dccd33ad14239ce0197e78ba59
     core-deps/totem-pl-parser.bst:
-    - ref: 0efd01b8a0a9770d52fe7354d298874ed845449b88f3f78f49290729fc2d448d
+    - ref: c1576f551a67c2b3632a3dbea5d8b3e9966558af0cfeed58f07cec04728364f0
     core-deps/grilo.bst:
     - ref: 7e44b2e74c31ed24eb97e43265a9e41effe8660287b02295111805c7bda7f1e8
     core-deps/gsound.bst:
@@ -224,13 +224,13 @@ projects:
     core/gnome-menus.bst:
     - ref: c850c64b2074265fe59e099a340b8689cf3dd4658dc9feddd2ab5e95f1a74b74
     core/gnome-session.bst:
-    - ref: d7801fe2d5a751b19cb58081771316a76aabd5c550cd58d4e4c6a5a4ed356660
+    - ref: 8bb77381650a03ae4be7260751363bd27da93f09bac1ddbc885f4ce44ebaf8e1
     core/gnome-keyring.bst:
     - ref: e9cda9542a3e37c61636145e7e9e2513c569092ea8020752a834e1f40ad41943
     core-deps/libevdev.bst:
     - ref: 20d3cae4efd277f485abdf8f2a7c46588e539998b5a08c2c4d368218379d4211
     core/gnome-initial-setup.bst:
-    - ref: e71f10ef6b631cd92ffde774e4130b32b2494b4df5ef288375d8b1957eeabfa1
+    - ref: 33f9ceb2d65800644c6d6430bbb1d0f4387a062684014cba836d9fbc593d88b5
     core-deps/mtdev.bst:
     - ref: 6677d5708a7948840de734d8b4675d5980d4561171c5a8e89e54adf7a13eba7f
     core-deps/libinput.bst:
@@ -240,13 +240,13 @@ projects:
     core-deps/libgdata.bst:
     - ref: 6b9917122e4def6e6f78bcb660e49e146540832e296abcb5cde99829a04ea986
     core/mutter.bst:
-    - ref: ba1826cf88bdb81e63943cac014a8e8bcf35ec178c53264401f9c72fdeab758e
+    - ref: cdf57ddd0bc35db952b732b77c796760e65d1ce2f7df31273e5c8d4759ed4a89
     core-deps/uhttpmock.bst:
     - ref: a6a34a011db142a98473b492039c84468d575f416689484f1f82a84927f17798
     core-deps/libical.bst:
     - ref: 7ad550c8c49c9b9983658e3ab3e68b1eee2439ec17b169a6b1e6ecb5274e78e6
     core-deps/gnome-autoar.bst:
-    - ref: 5de9db0db028cd6cab7c2fec46ba90965474ecf9cd68cfd681a6488cf1fb240a
+    - ref: 0a34c377f8841abbf4c29bc848b301fbd8e4e20c03d7318c777c58432033657a
     core/gnome-control-center.bst:
     - ref: a85ffaf5885a8c70c019013d73792bf4cc75f643e97f6e8b52f7fbba9f7a9114
     sdk/zenity.bst:
@@ -254,19 +254,19 @@ projects:
     core-deps/liboauth.bst:
     - ref: 0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f
     core-deps/evolution-data-server.bst:
-    - ref: 3eb89f82eee042884a8d65737564fe48829c3ae187f067cbcdec2b088d2fe89b
+    - ref: d2dfac5ca76e05e872fbb06a57cae0dace64818c4dce1e906b0396888270c3a9
     core-deps/libsass.bst:
     - ref: 9d499927329c7f8816ab67c571fb7cc0ea21d38c6f47c7c58c98de99ef7645eb
     core-deps/sassc.bst:
     - ref: d61587b6c084a54e602650c1d845928a20c8d309a0eeec6b1d2499489867ce03
     sdk/gjs.bst:
-    - ref: b763ff1f7da882f599a458ed5e744c3fb77f8a7a32759fa98b7b7a7152a92692
+    - ref: 261a3f666c771d7744965fe71b804fc2c3a3d46a8e3e8d4f7ed5ef97967ebd5f
     core/gnome-shell-extensions.bst:
-    - ref: b0ad51143b1bf40def4a10f8fd0ab0ffb47218304800794e62cadd29d0acc75b
+    - ref: a1e16e75a06ea511435a6f7478de92aff21d02d4e1d59ec8ce7fb6396819b4b8
     core/gnome-getting-started-docs.bst:
     - ref: ca998f144e2aab81aa7cf6a09202caf650005965d68187baa7aa5d0198373602
     core/gnome-shell.bst:
-    - ref: ccd86559b9c897c219d2d2ebfdb8413efa4c1bee846427c750cb8a301b3f6d1e
+    - ref: 2474bef386c5a47d7be285aa22e24125c46ba5f860a25a1a36a90de4e456bd8a
     sdk/cantarell-fonts.bst:
     - ref: 858b2bc196ee851c8e5a76376097bc75f23bc01b29591c30ed3a550e23b41716
     core/gnome-themes-extra.bst:
@@ -280,9 +280,9 @@ projects:
     core-deps/speech-dispatcher.bst:
     - ref: 73b924f42fcc2155a452693320956f7075b71750023ea21e8bb79822c0caa2f9
     core-deps/gssdp.bst:
-    - ref: 6b57b79a96e229367981b6f00474e4bbc795909a2d3160c748cba3395b3556d3
+    - ref: cabb9e3b456b8354a55e23eb0207545d974643cda6d623523470ebbc4188b0a4
     core-deps/gupnp.bst:
-    - ref: a9aa557eff415598e05999d0ab122f202a978ff827688d3f951023117a315f5e
+    - ref: 9a80bd953e5c8772ad26b72f8da01cbe7241a113edd6084903f413ce751c9989
     core-deps/gupnp-av.bst:
     - ref: 689dcf1492ab8991daea291365a32548a77d1a2294d85b33622b55cca9ce6fdc
     core-deps/gupnp-dlna.bst:
@@ -335,7 +335,7 @@ projects:
     core/vino.bst:
     - ref: 2911c779b6a2c46e5bc8e5a0c94c2a4d5bd4a1ee7e35f2818702cb13d9d23bab
     sdk/glib-networking.bst:
-    - ref: 3c55ae6771ad7a79fa606a834f4686ed555c2774ed6e9ece6f3c0f6a3dab7110
+    - ref: 8ca1f86f23a76b5c7640624f7d5490705c78e81375e1741c9a1c41ce7f8f7ff7
     sdk/gvfs.bst:
     - ref: b57af97573bd295aa50037eed29c6ba7a36188230c515e007c3018855a5cf949
     core/baobab.bst:
@@ -349,7 +349,7 @@ projects:
     core-deps/libpeas.bst:
     - ref: 9c3acf7a567cbb4f8bf62b096e013f12c3911cc850c3fa9900cbd5aa4f6ec284
     core/eog.bst:
-    - ref: fdb0739f8420af2ffb8e91c766a154afefdf20f721ad34b56cab27fd1569f42c
+    - ref: 6f2b0570541ced1cc31c4e8bbfe4b19e975d56d2a49052c5942a188cac35a9d3
     core-deps/libdazzle.bst:
     - ref: 3d981cbb9d9bb87bfaff7bfd44d9847223b3ef81e69225e4d1f6ac725a669505
     core/file-roller.bst:
@@ -375,7 +375,7 @@ projects:
     core-deps/mpc.bst:
     - ref: 6985c538143c1208dcb1ac42cedad6ff52e267b47e5f970183a3e75125b43c2e
     core/epiphany.bst:
-    - ref: 0eaa36fc7b73a23121a23b8a7ad3c18edaf5a8a6b7cdd6d630ba5b71d946a4a1
+    - ref: 00e479fba108f44b1830370780b98116d87fc277eb1a4eed8e229dcdf04aea6d
     core-deps/libvirt-glib.bst:
     - ref: 94e8c410c67501303d3b32ca8ce2c36edf898511ec4de9b7f29cd35d274b3d6a
     core-deps/libdaemon.bst:
@@ -387,13 +387,13 @@ projects:
     core/gnome-clocks.bst:
     - ref: 61195f357c63b65b75e209494e12a122a802c75333290e136813565dca94f03c
     core/gnome-boxes.bst:
-    - ref: 055e6025993c77c13b2d862e2034a42d3b46879c8e99fc2ffb232e168c930de7
+    - ref: 8a8fa5b13d14ff75b0224702ea6ec350ae43b801bc89207ffe1415b3f4c3f0c7
     core/gnome-calculator.bst:
     - ref: 4d5348c2fbf01d040a2cb5e84de812c503911e1ea498a83e7eefff52c4417051
     core-deps/folks.bst:
     - ref: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
     core/gnome-contacts.bst:
-    - ref: 99602ec8d660c1f3c92cae6356f64f72fb6db58e55bce27a599330bf7b622f12
+    - ref: 0a83c7d8ea27291222ae053d6d5e5506744ebdcf4b6e70defb5deeebb32f1ccb
     core-deps/libdvdread.bst:
     - ref: b33b1953b4860545b75f6efc06e01d9849e2ea4f797652263b0b4af6dd10f935
     core/gnome-disk-utility.bst:
@@ -409,7 +409,7 @@ projects:
     core-deps/libgfbgraph.bst:
     - ref: da1179083cde2b649d7491c745250a00d292e390fd620b7dd2dd95a122dae0b6
     core/gnome-maps.bst:
-    - ref: c56d24e608c71dbf3447f977297c228aab81f7a9516cf7e8c35473082da3ba03
+    - ref: bcf98f55ff51170144c93eedba4b50de708bbc11c9bd4036b52649dc108da8dc
     core-deps/gom.bst:
     - ref: ac57e34b5fe273ed306efaeabb346712c264e341502913044a782cdf8c1036d8
     core-deps/grilo-plugins.bst:
@@ -425,7 +425,7 @@ projects:
     core-deps/boost.bst:
     - ref: 5721818253e6a0989583192f96782c4a98eb6204965316df9f5ad75819225ca9
     core/gnome-music.bst:
-    - ref: b94901b052fdf641d653bf875e01ecdba07999c8f26cf7702bcbc4319b45a2a5
+    - ref: e711bbea776b8deb8cc7a8884fe9239a7a786e223c362764c20a2d88a8c9e74e
     core-deps/babl.bst:
     - ref: 64e111097b1fa22f6c9bf044e341a9cd9ee1372c5acfa0b452e7a86fb37c6a42
     core/gnome-photos.bst:
@@ -442,7 +442,7 @@ projects:
     core-deps/atkmm-1.6.bst:
     - ref: 4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a
     core-deps/gegl.bst:
-    - ref: 0112df690301d9eb993cc48965fc71b7751c9021a4f4ee08fcae366c326b5e5a
+    - ref: c946dfb45beb7fe0fb95b89a25395b449eda2b205ba3e8a1ffb1ef992d9eca64
     core-deps/pangomm-1.4.bst:
     - ref: ca6da067ff93a6445780c0b4b226eb84f484ab104b8391fb744a45cbc7edbf56
     core/gnome-system-monitor.bst:

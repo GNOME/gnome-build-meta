@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://ftp.gimp.org/pub/gegl/0.4/gegl-0.4.16.tar.bz2
+  url: https://ftp.gimp.org/pub/gegl/0.4/gegl-0.4.18.tar.xz
 depends:
 - core-deps/babl.bst
 - sdk/gdk-pixbuf.bst

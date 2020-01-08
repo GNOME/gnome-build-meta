@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libsoup/2.68/libsoup-2.68.2.tar.xz
+  url: gnome_downloads:libsoup/2.68/libsoup-2.68.3.tar.xz
 depends:
 - sdk/brotli.bst
 - sdk/glib.bst
