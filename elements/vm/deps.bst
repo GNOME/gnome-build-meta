@@ -16,6 +16,7 @@ runtime-depends:
 
 - vm/plymouth-gnome-theme.bst
 - vm/kbd.bst
+- vm/dev-repo-script.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst

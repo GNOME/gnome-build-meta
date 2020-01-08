@@ -43,8 +43,4 @@ sources:
 - kind: local
   path: files/vm/ostree-config
 - kind: local
-  (?):
-  - repo_mode == 'local':
-      path: local.gpg
-  - repo_mode == 'nightly':
-      path: files/vm/gnome.gpg
+  path: files/vm/gnome.gpg

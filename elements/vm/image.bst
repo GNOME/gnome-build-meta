@@ -1,10 +1,11 @@
-kind: manual
+kind: script
 
 build-depends:
 - core-deps/ostree.bst
 - vm/qemu-tools.bst
 - freedesktop-sdk.bst:integration/mtab.bst
 - freedesktop-sdk.bst:components/genimage.bst
+- vm/repo.bst
 
 variables:
   (?):
@@ -17,18 +18,34 @@ variables:
   - arch == "aarch64":
       linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
 
-  sysroot: "%{build-root}/sysroot"
+  sysroot: "/sysroot"
 
 environment:
   OSTREE_REPO: "%{sysroot}/ostree/repo"
 
 config:
-  build-commands:
+  layout:
+  - element: ''
+    destination: '/sysroot'
+  - element: ''
+    destination: '/genimage'
+  - element: vm/repo.bst
+    destination: '/source-repo'
+  - element: core-deps/ostree.bst
+    destination: '/'
+  - element: vm/qemu-tools.bst
+    destination: '/'
+  - element: integration/mtab.bst
+    destination: '/'
+  - element: components/genimage.bst
+    destination: '/'
+
+  commands:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=bare
 
   - ostree config --group sysroot set bootloader none
-  - ostree pull-local "%{build-root}/source-repo" %{ostree-branch}
+  - ostree pull-local "/source-repo" %{ostree-branch}
 
   - mkdir -p "%{sysroot}/boot"
 
@@ -53,10 +70,7 @@ config:
     cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"
 
   - |
-    mkdir -p genimage
-
-  - |
-    cat >genimage/genimage.cfg <<EOF
+    cat >/genimage/genimage.cfg <<EOF
     image efi.img {
         vfat {
             extraargs = "-F32 -n EFI"
@@ -94,20 +108,8 @@ config:
     EOF
 
   - |
-    cd genimage
+    cd /genimage
     genimage --rootpath "%{sysroot}"
 
   - |
     install -Dm644 -t "%{install-root}" genimage/images/disk.qcow2
-
-sources:
-- kind: ostree_mirror
-  (?):
-  - repo_mode == 'local':
-      path: ostree-repo
-      gpg: local.gpg
-  - repo_mode == 'nightly':
-      url: https://nightly.gnome.org/
-      gpg: files/vm/gnome.gpg
-  match: 'gnome-os/*'
-  directory: source-repo

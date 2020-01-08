@@ -87,7 +87,7 @@ default:
     if [ "${ARCH}" == "x86_64" ]; then
         ${BST} build openh264-extension.bst:flatpak-repo.bst
 
-        ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/repo.bst
+        ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -188,7 +188,7 @@ track:
   stage: track
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/repo.bst vm/qemu-tools.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst
   retry: 2
   # only run on branches targeting master
   only:
@@ -332,8 +332,8 @@ publish_ostree_x86_64:
   - BUILD_BRANCH="${OSTREE_BRANCH}-${CI_COMMIT_SHA}"
   - ${BST} build vm/repo.bst
   - ${BST} checkout --hardlinks vm/repo.bst import-repo
-  - ostree --repo=import-repo/ostree/repo refs -A --create="${BUILD_BRANCH}" "${OSTREE_BRANCH}"
-  - ostree-push --repo=import-repo/ostree/repo "${GBM_PUSH_ADDRESS}:incoming-repo" "${BUILD_BRANCH}"
+  - ostree --repo=import-repo refs -A --create="${BUILD_BRANCH}" "${OSTREE_BRANCH}"
+  - ostree-push --repo=import-repo "${GBM_PUSH_ADDRESS}:incoming-repo" "${BUILD_BRANCH}"
   - ssh "${GBM_PUSH_ADDRESS}" commit "${BUILD_BRANCH}" "${OSTREE_BRANCH}"
   variables:
     ARCH: x86_64
