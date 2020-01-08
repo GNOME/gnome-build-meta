@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/3.34/epiphany-3.34.2.tar.xz
+  url: gnome_downloads:epiphany/3.34/epiphany-3.34.3.1.tar.xz
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
