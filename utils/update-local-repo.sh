@@ -2,11 +2,10 @@
 
 set -eu
 
-export BST="${BST:-bst} -o repo_mode local"
+: ${BST:=bst}
+export BST
 
 ref="$(${BST} show --format "%{vars}" --deps none vm/repo.bst | sed '/ostree-branch: /{;s///;q;};d')"
-
-
 
 if ! [ -d ostree-gpg ]; then
     rm -rf ostree-gpg.tmp
@@ -25,7 +24,6 @@ Expire-Date: 0
 EOF
     gpg --batch --homedir=ostree-gpg.tmp --generate-key ostree-gpg.tmp/key-config
     gpg --homedir=ostree-gpg.tmp -k --with-colons | sed '/^fpr:/q;d' | cut -d: -f10 >ostree-gpg.tmp/default-id
-    gpg --homedir=ostree-gpg.tmp --export --armor >local.gpg
     mv ostree-gpg.tmp ostree-gpg
 fi
 
@@ -33,5 +31,8 @@ utils/update-repo.sh \
     --gpg-homedir=ostree-gpg \
     --gpg-sign="$(cat ostree-gpg/default-id)" \
     --collection-id=org.gnome.GnomeOS \
+    --target-ref="${ref%/*}/devel" \
     ostree-repo vm/repo.bst \
     "${ref}"
+
+gpg --homedir=ostree-gpg --export --armor >ostree-repo/key.gpg

@@ -13,6 +13,13 @@ EOF
 
 while [ $# -gt 0 ]; do
     case "$1" in
+	--target-ref=*)
+	    target_ref="${1#--target-ref=}"
+	    ;;
+	--target-ref)
+	    target_ref="$2"
+	    shift
+	    ;;
 	--gpg-*=*)
 	    gpg_opts+=("$1")
 	    ;;
@@ -69,6 +76,7 @@ OSTREE_REPO="${main_opts[0]}"
 export OSTREE_REPO
 element="${main_opts[1]}"
 ref="${main_opts[2]}"
+: ${target_ref:="${ref}"}
 
 checkout="$(mktemp --suffix="-update-repo" -d -p "$(dirname ${OSTREE_REPO})")"
 
@@ -84,21 +92,21 @@ if ! [ -d ${OSTREE_REPO} ]; then
     ostree init --repo=${OSTREE_REPO} --mode=archive
 fi
 
-commit="$(ostree --repo="${checkout}/ostree/repo" rev-parse "${ref}")"
-ostree pull-local "${checkout}/ostree/repo" "${commit}"
+commit="$(ostree --repo="${checkout}" rev-parse "${ref}")"
+ostree pull-local "${checkout}" "${commit}"
 
-prev_commit="$(ostree rev-parse "${ref}" 2>/dev/null || true)"
+prev_commit="$(ostree rev-parse "${target_ref}" 2>/dev/null || true)"
 
 ostree commit ${gpg_opts[*]} \
-       --branch="${ref}" --tree=ref="${commit}" --skip-if-unchanged
+       --branch="${target_ref}" --tree=ref="${commit}" --skip-if-unchanged
 
-new_commit="$(ostree rev-parse "${ref}")"
+new_commit="$(ostree rev-parse "${target_ref}")"
 
 if [ "${new_commit}" != "${prev_commit}" ]; then
     ostree prune --refs-only --keep-younger-than="6 months ago"
 
     if [ -n "${prev_commit}" ]; then
-        ostree static-delta generate "${ref}"
+        ostree static-delta generate "${target_ref}"
     fi
 
     ostree summary \
