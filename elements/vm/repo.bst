@@ -10,7 +10,7 @@ variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
 
 environment:
-  OSTREE_REPO: "%{install-root}/ostree/repo"
+  OSTREE_REPO: "%{install-root}"
 
 config:
   layout:
@@ -36,4 +36,5 @@ config:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=archive
   - mv /sysroot/etc /sysroot/usr/etc
-  - ostree commit --branch=%{ostree-branch} /sysroot
+  - ostree commit --branch=%{ostree-branch} --timestamp="$(date --date="@${SOURCE_DATE_EPOCH}" --rfc-3339=seconds)" /sysroot
+
