@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.12.tar.xz
+  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.13.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - filename: core-deps/intltool.bst

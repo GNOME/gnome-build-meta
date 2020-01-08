@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gssdp/1.2/gssdp-1.2.1.tar.xz
+  url: gnome_downloads:gssdp/1.2/gssdp-1.2.2.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
