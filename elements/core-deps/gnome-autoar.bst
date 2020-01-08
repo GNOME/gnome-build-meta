@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-autoar/0.2/gnome-autoar-0.2.3.tar.xz
+  url: gnome_downloads:gnome-autoar/0.2/gnome-autoar-0.2.4.tar.xz
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
