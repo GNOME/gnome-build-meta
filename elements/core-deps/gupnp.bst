@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gupnp/1.2/gupnp-1.2.1.tar.xz
+  url: gnome_downloads:gupnp/1.2/gupnp-1.2.2.tar.xz
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst

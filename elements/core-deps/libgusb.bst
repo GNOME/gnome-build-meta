@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.1.tar.xz
+  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.2.tar.xz
 depends:
 - core-deps/libusb.bst
 - sdk/glib.bst
