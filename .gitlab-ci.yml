@@ -86,6 +86,7 @@ default:
         ${BST} build openh264-extension.bst:flatpak-repo.bst
 
         ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+        ${BST} -o arch "${ARCH}" checkout vm/image.bst image
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
