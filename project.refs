@@ -49,7 +49,7 @@ projects:
     core-deps/libusb.bst:
     - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
     sdk/vala.bst:
-    - ref: bf1ff4f59d5de2d626e98e98ef81cb75dc1e6a27610a7de4133597c430f1bd7c
+    - ref: 5af4f487b434f8580c01666c60c8660ba186989fdd891670cc64269cea6e571b
     core-deps/ppp.bst:
     - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
     - {}
@@ -352,7 +352,7 @@ projects:
     core-deps/libmediaart.bst:
     - ref: a57be017257e4815389afe4f58fdacb6a50e74fd185452b23a652ee56b04813d
     sdk/glib-networking.bst:
-    - ref: d50183046a4ff955d8cc7e953067cdfc94f14dbfda3024bf377ff37a3121dcd5
+    - ref: 85e620bdf5838971412793e9d2a2ee72de7da6c4185e168c087b8d6abc788643
     core/gnome-user-docs.bst:
     - ref: 2fc2b50dcdb0ae49dd9a4f9d8bd993efe840ec0dbb910cb03f2ea3d728a07a37
     core/vino.bst:
