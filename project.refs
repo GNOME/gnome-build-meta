@@ -352,7 +352,7 @@ projects:
     core-deps/libmediaart.bst:
     - ref: a57be017257e4815389afe4f58fdacb6a50e74fd185452b23a652ee56b04813d
     sdk/glib-networking.bst:
-    - ref: d50183046a4ff955d8cc7e953067cdfc94f14dbfda3024bf377ff37a3121dcd5
+    - ref: 85e620bdf5838971412793e9d2a2ee72de7da6c4185e168c087b8d6abc788643
     core/gnome-user-docs.bst:
     - ref: 2fc2b50dcdb0ae49dd9a4f9d8bd993efe840ec0dbb910cb03f2ea3d728a07a37
     core/vino.bst:
