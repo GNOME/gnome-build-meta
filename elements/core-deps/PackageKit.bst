@@ -1,14 +1,13 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git_tag
-  url: github_com:hughsie/PackageKit.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.13.tar.xz
 build-depends:
 - core-deps/intltool.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/libgudev.bst
@@ -17,11 +16,14 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dpackaging_backend=dummy
-    -Dgtk_module=false
-    -Dbash_completion=false
-    -Dbash_command_not_found=false
-    -Dgstreamer_plugin=false
-    -Dpython_backend=false
-    -Ddaemon_tests=false
+  conf-local: >-
+    --disable-vala
+    --disable-tests
+    --disable-qt
+    --disable-browser-plugin
+    --disable-bash-completion
+    --disable-gtk-module
+    --enable-python3
+config:
+  build-commands:
+  - '%{make} CFLAGS=-Wno-error'
