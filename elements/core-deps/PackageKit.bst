@@ -14,10 +14,14 @@ depends:
 - core-deps/libgudev.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
-- sdk/gst-plugins-base.bst
-- freedesktop-sdk.bst:components/gstreamer.bst
+- sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dbash_completion=false
+    -Dpackaging_backend=dummy
     -Dgtk_module=false
+    -Dbash_completion=false
+    -Dbash_command_not_found=false
+    -Dgstreamer_plugin=false
+    -Dpython_backend=false
+    -Ddaemon_tests=false
