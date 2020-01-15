@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-control-center.git
-  track: master
+  track: jjardon/gnome-desktop
   submodules:
     subprojects/gvc:
       checkout: true
