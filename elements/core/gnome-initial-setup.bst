@@ -8,6 +8,10 @@ sources:
   directory: gnome-initial-setup-config
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+runtime-depends:
+- sdk/adwaita-icon-theme.bst
+- sdk/cantarell-fonts.bst
+- freedesktop-sdk.bst:components/tzdata.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
