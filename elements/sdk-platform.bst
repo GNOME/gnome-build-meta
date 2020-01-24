@@ -44,6 +44,7 @@ depends:
 - sdk/libsoup.bst
 - sdk/libwpe.bst
 - sdk/mozjs60.bst
+- sdk/mozjs68.bst
 - sdk/openjpeg.bst
 - sdk/os-release.bst
 - sdk/pango.bst
