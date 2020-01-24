@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.4.tar.xz
-  ref: ca6139490e48863e7706d870ff4e8ac9f417b56f3b9e4b3ce490c13b09a77461
+  url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.14.5.tar.xz
+  ref: 7bfa9b329ea7f3c654fa1b2d43650bf2646598a5e3cb21f42c516b7e975d638e
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gstreamer.bst
