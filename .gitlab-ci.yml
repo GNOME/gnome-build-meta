@@ -4,15 +4,16 @@ variables:
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST: "bst --config build.conf --log-file logs/build.log --colors"
-  BST_SHA: '1.2.4-3-g79bbefe26a3fcd13d3de558aed6b5b4d5bc1235a'
-  BST_EXTERNAL_SHA: '0.9.0-0-g63a19e8068bd777bd9cd59b1a9442f9749ea5a85'
+  BST_SHA: '1.4.1-0-g2ece1287f75c3a1eaf4bd1a9f4f9c7b895fe3993'
+  BST_EXTERNAL_SHA: '0.19.1-0-ge39a140f7a2cf128e382ffe9318580d3e8664976'
   FLATPAK_BRANCH: "3.30"
   FLATPAK_SERVER_ADDRESS: 'gbm.gnome.org'
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_AMD64: "${DOCKER_REGISTRY}/amd64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
-  DOCKER_AARCH64: "${DOCKER_REGISTRY}/aarch64:e132e7bf9180b30c6ad0f4b057442cc2f2a0aa86"
+  DOCKER_IMAGE_ID: '1a534a96f9144ca8ee87cee1fef97faa7c396533'
+  DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
+  DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
 stages:
   - prepare_flatpak
