@@ -15,6 +15,7 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/libnma.bst
 - core-deps/upower.bst
+- core/cheese.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
@@ -31,7 +32,7 @@ depends:
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
-    -Dcheese=disabled
+    -Dcheese=enabled
     -Dsoftware-sources=disabled
 
 config:
