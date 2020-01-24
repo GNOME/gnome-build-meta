@@ -15,9 +15,6 @@ depends:
 - sdk/pango.bst
 - filename: sdk/vala.bst
   type: build
-- filename: extensions/rust/cargo.bst
-  junction: freedesktop-sdk.bst
-  type: build
 - filename: extensions/rust/rust.bst
   junction: freedesktop-sdk.bst
   type: build
