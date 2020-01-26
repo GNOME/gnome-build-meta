@@ -8,7 +8,7 @@ build-depends:
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- sdk/mozjs60.bst
+- sdk/mozjs68.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
