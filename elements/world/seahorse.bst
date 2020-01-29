@@ -3,11 +3,16 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/seahorse.git
   track: master
+  submodules:
+    subprojets/libhandy:
+      checkout: false
+      url: purism:Librem5/libhandy.git
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/cantarell-fonts.bst
 depends:
 - core-deps/avahi.bst
+- core-deps/libhandy.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
 - sdk/glib.bst
