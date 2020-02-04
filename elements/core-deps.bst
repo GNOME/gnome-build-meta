@@ -85,7 +85,6 @@ depends:
 - core-deps/libpeas.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
-- core-deps/libsass.bst
 - core-deps/libsigcplusplus-2.0.bst
 - core-deps/libsigcplusplus.bst
 - core-deps/libusb.bst
@@ -119,7 +118,6 @@ depends:
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
 - core-deps/sane-backends.bst
-- core-deps/sassc.bst
 - core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst

@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-shell.git
@@ -7,19 +8,22 @@ sources:
     subprojects/gvc:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+
 build-depends:
+- sdk-deps/sassc.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 runtime-depends:
 - core-deps/libgnomekbd.bst
+
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
-- core-deps/sassc.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gdm.bst
