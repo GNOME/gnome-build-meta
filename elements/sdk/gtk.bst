@@ -1,11 +1,15 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: master
+
 build-depends:
+- sdk-deps/sassc.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -24,9 +28,11 @@ depends:
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Denable-broadway-backend=true
+
 public:
   bst:
     split-rules:
