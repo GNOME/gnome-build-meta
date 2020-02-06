@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-user-share.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-user-share/3.34/gnome-user-share-3.34.0.tar.xz
 build-depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

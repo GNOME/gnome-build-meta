@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libpeas.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libpeas/1.25/libpeas-1.25.3.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

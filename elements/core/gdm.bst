@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdm/3.34/gdm-3.34.1.tar.xz
 - kind: local
   path: files/gdm
   directory: gdm-config

@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pyatspi2.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pyatspi/2.35/pyatspi-2.35.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

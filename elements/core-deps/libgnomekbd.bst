@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgnomekbd.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgnomekbd/3.26/libgnomekbd-3.26.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

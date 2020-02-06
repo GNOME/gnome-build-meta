@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:hughsie/libgusb.git
-  track: master
+- kind: tar
+  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.3.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
