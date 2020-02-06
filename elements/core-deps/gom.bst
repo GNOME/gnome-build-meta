@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gom.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gom/0.3/gom-0.3.3.tar.xz
+  ref: ac57e34b5fe273ed306efaeabb346712c264e341502913044a782cdf8c1036d8
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-user-docs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-user-docs/3.34/gnome-user-docs-3.34.1.tar.xz
+  ref: c2edd9d633f6f2a5fd8d5580e169d0e07de64d5d5b12a81ecbd64331d176a986
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
