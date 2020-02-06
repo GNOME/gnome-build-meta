@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:endlessm/eos-updater/archive/Release_3.7.5.tar.gz
 
+  ref: e01bef316286d450baa03a303c1088f409c0eacd38d2a455eeac4e41e14b86ac
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/avahi.bst
