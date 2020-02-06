@@ -2,6 +2,7 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:Igalia/WPEBackend-fdo/releases/download/1.4.0/wpebackend-fdo-1.4.0.tar.xz
+  ref: a919ca4a5bc445f9419a5b7f3781cfc98e5abcf5d7259eb1869f5ab20fd18baf
 - kind: patch
   path: files/wpebackend-fdo/debug.patch
 build-depends:

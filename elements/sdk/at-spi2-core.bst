@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/at-spi2-core.git
-  track: master
+- kind: tar
+  url: gnome_downloads:at-spi2-core/2.35/at-spi2-core-2.35.1.tar.xz
+  ref: ad97c7b6071c21ed59aeb092f3bdc592cf9edbca2710ff428d7829d65675a185
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

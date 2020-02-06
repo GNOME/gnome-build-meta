@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/simple-scan.git
-  track: master
+- kind: tar
+  url: gnome_downloads:simple-scan/3.35/simple-scan-3.35.90.tar.xz
+  ref: 897302cac6b3e3cef0d30c4aad639f4bed04d65181f3172f171b5ff23a0dda23
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

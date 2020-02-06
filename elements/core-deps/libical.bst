@@ -2,6 +2,7 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:libical/libical/releases/download/v3.0.7/libical-3.0.7.tar.gz
+  ref: 0abe66df1ea826e57db7f281c704ede834c84139012e6c686ea7adafd4e763fc
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
