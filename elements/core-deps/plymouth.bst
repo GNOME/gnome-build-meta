@@ -1,13 +1,8 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:plymouth/plymouth.git
-  track: master
-- kind: patch
-  path: files/plymouth/no-intltool.patch
-- kind: patch
-  path: files/plymouth/logo-parameter.patch
+- kind: tar
+  url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.4.tar.xz
 
 depends:
 - sdk/gtk+-3.bst
@@ -18,10 +13,6 @@ depends:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
-
-variables:
-  conf-local: >-
-    --with-logo="%{datadir}/pixmaps/gnome-boot-logo.png"
 
 config:
   install-commands:
