@@ -1,0 +1,70 @@
+#!/bin/bash
+
+set -eu
+
+DEFAULT_REF="gnome-os/@@ARCH@@/devel"
+DEFAULT_NAME="local"
+DEFAULT_URL="http://10.0.2.2:8000/"
+DEFAULT_GPG="http://10.0.2.2:8000/key.gpg"
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --name=*)
+            NAME="${1#--name=}"
+            ;;
+        --name)
+            shift
+            NAME="$1"
+            ;;
+        --ref=*)
+            REF="${1#--ref=}"
+            ;;
+        --ref)
+            shift
+            REF="${1}"
+            ;;
+        --url=*)
+            URL="${1#--url=}"
+            ;;
+        --url)
+            shift
+            URL="${1}"
+            ;;
+        --gpg=*)
+            GPG="${1#--gpg=}"
+            ;;
+        --gpg)
+            shift
+            GPG="${1}"
+            ;;
+        --help) ;&
+        -h)
+            cat <<EOF
+$0 [OPTIONS]
+
+Options:
+  --name NAME  OSTree remote name to add (default: ${DEFAULT_NAME})
+  --ref REF    OSTree ref to use (default: ${DEFAULT_REF})
+  --url URL    URL for remote OSTree repository (default: ${DEFAULT_URL})
+  --gpg URL    URL to the public key (default: ${DEFAULT_GPG}))
+  --help       Display this help message and exit
+EOF
+            exit 0
+            ;;
+    esac
+done
+
+: ${REF:="${DEFAULT_REF}"}
+: ${NAME:="${DEFAULT_NAME}"}
+: ${URL:="${DEFAULT_URL}"}
+: ${GPG:="${DEFAULT_GPG}"}
+
+ostree remote add --gpg-import=<(curl "${GPG}") "${NAME}" "${URL}"
+
+ostree pull "${NAME}" "${REF}"
+
+ostree admin deploy "${NAME}:${REF}"
+
+cat <<EOF
+You can now reboot.
+EOF
