@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-desktop.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-desktop/3.35/gnome-desktop-3.35.90.tar.xz
+  ref: 2233549181a20b669cf5198e21c742391848ee23f8a6d8cb7ce432d7f7269cd6
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

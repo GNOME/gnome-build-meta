@@ -1,15 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-control-center.git
-  track: master
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
-    subprojets/libhandy:
-      checkout: true
-      url: purism:Librem5/libhandy.git
+- kind: tar
+  url: gnome_downloads:gnome-control-center/3.35/gnome-control-center-3.35.90.tar.xz
+  ref: 65056cec2d6596e264d21c94a2b3e9351c0c2c9b564353b11f1b36355560acb6
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
