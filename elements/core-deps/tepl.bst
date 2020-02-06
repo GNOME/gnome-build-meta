@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tepl.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tepl/4.3/tepl-4.3.1.tar.xz
+  ref: 406f2aa257098de00cdce01dfe30d6fd7dbd2af60c81b33fbec5ac24b4dec623
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

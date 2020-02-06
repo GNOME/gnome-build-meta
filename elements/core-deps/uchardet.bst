@@ -1,8 +1,8 @@
 kind: cmake
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:uchardet/uchardet.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.6.tar.xz
+  ref: 8351328cdfbcb2432e63938721dd781eb8c11ebc56e3a89d0f84576b96002c61
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:

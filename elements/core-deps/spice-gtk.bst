@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: spice:gtk/spice-gtk-0.36.tar.bz2
+  ref: 7126c3584df12d40dcf4970f5f46fafd65b757620f911687e549f7da5c8fd7cd
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
