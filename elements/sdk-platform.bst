@@ -30,7 +30,8 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- sdk/gtk.bst
+# disabled for stable release
+# - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/ibus.bst
