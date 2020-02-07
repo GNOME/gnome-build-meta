@@ -2,7 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/samba/samba-4.10.2.tar.gz
-  ref: 30fc94470a7f13d72f8c237dbcd585575ab40d1f84bfc965db8358ad99ecf519
+  ref: 878cfdc51b74fafb604399c381c690b325061eb63fc17a188a505e96fa8f5e84
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
