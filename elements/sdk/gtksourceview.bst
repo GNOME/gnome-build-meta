@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtksourceview.git
-  track: master
+  track: 'gtksourceview-4-6'
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
