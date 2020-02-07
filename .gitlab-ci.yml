@@ -78,8 +78,7 @@ default:
   stage: build
   dependencies: [track]
   script:
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
-    flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
   - |
     # Only run this build for x86_64, instead of building it somewhere else
     if [ "${ARCH}" == "x86_64" ]; then
@@ -218,8 +217,7 @@ flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
   script:
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
-    > build.txt
+  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
     paths:
     - build.txt
