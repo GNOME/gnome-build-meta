@@ -36,7 +36,6 @@ depends:
 - core-deps/gnome-online-miners.bst
 - core-deps/gnome-video-effects.bst
 - core-deps/gom.bst
-- core-deps/graphviz.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/gsound.bst
