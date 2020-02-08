@@ -9,6 +9,7 @@ depends:
 - world/atkmm.bst
 - world/bijiben.bst
 - world/cairomm.bst
+- world/dbus-glib.bst
 - world/dconf-editor.bst
 - world/devhelp.bst
 - world/evolution.bst
@@ -51,13 +52,14 @@ depends:
 - world/jsonrpc-glib.bst
 - world/kyotocabinet.bst
 - world/libbluray.bst
-- world/libcdio-paranoia.bst
 - world/libcdio.bst
+- world/libcdio-paranoia.bst
 - world/libgepub.bst
-- world/libgit2-glib.bst
 - world/libgit2.bst
+- world/libgit2-glib.bst
 - world/libgnome-games-support.bst
 - world/libgphoto2.bst
+- world/libgrss.bst
 - world/libhangul.bst
 - world/libimobiledevice.bst
 - world/libmanette.bst
@@ -75,6 +77,7 @@ depends:
 - world/qqwing.bst
 - world/quadrapassel.bst
 - world/retro-gtk.bst
+- world/seahorse.bst
 - world/swell-foop.bst
 - world/tali.bst
 - world/telepathy-glib.bst

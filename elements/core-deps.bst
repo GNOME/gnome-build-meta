@@ -6,7 +6,6 @@ kind: stack
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
-- core-deps/PackageKit.bst
 - core-deps/accountsservice.bst
 - core-deps/amtk.bst
 - core-deps/atkmm-1.6.bst
@@ -48,7 +47,6 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/iptables.bst
 - core-deps/json-c.bst
-- core-deps/kmod.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst
 - core-deps/libchamplain.bst
