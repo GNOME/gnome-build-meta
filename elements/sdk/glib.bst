@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glib.git
-  track: master
+- kind: tar
+  url: gnome_downloads:glib/2.63/glib-2.63.5.tar.xz
+  ref: 851a4725a2ae401c1a4e49cf2138920cf87e028f033a2af33f5a16d159a3b78c
 depends:
 - filename: sdk/gtk-doc.bst
   type: build

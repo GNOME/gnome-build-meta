@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:polkit/polkit.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz
+  ref: 88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data

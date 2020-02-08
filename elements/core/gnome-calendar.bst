@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-calendar.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-calendar/3.35/gnome-calendar-3.35.2.tar.xz
+  ref: 24a60911c70648b05783808937833d16989c5a07d53bf38443e9179d641e8a9b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

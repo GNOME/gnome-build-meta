@@ -3,12 +3,12 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'False'
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   DOCKER_IMAGE_ID: '80f4a16af18b8641874fe037710dcaad4710ff50'
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: 3.36beta
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -78,8 +78,7 @@ default:
   stage: build
   dependencies: [track]
   script:
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
-    flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
   - |
     # Only run this build for x86_64, instead of building it somewhere else
     if [ "${ARCH}" == "x86_64" ]; then
@@ -218,8 +217,7 @@ flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
   script:
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
-    > build.txt
+  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
     paths:
     - build.txt
