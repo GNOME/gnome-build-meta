@@ -10,14 +10,12 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/amtk.bst
 - core-deps/atkmm-1.6.bst
-- core-deps/atkmm.bst
 - core-deps/avahi.bst
 - core-deps/babl.bst
 - core-deps/berkeleydb.bst
 - core-deps/blockdev.bst
 - core-deps/boost.bst
 - core-deps/cairomm-1.0.bst
-- core-deps/cairomm.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/cryptsetup.bst
@@ -32,7 +30,6 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
 - core-deps/glibmm-2.4.bst
-- core-deps/glibmm.bst
 - core-deps/gmime3.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
@@ -47,7 +44,6 @@ depends:
 - core-deps/gssdp.bst
 - core-deps/gtk-vnc.bst
 - core-deps/gtkmm-3.bst
-- core-deps/gtkmm.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
@@ -86,7 +82,6 @@ depends:
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
-- core-deps/libsigcplusplus.bst
 - core-deps/libusb.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
@@ -106,7 +101,6 @@ depends:
 - core-deps/openldap.bst
 - core-deps/osinfo-db-tools.bst
 - core-deps/pangomm-1.4.bst
-- core-deps/pangomm.bst
 - core-deps/parted.bst
 - core-deps/phodav.bst
 - core-deps/polkit.bst

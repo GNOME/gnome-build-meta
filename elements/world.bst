@@ -6,7 +6,9 @@ kind: stack
 depends:
 - world/accerciser.bst
 - world/anthy.bst
+- world/atkmm.bst
 - world/bijiben.bst
+- world/cairomm.bst
 - world/dconf-editor.bst
 - world/devhelp.bst
 - world/evolution.bst
@@ -15,6 +17,7 @@ depends:
 - world/ghex.bst
 - world/gitg.bst
 - world/glade.bst
+- world/glibmm.bst
 - world/gnome-builder.bst
 - world/gnome-chess.bst
 - world/gnome-code-assistance.bst
@@ -37,6 +40,7 @@ depends:
 - world/gnome-tetravex.bst
 - world/gnome-todo.bst
 - world/gnome-tweaks.bst
+- world/gtkmm.bst
 - world/gtkspell.bst
 - world/gupnp-igd.bst
 - world/hitori.bst
@@ -60,10 +64,12 @@ depends:
 - world/libmtp.bst
 - world/libnfs.bst
 - world/libpinyin.bst
+- world/libsigcplusplus.bst
 - world/libssh2.bst
 - world/libusbmuxd.bst
 - world/lightsoff.bst
 - world/network-manager-applet.bst
+- world/pangomm.bst
 - world/plist.bst
 - world/polari.bst
 - world/qqwing.bst

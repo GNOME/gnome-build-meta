@@ -1,14 +1,22 @@
 kind: autotools
+
 sources:
 - kind: git_tag
-  url: git_freedesktop_org:cairo/cairomm.git
+  url: gitlab_gnome_org:GNOME/gtkmm.git
   track: master
+
 build-depends:
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
-- core-deps/libsigcplusplus.bst
-- freedesktop-sdk.bst:components/cairo.bst
+- sdk/glib.bst
+- sdk/gtk.bst
+- world/atkmm.bst
+- world/cairomm.bst
+- world/pangomm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   conf-local: >-
-    --disable-documentation
+    --enable-maintainer-mode
