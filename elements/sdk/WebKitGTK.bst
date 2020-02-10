@@ -1,8 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  # FIXME: Remove -DENABLE_JIT=OFF (below) after next update, https://gitlab.gnome.org/GNOME/gnome-build-meta/merge_requests/493#note_693360
-  url: webkitgtk_org:webkitgtk-2.27.4.tar.xz
+  url: webkitgtk_org:webkitgtk-2.27.90.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -45,8 +44,7 @@ variables:
   webkitgtk_toolchain: ''
   (?):
   - arch == "i686" or arch == "arm":
-      # FIXME: Remove -DENABLE_JIT=OFF after next update, https://gitlab.gnome.org/GNOME/gnome-build-meta/merge_requests/493#note_693360
-      webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch} -DENABLE_JIT=OFF
+      webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
