@@ -2,8 +2,6 @@ kind: cmake
 sources:
 - kind: tar
   url: github_com:Igalia/WPEBackend-fdo/releases/download/1.4.0/wpebackend-fdo-1.4.0.tar.xz
-- kind: patch
-  path: files/wpebackend-fdo/debug.patch
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
