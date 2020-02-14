@@ -2,8 +2,7 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: master
-  track-tags: true
+  track: abderrahim/bst2
 - kind: patch
   path: files/freedesktop-sdk/0001-polkit-patch-to-print-admin-rule-errors.patch
 config:
