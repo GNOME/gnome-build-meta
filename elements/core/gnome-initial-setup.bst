@@ -33,6 +33,7 @@ variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
     -Dcheese=enabled
+    -Dparental_controls=disabled
     -Dsoftware-sources=disabled
 
 config:
