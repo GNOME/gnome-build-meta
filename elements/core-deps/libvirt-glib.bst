@@ -15,5 +15,4 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  conf-local: --enable-werror=no

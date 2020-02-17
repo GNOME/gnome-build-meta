@@ -13,5 +13,4 @@ depends:
 - sdk/libcanberra.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-gtk-doc
+  conf-local: --disable-gtk-doc

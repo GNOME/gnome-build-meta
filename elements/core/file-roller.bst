@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:file-roller/3.35/file-roller-3.35.90.tar.xz
-  ref: 165c32391d213b76579abd4d59a890218d7c8ef8e67f32898e9263c40bf2b620
+  url: gnome_downloads:file-roller/3.35/file-roller-3.35.91.tar.xz
+  ref: 8a7d06f65e827d8b191d9f32917438343a917c881c7e1f5cb5aa7c59e8224ca6
 build-depends:
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -21,12 +21,8 @@ depends:
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   pamdir: '%{sysconfdir}/pam.d'
-  conf-local: >-
-    --enable-wayland-support
-    --with-pam-prefix=%{sysconfdir}
-    --with-run-dir=/run/gdm
+  conf-local: --enable-wayland-support --with-pam-prefix=%{sysconfdir} --with-run-dir=/run/gdm
     --with-plymouth=yes
-
 config:
   install-commands:
     (>):

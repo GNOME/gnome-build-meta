@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/3.35/nautilus-3.35.90.tar.xz
-  ref: 146273f1c05a63289b2cd6063390bcbcfef1db401e7d68a1faf110b38a1ded0d
+  url: gnome_downloads:nautilus/3.35/nautilus-3.35.91.1.tar.xz
+  ref: abd215fc12754fb72e7b3a5fad2633aec174c03ead13c0173170958aa2aa1caa
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -18,5 +18,4 @@ depends:
 - sdk/pango.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dselinux=false
+  meson-local: -Dselinux=false

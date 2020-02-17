@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:glib-networking/2.63/glib-networking-2.63.90.tar.xz
-  ref: 1d59d763638c633bb809338e36b195ea3e692fc456d6d16e4e66a6cdfebd2f1a
+  url: gnome_downloads:glib-networking/2.63/glib-networking-2.63.91.tar.xz
+  ref: 714b9dfd88b1b7746eaada9de6eb0b5915f78370cf06c9be16f54a5da1124dcf
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -13,5 +13,4 @@ depends:
 - freedesktop-sdk.bst:components/libproxy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dinstalled_tests=true
+  meson-local: -Dinstalled_tests=true

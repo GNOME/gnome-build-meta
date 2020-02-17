@@ -18,10 +18,7 @@ depends:
 - freedesktop-sdk.bst:components/sqlite.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dtls_check=false
-    -Dgtk_doc=true
-    -Dntlm=disabled
+  meson-local: -Dtls_check=false -Dgtk_doc=true -Dntlm=disabled
 public:
   bst:
     split-rules:

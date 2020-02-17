@@ -21,12 +21,8 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xrandr.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-cogl-gst
-    --disable-maintainer-flags
-    --enable-xlib-egl-platform
-    --enable-wayland-egl-platform
-    --enable-wayland-egl-server
+  conf-local: --disable-cogl-gst --disable-maintainer-flags --enable-xlib-egl-platform
+    --enable-wayland-egl-platform --enable-wayland-egl-server
 public:
   bst:
     split-rules:

@@ -24,5 +24,4 @@ depends:
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Drdp=false
+  meson-local: -Drdp=false

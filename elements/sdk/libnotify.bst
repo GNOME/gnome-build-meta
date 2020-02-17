@@ -15,10 +15,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  meson-local: >-
-    -Ddocbook_docs=disabled
-    -Dman=false
-
+  meson-local: -Ddocbook_docs=disabled -Dman=false
 public:
   bst:
     split-rules:

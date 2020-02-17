@@ -23,18 +23,6 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: >-
-    -Dgraphviz=disabled
-    -Djasper=disabled
-    -Dlensfun=disabled
-    -Dlibav=disabled
-    -Dlibraw=disabled
-    -Dlibspiro=disabled
-    -Dlibv4l=disabled
-    -Dlibv4l2=disabled
-    -Dlua=disabled
-    -Dmrg=disabled
-    -Dopenexr=disabled
-    -Dpygobject=disabled
-    -Dumfpack=disabled
-    -Dwebp=disabled
+  meson-local: -Dgraphviz=disabled -Djasper=disabled -Dlensfun=disabled -Dlibav=disabled
+    -Dlibraw=disabled -Dlibspiro=disabled -Dlibv4l=disabled -Dlibv4l2=disabled -Dlua=disabled
+    -Dmrg=disabled -Dopenexr=disabled -Dpygobject=disabled -Dumfpack=disabled -Dwebp=disabled

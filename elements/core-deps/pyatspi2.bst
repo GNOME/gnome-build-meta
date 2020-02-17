@@ -11,5 +11,4 @@ depends:
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --with-python=python3
+  conf-local: --with-python=python3

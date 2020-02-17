@@ -29,5 +29,4 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Duse-network=false
+  meson-local: -Duse-network=false

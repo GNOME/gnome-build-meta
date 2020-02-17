@@ -19,5 +19,4 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Denable-tests=false
+  meson-local: -Denable-tests=false

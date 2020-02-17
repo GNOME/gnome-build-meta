@@ -14,6 +14,4 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dman=false
-    -Dvapi=true
+  meson-local: -Dman=false -Dvapi=true

@@ -15,7 +15,4 @@ depends:
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --with-gtk=3.0
-    --enable-vala
-    --disable-werror
+  conf-local: --with-gtk=3.0 --enable-vala --disable-werror

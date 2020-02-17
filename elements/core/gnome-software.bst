@@ -26,12 +26,7 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dfwupd=false
-    -Dvalgrind=false
-    -Dpolkit=true
-    -Dflatpak=true
-    -Deos_updater=true
+  meson-local: -Dfwupd=false -Dvalgrind=false -Dpolkit=true -Dflatpak=true -Deos_updater=true
     -Dpackagekit=false
 config:
   configure-commands:

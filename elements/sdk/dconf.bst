@@ -15,8 +15,7 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dbash_completion=false
+  meson-local: -Dbash_completion=false
 public:
   bst:
     split-rules:

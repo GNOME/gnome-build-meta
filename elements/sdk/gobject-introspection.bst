@@ -14,10 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/python3-mako.bst
 - freedesktop-sdk.bst:components/python3-markdown.bst
 variables:
-  meson-local: >-
-    -Dgtk_doc=true
-    -Dcairo=disabled
-    -Ddoctool=enabled
+  meson-local: -Dgtk_doc=true -Dcairo=disabled -Ddoctool=enabled
 public:
   bst:
     split-rules:

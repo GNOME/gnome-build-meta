@@ -11,5 +11,4 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-more-warnings=no
+  conf-local: --enable-more-warnings=no

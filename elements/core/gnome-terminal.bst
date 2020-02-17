@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.35/gnome-terminal-3.35.1.tar.xz
-  ref: 465cb0cc448e075bba4eae0a020e163a4fb5beea277e4dcde9830917595ad392
+  url: gnome_downloads:gnome-terminal/3.35/gnome-terminal-3.35.91.tar.xz
+  ref: 9958fdf501f8450408cded67954acebb5bb2d786cc6addf6b64c962f2ec9b1b2
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
@@ -21,5 +21,4 @@ depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-migration
+  conf-local: --disable-migration

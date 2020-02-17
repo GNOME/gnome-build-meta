@@ -13,5 +13,4 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dsniffer=false
+  meson-local: -Dsniffer=false

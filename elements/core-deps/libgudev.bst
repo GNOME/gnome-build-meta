@@ -12,5 +12,4 @@ depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-umockdev
+  conf-local: --disable-umockdev

@@ -9,5 +9,4 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Duseprebuilt=true
+  meson-local: -Duseprebuilt=true

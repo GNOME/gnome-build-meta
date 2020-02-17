@@ -11,5 +11,4 @@ depends:
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dextension_set=classic
+  meson-local: -Dextension_set=classic

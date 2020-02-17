@@ -18,14 +18,8 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-installed-tests
-    --disable-maintainer-flags
-    --enable-egl-backend
-    --enable-evdev-input
-    --enable-wayland-backend
-    --enable-wayland-compositor
-    --enable-gdk-backend
+  conf-local: --enable-installed-tests --disable-maintainer-flags --enable-egl-backend
+    --enable-evdev-input --enable-wayland-backend --enable-wayland-compositor --enable-gdk-backend
 public:
   bst:
     split-rules:

@@ -13,5 +13,4 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-qt
+  conf-local: --disable-qt

@@ -27,5 +27,4 @@ depends:
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Denable-vala=no
+  meson-local: -Denable-vala=no

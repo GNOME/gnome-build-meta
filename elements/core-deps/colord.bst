@@ -16,9 +16,5 @@ depends:
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dargyllcms_sensor=false
-    -Dbash_completion=false
-    -Dlibcolordcompat=false
-    -Dman=false
-    -Dvapi=true
+  meson-local: -Dargyllcms_sensor=false -Dbash_completion=false -Dlibcolordcompat=false
+    -Dman=false -Dvapi=true

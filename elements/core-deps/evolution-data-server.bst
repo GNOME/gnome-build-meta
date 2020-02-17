@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.35/evolution-data-server-3.35.90.tar.xz
-  ref: f7444e53228ecdae0f71c37846ff8e59ca7e54522dda040d889769d6fbd976fc
+  url: gnome_downloads:evolution-data-server/3.35/evolution-data-server-3.35.91.tar.xz
+  ref: a2e97173b4af85527f3df408cc11bb941c7520319aea4a42443dd321a38d4fc2
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/gperf.bst
@@ -22,10 +22,5 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  cmake-local: >-
-    -DENABLE_INTROSPECTION=ON
-    -DENABLE_VALA_BINDINGS=ON
-    -DENABLE_UOA=OFF
-    -DENABLE_GOOGLE_AUTH=OFF
-    -DLIB_INSTALL_DIR=%{libdir}
-    -DSYSCONF_INSTALL_DIR=%{sysconfdir}
+  cmake-local: -DENABLE_INTROSPECTION=ON -DENABLE_VALA_BINDINGS=ON -DENABLE_UOA=OFF
+    -DENABLE_GOOGLE_AUTH=OFF -DLIB_INSTALL_DIR=%{libdir} -DSYSCONF_INSTALL_DIR=%{sysconfdir}

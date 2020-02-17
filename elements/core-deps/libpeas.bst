@@ -15,9 +15,4 @@ depends:
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    -Dpython3=true
-    -Dintrospection=true
-    -Dvapi=true
-    -Dwidgetry=true
-    -Dgtk_doc=true
+  conf-local: -Dpython3=true -Dintrospection=true -Dvapi=true -Dwidgetry=true -Dgtk_doc=true

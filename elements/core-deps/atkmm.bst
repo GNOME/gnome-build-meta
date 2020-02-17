@@ -10,5 +10,4 @@ depends:
 - sdk/atk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-maintainer-mode
+  conf-local: --enable-maintainer-mode

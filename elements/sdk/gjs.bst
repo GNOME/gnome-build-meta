@@ -13,8 +13,7 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dprofiler=disabled
+  meson-local: -Dprofiler=disabled
 public:
   bst:
     split-rules:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtksourceview/4.4/gtksourceview-4.4.0.tar.xz
-  ref: 9ddb914aef70a29a66acd93b4f762d5681202e44094d2d6370e51c9e389e689a
+  url: gnome_downloads:gtksourceview/4.5/gtksourceview-4.5.91.tar.xz
+  ref: bf81ef5bcc3fa02907f3fea6e64a150e48e5fe66515d4ce431696ec53d5a6241
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
@@ -11,6 +11,4 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dinstall_tests=true
-    -Dgtk_doc=true
+  meson-local: -Dinstall_tests=true -Dgtk_doc=true

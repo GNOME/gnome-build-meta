@@ -88,8 +88,8 @@ default:
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
     fi
 
-  # Store all the downloaded git repos and tarballs in the cache.
-  # This saves us fetching them on every build
+# Store all the downloaded git repos and tarballs in the cache.
+# This saves us fetching them on every build
   cache: &bst-cache
     key: bst-$FLATPAK_BRANCH
     paths:
@@ -197,23 +197,24 @@ track:
 
 
 build-gnome-core-x86_64:
-  extends: .build-template
   <<: *x86_64
+  extends: .build-template
 
 build-gnome-core-i386:
-  extends: .build-template
   <<: *i686
+  extends: .build-template
 
 build-gnome-core-aarch64:
-  extends: .build-template
   <<: *aarch64
+  extends: .build-template
 
 build-gnome-core-arm:
-  extends: .build-template
   <<: *arm
+  extends: .build-template
 
 
 flatpak-prepare:
+  <<: *x86_64
   stage: prepare_flatpak
   dependencies: []
   script:
@@ -228,27 +229,27 @@ flatpak-prepare:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
-  <<: *x86_64
 
 
 flatpak-x86_64:
-  extends: .flatpak-template
   <<: *x86_64
+  extends: .flatpak-template
 
 flatpak-i386:
-  extends: .flatpak-template
   <<: *i686
+  extends: .flatpak-template
 
 flatpak-aarch64:
-  extends: .flatpak-template
   <<: *aarch64
+  extends: .flatpak-template
 
 flatpak-arm:
-  extends: .flatpak-template
   <<: *arm
+  extends: .flatpak-template
 
 
 flatpak-finish:
+  <<: *x86_64
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
@@ -262,9 +263,9 @@ flatpak-finish:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
-  <<: *x86_64
 
 flatpak-finish-failed:
+  <<: *x86_64
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
@@ -277,7 +278,6 @@ flatpak-finish-failed:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
-  <<: *x86_64
 
 
 cve_report:

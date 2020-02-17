@@ -13,7 +13,4 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --without-bonobo
-    --without-gnome-vfs
-    --enable-introspection
+  conf-local: --without-bonobo --without-gnome-vfs --enable-introspection

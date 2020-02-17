@@ -29,6 +29,4 @@ depends:
 - freedesktop-sdk.bst:components/xorg-server.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dprofiler=false
-    -Dremote_desktop=false
+  meson-local: -Dprofiler=false -Dremote_desktop=false

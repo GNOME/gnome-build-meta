@@ -12,5 +12,4 @@ depends:
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-gtk2-engine
+  conf-local: --disable-gtk2-engine

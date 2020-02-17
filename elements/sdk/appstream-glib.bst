@@ -18,11 +18,7 @@ depends:
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dstemmer=false
-    -Drpm=false
-    -Dfonts=false
-    -Ddep11=false
+  meson-local: -Dstemmer=false -Drpm=false -Dfonts=false -Ddep11=false
 public:
   bst:
     split-rules:

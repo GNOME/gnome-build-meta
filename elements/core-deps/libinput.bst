@@ -12,6 +12,4 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Ddocumentation=false
-    -Dtests=false
+  meson-local: -Ddocumentation=false -Dtests=false

@@ -19,5 +19,4 @@ depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-introspection
+  conf-local: --enable-introspection

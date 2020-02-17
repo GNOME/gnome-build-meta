@@ -9,5 +9,4 @@ depends:
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-documentation
+  conf-local: --disable-documentation

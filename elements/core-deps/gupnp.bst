@@ -14,5 +14,4 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dcontext_manager=network-manager
+  meson-local: -Dcontext_manager=network-manager

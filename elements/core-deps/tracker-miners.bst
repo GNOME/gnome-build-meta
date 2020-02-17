@@ -27,11 +27,5 @@ depends:
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dxmp=disabled
-    -Dexif=disabled
-    -Diptc=disabled
-    -Dminer_rss=false
-    -Dtiff=disabled
-    -Dtaglib=disabled
-    -Dgif=disabled
+  meson-local: -Dxmp=disabled -Dexif=disabled -Diptc=disabled -Dminer_rss=false -Dtiff=disabled
+    -Dtaglib=disabled -Dgif=disabled

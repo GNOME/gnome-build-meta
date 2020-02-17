@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-disk-utility/3.35/gnome-disk-utility-3.35.2.tar.xz
-  ref: 14268385d2cfc5e2e916ffa515168921f414a0a912263c61ed8489d95ac892b4
+  url: gnome_downloads:gnome-disk-utility/3.35/gnome-disk-utility-3.35.91.tar.xz
+  ref: cb27c0edf6c56d1aa4544c6436d6a60a6584a4504872b6e8baa6c4118024d1c2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -18,5 +18,4 @@ depends:
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dlibelogind=disabled
+  meson-local: -Dlibelogind=disabled

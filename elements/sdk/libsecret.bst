@@ -14,8 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dgtk_doc=false
+  meson-local: -Dgtk_doc=false
 public:
   bst:
     split-rules:

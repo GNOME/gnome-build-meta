@@ -16,9 +16,7 @@ depends:
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --disable-gtk-doc
-    --enable-vala
+  conf-local: --disable-gtk-doc --enable-vala
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
 public:

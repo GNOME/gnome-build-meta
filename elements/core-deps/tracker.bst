@@ -16,9 +16,5 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Ddocs=false
-    -Dunicode_support=icu
-    -Dfunctional_tests=false
-    -Dstemmer=disabled
+  meson-local: -Ddocs=false -Dunicode_support=icu -Dfunctional_tests=false -Dstemmer=disabled
     -Dbash_completion=%{datadir}/bash-completion/completions

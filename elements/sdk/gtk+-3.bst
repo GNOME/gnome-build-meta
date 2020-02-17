@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.13.tar.xz
-  ref: 4c775c38cf1e3c534ef0ca52ca6c7a890fe169981af66141c713e054e68930a9
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.14.tar.xz
+  ref: 1c4d69f93ab884fd80c6b95115bfbc12d51ecd029178b6dad3672fdc5ff91e88
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -27,15 +27,8 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dbroadway_backend=true
-    -Dinstalled_tests=true
-    -Dtests=false
-    -Dx11_backend=true
-    -Dwayland-backend=true
-    -Dgtk_doc=true
-    -Dman=true
-    -Dintrospection=true
+  meson-local: -Dbroadway_backend=true -Dinstalled_tests=true -Dtests=false -Dx11_backend=true
+    -Dwayland-backend=true -Dgtk_doc=true -Dman=true -Dintrospection=true
 public:
   bst:
     integration-commands:

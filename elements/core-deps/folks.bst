@@ -16,6 +16,4 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  meson-local: >-
-    -Deds_backend=true
-    -Dtelepathy_backend=false
+  meson-local: -Deds_backend=true -Dtelepathy_backend=false

@@ -16,5 +16,4 @@ depends:
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-more-warnings=no
+  conf-local: --enable-more-warnings=no
