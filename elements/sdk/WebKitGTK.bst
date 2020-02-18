@@ -2,6 +2,7 @@ kind: cmake
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.26.3.tar.xz
+  ref: add51153943cc11d90a7038d0ea5f6332281e6c0be0640f802a211b035f0e611
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -59,12 +60,9 @@ depends:
 variables:
   webkitgtk_toolchain: ''
   (?):
-    - arch == "i686" or arch == "arm":
-        webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
-  cmake-local:
-    -DPORT=GTK
-    -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-    %{webkitgtk_toolchain}
+  - arch == "i686" or arch == "arm":
+      webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
+  cmake-local: -DPORT=GTK -DENABLE_BUBBLEWRAP_SANDBOX=OFF %{webkitgtk_toolchain}
 (?):
 - arch == "i686":
     environment:

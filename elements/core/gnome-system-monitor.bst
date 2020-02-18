@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-system-monitor/3.32/gnome-system-monitor-3.32.1.tar.xz
+  ref: 48c131335091bd927862f40ef56400f997981df2acfc82abea662bf91a1ea4f1
 depends:
 - core-deps/gtkmm-3.bst
 - core-deps/libgtop.bst

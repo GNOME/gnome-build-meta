@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-settings-daemon/3.34/gnome-settings-daemon-3.34.2.tar.xz
+  ref: 9fbae67e217e53b99e4f9e7d392c91ffbe31253941c9b136ef09c2d9db7ad7ed
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst

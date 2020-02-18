@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gfbgraph/0.2/gfbgraph-0.2.3.tar.xz
+  ref: da1179083cde2b649d7491c745250a00d292e390fd620b7dd2dd95a122dae0b6
 depends:
 - core-deps/gnome-online-accounts.bst
 - filename: core-deps/intltool.bst

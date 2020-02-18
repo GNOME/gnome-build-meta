@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gnome-getting-started-docs/3.34/gnome-getting-started-docs-3.34.1.tar.xz
+  ref: ca998f144e2aab81aa7cf6a09202caf650005965d68187baa7aa5d0198373602
 depends:
 - sdk/yelp-tools.bst
 - filename: public-stacks/buildsystem-autotools.bst

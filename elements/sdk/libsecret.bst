@@ -1,7 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libsecret/0.19/libsecret-0.19.1.tar.xz
+  url: gnome_downloads:libsecret/0.20/libsecret-0.20.1.tar.xz
+  ref: 57f73e94ec6263a17a077fb809cf8cf424637a897a7f15b4eec42ce4aef52447
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
