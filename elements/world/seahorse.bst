@@ -10,7 +10,6 @@ sources:
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 depends:
-- core-deps/avahi.bst
 - core-deps/libhandy.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
