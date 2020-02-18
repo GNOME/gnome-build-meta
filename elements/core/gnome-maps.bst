@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-maps/3.34/gnome-maps-3.34.3.tar.xz
+  ref: bcf98f55ff51170144c93eedba4b50de708bbc11c9bd4036b52649dc108da8dc
 depends:
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst

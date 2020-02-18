@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.6.0.tar.gz
+  ref: d0d5b1196d73a7abed051be48d0e5b4aa196aac4cdbf8ddf52f57c0c492b2574
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst

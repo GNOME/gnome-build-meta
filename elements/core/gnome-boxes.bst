@@ -1,7 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/3.34/gnome-boxes-3.34.3.tar.xz
+  url: gnome_downloads:gnome-boxes/3.34/gnome-boxes-3.34.4.tar.xz
+  ref: 0e54fb02d4dea08cecf6f6b135a478194cf1b8b7378621af446d3d6bcda019af
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgovirt.bst

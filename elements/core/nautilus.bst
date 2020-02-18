@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:nautilus/3.34/nautilus-3.34.2.tar.xz
+  ref: bb06e226b965f479a0b8668c19c8e1762b9d8f039af6817961cc7a8f09e6f8a7
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
