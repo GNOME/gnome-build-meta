@@ -11,6 +11,9 @@ depends:
 - filename: public-stacks/buildsystem-meson.bst
   junction: freedesktop-sdk.bst
   type: build
+- filename: components/python3-dbusmock.bst
+  junction: freedesktop-sdk.bst
+  type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
