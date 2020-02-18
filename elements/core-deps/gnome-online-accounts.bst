@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-online-accounts/3.35/gnome-online-accounts-3.35.3.tar.xz
-  ref: c0eda27a02f65245276e6971c876bb45605e8d4de379c6454503881a05bbeb71
+  url: gnome_downloads:gnome-online-accounts/3.35/gnome-online-accounts-3.35.90.tar.xz
+  ref: a41e0084727eb886c73eb6fa8f78e95395aa289150d938da1489ba6c7f085c92
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/3.35/mutter-3.35.90.tar.xz
-  ref: 0b04ccdd0ff43f957c8d3a2225cf5d28091e31adcd5909761a64ec0c2d51be85
+  url: gnome_downloads:mutter/3.35/mutter-3.35.91.tar.xz
+  ref: cfd408a8877a2c39332dff55945c84028fd7bf1ff78d64d0dc26eb409fe8e891
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
