@@ -1,12 +1,11 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_com:lathiat/avahi/releases/download/v0.7/avahi-0.7.tar.gz
+  url: github_com:lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz
 - kind: local
   path: files/avahi/avahi.conf
   directory: extra
 build-depends:
-- core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/libdaemon.bst
@@ -15,6 +14,7 @@ depends:
 variables:
   conf-local: >-
     --with-distro=none
+    --disable-libevent
     --disable-qt3
     --disable-qt4
     --disable-gtk
