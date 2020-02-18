@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:folks/0.13/folks-0.13.2.tar.xz
-  ref: 0263d6b8de41acabbc95e9a2418374271fb649412a1de3e3ef6ad4a3a5270173
+  url: gnome_downloads:folks/0.13/folks-0.13.1.tar.xz
+  ref: 3df1c663b82fe211aead2b31cae1fc41d124e85436375762f6745c45ba46aa5d
 depends:
 - core-deps/evolution-data-server.bst
 - sdk/gobject-introspection.bst
