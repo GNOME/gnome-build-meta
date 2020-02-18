@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/3.35/gnome-control-center-3.35.90.tar.xz
+  url: gnome_downloads:gnome-control-center/3.35/gnome-control-center-3.35.91.tar.xz
   ref: 65056cec2d6596e264d21c94a2b3e9351c0c2c9b564353b11f1b36355560acb6
 build-depends:
 - sdk/gtk-doc.bst

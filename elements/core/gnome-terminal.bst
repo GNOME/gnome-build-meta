@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.35/gnome-terminal-3.35.1.tar.xz
+  url: gnome_downloads:gnome-terminal/3.35/gnome-terminal-3.35.91.tar.xz
   ref: 465cb0cc448e075bba4eae0a020e163a4fb5beea277e4dcde9830917595ad392
 build-depends:
 - core-deps/intltool.bst
