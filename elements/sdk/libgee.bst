@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgee/0.20/libgee-0.20.2.tar.xz
-  ref: 9e035c4b755f46bfae70ba81cdcf8328b03f554373cec8c816e8b5680f85353c
+  url: gnome_downloads:libgee/0.20/libgee-0.20.3.tar.xz
+  ref: d0b5edefc88cbca5f1709d19fa62aef490922c6577a14ac4e7b085507911a5de
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
