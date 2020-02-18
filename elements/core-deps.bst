@@ -9,7 +9,6 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/amtk.bst
 - core-deps/atkmm-1.6.bst
-- core-deps/avahi.bst
 - core-deps/babl.bst
 - core-deps/berkeleydb.bst
 - core-deps/blockdev.bst
