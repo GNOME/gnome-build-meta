@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-clocks/3.34/gnome-clocks-3.34.0.tar.xz
+  ref: 61195f357c63b65b75e209494e12a122a802c75333290e136813565dca94f03c
 depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst

@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:baobab/3.34/baobab-3.34.0.tar.xz
+  ref: 46ebd9466da6a68c340653e9095f1e905b6fac79305879a9e644634f7da98607
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst

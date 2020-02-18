@@ -1,7 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/glib/libvirt-glib-2.0.0.tar.gz
+  url: https://libvirt.org/sources/glib/libvirt-glib-3.0.0.tar.gz
+  ref: 7fff8ca9a2b723dbfd04223b1c7624251c8bf79eb57ec27362a7301b2dd9ebfe
 depends:
 - filename: core-deps/intltool.bst
   type: build

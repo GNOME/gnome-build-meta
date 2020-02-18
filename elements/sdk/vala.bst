@@ -1,7 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:vala/0.46/vala-0.46.5.tar.xz
+  url: gnome_downloads:vala/0.46/vala-0.46.6.tar.xz
+  ref: ef31649932872f094971d46453b21c60a41661670f98afa334062425b4aec47a
 depends:
 - sdk/glib.bst
 - filename: sdk/vala-tarball.bst
