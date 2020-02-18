@@ -13,9 +13,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/avahi.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
+- freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
 - freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
