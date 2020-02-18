@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-session/3.34/gnome-session-3.34.2.tar.xz
+  ref: 8bb77381650a03ae4be7260751363bd27da93f09bac1ddbc885f4ce44ebaf8e1
 depends:
 - core-deps/upower.bst
 - core-deps/xmlto.bst

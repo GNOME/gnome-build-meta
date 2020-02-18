@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:network-manager-applet/1.8/network-manager-applet-1.8.24.tar.xz
+  ref: 118bbb8a5027634b62e8b45b16ceafce74441529c99bf230654e3bec38f9fbbf
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst

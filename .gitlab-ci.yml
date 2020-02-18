@@ -94,8 +94,7 @@ default:
   stage: build
   dependencies: [track]
   script:
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst
-    flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
   cache: &bst-cache
@@ -222,8 +221,7 @@ flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
   script:
-  - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO
-    > build.txt
+  - flat-manager/flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
     paths:
     - build.txt

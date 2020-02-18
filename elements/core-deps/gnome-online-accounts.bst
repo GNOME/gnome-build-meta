@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gnome-online-accounts/3.34/gnome-online-accounts-3.34.1.tar.xz
+  ref: 4832ca8e48d3a497fc676e7b6f146009ab4206995362977b9805aa39f164783a
 depends:
 - core-deps/librest.bst
 - sdk/WebKitGTK.bst

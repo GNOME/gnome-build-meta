@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-initial-setup/3.34/gnome-initial-setup-3.34.3.tar.xz
+  ref: 33f9ceb2d65800644c6d6430bbb1d0f4387a062684014cba836d9fbc593d88b5
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
