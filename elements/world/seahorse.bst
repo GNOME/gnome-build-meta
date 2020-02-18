@@ -11,7 +11,6 @@ runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/cantarell-fonts.bst
 depends:
-- core-deps/avahi.bst
 - core-deps/libhandy.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
@@ -23,6 +22,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -7,11 +7,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - sdk/gtk-doc.bst
 depends:
-- core-deps/avahi.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - world/dbus-glib.bst
+- freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
