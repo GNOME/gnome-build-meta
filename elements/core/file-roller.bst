@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:file-roller/3.32/file-roller-3.32.3.tar.xz
+  url: gnome_downloads:file-roller/3.32/file-roller-3.32.4.tar.xz
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst

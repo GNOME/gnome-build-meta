@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-photos/3.34/gnome-photos-3.34.0.tar.xz
+  url: gnome_downloads:gnome-photos/3.34/gnome-photos-3.34.1.tar.xz
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst

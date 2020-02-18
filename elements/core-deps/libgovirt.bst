@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgovirt/0.3/libgovirt-0.3.6.tar.xz
+  url: gnome_downloads:libgovirt/0.3/libgovirt-0.3.7.tar.xz
 depends:
 - core-deps/librest.bst
 - sdk/gobject-introspection.bst

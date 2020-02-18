@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.34/evolution-data-server-3.34.3.tar.xz
+  url: gnome_downloads:evolution-data-server/3.34/evolution-data-server-3.34.4.tar.xz
 depends:
 - core-deps/gnome-online-accounts.bst
 - filename: core-deps/intltool.bst
