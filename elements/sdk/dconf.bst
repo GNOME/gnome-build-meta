@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:dconf/0.34/dconf-0.34.0.tar.xz
+  ref: 943a94ab16121de5580ceaed2605b87444d1bca1c6cd8beefb778bcb0aa2da52
 - kind: patch
   path: files/dconf/dconf-override.patch
 depends:

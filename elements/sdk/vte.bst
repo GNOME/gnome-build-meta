@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:vte/0.58/vte-0.58.3.tar.xz
+  ref: 22dcb54ac2ad1a56ab0a745e16ccfeb383f0b5860b5bfa1784561216f98d4975
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst

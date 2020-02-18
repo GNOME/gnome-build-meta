@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:eog/3.34/eog-3.34.2.tar.xz
+  ref: 6f2b0570541ced1cc31c4e8bbfe4b19e975d56d2a49052c5942a188cac35a9d3
 depends:
 - core-deps/exempi.bst
 - core-deps/libpeas.bst

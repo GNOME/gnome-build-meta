@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:libsoup/2.68/libsoup-2.68.3.tar.xz
+  ref: 534bb08e35b0ff3702f3adfde87d3441e27c12f9f5ec351f056fe04cba02bafb
 depends:
 - sdk/brotli.bst
 - sdk/glib.bst
