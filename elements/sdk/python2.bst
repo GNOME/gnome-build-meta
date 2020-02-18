@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tar.xz
+  ref: f222ef602647eecb6853681156d32de4450a2c39f4de93bd5b20235f2e660ed7
 depends:
 - filename: components/expat.bst
   junction: freedesktop-sdk.bst
@@ -29,5 +30,5 @@ variables:
     --enable-unicode=ucs4
 config:
   install-commands:
-    - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'
-    - rm %{install-root}%{bindir}/2to3
+  - '%{make-install} DESTSHARED=/usr/lib/python2.7/lib-dynload'
+  - rm %{install-root}%{bindir}/2to3

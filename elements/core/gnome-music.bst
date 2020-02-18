@@ -1,7 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-music/3.34/gnome-music-3.34.3.tar.xz
+  url: gnome_downloads:gnome-music/3.34/gnome-music-3.34.4.tar.xz
+  ref: 66f5248ea504e818ca8a21de2721dd42e9b1a8961a2adee5c57836278b5352d0
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst

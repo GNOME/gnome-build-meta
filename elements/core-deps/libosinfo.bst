@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/libosinfo-1.6.0.tar.gz
+  ref: 3c385c1cceb46301fdc79115e7b28e3df7aa26fafce0a787a60132a86a1990c7
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local

@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gnome-characters/3.32/gnome-characters-3.32.1.tar.xz
+  ref: 5a9225ad527f9e185d3f1beb84e358a6571578aaeb75f47c4e07cdd48b08efd6
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
