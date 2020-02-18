@@ -9,7 +9,6 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/amtk.bst
 - core-deps/atkmm-1.6.bst
-- core-deps/avahi.bst
 - core-deps/babl.bst
 - core-deps/berkeleydb.bst
 - core-deps/blockdev.bst
@@ -56,7 +55,6 @@ depends:
 - core-deps/libcanberra.bst
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
-- core-deps/libdaemon.bst
 - core-deps/libdazzle.bst
 - core-deps/libgit2.bst
 - core-deps/libgit2-glib.bst
