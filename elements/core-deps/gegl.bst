@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst
+- core-deps/poppler.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
