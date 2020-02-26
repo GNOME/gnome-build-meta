@@ -3,3 +3,4 @@ VERSION="master (Flatpak runtime)"
 VERSION_ID=master
 ID=org.gnome.Platform
 PRETTY_NAME="GNOME OS"
+BUG_REPORT_URL=https://gitlab.gnome.org/GNOME/gnome-build-meta/issues
