@@ -13,3 +13,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - core-deps/ostree.bst
 - vm/plymouth-gnome-theme.bst
+- vm/eos-repartition.bst
+
