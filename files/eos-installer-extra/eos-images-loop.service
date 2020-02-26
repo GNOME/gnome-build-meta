@@ -1,0 +1,13 @@
+[Unit]
+Description=Add eosimages image as device
+Requires=run-mount-installercd.mount
+Before=run-mount-eosimages.mount
+
+[Service]
+Type=oneshot
+ExecStart=losetup -f -P /run/mount/installercd/eosimages.gpt.img
+RemainAfterExit=yes
+ExecStop=bash -c 'losetup -d $(losetup -j /run/mount/installercd/eosimages.gpt.img -O name -n)'
+
+[Install]
+RequiredBy=run-mount-eosimages.mount
