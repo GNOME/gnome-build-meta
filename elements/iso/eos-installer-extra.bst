@@ -35,6 +35,9 @@ sources:
   path: files/eos-installer-extra/eos-installer-session.pam
 - kind: local
   path: files/eos-installer-extra/eos-installer.json
+- kind: local
+  path: files/eos-installer-extra/session.conf
+
 config:
   install-commands:
   - |
@@ -48,6 +51,11 @@ config:
     dir="$(pkg-config --variable=systemduserunitdir systemd)"
     install -Dm644 -t "%{install-root}${dir}" \
       eos-installer.service
+  - |
+    dir="$(pkg-config --variable=systemduserunitdir systemd)"
+    install -Dm644 -t "%{install-root}${dir}/gnome-session@eos-installer.target.d" \
+      session.conf
+
   - |
     dir="$(pkg-config --variable=systemdsystempresetdir systemd)"
     install -Dm644 -t "%{install-root}${dir}" \
