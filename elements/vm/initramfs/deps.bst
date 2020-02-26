@@ -14,3 +14,5 @@ runtime-depends:
 - core-deps/libostree.bst
 - vm/linux-firmware.bst
 - vm/plymouth-gnome-theme.bst
+- vm/eos-repartition.bst
+
