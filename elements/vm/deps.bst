@@ -16,6 +16,7 @@ runtime-depends:
 - vm/dev-repo-script.bst
 - vm/spice-vdagent.bst
 - vm/linux-firmware.bst
+- vm/resize-root.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
