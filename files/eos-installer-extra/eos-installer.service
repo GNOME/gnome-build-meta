@@ -1,0 +1,12 @@
+[Unit]
+Description=GNOME Installer
+RefuseManualStart=true
+RefuseManualStop=true
+
+BindsTo=gnome-session.target
+After=gnome-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/eos-installer
+Restart=no
