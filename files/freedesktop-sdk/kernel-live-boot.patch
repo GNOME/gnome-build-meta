@@ -1,0 +1,25 @@
+commit 767540ecb079311e568d1db9eeae5e3533b68f1d
+Author: Valentin David <valentin.david@codethink.co.uk>
+Date:   Wed Feb 26 13:08:11 2020 +0100
+
+    components/linux.bst: Enable features required for live boots
+    
+    This will be used in GNOMEOS's installer.
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 7e4aee720..a9375aa04 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -123,6 +123,12 @@ config:
+     # Sound with QEMU
+     scripts/config -e SND_HDA_GENERIC
+ 
++    # Required for live boot
++    scripts/config -e SQUASHFS
++    scripts/config -e SQUASHFS_ZLIB
++    scripts/config -e DM_SNAPSHOT
++    scripts/config -e OVERLAY_FS
++
+   build-commands:
+   - |
+     make

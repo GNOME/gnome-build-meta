@@ -1,0 +1,21 @@
+commit 7e379e75c88aeb4d4d4c4c32d01eb77f21d265db
+Author: Valentin David <valentin.david@codethink.co.uk>
+Date:   Wed Feb 26 13:09:50 2020 +0100
+
+    prepare-image.sh: Fix ignored last parameter
+    
+    The last parameter was ignored.
+
+diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
+index fe465ded3..df6296f9b 100755
+--- a/files/vm/prepare-image.sh
++++ b/files/vm/prepare-image.sh
+@@ -11,7 +11,7 @@ rootfstype="ext4"
+ rootfsopts="errors=remount-ro,relatime"
+ root_source=
+ 
+-while [ $# -gt 1 ]; do
++while [ $# -gt 0 ]; do
+     param="$1"
+     shift
+     case "${param}" in
