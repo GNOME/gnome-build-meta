@@ -1,0 +1,11 @@
+[Unit]
+Description=Resize root filesystem
+ConditionFirstBoot=yes
+After=sysinit.target local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/resize2fs /dev/gpt-auto-root
+
+[Install]
+WantedBy=multi-user.target
