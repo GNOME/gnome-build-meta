@@ -1,0 +1,51 @@
+kind: stack
+
+runtime-depends:
+- iso/eos-installer-extra.bst
+- iso/installer-dirs.bst
+- iso/public-key.bst
+
+- core-deps/plymouth.bst
+- vm/plymouth-gnome-theme.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/linux.bst
+- freedesktop-sdk.bst:components/shadow.bst
+- freedesktop-sdk.bst:vm/mesa-default.bst
+- sdk/os-release.bst
+- freedesktop-sdk.bst:vm/config/journald.bst
+- core-deps/NetworkManager.bst
+- freedesktop-sdk.bst:components/xorg-server.bst
+- core-deps/libinput.bst
+- core/gnome-shell.bst
+- freedesktop-sdk.bst:components/pwquality.bst
+- core/gnome-settings-daemon.bst
+
+- core/gdm.bst
+- core/gnome-backgrounds.bst
+- core/gnome-bluetooth.bst
+- core/gnome-color-manager.bst
+- core/gnome-control-center.bst
+- core/gnome-desktop.bst
+- core/gnome-getting-started-docs.bst
+- core/gnome-keyring.bst
+- core/gnome-menus.bst
+- core/gnome-session.bst
+- core/gnome-settings-daemon.bst
+- core/gnome-shell-extensions.bst
+- core/gnome-shell.bst
+- core/gnome-themes-extra.bst
+- core/gnome-user-docs.bst
+- core/gnome-user-share.bst
+- core/mutter.bst
+- core/orca.bst
+- core/rygel.bst
+- core/sushi.bst
+- sdk/adwaita-icon-theme.bst
+- sdk/glib-networking.bst
+- sdk/gsettings-desktop-schemas.bst
+- sdk/gvfs.bst
+- sdk/ibus.bst
+
+- freedesktop-sdk.bst:components/gdb.bst
+- freedesktop-sdk.bst:components/less.bst
