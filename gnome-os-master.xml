@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libosinfo version="0.0.1">
+  <os id="http://gnome.org/gnome-os/master">
+    <name>GNOME OS master</name>
+    <short-id>gnome-os</short-id>
+    <version>master</version>
+    <vendor>GNOME</vendor>
+    <family>linux</family>
+    <distro>gnome</distro>
+
+    <devices>
+      <!-- We need to enable that when we have virtio net -->
+      <!-- <device id="http://pcisig.com/pci/1af4/1041"/> -->
+      <!-- We need to enable that when we have virtio blk pci -->
+      <!-- <device id="http://pcisig.com/pci/1af4/1042"/> -->
+      <device id="http://pcisig.com/pci/1af4/1050"/>
+      <device id="http://pcisig.com/pci/8086/100e"/>
+      <device id="http://pcisig.com/pci/8086/293e"/>
+      <device id="http://qemu.org/chipset/x86/q35"/>
+    </devices>
+
+    <firmware arch="x86_64" type="efi"/>
+
+    <resources arch="all">
+      <minimum>
+        <cpu>1000000000</cpu>
+        <n-cpus>2</n-cpus>
+        <ram>2147483648</ram>
+        <storage>34359738368</storage>
+      </minimum>
+      <recommended>
+        <cpu>1000000000</cpu>
+        <n-cpus>2</n-cpus>
+        <ram>4294967296</ram>
+        <storage>34359738368</storage>
+      </recommended>
+    </resources>
+
+    <media arch="x86_64">
+      <iso>
+        <volume-id>GNOME-OS-INSTALLER</volume-id>
+        <application-id>GNOME OS MASTER X86_64</application-id>
+      </iso>
+    </media>
+
+  </os>
+</libosinfo>
+
