@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker-miners/2.3/tracker-miners-2.3.1.tar.xz
-  ref: 7b1de06a7a79ea1c7813c8a21f8cd1c55f2b95f799cf9f47f0204f3be8a590e0
+  url: gnome_downloads:tracker-miners/2.3/tracker-miners-2.3.2.tar.xz
+  ref: 069e23c2a2de58bfc84d9d798bd091ce78419903fb4dcf099fb2ad97f8563fce
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

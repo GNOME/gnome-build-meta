@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libgdata/0.17/libgdata-0.17.11.tar.xz
-  ref: 6b9917122e4def6e6f78bcb660e49e146540832e296abcb5cde99829a04ea986
+  url: gnome_downloads:libgdata/0.17/libgdata-0.17.12.tar.xz
+  ref: a0fd6f8820e8bae019c1f6ffab5af7fcd6d7f147915bb968b56df3ad61b42318
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
