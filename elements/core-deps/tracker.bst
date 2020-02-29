@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker/2.3/tracker-2.3.1.tar.xz
+  url: gnome_downloads:tracker/2.3/tracker-2.3.2.tar.xz
   ref: b6748726e465ad2f4d991560634b1fd0df8841f3d981b3b837c4162abedf08a1
 build-depends:
 - sdk/gtk-doc.bst

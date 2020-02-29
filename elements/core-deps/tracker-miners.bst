@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker-miners/2.3/tracker-miners-2.3.1.tar.xz
+  url: gnome_downloads:tracker-miners/2.3/tracker-miners-2.3.2.tar.xz
   ref: 7b1de06a7a79ea1c7813c8a21f8cd1c55f2b95f799cf9f47f0204f3be8a590e0
 build-depends:
 - core-deps/intltool.bst
