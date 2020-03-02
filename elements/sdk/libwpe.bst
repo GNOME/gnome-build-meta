@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:WebPlatformForEmbedded/libwpe/releases/download/1.4.0.1/libwpe-1.4.0.1.tar.xz
-  ref: 09849dfb34877354f34f318e138971cf22e677b2179e1f0a8ea00ab0b7bd8e9b
+  url: github_com:WebPlatformForEmbedded/libwpe/releases/download/1.5.90/libwpe-1.5.90.tar.xz
+  ref: 6e6e26f8c98267c33f926c03a7f280a0d21c3f713f95a38ef302ca3a6253c350
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
