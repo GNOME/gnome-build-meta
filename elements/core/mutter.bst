@@ -32,3 +32,4 @@ variables:
   meson-local: >-
     -Dprofiler=false
     -Dremote_desktop=false
+    -Dxwayland_initfd=disabled
