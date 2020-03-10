@@ -87,7 +87,7 @@ config:
     cat >/stage-2/genimage.cfg <<EOF
     image installer.iso {
         iso {
-            extraargs = "-e /efi.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image"
+            extraargs = "-e /efi.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image -sysid LINUX -publisher GNOME -appid 'GNOME OS %{branch} %{arch}' "
             volume-id = "GNOME-OS-INSTALLER"
         }
     }
