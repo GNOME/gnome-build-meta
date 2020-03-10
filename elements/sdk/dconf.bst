@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:dconf/0.35/dconf-0.35.1.tar.xz
-  ref: b8425c34a6558e360fe94f6abaebdaef3675b0074385be4392ac8ecd1a05bd1e
+  url: gnome_downloads:dconf/0.36/dconf-0.36.0.tar.xz
+  ref: 9fe6bb22191fc2a036ad86fd8e7d165e9983c687b9fedccf85d46c799301da2d
 - kind: patch
   path: files/dconf/dconf-override.patch
 build-depends:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker/2.3/tracker-2.3.2.tar.xz
-  ref: a4782b8ec7e4ee50f8f53865b24c5489823337fa94f785a7d9d34ccdf9b6ebdb
+  url: gnome_downloads:tracker/2.3/tracker-2.3.4.tar.xz
+  ref: 577952244ab977c78b0b88e2f63c4197eaba16e4d66bff692b7f58993e06516d
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.35/evolution-data-server-3.35.92.tar.xz
-  ref: 85acb663ef14a45f53a976752f771a9c606b70c16f19f7d42994200cf8d2f4f4
+  url: gnome_downloads:evolution-data-server/3.36/evolution-data-server-3.36.0.tar.xz
+  ref: d4d70e6658fb9e1f85639dcff315bbdddd3aa2de2ad069b1776af3fb9e9598ec
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/gperf.bst
