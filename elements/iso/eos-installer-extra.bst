@@ -20,7 +20,7 @@ sources:
 - kind: local
   path: files/eos-installer-extra/eos-installer.preset
 - kind: local
-  path: files/eos-installer-extra/run-mount-installercd.mount
+  path: files/eos-installer-extra/run-mount-installercd.mount.in
 - kind: local
   path: files/eos-installer-extra/eos-installer.session
 - kind: local
@@ -39,6 +39,11 @@ sources:
   path: files/eos-installer-extra/session.conf
 
 config:
+  build-commands:
+  - |
+    sed 's/@VOLUME_ID@/%{installer-volume-id}/g' run-mount-installercd.mount.in \
+      >run-mount-installercd.mount
+
   install-commands:
   - |
     dir="$(pkg-config --variable=systemdsystemunitdir systemd)"
