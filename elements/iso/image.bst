@@ -39,7 +39,7 @@ config:
     prepare-image.sh \
        --sysroot /sysroot \
        --seed "%{uuidnamespace}" \
-       --rootsource LABEL=GNOME-OS-INSTALLER \
+       --rootsource LABEL="%{installer-volume-id}" \
        --rootfstype iso9660 \
        --noboot >/dev/null
 
@@ -88,8 +88,8 @@ config:
     cat >/build/stage-2/genimage.cfg <<EOF
     image installer.iso {
         iso {
-            extraargs = "-e /efi.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image"
-            volume-id = "GNOME-OS-INSTALLER"
+            extraargs = "-e /efi.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image -sysid LINUX -publisher GNOME"
+            volume-id = "%{installer-volume-id}"
         }
     }
     config {
