@@ -35,7 +35,7 @@ config:
   - |
     prepare-image.sh \
        --seed "%{uuidnamespace}" \
-       --rootsource LABEL=GNOME-OS-INSTALLER \
+       --rootsource LABEL="%{installer-volume-id}" \
        --rootfstype iso9660 \
        --noboot >/dev/null
 
@@ -45,7 +45,7 @@ config:
            --kernel-image "/boot/vmlinuz" \
            --no-machineid \
            --kver "$(ls -1 /usr/lib/modules | head -n1)" \
-           --kernel-cmdline "rw quiet splash root=live:LABEL=GNOME-OS-INSTALLER" \
+           --kernel-cmdline 'rw quiet splash root=live:LABEL=%{installer-volume-id}' \
            --add dmsquash-live \
            --add plymouth \
            --install grep \
