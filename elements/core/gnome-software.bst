@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/3.35/gnome-software-3.35.91.tar.xz
-  ref: 1c441f5f58bc20f9a5643dde9f7966b0bd37ac5f9cf7c4755d78c8366b85eee0
+  url: gnome_downloads:gnome-software/3.35/gnome-software-3.35.92.tar.xz
+  ref: cc6eb9bbb6c697d19fa8ee70af98a708a022a6e07f47f28bcd648124bdadd261
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

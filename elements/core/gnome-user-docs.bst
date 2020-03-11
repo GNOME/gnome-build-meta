@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-user-docs/3.34/gnome-user-docs-3.34.1.tar.xz
-  ref: c2edd9d633f6f2a5fd8d5580e169d0e07de64d5d5b12a81ecbd64331d176a986
+  url: gnome_downloads:gnome-user-docs/3.35/gnome-user-docs-3.35.92.tar.xz
+  ref: ab6b8878593422a35ddb49ca671f292255fec5ce456931c6a4fba251522a9717
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
