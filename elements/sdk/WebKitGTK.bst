@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.26.3.tar.xz
-  ref: add51153943cc11d90a7038d0ea5f6332281e6c0be0640f802a211b035f0e611
+  url: webkitgtk_org:webkitgtk-2.28.0.tar.xz
+  ref: 361f3d178f62a9c112cbadfedd46106c34455c26d57a12a28fb3b09178d20e8b
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
