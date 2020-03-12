@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.45.tgz
+  url: tarballs_needing_help:openldap-2.4.45.tgz
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
