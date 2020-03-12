@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:Igalia/WPEBackend-fdo/releases/download/1.5.90/wpebackend-fdo-1.5.90.tar.xz
-  ref: 34d55e7d28235a03aa69beb283daf23fffe8f1953f47a8d8b9247e0d3eb97e4f
+  url: github_com:Igalia/WPEBackend-fdo/releases/download/1.6.0/wpebackend-fdo-1.6.0.tar.xz
+  ref: 7f5bd7b9d8f97b1655f4dcd39fad92719d0fb3985b251da5802df13aaa09f567
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
