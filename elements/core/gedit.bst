@@ -17,8 +17,10 @@ depends:
 - core-deps/libpeas.bst
 - core-deps/tepl.bst
 - sdk/adwaita-icon-theme.bst
+- sdk/gobject-introspection.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtksourceview.bst
 - sdk/libsoup.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
