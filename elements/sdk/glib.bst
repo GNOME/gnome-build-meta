@@ -1,34 +1,32 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/glib.git
   track: master
-depends:
-- filename: sdk/gtk-doc.bst
-  type: build
-- filename: components/libffi.bst
-  junction: freedesktop-sdk.bst
-- filename: components/util-linux.bst
-  junction: freedesktop-sdk.bst
-- filename: components/pcre.bst
-  junction: freedesktop-sdk.bst
-- filename: components/python3.bst
-  junction: freedesktop-sdk.bst
+
+build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
+runtime-depends:
 # a dummy dependency so our glib is always staged
 # on top of freedesktop-sdk version
-- filename: components/glib.bst
-  junction: freedesktop-sdk.bst
-  type: runtime
-- filename: public-stacks/buildsystem-meson.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: bootstrap-import.bst
-  junction: freedesktop-sdk.bst
+- freedesktop-sdk.bst:components/glib.bst
+
+depends:
+- freedesktop-sdk.bst:components/libffi.bst
+- freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:components/pcre.bst
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dgtk_doc=false
     -Dinstalled-tests=true
     -Dselinux=disabled
+
 public:
   bst:
     integration-commands:
