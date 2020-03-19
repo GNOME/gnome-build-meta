@@ -15,6 +15,7 @@ build-depends:
 depends:
 - core-deps/gtk-vnc.bst
 - core-deps/libgudev.bst
+- core-deps/libhandy.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/spice-gtk.bst
