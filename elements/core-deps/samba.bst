@@ -1,10 +1,11 @@
 kind: manual
 sources:
 - kind: tar
-  url: gnome_download:teams/releng/tarballs-needing-help/samba/samba-4.10.2.tar.gz
+  url: https://download.samba.org/pub/samba/stable/samba-4.12.0.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
+- core-deps/perl-parse-yapp.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
@@ -12,6 +13,7 @@ build-depends:
 depends:
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
+- freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
