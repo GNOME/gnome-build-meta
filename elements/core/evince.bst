@@ -8,7 +8,7 @@ sources:
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
