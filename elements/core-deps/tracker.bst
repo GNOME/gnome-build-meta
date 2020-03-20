@@ -5,6 +5,7 @@ sources:
   track: tracker-2.3
 build-depends:
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
