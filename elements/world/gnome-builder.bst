@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-builder.git
   track: master
 depends:
+- core-deps/flatpak.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
@@ -23,7 +24,6 @@ depends:
 - world/libgit2-glib.bst
 - world/template-glib.bst
 - freedesktop-sdk.bst:components/llvm.bst
-- freedesktop-sdk.bst:deploy-tools/flatpak.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
