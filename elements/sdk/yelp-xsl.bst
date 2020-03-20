@@ -6,5 +6,5 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
