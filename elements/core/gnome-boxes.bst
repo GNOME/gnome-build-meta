@@ -29,7 +29,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
