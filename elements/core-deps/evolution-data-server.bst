@@ -1,12 +1,15 @@
 kind: cmake
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/evolution-data-server.git
   track: master
+
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
@@ -21,6 +24,7 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   cmake-local: >-
     -DENABLE_INTROSPECTION=ON
