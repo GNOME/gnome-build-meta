@@ -117,9 +117,11 @@ depends:
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/locales.bst
+- freedesktop-sdk.bst:components/lz4.bst
 - freedesktop-sdk.bst:components/lzip.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/nettle.bst
+- freedesktop-sdk.bst:components/noopenh264.bst
 - freedesktop-sdk.bst:components/npth.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
@@ -128,9 +130,8 @@ depends:
 - freedesktop-sdk.bst:components/osmesa.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:components/pcre2.bst
-- freedesktop-sdk.bst:components/pcre.bst
+- freedesktop-sdk.bst:components/procps.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:components/python3-pip.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:components/python3-six.bst
 - freedesktop-sdk.bst:components/python3-usercustomize.bst

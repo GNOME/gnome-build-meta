@@ -20,5 +20,5 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/appstream-glib.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
