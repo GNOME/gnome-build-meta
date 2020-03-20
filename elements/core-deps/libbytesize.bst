@@ -6,6 +6,5 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/mpfr.bst
-- freedesktop-sdk.bst:components/pcre.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
