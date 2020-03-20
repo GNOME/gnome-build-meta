@@ -6,7 +6,6 @@ sources:
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/pcre.bst
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
