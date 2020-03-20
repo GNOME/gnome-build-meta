@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/file-roller.git
   track: master
 build-depends:
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/adwaita-icon-theme.bst

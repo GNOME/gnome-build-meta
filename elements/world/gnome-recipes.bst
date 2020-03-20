@@ -16,5 +16,5 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - sdk/gtk+-3.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
