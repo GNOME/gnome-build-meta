@@ -21,5 +21,5 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
-- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
