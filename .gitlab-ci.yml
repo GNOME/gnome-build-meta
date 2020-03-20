@@ -140,6 +140,8 @@ default:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
+    refs:
+    - schedules
 
 #
 # Architecture specific settings
@@ -228,6 +230,8 @@ flatpak-prepare:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
+    refs:
+    - schedules
   <<: *x86_64
 
 
@@ -262,6 +266,8 @@ flatpak-finish:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
+    refs:
+    - schedules
   <<: *x86_64
 
 flatpak-finish-failed:
@@ -277,6 +283,8 @@ flatpak-finish-failed:
     variables:
     - $EMERGENCY
     - $BST_TRACK_TAGS != "False"
+    refs:
+    - schedules
   <<: *x86_64
 
 
