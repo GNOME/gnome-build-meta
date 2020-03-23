@@ -45,4 +45,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dbash_completion=disabled
+    -Dextensions-tool:bash_completion=disabled
