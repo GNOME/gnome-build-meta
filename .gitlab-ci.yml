@@ -88,7 +88,7 @@ flathub-finish:
   stage: finish_flatpak
   script:
     # the `|| true` is to work around instability in the flathub infrastructure
-    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" commit --end-of-life="GNOME 3.30 Runtime has been declared as End of life, please upgrade to a newer version of the Platform." --wait $(cat build.txt) || true
+    - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" commit --end-of-life="GNOME 3.30 runtime is no longer supported as of 27th January 2020. Please ask your application developer to migrate to a supported platform." --wait $(cat build.txt) || true
     - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" publish --wait $(cat build.txt) || true
     - flat-manager/flat-manager-client --token "$FLATHUB_REPO_TOKEN" purge $(cat build.txt)
   only:
