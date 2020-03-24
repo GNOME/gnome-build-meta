@@ -3,8 +3,6 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libnma.git
   track: master
-- kind: patch
-  path: files/libnma/0001-src-nma-mobile-wizard.c-Make-it-not-fail-on-non-X11-.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
