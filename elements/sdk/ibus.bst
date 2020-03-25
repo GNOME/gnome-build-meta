@@ -14,8 +14,9 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
+    --enable-dconf
+    --enable-memconf
     --disable-appindicator
-    --disable-dconf
     --disable-emoji-dict
     --disable-engine
     --disable-tests
@@ -24,7 +25,6 @@ variables:
     --disable-gtk-doc
     --disable-glibtest
     --disable-libnotify
-    --disable-memconf
     --disable-python2
     --disable-schema-compile
     --disable-static
