@@ -49,6 +49,7 @@ depends:
 - core-deps/json-c.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst
+- core-deps/libcanberra.bst
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
 - core-deps/libdaemon.bst

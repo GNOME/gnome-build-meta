@@ -36,7 +36,6 @@ depends:
 - sdk/ibus.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
-- sdk/libcanberra.bst
 - sdk/libgee.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst

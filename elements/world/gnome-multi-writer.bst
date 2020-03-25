@@ -10,8 +10,8 @@ build-depends:
 depends:
 - core-deps/libgusb.bst
 - core-deps/udisks2.bst
+- core-deps/libcanberra.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

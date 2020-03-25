@@ -9,6 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
 - core-deps/gnome-online-accounts.bst
+- core-deps/libcanberra.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/libical.bst
@@ -16,7 +17,6 @@ depends:
 - sdk/WebKitGTK.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
