@@ -10,6 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gnome-video-effects.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -21,7 +22,6 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

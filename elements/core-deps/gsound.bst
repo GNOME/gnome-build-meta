@@ -11,6 +11,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/libcanberra.bst
+- core-deps/libcanberra.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
