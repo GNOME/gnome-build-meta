@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:clutter/1.26/clutter-1.26.2.tar.xz
+  url: gnome_downloads:clutter/1.26/clutter-1.26.4.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
