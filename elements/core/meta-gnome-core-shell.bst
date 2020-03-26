@@ -5,7 +5,6 @@ kind: stack
 depends:
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
-- core/gnome-color-manager.bst
 - core/gnome-control-center.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
