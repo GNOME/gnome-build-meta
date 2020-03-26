@@ -32,7 +32,6 @@ depends:
 - core-deps/upower.bst
 - core-deps/boltd.bst
 - core/gnome-bluetooth.bst
-- core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - core/tecla.bst
