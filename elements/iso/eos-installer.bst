@@ -17,6 +17,8 @@ sources:
   path: files/eos-installer/xattr-path.patch
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
+- kind: patch
+  path: files/eos-installer/two-partitions.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
