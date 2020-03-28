@@ -1,13 +1,17 @@
 kind: cmake
+
 sources:
 - kind: tar
-  url: https://gitlab.com/fcitx/fcitx/-/archive/4.2.9.6/fcitx-4.2.9.6.tar.gz
+  url: github_com:fcitx/fcitx/archive/4.2.9.7.tar.gz
+
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   cmake-local: >-
     -DLIB_INSTALL_DIR=%{libdir}
@@ -26,6 +30,7 @@ variables:
     -DENABLE_ENCHANT=Off
     -DENABLE_PRESAGE=Off
     -DENABLE_XDG_AUTOSTART=Off
+
 public:
   bst:
     split-rules:
