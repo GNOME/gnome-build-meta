@@ -1,10 +1,10 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tepl.git
   track: master
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/amtk.bst
 - core-deps/uchardet.bst
