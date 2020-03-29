@@ -19,10 +19,11 @@ config:
 
   install-commands:
   - install -Dm644 -t "%{install-root}%{datadir}/pixmaps" gnome-boot-logo.png
-  - install -Dm644 plymouthd.defaults "%{install-root}%{datadir}/plymouth/plymouthd.gnome"
+  - install -Dm644 plymouthd.defaults "%{install-root}%{datadir}/plymouth/plymouthd.defaults"
   - install -Dm644 gnome-boot-logo.png "%{install-root}%{datadir}/plymouth/themes/spinner/watermark.png"
 
 public:
   bst:
-    integration-commands:
-    - mv "%{datadir}/plymouth/plymouthd.gnome" "%{datadir}/plymouth/plymouthd.defaults"
+    overlap-whitelist:
+    # need to omit the leading slash because of buildstream #721
+    - 'usr/share/plymouth/plymouthd.defaults'
