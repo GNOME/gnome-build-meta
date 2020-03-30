@@ -70,7 +70,7 @@ export OSTREE_REPO=ostree-repo
 
 updated_refs=""
 for element in ${REPO_ELEMENTS}; do
-    ${BST} checkout --hardlinks $element $checkout/$element
+    ${BST} artifact checkout --hardlinks --directory $checkout/$element $element
 
     ref=$(ostree refs --repo $checkout/$element)
     commit=$(ostree --repo=$checkout/$element rev-parse $ref)
