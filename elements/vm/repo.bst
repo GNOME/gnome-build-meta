@@ -38,5 +38,5 @@ config:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=archive
   - mv /sysroot/etc /sysroot/usr/etc
-  - ostree commit --branch=%{ostree-branch} --timestamp="$(date --date="@${SOURCE_DATE_EPOCH}" --rfc-3339=seconds)" /sysroot
+  - ostree commit --fsync=false --branch=%{ostree-branch} --timestamp="$(date --date="@${SOURCE_DATE_EPOCH}" --rfc-3339=seconds)" /sysroot
 

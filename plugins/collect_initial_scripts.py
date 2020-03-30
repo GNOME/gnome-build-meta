@@ -3,6 +3,12 @@ import re
 from buildstream import Element, ElementError, Scope
 
 class ExtractInitialScriptsElement(Element):
+    BST_FORBID_RDEPENDS = True
+    BST_FORBID_SOURCES = True
+
+    BST_STRICT_REBUILD = True
+    BST_ARTIFACT_VERSION = 1
+
     def configure(self, node):
         self.node_validate(node, [
             'path',
@@ -11,14 +17,7 @@ class ExtractInitialScriptsElement(Element):
         self.path = self.node_subst_member(node, 'path')
 
     def preflight(self):
-        runtime_deps = list(self.dependencies(Scope.RUN, recurse=False))
-        if runtime_deps:
-            raise ElementError("{}: Only build type dependencies supported by collect-integration elements"
-                               .format(self))
-
-        sources = list(self.sources())
-        if sources:
-            raise ElementError("{}: collect-integration elements may not have sources".format(self))
+        pass
 
     def get_unique_key(self):
         key = {
