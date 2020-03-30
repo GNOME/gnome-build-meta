@@ -1,11 +1,16 @@
-kind: autotools
+kind: meson
+
 sources:
-- kind: tar
-  url: gnome_downloads:evince/3.35/evince-3.35.1.tar.xz
+- kind: git_tag
+  url: gitlab_gnome_org:GNOME/evince.git
+  track: master
+
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/itstools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst
@@ -15,8 +20,11 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libsecret.bst
-- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
-  conf-local: >-
-    --enable-introspection
+  meson-local: >-
+    -Ddjvu=disabled
+    -Ddvi=disabled
+    -Dintrospection=true
+    -Dgtk_doc=false
