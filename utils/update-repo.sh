@@ -86,7 +86,7 @@ on_exit() {
 trap on_exit EXIT
 
 ${BST:-bst} build "${element}"
-${BST:-bst} checkout --hardlinks "${element}" "${checkout}"
+${BST:-bst} artifact checkout --hardlinks --directory "${checkout}" "${element}"
 
 if ! [ -d ${OSTREE_REPO} ]; then
     ostree init --repo=${OSTREE_REPO} --mode=archive
