@@ -19,8 +19,8 @@ depends:
 variables:
   cmake-local: >-
     -DENABLE_GIR=Off
-    -DENABLE_GTK4_IM_MODULE=On
-    -DENABLE_GTK3_IM_MODULE=On
+    -DENABLE_GTK4_IM_MODULE=Off
+    -DENABLE_GTK3_IM_MODULE=Off
     -DENABLE_GTK2_IM_MODULE=Off
 
 public:
