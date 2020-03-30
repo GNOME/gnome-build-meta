@@ -6,6 +6,9 @@ class ExtractInitialScriptsElement(Element):
     BST_FORBID_RDEPENDS = True
     BST_FORBID_SOURCES = True
 
+    BST_STRICT_REBUILD = True
+    BST_ARTIFACT_VERSION = 1
+
     def configure(self, node):
         self.node_validate(node, [
             'path',
