@@ -8,7 +8,6 @@ depends:
 - core/gnome-control-center.bst
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
-- core/gnome-initial-setup.bst
 - core/gnome-keyring.bst
 - core/gnome-menus.bst
 - core/gnome-session.bst
