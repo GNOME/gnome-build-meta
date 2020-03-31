@@ -18,3 +18,6 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -DX11=disabled
