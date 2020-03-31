@@ -54,11 +54,11 @@ projects:
     sdk/yelp-xsl.bst:
     - ref: 3.36.0-2-gce7965a3eea21af256db2999d3341221d2ef00e3
     sdk/vala.bst:
-    - ref: 0.48.2-11-g795e3217f7166acbe6d505282e6f1f9e3b8c2712
+    - ref: 0.48.2-15-gaa56462e5a25e6843faf4353ca396a069cd431e4
     sdk/yelp-tools.bst:
     - ref: 3.32.2-0-gc8664c3df853f5307ff3c4d939721f340d61f4ba
     sdk/glib.bst:
-    - ref: 2.64.0-72-g2b741aaf368ea35e2865f7b95532ee46bc7839e0
+    - ref: 2.64.0-77-g50355361e6cff880b3b4a19f694b0c1ce1d5c426
     sdk/libnotify.bst:
     - ref: 0.7.9-0-g98a4bf483a69c6436311bcb9834d9d93235c96b7
     core/gnome-bluetooth.bst:
@@ -294,7 +294,7 @@ projects:
     core/gnome-user-share.bst:
     - ref: GNOME_USER_SHARE_3_34_0-9-gadafd823292e50780632739e04277b08fc51bb09
     sdk/librsvg.bst:
-    - ref: 2.47.3-135-g58c9358474e54b761c3dd61fab514340f9fd8e91
+    - ref: 2.47.3-137-gc250e44de67ac671c871e2fc9cc58d6e3dfc34a8
     - ref:
       - name: adler32
         version: 1.0.4
@@ -866,7 +866,7 @@ projects:
     core-deps/pyatspi2.bst:
     - ref: PYATSPI_2_36_0-0-g6abf75463da77a67aa3c0e9439eb125ca46673e9
     sdk/gtk+-3.bst:
-    - ref: 3.24.16-5-g9fdc64f7fc6ec28c64d8af727b6b27c109d4b423
+    - ref: 3.24.16-7-g21e0e3f8634df7771ec8dec75e4a6db78d1a2b00
     - {}
     core-deps/gssdp.bst:
     - ref: gssdp-1.2.2-1-ga7666e7e7c91747cbc956451278ec3e93f5ba37e
@@ -1005,7 +1005,7 @@ projects:
     core-deps/gegl.bst:
     - ref: GEGL_0_4_20-44-g12cdbe8719e3739b8b4c0fa09d3b82357851f49b
     core/gnome-screenshot.bst:
-    - ref: 3.34.0-1-g6cf1ecd9facb6b67b6e9f7f6ccc0d60210427629
+    - ref: 3.34.0-43-g7981a6a942e12df62c590df085d3d6a10336af4f
     core-deps/flatpak.bst:
     - ref: 279ee6f3b3622943816b949b5cf076df95600aa13a8b45412f8bf68b76ed6e85
     core-deps/malcontent.bst:
