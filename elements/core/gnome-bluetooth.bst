@@ -11,9 +11,9 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/libcanberra.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libcanberra.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

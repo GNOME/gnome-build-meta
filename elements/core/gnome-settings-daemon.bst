@@ -16,6 +16,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/colord.bst
 - core-deps/geocode-glib.bst
+- core-deps/libcanberra.bst
 - core-deps/libgudev.bst
 - core-deps/libgweather.bst
 - core-deps/libwacom.bst
@@ -27,7 +28,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/ibus.bst
-- sdk/libcanberra.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/cups.bst
