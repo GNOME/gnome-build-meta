@@ -15,7 +15,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/libgdata.bst
-- core-deps/libzapojit.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
 - core/evince.bst
