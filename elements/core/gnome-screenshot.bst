@@ -13,3 +13,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -Dx11=disabled
