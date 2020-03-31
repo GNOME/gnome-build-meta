@@ -11,6 +11,7 @@ depends:
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
+- core/file-roller.bst
 - core/gedit.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
