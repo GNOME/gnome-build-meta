@@ -12,3 +12,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libcanberra.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -DX11=disabled
