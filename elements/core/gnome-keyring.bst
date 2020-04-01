@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-keyring/3.35/gnome-keyring-3.35.90.tar.xz
-  ref: 729e0c9068489f38271609bb14738388dd66c800bfdddcac80a9f6ca579d95f4
+  url: gnome_downloads:gnome-keyring/3.36/gnome-keyring-3.36.0.tar.xz
+  ref: a264b57a8d1a71fdf0d66e8cd6033d013fb828be279c35766545eb9bb3734f87
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

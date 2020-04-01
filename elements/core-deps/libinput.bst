@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libinput/libinput-1.15.3.tar.xz
-  ref: 5b12427dd50489c2b41b04ae2ca54e31a112a33cb861f00ccd15a2ad7a88694d
+  url: https://www.freedesktop.org/software/libinput/libinput-1.15.4.tar.xz
+  ref: 9c8b6846d94e374ee4bdb32634e4ac4aa318afc31f9a58fcb545cd3095c745c1
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

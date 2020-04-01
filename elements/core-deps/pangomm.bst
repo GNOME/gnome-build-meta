@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:pangomm/2.43/pangomm-2.43.1.tar.xz
+  url: gnome_downloads:pangomm/2.43/pangomm-2.43.2.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

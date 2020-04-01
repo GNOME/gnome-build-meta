@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-music/3.36/gnome-music-3.36.0.tar.xz
-  ref: 30fd4720d27fb6ad1026afa04c66e48356a59757fb74c562dda896b694627207
+  url: gnome_downloads:gnome-music/3.36/gnome-music-3.36.1.tar.xz
+  ref: 7b80f630d158334935a8760296550cc91b50d604fa68b402fe5165b1531ec332
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
