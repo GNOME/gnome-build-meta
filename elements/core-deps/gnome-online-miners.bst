@@ -10,7 +10,9 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
-- core-deps/libzapojit.bst
 - core-deps/tracker.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  conf-local: >-
+    --disable-windows-live
