@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-disk-utility/3.34/gnome-disk-utility-3.34.4.tar.xz
-  ref: 1ec5a365292016572d336c31b252f726dd86655b0a93eab7be3b3c18ab8bf75c
+  url: gnome_downloads:gnome-disk-utility/3.34/gnome-disk-utility-3.34.5.tar.xz
+  ref: 44f606ae543923b7f56f61bb2192f899a19099c292f5ad148fcc81f3351db06a
 depends:
 - core-deps/libdvdread.bst
 - core-deps/udisks2.bst

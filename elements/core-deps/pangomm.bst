@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:pangomm/2.43/pangomm-2.43.1.tar.xz
+  url: gnome_downloads:pangomm/2.43/pangomm-2.43.2.tar.xz
 depends:
 - core-deps/cairomm.bst
 - core-deps/glibmm.bst

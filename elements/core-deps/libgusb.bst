@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.2.tar.xz
-  ref: fda14755b96c5014d688e75f31b4262e8c65c29ce69642beb07da461d4a98e5e
+  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.4.tar.xz
+  ref: 581fd24e12496654b9b2a0732f810b554dfd9212516c18c23586c0cd0b382e04
 depends:
 - core-deps/libusb.bst
 - sdk/glib.bst
