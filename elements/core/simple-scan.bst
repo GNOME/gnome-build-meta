@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:simple-scan/3.36/simple-scan-3.36.0.tar.xz
-  ref: f57d8be3c22f786efe576da04288951664e6f9fa0ec5c79afb5c2c88a11f14a5
+  url: gnome_downloads:simple-scan/3.36/simple-scan-3.36.1.tar.xz
+  ref: 7427f0902253e01383941243f56ef987609943c537f92dd1043a53eb5eaaf92e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

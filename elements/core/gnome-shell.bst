@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell/3.36/gnome-shell-3.36.0.tar.xz
-  ref: 58e8c00adc4614c9395651a85e4f75a1596ddc2662e88eca87ecc59cf99c13de
+  url: gnome_downloads:gnome-shell/3.36/gnome-shell-3.36.1.tar.xz
+  ref: a420382b9b9d8758f9223a7a24cf41874a15e73233c04d3118eaadba0cc72619
 build-depends:
 - sdk-deps/sassc.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
@@ -37,3 +37,9 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dbash_completion=disabled
+    -Dextensions-tool:bash_completion=disabled
+

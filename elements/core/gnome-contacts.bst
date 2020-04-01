@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-contacts/3.35/gnome-contacts-3.35.90.tar.xz
-  ref: d8adaf918cd676bdae4067d6325608f1c78b3b9b79137848c4f2322810da1a3e
+  url: gnome_downloads:gnome-contacts/3.36/gnome-contacts-3.36.tar.xz
+  ref: eecbd2209d93c8d31df92f6ccf79183b456c6e07a28ae0155cbda18aabd36f7b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
