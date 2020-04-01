@@ -14,3 +14,6 @@ depends:
 - core-deps/tracker.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  conf-local: >-
+    --disable-windows-live
