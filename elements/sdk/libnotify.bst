@@ -17,4 +17,4 @@ depends:
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
 variables:
-  meson-local: -Ddocbook_docs=disabled
+  meson-local: -Ddocbook_docs=disabled -Dman=false
