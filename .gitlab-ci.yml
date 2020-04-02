@@ -87,6 +87,10 @@ default:
 
         ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    # Only run the raspi build on arm64
+    elif [ "${ARCH}" == "aarch64" ]; then
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build raspi/image.bst
+        ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks raspi/image.bst raspi-image
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -102,6 +106,7 @@ default:
     - logs
     - project.refs
     - image
+    - raspi-image
     expire_in: '2 days'
 
 .flatpak-template:
@@ -185,7 +190,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst raspi/image.bst
   retry: 2
   # only run on branches targeting master
   rules:
