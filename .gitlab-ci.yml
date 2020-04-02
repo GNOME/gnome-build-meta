@@ -89,8 +89,6 @@ default:
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
     # Only run the raspi build on arm64
     elif [ "${ARCH}" == "aarch64" ]; then
-        ${BST} build openh264-extension.bst:flatpak-repo.bst
-
         ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build raspi/image.bst
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks raspi/image.bst raspi-image
     fi
