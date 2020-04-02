@@ -100,11 +100,19 @@ default:
     - logs
     expire_in: '1 week'
 
-.vm-image-template:
+.image-template:
   stage: image
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+  - |
+    # Build vm for x86
+    if [ "${ARCH}" == "x86_64" ]; then
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+        ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    # Only run the raspi build on arm64
+    elif [ "${ARCH}" == "aarch64" ]; then
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build raspi/image.bst
+        ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks raspi/image.bst raspi-image
+    fi
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_success
@@ -117,6 +125,7 @@ default:
     paths:
     - logs
     - image
+    - raspi-image
     expire_in: '2 days'
 
 .flatpak-template:
@@ -200,7 +209,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst raspi/image.bst
   retry: 2
   # only run on branches targeting master
   rules:
@@ -229,7 +238,7 @@ build-gnome-core-arm:
 
 
 vm-image-x86_64:
-  extends: .vm-image-template
+  extends: .image-template
   # run as soon as the x86_64 build job is done, don't wait for other arches
   needs:
   - track
@@ -237,6 +246,14 @@ vm-image-x86_64:
     artifacts: false
   <<: *x86_64
 
+raspi-image-aarch64:
+  extends: .image-template
+  # run as soon as the aarch64 build job is done, don't wait for other arches
+  needs:
+  - track
+  - job: build-gnome-core-aarch64
+    artifacts: false
+  <<: *aarch64
 
 flatpak-prepare:
   stage: prepare_flatpak
