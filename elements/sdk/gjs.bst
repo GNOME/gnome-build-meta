@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gjs/1.58/gjs-1.58.5.tar.xz
-  ref: e76d99c09f887438b9883e328710b26b3717f6dcdb4097dc7a9bab06ebd7a13a
+  url: gnome_downloads:gjs/1.58/gjs-1.58.6.tar.xz
+  ref: 1864bf22f4f5e4107832b4c54127cce8509d37ccc14abd25a6878c7ffed96640
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst

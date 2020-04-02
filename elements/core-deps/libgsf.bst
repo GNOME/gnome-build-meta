@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgsf/1.14/libgsf-1.14.46.tar.xz
-  ref: ea36959b1421fc8e72caa222f30ec3234d0ed95990e2bf28943a85f33eadad2d
+  url: gnome_downloads:libgsf/1.14/libgsf-1.14.47.tar.xz
+  ref: d188ebd3787b5375a8fd38ee6f761a2007de5e98fa0cf5623f271daa67ba774d
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

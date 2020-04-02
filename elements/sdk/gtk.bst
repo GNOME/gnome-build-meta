@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtk/3.98/gtk-3.98.0.tar.xz
+  url: gnome_downloads:gtk/3.98/gtk-3.98.2.tar.xz
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
