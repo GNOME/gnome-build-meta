@@ -87,6 +87,12 @@ default:
 
         ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
         ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    # Only run this build for x86_64, instead of building it somewhere else
+    elif [ "${ARCH}" == "AARCH64" ]; then
+        ${BST} build openh264-extension.bst:flatpak-repo.bst
+
+        ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build raspi/image.bst
+        ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks raspi/image.bst raspi-image
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -102,6 +108,7 @@ default:
     - logs
     - project.refs
     - image
+    - raspi-image
     expire_in: '2 days'
 
 .flatpak-template:
