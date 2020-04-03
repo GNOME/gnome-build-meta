@@ -83,4 +83,5 @@ config:
       directory: '%{lib}/openh264'
       add-ld-path: extra
       autodelete: 'false'
+      versions: '2.0beta;2.0'
       version: '2.0'
