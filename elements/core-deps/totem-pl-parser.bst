@@ -7,7 +7,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/gmime3.bst
+- core-deps/gmime.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst

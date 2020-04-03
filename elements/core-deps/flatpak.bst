@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - core-deps/fuse.bst
-- core-deps/ostree.bst
+- core-deps/libostree.bst
 - core-deps/polkit.bst
 - sdk/appstream-glib.bst
 - sdk/json-glib.bst

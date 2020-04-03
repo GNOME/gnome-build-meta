@@ -4,7 +4,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 runtime-depends:
-- core-deps/ostree.bst
+- core-deps/libostree.bst
 - freedesktop-sdk.bst:components/curl.bst
 
 config:

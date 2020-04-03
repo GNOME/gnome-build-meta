@@ -6,7 +6,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/pyatspi2.bst
+- core-deps/pyatspi.bst
 - core-deps/speech-dispatcher.bst
 - sdk/at-spi2-atk.bst
 - sdk/gobject-introspection.bst
