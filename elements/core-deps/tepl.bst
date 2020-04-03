@@ -5,6 +5,7 @@ sources:
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/gobject-introspection.bst
 depends:
 - core-deps/amtk.bst
 - core-deps/uchardet.bst
