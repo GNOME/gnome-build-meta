@@ -29,7 +29,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
 - core-deps/glibmm-2.4.bst
-- core-deps/gmime3.bst
+- core-deps/gmime.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
@@ -105,7 +105,7 @@ depends:
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst
 - core-deps/ppp.bst
-- core-deps/pyatspi2.bst
+- core-deps/pyatspi.bst
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
 - core-deps/sane-backends.bst
