@@ -17,8 +17,11 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
+- freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dpulseaudio=disabled
-    -Dsasl=disabled
+    -Dintrospection=true
+    -Dpulseaudio=enabled
+    -Dsasl=enabled
+    -Dwith-vala=true
