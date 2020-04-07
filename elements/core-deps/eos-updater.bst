@@ -9,9 +9,9 @@ depends:
 - core-deps/avahi.bst
 - core-deps/flatpak.bst
 - core-deps/mogwai.bst
-- core-deps/libostree.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gnupg.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 build-depends:
