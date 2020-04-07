@@ -102,6 +102,7 @@ default:
 
 .vm-image-template:
   stage: image
+  dependencies: [track]
   script:
     - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
     - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
