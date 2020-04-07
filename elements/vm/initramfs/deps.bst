@@ -12,7 +12,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - vm/plymouth-gnome-theme.bst
 - vm/eos-repartition.bst
 
