@@ -231,7 +231,10 @@ build-gnome-core-arm:
 vm-image-x86_64:
   extends: .vm-image-template
   # run as soon as the x86_64 build job is done, don't wait for other arches
-  needs: [ build-gnome-core-x86_64 ]
+  needs:
+  - track
+  - job: build-gnome-core-x86_64
+    artifacts: false
   <<: *x86_64
 
 
