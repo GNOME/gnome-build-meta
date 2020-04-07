@@ -102,6 +102,13 @@ config:
       download-if: have-intel-gpu
       version: '%{freedesktop-sdk-flatpak-branch}'
 
+    Extension org.gnome.Sdk.Extension:
+      subdirectories: 'true'
+      directory: lib/sdk
+      no-autodownload: 'true'
+      add-ld-path: lib
+      version: '%{branch}'
+
     (?):
     - arch in ["x86_64", "aarch64"]:
         Extension org.gnome.Sdk.Compat.arm:
