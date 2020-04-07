@@ -8,7 +8,7 @@ build-depends:
   - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/pyatspi2.bst
+- core-deps/pyatspi.bst
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/gtk+-3.bst

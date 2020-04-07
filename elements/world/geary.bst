@@ -9,7 +9,7 @@ build-depends:
 
 depends:
 - core-deps/folks.bst
-- core-deps/gmime3.bst
+- core-deps/gmime.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gsound.bst
 - core-deps/gspell.bst
