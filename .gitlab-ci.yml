@@ -103,8 +103,11 @@ default:
 .vm-image-template:
   stage: image
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst vm
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks iso/image.bst iso
+    - mkdir -p image
+    - mv vm/* iso/* image/
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_success
@@ -200,7 +203,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst iso/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst
   retry: 2
   # only run on branches targeting master
   rules:
