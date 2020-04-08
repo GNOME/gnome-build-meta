@@ -88,6 +88,11 @@ default:
     if [ "${ARCH}" == "x86_64" ]; then
         ${BST} build openh264-extension.bst:flatpak-repo.bst
     fi
+  - |
+    if test "$FLATPAK_BRANCH" != 'master' -a "$CI_COMMIT_REF_NAME" != /^gnome-\d-\d\d$/; then
+        REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
+        ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
+    fi
 
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
@@ -318,18 +323,3 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-
-check_abi:
-  <<: *x86_64
-  stage: reports
-  # run as soon as the x86_64 build job is done, don't wait for other arches
-  needs:
-  - job: build-gnome-core-x86_64
-    artifacts: false
-  script:
-    - REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
-      ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
-  rules:
-  - if: '$CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/'
-    when: never
-  - if: '$CI_MERGE_REQUEST_ID && $FLATPAK_BRANCH != "master"'
