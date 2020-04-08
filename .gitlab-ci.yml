@@ -8,7 +8,7 @@ variables:
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   DOCKER_IMAGE_ID: '80f4a16af18b8641874fe037710dcaad4710ff50'
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: "3.36"
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -333,3 +333,4 @@ check_abi:
   - if: '$CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/'
     when: never
   - if: '$CI_MERGE_REQUEST_ID && $FLATPAK_BRANCH != "master"'
+    when: on_success
