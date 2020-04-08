@@ -9,12 +9,13 @@ variables:
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   DOCKER_IMAGE_ID: '80f4a16af18b8641874fe037710dcaad4710ff50'
   FLATPAK_BRANCH: master
-  STABLE_ABI: false
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
+
+  GIT_SUBMODULE_STRATEGY: "recursive"
 
 stages:
 - track
@@ -86,6 +87,11 @@ default:
     # Only run this build for x86_64, instead of building it somewhere else
     if [ "${ARCH}" == "x86_64" ]; then
         ${BST} build openh264-extension.bst:flatpak-repo.bst
+    fi
+  - |
+    if test "$FLATPAK_BRANCH" != 'master' -a "$CI_COMMIT_REF_NAME" != /^gnome-\d-\d\d$/; then
+        REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
+        ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
     fi
 
   # Store all the downloaded git repos and tarballs in the cache.
@@ -317,16 +323,3 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-
-check_abi:
-  <<: *x86_64
-  stage: reports
-  dependencies: [build]
-  script:
-    - if [ $STABLE_ABI != 'false' ]; then \
-        REFERENCE=$(git merge-base origin/$FLATPAK_BRANCH HEAD) \
-        ./utils/buildstream-abi-checker/check-abi ---suppressions=utils/abidiff-suppressions.ini -old=$REFERENCE --new=HEAD abi/abi-image.bst
-      fi
-  only:
-    - master
-    - /^gnome-\d-\d\d$/
