@@ -129,7 +129,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
   # only run on branches targeting master
@@ -260,6 +260,13 @@ raspberrypi-4-image:
   - .aarch64
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
+
+iso-installer-x86_64:
+  extends:
+  - .manual-image-template
+  - .x86_64
+  variables:
+    IMAGE: iso/image.bst
 
 s3-image:
   extends: .x86_64
