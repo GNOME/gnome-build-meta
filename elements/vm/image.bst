@@ -98,18 +98,16 @@ config:
             partition-type-uuid = "%{linux-root}"
         }
     }
-    image disk.qcow2 {
-        qemu {
-        }
-        partition image {
-            image = "disk.img"
-        }
-    }
     EOF
 
   - |
     cd /genimage
     genimage --rootpath "%{sysroot}"
 
+  # FIXME: Propose support for part attrs in genimage project
+  - sfdisk --part-attrs /genimage/images/disk.img 2 55
+
   - |
-    install -Dm644 -t "%{install-root}" genimage/images/disk.qcow2
+    qemu-img convert -f raw -O qcow2 \
+        /genimage/images/disk.img \
+        "%{install-root}/disk.qcow2"
