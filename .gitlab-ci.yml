@@ -324,7 +324,7 @@ check_abi:
   stage: reports
   # run as soon as the x86_64 build job is done, don't wait for other arches
   needs:
-  - track
+  - job: track
   - job: build-gnome-core-x86_64
   script:
     - REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
