@@ -236,7 +236,7 @@ vm-image-x86_64:
   needs:
   - track
   - job: build-gnome-core-x86_64
-    artifacts: false
+  artifacts: false
   <<: *x86_64
 
 
