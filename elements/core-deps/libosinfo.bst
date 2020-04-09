@@ -2,10 +2,10 @@ kind: meson
 sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
-- kind: local
-  path: files/libosinfo/pci.ids
-- kind: local
-  path: files/libosinfo/usb.ids
+- kind: remote
+  url: http://www.linux-usb.org/usb.ids
+- kind: remote
+  url: http://pci-ids.ucw.cz/v2.2/pci.ids
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
