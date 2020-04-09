@@ -1,0 +1,40 @@
+kind: autotools
+
+sources:
+- kind: tar
+  url: https://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz
+- kind: tar
+  url: https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz
+  directory: gmp
+- kind: tar
+  url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz
+  directory: mpfr
+- kind: tar
+  url: https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz
+  directory: mpc
+
+build-depends:
+- freedesktop-sdk.bst:components/tar.bst
+
+depends:
+- boards/pinebook-pro/arm-none-eabi-binutils.bst
+
+variables:
+  conf-local: >-
+    --with-newlib
+    --target=arm-none-eabi
+    --disable-bootstrap
+    --enable-languages=c
+    --disable-libssp
+    --disable-gomp
+    --enable-threads
+    --disable-shared
+    --disable-nls
+
+config:
+  install-commands:
+    (>):
+    - rm "%{install-root}%{bindir}/arm-none-eabi-gcc"
+    - ln -s arm-none-eabi-gcc-9.2.0 "%{install-root}%{bindir}/arm-none-eabi-gcc"
+    - rm -rf "%{install-root}%{infodir}"
+    - rm -rf "%{install-root}%{mandir}"
