@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst
+- core-deps/libraw.bst
 - core-deps/poppler.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -29,7 +30,6 @@ variables:
     -Djasper=disabled
     -Dlensfun=disabled
     -Dlibav=disabled
-    -Dlibraw=disabled
     -Dlibspiro=disabled
     -Dlibv4l=disabled
     -Dlibv4l2=disabled
