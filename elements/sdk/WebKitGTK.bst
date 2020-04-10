@@ -47,8 +47,11 @@ variables:
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   - arch == "arm":
-      webkitgtk_arch_options: |
+      webkitgtk_arch_options: >-
         -DENABLE_GLES2=ON
+  - arch == "aarch64":
+      webkitgtk_arch_options: >-
+        -DWTF_CPU_ARM64_CORTEXA53:BOOL=OFF
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
