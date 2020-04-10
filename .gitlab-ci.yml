@@ -109,6 +109,7 @@ default:
 .abi-template:
   stage: abi_check
   script:
+  - ${BST} -o arch "${ARCH}" build flatpak/platform-image.bst flatpak/sdk-image.bst
   - export REFERENCE=7301f32c0d91bd6f04988708e16b92be3e204109
   - ./utils/buildstream-abi-checker/check-abi --suppressions=utils/abidiff-suppressions.ini --old="${REFERENCE}" --new=HEAD abi/abi-image.bst
   cache: &bst-cache
