@@ -31,6 +31,9 @@ default:
   # Ensure the log directory exists
   - mkdir -p logs
 
+  - ls -l utils
+  - ls -l utils/buildstream-abi-checker
+
   # Setup certificate for pushing to the cache
   - |
     if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
@@ -109,8 +112,12 @@ default:
 .abi-template:
   stage: abi_check
   script:
-  - REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD) \
-    ./utils/buildstream-abi-checker/check-abi --bst-opts="${ARCH}" --suppressions=utils/abidiff-suppressions.ini --old="${REFERENCE}" --new=HEAD abi/abi-image.bst
+  - ls -l utils
+  - ls -l utils/buildstream-abi-checker
+  - ls -l utils/buildstream-abi-checker/check-abi
+  - export REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD)
+  - echo "$REFERENCE"
+  - ./utils/buildstream-abi-checker/check-abi --suppressions=utils/abidiff-suppressions.ini --old="${REFERENCE}" --new=HEAD abi/abi-image.bst
   cache: &bst-cache
     key: bst-$FLATPAK_BRANCH
     paths:
