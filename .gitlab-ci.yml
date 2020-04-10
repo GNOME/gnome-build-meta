@@ -109,7 +109,7 @@ default:
 .abi-template:
   stage: abi_check
   script:
-  - export REFERENCE=$(git merge-base origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME HEAD)
+  - export REFERENCE=$(git merge-base origin/jjardon/336_abicheck)
   - ./utils/buildstream-abi-checker/check-abi --suppressions=utils/abidiff-suppressions.ini --old="${REFERENCE}" --new=HEAD abi/abi-image.bst
   cache: &bst-cache
     key: bst-$FLATPAK_BRANCH
