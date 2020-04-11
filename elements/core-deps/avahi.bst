@@ -20,6 +20,7 @@ variables:
     --disable-gtk
     --disable-python
     --disable-mono
+    --disable-stack-protector
 config:
   install-commands:
     (>):
