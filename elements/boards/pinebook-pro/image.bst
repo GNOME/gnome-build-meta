@@ -37,6 +37,8 @@ config:
   - ostree admin init-fs "%{sysroot}"
   - ostree admin os-init --sysroot="%{sysroot}" gnome-os
 
+  # U-Boot does not provide EFI variables at runtime. So /dev/gpt-auto-root
+  # is not available.
   - |
     ostree admin deploy --os="gnome-os" \
          --sysroot="%{sysroot}" %{ostree-branch} \
