@@ -31,6 +31,7 @@ depends:
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
+- core-deps/glade-libs.bst
 - core-deps/glibmm-2.4.bst
 - core-deps/gmime.bst
 - core-deps/gnome-autoar.bst
