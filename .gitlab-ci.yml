@@ -242,7 +242,7 @@ pinebook-pro-image:
   script:
     - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
     - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
-  when: manual
+  #when: manual
   allow_failure: true
   cache: *bst-cache
   artifacts:
