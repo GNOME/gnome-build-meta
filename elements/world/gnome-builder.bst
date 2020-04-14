@@ -24,7 +24,6 @@ depends:
 - sdk/vala.bst
 - world/devhelp.bst
 - world/glade.bst
-- world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/libportal.bst
