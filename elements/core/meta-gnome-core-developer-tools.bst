@@ -2,4 +2,5 @@
 # world. Adding or removing elements from here should be approved by
 # release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
-depends: []
+depends:
+- core/devhelp.bst
