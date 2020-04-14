@@ -6,10 +6,10 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/libgit2.bst
+- core-deps/libssh2.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/libgit2.bst
-- world/libssh2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
