@@ -35,3 +35,5 @@ runtime-depends:
 # FIXME: Waiting for those to be merged:
 #- freedesktop-sdk.bst:components/linux-firmware.bst
 #- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+
+- vm/wpa-supplicant-config.bst
