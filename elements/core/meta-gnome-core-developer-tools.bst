@@ -8,3 +8,4 @@ kind: stack
 depends:
 - core/devhelp.bst
 - core/dconf-editor.bst
+- core/sysprof.bst
