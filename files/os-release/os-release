@@ -2,3 +2,4 @@ NAME=GNOME
 VERSION="master (Flatpak runtime)"
 VERSION_ID=master
 ID=org.gnome.Platform
+PRETTY_NAME="GNOME OS"
