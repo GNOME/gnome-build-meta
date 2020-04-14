@@ -267,6 +267,13 @@ config:
     scripts/config -m HID_ZEROPLUS
     scripts/config -m HID_ZYDACRON
 
+    scripts/config -e WIRELESS
+    scripts/config -m CFG80211
+    scripts/config -e CFG80211_WEXT
+    scripts/config -e MAC80211
+    scripts/config -e NETDEVICES
+    scripts/config -e WLAN
+
   build-commands:
   - |
     make
