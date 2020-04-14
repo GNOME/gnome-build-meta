@@ -38,3 +38,5 @@ runtime-depends:
 - vm/wpa-supplicant-config.bst
 
 - boards/pinebook-pro/disable-suspend.bst
+
+- boards/pinebook-pro/firmware.bst
