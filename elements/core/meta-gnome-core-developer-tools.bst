@@ -5,3 +5,4 @@ kind: stack
 depends:
 - core/dconf-editor.bst
 - core/devhelp.bst
+- core/sysprof.bst
