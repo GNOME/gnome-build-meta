@@ -36,3 +36,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
 - boards/pinebook-pro/firmware.bst
+
+- vm/wpa-supplicant-config.bst
