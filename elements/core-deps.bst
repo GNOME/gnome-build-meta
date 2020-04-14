@@ -52,6 +52,7 @@ depends:
 - core-deps/intltool.bst
 - core-deps/iptables.bst
 - core-deps/json-c.bst
+- core-deps/jsonrpc-glib.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst
 - core-deps/libcanberra.bst
@@ -59,6 +60,8 @@ depends:
 - core-deps/libcue.bst
 - core-deps/libdaemon.bst
 - core-deps/libdazzle.bst
+- core-deps/libgit2.bst
+- core-deps/libgit2-glib.bst
 - core-deps/libdvdread.bst
 - core-deps/libevdev.bst
 - core-deps/libgdata.bst
@@ -83,9 +86,11 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/libostree.bst
 - core-deps/libpeas.bst
+- core-deps/libportal.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
+- core-deps/libssh2.bst
 - core-deps/libusb.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
@@ -124,6 +129,7 @@ depends:
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
 - core-deps/startup-notification.bst
+- core-deps/template-glib.bst
 - core-deps/tepl.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-miners.bst

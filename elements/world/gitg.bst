@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
+- core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -18,6 +19,5 @@ depends:
 - sdk/libsoup.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/libgit2-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
