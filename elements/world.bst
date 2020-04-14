@@ -18,7 +18,6 @@ depends:
 - world/glade.bst
 - world/glibmm.bst
 - world/geary.bst
-- world/gnome-builder.bst
 - world/gnome-chess.bst
 - world/gnome-code-assistance.bst
 - world/gnome-devel-docs.bst
@@ -48,14 +47,11 @@ depends:
 - world/ibus-anthy.bst
 - world/ibus-hangul.bst
 - world/ibus-libpinyin.bst
-- world/jsonrpc-glib.bst
 - world/kyotocabinet.bst
 - world/libbluray.bst
 - world/libcdio.bst
 - world/libcdio-paranoia.bst
 - world/libgepub.bst
-- world/libgit2.bst
-- world/libgit2-glib.bst
 - world/libgnome-games-support.bst
 - world/libgphoto2.bst
 - world/libgrss.bst
@@ -66,7 +62,6 @@ depends:
 - world/libnfs.bst
 - world/libpinyin.bst
 - world/libsigcplusplus.bst
-- world/libssh2.bst
 - world/libusbmuxd.bst
 - world/lightsoff.bst
 - world/network-manager-applet.bst
@@ -82,4 +77,3 @@ depends:
 - world/telepathy-glib.bst
 - world/telepathy-logger.bst
 - world/telepathy-mission-control.bst
-- world/template-glib.bst

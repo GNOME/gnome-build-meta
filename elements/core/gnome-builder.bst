@@ -9,6 +9,9 @@ depends:
 - core-deps/glade-libs.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
+- core-deps/jsonrpc-glib.bst
+- core-deps/libgit2-glib.bst
+- core-deps/template-glib.bst
 - core/devhelp.bst
 - sdk/gjs.bst
 - sdk/glib.bst
@@ -18,9 +21,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/jsonrpc-glib.bst
-- world/libgit2-glib.bst
-- world/template-glib.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:deploy-tools/flatpak.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

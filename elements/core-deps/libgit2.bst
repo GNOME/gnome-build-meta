@@ -5,7 +5,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
-- world/libssh2.bst
+- core-deps/libssh2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
