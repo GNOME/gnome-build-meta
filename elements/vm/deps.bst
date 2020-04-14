@@ -13,6 +13,7 @@ runtime-depends:
 - vm/plymouth-gnome-theme.bst
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
+- vm/wpa-supplicant-config.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst

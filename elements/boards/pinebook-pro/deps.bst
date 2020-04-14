@@ -38,3 +38,5 @@ runtime-depends:
 - vm/linux-firmware.bst
 - boards/pinebook-pro/wireless-regdb-bin.bst
 - boards/pinebook-pro/firmware.bst
+
+- vm/wpa-supplicant-config.bst
