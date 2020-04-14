@@ -10,7 +10,6 @@ depends:
 - world/bijiben.bst
 - world/cairomm.bst
 - world/dbus-glib.bst
-- world/dconf-editor.bst
 - world/evolution.bst
 - world/five-or-more.bst
 - world/four-in-a-row.bst
