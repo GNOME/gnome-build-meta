@@ -18,7 +18,6 @@ depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
 - world/glade.bst
-- world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
