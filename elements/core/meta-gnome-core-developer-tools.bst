@@ -3,4 +3,5 @@
 # release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
 depends:
+- core/dconf-editor.bst
 - core/devhelp.bst
