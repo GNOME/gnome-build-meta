@@ -17,12 +17,12 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
+- core/devhelp.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
-- world/devhelp.bst
 - world/glade.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
