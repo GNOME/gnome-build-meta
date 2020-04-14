@@ -6,6 +6,7 @@ sources:
 depends:
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
+- core-deps/glade-libs.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
 - core/devhelp.bst
@@ -17,7 +18,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/glade.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/template-glib.bst
