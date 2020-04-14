@@ -13,6 +13,7 @@ runtime-depends:
 - sdk/vala.bst
 depends:
 - core-deps/flatpak.bst
+- core-deps/glade-libs.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
@@ -23,7 +24,6 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
-- world/glade.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
 - world/libportal.bst
