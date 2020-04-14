@@ -5,4 +5,5 @@
 # Additional design team approval is required before adding or removing
 # desktop applications from core. Current contact: Allan Day.
 kind: stack
-depends: []
+depends:
+- core/devhelp.bst

@@ -8,6 +8,7 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
+- core/devhelp.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
@@ -16,7 +17,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- world/devhelp.bst
 - world/glade.bst
 - world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst
