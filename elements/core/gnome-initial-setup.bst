@@ -4,8 +4,14 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
   track: master
 - kind: local
-  path: files/gnome-initial-setup
+  path: files/gnome-initial-setup/gnome-initial-setup-sysusers.conf
   directory: gnome-initial-setup-config
+- kind: patch
+  # FIXME: Because gnome-initial-setup runs as a user service, it does
+  # not seem to be associated to a seat. So the polkit subject is not
+  # considered local. Users cannot set up the wifi.
+  # See issue https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/102
+  path: files/gnome-initial-setup/work-around-polkit-without-session.patch
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
