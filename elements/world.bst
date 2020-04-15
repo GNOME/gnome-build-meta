@@ -67,6 +67,7 @@ depends:
 - world/libmtp.bst
 - world/libnfs.bst
 - world/libpinyin.bst
+- world/libportal.bst
 - world/libsigcplusplus.bst
 - world/libssh2.bst
 - world/libusbmuxd.bst
