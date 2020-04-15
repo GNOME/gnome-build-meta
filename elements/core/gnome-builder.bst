@@ -20,6 +20,7 @@ depends:
 - core-deps/libportal.bst
 - core-deps/template-glib.bst
 - core/devhelp.bst
+- core/sysprof.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
@@ -30,6 +31,3 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Dplugin_sysprof=false
