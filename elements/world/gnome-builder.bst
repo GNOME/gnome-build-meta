@@ -33,5 +33,4 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dwith_sysmon=false
     -Dplugin_sysprof=false
