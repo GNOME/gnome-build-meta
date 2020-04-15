@@ -5,6 +5,9 @@ sources:
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+runtime-depends:
+- sdk/adwaita-icon-theme.bst
+- sdk/cantarell-fonts.bst
 depends:
 - core-deps/flatpak.bst
 - core-deps/gspell.bst
