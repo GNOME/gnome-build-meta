@@ -22,6 +22,7 @@ depends:
 - world/gnome-code-assistance.bst
 - world/jsonrpc-glib.bst
 - world/libgit2-glib.bst
+- world/libportal.bst
 - world/template-glib.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
