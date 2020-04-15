@@ -23,6 +23,7 @@ depends:
 - core-deps/libportal.bst
 - core-deps/template-glib.bst
 - core/devhelp.bst
+- core/sysprof.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
@@ -30,6 +31,3 @@ depends:
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Dplugin_sysprof=false
