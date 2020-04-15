@@ -1,0 +1,16 @@
+diff --git a/data/20-gnome-initial-setup.rules b/data/20-gnome-initial-setup.rules
+index 514aa8a..71a9c14 100644
+--- a/data/20-gnome-initial-setup.rules
++++ b/data/20-gnome-initial-setup.rules
+@@ -20,10 +20,7 @@ polkit.addRule(function(action, subject) {
+                          action.id.indexOf('com.endlessm.ParentalControls.') === 0);
+ 
+     if (actionMatches) {
+-        if (subject.local)
+-            return 'yes';
+-        else
+-            return 'auth_admin';
++        return 'yes';
+     }
+ 
+     return undefined;
