@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/mutter.git
   track: master
 build-depends:
+- core/sysprof.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -30,6 +31,5 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dprofiler=false
     -Dremote_desktop=false
     -Dxwayland_initfd=disabled
