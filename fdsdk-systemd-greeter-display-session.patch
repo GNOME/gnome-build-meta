@@ -1,0 +1,41 @@
+diff --git a/elements/components/systemd-base.bst b/elements/components/systemd-base.bst
+index a7ef0728..898b6bd4 100644
+--- a/elements/components/systemd-base.bst
++++ b/elements/components/systemd-base.bst
+@@ -80,3 +80,5 @@ sources:
+   path: patches/systemd/gnu-efi-includes.patch
+ - kind: patch
+   path: patches/systemd/relax-boot-device-check-btrfs.patch
++- kind: patch
++  path: patches/systemd/systemd-greeter-display-session.patch
+diff --git a/patches/systemd/systemd-greeter-display-session.patch b/patches/systemd/systemd-greeter-display-session.patch
+new file mode 100644
+index 00000000..98b0d415
+--- /dev/null
++++ b/patches/systemd/systemd-greeter-display-session.patch
+@@ -0,0 +1,25 @@
++commit a2dcb1d78737d3daa301ee63fbdd02837acb71a8
++Author: Lennart Poettering <lennart@poettering.net>
++Date:   Sun Apr 28 11:24:15 2019 +0200
++
++    logind: consider "greeter" sessions suitable as "display" sessions of a user
++    
++    Interestingly, elect_display_compare() already ordered "user" sessions
++    before "greeter" sessions, though nothing other than "user" sessions
++    where ever considered anyway.
++    
++    Fixes: #12399
++
++diff --git a/src/login/logind-user.c b/src/login/logind-user.c
++index c5d442865c..05c57c1c32 100644
++--- a/src/login/logind-user.c
+++++ b/src/login/logind-user.c
++@@ -663,7 +663,7 @@ static bool elect_display_filter(Session *s) {
++         /* Return true if the session is a candidate for the user’s ‘primary session’ or ‘display’. */
++         assert(s);
++ 
++-        return s->class == SESSION_USER && s->started && !s->stopping;
+++        return IN_SET(s->class, SESSION_USER, SESSION_GREETER) && s->started && !s->stopping;
++ }
++ 
++ static int elect_display_compare(Session *s1, Session *s2) {
