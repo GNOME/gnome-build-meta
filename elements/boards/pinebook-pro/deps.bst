@@ -41,3 +41,5 @@ runtime-depends:
 - boards/pinebook-pro/firmware.bst
 
 - vm/wpa-supplicant.bst
+
+- boards/pinebook-pro/disable-dnssec.bst
