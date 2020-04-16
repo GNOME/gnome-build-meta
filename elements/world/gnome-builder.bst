@@ -8,20 +8,20 @@ build-depends:
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/cantarell-fonts.bst
+- sdk/gjs.bst
+- sdk/pygobject.bst
+- sdk/vala.bst
 depends:
 - core-deps/flatpak.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
-- sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
-- sdk/pygobject.bst
-- sdk/vala.bst
 - world/devhelp.bst
 - world/glade.bst
 - world/jsonrpc-glib.bst
