@@ -165,6 +165,8 @@ config:
 
     scripts/config -m HID_MULTITOUCH
 
+    scripts/config -m SND_SOC_ES8316
+
   build-commands:
   - |
     make
