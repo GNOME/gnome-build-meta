@@ -1,0 +1,26 @@
+commit 5b1c4d67f59f12ce55bea4187d71bc8763f7bf3f
+Author: Valentin David <valentin.david@codethink.co.uk>
+Date:   Thu Apr 16 13:46:51 2020 +0200
+
+    components/fuse.bst: Fix permissions of fusermount
+    
+    fusermount requires setuid
+
+diff --git a/elements/components/fuse.bst b/elements/components/fuse.bst
+index 8e8ff51f4..9251af0d6 100644
+--- a/elements/components/fuse.bst
++++ b/elements/components/fuse.bst
+@@ -12,6 +12,13 @@ variables:
+ environment:
+   MOUNT_FUSE_PATH: '%{sbindir}'
+ 
++public:
++  initial-script:
++    script: |
++      #!/bin/bash
++      sysroot="${1}"
++      chmod 4755 "${sysroot}%{bindir}/fusermount"
++
+ sources:
+ - kind: git_tag
+   url: github:libfuse/libfuse.git
