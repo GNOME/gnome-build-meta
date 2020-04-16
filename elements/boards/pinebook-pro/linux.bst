@@ -274,6 +274,8 @@ config:
     scripts/config -e NETDEVICES
     scripts/config -e WLAN
 
+    scripts/config -m SND_SOC_ES8316
+
   build-commands:
   - |
     make
