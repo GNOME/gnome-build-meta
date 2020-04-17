@@ -275,6 +275,15 @@ config:
     scripts/config -e WLAN
 
     scripts/config -m SND_SOC_ES8316
+    scripts/config -m SND_SOC_SIMPLE_AMPLIFIER
+    scripts/config -m SND_SIMPLE_CARD
+
+    scripts/config -e CHARGER_GPIO
+    scripts/config -m PWRSEQ_SD8787
+    scripts/config -m PWRSEQ_SIMPLE
+    scripts/config -e GPIO_SYSCON
+
+    scripts/config -e RTC_DRV_RK808
 
   build-commands:
   - |
