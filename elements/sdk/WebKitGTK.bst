@@ -1,4 +1,5 @@
 kind: cmake
+
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.29.1.tar.xz
@@ -10,15 +11,18 @@ sources:
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
+
 build-depends:
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 runtime-depends:
 - sdk/gst-libav.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
+
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
@@ -43,7 +47,9 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
+  optimize-debug: 'false'
   webkitgtk_toolchain: ''
   webkitgtk_arch_options: ''
   (?):
