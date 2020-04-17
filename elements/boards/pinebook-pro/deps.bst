@@ -40,6 +40,6 @@ runtime-depends:
 - boards/pinebook-pro/wireless-regdb-bin.bst
 - boards/pinebook-pro/firmware.bst
 
-- vm/wpa-supplicant.bst
+- vm/wpa-supplicant-config.bst
 
 - boards/pinebook-pro/disable-dnssec.bst
