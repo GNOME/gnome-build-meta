@@ -5,4 +5,4 @@ plugins/__pycache__
 .bst
 
 # Never commit project.refs
-project.refs
+# project.refs
