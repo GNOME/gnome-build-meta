@@ -1,0 +1,1101 @@
+projects:
+  gnome:
+    sdk/fcitx.bst:
+    - ref: 92241f0138a465347ce4dbfbcea22b513749ab7709c03e8dceb33277111ca845
+    core-deps/intltool.bst:
+    - ref: 67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd
+    - {}
+    core-deps/libgudev.bst:
+    - ref: 233-0-gf76d04cbb66f9c0ef7f744ebc12f0336a4dc9170
+    core-deps/iptables.bst:
+    - ref: 55d02dfa46263343a401f297d44190f2a3e5113c8933946f094ed40237053733
+    sdk/gtk-doc.bst:
+    - ref: GTK_DOC_1_32-41-g250a21f24365b6fed6271b5f235307d9fbef5eeb
+    core-deps/libndp.bst:
+    - ref: 0c7dfa84e013bd5e569ef2c6292a6f72cfaf14f4ff77a77425e52edc33ffac0e
+    sdk/python-pygments.bst:
+    - ref: 5ffada19f6203563680669ee7f53b64dabbeb100eb51b61996085e99c03b284a
+    sdk/gobject-introspection.bst:
+    - ref: 1.64.0-5-g7e379314faa78b5a5670477a3d68dd28c1f8a267
+    core-deps/ppp.bst:
+    - ref: 02e0a3dd3e4799e33103f70ec7df75348c8540966ee7c948e4ed8a42bbccfb30
+    - {}
+    sdk/pycairo.bst:
+    - ref: abd42a4c9c2069febb4c38fe74bfc4b4a9d3a89fea3bc2e4ba7baff7a20f783f
+    sdk/vala-tarball.bst:
+    - ref: be960a87841d85ff76cbd0e10eb691675190e54bd690d76982b3fb94a1fc67a7
+    sdk/pygobject.bst:
+    - ref: 3.36.0-23-g1a2bc1d0806ab6178f65125bf0b2283eb3378d4d
+    core-deps/accountsservice.bst:
+    - ref: 0.6.55-28-g16b999f1f83eda28ec044f1d59dbe78db605821f
+    sdk/glib.bst:
+    - ref: 2.64.0-130-gde8708cd9595269f4b27b6906a60de657ee0bef5
+    core-deps/polkit.bst:
+    - ref: 0.116-16-g3eadcff2b186547a3303f4904a49e165cefb5623
+    - {}
+    core-deps/libusb.bst:
+    - ref: 7dce9cce9a81194b7065ee912bcd55eeffebab694ea403ffb91b67db66b1824b
+    core-deps/upower.bst:
+    - ref: 64b5ffbfccd5bdb15d925777979a4dbee1a957f9eaeb158dc76175267eddbdef
+    sdk/vala.bst:
+    - ref: 0.48.2-70-g6b7f10d070183a57bd4a3543da052126efb9a465
+    sdk/atk.bst:
+    - ref: ATK_2_36_0-2-g4801e4657bfa6633a14e79e3f54c6ab460d4e01b
+    sdk/at-spi2-core.bst:
+    - ref: AT_SPI2_CORE_2_36_0-1-ga8e3e2ef2c3030c563183f4308aa8e63621eac64
+    sdk/at-spi2-atk.bst:
+    - ref: AT_SPI2_ATK_2_34_2-0-geac8e935128753f8204ecc3904e6e3e7b231e3ea
+    core-deps/libcanberra.bst:
+    - ref: c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72
+    sdk/pango.bst:
+    - ref: 1.44.7-83-g3d6c8f0bd97171f9409f900f94e694fffecb739f
+    sdk/dconf.bst:
+    - ref: 0.36.0-1-g417580550af147f99d1eedc13df977f3f870349d
+    - {}
+    sdk/yelp-xsl.bst:
+    - ref: 3.36.0-2-gce7965a3eea21af256db2999d3341221d2ef00e3
+    sdk/yelp-tools.bst:
+    - ref: 3.32.2-0-gc8664c3df853f5307ff3c4d939721f340d61f4ba
+    sdk/python2.bst:
+    - ref: f222ef602647eecb6853681156d32de4450a2c39f4de93bd5b20235f2e660ed7
+    core/gdm.bst:
+    - ref: 3.34.1-20-g2090685406c775d734d57b40f84bd0876a9e829e
+    - {}
+    sdk/libnotify.bst:
+    - ref: 0.7.9-0-g98a4bf483a69c6436311bcb9834d9d93235c96b7
+    core/gnome-backgrounds.bst:
+    - ref: 3.36.0-9-geb1ac61e7fee7a882e402ff7d2514f4f572378f8
+    core-deps/NetworkManager.bst:
+    - ref: 1.25.0-dev-28-gf4cf907a4296a7ee5f97069c7dbd8723ede7165a
+    core/gnome-bluetooth.bst:
+    - ref: GNOMEBT_V_3_34_1-1-g64211f0b51f2af93a53ce459cb40e05ba53055d0
+    sdk/gdk-pixbuf.bst:
+    - ref: 2.40.0-54-gdd3aa9ed64a0a370c8150f98e849ffc6e73da827
+    core-deps/libgusb.bst:
+    - ref: 0.3.4-4-g76c23503ed1002d3aad0118795006fe2128006ae
+    sdk/gsettings-desktop-schemas.bst:
+    - ref: 3.36.0-9-gcdb07f3669751dba226c91f77d29234a8d461286
+    - {}
+    core/gnome-desktop.bst:
+    - ref: 3.36.0-16-g6f1df62c551c3f6e5c5d026b8bcb190657a1cf41
+    core-deps/colord-gtk.bst:
+    - ref: COLORD_GTK_0_2_0-2-g29768c2fc6d170fb11103c977bde24ac759db993
+    core-deps/colord.bst:
+    - ref: 1.4.4-18-g4135af505695b98b6eed85f5f49195b961136c26
+    core-deps/vte.bst:
+    - ref: 0.59.92-16-g276d06cf3238e2de2869493575ad7eb0f323058b
+    sdk/adwaita-icon-theme.bst:
+    - ref: 3.36.1-0-g0fb23c88e33cd385e03cf96115958b31063003f3
+    sdk/gcab.bst:
+    - ref: v1.4-2-g71e8f9e44f4129234107c065f5637ead36cdd99c
+    raspi/bsp/userland-firmware.bst:
+    - ref: a246147c21ae5be92ad1b85199b5b0bb447e0544
+    raspi/bsp/firmware.bst:
+    - ref: 69a759d39aa802f65d0cc578361ff73e9dcbedc4
+    sdk/json-glib.bst:
+    - ref: 1.4.2-97-g0a562b86894f1244b4dac573c72b000ea38bcc75
+    core-deps/mozjs60.bst:
+    - ref: 697331336c3d65b80ded9ca87b4a8ceb804e5342b476eaa133ac638102a9dc5d
+    core-deps/plymouth.bst:
+    - ref: 0.9.4-228-gd7c737d05afea5ff1b26f90708a15add5c30fe92
+    - {}
+    sdk/libsoup.bst:
+    - ref: 2.70.0-2-g0232368c0fc0d58b4af0a519d9dcd848e50b6e45
+    sdk/appstream-glib.bst:
+    - ref: appstream_glib_0_7_17-6-g274862aeed0be82af72be3520461be2de4b666b8
+    core/gnome-color-manager.bst:
+    - ref: GNOME_COLOR_MANAGER_3_36_0-3-g66aea36411477f284fa8a379b3bde282385d281c
+    core-deps/libmbim.bst:
+    - ref: 1.22.0-7-g50d43376a6ac9c6fc9a1e3d595675937ae90cc86
+    core-deps/libqmi.bst:
+    - ref: 1.24.0-193-g67974c8daf3524b487239aaa3a2c8bd5cabd103e
+    core-deps/geocode-glib.bst:
+    - ref: 3.26.2-0-g34f420cbe1ff3f45fde9179ba07e0259b9ce505b
+    core-deps/ModemManager.bst:
+    - ref: 852d61755e0c1a8d0c609b17192d742b324fdd2e513f3ed64b228befb859a95b
+    core-deps/libgweather.bst:
+    - ref: 3.34.0-83-g8d820eb7d666b5198e3956efe718dadd4efa2b3d
+    core-deps/libwacom.bst:
+    - ref: 8cb483593676332e92d3fe1fe816350f136bb906fcee329579d6cb9802d99e02
+    sdk/gcr.bst:
+    - ref: 3.36-12-g980bef942a9a7a135d3aacbba9af2bf03b3ed017
+    sdk/geoclue.bst:
+    - ref: f552ba69ce32519f78858c48215680e364b9b01197550df9327c5a01e44a9913
+    core/gnome-settings-daemon.bst:
+    - ref: GNOME_SETTINGS_DAEMON_3_36_0-16-g9aa8491bc507ea4aa7524bffe612e152942b595d
+    core-deps/librest.bst:
+    - ref: 0.8.1-4-ge5ee6ef751ee5a38d7b9fadcd631cf6ecec7b240
+    sdk/libsecret.bst:
+    - ref: 0.20.3-0-gfb456a3853a080996f044496b11f3001af4a2659
+    sdk/krb5.bst:
+    - ref: 9f721e1fe593c219174740c71de514c7228a97d23eb7be7597b2ae14e487f027
+    - {}
+    sdk/ibus.bst:
+    - ref: 8170eba58c28aa4818970751ebdeada728ebb63d535967a5c5f5c21b0017be4a
+    sdk/libwpe.bst:
+    - ref: 3587c6b8a807f4bb76b268ba74ca82c6b395b90235db41ad8252224456193c90
+    sdk/enchant-2.bst:
+    - ref: c7b5e2853f0dd0b1aafea2f9e071941affeec3a76df8e3f6d67a718c89293555
+    sdk/woff2.bst:
+    - ref: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+    sdk/openjpeg.bst:
+    - ref: 63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9
+    sdk/wpebackend-fdo.bst:
+    - ref: 7f5bd7b9d8f97b1655f4dcd39fad92719d0fb3985b251da5802df13aaa09f567
+    core-deps/gmime.bst:
+    - ref: 3.2.3-24-g3b71f3ff9e4d8882b685ba8071945f80833b62c5
+    core-deps/gnome-online-accounts.bst:
+    - ref: 3.36.0-3-g838c4aa3e3ab4b227853ec7756559ca1e5444f93
+    core-deps/totem-pl-parser.bst:
+    - ref: V_3_26_5-2-gfb769af1fc0cdf87ddb5ddbb8c64afed1858313f
+    core-deps/grilo.bst:
+    - ref: grilo-0.3.12-9-g1edc835e25a4ec7aff1b808d4e5c13b84a4a960a
+    core-deps/gsound.bst:
+    - ref: 1.0.2-4-g7f425998e2a2ec205024b3e765f15d4d6d41fa63
+    core-deps/libgtop.bst:
+    - ref: 2.40.0-12-g267ae64965ee20af9420e67011fa1a9ba7821566
+    core-deps/libhandy.bst:
+    - ref: 8302af3d84f86b9741cbbb00bed6f3674c60c157355ce1ad6e90554464374c89
+    core-deps/mobile-broadband-provider-info.bst:
+    - ref: 20190618-8-g43755b833aa4f0c79f2d6f04c1a2231ba106ea85
+    core-deps/libnma.bst:
+    - ref: 1.8.29-dev-2-g465bd018a5ad0e082b4ba1024530f305c811ad3c
+    sdk/WebKitGTK.bst:
+    - ref: acbc26a3ed5c13f39e46875cf447a9c0541b6cfb17f9e7884323431cb327f3d8
+    - {}
+    - {}
+    - {}
+    core-deps/perl-parse-yapp.bst:
+    - ref: 3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5
+    core-deps/rpcsvc-proto.bst:
+    - ref: 95219e83e11aba0abb4149d3e997e5fc8060912dde10af4d9f41fc1d79c7a919
+    sdk/librsvg.bst:
+    - ref: 2.47.3-192-g5c52e1b53548ef3c0ff4a8b99c18fac7eb018c63
+    - ref:
+      - name: adler32
+        version: 1.0.4
+        sha: 5d2e7343e7fc9de883d1b0341e0b13970f764c14101234857d2ddafa1cb1cac2
+      - name: aho-corasick
+        version: 0.7.10
+        sha: 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
+      - name: approx
+        version: 0.3.2
+        sha: f0e60b75072ecd4168020818c0107f2857bb6c4e64252d8d3983f6263b40a5c3
+      - name: assert_cmd
+        version: 1.0.1
+        sha: c88b9ca26f9c16ec830350d309397e74ee9abdfd8eb1f71cb6ecc71a3fc818da
+      - name: atty
+        version: 0.2.14
+        sha: d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
+      - name: autocfg
+        version: 1.0.0
+        sha: f8aac770f1885fd7e387acedd76065302551364496e46b3dd00860b2f8359b9d
+      - name: bitflags
+        version: 1.2.1
+        sha: cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693
+      - name: block
+        version: 0.1.6
+        sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
+      - name: bstr
+        version: 0.2.12
+        sha: 2889e6d50f394968c8bf4240dc3f2a7eb4680844d27308f798229ac9d4725f41
+      - name: byteorder
+        version: 1.3.4
+        sha: 08c48aae112d48ed9f069b33538ea9e3e90aa263cfa3d1c24309612b1f7472de
+      - name: cairo-rs
+        version: 0.8.1
+        sha: 157049ba9618aa3a61c39d5d785102c04d3b1f40632a706c621a9aedc21e6084
+      - name: cairo-sys-rs
+        version: 0.9.2
+        sha: ff65ba02cac715be836f63429ab00a767d48336efc5497c5637afb53b4f14d63
+      - name: cast
+        version: 0.2.3
+        sha: 4b9434b9a5aa1450faa3f9cb14ea0e8c53bb5d2b3c1bfd1ab4fc03e9f33fbfb0
+      - name: cfg-if
+        version: 0.1.10
+        sha: 4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822
+      - name: chrono
+        version: 0.4.11
+        sha: 80094f509cf8b5ae86a4966a39b3ff66cd7e2a3e594accec3743ff3fabeab5b2
+      - name: clap
+        version: 2.33.0
+        sha: 5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9
+      - name: cloudabi
+        version: 0.0.3
+        sha: ddfc5b9aa5d4507acaf872de71051dfd0e309860e88966e1051e462a077aac4f
+      - name: crc32fast
+        version: 1.2.0
+        sha: ba125de2af0df55319f41944744ad91c71113bf74a4646efff39afe1f6842db1
+      - name: criterion
+        version: 0.2.11
+        sha: 0363053954f3e679645fc443321ca128b7b950a6fe288cf5f9335cc22ee58394
+      - name: criterion-plot
+        version: 0.3.1
+        sha: 76f9212ddf2f4a9eb2d401635190600656a1f88a932ef53d06e7fa4c7e02fb8e
+      - name: crossbeam-deque
+        version: 0.7.3
+        sha: 9f02af974daeee82218205558e51ec8768b48cf524bd01d550abe5573a608285
+      - name: crossbeam-epoch
+        version: 0.8.2
+        sha: 058ed274caafc1f60c4997b5fc07bf7dc7cca454af7c6e81edffe5f33f70dace
+      - name: crossbeam-queue
+        version: 0.2.1
+        sha: c695eeca1e7173472a32221542ae469b3e9aac3a4fc81f7696bcad82029493db
+      - name: crossbeam-utils
+        version: 0.7.2
+        sha: c3c7c73a2d1e9fc0886a08b93e98eb643461230d5f1925e4036204d5f2e261a8
+      - name: cssparser
+        version: 0.27.2
+        sha: 754b69d351cdc2d8ee09ae203db831e005560fc6030da058f86ad60c92a9cb0a
+      - name: cssparser-macros
+        version: 0.6.0
+        sha: dfae75de57f2b2e85e8768c3ea840fd159c8f33e2b6522c7835b7abac81be16e
+      - name: csv
+        version: 1.1.3
+        sha: 00affe7f6ab566df61b4be3ce8cf16bc2576bca0963ceb0955e45d514bf9a279
+      - name: csv-core
+        version: 0.1.10
+        sha: 2b2466559f260f48ad25fe6317b3c8dac77b5bdb5763ac7d9d6103530663bc90
+      - name: data-url
+        version: 0.1.0
+        sha: d33fe99ccedd6e84bc035f1931bb2e6be79739d6242bd895e7311c886c50dc9c
+      - name: deflate
+        version: 0.8.3
+        sha: 050ef6de42a33903b30a7497b76b40d3d58691d4d3eec355348c122444a388f0
+      - name: derive_more
+        version: 0.99.5
+        sha: e2323f3f47db9a0e77ce7a300605d8d2098597fc451ed1a97bb1f6411bb550a7
+      - name: difference
+        version: 2.0.0
+        sha: 524cbf6897b527295dff137cec09ecf3a05f4fddffd7dfcd1585403449e74198
+      - name: doc-comment
+        version: 0.3.3
+        sha: fea41bba32d969b513997752735605054bc0dfa92b4c56bf1189f2e174be7a10
+      - name: dtoa
+        version: 0.4.5
+        sha: 4358a9e11b9a09cf52383b451b49a169e8d797b68aa02301ff586d70d9661ea3
+      - name: dtoa-short
+        version: 0.3.2
+        sha: 59020b8513b76630c49d918c33db9f4c91638e7d3404a28084083b87e33f76f2
+      - name: either
+        version: 1.5.3
+        sha: bb1f6b1ce1c140482ea30ddd3335fc0024ac7ee112895426e0a629a6c20adfe3
+      - name: encoding
+        version: 0.2.33
+        sha: 6b0d943856b990d12d3b55b359144ff341533e516d94098b1d3fc1ac666d36ec
+      - name: encoding-index-japanese
+        version: 1.20141219.5
+        sha: 04e8b2ff42e9a05335dbf8b5c6f7567e5591d0d916ccef4e0b1710d32a0d0c91
+      - name: encoding-index-korean
+        version: 1.20141219.5
+        sha: 4dc33fb8e6bcba213fe2f14275f0963fd16f0a02c878e3095ecfdf5bee529d81
+      - name: encoding-index-simpchinese
+        version: 1.20141219.5
+        sha: d87a7194909b9118fc707194baa434a4e3b0fb6a5a757c73c3adb07aa25031f7
+      - name: encoding-index-singlebyte
+        version: 1.20141219.5
+        sha: 3351d5acffb224af9ca265f435b859c7c01537c0849754d3db3fdf2bfe2ae84a
+      - name: encoding-index-tradchinese
+        version: 1.20141219.5
+        sha: fd0e20d5688ce3cab59eb3ef3a2083a5c77bf496cb798dc6fcdb75f323890c18
+      - name: encoding_index_tests
+        version: 0.1.4
+        sha: a246d82be1c9d791c5dfde9a2bd045fc3cbba3fa2b11ad558f27d01712f00569
+      - name: flate2
+        version: 1.0.14
+        sha: 2cfff41391129e0a856d6d822600b8d71179d46879e310417eb9c762eb178b42
+      - name: float-cmp
+        version: 0.6.0
+        sha: da62c4f1b81918835a8c6a484a397775fff5953fe83529afd51b05f5c6a6617d
+      - name: fuchsia-cprng
+        version: 0.1.1
+        sha: a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba
+      - name: futf
+        version: 0.1.4
+        sha: 7c9c1ce3fa9336301af935ab852c437817d14cd33690446569392e65170aac3b
+      - name: futures-channel
+        version: 0.3.4
+        sha: f0c77d04ce8edd9cb903932b608268b3fffec4163dc053b3b402bf47eac1f1a8
+      - name: futures-core
+        version: 0.3.4
+        sha: f25592f769825e89b92358db00d26f965761e094951ac44d3663ef25b7ac464a
+      - name: futures-executor
+        version: 0.3.4
+        sha: f674f3e1bcb15b37284a90cedf55afdba482ab061c407a9c0ebbd0f3109741ba
+      - name: futures-io
+        version: 0.3.4
+        sha: a638959aa96152c7a4cddf50fcb1e3fede0583b27157c26e67d6f99904090dc6
+      - name: futures-macro
+        version: 0.3.4
+        sha: 9a5081aa3de1f7542a794a397cde100ed903b0630152d0973479018fd85423a7
+      - name: futures-task
+        version: 0.3.4
+        sha: 7b0a34e53cf6cdcd0178aa573aed466b646eb3db769570841fda0c7ede375a27
+      - name: futures-util
+        version: 0.3.4
+        sha: 22766cf25d64306bedf0384da004d05c9974ab104fcc4528f1236181c18004c5
+      - name: fxhash
+        version: 0.2.1
+        sha: c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c
+      - name: gdk-pixbuf
+        version: 0.8.0
+        sha: e248220c46b329b097d4b158d2717f8c688f16dd76d0399ace82b3e98062bdd7
+      - name: gdk-pixbuf-sys
+        version: 0.9.1
+        sha: d8991b060a9e9161bafd09bf4a202e6fd404f5b4dd1a08d53a1e84256fb34ab0
+      - name: generic-array
+        version: 0.13.2
+        sha: 0ed1e761351b56f54eb9dcd0cfaca9fd0daecf93918e1cfc01c8a3d26ee7adcd
+      - name: getrandom
+        version: 0.1.14
+        sha: 7abc8dd8451921606d809ba32e95b6111925cd2906060d2dcc29c070220503eb
+      - name: gio
+        version: 0.8.1
+        sha: 0cd10f9415cce39b53f8024bf39a21f84f8157afa52da53837b102e585a296a5
+      - name: gio-sys
+        version: 0.9.1
+        sha: 4fad225242b9eae7ec8a063bb86974aca56885014672375e5775dc0ea3533911
+      - name: glib
+        version: 0.9.3
+        sha: 40fb573a09841b6386ddf15fd4bc6655b4f5b106ca962f57ecaecde32a0061c0
+      - name: glib-sys
+        version: 0.9.1
+        sha: 95856f3802f446c05feffa5e24859fe6a183a7cb849c8449afc35c86b1e316e2
+      - name: gobject-sys
+        version: 0.9.1
+        sha: 31d1a804f62034eccf370006ccaef3708a71c31d561fee88564abe71177553d9
+      - name: hermit-abi
+        version: 0.1.10
+        sha: 725cf19794cf90aa94e65050cb4191ff5d8fa87a498383774c47b332e3af952e
+      - name: idna
+        version: 0.2.0
+        sha: 02e2673c30ee86b5b96a9cb52ad15718aa1f966f5ab9ad54a8b95d5ca33120a9
+      - name: inflate
+        version: 0.4.5
+        sha: 1cdb29978cc5797bd8dcc8e5bf7de604891df2a8dc576973d71a281e916db2ff
+      - name: itertools
+        version: 0.8.2
+        sha: f56a2d0bc861f9165be4eb3442afd3c236d8a98afd426f65d92324ae1091a484
+      - name: itoa
+        version: 0.3.4
+        sha: 8324a32baf01e2ae060e9de58ed0bc2320c9a2833491ee36cd3b4c414de4db8c
+      - name: itoa
+        version: 0.4.5
+        sha: b8b7a7c0c47db5545ed3fef7468ee7bb5b74691498139e4b3f6a20685dc6dd8e
+      - name: language-tags
+        version: 0.2.2
+        sha: a91d884b6667cd606bb5a69aa0c99ba811a115fc68915e7056ec08a46e93199a
+      - name: lazy_static
+        version: 1.4.0
+        sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
+      - name: libc
+        version: 0.2.68
+        sha: dea0c0405123bba743ee3f91f49b1c7cfb684eef0da0a50110f758ccf24cdff0
+      - name: libm
+        version: 0.2.1
+        sha: c7d73b3f436185384286bd8098d17ec07c9a7d2388a6599f824d8502b529702a
+      - name: linked-hash-map
+        version: 0.3.0
+        sha: 6d262045c5b87c0861b3f004610afd0e2c851e2908d08b6c870cbb9d5f494ecd
+      - name: locale_config
+        version: 0.3.0
+        sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
+      - name: log
+        version: 0.4.8
+        sha: 14b6052be84e6b71ab17edffc2eeabf5c2c3ae1fdb464aae35ac50c67a44e1f7
+      - name: lopdf
+        version: 0.24.0
+        sha: c431c050a4b89f90beb395b0bab726d609aab84d3b93b01b366bcec60412aea2
+      - name: lzw
+        version: 0.10.0
+        sha: 7d947cbb889ed21c2a84be6ffbaebf5b4e0f4340638cba0444907e38b56be084
+      - name: mac
+        version: 0.1.1
+        sha: c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4
+      - name: malloc_buf
+        version: 0.0.6
+        sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
+      - name: markup5ever
+        version: 0.10.0
+        sha: aae38d669396ca9b707bfc3db254bc382ddb94f57cc5c235f34623a669a01dab
+      - name: matches
+        version: 0.1.8
+        sha: 7ffc5c5338469d4d3ea17d269fa8ea3512ad247247c30bd2df69e68309ed0a08
+      - name: matrixmultiply
+        version: 0.2.3
+        sha: d4f7ec66360130972f34830bfad9ef05c6610a43938a467bcc9ab9369ab3478f
+      - name: maybe-uninit
+        version: 2.0.0
+        sha: 60302e4db3a61da70c0cb7991976248362f30319e88850c487b9b95bbf059e00
+      - name: memchr
+        version: 2.3.3
+        sha: 3728d817d99e5ac407411fa471ff9800a778d88a24685968b36824eaf4bee400
+      - name: memoffset
+        version: 0.5.4
+        sha: b4fc2c02a7e374099d4ee95a193111f72d2110197fe200272371758f6c3643d8
+      - name: miniz_oxide
+        version: 0.3.6
+        sha: aa679ff6578b1cddee93d7e82e263b94a575e0bfced07284eb0c037c1d2416a5
+      - name: nalgebra
+        version: 0.21.0
+        sha: d630f146ae751cfb43db9e0ad6bd73819a546a38baa5d4a9de69823c389c78a1
+      - name: new_debug_unreachable
+        version: 1.0.4
+        sha: e4a24736216ec316047a1fc4252e27dabb04218aa4a3f37c6e7ddbf1f9782b54
+      - name: nodrop
+        version: 0.1.14
+        sha: 72ef4a56884ca558e5ddb05a1d1e7e1bfd9a68d9ed024c21704cc98872dae1bb
+      - name: normalize-line-endings
+        version: 0.3.0
+        sha: 61807f77802ff30975e01f4f071c8ba10c022052f98b3294119f3e615d13e5be
+      - name: num-complex
+        version: 0.2.4
+        sha: b6b19411a9719e753aff12e5187b74d60d3dc449ec3f4dc21e3989c3f554bc95
+      - name: num-integer
+        version: 0.1.42
+        sha: 3f6ea62e9d81a77cd3ee9a2a5b9b609447857f3d358704331e4ef39eb247fcba
+      - name: num-rational
+        version: 0.2.4
+        sha: 5c000134b5dbf44adc5cb772486d335293351644b801551abe8f75c84cfa4aef
+      - name: num-traits
+        version: 0.2.11
+        sha: c62be47e61d1842b9170f0fdeec8eba98e60e90e5446449a0545e5152acd7096
+      - name: num_cpus
+        version: 1.12.0
+        sha: 46203554f085ff89c235cd12f7075f3233af9b11ed7c9e16dfe2560d03313ce6
+      - name: objc
+        version: 0.2.7
+        sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
+      - name: objc-foundation
+        version: 0.1.1
+        sha: 1add1b659e36c9607c7aab864a76c7a4c2760cd0cd2e120f3fb8b952c7e22bf9
+      - name: objc_id
+        version: 0.1.1
+        sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
+      - name: once_cell
+        version: 1.3.1
+        sha: b1c601810575c99596d4afc46f78a678c80105117c379eb3650cf99b8a21ce5b
+      - name: pango
+        version: 0.8.0
+        sha: 1e9c6b728f1be8edb5f9f981420b651d5ea30bdb9de89f1f1262d0084a020577
+      - name: pango-sys
+        version: 0.9.1
+        sha: 86b93d84907b3cf0819bff8f13598ba72843bee579d5ebc2502e4b0367b4be7d
+      - name: pangocairo
+        version: 0.9.0
+        sha: bdd1077c0db2e5eb9225cc040514aa856cb6a4c4890c542cf50d37880e1c572d
+      - name: pangocairo-sys
+        version: 0.10.1
+        sha: a3921b31ab776b23e28c8f6e474dda52fdc28bc2689101caeb362ba976719efe
+      - name: paste
+        version: 0.1.10
+        sha: ab4fb1930692d1b6a9cfabdde3d06ea0a7d186518e2f4d67660d8970e2fa647a
+      - name: paste-impl
+        version: 0.1.10
+        sha: a62486e111e571b1e93b710b61e8f493c0013be39629b714cb166bdb06aa5a8a
+      - name: percent-encoding
+        version: 2.1.0
+        sha: d4fd5641d01c8f18a23da7b6fe29298ff4b55afcccdf78973b24cf3175fee32e
+      - name: phf
+        version: 0.8.0
+        sha: 3dfb61232e34fcb633f43d12c58f83c1df82962dcdfa565a4e866ffc17dafe12
+      - name: phf_codegen
+        version: 0.8.0
+        sha: cbffee61585b0411840d3ece935cce9cb6321f01c45477d30066498cd5e1a815
+      - name: phf_generator
+        version: 0.8.0
+        sha: 17367f0cc86f2d25802b2c26ee58a7b23faeccf78a396094c13dced0d0182526
+      - name: phf_macros
+        version: 0.8.0
+        sha: 7f6fde18ff429ffc8fe78e2bf7f8b7a5a5a6e2a8b58bc5a9ac69198bbda9189c
+      - name: phf_shared
+        version: 0.8.0
+        sha: c00cf8b9eafe68dde5e9eaa2cef8ee84a9336a47d566ec55ca16589633b65af7
+      - name: pin-utils
+        version: 0.1.0-alpha.4
+        sha: 5894c618ce612a3fa23881b152b608bafb8c56cfc22f434a3ba3120b40f7b587
+      - name: pkg-config
+        version: 0.3.17
+        sha: 05da548ad6865900e60eaba7f589cc0783590a92e940c26953ff81ddbab2d677
+      - name: png
+        version: 0.16.2
+        sha: 910f09135b1ed14bb16be445a8c23ddf0777eca485fbfc7cee00d81fecab158a
+      - name: pom
+        version: 3.1.0
+        sha: ef5cf7f52c12da93c26b63ee0d9f012bc82fb071851c546c030dc6ecb5f2994b
+      - name: ppv-lite86
+        version: 0.2.6
+        sha: 74490b50b9fbe561ac330df47c08f3f33073d2d00c150f719147d7c54522fa1b
+      - name: precomputed-hash
+        version: 0.1.1
+        sha: 925383efa346730478fb4838dbe9137d2a47675ad789c546d150a6e1dd4ab31c
+      - name: predicates
+        version: 1.0.4
+        sha: 347a1b6f0b21e636bc9872fb60b83b8e185f6f5516298b8238699f7f9a531030
+      - name: predicates-core
+        version: 1.0.0
+        sha: 06075c3a3e92559ff8929e7a280684489ea27fe44805174c3ebd9328dcb37178
+      - name: predicates-tree
+        version: 1.0.0
+        sha: 8e63c4859013b38a76eca2414c64911fba30def9e3202ac461a2d22831220124
+      - name: proc-macro-hack
+        version: 0.5.15
+        sha: 0d659fe7c6d27f25e9d80a1a094c223f5246f6a6596453e09d7229bf42750b63
+      - name: proc-macro-nested
+        version: 0.1.4
+        sha: 8e946095f9d3ed29ec38de908c22f95d9ac008e424c7bcae54c75a79c527c694
+      - name: proc-macro2
+        version: 1.0.10
+        sha: df246d292ff63439fea9bc8c0a270bed0e390d5ebd4db4ba15aba81111b5abe3
+      - name: quote
+        version: 1.0.3
+        sha: 2bdc6c187c65bca4260c9011c9e3132efe4909da44726bad24cf7572ae338d7f
+      - name: rand
+        version: 0.7.3
+        sha: 6a6b1679d49b24bbfe0c803429aa1874472f50d9b363131f0e89fc356b544d03
+      - name: rand_chacha
+        version: 0.2.2
+        sha: f4c8ed856279c9737206bf725bf36935d8666ead7aa69b52be55af369d193402
+      - name: rand_core
+        version: 0.3.1
+        sha: 7a6fdeb83b075e8266dcc8762c22776f6877a63111121f5f8c7411e5be7eed4b
+      - name: rand_core
+        version: 0.4.2
+        sha: 9c33a3c44ca05fa6f1807d8e6743f3824e8509beca625669633be0acbdf509dc
+      - name: rand_core
+        version: 0.5.1
+        sha: 90bde5296fc891b0cef12a6d03ddccc162ce7b2aff54160af9338f8d40df6d19
+      - name: rand_distr
+        version: 0.2.2
+        sha: 96977acbdd3a6576fb1d27391900035bf3863d4a16422973a409b488cf29ffb2
+      - name: rand_hc
+        version: 0.2.0
+        sha: ca3129af7b92a17112d59ad498c6f81eaf463253766b90396d39ea7a39d6613c
+      - name: rand_os
+        version: 0.1.3
+        sha: 7b75f676a1e053fc562eafbb47838d67c84801e38fc1ba459e8f180deabd5071
+      - name: rand_pcg
+        version: 0.2.1
+        sha: 16abd0c1b639e9eb4d7c50c0b8100b0d0f849be2349829c740fe8e6eb4816429
+      - name: rand_xoshiro
+        version: 0.1.0
+        sha: 03b418169fb9c46533f326efd6eed2576699c44ca92d3052a066214a8d828929
+      - name: rawpointer
+        version: 0.2.1
+        sha: 60a357793950651c4ed0f3f52338f53b2f809f32d83a07f72909fa13e4c6c1e3
+      - name: rayon
+        version: 1.3.0
+        sha: db6ce3297f9c85e16621bb8cca38a06779ffc31bb8184e1be4bed2be4678a098
+      - name: rayon-core
+        version: 1.7.0
+        sha: 08a89b46efaf957e52b18062fb2f4660f8b8a4dde1807ca002690868ef2c85a9
+      - name: rctree
+        version: 0.3.3
+        sha: be9e29cb19c8fe84169fcb07f8f11e66bc9e6e0280efd4715c54818296f8a4a8
+      - name: rdrand
+        version: 0.4.0
+        sha: 678054eb77286b51581ba43620cc911abf02758c91f93f479767aed0f90458b2
+      - name: redox_syscall
+        version: 0.1.56
+        sha: 2439c63f3f6139d1b57529d16bc3b8bb855230c8efcc5d3a896c8bea7c3b1e84
+      - name: regex
+        version: 1.3.6
+        sha: 7f6946991529684867e47d86474e3a6d0c0ab9b82d5821e314b1ede31fa3a4b3
+      - name: regex-automata
+        version: 0.1.9
+        sha: ae1ded71d66a4a97f5e961fd0cb25a5f366a42a41570d16a763a69c092c26ae4
+      - name: regex-syntax
+        version: 0.6.17
+        sha: 7fe5bd57d1d7414c6b5ed48563a2c855d995ff777729dcd91c369ec7fea395ae
+      - name: remove_dir_all
+        version: 0.5.2
+        sha: 4a83fa3702a688b9359eccba92d153ac33fd2e8462f9e0e3fdf155239ea7792e
+      - name: rustc_version
+        version: 0.2.3
+        sha: 138e3e0acb6c9fb258b19b67cb8abd63c00679d2851805ea151465464fe9030a
+      - name: ryu
+        version: 1.0.3
+        sha: 535622e6be132bccd223f4bb2b8ac8d53cda3c7a6394944d3b2b33fb974f9d76
+      - name: same-file
+        version: 1.0.6
+        sha: 93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502
+      - name: scopeguard
+        version: 1.1.0
+        sha: d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd
+      - name: selectors
+        version: 0.22.0
+        sha: df320f1889ac4ba6bc0cdc9c9af7af4bd64bb927bccdf32d81140dc1f9be12fe
+      - name: semver
+        version: 0.9.0
+        sha: 1d7eb9ef2c18661902cc47e535f9bc51b78acd254da71d375c2f6720d9a40403
+      - name: semver-parser
+        version: 0.7.0
+        sha: 388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3
+      - name: serde
+        version: 1.0.105
+        sha: e707fbbf255b8fc8c3b99abb91e7257a622caeb20a9818cbadbeeede4e0932ff
+      - name: serde_derive
+        version: 1.0.105
+        sha: ac5d00fc561ba2724df6758a17de23df5914f20e41cb00f94d5b7ae42fffaff8
+      - name: serde_json
+        version: 1.0.50
+        sha: 78a7a12c167809363ec3bd7329fc0a3369056996de43c4b37ef3cd54a6ce4867
+      - name: servo_arc
+        version: 0.1.1
+        sha: d98238b800e0d1576d8b6e3de32827c2d74bee68bb97748dcf5071fb53965432
+      - name: simba
+        version: 0.1.2
+        sha: 3d771bffb178827708f83829713e3a214bc8a9879a8f27ca548965bd849ed130
+      - name: siphasher
+        version: 0.3.2
+        sha: 8e88f89a550c01e4cd809f3df4f52dc9e939f3273a2017eabd5c6d12fd98bb23
+      - name: slab
+        version: 0.4.2
+        sha: c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8
+      - name: smallvec
+        version: 1.2.0
+        sha: 5c2fb2ec9bcd216a5b0d0ccf31ab17b5ed1d627960edff65bbe95d3ce221cefc
+      - name: stable_deref_trait
+        version: 1.1.1
+        sha: dba1a27d3efae4351c8051072d619e3ade2820635c3958d826bfea39d59b54c8
+      - name: string_cache
+        version: 0.8.0
+        sha: 2940c75beb4e3bf3a494cef919a747a2cb81e52571e212bfbd185074add7208a
+      - name: string_cache_codegen
+        version: 0.5.1
+        sha: f24c8e5e19d22a726626f1a5e16fe15b132dcf21d10177fa5a45ce7962996b97
+      - name: syn
+        version: 1.0.17
+        sha: 0df0eb663f387145cab623dea85b09c2c5b4b0aef44e945d928e682fce71bb03
+      - name: tempfile
+        version: 3.1.0
+        sha: 7a6e24d9338a0a5be79593e2fa15a648add6138caa803e2d5bc782c371732ca9
+      - name: tendril
+        version: 0.4.1
+        sha: 707feda9f2582d5d680d733e38755547a3e8fb471e7ba11452ecfd9ce93a5d3b
+      - name: textwrap
+        version: 0.11.0
+        sha: d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060
+      - name: thin-slice
+        version: 0.1.1
+        sha: 8eaa81235c7058867fa8c0e7314f33dcce9c215f535d1913822a2b3f5e289f3c
+      - name: thread_local
+        version: 1.0.1
+        sha: d40c6d1b69745a6ec6fb1ca717914848da4b44ae29d9b3080cbee91d72a69b14
+      - name: time
+        version: 0.1.42
+        sha: db8dcfca086c1143c9270ac42a2bbd8a7ee477b78ac8e45b19abfb0cbede4b6f
+      - name: tinytemplate
+        version: 1.0.3
+        sha: 57a3c6667d3e65eb1bc3aed6fd14011c6cbc3a0665218ab7f5daf040b9ec371a
+      - name: tinyvec
+        version: 0.3.3
+        sha: 53953d2d3a5ad81d9f844a32f14ebb121f50b650cd59d0ee2a07cf13c617efed
+      - name: treeline
+        version: 0.1.0
+        sha: a7f741b240f1a48843f9b8e0444fb55fb2a4ff67293b50a9179dfd5ea67f8d41
+      - name: typenum
+        version: 1.11.2
+        sha: 6d2783fe2d6b8c1101136184eb41be8b1ad379e4657050b8aaff0c79ee7575f9
+      - name: unicode-bidi
+        version: 0.3.4
+        sha: 49f2bd0c6468a8230e1db229cff8029217cf623c767ea5d60bfbd42729ea54d5
+      - name: unicode-normalization
+        version: 0.1.12
+        sha: 5479532badd04e128284890390c1e876ef7a993d0570b3597ae43dfa1d59afa4
+      - name: unicode-width
+        version: 0.1.7
+        sha: caaa9d531767d1ff2150b9332433f32a24622147e5ebb1f26409d5da67afd479
+      - name: unicode-xid
+        version: 0.2.0
+        sha: 826e7639553986605ec5979c7dd957c7895e93eabed50ab2ffa7f6128a75097c
+      - name: url
+        version: 2.1.1
+        sha: 829d4a8476c35c9bf0bbce5a3b23f4106f79728039b726d292bb93bc106787cb
+      - name: utf-8
+        version: 0.7.5
+        sha: 05e42f7c18b8f902290b009cde6d651262f956c98bc51bca4cd1d511c9cd85c7
+      - name: wait-timeout
+        version: 0.2.0
+        sha: 9f200f5b12eb75f8c1ed65abd4b2db8a6e1b138a20de009dacee265a2498f3f6
+      - name: walkdir
+        version: 2.3.1
+        sha: 777182bc735b6424e1a57516d35ed72cb8019d85c8c9bf536dccb3445c1a2f7d
+      - name: wasi
+        version: 0.9.0+wasi-snapshot-preview1
+        sha: cccddf32554fecc6acb585f82a32a72e28b48f8c4c1883ddfeeeaa96f7d8e519
+      - name: winapi
+        version: 0.3.8
+        sha: 8093091eeb260906a183e6ae1abdba2ef5ef2257a21801128899c3fc699229c6
+      - name: winapi-i686-pc-windows-gnu
+        version: 0.4.0
+        sha: ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6
+      - name: winapi-util
+        version: 0.1.4
+        sha: fa515c5163a99cc82bab70fd3bfdd36d827be85de63737b40fcef2ce084a436e
+      - name: winapi-x86_64-pc-windows-gnu
+        version: 0.4.0
+        sha: 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
+      - name: xml5ever
+        version: 0.16.1
+        sha: 0b1b52e6e8614d4a58b8e70cf51ec0cc21b256ad8206708bcff8139b5bbd6a59
+    core-deps/libatasmart.bst:
+    - ref: 61f0ea345f63d28ab2ff0dc352c22271661b66bf09642db3a4049ac9dbdb0f8d
+    core-deps/berkeleydb.bst:
+    - ref: e1f85c8b6ebd0ed3ca72fa0ae97b65006f6d0bd0cd6f4ac24bed103cb5497bf5
+    core-deps/json-c.bst:
+    - ref: b87e608d4d3f7bfdd36ef78d56d53c74e66ab278d318b71e6002a369d36f4873
+    core-deps/openldap.bst:
+    - ref: cdd6cffdebcd95161a73305ec13fc7a78e9707b46ca9f84fb897cd5626df3824
+    core-deps/dmraid.bst:
+    - ref: 93421bd169d71ff5e7d2db95b62b030bfa205a12010b6468dcdef80337d6fbd8
+    core-deps/cryptsetup.bst:
+    - ref: 2b30cd1d0dd606a53ac77b406e1d37798d4b0762fa89de6ea546201906a251bd
+    core-deps/libbytesize.bst:
+    - ref: 65656ed62080d73d0f21d9647cee20533377bee150e91807fd54c502f3e1108f
+    sdk/brotli.bst:
+    - ref: 3d5bedd48edb909fe3b87cb99f7d139b987ef6f1616b7e22d74e928270a2fd20
+    core-deps/libyaml.bst:
+    - ref: e1884d0fa1eec8cf869ac6bebbf25391e81956aa2970267f974a9fa5e0b968e2
+    core-deps/mpfr.bst:
+    - ref: 67874a60826303ee2fb6affc6dc0ddd3e749e9bfcb4c8655e3953d0458a6e16e
+    core-deps/ndctl.bst:
+    - ref: 8ad95e2b46c157bda1e942be337fdeff0009ec928d45267d6e98fffce55103ef
+    core-deps/volume-key.bst:
+    - ref: 6ca3748fc1dad22c450bbf6601d4e706cb11c5e662d11bb4aeb473a9cd77309b
+    core-deps/blockdev.bst:
+    - ref: 317225f0d6cbc99d90481b0f8a30be8c325f5b5aebe82f9adf409214081de10a
+    core-deps/gnome-video-effects.bst:
+    - ref: 0.5.0-8-ge82d69c58ae6d4d693761e6142b845e99d18510c
+    core-deps/parted.bst:
+    - ref: 858b589c22297cacdf437f3baff6f04b333087521ab274f7ab677cb8c6bb78e4
+    - {}
+    core-deps/lvm2.bst:
+    - ref: 4025a23ec9b15c2cb7486d151c29dc953b75efc4d452cfe9dbbc7c0fac8e80f2
+    sdk/cogl.bst:
+    - ref: 1.22.6-22-g122b390bbf4bf4283ef2a94f25a44ed23ead3e05
+    core-deps/udisks2.bst:
+    - ref: 3d233bc8ddac1b84338280e912ca31b613aadd1efca68a9717f818bb3b038bb6
+    sdk/clutter-gst.bst:
+    - ref: fe69bd6c659d24ab30da3f091eb91cd1970026d431179b0724f13791e8ad9f9d
+    core/cheese.bst:
+    - ref: 3.34.0-28-g6fe9b3d6fa6955e05f4f0bf099abe86cea38e81f
+    sdk/clutter-gtk.bst:
+    - ref: 521493ec038973c77edcb8bc5eac23eed41645117894aaee7300b2487cb42b06
+    core-deps/libgnomekbd.bst:
+    - ref: 3.26.1-2-g8d02ebd17b75ff3be59d9d57674d50e069bb551b
+    core-deps/libxklavier.bst:
+    - ref: 17a34194df5cbcd3b7bfd0f561d95d1f723aa1c87fca56bc2c209514460a9320
+    core/gnome-keyring.bst:
+    - ref: 3.36.0-6-g8dc8f97393df8515c1edd1dc97bf336c5f24df86
+    sdk/clutter.bst:
+    - ref: 8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6
+    core/gnome-initial-setup.bst:
+    - ref: 3.36.1-8-g2a3aaecc283e410fecd7bcafbcbd6aa6d16c08a6
+    - {}
+    core/gnome-menus.bst:
+    - ref: 3.36.0-0-g66ac7579856968d3f4b76c04d55327c60b37f2fb
+    core-deps/xmlto.bst:
+    - ref: 1130df3a7957eb9f6f0d29e4aa1c75732a7dfb6d639be013859b5c7ec5421276
+    core/gnome-session.bst:
+    - ref: 3.36.0-8-g534850d20b4f9dcb2c521bf6420a4d34123e7893
+    core/gnome-control-center.bst:
+    - ref: 3.36.0-92-ge74a41794ca35b142357a45bb09b9e61221814be
+    core-deps/samba.bst:
+    - ref: 6ec0b70a567d3c3f4dd3cf2a90b515dcef03a3804b00abb5896eba382d9665fe
+    - {}
+    core-deps/mtdev.bst:
+    - ref: 6677d5708a7948840de734d8b4675d5980d4561171c5a8e89e54adf7a13eba7f
+    core-deps/exiv2.bst:
+    - ref: 51cffa8d19d67e1da6c1d0f570a75b8f6c814113367318c2c0407691888c5f01
+    core-deps/libevdev.bst:
+    - ref: 20d3cae4efd277f485abdf8f2a7c46588e539998b5a08c2c4d368218379d4211
+    core-deps/libinput.bst:
+    - ref: 1.15.3-51-g3ec74cfc353dac35f332a6aaf5d33668e2ca93d0
+    core-deps/startup-notification.bst:
+    - ref: 4bd1363a2f3b3eb2c4f7fc33b4977bb9c12b4741206f05109b0ff2b3b30b6bc0
+    sdk/graphene.bst:
+    - ref: 1.10.0-15-g2f1b44a6d5493e38fedeebc286752482e6483870
+    core-deps/uhttpmock.bst:
+    - ref: 0.5.1-13-gcda4b6330c6543c48600dd015af44bd0c2a21b4d
+    sdk/zenity.bst:
+    - ref: ZENITY_3_32_0-47-g2fa352c86c24317a7bb980761c0831f1b22d135b
+    core-deps/libgdata.bst:
+    - ref: 6b9917122e4def6e6f78bcb660e49e146540832e296abcb5cde99829a04ea986
+    core-deps/gnome-autoar.bst:
+    - ref: 0.2.4-0-g064493cb0b6dc89871aa5239f46e0d509987faa4
+    core-deps/evolution-data-server.bst:
+    - ref: 3.36.0-27-g2ec8b41d7e1268e882ad695dec6e4642a0b21d1b
+    core-deps/libical.bst:
+    - ref: 0abe66df1ea826e57db7f281c704ede834c84139012e6c686ea7adafd4e763fc
+    sdk-deps/libsass.bst:
+    - ref: 9d499927329c7f8816ab67c571fb7cc0ea21d38c6f47c7c58c98de99ef7645eb
+    sdk-deps/sassc.bst:
+    - ref: d61587b6c084a54e602650c1d845928a20c8d309a0eeec6b1d2499489867ce03
+    core-deps/liboauth.bst:
+    - ref: 0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f
+    core/mutter.bst:
+    - ref: 3.36.1-101-gb7366b5b534cbea38fed58ac435f848111924713
+    core/gnome-shell-extensions.bst:
+    - ref: 3.36.0-24-gf4013c7a5c572919c12274f23b8eeab9be18efb2
+    sdk/gjs.bst:
+    - ref: 1.65.1-38-ga013c3850aba28dcdd0f79750ce22803de32f496
+    sdk/cantarell-fonts.bst:
+    - ref: b61f64e5f6a48aa0abc7a53cdcbce60de81908ca36048a64730978fcd9ac9863
+    core/gnome-themes-extra.bst:
+    - ref: 3.28-5-g2aee363b459781ed8038f309297e5f9aaab93191
+    core-deps/gexiv2.bst:
+    - ref: 58f539b0386f36300b76f3afea3a508de4914b27e78f58ee4d142486a42f926a
+    core-deps/tracker.bst:
+    - ref: 2.3.4-3-gda38d139a4f132d703689cd68b9a7c0fb47c1633
+    core-deps/libcue.bst:
+    - ref: f27bc3ebb2e892cd9d32a7bee6d84576a60f955f29f748b9b487b173712f1200
+    core-deps/libgxps.bst:
+    - ref: 0.3.1-2-g4a1fb669bd7ca6ed15ce49605c6a6b8e99fe6833
+    core-deps/libgsf.bst:
+    - ref: LIBGSF_1_14_47-2-gdeab9189e9a527fc5c1b6810fd0215b1837277d1
+    core/gnome-user-docs.bst:
+    - ref: 3.36.1-16-g786e9cbcfd4379182c7eb37187427bfa19e4cd32
+    core-deps/osinfo-db-tools.bst:
+    - ref: 4bddbec5f407436e0b62f0d7657e866adc980709acf5321aa0d4c3eb54aea823
+    core/gnome-shell.bst:
+    - ref: 3.36.0-255-g6f881f232e17c0570a72437e71d4648dccfdf3e2
+    core-deps/libosinfo.bst:
+    - ref: bb26106ad4a9f8523f81b332d2aedb717cdcb0500b3f68ba7c6ff945c4d627e9
+    - {}
+    - {}
+    core/gnome-user-share.bst:
+    - ref: GNOME_USER_SHARE_3_34_0-9-gadafd823292e50780632739e04277b08fc51bb09
+    core-deps/poppler.bst:
+    - ref: 234f8e573ea57fb6a008e7c1e56bfae1af5d1adf0e65f47555e1ae103874e4df
+    core-deps/pyatspi.bst:
+    - ref: PYATSPI_2_36_0-1-g5b61c5b607ece88e5a69da9dda53bf1d281d37f0
+    core-deps/dotconf.bst:
+    - ref: 7f1ecf40de1ad002a065a321582ed34f8c14242309c3547ad59710ae3c805653
+    core-deps/tracker-miners.bst:
+    - ref: 2.3.3-2-gb833bfc998438e6bb6b57d67c698c30509339478
+    core-deps/portaudio.bst:
+    - ref: f5a21d7dcd6ee84397446fa1fa1a0675bb2e8a4a6dceb4305a8404698d8d1513
+    core-deps/speech-dispatcher.bst:
+    - ref: 73b924f42fcc2155a452693320956f7075b71750023ea21e8bb79822c0caa2f9
+    core-deps/gssdp.bst:
+    - ref: gssdp-1.2.2-4-g94e709a23dbde90ceeccf9b3ec1d549a4b2090ae
+    core/orca.bst:
+    - ref: ORCA_3_35_91-150-g87756e1020fa083a93a5ad1aa085bdd87da5c155
+    core-deps/gupnp.bst:
+    - ref: gupnp-1.2.2-4-gad3fb713db1abbc435d8445ee9c3abe4dd5ea59f
+    core-deps/gupnp-av.bst:
+    - ref: gupnp-av-0.12.11-2-gb5ca07c0117dfb4a9aaf470649294251f3f6ace1
+    core-deps/gupnp-dlna.bst:
+    - ref: gupnp-dlna-0.10.5-8-g29e03ad221e5b674a434ef134d5ce11905b83e6d
+    core-deps/libmediaart.bst:
+    - ref: 1.9.4-2-ged015a5376f021cfeb61dc890201c68d2f11392d
+    sdk/libgee.bst:
+    - ref: 0.20.3-0-g56b10bc2c272f345536709f0abdaf857ba1b4080
+    core-deps/espeak.bst:
+    - ref: bf9a17673adffcc28ff7ea18764f06136547e97bbd9edf2ec612f09b207f0659
+    core/rygel.bst:
+    - ref: rygel-0.38.2-37-gb8d6cf6778fb0208526e1e165c4cbb45a1f97174
+    core-deps/neon.bst:
+    - ref: db0bd8cdec329b48f53a6f00199c92d5ba40b0f015b153718d1b15d3d967fbca
+    core-deps/gspell.bst:
+    - ref: 1.8.3-6-gab47e23883c59f36b70859f33639095704caa4e7
+    core-deps/libmusicbrainz.bst:
+    - ref: 6749259e89bbb273f3f5ad7acdffb7c47a2cf8fcaeab4c4695484cef5f4c6b46
+    - {}
+    core/sushi.bst:
+    - ref: 3.34.0-17-ga67e310b33e633557d7f9569f6c7d0589383a52d
+    sdk/gtksourceview.bst:
+    - ref: 4.6.0-10-gc8b882ded8aa3aaad127c5efcf908bf43cccc8d1
+    sdk/glib-networking.bst:
+    - ref: 2.64.2-1-g0c37281981bc30135905709d1daa5e8345466da7
+    sdk/gvfs.bst:
+    - ref: 1.44.1-3-ga67f4adf35b6484a66a243a72a282e0cbae30a42
+    core/baobab.bst:
+    - ref: 3.34.0-28-g531216d2be1ab9f7dcd2fe439a97c7e8a2426adf
+    core-deps/libpeas.bst:
+    - ref: libpeas-1.26.0-2-ge590099db00b0fd5d4ef7a6cfb5b481d6b15c9dc
+    core/eog.bst:
+    - ref: 3.36.1-18-gfe857959faca9d5e8a84b884a38639b45e847f81
+    core-deps/libdazzle.bst:
+    - ref: 3.36.0-2-g96fa23f65ec1bef042327e242024d46b91384997
+    core-deps/exempi.bst:
+    - ref: 406185feb88e84ea1d4b4251370be2991205790d7113a7e28e192ff46a4f221e
+    core/epiphany.bst:
+    - ref: 3.36.0-47-gb7d0026c55a14b5081d709a127317e7ca41414d0
+    core-deps/amtk.bst:
+    - ref: 5.0.2-1-g88b61a71680298b8bba93f8496b58812c21b8dd7
+    core/file-roller.bst:
+    - ref: 3.36.2-0-geef4df4c857520ac81b1514d3b923e88855ce669
+    core-deps/uchardet.bst:
+    - ref: v0.0.6-58-gbdfd6116a965fd210ef563613763e724424728b7
+    core-deps/tepl.bst:
+    - ref: 4.4.0-135-g3f3c9cdb29b9207319b26cdf9faf66d9c5b68c71
+    core-deps/gtk-vnc.bst:
+    - ref: v1.0.0-15-g974c78f2ecab70986a83abc0d279d9d2d42c988c
+    core/gedit.bst:
+    - ref: 3.36.0-155-g9204aa8b838a0bbd17842f13f11c08ce3b1553a2
+    core-deps/libnl.bst:
+    - ref: b7287637ae71c6db6f89e1422c995f0407ff2fe50cecd61a312b6a9b0921f5bf
+    core-deps/portablexdr.bst:
+    - ref: 5cf4bdd153cf4d44eaf10b725f451d0cfadc070b4b9a9ccfb64094b8f78de72c
+    core-deps/libvirt-glib.bst:
+    - ref: v3.0.0-11-g9f10f78e09970974aec3feaf89fc77afc29a09a8
+    core-deps/libdaemon.bst:
+    - ref: fd23eb5f6f986dcc7e708307355ba3289abe03cc381fc47a80bca4a50aa6b834
+    core-deps/avahi.bst:
+    - ref: 57a99b5dfe7fdae794e3d1ee7a62973a368e91e414bd0dfa5d84434de5b14804
+    - {}
+    core-deps/phodav.bst:
+    - ref: v2.4-18-g4d72389e554b96d6a0d11663360b594f198466b2
+    core-deps/python-pyparsing.bst:
+    - ref: 4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f
+    core-deps/spice-protocol.bst:
+    - ref: 79e6da61834b080a143234c1cd4c099a8ead1a64b5039489610b72ab282c132a
+    core-deps/spice-gtk.bst:
+    - ref: 5ae974731baf2b41316d4f0b3ae0c2e47f00bff91a5a617e189cd3dedcd96d8e
+    core/gnome-boxes.bst:
+    - ref: v3.35.90-107-g68a9c300111acf2eab061e8e84d5d6e2b37f529d
+    core-deps/boost.bst:
+    - ref: 59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722
+    core-deps/mpc.bst:
+    - ref: 6985c538143c1208dcb1ac42cedad6ff52e267b47e5f970183a3e75125b43c2e
+    core/gnome-calculator.bst:
+    - ref: 3.36.0-9-ga318f84441cdb49daff55991a8002b48b2ca9a0b
+    core/gnome-characters.bst:
+    - ref: v3.34.0-19-g1e6f5934abf9097b64a392cb688d0b99ea8f209a
+    core/gnome-calendar.bst:
+    - ref: 3.36.0-87-g2c4e2cb00c210805e62effc582ad0e1a49ea95d0
+    core-deps/folks.bst:
+    - ref: 0.14-1-g4716eb57a505ab3397260472f82b6930e42ad2cb
+    core/gnome-clocks.bst:
+    - ref: 3.36.0-32-g82e32e78b02f4b11e43c88828af1c21f33191b55
+    core-deps/libdvdread.bst:
+    - ref: b33b1953b4860545b75f6efc06e01d9849e2ea4f797652263b0b4af6dd10f935
+    core/gnome-contacts.bst:
+    - ref: 3.36-9-g6c261e1bb5b03de04b6d27ef2e18136656559e84
+    core/gnome-font-viewer.bst:
+    - ref: 3.34.0-28-g41818ae0795881b15d6a1b66364c53a884be93c5
+    core/gnome-disk-utility.bst:
+    - ref: 3.36.0-10-g7f735af9694671cd8f2642305e4eebad965ee7ec
+    core-deps/libchamplain.bst:
+    - ref: LIBCHAMPLAIN_0_12_20-1-gb3ff665d46560b8e6e89511f30f4abb39cd485b2
+    core-deps/libvirt.bst:
+    - ref: 4fd4bfe7312b7996a817c7919cf0062de0d5b3c400c93bd30855a46c40dd455a
+    core/gnome-logs.bst:
+    - ref: gnome-logs-3.34.0-51-g67429b2fff73eea9a51f7f34085d922bfc5d96ee
+    core-deps/libgfbgraph.bst:
+    - ref: v_0_2_3-30-g9bbbb8ad1fcd4cc583961326efb9dbb68a8e5ab7
+    core-deps/gom.bst:
+    - ref: 0.4-11-ge56d36c285938d9825ffc5b3b8fe2d2b86b73346
+    core-deps/grilo-plugins.bst:
+    - ref: grilo-plugins-0.3.11-20-gbeae870860552448402f2d3ba881f384c62daca1
+    core/gnome-maps.bst:
+    - ref: v3.36.0-43-g443c400727bf6c126e5d4145fd0d972ac8bc33c0
+    core-deps/babl.bst:
+    - ref: BABL_0_1_74-5-g6a2a866e1950976d97f4504f7d112c7c19992ee1
+    sdk/mozjs68.bst:
+    - ref: 097fb482aa0e57fb117fde6816fbabfedcb862ee81906990363954f47ce93227
+    - {}
+    core-deps/gnome-online-miners.bst:
+    - ref: 3.34.0-0-gf9aca437b511ca95e1ea6dab68c099aa9e9ae119
+    core/gnome-photos.bst:
+    - ref: 3.33.91-46-ged932e3b963eb4e70dac59813760de451402bc19
+    core-deps/libraw.bst:
+    - ref: 40a262d7cc71702711a0faec106118ee004f86c86cc228281d12d16da03e02f5
+    core/gnome-music.bst:
+    - ref: 3.36.0-75-g54d3a1895a1baa80555fe92697f3825817cd11b5
+    core/gnome-screenshot.bst:
+    - ref: 3.34.0-69-g7426d0f1e6b190b69750b155fbf28bf0252825a0
+    core-deps/fuse.bst:
+    - ref: d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5
+    - {}
+    core-deps/flatpak.bst:
+    - ref: 279ee6f3b3622943816b949b5cf076df95600aa13a8b45412f8bf68b76ed6e85
+    core-deps/libostree.bst:
+    - ref: 9568156d147865f0f744373288039dbde784c0cf1de37fdd2cacf4e950790875
+    - {}
+    core-deps/mogwai.bst:
+    - ref: c270cf1a9594a05cf84fc7150aa5a91e0da24b0724486ed4828e4b56504a8972
+    core-deps/malcontent.bst:
+    - ref: 4e7731a31529b9111ab4ae923d4c7844fe889d8acd2c8798aec72d34e20921ae
+    core-deps/eos-updater.bst:
+    - ref: e01bef316286d450baa03a303c1088f409c0eacd38d2a455eeac4e41e14b86ac
+    core-deps/xmlb.bst:
+    - ref: 34be33bb90b521c02ed53c359f088259a74ca75becb422d015f6f38e96a42245
+    core-deps/mm-common.bst:
+    - ref: 1.0.0-8-g17617ce926cf35230ec9fbe04e53b85afbd26988
+    - {}
+    core-deps/libsigcplusplus-2.0.bst:
+    - ref: 2.10.3-1-g85a863c649881af4fcecfc882e47339c6943b096
+    core-deps/glibmm-2.4.bst:
+    - ref: 2.64.2-11-gf64e9cf198391d657b4516fca6e482141c86c461
+    core-deps/atkmm-1.6.bst:
+    - ref: 2.28.0-22-gdae39d203f1072d8fbacd29482048752d78d8990
+    core-deps/pangomm-1.4.bst:
+    - ref: 2.42.1-16-g651a96f4109fe3b54c70506d0de1e067f69c16bf
+    core-deps/gtkmm-3.bst:
+    - ref: 3.24.2-26-g51f7efcd90ce6c43103c4cf039f7adab880e43c0
+    core/gnome-system-monitor.bst:
+    - ref: 3.36.0-10-g13941744e299b491b6e8ce326fc2eda3e024eb64
+    core/gnome-terminal.bst:
+    - ref: 3.35.92-39-g6e95b09ae356c920d3e5142c3bad7eee591a517a
+    core-deps/cairomm-1.0.bst:
+    - ref: 97a78bd7de6baf8af3da1f9b39f1317f8da9f1145b7694e928fbd5521da08ef6
+    core-deps/sane-backends.bst:
+    - ref: 293747bf37275c424ebb2c833f8588601a60b2f9653945d5a3194875355e36c9
+    core/evince.bst:
+    - ref: 3.36.0-19-ge711dc7172d496eb6dcea6b1fc0587c4ee5e35f2
+    core/simple-scan.bst:
+    - ref: 3.36.0-53-gb53fde7255799f0b46752e29d6d2d2a541e22866
+    core/gnome-weather.bst:
+    - ref: 3.34.0-46-g000ec07931a677c310e09683a58a68b69e47faac
+    core/systemd-presets.bst:
+    - {}
+    sdk/yelp.bst:
+    - ref: 3.36.0-4-g27581df40ddc3096150f2ffafcd932284c6add23
+    sdk/os-release.bst:
+    - {}
+    vm/kbd.bst:
+    - ref: 5dec023c7a05b4d11d8ae795f59fab2b0bacfcc5c20a3d534dc7566cfe47ccf7
+    vm/plymouth-gnome-theme.bst:
+    - {}
+    - ref: 76654ecdc9cb8ab7acfe550f7e8a64fc41ea857850916c9975ee940efffab945
+    core/gnome-software.bst:
+    - ref: 3.36.0-26-gc6f2e09a088f1303b1c3fa9536c2079fa339b529
+    core/totem.bst:
+    - ref: V_3_34_0-126-g3237f9a8a991adc8f76ba5a57a7aa58cccb7f730
+    core-deps/gegl.bst:
+    - ref: GEGL_0_4_20-51-ge545238462933b0dd2460f9c6fb4cd9678d08a53
+    core/nautilus.bst:
+    - ref: 3.37.1-49-ga4d7148210970c5eb874df736b900f577684a13b
+    sdk/gtk+-3.bst:
+    - ref: 3.24.18-38-g35b96770060ad98913788e988edb15c226b9d183
+    sdk/gtk.bst:
+    - ref: 3.98.3-4-ge818bf85145d036bd6143d42da6c4fb6934559d1
+    core/gnome-getting-started-docs.bst:
+    - ref: 3.36.1-3-ga2dc88b9f4d089943d13fa1abd1a5f2147519e9f
+    raspi/bsp/linux.bst:
+    - ref: 748d8384cef4427e26bada774aa153568acefb21
+    core/dconf-editor.bst:
+    - ref: 3.36.0-8-g98bcc9ae51a63485b98b7500809741e79b94598b
+    core-deps/libssh2.bst:
+    - ref: 973f63f98141d68b4a1bc85791ee29411eeab12a6230ae1aca9c368550ccafae
+    core-deps/jsonrpc-glib.bst:
+    - ref: 3.34.0-2-gb5327e493da1414f3ff3af5e74f1ff8fb42934a4
+    core/sysprof.bst:
+    - ref: sysprof-3.36.0-29-g32185d873d2aa536d06075359289b824fcde925a
+    core-deps/libportal.bst:
+    - ref: 0.3-25-g569c738b67f04117debacd08e69274c76bde519b
+    core-deps/template-glib.bst:
+    - ref: 3.34.0-2-ge322b544c77c11199aba2af27dd24b8ab9bb0262
+    core-deps/libgit2-glib.bst:
+    - ref: v.0.99.0-16-gf231fb6f5da4784f6ebb6ecabc83c07bcf55321e
+    core-deps/libgit2.bst:
+    - ref: 0da4e211dfb63c22e5f43f2a4a5373e86a140afa88a25ca6ba3cc2cae58263d2
+    core/devhelp.bst:
+    - ref: 3.36.1-27-g8796d7aaab837a41bf93aa08ffc90f232d011c95
+    core-deps/glade-base.bst:
+    - ref: GLADE_3_22_0-322-gcfae1991145b8472f209a294eafaeabc4eff753a
+    core/gnome-builder.bst:
+    - ref: 3.36.0-34-g9dc4e7010bafe8ac94c7dcfd97bbce79781d9d62
