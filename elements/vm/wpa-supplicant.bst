@@ -53,3 +53,12 @@ config:
     cd wpa_supplicant
     systemdsystemunitdir="$(pkg-config --variable systemdsystemunitdir systemd)"
     install -Dm644 -t "%{install-root}${systemdsystemunitdir}" systemd/*.service
+
+  # wpa_supplicant-wired seems to hang boot. It gets enabled for
+  # unknown reason.  So we forcibly disable it.
+  - |
+    cat <<EOF >disable-wpa-wired.preset
+    wpa_supplicant-wired@.service
+    EOF
+    systemdsystempresetdir="$(pkg-config --variable systemdsystempresetdir systemd)"
+    install -Dm644 -t "%{install-root}${systemdsystempresetdir}" disable-wpa-wired.preset
