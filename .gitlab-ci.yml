@@ -16,13 +16,8 @@ variables:
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
 
 stages:
-- track
 - build
 - image
-- prepare_flatpak
-- flatpak
-- finish_flatpak
-- reports
 
 default:
   before_script:
@@ -77,7 +72,6 @@ default:
 
 .build-template:
   stage: build
-  dependencies: [track]
   interruptible: true
   script:
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
@@ -128,40 +122,40 @@ default:
     - raspi-image
     expire_in: '2 days'
 
-.flatpak-template:
-  stage: flatpak
-  dependencies: [track, flatpak-prepare]
-  script:
-  - ostree init --repo repo/ --mode archive
-
-  - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
-  - flatpak build-commit-from --src-repo=checkout-repo/ repo/
-  - rm -rf checkout-repo/
-
-  - |
-    if test $FLAT_MANAGER_REPO == nightly; then
-        ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
-        ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
-        flatpak build-commit-from --src-repo=checkout-repo/ repo/
-        rm -rf checkout-repo/
-    fi
-
-  - |
-    if test $FLAT_MANAGER_REPO == nightly -a $ARCH == x86_64; then
-        ${BST} pull openh264-extension.bst:flatpak-repo.bst
-        ${BST} checkout --hardlinks openh264-extension.bst:flatpak-repo.bst checkout-repo/
-        flatpak build-commit-from --src-repo=checkout-repo/ repo/
-        rm -rf checkout-repo/
-    fi
-
-  - flatpak build-update-repo --generate-static-deltas repo/
-
-  - flat-manager-client push $(cat build.txt) repo/
-  rules: &flatpak-publish-rules
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-    when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+#.flatpak-template:
+#  stage: flatpak
+#  dependencies: [track, flatpak-prepare]
+#  script:
+#  - ostree init --repo repo/ --mode archive
+#
+#  - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
+#  - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
+#  - flatpak build-commit-from --src-repo=checkout-repo/ repo/
+#  - rm -rf checkout-repo/
+#
+#  - |
+#    if test $FLAT_MANAGER_REPO == nightly; then
+#        ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
+#        ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
+#        flatpak build-commit-from --src-repo=checkout-repo/ repo/
+#        rm -rf checkout-repo/
+#    fi
+#
+#  - |
+#    if test $FLAT_MANAGER_REPO == nightly -a $ARCH == x86_64; then
+#        ${BST} pull openh264-extension.bst:flatpak-repo.bst
+#        ${BST} checkout --hardlinks openh264-extension.bst:flatpak-repo.bst checkout-repo/
+#        flatpak build-commit-from --src-repo=checkout-repo/ repo/
+#       rm -rf checkout-repo/
+#    fi
+#
+#  - flatpak build-update-repo --generate-static-deltas repo/
+#
+#  - flat-manager-client push $(cat build.txt) repo/
+#  rules: &flatpak-publish-rules
+# - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+#    when: never
+#  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
 
 #
 # Architecture specific settings
@@ -203,133 +197,132 @@ default:
 # "Real" CI jobs
 #
 
-track:
-  <<: *x86_64
-  stage: track
-  interruptible: true
-  script:
-  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst raspi/image.bst
-  retry: 2
-  # only run on branches targeting master
-  rules:
-  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
-  cache: *bst-cache
-  artifacts:
-    paths:
-    - project.refs
+#track:
+#  <<: *x86_64
+#  stage: track
+#  interruptible: true
+#  script:
+#  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
+#  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst raspi/image.bst
+#  retry: 2
+#  # only run on branches targeting master
+#  rules:
+#  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
+#  cache: *bst-cache
+#  artifacts:
+#    paths:
+#    - project.refs
 
 
-build-gnome-core-x86_64:
-  extends: .build-template
-  <<: *x86_64
+#build-gnome-core-x86_64:
+#  extends: .build-template
+#  <<: *x86_64
 
-build-gnome-core-i386:
-  extends: .build-template
-  <<: *i686
+#build-gnome-core-i386:
+#  extends: .build-template
+#  <<: *i686
 
 build-gnome-core-aarch64:
   extends: .build-template
   <<: *aarch64
 
-build-gnome-core-arm:
-  extends: .build-template
-  <<: *arm
+#build-gnome-core-arm:
+#  extends: .build-template
+#  <<: *arm
 
 
-vm-image-x86_64:
-  extends: .image-template
-  # run as soon as the x86_64 build job is done, don't wait for other arches
-  needs:
-  - track
-  - job: build-gnome-core-x86_64
-    artifacts: false
-  <<: *x86_64
+#vm-image-x86_64:
+#  extends: .image-template
+#  # run as soon as the x86_64 build job is done, don't wait for other arches
+#  needs:
+#  - track
+#  - job: build-gnome-core-x86_64
+#    artifacts: false
+#  <<: *x86_64
 
 raspi-image-aarch64:
   extends: .image-template
   # run as soon as the aarch64 build job is done, don't wait for other arches
   needs:
-  - track
   - job: build-gnome-core-aarch64
     artifacts: false
   <<: *aarch64
 
-flatpak-prepare:
-  stage: prepare_flatpak
-  dependencies: []
-  script:
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-  artifacts:
-    paths:
-    - build.txt
-  rules: *flatpak-publish-rules
-  <<: *x86_64
+#flatpak-prepare:
+#  stage: prepare_flatpak
+#  dependencies: []
+#  script:
+# - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+#  artifacts:
+#    paths:
+#    - build.txt
+#  rules: *flatpak-publish-rules
+#  <<: *x86_64
 
 
-flatpak-x86_64:
-  extends: .flatpak-template
-  <<: *x86_64
+#flatpak-x86_64:
+#  extends: .flatpak-template
+#  <<: *x86_64
 
-flatpak-i386:
-  extends: .flatpak-template
-  <<: *i686
+#flatpak-i386:
+#  extends: .flatpak-template
+#  <<: *i686
 
-flatpak-aarch64:
-  extends: .flatpak-template
-  <<: *aarch64
+#flatpak-aarch64:
+#  extends: .flatpak-template
+# <<: *aarch64
 
-flatpak-arm:
-  extends: .flatpak-template
-  <<: *arm
-
-
-flatpak-finish:
-  stage: finish_flatpak
-  dependencies: [flatpak-prepare]
-  script:
-  - flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager-client publish --wait $(cat build.txt)
-  - flat-manager-client purge $(cat build.txt)
-  rules: *flatpak-publish-rules
-  <<: *x86_64
-
-flatpak-finish-failed:
-  stage: finish_flatpak
-  dependencies: [flatpak-prepare]
-  script:
-  - flat-manager-client purge $(cat build.txt)
-  rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-    when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-    when: on_failure
-  <<: *x86_64
+#flatpak-arm:
+#  extends: .flatpak-template
+#  <<: *arm
 
 
-cve_report:
-  <<: *x86_64
-  stage: reports
-  dependencies: [track]
-  script:
-  - ${BST} pull platform-manifest.bst sdk-manifest.bst
+#flatpak-finish:
+#  stage: finish_flatpak
+#  dependencies: [flatpak-prepare]
+#  script:
+#  - flat-manager-client commit --wait $(cat build.txt)
+#  - flat-manager-client publish --wait $(cat build.txt)
+#  - flat-manager-client purge $(cat build.txt)
+#  rules: *flatpak-publish-rules
+#  <<: *x86_64
 
-  - ${BST} checkout platform-manifest.bst platform-manifest/
-  - ${BST} checkout sdk-manifest.bst sdk-manifest/
+#flatpak-finish-failed:
+#  stage: finish_flatpak
+#  dependencies: [flatpak-prepare]
+#  script:
+#  - flat-manager-client purge $(cat build.txt)
+#  rules:
+#  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+#    when: never
+#  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+#    when: on_failure
+#  <<: *x86_64
 
-  - mkdir -p cve
-  - cd cve
-  - ../utils/update-local-cve-database.py
 
-  - mkdir -p ../cve-reports
-  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
-  cache:
-    key: cve
-    paths:
-    - cve
-  artifacts:
-    paths:
-    - cve-reports
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+#cve_report:
+#  <<: *x86_64
+#  stage: reports
+#  dependencies: [track]
+#  script:
+#  - ${BST} pull platform-manifest.bst sdk-manifest.bst
+#
+#  - ${BST} checkout platform-manifest.bst platform-manifest/
+#  - ${BST} checkout sdk-manifest.bst sdk-manifest/
+#
+#  - mkdir -p cve
+#  - cd cve
+#  - ../utils/update-local-cve-database.py
+#
+#  - mkdir -p ../cve-reports
+#  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
+#  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+#  cache:
+#    key: cve
+#    paths:
+#    - cve
+#  artifacts:
+#    paths:
+#    - cve-reports
+#  rules:
+#  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
