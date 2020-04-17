@@ -13,21 +13,21 @@ runtime-depends:
 - sdk/vala.bst
 depends:
 - core-deps/flatpak.bst
+- core-deps/glade-libs.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
 - core-deps/vte.bst
+- core-deps/jsonrpc-glib.bst
+- core-deps/libgit2-glib.bst
+- core-deps/libportal.bst
+- core-deps/template-glib.bst
+- core/devhelp.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
-- world/devhelp.bst
-- world/glade.bst
-- world/jsonrpc-glib.bst
-- world/libgit2-glib.bst
-- world/libportal.bst
-- world/template-glib.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
