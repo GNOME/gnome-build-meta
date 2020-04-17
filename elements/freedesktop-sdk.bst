@@ -5,4 +5,4 @@ sources:
   track: master
 config:
   options:
-    target_arch: '%{arch}'
+    arch: '%{arch}'
