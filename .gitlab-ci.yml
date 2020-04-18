@@ -204,12 +204,27 @@ track:
   retry: 2
   # only run on branches targeting master
   rules:
-  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
+  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null && $BST_SCRIPT == '--strict'
   cache: *bst-cache
   artifacts:
     paths:
     - project.refs
 
+partial-track:
+  <<: *x86_64
+  stage: track
+  interruptible: true
+  script:
+  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
+  - ${BST} track $(bash utils/partial-track.sh core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst)
+  retry: 2
+  # only run on branches targeting master
+  rules:
+  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null && $BST_SCRIPT == '--no-strict'
+  cache: *bst-cache
+  artifacts:
+    paths:
+    - project.refs
 
 build-gnome-core-x86_64:
   extends: .build-template
