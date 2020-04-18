@@ -200,7 +200,12 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst
+  - |
+    if [ $BST_SCRIPT == '--strict' ]; then
+      ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst
+    else
+      ${BST} track $(bash utils/partial-track.sh core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst)
+    fi
   retry: 2
   # only run on branches targeting master
   rules:
@@ -209,7 +214,6 @@ track:
   artifacts:
     paths:
     - project.refs
-
 
 build-gnome-core-x86_64:
   extends: .build-template
