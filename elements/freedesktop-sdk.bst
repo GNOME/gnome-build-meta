@@ -8,6 +8,8 @@ sources:
   path: fdsdk-systemd-greeter-display-session.patch
 - kind: patch
   path: freedesktop-sdk-fusermount-permissions.patch
+- kind: patch
+  path: freedesktop-sdk-pulseaudio.patch
 config:
   options:
     target_arch: '%{arch}'
