@@ -6,6 +6,8 @@ sources:
   track-tags: true
 - kind: patch
   path: fdsdk-systemd-greeter-display-session.patch
+- kind: patch
+  path: freedesktop-sdk-pulseaudio.patch
 config:
   options:
     target_arch: '%{arch}'
