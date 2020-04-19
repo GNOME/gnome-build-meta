@@ -1,0 +1,61 @@
+commit e443733e259b1d5a82a86d6ffd926f49915cff7b
+Author: Valentin David <valentin.david@codethink.co.uk>
+Date:   Sun Apr 19 11:23:55 2020 +0200
+
+    components/pulseaudio-base.bst: Add upstream fix for alsa missing symbols
+
+diff --git a/elements/components/pulseaudio-base.bst b/elements/components/pulseaudio-base.bst
+index 56e83fff9..e6e930561 100644
+--- a/elements/components/pulseaudio-base.bst
++++ b/elements/components/pulseaudio-base.bst
+@@ -79,3 +79,5 @@ sources:
+   path: patches/libpulse/pulseaudio-Use-upstream-gettext-instead-intltool.patch
+ - kind: patch
+   path: patches/pulseaudio/x11-config-only-ssh.patch
++- kind: patch
++  path: patches/pulseaudio/alsa-ucm.patch
+diff --git a/patches/pulseaudio/alsa-ucm.patch b/patches/pulseaudio/alsa-ucm.patch
+new file mode 100644
+index 000000000..248b0f7a8
+--- /dev/null
++++ b/patches/pulseaudio/alsa-ucm.patch
+@@ -0,0 +1,39 @@
++commit b89d33bb182c42db5ad3987b0e91b7bf62f421e8
++Author: Takashi Iwai <tiwai@suse.de>
++Date:   Sun Apr 21 11:59:30 2019 +0200
++
++    alsa: Fix inclusion of use-case.h
++    
++    The recent change in ALSA upstream stripped -I$include/alsa path from
++    pkgconfig.  We already fixed for this change in some places but still
++    the code for UCM was overlooked, and this resulted in the unresolved
++    symbols in alsa card module. Fix them as well.
++    
++    Signed-off-by: Takashi Iwai <tiwai@suse.de>
++
++diff --git a/configure.ac b/configure.ac
++index c004bd70d..b44ed1595 100644
++--- a/configure.ac
+++++ b/configure.ac
++@@ -826,7 +826,7 @@ AS_IF([test "x$enable_alsa" = "xyes" && test "x$HAVE_ALSA" = "x0"],
++ AS_IF([test "x$HAVE_ALSA" = "x1"],
++     [
++         save_CPPFLAGS="$CPPFLAGS"; CPPFLAGS="$CPPFLAGS $ASOUNDLIB_CFLAGS"
++-        AC_CHECK_HEADERS([use-case.h], HAVE_ALSA_UCM=1, HAVE_ALSA_UCM=0)
+++        AC_CHECK_HEADERS([alsa/use-case.h], HAVE_ALSA_UCM=1, HAVE_ALSA_UCM=0)
++         CPPFLAGS="$save_CPPFLAGS"
++     ],
++     HAVE_ALSA_UCM=0)
++diff --git a/src/modules/alsa/alsa-ucm.h b/src/modules/alsa/alsa-ucm.h
++index 53abf3f90..c926f3cc3 100644
++--- a/src/modules/alsa/alsa-ucm.h
+++++ b/src/modules/alsa/alsa-ucm.h
++@@ -23,7 +23,7 @@
++ ***/
++ 
++ #ifdef HAVE_ALSA_UCM
++-#include <use-case.h>
+++#include <alsa/use-case.h>
++ #else
++ typedef void snd_use_case_mgr_t;
++ #endif
