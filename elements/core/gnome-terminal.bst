@@ -4,7 +4,6 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-terminal.git
   track: master
 build-depends:
-- core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/vte.bst
