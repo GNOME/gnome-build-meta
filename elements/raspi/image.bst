@@ -54,8 +54,6 @@ config:
     }
     image sdcard.img {
         hdimage {
-            align = 1M
-            gpt = true
         }
         partition boot {
             partition-type = 0xC
