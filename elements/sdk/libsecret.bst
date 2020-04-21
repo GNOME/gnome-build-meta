@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libsecret/0.20/libsecret-0.20.2.tar.xz
-  ref: 81e9143833785cdcf96c1da5d0357a8bcf0cd2b0119f15aa0cae775d1f19ffc3
+  url: gnome_downloads:libsecret/0.20/libsecret-0.20.3.tar.xz
+  ref: 4fcb3c56f8ac4ab9c75b66901fb0104ec7f22aa9a012315a14c0d6dffa5290e4
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
