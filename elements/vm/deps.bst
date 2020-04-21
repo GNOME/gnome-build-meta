@@ -18,6 +18,7 @@ runtime-depends:
 - vm/linux-firmware.bst
 - vm/resize-root.bst
 - vm/wpa-supplicant-config.bst
+- vm/bluez.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
