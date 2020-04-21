@@ -3,7 +3,7 @@ kind: manual
 sources:
 - kind: git_tag
   url: https://git.eno.space/pbp-uboot.git
-  track: 365495a329c8e92ca4c134562d091df71b75845e
+  track: 3d483332e184deeb44a58c272cc347899ef413fe
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
