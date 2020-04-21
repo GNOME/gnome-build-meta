@@ -27,7 +27,7 @@ config:
   - |
     prepare-image.sh \
        --seed "%{uuidnamespace}" \
-       --rootsource /dev/gpt-auto-root \
+       --rootsource LABEL=root \
        --efisource LABEL=EFI \
        --efipath /boot >/dev/null
 
