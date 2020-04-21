@@ -31,7 +31,7 @@ config:
     prepare-image.sh \
        --sysroot /sysroot \
        --seed "%{uuidnamespace}" \
-       --rootsource /dev/gpt-auto-root \
+       --rootsource LABEL=root \
         --efisource LABEL=EFI \
        --efipath /boot \
        --rootpasswd "root" >/dev/null
