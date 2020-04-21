@@ -49,7 +49,6 @@ depends:
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
-- core-deps/intltool.bst
 - core-deps/iptables.bst
 - core-deps/json-c.bst
 - core-deps/jsonrpc-glib.bst

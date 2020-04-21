@@ -13,7 +13,6 @@ depends:
 - core-deps/libhandy.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
-- core/gnome-themes-extra.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
@@ -21,6 +20,7 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- world/gnome-themes-extra.bst
 - world/libmanette.bst
 - world/retro-gtk.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
