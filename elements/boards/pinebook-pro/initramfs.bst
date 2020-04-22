@@ -44,7 +44,7 @@ config:
            --add ostree \
            --add plymouth \
            --add eos-repartition \
-           --add-drivers "rockchipdrm panfrost panel_simple" \
+           --add-drivers "rockchipdrm panfrost panel_simple analogix_dp pwm_bl drm_kms_helper" \
            --install 'fsck.ext4' \
            "%{install-root}/usr/lib/modules/${version}/initramfs"
 
