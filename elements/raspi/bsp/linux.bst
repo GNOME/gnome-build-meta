@@ -38,6 +38,13 @@ config:
     KERNEL=kernel8
     make ARCH=arm64 bcmrpi3_defconfig
 
+  - |
+    # Enable vc4 drm
+     scripts/config -e I2C_BCM2835
+     scripts/config -e DRM
+     scripts/config -e DRM_FBDEV_EMULATION
+     scripts/config -e DRM_VC4
+
   install-commands:
   - |
     make INSTALL_MOD_PATH="%{install-root}/usr/" modules_install

@@ -25,7 +25,8 @@ config:
     enable_uart=1
     arm_64bit=1
     start_x=1
-    gpu_mem=128
+    gpu_mem=16
+    dtoverlay=vc4-kms-v3d
 
     # uncomment if you get no picture on HDMI for a default "safe" mode
     #hdmi_safe=1
