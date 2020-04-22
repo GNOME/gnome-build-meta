@@ -12,6 +12,8 @@ sources:
   path: freedesktop-sdk-pulseaudio.patch
 - kind: patch
   path: freedesktop-sdk-pulseaudio-bluez.patch
+- kind: patch
+  path: freedesktop-sdk-flatpak-user.patch
 config:
   options:
     target_arch: '%{arch}'
