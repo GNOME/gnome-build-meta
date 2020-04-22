@@ -38,6 +38,13 @@ config:
     KERNEL=kernel8
     make ARCH=arm64 bcmrpi3_defconfig
 
+  - |
+    # Enable vc4 drm
+     scripts/config -e I2C_BCM2835
+     scripts/config -e DRM
+     scripts/config -e DRM_FBDEV_EMULATION
+     scripts/config -e DRM_VC4
+
   install-commands:
   - |
     make INSTALL_MOD_PATH="%{install-root}/usr/" modules_install
@@ -45,7 +52,7 @@ config:
     mkdir -p %{install-root}/boot/overlays
 
     cp arch/arm64/boot/Image %{install-root}/boot/kernel8.img
-    cp arch/arm64/boot/dts/broadcom/*.dtb* %{install-root}/boot/
+    cp arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb %{install-root}/boot/
     cp arch/arm64/boot/dts/overlays/*.dtb* %{install-root}/boot/overlays/
     cp arch/arm64/boot/dts/overlays/README %{install-root}/boot/overlays/
 
