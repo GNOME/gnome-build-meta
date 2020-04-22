@@ -9,6 +9,8 @@ depends:
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+runtime-depends:
+- core-deps/xdg-sound-theme.bst
 public:
   bst:
     split-rules:
