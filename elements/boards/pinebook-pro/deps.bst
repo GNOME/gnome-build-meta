@@ -43,5 +43,3 @@ runtime-depends:
 - vm/wpa-supplicant-config.bst
 
 - boards/pinebook-pro/disable-dnssec.bst
-
-- vm/bluez.bst

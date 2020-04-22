@@ -10,6 +10,8 @@ sources:
   path: freedesktop-sdk-fusermount-permissions.patch
 - kind: patch
   path: freedesktop-sdk-pulseaudio.patch
+- kind: patch
+  path: freedesktop-sdk-pulseaudio-bluez.patch
 config:
   options:
     target_arch: '%{arch}'

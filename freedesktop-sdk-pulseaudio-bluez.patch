@@ -1,0 +1,188 @@
+diff --git a/elements/components/bluez-headers.bst b/elements/components/bluez-headers.bst
+index 331e6216a..8f9d9084e 100644
+--- a/elements/components/bluez-headers.bst
++++ b/elements/components/bluez-headers.bst
+@@ -1,4 +1,8 @@
+ kind: manual
++description: |
++  This element provides just the headers required to build
++  Python. Because Bluez depends on Python, we cannot build Python without
++  this element. Full elements is `components/bluez.bst`.
+ 
+ build-depends:
+ - bootstrap-import.bst
+@@ -8,8 +12,4 @@ config:
+   - |
+     install -D -m644 -t "%{install-root}%{includedir}/bluetooth" lib/*.h
+ 
+-sources:
+-- kind: git_tag
+-  url: kernel:bluetooth/bluez.git
+-  track: master
+-  ref: 5.51-0-g6de4bdb957cdc85d89851420ab06ca8e226f8d4e
++(@): elements/include/bluez.yml
+diff --git a/elements/components/bluez.bst b/elements/components/bluez.bst
+new file mode 100644
+index 000000000..55ec909bc
+--- /dev/null
++++ b/elements/components/bluez.bst
+@@ -0,0 +1,24 @@
++kind: autotools
++
++depends:
++- bootstrap-import.bst
++- components/glib.bst
++- components/dbus.bst
++- components/libical.bst
++
++build-depends:
++- public-stacks/buildsystem-autotools.bst
++- components/systemd.bst
++
++variables:
++  conf-local: >-
++    --enable-library
++
++public:
++  bst:
++    split-rules:
++      devel:
++        (>):
++        - '%{libdir}/libbluetooth.so'
++
++(@): elements/include/bluez.yml
+diff --git a/elements/components/libical.bst b/elements/components/libical.bst
+new file mode 100644
+index 000000000..8f9cd5873
+--- /dev/null
++++ b/elements/components/libical.bst
+@@ -0,0 +1,16 @@
++kind: cmake
++
++depends:
++- bootstrap-import.bst
++- components/glib.bst
++- components/libxml2.bst
++
++build-depends:
++- public-stacks/buildsystem-cmake.bst
++- components/perl.bst
++
++sources:
++- kind: git_tag
++  url: github:libical/libical.git
++  track: master
++  ref: v3.0.4-0-ga31411fc0ff215a3e45c0caca14a2eeecef46bc5
+diff --git a/elements/components/libpulse.bst b/elements/components/libpulse.bst
+index 5c400c85f..4e27f23b5 100644
+--- a/elements/components/libpulse.bst
++++ b/elements/components/libpulse.bst
+@@ -5,7 +5,6 @@ build-depends:
+ 
+ runtime-depends:
+ - bootstrap-import.bst
+-- components/alsa-lib.bst
+ - components/dbus.bst
+ - components/fftw.bst
+ - components/gdbm.bst
+diff --git a/elements/components/pulseaudio-base.bst b/elements/components/pulseaudio-base.bst
+index e6e930561..cd38b3085 100644
+--- a/elements/components/pulseaudio-base.bst
++++ b/elements/components/pulseaudio-base.bst
+@@ -1,24 +1,25 @@
+ kind: autotools
+ 
++build-depends:
++- public-stacks/buildsystem-autotools.bst
++- components/git-minimal.bst
++- components/perl-xml-parser.bst
++
+ depends:
+-- filename: bootstrap-import.bst
+-- filename: public-stacks/buildsystem-autotools.bst
+-  type: build
+-- filename: components/git-minimal.bst
+-  type: build
+-- filename: components/glib.bst
+-- filename: components/sndfile.bst
+-- filename: components/speexdsp.bst
+-- filename: components/dbus.bst
+-- filename: components/fftw.bst
+-- filename: components/perl-xml-parser.bst
+-  type: build
+-- filename: components/xorg-lib-xcb.bst
+-- filename: components/xorg-lib-ice.bst
+-- filename: components/xorg-lib-sm.bst
+-- filename: components/xorg-lib-xtst.bst
+-- filename: components/webrtc-audio-processing.bst
+-- filename: components/alsa-lib.bst
++- bootstrap-import.bst
++- components/glib.bst
++- components/sndfile.bst
++- components/speexdsp.bst
++- components/dbus.bst
++- components/fftw.bst
++- components/xorg-lib-xcb.bst
++- components/xorg-lib-ice.bst
++- components/xorg-lib-sm.bst
++- components/xorg-lib-xtst.bst
++- components/webrtc-audio-processing.bst
++- components/alsa-lib.bst
++- components/bluez.bst
++- components/sbc.bst
+ 
+ variables:
+   conf-local: |
+@@ -31,7 +32,7 @@ variables:
+     --disable-jack \
+     --disable-lirc \
+     --disable-bluez4 \
+-    --disable-bluez5 \
++    --enable-bluez5 \
+     --enable-systemd-daemon \
+     --enable-systemd-login \
+     --enable-systemd-journal \
+diff --git a/elements/components/pulseaudio.bst b/elements/components/pulseaudio.bst
+index 1dddf0073..b54967759 100644
+--- a/elements/components/pulseaudio.bst
++++ b/elements/components/pulseaudio.bst
+@@ -5,6 +5,8 @@ build-depends:
+ 
+ runtime-depends:
+ - components/libpulse.bst
++- components/bluez.bst
++- components/sbc.bst
+ - components/alsa-lib.bst
+ 
+ config:
+diff --git a/elements/components/sbc.bst b/elements/components/sbc.bst
+new file mode 100644
+index 000000000..e1121f7eb
+--- /dev/null
++++ b/elements/components/sbc.bst
+@@ -0,0 +1,14 @@
++kind: autotools
++
++depends:
++- bootstrap-import.bst
++- components/sndfile.bst
++
++build-depends:
++- public-stacks/buildsystem-autotools.bst
++
++sources:
++- kind: git_tag
++  url: kernel:bluetooth/sbc.git
++  track: master
++  ref: 1.4-0-g878912e12ae9864c7b9aca2a61d782f8e1044ffe
+diff --git a/elements/include/bluez.yml b/elements/include/bluez.yml
+new file mode 100644
+index 000000000..f9dcb9eac
+--- /dev/null
++++ b/elements/include/bluez.yml
+@@ -0,0 +1,5 @@
++sources:
++- kind: git_tag
++  url: kernel:bluetooth/bluez.git
++  track: master
++  ref: 5.51-0-g6de4bdb957cdc85d89851420ab06ca8e226f8d4e
