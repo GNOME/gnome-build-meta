@@ -43,7 +43,11 @@ config:
     ostree admin deploy --os="gnome-os" \
          --sysroot="%{sysroot}" %{ostree-branch} \
          --karg="rw" --karg="quiet" --karg="splash" \
-         --karg="root=LABEL=root"
+         --karg="root=LABEL=root" \
+         --karg="video=eDP-1:1920x1080@60" \
+         --karg="console=ttyS2,1500000n8" \
+         --karg="console=tty0" \
+         --karg="plymouth.ignore-serial-consoles"
 
   - |
     mkdir -p "%{sysroot}/etc/ostree"
