@@ -8,6 +8,8 @@ sources:
   path: fdsdk-systemd-greeter-display-session.patch
 - kind: patch
   path: freedesktop-sdk-pulseaudio.patch
+- kind: patch
+  path: freedesktop-sdk-pulseaudio-bluez.patch
 config:
   options:
     target_arch: '%{arch}'
