@@ -12,7 +12,7 @@ depends:
 - core-deps/libcanberra.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
-- core-deps/libical.bst
+- freedesktop-sdk.bst:components/libical.bst
 - core-deps/openldap.bst
 - sdk/WebKitGTK.bst
 - sdk/gcr.bst
