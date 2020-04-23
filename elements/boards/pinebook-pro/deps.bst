@@ -44,3 +44,4 @@ runtime-depends:
 
 - boards/pinebook-pro/disable-dnssec.bst
 - boards/pinebook-pro/alsa-utils.bst
+- boards/pinebook-pro/disable-suspend.bst
