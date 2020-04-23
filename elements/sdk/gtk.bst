@@ -31,7 +31,7 @@ depends:
 
 variables:
   meson-local: >-
-    -Denable-broadway-backend=true
+    -Dbroadway-backend=true
 
 public:
   bst:
