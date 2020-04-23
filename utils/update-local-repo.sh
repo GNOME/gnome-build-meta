@@ -5,7 +5,9 @@ set -eu
 : ${BST:=bst}
 export BST
 
-ref="$(${BST} show --format "%{vars}" --deps none vm/repo.bst | sed '/ostree-branch: /{;s///;q;};d')"
+: ${REPO_ELEMENT:=vm/repo.bst}
+
+ref="$(${BST} show --format "%{vars}" --deps none "${REPO_ELEMENT}" | sed '/ostree-branch: /{;s///;q;};d')"
 
 if ! [ -d ostree-gpg ]; then
     rm -rf ostree-gpg.tmp
@@ -32,7 +34,7 @@ utils/update-repo.sh \
     --gpg-sign="$(cat ostree-gpg/default-id)" \
     --collection-id=org.gnome.GnomeOS \
     --target-ref="${ref%/*}/devel" \
-    ostree-repo vm/repo.bst \
+    ostree-repo "${REPO_ELEMENT}" \
     "${ref}"
 
 gpg --homedir=ostree-gpg --export --armor >ostree-repo/key.gpg
