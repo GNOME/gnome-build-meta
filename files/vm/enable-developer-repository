@@ -52,6 +52,7 @@ EOF
             exit 0
             ;;
     esac
+    shift
 done
 
 : ${REF:="${DEFAULT_REF}"}
