@@ -40,3 +40,4 @@ runtime-depends:
 - boards/pinebook-pro/firmware.bst
 
 - boards/pinebook-pro/alsa-utils.bst
+- boards/pinebook-pro/disable-suspend.bst
