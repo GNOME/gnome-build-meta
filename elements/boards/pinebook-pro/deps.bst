@@ -37,3 +37,4 @@ runtime-depends:
 - boards/pinebook-pro/firmware.bst
 
 - vm/wpa-supplicant-config.bst
+- boards/pinebook-pro/alsa-utils.bst
