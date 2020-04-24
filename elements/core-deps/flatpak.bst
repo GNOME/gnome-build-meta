@@ -12,12 +12,12 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/fuse.bst
 - core-deps/libostree.bst
 - core-deps/polkit.bst
 - sdk/appstream-glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
+- freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libcap.bst
