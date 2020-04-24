@@ -74,6 +74,7 @@ config:
     image root.img {
         ext4  {
             label = "root"
+            use-mke2fs = true
         }
         size = ${size}K
     }
