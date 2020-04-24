@@ -27,7 +27,6 @@ depends:
 - core-deps/exiv2.bst
 - core-deps/flatpak.bst
 - core-deps/folks.bst
-- core-deps/fuse.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
