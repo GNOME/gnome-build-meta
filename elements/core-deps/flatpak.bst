@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:flatpak/flatpak/releases/download/1.4.3/flatpak-1.4.3.tar.xz
+  url: github_com:flatpak/flatpak/releases/download/1.7.2/flatpak-1.7.2.tar.xz
 - kind: patch
   path: files/flatpak/sysusers.patch
 
@@ -17,6 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- core-deps/python-pyparsing.bst
 - core-deps/fuse.bst
 - core-deps/libostree.bst
 - core-deps/polkit.bst
