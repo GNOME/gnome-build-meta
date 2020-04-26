@@ -8,6 +8,8 @@ sources:
 
 variables:
   autogen: autoreconf -fvi
+  conf-local: >-
+    --with-system-bubblewrap
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -17,6 +19,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- core-deps/bubblewrap.bst
 - core-deps/python-pyparsing.bst
 - core-deps/fuse.bst
 - core-deps/libostree.bst
