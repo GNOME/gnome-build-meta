@@ -2,7 +2,12 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:flatpak/flatpak/releases/download/1.4.3/flatpak-1.4.3.tar.xz
+  url: github_com:flatpak/flatpak/releases/download/1.7.2/flatpak-1.7.2.tar.xz
+- kind: patch
+  path: files/flatpak/sysusers.patch
+
+variables:
+  autogen: autoreconf -fvi
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -10,6 +15,7 @@ build-depends:
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- core-deps/python-pyparsing.bst
 
 depends:
 - core-deps/fuse.bst

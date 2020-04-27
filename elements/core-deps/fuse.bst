@@ -14,3 +14,10 @@ depends:
 
 environment:
   MOUNT_FUSE_PATH: '%{sbindir}'
+
+public:
+  initial-script:
+    script: |
+      #!/bin/bash
+      sysroot="${1}"
+      chmod 4755 "${sysroot}%{bindir}/fusermount"
