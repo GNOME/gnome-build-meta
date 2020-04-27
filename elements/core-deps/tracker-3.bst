@@ -5,6 +5,7 @@ sources:
   track: master
 build-depends:
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
@@ -21,4 +22,4 @@ variables:
     -Dunicode_support=icu
     -Dfunctional_tests=false
     -Dstemmer=disabled
-    -Dbash_completion=%{datadir}/bash-completion/completions
+    -Dbash_completion_dir=%{datadir}/bash-completion/completions

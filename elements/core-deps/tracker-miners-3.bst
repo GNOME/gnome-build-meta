@@ -4,7 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/tracker-miners.git
   track: master
 build-depends:
-- core-deps/intltool.bst
+- freedesktop-sdk.bst:components/asciidoc.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
@@ -15,7 +16,7 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/poppler.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/tracker.bst
+- core-deps/tracker-3.bst
 - sdk/dconf.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
@@ -33,5 +34,4 @@ variables:
     -Diptc=disabled
     -Dminer_rss=false
     -Dtiff=disabled
-    -Dtaglib=disabled
     -Dgif=disabled
