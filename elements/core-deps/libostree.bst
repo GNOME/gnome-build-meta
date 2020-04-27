@@ -5,6 +5,11 @@ sources:
   url: github_com:ostreedev/ostree/releases/download/v2019.5/libostree-2019.5.tar.xz
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
+- kind: patch
+  # This is required to allow BuildStream and Flatpak Builder flatpaks
+  # to run. Most distributions have root recursive shared. Doing
+  # differently can cause a different behavior.
+  path: files/ostree/ostree-shared-root.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
