@@ -79,6 +79,7 @@ config:
     scripts/config -e NET_9P_VIRTIO
     scripts/config -e 9P_FS
     scripts/config -e 9P_FS_POSIX_ACL
+    scripts/config -e 9P_FS_SECURITY
     scripts/config -e VIRTIO_PCI
 
     # Strongly Recommended
@@ -87,6 +88,7 @@ config:
     scripts/config -e TMPFS_XATTR
     scripts/config -e TMPFS_POSIX_ACL
     scripts/config -e EXT4_FS_POSIX_ACL
+    scripts/config -e EXT4_FS_SECURITY
     scripts/config -e XFS_POSIX_ACL
     scripts/config -e BTRFS_FS_POSIX_ACL
     scripts/config -e SECCOMP
