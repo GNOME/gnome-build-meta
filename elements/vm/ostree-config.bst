@@ -13,6 +13,7 @@ build-depends:
 runtime-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - core-deps/libostree.bst
+- freedesktop-sdk.bst:components/shadow.bst
 
 config:
   build-commands:
@@ -36,7 +37,6 @@ config:
   - |
     mkdir -p "%{install-root}/sysroot"
     ln -s sysroot/ostree "%{install-root}/ostree"
-    ln -s var/home "%{install-root}/home"
     ln -s var/roothome "%{install-root}/root"
     ln -s run/media "%{install-root}/media"
 
@@ -44,3 +44,8 @@ config:
     install -Dm644 -t "%{install-root}/usr/lib/tmpfiles.d" ostree.conf
     install -Dm644 *.gpg "%{install-root}/etc/pki/ostree/gnome.gpg"
     install -Dm644 -t "%{install-root}/etc/ostree/remotes.d" gnome.conf
+
+public:
+  bst:
+    integration-commands:
+    - sed -i 's,HOME=/home,HOME=/var/home,' /etc/default/useradd
