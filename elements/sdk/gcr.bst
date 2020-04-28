@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gcr.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gcr/3.36/gcr-3.36.0.tar.xz
+  ref: aaf9bed017a2263c6145c89a1a84178f9f40f238426463e4ae486694ef5f6601
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-  # Plymouth has not been released for a while. Fedora uses a non-released
-  # version. We need the bgrt theme.
-- kind: git_tag
-  url: git_freedesktop_org:plymouth/plymouth.git
-  track: d7c737d05afea5ff1b26f90708a15add5c30fe92
+- kind: tar
+  url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.4.tar.xz
+  ref: 4a197a4f1a05785d7453dd829b231352fb2d09171bd86c5ffaafbb2dd6791351
 
 depends:
 - sdk/gtk+-3.bst

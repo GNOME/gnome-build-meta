@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/babl.git
-  track: master
+- kind: tar
+  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.74.tar.xz
+  ref: 9a710b6950da37ada94cd9e2046cbce26de12473da32a7b79b7d1432fc66ce0e
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/git-minimal.bst

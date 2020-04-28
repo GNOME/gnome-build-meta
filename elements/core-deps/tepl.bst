@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tepl.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tepl/4.99/tepl-4.99.1.tar.xz
+  ref: e627f591028d11b341334c51c75fe7868bcb2520b9dc763d35eed35f53d73169
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gobject-introspection.bst
