@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/phodav.git
-  track: master
+- kind: tar
+  url: gnome_downloads:phodav/2.4/phodav-2.4.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/git.bst
