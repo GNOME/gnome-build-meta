@@ -17,6 +17,7 @@ runtime-depends:
 - vm/spice-vdagent.bst
 - vm/linux-firmware.bst
 - vm/resize-root.bst
+- vm/disable-mail.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
