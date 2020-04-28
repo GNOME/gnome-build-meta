@@ -1,6 +1,7 @@
 kind: stack
 
 runtime-depends:
+- freedesktop-sdk.bst:components/eos-updater.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -11,7 +12,6 @@ runtime-depends:
 - core-deps/flatpak.bst
 - vm/ostree-config.bst
 - core-deps/avahi.bst
-- core-deps/eos-updater.bst
 
 - vm/plymouth-gnome-theme.bst
 - vm/kbd.bst

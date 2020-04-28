@@ -20,7 +20,6 @@ depends:
 - core-deps/cryptsetup.bst
 - core-deps/dmraid.bst
 - core-deps/dotconf.bst
-- core-deps/eos-updater.bst
 - core-deps/espeak.bst
 - core-deps/evolution-data-server.bst
 - core-deps/exempi.bst
