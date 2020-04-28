@@ -27,8 +27,8 @@ depends:
 sources:
 - kind: git
   url: https://github.com/raspberrypi/linux
-  track: rpi-5.6.y
-  ref: 85313d9203e26197d536938b47e983509f5f0e55
+  track: rpi-5.4.y
+  ref: b36a5877588559f25b54dbb7d6638324bb83a1c0
 variables:
   make: make Image modules dtbs
 
