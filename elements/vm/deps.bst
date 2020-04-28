@@ -13,6 +13,7 @@ runtime-depends:
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
+- vm/disable-mail.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
