@@ -28,7 +28,7 @@ sources:
 - kind: git
   url: https://github.com/raspberrypi/linux
   track: rpi-4.19.y
-  ref: c54bc9cff310e006ede2a4ffa745860fad87f79e
+  ref: fe2c7bf4cad4641dfb6f12712755515ab15815ca
 variables:
   make: make Image modules dtbs
 
@@ -36,7 +36,7 @@ config:
   configure-commands:
   - |
     KERNEL=kernel8
-    make ARCH=arm64 bcmrpi3_defconfig
+    make LOCALVERSION="-tpreston" ARCH=arm64 bcm2711_defconfig
 
   - |
     # Enable vc4 drm
