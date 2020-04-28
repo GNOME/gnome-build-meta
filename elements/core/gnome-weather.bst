@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-weather/3.34/gnome-weather-3.34.0.tar.xz
-  ref: 24867e21fcb92b81cd0cf09bbf8bc216ccc55d9a66ac21928b66c413f4efc3bc
+  url: gnome_downloads:gnome-weather/3.34/gnome-weather-3.34.2.tar.xz
+  ref: f0ad43177cb0b3bf30b27a67ef96cf1a98b3a615061c28dcb8f79dc354f9f3d8
 depends:
 - core-deps/libgweather.bst
 - sdk/adwaita-icon-theme.bst
