@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/at-spi2-atk.git
-  track: master
+- kind: tar
+  url: gnome_downloads:at-spi2-atk/2.34/at-spi2-atk-2.34.2.tar.xz
+  ref: 901323cee0eef05c01ec4dee06c701aeeca81a314a7d60216fa363005e27f4f0
 build-depends:
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

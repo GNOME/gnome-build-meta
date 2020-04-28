@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: http://download.videolan.org/pub/videolan/libdvdread/6.0.0/libdvdread-6.0.0.tar.bz2
+  ref: b33b1953b4860545b75f6efc06e01d9849e2ea4f797652263b0b4af6dd10f935
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

@@ -1,14 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-shell.git
-  track: master
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
-
+- kind: tar
+  url: gnome_downloads:gnome-shell/3.37/gnome-shell-3.37.1.tar.xz
+  ref: 9d0bdc45ee1d38c00e1207403e0d6104f2fa240f54acc2bd1a8b9264b54add73
 build-depends:
 - sdk-deps/sassc.bst
 - freedesktop-sdk.bst:components/asciidoc.bst

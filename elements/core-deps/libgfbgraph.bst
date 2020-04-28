@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgfbgraph.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gfbgraph/0.2/gfbgraph-0.2.3.tar.xz
+  ref: da1179083cde2b649d7491c745250a00d292e390fd620b7dd2dd95a122dae0b6
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
