@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-backgrounds.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-backgrounds/3.36/gnome-backgrounds-3.36.0.tar.xz
+  ref: b8cb81e4cf9d085fbb23540635b492d5c124a1f8611c2aa9ac6384111d77bb0b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

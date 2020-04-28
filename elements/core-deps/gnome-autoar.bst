@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-autoar.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-autoar/0.2/gnome-autoar-0.2.4.tar.xz
+  ref: 0a34c377f8841abbf4c29bc848b301fbd8e4e20c03d7318c777c58432033657a
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

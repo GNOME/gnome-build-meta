@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/vte.git
-  track: master
+- kind: tar
+  url: gnome_downloads:vte/0.60/vte-0.60.2.tar.xz
+  ref: 35a0280e3f12feeb3096da05699191373c47a4a20c55cb7081e828e6015f8ca5
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
@@ -20,16 +20,16 @@ depends:
 (?):
 - arch == "x86_64":
     environment:
-      CXXFLAGS: "%{flags_x86_64} -fno-exceptions"
+      CXXFLAGS: '%{flags_x86_64} -fno-exceptions'
 - arch == "i686":
     environment:
-      CXXFLAGS: "%{flags_i686} -fno-exceptions"
+      CXXFLAGS: '%{flags_i686} -fno-exceptions'
 - arch == "arm":
     environment:
-      CXXFLAGS: "%{flags_arm} -fno-exceptions"
+      CXXFLAGS: '%{flags_arm} -fno-exceptions'
 - arch == "aarch64":
     environment:
-      CXXFLAGS: "%{flags_aarch64} -fno-exceptions"
+      CXXFLAGS: '%{flags_aarch64} -fno-exceptions'
 public:
   bst:
     split-rules:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/mutter.git
-  track: master
+- kind: tar
+  url: gnome_downloads:mutter/3.37/mutter-3.37.1.tar.xz
+  ref: 85ec0652b902bfff7311df8330971ce24be0652d683d83f95e89fed0f246cb96
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst
