@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://libvirt.org/sources/libvirt-4.9.0.tar.xz
+  ref: 4fd4bfe7312b7996a817c7919cf0062de0d5b3c400c93bd30855a46c40dd455a
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/python3.bst
