@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/cogl.git
-  track: cogl-1.22
+- kind: tar
+  url: gnome_downloads:cogl/1.22/cogl-1.22.6.tar.xz
+  ref: 6d134bd3e48c067507167c001200b275997fb9c68b08b48ff038211c8c251b75
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
