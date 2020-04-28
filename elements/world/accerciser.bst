@@ -4,7 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/accerciser.git
   track: master
 depends:
-- core-deps/pyatspi2.bst
+- core-deps/pyatspi.bst
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/gtk+-3.bst
