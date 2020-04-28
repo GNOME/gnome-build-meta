@@ -77,7 +77,7 @@ default:
 
 .build-template:
   stage: build
-  dependencies: [track]
+  # dependencies: [track]
   interruptible: true
   script:
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
@@ -194,7 +194,7 @@ default:
 # "Real" CI jobs
 #
 
-track:
+.track:
   <<: *x86_64
   stage: track
   interruptible: true
@@ -232,7 +232,6 @@ vm-image-x86_64:
   extends: .vm-image-template
   # run as soon as the x86_64 build job is done, don't wait for other arches
   needs:
-  - track
   - job: build-gnome-core-x86_64
     artifacts: false
   <<: *x86_64
@@ -252,7 +251,6 @@ pinebook-pro-image:
     - pinebook-pro-image
     expire_in: '2 days'
   needs:
-  - track
   - job: build-gnome-core-aarch64
     artifacts: false
   <<: *aarch64
@@ -312,7 +310,7 @@ flatpak-finish-failed:
 cve_report:
   <<: *x86_64
   stage: reports
-  dependencies: [track]
+  # dependencies: [track]
   script:
   - ${BST} pull platform-manifest.bst sdk-manifest.bst
 
