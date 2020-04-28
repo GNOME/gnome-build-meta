@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://releases.pagure.org/volume_key/volume_key-0.3.12.tar.xz
+  ref: 6ca3748fc1dad22c450bbf6601d4e706cb11c5e662d11bb4aeb473a9cd77309b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
