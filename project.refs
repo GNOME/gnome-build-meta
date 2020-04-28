@@ -1076,7 +1076,7 @@ projects:
     core/gnome-getting-started-docs.bst:
     - ref: 3.36.1-3-ga2dc88b9f4d089943d13fa1abd1a5f2147519e9f
     raspi/bsp/linux.bst:
-    - ref: a0262f184d79838604ca07ec785ec30c22abf3a6
+    - ref: 85313d9203e26197d536938b47e983509f5f0e55
     core/dconf-editor.bst:
     - ref: 3.36.0-8-g98bcc9ae51a63485b98b7500809741e79b94598b
     core-deps/libssh2.bst:
