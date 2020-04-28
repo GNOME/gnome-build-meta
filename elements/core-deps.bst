@@ -32,7 +32,7 @@ depends:
 - core-deps/gexiv2.bst
 - core-deps/glibmm-2.4.bst
 - core-deps/glibmm.bst
-- core-deps/gmime3.bst
+- core-deps/gmime.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
