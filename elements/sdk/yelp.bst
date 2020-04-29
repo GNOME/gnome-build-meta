@@ -9,10 +9,10 @@ build-depends:
 depends:
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-xsl.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 public:

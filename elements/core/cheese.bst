@@ -14,7 +14,6 @@ depends:
 - core-deps/libgudev.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
@@ -23,5 +22,6 @@ depends:
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

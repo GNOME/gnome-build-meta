@@ -5,11 +5,11 @@ sources:
   track: master
 depends:
 - core-deps/gspell.bst
-- sdk/appstream-glib.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - world/telepathy-glib.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

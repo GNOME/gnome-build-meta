@@ -16,9 +16,9 @@ depends:
 - core-deps/libhandy.bst
 - core-deps/tracker.bst
 - sdk/WebKitGTK.bst
-- sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

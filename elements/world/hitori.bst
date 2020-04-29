@@ -8,8 +8,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

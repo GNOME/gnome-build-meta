@@ -16,8 +16,8 @@ depends:
 - core-deps/libhandy.bst
 - core-deps/libpeas.bst
 - core/gnome-desktop.bst
+- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/enchant-2.bst
 - sdk/gcr.bst
 - sdk/glib.bst
@@ -28,7 +28,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
-- sdk/WebKitGTK.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/sqlite.bst

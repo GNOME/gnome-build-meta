@@ -10,7 +10,6 @@ depends:
 - core-deps/libhandy.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib-networking.bst
@@ -20,6 +19,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

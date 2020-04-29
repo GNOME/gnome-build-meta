@@ -8,8 +8,8 @@ build-depends:
 depends:
 - core-deps/amtk.bst
 - sdk/WebKitGTK.bst
-- sdk/appstream-glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
