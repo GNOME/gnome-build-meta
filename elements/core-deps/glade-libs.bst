@@ -1,6 +1,6 @@
 kind: filter
 build-depends:
-- core-deps/glade-base.bst
+- core-deps/glade.bst
 runtime-depends:
 - sdk/WebKitGTK.bst
 - sdk/gtk+-3.bst

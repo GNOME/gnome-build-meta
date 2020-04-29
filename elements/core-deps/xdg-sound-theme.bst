@@ -1,8 +1,9 @@
 kind: autotools
+
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:xdg/xdg-sound-theme.git
-  track: master
+- kind: tar
+  url: people_freedesktop_org:~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - sdk/glib.bst
