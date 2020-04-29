@@ -9,7 +9,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/adwaita-icon-theme.bst
-- sdk/cantarell-fonts.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 environment:
