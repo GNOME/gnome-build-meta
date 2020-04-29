@@ -11,7 +11,7 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libpeas.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

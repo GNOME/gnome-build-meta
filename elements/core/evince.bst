@@ -6,8 +6,8 @@ sources:
   track: master
 
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

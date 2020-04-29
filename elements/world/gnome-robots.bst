@@ -9,9 +9,9 @@ build-depends:
 
 depends:
 - core-deps/gsound.bst
-- sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - sdk/yelp-tools.bst
 - world/libgnome-games-support.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

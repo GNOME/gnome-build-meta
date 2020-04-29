@@ -11,8 +11,8 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

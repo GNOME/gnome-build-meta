@@ -2,7 +2,6 @@ kind: stack
 depends:
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/at-spi2-core.bst
 - sdk/atk.bst
@@ -60,7 +59,7 @@ depends:
 # update our reference to add any new elements.
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
-# appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
+# at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, librsvg,
 # libsoup, os-release, pango pipewire and zenity.
 
@@ -149,6 +148,7 @@ depends:
 - freedesktop-sdk.bst:components/zip.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/alsa-plugins.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/aspell.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/cups.bst

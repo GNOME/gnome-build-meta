@@ -3,7 +3,7 @@ sources:
 - kind: local
   path: files/os-release
 build-depends:
-- sdk/appstream-glib.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 config:
