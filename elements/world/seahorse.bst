@@ -9,7 +9,6 @@ sources:
       url: purism:Librem5/libhandy.git
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
-- sdk/cantarell-fonts.bst
 depends:
 - core-deps/avahi.bst
 - core-deps/libhandy.bst

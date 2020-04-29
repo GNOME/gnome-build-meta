@@ -7,7 +7,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
-- sdk/cantarell-fonts.bst
 - sdk/gjs.bst
 - sdk/pygobject.bst
 - sdk/vala.bst

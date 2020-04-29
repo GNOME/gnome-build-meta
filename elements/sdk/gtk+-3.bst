@@ -1,11 +1,17 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
+
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
+runtime-depends:
+- sdk/cantarell-fonts.bst
+
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -26,6 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xi.bst
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dbroadway_backend=true
@@ -36,6 +43,7 @@ variables:
     -Dgtk_doc=true
     -Dman=true
     -Dintrospection=true
+
 public:
   bst:
     integration-commands:

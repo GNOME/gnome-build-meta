@@ -9,7 +9,6 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/libchamplain.bst
 - core/gnome-maps.bst
-- sdk/cantarell-fonts.bst
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
 - sdk/glib.bst
