@@ -2,8 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:ostree/2014.4/ostree-2014.4.tar.xz
-  ref: 13a1eed9bfcc95e75cf027e2b7252048d206d0eb28371b587e2b0a4cc9835e32
+  url: github_com:ostreedev/ostree/releases/download/v2019.5/libostree-2019.5.tar.xz
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 
