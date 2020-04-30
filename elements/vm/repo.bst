@@ -32,8 +32,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
        --efisource LABEL=EFI \
-       --efipath /boot \
-       --rootpasswd "root" >/dev/null
+       --efipath /boot >/dev/null
 
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=archive

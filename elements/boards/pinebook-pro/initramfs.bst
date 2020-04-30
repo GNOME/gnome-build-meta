@@ -29,8 +29,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
        --efisource LABEL=EFI \
-       --efipath /boot \
-       --rootpasswd "root" >/dev/null
+       --efipath /boot >/dev/null
 
   - |
     mkdir -p "%{install-root}/usr/lib/"
