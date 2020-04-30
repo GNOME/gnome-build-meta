@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:tepl/4.99/tepl-4.99.1.tar.xz
+  url: gnome_downloads:tepl/4.4/tepl-4.4.0.tar.xz
   ref: e627f591028d11b341334c51c75fe7868bcb2520b9dc763d35eed35f53d73169
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

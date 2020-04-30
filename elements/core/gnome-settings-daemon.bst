@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-settings-daemon/3.36/gnome-settings-daemon-3.36.0.tar.xz
+  url: gnome_downloads:gnome-settings-daemon/3.36/gnome-settings-daemon-3.36.1.tar.xz
   ref: fa2ff032ec6c59e4c4ca66c61a29f4ba4b9820496625fc343bfa12291cfaad49
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst
