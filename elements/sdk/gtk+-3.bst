@@ -1,11 +1,11 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -27,15 +27,11 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dbroadway_backend=true
-    -Dinstalled_tests=true
-    -Dtests=false
-    -Dx11_backend=true
-    -Dwayland-backend=true
-    -Dgtk_doc=true
-    -Dman=true
-    -Dintrospection=true
+  conf-local: >-
+    --enable-broadway-backend
+    --enable-installed-tests
+    --enable-x11-backend
+    --enable-wayland-backend
 public:
   bst:
     integration-commands:
