@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.36/gnome-terminal-3.36.1.1.tar.xz
-  ref: f3d708a1e76d77c1c85b126f6e003220a15d4a46a50fd8070e1a3aabe678a376
+  url: gnome_downloads:gnome-terminal/3.36/gnome-terminal-3.36.2.tar.xz
+  ref: 41d1b6a3dc97c066e294acdb7f36931e81668638dcc92ffa25bca3ddebacdf46
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

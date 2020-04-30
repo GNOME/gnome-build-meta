@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-color-manager/3.35/gnome-color-manager-3.35.90.tar.xz
-  ref: 44ea6d16fe0c5648432c593d0160ada8c2ecfef44a6138c52e3ab4504b04ceac
+  url: gnome_downloads:gnome-color-manager/3.36/gnome-color-manager-3.36.0.tar.xz
+  ref: 9ddb9e6b6472e119801381f90905332ec1d4258981721bba831ca246ceb3ad3b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
