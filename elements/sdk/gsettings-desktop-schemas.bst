@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gnome_downloads:gsettings-desktop-schemas/3.36/gsettings-desktop-schemas-3.36.1.tar.xz
-  ref: 764ab683286536324533a58d4e95fc57f81adaba7d880dd0ebbbced63e960ea6
+  ref: 004bdbe43cf8290f2de7d8537e14d8957610ca479a4fa368e34dbd03f03ec9d9
 - kind: patch
   path: files/gsettings-desktop-schemas/0001-Revert-schemas-change-default-monospaced-and-documen.patch
 build-depends:
