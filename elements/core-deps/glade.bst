@@ -1,11 +1,12 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/glade.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/WebKitGTK.bst
 - sdk/gtk+-3.bst
