@@ -13,11 +13,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/fuse.bst
 - core-deps/avahi.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
+- freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/libarchive.bst
@@ -37,4 +37,4 @@ public:
     split-rules:
       devel:
         (>):
-        - '%{libdir}/libostree.so'
+        - "%{libdir}/libostree.so"
