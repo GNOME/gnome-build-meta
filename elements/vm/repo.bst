@@ -1,7 +1,7 @@
 kind: script
 
 build-depends:
-- core-deps/ostree.bst
+- core-deps/libostree.bst
 - vm/filesystem.bst
 - vm/initial-scripts.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
@@ -16,7 +16,7 @@ config:
   layout:
   - element: ''
     destination: /tmp
-  - element: core-deps/ostree.bst
+  - element: core-deps/libostree.bst
     destination: /
   - element: vm/filesystem.bst
     destination: /sysroot
