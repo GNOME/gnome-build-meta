@@ -1,11 +1,10 @@
-kind: meson
-
+kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gtk+/3.24/gtk+-3.24.20.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 runtime-depends:
 - sdk/cantarell-fonts.bst
@@ -32,16 +31,11 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  meson-local: >-
-    -Dbroadway_backend=true
-    -Dinstalled_tests=true
-    -Dtests=false
-    -Dx11_backend=true
-    -Dwayland-backend=true
-    -Dgtk_doc=true
-    -Dman=true
-    -Dintrospection=true
-
+  conf-local: >-
+    --enable-broadway-backend
+    --enable-installed-tests
+    --enable-x11-backend
+    --enable-wayland-backend
 public:
   bst:
     integration-commands:
