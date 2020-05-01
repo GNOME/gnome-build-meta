@@ -91,7 +91,7 @@ projects:
     raspi/bsp/userland-firmware.bst:
     - ref: a246147c21ae5be92ad1b85199b5b0bb447e0544
     raspi/bsp/firmware.bst:
-    - ref: 69a759d39aa802f65d0cc578361ff73e9dcbedc4
+    - ref: 20354bebcc2a8448128f2348e19e155910d25122
     sdk/json-glib.bst:
     - ref: 1.4.2-97-g0a562b86894f1244b4dac573c72b000ea38bcc75
     core-deps/mozjs60.bst:
