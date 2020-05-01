@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/3.36/gedit-3.36.1.tar.xz
+  url: gnome_downloads:gedit/3.36/gedit-3.36.2.tar.xz
   ref: 6dc38eda227d1c368e039e9bff485d0bee9a49d5f9560c387ee08f5818a4e387
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst

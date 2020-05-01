@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gobject-introspection/1.64/gobject-introspection-1.64.0.tar.xz
+  url: gnome_downloads:gobject-introspection/1.64/gobject-introspection-1.64.1.tar.xz
   ref: eac05a63091c81adfdc8ef34820bcc7e7778c5b9e34734d344fc9e69ddf4fc82
 build-depends:
 - sdk/gtk-doc.bst

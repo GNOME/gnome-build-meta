@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.16.tar.xz
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.20.tar.xz
   ref: 0d5e1e1494101b8c0c63c0526180780559eee469f021ca0d714018b20fa3d8e8
 build-depends:
 - sdk/gtk-doc.bst
