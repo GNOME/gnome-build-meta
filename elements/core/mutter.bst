@@ -10,6 +10,10 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
+runtime-depends:
+  # xwayland crashes when gnome-control-center not present
+- core/gnome-control-center.bst
+
 depends:
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
