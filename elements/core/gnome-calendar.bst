@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/3.36/gnome-calendar-3.36.0.tar.xz
-  ref: 024f23c7435bdc38e7d740bb3b270491fbe3f4248c6592b40f1ce9811c26beb3
+  url: gnome_downloads:gnome-calendar/3.36/gnome-calendar-3.36.1.tar.xz
+  ref: 3b8c20b005c8934a223aa931399ffced244d06b9d749a071cc27c89540718362
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
