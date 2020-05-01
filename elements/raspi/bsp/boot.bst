@@ -26,7 +26,9 @@ config:
     arm_64bit=1
     start_x=1
     gpu_mem=16
-    dtoverlay=vc4-kms-v3d
+
+    # Use VideoCore 4 Firmware KMS shim for RPi4, open-source KMS is WIP
+    dtoverlay=vc4-fkms-v3d
 
     # uncomment if you get no picture on HDMI for a default "safe" mode
     #hdmi_safe=1
