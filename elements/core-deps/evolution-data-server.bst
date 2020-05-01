@@ -12,7 +12,6 @@ depends:
 - core-deps/libcanberra.bst
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
-- core-deps/libical.bst
 - core-deps/openldap.bst
 - sdk/WebKitGTK.bst
 - sdk/gcr.bst
@@ -20,6 +19,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
