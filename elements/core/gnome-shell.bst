@@ -18,6 +18,8 @@ build-depends:
 
 runtime-depends:
 - core-deps/libgnomekbd.bst
+  # gnome-shell crashes when cantarell not preset
+- sdk/cantarell-fonts.bst
 
 depends:
 - core-deps/NetworkManager.bst
