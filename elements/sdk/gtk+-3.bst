@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:gtk+/3.24/gtk+-3.24.20.tar.xz
   ref: 2dac69f716e8d04ba7a95091589e2baaec95dcace932cb15839163db479b1df3
+- kind: local
+  path: files/gtk+-3/check-version.py
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
