@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gdm.git
@@ -7,7 +7,7 @@ sources:
   path: files/gdm
   directory: gdm-config
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
@@ -21,11 +21,13 @@ depends:
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   pamdir: '%{sysconfdir}/pam.d'
-  conf-local: >-
-    --enable-wayland-support
-    --with-pam-prefix=%{sysconfdir}
-    --with-run-dir=/run/gdm
-    --with-plymouth=yes
+  meson-local: >-
+    -Ddefault-pam-config=none
+    -Dlibaudit=disabled
+    -Dpam-prefix=%{sysconfdir}
+    -Drun-dir=/run/gdm
+    -Dselinux=disabled
+    -Dxdmcp=disabled
 
 config:
   install-commands:
@@ -33,7 +35,7 @@ config:
     - mkdir -p %{install-root}%{sysusersdir}
     - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
 
-    - mkdir -p %{pamdir}
+    - mkdir -p %{install-root}%{pamdir}
     - |
       # Our configuration is similar to redhat but without selinux
       for conffile in `find gdm-config/ -name "*.pam"`; do
