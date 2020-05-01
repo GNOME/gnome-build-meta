@@ -36,7 +36,7 @@ config:
   configure-commands:
   - |
     KERNEL=kernel8
-    make ARCH=arm64 bcmrpi3_defconfig
+    make ARCH=arm64 bcm2711_defconfig
 
   - |
     # Enable vc4 drm
