@@ -61,7 +61,6 @@ depends:
 - core-deps/libgit2.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libdvdread.bst
-- core-deps/libevdev.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
 - core-deps/libgnomekbd.bst
