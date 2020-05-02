@@ -73,7 +73,6 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libhandy.bst
 - core-deps/libical.bst
-- core-deps/libinput.bst
 - core-deps/libmbim.bst
 - core-deps/libmediaart.bst
 - core-deps/libmusicbrainz.bst
