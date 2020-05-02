@@ -14,7 +14,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gtk-vnc.bst
-- core-deps/libgudev.bst
 - core-deps/libhandy.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
@@ -30,6 +29,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

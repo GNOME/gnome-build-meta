@@ -9,6 +9,6 @@ build-depends:
 depends:
 - core-deps/blockdev.bst
 - core-deps/libatasmart.bst
-- core-deps/libgudev.bst
 - core-deps/polkit.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
