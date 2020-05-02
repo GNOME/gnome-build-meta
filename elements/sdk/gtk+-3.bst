@@ -1,11 +1,12 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.16.tar.xz
-  ref: 0d5e1e1494101b8c0c63c0526180780559eee469f021ca0d714018b20fa3d8e8
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.20.tar.xz
+  ref: 2dac69f716e8d04ba7a95091589e2baaec95dcace932cb15839163db479b1df3
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - sdk/at-spi2-atk.bst
 - sdk/atk.bst
@@ -27,15 +28,14 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dbroadway_backend=true
-    -Dinstalled_tests=true
-    -Dtests=false
-    -Dx11_backend=true
-    -Dwayland-backend=true
-    -Dgtk_doc=true
-    -Dman=true
-    -Dintrospection=true
+  conf-local: >-
+    --enable-broadway-backend
+    --enable-installed-tests
+    --enable-x11-backend
+    --enable-wayland-backend
+    --enable-gtk-doc
+    --enable-man
+    --enable-introspection
 public:
   bst:
     integration-commands:
