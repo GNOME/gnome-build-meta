@@ -6,10 +6,10 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/libgudev.bst
 - core-deps/libmbim.bst
 - core-deps/libqmi.bst
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
