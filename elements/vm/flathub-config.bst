@@ -4,7 +4,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 runtime-depends:
-- core-deps/flatpak.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 
 config:
   install-commands:
