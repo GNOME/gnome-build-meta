@@ -1,6 +1,7 @@
 kind: stack
 
 runtime-depends:
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -8,7 +9,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
 
-- core-deps/flatpak.bst
 - vm/ostree-config.bst
 - core-deps/avahi.bst
 - core-deps/eos-updater.bst
