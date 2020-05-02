@@ -27,7 +27,6 @@ depends:
 - core-deps/libgtop.bst
 - core-deps/libhandy.bst
 - core-deps/libnma.bst
-- core-deps/libwacom.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
 - core-deps/upower.bst
@@ -43,6 +42,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/ibus.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
