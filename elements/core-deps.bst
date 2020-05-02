@@ -84,7 +84,6 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/libostree.bst
 - core-deps/libpeas.bst
-- core-deps/libportal.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst

@@ -19,7 +19,6 @@ depends:
 - core-deps/vte.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libgit2-glib.bst
-- core-deps/libportal.bst
 - core-deps/template-glib.bst
 - core/devhelp.bst
 - core/sysprof.bst
@@ -28,5 +27,6 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
+- freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
