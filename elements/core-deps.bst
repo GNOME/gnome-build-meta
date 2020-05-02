@@ -66,7 +66,6 @@ depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgsf.bst
 - core-deps/libgtop.bst
-- core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/libgweather.bst
 - core-deps/libgxps.bst

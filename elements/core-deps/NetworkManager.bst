@@ -10,7 +10,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/iptables.bst
-- core-deps/libgudev.bst
 - core-deps/libndp.bst
 - core-deps/ppp.bst
 - sdk/glib.bst
@@ -19,6 +18,7 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/gnutls.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
