@@ -11,7 +11,6 @@ runtime-depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
 depends:
-- core-deps/flatpak.bst
 - core-deps/glade-libs.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
@@ -28,5 +27,6 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
 - sdk/librsvg.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
