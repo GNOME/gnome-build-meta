@@ -88,7 +88,6 @@ depends:
 - core-deps/libusb.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
-- core-deps/libwacom.bst
 - core-deps/libxklavier.bst
 - core-deps/libyaml.bst
 - core-deps/lvm2.bst
