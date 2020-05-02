@@ -9,7 +9,6 @@ build-depends:
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
-- core-deps/libgudev.bst
 - core-deps/libnma.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core/gnome-bluetooth.bst
@@ -20,6 +19,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
