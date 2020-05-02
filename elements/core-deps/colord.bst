@@ -9,11 +9,11 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/libgudev.bst
 - core-deps/libgusb.bst
 - core-deps/polkit.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
