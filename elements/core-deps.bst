@@ -24,7 +24,6 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/exempi.bst
 - core-deps/exiv2.bst
-- core-deps/flatpak.bst
 - core-deps/folks.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
