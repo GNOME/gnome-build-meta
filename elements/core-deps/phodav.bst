@@ -10,8 +10,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/avahi.bst
-- core-deps/libgudev.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
