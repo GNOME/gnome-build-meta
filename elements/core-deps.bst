@@ -131,6 +131,8 @@ depends:
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-miners.bst
 - core-deps/tracker.bst
+- core-deps/tracker-miners-3.bst
+- core-deps/tracker-3.bst
 - core-deps/uchardet.bst
 - core-deps/udisks2.bst
 - core-deps/uhttpmock.bst
