@@ -10,7 +10,7 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
-- core-deps/tracker.bst
+- core-deps/tracker-2.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
