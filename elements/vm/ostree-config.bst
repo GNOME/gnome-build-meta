@@ -12,7 +12,7 @@ build-depends:
 
 runtime-depends:
 - freedesktop-sdk.bst:components/systemd.bst
-- core-deps/ostree.bst
+- core-deps/libostree.bst
 
 config:
   build-commands:
