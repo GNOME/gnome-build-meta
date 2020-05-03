@@ -22,8 +22,8 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph.bst
-- core-deps/tracker-miners.bst
-- core-deps/tracker.bst
+- core-deps/tracker-miners-2.bst
+- core-deps/tracker-2.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

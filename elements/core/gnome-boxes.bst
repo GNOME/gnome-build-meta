@@ -19,8 +19,8 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/spice-gtk.bst
-- core-deps/tracker-miners.bst
-- core-deps/tracker.bst
+- core-deps/tracker-miners-2.bst
+- core-deps/tracker-2.bst
 - core-deps/vte.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
