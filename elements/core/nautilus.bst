@@ -12,8 +12,8 @@ build-depends:
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
-- core-deps/tracker-miners.bst
-- core-deps/tracker.bst
+- core-deps/tracker-miners-2.bst
+- core-deps/tracker-2.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
