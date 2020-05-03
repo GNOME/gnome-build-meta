@@ -20,8 +20,8 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libdazzle.bst
 - core-deps/libmediaart.bst
-- core-deps/tracker-miners.bst
-- core-deps/tracker.bst
+- core-deps/tracker-miners-2.bst
+- core-deps/tracker-2.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst

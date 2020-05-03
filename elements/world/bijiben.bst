@@ -14,7 +14,7 @@ build-depends:
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/libhandy.bst
-- core-deps/tracker.bst
+- core-deps/tracker-2.bst
 - sdk/WebKitGTK.bst
 - sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst

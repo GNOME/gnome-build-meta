@@ -15,8 +15,8 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/libgdata.bst
-- core-deps/tracker-miners.bst
-- core-deps/tracker.bst
+- core-deps/tracker-miners-2.bst
+- core-deps/tracker-2.bst
 - core/evince.bst
 - core/gnome-desktop.bst
 - sdk/WebKitGTK.bst
