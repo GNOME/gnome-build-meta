@@ -49,6 +49,7 @@ depends:
 - sdk/pipewire.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
+- sdk/tracker-3.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst

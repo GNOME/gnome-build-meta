@@ -130,6 +130,7 @@ depends:
 - core-deps/tepl.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-miners.bst
+- core-deps/tracker-miners-3.bst
 - core-deps/tracker.bst
 - core-deps/uchardet.bst
 - core-deps/udisks2.bst
