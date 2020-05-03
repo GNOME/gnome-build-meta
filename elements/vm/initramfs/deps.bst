@@ -11,5 +11,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
-- core-deps/ostree.bst
+- core-deps/libostree.bst
 - vm/plymouth-gnome-theme.bst
