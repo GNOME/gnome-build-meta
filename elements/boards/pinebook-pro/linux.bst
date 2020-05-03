@@ -79,6 +79,7 @@ config:
     scripts/config -e NET_9P_VIRTIO
     scripts/config -e 9P_FS
     scripts/config -e 9P_FS_POSIX_ACL
+    scripts/config -e 9P_FS_SECURITY
     scripts/config -e VIRTIO_PCI
 
     # Strongly Recommended
@@ -87,6 +88,7 @@ config:
     scripts/config -e TMPFS_XATTR
     scripts/config -e TMPFS_POSIX_ACL
     scripts/config -e EXT4_FS_POSIX_ACL
+    scripts/config -e EXT4_FS_SECURITY
     scripts/config -e XFS_POSIX_ACL
     scripts/config -e BTRFS_FS_POSIX_ACL
     scripts/config -e SECCOMP
@@ -163,109 +165,18 @@ config:
     scripts/config -m DRM_PANEL_LVDS
     scripts/config -m DRM_PANEL_SIMPLE
 
-    scripts/config -e HIDRAW
-
-    scripts/config -m HID_A4TECH
-    scripts/config -m HID_ACCUTOUCH
-    scripts/config -e HID_ACRUX_FF
-    scripts/config -m HID_ACRUX
-    scripts/config -m HID_ALPS
-    scripts/config -m HID_APPLEIR
-    scripts/config -m HID_APPLE
-    scripts/config -m HID_AUREAL
-    scripts/config -e HID_BATTERY_STRENGTH
-    scripts/config -m HID_BELKIN
-    scripts/config -m HID_BETOP_FF
-    scripts/config -m HID_CHERRY
-    scripts/config -m HID_CHICONY
-    scripts/config -m HID_CMEDIA
-    scripts/config -m HID_CORSAIR
-    scripts/config -m HID_COUGAR
-    scripts/config -m HID_CP2112
-    scripts/config -m HID_CYPRESS
-    scripts/config -m HID_DRAGONRISE
-    scripts/config -m HID_ELECOM
-    scripts/config -m HID_ELO
-    scripts/config -m HID_EMS_FF
-    scripts/config -m HID_EZKEY
-    scripts/config -m HID_GEMBIRD
-    scripts/config -m HID_GFRM
-    scripts/config -m HID_GREENASIA
-    scripts/config -m HID_GT683R
-    scripts/config -m HID_GYRATION
-    scripts/config -m HID_HOLTEK
-    scripts/config -m HID_ICADE
-    scripts/config -m HID_ITE
-    scripts/config -m HID_JABRA
-    scripts/config -m HID_KENSINGTON
-    scripts/config -m HID_KEYTOUCH
-    scripts/config -m HID_KYE
-    scripts/config -m HID_LCPOWER
-    scripts/config -m HID_LENOVO
-    scripts/config -m HID_LOGITECH_DJ
-    scripts/config -m HID_LOGITECH
-    scripts/config -m HID_MACALLY
-    scripts/config -m HID_MAGICMOUSE
-    scripts/config -m HID_MALTRON
-    scripts/config -m HID_MAYFLASH
-    scripts/config -m HID_MICROSOFT
-    scripts/config -m HID_MONTEREY
     scripts/config -m HID_MULTITOUCH
-    scripts/config -m HID_NTI
-    scripts/config -m HID_NTRIG
-    scripts/config -m HID_ORTEK
-    scripts/config -m HID_PANTHERLORD
-    scripts/config -m HID_PENMOUNT
-    scripts/config -m HID_PETALYNX
-    scripts/config -e HID_PICOLCD_BACKLIGHT
-    scripts/config -e HID_PICOLCD_CIR
-    scripts/config -e HID_PICOLCD_FB
-    scripts/config -e HID_PICOLCD_LCD
-    scripts/config -e HID_PICOLCD_LEDS
-    scripts/config -m HID_PICOLCD
-    scripts/config -e HID_PID
-    scripts/config -m HID_PLANTRONICS
-    scripts/config -m HID_PRIMAX
-    scripts/config -m HID_PRODIKEYS
-    scripts/config -m HID_REDRAGON
-    scripts/config -m HID_RETRODE
-    scripts/config -m HID_RMI
-    scripts/config -m HID_ROCCAT
-    scripts/config -m HID_SAITEK
-    scripts/config -m HID_SAMSUNG
-    scripts/config -m HID_SENSOR_ACCEL_3D
-    scripts/config -m HID_SENSOR_ALS
-    scripts/config -m HID_SENSOR_CUSTOM_SENSOR
-    scripts/config -m HID_SENSOR_DEVICE_ROTATION
-    scripts/config -m HID_SENSOR_GYRO_3D
-    scripts/config -m HID_SENSOR_HUB
-    scripts/config -m HID_SENSOR_HUMIDITY
-    scripts/config -m HID_SENSOR_INCLINOMETER_3D
-    scripts/config -m HID_SENSOR_MAGNETOMETER_3D
-    scripts/config -m HID_SENSOR_PRESS
-    scripts/config -m HID_SENSOR_PROX
-    scripts/config -m HID_SENSOR_TEMP
-    scripts/config -m HID_SMARTJOYPLUS
-    scripts/config -m HID_SONY
-    scripts/config -m HID_SPEEDLINK
-    scripts/config -m HID_STEAM
-    scripts/config -m HID_STEELSERIES
-    scripts/config -m HID_SUNPLUS
-    scripts/config -m HID_THINGM
-    scripts/config -m HID_THRUSTMASTER
-    scripts/config -m HID_TIVO
-    scripts/config -m HID_TOPSEED
-    scripts/config -m HID_TWINHAN
-    scripts/config -m HID_U2FZERO
-    scripts/config -m HID_UCLOGIC
-    scripts/config -m HID_UDRAW_PS3
-    scripts/config -m HID_VIEWSONIC
-    scripts/config -m HID_WACOM
-    scripts/config -m HID_WALTOP
-    scripts/config -m HID_WIIMOTE
-    scripts/config -m HID_XINMO
-    scripts/config -m HID_ZEROPLUS
-    scripts/config -m HID_ZYDACRON
+
+    scripts/config -m SND_SOC_ES8316
+    scripts/config -m SND_SOC_SIMPLE_AMPLIFIER
+    scripts/config -m SND_SIMPLE_CARD
+
+    scripts/config -e CHARGER_GPIO
+    scripts/config -m PWRSEQ_SD8787
+    scripts/config -m PWRSEQ_SIMPLE
+    scripts/config -e GPIO_SYSCON
+
+    scripts/config -e RTC_DRV_RK808
 
   build-commands:
   - |
