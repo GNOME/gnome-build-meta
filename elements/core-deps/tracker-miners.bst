@@ -13,7 +13,6 @@ depends:
 - core-deps/libgsf.bst
 - core-deps/libgxps.bst
 - core-deps/libosinfo.bst
-- core-deps/poppler.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker.bst
 - sdk/dconf.bst
@@ -21,10 +20,11 @@ depends:
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
-- sdk/openjpeg.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+- freedesktop-sdk.bst:components/openjpeg.bst
+- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
