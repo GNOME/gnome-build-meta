@@ -9,12 +9,12 @@ build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/gspell.bst
 - core-deps/libgxps.bst
-- core-deps/poppler.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst

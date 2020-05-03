@@ -107,7 +107,6 @@ depends:
 - core-deps/phodav.bst
 - core-deps/plymouth.bst
 - core-deps/polkit.bst
-- core-deps/poppler.bst
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst
 - core-deps/ppp.bst

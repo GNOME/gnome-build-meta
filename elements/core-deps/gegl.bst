@@ -14,12 +14,12 @@ depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst
 - core-deps/libraw.bst
-- core-deps/poppler.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:components/sdl2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
