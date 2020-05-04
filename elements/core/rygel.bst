@@ -1,12 +1,16 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/rygel.git
   track: master
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/gssdp.bst
+- core-deps/gst-editing-services.bst
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
