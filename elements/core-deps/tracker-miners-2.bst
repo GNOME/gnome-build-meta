@@ -2,10 +2,9 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: master
+  track: tracker-miners-2.3
 build-depends:
-- freedesktop-sdk.bst:components/asciidoc.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
+- core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
@@ -16,14 +15,13 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/poppler.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/upower.bst
+- core-deps/tracker-2.bst
 - sdk/dconf.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - sdk/openjpeg.bst
-- sdk/tracker.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
@@ -31,7 +29,9 @@ depends:
 variables:
   meson-local: >-
     -Dxmp=disabled
+    -Dexif=disabled
     -Diptc=disabled
     -Dminer_rss=false
     -Dtiff=disabled
+    -Dtaglib=disabled
     -Dgif=disabled
