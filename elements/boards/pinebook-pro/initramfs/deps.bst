@@ -13,9 +13,8 @@ runtime-depends:
 - vm/plymouth-gnome-theme.bst
 
 - boards/pinebook-pro/linux.bst
-# FIXME: Waiting for those to be merged:
-#- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
+- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
 - core-deps/libostree.bst
 - vm/eos-repartition.bst
