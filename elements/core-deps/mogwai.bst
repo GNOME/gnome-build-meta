@@ -6,11 +6,12 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/NetworkManager.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
-- freedesktop-sdk.bst:components/systemd-libs.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
