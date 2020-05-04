@@ -8,8 +8,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/libgudev.bst
-- core-deps/libinput.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
@@ -24,6 +22,8 @@ depends:
 - sdk/pango.bst
 - sdk/zenity.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/libinput.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
