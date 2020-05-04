@@ -14,8 +14,8 @@ runtime-depends:
 
 - boards/pinebook-pro/linux.bst
 # FIXME: Waiting for those to be merged:
-#- freedesktop-sdk.bst:components/linux-firmware.bst
 #- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+- freedesktop-sdk.bst:components/linux-firmware.bst
 
 - core-deps/libostree.bst
 - vm/eos-repartition.bst
