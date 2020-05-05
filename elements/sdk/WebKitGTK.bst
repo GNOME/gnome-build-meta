@@ -29,7 +29,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/libwpe.bst
-- sdk/openjpeg.bst
 - sdk/pango.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
@@ -37,6 +36,7 @@ depends:
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
