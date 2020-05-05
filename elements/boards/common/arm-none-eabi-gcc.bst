@@ -17,7 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:components/tar.bst
 
 depends:
-- boards/pinebook-pro/arm-none-eabi-binutils.bst
+- boards/common/arm-none-eabi-binutils.bst
 
 variables:
   conf-cmd: ../configure
