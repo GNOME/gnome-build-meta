@@ -11,9 +11,10 @@ build-depends:
 - freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/bc.bst
 
-- boards/pinebook-pro/swig.bst
-- boards/pinebook-pro/python3-as-python2.bst
-- boards/pinebook-pro/dtc.bst
+- boards/common/swig.bst
+- boards/common/python3-as-python2.bst
+- boards/common/dtc.bst
+
 - boards/pinebook-pro/arm-trusted-firmware.bst
 
 environment:
