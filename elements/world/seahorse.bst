@@ -10,7 +10,6 @@ sources:
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 depends:
-- core-deps/avahi.bst
 - core-deps/libhandy.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
@@ -22,6 +21,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
