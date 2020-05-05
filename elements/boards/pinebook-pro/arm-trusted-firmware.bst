@@ -11,7 +11,7 @@ build-depends:
 # This is required because at part of the firmware has to be built for
 # armv7. freedesktop-sdk.bst:cross-compilers/gcc-arm.bst does not
 # seem to be able to compile like needed.
-- boards/pinebook-pro/arm-none-eabi-gcc.bst
+- boards/common/arm-none-eabi-gcc.bst
 
 variables:
   board: pinebook_pro-rk3399
