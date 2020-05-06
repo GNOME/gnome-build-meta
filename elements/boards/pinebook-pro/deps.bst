@@ -32,6 +32,5 @@ runtime-depends:
 
 - boards/pinebook-pro/keyboard-updater.bst
 
-# FIXME: Waiting for those to be merged:
-#- freedesktop-sdk.bst:components/linux-firmware.bst
-#- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+- freedesktop-sdk.bst:components/linux-firmware.bst
+- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
