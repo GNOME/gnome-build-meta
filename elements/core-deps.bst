@@ -74,7 +74,6 @@ depends:
 - core-deps/libmediaart.bst
 - core-deps/libmusicbrainz.bst
 - core-deps/libndp.bst
-- core-deps/libnl.bst
 - core-deps/libnma.bst
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
