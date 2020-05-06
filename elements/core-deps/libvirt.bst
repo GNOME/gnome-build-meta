@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/libnl.bst
+- freedesktop-sdk.bst:components/libnl.bst
 - core-deps/lvm2.bst
 - core-deps/portablexdr.bst
 - freedesktop-sdk.bst:components/gnutls.bst
