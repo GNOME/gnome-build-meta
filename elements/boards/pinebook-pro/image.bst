@@ -3,6 +3,7 @@ kind: script
 build-depends:
 - boards/pinebook-pro/image-deps.bst
 - boards/pinebook-pro/repo.bst
+- boards/pinebook-pro/linux.bst
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -24,6 +25,8 @@ config:
     destination: '/source-repo'
   - element: boards/pinebook-pro/image-deps.bst
     destination: '/'
+  - element: boards/pinebook-pro/linux.bst
+    destination: '/kernel'
 
   commands:
   - mkdir -p "${OSTREE_REPO}"
@@ -63,7 +66,7 @@ config:
     cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"
 
   - |
-    cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/dtb/ "%{sysroot}/boot/"
+    cp -r "/kernel/boot/dtbs" "%{sysroot}/boot/dtb"
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
