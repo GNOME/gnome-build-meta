@@ -3,6 +3,8 @@ kind: manual
 sources:
 - kind: tar
   url: github_com:endlessm/eos-boot-helper/archive/Release_3.7.7.tar.gz
+- kind: patch
+  path: files/vm/eos-repartition/fix-sector-size-issue.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
