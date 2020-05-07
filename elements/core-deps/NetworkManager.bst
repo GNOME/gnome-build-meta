@@ -8,6 +8,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/systemd.bst
 depends:
 - core-deps/iptables.bst
 - core-deps/ppp.bst
@@ -20,6 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libndp.bst
 - freedesktop-sdk.bst:components/nss.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
