@@ -5,7 +5,7 @@ After=sysinit.target local-fs.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/resize2fs /dev/gpt-auto-root
+ExecStart=/usr/bin/resize-root
 
 [Install]
 WantedBy=multi-user.target
