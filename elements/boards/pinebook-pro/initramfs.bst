@@ -49,12 +49,6 @@ config:
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
-    install -Dm644 \
-       /boot/dtbs/rockchip/rk3399-pinebook-pro.dtb \
-       "%{install-root}/usr/lib/modules/${version}/devicetree"
-
-  - |
-    version="$(ls -1 /lib/modules | head -n1)"
     cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}/vmlinuz"
 
   - dbus-uuidgen >/etc/machine-id
@@ -71,10 +65,3 @@ config:
     console-mode keep
     default *
     EOF
-
-    # FIXME: u-boot also needs to load the dtb. We should find a way
-    # to keep it updated.
-  - |
-    install -Dm644 \
-      /boot/dtbs/rockchip/rk3399-pinebook-pro.dtb \
-      "%{install-root}/boot/dtb/rockchip/rk3399-pinebook-pro.dtb"
