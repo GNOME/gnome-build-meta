@@ -27,7 +27,7 @@ runtime-depends:
 - core/systemd-presets.bst
 
 - boards/pinebook-pro/initramfs.bst
-- boards/pinebook-pro/tweak-resize-root.bst
+- vm/resize-root.bst
 - vm/eos-repartition.bst
 
 - boards/pinebook-pro/keyboard-updater.bst
