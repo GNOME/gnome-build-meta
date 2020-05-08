@@ -19,7 +19,6 @@ runtime-depends:
 - sdk/gst-plugins-good.bst
 depends:
 - sdk/at-spi2-core.bst
-- sdk/brotli.bst
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
 - sdk/gobject-introspection.bst
@@ -32,6 +31,7 @@ depends:
 - sdk/pango.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
+- freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
