@@ -74,7 +74,6 @@ depends:
 - core-deps/libnma.bst
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
-- core-deps/libostree.bst
 - core-deps/libpeas.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
