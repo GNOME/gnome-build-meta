@@ -6,7 +6,6 @@ depends:
 - sdk/at-spi2-atk.bst
 - sdk/at-spi2-core.bst
 - sdk/atk.bst
-- sdk/brotli.bst
 - sdk/cantarell-fonts.bst
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
@@ -67,6 +66,7 @@ depends:
 # Due to being relatively deep in the stack, glib needs special treatment.
 
 - freedesktop-sdk.bst:integration/mtab.bst
+- freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/cracklib.bst
 - freedesktop-sdk.bst:components/curl.bst
