@@ -34,6 +34,16 @@ public:
       if [ -d "%{libdir}/gio/modules" ]; then
         gio-querymodules "%{libdir}/gio/modules"
       fi
+    - |
+      for lib in gio glib gmodule gobject gthread; do
+        fulllib="%{libdir}/lib${lib}-2.0.so.0"
+        keep="$(readlink "${fulllib}")"
+        for i in "${fulllib}".*; do
+          if [ "$(basename "${i}")" != "${keep}" ]; then
+            rm "${i}"
+          fi
+        done
+      done
     overlap-whitelist:
     - '**'
     split-rules:
