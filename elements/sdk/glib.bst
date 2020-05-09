@@ -30,6 +30,15 @@ public:
   bst:
     integration-commands:
     - glib-compile-schemas %{prefix}/share/glib-2.0/schemas
+    - |
+      for lib in gio glib gmodule gobject gthread; do
+        keep="$(readlink %{libdir}/lib${lib}-2.0.so.0)"
+        for i in %{libdir}/lib${lib}-2.0.so.0.*; do
+          if [ "$(basename "${i}")" != "${keep}" ]; then
+            rm "${i}"
+          fi
+        done
+      done
     overlap-whitelist:
     - '**'
     split-rules:
