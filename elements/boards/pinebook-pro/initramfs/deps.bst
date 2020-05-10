@@ -16,5 +16,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - vm/eos-repartition.bst
