@@ -10,7 +10,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
-- core-deps/libgfbgraph.bst
+- core-deps/libgfbgraph-0.2.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/clutter-gtk.bst

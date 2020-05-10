@@ -9,7 +9,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/libgdata.bst
-- core-deps/libgfbgraph.bst
+- core-deps/libgfbgraph-0.2.bst
 - core-deps/tracker-2.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
