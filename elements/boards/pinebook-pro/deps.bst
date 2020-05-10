@@ -36,3 +36,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
 - vm/wpa-supplicant-config.bst
+
+- boards/pinebook-pro/disable-suspend.bst
