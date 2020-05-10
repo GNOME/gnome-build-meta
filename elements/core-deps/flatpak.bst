@@ -17,7 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - core-deps/polkit.bst
 - sdk/appstream-glib.bst
 - sdk/json-glib.bst

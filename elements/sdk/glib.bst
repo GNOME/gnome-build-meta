@@ -9,11 +9,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
-runtime-depends:
-# a dummy dependency so our glib is always staged
-# on top of freedesktop-sdk version
-- freedesktop-sdk.bst:components/glib.bst
-
 depends:
 - freedesktop-sdk.bst:components/libffi.bst
 - freedesktop-sdk.bst:components/util-linux.bst
@@ -30,8 +25,6 @@ public:
   bst:
     integration-commands:
     - glib-compile-schemas %{prefix}/share/glib-2.0/schemas
-    overlap-whitelist:
-    - '**'
     split-rules:
       devel:
         (>):
