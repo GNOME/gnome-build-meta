@@ -21,7 +21,7 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libdazzle.bst
 - core-deps/libgdata.bst
-- core-deps/libgfbgraph.bst
+- core-deps/libgfbgraph-0.2.bst
 - core-deps/tracker-miners-2.bst
 - core-deps/tracker-2.bst
 - sdk/adwaita-icon-theme.bst
