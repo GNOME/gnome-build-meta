@@ -12,7 +12,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/lame.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libpng.bst
-- freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libvpx.bst
 - freedesktop-sdk.bst:components/mpg123.bst
 - freedesktop-sdk.bst:components/orc.bst

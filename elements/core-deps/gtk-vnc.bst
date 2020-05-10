@@ -17,7 +17,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
-- freedesktop-sdk.bst:components/libpulse.bst
+- freedesktop-sdk.bst:components/pipewire-pulse.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
