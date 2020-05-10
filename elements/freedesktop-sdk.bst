@@ -6,3 +6,7 @@ sources:
 config:
   options:
     target_arch: '%{arch}'
+  replacements:
+    components/glib.bst: sdk/glib.bst
+    components/gobject-introspection.bst: sdk/gobject-introspection.bst
+    components/libsoup.bst: sdk/libsoup.bst
