@@ -1,9 +1,8 @@
 kind: manual
 
 sources:
-- kind: git_tag
-  url: https://git.eno.space/pbp-uboot.git
-  track: 365495a329c8e92ca4c134562d091df71b75845e
+- kind: tar
+  url: ftp://ftp.denx.de/pub/u-boot/u-boot-2020.04.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
@@ -15,13 +14,13 @@ build-depends:
 - boards/common/python3-as-python2.bst
 - boards/common/dtc.bst
 
-- boards/pinebook-pro/arm-trusted-firmware.bst
+- boards/rock64/arm-trusted-firmware.bst
 
 environment:
   BL31: "%{indep-libdir}/u-boot/%{board}/bl31.elf"
 
 variables:
-  board: pinebook_pro-rk3399
+  board: rock64-rk3328
 
 config:
   configure-commands:

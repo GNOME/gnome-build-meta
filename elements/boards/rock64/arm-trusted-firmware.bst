@@ -1,10 +1,8 @@
 kind: manual
 
 sources:
-- kind: git_tag
-  url: https://github.com/ARM-software/arm-trusted-firmware.git
-  track: 22d12c4148c373932a7a81e5d1c59a767e143ac2
-  track-tags: false
+- kind: tar
+  url: https://github.com/ARM-software/arm-trusted-firmware/archive/v2.3.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -14,7 +12,7 @@ build-depends:
 - boards/common/arm-none-eabi-gcc.bst
 
 variables:
-  board: pinebook_pro-rk3399
+  board: rock64-rk3328
 
 environment:
   CFLAGS: '-fno-stack-protector'
@@ -22,7 +20,7 @@ environment:
 
 config:
   build-commands:
-  - make PLAT=rk3399
+  - make PLAT=rk3328
 
   install-commands:
-  - install -Dm644 -t "%{install-root}%{indep-libdir}/u-boot/%{board}" build/rk3399/release/bl31/bl31.elf
+  - install -Dm644 -t "%{install-root}%{indep-libdir}/u-boot/%{board}" build/rk3328/release/bl31/bl31.elf
