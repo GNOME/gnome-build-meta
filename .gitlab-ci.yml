@@ -200,7 +200,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst
   retry: 2
   # only run on branches targeting master
   rules:
@@ -250,26 +250,6 @@ pinebook-pro-image:
     paths:
     - logs
     - pinebook-pro-image
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-gnome-core-aarch64
-    artifacts: false
-  <<: *aarch64
-
-rock64-image:
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
-  when: manual
-  allow_failure: true
-  cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - rock64
     expire_in: '2 days'
   needs:
   - track
