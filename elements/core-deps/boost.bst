@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: downloads.sourceforge.net:boost/boost/1.72.0/boost_1_72_0.tar.bz2
+  url: downloads.sourceforge.net:boost/boost/1.73.0/boost_1_73_0.tar.bz2
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 config:
