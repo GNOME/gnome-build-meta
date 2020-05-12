@@ -13,8 +13,10 @@ build-depends:
 sources:
 - kind: git_tag
   url: https://github.com/raspberrypi/linux
+  # tpreston/raspi4 builds against 5.5 a0262f184d79838604ca07ec785ec30c22abf3a6
+  # Aim to track 5.4 LTS work
   # track: 5.4.y
-  track: a0262f184d79838604ca07ec785ec30c22abf3a6
+  track: a98ba9221895e03b8736312ce6666005da5968a1
   track-tags: false
 
 variables:
