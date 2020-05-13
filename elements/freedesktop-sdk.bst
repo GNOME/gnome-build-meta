@@ -6,3 +6,5 @@ sources:
 config:
   options:
     target_arch: '%{arch}'
+- kind: patch
+  path: patches/0001-vm-prepare-image.sh-Add-setup-machine-id-to-systemd-.patch
