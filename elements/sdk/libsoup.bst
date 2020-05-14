@@ -9,6 +9,10 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+runtime-depends:
+# a dummy dependency so our libsoup is always staged
+# on top of freedesktop-sdk version
+- freedesktop-sdk.bst:components/libsoup.bst
 depends:
 - sdk/glib.bst
 - sdk/krb5.bst
@@ -24,6 +28,19 @@ variables:
     -Dntlm=disabled
 public:
   bst:
+    integration-commands:
+    - |
+      for lib in soup soup-gnome; do
+        fulllib="%{libdir}/lib${lib}-2.4.so.1"
+        keep="$(readlink "${fulllib}")"
+        for i in "${fulllib}".*; do
+          if [ "$(basename "${i}")" != "${keep}" ]; then
+            rm "${i}"
+          fi
+        done
+      done
+    overlap-whitelist:
+    - '**'
     split-rules:
       devel:
         (>):

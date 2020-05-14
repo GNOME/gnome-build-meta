@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - boards/pinebook-pro/initial-scripts.bst
 - boards/pinebook-pro/filesystem.bst
 
@@ -17,7 +17,7 @@ config:
   layout:
   - element: ''
     destination: /tmp
-  - element: core-deps/libostree.bst
+  - element: components/ostree.bst
     destination: /
   - element: boards/pinebook-pro/filesystem.bst
     destination: /sysroot
