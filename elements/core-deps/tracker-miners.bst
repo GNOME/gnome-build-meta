@@ -24,6 +24,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
