@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-online-miners.git
-  track: master
+  track: sam/tracker3
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
@@ -10,8 +10,8 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph-0.2.bst
-- core-deps/tracker-2.bst
 - sdk/glib.bst
+- sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
