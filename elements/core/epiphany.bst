@@ -22,4 +22,5 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
