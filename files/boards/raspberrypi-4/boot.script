@@ -1,0 +1,15 @@
+# FIXME: This should load the device tree. But something does not work correctly.
+
+#load ${devtype} ${devnum}:${distro_bootpart} ${fdt_addr_r} /dtb/${fdtfile};
+#fdt addr ${fdt_addr_r};
+#fdt resize 8192;
+#load ${devtype} ${devnum}:${distro_bootpart} ${ramdisk_addr_r} /dtb/overlays/vc4-kms-v3d-pi4.dtbo;
+#fdt apply ${ramdisk_addr_r};
+#load ${devtype} ${devnum}:${distro_bootpart} ${ramdisk_addr_r} /dtb/overlays/miniuart-bt.dtbo;
+#fdt apply ${ramdisk_addr_r};
+#fdt set /audio status on;
+
+fdt addr ${fdt_addr_r};
+bootefi bootmgr ${fdt_addr_r};
+load mmc ${devnum}:${distro_bootpart} ${kernel_addr_r} /efi/boot/bootaa64.efi;
+bootefi ${kernel_addr_r} ${fdt_addr_r};
