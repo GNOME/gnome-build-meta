@@ -1,7 +1,6 @@
 kind: compose
 
 build-depends:
-- boards/raspberrypi-4/bsp.bst
 - boards/raspberrypi-4/deps.bst
 
 # Currently we just take everything and remove the
