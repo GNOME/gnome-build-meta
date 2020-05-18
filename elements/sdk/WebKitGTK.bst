@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.28.2.tar.xz
+  url: webkitgtk_org:webkitgtk-2.29.1.tar.xz
 - kind: patch
   path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
 - kind: local
@@ -37,6 +37,7 @@ depends:
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -49,9 +50,6 @@ variables:
   - arch == "arm":
       webkitgtk_arch_options: >-
         -DENABLE_GLES2=ON
-  - arch == "aarch64":
-      webkitgtk_arch_options: >-
-        -DWTF_CPU_ARM64_CORTEXA53:BOOL=OFF
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
