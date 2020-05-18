@@ -1,33 +1,40 @@
-kind: autotools
-
-build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/kmod.bst
-- freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/bc.bst
-- freedesktop-sdk.bst:components/gzip.bst
-
-
+kind: manual
 
 sources:
 - kind: git_tag
-  url: https://github.com/raspberrypi/linux
+  url: github_com:raspberrypi/linux.git
   # Aim to track 5.4 LTS work for vc4-kms etc
   # track: 5.4.y
   track: a98ba9221895e03b8736312ce6666005da5968a1
   track-tags: false
 
+depends:
+- freedesktop-sdk.bst:components/kmod.bst
+
+build-depends:
+- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:components/bc.bst
+- freedesktop-sdk.bst:components/gzip.bst
+
 variables:
-  make: make Image modules dtbs
+  bootdir: /boot
+  kernel_arch: arm64
+  image-name: arch/arm64/boot/Image
+
+environment:
+  ARCH: '%{kernel_arch}'
 
 config:
   configure-commands:
   - |
-    KERNEL=kernel8
-    make ARCH=arm64 bcm2711_defconfig
+    # Generate the default kernel config for the target architecture
+    make defconfig
 
   - |
+    # Modify the kernel config for additional features
+
     # Kernel Config Options
     scripts/config -e DEVTMPFS
     scripts/config -e CGROUPS
@@ -179,28 +186,64 @@ config:
     scripts/config -e NETDEVICES
     scripts/config -e WLAN
 
+    # Rpi4 support
+    scripts/config -e PCIE_BRCMSTB
+    scripts/config -e RASPBERRYPI_FIRMWARE
+    scripts/config -m SND_BCM2708_SOC_RPI_CIRRUS
+    scripts/config -m SND_BCM2708_SOC_RPI_DAC
+    scripts/config -m SND_BCM2708_SOC_RPI_PROTO
+    scripts/config -m SND_BCM2708_SOC_FE_PI_AUDIO
+    scripts/config -m SND_PISOUND
+    scripts/config -m SND_BCM2835
+    scripts/config -m VIDEO_BCM2835
+    scripts/config -m VIDEO_CODEC_BCM2835
+    scripts/config -e CLK_RASPBERRYPI
+    scripts/config -e BCM2835_POWER
+    scripts/config -m RPI_AXIPERF
+    scripts/config -m PWM_PCA9685
+    scripts/config -m MFD_ARIZONA_I2C
+    scripts/config -m MFD_ARIZONA_SPI
+    scripts/config -e MFD_WM5102
+    scripts/config -m BCMGENET
+    scripts/config -m BROADCOM_PHY
+    scripts/config -m BRCMFMAC_USB
+
     # Enable vc4 drm
-     scripts/config -e I2C_BCM2835
-     scripts/config -e DRM
-     scripts/config -e DRM_FBDEV_EMULATION
-     scripts/config -e DRM_VC4
+    scripts/config -e I2C_BCM2835
+    scripts/config -e DRM
+    scripts/config -e DRM_FBDEV_EMULATION
+    scripts/config -e DRM_VC4
+
+    # This was broken by this branch
+    scripts/config -d PCI_AARDVARK
+    scripts/config -d PCIE_ALTERA
+    scripts/config -d PCIE_ROCKCHIP_HOST
+
+  build-commands:
+  - |
+    make
 
   install-commands:
   - |
-    make INSTALL_MOD_PATH="%{install-root}/usr/" modules_install
-    mkdir -p %{install-root}/boot/
-    mkdir -p %{install-root}/boot/overlays
+    install -Dm644 "%{image-name}" '%{install-root}%{bootdir}/vmlinuz'
+    install -Dm644 System.map '%{install-root}%{bootdir}/System.map'
+    make INSTALL_MOD_PATH='%{install-root}%{prefix}' modules_install
 
-    cp arch/arm64/boot/Image %{install-root}/boot/kernel8.img
-    cp arch/arm64/boot/dts/broadcom/*.dtb* %{install-root}/boot/
-    cp arch/arm64/boot/dts/overlays/*.dtb* %{install-root}/boot/overlays/
-    cp arch/arm64/boot/dts/overlays/README %{install-root}/boot/overlays/
+    rm %{install-root}%{indep-libdir}/modules/*/{source,build}
+
+  - |
+    make INSTALL_DTBS_PATH='%{install-root}%{bootdir}/dtbs' dtbs_install
 
 public:
   bst:
-    split-rules:
-      boot:
-        - '/boot/*'
-      mods:
-        - '/lib/*'
+    integration-commands:
+    - |
+      cd '%{indep-libdir}/modules'
+      for version in *; do
+        depmod -b '%{prefix}' -a "$version";
+      done
 
+    split-rules:
+      devel:
+        (>):
+        - '%{bootdir}/System.map'
