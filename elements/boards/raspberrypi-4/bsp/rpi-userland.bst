@@ -9,7 +9,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-- boards/raspberrypi-4/bsp/kernel-modules.bst
+- boards/raspberrypi-4/bsp/linux.bst
 
 
 variables:

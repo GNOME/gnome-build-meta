@@ -1,0 +1,12 @@
+[Unit]
+Description=Fix hybrid partitions
+ConditionPathExists=/etc/initrd-release
+
+DefaultDependencies=no
+Before=initrd-root-fs.target sysroot.mount systemd-fsck-root.service
+After=initrd-root-device.target dracut-pre-mount.service endless-repartition.service
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/repair-mbr
+RemainAfterExit=yes
