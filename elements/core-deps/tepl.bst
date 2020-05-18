@@ -8,7 +8,6 @@ build-depends:
 - sdk/gobject-introspection.bst
 depends:
 - core-deps/amtk.bst
-- core-deps/uchardet.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
