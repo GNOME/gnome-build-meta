@@ -3,11 +3,8 @@
 set -eu
 
 : ${BST:=bst}
-export BST
-
 : ${REPO_ELEMENT:=vm/repo.bst}
-
-ref="$(${BST} show --format "%{vars}" --deps none "${REPO_ELEMENT}" | sed '/ostree-branch: /{;s///;q;};d')"
+: ${OSTREE_REPO:=ostree-repo}
 
 if ! [ -d ostree-gpg ]; then
     rm -rf ostree-gpg.tmp
@@ -29,12 +26,25 @@ EOF
     mv ostree-gpg.tmp ostree-gpg
 fi
 
-utils/update-repo.sh \
-    --gpg-homedir=ostree-gpg \
-    --gpg-sign="$(cat ostree-gpg/default-id)" \
-    --collection-id=org.gnome.GnomeOS \
-    --target-ref="${ref%/*}/devel" \
-    ostree-repo "${REPO_ELEMENT}" \
-    "${ref}"
+checkout="$(mktemp --suffix="-update-repo" -d -p "$(dirname ${OSTREE_REPO})")"
 
+on_exit() {
+    rm -rf "${checkout}"
+}
+trap on_exit EXIT
+
+${BST} build "${REPO_ELEMENT}"
+${BST} checkout --hardlinks "${REPO_ELEMENT}" "${checkout}"
+
+if ! [ -d ${OSTREE_REPO} ]; then
+    ostree init --repo=${OSTREE_REPO} --mode=archive
+fi
 gpg --homedir=ostree-gpg --export --armor >ostree-repo/key.gpg
+
+ref="$(ostree --repo="${checkout}" refs)"
+flatpak build-commit-from --gpg-homedir=ostree-gpg --gpg-sign="$(cat ostree-gpg/default-id)" \
+        --src-ref="${ref}" --src-repo="$checkout" \
+        --extra-collection-id=org.gnome.GnomeOS ${OSTREE_REPO} "${ref%/*}/devel"
+
+flatpak build-update-repo --gpg-homedir=ostree-gpg --gpg-sign="$(cat ostree-gpg/default-id)" \
+        --prune --generate-static-deltas ${OSTREE_REPO}
