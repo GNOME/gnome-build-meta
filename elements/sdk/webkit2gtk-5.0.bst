@@ -12,7 +12,6 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DUSE_GTK4=ON
-    %{webkitgtk_toolchain}
 
 public:
   bst:

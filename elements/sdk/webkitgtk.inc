@@ -3,10 +3,6 @@ sources:
   url: webkitgtk:webkitgtk-2.37.1.tar.xz
 - kind: patch
   path: files/webkitgtk/fix-cloop-build.patch
-- kind: local
-  path: files/webkitgtk/toolchain.i686
-- kind: local
-  path: files/webkitgtk/toolchain.arm
 
 build-depends:
 - sdk-deps/bubblewrap.bst
@@ -50,11 +46,9 @@ depends:
 
 variables:
   optimize-debug: 'false'
-  webkitgtk_toolchain: ''
   (?):
   - arch == "i686" or arch == "arm":
       debug_flags: "-g1"
-      webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
 
 public:
   cpe:

@@ -12,7 +12,6 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_WEBDRIVER=OFF
-    %{webkitgtk_toolchain}
 
 public:
   bst:
