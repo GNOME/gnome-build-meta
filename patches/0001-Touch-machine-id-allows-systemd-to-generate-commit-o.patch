@@ -1,0 +1,25 @@
+From 201e856dd636a688d61475ca0398921874623818 Mon Sep 17 00:00:00 2001
+From: Tom Pollard <tom.pollard@codethink.co.uk>
+Date: Mon, 18 May 2020 13:55:39 +0100
+Subject: [PATCH] Touch machine-id, allows systemd to generate & commit on boot
+
+---
+ files/vm/prepare-image.sh | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
+index a91344bc..76fb3946 100755
+--- a/files/vm/prepare-image.sh
++++ b/files/vm/prepare-image.sh
+@@ -94,6 +94,8 @@ systemctl --root "${sysroot}" preset-all
+ echo "Running systemctl preset-all for all users" 1>&2
+ systemctl --root "${sysroot}" --global preset-all
+ 
++touch "${sysroot}/etc/machine-id"
++
+ echo "Fix rights for /etc/shadow" 1>&2
+ touch "${sysroot}/etc/shadow"
+ chmod 0400 "${sysroot}/etc/shadow"
+-- 
+2.25.1
+
