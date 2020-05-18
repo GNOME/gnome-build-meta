@@ -123,7 +123,6 @@ depends:
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
 - core-deps/tracker-miners.bst
-- core-deps/uchardet.bst
 - core-deps/udisks2.bst
 - core-deps/uhttpmock.bst
 - core-deps/upower.bst
