@@ -1,24 +1,22 @@
 kind: cmake
+
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.29.1.tar.xz
 - kind: patch
   path: files/webkitgtk/webkit-bug-212043.patch
-- kind: patch
-  path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
-- kind: local
-  path: files/webkitgtk/toolchain.i686
-- kind: local
-  path: files/webkitgtk/toolchain.arm
+
 build-depends:
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 runtime-depends:
 - sdk/gst-libav.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
+
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
@@ -43,20 +41,22 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
-  webkitgtk_toolchain: ''
   webkitgtk_arch_options: ''
   (?):
-  - arch == "i686" or arch == "arm":
-      webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
+  - arch == "i686":
+      webkitgtk_arch_options: >-
+        -DCMAKE_BUILD_TYPE=Release
   - arch == "arm":
       webkitgtk_arch_options: >-
+        -DCMAKE_BUILD_TYPE=Release
         -DENABLE_GLES2=ON
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
-    %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
+
 (?):
 - arch == "i686":
     environment:
@@ -66,6 +66,7 @@ variables:
     environment:
       CFLAGS: '%{flags_arm} -g1'
       CXXFLAGS: '%{flags_arm} -g1'
+
 public:
   bst:
     split-rules:
