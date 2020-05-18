@@ -1,7 +1,8 @@
 kind: meson
 sources:
-- kind: tar
-  url: https://source.puri.sm/Librem5/libhandy/-/archive/v0.0.12/libhandy-v0.0.12.tar.bz2
+- kind: git_tag
+  url: gitlab_gnome_org:GNOME/libgweather.git
+  track: libhandy-0-0
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
