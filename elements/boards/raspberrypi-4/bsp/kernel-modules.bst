@@ -7,9 +7,3 @@ config:
   exclude:
   - boot
   include-orphans: True
-
-public:
-  bst:
-    overlap-whitelist:
-    # FIX
-    - '**'
