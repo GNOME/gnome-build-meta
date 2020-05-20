@@ -1,15 +1,9 @@
 kind: filter
-depends:
-- filename: boards/raspberrypi-4/bsp/linux.bst
-  type: build
+
+build-depends:
+- boards/raspberrypi-4/bsp/linux.bst
 
 config:
   exclude:
   - boot
   include-orphans: True
-
-public:
-  bst:
-    overlap-whitelist:
-    # FIX
-    - '**'
