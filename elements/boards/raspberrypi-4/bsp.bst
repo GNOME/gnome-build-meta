@@ -7,4 +7,3 @@ depends:
   - filename: boards/raspberrypi-4/bsp/firmware.bst
   - filename: boards/raspberrypi-4/bsp/userland-firmware.bst
   - filename: boards/raspberrypi-4/bsp/boot.bst
-  - filename: boards/raspberrypi-4/bsp/kernel-modules.bst
