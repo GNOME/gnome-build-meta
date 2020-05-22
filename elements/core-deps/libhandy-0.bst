@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libhandy.git
-  track: master
+  track: libhandy-0-0
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
