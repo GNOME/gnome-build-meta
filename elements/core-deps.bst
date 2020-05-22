@@ -68,7 +68,7 @@ depends:
 - core-deps/libgusb.bst
 - core-deps/libgweather.bst
 - core-deps/libgxps.bst
-- core-deps/libhandy.bst
+- core-deps/libhandy-0.bst
 - core-deps/libmbim.bst
 - core-deps/libmediaart.bst
 - core-deps/libmusicbrainz.bst
