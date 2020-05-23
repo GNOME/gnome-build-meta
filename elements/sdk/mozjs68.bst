@@ -14,18 +14,12 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  mozjs_target: ''
-  (?):
-  - arch == "i686":
-      mozjs_target: --host=i686-unknown-linux-gnu
-  - arch == "arm":
-      mozjs_target: --host=armv7-unknown-linux-gnueabihf
   command-subdir: _build
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
 config:
   configure-commands:
-  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc --enable-unaligned-private-values AUTOCONF=autoconf %{mozjs_target}
+  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc --enable-unaligned-private-values AUTOCONF=autoconf
   build-commands:
   - make
   install-commands:
