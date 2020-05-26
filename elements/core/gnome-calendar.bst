@@ -9,7 +9,7 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libdazzle.bst
-- core-deps/libhandy-0.bst
+- core-deps/libhandy.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
