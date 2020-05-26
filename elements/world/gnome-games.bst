@@ -10,7 +10,7 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/libhandy.bst
+- core-deps/libhandy-0.bst
 - core-deps/tracker-miners-2.bst
 - core-deps/tracker-2.bst
 - sdk/adwaita-icon-theme.bst
