@@ -21,6 +21,7 @@ variables:
   - arch == "arm":
       mozjs_target: --host=armv7-unknown-linux-gnueabihf
   command-subdir: _build
+  local_flags: -Wno-tautological-unsigned-enum-zero-compare # FIXME: This is a bug in mozjs    
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
 config:
