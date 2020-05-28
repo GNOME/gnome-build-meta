@@ -14,3 +14,5 @@ variables:
     --without-keyutils
     --without-bash
     --disable-docs
+
+  local_flags: -fcommon
