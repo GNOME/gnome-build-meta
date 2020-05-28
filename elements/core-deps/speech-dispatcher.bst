@@ -14,3 +14,5 @@ depends:
 variables:
   conf-local: >-
     --with-espeak
+
+  local_flags: -fcommon
