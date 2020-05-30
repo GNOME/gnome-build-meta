@@ -11,4 +11,5 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
+- freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
