@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/amtk.git
-  track: master
+- kind: tar
+  url: gnome_downloads:amtk/5.1/amtk-5.1.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

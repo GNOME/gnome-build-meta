@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glibmm.git
-  track: glibmm-2-64
+- kind: tar
+  url: gnome_downloads:glibmm/2.64/glibmm-2.64.2.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst

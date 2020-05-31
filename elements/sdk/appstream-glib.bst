@@ -1,10 +1,8 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: github_com:hughsie/appstream-glib.git
-  track: master
-
+- kind: tar
+  url: people_freedesktop_org:~hughsient/appstream-glib/releases/appstream-glib-0.7.17.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

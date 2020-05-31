@@ -1,12 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk-vnc.git
-  track: master
-  submodules:
-    subprojects/keycodemapdb:
-      checkout: true
-      url: gitlab_com:keycodemap/keycodemapdb.git
+- kind: tar
+  url: gnome_downloads:gtk-vnc/1.0/gtk-vnc-1.0.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
