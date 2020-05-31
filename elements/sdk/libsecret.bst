@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsecret.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libsecret/0.20/libsecret-0.20.3.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/cheese.git
-  track: master
+- kind: tar
+  url: gnome_downloads:cheese/3.34/cheese-3.34.0.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

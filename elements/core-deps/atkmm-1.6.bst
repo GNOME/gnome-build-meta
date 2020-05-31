@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/atkmm.git
-  track: atkmm-2-28
+- kind: tar
+  url: gnome_downloads:atkmm/2.28/atkmm-2.28.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

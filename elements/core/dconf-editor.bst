@@ -1,9 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/dconf-editor.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:dconf-editor/3.36/dconf-editor-3.36.2.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

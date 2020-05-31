@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:libsigcplusplus/libsigcplusplus.git
-  track: libsigc++-2-10
+- kind: tar
+  url: gnome_downloads:libsigc++/2.10/libsigc++-2.10.3.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
