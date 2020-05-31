@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/librest.git
-  track: librest-0-7
+- kind: tar
+  url: gnome_downloads:rest/0.8/rest-0.8.1.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

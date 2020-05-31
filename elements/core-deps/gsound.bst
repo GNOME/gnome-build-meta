@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gsound.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gsound/1.0/gsound-1.0.2.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

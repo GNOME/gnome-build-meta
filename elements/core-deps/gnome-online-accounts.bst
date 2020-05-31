@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.36/gnome-online-accounts-3.36.0.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
