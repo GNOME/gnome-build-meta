@@ -1,10 +1,8 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gegl.git
-  track: master
-
+- kind: tar
+  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.22.tar.xz
 build-depends:
 - sdk/python2.bst
 - sdk/vala.bst

@@ -1,9 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-tour.git
-  track: master
-- kind: cargo
+- kind: tar
+  url: gnome_downloads:gnome-tour/3.37/gnome-tour-3.37.1.tar.xz
 build-depends:
 - freedesktop-sdk.bst:extensions/rust/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

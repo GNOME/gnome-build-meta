@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-initial-setup/3.37/gnome-initial-setup-3.37.1.tar.xz
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
