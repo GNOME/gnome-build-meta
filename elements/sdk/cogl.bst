@@ -2,6 +2,8 @@ kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:cogl/1.22/cogl-1.22.6.tar.xz
+- kind: patch
+  url: files/cogl/libglvnd-egl.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
