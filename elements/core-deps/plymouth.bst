@@ -3,8 +3,6 @@ kind: autotools
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.4.tar.xz
-- kind: patch
-  path: files/plymouth/no-intltool.patch
 
 depends:
 - sdk/gtk+-3.bst
@@ -13,6 +11,7 @@ depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 build-depends:
+- core-deps/intltool.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
