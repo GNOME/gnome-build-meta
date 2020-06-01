@@ -16,6 +16,8 @@ depends:
 - freedesktop-sdk.bst:components/pcre2.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  local_flags: '-fno-exceptions'
 public:
   bst:
     split-rules:
