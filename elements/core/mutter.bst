@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/3.34/mutter-3.34.5.tar.xz
-  ref: d1d149b70ed7330771f4524886b98775fce5a11cf17f9683cba151075f2879c4
+  url: gnome_downloads:mutter/3.34/mutter-3.34.6.tar.xz
+  ref: 23bde87d33b8981358831cec8915bb5ff1eaf9c1de74c90cd1660b1b95883526
 depends:
 - core/gnome-settings-daemon.bst
 - core-deps/startup-notification.bst

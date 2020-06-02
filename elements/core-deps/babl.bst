@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.74.tar.xz
-  ref: 9a710b6950da37ada94cd9e2046cbce26de12473da32a7b79b7d1432fc66ce0e
+  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.76.tar.xz
+  ref: 0084749f7f6050c1d3543067e527665b65e183c1fb80816ea37b2380bd9073a0
 depends:
 - filename: sdk/gobject-introspection.bst
   type: build
@@ -16,3 +16,6 @@ depends:
   type: build
 - filename: bootstrap-import.bst
   junction: freedesktop-sdk.bst
+variables:
+  meson-local: >-
+    -Denable-vapi=false
