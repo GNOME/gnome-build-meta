@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.20/NetworkManager-1.20.10.tar.xz
-  ref: d1de21754ad125671e9c50b5a67f9e47f7c9409937bac08ae9a8005a445945c5
+  url: gnome_downloads:NetworkManager/1.20/NetworkManager-1.20.12.tar.xz
+  ref: 949964322636c828d3996eb7c0b9a6d3f9f30546d51c042af776ea01905fe43c
 depends:
 - filename: core-deps/intltool.bst
   type: build
