@@ -15,3 +15,5 @@ environment:
   JOBS: '%{max-jobs}'
 environment-nocache:
 - JOBS
+variables:
+  local_flags: -fcommon

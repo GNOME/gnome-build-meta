@@ -4,6 +4,8 @@ sources:
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-68.4.2.tar.bz2
 - kind: patch
   path: files/mozjs68/armv7_disable_WASM_EMULATE_ARM_UNALIGNED_FP_ACCESS.patch
+- kind: patch
+  path: files/mozjs68/build-fix.patch
 build-depends:
 - sdk/python2.bst
 - freedesktop-sdk.bst:components/autoconf.bst
