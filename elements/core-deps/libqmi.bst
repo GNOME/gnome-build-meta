@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libqmi/libqmi-1.24.10.tar.xz
-  ref: c2121243b5da8bcffc8f6f5ca0d7217498f94fffd115883763282c68f255fde7
+  url: https://www.freedesktop.org/software/libqmi/libqmi-1.25.900.tar.xz
+  ref: c7f51d2e94c05d48a1fa6647fdcffcf85abdabc81169fcf9d7c4e3b314712629
 depends:
 - core-deps/libgudev.bst
 - sdk/glib.bst
