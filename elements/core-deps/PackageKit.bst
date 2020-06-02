@@ -1,8 +1,8 @@
-kind: autotools
+kind: auotools
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/PackageKit/releases/PackageKit-1.1.13.tar.xz
-  ref: 88b64130cca54a4e7a223d2ccf1b80cf5a19375fdd8bbb54498d16c3a2a221b7
+  ref:
 depends:
 - core-deps/NetworkManager.bst
 - filename: core-deps/intltool.bst
