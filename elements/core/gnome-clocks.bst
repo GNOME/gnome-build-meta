@@ -9,7 +9,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
 - core-deps/libgweather.bst
-- core-deps/libhandy-0.bst
+- core-deps/libhandy.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
