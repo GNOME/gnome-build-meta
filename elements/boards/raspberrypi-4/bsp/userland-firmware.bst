@@ -3,7 +3,9 @@ kind: cmake
 sources:
 - kind: git_tag
   url: https://github.com/raspberrypi/userland/
-  track: a246147c21ae5be92ad1b85199b5b0bb447e0544
+  track: f97b1af1b3e653f9da2c1a3643479bfd469e3b74
+- kind: patch
+  path: files/raspberrypi-4/0021-cmake-Disable-format-overflow-warning-as-error.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
