@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:simple-scan/3.34/simple-scan-3.34.6.tar.xz
-  ref: 019b2d4d65899efb412b7a46aca7ea01b46c5663dbfa1c0c9623aec5141de95b
+  url: gnome_downloads:simple-scan/3.34/simple-scan-3.34.7.tar.xz
+  ref: f1593627e3711f6cb75723a21b47e7a38072de410e56f3aa9e92bcb19a212949
 depends:
 - core-deps/PackageKit.bst
 - core-deps/colord-gtk.bst
