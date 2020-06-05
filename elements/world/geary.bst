@@ -13,7 +13,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gsound.bst
 - core-deps/gspell.bst
-- core-deps/libhandy.bst
+- core-deps/libhandy-0.bst
 - core-deps/libpeas.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst

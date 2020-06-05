@@ -14,7 +14,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gtk-vnc.bst
-- core-deps/libhandy.bst
+- core-deps/libhandy-0.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/spice-gtk.bst
