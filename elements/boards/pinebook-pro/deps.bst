@@ -19,6 +19,7 @@ runtime-depends:
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
+- freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - vm/flathub-config.bst
 
 # And add GNOME core on top !
