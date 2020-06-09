@@ -30,6 +30,10 @@ public:
   bst:
     integration-commands:
     - glib-compile-schemas %{prefix}/share/glib-2.0/schemas
+    - |
+      if [ -d "%{libdir}/gio/modules" ]; then
+        gio-querymodules "%{libdir}/gio/modules"
+      fi
     overlap-whitelist:
     - '**'
     split-rules:
