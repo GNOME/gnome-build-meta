@@ -18,3 +18,6 @@ runtime-depends:
 - sdk-platform.bst
 - core.bst
 - core/systemd-presets.bst
+
+- vm/pinentry.bst
+- freedesktop-sdk.bst:components/ccid.bst
