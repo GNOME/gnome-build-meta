@@ -6,7 +6,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/libusb.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/libusb.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
