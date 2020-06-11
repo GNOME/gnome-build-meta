@@ -5,5 +5,5 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/libusb.bst
+- freedesktop-sdk.bst:components/libusb.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
