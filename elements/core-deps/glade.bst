@@ -8,6 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/WebKitGTK.bst
+- sdk/gjs.bst
 - sdk/gtk+-3.bst
 - sdk/pygobject.bst
 public:
