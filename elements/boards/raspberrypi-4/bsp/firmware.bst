@@ -8,7 +8,7 @@ build-depends:
 sources:
 - kind: git_tag
   url: https://github.com/raspberrypi/firmware
-  track: 20354bebcc2a8448128f2348e19e155910d25122
+  track: a833d278ef38265090d7ea679027331556dc4b2c
   track-tags: false
 
 config:

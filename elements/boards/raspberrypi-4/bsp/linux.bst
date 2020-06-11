@@ -15,7 +15,7 @@ sources:
   url: https://github.com/raspberrypi/linux
   # Aim to track 5.4 LTS work for vc4-kms etc
   # track: 5.4.y
-  track: a98ba9221895e03b8736312ce6666005da5968a1
+  track: dec0ddc506ab5d93a7de4b8a7c8dc98e0a96f85c
   track-tags: false
 
 variables:
