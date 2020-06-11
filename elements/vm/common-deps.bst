@@ -8,6 +8,7 @@ runtime-depends:
 - vm/dev-repo-script.bst
 - vm/flathub-config.bst
 - vm/ostree-config.bst
+- vm/pinentry.bst
 - vm/plymouth-gnome-theme.bst
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
@@ -18,6 +19,7 @@ runtime-depends:
 - freedesktop-sdk.bst:vm/config/journald.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
+- freedesktop-sdk.bst:components/ccid.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
