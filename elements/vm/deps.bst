@@ -13,11 +13,13 @@ runtime-depends:
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
+- vm/pinentry.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
+- freedesktop-sdk.bst:components/ccid.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
