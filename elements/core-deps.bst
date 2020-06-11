@@ -82,7 +82,6 @@ depends:
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
 - core-deps/libssh2.bst
-- core-deps/libusb.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
 - core-deps/libxklavier.bst
