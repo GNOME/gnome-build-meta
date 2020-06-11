@@ -39,3 +39,6 @@ runtime-depends:
 - vm/wpa-supplicant-config.bst
 
 - boards/pinebook-pro/disable-suspend.bst
+
+- vm/pinentry.bst
+- freedesktop-sdk.bst:components/ccid.bst

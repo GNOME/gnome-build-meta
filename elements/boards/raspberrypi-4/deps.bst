@@ -35,3 +35,6 @@ runtime-depends:
 
 - boards/raspberrypi-4/bsp/firmware.bst
 - boards/raspberrypi-4/bsp/rpi-userland.bst
+
+- vm/pinentry.bst
+- freedesktop-sdk.bst:components/ccid.bst
