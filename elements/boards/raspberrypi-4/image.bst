@@ -85,7 +85,7 @@ config:
   # FIXME: We should try to load the overlay from u-boot instead.
   - |
     mkdir -p "%{sysroot}/boot/overlays"
-    cp -r "/kernel/boot/dtbs/overlays/vc4-fkms-v3d.dtbo" "%{sysroot}/boot/overlays/"
+    cp -r "/kernel/boot/dtbs/overlays/vc4-kms-v3d-pi4.dtbo" "%{sysroot}/boot/overlays/"
 
   - |
     cat >"%{sysroot}/boot/config.txt" <<EOF
@@ -93,7 +93,7 @@ config:
     start_x=1
     # FIXME: We should maybe try to load fdt and overlays from u-boot
     device_tree_address=0x02600000
-    dtoverlay=vc4-fkms-v3d
+    dtoverlay=vc4-kms-v3d-pi4
     dtparam=audio=on
     EOF
 
