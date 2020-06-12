@@ -40,5 +40,4 @@ runtime-depends:
 
 - boards/pinebook-pro/disable-suspend.bst
 
-- vm/pinentry.bst
 - freedesktop-sdk.bst:components/ccid.bst
