@@ -25,6 +25,9 @@ variables:
 
 config:
   configure-commands:
+  - |
+    sed -i "/YYLTYPE yylloc;/d" scripts/dtc/dtc-lexer.l
+
   - make "%{board}_defconfig"
 
   build-commands:
