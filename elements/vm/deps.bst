@@ -21,4 +21,5 @@ runtime-depends:
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
+- freedesktop-sdk.bst:components/steam-devices.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
