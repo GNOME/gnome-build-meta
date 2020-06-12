@@ -43,6 +43,7 @@ depends:
 - sdk/mozjs68.bst
 - sdk/os-release.bst
 - sdk/pango.bst
+- sdk/pinentry.bst
 - sdk/pipewire.bst
 - sdk/pycairo.bst
 - sdk/pygobject.bst
