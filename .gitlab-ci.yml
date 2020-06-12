@@ -247,6 +247,8 @@ track:
   retry: 2
   # only run on branches targeting master
   rules:
+  - exists: [project.refs]
+    when: never
   - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
   artifacts:
     paths:
@@ -431,6 +433,27 @@ ostree-finish-failed:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: on_failure
   <<: *x86_64
+
+
+buildmaster:
+  <<: *x86_64
+  stage: reports
+  dependencies: [track]
+  script:
+  - git config user.name "GNOME Gitlab CI"
+  - git config user.email ""
+  - git remote set-url --push origin https://akitouni:$AKITOUNI_ACCESS_TOKEN@gitlab.gnome.org/GNOME/gnome-build-meta.git
+
+  - mv project.refs project.refs.temp
+  - git switch buildmaster
+  - git merge --no-commit origin/master
+  - mv project.refs.temp project.refs
+  - git add -f project.refs
+
+  - git commit -m "Pipeline $CI_PIPELINE_ID"
+  - git push origin buildmaster
+  rules:
+  - if: $AKITOUNI_ACCESS_TOKEN && $CI_COMMIT_REF_NAME == 'master'
 
 cve_report:
   <<: *x86_64
