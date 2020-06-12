@@ -8,7 +8,6 @@ runtime-depends:
 - vm/dev-repo-script.bst
 - vm/flathub-config.bst
 - vm/ostree-config.bst
-- vm/pinentry.bst
 - vm/plymouth-gnome-theme.bst
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
