@@ -2,6 +2,7 @@ kind: compose
 
 build-depends:
 - vm/deps.bst
+- vm/initramfs.bst
 
 # Currently we just take everything and remove the
 # devel stuff (headers and static libraries), and debugging
