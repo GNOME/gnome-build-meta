@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/3.36/mutter-3.36.2.tar.xz
-  ref: 75b3764eb059fc935a54523a62bec1bedb935284046b6daa50869b195adddaf4
+  url: gnome_downloads:mutter/3.36/mutter-3.36.3.tar.xz
+  ref: 6ace742e8d889083d3c32d79543d9022483f0b00b630eceab5e3804aad3aeed2
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

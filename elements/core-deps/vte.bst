@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:vte/0.60/vte-0.60.2.tar.xz
-  ref: 35a0280e3f12feeb3096da05699191373c47a4a20c55cb7081e828e6015f8ca5
+  url: gnome_downloads:vte/0.60/vte-0.60.3.tar.xz
+  ref: feb76e1181a357d86112d447a08d127e2081438df76ece83243b18609dd9822a
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
