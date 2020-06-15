@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.22.tar.xz
-  ref: 1888ec41dfd19fe28273795c2209efc1a542be742691561816683990dc642c61
+  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.24.tar.xz
+  ref: 7765499f27341b0d16032e665319cbc12876483ff6a944fcdf24a9c58e3e254a
 depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst

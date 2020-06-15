@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/3.36/gnome-boxes-3.36.3.tar.xz
-  ref: 228924013dc7d63712c06a597e45cbc1951b8211c02b4ffe28f9a582c2ee35a2
+  url: gnome_downloads:gnome-boxes/3.36/gnome-boxes-3.36.5.tar.xz
+  ref: 4c54cabe355e878d0457517346e4247a860b6883413d3bf77681dcd11ef41bce
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
