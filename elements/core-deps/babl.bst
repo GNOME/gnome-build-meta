@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.74.tar.xz
-  ref: 9a710b6950da37ada94cd9e2046cbce26de12473da32a7b79b7d1432fc66ce0e
+  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.78.tar.xz
+  ref: 17d5493633bff5585d9f375bc4df5925157cd1c70ccd7c22a635be75c172523a
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
