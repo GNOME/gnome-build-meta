@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/3.36/gnome-initial-setup-3.36.2.tar.xz
-  ref: 4f8be41aea100c56dbf8f0fe1e2354d2d1ac05cf1c79a01cc975c6aa89145756
+  url: gnome_downloads:gnome-initial-setup/3.36/gnome-initial-setup-3.36.3.tar.xz
+  ref: d8a933f8c822cc293cc10b532779f8562342ae2271b929879e8f108491f4c285
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config

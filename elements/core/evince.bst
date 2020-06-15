@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:evince/3.36/evince-3.36.0.tar.xz
-  ref: 851d9b5234d479ab4c8f7c5cbaceb0e91ad79ccba1a7b733cde72dacc928fba8
+  url: gnome_downloads:evince/3.36/evince-3.36.5.tar.xz
+  ref: 6f0dd6e30639eb620f201a6ae40f21c4b78c030f0d6437f9e309f7240195e97c
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
