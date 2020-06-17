@@ -92,7 +92,6 @@ depends:
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/mogwai.bst
-- core-deps/mozjs60.bst
 - core-deps/mpc.bst
 - core-deps/mpfr.bst
 - core-deps/ndctl.bst
