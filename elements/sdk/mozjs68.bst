@@ -7,7 +7,6 @@ sources:
 - kind: patch
   path: files/mozjs68/build-fix.patch
 build-depends:
-- sdk/python2.bst
 - freedesktop-sdk.bst:components/autoconf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/python3.bst
