@@ -6,7 +6,6 @@ sources:
   track: master
 
 build-depends:
-- sdk/python2.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
