@@ -2,11 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.29.1.tar.xz
-- kind: patch
-  path: files/webkitgtk/webkit-bug-212043.patch
-- kind: patch
-  path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
+  url: webkitgtk_org:webkitgtk-2.29.2.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
