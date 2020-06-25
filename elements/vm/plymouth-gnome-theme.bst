@@ -25,5 +25,4 @@ config:
 public:
   bst:
     overlap-whitelist:
-    # need to omit the leading slash because of buildstream #721
-    - 'usr/share/plymouth/plymouthd.defaults'
+    - '%{datadir}/plymouth/plymouthd.defaults'
