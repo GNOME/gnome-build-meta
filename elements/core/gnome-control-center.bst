@@ -28,6 +28,7 @@ depends:
 - core-deps/libhandy-0.bst
 - core-deps/libnma.bst
 - core-deps/samba.bst
+- core-deps/system-config-printer.bst
 - core-deps/udisks2.bst
 - core-deps/upower.bst
 - core/cheese.bst
