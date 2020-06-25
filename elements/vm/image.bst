@@ -76,7 +76,7 @@ config:
             extraargs = "-F32 -n EFI"
         }
         mountpoint = "/boot"
-        size = 100M
+        size = 500M
     }
     image root.img {
         ext4  {
