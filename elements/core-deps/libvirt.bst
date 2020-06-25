@@ -8,6 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - freedesktop-sdk.bst:components/libnl.bst
+- core-deps/qemu.bst
 - core-deps/lvm2.bst
 - core-deps/portablexdr.bst
 - freedesktop-sdk.bst:components/gnutls.bst
