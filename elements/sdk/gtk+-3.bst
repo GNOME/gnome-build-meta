@@ -20,6 +20,7 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
