@@ -15,6 +15,7 @@ depends:
 - core-deps/cairomm-1.0.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
+- core-deps/cups-pk-helper.bst
 - core-deps/dotconf.bst
 - core-deps/eos-updater.bst
 - core-deps/espeak.bst
@@ -98,6 +99,7 @@ depends:
 - core-deps/portaudio.bst
 - core-deps/ppp.bst
 - core-deps/pyatspi.bst
+- core-deps/pycups.bst
 - core-deps/python-pyparsing.bst
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
@@ -106,6 +108,7 @@ depends:
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
 - core-deps/startup-notification.bst
+- core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
 - core-deps/tepl.bst
 - core-deps/totem-pl-parser.bst
