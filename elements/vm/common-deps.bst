@@ -20,6 +20,7 @@ runtime-depends:
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:components/ccid.bst
 - freedesktop-sdk.bst:components/gamemode.bst
+- freedesktop-sdk.bst:components/gnupg-systemd.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/man-db.bst
 - freedesktop-sdk.bst:components/man-pages-posix.bst
