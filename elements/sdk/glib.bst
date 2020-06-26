@@ -44,6 +44,8 @@ public:
           fi
         done
       done
+    # remove this once freedesktop-sdk updates to 2.66
+    - rm -f /usr/include/glib-2.0/glib/gurifuncs.h
     overlap-whitelist:
     - '**'
     split-rules:
