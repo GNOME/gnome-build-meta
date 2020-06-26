@@ -27,4 +27,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/man-pages.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
 - freedesktop-sdk.bst:components/steam-devices.bst
+- freedesktop-sdk.bst:components/usbutils.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
