@@ -5,6 +5,7 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/systemd.bst
 depends:
 - core-deps/libusb.bst
 - sdk/gobject-introspection.bst
