@@ -40,7 +40,11 @@ default:
     projects:
       gnome:
         artifacts:
-          url: https://cache.gitlab.gnome.org:11002
+        - url: https://cache.gitlab.gnome.org:11002
+          client-key: client.key
+          client-cert: client.crt
+          push: true
+        - url: https://bst-cas-pullpush.openshift.gnome.org
           client-key: client.key
           client-cert: client.crt
           push: true
