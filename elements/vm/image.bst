@@ -22,13 +22,15 @@ variables:
 
 environment:
   OSTREE_REPO: "%{sysroot}/ostree/repo"
+  XZFLAGS: -T%{max-jobs}
+
+environment-nocache:
+- XZFLAGS
 
 config:
   layout:
   - element: ''
     destination: '/sysroot'
-  - element: ''
-    destination: '/genimage'
   - element: vm/repo.bst
     destination: '/source-repo'
   - element: core-deps/libostree.bst
@@ -70,7 +72,7 @@ config:
     cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"
 
   - |
-    cat >/genimage/genimage.cfg <<EOF
+    cat > %{install-root}/genimage.cfg <<EOF
     image efi.img {
         vfat {
             extraargs = "-F32 -n EFI"
@@ -102,13 +104,12 @@ config:
     EOF
 
   - |
-    cd /genimage
+    cd %{install-root}
     genimage --rootpath "%{sysroot}"
+    mv images/disk.img .
+    rm -rf genimage.cfg images/ tmp/
 
   # FIXME: Propose support for part attrs in genimage project
-  - sfdisk --part-attrs /genimage/images/disk.img 2 55
+  - sfdisk --part-attrs %{install-root}/disk.img 2 55
 
-  - |
-    qemu-img convert -f raw -O qcow2 \
-        /genimage/images/disk.img \
-        "%{install-root}/disk.qcow2"
+  - xz ${XZFLAGS} %{install-root}/disk.img
