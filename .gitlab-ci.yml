@@ -41,9 +41,11 @@ default:
     projects:
       gnome:
         artifacts:
-          url: https://bst-cas-pullpush.openshift.gnome.org
+        - url: https://bst-cas-pullpush.openshift.gnome.org
           client-key: client.key
           client-cert: client.crt
+          push: true
+        - url: http://147.75.194.17:11002
           push: true
     EOF
 
