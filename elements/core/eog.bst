@@ -19,4 +19,5 @@ depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libexif.bst
+- freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
