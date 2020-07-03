@@ -33,6 +33,7 @@ variables:
     -Dflatpak=true
     -Deos_updater=true
     -Dpackagekit=false
+    -Dsysprof=disabled
 config:
   configure-commands:
     (<):
