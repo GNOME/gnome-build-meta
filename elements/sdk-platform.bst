@@ -198,7 +198,6 @@ depends:
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/pciutils.bst
 - freedesktop-sdk.bst:components/pixman.bst
-- freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/sdl2-image.bst
 - freedesktop-sdk.bst:components/sdl2-mixer.bst
 - freedesktop-sdk.bst:components/sdl2-net.bst
