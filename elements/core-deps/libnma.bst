@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libnma/1.8/libnma-1.8.28.tar.xz
-  ref: 4af69552d131a3b2b8b6a2df584044258bf588448dcdb4bddfa12a07c134b726
+  url: gnome_downloads:libnma/1.8/libnma-1.8.30.tar.xz
+  ref: da33e72a49e07d855d97a52aa9a8962a4c96f52b9168c4e0027117ad8ffdafb4
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-maps/3.36/gnome-maps-3.36.2.tar.xz
-  ref: 5ba219b9de98678cefa5848f6538db8dbd07f6c747fd43a99167a266878a9784
+  url: gnome_downloads:gnome-maps/3.36/gnome-maps-3.36.4.tar.xz
+  ref: 1f56c5dc0581bc2f4321b6c37baf5727f331323ee8288298f494449f223d8ac6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
