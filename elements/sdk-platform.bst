@@ -184,7 +184,6 @@ depends:
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/libthai.bst
-- freedesktop-sdk.bst:components/libva-vdpau-driver.bst
 - freedesktop-sdk.bst:components/libva.bst
 - freedesktop-sdk.bst:components/libvdpau.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
