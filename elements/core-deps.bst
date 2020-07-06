@@ -48,7 +48,6 @@ depends:
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
 - core-deps/iptables.bst
-- core-deps/json-c.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libatasmart.bst
 - core-deps/libbytesize.bst

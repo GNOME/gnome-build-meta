@@ -5,7 +5,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/json-c.bst
+- freedesktop-sdk.bst:components/json-c.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/kmod.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
