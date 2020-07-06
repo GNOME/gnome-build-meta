@@ -16,7 +16,7 @@ build-depends:
 
 depends:
 - sdk/gobject-introspection.bst
-- sdk/mozjs68.bst
+- core-deps/mozjs60.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
