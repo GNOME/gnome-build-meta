@@ -13,8 +13,8 @@ runtime-depends:
 - sdk/adwaita-icon-theme.bst
 
 depends:
-- core-deps/polkit.bst
 - core-deps/libdazzle.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -10,6 +10,6 @@ build-depends:
 
 depends:
 - core-deps/accountsservice.bst
-- core-deps/polkit.bst
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
