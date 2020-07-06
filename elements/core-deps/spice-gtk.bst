@@ -13,7 +13,6 @@ build-depends:
 
 depends:
 - core-deps/phodav.bst
-- core-deps/polkit.bst
 - core-deps/spice-protocol.bst
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
@@ -23,6 +22,7 @@ depends:
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libdrm.bst
+- freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
