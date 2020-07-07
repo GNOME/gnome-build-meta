@@ -8,7 +8,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/eos-updater.bst
-- core-deps/polkit.bst
 - core-deps/flatpak.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
@@ -24,6 +23,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
