@@ -7,7 +7,7 @@ variables:
   BST_TRACK_TAGS: 'False'
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: 3.38beta
+  FLATPAK_BRANCH: master
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
