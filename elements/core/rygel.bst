@@ -15,6 +15,7 @@ depends:
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
 - core-deps/libmediaart.bst
+- core-deps/tracker-2.bst
 - sdk/libgee.bst
 - sdk/tracker.bst
 - sdk/vala.bst
