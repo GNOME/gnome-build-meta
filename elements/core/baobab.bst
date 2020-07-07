@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/baobab.git
-  track: master
+- kind: tar
+  url: gnome_downloads:baobab/3.35/baobab-3.35.2.tar.xz
+  ref: 983e6670e5c45e25552117f59db3132b0f3dffc9b3a59a038d7751fcbf7d6773
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

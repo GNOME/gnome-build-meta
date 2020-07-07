@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gtk/3.98/gtk-3.98.5.tar.xz
+  ref: 9823cc08f8b7130e46478cdb9b0b6f9f7a0f240420b6c4ab09556a505446f97f
 build-depends:
 - sdk-deps/sassc.bst
 - sdk/gtk-doc.bst

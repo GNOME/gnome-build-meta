@@ -1,7 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.7.0.tar.xz
+  url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.8.0.tar.xz
+  ref: e9811a936e74dc262ce297ea7b8addeb111c782de500c9e285d3cdd5fe1b180d
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

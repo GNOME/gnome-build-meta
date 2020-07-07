@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-builder.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-builder/3.36/gnome-builder-3.36.1.tar.xz
+  ref: 22ab39f3c974e9b3f37c9c0b1879a0045b79dc86a670936743595d2f4babfb9e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:

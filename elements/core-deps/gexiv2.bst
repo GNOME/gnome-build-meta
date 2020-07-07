@@ -1,7 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gexiv2/0.12/gexiv2-0.12.0.tar.xz
+  url: gnome_downloads:gexiv2/0.12/gexiv2-0.12.1.tar.xz
+  ref: 8aeafd59653ea88f6b78cb03780ee9fd61a2f993070c5f0d0976bed93ac2bd77
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

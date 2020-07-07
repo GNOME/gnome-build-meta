@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gegl.git
-  track: master
-
+- kind: tar
+  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.24.tar.xz
+  ref: 7765499f27341b0d16032e665319cbc12876483ff6a944fcdf24a9c58e3e254a
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

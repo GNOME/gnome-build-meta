@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker.git
-  track: tracker-2.3
+- kind: tar
+  url: gnome_downloads:tracker/2.3/tracker-2.3.4.tar.xz
+  ref: 577952244ab977c78b0b88e2f63c4197eaba16e4d66bff692b7f58993e06516d
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/dbus.bst

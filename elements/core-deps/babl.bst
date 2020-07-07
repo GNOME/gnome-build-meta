@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/babl.git
-  track: master
-
+- kind: tar
+  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.78.tar.xz
+  ref: 17d5493633bff5585d9f375bc4df5925157cd1c70ccd7c22a635be75c172523a
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

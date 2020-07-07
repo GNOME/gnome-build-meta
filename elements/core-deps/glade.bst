@@ -1,11 +1,11 @@
-kind: meson
+kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glade.git
-  track: master
+- kind: tar
+  url: gnome_downloads:glade/3.36/glade-3.36.0.tar.xz
+  ref: 19b546b527cc46213ccfc8022d49ec57e618fe2caa9aa51db2d2862233ea6f08
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/WebKitGTK.bst
 - sdk/gjs.bst

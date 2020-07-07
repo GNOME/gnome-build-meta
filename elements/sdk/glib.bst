@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glib.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:glib/2.65/glib-2.65.0.tar.xz
+  ref: b041e63cd0ac1fccb486374022ade040d907aad29b278e27d9e43e9294a6e7a3
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -44,8 +43,6 @@ public:
           fi
         done
       done
-    # remove this once freedesktop-sdk updates to 2.66
-    - rm -f /usr/include/glib-2.0/glib/gurifuncs.h
     overlap-whitelist:
     - '**'
     split-rules:

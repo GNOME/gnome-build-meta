@@ -2,6 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: gnome_download:teams/releng/tarballs-needing-help/mozjs/mozjs-68.4.2.tar.bz2
+  ref: 097fb482aa0e57fb117fde6816fbabfedcb862ee81906990363954f47ce93227
 - kind: patch
   path: files/mozjs68/armv7_disable_WASM_EMULATE_ARM_UNALIGNED_FP_ACCESS.patch
 - kind: patch
@@ -27,7 +28,8 @@ environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
 config:
   configure-commands:
-  -  ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc --enable-unaligned-private-values AUTOCONF=autoconf %{mozjs_target}
+  - ../js/src/configure --prefix=%{prefix} --libdir=%{libdir} --disable-jemalloc --enable-unaligned-private-values
+    AUTOCONF=autoconf %{mozjs_target}
   build-commands:
   - make
   install-commands:

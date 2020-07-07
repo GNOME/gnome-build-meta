@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tracker/2.99/tracker-2.99.2.tar.xz
+  ref: 750bafe21aba0f58fef872f0244a011c2af038d26baa739643eaca39d3e635ff
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

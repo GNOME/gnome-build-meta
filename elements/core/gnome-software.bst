@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-software.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-software/3.36/gnome-software-3.36.1.tar.xz
+  ref: 4d4d66c70780539f204f96088da4fcb02371b0a8147f9266ce632ca784bf6f6e
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

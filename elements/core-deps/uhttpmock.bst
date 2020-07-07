@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_com:uhttpmock/uhttpmock.git
-  track: master
+- kind: tar
+  url: https://tecnocode.co.uk/downloads/uhttpmock/uhttpmock-0.5.2.tar.xz
+  ref: 17156920c844d4ee9df63f6006df323851a69f9b60dc5d3a1b7ab03e0fe89e3e
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/sysprof.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:sysprof/3.36/sysprof-3.36.0.tar.xz
+  ref: 8670db4dacf7b219d30c575c465b17c8ed6724dbade347f2cde9548bff039108
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

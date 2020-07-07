@@ -1,18 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-music.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
-    subprojects/gfm:
-      checkout: true
-      url: gitlab_gnome_org:mschraal/gfm.git
-    subprojects/shared-modules:
-      checkout: false
-      url: github_com:flathub/shared-modules.git
+- kind: tar
+  url: gnome_downloads:gnome-music/3.37/gnome-music-3.37.3.tar.xz
+  ref: 248bc8585963271a4d2ff7f249c9f792aaf0b4dfde1e94abb68c91501015cebe
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
