@@ -1,7 +1,9 @@
 kind: stack
 
 runtime-depends:
-- core.bst
+- core/meta-gnome-core-os-services.bst
+- core/meta-gnome-core-shell.bst
+- core/meta-gnome-core-utilities.bst
 - core/systemd-presets.bst
 - sdk-platform.bst
 
@@ -23,8 +25,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/gnupg-systemd.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/man-db.bst
-- freedesktop-sdk.bst:components/man-pages-posix.bst
-- freedesktop-sdk.bst:components/man-pages.bst
+- freedesktop-sdk.bst:components/man-db-generate.bst
 - freedesktop-sdk.bst:components/open-iscsi.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
 - freedesktop-sdk.bst:components/steam-devices.bst
