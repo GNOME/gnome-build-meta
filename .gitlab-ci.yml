@@ -14,6 +14,7 @@ variables:
   DOCKER_IMAGE_ID: "e60e2dccd1ac4e928d62472676762d8e3e4a1406"
   DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
+  DOCKER_PPC64LE: "${DOCKER_REGISTRY}/bst14/ppc64le:${DOCKER_IMAGE_ID}"
 
 stages:
 - track
@@ -190,6 +191,14 @@ default:
   variables:
     ARCH: arm
 
+.ppc64le: &ppc64le
+  image: "${DOCKER_PPC64LE}"
+  tags:
+  - ppc64le
+  - gnome-build-meta
+  variables:
+    ARCH: ppc64le
+
 #
 # "Real" CI jobs
 #
@@ -226,6 +235,10 @@ build-gnome-core-aarch64:
 build-gnome-core-arm:
   extends: .build-template
   <<: *arm
+
+build-gnome-core-ppc64le:
+  extends: .build-template
+  <<: *ppc64le
 
 
 vm-image-x86_64:
@@ -326,6 +339,9 @@ flatpak-arm:
   extends: .flatpak-template
   <<: *arm
 
+flatpak-ppc64le:
+  extends: .flatpak-template
+  <<: *ppc64le
 
 flatpak-finish:
   stage: finish_flatpak

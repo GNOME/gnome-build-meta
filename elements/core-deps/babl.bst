@@ -16,6 +16,6 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 (?):
-- arch == "i686":
+- (arch == "i686" or arch == "ppc64le"):
     variables:
       optimize-debug: 'false'
