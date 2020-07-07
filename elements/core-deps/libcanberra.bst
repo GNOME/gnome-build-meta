@@ -2,6 +2,8 @@ kind: autotools
 sources:
 - kind: tar
   url: tarballs_needing_help:libcanberra-0.30.tar.xz
+- kind: patch
+  path: files/libcanberra/Allow-wayland-only.patch
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

@@ -53,6 +53,3 @@ depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 - freedesktop-sdk.bst:components/xdg-portal-interfaces.bst
-- freedesktop-sdk.bst:components/xorg-proto-xcb.bst
-- freedesktop-sdk.bst:components/xorg-proto-xorgproto.bst
-- freedesktop-sdk.bst:components/xorg-util-macros.bst

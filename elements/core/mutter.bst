@@ -8,7 +8,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -25,12 +24,10 @@ depends:
 - freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
-- freedesktop-sdk.bst:components/xorg-server.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Dremote_desktop=false
+    -Dstartup_notification=false
     -Dxwayland_initfd=disabled
     -Dprofiler=false
