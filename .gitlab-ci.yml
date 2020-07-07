@@ -103,8 +103,8 @@ default:
 .vm-image-template:
   stage: image
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-  - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_success
@@ -240,8 +240,8 @@ vm-image-x86_64:
 pinebook-pro-image:
   stage: image
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
-  - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
   when: manual
   allow_failure: true
   cache: *bst-cache
@@ -260,8 +260,8 @@ pinebook-pro-image:
 rock64-image:
   stage: image
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
-  - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
   when: manual
   allow_failure: true
   cache: *bst-cache
@@ -280,8 +280,8 @@ rock64-image:
 raspberrypi-4-image:
   stage: image
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/raspberrypi-4/image.bst
-  - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/raspberrypi-4/image.bst raspberrypi-4-image
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/raspberrypi-4/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/raspberrypi-4/image.bst raspberrypi-4-image
   when: manual
   allow_failure: true
   cache: *bst-cache
