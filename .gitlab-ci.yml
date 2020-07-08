@@ -191,20 +191,20 @@ default:
   variables:
     ARCH: arm
 
-.powerpc64le: &powerpc64le
+.ppc64le: &ppc64le
   image: "${DOCKER_PPC64LE}"
   tags:
   - ppc64le
   - gnome-build-meta
   variables:
-    ARCH: powerpc64le
+    ARCH: ppc64le
 
 #
 # "Real" CI jobs
 #
 
 track:
-  <<: *powerpc64le
+  <<: *ppc64le
   stage: track
   interruptible: true
   script:
@@ -236,9 +236,9 @@ build-gnome-core-arm:
   extends: .build-template
   <<: *arm
 
-build-gnome-core-powerpc64le:
+build-gnome-core-ppc64le:
   extends: .build-template
-  <<: *powerpc64le
+  <<: *ppc64le
 
 
 vm-image-x86_64:
@@ -341,7 +341,7 @@ flatpak-arm:
 
 flatpak-ppc64le:
   extends: .flatpak-template
-  <<: *powerpc64le
+  <<: *ppc64le
 
 flatpak-finish:
   stage: finish_flatpak
