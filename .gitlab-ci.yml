@@ -204,7 +204,7 @@ default:
 #
 
 track:
-  <<: *x86_64
+  <<: *powerpc64le
   stage: track
   interruptible: true
   script:
