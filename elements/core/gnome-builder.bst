@@ -11,7 +11,7 @@ runtime-depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
 depends:
-- core-deps/flatpak.bst
+- core-deps/flatpak-builder.bst
 - core-deps/glade-libs.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
