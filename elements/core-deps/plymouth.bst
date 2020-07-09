@@ -2,9 +2,10 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.4.tar.xz
-
-  ref: 4a197a4f1a05785d7453dd829b231352fb2d09171bd86c5ffaafbb2dd6791351
+  url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.5.tar.xz
+  ref: ecae257f351d098340542a5bc06de029404c24dcee87e6ebb2abd5ef117fce86
+- kind: patch
+  path: files/plymouth/plymouth-stdin.patch
 depends:
 - sdk/gtk+-3.bst
 - sdk/pango.bst
@@ -16,6 +17,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 config:
+  configure-commands:
+    (<):
+    - rm -f configure
+
   install-commands:
     (>):
     - |
