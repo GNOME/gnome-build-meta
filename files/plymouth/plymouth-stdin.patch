@@ -1,0 +1,43 @@
+diff -ur plymouth.old/themes/bgrt/Makefile.am plymouth/themes/bgrt/Makefile.am
+--- plymouth.old/themes/bgrt/Makefile.am	2020-07-09 10:55:09.401661465 +0200
++++ plymouth/themes/bgrt/Makefile.am	2020-07-09 11:10:24.209777296 +0200
+@@ -4,10 +4,12 @@
+ MAINTAINERCLEANFILES = Makefile.in bgrt.plymouth
+ CLEANFILES = bgrt.plymouth
+ 
+-bgrt.plymouth: $(srcdir)/bgrt.plymouth.desktop
++bgrt.plymouth.template: $(srcdir)/bgrt.plymouth.desktop
+ 	$(AM_V_GEN) \
+-	sed -e 's,[@]PLYMOUTH_THEME_PATH[@],$(PLYMOUTH_THEME_PATH),g' \
+-	$(srcdir)/bgrt.plymouth.desktop | \
+-	    $(MSGFMT) --desktop --template /dev/stdin -d $(top_srcdir)/po -o $@
++	sed -e 's,[@]PLYMOUTH_THEME_PATH[@],$(PLYMOUTH_THEME_PATH),g' >$@
++
++bgrt.plymouth: bgrt.plymouth.template
++	$(AM_V_GEN) \
++	$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+ 
+ EXTRA_DIST = bgrt.plymouth.desktop
+diff -ur plymouth.old/themes/spinner/Makefile.am plymouth/themes/spinner/Makefile.am
+--- plymouth.old/themes/spinner/Makefile.am	2020-07-09 10:55:09.416661301 +0200
++++ plymouth/themes/spinner/Makefile.am	2020-07-09 11:07:20.506954118 +0200
+@@ -76,13 +76,14 @@
+                     throbber-0030.png
+ 
+ MAINTAINERCLEANFILES = Makefile.in spinner.plymouth
+-CLEANFILES = spinner.plymouth
++CLEANFILES = spinner.plymouth spinner.plymouth.template
+ 
+-spinner.plymouth: $(srcdir)/spinner.plymouth.desktop
++spinner.plymouth.template: $(srcdir)/spinner.plymouth.desktop
+ 	$(AM_V_GEN) \
+-	sed -e 's,[@]PLYMOUTH_THEME_PATH[@],$(PLYMOUTH_THEME_PATH),g' \
+-	$(srcdir)/spinner.plymouth.desktop | \
+-	    $(MSGFMT) --desktop --template /dev/stdin -d $(top_srcdir)/po -o $@
++	sed -e 's,[@]PLYMOUTH_THEME_PATH[@],$(PLYMOUTH_THEME_PATH),g' >$@
+ 
++spinner.plymouth: spinner.plymouth.template
++	$(AM_V_GEN) \
++	$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+ 
+ EXTRA_DIST = spinner.plymouth.desktop
