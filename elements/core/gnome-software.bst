@@ -15,6 +15,7 @@ depends:
 - core-deps/malcontent.bst
 - core-deps/xmlb.bst
 - core/gnome-desktop.bst
+- core/sysprof.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
@@ -33,7 +34,6 @@ variables:
     -Dflatpak=true
     -Deos_updater=true
     -Dpackagekit=false
-    -Dsysprof=disabled
 config:
   configure-commands:
     (<):
