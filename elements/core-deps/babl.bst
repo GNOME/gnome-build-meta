@@ -19,3 +19,6 @@ depends:
 - arch == "i686":
     variables:
       optimize-debug: 'false'
+- arch == "ppc64le":
+    variables:
+      optimize-debug: 'false'
