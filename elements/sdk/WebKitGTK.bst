@@ -43,13 +43,18 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   webkitgtk_toolchain: ''
+  webkitgtk_arch_options: ''
   (?):
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
+  - arch == "arm":
+      webkitgtk_arch_options: |
+        -DENABLE_GLES2=ON
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     %{webkitgtk_toolchain}
+    %{webkitgtk_arch_options}
 (?):
 - arch == "i686":
     environment:
