@@ -13,7 +13,6 @@ runtime-depends:
 depends:
 - core-deps/flatpak.bst
 - core-deps/flatpak-builder.bst
-- core-deps/glade-libs.bst
 - core-deps/gspell.bst
 - core-deps/libdazzle.bst
 - core-deps/libpeas.bst
@@ -31,3 +30,6 @@ depends:
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -Dplugin_glade=false
