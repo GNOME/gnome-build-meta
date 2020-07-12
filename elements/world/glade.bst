@@ -1,6 +1,6 @@
 kind: filter
 build-depends:
-- core-deps/glade.bst
+- core-deps/glade-base.bst
 runtime-depends:
 - core-deps/glade-libs.bst
 - sdk/adwaita-icon-theme.bst
