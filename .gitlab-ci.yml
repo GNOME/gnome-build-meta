@@ -47,7 +47,7 @@ default:
 
   - |
     case "$FLATPAK_BRANCH" in
-      master)
+      barthalion*)
         if [ -n "$NIGHTLY_REPO_TOKEN" ]; then
           export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
           export FLAT_MANAGER_SERVER=https://nightly.gnome.org/
@@ -131,7 +131,7 @@ default:
   rules: &flatpak-publish-rules
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+  - if: $CI_COMMIT_REF_NAME == "barthalion/gottagofast" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
 
 #
 # Architecture specific settings
@@ -183,7 +183,7 @@ track:
   retry: 2
   # only run on branches targeting master
   rules:
-  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
+  - if: $FLATPAK_BRANCH == 'barthalion/gottagofast' && $CI_MERGE_REQUEST_ID == null
   cache: *bst-cache
   artifacts:
     paths:
@@ -241,6 +241,6 @@ flatpak-finish-failed:
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+  - if: $CI_COMMIT_REF_NAME == "barthalion/gottagofast" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_failure
   <<: *x86_64
