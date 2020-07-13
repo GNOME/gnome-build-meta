@@ -1,4 +1,4 @@
-FLATPAK_BRANCH:variables:
+variables:
   # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
