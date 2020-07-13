@@ -17,7 +17,6 @@ build-depends:
 
 depends:
 - sdk/pygobject.bst
-- sdk/pycairo.bst
 - sdk/libsoup.bst
 - sdk/glib.bst
 - sdk/pango.bst
@@ -31,6 +30,7 @@ depends:
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
+- freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 
