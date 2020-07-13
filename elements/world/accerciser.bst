@@ -12,7 +12,7 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/gtk+-3.bst
-- sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

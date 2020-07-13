@@ -43,7 +43,6 @@ depends:
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pipewire.bst
-- sdk/pycairo.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - sdk/woff2.bst
@@ -192,6 +191,7 @@ depends:
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/pciutils.bst
 - freedesktop-sdk.bst:components/pixman.bst
+- freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/sdl2-image.bst
 - freedesktop-sdk.bst:components/sdl2-mixer.bst
