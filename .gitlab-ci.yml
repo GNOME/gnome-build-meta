@@ -1,4 +1,4 @@
-variables:
+FLATPAK_BRANCH:variables:
   # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
@@ -47,7 +47,7 @@ default:
 
   - |
     case "$FLATPAK_BRANCH" in
-      barthalion*)
+      master)
         if [ -n "$NIGHTLY_REPO_TOKEN" ]; then
           export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
           export FLAT_MANAGER_SERVER=https://nightly.gnome.org/
@@ -183,7 +183,7 @@ track:
   retry: 2
   # only run on branches targeting master
   rules:
-  - if: $FLATPAK_BRANCH == 'barthalion/gottagofast' && $CI_MERGE_REQUEST_ID == null
+  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
   cache: *bst-cache
   artifacts:
     paths:
