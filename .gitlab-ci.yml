@@ -210,19 +210,6 @@ flatpak-x86_64:
   extends: .flatpak-template
   <<: *x86_64
 
-flatpak-i386:
-  extends: .flatpak-template
-  <<: *i686
-
-flatpak-aarch64:
-  extends: .flatpak-template
-  <<: *aarch64
-
-flatpak-arm:
-  extends: .flatpak-template
-  <<: *arm
-
-
 flatpak-finish:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
