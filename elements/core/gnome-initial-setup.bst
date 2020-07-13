@@ -8,6 +8,8 @@ sources:
   directory: gnome-initial-setup-config
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+runtime-depends:
+- freedesktop-sdk.bst:components/tzdata.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
@@ -20,11 +22,10 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
+- core/meta-gtk.bst
 - sdk/WebKitGTK.bst
-- sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
 - sdk/ibus.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
