@@ -194,67 +194,6 @@ build-gnome-core-x86_64:
   extends: .build-template
   <<: *x86_64
 
-pinebook-pro-image:
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
-  when: manual
-  allow_failure: true
-  cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - pinebook-pro-image
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-gnome-core-aarch64
-    artifacts: false
-  <<: *aarch64
-
-rock64-image:
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
-  when: manual
-  allow_failure: true
-  cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - rock64
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-gnome-core-aarch64
-    artifacts: false
-  <<: *aarch64
-
-raspberrypi-4-image:
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/raspberrypi-4/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/raspberrypi-4/image.bst raspberrypi-4-image
-  when: manual
-  allow_failure: true
-  cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - raspberrypi-4-image
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-gnome-core-aarch64
-    artifacts: false
-  <<: *aarch64
-
-
 flatpak-prepare:
   stage: prepare_flatpak
   dependencies: []
