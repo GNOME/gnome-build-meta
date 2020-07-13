@@ -18,11 +18,9 @@ variables:
 stages:
 - track
 - build
-- image
 - prepare_flatpak
 - flatpak
 - finish_flatpak
-- reports
 
 default:
   before_script:
@@ -214,19 +212,6 @@ track:
 build-gnome-core-x86_64:
   extends: .build-template
   <<: *x86_64
-
-build-gnome-core-i386:
-  extends: .build-template
-  <<: *i686
-
-build-gnome-core-aarch64:
-  extends: .build-template
-  <<: *aarch64
-
-build-gnome-core-arm:
-  extends: .build-template
-  <<: *arm
-
 
 vm-image-x86_64:
   extends: .vm-image-template
