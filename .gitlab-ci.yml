@@ -191,6 +191,7 @@ default:
   - flat-manager-client push $(cat build.txt) repo/
   rules: &ostree-publish-rules
   - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree"
 
 #
 # Architecture specific settings
@@ -437,6 +438,8 @@ ostree-finish-failed:
   - flat-manager-client purge $(cat build.txt)
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+    when: on_failure
+  - if: $CI_COMMIT_REF_NAME "valentindavid/publish-vm-ostree"
     when: on_failure
   <<: *x86_64
 
