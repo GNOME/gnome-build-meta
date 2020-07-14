@@ -439,7 +439,7 @@ ostree-finish-failed:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: on_failure
-  - if: $CI_COMMIT_REF_NAME "valentindavid/publish-vm-ostree"
+  - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree"
     when: on_failure
   <<: *x86_64
 
