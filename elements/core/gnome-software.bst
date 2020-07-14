@@ -9,6 +9,7 @@ build-depends:
 depends:
 - core-deps/eos-updater.bst
 - core-deps/flatpak.bst
+- core-deps/fwupd.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - core-deps/liboauth.bst
@@ -28,7 +29,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dfwupd=false
+    -Dfwupd=true
     -Dvalgrind=false
     -Dpolkit=true
     -Dflatpak=true

@@ -26,6 +26,7 @@ depends:
 - core-deps/exiv2.bst
 - core-deps/flatpak.bst
 - core-deps/folks.bst
+- core-deps/fwupd.bst
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
@@ -66,6 +67,7 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libhandy-0.bst
 - core-deps/libhandy.bst
+- core-deps/libjcat.bst
 - core-deps/libmbim.bst
 - core-deps/libmediaart.bst
 - core-deps/libmusicbrainz.bst
