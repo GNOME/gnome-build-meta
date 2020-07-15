@@ -10,7 +10,6 @@ depends:
 - sdk/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libnotify.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
@@ -38,6 +37,6 @@ variables:
 public:
   bst:
     split-rules:
-      devel:
-        (>):
-        - '%{libdir}/libibus-1.0.so'
+      libibus:
+      - '%{includedir}/**'
+      - '%{libdir}/**'
