@@ -76,7 +76,6 @@ default:
   - |
     export OSTREE_FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
     export OSTREE_FLAT_MANAGER_REPO=gnomeos
-    export OSTREE_REPO_TOKEN=$NIGHTLY_REPO_TOKEN
 
 #
 # Templates shared by multiple jobs
