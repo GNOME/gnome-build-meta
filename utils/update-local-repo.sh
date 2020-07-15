@@ -6,6 +6,7 @@ set -eu
 export BST
 
 : ${REPO_ELEMENT:=vm-devel/repo.bst}
+: ${OSTREE_LAYER:=git}
 
 ref="$(${BST} show --format "%{vars}" --deps none "${REPO_ELEMENT}" | sed '/ostree-branch: /{;s///;q;};d')"
 
@@ -33,7 +34,7 @@ utils/update-repo.sh \
     --gpg-homedir=ostree-gpg \
     --gpg-sign="$(cat ostree-gpg/default-id)" \
     --collection-id=org.gnome.GnomeOS \
-    --target-ref="${ref%/*}/git" \
+    --target-ref="${ref%-*}-${OSTREE_LAYER}" \
     ostree-repo "${REPO_ELEMENT}" \
     "${ref}"
 
