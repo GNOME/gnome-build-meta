@@ -109,8 +109,8 @@ default:
 .vm-image-template:
   stage: image
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+    - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_success
