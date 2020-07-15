@@ -1,7 +1,9 @@
 kind: stack
 
 runtime-depends:
-- core.bst
+- core/meta-gnome-core-os-services.bst
+- core/meta-gnome-core-shell.bst
+- core/meta-gnome-core-utilities.bst
 - core/systemd-presets.bst
 - sdk-platform.bst
 
