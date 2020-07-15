@@ -5,9 +5,9 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- core-deps/ibus-daemon.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/ibus.bst
 - sdk/pygobject.bst
 - world/anthy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

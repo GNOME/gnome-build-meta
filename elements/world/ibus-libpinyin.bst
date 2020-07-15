@@ -5,7 +5,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- sdk/ibus.bst
+- core-deps/ibus-daemon.bst
 - world/libpinyin.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
