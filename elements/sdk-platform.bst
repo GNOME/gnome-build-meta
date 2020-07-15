@@ -31,10 +31,10 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs.bst
-- sdk/ibus.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libgee.bst
+- sdk/libibus.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
