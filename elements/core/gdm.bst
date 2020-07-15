@@ -10,10 +10,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/accountsservice.bst
-- core-deps/upower.bst
-- core-deps/plymouth.bst
+- core-deps/dconf.bst
 - core-deps/libcanberra.bst
-- sdk/dconf.bst
+- core-deps/plymouth.bst
+- core-deps/upower.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/yelp-tools.bst

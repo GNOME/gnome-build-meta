@@ -9,8 +9,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/dconf.bst
 - core-deps/upower.bst
-- sdk/dconf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
