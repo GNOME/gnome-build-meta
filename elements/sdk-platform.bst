@@ -11,7 +11,6 @@ depends:
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
 - sdk/cogl.bst
-- sdk/dconf.bst
 - sdk/enchant-2.bst
 - sdk/fcitx.bst
 - sdk/gcab.bst
@@ -59,7 +58,7 @@ depends:
 # update our reference to add any new elements.
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
-# appstream-glib, at-spi2-*, atk, dconf, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
+# appstream-glib, at-spi2-*, atk, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, librsvg,
 # libsoup, os-release, pango pipewire and zenity.
 
