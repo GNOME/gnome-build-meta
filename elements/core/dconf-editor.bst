@@ -8,8 +8,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/dconf.bst
 - sdk/appstream-glib.bst
-- sdk/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/vala.bst

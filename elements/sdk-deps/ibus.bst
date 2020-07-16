@@ -7,10 +7,9 @@ build-depends:
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- sdk/dconf.bst
+- core-deps/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libnotify.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
@@ -38,6 +37,6 @@ variables:
 public:
   bst:
     split-rules:
-      devel:
-        (>):
-        - '%{libdir}/libibus-1.0.so'
+      libibus:
+      - '%{includedir}/**'
+      - '%{libdir}/**'

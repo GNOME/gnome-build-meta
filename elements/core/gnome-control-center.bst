@@ -24,6 +24,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/grilo.bst
 - core-deps/gsound.bst
+- core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
 - core-deps/libhandy-0.bst
 - core-deps/libnma.bst
@@ -41,7 +42,6 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/ibus.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/pwquality.bst
