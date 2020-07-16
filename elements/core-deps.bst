@@ -16,7 +16,9 @@ depends:
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/cups-pk-helper.bst
+- core-deps/dnsmasq.bst
 - core-deps/dotconf.bst
+- core-deps/ebtables.bst
 - core-deps/eos-updater.bst
 - core-deps/espeak.bst
 - core-deps/evolution-data-server.bst
@@ -46,6 +48,7 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/iptables.bst
 - core-deps/jsonrpc-glib.bst
+- core-deps/libcacard.bst
 - core-deps/libcanberra.bst
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
@@ -75,6 +78,7 @@ depends:
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
+- core-deps/libslirp.bst
 - core-deps/libssh2.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
@@ -98,12 +102,15 @@ depends:
 - core-deps/pyatspi.bst
 - core-deps/pycups.bst
 - core-deps/python-pyparsing.bst
+- core-deps/qemu.bst
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
 - core-deps/sane-backends.bst
+- core-deps/slirp-helper.bst
 - core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
+- core-deps/spice-server.bst
 - core-deps/startup-notification.bst
 - core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
@@ -115,5 +122,7 @@ depends:
 - core-deps/udisks2.bst
 - core-deps/uhttpmock.bst
 - core-deps/upower.bst
+- core-deps/usbredir.bst
 - core-deps/vte.bst
 - core-deps/xmlb.bst
+- core-deps/yajl.bst
