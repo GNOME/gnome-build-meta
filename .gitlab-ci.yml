@@ -182,10 +182,17 @@ default:
   script:
   - ostree init --repo repo/ --mode archive
 
-  - ${BST} -o arch "${ARCH}" pull vm/repo.bst
+  - ${BST} -o arch "${ARCH}"  build vm/repo.bst vm-devel/repo.bst
+  #In strict mode, this should work instead
+  #- ${BST} -o arch "${ARCH}" pull vm/repo.bst vm-devel/repo.bst
+
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo.bst checkout-repo/
   - flatpak build-commit-from --src-repo=checkout-repo/ repo/
   - rm -rf checkout-repo/
+
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm-devel/repo.bst checkout-devel-repo/
+  - flatpak build-commit-from --src-repo=checkout-devel-repo/ repo/
+  - rm -rf checkout-devel-repo/
 
   - flat-manager-client push $(cat build.txt) repo/
   rules: &ostree-publish-rules
