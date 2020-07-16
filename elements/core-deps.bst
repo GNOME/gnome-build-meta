@@ -16,7 +16,9 @@ depends:
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/cups-pk-helper.bst
+- core-deps/dnsmasq.bst
 - core-deps/dotconf.bst
+- core-deps/ebtables.bst
 - core-deps/eos-updater.bst
 - core-deps/espeak.bst
 - core-deps/evolution-data-server.bst
@@ -99,12 +101,14 @@ depends:
 - core-deps/pyatspi.bst
 - core-deps/pycups.bst
 - core-deps/python-pyparsing.bst
+- core-deps/qemu.bst
 - core-deps/rpcsvc-proto.bst
 - core-deps/samba.bst
 - core-deps/sane-backends.bst
 - core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
+- core-deps/spice-server.bst
 - core-deps/startup-notification.bst
 - core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
@@ -118,3 +122,4 @@ depends:
 - core-deps/upower.bst
 - core-deps/vte.bst
 - core-deps/xmlb.bst
+- core-deps/yajl.bst
