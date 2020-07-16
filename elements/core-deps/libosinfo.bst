@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://releases.pagure.org/libosinfo/libosinfo-1.7.1.tar.xz
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
@@ -20,3 +20,7 @@ depends:
 variables:
   meson-local: >-
     -Denable-tests=false
+config:
+  install-commands:
+    (>):
+    - install -Dm644 -t '%{install-root}%{datadir}/libosinfo' pci.ids usb.ids
