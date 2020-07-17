@@ -415,16 +415,6 @@ flatpak-finish:
   rules: *flatpak-publish-rules
   <<: *x86_64
 
-flatpak-finish:
-  stage: finish_publish
-  dependencies: [ostree-prepare]
-  script:
-  - flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager-client publish --wait $(cat build.txt)
-  - flat-manager-client purge $(cat build.txt)
-  rules: *ostree-publish-rules
-  <<: *x86_64
-
 flatpak-finish-failed:
   stage: finish_publish
   dependencies: [flatpak-prepare]
@@ -435,6 +425,16 @@ flatpak-finish-failed:
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_failure
+  <<: *x86_64
+
+ostree-finish:
+  stage: finish_publish
+  dependencies: [ostree-prepare]
+  script:
+  - flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager-client publish --wait $(cat build.txt)
+  - flat-manager-client purge $(cat build.txt)
+  rules: *ostree-publish-rules
   <<: *x86_64
 
 ostree-finish-failed:
