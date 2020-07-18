@@ -21,4 +21,5 @@ variables:
     -Ddocs=false
     -Dunicode_support=icu
     -Dstemmer=disabled
+    -Dsystemd_user_services=false
     -Dbash_completion_dir=%{datadir}/bash-completion/completions
