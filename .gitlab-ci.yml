@@ -180,6 +180,8 @@ default:
   stage: publish
   dependencies: [track, ostree-prepare]
   script:
+  - export REPO_TOKEN=$OSTREE_REPO_TOKEN
+
   - ostree init --repo repo/ --mode archive
 
   - ${BST} -o arch "${ARCH}"  build vm/repo.bst vm-devel/repo.bst
