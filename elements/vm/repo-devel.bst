@@ -2,8 +2,8 @@ kind: script
 
 build-depends:
 - core-deps/libostree.bst
-- vm-devel/filesystem.bst
-- vm-devel/initial-scripts.bst
+- vm/filesystem-devel.bst
+- vm/initial-scripts-devel.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
@@ -19,9 +19,9 @@ config:
     destination: /tmp
   - element: core-deps/libostree.bst
     destination: /
-  - element: vm-devel/filesystem.bst
+  - element: vm/filesystem-devel.bst
     destination: /sysroot
-  - element: vm-devel/initial-scripts.bst
+  - element: vm/initial-scripts-devel.bst
     destination: /
   - element: vm/prepare-image.bst
     destination: /

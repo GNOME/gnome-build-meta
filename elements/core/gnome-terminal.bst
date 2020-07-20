@@ -6,12 +6,12 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- core-deps/dconf.bst
 - core-deps/vte.bst
 - core/gnome-shell.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
-- sdk/dconf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst

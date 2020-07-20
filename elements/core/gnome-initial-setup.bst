@@ -12,6 +12,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/gnome-online-accounts.bst
+- core-deps/ibus-daemon.bst
 - core-deps/libgweather.bst
 - core-deps/libnma.bst
 - core-deps/upower.bst
@@ -25,7 +26,6 @@ depends:
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/ibus.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

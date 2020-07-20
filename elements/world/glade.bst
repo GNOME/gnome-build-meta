@@ -1,11 +1,16 @@
-kind: filter
+kind: meson
+sources:
+- kind: git_tag
+  url: gitlab_gnome_org:GNOME/glade.git
+  track: master
 build-depends:
-- core-deps/glade.bst
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
-- core-deps/glade-libs.bst
 - sdk/adwaita-icon-theme.bst
-config:
-  exclude:
-  - glade-libs
-  - devel
-  include-orphans: True
+- sdk/cantarell-fonts.bst
+depends:
+- sdk/WebKitGTK.bst
+- sdk/gjs.bst
+- sdk/gtk+-3.bst
+- sdk/pygobject.bst

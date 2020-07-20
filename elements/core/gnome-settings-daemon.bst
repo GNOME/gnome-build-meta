@@ -17,6 +17,7 @@ depends:
 - core-deps/colord.bst
 - core-deps/cups-pk-helper.bst
 - core-deps/geocode-glib.bst
+- core-deps/ibus-daemon.bst
 - core-deps/libcanberra.bst
 - core-deps/libgweather.bst
 - core-deps/upower.bst
@@ -26,7 +27,6 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/ibus.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/libgudev.bst

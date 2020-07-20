@@ -6,7 +6,7 @@ sources:
   track: 089ddceaca34cc835d8114900c24db6dcdf121c3
 
 depends:
-- core-deps/libusb.bst
+- freedesktop-sdk.bst:components/libusb.bst
 
 build-depends:
 - boards/pinebook-pro/vim.bst # Required for xxd

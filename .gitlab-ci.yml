@@ -18,7 +18,6 @@ variables:
 stages:
 - track
 - build
-- vm-repo
 - image
 - prepare_publish
 - publish
@@ -86,12 +85,20 @@ default:
   dependencies: [track]
   interruptible: true
   script:
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst)
+
   - |
-    # Only run this build for x86_64, instead of building it somewhere else
-    if [ "${ARCH}" == "x86_64" ]; then
-        ${BST} build openh264-extension.bst:flatpak-repo.bst
-    fi
+    case "${ARCH}" in
+      aarch64)
+         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         ;;
+      x86_64)
+         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
+         ;;
+    esac
+
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store all the downloaded git repos and tarballs in the cache.
   # This saves us fetching them on every build
@@ -109,8 +116,8 @@ default:
 .vm-image-template:
   stage: image
   script:
-    - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_success
@@ -124,22 +131,6 @@ default:
     - logs
     - image
     expire_in: '2 days'
-
-.vm-repo-template:
-  stage: vm-repo
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/repo.bst vm-devel/repo.bst
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-    when: on_success
-  - if: $CI_MERGE_REQUEST_ID == null
-    when: on_success
-    allow_failure: true
-  cache: *bst-cache
-  artifacts:
-    when: always
-    paths:
-    - logs
 
 .flatpak-template:
   stage: publish
@@ -184,15 +175,15 @@ default:
 
   - ostree init --repo repo/ --mode archive
 
-  - ${BST} -o arch "${ARCH}"  build vm/repo.bst vm-devel/repo.bst
+  - ${BST} -o arch "${ARCH}"  build vm/repo.bst vm/repo-devel.bst
   #In strict mode, this should work instead
-  #- ${BST} -o arch "${ARCH}" pull vm/repo.bst vm-devel/repo.bst
+  #- ${BST} -o arch "${ARCH}" pull vm/repo.bst vm/repo-devel.bst
 
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo.bst checkout-repo/
   - flatpak build-commit-from --src-repo=checkout-repo/ repo/
   - rm -rf checkout-repo/
 
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm-devel/repo.bst checkout-devel-repo/
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo-devel.bst checkout-devel-repo/
   - flatpak build-commit-from --src-repo=checkout-devel-repo/ repo/
   - rm -rf checkout-devel-repo/
 
@@ -247,7 +238,7 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm-devel/repo.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst
   retry: 2
   # only run on branches targeting master
   rules:
@@ -274,28 +265,12 @@ build-gnome-core-arm:
   extends: .build-template
   <<: *arm
 
-vm-repo-x86_64:
-  extends: .vm-repo-template
-  needs:
-  - track
-  - job: build-gnome-core-x86_64
-    artifacts: false
-  <<: *x86_64
-
-vm-repo-aarch64:
-  extends: .vm-repo-template
-  needs:
-  - track
-  - job: build-gnome-core-aarch64
-    artifacts: false
-  <<: *aarch64
-
 vm-image-x86_64:
   extends: .vm-image-template
   # run as soon as the x86_64 build job is done, don't wait for other arches
   needs:
   - track
-  - job: vm-repo-x86_64
+  - job: build-gnome-core-x86_64
     artifacts: false
   <<: *x86_64
 
@@ -315,7 +290,7 @@ pinebook-pro-image:
     expire_in: '2 days'
   needs:
   - track
-  - job: vm-repo-aarch64
+  - job: build-gnome-core-aarch64
     artifacts: false
   <<: *aarch64
 
@@ -335,7 +310,7 @@ rock64-image:
     expire_in: '2 days'
   needs:
   - track
-  - job: vm-repo-aarch64
+  - job: build-gnome-core-aarch64
     artifacts: false
   <<: *aarch64
 
@@ -355,7 +330,7 @@ raspberrypi-4-image:
     expire_in: '2 days'
   needs:
   - track
-  - job: vm-repo-aarch64
+  - job: build-gnome-core-aarch64
     artifacts: false
   <<: *aarch64
 

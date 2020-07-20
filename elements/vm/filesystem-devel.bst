@@ -1,7 +1,7 @@
 kind: compose
 
 build-depends:
-- vm-devel/deps.bst
+- vm/deps-devel.bst
 - vm/initramfs.bst
 
 # Currently we just take everything and remove the
@@ -10,5 +10,4 @@ build-depends:
 # refine this and make it much more selective, though.
 config:
   exclude:
-  - devel
   - debug

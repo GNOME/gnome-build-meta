@@ -22,6 +22,7 @@ runtime-depends:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
+- core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
 - core-deps/startup-notification.bst
@@ -32,7 +33,6 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/mutter.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/dconf.bst
 - sdk/gcr.bst
 - sdk/gjs.bst
 - sdk/glib.bst

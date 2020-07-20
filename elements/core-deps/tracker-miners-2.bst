@@ -8,6 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/dconf.bst
 - core-deps/gexiv2.bst
 - core-deps/libcue.bst
 - core-deps/libgsf.bst
@@ -15,7 +16,6 @@ depends:
 - core-deps/libosinfo.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-2.bst
-- sdk/dconf.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
