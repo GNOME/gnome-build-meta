@@ -5,6 +5,7 @@ sources:
   track: tracker-miners-2.3
 build-depends:
 - core-deps/intltool.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
