@@ -431,6 +431,7 @@ ostree-finish:
   stage: finish_publish
   dependencies: [ostree-prepare]
   script:
+  - ls -l build.txt
   - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
