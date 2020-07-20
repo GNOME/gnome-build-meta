@@ -180,13 +180,16 @@ default:
   #- ${BST} -o arch "${ARCH}" pull vm/repo.bst vm/repo-devel.bst
 
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo.bst checkout-repo/
+  - ostree --repo=checkout-repo/ refs
   - flatpak build-commit-from --src-repo=checkout-repo/ repo/
   - rm -rf checkout-repo/
 
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo-devel.bst checkout-devel-repo/
+  - ostree --repo=checkout-devel-repo/ refs
   - flatpak build-commit-from --src-repo=checkout-devel-repo/ repo/
   - rm -rf checkout-devel-repo/
 
+  - ostree --repo=repo/ refs
   - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
 
   rules: &ostree-publish-rules
