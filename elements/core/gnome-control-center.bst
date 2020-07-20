@@ -26,7 +26,7 @@ depends:
 - core-deps/gsound.bst
 - core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
-- core-deps/libhandy-0.bst
+- core-deps/libhandy.bst
 - core-deps/libnma.bst
 - core-deps/samba.bst
 - core-deps/system-config-printer.bst
