@@ -432,6 +432,7 @@ ostree-finish:
   dependencies: [ostree-prepare]
   script:
   - ls -l build.txt
+  - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
@@ -442,6 +443,7 @@ ostree-finish-failed:
   stage: finish_publish
   dependencies: [ostree-prepare]
   script:
+  - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client purge $(cat build.txt)
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
