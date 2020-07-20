@@ -181,12 +181,12 @@ default:
 
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo.bst checkout-repo/
   - ostree --repo=checkout-repo/ refs
-  - flatpak build-commit-from --src-repo=checkout-repo/ repo/
+  - ostree pull-local --repo=repo/ checkout-repo/
   - rm -rf checkout-repo/
 
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo-devel.bst checkout-devel-repo/
   - ostree --repo=checkout-devel-repo/ refs
-  - flatpak build-commit-from --src-repo=checkout-devel-repo/ repo/
+  - ostree pull-local --repo=repo/ checkout-devel-repo/
   - rm -rf checkout-devel-repo/
 
   - ostree --repo=repo/ refs
