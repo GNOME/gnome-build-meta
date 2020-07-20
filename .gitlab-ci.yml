@@ -187,7 +187,8 @@ default:
   - flatpak build-commit-from --src-repo=checkout-devel-repo/ repo/
   - rm -rf checkout-devel-repo/
 
-  - flat-manager-client push $(cat build.txt) repo/
+  - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
+
   rules: &ostree-publish-rules
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree" && $CI_MERGE_REQUEST_ID == null
