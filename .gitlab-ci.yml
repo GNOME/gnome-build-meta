@@ -186,7 +186,8 @@ default:
   - ostree pull-local --repo=repo/ checkout-devel-repo/
   - rm -rf checkout-devel-repo/
 
-  - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
+  - curl -O flat-manager-client https://github.com/abderrahim/flat-manager/raw/6d2f0d73c0a9f8ef59a1346eb20961078dce4a71/flat-manager-client
+  - ./flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
   rules: &ostree-publish-rules
   - if: $CI_COMMIT_REF_NAME == "master"
   needs:
