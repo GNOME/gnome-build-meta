@@ -469,23 +469,23 @@ ostree-finish:
     artifacts: false
   <<: *x86_64
 
-ostree-finish-failed:
-  stage: finish_publish
-  script:
-  - export REPO_TOKEN=$OSTREE_REPO_TOKEN
-  - flat-manager-client purge $(cat build.txt)
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-    when: on_failure
-  - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree" && $CI_MERGE_REQUEST_ID == null
-    when: on_failure
-  needs:
-  - ostree-prepare
-  #- job: ostree-aarch64
-  #  artifacts: false
-  - job: ostree-x86_64
-    artifacts: false
-  <<: *x86_64
+# ostree-finish-failed:
+#   stage: finish_publish
+#   script:
+#   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
+#   - flat-manager-client purge $(cat build.txt)
+#   rules:
+#   - if: $CI_COMMIT_REF_NAME == "master"
+#     when: on_failure
+#   - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree" && $CI_MERGE_REQUEST_ID == null
+#     when: on_failure
+#   needs:
+#   - ostree-prepare
+#   #- job: ostree-aarch64
+#   #  artifacts: false
+#   - job: ostree-x86_64
+#     artifacts: false
+#   <<: *x86_64
 
 cve_report:
   <<: *x86_64
