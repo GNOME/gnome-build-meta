@@ -85,10 +85,10 @@ default:
   - |
     case "${ARCH}" in
       aarch64)
-         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
          ;;
       x86_64)
-         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
          TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
          ;;
     esac
