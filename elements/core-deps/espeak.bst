@@ -11,4 +11,4 @@ config:
   build-commands:
   - cd src && make CXXFLAGS=-Wno-narrowing
   install-commands:
-  - cd src && make DESTDIR=%{install-root} install
+  - cd src && make DESTDIR=%{install-root} LIBDIR='%{libdir}' install

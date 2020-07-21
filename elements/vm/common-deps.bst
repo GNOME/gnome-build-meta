@@ -25,7 +25,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/gnupg-systemd.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/man-db.bst
-- freedesktop-sdk.bst:components/man-db-generate.bst
 - freedesktop-sdk.bst:components/open-iscsi.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
 - freedesktop-sdk.bst:components/steam-devices.bst

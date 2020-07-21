@@ -90,10 +90,10 @@ default:
   - |
     case "${ARCH}" in
       aarch64)
-         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
          ;;
       x86_64)
-         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
          TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
          ;;
     esac
@@ -134,7 +134,6 @@ default:
 
 .flatpak-template:
   stage: publish
-  dependencies: [track, flatpak-prepare]
   script:
   - ostree init --repo repo/ --mode archive
 
@@ -166,6 +165,33 @@ default:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+  needs:
+  - track
+  - flatpak-prepare
+
+.ostree-template:
+  stage: publish
+  script:
+  - export REPO_TOKEN=$OSTREE_REPO_TOKEN
+
+  - ostree init --repo repo/ --mode archive
+
+  - ${BST} -o arch "${ARCH}" build vm/repo.bst vm/repo-devel.bst
+
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo.bst checkout-repo/
+  - ostree pull-local --repo=repo/ checkout-repo/
+  - rm -rf checkout-repo/
+
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/repo-devel.bst checkout-devel-repo/
+  - ostree pull-local --repo=repo/ checkout-devel-repo/
+  - rm -rf checkout-devel-repo/
+
+  - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
+  rules: &ostree-publish-rules
+  - if: $CI_COMMIT_REF_NAME == "master"
+  needs:
+  - track
+  - ostree-prepare
 
 .ostree-template:
   stage: publish
@@ -382,23 +408,31 @@ ostree-x86_64:
   extends: .ostree-template
   <<: *x86_64
 
-ostree-aarch64:
-  extends: .ostree-template
-  <<: *aarch64
+#ostree-aarch64:
+#  extends: .ostree-template
+#  <<: *aarch64
 
 flatpak-finish:
   stage: finish_publish
-  dependencies: [flatpak-prepare]
   script:
   - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
   rules: *flatpak-publish-rules
+  needs:
+  - flatpak-prepare
+  - job: flatpak-arm
+    artifacts: false
+  - job: flatpak-aarch64
+    artifacts: false
+  - job: flatpak-x86_64
+    artifacts: false
+  - job: flatpak-i386
+    artifacts: false
   <<: *x86_64
 
 flatpak-finish-failed:
   stage: finish_publish
-  dependencies: [flatpak-prepare]
   script:
   - flat-manager-client purge $(cat build.txt)
   rules:
@@ -406,11 +440,20 @@ flatpak-finish-failed:
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_failure
+  needs:
+  - flatpak-prepare
+  - job: flatpak-arm
+    artifacts: false
+  - job: flatpak-aarch64
+    artifacts: false
+  - job: flatpak-x86_64
+    artifacts: false
+  - job: flatpak-i386
+    artifacts: false
   <<: *x86_64
 
 ostree-finish:
   stage: finish_publish
-  dependencies: [ostree-prepare]
   script:
   - ls -l build.txt
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
@@ -418,11 +461,16 @@ ostree-finish:
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
   rules: *ostree-publish-rules
+  needs:
+  - ostree-prepare
+  #- job: ostree-aarch64
+  #  artifacts: false
+  - job: ostree-x86_64
+    artifacts: false
   <<: *x86_64
 
 ostree-finish-failed:
   stage: finish_publish
-  dependencies: [ostree-prepare]
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client purge $(cat build.txt)
@@ -431,6 +479,12 @@ ostree-finish-failed:
     when: on_failure
   - if: $CI_COMMIT_REF_NAME == "valentindavid/publish-vm-ostree" && $CI_MERGE_REQUEST_ID == null
     when: on_failure
+  needs:
+  - ostree-prepare
+  #- job: ostree-aarch64
+  #  artifacts: false
+  - job: ostree-x86_64
+    artifacts: false
   <<: *x86_64
 
 cve_report:

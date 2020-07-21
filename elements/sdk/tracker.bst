@@ -7,6 +7,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
@@ -21,5 +22,4 @@ variables:
     -Ddocs=false
     -Dunicode_support=icu
     -Dstemmer=disabled
-    -Dsystemd_user_services=false
     -Dbash_completion_dir=%{datadir}/bash-completion/completions
