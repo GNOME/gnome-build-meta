@@ -73,7 +73,7 @@ default:
     esac
 
   - |
-    export OSTREE_FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
+    export OSTREE_FLAT_MANAGER_SERVER=https://nightly.gnome.org/ostree-api/
     export OSTREE_FLAT_MANAGER_REPO=gnomeos
 
 #
