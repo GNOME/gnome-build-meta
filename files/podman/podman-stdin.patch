@@ -1,0 +1,13 @@
+diff -ur libpod.old/Makefile libpod/Makefile
+--- libpod.old/Makefile	2020-07-23 14:50:35.261130010 +0200
++++ libpod/Makefile	2020-07-23 14:51:58.882693339 +0200
+@@ -414,7 +414,8 @@
+ MANPAGES_DEST ?= $(subst markdown,man, $(subst source,build,$(MANPAGES)))
+ 
+ $(MANPAGES): %: %.md .install.md2man docdir
+-	@sed -e 's/\((podman.*\.md)\)//' -e 's/\[\(podman.*\)\]/\1/' $<  | $(GOMD2MAN) -in /dev/stdin -out $(subst source/markdown,build/man,$@)
++	@sed -e 's/\((podman.*\.md)\)//' -e 's/\[\(podman.*\)\]/\1/' $< >$<.tmp
++	@$(GOMD2MAN) -in $<.tmp -out $(subst source/markdown,build/man,$@)
+ 
+ .PHONY: docs
+ docdir:
