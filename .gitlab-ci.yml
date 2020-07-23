@@ -383,7 +383,6 @@ ostree-prepare:
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client create $OSTREE_FLAT_MANAGER_SERVER $OSTREE_FLAT_MANAGER_REPO > build.txt
-  - sed -i s,/api,/ostree-api, build.txt
   artifacts:
     paths:
     - build.txt
