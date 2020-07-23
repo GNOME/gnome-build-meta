@@ -15,6 +15,8 @@ runtime-depends:
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
 
+- vm/uresourced.bst
+
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
