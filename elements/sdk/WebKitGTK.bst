@@ -51,7 +51,7 @@ variables:
   (?):
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
-  - arch == "arm":
+  - arch == "arm" or arch == "aarch64":
       webkitgtk_arch_options: >-
         -DENABLE_GLES2=ON
   cmake-local: >-
