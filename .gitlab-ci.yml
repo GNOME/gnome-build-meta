@@ -19,9 +19,12 @@ stages:
 - track
 - build
 - image
-- prepare_publish
-- publish
-- finish_publish
+- prepare_flatpak
+- flatpak
+- finish_flatpak
+- prepare_ostree
+- ostree
+- finish_ostree
 - reports
 
 default:
@@ -133,7 +136,7 @@ default:
     expire_in: '2 days'
 
 .flatpak-template:
-  stage: publish
+  stage: flatpak
   dependencies: [track, flatpak-prepare]
   script:
   - ostree init --repo repo/ --mode archive
@@ -168,7 +171,7 @@ default:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
 
 .ostree-template:
-  stage: publish
+  stage: ostree
   dependencies: [track, ostree-prepare]
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
@@ -334,7 +337,7 @@ raspberrypi-4-image:
 
 
 flatpak-prepare:
-  stage: prepare_publish
+  stage: prepare_flatpak
   dependencies: []
   script:
   - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
@@ -345,7 +348,7 @@ flatpak-prepare:
   <<: *x86_64
 
 ostree-prepare:
-  stage: prepare_publish
+  stage: prepare_ostree
   dependencies: []
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
@@ -377,7 +380,7 @@ ostree-x86_64:
   <<: *x86_64
 
 flatpak-finish:
-  stage: finish_publish
+  stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
   - flat-manager-client commit --wait $(cat build.txt)
@@ -387,7 +390,7 @@ flatpak-finish:
   <<: *x86_64
 
 flatpak-finish-failed:
-  stage: finish_publish
+  stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
   - flat-manager-client purge $(cat build.txt)
@@ -399,7 +402,7 @@ flatpak-finish-failed:
   <<: *x86_64
 
 ostree-finish:
-  stage: finish_publish
+  stage: finish_ostree
   dependencies: [ostree-prepare]
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
@@ -410,7 +413,7 @@ ostree-finish:
   <<: *x86_64
 
 ostree-finish-failed:
-  stage: finish_publish
+  stage: finish_ostree
   dependencies: [ostree-prepare]
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
