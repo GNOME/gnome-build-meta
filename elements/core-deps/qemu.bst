@@ -28,7 +28,7 @@ variables:
       targets: --target-list=aarch64-softmmu,arm-softmmu
   - arch == "arm":
       targets: --target-list=arm-softmmu
-  - arch == "powerpc64le":
+  - arch == "ppc64le":
       targets: --target-list=ppc64-softmmu
 
   conf-local: >-
