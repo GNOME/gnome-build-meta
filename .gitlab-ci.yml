@@ -236,6 +236,7 @@ default:
   - gnome-build-meta
   variables:
     ARCH: ppc64le
+  allow_failure: true
 
 #
 # "Real" CI jobs
