@@ -10,4 +10,4 @@ build-depends:
 depends:
 - sdk/gtk+-3.bst
 - core/gnome-desktop.bst
-- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
+- core-deps/xdg-desktop-portal.bst
