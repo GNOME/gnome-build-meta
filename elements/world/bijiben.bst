@@ -14,11 +14,11 @@ build-depends:
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/libhandy-0.bst
-- core-deps/tracker.bst
 - sdk/WebKitGTK.bst
 - sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/tracker.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
