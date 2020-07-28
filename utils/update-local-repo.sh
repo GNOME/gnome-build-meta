@@ -5,7 +5,7 @@ set -eu
 : ${BST:=bst}
 export BST
 
-: ${REPO_ELEMENT:=vm-devel/repo.bst}
+: ${REPO_ELEMENT:=vm/repo-devel.bst}
 : ${OSTREE_LAYER:=git}
 
 ref="$(${BST} show --format "%{vars}" --deps none "${REPO_ELEMENT}" | sed '/ostree-branch: /{;s///;q;};d')"
