@@ -9,4 +9,4 @@ runtime-depends:
 - vm/git-lfs.bst
 - vm/initramfs.bst
 - vm/os-release-devel.bst
-- freedesktop-sdk.bst:components/podman.bst
+- vm/toolbox.bst
