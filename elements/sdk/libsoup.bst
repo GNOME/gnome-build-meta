@@ -7,6 +7,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -22,6 +23,7 @@ variables:
     -Dtls_check=false
     -Dgtk_doc=true
     -Dntlm=disabled
+    -Dsysprof=disabled
 public:
   bst:
     split-rules:
