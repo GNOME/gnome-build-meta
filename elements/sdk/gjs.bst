@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gjs.git
-  track: master
+  url: gitlab_gnome_org:ptomato/gjs.git
+  track: 'fix-32bit'
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
