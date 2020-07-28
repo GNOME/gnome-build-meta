@@ -22,6 +22,7 @@ variables:
     -Dtls_check=false
     -Dgtk_doc=true
     -Dntlm=disabled
+    -Dsysprof=disabled
 public:
   bst:
     split-rules:
