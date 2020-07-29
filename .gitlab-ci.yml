@@ -49,6 +49,8 @@ default:
           client-key: client.key
           client-cert: client.crt
           push: true
+
+    sourcedir: /cache/buildstream/sources
     EOF
 
   - |
@@ -104,12 +106,6 @@ default:
 
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
-  # Store all the downloaded git repos and tarballs in the cache.
-  # This saves us fetching them on every build
-  cache: &bst-cache
-    key: bst-$FLATPAK_BRANCH
-    paths:
-    - "${XDG_CACHE_HOME}/buildstream/sources/"
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
@@ -128,7 +124,6 @@ default:
   - if: $CI_MERGE_REQUEST_ID == null
     when: manual
     allow_failure: true
-  cache: *bst-cache
   artifacts:
     when: always
     paths:
@@ -253,7 +248,6 @@ track:
   # only run on branches targeting master
   rules:
   - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
-  cache: *bst-cache
   artifacts:
     paths:
     - project.refs
@@ -296,7 +290,6 @@ pinebook-pro-image:
     - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
   when: manual
   allow_failure: true
-  cache: *bst-cache
   artifacts:
     when: always
     paths:
@@ -316,7 +309,6 @@ rock64-image:
     - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
   when: manual
   allow_failure: true
-  cache: *bst-cache
   artifacts:
     when: always
     paths:
@@ -336,7 +328,6 @@ raspberrypi-4-image:
     - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/raspberrypi-4/image.bst raspberrypi-4-image
   when: manual
   allow_failure: true
-  cache: *bst-cache
   artifacts:
     when: always
     paths:
