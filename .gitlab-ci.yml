@@ -49,6 +49,8 @@ default:
           client-key: client.key
           client-cert: client.crt
           push: true
+
+    sourcedir: /cache/buildstream/sources
     EOF
 
   - |
