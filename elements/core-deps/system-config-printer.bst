@@ -20,3 +20,14 @@ depends:
 - freedesktop-sdk.bst:components/python3-dbus.bst
 - freedesktop-sdk.bst:components/python3-requests.bst
 - freedesktop-sdk.bst:components/systemd.bst
+
+config:
+  install-commands:
+    (>):
+    - cd %{install-root}%{bindir} && rm system-config-printer system-config-printer-applet
+    - cd %{install-root}%{sysconfdir} && rm -r xdg
+    - cd %{install-root}%{datadir} && rm -r applications locale man
+    - cd %{install-root}%{datadir}/system-config-printer &&
+      rm -r icons/ troubleshoot/ ui/ xml/ &&
+      rm applet.py check-device-ids.py HIG.py install-printerdriver.py SearchCriterion.py
+      serversettings.py system-config-printer.py timedops.py ToolbarSearchEntry.py userdefault.py
