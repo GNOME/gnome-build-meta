@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-software.git
   track: master
 build-depends:
+- core/sysprof.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -16,7 +17,6 @@ depends:
 - core-deps/malcontent.bst
 - core-deps/xmlb.bst
 - core/gnome-desktop.bst
-- core/sysprof.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
