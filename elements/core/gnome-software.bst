@@ -4,6 +4,7 @@ sources:
   url: gnome_downloads:gnome-software/3.36/gnome-software-3.36.1.tar.xz
   ref: 4d4d66c70780539f204f96088da4fcb02371b0a8147f9266ce632ca784bf6f6e
 build-depends:
+- core/sysprof.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -15,7 +16,6 @@ depends:
 - core-deps/malcontent.bst
 - core-deps/xmlb.bst
 - core/gnome-desktop.bst
-- core/sysprof.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
