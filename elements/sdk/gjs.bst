@@ -1,11 +1,14 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gjs.git
   track: master
+
 build-depends:
-- sdk-deps/sysprof-minimal.bst
+- sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
@@ -15,7 +18,8 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dprofiler=disabled
+    -Dprofiler=enabled
+
 public:
   bst:
     split-rules:

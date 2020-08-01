@@ -5,7 +5,7 @@ sources:
   track: main
 build-depends:
 - sdk/gtk-doc.bst
-- sdk-deps/sysprof-minimal.bst
+- sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/appstream.bst

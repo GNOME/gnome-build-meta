@@ -6,6 +6,7 @@ sources:
   track: gnome-3-38
 
 build-depends:
+- sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
@@ -29,7 +30,7 @@ variables:
     -Dtls_check=false
     -Dgtk_doc=true
     -Dntlm=disabled
-    -Dsysprof=disabled
+    -Dsysprof=enabled
 
 public:
   bst:

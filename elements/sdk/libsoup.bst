@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
@@ -33,7 +34,7 @@ variables:
     -Dhttp2_tests=disabled
     -Dinstalled_tests=true
     -Dntlm=disabled
-    -Dsysprof=disabled
+    -Dsysprof=enabled
     -Dtls_check=false
 
 public:

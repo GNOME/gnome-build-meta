@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - sdk-deps/sassc.bst
+- sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
@@ -36,6 +37,7 @@ variables:
     -Dbroadway-backend=true
     -Dmedia-ffmpeg=disabled
     -Dprint-cloudprint=disabled
+    -Dprofiler=true
 
 public:
   bst:

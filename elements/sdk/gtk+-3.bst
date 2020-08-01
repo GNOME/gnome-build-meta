@@ -8,6 +8,7 @@ sources:
   path: files/gtk3-werror.patch
 
 build-depends:
+- sdk-deps/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -48,6 +49,7 @@ variables:
     -Dman=true
     -Dintrospection=true
     -Dtracker3=true
+    -Dprofiler=true
 
 public:
   bst:
