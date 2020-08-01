@@ -7,7 +7,6 @@ sources:
 
 build-depends:
 - core-deps/cvt.bst
-- core/sysprof.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

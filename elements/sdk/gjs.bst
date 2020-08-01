@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gjs.git
   track: master
 build-depends:
+- sdk-deps/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/gobject-introspection.bst

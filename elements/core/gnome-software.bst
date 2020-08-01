@@ -4,8 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-software.git
   track: main
 build-depends:
-- core/sysprof.bst
 - sdk/gtk-doc.bst
+- sdk-deps/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/appstream.bst

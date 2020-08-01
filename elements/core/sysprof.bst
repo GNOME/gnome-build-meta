@@ -1,9 +1,6 @@
 kind: meson
 
-sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/sysprof.git
-  track: master
+(@): elements/core/sysprof.inc
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
