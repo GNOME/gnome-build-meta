@@ -104,6 +104,7 @@ default:
          ;;
     esac
 
+  - df
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
