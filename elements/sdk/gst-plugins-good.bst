@@ -18,4 +18,5 @@ runtime-depends:
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/speex.bst
 - freedesktop-sdk.bst:components/wavpack.bst
+- freedesktop-sdk.bst:components/v4l-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
