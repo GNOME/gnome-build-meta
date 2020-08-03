@@ -16,6 +16,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/libglvnd.bst
 - freedesktop-sdk.bst:components/libnice.bst
 - freedesktop-sdk.bst:components/libwebp.bst
+- freedesktop-sdk.bst:components/libsrtp2.bst
 - freedesktop-sdk.bst:components/noopenh264.bst
 - freedesktop-sdk.bst:components/openal.bst
 - freedesktop-sdk.bst:components/orc.bst
