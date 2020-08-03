@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gjs.git
-  track: master
+  track: mcatanzaro/#336
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
