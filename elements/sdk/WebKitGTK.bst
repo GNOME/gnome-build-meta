@@ -7,6 +7,8 @@ sources:
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
+- kind: patch
+  path: files/webkitgtk/webkit-214966.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/gperf.bst
