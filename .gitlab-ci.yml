@@ -192,7 +192,7 @@ default:
 # Architecture specific settings
 #
 
-.x86_64: &x86_64
+.x86_64:
   image: "${DOCKER_AMD64}"
   tags:
   - x86_64
@@ -200,7 +200,7 @@ default:
   variables:
     ARCH: x86_64
 
-.i686: &i686
+.i686:
   image: "${DOCKER_AMD64}"
   tags:
   - x86_64
@@ -208,7 +208,7 @@ default:
   variables:
     ARCH: i686
 
-.aarch64: &aarch64
+.aarch64:
   image: "${DOCKER_AARCH64}"
   tags:
   - aarch64
@@ -216,7 +216,7 @@ default:
   variables:
     ARCH: aarch64
 
-.arm: &arm
+.arm:
   image: "${DOCKER_AARCH64}"
   tags:
   - armhf
@@ -224,7 +224,7 @@ default:
   variables:
     ARCH: arm
 
-.ppc64le: &ppc64le
+.ppc64le:
   image: "${DOCKER_PPC64LE}"
   tags:
   - ppc64le
@@ -238,7 +238,7 @@ default:
 #
 
 track:
-  <<: *x86_64
+  extends: .x86_64
   stage: track
   interruptible: true
   script:
@@ -254,36 +254,43 @@ track:
 
 
 build-gnome-core-x86_64:
-  extends: .build-template
-  <<: *x86_64
+  extends:
+  - .build-template
+  - .x86_64
 
 build-gnome-core-i386:
-  extends: .build-template
-  <<: *i686
+  extends:
+  - .build-template
+  - .i686
 
 build-gnome-core-aarch64:
-  extends: .build-template
-  <<: *aarch64
+  extends:
+  - .build-template
+  - .aarch64
 
 build-gnome-core-arm:
-  extends: .build-template
-  <<: *arm
+  extends:
+  - .build-template
+  - .arm
 
 build-gnome-core-ppc64le:
-  extends: .build-template
-  <<: *ppc64le
+  extends:
+  - .build-template
+  - .ppc64le
 
 
 vm-image-x86_64:
-  extends: .vm-image-template
+  extends:
+  - .vm-image-template
+  - .x86_64
   # run as soon as the x86_64 build job is done, don't wait for other arches
   needs:
   - track
   - job: build-gnome-core-x86_64
     artifacts: false
-  <<: *x86_64
 
 pinebook-pro-image:
+  extends: .aarch64
   stage: image
   script:
     - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
@@ -300,9 +307,9 @@ pinebook-pro-image:
   - track
   - job: build-gnome-core-aarch64
     artifacts: false
-  <<: *aarch64
 
 rock64-image:
+  extends: .aarch64
   stage: image
   script:
     - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
@@ -319,9 +326,9 @@ rock64-image:
   - track
   - job: build-gnome-core-aarch64
     artifacts: false
-  <<: *aarch64
 
 raspberrypi-4-image:
+  extends: .aarch64
   stage: image
   script:
     - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/raspberrypi-4/image.bst
@@ -338,10 +345,10 @@ raspberrypi-4-image:
   - track
   - job: build-gnome-core-aarch64
     artifacts: false
-  <<: *aarch64
 
 
 flatpak-prepare:
+  extends: .x86_64
   stage: prepare_flatpak
   dependencies: []
   script:
@@ -350,9 +357,9 @@ flatpak-prepare:
     paths:
     - build.txt
   rules: *flatpak-publish-rules
-  <<: *x86_64
 
 ostree-prepare:
+  extends: .x86_64
   stage: prepare_ostree
   dependencies: []
   script:
@@ -362,33 +369,39 @@ ostree-prepare:
     paths:
     - build.txt
   rules: *flatpak-publish-rules
-  <<: *x86_64
 
 flatpak-x86_64:
-  extends: .flatpak-template
-  <<: *x86_64
+  extends:
+  - .flatpak-template
+  - .x86_64
 
 flatpak-i386:
-  extends: .flatpak-template
-  <<: *i686
+  extends:
+  - .flatpak-template
+  - .i686
 
 flatpak-aarch64:
-  extends: .flatpak-template
-  <<: *aarch64
+  extends:
+  - .flatpak-template
+  - .aarch64
 
 flatpak-arm:
-  extends: .flatpak-template
-  <<: *arm
+  extends:
+  - .flatpak-template
+  - .arm
 
 flatpak-ppc64le:
-  extends: .flatpak-template
-  <<: *ppc64le
+  extends:
+  - .flatpak-template
+  - .ppc64le
 
 ostree-x86_64:
-  extends: .ostree-template
-  <<: *x86_64
+  extends:
+  - .ostree-template
+  - .x86_64
 
 flatpak-finish:
+  extends: .x86_64
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
@@ -396,9 +409,9 @@ flatpak-finish:
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
   rules: *flatpak-publish-rules
-  <<: *x86_64
 
 flatpak-finish-failed:
+  extends: .x86_64
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
@@ -408,9 +421,9 @@ flatpak-finish-failed:
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
     when: on_failure
-  <<: *x86_64
 
 ostree-finish:
+  extends: .x86_64
   stage: finish_ostree
   dependencies: [ostree-prepare]
   script:
@@ -419,19 +432,18 @@ ostree-finish:
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
   rules: *flatpak-publish-rules
-  <<: *x86_64
 
 ostree-finish-failed:
+  extends: .x86_64
   stage: finish_ostree
   dependencies: [ostree-prepare]
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client purge $(cat build.txt)
   rules: *flatpak-failed-rules
-  <<: *x86_64
 
 cve_report:
-  <<: *x86_64
+  extends: .x86_64
   stage: reports
   dependencies: [track]
   script:
