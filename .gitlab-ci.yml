@@ -1,3 +1,5 @@
+include: .gitlab-ci/arch.yml
+
 variables:
   # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
@@ -8,13 +10,6 @@ variables:
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
-
-  # Docker Images
-  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "e60e2dccd1ac4e928d62472676762d8e3e4a1406"
-  DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
-  DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
-  DOCKER_PPC64LE: "${DOCKER_REGISTRY}/bst14/ppc64le:${DOCKER_IMAGE_ID}"
 
 stages:
 - track
@@ -188,50 +183,6 @@ default:
   - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
   rules: *flatpak-publish-rules
 
-#
-# Architecture specific settings
-#
-
-.x86_64:
-  image: "${DOCKER_AMD64}"
-  tags:
-  - x86_64
-  - gnome-build-meta
-  variables:
-    ARCH: x86_64
-
-.i686:
-  image: "${DOCKER_AMD64}"
-  tags:
-  - x86_64
-  - gnome-build-meta
-  variables:
-    ARCH: i686
-
-.aarch64:
-  image: "${DOCKER_AARCH64}"
-  tags:
-  - aarch64
-  - gnome-build-meta
-  variables:
-    ARCH: aarch64
-
-.arm:
-  image: "${DOCKER_AARCH64}"
-  tags:
-  - armhf
-  - gnome-build-meta
-  variables:
-    ARCH: arm
-
-.ppc64le:
-  image: "${DOCKER_PPC64LE}"
-  tags:
-  - ppc64le
-  - gnome-build-meta
-  variables:
-    ARCH: ppc64le
-  allow_failure: true
 
 #
 # "Real" CI jobs

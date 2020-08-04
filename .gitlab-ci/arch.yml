@@ -1,0 +1,53 @@
+variables:
+  # Docker Images
+  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
+  DOCKER_IMAGE_ID: "e60e2dccd1ac4e928d62472676762d8e3e4a1406"
+
+  DOCKER_AMD64: "${DOCKER_REGISTRY}/bst14/amd64:${DOCKER_IMAGE_ID}"
+  DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst14/arm64:${DOCKER_IMAGE_ID}"
+  DOCKER_PPC64LE: "${DOCKER_REGISTRY}/bst14/ppc64le:${DOCKER_IMAGE_ID}"
+
+#
+# Architecture specific settings
+#
+
+.x86_64:
+  image: "${DOCKER_AMD64}"
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    ARCH: x86_64
+
+.i686:
+  image: "${DOCKER_AMD64}"
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    ARCH: i686
+
+.aarch64:
+  image: "${DOCKER_AARCH64}"
+  tags:
+  - aarch64
+  - gnome-build-meta
+  variables:
+    ARCH: aarch64
+
+.arm:
+  image: "${DOCKER_AARCH64}"
+  tags:
+  - armhf
+  - gnome-build-meta
+  variables:
+    ARCH: arm
+
+.ppc64le:
+  image: "${DOCKER_PPC64LE}"
+  tags:
+  - ppc64le
+  - gnome-build-meta
+  variables:
+    ARCH: ppc64le
+  allow_failure: true
