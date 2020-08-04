@@ -17,6 +17,7 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/gnome-shell-extensions.bst
 - core/gnome-shell.bst
+- core/gnome-tour.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
 - core/mutter.bst

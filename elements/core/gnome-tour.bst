@@ -10,6 +10,7 @@ build-depends:
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk+-3.bst
+- core-deps/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 environment:
   PATH: /usr/bin:/usr/lib/sdk/rust/bin
