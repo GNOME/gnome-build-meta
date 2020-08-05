@@ -14,11 +14,12 @@ variables:
 stages:
 - track
 - build
+- deploy-config
 - image
+- deploy
 - prepare_flatpak
 - flatpak
 - finish_flatpak
-- ostree
 - reports
 
 default:
@@ -45,31 +46,6 @@ default:
 
     sourcedir: /cache/buildstream/sources
     EOF
-
-  - |
-    case "$FLATPAK_BRANCH" in
-      master)
-        if [ -n "$NIGHTLY_REPO_TOKEN" ]; then
-          export REPO_TOKEN=$NIGHTLY_REPO_TOKEN
-          export FLAT_MANAGER_SERVER=https://nightly.gnome.org/
-          export FLAT_MANAGER_REPO=nightly
-        fi
-      ;;
-      *beta)
-        if [ -n "$FLATHUB_BETA_REPO_TOKEN" ]; then
-          export REPO_TOKEN=$FLATHUB_BETA_REPO_TOKEN
-          export FLAT_MANAGER_SERVER=https://hub.flathub.org/
-          export FLAT_MANAGER_REPO=beta
-        fi
-      ;;
-      *)
-        if [ -n "$FLATHUB_REPO_TOKEN" ]; then
-          export REPO_TOKEN=$FLATHUB_REPO_TOKEN
-          export FLAT_MANAGER_SERVER=https://hub.flathub.org/
-          export FLAT_MANAGER_REPO=stable
-        fi
-      ;;
-    esac
 
 #
 # Templates shared by multiple jobs
@@ -121,43 +97,15 @@ default:
     - image
     expire_in: '2 days'
 
-.flatpak-template:
-  stage: flatpak
-  dependencies: [track, flatpak-prepare]
-  script:
-  - ostree init --repo repo/ --mode archive
-
-  - ${BST} -o arch "${ARCH}" pull flatpak-runtimes.bst
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-runtimes.bst checkout-repo/
-  - flatpak build-commit-from --src-repo=checkout-repo/ repo/
-  - rm -rf checkout-repo/
-
-  - |
-    if test $FLAT_MANAGER_REPO == nightly; then
-        ${BST} -o arch "${ARCH}" pull flatpak-platform-extensions.bst
-        ${BST} -o arch "${ARCH}" checkout --hardlinks flatpak-platform-extensions.bst checkout-repo/
-        flatpak build-commit-from --src-repo=checkout-repo/ repo/
-        rm -rf checkout-repo/
-    fi
-
-  - |
-    if test $FLAT_MANAGER_REPO == nightly -a $ARCH == x86_64; then
-        ${BST} pull openh264-extension.bst:flatpak-repo.bst
-        ${BST} checkout --hardlinks openh264-extension.bst:flatpak-repo.bst checkout-repo/
-        flatpak build-commit-from --src-repo=checkout-repo/ repo/
-        rm -rf checkout-repo/
-    fi
-
-  - flatpak build-update-repo --generate-static-deltas repo/
-
-  - flat-manager-client push $(cat build.txt) repo/
-  rules: &flatpak-publish-rules
+.deploy-rules:
+  rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
 
 .ostree-template:
-  stage: ostree
+  extends: .deploy-rules
+  stage: deploy
   dependencies: [track]
   script:
   - |
@@ -179,8 +127,6 @@ default:
   - BUILD_ID=$(flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
   - flat-manager-client purge $BUILD_ID
-  rules: *flatpak-publish-rules
-
 
 #
 # "Real" CI jobs
@@ -193,6 +139,7 @@ track:
   script:
   - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
   - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst
+  - echo $CI_JOB_ID > track-job.id
   retry: 2
   # only run on branches targeting master
   rules:
@@ -200,6 +147,7 @@ track:
   artifacts:
     paths:
     - project.refs
+    - track-job.id
 
 
 build-x86_64:
@@ -227,6 +175,72 @@ build-ppc64le:
   - .build-template
   - .ppc64le
 
+
+generate-deploy-config:
+  extends:
+  - .x86_64
+  - .deploy-rules
+  dependencies: [track]
+  stage: deploy-config
+  script:
+  - TRACK_JOB_ID=$(cat track-job.id)
+  - |
+    case "$FLATPAK_BRANCH" in
+      master)
+        FLAT_MANAGER_SERVER=https://nightly.gnome.org/
+        FLAT_MANAGER_REPO=nightly
+        SUPPORTED_ARCHES="x86_64 i686 aarch64 arm ppc64le"
+      ;;
+      *beta)
+        FLAT_MANAGER_SERVER=https://hub.flathub.org/
+        FLAT_MANAGER_REPO=beta
+        SUPPORTED_ARCHES="x86_64 i686 aarch64 arm"
+      ;;
+      *)
+        FLAT_MANAGER_SERVER=https://hub.flathub.org/
+        FLAT_MANAGER_REPO=stable
+        SUPPORTED_ARCHES="x86_64 i686 aarch64 arm"
+      ;;
+    esac
+
+  - |
+    cat > flatpak-variables.yml << END
+    variables:
+      BST: '$BST'
+      TRACK_JOB_ID: '$TRACK_JOB_ID'
+      FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'
+      FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
+      TARGETS: flatpak-runtimes.bst
+      TARGETS_nightly: flatpak-platform-extensions.bst
+      TARGETS_nightly_x86_64: openh264-extension.bst:flatpak-repo.bst
+      ENVIRONMENT_NAME: flatpak/$FLATPAK_BRANCH
+
+    END
+  - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml
+
+  - |
+    for ARCH in $SUPPORTED_ARCHES; do
+    cat >> flatpak-deploy.yml << END
+
+    flatmgr-$ARCH:
+      extends:
+      - .flatmgr-template
+      - .$ARCH
+    END
+    done
+
+  artifacts:
+    paths:
+    - flatpak-deploy.yml
+
+deploy-flatpak:
+  extends: .deploy-rules
+  stage: deploy
+  trigger:
+    strategy: depend
+    include:
+    - artifact: flatpak-deploy.yml
+      job: generate-deploy-config
 
 vm-image-x86_64:
   extends:
@@ -294,65 +308,6 @@ raspberrypi-4-image:
   - track
   - job: build-aarch64
     artifacts: false
-
-
-flatpak-prepare:
-  extends: .x86_64
-  stage: prepare_flatpak
-  dependencies: []
-  script:
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-  artifacts:
-    paths:
-    - build.txt
-  rules: *flatpak-publish-rules
-
-flatpak-x86_64:
-  extends:
-  - .flatpak-template
-  - .x86_64
-
-flatpak-i386:
-  extends:
-  - .flatpak-template
-  - .i686
-
-flatpak-aarch64:
-  extends:
-  - .flatpak-template
-  - .aarch64
-
-flatpak-arm:
-  extends:
-  - .flatpak-template
-  - .arm
-
-flatpak-ppc64le:
-  extends:
-  - .flatpak-template
-  - .ppc64le
-
-flatpak-finish:
-  extends: .x86_64
-  stage: finish_flatpak
-  dependencies: [flatpak-prepare]
-  script:
-  - flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager-client publish --wait $(cat build.txt)
-  - flat-manager-client purge $(cat build.txt)
-  rules: *flatpak-publish-rules
-
-flatpak-finish-failed:
-  extends: .x86_64
-  stage: finish_flatpak
-  dependencies: [flatpak-prepare]
-  script:
-  - flat-manager-client purge $(cat build.txt)
-  rules: &flatpak-failed-rules
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-    when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-    when: on_failure
 
 ostree-x86_64:
   extends:

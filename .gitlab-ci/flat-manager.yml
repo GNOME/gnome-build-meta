@@ -1,0 +1,70 @@
+
+include: .gitlab-ci/arch.yml
+
+stages:
+- prepare
+- deploy
+- finish
+
+.flatmgr-template:
+  stage: deploy
+  dependencies: [flatmgr-prepare]
+  script:
+  - test -n "$BUILD_TARGETS" && $BST -o arch $ARCH build $BUILD_TARGETS
+
+  - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
+  - TARGETS_REPO_ARCH=TARGETS_{$FLAT_MANAGER_REPO}_${ARCH}
+  - TARGETS="$TARGETS ${!TARGETS_REPO} ${!TARGETS_REPO_ARCH}"
+
+  - $BST -o arch $ARCH pull $TARGETS
+
+  - ostree init --repo repo/ --mode archive
+
+  - |
+    for target in $TARGETS; do
+      $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
+      ostree pull-local --repo repo/ checkout-repo/
+      rm -rf checkout-repo/
+    done
+
+  - flatpak build-update-repo --generate-static-deltas repo/
+  - flat-manager-client push $(cat build.txt) repo/
+  environment:
+    name: $ENVIRONMENT_NAME
+    action: prepare
+
+
+flatmgr-prepare:
+  extends: .x86_64
+  stage: prepare
+  script:
+  - curl -O $CI_PROJECT_URL/-/jobs/$TRACK_JOB_ID/artifacts/raw/project.refs
+  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+  artifacts:
+    paths:
+    - build.txt
+    - project.refs
+  environment:
+    name: $ENVIRONMENT_NAME
+    action: prepare
+
+flatmgr-finish:
+  extends: .x86_64
+  stage: finish
+  dependencies: [flatmgr-prepare]
+  script:
+  - flat-manager-client commit --publish --wait $(cat build.txt)
+  - flat-manager-client publish --wait $(cat build.txt)
+  after_script:
+  - flat-manager-client purge $(cat build.txt)
+  environment:
+    name: $ENVIRONMENT_NAME
+
+flatmgr-finish-failed:
+  extends: .x86_64
+  stage: finish
+  dependencies: [flatmgr-prepare]
+  script:
+  - flat-manager-client purge $(cat build.txt)
+  when: on_failure
+
