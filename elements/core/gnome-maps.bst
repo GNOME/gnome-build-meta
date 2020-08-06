@@ -11,6 +11,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
 - core-deps/libgfbgraph-0.2.bst
+- core-deps/libhandy.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/clutter-gtk.bst
