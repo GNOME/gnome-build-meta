@@ -7,7 +7,3 @@ sources:
 config:
   options:
     target_arch: '%{arch}'
-    (?):
-    - arch == "ppc64le":
-        target_arch: "powerpc64le"
-        bootstrap_build_arch: "powerpc64le"
