@@ -5,17 +5,15 @@ sources:
   track: tracker-2.3
 build-depends:
 - sdk/gtk-doc.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/dconf.bst
-- core-deps/upower.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
