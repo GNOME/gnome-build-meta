@@ -10,6 +10,7 @@ variables:
   autogen: autoreconf -fvi
   conf-local: >-
     --with-system-bubblewrap
+    --with-system-dbus-proxy
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -20,7 +21,8 @@ build-depends:
 
 depends:
 - core-deps/libostree.bst
-- core-deps/bubblewrap.bst
+- sdk-deps/bubblewrap.bst
+- sdk-deps/xdg-dbus-proxy.bst
 - sdk/appstream-glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst

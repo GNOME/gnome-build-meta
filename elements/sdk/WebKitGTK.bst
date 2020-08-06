@@ -11,6 +11,8 @@ sources:
   path: files/webkitgtk/webkit-214966.patch
 
 build-depends:
+- sdk-deps/bubblewrap.bst
+- sdk-deps/xdg-dbus-proxy.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
@@ -37,6 +39,7 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
+- freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
@@ -58,7 +61,6 @@ variables:
         -DENABLE_GLES2=ON
   cmake-local: >-
     -DPORT=GTK
-    -DENABLE_BUBBLEWRAP_SANDBOX=OFF
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
