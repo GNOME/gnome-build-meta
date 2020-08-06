@@ -186,8 +186,7 @@ default:
   - rm -rf checkout-devel-repo/
 
   - flat-manager-client push $(cat build.txt) repo/ $(ostree --repo=repo/ refs)
-  rules: &ostree-publish-rules
-  - if: $CI_COMMIT_REF_NAME == "master"
+  rules: *flatpak-publish-rules
 
 #
 # Architecture specific settings
@@ -362,7 +361,7 @@ ostree-prepare:
   artifacts:
     paths:
     - build.txt
-  rules: *ostree-publish-rules
+  rules: *flatpak-publish-rules
   <<: *x86_64
 
 flatpak-x86_64:
@@ -404,7 +403,7 @@ flatpak-finish-failed:
   dependencies: [flatpak-prepare]
   script:
   - flat-manager-client purge $(cat build.txt)
-  rules:
+  rules: &flatpak-failed-rules
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
@@ -419,7 +418,7 @@ ostree-finish:
   - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   - flat-manager-client purge $(cat build.txt)
-  rules: *ostree-publish-rules
+  rules: *flatpak-publish-rules
   <<: *x86_64
 
 ostree-finish-failed:
@@ -428,9 +427,7 @@ ostree-finish-failed:
   script:
   - export REPO_TOKEN=$OSTREE_REPO_TOKEN
   - flat-manager-client purge $(cat build.txt)
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-    when: on_failure
+  rules: *flatpak-failed-rules
   <<: *x86_64
 
 cve_report:
