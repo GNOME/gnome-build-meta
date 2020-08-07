@@ -31,6 +31,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/gtksourceview.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/libgudev.bst
