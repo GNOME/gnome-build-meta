@@ -15,7 +15,6 @@ stages:
 - track
 - build
 - deploy-config
-- image
 - deploy
 - prepare_flatpak
 - flatpak
@@ -78,22 +77,17 @@ default:
     - logs
     expire_in: '1 week'
 
-.vm-image-template:
-  stage: image
-  interruptible: true
+.manual-image-template:
+  stage: deploy
+  dependencies: [track]
+  when: manual
+  allow_failure: true
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
-    when: on_success
-  - if: $CI_MERGE_REQUEST_ID == null
-    when: manual
-    allow_failure: true
+    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
+    - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
   artifacts:
     when: always
     paths:
-    - logs
     - image
     expire_in: '2 days'
 
@@ -244,70 +238,32 @@ deploy-flatpak:
 
 vm-image-x86_64:
   extends:
-  - .vm-image-template
+  - .manual-image-template
   - .x86_64
-  # run as soon as the x86_64 build job is done, don't wait for other arches
-  needs:
-  - track
-  - job: build-x86_64
-    artifacts: false
+  variables:
+    IMAGE: vm/image.bst
 
 pinebook-pro-image:
-  extends: .aarch64
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/pinebook-pro/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/pinebook-pro/image.bst pinebook-pro-image
-  when: manual
-  allow_failure: true
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - pinebook-pro-image
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-aarch64
-    artifacts: false
+  extends:
+  - .manual-image-template
+  - .aarch64
+  variables:
+    IMAGE: boards/pinebook-pro/image.bst
 
 rock64-image:
-  extends: .aarch64
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/rock64/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/rock64/image.bst rock64
-  when: manual
-  allow_failure: true
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - rock64
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-aarch64
-    artifacts: false
+  extends:
+  - .manual-image-template
+  - .aarch64
+  variables:
+    IMAGE: boards/rock64/image.bst
 
 raspberrypi-4-image:
-  extends: .aarch64
-  stage: image
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build boards/raspberrypi-4/image.bst
-    - ${BST_NO_PUSH} -o arch "${ARCH}" checkout --hardlinks boards/raspberrypi-4/image.bst raspberrypi-4-image
-  when: manual
-  allow_failure: true
-  artifacts:
-    when: always
-    paths:
-    - logs
-    - raspberrypi-4-image
-    expire_in: '2 days'
-  needs:
-  - track
-  - job: build-aarch64
-    artifacts: false
+  extends:
+  - .manual-image-template
+  - .aarch64
+  variables:
+    IMAGE: boards/raspberrypi-4/image.bst
+
 
 ostree-x86_64:
   extends:
