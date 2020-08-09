@@ -3,7 +3,7 @@
 set -ex
 
 
-# Assume this happnes only on protected branches,
+# Assume this happens only on protected branches,
 # which will be the stable branches,
 # and their naming scheme is gnome-44, gnome-45, etc
 if [ "${CI_COMMIT_BRANCH-}" != "master" ]; then
