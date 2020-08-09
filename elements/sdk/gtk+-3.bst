@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.21.tar.xz
-  ref: aeea6ae7cd35e83dfc7699be716519faefca346c62e784dd1a37d9df94c08f52
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.22.tar.xz
+  ref: bf18a4a5dff28a7b02aaef1b949c2d09c96c18387eddab152bb4cd55a5b67dda
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

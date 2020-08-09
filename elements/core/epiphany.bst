@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/3.36/epiphany-3.36.3.tar.xz
-  ref: 621b5626374891769afec9c35946ab6c3910ea9cf9a2498bab166c99bd91e16f
+  url: gnome_downloads:epiphany/3.36/epiphany-3.36.4.tar.xz
+  ref: 588a75b1588f5a509c33cf0be6a38a0f4fc1748eeb499a51d991ddef485242bf
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

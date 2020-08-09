@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://tecnocode.co.uk/downloads/uhttpmock/uhttpmock-0.5.2.tar.xz
-  ref: 17156920c844d4ee9df63f6006df323851a69f9b60dc5d3a1b7ab03e0fe89e3e
+  url: https://tecnocode.co.uk/downloads/uhttpmock/uhttpmock-0.5.3.tar.xz
+  ref: 90843223c3a30bdb7f1eb3442373a03fee425af85a9df289cd687698ccff112f
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
