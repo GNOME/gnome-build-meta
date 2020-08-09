@@ -409,6 +409,23 @@ s3-image-static-stable:
   - aws s3 cp --acl public-read stable-$branch-aarch64-iso s3://gnome-build-meta/stable-$branch-aarch64-iso
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
+export_metadata:
+  stage: "deploy"
+  extends: ".aarch64"
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+  script:
+    - ./utils/export-metadata.sh
+    - |-
+      if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+          ./utils/publish-metadata-to-s3.sh
+      fi
+  artifacts:
+    when: "always"
+    expire_in: "2 days"
+    paths:
+    - "metadata/*.tar.xz"
 
 cve_report:
   extends: .aarch64
