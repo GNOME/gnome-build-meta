@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz
-  ref: 88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1
+  url: https://www.freedesktop.org/software/polkit/releases/polkit-0.117.tar.gz
+  ref: e106fe8206638a0524d251f0f96e15eed6e34a3a6d2fd07cc1b6337fdcef7b7c
 - kind: local
   path: files/polkit/sysusers.conf
   directory: data
@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gobject-introspection.bst
-- core-deps/mozjs60.bst
+- sdk/mozjs68.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
