@@ -362,6 +362,25 @@ s3-image-aarch64:
   - job: 'build-aarch64'
     artifacts: false
 
+# FIXME: with libdir gir-1.0 we will need per-arch uploads
+export_metadata:
+  stage: "deploy"
+  extends: ".x86_64"
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  script:
+    - ./.gitlab-ci/scripts/export-metadata.sh
+    - |-
+      if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+          ./.gitlab-ci/scripts/publish-metadata-to-s3.sh
+      fi
+  artifacts:
+    when: "always"
+    expire_in: "2 days"
+    paths:
+    - "metadata/*.tar.xz"
+
 cve_report:
   extends: .aarch64
   stage: 'deploy'
