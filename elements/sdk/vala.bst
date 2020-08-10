@@ -2,7 +2,10 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/vala.git
-  track: master
+
+  # Pinned to 0.48,7, see:
+  # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/307
+  track: 0.48.7
 build-depends:
 - sdk/vala-tarball.bst
 - freedesktop-sdk.bst:components/bison.bst
