@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/nautilus.git
-  track: master
+  track: sam/tracker-3
   submodules:
     subprojects/libgd:
       checkout: true

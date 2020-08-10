@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-boxes.git
-  track: master
+  track: wip/carlosg/tracker3
   submodules:
     subprojects/gtk-frdp:
       checkout: true
@@ -27,8 +27,7 @@ depends:
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
 - core-deps/spice-gtk.bst
-- core-deps/tracker-2.bst
-- core-deps/tracker-miners-2.bst
+- core-deps/tracker-miners.bst
 - core-deps/vte.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
@@ -37,5 +36,8 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
+- sdk/tracker.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: tracker-miners-2.3
+  track: sam/tracker-miners-2.3-no-autostart
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/systemd.bst

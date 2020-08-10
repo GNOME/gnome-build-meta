@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-photos.git
-  track: master
+  track: sam/tracker2-domain
   submodules:
     subprojects/libgd:
       checkout: true

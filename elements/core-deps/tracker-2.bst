@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/tracker.git
-  track: tracker-2.3
+  track: sam/tracker-2.3-no-autostart
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
