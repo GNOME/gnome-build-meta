@@ -30,7 +30,8 @@ EOF
     mv ostree-gpg.tmp ostree-gpg
 fi
 
-utils/update-repo.sh \
+script_dir=$(dirname $0)
+$script_dir/update-repo.sh \
     --gpg-homedir=ostree-gpg \
     --gpg-sign="$(cat ostree-gpg/default-id)" \
     --collection-id=org.gnome.GnomeOS \
