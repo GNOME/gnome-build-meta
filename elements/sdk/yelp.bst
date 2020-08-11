@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/yelp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:yelp/3.37/yelp-3.37.90.tar.xz
+  ref: dac3d2b14fbfcee4732d4e8a7f8a108a88e853ca05f071d988a5a8e185e5abd2
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

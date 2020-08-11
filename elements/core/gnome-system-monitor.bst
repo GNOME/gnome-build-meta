@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-system-monitor.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-system-monitor/3.37/gnome-system-monitor-3.37.90.tar.xz
+  ref: a2bf00a744be836279e1d12d40cfb37b8ad8e150aa9ef6878174399bf2451f14
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

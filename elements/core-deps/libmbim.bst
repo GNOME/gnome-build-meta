@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:mobile-broadband/libmbim.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/libmbim/libmbim-1.24.2.tar.xz
+  ref: 32198c099987849c5f442d1cbf4b6e43e645cbdbe9cfdc197b19ddd63c6981e4
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

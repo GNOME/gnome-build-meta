@@ -5,11 +5,11 @@ variables:
   # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
   XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'False'
   BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: 3.38beta
 
 stages:
 - track

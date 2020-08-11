@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/epiphany.git
-  track: master
+- kind: tar
+  url: gnome_downloads:epiphany/3.37/epiphany-3.37.90.tar.xz
+  ref: ee447d289f2e0b1a8acd53f9f0749d02abcb4643ca98c4dd53a535243db228d6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

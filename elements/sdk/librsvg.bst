@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/librsvg.git
-  track: master
-- kind: cargo
+- kind: tar
+  url: gnome_downloads:librsvg/2.49/librsvg-2.49.3.tar.xz
+  ref: 963b06f62dd5aa2e947e83b29dfc682d601e24f7c69eb0764304853cea22db96
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

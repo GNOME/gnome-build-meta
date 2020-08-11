@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:ostreedev/ostree/releases/download/v2019.5/libostree-2019.5.tar.xz
+  ref: 9568156d147865f0f744373288039dbde784c0cf1de37fdd2cacf4e950790875
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 

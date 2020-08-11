@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/3.37/gnome-disk-utility-3.37.2.tar.xz
+  ref: 1c998f554dfec8b423c685872353a5dbcf658c9f7ba477cac768a92563643308
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

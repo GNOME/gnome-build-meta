@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-session.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-session/3.37/gnome-session-3.37.0.tar.xz
 
+  ref: cb140f2b8ee768ff8b3dce3ddb479e71e95138e904c8343a38c60a2d1e85f98f
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/xmlto.bst

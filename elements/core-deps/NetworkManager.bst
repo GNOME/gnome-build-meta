@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:NetworkManager/NetworkManager.git
-  track: master
+- kind: tar
+  url: gnome_downloads:NetworkManager/1.27/NetworkManager-1.27.1.tar.xz
+  ref: ce4e1ef2e712929989994cee265417aeee3df111b00dcf56ecd3539a16221302
 build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst

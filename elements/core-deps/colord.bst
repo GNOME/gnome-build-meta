@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: github_com:hughsie/colord.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/colord/releases/colord-1.4.4.tar.xz
+  ref: 9a0fe80160bf88efddb582a9fc0169f56065276dc3882c47dddb9eecd048c0a5
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

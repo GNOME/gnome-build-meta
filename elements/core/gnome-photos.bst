@@ -1,12 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-photos.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
+- kind: tar
+  url: gnome_downloads:gnome-photos/3.37/gnome-photos-3.37.2.tar.xz
+  ref: cc955aa1ff84bd698f9868e171a0d52de4201a50328882518ec1da374bbf9a8f
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/vte.git
-  track: master
+- kind: tar
+  url: gnome_downloads:vte/0.61/vte-0.61.90.tar.xz
+  ref: d99d70ca13e1a13c729de2198434b71a839a1808d81a0b1ea8ceb022d619e487
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

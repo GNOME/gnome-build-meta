@@ -1,17 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-boxes.git
-  track: master
-  submodules:
-    subprojects/gtk-frdp:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/gtk-frdp.git
-    subprojects/libovf-glib:
-      checkout: true
-      url: gitlab_gnome_org:felipeborges/libovf-glib.git
-
+- kind: tar
+  url: gnome_downloads:gnome-boxes/3.37/gnome-boxes-3.37.90.tar.xz
+  ref: 122da39131acb971b3e764006c5c3698447a5d9220aab3383db63c0929de915d
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

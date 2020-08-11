@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libdazzle.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libdazzle/3.37/libdazzle-3.37.1.tar.xz
+  ref: fdf0e398069848b90fddf3184b6384592a3aeabb8b2433140e03b0164266250f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

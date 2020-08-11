@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:ibus/ibus/releases/download/1.5.22/ibus-1.5.22.tar.gz
+  ref: 8170eba58c28aa4818970751ebdeada728ebb63d535967a5c5f5c21b0017be4a
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/iso-codes.bst

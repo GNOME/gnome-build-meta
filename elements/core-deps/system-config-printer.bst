@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://github.com/OpenPrinting/system-config-printer/releases/download/1.5.12/system-config-printer-1.5.12.tar.xz
 
+  ref: 6b16717dfe1f64ada6ef9398dcab07b8b7c864f006588d03002e41b743cf1e14
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

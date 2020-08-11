@@ -2,6 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: https://download.samba.org/pub/samba/stable/samba-4.12.0.tar.gz
+  ref: 6ec0b70a567d3c3f4dd3cf2a90b515dcef03a3804b00abb5896eba382d9665fe
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:

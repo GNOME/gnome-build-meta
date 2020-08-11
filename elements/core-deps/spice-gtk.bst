@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: spice:gtk/spice-gtk-0.38.tar.xz
 
+  ref: 5ae974731baf2b41316d4f0b3ae0c2e47f00bff91a5a617e189cd3dedcd96d8e
 build-depends:
 - core-deps/python-pyparsing.bst
 - sdk/gtk-doc.bst

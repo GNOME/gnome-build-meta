@@ -1,10 +1,9 @@
 kind: cmake
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/evolution-data-server.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:evolution-data-server/3.37/evolution-data-server-3.37.90.tar.xz
+  ref: 6cd71edf42e699ab8e8bd4908aeb131210b594ce961bde68fd27333b2aed4430
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/gperf.bst

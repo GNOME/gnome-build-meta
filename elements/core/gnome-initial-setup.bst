@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-initial-setup/3.37/gnome-initial-setup-3.37.91.tar.xz
+  ref: d4a710d51cd6862087991a5e55d01bbf8c98cf979d6a988bdd7b550dd95b6e88
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
@@ -40,4 +40,5 @@ config:
   install-commands:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf %{install-root}%{sysusersdir}/gnome-initial-setup.conf
+    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf
+      %{install-root}%{sysusersdir}/gnome-initial-setup.conf
