@@ -78,7 +78,6 @@ depends:
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
-- core-deps/libslirp.bst
 - core-deps/libssh2.bst
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
