@@ -6,7 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 
 depends:
-- core-deps/libslirp.bst
+- freedesktop-sdk.bst:components/libslirp.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
