@@ -1,6 +1,6 @@
 projects:
   gnome:
     freedesktop-sdk.bst:
-    - ref: freedesktop-sdk-20.08beta.6-0-g9f6c0907f2b6a7dfb5a6e15f5a2bdcf22e5a4162
+    - ref: freedesktop-sdk-20.08rc.1-0-ga57a805ddae07e57a40c94e1784b8955ec318978
     openh264-extension.bst:
     - ref: openh264-2.0.0-3-32-gf855a9e434f18734cdb3bb8143d97f61de8e6add
