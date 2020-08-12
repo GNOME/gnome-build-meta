@@ -14,7 +14,6 @@ depends:
 - core-deps/ebtables.bst
 - core-deps/qemu.bst
 - core-deps/slirp-helper.bst
-- core-deps/yajl.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/dmidecode.bst
 - freedesktop-sdk.bst:components/gnutls.bst
@@ -25,6 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/lvm2.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/xorg-lib-pciaccess.bst
+- freedesktop-sdk.bst:components/yajl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 config:
   configure-commands:

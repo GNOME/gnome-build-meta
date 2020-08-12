@@ -124,4 +124,3 @@ depends:
 - core-deps/usbredir.bst
 - core-deps/vte.bst
 - core-deps/xmlb.bst
-- core-deps/yajl.bst
