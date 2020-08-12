@@ -6,3 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+config:
+  install-commands:
+    (>):
+    - rm '%{install-root}%{sysconfdir}/ethertypes'

@@ -146,7 +146,6 @@ depends:
 - freedesktop-sdk.bst:components/unzip.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/which.bst
-- freedesktop-sdk.bst:components/xz.bst
 - freedesktop-sdk.bst:components/zip.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/alsa-plugins.bst
