@@ -63,7 +63,7 @@ default:
          TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
          ;;
       x86_64)
-         TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
+         TARGETS+=(vm/repo.bst vm/repo-devel.bst)
          TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
          ;;
     esac
@@ -109,7 +109,7 @@ default:
 
   - ostree init --repo repo/ --mode archive
 
-  - ${BST_NO_PUSH} -o arch "${ARCH}" build vm/repo.bst vm/repo-devel.bst
+  - ${BST} -o arch "${ARCH}" pull vm/repo.bst vm/repo-devel.bst
 
   - |
     for element in vm/repo.bst vm/repo-devel.bst; do
