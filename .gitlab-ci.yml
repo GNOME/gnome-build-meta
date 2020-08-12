@@ -16,9 +16,6 @@ stages:
 - build
 - deploy-config
 - deploy
-- prepare_flatpak
-- flatpak
-- finish_flatpak
 - reports
 
 default:
