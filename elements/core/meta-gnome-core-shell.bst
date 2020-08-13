@@ -13,6 +13,7 @@ depends:
 - core/gnome-initial-setup.bst
 - core/gnome-keyring.bst
 - core/gnome-menus.bst
+- core/gnome-remote-desktop.bst
 - core/gnome-session.bst
 - core/gnome-settings-daemon.bst
 - core/gnome-shell-extensions.bst
