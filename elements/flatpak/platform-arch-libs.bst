@@ -15,5 +15,5 @@ config:
     Runtime:
       name: org.gnome.Platform.Compat.%{gcc_arch}
     ExtensionOf:
-      ref: runtime/org.gnome.Platform/%{gcc_arch}/%{branch}
+      ref: runtime/org.gnome.Platform/%{gcc_arch}/%{flatpak-branch}
 

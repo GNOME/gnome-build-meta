@@ -19,8 +19,8 @@ config:
   metadata:
     Runtime:
       name: org.gnome.Platform
-      runtime: org.gnome.Platform/%{gcc_arch}/%{branch}
-      sdk: org.gnome.Sdk/%{gcc_arch}/%{branch}
+      runtime: org.gnome.Platform/%{gcc_arch}/%{flatpak-branch}
+      sdk: org.gnome.Sdk/%{gcc_arch}/%{flatpak-branch}
 
     Environment:
       GI_TYPELIB_PATH: /app/lib/girepository-1.0

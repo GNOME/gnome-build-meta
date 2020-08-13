@@ -9,4 +9,4 @@ config:
       name: org.gnome.Platform.Locale
 
     ExtensionOf:
-      ref: runtime/org.gnome.Platform/%{gcc_arch}/%{branch}
+      ref: runtime/org.gnome.Platform/%{gcc_arch}/%{flatpak-branch}

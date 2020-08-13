@@ -9,5 +9,5 @@ config:
       name: org.gnome.Sdk.Docs
 
     ExtensionOf:
-      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{branch}
+      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{flatpak-branch}
 
