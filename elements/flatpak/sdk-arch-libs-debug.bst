@@ -12,4 +12,4 @@ config:
     Runtime:
       name: org.gnome.Sdk.Compat.%{gcc_arch}.Debug
     ExtensionOf:
-      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{branch}
+      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{flatpak-branch}

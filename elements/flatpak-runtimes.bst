@@ -31,33 +31,34 @@ config:
   environment:
   - core-deps/flatpak.bst
   arch: '%{gcc_arch}'
+  branch: '%{flatpak-branch}'
   repo-mode: bare-user-only
   (?):
   - arch == 'i686':
       copy-refs:
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}/x86_64/%{branch}
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/x86_64/%{branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{branch}
+      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}/x86_64/%{flatpak-branch}
+      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/x86_64/%{flatpak-branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{flatpak-branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{flatpak-branch}
 
   - arch == 'arm':
       copy-refs:
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}/aarch64/%{branch}
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/aarch64/%{branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{branch}
+      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}/aarch64/%{flatpak-branch}
+      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/aarch64/%{flatpak-branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{flatpak-branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{flatpak-branch}
 
   - arch == 'aarch64':
       copy-refs:
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{flatpak-branch}
+      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
+        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{flatpak-branch}
