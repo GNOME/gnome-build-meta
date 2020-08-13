@@ -13,7 +13,6 @@ depends:
 - core/evince.bst
 - core/file-roller.bst
 - core/gedit.bst
-- core/gnome-boxes.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
 - core/gnome-characters.bst
