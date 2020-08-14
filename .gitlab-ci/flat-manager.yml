@@ -78,7 +78,7 @@ flatmgr-finish:
   stage: finish
   dependencies: [flatmgr-prepare]
   script:
-  - flat-manager-client commit --publish --wait $(cat build.txt)
+  - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   after_script:
   - flat-manager-client purge $(cat build.txt)
