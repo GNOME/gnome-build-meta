@@ -266,8 +266,8 @@ s3-image:
   stage: deploy
   dependencies: [track]
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
