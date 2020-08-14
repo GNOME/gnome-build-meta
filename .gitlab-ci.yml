@@ -152,7 +152,7 @@ generate-deploy-config:
   dependencies: [track]
   stage: deploy-config
   script:
-  - TRACK_JOB_ID=$(cat track-job.id)
+  - test -f track-job.id && TRACK_JOB_ID=$(cat track-job.id)
   - |
     case "$FLATPAK_BRANCH" in
       master)

@@ -51,7 +51,7 @@ flatmgr-prepare:
   extends: .x86_64
   stage: prepare
   script:
-  - curl -O $CI_PROJECT_URL/-/jobs/$TRACK_JOB_ID/artifacts/raw/project.refs
+  - test -n "$TRACK_JOB_ID" && curl -O $CI_PROJECT_URL/-/jobs/$TRACK_JOB_ID/artifacts/raw/project.refs
   - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
     paths:
