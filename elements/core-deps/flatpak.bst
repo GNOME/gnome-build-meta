@@ -2,9 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:flatpak/flatpak/releases/download/1.4.3/flatpak-1.4.3.tar.xz
-- kind: patch
-  path: files/flatpak/sysusers.patch
+  url: github_com:flatpak/flatpak/releases/download/1.8.1/flatpak-1.8.1.tar.xz
 
 variables:
   autogen: autoreconf -fvi
@@ -13,6 +11,7 @@ variables:
     --with-system-dbus-proxy
 
 build-depends:
+- core-deps/python-pyparsing.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/git.bst
