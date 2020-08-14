@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:graphene/1.10/graphene-1.10.0.tar.xz
-  ref: 406d97f51dd4ca61e91f84666a00c3e976d3e667cd248b76d92fdb35ce876499
+  url: gnome_downloads:graphene/1.10/graphene-1.10.2.tar.xz
+  ref: e97de8208f1aac4f913d4fa71ab73a7034e807186feb2abe55876e51c425a7f6
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

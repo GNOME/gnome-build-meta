@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/3.34/gnome-desktop-3.34.7.tar.xz
-  ref: 186575a9cc316db2471ba53d5407b06e41f112d87f0bffd0eb322ce17effbe94
+  url: gnome_downloads:gnome-desktop/3.34/gnome-desktop-3.34.8.tar.xz
+  ref: 83047376086d59f9b9d4dbd138aa00aef54ab4417838444bee9b546369c38dda
 depends:
 - core-deps/libgudev.bst
 - sdk/gdk-pixbuf.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:rygel/0.38/rygel-0.38.3.tar.xz
-  ref: 08c21a577f7bdad26446a75ffa32778b26842c3b1188165f0b19818559747d00
+  url: gnome_downloads:rygel/0.38/rygel-0.38.4.tar.xz
+  ref: ece7f3e04d1e4c177b00374cb39f91e8353c62f90cf37150927eb38c7ea8a166
 depends:
 - core-deps/gssdp.bst
 - core-deps/gupnp-av.bst
