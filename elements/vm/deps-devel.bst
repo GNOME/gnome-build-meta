@@ -7,3 +7,4 @@ runtime-depends:
 - vm/initramfs.bst
 - vm/buildstream/buildstream.bst
 - vm/buildstream/bst-external.bst
+- freedesktop-sdk.bst:components/podman.bst
