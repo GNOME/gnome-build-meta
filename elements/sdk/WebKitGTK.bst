@@ -2,13 +2,11 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.29.4.tar.xz
+  url: webkitgtk_org:webkitgtk-2.29.91.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-- kind: patch
-  path: files/webkitgtk/webkit-214966.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
