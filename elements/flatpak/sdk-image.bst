@@ -1,24 +1,14 @@
 kind: compose
-depends:
-- filename: sdk.bst
-  type: build
-- filename: sdk-manifest.bst
-  type: build
-- filename: multiarch/multiarch-sdk.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/split-locales.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/split-docs.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/flatpak-builder-configuration.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/debug-app-link.bst
-  junction: freedesktop-sdk.bst
-  type: build
+build-depends:
+- sdk.bst
+- sdk-manifest.bst
+- freedesktop-sdk.bst:components/python3-usercustomize.bst
+- freedesktop-sdk.bst:components/python3-sitecustomize.bst
+- freedesktop-sdk.bst:multiarch/multiarch-sdk.bst
+- freedesktop-sdk.bst:integration/split-locales.bst
+- freedesktop-sdk.bst:integration/split-docs.bst
+- freedesktop-sdk.bst:integration/flatpak-builder-configuration.bst
+- freedesktop-sdk.bst:integration/debug-app-link.bst
 config:
   exclude:
   - extra

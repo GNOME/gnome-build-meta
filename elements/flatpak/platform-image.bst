@@ -1,18 +1,12 @@
 kind: compose
-depends:
-- filename: platform-manifest.bst
-  type: build
-- filename: sdk-platform.bst
-  type: build
-- filename: multiarch/multiarch-platform.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/split-locales.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/split-docs.bst
-  junction: freedesktop-sdk.bst
-  type: build
+build-depends:
+- platform-manifest.bst
+- sdk-platform.bst
+- freedesktop-sdk.bst:components/python3-usercustomize.bst
+- freedesktop-sdk.bst:components/python3-sitecustomize.bst
+- freedesktop-sdk.bst:multiarch/multiarch-platform.bst
+- freedesktop-sdk.bst:integration/split-locales.bst
+- freedesktop-sdk.bst:integration/split-docs.bst
 config:
   exclude:
   - devel
