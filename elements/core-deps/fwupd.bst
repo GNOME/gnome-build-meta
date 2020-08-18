@@ -27,6 +27,7 @@ depends:
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/efivar.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
+- freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
