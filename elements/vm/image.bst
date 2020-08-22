@@ -61,12 +61,12 @@ config:
   - |
     ostree admin set-origin --sysroot="%{sysroot}" \
            --index=0 \
-           GnomeOS %{ostree-remote-url} \
+           gnome-os %{ostree-remote-url} \
            %{ostree-branch}
 
   - |
-    # GnomeOS will be provided in /etc
-    ostree remote delete GnomeOS
+    # gnome-os will be provided in /etc
+    ostree remote delete gnome-os
 
   - |
     cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"

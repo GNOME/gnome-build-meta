@@ -19,7 +19,7 @@ Key-Type: DSA
 Key-Length: 1024
 Subkey-Type: ELG-E
 Subkey-Length: 1024
-Name-Real: Gnome OS
+Name-Real: GNOME OS
 Expire-Date: 0
 %no-protection
 %commit
@@ -34,7 +34,7 @@ script_dir=$(dirname $0)
 $script_dir/update-repo.sh \
     --gpg-homedir=ostree-gpg \
     --gpg-sign="$(cat ostree-gpg/default-id)" \
-    --collection-id=org.gnome.GnomeOS \
+    --collection-id=org.gnome.gnomeos \
     --target-ref="${ref%-*}-${OSTREE_LAYER}" \
     ostree-repo "${REPO_ELEMENT}" \
     "${ref}"

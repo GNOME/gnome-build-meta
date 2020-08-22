@@ -62,7 +62,7 @@ config:
   - |
     ostree admin set-origin --sysroot="%{sysroot}" \
            --index=0 \
-           GnomeOS dummy \
+           gnome-os dummy \
            %{ostree-branch}
 
   - |
