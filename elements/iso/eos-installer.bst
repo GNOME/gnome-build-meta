@@ -19,6 +19,8 @@ sources:
   path: files/eos-installer/two-partitions.patch
 - kind: patch
   path: files/eos-installer/remove-gnome-common.patch
+- kind: patch
+  path: files/eos-installer/remove-branding.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
