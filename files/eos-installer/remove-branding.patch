@@ -1,0 +1,200 @@
+diff --git a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+index 9dd366a..95d38f3 100644
+--- a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
++++ b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+@@ -687,7 +687,7 @@ gis_diskimage_page_constructed (GObject *object)
+ static void
+ gis_diskimage_page_locale_changed (GisPage *page)
+ {
+-  gis_page_set_title (page, _("Reformat with Endless OS"));
++  gis_page_set_title (page, _("Reformat with GNOME OS"));
+ }
+ 
+ static void
+diff --git a/gnome-image-installer/pages/diskimage/gis-diskimage-page.ui b/gnome-image-installer/pages/diskimage/gis-diskimage-page.ui
+index 00dbcd8..ce4ac41 100644
+--- a/gnome-image-installer/pages/diskimage/gis-diskimage-page.ui
++++ b/gnome-image-installer/pages/diskimage/gis-diskimage-page.ui
+@@ -32,7 +32,7 @@
+           <object class="GtkLabel" id="overview_label">
+             <property name="visible">True</property>
+             <property name="can_focus">False</property>
+-            <property name="label" translatable="yes">Is this the Endless OS version you'd like to use? If not, download another.</property>
++            <property name="label" translatable="yes">Is this the GNOME OS version you'd like to use? If not, download another.</property>
+           </object>
+           <packing>
+             <property name="expand">False</property>
+diff --git a/gnome-image-installer/pages/disktarget/gis-disktarget-page.ui b/gnome-image-installer/pages/disktarget/gis-disktarget-page.ui
+index d7c406f..74c7a27 100644
+--- a/gnome-image-installer/pages/disktarget/gis-disktarget-page.ui
++++ b/gnome-image-installer/pages/disktarget/gis-disktarget-page.ui
+@@ -26,7 +26,7 @@
+           <object class="GtkLabel" id="overview">
+             <property name="visible">True</property>
+             <property name="can_focus">False</property>
+-            <property name="label" translatable="yes">Select the disk you'd like to reformat with Endless OS</property>
++            <property name="label" translatable="yes">Select the disk you'd like to reformat with GNOME OS</property>
+           </object>
+           <packing>
+             <property name="expand">False</property>
+@@ -159,7 +159,7 @@
+                     <property name="visible">True</property>
+                     <property name="can_focus">False</property>
+                     <property name="margin_left">6</property>
+-                    <property name="label" translatable="yes">It looks like you have multiple partitions on this disk (for example drive C: and D:). Reformatting with Endless OS will erase &lt;b&gt;all partitions&lt;/b&gt; on the selected disk. Please click here to confirm.</property>
++                    <property name="label" translatable="yes">It looks like you have multiple partitions on this disk (for example drive C: and D:). Reformatting with GNOME OS will erase &lt;b&gt;all partitions&lt;/b&gt; on the selected disk. Please click here to confirm.</property>
+                     <property name="use_markup">True</property>
+                     <property name="wrap">True</property>
+                     <property name="max_width_chars">40</property>
+diff --git a/gnome-image-installer/pages/finished/finished.gresource.xml b/gnome-image-installer/pages/finished/finished.gresource.xml
+index b6f998e..ad3546c 100644
+--- a/gnome-image-installer/pages/finished/finished.gresource.xml
++++ b/gnome-image-installer/pages/finished/finished.gresource.xml
+@@ -2,7 +2,6 @@
+ <gresources>
+   <gresource prefix="/org/gnome/initial-setup">
+     <file preprocess="xml-stripblanks" alias="gis-finished-page.ui">gis-finished-page.ui</file>
+-    <file>endless_logo.png</file>
+   </gresource>
+ </gresources>
+ 
+diff --git a/gnome-image-installer/pages/finished/gis-finished-page.c b/gnome-image-installer/pages/finished/gis-finished-page.c
+index 929a40b..3f7b662 100644
+--- a/gnome-image-installer/pages/finished/gis-finished-page.c
++++ b/gnome-image-installer/pages/finished/gis-finished-page.c
+@@ -267,7 +267,7 @@ gis_finished_page_shown (GisPage *page)
+         }
+       else if (error->domain == GIS_IMAGE_ERROR)
+         {
+-          heading = _("Oops, something is wrong with your Endless OS file.");
++          heading = _("Oops, something is wrong with your GNOME OS file.");
+         }
+       else if (error->domain == GIS_DISK_ERROR)
+         {
+diff --git a/gnome-image-installer/pages/finished/gis-finished-page.ui b/gnome-image-installer/pages/finished/gis-finished-page.ui
+index 9e94bcb..2cbbe0f 100644
+--- a/gnome-image-installer/pages/finished/gis-finished-page.ui
++++ b/gnome-image-installer/pages/finished/gis-finished-page.ui
+@@ -20,24 +20,12 @@
+                 <property name="visible">True</property>
+                 <property name="can_focus">False</property>
+                 <property name="orientation">vertical</property>
+-                <child>
+-                  <object class="GtkImage" id="image1">
+-                    <property name="visible">True</property>
+-                    <property name="can_focus">False</property>
+-                    <property name="resource">/org/gnome/initial-setup/endless_logo.png</property>
+-                  </object>
+-                  <packing>
+-                    <property name="expand">False</property>
+-                    <property name="fill">True</property>
+-                    <property name="position">0</property>
+-                  </packing>
+-                </child>
+                 <child>
+                   <object class="GtkLabel" id="removelabel_usb">
+                     <property name="visible">True</property>
+                     <property name="can_focus">False</property>
+                     <property name="margin_top">16</property>
+-                    <property name="label" translatable="yes">Success! Power off your computer and then remove your USB device. When you restart, Endless OS will be ready for you to set up and enjoy!</property>
++                    <property name="label" translatable="yes">Success! Power off your computer and then remove your USB device. When you restart, GNOME OS will be ready for you to set up and enjoy!</property>
+                     <property name="justify">center</property>
+                     <property name="wrap">True</property>
+                     <property name="max_width_chars">50</property>
+diff --git a/gnome-image-installer/pages/install/gis-install-page.ui b/gnome-image-installer/pages/install/gis-install-page.ui
+index d3b7769..2fcc31b 100644
+--- a/gnome-image-installer/pages/install/gis-install-page.ui
++++ b/gnome-image-installer/pages/install/gis-install-page.ui
+@@ -45,80 +45,6 @@
+                 <property name="position">1</property>
+               </packing>
+             </child>
+-            <child>
+-              <object class="GtkOverlay" id="graphics_overlay">
+-                <property name="visible">True</property>
+-                <property name="can_focus">False</property>
+-                <child>
+-                  <object class="GtkImage" id="infographics">
+-                    <property name="visible">True</property>
+-                    <property name="can_focus">False</property>
+-                    <property name="xpad">12</property>
+-                    <property name="ypad">12</property>
+-                    <property name="resource">/org/gnome/initial-setup/software_screens.png</property>
+-                  </object>
+-                  <packing>
+-                    <property name="index">-1</property>
+-                  </packing>
+-                </child>
+-                <child type="overlay">
+-                  <object class="GtkBox" id="infolabels">
+-                    <property name="visible">True</property>
+-                    <property name="can_focus">False</property>
+-                    <property name="halign">start</property>
+-                    <property name="margin_left">48</property>
+-                    <property name="margin_top">48</property>
+-                    <property name="orientation">vertical</property>
+-                    <child>
+-                      <object class="GtkLabel" id="label1">
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">False</property>
+-                        <property name="halign">start</property>
+-                        <property name="label" translatable="yes">Endless OS</property>
+-                        <property name="xalign">0</property>
+-                        <attributes>
+-                          <attribute name="weight" value="bold"/>
+-                          <attribute name="scale" value="2"/>
+-                          <attribute name="foreground" value="#ffffffffffff"/>
+-                        </attributes>
+-                      </object>
+-                      <packing>
+-                        <property name="expand">False</property>
+-                        <property name="fill">True</property>
+-                        <property name="position">0</property>
+-                      </packing>
+-                    </child>
+-                    <child>
+-                      <object class="GtkLabel" id="label2">
+-                        <property name="visible">True</property>
+-                        <property name="can_focus">False</property>
+-                        <property name="halign">start</property>
+-                        <property name="margin_top">16</property>
+-                        <property name="label" translatable="yes">Fast, easy to use and powerful – with or without internet.
+-
+-Endless OS is preloaded with over 100 apps, making it useful from the moment you turn it on.</property>
+-                        <property name="wrap">True</property>
+-                        <property name="max_width_chars">26</property>
+-                        <property name="xalign">0</property>
+-                        <attributes>
+-                          <attribute name="foreground" value="#ffffffffffff"/>
+-                        </attributes>
+-                      </object>
+-                      <packing>
+-                        <property name="expand">False</property>
+-                        <property name="fill">True</property>
+-                        <property name="position">1</property>
+-                      </packing>
+-                    </child>
+-                  </object>
+-                </child>
+-              </object>
+-              <packing>
+-                <property name="expand">False</property>
+-                <property name="fill">True</property>
+-                <property name="position">2</property>
+-              </packing>
+-            </child>
+           </object>
+           <packing>
+             <property name="expand">True</property>
+diff --git a/gnome-image-installer/pages/install/install.gresource.xml b/gnome-image-installer/pages/install/install.gresource.xml
+index 6f0461d..f1802db 100644
+--- a/gnome-image-installer/pages/install/install.gresource.xml
++++ b/gnome-image-installer/pages/install/install.gresource.xml
+@@ -2,7 +2,6 @@
+ <gresources>
+   <gresource prefix="/org/gnome/initial-setup">
+     <file preprocess="xml-stripblanks" alias="gis-install-page.ui">gis-install-page.ui</file>
+-    <file>software_screens.png</file>
+   </gresource>
+ </gresources>
+ 
