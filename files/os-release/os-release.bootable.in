@@ -1,0 +1,8 @@
+NAME="GNOME OS"
+VERSION_ID=@SDK_BRANCH@
+ID=org.gnome.gnomeos
+PRETTY_NAME="@FULL_NAME@ (@SDK_BRANCH@)"
+BUG_REPORT_URL="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new"
+HOME_URL="https://www.gnome.org/"
+VARIANT="@VARIANT@"
+VARIANT_ID=@VARIANT_ID@

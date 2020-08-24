@@ -10,4 +10,5 @@ depends:
 variables:
   meson-local: >-
     -Dbranch=%{branch}
-    -Dmode=flatpak
+    -Dmode=bootable
+    -Dvariant=user
