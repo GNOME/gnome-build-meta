@@ -1,0 +1,7 @@
+NAME=GNOME
+VERSION="@SDK_BRANCH@ (Flatpak runtime)"
+VERSION_ID=@SDK_BRANCH@
+ID=org.gnome.Platform
+PRETTY_NAME="GNOME @SDK_BRANCH@ (Flatpak runtime)"
+BUG_REPORT_URL="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new"
+HOME_URL="https://www.gnome.org/"

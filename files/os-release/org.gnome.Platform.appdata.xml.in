@@ -5,7 +5,7 @@
   <metadata_license>CC0</metadata_license>
   <!-- FIXME -->
   <project_license>GPL-2.0+</project_license>
-  <name>GNOME Application Platform version @@SDK_BRANCH@@</name>
+  <name>GNOME Application Platform version @SDK_BRANCH@</name>
   <summary>Shared libraries used by GNOME applications</summary>
   <description>
     <p>

@@ -3,9 +3,10 @@ kind: stack
 runtime-depends:
 - sdk.bst
 - core/meta-gnome-core-developer-tools.bst
-- vm/common-deps.bst
-- vm/initramfs.bst
-- vm/buildstream/buildstream.bst
 - vm/buildstream/bst-external.bst
+- vm/buildstream/buildstream.bst
+- vm/common-deps.bst
 - vm/git-lfs.bst
+- vm/initramfs.bst
+- vm/os-release-devel.bst
 - freedesktop-sdk.bst:components/podman.bst

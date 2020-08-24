@@ -2,6 +2,7 @@ kind: compose
 build-depends:
 - platform-manifest.bst
 - sdk-platform.bst
+- sdk/os-release.bst
 - freedesktop-sdk.bst:components/python3-usercustomize.bst
 - freedesktop-sdk.bst:components/python3-sitecustomize.bst
 - freedesktop-sdk.bst:multiarch/multiarch-platform.bst

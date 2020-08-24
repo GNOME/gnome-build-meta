@@ -41,7 +41,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/libwpe.bst
-- sdk/os-release.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pipewire.bst

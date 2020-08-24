@@ -1,0 +1,5 @@
+option('branch', type : 'string', value : 'master')
+option('mode',  type : 'combo',
+       choices : ['bootable', 'flatpak'], value : 'flatpak')
+option('variant',  type : 'combo',
+       choices : ['user', 'devel'], value : 'user')
