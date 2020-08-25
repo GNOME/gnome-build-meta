@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:pango/1.46/pango-1.46.0.tar.xz
-  ref: 9a81572ebb946187fbdd69d5ffc57e2f7a1f768cd8d2fd89dbb03fb9002a99b5
+  url: gnome_downloads:pango/1.46/pango-1.46.1.tar.xz
+  ref: fe516b10711bbb6fd75011d66dd08fabfce18f7931aed7415136d53c4aadf1c5
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

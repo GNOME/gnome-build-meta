@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/3.37/mutter-3.37.90.tar.xz
-  ref: 50dc7a0459549c735acd9e8bb79e4108cb04b1198e6f855a9c1975961b77dae5
+  url: gnome_downloads:mutter/3.37/mutter-3.37.91.tar.xz
+  ref: 8b087b22ebd0bd9995e60ea4fd5ef4ee1a6542e57839dc42333e4d19d433a55d
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst

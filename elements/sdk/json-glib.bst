@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:json-glib/1.4/json-glib-1.4.4.tar.xz
-  ref: 720c5f4379513dc11fd97dc75336eb0c0d3338c53128044d9fabec4374f4bc47
+  url: gnome_downloads:json-glib/1.5/json-glib-1.5.2.tar.xz
+  ref: ad08438327b6106dc040c0581477bdf1cd3daaa5d285920cc768b8627f746666
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
