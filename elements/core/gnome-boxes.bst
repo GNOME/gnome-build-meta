@@ -11,6 +11,8 @@ sources:
     subprojects/libovf-glib:
       checkout: true
       url: gitlab_gnome_org:felipeborges/libovf-glib.git
+- kind: patch
+  path: files/gnome-boxes/re-order-recommended.patch
 
 build-depends:
 - sdk/vala.bst
@@ -23,6 +25,7 @@ depends:
 - core-deps/libhandy-0.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
+- core-deps/osinfo-db.bst
 - core-deps/spice-gtk.bst
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
