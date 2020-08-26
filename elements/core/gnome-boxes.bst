@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-boxes/3.37/gnome-boxes-3.37.90.tar.xz
   ref: 122da39131acb971b3e764006c5c3698447a5d9220aab3383db63c0929de915d
+- kind: patch
+  path: files/gnome-boxes/re-order-recommended.patch
+
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
@@ -15,6 +18,7 @@ depends:
 - core-deps/libhandy-0.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
+- core-deps/osinfo-db.bst
 - core-deps/spice-gtk.bst
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
