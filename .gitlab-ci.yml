@@ -185,12 +185,12 @@ generate-deploy-config:
       *beta)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
         FLAT_MANAGER_REPO=beta
-        SUPPORTED_ARCHES="x86_64 i686 aarch64 arm"
+        SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
       *)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
         FLAT_MANAGER_REPO=stable
-        SUPPORTED_ARCHES="x86_64 i686 aarch64 arm"
+        SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
     esac
 
