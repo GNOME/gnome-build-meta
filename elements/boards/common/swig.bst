@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: downloads.sourceforge.net:swig/swig-4.0.1.tar.gz
+  url: downloads.sourceforge.net:swig/swig/swig-4.0.1/swig-4.0.1.tar.gz
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

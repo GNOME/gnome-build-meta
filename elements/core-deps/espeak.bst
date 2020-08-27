@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: zip
-  url: sourceforge_net:espeak/files/espeak/espeak-1.48/espeak-1.48.04-source.zip
+  url: downloads.sourceforge.net:espeak/espeak/espeak-1.48/espeak-1.48.04-source.zip
 depends:
 - core-deps/portaudio.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
