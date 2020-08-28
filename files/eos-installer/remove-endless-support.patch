@@ -1,0 +1,82 @@
+diff --git a/gnome-image-installer/pages/finished/gis-finished-page.c b/gnome-image-installer/pages/finished/gis-finished-page.c
+index 3f7b662..ece9c7d 100644
+--- a/gnome-image-installer/pages/finished/gis-finished-page.c
++++ b/gnome-image-installer/pages/finished/gis-finished-page.c
+@@ -60,7 +60,6 @@ struct _GisFinishedPagePrivate {
+   GtkLabel *error_heading_label;
+   GtkLabel *error_label;
+   GtkLabel *diagnostics_label;
+-  GtkLabel *support_label;
+ };
+ typedef struct _GisFinishedPagePrivate GisFinishedPagePrivate;
+ 
+@@ -283,7 +282,6 @@ gis_finished_page_shown (GisPage *page)
+           detail = NULL;
+           gtk_widget_hide (GTK_WIDGET (priv->error_label));
+           gtk_widget_hide (GTK_WIDGET (priv->diagnostics_label));
+-          gtk_widget_hide (GTK_WIDGET (priv->support_label));
+         }
+       else
+         {
+@@ -482,9 +480,6 @@ gis_finished_page_locale_changed (GisPage *page)
+ {
+   GisFinishedPage *self = GIS_FINISHED_PAGE (page);
+   GisFinishedPagePrivate *priv = gis_finished_page_get_instance_private (self);
+-  g_autofree gchar *support_email = NULL;
+-  g_autofree gchar *support_email_markup = NULL;
+-  g_autofree gchar *support_markup = NULL;
+ 
+   if (gis_store_get_error() == NULL)
+     {
+@@ -494,14 +489,6 @@ gis_finished_page_locale_changed (GisPage *page)
+     {
+       gis_page_set_title (page, "");
+     }
+-
+-  support_email = get_customer_support_email ();
+-  support_email_markup = g_strdup_printf ("<a href=\"mailto:%1$s\">%1$s</a>",
+-                                          support_email);
+-  /* Translators: the %s is the customer support email address */
+-  support_markup = g_strdup_printf (_("Please contact %s or join the <a href=\"https://community.endlessos.com/\">Endless Community</a> to troubleshoot."),
+-                                    support_email_markup);
+-  gtk_label_set_markup (priv->support_label, support_markup);
+ }
+ 
+ static GtkAccelGroup *
+@@ -530,7 +517,6 @@ gis_finished_page_class_init (GisFinishedPageClass *klass)
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisFinishedPage, error_heading_label);
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisFinishedPage, error_label);
+   gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisFinishedPage, diagnostics_label);
+-  gtk_widget_class_bind_template_child_private (GTK_WIDGET_CLASS (klass), GisFinishedPage, support_label);
+ 
+   page_class->page_id = PAGE_ID;
+   page_class->locale_changed = gis_finished_page_locale_changed;
+diff --git a/gnome-image-installer/pages/finished/gis-finished-page.ui b/gnome-image-installer/pages/finished/gis-finished-page.ui
+index 2cbbe0f..6578610 100644
+--- a/gnome-image-installer/pages/finished/gis-finished-page.ui
++++ b/gnome-image-installer/pages/finished/gis-finished-page.ui
+@@ -131,24 +131,6 @@
+                     <property name="position">3</property>
+                   </packing>
+                 </child>
+-                <child>
+-                  <object class="GtkLabel" id="support_label">
+-                    <property name="visible">True</property>
+-                    <property name="can_focus">False</property>
+-                    <property name="margin_top">16</property>
+-                    <property name="label">Please contact &lt;a href="mailto:support@endlessm.com"&gt;support@endlessm.com&lt;/a&gt; or join the &lt;a href="https://community.endlessos.com/"&gt;Endless Community&lt;/a&gt; to troubleshoot.</property>
+-                    <property name="use_markup">True</property>
+-                    <property name="justify">center</property>
+-                    <property name="wrap">True</property>
+-                    <property name="max_width_chars">50</property>
+-                    <property name="track_visited_links">False</property>
+-                  </object>
+-                  <packing>
+-                    <property name="expand">False</property>
+-                    <property name="fill">False</property>
+-                    <property name="position">4</property>
+-                  </packing>
+-                </child>
+               </object>
+               <packing>
+                 <property name="expand">False</property>
