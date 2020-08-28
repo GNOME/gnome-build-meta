@@ -52,7 +52,8 @@ config:
            --install head \
            --install tail \
            --install less \
-           --install lsof
+           --install lsof \
+           --omit lvm
 
 
   - dbus-uuidgen >/etc/machine-id
