@@ -20,12 +20,12 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libdazzle.bst
 - core-deps/libmediaart.bst
-- core-deps/tracker-miners-2.bst
-- core-deps/tracker-2.bst
+- core-deps/tracker-miners.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/gvfs.bst
 - sdk/pygobject.bst
+- sdk/tracker.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
