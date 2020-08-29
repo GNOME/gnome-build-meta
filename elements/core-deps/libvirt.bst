@@ -2,6 +2,8 @@ kind: autotools
 sources:
 - kind: tar
   url: https://libvirt.org/sources/libvirt-6.5.0.tar.xz
+- kind: local
+  path: files/libvirt/80-libvirt.preset
 build-depends:
 - core-deps/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/libxslt.bst
@@ -41,6 +43,9 @@ config:
     cd build
     %{make-install}
   - mv %{install-root}/var/run %{install-root}
+  - |
+    presetdir="$(pkg-config --variable=systemdsystempresetdir systemd)"
+    install -Dm644 -t "%{install-root}${presetdir}" 80-libvirt.preset
 variables:
   conf-cmd: ../configure
   # --disable-Werror does not work
