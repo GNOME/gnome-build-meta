@@ -19,6 +19,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/pango.bst
+- sdk/tracker.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
@@ -44,6 +45,7 @@ variables:
     -Dgtk_doc=true
     -Dman=true
     -Dintrospection=true
+    -Dtracker3=true
 
 public:
   bst:
