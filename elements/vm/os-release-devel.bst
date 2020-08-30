@@ -11,4 +11,4 @@ variables:
   meson-local: >-
     -Dbranch=%{branch}
     -Dmode=bootable
-    -Dvariant=user
+    -Dvariant=devel
