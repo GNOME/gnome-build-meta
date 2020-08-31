@@ -16,6 +16,7 @@ runtime-depends:
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
 
+- vm/ntfs-3g.bst
 - vm/uresourced.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
