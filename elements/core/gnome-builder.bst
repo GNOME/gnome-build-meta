@@ -11,21 +11,21 @@ runtime-depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
 depends:
-- core-deps/flatpak.bst
 - core-deps/flatpak-builder.bst
+- core-deps/flatpak.bst
 - core-deps/gspell.bst
-- core-deps/libdazzle.bst
-- core-deps/libpeas.bst
-- core-deps/vte.bst
 - core-deps/jsonrpc-glib.bst
+- core-deps/libdazzle.bst
 - core-deps/libgit2-glib.bst
+- core-deps/libpeas.bst
 - core-deps/template-glib.bst
+- core-deps/vte.bst
 - core/devhelp.bst
+- core/gvfs-daemon.bst
 - core/sysprof.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
-- sdk/gvfs.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
