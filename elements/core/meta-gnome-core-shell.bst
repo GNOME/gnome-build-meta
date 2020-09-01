@@ -21,6 +21,7 @@ depends:
 - core/gnome-tour.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
+- core/gvfs-daemon.bst
 - core/mutter.bst
 - core/orca.bst
 - core/rygel.bst
@@ -28,4 +29,3 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib-networking.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gvfs.bst

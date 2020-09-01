@@ -1,9 +1,12 @@
 kind: autotools
+
 sources:
 - kind: tar
-  url: downloads.sourceforge.net:libmtp/libmtp/1.1.15/libmtp-1.1.15.tar.gz
+  url: https://github.com/libimobiledevice/libusbmuxd/releases/download/2.0.2/libusbmuxd-2.0.2.tar.bz2
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
-- freedesktop-sdk.bst:components/libusb.bst
+- core-deps/plist.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
