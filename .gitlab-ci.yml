@@ -49,7 +49,7 @@ default:
 
 .build-template:
   stage: build
-  dependencies: [track]
+  needs: ['track']
   interruptible: true
   script:
   - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
@@ -76,7 +76,7 @@ default:
 
 .manual-image-template:
   stage: deploy
-  dependencies: [track]
+  needs: ['track']
   when: manual
   allow_failure: true
   script:
@@ -98,7 +98,7 @@ default:
 .ostree-template:
   extends: .deploy-rules
   stage: deploy
-  dependencies: [track]
+  needs: ['track']
   script:
   - |
     export FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
@@ -168,7 +168,16 @@ generate-deploy-config:
   extends:
   - .x86_64
   - .deploy-rules
-  dependencies: [track]
+  needs:
+    - job: 'track'
+    - job: 'build-x86_64'
+      artifacts: false
+    - job: 'build-i386'
+      artifacts: false
+    - job: 'build-aarch64'
+      artifacts: false
+    - job: 'build-ppc64le'
+      artifacts: false
   stage: deploy-config
   script:
   - TRACK_JOB_ID=$(cat track-job.id)
@@ -269,7 +278,10 @@ iso-installer-x86_64:
 s3-image:
   extends: .x86_64
   stage: deploy
-  dependencies: [track]
+  needs:
+    - job: 'track'
+    - job: 'build-x86_64'
+      artifacts: false
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
@@ -324,7 +336,10 @@ ostree-x86_64:
 cve_report:
   extends: .x86_64
   stage: reports
-  dependencies: [track]
+  needs:
+    - job: 'track'
+    - job: 'vm-image-x86_64'
+      artifacts: false
   script:
   - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 
