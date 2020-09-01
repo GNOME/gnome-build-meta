@@ -236,6 +236,11 @@ vm-image-x86_64:
   extends:
   - .manual-image-template
   - .x86_64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
   variables:
     IMAGE: vm/image.bst
 
@@ -243,6 +248,11 @@ vm-image-x86_64:
   extends:
   - .manual-image-template
   - .aarch64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/pinebook-pro/image.bst
 
@@ -250,6 +260,11 @@ rock64-image:
   extends:
   - .manual-image-template
   - .aarch64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/rock64/image.bst
 
@@ -257,6 +272,11 @@ raspberrypi-4-image:
   extends:
   - .manual-image-template
   - .aarch64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
 
@@ -266,6 +286,11 @@ iso-installer-x86_64:
   - .x86_64
   variables:
     IMAGE: iso/image.bst
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
 
 s3-image:
   extends: .x86_64
