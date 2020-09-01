@@ -1,8 +1,8 @@
 kind: stack
 depends:
 - sdk/WebKitGTK.bst
-- sdk/adwaita-icon-theme.bst
 - sdk/adobe-source-code-pro-fonts.bst
+- sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/at-spi2-atk.bst
 - sdk/at-spi2-core.bst
@@ -30,7 +30,7 @@ depends:
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
-- sdk/gvfs.bst
+- sdk/gvfs-client.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libgee.bst
