@@ -15,7 +15,9 @@ runtime-depends:
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
+- vm/nsswitch-config.bst
 
+- vm/nss-mdns.bst
 - vm/ntfs-3g.bst
 - vm/uresourced.bst
 

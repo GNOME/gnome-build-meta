@@ -124,7 +124,6 @@ depends:
 - freedesktop-sdk.bst:components/npth.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
-- freedesktop-sdk.bst:components/nsswitch-config.bst
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/osmesa.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
