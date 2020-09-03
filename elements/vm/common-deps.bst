@@ -15,7 +15,9 @@ runtime-depends:
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
+- vm/nsswitch-config.bst
 
+- vm/nss-mdns.bst
 - vm/uresourced.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
