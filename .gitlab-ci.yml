@@ -280,12 +280,12 @@ s3-image:
     - |
       if [ -n "$CI_COMMIT_TAG" ]; then
           aws s3 cp --acl public-read --expires $(date -I --date="6 weeks") iso/installer.iso \
-              s3://gnome-build-meta/$CI_COMMIT_TAG/installer.iso
+              s3://gnome-build-meta/$CI_COMMIT_TAG/gnome_os_installer.iso
       else
           aws s3 cp --acl public-read --expires $(date -I --date="1 week") image/disk.img.xz \
               s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz
           aws s3 cp --acl public-read --expires $(date -I --date="1 week") iso/installer.iso \
-              s3://gnome-build-meta/$CI_PIPELINE_ID/installer.iso
+              s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso
       fi
 
     - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
@@ -311,8 +311,8 @@ s3-image-static:
     - |
       # Assume that the s3-image job has succeed and copy the img form the s3 uri
       aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
-          s3://gnome-build-meta/$CI_PIPELINE_ID/installer.iso \
-          s3://gnome-build-meta/latest/installer.iso
+          s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso \
+          s3://gnome-build-meta/latest/gnome_os_installer.iso
 
     - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
