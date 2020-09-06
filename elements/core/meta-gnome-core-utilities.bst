@@ -28,7 +28,7 @@ depends:
 - core/gnome-screenshot.bst
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
-- core/gnome-terminal.bst
+- core/kings-cross.bst
 - core/gnome-weather.bst
 - core/nautilus.bst
 - core/simple-scan.bst
