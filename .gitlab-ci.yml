@@ -258,7 +258,7 @@ flatpak-finish:
   stage: finish_flatpak
   dependencies: [flatpak-prepare]
   script:
-  - flat-manager/flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager/flat-manager-client commit --end-of-life="The GNOME 3.34 runtime is no longer supported as of 14th August 2020. Please ask your application developer to migrate to a supported platform." --wait $(cat build.txt)
   - flat-manager/flat-manager-client publish --wait $(cat build.txt)
   - flat-manager/flat-manager-client purge $(cat build.txt)
   only:
