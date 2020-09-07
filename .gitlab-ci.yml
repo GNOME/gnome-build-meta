@@ -302,6 +302,7 @@ s3-image-static:
       when: never
     - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
       when: manual
+    - if: $CI_COMMIT_TAG
   script:
     - |
       # Assume that the s3-image job has succeed and copy the img form the s3 uri
