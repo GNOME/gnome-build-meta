@@ -25,3 +25,5 @@ depends:
 variables:
   meson-local: >-
     -Denable-lua-factory=no
+    -Denable-tracker=no
+    -Denable-tracker3=yes
