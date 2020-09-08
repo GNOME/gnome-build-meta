@@ -2,7 +2,7 @@ kind: pip
 
 sources:
 - kind: tar
-  url: https://files.pythonhosted.org/packages/92/28/612085de3fae9f82d62d80255d9f4cf05b1b341db1e180adcf28c1bf748d/ruamel.yaml.clib-0.2.0.tar.gz
+  url: https://files.pythonhosted.org/packages/fa/a1/f9c009a633fce3609e314294c7963abe64934d972abea257dce16a15666f/ruamel.yaml.clib-0.2.2.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
