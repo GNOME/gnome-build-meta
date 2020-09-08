@@ -2,8 +2,8 @@ kind: script
 
 build-depends:
 - boards/pinebook-pro/image-deps.bst
-- boards/pinebook-pro/repo.bst
-- boards/pinebook-pro/linux.bst
+- vm/repo.bst
+- freedesktop-sdk.bst:components/linux.bst
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -21,11 +21,11 @@ config:
     destination: '/sysroot'
   - element: ''
     destination: '/genimage'
-  - element: boards/pinebook-pro/repo.bst
+  - element: vm/repo.bst
     destination: '/source-repo'
   - element: boards/pinebook-pro/image-deps.bst
     destination: '/'
-  - element: boards/pinebook-pro/linux.bst
+  - element: components/linux.bst
     destination: '/kernel'
 
   commands:
