@@ -11,9 +11,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/libsoup.bst
+- core-deps/avahi-gobject.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Davahi=disabled
