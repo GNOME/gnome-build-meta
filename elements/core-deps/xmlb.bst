@@ -1,8 +1,9 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://github.com/hughsie/libxmlb/archive/0.1.7.tar.gz
-  ref: 34be33bb90b521c02ed53c359f088259a74ca75becb422d015f6f38e96a42245
+  url: https://github.com/hughsie/libxmlb/archive/0.1.15.tar.gz
+  ref: fa29b6bbf7b91107da6f157e8f7903d176b0cf04bcb0ba1ab64cb38b19d09a19
+
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

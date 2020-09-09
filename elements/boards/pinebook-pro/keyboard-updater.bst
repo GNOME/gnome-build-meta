@@ -4,6 +4,7 @@ sources:
 - kind: git_tag
   url: https://github.com/ayufan-rock64/pinebook-pro-keyboard-updater.git
   track: 089ddceaca34cc835d8114900c24db6dcdf121c3
+  ref: 0.0.1-39-g089ddceaca34cc835d8114900c24db6dcdf121c3
 
 depends:
 - freedesktop-sdk.bst:components/libusb.bst
