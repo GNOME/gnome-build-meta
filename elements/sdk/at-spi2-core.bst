@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:at-spi2-core/2.36/at-spi2-core-2.36.0.tar.xz
-  ref: 88da57de0a7e3c60bc341a974a80fdba091612db3547c410d6deab039ca5c05a
+  url: gnome_downloads:at-spi2-core/2.36/at-spi2-core-2.36.1.tar.xz
+  ref: 97417b909dbbf000e7b21062a13b2f1fd52a336f5a53925bb26d27b65ace6c54
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
