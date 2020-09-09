@@ -22,3 +22,7 @@ public:
         - '%{libdir}/libpango-1.0.so'
         - '%{libdir}/libpangocairo-1.0.so'
         - '%{libdir}/libpangoft2-1.0.so'
+variables:
+  meson-local: >-
+    -Dlibthai=disabled
+    -Dxft=disabled
