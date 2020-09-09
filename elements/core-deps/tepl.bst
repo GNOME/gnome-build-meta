@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tepl/4.99/tepl-4.99.3.tar.xz
-  ref: e4afe634f00c5530ae52d706d9c3a9bdf2dbc74b0459a363703a0a9b4a5e3157
+  url: gnome_downloads:tepl/4.99/tepl-4.99.4.tar.xz
+  ref: 2b616c40f209912574cf773f1c77b0ba944f33dba97572ad79900abbbfe36c21
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gobject-introspection.bst

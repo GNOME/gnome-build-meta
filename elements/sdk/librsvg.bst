@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.49/librsvg-2.49.4.tar.xz
-  ref: a7a66ac14827e6ca1e29cb757b022601108458d8cdf6cea22fa9699156b249f1
+  url: gnome_downloads:librsvg/2.49/librsvg-2.49.5.tar.xz
+  ref: daa64941bb4732bdf51b902a72c6e04063235cfce6986d910ba0759c76917795
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

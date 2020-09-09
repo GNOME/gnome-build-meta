@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker/2.99/tracker-2.99.4.tar.xz
-  ref: 5ac45a8b6e195ede1c8bfa5a4add8231c5418eba2dc534f9b2b6d4fabcd0bff4
+  url: gnome_downloads:tracker/2.99/tracker-2.99.5.tar.xz
+  ref: 4467fd8f6713ccf72ce458de85a9d9fffa27187576bd0a5ab684305b8d628a5f
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
