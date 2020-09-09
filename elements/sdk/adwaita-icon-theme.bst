@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:adwaita-icon-theme/3.37/adwaita-icon-theme-3.37.2.tar.xz
-  ref: a594e7440971f860cc61b1b8291be15ffc1b8dd06a9f11485a5a7faf189bcf6b
+  url: gnome_downloads:adwaita-icon-theme/3.37/adwaita-icon-theme-3.37.92.tar.xz
+  ref: f0c644fa1173369a8b9c6527bdd1b0c8e23423e158c77335768c48114146596f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

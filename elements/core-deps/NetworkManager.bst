@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.27/NetworkManager-1.27.1.tar.xz
-  ref: ce4e1ef2e712929989994cee265417aeee3df111b00dcf56ecd3539a16221302
+  url: gnome_downloads:NetworkManager/1.27/NetworkManager-1.27.2.tar.xz
+  ref: b9cf6694a933f8e6e2c38477f7d01541fdee7472b1462dea4ef5f1c10de9d2ad
 build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst

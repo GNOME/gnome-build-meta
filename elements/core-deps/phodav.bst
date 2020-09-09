@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:phodav/2.4/phodav-2.4.tar.xz
-  ref: 7dddc2b75e04d0866bb9c9a83028a597ebd73ef4c37bd6ebe1032a870b43b8c3
+  url: gnome_downloads:phodav/2.5/phodav-2.5.tar.xz
+  ref: 71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/git.bst

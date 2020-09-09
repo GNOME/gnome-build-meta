@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/3.37/gedit-3.37.3.tar.xz
-  ref: 8137c7d96a19452ee04c915cb25ba4da1346af8fe0497456417ccfa628f106d3
+  url: gnome_downloads:gedit/3.37/gedit-3.37.92.tar.xz
+  ref: 4566de33bcda287bf6fc953ab933794a791cd3f9b8a8b6c94dcb5cd601dad279
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
