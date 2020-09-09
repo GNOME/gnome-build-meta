@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calculator/3.37/gnome-calculator-3.37.90.tar.xz
-  ref: b895b5ec62b9495810b0a6cb90158e6d1607096d150b4ac5cdcf8aefceded4c1
+  url: gnome_downloads:gnome-calculator/3.37/gnome-calculator-3.37.92.tar.xz
+  ref: fd96e85c536967d9f18103d13cc23cf8ed8eff4064ab094c3be27e6cca082729
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

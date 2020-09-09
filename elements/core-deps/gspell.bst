@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gspell/1.8/gspell-1.8.3.tar.xz
-  ref: 5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8
+  url: gnome_downloads:gspell/1.8/gspell-1.8.4.tar.xz
+  ref: cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

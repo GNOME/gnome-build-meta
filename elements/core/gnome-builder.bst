@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-builder/3.37/gnome-builder-3.37.90.tar.xz
-  ref: 78089cf39dde4ecf1b512730bdf4c76910476495c4dab70c14086baf7ab8efc2
+  url: gnome_downloads:gnome-builder/3.37/gnome-builder-3.37.92.tar.xz
+  ref: 25fdaf970b78ad6c5091aa866cfd0cc06b67a5b41bfbf6512f1106e43f1188a0
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
