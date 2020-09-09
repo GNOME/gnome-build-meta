@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:flatpak/flatpak/releases/download/1.8.1/flatpak-1.8.1.tar.xz
+  ref: 66914b66f9a64079386cc097a40a19fa8419568df7fb456f2e407f0f76ac9ead
 
 variables:
   autogen: autoreconf -fvi

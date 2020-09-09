@@ -10,6 +10,7 @@ sources:
   url: https://github.com/raspberrypi/firmware
   track: 20354bebcc2a8448128f2348e19e155910d25122
   track-tags: false
+  ref: 1.20170215-305-g20354bebcc2a8448128f2348e19e155910d25122
 
 config:
   install-commands:

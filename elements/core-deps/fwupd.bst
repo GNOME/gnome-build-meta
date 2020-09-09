@@ -3,6 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: github_com:fwupd/fwupd/archive/1.3.11.tar.gz
+  ref: d0f1517154d6600003c6d2ecfbe872a6b958cf3417f9436dab1b65990498a827
 
 build-depends:
 - sdk/gtk-doc.bst

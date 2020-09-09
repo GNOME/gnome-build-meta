@@ -6,6 +6,7 @@ sources:
   #track: master
   track: 93293259039d6fc3a725961d42b4f11bfc3f5127
   track-tags: false
+  ref: 93293259039d6fc3a725961d42b4f11bfc3f5127
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst

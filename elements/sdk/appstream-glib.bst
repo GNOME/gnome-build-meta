@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: people_freedesktop_org:~hughsient/appstream-glib/releases/appstream-glib-0.7.18.tar.xz
-  ref:
+  ref: ca1ed22e3bde3912cb903aaa7de085d55771da454f1c0573fd9608e1de9c4002
 build-depends:
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
