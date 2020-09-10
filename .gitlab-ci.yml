@@ -156,11 +156,6 @@ build-aarch64:
   - .build-template
   - .aarch64
 
-build-ppc64le:
-  extends:
-  - .build-template
-  - .ppc64le
-
 
 generate-deploy-config:
   extends:
@@ -175,7 +170,7 @@ generate-deploy-config:
       master)
         FLAT_MANAGER_SERVER=https://nightly.gnome.org/
         FLAT_MANAGER_REPO=nightly
-        SUPPORTED_ARCHES="x86_64 i686 aarch64 ppc64le"
+        SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
       *beta)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
