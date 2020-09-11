@@ -1,10 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.28.4.tar.xz
-  ref: 821952e8c9303ed752f1fb1d4283f612c25249d00d705d2b79c2db1bc49c9464
-- kind: patch
-  path: files/webkitgtk/gtk-doc-introspection-cross-compiling.patch
+  url: webkitgtk_org:webkitgtk-2.30.0.tar.xz
+  ref: caf3dbf2d2383072614e34281f2fffb6331faf92f4ecf215f6f6a5a57f755d11
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -38,6 +36,7 @@ depends:
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
