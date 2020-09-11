@@ -7,7 +7,7 @@ build-depends:
 variables:
   install-root: /images
   # This name format is required by eos-installer
-  basename: 'GNOMEOS-%{branch}-%{arch}-%{arch}.%{branch}.base'
+  basename: 'GNOMEOS-%{branch}-%{arch}-%{arch}.%{ostree-layer}.base'
 
 environment:
   GNUPGHOME: /tmp/gpg
