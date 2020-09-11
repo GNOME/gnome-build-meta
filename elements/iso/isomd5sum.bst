@@ -3,6 +3,7 @@ kind: make
 sources:
 - kind: tar
   url: github_com:rhinstaller/isomd5sum/archive/1.2.3.tar.gz
+  ref: b0e706f470c336f689f43ddea33a85aed43fa7e5276221c7ac930e22f795c93c
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
