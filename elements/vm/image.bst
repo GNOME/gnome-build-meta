@@ -72,6 +72,11 @@ config:
     cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"
 
   - |
+    get_size() {
+      size=$(($(du --apparent-size -B 512 -s "${1}" | cut -f1)/2))
+      echo $((${size}+(${size}/10)))k
+    }
+
     cat > %{install-root}/genimage.cfg <<EOF
     image efi.img {
         vfat {
@@ -85,7 +90,7 @@ config:
             label = "root"
             use-mke2fs = true
         }
-        size = 16G
+        size = $(get_size %{sysroot})
     }
     image disk.img {
         hdimage {
