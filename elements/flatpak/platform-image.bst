@@ -1,6 +1,6 @@
 kind: compose
 build-depends:
-- platform-manifest.bst
+- flatpak/platform-manifest.bst
 - sdk-platform.bst
 - sdk/os-release.bst
 - freedesktop-sdk.bst:components/nsswitch-config.bst

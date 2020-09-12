@@ -1,8 +1,8 @@
 kind: compose
 build-depends:
+- flatpak/sdk-manifest.bst
 - sdk.bst
 - sdk/os-release.bst
-- sdk-manifest.bst
 - freedesktop-sdk.bst:components/nsswitch-config.bst
 - freedesktop-sdk.bst:components/python3-sitecustomize.bst
 - freedesktop-sdk.bst:components/python3-usercustomize.bst

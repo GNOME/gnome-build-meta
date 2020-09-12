@@ -52,7 +52,7 @@ default:
   dependencies: [track]
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst platform-manifest.bst sdk-manifest.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
 
   - |
     case "${ARCH}" in
@@ -321,10 +321,10 @@ cve_report:
   stage: reports
   dependencies: [track]
   script:
-  - ${BST} pull platform-manifest.bst sdk-manifest.bst
+  - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 
-  - ${BST} checkout platform-manifest.bst platform-manifest/
-  - ${BST} checkout sdk-manifest.bst sdk-manifest/
+  - ${BST} checkout flatpak/platform-manifest.bst platform-manifest/
+  - ${BST} checkout flatpak/sdk-manifest.bst sdk-manifest/
 
   - mkdir -p cve
   - cd cve
