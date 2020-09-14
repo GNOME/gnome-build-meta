@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libsoup/2.71/libsoup-2.71.1.tar.xz
-  ref: 8f2489b5a19600b89808d5a93d6845cb55d18dbaadbeca3f773af1be9ad51e4c
+  url: gnome_downloads:libsoup/2.72/libsoup-2.72.0.tar.xz
+  ref: 170c3f8446b0f65f8e4b93603349172b1085fb8917c181d10962f02bb85f5387
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

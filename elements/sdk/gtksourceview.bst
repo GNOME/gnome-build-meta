@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtksourceview/4.7/gtksourceview-4.7.90.tar.xz
-  ref: 983bdcb88f98285b3b997c9335057c8fbc45aad0a7c13cb65eb365567e26baaf
+  url: gnome_downloads:gtksourceview/4.8/gtksourceview-4.8.0.tar.xz
+  ref: 00a19121500cedf1bae97f35af865d839841fd785d9facf188498e13975b4e1a
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

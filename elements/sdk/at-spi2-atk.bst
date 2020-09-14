@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:at-spi2-atk/2.37/at-spi2-atk-2.37.90.tar.xz
-  ref: 99847a3b61bf2ac98a47e47edb4de4ea5c4f326c8238ad10661bd6d9c46b48f0
+  url: gnome_downloads:at-spi2-atk/2.38/at-spi2-atk-2.38.0.tar.xz
+  ref: cfa008a5af822b36ae6287f18182c40c91dd699c55faa38605881ed175ca464f
 build-depends:
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

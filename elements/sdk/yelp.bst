@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp/3.37/yelp-3.37.90.tar.xz
-  ref: dac3d2b14fbfcee4732d4e8a7f8a108a88e853ca05f071d988a5a8e185e5abd2
+  url: gnome_downloads:yelp/3.38/yelp-3.38.0.tar.xz
+  ref: d7cdce0e6dba513b4df109c1fa7effcbf08bb3f4d00d9e792c7edf34544f9658
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:jsonrpc-glib/3.34/jsonrpc-glib-3.34.0.tar.xz
-  ref: d1ceb24b503e49e7bfe6e44630c03abc65f2d047a68271eb62e332b13be90548
+  url: gnome_downloads:jsonrpc-glib/3.38/jsonrpc-glib-3.38.0.tar.xz
+  ref: dc5f1914a91152b70fa8fc9a11ede13148ab4af644db27a36632388c927a8a82
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/3.37/gnome-software-3.37.92.tar.xz
-  ref: d0ce4682cac300658ca914596a98e784ec72fc996b60d8b4f20cc1ef9dbc102f
+  url: gnome_downloads:gnome-software/3.38/gnome-software-3.38.0.tar.xz
+  ref: 878acb12a214f7d52796cd6462a3e1954696f2660de7b06b8acfd8b70d225566
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst
