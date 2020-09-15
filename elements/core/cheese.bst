@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:cheese/3.34/cheese-3.34.0.tar.xz
-  ref: d1865600ac88012e136b1ec3db72a4634f57bc2035895277be792bb078627e73
+  url: gnome_downloads:cheese/3.38/cheese-3.38.0.tar.xz
+  ref: 88d2732b421b903110a2628db25c0d61e219c42bdfb5971151033fba95a8d16f
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
