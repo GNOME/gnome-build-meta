@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-clocks/3.37/gnome-clocks-3.37.91.tar.xz
-  ref: 34de824b3fee68c5554b6904b02bcdc7e4b921f9a8e91a780f43e2898dbfb36c
+  url: gnome_downloads:gnome-clocks/3.38/gnome-clocks-3.38.0.tar.xz
+  ref: d956cb050f1ca46b443519e4f59ab204290d6270dec91c74b53895aecc794438
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
