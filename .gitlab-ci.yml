@@ -92,7 +92,8 @@ default:
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/
+  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
 .ostree-template:
   extends: .deploy-rules
