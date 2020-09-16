@@ -187,6 +187,7 @@ generate-deploy-config:
   - |
     cat > flatpak-variables.yml << END
     variables:
+      XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
       BST: '$BST'
       TRACK_JOB_ID: '$TRACK_JOB_ID'
       FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'
