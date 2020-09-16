@@ -3,4 +3,4 @@ projects:
     freedesktop-sdk.bst:
     - ref: freedesktop-sdk-20.08.0-0-g5931bbdc1a1d3da5f3218a718ff1b4f28d6b114f
     openh264-extension.bst:
-    - ref: openh264-2.0.0-3-32-gf855a9e434f18734cdb3bb8143d97f61de8e6add
+    - ref: openh264-2.0.0-4-0-g7191bc88fbeed3ac842543706f856cb6dde99bc9
