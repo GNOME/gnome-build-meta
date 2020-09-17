@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:fwupd/fwupd/archive/1.3.11.tar.gz
+  url: github_com:fwupd/fwupd/archive/1.4.4.tar.gz
 
 build-depends:
 - sdk/gtk-doc.bst
@@ -35,9 +35,11 @@ depends:
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 
 variables:
-  meson-local: >-
-    -Dplugin_dell=%{plugin-dell}
-  plugin-dell: 'false'
   (?):
-  - arch in ['x86_64', 'i686']:
-      plugin-dell: 'true'
+  - arch in ["arm", "aarch64"]:
+      meson-local: >-
+        -Dplugin_dell=false
+  - arch == "ppc64le":
+      meson-local: >-
+        -Dplugin_dell=false
+        -Dplugin_uefi=false
