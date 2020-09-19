@@ -310,6 +310,10 @@ s3-image-static:
       aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
           s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso \
           s3://gnome-build-meta/latest/gnome_os_installer.iso
+    - |
+      aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
+          s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz \
+          s3://gnome-build-meta/latest/disk.img.xz
 
     - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
