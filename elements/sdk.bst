@@ -22,7 +22,9 @@ depends:
 - freedesktop-sdk.bst:components/cython.bst
 - freedesktop-sdk.bst:components/docbook-xml.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:components/ed.bst
+- freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/gdb.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/glslang.bst
@@ -41,6 +43,7 @@ depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/patch.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
+- freedesktop-sdk.bst:components/perf.bst
 - freedesktop-sdk.bst:components/python3-pip.bst
 - freedesktop-sdk.bst:components/python3-wheel.bst
 - freedesktop-sdk.bst:components/ruby.bst
