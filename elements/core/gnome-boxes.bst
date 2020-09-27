@@ -22,7 +22,7 @@ build-depends:
 depends:
 - core-deps/freerdp.bst
 - core-deps/gtk-vnc.bst
-- core-deps/libhandy-0.bst
+- core-deps/libhandy.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
