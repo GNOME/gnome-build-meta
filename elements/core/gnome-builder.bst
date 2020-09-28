@@ -6,12 +6,12 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
+- core-deps/flatpak-builder.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gjs.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
 depends:
-- core-deps/flatpak-builder.bst
 - core-deps/flatpak.bst
 - core-deps/gspell.bst
 - core-deps/jsonrpc-glib.bst

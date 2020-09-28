@@ -86,7 +86,7 @@ build-depends:
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
-- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst
