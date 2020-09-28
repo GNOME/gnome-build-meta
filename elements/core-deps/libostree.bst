@@ -10,7 +10,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:

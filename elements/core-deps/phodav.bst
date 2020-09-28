@@ -5,7 +5,7 @@ sources:
   ref: 71f0a9cd70afd4dd1412a0298331dbb8ac71c0377f52117afc15eb88dc6fb910
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

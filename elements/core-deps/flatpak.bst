@@ -15,7 +15,7 @@ build-depends:
 - core-deps/python-pyparsing.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
