@@ -1,12 +1,11 @@
-kind: autotools
+kind: meson
 
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:cairo/cairomm.git
-  track: master
+- kind: tar
+  url: cairo_org:releases/cairomm-1.16.0.tar.xz
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - world/libsigcplusplus.bst
@@ -14,5 +13,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  conf-local: >-
-    --disable-documentation
+  meson-local: >-
+    -Dmaintainer-mode=true
+    -Dbuild-documentation=false
+    -Dwarnings=min
