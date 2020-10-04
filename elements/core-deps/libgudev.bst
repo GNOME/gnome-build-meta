@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgudev/233/libgudev-233.tar.xz
-  ref: 587c4970eb23f4e2deee2cb1fb7838c94a78c578f41ce12cac0a3f4a80dabb03
+  url: gnome_downloads:libgudev/234/libgudev-234.tar.xz
+  ref: 1baeacacf0db42fa073ad5183d1decce9317857416a2b0f82ce3370d711a2e37
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

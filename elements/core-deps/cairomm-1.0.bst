@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: cairo_org:releases/cairomm-1.13.1.tar.gz
-  ref: 97a78bd7de6baf8af3da1f9b39f1317f8da9f1145b7694e928fbd5521da08ef6
+  url: cairo_org:releases/cairomm-1.14.2.tar.xz
+  ref: 0126b9cc295dc36bc9c0860d5b720cb5469fd78d5620c8f10cc5f0c07b928de3
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

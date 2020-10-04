@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:amtk/5.1/amtk-5.1.2.tar.xz
-  ref: d99a52bc7f6f88619979958571468cb76967ed0ab3e7b9bfaa3daca44c54de15
+  url: gnome_downloads:amtk/5.2/amtk-5.2.0.tar.xz
+  ref: 820545bb4cf87ecebc2c3638d6b6e58b8dbd60a419a9b43cf020124e5dad7078
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
