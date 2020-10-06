@@ -10,5 +10,6 @@ build-depends:
 depends:
 - sdk/enchant-2.bst
 - sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
