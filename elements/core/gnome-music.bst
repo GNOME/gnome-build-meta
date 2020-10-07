@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-music/3.38/gnome-music-3.38.0.tar.xz
-  ref: 370aa97ee4610d11b4b8f691e5c9ce30fa55665870bf6d5f2319658bdfacd705
+  url: gnome_downloads:gnome-music/3.38/gnome-music-3.38.1.tar.xz
+  ref: 3bcb1261afa063d3f52b7015b5ed6fad77a54e03d2aae205b68698660749aae9
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

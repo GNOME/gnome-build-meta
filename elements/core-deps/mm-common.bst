@@ -18,8 +18,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:mm-common/1.0/mm-common-1.0.1.tar.xz
-  ref: 28a2d775afbf05c5c957b24b220ed6e9b2023179b98ecde471d89e9754ea5ac9
+  url: gnome_downloads:mm-common/1.0/mm-common-1.0.2.tar.xz
+  ref: a2a99f3fa943cf662f189163ed39a2cfc19a428d906dd4f92b387d3659d1641d
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/

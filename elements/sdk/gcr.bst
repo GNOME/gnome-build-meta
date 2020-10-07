@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gcr/3.36/gcr-3.36.0.tar.xz
-  ref: aaf9bed017a2263c6145c89a1a84178f9f40f238426463e4ae486694ef5f6601
+  url: gnome_downloads:gcr/3.38/gcr-3.38.0.tar.xz
+  ref: a64cc7b65757fc2cd16de1708d132a16d05cd1f62c6eba436d56fe45d4ba27e1
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

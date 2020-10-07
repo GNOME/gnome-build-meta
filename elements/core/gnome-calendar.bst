@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/3.38/gnome-calendar-3.38.0.tar.xz
-  ref: c3684252a72bb59089d071514458a4aeba417f9551ff5d548e1a5984e47b4733
+  url: gnome_downloads:gnome-calendar/3.38/gnome-calendar-3.38.1.tar.xz
+  ref: 7280880a082d631624d02a102dd547ceb59498da368311f3e49a06cff897f512
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
