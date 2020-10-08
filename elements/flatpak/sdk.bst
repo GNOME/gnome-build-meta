@@ -1,13 +1,8 @@
 kind: flatpak_image
-depends:
-- filename: flatpak/sdk-image.bst
-  type: build
-- filename: integration/sdk-integration.bst
-  junction: freedesktop-sdk.bst
-  type: build
-- filename: integration/linker-debuginfo.bst
-  junction: freedesktop-sdk.bst
-  type: build
+build-depends:
+- flatpak/sdk-image.bst
+- freedesktop-sdk.bst:integration/sdk-integration.bst
+- freedesktop-sdk.bst:integration/linker-debuginfo.bst
 
 variables:
   # Obtain the versions of the flatpak extensions
@@ -19,6 +14,7 @@ config:
   - debug
   - docs
   - locale
+
   metadata:
     Runtime:
       name: org.gnome.Sdk
@@ -28,7 +24,9 @@ config:
     Environment:
       GI_TYPELIB_PATH: /app/lib/girepository-1.0
       GST_PLUGIN_SYSTEM_PATH: /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:%{libdir}/gstreamer-1.0
-      XDG_DATA_DIRS: /app/share:/usr/share:/usr/share/runtime/share:/run/host/share
+      XDG_DATA_DIRS: /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
+      ALSA_CONFIG_DIR: /usr/share/alsa
+      ALSA_CONFIG_PATH: /usr/share/alsa/alsa-flatpak.conf
 
     Extension org.gnome.Sdk.Debug:
       directory: lib/debug
@@ -58,6 +56,7 @@ config:
       merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d"
       download-if: "active-gl-driver"
       enable-if: "active-gl-driver"
+      autoprune-unless: active-gl-driver
 
     Extension org.freedesktop.Platform.Timezones:
       directory: share/zoneinfo
@@ -87,6 +86,7 @@ config:
       directory: '%{lib}/openh264'
       add-ld-path: extra
       version: '2.0'
+      autodelete: 'false'
 
     Extension org.freedesktop.Sdk.Extension:
       subdirectories: 'true'
@@ -101,6 +101,7 @@ config:
       no-autodownload: 'true'
       download-if: have-intel-gpu
       version: '%{freedesktop-sdk-flatpak-branch}'
+      autoprune-unless: have-intel-gpu
 
     (?):
     - arch in ["x86_64", "aarch64"]:
