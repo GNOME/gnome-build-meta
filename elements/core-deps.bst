@@ -82,6 +82,7 @@ depends:
 - core-deps/liboauth.bst
 - core-deps/libosinfo.bst
 - core-deps/libpeas.bst
+- core-deps/libpulse-13.bst
 - core-deps/libqmi.bst
 - core-deps/librest.bst
 - core-deps/libsigcplusplus-2.0.bst
@@ -111,6 +112,7 @@ depends:
 - core-deps/poppler.bst
 - core-deps/portablexdr.bst
 - core-deps/portaudio.bst
+- core-deps/pulseaudio-base-13.bst
 - core-deps/ppp.bst
 - core-deps/pyatspi2.bst
 - core-deps/rpcsvc-proto.bst

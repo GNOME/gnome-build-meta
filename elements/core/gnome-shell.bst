@@ -35,6 +35,7 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/libsoup.bst
+- core-deps/libpulse-13.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
