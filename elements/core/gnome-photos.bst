@@ -22,14 +22,14 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libgdata.bst
 - core-deps/libgfbgraph-0.2.bst
-- core-deps/libhandy.bst
-- core-deps/tracker-miners-2.bst
 - core-deps/tracker-2.bst
+- core-deps/tracker-miners-2.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

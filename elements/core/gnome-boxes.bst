@@ -22,7 +22,6 @@ build-depends:
 depends:
 - core-deps/freerdp.bst
 - core-deps/gtk-vnc.bst
-- core-deps/libhandy.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
@@ -36,6 +35,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/json-glib.bst
+- sdk/libhandy.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

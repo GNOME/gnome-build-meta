@@ -9,11 +9,11 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
 - core-deps/libgweather.bst
-- core-deps/libhandy.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

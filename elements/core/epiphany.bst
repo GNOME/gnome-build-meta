@@ -7,7 +7,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libdazzle.bst
-- core-deps/libhandy.bst
 - sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
@@ -17,6 +16,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
+- sdk/libhandy.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst

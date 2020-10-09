@@ -12,10 +12,10 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libdazzle.bst
-- core-deps/libhandy.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -10,13 +10,13 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/libhandy.bst
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/librsvg.bst
 - sdk/libsoup.bst
 - world/gnome-themes-extra.bst

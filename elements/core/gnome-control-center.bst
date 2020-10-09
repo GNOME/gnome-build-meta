@@ -26,7 +26,6 @@ depends:
 - core-deps/gsound.bst
 - core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
-- core-deps/libhandy.bst
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
 - core-deps/samba.bst
@@ -43,6 +42,7 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/pwquality.bst

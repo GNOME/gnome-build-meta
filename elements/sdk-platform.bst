@@ -35,6 +35,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libgee.bst
+- sdk/libhandy.bst
 - sdk/libibus.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
@@ -43,8 +44,8 @@ depends:
 - sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
-- sdk/pipewire.bst
 - sdk/pipewire-libjack.bst
+- sdk/pipewire.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - sdk/woff2.bst

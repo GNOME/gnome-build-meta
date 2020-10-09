@@ -11,8 +11,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libhandy.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - world/libaperture.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

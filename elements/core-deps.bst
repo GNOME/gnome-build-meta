@@ -66,7 +66,6 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/libgxps.bst
 - core-deps/libhandy-0.bst
-- core-deps/libhandy.bst
 - core-deps/libjcat.bst
 - core-deps/libmbim.bst
 - core-deps/libmediaart.bst
