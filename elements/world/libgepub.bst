@@ -6,8 +6,8 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- sdk/WebKitGTK.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:bootstrap-import.bst

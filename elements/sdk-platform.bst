@@ -1,6 +1,5 @@
 kind: stack
 depends:
-- sdk/WebKitGTK.bst
 - sdk/adobe-source-code-pro-fonts.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
@@ -48,6 +47,7 @@ depends:
 - sdk/pipewire.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
+- sdk/webkitgtk.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst

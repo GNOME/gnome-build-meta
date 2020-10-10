@@ -8,7 +8,6 @@ build-depends:
 depends:
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
-- sdk/WebKitGTK.bst
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst
@@ -17,5 +16,6 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

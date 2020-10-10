@@ -5,8 +5,8 @@ sources:
   track: master
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 - core-deps/intltool.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
 - core-deps/evolution-data-server.bst
@@ -17,7 +17,6 @@ depends:
 - core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
-- sdk/WebKitGTK.bst
 - sdk/atk.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
@@ -27,6 +26,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsoup.bst
+- sdk/webkitgtk.bst
 - sdk/yelp-tools.bst
 - world/gtkspell.bst
 - freedesktop-sdk.bst:components/gstreamer.bst

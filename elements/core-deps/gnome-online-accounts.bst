@@ -9,12 +9,12 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/librest.bst
-- sdk/WebKitGTK.bst
-- sdk/gtk+-3.bst
 - sdk/gcr.bst
+- sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
