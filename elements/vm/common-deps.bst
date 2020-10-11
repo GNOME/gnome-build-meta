@@ -17,6 +17,7 @@ runtime-depends:
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
 
+- vm/fish.bst
 - vm/nss-mdns.bst
 - vm/ntfs-3g.bst
 - vm/uresourced.bst
