@@ -80,8 +80,8 @@ default:
   when: manual
   allow_failure: true
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
   artifacts:
     when: always
     paths:
@@ -270,22 +270,22 @@ s3-image:
   stage: deploy
   dependencies: [track]
   script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks iso/image.bst iso
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
+  - ${BST} -o arch "${ARCH}" checkout --hardlinks iso/image.bst iso
 
-    - |
-      if [ -n "$CI_COMMIT_TAG" ]; then
-          aws s3 cp --acl public-read --expires $(date -I --date="6 weeks") iso/installer.iso \
-              s3://gnome-build-meta/$CI_COMMIT_TAG/gnome_os_installer.iso
-      else
-          aws s3 cp --acl public-read --expires $(date -I --date="1 week") image/disk.img.xz \
-              s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz
-          aws s3 cp --acl public-read --expires $(date -I --date="1 week") iso/installer.iso \
-              s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso
-      fi
+  - |
+    if [ -n "$CI_COMMIT_TAG" ]; then
+        aws s3 cp --acl public-read --expires $(date -I --date="6 weeks") iso/installer.iso \
+            s3://gnome-build-meta/$CI_COMMIT_TAG/gnome_os_installer.iso
+    else
+        aws s3 cp --acl public-read --expires $(date -I --date="1 week") image/disk.img.xz \
+            s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz
+        aws s3 cp --acl public-read --expires $(date -I --date="1 week") iso/installer.iso \
+            s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso
+    fi
 
-    - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
@@ -297,25 +297,25 @@ s3-image-static:
   extends: .x86_64
   stage: reports
   needs:
-   - job: s3-image
-     artifacts: false
+  - job: s3-image
+    artifacts: false
   rules:
-    - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
-      when: never
-    - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
-      when: manual
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+    when: manual
   script:
-    - |
-      # Assume that the s3-image job has succeed and copy the img form the s3 uri
-      aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
-          s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso \
-          s3://gnome-build-meta/latest/gnome_os_installer.iso
-    - |
-      aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
-          s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz \
-          s3://gnome-build-meta/latest/disk.img.xz
+  - |
+    # Assume that the s3-image job has succeed and copy the img form the s3 uri
+    aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
+        s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso \
+        s3://gnome-build-meta/latest/gnome_os_installer.iso
+  - |
+    aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
+        s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz \
+        s3://gnome-build-meta/latest/disk.img.xz
 
-    - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 ostree-x86_64:
   extends:
