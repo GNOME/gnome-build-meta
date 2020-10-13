@@ -119,6 +119,7 @@ default:
   - BUILD_ID=$(flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
   - flat-manager-client purge $BUILD_ID
+  - exit $result
 
 #
 # "Real" CI jobs
