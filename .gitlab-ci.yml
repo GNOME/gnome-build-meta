@@ -171,7 +171,6 @@ default:
   image: "${DOCKER_AARCH64}"
   tags:
   - armhf
-  - gnome-build-meta
   variables:
     ARCH: arm
 
