@@ -300,6 +300,7 @@ s3-image-static:
   needs:
   - job: s3-image
     artifacts: false
+  allow_failure: true
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
     when: never
