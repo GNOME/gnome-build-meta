@@ -8,8 +8,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/gnome-online-accounts.bst
-- core-deps/librest.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
+- sdk-deps/librest.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
