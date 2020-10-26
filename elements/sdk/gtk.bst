@@ -20,6 +20,7 @@ depends:
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
 - sdk/pango.bst
+- sdk-deps/librest.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
