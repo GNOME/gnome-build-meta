@@ -33,6 +33,7 @@ depends:
 variables:
   meson-local: >-
     -Dbroadway-backend=true
+    -Dmedia-ffmpeg=disabled
 
 public:
   bst:
