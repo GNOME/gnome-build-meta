@@ -12,9 +12,9 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
+- sdk/librest.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk.bst
-- sdk-deps/librest.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
