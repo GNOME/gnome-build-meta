@@ -17,9 +17,9 @@ depends:
 - core-deps/libmediaart.bst
 - core-deps/totem-pl-parser.bst
 - sdk/json-glib.bst
+- sdk/librest.bst
 - sdk/libsoup.bst
 - sdk/tracker.bst
-- sdk-deps/librest.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:

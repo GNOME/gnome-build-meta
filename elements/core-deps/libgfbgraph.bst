@@ -10,6 +10,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
+- sdk/librest.bst
 - sdk/libsoup.bst
-- sdk-deps/librest.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
