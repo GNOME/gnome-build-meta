@@ -309,13 +309,11 @@ s3-image-static:
   script:
   - |
     # Assume that the s3-image job has succeed and copy the img form the s3 uri
-    aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
-        s3://gnome-build-meta/$CI_PIPELINE_ID/gnome_os_installer.iso \
-        s3://gnome-build-meta/latest/gnome_os_installer.iso
+    echo nightly/$CI_PIPELINE_ID/gnome_os_installer.iso > image/latest-iso
+    echo nightly/$CI_PIPELINE_ID/disk.img.xz > image/latest-disk
   - |
-    aws s3 cp --acl public-read --expires $(date -I --date="4 weeks") \
-        s3://gnome-build-meta/$CI_PIPELINE_ID/disk.img.xz \
-        s3://gnome-build-meta/latest/disk.img.xz
+    aws s3 cp image/latest-iso s3://gnome-build-meta/nightly/latest-iso
+    aws s3 cp image/latest-disk s3://gnome-build-meta/nightly/latest-disk
 
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
