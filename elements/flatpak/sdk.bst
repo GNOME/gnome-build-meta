@@ -2,7 +2,6 @@ kind: flatpak_image
 build-depends:
 - flatpak/sdk-image.bst
 - freedesktop-sdk.bst:integration/sdk-integration.bst
-- freedesktop-sdk.bst:integration/linker-debuginfo.bst
 
 variables:
   # Obtain the versions of the flatpak extensions
