@@ -54,6 +54,11 @@ default:
 
   - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
+
+  - mkdir -p testrepo
+  - ostree --repo=testrepo init --mode=bare-user-only
+  - ostree --repo=repo refs | grep '^runtime/' | xargs ostree --repo=testrepo pull-local --require-static-deltas --untrusted --disable-fsync repo
+
   - flat-manager-client push $(cat build.txt) repo/
   environment:
     name: $ENVIRONMENT_NAME
