@@ -52,6 +52,7 @@ default:
       rm -rf checkout-repo/
     done
 
+  - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
   - flat-manager-client push $(cat build.txt) repo/
   environment:
