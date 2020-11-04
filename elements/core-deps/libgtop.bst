@@ -9,6 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 environment:
   CC: gcc -std=c99
