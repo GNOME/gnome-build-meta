@@ -52,7 +52,7 @@ default:
       rm -rf checkout-repo/
     done
 
-  - ostree --repo repo/ fsck --all
+  - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
 
   - mkdir -p testrepo
