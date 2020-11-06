@@ -10,7 +10,6 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/util-linux.bst
 environment:
   CC: gcc -std=c99
 config:
