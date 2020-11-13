@@ -22,10 +22,7 @@ runtime-depends:
 - vm/uresourced.bst
 
 - vm/pipewire-libjack.bst
-- vm/pipewire-libpulse.bst
-- vm/wireplumber.bst
 
-- freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
