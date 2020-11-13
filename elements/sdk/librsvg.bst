@@ -7,7 +7,7 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:extensions/rust/rust.bst
+- freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gdk-pixbuf.bst

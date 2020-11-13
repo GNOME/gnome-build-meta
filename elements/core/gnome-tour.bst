@@ -5,7 +5,7 @@ sources:
   track: master
 - kind: cargo
 build-depends:
-- freedesktop-sdk.bst:extensions/rust/rust.bst
+- freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/adwaita-icon-theme.bst
