@@ -35,8 +35,6 @@ default:
   stage: deploy
   dependencies: [flatmgr-prepare]
   script:
-  - test -n "$BUILD_TARGETS" && $BST -o arch $ARCH build $BUILD_TARGETS
-
   - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
   - TARGETS_REPO_ARCH=TARGETS_${FLAT_MANAGER_REPO}_${ARCH}
   - TARGETS="$TARGETS ${!TARGETS_REPO} ${!TARGETS_REPO_ARCH}"
