@@ -21,6 +21,7 @@ depends:
 - sdk/pango.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/libportal.bst
 variables:
   meson-local: >-
     -Dselinux=false
