@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gdm/3.36/gdm-3.36.3.tar.xz
-  ref: 3bfbb620cbc0d1cbd70b4c4376cf4b705db4dc36a37124e5be386ccc25fa7e81
+  url: gnome_downloads:gdm/3.36/gdm-3.36.4.tar.xz
+  ref: 2bcd383ad82ab9d01f5aa190b30c7ef94878cf822791dd46222a338f093729f2
 - kind: local
   path: files/gdm
   directory: gdm-config
