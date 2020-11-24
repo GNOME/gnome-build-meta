@@ -32,6 +32,7 @@ variables:
     -Dlibv4l=disabled
     -Dlibv4l2=disabled
     -Dlua=disabled
+    -Dmaxflow=disabled
     -Dmrg=disabled
     -Dopenexr=disabled
     -Dpygobject=disabled
