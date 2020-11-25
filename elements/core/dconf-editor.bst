@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:dconf-editor/3.38/dconf-editor-3.38.0.tar.xz
-  ref: 6d89249a379082de6a8e95a2a202d0ca5fe1c9776bc0d5d3ef065567d8183eb4
+  url: gnome_downloads:dconf-editor/3.38/dconf-editor-3.38.2.tar.xz
+  ref: 1253dad87e6213fbf313ff9ec9dc4358aa1b10261f28072c1dc0e0997b92f835
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

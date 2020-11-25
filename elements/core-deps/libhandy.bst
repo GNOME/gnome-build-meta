@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libhandy/1.0/libhandy-1.0.0.tar.xz
-  ref: a9398582f47b7d729205d6eac0c068fef35aaf249fdd57eea3724f8518d26699
+  url: gnome_downloads:libhandy/1.0/libhandy-1.0.2.tar.xz
+  ref: 3ad78d0594165c7e8150f662506d386552825e693aa3679744af96bd94dc1c2d
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

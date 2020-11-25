@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/3.38/gnome-boxes-3.38.1.tar.xz
-  ref: 1b0f4eb4a09574c8195bccd94c3e6e03258775a569ee3ba020b1f4096325357f
-- kind: patch
-  path: files/gnome-boxes/re-order-recommended.patch
+  url: gnome_downloads:gnome-boxes/3.38/gnome-boxes-3.38.2.tar.xz
+  ref: 54aafd994920ee8fab45eb460c2d3f75c9ae791b14a56440199aaf1fc1b35bfe
 
 build-depends:
 - sdk/vala.bst

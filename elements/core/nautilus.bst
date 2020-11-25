@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/3.38/nautilus-3.38.1.tar.xz
-  ref: 0a3e812b13b774b7fd6f222f55acd1f87fb2973d9af60c04b7d25cb52222d0fd
+  url: gnome_downloads:nautilus/3.38/nautilus-3.38.2.tar.xz
+  ref: d09ceb54c274e50084c8757a73cd247fee5bde02a0b0d13733b0006d1a4196a6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
