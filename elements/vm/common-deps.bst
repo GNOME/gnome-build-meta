@@ -26,6 +26,8 @@ runtime-depends:
 - freedesktop-sdk.bst:vm/config/journald.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
+- freedesktop-sdk.bst:components/bash-config.bst
 - freedesktop-sdk.bst:components/ccid.bst
 - freedesktop-sdk.bst:components/gamemode.bst
 - freedesktop-sdk.bst:components/gnupg-systemd.bst
