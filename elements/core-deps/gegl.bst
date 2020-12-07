@@ -20,6 +20,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:components/sdl2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -38,4 +39,3 @@ variables:
     -Dopenexr=disabled
     -Dpygobject=disabled
     -Dumfpack=disabled
-    -Dwebp=disabled
