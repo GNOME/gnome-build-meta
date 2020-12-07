@@ -16,6 +16,7 @@ depends:
 - core-deps/graphviz.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- sdk/gobject-introspection.bst
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
