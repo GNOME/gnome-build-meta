@@ -13,6 +13,7 @@ depends:
 - core-deps/babl.bst
 - core-deps/gexiv2.bst
 - core-deps/libraw.bst
+- core-deps/graphviz.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
@@ -24,7 +25,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Dgraphviz=disabled
     -Djasper=disabled
     -Dlensfun=disabled
     -Dlibav=disabled
