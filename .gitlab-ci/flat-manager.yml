@@ -51,20 +51,6 @@ default:
       done
     done
 
-  - |
-    for ARCH in $OPTIONAL_ARCHES; do
-      TARGETS_ARCH=TARGETS_${ARCH}
-      TARGETS="$COMMON_TARGETS ${!TARGETS_ARCH}"
-
-      $BST -o arch $ARCH pull $TARGETS
-
-      for target in $TARGETS; do
-        $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/ || continue
-        ostree pull-local --repo repo/ checkout-repo/
-        rm -rf checkout-repo/
-      done
-    done
-
   - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
 
