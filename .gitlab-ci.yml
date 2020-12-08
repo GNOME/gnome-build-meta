@@ -197,7 +197,7 @@ generate-deploy-config:
       FLAT_MANAGER_SERVER: https://nightly.gnome.org/
       FLAT_MANAGER_REPO: nightly
       SUPPORTED_ARCHES: x86_64 i686 aarch64 ppc64le
-      COMMON_TARGETS: flatpak-runtimes.bst flatpak-platform-extensions.bst
+      TARGETS: flatpak-runtimes.bst flatpak-platform-extensions.bst
       TARGETS_x86_64: openh264-extension.bst:flatpak-repo.bst
     END
     else
@@ -205,7 +205,7 @@ generate-deploy-config:
       FLAT_MANAGER_SERVER: https://hub.flathub.org/
       FLAT_MANAGER_REPO: $FLAT_MANAGER_REPO
       SUPPORTED_ARCHES: x86_64 i686 aarch64
-      COMMON_TARGETS: flatpak-runtimes.bst
+      TARGETS: flatpak-runtimes.bst
     END
     fi
 

@@ -40,7 +40,7 @@ default:
   - |
     for ARCH in $SUPPORTED_ARCHES; do
       TARGETS_ARCH=TARGETS_${ARCH}
-      TARGETS="$COMMON_TARGETS ${!TARGETS_ARCH}"
+      TARGETS="$TARGETS ${!TARGETS_ARCH}"
 
       $BST -o arch $ARCH pull $TARGETS
 
