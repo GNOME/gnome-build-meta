@@ -35,20 +35,19 @@ default:
   stage: deploy
   dependencies: [flatmgr-prepare]
   script:
+  - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
+  - TARGETS_REPO_ARCH=TARGETS_${FLAT_MANAGER_REPO}_${ARCH}
+  - TARGETS="$TARGETS ${!TARGETS_REPO} ${!TARGETS_REPO_ARCH}"
+
+  - $BST -o arch $ARCH pull $TARGETS
+
   - ostree init --repo repo/ --mode archive
 
   - |
-    for ARCH in $SUPPORTED_ARCHES; do
-      TARGETS_ARCH=TARGETS_${ARCH}
-      TARGETS="$TARGETS ${!TARGETS_ARCH}"
-
-      $BST -o arch $ARCH pull $TARGETS
-
-      for target in $TARGETS; do
-        $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
-        ostree pull-local --repo repo/ checkout-repo/
-        rm -rf checkout-repo/
-      done
+    for target in $TARGETS; do
+      $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
+      ostree pull-local --repo repo/ checkout-repo/
+      rm -rf checkout-repo/
     done
 
   - ostree fsck --repo repo/ --all
