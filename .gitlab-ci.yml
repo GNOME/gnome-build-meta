@@ -291,6 +291,7 @@ iso-installer-x86_64:
   extends:
   - .manual-image-template
   - .x86_64
+  when: 'always'
   variables:
     IMAGE: iso/image.bst
   needs:

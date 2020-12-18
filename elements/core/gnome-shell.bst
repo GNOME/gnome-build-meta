@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-shell.git
-  track: master
+  url: gitlab_gnome_org:feaneron/gnome-shell.git
+  track: gbsneto/40-stuff
   submodules:
     subprojects/gvc:
       checkout: true
