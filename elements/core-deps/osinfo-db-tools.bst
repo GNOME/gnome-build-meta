@@ -3,6 +3,7 @@ sources:
 - kind: tar
   url: https://releases.pagure.org/libosinfo/osinfo-db-tools-1.8.0.tar.xz
 build-depends:
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -11,5 +12,4 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libxml2.bst
-- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
