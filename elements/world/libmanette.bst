@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:aplazas/libmanette.git
+  url: gitlab_gnome_org:GNOME/libmanette.git
   track: master
 
 build-depends:
