@@ -10,7 +10,6 @@ build-depends:
 depends:
 - core-deps/cairomm-1.0.bst
 - core-deps/glibmm-2.4.bst
-- sdk/atk.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:

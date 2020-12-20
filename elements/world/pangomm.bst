@@ -11,7 +11,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/atk.bst
 - sdk/pango.bst
 - world/cairomm.bst
 - world/glibmm.bst
