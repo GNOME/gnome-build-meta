@@ -3,6 +3,7 @@ build-depends:
 - flatpak/sdk-image.bst
 - freedesktop-sdk.bst:integration/sdk-integration.bst
 - freedesktop-sdk.bst:flatpak-images/copy-ld-debug.bst
+- freedesktop-sdk.bst:integration/app-debug-link.bst
 
 variables:
   # Obtain the versions of the flatpak extensions
