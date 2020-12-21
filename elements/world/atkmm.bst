@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: git_tag
@@ -6,8 +6,9 @@ sources:
   track: master
 
 build-depends:
+- freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/atk.bst
@@ -15,5 +16,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  conf-local: >-
-    --enable-maintainer-mode
+  meson-local: >-
+    -Dmaintainer-mode=true
+    -Dbuild-documentation=false
+    -Dwarnings=min
