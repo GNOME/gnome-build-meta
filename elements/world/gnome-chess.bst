@@ -9,7 +9,7 @@ build-depends:
 
 depends:
 - sdk/appstream-glib.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/librsvg.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
