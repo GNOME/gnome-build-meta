@@ -41,3 +41,11 @@ public:
       devel:
         (>):
         - '%{libdir}/libgtk-4.so'
+
+config:
+  install-commands:
+    (>):
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/org.gtk.Demo4.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/org.gtk.IconBrowser4.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/org.gtk.PrintEditor4.desktop"
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/org.gtk.WidgetFactory4.desktop"
