@@ -20,6 +20,7 @@ runtime-depends:
 - vm/nss-mdns.bst
 - vm/ntfs-3g.bst
 - vm/uresourced.bst
+- vm/android-udev-rules.bst
 
 - freedesktop-sdk.bst:vm/config/pulseaudio.bst
 - freedesktop-sdk.bst:vm/config/sudo.bst
