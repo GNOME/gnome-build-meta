@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: github_com:libvirt/libvirt-glib.git
+  url: gitlab_com:libvirt/libvirt-glib.git
   track: master
 build-depends:
 - core-deps/intltool.bst
