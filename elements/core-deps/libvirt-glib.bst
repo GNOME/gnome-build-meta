@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: github_com:libvirt/libvirt-glib.git
@@ -7,7 +7,7 @@ build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libvirt.bst
 - sdk/glib.bst
@@ -15,5 +15,6 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
-    --enable-werror=no
+  meson-local: >-
+    -Dgit_werror=disabled
+    -Ddocs=disabled
