@@ -17,7 +17,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dintrospection=true
+    -Dintrospection=enabled
     -Dpulseaudio=enabled
     -Dsasl=enabled
-    -Dwith-vala=true
+    -Dwith-vala=enabled
