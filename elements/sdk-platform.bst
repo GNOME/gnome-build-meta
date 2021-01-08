@@ -41,7 +41,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pipewire-libjack.bst
@@ -50,7 +49,6 @@ depends:
 - sdk/tracker.bst
 - sdk/webkitgtk.bst
 - sdk/woff2.bst
-- sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
 - sdk/zenity.bst
