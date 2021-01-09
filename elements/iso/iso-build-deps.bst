@@ -1,6 +1,6 @@
 kind: stack
 
-runtime-depends:
+depends:
 - core-deps/libostree.bst
 - iso/libisoburn.bst
 - iso/isomd5sum.bst

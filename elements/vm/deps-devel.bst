@@ -1,6 +1,6 @@
 kind: stack
 
-runtime-depends:
+depends:
 - sdk.bst
 - core/meta-gnome-core-developer-tools.bst
 - vm/buildstream/bst-external.bst

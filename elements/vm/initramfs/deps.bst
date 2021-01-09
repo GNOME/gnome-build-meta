@@ -1,6 +1,6 @@
 kind: stack
 
-runtime-depends:
+depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/linux.bst

@@ -1,6 +1,6 @@
 kind: stack
 
-runtime-depends:
+depends:
 - core-deps/plymouth.bst
 - iso/isomd5sum.bst
 - sdk/os-release.bst

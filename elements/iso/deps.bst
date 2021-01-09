@@ -1,6 +1,6 @@
 kind: stack
 
-runtime-depends:
+depends:
 - iso/eos-installer-extra.bst
 - iso/installer-dirs.bst
 - iso/public-key.bst
