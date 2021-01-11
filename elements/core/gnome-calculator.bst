@@ -13,6 +13,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/libgee.bst
+- sdk/libhandy.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
