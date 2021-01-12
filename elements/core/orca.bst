@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:orca/3.38/orca-3.38.0.tar.xz
-  ref: 1c3279d79898db10a105bcb705b5a4042b1b51a9c057a6bd0ffd65dac2356fee
+  url: gnome_downloads:orca/3.38/orca-3.38.2.tar.xz
+  ref: 5005ff2e11dd1f713f5acc1903a270119bc58c30fdb8c9f82bcac71497c6c23c
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

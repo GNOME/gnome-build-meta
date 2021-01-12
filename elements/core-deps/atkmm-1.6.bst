@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:atkmm/2.28/atkmm-2.28.0.tar.xz
-  ref: 4c4cfc917fd42d3879ce997b463428d6982affa0fb660cafcc0bc2d9afcedd3a
+  url: gnome_downloads:atkmm/2.28/atkmm-2.28.1.tar.xz
+  ref: 116876604770641a450e39c1f50302884848ce9cc48d43c5dc8e8efc31f31bad
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

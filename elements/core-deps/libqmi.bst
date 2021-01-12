@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libqmi/libqmi-1.26.6.tar.xz
-  ref: a71963bb1097a42665287e40a9a36f95b8f9d6d6a4b7a5de22d660328af97cb9
+  url: https://www.freedesktop.org/software/libqmi/libqmi-1.26.8.tar.xz
+  ref: ef76dc95ab0a06321a1bd25e875489cba12c9f6611974ca0135cf067bb20c960
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:mobile-broadband-provider-info/20190618/mobile-broadband-provider-info-20190618.tar.xz
-  ref: c22d64a565d1975b9eecb6ed2eeaef18634bc6f385c8137d05e845d8fb3cce5b
+  url: gnome_downloads:mobile-broadband-provider-info/20201225/mobile-broadband-provider-info-20201225.tar.xz
+  ref: 0d7fc04df41772f94eb813bb9a1dcfd42fa6f44df60005d5535a54d949143dbd
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
