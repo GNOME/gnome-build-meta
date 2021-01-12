@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgweather.git
-  track: master
+- kind: tar
+  url: https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
