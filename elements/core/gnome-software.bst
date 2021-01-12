@@ -22,6 +22,7 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/libgudev.bst
