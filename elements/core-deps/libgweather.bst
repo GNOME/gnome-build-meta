@@ -11,4 +11,5 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libsoup.bst
+- sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
