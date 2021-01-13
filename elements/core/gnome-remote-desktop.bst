@@ -17,3 +17,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/pipewire.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Drdp_unicode_input=false
