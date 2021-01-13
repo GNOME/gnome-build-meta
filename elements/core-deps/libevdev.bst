@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libevdev/libevdev-1.10.0.tar.xz
-  ref: 3522c26e2c148be0ad68ce26fbced408a4185dea90bfe8079dc82b8ace962d4a
+  url: https://www.freedesktop.org/software/libevdev/libevdev-1.10.1.tar.xz
+  ref: 0330fe8357ece915db9366c1b9a6648941aea6f724b73ad6e71401127aa08932
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:glibmm/2.64/glibmm-2.64.2.tar.xz
-  ref: a75282e58d556d9b2bb44262b6f5fb76c824ac46a25a06f527108bec86b8d4ec
+  url: gnome_downloads:glibmm/2.64/glibmm-2.64.5.tar.xz
+  ref: 508fc86e2c9141198aa16c225b16fd6b911917c0d3817602652844d0973ea386
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:amtk/5.2/amtk-5.2.0.tar.xz
-  ref: 820545bb4cf87ecebc2c3638d6b6e58b8dbd60a419a9b43cf020124e5dad7078
+  url: gnome_downloads:amtk/5.3/amtk-5.3.1.tar.xz
+  ref: d5aa236c5d71dc41aa4674f345560a67a27f21c0efc97c9b3da09cb582b4638b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
