@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
@@ -6,9 +6,10 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gcr.bst
+- sdk/webkitgtk.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
@@ -17,5 +18,5 @@ depends:
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  meson-local: >-
-    -Dgtk_doc=true
+  conf-local: >-
+    --disable-telepathy
