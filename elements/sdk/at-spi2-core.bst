@@ -8,8 +8,15 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  meson-local: >-
+    -Dx11=yes
+    -Dintrospection=yes
+    -Ddocs=true
 public:
   bst:
     split-rules:
