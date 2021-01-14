@@ -31,8 +31,10 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/woff2.bst
+- sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
@@ -53,7 +55,7 @@ variables:
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   cmake-local: >-
-    -DPORT=GTK -DUSE_WPE_RENDERER=OFF
+    -DPORT=GTK
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
