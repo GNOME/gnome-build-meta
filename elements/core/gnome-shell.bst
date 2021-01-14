@@ -38,7 +38,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
