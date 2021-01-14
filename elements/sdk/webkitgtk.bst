@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.31.1.tar.xz
+  url: webkitgtk_org:webkitgtk-2.30.4.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -52,10 +52,8 @@ variables:
   (?):
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
-  # FIXME: Reenable WPE renderer once https://bugs.webkit.org/show_bug.cgi?id=201507 is fixed.
-  # FIXME: Enable gamepad support via libmanette once freedesktop-sdk's gudev is built with gobject-introspection support
   cmake-local: >-
-    -DPORT=GTK -DUSE_WPE_RENDERER=OFF -DENABLE_GAMEPAD=OFF
+    -DPORT=GTK -DUSE_WPE_RENDERER=OFF
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
