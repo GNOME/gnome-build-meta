@@ -152,16 +152,19 @@ build-i386:
   extends:
   - .build-template
   - .i686
+  when: 'manual'
 
 build-aarch64:
   extends:
   - .build-template
   - .aarch64
+  when: 'manual'
 
 build-ppc64le:
   extends:
   - .build-template
   - .ppc64le
+  when: 'manual'
 
 
 generate-deploy-config:
