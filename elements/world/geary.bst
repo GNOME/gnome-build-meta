@@ -13,7 +13,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gsound.bst
 - core-deps/gspell.bst
-- core-deps/libhandy-0.bst
 - core-deps/libpeas.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -25,6 +24,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libgee.bst
+- sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst

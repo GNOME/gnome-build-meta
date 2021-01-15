@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - core-deps/evolution-data-server.bst
-- core-deps/libhandy-0.bst
+- world/libhandy-0.bst
 - sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst

@@ -56,6 +56,7 @@ depends:
 - world/libgphoto2.bst
 - world/libgrss.bst
 - world/libhangul.bst
+- world/libhandy-0.bst
 - world/libimobiledevice.bst
 - world/libmanette.bst
 - world/libmtp.bst

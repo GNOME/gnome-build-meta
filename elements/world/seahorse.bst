@@ -7,10 +7,12 @@ sources:
     subprojets/libhandy:
       checkout: false
       url: purism:Librem5/libhandy.git
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 depends:
-- core-deps/libhandy-0.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
 - sdk/glib.bst
@@ -18,6 +20,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
+- sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
