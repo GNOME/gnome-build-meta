@@ -6,3 +6,7 @@ plugins/__pycache__
 
 # Never commit project.refs
 project.refs
+
+# Produced by the gnomeos build scripts
+ostree-gpg/
+ostree-repo/
