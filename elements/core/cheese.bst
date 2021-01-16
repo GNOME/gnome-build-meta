@@ -1,13 +1,15 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/cheese.git
   track: master
+
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/gnome-video-effects.bst
 - core-deps/libcanberra.bst
