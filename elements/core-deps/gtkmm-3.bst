@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtkmm.git
-  track: gtkmm-3-24
+- kind: tar
+  url: gnome_downloads:gtkmm/3.24/gtkmm-3.24.3.tar.xz
+  ref: 60497c4f7f354c3bd2557485f0254f8b7b4cf4bebc9fee0be26a77744eacd435
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst

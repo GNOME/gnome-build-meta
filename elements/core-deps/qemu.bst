@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://download.qemu.org/qemu-5.0.0.tar.xz
 
+  ref: 2f13a92a0fa5c8b69ff0796b59b86b080bbb92ebad5d301a7724dd06b5e78cb6
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

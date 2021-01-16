@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://libvirt.org/sources/libvirt-6.5.0.tar.xz
+  ref: 4915d9eab299ed79288d7598b717c587156708c05f701fe55a72293f32eb3182
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:

@@ -1,20 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-music.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
-    subprojects/gfm:
-      checkout: true
-      url: gitlab_gnome_org:mschraal/gfm.git
-    subprojects/shared-modules:
-      checkout: false
-      url: github_com:flathub/shared-modules.git
-
+- kind: tar
+  url: gnome_downloads:gnome-music/3.38/gnome-music-3.38.2.tar.xz
+  ref: 5585b638564cfa1c7d9ebdc72d8c4d8544c6b09f65af425dcc72b86779284030
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

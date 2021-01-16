@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:flatpak/flatpak/releases/download/1.8.5/flatpak-1.8.5.tar.xz
 
+  ref: 338dc47398ef0b9bd95d14b6a321f6ee4d9ae53fdb06dc0f8901d6440319d47c
 variables:
   autogen: autoreconf -fvi
   conf-local: >-

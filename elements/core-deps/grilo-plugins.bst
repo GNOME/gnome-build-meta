@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/grilo-plugins.git
-  track: master
+- kind: tar
+  url: gnome_downloads:grilo-plugins/0.3/grilo-plugins-0.3.12.tar.xz
+  ref: c6b6df086a164d65c206d70139ce80591f8feca3545612e45b823fb4fe4b2577
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

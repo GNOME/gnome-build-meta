@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-weather.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-weather/40/gnome-weather-40.alpha.tar.xz
+  ref: b9939457598ab4199623158645a33a6b372e32680291e77968645102d0266e59
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

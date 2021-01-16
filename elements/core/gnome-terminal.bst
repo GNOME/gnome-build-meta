@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-terminal.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-terminal/3.38/gnome-terminal-3.38.2.tar.xz
+  ref: 27bddc9d0ba614c86e5ecb4f54c75ebc3415e2887acd91442057548fd3206618
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

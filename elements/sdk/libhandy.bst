@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libhandy.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libhandy/1.0/libhandy-1.0.3.tar.xz
+  ref: 559bb3acc2c362488917eb72ed25bdc181f4ae26ac94d177634cc5d34c867f7a
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

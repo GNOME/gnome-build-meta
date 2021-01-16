@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/dconf.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:dconf/0.38/dconf-0.38.0.tar.xz
+  ref: 45f60f41330d27715cce1315af123f94f1c2cdedb68b6bed3b309866eec44f58
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/dbus.bst

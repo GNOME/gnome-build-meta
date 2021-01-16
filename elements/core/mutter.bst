@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/mutter.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:mutter/40/mutter-40.alpha.1.1.tar.xz
+  ref: eecfe086251aa90475afd27c21b71879bf06577e01dd635058431f4b79f52c18
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst

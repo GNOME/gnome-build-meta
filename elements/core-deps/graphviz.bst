@@ -2,7 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gitlab_com:graphviz/graphviz/-/archive/2.46.0/graphviz-2.46.0.tar.gz
+  url: https://www2.graphviz.org/Packages/stable/portable_source/graphviz-2.44.0.tar.gz
+  ref: 9aabd13a8018b708ab3c822de2326c19d0a52ed59f50a6b0f9318c07e2a6d93b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/bison.bst

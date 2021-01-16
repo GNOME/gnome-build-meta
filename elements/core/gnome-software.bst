@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-software.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-software/3.38/gnome-software-3.38.0.tar.xz
+  ref: 878acb12a214f7d52796cd6462a3e1954696f2660de7b06b8acfd8b70d225566
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst

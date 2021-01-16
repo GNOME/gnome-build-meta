@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:AbiWord/enchant/releases/download/v2.2.12/enchant-2.2.12.tar.gz
+  ref: 6b9bc58ae714ee7f5335ade966f4ac5718d5339e280cc9e1cca9ab278c06227e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pango.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pango/1.48/pango-1.48.1.tar.xz
+  ref: 08c2d550a96559f15fb317d7167b96df57ef743fef946f4e274bd8b6f2918058
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-logs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-logs/3.36/gnome-logs-3.36.0.tar.xz
+  ref: 44766b61a6899e1b4c51ed7a8840608e6b9277f341f856a1e5c08dbd7a733670
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/template-glib.git
-  track: master
+- kind: tar
+  url: gnome_downloads:template-glib/3.34/template-glib-3.34.0.tar.xz
+  ref: 216bef6ac3607666b8ca72b936467f7020ce6421c02755c301d079576c9c3dfd
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

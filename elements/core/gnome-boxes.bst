@@ -1,16 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-boxes.git
-  track: master
-  submodules:
-    subprojects/gtk-frdp:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/gtk-frdp.git
-    subprojects/libovf-glib:
-      checkout: true
-      url: gitlab_gnome_org:felipeborges/libovf-glib.git
+- kind: tar
+  url: gnome_downloads:gnome-boxes/3.38/gnome-boxes-3.38.2.tar.xz
+  ref: 54aafd994920ee8fab45eb460c2d3f75c9ae791b14a56440199aaf1fc1b35bfe
 - kind: patch
   path: files/gnome-boxes/re-order-recommended.patch
 
