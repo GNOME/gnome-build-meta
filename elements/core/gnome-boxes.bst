@@ -26,8 +26,7 @@ depends:
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
 - core-deps/spice-gtk.bst
-- core-deps/tracker-2.bst
-- core-deps/tracker-miners-2.bst
+- core-deps/tracker-miners.bst
 - core-deps/vte.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -36,6 +35,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
+- sdk/tracker.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
