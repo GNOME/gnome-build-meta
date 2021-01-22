@@ -93,7 +93,7 @@ default:
   - |
     for element in vm/repo.bst vm/repo-devel.bst; do
         ${BST} -o arch "${ARCH}" checkout --hardlinks $element checkout-repo/
-        ostree pull-local --repo=repo/ checkout-repo/
+        ostree pull-local --untrusted --repo=repo/ checkout-repo/
         rm -rf checkout-repo/
     done
 
