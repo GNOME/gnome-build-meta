@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_com:libvirt/libvirt-glib.git
-  track: master
+- kind: tar
+  url: https://libvirt.org/sources/glib/libvirt-glib-3.0.0.tar.gz
 build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst

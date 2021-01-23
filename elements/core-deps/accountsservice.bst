@@ -1,8 +1,7 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: git_freedesktop_org:accountsservice/accountsservice.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/accountsservice/accountsservice-0.6.55.tar.xz
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
