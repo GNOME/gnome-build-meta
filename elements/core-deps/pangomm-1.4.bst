@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/pangomm.git
-  track: pangomm-2-42
+  track: pangomm-2-46
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
