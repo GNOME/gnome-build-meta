@@ -74,10 +74,9 @@ default:
     - logs
     expire_in: '1 week'
 
-.manual-image-template:
+.image-template:
   stage: deploy
   dependencies: [track]
-  when: manual
   allow_failure: true
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
@@ -87,6 +86,12 @@ default:
     paths:
     - image
     expire_in: '2 days'
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+  - if: '$CI_PIPELINE_SOURCE == "push"'
+    when: manual
 
 .deploy-rules:
   rules:
@@ -233,35 +238,35 @@ deploy-flatpak:
 
 vm-image-x86_64:
   extends:
-  - .manual-image-template
+  - .image-template
   - .x86_64
   variables:
     IMAGE: vm/image.bst
 
 pinebook-pro-image:
   extends:
-  - .manual-image-template
+  - .image-template
   - .aarch64
   variables:
     IMAGE: boards/pinebook-pro/image.bst
 
 rock64-image:
   extends:
-  - .manual-image-template
+  - .image-template
   - .aarch64
   variables:
     IMAGE: boards/rock64/image.bst
 
 raspberrypi-4-image:
   extends:
-  - .manual-image-template
+  - .image-template
   - .aarch64
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
 
 iso-installer-x86_64:
   extends:
-  - .manual-image-template
+  - .image-template
   - .x86_64
   variables:
     IMAGE: iso/image.bst
