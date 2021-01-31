@@ -1,4 +1,4 @@
-kind: ostree
+kind: ostree_repo
 
 build-depends:
 - core-deps/libostree.bst
