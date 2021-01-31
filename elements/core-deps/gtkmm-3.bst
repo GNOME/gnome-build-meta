@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gtkmm.git
   track: gtkmm-3-24
 build-depends:
+- core-deps/mm-common.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

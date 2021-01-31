@@ -5,6 +5,7 @@ sources:
   url: cairo_org:releases/cairomm-1.16.0.tar.xz
 
 build-depends:
+- core-deps/mm-common.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

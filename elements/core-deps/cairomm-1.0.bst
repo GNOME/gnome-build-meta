@@ -3,6 +3,7 @@ sources:
 - kind: tar
   url: cairo_org:releases/cairomm-1.14.2.tar.xz
 build-depends:
+- core-deps/mm-common.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libsigcplusplus-2.0.bst
