@@ -6,6 +6,7 @@ class OstreeElement(Element):
     BST_FORBID_RDEPENDS = True
     BST_FORBID_SOURCES = True
     BST_STRICT_REBUILD = True
+    BST_ARTIFACT_VERSION = 1
 
     def preflight(self):
         pass
@@ -91,6 +92,8 @@ class OstreeElement(Element):
         with self.timed_activity("Pull"):
             run_command("ostree", "init", "--repo", repopath, "--mode", "archive")
             run_command("ostree", "pull-local", "--repo", repopath, barerepopath)
+
+        run_command("sh", "-c", f"find {repopath} -type f | xargs sha256sum")
 
         return repopath
 
