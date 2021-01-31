@@ -9,8 +9,8 @@ build-depends:
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/bc.bst
+- freedesktop-sdk.bst:components/swig.bst
 
-- boards/common/swig.bst
 - boards/common/python3-as-python2.bst
 - boards/common/dtc.bst
 
