@@ -67,6 +67,9 @@ default:
 
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
+  - ${BST} -o arch "${ARCH}" checkout flatpak-runtimes.bst checkout-repo
+  - find checkout-repo -type f | xargs sha256sum > logs/sha256sums
+
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
