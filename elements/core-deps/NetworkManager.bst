@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.29/NetworkManager-1.29.9.tar.xz
+  url: gnome_downloads:NetworkManager/1.29/NetworkManager-1.29.10.tar.xz
 build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst
