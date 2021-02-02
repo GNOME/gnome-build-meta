@@ -2,6 +2,8 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:brailcom/speechd/releases/download/0.9.0/speech-dispatcher-0.9.0.tar.gz
+- kind: patch
+  path: files/speech-dispatcher/Fix-build-after-glib-e38982df.patch
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
