@@ -9,3 +9,4 @@ build-depends:
 depends:
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/python3-lxml.bst
