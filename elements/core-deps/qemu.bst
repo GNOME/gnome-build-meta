@@ -11,7 +11,7 @@ build-depends:
 depends:
 - sdk/gtk+-3.bst
 - core-deps/libcacard.bst
-- core-deps/spice-server.bst
+- core-deps/spice.bst
 - core-deps/usbredir.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst

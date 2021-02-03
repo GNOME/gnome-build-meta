@@ -109,7 +109,7 @@ depends:
 - core-deps/speech-dispatcher.bst
 - core-deps/spice-gtk.bst
 - core-deps/spice-protocol.bst
-- core-deps/spice-server.bst
+- core-deps/spice.bst
 - core-deps/startup-notification.bst
 - core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
