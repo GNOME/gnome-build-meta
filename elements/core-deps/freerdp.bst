@@ -22,5 +22,8 @@ depends:
 
 variables:
   cmake-local: >-
+    -DWITH_CHANNELS=ON
+    -DWITH_SERVER_CHANNELS=ON
+    -DWITH_CLIENT_CHANNELS=ON
     -DWITH_ALSA=OFF
     -DWITH_PCSC=OFF
