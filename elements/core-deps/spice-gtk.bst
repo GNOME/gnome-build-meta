@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: spice:gtk/spice-gtk-0.38.tar.xz
+  url: spice:gtk/spice-gtk-0.39.tar.xz
 
 build-depends:
 - core-deps/python-pyparsing.bst
@@ -12,6 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/libcap-ng.bst
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
 - sdk/glib.bst
