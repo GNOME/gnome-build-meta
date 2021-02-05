@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: ftp_gnu_org:parted/parted-3.2.tar.xz
+  url: ftp_gnu_org:parted/parted-3.4.tar.xz
 - kind: patch
   path: files/parted/include-sysmacros.patch
 build-depends:

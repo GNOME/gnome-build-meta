@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.12.0.tar.gz
+  url: https://download.samba.org/pub/samba/stable/samba-4.13.4.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
@@ -13,6 +13,7 @@ build-depends:
 depends:
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
+- freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
