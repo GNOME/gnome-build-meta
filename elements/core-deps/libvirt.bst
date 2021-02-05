@@ -1,15 +1,19 @@
-kind: autotools
+kind: meson
+
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/libvirt-6.5.0.tar.xz
+  url: https://libvirt.org/sources/libvirt-7.0.0.tar.xz
 - kind: local
   path: files/libvirt/80-libvirt.preset
+
 build-depends:
 - core-deps/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/glib.bst
 - core-deps/dnsmasq.bst
@@ -28,30 +32,48 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-pciaccess.bst
 - freedesktop-sdk.bst:components/yajl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-config:
-  configure-commands:
-  - mkdir build
-  - |
-    cd build
-    %{configure}
-  build-commands:
-  - |
-    cd build
-    %{make}
-  install-commands:
-  - |
-    cd build
-    %{make-install}
-  - mv %{install-root}/var/run %{install-root}
-  - |
-    presetdir="$(pkg-config --variable=systemdsystempresetdir systemd)"
-    install -Dm644 -t "%{install-root}${presetdir}" 80-libvirt.preset
+
 variables:
-  conf-cmd: ../configure
-  # --disable-Werror does not work
-  conf-global: >-
-    --disable-static
-    --host=%{triplet}
-    --build=%{triplet}
-    --with-init-script=systemd
-    QEMU_SLIRP_HELPER=/usr/bin/libslirp-helper
+  meson-local: >-
+    -Dapparmor=disabled
+    -Daudit=disabled
+    -Dbash_completion=disabled
+    -Dcapng=disabled
+    -Dcurl=disabled
+    -Ddriver_bhyve=disabled
+    -Ddriver_esx=disabled
+    -Ddriver_hyperv=disabled
+    -Ddriver_libxl=disabled
+    -Ddriver_vz=disabled
+    -Ddtrace=disabled
+    -Dfuse=disabled
+    -Dglusterfs=disabled
+    -Dlibiscsi=disabled
+    -Dlibpcap=disabled
+    -Dlibssh2=disabled
+    -Dlibssh=disabled
+    -Dnetcf=disabled
+    -Dnumactl=disabled
+    -Dnumad=disabled
+    -Dopenwsman=disabled
+    -Dsasl=disabled
+    -Dsecdriver_apparmor=disabled
+    -Dsecdriver_selinux=disabled
+    -Dselinux=disabled
+    -Dstorage_disk=disabled
+    -Dstorage_gluster=disabled
+    -Dstorage_iscsi=disabled
+    -Dstorage_iscsi_direct=disabled
+    -Dstorage_rbd=disabled
+    -Dstorage_sheepdog=disabled
+    -Dstorage_vstorage=disabled
+    -Dstorage_zfs=disabled
+    -Dwireshark_dissector=disabled
+
+config:
+  install-commands:
+    (>):
+    #- mv %{install-root}/var/run %{install-root}
+    - |
+      presetdir="$(pkg-config --variable=systemdsystempresetdir systemd)"
+      install -Dm644 -t "%{install-root}${presetdir}" 80-libvirt.preset
