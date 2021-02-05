@@ -2,11 +2,12 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://download.qemu.org/qemu-5.0.0.tar.xz
+  url: https://download.qemu.org/qemu-5.2.0.tar.xz
 
 build-depends:
 - core-deps/spice-protocol.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gtk+-3.bst
