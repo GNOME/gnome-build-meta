@@ -18,6 +18,7 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/pango.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
