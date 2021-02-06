@@ -12,18 +12,16 @@ depends:
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libusb.bst
-- freedesktop-sdk.bst:components/libxkbcommon.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
-- freedesktop-sdk.bst:components/xorg-lib-xv.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   cmake-local: >-
+    -DWITH_SERVER=ON
     -DWITH_CHANNELS=ON
     -DWITH_SERVER_CHANNELS=ON
     -DWITH_CLIENT_CHANNELS=ON
     -DWITH_ALSA=OFF
     -DWITH_PCSC=OFF
+    -DWITH_X11=OFF
