@@ -1,9 +1,6 @@
 include: .gitlab-ci/arch.yml
 
 variables:
-  # Store all the bst stuff under the "${CI_PROJECT_DIR}" directory.
-  # Note that GitLab CI will only cache stuff inside the "${CI_PROJECT_DIR}" folder.
-  XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
   GET_SOURCES_ATTEMPTS: 3
   BST_STRICT: '--no-strict'
   BST_TRACK_TAGS: 'False'
@@ -24,24 +21,8 @@ default:
   - mkdir -p logs
 
   # Setup certificate for pushing to the cache
-  - |
-    if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
-       echo "$GITLAB_CAS_PUSH_CERT" > client.crt
-       echo "$GITLAB_CAS_PUSH_KEY" > client.key
-    fi
-
-    cat >> build.conf << EOF
-
-    projects:
-      gnome:
-        artifacts:
-        - url: https://m1-xlarge-x86.gnome.org:11002
-          client-key: client.key
-          client-cert: client.crt
-          push: true
-
-    sourcedir: /cache/buildstream/sources
-    EOF
+  - echo "$GITLAB_CAS_PUSH_CERT" > client.crt
+  - echo "$GITLAB_CAS_PUSH_KEY" > client.key
 
 #
 # Templates shared by multiple jobs
@@ -194,7 +175,6 @@ generate-deploy-config:
   - |
     cat > flatpak-variables.yml << END
     variables:
-      XDG_CACHE_HOME: "${CI_PROJECT_DIR}/cache"
       BST: '$BST'
       TRACK_JOB_ID: '$TRACK_JOB_ID'
       FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'

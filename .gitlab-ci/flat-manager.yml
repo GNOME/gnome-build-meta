@@ -12,24 +12,8 @@ default:
   - mkdir -p logs
 
   # Setup certificate for pushing to the cache
-  - |
-    if [ -n "$GITLAB_CAS_PUSH_CERT" ]; then
-       echo "$GITLAB_CAS_PUSH_CERT" > client.crt
-       echo "$GITLAB_CAS_PUSH_KEY" > client.key
-    fi
-
-    cat >> build.conf << EOF
-
-    projects:
-      gnome:
-        artifacts:
-        - url: https://m1-xlarge-x86.gnome.org:11002
-          client-key: client.key
-          client-cert: client.crt
-          push: true
-
-    sourcedir: /cache/buildstream/sources
-    EOF
+  - echo "$GITLAB_CAS_PUSH_CERT" > client.crt
+  - echo "$GITLAB_CAS_PUSH_KEY" > client.key
 
 .flatmgr-template:
   stage: deploy
