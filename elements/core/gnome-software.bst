@@ -8,6 +8,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/appstream.bst
 - core-deps/eos-updater.bst
 - core-deps/flatpak.bst
 - core-deps/fwupd.bst
@@ -18,7 +19,6 @@ depends:
 - core-deps/xmlb.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
