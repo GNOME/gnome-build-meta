@@ -8,6 +8,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/amtk.bst
+- core-deps/appstream.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/babl.bst
 - core-deps/berkeleydb.bst
@@ -82,6 +83,7 @@ depends:
 - core-deps/libvirt-glib.bst
 - core-deps/libvirt.bst
 - core-deps/libxklavier.bst
+- core-deps/lmdb.bst
 - core-deps/malcontent.bst
 - core-deps/mm-common.bst
 - core-deps/mobile-broadband-provider-info.bst
