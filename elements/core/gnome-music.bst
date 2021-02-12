@@ -28,6 +28,7 @@ depends:
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
