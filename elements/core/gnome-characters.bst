@@ -11,4 +11,5 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/gjs.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
