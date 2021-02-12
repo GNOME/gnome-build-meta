@@ -4,8 +4,8 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'False'
-  BST_NO_PUSH: "bst $BST_STRICT --log-file logs/build.log --colors"
-  BST: "bst $BST_STRICT --config build.conf --log-file logs/build.log --colors"
+  BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
+  BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: '3.38'
 
 stages:
