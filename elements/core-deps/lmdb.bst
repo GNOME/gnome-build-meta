@@ -16,10 +16,3 @@ config:
 sources:
 - kind: tar
   url: github_com:LMDB/lmdb/archive/LMDB_0.9.28.tar.gz
-
-public:
-  bst:
-    split-rules:
-      devel:
-        (>):
-        - '%{libdir}/liblmdb.so'
