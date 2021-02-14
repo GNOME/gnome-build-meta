@@ -1,9 +1,8 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: github_com:ximion/appstream.git
-  track: master
+- kind: tar
+  url: https://www.freedesktop.org/software/appstream/releases/AppStream-0.14.0.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
