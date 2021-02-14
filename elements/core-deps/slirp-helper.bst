@@ -22,3 +22,4 @@ config:
   install-commands:
   - cargo install --path . --root "%{install-root}%{prefix}"
   - rm "%{install-root}%{prefix}"/.crates*
+  - ln -s libslirp-helper "%{install-root}%{bindir}/slirp-helper"
