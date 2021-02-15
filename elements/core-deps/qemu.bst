@@ -3,6 +3,8 @@ kind: autotools
 sources:
 - kind: tar
   url: https://download.qemu.org/qemu-5.2.0.tar.xz
+- kind: patch
+  path: files/qemu/Fix-build-after-glib-e38982df.patch
 
 build-depends:
 - core-deps/spice-protocol.bst
