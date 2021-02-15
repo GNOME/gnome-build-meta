@@ -20,7 +20,6 @@ depends:
 - core/cheese.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
-- core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
