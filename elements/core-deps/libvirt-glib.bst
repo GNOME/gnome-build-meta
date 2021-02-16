@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/glib/libvirt-glib-3.0.0.tar.gz
+  url: https://libvirt.org/sources/glib/libvirt-glib-4.0.0.tar.xz
 build-depends:
 - core-deps/intltool.bst
 - sdk/gtk-doc.bst
