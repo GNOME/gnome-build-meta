@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gnome-online-accounts/3.38/gnome-online-accounts-3.38.0.tar.xz
@@ -6,7 +6,7 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
@@ -16,6 +16,3 @@ depends:
 - sdk/libsoup.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Dgtk_doc=true
