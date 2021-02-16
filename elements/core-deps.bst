@@ -31,6 +31,7 @@ depends:
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
+- core-deps/gfbgraph.bst
 - core-deps/glibmm-2.4.bst
 - core-deps/gmime.bst
 - core-deps/gnome-autoar.bst
@@ -55,12 +56,10 @@ depends:
 - core-deps/libchamplain.bst
 - core-deps/libcue.bst
 - core-deps/libdazzle.bst
-- core-deps/libgit2.bst
-- core-deps/libgit2-glib.bst
 - core-deps/libdvdread.bst
 - core-deps/libgdata.bst
-- core-deps/libgfbgraph.bst
-- core-deps/libgfbgraph-0.2.bst
+- core-deps/libgit2-glib.bst
+- core-deps/libgit2.bst
 - core-deps/libgnomekbd.bst
 - core-deps/libgsf.bst
 - core-deps/libgtop.bst

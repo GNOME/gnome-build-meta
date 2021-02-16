@@ -15,13 +15,13 @@ depends:
 - core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
+- core-deps/gfbgraph.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gnome-online-miners.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/libdazzle.bst
 - core-deps/libgdata.bst
-- core-deps/libgfbgraph-0.2.bst
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
 - sdk/adwaita-icon-theme.bst
