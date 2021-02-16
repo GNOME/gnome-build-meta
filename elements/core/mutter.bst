@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/3.38/mutter-3.38.2.tar.xz
-  ref: d9974e95dd0818f2b30cbe3d83bf3b272432fdadf00dbdc4f1661f06aa08460d
+  url: gnome_downloads:mutter/3.38/mutter-3.38.3.tar.xz
+  ref: b2321e73d1e3fe2e90e6301f42bba07f4d94bc64756a2bf13d75ae9d6faa201f
 
 build-depends:
 - core/sysprof.bst

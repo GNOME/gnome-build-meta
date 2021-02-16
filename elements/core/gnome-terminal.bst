@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.38/gnome-terminal-3.38.2.tar.xz
-  ref: 27bddc9d0ba614c86e5ecb4f54c75ebc3415e2887acd91442057548fd3206618
+  url: gnome_downloads:gnome-terminal/3.38/gnome-terminal-3.38.3.tar.xz
+  ref: 11a5b0d635f15fdce7508351a510fbf4e92aa533152a50ff0c7845e3102e4764
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

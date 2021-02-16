@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-tour/3.38/gnome-tour-3.38.0.tar.xz
-  ref: 855fc2fcbcb3e9ef7385edc5470e12a31e6032a4e10cfe7bc1509381c7a48e78
+  url: gnome_downloads:gnome-tour/40/gnome-tour-40.beta.tar.xz
+  ref: 6a678b4f47ef99f453f2cdc3e1fdbf381869483fd09a4bfabfebd62ce2e4467f
 build-depends:
 - freedesktop-sdk.bst:extensions/rust/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:eog/3.38/eog-3.38.1.tar.xz
-  ref: b71dc961c277effa70dbd466657a81585f52ee8b35bc6e9da20c993568740cf7
+  url: gnome_downloads:eog/3.38/eog-3.38.2.tar.xz
+  ref: 8a54fdf93e306a0f64853a18831ac8c0483820477106aae0bdc00aac37386f0e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

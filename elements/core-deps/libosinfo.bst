@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://releases.pagure.org/libosinfo/libosinfo-1.8.0.tar.xz
-  ref: 49ff32be0d209f6c99480e28b94340ac3dd0158322ae4303adfbdfe973a108a5
+  url: https://releases.pagure.org/libosinfo/libosinfo-1.9.0.tar.xz
+  ref: b4f3418154ef3f43d9420827294916aea1827021afc06e1644fc56951830a359
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
