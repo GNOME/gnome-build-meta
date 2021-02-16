@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: gnome_downloads:cheese/3.38/cheese-3.38.0.tar.xz
   ref: 88d2732b421b903110a2628db25c0d61e219c42bdfb5971151033fba95a8d16f
+- kind: patch
+  path: files/cheese/41.patch
 
 build-depends:
 - sdk/gtk-doc.bst
