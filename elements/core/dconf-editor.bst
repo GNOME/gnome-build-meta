@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:dconf-editor/3.38/dconf-editor-3.38.2.tar.xz
   ref: 1253dad87e6213fbf313ff9ec9dc4358aa1b10261f28072c1dc0e0997b92f835
+- kind: patch
+  path: files/dconf-editor/17.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
