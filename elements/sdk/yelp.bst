@@ -11,6 +11,7 @@ depends:
 - sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/webkitgtk.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
