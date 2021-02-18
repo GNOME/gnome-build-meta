@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-getting-started-docs/3.36/gnome-getting-started-docs-3.36.2.tar.xz
-  ref: 0494b8913a946b6450536e120c154abd29238ebba2f52734592b1f645e521dc6
+  url: gnome_downloads:gnome-getting-started-docs/3.36/gnome-getting-started-docs-3.36.3.tar.xz
+  ref: 21d9b29e8c86d23c41b5611b29e81c0dae02a1fba14806ea32fcf2828c1712c2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

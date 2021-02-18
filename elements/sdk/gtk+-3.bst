@@ -1,10 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.24.tar.xz
-  ref: cc9d4367c55b724832f6b09ab85481738ea456871f0381768a6a99335a98378a
-- kind: patch
-  path: files/gtk/3076.patch
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.25.tar.xz
+  ref: 87e26b111d3b8a85ff218980a56f3e814257b8dd11e5c4d9a2803b423b08297c
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
