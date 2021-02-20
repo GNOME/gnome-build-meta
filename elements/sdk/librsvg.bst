@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/librsvg.git
-  track: 588dec14c980e2dcd0c00a03aac65abdf5266349
+  track: master
 - kind: cargo
 build-depends:
 - sdk/gtk-doc.bst
