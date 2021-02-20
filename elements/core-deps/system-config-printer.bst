@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://github.com/OpenPrinting/system-config-printer/releases/download/1.5.12/system-config-printer-1.5.12.tar.xz
 
+  ref: 6b16717dfe1f64ada6ef9398dcab07b8b7c864f006588d03002e41b743cf1e14
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
@@ -27,7 +28,7 @@ config:
     - cd %{install-root}%{bindir} && rm system-config-printer system-config-printer-applet
     - cd %{install-root}%{sysconfdir} && rm -r xdg
     - cd %{install-root}%{datadir} && rm -r applications locale man
-    - cd %{install-root}%{datadir}/system-config-printer &&
-      rm -r icons/ troubleshoot/ ui/ xml/ &&
-      rm applet.py check-device-ids.py HIG.py install-printerdriver.py SearchCriterion.py
-      serversettings.py system-config-printer.py timedops.py ToolbarSearchEntry.py userdefault.py
+    - cd %{install-root}%{datadir}/system-config-printer && rm -r icons/ troubleshoot/
+      ui/ xml/ && rm applet.py check-device-ids.py HIG.py install-printerdriver.py
+      SearchCriterion.py serversettings.py system-config-printer.py timedops.py ToolbarSearchEntry.py
+      userdefault.py

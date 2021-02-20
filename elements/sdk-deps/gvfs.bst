@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gvfs.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gvfs/1.47/gvfs-1.47.90.tar.xz
+  ref: 85c73b78c134738ff92a380c848e0ba04dcf376b138127a194f639d90c79b249
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

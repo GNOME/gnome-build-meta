@@ -6,6 +6,7 @@ sources:
 - kind: remote
   url: https://people.gnome.org/~engagement/logos/GnomeLogoHorizontal.svg
 
+  ref: 76654ecdc9cb8ab7acfe550f7e8a64fc41ea857850916c9975ee940efffab945
 runtime-depends:
 - core-deps/plymouth.bst
 

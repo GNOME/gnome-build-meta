@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gtk/4.1/gtk-4.1.0.tar.xz
+  ref: 973f651722a847e91e12be0a1c1c610aae0961f2f8d55c5d1fa39e17267d7ada
 
 build-depends:
 - sdk-deps/sassc.bst
@@ -40,8 +40,8 @@ public:
     split-rules:
       devel:
         (>):
-          - "%{libdir}/libgtk-4.so"
-          - "%{datadir}/applications/org.gtk.Demo4.desktop"
-          - "%{datadir}/applications/org.gtk.IconBrowser4.desktop"
-          - "%{datadir}/applications/org.gtk.PrintEditor4.desktop"
-          - "%{datadir}/applications/org.gtk.WidgetFactory4.desktop"
+        - '%{libdir}/libgtk-4.so'
+        - '%{datadir}/applications/org.gtk.Demo4.desktop'
+        - '%{datadir}/applications/org.gtk.IconBrowser4.desktop'
+        - '%{datadir}/applications/org.gtk.PrintEditor4.desktop'
+        - '%{datadir}/applications/org.gtk.WidgetFactory4.desktop'

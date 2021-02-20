@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-remote-desktop.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-remote-desktop/0.1/gnome-remote-desktop-0.1.9.tar.xz
+  ref: f2266da78b41453ecd3512aecf0a29deb70cbead7a446fc8dac025108b09d0cf
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

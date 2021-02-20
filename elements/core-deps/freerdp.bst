@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://pub.freerdp.com/releases/freerdp-2.2.0.tar.gz
 
+  ref: 19b30759e324ce7a9767af880116a4c571761e9ad9c5d6c98c5b302ff8c24c6c
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 

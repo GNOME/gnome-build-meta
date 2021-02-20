@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/folks.git
-  track: master
+- kind: tar
+  url: gnome_downloads:folks/0.15/folks-0.15.2.tar.xz
+  ref: ef777b2696d15ec31ba8b940ecabc17fe7fab909584f9425258f54d295ccd122
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-dbusmock.bst

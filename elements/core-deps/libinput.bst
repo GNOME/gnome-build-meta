@@ -22,3 +22,4 @@ variables:
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/libinput/libinput-1.16.902.tar.xz
+  ref: 16931b5425180a9b9730bbe97d52a4823cd6682a8718f9745642c3e0cce79563

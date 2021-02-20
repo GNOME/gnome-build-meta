@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/eog.git
-  track: master
+- kind: tar
+  url: gnome_downloads:eog/40/eog-40.beta.tar.xz
+  ref: 55fb525db46a731a04cc47f50b896a9639c680038ab020f28bcd3f1f8b0d76e4
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

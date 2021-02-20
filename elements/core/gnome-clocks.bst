@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-clocks.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-clocks/40/gnome-clocks-40.beta.tar.xz
+  ref: a3c98c04e4f6a3830203902a667e3a1c880496ee8708c9a2e586eaa943f292d6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

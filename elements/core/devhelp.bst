@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/devhelp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:devhelp/40/devhelp-40.alpha.tar.xz
+  ref: ecda47d08501ffbfd55fc7a744e48e69d4b97b9830cae2ad0a79255d8385bbd2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

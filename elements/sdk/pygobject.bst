@@ -1,8 +1,8 @@
 kind: distutils
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/pygobject.git
-  track: master
+- kind: tar
+  url: gnome_downloads:pygobject/3.38/pygobject-3.38.0.tar.xz
+  ref: 0372d1bb9122fc19f500a249b1f38c2bb67485000f5887497b4b205b3e7084d5
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 depends:

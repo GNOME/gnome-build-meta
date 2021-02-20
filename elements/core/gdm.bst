@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdm/3.38/gdm-3.38.2.1.tar.xz
+  ref: ca58a205d5ebfcbdab56a11716b898e16ae5dff21aee79d076046444628ec4da
 - kind: local
   path: files/gdm
   directory: gdm-config

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://www.freedesktop.org/software/appstream/releases/AppStream-0.14.0.tar.xz
 
+  ref: 29eb617599eefec0b63c2894446e8cf7c5717f0285bab5df19fa53a2d5eecd16
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/gperf.bst
