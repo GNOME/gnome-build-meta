@@ -4,6 +4,8 @@ sources:
   url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk.git
   track: release/20.08
   track-tags: true
+- kind: patch
+  path: files/freedesktop-sdk/0001-components-linux.bst-compile-features-needes-for-liv.patch
 config:
   options:
     target_arch: '%{arch}'
