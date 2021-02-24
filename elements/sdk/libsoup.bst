@@ -12,6 +12,9 @@ build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
+runtime-depends:
+- sdk/glib-networking.bst
+
 depends:
 - sdk/glib.bst
 - sdk/krb5.bst
