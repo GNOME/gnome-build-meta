@@ -20,7 +20,7 @@ runtime-depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsecret.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/fuse3.bst

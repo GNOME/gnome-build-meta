@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -24,7 +24,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -18,7 +18,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/librsvg.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - world/gnome-themes-extra.bst
 - world/libmanette.bst
 - world/retro-gtk.bst

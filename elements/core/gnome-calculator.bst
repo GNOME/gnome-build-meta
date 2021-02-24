@@ -14,7 +14,7 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

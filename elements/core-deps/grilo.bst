@@ -11,6 +11,6 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

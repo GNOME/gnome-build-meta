@@ -12,5 +12,5 @@ depends:
 - sdk/clutter.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

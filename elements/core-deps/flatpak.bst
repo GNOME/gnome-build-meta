@@ -24,7 +24,7 @@ depends:
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/appstream-glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/libarchive.bst

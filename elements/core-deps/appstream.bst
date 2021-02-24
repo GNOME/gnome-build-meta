@@ -15,7 +15,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/libyaml.bst

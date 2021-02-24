@@ -17,7 +17,7 @@ build-depends:
 
 depends:
 - sdk/pygobject.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/pango.bst
 - sdk/gcab.bst

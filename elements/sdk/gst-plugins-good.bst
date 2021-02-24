@@ -5,7 +5,7 @@ runtime-depends:
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/jpeg.bst

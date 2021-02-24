@@ -22,7 +22,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/itstool.bst

@@ -25,7 +25,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/webkitgtk.bst
 - sdk/yelp-tools.bst
 - world/gtkspell.bst

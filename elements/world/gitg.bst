@@ -16,7 +16,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - sdk/libsecret.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

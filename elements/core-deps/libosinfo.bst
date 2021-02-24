@@ -14,7 +14,7 @@ depends:
 - core-deps/osinfo-db-tools.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- sdk/libsoup.bst
+- sdk/libsoup-2.4.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
