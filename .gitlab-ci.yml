@@ -3,7 +3,7 @@ include: .gitlab-ci/arch.yml
 variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_STRICT: '--no-strict'
-  BST_TRACK_TAGS: 'False'
+  BST_TRACK_TAGS: 'false'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
@@ -71,7 +71,7 @@ default:
 
 .deploy-rules:
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
@@ -111,7 +111,7 @@ track:
   stage: track
   interruptible: true
   script:
-  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/" project.conf'
+  - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
   - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
@@ -269,7 +269,7 @@ s3-image:
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
   - if: $CI_COMMIT_TAG
@@ -282,7 +282,7 @@ s3-image-static:
     artifacts: false
   allow_failure: true
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "False"
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
     when: manual
