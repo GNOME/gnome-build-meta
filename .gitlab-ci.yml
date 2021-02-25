@@ -111,7 +111,7 @@ track:
   stage: track
   interruptible: true
   script:
-  - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
+  - 'sed -i "s/track-tags: False/track-tags: ${BST_TRACK_TAGS}/; t; q1" project.conf'
   - cat project.conf
   - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
