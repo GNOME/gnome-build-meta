@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: https://pub.freerdp.com/releases/freerdp-2.2.0.tar.gz
+  url: https://pub.freerdp.com/releases/freerdp-2.3.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
