@@ -2,7 +2,6 @@ kind: stack
 depends:
 - sdk-platform.bst
 - sdk/gtk-doc.bst
-- sdk/python-pygments.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
 
