@@ -41,7 +41,9 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/libsoup.bst
+# Temporary disabled till issue is figured out
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/357
+# - sdk/libsoup.bst
 - sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
