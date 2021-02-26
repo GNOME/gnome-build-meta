@@ -16,12 +16,12 @@ runtime-depends:
 - vm/buildstream/arpy.bst
 - vm/buildstream/click.bst
 - vm/buildstream/grpcio.bst
-- vm/buildstream/jinja2.bst
 - vm/buildstream/pluginbase.bst
 - vm/buildstream/psutil.bst
 - vm/buildstream/ruamel-yaml.bst
 - vm/buildstream/ujson.bst
 - vm/buildstream/breezy.bst
+- freedesktop-sdk.bst:components/python3-jinja2.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/patch.bst
