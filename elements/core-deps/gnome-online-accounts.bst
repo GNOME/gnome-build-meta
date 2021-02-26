@@ -13,7 +13,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/librest.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:

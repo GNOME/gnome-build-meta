@@ -14,7 +14,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
 - freedesktop-sdk.bst:components/fuse.bst

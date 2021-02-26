@@ -18,7 +18,7 @@ depends:
 - sdk/libhandy.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/itstool.bst

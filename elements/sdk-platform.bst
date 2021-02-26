@@ -40,7 +40,6 @@ depends:
 - sdk/librest.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
 - sdk/libsoup.bst
 - sdk/libwpe.bst
 - sdk/pango.bst

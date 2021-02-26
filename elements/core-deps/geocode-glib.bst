@@ -10,5 +10,5 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

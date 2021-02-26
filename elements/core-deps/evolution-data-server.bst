@@ -19,7 +19,7 @@ depends:
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - sdk/vala.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libical.bst

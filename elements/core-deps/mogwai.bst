@@ -12,6 +12,6 @@ build-depends:
 depends:
 - core-deps/NetworkManager.bst
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

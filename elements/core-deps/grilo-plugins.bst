@@ -18,7 +18,7 @@ depends:
 - core-deps/totem-pl-parser.bst
 - sdk/json-glib.bst
 - sdk/librest.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
