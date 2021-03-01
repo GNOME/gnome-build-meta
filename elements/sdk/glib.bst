@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/glib.git
-  track: master
+  url: gitlab_gnome_org:iainl/glib.git
+  track: glib-typeof-gatomic-h
 
 build-depends:
 - sdk/gtk-doc.bst
