@@ -3,6 +3,8 @@ kind: cmake
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.31.90.tar.xz
+- kind: patch
+  path: files/webkitgtk/2.31.90-fix-build.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
