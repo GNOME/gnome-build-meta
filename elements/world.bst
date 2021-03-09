@@ -12,6 +12,7 @@ depends:
 - world/connections.bst
 - world/dbus-glib.bst
 - world/evolution.bst
+- world/file-roller.bst
 - world/five-or-more.bst
 - world/four-in-a-row.bst
 - world/geary.bst
