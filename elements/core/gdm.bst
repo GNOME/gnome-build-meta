@@ -7,6 +7,7 @@ sources:
   path: files/gdm
   directory: gdm-config
 build-depends:
+- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/accountsservice.bst
@@ -16,7 +17,6 @@ depends:
 - core-deps/upower.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'

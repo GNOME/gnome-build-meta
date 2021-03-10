@@ -3,6 +3,7 @@ sources:
 - kind: tar
   url: gnome_downloads:clutter/1.26/clutter-1.26.4.tar.xz
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
@@ -10,7 +11,6 @@ depends:
 - sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst

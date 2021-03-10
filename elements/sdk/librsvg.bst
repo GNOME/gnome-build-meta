@@ -5,6 +5,7 @@ sources:
   track: master
 - kind: cargo
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:extensions/rust/rust.bst
@@ -12,7 +13,6 @@ build-depends:
 depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

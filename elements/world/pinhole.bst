@@ -7,7 +7,6 @@ sources:
 
 build-depends:
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

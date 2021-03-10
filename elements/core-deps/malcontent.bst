@@ -5,10 +5,9 @@ sources:
   url: https://tecnocode.co.uk/downloads/malcontent-0.9.0.tar.xz
 
 build-depends:
-- sdk/gtk-doc.bst
 - core-deps/glib-testing.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
 
 depends:
 - core-deps/accountsservice.bst

@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-weather.git
   track: master
 build-depends:
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libgweather.bst
@@ -14,7 +15,6 @@ depends:
 - sdk/geoclue.bst
 - sdk/gjs.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

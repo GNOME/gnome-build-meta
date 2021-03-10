@@ -5,17 +5,17 @@ sources:
   url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.28.tar.xz
 
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/LibRaw.bst
 - core-deps/babl.bst
 - core-deps/gexiv2.bst
-- core-deps/LibRaw.bst
 - core-deps/graphviz.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst

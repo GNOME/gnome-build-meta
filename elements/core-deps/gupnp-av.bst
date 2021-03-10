@@ -5,6 +5,7 @@ sources:
   track: master
 build-depends:
 - sdk/gtk-doc.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/gupnp.bst

@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-clocks.git
   track: master
 build-depends:
+- sdk/vala.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/geocode-glib.bst
@@ -14,6 +16,4 @@ depends:
 - sdk/geoclue.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
-- sdk/vala.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

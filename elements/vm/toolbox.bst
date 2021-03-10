@@ -80,13 +80,12 @@ sources:
   directory: 'src/vendor/golang.org/x/sys'
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst

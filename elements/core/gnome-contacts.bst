@@ -4,6 +4,8 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-contacts.git
   track: master
 build-depends:
+- sdk/vala.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/folks.bst
@@ -15,6 +17,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
-- sdk/vala.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

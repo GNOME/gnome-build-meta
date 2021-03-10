@@ -9,16 +9,16 @@ sources:
       url: gitlab_gnome_org:GNOME/libgd.git
 
 build-depends:
+- sdk/appstream-glib.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/evolution-data-server.bst
-- world/libhandy-0.bst
-- sdk/appstream-glib.bst
 - sdk/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/tracker.bst
 - sdk/webkitgtk.bst
-- freedesktop-sdk.bst:components/itstool.bst
+- world/libhandy-0.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

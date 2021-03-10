@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/cogl.git
   track: cogl-1.22
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/gstreamer.bst

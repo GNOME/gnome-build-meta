@@ -6,7 +6,6 @@ sources:
   track: master
 
 build-depends:
-- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:

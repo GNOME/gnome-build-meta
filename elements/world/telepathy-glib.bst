@@ -4,12 +4,12 @@ sources:
   url: github_com:TelepathyIM/telepathy-glib.git
   track: master
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
+- sdk/vala.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
-- sdk/vala.bst
 - world/dbus-glib.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

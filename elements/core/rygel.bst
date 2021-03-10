@@ -6,11 +6,8 @@ sources:
   track: master
 
 build-depends:
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-
-variables:
-  meson-local: >-
-    -Dplugins=external,gst-launch,lms,media-export,mpris,playbin,ruih,tracker3
 
 depends:
 - core-deps/gssdp.bst
@@ -21,5 +18,8 @@ depends:
 - core-deps/libmediaart.bst
 - sdk/libgee.bst
 - sdk/tracker.bst
-- sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dplugins=external,gst-launch,lms,media-export,mpris,playbin,ruih,tracker3

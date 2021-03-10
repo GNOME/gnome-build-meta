@@ -6,9 +6,7 @@ sources:
 
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/m4.bst # dependency of flex
 - freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

@@ -9,7 +9,6 @@ sources:
       url: gitlab_gnome_org:GNOME/libgd.git
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gnome-online-accounts.bst

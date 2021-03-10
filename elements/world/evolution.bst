@@ -6,6 +6,7 @@ sources:
 
 build-depends:
 - core-deps/intltool.bst
+- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
@@ -27,10 +28,10 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsoup-2.4.bst
 - sdk/webkitgtk.bst
-- sdk/yelp-tools.bst
 - world/gtkspell.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   cmake-local: >-
     -DENABLE_LIBCRYPTUI=OFF

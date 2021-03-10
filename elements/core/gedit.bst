@@ -12,7 +12,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -25,5 +25,4 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtksourceview.bst
 - sdk/libsoup-2.4.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -6,6 +6,7 @@ sources:
   track: gtk-3-24
 
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -17,7 +18,6 @@ depends:
 - sdk/atk.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/pango.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:components/cairo.bst

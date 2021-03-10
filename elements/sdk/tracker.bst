@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/tracker.git
   track: master
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
@@ -11,12 +12,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/json-glib.bst
 - sdk/libsoup-2.4.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/icu.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
     -Ddocs=false

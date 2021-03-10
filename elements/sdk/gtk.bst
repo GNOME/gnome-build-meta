@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - sdk-deps/sassc.bst
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -15,7 +16,6 @@ depends:
 - sdk/atk.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
@@ -40,8 +40,8 @@ public:
     split-rules:
       devel:
         (>):
-          - "%{libdir}/libgtk-4.so"
-          - "%{datadir}/applications/org.gtk.Demo4.desktop"
-          - "%{datadir}/applications/org.gtk.IconBrowser4.desktop"
-          - "%{datadir}/applications/org.gtk.PrintEditor4.desktop"
-          - "%{datadir}/applications/org.gtk.WidgetFactory4.desktop"
+        - '%{libdir}/libgtk-4.so'
+        - '%{datadir}/applications/org.gtk.Demo4.desktop'
+        - '%{datadir}/applications/org.gtk.IconBrowser4.desktop'
+        - '%{datadir}/applications/org.gtk.PrintEditor4.desktop'
+        - '%{datadir}/applications/org.gtk.WidgetFactory4.desktop'

@@ -8,6 +8,7 @@ sources:
       checkout: true
       url: gitlab_com:keycodemap/keycodemapdb.git
 build-depends:
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -15,7 +16,6 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

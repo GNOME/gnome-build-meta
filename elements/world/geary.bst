@@ -5,6 +5,7 @@ sources:
   track: master
 
 build-depends:
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -27,7 +28,6 @@ depends:
 - sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/vala.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libxml2.bst

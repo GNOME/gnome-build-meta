@@ -4,11 +4,11 @@ sources:
   url: gitlab_gnome_org:GNOME/yelp.git
   track: master
 build-depends:
+- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst

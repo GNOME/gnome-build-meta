@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -13,7 +14,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libdazzle.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
