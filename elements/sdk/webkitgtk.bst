@@ -2,9 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.31.90.tar.xz
-- kind: patch
-  path: files/webkitgtk/2.31.90-fix-build.patch
+  url: webkitgtk_org:webkitgtk-2.31.91.tar.xz
 - kind: patch
   path: files/webkitgtk/bug-222763.patch
 - kind: local
