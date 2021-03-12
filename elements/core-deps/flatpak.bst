@@ -2,13 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:flatpak/flatpak/releases/download/1.8.5/flatpak-1.8.5.tar.xz
-
-variables:
-  autogen: autoreconf -fvi
-  conf-local: >-
-    --with-system-bubblewrap
-    --with-system-dbus-proxy
+  url: github_com:flatpak/flatpak/releases/download/1.10.2/flatpak-1.10.2.tar.xz
 
 build-depends:
 - core-deps/python-pyparsing.bst
@@ -37,3 +31,8 @@ depends:
 
 runtime-depends:
 - core-deps/xdg-desktop-portal-gtk.bst
+
+variables:
+  conf-local: >-
+    --with-system-bubblewrap
+    --with-system-dbus-proxy
