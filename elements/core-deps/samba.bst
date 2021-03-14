@@ -1,12 +1,13 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.13.4.tar.gz
+  url: https://download.samba.org/pub/samba/stable/samba-4.14.0.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
 - core-deps/perl-parse-yapp.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
@@ -20,11 +21,12 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 config:
   configure-commands:
-  - ./configure --enable-fhs --prefix=%{prefix} --exec-prefix=%{exec_prefix} --bindir=%{bindir}
-      --sbindir=%{sbindir} --sysconfdir=%{sysconfdir} --datadir=%{datadir}
-      --includedir=%{includedir} --libdir=%{libdir} --libexecdir=%{libexecdir}
-      --localstatedir=%{localstatedir} --sharedstatedir=%{sharedstatedir}
-      --mandir=%{mandir} --infodir=%{infodir} --without-ad-dc --without-json
+  - >-
+    ./configure --enable-fhs --prefix=%{prefix} --exec-prefix=%{exec_prefix} --bindir=%{bindir}
+    --sbindir=%{sbindir} --sysconfdir=%{sysconfdir} --datadir=%{datadir} --includedir=%{includedir}
+    --libdir=%{libdir} --libexecdir=%{libexecdir} --localstatedir=%{localstatedir}
+    --sharedstatedir=%{sharedstatedir} --mandir=%{mandir} --infodir=%{infodir} --without-ad-dc
+    --without-json
   build-commands:
   - make
   install-commands:
