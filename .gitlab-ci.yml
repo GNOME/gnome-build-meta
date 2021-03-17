@@ -157,16 +157,19 @@ generate-deploy-config:
     case "$FLATPAK_BRANCH" in
       master)
         FLAT_MANAGER_SERVER=https://nightly.gnome.org/
+        ENVIRONMENT_NAME=flatpak-nightly
         FLAT_MANAGER_REPO=nightly
         SUPPORTED_ARCHES="x86_64 i686 aarch64 ppc64le"
       ;;
       *beta)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
+        ENVIRONMENT_NAME=flathub/$FLATPAK_BRANCH
         FLAT_MANAGER_REPO=beta
         SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
       *)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
+        ENVIRONMENT_NAME=flathub/$FLATPAK_BRANCH
         FLAT_MANAGER_REPO=stable
         SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
@@ -182,7 +185,7 @@ generate-deploy-config:
       TARGETS: flatpak-runtimes.bst
       TARGETS_nightly: flatpak-platform-extensions.bst
       TARGETS_nightly_x86_64: openh264-extension.bst:flatpak-repo.bst
-      ENVIRONMENT_NAME: flatpak/$FLATPAK_BRANCH
+      ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
 
     END
   - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml
