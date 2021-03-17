@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-disk-utility/40/gnome-disk-utility-40.beta.tar.xz
-  ref: 0c6d8c20d1d83ddd06806b8dadef7a35a6a420b518c7ec4ffdc69d01ba042637
+  url: gnome_downloads:gnome-disk-utility/40/gnome-disk-utility-40.rc.tar.xz
+  ref: 20a4c74cae760aafe3a4ed02ed3a47a2bd3f55e6fe069a74e4ba969eac48bb18
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

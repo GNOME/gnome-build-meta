@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-autoar/0.3/gnome-autoar-0.3.0.tar.xz
-  ref: f2c112c0120cca2bf5a82c5b0ac8cba90ce10d21fec78f50a3bc513fdd64586b
+  url: gnome_downloads:gnome-autoar/0.3/gnome-autoar-0.3.1.tar.xz
+  ref: 0e78713e6f0de339fdee16bab82753ae290fe80fa7b4ba6e3db8c1465b81d0f8
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-screenshot/40/gnome-screenshot-40.beta.tar.xz
-  ref: ba6865a84365dd7f570c8734f10a052c4162905a15c71653f27787a8c9e88b14
+  url: gnome_downloads:gnome-screenshot/40/gnome-screenshot-40.rc.tar.xz
+  ref: 4654c6921c58ca1945cde71dd858e979391e60e530a469bca9ea31aa7921a0d1
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

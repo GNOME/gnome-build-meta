@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:dconf/0.39/dconf-0.39.1.tar.xz
-  ref: 9a3870bf07b8e0452e22ce068d51c7f19c1e1cfeacd9883c03523822afdff665
+  url: gnome_downloads:dconf/0.40/dconf-0.40.0.tar.xz
+  ref: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
 
 build-depends:
 - sdk/vala.bst

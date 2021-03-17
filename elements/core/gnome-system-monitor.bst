@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-system-monitor/40/gnome-system-monitor-40.beta.tar.xz
-  ref: ac2c5235657cf8e01032d19cdbed4021a2177a4eea11e13cdc7eaf8c1a0bc56b
+  url: gnome_downloads:gnome-system-monitor/40/gnome-system-monitor-40.rc.tar.xz
+  ref: 349a84397282f0749a3274185f68845207ab556fca12fdddda39123d878e773d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
