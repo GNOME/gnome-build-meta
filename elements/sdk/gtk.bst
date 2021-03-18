@@ -41,6 +41,7 @@ variables:
     -Dmedia-ffmpeg=disabled
     -Dvulkan=enabled
     -Dsysprof=enabled
+    -Dx11-backend=false
 
 public:
   bst:
