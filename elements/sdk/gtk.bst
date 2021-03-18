@@ -41,6 +41,7 @@ variables:
     -Ddocumentation=true
     -Dman-pages=true
     -Dsysprof=enabled
+    -Dx11-backend=false
 
 public:
   bst:
