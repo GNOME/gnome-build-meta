@@ -34,6 +34,7 @@ variables:
   meson-local: >-
     -Dbroadway-backend=true
     -Dmedia-ffmpeg=disabled
+    -Dx11_backend=false
 
 public:
   bst:
