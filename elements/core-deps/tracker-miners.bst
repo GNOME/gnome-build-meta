@@ -22,9 +22,9 @@ depends:
 - core-deps/upower.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - sdk/tracker.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:components/libflac.bst

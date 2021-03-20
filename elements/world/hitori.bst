@@ -5,8 +5,8 @@ sources:
   track: main
 
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

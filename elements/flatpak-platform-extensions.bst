@@ -1,7 +1,7 @@
 kind: flatpak_repo
 
 build-depends:
-- core-deps/flatpak.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - filename:
   - freedesktop-sdk.bst:flatpak-images/mesa.bst
   config:

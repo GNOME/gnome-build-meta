@@ -10,14 +10,14 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 
 depends:
 - sdk/gjs.bst
 - sdk/glib.bst
-- sdk/gst-plugins-bad.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
