@@ -14,11 +14,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
-runtime-depends:
-# a dummy dependency so our glib is always staged
-# on top of freedesktop-sdk version
-- freedesktop-sdk.bst:components/glib.bst
-
 depends:
 # sysprof-capture-4 ends up in Requires.private
 # so we either could have added sysprof-minimal

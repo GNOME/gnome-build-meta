@@ -22,11 +22,11 @@ depends:
 - freedesktop-sdk.bst:components/usbutils.bst
 - world/chatty.bst
 
-- core-deps/xdg-desktop-portal.bst
+- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
-- core-deps/pipewire-daemon.bst
-- core-deps/wireplumber.bst
+- freedesktop-sdk.bst:components/pipewire-daemon.bst
+- freedesktop-sdk.bst:components/wireplumber.bst
 
 - boards/common/alsa-utils.bst
 - vm/alsa-ucm-conf.bst

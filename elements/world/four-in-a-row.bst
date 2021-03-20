@@ -4,9 +4,9 @@ sources:
   url: gnome:four-in-a-row.git
   track: master
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gsound.bst
