@@ -25,7 +25,7 @@ variables:
     --host=%{triplet}
     --build=%{triplet}
   conf-local: >-
-    --runstatedir=/run
+    --runstatedir=%{runstatedir}
     --disable-rpath
     --with-system-et
     --with-system-ss

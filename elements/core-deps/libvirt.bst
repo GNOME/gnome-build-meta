@@ -35,6 +35,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Drunstatedir=%{runstatedir}
     -Dapparmor=disabled
     -Daudit=disabled
     -Dbash_completion=disabled
@@ -73,7 +74,6 @@ variables:
 config:
   install-commands:
     (>):
-    #- mv %{install-root}/var/run %{install-root}
     - |
       presetdir="$(pkg-config --variable=systemdsystempresetdir systemd)"
       install -Dm644 -t "%{install-root}${presetdir}" 80-libvirt.preset
