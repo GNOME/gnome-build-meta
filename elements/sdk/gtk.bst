@@ -20,10 +20,10 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/graphene.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cups.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
 - freedesktop-sdk.bst:components/libepoxy.bst

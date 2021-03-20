@@ -4,7 +4,7 @@ sources:
   url: gnome:gnome-screenshot.git
   track: master
 build-depends:
-- sdk/appstream-glib.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libcanberra.bst

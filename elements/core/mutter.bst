@@ -31,10 +31,10 @@ depends:
 - sdk/gtk.bst
 - sdk/json-glib.bst
 - sdk/pango.bst
-- sdk/pipewire.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libinput.bst
+- freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-ice.bst
 - freedesktop-sdk.bst:components/xorg-lib-sm.bst

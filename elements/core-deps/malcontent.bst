@@ -14,11 +14,11 @@ build-depends:
 
 depends:
 - core-deps/accountsservice.bst
-- core-deps/flatpak.bst
-- sdk/AppStream.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/appstream.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
