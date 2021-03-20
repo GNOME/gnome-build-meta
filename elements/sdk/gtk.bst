@@ -10,6 +10,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/git-minimal.bst
 
 depends:
 - sdk/at-spi2-atk.bst
@@ -33,6 +34,8 @@ depends:
 variables:
   meson-local: >-
     -Dbroadway-backend=true
+    -Dgtk_doc=true
+    -Dintrospection=enabled
     -Dmedia-ffmpeg=disabled
 
 public:
