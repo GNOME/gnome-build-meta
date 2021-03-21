@@ -9,6 +9,7 @@ build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

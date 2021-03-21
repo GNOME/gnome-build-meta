@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/xmlto.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

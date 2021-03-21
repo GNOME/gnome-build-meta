@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/eog.git
   track: master
 build-depends:
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/exempi.bst
@@ -16,7 +17,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:components/libportal.bst

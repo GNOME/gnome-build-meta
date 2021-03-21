@@ -7,6 +7,7 @@ sources:
 build-depends:
 - core-deps/glib-testing.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

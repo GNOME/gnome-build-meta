@@ -8,6 +8,8 @@ sources:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgd.git
 build-depends:
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/babl.bst
@@ -29,8 +31,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
-- freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

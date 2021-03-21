@@ -7,6 +7,8 @@ sources:
 
 build-depends:
 - core/gnome-shell.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:

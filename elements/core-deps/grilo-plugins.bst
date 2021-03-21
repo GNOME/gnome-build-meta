@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/grilo-plugins.git
   track: master
 build-depends:
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/gmime.bst
@@ -20,7 +21,6 @@ depends:
 - sdk/librest.bst
 - sdk/libsoup-2.4.bst
 - sdk/tracker.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

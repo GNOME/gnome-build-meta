@@ -9,6 +9,7 @@ sources:
       url: gitlab_gnome_org:GNOME/libgd.git
 
 build-depends:
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -16,5 +17,4 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - sdk/gtk+-3.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

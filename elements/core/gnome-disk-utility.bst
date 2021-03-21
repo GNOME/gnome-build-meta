@@ -5,6 +5,8 @@ sources:
   track: master
 build-depends:
 - sdk/appstream-glib.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libdvdread.bst
