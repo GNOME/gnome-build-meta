@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtkmm/3.24/gtkmm-3.24.3.tar.xz
-  ref: 60497c4f7f354c3bd2557485f0254f8b7b4cf4bebc9fee0be26a77744eacd435
+  url: gnome_downloads:gtkmm/3.24/gtkmm-3.24.4.tar.xz
+  ref: 9beb71c3e90cfcfb790396b51e3f5e7169966751efd4f3ef9697114be3be6743
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
