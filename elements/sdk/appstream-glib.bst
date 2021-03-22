@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -16,7 +17,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/json-glib.bst
 - sdk/libsoup-2.4.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
