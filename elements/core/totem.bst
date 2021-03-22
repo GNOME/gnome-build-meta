@@ -11,6 +11,7 @@ sources:
       checkout: false
       url: github_com:flathub/shared-modules.git
 build-depends:
+- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -20,7 +21,6 @@ depends:
 - core-deps/totem-pl-parser.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/clutter-gst.bst
 - sdk/clutter-gtk.bst
 - sdk/clutter.bst

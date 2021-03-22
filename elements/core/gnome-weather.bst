@@ -4,13 +4,13 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-weather.git
   track: master
 build-depends:
+- sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/gdk-pixbuf.bst
 - sdk/geoclue.bst
 - sdk/gjs.bst
