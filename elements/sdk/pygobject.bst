@@ -1,8 +1,8 @@
 kind: distutils
 sources:
 - kind: tar
-  url: gnome_downloads:pygobject/3.38/pygobject-3.38.0.tar.xz
-  ref: 0372d1bb9122fc19f500a249b1f38c2bb67485000f5887497b4b205b3e7084d5
+  url: gnome_downloads:pygobject/3.40/pygobject-3.40.0.tar.xz
+  ref: 67d61fac9f5aa83bf2edccbc286802ce0f1c3dde8f83103b7c765b91a6ed905f
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 depends:

@@ -6,7 +6,7 @@ variables:
   BST_TRACK_TAGS: 'False'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: 40beta
+  FLATPAK_BRANCH: '40'
 
 stages:
 - track
