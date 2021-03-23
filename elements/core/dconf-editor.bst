@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:dconf-editor/3.38/dconf-editor-3.38.2.tar.xz
-  ref: 1253dad87e6213fbf313ff9ec9dc4358aa1b10261f28072c1dc0e0997b92f835
+  url: gnome_downloads:dconf-editor/3.38/dconf-editor-3.38.3.tar.xz
+  ref: 571af4c7dad4f049b53e6cd728b79addf08c27ddab6bc57b396d211866ee79e3
 - kind: patch
   path: files/dconf-editor/17.patch
 
