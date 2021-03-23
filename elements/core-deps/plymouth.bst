@@ -16,6 +16,10 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
+variables:
+  conf-local: >-
+    --disable-gtk
+
 config:
   configure-commands:
     (<):
