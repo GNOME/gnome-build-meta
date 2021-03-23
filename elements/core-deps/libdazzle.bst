@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libdazzle/3.38/libdazzle-3.38.0.tar.xz
-  ref: e18af28217943bcec106585298a91ec3da48aa3ad62fd0992f23f0c70cd1678f
+  url: gnome_downloads:libdazzle/3.40/libdazzle-3.40.0.tar.xz
+  ref: dba99a7e65fa6662c012b306e5d0f99ff3b466a46059ea7aa0104aaf65ce4ba5
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

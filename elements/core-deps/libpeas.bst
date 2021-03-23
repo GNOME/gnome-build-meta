@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libpeas/1.28/libpeas-1.28.0.tar.xz
-  ref: 42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15
+  url: gnome_downloads:libpeas/1.30/libpeas-1.30.0.tar.xz
+  ref: 0bf5562e9bfc0382a9dcb81f64340787542568762a3a367d9d90f6185898b9a3
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
