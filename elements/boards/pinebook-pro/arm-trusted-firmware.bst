@@ -6,6 +6,7 @@ sources:
   track: 22d12c4148c373932a7a81e5d1c59a767e143ac2
   track-tags: false
 
+  ref: v2.2-286-g22d12c4148c373932a7a81e5d1c59a767e143ac2
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 # This is required because at part of the firmware has to be built for

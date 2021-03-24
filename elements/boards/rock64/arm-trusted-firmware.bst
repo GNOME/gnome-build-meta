@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://github.com/ARM-software/arm-trusted-firmware/archive/v2.3.tar.gz
 
+  ref: 304d372327d6ecabf89da67e2e1a7b2660f13b5851886fef1b58ae5a6d74e606
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 # This is required because at part of the firmware has to be built for
