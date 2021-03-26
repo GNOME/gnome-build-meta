@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libgweather/40/libgweather-40.beta.tar.xz
+  url: gnome_downloads:libgweather/40/libgweather-40.0.tar.xz
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
