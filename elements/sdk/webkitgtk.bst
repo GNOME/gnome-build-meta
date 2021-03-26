@@ -3,8 +3,6 @@ kind: cmake
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.32.0.tar.xz
-- kind: patch
-  path: files/webkitgtk/bug-222763.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
