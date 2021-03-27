@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: https://gitlab.manjaro.org/tsys/linux-pinebook-pro.git
   #track: master
-  track: 93293259039d6fc3a725961d42b4f11bfc3f5127
+  track: c04087388bdb7d79d5202ffb91aa387e36901056
   track-tags: false
 
 depends:
