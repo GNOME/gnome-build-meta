@@ -8,7 +8,7 @@ sources:
 - kind: git_tag
   url: github_com:endlessm/eos-installer.git
   track-tags: true
-  track: Release_3.8.0
+  track: Release_3.8.8
   submodules:
     ext/libglnx:
       url: gitlab_gnome_org:GNOME/libglnx.git
@@ -17,8 +17,6 @@ sources:
   path: files/eos-installer/vfat-eosimages.patch
 - kind: patch
   path: files/eos-installer/two-partitions.patch
-- kind: patch
-  path: files/eos-installer/remove-gnome-common.patch
 - kind: patch
   path: files/eos-installer/remove-branding.patch
 - kind: patch
@@ -36,7 +34,6 @@ depends:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
-- core-deps/intltool.bst
 
 runtime-depends:
 - core/gnome-session.bst
