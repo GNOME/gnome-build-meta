@@ -22,11 +22,11 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-getting-started-docs.bst
 - core/gnome-keyring.bst
-- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

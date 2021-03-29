@@ -8,7 +8,6 @@ build-depends:
 depends:
 - core-deps/libdazzle.bst
 - core-deps/libhandy.bst
-- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/gcr.bst
@@ -20,6 +19,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/libportal.bst

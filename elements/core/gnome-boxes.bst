@@ -21,12 +21,12 @@ depends:
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
 - core-deps/vte.bst
-- sdk/WebKitGTK.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

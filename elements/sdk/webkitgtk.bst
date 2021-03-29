@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.30.4.tar.xz
-  ref: d595a37c5001ff787266b155e303a5f2e5b48a6d466f2714c2f30c11392f7b24
+  url: webkitgtk_org:webkitgtk-2.32.0.tar.xz
+  ref: 9d7df4dae9ada2394257565acc2a68ace9308c4c61c3fcc00111dc1f11076bf0
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -60,6 +60,7 @@ variables:
         -DENABLE_GLES2=ON
   cmake-local: >-
     -DPORT=GTK
+    -DENABLE_GAMEPAD=OFF
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
