@@ -2,9 +2,9 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: https://wpewebkit.org/releases/libwpe-1.9.91.tar.xz
+  url: https://wpewebkit.org/releases/libwpe-1.10.0.tar.xz
 
-  ref: 1d389f29ab1946669cf244ad621ff92b84ff8bcd9294df677444a0d876714196
+  ref: 2415e270d45e3595ed4052bc105f733744dc2d3677e12ff4a831e5029841084d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
