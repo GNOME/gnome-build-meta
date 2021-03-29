@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/3.38/gedit-3.38.1.tar.xz
-  ref: 0053853d2cd59cad8a1662f5b4fdcfab47b4c0940063bacd6790a9948642844d
+  url: gnome_downloads:gedit/3.38/gedit-3.38.2.tar.xz
+  ref: 0e3573508add1777f06c05a66c3fe6fba97694d66cb577b98dbe0166a222c62d
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

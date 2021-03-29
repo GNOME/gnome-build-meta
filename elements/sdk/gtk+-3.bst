@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.27.tar.xz
-  ref: f71c067570339f9f8efac7bb87717a2c52279cb50223fb8b5ba7085930757a26
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.28.tar.xz
+  ref: b04e09763367f1ce932cd2ee3a359d4de150e1c38e7bef7d29aa72557a6b47c6
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
