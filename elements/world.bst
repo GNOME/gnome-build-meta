@@ -20,6 +20,7 @@ depends:
 - world/gitg.bst
 - world/glade.bst
 - world/glibmm.bst
+- world/gnome-2048.bst
 - world/gnome-chess.bst
 - world/gnome-code-assistance.bst
 - world/gnome-devel-docs.bst
