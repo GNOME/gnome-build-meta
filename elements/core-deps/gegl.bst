@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.28.tar.xz
+  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.30.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
