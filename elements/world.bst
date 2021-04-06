@@ -51,6 +51,7 @@ depends:
 - world/ibus-anthy.bst
 - world/ibus-hangul.bst
 - world/ibus-libpinyin.bst
+- world/kgx.bst
 - world/kyotocabinet.bst
 - world/libaperture.bst
 - world/libgepub.bst
