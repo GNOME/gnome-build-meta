@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-control-center.git
@@ -7,15 +8,15 @@ sources:
     subprojects/gvc:
       checkout: true
       url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
-    subprojets/libhandy:
-      checkout: true
-      url: purism:Librem5/libhandy.git
+
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 runtime-depends:
 - core-deps/libgnomekbd.bst
 - core-deps/power-profiles-daemon.bst
+
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -48,6 +49,7 @@ depends:
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Ddocumentation=true

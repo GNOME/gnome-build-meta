@@ -1,20 +1,19 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/seahorse.git
   track: master
-  submodules:
-    subprojets/libhandy:
-      checkout: false
-      url: purism:Librem5/libhandy.git
 
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
+
 depends:
 - core-deps/openldap.bst
 - sdk/gcr.bst

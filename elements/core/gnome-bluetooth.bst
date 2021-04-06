@@ -4,10 +4,6 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
   track: master
-  submodules:
-    subprojects/libhandy:
-      url: purism:Librem5/libhandy.git
-      checkout: true
 
 build-depends:
 - sdk/gobject-introspection.bst
