@@ -6,11 +6,11 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 depends:
+- core-deps/clutter-gtk.bst
+- core-deps/clutter.bst
 - core-deps/geocode-glib.bst
 - core-deps/libchamplain.bst
 - core/gnome-maps.bst
-- sdk/clutter-gtk.bst
-- sdk/clutter.bst
 - sdk/glib.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst

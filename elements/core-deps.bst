@@ -13,6 +13,10 @@ depends:
 - core-deps/berkeleydb.bst
 - core-deps/boost.bst
 - core-deps/cairomm-1.0.bst
+- core-deps/clutter-gst.bst
+- core-deps/clutter-gtk.bst
+- core-deps/clutter.bst
+- core-deps/cogl.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/cups-pk-helper.bst

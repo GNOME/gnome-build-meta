@@ -15,15 +15,15 @@ build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/clutter-gst.bst
+- core-deps/clutter-gtk.bst
+- core-deps/clutter.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/libpeas.bst
 - core-deps/totem-pl-parser.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/clutter-gst.bst
-- sdk/clutter-gtk.bst
-- sdk/clutter.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
