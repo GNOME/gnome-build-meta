@@ -53,6 +53,7 @@ depends:
 - world/ibus-libpinyin.bst
 - world/kgx.bst
 - world/kyotocabinet.bst
+- world/libadwaita.bst
 - world/libaperture.bst
 - world/libgepub.bst
 - world/libgnome-games-support.bst
