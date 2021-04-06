@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
@@ -7,9 +8,12 @@ sources:
     subprojects/libhandy:
       url: purism:Librem5/libhandy.git
       checkout: true
+
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/libcanberra.bst
 - sdk/glib.bst

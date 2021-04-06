@@ -11,6 +11,7 @@ sources:
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
@@ -25,7 +26,6 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
-- sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst

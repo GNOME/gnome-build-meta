@@ -7,14 +7,14 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/flatpak.bst
-- core-deps/mogwai.bst
 - core-deps/libostree.bst
-- sdk/gobject-introspection.bst
+- core-deps/mogwai.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/gnupg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/valgrind.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
