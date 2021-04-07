@@ -18,6 +18,7 @@ build-depends:
 
 runtime-depends:
 - core-deps/libgnomekbd.bst
+- sdk/geoclue.bst
 
 depends:
 - core-deps/NetworkManager.bst
