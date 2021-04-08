@@ -112,7 +112,9 @@ track:
   interruptible: true
   script:
   - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
+  # FIXME: pbp image breaks the build https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/371
+  # - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
   # only run on branches targeting master
@@ -221,7 +223,7 @@ vm-image-x86_64:
   variables:
     IMAGE: vm/image.bst
 
-pinebook-pro-image:
+.pinebook-pro-image:
   extends:
   - .manual-image-template
   - .aarch64
