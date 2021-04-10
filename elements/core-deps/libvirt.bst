@@ -70,6 +70,7 @@ variables:
     -Dstorage_vstorage=disabled
     -Dstorage_zfs=disabled
     -Dwireshark_dissector=disabled
+    -Dgit_werror=disabled
 
 config:
   install-commands:
