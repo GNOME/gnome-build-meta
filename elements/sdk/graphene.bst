@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:graphene/1.10/graphene-1.10.2.tar.xz
-  ref: e97de8208f1aac4f913d4fa71ab73a7034e807186feb2abe55876e51c425a7f6
+  url: gnome_downloads:graphene/1.10/graphene-1.10.6.tar.xz
+  ref: 80ae57723e4608e6875626a88aaa6f56dd25df75024bd16e9d77e718c3560b25
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:sysprof/3.40/sysprof-3.40.0.tar.xz
-  ref: 96ac03398d4b2871b235c20b09457f9be5b853cb841c31cdefdae06df3e4f6e8
+  url: gnome_downloads:sysprof/3.40/sysprof-3.40.1.tar.xz
+  ref: c25000d6a20e8c4d314f5c861a1f70d7c3e2027117437fd9198fa811b9fc7437
 
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
