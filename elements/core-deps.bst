@@ -7,7 +7,6 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
-- core-deps/amtk.bst
 - core-deps/appstream.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/babl.bst
@@ -114,7 +113,6 @@ depends:
 - core-deps/startup-notification.bst
 - core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
-- core-deps/tepl.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/tracker-2.bst
 - core-deps/tracker-miners-2.bst
