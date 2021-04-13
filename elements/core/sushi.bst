@@ -8,9 +8,6 @@ build-depends:
 depends:
 - core-deps/libmusicbrainz.bst
 - core/evince.bst
-- sdk/clutter-gst.bst
-- sdk/clutter-gtk.bst
-- sdk/clutter.bst
 - sdk/gjs.bst
 - sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
