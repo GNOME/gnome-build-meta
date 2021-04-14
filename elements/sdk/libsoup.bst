@@ -26,6 +26,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dautobahn=disabled
     -Dtls_check=false
     -Dgtk_doc=true
     -Dntlm=disabled
