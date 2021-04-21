@@ -9,3 +9,4 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/openssl.bst

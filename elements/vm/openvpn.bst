@@ -12,3 +12,4 @@ depends:
 - freedesktop-sdk.bst:components/lz4.bst
 - freedesktop-sdk.bst:components/lzo.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
+- freedesktop-sdk.bst:components/openssl.bst

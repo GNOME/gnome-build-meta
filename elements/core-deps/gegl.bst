@@ -19,6 +19,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:components/sdl2.bst

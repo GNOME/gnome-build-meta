@@ -7,6 +7,7 @@ build-depends:
 depends:
 - core-deps/libpcap.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/openssl.bst
 variables:
   # not a real autotools project
   autogen: ''
