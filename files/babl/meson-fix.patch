@@ -1,0 +1,25 @@
+diff -ur babl.old/docs/meson.build babl/docs/meson.build
+--- babl.old/docs/meson.build	2021-05-06 10:13:09.486514532 +0200
++++ babl/docs/meson.build	2021-05-06 10:47:49.354403343 +0200
+@@ -101,11 +101,13 @@
+   endif
+ endforeach
+ 
+-
+-run_target('push_web',
+-  command: [
+-    'scp', index_html, index_static_html, babl_css, scptarget,
+-    '&&',
+-    'scp', graphic_files_install, scptarget + 'graphics/'
+-  ],
+-)
++scp = find_program('scp', required : false)
++if scp.found()
++  run_target('push_web',
++    command: [
++      scp, index_html, index_static_html, babl_css, scptarget,
++      '&&',
++      scp, graphic_files_install, scptarget + 'graphics/'
++     ],
++  )
++endif

@@ -9,6 +9,7 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/ModemManager.bst

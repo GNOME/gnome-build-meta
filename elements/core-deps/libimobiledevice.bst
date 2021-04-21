@@ -9,6 +9,7 @@ build-depends:
 
 depends:
 - core-deps/libusbmuxd.bst
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst

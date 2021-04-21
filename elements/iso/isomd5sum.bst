@@ -7,6 +7,7 @@ sources:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/popt.bst
 
 variables:
   # When building in parallel, it might fail with errors about missing

@@ -21,7 +21,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/openal.bst
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/sndfile.bst
-- freedesktop-sdk.bst:components/vulkan.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/webrtc-audio-processing.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

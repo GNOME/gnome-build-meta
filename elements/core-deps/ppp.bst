@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/libpcap.bst
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   # not a real autotools project

@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- core-deps/cvt.bst
 - core/sysprof.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -35,7 +36,7 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
-- freedesktop-sdk.bst:components/xorg-server.bst
+- freedesktop-sdk.bst:components/xwayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

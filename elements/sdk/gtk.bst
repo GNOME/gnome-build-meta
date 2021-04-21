@@ -9,6 +9,7 @@ build-depends:
 - sdk-deps/sassc.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -25,6 +26,7 @@ depends:
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
+- freedesktop-sdk.bst:components/vulkan-icd-loader.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

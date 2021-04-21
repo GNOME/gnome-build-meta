@@ -12,5 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - vm/vpnc-scripts.bst
