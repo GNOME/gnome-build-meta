@@ -24,7 +24,6 @@ depends:
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/grilo.bst
 - core-deps/gsound.bst
 - core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
