@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gitlab_com:graphviz/graphviz/-/archive/2.46.0/graphviz-2.46.0.tar.gz
+  url: gitlab_com:graphviz/graphviz/-/archive/2.47.1/graphviz-2.47.1.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst
