@@ -80,9 +80,11 @@ sources:
   directory: 'src/vendor/golang.org/x/crypto'
 - kind: git_tag
   url: https://github.com/golang/sys.git
-  track: 953cdadca894
+  track: 66c3f260301c
   track-tags: false
   directory: 'src/vendor/golang.org/x/sys'
+- kind: patch
+  path: files/toolbox/riscv.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

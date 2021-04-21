@@ -1,0 +1,53 @@
+diff -ru slirp-helper.old/crates/nix-0.17.0/src/sys/ptrace/linux.rs slirp-helper/crates/nix-0.17.0/src/sys/ptrace/linux.rs
+--- slirp-helper.old/crates/nix-0.17.0/src/sys/ptrace/linux.rs	2020-02-03 17:25:40.000000000 +0100
++++ slirp-helper/crates/nix-0.17.0/src/sys/ptrace/linux.rs	2021-04-19 15:50:19.553193749 +0200
+@@ -46,7 +46,6 @@
+                                                target_arch = "mips",
+                                                target_arch = "mips64",
+                                                target_arch = "x86_64",
+-                                               target_arch = "riscv64",
+                                                target_pointer_width = "32"))))]
+         PTRACE_GETREGS,
+         #[cfg(any(all(target_os = "android", target_pointer_width = "32"),
+@@ -54,7 +53,6 @@
+                                                target_arch = "mips",
+                                                target_arch = "mips64",
+                                                target_arch = "x86_64",
+-                                               target_arch = "riscv64",
+                                                target_pointer_width = "32"))))]
+         PTRACE_SETREGS,
+         #[cfg(any(all(target_os = "android", target_pointer_width = "32"),
+@@ -62,7 +60,6 @@
+                                                target_arch = "mips",
+                                                target_arch = "mips64",
+                                                target_arch = "x86_64",
+-                                               target_arch = "riscv64",
+                                                target_pointer_width = "32"))))]
+         PTRACE_GETFPREGS,
+         #[cfg(any(all(target_os = "android", target_pointer_width = "32"),
+@@ -70,7 +67,6 @@
+                                                target_arch = "mips",
+                                                target_arch = "mips64",
+                                                target_arch = "x86_64",
+-                                               target_arch = "riscv64",
+                                                target_pointer_width = "32"))))]
+         PTRACE_SETFPREGS,
+         PTRACE_ATTACH,
+@@ -79,15 +75,13 @@
+                                            target_arch = "mips",
+                                            target_arch = "mips64",
+                                            target_arch = "x86",
+-                                           target_arch = "x86_64",
+-                                           target_arch = "riscv64")))]
++                                           target_arch = "x86_64")))]
+         PTRACE_GETFPXREGS,
+         #[cfg(all(target_os = "linux", any(target_env = "musl",
+                                            target_arch = "mips",
+                                            target_arch = "mips64",
+                                            target_arch = "x86",
+-                                           target_arch = "x86_64",
+-                                           target_arch = "riscv64")))]
++                                           target_arch = "x86_64")))]
+         PTRACE_SETFPXREGS,
+         PTRACE_SYSCALL,
+         PTRACE_SETOPTIONS,

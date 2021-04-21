@@ -21,6 +21,8 @@ sources:
   path: files/eos-installer/remove-branding.patch
 - kind: patch
   path: files/eos-installer/remove-endless-support.patch
+- kind: patch
+  path: files/eos-installer/riscv.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

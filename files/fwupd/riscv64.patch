@@ -1,0 +1,37 @@
+diff -ur fwupd-efi.old/efi/generate_binary.py fwupd-efi/efi/generate_binary.py
+--- fwupd-efi.old/efi/generate_binary.py	2021-05-06 09:53:05.958282422 +0200
++++ fwupd-efi/efi/generate_binary.py	2021-05-06 10:11:29.776318357 +0200
+@@ -36,7 +36,7 @@
+ 
+     # aarch64 and arm32 don't have an EFI capable objcopy
+     # Use 'binary' instead, and add required symbols manually
+-    if args.arch in ["aarch64", "arm"]:
++    if args.arch in ["aarch64", "arm", "riscv64"]:
+         argv.extend(["-O", "binary"])
+     else:
+         argv.extend(["--target", "efi-app-{}".format(args.arch)])
+diff -ur fwupd-efi.old/efi/meson.build fwupd-efi/efi/meson.build
+--- fwupd-efi.old/efi/meson.build	2021-05-06 09:53:05.958282422 +0200
++++ fwupd-efi/efi/meson.build	2021-05-06 10:02:17.272254312 +0200
+@@ -73,7 +73,7 @@
+ endif
+ 
+ # is the system crt0 for arm and aarch64 new enough to know about SBAT?
+-if host_cpu == 'aarch64' or host_cpu == 'arm'
++if host_cpu == 'aarch64' or host_cpu == 'arm' or host_cpu == 'riscv64'
+   if get_option('efi_sbat_distro_id') != ''
+     arch_crt_source = 'crt0-efi-@0@.S'.format(gnu_efi_path_arch)
+     cmd = run_command('grep', '-q', 'sbat', join_paths(efi_crtdir, arch_crt_source))
+diff -ur fwupd-efi.old/meson.build fwupd-efi/meson.build
+--- fwupd-efi.old/meson.build	2021-05-06 09:53:05.957282421 +0200
++++ fwupd-efi/meson.build	2021-05-06 10:02:01.552224910 +0200
+@@ -105,6 +105,9 @@
+ elif host_cpu == 'aarch64'
+         EFI_MACHINE_TYPE_NAME = 'aa64'
+         gnu_efi_arch = 'aarch64'
++elif host_cpu == 'riscv64'
++        EFI_MACHINE_TYPE_NAME = 'riscv64'
++        gnu_efi_arch = 'riscv64'
+ else
+         EFI_MACHINE_TYPE_NAME = ''
+         gnu_efi_arch = ''
