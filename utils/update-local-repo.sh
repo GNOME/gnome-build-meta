@@ -2,7 +2,7 @@
 
 set -eu
 
-BST=bst
+: ${BST:=bst}
 REPO_ELEMENTS=''
 
 while [ $# -gt 0 ]; do
