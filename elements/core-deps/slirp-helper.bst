@@ -15,11 +15,11 @@ environment:
 
 sources:
 - kind: tar
-  url: https://static.crates.io/crates/libslirp/libslirp-4.2.2.crate
+  url: https://static.crates.io/crates/libslirp/libslirp-4.3.0.crate
 - kind: cargo
 
 config:
   install-commands:
-  - cargo install --path . --root "%{install-root}%{prefix}"
+  - cargo install --all-features --path . --root "%{install-root}%{prefix}"
   - rm "%{install-root}%{prefix}"/.crates*
   - ln -s libslirp-helper "%{install-root}%{bindir}/slirp-helper"
