@@ -40,12 +40,10 @@ config:
        --noboot >/dev/null
 
   - |
-    dracut -v --uefi \
-           --uefi-stub /usr/lib/systemd/boot/efi/linux%{efi-arch}.efi.stub \
-           --kernel-image "/boot/vmlinuz" \
-           --no-machineid \
+    dracut -v --no-machineid \
+           --kernel-image /boot/vmlinuz \
            --kver "$(ls -1 /usr/lib/modules | head -n1)" \
-           --kernel-cmdline 'rw quiet splash root=live:LABEL=%{installer-volume-id}' \
+           --kernel-cmdline 'rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0' \
            --add dmsquash-live \
            --add plymouth \
            --install grep \
@@ -69,6 +67,13 @@ config:
     EOF
 
   - |
-    rm -f /boot/vmlinuz
     rm -f /boot/System.map
 
+  - |
+    cat <<EOF >/boot/loader/entries/gnome-os-installer.conf
+    title GNOME OS Installer
+    version 1
+    options rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0
+    linux /vmlinuz
+    initrd /initramfs-$(ls -1 /lib/modules | head -n1).img
+    EOF

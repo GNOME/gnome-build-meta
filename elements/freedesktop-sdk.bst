@@ -14,3 +14,5 @@ config:
         bootstrap_build_arch: 'aarch64'
     - arch == "ppc64le":
         bootstrap_build_arch: "ppc64le"
+    - arch == "riscv64":
+        bootstrap_build_arch: "x86_64"

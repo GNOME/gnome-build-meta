@@ -35,6 +35,8 @@ variables:
       targets: --target-list=arm-softmmu
   - arch == "ppc64le":
       targets: --target-list=ppc64-softmmu
+  - arch == "riscv64":
+      targets: --target-list=riscv64-softmmu
 
   conf-local: >-
     --disable-werror

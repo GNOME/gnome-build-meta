@@ -1,0 +1,12 @@
+diff -x .git -ur toolbox.old/src/libc-wrappers/libc-wrappers.c toolbox/src/libc-wrappers/libc-wrappers.c
+--- toolbox.old/src/libc-wrappers/libc-wrappers.c	2021-02-23 19:57:46.648985862 +0100
++++ toolbox/src/libc-wrappers/libc-wrappers.c	2021-04-19 15:55:57.421788023 +0200
+@@ -30,6 +30,8 @@
+ __asm__(".symver pthread_sigmask,pthread_sigmask@GLIBC_2.2");
+ #elif defined __x86_64__
+ __asm__(".symver pthread_sigmask,pthread_sigmask@GLIBC_2.2.5");
++#elif defined __riscv
++__asm__(".symver pthread_sigmask,pthread_sigmask@GLIBC_2.32");
+ #else
+ #error "Please specify symbol version for pthread_sigmask"
+ #endif

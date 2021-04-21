@@ -3,6 +3,8 @@ kind: meson
 sources:
 - kind: tar
   url: github_com:fwupd/fwupd-efi/archive/1.0.tar.gz
+- kind: patch
+  path: files/fwupd/riscv64.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
