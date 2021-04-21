@@ -49,7 +49,7 @@ depends:
 - freedesktop-sdk.bst:components/spirv-tools.bst
 - freedesktop-sdk.bst:components/strace.bst
 - freedesktop-sdk.bst:components/texinfo.bst
-- freedesktop-sdk.bst:components/valgrind.bst
+- freedesktop-sdk.bst:components/valgrind-maybe.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/jq.bst

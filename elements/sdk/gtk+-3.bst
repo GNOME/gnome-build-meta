@@ -4,6 +4,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gtk.git
   track: gtk-3-24
+- kind: patch
+  path: files/gtk3-werror.patch
 
 build-depends:
 - sdk/gobject-introspection.bst

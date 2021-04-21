@@ -3,6 +3,8 @@ sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gsound.git
   track: master
+- kind: patch
+  path: files/gsound/automake-fix.patch
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

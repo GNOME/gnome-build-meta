@@ -3,6 +3,8 @@ kind: meson
 sources:
 - kind: tar
   url: https://download.gimp.org/pub/babl/0.1/babl-0.1.86.tar.xz
+- kind: patch
+  path: files/babl/meson-fix.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
