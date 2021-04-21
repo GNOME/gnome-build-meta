@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://github.com/containers/toolbox/releases/download/0.0.93/toolbox-0.0.93.tar.xz
+  url: https://github.com/containers/toolbox/releases/download/0.0.99.1/toolbox-0.0.99.1.tar.xz
 - kind: git_tag
   url: https://github.com/HarryMichal/go-version.git
   track: v1.0.0
@@ -23,6 +23,11 @@ sources:
   track: v0.4.0
   track-tags: false
   directory: 'src/vendor/github.com/docker/go-units'
+- kind: git_tag
+  url: https://github.com/fsnotify/fsnotify.git
+  track: v1.4.7
+  track-tags: false
+  directory: 'src/vendor/github.com/fsnotify/fsnotify'
 - kind: git_tag
   url: https://github.com/fatih/color.git
   track: v1.7.0
