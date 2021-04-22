@@ -310,6 +310,9 @@ cve_report:
   extends: .x86_64
   stage: reports
   dependencies: [track]
+  tags:
+  - x86_64
+  - gnome-build-meta
   script:
   - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 
