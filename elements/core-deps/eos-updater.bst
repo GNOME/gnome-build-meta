@@ -1,8 +1,8 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: tar
-  url: github_com:endlessm/eos-updater/archive/Release_3.7.5.tar.gz
+  url: github_com:endlessm/eos-updater/archive/Release_3.9.3.tar.gz
 
 depends:
 - core-deps/NetworkManager.bst
@@ -17,9 +17,8 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/valgrind.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 variables:
-  conf-local: >-
-    --disable-Werror
-    --disable-metrics
+  meson-local: >-
+    -Dmetrics=disabled
