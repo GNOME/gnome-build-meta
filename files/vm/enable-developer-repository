@@ -2,7 +2,7 @@
 
 set -eu
 
-DEFAULT_REF="gnome-os/devel/@@ARCH@@/git"
+DEFAULT_REF="gnome-os/master/@@ARCH@@-devel"
 DEFAULT_NAME="local"
 DEFAULT_URL="http://10.0.2.2:8000/"
 DEFAULT_GPG="http://10.0.2.2:8000/key.gpg"
