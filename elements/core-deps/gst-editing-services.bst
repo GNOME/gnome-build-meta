@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://gstreamer.freedesktop.org/src/gstreamer-editing-services/gstreamer-editing-services-1.16.2.tar.xz
+  url: https://gstreamer.freedesktop.org/src/gstreamer-editing-services/gstreamer-editing-services-1.16.3.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
