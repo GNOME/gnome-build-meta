@@ -1,12 +1,11 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_download:teams/releng/tarballs-needing-help/ppp/ppp-2.4.7.tar.gz
-- kind: patch
-  path: files/ppp/use-openssl.patch
+  url: https://download.samba.org/pub/ppp/ppp-2.4.9.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- core-deps/libpcap.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   # not a real autotools project
