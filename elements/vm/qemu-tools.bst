@@ -2,13 +2,14 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://download.qemu.org/qemu-4.2.0.tar.xz
+  url: https://download.qemu.org/qemu-5.2.0.tar.xz
 
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/ninja.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 build-depends:
