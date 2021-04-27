@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:libssh2/libssh2/archive/libssh2-1.8.0.tar.gz
+  url: github_com:libssh2/libssh2/archive/libssh2-1.9.0.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
