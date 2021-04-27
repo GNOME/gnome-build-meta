@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://http.debian.net/debian/pool/main/n/neon27/neon27_0.30.2.orig.tar.gz
+  url: https://notroj.github.io/neon/neon-0.31.2.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
