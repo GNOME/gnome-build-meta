@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://github.com/OpenPrinting/system-config-printer/releases/download/1.5.12/system-config-printer-1.5.12.tar.xz
+  url: https://github.com/OpenPrinting/system-config-printer/releases/download/v1.5.15/system-config-printer-1.5.15.tar.xz
 
 build-depends:
 - core-deps/intltool.bst
