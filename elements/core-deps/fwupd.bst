@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:fwupd/fwupd/archive/1.4.4.tar.gz
+  url: github_com:fwupd/fwupd/archive/1.6.0.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -34,12 +34,23 @@ depends:
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 
+(?):
+- arch in ["arm", "aarch64", "x86_64", "i686"]:
+    depends:
+      (>):
+      - core-deps/fwupd-efi.bst
+
 variables:
+  meson-local: >-
+    -Dplugin_msr=%{msr}
+    -Dplugin_dell=%{dell}
+    -Dplugin_uefi=%{uefi}
+  msr: "false" # MSR is only for Intel processors
+  dell: "false"
+  uefi: "true"
   (?):
-  - arch in ["arm", "aarch64"]:
-      meson-local: >-
-        -Dplugin_dell=false
-  - arch == "ppc64le":
-      meson-local: >-
-        -Dplugin_dell=false
-        -Dplugin_uefi=false
+  - arch in ["x86_64", "i686"]:
+      dell: "true"
+      msr: "true"
+  - arch in ["ppc64le"]:
+      uefi: "false"
