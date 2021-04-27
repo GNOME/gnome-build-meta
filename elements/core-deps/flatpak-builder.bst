@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:flatpak/flatpak-builder/releases/download/1.0.11/flatpak-builder-1.0.11.tar.xz
+  url: github_com:flatpak/flatpak-builder/releases/download/1.0.12/flatpak-builder-1.0.12.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
