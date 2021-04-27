@@ -2,9 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://spice-space.org/download/releases/spice-vdagent-0.20.0.tar.bz2
-- kind: patch
-  path: files/spice-vdagent/fix-shutdown-hang.patch
+  url: https://spice-space.org/download/releases/spice-vdagent-0.21.0.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
