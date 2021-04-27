@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://files.pythonhosted.org/packages/b3/34/adcd6646c5ed59a1206216d4a418121be57df3406f7a46570112db57ba6c/dulwich-0.20.5.tar.gz
+  url: https://files.pythonhosted.org/packages/31/02/791c17b92e6d04c43f9b318c95a3f3c3e1ea718aa72ad95b9dac147895fa/dulwich-0.20.21.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools.bst
