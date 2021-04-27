@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:protocolbuffers/protobuf/releases/download/v3.12.4/protobuf-all-3.12.4.tar.gz
+  url: github_com:protocolbuffers/protobuf/releases/download/v3.15.8/protobuf-all-3.15.8.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools.bst
