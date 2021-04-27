@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_com:libgit2/libgit2/archive/v0.26.3.tar.gz
+  url: github_com:libgit2/libgit2/archive/v1.1.0.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
