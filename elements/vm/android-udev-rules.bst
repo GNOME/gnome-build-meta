@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: github_com:M0Rf30/android-udev-rules/archive/20201003.tar.gz
+  url: github_com:M0Rf30/android-udev-rules/archive/20210425.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
