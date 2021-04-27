@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://files.pythonhosted.org/packages/a9/47/505af0c53c8aaf028b67c76e994de3939672757f262826655de344a174dd/arpy-2.1.0.tar.gz
+  url: https://files.pythonhosted.org/packages/b4/2d/9a1fb66d3632a4646f52cf4d75cda1f14bf6fb74f1bf322236de347523e8/arpy-2.2.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools.bst
