@@ -23,6 +23,9 @@ depends:
 - vm/uresourced.bst
 - vm/android-udev-rules.bst
 
+- vm/NetworkManager-openvpn.bst
+- vm/NetworkManager-openconnect.bst
+
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
