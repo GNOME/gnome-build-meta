@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: downloads.sourceforge.net:gphoto/libgphoto/2.5.16/libgphoto2-2.5.16.tar.bz2
+  url: github_com:gphoto/libgphoto2/releases/download/v2.5.27/libgphoto2-2.5.27.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
