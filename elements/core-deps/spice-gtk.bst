@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: spice:gtk/spice-gtk-0.39.tar.xz
 
+  ref: 23acbee197eaaec9bce6e6bfd885bd8f79708332639243ff04833020865713cd
 build-depends:
 - core-deps/python-pyparsing.bst
 - sdk/gtk-doc.bst

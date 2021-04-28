@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://download.qemu.org/qemu-4.2.0.tar.xz
 
+  ref: d3481d4108ce211a053ef15be69af1bdd9dde1510fda80d92be0f6c3e98768f0
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst

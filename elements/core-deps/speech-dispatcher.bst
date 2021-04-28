@@ -2,6 +2,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:brailcom/speechd/releases/download/0.9.0/speech-dispatcher-0.9.0.tar.gz
+  ref: 73b924f42fcc2155a452693320956f7075b71750023ea21e8bb79822c0caa2f9
 - kind: patch
   path: files/speech-dispatcher/Fix-build-after-glib-e38982df.patch
 build-depends:

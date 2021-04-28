@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/vte.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:vte/0.64/vte-0.64.0.tar.xz
+  ref: c0c60b8dc343167437c86d984b0cf134df86034180ed70513f683006ada3ec41
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

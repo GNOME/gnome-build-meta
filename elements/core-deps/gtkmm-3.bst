@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtkmm.git
-  track: gtkmm-3-24
+- kind: tar
+  url: gnome_downloads:gtkmm/3.24/gtkmm-3.24.4.tar.xz
+  ref: 9beb71c3e90cfcfb790396b51e3f5e7169966751efd4f3ef9697114be3be6743
 build-depends:
 - core-deps/mm-common.bst
 - freedesktop-sdk.bst:components/m4.bst

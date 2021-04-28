@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gssdp.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gssdp/1.2/gssdp-1.2.3.tar.xz
+  ref: a263dcb6730e3b3dc4bbbff80cf3fab4cd364021981d419db6dd5a8e148aa7e8
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

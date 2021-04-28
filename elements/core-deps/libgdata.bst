@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgdata.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgdata/0.18/libgdata-0.18.1.tar.xz
+  ref: dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

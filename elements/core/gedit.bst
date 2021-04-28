@@ -1,14 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gedit.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
-
+- kind: tar
+  url: gnome_downloads:gedit/40/gedit-40.1.tar.xz
+  ref: 55e394a82cb65678b1ab49526cf5bd43f00d8fba21476a4849051a8e137d3691
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

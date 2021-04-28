@@ -2,11 +2,11 @@ include: .gitlab-ci/arch.yml
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'false'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: 41alpha
 
 stages:
 - track
@@ -31,8 +31,8 @@ default:
 .build-template:
   stage: build
   needs:
-    - job: 'track'
-      optional: true
+  - job: 'track'
+    optional: true
   interruptible: true
   script:
   - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
@@ -60,8 +60,8 @@ default:
 .manual-image-template:
   stage: deploy
   needs:
-    - job: 'track'
-      optional: true
+  - job: 'track'
+    optional: true
   when: manual
   allow_failure: true
   script:
@@ -84,8 +84,8 @@ default:
   extends: .deploy-rules
   stage: deploy
   needs:
-    - job: 'track'
-      optional: true
+  - job: 'track'
+    optional: true
   script:
   - |
     export FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
@@ -158,16 +158,16 @@ generate-deploy-config:
   - .x86_64
   - .deploy-rules
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-x86_64'
-      artifacts: false
-    - job: 'build-i386'
-      artifacts: false
-    - job: 'build-aarch64'
-      artifacts: false
-    - job: 'build-ppc64le'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
+  - job: 'build-i386'
+    artifacts: false
+  - job: 'build-aarch64'
+    artifacts: false
+  - job: 'build-ppc64le'
+    artifacts: false
   stage: deploy-config
   script:
   - test -f track-job.id && TRACK_JOB_ID=$(cat track-job.id)
@@ -237,10 +237,10 @@ vm-image-x86_64:
   - .manual-image-template
   - .x86_64
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-x86_64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
   variables:
     IMAGE: vm/image.bst
 
@@ -249,10 +249,10 @@ vm-image-x86_64:
   - .manual-image-template
   - .aarch64
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-aarch64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/pinebook-pro/image.bst
 
@@ -261,10 +261,10 @@ rock64-image:
   - .manual-image-template
   - .aarch64
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-aarch64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/rock64/image.bst
 
@@ -273,10 +273,10 @@ raspberrypi-4-image:
   - .manual-image-template
   - .aarch64
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-aarch64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
 
@@ -287,19 +287,19 @@ iso-installer-x86_64:
   variables:
     IMAGE: iso/image.bst
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-x86_64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
 
 s3-image:
   extends: .x86_64
   stage: deploy
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'build-x86_64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
   - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
@@ -355,10 +355,10 @@ cve_report:
   extends: .x86_64
   stage: reports
   needs:
-    - job: 'track'
-      optional: true
-    - job: 'vm-image-x86_64'
-      artifacts: false
+  - job: 'track'
+    optional: true
+  - job: 'vm-image-x86_64'
+    artifacts: false
   script:
   - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 

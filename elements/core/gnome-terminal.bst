@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-terminal.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gnome-terminal/3.40/gnome-terminal-3.40.0.tar.xz
+  ref: 9d2fe397be0b8b50c4ef96634a2e0480ad9ff56d1431582ecc804907e11fa74e
 build-depends:
 - core/gnome-shell.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

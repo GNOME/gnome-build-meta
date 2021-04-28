@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:ostreedev/ostree/releases/download/v2020.8/libostree-2020.8.tar.xz
+  ref: fdaa5992d0a6f62157152355449ac8476c50df6602be398e9ad10438cc1e679b
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsoup.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:libsoup/2.99/libsoup-2.99.4.tar.xz
+  ref: 8a4d39e908da97811db2f7c773b08348a360a8e1e988404332e8ff071263af3e
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

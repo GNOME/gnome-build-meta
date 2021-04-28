@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: gtk-3-24
-
+- kind: tar
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.29.tar.xz
+  ref: f57ec4ade8f15cab0c23a80dcaee85b876e70a8823d9105f067ce335a8268caa
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2
 
+  ref: 953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
