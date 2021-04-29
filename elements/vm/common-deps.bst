@@ -26,6 +26,8 @@ depends:
 
 - vm/NetworkManager-openvpn.bst
 - vm/NetworkManager-openconnect.bst
+- vm/NetworkManager-fortisslvpn.bst
+- vm/NetworkManager-vpnc.bst
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
