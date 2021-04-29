@@ -83,9 +83,6 @@ default:
 .ostree-template:
   extends: .deploy-rules
   stage: deploy
-  needs:
-  - job: 'track'
-    optional: true
   script:
   - |
     export FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
@@ -350,6 +347,11 @@ ostree-x86_64:
   extends:
   - .ostree-template
   - .x86_64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
 
 cve_report:
   extends: .x86_64
