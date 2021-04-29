@@ -359,7 +359,7 @@ cve_report:
   needs:
   - job: 'track'
     optional: true
-  - job: 'vm-image-x86_64'
+  - job: 'build-x86_64'
     artifacts: false
   script:
   - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
