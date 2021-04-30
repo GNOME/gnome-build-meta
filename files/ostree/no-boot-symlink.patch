@@ -1,6 +1,6 @@
 diff -ur ostree.old/src/libostree/ostree-sysroot.c ostree/src/libostree/ostree-sysroot.c
 --- ostree.old/src/libostree/ostree-sysroot.c	2021-04-29 15:55:43.998198430 +0200
-+++ ostree/src/libostree/ostree-sysroot.c	2021-04-29 15:59:41.072765930 +0200
++++ ostree/src/libostree/ostree-sysroot.c	2021-04-30 14:43:42.250302128 +0200
 @@ -558,6 +558,13 @@
    return compare_boot_loader_configs (a, b);
  }
@@ -88,7 +88,7 @@ diff -ur ostree.old/src/libostree/ostree-sysroot.c ostree/src/libostree/ostree-s
    *out_bootversion = ret_bootversion;
 diff -ur ostree.old/src/libostree/ostree-sysroot-cleanup.c ostree/src/libostree/ostree-sysroot-cleanup.c
 --- ostree.old/src/libostree/ostree-sysroot-cleanup.c	2021-04-29 15:55:43.998198430 +0200
-+++ ostree/src/libostree/ostree-sysroot-cleanup.c	2021-04-29 15:55:54.015206216 +0200
++++ ostree/src/libostree/ostree-sysroot-cleanup.c	2021-04-30 14:43:42.250302128 +0200
 @@ -216,6 +216,15 @@
    const int cleanup_subbootversion = self->subbootversion == 0 ? 1 : 0;
    /* Reusable buffer for path */
@@ -107,8 +107,8 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-cleanup.c ostree/src/libostree/
    g_string_truncate (buf, 0); g_string_append_printf (buf, "boot/loader.%d", cleanup_bootversion);
 diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/ostree-sysroot-deploy.c
 --- ostree.old/src/libostree/ostree-sysroot-deploy.c	2021-04-29 15:55:43.998198430 +0200
-+++ ostree/src/libostree/ostree-sysroot-deploy.c	2021-04-29 15:55:54.015206216 +0200
-@@ -2028,17 +2028,15 @@
++++ ostree/src/libostree/ostree-sysroot-deploy.c	2021-04-30 14:46:22.854271436 +0200
+@@ -2028,44 +2028,89 @@
    return TRUE;
  }
  
@@ -133,20 +133,22 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/o
    GLNX_AUTO_PREFIX_ERROR ("Preparing final bootloader swap", error);
    g_assert ((current_bootversion == 0 && new_bootversion == 1) ||
              (current_bootversion == 1 && new_bootversion == 0));
-@@ -2049,23 +2047,76 @@
-     if (errno != EEXIST)
-       return glnx_throw_errno_prefix (error, "symlinkat");
  
--  g_autofree char *new_target = g_strdup_printf ("loader.%d", new_bootversion);
+-  /* This allows us to support both /boot on a seperate filesystem to / as well
+-   * as on the same filesystem. */
+-  if (TEMP_FAILURE_RETRY (symlinkat (".", sysroot->sysroot_fd, "boot/boot")) < 0)
+-    if (errno != EEXIST)
+-      return glnx_throw_errno_prefix (error, "symlinkat");
 +  if (!glnx_opendirat (sysroot->sysroot_fd, "boot", TRUE, &boot_dfd, error))
 +    return FALSE;
+ 
+-  g_autofree char *new_target = g_strdup_printf ("loader.%d", new_bootversion);
++  g_autofree char *loader_dir_name = g_strdup_printf ("loader.%d", new_bootversion);
  
 -  /* We shouldn't actually need to replace but it's easier to reuse
 -     that code */
 -  if (!symlink_at_replace (new_target, sysroot->sysroot_fd, "boot/loader.tmp",
 -                           cancellable, error))
-+  g_autofree char *loader_dir_name = g_strdup_printf ("loader.%d", new_bootversion);
-+
 +  if (!glnx_shutil_mkdir_p_at (boot_dfd, loader_dir_name, 0755,
 +                               cancellable, error))
 +    return FALSE;
@@ -215,7 +217,7 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/o
                   GCancellable   *cancellable,
                   GError        **error)
  {
-@@ -2081,8 +2132,9 @@
+@@ -2081,8 +2126,9 @@
     * its data is in place.  Renaming now should give us atomic semantics;
     * see https://bugzilla.gnome.org/show_bug.cgi?id=755595
     */
@@ -227,7 +229,7 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/o
  
    /* Now we explicitly fsync this directory, even though it
     * isn't required for atomicity, for two reasons:
-@@ -2255,6 +2307,7 @@
+@@ -2255,6 +2301,7 @@
                              OstreeSysrootWriteDeploymentsOpts *opts,
                              OstreeBootloader  *bootloader,
                              SyncStats         *out_syncstats,
@@ -235,7 +237,7 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/o
                              char             **out_subbootdir,
                              GCancellable      *cancellable,
                              GError           **error)
-@@ -2319,15 +2372,15 @@
+@@ -2319,15 +2366,15 @@
          return glnx_prefix_error (error, "Bootloader write config");
      }
  
@@ -254,7 +256,7 @@ diff -ur ostree.old/src/libostree/ostree-sysroot-deploy.c ostree/src/libostree/o
      return FALSE;
  
    if (out_subbootdir)
-@@ -2536,7 +2589,8 @@
+@@ -2536,7 +2583,8 @@
        bootloader_is_atomic = bootloader != NULL && _ostree_bootloader_is_atomic (bootloader);
  
        if (!write_deployments_bootswap (self, new_deployments, opts, bootloader,
