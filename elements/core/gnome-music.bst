@@ -5,9 +5,6 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-music.git
   track: master
   submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
     subprojects/gfm:
       checkout: true
       url: gitlab_gnome_org:mschraal/gfm.git
