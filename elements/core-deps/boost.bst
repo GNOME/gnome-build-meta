@@ -2,8 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: downloads.sourceforge.net:boost/boost/1.73.0/boost_1_73_0.tar.bz2
-
+  url: https://boostorg.jfrog.io/artifactory/main/release/1.73.0/source/boost_1_73_0.tar.bz2
   ref: 4eb3b8d442b426dc35346235c8733b5ae35ba431690e38c6a8263dce9fcbb402
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
