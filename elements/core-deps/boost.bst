@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: https://dl.bintray.com/boostorg/release/1.76.0/source/boost_1_76_0.tar.bz2
+  url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.bz2
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
