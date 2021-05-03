@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/3.38/gnome-desktop-3.38.5.tar.xz
-  ref: 810292b19343cacb8a597716a4d26f2485f0cddabfe8241fd23d82c9e57a20a4
+  url: gnome_downloads:gnome-desktop/3.38/gnome-desktop-3.38.6.tar.xz
+  ref: 4797a4d6f36946de85143d2e29c9c37fe727249008b77b56ff7115cf04883fcd
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

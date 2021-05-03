@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/3.38/gnome-control-center-3.38.5.tar.xz
-  ref: 0ada859620110e829174121c7e1a3f82da80d749d6f61d426a7c8cf4464d72f9
+  url: gnome_downloads:gnome-control-center/3.38/gnome-control-center-3.38.6.tar.xz
+  ref: 56c1fc07ee725cc8ed36a7577fbd20c539f30db9dd7a51da0582500fd1b0932b
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
