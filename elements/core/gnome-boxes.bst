@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/40/gnome-boxes-40.0.tar.xz
-  ref: fa7f1a5f4d741c962a6aa69cdc6d81d57a2dd29496cb9510629ce166af61acf5
+  url: gnome_downloads:gnome-boxes/40/gnome-boxes-40.1.tar.xz
+  ref: b1e28f2c7fb76bf4fbb862d0d52e811b94cbe9ff16f067408964568690882ef8
 - kind: patch
   path: files/gnome-boxes/re-order-recommended.patch
 

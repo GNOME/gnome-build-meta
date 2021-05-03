@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/3.38/gedit-3.38.1.tar.xz
-  ref: 0053853d2cd59cad8a1662f5b4fdcfab47b4c0940063bacd6790a9948642844d
-- kind: patch
-  path: files/gedit/102.patch
+  url: gnome_downloads:gedit/40/gedit-40.1.tar.xz
+  ref: 55e394a82cb65678b1ab49526cf5bd43f00d8fba21476a4849051a8e137d3691
 
 build-depends:
 - sdk/gobject-introspection.bst

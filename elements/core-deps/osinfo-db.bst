@@ -2,9 +2,9 @@ kind: manual
 
 sources:
 - kind: remote
-  url: https://releases.pagure.org/libosinfo/osinfo-db-20210312.tar.xz
+  url: https://releases.pagure.org/libosinfo/osinfo-db-20210426.tar.xz
+  ref: 66c93b4a5b319b2ff7d40360d9e94486a9a45f2c0dd1c30d4b31de4f223070d0
 
-  ref: 7548ec09e445ca7378c5ceb99e39edca8857f8293831e0b3cb558f4230870e10
 build-depends:
 - core-deps/osinfo-db-tools.bst
 

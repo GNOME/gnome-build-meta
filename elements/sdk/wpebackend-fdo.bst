@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://wpewebkit.org/releases/wpebackend-fdo-1.9.1.tar.xz
-  ref: a1dc4e506413719a0d84757797b645fa76590e6c8db23d2403d990dc2e196a64
+  url: https://wpewebkit.org/releases/wpebackend-fdo-1.9.91.tar.xz
+  ref: 13dcbdaee3af8e46c6a2400c28f75a8f4ca24a41324a324184eb2b848964c3ff
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

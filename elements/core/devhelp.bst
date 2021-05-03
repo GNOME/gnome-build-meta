@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:devhelp/40/devhelp-40.alpha.tar.xz
-  ref: ecda47d08501ffbfd55fc7a744e48e69d4b97b9830cae2ad0a79255d8385bbd2
+  url: gnome_downloads:devhelp/40/devhelp-40.0.tar.xz
+  ref: 4db6d853de5f4ef2eb749ede6e32c726c5fba13cd75558fa604c1a562e26267f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

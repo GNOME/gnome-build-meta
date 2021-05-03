@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-photos/40/gnome-photos-40.rc.tar.xz
-  ref: ed7d7b2fa14d05c38a78ff9b18b3fd81c3d4b98577797dc78621aa92e76a5ae8
+  url: gnome_downloads:gnome-photos/40/gnome-photos-40.0.tar.xz
+  ref: e02d73e138af8b2868b5cad7faa1bdd278aeade3b6c3c92836511a4e6f3af1af
 build-depends:
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
