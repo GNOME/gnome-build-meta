@@ -1,0 +1,25 @@
+From fd4e823fdf39fb78478af8c0b06880771ed3875e Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Tue, 4 May 2021 08:52:46 +0100
+Subject: [PATCH] components/wayland-protocols.bst: track 'main' and update to
+ 1.21
+
+---
+ elements/components/wayland-protocols.bst | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/elements/components/wayland-protocols.bst b/elements/components/wayland-protocols.bst
+index bf0aa360..cac22ade 100644
+--- a/elements/components/wayland-protocols.bst
++++ b/elements/components/wayland-protocols.bst
+@@ -9,5 +9,5 @@ depends:
+ sources:
+ - kind: git_tag
+   url: freedesktop:wayland/wayland-protocols.git
+-  track: master
+-  ref: 1.20-0-gb0a25f26d3e8b5ad24773881a9a895dd9cc75466
++  track: main
++  ref: 1.21-0-g177ff9119da526462e5d35fbfde6c84794913787
+-- 
+2.31.1
+
