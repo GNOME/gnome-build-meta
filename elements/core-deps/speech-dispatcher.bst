@@ -19,3 +19,9 @@ variables:
     --with-espeak
 
   local_flags: -fcommon
+
+config:
+  install-commands:
+    (>):
+    - |
+      rm '%{install-root}%{infodir}/dir'
