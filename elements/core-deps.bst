@@ -39,7 +39,6 @@ depends:
 - core-deps/gmime.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/gnome-online-miners.bst
 - core-deps/gnome-video-effects.bst
 - core-deps/gom.bst
 - core-deps/graphviz.bst
@@ -118,8 +117,6 @@ depends:
 - core-deps/system-config-printer.bst
 - core-deps/template-glib.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/tracker-2.bst
-- core-deps/tracker-miners-2.bst
 - core-deps/tracker-miners.bst
 - core-deps/udisks2.bst
 - core-deps/uhttpmock.bst

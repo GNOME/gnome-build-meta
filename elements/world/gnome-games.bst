@@ -10,8 +10,6 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/tracker-2.bst
-- core-deps/tracker-miners-2.bst
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -22,5 +20,7 @@ depends:
 - world/gnome-themes-extra.bst
 - world/libmanette.bst
 - world/retro-gtk.bst
+- world/tracker-2.bst
+- world/tracker-miners-2.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

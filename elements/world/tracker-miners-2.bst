@@ -16,11 +16,11 @@ depends:
 - core-deps/libgxps.bst
 - core-deps/libosinfo.bst
 - core-deps/totem-pl-parser.bst
-- core-deps/tracker-2.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
+- world/tracker-2.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
