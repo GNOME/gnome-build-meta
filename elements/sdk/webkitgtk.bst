@@ -2,11 +2,13 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.32.1.tar.xz
+  url: webkitgtk_org:webkitgtk-2.33.1.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
+- kind: patch
+  path: files/webkitgtk/fix-build.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
@@ -37,6 +39,7 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
+- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
@@ -56,7 +59,7 @@ variables:
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   # FIXME: Enable gamepad support via libmanette once freedesktop-sdk's gudev is built with gobject-introspection support
   cmake-local: >-
-    -DPORT=GTK -DENABLE_GAMEPAD=OFF
+    -DPORT=GTK -DENABLE_GAMEPAD=OFF -DUSE_SOUP2=ON
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
