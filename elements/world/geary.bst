@@ -27,7 +27,6 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
 - sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libxml2.bst
