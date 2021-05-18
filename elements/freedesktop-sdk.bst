@@ -4,8 +4,6 @@ sources:
   url: https://gitlab.com/freedesktop-sdk/freedesktop-sdk.git
   track: release/20.08
   track-tags: true
-- kind: patch
-  path: files/freedesktop-sdk/0001-components-wayland-protocols.bst-track-main-and-upda.patch
 config:
   options:
     target_arch: '%{arch}'
