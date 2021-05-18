@@ -12,6 +12,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
@@ -29,6 +30,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/webkitgtk.bst
 - world/libgepub.bst
+- world/libzapojit.bst
 - world/tracker-2.bst
 - world/tracker-miners-2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

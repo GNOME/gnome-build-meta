@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/libgepub.git
   track: master
 build-depends:
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst

@@ -25,5 +25,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/avahi.bst
+- freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

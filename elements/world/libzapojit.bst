@@ -1,15 +1,21 @@
 kind: autotools
+
 sources:
 - kind: git_tag
-  url: git_code_sf_net:p/gtkspell/gtkspell.git
+  url: gitlab_gnome_org:GNOME/libzapojit.git
   track: master
+
 build-depends:
 - core-deps/intltool.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk/vala.bst
+- freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
-- sdk/enchant-2.bst
-- sdk/gtk+-3.bst
+- core-deps/gnome-online-accounts.bst
+- sdk/glib.bst
+- sdk/json-glib.bst
+- sdk/librest.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

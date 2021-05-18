@@ -18,6 +18,7 @@ depends:
 - core-deps/evolution-data-server.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/tracker.bst
 - sdk/webkitgtk.bst
 - world/libhandy-0.bst

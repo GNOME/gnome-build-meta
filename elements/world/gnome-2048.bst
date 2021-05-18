@@ -7,11 +7,14 @@ sources:
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst
-- sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/gtk.bst
+- core-deps/clutter.bst
+- core-deps/clutter-gtk.bst
+- sdk/gtk+-3.bst
+- sdk/libgee.bst
 - sdk/librsvg.bst
+- world/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-

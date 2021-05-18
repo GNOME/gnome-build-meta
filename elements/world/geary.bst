@@ -32,6 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/sqlite.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dtnef-support=false

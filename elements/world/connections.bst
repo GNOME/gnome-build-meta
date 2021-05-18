@@ -10,7 +10,9 @@ sources:
       url: gitlab_gnome_org:GNOME/gtk-frdp.git
 
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

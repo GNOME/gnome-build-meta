@@ -29,3 +29,4 @@ variables:
     --without-team
     --without-selinux
     --without-libnm-gtk
+    --without-appindicator

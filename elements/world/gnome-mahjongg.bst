@@ -14,3 +14,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dcompile-schemas=disabled
+    -Dupdate-icon-cache=disabled
