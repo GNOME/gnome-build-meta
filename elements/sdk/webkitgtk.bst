@@ -9,6 +9,8 @@ sources:
   path: files/webkitgtk/toolchain.arm
 - kind: patch
   path: files/webkitgtk/fix-build.patch
+- kind: patch
+  path: files/webkitgtk/fix-crashes.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst

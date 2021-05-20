@@ -1,0 +1,15 @@
+--- /Source/WebCore/editing/FrameSelection.cpp	(revision 277599)
++++ /Source/WebCore/editing/FrameSelection.cpp	(revision 277600)
+@@ -364,5 +364,5 @@
+         }
+ 
+-        if (!m_document) {
++        if (!m_document || (!m_document->frame() && !newSelection.document())) {
+             m_selection = newSelection;
+             updateAssociatedLiveRange();
+@@ -377,4 +377,5 @@
+             return false;
+         }
++        ASSERT(m_document->frame());
+ 
+         if (closeTyping)
