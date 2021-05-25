@@ -28,10 +28,23 @@ default:
   - ostree init --repo repo/ --mode archive
 
   - |
+    REPO_PATH="${PWD}/repo/"
     for target in $TARGETS; do
-      $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
-      ostree pull-local --repo repo/ checkout-repo/
+      case "${target}" in
+        *+*)
+          dir="${target%+*}"
+          real_target="${target#*+}"
+        ;;
+        *)
+          dir=.
+          real_target="${target}"
+        ;;
+      esac
+      pushd "${dir}"
+      $BST -o arch $ARCH checkout --hardlinks "${real_target}" checkout-repo/
+      ostree pull-local --repo "${REPO_PATH}" checkout-repo/
       rm -rf checkout-repo/
+      popd
     done
 
   - ostree fsck --repo repo/ --all
