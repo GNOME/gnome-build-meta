@@ -4,8 +4,8 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_STRICT: '--no-strict'
   BST_TRACK_TAGS: 'false'
-  BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
-  BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
+  BST_NO_PUSH: "bst $BST_STRICT --config ${CI_PROJECT_DIR}/.gitlab-ci/buildstream-nopush.conf --log-file ${CI_PROJECT_DIR}/logs/build.log --colors"
+  BST: "bst $BST_STRICT --config ${CI_PROJECT_DIR}/.gitlab-ci/buildstream.conf --log-file ${CI_PROJECT_DIR}/logs/build.log --colors"
   FLATPAK_BRANCH: master
 
 stages:
@@ -24,6 +24,9 @@ default:
   - echo "$GITLAB_CAS_PUSH_CERT" > client.crt
   - echo "$GITLAB_CAS_PUSH_KEY" > client.key
 
+  - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
+  - git -C openh264-extension checkout openh264-2.0.0-5-0-g398990ce27764214ed0e1586177f1b2114de7532
+
 #
 # Templates shared by multiple jobs
 #
@@ -36,6 +39,7 @@ default:
   interruptible: true
   script:
   - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
+  - H264_TARGETS=()
 
   - |
     case "${ARCH}" in
@@ -44,11 +48,17 @@ default:
          ;;
       x86_64)
          TARGETS+=(vm/repo.bst vm/repo-devel.bst)
-         TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
+         H264_TARGETS+=(flatpak-repo.bst)
          ;;
     esac
 
   - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - |
+    if [ "${#H264_TARGETS[@]}" -gt 0 ]; then
+      pushd openh264-extension
+      ${BST} --max-jobs $(( $(nproc) / 4 )) build "${H264_TARGETS[@]}"
+      popd
+    fi
 
   # Store artifacts so we can inspect build failures
   artifacts:
@@ -192,7 +202,7 @@ generate-deploy-config:
       FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
       TARGETS: flatpak-runtimes.bst
       TARGETS_nightly: flatpak-platform-extensions.bst
-      TARGETS_nightly_x86_64: openh264-extension.bst:flatpak-repo.bst
+      TARGETS_nightly_x86_64: openh264-extension+flatpak-repo.bst
       ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
 
     END
