@@ -29,10 +29,11 @@ depends:
 variables:
   meson-local: >-
     -Dautobahn=disabled
-    -Dtls_check=false
     -Dgtk_doc=true
+    -Dinstalled_tests=true
     -Dntlm=disabled
     -Dsysprof=disabled
+    -Dtls_check=false
 
 public:
   bst:
