@@ -19,11 +19,8 @@ depends:
 - sdk/libhandy.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
-- sdk/webkitgtk.bst
+- sdk/libsoup.bst
+- sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-variables:
-  meson-local: >-
-    -Dsoup2=enabled
