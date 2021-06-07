@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libmediaart/1.9/libmediaart-1.9.4.tar.xz
-  ref: a57be017257e4815389afe4f58fdacb6a50e74fd185452b23a652ee56b04813d
+  url: gnome_downloads:libmediaart/1.9/libmediaart-1.9.5.tar.xz
+  ref: 07def5a42c482ae71d3e1f77a4d0fdc337f74226059a65284d6d5a241f0e9cd6
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

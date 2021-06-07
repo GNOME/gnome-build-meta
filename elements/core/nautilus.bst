@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/40/nautilus-40.1.tar.xz
-  ref: 8ecfb90174a0bd5815b1ceb9cbfcd91fec0fb5e34907a4f2df2d05e5d6c99d33
+  url: gnome_downloads:nautilus/40/nautilus-40.2.tar.xz
+  ref: b71ef2fe07e5eea89a2bb1e5bd30947bd18873bfb30f79cbf17edfbd4d20f60d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

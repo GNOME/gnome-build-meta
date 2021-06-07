@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.40/evolution-data-server-3.40.1.tar.xz
-  ref: eac75f348aa5defbe9473fa30ab6084635ee64d8e3eaaec60a62c27f149c3e22
+  url: gnome_downloads:evolution-data-server/3.40/evolution-data-server-3.40.2.tar.xz
+  ref: ec82951639f32a5cece80a8b0b9aa3f66b7d318e3ee2c1c35234f2e2bde8a418
 
 build-depends:
 - core-deps/intltool.bst

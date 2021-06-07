@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/libvirt-7.3.0.tar.xz
-  ref: 27bdbb85c0301475ab1f2ecd185c629ea0bfd5512bef3f6f1817b6c55d1dc1be
+  url: https://libvirt.org/sources/libvirt-7.4.0.tar.xz
+  ref: b366d73dee6ce77a226bedef592e0620ceb8e22e5998f60768017f79fc4ead26
 - kind: local
   path: files/libvirt/80-libvirt.preset
 

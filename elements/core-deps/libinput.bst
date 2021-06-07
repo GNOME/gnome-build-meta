@@ -21,5 +21,5 @@ variables:
 
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libinput/libinput-1.17.2.tar.xz
-  ref: b822263086b6588b9a9a153be97dea409f63927fb67b9a241748e76f222a5be1
+  url: https://www.freedesktop.org/software/libinput/libinput-1.18.0.tar.xz
+  ref: 18c6a286583268d39841348e561fbb4713bde0c643b360f5d8a3f27800afdb9a
