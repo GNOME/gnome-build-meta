@@ -21,7 +21,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkitgtk.bst
+- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
