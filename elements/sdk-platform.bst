@@ -42,7 +42,6 @@ depends:
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pipewire.bst
-- sdk/pipewire-libjack.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - sdk/webkitgtk.bst
