@@ -1,14 +1,10 @@
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.33.1.tar.xz
+  url: webkitgtk_org:webkitgtk-2.33.2.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-- kind: patch
-  path: files/webkitgtk/fix-build.patch
-- kind: patch
-  path: files/webkitgtk/fix-crashes.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
