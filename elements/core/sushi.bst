@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:sushi/3.38/sushi-3.38.0.tar.xz
-  ref: 5040029f7ffb6fd5491ca2db94202cca2450c3a56afba515d9d53713d2c4986e
+  url: gnome_downloads:sushi/3.38/sushi-3.38.1.tar.xz
+  ref: f3e6d10c815528d03a665fafd15c0719e017a813975b3af32076199e378888e9
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

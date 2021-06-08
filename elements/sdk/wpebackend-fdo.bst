@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: https://wpewebkit.org/releases/wpebackend-fdo-1.8.3.tar.xz
-  ref: 3d0b4282a1bd9e0664d7a20abe14e982f3285296ac62de56cae2a404b9d28b9e
+  url: https://wpewebkit.org/releases/wpebackend-fdo-1.8.4.tar.xz
+  ref: def59bed5e8cdabb65ffa76ee2eef349fba7b42a75dac80f3da5954b17f4074a
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
