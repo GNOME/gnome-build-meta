@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: gnome_downloads:evolution-data-server/3.38/evolution-data-server-3.38.4.tar.xz
   ref: ac53f16b2d51f3e7ff8025f9ca19f4a2d4ce3841d72ae9fe2bb897dc8099d705
+- kind: patch
+  path: files/evolution-data-server/0001-PrintableOptions.cmake-Correct-variable-name-compari.patch
 build-depends:
 - core-deps/intltool.bst
 - freedesktop-sdk.bst:components/gperf.bst
