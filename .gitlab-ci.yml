@@ -134,6 +134,7 @@ build-i386:
   - .i686
 
 build-aarch64:
+  allow_failure: true
   extends:
   - .build-template
   - .aarch64
