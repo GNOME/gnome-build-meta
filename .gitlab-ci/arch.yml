@@ -34,6 +34,7 @@ variables:
   - gnome-build-meta
   variables:
     ARCH: aarch64
+  allow_failure: true
 
 .arm:
   image: "${DOCKER_AARCH64}"
