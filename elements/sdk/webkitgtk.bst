@@ -47,6 +47,8 @@ depends:
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/gdb.bst
+- freedesktop-sdk.bst:components/vim.bst
 
 variables:
   optimize-debug: 'false'
