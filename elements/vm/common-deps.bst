@@ -24,6 +24,10 @@ depends:
 - vm/uresourced.bst
 - vm/android-udev-rules.bst
 
+- vm/ibus-anthy.bst
+- vm/ibus-hangul.bst
+- vm/ibus-libpinyin.bst
+
 - vm/NetworkManager-openvpn.bst
 - vm/NetworkManager-openconnect.bst
 - vm/NetworkManager-fortisslvpn.bst

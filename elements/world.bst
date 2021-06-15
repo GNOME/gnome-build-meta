@@ -5,7 +5,6 @@
 kind: stack
 depends:
 - world/accerciser.bst
-- world/anthy.bst
 - world/atkmm.bst
 - world/bijiben.bst
 - world/cairomm.bst
@@ -32,6 +31,7 @@ depends:
 - world/gnome-mines.bst
 - world/gnome-multi-writer.bst
 - world/gnome-nibbles.bst
+- world/gnome-online-miners.bst
 - world/gnome-recipes.bst
 - world/gnome-robots.bst
 - world/gnome-sound-recorder.bst
@@ -46,22 +46,17 @@ depends:
 - world/gupnp-igd.bst
 - world/hitori.bst
 - world/iagno.bst
-- world/ibus-anthy.bst
-- world/ibus-hangul.bst
-- world/ibus-libpinyin.bst
 - world/kgx.bst
-- world/kyotocabinet.bst
 - world/libadwaita.bst
 - world/libaperture.bst
 - world/libgepub.bst
 - world/libgnome-games-support.bst
 - world/libgrss.bst
 - world/libhandy-0.bst
-- world/libhangul.bst
 - world/libmanette.bst
-- world/libpinyin.bst
 - world/libshumate.bst
 - world/libsigcplusplus.bst
+- world/libzapojit.bst
 - world/lightsoff.bst
 - world/network-manager-applet.bst
 - world/pangomm.bst
@@ -76,3 +71,5 @@ depends:
 - world/telepathy-glib.bst
 - world/telepathy-logger.bst
 - world/telepathy-mission-control.bst
+- world/tracker-2.bst
+- world/tracker-miners-2.bst
