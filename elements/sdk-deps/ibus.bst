@@ -17,7 +17,7 @@ variables:
     --enable-memconf
     --disable-appindicator
     --disable-emoji-dict
-    --disable-engine
+    --enable-engine
     --disable-tests
     --disable-gconf
     --disable-gtk2
