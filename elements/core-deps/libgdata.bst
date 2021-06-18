@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/libgdata.git
-  track: master
+  track: libgdata-0-18
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
