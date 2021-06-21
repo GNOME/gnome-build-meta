@@ -31,6 +31,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 runtime-depends:
+- core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 
 variables:
