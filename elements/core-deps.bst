@@ -9,7 +9,6 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
-- core-deps/anthy.bst
 - core-deps/appstream.bst
 - core-deps/atkmm-1.6.bst
 - core-deps/avahi-gobject.bst
@@ -63,13 +62,9 @@ depends:
 - core-deps/gupnp-av.bst
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
-- core-deps/ibus-anthy.bst
 - core-deps/ibus-daemon.bst
-- core-deps/ibus-hangul.bst
-- core-deps/ibus-libpinyin.bst
 - core-deps/intltool.bst
 - core-deps/jsonrpc-glib.bst
-- core-deps/kyotocabinet.bst
 - core-deps/libbluray.bst
 - core-deps/libcacard.bst
 - core-deps/libcanberra.bst
@@ -90,7 +85,6 @@ depends:
 - core-deps/libgusb.bst
 - core-deps/libgweather.bst
 - core-deps/libgxps.bst
-- core-deps/libhangul.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libinput.bst
 - core-deps/libjcat.bst
@@ -105,7 +99,6 @@ depends:
 - core-deps/libostree.bst
 - core-deps/libpcap.bst
 - core-deps/libpeas.bst
-- core-deps/libpinyin.bst
 - core-deps/libqmi.bst
 - core-deps/libsigcplusplus-2.0.bst
 - core-deps/libssh2.bst
@@ -154,6 +147,7 @@ depends:
 - core-deps/upower.bst
 - core-deps/usbredir.bst
 - core-deps/vte.bst
+- core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 - core-deps/xdg-desktop-portal.bst
 - core-deps/xdg-sound-theme.bst
