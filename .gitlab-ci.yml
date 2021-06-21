@@ -144,11 +144,6 @@ build-aarch64:
   - .build-template
   - .aarch64
 
-build-ppc64le:
-  extends:
-  - .build-template
-  - .ppc64le
-
 
 generate-deploy-config:
   extends:
@@ -163,8 +158,6 @@ generate-deploy-config:
     artifacts: false
   - job: 'build-aarch64'
     artifacts: false
-  - job: 'build-ppc64le'
-    artifacts: false
   stage: deploy-config
   script:
   - test -f track-job.id && TRACK_JOB_ID=$(cat track-job.id)
@@ -174,7 +167,7 @@ generate-deploy-config:
         FLAT_MANAGER_SERVER=https://nightly.gnome.org/
         ENVIRONMENT_NAME=flatpak-nightly
         FLAT_MANAGER_REPO=nightly
-        SUPPORTED_ARCHES="x86_64 i686 aarch64 ppc64le"
+        SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
       *beta)
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
