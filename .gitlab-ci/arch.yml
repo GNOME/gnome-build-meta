@@ -5,7 +5,6 @@ variables:
 
   DOCKER_AMD64: "${DOCKER_REGISTRY}/bst16/amd64:${DOCKER_IMAGE_ID}"
   DOCKER_AARCH64: "${DOCKER_REGISTRY}/bst16/arm64:${DOCKER_IMAGE_ID}"
-  DOCKER_PPC64LE: "${DOCKER_REGISTRY}/bst16/ppc64le:${DOCKER_IMAGE_ID}"
 
 #
 # Architecture specific settings
@@ -42,12 +41,3 @@ variables:
   - gnome-build-meta
   variables:
     ARCH: arm
-
-.ppc64le:
-  image: "${DOCKER_PPC64LE}"
-  tags:
-  - ppc64le
-  - gnome-build-meta
-  variables:
-    ARCH: ppc64le
-  allow_failure: true
