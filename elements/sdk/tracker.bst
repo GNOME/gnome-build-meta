@@ -24,3 +24,4 @@ variables:
     -Dunicode_support=icu
     -Dstemmer=disabled
     -Dbash_completion_dir=%{datadir}/bash-completion/completions
+    -Dsoup2=false
