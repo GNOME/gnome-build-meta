@@ -19,7 +19,6 @@ depends:
 - sdk/graphene.bst
 - sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
-- sdk/librest.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
@@ -34,6 +33,7 @@ variables:
   meson-local: >-
     -Dbroadway-backend=true
     -Dmedia-ffmpeg=disabled
+    -Dprint-cloudprint=disabled
 
 public:
   bst:
