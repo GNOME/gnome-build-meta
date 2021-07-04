@@ -33,7 +33,6 @@ depends:
 - sdk/libhandy.bst
 - sdk/libibus.bst
 - sdk/libnotify.bst
-- sdk/librest.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst

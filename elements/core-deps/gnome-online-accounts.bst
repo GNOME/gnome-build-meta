@@ -12,10 +12,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/librest.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- sdk/librest.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
 - sdk/webkit2gtk-4.0.bst

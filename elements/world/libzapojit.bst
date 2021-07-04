@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - core-deps/intltool.bst
+- core-deps/librest.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
@@ -16,6 +17,5 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/librest.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
