@@ -1,16 +1,21 @@
 kind: autotools
+
 sources:
 - kind: tar
   url: github_com:ibus/ibus/releases/download/1.5.24/ibus-1.5.24.tar.gz
+
 build-depends:
+- sdk/vala.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - core-deps/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   conf-local: >-
     --enable-dconf
@@ -33,6 +38,7 @@ variables:
     --with-python=python3
     --enable-wayland
     --enable-introspection
+    --enable-vala
 
 public:
   bst:
