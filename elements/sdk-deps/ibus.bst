@@ -47,3 +47,5 @@ public:
       libibus:
       - '%{includedir}/**'
       - '%{libdir}/**'
+      - '%{datadir}/gir-1.0/**'
+      - '%{datadir}/vala/vapi/**'
