@@ -3,8 +3,4 @@
 # release team. Current contacts: Michael Catanzaro or Javier Jardon.
 kind: stack
 depends:
-- core/meta-gnome-core-os-services.bst
-- core/meta-gnome-core-shell.bst
-- core/meta-gnome-core-utilities.bst
-- core/meta-gnome-core-developer-tools.bst
-- core/meta-gnome-core-mobile.bst
+- core/calls.bst
