@@ -13,4 +13,5 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:components/gnutls.bst
 - vm/vpnc-scripts.bst
