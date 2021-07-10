@@ -49,7 +49,6 @@ depends:
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
-- sdk/zenity.bst
 # we can't depend on desktop-platform.bst from freedesktop-sdk directly as that would
 # bring elements we want to build ourselves, and that can cause conflicts.
 # This should be kept in sync with desktop-platform.bst from freedesktop-sdk whenever we

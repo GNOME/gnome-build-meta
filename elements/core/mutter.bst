@@ -18,6 +18,7 @@ depends:
 - core-deps/startup-notification.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
+- core-deps/zenity.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - sdk/gdk-pixbuf.bst
@@ -29,7 +30,6 @@ depends:
 - sdk/json-glib.bst
 - sdk/pango.bst
 - sdk/pipewire.bst
-- sdk/zenity.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/wayland.bst
