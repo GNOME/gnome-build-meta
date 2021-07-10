@@ -1,11 +1,9 @@
 kind: meson
-
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/libvirt-7.3.0.tar.xz
+  url: https://libvirt.org/sources/libvirt-7.5.0.tar.xz
 - kind: local
   path: files/libvirt/80-libvirt.preset
-
 build-depends:
 - core-deps/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/libxslt.bst
@@ -37,6 +35,7 @@ variables:
   meson-local: >-
     -Drunstatedir=%{runstatedir}
     -Dapparmor=disabled
+    -Dapparmor_profiles=disabled
     -Daudit=disabled
     -Dbash_completion=disabled
     -Dcapng=disabled
@@ -45,6 +44,8 @@ variables:
     -Ddriver_esx=disabled
     -Ddriver_hyperv=disabled
     -Ddriver_libxl=disabled
+    -Ddriver_lxc=disabled
+    -Ddriver_ch=disabled
     -Ddriver_vz=disabled
     -Ddtrace=disabled
     -Dfuse=disabled
@@ -58,6 +59,7 @@ variables:
     -Dnumad=disabled
     -Dopenwsman=disabled
     -Dsasl=disabled
+    -Dsanlock=disabled
     -Dsecdriver_apparmor=disabled
     -Dsecdriver_selinux=disabled
     -Dselinux=disabled
@@ -71,7 +73,6 @@ variables:
     -Dstorage_zfs=disabled
     -Dwireshark_dissector=disabled
     -Dgit_werror=disabled
-
 config:
   install-commands:
     (>):

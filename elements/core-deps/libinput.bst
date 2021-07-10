@@ -1,5 +1,4 @@
 kind: meson
-
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/doxygen.bst
@@ -18,7 +17,6 @@ variables:
     -Ddocumentation=false
     -Dtests=false
     -Dzshcompletiondir=no
-
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libinput/libinput-1.17.2.tar.xz
+  url: https://www.freedesktop.org/software/libinput/libinput-1.18.0.tar.xz
