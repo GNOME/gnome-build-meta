@@ -8,7 +8,8 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk/vala.bst
+# Disable until the newer glib vapi includes GLib.TlsProtocolVersion
+# - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -35,6 +36,7 @@ variables:
     -Dntlm=disabled
     -Dsysprof=disabled
     -Dtls_check=false
+    -Dvapi=disabled
 
 public:
   bst:
