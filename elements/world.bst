@@ -46,7 +46,6 @@ depends:
 - world/hitori.bst
 - world/iagno.bst
 - world/kgx.bst
-- world/libadwaita.bst
 - world/libaperture.bst
 - world/libgepub.bst
 - world/libgnome-games-support.bst

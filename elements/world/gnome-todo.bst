@@ -14,6 +14,6 @@ depends:
 - core-deps/libpeas.bst
 - sdk/glib.bst
 - sdk/gtk.bst
-- world/libadwaita.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

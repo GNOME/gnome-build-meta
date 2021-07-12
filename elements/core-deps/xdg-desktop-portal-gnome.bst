@@ -11,5 +11,6 @@ build-depends:
 depends:
 - sdk/gtk.bst
 - sdk/gsettings-desktop-schemas.bst
+- sdk/libadwaita.bst
 - core-deps/xdg-desktop-portal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
