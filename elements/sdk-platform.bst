@@ -29,6 +29,7 @@ depends:
 - sdk/gvfs-client.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
+- sdk/libadwaita.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
