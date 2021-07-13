@@ -44,7 +44,6 @@ default:
          ;;
       x86_64)
          TARGETS+=(vm/repo.bst vm/repo-devel.bst)
-         TARGETS+=(openh264-extension.bst:flatpak-repo.bst)
          ;;
     esac
 
@@ -192,7 +191,6 @@ generate-deploy-config:
       FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
       TARGETS: flatpak-runtimes.bst
       TARGETS_nightly: flatpak-platform-extensions.bst
-      TARGETS_nightly_x86_64: openh264-extension.bst:flatpak-repo.bst
       ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
 
     END
@@ -314,6 +312,27 @@ s3-image:
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
   - if: $CI_COMMIT_TAG
 
+openh264-x86_64:
+  extends:
+  - .x86_64
+  stage: deploy
+  needs: []
+  rules:
+  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
+    when: never
+  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+    when: manual
+  script:
+  - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
+  - cd openh264-extension
+  - bst build flatpak-repo.bst
+  - bst checkout flatpak-repo.bst repo
+  - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
+  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
+  - flat-manager-client purge $BUILD_ID
+  - exit $result
+
+
 s3-image-static:
   extends: .x86_64
   stage: reports
@@ -345,6 +364,7 @@ ostree-x86_64:
     optional: true
   - job: 'build-x86_64'
     artifacts: false
+
 
 cve_report:
   extends: .x86_64
