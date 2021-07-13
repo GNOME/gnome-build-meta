@@ -20,3 +20,12 @@ public:
   bst:
     integration-commands:
     - echo %{bindir}/fish >> /etc/shells
+
+# Do not display the .desktop file in the launcher.
+# The reason it was added was for appimage builds, not cause its a critical part of the software.
+# It doesn't need to be shown in gnome-os.
+# https://github.com/fish-shell/fish-shell/commit/eb7172458b628b81a3f70f38a0e58c7c23202f05
+config:
+  install-commands:
+    (>):
+    - echo "NoDisplay=true" >> "%{install-root}%{datadir}/applications/fish.desktop"
