@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/polari.git
-  track: master
+  track: main
 
 build-depends:
 - sdk/appstream-glib.bst
