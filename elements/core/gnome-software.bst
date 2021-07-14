@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-software.git
-  track: master
+  track: main
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst
