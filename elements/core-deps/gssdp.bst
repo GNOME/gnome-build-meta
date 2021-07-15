@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gssdp/1.3/gssdp-1.3.0.tar.xz
-  ref: e739cf33f813403a53973cd8f2882dcd7208bad9582269f7066fc9e8ea3a52cc
+  url: gnome_downloads:gssdp/1.2/gssdp-1.2.3.tar.xz
+  ref: a263dcb6730e3b3dc4bbbff80cf3fab4cd364021981d419db6dd5a8e148aa7e8
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
