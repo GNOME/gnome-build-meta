@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://libvirt.org/sources/libvirt-7.4.0.tar.xz
-  ref: b366d73dee6ce77a226bedef592e0620ceb8e22e5998f60768017f79fc4ead26
+  url: https://libvirt.org/sources/libvirt-7.5.0.tar.xz
+  ref: 90107b49032c2f3022c84076c649135187fbc70c8efd16427c6c4b6d613c2895
 - kind: local
   path: files/libvirt/80-libvirt.preset
 
@@ -37,6 +37,7 @@ depends:
 variables:
   meson-local: >-
     -Dapparmor=disabled
+    -Dapparmor_profiles=disabled
     -Daudit=disabled
     -Dbash_completion=disabled
     -Dcapng=disabled
@@ -45,6 +46,8 @@ variables:
     -Ddriver_esx=disabled
     -Ddriver_hyperv=disabled
     -Ddriver_libxl=disabled
+    -Ddriver_lxc=disabled
+    -Ddriver_ch=disabled
     -Ddriver_vz=disabled
     -Ddtrace=disabled
     -Dfuse=disabled
@@ -58,6 +61,7 @@ variables:
     -Dnumad=disabled
     -Dopenwsman=disabled
     -Dsasl=disabled
+    -Dsanlock=disabled
     -Dsecdriver_apparmor=disabled
     -Dsecdriver_selinux=disabled
     -Dselinux=disabled

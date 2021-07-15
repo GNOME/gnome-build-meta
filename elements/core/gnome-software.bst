@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/40/gnome-software-40.2.tar.xz
-  ref: cbd1dd2a0bafc3f53dde42003c4a4a03746cb8d64dc5d27eb8dbe6736ee72796
+  url: gnome_downloads:gnome-software/40/gnome-software-40.3.tar.xz
+  ref: cb7f536cb09f582c90755c90974f3e83dff9539ea2b7c09689bb4e0ac3ffc85f
 build-depends:
 - core/sysprof.bst
 - sdk/gtk-doc.bst

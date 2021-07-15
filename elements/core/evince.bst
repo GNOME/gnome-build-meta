@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:evince/40/evince-40.1.tar.xz
-  ref: 7a666363c350af2e3bbba7f14b3c1befc5012f9ed3d9d073447f4c59f33dcf2d
+  url: gnome_downloads:evince/40/evince-40.3.tar.xz
+  ref: 23203820026a3acebe923bc784bb7e46213f91a2919419609f372f9fc34e387f
 
 build-depends:
 - sdk/appstream-glib.bst

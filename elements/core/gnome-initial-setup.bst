@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/40/gnome-initial-setup-40.2.tar.xz
-  ref: 3bd71483f60c0d8f7243913b92625ef15c77892fee3f93227ea5f0f97b0c5aab
+  url: gnome_downloads:gnome-initial-setup/40/gnome-initial-setup-40.3.tar.xz
+  ref: e503fd1d48852f5d76aabf622d1ef2996b384d88da31fd16a10d513f09a90dd7
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
