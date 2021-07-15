@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsoup.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:libsoup/2.99/libsoup-2.99.9.tar.xz
+  ref: 20fe3306836fa759a1d2a98942cfc5bdb0e3ce8c2ff103f42834896413e915cc
 build-depends:
 - sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
@@ -36,7 +34,6 @@ variables:
     -Dntlm=disabled
     -Dsysprof=enabled
     -Dtls_check=false
-
 public:
   bst:
     split-rules:

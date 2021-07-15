@@ -1,9 +1,8 @@
 kind: autotools
-
 sources:
 - kind: tar
   url: github_com:ibus/ibus/releases/download/1.5.24/ibus-1.5.24.tar.gz
-
+  ref: abf33a965063629d3bbdab8a5948736ce3a9523cc3d6331e5ea0ec5e8ea7421f
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst
@@ -39,7 +38,6 @@ variables:
     --enable-wayland
     --enable-introspection
     --enable-vala
-
 public:
   bst:
     split-rules:

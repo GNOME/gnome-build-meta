@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgxps.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:libgxps/0.3/libgxps-0.3.2.tar.xz
+  ref: 6d27867256a35ccf9b69253eb2a88a32baca3b97d5f4ef7f82e3667fa435251c
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

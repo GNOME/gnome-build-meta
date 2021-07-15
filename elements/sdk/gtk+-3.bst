@@ -1,12 +1,10 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: gtk-3-24
+- kind: tar
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.30.tar.xz
+  ref: ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9
 - kind: patch
   path: files/gtk3-werror.patch
-
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
@@ -49,7 +47,6 @@ variables:
     -Dintrospection=true
     -Dtracker3=true
     -Dprofiler=false
-
 public:
   bst:
     integration-commands:

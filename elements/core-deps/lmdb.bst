@@ -1,5 +1,4 @@
 kind: manual
-
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
@@ -16,3 +15,4 @@ config:
 sources:
 - kind: tar
   url: github_com:LMDB/lmdb/archive/LMDB_0.9.28.tar.gz
+  ref: 47457d3d3ae2c489b52078a07e9f55ec6e094b48c2204029c7754e2972fe1882

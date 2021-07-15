@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz
+  ref: 585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

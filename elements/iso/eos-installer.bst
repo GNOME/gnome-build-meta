@@ -1,5 +1,4 @@
 kind: autotools
-
 sources:
 # The tarball does not build. We need to build from git.
 # The tarball is just a snapshot of the git repository and is missing
@@ -13,6 +12,7 @@ sources:
     ext/libglnx:
       url: gitlab_gnome_org:GNOME/libglnx.git
       checkout: true
+  ref: Release_3.9.5-0-gebaf3c90651d9174f125e2e0b8efc5057f220d72
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
 - kind: patch
@@ -21,7 +21,6 @@ sources:
   path: files/eos-installer/remove-branding.patch
 - kind: patch
   path: files/eos-installer/remove-endless-support.patch
-
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/gnupg.bst

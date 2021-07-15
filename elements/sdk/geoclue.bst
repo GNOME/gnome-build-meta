@@ -1,9 +1,8 @@
 kind: meson
-
 sources:
 - kind: tar
   url: https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.5.7/geoclue-2.5.7.tar.gz
-
+  ref: 5c3bbfd598bfa54e32cb72a583cdad8aec4208ed83db6127e9b254554967fdc3
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
@@ -23,7 +22,6 @@ variables:
     -Dcdma-source=false
     -Dmodem-gps-source=false
     -Dnmea-source=false
-
 public:
   bst:
     split-rules:

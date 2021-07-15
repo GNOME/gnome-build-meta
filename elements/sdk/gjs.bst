@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gjs.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gjs/1.68/gjs-1.68.1.tar.xz
+  ref: 2ffa3ec2041104fcf9ab5dcc8f7cd9caa062278590318ffef9541956af5b4c70
 build-depends:
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -19,7 +17,6 @@ depends:
 variables:
   meson-local: >-
     -Dprofiler=enabled
-
 public:
   bst:
     split-rules:

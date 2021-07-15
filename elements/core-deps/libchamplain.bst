@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libchamplain.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:libchamplain/0.12/libchamplain-0.12.20.tar.xz
+  ref: 0232b4bfcd130a1c5bda7b6aec266bf2d06e701e8093df1886f1e26bc1ba3066
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-software.git
-  track: main
+- kind: tar
+  url: gnome_downloads:gnome-software/40/gnome-software-40.3.tar.xz
+  ref: cb7f536cb09f582c90755c90974f3e83dff9539ea2b7c09689bb4e0ac3ffc85f
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
