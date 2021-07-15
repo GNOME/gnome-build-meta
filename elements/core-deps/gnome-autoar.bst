@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-autoar.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-autoar/0.3/gnome-autoar-0.3.3.tar.xz
+  ref: 272400f73a375a7e88fdf1e12591bfb8f3f03edf01780cadcd74f70b613e5c04
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

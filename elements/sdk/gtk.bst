@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gtk/4.3/gtk-4.3.1.tar.xz
+  ref: 495c1f4c3479174f0989c6842ec0cc20f68a065cd47712dbec0ae795208b62de
 build-depends:
 - sdk-deps/sassc.bst
 - sdk/sysprof-minimal.bst
@@ -38,7 +36,6 @@ variables:
     -Dmedia-ffmpeg=disabled
     -Dprint-cloudprint=disabled
     -Dprofiler=true
-
 public:
   bst:
     split-rules:

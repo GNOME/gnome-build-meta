@@ -1,11 +1,10 @@
 kind: autotools
-
 sources:
 - kind: tar
   url: https://www.freedesktop.org/software/cups-pk-helper/releases/cups-pk-helper-0.2.6.tar.xz
+  ref: 959af8f2f5a2761e7e498b61c9caf25ae963335031eae9972d999e9a0d97a228
 - kind: local
   path: files/cups-pk-helper/cups-pk-helper.service
-
 build-depends:
 - sdk/glib.bst
 - core-deps/intltool.bst

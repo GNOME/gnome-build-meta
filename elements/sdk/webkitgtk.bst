@@ -1,11 +1,11 @@
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.33.2.tar.xz
+  ref: 32bb0ace3cf4df42ff805e00de3fc13a2287f173d3ff5982816a7c5b4f8b551b
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
@@ -61,7 +61,6 @@ variables:
     environment:
       CFLAGS: '%{flags_arm} -g1'
       CXXFLAGS: '%{flags_arm} -g1'
-
 public:
   cpe:
     product: webkitgtk+

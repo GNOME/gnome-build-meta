@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gdm/40/gdm-40.0.tar.xz
+  ref: 5ed74b739d3a232ffb1e4a132bcf965bdfe955d995b528773588775b02f2950e
 - kind: local
   path: files/gdm
   directory: gdm-config
@@ -29,7 +29,6 @@ variables:
     -Drun-dir=/run/gdm
     -Dselinux=disabled
     -Dxdmcp=disabled
-
 config:
   install-commands:
     (>):

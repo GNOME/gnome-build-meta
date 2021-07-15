@@ -1,13 +1,11 @@
 include: .gitlab-ci/arch.yml
-
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'false'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: master
-
+  FLATPAK_BRANCH: 41alpha
 stages:
 - track
 - build
@@ -55,7 +53,6 @@ default:
     paths:
     - logs
     expire_in: '1 week'
-
 .manual-image-template:
   stage: deploy
   needs:
@@ -71,14 +68,12 @@ default:
     paths:
     - image
     expire_in: '2 days'
-
 .deploy-rules:
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
-
 .ostree-template:
   extends: .deploy-rules
   stage: deploy
@@ -119,7 +114,6 @@ track:
   - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
-  # only run on branches targeting master
   rules:
   - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
   artifacts:
@@ -219,7 +213,6 @@ deploy-flatpak:
     include:
     - artifact: flatpak-deploy.yml
       job: generate-deploy-config
-
 vm-image-x86_64:
   extends:
   - .manual-image-template
@@ -231,7 +224,6 @@ vm-image-x86_64:
     artifacts: false
   variables:
     IMAGE: vm/image.bst
-
 .pinebook-pro-image:
   extends:
   - .manual-image-template
@@ -243,7 +235,6 @@ vm-image-x86_64:
     artifacts: false
   variables:
     IMAGE: boards/pinebook-pro/image.bst
-
 rock64-image:
   extends:
   - .manual-image-template
@@ -255,7 +246,6 @@ rock64-image:
     artifacts: false
   variables:
     IMAGE: boards/rock64/image.bst
-
 raspberrypi-4-image:
   extends:
   - .manual-image-template
@@ -267,7 +257,6 @@ raspberrypi-4-image:
     artifacts: false
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
-
 iso-installer-x86_64:
   extends:
   - .manual-image-template
@@ -279,7 +268,6 @@ iso-installer-x86_64:
     optional: true
   - job: 'build-x86_64'
     artifacts: false
-
 s3-image:
   extends: .x86_64
   stage: deploy
@@ -311,7 +299,6 @@ s3-image:
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
   - if: $CI_COMMIT_TAG
-
 openh264-x86_64:
   extends:
   - .x86_64
@@ -364,8 +351,6 @@ ostree-x86_64:
     optional: true
   - job: 'build-x86_64'
     artifacts: false
-
-
 cve_report:
   extends: .x86_64
   stage: reports

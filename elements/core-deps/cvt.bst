@@ -1,5 +1,4 @@
 kind: autotools
-
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
@@ -23,7 +22,6 @@ variables:
     --disable-glx
     --disable-pciaccess
     --disable-int10-module
-
 config:
   build-commands:
   - |
@@ -36,3 +34,4 @@ config:
 sources:
 - kind: tar
   url: https://www.x.org/archive/individual/xserver/xorg-server-1.20.11.tar.bz2
+  ref: 914c796e3ffabe1af48071d40ccc85e92117c97a9082ed1df29e4d64e3c34c49

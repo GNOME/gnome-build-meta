@@ -1,10 +1,8 @@
 kind: meson
-
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glib.git
-  track: main
-
+- kind: tar
+  url: gnome_downloads:glib/2.69/glib-2.69.0.tar.xz
+  ref: 1cdb3fd8610f3c57b6622e5cd68e0a3210561d80b0eceb971eb51fb8b63dbfae
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -37,7 +35,6 @@ variables:
     -Dinstalled-tests=true
     -Dselinux=disabled
     -Dsysprof=enabled
-
 public:
   bst:
     integration-commands:
