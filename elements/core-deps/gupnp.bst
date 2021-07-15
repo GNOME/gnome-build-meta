@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gupnp/1.3/gupnp-1.3.0.tar.xz
-  ref: df8279293aae45ea6bb6de1b13bf1988285c8f2f4f25569fb0d79325a8471666
+  url: gnome_downloads:gupnp/1.1/gupnp-1.1.2.tar.xz
+  ref: 300a7c8fe86a8c90ea0820aae4423555189edba13159484716369aa8cf83d412
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gupnp-dlna/0.11/gupnp-dlna-0.11.0.tar.xz
-  ref: ffe130d2d9f965a117bac71c710bddc69bc94ca0cebc845f34cfb1e47276e85b
+  url: gnome_downloads:gupnp-dlna/0.10/gupnp-dlna-0.10.5.tar.xz
+  ref: 123e368227c11d5c17fc1aa76cbdaffa345355eb51d172cd39fc74a5b468ff6a
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
