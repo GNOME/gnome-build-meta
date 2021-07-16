@@ -1,7 +1,7 @@
 kind: cmake
 
 (@):
-  - elements/sdk/webkitgtk.bst
+  - elements/sdk/webkitgtk.inc
 
 depends:
   (>):
