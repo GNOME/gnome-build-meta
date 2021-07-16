@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/BuildStream/1.6/BuildStream-1.6.1.tar.xz
+  url: https://github.com/apache/buildstream/archive/refs/tags/1.6.2.tar.gz
 
 depends:
 - sdk-deps/bubblewrap.bst
