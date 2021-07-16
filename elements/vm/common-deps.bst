@@ -23,6 +23,7 @@ depends:
 - vm/opensc.bst
 - vm/uresourced.bst
 - vm/android-udev-rules.bst
+- vm/v4l2loopback-utils.bst
 
 - vm/ibus-anthy.bst
 - vm/ibus-hangul.bst

@@ -15,4 +15,4 @@ depends:
 - core-deps/libostree.bst
 - vm/plymouth-gnome-theme.bst
 - vm/eos-repartition.bst
-
+- vm/v4l2loopback-modules.bst
