@@ -16,8 +16,9 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/pipewire.bst
+- freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-
-    -Drdp=false
+    -Drdp_unicode_input=false
