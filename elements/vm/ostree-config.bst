@@ -37,6 +37,7 @@ config:
     mkdir -p "%{install-root}/sysroot"
     ln -s sysroot/ostree "%{install-root}/ostree"
     ln -s var/home "%{install-root}/home"
+    rm -rf "%{install-root}/root"
     ln -s var/roothome "%{install-root}/root"
     ln -s run/media "%{install-root}/media"
 
