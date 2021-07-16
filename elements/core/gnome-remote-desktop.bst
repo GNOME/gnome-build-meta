@@ -20,4 +20,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Drdp=false
+    -Drdp_unicode_input=false
