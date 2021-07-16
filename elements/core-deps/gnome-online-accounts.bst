@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 sources:
 - kind: tar
   url: gnome_downloads:gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz
@@ -7,8 +7,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/librest.bst
 - sdk/gcr.bst
@@ -20,5 +19,5 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  meson-local: >-
-    -Dgtk_doc=true
+  conf-local: >-
+    --disable-telepathy
