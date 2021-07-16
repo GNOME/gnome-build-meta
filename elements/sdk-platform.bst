@@ -236,6 +236,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xxf86vm.bst
 - freedesktop-sdk.bst:components/xz-docs.bst
 - freedesktop-sdk.bst:components/zip.bst
+- freedesktop-sdk.bst:components/zstd.bst
 - freedesktop-sdk.bst:integration/mtab.bst
 
 (?):
