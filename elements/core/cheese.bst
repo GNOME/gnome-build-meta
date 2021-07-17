@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:cheese/3.38/cheese-3.38.0.tar.xz
   ref: 88d2732b421b903110a2628db25c0d61e219c42bdfb5971151033fba95a8d16f
+- kind: patch
+  path: files/cheese/7cf6268e54620bbbe5e6e61800c50fb0cb4bea57.patch
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
