@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:folks/0.15/folks-0.15.2.tar.xz
   ref: ef777b2696d15ec31ba8b940ecabc17fe7fab909584f9425258f54d295ccd122
+- kind: patch
+  path: files/folks/8aa333a89edec4b7061409f7e032b04401bdd453.patch
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
