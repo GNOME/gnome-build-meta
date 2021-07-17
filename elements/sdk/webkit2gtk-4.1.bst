@@ -8,9 +8,8 @@ depends:
   - sdk/libsoup.bst
 
 variables:
-  # FIXME: Enable gamepad support via libmanette once freedesktop-sdk's gudev is built with gobject-introspection support
   cmake-local: >-
-    -DPORT=GTK -DENABLE_GAMEPAD=OFF
+    -DPORT=GTK
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 

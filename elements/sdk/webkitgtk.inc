@@ -26,6 +26,7 @@ depends:
 - sdk/geoclue.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
+- sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libwpe.bst
