@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-control-center/40/gnome-control-center-40.0.tar.xz
   ref: ccc9a5736517385109ae5a59906c258244dd879b7503ad5984cf41655cb302f1
+- kind: patch
+  path: files/gnome-control-center/981.patch
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
