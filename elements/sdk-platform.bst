@@ -32,6 +32,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
+- sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst

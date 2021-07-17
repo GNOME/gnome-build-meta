@@ -15,6 +15,6 @@ depends:
 - core-deps/clutter.bst
 - core-deps/gsound.bst
 - sdk/gtk+-3.bst
+- sdk/libmanette.bst
 - sdk/librsvg.bst
-- world/libmanette.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
