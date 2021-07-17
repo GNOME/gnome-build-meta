@@ -15,10 +15,10 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
+- sdk/libmanette.bst
 - sdk/librsvg.bst
 - sdk/libsoup-2.4.bst
 - world/gnome-themes-extra.bst
-- world/libmanette.bst
 - world/retro-gtk.bst
 - world/tracker-2.bst
 - world/tracker-miners-2.bst

@@ -53,7 +53,6 @@ depends:
 - world/libgnome-games-support.bst
 - world/libgrss.bst
 - world/libhandy-0.bst
-- world/libmanette.bst
 - world/libshumate.bst
 - world/libsigcplusplus.bst
 - world/libzapojit.bst
