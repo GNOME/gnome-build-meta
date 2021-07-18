@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-shell.git
-  track: master
+  track: main
   submodules:
     subprojects/gvc:
       checkout: true

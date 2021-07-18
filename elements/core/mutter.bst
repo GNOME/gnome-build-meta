@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/mutter.git
-  track: master
+  track: main
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
