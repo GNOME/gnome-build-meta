@@ -8,5 +8,6 @@ depends:
 - vm/common-deps.bst
 - vm/git-lfs.bst
 - vm/initramfs.bst
+- vm/lxc.bst
 - vm/os-release-devel.bst
 - vm/toolbox.bst
