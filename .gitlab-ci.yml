@@ -317,6 +317,7 @@ openh264-x86_64:
   - .x86_64
   stage: deploy
   needs: []
+  allow_failure: true
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
     when: never
