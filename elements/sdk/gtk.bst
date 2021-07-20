@@ -37,6 +37,7 @@ variables:
     -Dbroadway-backend=true
     -Dmedia-ffmpeg=disabled
     -Dprint-cloudprint=disabled
+    -Dvulkan=disabled
     -Dprofiler=true
 
 public:
