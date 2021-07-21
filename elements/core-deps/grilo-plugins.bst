@@ -16,7 +16,6 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/libgdata.bst
 - core-deps/libmediaart.bst
-- core-deps/librest.bst
 - core-deps/totem-pl-parser.bst
 - sdk/json-glib.bst
 - sdk/libsoup-2.4.bst
