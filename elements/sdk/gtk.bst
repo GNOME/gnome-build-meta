@@ -9,7 +9,7 @@ build-depends:
 - sdk-deps/sassc.bst
 - sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -35,6 +35,7 @@ depends:
 variables:
   meson-local: >-
     -Dbroadway-backend=true
+    -Dgtk_doc=true
     -Dmedia-ffmpeg=disabled
     -Dprint-cloudprint=disabled
     -Dvulkan=disabled
