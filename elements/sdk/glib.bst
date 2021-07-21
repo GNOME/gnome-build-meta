@@ -33,7 +33,7 @@ depends:
 
 variables:
   meson-local: >-
-    -Dgtk_doc=false
+    -Dgtk_doc=true
     -Dinstalled-tests=true
     -Dselinux=disabled
     -Dsysprof=enabled
