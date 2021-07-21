@@ -5,7 +5,7 @@ sources:
   track: master
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
@@ -16,6 +16,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
+    -Dgtk_doc=true
     -Dx11=false
 public:
   bst:
