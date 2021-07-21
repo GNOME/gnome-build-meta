@@ -5,13 +5,14 @@ sources:
   track: master
 build-depends:
 - sdk/gobject-introspection.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dgtk_doc=disabled
+    -Dgtk_doc=enabled
 public:
   bst:
     split-rules:
