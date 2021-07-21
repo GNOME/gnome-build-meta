@@ -20,7 +20,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Ddocs=false
+    -Ddocs=true
     -Dunicode_support=icu
     -Dstemmer=disabled
     -Dbash_completion_dir=%{datadir}/bash-completion/completions
