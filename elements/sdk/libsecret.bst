@@ -15,7 +15,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dgtk_doc=false
+    -Dgtk_doc=true
 public:
   bst:
     split-rules:
