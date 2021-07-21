@@ -13,12 +13,12 @@ build-depends:
 
 depends:
 - core-deps/librest.bst
+- core-deps//webkit2gtk-4.0.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

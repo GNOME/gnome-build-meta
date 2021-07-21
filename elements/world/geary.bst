@@ -27,7 +27,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- sdk/webkit2gtk-4.0.bst
+- core-deps/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/sqlite.bst

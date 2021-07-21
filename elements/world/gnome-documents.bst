@@ -28,7 +28,7 @@ depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
-- sdk/webkit2gtk-4.0.bst
+- core-deps/webkit2gtk-4.0.bst
 - world/libgepub.bst
 - world/libzapojit.bst
 - world/tracker-2.bst

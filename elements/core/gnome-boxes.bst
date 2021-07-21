@@ -36,6 +36,6 @@ depends:
 - sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/tracker.bst
-- sdk/webkit2gtk-4.0.bst
+- core-deps/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

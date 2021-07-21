@@ -27,7 +27,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkit2gtk-4.0.bst
+- core-deps/webkit2gtk-4.0.bst
 - world/gtkspell.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
