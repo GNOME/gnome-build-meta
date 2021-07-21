@@ -5,7 +5,7 @@ sources:
   track: main
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
@@ -26,5 +26,6 @@ public:
         - '%{libdir}/libpangoft2-1.0.so'
 variables:
   meson-local: >-
+    -Dgtk_doc=true
     -Dlibthai=disabled
     -Dxft=disabled
