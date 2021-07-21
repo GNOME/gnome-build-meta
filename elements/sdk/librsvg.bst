@@ -18,7 +18,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
-    --disable-gtk-doc
+    --enable-gtk-doc
     --enable-vala
 public:
   bst:
