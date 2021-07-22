@@ -31,7 +31,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/gtksourceview.bst
+- sdk/gtksourceview-4.bst
 - sdk/json-glib.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst

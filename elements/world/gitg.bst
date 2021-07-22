@@ -18,7 +18,7 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/gtksourceview.bst
+- sdk/gtksourceview-4.bst
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - sdk/libsecret.bst

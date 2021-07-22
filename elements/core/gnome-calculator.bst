@@ -13,7 +13,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/gtksourceview.bst
+- sdk/gtksourceview-4.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsoup-2.4.bst

@@ -21,6 +21,6 @@ depends:
 - core-deps/libpeas.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtksourceview.bst
+- sdk/gtksourceview-4.bst
 - sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

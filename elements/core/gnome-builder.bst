@@ -25,7 +25,7 @@ depends:
 - core/sysprof.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/gtksourceview.bst
+- sdk/gtksourceview-4.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
