@@ -43,5 +43,5 @@ depends:
 
 variables:
   meson-local: >-
-    -Dxwayland_initfd=disabled
+    -Dxwayland_initfd=enabled
     -Dprofiler=true
