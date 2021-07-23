@@ -369,7 +369,7 @@ ostree-x86_64:
 
 cve_report:
   extends: .x86_64
-  stage: reports
+  stage: 'deploy'
   needs:
   - job: 'track'
     optional: true
@@ -395,5 +395,18 @@ cve_report:
   artifacts:
     paths:
     - cve-reports
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+
+pages:
+  stage: 'reports'
+  needs:
+    - job : 'cve_report'
+      artifacts: true
+  script:
+    - 'mv cve-reports/ public/'
+  artifacts:
+    paths:
+    - 'public'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
