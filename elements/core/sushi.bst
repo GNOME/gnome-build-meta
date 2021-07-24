@@ -6,9 +6,6 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/clutter-gst.bst
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
 - core/evince.bst
 - sdk/gjs.bst
 - sdk/gobject-introspection.bst

@@ -11,9 +11,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
 - core-deps/gsound.bst
+- sdk/clutter-gtk.bst
+- sdk/clutter.bst
 - sdk/gtk+-3.bst
 - sdk/libmanette.bst
 - sdk/librsvg.bst

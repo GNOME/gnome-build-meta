@@ -7,6 +7,10 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/atk.bst
 - sdk/cantarell-fonts.bst
+- sdk/clutter-gst.bst
+- sdk/clutter-gtk.bst
+- sdk/clutter.bst
+- sdk/cogl.bst
 - sdk/enchant-2.bst
 - sdk/fcitx.bst
 - sdk/gcab.bst
