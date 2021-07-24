@@ -12,5 +12,4 @@ variables:
 sources:
 - kind: git_tag
   url: https://github.com/uiri/toml.git
-  track: master
-  ref: 0.10.1-0-ga86fc1fbd650a19eba313c3f642c9e2c679dc8d6
+  track: 0.10.2-0-g3f637dba5f68db63d4b30967fedda51c82459471

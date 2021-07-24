@@ -13,4 +13,4 @@ depends:
 - vm/buildstream/buildstream.bst
 
 runtime-depends:
-- vm/buildstream/toml.bst
+- sdk-deps/python-toml.bst
