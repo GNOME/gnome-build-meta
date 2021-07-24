@@ -12,5 +12,4 @@ variables:
 sources:
 - kind: git_tag
   url: https://github.com/leohemsted/smartypants.py.git
-  track: master
-  ref: v2.0.1-4-gc46d26c559d706b6e0aa423190ab2d6edf1fdfcd
+  track: v2.0.1-0-gd4b99ab7e7e6f42ba2d75624715c5c47c8de650d
