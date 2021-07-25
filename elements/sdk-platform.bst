@@ -133,7 +133,6 @@ depends:
 - freedesktop-sdk.bst:components/libksba.bst
 - freedesktop-sdk.bst:components/libnice.bst
 - freedesktop-sdk.bst:components/libogg.bst
-- freedesktop-sdk.bst:components/libp11.bst
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libproxy.bst
 - freedesktop-sdk.bst:components/libpsl.bst
@@ -155,6 +154,7 @@ depends:
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/locales.bst
 - freedesktop-sdk.bst:components/lz4.bst
 - freedesktop-sdk.bst:components/lzip.bst
@@ -171,7 +171,6 @@ depends:
 - freedesktop-sdk.bst:components/opencl.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/openssh.bst
-- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
@@ -198,8 +197,8 @@ depends:
 - freedesktop-sdk.bst:components/unzip.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/v4l-utils.bst
+- freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:components/vulkan-icd-loader.bst
-- freedesktop-sdk.bst:components/vulkan-validation-layers.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/webrtc-audio-processing.bst
 - freedesktop-sdk.bst:components/wget.bst
@@ -243,3 +242,9 @@ depends:
 - freedesktop-sdk.bst:components/zip.bst
 - freedesktop-sdk.bst:components/zstd.bst
 - freedesktop-sdk.bst:integration/mtab.bst
+
+(?):
+- arch != "i686":
+    depends:
+      (>):
+      - freedesktop-sdk.bst:components/vulkan-validation-layers.bst
