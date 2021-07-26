@@ -15,5 +15,5 @@ build-depends:
 depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

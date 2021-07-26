@@ -12,6 +12,6 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/gtksourceview-4.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

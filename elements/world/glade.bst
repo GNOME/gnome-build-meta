@@ -18,4 +18,4 @@ depends:
 - sdk/gjs.bst
 - sdk/gtk+-3.bst
 - sdk/pygobject.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/webkitgtk.bst

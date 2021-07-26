@@ -18,7 +18,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

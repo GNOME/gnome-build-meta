@@ -12,10 +12,13 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
-- sdk/webkit2gtk-4.1.bst
+- sdk/webkitgtk.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  conf-local: >-
+    --with-webkit2gtk-4-0
 public:
   bst:
     integration-commands:
