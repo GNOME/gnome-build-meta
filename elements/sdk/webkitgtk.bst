@@ -12,6 +12,7 @@ build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
@@ -57,7 +58,10 @@ variables:
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   cmake-local: >-
-    -DPORT=GTK -DENABLE_WEBDRIVER=OFF -DUSE_SOUP2=ON
+    -DPORT=GTK
+    -DENABLE_GTKDOC=ON
+    -DENABLE_WEBDRIVER=OFF
+    -DUSE_SOUP2=ON
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):
