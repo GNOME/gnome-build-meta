@@ -1,14 +1,12 @@
 kind: cmake
-
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.32.2.tar.xz
-  ref: 1790f86975bdef957ba9a12fc09202de8f55c885ee38467afc50d2bdb7a6c5cd
+  url: webkitgtk_org:webkitgtk-2.32.3.tar.xz
+  ref: c1f496f5ac654efe4cef62fbd4f2fbeeef265a07c5e7419e5d2900bfeea52cbc
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
