@@ -7,12 +7,16 @@ variables:
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: '40'
+  OPENQA_HOST: https://openqa.gnome.org
+  OPENQA_NEEDLES_GIT: https://gitlab.com/jamesthomas/gnome-needles
+  OPENQA_NEEDLES_SHA: master
 
 stages:
 - track
 - build
 - deploy-config
 - deploy
+- test
 - reports
 
 default:
@@ -248,6 +252,93 @@ iso-installer-x86_64:
   - .x86_64
   variables:
     IMAGE: iso/image.bst
+
+test-iso-installer-x86_64:
+  stage: test
+  image:
+    name: suse_worker:latest
+    entrypoint: [ "/bin/bash", "-c" ]
+  when: manual
+  variables:
+    IMAGE: iso/image.bst
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'iso-installer-x86_64'
+    artifacts: true
+  script:
+  - env
+  - mkdir -p /data/factory/iso/
+  - rm /etc/openqa/*
+  - |
+    cat >/etc/openqa/client.conf <<EOF
+    [openqa.gnome.org]
+    key = $OPENQA_API_KEY
+    secret = $OPENQA_API_SECRET
+    EOF
+  - |
+    # To ensure we create a unique worker for each ad-hoc test run, create a new
+    # uniqe machine class, which can only be used for this test
+    worker_class=qemu_x86_64-$(uuidgen)
+    cat >/etc/openqa/workers.ini <<EOF
+    [global]
+    WORKER_CLASS=$worker_class
+    BACKEND = qemu
+    HOST = $OPENQA_HOST
+    EOF
+    openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
+      --host $OPENQA_HOST \
+      -X POST machines/ \
+      name=gitlab-runner-$worker_class \
+      backend=qemu \
+      settings[ARCH]=x86_64 \
+      settings[PART_TABLE_TYPE]=gpt \
+      settings[QEMUCPUS]=2 \
+      settings[QEMURAM]=2560 \
+      settings[QEMUVGA]=virtio \
+      settings[UEFI]=1 \
+      settings[UEFI_PFLASH_CODE]=/usr/share/qemu/ovmf-x86_64-code.bin \
+      settings[WORKER_CLASS]=$worker_class | jq .id > /tmp/machine_id
+  - ln -s $(pwd)/image/installer.iso /data/factory/iso/installer.iso
+  - /run_openqa_worker.sh &> worker.log &
+  - |
+    # Start the job and monitor it
+    openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
+      --host $OPENQA_HOST \
+      -X POST isos \
+      ISO=installer.iso \
+      DISTRI=gnomeos \
+      VERSION=master \
+      FLAVOR=dvd \
+      ARCH=x86_64 \
+      WORKER_CLASS=$worker_class \
+      CASEDIR=$(pwd)/tests \
+      NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_SHA | jq .ids[0] > /tmp/job_id
+  - echo "Test job has been started, vist $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
+  - |
+    alias job_check="openqa-cli api --apikey $OPENQA_API_KEY \
+      --apisecret $OPENQA_API_KEY \
+      --host $OPENQA_HOST \
+      jobs/$(cat /tmp/job_id)"
+    state=$(job_check | jq .job.state)
+    while [ "$state" != "\"done\"" ]; do sleep 10 && state=$(job_check | jq .job.state); done
+    echo "Tests finished"
+
+    result=$(job_check | jq .job.result)
+    if [ "$result" != "\"passed\"" ]; then
+      echo "Test job $(cat /tmp/job_id) *FAILED*"
+      echo 1 > /tmp/exit_code
+    else
+      echo "Test job $(cat /tmp/job_id) *PASSED*"
+      echo 0 > /tmp/exit_code
+    fi
+  - |
+    openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
+      --host $OPENQA_HOST -X DELETE machines/$(cat /tmp/machine_id)
+  - exit $(cat /tmp/exit_code)
+  tags:
+  - x86_64
+  - gnome-build-meta
 
 s3-image:
   extends: .x86_64
