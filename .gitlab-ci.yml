@@ -256,7 +256,8 @@ iso-installer-x86_64:
 test-iso-installer-x86_64:
   stage: test
   image:
-    name: suse_worker:latest
+    # Source repo: https://github.com/os-autoinst/openQA
+    name: registry.opensuse.org/devel/openqa/containers15.2/openqa_worker:latest
     entrypoint: [ "/bin/bash", "-c" ]
   when: manual
   variables:
