@@ -8,7 +8,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
-- freedesktop-sdk.bst:components/pcre2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

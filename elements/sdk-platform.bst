@@ -79,7 +79,6 @@ depends:
 - freedesktop-sdk.bst:components/dictionaries.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
-- freedesktop-sdk.bst:components/emoji-one-font.bst
 - freedesktop-sdk.bst:components/expat.bst
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:components/fftw.bst
@@ -140,7 +139,6 @@ depends:
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libsamplerate.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
-- freedesktop-sdk.bst:components/libselinux.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libthai.bst
 - freedesktop-sdk.bst:components/libtheora.bst
@@ -170,13 +168,13 @@ depends:
 - freedesktop-sdk.bst:components/openal.bst
 - freedesktop-sdk.bst:components/opencl.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
+- freedesktop-sdk.bst:components/openmoji.bst
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/orc.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:components/pciutils.bst
-- freedesktop-sdk.bst:components/pcre2.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/procps.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst

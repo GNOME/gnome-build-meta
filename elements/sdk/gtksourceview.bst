@@ -9,7 +9,6 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/pcre2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
