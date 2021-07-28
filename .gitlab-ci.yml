@@ -7,12 +7,16 @@ variables:
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
+  OPENQA_HOST: https://openqa.gnome.org
+  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
+  OPENQA_NEEDLES_SHA: master
 
 stages:
 - track
 - build
 - deploy-config
 - deploy
+- test
 - reports
 
 default:
@@ -397,6 +401,69 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+
+
+test-iso-installer-x86_64:
+  stage: test
+  image:
+    # Source repo: https://github.com/os-autoinst/openQA
+    # name: registry.opensuse.org/devel/openqa/containers15.2/openqa_worker:latest
+    #   2021-07-29: The 'latest' tag leads to @sha256:4469f2f4d1a93caaddcb3efb10471d2045f7ff230c5455b4ad9aa99efe90a8d7
+    #      This doesn't contain qemu-img and breaks during testing with error: "no kvm-img/qemu-img found"
+    #
+    # For now, using a version built locally, from openQA.git commit ceabc2be82e1f1c6c3c51bf017c1b79494ace869
+    name: quay.io/ssssam/openqa_worker
+    entrypoint: [ "/bin/bash", "-c" ]
+  when: manual
+  variables:
+    IMAGE: iso/image.bst
+    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
+    CI: 1
+    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+  needs:
+  - job: 'iso-installer-x86_64'
+    artifacts: true
+  script:
+  - |
+    mkdir -p /data/factory/iso/
+    ln -s $(pwd)/image/installer.iso /data/factory/iso/installer.iso
+  - |
+    rm /etc/openqa/*
+    cat >/etc/openqa/client.conf <<EOF
+    [openqa.gnome.org]
+    key = $OPENQA_API_KEY
+    secret = $OPENQA_API_SECRET
+    EOF
+  - |
+    worker_class=qemu_x86_64-${CI_JOB_ID}
+    openqa/utils/setup_worker.sh ${worker_class} > /tmp/machine_id
+    /run_openqa_worker.sh &> worker.log &
+  - |
+    openqa/utils/start_job.sh ${worker_class} master > /tmp/job_id
+    echo "Test job has been started, visit $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
+  - openqa/utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
+  - exit $(cat /tmp/exit_code)
+  after_script:
+  - |
+    if [ -e /tmp/machine_id ]; then
+        echo "Cleaning up worker"
+        openqa/utils/teardown_worker.sh $(cat /tmp/machine_id)
+        rm /tmp/machine_id
+    fi
+  - if [ ! -e /tmp/exit_code ]; then
+        echo "Job creation failed, log below."
+        cat openqa.log
+  - fi
+  artifacts:
+    when: always
+    paths:
+    - openqa.log
+    - worker.log
+    expire_in: '1 week'
+  tags:
+  - x86_64
+  - gnome-build-meta
+
 
 pages:
   stage: 'reports'
