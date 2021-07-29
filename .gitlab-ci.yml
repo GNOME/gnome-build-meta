@@ -339,6 +339,11 @@ test-iso-installer-x86_64:
     openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
       --host $OPENQA_HOST -X DELETE machines/$(cat /tmp/machine_id)
   - exit $(cat /tmp/exit_code)
+  artifacts:
+    when: always
+    paths:
+    - worker.log
+    expire_in: '1 week'
   tags:
   - x86_64
   - gnome-build-meta
