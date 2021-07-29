@@ -62,7 +62,6 @@ default:
 .manual-image-template:
   stage: deploy
   dependencies: [track]
-  when: manual
   allow_failure: true
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
@@ -133,20 +132,20 @@ build-x86_64:
   - .build-template
   - .x86_64
 
-build-i386:
-  extends:
-  - .build-template
-  - .i686
-
-build-aarch64:
-  extends:
-  - .build-template
-  - .aarch64
-
-build-ppc64le:
-  extends:
-  - .build-template
-  - .ppc64le
+    #build-i386:
+    #  extends:
+    #  - .build-template
+    #  - .i686
+    #
+    #build-aarch64:
+    #  extends:
+    #  - .build-template
+    #  - .aarch64
+    #
+    #build-ppc64le:
+    #  extends:
+    #  - .build-template
+    #  - .ppc64le
 
 
 generate-deploy-config:
@@ -218,33 +217,33 @@ deploy-flatpak:
     - artifact: flatpak-deploy.yml
       job: generate-deploy-config
 
-vm-image-x86_64:
-  extends:
-  - .manual-image-template
-  - .x86_64
-  variables:
-    IMAGE: vm/image.bst
-
-pinebook-pro-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  variables:
-    IMAGE: boards/pinebook-pro/image.bst
-
-rock64-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  variables:
-    IMAGE: boards/rock64/image.bst
-
-raspberrypi-4-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  variables:
-    IMAGE: boards/raspberrypi-4/image.bst
+        #vm-image-x86_64:
+        #  extends:
+        #  - .manual-image-template
+        #  - .x86_64
+        #  variables:
+        #    IMAGE: vm/image.bst
+        #
+        #pinebook-pro-image:
+        #  extends:
+        #  - .manual-image-template
+        #  - .aarch64
+        #  variables:
+        #    IMAGE: boards/pinebook-pro/image.bst
+        #
+        #rock64-image:
+        #  extends:
+        #  - .manual-image-template
+        #  - .aarch64
+        #  variables:
+        #    IMAGE: boards/rock64/image.bst
+        #
+        #raspberrypi-4-image:
+        #  extends:
+        #  - .manual-image-template
+        #  - .aarch64
+        #  variables:
+        #    IMAGE: boards/raspberrypi-4/image.bst
 
 iso-installer-x86_64:
   extends:
@@ -259,7 +258,6 @@ test-iso-installer-x86_64:
     # Source repo: https://github.com/os-autoinst/openQA
     name: registry.opensuse.org/devel/openqa/containers15.2/openqa_worker:latest
     entrypoint: [ "/bin/bash", "-c" ]
-  when: manual
   variables:
     IMAGE: iso/image.bst
   needs:
