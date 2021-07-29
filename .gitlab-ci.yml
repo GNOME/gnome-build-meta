@@ -266,7 +266,6 @@ test-iso-installer-x86_64:
   - job: 'iso-installer-x86_64'
     artifacts: true
   script:
-  - env
   - mkdir -p /data/factory/iso/
   - rm /etc/openqa/*
   - |
