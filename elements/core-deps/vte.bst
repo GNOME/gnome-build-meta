@@ -21,6 +21,10 @@ depends:
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+variables:
+  meson-local: >-
+    -Ddocs=true
+
 public:
   bst:
     split-rules:
