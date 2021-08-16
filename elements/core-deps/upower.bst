@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: https://gitlab.freedesktop.org/upower/upower/uploads/177df5b9f9b76f25a2ad9da41aa0c1fa/upower-0.99.13.tar.xz
+  ref: 5cad70f91540cc7dc121cb17e0ad645e5e663c8682f60a7be42ee38cd7b23d7a
 
 build-depends:
 - sdk/gtk-doc.bst

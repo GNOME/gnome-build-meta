@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/epiphany.git
-  track: master
+- kind: tar
+  url: gnome_downloads:epiphany/41/epiphany-41.beta.tar.xz
+  ref: a81987b1e27681d2a957f63dc82ae7a404c2b96cb65a410bd381c874c01485fa
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

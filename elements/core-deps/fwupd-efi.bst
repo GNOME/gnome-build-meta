@@ -3,6 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: github_com:fwupd/fwupd-efi/archive/1.0.tar.gz
+  ref: 5f3fa4771be15b08f96cb0c17b6d13a1adf593cc57654c8f4ea63a33c2087f31
 - kind: patch
   path: files/fwupd/riscv64.patch
 

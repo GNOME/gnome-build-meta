@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:fwupd/fwupd/archive/1.6.0.tar.gz
 
+  ref: d07ee2caa47cb2bd6c12fc46e6b52897189a06be3053af186a6c806e35925312
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

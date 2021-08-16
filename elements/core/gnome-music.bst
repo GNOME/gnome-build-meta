@@ -1,17 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-music.git
-  track: master
-  submodules:
-    subprojects/gfm:
-      checkout: true
-      url: gitlab_gnome_org:mschraal/gfm.git
-    subprojects/shared-modules:
-      checkout: false
-      url: github_com:flathub/shared-modules.git
-
+- kind: tar
+  url: gnome_downloads:gnome-music/41/gnome-music-41.beta.tar.xz
+  ref: 19b5930bb8f6a8589ced051e09c1a916e2c7155fcdbe727f27d61ef92636f103
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,10 +1,9 @@
 kind: cmake
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/evolution-data-server.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:evolution-data-server/3.41/evolution-data-server-3.41.2.tar.xz
+  ref: 61b434d81346493bfb7340a5113dfb71ea15ab84db94ae474f703b4fcb5a184e
 build-depends:
 - core-deps/intltool.bst
 - sdk/vala.bst

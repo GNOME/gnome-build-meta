@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:hughsie/libjcat/archive/0.1.6.tar.gz
 
+  ref: 8de77399dd3f7cd055f07003e6fce438ef8339e2bfd90c29982b7ee0a2e72884
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

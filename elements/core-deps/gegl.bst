@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.30.tar.xz
 
+  ref: c112782cf4096969e23217ccdfabe42284e35d5435ff0c43d40e4c70faeca8dd
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

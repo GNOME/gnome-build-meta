@@ -18,6 +18,7 @@ config:
 sources:
 - kind: tar
   url: github_com:adobe-fonts/source-code-pro/archive/2.010R-ro/1.030R-it.tar.gz
+  ref: 3ee5a0d04e6586f12de038cb33ec963f137bbc4907ae1e10a6333478a2b884f8
 - kind: local
   path: files/font-conf/adobe-source-code-pro.conf
   directory: config

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gupnp.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gupnp/1.3/gupnp-1.3.1.tar.xz
+  ref: df70fe8321bfc53cadb6860edcff2e0dc456ec81899b463f41723684803d1408
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

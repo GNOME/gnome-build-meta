@@ -12,11 +12,11 @@ depends:
 
 variables:
   conf-local: >-
-      --disable-werror
-      --with-init-script=systemd
-      --enable-seccomp
-      --enable-capabilities
-      --enable-pam
+    --disable-werror
+    --with-init-script=systemd
+    --enable-seccomp
+    --enable-capabilities
+    --enable-pam
 
 public:
   initial-script:
@@ -28,3 +28,4 @@ public:
 sources:
 - kind: tar
   url: https://linuxcontainers.org/downloads/lxc/lxc-4.0.10.tar.gz
+  ref: a10c518056d2e497bd600e4ffac2853bdeab1e835bf455a6d87cc8df128bfae9

@@ -13,6 +13,7 @@ sources:
     ext/libglnx:
       url: gitlab_gnome_org:GNOME/libglnx.git
       checkout: true
+  ref: Release_3.9.5-0-gebaf3c90651d9174f125e2e0b8efc5057f220d72
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
 - kind: patch

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://tecnocode.co.uk/downloads/malcontent-0.10.1.tar.xz
 
+  ref: c84f3a29bc1132b3b77412713b4f9a4ccae647cce95e6485e9af0938b486f9ba
 build-depends:
 - core-deps/glib-testing.bst
 - sdk/gobject-introspection.bst

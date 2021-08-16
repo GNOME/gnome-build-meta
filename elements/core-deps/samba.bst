@@ -2,6 +2,7 @@ kind: manual
 sources:
 - kind: tar
   url: https://download.samba.org/pub/samba/stable/samba-4.14.6.tar.gz
+  ref: 86760692dd74a04705c0f6d11b31965a477265a50e79eb15838184476146f4b0
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
@@ -34,7 +35,7 @@ config:
   - mv %{install-root}/var/run %{install-root}
 environment:
   MAKEFLAGS: -j%{max-jobs}
-  V: 1
+  V: '1'
 environment-nocache:
 - MAKEFLAGS
 - V

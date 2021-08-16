@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-tour.git
-  track: master
-- kind: cargo
+- kind: tar
+  url: gnome_downloads:gnome-tour/40/gnome-tour-40.0.tar.xz
+  ref: 7063223869a074727414bec7db738d8506216ee84ccfc3bca7dac52e498c1bf9
 build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

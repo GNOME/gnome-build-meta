@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://download.qemu.org/qemu-6.0.0.tar.xz
 
+  ref: 87bc1a471ca24b97e7005711066007d443423d19aacda3d442558ae032fa30b9
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst

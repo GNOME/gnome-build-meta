@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git
-  url: gitlab_gnome_org:GNOME/xdg-desktop-portal-gnome.git
-  track: main
-
+- kind: tar
+  url: gnome_downloads:xdg-desktop-portal-gnome/41/xdg-desktop-portal-gnome-41.alpha.tar.xz
+  ref: 40eb9b8eff846ddcbf077120c25849c4c8535437e5f18205e1fe1a25e4d1136f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

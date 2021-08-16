@@ -36,3 +36,4 @@ config:
 sources:
 - kind: tar
   url: https://www.x.org/archive/individual/xserver/xorg-server-1.20.11.tar.bz2
+  ref: 914c796e3ffabe1af48071d40ccc85e92117c97a9082ed1df29e4d64e3c34c49

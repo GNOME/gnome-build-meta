@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libpeas.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libpeas/1.30/libpeas-1.30.0.tar.xz
+  ref: 0bf5562e9bfc0382a9dcb81f64340787542568762a3a367d9d90f6185898b9a3
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

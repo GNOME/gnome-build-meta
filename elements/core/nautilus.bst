@@ -1,12 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/nautilus.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
+- kind: tar
+  url: gnome_downloads:nautilus/41/nautilus-41.beta.tar.xz
+  ref: bb5bd72a849be258780b2c63eb9f21b9ad480fb87c5a4a14f18063deb84ad318
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

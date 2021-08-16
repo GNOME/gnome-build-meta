@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2
 
+  ref: cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 

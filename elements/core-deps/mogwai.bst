@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:endlessm/mogwai/archive/Release_3.9.4.tar.gz
 
+  ref: 9cd4ba92cade0d998618ae18458b12acc2db15350ae2170823ccd1739e745583
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

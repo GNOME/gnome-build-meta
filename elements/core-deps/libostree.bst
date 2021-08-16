@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_com:ostreedev/ostree/releases/download/v2021.2/libostree-2021.2.tar.xz
+  ref: 854008e7c71d44f6b3670f0e9b8500db0f08ff8b297d0b30a7cb9a66f34c5d7c
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 
