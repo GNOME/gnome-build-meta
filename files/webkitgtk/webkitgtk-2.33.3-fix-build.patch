@@ -1,0 +1,92 @@
+--- a/Source/JavaScriptCore/PlatformGTK.cmake	
++++ a/Source/JavaScriptCore/PlatformGTK.cmake	
+@@ -3,8 +3,9 @@ include(inspector/remote/GLib.cmake)
+ 
+ set(JavaScriptCore_OUTPUT_NAME javascriptcoregtk-${WEBKITGTK_API_VERSION})
+ 
++configure_file(javascriptcoregtk.pc.in ${JavaScriptCore_PKGCONFIG_FILE} @ONLY)
++
+ if (EXISTS "${TOOLS_DIR}/glib/apply-build-revision-to-files.py")
+-    configure_file(javascriptcoregtk.pc.in ${JavaScriptCore_PKGCONFIG_FILE} @ONLY)
+     add_custom_target(JavaScriptCore-build-revision
+         ${PYTHON_EXECUTABLE} "${TOOLS_DIR}/glib/apply-build-revision-to-files.py" ${JavaScriptCore_PKGCONFIG_FILE}
+         DEPENDS ${JavaScriptCore_PKGCONFIG_FILE}
+@@ -12,8 +13,6 @@ if (EXISTS "${TOOLS_DIR}/glib/apply-build-revision-to-files.py")
+     list(APPEND JavaScriptCore_DEPENDENCIES
+         JavaScriptCore-build-revision
+     )
+-else ()
+-    configure_file(javascriptcoregtk.pc.in ${JavaScriptCore_PKGCONFIG_FILE})
+ endif ()
+ 
+ install(FILES "${CMAKE_BINARY_DIR}/Source/JavaScriptCore/javascriptcoregtk-${WEBKITGTK_API_VERSION}.pc"
+--- a/Source/JavaScriptCore/javascriptcoregtk.pc.in	
++++ a/Source/JavaScriptCore/javascriptcoregtk.pc.in	
+@@ -2,7 +2,7 @@ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=@LIB_INSTALL_DIR@
+ includedir=${prefix}/include
+-revision=${BUILD_REVISION}
++revision=@BUILD_REVISION@
+ 
+ Name: JavaScriptCoreGTK+
+ Description: GTK+ version of the JavaScriptCore engine
+--- a/Source/WebKit/PlatformGTK.cmake	
++++ a/Source/WebKit/PlatformGTK.cmake	
+@@ -10,12 +10,12 @@ file(MAKE_DIRECTORY ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR})
+ file(MAKE_DIRECTORY ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/webkit2gtk-${WEBKITGTK_API_VERSION})
+ file(MAKE_DIRECTORY ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/webkit2gtk-webextension)
+ 
++configure_file(Shared/glib/BuildRevision.h.in ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/BuildRevision.h)
+ configure_file(UIProcess/API/gtk/WebKitVersion.h.in ${WebKit2Gtk_DERIVED_SOURCES_DIR}/webkit2/WebKitVersion.h)
++configure_file(gtk/webkit2gtk.pc.in ${WebKit2_PKGCONFIG_FILE} @ONLY)
++configure_file(gtk/webkit2gtk-web-extension.pc.in ${WebKit2WebExtension_PKGCONFIG_FILE} @ONLY)
+ 
+ if (EXISTS "${TOOLS_DIR}/glib/apply-build-revision-to-files.py")
+-    configure_file(gtk/webkit2gtk.pc.in ${WebKit2_PKGCONFIG_FILE} @ONLY)
+-    configure_file(gtk/webkit2gtk-web-extension.pc.in ${WebKit2WebExtension_PKGCONFIG_FILE} @ONLY)
+-    configure_file(Shared/glib/BuildRevision.h.in ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/BuildRevision.h @ONLY)
+     add_custom_target(WebKit-build-revision
+         ${PYTHON_EXECUTABLE} "${TOOLS_DIR}/glib/apply-build-revision-to-files.py" ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/BuildRevision.h ${WebKit2_PKGCONFIG_FILE} ${WebKit2WebExtension_PKGCONFIG_FILE}
+         DEPENDS ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/BuildRevision.h ${WebKit2_PKGCONFIG_FILE} ${WebKit2WebExtension_PKGCONFIG_FILE}
+@@ -23,10 +23,6 @@ if (EXISTS "${TOOLS_DIR}/glib/apply-build-revision-to-files.py")
+     list(APPEND WebKit_DEPENDENCIES
+         WebKit-build-revision
+     )
+-else ()
+-    configure_file(gtk/webkit2gtk.pc.in ${WebKit2_PKGCONFIG_FILE})
+-    configure_file(gtk/webkit2gtk-web-extension.pc.in ${WebKit2WebExtension_PKGCONFIG_FILE})
+-    configure_file(Shared/glib/BuildRevision.h.in ${WebKit2Gtk_FRAMEWORK_HEADERS_DIR}/BuildRevision.h)
+ endif ()
+ 
+ add_definitions(-DBUILDING_WEBKIT)
+--- a/Source/WebKit/Shared/glib/BuildRevision.h.in	
++++ a/Source/WebKit/Shared/glib/BuildRevision.h.in	
+@@ -25,4 +25,4 @@ 
+ 
+ #pragma once
+ 
+-#define BUILD_REVISION "${BUILD_REVISION}"
++#define BUILD_REVISION "@BUILD_REVISION@"
+--- a/Source/WebKit/gtk/webkit2gtk-web-extension.pc.in	
++++ a/Source/WebKit/gtk/webkit2gtk-web-extension.pc.in	
+@@ -2,7 +2,7 @@ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=@LIB_INSTALL_DIR@
+ includedir=${prefix}/include
+-revision=${BUILD_REVISION}
++revision=@BUILD_REVISION@
+ 
+ Name: WebKitGTK web process extensions
+ Description: Web content engine for GTK - web process extensions
+--- a/Source/WebKit/gtk/webkit2gtk.pc.in	
++++ a/Source/WebKit/gtk/webkit2gtk.pc.in	
+@@ -2,7 +2,7 @@ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=@LIB_INSTALL_DIR@
+ includedir=${prefix}/include
+-revision=${BUILD_REVISION}
++revision=@BUILD_REVISION@
+ 
+ Name: WebKitGTK
+ Description: Web content engine for GTK
