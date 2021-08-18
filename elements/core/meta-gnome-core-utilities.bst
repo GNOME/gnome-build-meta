@@ -9,6 +9,7 @@ kind: stack
 depends:
 - core/baobab.bst
 - core/cheese.bst
+- core/connections.bst
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
