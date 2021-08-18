@@ -1,3 +1,8 @@
+# Process for adding components to SDK:
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#process-to-add-components-to-the-sdk
+#
+# Process for removing components from SDK:
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#process-to-remove-components-from-sdk
 kind: stack
 depends:
 - sdk/adobe-source-code-pro-fonts.bst
