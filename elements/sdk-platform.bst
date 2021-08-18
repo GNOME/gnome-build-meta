@@ -30,7 +30,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
 - sdk/gtksourceview-4.bst
-- sdk/gtksourceview.bst
 - sdk/gvfs-client.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
@@ -42,7 +41,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/libsoup.bst
 - sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
