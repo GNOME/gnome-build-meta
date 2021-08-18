@@ -1,4 +1,4 @@
-kind: meson
+kind: autotools
 
 sources:
 - kind: git_tag
@@ -9,7 +9,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - core-deps/librest.bst
@@ -22,5 +22,5 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  meson-local: >-
-    -Dgtk_doc=true
+  conf-local: >-
+    --enable-gtk-doc
