@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:containers/bubblewrap/releases/download/v0.4.1/bubblewrap-0.4.1.tar.xz
+  url: github_file:containers/bubblewrap/releases/download/v0.4.1/bubblewrap-0.4.1.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

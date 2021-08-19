@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:ibus/ibus/releases/download/1.5.24/ibus-1.5.24.tar.gz
+  url: github_file:ibus/ibus/releases/download/1.5.24/ibus-1.5.24.tar.gz
 
 build-depends:
 - sdk/vala.bst

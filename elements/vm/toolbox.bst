@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:containers/toolbox/releases/download/0.0.99.1/toolbox-0.0.99.1.tar.xz
+  url: github_file:containers/toolbox/releases/download/0.0.99.1/toolbox-0.0.99.1.tar.xz
 - kind: git_tag
   url: github_com:HarryMichal/go-version.git
   track: v1.0.0
