@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gjs/1.68/gjs-1.68.1.tar.xz
-  ref: 2ffa3ec2041104fcf9ab5dcc8f7cd9caa062278590318ffef9541956af5b4c70
+  url: gnome_downloads:gjs/1.68/gjs-1.68.3.tar.xz
+  ref: 821c7f4f78f1500da6a56c5463723bd8ff80de633ccba43a5ab03d8ccca21d3f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

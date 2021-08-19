@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:folks/0.15/folks-0.15.2.tar.xz
-  ref: ef777b2696d15ec31ba8b940ecabc17fe7fab909584f9425258f54d295ccd122
+  url: gnome_downloads:folks/0.15/folks-0.15.3.tar.xz
+  ref: 21d737faf093f4be065473ee70ca20885b9a2c3685941dba24c2239fd3c544a5
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-dbusmock.bst

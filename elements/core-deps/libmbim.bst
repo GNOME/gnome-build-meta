@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/libmbim/libmbim-1.24.8.tar.xz
-  ref: 02590736163fff10e5732191fccc1b9920969616ddc59613a003052a116a3c25
+  url: https://www.freedesktop.org/software/libmbim/libmbim-1.26.0.tar.xz
+  ref: 1e1f0926b22c77210442129eca689722ecf324ab9c9abf421a5c989f46e813cf
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
