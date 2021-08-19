@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://source.puri.sm/Librem5/libhandy/-/archive/v0.0.13/libhandy-v0.0.13.tar.bz2
+  url: purism:Librem5/libhandy/-/archive/v0.0.13/libhandy-v0.0.13.tar.bz2
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://source.puri.sm/Librem5/feedbackd/-/archive/v0.0.0+git20210426/feedbackd-v0.0.0+git20210426.tar.bz2
+  url: purism:Librem5/feedbackd/-/archive/v0.0.0+git20210426/feedbackd-v0.0.0+git20210426.tar.bz2
 
 build-depends:
 - sdk/gobject-introspection.bst
