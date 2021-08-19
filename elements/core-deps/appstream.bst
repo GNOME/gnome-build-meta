@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/appstream/releases/AppStream-0.14.3.tar.xz
+  url: freedesktop_software:appstream/releases/AppStream-0.14.3.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
