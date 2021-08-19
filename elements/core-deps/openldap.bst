@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.58.tgz
+  url: file_https:www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.58.tgz
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

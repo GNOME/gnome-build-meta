@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz
+  url: file_https:dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

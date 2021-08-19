@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://ftp.netfilter.org/pub/ebtables/ebtables-2.0.11.tar.gz
+  url: file_http:ftp.netfilter.org/pub/ebtables/ebtables-2.0.11.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

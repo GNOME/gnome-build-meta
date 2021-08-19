@@ -4,7 +4,7 @@ sources:
 - kind: local
   path: files/plymouth/plymouthd.defaults
 - kind: remote
-  url: https://people.gnome.org/~engagement/logos/GnomeLogoHorizontal.svg
+  url: file_https:people.gnome.org/~engagement/logos/GnomeLogoHorizontal.svg
 
 runtime-depends:
 - core-deps/plymouth.bst

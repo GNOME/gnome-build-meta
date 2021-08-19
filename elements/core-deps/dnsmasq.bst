@@ -2,7 +2,7 @@ kind: make
 
 sources:
 - kind: tar
-  url: http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.85.tar.xz
+  url: file_http:www.thekelleys.org.uk/dnsmasq/dnsmasq-2.85.tar.xz
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

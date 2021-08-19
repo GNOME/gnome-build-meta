@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: ftp://ftp.infradead.org/pub/openconnect/openconnect-8.10.tar.gz
+  url: file_ftp:ftp.infradead.org/pub/openconnect/openconnect-8.10.tar.gz
 
 variables:
   conf-local: >-

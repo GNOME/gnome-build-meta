@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://www.libraw.org/data/LibRaw-0.20.2.tar.gz
+  url: file_https:www.libraw.org/data/LibRaw-0.20.2.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

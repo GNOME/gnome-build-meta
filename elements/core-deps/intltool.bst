@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
+  url: file_https:launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz
 - kind: patch
   path: files/intltool/intltool-perl-5.22-compatibility.patch
 build-depends:
