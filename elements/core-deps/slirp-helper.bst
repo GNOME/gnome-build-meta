@@ -14,6 +14,7 @@ sources:
 - kind: tar
   url: file_https:static.crates.io/crates/libslirp/libslirp-4.3.0.crate
 - kind: cargo
+  url: crates:crates
 - kind: patch
   path: files/slirp-helper/nix-riscv.patch
 

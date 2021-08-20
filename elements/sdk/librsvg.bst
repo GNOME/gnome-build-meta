@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/librsvg.git
   track: master
 - kind: cargo
+  url: crates:crates
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

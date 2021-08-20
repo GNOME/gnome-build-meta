@@ -4,6 +4,7 @@ sources:
   url: gitlab_gnome_org:GNOME/gnome-tour.git
   track: master
 - kind: cargo
+  url: crates:crates
 build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
