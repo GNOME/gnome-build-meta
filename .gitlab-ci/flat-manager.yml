@@ -68,7 +68,7 @@ flatmgr-finish:
   stage: finish
   dependencies: [flatmgr-prepare]
   script:
-  - flat-manager-client commit --end-of-life="The GNOME 3.38 runtime is no longer supported as of August 19, 2021. Please ask your application developer to migrate to a supported platform." --wait $(cat build.txt)
+  - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   after_script:
   - flat-manager-client purge $(cat build.txt)
