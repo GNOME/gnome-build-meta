@@ -9,7 +9,6 @@ kind: stack
 depends:
 - core/baobab.bst
 - core/cheese.bst
-- core/connections.bst
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
@@ -19,6 +18,7 @@ depends:
 - core/gnome-calendar.bst
 - core/gnome-characters.bst
 - core/gnome-clocks.bst
+- core/gnome-connections.bst
 - core/gnome-contacts.bst
 - core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst

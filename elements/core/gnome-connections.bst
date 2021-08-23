@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:felipeborges/gnome-connections.git
+  url: gitlab_gnome_org:GNOME/connections.git
   track: master
   submodules:
     subprojects/gtk-frdp:
