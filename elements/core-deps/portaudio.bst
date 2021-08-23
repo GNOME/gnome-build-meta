@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: http://files.portaudio.com/archives/pa_stable_v190700_20210406.tgz
+  url: github_com:PortAudio/portaudio/archive/refs/tags/v19.7.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
