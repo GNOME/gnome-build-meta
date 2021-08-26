@@ -13,4 +13,4 @@ depends:
 - vm/buildstream/buildstream.bst
 
 runtime-depends:
-- sdk-deps/python-toml.bst
+- freedesktop-sdk.bst:components/python3-toml.bst
