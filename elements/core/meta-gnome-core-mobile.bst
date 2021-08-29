@@ -6,3 +6,4 @@ kind: stack
 depends:
 - core/calls.bst
 - core/phoc.bst
+- core/phosh.bst
