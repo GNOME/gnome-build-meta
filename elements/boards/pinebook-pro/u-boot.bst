@@ -2,8 +2,10 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: https://git.eno.space/pbp-uboot.git
-  track: 365495a329c8e92ca4c134562d091df71b75845e
+  url: https://source.denx.de/u-boot/u-boot.git
+  track: master
+  track-tags: true
+  ref: v2021.10-rc2-0-ga0da2dda4ed9d0aee5265e9cd8876734f9f80e09
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
@@ -21,7 +23,7 @@ environment:
   BL31: "%{indep-libdir}/u-boot/%{board}/bl31.elf"
 
 variables:
-  board: pinebook_pro-rk3399
+  board: pinebook-pro-rk3399
 
 config:
   configure-commands:
