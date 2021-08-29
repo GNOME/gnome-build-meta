@@ -222,6 +222,18 @@ deploy-flatpak:
     - artifact: flatpak-deploy.yml
       job: generate-deploy-config
 
+vm-image-aarch64:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
+  variables:
+    IMAGE: vm/image.bst
+
 vm-image-x86_64:
   extends:
   - .manual-image-template
