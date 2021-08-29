@@ -5,3 +5,4 @@
 kind: stack
 depends:
 - core/calls.bst
+- core/phoc.bst
