@@ -8,6 +8,7 @@ build-depends:
 - sdk/vala.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
+- freedesktop-sdk.bst:components/hotdoc.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
