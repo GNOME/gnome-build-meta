@@ -15,6 +15,9 @@ sources:
   url: file_https:static.crates.io/crates/libslirp/libslirp-4.3.0.crate
 - kind: cargo
   url: crates:crates
+  ref:
+  - name: null      # Dummy ref, needed to avoid
+    version: null   # https://gitlab.com/BuildStream/bst-external/-/issues/53
 - kind: patch
   path: files/slirp-helper/nix-riscv.patch
 

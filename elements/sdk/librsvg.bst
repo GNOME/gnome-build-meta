@@ -5,6 +5,9 @@ sources:
   track: master
 - kind: cargo
   url: crates:crates
+  ref:
+  - name: null      # Dummy ref, needed to avoid
+    version: null   # https://gitlab.com/BuildStream/bst-external/-/issues/53
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
