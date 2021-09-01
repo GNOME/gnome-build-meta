@@ -5,7 +5,6 @@ sources:
   track: master
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - sdk/vala.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
@@ -20,7 +19,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Ddocs=true
+    -Ddocs=false
     -Dunicode_support=icu
     -Dstemmer=disabled
     -Dbash_completion_dir=%{datadir}/bash-completion/completions
