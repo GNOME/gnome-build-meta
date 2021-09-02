@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.33.2.tar.xz
+  url: webkitgtk_org:webkitgtk-2.33.90.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -60,7 +60,6 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_GTKDOC=ON
-    -DENABLE_WEBDRIVER=OFF
     -DUSE_SOUP2=ON
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
