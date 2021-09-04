@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-contacts/40/gnome-contacts-40.0.tar.xz
-  ref: c9de6f3f28d84653eda81c63a40f0f5c931ad52c324ff5f9fe4d15c3612f4f70
+  url: gnome_downloads:gnome-contacts/41/gnome-contacts-41.beta.tar.xz
+  ref: 08e23dc7a0814852e0ce11f64201859de54cccbd6061550deb42afc2a1f07551
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

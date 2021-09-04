@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gsettings-desktop-schemas/41/gsettings-desktop-schemas-41.alpha.tar.xz
-  ref: 11fae73f724a0041a963eed5a8192c0bfaed3e39d61e0a513ad7f2ad42db2c3e
+  url: gnome_downloads:gsettings-desktop-schemas/41/gsettings-desktop-schemas-41.rc.tar.xz
+  ref: 68d51f6eff69d26d738f9e1c043c148cd8eb91f3be948f42051ed5b8e8cd44a0
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

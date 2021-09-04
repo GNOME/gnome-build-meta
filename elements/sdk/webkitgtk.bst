@@ -2,14 +2,12 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.33.2.tar.xz
-  ref: 32bb0ace3cf4df42ff805e00de3fc13a2287f173d3ff5982816a7c5b4f8b551b
+  url: webkitgtk_org:webkitgtk-2.33.90.tar.xz
+  ref: 3575452129593b070e248f59617f35eed75d2b6c75bbb64ea0fcbc9eaafdf19c
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-- kind: patch
-  path: files/webkitgtk/fix-resolve-asm-file-conflicts.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
