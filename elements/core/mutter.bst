@@ -45,3 +45,4 @@ variables:
   meson-local: >-
     -Dxwayland_initfd=enabled
     -Dprofiler=true
+    -Dtests=false
