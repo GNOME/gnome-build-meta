@@ -11,14 +11,13 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/gspell.bst
 - sdk/adwaita-icon-theme.bst
+- sdk/gtk.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
 - world/telepathy-logger.bst
 
 depends:
 - sdk/gjs.bst
-- sdk/gtk+-3.bst
 - world/telepathy-glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
