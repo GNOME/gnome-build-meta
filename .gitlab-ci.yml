@@ -170,7 +170,7 @@ generate-deploy-config:
         FLAT_MANAGER_REPO=nightly
         SUPPORTED_ARCHES="x86_64 i686 aarch64"
       ;;
-      *beta)
+      *beta | *rc )
         FLAT_MANAGER_SERVER=https://hub.flathub.org/
         ENVIRONMENT_NAME=flathub/$FLATPAK_BRANCH
         FLAT_MANAGER_REPO=beta
