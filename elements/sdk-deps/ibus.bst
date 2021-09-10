@@ -14,6 +14,7 @@ depends:
 - core-deps/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/gtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
@@ -39,6 +40,7 @@ variables:
     --enable-wayland
     --enable-introspection
     --enable-vala
+    --enable-gtk4
 
 public:
   bst:
