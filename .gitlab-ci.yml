@@ -6,7 +6,7 @@ variables:
   BST_TRACK_TAGS: 'false'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: 41rc
+  FLATPAK_BRANCH: 41beta
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
   OPENQA_NEEDLES_SHA: master
