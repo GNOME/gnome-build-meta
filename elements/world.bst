@@ -58,6 +58,8 @@ depends:
 - world/lightsoff.bst
 - world/network-manager-applet.bst
 - world/pangomm.bst
+- world/phoc.bst
+- world/phosh.bst
 - world/pinhole.bst
 - world/polari.bst
 - world/qqwing.bst
