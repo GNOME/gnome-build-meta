@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.32/NetworkManager-1.32.2.tar.xz
+  url: gnome_downloads:NetworkManager/1.32/NetworkManager-1.32.10.tar.xz
   ref: 3e5ccc66805659e3f11a718e3a599f9726b79a01d6ff14814be6ad8bc5da8bb8
 build-depends:
 - core-deps/intltool.bst
