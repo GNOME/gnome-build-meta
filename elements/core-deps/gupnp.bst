@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gupnp/1.3/gupnp-1.3.1.tar.xz
-  ref: df70fe8321bfc53cadb6860edcff2e0dc456ec81899b463f41723684803d1408
+  url: gnome_downloads:gupnp/1.4/gupnp-1.4.0.tar.xz
+  ref: 590ffb02b84da2a1aec68fd534bc40af1b37dd3f6223f9d1577fc48ab48be36f
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calculator/41/gnome-calculator-41.rc.tar.xz
-  ref: 64f87cd94c8edc9102bd76fb91bb0c5397bdb8dd714c01aa73a428d6fe4381ca
+  url: gnome_downloads:gnome-calculator/41/gnome-calculator-41.0.tar.xz
+  ref: a66dc04bd8587e76d67375a6aefa79553b569c9bdf78ebdc2817f1c0ade3dc99
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst

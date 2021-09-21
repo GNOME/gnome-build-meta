@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-music/41/gnome-music-41.rc.tar.xz
-  ref: c9da4b121ed7f87d3087f1f1a89799332c86d0126f9397ecc2c0371cc8248778
+  url: gnome_downloads:gnome-music/41/gnome-music-41.0.tar.xz
+  ref: 69b13567a87dc77dcf0c926d71d0fa2ebfa5a97f37817828df71d8a1b0129fd2
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

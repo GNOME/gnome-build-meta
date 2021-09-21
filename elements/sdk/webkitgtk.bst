@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.33.90.tar.xz
-  ref: 3575452129593b070e248f59617f35eed75d2b6c75bbb64ea0fcbc9eaafdf19c
+  url: webkitgtk_org:webkitgtk-2.33.91.tar.xz
+  ref: e9d35b91ad1785cc4476d00c23511e5e21663b838531f60f3918d04ec21c92f0
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local

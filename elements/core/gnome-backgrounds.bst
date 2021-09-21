@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-backgrounds/40/gnome-backgrounds-40.1.tar.xz
-  ref: 60df8a0da301ce425b7043d42ae32ec4011ff08f18e0fc62f29401305da3a70e
+  url: gnome_downloads:gnome-backgrounds/41/gnome-backgrounds-41.0.tar.xz
+  ref: 1da1ac0d261bedf0fcd2c85b480bc65505e23cf51f1143126c0d37717e693145
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

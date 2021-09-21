@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:vala/0.53/vala-0.53.2.tar.xz
-  ref: 1a9c186f7407809b3f1b7d7e567f8fbe46c651d7c02f449034d8301738ca7830
+  url: gnome_downloads:vala/0.54/vala-0.54.1.tar.xz
+  ref: 5dde77ac86f0633cb78a1eba7399edc77d5bbfe1e830c1203c51d594a169904a
 build-depends:
 - sdk/vala-tarball.bst
 - freedesktop-sdk.bst:components/bison.bst
