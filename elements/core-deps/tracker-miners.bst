@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker-miners.git
-  track: master
+- kind: tar
+  url: gnome_downloads:tracker-miners/3.2/tracker-miners-3.2.0.rc.tar.xz
+  ref: cc21a4195cdd0c13d0ebb8c83bafdedc0fce086d319a99bdd1f641b9dd9b666e
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

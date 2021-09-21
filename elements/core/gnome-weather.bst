@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-weather.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-weather/40/gnome-weather-40.1.tar.xz
+  ref: 3d11144c4797c46d2068c3ddf5ce2bc030fca0f272cf03f218c4f46da3b73c4d
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst

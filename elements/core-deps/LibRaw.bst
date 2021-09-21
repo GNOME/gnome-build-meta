@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://www.libraw.org/data/LibRaw-0.20.2.tar.gz
 
+  ref: dc1b486c2003435733043e4e05273477326e51c3ea554c6864a4eafaff1004a6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 

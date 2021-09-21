@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-builder.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gnome-builder/41/gnome-builder-41.0.tar.xz
+  ref: c43f23002c9234016755e07660183e995200795e039b44a0fc72512ab2b3dfa3
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

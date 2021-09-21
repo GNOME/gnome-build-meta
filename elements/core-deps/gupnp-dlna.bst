@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gupnp-dlna.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gupnp-dlna/0.12/gupnp-dlna-0.12.0.tar.xz
+  ref: 3d53b96f85bc5628d33e367ec9bf2adb38ef2b34d7ad0434a6ba0cf4ad9048e6
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

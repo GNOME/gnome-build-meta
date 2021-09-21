@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/glibmm.git
-  track: glibmm-2-66
+- kind: tar
+  url: gnome_downloads:glibmm/2.66/glibmm-2.66.1.tar.xz
+  ref: 69bd6b5327716ca2f511ab580a969fd7bf0cd2c24ce15e1d0e530592d3ff209c
 build-depends:
 - core-deps/mm-common.bst
 - freedesktop-sdk.bst:components/m4.bst

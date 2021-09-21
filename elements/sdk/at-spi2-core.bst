@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/at-spi2-core.git
-  track: master
+- kind: tar
+  url: gnome_downloads:at-spi2-core/2.42/at-spi2-core-2.42.0.tar.xz
+  ref: 4b5da10e94fa3c6195f95222438f63a0234b99ef9df772c7640e82baeaa6e386
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

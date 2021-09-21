@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: git_freedesktop_org:hadess/power-profiles-daemon/uploads/329f1ed3b068f6c59b8441f01a4e711a/power-profiles-daemon-0.8.1.tar.xz
 
+  ref: 091128f78c35d214cf6b38260b9a6008c1ad550b28558f241e2cb746a8be7157
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

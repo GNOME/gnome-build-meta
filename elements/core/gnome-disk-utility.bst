@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/41/gnome-disk-utility-41.0.tar.xz
+  ref: 8743c98fd656062ef862933efe30c5be4c6b322ec02eee154ec70d08ed0895df
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-desktop.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gnome-desktop/41/gnome-desktop-41.0.tar.xz
+  ref: 69cb1d3d9a10700eb66348ef1c0e66a855fc5a97ae62902df97a499da11562d2
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

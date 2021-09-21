@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gtk/4.4/gtk-4.4.0.tar.xz
+  ref: e0a1508f441686c3a20dfec48af533b19a4b2e017c18eaee31dccdb7d292505b
 build-depends:
 - sdk-deps/sassc.bst
 - sdk/sysprof-minimal.bst

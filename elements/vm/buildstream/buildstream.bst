@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://github.com/apache/buildstream/archive/refs/tags/1.6.2.tar.gz
 
+  ref: 76cb1926fa640a93f9e9c763b0f36539c6b434e8f76a01bbf221090dd62e6ea7
 depends:
 - sdk-deps/bubblewrap.bst
 - vm/buildstream/pytest-runner.bst

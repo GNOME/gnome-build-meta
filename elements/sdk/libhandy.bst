@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/libhandy.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libhandy/1.4/libhandy-1.4.0.tar.xz
+  ref: 2676d51fa1fa40fdee7497d3e763fefa18b0338bffcd2ee32e7f7e633c885446
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

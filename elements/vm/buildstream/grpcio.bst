@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://files.pythonhosted.org/packages/a0/d6/d04c6550debe23e2eaef0d9c4adccbb6e20d8cce6da40ae989fe8836e287/grpcio-1.37.1.tar.gz
 
+  ref: df8305806311d3fe913d4f7eb3ef28e2072159ea12f95baab5d447f1380a71e3
 depends:
 - freedesktop-sdk.bst:components/python3.bst
 

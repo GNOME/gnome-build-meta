@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/sushi.git
-  track: master
+- kind: tar
+  url: gnome_downloads:sushi/3.38/sushi-3.38.1.tar.xz
+  ref: f3e6d10c815528d03a665fafd15c0719e017a813975b3af32076199e378888e9
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

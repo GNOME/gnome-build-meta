@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-screenshot.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-screenshot/40/gnome-screenshot-40.0.tar.xz
+  ref: 368ca95a39e39dc2406c849e8c4205e3f574acdd874c30741873455e3d21a5e2
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_com:fcitx/fcitx/archive/4.2.9.8.tar.gz
 
+  ref: 1b630d278d955b64b20ebcdf8ff4bb78be8af0d6b042383274993a2cb4642d21
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
