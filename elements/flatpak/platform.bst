@@ -43,10 +43,17 @@ config:
       no-autodownload: "true"
       autodelete: "false"
       add-ld-path: "lib"
-      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d"
+      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d"
       download-if: "active-gl-driver"
       enable-if: "active-gl-driver"
       autoprune-unless: active-gl-driver
+
+    Extension org.freedesktop.Platform.VulkanLayer:
+      version: "%{freedesktop-sdk-flatpak-branch}"
+      directory: "lib/extensions/vulkan"
+      subdirectories: "true"
+      no-autodownload: "true"
+      merge-dirs: "share/vulkan/implicit_layer.d;share/vulkan/explicit_layer.d;"
 
     Extension org.freedesktop.Platform.Timezones:
       directory: share/zoneinfo
@@ -78,11 +85,12 @@ config:
       no-autodownload: 'true'
       add-ld-path: lib
       download-if: have-intel-gpu
-      version: '%{freedesktop-sdk-flatpak-branch}'
       autoprune-unless: have-intel-gpu
+      version: '%{freedesktop-sdk-flatpak-branch}'
 
     Extension org.freedesktop.Platform.openh264:
       directory: '%{lib}/openh264'
+      versions: '2.0beta;2.0'
       version: '2.0'
       add-ld-path: extra
       autodelete: 'false'
