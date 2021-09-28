@@ -1,9 +1,8 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: gitlab_gnome_org:GNOME/gspell.git
-  track: master
+- kind: tar
+  url: github_com:gedit-org/gspell/archive/refs/tags/1.9.1.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst
