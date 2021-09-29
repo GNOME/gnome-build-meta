@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-session.git
-  track: master
+  track: main
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
