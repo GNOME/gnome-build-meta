@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/librsvg.git
-  track: master
+  track: main
 - kind: cargo
 build-depends:
 - sdk/gobject-introspection.bst
