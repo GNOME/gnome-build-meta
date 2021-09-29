@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gdm.git
-  track: master
+  track: main
 - kind: local
   path: files/gdm
   directory: gdm-config
