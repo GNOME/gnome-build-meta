@@ -14,6 +14,7 @@ depends:
 - core-deps/libcacard.bst
 - core-deps/spice.bst
 - core-deps/usbredir.bst
+- core-deps/virglrenderer.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
@@ -48,6 +49,7 @@ variables:
     --enable-gtk
     --enable-sdl
     --enable-sdl-image
+    --enable-virglrenderer
 
   # --exec-prefix --disable-static are not accepted
   conf-args: >-
