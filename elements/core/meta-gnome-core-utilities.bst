@@ -12,7 +12,6 @@ depends:
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
-- core/gedit.bst
 - core/gnome-boxes.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
@@ -30,6 +29,7 @@ depends:
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
 - core/gnome-terminal.bst
+- core/gnome-text-editor.bst
 - core/gnome-weather.bst
 - core/nautilus.bst
 - core/simple-scan.bst

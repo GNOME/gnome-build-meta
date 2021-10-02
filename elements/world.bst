@@ -14,6 +14,7 @@ depends:
 - world/five-or-more.bst
 - world/four-in-a-row.bst
 - world/geary.bst
+- world/gedit.bst
 - world/ghex.bst
 - world/gitg.bst
 - world/glade.bst
