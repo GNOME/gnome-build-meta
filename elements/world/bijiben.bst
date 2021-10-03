@@ -20,6 +20,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/tracker.bst
-- sdk/webkitgtk.bst
+- sdk/webkit2gtk-4.0.bst
 - world/libhandy-0.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

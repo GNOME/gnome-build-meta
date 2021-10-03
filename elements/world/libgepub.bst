@@ -9,6 +9,6 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkitgtk.bst
+- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

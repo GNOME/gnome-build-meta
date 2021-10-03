@@ -1,5 +1,3 @@
-kind: cmake
-
 sources:
 - kind: tar
   url: webkitgtk_org:webkitgtk-2.34.1.tar.xz
@@ -28,11 +26,9 @@ depends:
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
 - sdk/gst-plugins-base.bst
-- sdk/gtk+-3.bst
 - sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
 - sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/woff2.bst
@@ -56,11 +52,6 @@ variables:
   (?):
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
-  cmake-local: >-
-    -DPORT=GTK
-    -DENABLE_GTKDOC=ON
-    -DUSE_SOUP2=ON
-    %{webkitgtk_toolchain}
 
 (?):
 - arch == "i686":
@@ -73,11 +64,5 @@ variables:
       CXXFLAGS: '%{flags_arm} -g1'
 
 public:
-  bst:
-    split-rules:
-      devel:
-        (>):
-        - '%{libdir}/libjavascriptcoregtk-4.0.so'
-        - '%{libdir}/libwebkit2gtk-4.0.so'
   cpe:
     product: webkitgtk+

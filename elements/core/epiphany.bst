@@ -1,12 +1,15 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/epiphany.git
   track: master
+
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/libdazzle.bst
 - sdk/adwaita-icon-theme.bst
@@ -20,7 +23,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
-- sdk/webkitgtk.bst
+- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

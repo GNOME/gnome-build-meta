@@ -1,24 +1,29 @@
 kind: autotools
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/yelp.git
   track: master
+
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
-- sdk/webkitgtk.bst
+- sdk/webkit2gtk-4.0.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   conf-local: >-
     --with-webkit2gtk-4-0
+
 public:
   bst:
     integration-commands:
