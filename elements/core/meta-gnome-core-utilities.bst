@@ -12,7 +12,6 @@ depends:
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
-- core/gnome-boxes.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
 - core/gnome-characters.bst
