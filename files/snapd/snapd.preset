@@ -1,0 +1,4 @@
+disable snapd.*.service
+disable snapd.*.timer
+disable snapd.service
+disable snapd.socket

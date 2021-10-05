@@ -1,0 +1,11 @@
+diff -ur snapd.old/dirs/dirs.go snapd/dirs/dirs.go
+--- snapd.old/dirs/dirs.go	2021-10-02 17:27:51.578196035 +0200
++++ snapd/dirs/dirs.go	2021-10-04 14:00:34.857702020 +0200
+@@ -305,6 +305,7 @@
+ 		"gentoo",
+ 		"manjaro",
+ 		"manjaro-arm",
++		"org.gnome.gnomeos",
+ 	}
+ 
+ 	isInsideBase, _ := isInsideBaseSnap()

@@ -13,6 +13,7 @@ depends:
 - vm/initramfs.bst
 - vm/lxc.bst
 - vm/os-release-devel.bst
+- vm/snapd.bst
 - vm/toolbox.bst
 - vm/swtpm.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst

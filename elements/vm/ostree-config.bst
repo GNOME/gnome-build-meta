@@ -39,6 +39,7 @@ config:
     mkdir -p "%{install-root}/sysroot"
     ln -s sysroot/ostree "%{install-root}/ostree"
     ln -s run/media "%{install-root}/media"
+    ln -s var/lib/snapd/snap "%{install-root}/snap"
 
   - |
     install -Dm644 -t "%{install-root}/usr/lib/tmpfiles.d" ostree.conf
