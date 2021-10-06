@@ -20,6 +20,7 @@ depends:
 - freedesktop-sdk.bst:components/freetype.bst
 - freedesktop-sdk.bst:components/jpeg.bst
 - freedesktop-sdk.bst:components/libpng.bst
+- freedesktop-sdk.bst:components/libtool.bst
 
 variables:
   conf-local: >-
@@ -35,3 +36,8 @@ variables:
     --without-qt
     --with-pangocairo
     --with-gdk-pixbuf
+
+public:
+  bst:
+    integration-commands:
+    - dot -c
