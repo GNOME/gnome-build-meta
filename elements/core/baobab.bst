@@ -11,7 +11,7 @@ build-depends:
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
