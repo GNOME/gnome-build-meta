@@ -14,7 +14,7 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/dbus.bst
-- freedesktop-sdk.bst:components/mozjs.bst
+- sdk/mozjs91.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

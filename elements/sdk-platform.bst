@@ -50,6 +50,7 @@ depends:
 - sdk/libsoup-2.4.bst
 - sdk/libsoup.bst
 - sdk/libwpe.bst
+- sdk/mozjs91.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pipewire.bst
