@@ -9,5 +9,14 @@ build-depends:
 
 depends:
 - sdk/gtk+-3.bst
-- core/gnome-desktop.bst
 - core-deps/xdg-desktop-portal.bst
+
+variables:
+  conf-local: >-
+    --disable-appchooser
+    --disable-background
+    --disable-lockdown
+    --disable-screencast
+    --disable-screenshot
+    --disable-settings
+    --disable-wallpaper
