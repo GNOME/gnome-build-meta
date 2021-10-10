@@ -39,7 +39,7 @@ default:
     optional: true
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
 
   - |
     case "${ARCH}" in
