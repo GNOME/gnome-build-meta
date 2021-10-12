@@ -41,3 +41,11 @@ variables:
   - gnome-build-meta
   variables:
     ARCH: arm
+
+.riscv:
+  image: "${DOCKER_AMD64}"
+  tags:
+  - riscv
+  - gnome-build-meta
+  variables:
+    ARCH: riscv64
