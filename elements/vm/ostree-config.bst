@@ -32,16 +32,18 @@ config:
     mkdir %{install-root}/tmp
     mkdir %{install-root}/dev
     mkdir %{install-root}/proc
+    mkdir %{install-root}/home
+    mkdir %{install-root}/root
 
   - |
     mkdir -p "%{install-root}/sysroot"
     ln -s sysroot/ostree "%{install-root}/ostree"
-    ln -s var/home "%{install-root}/home"
-    rm -rf "%{install-root}/root"
-    ln -s var/roothome "%{install-root}/root"
     ln -s run/media "%{install-root}/media"
 
   - |
     install -Dm644 -t "%{install-root}/usr/lib/tmpfiles.d" ostree.conf
     install -Dm644 *.gpg "%{install-root}/etc/pki/ostree/gnome.gpg"
     install -Dm644 -t "%{install-root}/etc/ostree/remotes.d" gnome.conf
+
+  - |
+    install -Dm644 -t "%{install-root}/usr/lib/systemd/system" home.mount root.mount
