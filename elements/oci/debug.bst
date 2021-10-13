@@ -34,4 +34,6 @@ config:
       config:
         Labels:
           'com.github.containers.toolbox': 'true'
+      index-annotations:
+        'org.opencontainers.image.ref.name': 'registry.gitlab.gnome.org/gnome/gnome-build-meta/sdk-debug:%{branch}'
     EOF
