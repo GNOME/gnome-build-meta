@@ -37,4 +37,6 @@ config:
         image: /parent
       layer: /layer
       comment: "Import platform layer from GNOME SDK"
+      index-annotations:
+        'org.opencontainers.image.ref.name': 'registry.gitlab.gnome.org/gnome/gnome-build-meta/gnome-platform:%{branch}'
     EOF
