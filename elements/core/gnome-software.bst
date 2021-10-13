@@ -23,6 +23,7 @@ depends:
 - core-deps/gspell.bst
 - core-deps/liboauth.bst
 - core-deps/malcontent.bst
+- core-deps/snapd-glib.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -45,3 +46,4 @@ variables:
     -Dflatpak=true
     -Deos_updater=true
     -Dpackagekit=false
+    -Dsnap=true
