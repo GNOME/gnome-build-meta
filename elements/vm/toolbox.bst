@@ -85,6 +85,8 @@ sources:
   directory: 'src/vendor/golang.org/x/sys'
 - kind: patch
   path: files/toolbox/riscv.patch
+- kind: patch
+  path: files/toolbox/gnome-sdk-as-default.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

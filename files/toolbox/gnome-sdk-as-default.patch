@@ -1,0 +1,55 @@
+diff --git a/src/pkg/utils/utils.go b/src/pkg/utils/utils.go
+index b6eecb2..34e2a33 100644
+--- a/src/pkg/utils/utils.go
++++ b/src/pkg/utils/utils.go
+@@ -52,7 +52,7 @@ type Distro struct {
+ 
+ const (
+ 	idTruncLength          = 12
+-	releaseDefaultFallback = "33"
++	releaseDefaultFallback = "master"
+ )
+ 
+ const (
+@@ -62,7 +62,7 @@ const (
+ )
+ 
+ var (
+-	distroDefault = "fedora"
++	distroDefault = "gnome"
+ 
+ 	preservedEnvironmentVariables = []string{
+ 		"COLORTERM",
+@@ -109,12 +109,20 @@ var (
+ 			"ubi8",
+ 			false,
+ 		},
++                "gnome": {
++                        "gnome-toolbox",
++                        "gnome-sdk",
++                        parseReleaseGNOME,
++                        "registry.gitlab.gnome.org",
++                        "GNOME/gnome-build-meta",
++                        false,
++                },
+ 	}
+ )
+ 
+ var (
+ 	ContainerNameDefault       string
+-	ContainerNamePrefixDefault = "fedora-toolbox"
++	ContainerNamePrefixDefault = "gnome-toolbox"
+ )
+ 
+ func init() {
+@@ -616,6 +624,10 @@ func parseReleaseFedora(str string) (string, error) {
+ 	return release, nil
+ }
+ 
++func parseReleaseGNOME(release string) (string, error) {
++        return release, nil
++}
++
+ func parseReleaseRHEL(str string) (string, error) {
+ 	if i := strings.IndexRune(str, '.'); i == -1 {
+ 		return "", errors.New("release must have a '.'")
