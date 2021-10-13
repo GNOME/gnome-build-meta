@@ -1,21 +1,9 @@
-kind: meson
-
-sources:
-- kind: git_tag
-  url: gnome:gnome-software.git
-  track: main
-  ref: 45.alpha-27-gc41f21c850928a2a77c7772c91b4775b8379ab5d
-- kind: git_module
-  url: gnome_gitlab:mwleeds/gnome-pwa-list.git
-  path: subprojects/gnome-pwa-list
-  ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
+kind: filter
 
 build-depends:
-- sdk/gtk-doc.bst
-- sdk/sysprof-minimal.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- core/gnome-software-all.bst
 
-depends:
+runtime-depends:
 - core-deps/eos-updater.bst
 - core-deps/fwupd.bst
 - core-deps/glib-testing.bst
@@ -38,10 +26,6 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
-variables:
-  meson-local: >-
-    -Dfwupd=true
-    -Dpolkit=true
-    -Dflatpak=true
-    -Deos_updater=true
-    -Dpackagekit=false
+config:
+  exclude:
+  - snap-plugin
