@@ -211,6 +211,26 @@ deploy-flatpak:
   environment:
     name: $ENVIRONMENT_NAME
 
+deploy-oci:
+  stage: deploy
+  extends:
+  - .x86_64
+  - .deploy-rules
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  # Sometimes podman push will timeout
+  retry: 2
+  script:
+  - ${BST} -o arch "${ARCH}" artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
+  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/platform.bst | podman load
+  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/sdk.bst | podman load
+  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/core.bst | podman load
+  - |
+    if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+        ./utils/publish-oci-quay.sh
+    fi
+
 vm-image-aarch64:
   extends:
   - .manual-image-template
