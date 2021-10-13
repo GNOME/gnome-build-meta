@@ -35,5 +35,5 @@ config:
         Labels:
           'com.github.containers.toolbox': 'true'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'registry.gitlab.gnome.org/gnome/gnome-build-meta/sdk:%{branch}'
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:sdk-%{branch}'
     EOF
