@@ -7,6 +7,8 @@ variables:
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
+  BRANCH: master
+  LATEST_BRANCH: 'false'
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
   OPENQA_NEEDLES_SHA: master
@@ -221,6 +223,35 @@ deploy-flatpak:
     include:
     - artifact: flatpak-deploy.yml
       job: generate-deploy-config
+
+deploy-oci:
+  stage: deploy
+  extends:
+  - .x86_64
+  - .deploy-rules
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-x86_64'
+    artifacts: false
+  stage: deploy
+  script:
+  - ${BST} -o arch "${ARCH}" build oci/platform.bst oci/sdk.bst oci/debug.bst
+  - ${BST} -o arch "${ARCH}" checkout --tar oci/platform.bst | podman load
+  - ${BST} -o arch "${ARCH}" checkout --tar oci/sdk.bst | podman load
+  - ${BST} -o arch "${ARCH}" checkout --tar oci/debug.bst | podman load
+  - podman login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  - |
+    tags=("${CI_COMMIT_SHORT_SHA}" "${BRANCH}")
+    if [ "${LATEST_BRANCH}" = "true" ]; then
+      tags+=("latest")
+    fi
+    for tag in "${tags[@]}"; do
+      for name in gnome-platform gnome-sdk gnome-sdk-debug; do
+        echo "Uploading ${name}:${tag}"
+        podman push "${CI_REGISTRY_IMAGE}/${name}:${BRANCH}" docker://"${CI_REGISTRY_IMAGE}/${name}:${tag}"
+      done
+    done
 
 vm-image-aarch64:
   extends:
