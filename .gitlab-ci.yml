@@ -446,6 +446,7 @@ test-iso-installer-x86_64:
     EOF
   - |
     worker_class=qemu_x86_64-${CI_JOB_ID}
+    openqa/templates --host $OPENQA_HOST --update
     openqa/utils/setup_worker.sh ${worker_class} > /tmp/machine_id
     /run_openqa_worker.sh &> worker.log &
   - |
