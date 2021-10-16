@@ -1,0 +1,79 @@
+#!/usr/share/openqa/script/load_templates
+#
+# GNOME OS OpenQA Templates
+#
+{
+  JobTemplates => [],
+  Machines     => [
+                    {
+                      backend => "qemu",
+                      name => "qemu_x86_64",
+                      settings => [
+                        { key => "ARCH", value => "x86_64" },
+                        { key => "PART_TABLE_TYPE", value => "gpt" },
+                        { key => "QEMUCPUS", value => 2 },
+                        { key => "QEMURAM", value => 2560 },
+                        { key => "QEMUVGA", value => "virtio" },
+                        { key => "UEFI", value => 1 },
+                        {
+                          key => "UEFI_PFLASH_CODE",
+                          value => "/usr/share/qemu/ovmf-x86_64-code.bin",
+                        },
+                        { key => "WORKER_CLASS", value => "qemu_x86_64" },
+                      ],
+                    },
+                    {
+                      backend => "qemu",
+                      name => "gitlab-runner-qemu_x86_64-1447270",
+                      settings => [
+                        { key => "ARCH", value => "x86_64" },
+                        { key => "PART_TABLE_TYPE", value => "gpt" },
+                        { key => "QEMUCPUS", value => 2 },
+                        { key => "QEMURAM", value => 2560 },
+                        { key => "QEMUVGA", value => "virtio" },
+                        { key => "UEFI", value => 1 },
+                        {
+                          key => "UEFI_PFLASH_CODE",
+                          value => "/usr/share/qemu/ovmf-x86_64-code.bin",
+                        },
+                        { key => "WORKER_CLASS", value => "qemu_x86_64-1447270" },
+                      ],
+                    },
+                    {
+                      backend => "qemu",
+                      name => "gitlab-runner-qemu_x86_64-1447281",
+                      settings => [
+                        { key => "ARCH", value => "x86_64" },
+                        { key => "PART_TABLE_TYPE", value => "gpt" },
+                        { key => "QEMUCPUS", value => 2 },
+                        { key => "QEMURAM", value => 2560 },
+                        { key => "QEMUVGA", value => "virtio" },
+                        { key => "UEFI", value => 1 },
+                        {
+                          key => "UEFI_PFLASH_CODE",
+                          value => "/usr/share/qemu/ovmf-x86_64-code.bin",
+                        },
+                        { key => "WORKER_CLASS", value => "qemu_x86_64-1447281" },
+                      ],
+                    },
+                  ],
+  Products     => [
+                    {
+                      arch     => "x86_64",
+                      distri   => "gnomeos",
+                      flavor   => "iso",
+                      settings => [{ key => "MACHINE", value => "x86_64,uefi" }],
+                      version  => "master",
+                    },
+                  ],
+  TestSuites   => [
+                    {
+                      description => "gnome os CI",
+                      name => "gnomeos",
+                      settings => [
+                        { key => "DESKTOP", value => "gnomeos" },
+                        { key => "FLAVOR", value => "iso" },
+                      ],
+                    },
+                  ],
+}
