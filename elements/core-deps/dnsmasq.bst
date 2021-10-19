@@ -2,10 +2,11 @@ kind: make
 
 sources:
 - kind: tar
-  url: http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.85.tar.xz
+  url: http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.86.tar.xz
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  make-install: make -j1 BINDIR=%{sbindir} PREFIX="%{prefix}" DESTDIR="%{install-root}" install
+  make-install: make -j1 BINDIR=%{sbindir} PREFIX="%{prefix}" DESTDIR="%{install-root}"
+    install

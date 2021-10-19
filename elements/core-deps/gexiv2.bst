@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gexiv2/0.13/gexiv2-0.13.0.tar.xz
+  url: gnome_downloads:gexiv2/0.14/gexiv2-0.14.0.tar.xz
 
 build-depends:
 - sdk/pygobject.bst
