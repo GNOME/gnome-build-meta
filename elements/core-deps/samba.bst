@@ -14,6 +14,7 @@ build-depends:
 depends:
 - core-deps/openldap.bst
 - core-deps/rpcsvc-proto.bst
+- sdk/krb5.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libarchive.bst
@@ -26,7 +27,7 @@ config:
     --sbindir=%{sbindir} --sysconfdir=%{sysconfdir} --datadir=%{datadir} --includedir=%{includedir}
     --libdir=%{libdir} --libexecdir=%{libexecdir} --localstatedir=%{localstatedir}
     --sharedstatedir=%{sharedstatedir} --mandir=%{mandir} --infodir=%{infodir} --without-ad-dc
-    --without-json
+    --without-json --with-system-mitkrb5
   build-commands:
   - make
   install-commands:
