@@ -14,9 +14,12 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/sndfile.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/libpulse.bst
 variables:
   conf-local: >-
     --with-espeak
+    --with-pulse
+    --with-oss=no
 
   local_flags: -fcommon
 
