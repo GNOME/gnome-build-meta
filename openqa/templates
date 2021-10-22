@@ -3,7 +3,22 @@
 # GNOME OS OpenQA Templates
 #
 {
-  JobTemplates => [],
+  JobTemplates => [
+                    {
+                      group_name => "gnomeos-live",
+                      prio => 50,
+                      # FIXME! name should be the name of the dynamically created machine
+                      # for a specific gitlab runner.
+                      machine => { name => "qemu_x86_64" },
+                      product => {
+                        arch => "x86_64",
+                        distri => "gnomeos",
+                        flavor => "iso",
+                        version => "master"
+                      },
+                      test_suite => { name => "gnomeos_install" }
+                    },
+                  ],
   Machines     => [
                   ],
   Products     => [
@@ -17,11 +32,12 @@
                   ],
   TestSuites   => [
                     {
-                      description => "gnome os CI",
-                      name => "gnomeos",
+                      name => "gnomeos_install",
+                      description => "GNOME OS installation",
                       settings => [
                         { key => "DESKTOP", value => "gnomeos" },
-                        { key => "FLAVOR", value => "iso" },
+                        { key => "STORE_HDD_1", value => "disk_%FLAVOR%_%MACHINE%.qcow2" },
+                        { key => "PUBLISH_HDD_1", value => "disk_%FLAVOR%_%MACHINE%.qcow2" },
                       ],
                     },
                   ],
