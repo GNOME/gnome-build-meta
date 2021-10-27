@@ -11,7 +11,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libcanberra.bst
+- core-deps/gsound.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
