@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gssdp.git
-  track: master
+  track: gssdp-1.4
 
 build-depends:
 - sdk-deps/gi-docgen.bst

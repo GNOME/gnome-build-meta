@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gupnp.git
-  track: master
+  track: gupnp-1.4
 
 build-depends:
 - sdk/gobject-introspection.bst
