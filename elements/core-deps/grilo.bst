@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:grilo/0.3/grilo-0.3.13.tar.xz
-  ref: d14837f22341943ed8a189d9f0827a17016b802d18d0ed080e1413de0fdc927b
+  url: gnome_downloads:grilo/0.3/grilo-0.3.14.tar.xz
+  ref: 0369d0b00bb0f59ba5f7aea8cfc665f38df14a5b4182d28c7c1e2cd15b518743
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

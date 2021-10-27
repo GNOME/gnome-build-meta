@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.32.3.tar.xz
-  ref: c1f496f5ac654efe4cef62fbd4f2fbeeef265a07c5e7419e5d2900bfeea52cbc
+  url: webkitgtk_org:webkitgtk-2.34.1.tar.xz
+  ref: 443c1316705de024741748e85fe32324d299d9ee68e6feb340b89e4a04073dee
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -10,6 +10,8 @@ sources:
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
+- sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
@@ -24,7 +26,6 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
-- sdk/gobject-introspection.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
@@ -36,6 +37,7 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
+- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
@@ -58,6 +60,8 @@ variables:
         -DENABLE_GLES2=ON
   cmake-local: >-
     -DPORT=GTK
+    -DENABLE_WEBDRIVER=OFF
+    -DUSE_SOUP2=ON
     -DENABLE_GAMEPAD=OFF
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
