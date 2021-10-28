@@ -416,14 +416,8 @@ cve_report:
 test-iso-installer-x86_64:
   stage: test
   image:
-    # Source repo: https://github.com/os-autoinst/openQA
-    # name: registry.opensuse.org/devel/openqa/containers15.2/openqa_worker:latest
-    #   2021-07-29: The 'latest' tag leads to @sha256:4469f2f4d1a93caaddcb3efb10471d2045f7ff230c5455b4ad9aa99efe90a8d7
-    #      This doesn't contain qemu-img and breaks during testing with error: "no kvm-img/qemu-img found"
-    #
-    # For now, using a version built locally, from openQA.git commit ceabc2be82e1f1c6c3c51bf017c1b79494ace869
-    name: quay.io/ssssam/openqa_worker
-    entrypoint: [ "/bin/bash", "-c" ]
+    name: registry.opensuse.org/devel/openqa/containers15.2/openqa_worker:latest
+    entrypoint: ["/bin/bash", "-c"]
   when: manual
   variables:
     IMAGE: iso/image.bst
