@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp/41/yelp-41.0.tar.xz
-  ref: 25a7d9fafc1eb010f1aeea3a3782ea392f6d94d6d82b0b42455321ad15ce5087
+  url: gnome_downloads:yelp/41/yelp-41.1.tar.xz
+  ref: 456a6415647bceeb0159b90b3553ff328728cf29a608fce08024232504ccb874
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst

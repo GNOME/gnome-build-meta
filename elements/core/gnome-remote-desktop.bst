@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-remote-desktop/41/gnome-remote-desktop-41.0.tar.xz
-  ref: 6a9bc8b1c68746f4a3aac1fe74c44a72e26a8bb4be1f1ca73027705acb652b5e
+  url: gnome_downloads:gnome-remote-desktop/41/gnome-remote-desktop-41.1.tar.xz
+  ref: c0e889b0ed811b11809bbefb17338494d8f52ff5120be6e3ffd3bae5a9e05fdf
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
