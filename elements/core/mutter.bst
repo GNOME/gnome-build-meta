@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/40/mutter-40.4.tar.xz
-  ref: a71c159cd2ac84a677da5fa7acc49483b2627dad772f880f889eb8e4530a1e23
+  url: gnome_downloads:mutter/40/mutter-40.5.tar.xz
+  ref: deb61673318480ca84c5209742a7f39470e5641fe32ee1c186a07386d335ad2e
 
 build-depends:
 - core/sysprof.bst

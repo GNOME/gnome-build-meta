@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: webkitgtk_org:webkitgtk-2.32.3.tar.xz
-  ref: c1f496f5ac654efe4cef62fbd4f2fbeeef265a07c5e7419e5d2900bfeea52cbc
+  url: webkitgtk_org:webkitgtk-2.34.1.tar.xz
+  ref: 443c1316705de024741748e85fe32324d299d9ee68e6feb340b89e4a04073dee
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -36,6 +36,7 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/hyphen.bst
+- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
@@ -54,7 +55,7 @@ variables:
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
   cmake-local: >-
-    -DPORT=GTK -DENABLE_GAMEPAD=OFF
+    -DPORT=GTK -DENABLE_GAMEPAD=OFF -DUSE_SOUP2=ON
     %{webkitgtk_toolchain}
     %{webkitgtk_arch_options}
 (?):

@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:gfbgraph/0.2/gfbgraph-0.2.4.tar.xz
-  ref: 6065391f35e7335588cc6b0cc4c1abbce7341488573a654551264cb9793b9379
+  url: gnome_downloads:gfbgraph/0.2/gfbgraph-0.2.5.tar.xz
+  ref: 9cb381b3f78ba1136df97af3f06e3b11dcc2ab339ac08f74eda0f8057d6603e3
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

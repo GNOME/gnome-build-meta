@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glib/2.68/glib-2.68.3.tar.xz
-  ref: e7e1a3c20c026109c45c9ec4a31d8dcebc22e86c69486993e565817d64be3138
+  url: gnome_downloads:glib/2.68/glib-2.68.4.tar.xz
+  ref: 62fd061d08a75492617e625a73e2c05e259f831acbb8e1f8b9c81f23f7993a3b
 
 build-depends:
 - sdk/gtk-doc.bst

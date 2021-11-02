@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.30.tar.xz
+  url: https://download.gimp.org/pub/gegl/0.4/gegl-0.4.32.tar.xz
 
-  ref: c112782cf4096969e23217ccdfabe42284e35d5435ff0c43d40e4c70faeca8dd
+  ref: 668e3c6b9faf75fb00512701c36274ab6f22a8ba05ec62dbf187d34b8d298fa1
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

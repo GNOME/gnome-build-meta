@@ -1,8 +1,8 @@
 kind: manual
 sources:
 - kind: tar
-  url: https://download.samba.org/pub/samba/stable/samba-4.14.6.tar.gz
-  ref: 86760692dd74a04705c0f6d11b31965a477265a50e79eb15838184476146f4b0
+  url: https://download.samba.org/pub/samba/stable/samba-4.15.1.tar.gz
+  ref: a1811fbb4110d64969f6c108f8d161e2c3e20ddf475529a3d32bd94bb7459f00
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:
