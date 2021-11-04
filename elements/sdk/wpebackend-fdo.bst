@@ -1,10 +1,10 @@
-kind: cmake
+kind: meson
 sources:
 - kind: tar
-  url: https://wpewebkit.org/releases/wpebackend-fdo-1.8.4.tar.xz
-  ref: def59bed5e8cdabb65ffa76ee2eef349fba7b42a75dac80f3da5954b17f4074a
+  url: https://wpewebkit.org/releases/wpebackend-fdo-1.10.0.tar.xz
+  ref: b89dfd3500a4dec711132cd7bff72599e67d56a419d000730e14bb99547509cc
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
 - sdk/libwpe.bst
