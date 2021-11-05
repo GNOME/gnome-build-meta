@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
