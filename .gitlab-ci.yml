@@ -447,7 +447,8 @@ test-iso-installer-x86_64:
         openqa/utils/teardown_worker.sh $(cat /tmp/machine_id)
         rm /tmp/machine_id
     fi
-  - if [ ! -e /tmp/exit_code ]; then
+  - |
+    if [ ! -e /tmp/exit_code ]; then
         echo "Job creation failed, log below."
         cat openqa.log
   - fi
