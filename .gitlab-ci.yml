@@ -7,8 +7,10 @@ variables:
   BST: "bst --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
   OPENQA_HOST: https://openqa.gnome.org
+  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
+  OPENQA_TESTS_BRANCH: master
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
-  OPENQA_NEEDLES_SHA: master
+  OPENQA_NEEDLES_BRANCH: master
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -422,6 +424,9 @@ test-iso-installer-x86_64:
     artifacts: true
   script:
   - |
+    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
+    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
+  - |
     mkdir -p /data/factory/iso/
     ln -s $(pwd)/image/installer.iso /data/factory/iso/installer.iso
   - |
@@ -436,7 +441,7 @@ test-iso-installer-x86_64:
     openqa/utils/setup_worker.sh ${worker_class} > /tmp/machine_id
     /run_openqa_worker.sh &> worker.log &
   - |
-    openqa/utils/start_job.sh ${worker_class} master > /tmp/job_id
+    openqa/utils/start_job.sh ${worker_class} master "$(pwd)/openqa" > /tmp/job_id
     echo "Test job has been started, visit $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
   - openqa/utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
