@@ -32,7 +32,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtksourceview-4.bst
 - sdk/librsvg.bst
-- freedesktop-sdk.bst:components/libportal.bst
+- core-deps/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
