@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
