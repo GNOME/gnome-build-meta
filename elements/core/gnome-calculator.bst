@@ -12,9 +12,9 @@ depends:
 - core-deps/mpc.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/gtksourceview-4.bst
+- sdk/gtk.bst
+- sdk/gtksourceview.bst
+- sdk/libadwaita.bst
 - sdk/libgee.bst
-- sdk/libhandy.bst
 - sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
