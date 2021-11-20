@@ -13,7 +13,7 @@ build-depends:
 
 runtime-depends:
 - freedesktop-sdk.bst:components/python3-six.bst
-- vm/buildstream/protobuf.bst
+- core-deps/protobuf.bst
 
 environment:
   GRPC_PYTHON_BUILD_SYSTEM_OPENSSL: "true"

@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:fwupd/fwupd/archive/1.6.0.tar.gz
+  url: github_com:fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/cmake.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/liberation-fonts.bst
@@ -17,6 +17,7 @@ build-depends:
 depends:
 - core-deps/libjcat.bst
 - core-deps/xmlb.bst
+- core-deps/protobuf-c.bst
 - sdk/gcab.bst
 - sdk/glib.bst
 - sdk/libsoup-2.4.bst
