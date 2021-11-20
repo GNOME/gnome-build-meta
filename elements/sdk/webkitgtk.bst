@@ -53,7 +53,6 @@ depends:
 variables:
   optimize-debug: 'false'
   webkitgtk_toolchain: ''
-  webkitgtk_arch_options: ''
   (?):
   - arch == "i686" or arch == "arm":
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
@@ -62,7 +61,7 @@ variables:
     -DENABLE_GTKDOC=ON
     -DUSE_SOUP2=ON
     %{webkitgtk_toolchain}
-    %{webkitgtk_arch_options}
+
 (?):
 - arch == "i686":
     environment:
@@ -72,6 +71,7 @@ variables:
     environment:
       CFLAGS: '%{flags_arm} -g1'
       CXXFLAGS: '%{flags_arm} -g1'
+
 public:
   bst:
     split-rules:
