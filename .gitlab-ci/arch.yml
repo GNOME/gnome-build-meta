@@ -33,11 +33,3 @@ variables:
   - gnome-build-meta
   variables:
     ARCH: aarch64
-
-.arm:
-  image: "${DOCKER_AARCH64}"
-  tags:
-  - armhf
-  - gnome-build-meta
-  variables:
-    ARCH: arm
