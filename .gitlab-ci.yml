@@ -54,6 +54,9 @@ default:
       x86_64)
          TARGETS+=(vm/repo.bst vm/repo-devel.bst)
          ;;
+      i686)
+         TARGETS=(flatpak-runtimes.bst flatpak-platform-extensions.bst)
+         ;;
     esac
 
   - |
