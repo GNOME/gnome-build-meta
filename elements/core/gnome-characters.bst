@@ -10,6 +10,6 @@ build-depends:
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gjs.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
