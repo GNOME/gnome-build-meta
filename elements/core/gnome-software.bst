@@ -1,12 +1,15 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-software.git
   track: main
+
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/appstream.bst
 - core-deps/eos-updater.bst
@@ -28,6 +31,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dfwupd=true
@@ -36,6 +40,8 @@ variables:
     -Dflatpak=true
     -Deos_updater=true
     -Dpackagekit=false
+    -Dsoup2=true
+
 config:
   configure-commands:
     (<):
