@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: https://github.com/lipnitsk/libcue/archive/v2.2.1.tar.gz
+  url: tar_github_com:/lipnitsk/libcue/archive/v2.2.1.tar.gz
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

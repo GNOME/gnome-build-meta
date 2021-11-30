@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://cairographics.org/releases/cairomm-1.16.0.tar.xz
+  url: tar_cairographics_org:/releases/cairomm-1.16.0.tar.xz
 
 build-depends:
 - core-deps/mm-common.bst
