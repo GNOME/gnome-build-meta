@@ -9,7 +9,7 @@ sources:
       url: gitlab_gnome_org:/GNOME/libgd.git
     flatpak/shared-modules:
       checkout: false
-      url: https://github.com/flathub/shared-modules.git
+      url: github_com:/flathub/shared-modules.git
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
