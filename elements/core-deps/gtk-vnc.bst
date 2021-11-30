@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gtk-vnc.git
+  url: gitlab_gnome_org:/GNOME/gtk-vnc.git
   track: master
   submodules:
     subprojects/keycodemapdb:

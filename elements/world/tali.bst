@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/tali.git
+  url: gitlab_gnome_org:/GNOME/tali.git
   track: master
 
 build-depends:

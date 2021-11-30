@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/pangomm.git
+  url: gitlab_gnome_org:/GNOME/pangomm.git
   track: pangomm-2-46
 build-depends:
 - core-deps/mm-common.bst

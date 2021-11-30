@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/libgtop.git
+  url: gitlab_gnome_org:/GNOME/libgtop.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst

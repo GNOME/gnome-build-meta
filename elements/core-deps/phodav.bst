@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/phodav.git
+  url: gitlab_gnome_org:/GNOME/phodav.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst

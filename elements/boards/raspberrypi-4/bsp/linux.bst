@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: https://github.com/raspberrypi/linux.git
+  url: github_com:/raspberrypi/linux.git
   # Aim to track 5.4 LTS work for vc4-kms etc
   # track: 5.4.y
   track: a98ba9221895e03b8736312ce6666005da5968a1
