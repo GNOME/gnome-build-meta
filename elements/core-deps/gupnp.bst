@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gupnp.git
+  url: https://gitlab.gnome.org/GNOME/gupnp.git
   track: gupnp-1.4
 
 build-depends:

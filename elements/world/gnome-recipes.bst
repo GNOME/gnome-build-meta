@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/recipes.git
+  url: https://gitlab.gnome.org/GNOME/recipes.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
+      url: https://gitlab.gnome.org/GNOME/libgd.git
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

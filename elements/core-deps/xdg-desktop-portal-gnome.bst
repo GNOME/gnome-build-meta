@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/xdg-desktop-portal-gnome.git
+  url: https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome.git
   track: main
 
 build-depends:

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/accerciser.git
+  url: https://gitlab.gnome.org/GNOME/accerciser.git
   track: master
 
 build-depends:

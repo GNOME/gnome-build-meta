@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-themes-extra.git
+  url: https://gitlab.gnome.org/GNOME/gnome-themes-extra.git
   track: master
 build-depends:
 - core-deps/intltool.bst

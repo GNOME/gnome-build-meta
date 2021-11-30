@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: git_freedesktop_org:xorg/lib/libxcvt/-/archive/libxcvt-0.1.1/libxcvt-libxcvt-0.1.1.tar.bz2
+  url: https://gitlab.freedesktop.org/xorg/lib/libxcvt/-/archive/libxcvt-0.1.1/libxcvt-libxcvt-0.1.1.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

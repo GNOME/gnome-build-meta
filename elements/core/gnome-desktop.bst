@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-desktop.git
+  url: https://gitlab.gnome.org/GNOME/gnome-desktop.git
   track: master
 
 build-depends:

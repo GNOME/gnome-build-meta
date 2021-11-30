@@ -2,15 +2,15 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:World/Phosh/phosh.git
+  url: https://gitlab.gnome.org/World/Phosh/phosh.git
   track: main
   submodules:
     subprojects/gvc:
       checkout: true
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+      url: https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
     subprojects/libcall-ui:
       checkout: true
-      url: gitlab_gnome_org:World/Phosh/libcall-ui.git
+      url: https://gitlab.gnome.org/World/Phosh/libcall-ui.git
 
 build-depends:
 - sdk/gtk-doc.bst

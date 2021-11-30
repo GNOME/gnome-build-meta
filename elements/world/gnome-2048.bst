@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-2048.git
+  url: https://gitlab.gnome.org/GNOME/gnome-2048.git
   track: master
 
 build-depends:

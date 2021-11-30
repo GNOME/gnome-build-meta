@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/epiphany.git
+  url: https://gitlab.gnome.org/GNOME/epiphany.git
   track: master
 
 build-depends:

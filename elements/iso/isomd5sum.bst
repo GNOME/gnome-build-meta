@@ -2,7 +2,7 @@ kind: make
 
 sources:
 - kind: tar
-  url: github_com:rhinstaller/isomd5sum/archive/1.2.3.tar.gz
+  url: https://github.com/rhinstaller/isomd5sum/archive/1.2.3.tar.gz
 
 depends:
 - freedesktop-sdk.bst:components/popt.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-user-docs.git
+  url: https://gitlab.gnome.org/GNOME/gnome-user-docs.git
   track: master
 build-depends:
 - sdk/yelp-tools.bst

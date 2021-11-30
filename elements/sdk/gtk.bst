@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtk.git
+  url: https://gitlab.gnome.org/GNOME/gtk.git
   track: main
 
 build-depends:

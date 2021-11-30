@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/mutter.git
+  url: https://gitlab.gnome.org/GNOME/mutter.git
   track: main
 
 build-depends:
