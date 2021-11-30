@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/libpeas.git
+  url: gitlab_gnome_org:/GNOME/libpeas.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

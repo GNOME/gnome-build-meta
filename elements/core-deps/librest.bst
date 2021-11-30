@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/librest.git
+  url: gitlab_gnome_org:/GNOME/librest.git
   track: librest-0-7
 build-depends:
 - sdk/gobject-introspection.bst

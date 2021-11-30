@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://github.com/hughsie/appstream-glib.git
+  url: github_com:/hughsie/appstream-glib.git
   track: master
 
 build-depends:

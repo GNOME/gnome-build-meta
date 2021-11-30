@@ -6,7 +6,7 @@ sources:
 # submodules.
 # There is no tarball release of libglnx.
 - kind: git_tag
-  url: https://github.com/endlessm/eos-installer.git
+  url: github_com:/endlessm/eos-installer.git
   track-tags: true
   track: Release_3.9.5
   submodules:

@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/totem.git
+  url: gitlab_gnome_org:/GNOME/totem.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: true
-      url: https://gitlab.gnome.org/GNOME/libgd.git
+      url: gitlab_gnome_org:/GNOME/libgd.git
     flatpak/shared-modules:
       checkout: false
       url: https://github.com/flathub/shared-modules.git

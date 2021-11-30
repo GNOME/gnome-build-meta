@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/libgnomekbd.git
+  url: gitlab_gnome_org:/GNOME/libgnomekbd.git
   track: master
 
 build-depends:

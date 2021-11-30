@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gtkmm.git
+  url: gitlab_gnome_org:/GNOME/gtkmm.git
   track: gtkmm-3-24
 build-depends:
 - core-deps/mm-common.bst

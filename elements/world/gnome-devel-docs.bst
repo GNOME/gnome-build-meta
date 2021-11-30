@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gnome-devel-docs.git
+  url: gitlab_gnome_org:/GNOME/gnome-devel-docs.git
   track: master
 
 build-depends:

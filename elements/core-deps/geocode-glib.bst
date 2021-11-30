@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/geocode-glib.git
+  url: gitlab_gnome_org:/GNOME/geocode-glib.git
   track: master
 
 build-depends:
