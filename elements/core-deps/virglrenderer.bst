@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/virglrenderer-0.9.1/virglrenderer-virglrenderer-0.9.1.tar.bz2
+  url: tar_gitlab_freedesktop_org:/virgl/virglrenderer/-/archive/virglrenderer-0.9.1/virglrenderer-virglrenderer-0.9.1.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

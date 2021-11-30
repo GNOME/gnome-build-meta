@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://www.freedesktop.org/software/cups-pk-helper/releases/cups-pk-helper-0.2.6.tar.xz
+  url: tar_www_freedesktop_org:/software/cups-pk-helper/releases/cups-pk-helper-0.2.6.tar.xz
 - kind: local
   path: files/cups-pk-helper/cups-pk-helper.service
 

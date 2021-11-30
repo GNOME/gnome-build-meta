@@ -2,7 +2,7 @@ kind: make
 
 sources:
 - kind: tar
-  url: https://github.com/git-lfs/git-lfs/releases/download/v2.13.3/git-lfs-v2.13.3.tar.gz
+  url: tar_github_com:/git-lfs/git-lfs/releases/download/v2.13.3/git-lfs-v2.13.3.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/go.bst
