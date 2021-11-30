@@ -10,7 +10,7 @@ sources:
       url: gitlab_gnome_org:/mschraal/gfm.git
     subprojects/shared-modules:
       checkout: false
-      url: https://github.com/flathub/shared-modules.git
+      url: github_com:/flathub/shared-modules.git
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

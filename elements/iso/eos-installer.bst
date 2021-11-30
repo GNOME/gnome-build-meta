@@ -11,7 +11,7 @@ sources:
   track: Release_3.9.5
   submodules:
     ext/libglnx:
-      url: https://gitlab.gnome.org/GNOME/libglnx.git
+      url: gitlab_gnome_org:/GNOME/libglnx.git
       checkout: true
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
