@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://gitlab.com/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/sane-backends-1.0.32.tar.gz
+  url: tar_gitlab_com:/sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/sane-backends-1.0.32.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst

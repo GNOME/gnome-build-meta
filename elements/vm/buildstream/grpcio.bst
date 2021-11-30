@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://files.pythonhosted.org/packages/a0/d6/d04c6550debe23e2eaef0d9c4adccbb6e20d8cce6da40ae989fe8836e287/grpcio-1.37.1.tar.gz
+  url: tar_files_pythonhosted_org:/packages/a0/d6/d04c6550debe23e2eaef0d9c4adccbb6e20d8cce6da40ae989fe8836e287/grpcio-1.37.1.tar.gz
 
 depends:
 - freedesktop-sdk.bst:components/python3.bst

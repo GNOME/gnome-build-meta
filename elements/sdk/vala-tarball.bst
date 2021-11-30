@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/vala/0.36/vala-0.36.20.tar.xz
+  url: tar_download_gnome_org:/sources/vala/0.36/vala-0.36.20.tar.xz
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

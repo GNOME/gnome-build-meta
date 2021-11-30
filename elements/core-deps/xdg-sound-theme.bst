@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://people.freedesktop.org/~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2
+  url: tar_people_freedesktop_org:/~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: https://github.com/brailcom/speechd/releases/download/0.10.2/speech-dispatcher-0.10.2.tar.gz
+  url: tar_github_com:/brailcom/speechd/releases/download/0.10.2/speech-dispatcher-0.10.2.tar.gz
 - kind: patch
   path: files/speech-dispatcher/Fix-build-after-glib-e38982df.patch
 build-depends:
