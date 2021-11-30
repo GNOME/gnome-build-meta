@@ -7,7 +7,7 @@ sources:
   submodules:
     subprojects/keycodemapdb:
       checkout: true
-      url: https://gitlab.com/keycodemap/keycodemapdb.git
+      url: gitlab_com:/keycodemap/keycodemapdb.git
 
 build-depends:
 - sdk/gobject-introspection.bst
