@@ -1,0 +1,6 @@
+github_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
+gitlab_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+purism:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
