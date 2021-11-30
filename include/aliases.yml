@@ -33,11 +33,11 @@ webkitgtk_org: https://webkitgtk.org/releases/
 #
 # Repeated aliases have been commented out
 #
-git_code_sf_net: https://git.code.sf.net/
+#  git_code_sf_net: https://git.code.sf.net/
 git_eno_space: https://git.eno.space/
-github_com: https://github.com/
-gitlab_com: https://gitlab.com/
-gitlab_gnome_org: https://gitlab.gnome.org/
+#  github_com: https://github.com/
+#  gitlab_com: https://gitlab.com/
+#  gitlab_gnome_org: https://gitlab.gnome.org/
 gitlab_manjaro_org: https://gitlab.manjaro.org/
 source_puri_sm: https://source.puri.sm/
 #
@@ -94,3 +94,7 @@ tar_www_openldap_org: https://www.openldap.org
 tar_www_spice-space_org: https://www.spice-space.org
 tar_www_tcpdump_org: https://www.tcpdump.org
 tar_www_thekelleys_org_uk: http://www.thekelleys.org.uk
+#
+# Additional troublesome mirrors
+#
+git_code_sf_net_p_gtspell: https://source.puri.sm/p/gtkspell

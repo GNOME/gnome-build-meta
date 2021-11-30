@@ -1,5 +1,7 @@
 git_code_sf_net:
 - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/
+git_code_sf_net_p_gtkspell:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/p/gtkspell/
 git_eno_space:
 - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_eno_space/
 github_com:
