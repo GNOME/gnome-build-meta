@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_com:PortAudio/portaudio/archive/refs/tags/v19.7.0.tar.gz
+  url: https://github.com/PortAudio/portaudio/archive/refs/tags/v19.7.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

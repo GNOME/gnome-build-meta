@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libadwaita.git
+  url: https://gitlab.gnome.org/GNOME/libadwaita.git
   track: main
 
 build-depends:

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: github_com:ebassi/graphene.git
+  url: https://github.com/ebassi/graphene.git
   track: master
 
 build-depends:

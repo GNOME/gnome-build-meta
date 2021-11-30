@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/eog.git
+  url: https://gitlab.gnome.org/GNOME/eog.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

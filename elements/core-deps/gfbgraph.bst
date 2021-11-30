@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgfbgraph.git
+  url: https://gitlab.gnome.org/GNOME/libgfbgraph.git
   track: stable-0.2.x
 build-depends:
 - sdk/gtk-doc.bst

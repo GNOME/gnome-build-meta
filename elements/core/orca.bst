@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/orca.git
+  url: https://gitlab.gnome.org/GNOME/orca.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

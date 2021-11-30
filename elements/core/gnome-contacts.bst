@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-contacts.git
+  url: https://gitlab.gnome.org/GNOME/gnome-contacts.git
   track: master
 build-depends:
 - sdk/vala.bst

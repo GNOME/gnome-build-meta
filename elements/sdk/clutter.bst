@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:clutter/1.26/clutter-1.26.4.tar.xz
+  url: https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
