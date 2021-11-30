@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: github_com:TelepathyIM/telepathy-glib.git
+  url: https://github.com/TelepathyIM/telepathy-glib.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

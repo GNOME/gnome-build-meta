@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:World/Phosh/phoc.git
+  url: https://gitlab.gnome.org/World/Phosh/phoc.git
   track: master
 
 build-depends:

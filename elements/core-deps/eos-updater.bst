@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:endlessm/eos-updater/archive/Release_3.9.4.tar.gz
+  url: https://github.com/endlessm/eos-updater/archive/Release_3.9.4.tar.gz
 
 depends:
 - core-deps/NetworkManager.bst

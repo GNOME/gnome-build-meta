@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.35/NetworkManager-1.35.1.tar.xz
+  url: https://download.gnome.org/sources/NetworkManager/1.35/NetworkManager-1.35.1.tar.xz
 build-depends:
 - core-deps/intltool.bst
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gmime.git
+  url: https://gitlab.gnome.org/GNOME/gmime.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

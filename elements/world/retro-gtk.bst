@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/retro-gtk.git
+  url: https://gitlab.gnome.org/GNOME/retro-gtk.git
   track: master
 
 build-depends:

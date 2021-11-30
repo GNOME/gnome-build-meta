@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/geary.git
+  url: https://gitlab.gnome.org/GNOME/geary.git
   track: master
 
 build-depends:

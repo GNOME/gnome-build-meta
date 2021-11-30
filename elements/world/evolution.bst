@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/evolution.git
+  url: https://gitlab.gnome.org/GNOME/evolution.git
   track: master
 
 build-depends:

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/rygel.git
+  url: https://gitlab.gnome.org/GNOME/rygel.git
   track: master
 
 build-depends:

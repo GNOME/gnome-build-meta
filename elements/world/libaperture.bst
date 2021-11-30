@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:jwestman/libaperture.git
+  url: https://gitlab.gnome.org/jwestman/libaperture.git
   track: master
 
 build-depends:

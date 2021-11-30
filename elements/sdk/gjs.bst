@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gjs.git
+  url: https://gitlab.gnome.org/GNOME/gjs.git
   track: master
 
 build-depends:

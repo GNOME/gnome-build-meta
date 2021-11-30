@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/grilo-plugins.git
+  url: https://gitlab.gnome.org/GNOME/grilo-plugins.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/sushi.git
+  url: https://gitlab.gnome.org/GNOME/sushi.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

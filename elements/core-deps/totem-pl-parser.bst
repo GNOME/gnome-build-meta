@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/totem-pl-parser.git
+  url: https://gitlab.gnome.org/GNOME/totem-pl-parser.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

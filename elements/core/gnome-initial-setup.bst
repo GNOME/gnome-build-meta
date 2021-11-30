@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-initial-setup.git
+  url: https://gitlab.gnome.org/GNOME/gnome-initial-setup.git
   track: master
 - kind: local
   path: files/gnome-initial-setup

@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-control-center.git
+  url: https://gitlab.gnome.org/GNOME/gnome-control-center.git
   track: master
   submodules:
     subprojects/gvc:
       checkout: true
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+      url: https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
 
 build-depends:
 - sdk/gtk-doc.bst

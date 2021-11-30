@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-online-miners.git
+  url: https://gitlab.gnome.org/GNOME/gnome-online-miners.git
   track: master
 
 build-depends:

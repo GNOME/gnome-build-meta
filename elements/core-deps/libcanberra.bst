@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tarballs_needing_help:libcanberra-0.30.tar.xz
+  url: https://people.gnome.org/~mcatanzaro/tarballs-needing-help/libcanberra-0.30.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: spice:usbredir/usbredir-0.12.0.tar.xz
+  url: https://www.spice-space.org/download/usbredir/usbredir-0.12.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - core-deps/spice-protocol.bst

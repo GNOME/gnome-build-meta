@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
+  url: https://github.com/fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
