@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gnome-builder.git
+  url: gitlab_gnome_org:/GNOME/gnome-builder.git
   track: main
 
 build-depends:

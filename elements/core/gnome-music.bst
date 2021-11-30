@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gnome-music.git
+  url: gitlab_gnome_org:/GNOME/gnome-music.git
   track: master
   submodules:
     subprojects/gfm:
       checkout: true
-      url: https://gitlab.gnome.org/mschraal/gfm.git
+      url: gitlab_gnome_org:/mschraal/gfm.git
     subprojects/shared-modules:
       checkout: false
       url: https://github.com/flathub/shared-modules.git

@@ -7,7 +7,7 @@ build-depends:
 
 sources:
 - kind: git_tag
-  url: https://github.com/raspberrypi/firmware.git
+  url: github_com:/raspberrypi/firmware.git
   track: 20354bebcc2a8448128f2348e19e155910d25122
   track-tags: false
 
@@ -16,7 +16,7 @@ config:
   - mkdir -p  %{install-root}/boot/
   - cp -a boot/LICENCE.broadcom %{install-root}/boot/
 
-  # https://github.com/raspberrypi/documentation/blob/master/configuration/boot_folder.md
+  # github_com:/raspberrypi/documentation/blob/master/configuration/boot_folder.md
   # Default firmware, standard GPU features
   - cp -a boot/fixup4.dat %{install-root}/boot/
   - cp -a boot/start4.elf %{install-root}/boot/

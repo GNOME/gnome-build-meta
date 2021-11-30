@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/devhelp.git
+  url: gitlab_gnome_org:/GNOME/devhelp.git
   track: main
 
 build-depends:

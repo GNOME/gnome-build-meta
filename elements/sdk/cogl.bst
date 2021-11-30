@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/cogl.git
+  url: gitlab_gnome_org:/GNOME/cogl.git
   track: cogl-1.22
 build-depends:
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/yelp-xsl.git
+  url: gitlab_gnome_org:/GNOME/yelp-xsl.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

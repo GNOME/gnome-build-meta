@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/gtk-doc.git
+  url: gitlab_gnome_org:/GNOME/gtk-doc.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

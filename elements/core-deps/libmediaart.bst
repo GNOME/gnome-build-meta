@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: https://gitlab.gnome.org/GNOME/libmediaart.git
+  url: gitlab_gnome_org:/GNOME/libmediaart.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst
