@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/libnma.git
+  url: gitlab_gnome_org:GNOME/libnma.git
   track: main
 
 build-depends:

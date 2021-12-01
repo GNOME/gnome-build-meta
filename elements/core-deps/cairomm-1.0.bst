@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: tar_cairographics_org:/releases/cairomm-1.14.3.tar.xz
+  url: tar_cairographics_org:releases/cairomm-1.14.3.tar.xz
 build-depends:
 - core-deps/mm-common.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

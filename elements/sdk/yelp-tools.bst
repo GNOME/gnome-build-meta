@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/yelp-tools.git
+  url: gitlab_gnome_org:GNOME/yelp-tools.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst

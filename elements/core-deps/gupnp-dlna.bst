@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gupnp-dlna.git
+  url: gitlab_gnome_org:GNOME/gupnp-dlna.git
   track: master
 
 build-depends:

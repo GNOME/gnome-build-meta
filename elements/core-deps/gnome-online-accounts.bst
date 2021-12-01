@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-online-accounts.git
+  url: gitlab_gnome_org:GNOME/gnome-online-accounts.git
   track: master
 
 build-depends:

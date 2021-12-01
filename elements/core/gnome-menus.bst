@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-menus.git
+  url: gitlab_gnome_org:GNOME/gnome-menus.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_download_gnome_org:/sources/NetworkManager-openvpn/1.8/NetworkManager-openvpn-1.8.14.tar.xz
+  url: tar_download_gnome_org:sources/NetworkManager-openvpn/1.8/NetworkManager-openvpn-1.8.14.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

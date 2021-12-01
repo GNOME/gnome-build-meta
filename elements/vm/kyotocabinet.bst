@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tar_fallabs_com:/kyotocabinet/pkg/kyotocabinet-1.2.76.tar.gz
+  url: tar_fallabs_com:kyotocabinet/pkg/kyotocabinet-1.2.76.tar.gz
 - kind: patch
   path: files/kyotocabinet/cpp-14.patch
 build-depends:

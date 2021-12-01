@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-software.git
+  url: gitlab_gnome_org:GNOME/gnome-software.git
   track: main
 
 build-depends:
