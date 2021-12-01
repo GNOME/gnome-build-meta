@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tar_www_freedesktop_org:/software/colord/releases/colord-gtk-0.2.0.tar.xz
+  url: tar_www_freedesktop_org:software/colord/releases/colord-gtk-0.2.0.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst

@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_files_libburnia-project_org:/releases/libisoburn-1.5.4.tar.gz
+  url: tar_files_libburnia-project_org:releases/libisoburn-1.5.4.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

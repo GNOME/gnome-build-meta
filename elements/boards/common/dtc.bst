@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: tar_git_kernel_org:/pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.6.1.tar.gz
+  url: tar_git_kernel_org:pub/scm/utils/dtc/dtc.git/snapshot/dtc-1.6.1.tar.gz
 
 depends:
 - freedesktop-sdk.bst:components/bison.bst

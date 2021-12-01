@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gobject-introspection.git
+  url: gitlab_gnome_org:GNOME/gobject-introspection.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst

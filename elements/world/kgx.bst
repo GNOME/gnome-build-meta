@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/ZanderBrown/kgx.git
+  url: gitlab_gnome_org:ZanderBrown/kgx.git
   track: master
 
 build-depends:

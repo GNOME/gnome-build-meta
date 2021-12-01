@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/librsvg.git
+  url: gitlab_gnome_org:GNOME/librsvg.git
   track: main
 - kind: cargo
 build-depends:

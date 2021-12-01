@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/libchamplain.git
+  url: gitlab_gnome_org:GNOME/libchamplain.git
   track: master
 
 build-depends:

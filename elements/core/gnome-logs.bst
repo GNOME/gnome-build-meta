@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-logs.git
+  url: gitlab_gnome_org:GNOME/gnome-logs.git
   track: master
 build-depends:
 - sdk/appstream-glib.bst

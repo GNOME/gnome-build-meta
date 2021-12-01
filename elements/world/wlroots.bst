@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: source_puri_sm:/Librem5/wlroots.git
+  url: source_puri_sm:Librem5/wlroots.git
   track: librem5-0.12.x
 
 build-depends:
