@@ -107,6 +107,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/swupdate_openvpn_org/-/blob/master//
     tar_tecnocode_co_uk:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/tecnocode_co_uk/-/blob/master//
+    tar_webkitgtk_org:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/webkitgtk_org/-/blob/master/
     tar_wpewebkit_org:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/wpewebkit_org/-/blob/master//
     tar_www_freedesktop_org:
