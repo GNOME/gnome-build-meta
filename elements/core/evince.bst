@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/evince.git
+  url: gitlab_gnome_org:GNOME/evince.git
   track: main
 
 build-depends:

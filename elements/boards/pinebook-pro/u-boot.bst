@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: git_eno_space:/pbp-uboot.git
+  url: git_eno_space:pbp-uboot.git
   track: 365495a329c8e92ca4c134562d091df71b75845e
 
 build-depends:

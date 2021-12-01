@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: tar_ftp_denx_de:/pub/u-boot/u-boot-2020.04.tar.bz2
+  url: tar_ftp_denx_de:pub/u-boot/u-boot-2020.04.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst

@@ -6,12 +6,12 @@ sources:
 # submodules.
 # There is no tarball release of libglnx.
 - kind: git_tag
-  url: github_com:/endlessm/eos-installer.git
+  url: github_com:endlessm/eos-installer.git
   track-tags: true
   track: Release_3.9.5
   submodules:
     ext/libglnx:
-      url: gitlab_gnome_org:/GNOME/libglnx.git
+      url: gitlab_gnome_org:GNOME/libglnx.git
       checkout: true
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch

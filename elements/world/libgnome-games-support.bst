@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/libgnome-games-support.git
+  url: gitlab_gnome_org:GNOME/libgnome-games-support.git
   track: master
 
 build-depends:

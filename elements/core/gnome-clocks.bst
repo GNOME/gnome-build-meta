@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-clocks.git
+  url: gitlab_gnome_org:GNOME/gnome-clocks.git
   track: master
 build-depends:
 - sdk/vala.bst

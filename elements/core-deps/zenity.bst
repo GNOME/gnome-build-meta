@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/zenity.git
+  url: gitlab_gnome_org:GNOME/zenity.git
   track: master
 build-depends:
 - sdk/yelp-tools.bst

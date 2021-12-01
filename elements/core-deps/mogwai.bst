@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tar_github_com:/endlessm/mogwai/archive/Release_3.9.4.tar.gz
+  url: tar_github_com:endlessm/mogwai/archive/Release_3.9.4.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/connections.git
+  url: gitlab_gnome_org:GNOME/connections.git
   track: master
   submodules:
     subprojects/gtk-frdp:
       checkout: true
-      url: gitlab_gnome_org:/GNOME/gtk-frdp.git
+      url: gitlab_gnome_org:GNOME/gtk-frdp.git
 
 build-depends:
 - sdk/gobject-introspection.bst

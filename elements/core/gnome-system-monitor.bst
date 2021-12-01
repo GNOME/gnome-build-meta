@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-system-monitor.git
+  url: gitlab_gnome_org:GNOME/gnome-system-monitor.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

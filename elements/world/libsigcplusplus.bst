@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: github_com:/libsigcplusplus/libsigcplusplus.git
+  url: github_com:libsigcplusplus/libsigcplusplus.git
   track: master
 build-depends:
 - core-deps/mm-common.bst

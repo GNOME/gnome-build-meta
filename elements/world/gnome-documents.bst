@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gnome-documents.git
+  url: gitlab_gnome_org:GNOME/gnome-documents.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: true
-      url: gitlab_gnome_org:/GNOME/libgd.git
+      url: gitlab_gnome_org:GNOME/libgd.git
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

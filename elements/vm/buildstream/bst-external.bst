@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: git_tag
-  url: gitlab_com:/BuildStream/bst-external.git
+  url: gitlab_com:BuildStream/bst-external.git
   track: 0.23.1
 
 build-depends:

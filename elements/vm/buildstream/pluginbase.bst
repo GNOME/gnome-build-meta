@@ -6,4 +6,4 @@ depends:
 
 sources:
 - kind: tar
-  url: tar_files_pythonhosted_org:/packages/3d/3c/fe974b4f835f83cc46966e04051f8708b7535bac28fbc0dcca1ee0c237b8/pluginbase-1.0.0.tar.gz
+  url: tar_files_pythonhosted_org:packages/3d/3c/fe974b4f835f83cc46966e04051f8708b7535bac28fbc0dcca1ee0c237b8/pluginbase-1.0.0.tar.gz

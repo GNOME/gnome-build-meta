@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/libgepub.git
+  url: gitlab_gnome_org:GNOME/libgepub.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

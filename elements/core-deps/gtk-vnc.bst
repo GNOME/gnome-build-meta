@@ -2,12 +2,12 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/gtk-vnc.git
+  url: gitlab_gnome_org:GNOME/gtk-vnc.git
   track: master
   submodules:
     subprojects/keycodemapdb:
       checkout: true
-      url: gitlab_com:/keycodemap/keycodemapdb.git
+      url: gitlab_com:keycodemap/keycodemapdb.git
 
 build-depends:
 - sdk/gobject-introspection.bst

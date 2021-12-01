@@ -1,12 +1,12 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:/GNOME/bijiben.git
+  url: gitlab_gnome_org:GNOME/bijiben.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: true
-      url: gitlab_gnome_org:/GNOME/libgd.git
+      url: gitlab_gnome_org:GNOME/libgd.git
 
 build-depends:
 - sdk/appstream-glib.bst
