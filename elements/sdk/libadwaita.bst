@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
+- sdk/sysprof-minimal.bst
 - sdk/vala.bst
 - sdk-deps/sassc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -14,3 +15,7 @@ build-depends:
 depends:
 - sdk/gtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dprofiling=true
