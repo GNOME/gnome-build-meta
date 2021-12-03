@@ -1,4 +1,3 @@
-mirrors:
 - name: kernel_org
   aliases:
     ftp_gnu_org:
