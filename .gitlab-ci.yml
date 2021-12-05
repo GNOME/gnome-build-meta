@@ -8,6 +8,10 @@ variables:
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: '40'
 
+  # Docker Images
+  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
+  DOCKER_IMAGE_ID: "a5c6fe9b400c10afa7b5268f0d23d028f128679f"
+
 stages:
 - track
 - build
@@ -16,6 +20,7 @@ stages:
 - reports
 
 default:
+  image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
