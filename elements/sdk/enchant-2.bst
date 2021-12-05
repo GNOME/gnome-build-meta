@@ -6,12 +6,14 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
+- sdk/nuspell.bst
 - freedesktop-sdk.bst:components/hunspell.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-
     --with-hunspell
     --with-hunspell-dir=/usr/share/myspell
+    --with-nuspell
 public:
   bst:
     split-rules:
