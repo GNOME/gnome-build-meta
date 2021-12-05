@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gtk-vnc/1.2/gtk-vnc-1.2.0.tar.xz
-  ref: 7aaf80040d47134a963742fb6c94e970fcb6bf52dc975d7ae542b2ef5f34b94a
+  url: gnome_downloads:gtk-vnc/1.3/gtk-vnc-1.3.0.tar.xz
+  ref: 5faaa5823b8cbe8c0b0ba1e456c4e70c4b1ae6685c9fe81a4282d98cf00a211d
 build-depends:
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst

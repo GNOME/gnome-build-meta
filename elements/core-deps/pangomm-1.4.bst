@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:pangomm/2.46/pangomm-2.46.1.tar.xz
-  ref: c885013fe61a4c5117fda395770d507563411c63e49f4a3aced4c9efe34d9975
+  url: gnome_downloads:pangomm/2.46/pangomm-2.46.2.tar.xz
+  ref: 57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4
 build-depends:
 - core-deps/mm-common.bst
 - freedesktop-sdk.bst:components/m4.bst
