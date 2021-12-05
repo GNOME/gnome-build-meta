@@ -3,9 +3,9 @@ kind: distutils
 sources:
 - kind: git_tag
   url: https://gitlab.com/BuildStream/bst-external.git
-  track: 0.21.0
+  track: 0.25.0
+  ref: 0.25.0-0-g30d64ed1f650363a97d6c8bb6bd6c1945a145d26
 
-  ref: 0.21.0-0-gd00bc2a0442ea6a33ef81ed0c5f4515d11274237
 build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools-scm.bst
 
