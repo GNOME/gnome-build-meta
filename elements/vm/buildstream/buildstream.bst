@@ -2,9 +2,9 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://download.gnome.org/sources/BuildStream/1.6/BuildStream-1.6.1.tar.xz
+  url: https://github.com/apache/buildstream/archive/refs/tags/1.6.3.tar.gz
+  ref: 0be6ec01562e0ba09a7131d572a5b1886a486454547fea2d67df06035799981e
 
-  ref: 2ba614e13c0641c28e27dc3c41e5b2418e729a9e39ffc06064b8b713390a6b5c
 depends:
 - sdk-deps/bubblewrap.bst
 - vm/buildstream/pytest-runner.bst
