@@ -1,126 +1,120 @@
-- name: kernel_org
-  aliases:
-    ftp_gnu_org:
-    - https://mirrors.kernel.org/gnu/
-- name: gnome
-  aliases:
-    git_code_sf_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/
-    git_code_sf_net_p_gtkspell:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/p/gtkspell/
-    git_eno_space:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_eno_space/
-    github_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
-    gitlab_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
-    gitlab_gnome_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_gnome_org/
-    gitlab_manjaro_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_manjaro_org/
-    source_puri_sm:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
-    tar_boostorg_jfrog_io:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/boostorg_jfrog_io/-/blob/master/
-    tar_cairographics_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cairographics_org/-/blob/master/
-    tar_cpan_metacpan_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cpan_metacpan_org/-/blob/master/
-    tar_cyberelk_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cyberelk_net/-/blob/master/
-    tar_dbus_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/dbus_freedesktop_org/-/blob/master/
-    tar_download_gimp_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_gimp_org/-/blob/master/
-    tar_download_gnome_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_gnome_org/-/blob/master/
-    tar_download_qemu_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_qemu_org/-/blob/master/
-    tar_download_samba_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_samba_org/-/blob/master/
-    tar_download_videolan_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_videolan_org/-/blob/master/
-    tar_downloads_sourceforge_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/-/blob/master/
-    tar_fallabs_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/fallabs_com/-/blob/master/
-    tar_files_libburnia-project_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_libburnia-project_org/-/blob/master/
-    tar_files_pythonhosted_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/-/blob/master/
-    tar_ftp_denx_de:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_denx_de/-/blob/master/
-    tar_ftp_gnu_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_gnu_org/-/blob/master/
-    tar_ftp_infradead_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_infradead_org/-/blob/master/
-    tar_ftp_netfilter_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_netfilter_org/-/blob/master/
-    tar_ftp_videolan_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_videolan_org/-/blob/master/
-    tar_git_kernel_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_kernel_org/-/blob/master/
-    tar_github_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/-/blob/master/
-    tar_gitlab_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/-/blob/master/
-    tar_gitlab_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/-/blob/master/
-    tar_gstreamer_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gstreamer_freedesktop_org/-/blob/master/
-    tar_http_debian_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/http_debian_net/-/blob/master/
-    tar_kerberos_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/-/blob/master/
-    tar_kldp_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kldp_net/-/blob/master/
-    tar_launchpad_net:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/-/blob/master/
-    tar_libopenraw_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/-/blob/master/
-    tar_libvirt_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libvirt_org/-/blob/master/
-    tar_linuxcontainers_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/linuxcontainers_org/-/blob/master/
-    tar_notroj_github_io:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/notroj_github_io/-/blob/master/
-    tar_people_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_freedesktop_org/-/blob/master/
-    tar_people_gnome_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_gnome_org/-/blob/master/
-    tar_people_redhat_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_redhat_com/-/blob/master/
-    tar_pub_freerdp_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/pub_freerdp_com/-/blob/master/
-    tar_qqwing_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/qqwing_com/-/blob/master/
-    tar_releases_pagure_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/releases_pagure_org/-/blob/master/
-    tar_sites_google_com:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/sites_google_com/-/blob/master/
-    tar_source_puri_sm:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/-/blob/master/
-    tar_static_crates_io:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/static_crates_io/-/blob/master/
-    tar_swupdate_openvpn_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/swupdate_openvpn_org/-/blob/master/
-    tar_tecnocode_co_uk:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/tecnocode_co_uk/-/blob/master/
-    tar_webkitgtk_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/webkitgtk_org/-/blob/master/
-    tar_wpewebkit_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/wpewebkit_org/-/blob/master/
-    tar_www_freedesktop_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_freedesktop_org/-/blob/master/
-    tar_www_gnupg_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_gnupg_org/-/blob/master/
-    tar_www_libraw_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_libraw_org/-/blob/master/
-    tar_www_openldap_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_openldap_org/-/blob/master/
-    tar_www_spice-space_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_spice-space_org/-/blob/master/
-    tar_www_tcpdump_org:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_tcpdump_org/-/blob/master/
-    tar_www_thekelleys_org_uk:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_thekelleys_org_uk/-/blob/master/
+git_code_sf_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/
+git_code_sf_net_p_gtkspell:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_code_sf_net/p/gtkspell/
+git_eno_space:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_eno_space/
+github_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
+gitlab_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+gitlab_gnome_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_gnome_org/
+gitlab_manjaro_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_manjaro_org/
+source_puri_sm:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
+tar_boostorg_jfrog_io:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/boostorg_jfrog_io/-/blob/master/
+tar_cairographics_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cairographics_org/-/blob/master/
+tar_cpan_metacpan_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cpan_metacpan_org/-/blob/master/
+tar_cyberelk_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cyberelk_net/-/blob/master/
+tar_dbus_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/dbus_freedesktop_org/-/blob/master/
+tar_download_gimp_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_gimp_org/-/blob/master/
+tar_download_gnome_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_gnome_org/-/blob/master/
+tar_download_qemu_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_qemu_org/-/blob/master/
+tar_download_samba_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_samba_org/-/blob/master/
+tar_download_videolan_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_videolan_org/-/blob/master/
+tar_downloads_sourceforge_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/-/blob/master/
+tar_fallabs_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/fallabs_com/-/blob/master/
+tar_files_libburnia-project_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_libburnia-project_org/-/blob/master/
+tar_files_pythonhosted_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/-/blob/master/
+tar_ftp_denx_de:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_denx_de/-/blob/master/
+tar_ftp_gnu_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_gnu_org/-/blob/master/
+tar_ftp_infradead_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_infradead_org/-/blob/master/
+tar_ftp_netfilter_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_netfilter_org/-/blob/master/
+tar_ftp_videolan_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_videolan_org/-/blob/master/
+tar_git_kernel_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_kernel_org/-/blob/master/
+tar_github_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/-/blob/master/
+tar_gitlab_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/-/blob/master/
+tar_gitlab_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/-/blob/master/
+tar_gstreamer_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gstreamer_freedesktop_org/-/blob/master/
+tar_http_debian_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/http_debian_net/-/blob/master/
+tar_kerberos_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/-/blob/master/
+tar_kldp_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kldp_net/-/blob/master/
+tar_launchpad_net:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/-/blob/master/
+tar_libopenraw_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/-/blob/master/
+tar_libvirt_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libvirt_org/-/blob/master/
+tar_linuxcontainers_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/linuxcontainers_org/-/blob/master/
+tar_notroj_github_io:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/notroj_github_io/-/blob/master/
+tar_people_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_freedesktop_org/-/blob/master/
+tar_people_gnome_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_gnome_org/-/blob/master/
+tar_people_redhat_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/people_redhat_com/-/blob/master/
+tar_pub_freerdp_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/pub_freerdp_com/-/blob/master/
+tar_qqwing_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/qqwing_com/-/blob/master/
+tar_releases_pagure_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/releases_pagure_org/-/blob/master/
+tar_sites_google_com:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/sites_google_com/-/blob/master/
+tar_source_puri_sm:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/-/blob/master/
+tar_static_crates_io:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/static_crates_io/-/blob/master/
+tar_swupdate_openvpn_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/swupdate_openvpn_org/-/blob/master/
+tar_tecnocode_co_uk:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/tecnocode_co_uk/-/blob/master/
+tar_webkitgtk_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/webkitgtk_org/-/blob/master/
+tar_wpewebkit_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/wpewebkit_org/-/blob/master/
+tar_www_freedesktop_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_freedesktop_org/-/blob/master/
+tar_www_gnupg_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_gnupg_org/-/blob/master/
+tar_www_libraw_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_libraw_org/-/blob/master/
+tar_www_openldap_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_openldap_org/-/blob/master/
+tar_www_spice-space_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_spice-space_org/-/blob/master/
+tar_www_tcpdump_org:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_tcpdump_org/-/blob/master/
+tar_www_thekelleys_org_uk:
+- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_thekelleys_org_uk/-/blob/master/
