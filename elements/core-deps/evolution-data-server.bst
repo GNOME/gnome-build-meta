@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.42/evolution-data-server-3.42.1.tar.xz
-  ref: e6e67f2a77d0ff3e6da50b03dc5fa266e716626bcda2ef44144e317e35f2f528
+  url: gnome_downloads:evolution-data-server/3.42/evolution-data-server-3.42.2.tar.xz
+  ref: 1c14d86e7a0d8e6e4f1a96137e31a619d2bcfbfc80ad1f0eac38dee2c0247abc
 build-depends:
 - core-deps/intltool.bst
 - sdk/vala.bst

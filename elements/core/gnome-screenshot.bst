@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-screenshot/40/gnome-screenshot-40.0.tar.xz
-  ref: 368ca95a39e39dc2406c849e8c4205e3f574acdd874c30741873455e3d21a5e2
+  url: gnome_downloads:gnome-screenshot/41/gnome-screenshot-41.0.tar.xz
+  ref: 4adb7dec926428f74263d5796673cf142e4720b6e768f5468a8d0933f98c9597
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
