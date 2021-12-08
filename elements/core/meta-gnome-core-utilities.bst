@@ -17,6 +17,7 @@ depends:
 - core/gnome-characters.bst
 - core/gnome-clocks.bst
 - core/gnome-connections.bst
+- core/gnome-console.bst
 - core/gnome-contacts.bst
 - core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst
@@ -27,7 +28,6 @@ depends:
 - core/gnome-screenshot.bst
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
-- core/gnome-terminal.bst
 - core/gnome-text-editor.bst
 - core/gnome-weather.bst
 - core/nautilus.bst

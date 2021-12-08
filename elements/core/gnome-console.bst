@@ -2,12 +2,13 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:ZanderBrown/kgx.git
-  track: master
+  url: gitlab_gnome_org:GNOME/console.git
+  track: main
 
 build-depends:
 - core/nautilus.bst
 - sdk-deps/sassc.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
