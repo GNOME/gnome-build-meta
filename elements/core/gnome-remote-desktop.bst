@@ -16,7 +16,10 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/pipewire.bst
+- freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/fuse3.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
