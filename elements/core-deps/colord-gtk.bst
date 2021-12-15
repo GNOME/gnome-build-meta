@@ -1,8 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: tar_www_freedesktop_org:software/colord/releases/colord-gtk-0.2.0.tar.xz
+- kind: git
+  url: github_com:hughsie/colord-gtk.git
+  track: master
+
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -15,6 +17,7 @@ depends:
 - core-deps/colord.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/gtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
