@@ -13,8 +13,7 @@ build-depends:
 depends:
 - core-deps/gsound.bst
 - sdk/glib.bst
-- sdk/gtk.bst
-- sdk/libadwaita.bst
+- sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
