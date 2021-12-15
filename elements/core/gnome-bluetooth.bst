@@ -17,3 +17,7 @@ depends:
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dgtk_doc=true
