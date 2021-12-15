@@ -186,6 +186,8 @@ generate-deploy-config:
       TARGETS_nightly: flatpak-platform-extensions.bst
       TARGETS_nightly_x86_64: openh264-extension.bst:flatpak-repo.bst
       ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
+      DOCKER_REGISTRY: '$DOCKER_REGISTRY'
+      DOCKER_IMAGE_ID: '$DOCKER_IMAGE_ID'
 
     END
   - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml

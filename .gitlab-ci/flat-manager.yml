@@ -7,6 +7,7 @@ stages:
 - finish
 
 default:
+  image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
