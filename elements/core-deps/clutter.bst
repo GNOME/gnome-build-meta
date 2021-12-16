@@ -7,8 +7,8 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- core-deps/cogl.bst
 - sdk/atk.bst
-- sdk/cogl.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst

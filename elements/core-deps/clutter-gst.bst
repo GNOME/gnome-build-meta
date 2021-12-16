@@ -7,8 +7,8 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- sdk/clutter.bst
-- sdk/cogl.bst
+- core-deps/clutter.bst
+- core-deps/cogl.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gst-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst

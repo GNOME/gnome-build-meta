@@ -6,6 +6,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/clutter-gtk.bst
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst
 - core-deps/gfbgraph.bst
@@ -13,7 +14,6 @@ depends:
 - core-deps/libchamplain.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/clutter-gtk.bst
 - sdk/geoclue.bst
 - sdk/gjs.bst
 - sdk/glib-networking.bst
