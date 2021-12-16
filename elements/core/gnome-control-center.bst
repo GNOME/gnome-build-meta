@@ -34,7 +34,7 @@ depends:
 - core-deps/udisks2.bst
 - core-deps/upower.bst
 - core/cheese.bst
-- core/gnome-bluetooth.bst
+- core/gnome-bluetooth-1.0.bst
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
