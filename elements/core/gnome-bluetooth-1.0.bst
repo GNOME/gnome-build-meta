@@ -19,5 +19,8 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
+  # Disable sendto as the binary is not namespaced
+  # and overlaps with gnome-bluetooth-2.0
   meson-local: >-
     -Dgtk_doc=true
+    -Dsendto=false
