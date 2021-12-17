@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
-  track: master
+  track: wip/alatiera/parallel-install
 
 build-depends:
 - sdk/gobject-introspection.bst
