@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tar_gitlab_freedesktop_org:geoclue/geoclue/-/archive/2.5.7/geoclue-2.5.7.tar.gz
+  url: https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.5.7/geoclue-2.5.7.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst

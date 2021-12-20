@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_people_redhat_com:sgrubb/libcap-ng/libcap-ng-0.8.2.tar.gz
+  url: https://people.redhat.com/sgrubb/libcap-ng/libcap-ng-0.8.2.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

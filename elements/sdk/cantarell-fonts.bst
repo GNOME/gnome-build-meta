@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: tar_download_gnome_org:sources/cantarell-fonts/0.301/cantarell-fonts-0.301.tar.xz
+  url: gnome_downloads:cantarell-fonts/0.301/cantarell-fonts-0.301.tar.xz
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

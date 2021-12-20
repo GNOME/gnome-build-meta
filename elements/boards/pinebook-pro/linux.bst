@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: gitlab_manjaro_org:tsys/linux-pinebook-pro.git
+  url: https://gitlab.manjaro.org/tsys/linux-pinebook-pro.git
   #track: master
   track: c04087388bdb7d79d5202ffb91aa387e36901056
   track-tags: false

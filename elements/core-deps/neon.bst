@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tar_notroj_github_io:neon/neon-0.31.2.tar.gz
+  url: https://notroj.github.io/neon/neon-0.31.2.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

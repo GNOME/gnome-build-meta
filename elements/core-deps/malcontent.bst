@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tar_tecnocode_co_uk:downloads/malcontent-0.10.1.tar.xz
+  url: https://tecnocode.co.uk/downloads/malcontent-0.10.1.tar.xz
 
 build-depends:
 - core-deps/glib-testing.bst

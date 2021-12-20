@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tar_download_gnome_org:sources/clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
+  url: gnome_downloads:clutter-gtk/1.8/clutter-gtk-1.8.4.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst

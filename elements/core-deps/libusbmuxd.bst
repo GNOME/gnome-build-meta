@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_github_com:libimobiledevice/libusbmuxd/releases/download/2.0.2/libusbmuxd-2.0.2.tar.bz2
+  url: https://github.com/libimobiledevice/libusbmuxd/releases/download/2.0.2/libusbmuxd-2.0.2.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

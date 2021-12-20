@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tar_download_samba_org:pub/ppp/ppp-2.4.9.tar.gz
+  url: https://download.samba.org/pub/ppp/ppp-2.4.9.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

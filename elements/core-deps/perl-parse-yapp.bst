@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: tar_cpan_metacpan_org:authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz
+  url: https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz
 
 depends:
 - freedesktop-sdk.bst:components/perl.bst

@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_www_freedesktop_org:software/plymouth/releases/plymouth-0.9.5.tar.xz
+  url: https://www.freedesktop.org/software/plymouth/releases/plymouth-0.9.5.tar.xz
 - kind: patch
   path: files/plymouth/plymouth-stdin.patch
 

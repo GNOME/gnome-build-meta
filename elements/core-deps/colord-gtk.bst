@@ -5,7 +5,6 @@ sources:
   url: github_com:hughsie/colord-gtk.git
   track: master
 
-
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

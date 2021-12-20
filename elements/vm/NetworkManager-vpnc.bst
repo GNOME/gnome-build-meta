@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_download_gnome_org:sources/NetworkManager-vpnc/1.2/NetworkManager-vpnc-1.2.6.tar.xz
+  url: gnome_downloads:NetworkManager-vpnc/1.2/NetworkManager-vpnc-1.2.6.tar.xz
 
 variables:
   conf-local: >-

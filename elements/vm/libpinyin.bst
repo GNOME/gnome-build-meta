@@ -1,9 +1,9 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tar_github_com:libpinyin/libpinyin/releases/download/2.6.1/libpinyin-2.6.1.tar.gz
+  url: github_com:libpinyin/libpinyin/releases/download/2.6.1/libpinyin-2.6.1.tar.gz
 - kind: tar
-  url: tar_downloads_sourceforge_net:libpinyin/models/model17.text.tar.gz
+  url: downloads.sourceforge.net:libpinyin/models/model17.text.tar.gz
   base-dir: ''
   directory: data
 build-depends:

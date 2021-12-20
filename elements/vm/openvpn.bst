@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_swupdate_openvpn_org:community/releases/openvpn-2.5.1.tar.gz
+  url: https://swupdate.openvpn.org/community/releases/openvpn-2.5.1.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

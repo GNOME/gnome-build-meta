@@ -1,7 +1,7 @@
 kind: manual
 sources:
 - kind: tar
-  url: tar_download_samba_org:pub/samba/stable/samba-4.15.2.tar.gz
+  url: https://download.samba.org/pub/samba/stable/samba-4.15.2.tar.gz
 - kind: patch
   path: files/samba/fix-root-build.patch
 build-depends:

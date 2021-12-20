@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_github_com:libimobiledevice/libplist/releases/download/2.2.0/libplist-2.2.0.tar.bz2
+  url: https://github.com/libimobiledevice/libplist/releases/download/2.2.0/libplist-2.2.0.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

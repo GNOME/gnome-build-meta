@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_download_qemu_org:qemu-5.2.0.tar.xz
+  url: https://download.qemu.org/qemu-5.2.0.tar.xz
 
 depends:
 - sdk/glib.bst

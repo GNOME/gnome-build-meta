@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tar_github_com:ibus/ibus-anthy/releases/download/1.5.12/ibus-anthy-1.5.12.tar.gz
+  url: github_com:ibus/ibus-anthy/releases/download/1.5.12/ibus-anthy-1.5.12.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst

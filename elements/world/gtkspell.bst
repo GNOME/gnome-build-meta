@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: git_code_sf_net_p_gtspell:gtkspell.git
+  url: git_code_sf_net:p/gtkspell/gtkspell.git
   track: master
 build-depends:
 - core-deps/intltool.bst

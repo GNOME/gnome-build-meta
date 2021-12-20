@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: tar
-  url: tar_cyberelk_net:tim/data/pycups/pycups-1.9.73.tar.bz2
+  url: http://cyberelk.net/tim/data/pycups/pycups-1.9.73.tar.bz2
 
 depends:
 - freedesktop-sdk.bst:components/cups.bst

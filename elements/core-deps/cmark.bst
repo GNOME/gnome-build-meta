@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: tar_github_com:commonmark/cmark/archive/refs/tags/0.30.1.tar.gz
+  url: github_com:commonmark/cmark/archive/refs/tags/0.30.1.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
