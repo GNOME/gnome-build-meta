@@ -6,10 +6,11 @@ sources:
   track: main
 
 build-depends:
-- sdk-deps/sassc.bst
-- sdk/sysprof-minimal.bst
-- sdk/gobject-introspection.bst
 - sdk-deps/gi-docgen.bst
+- sdk-deps/sassc.bst
+- sdk/gobject-introspection.bst
+- sdk/pygobject.bst
+- sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
