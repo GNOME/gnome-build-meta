@@ -42,7 +42,6 @@ depends:
 - world/gnome-todo.bst
 - world/gnome-tweaks.bst
 - world/gtkmm.bst
-- world/gtkspell.bst
 - world/gupnp-igd.bst
 - world/hitori.bst
 - world/iagno.bst
