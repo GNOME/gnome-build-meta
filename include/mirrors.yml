@@ -8,8 +8,6 @@ github_com:
 - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
 gitlab_com:
 - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
-gitlab_gnome_org:
-- https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_gnome_org/
 gitlab_manjaro_org:
 - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_manjaro_org/
 source_puri_sm:
