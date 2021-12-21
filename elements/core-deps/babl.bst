@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://download.gimp.org/pub/babl/0.1/babl-0.1.88.tar.xz
+  url: tar_download_gimp_org:pub/babl/0.1/babl-0.1.88.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

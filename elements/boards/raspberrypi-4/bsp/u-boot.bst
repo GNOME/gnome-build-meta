@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: ftp://ftp.denx.de/pub/u-boot/u-boot-2020.07-rc2.tar.bz2
+  url: tar_ftp_denx_de:pub/u-boot/u-boot-2020.07-rc2.tar.bz2
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

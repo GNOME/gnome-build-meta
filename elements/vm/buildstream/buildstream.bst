@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://github.com/apache/buildstream/archive/refs/tags/1.6.3.tar.gz
+  url: tar_github_com:apache/buildstream/archive/refs/tags/1.6.3.tar.gz
 
 depends:
 - sdk-deps/bubblewrap.bst

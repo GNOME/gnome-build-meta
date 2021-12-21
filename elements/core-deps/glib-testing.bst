@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://tecnocode.co.uk/downloads/libglib-testing-0.1.0.tar.xz
+  url: tar_tecnocode_co_uk:downloads/libglib-testing-0.1.0.tar.xz
 
 build-depends:
 - sdk/gtk-doc.bst
