@@ -20,6 +20,7 @@ aliases:
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
   webkitgtk: https://webkitgtk.org/releases/
+  wpewebkit: https://wpewebkit.org/releases/
 
   # git aliases go here
   github: https://github.com/

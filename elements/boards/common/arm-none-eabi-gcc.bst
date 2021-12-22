@@ -2,15 +2,15 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.xz
+  url: ftp_gnu_org:gcc/gcc-9.2.0/gcc-9.2.0.tar.xz
 - kind: tar
-  url: https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz
+  url: ftp_gnu_org:gmp/gmp-6.1.2.tar.xz
   directory: gmp
 - kind: tar
-  url: https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.xz
+  url: ftp_gnu_org:mpfr/mpfr-4.0.2.tar.xz
   directory: mpfr
 - kind: tar
-  url: https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz
+  url: ftp_gnu_org:mpc/mpc-1.1.0.tar.gz
   directory: mpc
 
 build-depends:
