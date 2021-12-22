@@ -27,9 +27,10 @@ depends:
 
 variables:
   cmake-local: >-
+    -DLIB_INSTALL_DIR=%{libdir}
+    -DSYSCONF_INSTALL_DIR=%{sysconfdir}
     -DENABLE_INTROSPECTION=ON
     -DENABLE_VALA_BINDINGS=ON
     -DENABLE_UOA=OFF
     -DENABLE_GOOGLE_AUTH=OFF
-    -DLIB_INSTALL_DIR=%{libdir}
-    -DSYSCONF_INSTALL_DIR=%{sysconfdir}
+    -DWITH_LIBDB=OFF
