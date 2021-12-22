@@ -2,9 +2,13 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_download:teams/releng/tarballs-needing-help/ntfs-3g/ntfs-3g_ntfsprogs-2017.3.23AR.5.tgz
+  url: github_com:tuxera/ntfs-3g/archive/refs/tags/2021.8.22.tar.gz
+
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
