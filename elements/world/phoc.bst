@@ -10,11 +10,10 @@ build-depends:
 
 depends:
 - core-deps/libinput.bst
-- core-deps/wlroots.bst
 - core/gnome-desktop.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- world/wlroots.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 - freedesktop-sdk.bst:components/mesa-headers.bst
@@ -22,6 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xwayland.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-

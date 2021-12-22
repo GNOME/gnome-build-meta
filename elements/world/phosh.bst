@@ -17,21 +17,21 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/NetworkManager.bst
 - core-deps/callaudiod.bst
 - core-deps/feedbackd.bst
 - core-deps/libinput.bst
-- core-deps/NetworkManager.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
-- core/phoc.bst
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- world/phoc.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
