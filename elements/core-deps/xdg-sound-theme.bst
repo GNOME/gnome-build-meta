@@ -2,9 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: people_freedesktop_org:~mccann/dist/sound-theme-freedesktop-0.8.tar.bz2
+  url: git_freedesktop_org:xdg/xdg-sound-theme/-/archive/0.8/xdg-sound-theme-0.8.tar.bz2
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
-- sdk/glib.bst
 - core-deps/intltool.bst
+- sdk/glib.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

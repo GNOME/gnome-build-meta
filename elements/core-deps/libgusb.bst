@@ -1,12 +1,15 @@
 kind: meson
+
 sources:
 - kind: tar
-  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.8.tar.xz
+  url: github_com:hughsie/libgusb/archive/refs/tags/0.3.9.tar.gz
+
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libusb.bst
