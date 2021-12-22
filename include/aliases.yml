@@ -10,15 +10,23 @@ aliases:
   # file aliases (e.g. tarballs)
   cairo: https://cairographics.org/
   crates: https://static.crates.io/
+  debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
+  freedesktop_software: https://www.freedesktop.org/software/
   ftp_gnu_org: https://ftp.gnu.org/gnu/
+  gimp: https://download.gimp.org/pub/
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
   libburnia: http://files.libburnia-project.org/releases/
+  libvirt: https://libvirt.org/sources/
+  pagure_releases: https://releases.pagure.org/
   purism_files: https://source.puri.sm/
+  pythonhosted: https://files.pythonhosted.org/packages/
+  samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
+  tecnocode: https://tecnocode.co.uk/downloads/
   webkitgtk: https://webkitgtk.org/releases/
   wpewebkit: https://wpewebkit.org/releases/
 
