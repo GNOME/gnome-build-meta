@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/network-manager-applet.git
+  url: gnome:network-manager-applet.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst

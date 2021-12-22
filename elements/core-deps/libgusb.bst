@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:hughsie/libgusb/archive/refs/tags/0.3.9.tar.gz
+  url: github_files:hughsie/libgusb/archive/refs/tags/0.3.9.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst

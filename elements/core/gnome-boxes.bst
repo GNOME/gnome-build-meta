@@ -2,15 +2,15 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-boxes.git
+  url: gnome:gnome-boxes.git
   track: master
   submodules:
     subprojects/gtk-frdp:
       checkout: true
-      url: gitlab_gnome_org:GNOME/gtk-frdp.git
+      url: gnome:gtk-frdp.git
     subprojects/libovf-glib:
       checkout: true
-      url: gitlab_gnome_org:felipeborges/libovf-glib.git
+      url: gnome_gitlab:felipeborges/libovf-glib.git
 - kind: patch
   path: files/gnome-boxes/re-order-recommended.patch
 

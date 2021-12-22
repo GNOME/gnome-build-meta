@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libdazzle.git
+  url: gnome:libdazzle.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

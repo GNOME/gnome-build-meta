@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gssdp.git
+  url: gnome:gssdp.git
   track: gssdp-1.4
 
 build-depends:

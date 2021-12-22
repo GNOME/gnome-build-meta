@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/lightsoff.git
+  url: gnome:lightsoff.git
   track: master
 
 build-depends:

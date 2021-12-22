@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: https://gitlab.freedesktop.org/spice/libcacard/uploads/9d8f24b131bcbbd7846727ea92952cb5/libcacard-2.8.0.tar.xz
+  url: freedesktop_files:spice/libcacard/uploads/9d8f24b131bcbbd7846727ea92952cb5/libcacard-2.8.0.tar.xz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

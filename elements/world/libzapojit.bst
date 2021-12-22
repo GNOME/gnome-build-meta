@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libzapojit.git
+  url: gnome:libzapojit.git
   track: master
 
 build-depends:

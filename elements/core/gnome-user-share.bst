@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-user-share.git
+  url: gnome:gnome-user-share.git
   track: master
 
 build-depends:

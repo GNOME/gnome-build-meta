@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-robots.git
+  url: gnome:gnome-robots.git
   track: master
 
 build-depends:

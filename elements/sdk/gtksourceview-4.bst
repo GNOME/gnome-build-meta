@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gtksourceview.git
+  url: gnome:gtksourceview.git
   track: 'gtksourceview-4-8'
 
 build-depends:

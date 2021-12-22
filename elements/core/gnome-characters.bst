@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-characters.git
+  url: gnome:gnome-characters.git
   track: master
 build-depends:
 - sdk/appstream-glib.bst

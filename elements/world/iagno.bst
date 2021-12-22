@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/iagno.git
+  url: gnome:iagno.git
   track: master
 
 build-depends:

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker-miners.git
+  url: gnome:tracker-miners.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst

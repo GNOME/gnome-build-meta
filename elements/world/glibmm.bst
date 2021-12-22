@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/glibmm.git
+  url: gnome:glibmm.git
   track: master
 
 build-depends:

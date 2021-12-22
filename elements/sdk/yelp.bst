@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/yelp.git
+  url: gnome:yelp.git
   track: master
 
 build-depends:

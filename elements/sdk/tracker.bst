@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker.git
+  url: gnome:tracker.git
   track: master
 
 build-depends:

@@ -2,7 +2,7 @@ kind: cmake
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/evolution-data-server.git
+  url: gnome:evolution-data-server.git
   track: master
 
 build-depends:

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/pangomm.git
+  url: gnome:pangomm.git
   track: master
 
 build-depends:

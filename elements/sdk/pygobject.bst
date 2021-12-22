@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/pygobject.git
+  url: gnome:pygobject.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst

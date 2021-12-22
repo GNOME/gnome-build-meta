@@ -2,15 +2,15 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-music.git
+  url: gnome:gnome-music.git
   track: master
   submodules:
     subprojects/gfm:
       checkout: true
-      url: gitlab_gnome_org:mschraal/gfm.git
+      url: gnome_gitlab:mschraal/gfm.git
     subprojects/shared-modules:
       checkout: false
-      url: github_com:flathub/shared-modules.git
+      url: github:flathub/shared-modules.git
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

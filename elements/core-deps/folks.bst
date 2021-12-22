@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/folks.git
+  url: gnome:folks.git
   track: master
 
 build-depends:

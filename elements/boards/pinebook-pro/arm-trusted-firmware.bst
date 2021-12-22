@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: https://github.com/ARM-software/arm-trusted-firmware.git
+  url: github:ARM-software/arm-trusted-firmware.git
   track: 22d12c4148c373932a7a81e5d1c59a767e143ac2
   track-tags: false
 

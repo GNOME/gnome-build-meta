@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-taquin.git
+  url: gnome:gnome-taquin.git
   track: master
 
 build-depends:

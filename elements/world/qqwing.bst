@@ -1,6 +1,8 @@
 kind: autotools
+
 sources:
 - kind: tar
-  url: qqwing:qqwing-1.3.4.tar.gz
+  url: github_files:stephenostermiller/qqwing/archive/v1.3.4.zip
+
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

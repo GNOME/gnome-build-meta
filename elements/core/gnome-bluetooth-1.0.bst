@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-bluetooth.git
+  url: gnome:gnome-bluetooth.git
   track: gnome-3-34
 
 build-depends:

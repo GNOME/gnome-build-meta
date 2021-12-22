@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/file-roller.git
+  url: gnome:file-roller.git
   track: master
 
 build-depends:

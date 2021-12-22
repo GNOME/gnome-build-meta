@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libsoup.git
+  url: gnome:libsoup.git
   track: gnome-3-38
 
 build-depends:

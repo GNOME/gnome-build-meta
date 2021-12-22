@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://github.com/hughsie/libxmlb/archive/0.3.2.tar.gz
+  url: github_files:hughsie/libxmlb/archive/0.3.2.tar.gz
 
 build-depends:
 - sdk/gobject-introspection.bst

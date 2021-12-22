@@ -1,0 +1,15 @@
+mirrors:
+- name: kernel_org
+  aliases:
+    ftp_gnu_org:
+    - https://mirrors.kernel.org/gnu/
+- name: gnome
+  aliases:
+    github:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
+    gitlab:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+    purism:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
+    purism_files:
+    - https://download.gnome.org/teams/releng/tarballs-needing-help/

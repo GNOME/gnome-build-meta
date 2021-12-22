@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-notes.git
+  url: gnome:gnome-notes.git
   track: master
 
 build-depends:

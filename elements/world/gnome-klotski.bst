@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-klotski.git
+  url: gnome:gnome-klotski.git
   track: master
 
 build-depends:

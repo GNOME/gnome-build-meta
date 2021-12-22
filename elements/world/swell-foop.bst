@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/swell-foop.git
+  url: gnome:swell-foop.git
   track: master
 
 build-depends:

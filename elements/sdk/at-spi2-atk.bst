@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/at-spi2-atk.git
+  url: gnome:at-spi2-atk.git
   track: master
 build-depends:
 - freedesktop-sdk.bst:components/libxml2.bst

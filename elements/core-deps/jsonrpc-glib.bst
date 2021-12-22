@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/jsonrpc-glib.git
+  url: gnome:jsonrpc-glib.git
   track: main
 
 build-depends:

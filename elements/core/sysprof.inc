@@ -1,4 +1,4 @@
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/sysprof.git
+  url: gnome:sysprof.git
   track: master

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git
-  url: github_com:hughsie/colord-gtk.git
+  url: github:hughsie/colord-gtk.git
   track: master
 
 build-depends:

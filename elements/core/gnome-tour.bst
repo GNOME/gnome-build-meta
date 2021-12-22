@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-tour.git
+  url: gnome:gnome-tour.git
   track: master
 - kind: cargo
 build-depends:

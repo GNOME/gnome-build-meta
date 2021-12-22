@@ -2,15 +2,15 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:World/Phosh/phosh.git
+  url: gnome_gitlab:World/Phosh/phosh.git
   track: main
   submodules:
     subprojects/gvc:
       checkout: true
-      url: gitlab_gnome_org:GNOME/libgnome-volume-control.git
+      url: gnome:libgnome-volume-control.git
     subprojects/libcall-ui:
       checkout: true
-      url: gitlab_gnome_org:World/Phosh/libcall-ui.git
+      url: gnome_gitlab:World/Phosh/libcall-ui.git
 
 build-depends:
 - freedesktop-sdk.bst:components/wayland-protocols.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-chess.git
+  url: gnome:gnome-chess.git
   track: master
 
 build-depends:

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-remote-desktop.git
+  url: gnome:gnome-remote-desktop.git
   track: master
 
 build-depends:

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git
-  url: gitlab_gnome_org:GNOME/calls.git
+  url: gnome:calls.git
   track: master
 
 build-depends:

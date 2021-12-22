@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker.git
+  url: gnome:tracker.git
   track: tracker-2.3
 build-depends:
 - sdk/gtk-doc.bst

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gdk-pixbuf.git
+  url: gnome:gdk-pixbuf.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

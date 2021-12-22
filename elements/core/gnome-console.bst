@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/console.git
+  url: gnome:console.git
   track: main
 
 build-depends:

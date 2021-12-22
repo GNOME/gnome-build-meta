@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/sushi.git
+  url: gnome:sushi.git
   track: master
 
 build-depends:

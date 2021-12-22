@@ -2,7 +2,7 @@ kind: make
 
 sources:
 - kind: git_tag
-  url: github_com:streambinder/vpnc.git
+  url: github:streambinder/vpnc.git
   track: 43780cecd7a61668002f73b6f8b9f9ba61af74ad
   track-tags: false
 

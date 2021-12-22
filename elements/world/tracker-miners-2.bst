@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/tracker-miners.git
+  url: gnome:tracker-miners.git
   track: tracker-miners-2.3
 build-depends:
 - core-deps/intltool.bst

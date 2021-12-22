@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/five-or-more.git
+  url: gnome:five-or-more.git
   track: master
 
 build-depends:

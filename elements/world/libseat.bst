@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_com:kennylevinsen/seatd/archive/refs/tags/0.6.3.tar.gz
+  url: github_files:kennylevinsen/seatd/archive/refs/tags/0.6.3.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

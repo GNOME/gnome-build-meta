@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-color-manager.git
+  url: gnome:gnome-color-manager.git
   track: master
 build-depends:
 - sdk/appstream-glib.bst

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/dconf.git
+  url: gnome:dconf.git
   track: master
 
 build-depends:

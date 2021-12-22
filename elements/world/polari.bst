@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/polari.git
+  url: gnome:polari.git
   track: main
 
 build-depends:

@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/gnome-disk-utility.git
+  url: gnome:gnome-disk-utility.git
   track: master
 build-depends:
 - sdk/appstream-glib.bst

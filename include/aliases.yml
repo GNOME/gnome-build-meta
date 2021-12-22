@@ -1,0 +1,27 @@
+# Source aliases.
+#
+# These are used in the individual element.bst files in
+# place of specifying full uris.
+#
+# The location from where source code is downloaded can
+# be changed without triggering a rebuild.
+#
+aliases:
+  # file aliases (e.g. tarballs)
+  cairo: https://cairographics.org/
+  freedesktop_files: https://gitlab.freedesktop.org/
+  ftp_gnu_org: https://ftp.gnu.org/gnu/
+  github_files: https://github.com/
+  gitlab_files: https://gitlab.com/
+  gnome_downloads: https://download.gnome.org/sources/
+  libburnia: http://files.libburnia-project.org/releases/
+  purism_files: https://source.puri.sm/
+  sourceforge: https://downloads.sourceforge.net/
+  spice: https://www.spice-space.org/download/
+  webkitgtk: https://webkitgtk.org/releases/
+
+  # git aliases go here
+  github: https://github.com/
+  gitlab: https://gitlab.com/
+  gnome: https://gitlab.gnome.org/GNOME/
+  gnome_gitlab: https://gitlab.gnome.org/

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/glade.git
+  url: gnome:glade.git
   track: master
 
 build-depends:

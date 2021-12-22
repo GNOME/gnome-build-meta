@@ -1,15 +1,15 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/totem.git
+  url: gnome:totem.git
   track: master
   submodules:
     subprojects/libgd:
       checkout: true
-      url: gitlab_gnome_org:GNOME/libgd.git
+      url: gnome:libgd.git
     flatpak/shared-modules:
       checkout: false
-      url: github_com:flathub/shared-modules.git
+      url: github:flathub/shared-modules.git
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

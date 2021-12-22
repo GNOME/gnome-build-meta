@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: git_tag
-  url: gitlab_gnome_org:GNOME/libgee.git
+  url: gnome:libgee.git
   track: master
 build-depends:
 - sdk/gobject-introspection.bst

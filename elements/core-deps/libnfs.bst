@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_com:sahlberg/libnfs/archive/refs/tags/libnfs-4.0.0.tar.gz
+  url: github_files:sahlberg/libnfs/archive/refs/tags/libnfs-4.0.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
