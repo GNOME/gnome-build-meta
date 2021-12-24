@@ -51,6 +51,7 @@ depends:
 - world/libgnome-games-support.bst
 - world/libgrss.bst
 - world/libhandy-0.bst
+- world/libseat.bst
 - world/libshumate.bst
 - world/libsigcplusplus.bst
 - world/libzapojit.bst
@@ -72,3 +73,4 @@ depends:
 - world/telepathy-mission-control.bst
 - world/tracker-2.bst
 - world/tracker-miners-2.bst
+- world/wlroots.bst

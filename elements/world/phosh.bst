@@ -13,14 +13,13 @@ sources:
       url: gitlab_gnome_org:World/Phosh/libcall-ui.git
 
 build-depends:
-- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/wayland-protocols.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/callaudiod.bst
 - core-deps/feedbackd.bst
-- core-deps/libinput.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - sdk/gcr.bst
@@ -32,6 +31,5 @@ depends:
 - world/phoc.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
