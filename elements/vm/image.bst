@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - core-deps/libostree.bst
-- vm/qemu-tools.bst
+- core-deps/qemu.bst
 - vm/repo.bst
 - freedesktop-sdk.bst:integration/mtab.bst
 - freedesktop-sdk.bst:components/genimage.bst
@@ -37,7 +37,7 @@ config:
     destination: '/source-repo'
   - element: core-deps/libostree.bst
     destination: '/'
-  - element: vm/qemu-tools.bst
+  - element: core-deps/qemu.bst
     destination: '/'
   - element: integration/mtab.bst
     destination: '/'
