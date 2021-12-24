@@ -50,7 +50,6 @@ depends:
 - world/libgepub.bst
 - world/libgnome-games-support.bst
 - world/libgrss.bst
-- world/libhandy-0.bst
 - world/libseat.bst
 - world/libshumate.bst
 - world/libsigcplusplus.bst
