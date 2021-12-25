@@ -23,6 +23,7 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
+- core-deps/libportal.bst
 - core-deps/template-glib.bst
 - core-deps/vte.bst
 - core/devhelp.bst
@@ -32,7 +33,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtksourceview-4.bst
 - sdk/librsvg.bst
-- freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 

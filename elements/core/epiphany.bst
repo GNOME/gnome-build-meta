@@ -12,6 +12,7 @@ build-depends:
 
 depends:
 - core-deps/libdazzle.bst
+- core-deps/libportal.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
@@ -25,8 +26,8 @@ depends:
 - sdk/libsoup-2.4.bst
 - sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
-- freedesktop-sdk.bst:components/libportal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dsoup2=enabled
