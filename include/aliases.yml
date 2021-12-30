@@ -22,7 +22,6 @@ aliases:
   libvirt: https://libvirt.org/sources/
   libopenraw: https://libopenraw.freedesktop.org/
   pagure_releases: https://releases.pagure.org/
-  purism_files: https://source.puri.sm/
   pythonhosted: https://files.pythonhosted.org/packages/
   samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
