@@ -31,5 +31,7 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/releases_pagure_org/tar-files/-/raw/master/
     purism:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
+    pythonhosted:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/tar-files/-/raw/master/
     sourceforge:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
