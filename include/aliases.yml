@@ -30,7 +30,7 @@ aliases:
   spice: https://www.spice-space.org/download/
   tecnocode: https://tecnocode.co.uk/downloads/
   webkitgtk: https://webkitgtk.org/
-  wpewebkit: https://wpewebkit.org/releases/
+  wpewebkit: https://wpewebkit.org/
 
   # git aliases go here
   freedesktop: https://gitlab.freedesktop.org/

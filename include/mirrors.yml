@@ -39,3 +39,5 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
     webkitgtk:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/webkitgtk_org/tar-files/-/raw/master/
+    wpewebkit:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/wpewebkit_org/tar-files/-/raw/master/
