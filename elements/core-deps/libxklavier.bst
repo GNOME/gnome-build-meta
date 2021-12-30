@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: freedesktop_files:archived-projects/libxklavier/-/archive/libxklavier-5.4/libxklavier-libxklavier-5.4.tar.bz2
+  url: freedesktop:archived-projects/libxklavier/-/archive/libxklavier-5.4/libxklavier-libxklavier-5.4.tar.bz2
 
 build-depends:
 - core-deps/intltool.bst

@@ -31,6 +31,7 @@ aliases:
   wpewebkit: https://wpewebkit.org/releases/
 
   # git aliases go here
+  freedesktop: https://gitlab.freedesktop.org/
   github: https://github.com/
   gitlab: https://gitlab.com/
   gnome: https://gitlab.gnome.org/GNOME/
