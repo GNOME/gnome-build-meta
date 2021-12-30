@@ -13,7 +13,7 @@ aliases:
   debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_software: https://www.freedesktop.org/software/
-  ftp_gnu_org: https://ftp.gnu.org/gnu/
+  ftp_gnu_org: https://ftp.gnu.org/
   gimp: https://download.gimp.org/pub/
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
