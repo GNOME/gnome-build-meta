@@ -5,6 +5,12 @@ mirrors:
     - https://mirrors.kernel.org/gnu/
 - name: gnome
   aliases:
+    cairo:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cairographics_org/tar-files/-/raw/master/
+    crates:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/static_crates_io/tar-files/-/raw/master/
+    debian_salsa:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/salsa_debian_org/tar-files/-/raw/master/
     freedesktop:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/
     freedesktop_files:
@@ -21,5 +27,9 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/tar-files/-/raw/master/
     libopenraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
+    pagure_releases:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/releases_pagure_org/tar-files/-/raw/master/
     purism:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
+    sourceforge:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
