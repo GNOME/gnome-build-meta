@@ -12,4 +12,4 @@ mirrors:
     purism:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
     purism_files:
-    - https://download.gnome.org/teams/releng/tarballs-needing-help/
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/tar-files/-/raw/master/
