@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: freedesktop_software:colord/releases/colord-1.4.5.tar.xz
+  url: freedesktop_www:software/colord/releases/colord-1.4.5.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

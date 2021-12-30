@@ -9,6 +9,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/
     freedesktop_files:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/tar-files/-/raw/master/
+    freedesktop_www:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_freedesktop_org/tar-files/-/raw/master/
     github:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
     gitlab:
