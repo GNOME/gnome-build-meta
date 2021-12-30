@@ -37,3 +37,5 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/tar-files/-/raw/master/
     sourceforge:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
+    webkitgtk:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/webkitgtk_org/tar-files/-/raw/master/
