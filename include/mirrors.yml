@@ -15,6 +15,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
     gitlab:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+    kerberos:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/tar-files/-/raw/master/
     libopenraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
     purism:
