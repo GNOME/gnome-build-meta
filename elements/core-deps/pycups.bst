@@ -1,7 +1,7 @@
 kind: distutils
 sources:
 - kind: tar
-  url: http://cyberelk.net/tim/data/pycups/pycups-1.9.73.tar.bz2
+  url: github_files:OpenPrinting/pycups/releases/download/v2.0.1/pycups-2.0.1.tar.gz
 
 depends:
 - freedesktop-sdk.bst:components/cups.bst
