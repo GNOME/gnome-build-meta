@@ -24,7 +24,7 @@ aliases:
   libvirt: https://libvirt.org/sources/
   libopenraw: https://libopenraw.freedesktop.org/
   pagure_releases: https://releases.pagure.org/
-  pythonhosted: https://files.pythonhosted.org/packages/
+  pythonhosted: https://files.pythonhosted.org/
   samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
