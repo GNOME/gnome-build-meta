@@ -20,6 +20,7 @@ aliases:
   gnome_downloads: https://download.gnome.org/sources/
   libburnia: http://files.libburnia-project.org/releases/
   libvirt: https://libvirt.org/sources/
+  libopenraw: https://libopenraw.freedesktop.org/
   pagure_releases: https://releases.pagure.org/
   purism_files: https://source.puri.sm/
   pythonhosted: https://files.pythonhosted.org/packages/
