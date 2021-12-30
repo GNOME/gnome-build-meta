@@ -13,6 +13,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
     gitlab:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+    libopenraw:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
     purism:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
     purism_files:
