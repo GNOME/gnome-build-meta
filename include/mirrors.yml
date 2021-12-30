@@ -2,7 +2,7 @@ mirrors:
 - name: kernel_org
   aliases:
     ftp_gnu_org:
-    - https://mirrors.kernel.org/gnu/
+    - https://mirrors.kernel.org/
 - name: gnome
   aliases:
     cairo:
@@ -17,6 +17,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/tar-files/-/raw/master/
     freedesktop_www:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_freedesktop_org/tar-files/-/raw/master/
+    ftp_gnu_org:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_gnu_org/tar-files/-/raw/master/
     github:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
     gitlab:
