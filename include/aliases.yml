@@ -18,6 +18,7 @@ aliases:
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
+  gnupg: https://www.gnupg.org/
   kerberos: https://kerberos.org/
   libburnia: http://files.libburnia-project.org/releases/
   libvirt: https://libvirt.org/sources/
