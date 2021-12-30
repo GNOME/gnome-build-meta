@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:benzea/uresourced/-/archive/v0.4.0/uresourced-v0.4.0.tar.bz2
+  url: freedesktop:benzea/uresourced/-/archive/v0.4.0/uresourced-v0.4.0.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -5,6 +5,10 @@ mirrors:
     - https://mirrors.kernel.org/gnu/
 - name: gnome
   aliases:
+    freedesktop:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/
+    freedesktop_files:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/tar-files/-/raw/master/
     github:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
     gitlab:
