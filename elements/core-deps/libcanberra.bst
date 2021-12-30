@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz
+  url: 0pointer:lennart/projects/libcanberra/libcanberra-0.30.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

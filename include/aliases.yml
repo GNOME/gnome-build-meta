@@ -8,27 +8,39 @@
 #
 aliases:
   # file aliases (e.g. tarballs)
+  0pointer: https://0pointer.de/
+  boostorg: https://boostorg.jfrog.io/
   cairo: https://cairographics.org/
+  cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
   debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_www: https://www.freedesktop.org/
+  freerdp: https://pub.freerdp.com/
   ftp_gnu_org: https://ftp.gnu.org/
   gimp: https://download.gimp.org/pub/
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
   gnupg: https://www.gnupg.org/
+  gstreamer: https://gstreamer.freedesktop.org/
   kerberos: https://kerberos.org/
+  launchpad: https://launchpad.net/
   libburnia: http://files.libburnia-project.org/releases/
   libvirt: https://libvirt.org/sources/
   libopenraw: https://libopenraw.freedesktop.org/
+  libraw: https://www.libraw.org/
+  netfilter: https://www.netfilter.org/
+  openldap: https://openldap.org/
   pagure_releases: https://releases.pagure.org/
   pythonhosted: https://files.pythonhosted.org/
   samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
+  tcpdump: https://www.tcpdump.org/
   tecnocode: https://tecnocode.co.uk/downloads/
+  thekelleys: http://www.thekelleys.org.uk/
+  videolan: https://download.videolan.org/
   webkitgtk: https://webkitgtk.org/
   wpewebkit: https://wpewebkit.org/
 
