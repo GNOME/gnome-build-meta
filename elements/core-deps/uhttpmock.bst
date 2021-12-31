@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: tecnocode:uhttpmock/uhttpmock-0.5.3.tar.xz
+  url: tecnocode:downloads/uhttpmock/uhttpmock-0.5.3.tar.xz
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

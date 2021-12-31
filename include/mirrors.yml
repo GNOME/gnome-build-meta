@@ -39,10 +39,14 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/tar-files/-/raw/master/
     launchpad:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/tar-files/-/raw/master/
+    libburnia:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_libburnia-project_org/tar-files/-/raw/master/
     libopenraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
     libraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_libraw_org/tar-files/-/raw/master/
+    libvirt:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libvirt_org/tar-files/-/raw/master/
     netfilter:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_netfilter_org/tar-files/-/raw/master/
     openldap:
@@ -53,8 +57,14 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
     pythonhosted:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/tar-files/-/raw/master/
+    samba:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_samba_org/tar-files/-/raw/master/
     sourceforge:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
+    spice:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_spice-space_org/tar-files/-/raw/master/
+    tecnocode:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/tecnocode_co_uk/tar-files/-/raw/master/
     tcpdump:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_tcpdump_org/tar-files/-/raw/master/
     thekelleys:

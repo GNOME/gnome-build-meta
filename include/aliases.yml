@@ -26,19 +26,19 @@ aliases:
   gstreamer: https://gstreamer.freedesktop.org/
   kerberos: https://kerberos.org/
   launchpad: https://launchpad.net/
-  libburnia: http://files.libburnia-project.org/releases/
-  libvirt: https://libvirt.org/sources/
+  libburnia: http://files.libburnia-project.org/
+  libvirt: https://libvirt.org/
   libopenraw: https://libopenraw.freedesktop.org/
   libraw: https://www.libraw.org/
   netfilter: https://www.netfilter.org/
   openldap: https://openldap.org/
   pagure_releases: https://releases.pagure.org/
   pythonhosted: https://files.pythonhosted.org/
-  samba: https://download.samba.org/pub/
+  samba: https://download.samba.org/
   sourceforge: https://downloads.sourceforge.net/
-  spice: https://www.spice-space.org/download/
+  spice: https://www.spice-space.org/
   tcpdump: https://www.tcpdump.org/
-  tecnocode: https://tecnocode.co.uk/downloads/
+  tecnocode: https://tecnocode.co.uk/
   thekelleys: http://www.thekelleys.org.uk/
   videolan: https://download.videolan.org/
   webkitgtk: https://webkitgtk.org/

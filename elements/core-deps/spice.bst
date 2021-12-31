@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: spice:releases/spice-server/spice-0.15.0.tar.bz2
+  url: spice:download/releases/spice-server/spice-0.15.0.tar.bz2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - core-deps/spice-protocol.bst

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: spice:gtk/spice-gtk-0.39.tar.xz
+  url: spice:download/gtk/spice-gtk-0.39.tar.xz
 
 build-depends:
 - core-deps/python-pyparsing.bst
