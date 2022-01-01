@@ -13,7 +13,7 @@ depends:
 - core-deps/accountsservice.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/ibus-daemon.bst
-- core-deps/libgweather.bst
+- core-deps/libgweather-3.bst
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst

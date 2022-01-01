@@ -15,7 +15,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gspell.bst
-- core-deps/libgweather.bst
+- core-deps/libgweather-3.bst
 - core/gnome-desktop.bst
 - sdk/atk.bst
 - sdk/gcr.bst

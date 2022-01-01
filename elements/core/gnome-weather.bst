@@ -8,7 +8,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/libgweather.bst
+- core-deps/libgweather-3.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
