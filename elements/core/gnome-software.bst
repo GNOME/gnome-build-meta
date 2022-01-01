@@ -24,8 +24,8 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/libsecret.bst
 - sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/libgudev.bst
