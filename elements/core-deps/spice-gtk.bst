@@ -13,6 +13,7 @@ build-depends:
 
 depends:
 - core-deps/libcap-ng.bst
+- core-deps/usbredir.bst
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
 - sdk/glib.bst
@@ -28,6 +29,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dlz4=disabled
-    -Dusbredir=disabled
     -Dsmartcard=disabled
