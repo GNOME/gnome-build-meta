@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:hitori.git
-  track: master
+  track: main
 
 build-depends:
 - sdk/appstream-glib.bst

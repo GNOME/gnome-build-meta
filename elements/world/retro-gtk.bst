@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:retro-gtk.git
-  track: master
+  track: retro-gtk-1
 
 build-depends:
 - sdk/gobject-introspection.bst

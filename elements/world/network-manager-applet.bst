@@ -1,11 +1,14 @@
 kind: autotools
+
 sources:
 - kind: git_tag
   url: gnome:network-manager-applet.git
-  track: master
+  track: main
+
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -21,6 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   conf-local: >-
     --enable-more-warnings=no

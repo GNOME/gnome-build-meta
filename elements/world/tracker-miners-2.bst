@@ -34,5 +34,4 @@ variables:
     -Diptc=disabled
     -Dminer_rss=false
     -Dtiff=disabled
-    -Dtaglib=disabled
     -Dgif=disabled

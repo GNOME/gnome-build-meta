@@ -12,5 +12,6 @@ build-depends:
 
 depends:
 - sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -17,7 +17,7 @@ depends:
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gst-plugins-bad.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
