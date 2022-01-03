@@ -10,10 +10,10 @@ build-depends:
 depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
-- core-deps/libgweather-3.bst
+- core-deps/libgweather.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
