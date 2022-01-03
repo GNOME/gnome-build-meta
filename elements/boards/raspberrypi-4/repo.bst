@@ -4,7 +4,9 @@ build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - core-deps/libostree.bst
 - boards/raspberrypi-4/initial-scripts.bst
-- boards/raspberrypi-4/filesystem.bst
+- filename: boards/raspberrypi-4/filesystem.bst
+  config:
+    location: /sysroot
 
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
@@ -14,19 +16,8 @@ environment:
   OSTREE_REPO: "%{install-root}"
 
 config:
-  layout:
-  - element: ''
-    destination: /tmp
-  - element: core-deps/libostree.bst
-    destination: /
-  - element: boards/raspberrypi-4/filesystem.bst
-    destination: /sysroot
-  - element: boards/raspberrypi-4/initial-scripts.bst
-    destination: /
-  - element: vm/prepare-image.bst
-    destination: /
-
   commands:
+  - mkdir /tmp
   - |
     prepare-image.sh \
        --sysroot /sysroot \

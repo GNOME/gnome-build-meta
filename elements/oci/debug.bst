@@ -2,21 +2,15 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:oci/oci-builder.bst
-- oci/sdk.bst
-- oci/layers/debug.bst
 - oci/layers/sdk-init-scripts.bst
+- filename: oci/sdk.bst
+  config:
+    location: /parent
+- filename: oci/layers/debug.bst
+  config:
+    location: /layer
 
 config:
-  layout:
-  - element: oci/oci-builder.bst
-    destination: /
-  - element: oci/layers/debug.bst
-    destination: /layer
-  - element: oci/sdk.bst
-    destination: /parent
-  - element: oci/layers/sdk-init-scripts.bst
-    destination: /
-
   commands:
   - |
     if [ -d /initial_scripts ]; then
