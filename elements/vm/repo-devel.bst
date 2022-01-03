@@ -2,19 +2,17 @@ kind: ostree
 
 build-depends:
 - core-deps/libostree.bst
-- vm/filesystem-devel.bst
 - vm/initial-scripts-devel.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
+- filename: vm/filesystem-devel.bst
+  config:
+    sysroot: true
 
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
   ostree-layer: devel
 
 config:
-  environment:
-  - core-deps/libostree.bst
-  - vm/prepare-image.bst
-  - vm/initial-scripts-devel.bst
   ostree-branch: '%{ostree-branch}'
   initial-commands:
   - |
