@@ -2,8 +2,12 @@ kind: script
 
 build-depends:
 - boards/rock64/image-deps.bst
-- vm/repo.bst
-- freedesktop-sdk.bst:components/linux.bst
+- filename: vm/repo.bst
+  config:
+    location: /source-repo
+- filename: freedesktop-sdk.bst:components/linux.bst
+  config:
+    location: /kernel
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -16,18 +20,6 @@ environment:
   OSTREE_REPO: "%{sysroot}/ostree/repo"
 
 config:
-  layout:
-  - element: ''
-    destination: '/sysroot'
-  - element: ''
-    destination: '/genimage'
-  - element: vm/repo.bst
-    destination: '/source-repo'
-  - element: boards/rock64/image-deps.bst
-    destination: '/'
-  - element: components/linux.bst
-    destination: '/kernel'
-
   commands:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=bare
@@ -70,6 +62,7 @@ config:
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
+    mkdir /genimage
     cat >/genimage/genimage.cfg <<EOF
     image efi.img {
         vfat {

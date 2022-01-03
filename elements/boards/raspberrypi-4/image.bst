@@ -2,9 +2,15 @@ kind: script
 
 build-depends:
 - boards/raspberrypi-4/image-deps.bst
-- boards/raspberrypi-4/bsp/firmware.bst
-- boards/raspberrypi-4/repo.bst
-- boards/raspberrypi-4/bsp/linux.bst
+- filename: boards/raspberrypi-4/repo.bst
+  config:
+    location: /source-repo
+- filename: boards/raspberrypi-4/bsp/linux.bst
+  config:
+    location: /kernel
+- filename: boards/raspberrypi-4/bsp/firmware.bst
+  config:
+    location: /firmware
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -17,20 +23,6 @@ environment:
   OSTREE_REPO: "%{sysroot}/ostree/repo"
 
 config:
-  layout:
-  - element: ''
-    destination: '/sysroot'
-  - element: ''
-    destination: '/genimage'
-  - element: boards/raspberrypi-4/repo.bst
-    destination: '/source-repo'
-  - element: boards/raspberrypi-4/image-deps.bst
-    destination: '/'
-  - element: boards/raspberrypi-4/bsp/linux.bst
-    destination: '/kernel'
-  - element: boards/raspberrypi-4/bsp/firmware.bst
-    destination: '/firmware'
-
   commands:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=bare
@@ -99,6 +91,7 @@ config:
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
+    mkdir /genimage
     cat >/genimage/genimage.cfg <<EOF
     image efi.img {
         vfat {
