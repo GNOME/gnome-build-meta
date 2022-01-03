@@ -3,9 +3,11 @@ kind: script
 build-depends:
 - core-deps/libostree.bst
 - core-deps/qemu.bst
-- vm/repo.bst
 - freedesktop-sdk.bst:integration/mtab.bst
 - freedesktop-sdk.bst:components/genimage.bst
+- filename: vm/repo.bst
+  config:
+    location: /source-repo
 
 variables:
   (?):
@@ -30,20 +32,6 @@ environment-nocache:
 - XZFLAGS
 
 config:
-  layout:
-  - element: ''
-    destination: '/sysroot'
-  - element: vm/repo.bst
-    destination: '/source-repo'
-  - element: core-deps/libostree.bst
-    destination: '/'
-  - element: core-deps/qemu.bst
-    destination: '/'
-  - element: integration/mtab.bst
-    destination: '/'
-  - element: components/genimage.bst
-    destination: '/'
-
   commands:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=bare

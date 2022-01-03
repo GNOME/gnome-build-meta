@@ -2,7 +2,9 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
-- vm/image.bst
+- filename: vm/image.bst
+  config:
+    location: /images
 
 variables:
   install-root: /images
@@ -13,15 +15,8 @@ environment:
   GNUPGHOME: /tmp/gpg
 
 config:
-  layout:
-  - element: components/gnupg.bst
-    destination: /
-  - element: vm/image.bst
-    destination: /images
-  - element: ''
-    destination: /tmp
-
   commands:
+  - mkdir /tmp
   - mv /images/disk.img.xz "/images/%{basename}.img.xz"
 
   - mkdir "${GNUPGHOME}"
