@@ -19,7 +19,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/ibus-daemon.bst
 - core-deps/libcanberra.bst
-- core-deps/libgweather-3.bst
+- core-deps/libgweather.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - sdk/gcr.bst
