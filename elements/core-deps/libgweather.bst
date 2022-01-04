@@ -11,7 +11,6 @@ build-depends:
 depends:
 - core-deps/geocode-glib.bst
 - sdk/glib.bst
-- sdk/gtk.bst
 - sdk/libsoup-2.4.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
