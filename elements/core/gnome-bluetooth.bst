@@ -4,10 +4,6 @@ sources:
 - kind: git_tag
   url: gnome:gnome-bluetooth.git
   track: master
-- kind: patch
-  path: files/gnome-bluetooth/0001-docs-use-gnomebt_api_name-for-the-gtk-doc-module-nam.patch
-- kind: patch
-  path: files/gnome-bluetooth/0002-meson-bump-gettext-package-suffix.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
