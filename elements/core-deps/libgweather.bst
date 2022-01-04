@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:libgweather.git
-  track: main
+  track: jjardon/G_GSIZE_FORMAT
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
