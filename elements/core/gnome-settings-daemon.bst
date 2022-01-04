@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-settings-daemon.git
-  track: master
+  track: ebassi/gweather-4
   submodules:
     subprojects/gvc:
       checkout: true
