@@ -19,4 +19,4 @@ variables:
     -Dzshcompletiondir=no
 sources:
 - kind: tar
-  url: freedesktop_www:software/libinput/libinput-1.19.2.tar.xz
+  url: freedesktop_www:software/libinput/libinput-1.19.3.tar.xz
