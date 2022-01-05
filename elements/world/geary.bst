@@ -6,6 +6,8 @@ sources:
 
 build-depends:
 - sdk/vala.bst
+- world/snowball.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -35,4 +37,5 @@ depends:
 
 variables:
   meson-local: >-
-    -Dtnef-support=false
+    -Dtnef=disabled
+    -Dvaladoc=disabled
