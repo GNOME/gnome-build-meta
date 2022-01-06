@@ -2,7 +2,7 @@ kind: pip
 
 sources:
 - kind: tar
-  url: pythonhosted:packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz
+  url: pythonhosted:packages/90/ca/13cdabb3c491a0ccd7d580419b96abce3d227d4a6ba674364e6b19d4d67e/patiencediff-0.2.2.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst

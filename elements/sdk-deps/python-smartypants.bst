@@ -9,6 +9,3 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/python3.bst
-
-variables:
-  pip: pip3

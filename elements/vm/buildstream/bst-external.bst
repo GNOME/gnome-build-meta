@@ -1,4 +1,4 @@
-kind: distutils
+kind: pip
 
 sources:
 - kind: git_tag
@@ -6,11 +6,11 @@ sources:
   track: 0.25.0
 
 build-depends:
+- freedesktop-sdk.bst:components/python3-pip.bst
 - freedesktop-sdk.bst:components/python3-setuptools-scm.bst
 
 depends:
-- freedesktop-sdk.bst:components/python3-setuptools.bst
 - vm/buildstream/buildstream.bst
-
-runtime-depends:
+- freedesktop-sdk.bst:components/python3-requests.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:components/python3-toml.bst

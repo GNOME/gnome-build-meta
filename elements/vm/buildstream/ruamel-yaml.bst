@@ -8,10 +8,5 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
 
 depends:
-- freedesktop-sdk.bst:components/python3.bst
-
-runtime-depends:
 - vm/buildstream/ruamel-yaml-clib.bst
-
-variables:
-  pip: python3 -m pip
+- freedesktop-sdk.bst:components/python3.bst
