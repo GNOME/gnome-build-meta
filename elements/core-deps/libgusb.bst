@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.9.tar.xz
-  ref: 1f51ebe8c91140cffbd1c4d58602c96b884170cae4c74f6f7e302a91d5b7c972
+  url: people_freedesktop_org:~hughsient/releases/libgusb-0.3.10.tar.xz
+  ref: 0eb0b9ab0f8bba0c59631c809c37b616ef34eb3c8e000b0b9b71cf11e4931bdc
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
