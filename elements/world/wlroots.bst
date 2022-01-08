@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.14.1/wlroots-0.14.1.tar.bz2
+  url: freedesktop:wlroots/wlroots/-/archive/0.14.1/wlroots-0.14.1.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:components/mesa-headers.bst
