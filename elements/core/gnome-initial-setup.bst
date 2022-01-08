@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:gnome-initial-setup.git
@@ -6,14 +7,16 @@ sources:
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/ibus-daemon.bst
-- core-deps/libgweather-3.bst
+- core-deps/libgweather.bst
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst
@@ -29,6 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
