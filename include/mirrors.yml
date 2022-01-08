@@ -37,6 +37,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gstreamer_freedesktop_org/tar-files/-/raw/master/
     kerberos:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kerberos_org/tar-files/-/raw/master/
+    kernel:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/git_kernel_org/
     launchpad:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/tar-files/-/raw/master/
     libburnia:
