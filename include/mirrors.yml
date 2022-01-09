@@ -49,6 +49,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_libraw_org/tar-files/-/raw/master/
     libvirt:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libvirt_org/tar-files/-/raw/master/
+    linuxcontainers:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/linuxcontainers_org/tar-files/-/raw/master/
     netfilter:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_netfilter_org/tar-files/-/raw/master/
     openldap:
