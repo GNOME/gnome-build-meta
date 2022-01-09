@@ -2,7 +2,7 @@ kind: distutils
 
 sources:
 - kind: tar
-  url: https://launchpad.net/brz/3.1/3.1.0/+download/breezy-3.1.0.tar.gz
+  url: launchpad:brz/3.1/3.1.0/+download/breezy-3.1.0.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools.bst
