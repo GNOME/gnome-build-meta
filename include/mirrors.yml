@@ -15,6 +15,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cpan_metacpan_org/tar-files/-/raw/master/
     crates:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/static_crates_io/tar-files/-/raw/master/
+    dbmx:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/fallabs_com/tar-files/-/raw/master/
     debian_salsa:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/salsa_debian_org/tar-files/-/raw/master/
     freedesktop:

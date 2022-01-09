@@ -13,6 +13,7 @@ aliases:
   cairo: https://cairographics.org/
   cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
+  dbmx: https://dbmx.net/
   debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_www: https://www.freedesktop.org/
