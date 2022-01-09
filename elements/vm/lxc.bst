@@ -27,4 +27,4 @@ public:
 
 sources:
 - kind: tar
-  url: https://linuxcontainers.org/downloads/lxc/lxc-4.0.10.tar.gz
+  url: linuxcontainers:downloads/lxc/lxc-4.0.10.tar.gz
