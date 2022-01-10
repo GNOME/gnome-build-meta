@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-terminal.git
-  track: master
-
-  ref: 3.41.90-46-ge062216db7a091866d551e00136a79cf0eafc1a3
+- kind: tar
+  url: gnome_downloads:gnome-terminal/3.42/gnome-terminal-3.42.2.tar.xz
+  ref: 8a9c8e5ef7a3a73b246a947e1190bb08ec98935af860cf0b3aa2fbf4606817a0
 build-depends:
 - core/gnome-shell.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
@@ -24,3 +22,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dnautilus_extension=false

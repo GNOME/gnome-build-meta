@@ -1,13 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-settings-daemon.git
-  track: master
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gnome:libgnome-volume-control.git
-
+- kind: tar
+  url: gnome_downloads:gnome-settings-daemon/42/gnome-settings-daemon-42.alpha.tar.xz
+  ref: d4216cfcfd2516f11da0902517d621b973a7cd812154634af84f3a20abff921c
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

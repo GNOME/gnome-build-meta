@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:cheese.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:cheese/41/cheese-41.1.tar.xz
+  ref: 522960ca28730ff66439070b04418c9e0a4bb55560d75bfe08b218da2c67e547
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst

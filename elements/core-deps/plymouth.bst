@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: freedesktop_www:software/plymouth/releases/plymouth-22.02.122.tar.xz
+  ref: 100551442221033ce868c447ad6c74d831d209c18ae232b98ae0207e34eadaeb
 
 depends:
 - sdk/gtk+-3.bst

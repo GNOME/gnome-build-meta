@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_files:ibus/ibus/releases/download/1.5.25/ibus-1.5.25.tar.gz
 
+  ref: dea4f663c485267cc3313e40a0bc89b977c397e19644f8ab41df0e6eaec34330
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst

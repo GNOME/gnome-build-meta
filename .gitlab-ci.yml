@@ -2,11 +2,11 @@ include: .gitlab-ci/arch.yml
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
+  BST_STRICT: '--strict'
   BST_TRACK_TAGS: 'false'
   BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: master
+  FLATPAK_BRANCH: 42beta
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
   OPENQA_NEEDLES_SHA: master
@@ -461,9 +461,7 @@ test-iso-installer-x86_64:
         openqa/utils/teardown_worker.sh $(cat /tmp/machine_id)
         rm /tmp/machine_id
     fi
-  - if [ ! -e /tmp/exit_code ]; then
-        echo "Job creation failed, log below."
-        cat openqa.log
+  - if [ ! -e /tmp/exit_code ]; then echo "Job creation failed, log below." cat openqa.log
   - fi
   artifacts:
     when: always
@@ -479,10 +477,10 @@ test-iso-installer-x86_64:
 pages:
   stage: 'reports'
   needs:
-    - job : 'cve_report'
-      artifacts: true
+  - job: 'cve_report'
+    artifacts: true
   script:
-    - 'mv cve-reports/ public/'
+  - 'mv cve-reports/ public/'
   artifacts:
     paths:
     - 'public'

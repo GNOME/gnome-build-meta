@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:glib.git
-  track: main
-
+- kind: tar
+  url: gnome_downloads:glib/2.71/glib-2.71.0.tar.xz
+  ref: 926816526f6e4bba9af726970ff87be7dac0b70d5805050c6207b7bb17ea4fca
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

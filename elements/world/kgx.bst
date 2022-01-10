@@ -5,6 +5,7 @@ sources:
   url: gitlab_gnome_org:ZanderBrown/kgx.git
   track: master
 
+  ref: 0.4.0-47-g0f31d12921cd4913983731da9d476a217955dbb7
 build-depends:
 - sdk-deps/sassc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

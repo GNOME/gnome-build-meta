@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: samba:pub/samba/stable/samba-4.15.3.tar.gz
+  ref: 519399404391550345846768ea4dd0fe7fcb04e20c2b891b5eeb02e5554137db
 - kind: patch
   path: files/samba/fix-root-build.patch
 

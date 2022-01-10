@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_files:fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
 
+  ref: 8632df69c3bafc59387cdcb517c3ce31a597a09026e44f5907d8384671b9f834
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

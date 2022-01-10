@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-clocks.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-clocks/42/gnome-clocks-42.alpha.tar.xz
+  ref: fb51a7ecaf919750b090ba39211b95899c4f20fae08eb2e006801aa7d902c951
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
