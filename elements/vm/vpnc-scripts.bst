@@ -1,8 +1,9 @@
 kind: manual
 
 sources:
-- kind: tar
-  url: ftp://ftp.infradead.org/pub/vpnc-scripts/vpnc-scripts-20210402.tar.gz
+- kind: git_tag
+  url: gitlab:openconnect/vpnc-scripts.git
+  track: master
 
 config:
   install-commands:
