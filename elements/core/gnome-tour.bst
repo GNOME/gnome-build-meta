@@ -9,6 +9,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/adwaita-icon-theme.bst
-- sdk/gtk.bst
-- sdk/libadwaita.bst
+- sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
