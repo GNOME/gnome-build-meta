@@ -31,8 +31,12 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_gnu_org/tar-files/-/raw/master/gnu/
     github:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/
+    github_files:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/tar-files/-/raw/master/
     gitlab:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
+    gitlab_files:
+    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/tar-files/-/raw/master/
     gnupg:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_gnupg_org/tar-files/-/raw/master/
     gstreamer:
