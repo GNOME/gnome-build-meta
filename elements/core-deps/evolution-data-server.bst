@@ -6,7 +6,6 @@ sources:
   track: master
 
 build-depends:
-- core-deps/intltool.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
