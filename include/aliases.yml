@@ -16,6 +16,7 @@ aliases:
   dbmx: https://dbmx.net/
   debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
+  freedesktop_people: https://people.freedesktop.org/
   freedesktop_www: https://www.freedesktop.org/
   freerdp: https://pub.freerdp.com/
   ftp_gnu_org: https://ftp.gnu.org/
@@ -28,9 +29,9 @@ aliases:
   kerberos: https://kerberos.org/
   launchpad: https://launchpad.net/
   libburnia: http://files.libburnia-project.org/
-  libvirt: https://libvirt.org/
   libopenraw: https://libopenraw.freedesktop.org/
   libraw: https://www.libraw.org/
+  libvirt: https://libvirt.org/
   linuxcontainers: https://linuxcontainers.org/
   netfilter: https://www.netfilter.org/
   openldap: https://openldap.org/

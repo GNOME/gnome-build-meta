@@ -1,9 +1,8 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: github:hughsie/appstream-glib.git
-  track: master
+- kind: tar
+  url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.7.18.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
