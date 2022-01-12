@@ -16,7 +16,6 @@ depends:
 - core-deps/colord.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/gtk.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

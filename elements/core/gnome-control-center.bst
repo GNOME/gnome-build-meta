@@ -34,7 +34,7 @@ depends:
 - core-deps/udisks2.bst
 - core-deps/upower.bst
 - core/cheese.bst
-- core/gnome-bluetooth.bst
+- core/gnome-bluetooth-1.0.bst
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -42,8 +42,8 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtk.bst
-- sdk/libadwaita.bst
+- sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/pwquality.bst
