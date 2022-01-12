@@ -2,9 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: freedesktop_www:software/plymouth/releases/plymouth-0.9.5.tar.xz
-- kind: patch
-  path: files/plymouth/plymouth-stdin.patch
+  url: freedesktop_www:software/plymouth/releases/plymouth-22.02.122.tar.xz
 
 depends:
 - sdk/gtk+-3.bst
@@ -17,12 +15,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 config:
-  configure-commands:
-    (<):
-    - rm -f configure
-
   install-commands:
     (>):
-    - |
-      mv "%{install-root}/var/run" "%{install-root}/"
-      rm -rf "%{install-root}/var"
+    - mv "%{install-root}/var/run" "%{install-root}/"
