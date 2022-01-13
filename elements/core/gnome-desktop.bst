@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/40/gnome-desktop-40.6.tar.xz
-  ref: a3c30da36f8e7e981274992345edd015ffa7215aa979ed1dcb23400b409b1023
+  url: gnome_downloads:gnome-desktop/40/gnome-desktop-40.7.tar.xz
+  ref: 5524dba910b125d0c9128b8f795ac2e06e54880667431d91a009b551412ee204
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
