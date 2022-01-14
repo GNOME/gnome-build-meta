@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: spice:download/releases/spice-vdagent-0.21.0.tar.bz2
+  url: spice:releases/spice-vdagent-0.21.0.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
