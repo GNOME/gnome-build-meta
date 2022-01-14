@@ -17,9 +17,9 @@ aliases:
   debian_salsa: https://salsa.debian.org/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_people: https://people.freedesktop.org/
-  freedesktop_www: https://www.freedesktop.org/
+  freedesktop_software: https://www.freedesktop.org/software/
   freerdp: https://pub.freerdp.com/
-  ftp_gnu_org: https://ftp.gnu.org/
+  ftp_gnu_org: https://ftp.gnu.org/gnu/
   gimp: https://download.gimp.org/pub/
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
@@ -28,24 +28,24 @@ aliases:
   gstreamer: https://gstreamer.freedesktop.org/
   kerberos: https://kerberos.org/
   launchpad: https://launchpad.net/
-  libburnia: http://files.libburnia-project.org/
+  libburnia: http://files.libburnia-project.org/releases/
   libopenraw: https://libopenraw.freedesktop.org/
   libraw: https://www.libraw.org/
-  libvirt: https://libvirt.org/
-  linuxcontainers: https://linuxcontainers.org/
+  libvirt: https://libvirt.org/sources/
+  linuxcontainers: https://linuxcontainers.org/downloads/
   netfilter: https://www.netfilter.org/
   openldap: https://openldap.org/
   pagure_releases: https://releases.pagure.org/
-  pythonhosted: https://files.pythonhosted.org/
-  samba: https://download.samba.org/
+  pypi: https://files.pythonhosted.org/packages/
+  samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
-  spice: https://www.spice-space.org/
+  spice: https://www.spice-space.org/download/
   tcpdump: https://www.tcpdump.org/
-  tecnocode: https://tecnocode.co.uk/
+  tecnocode: https://tecnocode.co.uk/downloads/
   thekelleys: http://www.thekelleys.org.uk/
   videolan: https://download.videolan.org/
-  webkitgtk: https://webkitgtk.org/
-  wpewebkit: https://wpewebkit.org/
+  webkitgtk: https://webkitgtk.org/releases/
+  wpewebkit: https://wpewebkit.org/releases/
 
   # git aliases go here
   freedesktop: https://gitlab.freedesktop.org/
@@ -53,5 +53,5 @@ aliases:
   gitlab: https://gitlab.com/
   gnome: https://gitlab.gnome.org/GNOME/
   gnome_gitlab: https://gitlab.gnome.org/
-  kernel: https://git.kernel.org/
+  kernel: https://git.kernel.org/pub/scm/
   purism: https://source.puri.sm/

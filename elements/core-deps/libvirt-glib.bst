@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:sources/glib/libvirt-glib-4.0.0.tar.xz
+  url: libvirt:glib/libvirt-glib-4.0.0.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

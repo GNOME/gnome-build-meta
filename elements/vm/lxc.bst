@@ -1,5 +1,9 @@
 kind: autotools
 
+sources:
+- kind: tar
+  url: linuxcontainers:lxc/lxc-4.0.10.tar.gz
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -24,7 +28,3 @@ public:
       #!/bin/bash
       sysroot="${1}"
       chmod 4755 "${sysroot}%{libexecdir}/lxc/lxc-user-nic"
-
-sources:
-- kind: tar
-  url: linuxcontainers:downloads/lxc/lxc-4.0.10.tar.gz

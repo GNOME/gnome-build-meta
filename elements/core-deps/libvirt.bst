@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:sources/libvirt-7.10.0.tar.xz
+  url: libvirt:libvirt-7.10.0.tar.xz
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:
