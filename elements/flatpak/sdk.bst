@@ -28,6 +28,7 @@ config:
       XDG_DATA_DIRS: /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
       ALSA_CONFIG_DIR: /usr/share/alsa
       ALSA_CONFIG_PATH: /usr/share/alsa/alsa-flatpak.conf
+      __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS: /etc/egl/egl_external_platform.d:/usr/%{lib}/GL/egl/egl_external_platform.d:/usr/share/egl/egl_external_platform.d
 
     Extension org.gnome.Sdk.Debug:
       directory: lib/debug
@@ -40,7 +41,7 @@ config:
     Extension org.gnome.Sdk.Locale:
       directory: share/runtime/locale
 
-    # Copied from sdk/elements/sdk.bst from freedesktop-sdk because
+    # Copied from elements/flatpak-images/sdk.bst from freedesktop-sdk because
     # bst doesn't support inheriting extensions
     # When syncing, skip the Debug, Docs and Locale extensions, and
     # add the freedesktop-sdk version to extensions that don't have
@@ -54,7 +55,7 @@ config:
       no-autodownload: "true"
       autodelete: "false"
       add-ld-path: "lib"
-      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d"
+      merge-dirs: "vulkan/icd.d;glvnd/egl_vendor.d;egl/egl_external_platform.d;OpenCL/vendors;lib/dri;lib/d3d;vulkan/explicit_layer.d;vulkan/implicit_layer.d"
       download-if: "active-gl-driver"
       enable-if: "active-gl-driver"
       autoprune-unless: active-gl-driver
