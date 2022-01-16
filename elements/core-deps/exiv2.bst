@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_files:Exiv2/exiv2/archive/v0.27.3.tar.gz
+  url: github:Exiv2/exiv2/archive/v0.27.3.tar.gz
 - kind: patch
   path: files/exiv2/disable-protection-flags.patch
 build-depends:

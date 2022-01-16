@@ -15,4 +15,4 @@ config:
 
 sources:
 - kind: tar
-  url: github_files:LMDB/lmdb/archive/LMDB_0.9.28.tar.gz
+  url: github:LMDB/lmdb/archive/LMDB_0.9.28.tar.gz

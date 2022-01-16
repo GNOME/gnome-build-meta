@@ -1,7 +1,7 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_files:libhangul/ibus-hangul/releases/download/1.5.4/ibus-hangul-1.5.4.tar.gz
+  url: github:libhangul/ibus-hangul/releases/download/1.5.4/ibus-hangul-1.5.4.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

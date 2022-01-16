@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:libpinyin/libpinyin/releases/download/2.6.1/libpinyin-2.6.1.tar.gz
+  url: github:libpinyin/libpinyin/releases/download/2.6.1/libpinyin-2.6.1.tar.gz
 - kind: tar
   url: sourceforge:libpinyin/models/model17.text.tar.gz
   base-dir: ''

@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:tuxera/ntfs-3g/archive/refs/tags/2021.8.22.tar.gz
+  url: github:tuxera/ntfs-3g/archive/refs/tags/2021.8.22.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_files:nuspell/nuspell/archive/refs/tags/v5.0.1.tar.gz
+  url: github:nuspell/nuspell/archive/refs/tags/v5.0.1.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:

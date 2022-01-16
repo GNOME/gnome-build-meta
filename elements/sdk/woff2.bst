@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_files:google/woff2/archive/v1.0.2.tar.gz
+  url: github:google/woff2/archive/v1.0.2.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:

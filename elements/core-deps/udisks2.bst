@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:storaged-project/udisks/releases/download/udisks-2.9.2/udisks-2.9.2.tar.bz2
+  url: github:storaged-project/udisks/releases/download/udisks-2.9.2/udisks-2.9.2.tar.bz2
 
 build-depends:
 - sdk/gtk-doc.bst

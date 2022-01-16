@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:flatpak/xdg-desktop-portal-gtk/releases/download/1.10.0/xdg-desktop-portal-gtk-1.10.0.tar.xz
+  url: github:flatpak/xdg-desktop-portal-gtk/releases/download/1.10.0/xdg-desktop-portal-gtk-1.10.0.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

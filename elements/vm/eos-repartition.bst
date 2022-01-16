@@ -2,7 +2,7 @@ kind: manual
 
 sources:
 - kind: tar
-  url: github_files:endlessm/eos-boot-helper/archive/Release_3.9.4.tar.gz
+  url: github:endlessm/eos-boot-helper/archive/Release_3.9.4.tar.gz
 - kind: patch
   path: files/vm/eos-repartition/fix-sector-size-issue.patch
 
