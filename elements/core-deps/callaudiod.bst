@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gitlab_files:mobian1/callaudiod/-/archive/0.1.0/callaudiod-0.1.0.tar.bz2
+  url: gitlab:mobian1/callaudiod/-/archive/0.1.0/callaudiod-0.1.0.tar.bz2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
