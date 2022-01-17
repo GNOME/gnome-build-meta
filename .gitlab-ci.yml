@@ -88,7 +88,7 @@ default:
   stage: deploy
   script:
   - |
-    export FLAT_MANAGER_SERVER=https://flatmgr-ostree.openshift.gnome.org/
+    export FLAT_MANAGER_SERVER=https://ostree.gnome.org/
     export FLAT_MANAGER_REPO=gnomeos
     export REPO_TOKEN=$OSTREE_REPO_TOKEN
 
