@@ -37,7 +37,6 @@ depends:
 - world/gnome-sound-recorder.bst
 - world/gnome-sudoku.bst
 - world/gnome-taquin.bst
-- world/gnome-terminal.bst
 - world/gnome-tetravex.bst
 - world/gnome-themes-extra.bst
 - world/gnome-todo.bst
@@ -46,6 +45,7 @@ depends:
 - world/gupnp-igd.bst
 - world/hitori.bst
 - world/iagno.bst
+- world/kgx.bst
 - world/libaperture.bst
 - world/libgepub.bst
 - world/libgnome-games-support.bst

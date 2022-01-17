@@ -2,12 +2,11 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:console.git
-  track: main
+  url: gitlab_gnome_org:ZanderBrown/kgx.git
+  track: master
 
 build-depends:
 - sdk-deps/sassc.bst
-- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
