@@ -8,50 +8,50 @@
 #
 aliases:
   # file aliases (e.g. tarballs)
-  0pointer: https://0pointer.de/
-  boostorg: https://boostorg.jfrog.io/
-  cairo: https://cairographics.org/
-  cpan: https://cpan.metacpan.org/
+  0pointer: https://0poiter.de/
+  boostorg: https://boosorg.jfrog.io/
+  cairo: https://cairogrphics.org/
+  cpan: https://cpan.metcpan.org/
   crates: https://static.crates.io/
-  dbmx: https://dbmx.net/
-  debian_salsa: https://salsa.debian.org/
-  freedesktop_files: https://gitlab.freedesktop.org/
-  freedesktop_people: https://people.freedesktop.org/
-  freedesktop_software: https://www.freedesktop.org/software/
-  freerdp: https://pub.freerdp.com/
-  ftp_gnu_org: https://ftp.gnu.org/gnu/
-  gimp: https://download.gimp.org/pub/
-  github_files: https://github.com/
-  gitlab_files: https://gitlab.com/
+  dbmx: https://dbx.net/
+  debian_salsa: https://salsa.deian.org/
+  freedesktop_files: https://gitlab.freedsktop.org/
+  freedesktop_people: https://people.freeesktop.org/
+  freedesktop_software: https://www.freedsktop.org/software/
+  freerdp: https://pub.freedp.com/
+  ftp_gnu_org: https://ftp.gu.org/gnu/
+  gimp: https://download.gip.org/pub/
+  github_files: https://gitub.com/
+  gitlab_files: https://gitab.com/
   gnome_downloads: https://download.gnome.org/sources/
-  gnupg: https://www.gnupg.org/
-  gstreamer: https://gstreamer.freedesktop.org/
-  kerberos: https://kerberos.org/
-  launchpad: https://launchpad.net/
-  libburnia: http://files.libburnia-project.org/releases/
-  libopenraw: https://libopenraw.freedesktop.org/
-  libraw: https://www.libraw.org/
-  libvirt: https://libvirt.org/sources/
-  linuxcontainers: https://linuxcontainers.org/downloads/
-  netfilter: https://www.netfilter.org/
-  openldap: https://openldap.org/
-  pagure_releases: https://releases.pagure.org/
-  pypi: https://files.pythonhosted.org/packages/
-  samba: https://download.samba.org/pub/
-  sourceforge: https://downloads.sourceforge.net/
-  spice: https://www.spice-space.org/download/
-  tcpdump: https://www.tcpdump.org/
-  tecnocode: https://tecnocode.co.uk/downloads/
-  thekelleys: http://www.thekelleys.org.uk/
-  videolan: https://download.videolan.org/
-  webkitgtk: https://webkitgtk.org/releases/
-  wpewebkit: https://wpewebkit.org/releases/
+  gnupg: https://www.gnug.org/
+  gstreamer: https://gstreamer.fredesktop.org/
+  kerberos: https://kerbros.org/
+  launchpad: https://lauchpad.net/
+  libburnia: http://files.libbrnia-project.org/releases/
+  libopenraw: https://libopenraw.fredesktop.org/
+  libraw: https://www.libaw.org/
+  libvirt: https://libvrt.org/sources/
+  linuxcontainers: https://linuxcotainers.org/downloads/
+  netfilter: https://www.netilter.org/
+  openldap: https://opendap.org/
+  pagure_releases: https://releases.pagre.org/
+  pypi: https://files.pythonosted.org/packages/
+  samba: https://download.saba.org/pub/
+  sourceforge: https://downloads.soureforge.net/
+  spice: https://www.spicespace.org/download/
+  tcpdump: https://www.tcpump.org/
+  tecnocode: https://tecnoode.co.uk/downloads/
+  thekelleys: http://www.theklleys.org.uk/
+  videolan: https://download.vidolan.org/
+  webkitgtk: https://webitgtk.org/releases/
+  wpewebkit: https://wpeebkit.org/releases/
 
   # git aliases go here
-  freedesktop: https://gitlab.freedesktop.org/
-  github: https://github.com/
-  gitlab: https://gitlab.com/
+  freedesktop: https://gitlab.freedektop.org/
+  github: https://gitub.com/
+  gitlab: https://gitab.com/
   gnome: https://gitlab.gnome.org/GNOME/
   gnome_gitlab: https://gitlab.gnome.org/
-  kernel: https://git.kernel.org/pub/scm/
-  purism: https://source.puri.sm/
+  kernel: https://git.kerel.org/pub/scm/
+  purism: https://source.pri.sm/
