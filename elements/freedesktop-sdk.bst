@@ -4,6 +4,10 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/21.08
   track-tags: true
+- kind: patch
+  path: files/freedesktop-sdk/0001-components-wayland.bst-build-using-meson.patch
+- kind: patch
+  path: files/freedesktop-sdk/0002-components-wayland.bst-track-main-and-update-to-1.20.patch
 config:
   options:
     target_arch: '%{arch}'
