@@ -45,5 +45,6 @@ depends:
 - freedesktop-sdk.bst:components/man-db.bst
 - freedesktop-sdk.bst:components/open-iscsi.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
+- freedesktop-sdk.bst:components/rsync.bst
 - freedesktop-sdk.bst:components/steam-devices.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
