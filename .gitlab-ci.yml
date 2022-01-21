@@ -93,7 +93,7 @@ default:
   stage: deploy
   script:
   - |
-    export FLAT_MANAGER_SERVER=https://ostree.gnome.org/
+    export FLAT_MANAGER_SERVER=https://flat-manager-ostree.gnome.org/
     export FLAT_MANAGER_REPO=gnomeos
     export REPO_TOKEN=$OSTREE_REPO_TOKEN
 
@@ -170,7 +170,7 @@ generate-deploy-config:
   - |
     case "$FLATPAK_BRANCH" in
       master)
-        FLAT_MANAGER_SERVER=https://nightly.gnome.org/
+        FLAT_MANAGER_SERVER=https://flat-manager.gnome.org/
         ENVIRONMENT_NAME=flatpak-nightly
         FLAT_MANAGER_REPO=nightly
         SUPPORTED_ARCHES="x86_64 i686 aarch64"
