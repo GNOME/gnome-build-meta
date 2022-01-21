@@ -6,6 +6,7 @@ depends:
 - vm/buildstream/bst-external.bst
 - vm/buildstream/buildstream.bst
 - vm/common-deps.bst
+- vm/deviced.bst
 - vm/git-lfs.bst
 - vm/initramfs.bst
 - vm/lxc.bst
