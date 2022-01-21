@@ -8,6 +8,8 @@ sources:
   path: files/webkitgtk/toolchain.arm
 - kind: patch
   path: files/webkitgtk/fix-build.patch
+- kind: patch
+  path: files/webkitgtk/safarileaks.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
