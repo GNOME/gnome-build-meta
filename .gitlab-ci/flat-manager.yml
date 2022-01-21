@@ -45,7 +45,7 @@ default:
 
 
 flatmgr-prepare:
-  extends: .x86_64
+  extends: .arch-indep
   stage: prepare
   script:
   - test -n "$TRACK_JOB_ID" && curl -O $CI_PROJECT_URL/-/jobs/$TRACK_JOB_ID/artifacts/raw/project.refs
@@ -59,7 +59,7 @@ flatmgr-prepare:
     action: prepare
 
 flatmgr-finish:
-  extends: .x86_64
+  extends: .arch-indep
   stage: finish
   dependencies: [flatmgr-prepare]
   script:
@@ -71,7 +71,7 @@ flatmgr-finish:
     name: $ENVIRONMENT_NAME
 
 flatmgr-finish-failed:
-  extends: .x86_64
+  extends: .arch-indep
   stage: finish
   dependencies: [flatmgr-prepare]
   script:

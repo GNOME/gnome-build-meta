@@ -22,3 +22,7 @@
   - gnome-build-meta
   variables:
     ARCH: aarch64
+
+.arch-indep:
+  tags:
+  - gnome-build-meta

@@ -118,7 +118,7 @@ default:
 #
 
 track:
-  extends: .x86_64
+  extends: .arch-indep
   stage: track
   interruptible: true
   script:
@@ -153,7 +153,7 @@ build-aarch64:
 
 generate-deploy-config:
   extends:
-  - .x86_64
+  - .arch-indep
   - .deploy-rules
   needs:
   - job: 'track'
@@ -356,7 +356,7 @@ openh264-x86_64:
 
 
 s3-image-static:
-  extends: .x86_64
+  extends: .arch-indep
   stage: reports
   needs:
   - job: s3-image
