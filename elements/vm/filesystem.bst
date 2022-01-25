@@ -9,3 +9,4 @@ config:
   exclude:
   - devel
   - debug
+  - doc
