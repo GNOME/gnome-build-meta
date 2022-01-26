@@ -6,6 +6,7 @@ sources:
   track: master
 
 build-depends:
+- core-deps/nv-codec-headers.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -21,7 +22,3 @@ depends:
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Dnvenc=false
