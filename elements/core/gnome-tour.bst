@@ -1,12 +1,16 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:gnome-tour.git
   track: master
 - kind: cargo
+
 build-depends:
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk.bst
