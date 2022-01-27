@@ -23,3 +23,6 @@ public:
         (>):
         - '%{libdir}/libjavascriptcoregtk-4.0.so'
         - '%{libdir}/libwebkit2gtk-4.0.so'
+      webkit-debug:
+      - '%{debugdir}'
+      - '%{debugdir}/**'
