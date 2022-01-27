@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:totem.git
@@ -10,10 +11,12 @@ sources:
     flatpak/shared-modules:
       checkout: false
       url: github:flathub/shared-modules.git
+
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/clutter-gst.bst
 - core-deps/clutter-gtk.bst
@@ -31,8 +34,10 @@ depends:
 - sdk/gst-plugins-base.bst
 - sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Denable-vala=no
