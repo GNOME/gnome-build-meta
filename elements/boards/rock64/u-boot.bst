@@ -6,13 +6,13 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/dtc.bst
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/bc.bst
 - freedesktop-sdk.bst:components/swig.bst
 
 - boards/common/python3-as-python2.bst
-- boards/common/dtc.bst
 
 - boards/rock64/arm-trusted-firmware.bst
 
