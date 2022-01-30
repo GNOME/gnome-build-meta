@@ -5,6 +5,8 @@ sources:
   url: github:ARM-software/arm-trusted-firmware.git
   track: 22d12c4148c373932a7a81e5d1c59a767e143ac2
   track-tags: false
+- kind: patch
+  path: files/arm-trusted-firmware/0002-fix-rockchip-rk3399-fix-dram-section-placement.patch
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
