@@ -124,7 +124,7 @@ track:
   timeout: 15m
   script:
   - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
+  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/pinephone-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
   # only run on branches targeting master
@@ -265,6 +265,18 @@ pinebook-pro-image:
     artifacts: false
   variables:
     IMAGE: boards/pinebook-pro/image.bst
+
+pinephone-pro-image:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  needs:
+  - job: 'track'
+    optional: true
+  - job: 'build-aarch64'
+    artifacts: false
+  variables:
+    IMAGE: boards/pinephone-pro/image.bst
 
 rock64-image:
   extends:
