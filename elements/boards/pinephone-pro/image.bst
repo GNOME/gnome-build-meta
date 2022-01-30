@@ -8,7 +8,7 @@ build-depends:
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
   ostree-branch: gnome-os/aarch64/pinephone-pro
-  board: pinephone_pro-rk3399
+  board: pinephone-pro-rk3399
 
   sysroot: "/sysroot"
 

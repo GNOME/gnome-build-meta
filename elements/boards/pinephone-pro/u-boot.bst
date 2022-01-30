@@ -3,6 +3,8 @@ kind: manual
 sources:
 - kind: tar
   url: https://source.denx.de/u-boot/u-boot/-/archive/v2021.01/u-boot-v2021.01.tar.gz
+- kind: patch
+  path: files/u-boot/0001-rockchip-Add-initial-support-for-the-PinePhone-Pro.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
@@ -20,7 +22,7 @@ environment:
   BL31: "%{indep-libdir}/u-boot/%{board}/bl31.elf"
 
 variables:
-  board: pinephone_pro-rk3399
+  board: pinephone-pro-rk3399
 
 config:
   configure-commands:
