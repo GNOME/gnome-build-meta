@@ -1,9 +1,8 @@
 kind: manual
 
 sources:
-- kind: git_tag
-  url: https://git.eno.space/pbp-uboot.git
-  track: 365495a329c8e92ca4c134562d091df71b75845e
+- kind: tar
+  url: https://source.denx.de/u-boot/u-boot/-/archive/v2021.01/u-boot-v2021.01.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst

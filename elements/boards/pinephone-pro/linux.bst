@@ -2,10 +2,8 @@ kind: manual
 
 sources:
 - kind: git_tag
-  url: https://gitlab.manjaro.org/tsys/linux-pinebook-pro.git
-  #track: master
-  track: c04087388bdb7d79d5202ffb91aa387e36901056
-  track-tags: false
+  url: https://github.com/megous/linux
+  track: orange-pi-5.16-20220128-1757
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
