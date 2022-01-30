@@ -2,8 +2,8 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
-- boards/pinebook-pro/initramfs/deps.bst
-- boards/pinebook-pro/initramfs/initial-scripts.bst
+- boards/pinephone-pro/initramfs/deps.bst
+- boards/pinephone-pro/initramfs/initial-scripts.bst
 
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
@@ -16,9 +16,9 @@ config:
     destination: '/var/tmp'
   - element: ''
     destination: '/efi'
-  - element: boards/pinebook-pro/initramfs/deps.bst
+  - element: boards/pinephone-pro/initramfs/deps.bst
     destination: '/'
-  - element: boards/pinebook-pro/initramfs/initial-scripts.bst
+  - element: boards/pinephone-pro/initramfs/initial-scripts.bst
     destination: '/'
   - element: vm/prepare-image.bst
     destination: '/'

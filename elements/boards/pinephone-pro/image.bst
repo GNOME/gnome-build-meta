@@ -1,14 +1,14 @@
 kind: script
 
 build-depends:
-- boards/pinebook-pro/image-deps.bst
-- boards/pinebook-pro/repo.bst
-- boards/pinebook-pro/linux.bst
+- boards/pinephone-pro/image-deps.bst
+- boards/pinephone-pro/repo.bst
+- boards/pinephone-pro/linux.bst
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
-  ostree-branch: gnome-os/aarch64/pinebook-pro
-  board: pinebook_pro-rk3399
+  ostree-branch: gnome-os/aarch64/pinephone-pro
+  board: pinephone_pro-rk3399
 
   sysroot: "/sysroot"
 
@@ -21,11 +21,11 @@ config:
     destination: '/sysroot'
   - element: ''
     destination: '/genimage'
-  - element: boards/pinebook-pro/repo.bst
+  - element: boards/pinephone-pro/repo.bst
     destination: '/source-repo'
-  - element: boards/pinebook-pro/image-deps.bst
+  - element: boards/pinephone-pro/image-deps.bst
     destination: '/'
-  - element: boards/pinebook-pro/linux.bst
+  - element: boards/pinephone-pro/linux.bst
     destination: '/kernel'
 
   commands:

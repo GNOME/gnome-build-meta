@@ -12,7 +12,7 @@ depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - vm/plymouth-gnome-theme.bst
 
-- boards/pinebook-pro/linux.bst
+- boards/pinephone-pro/linux.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 

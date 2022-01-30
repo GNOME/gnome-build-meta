@@ -1,7 +1,7 @@
 kind: collect_initial_scripts
 
 build-depends:
-- boards/pinebook-pro/initramfs/deps.bst
+- boards/pinephone-pro/initramfs/deps.bst
 
 config:
   path: /etc/fdsdk/initial_scripts

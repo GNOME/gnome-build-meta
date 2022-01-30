@@ -14,7 +14,7 @@ build-depends:
 - boards/common/arm-none-eabi-gcc.bst
 
 variables:
-  board: pinebook_pro-rk3399
+  board: pinephone_pro-rk3399
 
 environment:
   CFLAGS: '-fno-stack-protector'

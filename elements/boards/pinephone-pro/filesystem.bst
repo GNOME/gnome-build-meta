@@ -1,8 +1,8 @@
 kind: compose
 
 build-depends:
-- boards/pinebook-pro/deps.bst
-- boards/pinebook-pro/initramfs.bst
+- boards/pinephone-pro/deps.bst
+- boards/pinephone-pro/initramfs.bst
 
 config:
   exclude:

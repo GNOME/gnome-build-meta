@@ -15,13 +15,13 @@ build-depends:
 
 - boards/common/python3-as-python2.bst
 
-- boards/pinebook-pro/arm-trusted-firmware.bst
+- boards/pinephone-pro/arm-trusted-firmware.bst
 
 environment:
   BL31: "%{indep-libdir}/u-boot/%{board}/bl31.elf"
 
 variables:
-  board: pinebook_pro-rk3399
+  board: pinephone_pro-rk3399
 
 config:
   configure-commands:
