@@ -8,15 +8,13 @@ sources:
 - kind: git_tag
   url: github:endlessm/eos-installer.git
   track-tags: true
-  track: Release_3.9.5
+  track: Release_4.0.2
   submodules:
     ext/libglnx:
       url: gnome:libglnx.git
       checkout: true
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
-- kind: patch
-  path: files/eos-installer/two-partitions.patch
 - kind: patch
   path: files/eos-installer/remove-branding.patch
 - kind: patch
