@@ -4,8 +4,6 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/21.08
   track-tags: true
-- kind: patch
-  path: files/freedesktop-sdk/components-polkit.bst-backport-patch-to-fix-CVE-2021.patch
 config:
   options:
     target_arch: '%{arch}'
