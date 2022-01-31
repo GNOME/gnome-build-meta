@@ -8,6 +8,7 @@ depends:
 - world/atkmm.bst
 - world/bijiben.bst
 - world/cairomm.bst
+- world/chatty.bst
 - world/dbus-glib.bst
 - world/evolution.bst
 - world/file-roller.bst
