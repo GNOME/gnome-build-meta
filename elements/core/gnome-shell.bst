@@ -18,6 +18,7 @@ build-depends:
 
 runtime-depends:
 - core-deps/libgnomekbd.bst
+- core-deps/libgweather.bst
 - sdk/geoclue.bst
 
 depends:
