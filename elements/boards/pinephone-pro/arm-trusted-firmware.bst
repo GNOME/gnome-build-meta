@@ -3,7 +3,7 @@ kind: manual
 sources:
 - kind: git_tag
   url: github:ARM-software/arm-trusted-firmware.git
-  track: 22d12c4148c373932a7a81e5d1c59a767e143ac2
+  track: a1f02f4f3daae7e21ee58b4c93ec3e46b8f28d15
   track-tags: false
 - kind: patch
   path: files/arm-trusted-firmware/0002-fix-rockchip-rk3399-fix-dram-section-placement.patch
