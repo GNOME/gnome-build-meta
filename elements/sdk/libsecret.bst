@@ -9,6 +9,7 @@ build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/valgrind-maybe.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
