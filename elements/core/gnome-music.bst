@@ -13,6 +13,7 @@ sources:
       url: github:flathub/shared-modules.git
 
 build-depends:
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
