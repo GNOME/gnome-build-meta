@@ -1,15 +1,11 @@
 sources:
 - kind: tar
   #FIXME: re-enable gtk-doc for webkit2gtk-5.0.bst when fixed upstream
-  url: webkitgtk:webkitgtk-2.35.1.tar.xz
+  url: webkitgtk:webkitgtk-2.35.2.tar.xz
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
-- kind: patch
-  path: files/webkitgtk/fix-build.patch
-- kind: patch
-  path: files/webkitgtk/safarileaks.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
