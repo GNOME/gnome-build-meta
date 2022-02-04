@@ -35,6 +35,7 @@ depends:
 - world/gnome-online-miners.bst
 - world/gnome-recipes.bst
 - world/gnome-robots.bst
+- world/gnome-screenshot.bst
 - world/gnome-sound-recorder.bst
 - world/gnome-sudoku.bst
 - world/gnome-taquin.bst
