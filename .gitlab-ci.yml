@@ -121,6 +121,7 @@ track:
   extends: .arch-indep
   stage: track
   interruptible: true
+  timeout: 15m
   script:
   - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
   - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
