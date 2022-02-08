@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-contacts.git
-  track: master
+  track: main
 
 build-depends:
 - sdk/vala.bst
