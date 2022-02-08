@@ -12,6 +12,7 @@ build-depends:
 
 depends:
 - core-deps/gsound.bst
+- core-deps/upower.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
