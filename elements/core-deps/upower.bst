@@ -1,15 +1,16 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:upower/upower/uploads/177df5b9f9b76f25a2ad9da41aa0c1fa/upower-0.99.13.tar.xz
+  url: freedesktop:upower/upower/-/archive/v0.99.14/upower-v0.99.14.tar.bz2
 
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/libimobiledevice.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libusb.bst
