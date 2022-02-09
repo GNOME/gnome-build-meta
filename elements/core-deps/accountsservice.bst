@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: freedesktop_software:accountsservice/accountsservice-0.6.55.tar.xz
+  url: freedesktop_software:accountsservice/accountsservice-22.04.62.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
