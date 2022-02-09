@@ -1,0 +1,11 @@
+Index: /Source/WebKit/NetworkProcess/storage/OriginStorageManager.cpp
+===================================================================
+--- /Source/WebKit/NetworkProcess/storage/OriginStorageManager.cpp	(revision 289199)
++++ /Source/WebKit/NetworkProcess/storage/OriginStorageManager.cpp	(revision 289200)
+@@ -247,5 +247,5 @@
+     void deleteLocalStorageData(WallTime time)
+     {
+-        if (auto modificationTime = FileSystem::fileModificationTime(m_localStoragePath); *modificationTime >= time) {
++        if (FileSystem::fileModificationTime(m_localStoragePath) >= time) {
+             if (m_localStorageManager)
+                 m_localStorageManager->clearDataOnDisk();

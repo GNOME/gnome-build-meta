@@ -6,6 +6,8 @@ sources:
   path: files/webkitgtk/toolchain.i686
 - kind: local
   path: files/webkitgtk/toolchain.arm
+- kind: patch
+  path: files/webkitgtk/webkit-236209.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
