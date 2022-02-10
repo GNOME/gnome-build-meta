@@ -1,0 +1,29 @@
+diff --git a/generate-version.sh b/generate-version.sh
+deleted file mode 100755
+index 02c5f80e..00000000
+--- a/generate-version.sh
++++ /dev/null
+@@ -1,11 +0,0 @@
+-#!/bin/sh
+-VERSION_FROM_DIR_NAME=$(dirname $PWD/.. | sed -n 's/^.*-\([^-]*\)$/\1/p')
+-
+-if [ -n "$VERSION_FROM_DIR_NAME" ]; then
+-    echo "$VERSION_FROM_DIR_NAME"
+-    exit 0
+-fi
+-
+-COMMITS_SINCE_LAST_RELEASE=$(git rev-list $(git describe --abbrev=0)..HEAD --count)
+-date +%y.%V.${COMMITS_SINCE_LAST_RELEASE}
+-
+diff --git a/meson.build b/meson.build
+index 075776fa..b25bf562 100644
+--- a/meson.build
++++ b/meson.build
+@@ -1,6 +1,6 @@
+ project(
+   'accountsservice', 'c',
+-  version: run_command(['./generate-version.sh']).stdout().strip(),
++  version: '22.04.62',
+   license: 'GPL3+',
+   default_options: 'buildtype=debugoptimized',
+   meson_version: '>= 0.50.0',
