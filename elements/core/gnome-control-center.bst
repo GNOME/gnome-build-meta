@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/41/gnome-control-center-41.2.tar.xz
-  ref: 8271fc6b33ec2418a578304dd3e57d665f0d7cc706a99a97be419848618fe248
+  url: gnome_downloads:gnome-control-center/41/gnome-control-center-41.4.tar.xz
+  ref: d6db0c4cb70857becf48ac5007f12b5f63b9d5d7e80ea7ee57d3be512669f7c9
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
