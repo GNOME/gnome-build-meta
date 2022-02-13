@@ -13,9 +13,10 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libdazzle.bst
+- core-deps/libgweather.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
