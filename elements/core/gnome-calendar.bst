@@ -12,7 +12,6 @@ build-depends:
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/libdazzle.bst
 - core-deps/libgweather.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
