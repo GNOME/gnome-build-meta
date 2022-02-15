@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libnma/1.8/libnma-1.8.32.tar.xz
-  ref: 0a57b93a2fad43acc763f320dd3a7a93c429b0e3118dfa549d67824cddc4e905
+  url: gnome_downloads:libnma/1.8/libnma-1.8.34.tar.xz
+  ref: f5e2e738e0fca7f2a549079290b2d8017511d485a83220c36df380a3b4753304
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
