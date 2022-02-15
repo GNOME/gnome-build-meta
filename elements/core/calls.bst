@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git
-  url: gnome:calls.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:calls/42/calls-42.beta.0.tar.xz
+  ref: aa875c9bdebb50ee08a087b5b97a9d5e1e19f5e2052e4abcddddd6a3fc847cf3
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

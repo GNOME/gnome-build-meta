@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_files:apache/buildstream/archive/refs/tags/1.6.3.tar.gz
 
+  ref: 0be6ec01562e0ba09a7131d572a5b1886a486454547fea2d67df06035799981e
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
 

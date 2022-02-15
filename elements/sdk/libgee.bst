@@ -1,8 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:libgee.git
-  track: master
+- kind: tar
+  url: gnome_downloads:libgee/0.20/libgee-0.20.5.tar.xz
+  ref: 31863a8957d5a727f9067495cabf0a0889fa5d3d44626e54094331188d5c1518
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

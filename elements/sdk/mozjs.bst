@@ -5,6 +5,7 @@ sources:
   url: https://ftp.mozilla.org/pub/firefox/releases/91.5.0esr/source/firefox-91.5.0esr.source.tar.xz
   base-dir: 'firefox-91.5.0'
 
+  ref: f45cd9c96227e3e6eabe37962ce924b7a7ca86b6c191326c1bab18e082b4c813
 build-depends:
 - freedesktop-sdk.bst:components/autoconf2.13.bst # 1999 called, LOL
 - freedesktop-sdk.bst:components/pkg-config.bst

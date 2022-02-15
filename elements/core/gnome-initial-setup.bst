@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-initial-setup.git
-  track: master
+- kind: tar
+  url: gnome_downloads:gnome-initial-setup/42/gnome-initial-setup-42.beta.tar.xz
+  ref: 644dc87fa1157cbd40431dd932ea2e65cee81dbf17d2189300ad1e9ea3ac3d3d
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config

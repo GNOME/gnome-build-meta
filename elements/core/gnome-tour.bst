@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-tour.git
-  track: master
-- kind: cargo
-
+- kind: tar
+  url: gnome_downloads:gnome-tour/42/gnome-tour-42.beta.tar.xz
+  ref: 73c36766f59caa79d85caba8a2f7aa6a2cdef357c14fa2591e05dc93b15bc7e2
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst

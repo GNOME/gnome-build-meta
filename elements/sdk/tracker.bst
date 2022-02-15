@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:tracker.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:tracker/3.3/tracker-3.3.0.beta.tar.xz
+  ref: 26f3a81f514e5accfc98172958038af4cc38db5adda76bbbc9a07c827a2b1a3b
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

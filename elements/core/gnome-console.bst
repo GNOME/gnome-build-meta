@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:console.git
-  track: main
-
+- kind: tar
+  url: gnome_downloads:gnome-console/42/gnome-console-42.beta.tar.xz
+  ref: 2eafec8720210dcc01e47aa98a1bc6c76fb1c155365dac7bfcd7ab170477e834
 build-depends:
 - sdk-deps/sassc.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

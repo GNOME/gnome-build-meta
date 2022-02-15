@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: gnome:librsvg.git
-  track: main
-- kind: cargo
-
+- kind: tar
+  url: gnome_downloads:librsvg/2.53/librsvg-2.53.1.tar.xz
+  ref: ba8e040074749f3845445c5602e0902f3007a18b074cf0cc6a10c8ddc5a65322
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

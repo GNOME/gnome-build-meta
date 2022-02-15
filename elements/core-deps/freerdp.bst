@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: freerdp:releases/freerdp-2.5.0.tar.gz
 
+  ref: 0fd9396068cda8e6d884d063a4993001f140f46c36464ccae261b9475050cd2b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 

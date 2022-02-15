@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.7.18.tar.xz
 
+  ref: ca1ed22e3bde3912cb903aaa7de085d55771da454f1c0573fd9608e1de9c4002
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
