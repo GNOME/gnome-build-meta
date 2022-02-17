@@ -10,6 +10,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/clutter-gst.bst
+- core-deps/clutter-gtk.bst
+- core-deps/clutter.bst
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/libpeas.bst
