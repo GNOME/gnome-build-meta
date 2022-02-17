@@ -1,0 +1,32 @@
+diff --git a/meson.build b/meson.build
+index 79bf7a24..7a3065f0 100644
+--- a/meson.build
++++ b/meson.build
+@@ -108,7 +108,9 @@ m_dep = cc.find_library('m')
+ 
+ subdir('icons')
+ subdir('lib')
+-subdir('sendto')
++if get_option('sendto')
++  subdir('sendto')
++endif
+ 
+ if enable_gtk_doc
+   subdir('docs/reference/libgnome-bluetooth')
+@@ -136,6 +138,7 @@ output += '        Compiler....................:  ' + cc.get_id() + '\n\n'
+ output += '        Compiler Flags..............:  ' + ' '.join(compiler_flags) + '\n'
+ output += '        Prefix......................:  ' + gnomebt_prefix + '\n'
+ output += '        Documentation...............:  ' + enable_gtk_doc.to_string() + '\n'
++output += '        Send-to.....................:  ' + get_option('sendto').to_string() + '\n'
+ output += '        GObject-Introspection.......:  ' + enable_gir.to_string()
+ message(output)
+ 
+diff --git a/meson_options.txt b/meson_options.txt
+index 1defb70d..eed1137c 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -1,3 +1,4 @@
++option('sendto', type: 'boolean', value: true, description: 'Whether to build and install bluetooth-sendto')
+ option('icon_update', type: 'boolean', value: true, description: 'Enable icon cache update')
+ option('gtk_doc', type: 'boolean', value: false, description: 'use gtk-doc to build documentation')
+ option('introspection', type: 'boolean', value: true, description: 'Enable GObject Introspection (depends on GObject)')
