@@ -1,0 +1,29 @@
+From 4415fa832390490df1fcb70a3f756255ce449557 Mon Sep 17 00:00:00 2001
+From: Ray Strode <halfline@gmail.com>
+Date: Tue, 15 Feb 2022 20:00:10 +0000
+Subject: [PATCH] Revert "gnome-session: don't validate shell before using it"
+
+This reverts commit db1a97c2ffa091a37087cad15c759554e6fbb4ad
+---
+ gnome-session/gnome-session.in | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/gnome-session/gnome-session.in b/gnome-session/gnome-session.in
+index b4b1f8fa..ddd1a591 100755
+--- a/gnome-session/gnome-session.in
++++ b/gnome-session/gnome-session.in
+@@ -2,7 +2,10 @@
+ 
+ if [ "x$XDG_SESSION_TYPE" = "xwayland" ] &&
+    [ "x$XDG_SESSION_CLASS" != "xgreeter" ] &&
+-   [  -n "$SHELL" ]; then
++   [  -n "$SHELL" ] &&
++   grep -q "$SHELL" /etc/shells &&
++   ! (echo "$SHELL" | grep -q "false") &&
++   ! (echo "$SHELL" | grep -q "nologin"); then
+   if [ "$1" != '-l' ]; then
+     exec bash -c "exec -l '$SHELL' -c '$0 -l $*'"
+   else
+-- 
+2.35.0
+
