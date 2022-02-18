@@ -25,8 +25,8 @@ depends:
 - core-deps/tracker-miners.bst
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
