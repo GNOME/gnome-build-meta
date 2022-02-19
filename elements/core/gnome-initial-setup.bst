@@ -28,6 +28,7 @@ depends:
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
