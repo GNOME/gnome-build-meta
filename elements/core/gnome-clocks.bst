@@ -1,12 +1,16 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:gnome-clocks.git
   track: master
+
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/geocode-glib.bst
 - core-deps/gsound.bst
