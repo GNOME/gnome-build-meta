@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-font-viewer.git
-  track: master
+  track: main
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
