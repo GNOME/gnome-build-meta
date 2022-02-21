@@ -14,7 +14,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
 - core-deps/libgdata.bst
-- core-deps/libgweather-3.bst
+- core-deps/libgweather.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
@@ -32,4 +32,5 @@ variables:
     -DENABLE_VALA_BINDINGS=ON
     -DENABLE_UOA=OFF
     -DENABLE_GOOGLE_AUTH=OFF
+    -DWITH_GWEATHER4=ON
     -DWITH_LIBDB=OFF
