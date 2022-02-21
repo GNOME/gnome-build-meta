@@ -10,12 +10,12 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
+- world/libgweather-3.bst
 - core-deps/cmark.bst
 - core-deps/evolution-data-server.bst
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gspell.bst
-- core-deps/libgweather-3.bst
 - core/gnome-desktop.bst
 - sdk/atk.bst
 - sdk/gcr.bst
