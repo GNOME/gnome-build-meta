@@ -15,7 +15,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gnome-autoar.bst
 - core-deps/gspell.bst
-- core-deps/libgweather-3.bst
+- core-deps/libgweather.bst
 - core/gnome-desktop.bst
 - sdk/atk.bst
 - sdk/gcr.bst
@@ -32,3 +32,4 @@ variables:
     -DENABLE_PST_IMPORT=OFF
     -DENABLE_YTNEF=OFF
     -DENABLE_TEXT_HIGHLIGHT=OFF
+    -DWITH_GWEATHER4=ON
