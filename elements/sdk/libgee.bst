@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gnome:libgee.git
-  track: master
+  track: main
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
