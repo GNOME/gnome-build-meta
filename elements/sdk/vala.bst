@@ -2,7 +2,7 @@ kind: autotools
 sources:
 - kind: git_tag
   url: gnome:vala.git
-  track: master
+  track: main
 build-depends:
 - sdk/vala-tarball.bst
 - freedesktop-sdk.bst:components/bison.bst
