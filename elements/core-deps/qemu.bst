@@ -71,3 +71,11 @@ variables:
     --build=%{triplet}
     %{conf-extra}
     %{conf-local}
+
+public:
+  initial-script:
+    script: |
+      #!/bin/bash
+      set -eu
+      sysroot="${1}"
+      chmod 4755 "${sysroot}%{libexecdir}/qemu-bridge-helper"
