@@ -5,6 +5,8 @@ sources:
   url: gnome_downloads:nautilus/42/nautilus-42.rc.tar.xz
   ref: 200f343b99104336a8e3a68f37c43d40fd4ad9ad304a5e1fc593f8dc513faf9f
 build-depends:
+- sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
