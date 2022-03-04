@@ -4,8 +4,6 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-boxes/42/gnome-boxes-42.rc.tar.xz
   ref: f024c1409e58683fc6456712319165bf50464d08562d0617b8a9143a09f34eb2
-- kind: patch
-  path: files/gnome-boxes/re-order-recommended.patch
 
 build-depends:
 - sdk/vala.bst
