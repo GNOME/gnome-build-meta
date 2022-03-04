@@ -4,7 +4,11 @@ sources:
   url: gnome_downloads:gtkmm/3.24/gtkmm-3.24.5.tar.xz
   ref: 856333de86689f6a81c123f2db15d85db9addc438bc3574c36f15736aeae22e6
 build-depends:
+- core-deps/graphviz.bst
 - core-deps/mm-common.bst
+- freedesktop-sdk.bst:components/doxygen.bst
+- freedesktop-sdk.bst:components/gnu-free-fonts.bst
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -18,5 +22,5 @@ depends:
 variables:
   meson-local: >-
     -Dmaintainer-mode=true
-    -Dbuild-documentation=false
+    -Dbuild-documentation=true
     -Dwarnings=min

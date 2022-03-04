@@ -4,7 +4,11 @@ sources:
   url: gnome_downloads:pangomm/2.46/pangomm-2.46.2.tar.xz
   ref: 57442ab4dc043877bfe3839915731ab2d693fc6634a71614422fb530c9eaa6f4
 build-depends:
+- core-deps/graphviz.bst
 - core-deps/mm-common.bst
+- freedesktop-sdk.bst:components/doxygen.bst
+- freedesktop-sdk.bst:components/gnu-free-fonts.bst
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -16,5 +20,5 @@ depends:
 variables:
   meson-local: >-
     -Dmaintainer-mode=true
-    -Dbuild-documentation=false
+    -Dbuild-documentation=true
     -Dwarnings=min
