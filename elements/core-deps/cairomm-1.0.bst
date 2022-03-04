@@ -3,7 +3,12 @@ sources:
 - kind: tar
   url: cairo:releases/cairomm-1.14.3.tar.xz
 build-depends:
+- core-deps/graphviz.bst
 - core-deps/mm-common.bst
+- freedesktop-sdk.bst:components/doxygen.bst
+- freedesktop-sdk.bst:components/gnu-free-fonts.bst
+- freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/libsigcplusplus-2.0.bst
@@ -12,5 +17,5 @@ depends:
 variables:
   meson-local: >-
     -Dmaintainer-mode=true
-    -Dbuild-documentation=false
+    -Dbuild-documentation=true
     -Dwarnings=min
