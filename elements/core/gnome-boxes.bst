@@ -11,8 +11,6 @@ sources:
     subprojects/libovf-glib:
       checkout: true
       url: gnome_gitlab:felipeborges/libovf-glib.git
-- kind: patch
-  path: files/gnome-boxes/re-order-recommended.patch
 
 build-depends:
 - sdk/vala.bst
