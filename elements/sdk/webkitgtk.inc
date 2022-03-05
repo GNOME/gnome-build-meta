@@ -53,17 +53,8 @@ variables:
   webkitgtk_toolchain: ''
   (?):
   - arch == "i686" or arch == "arm":
+      debug_flags: "-g1"
       webkitgtk_toolchain: -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.%{arch}
-
-(?):
-- arch == "i686":
-    environment:
-      CFLAGS: '%{flags_i686} -g1'
-      CXXFLAGS: '%{flags_i686} -g1'
-- arch == "arm":
-    environment:
-      CFLAGS: '%{flags_arm} -g1'
-      CXXFLAGS: '%{flags_arm} -g1'
 
 public:
   cpe:
