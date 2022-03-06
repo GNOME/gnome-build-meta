@@ -46,7 +46,7 @@ variables:
   meson-local: >-
     -Dplugin_msr=%{msr}
     -Dplugin_dell=%{dell}
-    -Dplugin_uefi=%{uefi}
+    -Dplugin_uefi_capsule=%{uefi}
   msr: "false" # MSR is only for Intel processors
   dell: "false"
   uefi: "true"
