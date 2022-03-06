@@ -23,4 +23,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dgnome-distributor=gnome-build-meta
+    -Dgnome_distributor=gnome-build-meta
