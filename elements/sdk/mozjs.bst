@@ -7,11 +7,11 @@ sources:
 
   ref: f45cd9c96227e3e6eabe37962ce924b7a7ca86b6c191326c1bab18e082b4c813
 build-depends:
-- freedesktop-sdk.bst:components/autoconf2.13.bst # 1999 called, LOL
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/which.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/rust.bst
 
 depends:
