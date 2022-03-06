@@ -15,6 +15,7 @@ depends:
 - sdk/glib.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/dejavu-fonts.bst
 - freedesktop-sdk.bst:components/expat.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/freetype.bst
