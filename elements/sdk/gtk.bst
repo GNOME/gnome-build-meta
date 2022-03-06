@@ -38,9 +38,8 @@ variables:
     -Dbroadway-backend=true
     -Dgtk_doc=true
     -Dmedia-ffmpeg=disabled
-    -Dprint-cloudprint=disabled
     -Dvulkan=disabled
-    -Dprofiler=true
+    -Dsysprof=enabled
 
 public:
   bst:

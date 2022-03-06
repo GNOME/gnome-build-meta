@@ -43,7 +43,7 @@ variables:
     -Dinstalled_tests=true
     -Dtests=false
     -Dx11_backend=true
-    -Dwayland-backend=true
+    -Dwayland_backend=true
     -Dgtk_doc=true
     -Dman=true
     -Dintrospection=true
