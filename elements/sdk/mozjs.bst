@@ -6,11 +6,11 @@ sources:
   base-dir: 'firefox-91.5.0'
 
 build-depends:
-- freedesktop-sdk.bst:components/autoconf2.13.bst # 1999 called, LOL
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/which.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/rust.bst
 
 depends:
