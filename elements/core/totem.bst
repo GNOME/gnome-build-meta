@@ -34,7 +34,3 @@ depends:
 - sdk/libhandy.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Denable-vala=no
