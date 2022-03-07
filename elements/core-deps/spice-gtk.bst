@@ -28,7 +28,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Dcelt051=disabled
     -Dlz4=disabled
     -Dusbredir=disabled
     -Dsmartcard=disabled
