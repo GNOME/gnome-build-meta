@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: tar
   base-dir: ''
-  url: freedesktop_software:accountsservice/accountsservice-22.04.62.tar.xz
+  url: freedesktop_software:accountsservice/accountsservice-22.08.8.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst

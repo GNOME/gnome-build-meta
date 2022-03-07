@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: pagure_releases:libosinfo/libosinfo-1.9.0.tar.xz
+  url: pagure_releases:libosinfo/libosinfo-1.10.0.tar.xz
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local
