@@ -39,7 +39,6 @@ variables:
   meson-local: >-
     -Dcheese=enabled
     -Dparental_controls=enabled
-    -Dsoftware-sources=disabled
 
 config:
   install-commands:
