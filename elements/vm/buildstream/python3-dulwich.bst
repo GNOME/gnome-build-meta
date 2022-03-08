@@ -2,7 +2,7 @@ kind: pip
 
 sources:
 - kind: tar
-  url: pypi:31/02/791c17b92e6d04c43f9b318c95a3f3c3e1ea718aa72ad95b9dac147895fa/dulwich-0.20.21.tar.gz
+  url: pypi:de/42/c4218857c39ebc9b13c4a5c8d684e4d873ea0c680927ad1cc20e79db258a/dulwich-0.20.33.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst

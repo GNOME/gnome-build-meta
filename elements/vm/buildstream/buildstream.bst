@@ -2,7 +2,7 @@ kind: pip
 
 sources:
 - kind: tar
-  url: github_files:apache/buildstream/archive/refs/tags/1.6.3.tar.gz
+  url: pypi:1d/17/a4b6f9d88d389e6b5cff49d349507c9e40a477b67fe22dc6d35d2e8d360f/BuildStream-1.6.4.tar.gz
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
