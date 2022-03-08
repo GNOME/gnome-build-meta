@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
