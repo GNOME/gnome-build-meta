@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libcap-ng.bst
 - core-deps/usbredir.bst
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
@@ -23,6 +22,7 @@ depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

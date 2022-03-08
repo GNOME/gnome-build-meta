@@ -14,10 +14,7 @@ public:
     - rm -r '%{debugdir}%{libdir}/samba'
     - rm -r '%{debugdir}%{libdir}/sane'
 
-    # gjs deps on mozjs91, polkit only deps on 78
-    - rm '%{debugdir}%{libdir}/libmozjs-78.so.debug'
-
-    - rm '%{debugdir}%{libdir}/libaom.so.3.2.0.debug'
+    - rm '%{debugdir}%{libdir}/libaom.so.3.4.0.debug'
     - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
     - rm '%{debugdir}%{libdir}/libprotoc.so.26.0.8.debug'
     - rm '%{debugdir}%{libdir}/libprotobuf.so.26.0.8.debug'
@@ -48,9 +45,9 @@ public:
     - rm '%{debugdir}%{bindir}/gdb.debug'
     - rm '%{debugdir}%{bindir}/dwp.debug'
     - rm '%{debugdir}%{bindir}/ccache.debug'
-    - rm '%{debugdir}%{libdir}/libLLVM-12.so.debug'
-    - rm '%{debugdir}%{libdir}/libclang.so.12.debug'
-    - rm '%{debugdir}%{libdir}/libclang-cpp.so.12.debug'
+    - rm '%{debugdir}%{libdir}/libLLVM-14.so.debug'
+    - rm '%{debugdir}%{libdir}/libclang.so.14.0.6.debug'
+    - rm '%{debugdir}%{libdir}/libclang-cpp.so.14.debug'
     - rm '%{debugdir}%{bindir}/doxygen.debug'
     - rm '%{debugdir}%{bindir}/podman.debug'
     - rm '%{debugdir}%{bindir}/podman-remote.debug'

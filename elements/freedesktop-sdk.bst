@@ -2,7 +2,7 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: release/21.08
+  track: master
   track-tags: true
 config:
   options:

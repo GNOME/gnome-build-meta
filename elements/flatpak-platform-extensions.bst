@@ -3,7 +3,12 @@ kind: flatpak_repo
 build-depends:
 - core-deps/flatpak.bst
 - freedesktop-sdk.bst:flatpak-images/mesa.bst
-- freedesktop-sdk.bst:flatpak-images/platform-vaapi.bst
+
+(?):
+- arch in ("i686", "x86_64"):
+    build-depends:
+      (>):
+      - freedesktop-sdk.bst:flatpak-images/platform-vaapi-intel.bst
 
 variables:
   # Obtain the versions of the flatpak extensions

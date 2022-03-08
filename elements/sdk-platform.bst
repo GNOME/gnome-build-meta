@@ -79,6 +79,7 @@ depends:
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
+- freedesktop-sdk.bst:components/dbus-tools.bst
 - freedesktop-sdk.bst:components/dejavu-fonts.bst
 - freedesktop-sdk.bst:components/dictionaries.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
@@ -166,13 +167,13 @@ depends:
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/nettle.bst
 - freedesktop-sdk.bst:components/noopenh264.bst
+- freedesktop-sdk.bst:components/noto-emoji.bst
 - freedesktop-sdk.bst:components/npth.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:components/openal.bst
 - freedesktop-sdk.bst:components/opencl.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
-- freedesktop-sdk.bst:components/openmoji.bst
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/opus.bst
@@ -196,6 +197,7 @@ depends:
 - freedesktop-sdk.bst:components/sqlite.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/tar.bst
+- freedesktop-sdk.bst:components/tex-gyre-fonts.bst
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/unzip.bst
 - freedesktop-sdk.bst:components/util-linux.bst
@@ -204,7 +206,7 @@ depends:
 - freedesktop-sdk.bst:components/vulkan-validation-layers.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/webrtc-audio-processing.bst
-- freedesktop-sdk.bst:components/wget.bst
+- freedesktop-sdk.bst:components/wget2.bst
 - freedesktop-sdk.bst:components/which.bst
 - freedesktop-sdk.bst:components/xcb-util-cursor.bst
 - freedesktop-sdk.bst:components/xcb-util-image.bst
