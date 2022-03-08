@@ -2,9 +2,9 @@ kind: pip
 
 sources:
 - kind: tar
-  url: launchpad:brz/3.1/3.1.0/+download/breezy-3.1.0.tar.gz
+  url: pypi:e4/93/101bb70d7e6c171c7a3a99d50d9f9b64a17a5845cfd6c8ecb95d844bac68/breezy-3.2.1.tar.gz
 
-  ref: 1eff207403f48898fa3b3ffa7a4275197c6c58fec105ef267caf1f5fd5a6c7be
+  ref: e0b268eb1a28a2af045280c37d021ae32d7ff175f4c9b99f33aad7db0b29d85c
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
 
