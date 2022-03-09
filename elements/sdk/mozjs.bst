@@ -36,7 +36,6 @@ environment-nocache:
 - MAXJOBS
 
 config:
-  create-dev-shm: true
   configure-commands:
   - |
     cat >mozconfig <<EOF
