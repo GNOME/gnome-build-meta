@@ -16,6 +16,3 @@ depends:
 environment:
   GRPC_PYTHON_BUILD_SYSTEM_OPENSSL: 'true'
   GRPC_PYTHON_BUILD_WITH_CYTHON: '1'
-
-config:
-  create-dev-shm: true
