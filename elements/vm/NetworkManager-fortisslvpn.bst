@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager-fortisslvpn/1.2/NetworkManager-fortisslvpn-1.2.8.tar.xz
+  url: gnome_downloads:NetworkManager-fortisslvpn/1.3/NetworkManager-fortisslvpn-1.3.90.tar.xz
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
