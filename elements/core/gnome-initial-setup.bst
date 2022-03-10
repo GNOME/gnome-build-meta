@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/42/gnome-initial-setup-42.beta.tar.xz
-  ref: 644dc87fa1157cbd40431dd932ea2e65cee81dbf17d2189300ad1e9ea3ac3d3d
+  url: gnome_downloads:gnome-initial-setup/42/gnome-initial-setup-42.rc.tar.xz
+  ref: ec00b37bc69726f970b00c3885282ae083e0b468bdde2192db80f68eed5e2779
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config

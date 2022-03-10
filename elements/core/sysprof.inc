@@ -1,4 +1,4 @@
 sources:
 - kind: tar
-  url: gnome_downloads:sysprof/3.42/sysprof-3.42.1.tar.xz
-  ref: 1796b81404ee75fd1ebacf54464ad7affebf62f2851eef524d9f8eac0c4a2001
+  url: gnome_downloads:sysprof/3.43/sysprof-3.43.90.tar.xz
+  ref: e8f317892f5ddc0e5c51d3759c4938e375503af34cd7c876b6d3d8ceba9d7347

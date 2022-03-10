@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/42/gnome-software-42.beta.tar.xz
-  ref: bc6c69fbc2f420c8d003ad3896ee82a1ef06a481564b913af52b731717fb4d76
+  url: gnome_downloads:gnome-software/42/gnome-software-42.rc.tar.xz
+  ref: e3ac95d123c2ed4061a8a4f6a605ce6a0d8edaaaa022f6e983ca80cf977a8e69
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
