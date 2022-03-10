@@ -7,6 +7,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/valgrind-maybe.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
