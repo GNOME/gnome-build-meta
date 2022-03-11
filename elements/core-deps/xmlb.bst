@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:hughsie/libxmlb/archive/0.3.2.tar.gz
+  url: github_files:hughsie/libxmlb/archive/refs/tags/0.3.7.tar.gz
 
-  ref: ccab521ea30a1ac76c4b49d79876bb5c860b10bbaeaa3eb9045afdefa3bb41fc
+  ref: fc00cdb2af69eb4a53bf6a48874c9004ee5373579eafa1dc4e53dace8b9d1251
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
