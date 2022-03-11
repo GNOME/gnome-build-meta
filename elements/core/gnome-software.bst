@@ -10,7 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/appstream.bst
+- core-deps/AppStream.bst
 - core-deps/eos-updater.bst
 - core-deps/flatpak.bst
 - core-deps/fwupd.bst

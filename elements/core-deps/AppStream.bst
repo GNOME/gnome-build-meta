@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_software:appstream/releases/AppStream-0.14.3.tar.xz
+  url: freedesktop_software:appstream/releases/AppStream-0.15.2.tar.xz
 
   ref: 16bf426a8f2693a45c84f437a301e560a2fb77179917c175f5ccb0bd9883e5c6
 build-depends:
@@ -15,6 +15,7 @@ build-depends:
 
 depends:
 - core-deps/lmdb.bst
+- core-deps/xmlb.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/libsoup-2.4.bst
