@@ -18,6 +18,8 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/libsoup-2.4.bst
+- sdk/librsvg.bst
+- freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/libyaml.bst
@@ -25,6 +27,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dcompose=true
     -Dapidocs=false
     -Dinstall-docs=false
     -Dstemming=false
