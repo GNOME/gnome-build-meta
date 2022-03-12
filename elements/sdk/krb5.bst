@@ -3,7 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: kerberos:dist/krb5/1.19/krb5-1.19.3.tar.gz
-  ref:
+  ref: 56d04863cfddc9d9eb7af17556e043e3537d41c6e545610778676cf551b9dcd0
 - kind: local
   path: files/krb5
   directory: krb5-config
