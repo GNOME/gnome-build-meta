@@ -50,7 +50,6 @@ config:
     timeout 3
     editor yes
     console-mode keep
-    default *
     EOF
 
   - |
