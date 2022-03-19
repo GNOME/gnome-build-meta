@@ -15,6 +15,7 @@ depends:
 - vm/flathub-config.bst
 - vm/gnome-nightly-config.bst
 - vm/ostree-config.bst
+- vm/console-shell-override.bst
 - vm/plymouth-gnome-theme.bst
 - vm/resize-root.bst
 - vm/spice-vdagent.bst
