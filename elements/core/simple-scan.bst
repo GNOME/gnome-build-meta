@@ -3,8 +3,6 @@ sources:
 - kind: tar
   url: gnome_downloads:simple-scan/42/simple-scan-42.0.tar.xz
   ref: ac1f857afd0bc8897dd2045023ad7c5713e5ceefca56b0b3cc5e9a4795329586
-- kind: patch
-  path: files/simple-scan/0001-Fix-accessibility-conflict-of-constant-and-its-value.patch
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
