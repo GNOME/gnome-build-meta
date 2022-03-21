@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-disk-utility/42/gnome-disk-utility-42.rc.tar.xz
-  ref: d3dace626bd82e4a0f05e62e594e7c9e88ff0e6f8d5499e09dec94c919dbbbf7
+  url: gnome_downloads:gnome-disk-utility/42/gnome-disk-utility-42.0.tar.xz
+  ref: 1b6564454d67426322cb3bfc5a5558653bfc7dfeea2ae0825b1d08629f01090b
 
 build-depends:
 - sdk/appstream-glib.bst

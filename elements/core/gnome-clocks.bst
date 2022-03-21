@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-clocks/42/gnome-clocks-42.beta.tar.xz
-  ref: 819ae24517ee1a735ee30e67b47829d71ddbe34782d65c883c9c63d3ec705bd8
+  url: gnome_downloads:gnome-clocks/42/gnome-clocks-42.0.tar.xz
+  ref: 0e7118db4a032e3cea3212d98cbb828d6b7cf22fe05e0c5fc8b391c6a3dd6fe0
 
 build-depends:
 - sdk/vala.bst

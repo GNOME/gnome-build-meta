@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-bluetooth/42/gnome-bluetooth-42.rc.tar.xz
-  ref: 36a658feb49ae282428a982e642a059af070abe654994167bb9c06b069eb053b
+  url: gnome_downloads:gnome-bluetooth/42/gnome-bluetooth-42.0.tar.xz
+  ref: 3d1e2720673bc9a242619dc5d231fd6e776c18a49da29f43cdc433055adb0170
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

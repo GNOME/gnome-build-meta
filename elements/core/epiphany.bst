@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/42/epiphany-42.beta.tar.xz
-  ref: bcd54291df8df709b75bfd17bbe090595ada83cbdb166323e81f41fcf8958c32
+  url: gnome_downloads:epiphany/42/epiphany-42.0.tar.xz
+  ref: 3dbfa8c00e45b7f44e1824d01f0febe83707b5fb9330c261173f68b7f03cd5e3
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:jsonrpc-glib/3.41/jsonrpc-glib-3.41.0.tar.xz
-  ref: 7c4e6a5b8c3729632cecc312dc1163c4d00243d32e90528e54ec5038a23a7c21
+  url: gnome_downloads:jsonrpc-glib/3.42/jsonrpc-glib-3.42.0.tar.xz
+  ref: 221989a57ca82a12467dc427822cd7651b0cad038140c931027bf1074208276b
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

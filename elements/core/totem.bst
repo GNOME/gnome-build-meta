@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:totem/42/totem-42.beta.tar.xz
-  ref: e9689b93e66060535268b91efb7583168869cd43a23a4b5aa28eeccc11b121b7
+  url: gnome_downloads:totem/42/totem-42.0.tar.xz
+  ref: 4af0491ddb95df8b33aee399d3a50f9c7ab17de88d3af63356567cf88f57e6ab
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

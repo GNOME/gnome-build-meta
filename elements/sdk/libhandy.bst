@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libhandy/1.5/libhandy-1.5.91.tar.xz
-  ref: cc761d78344e5b8d27cfa8a2463362f244c11b2b07fe974957b5c96106acd43b
+  url: gnome_downloads:libhandy/1.6/libhandy-1.6.1.tar.xz
+  ref: 6eab0384404d56bd1b1fa059d9a081177778f6ae080ffc2120f28656ca7462a4
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

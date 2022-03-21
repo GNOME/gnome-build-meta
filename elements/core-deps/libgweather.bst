@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libgweather/3.99/libgweather-3.99.0.tar.xz
-  ref: f69d91aa939ca4bd7dffda208fdc30fd0d75c8a3caa828d5d2f011b19d9a152e
+  url: gnome_downloads:libgweather/4.0/libgweather-4.0.0.tar.xz
+  ref: 440d44801b6f72b48c676e5e37f9109cfee1394fd74cc92725e1b1ba4fae834c
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

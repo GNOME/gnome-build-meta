@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:simple-scan/40/simple-scan-40.7.tar.xz
-  ref: 7c551852cb5af7d34aa989f8ad5ede3cbe31828cf8dd5aec2b2b6fdcd1ac3d53
+  url: gnome_downloads:simple-scan/42/simple-scan-42.0.tar.xz
+  ref: ac1f857afd0bc8897dd2045023ad7c5713e5ceefca56b0b3cc5e9a4795329586
 - kind: patch
   path: files/simple-scan/0001-Fix-accessibility-conflict-of-constant-and-its-value.patch
 build-depends:

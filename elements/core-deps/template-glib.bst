@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:template-glib/3.34/template-glib-3.34.0.tar.xz
-  ref: 216bef6ac3607666b8ca72b936467f7020ce6421c02755c301d079576c9c3dfd
+  url: gnome_downloads:template-glib/3.34/template-glib-3.34.1.tar.xz
+  ref: 9ec9b71e04d4f5cb14f755ef790631cd0b45c0603e11c836fc7cfd9e268cd07a
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

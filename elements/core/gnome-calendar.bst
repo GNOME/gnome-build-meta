@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/42/gnome-calendar-42.rc.tar.xz
-  ref: d64d991b759bc2f76f8c940589c77d81bda811eae0a39fbd932a0857f4747994
+  url: gnome_downloads:gnome-calendar/42/gnome-calendar-42.0.tar.xz
+  ref: b63f73f55032fc1390442f94cdf6b3cab9c91c774ddd2e5c61ecfec9d2c5e9aa
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
