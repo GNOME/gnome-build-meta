@@ -1,16 +1,19 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:gnome-logs.git
   track: master
+
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
