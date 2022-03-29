@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-boxes.git
-  track: master
+  track: main
   submodules:
     subprojects/gtk-frdp:
       checkout: true
