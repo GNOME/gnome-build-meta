@@ -1,4 +1,4 @@
 sources:
 - kind: git_tag
   url: gnome:sysprof.git
-  track: master
+  track: sysprof-3-44
