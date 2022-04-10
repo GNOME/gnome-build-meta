@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gcr.git
-  track: master
+  track: gnome-40
 
 build-depends:
 - sdk-deps/gi-docgen.bst
