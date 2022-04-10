@@ -15,6 +15,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
+- sdl/gtk.bst
 - sdk/gtk+-3.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/gnupg.bst
