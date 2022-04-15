@@ -6,9 +6,9 @@ sources:
   track: master
 
 build-depends:
-- sdk/sysprof-minimal.bst
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- sdk/sysprof-minimal.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -30,7 +30,6 @@ depends:
 variables:
   meson-local: >-
     -Dautobahn=disabled
-    -Dgtk_doc=true
     -Dhttp2_tests=disabled
     -Dinstalled_tests=true
     -Dntlm=disabled
