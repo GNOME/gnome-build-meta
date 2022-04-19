@@ -9,8 +9,6 @@ depends:
 - core-deps/clutter-gtk.bst
 - core-deps/folks.bst
 - core-deps/geocode-glib.bst
-- core-deps/gfbgraph.bst
-- core-deps/gnome-online-accounts.bst
 - core-deps/libchamplain.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -23,4 +21,5 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/librsvg.bst
+- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
