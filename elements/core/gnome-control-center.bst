@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
-  track: master
+  track: main
   submodules:
     subprojects/gvc:
       checkout: true
