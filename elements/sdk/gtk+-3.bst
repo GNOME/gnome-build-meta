@@ -38,6 +38,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
+  local_flags: '-DG_ENABLE_DEBUG'
   meson-local: >-
     -Dbroadway_backend=true
     -Dinstalled_tests=true
