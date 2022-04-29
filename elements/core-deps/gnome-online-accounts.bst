@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-online-accounts/3.43/gnome-online-accounts-3.43.1.tar.xz
-  ref: 3bcb3663a12efd4482d9fdda3e171676267fc739eb6440a2b7109a0e87afb7e8
+  url: gnome_downloads:gnome-online-accounts/3.44/gnome-online-accounts-3.44.0.tar.xz
+  ref: 381d5d4106f435b6f87786aa049be784774e15996adcc02789807afc87ea7342
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

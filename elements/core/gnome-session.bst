@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-session/41/gnome-session-41.3.tar.xz
-  ref: ee4a229053f522624054889609335b885287cf67bbde0dc9fd882b01ec9b5b39
-- kind: patch
-  path: files/gnome-session/0001-Revert-gnome-session-don-t-validate-shell-before-usi.patch
+  url: gnome_downloads:gnome-session/42/gnome-session-42.0.tar.xz
+  ref: 3cca06053ab682926920951a7da95f8cc6d72da74c682c46d0a0653332969caa
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
