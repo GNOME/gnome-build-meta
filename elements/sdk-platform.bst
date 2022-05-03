@@ -65,7 +65,7 @@ depends:
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
 # appstream-glib, at-spi2-*, atk, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, librsvg,
-# libsoup, nsswitch-config, os-release, pango, pipewire and zenity.
+# libsoup, nsswitch-config, os-release, pango, and pipewire.
 
 # Due to being relatively deep in the stack, glib needs special treatment.
 

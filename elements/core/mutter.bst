@@ -21,7 +21,6 @@ depends:
 - core-deps/startup-notification.bst
 - core-deps/libinput.bst
 - core-deps/upower.bst
-- core-deps/zenity.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - sdk/gdk-pixbuf.bst
