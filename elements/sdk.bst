@@ -36,6 +36,7 @@ depends:
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/groff.bst
 - freedesktop-sdk.bst:components/help2man.bst
+- freedesktop-sdk.bst:components/libabigail.bst
 - freedesktop-sdk.bst:components/libpipeline.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/man-db.bst
