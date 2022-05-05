@@ -3,9 +3,6 @@ kind: autotools
 sources:
 - kind: tar
   url: kerberos:dist/krb5/1.19/krb5-1.19.2.tar.gz
-- kind: local
-  path: files/krb5
-  directory: krb5-config
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
@@ -29,12 +26,6 @@ variables:
     --disable-rpath
     --with-system-et
     --with-system-ss
-
-config:
-  install-commands:
-    (>):
-    - mkdir -p %{install-root}%{sysconfdir}
-    - install -m 644 ../krb5-config/krb5.conf %{install-root}%{sysconfdir}/krb5.conf
 
 public:
   bst:
