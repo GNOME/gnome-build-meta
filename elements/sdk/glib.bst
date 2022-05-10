@@ -19,11 +19,11 @@ depends:
 # so we either could have added sysprof-minimal
 # as a builddep to everything that depends on it
 # and its downstream users, or make it a runtime
-# depencency of glib and have it be always available
+# dependency of glib and have it be always available
 # transiently.
 #
-# Ideally, sysprof-miniaml would be just a build dep
-# of moduels, since its already statically linked.
+# Ideally, sysprof-minimal would be just a build dep
+# of modules, since its already statically linked.
 # https://github.com/mesonbuild/meson/issues/3970
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:components/libffi.bst
