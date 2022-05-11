@@ -21,7 +21,3 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Dgnome_distributor=gnome-build-meta
