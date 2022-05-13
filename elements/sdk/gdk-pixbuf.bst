@@ -18,6 +18,8 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dx11=false
+    -Dman=false
+
 public:
   bst:
     integration-commands:
