@@ -21,6 +21,7 @@ depends:
 variables:
   meson-local: >-
     -Dgtk_doc=true
+    -Dman=false
 
 public:
   bst:
