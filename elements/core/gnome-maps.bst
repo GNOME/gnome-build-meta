@@ -21,5 +21,4 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/librsvg.bst
-- sdk/webkit2gtk-4.0.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
