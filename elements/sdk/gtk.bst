@@ -34,7 +34,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  local_flags: '-DG_ENABLE_DEBUG'
+  local_flags: '-DG_ENABLE_DEBUG -DG_DISABLE_CAST_CHECKS'
   meson-local: >-
     -Dbroadway-backend=true
     -Dgtk_doc=true
