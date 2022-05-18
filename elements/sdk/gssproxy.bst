@@ -19,3 +19,13 @@ variables:
     --enable-only-gss-module
     --with-gpp-default-behavior=REMOTE_FIRST
     --with-manpages=no
+
+# We have a nonstandard install location for proxymech.conf so that it works
+# under ostree. See gnome-build-meta#503.
+config:
+  install-commands:
+    (>):
+    - mkdir -p %{install-root}%{indep-libdir}/gss/mech.d
+    - mv %{install-root}%{sysconfdir}/gss/mech.d/proxymech.conf %{install-root}%{indep-libdir}/gss/mech.d/
+    - rmdir %{install-root}%{sysconfdir}/gss/mech.d/
+    - ln -s %{install-root}%{indep-libdir}/gss/mech.d/ %{install-root}%{sysconfdir}/gss/
