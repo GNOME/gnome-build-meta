@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:glib.git
-  track: glib-2-72
+  track: main
 
 build-depends:
 - sdk/gtk-doc.bst
