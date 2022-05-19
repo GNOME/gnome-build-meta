@@ -1,0 +1,67 @@
+From f7843c7487f8246fcc92dc9b7d3c0bab8755e728 Mon Sep 17 00:00:00 2001
+From: Simo Sorce <simo@redhat.com>
+Date: Thu, 19 May 2022 12:27:40 -0400
+Subject: [PATCH] Always read the configuration files the first time
+
+There is at least one case (with flatpaks) where configuration files
+in the special read-only /etc all have (time_t)0 as mtime.
+
+This causes the current code to not read the configuration files even
+once because the comparison in check_link_mtime() assumes that a mtime
+on disk is always greater than 0 and the initial "high" value
+g_confFileModTime is set to 0.
+
+To address this we change the initial high value to the be the "invalid"
+value (time_t)-1
+Then we special case the check in check_link_mtime() to always,
+unconditionally, load the configuration file when the initial '-1' value
+is seen.
+
+After the first time the code goes through loadConfigFiles() the value
+of g_confFileModTime will be set to the highest mtime found, which will
+work correctly even if that "highest" value is the artifical (time_t)0
+found in these special readonly filesystems.
+
+Signed-off-by: Simo Sorce <simo@redhat.com>
+---
+ src/lib/gssapi/mechglue/g_initialize.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/src/lib/gssapi/mechglue/g_initialize.c b/src/lib/gssapi/mechglue/g_initialize.c
+index b26262d692..3582145319 100644
+--- a/src/lib/gssapi/mechglue/g_initialize.c
++++ b/src/lib/gssapi/mechglue/g_initialize.c
+@@ -93,7 +93,7 @@ static void free_mechSet(void);
+ static gss_mech_info g_mechList = NULL;
+ static gss_mech_info g_mechListTail = NULL;
+ static k5_mutex_t g_mechListLock = K5_MUTEX_PARTIAL_INITIALIZER;
+-static time_t g_confFileModTime = (time_t)0;
++static time_t g_confFileModTime = (time_t)-1;
+ static time_t g_confLastCall = (time_t)0;
+ 
+ static gss_OID_set_desc g_mechSet = { 0, NULL };
+@@ -467,11 +467,13 @@ load_if_changed(const char *pathname, time_t last, time_t *highest)
+ 	time_t mtime;
+ 
+ 	mtime = check_link_mtime(pathname, &mtime);
++        if (mtime == (time_t)-1 && last == (time_t)-1)
++            mtime = 0;
+ 	if (mtime == (time_t)-1)
+ 		return;
+ 	if (mtime > *highest)
+ 		*highest = mtime;
+-	if (mtime > last)
++	if (mtime > last || last == (time_t)-1)
+ 		loadConfigFile(pathname);
+ }
+ 
+@@ -522,7 +524,8 @@ updateMechList(void)
+ 
+ #if defined(_WIN32)
+ 	time_t lastConfModTime = getRegConfigModTime(MECH_KEY);
+-	if (g_confFileModTime >= lastConfModTime)
++	if (g_confFileModTime >= lastConfModTime &&
++            g_confFileModTime != (time_t)-1)
+ 		return;
+ 	g_confFileModTime = lastConfModTime;
+ 	loadConfigFromRegistry(HKEY_CURRENT_USER, MECH_KEY);

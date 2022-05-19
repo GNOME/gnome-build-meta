@@ -3,6 +3,8 @@ kind: autotools
 sources:
 - kind: tar
   url: kerberos:dist/krb5/1.19/krb5-1.19.2.tar.gz
+- kind: patch
+  path: files/krb5/mtime.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
