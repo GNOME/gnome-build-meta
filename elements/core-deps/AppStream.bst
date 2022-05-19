@@ -9,6 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/gperf.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
