@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:seahorse.git
-  track: master
+  track: main
 
 build-depends:
 - sdk/gobject-introspection.bst
