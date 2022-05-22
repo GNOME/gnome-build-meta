@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gssdp.git
-  track: gssdp-1.4
+  track: master
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

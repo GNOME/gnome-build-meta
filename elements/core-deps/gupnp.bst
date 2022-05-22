@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gupnp.git
-  track: gupnp-1.4
+  track: master
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -15,7 +15,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/gssdp.bst
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
