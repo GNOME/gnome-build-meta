@@ -21,6 +21,7 @@ depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/libpeas.bst
+- core-deps/libportal.bst
 - core-deps/totem-pl-parser.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
