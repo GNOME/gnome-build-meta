@@ -1,9 +1,11 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: github:gssapi/gssproxy.git
-  track: 3d8601e5ed4da42617191976bfd961ead6cab55d
+- kind: tar
+  url: github_files:gssapi/gssproxy/releases/download/v0.9.0/gssproxy-0.9.0.tar.gz
+# When removing this patch, also remove the autoreconf stuff down below.
+- kind: patch
+  path: files/gssproxy/fix-build.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
@@ -18,4 +20,5 @@ variables:
     --enable-always-interpose
     --enable-only-gss-module
     --with-gpp-default-behavior=REMOTE_FIRST
+    --with-initscript=none
     --with-manpages=no
