@@ -13,7 +13,7 @@ depends:
 - sdk/atk.bst
 - sdk/cantarell-fonts.bst
 - sdk/enchant-2.bst
-- sdk/fcitx.bst
+- sdk/fcitx5-gtk.bst
 - sdk/gcab.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst

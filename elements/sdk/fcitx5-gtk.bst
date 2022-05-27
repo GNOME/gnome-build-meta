@@ -2,7 +2,9 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:fcitx/fcitx5-gtk/archive/5.0.10.tar.gz
+  url: github_files:fcitx/fcitx5-gtk/archive/5.0.14.tar.gz
+- kind: patch
+  path: files/fcitx5-gtk/gio-unix.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst
