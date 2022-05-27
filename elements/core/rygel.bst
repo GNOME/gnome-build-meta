@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:rygel.git
-  track: master
+  track: rygel-0-40
 
 build-depends:
 - sdk/vala.bst
