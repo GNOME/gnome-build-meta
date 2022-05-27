@@ -41,6 +41,9 @@ variables:
     -Deos_updater=true
     -Dpackagekit=false
     -Dsoup2=true
+    -Dwebapps=false
+    -Dhardcoded_foss_webapps=false
+    -Dhardcoded_proprietary_webapps=false
 
 config:
   configure-commands:
