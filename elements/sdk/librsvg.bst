@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.54/librsvg-2.54.1.tar.xz
-  ref: d5557efbdcc415a4180e1116b7f736cb711b253d110d95fa86ec830f70026625
+  url: gnome_downloads:librsvg/2.54/librsvg-2.54.3.tar.xz
+  ref: 66158f2ef46dde260026846c4da102e4a9dd4e5293010f30949c6cc26dd6efe8
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

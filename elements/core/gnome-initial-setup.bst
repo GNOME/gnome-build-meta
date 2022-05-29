@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/42/gnome-initial-setup-42.1.1.tar.xz
-  ref: 9117ee4291f6fe85fde7f161e0504403c3cfaae5f71b18f01e302651963652d2
+  url: gnome_downloads:gnome-initial-setup/42/gnome-initial-setup-42.2.tar.xz
+  ref: 4d83d98b249abe15bb2b3e7e7aead9c47f848bca7b6a091abc908b76541abe7b
 - kind: local
   path: files/gnome-initial-setup
   directory: gnome-initial-setup-config
@@ -44,4 +44,5 @@ config:
   install-commands:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf %{install-root}%{sysusersdir}/gnome-initial-setup.conf
+    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf
+      %{install-root}%{sysusersdir}/gnome-initial-setup.conf
