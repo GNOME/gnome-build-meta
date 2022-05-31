@@ -8,7 +8,7 @@ build-depends:
 depends:
 - core-deps/pyatspi.bst
 - core-deps/speech-dispatcher.bst
-- sdk/at-spi2-atk.bst
+- sdk/at-spi2-core.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst
 - sdk/pygobject.bst

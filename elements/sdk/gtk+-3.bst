@@ -16,8 +16,7 @@ runtime-depends:
 - sdk/cantarell-fonts.bst
 
 depends:
-- sdk/at-spi2-atk.bst
-- sdk/atk.bst
+- sdk/at-spi2-core.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/pango.bst

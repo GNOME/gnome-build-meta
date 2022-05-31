@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/glibmm-2.4.bst
-- sdk/atk.bst
+- sdk/at-spi2-core.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

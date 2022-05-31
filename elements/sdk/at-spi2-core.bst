@@ -6,6 +6,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
@@ -22,4 +23,6 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{libdir}/libatk-1.0.so'
+        - '%{libdir}/libatk-bridge-2.0.so'
         - '%{libdir}/libatspi.so'

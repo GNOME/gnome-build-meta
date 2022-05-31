@@ -15,7 +15,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/atk.bst
+- sdk/at-spi2-core.bst
 - world/glibmm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 

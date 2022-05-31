@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - core-deps/pyatspi.bst
-- sdk/at-spi2-atk.bst
+- sdk/at-spi2-core.bst
 - sdk/gtk+-3.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/pycairo.bst

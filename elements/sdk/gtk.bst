@@ -15,8 +15,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/at-spi2-atk.bst
-- sdk/atk.bst
+- sdk/at-spi2-core.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/graphene.bst

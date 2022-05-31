@@ -8,9 +8,7 @@ depends:
 - sdk/adobe-source-code-pro-fonts.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
-- sdk/at-spi2-atk.bst
 - sdk/at-spi2-core.bst
-- sdk/atk.bst
 - sdk/cantarell-fonts.bst
 - sdk/enchant-2.bst
 - sdk/fcitx5-gtk.bst
@@ -64,7 +62,7 @@ depends:
 # update our reference to add any new elements.
 
 # Currently, the elements we want to build ourselves, and not use from freedesktop-sdk are:
-# appstream-glib, at-spi2-*, atk, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
+# appstream-glib, at-spi2-core, fcitx, gcab, gdk-pixbuf, geoclue2, glib-networking,
 # gobject-introspection, gstreamer-*, gtk3, ibus, json-glib, librsvg,
 # libsoup, nsswitch-config, os-release, pango, and pipewire.
 

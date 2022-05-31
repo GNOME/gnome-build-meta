@@ -17,7 +17,7 @@ depends:
 - core-deps/gspell.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
-- sdk/atk.bst
+- sdk/at-spi2-core.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gsettings-desktop-schemas.bst
