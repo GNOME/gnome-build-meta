@@ -41,7 +41,7 @@ variables:
     -Deos_updater=true
     -Dpackagekit=false
     -Dsoup2=true
-    -Dwebapps=false
+    -Dwebapps=true
     -Dhardcoded_foss_webapps=false
     -Dhardcoded_proprietary_webapps=false
 
