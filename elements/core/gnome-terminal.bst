@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-terminal/3.42/gnome-terminal-3.42.2.tar.xz
-  ref: 8a9c8e5ef7a3a73b246a947e1190bb08ec98935af860cf0b3aa2fbf4606817a0
+  url: gnome_downloads:gnome-terminal/3.42/gnome-terminal-3.42.3.tar.xz
+  ref: 666e263c427b5ab0e772883626e59c53c2734099128fab2ccba2a758041e23f5
 build-depends:
 - core/gnome-shell.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
