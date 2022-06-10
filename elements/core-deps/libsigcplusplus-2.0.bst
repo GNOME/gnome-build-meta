@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: github:libsigcplusplus/libsigcplusplus.git
-  track: libsigc++-2-10
+  track: libsigc++-2-12
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
