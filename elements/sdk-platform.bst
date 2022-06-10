@@ -27,6 +27,7 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs-client.bst
+- sdk/highway.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libadwaita.bst
@@ -34,6 +35,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
+- sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
