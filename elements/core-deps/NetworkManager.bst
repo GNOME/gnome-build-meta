@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/ModemManager.bst
-- core-deps/glibmm-2.4.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/ppp.bst
 - sdk/glib.bst
