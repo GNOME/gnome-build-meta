@@ -4,6 +4,10 @@ sources:
 - kind: git_tag
   url: gnome:glib.git
   track: main
+  submodules:
+    subprojects/gvdb:
+      checkout: true
+      url: gnome:gvdb.git
 
 build-depends:
 - sdk/gtk-doc.bst
