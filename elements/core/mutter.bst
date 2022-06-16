@@ -35,6 +35,8 @@ depends:
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/xorg-lib-ice.bst
+- freedesktop-sdk.bst:components/xorg-lib-sm.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:components/xwayland.bst
