@@ -18,6 +18,7 @@ depends:
 - core-deps/ibus-daemon.bst
 - core-deps/libgweather.bst
 - core-deps/libnma.bst
+- core-deps/librest-0.7.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst
 - core/cheese.bst

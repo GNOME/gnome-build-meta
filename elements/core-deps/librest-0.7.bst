@@ -1,21 +1,14 @@
 kind: autotools
-
 sources:
 - kind: git_tag
-  url: gnome:libzapojit.git
-  track: master
-
+  url: gnome:librest.git
+  track: librest-0-7
 build-depends:
-- core-deps/intltool.bst
-- core-deps/librest-0.7.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
-
 depends:
-- core-deps/gnome-online-accounts.bst
 - sdk/glib.bst
-- sdk/json-glib.bst
 - sdk/libsoup-2.4.bst
+- freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

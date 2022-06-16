@@ -6,12 +6,12 @@ kind: cmake
 depends:
   (>):
   - sdk/gtk+-3.bst
-  - sdk/libsoup-2.4.bst
+  - sdk/libsoup.bst
 
 variables:
   cmake-local: >-
     -DPORT=GTK
-    -DUSE_SOUP2=ON
+    -DENABLE_GTKDOC=ON
     -DENABLE_WEBDRIVER=OFF
     %{webkitgtk_toolchain}
 
@@ -20,8 +20,8 @@ public:
     split-rules:
       devel:
         (>):
-        - '%{libdir}/libjavascriptcoregtk-4.0.so'
-        - '%{libdir}/libwebkit2gtk-4.0.so'
+        - '%{libdir}/libjavascriptcoregtk-4.1.so'
+        - '%{libdir}/libwebkit2gtk-4.1.so'
       webkit-debug:
       - '%{debugdir}'
       - '%{debugdir}/**'
