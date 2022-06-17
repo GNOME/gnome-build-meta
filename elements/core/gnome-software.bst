@@ -4,6 +4,10 @@ sources:
 - kind: git_tag
   url: gnome:gnome-software.git
   track: main
+  submodules:
+    subprojects/gnome-pwa-list:
+      checkout: true
+      url: gnome_gitlab:mwleeds/gnome-pwa-list.git
 
 build-depends:
 - sdk/gtk-doc.bst
@@ -15,6 +19,7 @@ depends:
 - core-deps/eos-updater.bst
 - core-deps/flatpak.bst
 - core-deps/fwupd.bst
+- core-deps/glib-testing.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gspell.bst
 - core-deps/liboauth.bst
@@ -41,6 +46,3 @@ variables:
     -Deos_updater=true
     -Dpackagekit=false
     -Dsoup2=true
-    -Dwebapps=false
-    -Dhardcoded_foss_webapps=false
-    -Dhardcoded_proprietary_webapps=false
