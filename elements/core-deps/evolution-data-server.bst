@@ -13,15 +13,16 @@ build-depends:
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
-- core-deps/libgdata.bst
 - core-deps/libgweather.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/libsoup.bst
+- sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/libical.bst
+- freedesktop-sdk.bst:components/nspr.bst
+- freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
@@ -34,3 +35,4 @@ variables:
     -DENABLE_GOOGLE_AUTH=OFF
     -DWITH_GWEATHER4=ON
     -DWITH_LIBDB=OFF
+    -DENABLE_GOOGLE=OFF
