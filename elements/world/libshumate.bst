@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gnome_gitlab:mlundblad/libshumate.git
+  url: gnome:libshumate.git
   track: master
 build-depends:
 - sdk/gtk-doc.bst
