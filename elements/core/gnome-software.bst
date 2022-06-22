@@ -40,7 +40,6 @@ depends:
 variables:
   meson-local: >-
     -Dfwupd=true
-    -Dvalgrind=false
     -Dpolkit=true
     -Dflatpak=true
     -Deos_updater=true
