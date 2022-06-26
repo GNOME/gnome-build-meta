@@ -23,7 +23,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/pwquality.bst
