@@ -6,7 +6,6 @@ kind: stack
 depends:
 - world/accerciser.bst
 - world/atkmm.bst
-- world/bijiben.bst
 - world/cairomm.bst
 - world/chatty.bst
 - world/dbus-glib.bst
@@ -14,11 +13,9 @@ depends:
 - world/file-roller.bst
 - world/five-or-more.bst
 - world/four-in-a-row.bst
-- world/geary.bst
 - world/gedit.bst
 - world/ghex.bst
 - world/gitg.bst
-- world/glade.bst
 - world/glibmm.bst
 - world/gnome-2048.bst
 - world/gnome-chess.bst
@@ -49,7 +46,6 @@ depends:
 - world/hitori.bst
 - world/iagno.bst
 - world/libaperture.bst
-- world/libgepub.bst
 - world/libgnome-games-support.bst
 - world/libgrss.bst
 - world/libseat.bst
