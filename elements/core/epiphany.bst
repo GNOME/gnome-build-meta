@@ -14,7 +14,7 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libportal.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib-networking.bst
 - sdk/glib.bst

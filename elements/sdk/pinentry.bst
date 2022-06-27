@@ -8,7 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/libgpg-error.bst
 - freedesktop-sdk.bst:components/libassuan.bst

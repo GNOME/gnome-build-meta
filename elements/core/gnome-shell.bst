@@ -35,7 +35,7 @@ depends:
 - core/gnome-settings-daemon.bst
 - core/mutter.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

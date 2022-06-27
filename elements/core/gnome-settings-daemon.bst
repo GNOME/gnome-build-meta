@@ -22,7 +22,7 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

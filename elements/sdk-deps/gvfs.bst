@@ -21,7 +21,7 @@ depends:
 - core-deps/plist.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsecret.bst

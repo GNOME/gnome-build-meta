@@ -14,6 +14,7 @@ depends:
 - sdk/fcitx5-gtk.bst
 - sdk/gcab.bst
 - sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/gdk-pixbuf.bst
 - sdk/geoclue.bst
 - sdk/gjs.bst

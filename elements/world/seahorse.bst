@@ -16,7 +16,7 @@ runtime-depends:
 
 depends:
 - core-deps/openldap.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst

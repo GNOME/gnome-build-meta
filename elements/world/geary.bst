@@ -21,7 +21,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst
 - sdk/enchant-2.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst

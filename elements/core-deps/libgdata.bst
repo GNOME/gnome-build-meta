@@ -12,7 +12,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/liboauth.bst
 - core-deps/uhttpmock.bst
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - sdk/libsoup-2.4.bst

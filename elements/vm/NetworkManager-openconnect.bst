@@ -9,7 +9,7 @@ build-depends:
 - core-deps/intltool.bst
 
 depends:
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/gtk+-3.bst
 - core-deps/NetworkManager.bst
 - vm/openconnect.bst
