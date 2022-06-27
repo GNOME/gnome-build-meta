@@ -18,7 +18,7 @@ depends:
 - core-deps/ibus-daemon.bst
 - core-deps/libgweather.bst
 - core-deps/libnma.bst
-- core-deps/librest-0.7.bst
+- core-deps/librest.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst
 - core/cheese.bst
@@ -30,7 +30,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
