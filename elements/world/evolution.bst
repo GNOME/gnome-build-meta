@@ -23,8 +23,8 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
-- sdk/libsoup-2.4.bst
-- sdk/webkit2gtk-4.0.bst
+- sdk/libsoup.bst
+- sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
