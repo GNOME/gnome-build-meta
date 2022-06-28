@@ -9,6 +9,7 @@ depends:
 - core-deps/clutter-gtk.bst
 - core-deps/geocode-glib.bst
 - core-deps/libchamplain.bst
+- core-deps/libgweather.bst
 - core-deps/librest-0.7.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
