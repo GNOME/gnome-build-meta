@@ -14,6 +14,7 @@ build-depends:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
+- core-deps/geocode-glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/ibus-daemon.bst
 - core-deps/libgweather.bst
