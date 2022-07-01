@@ -3,6 +3,8 @@ kind: meson
 sources:
 - kind: tar
   url: spice:gtk/spice-gtk-0.40.tar.xz
+- kind: patch
+  path: files/spice-gtk/105.patch
 
 build-depends:
 - core-deps/python-pyparsing.bst
@@ -12,13 +14,14 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/usbredir.bst
 - core-deps/phodav.bst
 - core-deps/spice-protocol.bst
+- core-deps/usbredir.bst
 - sdk/glib.bst
 - sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
+- sdk/libsoup.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
