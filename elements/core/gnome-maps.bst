@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/clutter-gtk.bst
-- core-deps/geocode-glib.bst
+- core-deps/geocode-glib-1.bst
 - core-deps/libchamplain.bst
 - core-deps/libgweather.bst
 - core-deps/librest-0.7.bst
