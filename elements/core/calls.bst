@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git
+- kind: git_tag
   url: gnome:calls.git
   track: master
   submodules:

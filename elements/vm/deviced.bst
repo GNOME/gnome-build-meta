@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git
+- kind: git_tag
   url: gnome_gitlab:chergert/deviced.git
   track: master
 
