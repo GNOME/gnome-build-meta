@@ -24,7 +24,7 @@ stages:
 - reports
 
 default:
-  image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
+  image: "${DOCKER_REGISTRY}/bst2:${DOCKER_IMAGE_ID}"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
@@ -81,7 +81,7 @@ default:
   allow_failure: true
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
     paths:
@@ -106,11 +106,11 @@ default:
 
   - ostree init --repo repo/ --mode archive
 
-  - ${BST} -o arch "${ARCH}" pull vm/repo.bst vm/repo-devel.bst
+  - ${BST} -o arch "${ARCH}" artifact pull vm/repo.bst vm/repo-devel.bst
 
   - |
     for element in vm/repo.bst vm/repo-devel.bst; do
-        ${BST} -o arch "${ARCH}" checkout --hardlinks $element checkout-repo/
+        ${BST} -o arch "${ARCH}" artifact checkout --hardlinks $element --directory checkout-repo/
         ostree pull-local --repo=repo/ checkout-repo/
         rm -rf checkout-repo/
     done
@@ -131,7 +131,7 @@ track:
   timeout: 15m
   script:
   - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
+  - ${BST} source track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
   - echo $CI_JOB_ID > track-job.id
   retry: 2
   # only run on branches targeting master
@@ -319,8 +319,8 @@ s3-image:
     artifacts: false
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks vm/image.bst image
-  - ${BST} -o arch "${ARCH}" checkout --hardlinks iso/image.bst iso
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
@@ -405,10 +405,10 @@ cve_report:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
+  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 
-  - ${BST} checkout flatpak/platform-manifest.bst platform-manifest/
-  - ${BST} checkout flatpak/sdk-manifest.bst sdk-manifest/
+  - ${BST} artifact checkout flatpak/platform-manifest.bst platform-manifest/
+  - ${BST} artifact checkout flatpak/sdk-manifest.bst sdk-manifest/
 
   - mkdir -p cve
   - cd cve
