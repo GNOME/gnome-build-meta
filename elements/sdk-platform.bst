@@ -51,7 +51,6 @@ depends:
 - sdk/pipewire.bst
 - sdk/pygobject.bst
 - sdk/tracker.bst
-- sdk/webkit2gtk-4.0.bst
 - sdk/webkit2gtk-4.1.bst
 - sdk/webkit2gtk-5.0.bst
 - sdk/woff2.bst
