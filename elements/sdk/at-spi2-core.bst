@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:at-spi2-core.git
-  track: master
+  track: main
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
