@@ -4,8 +4,8 @@ sources:
   url: gnome:libpeas.git
   track: master
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -15,7 +15,7 @@ depends:
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: >-
+  meson-local: >-
     -Dpython3=true
     -Dintrospection=true
     -Dvapi=true
