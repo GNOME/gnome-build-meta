@@ -17,3 +17,6 @@ config:
         bootstrap_build_arch: "ppc64le"
     - arch == "riscv64":
         bootstrap_build_arch: "x86_64"
+  overrides:
+    plugins/bst-plugins-experimental.bst: plugins/bst-plugins-experimental.bst
+    plugins/buildstream-plugins.bst: plugins/buildstream-plugins.bst
