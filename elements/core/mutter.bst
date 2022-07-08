@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/42/mutter-42.2.tar.xz
-  ref: bd30d78be7d170013a0a8bcc837cec5ee6c44d770ff00674dcdfc28b3426b34c
+  url: gnome_downloads:mutter/42/mutter-42.3.tar.xz
+  ref: 9da3a63f90282bb59467e7d3dfdc684e70fa055357f6a2dded1db98cdcce10ba
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml

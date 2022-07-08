@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:xdg-desktop-portal-gnome/42/xdg-desktop-portal-gnome-42.1.tar.xz
-  ref: 7685b6695cd98be8238171020c1c9713c4647d2680006c98ce8e4df858312cd2
+  url: gnome_downloads:xdg-desktop-portal-gnome/42/xdg-desktop-portal-gnome-42.3.tar.xz
+  ref: 4ed105a667e46325467103dc7346d2023faec1d5ec153bd17316da938f53ace0
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

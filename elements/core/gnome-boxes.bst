@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/42/gnome-boxes-42.1.tar.xz
-  ref: 96f5d011b7508db561bf0d166c0ea9e8b121805c40e5d9f36119245c15172080
+  url: gnome_downloads:gnome-boxes/42/gnome-boxes-42.3.tar.xz
+  ref: 56eff7faf8300faa1ce14f809f8ebc2a7bb4d915afc7b12737129791605b60d3
 
 build-depends:
 - sdk/vala.bst
