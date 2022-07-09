@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:flatpak/flatpak/releases/download/1.12.1/flatpak-1.12.1.tar.xz
+  url: github_files:flatpak/flatpak/releases/download/1.14.0/flatpak-1.14.0.tar.xz
 
 build-depends:
 - core-deps/python-pyparsing.bst
@@ -14,12 +14,12 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
+- core-deps/AppStream.bst
 - core-deps/libostree.bst
 - sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
-- sdk/appstream-glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
+- freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/libarchive.bst
@@ -36,5 +36,6 @@ runtime-depends:
 
 variables:
   conf-local: >-
+    --with-curl
     --with-system-bubblewrap
     --with-system-dbus-proxy
