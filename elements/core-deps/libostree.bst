@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ostreedev/ostree/releases/download/v2022.4/libostree-2022.4.tar.xz
-  ref: 14bbd351a95066f68c3b283e0bd0ddd03562e862af66f6f6d894c6c328d7eb81
+  url: github_files:ostreedev/ostree/releases/download/v2022.5/libostree-2022.5.tar.xz
+  ref: 914c4d993bc111d7dd30ae9721b6ffe8ab56eb1fd6e81b097b09f400cc1b053f
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 
@@ -15,8 +15,8 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/avahi.bst
+- freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
 - freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst
@@ -27,12 +27,14 @@ depends:
 
 variables:
   conf-local: >-
+    --with-curl
     --with-dracut
     --with-libsystemd
     --with-systemd
     --with-libarchive
     --with-avahi
     --without-selinux
+    --without-soup
 
 public:
   bst:
