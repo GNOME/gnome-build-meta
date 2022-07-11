@@ -5,7 +5,7 @@ build-depends:
 
 variables:
   # Obtain the versions of the flatpak extensions
-  (@): freedesktop-sdk.bst:include/_private/versions.yml
+  (@): freedesktop-sdk.bst:include/repo_branches.yml
 
 config:
   directory: '%{prefix}'
