@@ -38,7 +38,3 @@ depends:
 - sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Dplugin_glade=false
