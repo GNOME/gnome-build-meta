@@ -3,6 +3,8 @@ kind: meson
 sources:
 - kind: tar
   url: github_files:endlessm/eos-updater/archive/Release_4.0.7.tar.gz
+- kind: patch
+  path: files/eos-updater/no-ostree-httpd.patch
 
 depends:
 - core-deps/NetworkManager.bst
