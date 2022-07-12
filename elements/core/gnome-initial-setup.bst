@@ -40,7 +40,7 @@ variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
     -Dcheese=enabled
-    -Dparental_controls=enabled
+    -Dparental_controls=disabled
 
 config:
   install-commands:
