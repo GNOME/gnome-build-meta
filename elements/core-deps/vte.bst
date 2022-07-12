@@ -15,6 +15,7 @@ depends:
 - core-deps/boost.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/gtk.bst
 - freedesktop-sdk.bst:components/fribidi.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/icu.bst
@@ -23,7 +24,9 @@ depends:
 
 variables:
   meson-local: >-
+    -Dgtk4=true
     -Ddocs=true
+    -Dglade=false
 
 public:
   bst:
