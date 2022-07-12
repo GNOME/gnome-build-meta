@@ -11,10 +11,10 @@ depends:
 
 variables:
   meson-local: >-
-    -Denable_examples=false
-    -Denable_gtk=false
-    -Denable_tests=false
-    -Denable_tools=false
+    -Dexamples=false
+    -Dgtk=false
+    -Dtests=false
+    -Dtools=false
     -Dlibsysprof=false
-    -Dwith_sysprofd=none
+    -Dsysprofd=none
     -Dhelp=false
