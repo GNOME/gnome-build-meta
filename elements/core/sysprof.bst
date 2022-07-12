@@ -22,7 +22,7 @@ public:
     # This might overlap with sysprof-minimal as due to some pkgcofnig/meson
     # quirkyness sysprof-capture ends up in Requires.private and now
     # is a runtime dependency of glib so other modules can find the .pc file
-    # even though its a statically build build depency
+    # even though its a statically build dependency
     # see: sdk/glib.bst
     overlap-whitelist:
     - '%{includedir}/sysprof-4/*.h'
