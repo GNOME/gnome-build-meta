@@ -2,6 +2,7 @@ kind: meson
 sources:
 - kind: tar
   url: gimp:babl/0.1/babl-0.1.92.tar.xz
+  ref: f667735028944b6375ad18f160a64ceb93f5c7dccaa9d8751de359777488a2c1
 - kind: patch
   path: files/babl/45.patch
 build-depends:

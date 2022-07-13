@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-calendar.git
-  track: main
-
+- kind: tar
+  url: gnome_downloads:gnome-calendar/43/gnome-calendar-43.alpha.tar.xz
+  ref: 54938b13326ad0be31629fd12fdfed260a7403c0087a15344da358c60c46cae7
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

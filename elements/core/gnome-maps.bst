@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-maps.git
-  track: main
+- kind: tar
+  url: gnome_downloads:gnome-maps/43/gnome-maps-43.alpha.tar.xz
+  ref: c0513d83cb6b989e47159cf89c72e7b0881e8da9e5ea47c8d7e7362d8eae1390
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

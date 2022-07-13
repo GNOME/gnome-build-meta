@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gjs.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gjs/1.73/gjs-1.73.1.tar.xz
+  ref: 93f5eebf108bad1f2e1dbeac3c17fd3471acda8eda71f41e70c85d903351f00b
 build-depends:
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

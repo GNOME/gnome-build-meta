@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:dconf-editor.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:dconf-editor/43/dconf-editor-43.alpha.tar.xz
+  ref: f52c942405f0cca03265e17dd8d6639bdab33a9beef17349e5a0bd0c6026e34b
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst

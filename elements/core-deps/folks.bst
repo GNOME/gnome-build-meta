@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:folks.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:folks/0.15/folks-0.15.5.tar.xz
+  ref: 0fff8a896330cd82aee4598324f7e541c884d0337536212723b4beb38c759086
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

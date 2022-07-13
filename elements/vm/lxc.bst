@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: linuxcontainers:lxc/lxc-4.0.10.tar.gz
 
+  ref: a10c518056d2e497bd600e4ffac2853bdeab1e835bf455a6d87cc8df128bfae9
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -16,11 +17,11 @@ depends:
 
 variables:
   conf-local: >-
-      --disable-werror
-      --with-init-script=systemd
-      --enable-seccomp
-      --enable-capabilities
-      --enable-pam
+    --disable-werror
+    --with-init-script=systemd
+    --enable-seccomp
+    --enable-capabilities
+    --enable-pam
 
 public:
   initial-script:

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: pypi:1d/17/a4b6f9d88d389e6b5cff49d349507c9e40a477b67fe22dc6d35d2e8d360f/BuildStream-1.6.4.tar.gz
 
+  ref: 1e90ad934230e4d15535d7642296c3f13d7608d750472ed94cd97da6e67552d4
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
 

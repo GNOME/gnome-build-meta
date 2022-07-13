@@ -1,6 +1,7 @@
 sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.37.1.tar.xz
+  ref: c53326b1751f8c6da3db2f4bfa91c1801755893e287d0e1f6c07344589d4a6a7
 - kind: patch
   path: files/webkitgtk/fix-cloop-build.patch
 - kind: local

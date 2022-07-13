@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: freedesktop:upower/upower/-/archive/v0.99.14/upower-v0.99.14.tar.bz2
 
+  ref: 8997593ab66cc77787d68c6e1c8aec2d6bcde752336bdad9079ed3ed7631fe07
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/systemd.bst

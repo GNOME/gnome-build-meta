@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: freedesktop_software:colord/releases/colord-gtk-0.3.0.tar.xz
 
+  ref: b9466656d66d9a6ffbc2dd04fa91c8f6af516bf9efaacb69744eec0f56f3c1d0
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

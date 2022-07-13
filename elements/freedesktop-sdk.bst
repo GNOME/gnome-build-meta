@@ -4,6 +4,7 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: master
   track-tags: true
+  ref: freedesktop-sdk-22.08beta.4-0-g3d643403ff095396dddeef6732d2230711f7d933
 - kind: patch
   path: files/freedesktop-sdk/0001-polkit-patch-to-print-admin-rule-errors.patch
 config:

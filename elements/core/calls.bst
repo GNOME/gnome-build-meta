@@ -1,14 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:calls.git
-  track: master
-  submodules:
-    subprojects/libcall-ui:
-      checkout: true
-      url: gnome_gitlab:World/Phosh/libcall-ui.git
-
+- kind: tar
+  url: gnome_downloads:calls/43/calls-43.alpha.2.tar.xz
+  ref: b133fb38edba16d2e6985161ac95dd5f57bf1f92a13cd15515179c71fb031318
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst

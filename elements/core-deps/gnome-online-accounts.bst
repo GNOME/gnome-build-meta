@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-online-accounts.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.45/gnome-online-accounts-3.45.1.tar.xz
+  ref: 8042de40207e682518e31ed7e35a0ad174eefed52c08b3047e3068a4bd261ea1
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

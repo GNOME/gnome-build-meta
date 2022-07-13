@@ -1,10 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  # url: gnome:libpanel.git
-  # FIXME:
-  url: https://gitlab.gnome.org/chergert/libpanel.git
-  track: main
+- kind: tar
+  url: gnome_downloads:libpanel/1.0/libpanel-1.0.alpha.tar.xz
+  ref: 370b39bf544c65ff732927817ede337cb8a15aa36d7081cdb91b593c040d3195
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
