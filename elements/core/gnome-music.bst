@@ -20,7 +20,6 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/libdazzle.bst
 - core-deps/libmediaart.bst
 - core-deps/tracker-miners.bst
 - core/gvfs-daemon.bst
