@@ -1,7 +1,8 @@
 sources:
 - kind: tar
-  #FIXME: re-enable gtk-doc for webkit2gtk-5.0.bst when fixed upstream
-  url: webkitgtk:webkitgtk-2.36.4.tar.xz
+  url: webkitgtk:webkitgtk-2.37.1.tar.xz
+- kind: patch
+  path: files/webkitgtk/fix-cloop-build.patch
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -9,9 +10,9 @@ sources:
 
 build-depends:
 - sdk-deps/bubblewrap.bst
+- sdk-deps/gi-docgen.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst

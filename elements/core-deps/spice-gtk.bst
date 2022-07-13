@@ -2,10 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  # FIXME: use the proper tarball once its uploaded
-  # https://gitlab.freedesktop.org/spice/spice-gtk/-/issues/159
-  # url: spice:gtk/spice-gtk-0.41.tar.xz
-  url: https://gitlab.freedesktop.org/spice/spice-gtk/uploads/05c649d612f31b60e4aa44a7c44e611c/spice-gtk-0.41.tar.xz
+  url: spice:gtk/spice-gtk-0.41.tar.xz
 
 build-depends:
 - core-deps/python-pyparsing.bst
