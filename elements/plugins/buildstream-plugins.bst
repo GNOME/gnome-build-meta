@@ -2,4 +2,4 @@ kind: junction
 
 sources:
 - kind: tar
-  url: github_files:apache/buildstream-plugins/archive/cca8c316d5b63b1c01ecd8645d0a0b63274e8b98.tar.gz
+  url: github_files:apache/buildstream-plugins/archive/be1817d649e277a17563db2b2c0e959ae2fef550.tar.gz

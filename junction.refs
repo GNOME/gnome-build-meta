@@ -3,6 +3,6 @@ projects:
     freedesktop-sdk.bst:
     - ref: freedesktop-sdk-22.08beta.1-77-g010e91cdd9ecfd10b74d83af27566f1e5f1dc4f4
     plugins/buildstream-plugins.bst:
-    - ref: 41499239ec48df55bc720635f70c0a7631e506c48dbfb5ab6e24d539fa533001
+    - ref: 8d45f09bfd7e1b903bf24c3431b7448c80c08261f9e9a646f8e1119aff73f820
     plugins/bst-plugins-experimental.bst:
     - ref: f73f35e6811bb8f6b56cc6e1368ef8a5604bcb59987c7c38771963bb99dbb0e2
