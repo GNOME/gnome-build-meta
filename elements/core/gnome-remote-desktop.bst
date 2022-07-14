@@ -17,6 +17,7 @@ depends:
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/pipewire.bst
+- freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
