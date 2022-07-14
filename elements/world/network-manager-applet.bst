@@ -14,7 +14,6 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/libnma.bst
 - core-deps/mobile-broadband-provider-info.bst
-- core/gnome-bluetooth-1.0.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

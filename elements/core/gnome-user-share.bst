@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core/gnome-bluetooth-1.0.bst
+- core/gnome-bluetooth.bst
 - core/nautilus.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst

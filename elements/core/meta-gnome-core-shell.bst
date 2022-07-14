@@ -7,7 +7,6 @@ depends:
 - core/gdm.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
-- core/gnome-bluetooth-1.0.bst
 - core/gnome-color-manager.bst
 - core/gnome-control-center.bst
 - core/gnome-desktop.bst
