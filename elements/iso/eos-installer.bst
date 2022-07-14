@@ -8,7 +8,7 @@ sources:
 - kind: git_tag
   url: github:endlessm/eos-installer.git
   track-tags: true
-  track: Release_4.0.2
+  track: Release_4.0.7
   submodules:
     ext/libglnx:
       url: gnome:libglnx.git
