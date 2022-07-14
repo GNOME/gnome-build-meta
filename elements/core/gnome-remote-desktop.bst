@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-remote-desktop.git
-  track: gnome-42
+  track: master
 
 build-depends:
 - core-deps/nv-codec-headers.bst
