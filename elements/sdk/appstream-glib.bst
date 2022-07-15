@@ -15,7 +15,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
+- freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
