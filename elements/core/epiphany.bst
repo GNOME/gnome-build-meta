@@ -21,7 +21,6 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libhandy.bst
-- sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/webkit2gtk-4.1.bst
