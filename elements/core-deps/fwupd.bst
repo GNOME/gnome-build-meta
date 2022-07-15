@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
+  url: github_files:fwupd/fwupd/releases/download/1.8.2/fwupd-1.8.2.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -20,10 +20,10 @@ depends:
 - core-deps/protobuf-c.bst
 - sdk/gcab.bst
 - sdk/glib.bst
-- sdk/libsoup-2.4.bst
 - sdk/pango.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
@@ -44,15 +44,25 @@ depends:
 
 variables:
   meson-local: >-
-    -Dplugin_msr=%{msr}
-    -Dplugin_dell=%{dell}
-    -Dplugin_uefi_capsule=%{uefi}
-  msr: "false" # MSR is only for Intel processors
-  dell: "false"
-  uefi: "true"
+    --auto-features=disabled
+    -Dcurl=enabled
+    -Ddocs=enabled
+    -Dsoup_session_compat=false
+    -Dplugin_dell=%{plugin_dell}
+    -Dplugin_msr=%{plugin_msr}
+    -Dplugin_uefi_capsule=%{plugin_uefi_capsule}
+    -Defi_binary=%{efi_binary}
+
+  plugin_dell: 'false'
+  plugin_msr: 'false'
+  plugin_uefi_capsule: 'false'
+  efi_binary: 'false'
   (?):
-  - arch in ["x86_64", "i686"]:
-      dell: "true"
-      msr: "true"
-  - arch in ["ppc64le"]:
-      uefi: "false"
+  - arch in ["arm", "aarch64"]:
+      plugin_uefi_capsule: 'true'
+      efi_binary: 'true'
+  - arch in ["i686", "x86_64"]:
+      plugin_dell: 'true'
+      plugin_msr: 'true'
+      plugin_uefi_capsule: 'true'
+      efi_binary: 'true'
