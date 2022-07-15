@@ -11,3 +11,4 @@ variables:
   cmake-local: >-
     -DLIB_INSTALL_DIR:PATH=%{libdir}
     -DUSE_THREADS:BOOL=ON
+    -DUSE_SSH:BOOL=ON
