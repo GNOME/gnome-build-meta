@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.7.18.tar.xz
+  url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.0.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
