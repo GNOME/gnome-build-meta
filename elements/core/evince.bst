@@ -30,3 +30,4 @@ variables:
     -Ddvi=disabled
     -Dintrospection=true
     -Dgtk_doc=false
+    -Dnautilus=false
