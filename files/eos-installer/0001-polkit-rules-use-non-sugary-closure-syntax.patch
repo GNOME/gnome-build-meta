@@ -1,0 +1,27 @@
+From fe5856d47d42d910ddae1de0fa11f1418a79ee79 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Mon, 18 Jul 2022 09:07:17 +0300
+Subject: [PATCH] polkit rules: use non-sugary closure syntax
+
+Polkit added a ducktape backend in 121 release,
+and it looks like it doesn't support the => closures
+---
+ eos-installer-data/90-eos-installer.rules | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/eos-installer-data/90-eos-installer.rules b/eos-installer-data/90-eos-installer.rules
+index 668d0632..f06b23e4 100644
+--- a/eos-installer-data/90-eos-installer.rules
++++ b/eos-installer-data/90-eos-installer.rules
+@@ -34,7 +34,7 @@ polkit.addRule(function(action, subject) {
+     return undefined;
+ });
+ 
+-polkit.addRule((action, subject) => {
++polkit.addRule(function(action, subject) {
+     // This rule should check only actions that are not already permitted by
+     // 20-gnome-initial-setup.rules, and permit them to both the live user and
+     // the gnome-initial-setup user.
+-- 
+2.36.1
+
