@@ -46,8 +46,20 @@ public:
     split-rules:
       devel:
         (>):
-        - '%{libdir}/libgtk-4.so'
+        - '%{bindir}/gtk4-demo'
+        - '%{bindir}/gtk4-demo'
+        - '%{bindir}/gtk4-demo-application'
+        - '%{bindir}/gtk4-node-editor'
+        - '%{bindir}/gtk4-print-editor'
+        - '%{bindir}/gtk4-widget-factory'
         - '%{datadir}/applications/org.gtk.Demo4.desktop'
         - '%{datadir}/applications/org.gtk.IconBrowser4.desktop'
         - '%{datadir}/applications/org.gtk.PrintEditor4.desktop'
         - '%{datadir}/applications/org.gtk.WidgetFactory4.desktop'
+        - '%{datadir}/applications/org.gtk.gtk4.NodeEditor.desktop'
+        - '%{datadir}/metainfo/org.gtk.Demo4.appdata.xml'
+        - '%{datadir}/metainfo/org.gtk.IconBrowser4.appdata.xml'
+        - '%{datadir}/metainfo/org.gtk.PrintEditor4.appdata.xml'
+        - '%{datadir}/metainfo/org.gtk.WidgetFactory4.appdata.xml'
+        - '%{datadir}/metainfo/org.gtk.gtk4.NodeEditor.appdata.xml'
+        - '%{libdir}/libgtk-4.so'

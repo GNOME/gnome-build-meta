@@ -18,3 +18,12 @@ depends:
 variables:
   meson-local: >-
     -Dsoup2=false
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{bindir}/librest-demo'
+        - '%{datadir}/applications/org.gnome.RestDemo.desktop'
+        - '%{libdir}/librest-1.0.so'
