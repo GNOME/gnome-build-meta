@@ -4,6 +4,10 @@ sources:
 - kind: git
   url: gnome:calls.git
   track: master
+  submodules:
+    subprojects/libcall-ui:
+      checkout: true
+      url: gnome_gitlab:World/Phosh/libcall-ui.git
 
 build-depends:
 - sdk/vala.bst
