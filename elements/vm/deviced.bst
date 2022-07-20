@@ -13,5 +13,6 @@ depends:
 - core-deps/avahi-gobject.bst
 - core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
+- sdk/appstream-glib.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/gnutls.bst
