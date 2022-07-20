@@ -2,11 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ostreedev/ostree/releases/download/v2021.5/libostree-2021.5.tar.xz
+  url: github_files:ostreedev/ostree/releases/download/v2022.4/libostree-2022.4.tar.xz
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
-- kind: patch
-  path: files/ostree/glib-absolute-subpath.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
