@@ -3,7 +3,7 @@ kind: pip
 sources:
 - kind: git_tag
   url: gitlab:BuildStream/bst-external.git
-  track: 0.25.0
+  track: 0.28.1
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
