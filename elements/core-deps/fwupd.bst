@@ -3,6 +3,8 @@ kind: meson
 sources:
 - kind: tar
   url: github_files:fwupd/fwupd/releases/download/1.8.2/fwupd-1.8.2.tar.xz
+- kind: patch
+  path: files/fwupd/fix-version-check.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
