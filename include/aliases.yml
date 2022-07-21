@@ -38,6 +38,7 @@ aliases:
   pagure_releases: https://releases.pagure.org/
   pypi: https://files.pythonhosted.org/packages/
   samba: https://download.samba.org/pub/
+  skia: https://skia.googlesource.com/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
   tcpdump: https://www.tcpdump.org/
