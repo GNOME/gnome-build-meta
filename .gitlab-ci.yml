@@ -56,7 +56,14 @@ default:
          ;;
     esac
 
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - |
+    if test $FLATPAK_BRANCH == 'master' &&
+        git diff --name-only origin/master | egrep -q "junction.refs|freedestkop-sdk.bst"; then
+      echo Forcing strict build
+      FORCE_STRICT=--strict
+    fi
+
+  - ${BST} ${FORCE_STRICT} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
