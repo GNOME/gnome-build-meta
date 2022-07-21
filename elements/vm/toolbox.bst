@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:containers/toolbox/releases/download/0.0.99.1/toolbox-0.0.99.1.tar.xz
+  url: github_files:containers/toolbox/releases/download/0.0.99.3/toolbox-0.0.99.3.tar.xz
 - kind: git_tag
   url: github:HarryMichal/go-version.git
   track: v1.0.0
@@ -80,11 +80,64 @@ sources:
   directory: 'src/vendor/golang.org/x/crypto'
 - kind: git_tag
   url: github:golang/sys.git
-  track: 66c3f260301c
+  track: 953cdadca894
   track-tags: false
   directory: 'src/vendor/golang.org/x/sys'
-- kind: patch
-  path: files/toolbox/riscv.patch
+- kind: git_tag
+  url: github:golang/text.git
+  track: v0.3.0
+  track-tags: false
+  directory: 'src/vendor/golang.org/x/text'
+- kind: git_tag
+  url: github:go-yaml/yaml.git
+  track: v2.2.2
+  track-tags: false
+  directory: 'src/vendor/gopkg.in/yaml.v2'
+- kind: git_tag
+  url: github:spf13/viper.git
+  track: v1.3.2
+  track-tags: false
+  directory: 'src/vendor/github.com/spf13/viper'
+- kind: git_tag
+  url: github:stretchr/testify.git
+  track: v1.7.0
+  track-tags: false
+  directory: 'src/vendor/github.com/stretchr/testify'
+- kind: git_tag
+  url: github:spf13/jwalterweatherman.git
+  track: v1.0.0
+  track-tags: false
+  directory: 'src/vendor/github.com/spf13/jwalterweatherman'
+- kind: git_tag
+  url: github:spf13/cast.git
+  track: v1.3.0
+  track-tags: false
+  directory: 'src/vendor/github.com/spf13/cast'
+- kind: git_tag
+  url: github:spf13/afero.git
+  track: v1.1.2
+  track-tags: false
+  directory: 'src/vendor/github.com/spf13/afero'
+- kind: git_tag
+  url: github:pelletier/go-toml.git
+  track: v1.2.0
+  track-tags: false
+  directory: 'src/vendor/github.com/pelletier/go-toml'
+- kind: git_tag
+  url: github:mitchellh/mapstructure.git
+  track: v1.1.2
+  track-tags: false
+  directory: 'src/vendor/github.com/mitchellh/mapstructure'
+- kind: git_tag
+  url: github:magiconair/properties.git
+  track: v1.8.0
+  track-tags: false
+  directory: 'src/vendor/github.com/magiconair/properties'
+- kind: git_tag
+  url: github:hashicorp/hcl.git
+  track: v1.0.0
+  track-tags: false
+  directory: 'src/vendor/github.com/hashicorp/hcl'
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
