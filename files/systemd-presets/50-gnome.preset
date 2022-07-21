@@ -6,3 +6,4 @@ enable colord.service
 enable accounts-daemon.service
 enable avahi-daemon.*
 enable NetworkManager.service
+disable systemd-networkd.service
