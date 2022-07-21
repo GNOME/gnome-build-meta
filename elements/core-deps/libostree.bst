@@ -31,6 +31,7 @@ variables:
     --with-systemd
     --with-libarchive
     --with-avahi
+    --without-selinux
 
 public:
   bst:
