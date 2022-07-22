@@ -17,6 +17,7 @@ runtime-depends:
 
 depends:
 - core-deps/cmark.bst
+- core-deps/editorconfig-core-c.bst
 - core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libgit2-glib.bst
