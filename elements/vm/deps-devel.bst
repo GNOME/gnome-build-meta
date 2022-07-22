@@ -11,7 +11,6 @@ depends:
 - vm/deviced.bst
 - vm/git-lfs.bst
 - vm/initramfs.bst
-- vm/lxc.bst
 - vm/os-release-devel.bst
 - vm/snapd.bst
 - vm/toolbox.bst
