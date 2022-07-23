@@ -11,6 +11,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dagent=false
     -Dexamples=false
     -Dgtk=false
     -Dtests=false

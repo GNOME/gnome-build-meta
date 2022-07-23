@@ -28,7 +28,7 @@ depends:
 - core-deps/vte.bst
 - core/dspy.bst
 - core/gvfs-daemon.bst
-- core/sysprof.bst
+- core/sysprof-app.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/gtksourceview.bst

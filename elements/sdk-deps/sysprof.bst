@@ -13,9 +13,14 @@ runtime-depends:
 depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/json-glib.bst
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dagent=true
 
 public:
   bst:
@@ -28,3 +33,8 @@ public:
     - '%{includedir}/sysprof-4/*.h'
     - '%{libdir}/libsysprof-capture-4.a'
     - '%{libdir}/pkgconfig/sysprof-capture-4.pc'
+    split-rules:
+      sysprof-agent:
+      - '%{bindir}/sysprof-agent'
+      - '%{libdir}/libsysprof-memory-4.so'
+      - '%{libdir}/libsysprof-speedtrack-4.so'

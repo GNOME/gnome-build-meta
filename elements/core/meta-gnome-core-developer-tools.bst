@@ -9,4 +9,4 @@ depends:
 - core/dspy.bst
 - core/gnome-boxes.bst
 - core/gnome-builder.bst
-- core/sysprof.bst
+- core/sysprof-app.bst
