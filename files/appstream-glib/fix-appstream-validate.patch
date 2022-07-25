@@ -1,0 +1,24 @@
+From 323f4ea96f95d1522b951963a5d91e5320d38274 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Fri, 22 Jul 2022 08:32:14 -0500
+Subject: [PATCH] Initialize proxy resolver in appstream-validate
+
+Oops, trying to use it would just result in criticals.
+
+Fixes #449
+---
+ libappstream-glib/as-app-validate.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/libappstream-glib/as-app-validate.c b/libappstream-glib/as-app-validate.c
+index f18d2453..85f4e45e 100644
+--- a/libappstream-glib/as-app-validate.c
++++ b/libappstream-glib/as-app-validate.c
+@@ -1330,6 +1330,7 @@ as_app_validate (AsApp *app, guint32 flags, GError **error)
+ 	helper->probs = g_ptr_array_new_with_free_func ((GDestroyNotify) g_object_unref);
+ 	helper->screenshot_urls = g_ptr_array_new_with_free_func (g_free);
+ 	helper->flags = flags;
++	helper->proxy_resolver = g_proxy_resolver_get_default ();
+ 	if (!as_app_validate_setup_networking (helper, error))
+ 		return NULL;
+ 
