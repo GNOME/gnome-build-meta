@@ -9,8 +9,8 @@ build-depends:
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
-- core-deps/libxcvt.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
