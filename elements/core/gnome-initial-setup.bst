@@ -22,16 +22,15 @@ depends:
 - core-deps/librest.bst
 - core-deps/malcontent.bst
 - core-deps/upower.bst
-- core/cheese.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
 - core/gnome-keyring.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/geoclue.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
-- sdk/webkit2gtk-4.1.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
+- sdk/webkit2gtk-5.0.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -39,7 +38,6 @@ depends:
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
-    -Dcheese=enabled
     -Dparental_controls=disabled
 
 config:
