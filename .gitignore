@@ -10,3 +10,7 @@ project.refs
 # Produced by the gnomeos build scripts
 ostree-gpg/
 ostree-repo/
+
+**/*.DS_STORE
+logs/
+*.img
