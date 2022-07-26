@@ -1,9 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  # url: gnome:libpanel.git
-  # FIXME:
-  url: https://gitlab.gnome.org/chergert/libpanel.git
+  url: gnome:libpanel.git
   track: main
 build-depends:
 - sdk/gobject-introspection.bst
