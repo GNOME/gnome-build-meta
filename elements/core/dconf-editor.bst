@@ -13,4 +13,5 @@ depends:
 - core-deps/dconf.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
