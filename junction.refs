@@ -1,7 +1,7 @@
 projects:
   gnome:
     freedesktop-sdk.bst:
-    - ref: freedesktop-sdk-22.08beta.6-0-g6a488777bf71b12f3cc6bb2066a2d003fde923ab
+    - ref: freedesktop-sdk-22.08beta.6-18-g953b18454ffdd755e76bf4611b1591e02a110a0a
     plugins/buildstream-plugins.bst:
     - ref: 8d45f09bfd7e1b903bf24c3431b7448c80c08261f9e9a646f8e1119aff73f820
     plugins/bst-plugins-experimental.bst:
