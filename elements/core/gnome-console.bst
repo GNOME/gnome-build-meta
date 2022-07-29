@@ -6,7 +6,6 @@ sources:
   track: main
 
 build-depends:
-- sdk-deps/sassc.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -17,10 +16,7 @@ runtime-depends:
 depends:
 - core-deps/libgtop.bst
 - core-deps/vte.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- core/nautilus.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  # disable until ported to gtk4
-  meson-local: -Dnautilus=disabled
