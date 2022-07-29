@@ -4,10 +4,6 @@ sources:
 - kind: git_tag
   url: gnome:nautilus.git
   track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
 
 build-depends:
 - sdk/gobject-introspection.bst
