@@ -24,7 +24,6 @@ depends:
 
 - vm/fish.bst
 - vm/nss-mdns.bst
-- vm/ntfs-3g.bst
 - vm/opensc.bst
 - vm/uresourced.bst
 - vm/android-udev-rules.bst
