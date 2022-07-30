@@ -21,6 +21,7 @@ variables:
       --enable-seccomp
       --enable-capabilities
       --enable-pam
+      --with-pamdir=%{libdir}/security
 
 public:
   initial-script:
