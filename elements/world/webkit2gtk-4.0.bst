@@ -14,7 +14,6 @@ variables:
     -DUSE_SOUP2=ON
     -DENABLE_DOCUMENTATION=OFF
     -DENABLE_WEBDRIVER=OFF
-    %{webkitgtk_toolchain}
 
 public:
   bst:
