@@ -22,7 +22,7 @@ runtime-depends:
 depends:
 - core-deps/babl.bst
 - core-deps/gegl.bst
-- core-deps/geocode-glib-1.bst
+- core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
 - core-deps/gfbgraph.bst
 - core-deps/gnome-online-accounts.bst
