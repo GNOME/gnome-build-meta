@@ -6,3 +6,4 @@ depends:
 - vm/os-release-user.bst
 - core-deps/feedbackd.bst
 - core/calls.bst
+- freedesktop-sdk.bst:components/iputils.bst
