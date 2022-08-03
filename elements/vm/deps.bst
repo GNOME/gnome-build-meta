@@ -5,3 +5,4 @@ depends:
 - vm/initramfs.bst
 - vm/os-release-user.bst
 - core-deps/feedbackd.bst
+- core/calls.bst
