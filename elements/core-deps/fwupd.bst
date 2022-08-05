@@ -49,7 +49,17 @@ variables:
     --auto-features=disabled
     -Dcurl=enabled
     -Ddocs=enabled
+    -Dintrospection=enabled
+    -Dlibarchive=enabled
+    -Dgudev=enabled
+    -Dbluez=enabled
+    -Dpolkit=enabled
+    -Dgnutls=enabled
+    -Dsqlite=enabled
+    -Dlzma=enabled
     -Dsoup_session_compat=false
+    -Dsystemd=enabled
+    -Dplugin_logitech_bulkcontroller=enabled
     -Dplugin_dell=%{plugin_dell}
     -Dplugin_msr=%{plugin_msr}
     -Dplugin_uefi_capsule=%{plugin_uefi_capsule}
