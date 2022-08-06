@@ -24,3 +24,6 @@ depends:
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+runtime-depends:
+- core-deps/webp-pixbuf-loader.bst
