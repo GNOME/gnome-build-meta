@@ -2,8 +2,12 @@ kind: manual
 
 sources:
 - kind: tar
-  url: https://ftp.mozilla.org/pub/firefox/releases/91.5.0esr/source/firefox-91.5.0esr.source.tar.xz
-  base-dir: 'firefox-91.5.0'
+  url: https://ftp.mozilla.org/pub/firefox/releases/102.1.0esr/source/firefox-102.1.0esr.source.tar.xz
+  base-dir: 'firefox-102.1.0'
+- kind: patch
+  path: files/mozjs/0001-Bug-1776254-Install-ProfilingCategoryList.h.patch
+- kind: patch
+  path: files/mozjs/0002-Bug-1780857-Change-if-to-ifdef-for-DEBUG.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
