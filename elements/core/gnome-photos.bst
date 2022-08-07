@@ -29,6 +29,7 @@ depends:
 - core-deps/grilo.bst
 - core-deps/libdazzle.bst
 - core-deps/libgdata.bst
+- core-deps/libportal.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
