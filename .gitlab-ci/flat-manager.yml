@@ -13,8 +13,8 @@ default:
   - mkdir -p logs
 
   # Setup certificate for pushing to the cache
-  - echo "$GITLAB_CAS_PUSH_CERT" > client.crt
-  - echo "$GITLAB_CAS_PUSH_KEY" > client.key
+  - echo "$CASD_CLIENT_CERT" > client.crt
+  - echo "$CASD_CLIENT_KEY" > client.key
 
 .flatmgr-template:
   stage: deploy
