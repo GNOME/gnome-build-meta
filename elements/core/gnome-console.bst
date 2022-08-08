@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-console/42/gnome-console-42.beta.tar.xz
-  ref: 2eafec8720210dcc01e47aa98a1bc6c76fb1c155365dac7bfcd7ab170477e834
+  url: gnome_downloads:gnome-console/42/gnome-console-42.2.tar.xz
+  ref: 7d26e6c18744c575a787293263f60ceff630107098e9e58a7765b00ac7437049
 build-depends:
 - core/nautilus.bst
 - sdk-deps/sassc.bst
