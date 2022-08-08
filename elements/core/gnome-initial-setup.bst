@@ -4,9 +4,6 @@ sources:
 - kind: git_tag
   url: gnome:gnome-initial-setup.git
   track: master
-- kind: local
-  path: files/gnome-initial-setup
-  directory: gnome-initial-setup-config
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -36,12 +33,5 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  sysusersdir: '%{prefix}/lib/sysusers.d'
   meson-local: >-
     -Dparental_controls=disabled
-
-config:
-  install-commands:
-    (>):
-    - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gnome-initial-setup-config/gnome-initial-setup-sysusers.conf %{install-root}%{sysusersdir}/gnome-initial-setup.conf
