@@ -45,6 +45,7 @@ config:
     ac_add_options --target="%{triplet}"
     ac_add_options --enable-application=js
     ac_add_options --enable-release
+    ac_add_options --with-intl-api
     ac_add_options --with-system-nspr
     ac_add_options --with-system-zlib
     ac_add_options --with-system-icu
