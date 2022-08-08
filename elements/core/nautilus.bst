@@ -17,6 +17,7 @@ runtime-depends:
 depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
+- core-deps/libcloudproviders.bst
 - core-deps/libportal.bst
 - core/gnome-desktop.bst
 - sdk/glib.bst
