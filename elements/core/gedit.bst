@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gedit/41/gedit-41.0.tar.xz
-  ref: 7a9b18b158808d1892989165f3706c4f1a282979079ab7458a79d3c24ad4deb5
+  url: gnome_downloads:gedit/41/gedit-41.1.tar.xz
+  ref: 88decb386c06077cc4a14c1bb136edf3faa6f5201508185208b32e80f246ddde
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

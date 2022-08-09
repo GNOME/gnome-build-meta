@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: http://ftp.videolan.org/pub/videolan/libbluray/1.3.1/libbluray-1.3.1.tar.bz2
-  ref: c24b0f41c5b737bbb65c544fe63495637a771c10a519dfc802e769f112b43b75
+  url: http://ftp.videolan.org/pub/videolan/libbluray/1.3.2/libbluray-1.3.2.tar.bz2
+  ref: 456814db9f07c1eecdef7e840fcbb20976ef814df875428bfb81ecf45851f170
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
