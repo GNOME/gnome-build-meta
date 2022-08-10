@@ -2,9 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.0.tar.xz
-- kind: patch
-  path: files/appstream-glib/fix-appstream-validate.patch
+  url: freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.1.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
