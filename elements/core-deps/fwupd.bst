@@ -3,6 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: github_files:fwupd/fwupd/releases/download/1.8.2/fwupd-1.8.2.tar.xz
+  ref: 8baaf567d8e23600363a4ed3df1dcebbdff66593704c19ebd164ba78ea8598de
 - kind: patch
   path: files/fwupd/fix-version-check.patch
 

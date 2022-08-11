@@ -3,6 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: freedesktop_software:cups-pk-helper/releases/cups-pk-helper-0.2.7.tar.xz
+  ref: 66070ddb448fe9fcee76aa26be2ede5a80f85563e3a4afd59d2bfd79fbe2e831
 - kind: local
   path: files/cups-pk-helper/cups-pk-helper.service
 

@@ -1,14 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-boxes.git
-  track: main
-  submodules:
-    subprojects/libovf-glib:
-      checkout: true
-      url: gnome_gitlab:felipeborges/libovf-glib.git
-
+- kind: tar
+  url: gnome_downloads:gnome-boxes/43/gnome-boxes-43.beta.tar.xz
+  ref: 5aa360a487a9642cbfa892cd5459600970912d3e858f208a243973d097afed3b
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

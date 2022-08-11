@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:nautilus.git
-  track: master
-
+- kind: tar
+  url: gnome_downloads:nautilus/43/nautilus-43.beta.1.tar.xz
+  ref: bdc36885155fc095739240b2e9510032f5d95823f934bd1b9297082107568351
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

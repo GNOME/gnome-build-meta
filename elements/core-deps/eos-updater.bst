@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_files:endlessm/eos-updater/archive/Release_4.0.7.tar.gz
 
+  ref: 583fd4c02d48d38a5f3f089e654ede2448aec49aaf6d2096a1798538c844d627
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/flatpak.bst

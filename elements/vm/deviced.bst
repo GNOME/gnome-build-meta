@@ -5,6 +5,7 @@ sources:
   url: gnome_gitlab:chergert/deviced.git
   track: master
 
+  ref: 8bb61199a689bfc02fe07b02edda2039d1999d1f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

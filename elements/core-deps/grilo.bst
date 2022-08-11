@@ -1,8 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:grilo.git
-  track: master
+- kind: tar
+  url: gnome_downloads:grilo/0.3/grilo-0.3.14.tar.xz
+  ref: 0369d0b00bb0f59ba5f7aea8cfc665f38df14a5b4182d28c7c1e2cd15b518743
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

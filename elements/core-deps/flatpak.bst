@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: github_files:flatpak/flatpak/releases/download/1.12.1/flatpak-1.12.1.tar.xz
 
+  ref: 23893bca7fee82692c43cb692dbec36ea9d5339508c19d3925eac6f06414c857
 build-depends:
 - core-deps/python-pyparsing.bst
 - sdk/gobject-introspection.bst

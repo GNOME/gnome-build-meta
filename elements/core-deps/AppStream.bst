@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: freedesktop_software:appstream/releases/AppStream-0.15.4.tar.xz
 
+  ref: c4126b6ebc889afb2e3ab5dfd8303bd31a9cd2a3992391de4dc66cb0e12846dd
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/curl.bst

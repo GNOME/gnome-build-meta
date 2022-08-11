@@ -1,17 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:totem.git
-  track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
-    flatpak/shared-modules:
-      checkout: false
-      url: github:flathub/shared-modules.git
-
+- kind: tar
+  url: gnome_downloads:totem/43/totem-43.alpha.tar.xz
+  ref: f69294c156b4bd953e01005d63e33e4563935f99263038fae4bc4d94c10eb882
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: gimp:gegl/0.4/gegl-0.4.38.tar.xz
 
+  ref: e4a33c8430a5042fba8439b595348e71870f0d95fbf885ff553f9020c1bed750
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
