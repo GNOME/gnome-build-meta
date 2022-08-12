@@ -7,6 +7,10 @@ depends:
 - core/systemd-presets.bst
 - sdk-platform.bst
 
+- core-deps/xdg-desktop-portal.bst
+- core-deps/xdg-desktop-portal-gnome.bst
+- core-deps/xdg-desktop-portal-gtk.bst
+
 - vm/dev-repo-script.bst
 - vm/flathub-config.bst
 - vm/gnome-nightly-config.bst
@@ -32,6 +36,9 @@ depends:
 - vm/NetworkManager-openconnect.bst
 - vm/NetworkManager-fortisslvpn.bst
 - vm/NetworkManager-vpnc.bst
+
+- core-deps/pipewire-daemon.bst
+- vm/wireplumber.bst
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
