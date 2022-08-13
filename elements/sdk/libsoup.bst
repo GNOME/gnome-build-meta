@@ -30,7 +30,6 @@ depends:
 variables:
   meson-local: >-
     -Dautobahn=disabled
-    -Dhttp2_tests=disabled
     -Dinstalled_tests=true
     -Dntlm=disabled
     -Dsysprof=enabled
