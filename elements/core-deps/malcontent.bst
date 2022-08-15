@@ -20,3 +20,6 @@ depends:
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+runtime-depends:
+- sdk/pygobject.bst
