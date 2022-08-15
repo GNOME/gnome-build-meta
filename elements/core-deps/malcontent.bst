@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tecnocode:malcontent-0.10.4.tar.xz
+  url: freedesktop_files:pwithnall/malcontent/-/archive/0.11.0/malcontent-0.11.0.tar.gz
 
   ref: dec50b5892d28e1a26c475cd9eb994fe28adcac5190c504d1f797c8e9ad2f534
 build-depends:
@@ -13,10 +13,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/AppStream.bst
 - core-deps/accountsservice.bst
 - core-deps/flatpak.bst
-- sdk/appstream-glib.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
