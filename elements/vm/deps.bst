@@ -7,3 +7,4 @@ depends:
 - core-deps/feedbackd.bst
 - core/calls.bst
 - freedesktop-sdk.bst:components/iputils.bst
+- custom/atinout.bst
