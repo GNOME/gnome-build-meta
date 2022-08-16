@@ -8,3 +8,4 @@ depends:
 - core/calls.bst
 - freedesktop-sdk.bst:components/iputils.bst
 - custom/atinout.bst
+- custom/iw.bst
