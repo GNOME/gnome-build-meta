@@ -16,5 +16,6 @@ depends:
 - core/calls.bst
 - freedesktop-sdk.bst:components/iputils.bst
 - custom/atinout.bst
+- custom/eg25-manager.bst
 - custom/iw.bst
 - freedesktop-sdk.bst:components/usbutils.bst
