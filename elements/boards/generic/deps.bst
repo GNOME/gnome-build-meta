@@ -17,3 +17,4 @@ depends:
 - freedesktop-sdk.bst:components/iputils.bst
 - custom/atinout.bst
 - custom/iw.bst
+- freedesktop-sdk.bst:components/usbutils.bst
