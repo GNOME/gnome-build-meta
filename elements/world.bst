@@ -53,7 +53,6 @@ depends:
 - world/libgnome-games-support.bst
 - world/libgrss.bst
 - world/libseat.bst
-- world/libshumate.bst
 - world/libsigcplusplus.bst
 - world/libzapojit.bst
 - world/lightsoff.bst
