@@ -49,6 +49,7 @@ depends:
 - world/hitori.bst
 - world/iagno.bst
 - world/libaperture.bst
+- world/libchamplain.bst
 - world/libgepub.bst
 - world/libgnome-games-support.bst
 - world/libgrss.bst
