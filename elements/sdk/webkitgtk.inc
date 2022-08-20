@@ -1,8 +1,6 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.37.1.tar.xz
-- kind: patch
-  path: files/webkitgtk/fix-cloop-build.patch
+  url: webkitgtk:webkitgtk-2.37.90.tar.xz
 
 build-depends:
 - sdk-deps/bubblewrap.bst
@@ -25,7 +23,6 @@ depends:
 - sdk/geoclue.bst
 - sdk/gst-plugins-base.bst
 - sdk/libmanette.bst
-- sdk/libnotify.bst
 - sdk/libsecret.bst
 - sdk/libwpe.bst
 - sdk/pango.bst
