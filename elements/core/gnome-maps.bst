@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-maps.git
-  track: main
+  track: wip/mlundblad/osm-oauth2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
@@ -12,7 +12,7 @@ runtime-depends:
 depends:
 - core-deps/libshumate.bst
 - core-deps/libgweather.bst
-- core-deps/librest-0.7.bst
+- core-deps/librest.bst
 - sdk/geoclue.bst
 - sdk/gjs.bst
 - sdk/glib.bst
