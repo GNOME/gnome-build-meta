@@ -8,22 +8,62 @@ import sys
 import os
 import signal
 
-FAILURE_TIMEOUT = 1800  # seconds
+FAILURE_TIMEOUT = 3600  # seconds
 BUFFER_SIZE = 80  # how many characters to read at once
 
 DIALOGS = {
-    'root-login':
+    'default':
     [
+        # Login
         'login:',
         'root',
         'Password:',
         'root',
         '#',
-        'uname -a',
+        # Check release
+        'cat /etc/os-release',
+        'ID=org.gnome.gnomeos',
+        # Modem status
+        'eg25-manager',
+        '#',  # currently errors
+        # UI tweaks
+        'gsettings get org.gnome.desktop.interface text-scaling-factor',
+        '1.5',
+        'gsettings get org.gnome.desktop.interface scaling-factor',
+        '1',
+        'gnome-tweaks',
+        '#',  # No output expected without display
+        # Check usb utils
+        'lsusb',
+        '#',  # Output irrelevant
+        # Check iw
+        'iw',
+        '#',  # Output irrelevant
+        # Check atinout
+        'atinout',
+        '#',  # No modem in VM
+        # Check iputils
+        'timeout 15 ping 127.0.0.1',
         '#',
+        'timeout 15 tracepath 127.0.0.1',
+        '#',
+        'timeout 15 clockdiff 127.0.0.1',
+        '#',
+        # Test calls and feedbackd
+        'fbcli',
+        'Triggering feedback for event \'phone-incoming-call\'',
+        # Check kernel config
+        'cat /proc/config.gz | gunzip > running.config',
+        '#',
+        'cat running.config | grep GOODIX',  # Check for goodix touchscreen config
+        'CONFIG_TOUCHSCREEN_GOODIX=m',
+        'cat running.config | grep TOUCHSCREEN',  # Check touchscreen enabled config
+        'CONFIG_INPUT_TOUCHSCREEN=y',
+        'cat running.config | grep RTL8723CS',  # Check for rtl8723cs wifi config
+        'CONFIG_RTL8723CS=m',
+        # Test poweroff
         'sudo shutdown now',
         'Power down'
-
     ]
 }
 
@@ -31,9 +71,9 @@ DIALOGS = {
 def argument_parser():
     parser = argparse.ArgumentParser(
         description="Test that PinePhone image works as expected")
-    parser.add_argument('--dialog', dest='dialog', default='root-login',
+    parser.add_argument('--dialog', dest='dialog', default='default',
                         help='dialog to follow\
-                            (valid values {}, default: root-login)'
+                            (valid values {}, default: default)'
                         .format(DIALOGS.keys()))
 
     return parser
@@ -120,5 +160,6 @@ def main():
     return 1
 
 
-result = main()
-sys.exit(result)
+if __name__ == '__main__':
+    result = main()
+    sys.exit(result)
