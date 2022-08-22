@@ -22,7 +22,10 @@ depends:
 - core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
-- core/gnome-maps.bst
+# Temporarily broken, see:
+#  https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/1725
+#  https://gitlab.gnome.org/GNOME/gnome-maps/-/merge_requests/239
+#- core/gnome-maps.bst
 - core/gnome-music.bst
 - core/gnome-photos.bst
 - core/gnome-software.bst
