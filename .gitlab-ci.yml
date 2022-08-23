@@ -91,22 +91,6 @@ default:
     - image
     expire_in: '2 days'
 
-.image-template:
-  stage: deploy
-  needs:
-    - job: "track"
-      optional: true
-  when: always
-  allow_failure: false
-  script:
-    - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-    - ${BST} -o arch "${ARCH}" checkout --hardlinks "${IMAGE}" image
-  artifacts:
-    when: always
-    paths:
-      - image
-    expire_in: "2 days"
-
 .deploy-rules:
   rules:
   - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
@@ -513,9 +497,9 @@ test-iso-installer-x86_64:
   - gnome-build-meta
 
 test-pinephone-aarch64:
-  image: ubuntu:latest
+  image: ubuntu:focal
   stage: test
-  when: always
+  when: manual
   variables:
     IMAGE: boards/pinephone/image.bst
   needs:
