@@ -31,6 +31,10 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xau.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+runtime-depends:
+- core-deps/xdg-desktop-portal-gnome.bst
+- core-deps/xdg-desktop-portal-gtk.bst
+
 variables:
   conf-local: >-
     --with-system-bubblewrap
