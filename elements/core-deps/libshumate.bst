@@ -14,5 +14,9 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/gtk.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dlibsoup3=true
