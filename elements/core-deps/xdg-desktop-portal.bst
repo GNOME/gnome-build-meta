@@ -1,20 +1,12 @@
-kind: meson
-
-sources:
-- kind: tar
-  url: github_files:flatpak/xdg-desktop-portal/releases/download/1.15.0/xdg-desktop-portal-1.15.0.tar.xz
+kind: filter
 
 build-depends:
-- core-deps/flatpak.bst
-- core-deps/libportal.bst
-- freedesktop-sdk.bst:components/xmlto.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
 
-depends:
-- core-deps/pipewire-daemon.bst
+runtime-depends:
 - sdk/geoclue.bst
 - sdk/glib.bst
+- core-deps/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
-- freedesktop-sdk.bst:components/fuse3.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/xdg-desktop-portal-manifest.bst
+- freedesktop-sdk.bst:components/xdg-portal-interfaces.bst
