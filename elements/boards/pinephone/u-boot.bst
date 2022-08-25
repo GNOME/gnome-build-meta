@@ -4,7 +4,6 @@ sources:
 - kind: git
   url: gitlab:pine64-org/u-boot.git
   track: pinephone-2021-06-22
-  ref: 378121422954a58bc0072b0c8965fdc7b2332e55
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
