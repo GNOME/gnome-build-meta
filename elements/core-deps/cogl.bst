@@ -1,8 +1,7 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:cogl.git
-  track: cogl-1.22
+- kind: tar
+  url: gnome_downloads:cogl/1.22/cogl-1.22.8.tar.xz
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
