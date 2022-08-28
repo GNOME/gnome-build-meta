@@ -34,4 +34,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dparental_controls=disabled
+    -Dparental_controls=enabled
