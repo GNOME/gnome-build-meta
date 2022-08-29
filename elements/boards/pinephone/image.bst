@@ -90,8 +90,8 @@ config:
     }
     image disk.img {
         hdimage {
-            gpt = true
-            align = 1M
+            partition-table-type = "gpt"
+            gpt-location = 1M
         }
         partition idbloader {
             image = "idbloader.img"
