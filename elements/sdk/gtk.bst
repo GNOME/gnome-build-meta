@@ -38,7 +38,7 @@ variables:
     -Dbroadway-backend=true
     -Dgtk_doc=true
     -Dmedia-ffmpeg=disabled
-    -Dvulkan=disabled
+    -Dvulkan=enabled
     -Dsysprof=enabled
 
 public:
