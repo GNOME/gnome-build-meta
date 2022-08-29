@@ -3,7 +3,7 @@ kind: manual
 sources:
 - kind: git_tag
   url: github:megous/linux.git
-  track: orange-pi-5.10
+  track: orange-pi-5.17
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
