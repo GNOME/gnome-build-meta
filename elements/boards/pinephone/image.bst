@@ -6,7 +6,7 @@ build-depends:
 - boards/pinephone/linux.bst
 
 variables:
-  linux-root: b921b045-1df0-41c3-af44-4c6f280d3fae
+  linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
   ostree-branch: gnome-os/aarch64/pinephone
   board: pinephone
 
@@ -24,13 +24,11 @@ config:
   layout:
   - element: ''
     destination: '/sysroot'
-  - element: components/genimage.bst
-    destination: '/'
+  - element: ''
+    destination: '/genimage'
   - element: boards/pinephone/repo.bst
     destination: '/source-repo'
   - element: boards/pinephone/image-deps.bst
-    destination: '/'
-  - element: core-deps/libostree.bst
     destination: '/'
   - element: boards/pinephone/linux.bst
     destination: '/kernel'
@@ -73,7 +71,7 @@ config:
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
-    cat >%{install-root}/genimage.cfg <<EOF
+    cat >/genimage/genimage.cfg <<EOF
     image efi.img {
         vfat {
             extraargs = "-F32 -n EFI"
@@ -115,12 +113,8 @@ config:
     EOF
 
   - | 
-    cd %{install-root}
-    genimage --rootpath "%{sysroot}" --inputpath "%{indep-libdir}/u-boot/pinephone/"
-    mv images/disk.img .
-    rm -rf genimage.cfg images/ tmp/
-
-
-  - sfdisk --part-attrs %{install-root}/disk.img 2 55
-  
-  - xz ${XZFLAGS} %{install-root}/disk.img
+    cd /genimage
+    genimage --rootpath "%{sysroot}" --inputpath "%{indep-libdir}/u-boot/%{board}"
+    sfdisk --part-attrs /genimage/images/disk.img 2 55
+    mv /genimage/images/disk.img %{install-root}/disk.img
+    xz ${XZFLAGS} %{install-root}/disk.img
