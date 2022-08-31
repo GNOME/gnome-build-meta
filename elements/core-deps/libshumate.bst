@@ -16,7 +16,3 @@ depends:
 - sdk/gtk.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Dlibsoup3=true
