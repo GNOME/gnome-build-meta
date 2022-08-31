@@ -2,9 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd/releases/download/1.8.2/fwupd-1.8.2.tar.xz
-- kind: patch
-  path: files/fwupd/fix-version-check.patch
+  url: github_files:fwupd/fwupd/releases/download/1.8.4/fwupd-1.8.4.tar.xz
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -13,6 +11,8 @@ build-depends:
 - freedesktop-sdk.bst:components/cmake.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/liberation-fonts.bst
+# Needed for docs/test-deps.py
+- freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
