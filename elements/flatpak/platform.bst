@@ -91,7 +91,7 @@ config:
 
     Extension org.freedesktop.Platform.openh264:
       directory: '%{lib}/openh264'
-      versions: '2.0beta;2.0'
-      version: '2.0'
+      versions: '%{openh264-version}beta;%{openh264-version}'
+      version: '%{openh264-version}'
       add-ld-path: extra
       autodelete: 'false'
