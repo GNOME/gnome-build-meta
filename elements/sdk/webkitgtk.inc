@@ -1,6 +1,6 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.37.90.tar.xz
+  url: webkitgtk:webkitgtk-2.37.91.tar.xz
 
 build-depends:
 - sdk-deps/bubblewrap.bst
