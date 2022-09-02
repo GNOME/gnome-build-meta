@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:calls.git
-  track: master
+  track: main
   submodules:
     subprojects/libcall-ui:
       checkout: true
