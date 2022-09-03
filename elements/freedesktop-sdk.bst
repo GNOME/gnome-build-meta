@@ -5,6 +5,8 @@ sources:
   track: release/22.08
   track-tags: true
   ref: freedesktop-sdk-22.08.1-0-gd84e392b8b10845ea895ed0dbe72c58d8a81edce
+- kind: patch
+  path: files/freedesktop-sdk/9566.patch
 config:
   options:
     target_arch: '%{arch}'
