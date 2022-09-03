@@ -6,6 +6,7 @@ sources:
   ref: 06aaa3db73c12ae2ded1c9c21b182aa6d8325445a4dd76a68ef2128f253162b0
 build-depends:
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
