@@ -6,6 +6,8 @@ sources:
   track-tags: true
 - kind: patch
   path: files/freedesktop-sdk/9564.patch
+- kind: patch
+  path: files/freedesktop-sdk/9566.patch
 config:
   options:
     target_arch: '%{arch}'
