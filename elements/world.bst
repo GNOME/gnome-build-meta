@@ -32,7 +32,6 @@ depends:
 - world/gnome-mines.bst
 - world/gnome-multi-writer.bst
 - world/gnome-nibbles.bst
-- world/gnome-online-miners.bst
 - world/gnome-recipes.bst
 - world/gnome-robots.bst
 - world/gnome-screenshot.bst
