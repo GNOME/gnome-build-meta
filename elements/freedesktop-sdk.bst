@@ -5,8 +5,6 @@ sources:
   track: master
   track-tags: true
 - kind: patch
-  path: files/freedesktop-sdk/9564.patch
-- kind: patch
   path: files/freedesktop-sdk/9576.patch
 config:
   options:
