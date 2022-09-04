@@ -7,7 +7,7 @@ sources:
 
 build-depends:
 - core-deps/intltool.bst
-- core-deps/librest-0.7.bst
+- world/librest-0.7.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
