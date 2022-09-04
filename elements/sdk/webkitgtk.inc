@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.37.1.tar.xz
-  ref: c53326b1751f8c6da3db2f4bfa91c1801755893e287d0e1f6c07344589d4a6a7
-- kind: patch
-  path: files/webkitgtk/fix-cloop-build.patch
+  url: webkitgtk:webkitgtk-2.37.91.tar.xz
+  ref: 118fd51fccc11e8bc38d9704bdd2a79d3d32e4e975b61040530b69d3570b4d64
 
 build-depends:
 - sdk-deps/bubblewrap.bst

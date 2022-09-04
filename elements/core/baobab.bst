@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:baobab/43/baobab-43.beta.tar.xz
-  ref: 978fa9a577f58d2af39dc8104a1c68c9f46fa14553cf2f1ec78736d07d59395c
+  url: gnome_downloads:baobab/43/baobab-43.rc.tar.xz
+  ref: 7820d9ea532610a67211b09a122adfe07532004cd0d836eb4ad31a09d1fe8656
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst

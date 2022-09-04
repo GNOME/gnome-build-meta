@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-characters/43/gnome-characters-43.beta.tar.xz
-  ref: f1fb41b0dce8f6fa8dd8b0a023282f17b401e029a50006f1541858cedb637834
+  url: gnome_downloads:gnome-characters/43/gnome-characters-43.rc.tar.xz
+  ref: 9066e40fedbd97a705d65b7ea6c3c25b8fb0e98ea69dd23ecb5dd12e31a60a3f
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

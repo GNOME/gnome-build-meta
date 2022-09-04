@@ -4,7 +4,7 @@ sources:
 - kind: tar
   url: freedesktop_files:pwithnall/malcontent/-/archive/0.11.0/malcontent-0.11.0.tar.gz
 
-  ref: dec50b5892d28e1a26c475cd9eb994fe28adcac5190c504d1f797c8e9ad2f534
+  ref: e6b94831afe255818a881813ed161bd75e713cca0a052d909ec7e683f0e76960
 build-depends:
 - core-deps/glib-testing.bst
 - sdk/gobject-introspection.bst

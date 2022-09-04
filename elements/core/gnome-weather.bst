@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-weather/43/gnome-weather-43.beta.tar.xz
-  ref: f9d3c401328e0dd64156f777cd876a73e7aee5109ddb63673d03081aaaf807e1
+  url: gnome_downloads:gnome-weather/43/gnome-weather-43.rc.tar.xz
+  ref: f15c8c9f68c06174f1fe7d332230adc3a686bf17bc97772a9609298637d22b33
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst

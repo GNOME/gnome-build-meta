@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.55/librsvg-2.55.0.tar.xz
-  ref: 6e626c564e354bcd8c384b90f8e4f30b303afa6c1e0cb5cc56ba14900c5db730
+  url: gnome_downloads:librsvg/2.55/librsvg-2.55.1.tar.xz
+  ref: 6baf48a9d3a56fd13bbfbb9f1f76759b240b70a1fa220fd238474d66a926f98c
 - kind: cargo
 
   ref:

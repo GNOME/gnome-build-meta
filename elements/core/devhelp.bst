@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:devhelp/43/devhelp-43.beta.tar.xz
-  ref: 715806e7444f92d616db1b88f10ab7cf2f6c14dad00d7841aadcfdc776499931
+  url: gnome_downloads:devhelp/43/devhelp-43.rc.tar.xz
+  ref: e918ab9caa53070667c6abb39204fa089c4ea55b278cbf654161a9b68ca4990d
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
