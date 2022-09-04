@@ -12,7 +12,7 @@ runtime-depends:
 depends:
 - core-deps/libshumate.bst
 - core-deps/libgweather.bst
-- core-deps/librest-0.7.bst
+- core-deps/librest.bst
 - sdk/geoclue.bst
 - sdk/gjs.bst
 - sdk/glib.bst
