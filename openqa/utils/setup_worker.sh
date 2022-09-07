@@ -29,7 +29,6 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   settings[QEMUCPU]=host \
   settings[QEMUCPUS]=2 \
   settings[QEMURAM]=2560 \
-  settings[QEMUVGA]=virtio \
   settings[UEFI]=1 \
   settings[UEFI_PFLASH_CODE]=/usr/share/qemu/ovmf-x86_64-code.bin \
   settings[WORKER_CLASS]=$worker_class | tee --append openqa.log | jq -e .id > /tmp/machine_id
