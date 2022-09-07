@@ -4,6 +4,7 @@ sources:
   url: gnome:libpanel.git
   track: main
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
