@@ -4,6 +4,7 @@ sources:
   url: gnome:gnome-maps.git
   track: main
 build-depends:
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
