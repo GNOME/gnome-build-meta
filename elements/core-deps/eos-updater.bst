@@ -1,5 +1,14 @@
 kind: meson
 
+# Beware of updating to 5.x.x tags when they appear.
+#
+# Commit 44348e2 (Revert "apply: Don't use staged deployments when /boot is
+# automounted") requires a version of ostree that includes f3db79e7
+# (finalize-staged: Ensure /boot automount doesn't expire). Without that ostree
+# change, staged updates will not be applied at shutdown.
+#
+# As of September 2022, eos-updater doesn't have a build-time dependency on a
+# new-enough libostree because no such version has been released.
 sources:
 - kind: tar
   url: github_files:endlessm/eos-updater/archive/Release_4.0.7.tar.gz
