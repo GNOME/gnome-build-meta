@@ -17,3 +17,4 @@ variables:
     --with-gpp-default-behavior=REMOTE_FIRST
     --with-initscript=none
     --with-manpages=no
+    --with-socket-name=/run/flatpak/gssproxy/default.sock
