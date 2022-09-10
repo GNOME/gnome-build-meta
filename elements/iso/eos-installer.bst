@@ -8,7 +8,7 @@ sources:
 - kind: git_tag
   url: github:endlessm/eos-installer.git
   track-tags: true
-  track: Release_4.0.7
+  track: Release_4.0.9
   submodules:
     ext/libglnx:
       url: gnome:libglnx.git
@@ -21,10 +21,6 @@ sources:
   path: files/eos-installer/remove-endless-support.patch
 - kind: patch
   path: files/eos-installer/riscv.patch
-- kind: patch
-  path: files/eos-installer/0001-polkit-rules-use-non-sugary-closure-syntax.patch
-- kind: patch
-  path: files/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
