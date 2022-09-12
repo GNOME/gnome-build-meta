@@ -309,8 +309,6 @@ iso-installer-x86_64:
   needs:
   - job: 'track'
     optional: true
-  - job: 'build-x86_64'
-    artifacts: false
 
 s3-image:
   extends: .x86_64
