@@ -474,7 +474,7 @@ cve_report:
 test-iso-installer-x86_64:
   stage: test
   image:
-    name: registry.opensuse.org/devel/openqa/containers15.3/openqa_worker:latest
+    name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
   when: manual
   variables:
