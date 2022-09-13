@@ -15,6 +15,9 @@ variables:
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_IMAGE_ID: "543571583e6271ede4c706aff60d389cf26a13e9"
 
+  # Set "EXTRA_TESTS=openqa" when starting pipeline to run full set of OpenQA tests.
+  EXTRA_TESTS: ''
+
 stages:
 - track
 - build
@@ -304,6 +307,11 @@ iso-installer-x86_64:
   extends:
   - .manual-image-template
   - .x86_64
+  rules:
+  - if: $EXTRA_TESTS =~ /openqa/
+    when: on_success
+  - if: $CI_PIPELINE_SOURCE != 'merge_request_event'
+    when: manual
   variables:
     IMAGE: iso/image.bst
   needs:
@@ -436,7 +444,11 @@ test-iso-installer-x86_64:
   image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
-  when: manual
+  rules:
+  - if: $EXTRA_TESTS =~ /openqa/
+    when: on_success
+  - if: $CI_PIPELINE_SOURCE != 'merge_request_event'
+    when: manual
   variables:
     IMAGE: iso/image.bst
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
