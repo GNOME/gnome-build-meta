@@ -66,3 +66,4 @@ test-s3-image-x86_64:
     expire_in: '1 week'
   tags:
   - x86_64
+  - gnome-build-meta
