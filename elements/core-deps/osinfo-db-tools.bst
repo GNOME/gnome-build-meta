@@ -9,7 +9,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
