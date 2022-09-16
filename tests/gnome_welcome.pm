@@ -9,7 +9,7 @@ sub run {
     assert_and_click('gnome_firstboot_privacy', timeout => 10, button => 'left');
     assert_screen('gnome_firstboot_timezone_1', 30);
     send_key('tab');
-    type_string('London, East');
+    type_string('London, East', wait_screen_change => 6);
     assert_and_click('gnome_firstboot_timezone_2', timeout => 20, button => 'left');
     assert_and_click('gnome_firstboot_timezone_3', timeout => 20, button => 'left');
     assert_and_click('gnome_firstboot_accounts', timeout => 10, button => 'left');
