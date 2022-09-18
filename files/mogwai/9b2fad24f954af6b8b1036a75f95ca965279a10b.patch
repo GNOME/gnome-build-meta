@@ -1,0 +1,61 @@
+From 9b2fad24f954af6b8b1036a75f95ca965279a10b Mon Sep 17 00:00:00 2001
+From: Philip Withnall <pwithnall@endlessos.org>
+Date: Thu, 30 Jun 2022 19:58:23 +0100
+Subject: [PATCH] Revert "mogwai-scheduled: Fix dependency name for systemd"
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+This reverts commit ed84c69746e6aa3da963d0064032c9271dd7a221, and
+additionally changes the CI config to install the package providing
+`systemd.pc`, which was missing before. `libsystemd-dev` needs to be
+kept as a dependency, as `libsystemd.so` is actually used by
+the libgsystemservice subproject. The CI build uses libgsystemservice as
+a subproject as it’s not available on Debian Unstable at the moment.
+
+The pkg-config name was correct before. Both `libsystemd.pc` and
+`systemd.pc` exist, but `systemd.pc` is the one which defines all
+systemd’s directory paths and variables. `libsystemd.pc` is just for the
+cflags/libs for linking to libsystemd.
+
+Unsure how I managed to get this commit working before.
+
+Signed-off-by: Philip Withnall <pwithnall@endlessos.org>
+---
+ .gitlab-ci.yml               | 2 +-
+ mogwai-scheduled/meson.build | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/.gitlab-ci.yml b/.gitlab-ci.yml
+index ae646a3..493abcb 100644
+--- a/.gitlab-ci.yml
++++ b/.gitlab-ci.yml
+@@ -7,7 +7,7 @@ before_script:
+                        libgirepository1.0-dev libglib2.0-dev libsystemd-dev
+                        libsoup-3.0-dev libnm-dev lcov python3-dbusmock
+                        git gettext libelf-dev libmount-dev libpcre3-dev
+-                       libselinux1-dev zlib1g-dev libffi-dev
++                       libselinux1-dev zlib1g-dev libffi-dev systemd
+   - export LANG=C.UTF-8
+ 
+ stages:
+diff --git a/mogwai-scheduled/meson.build b/mogwai-scheduled/meson.build
+index 8aaea1c..5201e71 100644
+--- a/mogwai-scheduled/meson.build
++++ b/mogwai-scheduled/meson.build
+@@ -39,13 +39,13 @@ configure_file(
+ configure_file(
+   input: 'mogwai-scheduled.conf.in',
+   output: 'mogwai-scheduled.conf',
+-  install_dir: dependency('libsystemd').get_pkgconfig_variable('sysusersdir'),
++  install_dir: dependency('systemd').get_pkgconfig_variable('sysusersdir'),
+   configuration: config,
+ )
+ configure_file(
+   input: 'mogwai-scheduled.service.in',
+   output: 'mogwai-scheduled.service',
+-  install_dir: dependency('libsystemd').get_pkgconfig_variable('systemdsystemunitdir'),
++  install_dir: dependency('systemd').get_pkgconfig_variable('systemdsystemunitdir'),
+   configuration: config,
+ )
+ configure_file(
