@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/43/epiphany-43.rc.tar.xz
-  ref: 7910392fb3cab1453562e012440863a222114deb4e489c4ce2ac1670b1da87c8
+  url: gnome_downloads:epiphany/43/epiphany-43.0.tar.xz
+  ref: b66d499f9ee72696d83cf844125377181a954554a4bb3785b73293380ac0c227
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

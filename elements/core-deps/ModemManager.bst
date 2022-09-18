@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: freedesktop_software:ModemManager/ModemManager-1.18.10.tar.xz
-  ref: 16255f8229eeeb2dfecb8dd1370360d46f1015ec85e6fba5c1cbd9f4371d65eb
+  url: freedesktop_software:ModemManager/ModemManager-1.18.12.tar.xz
+  ref: b464e4925d955a6ca86dd08616e763b26ae46d7fd37dbe281678e34065b1e430
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
