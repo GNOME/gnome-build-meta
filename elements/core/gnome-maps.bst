@@ -5,6 +5,7 @@ sources:
   ref: 341a92f0e4e8fa539a3a082b7585d803fe0e77b6f2885ef3b6af736712924399
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib-networking.bst
