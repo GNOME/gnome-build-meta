@@ -26,7 +26,7 @@ depends:
 - core-deps/libportal.bst
 - core-deps/template-glib.bst
 - core-deps/vte.bst
-- core/dspy.bst
+- core/d-spy.bst
 - core/gvfs-daemon.bst
 - core/sysprof-app.bst
 - sdk/glib.bst
