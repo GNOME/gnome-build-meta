@@ -96,6 +96,7 @@ depends:
 - freedesktop-sdk.bst:components/gettext.bst
 - freedesktop-sdk.bst:components/giflib.bst
 - freedesktop-sdk.bst:components/glib.bst
+- freedesktop-sdk.bst:components/glibc-gconv-cache.bst
 - freedesktop-sdk.bst:components/gmp.bst
 - freedesktop-sdk.bst:components/gnu-free-fonts.bst
 - freedesktop-sdk.bst:components/gnupg.bst
