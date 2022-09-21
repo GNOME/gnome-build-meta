@@ -1,11 +1,12 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:libvirt-8.6.0.tar.xz
+  url: libvirt:libvirt-8.7.0.tar.xz
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:
 - core-deps/rpcsvc-proto.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
@@ -17,15 +18,24 @@ depends:
 - core-deps/dnsmasq.bst
 - core-deps/ebtables.bst
 - core-deps/qemu.bst
+- core-deps/libpcap.bst
+- core-deps/libssh2.bst
 - core-deps/slirp-helper.bst
+- freedesktop-sdk.bst:components/audit.bst
+- freedesktop-sdk.bst:components/curl.bst
+- freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/dmidecode.bst
+- freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/iproute2.bst
 - freedesktop-sdk.bst:components/libnl.bst
 - freedesktop-sdk.bst:components/libtirpc.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/lvm2.bst
+- freedesktop-sdk.bst:components/open-iscsi.bst
+- freedesktop-sdk.bst:components/openssh.bst
+- freedesktop-sdk.bst:components/parted.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/xorg-lib-pciaccess.bst
 - freedesktop-sdk.bst:components/yajl.bst
@@ -34,12 +44,12 @@ depends:
 variables:
   meson-local: >-
     -Drunstatedir=%{runstatedir}
-    -Dapparmor=disabled
-    -Dapparmor_profiles=disabled
-    -Daudit=disabled
-    -Dbash_completion=disabled
+    -Dapparmor=enabled
+    -Dapparmor_profiles=enabled
+    -Daudit=enabled
+    -Dbash_completion=enabled
     -Dcapng=disabled
-    -Dcurl=disabled
+    -Dcurl=enabled
     -Ddriver_bhyve=disabled
     -Ddriver_esx=disabled
     -Ddriver_hyperv=disabled
@@ -48,24 +58,24 @@ variables:
     -Ddriver_ch=disabled
     -Ddriver_vz=disabled
     -Ddtrace=disabled
-    -Dfuse=disabled
+    -Dfuse=enabled
     -Dglusterfs=disabled
     -Dlibiscsi=disabled
-    -Dlibpcap=disabled
-    -Dlibssh2=disabled
+    -Dlibpcap=enabled
+    -Dlibssh2=enabled
     -Dlibssh=disabled
     -Dnetcf=disabled
     -Dnumactl=disabled
     -Dnumad=disabled
     -Dopenwsman=disabled
-    -Dsasl=disabled
+    -Dsasl=enabled
     -Dsanlock=disabled
-    -Dsecdriver_apparmor=disabled
+    -Dsecdriver_apparmor=enabled
     -Dsecdriver_selinux=disabled
     -Dselinux=disabled
-    -Dstorage_disk=disabled
+    -Dstorage_disk=enabled
     -Dstorage_gluster=disabled
-    -Dstorage_iscsi=disabled
+    -Dstorage_iscsi=enabled
     -Dstorage_iscsi_direct=disabled
     -Dstorage_rbd=disabled
     -Dstorage_sheepdog=disabled
