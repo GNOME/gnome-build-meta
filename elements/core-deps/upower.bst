@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop:upower/upower/-/archive/v0.99.14/upower-v0.99.14.tar.bz2
+  url: freedesktop:upower/upower/-/archive/v1.90.0/upower-v1.90.0.tar.bz2
 
 build-depends:
 - sdk/gtk-doc.bst
