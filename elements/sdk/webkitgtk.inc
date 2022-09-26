@@ -1,8 +1,8 @@
 sources:
 - kind: tar
   #FIXME: re-enable gtk-doc for webkit2gtk-5.0.bst when fixed upstream
-  url: webkitgtk:webkitgtk-2.36.6.tar.xz
-  ref: 1193bc821946336776f0dfa5e0dca5651f1e57157eda12da4721d2441f24a61a
+  url: webkitgtk:webkitgtk-2.38.0.tar.xz
+  ref: f9ce6375a3b6e1329b0b609f46921e2627dc7ad6224b37b967ab2ea643bc0fbd
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
@@ -10,9 +10,9 @@ sources:
 
 build-depends:
 - sdk-deps/bubblewrap.bst
+- sdk-deps/gi-docgen.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst

@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: wpewebkit:libwpe-1.12.2.tar.xz
-  ref: 4ac4fd0a8b562b721bffd0f46ae9f06c2b5a3114407581978be875a9d651642a
+  url: wpewebkit:libwpe-1.12.3.tar.xz
+  ref: b84fdbfbc849ce4fdf084bb28b58e5463b1b4b6cc8f200dc77b41f8545d5329d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 

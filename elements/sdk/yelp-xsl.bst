@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:yelp-xsl/42/yelp-xsl-42.0.tar.xz
-  ref: 29b273cc0bd16efb6e983443803f1e9fdc03511e5c4ff6348fd30a604d4dc846
+  url: gnome_downloads:yelp-xsl/42/yelp-xsl-42.1.tar.xz
+  ref: 238be150b1653080ce139971330fd36d3a26595e0d6a040a2c030bf3d2005bcd
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
