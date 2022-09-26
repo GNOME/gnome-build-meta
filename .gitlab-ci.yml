@@ -411,36 +411,36 @@ ostree-x86_64:
     artifacts: false
 
 
-cve_report:
-  extends: .x86_64
-  stage: 'deploy'
-  needs:
-  - job: 'track'
-    optional: true
-  - job: 'build-x86_64'
-    artifacts: false
-  script:
-  - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
-
-  - ${BST} checkout flatpak/platform-manifest.bst platform-manifest/
-  - ${BST} checkout flatpak/sdk-manifest.bst sdk-manifest/
-
-  - mkdir -p cve
-  - cd cve
-  - ../utils/update-local-cve-database.py
-
-  - mkdir -p ../cve-reports
-  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
-  cache:
-    key: cve
-    paths:
-    - cve
-  artifacts:
-    paths:
-    - cve-reports
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+#cve_report:
+#  extends: .x86_64
+#  stage: 'deploy'
+#  needs:
+#  - job: 'track'
+#    optional: true
+#  - job: 'build-x86_64'
+#    artifacts: false
+#  script:
+#  - ${BST} pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
+#
+#  - ${BST} checkout flatpak/platform-manifest.bst platform-manifest/
+#  - ${BST} checkout flatpak/sdk-manifest.bst sdk-manifest/
+#
+#  - mkdir -p cve
+#  - cd cve
+#  - ../utils/update-local-cve-database.py
+#
+#  - mkdir -p ../cve-reports
+#  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
+#  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+#  cache:
+#    key: cve
+#    paths:
+#    - cve
+#  artifacts:
+#    paths:
+#    - cve-reports
+#  rules:
+#  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
 
 
 test-iso-installer-x86_64:
@@ -529,15 +529,15 @@ test-pinephone-aarch64:
   - aarch64
   - gnome-build-meta
 
-pages:
-  stage: 'reports'
-  needs:
-    - job : 'cve_report'
-      artifacts: true
-  script:
-    - 'mv cve-reports/ public/'
-  artifacts:
-    paths:
-    - 'public'
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+#pages:
+#  stage: 'reports'
+#  needs:
+#    - job : 'cve_report'
+#      artifacts: true
+#  script:
+#    - 'mv cve-reports/ public/'
+#  artifacts:
+#    paths:
+#    - 'public'
+#  rules:
+#  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
