@@ -1,0 +1,69 @@
+variables:
+  OPENQA_HOST: https://openqa.gnome.org
+  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
+  OPENQA_TESTS_BRANCH: master
+  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
+  OPENQA_NEEDLES_BRANCH: master
+  S3_IMAGE_URL: https://os.gnome.org/download/latest/gnome_os_installer.iso
+
+
+stages:
+- test
+
+
+test-s3-image-x86_64:
+  stage: test
+  image:
+    # We must use this custom image until upstream merges and releases
+    # https://github.com/os-autoinst/openQA/pull/4804.
+    name: quay.io/ssssam0/openqa_worker:15.4-virtio-vga
+    #name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
+    entrypoint: ["/bin/bash", "-c"]
+  variables:
+    IMAGE: installer.iso
+    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
+    CI: 1
+    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+  script:
+  - |
+    curl --get --location $S3_IMAGE_URL --output $IMAGE
+  - |
+    mkdir -p /data/factory/iso/
+    ln -s $(pwd)/$IMAGE /data/factory/iso/installer.iso
+  - |
+    rm /etc/openqa/*
+    cat >/etc/openqa/client.conf <<EOF
+    [openqa.gnome.org]
+    key = $OPENQA_API_KEY
+    secret = $OPENQA_API_SECRET
+    EOF
+  - |
+    worker_class=qemu_x86_64-${CI_JOB_ID}
+    utils/setup_worker.sh ${worker_class} > /tmp/machine_id
+    /run_openqa_worker.sh &> worker.log &
+  - |
+    utils/start_job.sh ${worker_class} master > /tmp/job_id
+    echo "Test job has been started, visit $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
+  - utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
+  - exit $(cat /tmp/exit_code)
+  after_script:
+  - |
+    if [ -e /tmp/machine_id ]; then
+        echo "Cleaning up worker"
+        utils/teardown_worker.sh $(cat /tmp/machine_id)
+        rm /tmp/machine_id
+    fi
+  - |
+    if [ ! -e /tmp/exit_code ]; then
+        echo "Job creation failed, log below."
+        cat openqa.log
+  - fi
+  artifacts:
+    when: always
+    paths:
+    - openqa.log
+    - worker.log
+    expire_in: '1 week'
+  tags:
+  - x86_64
+  - gnome-build-meta

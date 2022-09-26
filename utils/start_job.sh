@@ -18,5 +18,5 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   FLAVOR=iso \
   ARCH=x86_64 \
   WORKER_CLASS=$worker_class \
-  CASEDIR=$(pwd)/openqa \
-  NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_SHA | tee --append openqa.log | jq -e .ids[0]
+  CASEDIR=$(pwd) \
+  NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_BRANCH | tee --append openqa.log | jq -e .ids[0]

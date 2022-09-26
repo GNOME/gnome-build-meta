@@ -11,7 +11,7 @@ sub run_command {
     send_key('esc');
     wait_still_screen(2);
 
-    send_key($desktop_runner_hotkey, wait_screen_change => true);
+    send_key($desktop_runner_hotkey, wait_screen_change => 1);
 
     assert_screen('desktop_runner', $desktop_runner_timeout);
 
