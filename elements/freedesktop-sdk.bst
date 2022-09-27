@@ -4,10 +4,6 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: master
   track-tags: true
-- kind: patch
-  path: files/freedesktop-sdk/9576.patch
-- kind: patch
-  path: files/freedesktop-sdk/9688.patch
 config:
   options:
     target_arch: '%{arch}'
