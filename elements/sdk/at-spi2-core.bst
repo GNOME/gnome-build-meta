@@ -4,8 +4,8 @@ sources:
   url: gnome:at-spi2-core.git
   track: main
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
@@ -15,8 +15,6 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dx11=yes
-    -Dintrospection=yes
     -Ddocs=true
 public:
   bst:
