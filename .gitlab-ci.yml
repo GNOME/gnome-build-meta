@@ -442,8 +442,8 @@ cve_report:
   - ../utils/update-local-cve-database.py
 
   - mkdir -p ../cve-reports
-  - ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-  - ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+  - python3 ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
+  - python3 ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
   cache:
     key: cve
     paths:
