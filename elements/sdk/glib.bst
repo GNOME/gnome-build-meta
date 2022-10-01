@@ -28,6 +28,7 @@ depends:
 - freedesktop-sdk.bst:components/libffi.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/pcre.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
