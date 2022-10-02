@@ -3,9 +3,8 @@ kind: manual
 sources:
 - kind: git_tag
   url: github:raspberrypi/linux.git
-  # Aim to track 5.4 LTS work for vc4-kms etc
-  # track: 5.4.y
-  track: a98ba9221895e03b8736312ce6666005da5968a1
+  # track: 5.15.y
+  track: 23a7ec81c55515e8a8d711376589f4cbc6714906
   track-tags: false
 
 depends:
@@ -17,6 +16,7 @@ build-depends:
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/bc.bst
 - freedesktop-sdk.bst:components/gzip.bst
+- freedesktop-sdk.bst:components/openssl.bst
 
 variables:
   bootdir: /boot
@@ -30,7 +30,7 @@ config:
   configure-commands:
   - |
     # Generate the default kernel config for the target architecture
-    make defconfig
+    make bcm2711_defconfig
 
   - |
     # Modify the kernel config for additional features
@@ -214,10 +214,6 @@ config:
     scripts/config -e DRM_FBDEV_EMULATION
     scripts/config -e DRM_VC4
 
-    # This was broken by this branch
-    scripts/config -d PCI_AARDVARK
-    scripts/config -d PCIE_ALTERA
-    scripts/config -d PCIE_ROCKCHIP_HOST
 
   build-commands:
   - |
