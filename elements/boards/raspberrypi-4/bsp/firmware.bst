@@ -6,10 +6,8 @@ build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 sources:
-- kind: git_tag
-  url: github:raspberrypi/firmware.git
-  track: 20354bebcc2a8448128f2348e19e155910d25122
-  track-tags: false
+- kind: tar
+  url: github_files:raspberrypi/firmware/archive/refs/tags/1.20220830.tar.gz
 
 config:
   install-commands:

@@ -80,21 +80,20 @@ config:
 
   # The dtb seems to be required by the firmware to be able to load u-boot
   - |
-    cp -r "/kernel/boot/dtbs/broadcom/bcm2711-rpi-4-b.dtb" "%{sysroot}/boot/"
+    cp -r "/kernel/boot/dtbs/broadcom/bcm2711*" "%{sysroot}/boot/"
 
   # FIXME: We should try to load the overlay from u-boot instead.
   - |
     mkdir -p "%{sysroot}/boot/overlays"
-    cp -r "/kernel/boot/dtbs/overlays/vc4-fkms-v3d.dtbo" "%{sysroot}/boot/overlays/"
+    cp -r "/kernel/boot/dtbs/overlays/vc4-kms-v3d-pi4.dtbo" "%{sysroot}/boot/overlays/"
 
   - |
     cat >"%{sysroot}/boot/config.txt" <<EOF
-    enable_uart=1
-    start_x=1
-    # FIXME: We should maybe try to load fdt and overlays from u-boot
-    device_tree_address=0x02600000
-    dtoverlay=vc4-fkms-v3d
     dtparam=audio=on
+    arm_boost=1
+    arm_64bit=1
+    disable_overscan=1
+    dtoverlay=vc4-kms-v3d-pi4
     EOF
 
   - |
@@ -116,12 +115,11 @@ config:
     }
     image disk.img {
         hdimage {
-            gpt = true
+            partition-table-type = "gpt"
             align = 1M
         }
         partition efi {
             image = "efi.img"
-            partition-type = 0x0c
             bootable = true
             partition-type-uuid = "U"
         }
