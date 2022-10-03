@@ -5,6 +5,8 @@ sources:
   track: release/22.08
   track-tags: true
   ref: freedesktop-sdk-22.08.2.1-0-gde68b5af1dc9ae9656b1b6647ba035d27743bd77
+- kind: patch
+  path: files/freedesktop-sdk/noopenh264-2.3.1.patch
 config:
   options:
     target_arch: '%{arch}'
