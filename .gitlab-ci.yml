@@ -14,7 +14,7 @@ variables:
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "3bee7d7876bc776cdf8379ab0713fcd405ac5002"
+  DOCKER_IMAGE_ID: "a470cd0ecc1a005e9456b98845455ed1bcdc6b7b"
 
 stages:
 - track
@@ -36,6 +36,8 @@ workflow:
 
 default:
   image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
+  rules:
+    - if: "$UPDATE_REFS != 'yes'"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
@@ -528,6 +530,53 @@ test-pinephone-pro-aarch64:
   tags:
   - aarch64
   - gnome-build-meta
+
+update_refs:
+  stage: 'track'
+  tags:
+  - x86_64
+  - gnome-build-meta
+  # FIXME:
+  # Weird bst tracking the same repo issue
+  retry: 2
+  rules:
+    # FIXME: filter out the rest of the jobs on this pipeline
+    - if: $UPDATE_REFS == "yes" && $CI_PIPELINE_SOURCE == "schedule"
+    # FIXME: remove me
+    - if: $CI_COMMIT_REF_NAME == "abderrahim/update-refs-script"
+  script:
+    # Setup ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+    # FIXME: use static known keys with a var
+    # https://gitlab.com/gitlab-examples/ssh-private-key/-/blob/master/.gitlab-ci.yml#L38
+    - ssh-keyscan gitlab.gnome.org >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+    - ssh -Tv git@gitlab.gnome.org
+
+    - git config --global user.email "sysadmin@gnome.org"
+    - git config --global user.name "gnomebot"
+
+    # When tracking the same repo from multiple elements, gtk3 & gtk4,
+    # bst can bug out and one of the tracks will fail. Only run 1 fetch
+    # at a time to avoid this.
+    - export BST="$BST --fetchers=1"
+
+    - python3 utils/check-open-mrs.py
+    - python3 utils/update-refs.py --switch-branch
+
+    - git show
+
+    - git remote set-url --push origin git@gitlab.gnome.org:GNOME/gnome-build-meta.git
+
+    # - git push -o merge_request.create -o merge_request.assign=44433 -o merge_request.remove_source_branch origin HEAD
+  after_script:
+    - rm ssh.key
 
 
 pages:

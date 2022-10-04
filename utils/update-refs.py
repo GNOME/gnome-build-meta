@@ -1,8 +1,15 @@
-#!/usr/bin/env python3
+#! /usr/bin/env python3
 
+import argparse
 import os
 import subprocess
 from datetime import datetime
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--switch-branch", help="Commit to a new branch after tracking", action="store_true"
+)
+args = parser.parse_args()
 
 now = datetime.now()
 
@@ -32,12 +39,13 @@ def bst(*args):
 
 bst("track", "--deps", "all", *track_elements)
 
-git(
-    "switch",
-    "--force-create",
-    "update-bot/" + now.strftime("%F-%H-%M"),
-)
+if parser.switch_branch:
+    git(
+        "switch",
+        "--force-create",
+        "update-bot/" + now.strftime("%F-%H-%M"),
+    )
 
-git("add", "--update", ".")
+    git("add", "--update", ".")
 
-git("commit", "--message", "Update element refs")
+    git("commit", "--message", "Update element refs")
