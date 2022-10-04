@@ -19,12 +19,21 @@ variables:
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_IMAGE_ID: "d4e5a7b4138f2ebfbee7f412e325f3cfbda0da1c"
 
+  UPDATE_REFS:
+    value: "no"
+    description: "Only used for the scheduled update-refs job. Value can be yes or no"
+
 stages:
 - track
 - build
 - deploy
 - test
 - reports
+
+.do-not-run-with-update-bot:
+  rules:
+    - if: $UPDATE_REFS == "yes"
+      when: never
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -90,6 +99,8 @@ default:
     paths:
     - logs
     expire_in: '1 week'
+  rules:
+  - !reference [.do-not-run-with-update-bot, rules]
 
 .manual-image-template:
   stage: deploy
@@ -98,6 +109,8 @@ default:
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
+  rules:
+  - !reference [.do-not-run-with-update-bot, rules]
   artifacts:
     when: always
     paths:
@@ -110,7 +123,9 @@ default:
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
 .ostree-template:
-  extends: .deploy-rules
+  rules:
+    - !reference [.do-not-run-with-update-bot, rules]
+    - !reference [.deploy-rules, rules]
   stage: deploy
   script:
   - |
@@ -141,6 +156,8 @@ default:
   when: manual
   needs:
     artifacts: true
+  rules:
+  - !reference [.do-not-run-with-update-bot, rules]
   before_script:
   - dd if=/dev/zero of=flash1.img bs=1M count=64
   - dd if=/dev/zero of=flash0.img bs=1M count=64
@@ -199,6 +216,7 @@ deploy-flatpak:
       ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
       FLAT_MANAGER_REPO: stable
       SUPPORTED_ARCHES: "x86_64 i686 aarch64"
+  - !reference [.do-not-run-with-update-bot, rules]
   variables:
     RUNNER_AFTER_SCRIPT_TIMEOUT: 20m
     TARGETS: flatpak-runtimes.bst
@@ -236,7 +254,9 @@ deploy-oci:
   stage: deploy
   extends:
   - .x86_64
-  - .deploy-rules
+  rules:
+    - !reference [.do-not-run-with-update-bot, rules]
+    - !reference [.deploy-rules, rules]
   needs:
   - job: 'build-x86_64'
     artifacts: false
@@ -272,6 +292,25 @@ vm-image-x86_64:
   variables:
     IMAGE: vm/image.bst
 
+.sysupdate-image:
+  rules:
+  - !reference [.deploy-rules, rules]
+  - !reference [.do-not-run-with-update-bot, rules]
+  # Also allow to manually trigger it for normal branches
+  - if: '$CI_COMMIT_BRANCH'
+    when: manual
+    allow_failure: true
+  stage: deploy
+  script:
+  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) build vm-secure/update-images.bst
+
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+
+  - |
+    if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+        ./utils/publish-sysupdate-to-s3.sh
+    fi
+
 sysupdate-image-x86_64:
   extends:
   - .x86_64
@@ -287,24 +326,6 @@ sysupdate-image-aarch64:
   needs:
   - job: 'build-aarch64'
     artifacts: false
-
-.sysupdate-image:
-  rules:
-  - !reference [.deploy-rules, rules]
-  # Also allow to manually trigger it for normal branches
-  - if: '$CI_COMMIT_REF_NAME'
-    when: manual
-    allow_failure: true
-  stage: deploy
-  script:
-  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) build vm-secure/update-images.bst
-
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
-
-  - |
-    if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./utils/publish-sysupdate-to-s3.sh
-    fi
 
 pinebook-pro-image:
   extends:
@@ -386,6 +407,7 @@ s3-image:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
+  - !reference [.do-not-run-with-update-bot, rules]
 
 openh264-x86_64:
   extends:
@@ -396,6 +418,7 @@ openh264-x86_64:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
+  - !reference [.do-not-run-with-update-bot, rules]
   script:
   - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
   - cd openh264-extension
@@ -418,6 +441,7 @@ s3-image-static:
   - job: test-s3-image
     artifacts: false
   rules:
+  - !reference [.do-not-run-with-update-bot, rules]
   - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "master"
     when: manual
     needs:
@@ -485,6 +509,7 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+  - !reference [.do-not-run-with-update-bot, rules]
 
 
 test-s3-image:
@@ -570,6 +595,7 @@ test-s3-image:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
+  - !reference [.do-not-run-with-update-bot, rules]
 
 test-pinephone-aarch64:
   extends:
@@ -587,6 +613,24 @@ test-pinephone-pro-aarch64:
   needs:
   - job: "pinephone-pro-image"
 
+update_refs:
+  stage: 'track'
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    SSH_SERVER_HOSTKEYS: "ssh.gitlab.gnome.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHG6b3deoYMPwKEu9Sj+y6MBHYYUKQiAnta/go3aNv7R"
+  timeout: '45m'
+  rules:
+    # FIXME: filter out the rest of the jobs on this pipeline
+    - if: $UPDATE_REFS == "yes" && $CI_PIPELINE_SOURCE == "schedule" && $BOT_SSH_PRIVATE_KEY
+    # FIXME: remove me
+    - if: $UPDATE_REFS == "yes" && $CI_COMMIT_REF_NAME == "alatiera/update-refs" && $BOT_SSH_PRIVATE_KEY
+  script:
+    - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
+  after_script:
+    - rm -rf ~/.ssh
+
 pages:
   stage: 'reports'
   needs:
@@ -602,3 +646,4 @@ pages:
     - 'public'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+  - !reference [.do-not-run-with-update-bot, rules]
