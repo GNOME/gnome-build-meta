@@ -13,7 +13,7 @@ variables:
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "3bee7d7876bc776cdf8379ab0713fcd405ac5002"
+  DOCKER_IMAGE_ID: "a470cd0ecc1a005e9456b98845455ed1bcdc6b7b"
 
 stages:
 - track
@@ -533,19 +533,27 @@ test-pinephone-pro-aarch64:
 
 update_refs:
   stage: 'track'
+  tags:
+  - x86_64
+  - gnome-build-meta
   script:
     # Setup ssh
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    # - eval $(ssh-agent -s)
+    # - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ssh.key
+    - chmod 600 ssh.key
+
+    - git config core.sshCommand "ssh -i $(pwd)/ssh.key -F /dev/null"
 
     # FIXME: use static knownkeys with a var
     # https://gitlab.com/gitlab-examples/ssh-private-key/-/blob/master/.gitlab-ci.yml#L38
     - ssh-keyscan gitlab.gnome.org >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
 
-    - ssh -Tv git@gitlab.gnome.org
+    - ssh -i $(pwd)/ssh.key -Tv git@gitlab.gnome.org
 
     - git config --global user.email "sysadmin@gnome.org"
     - git config --global user.name "gnomebot"
@@ -553,7 +561,11 @@ update_refs:
     - python3 utils/check-open-mrs.py
     - python3 utils/update-refs.py
 
+    - git remote set-url --push origin git@gitlab.gnome.org:GNOME/gnome-build-meta.git
+
     - git push -o merge_request.create -o merge_request.assign=44433 -o merge_request.remove_source_branch origin HEAD
+  after_script:
+    - rm ssh.key
 
 
 pages:
