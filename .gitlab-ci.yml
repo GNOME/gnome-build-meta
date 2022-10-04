@@ -531,6 +531,17 @@ test-pinephone-pro-aarch64:
   - aarch64
   - gnome-build-meta
 
+update_refs:
+  stage: 'track'
+  script:
+    - git config --global user.email "sysadmin@gnome.org"
+    - git config --global user.name "gnomebot"
+
+    - python3 utils/check-open-mrs.py
+    - python3 utils/update-refs.py
+
+    - git push -o merge_request.create -o merge_request.assign=44433 -o merge_request.remove_source_branch origin HEAD
+
 
 pages:
   stage: 'reports'

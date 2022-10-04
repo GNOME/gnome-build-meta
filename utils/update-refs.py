@@ -41,3 +41,6 @@ git(
 git("add", "--update", ".")
 
 git("commit", "--message", "Update element refs")
+
+# FIXME: remove this``
+git("show")
