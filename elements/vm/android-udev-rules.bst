@@ -3,6 +3,7 @@ kind: manual
 sources:
 - kind: tar
   url: github_files:M0Rf30/android-udev-rules/archive/20210425.tar.gz
+  ref: bf0456fff58d0246b505c18b215ef198820c44fdff9e671d586951ee1049f880
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst

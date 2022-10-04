@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: github_files:flatpak/flatpak/releases/download/1.14.0/flatpak-1.14.0.tar.xz
+  ref: 8e276973770ea24ddf2597ad4aecd36b98393e6bde91e48e1743aaca67f27815
 
 build-depends:
 - core-deps/python-pyparsing.bst

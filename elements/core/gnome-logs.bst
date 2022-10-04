@@ -4,6 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-logs.git
   track: master
+  ref: gnome-logs-43.0-2-g766c0e482eaea9850ba40d47f1f0c12e6fafd1b1
 
 build-depends:
 - sdk/appstream-glib.bst

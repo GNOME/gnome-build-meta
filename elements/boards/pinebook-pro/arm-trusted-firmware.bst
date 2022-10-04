@@ -3,6 +3,7 @@ kind: manual
 sources:
 - kind: tar
   url: github_files:ARM-software/arm-trusted-firmware/archive/v2.6.tar.gz
+  ref: 3905a6d6affa84fb629d1565a4e4bdc82812bba49a457b8249ab445eeb28011b
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

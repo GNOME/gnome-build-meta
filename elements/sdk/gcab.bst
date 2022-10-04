@@ -3,6 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gcab.git
   track: master
+  ref: v1.5-1-gad0baea50359c1978a9224ee60bf98d97bfb991f
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

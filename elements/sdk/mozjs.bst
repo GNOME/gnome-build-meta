@@ -4,6 +4,7 @@ sources:
 - kind: tar
   url: https://ftp.mozilla.org/pub/firefox/releases/102.1.0esr/source/firefox-102.1.0esr.source.tar.xz
   base-dir: 'firefox-102.1.0'
+  ref: 637b6e727d1b815bbc6eb39aeb04c6e144056eeb3c628b298cb16deb3b579460
 - kind: patch
   path: files/mozjs/0001-Bug-1776254-Install-ProfilingCategoryList.h.patch
 - kind: patch

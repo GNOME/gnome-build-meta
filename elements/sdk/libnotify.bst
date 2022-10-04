@@ -4,6 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libnotify.git
   track: master
+  ref: 0.8.1-1-g80121a3b8c0118535545a9e37cbe4d877b1388a3
 
 build-depends:
 - sdk/gobject-introspection.bst

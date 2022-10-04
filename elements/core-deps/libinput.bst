@@ -20,3 +20,4 @@ variables:
 sources:
 - kind: tar
   url: freedesktop_software:libinput/libinput-1.19.4.tar.xz
+  ref: ff33a570b5a936c81e6c08389a8581c2665311d026ce3d225c88d09c49f9b440

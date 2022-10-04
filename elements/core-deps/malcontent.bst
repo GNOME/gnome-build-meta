@@ -3,6 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: freedesktop_files:pwithnall/malcontent/-/archive/0.11.0/malcontent-0.11.0.tar.gz
+  ref: e6b94831afe255818a881813ed161bd75e713cca0a052d909ec7e683f0e76960
 
 build-depends:
 - core-deps/glib-testing.bst
