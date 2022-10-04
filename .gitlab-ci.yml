@@ -87,7 +87,7 @@ default:
 
 .deploy-rules:
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
+  - if: $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
@@ -316,7 +316,7 @@ s3-image:
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
+  - if: $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
   - if: $CI_COMMIT_TAG
@@ -328,7 +328,7 @@ openh264-x86_64:
   needs: []
   allow_failure: true
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
+  - if: $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
     when: manual
@@ -351,7 +351,7 @@ s3-image-static:
     artifacts: false
   allow_failure: true
   rules:
-  - if: $EMERGENCY || $BST_TRACK_TAGS != "false"
+  - if: $BST_TRACK_TAGS != "false"
     when: never
   - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
     when: manual
