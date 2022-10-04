@@ -3,6 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:simple-scan.git
   track: master
+  ref: 42.5-25-g19f5f8c7e68c4fed2b1e8bf569666227421a71d1
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

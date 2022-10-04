@@ -4,6 +4,7 @@ sources:
 - kind: tar
   base-dir: ''
   url: freedesktop_software:accountsservice/accountsservice-22.08.8.tar.xz
+  ref: 909997a76919fe7dc138a9a01cea70bd622d5a932dbc9fb13010113023a7a391
 
 build-depends:
 - sdk/gobject-introspection.bst

@@ -3,6 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libmanette.git
   track: master
+  ref: 0.2.6-3-g003c2e84d95357bbbef72fb395ef85f1650097a3
 
 build-depends:
 - sdk/gobject-introspection.bst

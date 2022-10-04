@@ -2,7 +2,8 @@ kind: manual
 
 sources:
 - kind: tar
-  url: https://ftp.denx.de/pub/u-boot/u-boot-2022.07.tar.bz2 
+  url: https://ftp.denx.de/pub/u-boot/u-boot-2022.07.tar.bz2
+  ref: 92b08eb49c24da14c1adbf70a71ae8f37cc53eeb4230e859ad8b6733d13dcf5e
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

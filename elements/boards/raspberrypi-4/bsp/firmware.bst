@@ -8,6 +8,7 @@ build-depends:
 sources:
 - kind: tar
   url: github_files:raspberrypi/firmware/archive/refs/tags/1.20220830.tar.gz
+  ref: fcfa24ce0ea26c60d1a140d4220cb803269c38235a08e2b004f458d4692cb97f
 
 config:
   install-commands:

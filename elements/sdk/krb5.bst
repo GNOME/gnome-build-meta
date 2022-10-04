@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: kerberos:dist/krb5/1.20/krb5-1.20.tar.gz
+  ref: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst

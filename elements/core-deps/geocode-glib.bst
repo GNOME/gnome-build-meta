@@ -4,6 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:geocode-glib.git
   track: master
+  ref: 3.26.4-0-g210abe69d68e38947106f4680631c369b0c23189
 
 build-depends:
 - sdk/gobject-introspection.bst

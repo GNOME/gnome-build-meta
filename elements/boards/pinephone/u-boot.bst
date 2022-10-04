@@ -4,6 +4,7 @@ sources:
 - kind: git
   url: gitlab:pine64-org/u-boot.git
   track: pinephone-2021-06-22
+  ref: 378121422954a58bc0072b0c8965fdc7b2332e55
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
@@ -33,5 +34,5 @@ config:
   install-commands:
   - mv u-boot.img idbloader.img
   - install -Dm644 -t "%{install-root}%{indep-libdir}/u-boot/%{board}" idbloader.img
-  - mv u-boot-sunxi-with-spl.fit.itb u-boot.itb      
+  - mv u-boot-sunxi-with-spl.fit.itb u-boot.itb
   - install -Dm644 -t "%{install-root}%{indep-libdir}/u-boot/%{board}" u-boot.itb
