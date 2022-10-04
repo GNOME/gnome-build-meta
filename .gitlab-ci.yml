@@ -19,12 +19,23 @@ variables:
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_IMAGE_ID: "41a9e52d9ed2950096d86d9e4b8ad0fb5898558c"
 
+  # RUN_THIS_STAGE_ONLY: "track-refs"
+
 stages:
-- track
+- track-refs
 - build
 - deploy
 - test
 - reports
+
+.stage-only-rules:
+  rules:
+    # Allow forcing a specific stage to run, useful for scheduled pipelines to save up runners.
+    # Set this to the stage you want to trigger in a scheduled pipeline
+    # Example: RUN_THIS_STAGE_ONLY="track-refs"
+    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
+      when: never
+    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -83,6 +94,13 @@ default:
 .build-template:
   stage: build
   interruptible: true
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  # We want still execute by default even if neither of the stage rules match.
+  # If we add a when: always/on_success rule it has the chance of triggering when we don't
+  # expect it due to how gitlab behaves, so use a variable that will always exist
+  # as a fake: always kind of rule
+  - if: "$CI_COMMIT_REF_NAME"
   script:
   - $CI_PROJECT_DIR/.gitlab-ci/build_elements.sh
   # Store artifacts so we can inspect build failures
@@ -108,8 +126,11 @@ default:
 
 .manual-image-template:
   stage: deploy
-  when: manual
-  allow_failure: true
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  - if: "$CI_COMMIT_REF_NAME"
+    when: manual
+    allow_failure: true
   script:
   - !reference [".arch_opt", "script"]
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build "${IMAGE}"
@@ -122,11 +143,13 @@ default:
 
 .deploy-rules:
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
 .ostree-template:
-  extends: .deploy-rules
+  rules:
+    - !reference [.deploy-rules, rules]
   stage: deploy
   script:
   - |
@@ -156,9 +179,13 @@ default:
   extends:
   - .aarch64
   stage: test
-  when: manual
   needs:
     artifacts: true
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  - if: "$CI_COMMIT_REF_NAME"
+    when: manual
+    allow_failure: true
   before_script:
   - dd if=/dev/zero of=flash1.img bs=1M count=64
   - dd if=/dev/zero of=flash0.img bs=1M count=64
@@ -257,6 +284,7 @@ deploy-flatpak:
   - job: 'build-aarch64'
     artifacts: false
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
     variables:
       FLAT_MANAGER_SERVER: https://flat-manager.gnome.org/
@@ -314,7 +342,8 @@ deploy-oci:
   stage: deploy
   extends:
   - .x86_64
-  - .deploy-rules
+  rules:
+    - !reference [.deploy-rules, rules]
   needs:
   - job: 'build-x86_64'
     artifacts: false
@@ -449,6 +478,7 @@ s3-image:
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
 
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
@@ -459,6 +489,7 @@ openh264-x86_64:
   needs: []
   allow_failure: true
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
   script:
@@ -483,6 +514,7 @@ s3-image-static:
   - job: test-openqa-installer
     artifacts: false
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "master"
     when: manual
     needs:
@@ -516,6 +548,7 @@ s3-image-static-stable:
   - job: s3-image
     artifacts: false
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_TAG
   script:
   - |
@@ -577,6 +610,7 @@ cve_report:
     paths:
     - cve-reports
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
   - if: $CI_COMMIT_REF_NAME != "master"
     when: "manual"
@@ -600,6 +634,7 @@ test-openqa-installer:
     curl --fail --get --location $S3_ISO_IMAGE_URL --output /data/factory/iso/installer.iso
     sha256sum /data/factory/iso/installer.iso
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
@@ -624,6 +659,7 @@ test-openqa-desktop:
     disk_size_gb=15
     dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
   allow_failure: true
@@ -644,6 +680,21 @@ test-pinephone-pro-aarch64:
   needs:
   - job: "pinephone-pro-image"
 
+update_refs:
+  stage: "track-refs"
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    SSH_SERVER_HOSTKEYS: "ssh.gitlab.gnome.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHG6b3deoYMPwKEu9Sj+y6MBHYYUKQiAnta/go3aNv7R"
+  timeout: '45m'
+  rules:
+    - !reference [".stage-only-rules", "rules"]
+  script:
+    - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
+  after_script:
+    - rm -rf ~/.ssh
+
 pages:
   stage: 'reports'
   needs:
@@ -658,4 +709,5 @@ pages:
     paths:
     - 'public'
   rules:
+  - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
