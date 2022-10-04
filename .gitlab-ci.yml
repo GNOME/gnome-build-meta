@@ -39,9 +39,6 @@ default:
 
 .build-template:
   stage: build
-  needs:
-  - job: 'track'
-    optional: true
   interruptible: true
   script:
   - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
@@ -77,9 +74,6 @@ default:
 
 .manual-image-template:
   stage: deploy
-  needs:
-  - job: 'track'
-    optional: true
   when: manual
   allow_failure: true
   script:
@@ -127,25 +121,6 @@ default:
 # "Real" CI jobs
 #
 
-track:
-  extends: .arch-indep
-  stage: track
-  interruptible: true
-  timeout: 15m
-  script:
-  - 'sed -i "s/track-tags: false/track-tags: ${BST_TRACK_TAGS}/" project.conf'
-  - ${BST} track --deps all core.bst flatpak-runtimes.bst vm/image.bst boards/pinebook-pro/image.bst boards/pinephone/image.bst boards/pinephone-pro/image.bst  boards/rock64/image.bst boards/raspberrypi-4/image.bst vm/repo-devel.bst iso/image.bst
-  - echo $CI_JOB_ID > track-job.id
-  retry: 2
-  # only run on branches targeting master
-  rules:
-  - if: $FLATPAK_BRANCH == 'master' && $CI_MERGE_REQUEST_ID == null
-  artifacts:
-    paths:
-    - project.refs
-    - track-job.id
-
-
 build-x86_64:
   extends:
   - .build-template
@@ -167,8 +142,6 @@ generate-deploy-config:
   - .arch-indep
   - .deploy-rules
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
   - job: 'build-i386'
@@ -177,7 +150,6 @@ generate-deploy-config:
     artifacts: false
   stage: deploy-config
   script:
-  - test -f track-job.id && TRACK_JOB_ID=$(cat track-job.id)
   - |
     case "$FLATPAK_BRANCH" in
       master)
@@ -204,7 +176,6 @@ generate-deploy-config:
     cat > flatpak-variables.yml << END
     variables:
       BST: '$BST'
-      TRACK_JOB_ID: '$TRACK_JOB_ID'
       FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'
       FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
       TARGETS: flatpak-runtimes.bst
@@ -245,8 +216,6 @@ vm-image-aarch64:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-aarch64'
     artifacts: false
   variables:
@@ -257,8 +226,6 @@ vm-image-x86_64:
   - .manual-image-template
   - .x86_64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
   variables:
@@ -269,8 +236,6 @@ pinebook-pro-image:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-aarch64'
     artifacts: false
   variables:
@@ -281,8 +246,6 @@ pinephone-image:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: "track"
-    optional: true
   - job: "build-aarch64"
     artifacts: false
   variables:
@@ -293,8 +256,6 @@ pinephone-pro-image:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: "track"
-    optional: true
   - job: "build-aarch64"
     artifacts: false
   variables:
@@ -305,8 +266,6 @@ rock64-image:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-aarch64'
     artifacts: false
   variables:
@@ -317,8 +276,6 @@ raspberrypi-4-image:
   - .manual-image-template
   - .aarch64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-aarch64'
     artifacts: false
   variables:
@@ -331,8 +288,6 @@ iso-installer-x86_64:
   variables:
     IMAGE: iso/image.bst
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
 
@@ -340,8 +295,6 @@ s3-image:
   extends: .x86_64
   stage: deploy
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
   script:
@@ -417,8 +370,6 @@ ostree-x86_64:
   - .ostree-template
   - .x86_64
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
 
@@ -427,8 +378,6 @@ cve_report:
   extends: .x86_64
   stage: 'deploy'
   needs:
-  - job: 'track'
-    optional: true
   - job: 'build-x86_64'
     artifacts: false
   script:

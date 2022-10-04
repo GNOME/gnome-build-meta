@@ -48,7 +48,6 @@ flatmgr-prepare:
   extends: .arch-indep
   stage: prepare
   script:
-  - test -n "$TRACK_JOB_ID" && curl -O $CI_PROJECT_URL/-/jobs/$TRACK_JOB_ID/artifacts/raw/project.refs
   - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   artifacts:
     paths:
