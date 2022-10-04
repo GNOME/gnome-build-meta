@@ -13,7 +13,7 @@ variables:
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "a680da765c4e040ecd9bf587824117f91e451fcf"
+  DOCKER_IMAGE_ID: "7856d472b67eb4fede20cc4847ab184511f1adc9"
 
 stages:
 - track
@@ -582,6 +582,62 @@ test-pinephone-pro-aarch64:
   - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
   needs:
   - job: "pinephone-pro-image"
+
+update_refs:
+  stage: 'track'
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    SSH_SERVER_HOSTKEYS: "ssh.gitlab.gnome.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHG6b3deoYMPwKEu9Sj+y6MBHYYUKQiAnta/go3aNv7R"
+  timeout: '20m'
+  rules:
+    # FIXME: filter out the rest of the jobs on this pipeline
+    - if: $UPDATE_REFS == "yes" && $CI_PIPELINE_SOURCE == "schedule" && $BOT_SSH_PRIVATE_KEY
+    # FIXME: remove me
+    - if: $CI_COMMIT_REF_NAME == "alatiera/update-refs" && $BOT_SSH_PRIVATE_KEY
+  script:
+    # Setup ssh
+    - eval $(ssh-agent -s)
+    - |-
+      if [ -z $BOT_SSH_PRIVATE_KEY ]; then
+        echo "KEY IS EMPTY"
+        exit 1
+      fi
+
+    - echo "$BOT_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+    - echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - cat ~/.ssh/known_hosts
+
+    - ssh -Tv git@ssh.gitlab.gnome.org
+
+    - git config --global user.email "sysadmin@gnome.org"
+    - git config --global user.name "gnome-build-meta-bot"
+
+    - OPEN_MRS=$(gitlab project-merge-request list --project-id $CI_PROJECT_ID --author-id 121419 --state opened)
+    - echo $OPEN_MRS
+    # If the bot has already opened a merge request, abort
+    - |
+      if [ ! -z "$OPEN_MRS" ]; then
+        echo "There's already an update MR open by me!"
+        exit 0
+      fi
+
+    - python3 utils/update-refs.py --new-branch
+
+    - git show
+
+    - git remote set-url --push origin git@ssh.gitlab.gnome.org:GNOME/gnome-build-meta.git
+
+    - git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin HEAD
+  after_script:
+    - rm -rf ~/.ssh
+
 
 pages:
   stage: 'reports'
