@@ -89,7 +89,7 @@ config:
         size = 500M
     }
     image root.img {
-        ext4  {
+        btrfs {
             label = "root"
             use-mke2fs = true
         }
