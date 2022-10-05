@@ -2,10 +2,9 @@ include: .gitlab-ci/arch.yml
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_STRICT: '--no-strict'
   BST_TRACK_TAGS: 'false'
-  BST_NO_PUSH: "bst $BST_STRICT --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
-  BST: "bst $BST_STRICT --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
+  BST_NO_PUSH: "bst --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
+  BST: "bst --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
   FLATPAK_BRANCH: master
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
@@ -66,14 +65,7 @@ default:
          ;;
     esac
 
-  - |
-    if test $FLATPAK_BRANCH == 'master' &&
-        git diff --name-only origin/master | egrep -q "junction.refs|freedestkop-sdk.bst"; then
-      echo Forcing strict build
-      FORCE_STRICT=--strict
-    fi
-
-  - ${BST} ${FORCE_STRICT} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
