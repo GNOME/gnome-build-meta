@@ -44,7 +44,7 @@ config:
            --add ostree \
            --add plymouth \
            --add eos-repartition \
-           --install 'fsck.ext4' \
+           --install 'fsck.xfs' \
            "%{install-root}/usr/lib/modules/${version}/initramfs"
 
   - |
