@@ -118,6 +118,7 @@ config:
     rm -rf genimage.cfg images/ tmp/
 
   # FIXME: Propose support for part attrs in genimage project
+  # This is needed for eos-installer to recognize the image
   - sfdisk --part-attrs %{install-root}/disk.img 2 55
 
   - xz ${XZFLAGS} %{install-root}/disk.img

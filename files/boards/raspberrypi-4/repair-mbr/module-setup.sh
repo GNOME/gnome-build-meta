@@ -4,7 +4,6 @@ check() {
 
 depends() {
     echo systemd
-    echo eos-repartition
 }
 
 install() {

@@ -20,6 +20,7 @@ depends:
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
+- vm/systemd-repart-config.bst
 
 - vm/fish.bst
 - vm/nss-mdns.bst

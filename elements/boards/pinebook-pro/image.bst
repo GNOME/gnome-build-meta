@@ -115,7 +115,4 @@ config:
     genimage --rootpath "%{sysroot}" --inputpath "%{indep-libdir}/u-boot/%{board}"
 
   - |
-    sfdisk --part-attrs /genimage/images/disk.img 2 55
-
-  - |
     qemu-img convert -O qcow2 -f raw /genimage/images/disk.img "%{install-root}/disk.qcow2"

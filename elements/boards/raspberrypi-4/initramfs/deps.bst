@@ -17,5 +17,4 @@ depends:
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
 - core-deps/libostree.bst
-- vm/eos-repartition.bst
 - boards/raspberrypi-4/repair-mbr.bst

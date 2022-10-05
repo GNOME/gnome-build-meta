@@ -14,5 +14,4 @@ depends:
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - core-deps/libostree.bst
 - vm/plymouth-gnome-theme.bst
-- vm/eos-repartition.bst
 

@@ -115,6 +115,5 @@ config:
   - | 
     cd /genimage
     genimage --rootpath "%{sysroot}" --inputpath "%{indep-libdir}/u-boot/%{board}"
-    sfdisk --part-attrs /genimage/images/disk.img 2 55
     mv /genimage/images/disk.img %{install-root}/disk.img
     xz ${XZFLAGS} %{install-root}/disk.img
