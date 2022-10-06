@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd/releases/download/1.7.2/fwupd-1.7.2.tar.xz
+  url: github_files:fwupd/fwupd/releases/download/1.7.10/fwupd-1.7.10.tar.xz
 
-  ref: 8632df69c3bafc59387cdcb517c3ce31a597a09026e44f5907d8384671b9f834
+  ref: 52e811677073f0303f9f5d056ead5f866f782594281cf4e592f396cdc6cf8a43
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
