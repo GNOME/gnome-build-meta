@@ -24,12 +24,4 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   -X POST machines/ \
   name=gitlab-runner-$worker_class \
   backend=qemu \
-  settings[ARCH]=x86_64 \
-  settings[PART_TABLE_TYPE]=gpt \
-  settings[QEMUCPU]=host \
-  settings[QEMUCPUS]=2 \
-  settings[QEMURAM]=2560 \
-  settings[QEMUVGA]=virtio \
-  settings[UEFI]=1 \
-  settings[UEFI_PFLASH_CODE]=/usr/share/qemu/ovmf-x86_64-code.bin \
   settings[WORKER_CLASS]=$worker_class | tee --append openqa.log | jq -e .id > /tmp/machine_id
