@@ -4,16 +4,22 @@
 #
 # On success, write the job ID returned by server to stdout.
 
-set -eu
+set -e
 
 worker_class=$1
 version=$2
+
+if [ -n "$3" ]; then
+    casedir="$3"
+else
+    casedir="$(pwd)"
+fi
 
 openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   --host $OPENQA_HOST \
   -X POST isos \
   ARCH=x86_64 \
-  CASEDIR=$(pwd) \
+  CASEDIR="$casedir" \
   DISTRI=gnomeos \
   FLAVOR=iso \
   ISO=installer.iso \
