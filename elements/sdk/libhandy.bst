@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libhandy.git
   track: main
-  ref: 1.8.0-5-gc4734bb05a2c122ae56e98750536c30cd6aabcd5
+  ref: 1.8.0-6-gc63acce9e16032c81c85c0d214fcd6bd69bab356
 
 build-depends:
 - sdk-deps/gi-docgen.bst
