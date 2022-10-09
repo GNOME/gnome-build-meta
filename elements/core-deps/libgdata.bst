@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libgdata.git
   track: libgdata-0-18
-  ref: 0.18.1-20-g8b192f8b8424794d6a202e4578dd7f94670d3bc0
+  ref: 0.18.1-21-gd5a8bad2f27800b4fe6ab508485a8420082ae44b
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
