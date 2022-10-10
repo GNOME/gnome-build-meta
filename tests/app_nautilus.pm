@@ -5,8 +5,8 @@ use testapi;
 use gnomeutils;
 
 sub run {
-    start_app('gnome-control-center');
-    assert_screen('app_settings_startup', 10);
+    start_app('nautilus');
+    assert_screen('app_nautilus_home', 10);
     close_app;
 }
 
