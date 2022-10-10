@@ -17,7 +17,6 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/icu.bst
