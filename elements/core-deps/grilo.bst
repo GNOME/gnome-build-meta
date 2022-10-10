@@ -13,5 +13,5 @@ depends:
 - core-deps/totem-pl-parser.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libsoup-2.4.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
