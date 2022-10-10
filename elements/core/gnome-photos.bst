@@ -17,7 +17,6 @@ build-depends:
 
 runtime-depends:
 - core-deps/tracker-miners.bst
-- core-deps/grilo-plugins.bst
 - sdk/adwaita-icon-theme.bst
 
 depends:
@@ -26,9 +25,7 @@ depends:
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/grilo.bst
 - core-deps/libdazzle.bst
-- core-deps/libgdata.bst
 - core-deps/libportal.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
