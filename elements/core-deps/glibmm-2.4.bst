@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:glibmm.git
   track: glibmm-2-66
-  ref: 2.66.5-1-g34fa010d4722628c5bc270dca904491e912d27c1
+  ref: 2.66.5-2-g720bb37bc9d1bdcc36be9c8b8ac2222f49a32250
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
