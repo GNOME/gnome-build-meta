@@ -5,7 +5,7 @@ use testapi;
 use gnomeutils;
 
 sub run {
-    start_app('gnome-disk-utility');
+    start_app('gnome-disks');
     assert_screen('app_gnome_disk_utility_home', 10);
     close_app;
 }

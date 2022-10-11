@@ -5,7 +5,7 @@ use testapi;
 use gnomeutils;
 
 sub run {
-    start_app('gnome-console');
+    start_app('kgx');
     assert_screen('app_gnome_console_home', 10);
     close_app;
 }
