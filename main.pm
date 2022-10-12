@@ -23,8 +23,18 @@ autotest::loadtest("tests/app_gnome_contacts.pm");
 autotest::loadtest("tests/app_gnome_disk_utility.pm");
 autotest::loadtest("tests/app_gnome_font_viewer.pm");
 autotest::loadtest("tests/app_gnome_weather.pm");
+autotest::loadtest("tests/app_gnome_logs.pm");
+autotest::loadtest("tests/app_gnome_maps.pm");
+autotest::loadtest("tests/app_gnome_music.pm");
+autotest::loadtest("tests/app_gnome_photos.pm");
+autotest::loadtest("tests/app_gnome_software.pm");
+autotest::loadtest("tests/app_gnome_system-monitor.pm");
+autotest::loadtest("tests/app_gnome_text_editor.pm");
 autotest::loadtest("tests/app_nautilus.pm");
 autotest::loadtest("tests/app_settings.pm");
 autotest::loadtest("tests/app_simple_scan.pm");
+autotest::loadtest("tests/app_totem.pm");
+autotest::loadtest("tests/app_yelp.pm");
+autotest::loadtest("tests/gnome_system_monitor.pm");
 
 1;
