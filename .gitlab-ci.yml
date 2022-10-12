@@ -322,7 +322,7 @@ s3-image:
   rules:
   - if: $BST_TRACK_TAGS != "false"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+  - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
 openh264-x86_64:
@@ -334,7 +334,7 @@ openh264-x86_64:
   rules:
   - if: $BST_TRACK_TAGS != "false"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+  - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
   script:
   - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
@@ -357,7 +357,7 @@ s3-image-static:
   rules:
   - if: $BST_TRACK_TAGS != "false"
     when: never
-  - if: $CI_COMMIT_REF_NAME == "master" && $CI_PIPELINE_SOURCE == "schedule"
+  - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
   script:
   - |
