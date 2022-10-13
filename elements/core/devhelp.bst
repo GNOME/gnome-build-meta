@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:devhelp.git
   track: main
-  ref: 43.0-2-ga52ea7ab208ca470f39b4b8271552de9f85e7f20
+  ref: 43.0-3-g1c9537ec861affe1a2947169a03a05dea0377080
 
 build-depends:
 - sdk/appstream-glib.bst
