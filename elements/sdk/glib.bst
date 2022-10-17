@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:glib.git
-  track: main
-  ref: 2.74.0-106-gc16f52403437829e10137cb8c85e1d8aafbb69f8
+  url: gnome_gitlab:xclaesse/glib.git
+  track: fix-visibility
+  ref: 2.56.0-8021-g23da2dad906d62fbbcbad029136c7197c65551a9
   submodules:
     subprojects/gvdb:
       checkout: true
