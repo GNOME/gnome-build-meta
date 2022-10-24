@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:rygel.git
   track: master
-  ref: rygel-0.42.0-3-gf403566e8dc06501cfbf2e036869a6f2384cf392
+  ref: rygel-0.42.0-4-gc6833a198ffea691a66074edef97d7247875be3a
 
 build-depends:
 - sdk/vala.bst
