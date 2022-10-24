@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libsoup/2.74/libsoup-2.74.2.tar.xz
-  ref: f0a427656e5fe19e1df71c107e88dfa1b2e673c25c547b7823b6018b40d01159
+  url: gnome_downloads:libsoup/2.74/libsoup-2.74.3.tar.xz
+  ref: e4b77c41cfc4c8c5a035fcdc320c7bc6cfb75ef7c5a034153df1413fa1d92f13
 build-depends:
 - sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst

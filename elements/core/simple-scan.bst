@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:simple-scan/42/simple-scan-42.1.tar.xz
-  ref: 859bc0611c1769b5bdaba9639deed359f50474c2eecf58bbbfd7ce21911b2226
+  url: gnome_downloads:simple-scan/42/simple-scan-42.5.tar.xz
+  ref: 05f5dfa4e9e206efa9d404c9861dd7c442091793e734c41719739917250e4050
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

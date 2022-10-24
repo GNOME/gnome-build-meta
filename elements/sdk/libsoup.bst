@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libsoup/3.2/libsoup-3.2.0.tar.xz
-  ref: 2832370698ca8f9fbf174c345b73d89b60561103a626c2df70726b0707f79bd3
+  url: gnome_downloads:libsoup/3.2/libsoup-3.2.1.tar.xz
+  ref: b1eb3d2c3be49fbbd051a71f6532c9626bcecea69783190690cd7e4dfdf28f29
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

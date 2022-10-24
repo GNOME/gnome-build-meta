@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:pyatspi/2.45/pyatspi-2.45.90.tar.xz
-  ref: 30ebf8fc1cd61328734a5cb31b64f65b9a337154994df93a5091d74e1e8cefb9
+  url: gnome_downloads:pyatspi/2.46/pyatspi-2.46.0.tar.xz
+  ref: d45489cf3d47aa150b1a35e8949b3b31035f8c2075e588d26b6efc625970c62e
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
