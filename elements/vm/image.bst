@@ -121,4 +121,8 @@ config:
   # This is needed for eos-installer to recognize the image
   - sfdisk --part-attrs %{install-root}/disk.img 2 55
 
+  # When the 59th bit is set, systemd will automatically grow
+  # the partition
+  - sfdisk --part-attrs %{install-root}/disk.img 2 59
+
   - xz ${XZFLAGS} %{install-root}/disk.img
