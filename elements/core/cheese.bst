@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:cheese.git
   track: master
-  ref: 43.alpha-8-g1de47dbc95db445e31fdc674ea4208f53699f81a
+  ref: 43.alpha-9-gbcb66c70f66210c5feca76af50f13c1d62edfbe1
 
 build-depends:
 - sdk/appstream-glib.bst
