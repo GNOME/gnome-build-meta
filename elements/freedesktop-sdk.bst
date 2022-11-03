@@ -7,6 +7,8 @@ sources:
   ref: freedesktop-sdk-22.08.2.1-135-g2901dcd26c6f2dcaf25c416536d9a6c30b28bf03
 - kind: patch
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
+- kind: patch
+  path: files/freedesktop-sdk/libnghttp2-1.50.patch
 config:
   options:
     target_arch: '%{arch}'
