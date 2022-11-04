@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:libvirt-8.7.0.tar.xz
-  ref: 72e63a0f27911e339afd8269c6e8b029721893940edec11e09e471944f60e538
+  url: libvirt:libvirt-8.9.0.tar.xz
+  ref: c213575aaa636d41a6011ef59e5f088643b721e1ab1ca3ea05c176c05e9579a2
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:
@@ -79,7 +79,6 @@ variables:
     -Dstorage_iscsi=enabled
     -Dstorage_iscsi_direct=disabled
     -Dstorage_rbd=disabled
-    -Dstorage_sheepdog=disabled
     -Dstorage_vstorage=disabled
     -Dstorage_zfs=disabled
     -Dwireshark_dissector=disabled
