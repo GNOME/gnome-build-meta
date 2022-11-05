@@ -4,7 +4,7 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/22.08
   track-tags: true
-  ref: freedesktop-sdk-22.08.2.1-135-g2901dcd26c6f2dcaf25c416536d9a6c30b28bf03
+  ref: freedesktop-sdk-22.08.3-0-g1bc55fc2a435765db7f8d297c95d59c76bc63b7b
 - kind: patch
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
 - kind: patch
