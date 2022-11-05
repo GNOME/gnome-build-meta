@@ -14,7 +14,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
-- core-deps/libgdata.bst
 - core-deps/libgphoto2.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
@@ -37,6 +36,10 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dgoogle=false
 
 public:
   bst:

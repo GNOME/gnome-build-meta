@@ -12,7 +12,6 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gom.bst
 - core-deps/grilo.bst
-- core-deps/libgdata.bst
 - core-deps/libmediaart.bst
 - core-deps/totem-pl-parser.bst
 - sdk/json-glib.bst

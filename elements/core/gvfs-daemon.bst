@@ -8,7 +8,6 @@ runtime-depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
-- core-deps/libgdata.bst
 - core-deps/libgphoto2.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
