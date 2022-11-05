@@ -5,9 +5,9 @@ Before=run-mount-eosimages.mount
 
 [Service]
 Type=oneshot
-ExecStart=losetup -f -P /run/mount/installercd/eosimages.gpt.img
+ExecStart=/usr/bin/udisksctl loop-setup -rf /run/mount/installercd/eosimages.gpt.img
 RemainAfterExit=yes
-ExecStop=bash -c 'losetup -d $(losetup -j /run/mount/installercd/eosimages.gpt.img -O name -n)'
+ExecStop=bash -c '/usr/bin/udisksctl loop-delete -b $(losetup -j /run/mount/installercd/eosimages.gpt.img -O name -n)'
 
 [Install]
 RequiredBy=run-mount-eosimages.mount
