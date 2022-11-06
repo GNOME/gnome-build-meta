@@ -20,3 +20,5 @@ depends:
 - custom/iw.bst
 - freedesktop-sdk.bst:components/usbutils.bst
 - custom/testing-wallpaper.bst
+- custom/gsettings/gsettings.bst
+- custom/gnome_extensions/extension_installer/extension_installer.bst

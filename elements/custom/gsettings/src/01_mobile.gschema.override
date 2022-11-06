@@ -1,0 +1,7 @@
+[org.gnome.desktop.interface]
+text-scaling-factor=1.5
+scaling-factor=1
+
+[org.gnome.shell]
+disable-extension-version-validation=true
+enabled-extensions=['gnome-shell-extension-maximized-by-default@axe1.github.com', 'app-grid-tweaks@Selenium-H']
