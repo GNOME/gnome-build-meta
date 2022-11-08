@@ -14,7 +14,7 @@ public:
     - rm -r '%{debugdir}%{libdir}/samba'
     - rm -r '%{debugdir}%{libdir}/sane'
 
-    - rm '%{debugdir}%{libdir}/libaom.so.3.5.0.debug'
+    - rm '%{debugdir}%{libdir}/libaom.so.3.4.0.debug'
     - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
     - rm '%{debugdir}%{libdir}/libprotoc.so.32.0.2.debug'
     - rm '%{debugdir}%{libdir}/libprotobuf.so.32.0.2.debug'
