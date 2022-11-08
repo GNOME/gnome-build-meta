@@ -73,8 +73,10 @@ depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/alsa-plugins.bst
 - freedesktop-sdk.bst:components/aspell.bst
+- freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/cracklib.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/curl.bst
