@@ -1,12 +1,12 @@
 kind: cmake
+
 sources:
 - kind: git_tag
-  url: https://gitlab.matrix.org/matrix-org/olm
-  track: 3.2.10
+  url: github:google/re2.git
+  track: main
+  ref: 2022-06-01-18-g7a65faf439295e941baa6640a717d89c1f13e9cd
 
-  ref: 3.2.10-0-g9908862979147a71dc6abaecd521be526ae77be1
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

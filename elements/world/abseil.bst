@@ -1,12 +1,12 @@
 kind: cmake
+
 sources:
 - kind: git_tag
-  url: https://gitlab.matrix.org/matrix-org/olm
-  track: 3.2.10
+  url: github:abseil/abseil-cpp.git
+  track: master
+  ref: b4a4a6b01fde193fde1be77bcec1712e82faf6a5
 
-  ref: 3.2.10-0-g9908862979147a71dc6abaecd521be526ae77be1
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
-
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
