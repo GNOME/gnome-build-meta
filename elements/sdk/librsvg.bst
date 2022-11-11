@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.0-360-g05542bbb120bc96bc76a868e2efc8d5eaf21c184
+  ref: 2.55.0-364-g70c636be14e38fdaec4885ee3b2a43377a46e40d
 - kind: cargo
   ref:
   - name: adler
@@ -332,11 +332,8 @@ sources:
     version: 0.4.17
     sha: abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e
   - name: lopdf
-    version: 0.26.0
-    sha: b49a0272112719d0037ab63d4bb67f73ba659e1e90bc38f235f163a457ac16f3
-  - name: lzw
-    version: 0.10.0
-    sha: 7d947cbb889ed21c2a84be6ffbaebf5b4e0f4340638cba0444907e38b56be084
+    version: 0.27.0
+    sha: 8146695b97752d9c66da0092c6364f8f3ca683f5ea34341db21e5550c3b8c4f4
   - name: mac
     version: 0.1.1
     sha: c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4
@@ -802,6 +799,9 @@ sources:
   - name: web-sys
     version: 0.3.60
     sha: bcda906d8be16e728fd5adc5b729afad4e444e106ab28cd1c7256e54fa61510f
+  - name: weezl
+    version: 0.1.7
+    sha: 9193164d4de03a926d909d3bc7c30543cecb35400c02114792c2cae20d5e2dbb
   - name: wide
     version: 0.7.5
     sha: ae41ecad2489a1655c8ef8489444b0b113c0a0c795944a3572a0931cf7d2525c

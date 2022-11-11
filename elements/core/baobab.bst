@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:baobab.git
   track: main
-  ref: 43.0-11-g44f4567973fae1f72069e43859ee1a2b0757772c
+  ref: 43.0-12-g28e6e48d0cb291d9b992b19d3d203e351d958418
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst
