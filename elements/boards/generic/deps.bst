@@ -20,3 +20,4 @@ depends:
 - custom/iw.bst
 - freedesktop-sdk.bst:components/usbutils.bst
 - custom/testing-wallpaper.bst
+- world/chatty.bst
