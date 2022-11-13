@@ -12,7 +12,7 @@ sources:
     subprojects/libcmatrix:
       checkout: True
       url: purism:Librem5/libcmatrix.git
-  ref: v0.7.0_rc2-7-g5a1ae3dc6d2750527ed1436d8e16d962957ee891
+  ref: v0.7.0_rc3-0-ge9a2047d1b82db8462431f10307c3e96850add00
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

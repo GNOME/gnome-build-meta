@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: github:google/googletest.git
   track: main
-  ref: release-1.12.0-118-g44c03643cfbc649488a0f437cd18e05f11960d19
+  ref: release-1.12.0-119-g912db742531bf82efb01194bc08140416e3b3467
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
