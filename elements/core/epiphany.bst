@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:epiphany.git
   track: master
-  ref: 43.0-83-gf15ea054a9ca7c10caaddd6b0ba0c7d510100722
+  ref: 6bf2f33db24f3dded4c21dc419ca93220bd7a470
 
 build-depends:
 - sdk/appstream-glib.bst
@@ -24,6 +24,6 @@ depends:
 - sdk/libadwaita.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/webkit2gtk-5.0.bst
+- sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

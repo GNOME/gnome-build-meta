@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-initial-setup.git
   track: master
-  ref: 44.alpha.1-1-g61a47087941cb7e27a1370580755cbcad217f256
+  ref: c848110d0935f52dc882e552b3a8afe50c9c31e8
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -28,7 +28,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- sdk/webkit2gtk-5.0.bst
+- sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

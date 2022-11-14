@@ -36,6 +36,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libadwaita.bst
+- sdk/libavif.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
@@ -53,7 +54,7 @@ depends:
 - sdk/pygobject.bst
 - sdk/tracker.bst
 - sdk/webkit2gtk-4.1.bst
-- sdk/webkit2gtk-5.0.bst
+- sdk/webkitgtk-6.0.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst

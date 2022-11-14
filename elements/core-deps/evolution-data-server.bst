@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:evolution-data-server.git
   track: master
-  ref: 3.46.0-50-g5feb432ad5697563110532d4179da5decae927e3
+  ref: 69d6441d4c5f2ae00f7b7c150f6c9347a8521885
 
 build-depends:
 - sdk/vala.bst
@@ -21,6 +21,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/webkit2gtk-4.1.bst
+- sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
@@ -37,4 +38,3 @@ variables:
     -DWITH_GWEATHER4=ON
     -DWITH_LIBDB=OFF
     -DENABLE_GOOGLE=OFF
-    -DENABLE_OAUTH2_WEBKITGTK4=OFF

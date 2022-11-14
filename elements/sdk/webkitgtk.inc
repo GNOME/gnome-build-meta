@@ -1,11 +1,14 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.38.2.tar.xz
-  ref: f3eb82899651f583b4d99cacd16af784a1a7710fce9e7b6807bd6ccde909fe3e
+  url: webkitgtk:webkitgtk-2.39.1.tar.xz
+  ref: 45c9745779b94dd3c0f6949f2d9ea5c8ab099beca8147da4e036efd6b0032c32
+- kind: patch
+  path: files/webkitgtk/epoxy.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/gi-docgen.bst
+- sdk-deps/unifdef.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gperf.bst
@@ -15,14 +18,15 @@ build-depends:
 
 runtime-depends:
 - sdk/gst-libav.bst
-- sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-good.bst
 
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/geoclue.bst
+- sdk/gst-plugins-bad.bst
 - sdk/gst-plugins-base.bst
+- sdk/libavif.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
 - sdk/libwpe.bst
@@ -30,6 +34,8 @@ depends:
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
+- freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
