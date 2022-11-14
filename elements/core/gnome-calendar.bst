@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-calendar.git
   track: main
-  ref: 43.1-6-gc3d48c2d33eaef02361dba86646538a5746ba6a7
+  ref: 43.1-10-g1ba749ee5939a4c1b3d397fbaf01ab8b24fd9458
 
 build-depends:
 - sdk/appstream-glib.bst

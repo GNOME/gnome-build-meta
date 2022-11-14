@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
   track: main
-  ref: 43.1-34-g08e27f5f367cd1eca228a8b4a185718917b86622
+  ref: 43.1-44-gc917fa73c3ed68b815ac1bac3e1be6f5256e5b08
   submodules:
     subprojects/gvc:
       checkout: true
