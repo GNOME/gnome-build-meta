@@ -12,6 +12,7 @@ build-depends:
 config:
   install-commands:
   - |
-    xz firmware/*.bin
-    xz firmware/rtl_bt/*
-    xz firmware/brcm/*
+    xz --check=crc32 firmware/*.bin
+    xz --check=crc32 firmware/rtl_bt/*
+    xz --check=crc32 firmware/brcm/*
+  - cp -r firmware '%{install-root}'
