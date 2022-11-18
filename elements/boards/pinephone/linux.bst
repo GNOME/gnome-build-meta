@@ -36,6 +36,13 @@ config:
     scripts/config -e DMI
     scripts/config -e EFI_GENERIC_STUB_INITRD_CMDLINE_LOADER
 
+    scripts/config -e FW_LOADER
+    scripts/config -e FW_LOADER_COMPRESS
+    scripts/config -e FW_LOADER_PAGED_BUF
+    scripts/config -e FW_LOADER_COMPRESS_XZ
+    scripts/config -e FW_LOADER_COMPRESS_ZSTD
+    scripts/config -e FW_CACHE
+
   build-commands:
   - make -j$(nproc)
 
