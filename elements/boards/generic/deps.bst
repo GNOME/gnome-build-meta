@@ -28,3 +28,4 @@ depends:
 - vm/wireplumber.bst
 
 - core-deps/callaudiod.bst
+- freedesktop-sdk.bst:components/alsa-plugins.bst
