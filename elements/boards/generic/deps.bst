@@ -27,4 +27,4 @@ depends:
 - core-deps/pipewire-daemon.bst
 - vm/wireplumber.bst
 
-- freedesktop-sdk.bst:components/libpulse.bst
+- core-deps/callaudiod.bst
