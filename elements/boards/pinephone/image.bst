@@ -4,6 +4,7 @@ build-depends:
 - boards/pinephone/image-deps.bst
 - boards/pinephone/repo.bst
 - boards/pinephone/linux.bst
+- boards/pinephone/firmware-mobian-nonfree.bst
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -32,6 +33,8 @@ config:
     destination: '/'
   - element: boards/pinephone/linux.bst
     destination: '/kernel'
+  - element: boards/pinephone/firmware-mobian-nonfree.bst
+    destination: '/'
 
   commands:
   - mkdir -p "${OSTREE_REPO}"
@@ -68,6 +71,13 @@ config:
   - cp -r "%{sysroot}"/ostree/boot.1/gnome-os/*/*/boot/EFI/ "%{sysroot}/boot/"
 
   - cp -r "/kernel/boot/dtbs" "%{sysroot}/boot/dtb"
+
+  # Move firmware-mobian-nonfree to /usr/lib/firmware
+  - |
+    OSTREE_PATH=`cat /sysroot/ostree/repo/refs/heads/gnome-os/aarch64/pinephone`
+    cp /firmware/brcm/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/brcm/"
+    cp /firmware/rtl_bt/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/rtl_bt/"
+    cp /firmware/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/"
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
