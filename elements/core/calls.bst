@@ -8,7 +8,7 @@ sources:
     subprojects/libcall-ui:
       checkout: true
       url: gnome_gitlab:World/Phosh/libcall-ui.git
-  ref: v43.0-49-g0ead013d4dc119c354a7fb5a6aadf3fbb010fad9
+  ref: v43.0-55-gd3b4fb12a722c838cce77332fd6af3f5ae9b3cbb
 
 build-depends:
 - sdk/vala.bst

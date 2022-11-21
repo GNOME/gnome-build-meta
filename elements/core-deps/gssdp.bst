@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gssdp.git
   track: master
-  ref: gssdp-1.6.1-2-ge0b477c37c18b0de50cc62a549e639c7527bba25
+  ref: gssdp-1.6.2-0-gc2d417d6a79f03c095e5730efd60015eb3109a82
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -20,3 +20,4 @@ depends:
 variables:
   meson-local: >-
     -Dsniffer=false
+    -Dmanpages=false
