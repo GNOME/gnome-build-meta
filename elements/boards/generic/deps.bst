@@ -26,4 +26,4 @@ depends:
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 - core-deps/pipewire-daemon.bst
-- vm/wireplumber.bst
+- core-deps/wireplumber.bst
