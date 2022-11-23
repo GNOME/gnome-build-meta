@@ -9,6 +9,8 @@ sources:
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
 - kind: patch
   path: files/freedesktop-sdk/libnghttp2-1.50.patch
+- kind: patch
+  path: files/freedesktop-sdk/meson-0.64.patch
 config:
   options:
     target_arch: '%{arch}'
