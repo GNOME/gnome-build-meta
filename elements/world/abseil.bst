@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: github:abseil/abseil-cpp.git
   track: master
-  ref: 48c36b48fc7ead5a0fb6de7577780c2acf046e15
+  ref: e51b4ef779f58b89563bbf8778f05766ba110e10
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
