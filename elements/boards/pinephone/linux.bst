@@ -43,6 +43,9 @@ config:
     scripts/config -e FW_LOADER_COMPRESS_ZSTD
     scripts/config -e FW_CACHE
 
+    scripts/config -e SND_PROC_FS
+    scripts/config -e SND_VERBOSE_PROCFS
+
   build-commands:
   - make -j$(nproc)
 
