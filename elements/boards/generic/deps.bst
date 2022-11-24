@@ -26,6 +26,3 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 - core-deps/pipewire-daemon.bst
 - vm/wireplumber.bst
-
-- core-deps/callaudiod.bst
-- freedesktop-sdk.bst:components/alsa-plugins.bst
