@@ -24,6 +24,7 @@ test-s3-image-x86_64:
   script:
   - |
     curl --get --location $S3_IMAGE_URL --output $IMAGE
+    sha256sum $IMAGE
   - |
     mkdir -p /data/factory/iso/
     ln -s $(pwd)/$IMAGE /data/factory/iso/installer.iso
