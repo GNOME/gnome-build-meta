@@ -26,3 +26,5 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 - core-deps/pipewire-daemon.bst
 - vm/wireplumber.bst
+
+- custom/alsa.bst
