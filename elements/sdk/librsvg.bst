@@ -4,15 +4,15 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.0-373-g669a888bec641efc2b59cd605750582d6bb77244
+  ref: 2.55.90-0-g2a06e2408ebcd8cb438975a906f48be9c570ba3b
 - kind: cargo
   ref:
   - name: adler
     version: 1.0.2
     sha: f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
   - name: aho-corasick
-    version: 0.7.19
-    sha: b4f55bd91a0978cbfd91c457a164bab8b4001c833b7f323132c0a4e1922dd44e
+    version: 0.7.20
+    sha: cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
   - name: android_system_properties
     version: 0.1.5
     sha: 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -86,11 +86,11 @@ sources:
     version: 2.34.0
     sha: a0610544180c38b88101fecf2dd634b174a62eef6946f84dfc6a7127512b381c
   - name: clap
-    version: 4.0.26
-    sha: 2148adefda54e14492fb9bddcc600b4344c5d1a3123bd666dcb939c6f0e0e57e
+    version: 4.0.27
+    sha: 0acbd8d28a0a60d7108d7ae850af6ba34cf2d1257fc646980e5f97ce14275966
   - name: clap_complete
-    version: 4.0.5
-    sha: 96b0fba905b035a30d25c1b585bf1171690712fbb0ad3ac47214963aa4acc36c
+    version: 4.0.6
+    sha: b7b3c9eae0de7bf8e3f904a5e40612b21fb2e2e566456d177809a48b892d24da
   - name: clap_derive
     version: 4.0.21
     sha: 0177313f9f02afc995627906bbd8967e2be069f5261954222dac78290c2b9014
@@ -128,11 +128,11 @@ sources:
     version: 0.8.2
     sha: 715e8152b692bba2d374b53d4875445368fdf21a94751410af607a5ac677d1fc
   - name: crossbeam-epoch
-    version: 0.9.12
-    sha: 96bf8df95e795db1a4aca2957ad884a2df35413b24bbeb3114422f3cc21498e8
+    version: 0.9.13
+    sha: 01a9af1f4c2ef74bb8aa1f7e19706bc72d03598c8a570bb5de72243c7a9d9d5a
   - name: crossbeam-utils
-    version: 0.8.13
-    sha: 422f23e724af1240ec469ea1e834d87a4b59ce2efe2c6a96256b0c47e2fd86aa
+    version: 0.8.14
+    sha: 4fb766fa798726286dbbb842f174001dab8abc7b627a1dd86e0b7222a95d929f
   - name: cssparser
     version: 0.28.1
     sha: 1db8599a9761b371751fbf13e076fa03c6e1a78f8c5288e6ab9467f10a2322c1
@@ -169,6 +169,9 @@ sources:
   - name: discard
     version: 1.0.4
     sha: 212d0f5754cb6769937f4501cc0e67f4f4483c8d2c3e1e922ee9edbe4ab4c7c0
+  - name: dlib
+    version: 0.5.0
+    sha: ac1b7517328c04c2aa68422fc60a41b92208182142ed04a25879c26c8f878794
   - name: doc-comment
     version: 0.3.3
     sha: fea41bba32d969b513997752735605054bc0dfa92b4c56bf1189f2e174be7a10
@@ -202,12 +205,18 @@ sources:
   - name: encoding_index_tests
     version: 0.1.4
     sha: a246d82be1c9d791c5dfde9a2bd045fc3cbba3fa2b11ad558f27d01712f00569
+  - name: errno
+    version: 0.2.8
+    sha: f639046355ee4f37944e44f60642c6f3a7efa3cf6b78c78a0d989a8ce6c396a1
+  - name: errno-dragonfly
+    version: 0.1.2
+    sha: aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf
   - name: fastrand
     version: 1.8.0
     sha: a7a407cfaa3385c4ae6b23e84623d48c2798d06e3e6a1878f7f59f17b3f86499
   - name: flate2
-    version: 1.0.24
-    sha: f82b0f4c27ad9f8bfd1f3208d882da2b09c301bc1c828fd3a00d0216d2fbbff6
+    version: 1.0.25
+    sha: a8a2db397cb1c8772f31494cb8917e48cd1e64f0fa7efac59fbd741a0a8ce841
   - name: float-cmp
     version: 0.9.0
     sha: 98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4
@@ -286,6 +295,9 @@ sources:
   - name: hermit-abi
     version: 0.1.19
     sha: 62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33
+  - name: hermit-abi
+    version: 0.2.6
+    sha: ee512640fe35acbfb4bb779db6f0d80704c2cacfa2e39b601ef3e3f47d1ae4c7
   - name: iana-time-zone
     version: 0.1.53
     sha: 64c122667b287044802d6ce17ee2ddf13207ed924c712de9a66a5814d5b64765
@@ -298,6 +310,12 @@ sources:
   - name: instant
     version: 0.1.12
     sha: 7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c
+  - name: io-lifetimes
+    version: 1.0.2
+    sha: e394faa0efb47f9f227f1cd89978f854542b318a6f64fa695489c9c993056656
+  - name: is-terminal
+    version: 0.4.0
+    sha: aae5bc6e2eb41c9def29a3e0f1306382807764b9b53112030eff57435667352d
   - name: itertools
     version: 0.10.5
     sha: b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473
@@ -319,12 +337,18 @@ sources:
   - name: libc
     version: 0.2.137
     sha: fc7fcc620a3bff7cdd7a365be3376c97191aeaccc2a603e600951e452615bf89
+  - name: libloading
+    version: 0.7.4
+    sha: b67380fd3b2fbe7527a606e18729d21c6f3951633d0500574c4dc22d2d638b9f
   - name: link-cplusplus
     version: 1.0.7
     sha: 9272ab7b96c9046fbc5bc56c06c117cb639fe2d509df0c421cad82d2915cf369
   - name: linked-hash-map
     version: 0.5.6
     sha: 0717cef1bc8b636c6e1c1bbdefc09e6322da8a9321966e8928ef80d20f7f770f
+  - name: linux-raw-sys
+    version: 0.1.3
+    sha: 8f9f08d8963a6c613f4b1a78f4f4a4dbfadf8e6545b2d72861731e4858b8b47f
   - name: locale_config
     version: 0.3.0
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
@@ -335,8 +359,8 @@ sources:
     version: 0.4.17
     sha: abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e
   - name: lopdf
-    version: 0.27.0
-    sha: 8146695b97752d9c66da0092c6364f8f3ca683f5ea34341db21e5550c3b8c4f4
+    version: 0.29.0
+    sha: de0f69c40d6dbc68ebac4bf5aec3d9978e094e22e29fcabd045acd9cec74a9dc
   - name: mac
     version: 0.1.1
     sha: c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4
@@ -358,9 +382,6 @@ sources:
   - name: memoffset
     version: 0.7.1
     sha: 5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4
-  - name: miniz_oxide
-    version: 0.5.4
-    sha: 96590ba8f175222643a85693f33d26e9c8a015f599c216509b1a6894af675d34
   - name: miniz_oxide
     version: 0.6.2
     sha: b275950c28b37e794e8c55d88aeb5e139d0ce23fdbbeda68f8d7174abdf9e8fa
@@ -592,6 +613,9 @@ sources:
   - name: rustc_version
     version: 0.4.0
     sha: bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366
+  - name: rustix
+    version: 0.36.3
+    sha: 0b1fbb4dfc4eb1d390c02df47760bb19a84bb80b301ecc947ab5406394d8223e
   - name: rusty-fork
     version: 0.3.0
     sha: cb3dcc6e454c328bb824492db107ab7c0ae8fcffe4ad210136ef014458c1bc4f
@@ -632,8 +656,8 @@ sources:
     version: 1.0.147
     sha: 4f1d362ca8fc9c3e3a7484440752472d68a6caa98f1ab81d99b5dfe517cec852
   - name: serde_json
-    version: 1.0.88
-    sha: 8e8b3801309262e8184d9687fb697586833e939767aea0dda89f5a8e650e8bd7
+    version: 1.0.89
+    sha: 020ff22c755c2ed3f8cf162dbb41a7268d934702f3ed3631656ea597e08fc3db
   - name: servo_arc
     version: 0.1.1
     sha: d98238b800e0d1576d8b6e3de32827c2d74bee68bb97748dcf5071fb53965432
@@ -848,8 +872,8 @@ sources:
     version: 0.16.2
     sha: 9234163818fd8e2418fcde330655e757900d4236acd8cc70fef345ef91f6d865
   - name: yeslogic-fontconfig-sys
-    version: 2.11.2
-    sha: 38e47154248a2dba5ca6965e26b1a59146210736ea9b862362b6d72682e57f8d
+    version: 4.0.1
+    sha: ec657fd32bbcbeaef5c7bc8e10b3db95b143fab8db0a50079773dbf936fd4f73
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

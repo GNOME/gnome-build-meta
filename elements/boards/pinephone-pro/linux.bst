@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: github:megous/linux.git
   track: orange-pi-6.0
-  ref: orange-pi-6.0-20221017-0205-0-g2683672a2052ffda995bb987fa62a1abe8424ef4
+  ref: orange-pi-6.0-20221105-1830-0-g7f305ec5ef634004d64fdd9b41044fe0bce7f397
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
