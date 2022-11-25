@@ -1,0 +1,12 @@
+diff --git a/src/conf/alsa.conf b/src/conf/alsa.conf
+index e65bf2ca..00b6c153 100644
+--- a/src/conf/alsa.conf
++++ b/src/conf/alsa.conf
+@@ -9,7 +9,6 @@
+ 		func load
+ 		files [
+ 			"/var/lib/alsa/conf.d"
+-			"/usr/etc/alsa/conf.d"
+ 			"/etc/alsa/conf.d"
+ 			"/etc/asound.conf|||/usr/etc/asound.conf"
+ 			"~/.asoundrc"
