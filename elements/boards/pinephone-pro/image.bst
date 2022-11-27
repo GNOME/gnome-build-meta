@@ -74,7 +74,7 @@ config:
 
   # Move firmware-mobian-nonfree to /usr/lib/firmware
   - |
-    OSTREE_PATH=`cat /sysroot/ostree/repo/refs/heads/gnome-os/aarch64/pinephone`
+    OSTREE_PATH=`cat /sysroot/ostree/repo/refs/heads/gnome-os/aarch64/pinephone-pro`
     cp /firmware/brcm/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/brcm/"
     cp /firmware/rtl_bt/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/rtl_bt/"
     cp /firmware/*.xz "%{sysroot}/ostree/deploy/gnome-os/deploy/$OSTREE_PATH.0/usr/lib/firmware/"
