@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.39.1.tar.xz
-  ref: 45c9745779b94dd3c0f6949f2d9ea5c8ab099beca8147da4e036efd6b0032c32
-- kind: patch
-  path: files/webkitgtk/epoxy.patch
+  url: webkitgtk:webkitgtk-2.39.2.tar.xz
+  ref: a0c9036f8eccdfcaf455ace14ceefb327088a212bab2a221cdc952a8060626a6
 
 build-depends:
 - sdk-deps/bubblewrap.bst
