@@ -10,6 +10,7 @@ depends:
 - world/cairomm.bst
 - world/chatty.bst
 - world/dbus-glib.bst
+- world/endeavour.bst
 - world/evolution.bst
 - world/file-roller.bst
 - world/five-or-more.bst
@@ -40,7 +41,6 @@ depends:
 - world/gnome-terminal.bst
 - world/gnome-tetravex.bst
 - world/gnome-themes-extra.bst
-- world/gnome-todo.bst
 - world/gnome-tweaks.bst
 - world/gtkmm.bst
 - world/gupnp-igd.bst

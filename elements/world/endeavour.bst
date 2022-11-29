@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:gnome-todo.git
-  track: master
+  url: gnome_gitlab:World/Endeavour.git
+  track: main
 
 build-depends:
 - sdk/appstream-glib.bst
