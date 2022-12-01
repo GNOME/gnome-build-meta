@@ -28,3 +28,4 @@ depends:
 - vm/wireplumber.bst
 
 - custom/alsa-utils.bst
+- freedesktop-sdk.bst:components/linux-pam.bst
