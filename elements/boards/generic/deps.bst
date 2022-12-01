@@ -27,4 +27,4 @@ depends:
 - core-deps/pipewire-daemon.bst
 - vm/wireplumber.bst
 
-- sdk/pipewire.bst
+- freedesktop-sdk.bst:components/alsa-plugins.bst
