@@ -27,4 +27,4 @@ depends:
 - core-deps/pipewire-daemon.bst
 - vm/wireplumber.bst
 
-- custom/alsa.bst
+- sdk/pipewire.bst
