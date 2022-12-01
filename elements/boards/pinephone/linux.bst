@@ -46,6 +46,8 @@ config:
     scripts/config -e SND_PROC_FS
     scripts/config -e SND_VERBOSE_PROCFS
 
+    scripts/config -e TMPFS_POSIX_ACL
+
     scripts/config -e SND_OSSEMUL
     scripts/config -m SND
     scripts/config -m SND_MIXER_OSS
