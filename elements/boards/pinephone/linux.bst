@@ -89,6 +89,9 @@ config:
     scripts/config -m USB_SERIAL_SIMPLE=m
     scripts/config -e DEVFREQ_GOV_SIMPLE_ONDEMAND
 
+    scripts/config -m DRM_DW_HDMI_AHB_AUDIO
+    scripts/config -m DRM_DW_HDMI_I2S_AUDIO
+
 
 
 
