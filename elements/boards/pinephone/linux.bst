@@ -43,13 +43,17 @@ config:
     scripts/config -e FW_LOADER_COMPRESS_ZSTD
     scripts/config -e FW_CACHE
 
+
+
+
+
     scripts/config -e SND_PROC_FS
     scripts/config -e SND_VERBOSE_PROCFS
 
     scripts/config -e TMPFS_POSIX_ACL
 
-    scripts/config -e SND_OSSEMUL
     scripts/config -m SND
+    scripts/config -e SND_OSSEMUL
     scripts/config -m SND_MIXER_OSS
     scripts/config -m SND_PCM_OSS
     scripts/config -m SND_HRTIMER
@@ -57,6 +61,7 @@ config:
     scripts/config -m SND_SEQ_DUMMY
     scripts/config -m SND_SEQUENCER_OSS
     scripts/config -m SND_ALOOP
+    scripts/config -m SND_USB_AUDIO
     scripts/config -m SND_SOC
     scripts/config -m SND_SUN4I_CODEC
     scripts/config -m SND_SUN8I_CODEC
@@ -69,50 +74,21 @@ config:
     scripts/config -m SND_SOC_SIMPLE_AMPLIFIER
     scripts/config -m SND_SIMPLE_CARD
     scripts/config -m SND_AUDIO_GRAPH_CARD
-    scripts/config -e SND
-    scripts/config -e SND_TIMER
-    scripts/config -e SND_PCM
-    scripts/config -e SND_DMAENGINE_PCM
-    scripts/config -e SND_HWDEP
-    scripts/config -e SND_RAWMIDI
-    scripts/config -e SND_JACK
-    scripts/config -e SND_JACK_INPUT_DEV
-    scripts/config -e SND_PCM_TIMER
-    scripts/config -e SND_DYNAMIC_MINORS
-    scripts/config -e SND_MAX_CARDS=32
-    scripts/config -e SND_SUPPORT_OLD_API
-    scripts/config -e SND_PROC_FS
-    scripts/config -e SND_VERBOSE_PROCFS
-    scripts/config -e SND_VMASTER
-    scripts/config -e SND_MPU401_UART
-    scripts/config -e SND_DRIVERS
-    scripts/config -e SND_DUMMY
-    scripts/config -e SND_ALOOP
-    scripts/config -e SND_MTPAV
-    scripts/config -e SND_SERIAL_U16550
-    scripts/config -e SND_MPU401
-    scripts/config -e SND_PCI
-    scripts/config -e SND_HDA
-    scripts/config -e SND_SPI
-    scripts/config -e SND_SOC
-    scripts/config -e SND_SOC_GENERIC_DMAENGINE_PCM
-    scripts/config -e SND_SUN4I_CODEC
-    scripts/config -e SND_SUN8I_CODEC
-    scripts/config -e SND_SUN8I_CODEC_ANALOG
-    scripts/config -e SND_SUN50I_CODEC_ANALOG
-    scripts/config -e SND_SUN4I_I2S
-    scripts/config -e SND_SUN4I_SPDIF
-    scripts/config -e SND_SUN8I_ADDA_PR_REGMAP
-    scripts/config -e SND_SOC_I2C_AND_SPI
-    scripts/config -e SND_SOC_AK4613
-    scripts/config -e SND_SOC_BT_SCO
-    scripts/config -e SND_SOC_DMIC
-    scripts/config -e SND_SOC_EC25
-    scripts/config -e SND_SOC_MAX98357A
-    scripts/config -e SND_SOC_SIMPLE_AMPLIFIER
-    scripts/config -e SND_SIMPLE_CARD_UTILS
-    scripts/config -e SND_SIMPLE_CARD
-    scripts/config -e SND_AUDIO_GRAPH_CARD
+
+    scripts/config -e SUN8I_THERMAL
+    scripts/config -m VIDEO_SUN8I_DEINTERLACE
+    scripts/config -m VIDEO_SUN8I_ROTATE
+    scripts/config -e DRM_SUN8I_DW_HDMI
+    scripts/config -e DRM_SUN8I_MIXER
+    scripts/config -m SND_SUN8I_CODEC
+    scripts/config -m SND_SUN8I_CODEC_ANALOG
+    scripts/config -m ARM_SUN8I_A33_MBUS_DEVFREQ
+    scripts/config -m CRYPTO_DEV_SUN8I_CE
+
+    scripts/config -e FB_SIMPLE
+    scripts/config -m USB_SERIAL_SIMPLE=m
+    scripts/config -e DEVFREQ_GOV_SIMPLE_ONDEMAND
+
 
 
 
