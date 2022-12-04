@@ -48,7 +48,7 @@ config:
     # a version.
     Extension org.freedesktop.Platform.GL:
       # 1.4 is for Nvidia drivers
-      versions: "%{freedesktop-sdk-flatpak-branch};1.4"
+      versions: "%{freedesktop-sdk-flatpak-branch};%{freedesktop-sdk-flatpak-branch-extra};1.4"
       version: "1.4"
       directory: "%{lib}/GL"
       subdirectories: "true"
