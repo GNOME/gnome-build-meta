@@ -4,9 +4,7 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/22.08
   track-tags: true
-  ref: freedesktop-sdk-22.08.3-0-g1bc55fc2a435765db7f8d297c95d59c76bc63b7b
-- kind: patch
-  path: files/freedesktop-sdk/0001-components-dbus-base.bst-disable-libaudit.patch
+  ref: freedesktop-sdk-22.08.3-141-g08c84208dfa723c45446c54ad6a1912689d8055b
 config:
   options:
     target_arch: '%{arch}'
