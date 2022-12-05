@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk+/3.24/gtk+-3.24.34.tar.xz
-  ref: dbc69f90ddc821b8d1441f00374dc1da4323a2eafa9078e61edbe5eeefa852ec
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.35.tar.xz
+  ref: ec10fe6d712ef0b3c63b5f932639c9d1ae99fce94f500f6f06965629fef60bd1
 - kind: patch
   path: files/gtk3-werror.patch
 

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/42/gnome-desktop-42.6.tar.xz
-  ref: ac713a8274d10918dfba8cf19d278de93acf833341dff8a15bab2b9f6429739b
+  url: gnome_downloads:gnome-desktop/42/gnome-desktop-42.7.tar.xz
+  ref: 851ce6afc20660ae031218fc50aa3808822d94f50abc9b497f606743e2d53244
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
