@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gi-docgen/2022/gi-docgen-2022.1.tar.xz
-  ref: fefe3153979595ddad2dc81d5efa7e54c8ca3770f91a5a75710c8fd6fad4575f
+  url: gnome_downloads:gi-docgen/2022/gi-docgen-2022.2.tar.xz
+  ref: 26543910d76a79d62f66712285692a3b62a75f31d07cbbeea46eec7e34e63a54
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gobject-introspection.bst

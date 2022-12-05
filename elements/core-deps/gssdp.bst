@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gssdp/1.6/gssdp-1.6.0.tar.xz
-  ref: 148ed41628c8f17336a2c8fa4b14ab0fbae98b6026be2dacfddea7bf43866689
+  url: gnome_downloads:gssdp/1.6/gssdp-1.6.2.tar.xz
+  ref: 410b376deeced9836b57f488f80052fe4a14f89e075b1ceccf28e51f490f9fb9
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -18,3 +18,4 @@ depends:
 variables:
   meson-local: >-
     -Dsniffer=false
+    -Dmanpages=false
