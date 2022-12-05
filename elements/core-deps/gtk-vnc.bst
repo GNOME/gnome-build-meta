@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gtk-vnc.git
   track: master
-  ref: v1.3.1-5-g1b462ffde3f8b8498630d83a371e73a48ece2ee4
+  ref: v1.3.1-6-gf493a509d592462ba7bcf96a7d04a21f43c0366d
   submodules:
     subprojects/keycodemapdb:
       checkout: true
