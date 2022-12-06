@@ -51,7 +51,7 @@ default:
   stage: build
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
 
   - |
     case "${ARCH}" in
@@ -62,7 +62,7 @@ default:
          TARGETS+=(vm/repo.bst vm/repo-devel.bst)
          ;;
       i686)
-         TARGETS=(flatpak-runtimes.bst flatpak-platform-extensions.bst)
+         TARGETS=(flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst)
          ;;
     esac
 
@@ -180,7 +180,7 @@ generate-deploy-config:
       FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'
       FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
       TARGETS: flatpak-runtimes.bst
-      TARGETS_nightly: flatpak-platform-extensions.bst
+      TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
       ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
       DOCKER_REGISTRY: '$DOCKER_REGISTRY'
       DOCKER_IMAGE_ID: '$DOCKER_IMAGE_ID'
