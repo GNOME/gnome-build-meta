@@ -6,11 +6,9 @@ sources:
   ref: ec10fe6d712ef0b3c63b5f932639c9d1ae99fce94f500f6f06965629fef60bd1
 - kind: patch
   path: files/gtk3/gtk3-werror.patch
-- kind: patch
-  path: files/gtk3/0001-Dist-gdk-wayland-cursor-meson.build.patch
 - kind: local
   path: files/gtk3/meson.build
-  directory: cursor
+  directory: gdk/wayland/cursor
 
 build-depends:
 - sdk/gobject-introspection.bst
