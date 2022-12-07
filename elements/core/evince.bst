@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:evince.git
   track: main
-  ref: 43.1-12-g3c900be6c5e8528cc8ae78f4d614cb69729cdb90
+  ref: 43.1-13-g319129a319723e4cf118c217bb849c288d5f9e15
 
 build-depends:
 - sdk/appstream-glib.bst

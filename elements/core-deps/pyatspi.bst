@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:pyatspi2.git
   track: master
-  ref: PYATSPI_2_46_0-6-gd0fbc0f88aa47b6899ddbd326af9ceac96b04414
+  ref: PYATSPI_2_46_0-8-gc3206e409f6caf3f7695210a2cfa79db8255f74c
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

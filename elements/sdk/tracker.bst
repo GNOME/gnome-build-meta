@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:tracker.git
   track: master
-  ref: 3.4.2-16-gb0e255f6ec4ee99ef8b33e6949769e5c8d794cfe
+  ref: 3.4.2-18-gcbd74b3c95d6569c27c3a7a7c574802acd198a85
 
 build-depends:
 - sdk/gobject-introspection.bst
