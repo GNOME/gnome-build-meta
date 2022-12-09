@@ -8,6 +8,7 @@ sources:
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
+- boards/pinephone-pro/linux-firmware.bst
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -35,6 +36,20 @@ config:
     scripts/config -e RD_GZIP
     scripts/config -e DMI
     scripts/config -e EFI_GENERIC_STUB_INITRD_CMDLINE_LOADER
+
+    scripts/config -e NET_VENDOR_BROADCOM
+
+    scripts/config -m B43
+    scripts/config -e B43_SDIO
+    scripts/config -m B43LEGACY
+    scripts/config -m BRCMSMAC
+    scripts/config -m BRCMFMAC
+    scripts/config -e BRCMFMAC_USB
+    scripts/config -e BRCM_TRACING
+    scripts/config -e BRCMDBG
+
+    scripts/config --set-str EXTRA_FIRMWARE "regulatory.db regulatory.db.p7s brcm/brcmfmac43455-sdio.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt brcm/brcmfmac43455-sdio.clm_blob brcm/BCM4345C0.hcd rockchip/dptx.bin"
+    scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
   build-commands:
   - make -j$(nproc)
