@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: gimp:gegl/0.4/gegl-0.4.40.tar.xz
-  ref: cdde80d15a49dab9a614ef98f804c8ce6e4cfe1339a3c240c34f3fb45436b85d
+  ref: 2c3131866be377acdbc408464626a83c4f83e86e138e001ec90144ea017aa749
 
 build-depends:
 - sdk/gobject-introspection.bst
