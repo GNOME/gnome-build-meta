@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gspell.git
   track: master
-  ref: 1.12.0-4-g1a12fda554e3f09f4f62d866567385f4e2d4349a
+  ref: 1.12.0-5-g064f7e4a6bc7259318d5aebc60c70ae4e6b35521
 
 build-depends:
 - sdk/gobject-introspection.bst
