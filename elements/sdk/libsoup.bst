@@ -7,7 +7,7 @@ sources:
   ref: 3.2.0-39-gefc5efba6db6478a5fcb8c938ef0dcd10b35b136
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst

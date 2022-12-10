@@ -7,7 +7,7 @@ sources:
   ref: 4.0.0-18-g3c1bdd612d8cb954a17ce15d014d2e5ea93f8910
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/systemd.bst

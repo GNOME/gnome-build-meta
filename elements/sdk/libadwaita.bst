@@ -7,8 +7,8 @@ sources:
   ref: 1.2.0-69-g5c37bb939b620e1c8174cadcea405a1366ecc263
 
 build-depends:
-- sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst

@@ -6,7 +6,7 @@ sources:
   ref: 1.6.6-49-gd7fb79cfd0a78478206f4bd6ae7dfc543184ed41
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst

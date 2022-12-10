@@ -5,8 +5,8 @@ sources:
   track: main
   ref: 1.50.12-3-gcff13ddaecf2d1fda9816ef6a1f8a6bd1fbe963e
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst

@@ -7,7 +7,7 @@ sources:
   ref: 1.8.0-6-gc63acce9e16032c81c85c0d214fcd6bd69bab356
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

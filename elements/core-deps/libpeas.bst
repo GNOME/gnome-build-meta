@@ -5,7 +5,7 @@ sources:
   track: master
   ref: libpeas-1.34.0-3-g4ad863e4d66d79e3fcf694eaac2b567271c68e04
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst

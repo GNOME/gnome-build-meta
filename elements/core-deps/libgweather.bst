@@ -5,9 +5,9 @@ sources:
   track: main
   ref: 4.2.0-19-gacdb34ee4af76c05ec505398919d6f0a7fd99ea5
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/geocode-glib.bst

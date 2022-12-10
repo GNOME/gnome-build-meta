@@ -5,7 +5,7 @@ sources:
   track: main
   ref: AT_SPI2_CORE_2_46_0-140-g9bc3842dc307e2ae683c0a2ce4673ac6dd94ff5a
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -5,9 +5,9 @@ sources:
 
 build-depends:
 - sdk-deps/bubblewrap.bst
-- sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
 - sdk-deps/xdg-dbus-proxy.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/perl.bst

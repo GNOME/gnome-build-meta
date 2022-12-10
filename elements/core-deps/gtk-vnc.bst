@@ -11,7 +11,7 @@ sources:
       url: gitlab:keycodemap/keycodemapdb.git
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gnutls.bst

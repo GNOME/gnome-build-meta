@@ -7,7 +7,7 @@ sources:
   ref: 0.20.5-14-gf590dc2b1701d187b2c89e210a4ec2aa24087393
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/valgrind-maybe.bst
