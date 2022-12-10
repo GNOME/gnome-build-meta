@@ -7,8 +7,8 @@ sources:
   ref: 1.6.beta-4-g07f3b59b0091128f9cbdd4daf65ff5784d58d43c
 
 build-depends:
-- sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst

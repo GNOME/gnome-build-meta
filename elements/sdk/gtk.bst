@@ -7,8 +7,8 @@ sources:
   ref: 4.15.4-58-gc04edfc76e9497aec7b3ee17c30e1541b4e6ba55
 
 build-depends:
-- sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/pygobject.bst
 - sdk/sysprof-minimal.bst

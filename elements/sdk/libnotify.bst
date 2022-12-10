@@ -8,7 +8,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

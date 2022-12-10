@@ -5,8 +5,8 @@ sources:
   track: main
   ref: 1.9.2-24-g3f1a8226a82491fe79bf9020ee80c07b9072a5ed
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

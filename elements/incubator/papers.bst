@@ -725,7 +725,7 @@ sources:
     version: 2.0.0
     sha: fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

@@ -7,7 +7,7 @@ sources:
   ref: gssdp-1.6.3-6-gdb9d3603cd479b2c791c697d21d148814bc9db5a
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
