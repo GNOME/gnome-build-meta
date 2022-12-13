@@ -4,7 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:tracker.git
   track: master
-  ref: 3.4.2-18-gcbd74b3c95d6569c27c3a7a7c574802acd198a85
+  ref: 3.4.2-21-g27ec74d2707ac30f9d6582a8b2b5c591af7a6857
+  submodules:
+    subprojects/gvdb:
+      url: gnome:gvdb.git
+      checkout: true
 
 build-depends:
 - sdk/gobject-introspection.bst
