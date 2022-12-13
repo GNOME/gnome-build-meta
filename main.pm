@@ -5,6 +5,9 @@ use autotest;
 use needle;
 use File::Basename;
 
+$testapi::username = 'testuser';
+$testapi::password = 'testingtesting123';
+
 autotest::loadtest("tests/gnome_install.pm");
 autotest::loadtest("tests/gnome_welcome.pm");
 autotest::loadtest("tests/gnome_desktop.pm");
