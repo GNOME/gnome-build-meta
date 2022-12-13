@@ -7,6 +7,7 @@ use constant SLOW_TYPING_SPEED => 13;
 
 sub run {
     my $self = shift;
+
     assert_and_click('gnome_firstboot_welcome', timeout => 600, button => 'left');
     assert_and_click('gnome_firstboot_language', timeout => 10, button => 'left');
     assert_and_click('gnome_firstboot_privacy', timeout => 10, button => 'left');
