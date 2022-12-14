@@ -8,6 +8,7 @@ sources:
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
+- boards/pinephone/linux-firmware.bst
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -42,6 +43,9 @@ config:
     scripts/config -e FW_LOADER_COMPRESS_XZ
     scripts/config -e FW_LOADER_COMPRESS_ZSTD
     scripts/config -e FW_CACHE
+
+    scripts/config --set-str EXTRA_FIRMWARE "ov5640_af.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt rtl_bt/rtl8723cs_xx_fw.bin rtl_bt/rtl8723cs_xx_config.bin rtl_bt/rtl8723bs_config-pine64.bin"
+    scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
   build-commands:
   - make -j$(nproc)
