@@ -5,8 +5,16 @@ use autotest;
 use needle;
 use File::Basename;
 
+my $distri = testapi::get_required_var('CASEDIR') . '/lib/gnomeosdistribution.pm';
+require $distri;
+testapi::set_distribution(gnomeosdistribution->new);
+
+$testapi::username = 'testuser';
+$testapi::password = 'testingtesting123';
+
 autotest::loadtest("tests/gnome_install.pm");
 autotest::loadtest("tests/gnome_welcome.pm");
+autotest::loadtest("tests/gnome_journal_capture_fix.pm");
 autotest::loadtest("tests/gnome_desktop.pm");
 autotest::loadtest("tests/app_baobab.pm");
 autotest::loadtest("tests/app_cheese.pm");
