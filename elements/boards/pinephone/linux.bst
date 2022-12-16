@@ -8,7 +8,7 @@ sources:
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
-- boards/pinephone/linux-firmware.bst
+- boards/generic/linux-firmware.bst
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
