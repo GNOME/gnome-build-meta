@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.90-24-gb25889ade2a875ef079f322101c1f2f0804e9dcb
+  ref: 2.55.90-25-gfb67478360b8b09a7b2cf52adedf95b02dd8c1df
 - kind: cargo
   ref:
   - name: adler
