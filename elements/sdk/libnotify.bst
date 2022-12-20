@@ -4,11 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:libnotify.git
   track: master
-  ref: 0.8.1-5-g54d153efb64b8cb97e8306bcf5a2299fb5bed5b5
+  ref: 0.8.1-11-g06f401c4d8ac9b4bd353ca3e12110e137ab34da8
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
