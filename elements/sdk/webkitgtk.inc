@@ -1,8 +1,8 @@
 sources:
 - kind: tar
   #FIXME: re-enable gtk-doc for webkit2gtk-5.0.bst when fixed upstream
-  url: webkitgtk:webkitgtk-2.38.2.tar.xz
-  ref: f3eb82899651f583b4d99cacd16af784a1a7710fce9e7b6807bd6ccde909fe3e
+  url: webkitgtk:webkitgtk-2.38.3.tar.xz
+  ref: 41f001d1ed448c6936b394a9f20e4640eebf83a7f08262df28504f7410604a5a
 - kind: local
   path: files/webkitgtk/toolchain.i686
 - kind: local
