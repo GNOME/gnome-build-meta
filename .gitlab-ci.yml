@@ -529,6 +529,35 @@ test-pinephone-pro-aarch64:
   - aarch64
   - gnome-build-meta
 
+test-vm-aarch64:
+  image: ubuntu:focal
+  stage: test
+  when: manual
+  variables:
+    IMAGE: vm/image.bst
+  needs:
+    - job: "vm-image-aarch64"
+      artifacts: true
+  before_script:
+    - export DEBIAN_FRONTEND=noninteractive
+    - apt update -y
+    - apt install software-properties-common -y
+    - add-apt-repository ppa:deadsnakes/ppa
+    - apt update
+    - apt install python3.8 -yqq
+    - python3 --version
+    - apt-get install qemu-system-arm expect wget -y
+    - wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.img.gz
+    - gunzip QEMU_EFI.img.gz
+    - qemu-img create -f qcow2 debian.img 32G
+    - qemu-img create -f qcow2 varstore.img 64M
+    - mv $(pwd)/image/disk.img.xz ./disk.img.xz
+    - unxz -T$(nproc) disk.img.xz
+  script:
+    - python3 utils/test_vm_image.py
+  tags:
+    - aarch64
+    - gnome-build-meta
 
 pages:
   stage: 'reports'
