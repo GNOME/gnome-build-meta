@@ -4,6 +4,7 @@ build-depends:
 - boards/pinephone/image-deps.bst
 - boards/pinephone/repo.bst
 - boards/pinephone/linux.bst
+- freedesktop-sdk.bst:components/lvm2.bst
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
