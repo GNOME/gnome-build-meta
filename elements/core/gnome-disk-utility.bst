@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-disk-utility.git
   track: master
-  ref: 43.0-15-g2d2b600c412e35fd08ce2af1bb40d89f92ac5db8
+  ref: 43.0-18-ge599290d67cba110b08d4f6c47147c602e56d4b8
 
 build-depends:
 - sdk/appstream-glib.bst
