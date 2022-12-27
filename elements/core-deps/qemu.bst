@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://download.qemu.org/qemu-7.1.0.tar.xz
-  ref: a0634e536bded57cf38ec8a751adb124b89c776fe0846f21ab6c6728f1cbbbe6
+  url: https://download.qemu.org/qemu-7.2.0.tar.xz
+  ref: 5b49ce2687744dad494ae90a898c52204a3406e84d072482a1e1be854eeb2157
 
 build-depends:
 - core-deps/spice-protocol.bst
