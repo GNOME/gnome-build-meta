@@ -7,6 +7,8 @@ sources:
   ref: freedesktop-sdk-22.08.4-0-gf1224db8495fcdcbc3869962a6f763c8f751d34d
 - kind: patch
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
+- kind: patch
+  path: files/freedesktop-sdk/10933.patch
 config:
   options:
     target_arch: '%{arch}'
