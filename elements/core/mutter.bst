@@ -54,7 +54,11 @@ depends:
 
 variables:
   meson-local: >-
-    -Dxwayland_initfd=enabled
+    -Dxwayland=false
     -Dprofiler=true
-    -Dtests=false
+    -Dcore_tests=false
     -Dstartup_notification=false
+    -Dwayland=true
+    -Dsm=false
+    -Dglx=false
+    -Dx11=false
