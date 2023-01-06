@@ -24,4 +24,5 @@ depends:
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/libfdk-aac.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
