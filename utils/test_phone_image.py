@@ -135,12 +135,10 @@ def fail_timeout(qemu_task):
 def main():
     args = argument_parser().parse_args()
 
-    command = ['qemu-system-aarch64', '-cpu', 'cortex-a57', '-M', 'virt', '-m',
-               '4096', '--nographic', '-drive',
-               'if=pflash,format=raw,file=QEMU_EFI.img',
-               '-drive', 'if=pflash,file=varstore.img',
-               '-drive', 'if=virtio,file=debian.img',
-               '-drive', 'if=virtio,format=raw,file=disk.img']
+    command = ['qemu-system-aarch64', '-enable-kvm', '-nographic', '-machine', 'virt,gic-version=max', '-m', '512M', '-cpu', 'max', '-smp', '4',
+               '-netdev', 'user,id=vnet,hostfwd=:127.0.0.1:0-:22', '-device', 'virtio-net-pci,netdev=vnet',
+               '-drive', 'file=disk.img,format=raw,if=none,id=drive0,cache=writeback', '-device', 'virtio-blk,drive=drive0,bootindex=0',
+               '-drive', 'file=flash0.img,format=raw,if=pflash', '-drive', 'file=flash1.img,format=raw,if=pflash']
 
     loop = asyncio.get_event_loop()
     qemu_task = loop.create_task(run_test(command, args.dialog))
