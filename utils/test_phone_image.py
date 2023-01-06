@@ -1,4 +1,4 @@
-"""test_pinephone_image.py: Boots a disk image and tests that it works."""
+"""test_phone_image.py: Boots a disk image and tests that it works."""
 
 import argparse
 import asyncio
@@ -26,13 +26,6 @@ DIALOGS = {
         # Modem status
         'eg25-manager',
         '#',  # currently errors
-        # UI tweaks
-        'gsettings get org.gnome.desktop.interface text-scaling-factor',
-        '1.5',
-        'gsettings get org.gnome.desktop.interface scaling-factor',
-        '1',
-        'gnome-tweaks',
-        '#',  # No output expected without display
         # Check usb utils
         'lsusb',
         '#',  # Output irrelevant

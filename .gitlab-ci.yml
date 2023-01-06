@@ -492,9 +492,9 @@ test-pinephone-aarch64:
   - qemu-img create -f qcow2 varstore.img 64M
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
-  - chmod +x utils/test_pinephone_image.py
+  - chmod +x utils/test_phone_image.py
   script:
-  - python3 utils/test_pinephone_image.py
+  - python3 utils/test_phone_image.py
   tags:
   - aarch64
   - gnome-build-meta
@@ -523,9 +523,9 @@ test-pinephone-pro-aarch64:
   - qemu-img create -f qcow2 varstore.img 64M
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
-  - chmod +x utils/test_pinephone_image.py
+  - chmod +x utils/test_phone_image.py
   script:
-  - python3 utils/test_pinephone_image.py
+  - python3 utils/test_phone_image.py
   tags:
   - aarch64
   - gnome-build-meta
