@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-music.git
   track: master
-  ref: 42.1-82-g621bc4f25d99c4b1eeb1f66578017b476883e73c
+  ref: 42.1-83-g63710c4f8b72cc1a7174f9cd4228782dc2856c97
   submodules:
     subprojects/gfm:
       checkout: true

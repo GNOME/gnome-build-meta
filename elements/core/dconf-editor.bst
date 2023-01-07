@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:dconf-editor.git
   track: master
-  ref: 43.0-6-g66e1e07bae9d258a856174e8f78f29f98f64be55
+  ref: 43.0-7-g73e396fef67723d2b0c3bf676c0cf3fe5550cbee
 
 build-depends:
 - sdk/appstream-glib.bst
