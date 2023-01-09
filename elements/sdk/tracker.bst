@@ -3,13 +3,13 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:tracker.git
-  track: master
-  ref: 3.4.2-40-g76fe040bc426a630e5d13c821ec07af9c52bf43f
+  track: tracker-automated-vapi
   submodules:
     subprojects/gvdb:
       url: gnome:gvdb.git
       checkout: true
 
+  ref: 3.4.2-41-g62a776b4e6c97283248f7468d2953b9db7099823
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
