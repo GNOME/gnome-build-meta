@@ -7,6 +7,8 @@ sources:
   ref: freedesktop-sdk-22.08.5-0-g362fe115679a444c19c75ff2da330c57d57ef245
 - kind: patch
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
+- kind: patch
+  path: files/freedesktop-sdk/0001-components-meson-updte-to-1.0.0.patch
 config:
   options:
     target_arch: '%{arch}'

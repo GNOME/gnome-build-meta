@@ -1,0 +1,46 @@
+From 67886b063b908ea5e58b664e5b26926ec79a5a36 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Mon, 9 Jan 2023 21:19:18 +0200
+Subject: [PATCH] components/meson: updte to 1.0.0
+
+---
+ elements/components/meson.bst      | 6 +++---
+ patches/meson/meson-no-lib64.patch | 8 +++++---
+ 2 files changed, 8 insertions(+), 6 deletions(-)
+
+diff --git a/elements/components/meson.bst b/elements/components/meson.bst
+index 2690a8434..09457f6be 100644
+--- a/elements/components/meson.bst
++++ b/elements/components/meson.bst
+@@ -21,9 +21,9 @@ sources:
+ - kind: pypi
+   name: meson
+   include:
+-  - '0[.]63[.].*'
++  - '1[.]0[.].*'
+   ref:
+-    sha256sum: 519c0932e1a8b208741f0fdce90aa5c0b528dd297cf337009bf63539846ac056
+-    suffix: 45/3b/deb72eb6aa16a7ce46ce59d780445db5fe279557ca3a13f77f3c77686c77/meson-0.63.3.tar.gz
++    sha256sum: aa50a4ba4557c25e7d48446abfde857957dcdf58385fffbe670ba0e8efacce05
++    suffix: 83/40/c0ea8d3072441403aa30d91b900051a961e0f6d58f702c0ec9ca812c8737/meson-1.0.0.tar.gz
+ - kind: patch
+   path: patches/meson/meson-no-lib64.patch
+diff --git a/patches/meson/meson-no-lib64.patch b/patches/meson/meson-no-lib64.patch
+index eeadd4681..b41f18d63 100644
+--- a/patches/meson/meson-no-lib64.patch
++++ b/patches/meson/meson-no-lib64.patch
+@@ -1,6 +1,8 @@
+---- meson/mesonbuild/mesonlib/universal.py-old	2021-07-03 22:16:33.341748112 +0300
+-+++ meson/mesonbuild/mesonlib/universal.py	2021-07-03 22:17:04.167878479 +0300
+-@@ -850,21 +850,6 @@ def version_compare_condition_with_min(c
++diff --git a/mesonbuild/utils/universal.py b/mesonbuild/utils/universal.py
++index a78ca7fd9..0726cbbc0 100644
++--- a/mesonbuild/utils/universal.py
+++++ b/mesonbuild/utils/universal.py
++@@ -959,21 +959,6 @@ def search_version(text: str) -> str:
+  
+  
+  def default_libdir() -> str:
+-- 
+2.38.1
+
