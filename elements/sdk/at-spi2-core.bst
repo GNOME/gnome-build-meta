@@ -3,11 +3,12 @@ sources:
 - kind: git_tag
   url: gnome:at-spi2-core.git
   track: main
-  ref: AT_SPI2_CORE_2_46_0-142-gd140f02f225bed08cc78ea13f5ae0f9d370d0505
+  ref: AT_SPI2_CORE_2_47_1-1-ga6d486411942c4ebea59eb9bedf7c1bbf6d81f23
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libxml2.bst
+- freedesktop-sdk.bst:components/python3-sphinx.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst

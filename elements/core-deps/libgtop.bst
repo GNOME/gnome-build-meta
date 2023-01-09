@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libgtop.git
   track: master
-  ref: 2.40.0-92-g66721198b640a241c2c666e0f628a665b4bf8c23
+  ref: 2.40.0-95-gf7a00681a9c7ccb69dcbafe10151e1398a6db3d7
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/texinfo.bst
