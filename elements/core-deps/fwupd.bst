@@ -18,6 +18,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/ModemManager.bst
 - core-deps/libjcat.bst
 - core-deps/xmlb.bst
 - core-deps/protobuf-c.bst
@@ -47,14 +48,12 @@ depends:
 
 variables:
   meson-local: >-
-    --auto-features=disabled
-    -Dcurl=enabled
-    -Ddocs=enabled
     -Dsoup_session_compat=false
     -Dplugin_dell=%{plugin_dell}
     -Dplugin_msr=%{plugin_msr}
     -Dplugin_uefi_capsule=%{plugin_uefi_capsule}
     -Defi_binary=%{efi_binary}
+    -Dplugin_flashrom=disabled
 
   plugin_dell: 'false'
   plugin_msr: 'false'
