@@ -1,0 +1,32 @@
+From db1287083e7f84a2f48b75f8578e37c5a1597e8c Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 13 Jan 2023 12:29:09 +0100
+Subject: [PATCH] libtracker-sparql: Add some default values to VAPI metadata
+
+In order to enhance compatibility with the old VAPI file, add a
+default value to some arguments that used to have one. Fixes vala
+compiler errors introduced by the VAPI switch when building Rygel.
+---
+ src/libtracker-sparql/Tracker-3.0.metadata | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/libtracker-sparql/Tracker-3.0.metadata b/src/libtracker-sparql/Tracker-3.0.metadata
+index 09cea80a0..99bf9e57d 100644
+--- a/src/libtracker-sparql/Tracker-3.0.metadata
++++ b/src/libtracker-sparql/Tracker-3.0.metadata
+@@ -4,9 +4,12 @@ SparqlConnection.new symbol_type="function"
+ SparqlConnection.new_async symbol_type="function"
+ SparqlConnection.new_finish symbol_type="function"
+ SparqlConnection.bus_new symbol_type="function"
++SparqlConnection.bus_new.dbus_connection default=null
+ SparqlConnection.remote_new symbol_type="function"
+ SparqlConnection.bus_new_async symbol_type="function"
++SparqlConnection.bus_new_async.dbus_connection default=null
+ SparqlConnection.bus_new_finish symbol_type="function"
++SparqlCursor.get_string.length default=null
+ DeserializeFlags.deserialize_flags_none name="NONE"
+ SerializeFlags.serialize_flags_none name="NONE"
+ PREFIX_* name="PREFIX_(.*)" parent="Tracker.Prefix"
+-- 
+GitLab
+

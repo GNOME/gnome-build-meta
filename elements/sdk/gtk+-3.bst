@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gtk.git
-  track: gtk-3-24
-  ref: 3.24.36-14-g128cdaa1135acff0abccacd140d0bef44a7e409b
+- kind: tar
+  url: gnome_downloads:gtk+/3.24/gtk+-3.24.36.tar.xz
+  ref: 27a6ef157743350c807ffea59baa1d70226dbede82a5e953ffd58ea6059fe691
 - kind: patch
   path: files/gtk3-werror.patch
 

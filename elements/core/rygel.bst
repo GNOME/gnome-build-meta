@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:rygel.git
-  track: master
-  ref: rygel-0.42.0-12-gaee994695addbae7d669b74a3db90ba77abf9ee2
-
+- kind: tar
+  url: gnome_downloads:rygel/0.42/rygel-0.42.0.tar.xz
+  ref: 006da78677df28caee287c44c29fcd9edcb1b2162423bc7f2dd2dc856b8e2bbb
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

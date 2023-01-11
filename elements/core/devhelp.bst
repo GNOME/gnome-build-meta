@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:devhelp.git
-  track: main
-  ref: 43.0-6-g8c9001dc053a46ece39c371242d611504836c97f
-
+- kind: tar
+  url: gnome_downloads:devhelp/43/devhelp-43.0.tar.xz
+  ref: 63ceeefd05392e02044881ef1ecd724293553da5735b7efc082b2d13fe85dd04
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst

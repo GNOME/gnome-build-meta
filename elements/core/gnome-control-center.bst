@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 44.alpha-41-g6c96b8ef6316c5c8aa6786005fc1764eefb3fc80
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gnome:libgnome-volume-control.git
-
+- kind: tar
+  url: gnome_downloads:gnome-control-center/44/gnome-control-center-44.alpha.tar.xz
+  ref: c79f44af40d012e3f5896ded1f5be4df2d6be9332cd42cde07f92e5647a02246
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

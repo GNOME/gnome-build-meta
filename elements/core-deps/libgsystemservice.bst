@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome_gitlab:pwithnall/libgsystemservice.git
-  track: 0.2.0
-  ref: 0.2.0-0-gbb53a665a769dadb85d2e1197572ee7fe919f56d
-
+- kind: tar
+  url: gnome_downloads:libgsystemservice/0.2/libgsystemservice-0.2.0.tar.xz
+  ref: 0a8d933ef3413a64e356afd6444b9d4affcd5bfa8658113cd890c1c733a6b2a1
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gtk-doc.bst

@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: gnome:gspell.git
-  track: master
-  ref: 1.12.0-6-g19f8bb35460003062a1fb36e0194c6c8ac5ea778
-
+- kind: tar
+  url: gnome_downloads:gspell/1.12/gspell-1.12.0.tar.xz
+  ref: 40d2850f1bb6e8775246fa1e39438b36caafbdbada1d28a19fa1ca07e1ff82ad
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

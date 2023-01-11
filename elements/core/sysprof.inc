@@ -1,5 +1,4 @@
 sources:
-- kind: git_tag
-  url: gnome:sysprof.git
-  track: master
-  ref: 3.46.0-33-g073d65abdda59762f7ac93c4e703d3b6dbd088f1
+- kind: tar
+  url: gnome_downloads:sysprof/3.46/sysprof-3.46.0.tar.xz
+  ref: 3e430d578150a8dd0b075b17d2fcc1ba704d42880262f0cc651f33e493be4071

@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-photos.git
-  track: master
-  ref: 43.0-7-g4033b0809006c116e8de33c87367a3b34ec5782e
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
-
+- kind: tar
+  url: gnome_downloads:gnome-photos/43/gnome-photos-43.0.tar.xz
+  ref: c7ac7458d533f29d955011c74b76224d79ea31bcc12e9d6d0ce7b6c3704d08e1
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
