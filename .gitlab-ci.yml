@@ -509,7 +509,6 @@ test-iso-installer-x86_64:
   - gnome-build-meta
 
 test-pinephone-aarch64:
-  image: ubuntu:focal
   stage: test
   when: manual
   variables:
@@ -518,18 +517,10 @@ test-pinephone-aarch64:
   - job: "pinephone-image"
     artifacts: true
   before_script:
-  - export DEBIAN_FRONTEND=noninteractive
-  - apt update -y
-  - apt install software-properties-common -y
-  - add-apt-repository ppa:deadsnakes/ppa
-  - apt update
-  - apt install python3.8 -yqq
-  - python3 --version
-  - apt-get install qemu-system-arm expect wget -y
-  - wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.img.gz
-  - gunzip QEMU_EFI.img.gz
-  - qemu-img create -f qcow2 debian.img 32G
-  - qemu-img create -f qcow2 varstore.img 64M
+  - dd if=/dev/zero of=flash1.img bs=1M count=64
+  - dd if=/dev/zero of=flash0.img bs=1M count=64
+  - dd if=/usr/share/qemu/edk2-aarch64-code.fd of=flash0.img conv=notrunc
+
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
   - chmod +x utils/test_phone_image.py
