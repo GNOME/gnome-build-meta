@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libgit2-glib.git
   track: master
-  ref: v1.0.0.1-21-gc8143310a9c717b7f6b32c48cabf4309b06077cb
+  ref: v1.0.0.1-22-gd97e73f499ee0b8e80cac3c4696ed234e4e993dd
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

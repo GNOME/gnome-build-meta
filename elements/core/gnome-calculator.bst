@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-calculator.git
   track: master
-  ref: 43.0.1-18-gdfd9499d217fb10e0cef19330c5431d2b2ba234e
+  ref: 43.0.1-19-g149fb8dc2b9ab5df2bf044976ab73f088b587ccc
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst
