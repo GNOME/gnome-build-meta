@@ -9,6 +9,8 @@ sources:
   path: files/freedesktop-sdk/noopenh264-2.3.1.patch
 - kind: patch
   path: files/freedesktop-sdk/0001-components-meson-updte-to-1.0.0.patch
+- kind: patch
+  path: files/freedesktop-sdk/dav1d-lto.patch
 config:
   options:
     target_arch: '%{arch}'

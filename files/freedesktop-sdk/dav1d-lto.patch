@@ -1,0 +1,13 @@
+diff --git a/elements/components/dav1d.bst b/elements/components/dav1d.bst
+index 79c67c81a..9051383d9 100644
+--- a/elements/components/dav1d.bst
++++ b/elements/components/dav1d.bst
+@@ -11,6 +11,8 @@ variables:
+   meson-local: >-
+     -Denable_tests=false
+     -Dxxhash_muxer=disabled
++  # Disable LTO due to https://webkit.org/b/250477
++  meson-lto-flags:
+ 
+ public:
+   bst:
