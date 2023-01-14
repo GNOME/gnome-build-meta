@@ -2,9 +2,7 @@
 include: .gitlab-ci/arch.yml
 
 stages:
-- prepare
 - deploy
-- finish
 
 default:
   image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
@@ -16,64 +14,32 @@ default:
   - echo "$CASD_CLIENT_CERT" > client.crt
   - echo "$CASD_CLIENT_KEY" > client.key
 
-.flatmgr-template:
+flatmgr:
+  extends:
+  - .arch-indep
   stage: deploy
-  dependencies: [flatmgr-prepare]
   script:
   - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
-  - TARGETS_REPO_ARCH=TARGETS_${FLAT_MANAGER_REPO}_${ARCH}
-  - TARGETS="$TARGETS ${!TARGETS_REPO} ${!TARGETS_REPO_ARCH}"
-
-  - $BST -o arch $ARCH pull $TARGETS
+  - TARGETS="$TARGETS ${!TARGETS_REPO}"
 
   - ostree init --repo repo/ --mode archive
-
   - |
-    for target in $TARGETS; do
-      $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
-      ostree pull-local --repo repo/ checkout-repo/
-      rm -rf checkout-repo/
-    done
+    for ARCH in $SUPPORTED_ARCHES; do
+      $BST -o arch $ARCH pull $TARGETS
 
+      for target in $TARGETS; do
+        $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
+        ostree pull-local --repo repo/ checkout-repo/
+        rm -rf checkout-repo/
+      done
   - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
 
-  - flat-manager-client push $(cat build.txt) repo/
-  environment:
-    name: $ENVIRONMENT_NAME
-    action: prepare
-
-
-flatmgr-prepare:
-  extends: .arch-indep
-  stage: prepare
-  script:
   - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-  artifacts:
-    paths:
-    - build.txt
-    - project.refs
-  environment:
-    name: $ENVIRONMENT_NAME
-    action: prepare
-
-flatmgr-finish:
-  extends: .arch-indep
-  stage: finish
-  dependencies: [flatmgr-prepare]
-  script:
+  - flat-manager-client push $(cat build.txt) repo/
   - flat-manager-client commit --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   after_script:
   - flat-manager-client purge $(cat build.txt)
   environment:
     name: $ENVIRONMENT_NAME
-
-flatmgr-finish-failed:
-  extends: .arch-indep
-  stage: finish
-  dependencies: [flatmgr-prepare]
-  script:
-  - flat-manager-client purge $(cat build.txt)
-  when: on_failure
-

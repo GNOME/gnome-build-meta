@@ -206,17 +206,6 @@ generate-deploy-config:
     END
   - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml
 
-  - |
-    for ARCH in $SUPPORTED_ARCHES; do
-    cat >> flatpak-deploy.yml << END
-
-    flatmgr-$ARCH:
-      extends:
-      - .flatmgr-template
-      - .$ARCH
-    END
-    done
-
   artifacts:
     paths:
     - flatpak-deploy.yml
