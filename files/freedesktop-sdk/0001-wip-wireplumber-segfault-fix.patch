@@ -1,0 +1,58 @@
+From cce43435bfd8ccaaee47cb1976ff4ccc9fffb118 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 14 Jan 2023 05:05:34 +0200
+Subject: [PATCH] wireplumber segfault fix
+
+---
+ elements/components/wireplumber.bst           |  2 ++
+ ...8d8be24a298a7dc3c1f475be391688580598.patch | 28 +++++++++++++++++++
+ 2 files changed, 30 insertions(+)
+ create mode 100644 files/wireplumber/63348d8be24a298a7dc3c1f475be391688580598.patch
+
+diff --git a/elements/components/wireplumber.bst b/elements/components/wireplumber.bst
+index e8230f895..4ba1bb1d8 100644
+--- a/elements/components/wireplumber.bst
++++ b/elements/components/wireplumber.bst
+@@ -34,3 +34,5 @@ sources:
+   ref: v0.1.1-0-gfededad7169e538ca47e11a9ee9251bc361a9a65
+ - kind: patch
+   path: files/wireplumber/c16e637c329bc9dda8544b18f5bd47a8d63ee253.patch
++- kind: patch
++  path: files/wireplumber/63348d8be24a298a7dc3c1f475be391688580598.patch
+diff --git a/files/wireplumber/63348d8be24a298a7dc3c1f475be391688580598.patch b/files/wireplumber/63348d8be24a298a7dc3c1f475be391688580598.patch
+new file mode 100644
+index 000000000..755400198
+--- /dev/null
++++ b/files/wireplumber/63348d8be24a298a7dc3c1f475be391688580598.patch
+@@ -0,0 +1,28 @@
++From 63348d8be24a298a7dc3c1f475be391688580598 Mon Sep 17 00:00:00 2001
++From: George Kiagiadakis <george.kiagiadakis@collabora.com>
++Date: Wed, 30 Nov 2022 14:34:33 +0200
++Subject: [PATCH] metadata: use an object closure to avoid crashing if the core
++ disconnects early
++
++Fixes: #382
++---
++ lib/wp/metadata.c | 3 ++-
++ 1 file changed, 2 insertions(+), 1 deletion(-)
++
++diff --git a/lib/wp/metadata.c b/lib/wp/metadata.c
++index 3318c2d6..f5b0ac46 100644
++--- a/lib/wp/metadata.c
+++++ b/lib/wp/metadata.c
++@@ -276,7 +276,8 @@ wp_metadata_pw_proxy_created (WpProxy * proxy, struct pw_proxy * pw_proxy)
++   pw_metadata_add_listener (priv->iface, &priv->listener,
++       &metadata_events, self);
++   priv->remove_listener = TRUE;
++-  wp_core_sync (core, NULL, (GAsyncReadyCallback) initial_sync_done, self);
+++  wp_core_sync_closure (core, NULL,
+++      g_cclosure_new_object ((GCallback) initial_sync_done, G_OBJECT (self)));
++ }
++ 
++ static void
++-- 
++GitLab
++
+-- 
+2.39.0
+
