@@ -1,7 +1,9 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.39.3.tar.xz
-  ref: 6b783704f16f35e72cd6eeb546eaf6d5221ca70e70639f3906def2e9a473bf9b
+  url: webkitgtk:webkitgtk-2.39.4.tar.xz
+  ref: 44a56a68f43fc8684aaa55ddd0fb108503ab4ab0b24e31535e9d8b9dd57563ef
+- kind: patch
+  path: files/webkitgtk/unbreak-headers.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
