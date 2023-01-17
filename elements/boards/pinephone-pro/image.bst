@@ -50,10 +50,13 @@ config:
   - |
     ostree admin deploy --os="gnome-os" \
          --sysroot="%{sysroot}" %{ostree-branch} \
-         --karg="rw" --karg="splash" \
+         --karg="rw" \
          --karg="root=LABEL=root" \
-         --karg="console=ttyS0,115200n8" \
-         --karg="earlycon=ttyS0,115200n8" 
+         --karg="loglevel=10" \
+         --karg="console=ttyS2,1500000" \
+         --karg="console=tty0" \
+         --karg="earlycon=uart8250,mmio32,0xff1a0000" \
+         --karg="consoleblank=0"
 
   - |
     mkdir -p "%{sysroot}/etc/ostree"
