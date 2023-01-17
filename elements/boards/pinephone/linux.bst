@@ -66,6 +66,9 @@ config:
     scripts/config --set-str EXTRA_FIRMWARE "ov5640_af.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt rtl_bt/rtl8723cs_xx_fw.bin rtl_bt/rtl8723cs_xx_config.bin rtl_bt/rtl8723bs_config-pine64.bin"
     scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
+    scripts/config -e IKCONFIG
+    scripts/config -e IKCONFIG_PROC
+
   - |
     make -j1 olddefconfig
 
