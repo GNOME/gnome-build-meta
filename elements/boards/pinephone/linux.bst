@@ -1,10 +1,5 @@
 kind: manual
-
-sources:
-- kind: git_tag
-  url: github:megous/linux.git
-  track: orange-pi-6.0
-  ref: orange-pi-6.0-20221111-0002-508-ge191fb41a4fa9d8e8e3b2f4b0452c536222c087e
+description: Linux kernel configured for use in virtual machines.
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
@@ -20,17 +15,41 @@ build-depends:
 
 variables:
   bootdir: /boot
-  kernel_arch: arm64
-  image-name: arch/arm64/boot/Image
+  kernel_arch: '%{arch}'
+  src-arch: '%{kernel_arch}'
+  image-name: '$(make -s image_name)'
+  (?):
+  - arch == "x86_64":
+      src-arch: x86
+  - arch == "aarch64":
+      kernel_arch: arm64
+      # The default image file is not EFI compatible
+      image-name: arch/arm64/boot/Image
+  - arch == "i686":
+      src-arch: x86
+      kernel_arch: i386
+  - arch in ("ppc64", "ppc64le"):
+      kernel_arch: powerpc
+  - arch == "riscv64":
+      kernel_arch: riscv
+      image-name: arch/riscv/boot/Image
 
 environment:
   ARCH: '%{kernel_arch}'
+  # compile.h has hardcoded timestamp, let's seed it
+  KBUILD_BUILD_TIMESTAMP: 'Thu Nov 10 15:00:00 UTC 2011'
+  KBUILD_BUILD_USER: 'tomjon'
 
 config:
   configure-commands:
-  - make clean pinephone_defconfig
+  - |
+    # Generate the default kernel config for the target architecture
+    make defconfig
 
   - |
+    . ./config-utils.sh
+    rm -f expected-configs
+
     scripts/config -e EFI
     scripts/config -e BLK_DEV_INITRD
     scripts/config -e RD_GZIP
@@ -47,15 +66,57 @@ config:
     scripts/config --set-str EXTRA_FIRMWARE "ov5640_af.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt rtl_bt/rtl8723cs_xx_fw.bin rtl_bt/rtl8723cs_xx_config.bin rtl_bt/rtl8723bs_config-pine64.bin"
     scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
+  - |
+    make -j1 olddefconfig
+
+  - |
+    . ./config-utils.sh
+
   build-commands:
   - make -j$(nproc)
 
   install-commands:
-  - install -Dm644 "%{image-name}" '%{install-root}%{bootdir}/vmlinuz'
-  - install -Dm644 System.map '%{install-root}%{bootdir}/System.map'
-  - make INSTALL_MOD_PATH='%{install-root}%{prefix}' modules_install
-  - rm %{install-root}%{indep-libdir}/modules/*/{source,build}
-  - make INSTALL_DTBS_PATH='%{install-root}%{bootdir}/dtbs' dtbs_install
+  - |
+    install -Dm644 "%{image-name}" '%{install-root}%{bootdir}/vmlinuz'
+    install -Dm644 System.map '%{install-root}%{bootdir}/System.map'
+    install -Dm644 .config '%{install-root}%{bootdir}/config'
+    make -j1 INSTALL_MOD_PATH='%{install-root}%{prefix}' modules_install
+
+  - |
+    release=$(make -s kernelrelease)
+    targetdir="%{install-root}%{prefix}/src/linux-${release}"
+
+    rm "%{install-root}%{indep-libdir}/modules/${release}"/{source,build}
+
+    to_copy=(
+      Makefile
+      Module.symvers
+      .config
+      "arch/%{src-arch}/include"
+      "arch/%{src-arch}/Makefile"
+      scripts
+      include
+    )
+    if [ "$(scripts/config -s STACK_VALIDATION)" = y ]; then
+      to_copy+=(tools/objtool/objtool)
+    fi
+    for file in "${to_copy[@]}"
+    do
+      targetfile="${targetdir}/${file}"
+      dir="$(dirname "${targetfile}")"
+      [ -d "${dir}" ] || install -d "${dir}"
+      cp -aT "${file}" "${targetfile}"
+    done
+
+    ln -sr "${targetdir}" "%{install-root}%{indep-libdir}/modules/${release}/source"
+    ln -sr "${targetdir}" "%{install-root}%{indep-libdir}/modules/${release}/build"
+
+  (?):
+  - arch in ["aarch64", "arm", "riscv64"]:
+      install-commands:
+        (>):
+        - |
+          make -j1 INSTALL_DTBS_PATH='%{install-root}%{bootdir}/dtbs' dtbs_install
 
 public:
   bst:
@@ -70,3 +131,6 @@ public:
       devel:
         (>):
         - '%{bootdir}/System.map'
+
+(@):
+- include/linux.yml
