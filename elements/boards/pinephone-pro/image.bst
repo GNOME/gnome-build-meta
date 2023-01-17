@@ -91,16 +91,6 @@ config:
             partition-table-type = "gpt"
             gpt-location = 1M
         }
-        partition idbloader {
-            image = "idbloader.img"
-            offset = 32K
-            in-partition-table = false
-        }
-        partition uboot {
-            image = "u-boot.itb"
-            offset = 8M
-            in-partition-table = false
-        }
         partition efi {
             image = "efi.img"
             partition-type-uuid = "U"
