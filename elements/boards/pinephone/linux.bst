@@ -44,7 +44,7 @@ config:
   configure-commands:
   - |
     # Generate the default kernel config for the target architecture
-    make defconfig
+    make pinephone_defconfig
 
   - |
     . ./config-utils.sh
