@@ -471,8 +471,6 @@ test-s3-image:
 test-pinephone-aarch64:
   stage: test
   when: manual
-  variables:
-    IMAGE: boards/pinephone/image.bst
   needs:
   - job: "pinephone-image"
     artifacts: true
@@ -493,8 +491,6 @@ test-pinephone-pro-aarch64:
   image: ubuntu:focal
   stage: test
   when: manual
-  variables:
-    IMAGE: boards/pinephone-pro/image.bst
   needs:
   - job: "pinephone-pro-image"
     artifacts: true
