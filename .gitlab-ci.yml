@@ -118,6 +118,24 @@ default:
   - flat-manager-client purge $BUILD_ID
   - exit $result
 
+.test-phone-image-template:
+  stage: test
+  when: manual
+  needs:
+    artifacts: true
+  before_script:
+  - dd if=/dev/zero of=flash1.img bs=1M count=64
+  - dd if=/dev/zero of=flash0.img bs=1M count=64
+  - dd if=/usr/share/qemu/edk2-aarch64-code.fd of=flash0.img conv=notrunc
+
+  - mv $(pwd)/image/disk.img.xz ./disk.img.xz
+  - unxz -T$(nproc) disk.img.xz
+  script:
+  - python3 utils/test_phone_image.py
+  tags:
+  - aarch64
+  - gnome-build-meta
+
 #
 # "Real" CI jobs
 #
@@ -469,23 +487,10 @@ test-s3-image:
   allow_failure: true
 
 test-pinephone-aarch64:
-  stage: test
-  when: manual
+  extends:
+  - .test-phone-image-template
   needs:
   - job: "pinephone-image"
-    artifacts: true
-  before_script:
-  - dd if=/dev/zero of=flash1.img bs=1M count=64
-  - dd if=/dev/zero of=flash0.img bs=1M count=64
-  - dd if=/usr/share/qemu/edk2-aarch64-code.fd of=flash0.img conv=notrunc
-
-  - mv $(pwd)/image/disk.img.xz ./disk.img.xz
-  - unxz -T$(nproc) disk.img.xz
-  script:
-  - python3 utils/test_phone_image.py
-  tags:
-  - aarch64
-  - gnome-build-meta
 
 test-pinephone-pro-aarch64:
   image: ubuntu:focal
