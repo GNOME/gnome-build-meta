@@ -2,4 +2,4 @@ sources:
 - kind: git_tag
   url: gnome:sysprof.git
   track: master
-  ref: 3.46.0-27-g2df6bd6fe002ae02308b091b2fcfd198162b68bb
+  ref: 3.46.0-33-g073d65abdda59762f7ac93c4e703d3b6dbd088f1

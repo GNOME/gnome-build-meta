@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-maps.git
   track: main
-  ref: v44.alpha-3-gad73727d70a677c9b8017e03f26fa02cb493d3fc
+  ref: v44.alpha-15-gb987babea5760cce1815158d49696ff2d39407d0
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
