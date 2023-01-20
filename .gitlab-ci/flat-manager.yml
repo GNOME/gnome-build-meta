@@ -32,6 +32,7 @@ flatmgr:
         ostree pull-local --repo repo/ checkout-repo/
         rm -rf checkout-repo/
       done
+    done
   - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
 
