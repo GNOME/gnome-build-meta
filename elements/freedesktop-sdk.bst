@@ -5,8 +5,6 @@ sources:
   track: release/22.08
   track-tags: true
   ref: freedesktop-sdk-22.08.7-0-g957a3107c1a1576c6d725db54f34bcfa87bf760c
-- kind: patch
-  path: files/freedesktop-sdk/0001-components-meson-updte-to-1.0.0.patch
 config:
   options:
     target_arch: '%{arch}'
