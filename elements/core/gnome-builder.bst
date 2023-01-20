@@ -22,6 +22,7 @@ depends:
 - core-deps/editorconfig-core-c.bst
 - core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
+- core-deps/libdex.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpanel.bst
 - core-deps/libpeas.bst
