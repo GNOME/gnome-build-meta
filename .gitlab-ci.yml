@@ -202,6 +202,7 @@ generate-deploy-config:
       ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
       DOCKER_REGISTRY: '$DOCKER_REGISTRY'
       DOCKER_IMAGE_ID: '$DOCKER_IMAGE_ID'
+      SUPPORTED_ARCHES: '$SUPPORTED_ARCHES'
 
     END
   - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml
