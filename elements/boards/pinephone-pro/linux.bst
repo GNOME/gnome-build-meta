@@ -70,6 +70,9 @@ config:
     scripts/config --set-str EXTRA_FIRMWARE "regulatory.db regulatory.db.p7s brcm/brcmfmac43455-sdio.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt brcm/brcmfmac43455-sdio.clm_blob brcm/BCM4345C0.hcd rockchip/dptx.bin"
     scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
+    scripts/config -e IKCONFIG
+    scripts/config -e IKCONFIG_PROC
+
   - |
     make -j1 olddefconfig
 
