@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-builder.git
   track: main
-  ref: 44.alpha-68-g986a26eb30b917348d26bb40a4bff65839e59d04
+  ref: 44.alpha-42-gbf4761579a418af3f94198a0e7439b9263793432
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -22,7 +22,6 @@ depends:
 - core-deps/editorconfig-core-c.bst
 - core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
-- core-deps/libdex.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpanel.bst
 - core-deps/libpeas.bst
