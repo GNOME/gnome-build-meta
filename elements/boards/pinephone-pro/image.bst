@@ -53,9 +53,8 @@ config:
          --karg="rw" \
          --karg="root=LABEL=root" \
          --karg="loglevel=10" \
-         --karg="console=ttyS2,1500000" \
+         --karg="console=ttyS2,1500000n8" \
          --karg="console=tty0" \
-         --karg="earlycon=uart8250,mmio32,0xff1a0000" \
          --karg="consoleblank=0"
 
   - |
