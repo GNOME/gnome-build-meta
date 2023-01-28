@@ -130,8 +130,6 @@ default:
 
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
-  script:
-  - python3 utils/test_phone_image.py
   tags:
   - aarch64
   - gnome-build-meta
@@ -479,12 +477,16 @@ test-s3-image:
 test-pinephone-aarch64:
   extends:
   - .test-phone-image-template
+  script:
+  - python3 utils/test_pinephone_image.py
   needs:
   - job: "pinephone-image"
 
 test-pinephone-pro-aarch64:
   extends:
   - .test-phone-image-template
+  script:
+  - python3 utils/test_pinephone_pro_image.py
   needs:
   - job: "pinephone-pro-image"
 
