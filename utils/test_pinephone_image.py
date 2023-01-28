@@ -140,7 +140,9 @@ def main():
                '-drive', 'file=disk.img,format=raw,if=none,id=drive0,cache=writeback', '-device', 'virtio-blk,drive=drive0,bootindex=0',
                '-drive', 'file=flash0.img,format=raw,if=pflash', '-drive', 'file=flash1.img,format=raw,if=pflash']
 
-    loop = asyncio.get_event_loop()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
     qemu_task = loop.create_task(run_test(command, args.dialog))
     loop.call_later(FAILURE_TIMEOUT, fail_timeout, qemu_task)
     loop.run_until_complete(qemu_task)
