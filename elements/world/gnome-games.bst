@@ -3,13 +3,13 @@ sources:
 - kind: git_tag
   url: gnome:gnome-games.git
   track: master
-
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
+- core-deps/libsoup-2.4.bst
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -17,7 +17,6 @@ depends:
 - sdk/libhandy.bst
 - sdk/libmanette.bst
 - sdk/librsvg.bst
-- sdk/libsoup-2.4.bst
 - world/gnome-themes-extra.bst
 - world/retro-gtk.bst
 - world/tracker-2.bst

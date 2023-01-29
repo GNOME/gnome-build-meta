@@ -6,7 +6,7 @@ kind: cmake
 depends:
   (>):
   - sdk/gtk+-3.bst
-  - sdk/libsoup-2.4.bst
+  - core-deps/libsoup-2.4.bst
 
 variables:
   cmake-local: >-

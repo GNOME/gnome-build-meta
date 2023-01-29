@@ -17,10 +17,10 @@ sources:
   path: files/eos-updater/no-ostree-httpd.patch
 
 depends:
-- sdk/libsoup-2.4.bst
 - core-deps/NetworkManager.bst
 - core-deps/flatpak.bst
 - core-deps/libostree.bst
+- core-deps/libsoup-2.4.bst
 - core-deps/mogwai.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/gnupg.bst

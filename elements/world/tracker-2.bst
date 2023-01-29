@@ -11,9 +11,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
-- sdk/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-

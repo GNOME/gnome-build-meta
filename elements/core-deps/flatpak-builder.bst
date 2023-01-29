@@ -16,8 +16,8 @@ runtime-depends:
 - freedesktop-sdk.bst:components/patch.bst
 
 depends:
-- sdk/libsoup-2.4.bst
 - core-deps/flatpak.bst
+- core-deps/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libyaml.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

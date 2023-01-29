@@ -15,6 +15,7 @@ depends:
 - core-deps/libdazzle.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
+- core-deps/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
@@ -22,6 +23,5 @@ depends:
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - sdk/libsecret.bst
-- sdk/libsoup-2.4.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
