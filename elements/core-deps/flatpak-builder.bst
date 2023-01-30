@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:flatpak/flatpak-builder/releases/download/1.2.0/flatpak-builder-1.2.0.tar.xz
-  ref: dfcb6a3ca38d61e0775b70a469ab505285e129361462df09004e6d4251c246a8
+  url: github_files:flatpak/flatpak-builder/releases/download/1.3.1/flatpak-builder-1.3.1.tar.xz
+  ref: f2fa036abc600c3e32f716016bc6f2cc159f97c4f11d9a7f98335eb50ea6e811
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
@@ -17,7 +17,6 @@ runtime-depends:
 
 depends:
 - core-deps/flatpak.bst
-- core-deps/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libyaml.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
