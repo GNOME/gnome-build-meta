@@ -49,11 +49,11 @@ DIALOGS = {
         'cat /proc/config.gz | gunzip > running.config',
         '#',
         'cat running.config | grep GOODIX',  # Check for goodix touchscreen config
-        'CONFIG_TOUCHSCREEN_GOODIX=m',
+        'CONFIG_TOUCHSCREEN_GOODIX=y',
         'cat running.config | grep TOUCHSCREEN',  # Check touchscreen enabled config
         'CONFIG_INPUT_TOUCHSCREEN=y',
-        'cat running.config | grep RTL8723CS',  # Check for rtl8723cs wifi config
-        'CONFIG_RTL8723CS=m',
+        'cat running.config | grep NET_VENDOR',  # Check for net_vendor_broadcom wifi config
+        'CONFIG_NET_VENDOR_BROADCOM=y',
         # Test poweroff
         'sudo shutdown now',
         'Power down'
