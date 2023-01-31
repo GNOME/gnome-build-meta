@@ -1,4 +1,4 @@
-"""test_phone_image.py: Boots a disk image and tests that it works."""
+"""test_pinephone_pro_image.py: Boots a PinePhone Pro disk image and tests that it works."""
 
 import argparse
 import asyncio
