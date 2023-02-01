@@ -1,5 +1,5 @@
-# Ignore Python local cache
-plugins/__pycache__
+# Ignore Python local cache across repo
+**/__pycache__/
 
 # Ignore BuildStream local state
 .bst
