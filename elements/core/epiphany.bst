@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:epiphany.git
   track: master
-  ref: 44.alpha-25-gdff9dc62540fe012c24fc087d88b2d0f683e0a21
+  ref: ce4ed793d8dea9c1939fb5dfd80cad2478b7c9d5
 
 build-depends:
 - sdk/appstream-glib.bst
