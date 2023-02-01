@@ -528,7 +528,7 @@ test-pinephone-aarch64:
   extends:
   - .test-phone-image-template
   script:
-  - python3 utils/test_pinephone_image.py
+  - python3 utils/test_phone_image.py test-pinephone-aarch64
   needs:
   - job: "pinephone-image"
 
@@ -536,7 +536,7 @@ test-pinephone-pro-aarch64:
   extends:
   - .test-phone-image-template
   script:
-  - python3 utils/test_pinephone_pro_image.py
+  - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
   needs:
   - job: "pinephone-pro-image"
 
