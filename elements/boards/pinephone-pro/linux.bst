@@ -1,9 +1,9 @@
 kind: manual
-description: Linux kernel configured for use in virtual machines.
+description: Linux kernel configured for use in PinePhone Pro.
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
-- boards/generic/linux-firmware.bst
+- custom/linux-firmware.bst
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

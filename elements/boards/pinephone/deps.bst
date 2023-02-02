@@ -2,4 +2,4 @@ kind: stack
 
 depends:
 - boards/pinephone/initramfs.bst
-- boards/generic/deps.bst
+- boards/generic/mobile-dependencies.bst

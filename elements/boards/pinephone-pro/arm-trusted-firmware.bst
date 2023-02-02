@@ -26,4 +26,3 @@ config:
 
   install-commands:
   - install -Dm644 -t "%{install-root}%{indep-libdir}/u-boot/%{board}" build/rk3399/debug/bl31/bl31.elf
-
