@@ -4,8 +4,8 @@ sources:
 - kind: git_tag
   url: github:ARM-software/arm-trusted-firmware.git
   track: v2.7
-
   ref: v2.7.0-0-g35f4c7295bafeb32c8bcbdfb6a3f2e74a57e732b
+
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 # This is required because at part of the firmware has to be built for

@@ -3,8 +3,8 @@ kind: autotools
 sources:
 - kind: tar
   url: ftp_gnu_org:binutils/binutils-2.32.tar.xz
-
   ref: 0ab6c55dd86a92ed561972ba15b9b70a8b9f75557f896446c82e8b36e473ee04
+
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
