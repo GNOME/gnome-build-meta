@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:chergert/libdex.git
   track: main
-  ref: 0.1.0-5-g25a051d44361bfe722570e3e46611f3b3b83334d
+  ref: 0.1.0-6-ga9b09f891b073b00fd6ca5499db5afc5afb7f80b
 
 build-depends:
 - sdk-deps/gi-docgen.bst

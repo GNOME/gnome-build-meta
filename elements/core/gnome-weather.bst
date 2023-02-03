@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-weather.git
   track: main
-  ref: 43.0-20-g9ba86eda16f10ccfc972b2934fd80a54f97656ee
+  ref: 43.0-21-g67f5e4747f9636358cc9704c2098a0ad6b088454
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
