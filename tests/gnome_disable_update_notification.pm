@@ -8,7 +8,7 @@ sub run {
     # App tests fail if the "Software Updates Ready to Install" notification
     # appears over the top.
     select_console('user-virtio-terminal');
-    assert_script_run('sudo rm /etc/xdg/autostart/org.gnome.Software.desktop');
+    assert_script_run('gsettings set org.gnome.desktop.notifications.application:/org/gnome/desktop/notifications/application/org-gnome-software/ enable false');
     select_console('x11');
 }
 
