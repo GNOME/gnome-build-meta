@@ -1,4 +1,5 @@
 kind: stack
+description: generic common zone for dependencies related to the PinePhone Pro & PinePhone.
 
 depends:
 - vm/wpa-supplicant-config.bst
@@ -27,3 +28,6 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 - core-deps/pipewire-daemon.bst
 - core-deps/wireplumber.bst
+
+- custom/alsa-utils.bst
+- custom/alsa-ucm-conf.bst
