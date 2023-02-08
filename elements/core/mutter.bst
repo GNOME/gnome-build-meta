@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:mutter.git
-  track: main
+  url: gnome_gitlab:verdre/mutter.git
+  track: mobile-shell
   ref: 43.1-413-gd8ef1b5b8be0ddbdcab909d4fa7cef0276d7f39c
 
 build-depends:
