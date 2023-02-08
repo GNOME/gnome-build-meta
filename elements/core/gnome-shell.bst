@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:verdre/gnome-shell.git
   track: mobile-shell
-  ref: 43.1-201-g3d645eada0c939b3e408d1f730e6aac811625956
+  ref: 3.28.0-5787-g0c42fe4cc05c54a737400973cc5dc8ff9ba51bca
   submodules:
     subprojects/gvc:
       checkout: true

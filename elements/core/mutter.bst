@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:verdre/mutter.git
   track: mobile-shell
-  ref: 43.1-413-gd8ef1b5b8be0ddbdcab909d4fa7cef0276d7f39c
+  ref: 3.31.2-6228-g585802e5afeb268251dbb202f7d108fdf4f51da4
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
