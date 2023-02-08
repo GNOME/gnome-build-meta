@@ -12,6 +12,7 @@ build-depends:
 
 depends:
 - core-deps/gspell.bst
+- core-deps/gtksourceview-4.bst
 - core-deps/libdazzle.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
@@ -19,7 +20,6 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/gtksourceview-4.bst
 - sdk/json-glib.bst
 - sdk/libgee.bst
 - sdk/libsecret.bst
