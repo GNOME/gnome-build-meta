@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: freedesktop:mobile-broadband/libmbim.git
-  ref: 1.29.3-dev-0-gd7bcd7e77b595665a5db8be4fae6de16afbe28df
+  url: freedesktop:mobile-broadband/libqrtr-glib.git
+  track: main
+  ref: 1.2.0-15-g756ff802fe9b7e7da8061caefb490d898c0cfe71
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -11,8 +12,6 @@ build-depends:
 - sdk/gtk-doc.bst
 
 depends:
-- freedesktop-sdk.bst:components/bash-completion.bst
-- freedesktop-sdk.bst:components/help2man.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 

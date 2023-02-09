@@ -6,6 +6,7 @@ sources:
   ref: 006da78677df28caee287c44c29fcd9edcb1b2162423bc7f2dd2dc856b8e2bbb
 build-depends:
 - sdk/vala.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
