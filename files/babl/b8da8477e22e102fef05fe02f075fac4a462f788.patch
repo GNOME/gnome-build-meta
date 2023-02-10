@@ -1,0 +1,26 @@
+From b8da8477e22e102fef05fe02f075fac4a462f788 Mon Sep 17 00:00:00 2001
+From: Ulf Prill <cataurusfynn@yahoo.de>
+Date: Fri, 18 Nov 2022 05:00:44 +0100
+Subject: [PATCH] Update meson.build
+
+Fix Issue #80
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 16d802d25..11328b530 100644
+--- a/meson.build
++++ b/meson.build
+@@ -515,7 +515,7 @@ endif
+ # pkg-config file
+ pkgconfig.generate(
+   babl,
+-  filebase: 'babl',
++  filebase: 'babl-' + api_version,
+   name: 'babl',
+   description: 'Pixel encoding and color space conversion engine.',
+   version: meson.project_version(),
+-- 
+GitLab
+

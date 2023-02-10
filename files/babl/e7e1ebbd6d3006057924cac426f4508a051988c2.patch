@@ -1,0 +1,25 @@
+From e7e1ebbd6d3006057924cac426f4508a051988c2 Mon Sep 17 00:00:00 2001
+From: Ulf Prill <cataurusfynn@yahoo.de>
+Date: Sat, 3 Dec 2022 17:41:46 +0100
+Subject: [PATCH] update -dependency for wrap builds babl.pc -> babl-0.1.pc
+
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 11328b530..99f47c07a 100644
+--- a/meson.build
++++ b/meson.build
+@@ -539,7 +539,7 @@ babl_dep = declare_dependency(
+     'babl_libdir' : babl_library_build_dir,
+   },
+ )
+-meson.override_dependency('babl', babl_dep)
++meson.override_dependency('babl-' + api_version, babl_dep)
+ 
+ ################################################################################
+ # Build summary
+-- 
+GitLab
+
