@@ -1,17 +1,27 @@
-kind: autotools
+kind: meson
 sources:
-- kind: tar
-  url: freedesktop_software:ModemManager/ModemManager-1.18.12.tar.xz
-  ref: b464e4925d955a6ca86dd08616e763b26ae46d7fd37dbe281678e34065b1e430
+- kind: git_tag
+  url: freedesktop:mobile-broadband/ModemManager.git
+  ref: 1.21.3-dev-0-g664c95c684750ccc9eb064c06875690102f55894
+
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
+- freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
+- freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/polkit.bst
+- freedesktop-sdk.bst:components/libxslt.bst
 - core-deps/libmbim.bst
 - core-deps/libqmi.bst
+- core-deps/libqrtr-glib.bst
 - sdk/glib.bst
-- freedesktop-sdk.bst:components/libgudev.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- sdk/gobject-introspection.bst
+
 variables:
   conf-local: >-
     --with-udev-base-dir=/usr/lib/udev
