@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:vala.git
   track: main
-  ref: 0.56.2-68-g0771248fd47770e0d25d139143de41eb16a6ee07
+  ref: 0.56.2-69-g6dec23dc1c5b8567d0e2eddeab226e5cbd817cdc
 build-depends:
 - sdk/vala-tarball.bst
 - freedesktop-sdk.bst:components/bison.bst
