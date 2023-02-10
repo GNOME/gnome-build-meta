@@ -16,6 +16,7 @@ depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libportal.bst
+- core-deps/libqrencode.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
