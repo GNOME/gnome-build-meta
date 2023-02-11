@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.90-102-g8742c720018f80ad808a2133a6a8c41ca91526cf
+  ref: 2.55.91-0-g89fe9d988089009b52bd9f3b09d7e3dfeafc6d0b
 - kind: cargo
   ref:
   - name: adler
@@ -671,8 +671,8 @@ sources:
     version: 1.0.152
     sha: af487d118eecd09402d70a5d72551860e788df87b464af30e5ea6a38c75c541e
   - name: serde_json
-    version: 1.0.92
-    sha: 7434af0dc1cbd59268aa98b4c22c131c0584d2232f6fb166efb993e2832e896a
+    version: 1.0.93
+    sha: cad406b69c91885b5107daf2c29572f6c8cdb3c66826821e286c533490c0bc76
   - name: servo_arc
     version: 0.1.1
     sha: d98238b800e0d1576d8b6e3de32827c2d74bee68bb97748dcf5071fb53965432
