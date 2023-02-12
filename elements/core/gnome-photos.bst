@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:gnome-photos.git
-  track: master
-  ref: 43.0-7-g4033b0809006c116e8de33c87367a3b34ec5782e
+  track: abderrahim/babl-versions
+  ref: 43.0-13-g9db32c3508a8c5d357a053d5f8278c34b4df18f3
   submodules:
     subprojects/libgd:
       checkout: true
