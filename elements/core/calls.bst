@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:calls/43/calls-43.2.tar.xz
-  ref: b07ea140e969aa71c5fc0ffbb5278e8e851e73685163d47e759b4494637d9721
+  url: gnome_downloads:calls/43/calls-43.3.tar.xz
+  ref: 5ec607e40bf14c57c0432aff0888d74bec888938e96bb4dbef094ca9f46e509a
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
