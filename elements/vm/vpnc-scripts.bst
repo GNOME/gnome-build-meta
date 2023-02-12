@@ -5,7 +5,7 @@ sources:
   url: gitlab:openconnect/vpnc-scripts.git
   track: master
 
-  ref: ee45e3cdbbb7ca2f63f27c05775cb49c2711be26
+  ref: 22756827315bc875303190abb3756b5b1dd147ce
 config:
   install-commands:
   - |
