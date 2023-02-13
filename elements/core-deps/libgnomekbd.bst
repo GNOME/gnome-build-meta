@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libgnomekbd.git
   track: master
-  ref: 3.28.1-8-g739069f786cf299ffd72400e4d3fcccae7bcb97c
+  ref: 3.28.1-9-g7887700ae6c4997a1a45722f1e45a1af8e757ad4
 
 build-depends:
 - sdk/gobject-introspection.bst
