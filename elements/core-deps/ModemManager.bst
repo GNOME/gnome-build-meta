@@ -2,7 +2,8 @@ kind: meson
 sources:
 - kind: git_tag
   url: freedesktop:mobile-broadband/ModemManager.git
-  ref: 1.21.3-dev-0-g664c95c684750ccc9eb064c06875690102f55894
+  track: 1.21.2
+  ref: 1.21.2-0-g2a1851536c3c096ab4e3f26ebe6671b946e665be
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
