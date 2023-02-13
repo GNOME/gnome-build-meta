@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ostreedev/ostree/releases/download/v2022.5/libostree-2022.5.tar.xz
-  ref: 914c4d993bc111d7dd30ae9721b6ffe8ab56eb1fd6e81b097b09f400cc1b053f
+  url: github_files:ostreedev/ostree/releases/download/v2022.7/libostree-2022.7.tar.xz
+  ref: 8be2a9261c94e8b9ec4113380ffc480f8598245fb321a009bad4fae4b822411f
 - kind: patch
   path: files/ostree/no-boot-symlink.patch
 
