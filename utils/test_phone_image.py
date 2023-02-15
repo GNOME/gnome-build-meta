@@ -206,9 +206,9 @@ def main(phone_model):
     args = argument_parser(phone_model).parse_args()
 
     cmd = [
-        'qemu-system-aarch64', '-enable-kvm', '-nographic', '-machine',
+        'qemu-system-aarch64', '-nographic', '-machine',
         'virt,gic-version=max', '-m', '4096M', '-cpu', 'cortex-a72',
-        '-smp', '4', '-netdev', 'user,id=vnet,hostfwd=:127.0.0.1:0-:22',
+        '-smp', '8', '-netdev', 'user,id=vnet,hostfwd=:127.0.0.1:0-:22',
         '-device', 'virtio-net-pci,netdev=vnet',
         '-device', 'virtio-blk,drive=drive0,bootindex=0',
         '-drive', 'file=disk.img,format=raw,if=none,id=drive0,cache=writeback',
