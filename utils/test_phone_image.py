@@ -207,7 +207,7 @@ def main(phone_model):
 
     cmd = [
         'qemu-system-aarch64', '-enable-kvm', '-nographic', '-machine',
-        'virt,gic-version=max', '-m', '512M', '-cpu', 'max',
+        'virt,gic-version=max', '-m', '4096M', '-cpu', 'cortex-a72',
         '-smp', '4', '-netdev', 'user,id=vnet,hostfwd=:127.0.0.1:0-:22',
         '-device', 'virtio-net-pci,netdev=vnet',
         '-device', 'virtio-blk,drive=drive0,bootindex=0',
