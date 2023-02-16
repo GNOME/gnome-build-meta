@@ -13,3 +13,5 @@ sources:
   path: files/linux/0003-arm64-dts-rk3399-pinephone-pro-add-modem-RI-pin.patch
 - kind: patch
   path: files/linux/0004-dts-pinephone-drop-modem-power-node.patch
+- kind: patch
+  path: files/linux/0005-ASoC-codec-rt5640-Resolve-failure-to-set-DMIC-clock-after-playback
