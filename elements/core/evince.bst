@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:evince.git
-  track: main
-  ref: 43.1-19-g79a270f12ffc08f52fff4bb55743bb0c4c25eb89
-
+- kind: tar
+  url: gnome_downloads:evince/43/evince-43.1.tar.xz
+  ref: 6d75ca62b73bfbb600f718a098103dc6b813f9050b9594be929e29b4589d2335
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst

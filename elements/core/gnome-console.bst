@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:console.git
-  track: main
-  ref: 44.beta-3-g10119d75637f18ec7bca4142df8054793caf347a
-
+- kind: tar
+  url: gnome_downloads:gnome-console/44/gnome-console-44.beta.tar.xz
+  ref: 92633f31f936fa4bc18e26fc25077830e12962fb72edd5c1fa75f5fe834b92ee
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

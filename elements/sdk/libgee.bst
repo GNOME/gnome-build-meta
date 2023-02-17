@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:libgee.git
-  track: main
-  ref: 0.20.6-0-g7d332f82c750ba72a6c625f38e4bfd44b786a926
+- kind: tar
+  url: gnome_downloads:libgee/0.20/libgee-0.20.6.tar.xz
+  ref: 1bf834f5e10d60cc6124d74ed3c1dd38da646787fbf7872220b8b4068e476d4d
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

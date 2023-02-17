@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-logs.git
-  track: master
-  ref: gnome-logs-43.0-10-ge6de502bd054ed5a23743d96a98af6c8d18a03d2
-
+- kind: tar
+  url: gnome_downloads:gnome-logs/43/gnome-logs-43.0.tar.xz
+  ref: 33a93b975ec27c8487825048aa7b8af7d5c23565abcf7b74c902ab7b3ec20861
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst

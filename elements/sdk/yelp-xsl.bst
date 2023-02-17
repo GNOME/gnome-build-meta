@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:yelp-xsl.git
-  track: master
-  ref: 42.1-4-g09ffd6f4f22a51b80682ed89939d43d627378e66
+- kind: tar
+  url: gnome_downloads:yelp-xsl/42/yelp-xsl-42.1.tar.xz
+  ref: 238be150b1653080ce139971330fd36d3a26595e0d6a040a2c030bf3d2005bcd
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

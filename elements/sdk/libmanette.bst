@@ -1,10 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:libmanette.git
-  track: master
-  ref: 0.2.6-3-g003c2e84d95357bbbef72fb395ef85f1650097a3
-
+- kind: tar
+  url: gnome_downloads:libmanette/0.2/libmanette-0.2.6.tar.xz
+  ref: 63653259a821ec7d90d681e52e757e2219d462828c9d74b056a5f53267636bac
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-disk-utility.git
-  track: master
-  ref: 44.beta-1-g4ddfd6a46ad73dc9b97ac3ba0a47c876f6744d5b
-
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/44/gnome-disk-utility-44.beta.tar.xz
+  ref: 9201d15e6b32bca8c64bc725a572873bd49d51e6d91fe8aa513d8c671f56c8c6
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

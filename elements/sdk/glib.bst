@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:glib.git
-  track: main
-  ref: 2.75.3-25-gf4e323dd40f4ce3f9427a20cb02b727ffd11264c
-  submodules:
-    subprojects/gvdb:
-      checkout: true
-      url: gnome:gvdb.git
-
+- kind: tar
+  url: gnome_downloads:glib/2.75/glib-2.75.3.tar.xz
+  ref: 7c517d0aff456c35a039bce8a8df7a08ce95a8285b09d1849f8865f633f7f871
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

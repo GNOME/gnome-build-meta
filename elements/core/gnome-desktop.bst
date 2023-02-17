@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-desktop.git
-  track: master
-  ref: 44.beta-2-g98e038eed4bed784070637e9925866426848d9b7
-
+- kind: tar
+  url: gnome_downloads:gnome-desktop/44/gnome-desktop-44.beta.tar.xz
+  ref: 2a6f7707cd9b9cc7735bbaf2c5b4c5cf80596ef9f45b14bb35d76de47d1ade45
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

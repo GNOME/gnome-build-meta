@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-calculator.git
-  track: master
-  ref: 44.beta-1-g86537254dac8e14f3494401e50e183a9079a1efd
+- kind: tar
+  url: gnome_downloads:gnome-calculator/44/gnome-calculator-44.beta.tar.xz
+  ref: 5c84bdf399c563c0cd4298c07fb84b7c04ebb56e1964bf99c7a2fdd27db4f740
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gi-docgen.git
-  track: main
-  ref: 2023.1-13-ged7d682d2f3447344a1f93dabe759fd76c93ca07
-
+- kind: tar
+  url: gnome_downloads:gi-docgen/2023/gi-docgen-2023.1.tar.xz
+  ref: a9a687c1b7c4a4139a214bd451e01ca86131a3161f68aa3e07325b06002bbfb6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gobject-introspection.bst
@@ -13,7 +11,6 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/python3-jinja2.bst
 - freedesktop-sdk.bst:components/python3-markdown.bst
-- freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/python3-pygments.bst
 - freedesktop-sdk.bst:components/python3-tomli.bst
 - sdk-deps/python-typogrify.bst
