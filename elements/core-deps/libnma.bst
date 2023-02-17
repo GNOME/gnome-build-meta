@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libnma.git
   track: main
-  ref: 1.10.7-dev-0-g71c6a75ffd16391969892d8eaa236bf7bcb9275a
+  ref: 1.10.7-dev-2-gd48911ca5f7ad4fbc44fef08df57e5fd844ba862
 
 build-depends:
 - sdk/gobject-introspection.bst

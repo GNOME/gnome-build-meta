@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.91-0-g89fe9d988089009b52bd9f3b09d7e3dfeafc6d0b
+  ref: 2.55.91-15-gf782145cb1b11c9f1da86668c3761f98a7d5ea1c
 - kind: cargo
   ref:
   - name: adler
@@ -152,17 +152,17 @@ sources:
     version: 0.6.0
     sha: dfae75de57f2b2e85e8768c3ea840fd159c8f33e2b6522c7835b7abac81be16e
   - name: cxx
-    version: 1.0.89
-    sha: bc831ee6a32dd495436e317595e639a587aa9907bef96fe6e6abc290ab6204e9
+    version: 1.0.90
+    sha: 90d59d9acd2a682b4e40605a242f6670eaa58c5957471cbf85e8aa6a0b97a5e8
   - name: cxx-build
-    version: 1.0.89
-    sha: 94331d54f1b1a8895cd81049f7eaaaef9d05a7dcb4d1fd08bf3ff0806246789d
+    version: 1.0.90
+    sha: ebfa40bda659dd5c864e65f4c9a2b0aff19bea56b017b9b77c73d3766a453a38
   - name: cxxbridge-flags
-    version: 1.0.89
-    sha: 48dcd35ba14ca9b40d6e4b4b39961f23d835dbb8eed74565ded361d93e1feb8a
+    version: 1.0.90
+    sha: 457ce6757c5c70dc6ecdbda6925b958aae7f959bda7d8fb9bde889e34a09dc03
   - name: cxxbridge-macro
-    version: 1.0.89
-    sha: 81bbeb29798b407ccd82a3324ade1a7286e0d29851475990b612670f6f5124d2
+    version: 1.0.90
+    sha: ebf883b7aacd7b2aeb2a7b338648ee19f57c140d4ee8e52c68979c6b2f7f2263
   - name: data-url
     version: 0.2.0
     sha: 8d7439c3735f405729d52c3fbbe4de140eaf938a1fe47d227c27f8254d4302a5
@@ -278,11 +278,11 @@ sources:
     version: 0.17.0
     sha: b5d3076ecb86c8c3a672c9843d6232b3a344fb81d304d0ba1ac64b23343efa46
   - name: glib
-    version: 0.17.0
-    sha: ac347af59233f0544ce00a37bad50f4ac401d006505b26d80ad6d9bbecf6493f
+    version: 0.17.1
+    sha: 91b429154ec5943185aeeaf79e646297567b6a056965f1e89da2657a0e23255b
   - name: glib-macros
-    version: 0.17.0
-    sha: 5965ae1a44aa4bae4e1e6970f25b66c058fef873d2626c9932a41128dbeea03f
+    version: 0.17.1
+    sha: 9bc80ac951300ca288dd9ab3863743c37a608fb0e5ca12863495640ec6b781ab
   - name: glib-sys
     version: 0.17.0
     sha: 9ddcb73fa8236277bedadaaadb76aef49c85d66340f83bece244f46c2d4f0e01
@@ -401,11 +401,11 @@ sources:
     version: 0.6.2
     sha: b275950c28b37e794e8c55d88aeb5e139d0ce23fdbbeda68f8d7174abdf9e8fa
   - name: nalgebra
-    version: 0.31.4
-    sha: 20bd243ab3dbb395b39ee730402d2e5405e448c75133ec49cc977762c4cba3d1
+    version: 0.32.1
+    sha: f6515c882ebfddccaa73ead7320ca28036c4bc84c9bcca3cc0cbba8efe89223a
   - name: nalgebra-macros
-    version: 0.1.0
-    sha: 01fcc0b8149b4632adc89ac3b7b31a12fb6099a0317a4eb2ebff574ef7de7218
+    version: 0.2.0
+    sha: d232c68884c0c99810a5a4d333ef7e47689cfd0edc85efc9e54e1e6bf5212766
   - name: new_debug_unreachable
     version: 1.0.4
     sha: e4a24736216ec316047a1fc4252e27dabb04218aa4a3f37c6e7ddbf1f9782b54
@@ -683,8 +683,8 @@ sources:
     version: 1.0.0
     sha: ae1a47186c03a32177042e55dbc5fd5aee900b8e0069a8d70fba96a9375cd012
   - name: simba
-    version: 0.7.3
-    sha: 2f3fd720c48c53cace224ae62bef1bbff363a70c68c4802a78b5cc6159618176
+    version: 0.8.0
+    sha: 50582927ed6f77e4ac020c057f37a268fc6aebc29225050365aacbb9deeeddc4
   - name: siphasher
     version: 0.3.10
     sha: 7bd3e3206899af3f8b12af284fafc038cc1dc2b41d1b89dd17297221c5d225de

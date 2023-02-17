@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-boxes.git
   track: main
-  ref: 43.1-56-g4be8c1490049b0c4bdd4c6c9968e605a26652c1a
+  ref: 44.beta-11-g5c30864450b5de9bc2573a293fa9be7a587541b1
   submodules:
     subprojects/libovf-glib:
       checkout: true
