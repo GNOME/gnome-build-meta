@@ -77,6 +77,25 @@ config:
     scripts/config --set-str EXTRA_FIRMWARE "regulatory.db regulatory.db.p7s brcm/brcmfmac43455-sdio.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt brcm/brcmfmac43455-sdio.clm_blob brcm/BCM4345C0.hcd rockchip/dptx.bin"
     scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
 
+    scripts/config -e AUDIT
+
+    scripts/config -e OF
+    scripts/config -e PCI
+    scripts/config -e USB
+    scripts/config -e USB_GADGET
+    scripts/config -e USB_OTG_UTILS
+    scripts/config -e USB_SERIAL
+    scripts/config -e USB_SERIAL_OPTION
+    scripts/config -e USB_NET_DRIVERS
+    scripts/config -e USB_NET_QMI_WWAN
+
+    scripts/config -e BLK_DEV_BSGLIB
+    scripts/config -e SCSI_LOWLEVEL
+    scripts/config -e SCSI_NETLINK
+    scripts/config -e SCSI_TCP
+    scripts/config -e SCSI_ISCSI_ATTRS
+    scripts/config -e ISCSI_BOOT_SYSFS
+
     scripts/config -e IKCONFIG
     scripts/config -e IKCONFIG_PROC
 
