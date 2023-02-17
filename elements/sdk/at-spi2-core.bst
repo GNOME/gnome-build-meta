@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:at-spi2-core/2.47/at-spi2-core-2.47.1.tar.xz
   ref: c6ba7c160434edebf09d2936933569c936f6ec972301766f2bdac5a4d418153c
+- kind: patch
+  path: files/at-spi2-core/62a6c8168c124e0c4bde50ddaedcb1d19f64d85d.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
