@@ -26,12 +26,12 @@ stages:
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedules" || $CI_PIPELINE_SOURCE == "web"'
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"
-      when: never
-    - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_REF_PROTECTED == "true"'
-    - if: '$CI_COMMIT_TAG'
+  - if: '$CI_PIPELINE_SOURCE == "schedules" || $CI_PIPELINE_SOURCE == "web"'
+  - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"
+    when: never
+  - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_REF_PROTECTED == "true"'
+  - if: '$CI_COMMIT_TAG'
 
 default:
   image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
@@ -493,10 +493,10 @@ test-pinephone-pro-aarch64:
 pages:
   stage: 'reports'
   needs:
-    - job : 'cve_report'
-      artifacts: true
+  - job: 'cve_report'
+    artifacts: true
   script:
-    - 'mv cve-reports/ public/'
+  - 'mv cve-reports/ public/'
   artifacts:
     paths:
     - 'public'
