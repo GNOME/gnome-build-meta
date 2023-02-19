@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:libsoup.git
-  track: gnome-3-38
-  ref: 2.72.0-23-gcca616512506ebc8acd77cc855d482d6499b6354
+  track: libsoup-2-74
+  ref: 2.74.3-1-gb0e2d85e36c5a9ee8d4caf16dbdc30302fcf470d
 
 build-depends:
 - sdk/sysprof-minimal.bst
