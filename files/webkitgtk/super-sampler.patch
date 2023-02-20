@@ -1,0 +1,11 @@
+diff --git a/Source/JavaScriptCore/llint/LowLevelInterpreter.cpp b/Source/JavaScriptCore/llint/LowLevelInterpreter.cpp
+index 97e22b7ec4c1..64397ee50cf7 100644
+--- a/Source/JavaScriptCore/llint/LowLevelInterpreter.cpp
++++ b/Source/JavaScriptCore/llint/LowLevelInterpreter.cpp
+@@ -39,6 +39,7 @@
+ #include "LLIntData.h"
+ #include "LLIntSlowPaths.h"
+ #include "JSCInlines.h"
++#include "SuperSampler.h"
+ #include <wtf/Assertions.h>
+

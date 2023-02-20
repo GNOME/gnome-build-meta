@@ -1,0 +1,62 @@
+From 166cdf23242165c9c84f621a4121c80432211c50 Mon Sep 17 00:00:00 2001
+From: Adrian Perez de Castro <aperez@igalia.com>
+Date: Mon, 20 Feb 2023 16:26:28 +0200
+Subject: [PATCH] [GLib] Installed API headers are unusable with the new 2022
+ API https://bugs.webkit.org/show_bug.cgi?id=252562
+
+Reviewed by NOBODY (OOPS!).
+
+* Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in: Only
+  include JavaScriptCore/JSBase.h with the old API, change a !USE(GTK4)
+  guard to !ENABLE(2022_GLIB_API) as it is more correct.
+* Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in: Ditto.
+---
+ Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in | 4 ++--
+ Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in          | 4 +++-
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in b/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
+index b7eece231000..78ba2120b225 100644
+--- a/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
++++ b/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
+@@ -26,7 +26,7 @@
+ #include <glib-object.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitDefines.h>
+ 
+-#if PLATFORM(GTK)
++#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
+ #include <JavaScriptCore/JSBase.h>
+ #endif
+ 
+@@ -46,7 +46,7 @@ webkit_javascript_result_ref                (WebKitJavascriptResult *js_result);
+ WEBKIT_API void
+ webkit_javascript_result_unref              (WebKitJavascriptResult *js_result);
+ 
+-#if PLATFORM(GTK) && !USE(GTK4)
++#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
+ WEBKIT_DEPRECATED JSGlobalContextRef
+ webkit_javascript_result_get_global_context (WebKitJavascriptResult *js_result);
+ 
+diff --git a/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in b/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
+index 45949e44e4a3..293aa3841695 100644
+--- a/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
++++ b/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
+@@ -59,7 +59,9 @@
+ #endif
+ 
+ #if PLATFORM(GTK)
++#if !ENABLE(2022_GLIB_API)
+ #include <JavaScriptCore/JSBase.h>
++#endif
+ #include <webkit/WebKitColorChooserRequest.h>
+ #include <webkit/WebKitWebInspector.h>
+ #include <webkit/WebKitWebViewBase.h>
+@@ -628,7 +630,7 @@ webkit_web_view_execute_editing_command_with_argument(WebKitWebView
+ WEBKIT_API WebKitFindController *
+ webkit_web_view_get_find_controller                  (WebKitWebView             *web_view);
+ 
+-#if PLATFORM(GTK) && !USE(GTK4)
++#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
+ WEBKIT_DEPRECATED JSGlobalContextRef
+ webkit_web_view_get_javascript_global_context        (WebKitWebView             *web_view);
+ #endif
