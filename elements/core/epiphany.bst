@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: gnome_downloads:epiphany/44/epiphany-44.beta.tar.xz
   ref: 51c71193380b8dda0cee8a56c8b44ecd92c38bc7c34ad08690fd2b6d78200291
+- kind: patch
+  path: files/epiphany/webkitgtk-2.39.90.patch
+
 build-depends:
 - sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
