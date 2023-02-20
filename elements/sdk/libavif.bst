@@ -6,6 +6,7 @@ build-depends:
 depends:
 - sdk/gdk-pixbuf.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/aom.bst
 - freedesktop-sdk.bst:components/dav1d.bst
 
 sources:
@@ -15,6 +16,7 @@ sources:
 variables:
   cmake-local: >-
     -DAVIF_BUILD_GDK_PIXBUF=ON
+    -DAVIF_CODEC_AOM=ON
     -DAVIF_CODEC_DAV1D=ON
 
 public:
