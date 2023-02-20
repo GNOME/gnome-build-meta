@@ -23,6 +23,7 @@ sub run {
     assert_screen('gnome_firstboot_password_1', 10);
     type_string($testapi::password);
     send_key('tab');
+    send_key('tab');
     type_string($testapi::password);
     assert_and_click('gnome_firstboot_password_2', timeout => 10, button => 'left');
     assert_and_click('gnome_firstboot_complete', timeout => 10, button => 'left');
