@@ -17,11 +17,3 @@ WORKER_CLASS=$worker_class
 BACKEND = qemu
 HOST = $OPENQA_HOST
 EOF
-
-# Register local worker as a new machine on OpenQA server.
-openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
-  --host $OPENQA_HOST \
-  -X POST machines/ \
-  name=gitlab-runner-$worker_class \
-  backend=qemu \
-  settings[WORKER_CLASS]=$worker_class | tee --append openqa.log | jq -e .id > /tmp/machine_id
