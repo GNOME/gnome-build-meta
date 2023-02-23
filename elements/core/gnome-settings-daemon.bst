@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-settings-daemon.git
   track: master
-  ref: 44.beta-12-g2c58c8ecfba1cac5ab8d93ccec521c5342a4b8fb
+  ref: 44.beta-14-g2ab56d7c57e162fbbe878d8a25a9c8732d08f24a
   submodules:
     subprojects/gvc:
       checkout: true

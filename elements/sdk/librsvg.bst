@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.91-17-g3092a35d877062dd9f051fb00aade3531c710949
+  ref: 2.55.91-22-g01fdf2d593d1baa71a7e3591334d35fe521a8fc5
 - kind: cargo
   ref:
   - name: adler
@@ -50,8 +50,8 @@ sources:
     version: 0.1.6
     sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
   - name: bstr
-    version: 1.2.0
-    sha: b7f0778972c64420fdedc63f09919c8a88bda7b25135357fd25a5d9f3257e832
+    version: 1.3.0
+    sha: 5ffdb39cb703212f3c11973452c2861b972f757b021158f3516ba10f2fa8b2c1
   - name: bumpalo
     version: 3.12.0
     sha: 0d261e256854913907f67ed06efbc3338dfe6179796deefc1ff763fc1aee5535
@@ -95,11 +95,11 @@ sources:
     version: 3.2.23
     sha: 71655c45cb9845d3270c9d6df84ebe72b4dad3c2ba3f7023ad47c144e4e473a5
   - name: clap
-    version: 4.1.4
-    sha: f13b9c79b5d1dd500d20ef541215a6423c75829ef43117e1b4d17fd8af0b5d76
+    version: 4.1.6
+    sha: ec0b0588d44d4d63a87dbd75c136c166bbfd9a86a31cb89e09906521c7d3f5e3
   - name: clap_complete
-    version: 4.1.1
-    sha: 3d6540eedc41f8a5a76cf3d8d458057dcdf817be4158a55b5f861f7a5483de75
+    version: 4.1.2
+    sha: bd125be87bf4c255ebc50de0b7f4d2a6201e8ac3dc86e39c0ad081dc5e7236fe
   - name: clap_derive
     version: 4.1.0
     sha: 684a277d672e91966334af371f1a7b5833f9aa00b07c84e92fbce95e00208ce8
@@ -146,23 +146,23 @@ sources:
     version: 0.8.14
     sha: 4fb766fa798726286dbbb842f174001dab8abc7b627a1dd86e0b7222a95d929f
   - name: cssparser
-    version: 0.28.1
-    sha: 1db8599a9761b371751fbf13e076fa03c6e1a78f8c5288e6ab9467f10a2322c1
+    version: 0.29.6
+    sha: f93d03419cb5950ccfd3daf3ff1c7a36ace64609a1a8746d493df1ca0afde0fa
   - name: cssparser-macros
     version: 0.6.0
     sha: dfae75de57f2b2e85e8768c3ea840fd159c8f33e2b6522c7835b7abac81be16e
   - name: cxx
-    version: 1.0.90
-    sha: 90d59d9acd2a682b4e40605a242f6670eaa58c5957471cbf85e8aa6a0b97a5e8
+    version: 1.0.91
+    sha: 86d3488e7665a7a483b57e25bdd90d0aeb2bc7608c8d0346acf2ad3f1caf1d62
   - name: cxx-build
-    version: 1.0.90
-    sha: ebfa40bda659dd5c864e65f4c9a2b0aff19bea56b017b9b77c73d3766a453a38
+    version: 1.0.91
+    sha: 48fcaf066a053a41a81dfb14d57d99738b767febb8b735c3016e469fac5da690
   - name: cxxbridge-flags
-    version: 1.0.90
-    sha: 457ce6757c5c70dc6ecdbda6925b958aae7f959bda7d8fb9bde889e34a09dc03
+    version: 1.0.91
+    sha: a2ef98b8b717a829ca5603af80e1f9e2e48013ab227b68ef37872ef84ee479bf
   - name: cxxbridge-macro
-    version: 1.0.90
-    sha: ebf883b7aacd7b2aeb2a7b338648ee19f57c140d4ee8e52c68979c6b2f7f2263
+    version: 1.0.91
+    sha: 086c685979a698443656e5cf7856c95c642295a38599f12fb1ff76fb28d19892
   - name: data-url
     version: 0.2.0
     sha: 8d7439c3735f405729d52c3fbbe4de140eaf938a1fe47d227c27f8254d4302a5
@@ -218,8 +218,8 @@ sources:
     version: 0.1.2
     sha: aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf
   - name: fastrand
-    version: 1.8.0
-    sha: a7a407cfaa3385c4ae6b23e84623d48c2798d06e3e6a1878f7f59f17b3f86499
+    version: 1.9.0
+    sha: e51093e27b0797c359783294ca4f0a911c270184cb10f85783b118614a1501be
   - name: flate2
     version: 1.0.25
     sha: a8a2db397cb1c8772f31494cb8917e48cd1e64f0fa7efac59fbd741a0a8ce841
@@ -332,9 +332,6 @@ sources:
     version: 0.10.5
     sha: b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473
   - name: itoa
-    version: 0.4.8
-    sha: b71991ff56294aa922b450139ee08b3bfc70982c6b2c7562771375cf73542dd4
-  - name: itoa
     version: 1.0.5
     sha: fad582f4b9e86b6caa621cabeb0963332d92eea04729ab12892c2533951e6440
   - name: js-sys
@@ -443,8 +440,8 @@ sources:
     version: 0.1.1
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - name: once_cell
-    version: 1.17.0
-    sha: 6f61fba1741ea2b3d6a1e3178721804bb716a68a6aeba1149b5d52e3d464ea66
+    version: 1.17.1
+    sha: b7e5500299e16ebb147ae15a00a942af264cf3688f47923b8fc2cd5858f23ad3
   - name: oorandom
     version: 11.1.3
     sha: 0ab1bc2a289d34bd04a330323ac98a1b4bc82c9d9fcb1e66b63caa84da26b575
@@ -494,8 +491,8 @@ sources:
     version: 0.8.0
     sha: 17367f0cc86f2d25802b2c26ee58a7b23faeccf78a396094c13dced0d0182526
   - name: phf_macros
-    version: 0.8.0
-    sha: 7f6fde18ff429ffc8fe78e2bf7f8b7a5a5a6e2a8b58bc5a9ac69198bbda9189c
+    version: 0.10.0
+    sha: 58fdf3184dd560f160dd73922bea2d5cd6e8f064bf4b13110abd81b03697b4e0
   - name: phf_shared
     version: 0.10.0
     sha: b6796ad771acdc0123d2a88dc428b5e38ef24456743ddb1744ed628f9815c096
@@ -653,8 +650,8 @@ sources:
     version: 1.0.3
     sha: ddccb15bcce173023b3fedd9436f882a0739b8dfb45e4f6b6002bee5929f61b2
   - name: selectors
-    version: 0.23.0
-    sha: fdea87c686be721aab36607728047801ee21561bfdbd6bf0da7ace2536d5879f
+    version: 0.24.0
+    sha: 0c37578180969d00692904465fb7f6b3d50b9a2b952b87c23d0e2e5cb5013416
   - name: semver
     version: 0.9.0
     sha: 1d7eb9ef2c18661902cc47e535f9bc51b78acd254da71d375c2f6720d9a40403
@@ -674,8 +671,8 @@ sources:
     version: 1.0.93
     sha: cad406b69c91885b5107daf2c29572f6c8cdb3c66826821e286c533490c0bc76
   - name: servo_arc
-    version: 0.1.1
-    sha: d98238b800e0d1576d8b6e3de32827c2d74bee68bb97748dcf5071fb53965432
+    version: 0.2.0
+    sha: d52aa42f8fdf0fed91e5ce7f23d8138441002fa31dca008acf47e6fd4721f741
   - name: sha1
     version: 0.6.1
     sha: c1da05c97445caa12d05e848c4a4fcbbea29e748ac28f7e80e9b010392063770
@@ -689,8 +686,8 @@ sources:
     version: 0.3.10
     sha: 7bd3e3206899af3f8b12af284fafc038cc1dc2b41d1b89dd17297221c5d225de
   - name: slab
-    version: 0.4.7
-    sha: 4614a76b2a8be0058caa9dbbaf66d988527d86d003c11a94fbd335d7661edcef
+    version: 0.4.8
+    sha: 6528351c9bc8ab22353f9d776db39a20288e8d6c37ef8cfe3317cf875eecfc2d
   - name: smallvec
     version: 1.10.0
     sha: a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0
