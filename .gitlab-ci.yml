@@ -37,7 +37,7 @@ test-s3-image-x86_64:
     EOF
   - |
     worker_class=qemu_x86_64-${CI_JOB_ID}
-    utils/setup_worker.sh ${worker_class} > /tmp/machine_id
+    utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &
   - |
     utils/start_job.sh ${worker_class} master > /tmp/job_id
@@ -45,12 +45,6 @@ test-s3-image-x86_64:
   - utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
   after_script:
-  - |
-    if [ -e /tmp/machine_id ]; then
-        echo "Cleaning up worker"
-        utils/teardown_worker.sh $(cat /tmp/machine_id)
-        rm /tmp/machine_id
-    fi
   - |
     if [ ! -e /tmp/exit_code ]; then
         echo "Job creation failed, log below."
