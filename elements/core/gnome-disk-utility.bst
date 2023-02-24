@@ -7,7 +7,6 @@ sources:
   ref: 44.beta-7-gefa6ebdb3adccee4bb4c2a27b8cbc264a6ce52ae
 
 build-depends:
-- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst

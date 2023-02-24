@@ -7,7 +7,6 @@ sources:
   ref: 43.1-23-g079f6219740c1698e514ca505c3106d7549eb176
 
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/poppler.bst

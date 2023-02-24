@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:dconf-editor.git
@@ -6,7 +7,6 @@ sources:
   ref: 43.0-7-g73e396fef67723d2b0c3bf676c0cf3fe5550cbee
 
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

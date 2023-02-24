@@ -14,7 +14,6 @@ sources:
       url: github:flathub/shared-modules.git
 
 build-depends:
-- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

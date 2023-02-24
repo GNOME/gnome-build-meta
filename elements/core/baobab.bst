@@ -1,15 +1,17 @@
 kind: meson
+
 sources:
 - kind: git_tag
   url: gnome:baobab.git
   track: main
   ref: 44.beta-20-g9c67ae897000fac035dae72ab1c0cdc891b77906
+
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst

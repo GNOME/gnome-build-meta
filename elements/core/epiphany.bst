@@ -7,7 +7,6 @@ sources:
   ref: 44.beta-37-g930d407b4663d9b05800624dcc7a10f42a01e35c
 
 build-depends:
-- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -26,4 +25,5 @@ depends:
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
+- freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

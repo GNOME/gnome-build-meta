@@ -7,7 +7,6 @@ sources:
   ref: 43.0-4-g8ca9de4ae556d26b610b55ee05f5e7b2a5b1c930
 
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
