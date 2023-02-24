@@ -5,7 +5,6 @@ sources:
   url: gnome_downloads:totem/43/totem-43.0.tar.xz
   ref: b36d3655928b5896462a4d39f83b6ad66d37dbc9c99dceb02ea8a2e37394a41e
 build-depends:
-- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

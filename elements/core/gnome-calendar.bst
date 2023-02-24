@@ -5,8 +5,8 @@ sources:
   url: gnome_downloads:gnome-calendar/44/gnome-calendar-44.beta.tar.xz
   ref: de5979b31ca8a95c89cd441a7f4d6227b11597a9a2242d8df720a0612bf7c722
 build-depends:
-- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/geocode-glib.bst
