@@ -14,10 +14,10 @@ public:
     - rm -r '%{debugdir}%{libdir}/samba'
     - rm -r '%{debugdir}%{libdir}/sane'
 
-    - rm '%{debugdir}%{libdir}/libaom.so.3.6.0.debug'
+    - rm %{debugdir}%{libdir}/libaom.so.*.*.*.debug
     - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
-    - rm '%{debugdir}%{libdir}/libprotoc.so.32.0.2.debug'
-    - rm '%{debugdir}%{libdir}/libprotobuf.so.32.0.2.debug'
+    - rm %{debugdir}%{libdir}/libprotoc.so.*.*.*.debug
+    - rm %{debugdir}%{libdir}/libprotobuf.so.*.*.*.debug
 
     - rm '%{debugdir}%{bindir}/lto-dump.debug'
     - rm '%{debugdir}%{bindir}/gs.debug'
@@ -45,9 +45,9 @@ public:
     - rm '%{debugdir}%{bindir}/gdb.debug'
     - rm '%{debugdir}%{bindir}/dwp.debug'
     - rm '%{debugdir}%{bindir}/ccache.debug'
-    - rm '%{debugdir}%{libdir}/libLLVM-15.so.debug'
-    - rm '%{debugdir}%{libdir}/libclang.so.15.0.7.debug'
-    - rm '%{debugdir}%{libdir}/libclang-cpp.so.15.debug'
+    - rm %{debugdir}%{libdir}/libLLVM-*.so.debug
+    - rm %{debugdir}%{libdir}/libclang.so.*.*.*.debug
+    - rm %{debugdir}%{libdir}/libclang-cpp.so.*.debug
     - rm '%{debugdir}%{bindir}/doxygen.debug'
     - rm '%{debugdir}%{bindir}/podman.debug'
     - rm '%{debugdir}%{bindir}/podman-remote.debug'
