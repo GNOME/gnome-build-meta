@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-tour.git
   track: master
-  ref: 43.0-11-g90c808966a3cd58a6520b1d04827808f4fecd2bb
+  ref: 43.0-19-g4e39bb0705ed7150f129ade38e98c3ee7c5a342e
 - kind: cargo
   ref:
   - name: aho-corasick
@@ -74,11 +74,11 @@ sources:
     version: 0.17.0
     sha: 7b41bd2b44ed49d99277d3925652a163038bd5ed943ec9809338ffb2f4391e3b
   - name: gdk4
-    version: 0.6.0
-    sha: 6e4887e17b6926db51f1e538d871a8b1f5ceb5dfa3bd0034dc42ec355b390d8f
+    version: 0.6.2
+    sha: e5042053ee765aeef08d9d7e3f0f1e36a4d37f1659b3f93ad3d6997515dbb64a
   - name: gdk4-sys
-    version: 0.6.0
-    sha: f4993c019bf03d18137c00ddafb2b23e73f7cbb45ae244f52af2542a3f4a9452
+    version: 0.6.2
+    sha: 14f0fb00507af1e9299681dd09965f720e2b5ea95536d49a5681e8994ef10c7a
   - name: gettext-rs
     version: 0.7.0
     sha: e49ea8a8fad198aaa1f9655a2524b64b70eb06b2f3ff37da407566c93054f364
@@ -86,44 +86,44 @@ sources:
     version: 0.21.3
     sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
   - name: gio
-    version: 0.17.0
-    sha: 1981edf8679d2f2c8ec3120015867f45aa0a1c2d5e3e129ca2f7dda174d3d2a9
+    version: 0.17.2
+    sha: 65acfc24267314eee46f49e0a531e08fd6c3025040d1cfb4a7cd8e41c5e06116
   - name: gio-sys
     version: 0.17.0
     sha: b5d3076ecb86c8c3a672c9843d6232b3a344fb81d304d0ba1ac64b23343efa46
   - name: glib
-    version: 0.17.0
-    sha: ac347af59233f0544ce00a37bad50f4ac401d006505b26d80ad6d9bbecf6493f
+    version: 0.17.2
+    sha: a78b6a0901e258cb03c761ca94c84d519427ede489cae12cd5ba0d7d584e69e9
   - name: glib-macros
-    version: 0.17.0
-    sha: 5965ae1a44aa4bae4e1e6970f25b66c058fef873d2626c9932a41128dbeea03f
+    version: 0.17.2
+    sha: 55e93d79ed130f0f0b58bc0aa29fb0e40c9dfd63997fec51f8adf780d1520bc4
   - name: glib-sys
-    version: 0.17.0
-    sha: 9ddcb73fa8236277bedadaaadb76aef49c85d66340f83bece244f46c2d4f0e01
+    version: 0.17.2
+    sha: 72a0985cf568e18cf63b443c9a14f4bdaa947fed7437476000dba84926a20b25
   - name: gobject-sys
     version: 0.17.0
     sha: 9a0155d388840c77d61b033b66ef4f9bc7f4133d83df83572d6b4fb234a3be7d
   - name: graphene-rs
-    version: 0.17.0
-    sha: 372514f21c7e342e0206a916d6bd522b15337578cfa68855518a3b4960ba8254
+    version: 0.17.1
+    sha: 21cf11565bb0e4dfc2f99d4775b6c329f0d40a2cff9c0066214d31a0e1b46256
   - name: graphene-sys
     version: 0.17.0
     sha: cf80a4849a8d9565410a8fec6fc3678e9c617f4ac7be182ca55ab75016e07af9
   - name: gsk4
-    version: 0.6.0
-    sha: 432f981e4ea9f0739a5731d8a649acb794a3a729d2254e559ce7d613b17caf95
+    version: 0.6.2
+    sha: 2fa9cd285a72a95124b65c069a9cb1b8fb8e310be71783404c39fccf3bf7774c
   - name: gsk4-sys
-    version: 0.6.0
-    sha: 096cb59175b0915ebf69c05a45263c0c989bd8537b8f2169912d0de644ba6a76
+    version: 0.6.2
+    sha: 5a445ae1e50cbf181a1d5c61b920a7e7e8657b96e0ecdbbf8911a86fad462a32
   - name: gtk4
-    version: 0.6.0
-    sha: f61aa16bbd4554552645227d4249b58fd730b27985a7e0283fd0a2d479e954a8
+    version: 0.6.2
+    sha: e47dca53cb1a8ae3006e869b5711ae7370180db537f6d98e3bcaf23fabfd911f
   - name: gtk4-macros
     version: 0.6.0
     sha: db4676c4f90d8b010e88cb4558f61f47d76d6f6b8e6f6b89e62640f443907f61
   - name: gtk4-sys
-    version: 0.6.0
-    sha: e13cf3bc9559f71963c957eb639060b643e1276ae47b892ef6091d5bc15c3e1b
+    version: 0.6.2
+    sha: 65463dc801460e498d5e7ffa6e9ae2cfbed7d05fabd1ca5a8d024adbc89eeda6
   - name: hashbrown
     version: 0.12.3
     sha: 8a9ee70c43aaf417c914396645a0fa852624801b24ebb7ae78fe8272889ac888
@@ -143,8 +143,8 @@ sources:
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
   - name: libadwaita
-    version: 0.3.0
-    sha: 674cbf1bd796f3d4f0c24466c15d91180e33e497ae2e07eea3f3d545468dc839
+    version: 0.3.1
+    sha: b1c4efd2020a4fcedbad2c4a97de97bf6045e5dc49d61d5a5d0cfd753db60700
   - name: libadwaita-sys
     version: 0.3.0
     sha: 0727b85b4fe2b1bed5ac90df6343de15cbf8118bfb96d7c3cc1512681a4b34ac
@@ -179,8 +179,8 @@ sources:
     version: 0.1.1
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - name: once_cell
-    version: 1.17.0
-    sha: 6f61fba1741ea2b3d6a1e3178721804bb716a68a6aeba1149b5d52e3d464ea66
+    version: 1.17.1
+    sha: b7e5500299e16ebb147ae15a00a942af264cf3688f47923b8fc2cd5858f23ad3
   - name: pango
     version: 0.17.0
     sha: 243c048be90312220fb3bd578176eed8290568274a93c95040289d39349384bc
@@ -239,14 +239,14 @@ sources:
     version: 1.0.152
     sha: bb7d1f0d3021d347a83e556fc4683dea2ea09d87bccdf88ff5c12545d89d5efb
   - name: slab
-    version: 0.4.7
-    sha: 4614a76b2a8be0058caa9dbbaf66d988527d86d003c11a94fbd335d7661edcef
+    version: 0.4.8
+    sha: 6528351c9bc8ab22353f9d776db39a20288e8d6c37ef8cfe3317cf875eecfc2d
   - name: smallvec
     version: 1.10.0
     sha: a507befe795404456341dfab10cef66ead4c041f62b8b11bbb92bffe5d0953e0
   - name: syn
-    version: 1.0.107
-    sha: 1f4064b5b16e03ae50984a5a8ed5d4f8803e6bc1fd170a3cda91a1be4b18e3f5
+    version: 1.0.109
+    sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: system-deps
     version: 6.0.3
     sha: 2955b1fe31e1fa2fbd1976b71cc69a606d7d4da16f6de3333d0c92d51419aeff
