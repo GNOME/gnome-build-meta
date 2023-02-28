@@ -1,3 +1,6 @@
+# FIXME: when updating to WebKitGTK > 2.39.90, remove the -DDEBUG_FISSION=OFF
+# flag from webkitgtk-6.0.bst and webkit2gtk-4.1.bst. No longer necessary.
+# https://bugs.webkit.org/show_bug.cgi?id=252679
 sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.39.90.tar.xz
