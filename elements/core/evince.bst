@@ -8,8 +8,8 @@ sources:
 
 build-depends:
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -21,6 +21,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
+- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
