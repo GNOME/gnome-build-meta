@@ -496,3 +496,21 @@ pages:
     - 'public'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+
+repo_tar:
+  stage: deploy
+  extends: .aarch64
+  script:
+  - ostree init --repo repo/ --mode archive
+  - |
+    for ARCH in aarch64; do
+      $BST -o arch $ARCH pull flatpak-runtimes.bst
+
+      $BST -o arch $ARCH checkout --hardlinks flatpak-runtimes.bst checkout-repo/
+      ostree pull-local --repo repo/ checkout-repo/
+      rm -rf checkout-repo/
+    done
+  - tar cf repo.tar repo/
+  artifacts:
+    paths:
+    - repo.tar
