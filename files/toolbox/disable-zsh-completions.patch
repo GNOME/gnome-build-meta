@@ -1,0 +1,25 @@
+diff --git a/src/meson.build b/src/meson.build
+index f4e85b3..31242f9 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -101,20 +101,6 @@ if fishcompletionsdir != ''
+ )
+ endif
+ 
+-custom_target(
+-  'zsh-completion',
+-  capture: true,
+-  command: [
+-    meson_generate_completions_program,
+-    meson.current_source_dir(),
+-    'zsh',
+-  ],
+-  depends: [toolbox_go],
+-  install: true,
+-  install_dir: zshcompletionsdir,
+-  output: '_toolbox',
+-)
+-
+ if shellcheck.found()
+   test('shellcheck src/go-build-wrapper', shellcheck, args: [go_build_wrapper_file])
+ endif
