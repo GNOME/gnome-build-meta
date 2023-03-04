@@ -55,6 +55,7 @@ depends:
 - freedesktop-sdk.bst:components/rsync.bst
 - freedesktop-sdk.bst:components/steam-devices.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+- freedesktop-sdk.bst:components/iio-sensor-proxy.bst
 
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/nano.bst
