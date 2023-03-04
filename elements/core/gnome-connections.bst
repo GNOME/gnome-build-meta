@@ -8,7 +8,7 @@ sources:
     subprojects/gtk-frdp:
       checkout: true
       url: gnome:gtk-frdp.git
-  ref: 44.beta-17-g63162e50db8c7256eaf4017f925a254c498e117a
+  ref: 44.rc-2-g8ac67093fe7570f9464fe60cf8537ff2c04b952b
 
 build-depends:
 - sdk/gobject-introspection.bst

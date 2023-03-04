@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-system-monitor.git
   track: master
-  ref: 44.beta-2-gd98027934815cb01e8a3dfe20381026f3d545836
+  ref: 44.rc-0-gf13191742437b781124105110863c6e8c14c397b
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
