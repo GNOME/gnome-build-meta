@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-font-viewer/44/gnome-font-viewer-44.beta.tar.xz
-  ref: d0385bdea8c7f40616c7c172a744a76da69a2a0516b3c96e83a69b739d0897ed
+  url: gnome_downloads:gnome-font-viewer/44/gnome-font-viewer-44.rc.tar.xz
+  ref: f6894326fa0bf3f85cfd2780ee142fd15f54741a3d3d0ea9218dfda383b5c8ec
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

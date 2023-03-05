@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-text-editor/44/gnome-text-editor-44.beta.tar.xz
-  ref: c0c53df9f47f715e553d9814c95a3ff51ca130e70a8d280922702da63cbb9063
+  url: gnome_downloads:gnome-text-editor/44/gnome-text-editor-44.rc.tar.xz
+  ref: 9f5b71d27a850b473ab23ceff921da7de1083aa2b20703d9b4cf1bbc4f1d3b7b
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

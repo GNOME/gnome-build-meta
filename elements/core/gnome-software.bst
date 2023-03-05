@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/44/gnome-software-44.beta.tar.xz
-  ref: 054fdcd4e8fa8a47f70fcd54daadd26670e0aa4a3b233c8514c0b203ba9da297
+  url: gnome_downloads:gnome-software/44/gnome-software-44.rc.tar.xz
+  ref: 12b80460e0a8022efeffe11f5348333b4319415371348aab9934727bc490ac86
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst

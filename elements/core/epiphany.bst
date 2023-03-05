@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/44/epiphany-44.beta.tar.xz
-  ref: 51c71193380b8dda0cee8a56c8b44ecd92c38bc7c34ad08690fd2b6d78200291
-- kind: patch
-  path: files/epiphany/webkitgtk-2.39.90.patch
+  url: gnome_downloads:epiphany/44/epiphany-44.rc.tar.xz
+  ref: df75fb535c8041bcef84d6525867d5123c39f0c688503c460614cdb374e9f929
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -28,3 +26,7 @@ depends:
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dgranite=disabled

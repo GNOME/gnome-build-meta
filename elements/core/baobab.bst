@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:baobab/44/baobab-44.beta.tar.xz
-  ref: a75d9ecbb1790d33e83ac121334d1e3913287b24a364e877d9041840a907ae91
+  url: gnome_downloads:baobab/44/baobab-44.rc.tar.xz
+  ref: 39641c3274acca1fa1b4586c22649629014077c9f527a89bf56f2cde71d95043
 
 build-depends:
 - sdk/vala.bst
