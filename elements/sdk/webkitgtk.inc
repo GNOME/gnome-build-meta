@@ -11,6 +11,7 @@ build-depends:
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gperf.bst
+- freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
@@ -56,3 +57,7 @@ variables:
 public:
   cpe:
     product: webkitgtk+
+
+environment:
+  CC: clang
+  CXX: clang++
