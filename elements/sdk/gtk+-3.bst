@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gtk.git
   track: gtk-3-24
-  ref: 3.24.37-2-gb668e6d8a1128d8adbc481a574cfb4795b4f4064
+  ref: 3.24.37-5-gbc1f17972c1cc97ee0021369f82d0a3ce945e9f7
 - kind: patch
   path: files/gtk3-werror.patch
 

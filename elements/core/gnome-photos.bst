@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-photos.git
   track: master
-  ref: 43.0-15-g0f1239d374a313c87909556fdb35bb4eb8595567
+  ref: 44.0-0-ga0eb37bfb6760aa1414fa41ee1ff007336301b8c
   submodules:
     subprojects/libgd:
       checkout: true
