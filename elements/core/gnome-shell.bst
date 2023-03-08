@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:gnome-shell.git
-  track: main
-  ref: 44.rc-5-g17ca66faf5f1afd6cf2907872121837cbcec4e35
+  url: gnome_gitlab:fujiwarat/gnome-shell.git
+  track: ibus-try-require-surrounding
+  ref: 3.28.1-5752-gd7322e61a9882edc722ac64da80804e75f832155
   submodules:
     subprojects/gvc:
       checkout: true
