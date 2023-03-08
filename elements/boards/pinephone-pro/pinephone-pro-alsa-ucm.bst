@@ -9,9 +9,6 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
-depends:
-- vm/alsa-ucm-conf.bst
-
 config:
   install-commands:
   - |

@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git
+- kind: git_tag
   url: https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
   track: v1.6.3
   ref: dfc5d361e6748d5f48b706e5c4ac949d133b5470
