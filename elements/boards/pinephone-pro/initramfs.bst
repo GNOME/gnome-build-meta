@@ -9,20 +9,6 @@ variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
 
 config:
-  layout:
-  - element: ''
-    destination: '/tmp'
-  - element: ''
-    destination: '/var/tmp'
-  - element: ''
-    destination: '/efi'
-  - element: boards/pinephone-pro/initramfs/initial-scripts.bst
-    destination: '/'
-  - element: boards/pinephone-pro/initramfs/deps.bst
-    destination: '/'
-  - element: vm/prepare-image.bst
-    destination: '/'
-
   commands:
   - |
     prepare-image.sh \

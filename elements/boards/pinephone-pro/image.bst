@@ -2,8 +2,12 @@ kind: script
 
 build-depends:
 - boards/pinephone-pro/image-deps.bst
-- boards/pinephone-pro/repo.bst
-- boards/pinephone-pro/linux.bst
+- filename: boards/pinephone-pro/repo.bst
+  config:
+    location: '/source-repo'
+- filename: boards/pinephone-pro/linux.bst
+  config:
+    location: '/kernel'
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
@@ -21,18 +25,6 @@ environment-nocache:
 
 
 config:
-  layout:
-  - element: ''
-    destination: '/sysroot'
-  - element: ''
-    destination: '/genimage'
-  - element: boards/pinephone-pro/repo.bst
-    destination: '/source-repo'
-  - element: boards/pinephone-pro/image-deps.bst
-    destination: '/'
-  - element: boards/pinephone-pro/linux.bst
-    destination: '/kernel'
-
   commands:
   - mkdir -p "${OSTREE_REPO}"
   - ostree init --repo="${OSTREE_REPO}" --mode=bare

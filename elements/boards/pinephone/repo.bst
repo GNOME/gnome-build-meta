@@ -3,18 +3,16 @@ kind: ostree
 build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - core-deps/libostree.bst
-- boards/pinephone/filesystem.bst
 - boards/pinephone/initial-scripts.bst
+- filename: boards/pinephone/filesystem.bst
+  config:
+    sysroot: true
 
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
   ostree-branch: gnome-os/aarch64/pinephone
 
 config:
-  environment:
-  - core-deps/libostree.bst
-  - vm/prepare-image.bst
-  - boards/pinephone/initial-scripts.bst
   ostree-branch: '%{ostree-branch}'
   initial-commands:
   - |
