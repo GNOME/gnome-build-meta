@@ -1,62 +1,110 @@
-From 166cdf23242165c9c84f621a4121c80432211c50 Mon Sep 17 00:00:00 2001
+From 53a8890833684fe813efd7b7a2b7417dbfa7b826 Mon Sep 17 00:00:00 2001
 From: Adrian Perez de Castro <aperez@igalia.com>
-Date: Mon, 20 Feb 2023 16:26:28 +0200
-Subject: [PATCH] [GLib] Installed API headers are unusable with the new 2022
- API https://bugs.webkit.org/show_bug.cgi?id=252562
+Date: Wed, 8 Mar 2023 04:27:56 -0800
+Subject: [PATCH] REGRESSION(261320@main): [GLib] Clean builds fail with
+ ENABLE_2022_GLIB_API https://bugs.webkit.org/show_bug.cgi?id=253563
 
-Reviewed by NOBODY (OOPS!).
+Unreviewed build fix.
 
-* Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in: Only
-  include JavaScriptCore/JSBase.h with the old API, change a !USE(GTK4)
-  guard to !ENABLE(2022_GLIB_API) as it is more correct.
-* Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in: Ditto.
+* Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in: Guard the
+  inclusion of WebKitJavascriptResult.h with !ENABLE(2022_GLIB_API).
+
+Canonical link: https://commits.webkit.org/261367@main
 ---
- Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in | 4 ++--
- Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in          | 4 +++-
- 2 files changed, 5 insertions(+), 3 deletions(-)
+ Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in b/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
-index b7eece231000..78ba2120b225 100644
---- a/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
-+++ b/Source/WebKit/UIProcess/API/glib/WebKitJavascriptResult.h.in
-@@ -26,7 +26,7 @@
- #include <glib-object.h>
- #include <@API_INCLUDE_PREFIX@/WebKitDefines.h>
- 
--#if PLATFORM(GTK)
-+#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
- #include <JavaScriptCore/JSBase.h>
- #endif
- 
-@@ -46,7 +46,7 @@ webkit_javascript_result_ref                (WebKitJavascriptResult *js_result);
- WEBKIT_API void
- webkit_javascript_result_unref              (WebKitJavascriptResult *js_result);
- 
--#if PLATFORM(GTK) && !USE(GTK4)
-+#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
- WEBKIT_DEPRECATED JSGlobalContextRef
- webkit_javascript_result_get_global_context (WebKitJavascriptResult *js_result);
- 
 diff --git a/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in b/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
-index 45949e44e4a3..293aa3841695 100644
+index cc60ef336afc..6f1afac40e2b 100644
 --- a/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
 +++ b/Source/WebKit/UIProcess/API/glib/WebKitWebView.h.in
-@@ -59,7 +59,9 @@
- #endif
- 
- #if PLATFORM(GTK)
+@@ -36,7 +36,9 @@
+ #include <@API_INCLUDE_PREFIX@/WebKitFormSubmissionRequest.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitHitTestResult.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitInputMethodContext.h>
 +#if !ENABLE(2022_GLIB_API)
- #include <JavaScriptCore/JSBase.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitJavascriptResult.h>
 +#endif
- #include <webkit/WebKitColorChooserRequest.h>
- #include <webkit/WebKitWebInspector.h>
- #include <webkit/WebKitWebViewBase.h>
-@@ -628,7 +630,7 @@ webkit_web_view_execute_editing_command_with_argument(WebKitWebView
- WEBKIT_API WebKitFindController *
- webkit_web_view_get_find_controller                  (WebKitWebView             *web_view);
+ #include <@API_INCLUDE_PREFIX@/WebKitNavigationAction.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitNotification.h>
+ #include <@API_INCLUDE_PREFIX@/WebKitOptionMenu.h>
+
+From 10c9256883bf38b9fbcfbc91577783d4df90d1bd Mon Sep 17 00:00:00 2001
+From: Adrian Perez de Castro <aperez@igalia.com>
+Date: Wed, 8 Mar 2023 05:21:28 -0800
+Subject: [PATCH] REGRESSION(261320@main): [GLib] Clean builds fail with
+ ENABLE_2022_GLIB_API https://bugs.webkit.org/show_bug.cgi?id=253563
+
+Unreviewed build fix.
+
+* Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in: Remove the
+  autocleanup for WebKitJavascriptResult when building with the new API.
+* Source/WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp:
+  Conditionally include WebKitJavascriptResultPrivate.h.
+* Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp: Ditto.
+
+Canonical link: https://commits.webkit.org/261368@main
+---
+ Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in     | 2 ++
+ .../WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp   | 5 ++++-
+ Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp           | 3 ++-
+ 3 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in b/Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in
+index b56fb3f302cc..f68ed748046f 100644
+--- a/Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in
++++ b/Source/WebKit/UIProcess/API/glib/WebKitAutocleanups.h.in
+@@ -87,7 +87,9 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitApplicationInfo, webkit_application_info_un
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitCredential, webkit_credential_free)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitITPFirstParty, webkit_itp_first_party_unref)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitITPThirdParty, webkit_itp_third_party_unref)
++#if !ENABLE(2022_GLIB_API)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitJavascriptResult, webkit_javascript_result_unref)
++#endif
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitMemoryPressureSettings, webkit_memory_pressure_settings_free)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitNavigationAction, webkit_navigation_action_free)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (WebKitNetworkProxySettings, webkit_network_proxy_settings_free)
+diff --git a/Source/WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp b/Source/WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp
+index 39a57d194c0d..af2d963bb3b3 100644
+--- a/Source/WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp
++++ b/Source/WebKit/UIProcess/API/glib/WebKitUserContentManager.cpp
+@@ -23,7 +23,6 @@
+ #include "APISerializedScriptValue.h"
+ #include "InjectUserScriptImmediately.h"
+ #include "WebKitInitialize.h"
+-#include "WebKitJavascriptResultPrivate.h"
+ #include "WebKitUserContentManagerPrivate.h"
+ #include "WebKitUserContentPrivate.h"
+ #include "WebKitWebContextPrivate.h"
+@@ -32,6 +31,10 @@
+ #include <wtf/glib/GRefPtr.h>
+ #include <wtf/glib/WTFGType.h>
  
--#if PLATFORM(GTK) && !USE(GTK4)
-+#if PLATFORM(GTK) && !ENABLE(2022_GLIB_API)
- WEBKIT_DEPRECATED JSGlobalContextRef
- webkit_web_view_get_javascript_global_context        (WebKitWebView             *web_view);
++#if !ENABLE(2022_GLIB_API)
++#include "WebKitJavascriptResultPrivate.h"
++#endif
++
+ #if PLATFORM(WPE)
+ #include "WPEView.h"
  #endif
+diff --git a/Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp b/Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp
+index 1b3b6273bd14..837aa061fcab 100644
+--- a/Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp
++++ b/Source/WebKit/UIProcess/API/glib/WebKitWebView.cpp
+@@ -46,7 +46,6 @@
+ #include "WebKitHitTestResultPrivate.h"
+ #include "WebKitIconLoadingClient.h"
+ #include "WebKitInputMethodContextPrivate.h"
+-#include "WebKitJavascriptResultPrivate.h"
+ #include "WebKitNavigationClient.h"
+ #include "WebKitNotificationPrivate.h"
+ #include "WebKitPermissionStateQueryPrivate.h"
+@@ -106,6 +105,8 @@
+ 
+ #if ENABLE(2022_GLIB_API)
+ #include "WebKitNetworkSessionPrivate.h"
++#else
++#include "WebKitJavascriptResultPrivate.h"
+ #endif
+ 
+ using namespace WebKit;
