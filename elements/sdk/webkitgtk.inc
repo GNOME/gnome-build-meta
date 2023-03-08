@@ -3,12 +3,10 @@
 # https://bugs.webkit.org/show_bug.cgi?id=252679
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.39.90.tar.xz
-  ref: 8275866c3529a715c23cae38dbf2edd310d8188546a47c5a2f709d193f7a5fc0
+  url: webkitgtk:webkitgtk-2.39.91.tar.xz
+  ref: 92e8a6f599450529eb0bd552e4fc2d1f691831eb4d89caffb96fb581d2c836d3
 - kind: patch
   path: files/webkitgtk/fix-installed-headers.patch
-- kind: patch
-  path: files/webkitgtk/super-sampler.patch
 
 build-depends:
 - sdk-deps/bubblewrap.bst
