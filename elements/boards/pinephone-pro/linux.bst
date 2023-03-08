@@ -3,7 +3,7 @@ description: Linux kernel configured for use in PinePhone Pro.
 
 depends:
 - freedesktop-sdk.bst:components/kmod.bst
-- custom/linux-firmware.bst
+- boards/common/linux-firmware.bst
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -1060,4 +1060,4 @@ public:
         - '%{bootdir}/System.map'
 
 (@):
-- include/linux.yml
+- elements/boards/common/linux-megous.inc

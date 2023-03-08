@@ -16,9 +16,9 @@ depends:
 - core-deps/feedbackd.bst
 - core/calls.bst
 - freedesktop-sdk.bst:components/iputils.bst
-- custom/atinout.bst
-- custom/eg25-manager.bst
-- custom/iw.bst
+- boards/common/atinout.bst
+- boards/common/eg25-manager.bst
+- boards/common/iw.bst
 - freedesktop-sdk.bst:components/usbutils.bst
 - world/chatty.bst
 
@@ -28,5 +28,5 @@ depends:
 - core-deps/pipewire-daemon.bst
 - core-deps/wireplumber.bst
 
-- custom/alsa-utils.bst
+- boards/common/alsa-utils.bst
 - vm/alsa-ucm-conf.bst
