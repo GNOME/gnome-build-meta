@@ -30,4 +30,4 @@ depends:
 - core-deps/wireplumber.bst
 
 - custom/alsa-utils.bst
-- custom/alsa-ucm-conf.bst
+- vm/alsa-ucm-conf.bst
