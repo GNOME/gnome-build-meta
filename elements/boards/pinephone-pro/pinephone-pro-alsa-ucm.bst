@@ -10,7 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 depends:
-- custom/alsa-ucm-conf.bst
+- vm/alsa-ucm-conf.bst
 
 config:
   install-commands:

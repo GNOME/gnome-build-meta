@@ -27,6 +27,7 @@ depends:
 - vm/opensc.bst
 - vm/uresourced.bst
 - vm/android-udev-rules.bst
+- vm/alsa-ucm-conf.bst
 
 - vm/ibus-anthy.bst
 - vm/ibus-hangul.bst
