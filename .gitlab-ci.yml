@@ -40,7 +40,7 @@ test-s3-image-x86_64:
     utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &
   - |
-    utils/start_job.sh ${worker_class} master . TESTSUITE=gnomeos > /tmp/job_id
+    utils/start_job.sh ${worker_class} master "$(pwd)" TESTSUITE=gnomeos > /tmp/job_id
     echo "Test job has been started, visit $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
   - utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
