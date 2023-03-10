@@ -20,7 +20,6 @@ depends:
 - custom/eg25-manager.bst
 - custom/iw.bst
 - freedesktop-sdk.bst:components/usbutils.bst
-- custom/testing-wallpaper.bst
 - world/chatty.bst
 
 - core-deps/xdg-desktop-portal.bst
