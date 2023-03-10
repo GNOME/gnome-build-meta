@@ -8,12 +8,7 @@ set -e
 
 worker_class=$1
 version=$2
-
-if [ -n "$3" ]; then
-    casedir="$3"
-else
-    casedir="$(pwd)"
-fi
+casedir="$3"
 
 openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   --host $OPENQA_HOST \
