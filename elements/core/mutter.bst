@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: gnome_downloads:mutter/44/mutter-44.rc.tar.xz
   ref: 690ca775d7ad15b9b50c0e3c276c3ec47fc5be2f805612c367582e6b2de3825b
+- kind: patch
+  path: files/mutter/0001-core-Retrieve-DESKTOP_AUTOSTART_ID-early-on-startup.patch
+
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
