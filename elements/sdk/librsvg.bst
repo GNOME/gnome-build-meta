@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.55.91-36-gce0bf9cc2b9e7d35500c5ac8f964d1d9e1e8f2e3
+  ref: 2.55.92-3-ga9520707cde18ea7a9b908a1b5d766b84ad59004
 - kind: cargo
   ref:
   - name: adler
@@ -656,11 +656,11 @@ sources:
     version: 0.7.0
     sha: 388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3
   - name: serde
-    version: 1.0.153
-    sha: 3a382c72b4ba118526e187430bb4963cd6d55051ebf13d9b25574d379cc98d20
+    version: 1.0.154
+    sha: 8cdd151213925e7f1ab45a9bbfb129316bd00799784b174b7cc7bcd16961c49e
   - name: serde_derive
-    version: 1.0.153
-    sha: 1ef476a5790f0f6decbc66726b6e5d63680ed518283e64c7df415989d880954f
+    version: 1.0.154
+    sha: 4fc80d722935453bcafdc2c9a73cd6fac4dc1938f0346035d84bf99fa9e33217
   - name: serde_json
     version: 1.0.94
     sha: 1c533a59c9d8a93a09c6ab31f0fd5e5f4dd1b8fc9434804029839884765d04ea
@@ -773,8 +773,8 @@ sources:
     version: 0.1.4
     sha: eaea85b334db583fe3274d12b4cd1880032beab409c0d774be044d4480ab9a94
   - name: unicode-bidi
-    version: 0.3.10
-    sha: d54675592c1dbefd78cbd98db9bacd89886e1ca50692a0692baefffdeb92dd58
+    version: 0.3.11
+    sha: 524b68aca1d05e03fdf03fcdce2c6c94b6daf6d16861ddaa7e4f2b6638a9052c
   - name: unicode-ident
     version: 1.0.8
     sha: e5464a87b239f13a63a501f2701565754bae92d243d4bb7eb12f6d57d2269bf4
