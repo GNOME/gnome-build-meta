@@ -48,7 +48,7 @@ config:
 
   - |
     . ./config-utils.sh
-    rm -f expected-configs
+    rm expected-configs
 
     scripts/config -e EFI
     scripts/config -e BLK_DEV_INITRD
