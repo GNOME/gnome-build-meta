@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Prepare a local OpenQA worker and register it with $OPENQA_HOST.
-#
-# On success, write the machine ID returned by server to stdout.
 
 set -eu
 
