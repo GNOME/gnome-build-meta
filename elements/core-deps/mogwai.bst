@@ -12,9 +12,9 @@ build-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/libgsystemservice.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
+- freedesktop-sdk.bst:components/libgsystemservice.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
