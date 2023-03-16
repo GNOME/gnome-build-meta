@@ -44,7 +44,7 @@ def bst(*args):
     return subprocess.check_call(bst_command + ["--no-interactive"] + list(args))
 
 track_elements = world_elements if args.track_world else core_elements
-bst("track", "--deps", "all", *track_elements)
+bst("source", "track", "--deps", "all", *track_elements)
 
 if args.new_branch:
     git(
