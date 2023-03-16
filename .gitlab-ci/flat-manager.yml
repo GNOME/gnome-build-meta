@@ -5,7 +5,7 @@ stages:
 - deploy
 
 default:
-  image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
+  image: "${DOCKER_REGISTRY}/bst2:${DOCKER_IMAGE_ID}"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
