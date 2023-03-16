@@ -20,7 +20,6 @@ runtime-depends:
 
 depends:
 - core-deps/startup-notification.bst
-- core-deps/libinput.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -35,6 +34,7 @@ depends:
 - sdk/pipewire.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xorg-lib-ice.bst
 - freedesktop-sdk.bst:components/xorg-lib-sm.bst
