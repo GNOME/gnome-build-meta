@@ -6,11 +6,11 @@ sources:
   path: files/webkitgtk/unbreak-script-message-received.patch
 
 build-depends:
-- sdk-deps/bubblewrap.bst
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl.bst
@@ -36,9 +36,9 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
-- freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst

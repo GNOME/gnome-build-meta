@@ -17,9 +17,9 @@ build-depends:
 depends:
 - core-deps/AppStream.bst
 - core-deps/libostree.bst
-- sdk-deps/bubblewrap.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/json-glib.bst
+- freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/fuse.bst
 - freedesktop-sdk.bst:components/gpgme.bst

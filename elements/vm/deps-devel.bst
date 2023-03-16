@@ -2,7 +2,6 @@ kind: stack
 
 depends:
 - sdk.bst
-- sdk-deps/bubblewrap.bst
 - sdk-deps/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
