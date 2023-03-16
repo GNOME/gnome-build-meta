@@ -18,7 +18,6 @@ variables:
 stages:
 - track
 - build
-- deploy-config
 - deploy
 - test
 - reports
@@ -153,10 +152,9 @@ build-aarch64:
   - .build-template
   - .aarch64
 
-
-generate-deploy-config:
-  extends:
-  - .arch-indep
+deploy-flatpak:
+  extends: .arch-indep
+  stage: deploy
   needs:
   - job: 'build-x86_64'
     artifacts: false
@@ -164,7 +162,6 @@ generate-deploy-config:
     artifacts: false
   - job: 'build-aarch64'
     artifacts: false
-  stage: deploy-config
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
     variables:
@@ -186,35 +183,33 @@ generate-deploy-config:
       ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
       FLAT_MANAGER_REPO: beta
       SUPPORTED_ARCHES: "x86_64 i686 aarch64"
+  variables:
+    TARGETS: flatpak-runtimes.bst
+    TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
   script:
+  - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
+  - TARGETS="$TARGETS ${!TARGETS_REPO}"
+
+  - ostree init --repo repo/ --mode archive
   - |
-    cat > flatpak-variables.yml << END
-    variables:
-      BST: '$BST'
-      FLAT_MANAGER_SERVER: '$FLAT_MANAGER_SERVER'
-      FLAT_MANAGER_REPO: '$FLAT_MANAGER_REPO'
-      TARGETS: flatpak-runtimes.bst
-      TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
-      ENVIRONMENT_NAME: '$ENVIRONMENT_NAME'
-      DOCKER_REGISTRY: '$DOCKER_REGISTRY'
-      DOCKER_IMAGE_ID: '$DOCKER_IMAGE_ID'
-      SUPPORTED_ARCHES: '$SUPPORTED_ARCHES'
+    for ARCH in $SUPPORTED_ARCHES; do
+      for target in $TARGETS; do
+        $BST -o arch $ARCH artifact checkout $target --directory checkout-repo/
+        ostree pull-local --repo repo/ checkout-repo/
+        rm -rf checkout-repo/
+      done
+    done
+  - ostree fsck --repo repo/ --all
+  - flatpak build-update-repo --generate-static-deltas repo/
 
-    END
-  - cat flatpak-variables.yml .gitlab-ci/flat-manager.yml > flatpak-deploy.yml
-
-  artifacts:
-    paths:
-    - flatpak-deploy.yml
-
-deploy-flatpak:
-  extends: .deploy-rules
-  stage: deploy
-  trigger:
-    strategy: depend
-    include:
-    - artifact: flatpak-deploy.yml
-      job: generate-deploy-config
+  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+  - flat-manager-client push $(cat build.txt) repo/
+  - flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager-client publish --wait $(cat build.txt)
+  after_script:
+  - flat-manager-client purge $(cat build.txt)
+  environment:
+    name: $ENVIRONMENT_NAME
 
 vm-image-aarch64:
   extends:
