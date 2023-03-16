@@ -25,10 +25,8 @@ flatmgr:
   - ostree init --repo repo/ --mode archive
   - |
     for ARCH in $SUPPORTED_ARCHES; do
-      $BST -o arch $ARCH pull $TARGETS
-
       for target in $TARGETS; do
-        $BST -o arch $ARCH checkout --hardlinks $target checkout-repo/
+        $BST -o arch $ARCH artifact checkout $target --directory checkout-repo/
         ostree pull-local --repo repo/ checkout-repo/
         rm -rf checkout-repo/
       done
