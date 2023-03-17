@@ -1,7 +1,7 @@
 kind: ostree
 
 build-depends:
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - vm/initial-scripts.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - filename: vm/filesystem.bst

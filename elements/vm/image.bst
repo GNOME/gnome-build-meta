@@ -1,7 +1,7 @@
 kind: script
 
 build-depends:
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - core-deps/qemu.bst
 - freedesktop-sdk.bst:integration/mtab.bst
 - freedesktop-sdk.bst:components/genimage.bst

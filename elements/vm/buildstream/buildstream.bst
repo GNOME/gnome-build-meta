@@ -22,7 +22,7 @@ depends:
 - freedesktop-sdk.bst:components/python3.bst
 
 runtime-depends:
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - sdk/pygobject.bst
 - vm/buildstream/arpy.bst
 - vm/buildstream/breezy.bst

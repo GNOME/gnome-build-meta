@@ -16,7 +16,7 @@ build-depends:
 
 depends:
 - core-deps/AppStream.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - sdk-deps/xdg-dbus-proxy.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst

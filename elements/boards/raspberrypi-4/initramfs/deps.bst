@@ -16,5 +16,5 @@ depends:
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - boards/raspberrypi-4/repair-mbr.bst

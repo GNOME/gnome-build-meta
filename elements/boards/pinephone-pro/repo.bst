@@ -2,7 +2,7 @@ kind: ostree
 
 build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - boards/pinephone-pro/initial-scripts.bst
 - filename: boards/pinephone-pro/filesystem.bst
   config:

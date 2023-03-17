@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - boards/raspberrypi-4/initial-scripts.bst
 - filename: boards/raspberrypi-4/filesystem.bst
   config:

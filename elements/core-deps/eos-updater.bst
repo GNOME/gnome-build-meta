@@ -19,7 +19,7 @@ sources:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/flatpak.bst
-- core-deps/libostree.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - core-deps/libsoup-2.4.bst
 - core-deps/mogwai.bst
 - freedesktop-sdk.bst:components/avahi.bst
