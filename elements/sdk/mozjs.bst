@@ -2,13 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: https://ftp.mozilla.org/pub/firefox/releases/102.1.0esr/source/firefox-102.1.0esr.source.tar.xz
-  base-dir: 'firefox-102.1.0'
-  ref: 637b6e727d1b815bbc6eb39aeb04c6e144056eeb3c628b298cb16deb3b579460
-- kind: patch
-  path: files/mozjs/0001-Bug-1776254-Install-ProfilingCategoryList.h.patch
-- kind: patch
-  path: files/mozjs/0002-Bug-1780857-Change-if-to-ifdef-for-DEBUG.patch
+  url: https://ftp.mozilla.org/pub/firefox/releases/102.9.0esr/source/firefox-102.9.0esr.source.tar.xz
+  base-dir: 'firefox-102.9.0'
+  ref: 31b074623f09ca821a8a7dee0b3d2df1a45f1164264d31c26b4969a4d6a21dd1
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
