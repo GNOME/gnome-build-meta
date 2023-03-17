@@ -1,12 +1,7 @@
-# FIXME: when updating to WebKitGTK > 2.39.90, remove the -DDEBUG_FISSION=OFF
-# flag from webkitgtk-6.0.bst and webkit2gtk-4.1.bst. No longer necessary.
-# https://bugs.webkit.org/show_bug.cgi?id=252679
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.39.91.tar.xz
-  ref: 92e8a6f599450529eb0bd552e4fc2d1f691831eb4d89caffb96fb581d2c836d3
-- kind: patch
-  path: files/webkitgtk/fix-installed-headers.patch
+  url: webkitgtk:webkitgtk-2.40.0.tar.xz
+  ref: a4607ea1bf89669e89b1cb2c63faaec513f93de09b6ae60cc71d6a8aab7ab393
 
 build-depends:
 - sdk-deps/bubblewrap.bst
