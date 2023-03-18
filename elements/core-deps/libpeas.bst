@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libpeas.git
   track: master
-  ref: libpeas-1.34.0-7-g46802dedfdd20a75bb48335c64236b8dd7a5b48c
+  ref: libpeas-1.36.0-1-gc68ecac0025caa5fa2401deff41d3b1959062600
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
