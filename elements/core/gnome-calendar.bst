@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/44/gnome-calendar-44.rc.tar.xz
-  ref: 75a3433cca38c8572da186d90588e2e74064202f6b56f78c798b9e134367264e
+  url: gnome_downloads:gnome-calendar/44/gnome-calendar-44.0.tar.xz
+  ref: 96acd74cbf45652934515cc3447a3b895e933f86324ca92436f67ddd63c3a802
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

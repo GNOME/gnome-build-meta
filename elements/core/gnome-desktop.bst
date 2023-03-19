@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-desktop/44/gnome-desktop-44.beta.tar.xz
-  ref: 2a6f7707cd9b9cc7735bbaf2c5b4c5cf80596ef9f45b14bb35d76de47d1ade45
+  url: gnome_downloads:gnome-desktop/44/gnome-desktop-44.0.tar.xz
+  ref: 42c773745d84ba14bc1cf1c4c6f4606148803a5cd337941c63964795f3c59d42
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

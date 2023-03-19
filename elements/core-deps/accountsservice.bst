@@ -3,9 +3,8 @@ kind: meson
 sources:
 - kind: tar
   base-dir: ''
-  url: freedesktop_software:accountsservice/accountsservice-22.08.8.tar.xz
-  ref: 909997a76919fe7dc138a9a01cea70bd622d5a932dbc9fb13010113023a7a391
-
+  url: freedesktop_software:accountsservice/accountsservice-23.11.69.tar.xz
+  ref: b0576743aebfe6134d9a6950bf0c3f4c56b60c233ed0b68a8e2c80bc3a0ea36f
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/44/epiphany-44.rc.tar.xz
-  ref: df75fb535c8041bcef84d6525867d5123c39f0c688503c460614cdb374e9f929
+  url: gnome_downloads:epiphany/44/epiphany-44.0.tar.xz
+  ref: aabdc9de80c409073676e00e15ba97187715e4b84bc776fe86db86d0f8140bb1
 - kind: patch
   path: files/epiphany/webkitgtk-2.39.91.patch
 

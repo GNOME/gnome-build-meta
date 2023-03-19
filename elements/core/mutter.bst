@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/44/mutter-44.rc.tar.xz
-  ref: 690ca775d7ad15b9b50c0e3c276c3ec47fc5be2f805612c367582e6b2de3825b
+  url: gnome_downloads:mutter/44/mutter-44.0.tar.xz
+  ref: 7214b07e13589ef7c1df553c7ed11a02798e43ada6c228913f4e7a666eefbac4
 - kind: patch
   path: files/mutter/0001-core-Retrieve-DESKTOP_AUTOSTART_ID-early-on-startup.patch
 
