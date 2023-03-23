@@ -50,7 +50,7 @@ default:
   stage: build
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/platform.bst oci/sdk.bst)
 
   - |
     case "${ARCH}" in
