@@ -15,7 +15,7 @@ depends:
 - core-deps/gtksourceview-4.bst
 - core-deps/libdazzle.bst
 - core-deps/libgit2-glib.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core-deps/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

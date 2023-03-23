@@ -12,7 +12,7 @@ build-depends:
 
 depends:
 - core-deps/exempi.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core-deps/libportal.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst

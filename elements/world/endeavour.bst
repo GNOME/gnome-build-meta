@@ -13,7 +13,7 @@ build-depends:
 depends:
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core-deps/libportal.bst
 - sdk/glib.bst
 - sdk/gtk.bst

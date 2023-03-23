@@ -16,7 +16,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/gsound.bst
 - core-deps/gspell.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/appstream-glib.bst

@@ -23,7 +23,7 @@ depends:
 - core-deps/feedbackd.bst
 - core-deps/folks.bst
 - core-deps/gom.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core-deps/sofia-sip.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
