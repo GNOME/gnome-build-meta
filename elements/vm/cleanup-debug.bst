@@ -21,7 +21,7 @@ public:
     - rm '%{debugdir}%{bindir}/fish.debug'
     - rm '%{debugdir}%{bindir}/fish_key_reader.debug'
     - rm '%{debugdir}%{bindir}/smbtorture.debug'
-    - rm '%{debugdir}%{bindir}/gen_binary_files.debug'
+    - rm -f '%{debugdir}%{bindir}/gen_binary_files.debug'
 
     # gtk-doc/html/{gio, glib, gobject, libxml2, orc} inherited from fd.o
     - rm -r '%{datadir}/gtk-doc/html'
@@ -42,8 +42,8 @@ public:
     - rm %{debugdir}%{libdir}/libclang.so.*.*.*.debug
     - rm %{debugdir}%{libdir}/libclang-cpp.so.*.debug
     - rm '%{debugdir}%{bindir}/doxygen.debug'
-    - rm '%{debugdir}%{bindir}/podman.debug'
-    - rm '%{debugdir}%{bindir}/podman-remote.debug'
+    - rm -f '%{debugdir}%{bindir}/podman.debug'
+    - rm -f '%{debugdir}%{bindir}/podman-remote.debug'
     - rm '%{debugdir}%{bindir}/obj2yaml.debug'
     - rm '%{debugdir}%{bindir}/yaml2obj.debug'
     - rm '%{debugdir}%{bindir}/llvm-tblgen.debug'
