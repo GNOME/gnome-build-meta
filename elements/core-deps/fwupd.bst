@@ -20,12 +20,12 @@ build-depends:
 depends:
 - core-deps/ModemManager.bst
 - core-deps/libjcat.bst
-- core-deps/xmlb.bst
 - core-deps/protobuf-c.bst
 - sdk/gcab.bst
 - sdk/glib.bst
 - sdk/pango.bst
 - sdk/pygobject.bst
+- sdk/xmlb.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst

@@ -15,10 +15,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/xmlb.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/librsvg.bst
+- sdk/xmlb.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libarchive.bst

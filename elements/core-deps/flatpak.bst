@@ -15,9 +15,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- core-deps/AppStream.bst
 - freedesktop-sdk.bst:components/ostree.bst
 - sdk-deps/xdg-dbus-proxy.bst
+- sdk/AppStream.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/curl.bst

@@ -13,9 +13,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/AppStream.bst
 - core-deps/accountsservice.bst
 - core-deps/flatpak.bst
+- sdk/AppStream.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
