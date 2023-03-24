@@ -10,7 +10,7 @@ build-depends:
 - sdk/sysprof-minimal.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

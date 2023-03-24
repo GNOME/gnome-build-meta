@@ -5,7 +5,7 @@ sources:
   track: master
 
 build-depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - world/snowball.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -26,7 +26,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- sdk/libgee.bst
+- core-deps/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst

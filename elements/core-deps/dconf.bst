@@ -7,7 +7,7 @@ sources:
   ref: 0.40.0-8-g9826f575e2888a5c7dce49565215409ee554ebdb
 
 build-depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst

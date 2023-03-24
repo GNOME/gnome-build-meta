@@ -7,7 +7,7 @@ sources:
   ref: 44.0-12-g33849735f04a1c859f1138dc139c71880721ea78
 
 build-depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

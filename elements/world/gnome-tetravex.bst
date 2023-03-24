@@ -10,5 +10,5 @@ build-depends:
 
 depends:
 - sdk/gtk+-3.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

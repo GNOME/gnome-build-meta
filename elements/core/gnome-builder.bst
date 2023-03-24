@@ -15,7 +15,7 @@ runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gjs.bst
 - sdk/pygobject.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 
 depends:
 - core-deps/cmark.bst

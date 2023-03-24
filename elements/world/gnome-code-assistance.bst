@@ -6,5 +6,5 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

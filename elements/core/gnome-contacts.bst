@@ -7,7 +7,7 @@ sources:
   ref: 44.0-18-gf4c8d4c1f71b779319afe0800bf1c2db0f42834a
 
 build-depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -22,6 +22,6 @@ depends:
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- sdk/libgee.bst
+- core-deps/libgee.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
