@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.56.0-0-gb831e077174ae608d8cd09e532fc0e7ce1fe5c4f
+  ref: 2.56.0-27-g798b5661c5ff4a6c519d320d25ffa75f1b0508ce
 - kind: cargo
   ref:
   - name: adler
@@ -214,6 +214,9 @@ sources:
   - name: encoding_index_tests
     version: 0.1.4
     sha: a246d82be1c9d791c5dfde9a2bd045fc3cbba3fa2b11ad558f27d01712f00569
+  - name: encoding_rs
+    version: 0.8.32
+    sha: 071a31f4ee85403370b58aca746f01041ede6f0da2730960ad001edc2b71b394
   - name: errno
     version: 0.2.8
     sha: f639046355ee4f37944e44f60642c6f3a7efa3cf6b78c78a0d989a8ce6c396a1
