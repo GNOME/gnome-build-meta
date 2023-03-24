@@ -15,7 +15,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/lmdb.bst
 - core-deps/xmlb.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
