@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: gnome_downloads:gtk/4.10/gtk-4.10.1.tar.xz
   ref: e8fcac04bc7715b9da667c911a5ee8f262e200d1d6a50adf23645ca8cfcd0311
+- kind: patch
+  path: files/gtk/5724.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst
