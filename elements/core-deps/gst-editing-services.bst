@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gstreamer:src/gstreamer-editing-services/gstreamer-editing-services-1.16.3.tar.xz
-  ref: 9b05cbb8a6f1db53999e7ad11f00f4f1ccc154d6805b7e49cb7755eb37a99ba6
+  url: gstreamer:src/gstreamer-editing-services/gst-editing-services-1.20.6.tar.xz
+  ref: 150e6f2acafce96d9f363a4af4b034f2cd034cf41e03fccfcee50181648761bb
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -16,3 +16,11 @@ depends:
 - sdk/gst-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Ddoc=disabled
+    -Dbash-completion=disabled
+    -Dxptv=disabled
+    -Dpython=disabled
+    -Dvalidate=disabled
