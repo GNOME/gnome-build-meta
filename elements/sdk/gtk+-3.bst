@@ -6,6 +6,8 @@ sources:
   ref: 6745f0b4c053794151fd0f0e2474b077cccff5f83e9dd1bf3d39fe9fe5fb7f57
 - kind: patch
   path: files/gtk3-werror.patch
+- kind: patch
+  path: files/gtk3-crashy.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
