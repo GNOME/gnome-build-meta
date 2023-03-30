@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libpeas.git
   track: main
-  ref: libpeas-1.36.0-83-g205518b1821dc6b1b217c91b1c14ada764e5a104
+  ref: libpeas-1.36.0-87-gac099612d0c38afb40b96b4c7c4c5ae425bdf81c
 
 build-depends:
 - sdk-deps/gi-docgen.bst
