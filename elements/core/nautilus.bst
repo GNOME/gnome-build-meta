@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_tag
   url: gnome:nautilus.git
-  track: master
+  track: main
   ref: 44.0-44-g9ff35c642d9acec22bb6e04512e59cabedee53d0
 
 build-depends:
