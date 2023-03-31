@@ -1,0 +1,155 @@
+From 63f0b2d0c54093bfea054cc6b302e578260d0fcc Mon Sep 17 00:00:00 2001
+From: Yusuke Suzuki <ysuzuki@apple.com>
+Date: Thu, 30 Mar 2023 19:47:10 -0700
+Subject: [PATCH] [JSC] Reduce # of parameters of function#bind operations
+ https://bugs.webkit.org/show_bug.cgi?id=254752 rdar://problem/107427493
+
+Reviewed by Ross Kirsling.
+
+Let's reconstruct boundArgsLength via passed args to reduce # of parameters of operations,
+to mitigate issues on x64 Windows (Windows x64 does not have appropriate implementation for more parameters).
+
+* Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp:
+(JSC::DFG::ByteCodeParser::handleIntrinsicCall):
+* Source/JavaScriptCore/dfg/DFGOperations.cpp:
+(JSC::DFG::JSC_DEFINE_JIT_OPERATION):
+* Source/JavaScriptCore/dfg/DFGOperations.h:
+* Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp:
+(JSC::DFG::SpeculativeJIT::compileFunctionBind):
+(JSC::DFG::SpeculativeJIT::compileNewBoundFunction):
+* Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp:
+(JSC::FTL::DFG::LowerDFGToB3::compileNewBoundFunction):
+(JSC::FTL::DFG::LowerDFGToB3::compileFunctionBind):
+
+Canonical link: https://commits.webkit.org/262385@main
+---
+ Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp   |  2 +-
+ Source/JavaScriptCore/dfg/DFGOperations.cpp       | 13 +++++++++++--
+ Source/JavaScriptCore/dfg/DFGOperations.h         |  4 ++--
+ Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp |  6 ++----
+ Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp     |  5 ++---
+ 5 files changed, 18 insertions(+), 12 deletions(-)
+
+diff --git a/Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp b/Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp
+index fc1cd9e88efc..ae1265bb4bc8 100644
+--- a/Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp
++++ b/Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp
+@@ -3886,7 +3886,7 @@ auto ByteCodeParser::handleIntrinsicCall(Node* callee, Operand result, CallVaria
+             for (; index < argumentCountIncludingThis; ++index)
+                 addVarArgChild(get(virtualRegisterForArgumentIncludingThis(index, registerOffset)));
+             for (; index < numChildren; ++index)
+-                addVarArgChild(jsConstant(jsUndefined()));
++                addVarArgChild(jsConstant(JSValue()));
+             Node* resultNode = addToGraph(Node::VarArg, FunctionBind, OpInfo(0), OpInfo(static_cast<unsigned>(argumentCountIncludingThis >= 2 ? argumentCountIncludingThis - 2 : 0)));
+             setResult(resultNode);
+             return CallOptimizationResult::Inlined;
+diff --git a/Source/JavaScriptCore/dfg/DFGOperations.cpp b/Source/JavaScriptCore/dfg/DFGOperations.cpp
+index ca316e1bd6d2..f19fcd7df41c 100644
+--- a/Source/JavaScriptCore/dfg/DFGOperations.cpp
++++ b/Source/JavaScriptCore/dfg/DFGOperations.cpp
+@@ -2818,7 +2818,7 @@ JSC_DEFINE_JIT_OPERATION(operationFunctionToString, JSString*, (JSGlobalObject*
+     return function->toString(globalObject);
+ }
+ 
+-JSC_DEFINE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObject* globalObject, JSObject* target, unsigned boundArgsLength, EncodedJSValue boundThisValue, EncodedJSValue arg0Value, EncodedJSValue arg1Value, EncodedJSValue arg2Value))
++JSC_DEFINE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObject* globalObject, JSObject* target, EncodedJSValue boundThisValue, EncodedJSValue arg0Value, EncodedJSValue arg1Value, EncodedJSValue arg2Value))
+ {
+     VM& vm = globalObject->vm();
+     CallFrame* callFrame = DECLARE_CALL_FRAME(vm);
+@@ -2830,6 +2830,11 @@ JSC_DEFINE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObjec
+         return { };
+     }
+ 
++    unsigned boundArgsLength = 0;
++    boundArgsLength += !!(JSValue::decode(arg0Value));
++    boundArgsLength += !!(JSValue::decode(arg1Value));
++    boundArgsLength += !!(JSValue::decode(arg2Value));
++
+     JSValue boundThis = JSValue::decode(boundThisValue);
+     EncodedJSValue arguments[JSBoundFunction::maxEmbeddedArgs] {
+         arg0Value,
+@@ -2871,7 +2876,7 @@ JSC_DEFINE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObjec
+     RELEASE_AND_RETURN(scope, JSBoundFunction::create(vm, globalObject, target, boundThis, boundArgs, length, name));
+ }
+ 
+-JSC_DEFINE_JIT_OPERATION(operationNewBoundFunction, JSBoundFunction*, (JSGlobalObject* globalObject, JSFunction* function, unsigned boundArgsLength, EncodedJSValue boundThisValue, EncodedJSValue arg0Value, EncodedJSValue arg1Value, EncodedJSValue arg2Value))
++JSC_DEFINE_JIT_OPERATION(operationNewBoundFunction, JSBoundFunction*, (JSGlobalObject* globalObject, JSFunction* function, EncodedJSValue boundThisValue, EncodedJSValue arg0Value, EncodedJSValue arg1Value, EncodedJSValue arg2Value))
+ {
+     VM& vm = globalObject->vm();
+     CallFrame* callFrame = DECLARE_CALL_FRAME(vm);
+@@ -2880,6 +2885,10 @@ JSC_DEFINE_JIT_OPERATION(operationNewBoundFunction, JSBoundFunction*, (JSGlobalO
+     JSValue arg0 = JSValue::decode(arg0Value);
+     JSValue arg1 = JSValue::decode(arg1Value);
+     JSValue arg2 = JSValue::decode(arg2Value);
++    unsigned boundArgsLength = 0;
++    boundArgsLength += !!(arg0);
++    boundArgsLength += !!(arg1);
++    boundArgsLength += !!(arg2);
+     return JSBoundFunction::createRaw(vm, globalObject, function, boundArgsLength, boundThis, arg0, arg1, arg2);
+ }
+ 
+diff --git a/Source/JavaScriptCore/dfg/DFGOperations.h b/Source/JavaScriptCore/dfg/DFGOperations.h
+index 9602feb3d66a..7e6080a3ec4e 100644
+--- a/Source/JavaScriptCore/dfg/DFGOperations.h
++++ b/Source/JavaScriptCore/dfg/DFGOperations.h
+@@ -274,8 +274,8 @@ JSC_DECLARE_JIT_OPERATION(operationInt32ToStringWithValidRadix, char*, (JSGlobal
+ JSC_DECLARE_JIT_OPERATION(operationInt52ToStringWithValidRadix, char*, (JSGlobalObject*, int64_t, int32_t));
+ JSC_DECLARE_JIT_OPERATION(operationDoubleToStringWithValidRadix, char*, (JSGlobalObject*, double, int32_t));
+ JSC_DECLARE_JIT_OPERATION(operationFunctionToString, JSString*, (JSGlobalObject*, JSFunction*));
+-JSC_DECLARE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObject*, JSObject*, unsigned, EncodedJSValue, EncodedJSValue, EncodedJSValue, EncodedJSValue));
+-JSC_DECLARE_JIT_OPERATION(operationNewBoundFunction, JSBoundFunction*, (JSGlobalObject*, JSFunction*, unsigned, EncodedJSValue, EncodedJSValue, EncodedJSValue, EncodedJSValue));
++JSC_DECLARE_JIT_OPERATION(operationFunctionBind, JSBoundFunction*, (JSGlobalObject*, JSObject*, EncodedJSValue, EncodedJSValue, EncodedJSValue, EncodedJSValue));
++JSC_DECLARE_JIT_OPERATION(operationNewBoundFunction, JSBoundFunction*, (JSGlobalObject*, JSFunction*, EncodedJSValue, EncodedJSValue, EncodedJSValue, EncodedJSValue));
+ 
+ JSC_DECLARE_JIT_OPERATION(operationNormalizeMapKeyHeapBigInt, EncodedJSValue, (VM*, JSBigInt*));
+ JSC_DECLARE_JIT_OPERATION(operationMapHash, UCPUStrictInt32, (JSGlobalObject*, EncodedJSValue input));
+diff --git a/Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp b/Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp
+index 167e61a8d1d0..67f5def0dceb 100644
+--- a/Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp
++++ b/Source/JavaScriptCore/dfg/DFGSpeculativeJIT64.cpp
+@@ -6574,12 +6574,10 @@ void SpeculativeJIT::compileFunctionBind(Node* node)
+ 
+     speculateObject(m_graph.child(node, 0), targetGPR);
+ 
+-    unsigned boundArgsLength = node->numberOfBoundArguments();
+-
+     GPRFlushedCallResult result(this);
+     GPRReg resultGPR = result.gpr();
+     flushRegisters();
+-    callOperation(operationFunctionBind, resultGPR, LinkableConstant::globalObject(*this, node), targetGPR, TrustedImm32(boundArgsLength), boundThisRegs, arg0Regs, arg1Regs, arg2Regs);
++    callOperation(operationFunctionBind, resultGPR, LinkableConstant::globalObject(*this, node), targetGPR, boundThisRegs, arg0Regs, arg1Regs, arg2Regs);
+     exceptionCheck();
+     cellResult(resultGPR, node);
+ }
+@@ -6629,7 +6627,7 @@ void SpeculativeJIT::compileNewBoundFunction(Node* node)
+     store8(TrustedImm32(static_cast<uint8_t>(TriState::Indeterminate)), Address(resultGPR, JSBoundFunction::offsetOfCanConstruct()));
+     mutatorFence(vm());
+ 
+-    addSlowPathGenerator(slowPathCall(slowPath, this, operationNewBoundFunction, resultGPR, LinkableConstant::globalObject(*this, node), targetGPR, TrustedImm32(node->numberOfBoundArguments()), boundThisRegs, arg0Regs, arg1Regs, arg2Regs));
++    addSlowPathGenerator(slowPathCall(slowPath, this, operationNewBoundFunction, resultGPR, LinkableConstant::globalObject(*this, node), targetGPR, boundThisRegs, arg0Regs, arg1Regs, arg2Regs));
+     cellResult(resultGPR, node);
+ }
+ 
+diff --git a/Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp b/Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp
+index 2dda50507633..704d0dd68d8c 100644
+--- a/Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp
++++ b/Source/JavaScriptCore/ftl/FTLLowerDFGToB3.cpp
+@@ -7339,7 +7339,7 @@ IGNORE_CLANG_WARNINGS_END
+         LValue callResult = lazySlowPath(
+             [=, &vm] (const Vector<Location>& locations) -> RefPtr<LazySlowPath::Generator> {
+                 return createLazyCallGenerator(vm, operationNewBoundFunction, locations[0].directGPR(),
+-                    CCallHelpers::TrustedImmPtr(globalObject), locations[1].directGPR(), CCallHelpers::TrustedImm32(numberOfBoundArguments),
++                    CCallHelpers::TrustedImmPtr(globalObject), locations[1].directGPR(),
+                     locations[2].directGPR(), locations[3].directGPR(), locations[4].directGPR(), locations[5].directGPR());
+             },
+             target, thisValue, arg0, arg1, arg2);
+@@ -9014,8 +9014,7 @@ IGNORE_CLANG_WARNINGS_END
+     void compileFunctionBind()
+     {
+         JSGlobalObject* globalObject = m_graph.globalObjectFor(m_origin.semantic);
+-        unsigned boundArgsLength = m_node->numberOfBoundArguments();
+-        setJSValue(vmCall(pointerType(), operationFunctionBind, weakPointer(globalObject), lowObject(m_graph.child(m_node, 0)), m_out.constInt32(boundArgsLength), lowJSValue(m_graph.child(m_node, 1)), lowJSValue(m_graph.child(m_node, 2)), lowJSValue(m_graph.child(m_node, 3)), lowJSValue(m_graph.child(m_node, 4))));
++        setJSValue(vmCall(pointerType(), operationFunctionBind, weakPointer(globalObject), lowObject(m_graph.child(m_node, 0)), lowJSValue(m_graph.child(m_node, 1)), lowJSValue(m_graph.child(m_node, 2)), lowJSValue(m_graph.child(m_node, 3)), lowJSValue(m_graph.child(m_node, 4))));
+     }
+ 
+     void compileToPrimitive()

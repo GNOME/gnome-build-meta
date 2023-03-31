@@ -1,9 +1,11 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.40.0.tar.xz
-  ref: a4607ea1bf89669e89b1cb2c63faaec513f93de09b6ae60cc71d6a8aab7ab393
+  url: webkitgtk:webkitgtk-2.41.1.tar.xz
+  ref: 0bf8ddfd2c86f30605d3a05e74fc37cec36de29992139fff9ac0483a094ebfea
 - kind: patch
-  path: files/webkitgtk/unbreak-script-message-received.patch
+  path: files/webkitgtk/crashy.patch
+- kind: patch
+  path: files/webkitgtk/build.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst

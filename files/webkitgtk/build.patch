@@ -1,0 +1,99 @@
+From fd977228c791d5cf767a1e5b4ed3596add8ed6d5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C5=BDan=20Dober=C5=A1ek?= <zdobersek@igalia.com>
+Date: Thu, 30 Mar 2023 10:36:24 -0700
+Subject: [PATCH] Build fix around std::variant in SourceBrush for
+ Clang/libstdc++ https://bugs.webkit.org/show_bug.cgi?id=254742
+
+Unreviewed, build fix for the SourceBrush::Brush std::variant construction when
+using Clang with libstdc++.
+
+Things get mixed up when using Ref<Pattern> for constructing the variant, with
+the compiler using it as initialization for the LogicalGradient type, the other
+possible type in the variant, which ends up in a compile-time error.
+
+This can be avoided by using the in-place tag when constructing the variant in
+the SourceBrush::setPattern() method, specifying which variant-alternative type
+should be used.
+
+Similar fix for the same reasons is also needed in the decoding part of the
+ArgumentCoder<std::variant<>> specialization, this being problematic due to the
+SourceBrush::Brush decoding produced for the generated serializers purpose.
+There the variant is constructed with the in-place tag that's based on the index
+value of the alternative.
+
+* Source/WebCore/platform/graphics/SourceBrush.cpp:
+(WebCore::SourceBrush::setPattern):
+* Source/WebCore/platform/graphics/SourceBrush.h:
+* Source/WebKit/Platform/IPC/ArgumentCoders.h:
+
+Canonical link: https://commits.webkit.org/262339@main
+---
+ Source/WebCore/platform/graphics/SourceBrush.cpp | 2 +-
+ Source/WebCore/platform/graphics/SourceBrush.h   | 3 ++-
+ Source/WebKit/Platform/IPC/ArgumentCoders.h      | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/Source/WebCore/platform/graphics/SourceBrush.cpp b/Source/WebCore/platform/graphics/SourceBrush.cpp
+index f42e0d42f534..44135b7706ad 100644
+--- a/Source/WebCore/platform/graphics/SourceBrush.cpp
++++ b/Source/WebCore/platform/graphics/SourceBrush.cpp
+@@ -91,7 +91,7 @@ void SourceBrush::setGradient(Ref<Gradient>&& gradient, const AffineTransform& s
+ 
+ void SourceBrush::setPattern(Ref<Pattern>&& pattern)
+ {
+-    m_brush = { WTFMove(pattern) };
++    m_brush = { Brush::Variant { std::in_place_type<Ref<Pattern>>, WTFMove(pattern) } };
+ }
+ 
+ WTF::TextStream& operator<<(TextStream& ts, const SourceBrush& brush)
+diff --git a/Source/WebCore/platform/graphics/SourceBrush.h b/Source/WebCore/platform/graphics/SourceBrush.h
+index 176b9fc85c18..cd97b82c7444 100644
+--- a/Source/WebCore/platform/graphics/SourceBrush.h
++++ b/Source/WebCore/platform/graphics/SourceBrush.h
+@@ -42,7 +42,8 @@ class SourceBrush {
+             template<typename Decoder> static std::optional<LogicalGradient> decode(Decoder&);
+         };
+ 
+-        std::variant<LogicalGradient, Ref<Pattern>> brush;
++        using Variant = std::variant<LogicalGradient, Ref<Pattern>>;
++        Variant brush;
+     };
+ 
+     SourceBrush() = default;
+diff --git a/Source/WebKit/Platform/IPC/ArgumentCoders.h b/Source/WebKit/Platform/IPC/ArgumentCoders.h
+index ae37b2145fc2..2d93984e3f36 100644
+--- a/Source/WebKit/Platform/IPC/ArgumentCoders.h
++++ b/Source/WebKit/Platform/IPC/ArgumentCoders.h
+@@ -743,7 +743,7 @@ template<typename... Types> struct ArgumentCoder<std::variant<Types...>> {
+                 auto optional = decoder.template decode<typename std::variant_alternative_t<index, std::variant<Types...>>>();
+                 if (!optional)
+                     return std::nullopt;
+-                return std::make_optional<std::variant<Types...>>(WTFMove(*optional));
++                return std::make_optional<std::variant<Types...>>(std::in_place_index<index>, WTFMove(*optional));
+             }
+             return decode(decoder, std::make_index_sequence<index + 1> { }, i);
+         } else
+
+diff --git a/Source/WebKit/WebProcess/WebPage/gtk/AcceleratedSurfaceDMABuf.cpp b/Source/WebKit/WebProcess/WebPage/gtk/AcceleratedSurfaceDMABuf.cpp
+index c41ac2ff13ca..d1e26e79f35b 100644
+--- a/Source/WebKit/WebProcess/WebPage/gtk/AcceleratedSurfaceDMABuf.cpp
++++ b/Source/WebKit/WebProcess/WebPage/gtk/AcceleratedSurfaceDMABuf.cpp
+@@ -130,12 +130,12 @@ void AcceleratedSurfaceDMABuf::clientResize(const WebCore::IntSize& size)
+     }
+     UnixFileDescriptor backFD(gbm_bo_get_fd(backObject), UnixFileDescriptor::Adopt);
+     Vector<EGLAttrib> attributes = {
+-        EGL_WIDTH, gbm_bo_get_width(backObject),
+-        EGL_HEIGHT, gbm_bo_get_height(backObject),
+-        EGL_LINUX_DRM_FOURCC_EXT, gbm_bo_get_format(backObject),
++        EGL_WIDTH, static_cast<EGLAttrib>(gbm_bo_get_width(backObject)),
++        EGL_HEIGHT, static_cast<EGLAttrib>(gbm_bo_get_height(backObject)),
++        EGL_LINUX_DRM_FOURCC_EXT, static_cast<EGLAttrib>(gbm_bo_get_format(backObject)),
+         EGL_DMA_BUF_PLANE0_FD_EXT, backFD.value(),
+-        EGL_DMA_BUF_PLANE0_OFFSET_EXT, gbm_bo_get_offset(backObject, 0),
+-        EGL_DMA_BUF_PLANE0_PITCH_EXT, gbm_bo_get_stride(backObject),
++        EGL_DMA_BUF_PLANE0_OFFSET_EXT, static_cast<EGLAttrib>(gbm_bo_get_offset(backObject, 0)),
++        EGL_DMA_BUF_PLANE0_PITCH_EXT, static_cast<EGLAttrib>(gbm_bo_get_stride(backObject)),
+         EGL_NONE
+     };
+     m_backImage = display.createEGLImage(EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, nullptr, attributes);
+
