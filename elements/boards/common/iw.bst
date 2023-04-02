@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: https://git.sipsolutions.net/iw.git
   track: v5.19
-  ref: c2a322113d5b4320ce39823d96dce8ac527a397a
+  ref: v5.19-0-g79f20cbf1a333a23e3b041d502277d240aedb840
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -13,3 +13,8 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/libnl.bst
+
+variables:
+  make-args: >-
+    PREFIX="%{prefix}"
+    SBINDIR="%{sbindir}"
