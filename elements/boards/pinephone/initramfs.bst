@@ -10,6 +10,7 @@ variables:
 
 config:
   commands:
+  - mkdir -p /tmp /var/tmp /efi
   - |
     prepare-image.sh \
        --seed "%{uuidnamespace}" \

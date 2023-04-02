@@ -63,6 +63,7 @@ config:
 
   - |
     size=$(($(du -s -B 4K "%{sysroot}" | cut -f1)*4+200*1024))
+    mkdir /genimage
     cat >/genimage/genimage.cfg <<EOF
     image efi.img {
         vfat {
