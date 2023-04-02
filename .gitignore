@@ -14,3 +14,6 @@ ostree-repo/
 **/*.DS_STORE
 logs/
 *.img
+
+# Ignore the default checkout directory
+checkout/
