@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gssdp.git
   track: master
-  ref: gssdp-1.6.2-0-gc2d417d6a79f03c095e5730efd60015eb3109a82
+  ref: gssdp-1.6.2-1-g27863d5d592994ddf13b3f0e6ea7f11c5e928f50
 
 build-depends:
 - sdk-deps/gi-docgen.bst

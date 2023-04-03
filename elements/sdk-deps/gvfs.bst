@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gvfs.git
   track: master
-  ref: 1.50.4-1-g01e792821a0ab8d72744bbb8a510000ff0cc9807
+  ref: 1.50.4-3-g82d53136bf8647f590ff49461ac45d415e13a086
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
