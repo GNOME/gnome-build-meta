@@ -4,10 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:gnome-weather.git
   track: main
-  ref: 44.0-5-gdaabb85e64e148cd58889e77ec50c7ee15b4f67d
+  ref: 44.0-10-gf8e998c7e64374518ab41c83b372ac161173d66d
 
 build-depends:
 - sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

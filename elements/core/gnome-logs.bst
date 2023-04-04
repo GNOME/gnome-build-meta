@@ -4,9 +4,10 @@ sources:
 - kind: git_tag
   url: gnome:gnome-logs.git
   track: master
-  ref: gnome-logs-43.0-10-ge6de502bd054ed5a23743d96a98af6c8d18a03d2
+  ref: gnome-logs-43.0-13-gcfa5d599b20b48eedcf2107f11e6c7f35b489f49
 
 build-depends:
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -9,6 +9,7 @@ sources:
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
