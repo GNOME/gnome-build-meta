@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:nautilus.git
   track: master
-  ref: 44.0-15-g0e90eef46826e79b439384e34de94ec2b482162d
+  ref: 44.0-16-gb0e28bc19c065b4bc1d6fdea922ae2c09115b0e6
 
 build-depends:
 - sdk/gobject-introspection.bst
