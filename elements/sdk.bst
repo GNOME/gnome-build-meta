@@ -6,17 +6,19 @@
 kind: stack
 depends:
 - sdk-platform.bst
+- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - sdk/sysprof-agent.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst
 - sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/libabigail.bst
 
 # We can't depend on desktop.bst from freedesktop-sdk directly, as that would bring
 # unwanted dependencies. See sdk-platform.bst for details.
 # This should be kept in sync with desktop.bst from freedesktop-sdk whenever we
 # update our reference.
-# elements we remove: platform and gtk-doc.
+# elements we remove: platform, appstream, appstream-glib and gtk-doc.
 - freedesktop-sdk.bst:components/autoconf-archive.bst
 - freedesktop-sdk.bst:components/autoconf.bst
 - freedesktop-sdk.bst:components/automake.bst
@@ -33,11 +35,9 @@ depends:
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/gdb.bst
 - freedesktop-sdk.bst:components/git.bst
-- freedesktop-sdk.bst:components/glslang.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/groff.bst
 - freedesktop-sdk.bst:components/help2man.bst
-- freedesktop-sdk.bst:components/libabigail.bst
 - freedesktop-sdk.bst:components/libpipeline.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/man-db.bst

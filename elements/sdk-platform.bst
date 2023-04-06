@@ -5,9 +5,9 @@
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#process-to-remove-components-from-sdk
 kind: stack
 depends:
+- sdk/AppStream.bst
 - sdk/adobe-source-code-pro-fonts.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/appstream-glib.bst
 - sdk/at-spi2-core.bst
 - sdk/cantarell-fonts.bst
 - sdk/enchant-2.bst
@@ -55,8 +55,11 @@ depends:
 - sdk/webkitgtk-6.0.bst
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
+- sdk/xmlb.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
+- freedesktop-sdk.bst:components/audit.bst
+- freedesktop-sdk.bst:components/libcap-ng.bst
 # we can't depend on desktop-platform.bst from freedesktop-sdk directly as that would
 # bring elements we want to build ourselves, and that can cause conflicts.
 # This should be kept in sync with desktop-platform.bst from freedesktop-sdk whenever we
@@ -72,10 +75,9 @@ depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/alsa-plugins.bst
 - freedesktop-sdk.bst:components/aspell.bst
-- freedesktop-sdk.bst:components/audit.bst
+- freedesktop-sdk.bst:components/bluez-libs.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/cairo.bst
-- freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/cracklib.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/curl.bst
@@ -98,6 +100,7 @@ depends:
 - freedesktop-sdk.bst:components/giflib.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/glibc-gconv-cache.bst
+- freedesktop-sdk.bst:components/glslang.bst
 - freedesktop-sdk.bst:components/gmp.bst
 - freedesktop-sdk.bst:components/gnu-free-fonts.bst
 - freedesktop-sdk.bst:components/gnupg.bst
