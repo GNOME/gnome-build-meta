@@ -45,7 +45,6 @@ public:
     - rm '%{debugdir}%{bindir}/gdb.debug'
     - rm '%{debugdir}%{bindir}/dwp.debug'
     - rm '%{debugdir}%{bindir}/ccache.debug'
-    - rm %{debugdir}%{libdir}/libLLVM-*.so.debug
     - rm %{debugdir}%{libdir}/libclang.so.*.*.*.debug
     - rm %{debugdir}%{libdir}/libclang-cpp.so.*.debug
     - rm '%{debugdir}%{bindir}/doxygen.debug'
