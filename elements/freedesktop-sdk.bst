@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: abderrahim/bst2-22.08
-  ref: freedesktop-sdk-22.08.8-19-g6fd797838acbd68798868a0ed203a78a6a727601
+  ref: freedesktop-sdk-22.08.9-21-gdbd1b679b224c285c75358e4cce8cd7e31620a43
 config:
   options:
     target_arch: '%{arch}'
