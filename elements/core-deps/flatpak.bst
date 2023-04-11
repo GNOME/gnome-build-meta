@@ -2,9 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:flatpak/flatpak/releases/download/1.14.0/flatpak-1.14.0.tar.xz
+  url: github_files:flatpak/flatpak/releases/download/1.14.4/flatpak-1.14.4.tar.xz
+  ref: 8a34dbd0b67c434e7598b98ec690953d046f0db26e480aeafb46d72aec716799
 
-  ref: 8e276973770ea24ddf2597ad4aecd36b98393e6bde91e48e1743aaca67f27815
 build-depends:
 - core-deps/python-pyparsing.bst
 - sdk/gobject-introspection.bst
