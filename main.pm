@@ -44,5 +44,6 @@ autotest::loadtest("tests/app_settings.pm");
 autotest::loadtest("tests/app_simple_scan.pm");
 autotest::loadtest("tests/app_totem.pm");
 autotest::loadtest("tests/app_yelp.pm");
+autotest::loadtest("tests/gnome_shutdown.pm");
 
 1;
