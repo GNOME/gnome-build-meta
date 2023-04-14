@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.41.1.tar.xz
-  ref: 0bf8ddfd2c86f30605d3a05e74fc37cec36de29992139fff9ac0483a094ebfea
-- kind: patch
-  path: files/webkitgtk/crashy.patch
+  url: webkitgtk:webkitgtk-2.41.2.tar.xz
+  ref: 930b3f76c8295fe08a3d7b2d80b5424528b30e927e46ef58700af25b91cf401e
 - kind: patch
   path: files/webkitgtk/build.patch
 
