@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libsoup.git
   track: libsoup-2-74
-  ref: 2.74.3-1-gb0e2d85e36c5a9ee8d4caf16dbdc30302fcf470d
+  ref: 2.74.3-3-g48b3b61154389b377f6cd20ea72e57b62c9256e8
 
 build-depends:
 - sdk/sysprof-minimal.bst

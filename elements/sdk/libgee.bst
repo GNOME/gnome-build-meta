@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:libgee.git
   track: main
-  ref: 0.20.6-1-gb33a6627f4fc96938b6015e05849867c472160a8
+  ref: 0.20.6-2-g2f0bbe8987e5eb1390b23ac531c971b202c2ef77
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
