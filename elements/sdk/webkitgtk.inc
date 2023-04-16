@@ -4,6 +4,8 @@ sources:
   ref: 930b3f76c8295fe08a3d7b2d80b5424528b30e927e46ef58700af25b91cf401e
 - kind: patch
   path: files/webkitgtk/build.patch
+- kind: patch
+  path: files/webkitgtk/rendering-errors.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst
