@@ -338,8 +338,8 @@ openh264-x86_64:
   script:
   - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
   - cd openh264-extension
-  - bst build flatpak-repo.bst
-  - bst checkout flatpak-repo.bst repo
+  - ${BST} build flatpak-repo.bst
+  - ${BST} artifact checkout flatpak-repo.bst --directory repo
   - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
   - flat-manager-client purge $BUILD_ID
@@ -384,8 +384,8 @@ cve_report:
   script:
   - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
 
-  - ${BST} artifact checkout flatpak/platform-manifest.bst platform-manifest/
-  - ${BST} artifact checkout flatpak/sdk-manifest.bst sdk-manifest/
+  - ${BST} artifact checkout flatpak/platform-manifest.bst --directory platform-manifest/
+  - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory sdk-manifest/
 
   - mkdir -p cve
   - cd cve
