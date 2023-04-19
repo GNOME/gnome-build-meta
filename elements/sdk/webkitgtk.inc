@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.40.0.tar.xz
-  ref: a4607ea1bf89669e89b1cb2c63faaec513f93de09b6ae60cc71d6a8aab7ab393
-- kind: patch
-  path: files/webkitgtk/unbreak-script-message-received.patch
+  url: webkitgtk:webkitgtk-2.40.1.tar.xz
+  ref: 64e526984f8cd2161ef03ae949af99c002ff333d615e6386b460164a3c1b7ef6
 
 build-depends:
 - sdk-deps/bubblewrap.bst
