@@ -1,11 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.41.2.tar.xz
-  ref: 930b3f76c8295fe08a3d7b2d80b5424528b30e927e46ef58700af25b91cf401e
-- kind: patch
-  path: files/webkitgtk/build.patch
-- kind: patch
-  path: files/webkitgtk/rendering-errors.patch
+  url: webkitgtk:webkitgtk-2.41.3.tar.xz
+  ref: 001323803092f48c58daa26fe7e05c844734bb0d3c54daa5eb074f36396f288e
 
 build-depends:
 - sdk-deps/gi-docgen.bst
