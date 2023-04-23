@@ -25,6 +25,7 @@ shift 3
 openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   --host $OPENQA_HOST \
   -X POST isos \
+  --param-file "$casedir/config/vars.json" \
   CASEDIR="$casedir" \
   ISO=installer.iso \
   NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_BRANCH \
