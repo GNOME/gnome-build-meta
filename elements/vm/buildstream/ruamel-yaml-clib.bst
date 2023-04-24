@@ -2,8 +2,8 @@ kind: pip
 
 sources:
 - kind: tar
-  url: pypi:8b/25/08e5ad2431a028d0723ca5540b3af6a32f58f25e83c6dda4d0fcef7288a3/ruamel.yaml.clib-0.2.6.tar.gz
-  ref: 4ff604ce439abb20794f05613c374759ce10e3595d1867764dd1ae675b85acbd
+  url: pypi:d5/31/a3e6411947eb7a4f1c669f887e9e47d61a68f9d117f10c3c620296694a0b/ruamel.yaml.clib-0.2.7.tar.gz
+  ref: 1f08fd5a2bea9c4180db71678e850b995d2a5f4537be0e94557668cf0f5f9497
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-pip.bst
