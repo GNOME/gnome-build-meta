@@ -32,6 +32,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource LABEL="%{installer-volume-id}" \
        --rootfstype iso9660 \
+       --rootpasswd somestuff \
        --noboot >/dev/null
 
   - |
