@@ -25,9 +25,13 @@ PROJECT_ID = "gnome%2Fgnome-build-meta"
 
 def argument_parser():
     parser = argparse.ArgumentParser(description="Pipeline report tool")
-    parser.add_argument('--debug', dest='debug', action='store_true',
-                        help="Enable detailed logging to stderr")
-    parser.add_argument('pipeline', nargs='?')
+    parser.add_argument(
+        "--debug",
+        dest="debug",
+        action="store_true",
+        help="Enable detailed logging to stderr",
+    )
+    parser.add_argument("pipeline", nargs="?")
     return parser
 
 
@@ -49,7 +53,9 @@ class GitlabAPIHelper:
         return self._json(f"{API_BASE}/projects/{PROJECT_ID}/pipelines/{pipeline_id}")
 
     def query_pipeline_jobs(self, pipeline_id):
-        return self._json(f"{API_BASE}/projects/{PROJECT_ID}/pipelines/{pipeline_id}/jobs")
+        return self._json(
+            f"{API_BASE}/projects/{PROJECT_ID}/pipelines/{pipeline_id}/jobs"
+        )
 
     def query_job_log(self, job_id):
         return self._json(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/trace")
@@ -71,28 +77,28 @@ def generate_report(api: GitlabAPIHelper, pipeline: dict) -> dict:
     test_s3_image_job = find_in_list(
         jobs,
         lambda item: item["name"] == "test-s3-image",
-        "Couldn't find test-s3-image job"
+        "Couldn't find test-s3-image job",
     )
     test_s3_image_job_id = test_s3_image_job["id"]
     log.debug("Found test-s3-image job with ID %s", test_s3_image_job_id)
 
     artifacts_zip = api.query_job_artifacts(test_s3_image_job_id)
-    with ZipFile(artifacts_zip, 'r') as z:
+    with ZipFile(artifacts_zip, "r") as z:
         with z.open("openqa.log") as f:
             openqa_status_line = f.readline().decode()
     openqa_status = json.loads(openqa_status_line)
     openqa_job_id = openqa_status["ids"][0]
 
     report = dict(
-        gnome_build_meta_ref = pipeline["ref"],
-        gnome_build_meta_commit_id = pipeline["sha"],
-        gnome_build_meta_commit_date = test_s3_image_job["commit"]["created_at"],
-        gnome_build_meta_commit_title = test_s3_image_job["commit"]["title"],
-        gitlab_pipeline_id = pipeline["id"],
-        gitlab_test_s3_image_job_id = test_s3_image_job_id,
-        gitlab_test_s3_image_job_finished_at = test_s3_image_job["finished_at"],
-        gitlab_test_s3_image_job_status = test_s3_image_job["status"],
-        openqa_job_id = openqa_job_id,
+        gnome_build_meta_ref=pipeline["ref"],
+        gnome_build_meta_commit_id=pipeline["sha"],
+        gnome_build_meta_commit_date=test_s3_image_job["commit"]["created_at"],
+        gnome_build_meta_commit_title=test_s3_image_job["commit"]["title"],
+        gitlab_pipeline_id=pipeline["id"],
+        gitlab_test_s3_image_job_id=test_s3_image_job_id,
+        gitlab_test_s3_image_job_finished_at=test_s3_image_job["finished_at"],
+        gitlab_test_s3_image_job_status=test_s3_image_job["status"],
+        openqa_job_id=openqa_job_id,
     )
     return report
 
@@ -112,6 +118,7 @@ test-s3-image job finished at: {gitlab_test_s3_image_job_finished_at}
 
 OpenQA job: https://openqa.gnome.org/tests/{openqa_job_id}
 """
+
 
 def print_report_text(report):
     print(TEMPLATE.format(**report))
@@ -133,7 +140,7 @@ def main():
         pipeline = api.query_latest_pipeline()
         pipeline_id = pipeline["id"]
         print(f"Latest pipeline is {pipeline_id}. Status: {pipeline['status']}")
-        if pipeline["status"] == 'running':
+        if pipeline["status"] == "running":
             raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline_id)
 
