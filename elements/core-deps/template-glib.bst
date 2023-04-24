@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:template-glib.git
   track: main
-  ref: 3.36.1-3-gc35410ad507a678d0de2c5528b395e2074d3f442
+  ref: 3.36.1-4-g8748ca8c3ddf6154c5f94b4401ce3504d094f9bc
 
 build-depends:
 - sdk/gobject-introspection.bst
