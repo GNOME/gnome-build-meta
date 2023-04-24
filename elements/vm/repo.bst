@@ -20,6 +20,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
        --efisource LABEL=EFI \
+       --rootpasswd somestuff \
        --efipath /boot >/dev/null
 
   - mv %{sysroot}/etc %{sysroot}/usr/etc
