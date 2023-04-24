@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: linuxcontainers:lxc/lxc-4.0.10.tar.gz
-  ref: a10c518056d2e497bd600e4ffac2853bdeab1e835bf455a6d87cc8df128bfae9
+  url: linuxcontainers:lxc/lxc-4.0.12.tar.gz
+  ref: db242f8366fc63e8c7588bb2017b354173cf3c4b20abc18780debdc48b14d3ef
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
