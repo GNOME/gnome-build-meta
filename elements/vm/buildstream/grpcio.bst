@@ -2,18 +2,24 @@ kind: pip
 
 sources:
 - kind: tar
-  url: pypi:a0/d6/d04c6550debe23e2eaef0d9c4adccbb6e20d8cce6da40ae989fe8836e287/grpcio-1.37.1.tar.gz
-  ref: df8305806311d3fe913d4f7eb3ef28e2072159ea12f95baab5d447f1380a71e3
+  url: pypi:ef/e4/5c717f3c6c65b7c5ff2542ca25d6c2ce0f99d9ee9119620c6e2325a6da79/grpcio-1.54.0.tar.gz
+  ref: eb0807323572642ab73fd86fe53d88d843ce617dd1ddf430351ad0759809a0ae
+
+depends:
+- freedesktop-sdk.bst:components/python3.bst
+- vm/buildstream/c-ares.bst
 
 build-depends:
 - freedesktop-sdk.bst:components/cython.bst
 - freedesktop-sdk.bst:components/python3-pip.bst
+- freedesktop-sdk.bst:components/python3-wheel.bst
 
-depends:
-- core-deps/protobuf.bst
+runtime-depends:
 - freedesktop-sdk.bst:components/python3-six.bst
-- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/protobuf.bst
 
 environment:
-  GRPC_PYTHON_BUILD_SYSTEM_OPENSSL: 'true'
-  GRPC_PYTHON_BUILD_WITH_CYTHON: '1'
+  GRPC_PYTHON_BUILD_SYSTEM_OPENSSL: "true"
+  GRPC_PYTHON_BUILD_SYSTEM_ZLIB: "true"
+  GRPC_PYTHON_BUILD_SYSTEM_CARES: "true"
+  GRPC_PYTHON_BUILD_WITH_CYTHON: "1"
