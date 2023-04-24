@@ -22,6 +22,7 @@ log = logging.getLogger()
 API_BASE = "https://gitlab.gnome.org/api/v4/"
 PROJECT_ID = "gnome%2Fgnome-build-meta"
 
+
 def argument_parser():
     parser = argparse.ArgumentParser(description="Pipeline report tool")
     parser.add_argument('--debug', dest='debug', action='store_true',
@@ -131,6 +132,9 @@ def main():
     else:
         pipeline = api.query_latest_pipeline()
         pipeline_id = pipeline["id"]
+        print(f"Latest pipeline is {pipeline_id}. Status: {pipeline['status']}")
+        if pipeline["status"] == 'running':
+            raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline_id)
 
     report = generate_report(api, pipeline)
