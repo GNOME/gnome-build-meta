@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: freerdp:releases/freerdp-2.10.0.tar.gz
   ref: a673d3fc21911dd9f196834f2f3a23c3ebc7e5e4deab2f7686fcec879279e2c1
+- kind: patch
+  path: files/freerdp/0001-Fixed-8686-Update-h264-to-use-new-FFMPEG-API.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
