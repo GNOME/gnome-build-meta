@@ -10,6 +10,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/help2man.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
