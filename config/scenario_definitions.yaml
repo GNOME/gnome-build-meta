@@ -1,0 +1,51 @@
+# This is the toplevel configuration for the OpenQA scenarios
+#
+# We use START_AFTER_TEST so that tests are run in a
+# deterministic order on the given runner, which can
+# only execute 1 job at a time. There's no actual
+# dependency between successive jobs.
+
+products:
+  gnomeos:
+    distri: gnomeos
+    flavor: iso
+    version: "master"
+    arch: "x86_64"
+
+machines:
+  qemu_x86_64:
+    backend: "qemu"
+    settings:
+      CDMODEL: scsi-cd
+      DESKTOP: gnomeos
+      HDDMODEL: virtio-blk
+      HDDSIZEGB: '10'
+      NICMAC: 52:54:00:12:34:56
+      NICMODEL: virtio-net
+      NICTYPE: user
+      NICVLAN: '0'
+      NUMDISKS: '1'
+      PART_TABLE_TYPE: gpt
+      QEMUCPU: host
+      QEMUCPUS: '2'
+      QEMUPORT: '20012'
+      QEMURAM: '2560'
+      QEMUVGA: virtio
+      UEFI: '1'
+      UEFI_PFLASH_CODE: /usr/share/qemu/ovmf-x86_64-code.bin
+      UEFI_PFLASH_VARS: /usr/share/qemu/ovmf-x86_64-vars.bin
+      VIRTIO_CONSOLE: '1'
+      VNC_TYPING_LIMIT: '5'
+
+job_templates:
+  gnome_install:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: installer.iso
+  gnome_apps:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      HDD_1: disk.img
+      START_AFTER_TEST: gnome_install
