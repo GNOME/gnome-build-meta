@@ -14,8 +14,8 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/icu.bst
+- freedesktop-sdk.bst:components/protobuf.bst
 - core/gnome-desktop.bst
-- core-deps/protobuf.bst
 - core-deps/boost.bst
 - core-deps/gspell.bst
 

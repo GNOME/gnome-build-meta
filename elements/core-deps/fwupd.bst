@@ -20,7 +20,6 @@ build-depends:
 depends:
 - core-deps/ModemManager.bst
 - core-deps/libjcat.bst
-- core-deps/protobuf-c.bst
 - sdk/gcab.bst
 - sdk/glib.bst
 - sdk/pango.bst
@@ -35,6 +34,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
 - freedesktop-sdk.bst:components/polkit.bst
+- freedesktop-sdk.bst:components/protobuf-c.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst

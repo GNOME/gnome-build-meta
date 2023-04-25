@@ -17,7 +17,6 @@ public:
     - rm %{debugdir}%{libdir}/libaom.so.*.*.*.debug
     - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
     - rm %{debugdir}%{libdir}/libprotoc.so.*.*.*.debug
-    - rm %{debugdir}%{libdir}/libprotobuf.so.*.*.*.debug
 
     - rm '%{debugdir}%{bindir}/lto-dump.debug'
     - rm '%{debugdir}%{bindir}/gs.debug'
