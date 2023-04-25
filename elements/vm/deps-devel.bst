@@ -6,8 +6,6 @@ depends:
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
 - core/meta-gnome-core-developer-tools.bst
-- vm/buildstream/bst-external.bst
-- vm/buildstream/buildstream.bst
 - vm/common-deps.bst
 - vm/deviced.bst
 - vm/git-lfs.bst
