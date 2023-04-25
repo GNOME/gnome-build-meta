@@ -39,7 +39,7 @@ config:
     cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}/vmlinuz"
 
   - dbus-uuidgen >/etc/machine-id
-  - SYSTEMD_RELAX_ESP_CHECKS=1 bootctl --path='/efi' --no-variables install
+  - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
   - rm /etc/machine-id
 
   - |
