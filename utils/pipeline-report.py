@@ -104,8 +104,6 @@ def generate_report(api: GitlabAPIHelper, pipeline: dict) -> dict:
 
 
 TEMPLATE = """
-# GNOME OpenQA testing report
-
 Repo: gnome-build-meta
 Commit: {gnome_build_meta_commit_id}
 Commit date: {gnome_build_meta_commit_date}
@@ -139,7 +137,7 @@ def main():
     else:
         pipeline = api.query_latest_pipeline()
         pipeline_id = pipeline["id"]
-        print(f"Latest pipeline is {pipeline_id}. Status: {pipeline['status']}")
+        print(f"Latest gnome-build-meta pipeline on default branch is {pipeline_id}. Status: {pipeline['status']}")
         if pipeline["status"] == "running":
             raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline_id)
