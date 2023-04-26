@@ -1,0 +1,63 @@
+From 2a029dd19fe9580cfeb3bde232eceb8a0bbb21bf Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Tue, 25 Apr 2023 19:17:22 -0500
+Subject: [PATCH] file-backend: avoid deadlock when portal op is canceled
+
+Calling g_cancellable_disconnect() inside a cancelled handler is a
+guaranteed deadlock. Cancellables should only be canceled once, so we
+don't need to worry about a second cancellation occurring. I think it's
+sufficent to disconnect when the InitClosure is freed.
+
+Possibly fixes #86, perhaps, hopefully?
+---
+ libsecret/secret-file-backend.c | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/libsecret/secret-file-backend.c b/libsecret/secret-file-backend.c
+index 12738df..dd18a5b 100644
+--- a/libsecret/secret-file-backend.c
++++ b/libsecret/secret-file-backend.c
+@@ -206,6 +206,7 @@ typedef struct {
+ 	GDBusConnection *connection;
+ 	gchar *request_path;
+ 	guint portal_signal_id;
++	GCancellable *cancellable;
+ 	gulong cancellable_signal_id;
+ } InitClosure;
+ 
+@@ -218,6 +219,14 @@ init_closure_free (gpointer data)
+ 	g_clear_pointer (&init->buffer, egg_secure_free);
+ 	g_clear_object (&init->connection);
+ 	g_clear_pointer (&init->request_path, g_free);
++	if (init->cancellable_signal_id) {
++		g_cancellable_disconnect (init->cancellable, init->cancellable_signal_id);
++		init->cancellable_signal_id = 0;
++	}
++	/* Note: do not cancel the cancellable here! That's for the API user to
++	 * do. We're just keeping track of it here so we can disconnect.
++	 */
++	g_clear_object (&init->cancellable);
+ 	g_free (init);
+ }
+ 
+@@ -352,9 +361,6 @@ on_portal_cancel (GCancellable *cancellable,
+ 				cancellable,
+ 				on_portal_request_close,
+ 				task);
+-
+-	g_cancellable_disconnect (cancellable, init->cancellable_signal_id);
+-	init->cancellable_signal_id = 0;
+ }
+ 
+ static void
+@@ -575,6 +581,7 @@ secret_file_backend_real_init_async (GAsyncInitable *initable,
+ 		init = g_new0 (InitClosure, 1);
+ 		init->io_priority = io_priority;
+ 		init->file = file;
++		init->cancellable = g_object_ref (cancellable);
+ 		g_task_set_task_data (task, init, init_closure_free);
+ 		g_bus_get (G_BUS_TYPE_SESSION, cancellable, on_bus_get, task);
+ 	} else {
+-- 
+GitLab
+

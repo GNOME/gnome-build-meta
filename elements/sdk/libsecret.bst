@@ -5,6 +5,8 @@ sources:
   url: gnome:libsecret.git
   track: master
   ref: 0.20.5-25-gecb788d44e5c4f01234b7b02141c2779373957c5
+- kind: patch
+  path: files/libsecret/test.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst
