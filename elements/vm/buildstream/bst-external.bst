@@ -3,15 +3,15 @@ kind: pip
 sources:
 - kind: git_tag
   url: gitlab:BuildStream/bst-external.git
-  track: 0.28.1
-  ref: 0.28.1-0-gc1047827cb32837a8b27cdcbdd093be9aeabde8e
+  track: master
+  ref: 0.30.0-6-ga0810352417e9c5565f37be11a47d98956d7acf0
 
 build-depends:
-- freedesktop-sdk.bst:components/python3-pip.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-python.bst
 - freedesktop-sdk.bst:components/python3-setuptools-scm.bst
 
 depends:
 - vm/buildstream/buildstream.bst
-- freedesktop-sdk.bst:components/python3-requests.bst
-- freedesktop-sdk.bst:components/python3-setuptools.bst
-- freedesktop-sdk.bst:components/python3-toml.bst
+
+runtime-depends:
+- freedesktop-sdk.bst:components/python3-tomli.bst
