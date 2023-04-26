@@ -5,6 +5,8 @@ sources:
   url: gnome:libsoup.git
   track: master
   ref: 3.4.1-1-ga15107a70b4b2b0b5bda241f037d09af403db96e
+- kind: patch
+  path: files/libsoup/test.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst
