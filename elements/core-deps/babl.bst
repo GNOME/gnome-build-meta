@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gimp:babl/0.1/babl-0.1.102.tar.xz
-  ref: a88bb28506575f95158c8c89df6e23686e50c8b9fea412bf49fe8b80002d84f0
+  url: gimp:babl/0.1/babl-0.1.104.tar.xz
+  ref: 22e38e1d19c5391abc8ccf936033a9d035e8a8ec7523e5cd76a4c01137d7160c
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
