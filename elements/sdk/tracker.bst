@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:tracker.git
   track: master
-  ref: 3.5.0-36-g7913a3413f8a257addd31bbcb2442530ed01200b
+  ref: 3.5.1-0-g0619c65273da0ca2644e43596fe3d61c1d8b0737
   submodules:
     subprojects/gvdb:
       url: gnome:gvdb.git

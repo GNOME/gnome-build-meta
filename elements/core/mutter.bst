@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:mutter.git
   track: main
-  ref: 44.0-72-g57fdd7efd2d2ef05df86c60e36e200a15a9918a0
+  ref: 44.1-0-g28a6447ff060ae1fbac8f20a13908d6e230eddc2
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.

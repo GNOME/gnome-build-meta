@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:totem-pl-parser.git
   track: master
-  ref: V_3_26_6-20-ga8f290f7213872fa296d4d4893a38a53ad270680
+  ref: V_3_26_6-21-g0c57caffdadc4d6c9698f97cde937a551233e51f
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

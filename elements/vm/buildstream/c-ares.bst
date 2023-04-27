@@ -10,4 +10,4 @@ sources:
 - kind: git_tag
   url: github:c-ares/c-ares.git
   track: main
-  ref: cares-1_19_0-0-gfddf01938d3789e06cc1c3774e4cd0c7d2a89976
+  ref: cares-1_19_0-10-gf95ca36cde8cbbf90860d7b5403e3efb69f8b0f7
