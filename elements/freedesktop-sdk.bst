@@ -2,8 +2,8 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: mcatanzaro/abderrahim/bst2-22.08-mesa
-  ref: freedesktop-sdk-22.08.11-28-ga8f2a3c5b78b99792c342c0a40c40129226490c0
+  track: abderrahim/bst2-22.08
+  ref: freedesktop-sdk-22.08.9-21-gdbd1b679b224c285c75358e4cce8cd7e31620a43
 config:
   options:
     target_arch: '%{arch}'
