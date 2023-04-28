@@ -5,8 +5,6 @@ sources:
   url: gnome:gtk.git
   track: main
   ref: 4.11.1-268-g3b5a2d60c7d77d2bc8bdab450573e0bcda3117dc
-- kind: patch
-  path: files/gtk/gtk-popover-hang.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst
