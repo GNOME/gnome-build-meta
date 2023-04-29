@@ -15,4 +15,5 @@ depends:
 - freedesktop-sdk.bst:components/python3-markdown.bst
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/python3-pygments.bst
+- freedesktop-sdk.bst:components/python3-tomli.bst
 - freedesktop-sdk.bst:components/python3-typogrify.bst
