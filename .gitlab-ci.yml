@@ -66,7 +66,7 @@ default:
          ;;
     esac
 
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build --ignore-project-artifact-remotes --ignore-project-source-remotes "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
