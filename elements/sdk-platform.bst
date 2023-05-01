@@ -13,6 +13,7 @@ depends:
 - sdk/gcr-3.bst
 - sdk/gjs.bst
 - sdk/graphene.bst
+- sdk/gsettings-desktop-schemas.bst
 - sdk/gssproxy.bst
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
@@ -29,7 +30,9 @@ depends:
 - sdk/libsoup.bst
 - sdk/libwpe.bst
 - sdk/mozjs.bst
+- sdk/nuspell.bst
 - sdk/pinentry.bst
+- sdk/pygobject.bst
 - sdk/tracker.bst
 - sdk/webkit2gtk-4.1.bst
 - sdk/webkitgtk-6.0.bst
@@ -37,6 +40,8 @@ depends:
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
+- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
+- freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:platform.bst
