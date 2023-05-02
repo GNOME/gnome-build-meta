@@ -2,10 +2,8 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: abderrahim/bst2-22.08
-  ref: freedesktop-sdk-22.08.9-21-gdbd1b679b224c285c75358e4cce8cd7e31620a43
-- kind: patch
-  path: files/freedesktop-sdk/12613.patch
+  track: master
+  ref: freedesktop-sdk-23.08beta.1-0-ge9a903834797e93adc2e3c4d6abc37ca2bb42268
 config:
   options:
     target_arch: '%{arch}'
@@ -25,6 +23,7 @@ config:
     components/glib-networking.bst: sdk/glib-networking.bst
     components/glib.bst: sdk/glib.bst
     components/gobject-introspection.bst: sdk/gobject-introspection.bst
+    components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
@@ -36,6 +35,3 @@ config:
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
     components/zenity.bst: sdk/dummy.bst
-    # Remove when updating to 23.08
-    components/atk.bst: sdk/dummy.bst
-    components/at-spi2-atk.bst: sdk/dummy.bst
