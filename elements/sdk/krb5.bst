@@ -46,5 +46,4 @@ public:
         - '%{libdir}/libkrb5support.so'
         - '%{libdir}/libverto.so'
   cpe:
-    product: kerberos
-    version: 5-1.19
+    product: kerberos_5
