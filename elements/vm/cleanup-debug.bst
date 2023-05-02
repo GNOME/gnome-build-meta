@@ -60,3 +60,4 @@ public:
     - rm '%{debugdir}%{libdir}/libSPIRV-Tools-reduce.so.debug'
     - rm '%{debugdir}%{libdir}/libSPIRV-Tools-shared.so.debug'
     - rm '%{debugdir}%{libdir}/libSPIRV-Tools.so.debug'
+    - rm '%{debugdir}%{libdir}/libSPIRV.so.debug'
