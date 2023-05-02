@@ -7,8 +7,8 @@ sources:
   ref: 42.2-11-ga3e45674c5d2f18c1b028180800e0aa74a16c89e
 
 build-depends:
+- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 

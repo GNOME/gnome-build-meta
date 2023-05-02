@@ -24,12 +24,12 @@ depends:
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - sdk/gcr.bst
+- sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
-- freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst

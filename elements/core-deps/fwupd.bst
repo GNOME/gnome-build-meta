@@ -6,9 +6,9 @@ sources:
   ref: adfa07434cdc29ec41c40fef460e8d970963fe0c7e849dec7f3932adb161f886
 
 build-depends:
-- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/cmake.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/liberation-fonts.bst
@@ -24,21 +24,21 @@ depends:
 - sdk/glib.bst
 - sdk/pango.bst
 - sdk/pygobject.bst
+- sdk/xmlb.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
-- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
-- freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/protobuf-c.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
+- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 
 (?):
 - arch in ["arm", "aarch64", "x86_64", "i686", "riscv64"]:

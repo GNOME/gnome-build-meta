@@ -15,8 +15,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- sdk/AppStream.bst
 - sdk/gtk.bst
-- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

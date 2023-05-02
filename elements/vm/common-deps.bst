@@ -7,7 +7,7 @@ depends:
 - core/systemd-presets.bst
 - sdk-platform.bst
 
-- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
+- core-deps/xdg-desktop-portal.bst
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 
@@ -38,8 +38,8 @@ depends:
 - vm/NetworkManager-fortisslvpn.bst
 - vm/NetworkManager-vpnc.bst
 
-- freedesktop-sdk.bst:components/pipewire-daemon.bst
-- freedesktop-sdk.bst:components/wireplumber.bst
+- core-deps/pipewire-daemon.bst
+- core-deps/wireplumber.bst
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/useradd-default.bst

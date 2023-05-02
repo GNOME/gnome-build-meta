@@ -24,11 +24,11 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-keyring.bst
 - sdk/adwaita-icon-theme.bst
+- sdk/geoclue.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/webkitgtk-6.0.bst
-- freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

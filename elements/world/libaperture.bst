@@ -13,9 +13,9 @@ build-depends:
 
 depends:
 - sdk/glib.bst
+- sdk/gst-plugins-base.bst
+- sdk/gst-plugins-good.bst
+- sdk/gst-plugins-bad.bst
 - sdk/gtk+-3.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -6,7 +6,7 @@ sources:
   track: main
 
 build-depends:
-- freedesktop-sdk.bst:components/appstream-glib.bst
+- sdk/appstream-glib.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -18,12 +18,12 @@ sources:
 
 depends:
 - core-deps/NetworkManager.bst
+- core-deps/flatpak.bst
+- freedesktop-sdk.bst:components/ostree.bst
 - core-deps/libsoup-2.4.bst
 - core-deps/mogwai.bst
 - freedesktop-sdk.bst:components/avahi.bst
-- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/gnupg.bst
-- freedesktop-sdk.bst:components/ostree.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 build-depends:

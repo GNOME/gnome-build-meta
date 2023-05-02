@@ -20,6 +20,7 @@ runtime-depends:
 depends:
 - core-deps/cmark.bst
 - core-deps/editorconfig-core-c.bst
+- core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libdex.bst
 - core-deps/libgit2-glib.bst
@@ -38,7 +39,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
-- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 

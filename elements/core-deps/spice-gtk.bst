@@ -17,12 +17,12 @@ depends:
 - core-deps/spice-protocol.bst
 - core-deps/usbredir.bst
 - sdk/glib.bst
+- sdk/gst-plugins-base.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libdrm.bst

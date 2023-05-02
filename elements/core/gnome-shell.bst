@@ -20,7 +20,7 @@ build-depends:
 runtime-depends:
 - core-deps/libgnomekbd.bst
 - core-deps/libgweather.bst
-- freedesktop-sdk.bst:components/geoclue.bst
+- sdk/geoclue.bst
 
 depends:
 - core-deps/NetworkManager.bst
@@ -40,9 +40,9 @@ depends:
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
+- sdk/gst-plugins-base.bst
 - sdk/gtk.bst
 - sdk/libsoup.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
