@@ -15,6 +15,7 @@ import sys
 from zipfile import ZipFile
 
 import requests
+from requests.exceptions import HTTPError
 
 log = logging.getLogger()
 
@@ -43,6 +44,10 @@ def argument_parser():
         help="Pipeline ID. Leave empty for latest pipeline on default branch."
     )
     return parser
+
+
+class JobArtifactsNotFoundError(Exception):
+    pass
 
 
 class GitlabAPIHelper:
@@ -78,7 +83,12 @@ class GitlabAPIHelper:
         return self._json(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/trace")
 
     def query_job_artifacts(self, job_id):
-        return self._binary(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/artifacts")
+        try:
+            return self._binary(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/artifacts")
+        except HTTPError as e:
+            if e.response.status_code == 404:
+                raise JobArtifactsNotFoundError()
+            raise
 
 
 def find_in_list(l, predicate, error_text):
@@ -88,7 +98,7 @@ def find_in_list(l, predicate, error_text):
     raise RuntimeError(error_text)
 
 
-TEMPLATE = """
+TEMPLATE_GITLAB = """
 Repo: gnome-build-meta
 Commit: {gnome_build_meta_commit_id}
 Commit date: {gnome_build_meta_commit_date}
@@ -98,7 +108,9 @@ Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pi
 test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_test_s3_image_job_id}
 test-s3-image job status: {gitlab_test_s3_image_job_status}
 test-s3-image job finished at: {gitlab_test_s3_image_job_finished_at}
+"""
 
+TEMPLATE_OPENQA = """
 OpenQA job: https://openqa.gnome.org/tests/{openqa_job_id}
 """
 
@@ -138,14 +150,19 @@ class ScriptHelper:
         test_s3_image_job_id = test_s3_image_job["id"]
         log.debug("Found test-s3-image job with ID %s", test_s3_image_job_id)
 
-        artifacts_zip = api.query_job_artifacts(test_s3_image_job_id)
-        with ZipFile(artifacts_zip, "r") as z:
-            with z.open("openqa.log") as f:
-                openqa_status_line = f.readline().decode()
-        openqa_status = json.loads(openqa_status_line)
-        openqa_job_id = openqa_status["ids"][0]
+        try:
+            artifacts_zip = api.query_job_artifacts(test_s3_image_job_id)
+            with ZipFile(artifacts_zip, "r") as z:
+                with z.open("openqa.log") as f:
+                    openqa_status_line = f.readline().decode()
+            openqa_status = json.loads(openqa_status_line)
+            openqa_job_id = openqa_status["ids"][0]
+        except JobArtifactsNotFoundError:
+            log.info("Job artifacts not found")
+            openqa_status = "Unknown"
+            openqa_job_id = None
 
-        report = dict(
+        report_gitlab = dict(
             gnome_build_meta_ref=pipeline["ref"],
             gnome_build_meta_commit_id=pipeline["sha"],
             gnome_build_meta_commit_date=test_s3_image_job["commit"]["created_at"],
@@ -154,12 +171,21 @@ class ScriptHelper:
             gitlab_test_s3_image_job_id=test_s3_image_job_id,
             gitlab_test_s3_image_job_finished_at=test_s3_image_job["finished_at"],
             gitlab_test_s3_image_job_status=test_s3_image_job["status"],
-            openqa_job_id=openqa_job_id,
         )
-        return report
+        if openqa_job_id:
+            report_openqa = dict(
+                openqa_job_id=openqa_job_id,
+            )
+        else:
+            report_openqa = None
+        return report_gitlab, report_openqa
 
-    def print_report_text(self, report):
-        print(TEMPLATE.format(**report))
+    def print_report_text(self, report_gitlab, report_openqa):
+        print(TEMPLATE_GITLAB.format(**report_gitlab))
+        if report_openqa:
+            print(TEMPLATE_OPENQA.format(**report_openqa))
+        else:
+            print("OpenQA job details could not be found. (Job artifacts were deleted).")
 
 
 def main():
@@ -177,8 +203,8 @@ def main():
         raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline["id"])
 
-    report = script.generate_report(api, pipeline)
-    script.print_report_text(report)
+    report_gitlab, report_openqa = script.generate_report(api, pipeline)
+    script.print_report_text(report_gitlab, report_openqa)
 
 
 try:
