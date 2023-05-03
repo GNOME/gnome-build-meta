@@ -322,10 +322,6 @@ s3-image:
 
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_TAG
-
 openh264-x86_64:
   extends:
   - .x86_64
@@ -463,9 +459,6 @@ test-s3-image:
   tags:
   - x86_64
   - gnome-build-meta
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_TAG
   allow_failure: true
 
 test-pinephone-aarch64:
