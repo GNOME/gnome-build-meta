@@ -155,7 +155,7 @@ class ScriptHelper:
                     f"Only {len(earlier_pipelines)} pipelines are available before this one."
                 )
             earlier_pipeline = earlier_pipelines[earlier - 1]
-            print(f"Pipeline {earlier} steps than {pipeline['id']} is {earlier_pipeline['id']}. Pipeline status: {earlier_pipeline['status']}")
+            print(f"Pipeline {earlier} steps earlier than {pipeline['id']} is {earlier_pipeline['id']}. Pipeline status: {earlier_pipeline['status']}")
             return earlier_pipeline
         return pipeline
 
