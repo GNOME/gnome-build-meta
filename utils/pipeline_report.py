@@ -122,7 +122,7 @@ class ScriptHelper:
             pipeline = api.query_pipeline(pipeline_id)
         else:
             pipeline = api.query_latest_pipeline()
-            print(f"Latest gnome-build-meta pipeline on default branch is {pipeline['id']}. Status: {pipeline['status']}")
+            print(f"Latest gnome-build-meta pipeline on default branch is {pipeline['id']}. Pipeline status: {pipeline['status']}")
         if earlier:
             earlier_pipelines = api.list_pipelines(ref=ref, updated_before=pipeline["updated_at"])
             log.info(
@@ -134,8 +134,8 @@ class ScriptHelper:
                     f"Can't go {earlier} steps earlier than pipeline {pipeline['id']}. "
                     f"Only {len(earlier_pipelines)} pipelines are available before this one."
                 )
-            earlier_pipeline = earlier_pipelines[-earlier]
-            print(f"Pipeline {earlier} steps than {pipeline['id']} is {earlier_pipeline['id']}. Status: {earlier_pipeline['status']}")
+            earlier_pipeline = earlier_pipelines[earlier - 1]
+            print(f"Pipeline {earlier} steps than {pipeline['id']} is {earlier_pipeline['id']}. Pipeline status: {earlier_pipeline['status']}")
             return earlier_pipeline
         return pipeline
 
