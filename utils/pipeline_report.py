@@ -99,19 +99,24 @@ def find_in_list(l, predicate, error_text):
 
 
 TEMPLATE_GITLAB = """
-Repo: gnome-build-meta
-Commit: {gnome_build_meta_commit_id}
-Commit date: {gnome_build_meta_commit_date}
-Commit title: {gnome_build_meta_commit_title}
+GNOME OS version:
 
-Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
-test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_test_s3_image_job_id}
-test-s3-image job status: {gitlab_test_s3_image_job_status}
-test-s3-image job finished at: {gitlab_test_s3_image_job_finished_at}
-"""
+ * Repo: gnome-build-meta
+ * Commit: {gnome_build_meta_commit_id}
+ * Commit date: {gnome_build_meta_commit_date}
+ * Commit title: {gnome_build_meta_commit_title}
+
+Integration tests status (Gitlab):
+
+ * Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
+ * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_test_s3_image_job_id}
+ * test-s3-image job status: {gitlab_test_s3_image_job_status}
+ * test-s3-image job finished at: {gitlab_test_s3_image_job_finished_at}"""
 
 TEMPLATE_OPENQA = """
-OpenQA job: https://openqa.gnome.org/tests/{openqa_job_id}
+Integration tests status (OpenQA):
+
+ * OpenQA job: https://openqa.gnome.org/tests/{openqa_job_id}
 """
 
 
