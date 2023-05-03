@@ -298,30 +298,6 @@ iso-installer-x86_64:
   - job: 'build-x86_64'
     artifacts: false
 
-s3-image:
-  extends: .x86_64
-  stage: deploy
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-  script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
-
-  - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        aws s3 cp --acl public-read iso/installer.iso \
-            s3://gnome-build-meta/tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso
-    else
-        aws s3 cp --acl public-read image/disk.img.xz \
-            s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz
-        aws s3 cp --acl public-read iso/installer.iso \
-            s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso
-    fi
-
-  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
-
 openh264-x86_64:
   extends:
   - .x86_64
@@ -407,22 +383,15 @@ test-s3-image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
   variables:
-    IMAGE: iso/image.bst
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
-  needs:
-  - job: 's3-image'
-    artifacts: false
   script:
   - |
     git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
     echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
   - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        curl --location https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso -o installer.iso
-    else
-        curl --location https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso -o installer.iso
+      curl --location https://os.gnome.org/download/523349/gnome_os_installer_523349.iso -o installer.iso
     fi
     sha256sum ./installer.iso
   - |
