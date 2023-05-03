@@ -12,10 +12,12 @@ import logging
 import json
 import os
 import sys
+import urllib.parse
 from zipfile import ZipFile
 
 import requests
 from requests.exceptions import HTTPError
+import yaml
 
 log = logging.getLogger()
 
@@ -39,6 +41,15 @@ def argument_parser():
         help="Return pipeline N steps before the specified one",
     )
     parser.add_argument(
+        "--element",
+        type=str,
+        action="append",
+        dest="elements",
+        metavar="PATH",
+        help="Report on BuildStream element at PATH in the gnome-build-meta "
+             "repo `elements/` directory. Example: `sdk/gtk.bst`",
+    )
+    parser.add_argument(
         "pipeline",
         nargs="?",
         help="Pipeline ID. Leave empty for latest pipeline on default branch."
@@ -46,7 +57,7 @@ def argument_parser():
     return parser
 
 
-class JobArtifactsNotFoundError(Exception):
+class NotFoundError(Exception):
     pass
 
 
@@ -58,6 +69,8 @@ class GitlabAPIHelper:
 
     def _binary(self, url, params=None):
         response = requests.get(url, params=params)
+        if response.status_code == 404:
+            raise NotFoundError()
         response.raise_for_status()
         return BytesIO(response.content)
 
@@ -83,12 +96,14 @@ class GitlabAPIHelper:
         return self._json(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/trace")
 
     def query_job_artifacts(self, job_id):
-        try:
-            return self._binary(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/artifacts")
-        except HTTPError as e:
-            if e.response.status_code == 404:
-                raise JobArtifactsNotFoundError()
-            raise
+        return self._binary(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/artifacts")
+
+    def fetch_repository_file(self, ref, path) -> str:
+        path_encoded = urllib.parse.quote(path, safe=[])
+        return self._binary(
+            f"{API_BASE}/projects/{PROJECT_ID}/repository/files/{path_encoded}/raw",
+            params=dict(ref=ref)
+        ).read().decode()
 
 
 def find_in_list(l, predicate, error_text):
@@ -109,9 +124,9 @@ GNOME OS version:
 Integration tests status (Gitlab):
 
  * Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
- * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_test_s3_image_job_id}
- * test-s3-image job status: {gitlab_test_s3_image_job_status}
- * test-s3-image job finished at: {gitlab_test_s3_image_job_finished_at}"""
+ * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_job_id}
+ * test-s3-image job status: {gitlab_job_status}
+ * test-s3-image job finished at: {gitlab_job_finished_at}"""
 
 TEMPLATE_OPENQA = """
 Integration tests status (OpenQA):
@@ -144,8 +159,8 @@ class ScriptHelper:
             return earlier_pipeline
         return pipeline
 
-    def generate_report(self, api: GitlabAPIHelper, pipeline: dict) -> dict:
-        """Generate the report for a specific pipeline."""
+    def find_test_s3_image_job(self, api: GitlabAPIHelper, pipeline: dict) -> dict:
+        """Find the Gitlab job that triggered the OpenQA test suite."""
         jobs = api.query_pipeline_jobs(pipeline["id"])
         test_s3_image_job = find_in_list(
             jobs,
@@ -154,43 +169,62 @@ class ScriptHelper:
         )
         test_s3_image_job_id = test_s3_image_job["id"]
         log.debug("Found test-s3-image job with ID %s", test_s3_image_job_id)
+        return test_s3_image_job
 
+    def generate_gitlab_report(self, api: GitlabAPIHelper, pipeline: dict, job: dict) -> dict:
+        """Generate the report for a specific Gitlab pipeline."""
+        return dict(
+            gnome_build_meta_ref=pipeline["ref"],
+            gnome_build_meta_commit_id=pipeline["sha"],
+            gnome_build_meta_commit_date=job["commit"]["created_at"],
+            gnome_build_meta_commit_title=job["commit"]["title"],
+            gitlab_pipeline_id=pipeline["id"],
+            gitlab_job_id=job["id"],
+            gitlab_job_finished_at=job["finished_at"],
+            gitlab_job_status=job["status"],
+        )
+
+    def generate_openqa_report(self, api: GitlabAPIHelper, pipeline: dict, job: dict) -> dict:
         try:
-            artifacts_zip = api.query_job_artifacts(test_s3_image_job_id)
+            artifacts_zip = api.query_job_artifacts(job["id"])
             with ZipFile(artifacts_zip, "r") as z:
                 with z.open("openqa.log") as f:
                     openqa_status_line = f.readline().decode()
             openqa_status = json.loads(openqa_status_line)
             openqa_job_id = openqa_status["ids"][0]
-        except JobArtifactsNotFoundError:
+        except NotFoundError:
             log.info("Job artifacts not found")
-            openqa_status = "Unknown"
-            openqa_job_id = None
+            return None
 
-        report_gitlab = dict(
-            gnome_build_meta_ref=pipeline["ref"],
-            gnome_build_meta_commit_id=pipeline["sha"],
-            gnome_build_meta_commit_date=test_s3_image_job["commit"]["created_at"],
-            gnome_build_meta_commit_title=test_s3_image_job["commit"]["title"],
-            gitlab_pipeline_id=pipeline["id"],
-            gitlab_test_s3_image_job_id=test_s3_image_job_id,
-            gitlab_test_s3_image_job_finished_at=test_s3_image_job["finished_at"],
-            gitlab_test_s3_image_job_status=test_s3_image_job["status"],
+        return dict(
+            openqa_job_id=openqa_job_id,
         )
-        if openqa_job_id:
-            report_openqa = dict(
-                openqa_job_id=openqa_job_id,
-            )
-        else:
-            report_openqa = None
-        return report_gitlab, report_openqa
 
-    def print_report_text(self, report_gitlab, report_openqa):
+    def generate_elements_report(self, api: GitlabAPIHelper, sha: str, elements=[]) -> dict:
+        report = {}
+        for element_path in elements:
+            try:
+                element_yaml = api.fetch_repository_file(ref=sha, path="elements/" + element_path)
+                element = yaml.safe_load(element_yaml)
+                report[element_path] = dict(
+                    first_source_version=element["sources"][0]["ref"]
+                )
+            except NotFoundError:
+                report[element_path] = dict(
+                    first_source_version="Not found"
+                )
+        return report
+
+    def print_report_text(self, report_gitlab, report_openqa, report_elements):
         print(TEMPLATE_GITLAB.format(**report_gitlab))
         if report_openqa:
             print(TEMPLATE_OPENQA.format(**report_openqa))
         else:
             print("OpenQA job details could not be found. (Job artifacts were deleted).")
+        if report_elements:
+            print("Elements:\n")
+            for element_path, element in report_elements.items():
+                print(f"  * {element_path}: {element['first_source_version']}")
 
 
 def main():
@@ -208,8 +242,12 @@ def main():
         raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline["id"])
 
-    report_gitlab, report_openqa = script.generate_report(api, pipeline)
-    script.print_report_text(report_gitlab, report_openqa)
+    job = script.find_test_s3_image_job(api, pipeline)
+
+    report_gitlab = script.generate_gitlab_report(api, pipeline, job)
+    report_openqa = script.generate_openqa_report(api, pipeline, job)
+    report_elements = script.generate_elements_report(api, sha=pipeline["sha"], elements=args.elements or [])
+    script.print_report_text(report_gitlab, report_openqa, report_elements)
 
 
 try:
