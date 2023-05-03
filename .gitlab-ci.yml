@@ -391,8 +391,7 @@ test-s3-image:
     git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
     echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
   - |
-      curl --location https://os.gnome.org/download/523349/gnome_os_installer_523349.iso -o installer.iso
-    fi
+    curl --location https://os.gnome.org/download/523349/gnome_os_installer_523349.iso -o installer.iso
     sha256sum ./installer.iso
   - |
     mkdir -p /data/factory/iso/
