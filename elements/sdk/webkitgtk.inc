@@ -18,15 +18,12 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 runtime-depends:
-- sdk/gst-libav.bst
-- sdk/gst-plugins-good.bst
+- freedesktop-sdk.bst:components/gstreamer-libav.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
-- sdk/geoclue.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
 - sdk/libavif.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
@@ -36,6 +33,9 @@ depends:
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/geoclue.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libepoxy.bst

@@ -4,8 +4,8 @@ sources:
   url: gnome:polari.git
   track: main
 build-depends:
-- sdk/appstream-glib.bst
 - sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/appstream-glib.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
