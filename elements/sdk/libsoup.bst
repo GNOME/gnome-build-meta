@@ -5,6 +5,8 @@ sources:
   url: gnome:libsoup.git
   track: master
   ref: 3.4.2-0-gb78cb58ee9b47f8ffe18697ee3b096743a01e6a8
+- kind: patch
+  path: files/libsoup/cancellation.patch
 
 build-depends:
 - sdk-deps/gi-docgen.bst
