@@ -2,9 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://download.qemu.org/qemu-7.2.0.tar.xz
-  ref: 5b49ce2687744dad494ae90a898c52204a3406e84d072482a1e1be854eeb2157
-
+  url: https://download.qemu.org/qemu-8.0.0.tar.xz
+  ref: bb60f0341531181d6cc3969dd19a013d0427a87f918193970d9adb91131e56d0
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
