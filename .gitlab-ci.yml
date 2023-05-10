@@ -411,27 +411,36 @@ test-s3-image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
   variables:
-    IMAGE: iso/image.bst
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
   needs:
   - job: 's3-image'
     artifacts: false
+  before_script:
+  - |
+    echo "Fetching test media"
+    if [ -n "$CI_COMMIT_TAG" ]; then
+        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
+        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_disk_${CI_COMMIT_TAG}.img.xz
+    else
+        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso
+        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_disk_${CI_PIPELINE_ID}.img.xz
+    fi
+    utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
+    utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
+    unxz /data/factory/hdd/disk.img.xz
+  - |
+    echo "Calculating checksums of test media"
+    sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
+  - |
+    disk_size_gb=10
+    echo "Expanding disk image to ${disk_size_gb}GB"
+    dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
   script:
   - |
     git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
     echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
-  - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        curl --location https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso -o installer.iso
-    else
-        curl --location https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso -o installer.iso
-    fi
-    sha256sum ./installer.iso
-  - |
-    mkdir -p /data/factory/iso/
-    ln -s $(pwd)/installer.iso /data/factory/iso/installer.iso
   - |
     rm /etc/openqa/*
     cat >/etc/openqa/client.conf <<EOF
@@ -444,9 +453,15 @@ test-s3-image:
     openqa/utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &
   - |
-    openqa/utils/start_job.sh ${worker_class} master "$(pwd)/openqa" > /tmp/job_id
-    echo "Test job has been started, visit $OPENQA_HOST/tests/$(cat /tmp/job_id) to see the progress"
-  - openqa/utils/wait_for_job.sh $(cat /tmp/job_id) > /tmp/exit_code
+    version="master"
+    casedir="$(pwd)"
+    utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
+  - |
+    echo "Test jobs have been started. To see progress, visit:"
+    for job_id in $(cat /tmp/job_ids); do
+      echo "  * $OPENQA_HOST/tests/$job_id"
+    done
+  - utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
   after_script:
   - |
