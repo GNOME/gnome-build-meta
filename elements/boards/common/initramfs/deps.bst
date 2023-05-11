@@ -11,6 +11,5 @@ depends:
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - vm/plymouth-gnome-theme.bst
-- freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 - freedesktop-sdk.bst:components/ostree.bst
