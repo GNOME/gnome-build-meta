@@ -1,9 +1,4 @@
 # This is the toplevel configuration for the OpenQA scenarios
-#
-# We use START_AFTER_TEST so that tests are run in a
-# deterministic order on the given runner, which can
-# only execute 1 job at a time. There's no actual
-# dependency between successive jobs.
 
 products:
   gnomeos:
@@ -48,4 +43,3 @@ job_templates:
     machine: qemu_x86_64
     settings:
       HDD_1: disk.img
-      START_AFTER_TEST: gnome_install
