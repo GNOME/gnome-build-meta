@@ -20,12 +20,6 @@ test-s3-image-x86_64:
     CI: 1
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
   before_script:
-  # FIXME: this is a slowdown and causes excess data usage.
-  # Can be removed once container image is updated with https://github.com/os-autoinst/openQA/pull/5116
-  #
-  # Ignore exit code as it seems to return non-zero on success.
-  - |
-    zypper install -y xz || true
   - |
     echo "Fetching test media"
     utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
