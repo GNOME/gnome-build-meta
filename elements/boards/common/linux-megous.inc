@@ -1,8 +1,8 @@
 sources:
 - kind: git_tag
   url: github:megous/linux.git
-  track: orange-pi-6.0
-  ref: orange-pi-6.0-20221111-0002-916-gbb505b76761d1f196fc3e3948e756fc1583ff2e5
+  track: orange-pi-6.3
+  ref: orange-pi-6.3-20230426-1041-0-g08ee78c9dfda5effd34848b6f1ae6ce10c466bad
 - kind: local
   path: files/linux/config-utils.sh
 - kind: patch

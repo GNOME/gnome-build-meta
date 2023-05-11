@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: megous:git/linux-firmware
   track: master
-  ref: 5c4c2b89f30a42f5ffabb5b5bcbc799d8ac9f66f
+  ref: 0510074346983ad33b3d52ce8f5d6a8f89a564a8
 
 config:
   source: /
