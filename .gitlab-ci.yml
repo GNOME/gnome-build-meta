@@ -468,12 +468,17 @@ test-s3-image:
     if [ ! -e /tmp/exit_code ]; then
         echo "Job creation failed, log below."
         cat openqa.log
-  - fi
+    fi
+  - |
+    openqa/utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
   artifacts:
     when: always
     paths:
+    - junit.xml
     - openqa.log
     - worker.log
+    reports:
+      junit: junit.xml
     expire_in: '1 week'
   tags:
   - x86_64
