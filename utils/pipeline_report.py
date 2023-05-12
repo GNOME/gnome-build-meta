@@ -131,15 +131,15 @@ def find_in_list(l, predicate, error_text):
 TEMPLATE_GITLAB = """
 Project:
 
-  * Repo: {gitlab_repo_name}
+  * Repo: {gitlab_project}
   * Commit: {gitlab_repo_commit_id}
   * Commit date: {gitlab_repo_commit_date}
   * Commit title: {gitlab_repo_commit_title}
 
 Integration tests status (Gitlab):
 
-  * Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
-  * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_job_id}
+  * Pipeline: https://gitlab.gnome.org/{gitlab_project}/-/pipelines/{gitlab_pipeline_id}
+  * test-s3-image job: https://gitlab.gnome.org/{gitlab_project}/-/jobs/{gitlab_job_id}
   * test-s3-image job status: {gitlab_job_status}
   * test-s3-image job finished at: {gitlab_job_finished_at}"""
 
@@ -151,13 +151,13 @@ Integration tests status (OpenQA):
 
 
 class ScriptHelper:
-    def find_pipeline(self, api, pipeline_id=None, earlier=None, ref='master'):
+    def find_pipeline(self, api, project, pipeline_id=None, earlier=None, ref='master'):
         """Find the right pipeline based on the commandline options."""
         if pipeline_id:
             pipeline = api.query_pipeline(pipeline_id)
         else:
             pipeline = api.query_latest_pipeline()
-            print(f"Latest gnome-build-meta pipeline on default branch is {pipeline['id']}. Pipeline status: {pipeline['status']}")
+            print(f"Latest {project} pipeline on default branch is {pipeline['id']}. Pipeline status: {pipeline['status']}")
         if earlier:
             earlier_pipelines = api.list_pipelines(ref=ref, updated_before=pipeline["updated_at"])
             log.info(
@@ -186,10 +186,10 @@ class ScriptHelper:
         log.debug("Found test-s3-image job with ID %s", test_s3_image_job_id)
         return test_s3_image_job
 
-    def generate_gitlab_report(self, api: GitlabAPIHelper, project_name: str, pipeline: dict, job: dict) -> dict:
+    def generate_gitlab_report(self, api: GitlabAPIHelper, project: str, pipeline: dict, job: dict) -> dict:
         """Generate the report for a specific Gitlab pipeline."""
         return dict(
-            gitlab_repo_name=project_name,
+            gitlab_project=project,
             gitlab_repo_ref=pipeline["ref"],
             gitlab_repo_commit_id=pipeline["sha"],
             gitlab_repo_commit_date=job["commit"]["created_at"],
@@ -283,7 +283,7 @@ def main():
     api = GitlabAPIHelper(args.project)
     script = ScriptHelper()
 
-    pipeline = script.find_pipeline(api, args.pipeline, earlier=args.earlier)
+    pipeline = script.find_pipeline(api, args.project, args.pipeline, earlier=args.earlier)
     if pipeline["status"] == "running":
         raise RuntimeError("Cannot generate report for a running pipeline.")
     log.debug("Generate pipeline report for pipeline ID %s", pipeline["id"])
