@@ -106,6 +106,14 @@ class GitlabAPIHelper:
         ).read().decode()
 
 
+class OpenqaAPIHelper():
+    def get_job_details(self, job_id):
+        url = f"https://openqa.gnome.org/api/v1/jobs/{job_id}/details"
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()
+
+
 def find_in_list(l, predicate, error_text):
     for item in l:
         if predicate(item):
@@ -130,9 +138,13 @@ Integration tests status (Gitlab):
 
 TEMPLATE_OPENQA = """
 Integration tests status (OpenQA):
-
- * OpenQA job: https://openqa.gnome.org/tests/{openqa_job_id}
+{openqa_jobs}
 """
+
+TEMPLATE_OPENQA_JOB = """
+  * {testsuite} testsuite - job URL: https://openqa.gnome.org/tests/{job_id}
+    * {tests_passed_count}/{tests_total_count} tests passed
+    * Failed: {failed_tests_list}"""
 
 
 class ScriptHelper:
@@ -184,21 +196,37 @@ class ScriptHelper:
             gitlab_job_status=job["status"],
         )
 
-    def generate_openqa_report(self, api: GitlabAPIHelper, pipeline: dict, job: dict) -> dict:
+    def generate_openqa_report(self, gitlab_api: GitlabAPIHelper, pipeline: dict, job: dict) -> dict:
         try:
-            artifacts_zip = api.query_job_artifacts(job["id"])
+            artifacts_zip = gitlab_api.query_job_artifacts(job["id"])
             with ZipFile(artifacts_zip, "r") as z:
                 with z.open("openqa.log") as f:
                     openqa_status_line = f.readline().decode()
             openqa_status = json.loads(openqa_status_line)
-            openqa_job_id = openqa_status["ids"][0]
+            openqa_job_ids = openqa_status["ids"]
         except NotFoundError:
             log.info("Job artifacts not found")
             return None
 
-        return dict(
-            openqa_job_id=openqa_job_id,
-        )
+        openqa_api = OpenqaAPIHelper()
+        job_infos = []
+        for job_id in openqa_job_ids:
+            job_details = openqa_api.get_job_details(job_id)["job"]
+            all_tests = job_details["testresults"]
+            passed_tests = [t for t in all_tests if t["result"] == "passed"]
+            failed_tests = [t for t in all_tests if t["result"] == "failed"]
+            skipped_tests = [t for t in all_tests if t["result"] == "none"]
+            job_infos.append(dict(
+                job_id=job_id,
+                testsuite=job_details["test"],
+                tests_passed_count=len(passed_tests),
+                tests_total_count=len(all_tests),
+                failed_tests_list=",".join(t["name"] for t in failed_tests)
+            ))
+
+        return {
+            "openqa_job_infos": job_infos
+        }
 
     def generate_elements_report(self, api: GitlabAPIHelper, sha: str, elements=[]) -> dict:
         report = {}
@@ -218,7 +246,11 @@ class ScriptHelper:
     def print_report_text(self, report_gitlab, report_openqa, report_elements):
         print(TEMPLATE_GITLAB.format(**report_gitlab))
         if report_openqa:
-            print(TEMPLATE_OPENQA.format(**report_openqa))
+            openqa_jobs = "\n".join(
+                TEMPLATE_OPENQA_JOB.format(**job_info)
+                for job_info in report_openqa["openqa_job_infos"]
+            )
+            print(TEMPLATE_OPENQA.format(openqa_jobs=openqa_jobs))
         else:
             print("OpenQA job details could not be found. (Job artifacts were deleted).")
         if report_elements:
