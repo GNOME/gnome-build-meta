@@ -23,7 +23,6 @@ log = logging.getLogger()
 
 
 API_BASE = "https://gitlab.gnome.org/api/v4/"
-PROJECT_ID = "gnome%2Fgnome-build-meta"
 
 
 def argument_parser():
@@ -50,6 +49,11 @@ def argument_parser():
              "repo `elements/` directory. Example: `sdk/gtk.bst`",
     )
     parser.add_argument(
+        "--project",
+        default="gnome/gnome-build-meta",
+        help="Gitlab project that ran the OpenQA pipeline. Default: %(default)s",
+    )
+    parser.add_argument(
         "pipeline",
         nargs="?",
         help="Pipeline ID. Leave empty for latest pipeline on default branch."
@@ -62,6 +66,9 @@ class NotFoundError(Exception):
 
 
 class GitlabAPIHelper:
+    def __init__(self, project):
+        self._project = urllib.parse.quote(project, safe=[])
+
     def _json(self, url, params=None):
         response = requests.get(url, params=params)
         response.raise_for_status()
@@ -76,32 +83,32 @@ class GitlabAPIHelper:
 
     def query_latest_pipeline(self):
         # Get latest pipeline for default project branch ('master').
-        return self._json(f"{API_BASE}/projects/{PROJECT_ID}/pipelines/latest")
+        return self._json(f"{API_BASE}/projects/{self._project}/pipelines/latest")
 
     def query_pipeline(self, pipeline_id):
-        return self._json(f"{API_BASE}/projects/{PROJECT_ID}/pipelines/{pipeline_id}")
+        return self._json(f"{API_BASE}/projects/{self._project}/pipelines/{pipeline_id}")
 
     def list_pipelines(self, ref=None, updated_before=None):
         return self._json(
-            f"{API_BASE}/projects/{PROJECT_ID}/pipelines",
+            f"{API_BASE}/projects/{self._project}/pipelines",
             params=dict(ref=ref, updated_before=updated_before),
         )
 
     def query_pipeline_jobs(self, pipeline_id):
         return self._json(
-            f"{API_BASE}/projects/{PROJECT_ID}/pipelines/{pipeline_id}/jobs"
+            f"{API_BASE}/projects/{self._project}/pipelines/{pipeline_id}/jobs"
         )
 
     def query_job_log(self, job_id):
-        return self._json(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/trace")
+        return self._json(f"{API_BASE}/projects/{self._project}/jobs/{job_id}/trace")
 
     def query_job_artifacts(self, job_id):
-        return self._binary(f"{API_BASE}/projects/{PROJECT_ID}/jobs/{job_id}/artifacts")
+        return self._binary(f"{API_BASE}/projects/{self._project}/jobs/{job_id}/artifacts")
 
     def fetch_repository_file(self, ref, path) -> str:
         path_encoded = urllib.parse.quote(path, safe=[])
         return self._binary(
-            f"{API_BASE}/projects/{PROJECT_ID}/repository/files/{path_encoded}/raw",
+            f"{API_BASE}/projects/{self._project}/repository/files/{path_encoded}/raw",
             params=dict(ref=ref)
         ).read().decode()
 
@@ -122,29 +129,25 @@ def find_in_list(l, predicate, error_text):
 
 
 TEMPLATE_GITLAB = """
-GNOME OS version:
+Project:
 
- * Repo: gnome-build-meta
- * Commit: {gnome_build_meta_commit_id}
- * Commit date: {gnome_build_meta_commit_date}
- * Commit title: {gnome_build_meta_commit_title}
+  * Repo: {gitlab_repo_name}
+  * Commit: {gitlab_repo_commit_id}
+  * Commit date: {gitlab_repo_commit_date}
+  * Commit title: {gitlab_repo_commit_title}
 
 Integration tests status (Gitlab):
 
- * Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
- * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_job_id}
- * test-s3-image job status: {gitlab_job_status}
- * test-s3-image job finished at: {gitlab_job_finished_at}"""
+  * Pipeline: https://gitlab.gnome.org/gnome/gnome-build-meta/-/pipelines/{gitlab_pipeline_id}
+  * test-s3-image job: https://gitlab.gnome.org/gnome/gnome-build-meta/-/jobs/{gitlab_job_id}
+  * test-s3-image job status: {gitlab_job_status}
+  * test-s3-image job finished at: {gitlab_job_finished_at}"""
 
 TEMPLATE_OPENQA = """
 Integration tests status (OpenQA):
+
 {openqa_jobs}
 """
-
-TEMPLATE_OPENQA_JOB = """
-  * {testsuite} testsuite - job URL: https://openqa.gnome.org/tests/{job_id}
-    * {tests_passed_count}/{tests_total_count} tests passed
-    * Failed: {failed_tests_list}"""
 
 
 class ScriptHelper:
@@ -183,13 +186,14 @@ class ScriptHelper:
         log.debug("Found test-s3-image job with ID %s", test_s3_image_job_id)
         return test_s3_image_job
 
-    def generate_gitlab_report(self, api: GitlabAPIHelper, pipeline: dict, job: dict) -> dict:
+    def generate_gitlab_report(self, api: GitlabAPIHelper, project_name: str, pipeline: dict, job: dict) -> dict:
         """Generate the report for a specific Gitlab pipeline."""
         return dict(
-            gnome_build_meta_ref=pipeline["ref"],
-            gnome_build_meta_commit_id=pipeline["sha"],
-            gnome_build_meta_commit_date=job["commit"]["created_at"],
-            gnome_build_meta_commit_title=job["commit"]["title"],
+            gitlab_repo_name=project_name,
+            gitlab_repo_ref=pipeline["ref"],
+            gitlab_repo_commit_id=pipeline["sha"],
+            gitlab_repo_commit_date=job["commit"]["created_at"],
+            gitlab_repo_commit_title=job["commit"]["title"],
             gitlab_pipeline_id=pipeline["id"],
             gitlab_job_id=job["id"],
             gitlab_job_finished_at=job["finished_at"],
@@ -221,7 +225,7 @@ class ScriptHelper:
                 testsuite=job_details["test"],
                 tests_passed_count=len(passed_tests),
                 tests_total_count=len(all_tests),
-                failed_tests_list=",".join(t["name"] for t in failed_tests)
+                failed_test_names=[t["name"] for t in failed_tests]
             ))
 
         return {
@@ -243,11 +247,21 @@ class ScriptHelper:
                 )
         return report
 
+    def format_openqa_job(self, job_info):
+        lines = [
+          "  * {testsuite} testsuite - job URL: https://openqa.gnome.org/tests/{job_id}".format(**job_info),
+          "    * {tests_passed_count}/{tests_total_count} tests passed".format(**job_info)
+        ]
+        if len(job_info["failed_test_names"]) > 0:
+            failed_tests = ", ".join(job_info["failed_test_names"])
+            lines.append(f"    * Failed: {failed_tests}")
+        return "\n".join(lines)
+
     def print_report_text(self, report_gitlab, report_openqa, report_elements):
         print(TEMPLATE_GITLAB.format(**report_gitlab))
         if report_openqa:
             openqa_jobs = "\n".join(
-                TEMPLATE_OPENQA_JOB.format(**job_info)
+                self.format_openqa_job(job_info)
                 for job_info in report_openqa["openqa_job_infos"]
             )
             print(TEMPLATE_OPENQA.format(openqa_jobs=openqa_jobs))
@@ -266,7 +280,7 @@ def main():
     if args.debug:
         logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
-    api = GitlabAPIHelper()
+    api = GitlabAPIHelper(args.project)
     script = ScriptHelper()
 
     pipeline = script.find_pipeline(api, args.pipeline, earlier=args.earlier)
@@ -276,7 +290,7 @@ def main():
 
     job = script.find_test_s3_image_job(api, pipeline)
 
-    report_gitlab = script.generate_gitlab_report(api, pipeline, job)
+    report_gitlab = script.generate_gitlab_report(api, args.project, pipeline, job)
     report_openqa = script.generate_openqa_report(api, pipeline, job)
     report_elements = script.generate_elements_report(api, sha=pipeline["sha"], elements=args.elements or [])
     script.print_report_text(report_gitlab, report_openqa, report_elements)
