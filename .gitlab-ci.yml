@@ -10,7 +10,7 @@ variables:
 stages:
 - test
 
-test-s3-image-x86_64:
+test-s3-image:
   stage: test
   image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
