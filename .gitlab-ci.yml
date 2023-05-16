@@ -454,7 +454,7 @@ test-s3-image:
     /run_openqa_worker.sh &> worker.log &
   - |
     version="master"
-    casedir="$(pwd)"
+    casedir="$(pwd)/openqa"
     openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
   - |
     echo "Test jobs have been started. To see progress, visit:"
