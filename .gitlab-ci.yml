@@ -419,6 +419,9 @@ test-s3-image:
     artifacts: false
   before_script:
   - |
+    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
+    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
+  - |
     echo "Fetching test media"
     if [ -n "$CI_COMMIT_TAG" ]; then
         S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
@@ -439,9 +442,6 @@ test-s3-image:
     dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
   script:
   - |
-    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
-    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
-  - |
     rm /etc/openqa/*
     cat >/etc/openqa/client.conf <<EOF
     [openqa.gnome.org]
@@ -455,13 +455,13 @@ test-s3-image:
   - |
     version="master"
     casedir="$(pwd)"
-    utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
+    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
   - |
     echo "Test jobs have been started. To see progress, visit:"
     for job_id in $(cat /tmp/job_ids); do
       echo "  * $OPENQA_HOST/tests/$job_id"
     done
-  - utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
+  - openqa/utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
   after_script:
   - |
