@@ -35,7 +35,33 @@ def argument_parser():
 
 
 class JUnitXMLGenerator:
+    """Generate JUnit XML report from an intermediate format.
+
+    Reference for the JUnit XML format:
+
+      * https://github.com/windyroad/JUnit-Schema/blob/master/JUnit.xsd
+
+    """
     def generate_xml(self, fd, test_suites):
+        """Write a JUnit XML document to `fd`, based on `testsuites`.
+
+        Example input:
+
+            {
+                "Testsuite 1": [
+                    {
+                        "name": "Testcase 1",
+                        "classname": "Testcase 1",
+                        "time": 12,
+                        "failure": {
+                            "type": "failure",
+                            "message": "This one failed for some reason",
+                        }
+                    }
+                ]
+            }
+        """
+
         testsuites = ET.Element('testsuites')
 
         for suite_name, test_results in test_suites.items():
@@ -60,7 +86,7 @@ class JUnitXMLGenerator:
                     failure = ET.SubElement(testcase, 'failure')
                     failure.set('message', result['failure']['message'])
                     failure.set('type', result['failure']['type'])
-                    failure.text = result['failure']['stack_trace']
+                    failure.text = result['failure']['message']
                 elif 'skipped' in result:
                     skipped = ET.SubElement(testcase, 'skipped')
                     skipped.set('message', result['skipped']['message'])
@@ -120,6 +146,7 @@ def openqa_job_details_to_junit_testsuite_report(job_details) -> Tuple[str, dict
             test["skipped"] = dict(message="Earlier test failed")
         elif test_result == "failed":
             test["failure"] = dict(
+                type="failure",
                 message=find_failed_test_message(details)
             )
         testsuite.append(test)
