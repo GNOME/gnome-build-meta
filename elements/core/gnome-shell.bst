@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-shell.git
   track: main
-  ref: 44.1-41-g721c0dcc53a728e83d31547db882b67996f2e86e
+  ref: 44.1-46-g27617ef0a3187dc47669a889eea20f9396c7f3c5
   submodules:
     subprojects/gvc:
       checkout: true

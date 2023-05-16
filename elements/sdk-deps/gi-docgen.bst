@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gi-docgen.git
   track: main
-  ref: 2023.1-28-gd48154cbe5ce0ae9ca24e06317042b80b90ffcd0
+  ref: 2023.1-30-g9a7587be81b1f69071cbaf1312aed54db3a646b3
 
 build-depends:
 - sdk/gobject-introspection.bst
