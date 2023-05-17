@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.41.3.tar.xz
-  ref: 001323803092f48c58daa26fe7e05c844734bb0d3c54daa5eb074f36396f288e
-- kind: patch
-  path: files/webkitgtk/font-crash.patch
+  url: webkitgtk:webkitgtk-2.41.4.tar.xz
+  ref: ad792d4acd4e8536cc0a652fd0303bfef93a7f8718d2b3d72db83e25f52777af
 
 build-depends:
 - sdk-deps/gi-docgen.bst
