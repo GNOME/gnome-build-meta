@@ -32,9 +32,9 @@ public:
     - rm -r '%{datadir}/gtk-doc/html'
 
     # development image related objects
-    - rm -r '%{debugdir}%{libexecdir}/valgrind'
+    - rm -rf '%{debugdir}%{libexecdir}/valgrind'
 
-    - rm '%{debugdir}/usr/%{triplet}/bin/ld.gold.debug'
+    - rm -f '%{debugdir}/usr/%{triplet}/bin/ld.gold.debug'
     - rm '%{debugdir}%{bindir}/ctest.debug'
     - rm '%{debugdir}%{bindir}/cpack.debug'
     - rm '%{debugdir}%{bindir}/cmake.debug'
@@ -42,7 +42,7 @@ public:
     - rm '%{debugdir}%{bindir}/c-index-test.debug'
     - rm '%{debugdir}%{bindir}/llvm-exegesis.debug'
     - rm '%{debugdir}%{bindir}/gdb.debug'
-    - rm '%{debugdir}%{bindir}/dwp.debug'
+    - rm -f '%{debugdir}%{bindir}/dwp.debug'
     - rm '%{debugdir}%{bindir}/ccache.debug'
     - rm %{debugdir}%{libdir}/libclang.so.*.*.*.debug
     - rm %{debugdir}%{libdir}/libclang-cpp.so.*.debug
