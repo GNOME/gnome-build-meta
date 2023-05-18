@@ -94,4 +94,4 @@ config:
       versions: '%{openh264-version}beta;%{openh264-version}'
       version: '%{openh264-version}'
       add-ld-path: extra
-      autodelete: 'false'
+      autodelete: 'true'
