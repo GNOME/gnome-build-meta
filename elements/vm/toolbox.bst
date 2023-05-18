@@ -6,6 +6,8 @@ sources:
   ref: 9aaa3151357f66a7fb9545772c146ce8065238d2385c3bbc775493a0c015710d
 - kind: patch
   path: files/toolbox/disable-zsh-completions.patch
+- kind: patch
+  path: files/toolbox/riscv64-dynamic-linker.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

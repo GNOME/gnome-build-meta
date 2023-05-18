@@ -1,0 +1,12 @@
+diff -ur toolbox.old/src/meson.build toolbox/src/meson.build
+--- toolbox.old/src/meson.build	2023-05-12 17:45:05.700590149 +0200
++++ toolbox/src/meson.build	2023-05-12 17:44:16.676025037 +0200
+@@ -44,6 +44,8 @@
+   dynamic_linker = '/lib/ld-linux.so.2'
+ elif cpu_family == 'x86_64' and endian == 'little'
+   dynamic_linker = '/lib64/ld-linux-x86-64.so.2'
++elif cpu_family == 'riscv64' and endian == 'little'
++  dynamic_linker = '/lib/ld-linux-riscv64-lp64d.so.1'
+ else
+   host_machine_description = cpu_family + ' (' + endian + ' endian)'
+   error('Please specify dynamic linker for:', host_machine_description)
