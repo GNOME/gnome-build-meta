@@ -2,8 +2,8 @@ include: .gitlab-ci/arch.yml
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_NO_PUSH: "bst --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
-  BST: "bst --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
+  BST_NO_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nopush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
+  BST: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
   FLATPAK_BRANCH: master
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
@@ -329,17 +329,20 @@ s3-image:
 openh264-x86_64:
   extends:
   - .x86_64
+  image: "${DOCKER_REGISTRY}/bst16:${DOCKER_IMAGE_ID}"
   stage: deploy
   needs: []
   allow_failure: true
+  variables:
+    BST1: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream1.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
   script:
   - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
   - cd openh264-extension
-  - ${BST} build flatpak-repo.bst
-  - ${BST} artifact checkout flatpak-repo.bst --directory repo
+  - ${BST1} build flatpak-repo.bst
+  - ${BST1} checkout flatpak-repo.bst repo
   - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
   - flat-manager-client purge $BUILD_ID
