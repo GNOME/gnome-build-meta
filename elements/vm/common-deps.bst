@@ -60,3 +60,5 @@ depends:
 
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/nano.bst
+
+- vm/sof-firmware.bst
