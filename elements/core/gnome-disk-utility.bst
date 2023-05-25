@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-disk-utility.git
   track: master
-  ref: 44.0-6-g1c18ea8b93e64614c39c31f5ad8bd187adc1301a
+  ref: 44.0-7-g2b44df7a3b0dbe23aad63adc62344c8130137ce4
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:eog.git
   track: master
-  ref: 44.1-7-g72cf0c5f222a5536020ab935a09202f21c7a9cbe
+  ref: 44.1-8-g48c44d43203b6bacb3adcaed78f00af66cbd0312
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
