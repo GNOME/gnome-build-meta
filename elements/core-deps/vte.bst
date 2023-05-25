@@ -13,7 +13,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/boost.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
