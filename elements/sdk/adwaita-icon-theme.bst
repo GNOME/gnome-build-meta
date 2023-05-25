@@ -1,12 +1,12 @@
-kind: autotools
+kind: meson
 sources:
 - kind: git_tag
   url: gnome:adwaita-icon-theme.git
   track: master
-  ref: 44.0-13-gfb133a3989ee155c24201e30bab7dbc1c7c843fd
+  ref: 44.0-71-gced053a12c54e935602531462a9eb4737b2de851
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
