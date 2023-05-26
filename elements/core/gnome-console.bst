@@ -16,8 +16,8 @@ runtime-depends:
 
 depends:
 - core-deps/libgtop.bst
-- core-deps/vte.bst
 - core/nautilus.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/vte.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

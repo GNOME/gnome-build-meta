@@ -16,10 +16,10 @@ runtime-depends:
 
 depends:
 - core-deps/dconf.bst
-- core-deps/vte.bst
 - core/nautilus.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
+- sdk/vte.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

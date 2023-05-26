@@ -28,7 +28,6 @@ depends:
 - core-deps/libpeas.bst
 - core-deps/libportal.bst
 - core-deps/template-glib.bst
-- core-deps/vte.bst
 - core/d-spy.bst
 - core/gvfs-daemon.bst
 - core/sysprof-app.bst
@@ -39,6 +38,7 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
+- sdk/vte.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
