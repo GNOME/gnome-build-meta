@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:glib.git
   track: main
-  ref: 2.76.1-272-gecbe360a387638a11af9b05a5bc3840bfcd936ec
+  ref: 2.76.1-283-g57087ff42d2b4cc699a8e6f4aa06eaab60d40ab3
   submodules:
     subprojects/gvdb:
       checkout: true
