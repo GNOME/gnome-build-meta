@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-contacts.git
   track: main
-  ref: 44.0-12-g5f3413cca42b48d0d8035bb2549381ca05e2b58c
+  ref: 44.0-14-g216caeeb0d35c866fb7e40582a6c1cade74f7d4e
 
 build-depends:
 - sdk/vala.bst
