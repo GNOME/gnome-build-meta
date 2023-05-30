@@ -1,6 +1,6 @@
 kind: flatpak_repo
 build-depends:
-- core-deps/flatpak.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 (?):
 # platform and sdk should not be built on i686
 - arch != 'i686':

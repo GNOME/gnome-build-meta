@@ -15,10 +15,10 @@ depends:
 - core-deps/libshumate.bst
 - core-deps/libgweather.bst
 - core-deps/librest.bst
-- sdk/geoclue.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

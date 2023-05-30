@@ -11,12 +11,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 runtime-depends:
-- core-deps/eu-strip.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/patch.bst
 
 depends:
-- core-deps/flatpak.bst
 - freedesktop-sdk.bst:components/curl.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/libyaml.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

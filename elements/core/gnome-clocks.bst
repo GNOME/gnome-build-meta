@@ -18,7 +18,7 @@ depends:
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/geoclue.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

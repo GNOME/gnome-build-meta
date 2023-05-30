@@ -24,7 +24,7 @@ depends:
 - sdk/glib.bst
 - sdk/pango.bst
 - sdk/pygobject.bst
-- sdk/xmlb.bst
+- freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst

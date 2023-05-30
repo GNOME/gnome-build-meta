@@ -21,11 +21,11 @@ depends:
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gst-plugins-bad.bst
-- sdk/gst-plugins-base.bst
-- sdk/gst-plugins-good.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

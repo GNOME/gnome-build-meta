@@ -11,9 +11,9 @@ build-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/avahi-gobject.bst
-- core-deps/flatpak.bst
 - core-deps/jsonrpc-glib.bst
 - sdk/appstream-glib.bst
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/avahi-gobject.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/gnutls.bst
