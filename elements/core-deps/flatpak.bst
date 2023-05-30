@@ -21,7 +21,7 @@ depends:
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/curl.bst
-- freedesktop-sdk.bst:components/fuse.bst
+- freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/gpgme.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libcap.bst
