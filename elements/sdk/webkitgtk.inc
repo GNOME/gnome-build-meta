@@ -18,7 +18,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 
 depends:
-- sdk-deps/xdg-dbus-proxy.bst
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/libavif.bst
@@ -44,6 +43,7 @@ depends:
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/xdg-dbus-proxy.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 

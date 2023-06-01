@@ -2,10 +2,9 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: mcatanzaro/abderrahim/bst2-22.08-mesa
-  ref: freedesktop-sdk-22.08.11-28-ga8f2a3c5b78b99792c342c0a40c40129226490c0
-- kind: patch
-  path: freedesktop-sdk.patch
+  track: master
+  track-tags: True
+  ref: freedesktop-sdk-23.08beta.4-0-gecac7d1b8efecb53e392b20f459c382682e4eb5d
 config:
   options:
     target_arch: '%{arch}'
@@ -27,6 +26,7 @@ config:
     components/glib-networking.bst: sdk/glib-networking.bst
     components/glib.bst: sdk/glib.bst
     components/gobject-introspection.bst: sdk/gobject-introspection.bst
+    components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
