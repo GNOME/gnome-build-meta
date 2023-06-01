@@ -51,4 +51,4 @@ depends:
 - sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
-- freedesktop-sdk.bst:sdk.bst
+- freedesktop-sdk.bst:platform.bst
