@@ -1,0 +1,172 @@
+commit 6c57ddd638d034f6cc889ca18b535d1f44064b78
+Author: Valentin David <me@valentindavid.com>
+Date:   Fri Jun 16 21:09:01 2023 +0200
+
+    Fix module signing and make linux.bst reproducible
+    
+    Module signing was not reproducible since it was generated a temporary
+    key.
+    
+    Also the external module signing was not doing anything because module
+    were compressed and not found.
+    
+    Now by default, we do not sign the modules. Downstream can override
+    `components/linux-module-cert.bst` to provide the certificate. The
+    signing still happens outside of `linux.bst`.  But we do need to
+    insert the certificate in the kernel.
+    
+    This will also allow building of external modules and load them
+    in lockdown mode (which is expected in secure boot).
+    
+    We enable Machine Owner keys, so that machine owner can sign their own
+    modules and load them in secure boot.
+    
+    The demo secure boot image is updated with the required lockdown
+    parameter.
+
+diff --git a/Makefile b/Makefile
+index 63577a4ac..1e85297f5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -372,10 +372,10 @@ clean-ostree-vm:
+ 	rm -rf $(VM_CHECKOUT_ROOT)/ostree-vm
+ 	rm -rf $(OVMF_VARS)
+ 
+-KEY_TYPES=PK KEK DB VENDOR
++KEY_TYPES=PK KEK DB VENDOR linux-module-cert
+ ALL_CERTS=$(foreach KEY,$(KEY_TYPES),files/boot-keys/$(KEY).crt)
+ ALL_KEYS=$(foreach KEY,$(KEY_TYPES),files/boot-keys/$(KEY).key)
+-BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) files/boot-keys/extra-db/.keep files/boot-keys/extra-kek/.keep
++BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) files/boot-keys/extra-db/.keep files/boot-keys/extra-kek/.keep files/boot-keys/modules/linux-module-cert.crt
+ 
+ generate-keys: $(BOOT_KEYS)
+ 
+@@ -383,6 +383,9 @@ files/boot-keys/extra-db/.keep files/boot-keys/extra-kek/.keep:
+ 	[ -d $(dir $@) ] || mkdir -p $(dir $@)
+ 	touch $@
+ 
++files/boot-keys/modules/linux-module-cert.crt: files/boot-keys/linux-module-cert.crt
++	cp $< $@
++
+ files/boot-keys/%.crt files/boot-keys/%.key:
+ 	[ -d files/boot-keys ] || mkdir -p files/boot-keys
+ 	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=Freedesktop SDK $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
+diff --git a/elements/components/linux-module-cert.bst b/elements/components/linux-module-cert.bst
+new file mode 100644
+index 000000000..65bcbdc31
+--- /dev/null
++++ b/elements/components/linux-module-cert.bst
+@@ -0,0 +1,13 @@
++# files/boot-keys/modules is expected to be empty, unless testing
++# secure boot.
++#
++# This element should be overriden in the junction by downstream
++# projects.
++kind: import
++
++config:
++  target: /keys
++
++sources:
++- kind: local
++  path: files/boot-keys/modules
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index a18169c97..a70732e5d 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -11,6 +11,7 @@ build-depends:
+ - components/bc.bst
+ - components/gzip.bst
+ - components/rsync.bst
++- components/linux-module-cert.bst
+ 
+ variables:
+   bootdir: /boot
+@@ -1635,10 +1636,45 @@ config:
+ 
+     # Secure boot
+     enable SYSTEM_BLACKLIST_KEYRING
++    enable SYSTEM_TRUSTED_KEYRING
+     enable INTEGRITY_PLATFORM_KEYRING
+     enable INTEGRITY_SIGNATURE
+     enable INTEGRITY_ASYMMETRIC_KEYS
+-    enable SECURITY_LOCKDOWN_LSM
++    enable SECONDARY_TRUSTED_KEYRING
++    if has EFI; then
++      enable INTEGRITY_MACHINE_KEYRING
++      enable LOAD_UEFI_KEYS
++    fi
++    enable IMA
++    enable IMA_APPRAISE
++    enable IMA_SECURE_AND_OR_TRUSTED_BOOT
++    enable IMA_ARCH_POLICY
++
++    # Module signing
++    # /keys/linux-module-cert.crt is provided by downstream
++    if [ -f /keys/linux-module-cert.crt ]; then
++      enable MODULE_SIG
++      value_str SYSTEM_TRUSTED_KEYS /keys/linux-module-cert.crt
++      # Building with MODULE_SIG_KEY is not reproducible
++      value_str MODULE_SIG_KEY ""
++      # We sign modules separately
++      remove MODULE_SIG_ALL
++      # Instead we use lsm=lockdown on command line
++      remove MODULE_SIG_FORCE
++
++      # sha512 signing only
++      remove MODULE_SIG_SHA1
++      remove MODULE_SIG_SHA224
++      remove MODULE_SIG_SHA256
++      remove MODULE_SIG_SHA384
++      enable MODULE_SIG_SHA512
++      value_str MODULE_SIG_HASH="sha512"
++
++      enable SECURITY_LOCKDOWN_LSM
++      enable SECURITY_LOCKDOWN_LSM_EARLY
++    else
++      remove MODULE_SIG
++    fi
+ 
+     # systemd-oom
+     enable PSI
+diff --git a/elements/vm/boot/efi-secure.bst b/elements/vm/boot/efi-secure.bst
+index 48065a826..e88af544e 100644
+--- a/elements/vm/boot/efi-secure.bst
++++ b/elements/vm/boot/efi-secure.bst
+@@ -34,7 +34,7 @@ config:
+            --uefi \
+            --no-machineid --kernel-image /boot/vmlinuz \
+            --kver $(ls -1 /lib/modules | head -n1) \
+-           --kernel-cmdline "rw mount.usrflags=ro console=ttyS0 systemd.journald.forward_to_console=1" \
++           --kernel-cmdline "rw mount.usrflags=ro console=ttyS0 lockdown=confidentiality" \
+            --install 'fsck.ext4' \
+            --install 'mkfs.ext4' \
+            --libdirs %{libdir} \
+diff --git a/elements/vm/boot/efi-secure/signed-modules.bst b/elements/vm/boot/efi-secure/signed-modules.bst
+index fc8b3680c..8a89fee3e 100644
+--- a/elements/vm/boot/efi-secure/signed-modules.bst
++++ b/elements/vm/boot/efi-secure/signed-modules.bst
+@@ -15,13 +15,16 @@ config:
+     cp -rT /boot "%{install-root}/boot"
+ 
+   - |
+-    openssl x509 -inform PEM -outform DER -in "VENDOR.crt" -out "VENDOR.cer"
++    openssl x509 -inform PEM -outform DER -in linux-module-cert.crt -out linux-module-cert.cer
+ 
+   - |
+-    find '%{install-root}/usr/lib/modules' -type f -name "*.ko" -print -exec sign-file sha256 VENDOR.key VENDOR.cer {} '%{install-root}{}' ';'
++    find '%{install-root}/usr/lib/modules' -type f -name "*.ko.xz" -exec unxz {} ';'
++
++  - |
++    find '%{install-root}/usr/lib/modules' -type f -name "*.ko" -exec sign-file sha512 linux-module-cert.key linux-module-cert.cer {} ';' -exec xz --lzma2=dict=2MiB {} ';'
+ 
+ sources:
+ - kind: local
+-  path: files/boot-keys/VENDOR.key
++  path: files/boot-keys/linux-module-cert.key
+ - kind: local
+-  path: files/boot-keys/VENDOR.crt
++  path: files/boot-keys/modules/linux-module-cert.crt
+diff --git a/files/boot-keys/modules/.keep b/files/boot-keys/modules/.keep
+new file mode 100644
+index 000000000..e69de29bb

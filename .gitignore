@@ -22,7 +22,10 @@ checkout/
 files/boot-keys/*.key
 files/boot-keys/*.crt
 files/boot-keys/*.pem
+files/boot-keys/modules/*.crt
 files/boot-keys/extra-db/*.crt
 files/boot-keys/extra-db/*.owner
 files/boot-keys/extra-kek/*.crt
 files/boot-keys/extra-kek/*.owner
+current-secure-vm/
+secure-vm-repo/

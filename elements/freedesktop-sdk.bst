@@ -15,6 +15,8 @@ sources:
   path: freedesktop-sdk-tpm.patch
 - kind: patch
   path: freedesktop-sdk-fusermount.patch
+- kind: patch
+  path: freedesktop-sdk-module-signing.patch
 config:
   options:
     target_arch: '%{arch}'
@@ -48,3 +50,4 @@ config:
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
     components/zenity.bst: void/zenity.bst
+    components/linux-module-cert.bst: vm-secure/linux-module-cert.bst
