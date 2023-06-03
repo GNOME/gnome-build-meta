@@ -1,14 +1,17 @@
 all: generate-keys
 	$(MAKE) download-microsoft-keys
 
-KEY_TYPES=PK KEK DB VENDOR
+KEY_TYPES=PK KEK DB VENDOR linux-module-cert
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
-BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) extra-db/.keep extra-kek/.keep
+BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) extra-db/.keep extra-kek/.keep modules/linux-module-cert.crt
 
 KERNEL_KEYS=tpm2-pcr-private.pem tpm2-pcr-public.pem
 
 generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS)
+
+modules/linux-module-cert.crt: linux-module-cert.crt
+	cp $< $@
 
 tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
