@@ -288,6 +288,16 @@ raspberrypi-4-image:
   variables:
     IMAGE: boards/raspberrypi-4/image.bst
 
+librem5-image:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+  variables:
+    IMAGE: boards/librem5/image.bst
+
 iso-installer-x86_64:
   extends:
   - .manual-image-template
