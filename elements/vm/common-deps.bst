@@ -21,6 +21,7 @@ depends:
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
 - vm/systemd-repart-config.bst
+- vm/disable-iscsi.bst
 
 - vm/fish.bst
 - vm/nss-mdns.bst

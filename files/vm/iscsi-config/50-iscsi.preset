@@ -1,0 +1,8 @@
+disable iscsi-init.service
+disable iscsi.service
+disable iscsid.service
+disable iscsid.socket
+disable iscsiuio.service
+disable iscsiuio.socket
+disable isnsd.service
+disable isnsd.socket
