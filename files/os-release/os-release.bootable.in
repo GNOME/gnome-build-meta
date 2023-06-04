@@ -7,3 +7,4 @@ BUG_REPORT_URL="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new"
 HOME_URL="https://www.gnome.org/"
 VARIANT="@VARIANT@"
 VARIANT_ID=@VARIANT_ID@
+DEFAULT_HOSTNAME=gnomeos
