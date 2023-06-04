@@ -5,13 +5,6 @@ sources:
   url: gnome:gnome-music.git
   track: master
   ref: 44.0-4-gbf670057ca69dfd02cbb495170b5b01ba5de87b3
-  submodules:
-    subprojects/gfm:
-      checkout: true
-      url: gnome_gitlab:mschraal/gfm.git
-    subprojects/shared-modules:
-      checkout: false
-      url: github:flathub/shared-modules.git
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

@@ -4,15 +4,11 @@ sources:
 - kind: git_tag
   url: purism:Librem5/chatty.git
   track: master
-  checkout-submodules: False
-  submodules:
-    subprojects/libgd:
-      checkout: True
-      url: gnome:libgd.git
-    subprojects/libcmatrix:
-      checkout: True
-      url: purism:Librem5/libcmatrix.git
-  ref: v0.7.0_rc4-1-g1a554c0eee55d6e47942cb24d52c7a70b0c6e9da
+  ref: v0.7.3-45-g4355af485f8fec53ea07745e6f41f8b1fa7a8e33
+- kind: git_module
+  url: purism:Librem5/libcmatrix.git
+  path: subprojects/libcmatrix
+  ref: ec50358d3bf102e7f8f1843e537bcf1f150d2b7a
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

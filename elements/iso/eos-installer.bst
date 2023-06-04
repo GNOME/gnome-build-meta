@@ -10,10 +10,10 @@ sources:
   track-tags: true
   track: Release_4.0.7
   ref: Release_4.0.10-0-g3f384acc76f537675fa4d8817a5f49cf2e455f51
-  submodules:
-    ext/libglnx:
-      url: gnome:libglnx.git
-      checkout: true
+- kind: git_module
+  url: gnome:libglnx.git
+  path: ext/libglnx
+  ref: e16bdc7ef91e5bbdfc1881b51332226393275bb9
 - kind: patch
   path: files/eos-installer/vfat-eosimages.patch
 - kind: patch

@@ -5,13 +5,14 @@ sources:
   url: gnome:totem.git
   track: master
   ref: 43.0-127-gfa01f7dd25f00c5751ac27dab323a2881d34ffdf
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
-    flatpak/shared-modules:
-      checkout: false
-      url: github:flathub/shared-modules.git
+- kind: git_module
+  url: gnome:libgd.git
+  path: subprojects/libgd
+  ref: 29ad6319919cf2fd4c4d53d6beed30c34bcb0e23
+- kind: git_module
+  url: github:flathub/shared-modules.git
+  path: flatpak/shared-modules
+  ref: 11ffefc21cb0145ae03e8fb77618019f82ce2318
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

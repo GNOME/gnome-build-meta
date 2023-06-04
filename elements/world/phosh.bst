@@ -4,13 +4,12 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:World/Phosh/phosh.git
   track: main
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gnome:libgnome-volume-control.git
-    subprojects/libcall-ui:
-      checkout: true
-      url: gnome_gitlab:World/Phosh/libcall-ui.git
+- kind: git_module
+  url: gnome:libgnome-volume-control.git
+  path: subprojects/gvc
+- kind: git_module
+  url: gnome_gitlab:World/Phosh/libcall-ui.git
+  path: subprojects/libcall-ui
 
 build-depends:
 - freedesktop-sdk.bst:components/wayland-protocols.bst

@@ -5,10 +5,10 @@ sources:
   url: gnome:gnome-control-center.git
   track: main
   ref: 44.rc-258-ge5111a25691c96f7d1097cef7eab06e3fa55432a
-  submodules:
-    subprojects/gvc:
-      checkout: true
-      url: gnome:libgnome-volume-control.git
+- kind: git_module
+  url: gnome:libgnome-volume-control.git
+  path: subprojects/gvc
+  ref: 8e7a5a4c3e51007ce6579292642517e3d3eb9c50
 
 build-depends:
 - sdk/gtk-doc.bst

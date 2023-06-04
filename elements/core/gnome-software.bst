@@ -5,10 +5,10 @@ sources:
   url: gnome:gnome-software.git
   track: main
   ref: 44.1-144-g5d4387d3188aada18cb80deb25b13d520ebf6aea
-  submodules:
-    subprojects/gnome-pwa-list:
-      checkout: true
-      url: gnome_gitlab:mwleeds/gnome-pwa-list.git
+- kind: git_module
+  url: gnome_gitlab:mwleeds/gnome-pwa-list.git
+  path: subprojects/gnome-pwa-list
+  ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
 
 build-depends:
 - sdk/gtk-doc.bst

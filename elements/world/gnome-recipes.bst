@@ -3,10 +3,9 @@ sources:
 - kind: git_tag
   url: gnome:recipes.git
   track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
+- kind: git_module
+  url: gnome:libgd.git
+  path: subprojects/libgd
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

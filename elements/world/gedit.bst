@@ -4,10 +4,9 @@ sources:
 - kind: git_tag
   url: gnome:gedit.git
   track: master
-  submodules:
-    subprojects/libgd:
-      checkout: true
-      url: gnome:libgd.git
+- kind: git_module
+  url: gnome:libgd.git
+  path: subprojects/libgd
 
 build-depends:
 - sdk/gobject-introspection.bst

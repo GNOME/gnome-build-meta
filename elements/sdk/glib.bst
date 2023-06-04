@@ -5,10 +5,10 @@ sources:
   url: gnome:glib.git
   track: main
   ref: 2.76.1-335-g3304a517d9a7bdbb52d60394fdae6f9903f0f4f3
-  submodules:
-    subprojects/gvdb:
-      checkout: true
-      url: gnome:gvdb.git
+- kind: git_module
+  url: gnome:gvdb.git
+  path: subprojects/gvdb
+  ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
 
 build-depends:
 - sdk/gtk-doc.bst

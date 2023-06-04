@@ -5,10 +5,10 @@ sources:
   url: gnome:gtk-vnc.git
   track: master
   ref: v1.3.1-33-g301a0f84ce3821c1e46e80a2b05334ed434cef6e
-  submodules:
-    subprojects/keycodemapdb:
-      checkout: true
-      url: gitlab:keycodemap/keycodemapdb.git
+- kind: git_module
+  url: gitlab:keycodemap/keycodemapdb.git
+  path: subprojects/keycodemapdb
+  ref: e15649b83a78f89f57205927022115536d2c1698
 
 build-depends:
 - sdk-deps/gi-docgen.bst

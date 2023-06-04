@@ -4,11 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:calls.git
   track: main
-  submodules:
-    subprojects/libcall-ui:
-      checkout: true
-      url: gnome_gitlab:World/Phosh/libcall-ui.git
   ref: v45_alpha.0-34-g512da7edc3b2623c6f29e9391ac008f77da22055
+- kind: git_module
+  url: gnome_gitlab:World/Phosh/libcall-ui.git
+  path: subprojects/libcall-ui
+  ref: 6798b38d4d66d069751151b3e9a202c6de8d7f3c
 
 build-depends:
 - sdk/vala.bst

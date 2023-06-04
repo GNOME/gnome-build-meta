@@ -5,10 +5,10 @@ sources:
   url: gnome:tracker.git
   track: master
   ref: 3.5.2-20-gc7b87c3ec7f77a39e0f0f8e4c36800f9304f35d1
-  submodules:
-    subprojects/gvdb:
-      url: gnome:gvdb.git
-      checkout: true
+- kind: git_module
+  url: gnome:gvdb.git
+  path: subprojects/gvdb
+  ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
 
 build-depends:
 - sdk/gobject-introspection.bst

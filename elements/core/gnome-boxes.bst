@@ -5,10 +5,10 @@ sources:
   url: gnome:gnome-boxes.git
   track: main
   ref: 44.beta-71-ge3a635de9822e2150a7155ccebffd39fd08754a8
-  submodules:
-    subprojects/libovf-glib:
-      checkout: true
-      url: gnome_gitlab:felipeborges/libovf-glib.git
+- kind: git_module
+  url: gnome_gitlab:felipeborges/libovf-glib.git
+  path: subprojects/libovf-glib
+  ref: 52d35970d385d0beda4b765a7264d77e79736549
 
 build-depends:
 - sdk/vala.bst
