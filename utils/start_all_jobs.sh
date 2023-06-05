@@ -28,6 +28,7 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   CASEDIR="$casedir" \
   DISTRI="gnomeos" \
   FLAVOR="iso" \
+  GITLAB_CI_JOB_URL="${CI_JOB_URL:-}" \
   NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_BRANCH \
   VERSION=$version \
   WORKER_CLASS=$worker_class \
