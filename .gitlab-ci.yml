@@ -80,7 +80,7 @@ default:
   when: manual
   allow_failure: true
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
+  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
