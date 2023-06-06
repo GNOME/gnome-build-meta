@@ -1,5 +1,6 @@
 option('branch', type : 'string', value : 'master')
+option('image-version', type : 'string')
 option('mode',  type : 'combo',
-       choices : ['bootable', 'flatpak'], value : 'flatpak')
+       choices : ['ostree', 'sysupdate', 'flatpak'], value : 'flatpak')
 option('variant',  type : 'combo',
        choices : ['user', 'devel'], value : 'user')
