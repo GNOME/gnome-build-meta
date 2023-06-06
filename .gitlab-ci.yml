@@ -238,6 +238,28 @@ vm-image-x86_64:
   variables:
     IMAGE: vm/image.bst
 
+secure-vm-image-x86_64:
+  extends:
+  - .x86_64
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  stage: deploy
+  when: manual
+  allow_failure: true
+  script:
+  - make -C files/boot-keys generate-keys
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm-secure/image.bst vm-secure/update-images.bst vm-secure/update-images-devel.bst
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory image
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images-devel.bst --directory update-images-devel
+  artifacts:
+    when: always
+    paths:
+    - image
+    - update-images
+    expire_in: '2 days'
+
 pinebook-pro-image:
   extends:
   - .manual-image-template
