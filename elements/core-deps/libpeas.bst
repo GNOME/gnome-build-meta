@@ -1,10 +1,9 @@
 kind: meson
-
 sources:
 - kind: git_tag
   url: gnome:libpeas.git
   track: main
-  ref: libpeas-1.36.0-89-g41161619a397274c884adf8320657e63fdcd9462
+  ref: libpeas-1.36.0-93-gcf59bb40437ddf56f4a413d399b41de2a8180f9e
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -13,6 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- sdk/gjs.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
