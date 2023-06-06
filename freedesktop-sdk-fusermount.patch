@@ -1,0 +1,16 @@
+diff --git a/elements/components/fuse3.bst b/elements/components/fuse3.bst
+index a095238e2..f3ce60d22 100644
+--- a/elements/components/fuse3.bst
++++ b/elements/components/fuse3.bst
+@@ -18,6 +18,11 @@ config:
+     - rm -r "%{install-root}/etc/init.d"
+ 
+ public:
++  bst:
++    integration-commands:
++    - |
++      [ -f "%{bindir}/fusermount" ] || ln -s fusermount3 "%{bindir}/fusermount"
++
+   initial-script:
+     script: |
+       #!/bin/bash

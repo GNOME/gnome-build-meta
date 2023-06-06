@@ -1,0 +1,12 @@
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 49feefdac..6c8e04eb3 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1638,6 +1638,7 @@ config:
+     enable INTEGRITY_PLATFORM_KEYRING
+     enable INTEGRITY_SIGNATURE
+     enable INTEGRITY_ASYMMETRIC_KEYS
++    enable SECURITY_LOCKDOWN_LSM
+ 
+     # systemd-oom
+     enable PSI
