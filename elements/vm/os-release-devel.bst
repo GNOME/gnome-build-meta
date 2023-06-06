@@ -10,5 +10,5 @@ depends:
 variables:
   meson-local: >-
     -Dbranch=%{branch}
-    -Dmode=bootable
+    -Dmode=ostree
     -Dvariant=devel
