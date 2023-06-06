@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:tali.git
   track: master
 

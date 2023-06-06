@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gdk-pixbuf.git
   track: master
   ref: 2.42.10-13-ga27ee721620182637187e465dd1eca23c1adbc1b

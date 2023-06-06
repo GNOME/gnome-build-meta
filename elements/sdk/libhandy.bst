@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libhandy.git
   track: main
   ref: 1.8.0-25-g792c70df9e315dfb1f8d6dd53daa6673abbb7afe

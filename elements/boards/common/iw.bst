@@ -1,7 +1,7 @@
 kind: make
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: https://git.sipsolutions.net/iw.git
   track: v5.19
   ref: v5.19-0-g79f20cbf1a333a23e3b041d502277d240aedb840

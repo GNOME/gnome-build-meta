@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
   ref: 3.48.0-16-gb10c81e0eb347305b235bd644145c9982a8fe4f0

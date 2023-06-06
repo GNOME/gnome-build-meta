@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libadwaita.git
   track: main
   ref: 1.4.rc-19-g9ddd0e23fdf234c4ad3a2a98a2944027b16260d8

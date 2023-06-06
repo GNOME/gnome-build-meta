@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-initial-setup.git
   track: master
   ref: 45.beta-52-gaf0b81839f1c473816a9ca98709d243d8724ac08

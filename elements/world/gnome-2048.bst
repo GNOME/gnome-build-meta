@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-2048.git
   track: master
 

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-characters.git
   track: main
   ref: 45.alpha-50-g481f12945016cd7b1c79003f24f9f40efd18394f

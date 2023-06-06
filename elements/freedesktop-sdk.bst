@@ -1,9 +1,8 @@
 kind: junction
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: release/23.08
-  track-tags: True
+  track: freedesktop-sdk-23.08*
   ref: freedesktop-sdk-23.08.0-0-g1533f8d0393984f5684985c8b710e9fbaf9c8734
 - kind: patch
   path: files/freedesktop-sdk/0001-linux-Backport-tpm-fix.patch

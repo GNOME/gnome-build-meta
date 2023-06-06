@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-text-editor.git
   track: main
   ref: 45.beta-41-gb30a2bfda9ccfd0a0249ee4f6624d5790d34748c

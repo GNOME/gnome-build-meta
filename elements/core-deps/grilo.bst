@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:grilo.git
   track: master
   ref: grilo-0.3.16-5-g03f3c7b81b84b7dc3ebbce12b3a2f42997edce5e

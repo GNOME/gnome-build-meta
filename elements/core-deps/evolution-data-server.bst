@@ -1,7 +1,7 @@
 kind: cmake
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:evolution-data-server.git
   track: master
   ref: 3.49.3-11-g0bdacc0ba60ead5abffe4b08a70dfe290637c7cc

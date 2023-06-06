@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:yelp.git
   track: master
   ref: 42.2-12-ga2c79124f5a71ac30834b159974fb83337fb3b13

@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:pyatspi2.git
   track: master
   ref: PYATSPI_2_46_0-8-gc3206e409f6caf3f7695210a2cfa79db8255f74c

@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgtop.git
   track: master
   ref: 2.41.1-6-gc7be3497440804179b7e3095cc24f5ec7a3a970d

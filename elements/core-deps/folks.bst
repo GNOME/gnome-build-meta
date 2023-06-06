@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:folks.git
   track: master
   ref: 0.15.6-7-g9c8e79810861e44f4cc82346af2cb60eb50e0b6d

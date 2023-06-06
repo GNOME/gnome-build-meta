@@ -1,11 +1,9 @@
 kind: manual
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:raspberrypi/linux.git
   # track: 5.15.y
-  track: 23a7ec81c55515e8a8d711376589f4cbc6714906
-  track-tags: false
   ref: 1.20220830-895-g23a7ec81c55515e8a8d711376589f4cbc6714906
 
 depends:

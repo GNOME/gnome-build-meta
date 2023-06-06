@@ -1,7 +1,7 @@
 kind: cmake
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:google/libphonenumber
   track: v8.10.16
   ref: v8.10.16-0-gb0daf7ba45f0e8dac582b88634127e3f9671a587

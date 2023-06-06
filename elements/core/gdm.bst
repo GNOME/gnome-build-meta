@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gdm.git
   track: main
   ref: 45.beta-3-g8f5ce2b4de416d7699c37edac433b8a4203008b1

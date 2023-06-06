@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:glibmm.git
   track: glibmm-2-66
   ref: 2.66.6-9-g540e651b680abff7ad2bbfca94cb52ac23a3b9c0

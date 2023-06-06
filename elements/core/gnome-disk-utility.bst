@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-disk-utility.git
   track: master
   ref: 44.0-18-gcfe232d75c2ff4cb3bc885e2a5f4d1dcdb8fabf6

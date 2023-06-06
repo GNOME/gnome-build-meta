@@ -1,7 +1,7 @@
 kind: cmake
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:google/re2.git
   track: main
   ref: 2022-06-01-22-gccec7ce952dbf6d9beeaf7ee43ea5d679e509e92

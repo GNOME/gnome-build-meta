@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libdex.git
   track: main
   ref: 0.3.1-2-gd60060cab9f9442fa46ff41a9295a9af4f0b8e26

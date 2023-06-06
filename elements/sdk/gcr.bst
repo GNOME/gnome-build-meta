@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gcr.git
   track: master
   ref: 4.1.0-20-gb126909046154481d289ce38c1b4fdb082dfdcb9

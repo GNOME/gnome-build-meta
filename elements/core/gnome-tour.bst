@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-tour.git
   track: master
   ref: 44.0-15-gbb20e38c676772300846409c78d0698fd99b2f4a

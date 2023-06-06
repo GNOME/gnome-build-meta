@@ -1,9 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  track: v1.94.2
+- kind: git_repo
   url: freedesktop:libfprint/fprintd.git
+  track: v1.94.2
   ref: v1.94.2-0-g0d2e2a6742cbec847aa756da25afd4b73d9ec53f
 
 build-depends:

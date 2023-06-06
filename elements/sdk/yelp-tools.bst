@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:yelp-tools.git
   track: master
   ref: 42.1-0-gfe5ff72ca46fba425143e5dc67d660703c86145f

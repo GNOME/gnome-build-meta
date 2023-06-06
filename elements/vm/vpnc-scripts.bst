@@ -1,7 +1,7 @@
 kind: manual
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gitlab:openconnect/vpnc-scripts.git
   track: master
   ref: 1a2bbee30fc3a6ea6314895186ba1fdc4a229621

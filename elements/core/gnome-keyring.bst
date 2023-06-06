@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-keyring.git
   track: master
   ref: 42.0-26-gb839689e5525a5e924916d2ebf9e68753e1f6d52

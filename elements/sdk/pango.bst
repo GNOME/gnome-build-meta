@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:pango.git
   track: main
   ref: 1.51.1-2-g949b6404a13a0e4fe1ae028069d3887abaee7ed7

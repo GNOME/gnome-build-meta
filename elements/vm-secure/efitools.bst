@@ -1,5 +1,43 @@
 kind: make
 
+sources:
+- kind: git_repo
+  url: kernel:linux/kernel/git/jejb/efitools.git
+  track: v1.9.2
+  ref: v1.9.2-0-g392836a46ce3c92b55dc88a1aebbcfdfc5dcddce
+- kind: local
+  path: files/boot-keys/PK.key
+- kind: local
+  path: files/boot-keys/PK.crt
+- kind: local
+  path: files/boot-keys/PK_MIC.key
+- kind: local
+  path: files/boot-keys/PK_MIC.crt
+- kind: local
+  path: files/boot-keys/KEK.key
+- kind: local
+  path: files/boot-keys/KEK.crt
+- kind: local
+  path: files/boot-keys/KEK_MIC.key
+- kind: local
+  path: files/boot-keys/KEK_MIC.crt
+- kind: local
+  path: files/boot-keys/DB.key
+- kind: local
+  path: files/boot-keys/DB.crt
+- kind: local
+  path: files/boot-keys/extra-kek
+  directory: extra-kek
+- kind: local
+  path: files/boot-keys/extra-db
+  directory: extra-db
+- kind: local
+  path: files/boot-keys/extra-kek-mic
+  directory: extra-kek-mic
+- kind: local
+  path: files/boot-keys/extra-db-mic
+  directory: extra-db-mic
+
 build-depends:
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/help2man.bst
@@ -104,41 +142,3 @@ config:
 
     - |
       install -Dm644 -t '%{install-root}%{datadir}/efitools/efi' {PK-mic,KEK-mic,DB-mic}.auth
-
-sources:
-- kind: git_tag
-  url: kernel:linux/kernel/git/jejb/efitools.git
-  track: v1.9.2
-  ref: v1.9.2-0-g392836a46ce3c92b55dc88a1aebbcfdfc5dcddce
-- kind: local
-  path: files/boot-keys/PK.key
-- kind: local
-  path: files/boot-keys/PK.crt
-- kind: local
-  path: files/boot-keys/PK_MIC.key
-- kind: local
-  path: files/boot-keys/PK_MIC.crt
-- kind: local
-  path: files/boot-keys/KEK.key
-- kind: local
-  path: files/boot-keys/KEK.crt
-- kind: local
-  path: files/boot-keys/KEK_MIC.key
-- kind: local
-  path: files/boot-keys/KEK_MIC.crt
-- kind: local
-  path: files/boot-keys/DB.key
-- kind: local
-  path: files/boot-keys/DB.crt
-- kind: local
-  path: files/boot-keys/extra-kek
-  directory: extra-kek
-- kind: local
-  path: files/boot-keys/extra-db
-  directory: extra-db
-- kind: local
-  path: files/boot-keys/extra-kek-mic
-  directory: extra-kek-mic
-- kind: local
-  path: files/boot-keys/extra-db-mic
-  directory: extra-db-mic

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gi-docgen.git
   track: main
   ref: 2023.1-34-ga7c0601c9b30c14fee7f0337044c6eb51ba8626e

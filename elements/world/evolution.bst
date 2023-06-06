@@ -1,6 +1,6 @@
 kind: cmake
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:evolution.git
   track: master
 

@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gspell.git
   track: master
   ref: 1.12.2-1-g190e4c5caa56d353c2d95d77ce421de5c026c15d

@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-themes-extra.git
   track: master
 build-depends:

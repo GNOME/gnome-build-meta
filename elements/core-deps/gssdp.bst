@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gssdp.git
   track: master
   ref: gssdp-1.6.2-2-g21ba31fbe42a0e7c80491176ce546cc9c3b909e9

@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gsound.git
   track: master
   ref: 1.0.3-0-g95d36d60cf53e0e7c5d5325e0f1f4fc765a611ae

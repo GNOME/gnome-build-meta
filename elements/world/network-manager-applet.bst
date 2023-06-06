@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:network-manager-applet.git
   track: main
 

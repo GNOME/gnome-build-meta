@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gtk.git
   track: gtk-3-24
   ref: 3.24.38-61-g8a479df04ea5b244d9eb71367fa8779ca2660737

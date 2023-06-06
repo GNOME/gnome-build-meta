@@ -5,9 +5,8 @@ sources:
 # The tarball is just a snapshot of the git repository and is missing
 # submodules.
 # There is no tarball release of libglnx.
-- kind: git_tag
+- kind: git_repo
   url: github:endlessm/eos-installer.git
-  track-tags: true
   track: Release_4.0.7
   ref: Release_4.0.10-0-g3f384acc76f537675fa4d8817a5f49cf2e455f51
 - kind: git_module

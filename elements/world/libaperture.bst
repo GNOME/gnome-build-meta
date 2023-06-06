@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome_gitlab:jwestman/libaperture.git
   track: master
 

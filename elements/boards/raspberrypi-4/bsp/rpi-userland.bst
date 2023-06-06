@@ -1,7 +1,7 @@
 kind: cmake
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:raspberrypi/userland.git
   track: f97b1af1b3e653f9da2c1a3643479bfd469e3b74
   ref: f97b1af1b3e653f9da2c1a3643479bfd469e3b74

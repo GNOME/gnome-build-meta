@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:devhelp.git
   track: main
   ref: 43.0-10-g0d6cfe1f08e365745b357accde43c21b4308f842

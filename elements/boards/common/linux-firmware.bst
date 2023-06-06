@@ -1,7 +1,7 @@
 kind: import
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: megous:git/linux-firmware
   track: master
   ref: 5c4c2b89f30a42f5ffabb5b5bcbc799d8ac9f66f

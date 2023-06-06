@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:tecla.git
   track: main
   ref: 45.rc-12-gd524fa807bfac46378abd61c704e0165016dcb4d

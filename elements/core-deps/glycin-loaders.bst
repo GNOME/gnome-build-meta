@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
   ref: 0.1.rc-1-gea0f4869139b402b887fc32cb624f87c5053a745

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: purism:Librem5/chatty.git
   track: master
   ref: v0.7.3-45-g4355af485f8fec53ea07745e6f41f8b1fa7a8e33

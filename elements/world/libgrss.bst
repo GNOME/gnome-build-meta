@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgrss.git
   track: master
 build-depends:

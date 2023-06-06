@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgee.git
   track: main
   ref: 0.20.6-2-g2f0bbe8987e5eb1390b23ac531c971b202c2ef77

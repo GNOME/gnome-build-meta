@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-photos.git
   track: master
   ref: 44.0-3-ga534601cbf88a55704b0f67b2f23b5ba2fe56bf1

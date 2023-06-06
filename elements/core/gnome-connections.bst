@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:connections.git
   track: master
   ref: 45.rc-5-gd9e9fb79ff9a96af77b7b08b637ba2bc0172e171

@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gtk-doc.git
   track: master
   ref: 1.33.2-26-gad4c215c41174483b05dede3973a34ad45a54995

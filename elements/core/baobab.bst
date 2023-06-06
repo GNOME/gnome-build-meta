@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:baobab.git
   track: main
   ref: 45.alpha-39-g504a95e4af8b24e63ee2785dd181dbfa0edee915

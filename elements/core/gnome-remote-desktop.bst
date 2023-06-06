@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-remote-desktop.git
   track: master
   ref: 45.rc-0-g691845d924276e1ee2216ee41d53c28d9c2bcb7c

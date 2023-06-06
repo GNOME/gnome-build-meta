@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-settings-daemon.git
   track: master
   ref: 45.rc-1-gfbba8b60fdb3e73d20a50c1c5689fcd5517730d6

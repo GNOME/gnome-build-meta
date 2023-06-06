@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gjs.git
   track: master
   ref: 1.77.90-4-g11aadb43dba5456d94d336910bd40d645c000e44

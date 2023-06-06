@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-calculator.git
   track: master
   ref: 45.0.1-10-g9bcbc1082dc249684e9c20aaf176e4fa2cfae0c2

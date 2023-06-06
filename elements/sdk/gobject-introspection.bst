@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gobject-introspection.git
   track: main
   ref: 1.78.0-2-g8d0145da49b61dd010643436700cf5cd3a76bcb7

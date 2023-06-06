@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:pangomm.git
   track: pangomm-2-46
   ref: 2.46.3-13-gcc618e5ea7326eac1f8943c66fbe446ab460877a

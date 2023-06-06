@@ -1,5 +1,17 @@
 kind: make
 
+sources:
+- kind: git_repo
+  url: github:rhboot/shim.git
+  track: 15.5
+  ref: 15.5-0-gf2c598bb2218da966872ba3e0c6e7e830dca6ef0
+- kind: git_module
+  path: gnu-efi
+  url: github:rhboot/gnu-efi.git
+- kind: local
+  path: files/boot-keys/VENDOR.crt
+  directory: boot-keys
+
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
@@ -29,16 +41,3 @@ config:
   configure-commands:
   - |
     openssl x509 -inform PEM -outform DER -in "boot-keys/VENDOR.crt" -out "boot-keys/VENDOR.cer"
-
-sources:
-- kind: git_tag
-  url: github:rhboot/shim.git
-  track: 15.5
-  ref: 15.5-0-gf2c598bb2218da966872ba3e0c6e7e830dca6ef0
-  submodules:
-    gnu-efi:
-      url: github:rhboot/gnu-efi.git
-      checkout: True
-- kind: local
-  path: files/boot-keys/VENDOR.crt
-  directory: boot-keys

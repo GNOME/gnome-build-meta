@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:phodav.git
   track: master
   ref: v3.0-20-g4706127579db6ca091b4074966b5f717f6edb30e

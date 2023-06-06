@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gupnp.git
   track: master
   ref: gupnp-1.6.5-0-g04fc6512bcf26a405ede293592bd69c733f3191b

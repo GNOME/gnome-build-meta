@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-clocks.git
   track: master
   ref: 44.0-76-gdc8df812b82f62a8d995068045dd345bd46b697e

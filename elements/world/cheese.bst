@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:cheese.git
   track: master
   ref: 44.1-0-g1513eb4d705c71635cdc12712811e4f78b2983e9

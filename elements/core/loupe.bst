@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:loupe.git
   track: main
   ref: 45.beta.1-70-gd260d76722caeccaa5cbbf3ac327331ca5a1fcb9

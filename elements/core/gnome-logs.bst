@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-logs.git
   track: master
   ref: gnome-logs-45.beta-25-g061af222b427600cfa834d284ea3e83c92152caf

@@ -1,12 +1,11 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:Incubator/snapshot.git
   track: main
   ref: 45.beta-51-gc221b47033f90ec8a98132dd3b3a7dd9557f714f
 - kind: cargo
-
   ref:
   - name: aho-corasick
     version: 1.0.5
@@ -740,6 +739,7 @@ sources:
   - name: zvariant_utils
     version: 1.0.1
     sha: 7234f0d811589db492d16893e3f21e8e2fd282e6d01b0cddee310322062cc200
+
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst

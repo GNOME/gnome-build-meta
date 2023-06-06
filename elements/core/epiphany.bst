@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:epiphany.git
   track: master
   ref: 45.beta-66-gb91ee3697f6771b38cfb6440c90f7b976d3229da

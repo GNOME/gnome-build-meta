@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:adwaita-icon-theme.git
   track: master
   ref: 45.rc-0-g2d070aa84d2f74cee8b693d9a4580453460b631b

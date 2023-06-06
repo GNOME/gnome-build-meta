@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:rygel.git
   track: master
   ref: rygel-0.42.4-8-ge367b12fecf885d72255ad223205ed1b8f5329ae

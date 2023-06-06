@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:librsvg.git
   track: main
   ref: 2.57.0-0-gcd2e29d85df4e09f2af7d24e4254220a051f090d

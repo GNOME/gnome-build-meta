@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:libsigcplusplus/libsigcplusplus.git
   track: libsigc++-2-12
   ref: 2.12.0-16-g8378aca2d7bd45b53f7f7fe7f4659bdd86168162

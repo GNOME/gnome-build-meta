@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
   ref: 45.rc-8-g03f679d68ee6a2816dc2c282583799e5d8dd68d1

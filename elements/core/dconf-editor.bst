@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:dconf-editor.git
   track: master
   ref: 43.0-20-gc818d8994dc5ff6a12c9af5de79708ff4b7457ce

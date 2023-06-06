@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:libsigcplusplus/libsigcplusplus.git
   track: master
 build-depends:

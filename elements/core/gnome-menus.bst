@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-menus.git
   track: master
   ref: 3.36.0-20-g7982075c5d3b85337c5ed24d32ba6a34a74e237a

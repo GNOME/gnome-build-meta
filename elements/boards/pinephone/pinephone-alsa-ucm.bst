@@ -1,7 +1,7 @@
 kind: manual
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gitlab:pine64-org/pine64-alsa-ucm.git
   track: master
   ref: ec0ef36b8b897ed1ae6bb0d0de13d5776f5d3659

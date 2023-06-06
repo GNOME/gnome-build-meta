@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:TelepathyIM/telepathy-mission-control.git
   track: telepathy-mission-control-5.16
 build-depends:

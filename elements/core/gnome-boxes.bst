@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-boxes.git
   track: main
   ref: 45.rc-30-gcdb3cb06fc84bc08b347c84793b957305cf7cbd5

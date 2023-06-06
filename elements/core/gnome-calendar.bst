@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-calendar.git
   track: main
   ref: 45.rc-13-gdd61f8ef6f3e30171fd7327ca21321f3e299d9ca

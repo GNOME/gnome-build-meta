@@ -17,7 +17,7 @@
 
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:mm-common.git
   track: master
   ref: 1.0.5-8-g8f5e1d6924b8846aac7b95b51c3dfccebec748c3

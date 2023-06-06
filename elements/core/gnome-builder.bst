@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-builder.git
   track: main
   ref: 45.rc-81-ge600e093d7980c3082b51cac9bd15bbb85460f7a

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:totem.git
   track: master
   ref: 43.0-193-g1a880e643976a9303a6f0a0a3de59dccc32b3d0b

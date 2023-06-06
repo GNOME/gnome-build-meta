@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libmediaart.git
   track: master
   ref: 1.9.6-0-g69b4176bccb8032180fd8d48bb8b035c60acd203

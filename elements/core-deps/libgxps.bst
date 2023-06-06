@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgxps.git
   track: master
   ref: 0.3.2-5-geba5be13aa9aced90366a305dc513b9be2ed3b4d

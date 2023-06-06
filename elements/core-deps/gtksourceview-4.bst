@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gtksourceview.git
   track: 'gtksourceview-4-8'
   ref: 4.8.4-14-g88678db76b8630533de39b1416920b48ef6735bc

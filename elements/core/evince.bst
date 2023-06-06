@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:evince.git
   track: main
   ref: 45.rc-5-g5bf30bf1b7b86952af73f3cd2dd2b1d1ee0c75f7

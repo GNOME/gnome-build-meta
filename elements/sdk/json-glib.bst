@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:json-glib.git
   track: master
   ref: 1.6.6-54-g491eb8ef0bcc803c165a55f2e32e5467ba66cab8

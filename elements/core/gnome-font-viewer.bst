@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-font-viewer.git
   track: main
   ref: 45.alpha-10-g6af0ae9c395a65927f1a77d2f3c957b1c2ec644d

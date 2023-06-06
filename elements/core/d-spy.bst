@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:d-spy.git
   track: main
   ref: 1.6.0-38-gf9f11db8150a8d05504ccebcdfa681420c9ad791

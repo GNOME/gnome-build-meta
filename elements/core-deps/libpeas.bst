@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libpeas.git
   track: main
   ref: 1.99.1-0-gf564079d0f88583414ae4f07248e0fc864abd234

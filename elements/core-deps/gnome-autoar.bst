@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-autoar.git
   track: master
   ref: 0.4.4-0-gb387c2482d2a5c8efdfc8c7498f13cd3881685c0

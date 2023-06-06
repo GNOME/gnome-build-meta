@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: freedesktop:cairo/cairo.git
   track: master
   ref: 1.17.8-167-g7380d3dd7d5128db20f0be063b086519ed555327

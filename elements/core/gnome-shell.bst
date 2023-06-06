@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-shell.git
   track: main
   ref: 45.rc-11-gfd71868f698b194009c76fd9aa9ef4b3102b746b

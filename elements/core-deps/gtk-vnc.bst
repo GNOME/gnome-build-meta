@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gtk-vnc.git
   track: master
   ref: v1.3.1-34-g4e8840a0ce957148b22dde3ae1d58cb7d4dc656c

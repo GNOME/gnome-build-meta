@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gom.git
   track: master
   ref: 0.4-17-g90a2e73e9b9f54b5a64210989a741503b406edbf

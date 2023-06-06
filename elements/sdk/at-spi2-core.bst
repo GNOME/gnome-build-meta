@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:at-spi2-core.git
   track: main
   ref: AT_SPI2_CORE_2_49_91-4-g713d95ef9474ad76520e4a5c24917fbe889a225d

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-session.git
   track: main
   ref: 44.0-10-g6e76dc3761caac4b1b211c33538d86457aaa5687

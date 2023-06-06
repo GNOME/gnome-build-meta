@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:tracker-miners.git
   track: master
   ref: 3.6.rc-36-g0cb40d49cab17bfad75d231e8e1d345932313b8b

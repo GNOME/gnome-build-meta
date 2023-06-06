@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gvfs.git
   track: master
   ref: 1.51.91-2-g72a490427daf26fd9262eb6225244b6eb7366ac2

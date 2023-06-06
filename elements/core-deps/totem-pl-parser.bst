@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:totem-pl-parser.git
   track: master
   ref: V_3_26_6-22-gc0949390f231eea7647011dadc6e1ec9bb586da7

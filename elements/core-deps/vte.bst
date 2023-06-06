@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:vte.git
   track: master
   ref: 0.69.90-94-g5b198b4458b71629c02be154f18f09877dbb02fc

@@ -1,7 +1,7 @@
 kind: cmake
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:google/googletest.git
   track: main
   ref: release-1.12.0-129-ge68764c147ea0dac1e8811925c531d937396878e

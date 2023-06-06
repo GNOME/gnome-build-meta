@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:tracker.git
   track: tracker-2.3
 build-depends:

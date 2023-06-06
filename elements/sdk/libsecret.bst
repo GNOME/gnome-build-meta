@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libsecret.git
   track: master
   ref: 0.21.0-5-gae7c52bd9c70e400f648bb48cc4310e0bb9bf77a

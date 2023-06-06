@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:nautilus.git
   track: main
   ref: 45.rc-34-g2a7c61e9525dc3fac32e363b4fd4daf6bcfa3bc0

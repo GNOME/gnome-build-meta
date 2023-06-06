@@ -1,7 +1,7 @@
 kind: autotools
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:mobile-broadband-provider-info.git
   track: main
   ref: 20230416-18-g82bc660ec5882f4bded806cffc0688ec93261fc9

@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgweather.git
   track: main
   ref: 4.3.2-34-gd41945f83f9a8dd599f2e0f6189b06cf50cf36ed

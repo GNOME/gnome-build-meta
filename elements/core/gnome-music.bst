@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-music.git
   track: master
   ref: 44.0-45-gc5c274a964467a2da0779c259520ad3697c034f0

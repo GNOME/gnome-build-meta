@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-contacts.git
   track: main
   ref: 45.beta-37-gc48dfccb9766328b20d05b86013c69359704ea91

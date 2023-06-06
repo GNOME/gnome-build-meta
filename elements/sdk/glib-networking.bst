@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:glib-networking.git
   track: master
   ref: 2.76.0-36-g90efb1b80f34c4a9bc93b7a33f42873341ac2fc1

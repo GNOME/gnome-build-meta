@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: github:TelepathyIM/telepathy-glib.git
   track: master
 build-depends:

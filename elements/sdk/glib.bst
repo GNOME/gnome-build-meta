@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:glib.git
   track: main
   ref: 2.78.0-14-gf51f40c4408ddcc0eb6e9b451db93e4adc5b28cc

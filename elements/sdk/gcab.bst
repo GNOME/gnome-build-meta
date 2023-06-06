@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gcab.git
   track: master
   ref: v1.6-1-g8a8ab90e9e31a894858d5220442d8239d2b78440

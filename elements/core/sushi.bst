@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:sushi.git
   track: master
   ref: 45.alpha.2-3-ge9739d5ec5a9edbb0f62ee1ebda46ec3ed20bda6

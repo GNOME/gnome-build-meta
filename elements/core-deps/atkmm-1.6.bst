@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:atkmm.git
   track: atkmm-2-28
   ref: 2.28.3-11-g151d9d72721f48312d8c3a882d2a3f707f5d92e6

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:eog.git
   track: master
   ref: 45.alpha-3-g8815052af92122f852f1775a91f61a9511263c82

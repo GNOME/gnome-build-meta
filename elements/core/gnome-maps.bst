@@ -1,6 +1,6 @@
 kind: meson
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-maps.git
   track: main
   ref: v45.rc-12-ge42f1b90376db96e657457d931ef8f348e4a1d91

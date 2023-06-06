@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libsoup.git
   track: libsoup-2-74
   ref: 2.74.3-3-g48b3b61154389b377f6cd20ea72e57b62c9256e8

@@ -1,7 +1,7 @@
 kind: meson
 
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:gnome-color-manager.git
   track: master
   ref: GNOME_COLOR_MANAGER_3_36_0-50-g05fa1b4cd1eb202e3cf7a7aa025bd38e62a5bcc5

@@ -1,6 +1,6 @@
 kind: autotools
 sources:
-- kind: git_tag
+- kind: git_repo
   url: gnome:libgsf.git
   track: master
   ref: LIBGSF_1_14_50-17-g503453ba1ee1220b2e18d2e8e5261f7585a8d2df
