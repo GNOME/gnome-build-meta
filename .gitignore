@@ -3,6 +3,7 @@
 
 # Ignore BuildStream local state
 .bst
+.bst2
 
 # Never commit project.refs
 project.refs
