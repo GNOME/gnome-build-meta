@@ -11,16 +11,12 @@ depends:
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 
-- vm/dev-repo-script.bst
 - vm/flathub-config.bst
 - vm/gnome-nightly-config.bst
-- vm/ostree-config.bst
 - vm/plymouth-gnome-theme.bst
-- vm/resize-root.bst
 - vm/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
-- vm/systemd-repart-config.bst
 - vm/disable-iscsi.bst
 - vm/systemd-firstboot-config.bst
 
