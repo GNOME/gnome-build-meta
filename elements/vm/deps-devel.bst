@@ -7,7 +7,7 @@ depends:
 - sdk-deps/sassc.bst
 - core-deps/xvfb.bst
 - core/meta-gnome-core-developer-tools.bst
-- vm/common-deps.bst
+- vm/common-deps-ostree.bst
 - vm/deviced.bst
 - vm/git-lfs.bst
 - vm/initramfs.bst
