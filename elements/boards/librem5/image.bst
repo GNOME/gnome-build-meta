@@ -85,7 +85,7 @@ config:
         }
         partition uboot {
             image = "phone-boot.img"
-            offset = 33K
+            offset = 8M
             in-partition-table = false
         }
         partition efi {
