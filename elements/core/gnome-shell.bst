@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:gnome-shell.git
-  track: main
-  ref: 44.1-73-ge1145defa9b27839607c26cf9962b938d7eef8f0
+  url: https://gitlab.gnome.org/verdre/gnome-shell.git
+  track: mobile-shell
+  ref: 3.28.0-6222-g9b7df11f136da27633c8d30cd419dcc7906c8b4d
   submodules:
     subprojects/gvc:
       checkout: true

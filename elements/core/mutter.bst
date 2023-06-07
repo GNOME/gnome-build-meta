@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_tag
-  url: gnome:mutter.git
-  track: main
-  ref: 44.1-114-g30a5178204fb1cc6a464b102df430c72f0a7ecb2
+  url: https://gitlab.gnome.org/verdre/mutter.git
+  track: mobile-shell
+  ref: 3.31.2-6700-g5e72de83dbf48991d8d60913c8396a0d7f86990c
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
