@@ -18,10 +18,10 @@ depends:
 - core-deps/totem-pl-parser.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gst-plugins-base.bst
 - sdk/libsecret.bst
 - world/tracker-2.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
