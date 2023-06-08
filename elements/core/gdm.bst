@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: git_tag
-  url: gnome:gdm.git
+  url: https://gitlab.gnome.org/verdre/gdm.git
   track: main
   ref: 44.0-68-gc5ded821b1f09b43bb2ccb45325a5de2e738cd9c
 - kind: local
