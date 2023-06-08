@@ -32,6 +32,7 @@ depends:
 - world/gnome-mines.bst
 - world/gnome-multi-writer.bst
 - world/gnome-nibbles.bst
+- world/gnome-photos.bst
 - world/gnome-recipes.bst
 - world/gnome-robots.bst
 - world/gnome-screenshot.bst

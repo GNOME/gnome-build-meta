@@ -24,7 +24,6 @@ depends:
 - core/gnome-logs.bst
 - core/gnome-maps.bst
 - core/gnome-music.bst
-- core/gnome-photos.bst
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
 - core/gnome-text-editor.bst
