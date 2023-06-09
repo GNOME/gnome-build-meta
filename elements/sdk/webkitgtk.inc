@@ -6,9 +6,7 @@ sources:
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
-- sdk-deps/xdg-dbus-proxy.bst
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl.bst
@@ -20,6 +18,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 
 depends:
+- sdk-deps/xdg-dbus-proxy.bst
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/libavif.bst
@@ -30,6 +29,7 @@ depends:
 - sdk/woff2.bst
 - sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
+- freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
