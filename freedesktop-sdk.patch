@@ -24,6 +24,21 @@ index 9d0266fb8..4aee3ce05 100644
  - filename: components/at-spi2-core.bst
  - filename: public-stacks/buildsystem-meson.bst
    type: build
+diff --git a/elements/components/fuse3.bst b/elements/components/fuse3.bst
+index 9b3060bff..2dedbb114 100644
+--- a/elements/components/fuse3.bst
++++ b/elements/components/fuse3.bst
+@@ -13,6 +13,10 @@ variables:
+     -Duseroot=false
+ 
+ public:
++  bst:
++    integration-commands:
++    - |
++      [ -f "%{bindir}/fusermount" ] || ln -s fusermount3 "%{bindir}/fusermount"
+   initial-script:
+     script: |
+       #!/bin/bash
 diff --git a/elements/components/gstreamer-plugins-base.bst b/elements/components/gstreamer-plugins-base.bst
 index f2c1b206a..f458512b5 100644
 --- a/elements/components/gstreamer-plugins-base.bst
