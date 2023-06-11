@@ -9,6 +9,12 @@ while [ $# -gt 0 ]; do
         --same-version)
             same_version=1
             ;;
+        --user)
+            user=1
+            ;;
+        --devel)
+            devel=1
+            ;;
         *)
             args+=("$1")
             ;;
@@ -19,6 +25,10 @@ done
 if [ "${#args[@]}" -gt 0 ]; then
     echo "Parameter unexpected" 1>&2
     exit 1
+fi
+
+if [ "${user+set}" != set ] && [ "${devel+set}" != set ]; then
+    user=1
 fi
 
 : ${BST:=bst}
@@ -46,8 +56,21 @@ clean_checkout() {
 }
 trap clean_checkout EXIT
 
-"${BST}" build vm-secure/update-images.bst
-"${BST}" artifact checkout vm-secure/update-images.bst --directory "${checkout}"
+to_build=()
+if [ "${user+set}" = set ]; then
+    to_build+=(vm-secure/update-images.bst)
+fi
+if [ "${devel+set}" = set ]; then
+    to_build+=(vm-secure/update-images-devel.bst)
+fi
+"${BST}" build "${to_build[@]}"
+
+if [ "${user+set}" = set ]; then
+    "${BST}" artifact checkout vm-secure/update-images.bst --directory "${checkout}/su-user"
+fi
+if [ "${devel+set}" = set ]; then
+    "${BST}" artifact checkout vm-secure/update-images-devel.bst --directory "${checkout}/su-devel"
+fi
 
 if type -p caddy > /dev/null; then
     if caddy -version > /dev/null; then

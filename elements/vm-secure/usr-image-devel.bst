@@ -3,8 +3,8 @@ kind: script
 build-depends:
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:snap-images/squashfs-tools.bst
-- vm-secure/initial-scripts.bst
-- filename: vm-secure/filesystem.bst
+- vm-secure/initial-scripts-devel.bst
+- filename: vm-secure/filesystem-devel.bst
   config:
     location: '/sysroot'
 
@@ -154,17 +154,17 @@ config:
     EOF
 
   - |
-    mksquashfs /sysroot/usr '%{install-root}/usr_su-user-%{image-version}.squashfs'
+    mksquashfs /sysroot/usr '%{install-root}/usr_su-devel-%{image-version}.squashfs'
 
   - |
-    veritysetup format --salt="%{salt}" "%{install-root}/usr_su-user-%{image-version}.squashfs" "%{install-root}/usr_su-user-%{image-version}.verity" | sed '/^Root hash:[[:space:]]*/{;s///;q;};d' >"%{install-root}/usr-root-hash.txt"
+    veritysetup format --salt="%{salt}" "%{install-root}/usr_su-devel-%{image-version}.squashfs" "%{install-root}/usr_su-devel-%{image-version}.verity" | sed '/^Root hash:[[:space:]]*/{;s///;q;};d' >"%{install-root}/usr-root-hash.txt"
 
   - |
     usr_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_su-user-%{image-version}.squashfs" "%{install-root}/usr_su-user-%{image-version}_${usr_part_uuid}.squashfs"
-    ln -s "usr_su-user-%{image-version}_${usr_part_uuid}.squashfs" '%{install-root}/usr.squashfs'
+    mv "%{install-root}/usr_su-devel-%{image-version}.squashfs" "%{install-root}/usr_su-devel-%{image-version}_${usr_part_uuid}.squashfs"
+    ln -s "usr_su-devel-%{image-version}_${usr_part_uuid}.squashfs" '%{install-root}/usr.squashfs'
 
   - |
     usr_verity_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_su-user-%{image-version}.verity" "%{install-root}/usr_su-user-%{image-version}_${usr_verity_part_uuid}.verity"
-    ln -s "usr_su-user-%{image-version}_${usr_verity_part_uuid}.verity" '%{install-root}/usr.verity'
+    mv "%{install-root}/usr_su-devel-%{image-version}.verity" "%{install-root}/usr_su-devel-%{image-version}_${usr_verity_part_uuid}.verity"
+    ln -s "usr_su-devel-%{image-version}_${usr_verity_part_uuid}.verity" '%{install-root}/usr.verity'
