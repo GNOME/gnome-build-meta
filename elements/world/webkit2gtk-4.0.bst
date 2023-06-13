@@ -15,7 +15,6 @@ variables:
     -DUSE_SOUP2=ON
     -DENABLE_DOCUMENTATION=OFF
     -DENABLE_WEBDRIVER=OFF
-    -DUSE_JPEGXL=OFF
 
 public:
   bst:

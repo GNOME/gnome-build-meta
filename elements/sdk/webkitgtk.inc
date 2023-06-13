@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.41.6.tar.xz
   ref: 2fded8ae76a0d94985cff9620ccba708c4576e399bbd8c4c3260fa60181c235a
+- kind: patch
+  path: files/webkitgtk/jpegxl.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -20,6 +22,7 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
 - sdk/libavif.bst
+- sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
 - sdk/libwpe.bst
