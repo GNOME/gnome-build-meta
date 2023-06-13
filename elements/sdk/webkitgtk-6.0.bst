@@ -12,6 +12,7 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DUSE_GTK4=ON
+    -DUSE_JPEGXL=OFF
 
 public:
   bst:
