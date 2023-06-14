@@ -6,6 +6,7 @@ DefaultDependencies=no
 ConditionDirectoryNotEmpty=|/etc/extensions
 ConditionDirectoryNotEmpty=|/run/extensions
 ConditionDirectoryNotEmpty=|/var/lib/extensions
+ConditionDirectoryNotEmpty=|/.extra/sysext
 
 [Service]
 Type=oneshot

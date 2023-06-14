@@ -43,6 +43,12 @@ config:
     xz ${XZFLAGS} "%{install-root}/gnomeos-%{systemd-arch}_${image_version}.efi"
     cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi" "%{install-root}/gnomeos-apparmor-%{systemd-arch}_${image_version}.efi"
     xz ${XZFLAGS} "%{install-root}/gnomeos-apparmor-%{systemd-arch}_${image_version}.efi"
+    case '%{arch}' in
+      x86_64)
+        cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi" "%{install-root}/gnomeos-nvidia-%{systemd-arch}_${image_version}.addon.efi"
+        xz ${XZFLAGS} "%{install-root}/gnomeos-nvidia-%{systemd-arch}_${image_version}.addon.efi"
+      ;;
+    esac
 
   - |
     cd "%{install-root}"

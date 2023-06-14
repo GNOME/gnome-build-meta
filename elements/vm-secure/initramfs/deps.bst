@@ -18,6 +18,7 @@ depends:
 - vm-secure/initramfs/signed-modules.bst
 - vm-secure/efitools-maybe.bst
 - vm-secure/shim-maybe.bst
+- vm-secure/reload-sysext.bst
 - vm-secure/os-release-user.bst
 - vm-secure/replace-signed-systemd-boot.bst
 
@@ -26,3 +27,4 @@ depends:
     depends:
       (>):
       - vm-secure/intel-ucode.bst
+      - vm-secure/initramfs/signed-nvidia-modules.bst

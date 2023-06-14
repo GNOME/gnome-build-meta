@@ -12,6 +12,17 @@ build-depends:
     location: /snapd-only
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+(?):
+- arch in ["x86_64"]:
+    build-depends:
+      (>):
+      - filename: vm-secure/nvidia-modules-layer-signature.bst
+        config:
+          location: /nvidia-modules-only
+      - filename: vm-secure/nvidia-runtime-layer-signature.bst
+        config:
+          location: /nvidia-runtime-only
+
 config:
   commands:
   - |
@@ -22,6 +33,16 @@ config:
 
   - |
     cp /snapd-only/*.xz '%{install-root}'
+
+  - |
+    if [ -d /nvidia-modules-only ]; then
+      cp /nvidia-modules-only/*.xz '%{install-root}'
+    fi
+
+  - |
+    if [ -d /nvidia-modules-only ]; then
+      cp /nvidia-runtime-only/*.xz '%{install-root}'
+    fi
 
   - |
     cd "%{install-root}"

@@ -40,6 +40,7 @@ aliases:
   linuxcontainers: https://linuxcontainers.org/downloads/
   mozilla: https://ftp.mozilla.org/pub/
   netfilter: https://www.netfilter.org/
+  nvidia: https://us.download.nvidia.com/
   openldap: https://openldap.org/
   openvpn: https://swupdate.openvpn.org/community/releases/
   pagure_releases: https://releases.pagure.org/

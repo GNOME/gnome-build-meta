@@ -26,12 +26,24 @@ config:
 
   - mkdir -p '%{install-root}/usr/lib/'
   - cp -rT /usr/lib/modules '%{install-root}/usr/lib/modules'
+  - rm -rf '%{install-root}/usr/lib/modules'/"${version}"/kernel/drivers/video/nvidia*.ko*
 
   - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
     generate-initramfs /initramfs-root "${version}" "%{libdir}" "%{libdir}/systemd"
+
+  - |
+    case '%{arch}' in
+      x86_64)
+        version="$(ls -1 /lib/modules | head -n1)"
+        mkdir -p /initramfs-root/usr/lib/modules/"${version}"/kernel/drivers/video
+        cp /usr/lib/modules/"${version}"/kernel/drivers/video/nvidia*.ko* /initramfs-root/usr/lib/modules/"${version}"/kernel/drivers/video/
+        depmod -a -b /initramfs-root/usr "${version}"
+        rm -rf /initramfs-root/usr/lib/modules/"${version}"/kernel/drivers/video/nvidia*.ko*
+        ;;
+    esac
 
   - |
     (

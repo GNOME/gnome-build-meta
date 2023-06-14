@@ -21,3 +21,9 @@ depends:
 - vm-secure/efitools-maybe.bst
 - vm-secure/reload-sysext.bst
 - vm-secure/mokutil.bst
+
+(?):
+- arch in ["x86_64"]:
+    depends:
+      (>):
+      - vm-secure/sysupdate-nvidia-config.bst
