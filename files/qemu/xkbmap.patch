@@ -1,0 +1,10 @@
+diff -ur qemu.old/pc-bios/keymaps/meson.build qemu/pc-bios/keymaps/meson.build
+--- qemu.old/pc-bios/keymaps/meson.build	2023-06-14 22:59:23.842790479 +0200
++++ qemu/pc-bios/keymaps/meson.build	2023-06-14 23:03:09.513150830 +0200
+@@ -1,5 +1,5 @@
+ keymaps = {
+-  'ar': '-l ar',
++  'ar': '-l ara',
+   'bepo': '-l fr -v dvorak',
+   'cz': '-l cz',
+   'da': '-l dk',
