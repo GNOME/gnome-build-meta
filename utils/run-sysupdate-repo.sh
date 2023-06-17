@@ -67,9 +67,11 @@ fi
 
 if [ "${user+set}" = set ]; then
     "${BST}" artifact checkout vm-secure/update-images.bst --directory "${checkout}/su-user"
+    gpg --homedir=files/boot-keys/private-key --output  "${checkout}/su-user/SHA256SUMS.gpg" --detach-sig "${checkout}/su-user/SHA256SUMS"
 fi
 if [ "${devel+set}" = set ]; then
     "${BST}" artifact checkout vm-secure/update-images-devel.bst --directory "${checkout}/su-devel"
+    gpg --homedir=files/boot-keys/private-key --output "${checkout}/su-devel/SHA256SUMS.gpg" --detach-sig "${checkout}/su-devel/SHA256SUMS"
 fi
 
 if type -p caddy > /dev/null; then
