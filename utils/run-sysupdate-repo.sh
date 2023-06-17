@@ -53,6 +53,7 @@ cleanup_dirs+=("${checkout}")
 
 "${BST}" build vm-secure/update-images.bst
 "${BST}" artifact checkout vm-secure/update-images.bst --directory "${checkout}"
+gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if type -p caddy > /dev/null; then
     if caddy -version > /dev/null; then
