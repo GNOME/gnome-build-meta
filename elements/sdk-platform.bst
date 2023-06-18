@@ -54,3 +54,4 @@ depends:
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
 - freedesktop-sdk.bst:platform.bst
+- freedesktop-sdk.bst:components/libgudev.bst
