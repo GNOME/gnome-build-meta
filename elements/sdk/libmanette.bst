@@ -14,9 +14,9 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libevdev.bst
-- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-
     -Ddoc=true
+    -Dgudev=disabled
