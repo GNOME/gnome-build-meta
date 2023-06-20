@@ -20,8 +20,6 @@ runtime-depends:
 - sdk/adwaita-icon-theme.bst
 
 depends:
-- core-deps/babl.bst
-- core-deps/gegl.bst
 - core-deps/geocode-glib.bst
 - core-deps/gexiv2.bst
 - core-deps/gnome-online-accounts.bst
@@ -33,6 +31,8 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/tracker.bst
+- world/babl.bst
+- world/gegl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
