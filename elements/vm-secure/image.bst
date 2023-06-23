@@ -59,17 +59,17 @@ config:
             partition-type-uuid = "U"
             partition-uuid = "${efi_part_uuid}"
         }
-        partition gnomeos_usr_${sdk_version} {
-            image = "/usr-image/usr.squashfs"
-            partition-type-uuid = "%{usr-uuid}"
-            partition-uuid = "${usr_part_uuid}"
-            size = "10G"
-        }
         partition gnomeos_usr_v_${sdk_version} {
             partition-type-uuid = "%{usr-verity-uuid}"
             partition-uuid = "${usr_verity_part_uuid}"
             image = "/usr-image/usr.verity"
-            size = "64M"
+            size = "81M"
+        }
+        partition gnomeos_usr_${sdk_version} {
+            image = "/usr-image/usr.squashfs"
+            partition-type-uuid = "%{usr-uuid}"
+            partition-uuid = "${usr_part_uuid}"
+            size = "4G"
         }
     }
     config {
