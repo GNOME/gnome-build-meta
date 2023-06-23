@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-text-editor.git
   track: main
-  ref: 44.0-34-g2af6ebb93e36eab2ebe3336c19df2c401bf2f005
+  ref: 44.0-36-gc31dcd32ca51eb74af7eb767070f4e9de7d03b79
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
