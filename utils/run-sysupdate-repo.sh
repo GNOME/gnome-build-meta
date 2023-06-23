@@ -9,6 +9,9 @@ while [ $# -gt 0 ]; do
         --same-version)
             same_version=1
             ;;
+        --devel)
+            devel=1
+            ;;
         *)
             args+=("$1")
             ;;
@@ -51,8 +54,15 @@ trap cleanup EXIT
 checkout="$(mktemp -d --tmpdir="${REPO_STATE}" checkout.XXXXXXXXXX)"
 cleanup_dirs+=("${checkout}")
 
-"${BST}" build vm-secure/update-images.bst
-"${BST}" artifact checkout vm-secure/update-images.bst --directory "${checkout}"
+if [ "${devel+set}" = set ]; then
+    image=(vm-secure/update-images.bst)
+else
+    image=(vm-secure/update-images-user-only.bst)
+fi
+
+"${BST}" build "${image}"
+
+"${BST}" artifact checkout "${image}" --directory "${checkout}"
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if type -p caddy > /dev/null; then

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -eu
+
+if [ -r /etc/os-release ]; then
+  . /etc/os-release
+else
+  . /usr/lib/os-release
+fi
+
+if [ "${IMAGE_VERSION:+set}" = set ]; then
+  [ -d /run/extensions ] || mkdir -p /run/extensions
+  ln -sf "/var/lib/extensions/devel_${IMAGE_VERSION}.img" /run/extensions/devel.raw
+fi

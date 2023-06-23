@@ -17,6 +17,7 @@ config:
   - |
     prepare-image.sh \
        --sysroot /sysroot \
+       --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{uuidnamespace}" \
        --rootpasswd "root" \
        --rootsource /dev/gpt-auto-root \
