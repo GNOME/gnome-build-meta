@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: https://download.qemu.org/qemu-8.0.2.tar.xz
   ref: f060abd435fbe6794125e2c398568ffc3cfa540042596907a8b18edca34cf6a5
+- kind: patch
+  path: files/qemu/497fad38979c16b6412388927401e577eba43d26.patch
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
