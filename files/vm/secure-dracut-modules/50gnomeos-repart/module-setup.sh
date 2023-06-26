@@ -10,7 +10,11 @@ depends() {
 }
 
 install() {
+    inst_simple "${moddir}/gen-recovery-key.sh" "/usr/bin/gen-recovery-key"
     inst_simple "${moddir}/gnomeos.conf" "${systemdsystemunitdir}/systemd-repart.service.d/gnomeos.conf"
+    inst_binary dd
+    inst_binary basenc
+    inst_binary touch
 
     inst_simple "${moddir}/disable-encryption.service" "${systemdsystemunitdir}/disable-encryption.service"
     inst_simple "${moddir}/enable-encryption.service" "${systemdsystemunitdir}/enable-encryption.service"

@@ -12,6 +12,7 @@ Before=shutdown.target
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/cp -rT /sysusr/usr/lib/repart.d /run/repart.d
+ExecStart=/usr/bin/gen-recovery-key /run/recovery-password
 
 [Install]
 WantedBy=initrd.target
