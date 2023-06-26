@@ -1,17 +1,16 @@
 all: generate-keys
 	$(MAKE) download-microsoft-keys
 
-KEY_TYPES=PK KEK DB VENDOR linux-module-cert
+KEY_TYPES=PK KEK DB VENDOR MODULES
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
 BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep modules/linux-module-cert.crt
-
 KERNEL_KEYS=tpm2-pcr-private.pem tpm2-pcr-public.pem
 DIST_KEYS=private-key import-pubring.gpg
 
 generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS)
 
-modules/linux-module-cert.crt: linux-module-cert.crt
+modules/linux-module-cert.crt: MODULES.crt
 	cp $< $@
 
 tpm2-pcr-private.pem:
@@ -44,4 +43,12 @@ private-key:
 import-pubring.gpg: private-key
 	gpg --homedir=$< --export >$@
 
-.PHONY: generate-keys download-microsoft-keys
+
+clean:
+	rm -f {PK,KEK,DB,VENDOR,MODULES}.{crt,key}
+	rm -rf private-key
+	rm -f import-pubring.gpg
+	rm -f extra-{db,kek}/*.{owner,crt}
+	rm -f tpm2-pcr-{private,public}.pem
+
+.PHONY: generate-keys download-microsoft-keys clean

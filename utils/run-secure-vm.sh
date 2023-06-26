@@ -28,6 +28,9 @@ done
 : ${BST:=bst}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
 : ${IMAGE_ELEMENT:="vm-secure/image.bst"}
+: ${SIGNED_MODULES:=true}
+
+BST_OPTIONS=(-o signed_modules "${SIGNED_MODULES}")
 
 if [ "${#args[@]}" -ge 1 ]; then
     IMAGE_ELEMENT="${args[0]}"
@@ -67,8 +70,8 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
     make -C files/boot-keys generate-keys
-    "${BST}" build "${IMAGE_ELEMENT}"
-    "${BST}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
+    "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
+    "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     truncate --size 50G "${checkout}/disk.img"
     mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
     rm -rf "${checkout}"
@@ -78,7 +81,7 @@ if ! [ -f "${STATE_DIR}/OVMF_CODE.fd" ] || ! [ -f "${STATE_DIR}/OVMF_VARS_TEMPLA
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
     bst build freedesktop-sdk.bst:components/ovmf.bst
-    "${BST}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
+    "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
     cp "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd"
     cp "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd"
 fi

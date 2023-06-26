@@ -1,5 +1,10 @@
 kind: script
 
+(?):
+- not signed_modules:
+    (!): |
+      signed_modules need to be enabled
+
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/genimage.bst

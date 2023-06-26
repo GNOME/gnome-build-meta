@@ -27,6 +27,9 @@ fi
 : ${BST:=bst}
 : ${REPO_STATE:="${PWD}/secure-vm-repo"}
 : ${PORT:=8080}
+: ${SIGNED_MODULES:=true}
+
+BST_OPTIONS=(-o signed_modules "${SIGNED_MODULES}")
 
 [ -d "${REPO_STATE}" ] || mkdir -p "${REPO_STATE}"
 
@@ -60,9 +63,9 @@ else
     image=(vm-secure/update-images-user-only.bst)
 fi
 
-"${BST}" build "${image}"
+"${BST}" "${BST_OPTIONS[@]}" build "${image}"
 
-"${BST}" artifact checkout "${image}" --directory "${checkout}"
+"${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if type -p caddy > /dev/null; then
