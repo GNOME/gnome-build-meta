@@ -10,6 +10,6 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- core-deps/libgee.bst
-- sdk-deps/vala.bst
+- sdk/libgee.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

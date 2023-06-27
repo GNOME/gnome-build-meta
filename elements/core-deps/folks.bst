@@ -8,13 +8,13 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/evolution-data-server.bst
-- core-deps/libgee.bst
+- sdk/libgee.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

@@ -36,5 +36,5 @@ config:
     components/libsoup.bst: sdk/libsoup.bst
     components/pango.bst: sdk/pango.bst
     components/pygobject.bst: sdk/pygobject.bst
-    components/vala.bst: sdk-deps/vala.bst
+    components/vala.bst: sdk/vala.bst
     components/zenity.bst: void/zenity.bst

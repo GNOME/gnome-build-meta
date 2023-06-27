@@ -8,7 +8,7 @@ sources:
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

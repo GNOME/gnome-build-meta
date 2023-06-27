@@ -12,7 +12,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/systemd.bst

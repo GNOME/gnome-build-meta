@@ -10,7 +10,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

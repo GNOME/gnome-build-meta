@@ -7,7 +7,7 @@ sources:
   ref: rygel-0.42.3-2-gaf2cfae5dc9ce29a1eb79c92b6d01f18fc55db1e
 
 build-depends:
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -17,7 +17,7 @@ depends:
 - core-deps/gupnp-dlna.bst
 - core-deps/gupnp.bst
 - core-deps/libmediaart.bst
-- core-deps/libgee.bst
+- sdk/libgee.bst
 - sdk/tracker.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 

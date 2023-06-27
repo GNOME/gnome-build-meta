@@ -6,7 +6,7 @@ sources:
 
 build-depends:
 - sdk/appstream-glib.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

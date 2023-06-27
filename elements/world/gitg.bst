@@ -7,7 +7,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -21,7 +21,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- core-deps/libgee.bst
+- sdk/libgee.bst
 - sdk/libsecret.bst
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

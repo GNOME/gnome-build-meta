@@ -11,7 +11,7 @@ sources:
   ref: 6798b38d4d66d069751151b3e9a202c6de8d7f3c
 
 build-depends:
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
