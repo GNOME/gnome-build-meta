@@ -440,7 +440,7 @@ test-s3-image:
     echo "Calculating checksums of test media"
     sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
-    disk_size_gb=10
+    disk_size_gb=12
     echo "Expanding disk image to ${disk_size_gb}GB"
     dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
   script:
