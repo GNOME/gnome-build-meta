@@ -6,7 +6,7 @@ sources:
   ref: 6c9ff3a7576c3d61264f386030f47ee467eb7298c8104367002986e008765667
 
 build-depends:
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/systemd.bst

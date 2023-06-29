@@ -10,7 +10,6 @@ depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-agent.bst
 - sdk/sysprof-minimal.bst
-- sdk/vala.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/libabigail.bst

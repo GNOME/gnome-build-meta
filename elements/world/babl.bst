@@ -5,7 +5,7 @@ sources:
   ref: d325135d3304f088c134cc620013acf035de2e5d125a50a2d91054e7377c415f
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

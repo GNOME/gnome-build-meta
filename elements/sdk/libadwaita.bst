@@ -11,7 +11,7 @@ build-depends:
 - sdk-deps/sassc.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

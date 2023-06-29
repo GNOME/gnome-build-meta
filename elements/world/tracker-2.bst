@@ -5,7 +5,7 @@ sources:
   track: tracker-2.3
 build-depends:
 - sdk/gtk-doc.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

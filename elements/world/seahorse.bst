@@ -7,7 +7,7 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -20,7 +20,7 @@ depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk+-3.bst
-- sdk/libgee.bst
+- core-deps/libgee.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst

@@ -20,7 +20,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst

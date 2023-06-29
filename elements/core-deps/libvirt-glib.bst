@@ -6,7 +6,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

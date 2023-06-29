@@ -6,7 +6,7 @@ sources:
 
 build-depends:
 - sdk/appstream-glib.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

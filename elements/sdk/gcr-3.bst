@@ -9,7 +9,7 @@ sources:
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/vala.bst
+- sdk-deps/vala.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
