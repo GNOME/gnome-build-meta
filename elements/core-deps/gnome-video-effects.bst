@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-video-effects.git
   track: master
-  ref: 0.6.0-6-gbd6bfdd8f5b8a2415276a45d33bc2c509578c4bc
+  ref: 0.6.0-9-g7cc4b5ee9fbd0f5e5db3537dcbca8e6f2f0edbec
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

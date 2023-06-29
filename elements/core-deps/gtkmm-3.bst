@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:gtkmm.git
   track: gtkmm-3-24
-  ref: 3.24.7-12-ga80f07a1ca3564745052dece76f72f4e2dbf3d3a
+  ref: 3.24.7-13-g4ce4eb10cdcf1f63a200e82f801034c6525a978d
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
