@@ -3,6 +3,7 @@ build-depends:
 - flatpak/platform-manifest.bst
 - sdk-platform.bst
 - sdk/os-release.bst
+- freedesktop-sdk.bst:components/fontconfig-flatpak-config.bst
 - freedesktop-sdk.bst:components/nsswitch-config.bst
 - freedesktop-sdk.bst:components/python3-sitecustomize.bst
 - freedesktop-sdk.bst:components/python3-usercustomize.bst
