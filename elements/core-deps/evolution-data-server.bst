@@ -7,7 +7,7 @@ sources:
   ref: 3.48.0-52-gf7537f67dfed2bb099d357bfbe19839041e141a1
 
 build-depends:
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 

@@ -7,7 +7,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst

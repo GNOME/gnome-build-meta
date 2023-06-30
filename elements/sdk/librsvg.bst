@@ -907,7 +907,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst

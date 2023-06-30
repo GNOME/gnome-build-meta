@@ -7,7 +7,7 @@ sources:
   ref: 45.alpha-0-g722d8d40e2be2ea5dd84992fe407ce9966b9a473
 
 build-depends:
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
@@ -18,6 +18,6 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/libadwaita.bst
-- core-deps/libgee.bst
+- sdk/libgee.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

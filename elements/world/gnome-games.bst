@@ -4,7 +4,7 @@ sources:
   url: gnome:gnome-games.git
   track: master
 build-depends:
-- sdk-deps/vala.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/grilo-plugins.bst
