@@ -5,6 +5,8 @@ sources:
   track: master
   track-tags: True
   ref: freedesktop-sdk-23.08beta.5-55-g1cd5d52b2721e87dcdff595bfd5eedb6a89af082
+- kind: patch
+  path: files/freedesktop-sdk/0001-cairo-Update-to-1.17.8-and-switch-to-meson.patch
 config:
   options:
     target_arch: '%{arch}'

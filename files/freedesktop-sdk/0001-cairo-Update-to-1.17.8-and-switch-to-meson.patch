@@ -1,0 +1,282 @@
+From 56137ae1bfdd484a05e79f3a113e9fc85066ff75 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sun, 2 Jul 2023 13:37:32 +0300
+Subject: [PATCH] cairo: Update to 1.17.8 and switch to meson
+
+---
+ elements/components/cairo.bst                 |  30 ++---
+ patches/cairo/CVE-2020-35492.patch            | 125 ------------------
+ ...or_tolerance_normalized-fix-infinite.patch |  36 -----
+ patches/cairo/cairo-CVE-2018-19876.patch      |  30 -----
+ 4 files changed, 11 insertions(+), 210 deletions(-)
+ delete mode 100644 patches/cairo/CVE-2020-35492.patch
+ delete mode 100644 patches/cairo/_arc_max_angle_for_tolerance_normalized-fix-infinite.patch
+ delete mode 100644 patches/cairo/cairo-CVE-2018-19876.patch
+
+diff --git a/elements/components/cairo.bst b/elements/components/cairo.bst
+index 5976b3faf..f9fa8b73b 100644
+--- a/elements/components/cairo.bst
++++ b/elements/components/cairo.bst
+@@ -1,7 +1,7 @@
+-kind: autotools
++kind: meson
+ 
+ build-depends:
+-- public-stacks/buildsystem-autotools.bst
++- public-stacks/buildsystem-meson.bst
+ - components/gtk-doc.bst
+ 
+ depends:
+@@ -13,14 +13,13 @@ depends:
+ - components/fontconfig.bst
+ 
+ variables:
+-  conf-local: >-
+-    --enable-xlib
+-    --enable-ft
+-    --enable-svg
+-    --enable-ps
+-    --enable-pdf
+-    --enable-tee
+-    --enable-gobject
++  # We don't built libspectre and it would depend on ghostscript
++  # our libbfd is doesn't have what's required for symbol-lookup
++  # tests: tries to pull poppler-glib which causes a circular dep
++  meson-local: >-
++    -Dspectre=disabled
++    -Dsymbol-lookup=disabled
++    -Dtests=disabled
+ 
+ public:
+   bst:
+@@ -33,16 +32,9 @@ public:
+         - '%{libdir}/libcairo-gobject.so'
+         - '%{libdir}/libcairo.so'
+         - '%{libdir}/cairo/libcairo-trace.so'
+-  cpe:
+-    patches:
+-    - CVE-2018-19876
+-    - CVE-2020-35492
+-    - CVE-2019-6462
+ 
+ sources:
+ - kind: git_repo
+   url: freedesktop:cairo/cairo.git
+-  track: 1.*[02468].*
+-  ref: 1.16.0-0-g3ad43122b21a3299dd729dc8462d6b8f7f01142d
+-- kind: patch_queue
+-  path: patches/cairo
++  track: 1.*[024678].*
++  ref: 1.17.8-0-gc3b672634f0635af1ad0ffa8c15b34fc7c1035cf
+diff --git a/patches/cairo/CVE-2020-35492.patch b/patches/cairo/CVE-2020-35492.patch
+deleted file mode 100644
+index e52bda886..000000000
+--- a/patches/cairo/CVE-2020-35492.patch
++++ /dev/null
+@@ -1,125 +0,0 @@
+-From 03a820b173ed1fdef6ff14b4468f5dbc02ff59be Mon Sep 17 00:00:00 2001
+-From: Heiko Lewin <heiko.lewin@worldiety.de>
+-Date: Tue, 15 Dec 2020 16:48:19 +0100
+-Subject: [PATCH] Fix mask usage in image-compositor
+-
+----
+- src/cairo-image-compositor.c                |   8 ++--
+- test/Makefile.sources                       |   1 +
+- test/bug-image-compositor.c                 |  39 ++++++++++++++++++++
+- test/reference/bug-image-compositor.ref.png | Bin 0 -> 185 bytes
+- 4 files changed, 44 insertions(+), 4 deletions(-)
+- create mode 100644 test/bug-image-compositor.c
+- create mode 100644 test/reference/bug-image-compositor.ref.png
+-
+-diff --git a/src/cairo-image-compositor.c b/src/cairo-image-compositor.c
+-index 79ad69f68..4f8aaed99 100644
+---- a/src/cairo-image-compositor.c
+-+++ b/src/cairo-image-compositor.c
+-@@ -2610,14 +2610,14 @@ _inplace_src_spans (void *abstract_renderer, int y, int h,
+- 		    unsigned num_spans)
+- {
+-     cairo_image_span_renderer_t *r = abstract_renderer;
+--    uint8_t *m;
+-+    uint8_t *m, *base = (uint8_t*)pixman_image_get_data(r->mask);
+-     int x0;
+- 
+-     if (num_spans == 0)
+- 	return CAIRO_STATUS_SUCCESS;
+- 
+-     x0 = spans[0].x;
+--    m = r->_buf;
+-+    m = base;
+-     do {
+- 	int len = spans[1].x - spans[0].x;
+- 	if (len >= r->u.composite.run_length && spans[0].coverage == 0xff) {
+-@@ -2655,7 +2655,7 @@ _inplace_src_spans (void *abstract_renderer, int y, int h,
+- 				      spans[0].x, y,
+- 				      spans[1].x - spans[0].x, h);
+- 
+--	    m = r->_buf;
+-+	    m = base;
+- 	    x0 = spans[1].x;
+- 	} else if (spans[0].coverage == 0x0) {
+- 	    if (spans[0].x != x0) {
+-@@ -2684,7 +2684,7 @@ _inplace_src_spans (void *abstract_renderer, int y, int h,
+- #endif
+- 	    }
+- 
+--	    m = r->_buf;
+-+	    m = base;
+- 	    x0 = spans[1].x;
+- 	} else {
+- 	    *m++ = spans[0].coverage;
+-diff --git a/test/Makefile.sources b/test/Makefile.sources
+-index 7eb73647f..86494348d 100644
+---- a/test/Makefile.sources
+-+++ b/test/Makefile.sources
+-@@ -34,6 +34,7 @@ test_sources = \
+- 	bug-source-cu.c					\
+- 	bug-extents.c					\
+- 	bug-seams.c					\
+-+	bug-image-compositor.c				\
+- 	caps.c						\
+- 	checkerboard.c					\
+- 	caps-joins.c					\
+-diff --git a/test/bug-image-compositor.c b/test/bug-image-compositor.c
+-new file mode 100644
+-index 000000000..fc4fd370b
+---- /dev/null
+-+++ b/test/bug-image-compositor.c
+-@@ -0,0 +1,39 @@
+-+#include "cairo-test.h"
+-+
+-+static cairo_test_status_t
+-+draw (cairo_t *cr, int width, int height)
+-+{
+-+    cairo_set_source_rgb (cr, 0., 0., 0.);
+-+    cairo_paint (cr);
+-+
+-+    cairo_set_source_rgb (cr, 1., 1., 1.);
+-+    cairo_set_line_width (cr, 1.);
+-+
+-+    cairo_pattern_t *p = cairo_pattern_create_linear (0, 0, width, height);
+-+    cairo_pattern_add_color_stop_rgb (p, 0, 0.99, 1, 1);
+-+    cairo_pattern_add_color_stop_rgb (p, 1, 1, 1, 1);
+-+    cairo_set_source (cr, p);
+-+
+-+    cairo_move_to (cr, 0.5, -1);
+-+    for (int i = 0; i < width; i+=3) {
+-+	cairo_rel_line_to (cr, 2, 2);
+-+	cairo_rel_line_to (cr, 1, -2);
+-+    }
+-+
+-+    cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+-+    cairo_stroke (cr);
+-+
+-+    cairo_pattern_destroy(p);
+-+
+-+    return CAIRO_TEST_SUCCESS;
+-+}
+-+
+-+
+-+CAIRO_TEST (bug_image_compositor,
+-+	    "Crash in image-compositor",
+-+	    "stroke, stress", /* keywords */
+-+	    NULL, /* requirements */
+-+	    10000, 1,
+-+	    NULL, draw)
+-+	    
+-+	    
+-diff --git a/test/reference/bug-image-compositor.ref.png b/test/reference/bug-image-compositor.ref.png
+-new file mode 100644
+-index 0000000000000000000000000000000000000000..939f659d2c8620e9927a3a79f5e96fb639c418be
+-GIT binary patch
+-literal 185
+-zcmeAS@N?(olHy`uVBq!ia0y~yP!|BQ89A7M<o7+wF+hqf$=lt9;Xep2*t>i(P$bXO
+-z#WAE}&f8-f1se=_SPWL_NSx=C)BnJ0eBr6Z%1egFEOv(*t#+|{>X&v^RS7GQe(vez
+-lf)$wgmAfM(p2Sx&&i!{gWy)N&qd=P(JYD@<);T3K0RWsgHuC@g
+-
+-literal 0
+-HcmV?d00001
+-
+--- 
+-GitLab
+-
+diff --git a/patches/cairo/_arc_max_angle_for_tolerance_normalized-fix-infinite.patch b/patches/cairo/_arc_max_angle_for_tolerance_normalized-fix-infinite.patch
+deleted file mode 100644
+index 524632c57..000000000
+--- a/patches/cairo/_arc_max_angle_for_tolerance_normalized-fix-infinite.patch
++++ /dev/null
+@@ -1,36 +0,0 @@
+-From ab2c5ee21e5f3d3ee4b3f67cfcd5811a4f99c3a0 Mon Sep 17 00:00:00 2001
+-From: Heiko Lewin <hlewin@gmx.de>
+-Date: Sun, 1 Aug 2021 11:16:03 +0000
+-Subject: [PATCH] _arc_max_angle_for_tolerance_normalized: fix infinite loop
+-
+----
+- src/cairo-arc.c | 4 +++-
+- 1 file changed, 3 insertions(+), 1 deletion(-)
+-
+-diff --git a/src/cairo-arc.c b/src/cairo-arc.c
+-index 390397bae..1c891d1a0 100644
+---- a/src/cairo-arc.c
+-+++ b/src/cairo-arc.c
+-@@ -90,16 +90,18 @@ _arc_max_angle_for_tolerance_normalized (double tolerance)
+- 	{ M_PI / 11.0,  9.81410988043554039085e-09 },
+-     };
+-     int table_size = ARRAY_LENGTH (table);
+-+    const int max_segments = 1000; /* this value is chosen arbitrarily. this gives an error of about 1.74909e-20 */
+- 
+-     for (i = 0; i < table_size; i++)
+- 	if (table[i].error < tolerance)
+- 	    return table[i].angle;
+- 
+-     ++i;
+-+
+-     do {
+- 	angle = M_PI / i++;
+- 	error = _arc_error_normalized (angle);
+--    } while (error > tolerance);
+-+    } while (error > tolerance && i < max_segments);
+- 
+-     return angle;
+- }
+--- 
+-2.37.0
+-
+diff --git a/patches/cairo/cairo-CVE-2018-19876.patch b/patches/cairo/cairo-CVE-2018-19876.patch
+deleted file mode 100644
+index c9cd71f4a..000000000
+--- a/patches/cairo/cairo-CVE-2018-19876.patch
++++ /dev/null
+@@ -1,30 +0,0 @@
+-From 90e85c2493fdfa3551f202ff10282463f1e36645 Mon Sep 17 00:00:00 2001
+-From: Carlos Garcia Campos <cgarcia@igalia.com>
+-Date: Mon, 19 Nov 2018 12:33:07 +0100
+-Subject: [PATCH] ft: Use FT_Done_MM_Var instead of free when available in
+- cairo_ft_apply_variations
+-
+-Fixes a crash when using freetype >= 2.9
+----
+- src/cairo-ft-font.c | 4 ++++
+- 1 file changed, 4 insertions(+)
+-
+-diff --git a/src/cairo-ft-font.c b/src/cairo-ft-font.c
+-index 325dd61b4..981973f78 100644
+---- a/src/cairo-ft-font.c
+-+++ b/src/cairo-ft-font.c
+-@@ -2393,7 +2393,11 @@ skip:
+- done:
+-         free (coords);
+-         free (current_coords);
+-+#if HAVE_FT_DONE_MM_VAR
+-+        FT_Done_MM_Var (face->glyph->library, ft_mm_var);
+-+#else
+-         free (ft_mm_var);
+-+#endif
+-     }
+- }
+- 
+--- 
+-2.18.1
+-
+-- 
+2.41.0
+
