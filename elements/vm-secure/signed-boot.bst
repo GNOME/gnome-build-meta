@@ -61,7 +61,9 @@ config:
       --osrel=osrel.section \
       --cmdline=cmdline.section \
       --initrd=initrd.section \
-      --phase=enter-initrd \
+      --phase="enter-initrd" \
+      --phase="enter-initrd:leave-initrd" \
+      --phase="enter-initrd:leave-initrd:sysinit" \
       --pcrpkey=tpm2-pcr-public.pem \
       --private-key=tpm2-pcr-private.pem \
       --public-key=tpm2-pcr-public.pem >tpm2-pcr-signature.json
