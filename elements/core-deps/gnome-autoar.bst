@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-autoar.git
-  track: master
-  ref: 0.4.4-0-gb387c2482d2a5c8efdfc8c7498f13cd3881685c0
+- kind: tar
+  url: gnome_downloads:gnome-autoar/0.4/gnome-autoar-0.4.4.tar.xz
+  ref: c0afbe333bcf3cb1441a1f574cc8ec7b1b8197779145d4edeee2896fdacfc3c2
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

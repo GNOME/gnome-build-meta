@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:libdazzle.git
-  track: master
-  ref: 3.44.0-2-ga94c074fd19a2f0d325b15c853ad600424e6040a
+- kind: tar
+  url: gnome_downloads:libdazzle/3.44/libdazzle-3.44.0.tar.xz
+  ref: 3cd3e45eb6e2680cb05d52e1e80dd8f9d59d4765212f0e28f78e6c1783d18eae
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

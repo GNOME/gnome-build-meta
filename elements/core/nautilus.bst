@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:nautilus.git
-  track: main
-  ref: 45.alpha-2-g1f73f505689ccf258883d4d9c4cde1c51fc813b4
-
+- kind: tar
+  url: gnome_downloads:nautilus/45/nautilus-45.alpha.tar.xz
+  ref: 7de7ca8d258b8a67bca20d361d1915c7c1da7331ea36ddd32b7d21b5d9698429
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

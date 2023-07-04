@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-tour.git
-  track: master
-  ref: 44.0-5-g114b62063893e043a4a457c617164fec683093b1
+- kind: tar
+  url: gnome_downloads:gnome-tour/44/gnome-tour-44.0.tar.xz
+  ref: 06de7677dd1c590d0ea33a032c9ccf4c37c62bc56215b823c879e42ee630c2b6
 - kind: cargo
   ref:
   - name: aho-corasick
@@ -143,11 +142,11 @@ sources:
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
   - name: libadwaita
-    version: 0.4.4
-    sha: 1ab9c0843f9f23ff25634df2743690c3a1faffe0a190e60c490878517eb81abf
+    version: 0.3.1
+    sha: b1c4efd2020a4fcedbad2c4a97de97bf6045e5dc49d61d5a5d0cfd753db60700
   - name: libadwaita-sys
-    version: 0.4.4
-    sha: 4231cb2499a9f0c4cdfa4885414b33e39901ddcac61150bc0bb4ff8a57ede404
+    version: 0.3.0
+    sha: 0727b85b4fe2b1bed5ac90df6343de15cbf8118bfb96d7c3cc1512681a4b34ac
   - name: libc
     version: 0.2.140
     sha: 99227334921fae1a979cf0bfdfcc6b3e5ce376ef57e16fb6fb3ea2ed6095f80c

@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:glib-networking.git
-  track: master
-  ref: 2.76.0-8-g26465b5e8474104e988b7e336407b751ce9f7cc3
+- kind: tar
+  url: gnome_downloads:glib-networking/2.76/glib-networking-2.76.1.tar.xz
+  ref: 5c698a9994dde51efdfb1026a56698a221d6250e89dc50ebcddda7b81480a42b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

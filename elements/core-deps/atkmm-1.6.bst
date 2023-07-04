@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:atkmm.git
-  track: atkmm-2-28
-  ref: 2.28.3-8-g4132480413cd45a1ab769787e0a41a24e4388740
+- kind: tar
+  url: gnome_downloads:atkmm/2.28/atkmm-2.28.3.tar.xz
+  ref: 7c2088b486a909be8da2b18304e56c5f90884d1343c8da7367ea5cd3258b9969
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

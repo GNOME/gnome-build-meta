@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:libpanel.git
-  track: main
-  ref: 1.2.0-57-g899cfc45774751f0e4d779a941eddc6b58b09188
+- kind: tar
+  url: gnome_downloads:libpanel/1.2/libpanel-1.2.0.tar.xz
+  ref: d9055bbbab9625f3f5ce6d1fd7132eb6ea34a6ba07a87e9938901fb8b31581e2
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

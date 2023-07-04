@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:gnome-menus.git
-  track: master
-  ref: 3.36.0-19-g8eef8231a90094a1333ef3b5bce64046e8583870
+- kind: tar
+  url: gnome_downloads:gnome-menus/3.36/gnome-menus-3.36.0.tar.xz
+  ref: d9348f38bde956fc32753b28c1cde19c175bfdbf1f4d5b06003b3aa09153bb1f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

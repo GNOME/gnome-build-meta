@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gnome-video-effects.git
-  track: master
-  ref: 0.6.0-12-gac6bece4acafe891ddaed2709c384bd278014aa2
+- kind: tar
+  url: gnome_downloads:gnome-video-effects/0.6/gnome-video-effects-0.6.0.tar.xz
+  ref: d7aeaeb46b3f5a832fb2e0d90b42bf8c6160202ca52ac9add17afce192e3c8a8
 build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:libnma.git
-  track: main
-  ref: 1.10.7-dev-2-gd48911ca5f7ad4fbc44fef08df57e5fd844ba862
-
+- kind: tar
+  url: gnome_downloads:libnma/1.10/libnma-1.10.6.tar.xz
+  ref: 53a6fb2b190ad37c5986caed3e98bede7c3c602399ee4f93c8fc054303d76dab
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

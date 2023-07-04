@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:tracker.git
-  track: master
-  ref: 3.6.alpha-0-g596a9f3cfe0c5a5a0fd6eb6eee4165d601139c03
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
-
+- kind: tar
+  url: gnome_downloads:tracker/3.6/tracker-3.6.alpha.tar.xz
+  ref: 8eb1054f84afd1f1a72e0d9afd5b44fb81e2f8d26863e43d567e88da656ef297
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

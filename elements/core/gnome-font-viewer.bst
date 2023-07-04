@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-font-viewer.git
-  track: main
-  ref: 45.alpha-1-gb52578254773d7560dbe54ec0766cf481f1bb956
-
+- kind: tar
+  url: gnome_downloads:gnome-font-viewer/45/gnome-font-viewer-45.alpha.tar.xz
+  ref: 0fe93cd5917be8262e8841611e1bcf92c436db4c37185fa66b05af9339023c79
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

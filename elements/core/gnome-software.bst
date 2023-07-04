@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-software.git
-  track: main
-  ref: 45.alpha-4-g40fa7c14eba01da7a5e306b86930944debb80196
-- kind: git_module
-  url: gnome_gitlab:mwleeds/gnome-pwa-list.git
-  path: subprojects/gnome-pwa-list
-  ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
-
+- kind: tar
+  url: gnome_downloads:gnome-software/45/gnome-software-45.alpha.tar.xz
+  ref: 88bd4bde9189852e546669ff30acfbc0a3c165ca47e20031e388831f1af47379
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
