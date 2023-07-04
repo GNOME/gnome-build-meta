@@ -231,6 +231,47 @@ vm-image-x86_64:
   variables:
     IMAGE: vm/image.bst
 
+sysupdate-image-x86_64:
+  extends:
+  - .x86_64
+  rules:
+  - if: $CI_PIPELINE_SOURCE != "schedule"
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  when: manual
+  stage: deploy
+  script:
+  - |
+    if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+      make -C files/boot-keys generate-keys IMPORT_MODE=import
+    else
+      make -C files/boot-keys generate-keys
+    fi
+
+  - |
+    build_num="${CI_JOB_ID}"
+    if [ "${CI_COMMIT_BRANCH-}" = master ]; then
+      IMAGE_VERSION="nightly.$build_num"
+    else
+      # Assume this will always be a stable branch string like "gnome-44"
+      IMAGE_VERSION=$(echo "${CI_COMMIT_REF_SLUG:-unknown}.$build_num" | sed "s/-/_/g")
+    fi
+
+    echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
+    export IMAGE_VERSION
+
+  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) -o signed_modules true -o secure_image_installer true  build vm-secure/image.bst vm-secure/update-images.bst iso/image.bst
+
+  - ${BST} -o arch "${ARCH}" -o signed_modules true artifact checkout --hardlinks vm-secure/image.bst --directory image/
+  - ${BST} -o arch "${ARCH}" -o signed_modules true artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+  - ${BST} -o arch "${ARCH}" -o signed_modules true -o secure_image_installer true artifact checkout --hardlinks iso/image.bst --directory iso/
+
+  - |
+    if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+        ./utils/publish-sysupdate-to-s3.sh
+    fi
+
 pinebook-pro-image:
   extends:
   - .manual-image-template
