@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:eog/44/eog-44.2.tar.xz
-  ref: 468f539f6b67ee46188170f244480cc311dd1efe4786fe1554bffe26a65c72c4
+  url: gnome_downloads:eog/44/eog-44.3.tar.xz
+  ref: d6b2d70f4b432ff8cf494c8f9029b2621d08e7817938317d64063ae6c4da9d8c
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
