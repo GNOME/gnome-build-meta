@@ -8,6 +8,7 @@ depends:
 - sdk/adobe-source-code-pro-fonts.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/at-spi2-core.bst
+- sdk/cairo.bst
 - sdk/cantarell-fonts.bst
 - sdk/enchant-2.bst
 - sdk/fcitx5-gtk.bst
