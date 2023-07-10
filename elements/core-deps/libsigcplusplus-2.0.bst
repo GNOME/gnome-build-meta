@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: github:libsigcplusplus/libsigcplusplus.git
   track: libsigc++-2-12
-  ref: 2.12.0-15-ge22668da6c8338c3d979e29a44dce9e8b902e49b
+  ref: 2.12.0-16-g8378aca2d7bd45b53f7f7fe7f4659bdd86168162
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
