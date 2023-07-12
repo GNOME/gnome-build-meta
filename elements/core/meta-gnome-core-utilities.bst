@@ -8,7 +8,6 @@
 kind: stack
 depends:
 - core/baobab.bst
-- core/cheese.bst
 - core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
@@ -30,5 +29,6 @@ depends:
 - core/gnome-weather.bst
 - core/nautilus.bst
 - core/simple-scan.bst
+- core/snapshot.bst
 - core/totem.bst
 - sdk/yelp.bst
