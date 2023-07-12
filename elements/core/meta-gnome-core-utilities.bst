@@ -8,7 +8,6 @@
 kind: stack
 depends:
 - core/baobab.bst
-- core/eog.bst
 - core/epiphany.bst
 - core/evince.bst
 - core/gnome-calculator.bst
@@ -27,6 +26,7 @@ depends:
 - core/gnome-system-monitor.bst
 - core/gnome-text-editor.bst
 - core/gnome-weather.bst
+- core/loupe.bst
 - core/nautilus.bst
 - core/simple-scan.bst
 - core/snapshot.bst
