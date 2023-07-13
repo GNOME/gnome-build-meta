@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
   track: main
-  ref: 45.alpha-21-g1290ae1170d6e6178419f3c022df2af0ddb6fd68
+  ref: 45.alpha-35-g4e340b76026ffe564941bcc7cfa8f7d2f09b2bc8
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -15,8 +15,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/libgnomekbd.bst
 - core-deps/power-profiles-daemon.bst
+- core/tecla.bst
 
 depends:
 - core-deps/ModemManager.bst

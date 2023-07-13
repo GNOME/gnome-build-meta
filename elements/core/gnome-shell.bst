@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-shell.git
   track: main
-  ref: 44.1-126-g5f22c2e450a72e1136ccc82e67c4c11972dfb5ca
+  ref: 45.alpha-26-ga5cf08ac556dc9c339c03bb8d7fb24e5c6b56d38
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -18,8 +18,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/libgnomekbd.bst
 - core-deps/libgweather.bst
+- core/tecla.bst
 - freedesktop-sdk.bst:components/geoclue.bst
 
 depends:
