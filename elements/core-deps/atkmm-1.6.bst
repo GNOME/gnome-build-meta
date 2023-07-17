@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:atkmm.git
   track: atkmm-2-28
-  ref: 2.28.3-8-g4132480413cd45a1ab769787e0a41a24e4388740
+  ref: 2.28.3-11-g151d9d72721f48312d8c3a882d2a3f707f5d92e6
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

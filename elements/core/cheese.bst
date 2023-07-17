@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:cheese.git
   track: master
-  ref: 44.0.1-3-gab37580f6a7d1b0545dd0693375e0619fa86b164
+  ref: 44.1-0-g1513eb4d705c71635cdc12712811e4f78b2983e9
 
 build-depends:
 - sdk/gobject-introspection.bst

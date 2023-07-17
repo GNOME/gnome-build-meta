@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:pangomm.git
   track: pangomm-2-46
-  ref: 2.46.3-11-g3d429861d3ce94cee43296a8bb16add70e6e6545
+  ref: 2.46.3-13-gcc618e5ea7326eac1f8943c66fbe446ab460877a
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
