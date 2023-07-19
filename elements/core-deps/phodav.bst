@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:phodav.git
   track: master
-  ref: v3.0-18-g0810bd171a59835492c08c2e86e2d0e1e315c630
+  ref: v3.0-19-g1e4f9b5263d8fb823aacddf85a4a06ef1d026160
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
