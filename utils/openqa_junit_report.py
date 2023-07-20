@@ -112,7 +112,10 @@ def parse_openqa_test_execution_time(execution: Optional[str]) -> Optional[float
         time_format = "%Mm %Ss"  # Example: "1m 2s"
         parsed_time = datetime.strptime(execution, time_format)
     elif len(parts) == 1:
-        time_format = "%Ss"  # Example: "2s"
+        if parts[0].endswith('m'):
+            time_format = "%Mm"  # Example: "1m"
+        else:
+            time_format = "%Ss"  # Example: "2s"
         parsed_time = datetime.strptime(execution, time_format)
     else:
         raise ValueError(f"Unsupported time format: {execution}")
