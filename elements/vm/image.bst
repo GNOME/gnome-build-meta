@@ -46,8 +46,9 @@ config:
   - |
     ostree admin deploy --os="gnome-os" \
          --sysroot="%{sysroot}" %{ostree-branch} \
-         --karg="rw" --karg="quiet" --karg="splash" \
-         --karg="console=tty0"
+         --karg="rw" --karg="splash" \
+         --karg="console=ttyS0" \
+         --karg="earlycon=ttyS0" 
 
   - |
     ostree admin set-origin --sysroot="%{sysroot}" \
