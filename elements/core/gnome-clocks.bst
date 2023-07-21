@@ -14,7 +14,6 @@ build-depends:
 
 depends:
 - core-deps/geocode-glib.bst
-- core-deps/gsound.bst
 - core-deps/libgweather.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
