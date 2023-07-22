@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gtk.git
   track: main
-  ref: 4.11.4-137-ge73c4fe133be29a86cde63ebddcea44bddf3fdef
+  ref: 4.11.4-166-g65623385029dddb25adf3336df9850c5064bb599
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -12,6 +12,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/pygobject.bst
 - sdk/sysprof-minimal.bst
+- freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
