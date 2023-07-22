@@ -4,10 +4,13 @@ build-depends:
 - sdk-deps/sysprof.bst
 
 runtime-depends:
+- sdk-deps/libpanel.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk.bst
+- sdk/json-glib.bst
 - sdk/libadwaita.bst
+- sdk/libdex.bst
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -24,6 +27,6 @@ public:
     # even though its a statically build dependency
     # see: sdk/glib.bst
     overlap-whitelist:
-    - '%{includedir}/sysprof-4/*.h'
+    - '%{includedir}/sysprof-6/*.h'
     - '%{libdir}/libsysprof-capture-4.a'
     - '%{libdir}/pkgconfig/sysprof-capture-4.pc'

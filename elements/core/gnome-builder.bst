@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-builder.git
   track: main
-  ref: 45.alpha-10-gf40310ab74e9e810371a8be45e113ee2280679f7
+  ref: 45.alpha-26-g207a938879bd9808b472f7aa56aba36cff8e1e55
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -21,9 +21,7 @@ depends:
 - core-deps/cmark.bst
 - core-deps/editorconfig-core-c.bst
 - core-deps/jsonrpc-glib.bst
-- core-deps/libdex.bst
 - core-deps/libgit2-glib.bst
-- core-deps/libpanel.bst
 - core-deps/libpeas.bst
 - core-deps/libportal.bst
 - core-deps/template-glib.bst
@@ -35,9 +33,11 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/libadwaita.bst
+- sdk/libdex.bst
 - sdk/librsvg.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
+- sdk-deps/libpanel.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

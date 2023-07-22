@@ -1,0 +1,100 @@
+From 63ccf65f08862a28e8fad216d5ec7d05614535d1 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Fri, 28 Jul 2023 16:23:00 +0300
+Subject: [PATCH] meson: Update the syprof wrap to 45.alpha and sysprof-6
+
+---
+ meson.build              | 28 +++++++++++++++++++++++-----
+ subprojects/libdex.wrap  |  7 +++++++
+ subprojects/sysprof.wrap |  5 ++++-
+ 3 files changed, 34 insertions(+), 6 deletions(-)
+ create mode 100644 subprojects/libdex.wrap
+
+diff --git a/meson.build b/meson.build
+index e2438d7f6..a64f64250 100644
+--- a/meson.build
++++ b/meson.build
+@@ -57,7 +57,7 @@ gbm_req = '>= 21.3'
+ libpipewire_req = '>= 0.3.33'
+ 
+ # profiler requirements
+-sysprof_req = '>= 3.37.2'
++sysprof_req = '>= 45.alpha'
+ 
+ gnome = import('gnome')
+ pkg = import('pkgconfig')
+@@ -420,8 +420,28 @@ endif
+ 
+ have_profiler = get_option('profiler')
+ if have_profiler
++  # libsysprof support
++  # This is actually not needed unless using the subproject,
++  # but meson won't reconfigure again the same subproject,
++  # so we have to check for the "superset" sysprof-6 first,
++  # so the subproject can provide all the deps we will want.
++  sysprof_dep = dependency('sysprof-6',
++    version: sysprof_req,
++    required: true,
++    default_options: [
++      'examples=false',
++      'gtk=false',
++      'tests=false',
++      'tools=false',
++      'libsysprof=true',
++      'sysprofd=bundled',
++      'help=false',
++    ],
++  )
++
+   # libsysprof-capture support
+   libsysprof_capture_dep = dependency('sysprof-capture-4',
++    version: sysprof_req,
+     required: true,
+     default_options: [
+       'examples=false',
+@@ -432,14 +452,12 @@ if have_profiler
+       'sysprofd=none',
+       'help=false',
+     ],
+-    fallback: ['sysprof', 'libsysprof_capture_dep'],
+   )
+ 
+-  if libsysprof_capture_dep.type_name() == 'pkgconfig'
+-    sysprof_dep = dependency('sysprof-4')
++  if sysprof_dep.type_name() == 'pkgconfig'
+     sysprof_dbus_interfaces_dir = sysprof_dep.get_variable('datadir') / 'dbus-1' / 'interfaces'
+   else
+-    sysprof_dbus_interfaces_dir = mutter_srcdir / 'subprojects' / 'sysprof' / 'src'
++    sysprof_dbus_interfaces_dir = mutter_srcdir / 'subprojects' / 'sysprof' / 'src' / 'sysprofd'
+   endif
+ endif
+ 
+diff --git a/subprojects/libdex.wrap b/subprojects/libdex.wrap
+new file mode 100644
+index 000000000..528c3cddb
+--- /dev/null
++++ b/subprojects/libdex.wrap
+@@ -0,0 +1,7 @@
++[wrap-git]
++directory=sysprof
++url=https://gitlab.gnome.org/GNOME/libdex.git
++revision=1ee7a3719d70180709d6c2f85c7ff47865a09cb3
++
++[provide]
++dependency_names = libdex-1
+diff --git a/subprojects/sysprof.wrap b/subprojects/sysprof.wrap
+index c8ac04ac1..7d6328c2b 100644
+--- a/subprojects/sysprof.wrap
++++ b/subprojects/sysprof.wrap
+@@ -1,4 +1,7 @@
+ [wrap-git]
+ directory=sysprof
+ url=https://gitlab.gnome.org/GNOME/sysprof.git
+-revision=02e50efa49885a5a20a84a8cd7feda10ae7e7e98
++revision=95c942d629b27739773590960e24b8d7ee65c19a
++
++[provide]
++dependency_names = sysprof-6, sysprof-capture-4
+-- 
+2.41.0
+

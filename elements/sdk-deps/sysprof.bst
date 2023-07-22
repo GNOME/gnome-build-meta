@@ -12,16 +12,23 @@ runtime-depends:
 - sdk/adwaita-icon-theme.bst
 
 depends:
+- sdk-deps/libpanel.bst
 - sdk/gtk.bst
-- sdk/libadwaita.bst
 - sdk/json-glib.bst
+- sdk/libadwaita.bst
+- sdk/libdex.bst
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-
-    -Dagent=true
+    -Dgtk=true
+    -Dsysprofd=bundled
+    -Dlibsysprof=true
+    -Dtools=true
+    -Dtests=true
+    -Dexamples=true
 
 public:
   bst:
@@ -31,11 +38,9 @@ public:
     # even though its a statically build dependency
     # see: sdk/glib.bst
     overlap-whitelist:
-    - '%{includedir}/sysprof-4/*.h'
+    - '%{includedir}/sysprof-6/*.h'
     - '%{libdir}/libsysprof-capture-4.a'
     - '%{libdir}/pkgconfig/sysprof-capture-4.pc'
     split-rules:
       sysprof-agent:
       - '%{bindir}/sysprof-agent'
-      - '%{libdir}/libsysprof-memory-4.so'
-      - '%{libdir}/libsysprof-speedtrack-4.so'
