@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:mutter.git
   track: main
-  ref: 45.alpha-3-g2be98f1d3b3c80a823f7ac3c631b97603d41f7ba
+  ref: 45.alpha-112-g358c10de14d27b2611335a2b42ea4cd0d5d8a001
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
@@ -19,6 +19,7 @@ runtime-depends:
 - core/gnome-control-center.bst
 
 depends:
+- core-deps/libei.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
