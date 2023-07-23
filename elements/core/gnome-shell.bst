@@ -4,11 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:gnome-shell.git
   track: main
-  ref: 45.alpha-66-geeea52760af4ad41f7c765b973f859e3b2699002
+  ref: 45.alpha-69-g3a54e6cfa8b1838625c97cf16b1b53eb5de76431
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 8e7a5a4c3e51007ce6579292642517e3d3eb9c50
+  ref: 000046e88714de77db320b0711af3baacb2813a2
 
 build-depends:
 - sdk-deps/sassc.bst
