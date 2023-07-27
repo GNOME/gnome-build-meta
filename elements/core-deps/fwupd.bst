@@ -34,7 +34,6 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:components/protobuf-c.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
@@ -54,6 +53,7 @@ variables:
     -Dplugin_uefi_capsule=%{plugin_uefi_capsule}
     -Defi_binary=%{efi_binary}
     -Dplugin_flashrom=disabled
+    -Dplugin_logitech_bulkcontroller=disabled
 
   plugin_dell: 'false'
   plugin_msr: 'false'
