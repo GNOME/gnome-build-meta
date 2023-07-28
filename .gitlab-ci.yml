@@ -282,6 +282,7 @@ pinetab2-image:
   extends:
   - .manual-image-template
   - .aarch64
+  when: always
   needs:
   - job: 'build-aarch64'
     artifacts: false
