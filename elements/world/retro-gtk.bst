@@ -10,8 +10,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/clutter-gtk.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- world/clutter-gtk.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

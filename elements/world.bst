@@ -9,6 +9,10 @@ depends:
 - world/bijiben.bst
 - world/cairomm.bst
 - world/chatty.bst
+- world/cheese.bst
+- world/clutter.bst
+- world/clutter-gst.bst
+- world/clutter-gtk.bst
 - world/dbus-glib.bst
 - world/endeavour.bst
 - world/evolution.bst
@@ -43,6 +47,7 @@ depends:
 - world/gnome-tetravex.bst
 - world/gnome-themes-extra.bst
 - world/gnome-tweaks.bst
+- world/gnome-video-effects.bst
 - world/gtkmm.bst
 - world/gupnp-igd.bst
 - world/hitori.bst

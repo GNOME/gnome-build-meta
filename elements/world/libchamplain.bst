@@ -12,9 +12,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
 - core-deps/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- world/clutter-gtk.bst
+- world/clutter.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

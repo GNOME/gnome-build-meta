@@ -11,8 +11,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/clutter-gtk.bst
-- core-deps/clutter.bst
 - sdk/gtk+-3.bst
+- world/clutter-gtk.bst
+- world/clutter.bst
 - world/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

@@ -14,15 +14,15 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/clutter-gst.bst
-- core-deps/clutter-gtk.bst
-- core-deps/gnome-video-effects.bst
 - core-deps/libcanberra.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
+- world/clutter-gst.bst
+- world/clutter-gtk.bst
+- world/gnome-video-effects.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
