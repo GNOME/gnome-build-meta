@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-remote-desktop.git
   track: master
-  ref: 45.alpha-0-g55855f26bbba3e95e32c791bb55914903e699c46
+  ref: 45.alpha-39-g9e77f0558789546fff0281093217c50a5352fb93
 
 build-depends:
 - core-deps/nv-codec-headers.bst
@@ -26,3 +26,7 @@ depends:
 - freedesktop-sdk.bst:components/libfdk-aac.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dtests=false
