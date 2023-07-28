@@ -5,8 +5,8 @@ use testapi;
 use gnomeutils;
 
 sub run {
-    start_app('cheese');
-    assert_screen('app_cheese_home', 10);
+    start_app('snapshot');
+    assert_screen('app_snapshot_home', 10);
     close_app;
 }
 
