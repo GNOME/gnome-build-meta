@@ -278,6 +278,16 @@ rock64-image:
   variables:
     IMAGE: boards/rock64/image.bst
 
+pinetab2-image:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+  variables:
+    IMAGE: boards/pinetab2/image.bst
+
 raspberrypi-4-image:
   extends:
   - .manual-image-template
