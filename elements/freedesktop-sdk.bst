@@ -5,6 +5,8 @@ sources:
   track: master
   track-tags: True
   ref: freedesktop-sdk-23.08beta.6-0-g9585b7f4c8f5a1a8cc2208b301930a4956c1b467
+- kind: patch
+  path: freedesktop-sdk-pinetab2.patch
 config:
   options:
     target_arch: '%{arch}'
