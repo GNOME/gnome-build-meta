@@ -22,8 +22,8 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-setuptools.bst
 
 environment:
-  BL31: "rkbin/bin/rk35/rk3568_bl31_v1.42.elf"
-  ROCKCHIP_TPL: "rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.16.bin"
+  BL31: "rkbin/bin/rk35/rk3568_bl31_v1.43.elf"
+  ROCKCHIP_TPL: "rkbin/bin/rk35/rk3566_ddr_1056MHz_v1.18.bin"
 
 variables:
   board: pinetab2-rk3566
