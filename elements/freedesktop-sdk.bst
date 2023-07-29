@@ -4,7 +4,7 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/21.08
   track-tags: true
-  ref: freedesktop-sdk-21.08.18-0-g6c50b7b5a8af558683caebbb37643d8bfcf495c0
+  ref: freedesktop-sdk-21.08.19-108-gbc44b31a1e81ba59d466e034a07916c33a674441
 config:
   options:
     target_arch: '%{arch}'
