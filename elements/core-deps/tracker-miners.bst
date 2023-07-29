@@ -13,6 +13,7 @@ build-depends:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst
+- core-deps/exempi.bst
 - core-deps/gexiv2.bst
 - core-deps/libcue.bst
 - core-deps/libgsf.bst
