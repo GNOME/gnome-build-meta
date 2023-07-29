@@ -11,7 +11,6 @@ build-depends:
 
 variables:
   linux-root: B921B045-1DF0-41C3-AF44-4C6F280D3FAE
-  ostree-branch: gnome-os/aarch64/master
   board: pinetab2-rk3566
 
   sysroot: "/sysroot"
