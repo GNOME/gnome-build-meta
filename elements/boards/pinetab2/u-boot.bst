@@ -20,6 +20,7 @@ build-depends:
 - freedesktop-sdk.bst:components/swig.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst
+- freedesktop-sdk.bst:components/python3-pyelftools.bst
 
 environment:
   BL31: "rkbin/bin/rk35/rk3568_bl31_v1.43.elf"
