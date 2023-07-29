@@ -18,8 +18,8 @@ build-depends:
 - freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/bc.bst
 - freedesktop-sdk.bst:components/swig.bst
-
-- boards/common/python3-as-python2.bst
+- freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
 
 environment:
   BL31: "rkbin/bin/rk35/rk3568_bl31_v1.42.elf"
