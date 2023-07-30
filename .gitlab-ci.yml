@@ -157,7 +157,6 @@ build-aarch64:
 generate-deploy-config:
   extends:
   - .arch-indep
-  - .deploy-rules
   needs:
   - job: 'build-x86_64'
     artifacts: false
@@ -166,29 +165,28 @@ generate-deploy-config:
   - job: 'build-aarch64'
     artifacts: false
   stage: deploy-config
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "master"
+    variables:
+      FLAT_MANAGER_SERVER: https://flat-manager.gnome.org/
+      ENVIRONMENT_NAME: flatpak-nightly
+      FLAT_MANAGER_REPO: nightly
+      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
+  - if: $CI_PIPELINE_SOURCE == "schedule"
+    when: never
+  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $FLATPAK_BRANCH =~ /beta^/
+    variables:
+      FLAT_MANAGER_SERVER: https://hub.flathub.org/
+      ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
+      FLAT_MANAGER_REPO: beta
+      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
+  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+    variables:
+      FLAT_MANAGER_SERVER: https://hub.flathub.org/
+      ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
+      FLAT_MANAGER_REPO: beta
+      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
   script:
-  - |
-    case "$FLATPAK_BRANCH" in
-      master)
-        FLAT_MANAGER_SERVER=https://flat-manager.gnome.org/
-        ENVIRONMENT_NAME=flatpak-nightly
-        FLAT_MANAGER_REPO=nightly
-        SUPPORTED_ARCHES="x86_64 i686 aarch64"
-      ;;
-      *beta)
-        FLAT_MANAGER_SERVER=https://hub.flathub.org/
-        ENVIRONMENT_NAME=flathub/$FLATPAK_BRANCH
-        FLAT_MANAGER_REPO=beta
-        SUPPORTED_ARCHES="x86_64 i686 aarch64"
-      ;;
-      *)
-        FLAT_MANAGER_SERVER=https://hub.flathub.org/
-        ENVIRONMENT_NAME=flathub/$FLATPAK_BRANCH
-        FLAT_MANAGER_REPO=stable
-        SUPPORTED_ARCHES="x86_64 i686 aarch64"
-      ;;
-    esac
-
   - |
     cat > flatpak-variables.yml << END
     variables:
