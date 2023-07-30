@@ -35,8 +35,5 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
-    -Dxmp=disabled
     -Diptc=disabled
     -Dminer_rss=false
-    -Dtiff=disabled
-    -Dgif=disabled
