@@ -13,6 +13,7 @@ depends:
 - vm/lxc.bst
 - vm/os-release-devel.bst
 - vm/toolbox.bst
+- vm/distrobox.bst
 - vm/swtpm.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst
 - freedesktop-sdk.bst:components/vim.bst
