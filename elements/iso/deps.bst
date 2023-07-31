@@ -4,6 +4,7 @@ depends:
 - iso/eos-installer-extra.bst
 - iso/installer-dirs.bst
 - iso/public-key.bst
+- vm/systemd-firstboot-config.bst
 
 - core-deps/plymouth.bst
 - vm/plymouth-gnome-theme.bst

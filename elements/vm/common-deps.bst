@@ -22,6 +22,7 @@ depends:
 - vm/nsswitch-config.bst
 - vm/systemd-repart-config.bst
 - vm/disable-iscsi.bst
+- vm/systemd-firstboot-config.bst
 
 - vm/fish.bst
 - vm/nss-mdns.bst
