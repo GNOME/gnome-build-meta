@@ -45,13 +45,18 @@ config:
     objcopy --remove-section .cmdline "linux-${version}.efi"
     objcopy --add-section .cmdline=new-cmdline.txt --set-section-flags .cmdline=data,readonly --change-section-vma .cmdline=0x30000 "linux-${version}.efi"
 
-    for section in linux osrel cmdline initrd; do
+    echo -n "${version}" >uname.txt
+    objcopy --add-section .uname=uname.txt --set-section-flags .uname=data,readonly --change-section-vma .uname=0x40000 "linux-${version}.efi"
+
+    for section in linux osrel cmdline initrd uname sbat; do
       objcopy -O binary -j".${section}" "linux-${version}.efi" "${section}.section"
     done
 
     SYSTEMD_LOG_LEVEL=debug \
       /usr/lib/systemd/systemd-measure sign \
       --linux=linux.section \
+      --uname=uname.section \
+      --sbat=sbat.section \
       --osrel=osrel.section \
       --cmdline=cmdline.section \
       --initrd=initrd.section \
@@ -62,8 +67,8 @@ config:
       --private-key=tpm2-pcr-private.pem \
       --public-key=tpm2-pcr-public.pem >tpm2-pcr-signature.json
 
-    objcopy --add-section .pcrpkey=tpm2-pcr-public.pem --set-section-flags .pcrpkey=data,readonly --change-section-vma .pcrpkey=0x40000 "linux-${version}.efi"
-    objcopy --add-section .pcrsig=tpm2-pcr-signature.json --set-section-flags .pcrsig=data,readonly --change-section-vma .pcrsig=0x50000 "linux-${version}.efi"
+    objcopy --add-section .pcrpkey=tpm2-pcr-public.pem --set-section-flags .pcrpkey=data,readonly --change-section-vma .pcrpkey=0x50000 "linux-${version}.efi"
+    objcopy --add-section .pcrsig=tpm2-pcr-signature.json --set-section-flags .pcrsig=data,readonly --change-section-vma .pcrsig=0x60000 "linux-${version}.efi"
 
     sbsign --key VENDOR.key --cert VENDOR.crt  --output "%{install-root}/boot/EFI/Linux/gnomeos_${sdk_version}.efi" "linux-${version}.efi"
     rm "%{install-root}/boot/EFI/Linux/linux-${version}.efi"
