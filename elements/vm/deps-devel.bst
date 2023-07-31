@@ -15,3 +15,4 @@ depends:
 - vm/toolbox.bst
 - vm/swtpm.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst
+- freedesktop-sdk.bst:components/vim.bst
