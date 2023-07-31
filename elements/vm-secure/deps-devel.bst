@@ -13,5 +13,4 @@ depends:
 - vm/lxc.bst
 - vm/toolbox.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
-- vm-secure/swtpm.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst

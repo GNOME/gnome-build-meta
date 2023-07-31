@@ -9,7 +9,6 @@ build-depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
-- vm-secure/swtpm.bst
 
 variables:
   uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
@@ -50,13 +49,8 @@ config:
       objcopy -O binary -j".${section}" "linux-${version}.efi" "${section}.section"
     done
 
-    mkdir tpmstate
-    swtpm_setup --tpm2 --tpmstate "${PWD}/tpmstate"
-    swtpm socket --daemon --tpmstate "dir=${PWD}/tpmstate" --tpm2 --server "type=unixio,path=${PWD}/swtpm.socket" --ctrl "type=unixio,path=${PWD}/swtpm.socket.ctrl" --flags startup-clear
-
     SYSTEMD_LOG_LEVEL=debug \
       /usr/lib/systemd/systemd-measure sign \
-      --tpm2-device="swtpm:path=${PWD}/swtpm.socket" \
       --linux=linux.section \
       --osrel=osrel.section \
       --cmdline=cmdline.section \
