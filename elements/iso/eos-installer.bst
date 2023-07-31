@@ -26,6 +26,8 @@ sources:
   path: files/eos-installer/0001-polkit-rules-use-non-sugary-closure-syntax.patch
 - kind: patch
   path: files/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
+- kind: patch
+  path: files/eos-installer/usrfs.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

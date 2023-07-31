@@ -2,9 +2,19 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
-- filename: vm/image.bst
-  config:
-    location: /images
+(?):
+  - secure_image_installer:
+      build-depends:
+        (>):
+        - filename: vm-secure/image.bst
+          config:
+            location: /images
+  - not secure_image_installer:
+      build-depends:
+        (>):
+        - filename: vm/image.bst
+          config:
+            location: /images
 
 variables:
   install-root: /images

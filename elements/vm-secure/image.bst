@@ -21,6 +21,10 @@ build-depends:
 
 environment:
   E2FSPROGS_FAKE_TIME: "1320937200"
+  XZFLAGS: -T%{max-jobs}
+
+environment-nocache:
+- XZFLAGS
 
 variables:
   uuidnamespace: 9473a621-1617-4679-87e5-031afef28359
@@ -84,3 +88,5 @@ config:
     EOF
 
   - genimage --config "%{build-root}/genimage.cfg" --rootpath /sysroot
+
+  - xz ${XZFLAGS} %{install-root}/disk.img

@@ -72,6 +72,7 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
     make -C files/boot-keys generate-keys
     "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
     "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
+    unxz "${checkout}/disk.img.xz"
     truncate --size 50G "${checkout}/disk.img"
     mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
     rm -rf "${checkout}"
