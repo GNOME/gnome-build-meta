@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:evince.git
   track: main
-  ref: 45.alpha-8-gd516b67ed1b2a7343cc61959768a623cca9e4655
+  ref: 45.alpha-11-g105e926b8c1858e4c6e67f9aac4493634f7f7131
 
 build-depends:
 - sdk/gtk-doc.bst

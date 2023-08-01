@@ -4,11 +4,11 @@ sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
   track: main
-  ref: 45.alpha-65-gf1d45b96fec1530776125f91b035c236d9c19f4f
+  ref: 45.alpha-70-ge21a04e2420598d1dd69c3c9407bad86316a568e
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 8e7a5a4c3e51007ce6579292642517e3d3eb9c50
+  ref: dbfbacc9571fade87855907b78c6ed5e27c910dd
 
 build-depends:
 - sdk/gtk-doc.bst

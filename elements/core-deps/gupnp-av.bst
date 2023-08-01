@@ -4,9 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gupnp-av.git
   track: master
-  ref: gupnp-av-0.14.1-2-g767388bc16e08d4e1e1f419555165cc1816be931
-- kind: patch
-  path: files/gupnp-av/werror.patch
+  ref: gupnp-av-0.14.1-3-gbff65db081ee1ee5df0a42231ebf8e8fbb27cccf
 
 build-depends:
 - sdk/gobject-introspection.bst

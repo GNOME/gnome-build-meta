@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:Incubator/snapshot.git
   track: main
-  ref: 45.alpha-53-g040e3381ac8ae94703b127576ccf8e8a6b7925bf
+  ref: 45.alpha-62-ga9a6db0add78cad26bd317c11a6d5e7e93596b3c
 - kind: cargo
 
   ref:
@@ -125,12 +125,6 @@ sources:
   - name: digest
     version: 0.10.7
     sha: 9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292
-  - name: dlib
-    version: 0.5.2
-    sha: 330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412
-  - name: downcast-rs
-    version: 1.2.0
-    sha: 9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650
   - name: enumflags2
     version: 0.7.7
     sha: c041f5090df68b32bcd905365fd51769c8b9d553fe87fde0b683534f10c01bd2
@@ -377,9 +371,6 @@ sources:
   - name: libc
     version: 0.2.147
     sha: b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3
-  - name: libloading
-    version: 0.8.0
-    sha: d580318f95776505201b28cf98eb1fa5e4be3b689633ba6a3e6cd880ff22d8cb
   - name: linux-raw-sys
     version: 0.3.8
     sha: ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519
@@ -485,9 +476,6 @@ sources:
   - name: proc-macro2
     version: 1.0.64
     sha: 78803b62cbf1f46fde80d7c0e803111524b9877184cfe7c3033659490ac7a7da
-  - name: quick-xml
-    version: 0.28.2
-    sha: 0ce5e73202a820a31f8a0ee32ada5e21029c81fd9e3ebf668a40832e4219d9d1
   - name: quote
     version: 1.0.29
     sha: 573015e8ab27661678357f27dc26460738fd2b6c86e46f386fde94cb5d913105
@@ -518,9 +506,6 @@ sources:
   - name: rustix
     version: 0.37.23
     sha: 4d69718bf81c6127a49dc64e44a742e8bb9213c0ff8869a22c308f84c1d4ab06
-  - name: scoped-tls
-    version: 1.0.1
-    sha: e1cf6437eb19a8f4a6cc0f7dca544973b0b78843adbfeb3683d1a94a0024a294
   - name: semver
     version: 1.0.17
     sha: bebd363326d05ec3e2f532ab7660680f3b02130d780c299bca73469d521bc0ed
@@ -671,18 +656,6 @@ sources:
   - name: wasm-bindgen-shared
     version: 0.2.87
     sha: ca6ad05a4870b2bf5fe995117d3728437bd27d7cd5f06f13c17443ef369775a1
-  - name: wayland-backend
-    version: 0.1.2
-    sha: 41b48e27457e8da3b2260ac60d0a94512f5cba36448679f3747c0865b7893ed8
-  - name: wayland-client
-    version: 0.30.2
-    sha: 489c9654770f674fc7e266b3c579f4053d7551df0ceb392f153adb1f9ed06ac8
-  - name: wayland-scanner
-    version: 0.30.1
-    sha: b9b873b257fbc32ec909c0eb80dea312076a67014e65e245f5eb69a6b8ab330e
-  - name: wayland-sys
-    version: 0.30.1
-    sha: 96b2a02ac608e07132978689a6f9bf4214949c85998c247abadd4f4129b1aa06
   - name: web-sys
     version: 0.3.64
     sha: 9b85cbef8c220a6abc02aefd892dfc0fc23afb1c6a426316ec33253a3877249b
