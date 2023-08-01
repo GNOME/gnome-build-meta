@@ -13,3 +13,4 @@ depends:
 - vm-secure/import-deployment-pub-key.bst
 - vm-secure/os-release-user.bst
 - vm-secure/devel-extension-generator.bst
+- freedesktop-sdk.bst:components/btrfs-progs.bst

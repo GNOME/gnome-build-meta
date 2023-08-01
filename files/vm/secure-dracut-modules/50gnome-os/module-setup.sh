@@ -22,5 +22,5 @@ depends() {
 }
 
 install() {
-    inst_multiple mkfs.ext4 fsck.ext4
+    inst_multiple mkfs.ext4 mkfs.btrfs fsck.ext4 fsck.btrfs
 }
