@@ -14,3 +14,4 @@ depends:
 - vm-secure/os-release-user.bst
 - vm-secure/devel-extension-generator.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
+- core-deps/fwupd-efi-signed.bst

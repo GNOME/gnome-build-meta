@@ -29,11 +29,11 @@ config:
     sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
   - |
-    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/gnomeos/shim%{efi-arch}.efi" "/boot/EFI/gnomeos/shim%{efi-arch}.efi"
-    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/gnomeos/mm%{efi-arch}.efi" "/boot/EFI/gnomeos/mm%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "/boot/EFI/org.gnome.os/shim%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/org.gnome.os/mm%{efi-arch}.efi" "/boot/EFI/org.gnome.os/mm%{efi-arch}.efi"
     sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/BOOT/fb%{efi-arch}.efi" "/boot/EFI/BOOT/fb%{efi-arch}.efi"
-    cp "%{install-root}/boot/EFI/gnomeos/mm%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/mm%{efi-arch}.efi"
-    cp "%{install-root}/boot/EFI/gnomeos/shim%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
+    cp "%{install-root}/boot/EFI/org.gnome.os/mm%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/mm%{efi-arch}.efi"
+    cp "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
 
 sources:
 - kind: local
