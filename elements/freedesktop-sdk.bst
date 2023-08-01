@@ -39,3 +39,4 @@ config:
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
     components/zenity.bst: void/zenity.bst
+    components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
