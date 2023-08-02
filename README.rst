@@ -18,6 +18,5 @@ To update the refs you can use Toolbox along with the script in ``utils/update-r
 git push options to create a merge request.
 ::
   $ toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
-  $ toolbox enter bst2
   $ toolbox run -c bst2 ./utils/update-refs.py --new-branch
   $ git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin HEAD
