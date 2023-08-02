@@ -19,10 +19,9 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{uuidnamespace}" \
-       --rootpasswd "root" \
        --rootsource /dev/gpt-auto-root \
-       --efisource LABEL=EFI \
-       --efipath /boot >/dev/null >'%{install-root}/vars.txt'
+       --rootfstype btrfs \
+       --noboot >'%{install-root}/vars.txt'
 
   - |
     mkdir -p /sysroot/usr/share/factory

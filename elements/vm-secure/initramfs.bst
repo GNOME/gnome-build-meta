@@ -21,8 +21,8 @@ config:
     prepare-image.sh \
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
-       --efisource LABEL=EFI \
-       --efipath /boot >/dev/null
+       --rootfstype btrfs \
+       --noboot >/dev/null
 
   - dbus-uuidgen >/etc/machine-id
   - SYSTEMD_ESP_PATH=/boot bootctl --no-variables install

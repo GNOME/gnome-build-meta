@@ -24,8 +24,8 @@ config:
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
-       --efisource LABEL=EFI \
-       --efipath /boot >/dev/null >'%{install-root}/vars.txt'
+       --rootfstype btrfs \
+       --noboot >/dev/null
 
   - |
     mkdir -p /sysroot/usr/share/factory
@@ -37,8 +37,8 @@ config:
        --initscripts /etc/fdsdk/initial_scripts-devel \
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
-       --efisource LABEL=EFI \
-       --efipath /boot >/dev/null >'%{install-root}/vars-devel.txt'
+       --rootfstype btrfs \
+       --noboot >'%{install-root}/vars.txt'
 
   - |
     mkdir -p /sysroot-devel/usr/share/factory
