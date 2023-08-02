@@ -154,6 +154,11 @@ config:
     EOF
 
   - |
+    cat >/sysroot/usr/lib/tmpfiles.d/extensions.conf<<EOF
+    d /var/lib/extensions
+    EOF
+
+  - |
     mksquashfs /sysroot/usr '%{install-root}/usr_%{image-version}.squashfs'
 
   - |
