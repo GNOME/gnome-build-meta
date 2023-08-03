@@ -56,16 +56,19 @@ default:
     case "${ARCH}" in
       aarch64)
          TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
+         MAX_JOBS=$(( $(nproc) / 4 ))
          ;;
       x86_64)
          TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+         MAX_JOBS=$(( $(nproc) / 4 ))
          ;;
       i686)
          TARGETS=(flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst)
+         MAX_JOBS=2
          ;;
     esac
 
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - ${BST} --max-jobs $MAX_JOBS -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
