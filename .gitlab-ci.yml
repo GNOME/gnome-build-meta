@@ -68,6 +68,7 @@ default:
          ;;
     esac
 
+  - echo $(nproc)
   - ${BST} --max-jobs $MAX_JOBS -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
