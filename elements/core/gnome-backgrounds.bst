@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-backgrounds.git
   track: main
-  ref: 45.beta-10-gde5df3d252ce74c720df5d54edf1693af4861489
+  ref: 45.beta-11-gead74c78fee4baa27f90dfa1c7433074c00d0bd1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
