@@ -1,0 +1,18 @@
+kind: stack
+
+depends:
+- core-deps/xvfb.bst
+- core/meta-gnome-core-developer-tools.bst
+- freedesktop-sdk.bst:components/python3-buildstream2.bst
+- freedesktop-sdk.bst:components/python3-dbusmock.bst
+- freedesktop-sdk.bst:components/vim.bst
+- sdk-deps/gi-docgen.bst
+- sdk-deps/libsass.bst
+- sdk-deps/sassc.bst
+- sdk.bst
+- vm/deviced.bst
+- vm/distrobox.bst
+- vm/git-lfs.bst
+- vm/lxc.bst
+- vm/swtpm.bst
+- vm/toolbox.bst
