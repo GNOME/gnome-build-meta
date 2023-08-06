@@ -8,6 +8,8 @@ depends:
 - core-deps/plymouth.bst
 - vm/plymouth-gnome-theme.bst
 
+- vm/common-deps.bst
+
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/linux.bst
