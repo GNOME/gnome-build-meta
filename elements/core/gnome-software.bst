@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-software.git
   track: main
-  ref: 45.beta-10-ge6d8759224018820c0d390b24b5597c598877edb
+  ref: 45.beta-13-gaf014dcf27ea4c9f0b47eeb02d6f17ba2fc274fa
 - kind: git_module
   url: gnome_gitlab:mwleeds/gnome-pwa-list.git
   path: subprojects/gnome-pwa-list
