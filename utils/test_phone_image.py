@@ -22,7 +22,7 @@ PINEPHONE_PRO_DIALOGS = {
         '#',
         # Check release
         'cat /etc/os-release',
-        'ID=org.gnome.gnomeos',
+        'ID=org.gnome.os',
         # Modem status
         'eg25-manager',
         '#',  # currently errors
@@ -74,7 +74,7 @@ PINEPHONE_DIALOGS = {
         '#',
         # Check release
         'cat /etc/os-release',
-        'ID=org.gnome.gnomeos',
+        'ID=org.gnome.os',
         # Modem status
         'eg25-manager',
         '#',  # currently errors

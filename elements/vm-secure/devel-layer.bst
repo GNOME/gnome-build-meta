@@ -55,7 +55,7 @@ config:
         ;;
     esac
     cat <<EOF >/sysroot-devel/usr/lib/extension-release.d/extension-release.devel
-    ID=org.gnome.gnomeos
+    ID=org.gnome.os
     VERSION_ID=${version_id}
     EOF
 
