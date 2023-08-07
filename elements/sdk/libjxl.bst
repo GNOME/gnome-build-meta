@@ -1,9 +1,13 @@
 kind: cmake
+
 sources:
-- kind: git_tag
-  url: github:libjxl/libjxl.git
-  track: main
-  ref: v0.9-snapshot-503-ga185c22e61994416fd2820e74a61f77b14982c4a
+- kind: tar
+  url: github_files:libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz
+  ref: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
+- kind: patch
+  path: files/libjxl/0001-Migrate-the-GDK-plugin-from-skcms-to-lcms2.patch
+- kind: patch
+  path: files/libjxl/0002-Do-not-require-skcms-when-plugins-are-enabled-2592.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst

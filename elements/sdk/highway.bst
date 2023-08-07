@@ -1,11 +1,9 @@
 kind: cmake
 
 sources:
-- kind: git_tag
-  url: github:google/highway.git
-  track: master
-  track-tags: true
-  ref: 1.0.5-0-gf61a223a42460204205425604c6521c3eae03058
+- kind: tar
+  url: github_files:google/highway/archive/refs/tags/1.0.5.tar.gz
+  ref: 99b7dad98b8fa088673b720151458fae698ae5df9154016e39de4afdc23bb927
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
