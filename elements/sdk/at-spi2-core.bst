@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: gnome:at-spi2-core.git
   track: main
-  ref: AT_SPI2_CORE_2_49_90-0-gb0bc92ff0fa7e92642ce61ecb70096a4ae51593b
+  ref: AT_SPI2_CORE_2_49_90-1-gb2ead1ef73e3ab3773b00923b9f19f022ed6fe81
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

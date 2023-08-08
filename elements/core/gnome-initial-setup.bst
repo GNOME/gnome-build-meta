@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-initial-setup.git
   track: master
-  ref: 45.beta-2-g5623baefa1fbf28546b5a29b152d827a98167d9d
+  ref: 45.beta-4-ge033beb58aaf6452b8a5f86671edeb36b122c251
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
