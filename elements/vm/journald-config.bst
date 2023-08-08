@@ -1,0 +1,17 @@
+kind: manual
+
+depends:
+- filename: freedesktop-sdk.bst:components/systemd.bst
+
+variables:
+  journald-config: "%{install-root}%{indep-libdir}/systemd/journald.conf.d"
+
+config:
+  install-commands:
+  - |
+    mkdir -p "%{journald-config}"
+    install -m 644 -t "%{journald-config}" 90-persistent-journal.conf
+
+sources:
+- kind: local
+  path: files/journald/90-persistent-journal.conf
