@@ -13,7 +13,6 @@ config:
   directory: '%{prefix}'
   exclude:
   - debug
-  - docs
   - locale
 
   metadata:
@@ -32,11 +31,6 @@ config:
 
     Extension org.gnome.Sdk.Debug:
       directory: lib/debug
-
-    Extension org.gnome.Sdk.Docs:
-      directory: share/runtime/docs
-      autodelete: 'true'
-      no-autodownload: 'true'
 
     Extension org.gnome.Sdk.Locale:
       directory: share/runtime/locale

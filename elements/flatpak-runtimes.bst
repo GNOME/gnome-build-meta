@@ -11,7 +11,6 @@ build-depends:
         - flatpak/platform-locale.bst
         - flatpak/sdk.bst
         - flatpak/sdk-debug.bst
-        - flatpak/sdk-docs.bst
         - flatpak/sdk-locale.bst
         config:
           flatpak-image: true

@@ -20,7 +20,5 @@ config:
 public:
   bst:
     split-rules:
-      docs:
-      - '%{datadir}/runtime/docs/**'
       locale:
       - '%{datadir}/runtime/locale/**'
