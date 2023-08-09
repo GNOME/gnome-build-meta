@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:cheese/44/cheese-44.0.1.tar.xz
-  ref: d922401272cdd415c292703e52c6b364466a0b20ee1db320251644c283606fd4
+  url: gnome_downloads:cheese/44/cheese-44.1.tar.xz
+  ref: 5f2185c4c99e54ddf2b8baf60c82819950e54952e132e8639875f3edcbf8f68e
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
