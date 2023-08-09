@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gvfs.git
-  track: master
-  ref: 1.51.90-1-g31ab12ae72b1712711b89c4280bd6e9a9a462222
-
+- kind: tar
+  url: gnome_downloads:gvfs/1.51/gvfs-1.51.90.tar.xz
+  ref: c05aaa7cf463540fb8c9097cf9b77d92f2c8e0de1dcd643afb14c1284f823bdd
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_tag
-  url: gnome:mobile-broadband-provider-info.git
-  track: main
-  ref: 20230416-9-gaa934194c825652f488b80112f90182bcc8a8f73
-
+- kind: tar
+  url: gnome_downloads:mobile-broadband-provider-info/20230416/mobile-broadband-provider-info-20230416.tar.xz
+  ref: e3e140aa2db769b299d1df86a890e948ab99d4d38831302c452d1fb7f8568aec
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:glibmm.git
-  track: glibmm-2-66
-  ref: 2.66.6-9-g540e651b680abff7ad2bbfca94cb52ac23a3b9c0
+- kind: tar
+  url: gnome_downloads:glibmm/2.66/glibmm-2.66.6.tar.xz
+  ref: 5358742598181e5351d7bf8da072bf93e6dd5f178d27640d4e462bc8f14e152f
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

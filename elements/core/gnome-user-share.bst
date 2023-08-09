@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:gnome-user-share.git
-  track: master
-  ref: 43.0-10-g3f7e3999b9172c6beaddd3ae0320e16662525cf2
-
+- kind: tar
+  url: gnome_downloads:gnome-user-share/43/gnome-user-share-43.0.tar.xz
+  ref: 0df306aa0558313f353ef7f51bfa27c036281adc45677e1cfbfa7c9f861538ce
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

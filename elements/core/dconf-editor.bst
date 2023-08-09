@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:dconf-editor.git
-  track: master
-  ref: 43.0-19-gf9dddf68d680748744c8d775377b60de55e01a2b
-
+- kind: tar
+  url: gnome_downloads:dconf-editor/43/dconf-editor-43.0.tar.xz
+  ref: 935a3c2dd76cc2a93cd5aee9a54d3947fb111eb396f4b63dc5f0ba8f8d099136
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

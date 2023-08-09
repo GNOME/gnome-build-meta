@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gdm.git
-  track: main
-  ref: 44.0-92-g06bb50658ff41d7d5464d0137bac8477d691ac23
+- kind: tar
+  url: gnome_downloads:gdm/44/gdm-44.1.tar.xz
+  ref: 68266b3abe7d28fc469d0067aac9c5dabb0ca7952cc1f7c238a04951f3dc5b0d
 - kind: local
   path: files/gdm
   directory: gdm-config

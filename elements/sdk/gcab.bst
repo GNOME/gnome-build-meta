@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: gnome:gcab.git
-  track: master
-  ref: v1.6-0-gb1a8a5867ccf0209d3e409b12986165c8f7a6fa4
+- kind: tar
+  url: gnome_downloads:gcab/1.6/gcab-1.6.tar.xz
+  ref: 2f0c9615577c4126909e251f9de0626c3ee7a152376c15b5544df10fc87e560b
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

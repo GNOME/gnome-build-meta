@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_tag
-  url: gnome:gnome-keyring.git
-  track: master
-  ref: 42.0-26-gb839689e5525a5e924916d2ebf9e68753e1f6d52
+- kind: tar
+  url: gnome_downloads:gnome-keyring/42/gnome-keyring-42.1.tar.xz
+  ref: c7f4d040cc76a6b7fe67e08ef9106911c3c80d40fc88cbfc8e2684a4c946e3e6
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst

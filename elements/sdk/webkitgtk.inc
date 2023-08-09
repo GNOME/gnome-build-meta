@@ -4,6 +4,7 @@ sources:
   ref: d1fac199c391b0eabc5f9f0e2b90de4db3a1485b40284847b180fc6a95634fe9
 - kind: patch
   path: files/webkitgtk/fix-dmabuf-renderer.patch
+
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst

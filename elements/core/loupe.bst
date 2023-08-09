@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_tag
-  url: gnome:loupe.git
-  track: main
-  ref: 45.beta.1-5-g0d597f68895ab1b6c5e75a48ebd76b2ebd18feee
+- kind: tar
+  url: gnome_downloads:loupe/45/loupe-45.beta.1.tar.xz
+  ref: b82be7ac580692c6cf563b57ffed97e4ace54585b31fd33404a406a6507746bf
 - kind: cargo
 
   ref:
@@ -24,8 +23,8 @@ sources:
     version: 1.6.0
     sha: bddcadddf5e9015d310179a59bb28c4d4b9920ad0f11e8e14dbadf654890c9a6
   - name: ashpd
-    version: 0.6.0
-    sha: a991d42db9324a71732b310446ff0d36beafafa7eaf3533a32ebe4c9c021da6e
+    version: 0.5.0
+    sha: 7370b58af1d7e96df3ca0f454b57e69acf9aa42ed2d7337bd206923bae0d5754
   - name: async-broadcast
     version: 0.5.1
     sha: 7c48ccdbf6ca6b121e0f586cbc0e73ae440e56c67c30fa0873b4e110d9c26d2b
@@ -60,8 +59,8 @@ sources:
     version: 4.4.0
     sha: ecc7ab41815b3c653ccd2978ec3255c81349336702dfdf62ee6f7069b12a3aae
   - name: async-trait
-    version: 0.1.73
-    sha: bc00ceb34980c03614e35a3a4e218276a0a824e911d07651cd0d858a51e8c0f0
+    version: 0.1.72
+    sha: cc6dde6e4ed435a4c1ee4e73592f5ba9da2151af10076cc04858746af9352d09
   - name: atomic-waker
     version: 1.1.1
     sha: 1181e1e0d1fce796a03db1ae795d67167da795f9cf4a39c37589e85ef57f26d3
@@ -216,23 +215,23 @@ sources:
     version: 0.18.0
     sha: 3f9839ea644ed9c97a34d129ad56d38a25e6756f99f3a88e15cd39c20629caf7
   - name: gdk4
-    version: 0.7.2
-    sha: 6982d9815ed6ac95b0467b189e81f29dea26d08a732926ec113e65744ed3f96c
+    version: 0.7.1
+    sha: 8965ed5455cbfa1eb45c14a3b971cbacb43481913a3a5b9078b2ef0d9a01bd4b
   - name: gdk4-sys
-    version: 0.7.2
-    sha: dbab43f332a3cf1df9974da690b5bb0e26720ed09a228178ce52175372dcfef0
+    version: 0.7.1
+    sha: aeffd4a7d68046c28666d817071bf025254aaed4df35099443f0c306ca6177f3
   - name: gdk4-wayland
-    version: 0.7.2
-    sha: 0db9102ff11e55bd65e153c1192abc21ddfa45ede90622e423d4e4a0e5d5f313
+    version: 0.7.1
+    sha: 25effea07ee7e272b93a896e4d7610362e784196f7e574d0d743af65eb086228
   - name: gdk4-wayland-sys
-    version: 0.7.2
-    sha: d48159be256ae0212d5a2b9884627197d08082c7168b28775b53a0f9885d5624
+    version: 0.7.0
+    sha: ea5f1c96c42eed419a1ab3957b3200e6fb9e8200975f631b40628785252bfbe3
   - name: gdk4-x11
-    version: 0.7.2
-    sha: 28c9bbf8ea1ea8469e74c3fdfafc142c9e14810a27f89ddb01b5e9076a60a450
+    version: 0.7.1
+    sha: 708033576e27bfda6c2ab1be59f19369721e90b1ea15d1538f8c598c54aebbab
   - name: gdk4-x11-sys
-    version: 0.7.2
-    sha: a3de1709370758192369f5329aa593847797f1c693c95e8a261e9b2e06a5f125
+    version: 0.7.0
+    sha: 0275444de1a02ecc8d30fe2a9d8f060e9bece2c43331a19fbf3cdef8cb496820
   - name: generic-array
     version: 0.14.7
     sha: 85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a
@@ -249,17 +248,32 @@ sources:
     version: 0.27.3
     sha: b6c80984affa11d98d1b88b66ac8853f143217b399d3c74116778ff8fdb4ed2e
   - name: gio
+    version: 0.17.10
+    sha: a6973e92937cf98689b6a054a9e56c657ed4ff76de925e36fc331a15f0c5d30a
+  - name: gio
     version: 0.18.1
     sha: 7884cba6b1c5db1607d970cadf44b14a43913d42bc68766eea6a5e2fe0891524
+  - name: gio-sys
+    version: 0.17.10
+    sha: 0ccf87c30a12c469b6d958950f6a9c09f2be20b7773f7e70d20b867fdf2628c3
   - name: gio-sys
     version: 0.18.1
     sha: 37566df850baf5e4cb0dfb78af2e4b9898d817ed9263d1090a2df958c64737d2
   - name: glib
+    version: 0.17.10
+    sha: d3fad45ba8d4d2cea612b432717e834f48031cd8853c8aaf43b2c79fec8d144b
+  - name: glib
     version: 0.18.1
     sha: 331156127e8166dd815cf8d2db3a5beb492610c716c03ee6db4f2d07092af0a7
   - name: glib-macros
+    version: 0.17.10
+    sha: eca5c79337338391f1ab8058d6698125034ce8ef31b72a442437fa6c8580de26
+  - name: glib-macros
     version: 0.18.0
     sha: 179643c50bf28d20d2f6eacd2531a88f2f5d9747dd0b86b8af1e8bb5dd0de3c0
+  - name: glib-sys
+    version: 0.17.10
+    sha: d80aa6ea7bba0baac79222204aa786a6293078c210abe69ef1336911d4bdc4f0
   - name: glib-sys
     version: 0.18.1
     sha: 063ce2eb6a8d0ea93d2bf8ba1957e78dbab6be1c2220dd3daca57d5a9d869898
@@ -273,6 +287,9 @@ sources:
     version: 0.1.0-beta.2
     sha: 49ace7fa3a7033194a59bcb5ea7d2f02b62f38cc3b6d76513962b7850415a6e8
   - name: gobject-sys
+    version: 0.17.10
+    sha: cd34c3317740a6358ec04572c1bcfd3ac0b5b6529275fae255b237b314bb8062
+  - name: gobject-sys
     version: 0.18.0
     sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
   - name: graphene-rs
@@ -282,20 +299,20 @@ sources:
     version: 0.18.1
     sha: cc4144cee8fc8788f2a9b73dc5f1d4e1189d1f95305c4cb7bd9c1af1cfa31f59
   - name: gsk4
-    version: 0.7.2
-    sha: cc25855255120f294d874acd6eaf4fbed7ce1cdc550e2d8415ea57fafbe816d5
+    version: 0.7.1
+    sha: 53b3b9e8090acb325d08cde84b30fc29b963a75fbac93160e9c5a30d2b335742
   - name: gsk4-sys
-    version: 0.7.2
-    sha: e1ecf3a63bf1223d68f80f72cc896c4d8c80482fbce1c9a12c66d3de7290ee46
+    version: 0.7.0
+    sha: 0770d1ede7189092748c4ef5b6921264eb945fd2318a58e8f59dc273000810f8
   - name: gtk4
-    version: 0.7.2
-    sha: a3b095b26f2a2df70be1805d3590eeb9d7a05ecb5be9649b82defc72dc56228c
+    version: 0.7.1
+    sha: 0973f9b9ade10fc22403810b7283d47b533033715f2aaa36288cd3bf90d63efc
   - name: gtk4-macros
-    version: 0.7.2
-    sha: d57ec49cf9b657f69a05bca8027cff0a8dfd0c49e812be026fc7311f2163832f
+    version: 0.7.1
+    sha: ae9f2c4530f3168fe506b0be7bc15f7a93ef38d020edb27d81a921a26cbca851
   - name: gtk4-sys
-    version: 0.7.2
-    sha: 7b0bdde87c50317b4f355bcbb4a9c2c414ece1b7c824fb4ad4ba8f3bdb2c6603
+    version: 0.7.0
+    sha: 19fde71ef2e78ac8fb18073c345b5f29609048d4045a345613645aa1163243c1
   - name: gvdb
     version: 0.5.1
     sha: ead1f8c5dc5917b2005de786ba61cddc239cf4327f2708ee3279f7e06536a983
@@ -303,8 +320,8 @@ sources:
     version: 0.1.8
     sha: accdaae3125caad38c7484bccbf845ad7c32464ded125bc79aea46f9b822c73c
   - name: gweather-sys
-    version: 4.3.0
-    sha: 3bba79c49adbf171bbb889e8f7f484435efc529b15eee389e3ab6d2b9f6bc0e2
+    version: 4.2.0
+    sha: 41af4f90e89ac1e4018e3b5e4f323bd673234894fd06deef3bd2beda62251fff
   - name: hashbrown
     version: 0.14.0
     sha: 2c6201b9ff9fd90a5a3bac2e56a830d0caa509576f0e503818ee82c181b3437a
@@ -369,8 +386,8 @@ sources:
     version: 0.2.147
     sha: b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3
   - name: libgweather
-    version: 4.3.0
-    sha: 30eac3918c6eb4e6834511ddfd5f7b4eb6b0a12003121320c6eea164b18a9a43
+    version: 4.2.0
+    sha: e0d9898e3f8ce0a49a978f7818b29dc63083a83e640c12f16bb3c7eb94338379
   - name: linux-raw-sys
     version: 0.3.8
     sha: ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519
@@ -384,8 +401,8 @@ sources:
     version: 0.3.0
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
   - name: log
-    version: 0.4.20
-    sha: b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f
+    version: 0.4.19
+    sha: b06a4cde4c0f271a446782e3eff8de789548ce57dbc8eca9292c27f4a42004b4
   - name: malloc_buf
     version: 0.0.6
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
@@ -470,6 +487,9 @@ sources:
   - name: proc-macro2
     version: 1.0.66
     sha: 18fb31db3f9bddb2ea821cde30a9f70117e3f119938b5ee630b7403aa6e2ead9
+  - name: quick-xml
+    version: 0.28.2
+    sha: 0ce5e73202a820a31f8a0ee32ada5e21029c81fd9e3ebf668a40832e4219d9d1
   - name: quick-xml
     version: 0.30.0
     sha: eff6510e86862b57b210fd8cbe8ed3f0d7d600b9c2863cd4549a2e033c66e956
@@ -708,8 +728,8 @@ sources:
     version: 0.48.0
     sha: 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
   - name: winnow
-    version: 0.5.10
-    sha: 5504cc7644f4b593cbc05c4a55bf9bd4e94b867c3c0bd440934174d50482427d
+    version: 0.5.7
+    sha: 19f495880723d0999eb3500a9064d8dbcf836460b24c17df80ea7b5794053aac
   - name: xdg-home
     version: 1.0.0
     sha: 2769203cd13a0c6015d515be729c526d041e9cf2c0cc478d57faee85f40c6dcd

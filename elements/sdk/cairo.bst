@@ -1,11 +1,9 @@
 kind: meson
 sources:
-- kind: git_tag
-  url: freedesktop:cairo/cairo.git
-  track: master
-  ref: 1.17.8-145-g8dbc2fd5ae4a7e501827962891de4537f9faf2b4
-- kind: patch
-  path: files/cairo/485.patch
+- kind: tar
+  url: cairo:snapshots/cairo-1.17.8.tar.xz
+  ref: 5b10c8892d1b58d70d3f0ba5b47863a061262fa56b9dc7944161f8c8b783bc64
+
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
