@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:Incubator/snapshot.git
   track: main
-  ref: 45.beta-3-geee0d57ef678ad43b99cbe737bb48de3476c5d9b
+  ref: 45.beta-5-g1013a3e45156c51841f3bfe095d0977eb2f23b75
 - kind: cargo
 
   ref:

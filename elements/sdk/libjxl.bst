@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: github:libjxl/libjxl.git
   track: main
-  ref: v0.9-snapshot-502-g88cb6b8bb1e04e7e4effbaf34d7f22ea30729073
+  ref: v0.9-snapshot-503-ga185c22e61994416fd2820e74a61f77b14982c4a
 
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libsoup.git
   track: master
-  ref: 3.4.2-3-gc07ff61f2b0b691eb93069b4f8aec13b2ebe575e
+  ref: 3.4.2-4-g49e277ec594c39af22adb1773bfd2d35d3236eae
 
 build-depends:
 - sdk-deps/gi-docgen.bst

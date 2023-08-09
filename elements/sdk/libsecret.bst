@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libsecret.git
   track: master
-  ref: 0.20.5-36-g1b6ac89c0af59e39b65e24e4f1d6c7cf122f2645
+  ref: 0.20.5-37-g28b379e39f007f9afbdc24ba21b353d3b50c39d4
 
 build-depends:
 - sdk-deps/gi-docgen.bst
