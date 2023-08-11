@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.41.6.tar.xz
-  ref: 2fded8ae76a0d94985cff9620ccba708c4576e399bbd8c4c3260fa60181c235a
-- kind: patch
-  path: files/webkitgtk/jpegxl.patch
+  url: webkitgtk:webkitgtk-2.41.90.tar.xz
+  ref: d1fac199c391b0eabc5f9f0e2b90de4db3a1485b40284847b180fc6a95634fe9
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
