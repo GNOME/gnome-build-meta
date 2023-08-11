@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:mutter.git
   track: main
-  ref: 45.beta-6-gd99407b2e88bcdc83e19d9ebd65f2d53ad2ed138
+  ref: 45.beta.1-1-gd7b3a088e14751c7960c796c0cb831b586fd291e
 - kind: patch
   path: files/mutter/0001-meson-Update-the-syprof-wrap-to-45.alpha-and-sysprof.patch
 

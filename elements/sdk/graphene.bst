@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: github:ebassi/graphene.git
   track: master
-  ref: 1.10.6-40-ga0595ecc69b60bf2ec38e283650749f316a586a7
+  ref: 1.10.6-42-g0cfa05ff62f244e4d5e7ac35a1979a23f25c5151
 
 build-depends:
 - sdk/gobject-introspection.bst
