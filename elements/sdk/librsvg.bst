@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:librsvg.git
   track: main
-  ref: 2.56.90-70-g6e30253fdbff4c7ac37fbcadc9ee55393a9a88b8
+  ref: 2.56.90-77-g847f8daacca48328a9fab549c904d71771767727
 - kind: cargo
   ref:
   - name: adler
@@ -59,8 +59,8 @@ sources:
     version: 1.3.2
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
   - name: bitflags
-    version: 2.3.3
-    sha: 630be753d4e58660abd17930c71b647fe46c27ea6b63cc59e1e3851406972e42
+    version: 2.4.0
+    sha: b4682ae6287fcf752ecaabbfcc7b6f9b72aa33933dc23a554d853aea8eea8635
   - name: block
     version: 0.1.6
     sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
@@ -830,8 +830,8 @@ sources:
     version: 0.48.0
     sha: 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
   - name: winnow
-    version: 0.5.7
-    sha: 19f495880723d0999eb3500a9064d8dbcf836460b24c17df80ea7b5794053aac
+    version: 0.5.10
+    sha: 5504cc7644f4b593cbc05c4a55bf9bd4e94b867c3c0bd440934174d50482427d
   - name: xml5ever
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
