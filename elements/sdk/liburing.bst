@@ -6,6 +6,6 @@ sources:
 - kind: patch
   path: files/liburing/0001-enable-libc.patch
 build-depends:
-  - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-  - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
