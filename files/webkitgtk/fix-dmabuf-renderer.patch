@@ -1,0 +1,42 @@
+From 9fdeffb5d0d56e7322490d611136c1575f2a76ae Mon Sep 17 00:00:00 2001
+From: Carlos Garcia Campos <cgarcia@igalia.com>
+Date: Mon, 14 Aug 2023 18:35:31 +0200
+Subject: [PATCH] REGRESSION(2.41.90): Cannot scroll certain pages opened in
+ new tabs https://bugs.webkit.org/show_bug.cgi?id=260073
+
+Reviewed by NOBODY (OOPS!).
+
+This only happens in GTK4 because the views opened in new tabs stay
+unrealized until they are shown. With the DMA-BUF rendered enabled we
+keep processing frames while the view is unrealized, just pretending
+they have been rendered on screen. This causes the page to be throttled,
+because it's visually idle, which changes the preferred frame rate from
+60 to 30. This new condition makes DisplayUpdate::relevantForUpdateFrequency()
+always return false, leaving the last frame scheduled forever, because
+DisplayRefreshMonitorClient::fireDisplayRefreshIfNeeded() doesn't update
+the m_scheduled in that particular case.
+
+* Source/WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp:
+(WebCore::DisplayRefreshMonitorClient::fireDisplayRefreshIfNeeded): Set
+m_scheduled to false when relevantForUpdateFrequency() returns false.
+---
+ .../WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp  | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Source/WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp b/Source/WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp
+index ce258728eca7f..06d752982951e 100644
+--- a/Source/WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp
++++ b/Source/WebCore/platform/graphics/DisplayRefreshMonitorClient.cpp
+@@ -52,10 +52,11 @@ void DisplayRefreshMonitorClient::fireDisplayRefreshIfNeeded(const DisplayUpdate
+     if (!m_scheduled)
+         return;
+ 
++    m_scheduled = false;
++
+     if (!displayUpdate.relevantForUpdateFrequency(m_preferredFramesPerSecond))
+         return;
+ 
+-    m_scheduled = false;
+     displayRefreshFired();
+ }
+ 
