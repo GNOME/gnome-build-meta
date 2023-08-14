@@ -32,6 +32,7 @@ depends:
 - sdk/krb5.bst
 - sdk/libadwaita.bst
 - sdk/libavif.bst
+- sdk/libdex.bst
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst

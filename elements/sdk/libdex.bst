@@ -12,8 +12,8 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/liburing.bst
 - sdk/glib.bst
+- sdk/liburing.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
