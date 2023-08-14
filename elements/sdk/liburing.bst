@@ -9,3 +9,17 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+config:
+  configure-commands:
+  - >-
+    ./configure
+    --prefix=%{prefix}
+    --mandir=%{mandir}
+    --libdir=/%{libdir}
+    --libdevdir=/%{libdir}
+    --includedir=%{includedir}
+    --datadir=%{datadir}
+  install-commands:
+    (>):
+    - rm "%{install-root}%{libdir}/liburing-ffi.a"
+    - rm "%{install-root}%{libdir}/liburing.a"
