@@ -1,0 +1,73 @@
+From 3d570d8f21a76b6f0b142414dcad79936ea58df5 Mon Sep 17 00:00:00 2001
+From: Seppo Yli-Olli <seppo.yliolli@gmail.com>
+Date: Thu, 17 Aug 2023 18:54:13 +0300
+Subject: [PATCH] Drop enable-shared for gdb
+
+---
+ elements/components/gdb.bst | 35 ++++++++---------------------------
+ 1 file changed, 8 insertions(+), 27 deletions(-)
+
+diff --git a/elements/components/gdb.bst b/elements/components/gdb.bst
+index 7641b8a93..51d959f94 100644
+--- a/elements/components/gdb.bst
++++ b/elements/components/gdb.bst
+@@ -15,12 +15,9 @@ build-depends:
+ - components/bison.bst
+ 
+ variables:
+-  conf-link-args: >-
+-    --enable-shared
+-
+-  # disable this one when gdb has caught up with binutils 2.40
+-  conf-libbfd: >-
+-    --enable-install-libbfd
++  # We are explicitly setting this as blank to suppress --enable-shared and
++  # --disable-static from global arguments.
++  conf-link-args: ""
+ 
+   conf-local: >-
+     --disable-binutils
+@@ -39,14 +36,6 @@ variables:
+     --disable-install-libiberty
+     --with-debuginfod
+     --with-separate-debug-dir="%{debugdir}"
+-    %{conf-libbfd}
+-
+-  # Work-around for missing libopcodes, remove it when gdb
+-  # gets updated and we get conflicts
+-  make-install-args: >-
+-    %{make-args}
+-    DESTDIR="%{install-root}"
+-    install install-opcodes
+ 
+ config:
+   install-commands:
+@@ -59,20 +48,12 @@ config:
+       rm -f "%{install-root}%{datadir}"/locale/*/LC_MESSAGES/bfd.mo
+       rm -f "%{install-root}%{datadir}"/locale/*/LC_MESSAGES/opcodes.mo
+ 
++    # Headers that overlap with binutils
++    - |
++      rm "%{install-root}%{includedir}/"*.h
++
+     - |
+-      rm "%{install-root}%{includedir}/ansidecl.h"
+-      rm "%{install-root}%{includedir}/bfd.h"
+-      rm "%{install-root}%{includedir}/bfdlink.h"
+-      rm "%{install-root}%{includedir}/diagnostics.h"
+-      rm "%{install-root}%{includedir}/dis-asm.h"
+-      rm "%{install-root}%{includedir}/plugin-api.h"
+-      rm "%{install-root}%{includedir}/sframe-api.h"
+-      rm "%{install-root}%{includedir}/sframe.h"
+-      rm "%{install-root}%{includedir}/symcat.h"
+-      rm "%{install-root}%{libdir}"/libsframe*
+-      rm "%{install-root}%{libdir}/libbfd.so"
+-      rm "%{install-root}%{libdir}/libopcodes.so"
+-      rm "%{install-root}%{libdir}"/lib*.a
++      rm "%{install-root}%{libdir}/"*.a
+ 
+ sources:
+ - kind: git_repo
+-- 
+2.41.0
+

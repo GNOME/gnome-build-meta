@@ -4,7 +4,9 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: master
   track-tags: True
-  ref: freedesktop-sdk-23.08beta.7-0-gf1e95c88b72bb6fea9583198421da491daa1b039
+  ref: freedesktop-sdk-23.08rc.1-21-g58d95b117023918b9c99e1a72006213f92cbd1cb
+- kind: patch
+  path: files/freedesktop-sdk/0001-Drop-enable-shared-for-gdb.patch
 config:
   options:
     target_arch: '%{arch}'
