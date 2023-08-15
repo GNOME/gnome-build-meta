@@ -40,6 +40,8 @@ depends:
 - vm/NetworkManager-fortisslvpn.bst
 - vm/NetworkManager-vpnc.bst
 
+- vm/noto-cjk.bst
+
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
 
