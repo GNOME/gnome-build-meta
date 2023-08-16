@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.beta.2-5-ga1b924aecf90eda4d4286ea790e5c145766e2fc8
+  ref: 0.1.beta.2-21-gd823e6ca5487db96da33254a11b689605d9b6dda
 - kind: cargo
 
   ref:
@@ -57,8 +57,8 @@ sources:
     version: 4.4.0
     sha: ecc7ab41815b3c653ccd2978ec3255c81349336702dfdf62ee6f7069b12a3aae
   - name: async-trait
-    version: 0.1.72
-    sha: cc6dde6e4ed435a4c1ee4e73592f5ba9da2151af10076cc04858746af9352d09
+    version: 0.1.73
+    sha: bc00ceb34980c03614e35a3a4e218276a0a824e911d07651cd0d858a51e8c0f0
   - name: atomic-waker
     version: 1.1.1
     sha: 1181e1e0d1fce796a03db1ae795d67167da795f9cf4a39c37589e85ef57f26d3
@@ -279,11 +279,11 @@ sources:
     version: 0.18.0
     sha: 3f9839ea644ed9c97a34d129ad56d38a25e6756f99f3a88e15cd39c20629caf7
   - name: gdk4
-    version: 0.7.1
-    sha: 8965ed5455cbfa1eb45c14a3b971cbacb43481913a3a5b9078b2ef0d9a01bd4b
+    version: 0.7.2
+    sha: 6982d9815ed6ac95b0467b189e81f29dea26d08a732926ec113e65744ed3f96c
   - name: gdk4-sys
-    version: 0.7.1
-    sha: aeffd4a7d68046c28666d817071bf025254aaed4df35099443f0c306ca6177f3
+    version: 0.7.2
+    sha: dbab43f332a3cf1df9974da690b5bb0e26720ed09a228178ce52175372dcfef0
   - name: generic-array
     version: 0.14.7
     sha: 85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a
@@ -447,8 +447,8 @@ sources:
     version: 0.4.10
     sha: c1cc9717a20b1bb222f333e6a92fd32f7d8a18ddc5a3191a11af45dcbf4dcd16
   - name: log
-    version: 0.4.19
-    sha: b06a4cde4c0f271a446782e3eff8de789548ce57dbc8eca9292c27f4a42004b4
+    version: 0.4.20
+    sha: b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f
   - name: mac
     version: 0.1.1
     sha: c41e0c4fef86961ac6d6f8a82609f55f31b05e4fce149ac5710e439df7619ba4
@@ -504,8 +504,8 @@ sources:
     version: 0.1.14
     sha: 72ef4a56884ca558e5ddb05a1d1e7e1bfd9a68d9ed024c21704cc98872dae1bb
   - name: num-complex
-    version: 0.4.3
-    sha: 02e0d21255c828d6f128a1e41534206671e8c3ea0c62f32291e808dc82cff17d
+    version: 0.4.4
+    sha: 1ba157ca0885411de85d6ca030ba7e2a83a28636056c7c699b07c8b6f7383214
   - name: num-integer
     version: 0.1.45
     sha: 225d3389fb3509a24c93f5c29eb6bde2586b98d9f016636dff58d7c6f7569cd9
@@ -933,8 +933,8 @@ sources:
     version: 0.48.0
     sha: 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
   - name: winnow
-    version: 0.5.7
-    sha: 19f495880723d0999eb3500a9064d8dbcf836460b24c17df80ea7b5794053aac
+    version: 0.5.10
+    sha: 5504cc7644f4b593cbc05c4a55bf9bd4e94b867c3c0bd440934174d50482427d
   - name: xdg-home
     version: 1.0.0
     sha: 2769203cd13a0c6015d515be729c526d041e9cf2c0cc478d57faee85f40c6dcd
