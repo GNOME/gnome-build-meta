@@ -8,6 +8,8 @@ sources:
   path: files/toolbox/disable-zsh-completions.patch
 - kind: patch
   path: files/toolbox/riscv64-dynamic-linker.patch
+- kind: patch
+  path: files/toolbox/1340.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
