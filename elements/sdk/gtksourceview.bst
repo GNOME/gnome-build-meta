@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gtksourceview.git
   track: master
-  ref: 5.8.0-33-g845ac06d4386f91a0025555740eb0dc1cdb2c91e
+  ref: 5.8.0-34-g3a0b18464e8e10f8e800deb9ffc93d1a36f82398
 
 build-depends:
 - sdk-deps/gi-docgen.bst

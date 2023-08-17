@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.beta.2-21-gd823e6ca5487db96da33254a11b689605d9b6dda
+  ref: 0.1.beta.3-0-g8856298db75c65162a5e159679f4e9a9f15c5e7a
 - kind: cargo
 
   ref:
@@ -15,11 +15,11 @@ sources:
     version: 1.0.2
     sha: f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
   - name: aho-corasick
-    version: 1.0.3
-    sha: 86b8f9420f797f2d9e935edf629310eb938a0d839f984e25327f3c7eed22300c
+    version: 1.0.4
+    sha: 6748e8def348ed4d14996fa801f4122cd763fff530258cdc03f64b25f89d3a5a
   - name: anyhow
-    version: 1.0.72
-    sha: 3b13c32d80ecc7ab747b80c3784bce54ee8a7a0cc4fbda9bf4cda2cf6fe90854
+    version: 1.0.74
+    sha: 8c6f84b74db2535ebae81eede2f39b947dcbf01d093ae5f791e5dd414a1bf289
   - name: approx
     version: 0.5.1
     sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
@@ -213,8 +213,8 @@ sources:
     version: 0.3.0
     sha: d329bdeac514ee06249dabc27877490f17f5d371ec693360768b838e19f3ae10
   - name: flate2
-    version: 1.0.26
-    sha: 3b9429470923de8e8cbd4d2dc513535400b4b3fef0319fb5c4e1f520a7bef743
+    version: 1.0.27
+    sha: c6c98ee8095e9d1dcbf2fcc6d95acccb90d1c81db1e44725c6a984b1dbdfb010
   - name: float-cmp
     version: 0.9.0
     sha: 98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4
@@ -795,11 +795,11 @@ sources:
     version: 0.4.3
     sha: d24a120c5fc464a3458240ee02c299ebcb9d67b5249c8848b09d639dca8d7bb0
   - name: thiserror
-    version: 1.0.44
-    sha: 611040a08a0439f8248d1990b111c95baa9c704c805fa1f62104b39655fd7f90
+    version: 1.0.46
+    sha: d9207952ae1a003f42d3d5e892dac3c6ba42aa6ac0c79a6a91a2b5cb4253e75c
   - name: thiserror-impl
-    version: 1.0.44
-    sha: 090198534930841fab3a5d1bb637cde49e339654e606195f8d9c76eeb081dc96
+    version: 1.0.46
+    sha: f1728216d3244de4f14f14f8c15c79be1a7c67867d28d69b719690e2a19fb445
   - name: tiff
     version: 0.9.0
     sha: 6d172b0f4d3fba17ba89811858b9d3d97f928aece846475bbda076ca46736211
@@ -909,32 +909,32 @@ sources:
     version: 0.48.0
     sha: 677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9
   - name: windows-targets
-    version: 0.48.1
-    sha: 05d4b17490f70499f20b9e791dcf6a299785ce8af4d709018206dc5b4953e95f
+    version: 0.48.2
+    sha: d1eeca1c172a285ee6c2c84c341ccea837e7c01b12fbb2d0fe3c9e550ce49ec8
   - name: windows_aarch64_gnullvm
-    version: 0.48.0
-    sha: 91ae572e1b79dba883e0d315474df7305d12f569b400fcf90581b06062f7e1bc
+    version: 0.48.2
+    sha: b10d0c968ba7f6166195e13d593af609ec2e3d24f916f081690695cf5eaffb2f
   - name: windows_aarch64_msvc
-    version: 0.48.0
-    sha: b2ef27e0d7bdfcfc7b868b317c1d32c641a6fe4629c171b8928c7b08d98d7cf3
+    version: 0.48.2
+    sha: 571d8d4e62f26d4932099a9efe89660e8bd5087775a2ab5cdd8b747b811f1058
   - name: windows_i686_gnu
-    version: 0.48.0
-    sha: 622a1962a7db830d6fd0a69683c80a18fda201879f0f447f065a3b7467daa241
+    version: 0.48.2
+    sha: 2229ad223e178db5fbbc8bd8d3835e51e566b8474bfca58d2e6150c48bb723cd
   - name: windows_i686_msvc
-    version: 0.48.0
-    sha: 4542c6e364ce21bf45d69fdd2a8e455fa38d316158cfd43b3ac1c5b1b19f8e00
+    version: 0.48.2
+    sha: 600956e2d840c194eedfc5d18f8242bc2e17c7775b6684488af3a9fff6fe3287
   - name: windows_x86_64_gnu
-    version: 0.48.0
-    sha: ca2b8a661f7628cbd23440e50b05d705db3686f894fc9580820623656af974b1
+    version: 0.48.2
+    sha: ea99ff3f8b49fb7a8e0d305e5aec485bd068c2ba691b6e277d29eaeac945868a
   - name: windows_x86_64_gnullvm
-    version: 0.48.0
-    sha: 7896dbc1f41e08872e9d5e8f8baa8fdd2677f29468c4e156210174edc7f7b953
+    version: 0.48.2
+    sha: 8f1a05a1ece9a7a0d5a7ccf30ba2c33e3a61a30e042ffd247567d1de1d94120d
   - name: windows_x86_64_msvc
-    version: 0.48.0
-    sha: 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
+    version: 0.48.2
+    sha: d419259aba16b663966e29e6d7c6ecfa0bb8425818bb96f6f1f3c3eb71a6e7b9
   - name: winnow
-    version: 0.5.10
-    sha: 5504cc7644f4b593cbc05c4a55bf9bd4e94b867c3c0bd440934174d50482427d
+    version: 0.5.12
+    sha: 83817bbecf72c73bad717ee86820ebf286203d2e04c3951f3cd538869c897364
   - name: xdg-home
     version: 1.0.0
     sha: 2769203cd13a0c6015d515be729c526d041e9cf2c0cc478d57faee85f40c6dcd
