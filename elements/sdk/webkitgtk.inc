@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.41.90.tar.xz
-  ref: d1fac199c391b0eabc5f9f0e2b90de4db3a1485b40284847b180fc6a95634fe9
-- kind: patch
-  path: files/webkitgtk/fix-dmabuf-renderer.patch
+  url: webkitgtk:webkitgtk-2.41.91.tar.xz
+  ref: f28f6b95b939c3fd20bad21b1aa9e2eacda3621625df5b480144517cca028f46
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
