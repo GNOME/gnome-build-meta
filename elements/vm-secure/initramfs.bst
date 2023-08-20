@@ -45,9 +45,17 @@ config:
            --libdirs '%{indep-libdir}' \
            --add gnome-os
 
-  - mkdir -p '%{install-root}/boot/loader/keys/auto'
+  - |
+    mkdir -p '%{install-root}/boot/loader/keys/auto'
+    for key in PK KEK DB; do
+      cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/boot/loader/keys/auto/${key}.auth"
+    done
 
-  - cp -r '%{datadir}/efitools/efi'/{PK,KEK,DB}.auth '%{install-root}/boot/loader/keys/auto'
+  - |
+    mkdir -p '%{install-root}/boot/loader/keys/private'
+    for key in PK KEK DB; do
+      cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/boot/loader/keys/private/${key}.auth"
+    done
 
   - |
     cat <<EOF >%{install-root}/boot/loader/loader.conf
