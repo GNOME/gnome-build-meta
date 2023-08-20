@@ -6,7 +6,6 @@ build-depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 
 variables:
-  uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   (?):
   - arch == 'i686':
       efi-arch: ia32
@@ -26,7 +25,7 @@ config:
     rm -rf "%{install-root}/boot/EFI/Linux"
 
   - |
-    sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
+    install -Dm644 "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
   - |
     sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "/boot/EFI/org.gnome.os/shim%{efi-arch}.efi"
@@ -36,10 +35,6 @@ config:
     cp "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
 
 sources:
-- kind: local
-  path: files/boot-keys/VENDOR.key
-- kind: local
-  path: files/boot-keys/VENDOR.crt
 - kind: local
   path: files/boot-keys/DB.key
 - kind: local

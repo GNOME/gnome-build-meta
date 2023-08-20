@@ -15,3 +15,4 @@ depends:
 - vm-secure/devel-extension-generator.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - core-deps/fwupd-efi-signed.bst
+- vm-secure/replace-signed-systemd-boot.bst

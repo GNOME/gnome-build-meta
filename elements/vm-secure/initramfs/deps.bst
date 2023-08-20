@@ -19,3 +19,4 @@ depends:
 - vm-secure/shim.bst
 - vm-secure/os-release-user.bst
 - vm-secure/initramfs/dracut-config.bst
+- vm-secure/replace-signed-systemd-boot.bst
