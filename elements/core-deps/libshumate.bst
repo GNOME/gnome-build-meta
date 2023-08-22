@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libshumate.git
   track: main
-  ref: 1.1.beta-2-g3d3a106f79cbfb95918500cdd34190eeeada887b
+  ref: 1.1.beta-4-gc4177cd9a09323d53cba7768e85f9238f7e0bf17
 
 build-depends:
 - sdk-deps/gi-docgen.bst
