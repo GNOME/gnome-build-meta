@@ -5,6 +5,7 @@ depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
+- core-deps/xvfb.bst
 - core/meta-gnome-core-developer-tools.bst
 - vm/common-deps.bst
 - vm/deviced.bst
