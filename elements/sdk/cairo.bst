@@ -3,7 +3,7 @@ sources:
 - kind: git_tag
   url: freedesktop:cairo/cairo.git
   track: master
-  ref: 1.17.8-156-g42c986fef3b444dc36d5670ae65b8b3bb5dbeae4
+  ref: 1.17.8-158-g7645586223cea9f5313253bd8cde96a0a4007905
 - kind: patch
   path: files/cairo/485.patch
 build-depends:
