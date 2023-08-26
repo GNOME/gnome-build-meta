@@ -1,7 +1,8 @@
 [Unit]
 Description=Disable encryption
 AssertPathExists=/etc/initrd-release
-ConditionSecurity=!uefi-secureboot
+ConditionSecurity=|!uefi-secureboot
+ConditionSecurity=|!tpm2
 DefaultDependencies=no
 Conflicts=shutdown.target
 After=initrd-usr-fs.target
