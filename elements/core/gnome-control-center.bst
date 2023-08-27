@@ -4,9 +4,13 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-control-center/45/gnome-control-center-45.beta.tar.xz
   ref: 0c6c0734a01b34af9148ccf1dbcc5a959f3cf9bb04a53bd307a9f290e45ef29e
+
 build-depends:
-- sdk/gtk-doc.bst
+# These two are more like runtime deps of the tests suite
+- core-deps/setxkbmap.bst
+- core-deps/xvfb.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/gtk-doc.bst
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst
