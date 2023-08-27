@@ -4,15 +4,18 @@ sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
   track: main
-  ref: 45.beta-75-g1881d6a91f084f48b4851a8c9bc20f3af1985309
+  ref: 45.rc-13-g2fd8fdf6fe06784ad281b9ad199538eb782f677a
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
   ref: dbfbacc9571fade87855907b78c6ed5e27c910dd
 
 build-depends:
-- sdk/gtk-doc.bst
+# These two are more like runtime deps of the tests suite
+- core-deps/setxkbmap.bst
+- core-deps/xvfb.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/gtk-doc.bst
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst
