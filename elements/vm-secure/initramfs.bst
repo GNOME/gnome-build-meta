@@ -22,6 +22,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
+       --rootfsopts relatime \
        --noboot >/dev/null
 
   - dbus-uuidgen >/etc/machine-id

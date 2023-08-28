@@ -21,6 +21,7 @@ config:
        --seed "%{uuidnamespace}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
+       --rootfsopts relatime \
        --noboot >'%{install-root}/vars.txt'
 
   - |
