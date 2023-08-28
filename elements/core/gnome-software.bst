@@ -11,12 +11,12 @@ sources:
   ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
 
 build-depends:
+- core-deps/eos-updater.bst
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/eos-updater.bst
 - core-deps/fwupd.bst
 - core-deps/glib-testing.bst
 - core-deps/gnome-online-accounts.bst
