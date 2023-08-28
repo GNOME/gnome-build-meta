@@ -19,20 +19,20 @@ variables:
 config:
   install-commands:
   - |
-    cp -rT /boot "%{install-root}/boot"
+    cp -rT /efi "%{install-root}/efi"
 
   - |
-    rm -rf "%{install-root}/boot/EFI/Linux"
+    rm -rf "%{install-root}/efi/EFI/Linux"
 
   - |
-    install -Dm644 "/boot/EFI/systemd/systemd-boot%{efi-arch}.efi" "%{install-root}/boot/EFI/systemd/systemd-boot%{efi-arch}.efi"
+    install -Dm644 "/efi/EFI/systemd/systemd-boot%{efi-arch}.efi" "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
   - |
-    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "/boot/EFI/org.gnome.os/shim%{efi-arch}.efi"
-    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/org.gnome.os/mm%{efi-arch}.efi" "/boot/EFI/org.gnome.os/mm%{efi-arch}.efi"
-    sbsign --key DB.key --cert DB.crt --output "%{install-root}/boot/EFI/BOOT/fb%{efi-arch}.efi" "/boot/EFI/BOOT/fb%{efi-arch}.efi"
-    cp "%{install-root}/boot/EFI/org.gnome.os/mm%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/mm%{efi-arch}.efi"
-    cp "%{install-root}/boot/EFI/org.gnome.os/shim%{efi-arch}.efi" "%{install-root}/boot/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/efi/EFI/org.gnome.os/shim%{efi-arch}.efi" "/efi/EFI/org.gnome.os/shim%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/efi/EFI/org.gnome.os/mm%{efi-arch}.efi" "/efi/EFI/org.gnome.os/mm%{efi-arch}.efi"
+    sbsign --key DB.key --cert DB.crt --output "%{install-root}/efi/EFI/BOOT/fb%{efi-arch}.efi" "/efi/EFI/BOOT/fb%{efi-arch}.efi"
+    cp "%{install-root}/efi/EFI/org.gnome.os/mm%{efi-arch}.efi" "%{install-root}/efi/EFI/BOOT/mm%{efi-arch}.efi"
+    cp "%{install-root}/efi/EFI/org.gnome.os/shim%{efi-arch}.efi" "%{install-root}/efi/EFI/BOOT/BOOT$(echo "%{efi-arch}" | tr a-z A-Z).EFI"
 
 sources:
 - kind: local

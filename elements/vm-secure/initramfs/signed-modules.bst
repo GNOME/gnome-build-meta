@@ -16,8 +16,8 @@ config:
     cp -rT /usr/lib/modules "%{install-root}/usr/lib/modules"
 
   - |
-    mkdir -p "%{install-root}/boot"
-    cp -rT /boot "%{install-root}/boot"
+    version="$(ls -1 /usr/lib/modules | head -n1)"
+    cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}"
 
   - |
     openssl x509 -inform PEM -outform DER -in "linux-module-cert.crt" -out "linux-module-cert.cer"

@@ -25,8 +25,8 @@ variables:
 config:
   install-commands:
   - |
-    mkdir -p "%{install-root}/boot/EFI/Linux"
-    cp -rT /boot/EFI/Linux "%{install-root}/boot/EFI/Linux"
+    mkdir -p "%{install-root}/efi/EFI/Linux"
+    cp -rT /efi/EFI/Linux "%{install-root}/efi/EFI/Linux"
 
   - |
     set -x
@@ -36,7 +36,7 @@ config:
     sdk_version="${sdk_version%_*}"
     version="$(ls -1 /usr/lib/modules | head -n1)"
 
-    cp "/boot/EFI/Linux/linux-${version}.efi" "linux-${version}.efi"
+    cp "/efi/EFI/Linux/linux-${version}.efi" "linux-${version}.efi"
 
     objcopy -O binary -j .cmdline "linux-${version}.efi" cmdline.txt
     echo -n "usrhash=$(cat /usr-image/usr-root-hash.txt) " >new-cmdline.txt
@@ -70,8 +70,8 @@ config:
     objcopy --add-section .pcrpkey=tpm2-pcr-public.pem --set-section-flags .pcrpkey=data,readonly --change-section-vma .pcrpkey=0x50000 "linux-${version}.efi"
     objcopy --add-section .pcrsig=tpm2-pcr-signature.json --set-section-flags .pcrsig=data,readonly --change-section-vma .pcrsig=0x60000 "linux-${version}.efi"
 
-    sbsign --key VENDOR.key --cert VENDOR.crt  --output "%{install-root}/boot/EFI/Linux/gnomeos_${sdk_version}.efi" "linux-${version}.efi"
-    rm "%{install-root}/boot/EFI/Linux/linux-${version}.efi"
+    sbsign --key VENDOR.key --cert VENDOR.crt  --output "%{install-root}/efi/EFI/Linux/gnomeos_${sdk_version}.efi" "linux-${version}.efi"
+    rm "%{install-root}/efi/EFI/Linux/linux-${version}.efi"
 
 sources:
 - kind: local

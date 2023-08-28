@@ -30,7 +30,7 @@ config:
     image_version="${usr_img##usr_}"
     image_version="${image_version%.squashfs}"
     image_version="${image_version%_*}"
-    cp "/signed-boot/boot/EFI/Linux/gnomeos_${image_version}.efi" '%{install-root}/'
+    cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi" '%{install-root}/'
     xz ${XZFLAGS} "%{install-root}/gnomeos_${image_version}.efi"
 
   - |

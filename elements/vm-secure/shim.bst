@@ -19,7 +19,7 @@ variables:
   make-args: >-
     DEFAULT_LOADER='\\EFI\\systemd\\systemd-boot%{efi-arch}.efi'
     EFIDIR=org.gnome.os
-    ESPROOTDIR=boot/
+    ESPROOTDIR=efi/
     VENDOR_CERT_FILE=boot-keys/VENDOR.cer
 
   make: make %{make-args}

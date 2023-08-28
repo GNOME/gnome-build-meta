@@ -26,7 +26,7 @@ config:
        --noboot >/dev/null
 
   - dbus-uuidgen >/etc/machine-id
-  - SYSTEMD_ESP_PATH=/boot bootctl --no-variables install
+  - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
   - rm /etc/machine-id
 
   - |
@@ -37,34 +37,39 @@ config:
     version="$(ls -1 /lib/modules | head -n1)"
     mkdir -p "%{install-root}/usr/lib/modules/${version}"
     dracut -v --xz --reproducible --fstab \
+           --no-hostonly \
            --uefi \
            --no-machineid \
            --kver "${version}" \
-           --kernel-image /boot/vmlinuz \
            --kernel-cmdline "%{kcmdline}" \
            --libdirs '%{libdir}' \
            --libdirs '%{indep-libdir}' \
            --add gnome-os
 
   - |
-    mkdir -p '%{install-root}/boot/loader/keys/auto'
+    mkdir -p '%{install-root}/efi/loader/keys/auto'
     for key in PK KEK DB; do
-      cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/boot/loader/keys/auto/${key}.auth"
+      cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
     done
 
   - |
-    mkdir -p '%{install-root}/boot/loader/keys/private'
+    mkdir -p '%{install-root}/efi/loader/keys/private'
     for key in PK KEK DB; do
-      cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/boot/loader/keys/private/${key}.auth"
+      cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
     done
 
+  - mkdir -p "%{install-root}/efi/EFI"
+  - cp -rT /efi/EFI "%{install-root}/efi/EFI"
+
+  # dracut install on /boot because /efi is not a mountpoint
+  - mkdir -p "%{install-root}/efi/EFI/Linux"
+  - cp /boot/EFI/Linux/linux-*.efi "%{install-root}/efi/EFI/Linux/"
+
+  - mkdir -p "%{install-root}/efi/loader"
   - |
-    cat <<EOF >%{install-root}/boot/loader/loader.conf
+    cat <<EOF >%{install-root}/efi/loader/loader.conf
     timeout 3
     editor yes
     console-mode keep
     EOF
 
-  - mkdir -p "%{install-root}/boot/EFI"
-  - cp -rT /boot/EFI "%{install-root}/boot/EFI"
-  - mkdir -p "%{install-root}/boot/loader"

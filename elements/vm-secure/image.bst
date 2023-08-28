@@ -53,7 +53,7 @@ config:
         vfat {
             extraargs = "--invariant -F32 -i${id_efi} -n EFI"
         }
-        mountpoint = "/boot"
+        mountpoint = "/efi"
         size = 500M
         temporary = true
     }
