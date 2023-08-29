@@ -16,3 +16,4 @@ depends:
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - core-deps/fwupd-efi-signed.bst
 - vm-secure/replace-signed-systemd-boot.bst
+- vm-secure/efitools.bst
