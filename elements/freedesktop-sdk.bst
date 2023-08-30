@@ -2,9 +2,9 @@ kind: junction
 sources:
 - kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: master
+  track: release/23.08
   track-tags: True
-  ref: freedesktop-sdk-23.08rc.2-0-g21bd2cc655cb1108cc513ba2f4397c812689425d
+  ref: freedesktop-sdk-23.08.0-0-g1533f8d0393984f5684985c8b710e9fbaf9c8734
 config:
   options:
     target_arch: '%{arch}'
