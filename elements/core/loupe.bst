@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:loupe.git
   track: main
-  ref: 45.beta.1-42-g17e4e73fb3154c33c90297883e9aefc9af0f27ef
+  ref: 45.beta.1-48-g201355fe65c846231ab1ecbee284d60f74ef8649
 - kind: cargo
 
   ref:
@@ -15,8 +15,8 @@ sources:
     version: 1.0.2
     sha: f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
   - name: aho-corasick
-    version: 1.0.4
-    sha: 6748e8def348ed4d14996fa801f4122cd763fff530258cdc03f64b25f89d3a5a
+    version: 1.0.5
+    sha: 0c378d78423fdad8089616f827526ee33c19f2fddbd5de1629152c9593ba4783
   - name: anyhow
     version: 1.0.75
     sha: a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6
@@ -147,8 +147,8 @@ sources:
     version: 1.0.1
     sha: 5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5
   - name: errno
-    version: 0.3.2
-    sha: 6b30f669a7961ef1631673d2766cc92f52d64f7ef354d4fe0ddfd30ed52f0f4f
+    version: 0.3.3
+    sha: 136526188508e25c6fef639d7927dfb3e0e3084488bf202267829cf7fc23dbdd
   - name: errno-dragonfly
     version: 0.1.2
     sha: aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf
@@ -297,11 +297,11 @@ sources:
     version: 0.7.2
     sha: 7b0bdde87c50317b4f355bcbb4a9c2c414ece1b7c824fb4ad4ba8f3bdb2c6603
   - name: gvdb
-    version: 0.5.1
-    sha: ead1f8c5dc5917b2005de786ba61cddc239cf4327f2708ee3279f7e06536a983
+    version: 0.5.2
+    sha: 7473589355e97ab7ab46549d3786406d6fcad8837c94bb7874c18a8a3ae653fc
   - name: gvdb-macros
-    version: 0.1.8
-    sha: accdaae3125caad38c7484bccbf845ad7c32464ded125bc79aea46f9b822c73c
+    version: 0.1.9
+    sha: 6788bd2b50df206894de5d4ab1d9e8302e86c751357513b78d3e5b6cf6ac54d4
   - name: gweather-sys
     version: 4.3.0
     sha: 3bba79c49adbf171bbb889e8f7f484435efc529b15eee389e3ab6d2b9f6bc0e2
@@ -357,8 +357,8 @@ sources:
     version: 5.6.0
     sha: b9d50a4d00d909da0ec023ab34ea09bf3b3b79b5a36b3e0da3a305112edaf150
   - name: lcms2-sys
-    version: 4.0.1
-    sha: 7abb8aac1a07fd8cdffaa25461a3873a7bf7164cd20b849d44a183a1348d682f
+    version: 4.0.2
+    sha: 81057b902a5fa40801856b7b4a40e0ffcca42ee20666519bf4eebba49aff22a3
   - name: libadwaita
     version: 0.5.2
     sha: 06444f4ca05a60693da6e9e2b591bd40a298e65a118a8d5e830771718b3e0253
@@ -390,8 +390,8 @@ sources:
     version: 0.0.6
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - name: memchr
-    version: 2.5.0
-    sha: 2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d
+    version: 2.6.2
+    sha: 5486aed0026218e61b8a01d5fbd5a0a134649abb71a0e53b7bc088529dced86e
   - name: memfd
     version: 0.6.3
     sha: ffc89ccdc6e10d6907450f753537ebc5c5d3460d2e4e62ea74bd571db62c0f9e
@@ -411,8 +411,8 @@ sources:
     version: 0.1.1
     sha: 16cf681a23b4d0a43fc35024c176437f9dcd818db34e0f42ab456a0ee5ad497b
   - name: nix
-    version: 0.26.2
-    sha: bfdda3d196821d6af13126e40375cdf7da646a96114af134d5f417a9a1dc8e1a
+    version: 0.26.4
+    sha: 598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b
   - name: objc
     version: 0.2.7
     sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
@@ -444,8 +444,8 @@ sources:
     version: 2.3.0
     sha: 9b2a4787296e9989611394c33f193f676704af1686e70b8f8033ab5ba9a35a94
   - name: pin-project-lite
-    version: 0.2.12
-    sha: 12cc1b0bf1727a77a54b6654e7b5f1af8604923edc8b81885f8ec92f9e3f0a05
+    version: 0.2.13
+    sha: 8afb450f006bf6385ca15ef45d71d2288452bc3683ce2e2cacc0d18e4be60b58
   - name: pin-utils
     version: 0.1.0
     sha: 8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184
@@ -489,14 +489,14 @@ sources:
     version: 0.3.5
     sha: 567664f262709473930a4bf9e51bf2ebf3348f2e748ccc50dea20646858f8f29
   - name: regex
-    version: 1.9.3
-    sha: 81bc1d4caf89fac26a70747fe603c130093b53c773888797a6329091246d651a
+    version: 1.9.4
+    sha: 12de2eff854e5fa4b1295edd650e227e9d8fb0c9e90b12e7f36d6a6811791a29
   - name: regex-automata
-    version: 0.3.6
-    sha: fed1ceff11a1dddaee50c9dc8e4938bd106e9d89ae372f192311e7da498e3b69
+    version: 0.3.7
+    sha: 49530408a136e16e5b486e883fbb6ba058e8e4e8ae6621a77b048b314336e629
   - name: regex-syntax
-    version: 0.7.4
-    sha: e5ea92a5b6195c6ef2a0295ea818b312502c6fc94dde986c5553242e18fd4ce2
+    version: 0.7.5
+    sha: dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da
   - name: rgb
     version: 0.8.36
     sha: 20ec2d3e3fc7a92ced357df9cebd5a10b6fb2aa1ee797bf7e9ce2f17dffc8f59
@@ -510,8 +510,8 @@ sources:
     version: 0.37.23
     sha: 4d69718bf81c6127a49dc64e44a742e8bb9213c0ff8869a22c308f84c1d4ab06
   - name: rustix
-    version: 0.38.8
-    sha: 19ed4fa021d81c8392ce04db050a3da9a60299050b7ae1cf482d862b54a7218f
+    version: 0.38.10
+    sha: ed6248e1caa625eb708e266e06159f135e8c26f2bb7ceb72dc4b2766d0340964
   - name: ryu
     version: 1.0.15
     sha: 1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741
@@ -525,11 +525,11 @@ sources:
     version: 1.0.18
     sha: b0293b4b29daaf487284529cc2f5675b8e57c61f70167ba415a463651fd6a918
   - name: serde
-    version: 1.0.185
-    sha: be9b6f69f1dfd54c3b568ffa45c310d6973a5e5148fd40cf515acaf38cf5bc31
+    version: 1.0.188
+    sha: cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e
   - name: serde_derive
-    version: 1.0.185
-    sha: dc59dfdcbad1437773485e0367fea4b090a2e0a16d9ffc46af47764536a298ec
+    version: 1.0.188
+    sha: 4eca7ac642d82aa35b60049a6eccb4be6be75e599bd2e9adb5f875a737654af2
   - name: serde_json
     version: 1.0.105
     sha: 693151e1ac27563d6dbcec9dee9fbd5da8539b20fa14ad3752b2e6d363ace360
@@ -627,8 +627,8 @@ sources:
     version: 0.1.22
     sha: 5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921
   - name: url
-    version: 2.4.0
-    sha: 50bff7831e19200a85b17131d085c25d7811bc4e186efdaf54bbd132994a88cb
+    version: 2.4.1
+    sha: 143b538f18257fac9cad154828a57c6bf5157e1aa604d4816b5995bf6de87ae5
   - name: value-bag
     version: 1.4.1
     sha: d92ccd67fb88503048c01b59152a04effd0782d035a83a6d256ce6085f08f4a3
@@ -708,8 +708,8 @@ sources:
     version: 0.48.5
     sha: ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538
   - name: winnow
-    version: 0.5.14
-    sha: d09770118a7eb1ccaf4a594a221334119a44a814fcb0d31c5b85e83e97227a97
+    version: 0.5.15
+    sha: 7c2e3184b9c4e92ad5167ca73039d0c42476302ab603e2fec4487511f38ccefc
   - name: xdg-home
     version: 1.0.0
     sha: 2769203cd13a0c6015d515be729c526d041e9cf2c0cc478d57faee85f40c6dcd
