@@ -41,7 +41,6 @@ if [ "${same_version+set}" != set ]; then
     fi
 
     next_version="$((${version}+1))"
-    echo "${next_version}" >"${REPO_STATE}/next_version"
 
     sed -i "s/image-version: .*/image-version: 'l.${version}'/" include/image-version.yml
 fi
@@ -67,6 +66,10 @@ fi
 
 "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
+
+if [ "${next_version+set}" = set ]; then
+    echo "${next_version}" >"${REPO_STATE}/next_version"
+fi
 
 if type -p caddy > /dev/null; then
     if caddy -version > /dev/null; then
