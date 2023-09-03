@@ -23,4 +23,6 @@ depends() {
 
 install() {
     inst_multiple mkfs.ext4 mkfs.btrfs fsck.ext4 fsck.btrfs
+
+    ${SYSTEMCTL} -q --root "${initdir}" enable systemd-journald-audit.socket
 }
