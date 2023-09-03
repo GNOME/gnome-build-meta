@@ -14,7 +14,7 @@ build-depends:
 
 variables:
   uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-  salt: 5ceca5e1f86ae62403b27e66c5160717f1bb88405a1d1d0853241c27f3764843
+  salt: b9453417ef1f379d9dba116d8e95ddb426ca97a2d576af42b687c55432c1120a
 
 config:
   commands:
