@@ -17,3 +17,4 @@ depends:
 - core-deps/fwupd-efi-signed.bst
 - vm-secure/replace-signed-systemd-boot.bst
 - vm-secure/efitools.bst
+- vm-secure/reload-sysext.bst

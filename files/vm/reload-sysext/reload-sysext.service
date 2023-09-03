@@ -1,0 +1,14 @@
+[Unit]
+Description=Reloading after merging extensions
+After=systemd-sysext.service
+Before=sysinit.target
+DefaultDependencies=no
+ConditionDirectoryNotEmpty=|/etc/extensions
+ConditionDirectoryNotEmpty=|/run/extensions
+ConditionDirectoryNotEmpty=|/var/lib/extensions
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=systemctl daemon-reload
+ExecStart=systemctl start --no-block restart-sysext-services.target
