@@ -45,13 +45,11 @@ config:
             image = "/devel-layer/usr.squashfs"
             partition-type-uuid = "%{usr-uuid}"
             partition-uuid = "${usr_part_uuid}"
-            size = "10G"
         }
         partition gnomeos_usr_dev_v_%{image-version} {
             partition-type-uuid = "%{usr-verity-uuid}"
             partition-uuid = "${usr_verity_part_uuid}"
             image = "/devel-layer/usr.verity"
-            size = "64M"
         }
     }
     config {
