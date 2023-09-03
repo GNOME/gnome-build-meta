@@ -47,6 +47,22 @@ config:
     mv -T /sysroot-devel/etc /sysroot-devel/usr/share/factory/etc
 
   - |
+    cat >/sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
+    f /etc/bash_completion.d/perf
+    C /etc/containers
+    f /etc/gitconfig
+    f /etc/gprofng.rc
+    C /etc/iproute2
+    C /etc/libvirt
+    f /etc/logrotate.d/libvirtd
+    f /etc/logrotate.d/libvirtd.libxl
+    f /etc/logrotate.d/libvirtd.lxc
+    f /etc/logrotate.d/libvirtd.qemu
+    C /etc/sasl2
+    f /etc/slsh.rc
+    EOF
+
+  - |
     mkdir -p /sysroot-devel/usr/lib/extension-release.d
     case "%{branch}" in
       master)
