@@ -37,6 +37,7 @@ config:
     C /etc/alsa
     C /etc/anthy-conf
     C /etc/appstream.conf
+    C /etc/audit
     C /etc/avahi
     C /etc/bash_completion.d
     C /etc/bashrc
