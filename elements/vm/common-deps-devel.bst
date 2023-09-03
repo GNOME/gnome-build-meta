@@ -17,6 +17,5 @@ depends:
 - vm/deviced.bst
 - vm/distrobox.bst
 - vm/git-lfs.bst
-- vm/lxc.bst
 - vm/swtpm.bst
 - vm/toolbox.bst
