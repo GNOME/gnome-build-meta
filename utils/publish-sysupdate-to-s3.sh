@@ -25,7 +25,7 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
 
     aws s3 sync --acl public-read \
         update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
-        --exclude "*" --include "*.xz" --include "SHA256SUMS.version.${IMAGE_VERSION}"
+        --exclude "*" --include "*.xz" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}"
 
     # keep SHA256SUMS files at the end to minimize time for which files are not available
     aws s3 sync --acl public-read \

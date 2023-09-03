@@ -15,8 +15,8 @@ config:
     cp /user-only/*.xz '%{install-root}'
 
   - |
-    cp /devel-only/*.xz '%{install-root}'
+    cp /devel-only/*.{xz,usrhash} '%{install-root}'
 
   - |
     cd "%{install-root}"
-    sha256sum *.xz | tee SHA256SUMS
+    sha256sum *.xz *.*hash | tee SHA256SUMS

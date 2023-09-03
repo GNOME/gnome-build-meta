@@ -7,6 +7,9 @@ build-depends:
 - filename: vm-secure/devel-layer.bst
   config:
     location: '/devel-layer'
+- filename: vm-secure/devel-layer-signature.bst
+  config:
+    location: '/devel-layer'
 
 environment:
   E2FSPROGS_FAKE_TIME: "1320937200"
@@ -22,15 +25,16 @@ variables:
     - arch == "x86_64":
         usr-uuid: 8484680c-9521-48c6-9c11-b0720656f69e
         usr-verity-uuid: 77ff5f63-e7b6-4633-acf4-1565b864c0e6
+        usr-verity-sig-uuid: e7bb33fb-06cf-4e81-8273-e543b413e2e2
 
 config:
   commands:
   - mkdir -p '%{build-root}'
 
   - |
-    efi_part_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name partition-efi)"
     usr_part_uuid="$(cat /devel-layer/usr-root-hash.txt | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1-\2-\3-\4-\5/')"
     usr_verity_part_uuid="$(cat /devel-layer/usr-root-hash.txt | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1-\2-\3-\4-\5/')"
+    usr_verity_sig_part_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name devel-verity-signature)"
     disk_uuid="$(uuidgen -s --namespace "%{uuidnamespace}" --name disk)"
     . /devel-layer/vars.txt
     usr_img="$(readlink /devel-layer/usr.squashfs)"
@@ -51,6 +55,11 @@ config:
             partition-uuid = "${usr_verity_part_uuid}"
             image = "/devel-layer/usr.verity"
         }
+        partition gnomeos_usr_devel_s_%{image-version} {
+            partition-type-uuid = "%{usr-verity-sig-uuid}"
+            partition-uuid = "${usr_verity_sig_part_uuid}"
+            image = "/devel-layer/signature.txt"
+        }
     }
     config {
       tmppath = "%{build-root}/tmp"
@@ -59,6 +68,9 @@ config:
     EOF
 
   - genimage --config "%{build-root}/genimage.cfg" --rootpath /sysroot
+
+  - |
+    cp /devel-layer/usr-root-hash.txt '%{install-root}/devel_%{image-version}.usrhash'
 
   - |
     xz ${XZFLAGS} '%{install-root}/devel_%{image-version}.raw'

@@ -1,11 +1,12 @@
 all: generate-keys
 
-KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES
+KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES SYSEXT
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
 BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep modules/linux-module-cert.crt
 KERNEL_KEYS=tpm2-pcr-private.pem tpm2-pcr-public.pem
 DIST_KEYS=private-key import-pubring.gpg
+KERNEL_KEYRING=MODULES.crt SYSEXT.crt
 
 MICROSOFT_KEYS=							\
 	extra-kek-mic/mic-kek.crt extra-kek-mic/mic-kek.owner	\
@@ -14,8 +15,8 @@ MICROSOFT_KEYS=							\
 
 generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS) $(MICROSOFT_KEYS)
 
-modules/linux-module-cert.crt: MODULES.crt
-	cp $< $@
+modules/linux-module-cert.crt: $(KERNEL_KEYRING)
+	cat $(KERNEL_KEYRING) >$@
 
 ifeq ($(IMPORT_MODE),import)
 tpm2-pcr-private.pem:
