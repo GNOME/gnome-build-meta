@@ -7,6 +7,9 @@ build-depends:
 - filename: vm-secure/devel-layer-signature.bst
   config:
     location: /devel-only
+- filename: vm-secure/snapd-layer-signature.bst
+  config:
+    location: /snapd-only
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 config:
@@ -16,6 +19,9 @@ config:
 
   - |
     cp /devel-only/*.xz '%{install-root}'
+
+  - |
+    cp /snapd-only/*.xz '%{install-root}'
 
   - |
     cd "%{install-root}"

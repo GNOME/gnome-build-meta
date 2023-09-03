@@ -8,6 +8,7 @@ depends:
 - vm-secure/sysupdate-config.bst
 - vm-secure/sysupdate-apparmor-config.bst
 - vm-secure/sysupdate-devel-config.bst
+- vm-secure/sysupdate-snapd-config.bst
 - vm-secure/ld-config.bst
 - vm-secure/preset-all.bst
 - freedesktop-sdk.bst:vm/minimal-secure/enable-sysupdate.bst
