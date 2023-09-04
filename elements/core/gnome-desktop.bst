@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-desktop.git
   track: master
-  ref: 44.0-23-g58383b3f7b8467f6c6c054c43d82517fce0436cb
+  ref: 44.0-24-g89d70faa26612d35808b060a437ea06d325cbc6d
 
 build-depends:
 - sdk/gobject-introspection.bst

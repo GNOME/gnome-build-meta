@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:loupe.git
   track: main
-  ref: 45.beta.1-48-g201355fe65c846231ab1ecbee284d60f74ef8649
+  ref: 45.beta.1-59-g3fc905241b15fcaccc9f20466dd28aac6f957416
 - kind: cargo
 
   ref:
@@ -51,8 +51,8 @@ sources:
     version: 1.7.0
     sha: 7a9d28b1d97e08915212e2e45310d47854eafa69600756fc735fb788f75199c9
   - name: async-recursion
-    version: 1.0.4
-    sha: 0e97ce7de6cf12de5d7226c73f5ba9811622f4db3a5b91b55c53e987e5f91cba
+    version: 1.0.5
+    sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
   - name: async-std
     version: 1.12.0
     sha: 62565bb4402e926b29953c785397c6dc0391b7b446e45008b0049eb43cec6f5d
@@ -267,11 +267,11 @@ sources:
     version: 0.2.6
     sha: 9b995a66bb87bebce9a0f4a95aed01daca4872c050bfcb21653361c03bc35e5c
   - name: glycin
-    version: 0.1.0-beta.4
-    sha: dfe49cca03b5dfafca4a2eed7987b9ca612bb2dc32ac98ece65696f858645746
+    version: 0.1.0-rc
+    sha: 423d02ed19c2d8643912d0b7e60479a5958f501f245814049298138948e76fb0
   - name: glycin-utils
-    version: 0.1.0-beta.4
-    sha: fa361451561bfeb0973b9a7dcd7ea007cf77ff1609db100618bf1c586559e108
+    version: 0.1.0-rc
+    sha: 0cd0507d0397650fa9b14ea58ea6d40ee1194df7fd19287d106b6c92ecf62645
   - name: gobject-sys
     version: 0.18.0
     sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
@@ -357,8 +357,8 @@ sources:
     version: 5.6.0
     sha: b9d50a4d00d909da0ec023ab34ea09bf3b3b79b5a36b3e0da3a305112edaf150
   - name: lcms2-sys
-    version: 4.0.2
-    sha: 81057b902a5fa40801856b7b4a40e0ffcca42ee20666519bf4eebba49aff22a3
+    version: 4.0.3
+    sha: 137dae56197ab9e66729ff73e2942e26f16f9ddcd14a53295c35f53dcd067b58
   - name: libadwaita
     version: 0.5.2
     sha: 06444f4ca05a60693da6e9e2b591bd40a298e65a118a8d5e830771718b3e0253
@@ -390,8 +390,8 @@ sources:
     version: 0.0.6
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - name: memchr
-    version: 2.6.2
-    sha: 5486aed0026218e61b8a01d5fbd5a0a134649abb71a0e53b7bc088529dced86e
+    version: 2.6.3
+    sha: 8f232d6ef707e1956a43342693d2a31e72989554d58299d7a88738cc95b0d35c
   - name: memfd
     version: 0.6.3
     sha: ffc89ccdc6e10d6907450f753537ebc5c5d3460d2e4e62ea74bd571db62c0f9e
@@ -423,8 +423,8 @@ sources:
     version: 0.1.1
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - name: object
-    version: 0.32.0
-    sha: 77ac5bbd07aea88c60a577a1ce218075ffd59208b2d7ca97adf9bfc5aeb21ebe
+    version: 0.32.1
+    sha: 9cf5f9dd3933bd50a9e1f149ec995f39ae2c496d31fd772c1fd45ebc27e902b0
   - name: once_cell
     version: 1.18.0
     sha: dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d
@@ -489,11 +489,11 @@ sources:
     version: 0.3.5
     sha: 567664f262709473930a4bf9e51bf2ebf3348f2e748ccc50dea20646858f8f29
   - name: regex
-    version: 1.9.4
-    sha: 12de2eff854e5fa4b1295edd650e227e9d8fb0c9e90b12e7f36d6a6811791a29
+    version: 1.9.5
+    sha: 697061221ea1b4a94a624f67d0ae2bfe4e22b8a17b6a192afb11046542cc8c47
   - name: regex-automata
-    version: 0.3.7
-    sha: 49530408a136e16e5b486e883fbb6ba058e8e4e8ae6621a77b048b314336e629
+    version: 0.3.8
+    sha: c2f401f4955220693b56f8ec66ee9c78abffd8d1c4f23dc41a23839eb88f0795
   - name: regex-syntax
     version: 0.7.5
     sha: dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da
@@ -510,8 +510,8 @@ sources:
     version: 0.37.23
     sha: 4d69718bf81c6127a49dc64e44a742e8bb9213c0ff8869a22c308f84c1d4ab06
   - name: rustix
-    version: 0.38.10
-    sha: ed6248e1caa625eb708e266e06159f135e8c26f2bb7ceb72dc4b2766d0340964
+    version: 0.38.11
+    sha: c0c3dde1fc030af041adc40e79c0e7fbcf431dd24870053d187d7c66e4b87453
   - name: ryu
     version: 1.0.15
     sha: 1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741
@@ -564,8 +564,8 @@ sources:
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: syn
-    version: 2.0.29
-    sha: c324c494eba9d92503e6f1ef2e6df781e78f6a7705a0202d9801b198807d518a
+    version: 2.0.30
+    sha: 0ddc1f908d32ec46858c2d3b3daa00cc35bf4b6841ce4355c7bb3eedf2283a68
   - name: system-deps
     version: 6.1.1
     sha: 30c2de8a4d8f4b823d634affc9cd2a74ec98c53a756f317e529a48046cbf71f3
@@ -582,11 +582,11 @@ sources:
     version: 1.2.0
     sha: be55cf8942feac5c765c2c993422806843c9a9a45d4d5c407ad6dd2ea95eb9b6
   - name: thiserror
-    version: 1.0.47
-    sha: 97a802ec30afc17eee47b2855fc72e0c4cd62be9b4efe6591edde0ec5bd68d8f
+    version: 1.0.48
+    sha: 9d6d7a740b8a666a7e828dd00da9c0dc290dff53154ea77ac109281de90589b7
   - name: thiserror-impl
-    version: 1.0.47
-    sha: 6bb623b56e39ab7dcd4b1b98bb6c8f8d907ed255b18de254088016b27a8ee19b
+    version: 1.0.48
+    sha: 49922ecae66cc8a249b77e68d1d0623c1b2c514f0060c27cdc68bd62a1219d35
   - name: tinyvec
     version: 1.6.0
     sha: 87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50

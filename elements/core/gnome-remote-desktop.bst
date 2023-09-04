@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-remote-desktop.git
   track: master
-  ref: 45.beta-4-gadc56ced5579195323759a9086633cdfa1fa9632
+  ref: 45.rc-0-g691845d924276e1ee2216ee41d53c28d9c2bcb7c
 
 build-depends:
 - core-deps/nv-codec-headers.bst
@@ -12,8 +12,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/LibVNCServer.bst
 - core-deps/freerdp.bst
+- core-deps/libei.bst
+- core-deps/LibVNCServer.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
