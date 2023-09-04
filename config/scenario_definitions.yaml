@@ -37,9 +37,9 @@ job_templates:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      ISO: installer.iso
+      ISO: /installer.iso
   gnome_apps:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      HDD_1: disk.img
+      HDD_1: /disk.img
