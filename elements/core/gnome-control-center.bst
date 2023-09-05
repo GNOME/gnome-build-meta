@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/45/gnome-control-center-45.beta.tar.xz
-  ref: 0c6c0734a01b34af9148ccf1dbcc5a959f3cf9bb04a53bd307a9f290e45ef29e
+  url: gnome_downloads:gnome-control-center/45/gnome-control-center-45.rc.tar.xz
+  ref: 922c919f854c6597177a5c172b9439ccb201f4e61eacc543e0618998fba8eb73
 
 build-depends:
 # These two are more like runtime deps of the tests suite

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-remote-desktop/45/gnome-remote-desktop-45.beta.tar.xz
-  ref: ebd62803a511014f56382a1f4b65544dbc294efe80d81c448e5c5f4529c7b6fc
+  url: gnome_downloads:gnome-remote-desktop/45/gnome-remote-desktop-45.rc.tar.xz
+  ref: 82646c3db9df044d80a72ae8b9f9a017784f05468c5dc4f001417c98a9f0b7a5
 build-depends:
 - core-deps/nv-codec-headers.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -12,6 +12,7 @@ build-depends:
 depends:
 - core-deps/LibVNCServer.bst
 - core-deps/freerdp.bst
+- core-deps/libei.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst

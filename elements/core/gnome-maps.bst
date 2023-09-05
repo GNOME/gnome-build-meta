@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-maps/45/gnome-maps-45.beta.tar.xz
-  ref: 130bd43a6d8a07b49c8a90ef380aa6b598761b28da3de4580ef72535483575f1
+  url: gnome_downloads:gnome-maps/45/gnome-maps-45.rc.tar.xz
+  ref: 36b1a68dff499aced42956e59cfcc36385d139a31693fdac05e2288ca90ba363
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

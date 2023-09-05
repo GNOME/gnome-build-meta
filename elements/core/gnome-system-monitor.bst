@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-system-monitor/45/gnome-system-monitor-45.0.tar.xz
-  ref: bdc71cffe7a3208c36825c7073a45ca0ee6e32ac03c98d906495ccc94be26b9a
+  url: gnome_downloads:gnome-system-monitor/45/gnome-system-monitor-45.0.1.tar.xz
+  ref: 43f6b7805c74532490edb8822ebdf8b3cf2c5ef842a51252a14c34715f5d49b4
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

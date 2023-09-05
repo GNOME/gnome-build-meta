@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/45/mutter-45.beta.1.tar.xz
-  ref: 9f93968a3426e03882788a3727b0ca67dcc668a91775dcd47918f9cf295c14ce
-- kind: patch
-  path: files/mutter/0001-meson-Update-the-syprof-wrap-to-45.alpha-and-sysprof.patch
+  url: gnome_downloads:mutter/45/mutter-45.rc.tar.xz
+  ref: 7ca1ada4c9c8ec03db42e4c6d5f3a29aa96bbfb63917ba43948017208cd7160f
 
 build-depends:
 - core-deps/xvfb.bst

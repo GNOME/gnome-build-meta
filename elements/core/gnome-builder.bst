@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-builder/45/gnome-builder-45.beta.tar.xz
-  ref: 16c5aeee858ff6e46763a9afa865dacb661c31cac6c290d2fb8d89ea09a1ab2d
+  url: gnome_downloads:gnome-builder/45/gnome-builder-45.rc.tar.xz
+  ref: e87689116f08530b9adc5c9557ddbd203ed3d2ed0824f7d36ccb647ad9efe61c
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

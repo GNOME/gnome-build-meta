@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell-extensions/45/gnome-shell-extensions-45.beta.tar.xz
-  ref: 0b62144c1e7933b487e0bcb148b8d77250c50863c92bd2dff718c639d119104d
+  url: gnome_downloads:gnome-shell-extensions/45/gnome-shell-extensions-45.rc.tar.xz
+  ref: 551cefec5d0c5d06737785cdc295ccab183fcf2c61837ad529baa8d962dbafe0
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
