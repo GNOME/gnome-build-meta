@@ -2,7 +2,8 @@ kind: manual
 
 sources:
 - kind: tar
-  url: https://ftp.mozilla.org/pub/firefox/releases/115.0.3esr/source/firefox-115.0.3esr.source.tar.xz
+  url: 
+    https://ftp.mozilla.org/pub/firefox/releases/115.0.3esr/source/firefox-115.0.3esr.source.tar.xz
   base-dir: 'firefox-115.0.3'
   ref: 0bcc571c44f94ac6b8c26e896fd771eb7bd41b2a8ec35598bced0102c1b855fa
 
