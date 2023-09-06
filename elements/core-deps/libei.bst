@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:libinput/libei/-/archive/1.0.0/libei-1.0.0.tar.gz
-  ref: 1fc8dbc2c39c6142da10136a00691e9352fee1ff9bccff978fa68779e73c2a34
+  url: freedesktop_files:libinput/libei/-/archive/1.0.901/libei-1.0.901.tar.gz
+  ref: 11be2b3d4354e8642bc33eed6500fe02e79f99f3fc9d51a01e6cba44b754254d
 
 build-depends:
 - freedesktop-sdk.bst:components/python3-attrs.bst
