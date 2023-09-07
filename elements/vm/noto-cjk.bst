@@ -7,12 +7,14 @@ build-depends:
 
 sources:
 - kind: zip
-  url: github_files:notofonts/noto-cjk/releases/download/Sans2.004/03_NotoSansCJK-OTC.zip
+  url: 
+    github_files:notofonts/noto-cjk/releases/download/Sans2.004/03_NotoSansCJK-OTC.zip
   base-dir: ''
   directory: sans
   ref: 528f4e1b25ff3badb0321b38d015d954c4c0de926c7830ef50e4a1948f6a3eed
 - kind: zip
-  url: github_files:notofonts/noto-cjk/releases/download/Serif2.001/04_NotoSerifCJKOTC.zip
+  url: 
+    github_files:notofonts/noto-cjk/releases/download/Serif2.001/04_NotoSerifCJKOTC.zip
   base-dir: ''
   directory: serif
   ref: 2f0630f88752d50b11a427bdd71f20f7178219e647c56cbaf36c032dbe1ed9d0
