@@ -103,7 +103,7 @@ config:
       directory: lib/sdk
       no-autodownload: 'true'
       add-ld-path: lib
-      version: '%{freedesktop-sdk-flatpak-branch}'
+      version: '%{freedesktop-sdk-flatpak-branch};%{freedesktop-sdk-flatpak-branch}beta'
 
     Extension org.freedesktop.Platform.VAAPI.Intel:
       directory: '%{lib}/dri/intel-vaapi-driver'
