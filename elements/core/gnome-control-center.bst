@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:gnome-control-center.git
   track: main
-  ref: 45.rc-50-g70a00ec56c7b8a117cbb28a8a3b07a9c8fc01103
+  ref: 45.rc-57-g5712a91e0adc5008ae6ff7a38daf1462269d2b32
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -19,7 +19,6 @@ build-depends:
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst
-- core/tecla.bst
 
 depends:
 - core-deps/ModemManager.bst
@@ -41,6 +40,7 @@ depends:
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
+- core/tecla.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
