@@ -348,10 +348,10 @@ s3-image-static:
   needs:
   - job: s3-image
     artifacts: false
-  allow_failure: true
+  - job: test-s3-image
+    artifacts: false
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
-    when: manual
   script:
   - |
     echo nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso > latest-iso
@@ -482,7 +482,6 @@ test-s3-image:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
-  allow_failure: true
 
 test-pinephone-aarch64:
   extends:
