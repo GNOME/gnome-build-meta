@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.41.92.tar.xz
   ref: c03385433c255dff05218261b9060e45ef26a4ac88e48a3a7bfa21ef35642a73
+- kind: patch
+  path: files/webkitgtk/disable-frame-rate-throttling.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
