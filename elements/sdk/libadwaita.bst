@@ -4,7 +4,7 @@ sources:
 - kind: git_tag
   url: gnome:libadwaita.git
   track: main
-  ref: 1.4.rc-17-gbebf545b3501c9c70dc073d46a7ad382b3409ca7
+  ref: 1.4.rc-19-g9ddd0e23fdf234c4ad3a2a98a2944027b16260d8
 
 build-depends:
 - sdk-deps/gi-docgen.bst
