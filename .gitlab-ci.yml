@@ -235,11 +235,14 @@ sysupdate-image-x86_64:
   extends:
   - .x86_64
   rules:
-  - if: $CI_PIPELINE_SOURCE != "schedule"
+  - !reference [.deploy-rules, rules]
+  # Also allow to manually trigger it for normal branches
+  - if: '$CI_COMMIT_REF_NAME'
+    when: manual
+    allow_failure: true
   needs:
   - job: 'build-x86_64'
     artifacts: false
-  when: manual
   stage: deploy
   script:
   - |
