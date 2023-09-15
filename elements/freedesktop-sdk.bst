@@ -4,7 +4,9 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/22.08
   track-tags: true
-  ref: freedesktop-sdk-22.08.11-0-g8325c6f52c0b1493b3ef000dd3e4ca810787e8c0
+  ref: freedesktop-sdk-22.08.15-0-gd8632183948d7c5b2b29f4fc7954b13d5df81353
+- kind: patch
+  path: files/freedesktop-sdk/CVE-2023-4863.patch
 config:
   options:
     target_arch: '%{arch}'
