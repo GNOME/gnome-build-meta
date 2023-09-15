@@ -5,6 +5,8 @@ sources:
   track: release/23.08
   track-tags: True
   ref: freedesktop-sdk-23.08.0-0-g1533f8d0393984f5684985c8b710e9fbaf9c8734
+- kind: patch
+  path: files/freedesktop-sdk/CVE-2023-4863.patch
 config:
   options:
     target_arch: '%{arch}'
