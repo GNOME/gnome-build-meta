@@ -13,7 +13,7 @@ variables:
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "2e5978e92d15e501923042d5d56d7da72eb26564"
+  DOCKER_IMAGE_ID: "a680da765c4e040ecd9bf587824117f91e451fcf"
 
 stages:
 - track
