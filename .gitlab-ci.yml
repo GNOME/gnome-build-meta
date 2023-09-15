@@ -354,21 +354,35 @@ s3-image:
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
+    if [ -n "$CI_MERGE_REQUEST_ID" ]; then
+        # merge request pipeline: push to merge_requests/ directory, label with merge request ID, add expiry
+        expire_date=$(date --iso-8601 --date "+3 weeks")
+        aws s3 cp --acl public-read image/disk.img.xz --expire "$expire_date" \
+            s3://gnome-build-meta/merge_requests/mr$CI_MERGE_REQUEST_ID/disk_mr$CI_MERGE_REQUEST_ID.img.xz
+        aws s3 cp --acl public-read iso/installer.iso --expire "$expire_date" \
+            s3://gnome-build-meta/merge_requests/mr$CI_MERGE_REQUEST_ID/gnome_os_installer_mr$CI_MERGE_REQUEST_ID.iso
+    elif [ -n "$CI_COMMIT_TAG" ]; then
+        # tag pipeline: upload to tag/ directory, label with tag name
         aws s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso
-    else
+    elif [ "$CI_COMMIT_REF_NAME" == "master" ]; then
+        # 'master' pipeline: upload to nightly/ directory, label with pipeline ID
         aws s3 cp --acl public-read image/disk.img.xz \
             s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz
         aws s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso
+    else
+        echo >&2 "s3-image job should not run on this pipeline: not a merge request, tag or 'master' build."
+        exit 1
     fi
 
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
-
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+    when: on_success
   - if: $CI_COMMIT_TAG
+    when: on_success
+  - when: manual
 
 openh264-x86_64:
   extends:
@@ -472,7 +486,10 @@ test-s3-image:
     echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
   - |
     echo "Fetching test media"
-    if [ -n "$CI_COMMIT_TAG" ]; then
+    if [ -n "$CI_MERGE_REQUEST_ID" ]; then
+        S3_ISO_IMAGE_URL=https://os.gnome.org/download/mr${CI_MERGE_REQUEST_ID}/gnome_os_installer_mr${CI_MERGE_REQUEST_ID}.iso
+        S3_DISK_IMAGE_URL=https://os.gnome.org/download/mr${CI_MERGE_REQUEST_ID}/disk_${CI_MERGE_REQUEST_ID}.img.xz
+    elif [ -n "$CI_COMMIT_TAG" ]; then
         S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
         S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}.img.xz
     else
@@ -531,7 +548,10 @@ test-s3-image:
     expire_in: '1 week'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+    when: always
   - if: $CI_COMMIT_TAG
+    when: always
+  - when: manual
 
 test-pinephone-aarch64:
   extends:
