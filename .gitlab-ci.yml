@@ -452,6 +452,9 @@ test-s3-image:
   image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
+  needs:
+  - job: s3-image
+    artifacts: false
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
@@ -469,7 +472,7 @@ test-s3-image:
         S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
         S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}.img.xz
     else
-        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso
+        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_sysupdate_installer_${CI_PIPELINE_ID}.iso
         S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}.img.xz
     fi
     openqa/utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
