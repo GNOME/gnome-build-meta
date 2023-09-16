@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:connections.git
   track: master
-  ref: 45.rc-5-gd9e9fb79ff9a96af77b7b08b637ba2bc0172e171
+  ref: 45.0-0-gf47863342113f425fe171db46965afab93da7975
 - kind: git_module
   url: gnome:gtk-frdp.git
   path: subprojects/gtk-frdp
-  ref: c6c03f2fafc56a92230e9a8eb9f611676a80e34e
+  ref: 62fc62c5ccb7634f0bc87c57a4673877c24c94ed
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -24,4 +24,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
+- freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

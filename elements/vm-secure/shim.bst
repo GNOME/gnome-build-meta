@@ -8,6 +8,7 @@ sources:
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
+  ref: acc5371207f3041450e1d8ae5b24f6df3e82b152
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys

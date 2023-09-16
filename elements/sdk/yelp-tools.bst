@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp-tools.git
   track: master
-  ref: 42.1-0-gfe5ff72ca46fba425143e5dc67d660703c86145f
+  ref: 42.1-1-g1b2476ba318f32f73933e5efb09d3915790ea069
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

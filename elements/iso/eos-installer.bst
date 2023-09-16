@@ -8,7 +8,7 @@ sources:
 - kind: git_repo
   url: github:endlessm/eos-installer.git
   track: Release_4.0.7
-  ref: Release_4.0.10-0-g3f384acc76f537675fa4d8817a5f49cf2e455f51
+  ref: Release_4.0.7-0-g3f384acc76f537675fa4d8817a5f49cf2e455f51
 - kind: git_module
   url: gnome:libglnx.git
   path: ext/libglnx

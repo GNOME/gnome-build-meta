@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.57.0-0-gcd2e29d85df4e09f2af7d24e4254220a051f090d
+  ref: 2.57.0-5-g4ae80ac298b328393ca4f5a39d44742f0def9e72
 - kind: cargo
   ref:
   - name: adler
@@ -77,8 +77,8 @@ sources:
     version: 1.4.3
     sha: 14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610
   - name: cairo-rs
-    version: 0.18.0
-    sha: d859b656775a6b1dd078d3e5924884e6ea88aa649a7fdde03d5b2ec56ffcc10b
+    version: 0.18.2
+    sha: 1c0466dfa8c0ee78deef390c274ad756801e0a6dbb86c5ef0924a298c5761c4d
   - name: cairo-sys-rs
     version: 0.18.0
     sha: bd4d115132e01c0165e3bf5f56aedee8980b0b96ede4eb000b693c05a8adb8ff
