@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: https://gitlab.com/mobian1/eg25-manager.git
   track: 0.4.4
-  ref: f53ba5c5bae2d882b6ba5cd378fd55beadd29d14
+  ref: 0.4.4-0-gbe6a924f8d39e5fabad88470c88174f61a3fa88b
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
