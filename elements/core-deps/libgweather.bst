@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libgweather.git
   track: main
-  ref: 4.4.0-1-g1ad2c93097270137764628a9f8da9c3b9f4bc237
+  ref: 4.4.0-2-ge2a9b214a7bf493f1d2b18b18dfa1323ba98cd53
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
