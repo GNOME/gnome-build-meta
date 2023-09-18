@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:flatpak/xdg-desktop-portal/releases/download/1.17.2/xdg-desktop-portal-1.17.2.tar.xz
-  ref: 1e861eb991e60e56b06c64dc03284c02f9913f9a426d8955f8d529ff8f3f6d96
+  url: github_files:flatpak/xdg-desktop-portal/releases/download/1.18.0/xdg-desktop-portal-1.18.0.tar.xz
+  ref: 5ea35a6420a98b598c83355fc19feaea8ba999149641bf84079b0c572b00f5bd
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
