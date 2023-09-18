@@ -6,7 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
-  uuidnamespace: 9473a621-1617-4679-87e5-031afef28359
+  sysroot-seed: 9473a621-1617-4679-87e5-031afef28359
   kcmdline: >-
     rw
     quiet splash
@@ -19,7 +19,7 @@ config:
   - mkdir -p /tmp /efi /var/tmp
   - |
     prepare-image.sh \
-       --seed "%{uuidnamespace}" \
+       --seed "%{sysroot-seed}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
        --rootfsopts relatime \

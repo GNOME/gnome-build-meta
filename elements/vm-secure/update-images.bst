@@ -4,7 +4,7 @@ build-depends:
 - filename: vm-secure/update-images-user-only.bst
   config:
     location: /user-only
-- filename: vm-secure/devel-sysext.bst
+- filename: vm-secure/devel-layer-signature.bst
   config:
     location: /devel-only
 - freedesktop-sdk.bst:bootstrap-import.bst

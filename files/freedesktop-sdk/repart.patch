@@ -1,0 +1,99 @@
+diff --git a/elements/include/systemd.yml b/elements/include/systemd.yml
+index 6ba4538ba..bc8eceec6 100644
+--- a/elements/include/systemd.yml
++++ b/elements/include/systemd.yml
+@@ -5,3 +5,7 @@ sources:
+   exclude:
+   - '*rc*'
+   ref: v254.1-0-g208a21833b6953a2517a6c3f8f4849c6664b01be
++- kind: patch
++  path: patches/systemd/unprivileged-repart.patch
++- kind: patch
++  path: patches/systemd/check-fix.patch
+diff --git a/patches/systemd/check-fix.patch b/patches/systemd/check-fix.patch
+new file mode 100644
+index 000000000..0ebdebac2
+--- /dev/null
++++ b/patches/systemd/check-fix.patch
+@@ -0,0 +1,13 @@
++diff --git a/src/partition/repart.c b/src/partition/repart.c
++index dc02c37668..8574fc4f8b 100644
++--- a/src/partition/repart.c
+++++ b/src/partition/repart.c
++@@ -1893,7 +1893,7 @@ static int context_read_definitions(Context *context) {
++ 
++                 assert_se(dp = p->siblings[VERITY_DATA]);
++ 
++-                if (dp->minimize == MINIMIZE_OFF && !(p->copy_blocks_path || p->copy_blocks_auto))
+++                if (dp->minimize == MINIMIZE_OFF && !(dp->copy_blocks_path || dp->copy_blocks_auto))
++                         return log_syntax(NULL, LOG_ERR, p->definition_path, 1, SYNTHETIC_ERRNO(EINVAL),
++                                           "Minimize= set for verity hash partition but data partition does "
++                                           "not set CopyBlocks= or Minimize=");
+diff --git a/patches/systemd/unprivileged-repart.patch b/patches/systemd/unprivileged-repart.patch
+new file mode 100644
+index 000000000..ee1980b66
+--- /dev/null
++++ b/patches/systemd/unprivileged-repart.patch
+@@ -0,0 +1,62 @@
++commit 8744f17c94e03e16f40a9b26b3aeababeefcb2c3
++Author: Daan De Meyer <daan.j.demeyer@gmail.com>
++Date:   Tue Sep 19 11:44:54 2023 +0200
++
++    mkfs-util: Only unshare mount namespace if needed
++    
++    We only need a separate mount namespace if we're operating on a
++    btrfs block device so let's make sure we only unshare the mount
++    namespace if that's the case.
++    
++    Replaces #29214
++
++diff --git a/src/shared/mkfs-util.c b/src/shared/mkfs-util.c
++index dd65d3ba7b..649b88203b 100644
++--- a/src/shared/mkfs-util.c
+++++ b/src/shared/mkfs-util.c
++@@ -334,6 +334,8 @@ int make_filesystem(
++         _cleanup_(unlink_and_freep) char *protofile = NULL;
++         char vol_id[CONST_MAX(SD_ID128_UUID_STRING_MAX, 8U + 1U)] = {};
++         int stdio_fds[3] = { -EBADF, STDERR_FILENO, STDERR_FILENO};
+++        ForkFlags flags = FORK_RESET_SIGNALS|FORK_RLIMIT_NOFILE_SAFE|FORK_DEATHSIG|FORK_LOG|FORK_WAIT|
+++                          FORK_CLOSE_ALL_FDS|FORK_REARRANGE_STDIO;
++         int r;
++ 
++         assert(node);
++@@ -574,6 +576,16 @@ int make_filesystem(
++         if (extra_mkfs_args && strv_extend_strv(&argv, extra_mkfs_args, false) < 0)
++                 return log_oom();
++ 
+++        if (streq(fstype, "btrfs")) {
+++                struct stat st;
+++
+++                if (stat(node, &st) < 0)
+++                        return log_error_errno(r, "Failed to stat '%s': %m", node);
+++
+++                if (S_ISBLK(st.st_mode))
+++                        flags |= FORK_NEW_MOUNTNS;
+++        }
+++
++         if (DEBUG_LOGGING) {
++                 _cleanup_free_ char *j = NULL;
++ 
++@@ -586,8 +598,7 @@ int make_filesystem(
++                         stdio_fds,
++                         /*except_fds=*/ NULL,
++                         /*n_except_fds=*/ 0,
++-                        FORK_RESET_SIGNALS|FORK_RLIMIT_NOFILE_SAFE|FORK_DEATHSIG|FORK_LOG|FORK_WAIT|
++-                        FORK_CLOSE_ALL_FDS|FORK_REARRANGE_STDIO|FORK_NEW_MOUNTNS,
+++                        flags,
++                         /*ret_pid=*/ NULL);
++         if (r < 0)
++                 return r;
++@@ -598,7 +609,8 @@ int make_filesystem(
++                  * on unformatted free space, so let's trick it and other mkfs tools into thinking no
++                  * partitions are mounted. See https://github.com/kdave/btrfs-progs/issues/640 for more
++                  ° information. */
++-                (void) mount_nofollow_verbose(LOG_DEBUG, "/dev/null", "/proc/self/mounts", NULL, MS_BIND, NULL);
+++                 if (flags & FORK_NEW_MOUNTNS)
+++                        (void) mount_nofollow_verbose(LOG_DEBUG, "/dev/null", "/proc/self/mounts", NULL, MS_BIND, NULL);
++ 
++                 execvp(mkfs, argv);
++ 

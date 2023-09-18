@@ -1,6 +1,7 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - vm-secure/make-layer.bst
 - vm-secure/initial-scripts.bst
@@ -13,8 +14,8 @@ build-depends:
     location: '/sysroot-devel'
 
 variables:
-  uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-  salt: b9453417ef1f379d9dba116d8e95ddb426ca97a2d576af42b687c55432c1120a
+  sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
+  repart-seed: 53752261-a988-42fb-a585-b35ae0ab2af4
 
 config:
   commands:
@@ -22,7 +23,7 @@ config:
     prepare-image.sh \
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
-       --seed "%{uuidnamespace}" \
+       --seed "%{sysroot-seed}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
        --rootfsopts relatime \
@@ -36,7 +37,7 @@ config:
     prepare-image.sh \
        --sysroot /sysroot-devel \
        --initscripts /etc/fdsdk/initial_scripts-devel \
-       --seed "%{uuidnamespace}" \
+       --seed "%{sysroot-seed}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
        --rootfsopts relatime \
@@ -78,20 +79,44 @@ config:
     EOF
 
   - |
-    make-layer /sysroot/usr /sysroot-devel/usr /output
+    mkdir -p /output
+    make-layer /sysroot/usr /sysroot-devel/usr /output/usr
 
   - |
-    mksquashfs /output '%{install-root}/usr-devel_%{image-version}.squashfs'
+    mkdir -p /output/etc
+    cp -T /sysroot-devel/usr/lib/os-release /output/etc/os-release
+
+  - mkdir -p definitions
+  - |
+    cat <<EOF >definitions/10-devel.conf
+    [Partition]
+    Type=usr
+    Label=gnomeos_usr_dev_%A
+    CopyFiles=/usr:/
+    Minimize=best
+    Format=squashfs
+    SplitName=usr
+    EOF
 
   - |
-    veritysetup format --salt="%{salt}" "%{install-root}/usr-devel_%{image-version}.squashfs" "%{install-root}/usr-devel_%{image-version}.verity" | sed '/^Root hash:[[:space:]]*/{;s///;q;};d' >"%{install-root}/usr-root-hash.txt"
+    mkdir -p /var/tmp
 
   - |
-    usr_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1\2\3\4\5/')"
-    mv "%{install-root}/usr-devel_%{image-version}.squashfs" "%{install-root}/usr-devel_%{image-version}_${usr_part_uuid}.squashfs"
-    ln -s "usr-devel_%{image-version}_${usr_part_uuid}.squashfs" '%{install-root}/usr.squashfs'
+    SYSTEMD_LOG_LEVEL=debug \
+      systemd-repart \
+        --definitions=definitions \
+        --empty=create \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --split=true \
+        --seed %{repart-seed} \
+        --root=/output \
+        devel.raw \
+        --json=pretty \
+        >repart.json
 
   - |
-    usr_verity_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1\2\3\4\5/')"
-    mv "%{install-root}/usr-devel_%{image-version}.verity" "%{install-root}/usr-devel_%{image-version}_${usr_verity_part_uuid}.verity"
-    ln -s "usr-devel_%{image-version}_${usr_verity_part_uuid}.verity" '%{install-root}/usr.verity'
+    install -Dm644 -t '%{install-root}' "devel.usr.raw"

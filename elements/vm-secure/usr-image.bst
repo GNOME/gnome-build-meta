@@ -4,13 +4,14 @@ build-depends:
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - vm-secure/initial-scripts.bst
+- vm-secure/repart-config.bst
 - filename: vm-secure/filesystem.bst
   config:
     location: '/sysroot'
 
 variables:
-  uuidnamespace: df2427db-01ec-4c99-96b1-be3edb3cd9f6
-  salt: 5ceca5e1f86ae62403b27e66c5160717f1bb88405a1d1d0853241c27f3764843
+  sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
+  repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
 
 config:
   commands:
@@ -18,7 +19,7 @@ config:
     prepare-image.sh \
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
-       --seed "%{uuidnamespace}" \
+       --seed "%{sysroot-seed}" \
        --rootsource /dev/gpt-auto-root \
        --rootfstype btrfs \
        --rootfsopts relatime \
@@ -160,18 +161,33 @@ config:
     d /var/lib/extensions
     EOF
 
+  - mkdir -p definitions
   - |
-    mksquashfs /sysroot/usr '%{install-root}/usr_%{image-version}.squashfs'
+    for entry in /usr/lib/repart.d/*.conf; do
+      name="$(basename "${entry}")"
+      num="${name%%-*}"
+      if [ "${num}" -lt 30 ]; then
+        cp "${entry}" definitions/
+      fi
+    done
 
   - |
-    veritysetup format --salt="%{salt}" "%{install-root}/usr_%{image-version}.squashfs" "%{install-root}/usr_%{image-version}.verity" | sed '/^Root hash:[[:space:]]*/{;s///;q;};d' >"%{install-root}/usr-root-hash.txt"
+    mkdir -p /var/tmp
 
   - |
-    usr_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/^([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12}).*/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_%{image-version}.squashfs" "%{install-root}/usr_%{image-version}_${usr_part_uuid}.squashfs"
-    ln -s "usr_%{image-version}_${usr_part_uuid}.squashfs" '%{install-root}/usr.squashfs'
-
-  - |
-    usr_verity_part_uuid="$(cat "%{install-root}/usr-root-hash.txt" | sed -E 's/.*([0-9a-f]{8})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{12})$/\1\2\3\4\5/')"
-    mv "%{install-root}/usr_%{image-version}.verity" "%{install-root}/usr_%{image-version}_${usr_verity_part_uuid}.verity"
-    ln -s "usr_%{image-version}_${usr_verity_part_uuid}.verity" '%{install-root}/usr.verity'
+    SYSTEMD_LOG_LEVEL=debug \
+      systemd-repart \
+        --defer-partitions=esp \
+        --definitions=definitions \
+        --empty=create \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --seed %{repart-seed} \
+        --root=/sysroot \
+        --split=true \
+        '%{install-root}/disk.raw' \
+        --json=pretty \
+        >'%{install-root}/repart.json'

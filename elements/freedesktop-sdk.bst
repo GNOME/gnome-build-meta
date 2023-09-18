@@ -8,6 +8,8 @@ sources:
   path: files/freedesktop-sdk/0001-linux-Backport-tpm-fix.patch
 - kind: patch
   path: files/freedesktop-sdk/CVE-2023-4863.patch
+- kind: patch
+  path: files/freedesktop-sdk/repart.patch
 config:
   options:
     target_arch: '%{arch}'
