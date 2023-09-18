@@ -14,7 +14,6 @@ build-depends:
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst
-- core/tecla.bst
 
 depends:
 - core-deps/ModemManager.bst
@@ -36,6 +35,7 @@ depends:
 - core/gnome-color-manager.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
+- core/tecla.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
