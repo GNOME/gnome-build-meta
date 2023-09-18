@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:baobab/45/baobab-45.alpha.tar.xz
-  ref: d2add48bf79215632db1b91bae56572da686ac3c5d45bd55fe18864f6163f3cf
+  url: gnome_downloads:baobab/45/baobab-45.0.tar.xz
+  ref: a7d2cf308a6c839ee0b0bf074f8f5fd60d62ae2f064a94b3c610d6560b758e86
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

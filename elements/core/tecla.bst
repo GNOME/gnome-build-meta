@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:tecla/45/tecla-45.rc.tar.xz
-  ref: 0a85dfef35d9da6c2e18013fa30e0d9014f2bbedaab753d453a2e0473790bc95
+  url: gnome_downloads:tecla/45/tecla-45.0.tar.xz
+  ref: 5c02bb4019b1cffb5663da6107503eff853836a8783dd4705dd04a49f7adc25b
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

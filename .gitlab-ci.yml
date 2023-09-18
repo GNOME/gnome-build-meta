@@ -4,7 +4,7 @@ variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_NO_PUSH: "bst --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
   BST: "bst --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
-  FLATPAK_BRANCH: 45beta
+  FLATPAK_BRANCH: '45'
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
   OPENQA_TESTS_BRANCH: master
