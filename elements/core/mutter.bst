@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/44/mutter-44.3.tar.xz
-  ref: 185cbebf2150d3e450550e371bdb13a8b4db096978b14f99521e966eacc70551
+  url: gnome_downloads:mutter/44/mutter-44.5.tar.xz
+  ref: f247e0ed65eb62f2b077546d5283ed6d47f402bda6a4316413501d8caed29679
 
 build-depends:
 # Need the whole thing over just the capture for the dbus interface.
