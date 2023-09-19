@@ -8,8 +8,8 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
+- world/cogl.bst
 - core-deps/clutter.bst
-- core-deps/cogl.bst
 - sdk/gdk-pixbuf.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
