@@ -50,11 +50,6 @@ depends:
 - freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-ice.bst
-- freedesktop-sdk.bst:components/xorg-lib-sm.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
-- freedesktop-sdk.bst:components/xwayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
