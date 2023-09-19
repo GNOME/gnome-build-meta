@@ -33,7 +33,7 @@ config:
   - |
     cat <<EOF >definitions/10-devel.conf
     [Partition]
-    Type=usr
+    Type=root
     Label=gnomeos_usr_dev_%A
     Verity=data
     VerityMatchKey=usr
@@ -43,7 +43,7 @@ config:
   - |
     cat <<EOF >definitions/20-devel-verity.conf
     [Partition]
-    Type=usr-verity
+    Type=root-verity
     Label=gnomeos_usr_dev_v_%A
     Verity=hash
     VerityMatchKey=usr
@@ -53,7 +53,7 @@ config:
   - |
     cat <<EOF >definitions/30-devel-verity-signature.conf
     [Partition]
-    Type=usr-verity-sig
+    Type=root-verity-sig
     Label=gnomeos_usr_dev_s_%A
     Verity=signature
     VerityMatchKey=usr
@@ -83,13 +83,8 @@ config:
   - |
     xz ${XZFLAGS} devel.raw
 
-  - |
-    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' repart.json)
-    echo "${roothash}" >devel.usrhash
-
   install-commands:
   - |
-    label="$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' repart.json)"
+    label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
     image_version="${label##gnomeos_usr_dev_v_}"
     install -Dm644 devel.raw.xz "%{install-root}/devel_${image_version}.raw.xz"
-    install -Dm644 devel.usrhash "%{install-root}/devel_${image_version}.usrhash"

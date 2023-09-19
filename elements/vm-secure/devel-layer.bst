@@ -90,9 +90,9 @@ config:
   - |
     cat <<EOF >definitions/10-devel.conf
     [Partition]
-    Type=usr
+    Type=root
     Label=gnomeos_usr_dev_%A
-    CopyFiles=/usr:/
+    CopyFiles=/usr
     Minimize=best
     Format=squashfs
     SplitName=usr

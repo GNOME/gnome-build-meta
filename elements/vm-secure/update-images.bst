@@ -15,7 +15,7 @@ config:
     cp /user-only/*.xz '%{install-root}'
 
   - |
-    cp /devel-only/*.{xz,usrhash} '%{install-root}'
+    cp /devel-only/*.xz '%{install-root}'
 
   - |
     cd "%{install-root}"

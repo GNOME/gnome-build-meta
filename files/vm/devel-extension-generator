@@ -11,5 +11,4 @@ fi
 if [ "${IMAGE_VERSION:+set}" = set ]; then
   [ -d /run/extensions ] || mkdir -p /run/extensions
   ln -sf "/var/lib/extensions/devel_${IMAGE_VERSION}.img" /run/extensions/devel.raw
-  ln -sf "/var/lib/extensions/devel_${IMAGE_VERSION}.usrhash" /run/extensions/devel.usrhash
 fi
