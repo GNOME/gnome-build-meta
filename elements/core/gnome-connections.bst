@@ -18,4 +18,5 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
 - sdk/libsecret.bst
+- freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
