@@ -51,11 +51,11 @@ depends:
 - freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xwayland.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-
     -Dxwayland_initfd=enabled
     -Dprofiler=true
+    -Dxwayland=false
     -Dx11=false
