@@ -11,4 +11,3 @@ ConditionDirectoryNotEmpty=|/var/lib/extensions
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=systemctl daemon-reload
-ExecStart=systemctl start --no-block restart-sysext-services.target

@@ -1,5 +1,0 @@
-# sysext images that provides service should install them in
-# restart-sysext-services.target.wants
-[Unit]
-Description=Services from sysext
-DefaultDependencies=no
