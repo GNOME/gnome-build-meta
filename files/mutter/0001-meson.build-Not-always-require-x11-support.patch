@@ -1,0 +1,26 @@
+From 4d26c99317a6e14adb3bf8c1e8d5c91036b95ee3 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Thu, 21 Sep 2023 12:30:02 +0100
+Subject: [PATCH] meson.build: Not always require x11 support
+
+---
+ meson.build | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index efeb4a4db..a0a942c33 100644
+--- a/meson.build
++++ b/meson.build
+@@ -133,8 +133,7 @@ libeis_dep = dependency('libeis-1.0', version: libei_req)
+ libei_dep = dependency('libei-1.0', version: libei_req)
+ 
+ have_wayland = get_option('wayland')
+-# For now always require X11 support
+-have_x11 = true
++have_x11 = false
+ have_xwayland = get_option('xwayland')
+ have_x11_client = have_x11 or have_xwayland
+ 
+-- 
+2.41.0
+
