@@ -35,6 +35,9 @@ variables:
     -Dntlm=disabled
     -Dsysprof=enabled
     -Dtls_check=false
+# For debugging https://gitlab.gnome.org/GNOME/libsoup/-/issues/313,
+# remove '-O2' from the CFLAGS. FIXME: remove this.
+  common_flags: ""
 
 public:
   bst:
