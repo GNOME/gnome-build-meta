@@ -27,7 +27,6 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/gvfs-client.bst
-- sdk/highway.bst
 - sdk/json-glib.bst
 - sdk/krb5.bst
 - sdk/libadwaita.bst

@@ -8,13 +8,13 @@ sources:
   path: files/libjxl/0002-Do-not-require-skcms-when-plugins-are-enabled-2592.patch
 
 build-depends:
+- sdk-deps/highway.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
 - sdk/gdk-pixbuf.bst
-- sdk/highway.bst
 - freedesktop-sdk.bst:bootstrap/zlib.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/jpeg.bst
@@ -46,3 +46,8 @@ variables:
     -DJPEGXL_STATIC=OFF
     -DJPEGXL_TEST_TOOLS=OFF
     -DJPEGXL_WARNINGS_AS_ERRORS=OFF
+
+config:
+  install-commands:
+    (>):
+      - rm %{install-root}%{libdir}/libjxl*.a
