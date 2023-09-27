@@ -33,6 +33,8 @@ config:
     mkdir -p "%{install-root}/usr/lib/"
     cp -r /usr/lib/modules "%{install-root}/usr/lib/"
 
+  - mkdir -p "%{install-root}/efi/EFI/Linux"
+
   - |
     version="$(ls -1 /lib/modules | head -n1)"
     mkdir -p "%{install-root}/usr/lib/modules/${version}"
@@ -45,6 +47,7 @@ config:
            --libdirs '%{libdir}' \
            --libdirs '%{indep-libdir}' \
            --add gnome-os
+    mv "/boot/EFI/Linux/linux-${version}.efi" "%{install-root}/efi/EFI/Linux/gnomeos_${version}.efi"
 
   - |
     mkdir -p '%{install-root}/efi/loader/keys/auto'
@@ -60,10 +63,6 @@ config:
 
   - mkdir -p "%{install-root}/efi/EFI"
   - cp -rT /efi/EFI "%{install-root}/efi/EFI"
-
-  # dracut install on /boot because /efi is not a mountpoint
-  - mkdir -p "%{install-root}/efi/EFI/Linux"
-  - cp /boot/EFI/Linux/linux-*.efi "%{install-root}/efi/EFI/Linux/"
 
   - mkdir -p "%{install-root}/efi/loader"
   - |

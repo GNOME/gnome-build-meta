@@ -11,11 +11,21 @@ build-depends:
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/jq.bst
 
+variables:
+  (?):
+  - arch == 'i686':
+      efi-arch: ia32
+  - arch == 'x86_64':
+      efi-arch: x64
+  - arch == 'aarch64':
+      efi-arch: aa64
+  - arch == 'riscv64':
+      efi-arch: riscv64
+
 config:
   install-commands:
   - |
     mkdir -p "%{install-root}/efi/EFI/Linux"
-    cp -rT /efi/EFI/Linux "%{install-root}/efi/EFI/Linux"
 
   - |
     set -x
@@ -26,20 +36,26 @@ config:
 
     version="$(ls -1 /usr/lib/modules | head -n1)"
 
-    cp "/efi/EFI/Linux/linux-${version}.efi" "linux-${version}.efi"
+    kernel="gnomeos_${version}.efi"
+    output_kernel="gnomeos_${image_version}.efi"
 
-    objcopy -O binary -j .cmdline "linux-${version}.efi" cmdline.txt
+    cp "/efi/EFI/Linux/${kernel}" .
+    image_base="0x$(objdump -x "${kernel}" | sed '/^ImageBase[[:space:]]*/{;s///;q;};d')"
+
+    echo -n "${version}" >uname.txt
+
+    objcopy -O binary -j .cmdline "${kernel}" cmdline.txt
     echo -n "usrhash=${roothash} " >new-cmdline.txt
     cat cmdline.txt >>new-cmdline.txt
 
-    objcopy --remove-section .cmdline "linux-${version}.efi"
-    objcopy --add-section .cmdline=new-cmdline.txt --set-section-flags .cmdline=data,readonly --change-section-vma .cmdline=0x30000 "linux-${version}.efi"
+    objcopy --remove-section .cmdline "${kernel}"
 
-    echo -n "${version}" >uname.txt
-    objcopy --add-section .uname=uname.txt --set-section-flags .uname=data,readonly --change-section-vma .uname=0x40000 "linux-${version}.efi"
+    objcopy --change-section-vma .osrel=0x$(printf %x $((${image_base}+0x20000))) "${kernel}"
+    objcopy --add-section .cmdline=new-cmdline.txt --set-section-flags .cmdline=data,readonly --change-section-vma .cmdline=0x$(printf %x $((${image_base}+0x30000))) "${kernel}"
+    objcopy --add-section .uname=uname.txt --set-section-flags .uname=data,readonly --change-section-vma .uname=0x$(printf %x $((${image_base}+0x40000))) "${kernel}"
 
     for section in linux osrel cmdline initrd uname sbat; do
-      objcopy -O binary -j".${section}" "linux-${version}.efi" "${section}.section"
+      objcopy -O binary -j".${section}" "${kernel}" "${section}.section"
     done
 
     SYSTEMD_LOG_LEVEL=debug \
@@ -57,11 +73,13 @@ config:
       --private-key=tpm2-pcr-private.pem \
       --public-key=tpm2-pcr-public.pem >tpm2-pcr-signature.json
 
-    objcopy --add-section .pcrpkey=tpm2-pcr-public.pem --set-section-flags .pcrpkey=data,readonly --change-section-vma .pcrpkey=0x50000 "linux-${version}.efi"
-    objcopy --add-section .pcrsig=tpm2-pcr-signature.json --set-section-flags .pcrsig=data,readonly --change-section-vma .pcrsig=0x60000 "linux-${version}.efi"
+    objcopy --add-section .pcrpkey=tpm2-pcr-public.pem --set-section-flags .pcrpkey=data,readonly --change-section-vma .pcrpkey=0x$(printf %x $((${image_base}+0x50000))) "${kernel}"
+    objcopy --add-section .pcrsig=tpm2-pcr-signature.json --set-section-flags .pcrsig=data,readonly --change-section-vma .pcrsig=0x$(printf %x $((${image_base}+0x60000))) "${kernel}"
 
-    sbsign --key VENDOR.key --cert VENDOR.crt  --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" "linux-${version}.efi"
-    rm "%{install-root}/efi/EFI/Linux/linux-${version}.efi"
+    objcopy --change-section-vma .linux=0x$(printf %x $((${image_base}+0x70000))) "${kernel}"
+    objcopy --change-section-vma .initrd=0x$(printf %x $((${image_base}+0x1000000))) "${kernel}"
+
+    sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/efi/EFI/Linux/${output_kernel}" "${kernel}"
 
 sources:
 - kind: local
