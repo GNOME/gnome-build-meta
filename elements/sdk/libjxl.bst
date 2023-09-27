@@ -5,6 +5,8 @@ sources:
   url: github_files:libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz
   ref: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
 - kind: patch
+  path: files/libjxl/0001-Migrate-the-GDK-plugin-from-skcms-to-lcms2.patch
+- kind: patch
   path: files/libjxl/0002-Do-not-require-skcms-when-plugins-are-enabled-2592.patch
 
 build-depends:
@@ -34,7 +36,6 @@ variables:
     -DJPEGXL_ENABLE_JPEGLI=OFF
     -DJPEGXL_ENABLE_OPENEXR=OFF
     -DJPEGXL_ENABLE_PLUGINS=ON
-    -DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=OFF
     -DJPEGXL_ENABLE_PLUGIN_GIMP210=OFF
     -DJPEGXL_ENABLE_SJPEG=OFF
     -DJPEGXL_ENABLE_SKCMS=OFF
