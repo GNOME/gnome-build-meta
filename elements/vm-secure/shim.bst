@@ -17,6 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
+- vm-secure/efitools.bst
 
 variables:
   (?):
@@ -28,12 +29,13 @@ variables:
       efi-arch: aa64
   - arch == 'riscv64':
       efi-arch: riscv64
+  gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
 
   make-args: >-
     DEFAULT_LOADER='\\EFI\\systemd\\systemd-boot%{efi-arch}.efi'
     EFIDIR=org.gnome.os
     ESPROOTDIR=efi/
-    VENDOR_CERT_FILE=boot-keys/VENDOR.cer
+    VENDOR_DB_FILE=boot-keys/VENDOR.esl
 
   make: make %{make-args}
   make-install: make -j1 install %{make-args} DESTDIR='%{install-root}'
@@ -41,4 +43,4 @@ variables:
 config:
   configure-commands:
   - |
-    openssl x509 -inform PEM -outform DER -in "boot-keys/VENDOR.crt" -out "boot-keys/VENDOR.cer"
+    cert-to-efi-sig-list -g '%{gnomeos-keys-uuid}' boot-keys/VENDOR.crt boot-keys/VENDOR.esl
