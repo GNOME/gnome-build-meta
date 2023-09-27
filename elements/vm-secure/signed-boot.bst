@@ -42,7 +42,20 @@ config:
     cp "/efi/EFI/Linux/${kernel}" .
     image_base="0x$(objdump -x "${kernel}" | sed '/^ImageBase[[:space:]]*/{;s///;q;};d')"
 
+    cat <<EOF >sbat.txt
+    sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+    uki,1,UKI,uki,1,https://www.freedesktop.org/software/systemd/man/systemd-stub.html
+    EOF
     echo -n "${version}" >uname.txt
+
+    cp '/usr/lib/systemd/boot/efi/addon%{efi-arch}.efi.stub' apparmor.addon.efi
+    apparmor_image_base="0x$(objdump -x apparmor.addon.efi | sed '/^ImageBase[[:space:]]*/{;s///;q;};d')"
+    echo -n "security=apparmor" >apparmor-cmdline.txt
+    objcopy --add-section .sbat=sbat.txt --set-section-flags .sbat=data,readonly --change-section-vma .sbat=0x$(printf %x $((${apparmor_image_base}+0x6000))) apparmor.addon.efi
+    objcopy --add-section .cmdline=apparmor-cmdline.txt --set-section-flags .cmdline=data,readonly --change-section-vma .cmdline=0x$(printf %x $((${apparmor_image_base}+0x7000))) apparmor.addon.efi
+    objcopy --add-section .uname=uname.txt --set-section-flags .uname=data,readonly --change-section-vma .uname=0x$(printf %x $((${apparmor_image_base}+0x8000))) apparmor.addon.efi
+    mkdir -p "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d"
+    sbsign --key VENDOR.key --cert VENDOR.crt --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi" apparmor.addon.efi
 
     objcopy -O binary -j .cmdline "${kernel}" cmdline.txt
     echo -n "usrhash=${roothash} " >new-cmdline.txt

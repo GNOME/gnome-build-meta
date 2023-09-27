@@ -6,6 +6,8 @@ sources:
   ref: freedesktop-sdk-23.08.2-0-geb7333990bfdede7e8dfbd5efae25c11228b78c0
 - kind: patch
   path: files/freedesktop-sdk/repart.patch
+- kind: patch
+  path: files/freedesktop-sdk/sysupdate-dir.patch
 config:
   options:
     target_arch: '%{arch}'

@@ -47,6 +47,9 @@ config:
     done
 
   - |
+    rm -rf /sysroot/efi/EFI/Linux/gnomeos_*.efi.extra.d
+
+  - |
     cp /usr-image/disk.raw '%{install-root}/disk.raw'
 
   - |

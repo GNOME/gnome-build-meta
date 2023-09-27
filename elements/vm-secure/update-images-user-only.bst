@@ -41,6 +41,8 @@ config:
 
     cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi" '%{install-root}/'
     xz ${XZFLAGS} "%{install-root}/gnomeos_${image_version}.efi"
+    cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi" "%{install-root}/gnomeos-apparmor_${image_version}.efi"
+    xz ${XZFLAGS} "%{install-root}/gnomeos-apparmor_${image_version}.efi"
 
   - |
     cd "%{install-root}"
