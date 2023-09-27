@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:atkmm.git
+  url: gnome:pangomm.git
   track: master
+  ref: 2.50.1-16-gb238fc84b103a15903cc4375e48062e7c8ef87b5
 
 build-depends:
 - core-deps/graphviz.bst
@@ -15,8 +16,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/at-spi2-core.bst
-- world/glibmm.bst
+- core-deps/cairomm.bst
+- core-deps/glibmm.bst
+- sdk/pango.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

@@ -1,9 +1,11 @@
 kind: meson
+
 sources:
 - kind: git_repo
-  url: gnome:pangomm.git
-  track: pangomm-2-46
-  ref: 2.46.3-13-gcc618e5ea7326eac1f8943c66fbe446ab460877a
+  url: gnome:atkmm.git
+  track: atkmm-2-28
+  ref: 2.28.3-11-g151d9d72721f48312d8c3a882d2a3f707f5d92e6
+
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
@@ -12,11 +14,12 @@ build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
-- core-deps/cairomm-1.0.bst
-- core-deps/glibmm-2.4.bst
-- sdk/pango.bst
+- sdk/at-spi2-core.bst
+- world/glibmm-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
 variables:
   meson-local: >-
     -Dmaintainer-mode=true

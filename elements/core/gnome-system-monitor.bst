@@ -1,19 +1,25 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:gnome-system-monitor.git
   track: master
-  ref: 45.0.2-1-gf246707cdbe0b803fc970a7d1b561b94079a9591
+  ref: 45.0.2-86-g101994eb85d09970607902bca22688a5e52b964f
+
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-depends:
-- core-deps/gtkmm-3.bst
-- core-deps/libgtop.bst
+
+runtime-depends:
 - sdk/adwaita-icon-theme.bst
+
+depends:
+- core-deps/glibmm.bst
+- core-deps/gtkmm.bst
+- core-deps/libgtop.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/librsvg.bst
-- freedesktop-sdk.bst:components/polkit.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
