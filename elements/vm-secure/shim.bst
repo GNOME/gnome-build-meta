@@ -3,12 +3,12 @@ kind: make
 sources:
 - kind: git_repo
   url: github:rhboot/shim.git
-  track: 15.5
-  ref: 15.5-0-gf2c598bb2218da966872ba3e0c6e7e830dca6ef0
+  track: main
+  ref: 15.7-35-g7ba7440c49d32f911fb9e1c213307947a777085d
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
-  ref: acc5371207f3041450e1d8ae5b24f6df3e82b152
+  ref: 39d4b348e0aaee43a27602961b0281df99c06957
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys
