@@ -12,4 +12,5 @@ if [ "${IMAGE_VERSION:+set}" = set ]; then
   [ -d /run/extensions ] || mkdir -p /run/extensions
   ln -sf "/var/lib/extensions/devel_${IMAGE_VERSION}.img" /run/extensions/devel.raw
   ln -sf "/var/lib/extensions/snapd_${IMAGE_VERSION}.img" /run/extensions/snapd.raw
+  ln -sf "/var/lib/extensions/debug_${IMAGE_VERSION}.img" /run/extensions/debug.raw
 fi
