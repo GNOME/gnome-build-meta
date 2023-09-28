@@ -7,6 +7,7 @@ depends:
 - vm-secure/kernel-modules-only.bst
 - vm-secure/sysupdate-config.bst
 - vm-secure/sysupdate-apparmor-config.bst
+- vm-secure/sysupdate-debug-config.bst
 - vm-secure/sysupdate-devel-config.bst
 - vm-secure/sysupdate-snapd-config.bst
 - vm-secure/systemd-sysupdate-component.bst

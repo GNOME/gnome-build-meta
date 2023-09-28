@@ -13,6 +13,12 @@ build-depends:
   strict: true
   config:
     location: /snapd-only
+- filename: vm-secure/debug-layer-signature.bst
+  config:
+    location: /debug-only
+- filename: vm-secure/debug-layer-tar.bst
+  config:
+    location: /debug-tar-only
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 (?):
@@ -48,6 +54,12 @@ config:
     if [ -d /nvidia-modules-only ]; then
       cp /nvidia-runtime-only/*.xz '%{install-root}'
     fi
+
+  - |
+    cp /debug-only/*.xz '%{install-root}'
+
+  - |
+    cp /debug-tar-only/*.xz '%{install-root}'
 
   - |
     cd "%{install-root}"
