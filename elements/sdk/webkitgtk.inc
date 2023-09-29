@@ -30,7 +30,6 @@ depends:
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
-- freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/hyphen.bst
