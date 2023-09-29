@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/libsigcplusplus-2.0.bst
+- world/libsigcplusplus-2.0.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
