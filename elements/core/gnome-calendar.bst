@@ -19,4 +19,5 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/geoclue-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
