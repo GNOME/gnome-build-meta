@@ -12,6 +12,8 @@ sources:
   path: files/freedesktop-sdk/repart.patch
 - kind: patch
   path: files/freedesktop-sdk/CVE-2023-5217.patch
+- kind: patch
+  path: files/protobuf-base/libphonenumber-protobuf-base.patch
 config:
   options:
     target_arch: '%{arch}'

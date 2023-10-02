@@ -1,0 +1,19 @@
+diff --git a/elements/components/protobuf-base.bst b/elements/components/protobuf-base.bst
+index 60319f166..c7d318456 100644
+--- a/elements/components/protobuf-base.bst
++++ b/elements/components/protobuf-base.bst
+@@ -8,7 +8,13 @@ depends:
+ 
+ variables:
+   cmake-local: >-
+-    -Dprotobuf_BUILD_TESTS:BOOL=OFF
++    -Dprotobuf_BUILD_TESTS:BOOL=OFF \
++
++    -DCMAKE_CXX_STANDARD=17 \
++    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
++    -DBUILD_SHARED_LIBS=ON \
++    -DABSL_PROPAGATE_CXX_STD=ON \
++    -Dprotobuf_BUILD_SHARED_LIBS=ON \
+ 
+ (@):
+ - elements/include/protobuf-source.yml
