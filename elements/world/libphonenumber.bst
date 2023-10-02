@@ -5,8 +5,6 @@ sources:
   url: github:google/libphonenumber
   track: v8.10.16
   ref: v8.10.16-0-gb0daf7ba45f0e8dac582b88634127e3f9671a587
-- kind: patch
-  path: files/libphonenumber/fix-libphonenumber-build.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
