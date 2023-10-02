@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:gnome-settings-daemon.git
@@ -12,6 +13,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
@@ -29,7 +31,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
-- freedesktop-sdk.bst:components/geoclue.bst
+- freedesktop-sdk.bst:components/geoclue-libs.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst

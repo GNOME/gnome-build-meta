@@ -1,21 +1,25 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:gnome-maps.git
   track: main
   ref: v45.0-8-g1d8bbcfedd3f38bba21809ca20c620d34f67564a
+
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib-networking.bst
 - sdk/librsvg.bst
+
 depends:
-- core-deps/libshumate.bst
 - core-deps/libgweather.bst
-- core-deps/librest.bst
 - core-deps/libportal.bst
+- core-deps/librest.bst
+- core-deps/libshumate.bst
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst

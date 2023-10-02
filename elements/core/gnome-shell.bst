@@ -20,7 +20,7 @@ build-depends:
 runtime-depends:
 - core-deps/libgweather.bst
 - core/tecla.bst
-- freedesktop-sdk.bst:components/geoclue.bst
+- freedesktop-sdk.bst:components/geoclue-libs.bst
 
 depends:
 - core-deps/NetworkManager.bst

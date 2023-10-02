@@ -7,3 +7,4 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
+- freedesktop-sdk.bst:components/geoclue.bst
