@@ -1,8 +1,8 @@
 diff --git a/elements/components/protobuf-base.bst b/elements/components/protobuf-base.bst
-index 60319f166..c7d318456 100644
+index 60319f166..aac979c71 100644
 --- a/elements/components/protobuf-base.bst
 +++ b/elements/components/protobuf-base.bst
-@@ -8,7 +8,13 @@ depends:
+@@ -8,7 +8,14 @@ depends:
  
  variables:
    cmake-local: >-
@@ -13,6 +13,7 @@ index 60319f166..c7d318456 100644
 +    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 +    -DBUILD_SHARED_LIBS=ON \
 +    -DABSL_PROPAGATE_CXX_STD=ON \
++
 +    -Dprotobuf_BUILD_SHARED_LIBS=ON \
  
  (@):

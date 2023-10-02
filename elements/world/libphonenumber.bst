@@ -27,10 +27,10 @@ variables:
 
   cmake-args: |
 
-      -DCMAKE_VERBOSE_MAKEFILE=ON \
-      -DCMAKE_INSTALL_PREFIX:PATH="%{prefix}" \
-      -DCMAKE_INSTALL_LIBDIR:PATH="%{lib}" %{cmake-global} %{cmake-local} \
-      -DREGENERATE_METADATA=OFF \
-      -DUSE_BOOST=OFF \
-      -DBUILD_TESTING=OFF \
-      -DFETCHCONTENT_FULLY_DISCONNECTED=ON
+    -DCMAKE_VERBOSE_MAKEFILE=ON \
+    -DCMAKE_INSTALL_PREFIX:PATH="%{prefix}" \
+    -DCMAKE_INSTALL_LIBDIR:PATH="%{lib}" %{cmake-global} %{cmake-local} \
+    -DREGENERATE_METADATA=OFF \
+    -DUSE_BOOST=OFF \
+    -DBUILD_TESTING=OFF \
+    -DFETCHCONTENT_FULLY_DISCONNECTED=ON
