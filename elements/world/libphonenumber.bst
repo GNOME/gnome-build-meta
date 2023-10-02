@@ -9,18 +9,6 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/icu.bst
-- freedesktop-sdk.bst:components/protobuf.bst
-- core/gnome-desktop.bst
-- core-deps/boost.bst
-- core-deps/gspell.bst
-
-- world/libgtest.bst
-- world/re2.bst
-- world/abseil.bst
-
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
   cmake-local: 'cpp/'
