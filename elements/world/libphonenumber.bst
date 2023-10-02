@@ -3,8 +3,8 @@ kind: cmake
 sources:
 - kind: git_repo
   url: github:google/libphonenumber
-  track: v8.10.16
-  ref: v8.10.16-0-gb0daf7ba45f0e8dac582b88634127e3f9671a587
+  track: v8.13.22
+  ref: v8.13.22-0-g4189ef0fd972c8b54b8f9d25bf0d600ad9d80a9e
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
