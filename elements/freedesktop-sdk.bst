@@ -3,15 +3,7 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.0-0-g1533f8d0393984f5684985c8b710e9fbaf9c8734
-- kind: patch
-  path: files/freedesktop-sdk/0001-linux-Backport-tpm-fix.patch
-- kind: patch
-  path: files/freedesktop-sdk/CVE-2023-4863.patch
-- kind: patch
-  path: files/freedesktop-sdk/repart.patch
-- kind: patch
-  path: files/freedesktop-sdk/CVE-2023-5217.patch
+  ref: freedesktop-sdk-23.08.2-0-geb7333990bfdede7e8dfbd5efae25c11228b78c0
 config:
   options:
     target_arch: '%{arch}'
