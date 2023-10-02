@@ -10,8 +10,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
-- freedesktop-sdk.bst:components/protobuf.bst
 - world/libgtest.bst
+
+- freedesktop-sdk.bst:components/protobuf.bst
 - freedesktop-sdk.bst:components/icu.bst
 
 variables:
