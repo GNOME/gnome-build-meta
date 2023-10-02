@@ -9,6 +9,9 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
+depends:
+- freedesktop-sdk.bst:components/protobuf.bst
+
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
   cmake-local: 'cpp/'
