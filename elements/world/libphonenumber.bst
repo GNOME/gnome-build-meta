@@ -24,12 +24,3 @@ depends:
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
   cmake-local: 'cpp/'
-
-config:
-
-  # Commands for configuring the software
-  #
-  configure-commands:
-  - |
-    sed -i -e 's/\${\${NAME}_BIN}-NOTFOUND/\${NAME}_BIN-NOTFOUND/' cpp/CMakeLists.txt
-    %{cmake}
