@@ -12,6 +12,7 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/protobuf.bst
 - world/libgtest.bst
+- core-deps/boost.bst
 
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
