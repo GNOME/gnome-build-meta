@@ -12,7 +12,6 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/protobuf.bst
 - world/libgtest.bst
-- core-deps/boost.bst
 - freedesktop-sdk.bst:components/icu.bst
 
 variables:
