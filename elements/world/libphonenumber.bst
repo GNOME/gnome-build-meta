@@ -18,3 +18,10 @@ depends:
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
   cmake-local: 'cpp/'
+
+  cmake-args: |
+
+      -DCMAKE_VERBOSE_MAKEFILE=ON \
+      -DCMAKE_INSTALL_PREFIX:PATH="%{prefix}" \
+      -DCMAKE_INSTALL_LIBDIR:PATH="%{lib}" %{cmake-global} %{cmake-local} \
+      -DREGENERATE_METADATA=OFF \
