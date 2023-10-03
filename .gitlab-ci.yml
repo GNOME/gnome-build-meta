@@ -71,5 +71,4 @@ test-s3-image:
       junit: junit.xml
     expire_in: '1 week'
   tags:
-  - x86_64
-  - gnome-build-meta
+  - kvm
