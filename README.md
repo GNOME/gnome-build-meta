@@ -59,7 +59,7 @@ You will need a Linux computer with the following programs installed:
 
   * Git
   * Podman
-  * The `ssam_openqa` helper tool
+  * The [`ssam_openqa` helper tool](https://gitlab.gnome.org/sthursfield/ssam_openqa/)
 
 Fetch the tests, and the needles:
 
