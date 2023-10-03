@@ -13,7 +13,6 @@ build-depends:
 
 depends:
 - core-deps/freerdp.bst
-- core-deps/libei.bst
 - core-deps/LibVNCServer.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
@@ -22,6 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/fuse3.bst
+- freedesktop-sdk.bst:components/libei.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libfdk-aac.bst
