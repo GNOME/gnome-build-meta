@@ -41,6 +41,13 @@ default:
   # Setup certificate for pushing to the cache
   - echo "$CASD_CLIENT_CERT" > client.crt
   - echo "$CASD_CLIENT_KEY" > client.key
+  retry:
+    max: 2
+    when:
+    - 'runner_system_failure'
+    - 'stuck_or_timeout_failure'
+    - 'scheduler_failure'
+    - 'api_failure'
 
 #
 # Templates shared by multiple jobs
