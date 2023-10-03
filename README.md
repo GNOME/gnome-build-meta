@@ -5,8 +5,8 @@ Welcome!
 This repo holds end-to-end tests for GNOME OS, written
 using the openQA test API.
 
-For more information about this project, we recommend watching the following
-video: ...
+For more information about this project, you could watch the following
+video: ["The best testing tools we've ever had: an introduction to openQA for GNOME"](https://www.youtube.com/watch?v=jIDk0frev7M&t=6732s). Or just keep reading :-)
 
 Complete documentation can be found here:
 <https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/openqa/OpenQA-for-GNOME-developers>
@@ -59,13 +59,13 @@ You will need a Linux computer with the following programs installed:
 
   * Git
   * Podman
-  * The `ssam_openqa` helper tool
+  * The [`ssam_openqa` helper tool](https://gitlab.gnome.org/sthursfield/ssam_openqa/)
 
 Fetch the tests, and the needles:
 
 ```
 git clone https://gitlab.gnome.org/gnome/openqa-tests
-cd openqa_tests && https://gitlab.gnome.org/gnome/openqa-needles
+cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles
 ```
 
 Fetch and prepare the required test media (note: large files):

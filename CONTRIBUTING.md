@@ -49,8 +49,7 @@ It's possible to work with the tests by pushing your changes to Gitlab
 and testing in CI. However you can get much quicker feedback on your
 changes by testing locally.
 
-See the <README.md> file for instructions on how to run the tests locally,
-and try to get that working before you continue with this guide.
+See the [README.md](README.md) file for instructions on how to run the tests locally, and try to get that working before you continue with this guide.
 
 ## Tutorial: Extend the test suite
 
@@ -69,7 +68,7 @@ that's not possible add a new one.
 ## Adding a test
 
 An openQA test is a Perl module that follows a specific structure. See
-<tests/gnome_welcome.pm> and <tests/app_nautilus.pm> for examples.
+[tests/gnome_welcome.pm](tests/gnome_welcome.pm) and [tests/app_nautilus.pm](tests/app_nautilus.pm) for examples.
 
 To add a new test:
 
