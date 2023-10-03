@@ -125,6 +125,8 @@ default:
   - exit $result
 
 .test-phone-image-template:
+  extends:
+  - .aarch64
   stage: test
   when: manual
   needs:
@@ -136,9 +138,6 @@ default:
 
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
-  tags:
-  - aarch64
-  - gnome-build-meta
 
 #
 # "Real" CI jobs
@@ -453,6 +452,8 @@ cve_report:
 
 
 test-s3-image:
+  extends:
+  - .x86_64
   stage: test
   image:
     name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
@@ -527,9 +528,6 @@ test-s3-image:
     reports:
       junit: junit.xml
     expire_in: '1 week'
-  tags:
-  - x86_64
-  - gnome-build-meta
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
