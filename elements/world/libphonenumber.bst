@@ -13,6 +13,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/abseil-cpp.bst
 - freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:components/protobuf.bst
 - core/gnome-desktop.bst
@@ -21,7 +22,6 @@ depends:
 
 - world/libgtest.bst
 - world/re2.bst
-- world/abseil.bst
 
 variables:
   # Element-specific extra arguments to be passed to `cmake`.
