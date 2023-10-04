@@ -2,3 +2,5 @@
 url=OSTREE_REMOTE_URL
 gpg-verify=true
 gpgkeypath=/etc/pki/ostree/gnome.gpg
+# FIXME: remove when fixed in libcurl
+http2=false
