@@ -1,0 +1,25 @@
+diff --git a/elements/components/abseil-cpp.bst b/elements/components/abseil-cpp.bst
+index fc07b4bc6..43d620e4a 100644
+--- a/elements/components/abseil-cpp.bst
++++ b/elements/components/abseil-cpp.bst
+@@ -11,3 +11,7 @@ sources:
+   url: github:abseil/abseil-cpp.git
+   track: "*.*"
+   ref: 20230802.1-0-gfb3621f4f897824c0dbe0615fa94543df6192f30
++
++variables:
++  cmake-local: >-
++    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+diff --git a/elements/components/protobuf-base.bst b/elements/components/protobuf-base.bst
+index 4004d2f9e..660ae3d9c 100644
+--- a/elements/components/protobuf-base.bst
++++ b/elements/components/protobuf-base.bst
+@@ -11,6 +11,8 @@ variables:
+   cmake-local: >-
+     -Dprotobuf_BUILD_TESTS:BOOL=OFF
+     -Dprotobuf_ABSL_PROVIDER=package
++    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
++    -Dprotobuf_BUILD_SHARED_LIBS=ON
+ 
+ (@):
+ - elements/include/protobuf-source.yml

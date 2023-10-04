@@ -9,6 +9,8 @@ sources:
   path: files/freedesktop-sdk/repart.patch
 - kind: patch
   path: files/freedesktop-sdk/sysupdate-dir.patch
+- kind: patch
+  path: files/libphonenumber/libphonenumber-build.patch
 
 config:
   options:
