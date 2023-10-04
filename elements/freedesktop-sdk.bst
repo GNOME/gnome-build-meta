@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.2-0-geb7333990bfdede7e8dfbd5efae25c11228b78c0
+  ref: freedesktop-sdk-23.08.2-3-g3b4cc683e31a9fc60f29bbd6fbd215dbe890c76a
 config:
   options:
     target_arch: '%{arch}'
