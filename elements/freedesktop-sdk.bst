@@ -1,4 +1,5 @@
 kind: junction
+
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
@@ -8,6 +9,7 @@ sources:
   path: files/freedesktop-sdk/repart.patch
 - kind: patch
   path: files/freedesktop-sdk/sysupdate-dir.patch
+
 config:
   options:
     target_arch: '%{arch}'
@@ -20,6 +22,7 @@ config:
         bootstrap_build_arch: "ppc64le"
     - arch == "riscv64":
         bootstrap_build_arch: "x86_64"
+
   overrides:
     components/appstream-glib.bst: sdk/appstream-glib.bst
     components/at-spi2-core.bst: sdk/at-spi2-core.bst
