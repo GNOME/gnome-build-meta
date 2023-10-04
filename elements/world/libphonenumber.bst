@@ -15,7 +15,6 @@ depends:
 - freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:components/protobuf.bst
 - core/gnome-desktop.bst
-- core-deps/boost.bst
 - core-deps/gspell.bst
 - world/libgtest.bst
 - world/re2.bst
@@ -24,4 +23,5 @@ variables:
   cmake-local: >-
     -DCMAKE_CXX_STANDARD=17
     -DREGENERATE_METADATA=OFF
+    -DUSE_BOOST=OFF
     'cpp/'
