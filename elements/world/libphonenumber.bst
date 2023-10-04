@@ -17,7 +17,6 @@ depends:
 - core/gnome-desktop.bst
 - core-deps/gspell.bst
 - world/libgtest.bst
-- world/re2.bst
 
 variables:
   cmake-local: >-
