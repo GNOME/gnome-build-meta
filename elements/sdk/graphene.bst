@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:ebassi/graphene.git
-  track: master
+  track: "*.*.*"
   ref: 1.10.6-42-g0cfa05ff62f244e4d5e7ac35a1979a23f25c5151
 
 build-depends:
