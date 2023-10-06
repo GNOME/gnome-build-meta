@@ -41,6 +41,8 @@ default:
   # Setup certificate for pushing to the cache
   - echo "$CASD_CLIENT_CERT" > client.crt
   - echo "$CASD_CLIENT_KEY" > client.key
+  - make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+
   retry:
     max: 2
     when:
@@ -253,9 +255,8 @@ sysupdate-image-x86_64:
   script:
   - |
     if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+      make -C files/boot-keys clean
       make -C files/boot-keys generate-keys IMPORT_MODE=import
-    else
-      make -C files/boot-keys generate-keys
     fi
 
   - |

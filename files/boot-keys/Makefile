@@ -21,6 +21,9 @@ modules/linux-module-cert.crt: $(KERNEL_KEYRING)
 ifeq ($(IMPORT_MODE),import)
 tpm2-pcr-private.pem:
 	echo "$${SECURE_BOOT_TPM_PCR_KEY}" >$@
+else ifeq ($(IMPORT_MODE),snakeoil)
+tpm2-pcr-private.pem:
+	cp snakeoil/SECURE_BOOT_TPM_PCR_KEY $@
 else
 tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
@@ -43,10 +46,20 @@ ifeq ($(IMPORT_MODE),import)
 	name=$(basename $(notdir $@));			\
 	key_name=SECURE_BOOT_$${name}_KEY;		\
 	echo "$${!key_name}" >"$(basename $@).key"
+else ifeq ($(IMPORT_MODE),snakeoil)
+%.crt:
+	name=$(basename $(notdir $@));			\
+	crt_name=SECURE_BOOT_$${name}_CRT;		\
+	cat "snakeoil/$${crt_name}" >"$(basename $@).crt"
 
+%.key:
+	name=$(basename $(notdir $@));			\
+	key_name=SECURE_BOOT_$${name}_KEY;		\
+	cat "snakeoil/$${key_name}" >"$(basename $@).key"
 else
+KEY_ID=GNOME
 %.crt %.key:
-	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=GNOME $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
+	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=$(KEY_ID) $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
 endif
 
 extra-kek-mic/mic-kek.cer: extra-kek-mic/.keep
@@ -80,6 +93,8 @@ private-key:
 	(umask 0077; mkdir $@)
 ifeq ($(IMPORT_MODE),import)
 	echo "$${SECURE_BOOT_DISTRIBUTION_KEY}" | gpg --homedir=$@ --import
+else ifeq ($(IMPORT_MODE),snakeoil)
+	cat snakeoil/SECURE_BOOT_DISTRIBUTION_KEY | gpg --homedir=$@ --import
 else
 	gpg --homedir=$@ --batch --generate-key key-config
 endif
@@ -99,6 +114,15 @@ show-keys-for-ci: generate-keys
 	@cat tpm2-pcr-private.pem
 	@echo SECURE_BOOT_DISTRIBUTION_KEY
 	@gpg --homedir=private-key --export-secret-key --armor
+
+export-snakeoil: generate-keys
+	mkdir -p snakeoil
+	@for key in $(KEY_TYPES); do					\
+	  cat "$${key}.crt" >"snakeoil/SECURE_BOOT_$${key}_CRT";	\
+	  cat "$${key}.key" >"snakeoil/SECURE_BOOT_$${key}_KEY";	\
+	done
+	@cat tpm2-pcr-private.pem >snakeoil/SECURE_BOOT_TPM_PCR_KEY
+	@gpg --homedir=private-key --export-secret-key --armor >snakeoil/SECURE_BOOT_DISTRIBUTION_KEY
 
 clean:
 	rm -f {PK,PK_MIC,KEK,KEK_MIC,DB,VENDOR,MODULES}.{crt,key}
