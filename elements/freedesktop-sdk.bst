@@ -43,4 +43,4 @@ config:
     components/vala.bst: sdk/vala.bst
     components/zenity.bst: void/zenity.bst
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
-    components/linux-module-cert.bst: vm-secure/linux-module-cert-maybe.bst
+    components/linux-module-cert.bst: vm-secure/linux-module-cert.bst

@@ -28,9 +28,8 @@ done
 : ${BST:=bst}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
 : ${IMAGE_ELEMENT:="vm-secure/image.bst"}
-: ${SIGNED_MODULES:=true}
 
-BST_OPTIONS=(-o signed_modules "${SIGNED_MODULES}")
+BST_OPTIONS=()
 
 if [ "${#args[@]}" -ge 1 ]; then
     IMAGE_ELEMENT="${args[0]}"

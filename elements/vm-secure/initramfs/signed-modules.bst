@@ -4,11 +4,6 @@ build-depends:
 - freedesktop-sdk.bst:components/linux.bst
 - freedesktop-sdk.bst:components/sign-file.bst
 
-(?):
-  - not signed_modules:
-      (!): |
-          Modules need to be signed for secure boot images
-
 config:
   install-commands:
   - |

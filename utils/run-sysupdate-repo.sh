@@ -27,9 +27,8 @@ fi
 : ${BST:=bst}
 : ${REPO_STATE:="${PWD}/secure-vm-repo"}
 : ${PORT:=8080}
-: ${SIGNED_MODULES:=true}
 
-BST_OPTIONS=(-o signed_modules "${SIGNED_MODULES}")
+BST_OPTIONS=()
 
 [ -d "${REPO_STATE}" ] || mkdir -p "${REPO_STATE}"
 
