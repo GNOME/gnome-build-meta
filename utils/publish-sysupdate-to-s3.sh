@@ -12,6 +12,9 @@ else
     target_dir="nightly"
 fi
 
+# --expires expects a ISO 8601 datetime
+expire_at="$(date -I -d '15 days')"
+
 if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
     aws s3 cp --acl public-read \
         "s3://gnome-build-meta/${target_dir}/sysupdate/" update-images/ \
@@ -24,19 +27,23 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         --detach-sig "update-images/SHA256SUMS"
 
     aws s3 sync --acl public-read \
+        --expires "$expire_at" \
         update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
         --exclude "*" --include "*.xz" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}"
 
     # keep SHA256SUMS files at the end to minimize time for which files are not available
     aws s3 sync --acl public-read \
+        --expires "$expire_at" \
         --cache-control max-age=1800 \
         update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
         --exclude "*" --include "SHA256SUMS" --include "SHA256SUMS.gpg"
 
     if [ -n "${CI_PIPELINE_ID}" ]; then
         aws s3 cp --acl public-read image/disk.img.xz \
+            --expires "$expire_at" \
             "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}.img.xz"
         aws s3 cp --acl public-read iso/installer.iso \
+            --expires "$expire_at" \
             "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/gnome_os_sysupdate_installer_${CI_PIPELINE_ID}.iso"
     fi
 fi
