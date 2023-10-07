@@ -19,3 +19,4 @@ depends:
 - vm-secure/replace-signed-systemd-boot.bst
 - vm-secure/efitools.bst
 - vm-secure/reload-sysext.bst
+- vm-secure/mokutil.bst
