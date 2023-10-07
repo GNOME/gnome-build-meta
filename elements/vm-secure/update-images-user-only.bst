@@ -25,13 +25,13 @@ config:
 
     roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/repart.json)
 
-    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-devel.conf$"))).uuid' /usr-image/repart.json)"
+    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/21-usr-A.conf$"))).uuid' /usr-image/repart.json)"
     usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/repart.json)
 
-    cp /usr-image/disk.usr-verity.raw "%{install-root}/usr_${image-version}_${usr_verity_part_uuid}.verity"
-    xz ${XZFLAGS} "%{install-root}/usr_${image-version}_${usr_verity_part_uuid}.verity"
-    cp /usr-image/disk.usr.raw "%{install-root}/usr_${image-version}_${usr_part_uuid}.squashfs"
-    xz ${XZFLAGS} "%{install-root}/usr_${image-version}_${usr_part_uuid}.squashfs"
+    cp /usr-image/disk.usr-verity.raw "%{install-root}/usr_${image_version}_${usr_verity_part_uuid}.verity"
+    xz ${XZFLAGS} "%{install-root}/usr_${image_version}_${usr_verity_part_uuid}.verity"
+    cp /usr-image/disk.usr.raw "%{install-root}/usr_${image_version}_${usr_part_uuid}.squashfs"
+    xz ${XZFLAGS} "%{install-root}/usr_${image_version}_${usr_part_uuid}.squashfs"
 
   - |
     set -x
