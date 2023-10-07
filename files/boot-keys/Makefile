@@ -125,10 +125,11 @@ export-snakeoil: generate-keys
 	@gpg --homedir=private-key --export-secret-key --armor >snakeoil/SECURE_BOOT_DISTRIBUTION_KEY
 
 clean:
-	rm -f {PK,PK_MIC,KEK,KEK_MIC,DB,VENDOR,MODULES}.{crt,key}
+	rm -f {PK,PK_MIC,KEK,KEK_MIC,DB,VENDOR,MODULES,SYSEXT}.{crt,key}
 	rm -rf private-key
 	rm -f import-pubring.gpg
-	rm -f extra-{db,kek}/*.{owner,crt}
+	rm -f extra-{db,kek}{,-mic}/*.{owner,crt,cer}
 	rm -f tpm2-pcr-{private,public}.pem
+	rm -f modules/linux-module-cert.crt
 
 .PHONY: generate-keys download-microsoft-keys show-keys-for-ci clean
