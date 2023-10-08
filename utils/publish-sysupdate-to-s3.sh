@@ -17,7 +17,7 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         "s3://gnome-build-meta/${target_dir}/sysupdate/" update-images/ \
         --recursive --exclude "*" --include "SHA256SUMS.version.*"
 
-    mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}"
+    mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
     cat update-images/SHA256SUMS.version.* > update-images/SHA256SUMS
     gpg --homedir=files/boot-keys/private-key \
         --output "update-images/SHA256SUMS.gpg" \
@@ -25,7 +25,7 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
 
     aws s3 sync --acl public-read \
         update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
-        --exclude "*" --include "*.xz" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}"
+        --exclude "*" --include "*.xz" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     # keep SHA256SUMS files at the end to minimize time for which files are not available
     aws s3 sync --acl public-read \
@@ -35,9 +35,9 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
 
     if [ -n "${CI_PIPELINE_ID}" ]; then
         aws s3 cp --acl public-read image/disk.img.xz \
-            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}.img.xz"
+            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}-${ARCH}.img.xz"
         aws s3 cp --acl public-read iso/installer.iso \
-            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/gnome_os_sysupdate_installer_${CI_PIPELINE_ID}.iso"
+            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/gnome_os_sysupdate_installer_${CI_PIPELINE_ID}-${ARCH}.iso"
     fi
 fi
 

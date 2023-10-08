@@ -87,4 +87,4 @@ config:
   - |
     label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
     image_version="${label##gnomeos_usr_dev_v_}"
-    install -Dm644 devel.raw.xz "%{install-root}/devel_${image_version}.raw.xz"
+    install -Dm644 devel.raw.xz "%{install-root}/devel-%{systemd-arch}_${image_version}.raw.xz"
