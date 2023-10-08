@@ -26,7 +26,7 @@ tests:
   * Modern Linux-based OS such as Fedora or Ubuntu
   * At least 20GB of disk space free
   * At least 4GB of RAM free
-  * Support for x86_64 hardware acceleration using [KVM](https://wiki.archlinux.org/title/KVM)
+  * Support for x86_64 hardware virtualization using [KVM](https://wiki.archlinux.org/title/KVM)
 
 Additionally, you'll need to download the test media which are around 10GB in
 size. 
