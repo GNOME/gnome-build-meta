@@ -20,12 +20,44 @@ out more.
 
 ## System requirements
 
-To run the tests locally you need a computer running Linux with a minimum 20GB
-of free disk space and 4GB of RAM. You'll need to download the test media
-which are around 10GB in size. This is required for extending the test suite.
+Your computer must meet the following requirements in order to run the end-to-end
+tests:
 
-To check the status of the tests and investigate failures you can use any
-computer that has a modern web browser and a Linux shell.
+  * Modern Linux-based OS such as Fedora or Ubuntu
+  * At least 20GB of disk space free
+  * At least 4GB of RAM free
+  * Support for x86_64 hardware acceleration using [KVM](https://wiki.archlinux.org/title/KVM)
+
+Additionally, you'll need to download the test media which are around 10GB in
+size. 
+
+If you don't want to develop the tests, and you only want to check the status
+of the tests using the openQA web UI, then you can use any computer that has
+a modern web browser.
+
+### A note on virtualisation
+
+When you run the end-to-end tests, openQA creates a x86_64 virtual machine
+using [QEMU](https://wiki.archlinux.org/title/QEMU).
+
+Virtual machines can be very slow if your computer has to emulate every detail
+of an x86_64 CPU in software. However, if your computer has an x86_64 CPU that
+is less than 10 years old, it should support *hardware virtualization*, which
+allows creating virtual machines that run on the real CPU.
+
+To check if hardware virtualization will work on your computer, follow these
+instructions from the Arch Linux wiki: ["Checking support for KVM"](https://wiki.archlinux.org/title/KVM#Hardware_support).
+
+As the wiki page notes, some hardware vendors will disable hardware virtualization
+by default. You should be able to find instructions for enabling it if you search
+online for the make and model of your laptop or mainboard plus "enable hardware
+virtualization".
+
+You might have the host Linux OS running in a virtual machine rather than on
+bare metal. In this case, the hypervisor running Linux will need to support
+*nested virtualization*, so that you can start a VM inside your VM and run that
+using the real CPU. Check the documentation of the hypervisor to see if this is
+possible.
 
 ## How to get in touch
 
