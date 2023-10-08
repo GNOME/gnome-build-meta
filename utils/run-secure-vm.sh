@@ -13,6 +13,10 @@ while [ $# -gt 0 ]; do
         --reset-secure-state)
             reset_secure=1
             ;;
+        --buildid)
+            shift
+            buildid="$1"
+            ;;
         --notpm)
             no_tpm=1
             ;;
@@ -44,6 +48,14 @@ if [ "${#args[@]}" -ge 2 ]; then
     exit 1
 fi
 
+if [ "${buildid+set}" = set ]; then
+    mkdir -p "${STATE_DIR}/builds"
+    if ! [ -f "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz" ]; then
+        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_sysupdate_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz.tmp"
+        mv "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz"
+    fi
+fi
+
 if ! [ "${no_tpm+set}" = set ]; then
     if systemctl --user -q is-active "${SWTPM_UNIT}"; then
         systemctl --user stop "${SWTPM_UNIT}"
@@ -73,9 +85,14 @@ trap cleanup EXIT
 if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
-    make -C files/boot-keys generate-keys
-    "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
-    "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
+
+    if [ "${buildid+set}" = set ]; then
+        cp "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz" "${checkout}/disk.img.xz"
+    else
+        make -C files/boot-keys generate-keys
+        "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
+        "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
+    fi
     unxz "${checkout}/disk.img.xz"
     truncate --size 50G "${checkout}/disk.img"
     mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
