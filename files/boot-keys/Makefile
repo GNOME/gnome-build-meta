@@ -3,9 +3,10 @@ all: generate-keys
 KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES SYSEXT
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
-BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep modules/linux-module-cert.crt
+BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep $(KERNEL_KEYRING_FILE)
 KERNEL_KEYS=tpm2-pcr-private.pem tpm2-pcr-public.pem
 DIST_KEYS=private-key import-pubring.gpg
+KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
 KERNEL_KEYRING=MODULES.crt SYSEXT.crt
 
 MICROSOFT_KEYS=							\
@@ -25,6 +26,7 @@ else ifeq ($(IMPORT_MODE),snakeoil)
 tpm2-pcr-private.pem:
 	cp snakeoil/SECURE_BOOT_TPM_PCR_KEY $@
 else
+# Also no IMPORT_MODE=local
 tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
 endif
@@ -35,6 +37,8 @@ tpm2-pcr-public.pem: tpm2-pcr-private.pem
 extra-db/.keep extra-kek/.keep:
 	[ -d $(dir $@) ] || mkdir -p $(dir $@)
 	touch $@
+
+KEY_ID=GNOME
 
 ifeq ($(IMPORT_MODE),import)
 %.crt:
@@ -56,8 +60,31 @@ else ifeq ($(IMPORT_MODE),snakeoil)
 	name=$(basename $(notdir $@));			\
 	key_name=SECURE_BOOT_$${name}_KEY;		\
 	cat "snakeoil/$${key_name}" >"$(basename $@).key"
+else ifeq ($(IMPORT_MODE),local)
+$(foreach KEY,PK PK_MIC KEK KEK_MIC DB,$(KEY).crt):
+	name=$(basename $(notdir $@));			\
+	crt_name=SECURE_BOOT_$${name}_CRT;		\
+	cat "snakeoil/$${crt_name}" >"$(basename $@).crt"
+
+$(foreach KEY,PK PK_MIC KEK KEK_MIC DB,$(KEY).key):
+	name=$(basename $(notdir $@));			\
+	key_name=SECURE_BOOT_$${name}_KEY;		\
+	cat "snakeoil/$${key_name}" >"$(basename $@).key"
+
+VENDOR.crt VENDOR.key:
+	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=$(KEY_ID) $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
+
+SYSEXT.crt SYSEXT.key MODULES.crt MODULES.key:
+	cp VENDOR$(suffix $@) $@
+
+# No need for keys since they will be picked up from MOK
+KERNEL_KEYRING_FILE=
+
+generate-keys: VENDOR.der
+
+VENDOR.der: VENDOR.crt
+	openssl x509 -inform pem -outform der -in $< -out $@
 else
-KEY_ID=GNOME
 %.crt %.key:
 	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=$(KEY_ID) $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
 endif
