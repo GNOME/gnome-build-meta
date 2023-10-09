@@ -1,8 +1,8 @@
 sources:
 - kind: git_repo
-  url: github:megous/linux.git
+  url: github:sailfish-on-dontbeevil/kernel-megi.git
   track: orange-pi-6.0
-  ref: orange-pi-6.0-20221111-0002-916-gbb505b76761d1f196fc3e3948e756fc1583ff2e5
+  ref: orange-pi-6.0-20221105-1830-0-g7f305ec5ef634004d64fdd9b41044fe0bce7f397
 
 - kind: local
   path: files/linux/config-utils.sh

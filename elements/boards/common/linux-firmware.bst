@@ -2,9 +2,9 @@ kind: import
 
 sources:
 - kind: git_repo
-  url: megous:git/linux-firmware
+  url: gnome_gitlab:tanvirroshid/linux-firmware.git
   track: master
-  ref: 5c4c2b89f30a42f5ffabb5b5bcbc799d8ac9f66f
+  ref: 7fbeed5ba70617bfb6196a924e8a55952f1f50aa
 
 config:
   source: /
