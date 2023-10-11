@@ -7,7 +7,6 @@ sources:
   ref: 2023.1-40-g77afcc369e2957cc8347983454f0822cb7a1c3e8
 
 build-depends:
-- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

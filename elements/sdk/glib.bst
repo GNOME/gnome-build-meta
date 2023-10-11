@@ -11,6 +11,7 @@ sources:
   ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
 
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
