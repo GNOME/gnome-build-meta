@@ -1,8 +1,8 @@
 sources:
 - kind: git_repo
-  url: github:megous/linux.git
-  track: orange-pi-6.0
-  ref: orange-pi-6.0-20221111-0002-916-gbb505b76761d1f196fc3e3948e756fc1583ff2e5
+  url: gitlab:pine64-org/linux.git
+  track: ppp-6.0.8-ppkb
+  ref: ppp-6.0.8-ppkb-0-g7e2bfc1901730a869804c561d065bf9baee317c4
 - kind: local
   path: files/linux/config-utils.sh
 - kind: patch
