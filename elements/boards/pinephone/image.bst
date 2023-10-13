@@ -5,7 +5,7 @@ build-depends:
 - filename: boards/pinephone/repo.bst
   config:
     location: '/source-repo'
-- filename: boards/pinephone/linux.bst
+- filename: freedesktop-sdk.bst:components/linux.bst
   config:
     location: '/kernel'
 
