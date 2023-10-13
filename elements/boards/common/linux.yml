@@ -10,4 +10,4 @@ sources:
   path: files/linux/config-utils.sh
 
 - kind: patch
-  path: patches/linux/0001-riscv-sifive-fu740-cpu-1-2-3-4-set-compatible-to-sif.patch
+  path: files/linux/0001-riscv-sifive-fu740-cpu-1-2-3-4-set-compatible-to-sif.patch
