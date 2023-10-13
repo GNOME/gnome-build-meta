@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gobject-introspection.git
   track: main
-  ref: 1.78.1-1-gb8c3ff23b6c121433faca19ddf61fe8dc72a8930
+  ref: 1.78.1-2-gdf04a12f847b9953264a478b55106bbf144e63db
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/bison.bst
