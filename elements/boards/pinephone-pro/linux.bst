@@ -2,16 +2,16 @@ kind: make
 description: Linux kernel configured for use in virtual machines.
 
 depends:
-- components/kmod.bst
+- freedesktop-sdk.bst:components/kmod.bst
 
 build-depends:
-- bootstrap-import.bst
-- components/bison.bst
-- components/flex.bst
-- components/bc.bst
-- components/gzip.bst
-- components/rsync.bst
-- components/linux-module-cert.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/bison.bst
+- freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:components/bc.bst
+- freedesktop-sdk.bst:components/gzip.bst
+- freedesktop-sdk.bst:components/rsync.bst
+- freedesktop-sdk.bst:components/linux-module-cert.bst
 
 variables:
   bootdir: /boot
@@ -19,21 +19,21 @@ variables:
   src-arch: '%{kernel_arch}'
   image-name: '$(make -s image_name)'
   (?):
-  - target_arch == "x86_64":
+  - arch == "x86_64":
       src-arch: x86
-  - target_arch == "aarch64":
+  - arch == "aarch64":
       kernel_arch: arm64
       # The default image file is not EFI compatible
       image-name: arch/arm64/boot/Image
-  - target_arch == "i686":
+  - arch == "i686":
       src-arch: x86
       kernel_arch: i386
-  - target_arch in ("ppc64", "ppc64le"):
+  - arch in ("ppc64", "ppc64le"):
       kernel_arch: powerpc
-  - target_arch == "riscv64":
+  - arch == "riscv64":
       kernel_arch: riscv
       image-name: arch/riscv/boot/Image
-  - target_arch == "loongarch64":
+  - arch == "loongarch64":
       kernel_arch: loongarch
 
 environment:
@@ -1898,7 +1898,7 @@ config:
     ln -sr "${targetdir}" "%{install-root}%{indep-libdir}/modules/${release}/build"
 
   (?):
-  - target_arch in ["aarch64", "arm", "riscv64"]:
+  - arch in ["aarch64", "arm", "riscv64"]:
       install-commands:
         (>):
         - |
@@ -1919,4 +1919,4 @@ public:
         - '%{bootdir}/System.map'
 
 (@):
-- elements/include/linux.yml
+- elements/boards/common/linux.yml
