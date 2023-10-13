@@ -1,17 +1,17 @@
-kind: manual
-description: Linux kernel configured for use in PinePhone Pro.
+kind: make
+description: Linux kernel configured for use in virtual machines.
 
 depends:
-- freedesktop-sdk.bst:components/kmod.bst
-- boards/common/linux-firmware.bst
+- components/kmod.bst
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:components/bc.bst
-- freedesktop-sdk.bst:components/gzip.bst
-- freedesktop-sdk.bst:components/openssl.bst
+- bootstrap-import.bst
+- components/bison.bst
+- components/flex.bst
+- components/bc.bst
+- components/gzip.bst
+- components/rsync.bst
+- components/linux-module-cert.bst
 
 variables:
   bootdir: /boot
@@ -19,979 +19,1823 @@ variables:
   src-arch: '%{kernel_arch}'
   image-name: '$(make -s image_name)'
   (?):
-  - arch == "x86_64":
+  - target_arch == "x86_64":
       src-arch: x86
-  - arch == "aarch64":
+  - target_arch == "aarch64":
       kernel_arch: arm64
       # The default image file is not EFI compatible
       image-name: arch/arm64/boot/Image
-  - arch == "i686":
+  - target_arch == "i686":
       src-arch: x86
       kernel_arch: i386
-  - arch in ("ppc64", "ppc64le"):
+  - target_arch in ("ppc64", "ppc64le"):
       kernel_arch: powerpc
-  - arch == "riscv64":
+  - target_arch == "riscv64":
       kernel_arch: riscv
       image-name: arch/riscv/boot/Image
+  - target_arch == "loongarch64":
+      kernel_arch: loongarch
 
 environment:
   ARCH: '%{kernel_arch}'
   # compile.h has hardcoded timestamp, let's seed it
   KBUILD_BUILD_TIMESTAMP: 'Thu Nov 10 15:00:00 UTC 2011'
   KBUILD_BUILD_USER: 'tomjon'
+  MAXJOBS: "%{max-jobs}"
+
+environment-nocache:
+- MAXJOBS
 
 config:
   configure-commands:
   - |
     # Generate the default kernel config for the target architecture
-    make pinephone_pro_defconfig
+    make defconfig
 
   - |
     . ./config-utils.sh
     rm -f expected-configs
 
-    scripts/config -e EFI
-    scripts/config -e BLK_DEV_INITRD
-    scripts/config -e RD_GZIP
-    scripts/config -e DMI
-    scripts/config -e EFI_GENERIC_STUB_INITRD_CMDLINE_LOADER
+    # Modify the kernel config for additional features
 
-    scripts/config -e FW_LOADER
-    scripts/config -e FW_LOADER_COMPRESS
-    scripts/config -e FW_LOADER_PAGED_BUF
-    scripts/config -e FW_LOADER_COMPRESS_XZ
-    scripts/config -e FW_LOADER_COMPRESS_ZSTD
-    scripts/config -e FW_CACHE
+    # Kernel Config Options
+    enable DEVTMPFS
+    enable CGROUPS
+    enable INOTIFY_USER
+    enable SIGNALFD
+    enable TIMERFD
+    enable EPOLL
+    enable NET
+    enable SYSFS
+    enable PROC_FS
+    enable FHANDLE
 
-    scripts/config -e NET_VENDOR_BROADCOM
+    # Enable access to kernel config through /proc/config.gz
+    enable IKCONFIG
+    enable IKCONFIG_PROC
 
-    scripts/config -m B43
-    scripts/config -e B43_SDIO
-    scripts/config -m B43LEGACY
-    scripts/config -m BRCMSMAC
-    scripts/config -m BRCMFMAC
-    scripts/config -e BRCMFMAC_USB
-    scripts/config -e BRCM_TRACING
-    scripts/config -e BRCMDBG
+    # Kernel crypto/hash API
+    module CRYPTO_AES
+    module CRYPTO_ARC4
+    module CRYPTO_CBC
+    module CRYPTO_CMAC
+    module CRYPTO_CRC32
+    module CRYPTO_CRC32C
+    module CRYPTO_CRCT10DIF
+    module CRYPTO_DES
+    module CRYPTO_ECB
+    module CRYPTO_GHASH
+    module CRYPTO_HMAC
+    module CRYPTO_MD4
+    module CRYPTO_MD5
+    module CRYPTO_SHA1
+    module CRYPTO_SHA256
+    module CRYPTO_SHA512
+    module CRYPTO_XTS
 
-    scripts/config --set-str EXTRA_FIRMWARE "regulatory.db regulatory.db.p7s brcm/brcmfmac43455-sdio.bin brcm/brcmfmac43455-sdio.pine64,pinephone-pro.txt brcm/brcmfmac43455-sdio.clm_blob brcm/BCM4345C0.hcd rockchip/dptx.bin"
-    scripts/config --set-str EXTRA_FIRMWARE_DIR "/workspace/megous.com/orangepi-pc/firmware"
+    enable CRYPTO_USER_API_HASH
+    enable CRYPTO_USER_API_SKCIPHER
 
-    scripts/config -e AUDIT
+    case "%{arch}" in
+      i686)
+        module CRYPTO_CRC32C_INTEL
+        module CRYPTO_CRC32_PCLMUL
+        module CRYPTO_AES_NI_INTEL
+        ;;
+      x86_64)
+        module CRYPTO_CRC32C_INTEL
+        module CRYPTO_CRC32_PCLMUL
+        module CRYPTO_AES_NI_INTEL
+        module CRYPTO_CRCT10DIF_PCLMUL
+        module CRYPTO_GHASH_CLMUL_NI_INTEL
+        module CRYPTO_SHA1_SSSE3
+        module CRYPTO_SHA256_SSSE3
+        module CRYPTO_SHA512_SSSE3
+        module CRYPTO_DES3_EDE_X86_64
+        ;;
+      arm)
+        module CRYPTO_SHA1_ARM
+        module CRYPTO_SHA1_ARM_NEON
+        module CRYPTO_SHA1_ARM_CE
+        module CRYPTO_SHA2_ARM_CE
+        module CRYPTO_SHA256_ARM
+        module CRYPTO_SHA512_ARM
+        module CRYPTO_AES_ARM
+        module CRYPTO_AES_ARM_BS
+        module CRYPTO_AES_ARM_CE
+        module CRYPTO_GHASH_ARM_CE
+        module CRYPTO_CRCT10DIF_ARM_CE
+        module CRYPTO_CRC32_ARM_CE
+        ;;
+      aarch64)
+        module CRYPTO_SHA256_ARM64
+        module CRYPTO_SHA512_ARM64
+        module CRYPTO_SHA1_ARM64_CE
+        module CRYPTO_SHA2_ARM64_CE
+        module CRYPTO_SHA512_ARM64_CE
+        module CRYPTO_GHASH_ARM64_CE
+        module CRYPTO_CRCT10DIF_ARM64_CE
+        module CRYPTO_AES_ARM64
+        module CRYPTO_AES_ARM64_CE
+        module CRYPTO_AES_ARM64_CE_CCM
+        module CRYPTO_AES_ARM64_CE_BLK
+        module CRYPTO_AES_ARM64_NEON_BLK
+        module CRYPTO_AES_ARM64_BS
+        ;;
+    esac
 
-    scripts/config -e OF
-    scripts/config -e PCI
-    scripts/config -e USB
-    scripts/config -e USB_GADGET
-    scripts/config -e USB_OTG_UTILS
-    scripts/config -e USB_SERIAL
-    scripts/config -e USB_SERIAL_OPTION
-    scripts/config -e USB_NET_DRIVERS
-    scripts/config -e USB_NET_QMI_WWAN
+    case "%{arch}" in
+    esac
 
-    scripts/config -e BLK_DEV_BSGLIB
-    scripts/config -e SCSI_LOWLEVEL
-    scripts/config -e SCSI_NETLINK
-    scripts/config -e SCSI_TCP
-    scripts/config -e SCSI_ISCSI_ATTRS
-    scripts/config -e ISCSI_BOOT_SYSFS
+    # udev will fail to work with legacy sysfs
+    remove SYSFS_DEPRECATED
 
-    scripts/config -e IKCONFIG
-    scripts/config -e IKCONFIG_PROC
+    # Boot is very slow with systemd when legacy PTYs are present
+    remove LEGACY_PTYS
+    remove LEGACY_PTY_COUNT
 
-    scripts/config -e DPAA2_CONSOLE 
-    scripts/config -e MFD_SPMI_PMIC 
-    scripts/config -e ARCH_R8A779A0 
-    scripts/config -e HID_BELKIN 
-    scripts/config -m RC_MAP 
-    scripts/config -m SLIMBUS 
-    scripts/config -e OMAP_DM_TIMER 
-    scripts/config -e PREEMPT 
-    scripts/config -e VFIO 
-    scripts/config -e NFS_DISABLE_UDP_SUPPORT 
-    scripts/config -e GPIO_MAX77620 
-    scripts/config -m REGMAP_SLIMBUS 
-    scripts/config -e SYS_SUPPORTS_SH_CMT 
-    scripts/config -m CRYPTO_DEV_FSL_CAAM_AHASH_API_DESC 
-    scripts/config -e DP83867_PHY 
-    scripts/config -e PCS_LYNX 
-    scripts/config -e REGULATOR_HI655X 
-    scripts/config -e I2C_OWL 
-    scripts/config -e SERIAL_XILINX_PS_UART_CONSOLE 
-    scripts/config -e IMX_INTMUX 
-    scripts/config -e PCI_IOV 
-    scripts/config -e DIMLIB 
-    scripts/config -e REGULATOR_MT6359 
-    scripts/config -m DM_ZERO 
-    scripts/config -e ARCH_R8A77951 
-    scripts/config -e HID_CYPRESS 
-    scripts/config -e NFS_V4_SECURITY_LABEL 
-    scripts/config --set-val MX3_IPU_IRQS 4
-    scripts/config -e MX3_IPU 
-    scripts/config -e MFD_HI655X_PMIC 
-    scripts/config -e FPGA 
-    scripts/config -e ARM64_TLB_RANGE 
-    scripts/config -e REGULATOR_BD718XX 
-    scripts/config -e MDIO_CAVIUM 
-    scripts/config -e IRQ_UNIPHIER_AIDET 
-    scripts/config -e AUXILIARY_BUS 
-    scripts/config -e CAVIUM_ERRATUM_23144 
-    scripts/config -m REGULATOR_TPS65132 
-    scripts/config -e PREEMPT_COUNT 
-    scripts/config -m PHY_J721E_WIZ 
-    scripts/config -e SDR_PLATFORM_DRIVERS 
-    scripts/config -m RTC_DRV_PCF85063 
-    scripts/config -e HUGETLB_PAGE_OPTIMIZE_VMEMMAP 
-    scripts/config -e RESET_HISI 
-    scripts/config -e ACPI_HED 
-    scripts/config -e SUNRPC_BACKCHANNEL 
-    scripts/config -e RST_RCAR 
-    scripts/config -e VFIO_IOMMU_TYPE1 
-    scripts/config -e NFS_V4_2_SSC_HELPER 
-    scripts/config -e PCI_ECAM 
-    scripts/config -e MVEBU_PIC 
-    scripts/config -e SKY2 
-    scripts/config -e ARCH_BERLIN 
-    scripts/config -e ARCH_R8A779G0 
-    scripts/config -e MFD_SL28CPLD 
-    scripts/config -e PHY_RCAR_GEN3_PCIE 
-    scripts/config -e MTK_IOMMU 
-    scripts/config -e RAVB 
-    scripts/config -m I2C_HID_OF 
-    scripts/config -e MQ_IOSCHED_KYBER 
-    scripts/config -e HAVE_SCHED_AVG_IRQ 
-    scripts/config -m HW_RANDOM_OPTEE 
-    scripts/config -m QRTR_SMD 
-    scripts/config -e ARCH_R9A09G011 
-    scripts/config -e EFI_CUSTOM_SSDT_OVERLAYS 
-    scripts/config -e GPIO_ZYNQMP_MODEPIN 
-    scripts/config -m HW_RANDOM_IPROC_RNG200 
-    scripts/config -e SM_GPUCC_8150 
-    scripts/config -e MTK_MMSYS 
-    scripts/config -e PCIE_IPROC 
-    scripts/config -e PCIE_ALTERA 
-    scripts/config -m SPI_DESIGNWARE 
-    scripts/config -e ARM64_ERRATUM_832075 
-    scripts/config -e SCSI_LOWLEVEL 
-    scripts/config -e FSL_MC_BUS 
-    scripts/config -e REGULATOR_ROHM 
-    scripts/config -m NVMEM_RMEM 
-    scripts/config -e GPIO_RCAR 
-    scripts/config -e PCI_BRIDGE_EMUL 
-    scripts/config -e NEED_PER_CPU_EMBED_FIRST_CHUNK 
-    scripts/config -e TEE_BNXT_FW 
-    scripts/config -e SERIAL_SH_SCI 
-    scripts/config -e MTK_INFRACFG 
-    scripts/config -m GPIO_ALTERA 
-    scripts/config -e SCSI_HISI_SAS 
-    scripts/config -e ARCH_LG1K 
-    scripts/config -e VIRTIO 
-    scripts/config -e RESET_UNIPHIER 
-    scripts/config -e HOTPLUG_PCI 
-    scripts/config -e SPMI 
-    scripts/config -e SERIAL_IMX 
-    scripts/config -e PCI_XGENE 
-    scripts/config -e LEGACY_PTYS 
-    scripts/config -e PATA_TIMINGS 
-    scripts/config -e BLK_DEV_BSGLIB 
-    scripts/config -e PHY_XGENE 
-    scripts/config -e FW_LOADER_USER_HELPER 
-    scripts/config -e ARCH_R8A77995 
-    scripts/config -e ASYNC_TX_ENABLE_CHANNEL_SWITCH 
-    scripts/config -e VIRTIO_ANCHOR 
-    scripts/config -m CRYPTO_DEV_FSL_CAAM_CRYPTO_API_DESC 
-    scripts/config --set-val PSTORE_DEFAULT_KMSG_BYTES 10240
-    scripts/config -e REGULATOR_PFUZE100 
-    scripts/config -e TI_SCI_PM_DOMAINS 
-    scripts/config -e ARCH_RCAR_GEN3 
-    scripts/config -e I2C_RCAR 
-    scripts/config -e PCIE_MOBIVEIL 
-    scripts/config -e ARCH_SEATTLE 
-    scripts/config -e TI_K3_SOCINFO 
-    scripts/config -e STRICT_DEVMEM 
-    scripts/config -e DW_APB_ICTL 
-    scripts/config -e PATA_PLATFORM 
-    scripts/config -e VIRTIO_PCI_LEGACY 
-    scripts/config -e SATA_RCAR 
-    scripts/config -m ARM_ALLWINNER_SUN50I_CPUFREQ_NVMEM 
-    scripts/config -m IIO_CROS_EC_LIGHT_PROX 
-    scripts/config -e I2C_CROS_EC_TUNNEL 
-    scripts/config -e HISILICON_ERRATUM_161600802 
-    scripts/config -e ARCH_HIBERNATION_HEADER 
-    scripts/config -e PCIE_DW 
-    scripts/config -e NPCM7XX_TIMER 
-    scripts/config -e ARMADA_AP_CP_HELPER 
-    scripts/config -e SECURITY 
-    scripts/config -e GPIO_MPC8XXX 
-    scripts/config -e HI6220_MBOX 
-    scripts/config -e ZYNQMP_IPI_MBOX 
-    scripts/config -e SERIAL_IMX_CONSOLE 
-    scripts/config -m RTC_DRV_PCF2127 
-    scripts/config -e SYS_SUPPORTS_SH_TMU 
-    scripts/config -e REGULATOR_BD9571MWV 
-    scripts/config -e XLNX_EVENT_MANAGER 
-    scripts/config -m MTK_DEVAPC 
-    scripts/config -e E1000 
-    scripts/config -e AHCI_MVEBU 
-    scripts/config -e BGMAC 
-    scripts/config -e RENESAS_DMA 
-    scripts/config -e ARCH_R8A77970 
-    scripts/config -e SC_GCC_8280XP 
-    scripts/config -m DWMAC_IMX8 
-    scripts/config -e MTD_BLKDEVS 
-    scripts/config -e ACPI_APEI_SEA 
-    scripts/config -m CRYPTO_DEV_FSL_CAAM 
-    scripts/config -e PREEMPTION 
-    scripts/config -e ARCH_UNIPHIER 
-    scripts/config -e ARM64_ERRATUM_1542419 
-    scripts/config -e ARCH_HAS_ACPI_TABLE_UPGRADE 
-    scripts/config -e ARM64_ERRATUM_1024718 
-    scripts/config -e PCIE_KIRIN 
-    scripts/config -m MAX9611 
-    scripts/config -e SPI_QUP 
-    scripts/config -e OF_OVERLAY 
-    scripts/config -e MTD_CFI_STAA 
-    scripts/config -m BLK_DEV_MD 
-    scripts/config -e I2C_SLAVE 
-    scripts/config -e ARM64_ERRATUM_1165522 
-    scripts/config -e MTD_NAND_FSL_IFC 
-    scripts/config -e BGMAC_PLATFORM 
-    scripts/config -e SPI_ARMADA_3700 
-    scripts/config -e FB_MODE_HELPERS 
-    scripts/config -m ARM_IMX_CPUFREQ_DT 
-    scripts/config -e MTD_SST25L 
-    scripts/config -e ARM64_PTR_AUTH 
-    scripts/config -e GPIO_XGENE 
-    scripts/config -e BALLOON_COMPACTION 
-    scripts/config -e IMX_IRQSTEER 
-    scripts/config -m MACVLAN 
-    scripts/config -m MDIO 
-    scripts/config -e GPIO_GENERIC 
-    scripts/config -e HNS3_HCLGE 
-    scripts/config -e FW_LOADER_SYSFS 
-    scripts/config -m SMSC_PHY 
-    scripts/config -e MV_XOR 
-    scripts/config -e ACPI_PROCESSOR_IDLE 
-    scripts/config -e REMOTEPROC 
-    scripts/config -e ARCH_SPRD 
-    scripts/config -e NFS_FS 
-    scripts/config -e SC_GCC_7180 
-    scripts/config -e TI_DAVINCI_MDIO 
-    scripts/config -m PWM_CROS_EC 
-    scripts/config -e NUMA 
-    scripts/config -e OF_RESOLVE 
-    scripts/config -e MTD_NAND_ECC 
-    scripts/config -e ARCH_MXC 
-    scripts/config -e ALPINE_MSI 
-    scripts/config -e FSL_GUTS 
-    scripts/config -e SERIO_LIBPS2 
-    scripts/config -e ACPI_GTDT 
-    scripts/config -e CROS_EC_SENSORHUB 
-    scripts/config -e GPIO_DAVINCI 
-    scripts/config -e CROS_EC_SPI 
-    scripts/config -e HAVE_SETUP_PER_CPU_AREA 
-    scripts/config -e DECOMPRESS_BZIP2 
-    scripts/config -e ACPI_PROCESSOR 
-    scripts/config -e CGROUP_HUGETLB 
-    scripts/config -e DPAA_ERRATUM_A050385 
-    scripts/config -m CROS_EC_CHARDEV 
-    scripts/config -e VFIO_PCI_INTX 
-    scripts/config -e ARM64_ERRATUM_834220 
-    scripts/config -e TI_K3_AM65_CPSW_NUSS 
-    scripts/config -m MFD_WCD934X 
-    scripts/config -m HW_RANDOM_ARM_SMCCC_TRNG 
-    scripts/config -e PREEMPT_RCU 
-    scripts/config -m RTC_DRV_RX8581 
-    scripts/config -e HVC_DRIVER 
-    scripts/config -e HAVE_ACPI_APEI 
-    scripts/config -e HUGETLBFS 
-    scripts/config -e REGULATOR_MT6397 
-    scripts/config -e KEXEC_CORE 
-    scripts/config -e SERIAL_SH_SCI_DMA 
-    scripts/config -e SERIAL_8250_EXAR 
-    scripts/config -e ZYNQMP_FIRMWARE 
-    scripts/config -m MPL3115 
-    scripts/config -e SPI_CADENCE_QUADSPI 
-    scripts/config -m CRYPTO_DEV_AMLOGIC_GXL 
-    scripts/config -e INTERCONNECT 
-    scripts/config -e GRACE_PERIOD 
-    scripts/config -e SCSI_SAS_HOST_SMP 
-    scripts/config -e KEXEC 
-    scripts/config -m RTC_DRV_M41T80 
-    scripts/config -e EINT_MTK 
-    scripts/config -e PCIE_IPROC_MSI 
-    scripts/config -e VHOST_MENU 
-    scripts/config -m MACVTAP 
-    scripts/config -e ATA_ACPI 
-    scripts/config -e INTEGRITY 
-    scripts/config -m GNSS_MTK_SERIAL 
-    scripts/config -e I2C_DESIGNWARE_CORE 
-    scripts/config -m WCN36XX 
-    scripts/config -e STACKPROTECTOR 
-    scripts/config -m PWM_RCAR 
-    scripts/config -m GNSS 
-    scripts/config -e SECURITYFS 
-    scripts/config -e PSTORE_DEFLATE_COMPRESS 
-    scripts/config -e ARCH_R8A77950 
-    scripts/config -e FSL_XGMAC_MDIO 
-    scripts/config -e MTD_DATAFLASH 
-    scripts/config -e USE_PERCPU_NUMA_NODE_ID 
-    scripts/config -e MTD_GEN_PROBE 
-    scripts/config -e MFD_MT6360 
-    scripts/config -e PCIE_IPROC_PLATFORM 
-    scripts/config -e CROS_EC_I2C 
-    scripts/config -m CRYPTO_DEV_HISI_HPRE 
-    scripts/config -e MFD_SIMPLE_MFD_I2C 
-    scripts/config -e MFD_CROS_EC_DEV 
-    scripts/config -e RD_LZO 
-    scripts/config -e NFS_V4 
-    scripts/config -e RANDOMIZE_MODULE_REGION_FULL 
-    scripts/config -m PM8916_WATCHDOG 
-    scripts/config -m ATL1C 
-    scripts/config -m PCI_ENDPOINT_TEST 
-    scripts/config -e LS_SCFG_MSI 
-    scripts/config -e ARCH_VISCONTI 
-    scripts/config -e ASYNC_TX_DISABLE_XOR_VAL_DMA 
-    scripts/config -m RTC_DRV_HYM8563 
-    scripts/config -e PHY_UNIPHIER_AHCI 
-    scripts/config -m SDM_CAMCC_845 
-    scripts/config -e I2C_OMAP 
-    scripts/config -e ATA_BMDMA 
-    scripts/config -e PNFS_FLEXFILE_LAYOUT 
-    scripts/config -e RENESAS_IRQC 
-    scripts/config -e ACPI_PRMT 
-    scripts/config -m DVB_CORE 
-    scripts/config -e EXT2_FS 
-    scripts/config -m SPI_RPCIF 
-    scripts/config -e SCSI_UFSHCD_PLATFORM 
-    scripts/config -e TI_K3_PSIL 
-    scripts/config -e SUNRPC 
-    scripts/config -e CPU_FREQ_DEFAULT_GOV_SCHEDUTIL 
-    scripts/config -e I2C_RIIC 
-    scripts/config -e ACPI 
-    scripts/config -e ARCH_LAYERSCAPE 
-    scripts/config -m HW_RANDOM 
-    scripts/config -e IMX_GPCV2 
-    scripts/config -m SPI_SPIDEV 
-    scripts/config -e ARCH_USES_HIGH_VMA_FLAGS 
-    scripts/config -m IIO_ST_LSM6DSX_SPI 
-    scripts/config -m I2C_HID_CORE 
-    scripts/config -e MTD_BLOCK 
-    scripts/config -e CROS_EC_PROTO 
-    scripts/config -e NUMA_BALANCING 
-    scripts/config -e QUOTA 
-    scripts/config -e PCI_AARDVARK 
-    scripts/config -e SERIAL_OWL 
-    scripts/config -e RESET_TI_SCI 
-    scripts/config -e DMA_ENGINE_RAID 
-    scripts/config -e ATA_SFF 
-    scripts/config -e ARCH_R8A774B1 
-    scripts/config -e I2C_QUP 
-    scripts/config -e SH_TIMER_TMU 
-    scripts/config -m IIO_ST_LSM6DSX 
-    scripts/config -e NFS_V2 
-    scripts/config -e SPI_DW_DMA 
-    scripts/config -e SUN50I_H6_CCU 
-    scripts/config -e GPIO_GENERIC_PLATFORM 
-    scripts/config -e TI_SCI_PROTOCOL 
-    scripts/config -e IRQ_TIME_ACCOUNTING 
-    scripts/config -m DWMAC_VISCONTI 
-    scripts/config -m REGULATOR_VCTRL 
-    scripts/config -m PHY_MTK_HDMI 
-    scripts/config -e ARM64_AMU_EXTN 
-    scripts/config -e CROS_EC_VBC 
-    scripts/config -e RD_BZIP2 
-    scripts/config -e HNS_MDIO 
-    scripts/config -e DNS_RESOLVER 
-    scripts/config -e ACPI_PPTT 
-    scripts/config -e MTD_NAND_CORE 
-    scripts/config -m IIO_ST_LSM6DSX_I2C 
-    scripts/config -m MWIFIEX_SDIO 
-    scripts/config -e HIBERNATION 
-    scripts/config -m QRTR_MHI 
-    scripts/config -e MTD_NAND_DENALI 
-    scripts/config -m FPGA_MGR_STRATIX10_SOC 
-    scripts/config -e SQUASHFS_DECOMP_SINGLE 
-    scripts/config -e RANDOMIZE_BASE 
-    scripts/config -e TIMER_IMX_SYS_CTR 
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_RNG_API 
-    scripts/config -e MULTIPLEXER 
-    scripts/config -e RESET_UNIPHIER_GLUE 
-    scripts/config -e CGROUP_PERF 
-    scripts/config -e S3C2410_WATCHDOG 
-    scripts/config --set-val ARCH_NR_GPIO 2048
-    scripts/config -m EEPROM_AT25 
-    scripts/config -e STACKPROTECTOR_PER_TASK 
-    scripts/config -e NUMA_BALANCING_DEFAULT_ENABLED 
-    scripts/config -e ARCH_HISI 
-    scripts/config -e GPIO_VF610 
-    scripts/config -e REGULATOR_PF8X00 
-    scripts/config -e RTC_DRV_S3C 
-    scripts/config -m RTC_DRV_PM8XXX 
-    scripts/config -e SERIAL_8250_PNP 
-    scripts/config -e TI_SCI_INTR_IRQCHIP 
-    scripts/config -m RTC_DRV_RV8803 
-    scripts/config -m WL18XX 
-    scripts/config -e PCIE_VISCONTI_HOST 
-    scripts/config -e GPIO_ACPI 
-    scripts/config -e OF_NUMA 
-    scripts/config -e ARCH_SYNQUACER 
-    scripts/config -m HW_RANDOM_XGENE 
-    scripts/config -e PCI_XGENE_MSI 
-    scripts/config -e DW_APB_TIMER 
-    scripts/config -m QRTR_TUN 
-    scripts/config -e MVEBU_ICU 
-    scripts/config -e RC_DECODERS 
-    scripts/config -m SPI_DW_MMIO 
-    scripts/config -e MQ_IOSCHED_DEADLINE 
-    scripts/config -e RTC_DRV_CROS_EC 
-    scripts/config -m HW_RANDOM_HISI 
-    scripts/config -e REGULATOR_HI6421V530 
-    scripts/config -e SPI_ORION 
-    scripts/config -e MEMORY_FAILURE 
-    scripts/config -e AUTOFS4_FS 
-    scripts/config -e IP_PNP_BOOTP 
-    scripts/config -e SERIAL_FSL_LPUART 
-    scripts/config -e MFD_VEXPRESS_SYSREG 
-    scripts/config -e ARCH_R8A774E1 
-    scripts/config -e ARCH_ZYNQMP 
-    scripts/config -m BLK_DEV_NVME 
-    scripts/config -e REGULATOR_MAX77620 
-    scripts/config -e 9P_FS 
-    scripts/config -m SPI_SH_MSIOF 
-    scripts/config -e MDIO_BUS_MUX 
-    scripts/config -m PWM_RENESAS_TPU 
-    scripts/config -e FSL_IFC 
-    scripts/config -e SERIAL_XILINX_PS_UART 
-    scripts/config -m DWMAC_SUNXI 
-    scripts/config -e PCIE_HISI_STB 
-    scripts/config -e UEFI_CPER_ARM 
-    scripts/config -e SPI_FSL_DSPI 
-    scripts/config -e ARCH_R9A07G043 
-    scripts/config -e FAILOVER 
-    scripts/config -m ARM_SMMU_V3_PMU 
-    scripts/config -m IPMI_DEVICE_INTERFACE 
-    scripts/config -e ARM_GIC_PM 
-    scripts/config -m RENESAS_RPCIF 
-    scripts/config -e CRC7 
-    scripts/config -e OWL_DMA 
-    scripts/config -m PHY_CADENCE_SIERRA 
-    scripts/config -m INTERCONNECT_IMX8MM 
-    scripts/config -e PACKING 
-    scripts/config -e MTK_TIMER 
-    scripts/config -e I2C_SH_MOBILE 
-    scripts/config -e HOTPLUG_PCI_ACPI 
-    scripts/config -e HISI_PMU 
-    scripts/config -e MEMORY 
-    scripts/config -e ARCH_R8A77990 
-    scripts/config -e TCG_TPM 
-    scripts/config -e PTP_1588_CLOCK_QORIQ 
-    scripts/config -e ARCH_MVEBU 
-    scripts/config -m RPMSG_CHAR 
-    scripts/config -e ARM64_MTE 
-    scripts/config -m ACPI_CPPC_CPUFREQ 
-    scripts/config -e RPMSG 
-    scripts/config -e RTC_DRV_PL031 
-    scripts/config -e SERIAL_8250_OMAP 
-    scripts/config -e SERIAL_8250_SHARE_IRQ 
-    scripts/config -e MICROSEMI_PHY 
-    scripts/config -e RD_XZ 
-    scripts/config -e REGULATOR_MT6358 
-    scripts/config -e PHY_MVEBU_CP110_COMPHY 
-    scripts/config -m CRYPTO_MICHAEL_MIC 
-    scripts/config -e LS_EXTIRQ 
-    scripts/config -e ACPI_HOTPLUG_CPU 
-    scripts/config -e UNINLINE_SPIN_UNLOCK 
-    scripts/config -e MVMDIO 
-    scripts/config -e PHY_HISTB_COMBPHY 
-    scripts/config -m MARVELL_10G_PHY 
-    scripts/config -e ARCH_R8A77961 
-    scripts/config -e ACPI_BUTTON 
-    scripts/config -e IP_PNP_DHCP 
-    scripts/config -e SOC_TI 
-    scripts/config -e PCIE_RCAR_HOST 
-    scripts/config -e PCI_IMX6 
-    scripts/config -e ARM_GIC_V3_ITS_FSL_MC 
-    scripts/config -e HISILICON_LPC 
-    scripts/config -e MEMTEST 
-    scripts/config -m IR_SUNXI 
-    scripts/config -e SPI_SUN6I 
-    scripts/config -e PROFILING 
-    scripts/config -e SPI_FSL_QUADSPI 
-    scripts/config -m RTC_DRV_RV3028 
-    scripts/config -e GPIO_PCA953X 
-    scripts/config -e LOCKD 
-    scripts/config -e HAVE_ARCH_KASAN_HW_TAGS 
-    scripts/config -e AHCI_CEVA 
-    scripts/config -m B53 
-    scripts/config -m FPGA_BRIDGE 
-    scripts/config -e MDIO_BUS_MUX_MMIOREG 
-    scripts/config -e PAGE_POOL_STATS 
-    scripts/config -e ARM_MHU 
-    scripts/config -e ARM_SBSA_WATCHDOG 
-    scripts/config -e TI_K3_UDMA_GLUE_LAYER 
-    scripts/config -e ARCH_RZG2L 
-    scripts/config -e CROS_EC_LIGHTBAR 
-    scripts/config -e ACPI_CPPC_LIB 
-    scripts/config -e IPQ_GCC_6018 
-    scripts/config -e NFS_V4_1 
-    scripts/config -e SERIAL_8250_OMAP_TTYO_FIXUP 
-    scripts/config -e PROC_VMCORE 
-    scripts/config -m DWMAC_IPQ806X 
-    scripts/config -m FSL_IMX8_DDR_PMU 
-    scripts/config -e ACPI_IORT 
-    scripts/config -e CAVIUM_ERRATUM_23154 
-    scripts/config -e ARM_SP805_WATCHDOG 
-    scripts/config -e ACPI_AC 
-    scripts/config -e RTC_DRV_DS3232 
-    scripts/config -e SNI_AVE 
-    scripts/config -e SUN50I_H616_CCU 
-    scripts/config -e SM_GPUCC_8250 
-    scripts/config -e ACPI_TABLE_UPGRADE 
-    scripts/config -e GENERIC_ARCH_NUMA 
-    scripts/config -e VEXPRESS_CONFIG 
-    scripts/config -m CROS_EC_TYPEC 
-    scripts/config -e SERIAL_MVEBU_CONSOLE 
-    scripts/config -e MFD_MAX77620 
-    scripts/config -e SDM_DISPCC_845 
-    scripts/config -e MTK_EFUSE 
-    scripts/config -e MVEBU_SEI 
-    scripts/config -e ARCH_ENABLE_HUGEPAGE_MIGRATION 
-    scripts/config -e ARCH_NPCM 
-    scripts/config -e REGULATOR_MT6360 
-    scripts/config -e ACPI_PCC 
-    scripts/config -e ACPI_CCA_REQUIRED 
-    scripts/config -e SC_GCC_7280 
-    scripts/config -e SERIO_AMBAKMI 
-    scripts/config -e TASKS_RCU 
-    scripts/config -e FSL_FMAN 
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_CRYPTO_API_QI 
-    scripts/config -e ARCH_R9A07G054 
-    scripts/config -e PPS 
-    scripts/config -m PWM_SL28CPLD 
-    scripts/config -e SATA_SIL24 
-    scripts/config -e ARCH_R8A774C0 
-    scripts/config -e HISILICON_IRQ_MBIGEN 
-    scripts/config -m RESET_BERLIN 
-    scripts/config -e PHY_MTK_TPHY 
-    scripts/config -e PCIE_ALTERA_MSI 
-    scripts/config -e VIRTIO_MENU 
-    scripts/config -m RTC_DRV_MT6397 
-    scripts/config --set-val SERIAL_SH_SCI_NR_UARTS 18
-    scripts/config -m HW_RANDOM_CAVIUM 
-    scripts/config -e PHY_NS2_PCIE 
-    scripts/config -m TYPEC_TPS6598X 
-    scripts/config -m RTC_DRV_IMX_SC 
-    scripts/config  --set-str PM_STD_PARTITION ""
-    scripts/config -e ARCH_TESLA_FSD 
-    scripts/config -e VIRTIO_MMIO 
-    scripts/config -e QORIQ_CPUFREQ 
-    scripts/config -e HUGETLB_PAGE 
-    scripts/config -e QUOTACTL 
-    scripts/config -m SPI_IMX 
-    scripts/config -m MWIFIEX 
-    scripts/config -e KEXEC_FILE 
-    scripts/config -m QRTR 
-    scripts/config -e RESET_IMX7 
-    scripts/config  --set-str PSTORE_COMPRESS_DEFAULT "deflate"
-    scripts/config -e MTD_NAND_DENALI_DT 
-    scripts/config -m MWIFIEX_PCIE 
-    scripts/config -m GPIO_BD9571MWV 
-    scripts/config -m BNX2X 
-    scripts/config -e MDIO_BITBANG 
-    scripts/config -e SERIAL_SH_SCI_CONSOLE 
-    scripts/config -e MFD_SEC_CORE 
-    scripts/config -e HID_CHICONY 
-    scripts/config -e MFD_ROHM_BD718XX 
-    scripts/config -e I2C_MT65XX 
-    scripts/config -m GPIO_SL28CPLD 
-    scripts/config -e SERIAL_8250_EM 
-    scripts/config -e AHCI_XGENE 
-    scripts/config -e SERIAL_FSL_LINFLEXUART 
-    scripts/config -e HID_ITE 
-    scripts/config -e MTD_PHYSMAP_OF 
-    scripts/config -e UEFI_CPER 
-    scripts/config -e MTD_NAND_ECC_SW_HAMMING 
-    scripts/config -e ACPI_APEI_EINJ 
-    scripts/config -e SERIAL_IMX_EARLYCON 
-    scripts/config -e RENESAS_RZG2LWDT 
-    scripts/config -e PHY_TI_GMII_SEL 
-    scripts/config -e FSL_RCPM 
-    scripts/config -e PCIE_MOBIVEIL_HOST 
-    scripts/config -e REGULATOR_S2MPS11 
-    scripts/config -e DMA_ACPI 
-    scripts/config -e SCSI_SAS_ATA 
-    scripts/config -e ARCH_ALPINE 
-    scripts/config -e FSL_DPAA2_PTP_CLOCK 
-    scripts/config -e LOCKD_V4 
-    scripts/config -e CRC_ITU_T 
-    scripts/config -e HWSPINLOCK 
-    scripts/config -e SPI_NXP_FLEXSPI 
-    scripts/config -m MSCC_OCELOT_SWITCH_LIB 
-    scripts/config -m NVME_CORE 
-    scripts/config -e ARM64_ERRATUM_1418040 
-    scripts/config -e ACPI_NUMA 
-    scripts/config -e DVB_DYNAMIC_MINORS 
-    scripts/config -e PCIE_LAYERSCAPE_GEN4 
-    scripts/config -e SM_DISPCC_8250 
-    scripts/config -m MHI_BUS 
-    scripts/config -e ACPI_APEI_PCIEAER 
-    scripts/config -e PSTORE 
-    scripts/config -e GPIO_MB86S7X 
-    scripts/config -e MTK_SCPSYS_PM_DOMAINS 
-    scripts/config -e IMX_MBOX 
-    scripts/config -e QCS_GCC_404 
-    scripts/config -m FPGA_MGR_ALTERA_CVP 
-    scripts/config -e ARM64_ERRATUM_2077057 
-    scripts/config -e SERIAL_8250_DEPRECATED_OPTIONS 
-    scripts/config -e MTK_SMI 
-    scripts/config -m FPGA_REGION 
-    scripts/config -e INIT_STACK_ALL_ZERO 
-    scripts/config -e ARCH_S32 
-    scripts/config -e PNFS_FILE_LAYOUT 
-    scripts/config -e PCI_LAYERSCAPE 
-    scripts/config -e CRASH_CORE 
-    scripts/config -e SYSFB 
-    scripts/config -e HID_REDRAGON 
-    scripts/config -e VIRTIO_CONSOLE 
-    scripts/config -e TI_K3_UDMA 
-    scripts/config -m RC_CORE 
-    scripts/config -e RTC_DRV_DS3232_HWMON 
-    scripts/config -m PHY_MIXEL_MIPI_DPHY 
-    scripts/config -m CRYPTO_DEV_HISI_ZIP 
-    scripts/config -e STACKPROTECTOR_STRONG 
-    scripts/config -e WILINK_PLATFORM_DATA 
-    scripts/config -e MEGARAID_SAS 
-    scripts/config -m WLCORE_SDIO 
-    scripts/config -e ARCH_R8A774A1 
-    scripts/config -m IIO_ST_MAGN_SPI_3AXIS 
-    scripts/config -m ALTERA_FREEZE_BRIDGE 
-    scripts/config -e NFS_USE_KERNEL_DNS 
-    scripts/config -e PHY_FSL_IMX8M_PCIE 
-    scripts/config -e OWL_PM_DOMAINS_HELPER 
-    scripts/config -e I2C_IMX_LPI2C 
-    scripts/config -e RAID6_PQ_BENCHMARK 
-    scripts/config -e SERIAL_FSL_LPUART_CONSOLE 
-    scripts/config -e I2C_MUX_PCA954x 
-    scripts/config -e SCSI_UFSHCD 
-    scripts/config -e MTD_CFI_UTIL 
-    scripts/config -m CRYPTO_DEV_HISI_SEC2 
-    scripts/config -e GPIO_XGENE_SB 
-    scripts/config -e RD_LZMA 
-    scripts/config -e PCIE_ARMADA_8K 
-    scripts/config -e CAVIUM_ERRATUM_22375 
-    scripts/config -e HIX5HD2_GMAC 
-    scripts/config -e SMSC911X 
-    scripts/config -e ARM64_E0PD 
-    scripts/config -m PWM_MTK_DISP 
-    scripts/config -e KSM 
-    scripts/config -m B53_SRAB_DRIVER 
-    scripts/config -e IMX_SCU_PD 
-    scripts/config -e REGULATOR_UNIPHIER 
-    scripts/config -e DECOMPRESS_LZMA 
-    scripts/config -e ACPI_GENERIC_GSI 
-    scripts/config -e SL28CPLD_INTC 
-    scripts/config -e I2C_IMX 
-    scripts/config -e ARCH_ACTIONS 
-    scripts/config -e SUN8I_H3_CCU 
-    scripts/config -e CROS_EC_SYSFS 
-    scripts/config -e GPIO_UNIPHIER 
-    scripts/config -e PHY_MVEBU_A3700_UTMI 
-    scripts/config -e MTD_NAND_MARVELL 
-    scripts/config -e MVPP2 
-    scripts/config -m INTERCONNECT_IMX8MQ 
-    scripts/config -m PHY_AM654_SERDES 
-    scripts/config -e SERIAL_OWL_CONSOLE 
-    scripts/config -e UNIPHIER_EFUSE 
-    scripts/config -e RENESAS_OSTM 
-    scripts/config -e SPI_PL022 
-    scripts/config -e SDM_GCC_845 
-    scripts/config -e NPCM7XX_WATCHDOG 
-    scripts/config -m IMX_SDMA 
-    scripts/config -e SPRD_TIMER 
-    scripts/config  --set-str NFS_V4_1_IMPLEMENTATION_ID_DOMAIN "kernel.org"
-    scripts/config -m GPIO_REGMAP 
-    scripts/config -e RCU_TRACE 
-    scripts/config -m UACCE 
-    scripts/config -e TCG_TIS_I2C_INFINEON 
-    scripts/config -e PCC 
-    scripts/config -e OWL_TIMER 
-    scripts/config -e MVEBU_ODMI 
-    scripts/config -e TI_MESSAGE_MANAGER 
-    scripts/config -e EXT3_FS 
-    scripts/config -e MDIO_XGENE 
-    scripts/config -e GPIO_MVEBU 
-    scripts/config -m PCI_EPF_TEST 
-    scripts/config -e FSL_MC_DPIO 
-    scripts/config -m SCSI_MPT3SAS 
-    scripts/config -m CRYPTO_DEV_FSL_CAAM_JR 
-    scripts/config -e VIRTIO_PCI_LIB 
-    scripts/config -e HNS_DSAF 
-    scripts/config -m INTERCONNECT_IMX 
-    scripts/config -e EFI_CAPSULE_LOADER 
-    scripts/config -e SUNRPC_GSS 
-    scripts/config -e CAVIUM_ERRATUM_30115 
-    scripts/config -m IPMI_SI 
-    scripts/config -m MARVELL_PHY 
-    scripts/config -e ARM64_ERRATUM_1286807 
-    scripts/config -e GPIO_MXC 
-    scripts/config --set-val LEGACY_PTY_COUNT 16
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_PRNG_API 
-    scripts/config -e ARCH_HAS_SUBPAGE_FAULTS 
-    scripts/config -e K3_DMA 
-    scripts/config -e PSTORE_DEFLATE_COMPRESS_DEFAULT 
-    scripts/config -e EFI_VARS_PSTORE 
-    scripts/config -e ARM_SMC_WATCHDOG 
-    scripts/config -m IPMI_HANDLER 
-    scripts/config -e CAVIUM_TX2_ERRATUM_219 
-    scripts/config -e ACPI_MCFG 
-    scripts/config -e PTP_1588_CLOCK 
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_AHASH_API 
-    scripts/config -e MFD_AXP20X_I2C 
-    scripts/config -e RC_DEVICES 
-    scripts/config -e BPF_UNPRIV_DEFAULT_OFF 
-    scripts/config -e FSL_EDMA 
-    scripts/config -e I2C_DESIGNWARE_PLATFORM 
-    scripts/config -e EXCLUSIVE_SYSTEM_RAM 
-    scripts/config -e SERIAL_FSL_LINFLEXUART_CONSOLE 
-    scripts/config -e RTC_DRV_ARMADA38X 
-    scripts/config -m MICROCHIP_PHY 
-    scripts/config -e ACPI_REDUCED_HARDWARE_ONLY 
-    scripts/config -e VFIO_PCI_MMAP 
-    scripts/config -e MTD_CFI 
-    scripts/config -e FEC 
-    scripts/config -m EXTCON_PTN5150 
-    scripts/config -e MICREL_PHY 
-    scripts/config -m RTC_DRV_DS1307 
-    scripts/config -e VFIO_VIRQFD 
-    scripts/config -e REGMAP_SPMI 
-    scripts/config -m DM_MIRROR 
-    scripts/config -e IPMI_PLAT_DATA 
-    scripts/config -e OWL_PM_DOMAINS 
-    scripts/config -e MEMORY_BALLOON 
-    scripts/config -e E1000E 
-    scripts/config -e IMX_SCU 
-    scripts/config -e PLATFORM_MHU 
-    scripts/config -e SERIAL_8250_EXTENDED 
-    scripts/config -m RZG2L_ADC 
-    scripts/config -m GPIO_WCD934X 
-    scripts/config -e ACPI_SPCR_TABLE 
-    scripts/config -e CROS_EC 
-    scripts/config -e RUNTIME_TESTING_MENU 
-    scripts/config -e REGULATOR_MP8859 
-    scripts/config --set-val SCSI_MPT2SAS_MAX_SGE 128
-    scripts/config -e PCI_HOST_GENERIC 
-    scripts/config -e SM_GCC_8150 
-    scripts/config -e ROOT_NFS 
-    scripts/config -e MTK_PMIC_WRAP 
-    scripts/config -e I2C_PXA 
-    scripts/config -e ARM_ARMADA_37XX_CPUFREQ 
-    scripts/config -e ARCH_RENESAS 
-    scripts/config -e ACPI_CPPC_CPUFREQ_FIE 
-    scripts/config -e PCIE_RCAR_EP 
-    scripts/config -m MFD_WM8994 
-    scripts/config -m HW_RANDOM_NPCM 
-    scripts/config --set-val DVB_MAX_ADAPTERS 16
-    scripts/config -e HNS 
-    scripts/config -m R8169 
-    scripts/config -e TI_SCI_INTA_IRQCHIP 
-    scripts/config -e MDIO_BUS_MUX_MULTIPLEXER 
-    scripts/config -e ARCH_K3 
-    scripts/config -e HID_CHERRY 
-    scripts/config -e MUX_MMIO 
-    scripts/config -e SCSI_SAS_LIBSAS 
-    scripts/config -e CAVIUM_ERRATUM_27456 
-    scripts/config -e MST_IRQ 
-    scripts/config -e DECOMPRESS_LZO 
-    scripts/config -e PCI_ENDPOINT 
-    scripts/config -e DECOMPRESS_XZ 
-    scripts/config --set-val NODES_SHIFT 4
-    scripts/config -e HID_A4TECH 
-    scripts/config -e MFD_BD9571MWV 
-    scripts/config -e PCIE_DW_HOST 
-    scripts/config -m PHY_MTK_MIPI_DSI 
-    scripts/config -e SERIAL_8250_MT6577 
-    scripts/config -e PAGE_REPORTING 
-    scripts/config -m RTL_CARDS 
-    scripts/config -e VITESSE_PHY 
-    scripts/config -e MTK_SCPSYS 
-    scripts/config -e PRINT_QUOTA_WARNING 
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_PKC_API 
-    scripts/config -e PRINTK_TIME 
-    scripts/config -m NVMEM_LAYERSCAPE_SFP 
-    scripts/config -e HI3660_MBOX 
-    scripts/config -e PNPACPI 
-    scripts/config -m ARM_IMX8M_DDRC_DEVFREQ 
-    scripts/config -e VFIO_PCI 
-    scripts/config -e UNIPHIER_SYSTEM_BUS 
-    scripts/config -m ARM_IMX_BUS_DEVFREQ 
-    scripts/config -e NVMEM_IMX_OCOTP 
-    scripts/config -e ASYNC_TX_DISABLE_PQ_VAL_DMA 
-    scripts/config -e ARM64_ERRATUM_2457168 
-    scripts/config -e INDIRECT_PIO 
-    scripts/config -e SPI_FSL_LPSPI 
-    scripts/config -m OF_FPGA_REGION 
-    scripts/config -e MFD_MT6397 
-    scripts/config -e I2C_SMBUS 
-    scripts/config -e NVMEM_IMX_OCOTP_SCU 
-    scripts/config -e GPIO_DWAPB 
-    scripts/config -e MFD_HI6421_PMIC 
-    scripts/config -e RCAR_DMAC 
-    scripts/config -e ARCH_R8A77965 
-    scripts/config -e IRQ_POLL 
-    scripts/config -e RTC_INTF_PROC 
-    scripts/config -m CRYPTO_DEV_FSL_DPAA2_CAAM 
-    scripts/config -e GCC_PLUGINS 
-    scripts/config -e ACPI_CONTAINER 
-    scripts/config -e MTD_CFI_NOSWAP 
-    scripts/config -e ZYNQMP_POWER 
-    scripts/config -e SUN50I_H6_R_CCU 
-    scripts/config -m IMX_SC_WDT 
-    scripts/config -m HW_RANDOM_MTK 
-    scripts/config -m DWMAC_SUN8I 
-    scripts/config -e VIRTIO_BLK 
-    scripts/config -m PWM_VISCONTI 
-    scripts/config -e SCHED_SMT 
-    scripts/config -e SERIAL_SH_SCI_EARLYCON 
-    scripts/config -e RENESAS_WDT 
-    scripts/config -e AHCI_QORIQ 
-    scripts/config -m HW_RANDOM_OMAP 
-    scripts/config -e BNX2X_SRIOV 
-    scripts/config -m TYPEC_HD3SS3220 
-    scripts/config -e PREEMPT_BUILD 
-    scripts/config -e MV_XOR_V2 
-    scripts/config -e IMX2_WDT 
-    scripts/config -e PTP_1588_CLOCK_KVM 
-    scripts/config -e ARM64_ERRATUM_2051678 
-    scripts/config -e SM_GCC_8350 
-    scripts/config -e VIRTIO_BALLOON 
-    scripts/config -e RESET_NPCM 
-    scripts/config -e NFS_V3 
-    scripts/config -e SYS_HYPERVISOR 
-    scripts/config -m SL28CPLD_WATCHDOG 
-    scripts/config -e RTC_DRV_EFI 
-    scripts/config -e PROC_PID_CPUSET 
-    scripts/config -e CRASH_DUMP 
-    scripts/config --set-val SCSI_MPT3SAS_MAX_SGE 128
-    scripts/config -e ARM64_PTR_AUTH_KERNEL 
-    scripts/config -e ARCH_R8A77980 
-    scripts/config -e SOC_RENESAS 
-    scripts/config -e MVEBU_GICP 
-    scripts/config -m VCNL4000 
-    scripts/config -e SERIAL_MVEBU_UART 
-    scripts/config -m RTC_DRV_PCF85363 
-    scripts/config -m IIO_CROS_EC_BARO 
-    scripts/config -e TRANS_TABLE 
-    scripts/config -e IMX_GPCV2_PM_DOMAINS 
-    scripts/config -e PTP_1588_CLOCK_DTE 
-    scripts/config -e I2C_S3C2410 
-    scripts/config -e PNP 
-    scripts/config -m SYSTEMPORT 
-    scripts/config -e SERIAL_8250_PCI 
-    scripts/config -e HID_EZKEY 
-    scripts/config -e PCI_HISI 
-    scripts/config -e ARM_PMU_ACPI 
-    scripts/config -m I2C_CADENCE 
-    scripts/config -e MACB 
-    scripts/config -m INTERCONNECT_IMX8MN 
-    scripts/config -m PNFS_BLOCK 
-    scripts/config -e ARM64_ERRATUM_1463225 
-    scripts/config -m EEPROM_AT24 
-    scripts/config -e MTD_CFI_ADV_OPTIONS 
-    scripts/config -e VFIO_PCI_CORE 
-    scripts/config -e RTC_DRV_MAX77686 
-    scripts/config -m TAP 
-    scripts/config -e ACPI_APEI_MEMORY_FAILURE 
-    scripts/config -e SOC_IMX8M 
-    scripts/config -e ARCH_R8A779F0 
-    scripts/config -e ARCH_VEXPRESS 
-    scripts/config -e ACPI_MDIO 
-    scripts/config -e IP_PNP 
-    scripts/config -m I2C_HID_ACPI 
-    scripts/config -e CRYPTO_DEV_FSL_CAAM_CRYPTO_API 
-    scripts/config -e SMC91X 
-    scripts/config -e RTC_DRV_XGENE 
-    scripts/config -e PCI_ENDPOINT_CONFIGFS 
-    scripts/config -e SPI_S3C64XX 
-    scripts/config -e NEED_PER_CPU_PAGE_FIRST_CHUNK 
-    scripts/config -e ARCH_XGENE 
-    scripts/config -e MTD_RAW_NAND 
-    scripts/config -e ARM_TIMER_SP804 
-    scripts/config -e PSTORE_COMPRESS 
-    scripts/config -m CRYPTO_DEV_CCREE 
-    scripts/config -m WLCORE 
-    scripts/config -e SM_GCC_8250 
-    scripts/config -e PHY_MVEBU_A3700_COMPHY 
-    scripts/config -e ACPI_APEI 
-    scripts/config -e HIBERNATE_CALLBACKS 
-    scripts/config -m RTC_DRV_FSL_FTM_ALARM 
-    scripts/config -m GNSS_SERIAL 
-    scripts/config -e IPMI_DMI_DECODE 
-    scripts/config -e MTD_PHYSMAP 
-    scripts/config -e PATA_OF_PLATFORM 
-    scripts/config -m DWMAC_SOCFPGA 
-    scripts/config -e SERIO 
-    scripts/config -e GPIO_VISCONTI 
-    scripts/config -e FSL_DPAA 
-    scripts/config -e TI_K3_RINGACC 
-    scripts/config -e SM_GCC_8450 
-    scripts/config -e NFS_V4_2 
-    scripts/config -m RTC_DRV_SNVS 
-    scripts/config -e UNIPHIER_WATCHDOG 
-    scripts/config -e BRIDGE_VLAN_FILTERING 
-    scripts/config -e SCSI_UFS_HISI 
-    scripts/config -e I2C_UNIPHIER_F 
-    scripts/config -e GPIO_PCA953X_IRQ 
-    scripts/config -e SERIAL_8250_UNIPHIER 
-    scripts/config -e POWER_RESET_XGENE 
-    scripts/config -e RZ_DMAC 
-    scripts/config -e VIRTIO_PCI 
-    scripts/config -e SOCIONEXT_SYNQUACER_PREITS 
-    scripts/config -e HIBERNATION_SNAPSHOT_DEV 
-    scripts/config --set-val CRYPTO_DEV_FSL_CAAM_RINGSIZE 9
-    scripts/config -e ARM64_ERRATUM_1530923 
-    scripts/config -e SDM_GPUCC_845 
-    scripts/config -m PHY_CADENCE_TORRENT 
-    scripts/config -e TI_SCI_INTA_MSI_DOMAIN 
-    scripts/config -m SPI_RSPI 
-    scripts/config -m PWM_IMX27 
-    scripts/config -e SQUASHFS_FILE_CACHE 
-    scripts/config -e VIRTIO_PCI_LIB_LEGACY 
-    scripts/config -e GPIO_PL061 
-    scripts/config -e ACPI_APEI_GHES 
-    scripts/config -e REGULATOR_PCA9450 
-    scripts/config -m RAID_ATTRS 
-    scripts/config -e AQUANTIA_PHY 
-    scripts/config -e SH_TIMER_CMT 
-    scripts/config -e FB_EFI 
-    scripts/config -e BLK_MQ_VIRTIO 
-    scripts/config -e AT803X_PHY 
-    scripts/config -e FB_MX3 
-    scripts/config -e ARCH_R9A07G044 
-    scripts/config -e HVC_IRQ 
-    scripts/config -e HNS3 
-    scripts/config -e MACB_USE_HWSTAMP 
-    scripts/config -e RTC_DRV_S5M 
-    scripts/config -e ARCH_KEEMBAY 
-    scripts/config -e TIMER_ACPI 
-    scripts/config -e SCSI_HISI_SAS_PCI 
-    scripts/config -e ACPI_I2C_OPREGION 
-    scripts/config -e HID_KENSINGTON 
-    scripts/config -m CRYPTO_DEV_HISI_TRNG 
-    scripts/config -m AX88796B_PHY 
-    scripts/config -e GPIO_MAX732X 
-    scripts/config -e IPQ_GCC_8074 
-    scripts/config -m CRYPTO_DEV_HISI_QM 
-    scripts/config -e ARM64_EPAN 
-    scripts/config -m HW_RANDOM_CN10K 
-    scripts/config -e ZYNQMP_PM_DOMAINS 
-    scripts/config -e ARCH_R8A77960 
-    scripts/config -e MFD_ALTERA_SYSMGR 
-    scripts/config -e HID_MONTEREY 
-    scripts/config -e DW_APB_TIMER_OF 
-    scripts/config -e SCSI_SAS_ATTRS 
-    scripts/config -m TI_ADS1015 
-    scripts/config -e REGULATOR_MAX8973 
+    # Legacy hotplug confuses udev
+    value_str UEVENT_HELPER_PATH ""
+
+    # Userspace firmware loading not supported
+    remove FW_LOADER_USER_HELPER
+
+    # Some udev/virtualization requires
+    enable DMIID
+
+    # Support for some SCSI devices serial number retrieval
+    enable BLK_DEV_BSG
+
+    # Required for PrivateNetwork= in service units
+    enable NET_NS
+    enable USER_NS
+
+    # Required for 9p support
+    enable NET_9P
+    enable NET_9P_VIRTIO
+    enable 9P_FS
+    enable 9P_FS_POSIX_ACL
+    enable 9P_FS_SECURITY
+    enable VIRTIO_PCI
+
+    # Strongly Recommended
+    enable IPV6
+    enable AUTOFS_FS
+    enable TMPFS_XATTR
+    enable TMPFS_POSIX_ACL
+    enable EXT4_FS_POSIX_ACL
+    enable EXT4_FS_SECURITY
+    enable SECCOMP
+    enable SECCOMP_FILTER
+    enable CHECKPOINT_RESTORE
+
+    # Required for CPUShares= in resource control unit settings
+    enable CGROUP_SCHED
+    enable FAIR_GROUP_SCHED
+
+    # Required for CPUQuota= in resource control unit settings
+    enable CFS_BANDWIDTH
+
+    # Required for IPAddressDeny=, IPAddressAllow= in resource control unit settings
+    enable CGROUP_BPF
+
+    # For UEFI systems
+    enable EFIVAR_FS
+    enable EFI_PARTITION
+
+    # RT group scheduling (effectively) makes RT scheduling unavailable for userspace
+    remove RT_GROUP_SCHED
+
+    # Sound with QEMU
+    module SOUND
+    module SND
+    module SND_HDA_GENERIC
+
+    # Required for live boot
+    module SQUASHFS
+    enable SQUASHFS_ZLIB
+    module OVERLAY_FS
+
+    # Required by snapd
+    enable SQUASHFS_XZ
+    enable SQUASHFS_LZO
+    enable SQUASHFS_XATTR
+
+    # erofs is potential replacement of squashfs on GNOME OS
+    module EROFS_FS
+    enable EROFS_FS_XATTR
+    enable EROFS_FS_POSIX_ACL
+    enable EROFS_FS_SECURITY
+    enable EROFS_FS_ZIP
+    enable EROFS_FS_ZIP_LZMA
+
+    # Some useful drivers when running as virtual machine
+    module VIRTIO_BALLOON
+    module VIRTIO_INPUT
+    module LIBNVDIMM
+    enable VIRTIO_PMEM
+    enable VIRTIO_NET
+    enable VIRTIO_BLK
+    enable SCSI_VIRTIO
+    enable VIRTIO_IOMMU
+
+    enable BLK_MQ_VIRTIO
+    module VIRTIO_CONSOLE
+    enable HW_RANDOM_VIRTIO
+    module VIRTIO_MMIO
+    module CRYPTO_DEV_VIRTIO
+
+    # Input
+    enable INPUT_EVDEV
+    enable INPUT_TOUCHSCREEN
+    enable INPUT_TABLET
+    module INPUT_MOUSEDEV
+    case "%{arch}" in
+      i686|x86_64)
+        module KEYBOARD_APPLESPI
+      ;;
+    esac
+    module KEYBOARD_GPIO
+
+    # Touchscreens
+    module TOUCHSCREEN_ATMEL_MXT
+    module TOUCHSCREEN_DYNAPRO
+    module TOUCHSCREEN_EETI
+    module TOUCHSCREEN_ELO
+    module TOUCHSCREEN_FUJITSU
+    module TOUCHSCREEN_GOODIX
+    module TOUCHSCREEN_GUNZE
+    module TOUCHSCREEN_INEXIO
+    module TOUCHSCREEN_MCS5000
+    module TOUCHSCREEN_MTOUCH
+    module TOUCHSCREEN_PENMOUNT
+    module TOUCHSCREEN_SURFACE3_SPI
+    module TOUCHSCREEN_TOUCHIT213
+    module TOUCHSCREEN_TOUCHRIGHT
+    module TOUCHSCREEN_TOUCHWIN
+    module TOUCHSCREEN_TSC2007
+    module TOUCHSCREEN_TSC_SERIO
+    module TOUCHSCREEN_USB_COMPOSITE
+    enable TOUCHSCREEN_USB_E2I
+    module TOUCHSCREEN_WACOM_W8001
+
+    # tablets
+    module TABLET_SERIAL_WACOM4
+    module TABLET_USB_ACECAD
+    module TABLET_USB_AIPTEK
+    module TABLET_USB_HANWANG
+    module TABLET_USB_KBTAB
+    module TABLET_USB_PEGASUS
+
+    # needed by spice-vdagent
+    module VSOCKETS
+    module VIRTIO_VSOCKETS
+    module INPUT_UINPUT
+
+    # for virtualbox
+    case "%{arch}" in
+      i686|x86_64)
+        enable VIRT_DRIVERS
+        module VBOXGUEST
+      ;;
+    esac
+
+    # Hyper-V
+    case "%{arch}" in
+      i686|x86_64|aarch64)
+        module HYPERV
+        module PCI_HYPERV
+        module HYPERV_BALLOON
+        module HYPERV_NET
+        if has CONNECTOR; then
+          module HYPERV_UTILS
+        fi
+      ;;
+    esac
+
+    # Xen
+    case "%{arch}" in
+      i686|x86_64|aarch64)
+        enable XEN
+        module XEN_SCSI_FRONTEND
+      ;;
+    esac
+
+    # VMWare
+    case "%{arch}" in
+      i686|x86_64)
+        module VMWARE_BALLOON
+        module VMWARE_VMCI
+        module VMWARE_PVSCSI
+      ;;
+    esac
+
+    # Needed by some devices
+    case "%{arch}" in
+      i686|x86_64)
+        enable X86_INTEL_LPSS
+      ;;
+    esac
+
+    # For wireless networks
+    enable WIRELESS
+    module CFG80211
+    enable CFG80211_WEXT
+    enable MAC80211
+    enable NETDEVICES
+    enable WLAN
+
+    # Wifi hardware
+    module IWLWIFI
+    module IWLMVM
+    module IWLDVM
+    module ATH9K
+    module ATH10K
+    module ATH10K_PCI
+    module RTW88
+    enable RTW88_8822BE
+    enable RTW88_8822CE
+    enable WLAN_VENDOR_ATH
+    module AR5523
+    module ATH10K_USB
+    module ATH11K
+    module ATH11K_PCI
+    module ATH5K
+    module ATH6KL
+    module ATH6KL_SDIO
+    module ATH6KL_USB
+    module ATH9K_HTC
+    module CARL9170
+    enable CARL9170_LEDS
+    module WIL6210
+    enable WIL6210_DEBUGFS
+    enable WIL6210_ISR_COR
+    module B43
+    enable B43_BUSES_BCMA_AND_SSB
+    enable B43_PHY_G
+    enable B43_PHY_HT
+    enable B43_PHY_LP
+    enable B43_PHY_N
+    enable B43_SDIO
+    module B43LEGACY
+    enable B43LEGACY_DMA_AND_PIO_MODE
+    module BRCMFMAC
+    module BRCMSMAC
+    enable BRCMFMAC_PCIE
+    enable BRCMFMAC_SDIO
+    enable BRCMFMAC_USB
+    module IWL3945
+    module IWL4965
+    module HERMES
+    enable HERMES_PRISM
+    enable HERMES_CACHE_FW_ON_INIT
+    module NORTEL_HERMES
+    module ORINOCO_USB
+    module PCI_HERMES
+    if has PCMCIA; then
+      module PCMCIA_HERMES
+    fi
+    module PLX_HERMES
+    module P54_COMMON
+    module P54_PCI
+    module P54_USB
+    module MAC80211_HWSIM
+    module LIBERTAS
+    if has PCMCIA; then
+      module LIBERTAS_CS
+    fi
+    enable LIBERTAS_MESH
+    module LIBERTAS_SDIO
+    module LIBERTAS_USB
+    module MWIFIEX
+    module MWIFIEX_PCIE
+    module MWIFIEX_SDIO
+    module MWIFIEX_USB
+    module MWL8K
+    module MT7601U
+    module MT7615E
+    module MT7663U
+    module MT76x0E
+    module MT76x0U
+    module MT76x2E
+    module MT76x2U
+    module MT7915E
+    module MT7921E
+    module MT7921U
+    module RT2400PCI
+    module RT2500PCI
+    module RT2500USB
+    module RT2800PCI
+    enable RT2800PCI_RT3290
+    enable RT2800PCI_RT33XX
+    enable RT2800PCI_RT35XX
+    enable RT2800PCI_RT53XX
+    module RT2800USB
+    enable RT2800USB_RT33XX
+    enable RT2800USB_RT3573
+    enable RT2800USB_RT35XX
+    enable RT2800USB_RT53XX
+    enable RT2800USB_RT55XX
+    module RT2X00
+    module RT61PCI
+    module RT73USB
+    module RTL8XXXU
+    module RTW88_8723DE
+    module RTW88_8821CE
+    module RTW89
+    module RTW89_8852AE
+    module RSI_91X
+    enable RSI_COEX
+    enable RSI_DEBUGFS
+    module RSI_USB
+    module ZD1211RW
+
+    # Ethernet hardware
+    module IGB
+    if has PCMCIA; then
+      module PCMCIA_3C574
+      module PCMCIA_3C589
+    fi
+    module TYPHOON
+    module VORTEX
+    module NE2K_PCI
+    if has PCMCIA; then
+      module PCMCIA_AXNET
+      module PCMCIA_PCNET
+    fi
+    module ADAPTEC_STARFIRE
+    module ET131X
+    module ACENIC
+    module ENA_ETHERNET
+    module AMD8111_ETH
+    case "%{arch}" in
+      x86_64|i686|aarch64)
+        enable NET_VENDOR_AMD
+        module AMD_XGBE
+      ;;
+    esac
+    if has PCMCIA; then
+      module PCMCIA_NMCLAN
+    fi
+    module PCNET32
+    module AQTION
+    module ALX
+    module ATL1
+    module ATL1C
+    module ATL1E
+    module ATL2
+    module B44
+    module BNX2
+    module BNX2X
+    enable BNX2X_SRIOV
+    module BNXT
+    enable BNXT_FLOWER_OFFLOAD
+    enable BNXT_HWMON
+    enable BNXT_SRIOV
+    module CNIC
+    module NET_VENDOR_BROADCOM
+    module BNA
+    module CHELSIO_T1
+    enable CHELSIO_T1_1G
+    module CHELSIO_T3
+    module CHELSIO_T4
+    module CHELSIO_T4VF
+    module ENIC
+    enable NET_TULIP
+    module DE2104X
+    module DM9102
+    if has PCMCIA; then
+      module PCMCIA_XIRCOM
+    fi
+    module TULIP
+    module ULI526X
+    module WINBOND_840
+    module DL2K
+    module SUNDANCE
+    module BE2NET
+    enable BE2NET_BE2
+    enable BE2NET_BE3
+    enable BE2NET_LANCER
+    enable BE2NET_SKYHAWK
+    module FEALNX
+    module GVE
+    module I40E
+    module I40EVF
+    module ICE
+    module IGBVF
+    module IGC
+    module IXGBE
+    enable IXGBE_HWMON
+    module IXGBEVF
+    module JME
+    module SKGE
+    enable SKGE_GENESIS
+    enable MLX4_CORE_GEN2
+    module MLX4_EN
+    module MLX5_CORE
+    enable MLX5_CORE_EN
+    enable MLX5_CORE_IPOIB
+    enable MLX5_EN_ARFS
+    enable MLX5_EN_RXNFC
+    enable MLX5_MPFS
+    module MLXFW
+    module KSZ884X_PCI
+    case "%{arch}" in
+      x86_64)
+        enable NET_VENDOR_MICROSOFT
+        module MICROSOFT_MANA
+      ;;
+    esac
+    enable NET_VENDOR_MYRI
+    module MYRI10GE
+    module NATSEMI
+    module NS83820
+    module S2IO
+    enable NET_VENDOR_NETRONOME
+    module NFP
+    module HAMACHI
+    module YELLOWFIN
+    module NETXEN_NIC
+    module QED
+    enable QED_SRIOV
+    module QEDE
+    enable NET_VENDOR_QLOGIC
+    module QLA3XXX
+    module QLCNIC
+    enable QLCNIC_HWMON
+    enable QLCNIC_SRIOV
+    module R6040
+    module 8139CP
+    module 8139TOO
+    enable 8139TOO_8129
+    enable NET_VENDOR_SOLARFLARE
+    module SFC_FALCON
+    module SFC
+    enable SFC_MCDI_MON
+    enable SFC_SRIOV
+    module SC92031
+    module SIS190
+    module SIS900
+    module EPIC100
+    if has PCMCIA; then
+      module PCMCIA_SMC91C92
+    fi
+    module SMSC9420
+    case "%{arch}" in
+      x86_64|i686)
+        module DWMAC_INTEL
+      ;;
+    esac
+    module STMMAC_ETH
+    module CASSINI
+    module HAPPYMEAL
+    module NIU
+    module SUNGEM
+    module TEHUTI
+    module TLAN
+    module VIA_RHINE
+    module VIA_VELOCITY
+    if has PCMCIA; then
+      module PCMCIA_XIRC2PS
+    fi
+
+    # Common DRM drivers
+    module DRM_NOUVEAU
+    module DRM_RADEON
+    module DRM_AMDGPU
+    enable DRM_AMDGPU_SI
+    enable DRM_AMDGPU_CIK
+    enable DRM_AMD_DC
+    case "%{arch}" in
+      x86_64|i686)
+        enable DRM_AMD_DC_FP
+      ;;
+    esac
+    enable DRM_AMD_DC_SI
+    enable DRM_RADEON_USERPTR
+    enable DRM_AMDGPU_USERPTR
+    enable DRM_AMD_ACP
+    module SND_SOC
+    module SND_SOC_AMD_ACP
+    case "%{arch}" in
+      x86_64|i686)
+        module DRM_I915
+        module DRM_GMA500
+        ;;
+    esac
+
+    # DRM for virtual machines
+    enable DRM_VIRTIO_GPU
+    case "%{arch}" in
+      i686|x86_64)
+        module DRM_VMWGFX
+      ;;
+    esac
+    if has HYPERV; then
+      module DRM_HYPERV
+    fi
+    if has VBOXGUEST; then
+      module DRM_VBOXVIDEO
+    fi
+
+    # FUSE
+    module FUSE_FS
+    module CUSE
+
+    # iSCSI
+    enable SCSI_LOWLEVEL
+    module ISCSI_TCP
+    module SCSI_ISCSI_ATTRS
+
+    # Device mapper
+    module DM_CRYPT
+    module DM_INTEGRITY
+    enable DM_UEVENT
+    module DM_RAID
+    module DM_SNAPSHOT
+    module DM_VERITY
+    enable DM_VERITY_VERIFY_ROOTHASH_SIG
+    enable DM_VERITY_VERIFY_ROOTHASH_SIG_SECONDARY_KEYRING
+
+    # Firewire
+    module FIREWIRE
+    module FIREWIRE_NET
+    module FIREWIRE_NOSY
+    module FIREWIRE_OHCI
+    module FIREWIRE_SBP2
+
+    # USB
+    module USB_ROLE_SWITCH
+    case "%{arch}" in
+      x86_64|i686)
+        module USB_ROLES_INTEL_XHCI
+      ;;
+    esac
+    module TYPEC
+    module TYPEC_UCSI
+    module TYPEC_MUX_PI3USB30532
+    module TYPEC_DP_ALTMODE
+    module TYPEC_NVIDIA_ALTMODE
+    module TYPEC_FUSB302
+    module TYPEC_TCPM
+    module TYPEC_TPS6598X
+
+    # USB audio
+    module SND_USB_AUDIO
+
+    # Common USB webcams
+    enable MEDIA_SUPPORT
+    enable MEDIA_USB_SUPPORT
+    enable MEDIA_CAMERA_SUPPORT
+    module USB_VIDEO_CLASS
+    module USB_GSPCA
+    module USB_GSPCA_BENQ
+    module USB_GSPCA_CONEX
+    module USB_GSPCA_CPIA1
+    module USB_GSPCA_DTCS033
+    module USB_GSPCA_ETOMS
+    module USB_GSPCA_FINEPIX
+    module USB_GSPCA_JEILINJ
+    module USB_GSPCA_JL2005BCD
+    module USB_GSPCA_KINECT
+    module USB_GSPCA_KONICA
+    module USB_GSPCA_MARS
+    module USB_GSPCA_MR97310A
+    module USB_GSPCA_NW80X
+    module USB_GSPCA_OV519
+    module USB_GSPCA_OV534
+    module USB_GSPCA_OV534_9
+    module USB_GSPCA_PAC207
+    module USB_GSPCA_PAC7302
+    module USB_GSPCA_PAC7311
+    module USB_GSPCA_SE401
+    module USB_GSPCA_SN9C2028
+    module USB_GSPCA_SN9C20X
+    module USB_GSPCA_SONIXB
+    module USB_GSPCA_SONIXJ
+    module USB_GSPCA_SPCA500
+    module USB_GSPCA_SPCA501
+    module USB_GSPCA_SPCA505
+    module USB_GSPCA_SPCA506
+    module USB_GSPCA_SPCA508
+    module USB_GSPCA_SPCA561
+    module USB_GSPCA_SPCA1528
+    module USB_GSPCA_SQ905
+    module USB_GSPCA_SQ905C
+    module USB_GSPCA_SQ930X
+    module USB_GSPCA_STK014
+    module USB_GSPCA_STK1135
+    module USB_GSPCA_STV0680
+    module USB_GSPCA_SUNPLUS
+    module USB_GSPCA_T613
+    module USB_GSPCA_TOPRO
+    module USB_GSPCA_TOUPTEK
+    module USB_GSPCA_TV8532
+    module USB_GSPCA_VC032X
+    module USB_GSPCA_VICAM
+    module USB_GSPCA_XIRLINK_CIT
+    module USB_GSPCA_ZC3XX
+    enable MEDIA_PCI_SUPPORT
+    if has ACPI && has I2C && has X86; then
+      module IPU_BRIDGE
+      module VIDEO_IPU3_CIO2
+      enable CIO2_BRIDGE
+    fi
+
+    # NVME disks
+    module BLK_DEV_NVME
+    enable NVME_HWMON
+
+    # Memory card readers
+    module MISC_RTSX_PCI
+    module MMC
+    module MMC_BLOCK
+    module MMC_REALTEK_PCI
+    module SDIO_UART
+    module MMC_CB710
+    module MISC_RTSX_USB
+    module MMC_REALTEK_USB
+    enable MMC_RICOH_MMC
+    module MMC_SDHCI
+    module MMC_SDHCI_ACPI
+    module MMC_SDHCI_PCI
+    if has PCMCIA; then
+      module MMC_SDRICOH_CS
+    fi
+    module MMC_TIFM_SD
+    module MMC_TOSHIBA_PCI
+    module MMC_USHC
+    module MMC_VIA_SDMMC
+    module MMC_VUB300
+    if has ISA_DMA_API; then
+      module MMC_WBSD
+    fi
+
+    # Needed by some bluetooth drivers
+    enable SERIAL_DEV_BUS
+    enable SERIAL_DEV_CTRL_TTYPORT
+
+    # Bluetooth
+    enable BT
+    module BT_HCIBTUSB
+    module BT_HIDP
+    module UHID
+    module BT_ATH3K
+    module BT_HCIBCM203X
+    module BT_HCIBFUSB
+    if has PCMCIA; then
+      module BT_HCIBLUECARD
+      module BT_HCIBT3C
+      module BT_HCIDTL1
+    fi
+    module BT_HCIBPA10X
+    module BT_HCIBTSDIO
+    enable BT_HCIBTUSB_AUTOSUSPEND
+    enable BT_HCIBTUSB_MTK
+    module BT_HCIUART
+    enable BT_HCIUART_3WIRE
+    enable BT_HCIUART_AG6XX
+    enable BT_HCIUART_ATH3K
+    enable BT_HCIUART_BCM
+    enable BT_HCIUART_BCSP
+    enable BT_HCIUART_H4
+    enable BT_HCIUART_INTEL
+    enable BT_HCIUART_LL
+    enable BT_HCIUART_MRVL
+    enable BT_HCIUART_NOKIA
+    enable BT_HCIUART_QCA
+    enable BT_HCIUART_RTL
+    module BT_HCIVHCI
+    module BT_MRVL
+    module BT_MRVL_SDIO
+
+    # MIDI
+    module SND_SEQUENCER
+    module SND_TIMER
+    module SND_RAWMIDI
+
+    # Sound for HDA
+    module SND_HDA
+    remove SND_HDA_INTEL; module SND_HDA_INTEL # module only
+    enable SND_HDA_RECONFIG
+    enable SND_HDA_INPUT_BEEP
+    enable SND_HDA_PATCH_LOADER
+    module SND_HDA_CODEC_REALTEK
+    module SND_HDA_CODEC_ANALOG
+    module SND_HDA_CODEC_SIGMATEL
+    module SND_HDA_CODEC_VIA
+    module SND_HDA_CODEC_HDMI
+    module SND_HDA_CODEC_CIRRUS
+    module SND_HDA_CODEC_CONEXANT
+    module SND_HDA_CODEC_CA0110
+    module SND_HDA_CODEC_CA0132
+    enable SND_HDA_CODEC_CA0132_DSP
+    module SND_HDA_CODEC_CMEDIA
+    module SND_HDA_CODEC_SI3054
+
+    # Other sound
+    module SOUNDWIRE
+    enable SND_AC97_POWER_SAVE
+    module SND_AD1889
+    module SND_ALI5451
+    module SND_ALOOP
+    module SND_ALS300
+    module SND_ATIIXP_MODEM
+    module SND_ATIIXP
+    module SND_AU8810
+    module SND_AU8820
+    module SND_AU8830
+    module SND_AZT3328
+    module SND_BCD2000
+    module SND_BEBOB
+    module SND_BT87X
+    module SND_CA0106
+    module SND_CMIPCI
+    module SND_CS4281
+    enable SND_CS46XX_NEW_DSP
+    module SND_CS46XX
+    module SND_CTXFI
+    module SND_DARLA20
+    module SND_DARLA24
+    module SND_DICE
+    module SND_DUMMY
+    module SND_ECHO3G
+    module SND_EMU10K1X
+    module SND_EMU10K1
+    module SND_ENS1370
+    module SND_ENS1371
+    module SND_ES1938
+    module SND_ES1968
+    enable SND_ES1968_INPUT
+    enable MEDIA_RADIO_SUPPORT
+    enable SND_ES1968_RADIO
+    enable SND_FIREWIRE
+    module SND_FIREFACE
+    module SND_FIREWIRE_DIGI00X
+    module SND_FIREWIRE_MOTU
+    module SND_FIREWIRE_TASCAM
+    module SND_FIREWORKS
+    module SND_FM801
+    enable SND_FM801_TEA575X_BOOL
+    module SND_GINA20
+    module SND_GINA24
+    module SND_HDA_CODEC_CS8409
+    module SND_HDA_SCODEC_CS35L41_I2C
+    module SND_HDA_SCODEC_CS35L41_SPI
+    module SND_HDSPM
+    module SND_HDSP
+    module SND_ICE1712
+    module SND_ICE1724
+    module SND_INDIGODJX
+    module SND_INDIGODJ
+    module SND_INDIGOIOX
+    module SND_INDIGOIO
+    module SND_INDIGO
+    module SND_INTEL8X0M
+    module SND_INTEL8X0
+    module SND_ISIGHT
+    module SND_KORG1212
+    module SND_LAYLA20
+    module SND_LAYLA24
+    module SND_LOLA
+    module SND_LX6464ES
+    module SND_MAESTRO3
+    enable SND_MAESTRO3_INPUT
+    module SND_MIA
+    module SND_MIXART
+    module SND_MONA
+    module SND_MPU401
+    module SND_MTPAV
+    module SND_MTS64
+    module SND_NM256
+    module SND_OXFW
+    module SND_OXYGEN
+    module SND_PCXHR
+    module SND_PORTMAN2X4
+    module SND_RIPTIDE
+    module SND_RME32
+    module SND_RME9652
+    module SND_RME96
+    module SND_SERIAL_U16550
+    module SND_SOC_ES8316
+    module SND_SONICVIBES
+    module SND_TRIDENT
+    module SND_USB_6FIRE
+    module SND_USB_CAIAQ
+    enable SND_USB_CAIAQ_INPUT
+    module SND_USB_HIFACE
+    module SND_USB_PODHD
+    module SND_USB_POD
+    module SND_USB_TONEPORT
+    module SND_USB_UA101
+    module SND_USB_VARIAX
+    module SND_VIA82XX_MODEM
+    module SND_VIA82XX
+    module SND_VIRMIDI
+    module SND_VIRTUOSO
+    module SND_VX222
+    if has XEN; then
+      module SND_XEN_FRONTEND
+    fi
+    if has ISA_DMA_API; then
+      module SND_ALS4000
+    fi
+    case "%{arch}" in
+      x86_64|i686)
+        module SND_ASIHPI
+        module SND_PCSP
+        module SND_USB_US122L
+      ;;
+    esac
+    case "%{arch}" in
+      x86_64|i686|ppc64|ppc64le)
+        module SND_USB_USX2Y
+      ;;
+    esac
+
+    module SND_SOC
+    module SND_SOC_MAX98373_SDW
+    module SND_SOC_RT1308_SDW
+    module SND_SOC_RT5682_SDW
+    module SND_SOC_RT700_SDW
+    module SND_SOC_RT711_SDW
+    module SND_SOC_RT715_SDW
+    module SND_SOC_SOF_PCI
+    enable SND_SOC_SOF_TOPLEVEL
+
+    case "%{arch}" in
+      x86_64|i686)
+        enable SND_SOC_SOF_HDA_AUDIO_CODEC
+        enable SND_SOC_SOF_HDA_LINK
+        enable SND_SOC_SOF_INTEL_TOPLEVEL
+        module SND_SOC_AMD_ACP3x
+        module SND_SOC_AMD_ACP5x
+        module SND_SOC_AMD_ACP6x
+        module SND_SOC_AMD_CZ_DA7219MX98357_MACH
+        module SND_SOC_AMD_CZ_RT5645_MACH
+        module SND_SOC_AMD_RENOIR_MACH
+        module SND_SOC_AMD_RENOIR
+        module SND_SOC_AMD_VANGOGH_MACH
+        module SND_SOC_AMD_YC_MACH
+        module SND_SOC_INTEL_BDW_RT5650_MACH
+        module SND_SOC_INTEL_BDW_RT5677_MACH
+        module SND_SOC_INTEL_BROADWELL_MACH
+        module SND_SOC_INTEL_BYT_CHT_CX2072X_MACH
+        module SND_SOC_INTEL_BYT_CHT_DA7213_MACH
+        module SND_SOC_INTEL_BYT_CHT_ES8316_MACH
+        module SND_SOC_INTEL_BYTCR_RT5640_MACH
+        module SND_SOC_INTEL_BYTCR_RT5651_MACH
+        module SND_SOC_INTEL_CATPT
+        module SND_SOC_INTEL_CHT_BSW_MAX98090_TI_MACH
+        module SND_SOC_INTEL_CHT_BSW_NAU8824_MACH
+        module SND_SOC_INTEL_CHT_BSW_RT5645_MACH
+        module SND_SOC_INTEL_CHT_BSW_RT5672_MACH
+        module SND_SOC_INTEL_GLK_RT5682_MAX98357A_MACH
+        module SND_SOC_INTEL_HASWELL_MACH
+        module SND_SOC_INTEL_KBL_DA7219_MAX98357A_MACH
+        module SND_SOC_INTEL_KBL_RT5663_MAX98927_MACH
+        module SND_SOC_INTEL_KBL_RT5663_RT5514_MAX98927_MACH
+        module SND_SOC_INTEL_SKL_HDA_DSP_GENERIC_MACH
+        module SND_SOC_INTEL_SKL_NAU88L25_MAX98357A_MACH
+        module SND_SOC_INTEL_SKL_NAU88L25_SSM4567_MACH
+        module SND_SOC_INTEL_SKL_RT286_MACH
+        enable SND_SOC_INTEL_SKYLAKE_HDAUDIO_CODEC
+        module SND_SOC_INTEL_SKYLAKE
+        module SND_SOC_INTEL_SOF_RT5682_MACH
+        module SND_SOC_INTEL_SOUNDWIRE_SOF_MACH
+        enable SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES
+      ;;
+    esac
+
+    # HID drivers
+    module HID_MULTITOUCH
+    module HID_GENERIC
+    if has ACPI && has I2C; then
+      module I2C_HID_ACPI
+    fi
+    enable HIDRAW
+
+    # CPU support
+    enable PINCTRL
+    case "%{arch}" in
+      x86_64|i686)
+        # pinctrl_amd might not work as module if it is loaded to late
+        enable PINCTRL_AMD
+        enable AMD_IOMMU_V2
+        enable X86_AMD_PLATFORM_DEVICE
+        ;;
+    esac
+
+    # I2C/SMBus
+    case "%{arch}" in
+      x86_64|i686)
+        module I2C_PIIX4
+        enable I2C_DESIGNWARE_PLATFORM
+        enable I2C_DESIGNWARE_BAYTRAIL
+        module MFD_INTEL_LPSS_PCI
+        module MFD_INTEL_LPSS_ACPI
+        module I2C_CHT_WC
+        module I2C_ISMT
+      ;;
+    esac
+    module I2C_AMD756
+    case "%{arch}" in
+      x86_64|i686)
+        module I2C_AMD756_S4882
+      ;;
+    esac
+    module I2C_AMD8111
+    module I2C_AMD_MP2
+    module I2C_DESIGNWARE_PCI
+    module I2C_DIOLAN_U2C
+    module I2C_ISCH
+    module I2C_NFORCE2
+    case "%{arch}" in
+      x86_64|i686)
+        module I2C_NFORCE2_S4985
+      ;;
+    esac
+    module I2C_PARPORT
+    module I2C_PCA_PLATFORM
+    module I2C_SCMI
+    module I2C_SIMTEC
+    module I2C_SIS96X
+    module I2C_TINY_USB
+    module I2C_VIA
+    module I2C_VIAPRO
+    module I2C_CHARDEV
+    module I2C_STUB
+
+    # RTL Network
+    module RTL8180
+    module RTL8187
+    module RTL8188EE
+    module RTL8192CE
+    module RTL8192CU
+    module RTL8192DE
+    module RTL8192EE
+    module RTL8192SE
+    module RTL8723AE
+    module RTL8723BE
+    module RTL8821AE
+
+    # USB Network interfaces
+    module USB_NET_DRIVERS
+    module USB_USBNET
+    module USB_NET_CDCETHER
+    module USB_NET_CDC_SUBSET
+    module USB_NET_RNDIS_HOST
+    module USB_RTL8150
+    module USB_RTL8152
+    module USB_NET_AQC111
+    module USB_NET_CDC_EEM
+    module USB_NET_CDC_MBIM
+    module USB_NET_CH9200
+    module USB_NET_CX82310_ETH
+    module USB_NET_DM9601
+    module USB_NET_GL620A
+    module USB_NET_HUAWEI_CDC_NCM
+    module USB_NET_INT51X1
+    module USB_NET_KALMIA
+    module USB_NET_MCS7830
+    module USB_NET_PLUSB
+    module USB_NET_QMI_WWAN
+    module USB_NET_RNDIS_WLAN
+    module USB_NET_SMSC75XX
+    module USB_NET_SMSC95XX
+    enable USB_ALI_M5632
+    enable USB_AN2720
+    module USB_CATC
+    enable USB_EPSON2888
+    module USB_HSO
+    module USB_IPHETH
+    module USB_KAWETH
+    enable USB_KC2190
+    module USB_LAN78XX
+    module USB_NET_SR9700
+    module USB_PEGASUS
+    module USB_SIERRA_NET
+    module USB_VL600
+
+    # Parallel ports
+    module PARPORT
+
+    # USB Serial
+    enable USB_SERIAL
+    module USB_SERIAL_SIMPLE
+    module USB_SERIAL_FTDI_SIO
+    module USB_SERIAL_CH341
+    module USB_ACM
+    module USB_SERIAL_AIRCABLE
+    module USB_SERIAL_ARK3116
+    module USB_SERIAL_BELKIN
+    module USB_SERIAL_CP210X
+    module USB_SERIAL_CYBERJACK
+    module USB_SERIAL_CYPRESS_M8
+    module USB_SERIAL_DEBUG
+    module USB_SERIAL_DIGI_ACCELEPORT
+    module USB_SERIAL_EDGEPORT_TI
+    module USB_SERIAL_EDGEPORT
+    module USB_SERIAL_EMPEG
+    module USB_SERIAL_F8153X
+    module USB_SERIAL_GARMIN
+    enable USB_SERIAL_GENERIC
+    module USB_SERIAL_IPAQ
+    module USB_SERIAL_IPW
+    module USB_SERIAL_IR
+    module USB_SERIAL_IUU
+    module USB_SERIAL_KEYSPAN_PDA
+    module USB_SERIAL_KEYSPAN
+    module USB_SERIAL_KLSI
+    module USB_SERIAL_KOBIL_SCT
+    module USB_SERIAL_MCT_U232
+    module USB_SERIAL_MOS7720
+    module USB_SERIAL_MOS7840
+    enable USB_SERIAL_MOS7715_PARPORT
+    module USB_SERIAL_NAVMAN
+    module USB_SERIAL_OMNINET
+    module USB_SERIAL_OPTICON
+    module USB_SERIAL_OPTION
+    module USB_SERIAL_OTI6858
+    module USB_SERIAL_PL2303
+    module USB_SERIAL_QCAUX
+    module USB_SERIAL_QT2
+    module USB_SERIAL_QUALCOMM
+    module USB_SERIAL_SAFE
+    module USB_SERIAL_SIERRAWIRELESS
+    module USB_SERIAL_SPCP8X5
+    module USB_SERIAL_SSU100
+    module USB_SERIAL_SYMBOL
+    module USB_SERIAL_TI
+    module USB_SERIAL_UPD78F0730
+    module USB_SERIAL_VISOR
+    module USB_SERIAL_WHITEHEAT
+    module USB_SERIAL_XR
+    module USB_SERIAL_XSENS_MT
+
+    # Required by podman
+    module TUN
+    enable CGROUP_HUGETLB
+    enable CGROUP_PIDS
+    enable CPUSETS
+    enable MEMCG
+    enable CGROUP_SCHED
+    enable BLK_CGROUP
+
+    # KVM
+    case "%{arch}" in
+      x86_64|i686)
+        module KVM
+        module KVM_INTEL
+        module KVM_AMD
+        ;;
+      aarch64)
+        module KVM
+        ;;
+    esac
+    module VHOST_VSOCK
+
+    # Useful filesystems
+    for fs in XFS BTRFS EXFAT VFAT F2FS ISO9660 UDF NTFS3; do
+      module "${fs}_FS"
+    done
+    for fs in BTRFS F2FS; do
+      enable "${fs}_FS_POSIX_ACL"
+    done
+    enable "XFS_POSIX_ACL"
+    enable FS_ENCRYPTION
+
+    # Needed for FAT filesystems
+    enable NLS_CODEPAGE_437
+    enable NLS_ISO8859_1
+
+    # Extcon
+    module EXTCON
+    case "%{arch}" in
+      x86_64|i686)
+        module EXTCON_AXP288
+        module EXTCON_INTEL_CHT_WC
+      ;;
+    esac
+
+    # Power management
+    enable PM
+    module CHARGER_BQ24190
+    module BATTERY_BQ27XXX
+    module BATTERY_MAX17042
+    case "%{arch}" in
+      x86_64|i686)
+        module AXP288_CHARGER
+        module AXP288_FUEL_GAUGE
+        module BATTERY_SURFACE
+        module CHARGER_SURFACE
+      ;;
+    esac
+
+    # PWM
+    enable PWM
+    case "%{arch}" in
+      x86_64|i686)
+        enable PWM_CRC
+        module PWM_LPSS_PLATFORM
+      ;;
+    esac
+
+    # RTC
+    case "%{arch}" in
+      x86_64|i686)
+        enable RTC_HCTOSYS
+      ;;
+    esac
+
+    # MFD
+    case "%{arch}" in
+      x86_64|i686)
+        enable PMIC_OPREGION
+        enable INTEL_SOC_PMIC
+        module INTEL_SOC_PMIC_BXTWC
+        module INTEL_SOC_PMIC_CHTDC_TI
+        enable INTEL_SOC_PMIC_CHTWC
+        module LPC_ICH
+        module LPC_SCH
+        module MFD_INTEL_PMC_BXT
+      ;;
+    esac
+    module MFD_AXP20X_I2C
+
+    # RAM error correction
+    if has HAS_IOMEM && has EDAC_SUPPORT; then
+      enable RAS
+      module EDAC
+    fi
+
+    # PCI
+    if has HAVE_PCI; then
+      enable PCI_IOV
+      enable PCI_PRI
+      enable PCI_PASID
+      enable HOTPLUG_PCI
+      enable HOTPLUG_PCI_PCIE
+      enable PCIEPORTBUS
+      #enable PCIE_PME
+      enable PCIE_PTM
+      if has RAS; then
+        enable PCIEAER
+        module PCIEAER_INJECT
+        enable PCIE_ECRC
+        enable PCIE_DPC
+        if has ACPI; then
+          enable PCIE_EDR
+        fi
+      fi
+    fi
+
+    # RISC-V
+    case "%{arch}" in
+      riscv*)
+        # QEMU
+        enable SOC_VIRT
+
+        # Sifive Unmatched
+        enable SOC_SIFIVE
+        enable SIFIVE_L2
+        enable PCIE_FU740
+        enable PCIE_MICROSEMI
+        enable PCI_SW_SWITCHTEC
+        module PWM_SIFIVE
+        enable COMMON_CLK_PWM
+        enable EDAC_SIFIVE
+        ;;
+    esac
+
+    # Initramfs
+    enable DEVTMPFS
+    enable BLK_DEV_INITRD
+        for comp in GZIP BZIP2 LZMA XZ LZO LZ4 ZSTD; do
+      enable RD_${comp}
+    done
+    remove DEBUG_BLOCK_EXT_DEVT
+
+    # Compressed firmware
+    enable FW_LOADER_COMPRESS
+
+    # IIO
+    module IIO
+    module ADXL372_I2C
+    module ADXL372_SPI
+    module BMC150_ACCEL
+    module DA280
+    module DA311
+    module DMARD10
+    module IIO_ST_ACCEL_3AXIS
+    module KXCJK1013
+    module MMA7660
+    module MMA8452
+    module MXC4005
+    module MXC6255
+    module AD7124
+    module AD7292
+    module AD7766
+    module AD7949
+    module AXP288_ADC
+    module MAX1241
+    module MAX1363
+    module MCP3911
+    module TI_ADC128S052
+    module TI_ADS1015
+    module AD5770R
+    module LTC1660
+    module TI_DAC7311
+    module ADXRS290
+    module BMG160
+    module FXAS21002C
+    module IIO_ST_GYRO_3AXIS
+    module MPU3050_I2C
+    module ADIS16475
+    module FXOS8700_I2C
+    module FXOS8700_SPI
+    module INV_ICM42600_I2C
+    module INV_ICM42600_SPI
+    module INV_MPU6050_I2C
+    module IIO_ST_LSM6DSX
+    module ACPI_ALS
+    module ADUX1020
+    module AL3010
+    module BH1750
+    module CM32181
+    module GP2AP002
+    module LTR501
+    module LV0104CS
+    module MAX44009
+    module OPT3001
+    module PA12203001
+    module RPR0521
+    module STK3310
+    module ST_UVIS25
+    module TSL2772
+    module VCNL4035
+    module VEML6030
+    module VL6180
+    module ZOPT2201
+    module AK8975
+    module BMC150_MAGN_I2C
+    module IIO_ST_MAGN_3AXIS
+    module SENSORS_RM3100_I2C
+    module SENSORS_RM3100_SPI
+    module ABP060MG
+    module BMP280
+    module ICP10100
+    module MPL115_I2C
+    module MB1232
+    module SX9310
+    module VCNL3020
+    module VL53L0X_I2C
+    module LTC2983
+    module MAX31856
+    module MAXIM_THERMOCOUPLE
+    module MLX90614
+    module MLX90632
+
+    # Accessibility
+    enable ACCESSIBILITY
+    enable A11Y_BRAILLE_CONSOLE
+    module SPEAKUP
+    module SPEAKUP_SYNTH_ACNTSA
+    module SPEAKUP_SYNTH_APOLLO
+    module SPEAKUP_SYNTH_AUDPTR
+    module SPEAKUP_SYNTH_BNS
+    module SPEAKUP_SYNTH_DECTLK
+    module SPEAKUP_SYNTH_LTLK
+    module SPEAKUP_SYNTH_SOFT
+    module SPEAKUP_SYNTH_SPKOUT
+    module SPEAKUP_SYNTH_TXPRT
+
+    # Joysticks
+    enable INPUT_JOYSTICK
+    # Joydev API
+    module INPUT_JOYDEV
+
+    # Joysticks (Xbox)
+    module JOYSTICK_XPAD
+    enable JOYSTICK_XPAD_FF
+    enable JOYSTICK_XPAD_LEDS
+
+    # Logitech game controllers
+    module HID_LOGITECH
+    module HID_LOGITECH_DJ
+    module HID_LOGITECH_HIDPP
+    enable LOGITECH_FF
+    enable LOGIRUMBLEPAD2_FF
+    enable LOGIG940_FF
+    enable LOGIWHEELS_FF
+
+    # Steam controller
+    module HID_STEAM
+
+    # Joydev API
+    module INPUT_JOYDEV
+
+    # Other joysticks
+    module JOYSTICK_A3D
+    module JOYSTICK_ADI
+    module JOYSTICK_ANALOG
+    module JOYSTICK_COBRA
+    module JOYSTICK_DB9
+    module JOYSTICK_GAMECON
+    module JOYSTICK_GF2K
+    module JOYSTICK_GRIP_MP
+    module JOYSTICK_GRIP
+    module JOYSTICK_GUILLEMOT
+    module JOYSTICK_IFORCE_232
+    module JOYSTICK_IFORCE_USB
+    module JOYSTICK_IFORCE
+    module JOYSTICK_INTERACT
+    module JOYSTICK_JOYDUMP
+    module JOYSTICK_MAGELLAN
+    module JOYSTICK_PXRC
+    module JOYSTICK_SIDEWINDER
+    module JOYSTICK_SPACEBALL
+    module JOYSTICK_SPACEORB
+    module JOYSTICK_STINGER
+    module JOYSTICK_TMDC
+    module JOYSTICK_TURBOGRAFX
+    module JOYSTICK_TWIDJOY
+    module JOYSTICK_WALKERA0701
+    module JOYSTICK_WARRIOR
+    module JOYSTICK_ZHENHUA
+
+    # gameport
+    module GAMEPORT_EMU10K1
+    module GAMEPORT_FM801
+    module GAMEPORT_L4
+
+    # Other human interfaces
+    module HID_ACCUTOUCH
+    module HID_ACRUX
+    enable HID_ACRUX_FF
+    module HID_ALPS
+    module HID_APPLEIR
+    module HID_ASUS
+    module HID_AUREAL
+    enable HID_BATTERY_STRENGTH
+    module HID_BETOP_FF
+    module HID_BIGBEN_FF
+    module HID_CMEDIA
+    module HID_CORSAIR
+    module HID_COUGAR
+    module HID_CP2112
+    module HID_CREATIVE_SB0540
+    module HID_DRAGONRISE
+    enable DRAGONRISE_FF
+    module HID_ELAN
+    module HID_ELECOM
+    module HID_ELO
+    module HID_EMS_FF
+    module HID_FT260
+    module HID_GEMBIRD
+    module HID_GFRM
+    module HID_GLORIOUS
+    module HID_GREENASIA
+    enable GREENASIA_FF
+    module HID_GT683R
+    module HID_HOLTEK
+    enable HOLTEK_FF
+    if has HYPERV; then
+      module HID_HYPERV_MOUSE
+    fi
+    module HID_ICADE
+    module HID_JABRA
+    module HID_KEYTOUCH
+    module HID_KYE
+    module HID_LCPOWER
+    module HID_LED
+    module HID_LENOVO
+    module HID_MACALLY
+    module HID_MAGICMOUSE
+    module HID_MALTRON
+    module HID_MAYFLASH
+    module HID_MCP2221
+    module HID_NINTENDO
+    enable NINTENDO_FF
+    module HID_NTI
+    module HID_ORTEK
+    module HID_PENMOUNT
+    module HID_PICOLCD
+    module HID_PLANTRONICS
+    module HID_PLAYSTATION
+    enable PLAYSTATION_FF
+    module HID_PRIMAX
+    module HID_PRODIKEYS
+    module HID_RETRODE
+    module HID_RMI
+    module HID_ROCCAT
+    module HID_SAITEK
+    module HID_SEMITEK
+    module HID_SENSOR_ACCEL_3D
+    module HID_SENSOR_ALS
+    module HID_SENSOR_DEVICE_ROTATION
+    module HID_SENSOR_GYRO_3D
+    module HID_SENSOR_HUB
+    module HID_SENSOR_INCLINOMETER_3D
+    module HID_SENSOR_MAGNETOMETER_3D
+    module HID_SENSOR_TEMP
+    module HID_SMARTJOYPLUS
+    enable SMARTJOYPLUS_FF
+    module HID_SPEEDLINK
+    module HID_STEELSERIES
+    module HID_THINGM
+    module HID_THRUSTMASTER
+    enable THRUSTMASTER_FF
+    module HID_TIVO
+    module HID_TWINHAN
+    module HID_U2FZERO
+    module HID_UCLOGIC
+    module HID_UDRAW_PS3
+    module HID_VIEWSONIC
+    module HID_VIVALDI
+    module HID_WACOM
+    module HID_WALTOP
+    module HID_WIIMOTE
+    module HID_XINMO
+    module HID_ZEROPLUS
+    enable ZEROPLUS_FF
+    module HID_ZYDACRON
+    module HID_SONY
+    enable SONY_FF
+    case "%{arch}" in
+      x86_64|i686)
+        module INTEL_ISH_HID
+        module SURFACE_HID
+        module SURFACE_KBD
+      ;;
+    esac
+    case "%{arch}" in
+      x86_64)
+        module AMD_SFH_HID
+      ;;
+    esac
+
+    # Mice
+    module MOUSE_APPLETOUCH
+    module MOUSE_BCM5974
+    module MOUSE_CYAPA
+    module MOUSE_ELAN_I2C
+    enable MOUSE_ELAN_I2C_I2C
+    enable MOUSE_ELAN_I2C_SMBUS
+    enable MOUSE_PS2_ELANTECH
+    enable MOUSE_PS2_SENTELIC
+    case "%{arch}" in
+      x86_64|i686)
+        enable MOUSE_PS2_VMMOUSE
+      ;;
+    esac
+    module MOUSE_SERIAL
+    module MOUSE_SYNAPTICS_I2C
+    module MOUSE_SYNAPTICS_USB
+    module MOUSE_VSXXXAA
+
+    # Make sure to enable virtual terminals in DRM
+    enable FB
+    enable FB_EFI
+    enable DRM_FBDEV_EMULATION
+    enable FRAMEBUFFER_CONSOLE
+
+    # Network
+    module BRIDGE
+    enable NETFILTER
+    enable IP_NF_IPTABLES
+    enable IP_NF_FILTER
+    enable IP_NF_TARGET_REJECT
+    module IP_NF_TARGET_MASQUERADE
+    enable IP_NF_MANGLE
+    enable NF_CONNTRACK
+    enable NF_NAT
+    module IP_NF_NAT
+    enable IP6_NF_IPTABLES
+    enable IP6_NF_MATCH_IPV6HEADER
+    enable IP6_NF_FILTER
+    enable IP6_NF_TARGET_REJECT
+    enable IP6_NF_MANGLE
+    module IP_NF_RAW
+    module IP6_NF_RAW
+    module IP6_NF_NAT
+    enable NETFILTER_ADVANCED
+    module VETH
+    module BLK_DEV_NBD
+
+    # Those two modules are required by multipass
+    module NETFILTER_XT_MATCH_COMMENT
+    module NETFILTER_XT_TARGET_CHECKSUM
+
+    # Security modules
+    enable SECURITY_SELINUX
+    enable SECURITY_APPARMOR
+    enable AUDIT
+
+    # SPI
+    if has HAS_IOMEM; then
+      enable SPI
+    fi
+
+    # TPM
+    enable TCG_TPM
+    enable TCG_CRB
+    enable TCG_TIS
+    if has SPI; then
+      enable TCG_TIS_SPI
+    fi
+
+    # BPF
+    enable BPF_SYSCALL
+    enable CGROUP_BPF
+    if has HAVE_CBPF_JIT || has HAVE_EBPF_JIT; then
+      enable BPF_JIT
+    fi
+
+    # Secure boot
+    enable SYSTEM_BLACKLIST_KEYRING
+    enable SYSTEM_TRUSTED_KEYRING
+    enable INTEGRITY_PLATFORM_KEYRING
+    enable INTEGRITY_SIGNATURE
+    enable INTEGRITY_ASYMMETRIC_KEYS
+    enable SECONDARY_TRUSTED_KEYRING
+    if has EFI; then
+      enable INTEGRITY_MACHINE_KEYRING
+      enable LOAD_UEFI_KEYS
+    fi
+    enable IMA
+    enable IMA_APPRAISE
+    enable IMA_SECURE_AND_OR_TRUSTED_BOOT
+    enable IMA_ARCH_POLICY
+
+    # Module signing
+    # /keys/linux-module-cert.crt is provided by downstream
+    if [ -f /keys/linux-module-cert.crt ]; then
+      enable MODULE_SIG
+      value_str SYSTEM_TRUSTED_KEYS /keys/linux-module-cert.crt
+      # Building with MODULE_SIG_KEY is not reproducible
+      value_str MODULE_SIG_KEY ""
+      # We sign modules separately
+      remove MODULE_SIG_ALL
+      # Instead we use lsm=lockdown on command line
+      remove MODULE_SIG_FORCE
+
+      # sha512 signing only
+      remove MODULE_SIG_SHA1
+      remove MODULE_SIG_SHA224
+      remove MODULE_SIG_SHA256
+      remove MODULE_SIG_SHA384
+      enable MODULE_SIG_SHA512
+      value_str MODULE_SIG_HASH="sha512"
+
+      enable SECURITY_LOCKDOWN_LSM
+      enable SECURITY_LOCKDOWN_LSM_EARLY
+    else
+      remove MODULE_SIG
+    fi
+
+    # systemd-oom
+    enable PSI
+
+    # Hardware monitors
+    case "%{arch}" in
+      x86_64|i686)
+        module SENSORS_K8TEMP
+        module SENSORS_K10TEMP
+        module SENSORS_FAM15H_POWER
+        module SENSORS_NCT6683
+        module SENSORS_NCT6775
+        module SENSORS_NCT7802
+        module SENSORS_NCT7904
+        module SENSORS_NCT7904
+      ;;
+    esac
+
+    # LEDS
+    module LEDS_CLASS
+    module LEDS_CLASS_MULTICOLOR
+    enable LEDS_BRIGHTNESS_HW_CHANGED
+    module LEDS_LP3944
+    module LEDS_LT3593
+    module LEDS_REGULATOR
+    module LEDS_TRIGGER_ACTIVITY
+    module LEDS_TRIGGER_BACKLIGHT
+    module LEDS_TRIGGER_CAMERA
+    module LEDS_TRIGGER_DEFAULT_ON
+    enable LEDS_TRIGGER_DISK
+    module LEDS_TRIGGER_HEARTBEAT
+    module LEDS_TRIGGER_NETDEV
+    module LEDS_TRIGGER_ONESHOT
+    enable LEDS_TRIGGER_PANIC
+    module LEDS_TRIGGER_PATTERN
+    module LEDS_TRIGGER_TIMER
+    module LEDS_TRIGGER_TRANSIENT
+    case "%{arch}" in
+      x86_64|i686)
+        module LEDS_APU
+        module LEDS_INTEL_SS4200
+      ;;
+    esac
+
+    # cpufreq
+    case "%{arch}" in
+      x86_64|i686)
+        module CPU_FREQ_GOV_CONSERVATIVE
+        module CPU_FREQ_GOV_POWERSAVE
+        enable CPU_FREQ_STAT
+        module X86_AMD_FREQ_SENSITIVITY
+        enable X86_AMD_PSTATE
+        module X86_P4_CLOCKMOD
+        module X86_PCC_CPUFREQ
+        module X86_POWERNOW_K8
+      ;;
+    esac
+
+    # Platforms
+    case "%{arch}" in
+      x86_64|i686)
+        module CHROMEOS_LAPTOP
+        module CHROMEOS_PSTORE
+        enable CHROME_PLATFORMS
+        module CROS_EC
+        module CROS_KBD_LED_BACKLIGHT
+        module SURFACE_AGGREGATOR
+        module SURFACE_AGGREGATOR_CDEV
+        module SURFACE_AGGREGATOR_HUB
+        module SURFACE_AGGREGATOR_TABLET_SWITCH
+        module SURFACE_3_POWER_OPREGION
+        module SURFACE_ACPI_NOTIFY
+        module SURFACE_AGGREGATOR_REGISTRY
+        module SURFACE_DTX
+        module SURFACE_GPE
+        module SURFACE_HOTPLUG
+        module SURFACE_PLATFORM_PROFILE
+        module SURFACE_PRO3_BUTTON
+        module ACERHDF
+        module ACER_WIRELESS
+        module ACPI_TOSHIBA
+        module AMD_PMC
+        module AMILO_RFKILL
+        module APPLE_GMUX
+        module ASUS_LAPTOP
+        module ASUS_WIRELESS
+        module COMPAL_LAPTOP
+        module FUJITSU_LAPTOP
+        module FUJITSU_TABLET
+        module GPD_POCKET_FAN
+        module HP_ACCEL
+        module IDEAPAD_LAPTOP
+        module INTEL_ATOMISP2_PM
+        module INTEL_CHTWC_INT33FE
+        module INTEL_HID_EVENT
+        module INTEL_INT0002_VGPIO
+        module INTEL_OAKTRAIL
+        module INTEL_RST
+        module INTEL_SMARTCONNECT
+        enable INTEL_TURBO_MAX_3
+        module INTEL_VBTN
+        module INTEL_IPS
+        module INTEL_PMC_CORE
+        module LG_LAPTOP
+        module MSI_LAPTOP
+        module PANASONIC_LAPTOP
+        module PCENGINES_APU2
+        module SAMSUNG_LAPTOP
+        module SAMSUNG_Q10
+        module SENSORS_HDAPS
+        module SERIAL_MULTI_INSTANTIATE
+        module SONY_LAPTOP
+        enable SONYPI_COMPAT
+        module THINKPAD_ACPI
+        enable THINKPAD_ACPI_ALSA_SUPPORT
+        enable THINKPAD_ACPI_HOTKEY_POLL
+        enable THINKPAD_ACPI_VIDEO
+        module TOPSTAR_LAPTOP
+        module TOSHIBA_BT_RFKILL
+        module TOSHIBA_HAPS
+        module TOSHIBA_WMI
+        module ACPI_WMI
+        module ACER_WMI
+        enable X86_PLATFORM_DRIVERS_DELL
+        enable X86_PLATFORM_DRIVERS_HP
+        module ALIENWARE_WMI
+        module ASUS_NB_WMI
+        module ASUS_WMI
+        enable DELL_SMBIOS_WMI
+        module DELL_WMI_AIO
+        module DELL_WMI_LED
+        module DELL_WMI
+        module EEEPC_WMI
+        module HP_WMI
+        module HUAWEI_WMI
+        module INTEL_WMI_THUNDERBOLT
+        module MSI_WMI
+        module NVIDIA_WMI_EC_BACKLIGHT
+        module SENSORS_ASUS_WMI
+        module SURFACE3_WMI
+        module X86_ANDROID_TABLETS
+      ;;
+    esac
 
   - |
     make -j1 olddefconfig
@@ -999,8 +1843,19 @@ config:
   - |
     . ./config-utils.sh
 
-  build-commands:
-  - make -j$(nproc)
+    missing_configs=0
+    for config in $(cat expected-configs); do
+      if ! has "${config}"; then
+        echo "Missing ${config}" 1>&2
+        missing_configs=1
+      fi
+    done
+    # Only fail for...
+    case "%{arch}" in
+      x86_64|i686|aarch64)
+        [ "${missing_configs}" = 0 ]
+      ;;
+    esac
 
   install-commands:
   - |
@@ -1008,6 +1863,10 @@ config:
     install -Dm644 System.map '%{install-root}%{bootdir}/System.map'
     install -Dm644 .config '%{install-root}%{bootdir}/config'
     make -j1 INSTALL_MOD_PATH='%{install-root}%{prefix}' modules_install
+
+  - |
+    release=$(make -s kernelrelease)
+    find "%{install-root}%{indep-libdir}/modules/${release}" -type f -name '*.ko' | xargs -P $MAXJOBS -n 2 -r xz;
 
   - |
     release=$(make -s kernelrelease)
@@ -1024,7 +1883,7 @@ config:
       scripts
       include
     )
-    if [ "$(scripts/config -s STACK_VALIDATION)" = y ]; then
+    if [ "$(scripts/config -s OBJTOOL)" = y ]; then
       to_copy+=(tools/objtool/objtool)
     fi
     for file in "${to_copy[@]}"
@@ -1039,7 +1898,7 @@ config:
     ln -sr "${targetdir}" "%{install-root}%{indep-libdir}/modules/${release}/build"
 
   (?):
-  - arch in ["aarch64", "arm", "riscv64"]:
+  - target_arch in ["aarch64", "arm", "riscv64"]:
       install-commands:
         (>):
         - |
@@ -1060,4 +1919,4 @@ public:
         - '%{bootdir}/System.map'
 
 (@):
-- elements/boards/common/linux-megous.inc
+- elements/include/linux.yml
