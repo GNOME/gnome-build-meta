@@ -100,7 +100,7 @@ more details.
 ## Contributing to the tests
 
 For information on how to contribute to these tests, see:
-<CONTRIBUTING.md>.
+[CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Licensing
 
