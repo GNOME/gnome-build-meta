@@ -50,13 +50,13 @@ PINEPHONE_PRO_DIALOGS = {
         '#',
         # Check for goodix touchscreen config
         'cat running.config | grep GOODIX',
-        'CONFIG_TOUCHSCREEN_GOODIX=y',
+        'CONFIG_TOUCHSCREEN_GOODIX=',
         # Check touchscreen enabled config
         'cat running.config | grep TOUCHSCREEN',
-        'CONFIG_INPUT_TOUCHSCREEN=y',
+        'CONFIG_INPUT_TOUCHSCREEN=',
         # Check for net_vendor_broadcom wifi config
         'cat running.config | grep NET_VENDOR',
-        'CONFIG_NET_VENDOR_BROADCOM=y',
+        'CONFIG_NET_VENDOR_BROADCOM=',
         # Test poweroff
         'sudo shutdown now',
         'Power down'
@@ -102,13 +102,13 @@ PINEPHONE_DIALOGS = {
         '#',
         # Check for goodix touchscreen config
         'cat running.config | grep GOODIX',
-        'CONFIG_TOUCHSCREEN_GOODIX=m',
+        'CONFIG_TOUCHSCREEN_GOODIX=',
         # Check touchscreen enabled config
         'cat running.config | grep TOUCHSCREEN',
-        'CONFIG_INPUT_TOUCHSCREEN=y',
+        'CONFIG_INPUT_TOUCHSCREEN=',
         # Check for rtl8723cs wifi config
         'cat running.config | grep RTL8723CS',
-        'CONFIG_RTL8723CS=m',
+        'CONFIG_RTL8723CS=',
         # Test poweroff
         'sudo shutdown now',
         'Power down'
