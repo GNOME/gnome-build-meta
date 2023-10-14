@@ -97,10 +97,12 @@ openQA and the `ssam_openqa` helper tool have a few features that help with
 debugging and extending the testsuite.  See the README for `ssam_openqa` for
 more details.
 
+Running the tests locally requires KVM. See [VIRTUALIZATION.md](./VIRTUALIZATION.md) for more details and a troubleshooting guide. 
+
 ## Contributing to the tests
 
 For information on how to contribute to these tests, see:
-<CONTRIBUTING.md>.
+[CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Licensing
 
