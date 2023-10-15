@@ -3,8 +3,8 @@ kind: autotools
 sources:
 - kind: git_repo
   url: github:alsa-project/alsa-utils.git
-  track: v1.2.8
-  ref: v1.2.8-0-ga61edeb0d441f9540445f544043c75f75febe301
+  track: v*
+  ref: v1.2.10-0-gc2a6bcba1e413ec62ee268557f7b2a8ab792e91b
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
