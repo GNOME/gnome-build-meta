@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: https://gitlab.com/mobian1/eg25-manager.git
-  track: 0.4.4
-  ref: 0.4.4-0-gbe6a924f8d39e5fabad88470c88174f61a3fa88b
+  track: "*.*.*"
+  ref: 0.4.6-0-ge7790f941c053837e596dccd92ba97051a2d4cc1
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
