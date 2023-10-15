@@ -1,12 +1,5 @@
-workflow:
-  # These rules are the opt-in to "merge request pipelines". This feature
-  # allows merge requests from personal forks to use the same CI settings
-  # as the main project. Otherwise forks cannot run the CI.
-  #
-  # See: https://docs.gitlab.com/ee/ci/yaml/workflow.html#switch-between-branch-pipelines-and-merge-request-pipelines
-  rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+include:
+  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
 
 variables:
   OPENQA_HOST: https://openqa.gnome.org
