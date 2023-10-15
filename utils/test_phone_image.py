@@ -49,6 +49,8 @@ PINEPHONE_PRO_DIALOGS = {
         'cat /proc/config.gz | gunzip > running.config',
         '#',
         # Check for goodix touchscreen config
+        'cat running.config',
+        '#',
         'cat running.config | grep GOODIX',
         'CONFIG_TOUCHSCREEN_GOODIX=',
         # Check touchscreen enabled config
