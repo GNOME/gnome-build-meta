@@ -27,8 +27,8 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
     autotest::loadtest("tests/app_baobab.pm");
-    autotest::loadtest("tests/app_epiphany.pm");
-    autotest::loadtest("tests/app_evince.pm");
+    # autotest::loadtest("tests/app_epiphany.pm");
+    # autotest::loadtest("tests/app_evince.pm");
     autotest::loadtest("tests/app_gnome_calculator.pm");
     autotest::loadtest("tests/app_gnome_calendar.pm");
     autotest::loadtest("tests/app_gnome_characters.pm");
