@@ -10,7 +10,7 @@ config:
     systemdsystemunitdir="$(pkg-config --variable systemdsystemunitdir systemd)"
 
     install -d -m755 "%{install-root}${systemdsystemunitdir}/multi-user.target.upholds/"
-    for service in apparmor.service snapd.service snapd.apparmor.service snapd.aa-prompt-listener.service; do
+    for service in apparmor.service snapd.service snapd.apparmor.service; do
       ln -s ../${service} "%{install-root}${systemdsystemunitdir}/multi-user.target.upholds/"
     done
 
