@@ -41,7 +41,7 @@ bst_command = os.environ.get("BST", "bst").split()
 
 
 def bst(*args):
-    return subprocess.check_call(bst_command + ["--no-interactive"] + list(args))
+    return subprocess.check_call(bst_command + ["--on-error", "continue"] + list(args))
 
 track_elements = world_elements if args.track_world else core_elements
 bst("source", "track", "--deps", "all", *track_elements)
