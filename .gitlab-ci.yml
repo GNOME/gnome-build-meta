@@ -457,7 +457,7 @@ test-s3-image:
   - .x86_64
   stage: test
   image:
-    name: registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
+    name: registry.opensuse.org/devel/openqa/containers15.5/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
