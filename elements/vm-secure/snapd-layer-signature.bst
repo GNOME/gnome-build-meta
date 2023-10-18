@@ -63,6 +63,9 @@ config:
     mkdir -p tmp
 
   - |
+    [ -d "%{install-root}" ] || mkdir -p "%{install-root}"
+
+  - |
     TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
@@ -76,15 +79,13 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        snapd.raw \
+        "%{install-root}/snapd.raw" \
         --json=pretty \
         >repart.json
-
-  - |
-    xz ${XZFLAGS} snapd.raw
 
   install-commands:
   - |
     label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
     image_version="${label##gnomeos_usr_snapd_v_}"
-    install -Dm644 snapd.raw.xz "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw.xz"
+    mv "%{install-root}/snapd.raw" "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw"
+    xz ${XZFLAGS} "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw"

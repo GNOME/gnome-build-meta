@@ -63,6 +63,9 @@ config:
     mkdir -p tmp
 
   - |
+    [ -d "%{install-root}" ] || mkdir -p "%{install-root}"
+
+  - |
     TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
@@ -76,15 +79,13 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        devel.raw \
+        "%{install-root}/devel.raw" \
         --json=pretty \
         >repart.json
-
-  - |
-    xz ${XZFLAGS} devel.raw
 
   install-commands:
   - |
     label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
     image_version="${label##gnomeos_usr_dev_v_}"
-    install -Dm644 devel.raw.xz "%{install-root}/devel-%{systemd-arch}_${image_version}.raw.xz"
+    mv "%{install-root}/devel.raw" "%{install-root}/devel-%{systemd-arch}_${image_version}.raw"
+    xz ${XZFLAGS} "%{install-root}/devel-%{systemd-arch}_${image_version}.raw"
