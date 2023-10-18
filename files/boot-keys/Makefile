@@ -32,7 +32,7 @@ endif
 tpm2-pcr-public.pem: tpm2-pcr-private.pem
 	openssl rsa -pubout -in $< -out $@
 
-extra-db/.keep extra-kek/.keep extra-db-mic/.keep extra-kek-mic/.keep:
+extra-db/.keep extra-kek/.keep:
 	[ -d $(dir $@) ] || mkdir -p $(dir $@)
 	touch $@
 
@@ -62,17 +62,17 @@ KEY_ID=GNOME
 	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=$(KEY_ID) $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
 endif
 
-extra-kek-mic/mic-kek.cer: extra-kek-mic/.keep
+extra-kek-mic/mic-kek.cer:
 	curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt -o $@.tmp
 	echo "a6b068c3a84d31785b0745546546efed1ed1faa0db85144f99ff3a12524564212e09b493bd8d54773270bb2376eba28a29f84dfa5df5cea20e1dbf628c969a0c  extra-kek-mic/mic-kek.cer.tmp" sha512sum -c
 	mv $@.tmp $@
 
-extra-db-mic/mic-win.cer: extra-db-mic/.keep
+extra-db-mic/mic-win.cer:
 	curl https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt -o $@.tmp
 	echo "a30b1e92b99b839d0076808e38f1c65fb42b1a9608778a0596f5350b3ef80dd15f2e226e1624298ff44135e736717d27642225adfe8a9d10e24b5fa22d912c18  extra-db-mic/mic-win.cer.tmp" sha512sum -c
 	mv $@.tmp $@
 
-extra-db-mic/mic-other.cer: extra-db-mic/.keep
+extra-db-mic/mic-other.cer:
 	curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt -o $@.tmp
 	echo "a6b068c3a84d31785b0745546546efed1ed1faa0db85144f99ff3a12524564212e09b493bd8d54773270bb2376eba28a29f84dfa5df5cea20e1dbf628c969a0c  extra-db-mic/mic-other.cer.tmp" sha512sum -c
 	mv $@.tmp $@
@@ -83,10 +83,10 @@ extra-kek-mic/mic-%.crt: extra-kek-mic/mic-%.cer
 extra-db-mic/mic-%.crt: extra-db-mic/mic-%.cer
 	openssl x509 -inform der -outform pem -in $< -out $@
 
-extra-kek-mic/mic-%.owner: extra-kek-mic/.keep
+extra-kek-mic/mic-%.owner:
 	echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >$@
 
-extra-db-mic/mic-%.owner: extra-db-mic/.keep
+extra-db-mic/mic-%.owner:
 	echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >$@
 
 private-key:
@@ -128,7 +128,7 @@ clean:
 	rm -f {PK,PK_MIC,KEK,KEK_MIC,DB,VENDOR,MODULES,SYSEXT}.{crt,key}
 	rm -rf private-key
 	rm -f import-pubring.gpg
-	rm -f extra-{db,kek}{,-mic}/*.{owner,crt,cer}
+	rm -f extra-{db,kek}{,-mic}/*.{owner,crt}
 	rm -f tpm2-pcr-{private,public}.pem
 	rm -f modules/linux-module-cert.crt
 
