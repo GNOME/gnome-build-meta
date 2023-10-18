@@ -4,7 +4,6 @@
 # is not released by the GNOME release team.
 kind: stack
 depends:
-- world/abseil.bst
 - world/accerciser.bst
 - world/atkmm-1.6.bst
 - world/babl.bst
