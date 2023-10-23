@@ -18,7 +18,7 @@ if args.kind == "iso":
     if args.latest:
         print("https://os.gnome.org/download/latest/gnome_os_installer.iso")
     else:
-        print(f"https://os.gnome.org/download/{version}/gnome_os_installer_${version}.iso")
+        print(f"https://os.gnome.org/download/{version}/gnome_os_installer_{version}.iso")
 elif args.kind == "disk":
     if args.latest:
         print("https://os.gnome.org/download/latest/gnome_os_disk.img.xz")
