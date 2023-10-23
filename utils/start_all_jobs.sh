@@ -20,6 +20,8 @@ worker_class="$1"
 version="$2"
 casedir="$3"
 
+echo "Calling 'POST isos' endpoint to start jobs." >> openqa.log
+
 openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   --host $OPENQA_HOST \
   -X POST isos \
@@ -32,4 +34,14 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   NEEDLES_DIR=$OPENQA_NEEDLES_GIT#$OPENQA_NEEDLES_BRANCH \
   VERSION=$version \
   WORKER_CLASS=$worker_class \
-  | tee --append openqa.log | jq -e .ids[]
+  | tee --append openqa.log > isos.response.json
+
+response=$(cat isos.response.json)
+
+if [ -z "${response}" ]; then
+    echo >&2 "ERROR: No jobs were started by openQA server."
+    exit 1
+fi
+
+# Echo job ids to caller on stdout, one per line.
+jq -e .ids[] < isos.response.json
