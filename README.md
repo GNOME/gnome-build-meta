@@ -79,7 +79,7 @@ curl --get --location $(./utils/test_media_url.py --latest --kind disk) | unxz >
 Download the openQA worker container image:
 
 ```
-podman pull registry.opensuse.org/devel/openqa/containers15.4/openqa_worker:latest
+podman pull registry.opensuse.org/devel/openqa/containers15.5/openqa_worker:latest
 ```
 
 Now run `ssam_openqa`, which will launch the openQA worker container and run the
