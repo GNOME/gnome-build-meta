@@ -29,9 +29,9 @@ config:
   - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
   - rm /etc/machine-id
 
-  - |
-    mkdir -p "%{install-root}/usr/lib/"
-    cp -r /usr/lib/modules "%{install-root}/usr/lib/"
+  - mkdir -p '%{install-root}/usr/lib/'
+  - cp -rT /usr/lib/modules '%{install-root}/usr/lib/modules'
+  - rm '%{install-root}'/usr/lib/modules/*/vmlinuz
 
   - mkdir -p "%{install-root}/efi/EFI/Linux"
 
