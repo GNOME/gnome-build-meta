@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glib.git
   track: main
-  ref: 2.78.0-283-g8e959e32b11cf114a0afc373f8575bcb68e3e1a0
+  ref: 2.78.0-373-g70c66766f728e73313a20dfce425397aa4c4b2b0
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
@@ -36,6 +36,7 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dinstalled_tests=true
+    -Dintrospection=disabled
     -Dselinux=disabled
     -Dsysprof=enabled
 
