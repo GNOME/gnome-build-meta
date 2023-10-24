@@ -2,6 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - vm-secure/make-layer.bst
 - vm-secure/initial-scripts.bst
@@ -12,6 +13,9 @@ build-depends:
 - filename: vm-secure/filesystem-snapd.bst
   config:
     location: '/sysroot-snapd'
+
+environment:
+  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: -z lz4 -E dedupe,fragments
 
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
@@ -88,7 +92,7 @@ config:
     Label=gnomeos_usr_snapd_%A
     CopyFiles=/usr
     Minimize=best
-    Format=squashfs
+    Format=erofs
     SplitName=root
     EOF
 

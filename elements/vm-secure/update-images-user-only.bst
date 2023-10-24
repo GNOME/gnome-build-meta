@@ -30,8 +30,8 @@ config:
 
     cp /usr-image/disk.usr-verity.raw "%{install-root}/usr_${image_version}_${usr_verity_part_uuid}.verity"
     xz ${XZFLAGS} "%{install-root}/usr_${image_version}_${usr_verity_part_uuid}.verity"
-    cp /usr-image/disk.usr.raw "%{install-root}/usr_${image_version}_${usr_part_uuid}.squashfs"
-    xz ${XZFLAGS} "%{install-root}/usr_${image_version}_${usr_part_uuid}.squashfs"
+    cp /usr-image/disk.usr.raw "%{install-root}/usr_${image_version}_${usr_part_uuid}.erofs"
+    xz ${XZFLAGS} "%{install-root}/usr_${image_version}_${usr_part_uuid}.erofs"
 
   - |
     set -x

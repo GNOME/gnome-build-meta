@@ -2,12 +2,15 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:vm/deploy-tools.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - vm-secure/initial-scripts.bst
 - vm-secure/repart-config.bst
 - filename: vm-secure/filesystem.bst
   config:
     location: '/sysroot'
+
+environment:
+  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: -z lz4 -E dedupe,fragments
 
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6

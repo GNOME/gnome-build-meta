@@ -19,7 +19,7 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/apparmor.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/xfsprogs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
