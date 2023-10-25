@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libsigc++/2.12/libsigc++-2.12.0.tar.xz
-  ref: 1c466d2e64b34f9b118976eb21b138c37ed124d0f61497df2a90ce6c3d9fa3b5
+  url: gnome_downloads:libsigc++/2.12/libsigc++-2.12.1.tar.xz
+  ref: a9dbee323351d109b7aee074a9cb89ca3e7bcf8ad8edef1851f4cf359bd50843
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
