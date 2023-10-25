@@ -87,4 +87,4 @@ config:
   - |
     label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
     image_version="${label##gnomeos_usr_snapd_v_}"
-    install -Dm644 snapd.raw.xz "%{install-root}/snapd_${image_version}.raw.xz"
+    install -Dm644 snapd.raw.xz "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw.xz"
