@@ -1,0 +1,21 @@
+commit 743e26d5d34fe9abf1d35fbebaf31f40664d47cc
+Author: Valentin David <me@valentindavid.com>
+Date:   Tue Oct 24 20:24:17 2023 +0200
+
+    linux: Enable DMI and FW_CFG sysfs
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index b655b39be..b4eb42edd 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -161,6 +161,10 @@ config:
+     # Some udev/virtualization requires
+     enable DMIID
+ 
++    # systemd-creds depends on this
++    enable DMI_SYSFS
++    enable FW_CFG_SYSFS
++
+     # Support for some SCSI devices serial number retrieval
+     enable BLK_DEV_BSG
+ 

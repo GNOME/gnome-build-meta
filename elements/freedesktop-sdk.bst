@@ -7,6 +7,8 @@ sources:
   ref: freedesktop-sdk-23.08.5-0-g4b0d53c0da2400382d8a4764f063177db200254d
 - kind: patch
   path: files/freedesktop-sdk/sysupdate-dir.patch
+- kind: patch
+  path: files/freedesktop-sdk/enable-dmi-sysfs.patch
 
 config:
   options:
