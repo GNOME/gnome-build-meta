@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: gnome_downloads:libgtop/2.41/libgtop-2.41.1.tar.xz
-  ref: 43ea9ad13f7caf98303e64172b191be9b96bab340b019deeec72251ee140fe3b
+  url: gnome_downloads:libgtop/2.41/libgtop-2.41.2.tar.xz
+  ref: d9026cd8a48d27cdffd332f8d60a92764b56424e522c420cd13a01f40daf92c3
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/texinfo.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:dconf-editor/45/dconf-editor-45.0.tar.xz
-  ref: 46a3cb10a21e8b8e2536b9e66c3e4827c05a213463599f2c7b7b227d62bd8b5e
+  url: gnome_downloads:dconf-editor/45/dconf-editor-45.0.1.tar.xz
+  ref: 1180297678eedae6217cc514a2638c187d2f1d1ef2720cb9079b740c429941dd
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
