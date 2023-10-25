@@ -249,15 +249,26 @@ vm-image-x86_64:
 sysupdate-image-x86_64:
   extends:
   - .x86_64
+  - .sysupdate-image
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+
+sysupdate-image-aarch64:
+  extends:
+  - .aarch64
+  - .sysupdate-image
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+
+.sysupdate-image:
   rules:
   - !reference [.deploy-rules, rules]
   # Also allow to manually trigger it for normal branches
   - if: '$CI_COMMIT_REF_NAME'
     when: manual
     allow_failure: true
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
   stage: deploy
   script:
   - |
