@@ -1,7 +1,8 @@
 kind: flatpak_image
-depends:
-- filename: flatpak/platform-image.bst
-  type: build
+
+build-depends:
+- flatpak/platform-image.bst
+- freedesktop-sdk.bst:integration/debug-gl-dir.bst
 
 config:
   directory: '%{debugdir}%{libdir}'
