@@ -27,7 +27,7 @@ machines:
       QEMURAM: '2560'
       QEMUVGA: virtio
       # Generated with utils/get_smbios.sh
-      QEMU_SMBIOS: 'type=11,value=io.systemd.credential.binary:tmpfiles.extra=Zit+IC9ldGMvc3lzdGVtZC9qb3VybmFsZC5jb25mIDY0NCByb290IHJvb3QgLSBXMHB2ZFhKdVlXeGRDa1p2Y25kaGNtUlViME52Ym5OdmJHVTlkSEoxWlFwVVZGbFFZWFJvUFM5a1pYWXZkSFI1VXpBSwpmK34gL2V0Yy9zdWRvZXJzLmQvd2hlZWwgNjQ0IHJvb3Qgcm9vdCAtIEpYZG9aV1ZzSUVGTVREMG9RVXhNS1NCT1QxQkJVMU5YUkRvZ1FVeE1DZz09Cg=='
+      QEMU_SMBIOS: 'type=11,value=io.systemd.stub.kernel-cmdline-extra=console=ttyS0 systemd.journald.forward_to_console=1'
       UEFI: '1'
       UEFI_PFLASH_CODE: /usr/share/qemu/ovmf-x86_64-code.bin
       UEFI_PFLASH_VARS: /usr/share/qemu/ovmf-x86_64-vars.bin
