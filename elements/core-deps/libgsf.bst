@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libgsf.git
   track: master
-  ref: LIBGSF_1_14_50-19-ge3eb3e9e40dce2202b67e928c429242a5eab494a
+  ref: LIBGSF_1_14_50-20-g026bc3bf18910fd39fb1a153761a4b1070860150
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

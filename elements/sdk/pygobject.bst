@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pygobject.git
   track: master
-  ref: 3.46.0-54-g3c2c3d9ef39c164c37ba8522bf6984a7e2ec3d34
+  ref: 3.46.0-65-g1e34172b7fe1c4dead8370a4a24dc67afa924abc
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
