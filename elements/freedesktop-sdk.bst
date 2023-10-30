@@ -4,11 +4,9 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.5-0-g4b0d53c0da2400382d8a4764f063177db200254d
+  ref: freedesktop-sdk-23.08.6-0-gaa6e6977813fd567f6e0c56e6cd536e5e90d24eb
 - kind: patch
   path: files/freedesktop-sdk/sysupdate-dir.patch
-- kind: patch
-  path: files/freedesktop-sdk/enable-dmi-sysfs.patch
 
 config:
   options:
