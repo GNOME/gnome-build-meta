@@ -42,6 +42,9 @@ test-s3-image:
     secret = $OPENQA_API_SECRET
     EOF
   - |
+    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
+    ln -s $(pwd) /tests
+  - |
     worker_class=qemu_x86_64-${CI_JOB_ID}
     utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &

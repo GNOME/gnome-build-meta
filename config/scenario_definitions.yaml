@@ -26,8 +26,7 @@ machines:
       QEMUPORT: '20012'
       QEMURAM: '2560'
       QEMUVGA: virtio
-      # Generated with utils/get_smbios.sh
-      QEMU_SMBIOS: 'type=11,value=io.systemd.stub.kernel-cmdline-extra=console=ttyS0 systemd.journald.forward_to_console=1'
+      QEMU_SMBIOS: 'type=11,path=/tests/config/smbios.txt'
       UEFI: '1'
       UEFI_PFLASH_CODE: /usr/share/qemu/ovmf-x86_64-code.bin
       UEFI_PFLASH_VARS: /usr/share/qemu/ovmf-x86_64-vars.bin
