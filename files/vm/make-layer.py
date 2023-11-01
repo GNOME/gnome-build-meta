@@ -3,6 +3,7 @@
 import argparse
 import os
 import shutil
+import stat
 
 parser = argparse.ArgumentParser()
 
@@ -51,8 +52,7 @@ def compare_files(a, b):
 def create_white(rel):
     base = os.path.basename(rel)
     copy_parent_dirs(os.path.dirname(rel))
-    with open(os.path.join(args.output, os.path.dirname(rel), f'.wh.{base}'), 'wb') as f:
-        pass
+    os.mknod(os.path.join(args.output, rel), mode=stat.S_IFCHR|0o600, device=os.makedev(0, 0))
 
 for root, dirs, files in os.walk(args.upper):
     real_dirs = []

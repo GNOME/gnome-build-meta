@@ -73,12 +73,12 @@ config:
     EOF
 
   - |
-    mkdir -p /output
-    make-layer /sysroot/usr /sysroot-snapd/usr /output/usr
+    mkdir -p /tmp/output
+    make-layer /sysroot/usr /sysroot-snapd/usr /tmp/output/usr
 
   - |
-    mkdir -p /output/etc
-    cp -T /sysroot-snapd/usr/lib/os-release /output/etc/os-release
+    mkdir -p /tmp/output/etc
+    cp -T /sysroot-snapd/usr/lib/os-release /tmp/output/etc/os-release
 
   - mkdir -p definitions
   - |
@@ -93,7 +93,8 @@ config:
     EOF
 
   - |
-    mkdir -p /var/tmp
+    mkdir -p /var
+    ln -s /tmp /var/tmp
 
   - |
     SYSTEMD_LOG_LEVEL=debug \
@@ -107,7 +108,7 @@ config:
         --no-pager \
         --split=true \
         --seed %{repart-seed} \
-        --root=/output \
+        --root=/tmp/output \
         snapd.raw \
         --json=pretty \
         >repart.json
