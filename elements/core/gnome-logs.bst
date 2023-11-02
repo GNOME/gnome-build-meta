@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-logs.git
   track: master
-  ref: gnome-logs-45.beta-31-ge2a886782189899442f188929e9871550ef28491
+  ref: gnome-logs-45.beta-32-g79a7c1f868558e3556aa97cc4f8c69438ba9ea2e
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
