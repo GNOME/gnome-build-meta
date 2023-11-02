@@ -1,29 +1,16 @@
 kind: meson
-sources:
-- kind: git_repo
-  url: gnome:gobject-introspection.git
-  track: main
-  ref: 1.78.1-13-gcd171c50441b74f18fe2f0250c6b751c759bf892
-build-depends:
-- sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/bison.bst
-- freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
+(@): elements/sdk/gobject-introspection.inc
+
 depends:
-- sdk/glib.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
-- freedesktop-sdk.bst:components/python3-mako.bst
-- freedesktop-sdk.bst:components/python3-markdown.bst
+  (>):
+  - freedesktop-sdk.bst:components/python3-mako.bst
+  - freedesktop-sdk.bst:components/python3-markdown.bst
+  - sdk/glib.bst
+
 variables:
   meson-local: >-
-    -Dgtk_doc=true
+    -Dbuild_introspection_data=true
     -Dcairo=disabled
     -Ddoctool=enabled
-public:
-  bst:
-    split-rules:
-      devel:
-        (>):
-        - '%{datadir}/gobject-introspection-1.0'
-        - '%{datadir}/gobject-introspection-1.0/**'
-        - '%{libdir}/libgirepository-1.0.so'
+    -Dgtk_doc=true
