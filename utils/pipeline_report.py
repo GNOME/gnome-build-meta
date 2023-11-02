@@ -206,6 +206,8 @@ class ScriptHelper:
             with ZipFile(artifacts_zip, "r") as z:
                 with z.open("openqa.log") as f:
                     openqa_status_line = f.readline().decode()
+                    if openqa_status_line.startswith("Calling 'POST isos'"):
+                        openqa_status_line = f.readline().decode()
             openqa_status = json.loads(openqa_status_line)
             openqa_job_ids = openqa_status["ids"]
         except NotFoundError:
