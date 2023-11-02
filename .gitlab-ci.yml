@@ -278,7 +278,7 @@ sysupdate-image-aarch64:
     fi
 
   - |
-    build_num="${CI_JOB_ID}"
+    build_num="${CI_PIPELINE_ID}"
     if [ "${CI_COMMIT_BRANCH-}" = master ]; then
       IMAGE_VERSION="nightly.$build_num"
     else
