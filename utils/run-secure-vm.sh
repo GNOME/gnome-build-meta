@@ -3,6 +3,7 @@
 set -eu
 
 args=()
+cmdline=()
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -14,6 +15,10 @@ while [ $# -gt 0 ]; do
             ;;
         --notpm)
             no_tpm=1
+            ;;
+        --cmdline)
+            shift
+            cmdline+=("$1")
             ;;
         *)
             args+=("$1")
@@ -109,5 +114,9 @@ QEMU_ARGS+=(-full-screen)
 QEMU_ARGS+=(-device ich9-intel-hda)
 QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
+
+if [ ${#cmdline[@]} -gt 0 ]; then
+    QEMU_ARGS+=(-smbios "type=11,value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]}")
+fi
 
 exec qemu-system-x86_64 "${QEMU_ARGS[@]}"
