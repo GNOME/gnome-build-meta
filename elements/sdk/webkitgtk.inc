@@ -14,7 +14,7 @@ build-depends:
 
 runtime-depends:
 - freedesktop-sdk.bst:components/gstreamer-libav.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
+- sdk/gstreamer-plugins-good.bst
 
 depends:
 - sdk/at-spi2-core.bst

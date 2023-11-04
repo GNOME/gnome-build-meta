@@ -33,6 +33,7 @@ config:
     components/gobject-introspection.bst: sdk/gobject-introspection.bst
     components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
+    components/gstreamer-plugins-good.bst: sdk/gstreamer-plugins-good.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
     components/ibus.bst: sdk/libibus.bst
