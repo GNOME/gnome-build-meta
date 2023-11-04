@@ -8,4 +8,3 @@ build-depends:
 config:
   exclude:
   - webkit-debug
-  - source
