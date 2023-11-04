@@ -50,3 +50,4 @@ variables:
     -Dtwolame=disabled
     -Dexamples=disabled
     -Drpicamsrc=disabled
+    -Dximagesrc=disabled
