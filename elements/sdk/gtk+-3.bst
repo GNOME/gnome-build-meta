@@ -29,11 +29,6 @@ depends:
 - freedesktop-sdk.bst:components/mesa-headers.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcomposite.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xdamage.bst
-- freedesktop-sdk.bst:components/xorg-lib-xi.bst
-- freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
@@ -42,7 +37,7 @@ variables:
     -Dbroadway_backend=true
     -Dinstalled_tests=true
     -Dtests=false
-    -Dx11_backend=true
+    -Dx11_backend=false
     -Dwayland_backend=true
     -Dgtk_doc=true
     -Dman=true
