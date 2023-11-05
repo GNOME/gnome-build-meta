@@ -6,9 +6,6 @@ depends:
 public:
   bst:
     integration-commands:
-    # we inherit fd.o sources
-    - rm -r '%{sourcedir}'
-
     - rm -r '%{debugdir}%{libexecdir}/installed-tests'
     - rm -r '%{debugdir}%{libexecdir}/gcc'
     - rm -r '%{debugdir}%{libdir}/samba'
