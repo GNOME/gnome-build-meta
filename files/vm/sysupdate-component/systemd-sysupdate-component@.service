@@ -1,0 +1,25 @@
+[Unit]
+Description=Automatic System Update for component %i
+Wants=network-online.target
+After=network-online.target
+ConditionVirtualization=!container
+Before=systemd-sysupdate.service
+
+[Service]
+Type=simple
+NotifyAccess=main
+ExecStart=flock -F /run/sysupdate.lock /usr/lib/systemd/systemd-sysupdate -C %i update
+CapabilityBoundingSet=CAP_CHOWN CAP_FOWNER CAP_FSETID CAP_MKNOD CAP_SETFCAP CAP_SYS_ADMIN CAP_SETPCAP CAP_DAC_OVERRIDE CAP_LINUX_IMMUTABLE
+NoNewPrivileges=yes
+MemoryDenyWriteExecute=yes
+ProtectHostname=yes
+RestrictRealtime=yes
+RestrictNamespaces=net
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+SystemCallFilter=@system-service @mount
+SystemCallErrorNumber=EPERM
+SystemCallArchitectures=native
+LockPersonality=yes
+
+[Install]
+WantedBy=systemd-sysupdate.service
