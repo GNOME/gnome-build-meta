@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calculator.git
   track: master
-  ref: 45.0.2-14-g85da379ecdb2f35a5a7eb36626eaf03656cce44c
+  ref: 45.0.2-15-gd97b250b7158d426c103137e17bb67f81ea82138
 
 build-depends:
 - sdk/vala.bst
