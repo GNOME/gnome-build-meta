@@ -67,9 +67,10 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >/sysroot-snapd/usr/lib/extension-release.d/extension-release.snapd
+    cat <<EOF >/sysroot-snapd/usr/lib/extension-release.d/extension-release.snapd_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
+    SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
