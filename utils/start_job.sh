@@ -25,7 +25,7 @@ testsuite="${4:-gnome_install}"
 openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   --host $OPENQA_HOST \
   -X POST isos \
-  --param-file SCENARIO_DEFINITIONS_YAML="$script_dir/../config/scenario_definitions.yaml" \
+  --param-file SCENARIO_DEFINITIONS_YAML="$casedir/config/scenario_definitions.yaml" \
   ARCH="x86_64" \
   CASEDIR="$casedir" \
   DISTRI="gnomeos" \
