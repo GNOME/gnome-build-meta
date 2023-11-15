@@ -27,6 +27,7 @@ openqa-cli api --apikey $OPENQA_API_KEY --apisecret $OPENQA_API_SECRET \
   -X POST isos \
   --param-file SCENARIO_DEFINITIONS_YAML="$casedir/config/scenario_definitions.yaml" \
   ARCH="x86_64" \
+  ASSETDIR="/var/lib/openqa/share/factory/" \
   CASEDIR="$casedir" \
   DISTRI="gnomeos" \
   FLAVOR="iso" \
