@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gvfs.git
   track: master
-  ref: 1.52.1-2-g9ebf4327ba46efd183f5fe7cab54ef4120c878d7
+  ref: 1.52.1-10-gd7cb21dc4afd84eeb0a31602d0335d70483b333b
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
@@ -21,7 +21,7 @@ depends:
 - core-deps/plist.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
-- sdk/gcr-3.bst
+- sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/libsecret.bst
