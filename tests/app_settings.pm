@@ -7,7 +7,16 @@ use gnomeutils;
 sub run {
     start_app('gnome-control-center');
     assert_screen('app_settings_startup', 10);
-    close_app;
+
+    # Go to appearance section
+    assert_and_click('app_settings_appearance_button', timeout => 15, button => 'left');
+    # Change theme to dark mode
+    assert_and_click('dark_appearance_button', timeout => 10, button => 'left');
+    wait_still_screen(5);
+    # Change theme back to default
+    assert_and_click('default_appearance_button', timeout => 15, button => 'left');
+     
+   close_app;
 }
 
 sub test_flags {
@@ -15,3 +24,4 @@ sub test_flags {
 }
 
 1;
+
