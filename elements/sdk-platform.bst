@@ -41,7 +41,6 @@ depends:
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/libwpe.bst
 - sdk/mozjs.bst
 - sdk/nuspell.bst
 - sdk/pango.bst
@@ -52,7 +51,6 @@ depends:
 - sdk/webkitgtk-6.0.bst
 - sdk/webp-pixbuf-loader.bst
 - sdk/woff2.bst
-- sdk/wpebackend-fdo.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
 - freedesktop-sdk.bst:platform.bst

@@ -1,7 +1,9 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.42.3.tar.xz
-  ref: 0a1a4630045628b3a6fe95da72dc47852cff20d66be1ac6fd0d669c88c13d8e2
+  url: webkitgtk:webkitgtk-2.43.2.tar.xz
+  ref: 0540d158312e950d031add607b9d54f806f23396a11525f9db9c9f6cb041008a
+- kind: patch
+  path: files/webkitgtk/hash-tables.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -23,10 +25,8 @@ depends:
 - sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
-- sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/woff2.bst
-- sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
