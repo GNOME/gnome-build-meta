@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.48.0-47-gb33de3a951838eb38cbfb5d597edbf2038550e0c
+  ref: 3.48.0-49-g909686f9d42ef0ad5bf6725835328ed11931129b
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - core-deps/librest.bst
-- sdk/gcr-3.bst
+- sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
