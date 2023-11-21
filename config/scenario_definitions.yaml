@@ -14,7 +14,7 @@ machines:
       CDMODEL: scsi-cd
       DESKTOP: gnomeos
       HDDMODEL: virtio-blk
-      HDDSIZEGB: '10'
+      HDDSIZEGB: '40'
       NICMAC: 52:54:00:12:34:56
       NICMODEL: virtio-net
       NICTYPE: user
