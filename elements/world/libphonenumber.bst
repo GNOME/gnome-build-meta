@@ -14,8 +14,6 @@ depends:
 - freedesktop-sdk.bst:components/abseil-cpp.bst
 - freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:components/protobuf.bst
-- core/gnome-desktop.bst
-- core-deps/gspell.bst
 - world/libgtest.bst
 
 variables:
