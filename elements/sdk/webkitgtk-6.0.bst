@@ -12,7 +12,6 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DUSE_GTK4=ON
-    -DUSE_LIBBACKTRACE=OFF
 
 public:
   bst:

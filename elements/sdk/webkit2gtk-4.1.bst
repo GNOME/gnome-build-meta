@@ -12,8 +12,6 @@ variables:
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_WEBDRIVER=OFF
-    -DUSE_LIBBACKTRACE=OFF
-    -DUSE_GTK4=OFF
 
 public:
   bst:
