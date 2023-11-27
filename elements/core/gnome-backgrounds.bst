@@ -10,7 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/webp-pixbuf-loader.bst
+- sdk/webp-pixbuf-loader.bst
 
 depends:
 - sdk/glib.bst

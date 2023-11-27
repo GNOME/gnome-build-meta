@@ -28,4 +28,4 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 runtime-depends:
-- core-deps/webp-pixbuf-loader.bst
+- sdk/webp-pixbuf-loader.bst
