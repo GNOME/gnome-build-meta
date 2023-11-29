@@ -2,8 +2,9 @@ kind: stack
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/btrfs-progs.bst
+- freedesktop-sdk.bst:components/cpio.bst
 - freedesktop-sdk.bst:components/dbus.bst
-- freedesktop-sdk.bst:components/dracut.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
@@ -18,5 +19,4 @@ depends:
 - vm-secure/efitools.bst
 - vm-secure/shim.bst
 - vm-secure/os-release-user.bst
-- vm-secure/initramfs/dracut-config.bst
 - vm-secure/replace-signed-systemd-boot.bst

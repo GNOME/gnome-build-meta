@@ -1,18 +1,13 @@
 kind: script
 
 build-depends:
+- vm-secure/generate-initramfs.bst
 - vm-secure/initramfs/deps.bst
 - vm-secure/initramfs/initial-scripts.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
   sysroot-seed: 9473a621-1617-4679-87e5-031afef28359
-  kcmdline: >-
-    rw
-    quiet splash
-    mount.usrflags=ro
-    mount.usrfstype=squashfs
-    lockdown=confidentiality
 
 config:
   commands:
@@ -31,23 +26,31 @@ config:
 
   - mkdir -p '%{install-root}/usr/lib/'
   - cp -rT /usr/lib/modules '%{install-root}/usr/lib/modules'
-  - rm '%{install-root}'/usr/lib/modules/*/vmlinuz
 
   - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
-    mkdir -p "%{install-root}/usr/lib/modules/${version}"
-    dracut -v --xz --reproducible --fstab \
-           --no-hostonly \
-           --uefi \
-           --no-machineid \
-           --kver "${version}" \
-           --kernel-cmdline "%{kcmdline}" \
-           --libdirs '%{libdir}' \
-           --libdirs '%{indep-libdir}' \
-           --add gnome-os
-    mv "/boot/EFI/Linux/linux-${version}.efi" "%{install-root}/efi/EFI/Linux/gnomeos_${version}.efi"
+    generate-initramfs /initramfs-root "${version}" "%{libdir}" "%{libdir}/systemd"
+
+  - |
+    (
+      cd /initramfs-root
+      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | xz --check=crc32 --lzma2=dict=1MiB -T0 >/initramfs.img
+    )
+
+  - |
+    mkdir -p /early/kernel/x86/microcode
+    echo 1 >/early/early_cpio
+    cat /usr/lib/firmware/amd-ucode/microcode_amd*.bin >/early/kernel/x86/microcode/AuthenticAMD.bin
+    (
+      cd /early
+      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet >/early-initramfs.img
+    )
+
+  - |
+    version="$(ls -1 /lib/modules | head -n1)"
+    cat /early-initramfs.img /initramfs.img >"%{install-root}/usr/lib/modules/${version}/initramfs.img"
 
   - |
     mkdir -p '%{install-root}/efi/loader/keys/auto'

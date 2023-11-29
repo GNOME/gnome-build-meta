@@ -50,7 +50,6 @@ config:
     C /etc/dconf
     C /etc/debuginfod
     C /etc/default
-    C /etc/dracut.conf.d
     C /etc/e2scrub.conf
     C /etc/environment
     C /etc/ethertypes
