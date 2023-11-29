@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libgxps.git
   track: master
-  ref: 0.3.2-5-geba5be13aa9aced90366a305dc513b9be2ed3b4d
+  ref: 0.3.2-6-g665dc29aff9120f10322721303d7ca91761c5d02
 
 build-depends:
 - sdk/gobject-introspection.bst
