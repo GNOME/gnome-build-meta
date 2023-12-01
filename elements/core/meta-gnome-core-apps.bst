@@ -29,6 +29,6 @@ depends:
 - core/loupe.bst
 - core/nautilus.bst
 - core/simple-scan.bst
-- core/snapshot.bst
+#- core/snapshot.bst
 - core/totem.bst
 - sdk/yelp.bst
