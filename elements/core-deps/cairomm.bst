@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: cairo:releases/cairomm-1.16.0.tar.xz
+  url: cairo:releases/cairomm-1.18.0.tar.xz
 
-  ref: 7e881492c5f9f546688c31160deb742c166fc4c68b6b8eb9920c00a0f0f144f9
+  ref: b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
