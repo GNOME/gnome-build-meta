@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin-loaders/0.1/glycin-loaders-0.1.1.tar.xz
-  ref: 27ccb302c57298e2a55eeefc6bcbcca68763f87b4804ecb8d0a7e45c72dfb955
+  url: gnome_downloads:glycin-loaders/0.1/glycin-loaders-0.1.2.tar.xz
+  ref: c76c01925abd070174589ccb916a44a573ab65b1e9d493f154e42756431e6dd7
 - kind: cargo
 
   ref:

@@ -2,11 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop:xorg/xserver/-/archive/xorg-server-21.1.8/xserver-xorg-server-21.1.8.tar.bz2
+  url: 
+    freedesktop:xorg/xserver/-/archive/xorg-server-21.1.8/xserver-xorg-server-21.1.8.tar.bz2
   ref: 508ccfcb35c45fd9eb6037770ce559ccdbec411432d95c79f7424e504b452e49
 - kind: remote
   url: https://src.fedoraproject.org/rpms/xorg-x11-server/raw/rawhide/f/xvfb-run.sh
-  ref: 4752799d7d60f1c9f2e15552d5fcb1dfb5f6a6233f067f8b89e2f80b999c4013
+  ref: fcaafe9e467fa003a89c0b543255e6e315b09772cfdf75a9d4f044505fd84206
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
