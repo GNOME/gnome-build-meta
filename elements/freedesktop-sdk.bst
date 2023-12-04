@@ -7,6 +7,8 @@ sources:
   ref: freedesktop-sdk-23.08.7-0-g2c61f4cbb865b868c5db67787935525f82eaabbf
 - kind: patch
   path: files/freedesktop-sdk/sysupdate-dir.patch
+- kind: patch
+  path: files/freedesktop-sdk/0001-components-linux.bst-Enable-DUMMY-network-driver.patch
 
 config:
   options:

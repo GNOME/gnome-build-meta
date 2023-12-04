@@ -1,0 +1,26 @@
+From 1b1115e7803fb88e432467f60ac054200fc44c2c Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Mon, 4 Dec 2023 21:20:52 +0200
+Subject: [PATCH] components/linux.bst: Enable DUMMY network driver
+
+---
+ elements/components/linux.bst | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 231e1330d..bbc6868a7 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -340,6 +340,9 @@ config:
+       ;;
+     esac
+ 
++    # Dummy network driver
++    module DUMMY
++
+     # For wireless networks
+     enable WIRELESS
+     module CFG80211
+-- 
+2.43.0
+
