@@ -19,3 +19,4 @@ depends:
 - vm/git-lfs.bst
 - vm/swtpm.bst
 - vm/toolbox.bst
+- vm/wg-tools.bst
