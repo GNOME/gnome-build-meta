@@ -168,4 +168,7 @@ install() {
     ln -sr "${root}/usr/lib/systemd/systemd" "${root}/init"
 
     install_files /etc/passwd /etc/group
+
+    install_files /usr/lib/sysusers.d/basic.conf
+    install_files /usr/lib/tmpfiles.d/systemd.conf
 }
