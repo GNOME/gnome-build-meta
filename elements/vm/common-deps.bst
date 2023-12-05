@@ -18,6 +18,7 @@ depends:
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
 - vm/disable-iscsi.bst
+- vm/journald-config.bst
 - vm/systemd-firstboot-config.bst
 
 - vm/fish.bst
