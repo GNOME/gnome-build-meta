@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.42.2.tar.xz
-  ref: 5720aa3e8627f1b9f63252187d4df0f8233ae71d697b1796ebfbe5ca750bd118
+  url: webkitgtk:webkitgtk-2.42.3.tar.xz
+  ref: 0a1a4630045628b3a6fe95da72dc47852cff20d66be1ac6fd0d669c88c13d8e2
 build-depends:
 - sdk-deps/bubblewrap.bst
 - sdk-deps/gi-docgen.bst
