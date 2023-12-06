@@ -20,3 +20,9 @@ depends:
 - vm-secure/shim.bst
 - vm-secure/os-release-user.bst
 - vm-secure/replace-signed-systemd-boot.bst
+
+(?):
+- arch in ["x86_64"]:
+    depends:
+      (>):
+      - vm-secure/intel-ucode.bst

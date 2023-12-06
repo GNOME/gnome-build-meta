@@ -40,17 +40,28 @@ config:
     )
 
   - |
-    mkdir -p /early/kernel/x86/microcode
-    echo 1 >/early/early_cpio
-    cat /usr/lib/firmware/amd-ucode/microcode_amd*.bin >/early/kernel/x86/microcode/AuthenticAMD.bin
-    (
-      cd /early
-      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet >/early-initramfs.img
-    )
+    case '%{arch}' in
+      x86_64)
+        mkdir -p /early/kernel/x86/microcode
+        cat /usr/lib/firmware/amd-ucode/microcode_amd*.bin >/early/kernel/x86/microcode/AuthenticAMD.bin
+        cp /usr/lib/firmware/intel-ucode/GenuineIntel.bin /early/kernel/x86/microcode/GenuineIntel.bin
+        (
+          cd /early
+          find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet >/early-initramfs.img
+        )
+      ;;
+    esac
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
-    cat /early-initramfs.img /initramfs.img >"%{install-root}/usr/lib/modules/${version}/initramfs.img"
+    (
+      case '%{arch}' in
+        x86_64)
+          cat /early-initramfs.img
+        ;;
+      esac
+      cat /initramfs.img
+    ) >"%{install-root}/usr/lib/modules/${version}/initramfs.img"
 
   - |
     mkdir -p '%{install-root}/efi/loader/keys/auto'
