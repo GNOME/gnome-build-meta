@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glib.git
   track: main
-  ref: 2.78.0-721-g1eb0fc6839ebd63fe5b59d6e8fdb332c65e327d1
+  ref: 2.78.0-729-g7032c3353eac6c3cc390919a0e2af9445adf3845
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
@@ -30,6 +30,7 @@ depends:
 - freedesktop-sdk.bst:components/libffi.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
