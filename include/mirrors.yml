@@ -19,6 +19,8 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/fallabs_com/tar-files/-/raw/master/
     debian_salsa:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/salsa_debian_org/tar-files/-/raw/master/
+    dotat:
+    - https://dotat.at/prog/
     freedesktop:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/
     freedesktop_files:
