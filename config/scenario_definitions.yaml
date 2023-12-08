@@ -45,3 +45,8 @@ job_templates:
     machine: qemu_x86_64
     settings:
       HDD_1: /disk.img
+  gnome_accessibility:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      HDD_1: /disk.img
