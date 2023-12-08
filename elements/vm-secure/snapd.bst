@@ -5,7 +5,7 @@ sources:
   url: github_files:snapcore/snapd/releases/download/2.61/snapd_2.61.vendor.tar.xz
   ref: af30dc20c09872bf42faedb8f5306abc85faf9e3b010cb2388086cbc42a0909a
 - kind: patch
-  path: files/snapd/fix-mount-dir.patch
+  path: patches/snapd/fix-mount-dir.patch
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
 

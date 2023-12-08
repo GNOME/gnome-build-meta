@@ -5,13 +5,13 @@ sources:
   url: github_files:containers/toolbox/releases/download/0.0.99.4/toolbox-0.0.99.4-vendored.tar.xz
   ref: 9aaa3151357f66a7fb9545772c146ce8065238d2385c3bbc775493a0c015710d
 - kind: patch
-  path: files/toolbox/disable-zsh-completions.patch
+  path: patches/toolbox/disable-zsh-completions.patch
 - kind: patch
-  path: files/toolbox/riscv64-dynamic-linker.patch
+  path: patches/toolbox/riscv64-dynamic-linker.patch
 - kind: patch
-  path: files/toolbox/1340.patch
+  path: patches/toolbox/1340.patch
 - kind: patch
-  path: files/toolbox/1354.patch
+  path: patches/toolbox/1354.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

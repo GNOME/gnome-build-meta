@@ -7,9 +7,9 @@ sources:
   ref: 4d15c8288aca414e11cd304686b172696104c5e42bf776300311c005634854a2
 
 - kind: patch
-  path: files/atinout/0001-make-gcc-happy-by-adding-fallthrough-comment.patch
+  path: patches/atinout/0001-make-gcc-happy-by-adding-fallthrough-comment.patch
 - kind: patch
-  path: files/atinout/0002-do-not-rely-on-CR-in-modem-output.patch
+  path: patches/atinout/0002-do-not-rely-on-CR-in-modem-output.patch
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

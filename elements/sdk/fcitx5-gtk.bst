@@ -5,7 +5,7 @@ sources:
   url: github_files:fcitx/fcitx5-gtk/archive/5.0.14.tar.gz
   ref: 5cf5bc7309c1559fa95552d2cfd6cfcee568c5691afa2bee125754bbcc9846be
 - kind: patch
-  path: files/fcitx5-gtk/gio-unix.patch
+  path: patches/fcitx5-gtk/gio-unix.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst

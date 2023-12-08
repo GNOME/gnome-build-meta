@@ -5,7 +5,7 @@ sources:
   url: github_files:gssapi/gssproxy/releases/download/v0.9.1/gssproxy-0.9.1.tar.gz
   ref: ebc355c1495db96e3591574f32b9464fcfbf73381ce8fcb397cdede220167dc4
 - kind: patch
-  path: files/gssproxy/68.patch
+  path: patches/gssproxy/68.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

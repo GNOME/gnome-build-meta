@@ -14,19 +14,19 @@ sources:
   path: ext/libglnx
   ref: e16bdc7ef91e5bbdfc1881b51332226393275bb9
 - kind: patch
-  path: files/eos-installer/vfat-eosimages.patch
+  path: patches/eos-installer/vfat-eosimages.patch
 - kind: patch
-  path: files/eos-installer/remove-branding.patch
+  path: patches/eos-installer/remove-branding.patch
 - kind: patch
-  path: files/eos-installer/remove-endless-support.patch
+  path: patches/eos-installer/remove-endless-support.patch
 - kind: patch
-  path: files/eos-installer/riscv.patch
+  path: patches/eos-installer/riscv.patch
 - kind: patch
-  path: files/eos-installer/0001-polkit-rules-use-non-sugary-closure-syntax.patch
+  path: patches/eos-installer/0001-polkit-rules-use-non-sugary-closure-syntax.patch
 - kind: patch
-  path: files/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
+  path: patches/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
 - kind: patch
-  path: files/eos-installer/usrfs.patch
+  path: patches/eos-installer/usrfs.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

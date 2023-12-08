@@ -14,7 +14,7 @@ sources:
   url: github_files:endlessm/eos-updater/archive/Release_4.0.7.tar.gz
   ref: 583fd4c02d48d38a5f3f089e654ede2448aec49aaf6d2096a1798538c844d627
 - kind: patch
-  path: files/eos-updater/no-ostree-httpd.patch
+  path: patches/eos-updater/no-ostree-httpd.patch
 
 depends:
 - core-deps/NetworkManager.bst
