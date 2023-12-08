@@ -15,6 +15,9 @@ aliases:
   crates: https://static.crates.io/
   dbmx: https://dbmx.net/
   debian_salsa: https://salsa.debian.org/
+  dotat: https://dotat.at/prog/
+  fedora_rpms: https://src.fedoraproject.org/rpms/
+  flathub: https://flathub.org/repo/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_people: https://people.freedesktop.org/
   freedesktop_software: https://www.freedesktop.org/software/
@@ -24,19 +27,25 @@ aliases:
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
+  gnome_nightly: https://nightly.gnome.org/
   gnupg: https://www.gnupg.org/
   gstreamer: https://gstreamer.freedesktop.org/
+  infradead: https://www.infradead.org/
   kerberos: https://kerberos.org/
+  kldp: https://kldp.net/
   launchpad: https://launchpad.net/
   libburnia: http://files.libburnia-project.org/releases/
   libopenraw: https://libopenraw.freedesktop.org/
   libraw: https://www.libraw.org/
   libvirt: https://libvirt.org/sources/
   linuxcontainers: https://linuxcontainers.org/downloads/
+  mozilla: https://ftp.mozilla.org/pub/
   netfilter: https://www.netfilter.org/
   openldap: https://openldap.org/
+  openvpn: https://swupdate.openvpn.org/community/releases/
   pagure_releases: https://releases.pagure.org/
   pypi: https://files.pythonhosted.org/packages/
+  qemu: https://download.qemu.org/
   samba: https://download.samba.org/pub/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
