@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.2-2-g8b877e7bde653b84016e6e5e51929ca9d2398553
+  ref: 0.1.2-9-gcffef7f6d494e90e690531863750aa798db9e8a1
 - kind: cargo
 
   ref:
@@ -300,8 +300,8 @@ sources:
     version: 0.28.0
     sha: 6fb8d784f27acf97159b40fc4db5ecd8aa23b9ad5ef69cdd136d3bc80665f0c0
   - name: gio
-    version: 0.18.1
-    sha: 7884cba6b1c5db1607d970cadf44b14a43913d42bc68766eea6a5e2fe0891524
+    version: 0.18.3
+    sha: 47d809baf02bdf1b5ef4ad3bf60dd9d4977149db4612b7bbb58e56aef168193b
   - name: gio-sys
     version: 0.18.1
     sha: 37566df850baf5e4cb0dfb78af2e4b9898d817ed9263d1090a2df958c64737d2
@@ -408,11 +408,11 @@ sources:
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
   - name: lcms2
-    version: 5.6.0
-    sha: b9d50a4d00d909da0ec023ab34ea09bf3b3b79b5a36b3e0da3a305112edaf150
+    version: 6.0.3
+    sha: 745453cbf12c57cce42c1d1db6075d481ca1956fa9bf661f770018656d55e1bd
   - name: lcms2-sys
-    version: 4.0.3
-    sha: 137dae56197ab9e66729ff73e2942e26f16f9ddcd14a53295c35f53dcd067b58
+    version: 4.0.4
+    sha: 99c5fe876968a1685074a0978632afd4629d7ba40f0ac563388c1a296ce12536
   - name: lebe
     version: 0.5.2
     sha: 03087c2bad5e1034e8cace5926dec053fb3790248370865f5117a7d0213354c8
