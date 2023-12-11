@@ -19,7 +19,7 @@ sub run {
     assert_and_click('default_appearance_button', timeout => 15, button => 'left');
     
 
-    # ///////////// TESTS RELATED TO ACCESSIBILITY ////////////// 
+    # ///////// TESTS RELATED TO ACCESSIBILITY ///////////
     
     type_string('acc');
     # Go to accessibility Section
