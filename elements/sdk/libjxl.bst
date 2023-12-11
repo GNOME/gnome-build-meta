@@ -4,14 +4,8 @@ sources:
 - kind: tar
   url: github_files:libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz
   ref: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
-- kind: patch
-  path: patches/libjxl/0001-Migrate-the-GDK-plugin-from-skcms-to-lcms2.patch
-- kind: patch
-  path: patches/libjxl/0002-Do-not-require-skcms-when-plugins-are-enabled-2592.patch
-- kind: patch
-  path: patches/libjxl/0003-plugins-pixbufloader-jxl-pass-ICC-profile-instead-of.patch
-- kind: patch
-  path: patches/libjxl/0004-plugins-gdk-pixbuf-remove-lcms2-and-revert-to-v0.8.2.patch
+- kind: patch_queue
+  path: patches/libjxl/
 
 build-depends:
 - sdk-deps/highway.bst
