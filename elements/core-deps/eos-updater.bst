@@ -1,25 +1,14 @@
 kind: meson
 
-# Beware of updating to 5.x.x tags when they appear.
-#
-# Commit 44348e2 (Revert "apply: Don't use staged deployments when /boot is
-# automounted") requires a version of ostree that includes f3db79e7
-# (finalize-staged: Ensure /boot automount doesn't expire). Without that ostree
-# change, staged updates will not be applied at shutdown.
-#
-# As of September 2022, eos-updater doesn't have a build-time dependency on a
-# new-enough libostree because no such version has been released.
 sources:
 - kind: tar
-  url: github_files:endlessm/eos-updater/archive/Release_4.0.7.tar.gz
-  ref: 583fd4c02d48d38a5f3f089e654ede2448aec49aaf6d2096a1798538c844d627
-- kind: patch
-  path: patches/eos-updater/no-ostree-httpd.patch
+  url: github_files:endlessm/eos-updater/archive/Version_1.4.0.tar.gz
+  ref: d3c0dbad92211f8116a833c7e0ebce7670daefd100cba0b87aa71810086e126a
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/libsoup-2.4.bst
 - core-deps/mogwai.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/avahi.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/gnupg.bst
