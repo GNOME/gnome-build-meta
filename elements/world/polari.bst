@@ -10,10 +10,10 @@ build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 runtime-depends:
-- core-deps/libsoup-2.4.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk.bst
 - sdk/libsecret.bst
+- world/libsoup-2.4.bst
 - world/telepathy-logger.bst
 depends:
 - sdk/gjs.bst
