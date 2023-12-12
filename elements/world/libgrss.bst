@@ -9,5 +9,5 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/glib.bst
-- core-deps/libsoup-2.4.bst
+- world/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

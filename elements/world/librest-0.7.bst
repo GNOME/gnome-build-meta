@@ -8,7 +8,7 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
-- core-deps/libsoup-2.4.bst
 - sdk/glib.bst
+- world/libsoup-2.4.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

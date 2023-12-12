@@ -15,7 +15,7 @@ build-depends:
 
 depends:
 - core-deps/gnome-online-accounts.bst
-- core-deps/libsoup-2.4.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
+- world/libsoup-2.4.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
