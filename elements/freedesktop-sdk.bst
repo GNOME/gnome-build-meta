@@ -9,6 +9,9 @@ sources:
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-components-linux.bst-Enable-DUMMY-network-driver.patch
+- kind: patch
+  path: patches/freedesktop-sdk/kernel-backports.patch
+
 
 config:
   options:
