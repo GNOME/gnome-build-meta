@@ -4,8 +4,8 @@ sources:
   url: freedesktop:cairo/cairo.git
   track: master
   ref: 1.18.0-16-gee07a8118527fd1b672c3de6a2ae3b4607487737
-- kind: patch
-  path: patches/cairo/485.patch
+- kind: patch_queue
+  path: patches/cairo/
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

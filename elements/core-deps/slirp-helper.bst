@@ -274,8 +274,8 @@ sources:
   - name: zvariant_derive
     version: 2.2.0
     sha: 605bf414a59d93a3d55055e72ea066c5c0bc578ed2227df15c407207b1c780ef
-- kind: patch
-  path: patches/slirp-helper/nix-riscv.patch
+- kind: patch_queue
+  path: patches/slirp-helper/
 
 config:
   install-commands:
