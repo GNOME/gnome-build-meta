@@ -598,23 +598,23 @@ update_refs:
     - if: $CI_COMMIT_REF_NAME == "alatiera/update-refs" && $BOT_SSH_PRIVATE_KEY
   script:
     # Setup ssh
-    - eval $(ssh-agent -s)
-    - |-
-      if [ -z $BOT_SSH_PRIVATE_KEY ]; then
-        echo "KEY IS EMPTY"
-        exit 1
-      fi
+    # - eval $(ssh-agent -s)
+    # - |-
+    #   if [ -z $BOT_SSH_PRIVATE_KEY ]; then
+    #     echo "KEY IS EMPTY"
+    #     exit 1
+    #   fi
 
-    - echo "$BOT_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    # - echo "$BOT_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
 
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
+    # - mkdir -p ~/.ssh
+    # - chmod 700 ~/.ssh
 
-    - echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - cat ~/.ssh/known_hosts
+    # - echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
+    # - chmod 644 ~/.ssh/known_hosts
+    # - cat ~/.ssh/known_hosts
 
-    - ssh -Tv git@ssh.gitlab.gnome.org
+    # - ssh -Tv git@ssh.gitlab.gnome.org
 
     - git config --global user.email "sysadmin@gnome.org"
     - git config --global user.name "gnome-build-meta-bot"
@@ -632,7 +632,7 @@ update_refs:
 
     - git show
 
-    - git remote set-url --push origin git@ssh.gitlab.gnome.org:GNOME/gnome-build-meta.git
+    - git remote set-url --push origin "https://oauth2:$UPDATE_ACCESS_TOKEN@gitlab.gnome.org/GNOME/gnome-build-meta.git"
 
     - git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin HEAD
   after_script:
