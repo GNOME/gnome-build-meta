@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:tracker-miners.git
   track: master
-  ref: 3.6.2-35-g438ca4238752f543067c852788d226a0f9746d1d
+  ref: 3.6.2-41-g41c634e64eeb45b96a06776f04be40dc245176b1
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
