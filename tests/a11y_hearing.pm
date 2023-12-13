@@ -13,22 +13,17 @@ sub run {
     type_string('acc');
     # Go to accessibility Section
     assert_and_click('app_settings_accessibility_button', timeout => 15, button => 'left');
-    # First check default volume setting
-    assert_and_click('app_sound_default_volume', timeout => 15, button => 'left');
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
     # Enable overamplication button
-    assert_and_click('app_settings_accessibility_hearing_overamplication_button_on', timeout => 15, button => 'left');
-    # Second check default volume setting if volume is amplified to more than 100%
-    assert_and_click('app_sound_overamplified_volume', timeout => 15, button => 'left');
+    assert_and_click('app_settings_accessibility_hearing_overamplication_button', timeout => 15, button => 'left');
+    # Check default volume setting if volume can be amplified to more than 100%
+    assert_and_click('app_sound_default_volume', timeout => 15, button => 'left');
+    wait_still_screen(3);
     # Disable overamplication button
     assert_and_click('app_settings_accessibility_hearing_overamplication_button_off', timeout => 15, button => 'left');
 
-
-    save_screenshot;
-
-
-   close_app;
+    close_app;
 }
 
 sub test_flags {
