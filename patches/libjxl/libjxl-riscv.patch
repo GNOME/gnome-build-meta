@@ -1,0 +1,11 @@
+diff -ur libjxl.old/lib/jxl/enc_xyb.cc libjxl/lib/jxl/enc_xyb.cc
+--- libjxl.old/lib/jxl/enc_xyb.cc	2023-06-14 09:49:21.000000000 +0200
++++ libjxl/lib/jxl/enc_xyb.cc	2023-11-28 12:11:51.737615204 +0100
+@@ -6,6 +6,7 @@
+ #include "lib/jxl/enc_xyb.h"
+ 
+ #include <algorithm>
++#include <atomic>
+ #include <cstdlib>
+ 
+ #undef HWY_TARGET_INCLUDE
