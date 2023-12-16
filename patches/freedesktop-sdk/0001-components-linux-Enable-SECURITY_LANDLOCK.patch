@@ -1,0 +1,24 @@
+From b0ec7ad1838c9f99a8666418bd6c83550ad0377d Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 16 Dec 2023 20:16:22 +0200
+Subject: [PATCH] components/linux: Enable SECURITY_LANDLOCK
+
+---
+ elements/components/linux.bst | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 231e1330d..5bfdd6f79 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1631,6 +1631,7 @@ config:
+     # Security modules
+     enable SECURITY_SELINUX
+     enable SECURITY_APPARMOR
++    enable SECURITY_LANDLOCK
+     enable AUDIT
+ 
+     # SPI
+-- 
+2.43.0
+
