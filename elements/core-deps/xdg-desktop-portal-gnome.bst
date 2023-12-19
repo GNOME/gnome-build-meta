@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 45.0-89-g5fb3c0c23ccd76c6f8239bbb66c3fb1230208d5e
+  ref: 45.0-92-ga86281331060339251f6a7240b930110e1f709db
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
