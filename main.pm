@@ -26,6 +26,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_journal_capture_fix.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/gnome_audio.pm");
     autotest::loadtest("tests/app_baobab.pm");
     autotest::loadtest("tests/app_epiphany.pm");
     autotest::loadtest("tests/app_evince.pm");
@@ -45,22 +46,26 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_gnome_software.pm");
     autotest::loadtest("tests/app_gnome_system_monitor.pm");
     autotest::loadtest("tests/app_gnome_text_editor.pm");
-    autotest::loadtest("tests/app_loupe.pm");
+    # This is temporary removed - see:
+    # https://gitlab.gnome.org/GNOME/loupe/-/issues/290#note_1947539
+    # Should be re-enabled before GNOME 46 release
+    #autotest::loadtest("tests/app_loupe.pm");
     autotest::loadtest("tests/app_nautilus.pm");
     autotest::loadtest("tests/app_snapshot.pm");
     autotest::loadtest("tests/app_settings.pm");
     autotest::loadtest("tests/app_simple_scan.pm");
     autotest::loadtest("tests/app_totem.pm");
     autotest::loadtest("tests/app_yelp.pm");
-    autotest::loadtest("tests/a11y_hearing.pm");
 
 } elsif ($testsuite eq "gnome_accessibility") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_journal_capture_fix.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/a11y_seeing.pm");
     autotest::loadtest("tests/a11y_hearing.pm");
-
+    
+>>>>>>> main.pm
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
