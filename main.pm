@@ -65,7 +65,6 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_seeing.pm");
     autotest::loadtest("tests/a11y_hearing.pm");
     
->>>>>>> main.pm
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
