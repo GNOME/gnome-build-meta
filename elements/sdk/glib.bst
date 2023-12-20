@@ -12,7 +12,6 @@ sources:
 
 build-depends:
 - sdk-deps/gi-docgen.bst
-- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
