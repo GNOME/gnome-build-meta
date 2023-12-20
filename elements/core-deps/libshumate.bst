@@ -17,3 +17,9 @@ depends:
 - sdk/gtk.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- core-deps/protobuf-c.bst
+
+variables:
+  meson-local: >-
+    -Dvector_renderer=true
+
