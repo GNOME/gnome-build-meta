@@ -16,8 +16,8 @@ sub run {
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
    
-    # Enable overamplication button
-    assert_and_click('app_settings_accessibility_hearing_overamplication_button', timeout => 15, button => 'left');
+    # Enable overamplification button
+    assert_and_click('app_settings_accessibility_hearing_overamplification_button', timeout => 15, button => 'left');
     # Check default volume setting if volume can be amplified to more than 100%
     assert_and_click('app_sound_default_volume', timeout => 15, button => 'left');
     # show souund can go beyond 100%
@@ -28,7 +28,7 @@ sub run {
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
     # Disable overamplication button
-    assert_and_click('app_settings_accessibility_hearing_overamplication_button_off', timeout => 15, button => 'left');
+    assert_and_click('app_settings_accessibility_hearing_overamplification_button_off', timeout => 15, button => 'left');
 
     close_app;
 }
