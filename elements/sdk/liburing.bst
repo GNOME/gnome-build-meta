@@ -1,10 +1,8 @@
 kind: make
 sources:
 - kind: tar
-  url: github_files:axboe/liburing/archive/refs/tags/liburing-2.4.tar.gz
-  ref: 2398ec82d967a6f903f3ae1fd4541c754472d3a85a584dc78c5da2fabc90706b
-- kind: patch
-  path: patches/liburing/0001-enable-libc.patch
+  url: github_files:axboe/liburing/archive/refs/tags/liburing-2.5.tar.gz
+  ref: 456f5f882165630f0dc7b75e8fd53bd01a955d5d4720729b4323097e6e9f2a98
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
@@ -19,6 +17,7 @@ config:
     --libdevdir=/%{libdir}
     --includedir=%{includedir}
     --datadir=%{datadir}
+    --use-libc
   install-commands:
     (>):
     - rm "%{install-root}%{libdir}/liburing-ffi.a"
