@@ -2,16 +2,10 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:containers/toolbox/releases/download/0.0.99.4/toolbox-0.0.99.4-vendored.tar.xz
-  ref: 9aaa3151357f66a7fb9545772c146ce8065238d2385c3bbc775493a0c015710d
+  url: github_files:containers/toolbox/releases/download/0.0.99.5/toolbox-0.0.99.5-vendored.tar.xz
+  ref: fb716c1a9d587c931e33a67cb1e7dce890d850dff6f863014c7413804169d917
 - kind: patch
   path: patches/toolbox/disable-zsh-completions.patch
-- kind: patch
-  path: patches/toolbox/riscv64-dynamic-linker.patch
-- kind: patch
-  path: patches/toolbox/1340.patch
-- kind: patch
-  path: patches/toolbox/1354.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
