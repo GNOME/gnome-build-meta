@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.43.2.tar.xz
-  ref: 0540d158312e950d031add607b9d54f806f23396a11525f9db9c9f6cb041008a
-- kind: patch
-  path: files/webkitgtk/hash-tables.patch
+  url: webkitgtk:webkitgtk-2.43.3.tar.xz
+  ref: 738564bf3af6d96af91b644c84f7c5aaf499fdefddc435a2734fa7f2d45adb09
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
