@@ -4,13 +4,13 @@ use warnings;
 use testapi;
 use gnomeutils;
 
-use constant SCREENREADER_ACTIVATION_TIMEOUT => 1;
+use constant TEST_AUDIO_TIMEOUT => 2;
 
 sub run {
     start_audiocapture;
     select_console('user-virtio-terminal');
     assert_script_run('spd-say "this is a test"');
-    sleep SCREENREADER_ACTIVATION_TIMEOUT;
+    sleep TEST_AUDIO_TIMEOUT;
     assert_recorded_sound('gnome_audio_speech_dispatcher');
     select_console('x11');
 }
