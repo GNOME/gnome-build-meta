@@ -61,10 +61,8 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_journal_capture_fix.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
-    # autotest::loadtest("tests/a11y_seeing.pm");
-    autotest::loadtest("tests/gnome_audio.pm");
+    autotest::loadtest("tests/a11y_seeing.pm");
     autotest::loadtest("tests/a11y_text_to_speech.pm");
-    
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
