@@ -14,4 +14,7 @@ cat >/etc/openqa/workers.ini <<EOF
 WORKER_CLASS=$worker_class
 BACKEND = qemu
 HOST = $OPENQA_HOST
+# Hostname autodetection fails if hostname isn't an FQDN.
+# Set hostname to explicitly allow this kind of "bad" hostname.
+WORKER_HOSTNAME = $(hostname).no-route.example.com
 EOF
