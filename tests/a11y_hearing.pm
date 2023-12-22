@@ -9,13 +9,9 @@ sub run {
     assert_screen('app_settings_startup', 10);
 
       # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
-    
-    type_string('acc');
-    # Go to accessibility Section
-    assert_and_click('app_settings_accessibility_button', timeout => 15, button => 'left');
+      
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
-   
     # Enable overamplification button
     assert_and_click('app_settings_accessibility_hearing_overamplification_button', timeout => 15, button => 'left');
     # Check default volume setting if volume can be amplified to more than 100%
