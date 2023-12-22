@@ -27,10 +27,10 @@ test-s3-image:
     echo "Fetching test media"
     utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
     utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
-    unxz /data/factory/hdd/disk.img.xz
+    unxz --threads 0 /data/factory/hdd/disk.img.xz
   - |
     echo "Calculating checksums of test media"
-    sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
+    md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
     utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
   script:
