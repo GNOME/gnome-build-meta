@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glib.git
   track: main
-  ref: 2.78.0-846-g0e475a6e11a8dbbd6d3b0201f4ccd26ef81f5451
+  ref: 2.79.0-2-g686ab492cfd8a63f38e8c04e80119794e90b9efa
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
@@ -12,6 +12,7 @@ sources:
 
 build-depends:
 - sdk-deps/gi-docgen.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
