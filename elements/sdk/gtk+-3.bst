@@ -5,8 +5,6 @@ sources:
   url: gnome:gtk.git
   track: gtk-3-24
   ref: 3.24.39-12-gd6bec147747260664d6ac2861fb3da9e701f5fea
-- kind: patch
-  path: patches/gtk+-3/werror.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
