@@ -2,10 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:gssapi/gssproxy/releases/download/v0.9.1/gssproxy-0.9.1.tar.gz
-  ref: ebc355c1495db96e3591574f32b9464fcfbf73381ce8fcb397cdede220167dc4
-- kind: patch
-  path: patches/gssproxy/68.patch
+  url: github_files:gssapi/gssproxy/releases/download/v0.9.2/gssproxy-0.9.2.tar.gz
+  ref: 1fe43ea1b03d19e0f1eda3c82ba5bd8bba04e9bc7e629c117dad094d0a6fc1de
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
