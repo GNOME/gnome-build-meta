@@ -18,6 +18,9 @@ sources:
 - kind: patch
   path: patches/freedesktop-sdk/disable-supersave.patch
 
+- kind: patch
+  path: patches/freedesktop-sdk/linux/0001-pinephone-pro-configs.patch
+
 config:
   options:
     target_arch: '%{arch}'
