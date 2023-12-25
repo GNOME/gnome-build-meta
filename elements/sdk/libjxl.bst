@@ -2,10 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:libjxl/libjxl/archive/refs/tags/v0.8.2.tar.gz
-  ref: c70916fb3ed43784eb840f82f05d390053a558e2da106e40863919238fa7b420
-- kind: patch_queue
-  path: patches/libjxl/
+  url: github_files:libjxl/libjxl/archive/refs/tags/v0.9.0.tar.gz
+  ref: d83bbe188d8fa9725bb75109c922c37fcff8c3b802808f3a6c2c14aaf8337d9f
 
 build-depends:
 - sdk-deps/highway.bst
@@ -45,8 +43,3 @@ variables:
     -DJPEGXL_STATIC=OFF
     -DJPEGXL_TEST_TOOLS=OFF
     -DJPEGXL_WARNINGS_AS_ERRORS=OFF
-
-config:
-  install-commands:
-    (>):
-      - rm %{install-root}%{libdir}/libjxl*.a
