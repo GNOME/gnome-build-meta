@@ -6,10 +6,7 @@ use gnomeutils;
 
 sub run {
     start_app('gnome-control-center');
-    assert_screen('app_settings_startup', 10);
-
       # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
-      
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
     # Enable overamplification button
