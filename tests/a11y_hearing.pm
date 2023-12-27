@@ -24,14 +24,21 @@ sub run {
     # Disable overamplication button
     assert_and_click('app_settings_accessibility_hearing_overamplification_button_off', timeout => 15, button => 'left');
 
-    # Go to Hearing Section to test for visual alerts when alert sound occurs
-    assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
+    # Test for visual alerts when alert sound occurs
+    
     # Enable Visual alerts when alert sound occurs
-    assert_and_click('app_settings_accessibility_enable_visual_alerts', timeout => 15, button => 'left');
+    assert_and_click('app_settings_accessibility_enable_visual_alerts', timeout => 15, button => 'left',,point_id => 'enable');
     # Test visual alerts
     assert_and_click('app_settings_accessibility_test_visual_alerts', timeout => 15, button => 'left');
+    # test if the screen changed when the test button is clicked
+    assert_screen_change { send_key 'alt-f4' };
     # Disable Visual alerts when alert sound occurs
-    assert_and_click('app_settings_accessibility_disable_visual_alerts', timeout => 15, button => 'left');
+    assert_and_click('app_settings_accessibility_enable_visual_alerts', timeout => 15, button => 'left',point_id => 'disable');
+
+    # assert_and_click('app_settings_accessibility_disable_visual_alerts', timeout => 15, button => 'left');
+    # assert_screen_change { send_key 'alt-f4' };
+
+    save_screenshot;
 
     close_app;
 }
