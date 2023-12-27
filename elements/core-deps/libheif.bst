@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:strukturag/libheif/releases/download/v1.16.2/libheif-1.16.2.tar.gz
-  ref: 7f97e4205c0bd9f9b8560536c8bd2e841d1c9a6d610401eb3eb87ed9cdfe78ea
+  url: github_files:strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
+  ref: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
