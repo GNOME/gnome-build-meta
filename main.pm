@@ -37,7 +37,9 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_gnome_connections.pm");
     autotest::loadtest("tests/app_gnome_console.pm");
     autotest::loadtest("tests/app_gnome_contacts.pm");
-    autotest::loadtest("tests/app_gnome_disk_utility.pm");
+    # Disabled as GTK4 migration is happening during GNOME 46 cycle.
+    # See: <https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/322>
+    #autotest::loadtest("tests/app_gnome_disk_utility.pm");
     autotest::loadtest("tests/app_gnome_font_viewer.pm");
     autotest::loadtest("tests/app_gnome_weather.pm");
     autotest::loadtest("tests/app_gnome_logs.pm");
@@ -56,6 +58,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_simple_scan.pm");
     autotest::loadtest("tests/app_totem.pm");
     autotest::loadtest("tests/app_yelp.pm");
+
 } elsif ($testsuite eq "gnome_accessibility") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_journal_capture_fix.pm");
