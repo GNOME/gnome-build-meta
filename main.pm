@@ -58,6 +58,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_simple_scan.pm");
     autotest::loadtest("tests/app_totem.pm");
     autotest::loadtest("tests/app_yelp.pm");
+
 } elsif ($testsuite eq "gnome_accessibility") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_journal_capture_fix.pm");
@@ -65,6 +66,8 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_desktop.pm");
     autotest::loadtest("tests/a11y_seeing.pm");
     autotest::loadtest("tests/a11y_text_to_speech.pm");
+    autotest::loadtest("tests/a11y_hearing.pm");
+
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
