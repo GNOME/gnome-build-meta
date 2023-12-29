@@ -2,26 +2,49 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: freerdp:releases/freerdp-2.11.2.tar.gz
-  ref: 17e36553065cb59126f8fee987ec74783db50232b361574dac86b7a768dea3b4
+  url: freerdp:releases/freerdp-3.1.0.tar.gz
+  ref: ae8f499049d6e1735dc318c258887e383f613a2ffda1d70c38326df21d40affc
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
+- core-deps/pkcs11-helper.bst
+- core-deps/cjson.bst
+- sdk/krb5.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libusb.bst
+- freedesktop-sdk.bst:components/openjpeg.bst
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+# CLIENT_SDL is depending on webkit2gtk-4.0
+# https://github.com/FreeRDP/FreeRDP/blob/87557b1e4ef636e18a7dea58f0cae76fa5dff4fb/client/SDL/aad/CMakeLists.txt#L42
 variables:
   cmake-local: >-
-    -DWITH_SERVER=ON
+    -DRDTK_FORCE_STATIC_BUILD=ON
+    -DUWAC_FORCE_STATIC_BUILD=ON
+    -DWITH_ADD=ON
+    -DWITH_BINARY_VERSIONING=ON
     -DWITH_CHANNELS=ON
-    -DWITH_SERVER_CHANNELS=ON
     -DWITH_CLIENT_CHANNELS=ON
+    -DWITH_CUPS=ON
+    -DWITH_DSP_FFMPEG=ON
+    -DWITH_FFMPEG=ON
+    -DWITH_JPEG=ON
+    -DWITH_MANPAGES=ON
+    -DWITH_PCSC=ON
+    -DWITH_PKCS11=ON
+    -DWITH_PULSE=ON
+    -DWITH_SERVER_CHANNELS=ON
+    -DWITH_SERVER=ON
+    -DPKG_CONFIG_RELOCATABLE=OFF
     -DWITH_ALSA=OFF
-    -DWITH_PCSC=OFF
+    -DWITH_CLIENT_SDL=OFF
+    -DWITH_FUSE=OFF
+    -DWITH_SAMPLE=OFF
     -DWITH_X11=OFF

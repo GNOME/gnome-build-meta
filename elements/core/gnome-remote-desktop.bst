@@ -12,7 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/freerdp.bst
+- core-deps/freerdp-2.bst
 - core-deps/LibVNCServer.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
