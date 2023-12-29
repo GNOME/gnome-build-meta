@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-remote-desktop.git
   track: master
-  ref: 45.1-54-g0686b1095df86d662fbb6e41d6c7f7ec9364d7df
+  ref: 45.1-88-g6e129be87736852fa000803b1a307a376b74d004
 
 build-depends:
 - core-deps/nv-codec-headers.bst
@@ -12,7 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/freerdp-2.bst
+- core-deps/freerdp.bst
 - core-deps/LibVNCServer.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
