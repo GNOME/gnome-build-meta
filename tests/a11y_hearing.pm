@@ -6,7 +6,8 @@ use gnomeutils;
 
 sub run {
     start_app('gnome-control-center');
-      # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
+    # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
+    
     # Go to Hearing Section
     assert_and_click('app_settings_accessibility_hearing', timeout => 15, button => 'left');
     # Enable overamplification button
@@ -23,6 +24,16 @@ sub run {
     # Disable overamplication button
     assert_and_click('app_settings_accessibility_hearing_overamplification_button_off', timeout => 15, button => 'left');
 
+    # Test for visual alerts when alert sound occurs
+    
+    # Enable Visual alerts when alert sound occurs
+    assert_and_click('app_settings_accessibility_enable_visual_alerts', timeout => 15, button => 'left',,point_id => 'enable');
+    # Test visual alerts
+    assert_and_click('app_settings_accessibility_test_visual_alerts', timeout => 15, button => 'left');
+    # test if the screen changed when the test button is clicked
+    wait_still_screen(5);
+     # Disable Visual alerts when alert sound occurs
+    assert_and_click('app_settings_accessibility_disable_visual_alerts', timeout => 15, button => 'left');
     close_app;
 }
 
