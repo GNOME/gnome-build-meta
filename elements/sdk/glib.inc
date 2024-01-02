@@ -7,6 +7,8 @@ sources:
   url: gnome:gvdb.git
   path: subprojects/gvdb
   ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
+- kind: patch_queue
+  path: patches/glib
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

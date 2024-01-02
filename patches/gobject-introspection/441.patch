@@ -1,0 +1,86 @@
+From 171f1804dc76dfcc2857e809d49a2290b15612c4 Mon Sep 17 00:00:00 2001
+From: Simon McVittie <smcv@debian.org>
+Date: Fri, 29 Dec 2023 16:15:10 +0000
+Subject: [PATCH] girepository: Skip GIRepository versions not matching
+ GIRepository-2.0
+
+A few applications such as gnome-music load the GIRepository typelib
+and use it to adjust their search paths.
+
+GLib 2.79.x now provides libgirepository-2.0.so.0 (GIRepository-3.0),
+but each OS distribution is likely to have a transitional period during
+which GLib's libgirepository-2.0.so.0 has become available, but bindings
+like PyGI and gjs are still linked to gobject-introspection's
+libgirepository-1.0.so.1 (GIRepository-2.0).
+
+During this transitional period, interpreted languages that load the
+GIRepository namespace could get the "wrong" version, which will result
+in adjusting a search path that will not actually affect the language
+binding's typelib lookup, and could also lead to symbol and type-system
+conflicts.
+
+We can avoid this collision by making GLib's GIRepository library refuse
+to load versions of the GIRepository typelib that are not 3.0, and
+similarly making gobject-introspection's GIRepository library refuse to
+load typelib versions that are not 2.0. A relatively neat way to achieve
+that is to make each version behave as if the other one doesn't exist.
+
+Signed-off-by: Simon McVittie <smcv@debian.org>
+---
+ girepository/girepository.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+
+diff --git a/girepository/girepository.c b/girepository/girepository.c
+index a0754f456..12eaf366f 100644
+--- a/girepository/girepository.c
++++ b/girepository/girepository.c
+@@ -54,6 +54,13 @@
+  * and the g_irepository_prepend_search_path() calls.
+  */
+ 
++/* The namespace and version corresponding to libgirepository itself, so
++ * that we can refuse to load typelibs corresponding to the newer,
++ * incompatible version of this same library in GLib. */
++#define GIREPOSITORY_TYPELIB_NAME "GIRepository"
++#define GIREPOSITORY_TYPELIB_VERSION "2.0"
++#define GIREPOSITORY_TYPELIB_FILENAME \
++  GIREPOSITORY_TYPELIB_NAME "-" GIREPOSITORY_TYPELIB_VERSION ".typelib"
+ 
+ static GIRepository *default_repository = NULL;
+ static GSList *typelib_search_path = NULL;
+@@ -1255,6 +1262,16 @@ find_namespace_version (const gchar  *namespace,
+   GMappedFile *mfile = NULL;
+   char *fname;
+ 
++  if (g_str_equal (namespace, GIREPOSITORY_TYPELIB_NAME) &&
++      !g_str_equal (version, GIREPOSITORY_TYPELIB_VERSION))
++    {
++      g_debug ("Ignoring %s-%s.typelib because this libgirepository "
++              "corresponds to %s-%s",
++               namespace, version,
++               namespace, GIREPOSITORY_TYPELIB_VERSION);
++      return NULL;
++    }
++
+   fname = g_strdup_printf ("%s-%s.typelib", namespace, version);
+ 
+   for (ldir = search_path; ldir; ldir = ldir->next)
+@@ -1406,6 +1423,15 @@ enumerate_namespace_versions (const gchar *namespace,
+ 	      const char *name_end;
+ 	      int major, minor;
+ 
++	     if (g_str_equal (namespace, GIREPOSITORY_TYPELIB_NAME) &&
++		 !g_str_equal (entry, GIREPOSITORY_TYPELIB_FILENAME))
++	       {
++		 g_debug ("Ignoring %s because this libgirepository "
++			  "corresponds to %s",
++			  entry, GIREPOSITORY_TYPELIB_FILENAME);
++		 continue;
++	       }
++
+ 	      name_end = strrchr (entry, '.');
+ 	      last_dash = strrchr (entry, '-');
+ 	      version = g_strndup (last_dash+1, name_end-(last_dash+1));
+-- 
+GitLab
+

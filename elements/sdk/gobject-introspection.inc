@@ -3,6 +3,8 @@ sources:
   url: gnome:gobject-introspection.git
   track: main
   ref: 1.79.1-1-g86828cd44d61f310f380c411d897656a7265a236
+- kind: patch_queue
+  path: patches/gobject-introspection
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
