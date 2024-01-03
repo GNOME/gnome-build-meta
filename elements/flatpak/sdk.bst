@@ -32,6 +32,7 @@ config:
       ALSA_CONFIG_DIR: /usr/share/alsa
       ALSA_CONFIG_PATH: /usr/share/alsa/alsa-flatpak.conf
       __EGL_EXTERNAL_PLATFORM_CONFIG_DIRS: /etc/egl/egl_external_platform.d:/usr/%{lib}/GL/egl/egl_external_platform.d:/usr/share/egl/egl_external_platform.d
+      PYTHONUSERBASE: /var/data/python
 
     Extension org.gnome.Sdk.Debug:
       directory: lib/debug
