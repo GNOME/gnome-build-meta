@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gjs.git
   track: master
-  ref: 1.78.0-39-gefa2d9a18ddddca280cc03987af658d2a8d020c9
+  ref: 1.78.0-48-g096101401b3061fb09044f576dd981b48fc2c8bb
 
 build-depends:
 - sdk/sysprof-minimal.bst
