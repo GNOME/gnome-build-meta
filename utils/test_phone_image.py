@@ -20,9 +20,11 @@ PINEPHONE_PRO_DIALOGS = {
         'Password:',
         'root',
         '#',
+
         # Check release
         'cat /etc/os-release',
         'ID=org.gnome.os',
+
         # Modem status
         'eg25-manager',
         '#',  # currently errors
@@ -45,18 +47,92 @@ PINEPHONE_PRO_DIALOGS = {
         # Test calls and feedbackd
         'fbcli',
         'Triggering feedback for event \'phone-incoming-call\'',
-        # Check kernel config
+
+        # Check expected kernel configs
         'cat /proc/config.gz | gunzip > running.config',
         '#',
+
         # Check for goodix touchscreen config
         'cat running.config | grep GOODIX',
         'CONFIG_TOUCHSCREEN_GOODIX=',
+
         # Check touchscreen enabled config
         'cat running.config | grep TOUCHSCREEN',
         'CONFIG_INPUT_TOUCHSCREEN=',
+
         # Check for net_vendor_broadcom wifi config
         'cat running.config | grep NET_VENDOR',
         'CONFIG_NET_VENDOR_BROADCOM=',
+
+        # Check for VIDEO_ROCKCHIP_ISP1 config
+        'cat running.config | grep VIDEO_ROCKCHIP_ISP1',
+        'CONFIG_VIDEO_ROCKCHIP_ISP1=',
+        # Check for VIDEO_ROCKCHIP_RGA config
+        'cat running.config | grep VIDEO_ROCKCHIP_RGA',
+        'CONFIG_VIDEO_ROCKCHIP_RGA=',
+        # Check for VIDEO_ROCKCHIP_VDEC config
+        'cat running.config | grep VIDEO_ROCKCHIP_VDEC',
+        'CONFIG_VIDEO_ROCKCHIP_VDEC=',
+        # Check for VIDEO_HANTRO config
+        'cat running.config | grep CONFIG_VIDEO_HANTRO',
+        'CONFIG_VIDEO_HANTRO=',
+        # Check for VIDEO_OV8858 config
+        'cat running.config | grep VIDEO_OV8858',
+        'CONFIG_VIDEO_OV8858=',
+        # Check for VIDEO_IMX258 config
+        'cat running.config | grep VIDEO_IMX258',
+        'CONFIG_VIDEO_IMX258=',
+        # Check for VIDEO_DW9714 config
+        'cat running.config | grep VIDEO_DW9714',
+        'CONFIG_VIDEO_DW9714=',
+
+        # Check for ROCKCHIP_SARADC config
+        'cat running.config | grep ROCKCHIP_SARADC',
+        'CONFIG_ROCKCHIP_SARADC=',
+        # Check for ROCKCHIP_MBOX config
+        'cat running.config | grep ROCKCHIP_MBOX',
+        'CONFIG_ROCKCHIP_MBOX=y',
+        # Check for ROCKCHIP_THERMAL config
+        'cat running.config | grep ROCKCHIP_THERMAL',
+        'CONFIG_ROCKCHIP_THERMAL=',
+        # Check for ROCKCHIP_RGB config
+        'cat running.config | grep ROCKCHIP_RGB',
+        'CONFIG_ROCKCHIP_RGB=y',
+
+        # Check for CRYPTO_DEV_ROCKCHIP config
+        'cat running.config | grep CRYPTO_DEV_ROCKCHIP',
+        'CONFIG_CRYPTO_DEV_ROCKCHIP=',
+
+        # Check for PHY_ROCKCHIP_DPHY_RX0 config
+        'cat running.config | grep PHY_ROCKCHIP_DPHY_RX0',
+        'CONFIG_PHY_ROCKCHIP_DPHY_RX0=',
+
+        # Check for BACKLIGHT_CLASS_DEVICE config
+        'cat running.config | grep BACKLIGHT_CLASS_DEVICE',
+        'CONFIG_BACKLIGHT_CLASS_DEVICE=y',
+
+        # Check for V4L2_FLASH_LED_CLASS config
+        'cat running.config | grep V4L2_FLASH_LED_CLASS',
+        'CONFIG_V4L2_FLASH_LED_CLASS=',
+
+        # Check for INPUT_GPIO_VIBRA config
+        'cat running.config | grep INPUT_GPIO_VIBRA',
+        'CONFIG_INPUT_GPIO_VIBRA=',
+        # Check for KEYBOARD_PINEPHONE config
+        'cat running.config | grep KEYBOARD_PINEPHONE',
+        'CONFIG_KEYBOARD_PINEPHONE=',
+
+        # Check for DRM_PANEL_HIMAX_HX8394 config
+        'cat running.config | grep DRM_PANEL_HIMAX_HX8394',
+        'CONFIG_DRM_PANEL_HIMAX_HX8394=',
+
+        # Check for LEDS_CLASS_FLASH config
+        'cat running.config | grep LEDS_CLASS_FLASH',
+        'CONFIG_LEDS_CLASS_FLASH=',
+        # Check for LEDS_SGM3140 config
+        'cat running.config | grep LEDS_SGM3140',
+        'CONFIG_LEDS_SGM3140=',
+
         # Test poweroff
         'sudo shutdown now',
         'Power down'
