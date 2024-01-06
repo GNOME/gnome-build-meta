@@ -1,0 +1,103 @@
+From 3caa44bdd1763a0a93b219ad44533479ff055e36 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Fri, 5 Jan 2024 22:27:14 +0200
+Subject: [PATCH] rust: Update to rust 1.75.0
+
+(cherry picked from commit 25de572f84b33f986215c463b1a6ba840499fe3c)
+---
+ elements/components/rust-stage1-aarch64.bst     | 4 ++--
+ elements/components/rust-stage1-armv7.bst       | 4 ++--
+ elements/components/rust-stage1-i686.bst        | 4 ++--
+ elements/components/rust-stage1-powerpc64le.bst | 4 ++--
+ elements/components/rust-stage1-riscv64.bst     | 4 ++--
+ elements/components/rust-stage1-x86_64.bst      | 4 ++--
+ elements/components/rust.bst                    | 4 ++--
+ 7 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/elements/components/rust-stage1-aarch64.bst b/elements/components/rust-stage1-aarch64.bst
+index c0802828f8a..43499888f67 100644
+--- a/elements/components/rust-stage1-aarch64.bst
++++ b/elements/components/rust-stage1-aarch64.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-aarch64-unknown-linux-gnu.tar.xz
+-  ref: 40c905d1093d464857f05d37e4ccdfa059baaee9bc5295882f0148c7725633b8
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-aarch64-unknown-linux-gnu.tar.xz
++  ref: 88d0cd0407ca5bb73b5d72956d85e31e057657c7ec09a58ca634cf36bd5cf626
+diff --git a/elements/components/rust-stage1-armv7.bst b/elements/components/rust-stage1-armv7.bst
+index 41ac38be41c..d13c9d36dbb 100644
+--- a/elements/components/rust-stage1-armv7.bst
++++ b/elements/components/rust-stage1-armv7.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-armv7-unknown-linux-gnueabihf.tar.xz
+-  ref: af303237a240dce9dcb6366b947d56903c36f5de08636b60267cf40c74ba332d
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-armv7-unknown-linux-gnueabihf.tar.xz
++  ref: d10db262196d59db9c910584f7cf9d7e5b5969910f343c64a79197f15cf2b694
+diff --git a/elements/components/rust-stage1-i686.bst b/elements/components/rust-stage1-i686.bst
+index 83e35355862..5b4c70f676c 100644
+--- a/elements/components/rust-stage1-i686.bst
++++ b/elements/components/rust-stage1-i686.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-i686-unknown-linux-gnu.tar.xz
+-  ref: 28e77745cdd2042953363fd3a9735eb9a9bd806cecdd18f20163cf588bb103f2
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-i686-unknown-linux-gnu.tar.xz
++  ref: f58cdf15717e7f6506088e753ffef3ec655a4ccd932eae280d6cb68b0ee3feca
+diff --git a/elements/components/rust-stage1-powerpc64le.bst b/elements/components/rust-stage1-powerpc64le.bst
+index 825640cfceb..271b610d075 100644
+--- a/elements/components/rust-stage1-powerpc64le.bst
++++ b/elements/components/rust-stage1-powerpc64le.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-powerpc64le-unknown-linux-gnu.tar.xz
+-  ref: 8410dc14bbb2655370ffe34e3bc4b5c60130ad5c715b3a8c36304da48d1b6001
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-powerpc64le-unknown-linux-gnu.tar.xz
++  ref: 054a98e8e85e94c187ff8bc16bac8011747839c9ad73584fdd87b904f137eb23
+diff --git a/elements/components/rust-stage1-riscv64.bst b/elements/components/rust-stage1-riscv64.bst
+index 377922320c5..b65905cf379 100644
+--- a/elements/components/rust-stage1-riscv64.bst
++++ b/elements/components/rust-stage1-riscv64.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-riscv64gc-unknown-linux-gnu.tar.xz
+-  ref: 9fcee22b5e86d366942f715a1075c21ca605db8d43851ddcae3b6bbf919bf5f9
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-riscv64gc-unknown-linux-gnu.tar.xz
++  ref: 4abc1499e91cfadf7610a08271d1f5ff9284a54ba4a0ba60f105bb9b2413169e
+diff --git a/elements/components/rust-stage1-x86_64.bst b/elements/components/rust-stage1-x86_64.bst
+index 48f2ac14e74..0c7004ceb46 100644
+--- a/elements/components/rust-stage1-x86_64.bst
++++ b/elements/components/rust-stage1-x86_64.bst
+@@ -6,5 +6,5 @@ kind: manual
+ # That's how upstream recommends doing it.
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rust-1.72.1-x86_64-unknown-linux-gnu.tar.xz
+-  ref: 5b5fa378b428aae010b1f1201a44d4aac83899216d3392aa0b2953edee633ba0
++  url: tar_https:static.rust-lang.org/dist/rust-1.74.1-x86_64-unknown-linux-gnu.tar.xz
++  ref: 5483e32fe962e9123cf49c9cf169e60640d4c9d0aad1a054dd4bf232f0f012be
+diff --git a/elements/components/rust.bst b/elements/components/rust.bst
+index e4c6664060c..374b2ba89ff 100644
+--- a/elements/components/rust.bst
++++ b/elements/components/rust.bst
+@@ -131,5 +131,5 @@ public:
+ 
+ sources:
+ - kind: tar
+-  url: tar_https:static.rust-lang.org/dist/rustc-1.73.0-src.tar.xz
+-  ref: 6eaf672dbea2e6596af8c999f5e6924b9af4bb8b02166bfe0b928e68aa75ae62
++  url: tar_https:static.rust-lang.org/dist/rustc-1.75.0-src.tar.xz
++  ref: 4526f786d673e4859ff2afa0bab2ba13c918b796519a25c1acce06dba9542340
+-- 
+GitLab
+
