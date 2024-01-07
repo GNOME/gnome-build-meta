@@ -91,6 +91,7 @@ default:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
+  - if: $CI_COMMIT_REF_NAME == "alatiera/publish-oci-45" && $CI_COMMIT_REF_PROTECTED == "true"
 
 .ostree-template:
   extends: .deploy-rules
