@@ -1,21 +1,26 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_software:plymouth/releases/plymouth-22.02.122.tar.xz
-  ref: 100551442221033ce868c447ad6c74d831d209c18ae232b98ae0207e34eadaeb
-
-depends:
-- sdk/gtk+-3.bst
-- sdk/pango.bst
-- freedesktop-sdk.bst:components/libdrm.bst
-- freedesktop-sdk.bst:components/systemd.bst
+  base-dir: ''
+  url: freedesktop_software:plymouth/releases/plymouth-24.004.60.tar.xz
+  ref: f3f7841358c98f5e7b06a9eedbdd5e6882fd9f38bbd14a767fb083e3b55b1c34
 
 build-depends:
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
-config:
-  install-commands:
-    (>):
-    - mv "%{install-root}/var/run" "%{install-root}/"
+depends:
+- sdk/cairo.bst
+- sdk/gtk+-3.bst
+- sdk/pango.bst
+- freedesktop-sdk.bst:components/freetype.bst
+- freedesktop-sdk.bst:components/libdrm.bst
+- freedesktop-sdk.bst:components/libevdev.bst
+- freedesktop-sdk.bst:components/libpng.bst
+- freedesktop-sdk.bst:components/libxkbcommon.bst
+- freedesktop-sdk.bst:components/systemd.bst
+
+variables:
+  meson: meson %{build-dir} */ %{meson-args}
