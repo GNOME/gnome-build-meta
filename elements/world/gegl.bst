@@ -10,7 +10,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/LibRaw.bst
 - core-deps/gexiv2.bst
 - core-deps/graphviz.bst
 - sdk/gdk-pixbuf.bst
@@ -18,6 +17,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/librsvg.bst
 - sdk/pango.bst
+- world/LibRaw.bst
 - world/babl.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/libwebp.bst
