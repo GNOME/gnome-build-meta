@@ -1,11 +1,10 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: github:protobuf-c/protobuf-c.git
-  track: v*
-  ref: v1.5.0-0-g8c201f6e47a53feaab773922a743091eb6c8972a
+- kind: tar
+  url: github_files:protobuf-c/protobuf-c/releases/download/v1.5.0/protobuf-c-1.5.0.tar.gz
 
+  ref: 7b404c63361ed35b3667aec75cc37b54298d56dd2bcf369de3373212cc06fd98
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
