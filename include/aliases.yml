@@ -9,7 +9,6 @@
 aliases:
   # file aliases (e.g. tarballs)
   0pointer: https://0pointer.de/
-  boostorg: https://boostorg.jfrog.io/
   cairo: https://cairographics.org/
   cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
