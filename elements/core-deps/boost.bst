@@ -2,8 +2,8 @@ kind: manual
 
 sources:
 - kind: tar
-  url: sourceforge:boost/1.79.0/boost_1_79_0.tar.bz2
-  ref: 475d589d51a7f8b3ba2ba4eda022b170e562ca3b760ee922c146b6c65856ef39
+  url: sourceforge:boost/1.84.0/boost_1_84_0.tar.bz2
+  ref: cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
