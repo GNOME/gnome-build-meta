@@ -1,0 +1,26 @@
+From 8db996f2c0b41bc6f90fbd0762b90d88136e2a88 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Tue, 9 Jan 2024 09:18:09 -0600
+Subject: [PATCH] Revert "Update elements/components/fontconfig.bst to
+ 2.15.0-0"
+
+This reverts commit 9ab1120816f89aa11b15ae9c7c7318f4417b8f95.
+
+This is hopefully a workaround for gnome-build-meta#785
+---
+ elements/components/fontconfig.bst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/components/fontconfig.bst b/elements/components/fontconfig.bst
+index 05d261176..026a85d4f 100644
+--- a/elements/components/fontconfig.bst
++++ b/elements/components/fontconfig.bst
+@@ -32,4 +32,4 @@ sources:
+   track: '*.*.*'
+   exclude:
+   - 2.*.9*
+-  ref: 2.15.0-0-g72b9a48f57de6204d99ce1c217b5609ee92ece9b
++  ref: 2.14.2-0-g7861a719616b4b132b9cac089c6c64f47832edb1
+-- 
+2.43.0
+
