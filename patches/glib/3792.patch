@@ -1,0 +1,81 @@
+From 0db7395ef9fca96d5a3f2bb3098a5764b44b8fbb Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Wed, 27 Dec 2023 16:00:06 +0000
+Subject: [PATCH] build: Tell gi-docgen where to find the GIR files
+
+Now that all files are located under top_srcdir/introspection, we need
+to ensure that gi-docgen can find them.
+---
+ docs/reference/gio/meson.build     | 3 ---
+ docs/reference/glib/meson.build    | 1 -
+ docs/reference/gmodule/meson.build | 2 --
+ docs/reference/gobject/meson.build | 1 -
+ docs/reference/meson.build         | 1 +
+ 5 files changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/docs/reference/gio/meson.build b/docs/reference/gio/meson.build
+index b8b93228db..0e6cbac033 100644
+--- a/docs/reference/gio/meson.build
++++ b/docs/reference/gio/meson.build
+@@ -52,9 +52,6 @@ custom_target('gio-docs',
+     '--config=@INPUT0@',
+     '--output-dir=@OUTPUT@',
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gobject'),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gmodule'),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gio'),
+     '@INPUT1@',
+   ],
+   build_by_default: true,
+diff --git a/docs/reference/glib/meson.build b/docs/reference/glib/meson.build
+index a4197a92ff..de4e97a689 100644
+--- a/docs/reference/glib/meson.build
++++ b/docs/reference/glib/meson.build
+@@ -109,7 +109,6 @@ custom_target('glib-docs',
+     '--config=@INPUT0@',
+     '--output-dir=@OUTPUT@',
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gobject'),
+     '@INPUT1@',
+   ],
+   build_by_default: true,
+diff --git a/docs/reference/gmodule/meson.build b/docs/reference/gmodule/meson.build
+index eb75a0506d..1bf2fd21f9 100644
+--- a/docs/reference/gmodule/meson.build
++++ b/docs/reference/gmodule/meson.build
+@@ -14,8 +14,6 @@ custom_target('gmodule-docs',
+     '--config=@INPUT0@',
+     '--output-dir=@OUTPUT@',
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gobject'),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gmodule'),
+     '@INPUT1@',
+   ],
+   build_by_default: true,
+diff --git a/docs/reference/gobject/meson.build b/docs/reference/gobject/meson.build
+index 03355b7dc0..e96595b373 100644
+--- a/docs/reference/gobject/meson.build
++++ b/docs/reference/gobject/meson.build
+@@ -41,7 +41,6 @@ custom_target('gobject-docs',
+     '--config=@INPUT0@',
+     '--output-dir=@OUTPUT@',
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+-    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../../gobject'),
+     '@INPUT1@',
+   ],
+   build_by_default: true,
+diff --git a/docs/reference/meson.build b/docs/reference/meson.build
+index b583278f80..acdc70814f 100644
+--- a/docs/reference/meson.build
++++ b/docs/reference/meson.build
+@@ -12,6 +12,7 @@ if get_option('documentation') and enable_gir
+     '--quiet',
+     '--no-namespace-dir',
+     '--fatal-warnings',
++    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../introspection'),
+   ]
+ 
+   docs_dir = glib_datadir / 'doc' / 'glib-2.0'
+-- 
+GitLab
+

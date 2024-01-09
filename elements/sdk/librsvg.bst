@@ -1,10 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:librsvg.git
-  track: main
-  ref: 2.57.0-94-g8b021170b46fd8854a0e22772c4a944804b15706
+- kind: tar
+  url: gnome_downloads:librsvg/2.57/librsvg-2.57.1.tar.xz
+  ref: 074671a3ed6fbcd67cae2a40e539107f4f097ca8a4ab1a894c05e2524ff340ef
 - kind: cargo
   ref:
   - name: adler
@@ -55,9 +54,6 @@ sources:
   - name: bit-vec
     version: 0.6.3
     sha: 349f9b6a179ed607305526ca489b34ad0a41aed5f7980fa90eb03160b69598fb
-  - name: bit_field
-    version: 0.10.2
-    sha: dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61
   - name: bitflags
     version: 1.3.2
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
@@ -124,9 +120,6 @@ sources:
   - name: clap_lex
     version: 0.6.0
     sha: 702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1
-  - name: color_quant
-    version: 1.1.0
-    sha: 3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b
   - name: colorchoice
     version: 1.0.0
     sha: acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7
@@ -154,9 +147,6 @@ sources:
   - name: crossbeam-utils
     version: 0.8.17
     sha: c06d96137f14f244c37f989d9fff8f95e6c18b918e71f36638f8c49112e4c78f
-  - name: crunchy
-    version: 0.2.2
-    sha: 7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7
   - name: cssparser
     version: 0.31.2
     sha: 5b3df4f93e5fbbe73ec01ec8d3f68bba73107993a5b1e7519273c32db9b0d5be
@@ -202,9 +192,6 @@ sources:
   - name: errno
     version: 0.3.8
     sha: a258e46cdc063eb8519c00b9fc845fc47bcfca4130e2f08e88665ceda8474245
-  - name: exr
-    version: 1.71.0
-    sha: 832a761f35ab3e6664babfbdc6cef35a4860e816ec3916dcfd0882954e98a8a8
   - name: fastrand
     version: 2.0.1
     sha: 25cbce373ec4653f1a01a31e8a5e5ec0c622dc27ff9c4e6606eefef5cbbed4a5
@@ -217,9 +204,6 @@ sources:
   - name: float-cmp
     version: 0.9.0
     sha: 98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4
-  - name: flume
-    version: 0.11.0
-    sha: 55ac459de2512911e4b674ce33cf20befaba382d05b62b008afc1c8b57cbf181
   - name: fnv
     version: 1.0.7
     sha: 3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1
@@ -262,9 +246,6 @@ sources:
   - name: getrandom
     version: 0.2.11
     sha: fe9006bed769170c11f845cf00c7c1e9092aeb3f268e007c3e760ac68008070f
-  - name: gif
-    version: 0.12.0
-    sha: 80792593675e051cf94a4b111980da2ba60d4a83e43e0048c5693baab3977045
   - name: gio
     version: 0.18.4
     sha: d4fc8f532f87b79cbc51a79748f16a6828fb784be93145a322fa14d06d354c73
@@ -286,9 +267,6 @@ sources:
   - name: half
     version: 1.8.2
     sha: eabb4a44450da02c90444cf74558da904edde8fb4e9035a9a6a4e15445af0bd7
-  - name: half
-    version: 2.2.1
-    sha: 02b4af3693f1b705df946e9fe5631932443781d0aabb423b62fcd4d73f6d2fd0
   - name: hashbrown
     version: 0.14.3
     sha: 290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604
@@ -307,9 +285,6 @@ sources:
   - name: idna
     version: 0.5.0
     sha: 634d9b1461af396cad843f47fdba5597a4f9e6ddd4bfb6ff5d85028c25cb12f6
-  - name: image
-    version: 0.24.7
-    sha: 6f3dfdbdd72063086ff443e297b61695500514b1e41095b6fb9a5ab48a70a711
   - name: indexmap
     version: 2.1.0
     sha: d530e1a18b1cb4c484e6e34556a0d948706958449fca0cab753d649f2bce3d1f
@@ -325,9 +300,6 @@ sources:
   - name: itoa
     version: 1.0.10
     sha: b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c
-  - name: jpeg-decoder
-    version: 0.3.0
-    sha: bc0000e42512c92e31c2252315bda326620a4e034105e900c98ec492fa077b3e
   - name: js-sys
     version: 0.3.66
     sha: cee9c64da59eae3b50095c18d3e74f8b73c0b86d2792824ff01bbce68ba229ca
@@ -337,9 +309,6 @@ sources:
   - name: lazy_static
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
-  - name: lebe
-    version: 0.5.2
-    sha: 03087c2bad5e1034e8cace5926dec053fb3790248370865f5117a7d0213354c8
   - name: libc
     version: 0.2.151
     sha: 302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4
@@ -541,9 +510,6 @@ sources:
   - name: proptest
     version: 1.4.0
     sha: 31b476131c3c86cb68032fdc5cb6d5a1045e3e42d96b69fa599fd77701e1f5bf
-  - name: qoi
-    version: 0.4.1
-    sha: 7f6d64c71eb498fe9eae14ce4ec935c555749aef511cca85b5568910d6e48001
   - name: quick-error
     version: 1.2.3
     sha: a1d01941d82fa2ab50be1e79e6714289dd7cde78eba4c074bc5a4374f650dfe0
@@ -643,9 +609,6 @@ sources:
   - name: smallvec
     version: 1.11.2
     sha: 4dccd0940a2dcdf68d092b8cbab7dc0ad8fa938bf95787e1b916b0e3d0e8e970
-  - name: spin
-    version: 0.9.8
-    sha: 6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67
   - name: stable_deref_trait
     version: 1.2.0
     sha: a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3
@@ -680,14 +643,11 @@ sources:
     version: 0.4.1
     sha: 3369f5ac52d5eb6ab48c6b4ffdc8efbcad6b89c765749064ba298f2c68a16a76
   - name: thiserror
-    version: 1.0.51
-    sha: f11c217e1416d6f036b870f14e0413d480dbf28edbee1f877abaf0206af43bb7
+    version: 1.0.50
+    sha: f9a7210f5c9a7156bb50aa36aed4c95afb51df0df00713949448cf9e97d382d2
   - name: thiserror-impl
-    version: 1.0.51
-    sha: 01742297787513b79cf8e29d1056ede1313e2420b7b3b15d0a768b4921f549df
-  - name: tiff
-    version: 0.9.0
-    sha: 6d172b0f4d3fba17ba89811858b9d3d97f928aece846475bbda076ca46736211
+    version: 1.0.50
+    sha: 266b2e40bc00e5a6c09c3584011e08b06f123c00362c92b975ba9843aaaa14b8
   - name: time
     version: 0.3.30
     sha: c4a34ab300f2dee6e562c10a046fc05e358b29f9bf92277f30c3c8d82275f6f5
@@ -848,17 +808,14 @@ sources:
     version: 0.52.0
     sha: dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
   - name: winnow
-    version: 0.5.30
-    sha: 9b5c3db89721d50d0e2a673f5043fc4722f76dcc352d7b1ab8b8288bed4ed2c5
+    version: 0.5.28
+    sha: 6c830786f7720c2fd27a1a0e27a709dbd3c4d009b56d098fc742d4f4eab91fe2
   - name: xml5ever
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
   - name: yeslogic-fontconfig-sys
     version: 4.0.1
     sha: ec657fd32bbcbeaef5c7bc8e10b3db95b143fab8db0a50079773dbf936fd4f73
-  - name: zune-inflate
-    version: 0.2.54
-    sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

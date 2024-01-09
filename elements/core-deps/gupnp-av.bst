@@ -1,10 +1,11 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gupnp-av.git
-  track: master
-  ref: gupnp-av-0.14.1-9-g1e10a41fcef6ae0d3e89958db89bc22398f3b4f1
+- kind: tar
+  url: gnome_downloads:gupnp-av/0.14/gupnp-av-0.14.1.tar.xz
+  ref: b79ce0cc4b0c66d9c54bc22183a10e5709a0011d2af272025948efcab33a3e4f
+- kind: patch_queue
+  path: patches/gupnp-av
 
 build-depends:
 - sdk/gobject-introspection.bst

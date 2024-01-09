@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtk.git
-  track: main
-  ref: 4.13.5-1-g96e710a76f3cce0ebd08f448ff75e0e94d7603ed
-
+- kind: tar
+  url: gnome_downloads:gtk/4.13/gtk-4.13.5.tar.xz
+  ref: 4a95225815ff6ecfcfe9b7905eba38f84f53b61cec909a490cf29e227b41e418
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst

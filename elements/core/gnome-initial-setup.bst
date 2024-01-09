@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-initial-setup.git
-  track: master
-  ref: 45.0-18-g5ce2481938290e76a77f8ac8801cd23a58f634f6
+- kind: tar
+  url: gnome_downloads:gnome-initial-setup/45/gnome-initial-setup-45.0.tar.xz
+  ref: b1afe764798f8948bedb95c7ab31bd78529ac5cb481c41f7a7777f264de54bd8
 - kind: local
   path: files/gnome-initial-setup/tmpfiles.conf
 

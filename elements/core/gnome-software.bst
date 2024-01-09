@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-software.git
-  track: main
-  ref: 46.alpha-2-g35434bae4d6e81a6a5cb262aeb93fffed7c1ffaf
-- kind: git_module
-  url: gnome_gitlab:mwleeds/gnome-pwa-list.git
-  path: subprojects/gnome-pwa-list
-  ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
-
+- kind: tar
+  url: gnome_downloads:gnome-software/46/gnome-software-46.alpha.tar.xz
+  ref: 0f1883ec3be9263a5dd92a63a3bf2f21458b7f309d1a53748e273da43864023b
 build-depends:
 - core-deps/eos-updater.bst
 - sdk/gtk-doc.bst

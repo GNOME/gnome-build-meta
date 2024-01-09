@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome_gitlab:sophie-h/glycin.git
-  track: main
-  ref: 0.1.2-36-ged9be8cb019550ce89e936be9f697e3243576df3
+- kind: tar
+  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.alpha.tar.xz
+  ref: 18da75ae90ff70d5729e526b577b4fdc3e8c5156885eea6596ef6662eb40733d
 - kind: cargo
 
   ref:
@@ -107,9 +106,6 @@ sources:
   - name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
-  - name: bytes
-    version: 1.5.0
-    sha: a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223
   - name: cairo-rs
     version: 0.18.3
     sha: f33613627f0dea6a731b0605101fad59ba4f193a52c96c4687728d822605a8a1
@@ -341,6 +337,12 @@ sources:
   - name: glob
     version: 0.3.1
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
+  - name: glycin
+    version: 1.0.0-alpha.2
+    sha: 78dd20ce3bde5b9852e73990838c494b661a7ce48d8083e69638439e1d4cf55f
+  - name: glycin-utils
+    version: 1.0.0-alpha.2
+    sha: 040bc5c15bd3e2c05a08f9e474a1f8ad70a42ee736842dfa9727ce0b2e2342a4
   - name: gobject-sys
     version: 0.18.0
     sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
@@ -506,9 +508,6 @@ sources:
   - name: miniz_oxide
     version: 0.7.1
     sha: e7810e0be55b428ada41041c41f32c9f1a42817901b4ccf45fa3d4b6561e74c7
-  - name: mio
-    version: 0.8.10
-    sha: 8f3d0b296e374a4e6f3c7b0a1f5a51d748a0d34c85e7dc48fc3fa9a87657fe09
   - name: mutate_once
     version: 0.1.1
     sha: 16cf681a23b4d0a43fc35024c176437f9dcd818db34e0f42ab456a0ee5ad497b
@@ -770,9 +769,6 @@ sources:
   - name: socket2
     version: 0.4.10
     sha: 9f7916fc008ca5542385b89a3d3ce689953c143e9304a9bf8beec1de48994c0d
-  - name: socket2
-    version: 0.5.5
-    sha: 7b5fac59a5cb5dd637972e5fca70daf0523c9067fcdc4842f053dae04a18f8e9
   - name: spin
     version: 0.9.8
     sha: 6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67
@@ -824,9 +820,6 @@ sources:
   - name: tinyvec_macros
     version: 0.1.1
     sha: 1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20
-  - name: tokio
-    version: 1.35.1
-    sha: c89b4efa943be685f629b149f53829423f8f5531ea21249408e8e2f8671ec104
   - name: toml
     version: 0.8.2
     sha: 185d8ab0dfbb35cf1399a6344d8484209c088f75f8f68230da55d48d95d43e3d

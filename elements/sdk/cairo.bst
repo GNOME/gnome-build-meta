@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: freedesktop:cairo/cairo.git
-  track: master
-  ref: 1.18.0-16-gee07a8118527fd1b672c3de6a2ae3b4607487737
+- kind: tar
+  url: cairo:snapshots/cairo-1.17.8.tar.xz
+  ref: 5b10c8892d1b58d70d3f0ba5b47863a061262fa56b9dc7944161f8c8b783bc64
 - kind: patch_queue
   path: patches/cairo/
 build-depends:

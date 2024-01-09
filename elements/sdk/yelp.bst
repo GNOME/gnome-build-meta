@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:yelp.git
-  track: master
-  ref: 42.2-16-g855cae4a336f7676f093579c9a6b2d9fae7a1f80
-
+- kind: tar
+  url: gnome_downloads:yelp/42/yelp-42.2.tar.xz
+  ref: a2c5fd0787a9089c722cc66bd0f85cdf7088d870e7b6cc85799f8e5bff9eac4b
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/gtk-doc.bst

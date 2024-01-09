@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pygobject.git
-  track: master
-  ref: 3.46.0-84-g3653581164a9b71f706447838ae488db4a9a677e
-
+- kind: tar
+  url: gnome_downloads:pygobject/3.46/pygobject-3.46.0.tar.xz
+  ref: 426008b2dad548c9af1c7b03b59df0440fde5c33f38fb5406b103a43d653cafc
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-tour.git
-  track: master
-  ref: 45.0-2-gf2830801741ddfc358bd6ee885c7371c605a16ca
+- kind: tar
+  url: gnome_downloads:gnome-tour/45/gnome-tour-45.0.tar.xz
+  ref: 5be4b8ef4b8f4d5ecaccc31048db6e085a8f7bffadaa0843b8e8a788ff1dadee
 - kind: cargo
   ref:
   - name: aho-corasick

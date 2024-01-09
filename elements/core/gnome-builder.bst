@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-builder.git
-  track: main
-  ref: 45.rc-179-g8ce23dcff8cf0fe5343c2375b3e6614002526049
-
+- kind: tar
+  url: gnome_downloads:gnome-builder/46/gnome-builder-46.alpha.tar.xz
+  ref: 21b3e454cd21f71875499f66e069a223a37a360c0e3a8309d355dac3ff1b24b1
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

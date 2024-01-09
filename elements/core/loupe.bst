@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:loupe.git
-  track: main
-  ref: 45.2-71-g65a3c79a43e6e23de3d51a7ad3884c5d6dff4c46
+- kind: tar
+  url: gnome_downloads:loupe/46/loupe-46.alpha.tar.xz
+  ref: 7c5d6da3a1f545ee444a0dabe71d57ff22bc4005ec7932591a0e378320b094f0
 - kind: cargo
 
   ref:

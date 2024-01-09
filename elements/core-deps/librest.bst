@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:librest.git
-  track: master
-  ref: 0.9.1-8-g5970778a89f33352b59da689cdb7d088555b1d53
+- kind: tar
+  url: gnome_downloads:rest/0.9/rest-0.9.1.tar.xz
+  ref: 9266a5c10ece383e193dfb7ffb07b509cc1f51521ab8dad76af96ed14212c2e3
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
