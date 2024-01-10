@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp-xsl.git
   track: master
-  ref: 42.1-10-g710370d5fa1b16ea0c2f09d9ada364c4ff8c16bb
+  ref: 42.1-11-g97c4ef4dd71a5708c974003666a78e5988f31f9e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-session.git
   track: main
-  ref: 46.alpha-1-g2f26d7ef8a9bf08df2129eb65e12972327246087
+  ref: 46.alpha-5-gb5908daffedbce97e1e4ed5c831d9913b452307b
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
