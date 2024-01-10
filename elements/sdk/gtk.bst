@@ -12,6 +12,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/pygobject.bst
 - sdk/sysprof-minimal.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -38,6 +39,7 @@ variables:
   meson-local: >-
     -Dbroadway-backend=true
     -Dgtk_doc=true
+    -Dman-pages=true
     -Dmedia-ffmpeg=disabled
     -Dsysprof=enabled
 
