@@ -34,7 +34,6 @@ variables:
     --disable-libnotify
     --disable-python2
     --disable-schema-compile
-    --disable-static
     --disable-setup
     --disable-ui
     --disable-unicode-dict

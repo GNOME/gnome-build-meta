@@ -18,5 +18,4 @@ variables:
   autogen: >-
     autoreconf -fvi
   conf-local: >-
-    --disable-static
     --enable-doc
