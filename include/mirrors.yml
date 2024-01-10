@@ -7,8 +7,6 @@ mirrors:
   aliases:
     0pointer:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/0pointer_de/tar-files/-/raw/master/
-    boostorg:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/boostorg_jfrog_io/tar-files/-/raw/master/
     cairo:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/cairographics_org/tar-files/-/raw/master/
     cpan:
