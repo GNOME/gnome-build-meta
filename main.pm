@@ -65,6 +65,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_text_to_speech.pm");
     autotest::loadtest("tests/a11y_hearing.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
+    autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
 } else {
     die("Invalid testsuite: '$testsuite'");
