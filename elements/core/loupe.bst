@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:loupe/45/loupe-45.2.tar.xz
-  ref: b8b3ffaf3657026b17e04f19e040cba8d51eb4d0cab54e42295b0e5a5271c0ab
+  url: gnome_downloads:loupe/45/loupe-45.3.tar.xz
+  ref: f65f2d1208d085ab5ffa998dd43c92fe952272d4d59b51cfecc11ebdffca2d86
 - kind: cargo
 
   ref:

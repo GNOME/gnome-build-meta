@@ -2,14 +2,14 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:snapshot/45/snapshot-45.0.tar.xz
-  ref: ee478ee090731a0b0824b66bb1746bd800dcbfe87ac8358499449af39cfcdb67
+  url: gnome_downloads:snapshot/45/snapshot-45.2.tar.xz
+  ref: 89077817fc735cc8e89db51628f52ea8ac66c194dfc6a7a42e003c4c29c4dd3e
 - kind: cargo
 
   ref:
   - name: aho-corasick
-    version: 1.0.5
-    sha: 0c378d78423fdad8089616f827526ee33c19f2fddbd5de1629152c9593ba4783
+    version: 1.1.1
+    sha: ea5d730647d4fadd988536d06fecce94b7b4f2a7efdae548f1cf4b63205518ab
   - name: android-tzdata
     version: 0.1.1
     sha: e999941b234f3131b00bc13c22d06e8c5ff726d1b6318ac7eb276997bbb4fef0
@@ -194,8 +194,8 @@ sources:
     version: 0.18.0
     sha: 3f9839ea644ed9c97a34d129ad56d38a25e6756f99f3a88e15cd39c20629caf7
   - name: gdk4
-    version: 0.7.2
-    sha: 6982d9815ed6ac95b0467b189e81f29dea26d08a732926ec113e65744ed3f96c
+    version: 0.7.3
+    sha: 7edb019ad581f8ecf8ea8e4baa6df7c483a95b5a59be3140be6a9c3b0c632af6
   - name: gdk4-sys
     version: 0.7.2
     sha: dbab43f332a3cf1df9974da690b5bb0e26720ed09a228178ce52175372dcfef0
@@ -257,11 +257,11 @@ sources:
     version: 0.18.1
     sha: cc4144cee8fc8788f2a9b73dc5f1d4e1189d1f95305c4cb7bd9c1af1cfa31f59
   - name: gsk4
-    version: 0.7.2
-    sha: cc25855255120f294d874acd6eaf4fbed7ce1cdc550e2d8415ea57fafbe816d5
+    version: 0.7.3
+    sha: 0d958e351d2f210309b32d081c832d7de0aca0b077aa10d88336c6379bd01f7e
   - name: gsk4-sys
-    version: 0.7.2
-    sha: e1ecf3a63bf1223d68f80f72cc896c4d8c80482fbce1c9a12c66d3de7290ee46
+    version: 0.7.3
+    sha: 12bd9e3effea989f020e8f1ff3fa3b8c63ba93d43b899c11a118868853a56d55
   - name: gst-plugin-gtk4
     version: 0.11.0
     sha: c3ee0132150ee059c35642b51c5d663eadb9fa4d21f83a56dd584b03c1c45ffd
@@ -323,14 +323,14 @@ sources:
     version: 0.21.0
     sha: e0284250a09fa824b21df1a21967eef4a5d85b5e0c1e335ed2ba9b9be1424dae
   - name: gtk4
-    version: 0.7.2
-    sha: a3b095b26f2a2df70be1805d3590eeb9d7a05ecb5be9649b82defc72dc56228c
+    version: 0.7.3
+    sha: 5aeb51aa3e9728575a053e1f43543cd9992ac2477e1b186ad824fd4adfb70842
   - name: gtk4-macros
     version: 0.7.2
     sha: d57ec49cf9b657f69a05bca8027cff0a8dfd0c49e812be026fc7311f2163832f
   - name: gtk4-sys
-    version: 0.7.2
-    sha: 7b0bdde87c50317b4f355bcbb4a9c2c414ece1b7c824fb4ad4ba8f3bdb2c6603
+    version: 0.7.3
+    sha: 54d8c4aa23638ce9faa2caf7e2a27d4a1295af2155c8e8d28c4d4eeca7a65eb8
   - name: hashbrown
     version: 0.14.0
     sha: 2c6201b9ff9fd90a5a3bac2e56a830d0caa509576f0e503818ee82c181b3437a
@@ -338,8 +338,8 @@ sources:
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
   - name: hermit-abi
-    version: 0.3.2
-    sha: 443144c8cdadd93ebf52ddb4056d257f5b52c04d3c804e657d19eb73fc33668b
+    version: 0.3.3
+    sha: d77f7ec81a6d05a3abb01ab6eb7590f6083d08449fe5a1c8b1e620283546ccb7
   - name: hex
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
@@ -374,11 +374,11 @@ sources:
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
   - name: libadwaita
-    version: 0.5.2
-    sha: 06444f4ca05a60693da6e9e2b591bd40a298e65a118a8d5e830771718b3e0253
+    version: 0.5.3
+    sha: 2fe7e70c06507ed10a16cda707f358fbe60fe0dc237498f78c686ade92fd979c
   - name: libadwaita-sys
-    version: 0.5.2
-    sha: 021cfe3d1fcfa82411765a791f7e9b32f35dd98ce88d2e3fa10e7320f5cc8ce7
+    version: 0.5.3
+    sha: 5e10aaa38de1d53374f90deeb4535209adc40cc5dba37f9704724169bceec69a
   - name: libc
     version: 0.2.148
     sha: 9cdc71e17332e86d2e1d38c1f99edcb6288ee11b815fb1a4b049eaa2114d369b
@@ -521,11 +521,11 @@ sources:
     version: 0.37.23
     sha: 4d69718bf81c6127a49dc64e44a742e8bb9213c0ff8869a22c308f84c1d4ab06
   - name: rustix
-    version: 0.38.13
-    sha: d7db8590df6dfcd144d22afd1b83b36c21a18d7cbc1dc4bb5295a8712e9eb662
+    version: 0.38.14
+    sha: 747c788e9ce8e92b12cd485c49ddf90723550b654b32508f979b71a7b1ecda4f
   - name: semver
-    version: 1.0.18
-    sha: b0293b4b29daaf487284529cc2f5675b8e57c61f70167ba415a463651fd6a918
+    version: 1.0.19
+    sha: ad977052201c6de01a8ef2aa3378c4bd23217a056337d1d6da40468d267a4fb0
   - name: serde
     version: 1.0.188
     sha: cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e
@@ -539,8 +539,8 @@ sources:
     version: 0.6.3
     sha: 96426c9936fd7a0124915f9185ea1d20aa9445cc9821142f0a73bc9207a2e186
   - name: sha1
-    version: 0.10.5
-    sha: f04293dc80c3993519f2d7f6f511707ee7094fe0c6d3406feb330cdb3540eba3
+    version: 0.10.6
+    sha: e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba
   - name: sharded-slab
     version: 0.1.4
     sha: 900fba806f70c630b0a382d0d825e17a0f19fcd059a2ade1ff237bcddf446b31
@@ -554,8 +554,8 @@ sources:
     version: 0.4.9
     sha: 8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67
   - name: smallvec
-    version: 1.11.0
-    sha: 62bb4feee49fdd9f707ef802e22365a35de4b7b299de4763d44bfea899442ff9
+    version: 1.11.1
+    sha: 942b4a808e05215192e39f4ab80813e599068285906cc91aa64f923db842bd5a
   - name: socket2
     version: 0.4.9
     sha: 64a4a911eed85daf18834cfaa86a79b7d266ff93ff5ba14005426219480ed662
@@ -566,8 +566,8 @@ sources:
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: syn
-    version: 2.0.35
-    sha: 59bf04c28bee9043ed9ea1e41afc0552288d3aba9c6efdd78903b802926f4879
+    version: 2.0.37
+    sha: 7303ef2c05cd654186cb250d29049a24840ca25d2747c25c0381c8d9e2f582e8
   - name: system-deps
     version: 6.1.1
     sha: 30c2de8a4d8f4b823d634affc9cd2a74ec98c53a756f317e529a48046cbf71f3
