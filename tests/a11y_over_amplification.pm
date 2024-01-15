@@ -5,11 +5,9 @@ use testapi;
 use gnomeutils;
 
 sub run {
-    start_app('gnome-control-center');
-    # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
-    
+    a11y_setup_test;
     # Go to Hearing Section
-    assert_and_click('a11y_hearing', timeout => 15, button => 'left');
+    assert_and_click('a11y_settings_accessibility_panel', timeout => 15, button => 'left',point_id => 'hearing_panel');
     # Enable overamplification button
     assert_and_click('a11y_hearing_overamplification_button', timeout => 15, button => 'left');
     # Check default volume setting if volume can be amplified to more than 100%
@@ -23,17 +21,6 @@ sub run {
     assert_and_click('a11y_hearing', timeout => 15, button => 'left');
     # Disable overamplication button
     assert_and_click('a11y_hearing_overamplification_button_off', timeout => 15, button => 'left');
-
-    # Test for visual alerts when alert sound occurs
-    
-    # Enable Visual alerts when alert sound occurs
-    assert_and_click('a11y_enable_visual_alerts', timeout => 15, button => 'left',,point_id => 'enable');
-    # Test visual alerts
-    assert_and_click('a11y_test_visual_alerts', timeout => 15, button => 'left');
-    # test if the screen changed when the test button is clicked
-    wait_still_screen(5);
-     # Disable Visual alerts when alert sound occurs
-    assert_and_click('a11y_disable_visual_alerts', timeout => 15, button => 'left');
     close_app;
 }
 

@@ -4,13 +4,10 @@ use warnings;
 use testapi;
 use gnomeutils;
 use constant SLOW_TYPING_SPEED => 13;
-
-
 sub run {
-    start_app('gnome-control-center');
-      # ///////// TESTS RELATED TO TYPING ACCESSIBILITY ///////////
-    # Go to Typing Section
-    assert_and_click('a11y_typing', timeout => 15, button => 'left');
+    
+    a11y_setup_test;
+    assert_and_click('a11y_settings_accessibility_panel', timeout => 15, button => 'left',point_id => 'typing_panel');
     # Enable On Screen Keyboard(OSK)
     assert_and_click('a11y_screen_keyboard_on', timeout => 15, button => 'left');
     # assert to confirm OSK was really enable before testing
