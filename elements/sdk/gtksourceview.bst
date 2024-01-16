@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtksourceview.git
   track: master
-  ref: 5.11.0-1-g484d85914d14f4f68c193dbde160ab0366f37fea
+  ref: 5.11.0-8-g591176eec5820ef40942da2959df261599473997
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -19,6 +19,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Dinstall_tests=true
-    -Dgtk_doc=true
+    -Dinstall-tests=true
+    -Ddocumentation=true
     -Dsysprof=true
