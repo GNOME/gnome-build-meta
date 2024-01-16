@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-maps.git
   track: main
-  ref: v46.alpha-9-g4254031084490e581432cf41b59fc129fb544463
+  ref: v46.alpha-10-ga71bb993115d9a711ac3ce384c20cf9923116a84
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
