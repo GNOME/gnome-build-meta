@@ -24,9 +24,9 @@ sub run {
     # Switch on Large Text
     assert_and_click('app_settings_no_largetext', timeout => 15, button => 'left');
     #Go to overlay scrollbars-toggle on
-    assert_and_click('app_settings_accessibility_overlay_scrollbar_on', timeout => 15, button => 'left');
+    assert_and_click('a11y_always_show_scrollbar_on', timeout => 15, button => 'left');
     # Go to overlay scrollbars-toggle off
-    assert_and_click('app_settings_accessibility_overlay_scrollbar_off', timeout => 15, button => 'left');
+    assert_and_click('a11y_always_show_scrollbar_off', timeout => 15, button => 'left');
        
    close_app;
 }
