@@ -12,17 +12,17 @@ sub run {
     
     type_string('acc');
     # Go to accessibility Section
-    assert_and_click('app_settings_accessibility_button', timeout => 15, button => 'left');
+    assert_and_click('a11y_button', timeout => 15, button => 'left');
     # Go to Seeing Section
-    assert_and_click('app_settings_accessibility_seeing', timeout => 15, button => 'left');
+    assert_and_click('a11y_seeing', timeout => 15, button => 'left');
     # Switch on contrast
-    assert_and_click('app_settings_accessibility_contrast', timeout => 15, button => 'left');
+    assert_and_click('a11y_contrast', timeout => 15, button => 'left');
     # Switch off contrast
-    assert_and_click('app_settings_no_contrast', timeout => 15, button => 'left');
+    assert_and_click('a11y_no_contrast', timeout => 15, button => 'left');
     # Switch on Large Text
-    assert_and_click('app_settings_accessibility_largetext', timeout => 15, button => 'left');
+    assert_and_click('a11y_largetext', timeout => 15, button => 'left');
     # Switch on Large Text
-    assert_and_click('app_settings_no_largetext', timeout => 15, button => 'left');
+    assert_and_click('a11y_no_largetext', timeout => 15, button => 'left');
     #Go to overlay scrollbars-toggle on
     assert_and_click('a11y_always_show_scrollbar_on', timeout => 15, button => 'left');
     # Go to overlay scrollbars-toggle off
