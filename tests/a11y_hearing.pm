@@ -1,11 +1,11 @@
-use base 'a11y_test';
+use base 'app_test';
 use strict;
 use warnings;
 use testapi;
 use gnomeutils;
 
 sub run {
-    start_a11y('gnome-control-center');
+    start_app('gnome-control-center');
     # ///////// TESTS RELATED TO HEARING ACCESSIBILITY ///////////
     
     # Go to Hearing Section
@@ -34,7 +34,7 @@ sub run {
     wait_still_screen(5);
      # Disable Visual alerts when alert sound occurs
     assert_and_click('a11y_disable_visual_alerts', timeout => 15, button => 'left');
-    close_a11y;
+    close_app;
 }
 
 sub test_flags {
