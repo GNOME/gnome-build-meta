@@ -50,10 +50,10 @@ sub close_app {
 
 sub a11y_setup_test {
     start_app('gnome-control-center');
-    assert_screen(['a11y_settings_accessibility_panel', 'app_settings_startup']) ;   # assert_screen('app_settings_startup');
-    if (!match_has_tag("app_settings_startup")){
+    assert_screen(['a11y_settings_accessibility_panel', 'app_settings_startup']) ;   
+    if (!match_has_tag("app_settings_startup")) {
         assert_screen('a11y_settings_accessibility_panel') 
-    }else{
+    } else {
         type_string('acc');
         assert_and_click('a11y_button', timeout => 15, button => 'left');  
     }  
