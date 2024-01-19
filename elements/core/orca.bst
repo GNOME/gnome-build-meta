@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: ORCA_46_ALPHA-2-gbf5c0733c6fff9c2a926992cd7c233907f100c60
+  ref: ORCA_46_ALPHA-9-g837c31e9da85d70bbe054db9107624d797918cfd
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
