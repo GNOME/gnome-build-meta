@@ -1,7 +1,6 @@
 use base 'basetest';
 use strict;
 use testapi;
-use bootloader;
 
 sub run {
     # Log out console user - otherwise this will block shutdown.

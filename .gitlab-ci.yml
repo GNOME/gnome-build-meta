@@ -7,8 +7,8 @@ variables:
   OPENQA_TESTS_BRANCH: master
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
   OPENQA_NEEDLES_BRANCH: master
-  S3_ISO_IMAGE_URL: https://os.gnome.org/download/latest/gnome_os_installer.iso
-  S3_DISK_IMAGE_URL: https://os.gnome.org/download/latest/gnome_os_disk.img.xz
+  S3_ISO_IMAGE_URL: https://os.gnome.org/download/latest/installer_sysupdate_x86_64.iso
+  S3_DISK_IMAGE_URL: https://os.gnome.org/download/latest/disk_sysupdate_x86_64.img.xz
 
 stages:
 - test
@@ -32,7 +32,7 @@ test-s3-image:
     echo "Calculating checksums of test media"
     sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
-    utils/expand_disk.sh /data/factory/hdd/disk.img 12 GB
+    utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
   script:
   - |
     rm /etc/openqa/*
@@ -41,6 +41,9 @@ test-s3-image:
     key = $OPENQA_API_KEY
     secret = $OPENQA_API_SECRET
     EOF
+  - |
+    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
+    ln -s $(pwd) /tests
   - |
     worker_class=qemu_x86_64-${CI_JOB_ID}
     utils/setup_worker.sh ${worker_class}

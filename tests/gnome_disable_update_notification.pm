@@ -9,6 +9,7 @@ sub run {
     # appears over the top.
     select_console('user-virtio-terminal');
     assert_script_run('gsettings set org.gnome.desktop.notifications.application:/org/gnome/desktop/notifications/application/org-gnome-software/ enable false');
+    assert_script_run('cat /proc/cmdline');
     select_console('x11');
 }
 
