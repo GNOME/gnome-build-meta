@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.2-45-gebb1d34160d672b32ba9546bfd4930de1d48a1f7
+  ref: 0.1.2-59-g08873ef0c6a9d67e34d67a1d29726dec51baa54d
 - kind: cargo
 
   ref:
@@ -101,6 +101,9 @@ sources:
   - name: blocking
     version: 1.5.1
     sha: 6a37913e8dc4ddcc604f0c6d3bf2887c995153af3611de9e23c352b44c1b9118
+  - name: bumpalo
+    version: 3.14.0
+    sha: 7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec
   - name: bytemuck
     version: 1.14.0
     sha: 374d28ec25809ee0e23827c2ab573d729e293f281dfe393500e7ad618baa61c6
@@ -167,12 +170,30 @@ sources:
   - name: cssparser-macros
     version: 0.6.1
     sha: 13b588ba4ac1a99f7f2964d24b3d896ddc6bf847ee3855dbd4366f058cfcd331
+  - name: darling
+    version: 0.14.4
+    sha: 7b750cb3417fd1b327431a470f388520309479ab0bf5e323505daf0290cd3850
+  - name: darling_core
+    version: 0.14.4
+    sha: 109c1ca6e6b7f82cc233a97004ea8ed7ca123a9af07a8230878fcfda9b158bf0
+  - name: darling_macro
+    version: 0.14.4
+    sha: a4aab4dbc9f7611d8b55048a3a16d2d010c2c8334e46304b40ac1cc14bf3b48e
   - name: data-url
     version: 0.3.1
     sha: 5c297a1c74b71ae29df00c3e22dd9534821d60eb9af5a0192823fa2acea70c2a
   - name: derivative
     version: 2.2.0
     sha: fcc3dd5e9e9c0b295d6e1e4d811fb6f157d5ffd784b8d202fc62eac8035a770b
+  - name: derive_builder
+    version: 0.12.0
+    sha: 8d67778784b508018359cbc8696edb3db78160bab2c2a28ba7f56ef6932997f8
+  - name: derive_builder_core
+    version: 0.12.0
+    sha: c11bdc11a0c47bc7d37d582b5285da6849c96681023680b906673c5707af7b0f
+  - name: derive_builder_macro
+    version: 0.12.0
+    sha: ebcda35c7a396850a55ffeac740804b40ffec779b98fffbb1738f4033f0ee79e
   - name: derive_more
     version: 0.99.17
     sha: 4fb810d30a7c1953f91334de7244731fc3f3c10d7fe163338a35b9f640960321
@@ -222,8 +243,8 @@ sources:
     version: 0.4.0
     sha: 958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3
   - name: exr
-    version: 1.71.0
-    sha: 832a761f35ab3e6664babfbdc6cef35a4860e816ec3916dcfd0882954e98a8a8
+    version: 1.6.4
+    sha: 279d3efcc55e19917fff7ab3ddd6c14afb6a90881a0078465196fe2f99d08c56
   - name: fastrand
     version: 1.9.0
     sha: e51093e27b0797c359783294ca4f0a911c270184cb10f85783b118614a1501be
@@ -240,8 +261,11 @@ sources:
     version: 0.9.0
     sha: 98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4
   - name: flume
-    version: 0.11.0
-    sha: 55ac459de2512911e4b674ce33cf20befaba382d05b62b008afc1c8b57cbf181
+    version: 0.10.14
+    sha: 1657b4441c3403d9f7b3409e47575237dac27b1b5726df654a6ecbf92f0f7577
+  - name: fnv
+    version: 1.0.7
+    sha: 3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1
   - name: foreign-types
     version: 0.5.0
     sha: d737d9aa519fb7b749cbc3b962edcf310a8dd1f4b67c91c4f83975dbdd17d965
@@ -345,8 +369,8 @@ sources:
     version: 0.18.0
     sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
   - name: half
-    version: 2.2.1
-    sha: 02b4af3693f1b705df946e9fe5631932443781d0aabb423b62fcd4d73f6d2fd0
+    version: 2.3.1
+    sha: bc52e53916c08643f1b56ec082790d1e86a32e58dc5268f897f313fbae7b4872
   - name: hashbrown
     version: 0.14.3
     sha: 290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604
@@ -362,6 +386,9 @@ sources:
   - name: home
     version: 0.5.9
     sha: e3d1354bf6b7235cb4a0576c2619fd4ed18183f689b12b006a0ee7329eeff9a5
+  - name: ident_case
+    version: 1.0.1
+    sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - name: idna
     version: 0.5.0
     sha: 634d9b1461af396cad843f47fdba5597a4f9e6ddd4bfb6ff5d85028c25cb12f6
@@ -389,39 +416,15 @@ sources:
   - name: jpeg-decoder
     version: 0.3.1
     sha: f5d4a7da358eff58addd2877a45865158f0d78c911d43a5784ceb7bbf52833b0
-  - name: jxl-bitstream
-    version: 0.3.1
-    sha: 9f38d3c6ae8012e380ff73d5c9265d7a60acc618821d0fb40545c02735223762
-  - name: jxl-coding
-    version: 0.3.0
-    sha: 851149f14415943e525e6259ddff212a1f507e0b12ee6f9fc0fa5266bea88891
-  - name: jxl-color
-    version: 0.5.0
-    sha: 3eaa098ef84ea4f31fe4f2d93c8737fc9c88d3f3bee18334e3a78aa6b5c0e738
-  - name: jxl-frame
-    version: 0.7.0
-    sha: 54f386640d4e9e63e876c941191000c49bc6ddef7d719c176fd7d0c735839c02
-  - name: jxl-grid
-    version: 0.3.0
-    sha: f4a85129ecf79ca5f6a37ae291b67195a3021b2e445194745728be1b5bf667bf
-  - name: jxl-image
-    version: 0.7.0
-    sha: 35ae2850f735f9794bfc7ee58ae8178e16a6dc7d08cc3f245820d6c37b9bd5bb
-  - name: jxl-modular
-    version: 0.5.0
-    sha: f955512f2921af085d8e55df35cd733ec1e7deeea05a5c3b056d4d0b2b82f70e
-  - name: jxl-oxide
-    version: 0.6.0
-    sha: ec1bb65f27171804ad8e8710477fd592eec6d369d8cd7951f5179edbfe4c5cb4
-  - name: jxl-render
-    version: 0.6.0
-    sha: c8b2eddafe85e2b2ef6730526cb5acee02847c0efaa8f54356fe9fd70bc45392
-  - name: jxl-threadpool
-    version: 0.1.0
-    sha: dcd3e9cf51745c0f4e86cd728c2725d62f0d1c8611a10307e96c2af6226db291
-  - name: jxl-vardct
-    version: 0.5.0
-    sha: 81a3af6c6cbe9de190dc441a687b3b5d08bed4368428516f5bcd793fc5955184
+  - name: jpegxl-rs
+    version: 0.8.3+libjxl-0.8.2
+    sha: 35d93499577a4b5072cc59b6c45436f42854209152ecbcfd1e88aa1b45883d70
+  - name: jpegxl-sys
+    version: 0.8.2+libjxl-0.8.2
+    sha: b907f540220390b54d9845eb5fe6a8f0453a0ea4f1e2e306cdbdbe8ee027d540
+  - name: js-sys
+    version: 0.3.67
+    sha: 9a1d36f1235bc969acba30b7f5990b864423a6068a10f7c90ae8f0112e3a59d1
   - name: kamadak-exif
     version: 0.5.5
     sha: ef4fc70d0ab7e5b6bafa30216a6b48705ea964cdfc29c050f2412295eba58077
@@ -518,6 +521,9 @@ sources:
   - name: nalgebra-macros
     version: 0.2.1
     sha: 91761aed67d03ad966ef783ae962ef9bbaca728d2dd7ceb7939ec110fffad998
+  - name: nanorand
+    version: 0.7.0
+    sha: 6a51313c5820b0b02bd422f4b44776fbf47961755c74ce64afc73bfad10226c3
   - name: new_debug_unreachable
     version: 1.0.4
     sha: e4a24736216ec316047a1fc4252e27dabb04218aa4a3f37c6e7ddbf1f9782b54
@@ -614,6 +620,12 @@ sources:
   - name: phf_shared
     version: 0.11.2
     sha: 90fcb95eef784c2ac79119d1dd819e162b5da872ce6f3c3abe1e8ca1c082f72b
+  - name: pin-project
+    version: 1.1.3
+    sha: fda4ed1c6c173e3fc7a83629421152e01d7b1f9b7f65fb301e490e8cfc656422
+  - name: pin-project-internal
+    version: 1.1.3
+    sha: 4359fd9c9171ec6e8c62926d6faaf553a8dc3f64e1507e76da7911b4f6a04405
   - name: pin-project-lite
     version: 0.2.13
     sha: 8afb450f006bf6385ca15ef45d71d2288452bc3683ce2e2cacc0d18e4be60b58
@@ -747,8 +759,8 @@ sources:
     version: 0.10.6
     sha: e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba
   - name: shlex
-    version: 1.2.0
-    sha: a7cee0529a6d40f580e7a5e6c495c8fbfe21b7b52795ed4bb5e62cdf92bc6380
+    version: 1.3.0
+    sha: 0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64
   - name: signal-hook-registry
     version: 1.4.1
     sha: d8229b473baa5980ac72ef434c4415e70c4b5e71b423043adb4ba059f89c99a1
@@ -788,6 +800,9 @@ sources:
   - name: string_cache_codegen
     version: 0.5.2
     sha: 6bb30289b722be4ff74a408c3cc27edeaad656e06cb1fe8fa9231fa59c728988
+  - name: strsim
+    version: 0.10.0
+    sha: 73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623
   - name: syn
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
@@ -887,6 +902,21 @@ sources:
   - name: wasi
     version: 0.11.0+wasi-snapshot-preview1
     sha: 9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423
+  - name: wasm-bindgen
+    version: 0.2.90
+    sha: b1223296a201415c7fad14792dbefaace9bd52b62d33453ade1c5b5f07555406
+  - name: wasm-bindgen-backend
+    version: 0.2.90
+    sha: fcdc935b63408d58a32f8cc9738a0bffd8f05cc7c002086c6ef20b7312ad9dcd
+  - name: wasm-bindgen-macro
+    version: 0.2.90
+    sha: 3e4c238561b2d428924c49815533a8b9121c664599558a5d9ec51f8a1740a999
+  - name: wasm-bindgen-macro-support
+    version: 0.2.90
+    sha: bae1abb6806dc1ad9e560ed242107c0f6c84335f1749dd4e8ddb012ebd5e25a7
+  - name: wasm-bindgen-shared
+    version: 0.2.90
+    sha: 4d91413b1c31d7539ba5ef2451af3f0b833a005eb27a631cec32bc0635a8602b
   - name: weezl
     version: 0.1.7
     sha: 9193164d4de03a926d909d3bc7c30543cecb35400c02114792c2cae20d5e2dbb
@@ -995,8 +1025,10 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk-deps/highway.bst
 
 depends:
 - core-deps/libheif.bst
 - sdk/gtk.bst
+- sdk/libjxl.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
