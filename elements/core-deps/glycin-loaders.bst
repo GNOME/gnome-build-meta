@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.2-42-g3c2a27ba56226b5eb9956790d17cc94faa1bd74f
+  ref: 0.1.2-45-gebb1d34160d672b32ba9546bfd4930de1d48a1f7
 - kind: cargo
 
   ref:
@@ -765,8 +765,8 @@ sources:
     version: 0.4.9
     sha: 8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67
   - name: smallvec
-    version: 1.13.0
-    sha: 3b187f0231d56fe41bfb12034819dd2bf336422a5866de41bc3fec4b2e3883e8
+    version: 1.13.1
+    sha: e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7
   - name: socket2
     version: 0.4.10
     sha: 9f7916fc008ca5542385b89a3d3ce689953c143e9304a9bf8beec1de48994c0d
