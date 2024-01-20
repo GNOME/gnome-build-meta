@@ -15,9 +15,9 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/libgusb.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:components/pixman.bst
-- core-deps/libgusb.bst
 - sdk/glib.bst
 - sdk/cairo.bst

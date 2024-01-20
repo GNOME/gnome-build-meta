@@ -14,8 +14,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libgusb.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/gpgme.bst
+- freedesktop-sdk.bst:components/libgusb.bst
