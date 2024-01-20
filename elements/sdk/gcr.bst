@@ -5,6 +5,8 @@ sources:
   url: gnome:gcr.git
   track: master
   ref: 4.2.0-1-g8e54bb6cd5af1c7f97795e0bb2732be2b2ccb42f
+- kind: local
+  path: files/gcr/50-gcr-ssh-agent
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -33,3 +35,9 @@ public:
         - '%{libdir}/libgcr-4.so'
         - '%{libdir}/libgcr-4-gtk3.so'
         - '%{libdir}/libgcr-4-gtk4.so'
+
+config:
+  install-commands:
+    (>):
+    - |
+      install -Dm755 -t '%{install-root}%{indep-libdir}/systemd/user-environment-generators' 50-gcr-ssh-agent
