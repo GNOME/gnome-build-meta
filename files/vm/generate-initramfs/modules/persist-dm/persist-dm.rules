@@ -1,0 +1,1 @@
+SUBSYSTEM=="block", ACTION=="add|change|move|bind", KERNEL=="dm-[0-9]*", OPTIONS+="db_persist"
