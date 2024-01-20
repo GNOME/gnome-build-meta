@@ -19,6 +19,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/show_core_dumps.pm");
     autotest::loadtest("tests/gnome_shutdown.pm");
 } elsif ($testsuite eq "gnome_apps") {
     autotest::loadtest("tests/gnome_welcome.pm");
@@ -53,6 +54,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_simple_scan.pm");
     autotest::loadtest("tests/app_totem.pm");
     autotest::loadtest("tests/app_yelp.pm");
+    autotest::loadtest("tests/show_core_dumps.pm");
 
 } elsif ($testsuite eq "gnome_accessibility") {
     autotest::loadtest("tests/gnome_welcome.pm");
