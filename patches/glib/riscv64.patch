@@ -1,0 +1,16 @@
+diff --git a/gio/glocalfileinfo.h b/gio/glocalfileinfo.h
+index b098b198..a3431c0f 100644
+--- a/gio/glocalfileinfo.h
++++ b/gio/glocalfileinfo.h
+@@ -93,6 +93,11 @@ g_local_file_statx (int                  dirfd,
+   mask_required &= mask;
+ 
+   retval = statx (dirfd, pathname, flags, mask, stat_buf);
++  if (retval == 0 && stat_buf->stx_mask == 0)
++    {
++      // Work-around qemu-user bug.
++      retval = statx (dirfd, pathname, flags, mask, stat_buf);
++    }
+   if (retval == 0 && (stat_buf->stx_mask & mask_required) != mask_required)
+     {
+       /* Not all required fields could be returned. */
