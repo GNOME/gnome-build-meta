@@ -1,0 +1,74 @@
+diff -ur webkitgtk-6.0-old/Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h webkitgtk-6.0/Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
+--- webkitgtk-6.0-old/Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h	2024-01-19 10:09:45.442782402 +0100
++++ webkitgtk-6.0/Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h	2024-02-11 09:14:48.359492780 +0100
+@@ -4436,6 +4436,7 @@
+     void testFinalize(ResultCondition cond, RegisterID src, RegisterID dest)
+     {
+         switch (cond) {
++        case Carry:
+         case Overflow:
+         case Signed:
+         case PositiveOrZero:
+diff -ur webkitgtk-6.0-old/Source/JavaScriptCore/assembler/RISCV64Assembler.h webkitgtk-6.0/Source/JavaScriptCore/assembler/RISCV64Assembler.h
+--- webkitgtk-6.0-old/Source/JavaScriptCore/assembler/RISCV64Assembler.h	2024-01-11 13:03:30.465757846 +0100
++++ webkitgtk-6.0/Source/JavaScriptCore/assembler/RISCV64Assembler.h	2024-02-11 09:17:15.295720351 +0100
+@@ -28,6 +28,7 @@
+ #if ENABLE(ASSEMBLER) && CPU(RISCV64)
+ 
+ #include "AssemblerBuffer.h"
++#include "AssemblerCommon.h"
+ #include "RISCV64Registers.h"
+ #include <tuple>
+ 
+diff -ur webkitgtk-6.0-old/Source/JavaScriptCore/llint/LowLevelInterpreter64.asm webkitgtk-6.0/Source/JavaScriptCore/llint/LowLevelInterpreter64.asm
+--- webkitgtk-6.0-old/Source/JavaScriptCore/llint/LowLevelInterpreter64.asm	2024-02-02 09:45:34.968390703 +0100
++++ webkitgtk-6.0/Source/JavaScriptCore/llint/LowLevelInterpreter64.asm	2024-02-11 09:14:48.363492787 +0100
+@@ -255,7 +255,9 @@
+     addp CallFrameHeaderSlots, t4, t4
+     lshiftp 3, t4
+     subp sp, t4, t3
+-    bqbeq sp, t3, _llint_throw_stack_overflow_error_from_vm_entry
++    bqa sp, t3, .noOverflow
++    jmp _llint_throw_stack_overflow_error_from_vm_entry
++.noOverflow:
+ 
+     # Ensure that we have enough additional stack capacity for the incoming args,
+     # and the frame for the JS code we're executing. We need to do this check
+@@ -277,7 +279,10 @@
+ .stackHeightOK:
+         move t3, sp
+     else
+-        bpb t3, VM::m_softStackLimit[vm],  _llint_throw_stack_overflow_error_from_vm_entry
++        bpaeq t3, VM::m_softStackLimit[vm], .noOverflow2
++        jmp _llint_throw_stack_overflow_error_from_vm_entry
++.noOverflow2:
++
+         move t3, sp
+     end
+ 
+diff -ur webkitgtk-6.0-old/Source/JavaScriptCore/wasm/WasmTypeDefinition.h webkitgtk-6.0/Source/JavaScriptCore/wasm/WasmTypeDefinition.h
+--- webkitgtk-6.0-old/Source/JavaScriptCore/wasm/WasmTypeDefinition.h	2024-01-30 10:02:12.366744756 +0100
++++ webkitgtk-6.0/Source/JavaScriptCore/wasm/WasmTypeDefinition.h	2024-02-11 09:14:48.363492787 +0100
+@@ -46,9 +46,7 @@
+ #include <wtf/ThreadSafeRefCounted.h>
+ #include <wtf/Vector.h>
+ 
+-#if ENABLE(WEBASSEMBLY_OMGJIT) || ENABLE(WEBASSEMBLY_BBQJIT)
+ #include "B3Type.h"
+-#endif
+ 
+ #if HAVE(36BIT_ADDRESS)
+ #define RTT_ALIGNMENT alignas(16)
+@@ -271,6 +269,12 @@
+     return B3::Void;
+ }
+ #undef CREATE_CASE
++#else
++inline B3::Type toB3Type(Type)
++{
++    RELEASE_ASSERT_NOT_REACHED();
++    return B3::Void;
++}
+ #endif
+ 
+ constexpr size_t typeKindSizeInBytes(TypeKind kind)
