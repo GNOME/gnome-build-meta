@@ -37,3 +37,10 @@ variables:
   meson-local: >-
     -Diptc=disabled
     -Dminer_rss=false
+    %{arch-options}
+
+  arch-options: ''
+  (?):
+  - arch in ["riscv64"]:
+      arch-options: >-
+        -Dlandlock=disabled
