@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.43.4.tar.xz
   ref: 80545ddc4edbb249f302d7235c54d0a0823b6f61ddf96a80f2f334e89a35caeb
+- kind: patch
+  path: patches/webkitgtk/riscv64.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
