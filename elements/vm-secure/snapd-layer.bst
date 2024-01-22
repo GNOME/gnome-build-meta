@@ -94,8 +94,7 @@ config:
     EOF
 
   - |
-    mkdir -p /var
-    ln -s /tmp /var/tmp
+    mkdir -p /var/tmp
 
   - |
     SYSTEMD_LOG_LEVEL=debug \
