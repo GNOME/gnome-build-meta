@@ -16,7 +16,7 @@ depends:
 - vm-secure/import-deployment-pub-key.bst
 - vm-secure/os-release-user.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
-- core-deps/fwupd-efi-signed.bst
+- vm-secure/fwupd-efi-signed-maybe.bst
 - vm-secure/replace-signed-systemd-boot.bst
 - vm-secure/efitools.bst
 - vm-secure/reload-sysext.bst
