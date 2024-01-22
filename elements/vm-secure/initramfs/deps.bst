@@ -16,8 +16,8 @@ depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 - vm/plymouth-gnome-theme.bst
 - vm-secure/initramfs/signed-modules.bst
-- vm-secure/efitools.bst
-- vm-secure/shim.bst
+- vm-secure/efitools-maybe.bst
+- vm-secure/shim-maybe.bst
 - vm-secure/os-release-user.bst
 - vm-secure/replace-signed-systemd-boot.bst
 

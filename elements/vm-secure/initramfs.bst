@@ -64,16 +64,24 @@ config:
     ) >"%{install-root}/usr/lib/modules/${version}/initramfs.img"
 
   - |
-    mkdir -p '%{install-root}/efi/loader/keys/auto'
-    for key in PK KEK DB; do
-      cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
-    done
+    case "%{arch}" in
+      x64_64|aarch64)
+        mkdir -p '%{install-root}/efi/loader/keys/auto'
+        for key in PK KEK DB; do
+          cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
+        done
+      ;;
+    esac
 
   - |
-    mkdir -p '%{install-root}/efi/loader/keys/private'
-    for key in PK KEK DB; do
-      cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
-    done
+    case "%{arch}" in
+      x64_64|aarch64)
+        mkdir -p '%{install-root}/efi/loader/keys/private'
+        for key in PK KEK DB; do
+          cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
+        done
+      ;;
+    esac
 
   - mkdir -p "%{install-root}/efi/EFI"
   - cp -rT /efi/EFI "%{install-root}/efi/EFI"
