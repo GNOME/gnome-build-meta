@@ -16,6 +16,7 @@ our @EXPORT = qw(
     run_command
     start_app
     close_app
+    a11y_setup_test
 );
 
 sub run_command {
@@ -45,6 +46,18 @@ sub start_app {
 sub close_app {
     wait_screen_change { send_key('alt-f4') };
     assert_screen('desktop_empty')  unless match_has_tag('generic-desktop');
+}
+
+sub a11y_setup_test {
+    start_app('gnome-control-center');
+    assert_screen(['a11y_settings_accessibility_panel', 'app_settings_startup']) ;   
+    if (!match_has_tag("app_settings_startup")) {
+        assert_screen('a11y_settings_accessibility_panel') 
+    } else {
+        type_string('acc');
+        assert_and_click('a11y_button', timeout => 15, button => 'left');  
+    }  
+   
 }
 
 1;

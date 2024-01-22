@@ -60,9 +60,12 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
-    autotest::loadtest("tests/a11y_seeing.pm");
+    autotest::loadtest("tests/a11y_high_contrast.pm");
+    autotest::loadtest("tests/a11y_large_text.pm");
+    autotest::loadtest("tests/a11y_overlay_scrollbar.pm");
+    autotest::loadtest("tests/a11y_over_amplification.pm");
+    autotest::loadtest("tests/a11y_visual_alerts.pm");
     autotest::loadtest("tests/a11y_text_to_speech.pm");
-    autotest::loadtest("tests/a11y_hearing.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
     autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
