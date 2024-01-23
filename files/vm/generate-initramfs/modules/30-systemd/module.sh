@@ -89,6 +89,7 @@ UNITS+=(
 )
 
 UNITS+=(
+    modprobe@.service
     debug-shell.service
     emergency.service
     systemd-confext.service
