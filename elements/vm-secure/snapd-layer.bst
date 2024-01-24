@@ -53,8 +53,7 @@ config:
     C /etc/apparmor.d
     f /etc/profile.d/snapd.sh
     f /etc/xdg/autostart/snap-userd-autostart.desktop
-    d /var/lib/snapd/snap
-    L+ /snap - - - - /var/lib/snapd/snap
+    d /snap
     EOF
 
   - |
