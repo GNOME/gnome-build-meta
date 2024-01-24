@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.alpha-12-gc5685b5b5ec4fe90732746ab145dee2027309a63
+  ref: 46.alpha-18-g4e81bc8136878aaa5c29ed613c1711d0c7dd35a9
 - kind: cargo
 
   ref:
@@ -291,11 +291,11 @@ sources:
     version: 0.2.6
     sha: 9b995a66bb87bebce9a0f4a95aed01daca4872c050bfcb21653361c03bc35e5c
   - name: glycin
-    version: 1.0.0-alpha.2
-    sha: 78dd20ce3bde5b9852e73990838c494b661a7ce48d8083e69638439e1d4cf55f
+    version: 1.0.0-alpha.3
+    sha: b32d07bba79724f3dc4523aa66434369b938296adbad02d71a657e46fd4048ed
   - name: glycin-utils
-    version: 1.0.0-alpha.2
-    sha: 040bc5c15bd3e2c05a08f9e474a1f8ad70a42ee736842dfa9727ce0b2e2342a4
+    version: 1.0.0-alpha.3
+    sha: 3524a7bced399319dbfab49c3bbe28486243407284bebc0757bcae24f6a509de
   - name: gobject-sys
     version: 0.18.0
     sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
@@ -390,8 +390,8 @@ sources:
     version: 0.5.3
     sha: 5e10aaa38de1d53374f90deeb4535209adc40cc5dba37f9704724169bceec69a
   - name: libc
-    version: 0.2.151
-    sha: 302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4
+    version: 0.2.152
+    sha: 13e3bf6590cbc649f4d1a3eefc9d5d6eb746f5200ffb04e5e142700b8faa56e7
   - name: libgweather
     version: 4.3.1
     sha: 5b77923d651d79939ebbd6bcbb7086d2cba1db93c325e93e0b1d3fe56f66ea5c

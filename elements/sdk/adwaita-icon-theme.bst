@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:adwaita-icon-theme.git
   track: master
-  ref: 46.alpha-10-g60f428ac02cb584d83ec664ad9eeb9c10ffa49aa
+  ref: 46.alpha-11-geaf827dc69820e1a1c51f61f25979bcb6b091b00
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
