@@ -43,3 +43,8 @@ variables:
     -DJPEGXL_STATIC=OFF
     -DJPEGXL_TEST_TOOLS=OFF
     -DJPEGXL_WARNINGS_AS_ERRORS=OFF
+
+config:
+  install-commands:
+    (>):
+    - sed -i /Requires.private/d %{install-root}%{libdir}/pkgconfig/libjxl.pc
