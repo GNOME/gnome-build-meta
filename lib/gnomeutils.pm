@@ -17,6 +17,7 @@ our @EXPORT = qw(
     start_app
     close_app
     a11y_setup_test
+    resize_app_to_mobile
 );
 
 sub run_command {
@@ -41,6 +42,13 @@ sub start_app {
     run_command($command);
 
     wait_still_screen(2);
+}
+
+sub resize_app_to_mobile {
+    start_app('lg');
+    type_string('global.display.get_focus_window().move_resize_frame(false, 0, 0, 360, 720)');
+    send_key('ret');
+    send_key('esc');
 }
 
 sub close_app {
