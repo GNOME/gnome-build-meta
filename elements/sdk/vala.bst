@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vala.git
   track: main
-  ref: 0.57.0-232-g8d5afc9a9c7f4a4bbf78e906b83dad7c277eea3c
+  ref: 0.57.0-234-gfee6dadcd4a8cc772c190a3e6bf9820f8fe2041e
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
