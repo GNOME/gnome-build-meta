@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gi-docgen.git
   track: main
-  ref: 2023.3-32-g6ac12ce3d0515aca35f3471d8efaea8b2a499a90
+  ref: 2023.3-34-gb863a7d5c9cce405af357b05567719deb94c8c2e
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
