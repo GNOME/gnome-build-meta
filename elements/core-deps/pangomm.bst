@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pangomm.git
   track: master
-  ref: 2.50.1-18-gf885562b954b10f55c3b4987264b378dedf025ed
+  ref: 2.50.2-0-g4b1bd46747433b5f58f03af0de94319294e5af4e
 
 build-depends:
 - core-deps/graphviz.bst
