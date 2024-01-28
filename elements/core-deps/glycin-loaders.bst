@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.2-47-g428c9413e65e977c2f180283fa5d2b228329d3cb
+  ref: 0.1.2-63-g81a1de2427cc8d05db78ad54338012892027ca24
 - kind: cargo
 
   ref:
@@ -459,8 +459,8 @@ sources:
     version: 0.8.1
     sha: c571b676ddfc9a8c12f1f3d3085a7b163966a8fd8098a90640953ce5f6170161
   - name: librsvg
-    version: 2.57.1
-    sha: a7411554079bdc0af967356757e6c9b1a60fba1aa7ee95d9c80e170be8ea4892
+    version: 2.58.0-beta.0
+    sha: 15cae2c563ada9fd1fc7a9778c9eed149a105453fdc81095defdd5dd375de440
   - name: linux-raw-sys
     version: 0.3.8
     sha: ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519
@@ -669,8 +669,8 @@ sources:
     version: 1.0.4
     sha: a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869
   - name: proc-macro2
-    version: 1.0.76
-    sha: 95fc56cda0b5c3325f5fbbd7ff9fda9e02bb00bb3dac51252d2f1bfa1cb8cc8c
+    version: 1.0.78
+    sha: e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae
   - name: qoi
     version: 0.4.1
     sha: 7f6d64c71eb498fe9eae14ce4ec935c555749aef511cca85b5568910d6e48001
@@ -702,11 +702,11 @@ sources:
     version: 0.4.1
     sha: 4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa
   - name: regex
-    version: 1.10.2
-    sha: 380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343
+    version: 1.10.3
+    sha: b62dbe01f0b06f9d8dc7d49e05a0785f153b00b2c227856282f671e0318c9b15
   - name: regex-automata
-    version: 0.4.3
-    sha: 5f804c7828047e88b2d32e2d7fe5a105da8ee3264f01902f796c8e067dc2483f
+    version: 0.4.4
+    sha: 3b7fa1134405e2ec9353fd416b17f8dacd46c473d7d3fd1cf202706a14eb792a
   - name: regex-syntax
     version: 0.8.2
     sha: c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f
@@ -759,8 +759,8 @@ sources:
     version: 0.10.6
     sha: e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba
   - name: shlex
-    version: 1.2.0
-    sha: a7cee0529a6d40f580e7a5e6c495c8fbfe21b7b52795ed4bb5e62cdf92bc6380
+    version: 1.3.0
+    sha: 0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64
   - name: signal-hook-registry
     version: 1.4.1
     sha: d8229b473baa5980ac72ef434c4415e70c4b5e71b423043adb4ba059f89c99a1
@@ -918,14 +918,14 @@ sources:
     version: 0.2.90
     sha: 4d91413b1c31d7539ba5ef2451af3f0b833a005eb27a631cec32bc0635a8602b
   - name: weezl
-    version: 0.1.7
-    sha: 9193164d4de03a926d909d3bc7c30543cecb35400c02114792c2cae20d5e2dbb
+    version: 0.1.8
+    sha: 53a85b86a771b1c87058196170769dd264f66c0782acf1ae6cc51bfd64b39082
   - name: which
     version: 4.4.2
     sha: 87ba24419a2078cd2b0f2ede2691b6c66d8e47836da3b6db8265ebad47afbfc7
   - name: wide
-    version: 0.7.13
-    sha: c68938b57b33da363195412cfc5fc37c9ed49aa9cfe2156fde64b8d2c9498242
+    version: 0.7.14
+    sha: b31891d644eba1789fb6715f27fbc322e4bdf2ecdc412ede1993246159271613
   - name: winapi
     version: 0.3.9
     sha: 5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419
