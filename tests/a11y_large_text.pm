@@ -11,7 +11,7 @@ sub run {
      # Switch on Large Text
     assert_and_click('a11y_largetext', timeout => 15, button => 'left');
     # Switch on Large Text
-    assert_and_click('a11y_no_largetext', timeout => 15, button => 'left');
+    assert_and_click('a11y_large_text', timeout => 15, button => 'left',point_id => 'disable');
     close_app;
 }
 
