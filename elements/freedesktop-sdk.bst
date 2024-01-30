@@ -15,6 +15,8 @@ sources:
   path: patches/freedesktop-sdk/0001-components-linux-Enable-SECURITY_LANDLOCK.patch
 - kind: patch
   path: patches/freedesktop-sdk/17069.patch
+- kind: patch
+  path: patches/freedesktop-sdk/17293.patch
 
 config:
   options:
