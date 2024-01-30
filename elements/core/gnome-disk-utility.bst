@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-disk-utility.git
-  track: master
-  ref: 44.0-70-gb7866c2ee36c244bc9495f9969c5e8f726892f79
+  track: main
+  ref: 44.0-71-g95fde6b02b31337c8f456f9049d828c5d95d90c3
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
