@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.49.0-10-gc664b3765ebc857c5e48e9ffecfe4750cc16078e
+  ref: 3.49.0-17-g62cca5f52bcbdb9d863fbb968e04f22013fa6a75
 
 build-depends:
 - sdk/gobject-introspection.bst
