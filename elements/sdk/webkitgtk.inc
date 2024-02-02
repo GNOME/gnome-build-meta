@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.43.3.tar.xz
-  ref: 738564bf3af6d96af91b644c84f7c5aaf499fdefddc435a2734fa7f2d45adb09
+  url: webkitgtk:webkitgtk-2.43.4.tar.xz
+  ref: 80545ddc4edbb249f302d7235c54d0a0823b6f61ddf96a80f2f334e89a35caeb
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -37,7 +37,6 @@ depends:
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xdg-dbus-proxy.bst
