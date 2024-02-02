@@ -54,5 +54,5 @@ job_templates:
     machine: qemu_x86_64
     settings:
       HDD_1: /disk.img
-      XRES: 720
-      YRES: 1440
+      XRES: '720'
+      YRES: '1440'
