@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:folks.git
   track: master
-  ref: 0.15.7-3-g127bacf86b7ef639c37dd07afc0bf848c005c3c2
+  ref: 0.15.7-4-g496f08dca9b3b187d3a43fa9d8a8b4b3fe00ed52
 
 build-depends:
 - sdk/gobject-introspection.bst
