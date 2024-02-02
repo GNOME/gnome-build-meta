@@ -57,6 +57,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/show_core_dumps.pm");
 
 } elsif ($testsuite eq "gnome_accessibility") {
+    $testapi::form_factor_postfix = '';
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
@@ -69,6 +70,10 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_zoom.pm");
     autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
+} elsif ($testsuite eq "gnome_mobile") {
+    $testapi::form_factor_postfix = '_mobile';
+    autotest::loadtest("tests/gnome_welcome.pm");
+    autotest::loadtest("tests/mobile_enable_fractional_scaling.pm");
 } else {
     die("Invalid testsuite: '$testsuite'");
 }

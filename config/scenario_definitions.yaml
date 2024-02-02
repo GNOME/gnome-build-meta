@@ -49,3 +49,10 @@ job_templates:
     machine: qemu_x86_64
     settings:
       HDD_1: /disk.img
+  gnome_mobile:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      HDD_1: /disk.img
+      XRES: 720
+      YRES: 1440
