@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.10-0-gc8451ccd979b9f7a184e8db32a8867032bf874ff
+  ref: freedesktop-sdk-23.08.11-0-g2ad72aa8df3b264edde46d5015ed0b598ff90a1c
 - kind: patch
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
@@ -13,10 +13,6 @@ sources:
   path: patches/freedesktop-sdk/kernel-backports.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-components-linux-Enable-SECURITY_LANDLOCK.patch
-- kind: patch
-  path: patches/freedesktop-sdk/17069.patch
-- kind: patch
-  path: patches/freedesktop-sdk/17293.patch
 
 config:
   options:
