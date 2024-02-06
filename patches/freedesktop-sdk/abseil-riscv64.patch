@@ -1,0 +1,14 @@
+diff --git a/elements/components/abseil-cpp.bst b/elements/components/abseil-cpp.bst
+index 5e09260..645c48a 100644
+--- a/elements/components/abseil-cpp.bst
++++ b/elements/components/abseil-cpp.bst
+@@ -9,6 +9,9 @@ depends:
+ variables:
+   cmake-local: >-
+     -DCMAKE_POSITION_INDEPENDENT_CODE=ON
++  (?):
++    - target_arch == "riscv64":
++        local_flags: -DABSL_USE_UNSCALED_CYCLECLOCK=0
+ 
+ sources:
+ - kind: git_repo

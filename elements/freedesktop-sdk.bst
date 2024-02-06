@@ -13,6 +13,8 @@ sources:
   path: patches/freedesktop-sdk/kernel-backports.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-components-linux-Enable-SECURITY_LANDLOCK.patch
+- kind: patch
+  path: patches/freedesktop-sdk/abseil-riscv64.patch
 
 config:
   options:
