@@ -40,7 +40,7 @@ depends:
 - freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 
 (?):
-- arch in ["arm", "aarch64", "x86_64", "i686", "riscv64"]:
+- arch in ["arm", "aarch64", "x86_64", "i686"]:
     depends:
       (>):
       - core-deps/fwupd-efi.bst
