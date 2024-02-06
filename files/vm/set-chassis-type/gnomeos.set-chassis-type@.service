@@ -1,0 +1,18 @@
+# To use it add the the command line systemd.wants=gnomeos.set-chassis-type@handset.service
+[Unit]
+Description=Override chassis type to %i
+
+DefaultDependencies=no
+After=systemd-firstboot.service
+After=dbus.socket
+Before=first-boot-complete.target
+Before=multi-user.target
+Before=gdm.service
+
+ConditionPathIsReadWrite=/etc
+ConditionFirstBoot=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=hostnamectl chassis %i
