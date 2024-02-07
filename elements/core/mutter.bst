@@ -20,6 +20,7 @@ runtime-depends:
 - core/gnome-control-center.bst
 
 depends:
+- core-deps/colord.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
@@ -33,6 +34,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libei.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libinput.bst
