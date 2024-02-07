@@ -76,6 +76,10 @@ if ($testsuite eq "gnome_install") {
 } elsif ($testsuite eq "gnome_locales") {
     autotest::loadtest("tests/gnome_welcome_locales.pm");
 
+} elsif ($testsuite eq "gnome_mobile") {
+    $testapi::form_factor_postfix = '_mobile';
+    autotest::loadtest("tests/gnome_welcome.pm");
+    autotest::loadtest("tests/mobile_enable_fractional_scaling.pm");
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
