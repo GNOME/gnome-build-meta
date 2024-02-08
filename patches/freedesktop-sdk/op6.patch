@@ -1,0 +1,14 @@
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 231e1330d..9ee486fbd 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1836,6 +1836,9 @@ config:
+         module SURFACE3_WMI
+         module X86_ANDROID_TABLETS
+       ;;
++      aarch64)
++        enable DRM_PANEL_SAMSUNG_SOFEF00
++      ;;
+     esac
+ 
+   - |
