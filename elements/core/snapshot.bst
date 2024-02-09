@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/snapshot.git
   track: main
-  ref: 45.0-76-g0d44a80678e5945a603318da8bd83a2b84797922
+  ref: 45.0-77-gc15b7d28d9e0beedf108119b6d32c3fc604d89f9
 - kind: cargo
   ref:
   - name: aho-corasick
@@ -17,41 +17,41 @@ sources:
     version: 0.1.5
     sha: 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
   - name: anyhow
-    version: 1.0.75
-    sha: a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6
+    version: 1.0.79
+    sha: 080e9890a082662b09c1ad45f567faeeb47f22b5fb23895fbe1e651e718e25ca
   - name: ashpd
-    version: 0.6.7
-    sha: 2c018490e423efb6f032ef575f873ea57b61d44bec763cfe027b8e8852a027cf
+    version: 0.7.0
+    sha: 01992ad7774250d5b7fe214e2676cb99bf92564436d8135ab44fe815e71769a9
   - name: async-broadcast
     version: 0.5.1
     sha: 7c48ccdbf6ca6b121e0f586cbc0e73ae440e56c67c30fa0873b4e110d9c26d2b
   - name: async-channel
-    version: 1.9.0
-    sha: 81953c529336010edd6d8e358f886d9581267795c61b19475b71314bffa46d35
-  - name: async-channel
-    version: 2.1.1
-    sha: 1ca33f4bc4ed1babef42cad36cc1f51fa88be00420404e5b1e80ab1b18f7678c
+    version: 2.2.0
+    sha: f28243a43d821d11341ab73c80bed182dc015c514b951616cf79bd4af39af0c3
   - name: async-executor
     version: 1.8.0
     sha: 17ae5ebefcc48e7452b4987947920dac9450be1110cadf34d1b8c116bdbaf97c
   - name: async-fs
     version: 1.6.0
     sha: 279cf904654eeebfa37ac9bb1598880884924aab82e290aa65c9e77a0e142e06
-  - name: async-global-executor
-    version: 2.4.0
-    sha: 9b4353121d5644cdf2beb5726ab752e79a8db1ebb52031770ec47db31d245526
+  - name: async-fs
+    version: 2.1.1
+    sha: bc19683171f287921f2405677dd2ed2549c3b3bda697a563ebc3a121ace2aba1
   - name: async-io
     version: 1.13.0
     sha: 0fc5b45d93ef0529756f812ca52e44c221b35341892d3dcc34132ac02f3dd2af
   - name: async-io
-    version: 2.2.1
-    sha: d6d3b15875ba253d1110c740755e246537483f152fa334f91abd7fe84c88b3ff
+    version: 2.3.1
+    sha: 8f97ab0c5b00a7cdbe5a371b9a782ee7be1316095885c8a4ea1daf490eb0ef65
   - name: async-lock
     version: 2.8.0
     sha: 287272293e9d8c41773cec55e365490fe034813a2f172f502d6ddcf75b2f582b
   - name: async-lock
-    version: 3.1.2
-    sha: dea8b3453dd7cc96711834b75400d671b73e3656975fa68d9f277163b7f7e316
+    version: 3.3.0
+    sha: d034b430882f8381900d3fe6f0aaa3ad94f2cb4ac519b429692a1bc2dda4ae7b
+  - name: async-net
+    version: 2.0.0
+    sha: b948000fad4873c1c9339d60f2623323a0cfd3816e5181033c6a5cb68b2accf7
   - name: async-process
     version: 1.8.1
     sha: ea6438ba0a08d81529c69b36700fa2f95837bfe3e776ab39cde9c14d9149da88
@@ -61,15 +61,12 @@ sources:
   - name: async-signal
     version: 0.2.5
     sha: 9e47d90f65a225c4527103a8d747001fc56e375203592b25ad103e1ca13124c5
-  - name: async-std
-    version: 1.12.0
-    sha: 62565bb4402e926b29953c785397c6dc0391b7b446e45008b0049eb43cec6f5d
   - name: async-task
-    version: 4.5.0
-    sha: b4eb2cdb97421e01129ccb49169d8279ed21e829929144f4a22a6e54ac549ca1
+    version: 4.7.0
+    sha: fbb36e985947064623dbd357f727af08ffd077f93d696782f3c56365fa2e2799
   - name: async-trait
-    version: 0.1.74
-    sha: a66537f1bb974b254c98ed142ff995236e81b9d0fe4db0575f46612cb15eb0f9
+    version: 0.1.77
+    sha: c980ee35e870bd1a4d2c8294d4c04d0499e67bca1e4b5cefcc693c2fa00caea9
   - name: atomic-waker
     version: 1.1.2
     sha: 1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0
@@ -83,8 +80,8 @@ sources:
     version: 1.3.2
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
   - name: bitflags
-    version: 2.4.1
-    sha: 327762f6e5a765692301e5bb513e0d9fef63be86bbc14528052b1cd3e6f03e07
+    version: 2.4.2
+    sha: ed570934406eb16438a4e976b1b4500774099c13b8cb96eec99f620f05090ddf
   - name: block
     version: 0.1.6
     sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
@@ -101,35 +98,35 @@ sources:
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - name: cairo-rs
-    version: 0.18.3
-    sha: f33613627f0dea6a731b0605101fad59ba4f193a52c96c4687728d822605a8a1
+    version: 0.19.1
+    sha: bc1c415b7088381c53c575420899c34c9e6312df5ac5defd05614210e9fd6e1b
   - name: cairo-sys-rs
-    version: 0.18.2
-    sha: 685c9fa8e590b8b3d678873528d83411db17242a73fccaed827770ea0fedda51
+    version: 0.19.1
+    sha: 75b6a5fefce2eadb8333e3c604ac964ba6573ec4f28bdd17f67032c4a2831831
   - name: cc
     version: 1.0.83
     sha: f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0
   - name: cfg-expr
-    version: 0.15.5
-    sha: 03915af431787e6ffdcc74c645077518c6b6e01f80b761e0fbbfa288536311b3
+    version: 0.15.6
+    sha: 6100bc57b6209840798d95cb2775684849d332f7bd788db2a8c8caf7ef82a41a
   - name: cfg-if
     version: 1.0.0
     sha: baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd
   - name: chrono
-    version: 0.4.31
-    sha: 7f2c685bad3eb3d45a01354cedb7d5faa66194d1d58ba6e267a8de788f79db38
+    version: 0.4.33
+    sha: 9f13690e35a5e4ace198e7beea2895d29f3a9cc55015fcebe6336bd2010af9eb
   - name: concurrent-queue
-    version: 2.3.0
-    sha: f057a694a54f12365049b0958a1685bb52d567f5593b355fbf685838e873d400
+    version: 2.4.0
+    sha: d16048cd947b08fa32c24458a22f5dc5e835264f689f4f5653210c69fd107363
   - name: core-foundation-sys
     version: 0.8.6
     sha: 06ea2b9bc92be3c2baa9334a323ebca2d6f074ff852cd1d7b11064035cd3868f
   - name: cpufeatures
-    version: 0.2.11
-    sha: ce420fe07aecd3e67c5f910618fe65e94158f6dcc0adf44e00d69ce2bdfe0fd0
+    version: 0.2.12
+    sha: 53fe5e26ff1b7aef8bca9c6080520cfb8d9333c7568e1829cef191a9723e5504
   - name: crossbeam-utils
-    version: 0.8.16
-    sha: 5a22b2d63d4d1dc0b7f1b6b2747dd0088008a9be28b6ddf0b1e7d335e3037294
+    version: 0.8.19
+    sha: 248e3bacc7dc6baa3b21e405ee045c3047101a49145e7e9eca583ab4c2ca5345
   - name: crypto-common
     version: 0.1.6
     sha: 1bfb12502f3fc46cca1bb51ac28df9d618d813cdc3d2f25b9fe775a34af26bb3
@@ -161,11 +158,17 @@ sources:
     version: 3.1.0
     sha: d93877bcde0eb80ca09131a08d23f0a5c18a620b01db137dba666d18cd9b30c2
   - name: event-listener
-    version: 4.0.0
-    sha: 770d968249b5d99410d61f5bf89057f3199a077a04d087092f58e7d10692baae
+    version: 4.0.3
+    sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
+  - name: event-listener
+    version: 5.0.0
+    sha: b72557800024fabbaa2449dd4bf24e37b93702d457a4d4f2b0dd1f0f039f20c1
   - name: event-listener-strategy
     version: 0.4.0
     sha: 958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3
+  - name: event-listener-strategy
+    version: 0.5.0
+    sha: feedafcaa9b749175d5ac357452a9d41ea2911da598fde46ce1fe02c37751291
   - name: fastrand
     version: 1.9.0
     sha: e51093e27b0797c359783294ca4f0a911c270184cb10f85783b118614a1501be
@@ -179,71 +182,71 @@ sources:
     version: 1.2.1
     sha: e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456
   - name: futures-channel
-    version: 0.3.29
-    sha: ff4dd66668b557604244583e3e1e1eada8c5c2e96a6d0d6653ede395b78bbacb
+    version: 0.3.30
+    sha: eac8f7d7865dcb88bd4373ab671c8cf4508703796caa2b1985a9ca867b3fcb78
   - name: futures-core
-    version: 0.3.29
-    sha: eb1d22c66e66d9d72e1758f0bd7d4fd0bee04cad842ee34587d68c07e45d088c
+    version: 0.3.30
+    sha: dfc6580bb841c5a68e9ef15c77ccc837b40a7504914d52e47b8b0e9bbda25a1d
   - name: futures-executor
-    version: 0.3.29
-    sha: 0f4fb8693db0cf099eadcca0efe2a5a22e4550f98ed16aba6c48700da29597bc
+    version: 0.3.30
+    sha: a576fc72ae164fca6b9db127eaa9a9dda0d61316034f33a0a0d4eda41f02b01d
   - name: futures-io
-    version: 0.3.29
-    sha: 8bf34a163b5c4c52d0478a4d757da8fb65cabef42ba90515efee0f6f9fa45aaa
+    version: 0.3.30
+    sha: a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1
   - name: futures-lite
     version: 1.13.0
     sha: 49a9d51ce47660b1e808d3c990b4709f2f415d928835a17dfd16991515c46bce
   - name: futures-lite
-    version: 2.0.1
-    sha: d3831c2651acb5177cbd83943f3d9c8912c5ad03c76afcc0e9511ba568ec5ebb
+    version: 2.2.0
+    sha: 445ba825b27408685aaecefd65178908c36c6e96aaf6d8599419d46e624192ba
   - name: futures-macro
-    version: 0.3.29
-    sha: 53b153fd91e4b0147f4aced87be237c98248656bb01050b96bf3ee89220a8ddb
+    version: 0.3.30
+    sha: 87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac
   - name: futures-sink
-    version: 0.3.29
-    sha: e36d3378ee38c2a36ad710c5d30c2911d752cb941c00c72dbabfb786a7970817
+    version: 0.3.30
+    sha: 9fb8e00e87438d937621c1c6269e53f536c14d3fbd6a042bb24879e57d474fb5
   - name: futures-task
-    version: 0.3.29
-    sha: efd193069b0ddadc69c46389b740bbccdd97203899b48d09c5f7969591d6bae2
+    version: 0.3.30
+    sha: 38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004
   - name: futures-util
-    version: 0.3.29
-    sha: a19526d624e703a3179b3d322efec918b6246ea0fa51d41124525f00f1cc8104
+    version: 0.3.30
+    sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - name: gdk-pixbuf
-    version: 0.18.3
-    sha: 446f32b74d22c33b7b258d4af4ffde53c2bf96ca2e29abdf1a785fe59bd6c82c
+    version: 0.19.0
+    sha: c311c47800051b87de1335e8792774d7cec551c91a0a3d109ab21d76b36f208f
   - name: gdk-pixbuf-sys
-    version: 0.18.0
-    sha: 3f9839ea644ed9c97a34d129ad56d38a25e6756f99f3a88e15cd39c20629caf7
+    version: 0.19.0
+    sha: 3dcbd04c1b2c4834cc008b4828bc917d062483b88d26effde6342e5622028f96
   - name: gdk4
-    version: 0.7.3
-    sha: 7edb019ad581f8ecf8ea8e4baa6df7c483a95b5a59be3140be6a9c3b0c632af6
+    version: 0.8.0
+    sha: 6771942f85a2beaa220c64739395e4401b9fab4a52aba9b503fa1e6ed4d4d806
   - name: gdk4-sys
-    version: 0.7.2
-    sha: dbab43f332a3cf1df9974da690b5bb0e26720ed09a228178ce52175372dcfef0
+    version: 0.8.0
+    sha: 1eb95854fab65072023a7814434f003db571d6e45c287c0b0c540c1c78bdf6ae
   - name: gdk4-wayland
-    version: 0.7.2
-    sha: 0db9102ff11e55bd65e153c1192abc21ddfa45ede90622e423d4e4a0e5d5f313
+    version: 0.8.0
+    sha: 075cdd6b1c8aee8aefd4216b5483024f29d4102ec180f770ae28fe54f53019cf
   - name: gdk4-wayland-sys
-    version: 0.7.2
-    sha: d48159be256ae0212d5a2b9884627197d08082c7168b28775b53a0f9885d5624
+    version: 0.8.0
+    sha: 6e02d324a9bf7136bc4b610423537c5f5852d71f53dee8fe63d7ac658333e762
   - name: gdk4-win32
-    version: 0.7.2
-    sha: fe66650c41f64e41ada9f85c4bdb96e5549c669e594892240dfb147a63256057
+    version: 0.8.0
+    sha: 8a77295f5aa42657046bcdec4864b2b1ed95f8f877a8ca576279b73270b94a91
   - name: gdk4-win32-sys
-    version: 0.7.2
-    sha: 4b5c187546cd3ad9f1787b46c66272d8fcdf8197bfe4f6e2647fe910c39e396d
+    version: 0.8.0
+    sha: 6fba1436610ddab9493b0444fe070448cc89ff9caeb1f9682927231d932469be
   - name: gdk4-x11
-    version: 0.7.2
-    sha: 28c9bbf8ea1ea8469e74c3fdfafc142c9e14810a27f89ddb01b5e9076a60a450
+    version: 0.8.0
+    sha: b2f2c2b41c444f5661fd6b4e42eff18e79df627863d3e0d3db8eef984b714c41
   - name: gdk4-x11-sys
-    version: 0.7.2
-    sha: a3de1709370758192369f5329aa593847797f1c693c95e8a261e9b2e06a5f125
+    version: 0.8.0
+    sha: a90e4b5371704921d6f7704282502a47020acb456dc66129a81889b652af4dfd
   - name: generic-array
     version: 0.14.7
     sha: 85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a
   - name: getrandom
-    version: 0.2.11
-    sha: fe9006bed769170c11f845cf00c7c1e9092aeb3f268e007c3e760ac68008070f
+    version: 0.2.12
+    sha: 190092ea657667030ac6a35e305e62fc4dd69fd98ac98631e5d3a2b1575a12b5
   - name: gettext-rs
     version: 0.7.0
     sha: e49ea8a8fad198aaa1f9655a2524b64b70eb06b2f3ff37da407566c93054f364
@@ -251,107 +254,104 @@ sources:
     version: 0.21.3
     sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
   - name: gio
-    version: 0.18.3
-    sha: 47d809baf02bdf1b5ef4ad3bf60dd9d4977149db4612b7bbb58e56aef168193b
+    version: 0.19.0
+    sha: b3d1aaa2d926710a27f3b35822806b1513b393b71174dd2601c9d02fdab0cb82
   - name: gio-sys
-    version: 0.18.1
-    sha: 37566df850baf5e4cb0dfb78af2e4b9898d817ed9263d1090a2df958c64737d2
+    version: 0.19.0
+    sha: bcf8e1d9219bb294636753d307b030c1e8a032062cba74f493c431a5c8b81ce4
   - name: glib
-    version: 0.18.3
-    sha: 58cf801b6f7829fa76db37449ab67c9c98a2b1bf21076d9113225621e61a0fa6
+    version: 0.19.0
+    sha: 170ee82b9b44b3b5fd1cf4971d6cf0eadec38303bb84c7bcc4e6b95a18934e71
   - name: glib-macros
-    version: 0.18.3
-    sha: 72793962ceece3863c2965d7f10c8786323b17c7adea75a515809fa20ab799a5
+    version: 0.19.0
+    sha: 2ff52fff7e4d1bb8598ae744e9bb90c8c76271712483c3f0ce931bee9814de85
   - name: glib-sys
-    version: 0.18.1
-    sha: 063ce2eb6a8d0ea93d2bf8ba1957e78dbab6be1c2220dd3daca57d5a9d869898
-  - name: gloo-timers
-    version: 0.2.6
-    sha: 9b995a66bb87bebce9a0f4a95aed01daca4872c050bfcb21653361c03bc35e5c
+    version: 0.19.0
+    sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
   - name: gobject-sys
-    version: 0.18.0
-    sha: 0850127b514d1c4a4654ead6dedadb18198999985908e6ffe4436f53c785ce44
+    version: 0.19.0
+    sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
   - name: graphene-rs
-    version: 0.18.1
-    sha: 3b2228cda1505613a7a956cca69076892cfbda84fc2b7a62b94a41a272c0c401
+    version: 0.19.0
+    sha: 147827e4f506f8073ac3ec5b28cc2255bdf3abc30f5b4e101a80506eebe11d2c
   - name: graphene-sys
-    version: 0.18.1
-    sha: cc4144cee8fc8788f2a9b73dc5f1d4e1189d1f95305c4cb7bd9c1af1cfa31f59
+    version: 0.19.0
+    sha: 236ed66cc9b18d8adf233716f75de803d0bf6fc806f60d14d948974a12e240d0
   - name: gsk4
-    version: 0.7.3
-    sha: 0d958e351d2f210309b32d081c832d7de0aca0b077aa10d88336c6379bd01f7e
-  - name: gsk4-sys
-    version: 0.7.3
-    sha: 12bd9e3effea989f020e8f1ff3fa3b8c63ba93d43b899c11a118868853a56d55
-  - name: gst-plugin-gtk4
-    version: 0.11.2
-    sha: 33970273495544e54d5f486d761b09d402f0cf8760990e1ea508bd5141f8ebeb
-  - name: gst-plugin-version-helper
     version: 0.8.0
-    sha: 334c37a15ca23861ad8159c8ff6e20f011aa2000defc5c9159096a28842f811b
+    sha: 0e8ce8dee0fd87a11002214b1204ff18c9272fbd530408f0884a0f9b25dc31de
+  - name: gsk4-sys
+    version: 0.8.0
+    sha: 2660a652da5b662d43924df19ba40d73f015ed427329ef51d2b1360a4e0dc0e4
+  - name: gst-plugin-gtk4
+    version: 0.12.0
+    sha: 5b4d6cc2a6490935cd1bce28976621a0f93f753119146e71b753876d79031ba5
+  - name: gst-plugin-version-helper
+    version: 0.8.1
+    sha: 8185b029682824ac93ee2d9e17f84130d4c8a701e9255dfba68d72e1a4230749
   - name: gstreamer
-    version: 0.21.2
-    sha: ed97f98d186e63e49079b26af1a1b73e70ab7a2f450eb46a136f2bffc2bf12d5
+    version: 0.22.0
+    sha: dd7fbb9e1f67a9a145c94582c8676a12af8056a42311f57b690bc368f04933aa
   - name: gstreamer-audio
-    version: 0.21.2
-    sha: 36d1678eacb7677c1ffdcf220ada416b5fb68e87c33b77319f14bba169fbe3fc
+    version: 0.22.0
+    sha: e7529f913cb6cbf1305ebc58ace01391cf9bb5a833810cf6e7c09e9a37d130f2
   - name: gstreamer-audio-sys
-    version: 0.21.1
-    sha: 78bd94ae8b177377855b38c3d809c686526786cdb771e6d68510509634b955d1
+    version: 0.22.0
+    sha: 34d92a1e2a915874f70f0a33c3ea4589bc6b66a138b6ec8bb6acedf49bdec2c3
   - name: gstreamer-base
-    version: 0.21.2
-    sha: cb150b6904a49052237fede7cc2e6479df6ced5043d95e6af8134bc141a3167f
+    version: 0.22.0
+    sha: 514c71195b53c7eced4842b66ca9149833e41cf6a1d949e45e2ca4a4fa929850
   - name: gstreamer-base-sys
-    version: 0.21.1
-    sha: f4ca701f9078fe115b29b24c80910b577f9cb5b039182f050dbadf5933594b64
+    version: 0.22.0
+    sha: 286591e0f85bbda1adf9bab6f21d015acd9ca0a4d4acb61da65e3d0487e23c4e
   - name: gstreamer-gl
-    version: 0.21.2
-    sha: 3ecfb91128263c160448a915a15e430cfdc69317b1b087316222e0693bb51b90
+    version: 0.22.0
+    sha: 7d21c0c5fbf74018a0254b3ab77bca0a5b2c0f002bcfd910c09113ae90a95d98
   - name: gstreamer-gl-egl
-    version: 0.21.2
-    sha: a173ab223aa3c46d5f2be02b494c2086096fa3e932e2953d6392fcc07da5dc82
+    version: 0.22.0
+    sha: dfde7bf67f5f7c87e1ff29cdeea4918530d677b51e3f4847121ada44f1fab139
   - name: gstreamer-gl-egl-sys
-    version: 0.21.2
-    sha: ee3c88b6f01c8a5f9f7ba39f9805ac7026fd269fccb04d2a4b488bb928a8e954
+    version: 0.22.0
+    sha: 7c9ec3c03af5d4ed3e58ddbca4eea13e90e01b88e37f6c0689b26e05168eb7bf
   - name: gstreamer-gl-sys
-    version: 0.21.2
-    sha: d580971b3c99a667c9739812d499e6c5cadbb92873f984cd0d1d0b4e7346f1cd
+    version: 0.22.0
+    sha: 61d1e3b9b02abc23835e9d770f2bd705b67a50406ea37e963b4526a77c6a7cd8
   - name: gstreamer-gl-wayland
-    version: 0.21.1
-    sha: fec276a2f2d022d09f7655d7b0a4b92439a856261a077f770b02388a8556e7ff
+    version: 0.22.0
+    sha: f9fbfe3d0c2469023b73df8408a4b19daaf7bd30141e9fc67e4ab63d41db5ee2
   - name: gstreamer-gl-wayland-sys
-    version: 0.21.1
-    sha: 917b86f16faa53a34501252fff39f09290ba1796b73e6be07d23d97f484412a1
+    version: 0.22.0
+    sha: 83bc79debd1ef92795a3bd411986b19dbfe2527424f396e460aacc59d5fab4f1
   - name: gstreamer-gl-x11
-    version: 0.21.1
-    sha: d7021b9e32c9d2c2830898cfdb60f8b1e7fea560b7cd3e221b9fad01a32af67d
+    version: 0.22.0
+    sha: 42ed82941c84668d89dbf81f220083422268c22ec6ab4991806649ed6758cec8
   - name: gstreamer-gl-x11-sys
-    version: 0.21.1
-    sha: c49aef03c7b9e159b5f4c557efe4a597437ea6e5e10f934ae8b214386c6ebcdc
+    version: 0.22.0
+    sha: 54b59f2782f5e71e3ef5fd534598938966a4dc3911f2540807f7d13b586e4ed1
   - name: gstreamer-pbutils
-    version: 0.21.2
-    sha: 953055f80677b68b2f46f23859d9241df6b3dcf3ca8240db5f9ab50716255237
+    version: 0.22.0
+    sha: f173b14cdf3d10bc57d136797946fe2091c322015d879919765c317a0ea5edb3
   - name: gstreamer-pbutils-sys
-    version: 0.21.0
-    sha: 6faae6e3454bc8ca5986d7ef6477fc44b809bfc952a8680eaedb4f2e001f9d69
+    version: 0.22.0
+    sha: 6b3afcb1df3d217b2a6b00aa7a391a779764b5be6ccb7dcf35b5690279c61c5c
   - name: gstreamer-sys
-    version: 0.21.2
-    sha: 564cda782b3e6eed1b81cb4798a06794db56440fb05b422505be689f34ce3bc4
+    version: 0.22.0
+    sha: 5b8d7fda2b4bf9874ad064cb1939a9fe2b127f3ffe6d9d1ab5a4985244551aa0
   - name: gstreamer-video
-    version: 0.21.2
-    sha: e85b2a4d1d3b7a98ae03806c3ed5c2db89d6b37a5f138780b48de015d68715e5
+    version: 0.22.0
+    sha: 992a54e019119202b9486402f86f18471ce897c7257e57aaea9ab7759264997a
   - name: gstreamer-video-sys
-    version: 0.21.2
-    sha: 0302318d98e6b054501e485b6bb4ee20225823218f4a8660c182f115a33b16ee
+    version: 0.22.0
+    sha: fbc80804442d4ebe6bcb16133b6a53693fab602bb627c3d86500ae4eb1dda26d
   - name: gtk4
-    version: 0.7.3
-    sha: 5aeb51aa3e9728575a053e1f43543cd9992ac2477e1b186ad824fd4adfb70842
+    version: 0.8.0
+    sha: 7d26ffa3ec6316ccaa1df62d3e7f5bae1637c0acbb43f250fabef38319f73c64
   - name: gtk4-macros
-    version: 0.7.2
-    sha: d57ec49cf9b657f69a05bca8027cff0a8dfd0c49e812be026fc7311f2163832f
+    version: 0.8.0
+    sha: c8b86439e9896f6f3f47c3d8077c5c8205174078760afdabd9098a8e9e937d97
   - name: gtk4-sys
-    version: 0.7.3
-    sha: 54d8c4aa23638ce9faa2caf7e2a27d4a1295af2155c8e8d28c4d4eeca7a65eb8
+    version: 0.8.0
+    sha: 2abc0a6d356d59a3806021829ce6ed3e70bba3509b41a535fedcb09fae13fbc0
   - name: hashbrown
     version: 0.14.3
     sha: 290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604
@@ -359,14 +359,14 @@ sources:
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
   - name: hermit-abi
-    version: 0.3.3
-    sha: d77f7ec81a6d05a3abb01ab6eb7590f6083d08449fe5a1c8b1e620283546ccb7
+    version: 0.3.5
+    sha: d0c62115964e08cb8039170eb33c1d0e2388a256930279edca206fff675f82c3
   - name: hex
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
   - name: iana-time-zone
-    version: 0.1.58
-    sha: 8326b86b6cff230b97d0d312a6c40a60726df3332e721f72a1b035f451663b20
+    version: 0.1.60
+    sha: e7ffbb5a1b541ea2561f8c41c087286cc091e21e556a4f09a8f6cbf17b69b141
   - name: iana-time-zone-haiku
     version: 0.1.2
     sha: f31827a206f56af32e590ba56d5d2d085f558508192593743f16b2306495269f
@@ -374,8 +374,8 @@ sources:
     version: 0.5.0
     sha: 634d9b1461af396cad843f47fdba5597a4f9e6ddd4bfb6ff5d85028c25cb12f6
   - name: indexmap
-    version: 2.1.0
-    sha: d530e1a18b1cb4c484e6e34556a0d948706958449fca0cab753d649f2bce3d1f
+    version: 2.2.2
+    sha: 824b2ae422412366ba479e8111fd301f7b5faece8149317bb81925979a53f520
   - name: instant
     version: 0.1.12
     sha: 7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c
@@ -383,32 +383,29 @@ sources:
     version: 1.0.11
     sha: eae7b9aee968036d54dce06cebaefd919e4472e753296daccd6d344e3e2df0c2
   - name: itertools
-    version: 0.11.0
-    sha: b1c173a5686ce8bfa551b3563d0c2170bf24ca44da99c7ca4bfdab5418c3fe57
+    version: 0.12.1
+    sha: ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569
   - name: js-sys
-    version: 0.3.66
-    sha: cee9c64da59eae3b50095c18d3e74f8b73c0b86d2792824ff01bbce68ba229ca
-  - name: kv-log-macro
-    version: 1.0.7
-    sha: 0de8b303297635ad57c9f5059fd9cee7a47f8e8daa09df0fcd07dd39fb22977f
+    version: 0.3.68
+    sha: 406cda4b368d531c842222cf9d2600a9a4acce8d29423695379c6868a143a9ee
   - name: lazy_static
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
   - name: libadwaita
-    version: 0.5.3
-    sha: 2fe7e70c06507ed10a16cda707f358fbe60fe0dc237498f78c686ade92fd979c
+    version: 0.6.0
+    sha: 91b4990248b9e1ec5e72094a2ccaea70ec3809f88f6fd52192f2af306b87c5d9
   - name: libadwaita-sys
-    version: 0.5.3
-    sha: 5e10aaa38de1d53374f90deeb4535209adc40cc5dba37f9704724169bceec69a
+    version: 0.6.0
+    sha: 23a748e4e92be1265cd9e93d569c0b5dfc7814107985aa6743d670ab281ea1a8
   - name: libc
-    version: 0.2.150
-    sha: 89d92a4743f9a61002fae18374ed11e7973f530cb3a3255fb354818118b2203c
+    version: 0.2.153
+    sha: 9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd
   - name: linux-raw-sys
     version: 0.3.8
     sha: ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519
   - name: linux-raw-sys
-    version: 0.4.12
-    sha: c4cd1a83af159aa67994778be9070f0ae1bd732942279cabb14f86f986a21456
+    version: 0.4.13
+    sha: 01cda141df6706de531b6c46c3a33ecca755538219bd484262fa09410c13539c
   - name: locale_config
     version: 0.3.0
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
@@ -419,8 +416,8 @@ sources:
     version: 0.0.6
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - name: memchr
-    version: 2.6.4
-    sha: f665ee40bc4a3c5590afb1e9677db74a508659dfd71e126420da8274909a0167
+    version: 2.7.1
+    sha: 523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149
   - name: memoffset
     version: 0.7.1
     sha: 5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4
@@ -437,14 +434,14 @@ sources:
     version: 0.46.0
     sha: 77a8165726e8236064dbb45459242600304b42a5ea24ee2948e18e023bf7ba84
   - name: num-integer
-    version: 0.1.45
-    sha: 225d3389fb3509a24c93f5c29eb6bde2586b98d9f016636dff58d7c6f7569cd9
+    version: 0.1.46
+    sha: 7969661fd2958a5cb096e56c8e1ad0444ac2bbcd0061bd28660485a44879858f
   - name: num-rational
     version: 0.4.1
     sha: 0638a1c9d0a3c0914158145bc76cff373a75a627e6ecbfb71cbe6f453a5a19b0
   - name: num-traits
-    version: 0.2.17
-    sha: 39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c
+    version: 0.2.18
+    sha: da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a
   - name: objc
     version: 0.2.7
     sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
@@ -455,8 +452,8 @@ sources:
     version: 0.1.1
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - name: once_cell
-    version: 1.18.0
-    sha: dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d
+    version: 1.19.0
+    sha: 3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92
   - name: option-operations
     version: 0.5.0
     sha: 7c26d27bb1aeab65138e4bf7666045169d1717febcc9ff870166be8348b223d0
@@ -467,11 +464,11 @@ sources:
     version: 0.1.1
     sha: b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39
   - name: pango
-    version: 0.18.3
-    sha: 7ca27ec1eb0457ab26f3036ea52229edbdb74dee1edd29063f5b9b010e7ebee4
+    version: 0.19.0
+    sha: 78d7f779b957728c74fd1a060dfa6d89a0bea792ebc50cc2da80e4e87282d69e
   - name: pango-sys
-    version: 0.18.0
-    sha: 436737e391a843e5933d6d9aa102cb126d501e815b83601365a948a518555dc5
+    version: 0.19.0
+    sha: f52ef6a881c19fbfe3b1484df5cad411acaaba29dbec843941c3110d19f340ea
   - name: parking
     version: 2.2.0
     sha: bb813b8af86854136c6922af0598d719255ecb2179515e6e7730d468f05c9cae
@@ -491,26 +488,23 @@ sources:
     version: 0.2.1
     sha: 668d31b1c4eba19242f2088b2bf3316b82ca31082a8335764db4e083db7485d4
   - name: pkg-config
-    version: 0.3.27
-    sha: 26072860ba924cbfa98ea39c8c19b4dd6a4a25423dbdf219c1eca91aa0cf6964
+    version: 0.3.29
+    sha: 2900ede94e305130c13ddd391e0ab7cbaeb783945ae07a279c268cb05109c6cb
   - name: polling
     version: 2.8.0
     sha: 4b2d323e8ca7996b3e23126511a523f7e62924d93ecd5ae73b333815b0eb3dce
   - name: polling
-    version: 3.3.1
-    sha: cf63fa624ab313c11656b4cda960bfc46c410187ad493c41f6ba2d8c1e991c9e
+    version: 3.4.0
+    sha: 30054e72317ab98eddd8561db0f6524df3367636884b7b21b703e4b280a84a14
   - name: ppv-lite86
     version: 0.2.17
     sha: 5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de
-  - name: pretty-hex
-    version: 0.3.0
-    sha: c6fa0831dd7cc608c38a5e323422a0077678fa5744aa2be4ad91c4ece8eec8d5
   - name: proc-macro-crate
     version: 1.3.1
     sha: 7f4c021e1093a56626774e81216a4ce732a735e5bad4868a03f3ed65ca0c3919
   - name: proc-macro-crate
-    version: 2.0.0
-    sha: 7e8366a6159044a37876a2b9817124296703c586a5c92e2c53751fa06d8d43e8
+    version: 3.1.0
+    sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
   - name: proc-macro-error
     version: 1.0.4
     sha: da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c
@@ -518,11 +512,11 @@ sources:
     version: 1.0.4
     sha: a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869
   - name: proc-macro2
-    version: 1.0.70
-    sha: 39278fbbf5fb4f646ce651690877f89d1c5811a3d4acb27700c1cb3cdb78fd3b
+    version: 1.0.78
+    sha: e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae
   - name: quote
-    version: 1.0.33
-    sha: 5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae
+    version: 1.0.35
+    sha: 291ec9ab5efd934aaf503a6466c5d5251535d108ee747472c3977cc5acc868ef
   - name: rand
     version: 0.8.5
     sha: 34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404
@@ -532,15 +526,12 @@ sources:
   - name: rand_core
     version: 0.6.4
     sha: ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c
-  - name: redox_syscall
-    version: 0.4.1
-    sha: 4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa
   - name: regex
-    version: 1.10.2
-    sha: 380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343
+    version: 1.10.3
+    sha: b62dbe01f0b06f9d8dc7d49e05a0785f153b00b2c227856282f671e0318c9b15
   - name: regex-automata
-    version: 0.4.3
-    sha: 5f804c7828047e88b2d32e2d7fe5a105da8ee3264f01902f796c8e067dc2483f
+    version: 0.4.5
+    sha: 5bb987efffd3c6d0d8f5f89510bb458559eab11e4f869acb20bf845e016259cd
   - name: regex-syntax
     version: 0.8.2
     sha: c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f
@@ -551,23 +542,23 @@ sources:
     version: 0.37.27
     sha: fea8ca367a3a01fe35e6943c400addf443c0f57670e6ec51196f71a4b8762dd2
   - name: rustix
-    version: 0.38.26
-    sha: 9470c4bf8246c8daf25f9598dca807fb6510347b1e1cfa55749113850c79d88a
+    version: 0.38.31
+    sha: 6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949
   - name: semver
-    version: 1.0.20
-    sha: 836fa6a3e1e547f9a2c4040802ec865b5d85f4014efe00555d7090a3dcaa1090
+    version: 1.0.21
+    sha: b97ed7a9823b74f99c7742f5336af7be5ecd3eeafcb1507d1fa93347b1d589b0
   - name: serde
-    version: 1.0.193
-    sha: 25dd9975e68d0cb5aa1120c288333fc98731bd1dd12f561e468ea4728c042b89
+    version: 1.0.196
+    sha: 870026e60fa08c69f064aa766c10f10b1d62db9ccd4d0abb206472bee0ce3b32
   - name: serde_derive
-    version: 1.0.193
-    sha: 43576ca501357b9b071ac53cdc7da8ef0cbd9493d8df094cd821777ea6e894d3
+    version: 1.0.196
+    sha: 33c85360c95e7d137454dc81d9a4ed2b8efd8fbe19cee57357b32b9771fccb67
   - name: serde_repr
-    version: 0.1.17
-    sha: 3081f5ffbb02284dda55132aa26daecedd7372a42417bbbab6f14ab7d6bb9145
+    version: 0.1.18
+    sha: 0b2e6b945e9d3df726b65d6ee24060aff8e3533d431f677a9695db04eff9dfdb
   - name: serde_spanned
-    version: 0.6.4
-    sha: 12022b835073e5b11e90a14f86838ceb1c8fb0325b72416845c487ac0fa95e80
+    version: 0.6.5
+    sha: eb3622f419d1296904700073ea6cc23ad690adbd66f13ea683df73298736f0c1
   - name: sha1
     version: 0.10.6
     sha: e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba
@@ -581,8 +572,8 @@ sources:
     version: 0.4.9
     sha: 8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67
   - name: smallvec
-    version: 1.11.2
-    sha: 4dccd0940a2dcdf68d092b8cbab7dc0ad8fa938bf95787e1b916b0e3d0e8e970
+    version: 1.13.1
+    sha: e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7
   - name: socket2
     version: 0.4.10
     sha: 9f7916fc008ca5542385b89a3d3ce689953c143e9304a9bf8beec1de48994c0d
@@ -593,26 +584,26 @@ sources:
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: syn
-    version: 2.0.39
-    sha: 23e78b90f2fcf45d3e842032ce32e3f2d1545ba6636271dcbf24fa306d87be7a
+    version: 2.0.48
+    sha: 0f3531638e407dfc0814761abb7c00a5b54992b849452a0646b7f65c9f770f3f
   - name: system-deps
     version: 6.2.0
     sha: 2a2d580ff6a20c55dfb86be5f9c238f67835d0e81cbdea8bf5680e0897320331
   - name: target-lexicon
-    version: 0.12.12
-    sha: 14c39fd04924ca3a864207c66fc2cd7d22d7c016007f9ce846cbb9326331930a
+    version: 0.12.13
+    sha: 69758bda2e78f098e4ccb393021a0963bb3442eac05f135c30f61b7370bbafae
   - name: temp-dir
-    version: 0.1.11
-    sha: af547b166dd1ea4b472165569fc456cfb6818116f854690b0ff205e636523dab
+    version: 0.1.12
+    sha: dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6
   - name: tempfile
-    version: 3.8.1
-    sha: 7ef1adac450ad7f4b3c28589471ade84f25f731a7a0fe30d71dfa9f60fd808e5
+    version: 3.10.0
+    sha: a365e8cd18e44762ef95d87f284f4b5cd04107fec2ff3052bd6a3e6069669e67
   - name: thiserror
-    version: 1.0.50
-    sha: f9a7210f5c9a7156bb50aa36aed4c95afb51df0df00713949448cf9e97d382d2
+    version: 1.0.56
+    sha: d54378c645627613241d077a3a79db965db602882668f9136ac42af9ecb730ad
   - name: thiserror-impl
-    version: 1.0.50
-    sha: 266b2e40bc00e5a6c09c3584011e08b06f123c00362c92b975ba9843aaaa14b8
+    version: 1.0.56
+    sha: fa0faa943b50f3db30a20aa7e265dbc66076993efed8463e8de414e5d06d3471
   - name: thread_local
     version: 1.1.7
     sha: 3fdd6f064ccff2d6567adcb3873ca630700f00b5ad3f060c25b5dcfd9a4ce152
@@ -623,8 +614,8 @@ sources:
     version: 0.1.1
     sha: 1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20
   - name: toml
-    version: 0.8.8
-    sha: a1a195ec8c9da26928f773888e0742ca3ca1040c6cd859c919c9f59c1954ab35
+    version: 0.8.10
+    sha: 9a9aad4a3066010876e8dcf5a8a06e70a558751117a145c6ce2b82c2e2054290
   - name: toml_datetime
     version: 0.6.5
     sha: 3550f4e9685620ac18a50ed434eb3aec30db8ba93b0287467bca5826ea25baf1
@@ -632,11 +623,11 @@ sources:
     version: 0.19.15
     sha: 1b5bb770da30e5cbfde35a2d7b9b8a2c4b8ef89548a7a6aeab5c9a576e3e7421
   - name: toml_edit
-    version: 0.20.7
-    sha: 70f427fce4d84c72b5b732388bf4a9f4531b53f74e2887e3ecb2481f68f66d81
+    version: 0.21.1
+    sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
   - name: toml_edit
-    version: 0.21.0
-    sha: d34d383cd00a163b4a5b85053df514d45bc330f6de7737edfe0a93311d1eaa03
+    version: 0.22.4
+    sha: 0c9ffdf896f8daaabf9b66ba8e77ea1ed5ed0f72821b398aba62352e95062951
   - name: tracing
     version: 0.1.40
     sha: c3523ab5a71916ccf420eebdf5521fcef02141234bbc0b8a49f2fdc4544364ef
@@ -656,11 +647,11 @@ sources:
     version: 1.17.0
     sha: 42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825
   - name: uds_windows
-    version: 1.0.2
-    sha: ce65604324d3cce9b966701489fbd0cf318cb1f7bd9dd07ac9a4ee6fb791930d
+    version: 1.1.0
+    sha: 89daebc3e6fd160ac4aa9fc8b3bf71e1f74fbf92367ae71fb83a037e8bf164b9
   - name: unicode-bidi
-    version: 0.3.13
-    sha: 92888ba5573ff080736b3648696b70cafad7d250551175acbaa4e0385b3e1460
+    version: 0.3.15
+    sha: 08f95100a766bf4f8f28f90d77e0a5461bbdb219042e7679bebe79004fed8d75
   - name: unicode-ident
     version: 1.0.12
     sha: 3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b
@@ -673,9 +664,6 @@ sources:
   - name: valuable
     version: 0.1.0
     sha: 830b7e5d4d90034032940e4ace0d9a9a057e7a45cd94e6c007832e39edb82f6d
-  - name: value-bag
-    version: 1.4.2
-    sha: 4a72e1902dde2bd6441347de2b70b7f5d59bf157c6c62f0c44572607a1d55bbe
   - name: version-compare
     version: 0.1.1
     sha: 579a42fc0b8e0c63b76519a339be31bed574929511fa53c1a3acae26eb258f29
@@ -689,26 +677,20 @@ sources:
     version: 0.11.0+wasi-snapshot-preview1
     sha: 9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423
   - name: wasm-bindgen
-    version: 0.2.89
-    sha: 0ed0d4f68a3015cc185aff4db9506a015f4b96f95303897bfa23f846db54064e
+    version: 0.2.91
+    sha: c1e124130aee3fb58c5bdd6b639a0509486b0338acaaae0c84a5124b0f588b7f
   - name: wasm-bindgen-backend
-    version: 0.2.89
-    sha: 1b56f625e64f3a1084ded111c4d5f477df9f8c92df113852fa5a374dbda78826
-  - name: wasm-bindgen-futures
-    version: 0.4.39
-    sha: ac36a15a220124ac510204aec1c3e5db8a22ab06fd6706d881dc6149f8ed9a12
+    version: 0.2.91
+    sha: c9e7e1900c352b609c8488ad12639a311045f40a35491fb69ba8c12f758af70b
   - name: wasm-bindgen-macro
-    version: 0.2.89
-    sha: 0162dbf37223cd2afce98f3d0785506dcb8d266223983e4b5b525859e6e182b2
+    version: 0.2.91
+    sha: b30af9e2d358182b5c7449424f017eba305ed32a7010509ede96cdc4696c46ed
   - name: wasm-bindgen-macro-support
-    version: 0.2.89
-    sha: f0eb82fcb7930ae6219a7ecfd55b217f5f0893484b7a13022ebb2b2bf20b5283
+    version: 0.2.91
+    sha: 642f325be6301eb8107a83d12a8ac6c1e1c54345a7ef1a9261962dfefda09e66
   - name: wasm-bindgen-shared
-    version: 0.2.89
-    sha: 7ab9b36309365056cd639da3134bf87fa8f3d86008abf99e612384a6eecd459f
-  - name: web-sys
-    version: 0.3.66
-    sha: 50c24a44ec86bb68fbecd1b3efed7e85ea5621b39b35ef2766b66cd984f8010f
+    version: 0.2.91
+    sha: 4f186bd2dcf04330886ce82d6f33dd75a7bfcf69ecf5763b89fcde53b6ac9838
   - name: winapi
     version: 0.3.9
     sha: 5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419
@@ -719,8 +701,8 @@ sources:
     version: 0.4.0
     sha: 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
   - name: windows-core
-    version: 0.51.1
-    sha: f1f8cf84f35d2db49a46868f947758c7a1138116f7fac3bc844f43ade1292e64
+    version: 0.52.0
+    sha: 33ab640c8d7e35bf8ba19b884ba838ceb4fba93a4e8c65a9059d08afcfc683d9
   - name: windows-sys
     version: 0.48.0
     sha: 677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9
@@ -776,17 +758,17 @@ sources:
     version: 0.52.0
     sha: dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
   - name: winnow
-    version: 0.5.19
-    sha: 829846f3e3db426d4cee4510841b71a8e58aa2a76b1132579487ae430ccd9c7b
+    version: 0.5.39
+    sha: 5389a154b01683d28c77f8f68f49dea75f0a4da32557a58f68ee51ebba472d29
   - name: xdg-home
-    version: 1.0.0
-    sha: 2769203cd13a0c6015d515be729c526d041e9cf2c0cc478d57faee85f40c6dcd
+    version: 1.1.0
+    sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e
   - name: zbus
-    version: 3.14.1
-    sha: 31de390a2d872e4cd04edd71b425e29853f786dc99317ed72d73d6fcf5ebb948
+    version: 3.15.0
+    sha: c45d06ae3b0f9ba1fb2671268b975557d8f5a84bb5ec6e43964f87e763d8bca8
   - name: zbus_macros
-    version: 3.14.1
-    sha: 41d1794a946878c0e807f55a397187c11fc7a038ba5d868e7db4f3bd7760bc9d
+    version: 3.15.0
+    sha: b4a1ba45ed0ad344b85a2bb5a1fe9830aed23d67812ea39a586e7d0136439c7d
   - name: zbus_names
     version: 2.6.0
     sha: fb80bb776dbda6e23d705cf0123c3b95df99c4ebeaec6c2599d4a5419902b4a9

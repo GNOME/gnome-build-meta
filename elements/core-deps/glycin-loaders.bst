@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 0.1.2-76-gaed1e60c36960c1fceec02d376a995c232f102cc
+  ref: 0.1.2-78-g92ace4f3001170066140148ed6ab22ead06c9c63
 - kind: cargo
 
   ref:
@@ -27,8 +27,8 @@ sources:
     version: 0.5.1
     sha: 7c48ccdbf6ca6b121e0f586cbc0e73ae440e56c67c30fa0873b4e110d9c26d2b
   - name: async-channel
-    version: 2.1.1
-    sha: 1ca33f4bc4ed1babef42cad36cc1f51fa88be00420404e5b1e80ab1b18f7678c
+    version: 2.2.0
+    sha: f28243a43d821d11341ab73c80bed182dc015c514b951616cf79bd4af39af0c3
   - name: async-executor
     version: 1.8.0
     sha: 17ae5ebefcc48e7452b4987947920dac9450be1110cadf34d1b8c116bdbaf97c
@@ -36,8 +36,8 @@ sources:
     version: 1.6.0
     sha: 279cf904654eeebfa37ac9bb1598880884924aab82e290aa65c9e77a0e142e06
   - name: async-fs
-    version: 2.1.0
-    sha: dd1f344136bad34df1f83a47f3fd7f2ab85d75cb8a940af4ccf6d482a84ea01b
+    version: 2.1.1
+    sha: bc19683171f287921f2405677dd2ed2549c3b3bda697a563ebc3a121ace2aba1
   - name: async-global-executor
     version: 2.4.1
     sha: 05b1b633a2115cd122d73b955eadd9916c18c8f510ec9cd1686404c60ad1c29c
@@ -56,9 +56,6 @@ sources:
   - name: async-process
     version: 1.8.1
     sha: ea6438ba0a08d81529c69b36700fa2f95837bfe3e776ab39cde9c14d9149da88
-  - name: async-process
-    version: 2.0.1
-    sha: 15c1cd5d253ecac3d3cf15e390fd96bd92a13b1d14497d81abf077304794fb04
   - name: async-recursion
     version: 1.0.5
     sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
@@ -102,8 +99,8 @@ sources:
     version: 1.5.1
     sha: 6a37913e8dc4ddcc604f0c6d3bf2887c995153af3611de9e23c352b44c1b9118
   - name: bytemuck
-    version: 1.14.1
-    sha: ed2490600f404f2b94c167e31d3ed1d5f3c225a0f3b80230053b3e0b7b962bd9
+    version: 1.14.2
+    sha: ea31d69bda4949c1c1562c1e6f042a1caefac98cdc8a298260a2ff41c1e2d42b
   - name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
@@ -242,9 +239,15 @@ sources:
   - name: event-listener
     version: 4.0.3
     sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
+  - name: event-listener
+    version: 5.0.0
+    sha: b72557800024fabbaa2449dd4bf24e37b93702d457a4d4f2b0dd1f0f039f20c1
   - name: event-listener-strategy
     version: 0.4.0
     sha: 958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3
+  - name: event-listener-strategy
+    version: 0.5.0
+    sha: feedafcaa9b749175d5ac357452a9d41ea2911da598fde46ce1fe02c37751291
   - name: exr
     version: 1.72.0
     sha: 887d93f60543e9a9362ef8a21beedd0a833c5d9610e18c67abe15a5963dcb1a4
@@ -405,8 +408,8 @@ sources:
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
   - name: hermit-abi
-    version: 0.3.4
-    sha: 5d3d0e0f38255e7fa3cf31335b3a56f05febd18025f4db5ef7a0cfb4f8da651f
+    version: 0.3.5
+    sha: d0c62115964e08cb8039170eb33c1d0e2388a256930279edca206fff675f82c3
   - name: hex
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
@@ -441,8 +444,8 @@ sources:
     version: 1.0.10
     sha: b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c
   - name: jobserver
-    version: 0.1.27
-    sha: 8c37f63953c4c63420ed5fd3d6d398c719489b9f872b9fa683262f8edd363c7d
+    version: 0.1.28
+    sha: ab46a6e9526ddef3ae7f787c06f0f2600639ba80ea3eade3d8e670a2230f51d6
   - name: jpeg-decoder
     version: 0.3.1
     sha: f5d4a7da358eff58addd2877a45865158f0d78c911d43a5784ceb7bbf52833b0
@@ -567,17 +570,17 @@ sources:
     version: 7.1.3
     sha: d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a
   - name: num-complex
-    version: 0.4.4
-    sha: 1ba157ca0885411de85d6ca030ba7e2a83a28636056c7c699b07c8b6f7383214
+    version: 0.4.5
+    sha: 23c6602fda94a57c990fe0df199a035d83576b496aa29f4e634a8ac6004e68a6
   - name: num-integer
-    version: 0.1.45
-    sha: 225d3389fb3509a24c93f5c29eb6bde2586b98d9f016636dff58d7c6f7569cd9
+    version: 0.1.46
+    sha: 7969661fd2958a5cb096e56c8e1ad0444ac2bbcd0061bd28660485a44879858f
   - name: num-rational
     version: 0.4.1
     sha: 0638a1c9d0a3c0914158145bc76cff373a75a627e6ecbfb71cbe6f453a5a19b0
   - name: num-traits
-    version: 0.2.17
-    sha: 39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c
+    version: 0.2.18
+    sha: da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a
   - name: objc
     version: 0.2.7
     sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
@@ -672,8 +675,8 @@ sources:
     version: 2.8.0
     sha: 4b2d323e8ca7996b3e23126511a523f7e62924d93ecd5ae73b333815b0eb3dce
   - name: polling
-    version: 3.3.2
-    sha: 545c980a3880efd47b2e262f6a4bb6daad6555cf3367aa9c4e52895f69537a41
+    version: 3.4.0
+    sha: 30054e72317ab98eddd8561db0f6524df3367636884b7b21b703e4b280a84a14
   - name: ppv-lite86
     version: 0.2.17
     sha: 5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de
@@ -849,8 +852,8 @@ sources:
     version: 0.1.12
     sha: dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6
   - name: tempfile
-    version: 3.9.0
-    sha: 01ce4141aa927a6d1bd34a041795abd0db1cccba5d5f24b009f694bdf3a1f3fa
+    version: 3.10.0
+    sha: a365e8cd18e44762ef95d87f284f4b5cd04107fec2ff3052bd6a3e6069669e67
   - name: tendril
     version: 0.4.3
     sha: d24a120c5fc464a3458240ee02c299ebcb9d67b5249c8848b09d639dca8d7bb0
@@ -873,8 +876,8 @@ sources:
     version: 1.36.0
     sha: 61285f6515fa018fb2d1e46eb21223fff441ee8db5d0f1435e8ab4f5cdb80931
   - name: toml
-    version: 0.8.9
-    sha: c6a4b9e8023eb94392d3dca65d717c53abc5dad49c07cb65bb8fcd87115fa325
+    version: 0.8.10
+    sha: 9a9aad4a3066010876e8dcf5a8a06e70a558751117a145c6ce2b82c2e2054290
   - name: toml_datetime
     version: 0.6.5
     sha: 3550f4e9685620ac18a50ed434eb3aec30db8ba93b0287467bca5826ea25baf1
@@ -887,6 +890,9 @@ sources:
   - name: toml_edit
     version: 0.21.1
     sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
+  - name: toml_edit
+    version: 0.22.4
+    sha: 0c9ffdf896f8daaabf9b66ba8e77ea1ed5ed0f72821b398aba62352e95062951
   - name: tracing
     version: 0.1.40
     sha: c3523ab5a71916ccf420eebdf5521fcef02141234bbc0b8a49f2fdc4544364ef
@@ -1011,8 +1017,8 @@ sources:
     version: 0.52.0
     sha: dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
   - name: winnow
-    version: 0.5.37
-    sha: a7cad8365489051ae9f054164e459304af2e7e9bb407c958076c8bf4aef52da5
+    version: 0.5.39
+    sha: 5389a154b01683d28c77f8f68f49dea75f0a4da32557a58f68ee51ebba472d29
   - name: xdg-home
     version: 1.1.0
     sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e

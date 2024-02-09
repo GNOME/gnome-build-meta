@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-user-docs.git
   track: master
-  ref: 45.1-15-g91fbd55e4a539badfad88aca078f00dfb6a1feac
+  ref: 45.1-16-g706b6321242874d67b01448d1043cb55ec5b2c27
 build-depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
