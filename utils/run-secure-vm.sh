@@ -65,6 +65,17 @@ Options:
 
   --debug-systemd            Enable debug logs for systemd
 
+  --debug-shell              Enable systemd debug shell
+                             Creates a PTY serial device and attach it to the VM on ttyS1.
+
+                             Qemu will print the path of the PTY device once it starts
+                             and you can connect to it using screen or similar.
+                             Make sure its (term1)
+
+                             Example:
+                             qemu: char device redirected to /dev/pts/1 (label term1)
+                             screen /dev/pts/1
+
   --local-updates            Configure sysupdate to download from local
                              repository provided by run-sysupdate-repo.sh.
 
@@ -149,6 +160,12 @@ while [ $# -gt 0 ]; do
             shift
             args+=("$@")
             break
+            ;;
+        --debug-shell)
+            QEMU_ARGS+=(-chardev pty,id=term1)
+            QEMU_ARGS+=(-serial chardev:term1)
+            cmdline+=("systemd.debug-shell=ttyS1" "rd.systemd.debug-shell=ttyS1")
+            cmdline+=("systemd.tty.rows.ttyS1=$(tput lines)" "systemd.tty.columns.ttyS1=$(tput cols)")
             ;;
         *)
             args+=("$1")
