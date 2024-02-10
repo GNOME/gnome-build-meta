@@ -37,6 +37,13 @@ config:
     version="$(ls -1 /lib/modules | head -n1)"
     cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}/vmlinuz"
 
+  - |
+    version="$(ls -1 /lib/modules | head -n1)"
+    if [ -d /boot/dtbs ]; then
+      mkdir -p "%{install-root}/usr/lib/modules/${version}/dtb"
+      cp -r /boot/dtbs/* "%{install-root}/usr/lib/modules/${version}/dtb"
+    fi
+
   - dbus-uuidgen >/etc/machine-id
   - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
   - rm /etc/machine-id
