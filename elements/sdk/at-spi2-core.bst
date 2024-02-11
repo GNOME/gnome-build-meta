@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:at-spi2-core.git
   track: main
-  ref: AT_SPI2_CORE_2_51_0-14-gdd0308afe8054c5b4dd84702a607ce4a41ee9294
+  ref: AT_SPI2_CORE_2_51_90-7-g52abed46476e5a203b7585faa93ad3a59e6f85f1
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -13,6 +13,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/dbus.bst
+- freedesktop-sdk.bst:components/libei.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
