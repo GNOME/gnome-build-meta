@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.alpha-39-g43af4a1d2d3faab46d4b403b3c93a92e36ae979a
+  ref: 46.beta-1-gd07c8f9124dee61447ad7c53dcda2f65b7997b9f
 - kind: cargo
 
   ref:
@@ -77,9 +77,6 @@ sources:
   - name: async-process
     version: 1.8.1
     sha: ea6438ba0a08d81529c69b36700fa2f95837bfe3e776ab39cde9c14d9149da88
-  - name: async-process
-    version: 2.0.1
-    sha: 15c1cd5d253ecac3d3cf15e390fd96bd92a13b1d14497d81abf077304794fb04
   - name: async-recursion
     version: 1.0.5
     sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
@@ -117,8 +114,8 @@ sources:
     version: 1.5.1
     sha: 6a37913e8dc4ddcc604f0c6d3bf2887c995153af3611de9e23c352b44c1b9118
   - name: bytemuck
-    version: 1.14.2
-    sha: ea31d69bda4949c1c1562c1e6f042a1caefac98cdc8a298260a2ff41c1e2d42b
+    version: 1.14.3
+    sha: a2ef034f05691a48569bd920a96c81b9d91bbad1ab5ac7c4616c1f6ef36cb79f
   - name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
@@ -132,8 +129,8 @@ sources:
     version: 1.0.83
     sha: f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0
   - name: cfg-expr
-    version: 0.15.6
-    sha: 6100bc57b6209840798d95cb2775684849d332f7bd788db2a8c8caf7ef82a41a
+    version: 0.15.7
+    sha: fa50868b64a9a6fda9d593ce778849ea8715cd2a3d2cc17ffdb4a2f2f2f1961d
   - name: cfg-if
     version: 1.0.0
     sha: baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd
@@ -309,11 +306,11 @@ sources:
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
   - name: glycin
-    version: 1.0.0-alpha.6
-    sha: 40888ee0ac51bbc6d64f65bb06646e475c5ad5dfeb37c46333792caa8fa1b364
+    version: 1.0.0-beta
+    sha: c3a08007c5f8e3b82be319d0af7d60168aac561ea89cb3a4f0ce37462341692f
   - name: glycin-utils
-    version: 1.0.0-alpha.6
-    sha: 573253c8a3e758ba70a62d9ff447185305dc9b4b19d9eec5e455593dc5845de1
+    version: 1.0.0-beta
+    sha: cedb37a83a6a53c956a0c25079802995b0b0d3c80727955c28b764182ea73341
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
@@ -545,9 +542,6 @@ sources:
   - name: regex-syntax
     version: 0.8.2
     sha: c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f
-  - name: rgb
-    version: 0.8.37
-    sha: 05aaa8004b64fd573fc9d002f4e632d51ad4f026c2b5ba95fcb6c2f32c2c47d8
   - name: rustc-demangle
     version: 0.1.23
     sha: d626bb9dae77e28219937af045c257c28bfd3f69333c512553507f5f9798cb76
@@ -800,3 +794,4 @@ depends:
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libseccomp.bst
