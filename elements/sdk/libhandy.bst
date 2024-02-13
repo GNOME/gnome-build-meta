@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libhandy.git
-  track: main
-  ref: 1.8.0-30-g9434350675a53c8878a8cad19ab21afdbade2ee0
-
+- kind: tar
+  url: gnome_downloads:libhandy/1.8/libhandy-1.8.3.tar.xz
+  ref: 05b497229073ff557f10b326e074c5066f8743a302d4820ab97bcb5cd2dab087
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

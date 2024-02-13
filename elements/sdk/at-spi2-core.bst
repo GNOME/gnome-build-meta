@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:at-spi2-core.git
-  track: main
-  ref: AT_SPI2_CORE_2_51_90-10-g7e03cc26b3590bde1b38b78c30a077de1696b87f
+- kind: tar
+  url: gnome_downloads:at-spi2-core/2.51/at-spi2-core-2.51.90.tar.xz
+  ref: bf0e8d15cb63e9ca5c5579a9ef9c6dc9072c3e7013e3fba5a507788c4d904a4f
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

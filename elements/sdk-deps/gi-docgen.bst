@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gi-docgen.git
-  track: main
-  ref: 2023.3-36-g54cff30472611cc3eb8b12832c9d7d41fd033293
-
+- kind: tar
+  url: gnome_downloads:gi-docgen/2023/gi-docgen-2023.3.tar.xz
+  ref: 4deb1f09773f706259ac652050da7b3ee59871bc3fd5cfb77e811db7498dc8e7
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

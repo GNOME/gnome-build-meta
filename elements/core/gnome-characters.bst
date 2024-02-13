@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-characters.git
-  track: main
-  ref: 45.0-9-gb58db4f0e3ca9913272301f9de44e6bebb050017
-
+- kind: tar
+  url: gnome_downloads:gnome-characters/45/gnome-characters-45.0.tar.xz
+  ref: 3fd54fcc14d291b77fff12deefff00da383e0a6400af507d1605fbcb49b8c741
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

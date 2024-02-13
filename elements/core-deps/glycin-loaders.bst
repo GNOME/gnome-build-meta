@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome_gitlab:sophie-h/glycin.git
-  track: main
-  ref: 1.0.beta-3-g1757e9c6f39ff1ceeb95da15a08e448e9fffafc4
+- kind: tar
+  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.beta.tar.xz
+  ref: 76041cd6f10abc13a5689825aa4dd2c1c33f63dfadd2ae4d2aa49704f3861cd2
 - kind: cargo
 
   ref:
@@ -24,8 +23,8 @@ sources:
     version: 0.5.1
     sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
   - name: async-broadcast
-    version: 0.7.0
-    sha: 258b52a1aa741b9f09783b2d86cf0aeeb617bbf847f6933340a39644227acbdb
+    version: 0.5.1
+    sha: 7c48ccdbf6ca6b121e0f586cbc0e73ae440e56c67c30fa0873b4e110d9c26d2b
   - name: async-channel
     version: 2.2.0
     sha: f28243a43d821d11341ab73c80bed182dc015c514b951616cf79bd4af39af0c3
@@ -33,11 +32,17 @@ sources:
     version: 1.8.0
     sha: 17ae5ebefcc48e7452b4987947920dac9450be1110cadf34d1b8c116bdbaf97c
   - name: async-fs
+    version: 1.6.0
+    sha: 279cf904654eeebfa37ac9bb1598880884924aab82e290aa65c9e77a0e142e06
+  - name: async-fs
     version: 2.1.1
     sha: bc19683171f287921f2405677dd2ed2549c3b3bda697a563ebc3a121ace2aba1
   - name: async-global-executor
     version: 2.4.1
     sha: 05b1b633a2115cd122d73b955eadd9916c18c8f510ec9cd1686404c60ad1c29c
+  - name: async-io
+    version: 1.13.0
+    sha: 0fc5b45d93ef0529756f812ca52e44c221b35341892d3dcc34132ac02f3dd2af
   - name: async-io
     version: 2.3.1
     sha: 8f97ab0c5b00a7cdbe5a371b9a782ee7be1316095885c8a4ea1daf490eb0ef65
@@ -48,8 +53,8 @@ sources:
     version: 3.3.0
     sha: d034b430882f8381900d3fe6f0aaa3ad94f2cb4ac519b429692a1bc2dda4ae7b
   - name: async-process
-    version: 2.0.1
-    sha: 15c1cd5d253ecac3d3cf15e390fd96bd92a13b1d14497d81abf077304794fb04
+    version: 1.8.1
+    sha: ea6438ba0a08d81529c69b36700fa2f95837bfe3e776ab39cde9c14d9149da88
   - name: async-recursion
     version: 1.0.5
     sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
@@ -98,9 +103,6 @@ sources:
   - name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
-  - name: bytes
-    version: 1.5.0
-    sha: a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223
   - name: cairo-rs
     version: 0.19.1
     sha: bc1c415b7088381c53c575420899c34c9e6312df5ac5defd05614210e9fd6e1b
@@ -203,15 +205,12 @@ sources:
   - name: encoding_rs
     version: 0.8.33
     sha: 7268b386296a025e474d5140678f75d6de9493ae55a5d709eeb9dd08149945e1
-  - name: endi
-    version: 1.1.0
-    sha: a3d8a32ae18130a3c84dd492d4215c3d913c3b07c6b63c2eb3eb7ff1101ab7bf
   - name: enumflags2
-    version: 0.7.9
-    sha: 3278c9d5fb675e0a51dabcf4c0d355f692b064171535ba72361be1528a9d8e8d
+    version: 0.7.8
+    sha: 5998b4f30320c9d93aed72f63af821bfdac50465b75428fce77b48ec482c3939
   - name: enumflags2_derive
-    version: 0.7.9
-    sha: 5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4
+    version: 0.7.8
+    sha: f95e2801cd355d4a1a3e3953ce6ee5ae9603a5c833455343a8bfe3f44d418246
   - name: enumn
     version: 0.1.13
     sha: 6fd000fd6988e73bbe993ea3db9b1aa64906ab88766d654973924340c8cddb42
@@ -224,6 +223,9 @@ sources:
   - name: event-listener
     version: 2.5.3
     sha: 0206175f82b8d6bf6652ff7d71a1e27fd2e4efde587fd368662814d6ec1d9ce0
+  - name: event-listener
+    version: 3.1.0
+    sha: d93877bcde0eb80ca09131a08d23f0a5c18a620b01db137dba666d18cd9b30c2
   - name: event-listener
     version: 4.0.3
     sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
@@ -239,6 +241,9 @@ sources:
   - name: exr
     version: 1.72.0
     sha: 887d93f60543e9a9362ef8a21beedd0a833c5d9610e18c67abe15a5963dcb1a4
+  - name: fastrand
+    version: 1.9.0
+    sha: e51093e27b0797c359783294ca4f0a911c270184cb10f85783b118614a1501be
   - name: fastrand
     version: 2.0.1
     sha: 25cbce373ec4653f1a01a31e8a5e5ec0c622dc27ff9c4e6606eefef5cbbed4a5
@@ -287,6 +292,9 @@ sources:
   - name: futures-io
     version: 0.3.30
     sha: a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1
+  - name: futures-lite
+    version: 1.13.0
+    sha: 49a9d51ce47660b1e808d3c990b4709f2f415d928835a17dfd16991515c46bce
   - name: futures-lite
     version: 2.2.0
     sha: 445ba825b27408685aaecefd65178908c36c6e96aaf6d8599419d46e624192ba
@@ -353,6 +361,12 @@ sources:
   - name: glob
     version: 0.3.1
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
+  - name: glycin
+    version: 1.0.0-beta
+    sha: c3a08007c5f8e3b82be319d0af7d60168aac561ea89cb3a4f0ce37462341692f
+  - name: glycin-utils
+    version: 1.0.0-beta
+    sha: cedb37a83a6a53c956a0c25079802995b0b0d3c80727955c28b764182ea73341
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
@@ -365,6 +379,9 @@ sources:
   - name: heck
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
+  - name: hermit-abi
+    version: 0.3.5
+    sha: d0c62115964e08cb8039170eb33c1d0e2388a256930279edca206fff675f82c3
   - name: hex
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
@@ -381,8 +398,14 @@ sources:
     version: 0.24.8
     sha: 034bbe799d1909622a74d1193aa50147769440040ff36cb2baa947609b0a4e23
   - name: indexmap
-    version: 2.2.3
-    sha: 233cf39063f058ea2caae4091bf4a3ef70a653afbc026f5c4a4135d114e3c177
+    version: 2.2.2
+    sha: 824b2ae422412366ba479e8111fd301f7b5faece8149317bb81925979a53f520
+  - name: instant
+    version: 0.1.12
+    sha: 7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c
+  - name: io-lifetimes
+    version: 1.0.11
+    sha: eae7b9aee968036d54dce06cebaefd919e4472e753296daccd6d344e3e2df0c2
   - name: itertools
     version: 0.12.1
     sha: ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569
@@ -444,6 +467,9 @@ sources:
     version: 0.2.1
     sha: 9a7cbbd4ad467251987c6e5b47d53b11a5a05add08f2447a9e2d70aef1e0d138
   - name: linux-raw-sys
+    version: 0.3.8
+    sha: ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519
+  - name: linux-raw-sys
     version: 0.4.13
     sha: 01cda141df6706de531b6c46c3a33ecca755538219bd484262fa09410c13539c
   - name: locale_config
@@ -477,6 +503,9 @@ sources:
     version: 0.9.4
     sha: fe751422e4a8caa417e13c3ea66452215d7d63e19e604f4980461212f3ae1322
   - name: memoffset
+    version: 0.7.1
+    sha: 5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4
+  - name: memoffset
     version: 0.9.0
     sha: 5a634b1c61a95585bd15607c6ab0c4e5b226e695ff2800ba0cdccddf208c406c
   - name: minimal-lexical
@@ -485,9 +514,6 @@ sources:
   - name: miniz_oxide
     version: 0.7.2
     sha: 9d811f3e15f28568be3407c8e7fdb6514c1cda3cb30683f15b6a1a1dc4ea14a7
-  - name: mio
-    version: 0.8.10
-    sha: 8f3d0b296e374a4e6f3c7b0a1f5a51d748a0d34c85e7dc48fc3fa9a87657fe09
   - name: mutate_once
     version: 0.1.1
     sha: 16cf681a23b4d0a43fc35024c176437f9dcd818db34e0f42ab456a0ee5ad497b
@@ -500,6 +526,9 @@ sources:
   - name: new_debug_unreachable
     version: 1.0.4
     sha: e4a24736216ec316047a1fc4252e27dabb04218aa4a3f37c6e7ddbf1f9782b54
+  - name: nix
+    version: 0.26.4
+    sha: 598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b
   - name: nix
     version: 0.27.1
     sha: 2eb04e9c688eff1c89d72b407f168cf79bb9e867a9d3323ed6c01519eb9cc053
@@ -603,6 +632,9 @@ sources:
     version: 0.17.11
     sha: 1f6c3c3e617595665b8ea2ff95a86066be38fb121ff920a9c0eb282abcd1da5a
   - name: polling
+    version: 2.8.0
+    sha: 4b2d323e8ca7996b3e23126511a523f7e62924d93ecd5ae73b333815b0eb3dce
+  - name: polling
     version: 3.4.0
     sha: 30054e72317ab98eddd8561db0f6524df3367636884b7b21b703e4b280a84a14
   - name: ppv-lite86
@@ -672,6 +704,9 @@ sources:
     version: 1.1.0
     sha: 08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2
   - name: rustix
+    version: 0.37.27
+    sha: fea8ca367a3a01fe35e6943c400addf443c0f57670e6ec51196f71a4b8762dd2
+  - name: rustix
     version: 0.38.31
     sha: 6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949
   - name: safe-transmute
@@ -729,8 +764,8 @@ sources:
     version: 1.13.1
     sha: e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7
   - name: socket2
-    version: 0.5.5
-    sha: 7b5fac59a5cb5dd637972e5fca70daf0523c9067fcdc4842f053dae04a18f8e9
+    version: 0.4.10
+    sha: 9f7916fc008ca5542385b89a3d3ce689953c143e9304a9bf8beec1de48994c0d
   - name: spin
     version: 0.9.8
     sha: 6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67
@@ -771,11 +806,11 @@ sources:
     version: 0.4.3
     sha: d24a120c5fc464a3458240ee02c299ebcb9d67b5249c8848b09d639dca8d7bb0
   - name: thiserror
-    version: 1.0.57
-    sha: 1e45bcbe8ed29775f228095caf2cd67af7a4ccf756ebff23a306bf3e8b47b24b
+    version: 1.0.56
+    sha: d54378c645627613241d077a3a79db965db602882668f9136ac42af9ecb730ad
   - name: thiserror-impl
-    version: 1.0.57
-    sha: a953cb265bef375dae3de6663da4d3804eee9682ea80d8e2542529b73c531c81
+    version: 1.0.56
+    sha: fa0faa943b50f3db30a20aa7e265dbc66076993efed8463e8de414e5d06d3471
   - name: tiff
     version: 0.9.1
     sha: ba1310fcea54c6a9a4fd1aad794ecc02c31682f6bfbecdf460bf19533eed1e3e
@@ -785,9 +820,6 @@ sources:
   - name: tinyvec_macros
     version: 0.1.1
     sha: 1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20
-  - name: tokio
-    version: 1.36.0
-    sha: 61285f6515fa018fb2d1e46eb21223fff441ee8db5d0f1435e8ab4f5cdb80931
   - name: toml
     version: 0.8.10
     sha: 9a9aad4a3066010876e8dcf5a8a06e70a558751117a145c6ce2b82c2e2054290
@@ -842,6 +874,9 @@ sources:
   - name: version_check
     version: 0.9.4
     sha: 49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f
+  - name: waker-fn
+    version: 1.1.1
+    sha: f3c4517f54858c779bbcbf228f4fca63d121bf85fbecb2dc578cdf4a39395690
   - name: walkdir
     version: 2.4.0
     sha: d71d857dc86794ca4c280d616f7da00d2dbfd8cd788846559a6813e6aa4b54ee
@@ -933,26 +968,26 @@ sources:
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
   - name: zbus
-    version: 4.0.0
-    sha: d4d98d42da0eb3d36957561d926ccd5fb351b42b529c0f238af91cdb4b9ab93e
+    version: 3.15.0
+    sha: c45d06ae3b0f9ba1fb2671268b975557d8f5a84bb5ec6e43964f87e763d8bca8
   - name: zbus_macros
-    version: 4.0.0
-    sha: 81e30c8a575b1684373b3b745ea5a9155a9f422962515b11f886574b2e08e242
+    version: 3.15.0
+    sha: b4a1ba45ed0ad344b85a2bb5a1fe9830aed23d67812ea39a586e7d0136439c7d
   - name: zbus_names
-    version: 3.0.0
-    sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
+    version: 2.6.0
+    sha: fb80bb776dbda6e23d705cf0123c3b95df99c4ebeaec6c2599d4a5419902b4a9
   - name: zune-inflate
     version: 0.2.54
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - name: zvariant
-    version: 4.0.0
-    sha: 4e09e8be97d44eeab994d752f341e67b3b0d80512a8b315a0671d47232ef1b65
+    version: 3.15.0
+    sha: 44b291bee0d960c53170780af148dca5fa260a63cdd24f1962fa82e03e53338c
   - name: zvariant_derive
-    version: 4.0.0
-    sha: 72a5857e2856435331636a9fbb415b09243df4521a267c5bedcd5289b4d5799e
+    version: 3.15.0
+    sha: 934d7a7dfc310d6ee06c87ffe88ef4eca7d3e37bb251dece2ef93da8f17d8ecd
   - name: zvariant_utils
-    version: 1.1.0
-    sha: 00bedb16a193cc12451873fee2a1bc6550225acece0e36f333e68326c73c8172
+    version: 1.0.1
+    sha: 7234f0d811589db492d16893e3f21e8e2fd282e6d01b0cddee310322062cc200
 build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

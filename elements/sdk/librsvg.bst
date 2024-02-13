@@ -1,10 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:librsvg.git
-  track: main
-  ref: 2.58.0-beta.1-0-g93b3e0a65419baf188d808fd6c7de4b6fe9adf33
+- kind: tar
+  url: gnome_downloads:librsvg/2.57/librsvg-2.57.91.tar.xz
+  ref: e0f9346258ba1c1299aee8abd7b0218ab2ef45fa83bb078a636c1ebb2ecdb6b2
 - kind: cargo
   ref:
   - name: adler

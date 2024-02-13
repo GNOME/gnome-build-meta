@@ -1,9 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:gobject-introspection.git
-  track: main
-  ref: 1.79.1-15-gf31a2b5c30b3a32e1474ed26e560bdb795bbbd2c
-
+- kind: tar
+  url: gnome_downloads:gobject-introspection/1.79/gobject-introspection-1.79.1.tar.xz
+  ref: f80ea33ee05ca48fb997952bb46131cfbdd3751f7f5da068888739cbeb2d5443
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

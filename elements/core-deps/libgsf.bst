@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_repo
-  url: gnome:libgsf.git
-  track: master
-  ref: LIBGSF_1_14_52-1-g91c31ec3098918b6fa6bf49836e58de62e87c468
+- kind: tar
+  url: gnome_downloads:libgsf/1.14/libgsf-1.14.52.tar.xz
+  ref: 9181c914b9fac0e05d6bcaa34c7b552fe5fc0961d3c9f8c01ccc381fb084bcf0
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-calculator.git
-  track: master
-  ref: 46.beta-5-gf9f7f6b322a78bc74b78f6fcd8d601a7fcd2d84c
-
+- kind: tar
+  url: gnome_downloads:gnome-calculator/46/gnome-calculator-46.beta.tar.xz
+  ref: 25ae1693dc655250a9ebe5fa0233cea166d9dc13a27757111514ceabdeda1067
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

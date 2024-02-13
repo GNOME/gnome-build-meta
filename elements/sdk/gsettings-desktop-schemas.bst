@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gsettings-desktop-schemas.git
-  track: master
-  ref: 46.beta-4-g9c7a53ed05170fd3a1eed5e265ce4048f7a977fd
-
+- kind: tar
+  url: gnome_downloads:gsettings-desktop-schemas/46/gsettings-desktop-schemas-46.beta.tar.xz
+  ref: 6290ef45eee5baa7a98e2246e9a09288b944c96ea0467e4913d0287415f9c5af
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

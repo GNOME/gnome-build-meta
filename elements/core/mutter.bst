@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mutter.git
-  track: main
-  ref: 46.beta-52-g8677e36c4c3c457a974c71b36fd2bfcbc9e53f6c
-
+- kind: tar
+  url: gnome_downloads:mutter/46/mutter-46.beta.tar.xz
+  ref: c4673a6a91eb542685c0263716559a31b1e0bbdf1b402f1a7527ffff0d38e133
 build-depends:
 - core-deps/xvfb.bst
 # Need the whole thing over just the capture for the dbus interface.
@@ -21,7 +19,6 @@ runtime-depends:
 
 depends:
 - core-deps/colord.bst
-- core-deps/libdisplay-info.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst

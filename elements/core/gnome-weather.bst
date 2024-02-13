@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-weather.git
-  track: main
-  ref: 45.0-8-gbfeaf0f0617b7a07b2e23e3a1bdab20291453077
-
+- kind: tar
+  url: gnome_downloads:gnome-weather/45/gnome-weather-45.0.tar.xz
+  ref: 30c0029702883dc8d8160e6de1d6116877cd6c25bc950d4e4902a6ab467b2fa4
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
