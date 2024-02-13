@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tracker.git
   track: master
-  ref: 3.7.alpha-28-g71f1b1c031dad2102d5ecae600c58a085d38f619
+  ref: 3.7.beta-2-gd7d66b590ef3743df442d80998a7bfc7d98e5862
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
@@ -30,5 +30,6 @@ depends:
 variables:
   meson-local: >-
     -Ddocs=false
+    -Davahi=disabled
     -Dunicode_support=icu
     -Dstemmer=disabled
