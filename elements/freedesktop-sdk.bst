@@ -15,6 +15,8 @@ sources:
   path: patches/freedesktop-sdk/0001-components-linux-Enable-SECURITY_LANDLOCK.patch
 - kind: patch
   path: patches/freedesktop-sdk/abseil-riscv64.patch
+- kind: patch
+  path: patches/freedesktop-sdk/sg2402-experimental.patch
 
 config:
   options:

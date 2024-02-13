@@ -1,0 +1,55 @@
+diff -ur freedesktop-sdk-old/elements/components/linux.bst freedesktop-sdk/elements/components/linux.bst
+--- freedesktop-sdk-old/elements/components/linux.bst	2024-02-13 21:51:52.809247958 +0100
++++ freedesktop-sdk/elements/components/linux.bst	2024-02-06 20:15:52.135168954 +0100
+@@ -1891,6 +1891,30 @@
+       ;;
+     esac
+ 
++    remove DEBUG_VM
++    enable ARCH_SOPHGO
++    enable PCIE_CADENCE_SOPHGO
++    module MMC_SDHCI_SOPHGO
++    enable I2C
++    enable I2C_SMBUS
++    enable SERIAL_8250
++    enable SERIAL_8250_CONSOLE
++    enable SERIAL_8250_DW
++    enable FIRMWARE_EDID
++    enable ERRATA_THEAD
++    enable FRAMEBUFFER_CONSOLE_ROTATION
++    enable FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER
++    enable GPIO_SYSFS
++    enable I2C_DESIGNWARE_PLATFORM
++    enable KSM
++    enable SCHED_AUTOGROUP
++    enable SCHED_CLUSTER
++    enable SENSORS_LM90
++    enable SENSORS_PWM_FAN
++    enable TRANSPARENT_HUGEPAGE
++    enable USB_DYNAMIC_MINORS
++    enable USB_UHCI_HCD
++
+   - |
+     make -j1 olddefconfig
+ 
+diff -ur freedesktop-sdk-old/elements/include/linux.yml freedesktop-sdk/elements/include/linux.yml
+--- freedesktop-sdk-old/elements/include/linux.yml	2024-02-13 21:51:52.061248066 +0100
++++ freedesktop-sdk/elements/include/linux.yml	2024-02-06 20:16:37.215744532 +0100
+@@ -1,10 +1,12 @@
+ sources:
+ - kind: git_repo
+-  url: kernel:linux/kernel/git/stable/linux.git
+-  track: v*
+-  exclude:
+-  - '*-rc*'
+-  ref: v6.6.10-0-gc9a51ebb4bac69ed3fee9c0ebe0c2b5149e80845
++  #url: kernel:linux/kernel/git/stable/linux.git
++  url: github:sophgo/linux-riscv.git
++  #track: v*
++  track: refs/heads/sg2042-dev
++  #exclude:
++  #- '*-rc*'
++  ref: v6.1.12-10047-gbeafa8820ba0ea1e8aab84c4ebb0c907f828c963
+ - kind: local
+   path: files/linux/config-utils.sh
+ - kind: patch_queue
