@@ -11,7 +11,7 @@
 
 .i686:
   tags:
-  - i686
+  - x86_64
   - gnome-build-meta
   variables:
     ARCH: i686
