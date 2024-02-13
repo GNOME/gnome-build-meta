@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:libvirt-9.7.0.tar.xz
-  ref: d8c758fe7db640f572489caa8ea6dd8262d169a4372326c23a3a013cdc40b8ce
+  url: libvirt:libvirt-10.0.0.tar.xz
+  ref: 8ba2e72ec8bdd2418554a1474c42c35704c30174b7611eaf9a16544b71bcf00a
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:
@@ -83,6 +83,8 @@ variables:
     -Dstorage_zfs=disabled
     -Dwireshark_dissector=disabled
     -Dgit_werror=disabled
+    -Dnbdkit=disabled
+    -Dnbdkit_config_default=disabled
 config:
   install-commands:
     (>):
