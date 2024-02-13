@@ -35,7 +35,7 @@ install() {
     install_file /usr/share/plymouth/plymouthd.defaults
     install_file /usr/share/plymouth/themes/bgrt/bgrt.plymouth
     install_file /usr/lib/*/plymouth/two-step.so
-    install_file /usr/lib/*/plymouth/label.so
+    install_file /usr/lib/*/plymouth/label-pango.so
     install_file /usr/lib/*/plymouth/renderers/drm.so
     install_file /usr/lib/*/plymouth/renderers/frame-buffer.so
     install_files /usr/share/plymouth/themes/spinner/*.png
