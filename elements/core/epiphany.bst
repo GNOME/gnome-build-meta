@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/44/epiphany-44.7.tar.xz
-  ref: 44f95a34436e3eaab75228ca2545002ddbdeab930d4c9977038c689a855d2deb
+  url: gnome_downloads:epiphany/44/epiphany-44.8.tar.xz
+  ref: d35de82f30e0f57d39028235c03a5f1195456808c8c2e575e2b2be3db5706dd8
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
