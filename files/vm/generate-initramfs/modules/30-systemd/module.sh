@@ -18,6 +18,7 @@ BINARIES=(
 )
 
 FILES=(
+    /usr/lib/systemd/systemd-executor
     /usr/lib/systemd/system-generators/systemd-gpt-auto-generator
     /usr/lib/systemd/system-generators/systemd-veritysetup-generator
     /usr/lib/systemd/system-generators/systemd-cryptsetup-generator
