@@ -28,6 +28,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dgi-docgen=disabled
     -Djasper=disabled
     -Dlensfun=disabled
     -Dlibav=disabled
