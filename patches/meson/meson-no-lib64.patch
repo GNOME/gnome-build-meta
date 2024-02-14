@@ -1,0 +1,25 @@
+diff -u mesonbuild/utils/universal.py-old mesonbuild/utils/universal.py
+--- mesonbuild/utils/universal.py-old	2022-11-28 18:06:51.336418617 +0200
++++ mesonbuild/utils/universal.py	2022-11-28 18:07:17.366418392 +0200
+@@ -958,21 +958,6 @@
+ 
+ 
+ def default_libdir() -> str:
+-    if is_debianlike():
+-        try:
+-            pc = subprocess.Popen(['dpkg-architecture', '-qDEB_HOST_MULTIARCH'],
+-                                  stdout=subprocess.PIPE,
+-                                  stderr=subprocess.DEVNULL)
+-            (stdo, _) = pc.communicate()
+-            if pc.returncode == 0:
+-                archpath = stdo.decode().strip()
+-                return 'lib/' + archpath
+-        except Exception:
+-            pass
+-    if is_freebsd() or is_irix():
+-        return 'lib'
+-    if os.path.isdir('/usr/lib64') and not os.path.islink('/usr/lib64'):
+-        return 'lib64'
+     return 'lib'
+ 
+ 
