@@ -6,6 +6,7 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
