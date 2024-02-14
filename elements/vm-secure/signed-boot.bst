@@ -29,6 +29,7 @@ variables:
     mount.usrflags=ro
     mount.usrfstype=squashfs
     lockdown=confidentiality
+    systemd.firstboot=no
 
 config:
   install-commands:

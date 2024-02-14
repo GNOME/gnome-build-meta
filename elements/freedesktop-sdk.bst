@@ -6,8 +6,6 @@ sources:
   track: freedesktop-sdk-23.08.*
   ref: freedesktop-sdk-23.08.17-0-g7468e62da2ad3643df8e220347ed383378d60bc0
 - kind: patch
-  path: patches/freedesktop-sdk/sysupdate-dir.patch
-- kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
 - kind: patch
   path: 
@@ -54,3 +52,5 @@ config:
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
     components/linux-module-cert.bst: vm-secure/linux-module-cert.bst
     components/meson.bst: sdk/meson.bst
+    components/systemd-base.bst: core-deps/systemd-base.bst
+    components/systemd.bst: core-deps/systemd.bst

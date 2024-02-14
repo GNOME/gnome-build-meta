@@ -12,7 +12,6 @@ depends:
 - vm-secure/systemd-sysupdate-component.bst
 - vm-secure/ld-config.bst
 - vm-secure/preset-all.bst
-- freedesktop-sdk.bst:vm/minimal-secure/enable-sysupdate.bst
 - vm-secure/import-deployment-pub-key.bst
 - vm-secure/os-release-user.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
