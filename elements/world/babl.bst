@@ -1,11 +1,12 @@
 kind: meson
 sources:
 - kind: tar
-  url: gimp:babl/0.1/babl-0.1.106.tar.xz
-  ref: d325135d3304f088c134cc620013acf035de2e5d125a50a2d91054e7377c415f
+  url: gimp:babl/0.1/babl-0.1.108.tar.xz
+  ref: 26defe9deaab7ac4d0e076cab49c2a0d6ebd0df0c31fd209925a5f07edee1475
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

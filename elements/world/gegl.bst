@@ -2,11 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gimp:gegl/0.4/gegl-0.4.44.tar.xz
-  ref: 0a4cdb41635e406a0849cd0d3f03caf7d97cab8aa13d28707d532d0089d56126
+  url: gimp:gegl/0.4/gegl-0.4.48.tar.xz
+  ref: 418c26d94be8805d7d98f6de0c6825ca26bd74fcacb6c188da47533d9ee28247
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -25,8 +26,11 @@ depends:
 - freedesktop-sdk.bst:components/sdl2.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+# gi-docgen is disabled because of a dot issue
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/jobs/3570210
 variables:
   meson-local: >-
+    -Dgi-docgen=disabled
     -Djasper=disabled
     -Dlensfun=disabled
     -Dlibav=disabled
