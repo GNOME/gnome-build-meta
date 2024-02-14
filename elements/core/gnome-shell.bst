@@ -34,10 +34,11 @@ runtime-depends:
 - freedesktop-sdk.bst:components/geoclue-libs.bst
 
 depends:
-- core-deps/NetworkManager.bst
+- core-deps/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
+- core-deps/NetworkManager.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gdm.bst
@@ -53,7 +54,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk.bst
 - sdk/libsoup.bst
-- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

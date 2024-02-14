@@ -27,7 +27,7 @@ runtime-depends:
 - core-deps/power-profiles-daemon.bst
 
 depends:
-- core-deps/NetworkManager.bst
+- core-deps/accountsservice.bst
 - core-deps/boltd.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
@@ -37,6 +37,7 @@ depends:
 - core-deps/libgtop.bst
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
+- core-deps/NetworkManager.bst
 - core-deps/system-config-printer.bst
 - core-deps/udisks2.bst
 - core-deps/upower.bst
@@ -51,7 +52,6 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk-extra.bst:components/samba.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libwacom.bst
