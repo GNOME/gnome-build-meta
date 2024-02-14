@@ -18,3 +18,11 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+# In nightly we enable homed. It doesn't yet work with malcontent
+# so we leave the default for stable
+(?):
+- channel == "nightly":
+    variables:
+      meson-local: >-
+        -Dcreate_homed=true
