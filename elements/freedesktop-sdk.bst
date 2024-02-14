@@ -6,8 +6,6 @@ sources:
   track: freedesktop-sdk-23.08*
   ref: freedesktop-sdk-23.08.14-0-g9c275393ed6bc14670622b7aa822b8e929d389df
 - kind: patch
-  path: patches/freedesktop-sdk/sysupdate-dir.patch
-- kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
@@ -57,3 +55,5 @@ config:
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
     components/linux-module-cert.bst: vm-secure/linux-module-cert.bst
     components/meson.bst: sdk/meson.bst
+    components/systemd-base.bst: core-deps/systemd-base.bst
+    components/systemd.bst: core-deps/systemd.bst
