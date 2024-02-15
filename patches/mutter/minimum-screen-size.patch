@@ -1,0 +1,13 @@
+diff --git a/src/backends/meta-monitor.c b/src/backends/meta-monitor.c
+index 16eddf68642a9d8c7f902f4aff23597fbad704db..9b48a3d2c01823fd9fe0c531f3754ab048836154 100644
+--- a/src/backends/meta-monitor.c
++++ b/src/backends/meta-monitor.c
+@@ -33,7 +33,7 @@
+ #define SCALE_FACTORS_STEPS (1.0 / (float) SCALE_FACTORS_PER_INTEGER)
+ #define MINIMUM_SCALE_FACTOR 1.0f
+ #define MAXIMUM_SCALE_FACTOR 4.0f
+-#define MINIMUM_LOGICAL_AREA (800 * 480)
++#define MINIMUM_LOGICAL_AREA (560 * 320)
+ #define MAXIMUM_REFRESH_RATE_DIFF 0.001
+ 
+ typedef struct _MetaMonitorMode

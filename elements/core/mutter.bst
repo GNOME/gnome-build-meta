@@ -5,6 +5,8 @@ sources:
   url: gnome:mutter.git
   track: main
   ref: 46.beta-52-g8677e36c4c3c457a974c71b36fd2bfcbc9e53f6c
+- kind: patch
+  path: patches/mutter/minimum-screen-size.patch
 
 build-depends:
 - core-deps/xvfb.bst
