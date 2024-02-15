@@ -1,0 +1,23 @@
+To use, set G_MESSAGES_DEBUG=GLib-Net
+
+diff --git a/tls/gnutls/gtlsdatabase-gnutls.c b/tls/gnutls/gtlsdatabase-gnutls.c
+index 4b50910..01f1ba4 100644
+--- a/tls/gnutls/gtlsdatabase-gnutls.c
++++ b/tls/gnutls/gtlsdatabase-gnutls.c
+@@ -549,7 +549,15 @@ g_tls_database_gnutls_populate_trust_list (GTlsDatabaseGnutls        *self,
+                                            gnutls_x509_trust_list_t   trust_list,
+                                            GError                   **error)
+ {
+-  int gerr = gnutls_x509_trust_list_add_system_trust (trust_list, 0, 0);
++  gint64 start;
++  gint64 finish;
++  int gerr;
++
++  start = g_get_real_time ();
++  gerr = gnutls_x509_trust_list_add_system_trust (trust_list, 0, 0);
++  finish = g_get_real_time ();
++  g_debug ("Initialized trust list for database %p in %" G_GUINT64_FORMAT " milliseconds", self, (finish - start) / 1000);
++
+   if (gerr == GNUTLS_E_UNIMPLEMENTED_FEATURE)
+     {
+       g_set_error_literal (error, G_TLS_ERROR, G_TLS_ERROR_MISC,
