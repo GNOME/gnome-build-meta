@@ -12,6 +12,7 @@ build-depends:
 depends:
 - core-deps/libportal.bst
 - sdk/adwaita-icon-theme.bst
+- sdk/gcr-3.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib-networking.bst
