@@ -4,8 +4,6 @@ sources:
   url: gnome:glib-networking.git
   track: master
   ref: 2.80.alpha-9-gd525d7536ff728ec6ea75727c8027303a4329117
-- kind: patch
-  path: patches/glib-networking/extra-debug.patch
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
