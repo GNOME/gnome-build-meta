@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-builder/46/gnome-builder-46.alpha.tar.xz
   ref: 21b3e454cd21f71875499f66e069a223a37a360c0e3a8309d355dac3ff1b24b1
+- kind: patch
+  path: patches/gnome-builder/0001-libide-tweaks-remove-autoptr-cleanup.patch
+
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
