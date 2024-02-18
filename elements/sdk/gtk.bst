@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: gnome_downloads:gtk/4.13/gtk-4.13.7.tar.xz
   ref: cbcbdcc71ef25136169f0697e616bc29a9d246541f13cac19f5c9c0df369bf41
+- kind: patch
+  path: patches/gtk/6890.patch
+
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst

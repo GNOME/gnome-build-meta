@@ -1,0 +1,198 @@
+From efa0033fb464718a621b48f9fb83845065543baa Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 12 Feb 2024 07:39:07 -0500
+Subject: [PATCH 1/4] inspector: Spell out Vulkan device types
+
+We know what these are, no need to be mysterious about it.
+---
+ gtk/inspector/general.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/gtk/inspector/general.c b/gtk/inspector/general.c
+index c5b218c4c95..6621514a398 100644
+--- a/gtk/inspector/general.c
++++ b/gtk/inspector/general.c
+@@ -513,11 +513,12 @@ init_vulkan (GtkInspectorGeneral *gen)
+       char *device_name;
+       char *api_version;
+       char *driver_version;
++      const char *types[] = { "other", "integrated GPU", "discrete GPU", "virtual GPU", "CPU" };
+ 
+       vk_device = gen->display->vk_physical_device;
+       vkGetPhysicalDeviceProperties (vk_device, &props);
+ 
+-      device_name = g_strdup_printf ("%s (%d)", props.deviceName, props.deviceType);
++      device_name = g_strdup_printf ("%s (%s)", props.deviceName, types[props.deviceType]);
+       api_version = g_strdup_printf ("%d.%d.%d",
+                                      VK_VERSION_MAJOR (props.apiVersion),
+                                      VK_VERSION_MINOR (props.apiVersion),
+-- 
+GitLab
+
+
+From f858daeca4263a186ccaaac2fe6ccce80047fc0a Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 12 Feb 2024 08:01:43 -0500
+Subject: [PATCH 2/4] node-editor: Don't help too much
+
+This was somehow duplicated when the reload action was added.
+---
+ demos/node-editor/node-editor-window.ui | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/demos/node-editor/node-editor-window.ui b/demos/node-editor/node-editor-window.ui
+index f768e9435bd..68d43ba27e7 100644
+--- a/demos/node-editor/node-editor-window.ui
++++ b/demos/node-editor/node-editor-window.ui
+@@ -10,10 +10,6 @@
+         <attribute name="label" translatable="yes">_Help</attribute>
+         <attribute name="action">app.help</attribute>
+       </item>
+-      <item>
+-        <attribute name="label" translatable="yes">_Help</attribute>
+-        <attribute name="action">app.help</attribute>
+-      </item>
+       <item>
+         <attribute name="label" translatable="yes">_Inspector</attribute>
+         <attribute name="action">app.inspector</attribute>
+-- 
+GitLab
+
+
+From 6c4739a2f1652b4d0830dccdab020af387e37e44 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 12 Feb 2024 14:16:09 -0500
+Subject: [PATCH 3/4] gsk: Don't use gpu renderers with llvmpipe
+
+Unless the renderer has been explicitly selected via the
+GSK_RENDERER environment variable, don't use it with llvmpipe.
+
+It is important that we allow explicit setting to override
+this, so we can continue to use ngl in ci, where we don't
+have hw and want to test with llvmpipe.
+
+This should address many of the "performance is terrible in
+GNOME OS" complaints that are coming from people running in
+VMs, etc.
+---
+ gsk/gskrenderer.c | 45 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+
+diff --git a/gsk/gskrenderer.c b/gsk/gskrenderer.c
+index 31477b84c71..08344cf7e7e 100644
+--- a/gsk/gskrenderer.c
++++ b/gsk/gskrenderer.c
+@@ -46,6 +46,8 @@
+ 
+ #include "gl/gskglrenderer.h"
+ #include "gpu/gskvulkanrenderer.h"
++#include "gdk/gdkvulkancontextprivate.h"
++#include "gdk/gdkdisplayprivate.h"
+ 
+ #include <graphene-gobject.h>
+ #include <cairo-gobject.h>
+@@ -630,16 +632,56 @@ get_renderer_for_backend (GdkSurface *surface)
+   return G_TYPE_INVALID;
+ }
+ 
++static gboolean
++gl_software_rendering (GdkSurface *surface)
++{
++  GdkDisplay *display = gdk_surface_get_display (surface);
++  GdkGLContext *context;
++
++  if (!gdk_display_prepare_gl (display, NULL))
++    return G_TYPE_INVALID;
++
++  context = gdk_display_get_gl_context (display);
++  gdk_gl_context_make_current (context);
++
++  return strstr ((const char *) glGetString (GL_RENDERER), "llvmpipe") != NULL;
++}
++
+ static GType
+ get_renderer_for_gl (GdkSurface *surface)
+ {
++  if (gl_software_rendering (surface))
++    return G_TYPE_INVALID;
++
+   return gsk_ngl_renderer_get_type ();
+ }
+ 
++#ifdef GDK_RENDERING_VULKAN
++static gboolean
++vulkan_software_rendering (GdkSurface *surface)
++{
++  GdkDisplay *display = gdk_surface_get_display (surface);
++  GdkVulkanContext *context = gdk_display_create_vulkan_context (display, surface, NULL);
++  VkPhysicalDevice device;
++  VkPhysicalDeviceProperties props;
++
++  if (!context)
++    return G_TYPE_INVALID;
++
++  device = gdk_vulkan_context_get_physical_device (context);
++  vkGetPhysicalDeviceProperties (device, &props);
++
++  return props.deviceType == VK_PHYSICAL_DEVICE_TYPE_CPU;
++}
++#endif
++
+ static GType
+ get_renderer_for_vulkan (GdkSurface *surface)
+ {
+ #ifdef GDK_RENDERING_VULKAN
++  if (vulkan_software_rendering (surface))
++    return G_TYPE_INVALID;
++
+   return GSK_TYPE_VULKAN_RENDERER;
+ #else
+   return G_TYPE_INVALID;
+@@ -649,6 +691,9 @@ get_renderer_for_vulkan (GdkSurface *surface)
+ static GType
+ get_renderer_for_gles2 (GdkSurface *surface)
+ {
++  if (gl_software_rendering (surface))
++    return G_TYPE_INVALID;
++
+   return GSK_TYPE_GL_RENDERER;
+ }
+ 
+-- 
+GitLab
+
+
+From 2104d7b0629c66722e6e0839c45da4989c3c6322 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 12 Feb 2024 14:41:14 -0500
+Subject: [PATCH 4/4] fixup! gsk: Don't use gpu renderers with llvmpipe
+
+---
+ gsk/gskrenderer.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/gsk/gskrenderer.c b/gsk/gskrenderer.c
+index 08344cf7e7e..0d4519a989e 100644
+--- a/gsk/gskrenderer.c
++++ b/gsk/gskrenderer.c
+@@ -661,15 +661,12 @@ static gboolean
+ vulkan_software_rendering (GdkSurface *surface)
+ {
+   GdkDisplay *display = gdk_surface_get_display (surface);
+-  GdkVulkanContext *context = gdk_display_create_vulkan_context (display, surface, NULL);
+-  VkPhysicalDevice device;
+   VkPhysicalDeviceProperties props;
+ 
+-  if (!context)
++  if (!gdk_display_init_vulkan (display, NULL))
+     return G_TYPE_INVALID;
+ 
+-  device = gdk_vulkan_context_get_physical_device (context);
+-  vkGetPhysicalDeviceProperties (device, &props);
++  vkGetPhysicalDeviceProperties (display->vk_physical_device, &props);
+ 
+   return props.deviceType == VK_PHYSICAL_DEVICE_TYPE_CPU;
+ }
+-- 
+GitLab
+
