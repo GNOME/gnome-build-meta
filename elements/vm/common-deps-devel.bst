@@ -6,6 +6,8 @@ depends:
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/podman-config.bst
+- freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst
 - freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/vim.bst
