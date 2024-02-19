@@ -69,6 +69,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_text_to_speech.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
     autotest::loadtest("tests/a11y_screen_keyboard.pm");
+
 } elsif ($testsuite eq "gnome_mobile") {
     $testapi::form_factor_postfix = '_mobile';
     autotest::loadtest("tests/gnome_welcome.pm");
@@ -85,6 +86,10 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_gnome_text_editor.pm");
     autotest::loadtest("tests/app_loupe.pm");
     autotest::loadtest("tests/app_nautilus.pm");
+
+} elsif ($testsuite eq "gnome_locales") {
+    autotest::loadtest("tests/gnome_welcome_locales.pm");
+    
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
