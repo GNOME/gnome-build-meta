@@ -4,12 +4,27 @@ sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
   track: master
-  ref: 45.0-21-gf54dd308d8458960869a76eff8edfbb9d6f9ab99
+  ref: 45.0-25-g845a60bcb0863b933576df6b18db756a0af5a734
 - kind: cargo
   ref:
   - name: aho-corasick
     version: 1.1.2
     sha: b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
+  - name: anstream
+    version: 0.6.12
+    sha: 96b09b5178381e0874812a9b157f7fe84982617e48f71f4e3235482775e5b540
+  - name: anstyle
+    version: 1.0.6
+    sha: 8901269c6307e8d93993578286ac0edf7f195079ffff5ebdeea6a59ffb7e36bc
+  - name: anstyle-parse
+    version: 0.2.3
+    sha: c75ac65da39e5fe5ab759307499ddad880d724eed2f6ce5b5e8a26f4f387928c
+  - name: anstyle-query
+    version: 1.0.2
+    sha: e28923312444cdd728e4738b3f9c9cac739500909bb3d3c94b43551b16517648
+  - name: anstyle-wincon
+    version: 3.0.2
+    sha: 1cd54b81ec8d6180e24654d0b371ad22fc3dd083b6ff8ba325b72e00c87660a7
   - name: anyhow
     version: 1.0.79
     sha: 080e9890a082662b09c1ad45f567faeeb47f22b5fb23895fbe1e651e718e25ca
@@ -34,15 +49,18 @@ sources:
   - name: cfg-expr
     version: 0.15.6
     sha: 6100bc57b6209840798d95cb2775684849d332f7bd788db2a8c8caf7ef82a41a
+  - name: colorchoice
+    version: 1.0.0
+    sha: acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7
+  - name: env_filter
+    version: 0.1.0
+    sha: a009aa4810eb158359dda09d0c87378e4bbb89b5a801f016885a4707ba24f7ea
   - name: env_logger
-    version: 0.10.2
-    sha: 4cd405aab171cb85d6735e5c8d9db038c17d3ca007a4d2c25f337935c3d90580
+    version: 0.11.2
+    sha: 6c012a26a7f605efc424dd53697843a72be7dc86ad2d01f7814337794a12231d
   - name: equivalent
     version: 1.0.1
     sha: 5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5
-  - name: errno
-    version: 0.3.8
-    sha: a258e46cdc063eb8519c00b9fc845fc47bcfca4130e2f08e88665ceda8474245
   - name: field-offset
     version: 0.3.6
     sha: 38e2275cc4e4fc009b0669731a1e5ab7ebf11f469eaede2bab9309a5b4d6057f
@@ -130,18 +148,12 @@ sources:
   - name: heck
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
-  - name: hermit-abi
-    version: 0.3.4
-    sha: 5d3d0e0f38255e7fa3cf31335b3a56f05febd18025f4db5ef7a0cfb4f8da651f
   - name: humantime
     version: 2.1.0
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
   - name: indexmap
     version: 2.2.2
     sha: 824b2ae422412366ba479e8111fd301f7b5faece8149317bb81925979a53f520
-  - name: is-terminal
-    version: 0.4.10
-    sha: 0bad00257d07be169d870ab665980b06cdb366d792ad690bf2e76876dc503455
   - name: lazy_static
     version: 1.4.0
     sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
@@ -154,9 +166,6 @@ sources:
   - name: libc
     version: 0.2.153
     sha: 9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd
-  - name: linux-raw-sys
-    version: 0.4.13
-    sha: 01cda141df6706de531b6c46c3a33ecca755538219bd484262fa09410c13539c
   - name: locale_config
     version: 0.3.0
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
@@ -196,9 +205,6 @@ sources:
   - name: pkg-config
     version: 0.3.29
     sha: 2900ede94e305130c13ddd391e0ab7cbaeb783945ae07a279c268cb05109c6cb
-  - name: pretty_env_logger
-    version: 0.5.0
-    sha: 865724d4dbe39d9f3dd3b52b88d859d66bcb2d6a0acfd5ea68a65fb66d4bdc1c
   - name: proc-macro-crate
     version: 3.1.0
     sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
@@ -226,9 +232,6 @@ sources:
   - name: rustc_version
     version: 0.4.0
     sha: bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366
-  - name: rustix
-    version: 0.38.31
-    sha: 6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949
   - name: semver
     version: 1.0.21
     sha: b97ed7a9823b74f99c7742f5336af7be5ecd3eeafcb1507d1fa93347b1d589b0
@@ -262,9 +265,6 @@ sources:
   - name: temp-dir
     version: 0.1.12
     sha: dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6
-  - name: termcolor
-    version: 1.4.1
-    sha: 06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755
   - name: thiserror
     version: 1.0.56
     sha: d54378c645627613241d077a3a79db965db602882668f9136ac42af9ecb730ad
@@ -283,6 +283,9 @@ sources:
   - name: unicode-ident
     version: 1.0.12
     sha: 3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b
+  - name: utf8parse
+    version: 0.2.1
+    sha: 711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a
   - name: version-compare
     version: 0.1.1
     sha: 579a42fc0b8e0c63b76519a339be31bed574929511fa53c1a3acae26eb258f29
@@ -295,9 +298,6 @@ sources:
   - name: winapi-i686-pc-windows-gnu
     version: 0.4.0
     sha: ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6
-  - name: winapi-util
-    version: 0.1.6
-    sha: f29e6f9198ba0d26b4c9f07dbe6f9ed633e1f3d5b8b414090084349e46a52596
   - name: winapi-x86_64-pc-windows-gnu
     version: 0.4.0
     sha: 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f

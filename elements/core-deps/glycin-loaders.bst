@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.beta-3-g1757e9c6f39ff1ceeb95da15a08e448e9fffafc4
+  ref: 1.0.beta.1-2-g8a9057efcb32c388087747a28c3cd09e24316ce3
 - kind: cargo
 
   ref:
@@ -48,8 +48,8 @@ sources:
     version: 3.3.0
     sha: d034b430882f8381900d3fe6f0aaa3ad94f2cb4ac519b429692a1bc2dda4ae7b
   - name: async-process
-    version: 2.0.1
-    sha: 15c1cd5d253ecac3d3cf15e390fd96bd92a13b1d14497d81abf077304794fb04
+    version: 2.1.0
+    sha: 451e3cf68011bd56771c79db04a9e333095ab6349f7e47592b788e9b98720cc8
   - name: async-recursion
     version: 1.0.5
     sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
@@ -102,11 +102,11 @@ sources:
     version: 1.5.0
     sha: a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223
   - name: cairo-rs
-    version: 0.19.1
-    sha: bc1c415b7088381c53c575420899c34c9e6312df5ac5defd05614210e9fd6e1b
+    version: 0.19.2
+    sha: 2650f66005301bd33cc486dec076e1293c4cecf768bc7ba9bf5d2b1be339b99c
   - name: cairo-sys-rs
-    version: 0.19.1
-    sha: 75b6a5fefce2eadb8333e3c604ac964ba6573ec4f28bdd17f67032c4a2831831
+    version: 0.19.2
+    sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
   - name: cast
     version: 0.3.0
     sha: 37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5
@@ -135,8 +135,8 @@ sources:
     version: 0.2.12
     sha: 53fe5e26ff1b7aef8bca9c6080520cfb8d9333c7568e1829cef191a9723e5504
   - name: crc32fast
-    version: 1.3.2
-    sha: b540bd8bc810d3885c6ea91e2018302f68baba2129ab3e88f32389ee9370880d
+    version: 1.4.0
+    sha: b3855a8a784b474f333699ef2bbca9db2c4a1f6d9088a90a2d25b1eb53111eaa
   - name: crossbeam-deque
     version: 0.8.5
     sha: 613f8cc01fe9cf1a3eb3d7f488fd2fa8388403e97039e2f73692932e291a770d
@@ -228,8 +228,8 @@ sources:
     version: 4.0.3
     sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
   - name: event-listener
-    version: 5.0.0
-    sha: b72557800024fabbaa2449dd4bf24e37b93702d457a4d4f2b0dd1f0f039f20c1
+    version: 5.1.0
+    sha: b7ad6fd685ce13acd6d9541a30f6db6567a7a24c9ffd4ba2955d29e3f22c8b27
   - name: event-listener-strategy
     version: 0.4.0
     sha: 958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3
@@ -306,8 +306,8 @@ sources:
     version: 0.2.1
     sha: c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c
   - name: gdk-pixbuf
-    version: 0.19.0
-    sha: c311c47800051b87de1335e8792774d7cec551c91a0a3d109ab21d76b36f208f
+    version: 0.19.2
+    sha: f6a23f8a0b5090494fd04924662d463f8386cc678dd3915015a838c1a3679b92
   - name: gdk-pixbuf-sys
     version: 0.19.0
     sha: 3dcbd04c1b2c4834cc008b4828bc917d062483b88d26effde6342e5622028f96
@@ -336,17 +336,17 @@ sources:
     version: 0.28.1
     sha: 4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253
   - name: gio
-    version: 0.19.0
-    sha: b3d1aaa2d926710a27f3b35822806b1513b393b71174dd2601c9d02fdab0cb82
+    version: 0.19.2
+    sha: 2eae10b27b6dd27e22ed0d812c6387deba295e6fc004a8b379e459b663b05a02
   - name: gio-sys
     version: 0.19.0
     sha: bcf8e1d9219bb294636753d307b030c1e8a032062cba74f493c431a5c8b81ce4
   - name: glib
-    version: 0.19.0
-    sha: 170ee82b9b44b3b5fd1cf4971d6cf0eadec38303bb84c7bcc4e6b95a18934e71
+    version: 0.19.2
+    sha: ab9e86540b5d8402e905ad4ce7d6aa544092131ab564f3102175af176b90a053
   - name: glib-macros
-    version: 0.19.0
-    sha: 2ff52fff7e4d1bb8598ae744e9bb90c8c76271712483c3f0ce931bee9814de85
+    version: 0.19.2
+    sha: 0f5897ca27a83e4cdc7b4666850bade0a2e73e17689aabafcc9acddad9d823b8
   - name: glib-sys
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
@@ -537,14 +537,14 @@ sources:
     version: 0.2.0
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
   - name: pango
-    version: 0.19.0
-    sha: 78d7f779b957728c74fd1a060dfa6d89a0bea792ebc50cc2da80e4e87282d69e
+    version: 0.19.2
+    sha: 7809e8af4df8d024a066106b72ca6bc7253a484ae3867041a96103ef8a13188d
   - name: pango-sys
     version: 0.19.0
     sha: f52ef6a881c19fbfe3b1484df5cad411acaaba29dbec843941c3110d19f340ea
   - name: pangocairo
-    version: 0.19.1
-    sha: 9615c6294903a6ea26fa63984b18e51275354d1fa91bbde68eeb7fa3ab61a72f
+    version: 0.19.2
+    sha: 6620c77967c62c7a84c6ca15ab855e8eecb248beb8ee43bc0eeaadd39123f687
   - name: pangocairo-sys
     version: 0.19.0
     sha: 01bd0597ae45983f9e8b7f73afc42238426cd3fbb44a9cf14fd881a4ae08f1e4
@@ -597,14 +597,14 @@ sources:
     version: 0.2.1
     sha: 668d31b1c4eba19242f2088b2bf3316b82ca31082a8335764db4e083db7485d4
   - name: pkg-config
-    version: 0.3.29
-    sha: 2900ede94e305130c13ddd391e0ab7cbaeb783945ae07a279c268cb05109c6cb
+    version: 0.3.30
+    sha: d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec
   - name: png
-    version: 0.17.11
-    sha: 1f6c3c3e617595665b8ea2ff95a86066be38fb121ff920a9c0eb282abcd1da5a
+    version: 0.17.13
+    sha: 06e4b0d3d1312775e782c86c91a111aa1f910cbb65e1337f9975b5f9a554b5e1
   - name: polling
-    version: 3.4.0
-    sha: 30054e72317ab98eddd8561db0f6524df3367636884b7b21b703e4b280a84a14
+    version: 3.5.0
+    sha: 24f040dee2588b4963afb4e420540439d126f73fdacf4a9c486a96d840bac3c9
   - name: ppv-lite86
     version: 0.2.17
     sha: 5b40af805b3121feab8a3c29f04d8ad262fa8e0561883e7653e024ae4479e6de
@@ -753,8 +753,8 @@ sources:
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: syn
-    version: 2.0.48
-    sha: 0f3531638e407dfc0814761abb7c00a5b54992b849452a0646b7f65c9f770f3f
+    version: 2.0.49
+    sha: 915aea9e586f80826ee59f8453c1101f9d1c4b3964cd2460185ee8e299ada496
   - name: system-deps
     version: 6.2.0
     sha: 2a2d580ff6a20c55dfb86be5f9c238f67835d0e81cbdea8bf5680e0897320331
@@ -801,8 +801,8 @@ sources:
     version: 0.21.1
     sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
   - name: toml_edit
-    version: 0.22.4
-    sha: 0c9ffdf896f8daaabf9b66ba8e77ea1ed5ed0f72821b398aba62352e95062951
+    version: 0.22.6
+    sha: 2c1b5fd4128cc8d3e0cb74d4ed9a9cc7c7284becd4df68f5f940e1ad123606f6
   - name: tracing
     version: 0.1.40
     sha: c3523ab5a71916ccf420eebdf5521fcef02141234bbc0b8a49f2fdc4544364ef
@@ -924,8 +924,11 @@ sources:
     version: 0.52.0
     sha: dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
   - name: winnow
-    version: 0.5.39
-    sha: 5389a154b01683d28c77f8f68f49dea75f0a4da32557a58f68ee51ebba472d29
+    version: 0.5.40
+    sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
+  - name: winnow
+    version: 0.6.1
+    sha: d90f4e0f530c4c69f62b80d839e9ef3855edc9cba471a160c4d692deed62b401
   - name: xdg-home
     version: 1.1.0
     sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e
@@ -933,11 +936,11 @@ sources:
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
   - name: zbus
-    version: 4.0.0
-    sha: d4d98d42da0eb3d36957561d926ccd5fb351b42b529c0f238af91cdb4b9ab93e
+    version: 4.0.1
+    sha: 7b8e3d6ae3342792a6cc2340e4394334c7402f3d793b390d2c5494a4032b3030
   - name: zbus_macros
-    version: 4.0.0
-    sha: 81e30c8a575b1684373b3b745ea5a9155a9f422962515b11f886574b2e08e242
+    version: 4.0.1
+    sha: b7a3e850ff1e7217a3b7a07eba90d37fe9bb9e89a310f718afcde5885ca9b6d7
   - name: zbus_names
     version: 3.0.0
     sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c

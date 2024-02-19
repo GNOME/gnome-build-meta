@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libpanel.git
   track: main
-  ref: 1.5.0-0-g49b553323aca839e55b959ee4b06c1f4823a2069
+  ref: 1.5.0-1-g2b9037a8048ba98f2244b4235cccb96c7baf3730
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
