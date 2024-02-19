@@ -8,6 +8,9 @@ my $form_factor_postfix = $testapi::form_factor_postfix;
 
 sub run {
     start_app('gnome-font-viewer');
+    if ($form_factor_postfix == '_mobile') {
+        resize_app_to_mobile;
+    }
     assert_screen('app_gnome_font_viewer_home'.$form_factor_postfix, 10);
     close_app;
 }

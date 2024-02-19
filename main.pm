@@ -74,26 +74,17 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/mobile_change_background_colour.pm");
+    autotest::loadtest("tests/app_evince.pm");
+    autotest::loadtest("tests/app_gnome_calculator.pm");
+    autotest::loadtest("tests/app_gnome_characters.pm");
+    autotest::loadtest("tests/app_gnome_clocks.pm");
+    autotest::loadtest("tests/app_gnome_console.pm");
+    autotest::loadtest("tests/app_gnome_contacts.pm");
+    autotest::loadtest("tests/app_gnome_font_viewer.pm");
+    autotest::loadtest("tests/app_gnome_text_editor.pm");
+    autotest::loadtest("tests/app_loupe.pm");
     autotest::loadtest("tests/app_nautilus.pm");
-    # autotest::loadtest("tests/app_baobab.pm");
-    # autotest::loadtest("tests/app_epiphany.pm");
-    # autotest::loadtest("tests/app_evince.pm");
-    # autotest::loadtest("tests/app_gnome_calculator.pm");
-    # autotest::loadtest("tests/app_gnome_calendar.pm");
-    # autotest::loadtest("tests/app_gnome_characters.pm");
-    # autotest::loadtest("tests/app_gnome_clocks.pm");
-    # autotest::loadtest("tests/app_gnome_console.pm");
-    # autotest::loadtest("tests/app_gnome_contacts.pm");
-    # autotest::loadtest("tests/app_gnome_font_viewer.pm");
-    # autotest::loadtest("tests/app_gnome_logs.pm");
-    # autotest::loadtest("tests/app_gnome_maps.pm");
-    # autotest::loadtest("tests/app_gnome_music.pm");
-    # autotest::loadtest("tests/app_gnome_software.pm");
-    # autotest::loadtest("tests/app_gnome_system_monitor.pm");
-    # autotest::loadtest("tests/app_gnome_text_editor.pm");
-    # autotest::loadtest("tests/app_gnome_weather.pm");
-    # autotest::loadtest("tests/app_loupe.pm");
-    # autotest::loadtest("tests/app_nautilus.pm");
 } else {
     die("Invalid testsuite: '$testsuite'");
 }

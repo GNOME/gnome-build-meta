@@ -12,8 +12,8 @@ sub run {
         resize_app_to_mobile;
     }
     assert_screen('app_nautilus_home'.$form_factor_postfix, 10);
-    # send_key('ctrl-1');
-    # assert_screen('app_nautilus_list_view'.$form_factor_postfix, 2);
+    send_key('ctrl-1');
+    assert_screen('app_nautilus_list_view'.$form_factor_postfix, 2);
     close_app;
 }
 
