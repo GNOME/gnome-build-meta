@@ -71,6 +71,8 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
 } elsif ($testsuite eq "gnome_mobile") {
+    # Triggers resize_app_to_mobile function
+    # changes which needle is selected
     $testapi::form_factor_postfix = '_mobile';
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
@@ -89,7 +91,7 @@ if ($testsuite eq "gnome_install") {
 
 } elsif ($testsuite eq "gnome_locales") {
     autotest::loadtest("tests/gnome_welcome_locales.pm");
-    
+
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
