@@ -58,7 +58,7 @@ sub resize_app_to_mobile {
 
 sub close_app {
     wait_screen_change { send_key('alt-f4') };
-    assert_screen('desktop_empty')  unless match_has_tag('generic-desktop');
+    assert_screen(['desktop_empty', 'desktop_empty_no_background'])  unless match_has_tag('generic-desktop');
 }
 
 sub a11y_setup_test {
