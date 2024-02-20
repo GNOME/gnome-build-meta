@@ -10,12 +10,11 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/feedbackd.bst
 
-- world/chatty.bst
-
 - freedesktop-sdk.bst:components/iputils.bst
 - freedesktop-sdk.bst:components/usbutils.bst
 
+- boards/common/alsa-utils.bst
 - boards/common/atinout.bst
+- boards/common/chatty.bst
 - boards/common/eg25-manager.bst
 - boards/common/iw.bst
-- boards/common/alsa-utils.bst

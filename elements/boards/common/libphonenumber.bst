@@ -10,11 +10,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- boards/common/libgtest.bst
 - freedesktop-sdk.bst:components/abseil-cpp.bst
 - freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:components/protobuf.bst
-- world/libgtest.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   cmake-local: >-
