@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vte.git
   track: master
-  ref: 0.75.0-55-gc2343bf3854d1f4f35e4afe2de397151dafc0747
+  ref: 0.75.0-56-g2dfc0f7f6a40a3ef3285a315c6bd7a446816c0ea
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -30,6 +30,9 @@ variables:
 
 public:
   bst:
+    overlap-whitelist:
+    # https://gitlab.gnome.org/GNOME/vte/-/issues/2665
+    - '%{datadir}/terminfo/x/xterm-256color'
     split-rules:
       devel:
         (>):
