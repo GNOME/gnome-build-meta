@@ -1,20 +1,15 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:gnome-2048.git
+  url: gnome:tali.git
   track: master
 
+  ref: 40.9-3-gdb7a67ea59d901cd91198de189370bc3fd892385
 build-depends:
-- sdk/appstream-glib.bst
-- sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gtk+-3.bst
-- sdk/libgee.bst
-- sdk/librsvg.bst
-- world/clutter.bst
-- world/clutter-gtk.bst
-- world/libgnome-games-support.bst
+- gnome-games/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

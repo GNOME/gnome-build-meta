@@ -1,9 +1,10 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:gnome-mines.git
+  url: gnome:gnome-mahjongg.git
   track: master
 
+  ref: 3.40.0-40-g4c3d434965eae7aebd506466c19b085aa275850f
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst
@@ -13,5 +14,9 @@ build-depends:
 depends:
 - sdk/gtk+-3.bst
 - sdk/librsvg.bst
-- world/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dcompile-schemas=disabled
+    -Dupdate-icon-cache=disabled

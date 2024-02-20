@@ -1,21 +1,17 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:gnome-nibbles.git
+  url: gnome:gnome-klotski.git
   track: master
 
+  ref: 3.38.2-35-g6b66b77203cf6421473b2f99f1e895a85b638688
 build-depends:
-- sdk/appstream-glib.bst
-- sdk/vala.bst
-- sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/gsound.bst
+- sdk/appstream-glib.bst
 - sdk/gtk+-3.bst
-- sdk/libgee.bst
 - sdk/librsvg.bst
-- world/clutter-gtk.bst
-- world/clutter.bst
-- world/libgnome-games-support.bst
+- gnome-games/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

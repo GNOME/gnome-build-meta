@@ -1,19 +1,17 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:gnome-sudoku.git
+  url: gnome:libgnome-games-support.git
   track: master
 
+  ref: 2.0.0-4-geed8dd5820b6f155d86b1e1f0572ad2f9e305a1e
 build-depends:
-- sdk/appstream-glib.bst
-- sdk/vala.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst
+- sdk/gtk.bst
 - sdk/gtk+-3.bst
-- sdk/json-glib.bst
 - sdk/libgee.bst
-- world/qqwing.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

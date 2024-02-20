@@ -1,21 +1,19 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:gnome-mahjongg.git
+  url: gnome:gnome-robots.git
   track: master
 
+  ref: 40.0-101-g8668defc00fa8188fdce54254e128e1e29f61c58
 build-depends:
 - sdk/appstream-glib.bst
-- sdk/vala.bst
-- freedesktop-sdk.bst:components/itstool.bst
+- sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/gtk+-3.bst
+- core-deps/gsound.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/librsvg.bst
+- gnome-games/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  meson-local: >-
-    -Dcompile-schemas=disabled
-    -Dupdate-icon-cache=disabled

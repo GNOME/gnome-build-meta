@@ -1,18 +1,19 @@
 kind: meson
-
 sources:
 - kind: git_repo
-  url: gnome:gnome-taquin.git
+  url: gnome:swell-foop.git
   track: master
 
+  ref: 46.alpha-24-g88ce08e449e9676aef73addbf1b7c592a12eb3e9
 build-depends:
 - sdk/appstream-glib.bst
 - sdk/vala.bst
-- sdk/yelp-tools.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/gsound.bst
 - sdk/gtk+-3.bst
-- sdk/librsvg.bst
+- gnome-games/clutter-gtk.bst
+- gnome-games/clutter.bst
+- gnome-games/libgnome-games-support.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

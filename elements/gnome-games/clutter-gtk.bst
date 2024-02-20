@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - sdk/gtk+-3.bst
-- world/clutter.bst
+- gnome-games/clutter.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 public:
