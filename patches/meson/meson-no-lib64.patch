@@ -1,7 +1,24 @@
-diff -u mesonbuild/utils/universal.py-old mesonbuild/utils/universal.py
---- mesonbuild/utils/universal.py-old	2022-11-28 18:06:51.336418617 +0200
-+++ mesonbuild/utils/universal.py	2022-11-28 18:07:17.366418392 +0200
-@@ -958,21 +958,6 @@
+From 9a0454511a1cb08c2e9e27275ef7de2f815bbf2b Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Wed, 21 Feb 2024 13:52:42 +0200
+Subject: [PATCH] AAAAAAAAAAAAAAAAAAAA
+
+---
+ mesonbuild/utils/universal.py | 28 +++++++++++++---------------
+ 1 file changed, 13 insertions(+), 15 deletions(-)
+
+diff --git a/mesonbuild/utils/universal.py b/mesonbuild/utils/universal.py
+index 0fb860796..94e0472bc 100644
+--- a/mesonbuild/utils/universal.py
++++ b/mesonbuild/utils/universal.py
+@@ -1006,35 +1006,33 @@ def search_version(text: str) -> str:
+     # try a simpler regex that has like "blah 2020.01.100 foo" or "blah 2020.01 foo"
+     version_regex = re.compile(r"(\d{1,4}\.\d{1,4}\.?\d{0,4})")
+     match = version_regex.search(text)
+     if match:
+         return match.group(0)
+ 
+     return 'unknown version'
  
  
  def default_libdir() -> str:
@@ -20,6 +37,29 @@ diff -u mesonbuild/utils/universal.py-old mesonbuild/utils/universal.py
 -        return 'lib'
 -    if os.path.isdir('/usr/lib64') and not os.path.islink('/usr/lib64'):
 -        return 'lib64'
++    # This is specific to freedesktop-sdk
++    # https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/blob/master/patches/gcc/gcc-multiarch-os-dir.patch
++    try:
++        pc = subprocess.Popen(['gcc', '-print-multiarch'],
++                                stdout=subprocess.PIPE,
++                                stderr=subprocess.DEVNULL)
++        (stdo, _) = pc.communicate()
++        if pc.returncode == 0:
++            archpath = stdo.decode().strip()
++            return 'lib/' + archpath
++    except Exception:
++        pass
++
      return 'lib'
  
  
+ def default_libexecdir() -> str:
+     if is_haiku():
+         return 'lib'
+     # There is no way to auto-detect this, so it must be set at build time
+     return 'libexec'
+ 
+ 
+-- 
+2.43.0
+
