@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:aruiz/webp-pixbuf-loader/archive/refs/tags/0.2.4.tar.gz
-  ref: 54f448383d1c384409bd1690cdde9b44535c346855902e29bd37a18a7237c547
+  url: github_files:aruiz/webp-pixbuf-loader/archive/refs/tags/0.2.7.tar.gz
+  ref: 61ce5e8e036043f9d0e78c1596a621788e879c52aedf72ab5e78a8c44849411a
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
