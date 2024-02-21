@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:fcitx/fcitx5-gtk/archive/5.1.0.tar.gz
-  ref: b064d4be9d603583f1b5da8f809c28b0fa64d9c6a696fa318b64c47903f4fc4c
+  url: github_files:fcitx/fcitx5-gtk/archive/5.1.1.tar.gz
+  ref: 32e8a0365e51e1a6317c48966f3b028c7fb7596be0d6b7588b5b152eb280009e
 
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst

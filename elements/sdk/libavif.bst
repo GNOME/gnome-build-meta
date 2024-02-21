@@ -11,8 +11,8 @@ depends:
 
 sources:
 - kind: tar
-  url: github_files:AOMediaCodec/libavif/archive/refs/tags/v1.0.1.tar.gz
-  ref: 398fe7039ce35db80fe7da8d116035924f2c02ea4a4aa9f4903df6699287599c
+  url: github_files:AOMediaCodec/libavif/archive/refs/tags/v1.0.4.tar.gz
+  ref: dc56708c83a4b934a8af2b78f67f866ba2fb568605c7cf94312acf51ee57d146
 
 variables:
   cmake-local: >-
