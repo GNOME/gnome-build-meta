@@ -4,9 +4,10 @@ sources:
 - kind: git_repo
   url: gnome:vala.git
   track: main
-  ref: 0.57.0-237-g933eb2d0e41bb7fdc4fe5fc01a03254965990f3e
+  ref: 0.57.0-242-g8990fdd085d70d73d9217ed927caccb8c778feeb
 
 build-depends:
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
