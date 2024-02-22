@@ -1,11 +1,14 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: freedesktop_files:hadess/power-profiles-daemon/uploads/1f2ea40547b2af8d255875d7085211e5/power-profiles-daemon-0.13.tar.xz
-  ref: 0f9c1d2274350d44a95daafa7184b1a1a3f072bd1c70a100eb678ac051afcdcb
+- kind: git_repo
+  url: freedesktop:upower/power-profiles-daemon.git
+  track: refs/tags/*
+  ref: 0.20-0-g0d3030b6109156a093b73c66aea2ef3118a79650
 
 build-depends:
+- sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -14,3 +17,9 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  # Tests depend on umockdev which we don't have
+  meson-local:
+    -Dgtk_doc=true
+    -Dtests=false
