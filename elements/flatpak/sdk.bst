@@ -7,9 +7,7 @@ build-depends:
 
 variables:
   # Obtain the versions of the flatpak extensions
-  (@):
-  - elements/flatpak/gnome-openh264-version.yml
-  - freedesktop-sdk.bst:include/repo_branches.yml
+  (@): freedesktop-sdk.bst:include/repo_branches.yml
 
 (@):
 - freedesktop-sdk.bst:elements/flatpak-images/include/platform-vars.yml
@@ -110,8 +108,8 @@ config:
 
     Extension org.freedesktop.Platform.openh264:
       directory: '%{lib}/openh264'
-      versions: '%{gnome-openh264-version}beta;%{gnome-openh264-version}'
-      version: '%{gnome-openh264-version}'
+      versions: '%{openh264-version}beta;%{openh264-version}'
+      version: '%{openh264-version}'
       add-ld-path: extra
       autodelete: 'true'
 
