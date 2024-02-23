@@ -2,9 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: purism:Librem5/feedbackd/-/archive/v0.0.0+git20210426/feedbackd-v0.0.0+git20210426.tar.bz2
-  ref: 68ff48e650bf34775091c844f988ddd9ab206af32946825440d5d82a53f0a1b2
-
+  url: purism_releases:feedbackd/feedbackd-0.2.1.tar.xz
+  ref: 4f0713d0f6b4491e5487a672db541d36de70952a6644580abeb2c6025fb31a7a
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

@@ -43,6 +43,7 @@ aliases:
   openldap: https://openldap.org/
   openvpn: https://swupdate.openvpn.org/community/releases/
   pagure_releases: https://releases.pagure.org/
+  purism_releases: https://storage.puri.sm/releases/
   pypi: https://files.pythonhosted.org/packages/
   qemu: https://download.qemu.org/
   samba: https://download.samba.org/pub/
