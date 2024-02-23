@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.beta.1-5-g40ea916b8d27add3c073e1382d614eb21d3a83b3
+  ref: 46.beta.2-0-gd81358328ffe0d62089d2665c0c16efac96030f9
 - kind: cargo
 
   ref:
@@ -33,8 +33,8 @@ sources:
     version: 3.0.2
     sha: 1cd54b81ec8d6180e24654d0b371ad22fc3dd083b6ff8ba325b72e00c87660a7
   - name: anyhow
-    version: 1.0.79
-    sha: 080e9890a082662b09c1ad45f567faeeb47f22b5fb23895fbe1e651e718e25ca
+    version: 1.0.80
+    sha: 5ad32ce52e4161730f7098c077cd2ed6229b5804ccf99e5366be1ab72a98b4e1
   - name: arc-swap
     version: 1.6.0
     sha: bddcadddf5e9015d310179a59bb28c4d4b9920ad0f11e8e14dbadf654890c9a6
@@ -120,8 +120,8 @@ sources:
     version: 0.19.2
     sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
   - name: cc
-    version: 1.0.83
-    sha: f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0
+    version: 1.0.86
+    sha: 7f9fa1897e4325be0d68d48df6aa1a71ac2ed4d27723887e7754192705350730
   - name: cfg-expr
     version: 0.15.7
     sha: fa50868b64a9a6fda9d593ce778849ea8715cd2a3d2cc17ffdb4a2f2f2f1961d
@@ -294,11 +294,11 @@ sources:
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
   - name: glycin
-    version: 1.0.0-beta.1
-    sha: 79edaeeb158aa9e3ae9323ea4e82795d6aead292f777b7e7c3a6b8410cf41eca
+    version: 1.0.0-beta.2
+    sha: 957cc6aa64f96d55a1b56b77b650ae12ca800ed3f29448b8fd06e475f758e387
   - name: glycin-utils
-    version: 1.0.0-beta.1
-    sha: 1c0a26dfad24b01886bb76ad449378341e339b007fa950fa11d243def8523470
+    version: 1.0.0-beta.2
+    sha: 0f5bc84076438db6800083027ab7266c80c1868d915865467157bc2845c236e9
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
@@ -324,11 +324,11 @@ sources:
     version: 0.8.0
     sha: 2abc0a6d356d59a3806021829ce6ed3e70bba3509b41a535fedcb09fae13fbc0
   - name: gvdb
-    version: 0.5.3
-    sha: 0bb9136c388a1e7b3017d18fe7c2f263b0a2b13f215c48e8eb44935d413ce0f9
+    version: 0.6.0
+    sha: 31562e75919698cafd321232c342eb426a8d92d9e7e41686441ae02c8ca00e61
   - name: gvdb-macros
-    version: 0.1.11
-    sha: 9c68a45f5553e9a4f6dead810d0ae55f12f5205c88c7204aada1ef67d9eb8343
+    version: 0.1.12
+    sha: d6b224e38dcf849c0f3bcc301b14fc6c04693aa5ee22ebc964c6ad4b8e2ff5ea
   - name: gweather-sys
     version: 4.4.0
     sha: dde1d5eedb5b83ca0a2345c29655b72ea4ea8922ea54e52a75fe60366fd8428b
@@ -353,9 +353,6 @@ sources:
   - name: itoa
     version: 1.0.10
     sha: b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c
-  - name: jobserver
-    version: 0.1.28
-    sha: ab46a6e9526ddef3ae7f787c06f0f2600639ba80ea3eade3d8e670a2230f51d6
   - name: kamadak-exif
     version: 0.5.5
     sha: ef4fc70d0ab7e5b6bafa30216a6b48705ea964cdfc29c050f2412295eba58077
@@ -519,8 +516,8 @@ sources:
     version: 0.38.31
     sha: 6ea3e1a662af26cd7a3ba09c0297a31af215563ecf42817c98df621387f4e949
   - name: ryu
-    version: 1.0.16
-    sha: f98d2aa92eebf49b69786be48e4477826b256916e84a57ff2a4f21923b48eb4c
+    version: 1.0.17
+    sha: e86697c916019a8588c99b5fac3cead74ec0b4b819707a682fd4d23fa0ce1ba1
   - name: safe-transmute
     version: 0.11.2
     sha: 98a01dab6acf992653be49205bdd549f32f17cb2803e8eacf1560bf97259aae8
@@ -528,17 +525,17 @@ sources:
     version: 1.0.6
     sha: 93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502
   - name: semver
-    version: 1.0.21
-    sha: b97ed7a9823b74f99c7742f5336af7be5ecd3eeafcb1507d1fa93347b1d589b0
+    version: 1.0.22
+    sha: 92d43fe69e652f3df9bdc2b85b2854a0825b86e4fb76bc44d945137d053639ca
   - name: serde
-    version: 1.0.196
-    sha: 870026e60fa08c69f064aa766c10f10b1d62db9ccd4d0abb206472bee0ce3b32
+    version: 1.0.197
+    sha: 3fb1c873e1b9b056a4dc4c0c198b24c3ffa059243875552b2bd0933b1aee4ce2
   - name: serde_derive
-    version: 1.0.196
-    sha: 33c85360c95e7d137454dc81d9a4ed2b8efd8fbe19cee57357b32b9771fccb67
+    version: 1.0.197
+    sha: 7eb0b34b42edc17f6b7cac84a52a1c5f0e1bb2227e997ca9011ea3dd34e8610b
   - name: serde_json
-    version: 1.0.113
-    sha: 69801b70b1c3dac963ecb03a364ba0ceda9cf60c71cfe475e99864759c8b8a79
+    version: 1.0.114
+    sha: c5f09b1bd632ef549eaa9f60a1f8de742bdbc698e6cee2095fc84dde5f549ae0
   - name: serde_repr
     version: 0.1.18
     sha: 0b2e6b945e9d3df726b65d6ee24060aff8e3533d431f677a9695db04eff9dfdb
@@ -564,14 +561,14 @@ sources:
     version: 1.0.109
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - name: syn
-    version: 2.0.49
-    sha: 915aea9e586f80826ee59f8453c1101f9d1c4b3964cd2460185ee8e299ada496
+    version: 2.0.50
+    sha: 74f1bdc9872430ce9b75da68329d1c1746faf50ffac5f19e02b71e37ff881ffb
   - name: system-deps
     version: 6.2.0
     sha: 2a2d580ff6a20c55dfb86be5f9c238f67835d0e81cbdea8bf5680e0897320331
   - name: target-lexicon
-    version: 0.12.13
-    sha: 69758bda2e78f098e4ccb393021a0963bb3442eac05f135c30f61b7370bbafae
+    version: 0.12.14
+    sha: e1fc403891a21bcfb7c37834ba66a547a8f402146eba7265b5a6d88059c9ff2f
   - name: temp-dir
     version: 0.1.12
     sha: dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6
@@ -627,8 +624,8 @@ sources:
     version: 1.0.12
     sha: 3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b
   - name: unicode-normalization
-    version: 0.1.22
-    sha: 5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921
+    version: 0.1.23
+    sha: a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5
   - name: url
     version: 2.5.0
     sha: 31e6302e3bb753d46e83516cae55ae196fc0c309407cf11ab35cc51a4c2a4633
@@ -669,77 +666,71 @@ sources:
     version: 0.48.5
     sha: 9a2fa6e2155d7247be68c096456083145c183cbbbc2764150dda45a87197940c
   - name: windows-targets
-    version: 0.52.0
-    sha: 8a18201040b24831fbb9e4eb208f8892e1f50a37feb53cc7ff887feb8f50e7cd
+    version: 0.52.3
+    sha: d380ba1dc7187569a8a9e91ed34b8ccfc33123bbacb8c0aed2d1ad7f3ef2dc5f
   - name: windows_aarch64_gnullvm
     version: 0.48.5
     sha: 2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8
   - name: windows_aarch64_gnullvm
-    version: 0.52.0
-    sha: cb7764e35d4db8a7921e09562a0304bf2f93e0a51bfccee0bd0bb0b666b015ea
+    version: 0.52.3
+    sha: 68e5dcfb9413f53afd9c8f86e56a7b4d86d9a2fa26090ea2dc9e40fba56c6ec6
   - name: windows_aarch64_msvc
     version: 0.48.5
     sha: dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc
   - name: windows_aarch64_msvc
-    version: 0.52.0
-    sha: bbaa0368d4f1d2aaefc55b6fcfee13f41544ddf36801e793edbbfd7d7df075ef
+    version: 0.52.3
+    sha: 8dab469ebbc45798319e69eebf92308e541ce46760b49b18c6b3fe5e8965b30f
   - name: windows_i686_gnu
     version: 0.48.5
     sha: a75915e7def60c94dcef72200b9a8e58e5091744960da64ec734a6c6e9b3743e
   - name: windows_i686_gnu
-    version: 0.52.0
-    sha: a28637cb1fa3560a16915793afb20081aba2c92ee8af57b4d5f28e4b3e7df313
+    version: 0.52.3
+    sha: 2a4e9b6a7cac734a8b4138a4e1044eac3404d8326b6c0f939276560687a033fb
   - name: windows_i686_msvc
     version: 0.48.5
     sha: 8f55c233f70c4b27f66c523580f78f1004e8b5a8b659e05a4eb49d4166cca406
   - name: windows_i686_msvc
-    version: 0.52.0
-    sha: ffe5e8e31046ce6230cc7215707b816e339ff4d4d67c65dffa206fd0f7aa7b9a
+    version: 0.52.3
+    sha: 28b0ec9c422ca95ff34a78755cfa6ad4a51371da2a5ace67500cf7ca5f232c58
   - name: windows_x86_64_gnu
     version: 0.48.5
     sha: 53d40abd2583d23e4718fddf1ebec84dbff8381c07cae67ff7768bbf19c6718e
   - name: windows_x86_64_gnu
-    version: 0.52.0
-    sha: 3d6fa32db2bc4a2f5abeacf2b69f7992cd09dca97498da74a151a3132c26befd
+    version: 0.52.3
+    sha: 704131571ba93e89d7cd43482277d6632589b18ecf4468f591fbae0a8b101614
   - name: windows_x86_64_gnullvm
     version: 0.48.5
     sha: 0b7b52767868a23d5bab768e390dc5f5c55825b6d30b86c844ff2dc7414044cc
   - name: windows_x86_64_gnullvm
-    version: 0.52.0
-    sha: 1a657e1e9d3f514745a572a6846d3c7aa7dbe1658c056ed9c3344c4109a6949e
+    version: 0.52.3
+    sha: 42079295511643151e98d61c38c0acc444e52dd42ab456f7ccfd5152e8ecf21c
   - name: windows_x86_64_msvc
     version: 0.48.5
     sha: ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538
   - name: windows_x86_64_msvc
-    version: 0.52.0
-    sha: dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04
+    version: 0.52.3
+    sha: 0770833d60a970638e989b3fa9fd2bb1aaadcf88963d1659fd7d9990196ed2d6
   - name: winnow
     version: 0.5.40
     sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
   - name: winnow
-    version: 0.6.1
-    sha: d90f4e0f530c4c69f62b80d839e9ef3855edc9cba471a160c4d692deed62b401
+    version: 0.6.2
+    sha: 7a4191c47f15cc3ec71fcb4913cb83d58def65dd3787610213c649283b5ce178
   - name: xdg-home
     version: 1.1.0
     sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e
   - name: zbus
-    version: 4.0.1
-    sha: 7b8e3d6ae3342792a6cc2340e4394334c7402f3d793b390d2c5494a4032b3030
+    version: 4.1.0
+    sha: 93b5c7bc69c56e09f4e379e250ae9028192e82aeaf7b9f8e72a86a2238a26d4c
   - name: zbus_macros
-    version: 4.0.1
-    sha: b7a3e850ff1e7217a3b7a07eba90d37fe9bb9e89a310f718afcde5885ca9b6d7
+    version: 4.1.0
+    sha: 067cc3a28ae806573727b8206a3a6a4718da55c54b2f70620a48fa92dd3bbc7d
   - name: zbus_names
     version: 3.0.0
     sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
   - name: zvariant
-    version: 3.11.0
-    sha: 903169c05b9ab948ee93fefc9127d08930df4ce031d46c980784274439803e51
-  - name: zvariant
     version: 4.0.0
     sha: 4e09e8be97d44eeab994d752f341e67b3b0d80512a8b315a0671d47232ef1b65
-  - name: zvariant_derive
-    version: 3.11.0
-    sha: cce76636e8fab7911be67211cf378c252b115ee7f2bae14b18b84821b39260b5
   - name: zvariant_derive
     version: 4.0.0
     sha: 72a5857e2856435331636a9fbb415b09243df4521a267c5bedcd5289b4d5799e

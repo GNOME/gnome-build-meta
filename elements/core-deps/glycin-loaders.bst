@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.beta.1-8-g622e7d7198696aa286f3354f2ba48323a10020c0
+  ref: 1.0.beta.2-0-g1ab8fbd1d5bb7e3712f06d61a2d4ff31eff4f58e
 - kind: cargo
 
   ref:
@@ -17,9 +17,6 @@ sources:
   - name: aho-corasick
     version: 1.1.2
     sha: b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
-  - name: anyhow
-    version: 1.0.80
-    sha: 5ad32ce52e4161730f7098c077cd2ed6229b5804ccf99e5366be1ab72a98b4e1
   - name: approx
     version: 0.5.1
     sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
@@ -323,12 +320,6 @@ sources:
   - name: getrandom
     version: 0.2.12
     sha: 190092ea657667030ac6a35e305e62fc4dd69fd98ac98631e5d3a2b1575a12b5
-  - name: gettext-rs
-    version: 0.7.0
-    sha: e49ea8a8fad198aaa1f9655a2524b64b70eb06b2f3ff37da407566c93054f364
-  - name: gettext-sys
-    version: 0.21.3
-    sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
   - name: gif
     version: 0.12.0
     sha: 80792593675e051cf94a4b111980da2ba60d4a83e43e0048c5693baab3977045
@@ -758,9 +749,6 @@ sources:
   - name: target-lexicon
     version: 0.12.13
     sha: 69758bda2e78f098e4ccb393021a0963bb3442eac05f135c30f61b7370bbafae
-  - name: temp-dir
-    version: 0.1.12
-    sha: dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6
   - name: tempfile
     version: 3.10.0
     sha: a365e8cd18e44762ef95d87f284f4b5cd04107fec2ff3052bd6a3e6069669e67

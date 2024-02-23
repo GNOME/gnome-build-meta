@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-user-share.git
   track: master
-  ref: 43.0-12-gc4f8953f687728cbe58d783c561559bd10c8159c
+  ref: 43.0-13-gf2ca7d0bd24d081d086bf1de3992b85589d4e635
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
