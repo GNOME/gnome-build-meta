@@ -9,6 +9,8 @@ sources:
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
+- kind: patch
+  path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
 
 config:
   options:

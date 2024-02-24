@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: git_repo
@@ -854,10 +854,11 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
+- sdk-deps/cargo-c.bst
 - sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst
@@ -867,9 +868,8 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  conf-local: >-
-    --enable-gtk-doc
-    --enable-vala
+  meson-local: >-
+    -Dpkgconfig.relocatable=false
 
 public:
   bst:
