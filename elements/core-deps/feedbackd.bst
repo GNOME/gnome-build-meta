@@ -14,3 +14,12 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  # Introspection is currently broken with the newer version of
+  # gobject-intrsopectin as it's more strict about things.
+  # We only build feedbackd as a dependency of calls for now
+  # and we don't ship it anywhere so disable introspection
+  # unitl the issue is fixed.
+  meson-local: >-
+    -Dintrospection=disabled
