@@ -2,10 +2,10 @@ kind: stack
 
 depends:
 # Useful utilities for testing in CI
+- core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
 - freedesktop-sdk.bst:components/nano.bst
-- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/vim.bst
 - vm/fish.bst
 - vm/git-lfs.bst

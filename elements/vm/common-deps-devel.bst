@@ -1,6 +1,7 @@
 kind: stack
 
 depends:
+- core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
 - core/meta-gnome-core-developer-tools.bst
@@ -9,7 +10,6 @@ depends:
 - freedesktop-sdk.bst:components/podman-config.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst
-- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/vim.bst
 - freedesktop-sdk.bst:components/xmlto.bst
 - sdk-deps/gi-docgen.bst

@@ -7,9 +7,9 @@ sources:
   ref: 0.15.7-10-gf19dfe54ca226973fe01bc89f6eafe950dbb78a6
 
 build-depends:
+- core-deps/python-dbusmock.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

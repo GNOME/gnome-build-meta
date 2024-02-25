@@ -11,9 +11,9 @@ build-depends:
 - freedesktop-sdk.bst:components/perl.bst # for man pages
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-dbus.bst
-- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- core-deps/python-dbusmock.bst
 - sdk/gtk-doc.bst
 - sdk/pygobject.bst
 - vm/pam-wrapper.bst
