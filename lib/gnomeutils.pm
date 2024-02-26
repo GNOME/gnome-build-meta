@@ -17,6 +17,7 @@ our @EXPORT = qw(
     start_app
     close_app
     a11y_setup_test
+    resize_app_to_mobile
 );
 
 sub run_command {
@@ -43,9 +44,21 @@ sub start_app {
     wait_still_screen(2);
 }
 
+# This function launches the Looking glass app and then types in the following command which 
+# resized the window to 360X720. This is the selected screen resolution for testing the mobile
+# versions of applications as it is quite a common screen resolution for mobile devices
+# go to the following link for more information on the lg command: 
+# https://stackoverflow.com/questions/75110787/gnome-shell-extension-resize-and-position-a-window-on-creation
+sub resize_app_to_mobile {
+    start_app('lg');
+    type_string('global.display.get_focus_window().move_resize_frame(false, 0, 0, 360, 720)');
+    send_key('ret');
+    send_key('esc');
+}
+
 sub close_app {
     wait_screen_change { send_key('alt-f4') };
-    assert_screen('desktop_empty')  unless match_has_tag('generic-desktop');
+    assert_screen(['desktop_empty', 'desktop_empty_no_background'])  unless match_has_tag('generic-desktop');
 }
 
 sub a11y_setup_test {

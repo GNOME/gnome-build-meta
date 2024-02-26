@@ -4,9 +4,14 @@ use warnings;
 use testapi;
 use gnomeutils;
 
+my $form_factor_postfix = $testapi::form_factor_postfix;
+
 sub run {
     start_app('snapshot');
-    assert_screen('app_snapshot_home', 10);
+    if ($form_factor_postfix eq '_mobile') {
+        resize_app_to_mobile;
+    }
+    assert_screen('app_snapshot_home'.$form_factor_postfix, 10);
     close_app;
 }
 

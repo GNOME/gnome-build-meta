@@ -22,6 +22,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/show_core_dumps.pm");
     autotest::loadtest("tests/gnome_shutdown.pm");
 } elsif ($testsuite eq "gnome_apps") {
+    $testapi::form_factor_postfix = '';
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
     autotest::loadtest("tests/gnome_desktop.pm");
@@ -69,12 +70,31 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_text_to_speech.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
     autotest::loadtest("tests/a11y_screen_keyboard.pm");
+
 } elsif ($testsuite eq "gnome_mobile") {
+    # Triggers resize_app_to_mobile function
+    # changes which needle is selected
     $testapi::form_factor_postfix = '_mobile';
     autotest::loadtest("tests/gnome_welcome.pm");
-    autotest::loadtest("tests/mobile_enable_fractional_scaling.pm"); 
+    autotest::loadtest("tests/gnome_disable_update_notification.pm");
+    autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/mobile_change_background_colour.pm");
+    autotest::loadtest("tests/app_evince.pm");
+    autotest::loadtest("tests/app_gnome_calculator.pm");
+    autotest::loadtest("tests/app_gnome_characters.pm");
+    autotest::loadtest("tests/app_gnome_clocks.pm");
+    autotest::loadtest("tests/app_gnome_console.pm");
+    autotest::loadtest("tests/app_gnome_contacts.pm");
+    autotest::loadtest("tests/app_gnome_font_viewer.pm");
+    autotest::loadtest("tests/app_gnome_text_editor.pm");
+    autotest::loadtest("tests/app_loupe.pm");
+    autotest::loadtest("tests/app_nautilus.pm");
+    autotest::loadtest("tests/app_simple_scan.pm");
+    autotest::loadtest("tests/app_snapshot.pm");
+
 } elsif ($testsuite eq "gnome_locales") {
     autotest::loadtest("tests/gnome_welcome_locales.pm");
+
 } else {
     die("Invalid testsuite: '$testsuite'");
 }
