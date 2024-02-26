@@ -42,6 +42,7 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/mozjs.bst
+- sdk/noopenh264.bst
 - sdk/nuspell.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
