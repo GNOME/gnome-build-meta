@@ -2,8 +2,8 @@ include: .gitlab-ci/arch.yml
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
-  BST_NO_PUSH: "bst --config .gitlab-ci/buildstream-nopush.conf --log-file logs/build.log --colors"
-  BST: "bst --config .gitlab-ci/buildstream.conf --log-file logs/build.log --colors"
+  BST_NO_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nopush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
+  BST: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
   FLATPAK_BRANCH: master
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
