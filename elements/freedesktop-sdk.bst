@@ -45,6 +45,7 @@ config:
     components/json-glib.bst: sdk/json-glib.bst
     components/librsvg.bst: sdk/librsvg.bst
     components/libsoup.bst: sdk/libsoup.bst
+    components/noopenh264.bst: sdk/noopenh264.bst
     components/pango.bst: sdk/pango.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
