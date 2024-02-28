@@ -44,7 +44,7 @@ def main():
         assert flatpak_branch.isnumeric()
         assert server_url == "https://hub.flathub.org/"
     elif repo_name == "beta":
-        assert flatpak_branch == "beta"
+        assert flatpak_branch.endswith("beta")
         assert server_url == "https://hub.flathub.org/"
     elif repo_name == "nightly":
         assert flatpak_branch == "master"
