@@ -1,10 +1,13 @@
 kind: autotools
+
 sources:
 - kind: tar
-  url: github_files:libhangul/ibus-hangul/releases/download/1.5.4/ibus-hangul-1.5.4.tar.gz
-  ref: a9f27ef9b0c03fd9f2faa327fb0a83c04098763969548b65b2f8159bed15cfe0
+  url: github_files:libhangul/ibus-hangul/releases/download/1.5.5/ibus-hangul-1.5.5.tar.xz
+  ref: a5aac88286cd18960229860e3e1a778978a7aeaa484ad9acfa48284b87fdc3bb
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - core-deps/ibus-daemon.bst
 - vm/libhangul.bst
