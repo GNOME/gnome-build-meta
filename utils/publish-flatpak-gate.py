@@ -33,12 +33,15 @@ def print_env():
 
     print(f"CI_COMMIT_REF_NAME: {ref_name}")
 
+    print(f"CI_COMMIT_REF_PROTECTED: {protected}")
+    print(f"CI_COMMIT_TAG: {is_tag}")
+
 
 def main():
     print_env()
 
     # asser our build is from a protected branch
-    assert protected is True
+    assert protected == "true"
 
     # Assert the job doesn't get triggered by tags accidentally
     assert is_tag is None
