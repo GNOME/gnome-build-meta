@@ -417,7 +417,6 @@ openh264-x86_64:
   stage: deploy
   needs: []
   allow_failure: true
-  variables:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: manual
