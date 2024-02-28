@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 
 
 server_url = os.environ.get("FLAT_MANAGER_SERVER")
@@ -42,20 +43,22 @@ def main():
         assert not flatpak_branch.endswith("beta")
         assert flatpak_branch.isnumeric()
         assert server_url == "https://hub.flathub.org/"
-
-    if repo_name == "beta":
+    elif repo_name == "beta":
         assert flatpak_branch == "beta"
         assert server_url == "https://hub.flathub.org/"
-
-    if repo_name == "nightly":
+    elif repo_name == "nightly":
         assert flatpak_branch == "master"
         assert server_url == "https://flat-manager.gnome.org/"
+    else:
+        print("Unknown value")
+        sys.exit(42)
 
     # Check that we never try to push //master refs
     # outside the master branch pipelines
     if ref_name not in ("master", "main"):
         assert flatpak_branch != "master"
     else:
+        assert ref_name in ("master", "main")
         assert repo_name == "nightly"
         assert flatpak_branch == "master"
 
