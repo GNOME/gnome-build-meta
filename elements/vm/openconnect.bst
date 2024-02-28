@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: infradead:openconnect/download/openconnect-8.10.tar.gz
-  ref: 30e64c6eca4be47bbf1d61f53dc003c6621213738d4ea7a35e5cf1ac2de9bab1
+  url: infradead:openconnect/download/openconnect-9.12.tar.gz
+  ref: a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e
 
 variables:
   conf-local: >-
