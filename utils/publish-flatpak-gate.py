@@ -9,10 +9,6 @@ repo_name = os.environ.get("FLAT_MANAGER_REPO")
 flatpak_branch = os.environ.get("FLATPAK_BRANCH")
 arches = os.environ.get("SUPPORTED_ARCHES")
 
-targets = os.environ.get("TARGETS")
-targets_nightly = os.environ.get("TARGETS_nightly")
-targets_repo = os.environ.get("TARGETS_REPO")
-
 ref_name = os.environ.get("CI_COMMIT_REF_NAME")
 
 protected = os.environ.get("CI_COMMIT_REF_PROTECTED")
@@ -25,11 +21,6 @@ def print_env():
     print(f"Environment name: {env_name}")
     print(f"Repo name: {repo_name}")
     print(f"Supported Architectures: {arches}")
-
-    print(f"Targets: {targets}")
-    print(f"Targets Nightly: {targets_nightly}")
-
-    print(f"Targets REPO: {targets_repo}")
 
     print(f"CI_COMMIT_REF_NAME: {ref_name}")
 
