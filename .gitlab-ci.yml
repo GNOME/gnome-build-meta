@@ -204,6 +204,10 @@ deploy-flatpak:
   script:
   - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
   - TARGETS="$TARGETS ${!TARGETS_REPO}"
+  - echo $TARGETS
+
+  # Sanity chck where we going to push
+  - python3 $CI_PROJECT_DIR/utils/publish-flatpak-gate.py
 
   - ostree init --repo repo/ --mode archive
   - |
