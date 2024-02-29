@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.beta.2-12-g8b4beadcd93fedd3036d3c07755dcc17bdded1e3
+  ref: 46.beta.2-14-gae125fc0a7ed2c3c690ccb54d2b8327b0e3cd41f
 - kind: cargo
 
   ref:
@@ -324,8 +324,8 @@ sources:
     version: 0.8.0
     sha: 2abc0a6d356d59a3806021829ce6ed3e70bba3509b41a535fedcb09fae13fbc0
   - name: gvdb
-    version: 0.6.0
-    sha: 31562e75919698cafd321232c342eb426a8d92d9e7e41686441ae02c8ca00e61
+    version: 0.6.1
+    sha: acfa8cd2aa58da96876eb6276afe617c414d5846d1229274a821c1f8e8aa9e02
   - name: gvdb-macros
     version: 0.1.12
     sha: d6b224e38dcf849c0f3bcc301b14fc6c04693aa5ee22ebc964c6ad4b8e2ff5ea
@@ -666,50 +666,50 @@ sources:
     version: 0.48.5
     sha: 9a2fa6e2155d7247be68c096456083145c183cbbbc2764150dda45a87197940c
   - name: windows-targets
-    version: 0.52.3
-    sha: d380ba1dc7187569a8a9e91ed34b8ccfc33123bbacb8c0aed2d1ad7f3ef2dc5f
+    version: 0.52.4
+    sha: 7dd37b7e5ab9018759f893a1952c9420d060016fc19a472b4bb20d1bdd694d1b
   - name: windows_aarch64_gnullvm
     version: 0.48.5
     sha: 2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8
   - name: windows_aarch64_gnullvm
-    version: 0.52.3
-    sha: 68e5dcfb9413f53afd9c8f86e56a7b4d86d9a2fa26090ea2dc9e40fba56c6ec6
+    version: 0.52.4
+    sha: bcf46cf4c365c6f2d1cc93ce535f2c8b244591df96ceee75d8e83deb70a9cac9
   - name: windows_aarch64_msvc
     version: 0.48.5
     sha: dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc
   - name: windows_aarch64_msvc
-    version: 0.52.3
-    sha: 8dab469ebbc45798319e69eebf92308e541ce46760b49b18c6b3fe5e8965b30f
+    version: 0.52.4
+    sha: da9f259dd3bcf6990b55bffd094c4f7235817ba4ceebde8e6d11cd0c5633b675
   - name: windows_i686_gnu
     version: 0.48.5
     sha: a75915e7def60c94dcef72200b9a8e58e5091744960da64ec734a6c6e9b3743e
   - name: windows_i686_gnu
-    version: 0.52.3
-    sha: 2a4e9b6a7cac734a8b4138a4e1044eac3404d8326b6c0f939276560687a033fb
+    version: 0.52.4
+    sha: b474d8268f99e0995f25b9f095bc7434632601028cf86590aea5c8a5cb7801d3
   - name: windows_i686_msvc
     version: 0.48.5
     sha: 8f55c233f70c4b27f66c523580f78f1004e8b5a8b659e05a4eb49d4166cca406
   - name: windows_i686_msvc
-    version: 0.52.3
-    sha: 28b0ec9c422ca95ff34a78755cfa6ad4a51371da2a5ace67500cf7ca5f232c58
+    version: 0.52.4
+    sha: 1515e9a29e5bed743cb4415a9ecf5dfca648ce85ee42e15873c3cd8610ff8e02
   - name: windows_x86_64_gnu
     version: 0.48.5
     sha: 53d40abd2583d23e4718fddf1ebec84dbff8381c07cae67ff7768bbf19c6718e
   - name: windows_x86_64_gnu
-    version: 0.52.3
-    sha: 704131571ba93e89d7cd43482277d6632589b18ecf4468f591fbae0a8b101614
+    version: 0.52.4
+    sha: 5eee091590e89cc02ad514ffe3ead9eb6b660aedca2183455434b93546371a03
   - name: windows_x86_64_gnullvm
     version: 0.48.5
     sha: 0b7b52767868a23d5bab768e390dc5f5c55825b6d30b86c844ff2dc7414044cc
   - name: windows_x86_64_gnullvm
-    version: 0.52.3
-    sha: 42079295511643151e98d61c38c0acc444e52dd42ab456f7ccfd5152e8ecf21c
+    version: 0.52.4
+    sha: 77ca79f2451b49fa9e2af39f0747fe999fcda4f5e241b2898624dca97a1f2177
   - name: windows_x86_64_msvc
     version: 0.48.5
     sha: ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538
   - name: windows_x86_64_msvc
-    version: 0.52.3
-    sha: 0770833d60a970638e989b3fa9fd2bb1aaadcf88963d1659fd7d9990196ed2d6
+    version: 0.52.4
+    sha: 32b752e52a2da0ddfbdbcc6fceadfeede4c939ed16d13e648833a61dfb611ed8
   - name: winnow
     version: 0.5.40
     sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
