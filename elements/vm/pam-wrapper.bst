@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
