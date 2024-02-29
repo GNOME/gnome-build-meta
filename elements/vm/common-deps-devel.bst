@@ -6,6 +6,7 @@ depends:
 - core-deps/xvfb.bst
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/podman-config.bst
 - freedesktop-sdk.bst:components/podman.bst
@@ -18,6 +19,5 @@ depends:
 - sdk.bst
 - vm/deviced.bst
 - vm/distrobox.bst
-- vm/git-lfs.bst
 - vm/swtpm.bst
 - vm/toolbox.bst

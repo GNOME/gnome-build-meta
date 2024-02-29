@@ -5,10 +5,10 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
+- freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
 - vm/fish.bst
-- vm/git-lfs.bst
 
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst
