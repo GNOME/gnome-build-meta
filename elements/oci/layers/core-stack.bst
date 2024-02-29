@@ -5,10 +5,10 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
+- freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
 - vm-deps/fish.bst
-- vm-deps/git-lfs.bst
 
 # Useful utilities for building extensions in CI
 - core-deps/sysext-utils.bst
