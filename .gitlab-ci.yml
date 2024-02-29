@@ -199,6 +199,7 @@ deploy-flatpak:
       FLAT_MANAGER_REPO: stable
       SUPPORTED_ARCHES: "x86_64 i686 aarch64"
   variables:
+    RUNNER_AFTER_SCRIPT_TIMEOUT: 20m
     TARGETS: flatpak-runtimes.bst
     TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
   script:
