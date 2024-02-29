@@ -12,3 +12,9 @@ depends:
 - core-deps/ibus-daemon.bst
 - vm/libhangul.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+config:
+  configure-commands:
+    (<):
+    # force autogen
+    - rm configure
