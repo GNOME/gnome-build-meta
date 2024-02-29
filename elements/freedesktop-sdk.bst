@@ -3,20 +3,8 @@ kind: junction
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.14-0-g9c275393ed6bc14670622b7aa822b8e929d389df
-- kind: patch
-  path: patches/freedesktop-sdk/sysupdate-dir.patch
-- kind: patch
-  path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
-- kind: patch
-  path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
-- kind: patch
-  path: patches/freedesktop-sdk/0001-Add-shaderc-in-flatpak-runtime.patch
-- kind: patch
-  path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
-- kind: patch
-  path: patches/freedesktop-sdk/disable-supersave.patch
+  track: master
+  ref: freedesktop-sdk-23.08rc.2-1548-gdd7e2e6285499defc092f04e1fd798dd3465a9ea
 
 config:
   options:
