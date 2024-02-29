@@ -51,21 +51,21 @@ config:
     uki,1,UKI,uki,1,https://www.freedesktop.org/software/systemd/man/systemd-stub.html
     EOF
 
-    /usr/lib/systemd/ukify build \
+    ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --cmdline='security=apparmor' \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi"
 
-    /usr/lib/systemd/ukify build \
+    ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --cmdline='module_blacklist=nouveau nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1' \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi"
 
-    /usr/lib/systemd/ukify build \
+    ukify build \
       --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" \
       --os-release=@/etc/os-release \
       --cmdline="%{kcmdline} usrhash=${roothash}" \
