@@ -7,12 +7,12 @@ sources:
   ref: 46.1-146-g2f8a598582bd2473d8449d7a7e549a43c6e55243
 
 build-depends:
+- core-deps/python-dbusmock.bst
 - core-deps/xvfb.bst
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
