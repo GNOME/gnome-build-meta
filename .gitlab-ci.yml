@@ -171,7 +171,7 @@ deploy-flatpak:
       SUPPORTED_ARCHES: "x86_64 i686 aarch64"
   - if: $CI_PIPELINE_SOURCE == "schedule"
     when: never
-  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $FLATPAK_BRANCH =~ /beta^/
+  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $FLATPAK_BRANCH =~ /beta$/
     variables:
       FLAT_MANAGER_SERVER: https://hub.flathub.org/
       ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
