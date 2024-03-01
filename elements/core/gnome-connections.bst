@@ -18,7 +18,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/freerdp-2.bst
+- core-deps/freerdp.bst
 - core-deps/gtk-vnc.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk+-3.bst
