@@ -14,9 +14,6 @@ public:
     - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
 
     - rm '%{debugdir}%{bindir}/lto-dump.debug'
-    - rm '%{debugdir}%{bindir}/gs.debug'
-    - rm '%{debugdir}%{bindir}/gpcl6.debug'
-    - rm '%{debugdir}%{bindir}/gxps.debug'
     - rm '%{debugdir}%{bindir}/fish_indent.debug'
     - rm '%{debugdir}%{bindir}/fish.debug'
     - rm '%{debugdir}%{bindir}/fish_key_reader.debug'
