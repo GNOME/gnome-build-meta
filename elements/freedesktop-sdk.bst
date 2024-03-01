@@ -35,6 +35,7 @@ config:
     components/gtk3.bst: sdk/gtk+-3.bst
     components/ibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
+    components/libnotify.bst: sdk/libnotify.bst
     components/librsvg.bst: sdk/librsvg.bst
     components/libsoup.bst: sdk/libsoup.bst
     components/noopenh264.bst: sdk/noopenh264.bst
