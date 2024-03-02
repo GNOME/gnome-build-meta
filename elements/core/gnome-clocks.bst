@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-clocks.git
   track: master
-  ref: 45.0-95-ga5c8952407c9d512acd9f7e06160e39dafceb800
+  ref: 45.0-101-g864d61d3446924e871ab1d2bc6b41cc1833b6be2
 
 build-depends:
 - sdk/vala.bst

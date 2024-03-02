@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:glib-networking.git
   track: master
-  ref: 2.80.rc-0-gdc18aced15f4b1ec885eada7f0ec12d09693fb95
+  ref: 2.80.rc-1-g44a6fb779311e538e6b0fa292a21416c7b08195c
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
