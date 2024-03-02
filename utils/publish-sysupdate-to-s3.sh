@@ -24,13 +24,13 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         --detach-sig "update-images/SHA256SUMS"
 
     aws s3 sync --acl public-read \
-        update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
+        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
         --exclude "*" --include "*.xz" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     # keep SHA256SUMS files at the end to minimize time for which files are not available
     aws s3 sync --acl public-read \
         --cache-control max-age=1800 \
-        update-images/ s3://gnome-build-meta/nightly/sysupdate/ \
+        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
         --exclude "*" --include "SHA256SUMS" --include "SHA256SUMS.gpg"
 
     if [ -n "${CI_PIPELINE_ID}" ]; then
