@@ -37,7 +37,6 @@ public:
         - '%{libdir}/libopenh264.so'
 
 sources:
-- kind: git_repo
-  url: gitlab:freedesktop-sdk/noopenh264.git
-  track: v*
-  ref: v2.4.1-2-g1b4ace18e696d7f191941dbfd5ab4251e7b94b16
+- kind: tar
+  url: gitlab:freedesktop-sdk/noopenh264/-/archive/v2.4.1-2/noopenh264-v2.4.1-2.tar.bz2
+  ref: 416e5c4692a31b3461de7a80ab28f34e6fd4e21faf00f993bd512f939a39e729
