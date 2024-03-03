@@ -1,4 +1,4 @@
 sources:
 - kind: tar
-  url: gnome_downloads:sysprof/45/sysprof-45.2.tar.xz
-  ref: 29e0dc15eac46da09146f9c9f11cbd05f230403f9a01e9164eeb0907c4420c8d
+  url: gnome_downloads:sysprof/46/sysprof-46.beta.tar.xz
+  ref: 864c666acee029b8237003066285bd78e626c7b4b4eca3faeb0e181694a1add9

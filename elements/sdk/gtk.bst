@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk/4.13/gtk-4.13.7.tar.xz
-  ref: cbcbdcc71ef25136169f0697e616bc29a9d246541f13cac19f5c9c0df369bf41
+  url: gnome_downloads:gtk/4.13/gtk-4.13.9.tar.xz
+  ref: 2564bd0449b74c68623db3b9fe8627795fb5a9e67c59cb697e2c66f9d05c423a
 - kind: patch
   path: patches/gtk/6890.patch
 

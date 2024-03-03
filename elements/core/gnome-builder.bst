@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-builder/46/gnome-builder-46.alpha.tar.xz
-  ref: 21b3e454cd21f71875499f66e069a223a37a360c0e3a8309d355dac3ff1b24b1
+  url: gnome_downloads:gnome-builder/46/gnome-builder-46.beta.tar.xz
+  ref: bb79234577df534cee61feebdfa44a7805177ec7dbc99d91d84daf421979a092
 - kind: patch
   path: patches/gnome-builder/0001-libide-tweaks-remove-autoptr-cleanup.patch
 

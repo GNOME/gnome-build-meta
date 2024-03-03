@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:glib-networking/2.80/glib-networking-2.80.alpha.tar.xz
-  ref: 33630935a9cc9f188f45b8c395a6733a1c87c6c14b1a634256b80f95c1998fdf
+  url: gnome_downloads:glib-networking/2.80/glib-networking-2.80.rc.tar.xz
+  ref: 7ee57eea0f440ce6963920c26c43cf2dd7392ed16ebc659d204fad64b155fd17
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
