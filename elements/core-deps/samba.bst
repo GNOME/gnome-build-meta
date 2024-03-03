@@ -3,6 +3,7 @@ kind: autotools
 sources:
 - kind: tar
   url: samba:samba/stable/samba-4.19.5.tar.gz
+  ref: 0e2405b4cec29d0459621f4340a1a74af771ec7cffedff43250cad7f1f87605e
 - kind: patch
   path: patches/samba/fix-root-build.patch
 
