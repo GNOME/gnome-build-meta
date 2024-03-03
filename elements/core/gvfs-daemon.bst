@@ -12,6 +12,7 @@ runtime-depends:
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
 - core-deps/libnfs.bst
+- core-deps/msgraph.bst
 - core-deps/plist.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
