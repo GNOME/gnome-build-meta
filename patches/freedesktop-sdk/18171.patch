@@ -1,0 +1,328 @@
+From 8fc931fe6bf20259bf00950c33d3e13eacb80661 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Mon, 4 Dec 2023 21:20:52 +0200
+Subject: [PATCH 01/10] components/linux.bst: Enable DUMMY network driver
+
+---
+ elements/components/linux.bst | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 87936f8ecc7..77c7c5c7284 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -340,6 +340,9 @@ config:
+       ;;
+     esac
+ 
++    # Dummy network driver
++    module DUMMY
++
+     # For wireless networks
+     enable WIRELESS
+     module CFG80211
+-- 
+GitLab
+
+
+From 42c8e82978834e32547add69409ad192a520571a Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Fri, 8 Dec 2023 13:29:49 +0200
+Subject: [PATCH 02/10] components/linux.bst: Enable hwrandom for physical cpus
+
+---
+ elements/components/linux.bst | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 77c7c5c7284..c47f7c5e0be 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -244,7 +244,6 @@ config:
+ 
+     enable BLK_MQ_VIRTIO
+     module VIRTIO_CONSOLE
+-    enable HW_RANDOM_VIRTIO
+     module VIRTIO_MMIO
+     module CRYPTO_DEV_VIRTIO
+ 
+@@ -1030,6 +1029,20 @@ config:
+         ;;
+     esac
+ 
++
++    # Enable HW Random
++    enable HW_RANDOM
++    enable HW_RANDOM_VIRTIO
++    case "%{arch}" in
++      x86_64|i686)
++        enable HW_RANDOM_AMD
++        enable HW_RANDOM_INTEL
++        ;;
++      aarch64|arm)
++        enable HW_RANDOM_ARM_SMCCC_TRNG
++        ;;
++    esac
++
+     # I2C/SMBus
+     case "%{arch}" in
+       x86_64|i686)
+-- 
+GitLab
+
+
+From dbac5c6a5d5c9452bde518831cf94efe356dda47 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Fri, 8 Dec 2023 13:32:03 +0200
+Subject: [PATCH 03/10] components/linux.bst: Enable ADRESS_MASKING
+
+---
+ elements/components/linux.bst | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index c47f7c5e0be..8ed7e5217d1 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1029,6 +1029,15 @@ config:
+         ;;
+     esac
+ 
++    if has ARCH_SUPPORTS_MEMORY_FAILURE; then
++      enable MEMORY_FAILURE
++    fi
++
++    case "%{arch}" in
++      x86_64)
++        enable ADDRESS_MASKING
++        ;;
++    esac
+ 
+     # Enable HW Random
+     enable HW_RANDOM
+-- 
+GitLab
+
+
+From c1b26a91a2114c37eb5d894f6edfdfa8dd44ad4d Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Fri, 8 Dec 2023 16:26:40 +0200
+Subject: [PATCH 04/10] components/linux.bst: Enable INTEL_IOMMU
+
+---
+ elements/components/linux.bst | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 8ed7e5217d1..cc94f12933a 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1025,6 +1025,7 @@ config:
+       x86_64|i686)
+         # pinctrl_amd might not work as module if it is loaded to late
+         enable PINCTRL_AMD
++        enable INTEL_IOMMU
+         enable X86_AMD_PLATFORM_DEVICE
+         ;;
+     esac
+-- 
+GitLab
+
+
+From da59bee23a221ab439d7f732680c64839b9ad6b7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 9 Dec 2023 17:52:07 +0200
+Subject: [PATCH 05/10] components/linux.bst: Enable IOMMUFD and IRQ_REMAP
+
+---
+ elements/components/linux.bst | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index cc94f12933a..d9eb82eabf5 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1021,11 +1021,15 @@ config:
+ 
+     # CPU support
+     enable PINCTRL
++    if has IOMMU_SUPPORT; then
++      enable IOMMUFD
++    fi
+     case "%{arch}" in
+       x86_64|i686)
+         # pinctrl_amd might not work as module if it is loaded to late
+         enable PINCTRL_AMD
+         enable INTEL_IOMMU
++        enable IRQ_REMAP
+         enable X86_AMD_PLATFORM_DEVICE
+         ;;
+     esac
+-- 
+GitLab
+
+
+From bd1d416975a866e9ae86381b21c727f792267d4d Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Thu, 7 Dec 2023 21:26:36 +0200
+Subject: [PATCH 06/10] components/linux.bst: Use UNWINDER_FRAME_POINTER
+ instead of UNWINDER_ORC
+
+---
+ elements/components/linux.bst | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index d9eb82eabf5..b24ea8a638e 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -156,6 +156,17 @@ config:
+     # Userspace firmware loading not supported
+     remove FW_LOADER_USER_HELPER
+ 
++    # UNWINDER_ORC is great for the kernel
++    # but it wasn't designed to be used from the userspace
++    # thus we need FRAME_POINTER so userspace applications
++    # will also be able to capture traces efficiently
++    case "%{arch}" in
++      x86_64|i686)
++        remove UNWINDER_ORC
++        enable UNWINDER_FRAME_POINTER
++      ;;
++    esac
++
+     # Some udev/virtualization requires
+     enable DMIID
+ 
+-- 
+GitLab
+
+
+From 01b0908f70decaeb86dfef7ac80b5e1db58b9d89 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 9 Dec 2023 17:57:03 +0200
+Subject: [PATCH 07/10] components/linux.bst: Explicitly enable PERF_EVENTS
+
+Currently only the _INTEL and _AMD_UNCORE are enabled in the default
+config, and since we are here, explicitly enable all of them so they
+won't go missing without us noticing.
+---
+ elements/components/linux.bst | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index b24ea8a638e..8d49f69e5fa 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1055,6 +1055,18 @@ config:
+         ;;
+     esac
+ 
++    # Performance monitoring
++    case "%{arch}" in
++      x86_64|i686)
++        enable PERF_EVENTS_AMD_BRS
++        enable PERF_EVENTS_INTEL_CSTATE
++        enable PERF_EVENTS_INTEL_RAPL
++        enable PERF_EVENTS_INTEL_UNCORE
++        module PERF_EVENTS_AMD_POWER
++        module PERF_EVENTS_AMD_UNCORE
++      ;;
++    esac
++
+     # Enable HW Random
+     enable HW_RANDOM
+     enable HW_RANDOM_VIRTIO
+-- 
+GitLab
+
+
+From 6a2ec84aaa00cc7005920cf0258b9b99d04bcd27 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 9 Dec 2023 18:24:18 +0200
+Subject: [PATCH 08/10] components/linux.bst: enable shadow stack support when
+ possible
+
+---
+ elements/components/linux.bst | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 8d49f69e5fa..9e291635809 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1042,6 +1042,7 @@ config:
+         enable INTEL_IOMMU
+         enable IRQ_REMAP
+         enable X86_AMD_PLATFORM_DEVICE
++        enable CONFIG_X86_USER_SHADOW_STACK
+         ;;
+     esac
+ 
+@@ -1049,6 +1050,10 @@ config:
+       enable MEMORY_FAILURE
+     fi
+ 
++    if has ARCH_SUPPORTS_SHADOW_CALL_STACK; then
++      enable SHADOW_CALL_STACK
++    fi
++
+     case "%{arch}" in
+       x86_64)
+         enable ADDRESS_MASKING
+-- 
+GitLab
+
+
+From 9df1e394c2d9725b3c989d7e9beafa0e0b219cc2 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 9 Dec 2023 19:09:55 +0200
+Subject: [PATCH 09/10] components/linux.bst: Enable IRQ_TIME_ACCOUNTING
+
+---
+ elements/components/linux.bst | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 9e291635809..78578cc8782 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1054,6 +1054,10 @@ config:
+       enable SHADOW_CALL_STACK
+     fi
+ 
++    if has HAVE_IRQ_TIME_ACCOUNTING; then
++      enable IRQ_TIME_ACCOUNTING
++    fi
++
+     case "%{arch}" in
+       x86_64)
+         enable ADDRESS_MASKING
+-- 
+GitLab
+
+
+From 9da2fdaf5cd63fb4e32351921abd7fad15e2fdae Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 16 Dec 2023 20:16:22 +0200
+Subject: [PATCH 10/10] components/linux: Enable SECURITY_LANDLOCK
+
+---
+ elements/components/linux.bst | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/elements/components/linux.bst b/elements/components/linux.bst
+index 78578cc8782..301775dcd27 100644
+--- a/elements/components/linux.bst
++++ b/elements/components/linux.bst
+@@ -1692,6 +1692,7 @@ config:
+     # Security modules
+     enable SECURITY_SELINUX
+     enable SECURITY_APPARMOR
++    enable SECURITY_LANDLOCK
+     enable AUDIT
+ 
+     # SPI
+-- 
+GitLab
+
