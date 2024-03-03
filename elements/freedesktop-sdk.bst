@@ -4,17 +4,13 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.11-0-g2ad72aa8df3b264edde46d5015ed0b598ff90a1c
+  ref: freedesktop-sdk-23.08.12-0-g422f871d37c7f560bc96bb9e161c655edb8ed69b
 - kind: patch
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
-  path: patches/freedesktop-sdk/0001-components-linux.bst-Enable-DUMMY-network-driver.patch
-- kind: patch
-  path: patches/freedesktop-sdk/kernel-backports.patch
-- kind: patch
-  path: patches/freedesktop-sdk/0001-components-linux-Enable-SECURITY_LANDLOCK.patch
-- kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
+- kind: patch
+  path: patches/freedesktop-sdk/18171.patch
 
 config:
   options:
