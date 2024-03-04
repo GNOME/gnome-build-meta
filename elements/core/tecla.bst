@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tecla.git
   track: main
-  ref: 46.beta-16-gbf5b4ca4f62aaae47c7c7164249c03a91b59fc0d
+  ref: 46.rc-0-g99572603f142ecccdda60f6d64ba6bb2f9d7fc45
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
