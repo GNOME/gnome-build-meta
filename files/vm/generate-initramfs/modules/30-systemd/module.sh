@@ -25,6 +25,7 @@ FILES=(
     /usr/lib/systemd/system-generators/systemd-fstab-generator
     /usr/lib/systemd/system-generators/systemd-hibernate-resume-generator
     /usr/lib/systemd/system-generators/systemd-debug-generator
+    /usr/lib/systemd/systemd-executor
     /usr/lib/systemd/systemd-veritysetup
     /usr/lib/systemd/systemd-integritysetup
     /usr/lib/systemd/systemd-cryptsetup
