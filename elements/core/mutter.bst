@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 46.rc-7-gd1bc9028c584085792b50a9176b872e1800636eb
+  ref: 46.rc-24-g1fb8cbb15aa315afc8f179f0c6d2994af7fadbc3
 
 build-depends:
 - core-deps/xvfb.bst
@@ -12,6 +12,7 @@ build-depends:
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/python3-dbusmock.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
