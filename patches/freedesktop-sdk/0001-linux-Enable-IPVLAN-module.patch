@@ -1,0 +1,38 @@
+From 085ce26eb2994d0d1fcc1bc0aee589758c27912c Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Sat, 9 Mar 2024 17:40:18 +0200
+Subject: [PATCH] linux: Enable IPVLAN module
+
+---
+ files/linux/fdsdk-config.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 7ea3cd30e..ad581e6da 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -1899,20 +1899,21 @@ enable IP6_NF_MATCH_IPV6HEADER
+ enable IP6_NF_FILTER
+ enable IP6_NF_TARGET_REJECT
+ enable IP6_NF_MANGLE
+ module IP_NF_RAW
+ module IP6_NF_RAW
+ module IP6_NF_NAT
+ enable NETFILTER_ADVANCED
+ module VETH
+ module BLK_DEV_NBD
+ module 6LOWPAN
++module IPVLAN
+ 
+ # Those two modules are required by multipass
+ module NETFILTER_XT_MATCH_COMMENT
+ module NETFILTER_XT_TARGET_CHECKSUM
+ 
+ # Security modules
+ enable SECURITY_SELINUX
+ enable SECURITY_APPARMOR
+ enable SECURITY_LANDLOCK
+ enable AUDIT
+-- 
+2.43.2
+
