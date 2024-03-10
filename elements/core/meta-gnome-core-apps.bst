@@ -30,5 +30,5 @@ depends:
 - core/nautilus.bst
 - core/simple-scan.bst
 #- core/snapshot.bst
-- core/totem.bst
+#- core/totem.bst
 - sdk/yelp.bst
