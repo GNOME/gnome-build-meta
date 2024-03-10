@@ -1019,3 +1019,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+
+variables:
+  meson-local: >-
+    -Dx11=disabled
