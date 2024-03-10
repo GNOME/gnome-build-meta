@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-session.git
   track: main
-  ref: 46.0-6-gd96a5adade167da921eea3cd48f5240b9ef0d41e
+  ref: 46.rc-5-g08875822cc0304dbcc03b9ff9c348976e2aead48
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
@@ -18,6 +18,4 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/xorg-lib-ice.bst
-- freedesktop-sdk.bst:components/xorg-lib-sm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
