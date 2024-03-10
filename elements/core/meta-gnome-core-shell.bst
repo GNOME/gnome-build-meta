@@ -22,7 +22,7 @@ depends:
 - core/gvfs-daemon.bst
 - core/mutter.bst
 - core/orca.bst
-- core/rygel.bst
+#- core/rygel.bst
 - core/sushi.bst
 - core/tecla.bst
 - sdk/adwaita-icon-theme.bst
