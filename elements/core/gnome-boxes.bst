@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-boxes.git
   track: main
-  ref: 45.0-27-gb24a5b57b6997780fca11ecb118e587ee5b31079
+  ref: 45.0-40-g726ff1c095c41a111f27cd6bf4c970b10eeda6f9
 - kind: git_module
   url: gnome_gitlab:felipeborges/libovf-glib.git
   path: subprojects/libovf-glib
@@ -18,6 +18,7 @@ build-depends:
 
 depends:
 - core-deps/libosinfo.bst
+- core-deps/libportal.bst
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
 - core-deps/spice-gtk.bst
