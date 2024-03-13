@@ -1,14 +1,14 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: git_repo
   url: gnome:mobile-broadband-provider-info.git
   track: main
-  ref: 20230416-20-g1bd3cdc11a9939405e5a6c11948cb2a2ddcf041c
+  ref: 20230416-25-gdf3c25cf6f8257805e77effdcbdaea10adc9419f
 
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
