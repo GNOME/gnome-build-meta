@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: main
-  ref: 46.rc-83-g4afd08e2340beb6c7a3816a44901df4a5d55eb67
+  ref: 46.rc-87-gb832a0e530cc7c88c247681d243f88296da4e824
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: dbfbacc9571fade87855907b78c6ed5e27c910dd
+  ref: 91f3f41490666a526ed78af744507d7ee1134323
 
 build-depends:
 # These two are more like runtime deps of the tests suite
