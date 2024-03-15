@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-remote-desktop.git
   track: master
-  ref: 46.rc-9-g7c12f1275bdb3601cbf520332b6b647c6303ee7b
+  ref: 46.rc-22-g10d8c6368445b869cc314661e697f5164d2d4c22
 
 build-depends:
 - core-deps/nv-codec-headers.bst

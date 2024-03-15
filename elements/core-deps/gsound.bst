@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gsound.git
   track: master
-  ref: 1.0.3-0-g95d36d60cf53e0e7c5d5325e0f1f4fc765a611ae
+  ref: 1.0.3-1-g5f6a56f89b7dd13e3f56f123c672e609c5fd8728
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
