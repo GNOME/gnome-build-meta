@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.42.5.tar.xz
-  ref: b64278c1f20b8cfdbfb5ff573c37d871aba74a1db26d9b39f74e8953fe61e749
+  url: webkitgtk:webkitgtk-2.44.0.tar.xz
+  ref: c66530e41ba59b1edba4ee89ef20b2188e273bed0497e95084729e3cfbe30c87
 - kind: patch
   path: files/webkitgtk/i686-build.patch
 build-depends:
@@ -25,10 +25,8 @@ depends:
 - sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
-- sdk/libwpe.bst
 - sdk/pango.bst
 - sdk/woff2.bst
-- sdk/wpebackend-fdo.bst
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:components/bubblewrap.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
@@ -42,7 +40,6 @@ depends:
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/xdg-dbus-proxy.bst
