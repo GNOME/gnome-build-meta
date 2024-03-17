@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo-plugins.git
   track: master
-  ref: grilo-plugins-0.3.16-22-g49a19e78b32198153506d0a2442c41a06cc2495c
+  ref: grilo-plugins-0.3.16-24-g2defecd6b32addf189a651d97de827c7bbbdac5e
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
