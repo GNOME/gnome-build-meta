@@ -50,3 +50,4 @@ variables:
   meson-local: >-
     -Dxwayland_initfd=enabled
     -Dprofiler=true
+    -Dcore_tests=false
