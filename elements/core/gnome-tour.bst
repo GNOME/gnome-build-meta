@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-tour/46/gnome-tour-46.rc.tar.xz
-  ref: a66b6e895bfc5da5d9da2568c53375e76bb0ed8c879c86cc3b2b1a5018594eb1
+  url: gnome_downloads:gnome-tour/46/gnome-tour-46.0.tar.xz
+  ref: f32652aa9d7ef0643760ce63932082cfd3641e7733b76c429b78d09783b7c46a
 - kind: cargo
   ref:
   - name: aho-corasick

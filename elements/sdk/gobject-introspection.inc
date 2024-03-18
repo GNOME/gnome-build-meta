@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:gobject-introspection/1.79/gobject-introspection-1.79.1.tar.xz
-  ref: f80ea33ee05ca48fb997952bb46131cfbdd3751f7f5da068888739cbeb2d5443
+  url: gnome_downloads:gobject-introspection/1.80/gobject-introspection-1.80.0.tar.xz
+  ref: 54a90b4a3cb82fd6a3e8b8a7775178ebc954af3c2bc726ed5961e6503ce62636
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

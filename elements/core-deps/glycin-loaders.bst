@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.rc.tar.xz
-  ref: 54c4e9a63f21bd25adc24242003d29a5d287d9a36a52b113c0d32ec5e37d2839
+  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.0.tar.xz
+  ref: cd2a3979259fee56cbd882a4d890437684bf1926e65afeafcb904ca9d17ae282
 - kind: cargo
 
   ref:
@@ -332,11 +332,11 @@ sources:
     version: 0.3.1
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
   - name: glycin
-    version: 1.0.0-rc
-    sha: 32a04a1d9802714d1397a78808f9f2dfb993268f22ea6915e0e12de4c5bec479
+    version: 1.0.0
+    sha: 6ebfac2819e7c4538c6567742a88d684ac5020f7e6de3d5e3f8578a72b4fbc5c
   - name: glycin-utils
-    version: 1.0.0-rc
-    sha: e44e0a4bede2ac83be368b3b6815fd2059772e4ca66305f3273a47e1435bfae2
+    version: 1.0.0
+    sha: 135d59b585e3f5df5d5f81b6a2e77b681071c4ef6b06f7828b46b8f5944b6c37
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
@@ -416,8 +416,8 @@ sources:
     version: 0.8.1
     sha: c571b676ddfc9a8c12f1f3d3085a7b163966a8fd8098a90640953ce5f6170161
   - name: librsvg
-    version: 2.58.0-beta.1
-    sha: 59d441368ddd551d54ef8ebcf515cf8a22604856a66da21828fa1d57651a9f71
+    version: 2.58.0
+    sha: de005d9589235493d0e2b62d055c0d8e368db4fb33e746dafc9400fb67b9c817
   - name: libseccomp
     version: 0.3.0
     sha: 21c57fd8981a80019807b7b68118618d29a87177c63d704fc96e6ecd003ae5b3

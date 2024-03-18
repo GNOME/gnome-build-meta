@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/46/mutter-46.rc.tar.xz
-  ref: bb52f1d2dd805d11565f0cbef39f265c24e40161bab901604576961d79899977
+  url: gnome_downloads:mutter/46/mutter-46.0.tar.xz
+  ref: bb3f7d77aebdea9d317d3f5ef03868e4e7969da423ac495e33a16d61db2c9373
 build-depends:
 - core-deps/xvfb.bst
 # Need the whole thing over just the capture for the dbus interface.

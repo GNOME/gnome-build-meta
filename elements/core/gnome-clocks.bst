@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-clocks/46/gnome-clocks-46.rc.tar.xz
-  ref: 8322439c7d8e3dc22049d3d6e3801a8e2b8a04ec8ec88fd2545d0d10f050c28a
+  url: gnome_downloads:gnome-clocks/46/gnome-clocks-46.0.tar.xz
+  ref: eaa3c578cdcef9754e668b5626709b73f3526710235f4b72076d2ff49a4f99c7
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst

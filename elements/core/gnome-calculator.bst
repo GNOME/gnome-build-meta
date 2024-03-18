@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calculator/46/gnome-calculator-46.rc.tar.xz
-  ref: bde53af955b7b26db51c8a69049c1d9bbf511cd5f3a7471258ac0502428f7d76
+  url: gnome_downloads:gnome-calculator/46/gnome-calculator-46.0.tar.xz
+  ref: 44694fda6b6233923f5c10a48d02d2cf5724e011a8a85789074c953101f33bf1
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
