@@ -1,0 +1,97 @@
+include: .gitlab-ci/arch-codethink.yml
+
+variables:
+  GET_SOURCES_ATTEMPTS: 3
+  BST_NO_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nopush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
+
+  # Docker Images
+  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
+  DOCKER_IMAGE_ID: "52cf1bc4bbb101392b550d9c64770ceedfd0ba21"
+
+stages:
+- deploy
+
+workflow:
+  # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "schedules" || $CI_PIPELINE_SOURCE == "web"'
+  - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+  - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS && $CI_PIPELINE_SOURCE == "push"
+    when: never
+  - if: '$CI_COMMIT_BRANCH && $CI_COMMIT_REF_PROTECTED == "true"'
+  - if: '$CI_COMMIT_TAG'
+
+default:
+  image: "${DOCKER_REGISTRY}/bst2:${DOCKER_IMAGE_ID}"
+  before_script:
+  # Ensure the log directory exists
+  - mkdir -p logs
+
+  # Setup certificate for pushing to the cache
+  - echo "$CASD_CLIENT_CERT" > client.crt
+  - echo "$CASD_CLIENT_KEY" > client.key
+  - make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+
+  # Setup version info.
+  - |
+    IMAGE_VERSION="codethink.${CI_PIPELINE_ID}"
+    echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
+    export IMAGE_VERSION
+
+  retry:
+    max: 2
+    when:
+    - 'runner_system_failure'
+    - 'stuck_or_timeout_failure'
+    - 'scheduler_failure'
+    - 'api_failure'
+
+#
+# Templates shared by multiple jobs
+#
+
+.manual-sysupdate-image-template:
+  stage: deploy
+  allow_failure: false
+  script:
+  - ${BST_NO_PUSH} -o arch "${ARCH}" -o secure_image_installer true  build vm-secure/image.bst vm-secure/update-images.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory image/
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+  - gpg --homedir=files/boot-keys/private-key --output update-images/SHA256SUMS.gpg --detach-sig update-images/SHA256SUMS
+  - cp files/boot-keys/import-pubring.gpg update-images
+  artifacts:
+    when: always
+    paths:
+    - image
+    - update-images
+    expire_in: '2 days'
+
+.manual-sysupdate-update-images-user-only-template:
+  stage: deploy
+  allow_failure: false
+  script:
+  - ${BST_NO_PUSH} -o arch "${ARCH}" -o secure_image_installer true build vm-secure/update-images-user-only.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images-user-only.bst --directory update-images/
+  - gpg --homedir=files/boot-keys/private-key --output update-images/SHA256SUMS.gpg --detach-sig update-images/SHA256SUMS
+  - cp files/boot-keys/import-pubring.gpg update-images
+  artifacts:
+    when: always
+    paths:
+    - update-images
+    expire_in: '2 days'
+
+#
+# Stage: deploy
+#
+
+sysupdate-image-x86_64:
+  extends:
+  - .manual-sysupdate-image-template
+  - .x86_64
+  when: always
+
+sysupdate-update-images-user-only-x86_64:
+  extends:
+  - .manual-sysupdate-update-images-user-only-template
+  - .x86_64
+  when: always
