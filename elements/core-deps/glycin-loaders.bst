@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.rc-0-g5c57603d9455aa74b802f4fcc7e5121dcaa67b10
+  ref: 1.0.0-0-g869edadffec98d8c36a3db766120ad4ebed20a37
 - kind: cargo
 
   ref:
@@ -423,8 +423,8 @@ sources:
     version: 0.8.1
     sha: c571b676ddfc9a8c12f1f3d3085a7b163966a8fd8098a90640953ce5f6170161
   - name: librsvg
-    version: 2.58.0-beta.1
-    sha: 59d441368ddd551d54ef8ebcf515cf8a22604856a66da21828fa1d57651a9f71
+    version: 2.58.0
+    sha: de005d9589235493d0e2b62d055c0d8e368db4fb33e746dafc9400fb67b9c817
   - name: libseccomp
     version: 0.3.0
     sha: 21c57fd8981a80019807b7b68118618d29a87177c63d704fc96e6ecd003ae5b3
