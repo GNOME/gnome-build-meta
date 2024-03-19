@@ -44,3 +44,4 @@ variables:
   meson-local: >-
     -Dextensions_app=false
     -Dextensions-tool:bash_completion=disabled
+    -Dtests=false
