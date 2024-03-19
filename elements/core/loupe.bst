@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.rc-12-g3e20bdc7ffa1fb2841f0619fc0d1706b7947881b
+  ref: 46.rc-15-g8c0a81c854a091d09eb233f257852de76d9174f3
 - kind: cargo
 
   ref:
@@ -294,11 +294,11 @@ sources:
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
   - name: glycin
-    version: 1.0.0-rc
-    sha: 32a04a1d9802714d1397a78808f9f2dfb993268f22ea6915e0e12de4c5bec479
+    version: 1.0.0
+    sha: 6ebfac2819e7c4538c6567742a88d684ac5020f7e6de3d5e3f8578a72b4fbc5c
   - name: glycin-utils
-    version: 1.0.0-rc
-    sha: e44e0a4bede2ac83be368b3b6815fd2059772e4ca66305f3273a47e1435bfae2
+    version: 1.0.0
+    sha: 135d59b585e3f5df5d5f81b6a2e77b681071c4ef6b06f7828b46b8f5944b6c37
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
