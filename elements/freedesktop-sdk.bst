@@ -13,6 +13,8 @@ sources:
   path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-Add-shaderc-in-flatpak-runtime.patch
+- kind: patch
+  path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
 
 config:
   options:

@@ -1,0 +1,83 @@
+From a7fa2ab83094b7b25ac8b3afc29710858cb309a6 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Tue, 19 Mar 2024 14:15:36 +0200
+Subject: [PATCH] libdrm: add back the api
+
+---
+ elements/components/libdrm.bst               |  2 -
+ patches/libdrm/libdrm-do-not-break-abi.patch | 46 --------------------
+ 2 files changed, 48 deletions(-)
+ delete mode 100644 patches/libdrm/libdrm-do-not-break-abi.patch
+
+diff --git a/elements/components/libdrm.bst b/elements/components/libdrm.bst
+index e33c60df1f..5b2f962e37 100644
+--- a/elements/components/libdrm.bst
++++ b/elements/components/libdrm.bst
+@@ -50,12 +50,10 @@ public:
+     split-rules:
+       devel:
+         (>):
+         - '%{libdir}/libdrm.so'
+ 
+ sources:
+ - kind: git_repo
+   url: freedesktop:mesa/drm.git
+   ref: libdrm-2.4.120-0-g75254bf2390c10644ffb35a90fc8f18f196f9f0c
+   track: libdrm-*
+-- kind: patch
+-  path: patches/libdrm/libdrm-do-not-break-abi.patch
+diff --git a/patches/libdrm/libdrm-do-not-break-abi.patch b/patches/libdrm/libdrm-do-not-break-abi.patch
+deleted file mode 100644
+index 7cf7b7aef3..0000000000
+--- a/patches/libdrm/libdrm-do-not-break-abi.patch
++++ /dev/null
+@@ -1,46 +0,0 @@
+-diff --git a/core-symbols.txt b/core-symbols.txt
+-index 766c342..0d3464e 100644
+---- a/core-symbols.txt
+-+++ b/core-symbols.txt
+-@@ -70,7 +70,6 @@ drmGetLibVersion
+- drmGetLock
+- drmGetMagic
+- drmGetMap
+--drmGetNodeTypeFromDevId
+- drmGetNodeTypeFromFd
+- drmGetPrimaryDeviceNameFromFd
+- drmGetRenderDeviceNameFromFd
+-@@ -104,7 +103,6 @@ drmModeAtomicGetCursor
+- drmModeAtomicMerge
+- drmModeAtomicSetCursor
+- drmModeAttachMode
+--drmModeCloseFB
+- drmModeConnectorGetPossibleCrtcs
+- drmModeConnectorSetProperty
+- drmModeCreateDumbBuffer
+-diff --git a/xf86drm.c b/xf86drm.c
+-index 2e76f0e..16893c3 100644
+---- a/xf86drm.c
+-+++ b/xf86drm.c
+-@@ -4687,7 +4687,7 @@ drm_public int drmGetDeviceFromDevId(dev_t find_rdev, uint32_t flags, drmDeviceP
+- #endif
+- }
+- 
+--drm_public int drmGetNodeTypeFromDevId(dev_t devid)
+-+int drmGetNodeTypeFromDevId(dev_t devid)
+- {
+-     int maj, min, node_type;
+- 
+-diff --git a/xf86drmMode.c b/xf86drmMode.c
+-index a4873a0..2d05631 100644
+---- a/xf86drmMode.c
+-+++ b/xf86drmMode.c
+-@@ -320,7 +320,7 @@ drm_public int drmModeRmFB(int fd, uint32_t bufferId)
+- 	return DRM_IOCTL(fd, DRM_IOCTL_MODE_RMFB, &bufferId);
+- }
+- 
+--drm_public int drmModeCloseFB(int fd, uint32_t buffer_id)
+-+int drmModeCloseFB(int fd, uint32_t buffer_id)
+- {
+- 	struct drm_mode_closefb closefb;
+- 
+-- 
+2.44.0
+
