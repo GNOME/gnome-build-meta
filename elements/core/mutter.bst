@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: gnome_downloads:mutter/46/mutter-46.0.tar.xz
   ref: bb3f7d77aebdea9d317d3f5ef03868e4e7969da423ac495e33a16d61db2c9373
+- kind: patch
+  path: patches/mutter/0001-Revert-backend-native-Use-drmModeCloseFB-for-flicker.patch
 build-depends:
 - core-deps/xvfb.bst
 # Need the whole thing over just the capture for the dbus interface.

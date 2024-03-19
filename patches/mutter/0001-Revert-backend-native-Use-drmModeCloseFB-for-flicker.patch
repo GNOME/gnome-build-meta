@@ -1,0 +1,43 @@
+From ebbaa6e0ea93a3fb772615989a39e5730e14dd1b Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Tue, 19 Mar 2024 12:02:47 -0400
+Subject: [PATCH] Revert "backend/native: Use drmModeCloseFB for flicker-free
+ login"
+
+This reverts commit a775241efd8b840e7789077fb2224f0df2361d54.
+---
+ meson.build                           | 2 +-
+ src/backends/native/meta-drm-buffer.c | 4 +---
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index c5ec57395..1f01acdb9 100644
+--- a/meson.build
++++ b/meson.build
+@@ -51,7 +51,7 @@ wayland_protocols_req = '>= 1.33'
+ # native backend version requirements
+ libinput_req = '>= 1.19.0'
+ gbm_req = '>= 21.3'
+-libdrm_req = '>= 2.4.118'
++libdrm_req = '>= 2.4.95'
+ 
+ # screen cast version requirements
+ libpipewire_req = '>= 0.3.33'
+diff --git a/src/backends/native/meta-drm-buffer.c b/src/backends/native/meta-drm-buffer.c
+index a109b4ea2..eba3161a2 100644
+--- a/src/backends/native/meta-drm-buffer.c
++++ b/src/backends/native/meta-drm-buffer.c
+@@ -167,9 +167,7 @@ meta_drm_buffer_release_fb_id (MetaDrmBuffer *buffer)
+   int ret;
+ 
+   fd = meta_device_file_get_fd (priv->device_file);
+-  ret = drmModeCloseFB (fd, priv->fb_id);
+-  if (ret == -EINVAL)
+-    ret = drmModeRmFB (fd, priv->fb_id);
++  ret = drmModeRmFB (fd, priv->fb_id);
+   if (ret != 0)
+     g_warning ("drmModeRmFB: %s", g_strerror (-ret));
+ 
+-- 
+2.44.0
+
