@@ -90,7 +90,6 @@ config:
     C /etc/openldap
     C /etc/opensc.conf
     C /etc/ostree
-    C /etc/passwd
     C /etc/pkcs11
     C /etc/pki
     C /etc/plymouth
