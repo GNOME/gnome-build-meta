@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:fish-shell/fish-shell/releases/download/3.5.1/fish-3.5.1.tar.xz
-  ref: a6d45b3dc5a45dd31772e7f8dfdfecabc063986e8f67d60bd7ca60cc81db6928
+  url: github_files:fish-shell/fish-shell/releases/download/3.7.1/fish-3.7.1.tar.xz
+  ref: 614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
