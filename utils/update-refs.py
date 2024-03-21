@@ -10,7 +10,7 @@ parser.add_argument(
     "--new-branch", help="Commit to a new branch after tracking", action="store_true"
 )
 parser.add_argument(
-    "--track-world", help="Commit to a new branch after tracking", action="store_true"
+    "--track-boards", help="Track elements used by board images", action="store_true"
 )
 args = parser.parse_args()
 
@@ -24,12 +24,11 @@ core_elements = [
     "iso/image.bst",
 ]
 
-world_elements = [
+boards_elements = [
     "boards/pinebook-pro/image.bst",
     "boards/pinephone/image.bst",
     "boards/pinephone-pro/image.bst",
     "boards/rock64/image.bst",
-    "world.bst",
 ]
 
 def git(*args):
@@ -42,7 +41,7 @@ bst_command = os.environ.get("BST", "bst").split()
 def bst(*args):
     return subprocess.check_call(bst_command + ["--on-error", "continue"] + list(args))
 
-track_elements = world_elements if args.track_world else core_elements
+track_elements = boards_elements if args.track_boards else core_elements
 bst("source", "track", "--deps", "all", *track_elements)
 
 if args.new_branch:
