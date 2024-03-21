@@ -2,8 +2,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:json-glib.git
-  track: master
-  ref: 1.8.0-actual-90-g4db3373b1f09379386e55d9f6662cf77e17ca13d
+  track: main
+  ref: 1.8.0-actual-98-ge72682f50335b4800ea33bb6bb32d7cb5d3e6ad9
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk-deps/gi-docgen.bst
