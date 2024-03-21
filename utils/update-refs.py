@@ -29,7 +29,6 @@ world_elements = [
     "boards/pinephone/image.bst",
     "boards/pinephone-pro/image.bst",
     "boards/rock64/image.bst",
-    "boards/raspberrypi-4/image.bst",
     "world.bst",
 ]
 
