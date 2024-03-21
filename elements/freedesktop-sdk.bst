@@ -15,6 +15,8 @@ sources:
   path: patches/freedesktop-sdk/0001-Add-shaderc-in-flatpak-runtime.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
+- kind: patch
+  path: patches/freedesktop-sdk/disable-supersave.patch
 
 config:
   options:
