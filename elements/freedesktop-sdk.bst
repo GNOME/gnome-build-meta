@@ -3,15 +3,15 @@ kind: junction
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-24.08*
-  ref: freedesktop-sdk-24.08beta.3-0-ga40f463715e3467274aadca0b3e41e6b3041eb60
-- kind: patch_queue
-  path: patches/freedesktop-sdk
+  track: refs/heads/valentindavid/x64-64-v3
+  ref: freedesktop-sdk-24.08beta.3-80-g94060e7f7092a8650e7905fc6fb77d2d9f5bf04d
 
 config:
   options:
     target_arch: '%{arch}'
     (?):
+    - x86_64_v3:
+        x86_64_v3: true
     - arch in ('x86_64', 'i686'):
         bootstrap_build_arch: 'x86_64'
     - arch in ('aarch64', 'arm'):
