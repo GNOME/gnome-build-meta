@@ -1,0 +1,88 @@
+From e3a2cd4cf59f23e8b6cb9ca2a71201421783cb06 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Sat, 23 Mar 2024 11:36:32 +0100
+Subject: [PATCH 1/2] Add experimental option for x86-64-v3
+
+---
+ elements/bootstrap/include/gcc-arch-opts.yml | 10 +++++++++-
+ project.conf                                 |  4 ++++
+ 2 files changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/elements/bootstrap/include/gcc-arch-opts.yml b/elements/bootstrap/include/gcc-arch-opts.yml
+index b339c4083dd..bbb85ef8789 100644
+--- a/elements/bootstrap/include/gcc-arch-opts.yml
++++ b/elements/bootstrap/include/gcc-arch-opts.yml
+@@ -24,5 +24,13 @@ variables:
+       conf-arch: >-
+         --with-arch=rv64gc
+   - target_arch == "x86_64":
++      (?):
++        - x86_64_v3:
++            arch-opt: x86-64-v3
++            tune-opt: skylake
++        - not x86_64_v3:
++            arch-opt: x86-64
++            tune-opt: generic
+       conf-arch: >-
+-        --with-tune=generic
++        --with-tune=%{tune-opt}
++        --with-arch_64=%{arch-opt}
+diff --git a/project.conf b/project.conf
+index 9ff5c802190..72c3a889088 100644
+--- a/project.conf
++++ b/project.conf
+@@ -127,6 +127,10 @@ options:
+     variable: full_abi_diff
+     default: False
+ 
++  x86_64_v3:
++    type: bool
++    description: Enable x86_64-v3 (EXPERIMENTAL)
++    default: False
+ 
+ artifacts:
+ - url: https://cache.freedesktop-sdk.io:11001
+-- 
+GitLab
+
+
+From 265f992a460f32e60e088862f28a1d2d77af9d1b Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Sat, 23 Mar 2024 12:13:50 +0100
+Subject: [PATCH 2/2] xxhash: Fix compilation on x86_64_v3
+
+---
+ elements/bootstrap/xxhash.bst | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/elements/bootstrap/xxhash.bst b/elements/bootstrap/xxhash.bst
+index ffae24ae8a8..9ca2c409069 100644
+--- a/elements/bootstrap/xxhash.bst
++++ b/elements/bootstrap/xxhash.bst
+@@ -16,18 +16,22 @@ runtime-depends:
+ - bootstrap/glibc.bst
+ 
+ variables:
++  arch-flags: ''
+   make-args: >-
+     CC="%{triplet}-gcc"
+     AR="%{triplet}-ar"
+     PREFIX="%{prefix}"
+     LIBDIR="%{libdir}"
+-    MOREFLAGS="${CFLAGS} ${LDFLAGS}"
++    MOREFLAGS="%{arch-flags} ${CFLAGS} ${LDFLAGS}"
+     DISPATCH=%{dispatch}
+   (?):
+   - target_arch in ("i686", "x86_64"):
+       dispatch: 1
+   - target_arch not in ("i686", "x86_64"):
+       dispatch: 0
++  - x86_64_v3:
++      arch-flags: >-
++        -DXXH_X86DISPATCH_ALLOW_AVX
+ 
+ public:
+   bst:
+-- 
+GitLab
+

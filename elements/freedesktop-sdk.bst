@@ -5,11 +5,15 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-24.08*
   ref: freedesktop-sdk-24.08rc.1-77-gdd3220360d892ebfd5aa4701d873d8387386165d
+- kind: patch_queue
+  path: patches/freedesktop-sdk
 
 config:
   options:
     target_arch: '%{arch}'
     (?):
+    - x86_64_v3:
+        x86_64_v3: true
     - arch in ('x86_64', 'i686'):
         bootstrap_build_arch: 'x86_64'
     - arch in ('aarch64', 'arm'):
