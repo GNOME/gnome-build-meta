@@ -2,25 +2,35 @@
 
 set -euxo pipefail
 
-TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst oci/platform.bst oci/sdk.bst oci/core.bst)
+TARGETS_RUNTIME=(flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
+TARGETS_GNOMEOS=(core.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst vm-secure/build-non-images.bst)
 
 case "${ARCH}" in
     aarch64)
-        TARGETS+=(vm/filesystem.bst vm/filesystem-devel.bst)
+        TARGETS_GNOMEOS+=(vm/filesystem.bst vm/filesystem-devel.bst)
     ;;
     x86_64)
-        TARGETS+=(vm/repo.bst vm/repo-devel.bst)
+        TARGETS_GNOMEOS+=(vm/repo.bst vm/repo-devel.bst oci/platform.bst oci/sdk.bst oci/core.bst)
     ;;
     i686)
-        TARGETS=(flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst)
     ;;
 esac
 
 case "${ARCH}" in
-    aarch64|x86_64)
-        TARGETS+=(vm-secure/build-non-images.bst)
+    x86_64)
+        ARCH_OPT=(-o x86_64_v3 true -o arch ${ARCH})
+    ;;
+    *)
+        ARCH_OPT=(-o arch ${ARCH})
     ;;
 esac
 
 : ${BST:=bst}
-$BST --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+# Build the runtime with x86_64_v1 and GNOME OS with x86_64_v3
+# We don't need to build gnomeos on i686
+case "${ARCH}" in
+    aarch64|x86_64)
+        $BST --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build "${TARGETS_GNOMEOS[@]}"
+    ;;
+esac
+$BST --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS_RUNTIME[@]}"

@@ -92,13 +92,26 @@ default:
     - logs
     expire_in: '1 week'
 
+.arch_opt:
+  script:
+  - |
+    case "${ARCH}" in
+        x86_64)
+            ARCH_OPT=("-o x86_64_v3 true -o arch ${ARCH}")
+        ;;
+        *)
+            ARCH_OPT=("-o arch ${ARCH}")
+        ;;
+    esac
+
 .manual-image-template:
   stage: deploy
   when: manual
   allow_failure: true
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
+  - !reference: [".arch_opt", "script"]
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build "${IMAGE}"
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
     paths:
@@ -121,11 +134,13 @@ default:
 
   - ostree init --repo repo/ --mode archive
 
-  - ${BST} -o arch "${ARCH}" artifact pull vm/repo.bst vm/repo-devel.bst
+
+  - !reference: [".arch_opt", "script"]
+  - ${BST} "${ARCH_OPT[@]}" artifact pull vm/repo.bst vm/repo-devel.bst
 
   - |
     for element in vm/repo.bst vm/repo-devel.bst; do
-        ${BST} -o arch "${ARCH}" artifact checkout --hardlinks $element --directory checkout-repo/
+        ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks $element --directory checkout-repo/
         ostree pull-local --repo=repo/ checkout-repo/
         rm -rf checkout-repo/
     done
@@ -244,10 +259,11 @@ deploy-oci:
   # Sometimes podman push will timeout
   retry: 2
   script:
-  - ${BST} -o arch "${ARCH}" artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/platform.bst | podman load
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/sdk.bst | podman load
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/core.bst | podman load
+  - !reference: [".arch_opt", "script"]
+  - ${BST} "${ARCH_OPT[@]}" artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --tar - oci/platform.bst | podman load
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --tar - oci/sdk.bst | podman load
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --tar - oci/core.bst | podman load
   - |
     if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
         ./utils/publish-oci-quay.sh
@@ -298,9 +314,10 @@ sysupdate-image-aarch64:
     allow_failure: true
   stage: deploy
   script:
-  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) build vm-secure/update-images.bst
+  - !reference: [".arch_opt", "script"]
+  - ${BST_NO_PUSH} "${ARCH_OPT[@]}" --max-jobs $(( $(nproc) / 4 ))  build vm-secure/update-images.bst
 
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
 
   - |
     if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
@@ -344,10 +361,11 @@ s3-image:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
+  - !reference: [".arch_opt", "script"]
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build vm/image.bst iso/image.bst
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm/image.bst --directory image
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/image.bst --directory image
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
