@@ -25,10 +25,20 @@ if [ "${#args[@]}" -gt 0 ]; then
 fi
 
 : ${BST:=bst}
+: ${ARCH:="x86_64"}
 : ${REPO_STATE:="${PWD}/secure-vm-repo"}
 : ${PORT:=8080}
 
 BST_OPTIONS=()
+
+case "${ARCH}" in
+    x86_64)
+        BST_OPTIONS+=(-o x86_64_v3 true -o arch ${ARCH})
+    ;;
+    *)
+        BST_OPTIONS+=(-o arch ${ARCH})
+    ;;
+esac
 
 [ -d "${REPO_STATE}" ] || mkdir -p "${REPO_STATE}"
 
