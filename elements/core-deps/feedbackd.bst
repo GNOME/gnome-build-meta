@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: purism_releases:feedbackd/feedbackd-0.2.1.tar.xz
   ref: 4f0713d0f6b4491e5487a672db541d36de70952a6644580abeb2c6025fb31a7a
+- kind: patch
+  path: patches/freedbackd/38.patch
+  directory: subprojects/gmobile/
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
