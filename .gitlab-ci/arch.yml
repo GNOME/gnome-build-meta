@@ -5,14 +5,14 @@
 .x86_64:
   tags:
   - x86_64
-  - gnome-build-meta
+  - codethink
   variables:
     ARCH: x86_64
 
 .i686:
   tags:
   - x86_64
-  - gnome-build-meta
+  - codethink
   variables:
     ARCH: i686
 
@@ -25,4 +25,4 @@
 
 .arch-indep:
   tags:
-  - gnome-build-meta
+  - codethink
