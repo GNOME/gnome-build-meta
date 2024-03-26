@@ -3,28 +3,14 @@ include: .gitlab-ci/arch.yml
 variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_NO_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nopush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
-  BST: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
-  # This mirrors the project.conf
-  # OCI_BRANCH is like branch and the tag that we use in the images
-  # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
-  OCI_BRANCH: master
-  FLATPAK_BRANCH: master
-  OPENQA_HOST: https://openqa.gnome.org
-  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
-  OPENQA_TESTS_BRANCH: master
-  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
-  OPENQA_NEEDLES_BRANCH: master
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_IMAGE_ID: "52cf1bc4bbb101392b550d9c64770ceedfd0ba21"
 
 stages:
-- track
 - build
 - deploy
-- test
-- reports
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -85,14 +71,14 @@ default:
         ;;
     esac
 
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
     paths:
     - logs
-    expire_in: '1 week'
+    expire_in: '2 days'
 
 .manual-image-template:
   stage: deploy
@@ -100,60 +86,45 @@ default:
   allow_failure: true
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
     paths:
     - image
     expire_in: '2 days'
 
-.deploy-rules:
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
-
-.ostree-template:
-  extends: .deploy-rules
+.manual-sysupdate-image-template:
   stage: deploy
-  script:
-  - |
-    export FLAT_MANAGER_SERVER=https://flat-manager-ostree.gnome.org/
-    export FLAT_MANAGER_REPO=gnomeos
-    export REPO_TOKEN=$OSTREE_REPO_TOKEN
-
-  - ostree init --repo repo/ --mode archive
-
-  - ${BST} -o arch "${ARCH}" artifact pull vm/repo.bst vm/repo-devel.bst
-
-  - |
-    for element in vm/repo.bst vm/repo-devel.bst; do
-        ${BST} -o arch "${ARCH}" artifact checkout --hardlinks $element --directory checkout-repo/
-        ostree pull-local --repo=repo/ checkout-repo/
-        rm -rf checkout-repo/
-    done
-
-  - BUILD_ID=$(flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
-  - flat-manager-client purge $BUILD_ID
-  - exit $result
-
-.test-phone-image-template:
-  extends:
-  - .aarch64
-  stage: test
   when: manual
-  needs:
-    artifacts: true
-  before_script:
-  - dd if=/dev/zero of=flash1.img bs=1M count=64
-  - dd if=/dev/zero of=flash0.img bs=1M count=64
-  - dd if=/usr/share/qemu/edk2-aarch64-code.fd of=flash0.img conv=notrunc
+  allow_failure: true
+  script:
+  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) -o secure_image_installer true  build vm-secure/image.bst vm-secure/update-images.bst iso/image.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory image/
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+  - ${BST_NO_PUSH} -o arch "${ARCH}" -o secure_image_installer true artifact checkout --hardlinks iso/image.bst --directory iso/
+  artifacts:
+    when: always
+    paths:
+    - image
+    - update-images
+    - iso
+    expire_in: '2 days'
 
-  - mv $(pwd)/image/disk.img.xz ./disk.img.xz
-  - unxz -T$(nproc) disk.img.xz
+.manual-sysupdate-update-images-user-only-template:
+  stage: deploy
+  when: manual
+  allow_failure: true
+  script:
+  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) -o secure_image_installer true build vm-secure/update-images-user-only.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images-user-only.bst --directory update-images/
+  artifacts:
+    when: always
+    paths:
+    - update-images
+    expire_in: '2 days'
 
 #
-# "Real" CI jobs
+# Stage: build
 #
 
 build-x86_64:
@@ -161,109 +132,9 @@ build-x86_64:
   - .build-template
   - .x86_64
 
-build-i386:
-  extends:
-  - .build-template
-  - .i686
-
-build-aarch64:
-  extends:
-  - .build-template
-  - .aarch64
-
-deploy-flatpak:
-  extends: .arch-indep
-  stage: deploy
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-  - job: 'build-i386'
-    artifacts: false
-  - job: 'build-aarch64'
-    artifacts: false
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-    variables:
-      FLAT_MANAGER_SERVER: https://flat-manager.gnome.org/
-      ENVIRONMENT_NAME: flatpak-nightly
-      FLAT_MANAGER_REPO: nightly
-      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
-  - if: $CI_PIPELINE_SOURCE == "schedule"
-    when: never
-  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $FLATPAK_BRANCH =~ /beta$/
-    variables:
-      FLAT_MANAGER_SERVER: https://hub.flathub.org/
-      ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
-      FLAT_MANAGER_REPO: beta
-      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
-  - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
-    variables:
-      FLAT_MANAGER_SERVER: https://hub.flathub.org/
-      ENVIRONMENT_NAME: flathub/$FLATPAK_BRANCH
-      FLAT_MANAGER_REPO: stable
-      SUPPORTED_ARCHES: "x86_64 i686 aarch64"
-  variables:
-    RUNNER_AFTER_SCRIPT_TIMEOUT: 20m
-    TARGETS: flatpak-runtimes.bst
-    TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
-  script:
-  - TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
-  - TARGETS="$TARGETS ${!TARGETS_REPO}"
-  - echo $TARGETS
-
-  # Sanity chck where we going to push
-  - python3 $CI_PROJECT_DIR/utils/publish-flatpak-gate.py
-
-  - ostree init --repo repo/ --mode archive
-  - |
-    for ARCH in $SUPPORTED_ARCHES; do
-      for target in $TARGETS; do
-        $BST -o arch $ARCH artifact checkout $target --directory checkout-repo/
-        ostree pull-local --repo repo/ checkout-repo/
-        rm -rf checkout-repo/
-      done
-    done
-  - ostree fsck --repo repo/ --all
-  - flatpak build-update-repo --generate-static-deltas repo/
-
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-  - flat-manager-client push $(cat build.txt) repo/
-  - flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager-client publish --wait $(cat build.txt)
-  after_script:
-  - flat-manager-client purge $(cat build.txt)
-  environment:
-    name: $ENVIRONMENT_NAME
-
-deploy-oci:
-  stage: deploy
-  extends:
-  - .x86_64
-  - .deploy-rules
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-  # Sometimes podman push will timeout
-  retry: 2
-  script:
-  - ${BST} -o arch "${ARCH}" artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/platform.bst | podman load
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/sdk.bst | podman load
-  - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/core.bst | podman load
-  - |
-    if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./utils/publish-oci-quay.sh
-    fi
-
-vm-image-aarch64:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: vm/image.bst
+#
+# Stage: deploy
+#
 
 vm-image-x86_64:
   extends:
@@ -275,100 +146,6 @@ vm-image-x86_64:
   variables:
     IMAGE: vm/image.bst
 
-sysupdate-image-x86_64:
-  extends:
-  - .x86_64
-  - .sysupdate-image
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-
-sysupdate-image-aarch64:
-  extends:
-  - .aarch64
-  - .sysupdate-image
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-
-.sysupdate-image:
-  rules:
-  - !reference [.deploy-rules, rules]
-  # Also allow to manually trigger it for normal branches
-  - if: '$CI_COMMIT_REF_NAME'
-    when: manual
-    allow_failure: true
-  stage: deploy
-  script:
-  - |
-    if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-      make -C files/boot-keys clean
-      make -C files/boot-keys generate-keys IMPORT_MODE=import
-    fi
-
-  - |
-    build_num="${CI_PIPELINE_ID}"
-    if [ "${CI_COMMIT_BRANCH-}" = master ]; then
-      IMAGE_VERSION="nightly.$build_num"
-    else
-      # Assume this will always be a stable branch string like "gnome-44"
-      IMAGE_VERSION=$(echo "${CI_COMMIT_REF_SLUG:-unknown}.$build_num" | sed "s/-/_/g")
-    fi
-
-    echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
-    export IMAGE_VERSION
-
-  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) -o secure_image_installer true  build vm-secure/image.bst vm-secure/update-images.bst iso/image.bst
-
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory image/
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
-  - ${BST} -o arch "${ARCH}" -o secure_image_installer true artifact checkout --hardlinks iso/image.bst --directory iso/
-
-  - |
-    if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./utils/publish-sysupdate-to-s3.sh
-    fi
-
-pinebook-pro-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: boards/pinebook-pro/image.bst
-
-pinephone-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: "build-aarch64"
-    artifacts: false
-  variables:
-    IMAGE: boards/pinephone/image.bst
-
-pinephone-pro-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: "build-aarch64"
-    artifacts: false
-  variables:
-    IMAGE: boards/pinephone-pro/image.bst
-
-rock64-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: boards/rock64/image.bst
-
 iso-installer-x86_64:
   extends:
   - .manual-image-template
@@ -379,238 +156,20 @@ iso-installer-x86_64:
   - job: 'build-x86_64'
     artifacts: false
 
-s3-image:
-  extends: .x86_64
-  stage: deploy
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-  script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
-
-  - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        aws s3 cp --acl public-read iso/installer.iso \
-            s3://gnome-build-meta/tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso
-    else
-        aws s3 cp --acl public-read image/disk.img.xz \
-            s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz
-        aws s3 cp --acl public-read iso/installer.iso \
-            s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso
-    fi
-
-  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
-
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_TAG
-
-openh264-x86_64:
+sysupdate-image-x86_64:
   extends:
+  - .manual-sysupdate-image-template
   - .x86_64
-  stage: deploy
-  needs: []
-  allow_failure: true
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-    when: manual
-  script:
-  - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
-  - cd openh264-extension
-  - ${BST} build flatpak-repo.bst
-  - ${BST} artifact checkout flatpak-repo.bst --directory repo
-  - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
-  - flat-manager-client purge $BUILD_ID
-  - exit $result
-
-
-s3-image-static:
-  extends: .arch-indep
-  stage: reports
-  needs:
-  - job: s3-image
-    artifacts: false
-  - job: sysupdate-image-x86_64
-    artifacts: false
-  - job: test-s3-image
-    artifacts: false
-  rules:
-  - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "master"
-    when: manual
-    needs:
-    - job: s3-image
-      artifacts: false
-    - job: sysupdate-image-x86_64
-      artifacts: false
-  - if: $CI_COMMIT_REF_NAME == "master"
-    when: on_success
-  script:
-  - |
-    echo nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso > latest-iso
-    echo nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz > latest-disk
-
-    echo nightly/$CI_PIPELINE_ID/gnome_os_sysupdate_installer_$CI_PIPELINE_ID-x86_64.iso > latest-sysupdate-x86_64-iso
-    echo nightly/$CI_PIPELINE_ID/disk_sysupdate_$CI_PIPELINE_ID-x86_64.img.xz > latest-sysupdate-x86_64-disk
-  - |
-    aws s3 cp --acl public-read latest-iso s3://gnome-build-meta/latest-iso
-    aws s3 cp --acl public-read latest-disk s3://gnome-build-meta/latest-disk
-
-    aws s3 cp --acl public-read latest-sysupdate-x86_64-iso s3://gnome-build-meta/latest-sysupdate-x86_64-iso
-    aws s3 cp --acl public-read latest-sysupdate-x86_64-disk s3://gnome-build-meta/latest-sysupdate-x86_64-disk
-
-  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
-
-ostree-x86_64:
-  extends:
-  - .ostree-template
-  - .x86_64
+  when: always
   needs:
   - job: 'build-x86_64'
     artifacts: false
 
-
-cve_report:
-  extends: .x86_64
-  stage: 'deploy'
+sysupdate-update-images-user-only-x86_64:
+  extends:
+  - .manual-sysupdate-update-images-user-only-template
+  - .x86_64
+  when: always
   needs:
   - job: 'build-x86_64'
     artifacts: false
-  script:
-  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
-
-  - ${BST} artifact checkout flatpak/platform-manifest.bst --directory platform-manifest/
-  - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory sdk-manifest/
-
-  - mkdir -p cve
-  - cd cve
-  - ../utils/update-local-cve-database.py
-
-  - mkdir -p ../cve-reports
-  - python3 ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-  - python3 ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
-  cache:
-    key: cve
-    paths:
-    - cve
-  artifacts:
-    paths:
-    - cve-reports
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
-
-
-test-s3-image:
-  extends:
-  - .x86_64
-  stage: test
-  image:
-    name: registry.opensuse.org/devel/openqa/containers15.5/openqa_worker:latest
-    entrypoint: ["/bin/bash", "-c"]
-  variables:
-    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
-    CI: 1
-    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
-  needs:
-  - job: 's3-image'
-    artifacts: false
-  before_script:
-  - |
-    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
-    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
-  - |
-    echo "Fetching test media"
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
-        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}.img.xz
-    else
-        S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso
-        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}.img.xz
-    fi
-    openqa/utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
-    openqa/utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
-    unxz /data/factory/hdd/disk.img.xz
-  - |
-    echo "Calculating checksums of test media"
-    sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
-  - |
-    disk_size_gb=12
-    echo "Expanding disk image to ${disk_size_gb}GB"
-    dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
-  script:
-  - |
-    rm /etc/openqa/*
-    cat >/etc/openqa/client.conf <<EOF
-    [openqa.gnome.org]
-    key = $OPENQA_API_KEY
-    secret = $OPENQA_API_SECRET
-    EOF
-  - |
-    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
-    ln -s $(pwd)/openqa /tests
-  - |
-    worker_class=qemu_x86_64-${CI_JOB_ID}
-    openqa/utils/setup_worker.sh ${worker_class}
-    /run_openqa_worker.sh &> worker.log &
-  - |
-    version="master"
-    casedir="$(pwd)/openqa"
-    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
-  - |
-    echo "Test jobs have been started. To see progress, visit:"
-    for job_id in $(cat /tmp/job_ids); do
-      echo "  * $OPENQA_HOST/tests/$job_id"
-    done
-  - openqa/utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
-  - exit $(cat /tmp/exit_code)
-  after_script:
-  - |
-    if [ ! -e /tmp/exit_code ]; then
-        echo "Job creation failed, log below."
-        cat openqa.log
-    fi
-  - |
-    openqa/utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
-  artifacts:
-    when: always
-    paths:
-    - junit.xml
-    - openqa.log
-    - worker.log
-    reports:
-      junit: junit.xml
-    expire_in: '1 week'
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_TAG
-
-test-pinephone-aarch64:
-  extends:
-  - .test-phone-image-template
-  script:
-  - python3 utils/test_phone_image.py test-pinephone-aarch64
-  needs:
-  - job: "pinephone-image"
-
-test-pinephone-pro-aarch64:
-  extends:
-  - .test-phone-image-template
-  script:
-  - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
-  needs:
-  - job: "pinephone-pro-image"
-
-pages:
-  stage: 'reports'
-  needs:
-  - job: 'cve_report'
-    artifacts: true
-  script:
-  - 'mv cve-reports/ public/'
-  artifacts:
-    paths:
-    - 'public'
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
