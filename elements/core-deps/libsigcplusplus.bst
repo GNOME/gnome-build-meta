@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libsigcplusplus/libsigcplusplus.git
   track: master
-  ref: 3.6.0-6-ge98e13199ab7fd669126e3534d3e6744e87c1bad
+  ref: 3.6.0-7-gdae8f5839e447b93b13a3b00ff2ddc279b47411e
 
 build-depends:
 - core-deps/graphviz.bst

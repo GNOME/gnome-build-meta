@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.58.0-beta.1-81-ge5b05f1ec6a03979086c308fb55b3c5aa4ff0186
+  ref: 2.58.0-beta.1-102-g673d37b5e5708a5125be44840292fba920eec081
 - kind: cargo
   ref:
   - name: adler
@@ -163,9 +163,6 @@ sources:
   - name: cssparser-macros
     version: 0.6.1
     sha: 13b588ba4ac1a99f7f2964d24b3d896ddc6bf847ee3855dbd4366f058cfcd331
-  - name: cstr
-    version: 0.2.11
-    sha: 8aa998c33a6d3271e3678950a22134cd7dd27cef86dee1b611b5b14207d1d90b
   - name: data-url
     version: 0.3.1
     sha: 5c297a1c74b71ae29df00c3e22dd9534821d60eb9af5a0192823fa2acea70c2a
