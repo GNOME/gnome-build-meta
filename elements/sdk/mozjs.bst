@@ -2,9 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: mozilla:firefox/releases/115.8.0esr/source/firefox-115.8.0esr.source.tar.xz
-  base-dir: 'firefox-115.8.0'
-  ref: af8086f23efc8492d286671f6035b1a915de6f4ed5c7897e40be0e1cb6b895ea
+  url: mozilla:firefox/releases/115.9.1esr/source/firefox-115.9.1esr.source.tar.xz
+  base-dir: 'firefox-115.9.1'
+  ref: 23657808bfefb8ba33a191645d4df776d5b8d99d453edde32b785d2a8846f929
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
