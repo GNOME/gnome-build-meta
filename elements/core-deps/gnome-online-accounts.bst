@@ -4,10 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.49.4-31-g1193e93ba4f2f2ce6204b391673a582be87897b0
+  ref: 3.49.4-40-gad43ef97bfdf9c43c5ec03c202a3348c7a1207b5
 
 build-depends:
 - sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
