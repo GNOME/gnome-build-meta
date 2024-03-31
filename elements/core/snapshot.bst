@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/snapshot.git
   track: main
-  ref: 46.rc-36-gcb844b9f449cb399be65c3c22600ad3d64ba7af9
+  ref: 46.rc-39-gcfc9fc3e00af36baa975b392e896ea04474c2b81
 - kind: cargo
   ref:
   - name: aho-corasick

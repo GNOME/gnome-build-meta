@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-initial-setup.git
   track: master
-  ref: 46.0-7-ga48942658cff8ada8045fe0d0c23f7feec393005
+  ref: 46.0-9-g0a87953be37bb97f9efa39276e7f1f97f14fc3af
 - kind: local
   path: files/gnome-initial-setup/tmpfiles.conf
 
