@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-builder.git
   track: main
-  ref: 46.0-32-g0186c2300abfac0fcbb02703a03fa1f3be4747a1
+  ref: 46.0-85-g4e76c4c6f04c611594dec61c56451ff37e37a9b8
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -20,6 +20,7 @@ runtime-depends:
 depends:
 - core-deps/cmark.bst
 - core-deps/editorconfig-core-c.bst
+- core-deps/gom.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
