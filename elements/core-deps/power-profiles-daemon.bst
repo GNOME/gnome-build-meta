@@ -20,6 +20,6 @@ depends:
 
 variables:
   # Tests depend on umockdev which we don't have
-  meson-local:
+  meson-local: >-
     -Dgtk_doc=true
     -Dtests=false
