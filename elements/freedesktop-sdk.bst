@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08*
-  ref: freedesktop-sdk-23.08.14-0-g9c275393ed6bc14670622b7aa822b8e929d389df
+  ref: freedesktop-sdk-23.08.14-124-g4795975d1b1aa59645285d17699261d421cd7c35
 - kind: patch
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
@@ -12,11 +12,7 @@ sources:
 - kind: patch
   path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
 - kind: patch
-  path: patches/freedesktop-sdk/0001-Add-shaderc-in-flatpak-runtime.patch
-- kind: patch
   path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
-- kind: patch
-  path: patches/freedesktop-sdk/disable-supersave.patch
 
 config:
   options:
