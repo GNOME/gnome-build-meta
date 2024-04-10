@@ -4,12 +4,15 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.58.0-beta.1-104-gb1d09d56dacc34829b0968f4dcbb9c2caa5e6290
+  ref: 2.58.0-beta.1-108-gfc703c23cb998a1b0f1850fce27f07a80832f737
 - kind: cargo
   ref:
   - name: adler
     version: 1.0.2
     sha: f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
+  - name: ahash
+    version: 0.8.11
+    sha: e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011
   - name: aho-corasick
     version: 1.1.2
     sha: b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0
@@ -64,6 +67,9 @@ sources:
   - name: bitflags
     version: 2.4.2
     sha: ed570934406eb16438a4e976b1b4500774099c13b8cb96eec99f620f05090ddf
+  - name: bitreader
+    version: 0.3.8
+    sha: bdd859c9d97f7c468252795b35aeccc412bdbb1e90ee6969c4fa6328272eaeff
   - name: block
     version: 0.1.6
     sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
@@ -166,6 +172,15 @@ sources:
   - name: data-url
     version: 0.3.1
     sha: 5c297a1c74b71ae29df00c3e22dd9534821d60eb9af5a0192823fa2acea70c2a
+  - name: dav1d
+    version: 0.10.2
+    sha: d7eb1fa9954b7ae85ff0d43ef6d186d1b3469d4aa1574845d1938bef05377030
+  - name: dav1d-sys
+    version: 0.8.2
+    sha: 6ecb1c5e8f4dc438eedc1b534a54672fb0e0a56035dae6b50162787bd2c50e95
+  - name: dcv-color-primitives
+    version: 0.6.1
+    sha: 07ad62edfed069700a5b33af6babd29c498d7e33eb01d96ffa8841ee1841634c
   - name: deranged
     version: 0.3.11
     sha: b42b6fa04a440b495c8b04d0e71b707c585f83cb9cb28cf8cd0d976c315e31b4
@@ -202,6 +217,9 @@ sources:
   - name: exr
     version: 1.72.0
     sha: 887d93f60543e9a9362ef8a21beedd0a833c5d9610e18c67abe15a5963dcb1a4
+  - name: fallible_collections
+    version: 0.4.9
+    sha: a88c69768c0a15262df21899142bc6df9b9b823546d4b4b9a7bc2d6c448ec6fd
   - name: fastrand
     version: 2.0.1
     sha: 25cbce373ec4653f1a01a31e8a5e5ec0c622dc27ff9c4e6606eefef5cbbed4a5
@@ -283,6 +301,9 @@ sources:
   - name: half
     version: 2.3.1
     sha: bc52e53916c08643f1b56ec082790d1e86a32e58dc5268f897f313fbae7b4872
+  - name: hashbrown
+    version: 0.13.2
+    sha: 43a3c133739dddd0d2990f9a4bdf8eb4b21ef50e4851ca85ab661199821d510e
   - name: hashbrown
     version: 0.14.3
     sha: 290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604
@@ -388,6 +409,9 @@ sources:
   - name: miniz_oxide
     version: 0.7.2
     sha: 9d811f3e15f28568be3407c8e7fdb6514c1cda3cb30683f15b6a1a1dc4ea14a7
+  - name: mp4parse
+    version: 0.17.0
+    sha: 63a35203d3c6ce92d5251c77520acb2e57108c88728695aa883f70023624c570
   - name: nalgebra
     version: 0.32.3
     sha: 307ed9b18cc2423f29e83f84fd23a8e73628727990181f18641a8b5dc2ab1caa
@@ -637,6 +661,9 @@ sources:
   - name: stable_deref_trait
     version: 1.2.0
     sha: a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3
+  - name: static_assertions
+    version: 1.1.0
+    sha: a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f
   - name: string_cache
     version: 0.8.7
     sha: f91138e76242f575eb1d3b38b4f1362f10d3a43f47d182a5b359af488a02293b
@@ -733,6 +760,9 @@ sources:
   - name: version-compare
     version: 0.1.1
     sha: 579a42fc0b8e0c63b76519a339be31bed574929511fa53c1a3acae26eb258f29
+  - name: version_check
+    version: 0.9.4
+    sha: 49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f
   - name: wait-timeout
     version: 0.2.0
     sha: 9f200f5b12eb75f8c1ed65abd4b2db8a6e1b138a20de009dacee265a2498f3f6
@@ -844,6 +874,12 @@ sources:
   - name: yeslogic-fontconfig-sys
     version: 4.0.1
     sha: ec657fd32bbcbeaef5c7bc8e10b3db95b143fab8db0a50079773dbf936fd4f73
+  - name: zerocopy
+    version: 0.7.32
+    sha: 74d4d3961e53fa4c9a25a8637fc2bfaf2595b3d3ae34875568a5cf64787716be
+  - name: zerocopy-derive
+    version: 0.7.32
+    sha: 9ce1b18ccd8e73a9321186f97e46f9f04b778851177567b1975109d26a08d2a6
   - name: zune-inflate
     version: 0.2.54
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
@@ -862,6 +898,7 @@ depends:
 - sdk/glib.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cairo.bst
+- freedesktop-sdk.bst:components/dav1d.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
