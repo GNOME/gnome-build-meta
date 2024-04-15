@@ -15,7 +15,6 @@
       GNOME platform, including:
     </p>
     <ul>
-      <li>Clutter</li>
       <li>Gjs</li>
       <li>GObject Introspection</li>
       <li>GStreamer</li>
