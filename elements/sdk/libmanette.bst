@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libmanette.git
   track: master
-  ref: 0.2.7-1-ge506a40ad981d1d328bc0014f5ed25149be44fa4
+  ref: 0.2.7-4-g513e14fc637c1b1277a01de6a63321e1d91ec9a2
 
 build-depends:
 - sdk/gtk-doc.bst
