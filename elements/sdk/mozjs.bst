@@ -7,6 +7,7 @@ sources:
   ref: 23657808bfefb8ba33a191645d4df776d5b8d99d453edde32b785d2a8846f929
 
 build-depends:
+- freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/which.bst
@@ -25,8 +26,8 @@ variables:
 environment:
   MACH_USE_SYSTEM_PYTHON: '1'
   MAXJOBS: '%{max-jobs}'
-  CC: gcc
-  CXX: g++
+  CC: clang
+  CXX: clang++
 
 environment-nocache:
 - MAXJOBS
