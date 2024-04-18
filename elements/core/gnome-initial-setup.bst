@@ -18,7 +18,6 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/libnma.bst
 - core-deps/librest.bst
-- core-deps/malcontent.bst
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
@@ -33,6 +32,17 @@ depends:
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+# In nightly we enable homed which doesn't yet work with malcontent
+(?):
+- channel == "stable":
+    depends:
+      (>):
+      - core-deps/malcontent.bst
+
 variables:
+  parental_controls: "enabled"
+  (?):
+  - channel == "nightly":
+      parental_controls: "disabled"
   meson-local: >-
-    -Dparental_controls=enabled
+    -Dparental_controls="%{parental_controls}"
