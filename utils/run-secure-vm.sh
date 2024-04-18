@@ -68,6 +68,8 @@ Options:
 
   --home-disk-key PATH       Use public key for signing home disk. By default,
                              it will take the local signing key.
+
+  --credential ARG          Pass through a systemd credential
 EOF
 }
 
@@ -142,6 +144,10 @@ while [ $# -gt 0 ]; do
             shift
             args+=("$@")
             break
+            ;;
+        --credential)
+            shift
+            TYPE11+=("$1")
             ;;
         *)
             args+=("$1")
