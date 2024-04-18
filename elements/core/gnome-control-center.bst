@@ -39,7 +39,6 @@ depends:
 - core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
 - core-deps/libnma.bst
-- core-deps/malcontent.bst
 - core-deps/samba.bst
 - core-deps/system-config-printer.bst
 - core-deps/udisks2.bst
@@ -62,7 +61,23 @@ depends:
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+# In nightly we enable homed in single-user, so we don't need malcontent.
+# See https://gitlab.gnome.org/Teams/STF/homed/-/work_items/44
+(?):
+- channel == "stable":
+    depends:
+      (>):
+      - core-deps/malcontent.bst
+
 variables:
+  parental_controls: "true"
+  single_user: "false"
+  (?):
+  - channel == "nightly":
+      parental_controls: "false"
+      single_user: "true"
+
   meson-local: >-
     -Ddocumentation=true
-    -Dmalcontent=true
+    -Dmalcontent="%{parental_controls}"
+    -Dcannot-add-users="%{single_user}"

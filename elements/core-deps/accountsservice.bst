@@ -20,8 +20,8 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
-# In nightly we enable homed. It doesn't yet work with malcontent
-# so we leave the default for stable
+# In nightly we enable homed in single-user, so we don't need malcontent.
+# See https://gitlab.gnome.org/Teams/STF/homed/-/work_items/44
 (?):
 - channel == "nightly":
     variables:
