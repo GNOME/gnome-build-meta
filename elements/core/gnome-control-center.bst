@@ -40,7 +40,6 @@ depends:
 - core-deps/ibus-daemon.bst
 - core-deps/libgtop.bst
 - core-deps/libnma.bst
-- core-deps/malcontent.bst
 - core-deps/samba.bst
 - core-deps/system-config-printer.bst
 - core-deps/udisks2.bst
@@ -65,4 +64,4 @@ depends:
 variables:
   meson-local: >-
     -Ddocumentation=true
-    -Dmalcontent=true
+    -Dcannot-add-users=true
