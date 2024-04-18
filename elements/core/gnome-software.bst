@@ -20,7 +20,6 @@ depends:
 - core-deps/fwupd.bst
 - core-deps/glib-testing.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/malcontent.bst
 - core-deps/snapd-glib.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
@@ -40,7 +39,19 @@ depends:
 runtime-depends:
 - core-deps/gnome-app-list.bst
 
+# In nightly we enable homed which doesn't yet work with malcontent
+(?):
+- channel == "stable":
+    depends:
+      (>):
+      - core-deps/malcontent.bst
+
 variables:
+  malcontent: "true"
+  (?):
+  - channel == "nightly":
+      malcontent: "false"
+
   meson-local: >-
     -Dfwupd=true
     -Dpolkit=true
@@ -49,3 +60,4 @@ variables:
     -Dpackagekit=false
     -Dsnap=true
     -Dsystemd-sysupdate=true
+    -Dmalcontent="%{malcontent}"
