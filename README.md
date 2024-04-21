@@ -65,7 +65,7 @@ Fetch the tests, and the needles:
 
 ```
 git clone https://gitlab.gnome.org/gnome/openqa-tests
-cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles
+cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles needles
 ```
 
 Fetch and prepare the required test media (note: large files):
