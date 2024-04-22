@@ -65,7 +65,7 @@ Fetch the tests, and the needles:
 
 ```
 git clone https://gitlab.gnome.org/gnome/openqa-tests
-cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles
+cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles needles
 ```
 
 Fetch and prepare the required test media (note: large files):
@@ -86,7 +86,7 @@ Now run `ssam_openqa`, which will launch the openQA worker container and run the
 test suite in a virtual machine that runs inside the container:
 
 ```
-ssam_openqa run --hdd-path ./gnome_os_disk.latest.20230831.img --iso-path ./gnome_os_installer_525758.iso --tests-path . --output-path ./out
+ssam_openqa run --hdd-path ./gnome_os_disk.img --iso-path ./gnome_os_installer.iso --tests-path . --output-path ./out
 ```
 
 You should see a progress bar as the tests execute, and output from the
