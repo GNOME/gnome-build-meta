@@ -7,6 +7,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - sdk/gcr-3.bst
@@ -16,4 +17,4 @@ depends:
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
-  conf-local: --with-pam-dir=%{libdir}/security
+  conf-local: --with-pam-dir=%{libdir}/security --with-systemd
