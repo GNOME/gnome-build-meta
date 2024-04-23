@@ -1,0 +1,63 @@
+From 588bb638b0c22d2aff5c0ee30ddf1d60dc681e8e Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Wed, 1 May 2024 14:57:22 +0300
+Subject: [PATCH] wip
+
+---
+ giscanner/scannerlexer.l | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/giscanner/scannerlexer.l b/giscanner/scannerlexer.l
+index b6cc6499..a4bf6298 100644
+--- a/giscanner/scannerlexer.l
++++ b/giscanner/scannerlexer.l
+@@ -219,20 +219,22 @@ stringtext				([^\\\"])|(\\.)
+ "float"					{ return BASIC_TYPE; }
+ "_Float16"                              { return BASIC_TYPE; }
+ "_Float32"                              { return BASIC_TYPE; }
+ "_Float64"                              { return BASIC_TYPE; }
+ "_Float128"                             { return BASIC_TYPE; }
+ "_Float32x"                             { return BASIC_TYPE; }
+ "_Float64x"                             { return BASIC_TYPE; }
+ "_Float128x"                            { return BASIC_TYPE; }
+ "__float80"                             { return BASIC_TYPE; }
+ "__float128"                            { return BASIC_TYPE; }
++"__Float32x4_t"                         { return BASIC_TYPE; }
++"__Float64x2_t"                         { return BASIC_TYPE; }
+ "for"					{ return FOR; }
+ "goto"					{ return GOTO; }
+ "if"					{ return IF; }
+ "inline"				{ return INLINE; }
+ "int"					{ return BASIC_TYPE; }
+ "__int64"				{ return BASIC_TYPE; }
+ "__uint128_t"				{ return BASIC_TYPE; }
+ "__int128_t"				{ return BASIC_TYPE; }
+ "__uint128"				{ return BASIC_TYPE; }
+ "__int128"				{ return BASIC_TYPE; }
+@@ -240,20 +242,23 @@ stringtext				([^\\\"])|(\\.)
+ "register"				{ return REGISTER; }
+ "restrict"				{ return RESTRICT; }
+ "return"				{ return RETURN; }
+ "short"					{ return BASIC_TYPE; }
+ "signed"				{ return SIGNED; }
+ "__signed"                              { return SIGNED; }
+ "__signed__"				{ return SIGNED; }
+ "sizeof"				{ return SIZEOF; }
+ "static"				{ return STATIC; }
+ "struct"				{ return STRUCT; }
++"__SVFloat32_t"                         { return BASIC_TYPE; }
++"__SVFloat64_t"                         { return BASIC_TYPE; }
++"__SVBool_t"                            { return BASIC_TYPE; }
+ "switch"				{ return SWITCH; }
+ "typedef"				{ return TYPEDEF; }
+ "union"					{ return UNION; }
+ "unsigned"				{ return UNSIGNED; }
+ "void"					{ return VOID; }
+ "volatile"				{ return VOLATILE; }
+ "while"					{ return WHILE; }
+ 
+ [a-zA-Z_][a-zA-Z_0-9]*			{ return check_identifier(scanner, yytext); }
+ 
+-- 
+2.44.0
+
