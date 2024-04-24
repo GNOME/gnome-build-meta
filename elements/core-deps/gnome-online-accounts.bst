@@ -4,12 +4,13 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.49.4-66-ga5e0a4bbab73f42e577ea1dc03a452590b16c770
+  ref: 3.49.4-103-gf01fa465ff8efe805227bf9bb5007d9fc21b151b
 
 build-depends:
+- sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/gtk-doc.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
