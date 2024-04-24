@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gdk-pixbuf.git
   track: master
-  ref: 2.42.11-1-gdb6a9a11b03ceab2be794f4f7326199bc157bae9
+  ref: 2.42.11-5-gf13eab72eae9f09695fc754635de41dd8e0c7708
 
 build-depends:
 - sdk/gobject-introspection.bst

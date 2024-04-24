@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-system-monitor.git
   track: master
-  ref: 46.0-25-g6c8518461645734ec29a0fb9108ff6537de2cb74
+  ref: 46.0-28-gbdc7cff7406d8b53c8efa522ca51c8aacb7d8305
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-6-g667f53f03c83fdef18b94cf49fb32bc1bd0553de
+  ref: 1.0.1-7-gb7375cc2682a322639d75909aa1dc9ba92d5c3a7
 - kind: cargo
 
   ref:
