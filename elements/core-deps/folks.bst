@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:folks/0.15/folks-0.15.8.tar.xz
-  ref: 954a6afb3e378f01d310fd443790f235cb0eb71e2139cff4f05f09ab725e49c2
+  url: gnome_downloads:folks/0.15/folks-0.15.9.tar.xz
+  ref: 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
