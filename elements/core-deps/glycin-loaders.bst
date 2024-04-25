@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.0.tar.xz
-  ref: cd2a3979259fee56cbd882a4d890437684bf1926e65afeafcb904ca9d17ae282
+  url: gnome_downloads:glycin-loaders/1.0/glycin-loaders-1.0.1.tar.xz
+  ref: d0f022462ff555856e85ea940474470bb36b37c9ffcbcba63a03fe5e954370cf
 - kind: cargo
 
   ref:
@@ -332,11 +332,11 @@ sources:
     version: 0.3.1
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
   - name: glycin
-    version: 1.0.0
-    sha: 6ebfac2819e7c4538c6567742a88d684ac5020f7e6de3d5e3f8578a72b4fbc5c
+    version: 1.0.1
+    sha: eac2fbe27c908ba9e2849ce2693eeacfc21c678477b5c2b44c61136a79ad32bb
   - name: glycin-utils
-    version: 1.0.0
-    sha: 135d59b585e3f5df5d5f81b6a2e77b681071c4ef6b06f7828b46b8f5944b6c37
+    version: 1.0.1
+    sha: f2aa726e46a6e1d2c29bb69411e607e111466bc6a691e5a0c7944b780b46d69f
   - name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979

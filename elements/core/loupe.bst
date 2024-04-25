@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:loupe/46/loupe-46.0.tar.xz
-  ref: 051aa45cf0ab362093fbf91863140be737db57bcb1f77bc1e00ab97255a252bd
+  url: gnome_downloads:loupe/46/loupe-46.2.tar.xz
+  ref: 3a15a3f9cf8f889a7e642e3902299f79218a9001c08c56374e05914ffef5ab30
 - kind: cargo
 
   ref:
@@ -293,8 +293,8 @@ sources:
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
   - name: glycin
-    version: 1.0.0
-    sha: 6ebfac2819e7c4538c6567742a88d684ac5020f7e6de3d5e3f8578a72b4fbc5c
+    version: 1.0.2
+    sha: 83b796882a2e7941b643002a859e43bb9647ea69c3c8853cce3db705e88d336b
   - name: glycin-utils
     version: 1.0.0
     sha: 135d59b585e3f5df5d5f81b6a2e77b681071c4ef6b06f7828b46b8f5944b6c37

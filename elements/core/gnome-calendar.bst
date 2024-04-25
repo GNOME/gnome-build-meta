@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/46/gnome-calendar-46.0.tar.xz
-  ref: 5e21960c174bd8606d9089bf79c70f31070ab4837919878b00db2f14af9fe718
+  url: gnome_downloads:gnome-calendar/46/gnome-calendar-46.1.tar.xz
+  ref: 9861ff7b8abd5b7b20690ba55eb7542c7ec534b566269e29b5b1e858c1610897
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
