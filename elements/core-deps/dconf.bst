@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:dconf.git
   track: main
-  ref: 0.40.0-40-gbde1dee854b68b3dd705976539c27f5092dbf107
+  ref: 0.40.0-42-g9468d833a04b559f73b2a7754362a62a73b8740a
 
 build-depends:
 - sdk/vala.bst
