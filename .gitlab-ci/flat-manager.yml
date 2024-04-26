@@ -38,7 +38,7 @@ flatmgr:
 
   - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   - flat-manager-client push $(cat build.txt) repo/
-  - flat-manager-client commit --wait $(cat build.txt)
+  - flat-manager-client commit --end-of-life="The GNOME 44 runtime is no longer supported as of March 20, 2024. Please ask your application developer to migrate to a supported platform." --wait $(cat build.txt)
   - flat-manager-client publish --wait $(cat build.txt)
   after_script:
   - flat-manager-client purge $(cat build.txt)
