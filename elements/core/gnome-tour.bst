@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
   track: master
-  ref: 46.0-9-g56625d72cd2c25415860559fbcaf8bd10f130cfc
+  ref: 46.0-10-g718e0e833edccea0be4280396133264303be4079
 - kind: cargo
   ref:
   - name: aho-corasick
