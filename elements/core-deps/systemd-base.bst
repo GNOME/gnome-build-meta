@@ -6,9 +6,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
-  track: main
-  ref: v255-1836-g76995e7dc4196adaafe010711229281bd1e13a5d
+  url: github:CodethinkLabs/systemd.git
+  track: sysupdate-dbus
+  ref: b838b23b5bc6cd90158dc00de30cafbac75542f0
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
