@@ -28,6 +28,7 @@ FILES=(
     /usr/lib/systemd/systemd-veritysetup
     /usr/lib/systemd/systemd-integritysetup
     /usr/lib/systemd/systemd-cryptsetup
+    /usr/lib/systemd/systemd-shutdown
 )
 
 UNITS=(
