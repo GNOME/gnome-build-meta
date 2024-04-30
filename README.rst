@@ -44,7 +44,7 @@ To build the GNOME OS "secure boot" image locally:
 
 2. Build the disk image (first command) or the ISO installer (second command)::
 
-      $ bst vm-secure/image.bst
+      $ bst build vm-secure/image.bst
       $ bst -o secure_image_installer true build iso/image.bst
 
 3. Checkout the image or installer::
