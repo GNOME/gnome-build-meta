@@ -14,6 +14,8 @@ sources:
     patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
+- kind: patch
+  path: patches/freedesktop-sdk/0001-components-dracut.bst-backport-patch-for-systemd-mas.patch
 
 config:
   options:
