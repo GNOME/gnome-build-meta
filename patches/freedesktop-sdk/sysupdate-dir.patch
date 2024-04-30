@@ -1,0 +1,378 @@
+diff --git a/elements/include/systemd.yml b/elements/include/systemd.yml
+index a4863fd..0b0b287 100644
+--- a/elements/include/systemd.yml
++++ b/elements/include/systemd.yml
+@@ -7,3 +7,5 @@ sources:
+   ref: v254.5-0-gef6c2daf9947d23e2ba6d50c42e4a0d79fe8d32c
+ - kind: patch
+   path: patches/systemd/0001-repart-Fix-a-check-for-CopyBlocks-on-data-partition.patch
++- kind: patch
++  path: patches/systemd/sysupdate-dir.patch
+diff --git a/patches/systemd/sysupdate-dir.patch b/patches/systemd/sysupdate-dir.patch
+new file mode 100644
+index 0000000..0677baa
+--- /dev/null
++++ b/patches/systemd/sysupdate-dir.patch
+@@ -0,0 +1,362 @@
++commit 92a71425e8791bee5e15b217999e7df72b5380b1
++Author: Valentin David <me@valentindavid.com>
++Date:   Sun Sep 24 14:35:59 2023 +0200
++
++    sysupdate: Allow patterns to match path with directories
++    
++    `MatchPattern` for regular-file and directory as target can now match
++    subdirectories This is useful to install files for examples in `.extra.d`
++    directories:
++    
++    ```
++    [Target]
++    Type=regular-file
++    Path=/EFI/Linux
++    PathRelativeTo=boot
++    MatchPattern=gnomeos_@v.efi.extra.d/apparmor.addon.efi
++    ```
++    
++    The if the directories in the path do not exist, they will be created.  Whereas
++    the part in `Path` is not created.
++
++diff --git a/src/sysupdate/sysupdate-pattern.c b/src/sysupdate/sysupdate-pattern.c
++index 6822d7eda2..ff018d8f6c 100644
++--- a/src/sysupdate/sysupdate-pattern.c
+++++ b/src/sysupdate/sysupdate-pattern.c
++@@ -23,6 +23,7 @@ typedef enum PatternElementType {
++         PATTERN_READ_ONLY,
++         PATTERN_GROWFS,
++         PATTERN_SHA256SUM,
+++        PATTERN_SLASH,
++         _PATTERN_ELEMENT_TYPE_MAX,
++         _PATTERN_ELEMENT_TYPE_INVALID = -EINVAL,
++ } PatternElementType;
++@@ -82,7 +83,7 @@ static bool valid_char(char x) {
++         if ((unsigned) x < ' ' || x >= 127)
++                 return false;
++ 
++-        return !IN_SET(x, '$', '*', '?', '[', ']', '!', '\\', '/', '|');
+++        return !IN_SET(x, '$', '*', '?', '[', ']', '!', '\\', '|');
++ }
++ 
++ static int pattern_split(
++@@ -90,7 +91,7 @@ static int pattern_split(
++                 PatternElement **ret) {
++ 
++         _cleanup_(pattern_element_free_allp) PatternElement *first = NULL;
++-        bool at = false, last_literal = true;
+++        bool at = false, last_literal = true, last_slash = false;
++         PatternElement *last = NULL;
++         uint64_t mask_found = 0;
++         size_t l, k = 0;
++@@ -123,7 +124,7 @@ static int pattern_split(
++ 
++                         /* We insist that two pattern field markers are separated by some literal string that
++                          * we can use to separate the fields when parsing. */
++-                        if (!last_literal)
+++                        if (!last_literal && !last_slash)
++                                 return log_debug_errno(SYNTHETIC_ERRNO(EINVAL), "Found two pattern field markers without separating literal.");
++ 
++                         if (ret) {
++@@ -139,10 +140,28 @@ static int pattern_split(
++                         }
++ 
++                         mask_found |= bit;
++-                        last_literal = at = false;
+++                        last_slash = last_literal = at = false;
++                         continue;
++                 }
++ 
+++                if (*e == '/') {
+++                        if (ret) {
+++                                PatternElement *z;
+++
+++                                z = malloc(offsetof(PatternElement, literal));
+++                                if (!z)
+++                                        return -ENOMEM;
+++
+++                                z->type = PATTERN_SLASH;
+++                                LIST_INSERT_AFTER(elements, first, last, z);
+++                                last = z;
+++                        }
+++
+++                        last_literal = false;
+++                        last_slash = true;
+++                        continue ;
+++                }
+++
++                 if (!valid_char(*e))
++                         return log_debug_errno(
++                                         SYNTHETIC_ERRNO(EBADRQC),
++@@ -150,6 +169,7 @@ static int pattern_split(
++                                         (unsigned) *e);
++ 
++                 last_literal = true;
+++                last_slash = false;
++ 
++                 if (!ret)
++                         continue;
++@@ -203,6 +223,16 @@ int pattern_match(const char *pattern, const char *s, InstanceMetadata *ret) {
++                 _cleanup_free_ char *t = NULL;
++                 const char *n;
++ 
+++                if (e->type == PATTERN_SLASH) {
+++                        if (*p == '/') {
+++                                ++p;
+++                                continue;
+++                        } else if (*p == '\0')
+++                                goto retry;
+++                        else
+++                                goto nope;
+++                }
+++
++                 if (e->type == PATTERN_LITERAL) {
++                         const char *k;
++ 
++@@ -399,13 +429,19 @@ int pattern_match(const char *pattern, const char *s, InstanceMetadata *ret) {
++                 found = (InstanceMetadata) INSTANCE_METADATA_NULL;
++         }
++ 
++-        return true;
+++        return PATTERN_MATCH_YES;
++ 
++ nope:
++         if (ret)
++                 *ret = (InstanceMetadata) INSTANCE_METADATA_NULL;
++ 
++-        return false;
+++        return PATTERN_MATCH_NO;
+++
+++retry:
+++        if (ret)
+++                *ret = (InstanceMetadata) INSTANCE_METADATA_NULL;
+++
+++        return PATTERN_MATCH_RETRY;
++ }
++ 
++ int pattern_match_many(char **patterns, const char *s, InstanceMetadata *ret) {
++@@ -422,14 +458,14 @@ int pattern_match_many(char **patterns, const char *s, InstanceMetadata *ret) {
++                                 found = (InstanceMetadata) INSTANCE_METADATA_NULL;
++                         }
++ 
++-                        return true;
+++                        return r;
++                 }
++         }
++ 
++         if (ret)
++                 *ret = (InstanceMetadata) INSTANCE_METADATA_NULL;
++ 
++-        return false;
+++        return PATTERN_MATCH_NO;
++ }
++ 
++ int pattern_valid(const char *pattern) {
++@@ -465,6 +501,12 @@ int pattern_format(
++ 
++                 switch (e->type) {
++ 
+++                case PATTERN_SLASH:
+++                        if (!strextend(&j, "/"))
+++                                return -ENOMEM;
+++
+++                        break;
+++
++                 case PATTERN_LITERAL:
++                         if (!strextend(&j, e->literal))
++                                 return -ENOMEM;
++diff --git a/src/sysupdate/sysupdate-pattern.h b/src/sysupdate/sysupdate-pattern.h
++index 1c60fa0250..e8ea104623 100644
++--- a/src/sysupdate/sysupdate-pattern.h
+++++ b/src/sysupdate/sysupdate-pattern.h
++@@ -6,6 +6,12 @@
++ #include "sysupdate-instance.h"
++ #include "time-util.h"
++ 
+++enum {
+++        PATTERN_MATCH_NO,
+++        PATTERN_MATCH_YES,
+++        PATTERN_MATCH_RETRY,
+++};
+++
++ int pattern_match(const char *pattern, const char *s, InstanceMetadata *ret);
++ int pattern_match_many(char **patterns, const char *s, InstanceMetadata *ret);
++ int pattern_valid(const char *pattern);
++diff --git a/src/sysupdate/sysupdate-resource.c b/src/sysupdate/sysupdate-resource.c
++index a6efa28961..0e0446134f 100644
++--- a/src/sysupdate/sysupdate-resource.c
+++++ b/src/sysupdate/sysupdate-resource.c
++@@ -69,30 +69,16 @@ static int resource_add_instance(
++         return 0;
++ }
++ 
++-static int resource_load_from_directory(
+++static int resource_load_from_directory_recursive(
++                 Resource *rr,
+++                DIR* d,
+++                const char* relpath,
++                 mode_t m) {
++-
++-        _cleanup_closedir_ DIR *d = NULL;
++         int r;
++ 
++-        assert(rr);
++-        assert(IN_SET(rr->type, RESOURCE_TAR, RESOURCE_REGULAR_FILE, RESOURCE_DIRECTORY, RESOURCE_SUBVOLUME));
++-        assert(IN_SET(m, S_IFREG, S_IFDIR));
++-
++-        d = opendir(rr->path);
++-        if (!d) {
++-                if (errno == ENOENT) {
++-                        log_debug("Directory %s does not exist, not loading any resources.", rr->path);
++-                        return 0;
++-                }
++-
++-                return log_error_errno(errno, "Failed to open directory '%s': %m", rr->path);
++-        }
++-
++         for (;;) {
++                 _cleanup_(instance_metadata_destroy) InstanceMetadata extracted_fields = INSTANCE_METADATA_NULL;
++-                _cleanup_free_ char *joined = NULL;
+++                _cleanup_free_ char *joined = NULL, *rel_joined = NULL;
++                 Instance *instance;
++                 struct dirent *de;
++                 struct stat st;
++@@ -111,7 +97,7 @@ static int resource_load_from_directory(
++                         break;
++ 
++                 case DT_DIR:
++-                        if (m != S_IFDIR)
+++                        if (!IN_SET(m, S_IFDIR, S_IFREG))
++                                 continue;
++ 
++                         break;
++@@ -132,16 +118,36 @@ static int resource_load_from_directory(
++                         return log_error_errno(errno, "Failed to stat %s/%s: %m", rr->path, de->d_name);
++                 }
++ 
++-                if ((st.st_mode & S_IFMT) != m)
+++                if (!(S_ISDIR(st.st_mode) && S_ISREG(m)) && ((st.st_mode & S_IFMT) != m))
++                         continue;
++ 
++-                r = pattern_match_many(rr->patterns, de->d_name, &extracted_fields);
++-                if (r < 0)
+++                rel_joined = path_join(relpath, de->d_name);
+++                if (!rel_joined)
+++                        return log_oom();
+++
+++                r = pattern_match_many(rr->patterns, rel_joined, &extracted_fields);
+++                if (r == PATTERN_MATCH_RETRY) {
+++                        _cleanup_closedir_ DIR *subdir = NULL;
+++
+++                        subdir = xopendirat(dirfd(d), rel_joined, 0);
+++                        if (!subdir)
+++                                continue;
+++
+++                        r = resource_load_from_directory_recursive(rr, subdir, rel_joined, m);
+++                        if (r < 0)
+++                                return r;
+++                        if (r == 0)
+++                                continue;
+++                }
+++                else if (r < 0)
++                         return log_error_errno(r, "Failed to match pattern: %m");
++-                if (r == 0)
+++                else if (r == PATTERN_MATCH_NO)
+++                        continue;
+++
+++                if (de->d_type == DT_DIR && m != S_IFDIR)
++                         continue;
++ 
++-                joined = path_join(rr->path, de->d_name);
+++                joined = path_join(rr->path, rel_joined);
++                 if (!joined)
++                         return log_oom();
++ 
++@@ -160,6 +166,29 @@ static int resource_load_from_directory(
++         return 0;
++ }
++ 
+++static int resource_load_from_directory(
+++                Resource *rr,
+++                mode_t m) {
+++        _cleanup_closedir_ DIR *d = NULL;
+++
+++        assert(rr);
+++        assert(IN_SET(rr->type, RESOURCE_TAR, RESOURCE_REGULAR_FILE, RESOURCE_DIRECTORY, RESOURCE_SUBVOLUME));
+++        assert(IN_SET(m, S_IFREG, S_IFDIR));
+++
+++        d = opendir(rr->path);
+++
+++        if (!d) {
+++                if (errno == ENOENT) {
+++                        log_debug_errno(errno, "Directory %s does not exist, not loading any resources: %m", rr->path);
+++                        return 0;
+++                }
+++
+++                return log_error_errno(errno, "Failed to open directory '%s': %m", rr->path);
+++        }
+++
+++        return resource_load_from_directory_recursive(rr, d, NULL, m);
+++}
+++
++ static int resource_load_from_blockdev(Resource *rr) {
++         _cleanup_(fdisk_unref_contextp) struct fdisk_context *c = NULL;
++         _cleanup_(fdisk_unref_tablep) struct fdisk_table *t = NULL;
++@@ -204,7 +233,7 @@ static int resource_load_from_blockdev(Resource *rr) {
++                 r = pattern_match_many(rr->patterns, pinfo.label, &extracted_fields);
++                 if (r < 0)
++                         return log_error_errno(r, "Failed to match pattern: %m");
++-                if (r == 0)
+++                if (IN_SET(r, PATTERN_MATCH_NO, PATTERN_MATCH_RETRY))
++                         continue;
++ 
++                 r = resource_add_instance(rr, pinfo.device, &extracted_fields, &instance);
++@@ -402,7 +431,7 @@ static int resource_load_from_web(
++                 r = pattern_match_many(rr->patterns, fn, &extracted_fields);
++                 if (r < 0)
++                         return log_error_errno(r, "Failed to match pattern: %m");
++-                if (r > 0) {
+++                if (r == PATTERN_MATCH_YES) {
++                         _cleanup_free_ char *path = NULL;
++ 
++                         r = import_url_append_component(rr->path, fn, &path);
++diff --git a/src/sysupdate/sysupdate-transfer.c b/src/sysupdate/sysupdate-transfer.c
++index 9f5fe4d894..acf75e51c7 100644
++--- a/src/sysupdate/sysupdate-transfer.c
+++++ b/src/sysupdate/sysupdate-transfer.c
++@@ -12,6 +12,7 @@
++ #include "gpt.h"
++ #include "hexdecoct.h"
++ #include "install-file.h"
+++#include "mkdir.h"
++ #include "parse-helpers.h"
++ #include "parse-util.h"
++ #include "process-util.h"
++@@ -713,6 +714,8 @@ int transfer_vacuum(
++                         if (r < 0 && r != -ENOENT)
++                                 return log_error_errno(r, "Failed to make room, deleting '%s' failed: %m", oldest->path);
++ 
+++                        (void) rmdir_parents(oldest->path, t->target.path);
+++
++                         break;
++ 
++                 case RESOURCE_PARTITION: {
++@@ -836,13 +839,17 @@ int transfer_acquire_instance(Transfer *t, Instance *i) {
++ 
++         if (RESOURCE_IS_FILESYSTEM(t->target.type)) {
++ 
++-                if (!filename_is_valid(formatted_pattern))
+++                if (!path_is_valid_full(formatted_pattern, /* accept_dot_dot = */ false))
++                         return log_error_errno(SYNTHETIC_ERRNO(EINVAL), "Formatted pattern is not suitable as file name, refusing: %s", formatted_pattern);
++ 
++                 t->final_path = path_join(t->target.path, formatted_pattern);
++                 if (!t->final_path)
++                         return log_oom();
++ 
+++                r = mkdir_parents(t->final_path, 0755);
+++                if (r < 0)
+++                        return log_error_errno(r, "Cannot create target directory: %m");
+++
++                 r = tempfn_random(t->final_path, "sysupdate", &t->temporary_path);
++                 if (r < 0)
++                         return log_error_errno(r, "Failed to generate temporary target path: %m");
