@@ -34,10 +34,10 @@ install() {
 
     install_file /usr/share/plymouth/plymouthd.defaults
     install_file /usr/share/plymouth/themes/bgrt/bgrt.plymouth
-    install_file /usr/lib/*/plymouth/two-step.so
-    install_file /usr/lib/*/plymouth/label-pango.so
-    install_file /usr/lib/*/plymouth/renderers/drm.so
-    install_file /usr/lib/*/plymouth/renderers/frame-buffer.so
+    install_file /usr/lib/${multiarch}/plymouth/two-step.so
+    install_file /usr/lib/${multiarch}/plymouth/label-pango.so
+    install_file /usr/lib/${multiarch}/plymouth/renderers/drm.so
+    install_file /usr/lib/${multiarch}/plymouth/renderers/frame-buffer.so
     install_files /usr/share/plymouth/themes/spinner/*.png
     install_file /usr/share/fonts/cantarell/Cantarell-VF.otf
 

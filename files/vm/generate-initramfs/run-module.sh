@@ -30,5 +30,7 @@ install_files() {
     done
 }
 
+multiarch="$(gcc -print-multiarch)"
+
 . "${moddir}/module.sh"
 install
