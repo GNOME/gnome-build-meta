@@ -1,0 +1,124 @@
+From 11ea4031bfb1e3369c165f09d2ddd37b86adf312 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Tue, 11 Jul 2023 18:35:54 -0400
+Subject: [PATCH 2/9] sysupdate: Add --offline mode
+
+This prevents sysupdate from going out to the network to enumerate
+available instances. When combined with the list command, this lets us
+query installed instances
+---
+ man/systemd-sysupdate.xml | 10 ++++++++++
+ src/sysupdate/sysupdate.c | 28 ++++++++++++++++++++--------
+ 2 files changed, 30 insertions(+), 8 deletions(-)
+
+diff --git a/man/systemd-sysupdate.xml b/man/systemd-sysupdate.xml
+index 8c1228c7d9..d7f212c775 100644
+--- a/man/systemd-sysupdate.xml
++++ b/man/systemd-sysupdate.xml
+@@ -295,6 +295,16 @@
+         <xi:include href="version-info.xml" xpointer="v251"/></listitem>
+       </varlistentry>
+ 
++      <varlistentry>
++        <term><option>--offline</option></term>
++
++        <listitem><para>Prevents fetching metadata from the network (i.e. SHA256SUMS). This is most useful
++        when used in combination with the <command>list</command> command, to query locally installed
++        versions.</para>
++
++        <xi:include href="version-info.xml" xpointer="v256"/></listitem>
++      </varlistentry>
++
+       <xi:include href="standard-options.xml" xpointer="no-pager" />
+       <xi:include href="standard-options.xml" xpointer="no-legend" />
+       <xi:include href="standard-options.xml" xpointer="json" />
+diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
+index 00c6e66fe5..27bffa0e88 100644
+--- a/src/sysupdate/sysupdate.c
++++ b/src/sysupdate/sysupdate.c
+@@ -48,6 +48,7 @@ static bool arg_reboot = false;
+ static char *arg_component = NULL;
+ static int arg_verify = -1;
+ static ImagePolicy *arg_image_policy = NULL;
++static bool arg_offline = false;
+ 
+ STATIC_DESTRUCTOR_REGISTER(arg_definitions, freep);
+ STATIC_DESTRUCTOR_REGISTER(arg_root, freep);
+@@ -356,11 +357,13 @@ static int context_discover_update_sets(Context *c) {
+         if (r < 0)
+                 return r;
+ 
+-        log_info("Determining available update sets%s", special_glyph(SPECIAL_GLYPH_ELLIPSIS));
++        if (!arg_offline) {
++                log_info("Determining available update sets%s", special_glyph(SPECIAL_GLYPH_ELLIPSIS));
+ 
+-        r = context_discover_update_sets_by_flag(c, UPDATE_AVAILABLE);
+-        if (r < 0)
+-                return r;
++                r = context_discover_update_sets_by_flag(c, UPDATE_AVAILABLE);
++                if (r < 0)
++                        return r;
++        }
+ 
+         typesafe_qsort(c->update_sets, c->n_update_sets, update_set_cmp);
+         return 0;
+@@ -727,15 +730,17 @@ static int context_make_online(Context **ret, const char *node) {
+         assert(ret);
+ 
+         /* Like context_make_offline(), but also communicates with the update source looking for new
+-         * versions. */
++         * versions (as long as --offline is not specified on the command line). */
+ 
+         r = context_make_offline(&context, node);
+         if (r < 0)
+                 return r;
+ 
+-        r = context_load_available_instances(context);
+-        if (r < 0)
+-                return r;
++        if (!arg_offline) {
++                r = context_load_available_instances(context);
++                if (r < 0)
++                        return r;
++        }
+ 
+         r = context_discover_update_sets(context);
+         if (r < 0)
+@@ -1246,6 +1251,7 @@ static int verb_help(int argc, char **argv, void *userdata) {
+                "     --sync=BOOL          Controls whether to sync data to disk\n"
+                "     --verify=BOOL        Force signature verification on or off\n"
+                "     --reboot             Reboot after updating to newer version\n"
++               "     --offline            Do not fetch metadata from the network\n"
+                "     --no-pager           Do not pipe output into a pager\n"
+                "     --no-legend          Do not show the headers and footers\n"
+                "     --json=pretty|short|off\n"
+@@ -1275,6 +1281,7 @@ static int parse_argv(int argc, char *argv[]) {
+                 ARG_IMAGE_POLICY,
+                 ARG_REBOOT,
+                 ARG_VERIFY,
++                ARG_OFFLINE,
+         };
+ 
+         static const struct option options[] = {
+@@ -1292,6 +1299,7 @@ static int parse_argv(int argc, char *argv[]) {
+                 { "reboot",            no_argument,       NULL, ARG_REBOOT            },
+                 { "component",         required_argument, NULL, 'C'                   },
+                 { "verify",            required_argument, NULL, ARG_VERIFY            },
++                { "offline",           no_argument,       NULL, ARG_OFFLINE           },
+                 {}
+         };
+ 
+@@ -1395,6 +1403,10 @@ static int parse_argv(int argc, char *argv[]) {
+                         break;
+                 }
+ 
++                case ARG_OFFLINE:
++                        arg_offline = true;
++                        break;
++
+                 case '?':
+                         return -EINVAL;
+ 
+-- 
+2.39.2
+
