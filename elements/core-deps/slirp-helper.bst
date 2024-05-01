@@ -14,7 +14,7 @@ sources:
 - kind: tar
   url: crates:crates/libslirp/libslirp-4.3.0.crate
   ref: 4c6f95366c6c3299af0cfe7852888ca4b0aed40eeb22ca2ff644bec799439455
-- kind: cargo
+- kind: cargo2
   ref:
   - name: ansi_term
     version: 0.11.0

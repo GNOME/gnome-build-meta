@@ -5,7 +5,7 @@ sources:
   url: gnome:librsvg.git
   track: main
   ref: 2.58.0-beta.1-104-gb1d09d56dacc34829b0968f4dcbb9c2caa5e6290
-- kind: cargo
+- kind: cargo2
   ref:
   - name: adler
     version: 1.0.2

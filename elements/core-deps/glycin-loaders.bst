@@ -5,7 +5,7 @@ sources:
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
   ref: 1.0.1-23-gccf13e82c4746cc5ea401c1f3ff5b108ad321a6f
-- kind: cargo
+- kind: cargo2
   ref:
   - kind: registry
     name: addr2line

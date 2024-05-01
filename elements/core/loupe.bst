@@ -5,7 +5,7 @@ sources:
   url: gnome:loupe.git
   track: main
   ref: 46.rc-78-ga4a59f41968eef0cf93616a43fb1ef55b7bfb747
-- kind: cargo
+- kind: cargo2
 
   ref:
   - kind: registry

@@ -5,7 +5,7 @@ sources:
   url: gnome:snapshot.git
   track: main
   ref: 46.1-43-g9293762ec08ea5e390122b0c27eddf8b6b888082
-- kind: cargo
+- kind: cargo2
   ref:
   - kind: registry
     name: aho-corasick

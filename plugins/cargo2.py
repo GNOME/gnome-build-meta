@@ -13,15 +13,21 @@
 #
 #  Authors:
 #        Tristan Van Berkom <tristan.vanberkom@codethink.co.uk>
+#        Sophie Herold <sophieherold@gnome.org>
 
 #
 # This plugin was originally developped in the https://gitlab.com/BuildStream/bst-plugins-experimental/
 # repository and was copied from a60426126e5bec2d630fcd889a9f5af13af00ea6
 #
+# After that the plugin was developed in buildstream-plugins:
+# <https://github.com/apache/buildstream-plugins/blob/db71610b7ae9884f6d8cbe0d3cc5a1c657c19edb/src/buildstream_plugins/sources/cargo.py>
+#
+# It was moved to experimental as a new version again because of added
+# external dependencies like dulwich.
 
 """
-cargo - Automatically stage crate dependencies
-==============================================
+cargo2 - Automatically stage crate dependencies
+===============================================
 A convenience Source element for vendoring rust project dependencies.
 
 Placing this source in the source list, after a source which stages a
@@ -32,8 +38,8 @@ obtain the crates automatically into %{vendordir}.
 
 .. code:: yaml
 
-   # Specify the cargo source kind
-   kind: cargo
+   # Specify the cargo2 source kind
+   kind: cargo2
 
    # Url of the crates repository to download from (default: https://static.crates.io/crates)
    url: https://static.crates.io/crates
@@ -66,14 +72,19 @@ See `built-in functionality doumentation
 details on common configuration options for sources.
 """
 
-from collections import OrderedDict
+import contextlib
 import glob
 import json
+import netrc
+import os
 import os.path
 import shutil
 import tarfile
 import threading
-from urllib.parse import urljoin, urlparse
+import urllib.error
+import urllib.parse
+from urllib.parse import urlparse
+import urllib.request
 
 # We prefer tomli that was put into standard library as tomllib
 # starting from 3.11
@@ -88,9 +99,6 @@ from buildstream import utils
 import dulwich
 from dulwich.repo import Repo
 import tomlkit
-
-from ._utils import download_file
-
 
 # This automatically goes into .cargo/config
 #
@@ -143,12 +151,16 @@ class CrateRegistry(SourceFetcher):
             return  # pragma: nocover
 
         # Download the crate
-        crate_url = self._get_url(alias_override)
-        with self.cargo.timed_activity("Downloading: {}".format(crate_url), silent_nested=True):
-            sha256 = self._download(crate_url)
+        crate_url, auth_scheme = self._get_url(alias_override)
+        with self.cargo.timed_activity(
+            "Downloading: {}".format(crate_url), silent_nested=True
+        ):
+            sha256 = self._download(crate_url, auth_scheme)
             if self.sha is not None and sha256 != self.sha:
                 raise SourceError(
-                    "File downloaded from {} has sha256sum '{}', not '{}'!".format(crate_url, sha256, self.sha)
+                    "File downloaded from {} has sha256sum '{}', not '{}'!".format(
+                        crate_url, sha256, self.sha
+                    )
                 )
 
     ########################################################
@@ -156,7 +168,12 @@ class CrateRegistry(SourceFetcher):
     ########################################################
 
     def ref_node(self):
-        return {"kind": "registry", "name": self.name, "version": self.version, "sha": self.sha}
+        return {
+            "kind": "registry",
+            "name": self.name,
+            "version": self.version,
+            "sha": self.sha,
+        }
 
     # stage()
     #
@@ -170,7 +187,9 @@ class CrateRegistry(SourceFetcher):
         try:
             mirror_file = self._get_mirror_file()
 
-            if os.path.exists(os.path.join(directory, f"{self.name}-{self.version}")):
+            if os.path.exists(
+                os.path.join(directory, f"{self.name}-{self.version}")
+            ):
                 raise SourceError(
                     f"This project requests crate {self.name} {self.version} from multiple sources, "
                     "which is incompatible with vendoring since cargo does not support it."
@@ -183,13 +202,17 @@ class CrateRegistry(SourceFetcher):
             if members:
                 dirname = members[0].name.split("/")[0]
                 package_dir = os.path.join(directory, dirname)
-                checksum_file = os.path.join(package_dir, ".cargo-checksum.json")
+                checksum_file = os.path.join(
+                    package_dir, ".cargo-checksum.json"
+                )
                 with open(checksum_file, "w", encoding="utf-8") as f:
                     checksum_data = {"package": self.sha, "files": {}}
                     json.dump(checksum_data, f)
 
         except (tarfile.TarError, OSError) as e:
-            raise SourceError("{}: Error staging source: {}".format(self, e)) from e
+            raise SourceError(
+                "{}: Error staging source: {}".format(self, e)
+            ) from e
 
     # is_cached()
     #
@@ -225,7 +248,7 @@ class CrateRegistry(SourceFetcher):
     # Returns:
     #    (str): The sha256 checksum of the downloaded crate
     #
-    def _download(self, url):
+    def _download(self, url, auth_scheme):
         # We do not use etag in case what we have in cache is
         # not matching ref in order to be able to recover from
         # corrupted download.
@@ -235,10 +258,13 @@ class CrateRegistry(SourceFetcher):
             etag = None
 
         with self.cargo.tempdir() as td:
-            local_file, etag, error = download_file(url, etag, td)
+            local_file, etag, error = download_file(url, etag, td, auth_scheme)
 
             if error:
-                raise SourceError("{}: Error mirroring {}: {}".format(self, url, error), temporary=True)
+                raise SourceError(
+                    "{}: Error mirroring {}: {}".format(self, url, error),
+                    temporary=True,
+                )
 
             # Make sure url-specific mirror dir exists.
             os.makedirs(self._get_mirror_dir(), exist_ok=True)
@@ -264,9 +290,24 @@ class CrateRegistry(SourceFetcher):
     #    (str): The URL for this crate
     #
     def _get_url(self, alias=None):
-        url = self.cargo.translate_url(self.cargo.url, alias_override=alias)
-        path = "{name}/{name}-{version}.crate".format(name=self.name, version=self.version)
-        return urljoin(f"{url}/", path)
+        path = "{name}/{name}-{version}.crate".format(
+            name=self.name, version=self.version
+        )
+        extra_data = {}
+        if utils.get_bst_version() >= (2, 2):
+            translated_url = self.cargo.translate_url(
+                self.cargo.url,
+                suffix=path,
+                alias_override=alias,
+                extra_data=extra_data,
+            )
+        else:
+            translated_url = (
+                self.cargo.translate_url(self.cargo.url, alias_override=alias)
+                + path
+            )
+
+        return translated_url, extra_data.get("http-auth")
 
     # _get_etag()
     #
@@ -281,7 +322,9 @@ class CrateRegistry(SourceFetcher):
     #                locally downloaded
     #
     def _get_etag(self, sha):
-        etagfilename = os.path.join(self._get_mirror_dir(), "{}.etag".format(sha))
+        etagfilename = os.path.join(
+            self._get_mirror_dir(), "{}.etag".format(sha)
+        )
         if os.path.exists(etagfilename):
             with open(etagfilename, "r", encoding="utf-8") as etagfile:
                 return etagfile.read()
@@ -297,7 +340,9 @@ class CrateRegistry(SourceFetcher):
     #    etag (str): The ETag to use for requests of this crate
     #
     def _store_etag(self, sha, etag):
-        etagfilename = os.path.join(self._get_mirror_dir(), "{}.etag".format(sha))
+        etagfilename = os.path.join(
+            self._get_mirror_dir(), "{}.etag".format(sha)
+        )
         with utils.save_file_atomic(etagfilename) as etagfile:
             etagfile.write(etag)
 
@@ -361,13 +406,17 @@ class CrateGit(SourceFetcher):
         lock = REPO_LOCKS.setdefault(self._get_mirror_dir(), threading.Lock())
         repo_url = self._get_url(alias=alias_override)
 
-        with lock, self._mirror_repo() as repo, self.cargo.timed_activity(f"Fetching from {repo_url}"):
+        with lock, self._mirror_repo() as repo, self.cargo.timed_activity(
+            f"Fetching from {repo_url}"
+        ):
             # TODO: Auth not supported
             client, path = dulwich.client.get_transport_and_path(repo_url)
-            remote_refs = client.fetch(
+            client.fetch(
                 path,
                 repo,
-                determine_wants=lambda refs, depth=None: [self.commit.encode()],
+                determine_wants=lambda refs, depth=None: [
+                    self.commit.encode()
+                ],
                 depth=1,
             )
 
@@ -376,7 +425,13 @@ class CrateGit(SourceFetcher):
     ########################################################
 
     def ref_node(self):
-        return {"kind": "git", "name": self.name, "version": self.version, "repo": self.repo, "commit": self.commit}
+        return {
+            "kind": "git",
+            "name": self.name,
+            "version": self.version,
+            "repo": self.repo,
+            "commit": self.commit,
+        }
 
     # stage()
     #
@@ -389,16 +444,18 @@ class CrateGit(SourceFetcher):
     def stage(self, directory):
         self.cargo.status(f"Checking out {self.commit}")
 
-        crate_target_dir = os.path.join(directory, f"{self.name}-{self.version}")
+        crate_target_dir = os.path.join(
+            directory, f"{self.name}-{self.version}"
+        )
         tmp_dir = os.path.join(directory, f"{self.name}-{self.version}-tmp")
 
         try:
             os.mkdir(tmp_dir)
-        except FileExistsError:
+        except FileExistsError as e:
             raise SourceError(
                 f"This project requests crate {self.name} {self.version} from multiple sources, "
                 "which is incompatible with vendoring since cargo does not support it."
-            )
+            ) from e
 
         with Repo(self._get_mirror_dir(), bare=True) as mirror:
             with Repo.init(tmp_dir) as dest:
@@ -423,8 +480,12 @@ class CrateGit(SourceFetcher):
         if "workspace" in root_toml:
             # Find wanted crate inside workspace
             for member in root_toml["workspace"].get("members", []):
-                for crate_toml_path in glob.glob(os.path.join(tmp_dir, member, "Cargo.toml")):
-                    crate_path = os.path.normpath(os.path.dirname(crate_toml_path))
+                for crate_toml_path in glob.glob(
+                    os.path.join(tmp_dir, member, "Cargo.toml")
+                ):
+                    crate_path = os.path.normpath(
+                        os.path.dirname(crate_toml_path)
+                    )
 
                     with open(crate_toml_path, "rb") as f:
                         crate_toml = tomllib.load(f)
@@ -437,7 +498,11 @@ class CrateGit(SourceFetcher):
             # Apply information inherited from workspace Cargo.toml
             config_inherit_workspace(crate["config"], root_toml["workspace"])
 
-            with open(os.path.join(crates[self.name]["path"], "Cargo.toml"), "w") as f:
+            with open(
+                os.path.join(crates[self.name]["path"], "Cargo.toml"),
+                "w",
+                encoding="utf-8",
+            ) as f:
                 tomlkit.dump(crate["config"], f)
 
             shutil.move(crate["path"], crate_target_dir)
@@ -446,7 +511,11 @@ class CrateGit(SourceFetcher):
             shutil.move(tmp_dir, crate_target_dir)
 
         # Write .cargo-checksum.json required by cargo vendoring
-        with open(os.path.join(crate_target_dir, ".cargo-checksum.json"), "w") as f:
+        with open(
+            os.path.join(crate_target_dir, ".cargo-checksum.json"),
+            "w",
+            encoding="utf-8",
+        ) as f:
             json.dump({"files": {}, "package": None}, f)
 
         shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -502,7 +571,9 @@ class CrateGit(SourceFetcher):
     #    (str): The URL for this crate
     #
     def _get_url(self, alias=None):
-        return self.cargo.translate_url(self.repo_mirrored, alias_override=alias, primary=False)
+        return self.cargo.translate_url(
+            self.repo_mirrored, alias_override=alias, primary=False
+        )
 
     # _mirror_repo()
     #
@@ -546,9 +617,8 @@ def config_inherit_workspace(config, workspace_config):
         for deps in dependencies:
             inherit_deps(deps, workspace_deps)
 
-    workspace_package = workspace_config.get("package")
-    if workspace_package is not None:
-        inherit_package(config["package"], workspace_package)
+    inherit_package(config, workspace_config)
+    inherit_lints(config, workspace_config)
 
 
 # inherit_package()
@@ -558,9 +628,12 @@ def config_inherit_workspace(config, workspace_config):
 # <https://doc.rust-lang.org/cargo/reference/workspaces.html#the-package-table>
 #
 # Args:
-#    items (dict): The crate's [package] items
-#    workspace_items (dict): Workspace's [package] items
-def inherit_package(items, workspace_items):
+#    config (dict): The crate config
+#    workspace_config (dict): The workspace config
+def inherit_package(config, workspace_config):
+    workspace_items = workspace_config.get("package")
+    items = config.get("package")
+
     for key, value in items.items():
         if isinstance(value, dict) and "workspace" in value:
             workspace_value = workspace_items.get(key)
@@ -572,6 +645,19 @@ def inherit_package(items, workspace_items):
 
             items[key] = workspace_value
 
+# inherit_lints()
+#
+# Inherits lints from the workspace. Lints are either completely overwritten by
+# workspace values or defined by the crate itself.
+# <https://doc.rust-lang.org/cargo/reference/workspaces.html#the-lints-table>
+#
+# Args:
+#    config (dict): The crate config
+#    workspace_config (dict): The workspace config
+def inherit_lints(config, workspace_config):
+    if config.get('lints', {}).get('workspace'):
+        if workspace_config.get('lints'):
+            config['lints'] = workspace_config.get('lints')
 
 # inherit_deps()
 #
@@ -614,12 +700,24 @@ class CargoSource(Source):
     def configure(self, node):
         # The url before any aliasing
         #
-        self.url = node.get_str("url", "https://static.crates.io/crates")
+        self.original_url = node.get_str(
+            "url", "https://static.crates.io/crates"
+        )
         self.cargo_lock = node.get_str("cargo-lock", "Cargo.lock")
         self.vendor_dir = node.get_str("vendor-dir", "crates")
         self.git_mirrors = node.get_mapping("git-mirrors", {})
 
-        node.validate_keys(Source.COMMON_CONFIG_KEYS + ["url", "ref", "cargo-lock", "vendor-dir", "git-mirrors"])
+        # If the specified URL is just an alias, require the alias to resolve
+        # to a URL with a trailing slash. Otherwise, append a trailing slash if
+        # it's missing, for backward compatibility.
+        self.url = self.original_url
+        if not self.url.endswith(":") and not self.url.endswith("/"):
+            self.url += "/"
+
+        node.validate_keys(
+            Source.COMMON_CONFIG_KEYS
+            + ["url", "ref", "cargo-lock", "vendor-dir", "git-mirrors"]
+        )
 
         # Needs to be marked here so that `track` can translate it later.
         self.mark_download_url(self.url)
@@ -627,7 +725,9 @@ class CargoSource(Source):
         # Needs to be marked here such that it can be used in fetch later.
         for crate in node.get_sequence("ref", []):
             if crate.get_str("kind", "") == "git":
-                self.mark_download_url(self.mirrored_git_url(crate.get_str("repo")), primary=False)
+                self.mark_download_url(
+                    self.mirrored_git_url(crate.get_str("repo")), primary=False
+                )
 
         self.load_ref(node)
 
@@ -635,10 +735,12 @@ class CargoSource(Source):
         return
 
     def get_unique_key(self):
-        return [self.url, self.cargo_lock, self.vendor_dir, self.ref]
+        return [self.original_url, self.cargo_lock, self.vendor_dir, self.ref]
 
     def is_resolved(self):
-        return (self.ref is not None) and all(crate.is_resolved() for crate in self.crates)
+        return (self.ref is not None) and all(
+            crate.is_resolved() for crate in self.crates
+        )
 
     def is_cached(self):
         return all(crate.is_cached() for crate in self.crates)
@@ -664,12 +766,16 @@ class CargoSource(Source):
                     lock = tomllib.load(f)
                 except tomllib.TOMLDecodeError as e:
                     raise SourceError(
-                        "Malformed Cargo.lock file at: {}".format(self.cargo_lock),
+                        "Malformed Cargo.lock file at: {}".format(
+                            self.cargo_lock
+                        ),
                         detail="{}".format(e),
                     ) from e
         except FileNotFoundError as e:
             raise SourceError(
-                "Failed to find Cargo.lock file at: {}".format(self.cargo_lock),
+                "Failed to find Cargo.lock file at: {}".format(
+                    self.cargo_lock
+                ),
                 detail="The cargo plugin expects to find a Cargo.lock file in\n"
                 + "the sources staged before it in the source list, but none was found.",
             ) from e
@@ -687,15 +793,21 @@ class CargoSource(Source):
             ref["kind"] = kind
 
             if kind not in ["git", "registry"]:
-                raise SourceError(f"Unkown source kind '{kind}' for crate {package['name']}")
+                raise SourceError(
+                    f"Unkown source kind '{kind}' for crate {package['name']}"
+                )
 
             if kind == "git":
                 url_parsed = urlparse(url)
                 ref["commit"] = url_parsed.fragment
                 # Remove extra information since it confused URL translation
-                ref["repo"] = url_parsed._replace(fragment="", query="").geturl()
+                ref["repo"] = url_parsed._replace(
+                    fragment="", query=""
+                ).geturl()
 
-            ref.update({"name": package["name"], "version": str(package["version"])})
+            ref.update(
+                {"name": package["name"], "version": str(package["version"])}
+            )
 
             if kind == "registry":
                 ref["sha"] = package.get("checksum")
@@ -703,18 +815,30 @@ class CargoSource(Source):
             new_ref.append(ref)
 
         # Make sure the order we set it at track time is deterministic
-        new_ref = sorted(new_ref, key=lambda c: (c["name"], c["version"], c.get("repo", ""), c.get("commit", "")))
+        new_ref = sorted(
+            new_ref,
+            key=lambda c: (
+                c["name"],
+                c["version"],
+                c.get("repo", ""),
+                c.get("commit", ""),
+            ),
+        )
 
         # Download the crates and get their shas
         for crate_obj in new_ref:
             if crate_obj["kind"] != "registry" or crate_obj["sha"] is not None:
                 continue
 
-            crate = CrateRegistry(self, crate_obj["name"], crate_obj["version"])
+            crate = CrateRegistry(
+                self, crate_obj["name"], crate_obj["version"]
+            )
 
-            crate_url = crate._get_url()
-            with self.timed_activity("Downloading: {}".format(crate_url), silent_nested=True):
-                crate_obj["sha"] = crate._download(crate_url)
+            crate_url, auth_scheme = crate._get_url()
+            with self.timed_activity(
+                "Downloading: {}".format(crate_url), silent_nested=True
+            ):
+                crate_obj["sha"] = crate._download(crate_url, auth_scheme)
 
         return new_ref
 
@@ -736,7 +860,9 @@ class CargoSource(Source):
 
         # Stage our vendor config
         vendor_config = _default_vendor_config_template.format(
-            vendorurl=self.translate_url(self.url), vendordir=self.vendor_dir, git_vendors=vendor_cfg_git
+            vendorurl=self.translate_url(self.url),
+            vendordir=self.vendor_dir,
+            git_vendors=vendor_cfg_git,
         )
         conf_dir = os.path.join(directory, ".cargo")
         conf_file = os.path.join(conf_dir, "config")
@@ -767,6 +893,8 @@ class CargoSource(Source):
             mirror = mirror.as_str()
             if git_url.startswith(url):
                 # Use the most specific (longest) URL
+                # Silence pylint because of bug <https://github.com/pylint-dev/pylint/issues/1498>
+                # pylint: disable=unsubscriptable-object
                 if use_mirror is None or len(use_mirror[0]) < len(url):
                     use_mirror = (url, mirror)
 
@@ -829,3 +957,113 @@ class CargoSource(Source):
 
 def setup():
     return CargoSource
+
+
+# Code for `download_file`
+#
+# Copied from buildstream-plugins project:
+# <https://github.com/apache/buildstream-plugins/blob/db71610b7ae9884f6d8cbe0d3cc5a1c657c19edb/src/buildstream_plugins/sources/_utils.py>
+#
+# Previously mostly copied from downloadablefilesource.py in buildstream.
+
+
+class _NetrcPasswordManager:
+    def __init__(self, netrc_config):
+        self.netrc = netrc_config
+
+    def add_password(self, realm, uri, user, passwd):
+        pass
+
+    def find_user_password(self, realm, authuri):
+        if not self.netrc:
+            return None, None
+        parts = urllib.parse.urlsplit(authuri)
+        entry = self.netrc.authenticators(parts.hostname)
+        if not entry:
+            return None, None
+        else:
+            login, _, password = entry
+            return login, password
+
+
+def _parse_netrc():
+    netrc_config = None
+    try:
+        netrc_config = netrc.netrc()
+    except (OSError, netrc.NetrcParseError):
+        # If the .netrc file was not found, FileNotFoundError will be
+        # raised, but OSError will be raised directly by the netrc package
+        # in the case that $HOME is not set.
+        #
+        # This will catch both cases.
+        pass
+
+    return netrc_config
+
+
+class _UrlOpenerCreator:
+    def __init__(self, netrc_config):
+        self.netrc_config = netrc_config
+
+    def get_url_opener(self, bearer_auth):
+        if self.netrc_config and not bearer_auth:
+            netrc_pw_mgr = _NetrcPasswordManager(self.netrc_config)
+            http_auth = urllib.request.HTTPBasicAuthHandler(netrc_pw_mgr)
+            return urllib.request.build_opener(http_auth)
+        return urllib.request.build_opener()
+
+
+def download_file(url, etag, directory, auth_scheme):
+    opener_creator = _UrlOpenerCreator(_parse_netrc())
+    opener = opener_creator.get_url_opener(auth_scheme == "bearer")
+    default_name = os.path.basename(url)
+    request = urllib.request.Request(url)
+    request.add_header("Accept", "*/*")
+    request.add_header("User-Agent", "BuildStream/2")
+
+    if opener_creator.netrc_config and auth_scheme == "bearer":
+        parts = urllib.parse.urlsplit(url)
+        entry = opener_creator.netrc_config.authenticators(parts.hostname)
+        if entry:
+            _, _, password = entry
+            auth_header = "Bearer " + password
+            request.add_header("Authorization", auth_header)
+
+    if etag is not None:
+        request.add_header("If-None-Match", etag)
+
+    try:
+        with contextlib.closing(opener.open(request)) as response:
+            info = response.info()
+
+            # some servers don't honor the 'If-None-Match' header
+            if etag and info["ETag"] == etag:
+                return None, None, None
+
+            etag = info["ETag"]
+            length = info.get("Content-Length")
+
+            filename = info.get_filename(default_name)
+            filename = os.path.basename(filename)
+            local_file = os.path.join(directory, filename)
+            with open(local_file, "wb") as dest:
+                shutil.copyfileobj(response, dest)
+
+                actual_length = dest.tell()
+                if length and actual_length < int(length):
+                    raise ValueError(f"Partial file {actual_length}/{length}")
+
+    except urllib.error.HTTPError as e:
+        if e.code == 304:
+            # 304 Not Modified.
+            # Because we use etag only for matching ref, currently specified ref is what
+            # we would have downloaded.
+            return None, None, None
+
+        return None, None, str(e)
+    except (urllib.error.URLError, OSError, ValueError) as e:
+        # Note that urllib.request.Request in the try block may throw a
+        # ValueError for unknown url types, so we handle it here.
+        return None, None, str(e)
+
+    return local_file, etag, None

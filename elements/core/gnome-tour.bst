@@ -5,7 +5,7 @@ sources:
   url: gnome:gnome-tour.git
   track: master
   ref: 46.0-11-gede9812b4db07ff80344b3643ee48ab020e6fce4
-- kind: cargo
+- kind: cargo2
   ref:
   - name: aho-corasick
     version: 1.1.2

@@ -12,7 +12,7 @@ sources:
 - kind: tar
   url: crates:crates/cargo-c/cargo-c-0.9.30+cargo-0.77.0.crate
   ref: ec77e3635cdb0d211f88f22d0460eef0ba031eb616ded57f2ffb98a90365c445
-- kind: cargo
+- kind: cargo2
   ref:
   - name: adler
     version: 1.0.2
