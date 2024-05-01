@@ -31,6 +31,7 @@ config:
            --add ostree \
            --add plymouth \
            --install 'fsck.ext4' \
+           --install %{libdir}/libkmod.so.2 \
            "%{install-root}/usr/lib/modules/${version}/initramfs"
 
   - |

@@ -39,6 +39,7 @@ config:
            --install tail \
            --install less \
            --install lsof \
+           --install %{libdir}/libkmod.so.2 \
            --omit lvm
 
 
