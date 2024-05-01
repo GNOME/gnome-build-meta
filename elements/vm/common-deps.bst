@@ -28,6 +28,7 @@ depends:
 - vm/android-udev-rules.bst
 - vm/alsa-ucm-conf.bst
 - vm/fprintd.bst
+- core-deps/boltd.bst
 
 - vm/ibus-anthy.bst
 - vm/ibus-hangul.bst
