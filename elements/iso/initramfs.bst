@@ -59,7 +59,7 @@ config:
     cat <<EOF >/boot/loader/entries/gnome-os-installer.conf
     title GNOME OS Installer
     version 1
-    options rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0
+    options rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0 systemd.firstboot=no
     linux /vmlinuz
     initrd /initramfs-$(ls -1 /lib/modules | head -n1).img
     EOF
