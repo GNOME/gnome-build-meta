@@ -13,7 +13,9 @@ sources:
 - kind: patch
   path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
 - kind: patch
-  path: patches/freedesktop-sdk/0001-components-dracut.bst-backport-patch-for-systemd-mas.patch
+  path: patches/freedesktop-sdk/0001-components-dracut.bst-switch-to-dracut-ng.patch
+- kind: patch
+  path: patches/freedesktop-sdk/0002-components-dracut.bst-backport-patches-needed-by-sys.patch
 
 config:
   options:

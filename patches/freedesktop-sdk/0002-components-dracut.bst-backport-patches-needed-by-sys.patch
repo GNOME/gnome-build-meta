@@ -1,0 +1,199 @@
+From 704149850bfd52020b9b322c737f7f51f703761a Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Fri, 3 May 2024 08:48:10 +0100
+Subject: [PATCH 2/2] components/dracut.bst: backport patches needed by systemd
+ v256
+
+---
+ elements/components/dracut.bst                |  4 +
+ ...hooks-directory-from-usr-lib-to-var-.patch | 86 +++++++++++++++++++
+ ...icitly-install-some-libs-that-will-n.patch | 72 ++++++++++++++++
+ 3 files changed, 162 insertions(+)
+ create mode 100644 patches/dracut/0001-fix-dracut-move-hooks-directory-from-usr-lib-to-var-.patch
+ create mode 100644 patches/dracut/0001-fix-systemd-explicitly-install-some-libs-that-will-n.patch
+
+diff --git a/elements/components/dracut.bst b/elements/components/dracut.bst
+index c696f7a15..7c1475c86 100644
+--- a/elements/components/dracut.bst
++++ b/elements/components/dracut.bst
+@@ -27,3 +27,7 @@ sources:
+   ref: 101-0-g2255bf3464536b02342d13398c5331999fcfd4fa
+ - kind: patch
+   path: patches/dracut/dracut-riscv64-efi.patch
++- kind: patch
++  path: patches/dracut/0001-fix-dracut-move-hooks-directory-from-usr-lib-to-var-.patch
++- kind: patch
++  path: patches/dracut/0001-fix-systemd-explicitly-install-some-libs-that-will-n.patch
+diff --git a/patches/dracut/0001-fix-dracut-move-hooks-directory-from-usr-lib-to-var-.patch b/patches/dracut/0001-fix-dracut-move-hooks-directory-from-usr-lib-to-var-.patch
+new file mode 100644
+index 000000000..6fac2af7d
+--- /dev/null
++++ b/patches/dracut/0001-fix-dracut-move-hooks-directory-from-usr-lib-to-var-.patch
+@@ -0,0 +1,86 @@
++From a45048b80c27ee5a45a380052a6d29ab1925f7f9 Mon Sep 17 00:00:00 2001
++From: Laszlo Gombos <laszlo.gombos@gmail.com>
++Date: Fri, 5 Apr 2024 15:50:20 +0200
++Subject: [PATCH] fix(dracut): move hooks directory from /usr/lib to /var/lib
++
++Since https://github.com/systemd/systemd/commit/ffc1ec73, /usr is mounted as
++read-only in the initramfs by default.
++
++Fixes #2588
++
++Co-authored-by: Antonio Alvarez Feijoo <antonio.feijoo@suse.com>
++---
++ dracut-init.sh                       | 2 +-
++ dracut.sh                            | 6 +++++-
++ modules.d/99base/module-setup.sh     | 5 ++++-
++ modules.d/99shutdown/module-setup.sh | 8 +++++---
++ 4 files changed, 15 insertions(+), 6 deletions(-)
++
++diff --git a/dracut-init.sh b/dracut-init.sh
++index 7ce3d1dd..863df0cb 100755
++--- a/dracut-init.sh
+++++ b/dracut-init.sh
++@@ -633,7 +633,7 @@ inst_hook() {
++         dfatal "No such hook type $1. Aborting initrd creation."
++         exit 1
++     fi
++-    hook="/lib/dracut/hooks/${1}/${2}-${3##*/}"
+++    hook="/var/lib/dracut/hooks/${1}/${2}-${3##*/}"
++     inst_simple "$3" "$hook"
++     chmod u+x "$initdir/$hook"
++ }
++diff --git a/dracut.sh b/dracut.sh
++index 3914d7c5..148ef8b0 100755
++--- a/dracut.sh
+++++ b/dracut.sh
++@@ -1884,7 +1884,11 @@ mkdir -p "${initdir}"/lib/dracut
++ 
++ if [[ $kernel_only != yes ]]; then
++     mkdir -p "${initdir}/etc/cmdline.d"
++-    mkdir -m 0755 "${initdir}"/lib/dracut/hooks
+++    mkdir -m 0755 -p "${initdir}"/var/lib/dracut/hooks
+++
+++    # symlink to old hooks location for compatibility
+++    ln_r /var/lib/dracut/hooks /lib/dracut/hooks
+++
++     for _d in $hookdirs; do
++         # shellcheck disable=SC2174
++         mkdir -m 0755 -p "${initdir}/lib/dracut/hooks/$_d"
++diff --git a/modules.d/99base/module-setup.sh b/modules.d/99base/module-setup.sh
++index 54b0deb9..bfdc51d4 100755
++--- a/modules.d/99base/module-setup.sh
+++++ b/modules.d/99base/module-setup.sh
++@@ -45,7 +45,10 @@ install() {
++ 
++     [ -e "${initdir}/lib" ] || mkdir -m 0755 -p "${initdir}"/lib
++     mkdir -m 0755 -p "${initdir}"/lib/dracut
++-    mkdir -m 0755 -p "${initdir}"/lib/dracut/hooks
+++    mkdir -m 0755 -p "${initdir}"/var/lib/dracut/hooks
+++
+++    # symlink to old hooks location for compatibility
+++    ln_r /var/lib/dracut/hooks /lib/dracut/hooks
++ 
++     mkdir -p "${initdir}"/tmp
++ 
++diff --git a/modules.d/99shutdown/module-setup.sh b/modules.d/99shutdown/module-setup.sh
++index 2b999024..f53017ff 100755
++--- a/modules.d/99shutdown/module-setup.sh
+++++ b/modules.d/99shutdown/module-setup.sh
++@@ -17,9 +17,11 @@ install() {
++     inst_multiple umount poweroff reboot halt losetup stat sleep timeout
++     inst_multiple -o kexec
++     inst "$moddir/shutdown.sh" "$prefix/shutdown"
++-    [ -e "${initdir}/lib" ] || mkdir -m 0755 -p "${initdir}"/lib
++-    mkdir -m 0755 -p "${initdir}"/lib/dracut
++-    mkdir -m 0755 -p "${initdir}"/lib/dracut/hooks
+++    mkdir -m 0755 -p "${initdir}"/var/lib/dracut/hooks
+++
+++    # symlink to old hooks location for compatibility
+++    ln_r /var/lib/dracut/hooks /lib/dracut/hooks
+++
++     for _d in $hookdirs shutdown shutdown-emergency; do
++         mkdir -m 0755 -p "${initdir}"/lib/dracut/hooks/"$_d"
++     done
++-- 
++2.43.0
++
+diff --git a/patches/dracut/0001-fix-systemd-explicitly-install-some-libs-that-will-n.patch b/patches/dracut/0001-fix-systemd-explicitly-install-some-libs-that-will-n.patch
+new file mode 100644
+index 000000000..328c7eddd
+--- /dev/null
++++ b/patches/dracut/0001-fix-systemd-explicitly-install-some-libs-that-will-n.patch
+@@ -0,0 +1,72 @@
++From 04b362d713235459cff1f370efb4cd5e36e4a358 Mon Sep 17 00:00:00 2001
++From: Antonio Alvarez Feijoo <antonio.feijoo@suse.com>
++Date: Thu, 4 Apr 2024 13:49:26 +0200
++Subject: [PATCH] fix(systemd): explicitly install some libs that will not be
++ statically included
++
++Some required libraries that used to be statically included are in the process
++to be opened via `dlopen()`.
++
++References:
++- https://github.com/systemd/systemd/pull/31131
++- https://github.com/systemd/systemd/pull/31550
++- https://github.com/systemd/systemd/pull/32019
++
++Closes #2642
++---
++ modules.d/00systemd/module-setup.sh          | 2 ++
++ modules.d/01systemd-coredump/module-setup.sh | 7 +++++++
++ modules.d/01systemd-journald/module-setup.sh | 5 +++--
++ 3 files changed, 12 insertions(+), 2 deletions(-)
++
++diff --git a/modules.d/00systemd/module-setup.sh b/modules.d/00systemd/module-setup.sh
++index 66e08ea6..72341746 100755
++--- a/modules.d/00systemd/module-setup.sh
+++++ b/modules.d/00systemd/module-setup.sh
++@@ -260,6 +260,8 @@ EOF
++     # Install library file(s)
++     _arch=${DRACUT_ARCH:-$(uname -m)}
++     inst_libdir_file \
+++        {"tls/$_arch/",tls/,"$_arch/",}"libgcrypt.so*" \
+++        {"tls/$_arch/",tls/,"$_arch/",}"libkmod.so*" \
++         {"tls/$_arch/",tls/,"$_arch/",}"libnss_*"
++ 
++ }
++diff --git a/modules.d/01systemd-coredump/module-setup.sh b/modules.d/01systemd-coredump/module-setup.sh
++index 69ec9668..47666b6c 100755
++--- a/modules.d/01systemd-coredump/module-setup.sh
+++++ b/modules.d/01systemd-coredump/module-setup.sh
++@@ -40,6 +40,13 @@ install() {
++         "$sysusers"/systemd-coredump.conf \
++         coredumpctl
++ 
+++    # Install library file(s)
+++    _arch=${DRACUT_ARCH:-$(uname -m)}
+++    inst_libdir_file \
+++        {"tls/$_arch/",tls/,"$_arch/",}"liblz4.so.*" \
+++        {"tls/$_arch/",tls/,"$_arch/",}"liblzma.so.*" \
+++        {"tls/$_arch/",tls/,"$_arch/",}"libzstd.so.*"
+++
++     # Install the hosts local user configurations if enabled.
++     if [[ $hostonly ]]; then
++         inst_multiple -H -o \
++diff --git a/modules.d/01systemd-journald/module-setup.sh b/modules.d/01systemd-journald/module-setup.sh
++index 3cf2a1a1..276e7528 100755
++--- a/modules.d/01systemd-journald/module-setup.sh
+++++ b/modules.d/01systemd-journald/module-setup.sh
++@@ -53,9 +53,10 @@ install() {
++     # Install library file(s)
++     _arch=${DRACUT_ARCH:-$(uname -m)}
++     inst_libdir_file \
+++        {"tls/$_arch/",tls/,"$_arch/",}"libgcrypt.so*" \
++         {"tls/$_arch/",tls/,"$_arch/",}"liblz4.so.*" \
++-        {"tls/$_arch/",tls/,"$_arch/",}"libzstd.so.*" \
++-        {"tls/$_arch/",tls/,"$_arch/",}"liblzma.so.*"
+++        {"tls/$_arch/",tls/,"$_arch/",}"liblzma.so.*" \
+++        {"tls/$_arch/",tls/,"$_arch/",}"libzstd.so.*"
++ 
++     # Install the hosts local user configurations if enabled.
++     if [[ $hostonly ]]; then
++-- 
++2.43.0
++
+-- 
+2.43.0
+
