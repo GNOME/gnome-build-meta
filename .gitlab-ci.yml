@@ -7,6 +7,8 @@ variables:
   # This mirrors the project.conf
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
+  CVE_MOUNTS: "--mount cve /buildstream-build --mount ${CI_COMMIT_REF_NAME}/cve-reports /cve-reports --mount manifests /manifests"
+  GEN_CVE_REPORT: "${BST} shell freedesktop-sdk.bst:utils/generate-cve-report.bst --mount cve /buildstream-build" 
   OCI_BRANCH: master
   FLATPAK_BRANCH: master
   OPENQA_HOST: https://openqa.gnome.org
@@ -63,7 +65,7 @@ default:
   stage: build
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/platform.bst oci/sdk.bst oci/core.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst oci/platform.bst oci/sdk.bst oci/core.bst)
 
   - |
     case "${ARCH}" in
@@ -479,18 +481,20 @@ cve_report:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
+  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst
+  - ${BST} build freedesktop-sdk.bst:utils/generate-cve-report.bst
 
-  - ${BST} artifact checkout flatpak/platform-manifest.bst --directory platform-manifest/
-  - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory sdk-manifest/
+  - mkdir -p cve manifests/ $CI_COMMIT_REF_NAME/cve-reports/
+  - ${BST} artifact checkout flatpak/platform-manifest.bst --directory manifests/platform
+  - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory manifests/sdk
+  - ${BST} artifact checkout vm/manifest-devel.bst --directory manifests/vm
+  - ${BST} artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
 
-  - mkdir -p cve
-  - cd cve
-  - ../utils/update-local-cve-database.py
-
-  - mkdir -p ../cve-reports
-  - python3 ../utils/generate-cve-report.py ../sdk-manifest/usr/manifest.json ../cve-reports/sdk.html
-  - python3 ../utils/generate-cve-report.py ../platform-manifest/usr/manifest.json ../cve-reports/platform.html
+  - ${GEN_CVE_REPORT} -- update_local_cve_database
+  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/platform/usr/manifest.json /cve-reports/platform.html
+  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/sdk/usr/manifest.json /cve-reports/sdk.html
+  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm/usr/manifest.json /cve-reports/vm.html
+  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm-secure/usr/manifest.json /cve-reports/vm-secure.html
   cache:
     key: cve
     paths:
@@ -500,7 +504,6 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
-
 
 test-s3-image:
   extends:
