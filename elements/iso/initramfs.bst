@@ -26,12 +26,11 @@ config:
        --rootfstype iso9660 \
        --noboot >/dev/null
 
-  # FIXME: rd.live.overlay.overlayfs=1 can be removed with dracut 060
   - |
     dracut -v --no-machineid \
            --kernel-image /boot/vmlinuz \
            --kver "$(ls -1 /usr/lib/modules | head -n1)" \
-           --kernel-cmdline 'rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0 rd.live.overlay.overlayfs=1' \
+           --kernel-cmdline 'rw quiet splash root=live:LABEL=%{installer-volume-id} console=tty0' \
            --add dmsquash-live \
            --add plymouth \
            --install grep \
