@@ -5,6 +5,7 @@ build-depends:
 - vm-secure/os-release-user.bst
 - vm-secure/initramfs.bst
 - filename: vm-secure/usr-image.bst
+  strict: true
   config:
     location: /usr-image
 - freedesktop-sdk.bst:components/sbsigntools.bst
