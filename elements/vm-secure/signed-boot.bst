@@ -3,7 +3,8 @@ kind: manual
 build-depends:
 - core-deps/python-pefile.bst
 - vm-secure/os-release-user.bst
-- vm-secure/initramfs.bst
+- filename: vm-secure/initramfs.bst
+  strict: true
 - filename: vm-secure/usr-image.bst
   strict: true
   config:

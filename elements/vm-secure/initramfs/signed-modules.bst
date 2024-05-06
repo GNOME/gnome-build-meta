@@ -1,7 +1,8 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/linux.bst
+- filename: freedesktop-sdk.bst:components/linux.bst
+  strict: true
 - freedesktop-sdk.bst:components/sign-file.bst
 
 config:

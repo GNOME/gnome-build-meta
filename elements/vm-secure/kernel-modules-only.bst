@@ -1,8 +1,9 @@
 kind: manual
 
 build-depends:
-- vm-secure/initramfs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- filename: vm-secure/initramfs.bst
+  strict: true
 
 config:
   install-commands:

@@ -16,6 +16,8 @@ sources:
   path: patches/freedesktop-sdk/0001-components-dracut.bst-switch-to-dracut-ng.patch
 - kind: patch
   path: patches/freedesktop-sdk/0002-components-dracut.bst-backport-patches-needed-by-sys.patch
+- kind: patch
+  path: patches/freedesktop-sdk/0001-components-linux.bst-strictly-depend-on-linux-module.patch
 
 config:
   options:
