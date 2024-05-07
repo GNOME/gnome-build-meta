@@ -501,7 +501,7 @@ cve_report:
     - cve
   artifacts:
     paths:
-    - cve-reports
+    - $CI_COMMIT_REF_NAME/cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
 
@@ -611,7 +611,9 @@ pages:
   - job: 'cve_report'
     artifacts: true
   script:
-  - 'mv cve-reports/ public/'
+  - 'mkdir -p public/$CI_COMMIT_REF_NAME'
+  - 'mv $CI_COMMIT_REF_NAME/cve-reports/ public/$CI_COMMIT_REF_NAME/'
+
   artifacts:
     paths:
     - 'public'
