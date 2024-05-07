@@ -5,6 +5,7 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - vm-secure/os-release-user.bst
 - filename: vm-secure/snapd-layer.bst
+  strict: true
   config:
     location: '/snapd-layer'
 

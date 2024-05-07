@@ -2,12 +2,15 @@ kind: script
 
 build-depends:
 - filename: vm-secure/update-images-user-only.bst
+  strict: true
   config:
     location: /user-only
 - filename: vm-secure/devel-layer-signature.bst
+  strict: true
   config:
     location: /devel-only
 - filename: vm-secure/snapd-layer-signature.bst
+  strict: true
   config:
     location: /snapd-only
 - freedesktop-sdk.bst:bootstrap-import.bst
@@ -17,9 +20,11 @@ build-depends:
     build-depends:
       (>):
       - filename: vm-secure/nvidia-modules-layer-signature.bst
+        strict: true
         config:
           location: /nvidia-modules-only
       - filename: vm-secure/nvidia-runtime-layer-signature.bst
+        strict: true
         config:
           location: /nvidia-runtime-only
 
