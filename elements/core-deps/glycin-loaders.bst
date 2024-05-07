@@ -6,7 +6,6 @@ sources:
   track: main
   ref: 1.0.1-21-g4b5d7f06ae23bb8f5045ce069c687c3aa05c5f84
 - kind: cargo
-
   ref:
   - kind: registry
     name: addr2line
@@ -1252,7 +1251,10 @@ sources:
     name: zvariant_utils
     version: 1.1.0
     sha: 00bedb16a193cc12451873fee2a1bc6550225acece0e36f333e68326c73c8172
+
 build-depends:
+- sdk/gobject-introspection.bst
+- sdk/vala.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
