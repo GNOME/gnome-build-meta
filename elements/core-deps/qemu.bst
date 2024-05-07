@@ -71,7 +71,6 @@ variables:
     --localstatedir=/
     --host=%{triplet}
     --build=%{triplet}
-    %{conf-extra}
     %{conf-local}
 
 public:
