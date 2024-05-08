@@ -51,3 +51,25 @@ To build the GNOME OS "secure boot" image locally:
 
       $ bst artifact checkout vm-secure/image.bst --directory ./disk
       $ bst -o secure_image_installer true artifact checkout iso/image.bst --directory ./iso
+
+OCI Images
+~~~~~~~~~~
+
+OCI images are built and pushed to the container registry through the CI job
+'deploy-oci'. Currently there are three images 'platform', 'sdk' and 'core':
+
+1. platform - the same ``/usr`` tree as the ``org.gnome.Platform`` flatpak runtime
+
+2. sdk - the same as the ``org.gnome.Sdk`` flatpak runtime and ``toolbox`` compatible
+
+3. core - core devel OS tree including the dependencies to build all (most)
+   of the 'core' elements in 'core.bst', but without the cli tools and
+   utilities (podman, toolbox, bst, etc)
+
+These images can be found in the container registry `quay.io <https://quay.io/repository/gnome_infrastructure/gnome-build-meta?tab=tags&tag=latest>`_.
+
+While they are "toolbox compatible", there isn't any update mechanism in them,
+so you should be aware that the containers created locally for development will
+become stale and you will need to remove and recreate them with an up to date
+image often. Their main usecase is for gitlab-ci which always pulls the latest
+image.
