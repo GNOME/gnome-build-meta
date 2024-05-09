@@ -22,6 +22,9 @@ sources:
   path: patches/freedesktop-sdk/drm-i915-module.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-Backport-gst-patch-for-glib-2.82.patch
+# Replicates functionality found in https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/19389. Patch can be removed once it lands in the freedesktop-sdk used by g-b-m.
+- kind: patch
+  path: patches/freedesktop-sdk/0001-utils-generate-cve-report.bst.patch
 
 config:
   options:
