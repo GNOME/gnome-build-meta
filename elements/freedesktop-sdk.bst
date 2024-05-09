@@ -5,6 +5,9 @@ sources:
   track: release/23.08
   track-tags: true
   ref: freedesktop-sdk-23.08.19-0-gc4a135e4a4dd8fb0d0e0c402a1a4d1a7a39d84b6
+# Replicates functionality found in https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/19389. Patch can be removed once it lands in the freedesktop-sdk used by g-b-m.
+- kind: patch
+  path: patches/freedesktop-sdk/0001-utils-generate-cve-report.bst.patch
 
 config:
   options:
