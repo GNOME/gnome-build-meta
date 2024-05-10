@@ -1,0 +1,13 @@
+diff --git a/Source/WebCore/bindings/js/SerializedScriptValue.cpp b/Source/WebCore/bindings/js/SerializedScriptValue.cpp
+index 7743e0f09175..1e0b0045997f 100644
+--- a/Source/WebCore/bindings/js/SerializedScriptValue.cpp
++++ b/Source/WebCore/bindings/js/SerializedScriptValue.cpp
+@@ -364,7 +364,7 @@ void printInternal(PrintStream&, WebCore::SerializationTag);
+ void printInternal(PrintStream& out, WebCore::SerializationTag tag)
+ {
+     auto tagName = WebCore::name(tag);
+-    if (tagName[0] != '<')
++    if (tagName[0U] != '<')
+         out.print(tagName);
+     else
+         out.print("<unknown tag "_s, static_cast<unsigned>(tag), ">"_s);
