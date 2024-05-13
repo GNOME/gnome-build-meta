@@ -1,13 +1,30 @@
-diff --git a/Source/WebCore/bindings/js/SerializedScriptValue.cpp b/Source/WebCore/bindings/js/SerializedScriptValue.cpp
-index 7743e0f09175..1e0b0045997f 100644
---- a/Source/WebCore/bindings/js/SerializedScriptValue.cpp
-+++ b/Source/WebCore/bindings/js/SerializedScriptValue.cpp
-@@ -364,7 +364,7 @@ void printInternal(PrintStream&, WebCore::SerializationTag);
- void printInternal(PrintStream& out, WebCore::SerializationTag tag)
- {
-     auto tagName = WebCore::name(tag);
--    if (tagName[0] != '<')
-+    if (tagName[0U] != '<')
-         out.print(tagName);
-     else
-         out.print("<unknown tag "_s, static_cast<unsigned>(tag), ">"_s);
+From d8330d2a57920e37d4ffe011487d83e47c91ab40 Mon Sep 17 00:00:00 2001
+From: Chris Dumez <cdumez@apple.com>
+Date: Mon, 13 May 2024 15:34:13 -0700
+Subject: [PATCH] Update ASCIILiteral's operator[] to take in a `size_t`
+ instead of an `unsigned` https://bugs.webkit.org/show_bug.cgi?id=274129
+
+Reviewed by NOBODY (OOPS!).
+
+This matches the type returned by ASCIILiteral::length().
+
+* Source/WTF/wtf/text/ASCIILiteral.h:
+---
+ Source/WTF/wtf/text/ASCIILiteral.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Source/WTF/wtf/text/ASCIILiteral.h b/Source/WTF/wtf/text/ASCIILiteral.h
+index 121f5cc88a2c..504aab90f260 100644
+--- a/Source/WTF/wtf/text/ASCIILiteral.h
++++ b/Source/WTF/wtf/text/ASCIILiteral.h
+@@ -67,8 +67,8 @@ class ASCIILiteral final {
+     std::span<const LChar> span8() const { return { characters8(), length() }; }
+     size_t isEmpty() const { return m_charactersWithNullTerminator.size() <= 1; }
+ 
+-    constexpr char operator[](unsigned index) const { return m_charactersWithNullTerminator[index]; }
+-    constexpr char characterAt(unsigned index) const { return m_charactersWithNullTerminator[index]; }
++    constexpr char operator[](size_t index) const { return m_charactersWithNullTerminator[index]; }
++    constexpr char characterAt(size_t index) const { return m_charactersWithNullTerminator[index]; }
+ 
+ #ifdef __OBJC__
+     // This function convert null strings to empty strings.
