@@ -18,13 +18,6 @@
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Tristan Van Berkom</foaf:name>
-      <foaf:mbox rdf:resource="mailto:tristan.vanberkom@codethink.co.uk" />
-      <gnome:userid>tvb</gnome:userid>
-    </foaf:Person>
-  </maintainer>
-  <maintainer>
-    <foaf:Person>
       <foaf:name>Michael Catanzaro</foaf:name>
       <foaf:mbox rdf:resource="mailto:mcatanzaro@gnome.org" />
       <gnome:userid>mcatanzaro</gnome:userid>
