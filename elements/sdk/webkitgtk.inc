@@ -1,13 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.45.1.tar.xz
-  ref: 9813f5dfb81717c1a427f6947654edad0bdc1e21445902fdb9b9a5589d36c38d
-- kind: patch
-  path: patches/webkitgtk/i686-build.patch
-- kind: patch
-  path: patches/webkitgtk/gif-image-decoder.patch
-- kind: patch
-  path: patches/webkitgtk/font-scaling.patch
+  url: webkitgtk:webkitgtk-2.45.2.tar.xz
+  ref: 0ddbe3541e8cb28e37d226f2cc46ca9c9c47d0524ea12e6c39d7b9c4603a1741
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -59,6 +53,7 @@ public:
   cpe:
     product: webkitgtk+
 
+# https://skia.org/docs/user/build/#supported-and-preferred-compilers
 environment:
   CC: clang
   CXX: clang++
