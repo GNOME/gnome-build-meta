@@ -5,4 +5,4 @@ sources:
   path: files/sysupdate-snapd/gnomeos-snapd.conf
 
 config:
-  target: /usr/lib/sysupdate.snapd.d
+  target: "%{sysupdatedir}"

@@ -5,4 +5,4 @@ sources:
   path: files/sysupdate-devel/gnomeos-devel.conf
 
 config:
-  target: /usr/lib/sysupdate.devel.d
+  target: "%{sysupdatedir}"

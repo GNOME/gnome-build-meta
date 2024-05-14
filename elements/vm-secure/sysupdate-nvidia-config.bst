@@ -11,4 +11,4 @@ sources:
   path: files/sysupdate-nvidia/gnomeos-nvidia-addon.conf
 
 config:
-  target: /usr/lib/sysupdate.nvidia.d
+  target: "%{sysupdatedir}"
