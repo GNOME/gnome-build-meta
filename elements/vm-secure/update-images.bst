@@ -17,9 +17,6 @@ build-depends:
   strict: true
   config:
     location: /debug-only
-- filename: vm-secure/debug-layer-tar.bst
-  config:
-    location: /debug-tar-only
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 (?):
@@ -58,9 +55,6 @@ config:
 
   - |
     cp /debug-only/*.xz '%{install-root}'
-
-  - |
-    cp /debug-tar-only/*.xz '%{install-root}'
 
   - |
     cd "%{install-root}"
