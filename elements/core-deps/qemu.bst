@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: qemu:qemu-8.2.1.tar.xz
-  ref: 8562751158175f9d187c5f22b57555abe3c870f0325c8ced12c34c6d987729be
+  url: qemu:qemu-9.0.0.tar.xz
+  ref: 32708ac66c30d8c892633ea968c771c1c76d597d70ddead21a0d22ccf386da69
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
@@ -72,6 +72,13 @@ variables:
     --host=%{triplet}
     --build=%{triplet}
     %{conf-local}
+
+config:
+  install-commands:
+    (>):
+    # FIXME: we should remove everything we do not support
+    # hppa-firmware*.img cause errors with freedesktop-sdk-stripper.
+    - rm '%{install-root}'/usr/share/qemu/hppa-firmware*.img
 
 public:
   initial-script:
