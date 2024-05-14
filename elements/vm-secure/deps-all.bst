@@ -4,3 +4,4 @@ kind: stack
 
 depends:
 - vm-secure/deps-devel.bst
+- vm-secure/sysupdate-debug-config.bst
