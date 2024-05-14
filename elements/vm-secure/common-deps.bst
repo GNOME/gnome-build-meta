@@ -7,7 +7,6 @@ depends:
 - vm-secure/kernel-modules-only.bst
 - vm-secure/sysupdate-config.bst
 - vm-secure/sysupdate-apparmor-config.bst
-- vm-secure/systemd-sysupdate-component.bst
 - vm-secure/ld-config.bst
 - vm-secure/preset-all.bst
 - vm-secure/import-deployment-pub-key.bst
