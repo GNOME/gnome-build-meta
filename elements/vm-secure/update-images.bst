@@ -14,6 +14,7 @@ build-depends:
   config:
     location: /snapd-only
 - filename: vm-secure/debug-layer-signature.bst
+  strict: true
   config:
     location: /debug-only
 - filename: vm-secure/debug-layer-tar.bst
