@@ -18,6 +18,8 @@ sources:
   path: patches/freedesktop-sdk/0002-components-dracut.bst-backport-patches-needed-by-sys.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-components-linux.bst-strictly-depend-on-linux-module.patch
+- kind: patch
+  path: patches/freedesktop-sdk/drm-i915-module.patch
 
 config:
   options:
