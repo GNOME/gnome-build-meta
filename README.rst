@@ -1,3 +1,7 @@
+.. image:: https://img.shields.io/badge/Release--contents-CVE%20Reports-blue?labelColor=grey&color=green
+   :target: https://gnome.pages.gitlab.gnome.org/gnome-build-meta/release-contents.html
+   :alt: CVE reports
+
 GNOME Build Metadata
 ====================
 
