@@ -10,6 +10,7 @@ depends:
 - freedesktop-sdk.bst:components/podman-config.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/python3-buildstream2.bst
+- freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk.bst:components/vim.bst
 - freedesktop-sdk.bst:components/xmlto.bst
 - sdk-deps/gi-docgen.bst
