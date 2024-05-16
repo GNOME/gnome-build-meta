@@ -6,6 +6,7 @@ depends:
 - core-deps/xvfb.bst
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/podman-config.bst
 - freedesktop-sdk.bst:components/podman.bst
