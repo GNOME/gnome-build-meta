@@ -14,6 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk.bst:components/vim.bst
 - freedesktop-sdk.bst:components/xmlto.bst
+- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - sdk-deps/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
