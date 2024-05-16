@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 46.1-25-g22f67d107dd4fbc605763be4fd7bf42e2a772aba
+  ref: 46.1-32-g0ab5ff6eed7f6cf231f6c4b8aea259f0b9fed521
 
 build-depends:
 - core-deps/xvfb.bst

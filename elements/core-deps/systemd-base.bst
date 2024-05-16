@@ -8,7 +8,7 @@ sources:
 - kind: git_repo
   url: github:systemd/systemd.git
   track: main
-  ref: v256-rc1-434-g82c2214539c9d65c029f4658c9cf2c7be53b9480
+  ref: v256-rc2-25-gb3aa88a475c94948ce106a807d382fa341852c36
 - kind: patch_queue
   path: patches/systemd
 

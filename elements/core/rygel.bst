@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:rygel.git
   track: master
-  ref: shotwell-0.42.6-0-g64a5f90b44bc845a4c59f37cb49d9b7693cde6b5
+  ref: shotwell-0.42.6-1-gb1ed7cc3f557effc269819c4b98f47ea5710bee2
 
 build-depends:
 - sdk/vala.bst

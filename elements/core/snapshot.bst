@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/snapshot.git
   track: main
-  ref: 46.1-40-g06c50304e1f6ab4fef2fb72549943f37e59a6068
+  ref: 46.1-41-gb5ff84cc734641db7760da7bec8a805592c0b1b2
 - kind: cargo
   ref:
   - kind: registry
