@@ -505,8 +505,6 @@ cve_report:
   artifacts:
     paths:
     - $CI_COMMIT_REF_NAME/cve-reports
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
 
 test-s3-image:
   extends:
@@ -621,5 +619,3 @@ pages:
     paths:
     - 'public'
     expire_in: 5 days
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
