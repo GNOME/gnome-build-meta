@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:Incubator/snapshot.git
+  url: gnome:snapshot.git
   track: main
-  ref: 46.1-41-gb5ff84cc734641db7760da7bec8a805592c0b1b2
+  ref: 46.1-42-ge85973930d4126963135b34c40b0df5df077b923
 - kind: cargo
   ref:
   - kind: registry
