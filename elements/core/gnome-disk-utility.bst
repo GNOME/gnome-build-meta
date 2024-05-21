@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-disk-utility.git
   track: main
-  ref: 44.0-130-g74269157fc27b0f8693e4efa4aa7af38d35e8a0d
+  ref: 44.0-215-gcad5784bd6aea2e89bef050b9dae393ce798aab2
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -18,8 +18,8 @@ depends:
 - core/gnome-settings-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/pwquality.bst
