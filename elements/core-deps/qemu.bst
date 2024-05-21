@@ -1,9 +1,10 @@
 kind: autotools
 
+
 sources:
 - kind: tar
   url: qemu:qemu-8.2.3.tar.xz
-  ref: 775b118caa636620a7af4b1a156445a1a280f5ad52b3bcbb17f8e2964841db58
+  ref: dc747fb366809455317601c4876bd1f6829a32a23e83fb76e45ab12c2a569964
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
@@ -24,6 +25,9 @@ depends:
 - freedesktop-sdk.bst:components/sdl2.bst
 - freedesktop-sdk.bst:components/sdl2-image.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+environment:
+  FORCE_REBUILD: "1"
 
 variables:
   (?):
