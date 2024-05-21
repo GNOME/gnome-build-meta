@@ -1,0 +1,91 @@
+From da6bf22f8c24227d086e8b211acb1f8c71e85e55 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Tue, 21 May 2024 22:11:05 +0300
+Subject: [PATCH] Backport gst patch for glib 2.82
+
+https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/6893
+---
+ ...oid-using-bool-for-the-variable-name.patch | 71 +++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+ create mode 100644 patches/gstreamer/0001-tests-check-Avoid-using-bool-for-the-variable-name.patch
+
+diff --git a/patches/gstreamer/0001-tests-check-Avoid-using-bool-for-the-variable-name.patch b/patches/gstreamer/0001-tests-check-Avoid-using-bool-for-the-variable-name.patch
+new file mode 100644
+index 0000000000..5f1de45317
+--- /dev/null
++++ b/patches/gstreamer/0001-tests-check-Avoid-using-bool-for-the-variable-name.patch
+@@ -0,0 +1,71 @@
++From 235b23cc9b162df8968e372db9b2d14367f0f7a4 Mon Sep 17 00:00:00 2001
++From: Jordan Petridis <jordan@centricular.com>
++Date: Tue, 21 May 2024 21:50:47 +0300
++Subject: [PATCH] tests/check: Avoid using "bool" for the variable name
++
++Glib 2.82 will be aliasing [1] TRUE and FALSE to the C99
++definitions, which means it will be including stdbool.h
++
++As such, having variables named "bool" causes issues
++since it conflicts with the symbol defined in stdbool.h
++
++[1] https://gitlab.gnome.org/GNOME/glib/-/merge_requests/4001
++---
++ subprojects/gstreamer/tests/check/gst/gststructure.c | 6 +++---
++ 1 file changed, 3 insertions(+), 3 deletions(-)
++
++diff --git a/subprojects/gstreamer/tests/check/gst/gststructure.c b/subprojects/gstreamer/tests/check/gst/gststructure.c
++index 3c1a17c4b89..80bc05a61b0 100644
++--- a/subprojects/gstreamer/tests/check/gst/gststructure.c
+++++ b/subprojects/gstreamer/tests/check/gst/gststructure.c
++@@ -417,21 +417,21 @@ GST_START_TEST (test_string_properties)
++   gst_structure_free (st2);
++ }
++ 
++ GST_END_TEST;
++ 
++ GST_START_TEST (test_structure_new)
++ {
++   GstStructure *s;
++   GError *e;
++   GQuark domain;
++-  gboolean bool;
+++  gboolean get_bool;
++   gint num, den;
++   GstClockTime clocktime;
++   guint64 uint64;
++ 
++   s = gst_structure_new ("name",
++       "key", G_TYPE_STRING, "value",
++       "bool", G_TYPE_BOOLEAN, TRUE,
++       "fraction", GST_TYPE_FRACTION, 1, 5,
++       "clocktime", GST_TYPE_CLOCK_TIME, GST_CLOCK_TIME_NONE,
++       "uint64", G_TYPE_UINT64, (guint64) 1234, NULL);
++@@ -441,22 +441,22 @@ GST_START_TEST (test_structure_new)
++   gst_structure_set_name (s, "newname");
++   fail_unless (strcmp (gst_structure_get_string (s, "key"), "value") == 0);
++   fail_unless (gst_structure_has_field (s, "key"));
++   fail_unless_equals_int (gst_structure_n_fields (s), 5);
++   /* test removing a field */
++   gst_structure_remove_field (s, "key");
++   fail_if (gst_structure_get_string (s, "key"));
++   fail_if (gst_structure_has_field (s, "key"));
++   fail_unless_equals_int (gst_structure_n_fields (s), 4);
++ 
++-  fail_unless (gst_structure_get_boolean (s, "bool", &bool));
++-  fail_unless (bool);
+++  fail_unless (gst_structure_get_boolean (s, "bool", &get_bool));
+++  fail_unless (get_bool);
++ 
++   fail_unless (gst_structure_get_fraction (s, "fraction", &num, &den));
++   fail_unless_equals_int (num, 1);
++   fail_unless_equals_int (den, 5);
++ 
++   fail_unless (gst_structure_get_clock_time (s, "clocktime", &clocktime));
++   fail_unless_equals_uint64 (clocktime, GST_CLOCK_TIME_NONE);
++ 
++   fail_unless (gst_structure_get_uint64 (s, "uint64", &uint64));
++   fail_unless_equals_uint64 (uint64, 1234);
++-- 
++2.45.1
++
+-- 
+2.44.0
+

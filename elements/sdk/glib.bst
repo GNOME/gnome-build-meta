@@ -25,8 +25,9 @@ depends:
 variables:
   meson-local: >-
     -Ddocumentation=true
+    -Ddtrace=disabled
     -Dinstalled_tests=true
     -Dintrospection=enabled
     -Dselinux=disabled
     -Dsysprof=enabled
-
+    -Dsystemtap=disabled
