@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo.git
   track: master
-  ref: grilo-0.3.16-10-gbcc6c38a66db06c08a97d69414865f72060f6481
+  ref: grilo-0.3.16-11-gb67af974b00e722de60a41b5305ee561157c88da
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
