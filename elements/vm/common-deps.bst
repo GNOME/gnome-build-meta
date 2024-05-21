@@ -14,32 +14,32 @@ depends:
 - vm/flathub-config.bst
 - vm/gnome-nightly-config.bst
 - vm/plymouth-gnome-theme.bst
-- vm/spice-vdagent.bst
+- vm-deps/spice-vdagent.bst
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
 - vm/disable-iscsi.bst
 - vm/journald-config.bst
 - vm/systemd-firstboot-config.bst
 
-- vm/fish.bst
-- vm/nss-mdns.bst
-- vm/opensc.bst
-- vm/uresourced.bst
-- vm/android-udev-rules.bst
-- vm/alsa-ucm-conf.bst
-- vm/fprintd.bst
+- vm-deps/fish.bst
+- vm-deps/nss-mdns.bst
+- vm-deps/opensc.bst
+- vm-deps/uresourced.bst
+- vm-deps/android-udev-rules.bst
+- vm-deps/alsa-ucm-conf.bst
+- vm-deps/fprintd.bst
 - core-deps/boltd.bst
 
-- vm/ibus-anthy.bst
-- vm/ibus-hangul.bst
-- vm/ibus-libpinyin.bst
+- vm-deps/ibus-anthy.bst
+- vm-deps/ibus-hangul.bst
+- vm-deps/ibus-libpinyin.bst
 
-- vm/NetworkManager-openvpn.bst
-- vm/NetworkManager-openconnect.bst
-- vm/NetworkManager-fortisslvpn.bst
-- vm/NetworkManager-vpnc.bst
+- vm-deps/NetworkManager-openvpn.bst
+- vm-deps/NetworkManager-openconnect.bst
+- vm-deps/NetworkManager-fortisslvpn.bst
+- vm-deps/NetworkManager-vpnc.bst
 
-- vm/noto-cjk.bst
+- vm-deps/noto-cjk.bst
 
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst

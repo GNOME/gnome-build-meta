@@ -16,8 +16,8 @@ depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 - vm/plymouth-gnome-theme.bst
 - vm-secure/initramfs/signed-modules.bst
-- vm-secure/efitools-maybe.bst
-- vm-secure/shim-maybe.bst
+- vm-deps/efitools-maybe.bst
+- vm-deps/shim-maybe.bst
 - vm-secure/reload-sysext.bst
 - vm-secure/os-release-user.bst
 - vm-secure/replace-signed-systemd-boot.bst
@@ -26,5 +26,5 @@ depends:
 - arch in ["x86_64"]:
     depends:
       (>):
-      - vm-secure/intel-ucode.bst
+      - vm-deps/intel-ucode.bst
       - vm-secure/initramfs/signed-nvidia-modules.bst

@@ -19,4 +19,4 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:components/gnutls.bst
-- vm/vpnc-scripts.bst
+- vm-deps/vpnc-scripts.bst

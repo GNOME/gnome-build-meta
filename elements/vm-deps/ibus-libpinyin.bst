@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - core-deps/ibus-daemon.bst
-- vm/libpinyin.bst
+- vm-deps/libpinyin.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   conf-local: >-

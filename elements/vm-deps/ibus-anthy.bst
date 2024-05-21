@@ -13,7 +13,7 @@ depends:
 - core-deps/ibus-daemon.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
-- vm/anthy.bst
+- vm-deps/anthy.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

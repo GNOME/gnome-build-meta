@@ -10,5 +10,5 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
-- iso/libisofs.bst
-- iso/libburn.bst
+- iso-deps/libisofs.bst
+- iso-deps/libburn.bst

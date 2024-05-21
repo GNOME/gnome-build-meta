@@ -7,8 +7,8 @@ depends:
 - core-deps/xvfb.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
-- vm/fish.bst
-- vm/git-lfs.bst
+- vm-deps/fish.bst
+- vm-deps/git-lfs.bst
 
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst

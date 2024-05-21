@@ -14,6 +14,6 @@ depends:
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - vm-secure/fwupd-efi-signed-maybe.bst
 - vm-secure/replace-signed-systemd-boot.bst
-- vm-secure/efitools-maybe.bst
+- vm-deps/efitools-maybe.bst
 - vm-secure/reload-sysext.bst
-- vm-secure/mokutil.bst
+- vm-deps/mokutil.bst

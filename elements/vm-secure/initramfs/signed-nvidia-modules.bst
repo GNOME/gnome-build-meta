@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- filename: vm-secure/nvidia-drivers-modules.bst
+- filename: vm-deps/nvidia-drivers-modules.bst
   strict: true
 - freedesktop-sdk.bst:components/sign-file.bst
 

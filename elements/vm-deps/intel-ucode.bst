@@ -7,7 +7,7 @@ sources:
   ref: microcode-20231114-0-gece0d294a29a1375397941a4e6f2f7217910bc89
 
 build-depends:
-- vm-secure/iucode-tool.bst
+- vm-deps/iucode-tool.bst
 
 config:
   build-commands:

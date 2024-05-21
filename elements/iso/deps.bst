@@ -19,6 +19,6 @@ depends:
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
 
-- vm/spice-vdagent.bst
+- vm-deps/spice-vdagent.bst
 
 - vm/os-release-user.bst

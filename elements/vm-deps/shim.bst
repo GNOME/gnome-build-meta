@@ -17,7 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
-- vm-secure/efitools.bst
+- vm-deps/efitools.bst
 
 variables:
   (?):

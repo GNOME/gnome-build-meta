@@ -19,4 +19,4 @@ depends:
 - core-deps/NetworkManager.bst
 
 runtime-depends:
-- vm/vpnc.bst
+- vm-deps/vpnc.bst

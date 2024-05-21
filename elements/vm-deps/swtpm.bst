@@ -10,7 +10,7 @@ build-depends:
 
 depends:
 - sdk/json-glib.bst
-- vm/libtpms.bst
+- vm-deps/libtpms.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/iproute2.bst
 - freedesktop-sdk.bst:components/libseccomp.bst

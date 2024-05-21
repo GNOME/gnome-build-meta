@@ -10,7 +10,7 @@ build-depends:
 
 depends:
 - core-deps/ibus-daemon.bst
-- vm/libhangul.bst
+- vm-deps/libhangul.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 config:

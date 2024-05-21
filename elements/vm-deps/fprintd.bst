@@ -16,13 +16,13 @@ build-depends:
 - core-deps/python-dbusmock.bst
 - sdk/gtk-doc.bst
 - sdk/pygobject.bst
-- vm/pam-wrapper.bst
+- vm-deps/pam-wrapper.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/linux-pam-base.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- vm/libfprint.bst
+- vm-deps/libfprint.bst
 
 variables:
   meson-local: >-

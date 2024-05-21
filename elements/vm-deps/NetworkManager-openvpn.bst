@@ -17,7 +17,7 @@ depends:
 - sdk/libsecret.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
-- vm/openvpn.bst
+- vm-deps/openvpn.bst
 
 config:
   install-commands:

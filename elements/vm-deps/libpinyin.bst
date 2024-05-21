@@ -15,7 +15,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- vm/kyotocabinet.bst
+- vm-deps/kyotocabinet.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

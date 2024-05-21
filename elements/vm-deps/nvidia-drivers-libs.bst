@@ -1,9 +1,9 @@
 kind: filter
 
 build-depends:
-- vm-secure/nvidia-drivers.bst
+- vm-deps/nvidia-drivers.bst
 
 config:
   include:
-  - modules
+  - libs
   include-orphans: false

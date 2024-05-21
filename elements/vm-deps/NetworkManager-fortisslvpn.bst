@@ -13,7 +13,7 @@ depends:
 - sdk/gtk+-3.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
-- vm/openfortivpn.bst
+- vm-deps/openfortivpn.bst
 
 variables:
   conf-local: >-

@@ -16,7 +16,7 @@ depends:
 - sdk/gcr-3.bst
 - sdk/gtk+-3.bst
 - core-deps/NetworkManager.bst
-- vm/openconnect.bst
+- vm-deps/openconnect.bst
 
 config:
   install-commands:

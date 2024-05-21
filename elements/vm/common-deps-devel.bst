@@ -19,8 +19,8 @@ depends:
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
 - sdk.bst
-- vm/deviced.bst
-- vm/distrobox.bst
-- vm/git-lfs.bst
-- vm/swtpm.bst
-- vm/toolbox.bst
+- vm-deps/deviced.bst
+- vm-deps/distrobox.bst
+- vm-deps/git-lfs.bst
+- vm-deps/swtpm.bst
+- vm-deps/toolbox.bst
