@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:rygel.git
   track: master
-  ref: shotwell-0.42.6-1-gb1ed7cc3f557effc269819c4b98f47ea5710bee2
+  ref: shotwell-0.42.6-5-gf9f7f5164dc6be06e85394e851ecc5b917c6288f
 
 build-depends:
 - sdk/vala.bst
@@ -23,4 +23,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dplugins=external,gst-launch,lms,media-export,mpris,playbin,ruih,tracker3
+    -Dplugins=external,gst-launch,media-export,mpris,playbin,ruih,tracker3
