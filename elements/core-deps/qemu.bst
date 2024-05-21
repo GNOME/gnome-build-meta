@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: qemu:qemu-8.2.3.tar.xz
-  ref: 775b118caa636620a7af4b1a156445a1a280f5ad52b3bcbb17f8e2964841db58
+  url: qemu:qemu-8.2.4.tar.xz
+  ref: ecf5537feab92641b99d7482f551f2195d3a5bd34acef9d52bfbff353a607397
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
@@ -15,6 +15,7 @@ depends:
 - core-deps/spice.bst
 - core-deps/usbredir.bst
 - core-deps/virglrenderer.bst
+- freedesktop-sdk.bst:components/dtc.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst
