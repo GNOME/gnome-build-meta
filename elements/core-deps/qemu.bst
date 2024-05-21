@@ -16,6 +16,7 @@ depends:
 - core-deps/usbredir.bst
 - core-deps/virglrenderer.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/dtc.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst
 - freedesktop-sdk.bst:components/libslirp.bst
