@@ -29,13 +29,13 @@ test-s3-image:
     utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
   - |
     echo "$(date -Iseconds): Uncompressing disk image"
-    time unxz --threads 4 /data/factory/hdd/disk.img.xz
+    unxz --threads 4 /data/factory/hdd/disk.img.xz
   - |
     echo "$(date -Iseconds): Calculating checksums of test media"
-    time md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
+    md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
     echo "$(date -Iseconds): Expanding disk image"
-    time utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
+    utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
   - |
     echo "$(date -Iseconds): Setup complete"
   script:
