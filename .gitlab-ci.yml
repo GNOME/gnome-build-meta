@@ -27,12 +27,15 @@ test-s3-image:
     echo "Fetching test media"
     utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
     utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
-    unxz --threads 0 /data/factory/hdd/disk.img.xz
+  - |
+    echo "Uncompressing disk image"
+    time unxz --threads 4 /data/factory/hdd/disk.img.xz
   - |
     echo "Calculating checksums of test media"
-    md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
+    time md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
-    utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
+    echo "Expanding disk image"
+    time utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
   script:
   - |
     rm /etc/openqa/*
