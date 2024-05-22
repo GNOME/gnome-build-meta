@@ -66,6 +66,8 @@ test-s3-image:
   - exit $(cat /tmp/exit_code)
   after_script:
   - |
+    echo "$(date -Iseconds): Tests complete"
+  - |
     if [ ! -e /tmp/exit_code ]; then
         echo "Job creation failed, log below."
         cat openqa.log
