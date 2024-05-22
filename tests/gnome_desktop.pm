@@ -15,8 +15,8 @@ sub post_fail_hook {
     # debugging this kind of thing.
 
     select_console('user-virtio-terminal');
-    assert_script_run('journalctl --merge --output export | xz > /tmp/journal.xz');
-    upload_asset('/tmp/journal.xz', public => 1);
+    assert_script_run('journalctl --merge --output export | xz > /tmp/journal.xz; chmod 777 /tmp/journal.xz');
+    upload_asset('/tmp/journal.xz');
     select_console('x11');
 }
 
