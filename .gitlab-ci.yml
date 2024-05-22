@@ -24,18 +24,20 @@ test-s3-image:
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
   before_script:
   - |
-    echo "Fetching test media"
+    echo "$(date -Iseconds): Fetching test media"
     utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
     utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
   - |
-    echo "Uncompressing disk image"
+    echo "$(date -Iseconds): Uncompressing disk image"
     time unxz --threads 4 /data/factory/hdd/disk.img.xz
   - |
-    echo "Calculating checksums of test media"
+    echo "$(date -Iseconds): Calculating checksums of test media"
     time md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
   - |
-    echo "Expanding disk image"
+    echo "$(date -Iseconds): Expanding disk image"
     time utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
+  - |
+    echo "$(date -Iseconds): Setup complete"
   script:
   - |
     rm /etc/openqa/*
@@ -56,7 +58,7 @@ test-s3-image:
     casedir="$(pwd)"
     utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
   - |
-    echo "Test jobs have been started. To see progress, visit:"
+    echo "$(date -Iseconds): Test jobs have been started. To see progress, visit:"
     for job_id in $(cat /tmp/job_ids); do
       echo "  * $OPENQA_HOST/tests/$job_id"
     done
