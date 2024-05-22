@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:pygobject.git
-  track: master
+  track: main
   ref: 3.48.0-34-g2fbc1d0254f108512963e72dd88657b729228107
 
 build-depends:
