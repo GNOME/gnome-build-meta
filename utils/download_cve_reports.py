@@ -36,7 +36,7 @@ for release in releases:
     except requests.HTTPError:
         print(f"Failed to download artifacts for {branch} release")
         if branch == f"gnome-{data['unstable']}":
-            pass
+            print(f"{branch} is unstable so artifacts may not always be available")
         else:
             sys.exit(1)
 
@@ -46,3 +46,5 @@ for archive in archives:
     with zipfile.ZipFile(archive, "r") as zip_ref:
         zip_ref.extractall(archive_dir)
         shutil.move(archive_dir, "public/")
+
+print("All CVE reports, for the supported release branches, downloaded.")
