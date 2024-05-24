@@ -53,14 +53,10 @@ def main():
 
         for release in release_branches:
             branch = f"gnome-{release}"
-            response = requests.get(
-                f"{GITLAB_PAGES_URL}/{branch}/cve-reports/platform.html", timeout=5
-            )
-            if response.status_code == 200:
-                populate_branch_html(release_contents, branch)
+            populate_branch_html(release_contents, branch)
 
         shutil.move(GITLAB_PAGES_FILENAME, "public/")
-
+        print("Release Contents page has been generated and published.")
 
 if __name__ == "__main__":
     main()
