@@ -2,11 +2,9 @@
 Downloads stable release branch CVE report artifacts.
 """
 
-import glob
-import shutil
+import os
 import sys
 import zipfile
-from os import path
 
 import requests
 
@@ -16,6 +14,8 @@ resp = requests.get(calendar, timeout=20)
 data = resp.json()
 
 releases = [data['unstable'], data['stable'], data['old_stable']]
+branches = []
+
 for release in releases:
     branch = f"gnome-{release}"
     try:
@@ -26,6 +26,8 @@ for release in releases:
         response.raise_for_status()
         with open(f"{branch}.zip", "wb") as f:
             f.write(response.content)
+
+        branches.append(branch)
 
     except requests.exceptions.Timeout:
         print(f"Download of artifacts for {branch}, timed out")
@@ -40,11 +42,9 @@ for release in releases:
         else:
             sys.exit(1)
 
-archives = glob.glob("./*.zip")
-for archive in archives:
-    archive_dir = path.splitext(path.basename(archive))[0]
-    with zipfile.ZipFile(archive, "r") as zip_ref:
+for branch in branches:
+    archive_dir = os.path.join("public", branch)
+    with zipfile.ZipFile(f"{branch}.zip", "r") as zip_ref:
         zip_ref.extractall(archive_dir)
-        shutil.move(archive_dir, "public/")
 
 print("All CVE reports, for the supported release branches, downloaded.")
