@@ -1,9 +1,9 @@
 kind: junction
 sources:
-- kind: git_repo
+- kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  ref-format: git-describe
-  track: freedesktop-sdk-23.08.*
+  track: release/23.08
+  track-tags: true
   ref: freedesktop-sdk-23.08.19-0-gc4a135e4a4dd8fb0d0e0c402a1a4d1a7a39d84b6
 
 config:
