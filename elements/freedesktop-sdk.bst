@@ -1,8 +1,9 @@
 kind: junction
 sources:
-- kind: git_repo
+- kind: git_tag
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-23.08.*
+  track: release/23.08
+  track-tags: true
   ref: freedesktop-sdk-23.08.20-0-g340e8727a724faa0a29a2ab1c452e6a9cb2e7617
 # Replicates functionality found in https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/19389. Patch can be removed once it lands in the freedesktop-sdk used by g-b-m.
 - kind: patch
