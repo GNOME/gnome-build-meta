@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-23-gccf13e82c4746cc5ea401c1f3ff5b108ad321a6f
+  ref: 1.0.1-27-ge8d5544108c0a4af9972ffd6a9883ccff42929e0
 - kind: cargo2
   ref:
   - kind: registry
@@ -459,6 +459,11 @@ sources:
     name: gobject-sys
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
+  - kind: git
+    commit: f6704953eaa3d335fdf27601951c4efc11c53c9a
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-common
+    version: 0.1.0
   - kind: registry
     name: half
     version: 2.3.1
@@ -725,8 +730,8 @@ sources:
     sha: 4c42a9226546d68acdd9c0a280d17ce19bfe27a46bf68784e4066115788d008e
   - kind: registry
     name: paste
-    version: 1.0.14
-    sha: de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c
+    version: 1.0.15
+    sha: 57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a
   - kind: registry
     name: percent-encoding
     version: 2.3.1
@@ -868,6 +873,14 @@ sources:
     version: 0.8.37
     sha: 05aaa8004b64fd573fc9d002f4e632d51ad4f026c2b5ba95fcb6c2f32c2c47d8
   - kind: registry
+    name: rmp
+    version: 0.8.14
+    sha: 228ed7c16fa39782c3b3468e974aec2795e9089153cd08ee2e9aefb3613334c4
+  - kind: registry
+    name: rmp-serde
+    version: 1.3.0
+    sha: 52e599a477cf9840e92f2cde9a7189e67b42c57532749bf90aea6ec10facd4db
+  - kind: registry
     name: rustc-demangle
     version: 0.1.23
     sha: d626bb9dae77e28219937af045c257c28bfd3f69333c512553507f5f9798cb76
@@ -901,12 +914,12 @@ sources:
     sha: 4eb30575f3638fc8f6815f448d50cb1a2e255b0897985c8c59f4d37b72a07b06
   - kind: registry
     name: serde
-    version: 1.0.197
-    sha: 3fb1c873e1b9b056a4dc4c0c198b24c3ffa059243875552b2bd0933b1aee4ce2
+    version: 1.0.203
+    sha: 7253ab4de971e72fb7be983802300c30b5a7f0c2e56fab8abfc6a214307c0094
   - kind: registry
     name: serde_derive
-    version: 1.0.197
-    sha: 7eb0b34b42edc17f6b7cac84a52a1c5f0e1bb2227e997ca9011ea3dd34e8610b
+    version: 1.0.203
+    sha: 500cbc0ebeb6f46627f50f3f5811ccf6bf00643be300b4c3eabc0ef55dc5b5ba
   - kind: registry
     name: serde_repr
     version: 0.1.18
@@ -1251,7 +1264,6 @@ sources:
     name: zvariant_utils
     version: 1.1.0
     sha: 00bedb16a193cc12451873fee2a1bc6550225acece0e36f333e68326c73c8172
-
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
