@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:libjxl/libjxl/archive/refs/tags/v0.9.2.tar.gz
-  ref: bf28e411d84c50578ab74107cdd624e099313129883a43907c261e8116a11b3b
+  url: github_files:libjxl/libjxl/archive/refs/tags/v0.10.2.tar.gz
+  ref: 95e807f63143856dc4d161c071cca01115d2c6405b3d3209854ac6989dc6bb91
 
 build-depends:
 - sdk-deps/highway.bst
