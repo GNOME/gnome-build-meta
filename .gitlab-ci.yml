@@ -50,7 +50,7 @@ default:
   stage: build
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst oci/platform.bst oci/sdk.bst oci/core.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/debug.bst oci/platform.bst oci/sdk.bst)
 
   - |
     case "${ARCH}" in
@@ -385,20 +385,16 @@ cve_report:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst
+  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst
   - ${BST} build freedesktop-sdk.bst:utils/generate-cve-report.bst
 
   - mkdir -p cve manifests/ cve-reports/
   - ${BST} artifact checkout flatpak/platform-manifest.bst --directory manifests/platform
   - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory manifests/sdk
-  - ${BST} artifact checkout vm/manifest-devel.bst --directory manifests/vm
-  - ${BST} artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
 
   - ${GEN_CVE_REPORT} -- update_local_cve_database
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/platform/usr/manifest.json /cve-reports/platform.html
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/sdk/usr/manifest.json /cve-reports/sdk.html
-  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm/usr/manifest.json /cve-reports/vm.html
-  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm-secure/usr/manifest.json /cve-reports/vm-secure.html
   cache:
     key: cve
     paths:
