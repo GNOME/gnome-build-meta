@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gvfs/1.54/gvfs-1.54.0.tar.xz
-  ref: f53d81df86c2e86cdd25182c2d8a669a22371e83623ded1b9d5416dcfc6de366
+  url: gnome_downloads:gvfs/1.54/gvfs-1.54.1.tar.xz
+  ref: ac4a3bccb7fe1502158ef0fde5c979ab44712557d028a8e4f30a29f0fbd9d19f
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

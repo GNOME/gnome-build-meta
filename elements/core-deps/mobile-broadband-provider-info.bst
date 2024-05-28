@@ -1,12 +1,12 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mobile-broadband-provider-info/20230416/mobile-broadband-provider-info-20230416.tar.xz
-  ref: e3e140aa2db769b299d1df86a890e948ab99d4d38831302c452d1fb7f8568aec
+  url: gnome_downloads:mobile-broadband-provider-info/20240407/mobile-broadband-provider-info-20240407.tar.xz
+  ref: 89bfeff215f4bff8e9c3ff2ec25250fdb080d11e9bfa59c6fc71982ac01c814a
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

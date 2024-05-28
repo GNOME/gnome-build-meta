@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:evince/46/evince-46.0.tar.xz
-  ref: aff6af69392c04956bfad976dec5d1583b41d5a334e937995f7c3ca0740de221
+  url: gnome_downloads:evince/46/evince-46.3.tar.xz
+  ref: bc0d1d41b9d7ffc762e99d2abfafacbf745182f0b31d86db5eec8c67f5f3006b
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

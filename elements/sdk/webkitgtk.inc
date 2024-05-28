@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.45.2.tar.xz
-  ref: 0ddbe3541e8cb28e37d226f2cc46ca9c9c47d0524ea12e6c39d7b9c4603a1741
+  url: webkitgtk:webkitgtk-2.44.2.tar.xz
+  ref: 523f42c8ff24832add17631f6eaafe8f9303afe316ef1a7e1844b952a7f7521b
 - kind: patch
   path: patches/webkitgtk/excessive-cpu-usage.patch
 build-depends:

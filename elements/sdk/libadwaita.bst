@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libadwaita/1.5/libadwaita-1.5.0.tar.xz
-  ref: fd92287df9bb95c963654fb6e70d3e082e2bcb37b147e0e3c905567167993783
+  url: gnome_downloads:libadwaita/1.5/libadwaita-1.5.1.tar.xz
+  ref: 7f144c5887d6dd2d99517c00fd42395ee20abc13ce55958a4fda64e6d7e473f8
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/sassc.bst

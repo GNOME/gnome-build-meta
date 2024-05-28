@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:snapshot/46/snapshot-46.2.tar.xz
-  ref: 11fe79a12bb34051e2a279da8c1f454587d011a14fc24237e454c64f44bacf4d
+  url: gnome_downloads:snapshot/46/snapshot-46.3.tar.xz
+  ref: 45957a0415f454d63531491aa04795cee0ced4edddd5d8fa0d000f5ef0735b67
 - kind: cargo
   ref:
   - name: aho-corasick
