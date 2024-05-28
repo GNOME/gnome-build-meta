@@ -481,16 +481,3 @@ test-pinephone-pro-aarch64:
   - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
   needs:
   - job: "pinephone-pro-image"
-
-pages:
-  stage: 'reports'
-  needs:
-  - job: 'cve_report'
-    artifacts: true
-  script:
-  - 'mv cve-reports/ public/'
-  artifacts:
-    paths:
-    - 'public'
-  rules:
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
