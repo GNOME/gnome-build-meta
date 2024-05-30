@@ -32,8 +32,8 @@ To build a runtime locally, for debugging:
   $ flatpak remote-add --user --no-gpg-verify testrepo repo
   $ flatpak install testrepo org.gnome.Platform
 
-GNOME OS (secure boot)
-~~~~~~~~~~~~~~~~~~~~~~
+GNOME OS
+~~~~~~~~
 
 To build the GNOME OS "secure boot" image locally:
 
@@ -45,12 +45,12 @@ To build the GNOME OS "secure boot" image locally:
 2. Build the disk image (first command) or the ISO installer (second command)::
 
       $ bst build vm-secure/image.bst
-      $ bst -o secure_image_installer true build iso/image.bst
+      $ bst build iso/image.bst
 
 3. Checkout the image or installer::
 
       $ bst artifact checkout vm-secure/image.bst --directory ./disk
-      $ bst -o secure_image_installer true artifact checkout iso/image.bst --directory ./iso
+      $ bst artifact checkout iso/image.bst --directory ./iso
 
 OCI Images
 ~~~~~~~~~~

@@ -318,11 +318,9 @@ sysupdate-image-aarch64:
     echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
     export IMAGE_VERSION
 
-  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) -o secure_image_installer true  build vm-secure/image.bst vm-secure/update-images.bst iso/image.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) build vm-secure/update-images.bst
 
-  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory image/
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
-  - ${BST} -o arch "${ARCH}" -o secure_image_installer true artifact checkout --hardlinks iso/image.bst --directory iso/
 
   - |
     if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
@@ -388,6 +386,7 @@ s3-image:
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
+  - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
@@ -397,6 +396,8 @@ s3-image:
     else
         aws s3 cp --acl public-read image/disk.img.xz \
             s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz
+        aws s3 cp --acl public-read secure-image/disk.img.xz \
+            "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}-${ARCH}.img.xz"
         aws s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso
     fi

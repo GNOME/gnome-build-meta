@@ -32,13 +32,6 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         --cache-control max-age=1800 \
         update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
         --exclude "*" --include "SHA256SUMS" --include "SHA256SUMS.gpg"
-
-    if [ -n "${CI_PIPELINE_ID}" ]; then
-        aws s3 cp --acl public-read image/disk.img.xz \
-            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}-${ARCH}.img.xz"
-        aws s3 cp --acl public-read iso/installer.iso \
-            "s3://gnome-build-meta/${target_dir}/${CI_PIPELINE_ID}/gnome_os_sysupdate_installer_${CI_PIPELINE_ID}-${ARCH}.iso"
-    fi
 fi
 
 aws s3 ls --recursive --human-readable s3://gnome-build-meta/
