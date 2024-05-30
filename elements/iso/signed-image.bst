@@ -2,31 +2,25 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
-(?):
-  - secure_image_installer:
-      build-depends:
-        (>):
-        - filename: vm-secure/image.bst
-          config:
-            location: /images
-  - not secure_image_installer:
-      build-depends:
-        (>):
-        - filename: vm/image.bst
-          config:
-            location: /images
+- filename: vm-secure/image.bst
+  config:
+    location: /sysupdate
+- filename: vm/image.bst  
+  config:
+    location: /ostree
 
 variables:
   install-root: /images
   # This name format is required by eos-installer
-  basename: 'GNOMEOS-%{branch}-%{arch}-%{arch}.%{ostree-layer}.base'
+  basename: GNOMEOS-%{branch}-%{arch}-%{arch}.%{ostree-layer}
 
 environment:
   GNUPGHOME: /tmp/gpg
 
 config:
   commands:
-  - mv /images/disk.img.xz "/images/%{basename}.img.xz"
+  - mv /ostree/disk.img.xz "/images/%{basename}.ostree.img.xz"
+  - mv /sysupdate/disk.img.xz "/images/%{basename}.sysupdate.img.xz"
 
   - mkdir "${GNUPGHOME}"
   - |
@@ -48,9 +42,11 @@ config:
     echo "default-key ${default_key}" >${GNUPGHOME}/gpg.conf
 
   - |
-    gpg --batch --yes -sbao \
-      "/images/%{basename}.img.xz.asc" \
-      "/images/%{basename}.img.xz"
+    for image in %{basename}.ostree.img.xz %{basename}.sysupdate.img.xz; do
+      gpg --batch --yes -sbao \
+        "/images/${image}.asc" \
+        "/images/${image}"
+    done
 
   - |
     gpg --export --armor >/tmp/public-key.gpg
@@ -76,7 +72,7 @@ public:
   bst:
     split-rules:
       image:
-      - "/%{basename}.img.xz"
-      - "/%{basename}.img.xz.asc"
+      - "/*.img.xz"
+      - "/*.img.xz.asc"
       keyring:
       - "%{datadir}/keyrings/eos-image-keyring.gpg"
