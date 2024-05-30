@@ -1,0 +1,104 @@
+From a04bd30787a23ce52d90bba8c0acb4f4cd5ab5d5 Mon Sep 17 00:00:00 2001
+From: Carlos Garcia Campos <cgarcia@igalia.com>
+Date: Thu, 30 May 2024 03:22:15 -0700
+Subject: [PATCH] REGRESSION(2.45.1/2.45.2): [GTK] UI process crash in
+ Nicosia::AcceleratedBuffer::~AcceleratedBuffer: Couldn't find current GLX or
+ EGL context https://bugs.webkit.org/show_bug.cgi?id=274389
+
+Reviewed by Miguel Gomez.
+
+The problem is that the scrolling thread is invalidated when the page is
+destroyed after the SkiaAcceleratedBufferPool is destroyed. So, the
+CompositeLayers of the scroling tree nodes can have a reference of a
+Nicosia::AcceleratedBuffer that is destroyed in the async scrolling thread
+with no current GL context. In SkiaAcceleratedBufferPool we make sure to
+make the skia GL context current before destroying the buffers, but
+buffers are only destroyed there if it's the last reference. We should make
+sure that Nicosia::AcceleratedBuffer GL recources are freed in the main
+thread with the skia GL context current on destruction.
+
+* Source/WebCore/platform/graphics/nicosia/NicosiaBuffer.cpp:
+(Nicosia::AcceleratedBuffer::~AcceleratedBuffer):
+* Source/WebCore/platform/graphics/skia/SkiaAcceleratedBufferPool.cpp:
+(WebCore::SkiaAcceleratedBufferPool::releaseUnusedBuffersTimerFired):
+(WebCore::SkiaAcceleratedBufferPool::~SkiaAcceleratedBufferPool): Deleted.
+
+Canonical link: https://commits.webkit.org/279507@main
+---
+ .../graphics/nicosia/NicosiaBuffer.cpp        | 11 ++++++++++-
+ .../skia/SkiaAcceleratedBufferPool.cpp        | 19 ++++---------------
+ 2 files changed, 14 insertions(+), 16 deletions(-)
+
+diff --git a/Source/WebCore/platform/graphics/nicosia/NicosiaBuffer.cpp b/Source/WebCore/platform/graphics/nicosia/NicosiaBuffer.cpp
+index 52a6295cb18d..81fe39df92fa 100644
+--- a/Source/WebCore/platform/graphics/nicosia/NicosiaBuffer.cpp
++++ b/Source/WebCore/platform/graphics/nicosia/NicosiaBuffer.cpp
+@@ -33,6 +33,7 @@
+ 
+ #if USE(SKIA)
+ #include "FontRenderOptions.h"
++#include "GLContext.h"
+ #include "GLFence.h"
+ #include "PlatformDisplay.h"
+ #include <skia/core/SkCanvas.h>
+@@ -43,6 +44,7 @@
+ #include <skia/gpu/ganesh/SkSurfaceGanesh.h>
+ #include <skia/gpu/ganesh/gl/GrGLBackendSurface.h>
+ #include <skia/gpu/ganesh/gl/GrGLDirectContext.h>
++#include <wtf/MainThread.h>
+ 
+ #if USE(LIBEPOXY)
+ #include <epoxy/gl.h>
+@@ -142,7 +144,14 @@ AcceleratedBuffer::AcceleratedBuffer(sk_sp<SkSurface>&& surface, Flags flags)
+     m_surface = WTFMove(surface);
+ }
+ 
+-AcceleratedBuffer::~AcceleratedBuffer() = default;
++AcceleratedBuffer::~AcceleratedBuffer()
++{
++    ensureOnMainThread([surface = WTFMove(m_surface), fence = WTFMove(m_fence)]() mutable {
++        PlatformDisplay::sharedDisplayForCompositing().skiaGLContext()->makeContextCurrent();
++        fence = nullptr;
++        surface = nullptr;
++    });
++}
+ 
+ WebCore::IntSize AcceleratedBuffer::size() const
+ {
+diff --git a/Source/WebCore/platform/graphics/skia/SkiaAcceleratedBufferPool.cpp b/Source/WebCore/platform/graphics/skia/SkiaAcceleratedBufferPool.cpp
+index 5e5b47ec33cd..d7aba0dec7c2 100644
+--- a/Source/WebCore/platform/graphics/skia/SkiaAcceleratedBufferPool.cpp
++++ b/Source/WebCore/platform/graphics/skia/SkiaAcceleratedBufferPool.cpp
+@@ -45,16 +45,7 @@ SkiaAcceleratedBufferPool::SkiaAcceleratedBufferPool()
+ {
+ }
+ 
+-SkiaAcceleratedBufferPool::~SkiaAcceleratedBufferPool()
+-{
+-    if (m_buffers.isEmpty())
+-        return;
+-
+-    if (!PlatformDisplay::sharedDisplayForCompositing().skiaGLContext()->makeContextCurrent())
+-        return;
+-
+-    m_buffers.clear();
+-}
++SkiaAcceleratedBufferPool::~SkiaAcceleratedBufferPool() = default;
+ 
+ RefPtr<Nicosia::Buffer> SkiaAcceleratedBufferPool::acquireBuffer(const IntSize& size, bool supportsAlpha)
+ {
+@@ -106,11 +97,9 @@ void SkiaAcceleratedBufferPool::releaseUnusedBuffersTimerFired()
+     static const Seconds releaseUnusedSecondsTolerance { 3_s };
+     MonotonicTime minUsedTime = MonotonicTime::now() - releaseUnusedSecondsTolerance;
+ 
+-    if (PlatformDisplay::sharedDisplayForCompositing().skiaGLContext()->makeContextCurrent()) {
+-        m_buffers.removeAllMatching([&minUsedTime](const Entry& entry) {
+-            return entry.canBeReleased(minUsedTime);
+-        });
+-    }
++    m_buffers.removeAllMatching([&minUsedTime](const Entry& entry) {
++        return entry.canBeReleased(minUsedTime);
++    });
+ 
+     if (!m_buffers.isEmpty())
+         scheduleReleaseUnusedBuffers();

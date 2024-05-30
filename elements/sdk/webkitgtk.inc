@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.45.3.tar.xz
   ref: 9b5fbfa6c9ddc92508ca9f32cc8aa2e68cf50fcfada8f2f45775d559570713b3
+- kind: patch
+  path: patches/webkitgtk/nicosia-crashes.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
