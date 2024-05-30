@@ -13,8 +13,9 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/gzip.bst
-- freedesktop-sdk.bst:components/linux.bst
 - freedesktop-sdk.bst:components/tar.bst
+- filename: freedesktop-sdk.bst:components/linux.bst
+  strict: true
 
 environment:
   TAR_OPTIONS: >-
