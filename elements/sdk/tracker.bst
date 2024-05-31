@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:tracker.git
-  track: master
-  ref: 3.7.3-13-g1b604f0a437b671ff26f8fda0a2aedc12ef18f1d
+  url: https://gitlab.gnome.org/carlosg/tracker
+  track: wip/rename
+  ref: f19d0947d92c1b1a48c4a0096d7cbb9e3de4e9f5
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
