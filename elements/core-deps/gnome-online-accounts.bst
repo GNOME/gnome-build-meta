@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.49.4-156-ge85a027ebbf1a0095f5ae23010beb5825ead2a30
+  ref: 3.49.4-177-g3fe9f931772212e417d7fd3ca63a7e203f249a16
 
 build-depends:
 - sdk-deps/gi-docgen.bst
@@ -22,3 +22,4 @@ depends:
 - sdk/libsoup.bst
 - sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/keyutils.bst
