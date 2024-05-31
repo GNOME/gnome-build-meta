@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 46.1-53-ga541baa00aad44bea2c7526328571e7484cc5638
+  ref: 46.1-102-g0f30bfdd531ed0e8ed78bda74d51b7f22872a31b
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -12,6 +12,7 @@ sources:
 
 build-depends:
 - sdk-deps/sassc.bst
+- core-deps/jasmine-gjs.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/perl.bst
