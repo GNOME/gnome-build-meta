@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/45/mutter-45.6.tar.xz
-  ref: 6017efe0531b60fbb3c5c334534c596951f0903a75b126feedbb56779b39e149
+  url: gnome_downloads:mutter/45/mutter-45.7.tar.xz
+  ref: 5fa01a100c468efa1ddc232cb3c91865d092760946e3e3c61b2b6cd31f000968
 
 build-depends:
 - core-deps/xvfb.bst
