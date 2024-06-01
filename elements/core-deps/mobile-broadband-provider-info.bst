@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: tar
@@ -6,7 +6,7 @@ sources:
   ref: e3e140aa2db769b299d1df86a890e948ab99d4d38831302c452d1fb7f8568aec
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
