@@ -1,9 +1,9 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.45.3.tar.xz
-  ref: 9b5fbfa6c9ddc92508ca9f32cc8aa2e68cf50fcfada8f2f45775d559570713b3
+  url: webkitgtk:webkitgtk-2.44.2.tar.xz
+  ref: 523f42c8ff24832add17631f6eaafe8f9303afe316ef1a7e1844b952a7f7521b
 - kind: patch
-  path: patches/webkitgtk/nicosia-crashes.patch
+  path: patches/webkitgtk/excessive-cpu-usage.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
