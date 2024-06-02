@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-29-g70c55a1060ac3080ae8b7b93201c9256abf13177
+  ref: 1.0.1-38-g48c1039133d296625aed79cbf5cfe83d44f35347
 - kind: cargo2
   ref:
   - kind: registry
@@ -512,9 +512,14 @@ sources:
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
   - kind: git
-    commit: f6704953eaa3d335fdf27601951c4efc11c53c9a
+    commit: bae0a89920859c657cb971910083acba7b1a7fa8
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-common
+    version: 0.1.0
+  - kind: git
+    commit: bae0a89920859c657cb971910083acba7b1a7fa8
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-exif
     version: 0.1.0
   - kind: registry
     name: half

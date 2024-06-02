@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: freedesktop:cairo/cairo.git
   track: master
-  ref: 1.18.0-80-g01a8ca05185b3d29bfdbce2345bfb2dfb9711051
+  ref: 1.18.0-86-g1193515f5d4fe8099894421df9800c46dad738d9
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
