@@ -9,11 +9,6 @@ variables:
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
   OCI_BRANCH: master
   FLATPAK_BRANCH: master
-  OPENQA_HOST: https://openqa.gnome.org
-  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
-  OPENQA_TESTS_BRANCH: master
-  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
-  OPENQA_NEEDLES_BRANCH: master
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -530,6 +525,12 @@ test-s3-image:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+    OPENQA_HOST: https://openqa.gnome.org
+    OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
+    OPENQA_TESTS_BRANCH: $CI_COMMIT_REF_NAME
+    OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
+    OPENQA_NEEDLES_BRANCH: $CI_COMMIT_REF_NAME
+    OPENQA_PRODUCT_VERSION: $CI_COMMIT_REF_NAME
   needs:
   - job: 's3-image'
     artifacts: false
@@ -572,9 +573,8 @@ test-s3-image:
     openqa/utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &
   - |
-    version="master"
     casedir="$(pwd)/openqa"
-    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
+    openqa/utils/start_all_jobs.sh "${worker_class}" "$OPENQA_PRODUCT_VERSION" "${casedir}" > /tmp/job_ids
   - |
     echo "Test jobs have been started. To see progress, visit:"
     for job_id in $(cat /tmp/job_ids); do
@@ -600,7 +600,7 @@ test-s3-image:
       junit: junit.xml
     expire_in: '1 week'
   rules:
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
   - if: $CI_COMMIT_TAG
 
 test-pinephone-aarch64:
