@@ -39,7 +39,7 @@ install() {
     install_file /usr/lib/${multiarch}/plymouth/renderers/drm.so
     install_file /usr/lib/${multiarch}/plymouth/renderers/frame-buffer.so
     install_files /usr/share/plymouth/themes/spinner/*.png
-    install_file /usr/share/fonts/cantarell/Cantarell-VF.otf
+    install_file /usr/share/fonts/inter/InterVariable.ttf
 
     for unit in "${UNITS[@]}"; do
         install_file "${system}/${unit}"
