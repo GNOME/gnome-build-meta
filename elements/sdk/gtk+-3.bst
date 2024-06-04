@@ -13,6 +13,7 @@ build-depends:
 
 runtime-depends:
 - sdk/cantarell-fonts.bst
+- sdk/inter-font.bst
 
 depends:
 - sdk/at-spi2-core.bst

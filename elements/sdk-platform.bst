@@ -10,6 +10,7 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/cairo.bst
 - sdk/cantarell-fonts.bst
+- sdk/inter-font.bst
 - sdk/enchant-2.bst
 - sdk/fcitx5-gtk.bst
 - sdk/gcab.bst
