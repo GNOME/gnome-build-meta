@@ -449,7 +449,6 @@ ostree-x86_64:
   - job: 'build-x86_64'
     artifacts: false
 
-
 cve_report:
   extends: .x86_64
   variables:
@@ -600,3 +599,49 @@ pages:
     - 'public'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+
+build-element-x86_64:
+  extends:
+    - .x86_64
+  stage: build
+  variables:
+    ELEMENT: "core/gnome-software.bst"
+    INSTALL_DIR: ./install_dir
+  script:
+  - |
+    ELEMENT_NAME=$(basename ${ELEMENT%.*})
+    ${BST} -o arch ${ARCH} artifact checkout --deps=none --directory=${INSTALL_DIR}/${ELEMENT_NAME} ${element}
+  artifacts:
+    paths:
+    - ${INSTALL_DIR}
+    expire_in: '1 day'
+  when: manual
+
+element-sysext-x86_64:
+  extends:
+    - .x86_64
+  stage: deploy
+  # any container image contains python3-pip to install sysext-utils
+  image: quay.io/gnome_infrastructure/gnome-build-meta:core-nightly
+  needs:
+  - job: 'build-element-x86_64'
+    artifacts: true
+  variables:
+    ELEMENT: "core/gnome-software.bst"
+    INSTALL_DIR: ./install_dir
+    SYSEXT_DIR: ./sysext_dir
+  before_script:
+  - git clone --depth=1 --branch v6.1.1 https://github.com/plougher/squashfs-tools.git
+  - make install -C ./squashfs-tools/squashfs-tools
+  - git clone --depth=1 --branch image-utility https://gitlab.gnome.org/tchx84/sysext-utils.git
+  - pip install ./sysext-utils
+  - mkdir -p ${SYSEXT_DIR}
+  script:
+  - |
+    ELEMENT_NAME=$(basename ${ELEMENT%.*})
+    sysext-utils --verbose build --format=compressed --ignore-release --directory ${SYSEXT_DIR} ${ELEMENT_NAME} import ${INSTALL_DIR}/${ELEMENT_NAME} > ${SYSEXT_DIR}/${ELEMENT_NAME}.log
+  artifacts:
+    paths:
+    - ${SYSEXT_DIR}
+    expire_in: '1 day'
+  when: manual
