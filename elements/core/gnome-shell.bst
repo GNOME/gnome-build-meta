@@ -4,11 +4,16 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 46.1-102-g0f30bfdd531ed0e8ed78bda74d51b7f22872a31b
-- kind: git_module
+  ref: 46.1-109-gefbb219338d34085588fa34929bc178ccc177bc5
+# FIXME: Keep this in sync with the repo until we can use wraps as sources
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
+#
+# Shell dropped the git submodule and it's only using the meson wrap now
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/commit/5649ad6752f0d1fa6f9f580d90b3784c699e4a1f
+- kind: git_repo
   url: gnome:libgnome-volume-control.git
-  path: subprojects/gvc
-  ref: 91f3f41490666a526ed78af744507d7ee1134323
+  directory: subprojects/gvc
+  ref: 5f9768a2eac29c1ed56f1fbb449a77a3523683b6
 
 build-depends:
 - sdk-deps/sassc.bst
