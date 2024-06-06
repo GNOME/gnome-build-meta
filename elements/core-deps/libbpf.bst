@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libbpf/libbpf.git
   track: v*
-  ref: v1.4.2-0-g1b357586a7a62db7fe27af4ebe4bdefe6986cfd6
+  ref: v1.4.3-0-gf8c6e0393d4be665fc0b584266b2a1354a71835e
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst

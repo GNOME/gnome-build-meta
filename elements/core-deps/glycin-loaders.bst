@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-38-g48c1039133d296625aed79cbf5cfe83d44f35347
+  ref: 1.0.1-41-g04289d0205255246601c6e2447a9b3ceaa1eedf8
 - kind: cargo2
   ref:
   - kind: registry
@@ -53,12 +53,12 @@ sources:
     sha: f28243a43d821d11341ab73c80bed182dc015c514b951616cf79bd4af39af0c3
   - kind: registry
     name: async-executor
-    version: 1.8.0
-    sha: 17ae5ebefcc48e7452b4987947920dac9450be1110cadf34d1b8c116bdbaf97c
+    version: 1.12.0
+    sha: c8828ec6e544c02b0d6691d21ed9f9218d0384a82542855073c2a3f58304aaf0
   - kind: registry
     name: async-fs
-    version: 2.1.1
-    sha: bc19683171f287921f2405677dd2ed2549c3b3bda697a563ebc3a121ace2aba1
+    version: 2.1.2
+    sha: ebcd09b382f40fcd159c2d695175b2ae620ffa5f3bd6f664131efff4e8b9e04a
   - kind: registry
     name: async-global-executor
     version: 2.4.1
@@ -77,24 +77,24 @@ sources:
     sha: d034b430882f8381900d3fe6f0aaa3ad94f2cb4ac519b429692a1bc2dda4ae7b
   - kind: registry
     name: async-process
-    version: 2.1.0
-    sha: 451e3cf68011bd56771c79db04a9e333095ab6349f7e47592b788e9b98720cc8
+    version: 2.2.2
+    sha: a53fc6301894e04a92cb2584fedde80cb25ba8e02d9dc39d4a87d036e22f397d
   - kind: registry
     name: async-recursion
-    version: 1.0.5
-    sha: 5fd55a5ba1179988837d24ab4c7cc8ed6efdeff578ede0416b4225a5fca35bd0
+    version: 1.1.1
+    sha: 3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11
   - kind: registry
     name: async-signal
     version: 0.2.5
     sha: 9e47d90f65a225c4527103a8d747001fc56e375203592b25ad103e1ca13124c5
   - kind: registry
     name: async-task
-    version: 4.7.0
-    sha: fbb36e985947064623dbd357f727af08ffd077f93d696782f3c56365fa2e2799
+    version: 4.7.1
+    sha: 8b75356056920673b02621b35afd0f7dda9306d03c79a30f5c56c44cf256e3de
   - kind: registry
     name: async-trait
-    version: 0.1.77
-    sha: c980ee35e870bd1a4d2c8294d4c04d0499e67bca1e4b5cefcc693c2fa00caea9
+    version: 0.1.80
+    sha: c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca
   - kind: registry
     name: atomic-waker
     version: 1.1.2
@@ -145,8 +145,8 @@ sources:
     sha: 3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71
   - kind: registry
     name: blocking
-    version: 1.5.1
-    sha: 6a37913e8dc4ddcc604f0c6d3bf2887c995153af3611de9e23c352b44c1b9118
+    version: 1.6.1
+    sha: 703f41c54fc768e63e091340b424302bb1c29ef4aa0c7f10fe849dfb114d29ea
   - kind: registry
     name: built
     version: 0.7.3
@@ -213,8 +213,8 @@ sources:
     sha: 3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b
   - kind: registry
     name: concurrent-queue
-    version: 2.4.0
-    sha: d16048cd947b08fa32c24458a22f5dc5e835264f689f4f5653210c69fd107363
+    version: 2.5.0
+    sha: 4ca0197aee26d1ae37445ee532fefce43251d24cc7c166799f4d46817f1d3973
   - kind: registry
     name: cpufeatures
     version: 0.2.12
@@ -267,10 +267,6 @@ sources:
     name: data-url
     version: 0.3.1
     sha: 5c297a1c74b71ae29df00c3e22dd9534821d60eb9af5a0192823fa2acea70c2a
-  - kind: registry
-    name: derivative
-    version: 2.2.0
-    sha: fcc3dd5e9e9c0b295d6e1e4d811fb6f157d5ffd784b8d202fc62eac8035a770b
   - kind: registry
     name: derive_builder
     version: 0.20.0
@@ -345,8 +341,8 @@ sources:
     sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
   - kind: registry
     name: event-listener
-    version: 5.1.0
-    sha: b7ad6fd685ce13acd6d9541a30f6db6567a7a24c9ffd4ba2955d29e3f22c8b27
+    version: 5.3.0
+    sha: 6d9944b8ca13534cdfb2800775f8dd4902ff3fc75a50101466decadfdf322a24
   - kind: registry
     name: event-listener-strategy
     version: 0.4.0
@@ -907,16 +903,12 @@ sources:
     sha: a41cf62165e97c7f814d2221421dbb9afcbcdb0a88068e5ea206e19951c2cbb5
   - kind: registry
     name: proc-macro-crate
-    version: 1.3.1
-    sha: 7f4c021e1093a56626774e81216a4ce732a735e5bad4868a03f3ed65ca0c3919
-  - kind: registry
-    name: proc-macro-crate
     version: 3.1.0
     sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
   - kind: registry
     name: proc-macro2
-    version: 1.0.78
-    sha: e2422ad645d89c99f8f3e6b88a9fdeca7fabeac836b1002371c4367c8f984aae
+    version: 1.0.84
+    sha: ec96c6a92621310b51366f1e28d05ef11489516e93be030060e5fc12024a49d6
   - kind: registry
     name: profiling
     version: 1.0.15
@@ -935,8 +927,8 @@ sources:
     sha: a993555f31e5a609f617c12db6250dedcac1b0a85076912c436e6fc9b2c8e6a3
   - kind: registry
     name: quote
-    version: 1.0.35
-    sha: 291ec9ab5efd934aaf503a6466c5d5251535d108ee747472c3977cc5acc868ef
+    version: 1.0.36
+    sha: 0fa76aaf39101c457836aec0ce2316dbdc3ab723cdda1c6bd4e6ad4208acaca7
   - kind: registry
     name: rand
     version: 0.8.5
@@ -1043,8 +1035,8 @@ sources:
     sha: 500cbc0ebeb6f46627f50f3f5811ccf6bf00643be300b4c3eabc0ef55dc5b5ba
   - kind: registry
     name: serde_repr
-    version: 0.1.18
-    sha: 0b2e6b945e9d3df726b65d6ee24060aff8e3533d431f677a9695db04eff9dfdb
+    version: 0.1.19
+    sha: 6c64451ba24fc7a6a2d60fc75dd9c83c90903b19028d4eff35e88fc1e86564e9
   - kind: registry
     name: serde_spanned
     version: 0.6.5
@@ -1123,8 +1115,8 @@ sources:
     sha: 72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237
   - kind: registry
     name: syn
-    version: 2.0.50
-    sha: 74f1bdc9872430ce9b75da68329d1c1746faf50ffac5f19e02b71e37ff881ffb
+    version: 2.0.66
+    sha: c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5
   - kind: registry
     name: system-deps
     version: 6.2.0
@@ -1163,8 +1155,8 @@ sources:
     sha: 1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20
   - kind: registry
     name: tokio
-    version: 1.36.0
-    sha: 61285f6515fa018fb2d1e46eb21223fff441ee8db5d0f1435e8ab4f5cdb80931
+    version: 1.37.0
+    sha: 1adbebffeca75fcfd058afa480fb6c0b81e165a0323f9c9d39c9697e37c46787
   - kind: registry
     name: toml
     version: 0.8.10
@@ -1173,10 +1165,6 @@ sources:
     name: toml_datetime
     version: 0.6.5
     sha: 3550f4e9685620ac18a50ed434eb3aec30db8ba93b0287467bca5826ea25baf1
-  - kind: registry
-    name: toml_edit
-    version: 0.19.15
-    sha: 1b5bb770da30e5cbfde35a2d7b9b8a2c4b8ef89548a7a6aeab5c9a576e3e7421
   - kind: registry
     name: toml_edit
     version: 0.21.1
@@ -1385,18 +1373,21 @@ sources:
     name: xml5ever
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
-  - kind: registry
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zbus
-    version: 4.1.2
-    sha: c9ff46f2a25abd690ed072054733e0bc3157e3d4c45f41bd183dce09c2ff8ab9
-  - kind: registry
+    version: 4.2.2
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zbus_macros
-    version: 4.1.2
-    sha: 4e0e3852c93dcdb49c9462afe67a2a468f7bd464150d866e861eaf06208633e0
-  - kind: registry
+    version: 4.2.2
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zbus_names
     version: 3.0.0
-    sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
   - kind: registry
     name: zune-core
     version: 0.4.12
@@ -1409,18 +1400,21 @@ sources:
     name: zune-jpeg
     version: 0.4.11
     sha: ec866b44a2a1fd6133d363f073ca1b179f438f99e7e5bfb1e33f7181facfe448
-  - kind: registry
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zvariant
-    version: 4.0.0
-    sha: 4e09e8be97d44eeab994d752f341e67b3b0d80512a8b315a0671d47232ef1b65
-  - kind: registry
+    version: 4.1.1
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zvariant_derive
-    version: 4.0.0
-    sha: 72a5857e2856435331636a9fbb415b09243df4521a267c5bedcd5289b4d5799e
-  - kind: registry
+    version: 4.1.1
+  - kind: git
+    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
+    repo: https://github.com/dbus2/zbus.git
     name: zvariant_utils
-    version: 1.1.0
-    sha: 00bedb16a193cc12451873fee2a1bc6550225acece0e36f333e68326c73c8172
+    version: 2.0.0
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
