@@ -45,7 +45,27 @@ default:
   # Setup certificate for pushing to the cache
   - echo "$CASD_CLIENT_CERT" > client.crt
   - echo "$CASD_CLIENT_KEY" > client.key
-  - make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+
+  # Setup certificates and image version for sysupdate
+  - |
+    if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+      make -C files/boot-keys generate-keys IMPORT_MODE=import
+    else
+      make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+    fi
+
+  - |
+    build_num="${CI_PIPELINE_ID}"
+    if [ "${CI_COMMIT_BRANCH-}" = master ]; then
+      IMAGE_VERSION="nightly.$build_num"
+    else
+      # Assume this will always be a stable branch string like "gnome-44"
+      IMAGE_VERSION=$(echo "${CI_COMMIT_REF_SLUG:-unknown}.$build_num" | sed "s/-/_/g")
+    fi
+
+    echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
+    export IMAGE_VERSION
+
 
   retry:
     max: 2
@@ -277,24 +297,6 @@ sysupdate-image-aarch64:
     allow_failure: true
   stage: deploy
   script:
-  - |
-    if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-      make -C files/boot-keys clean
-      make -C files/boot-keys generate-keys IMPORT_MODE=import
-    fi
-
-  - |
-    build_num="${CI_PIPELINE_ID}"
-    if [ "${CI_COMMIT_BRANCH-}" = master ]; then
-      IMAGE_VERSION="nightly.$build_num"
-    else
-      # Assume this will always be a stable branch string like "gnome-44"
-      IMAGE_VERSION=$(echo "${CI_COMMIT_REF_SLUG:-unknown}.$build_num" | sed "s/-/_/g")
-    fi
-
-    echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
-    export IMAGE_VERSION
-
   - ${BST_NO_PUSH} -o arch "${ARCH}" --max-jobs $(( $(nproc) / 4 )) build vm-secure/update-images.bst
 
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
