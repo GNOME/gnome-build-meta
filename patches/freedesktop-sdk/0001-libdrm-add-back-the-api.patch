@@ -1,34 +1,16 @@
-From a7fa2ab83094b7b25ac8b3afc29710858cb309a6 Mon Sep 17 00:00:00 2001
-From: Jordan Petridis <jpetridis@gnome.org>
-Date: Tue, 19 Mar 2024 14:15:36 +0200
-Subject: [PATCH] libdrm: add back the api
-
----
- elements/components/libdrm.bst               |  2 -
- patches/libdrm/libdrm-do-not-break-abi.patch | 46 --------------------
- 2 files changed, 48 deletions(-)
- delete mode 100644 patches/libdrm/libdrm-do-not-break-abi.patch
-
 diff --git a/elements/components/libdrm.bst b/elements/components/libdrm.bst
-index e33c60df1f..5b2f962e37 100644
+index 8ae762eb2..5965a148f 100644
 --- a/elements/components/libdrm.bst
 +++ b/elements/components/libdrm.bst
-@@ -50,12 +50,10 @@ public:
-     split-rules:
-       devel:
-         (>):
-         - '%{libdir}/libdrm.so'
- 
- sources:
- - kind: git_repo
+@@ -57,5 +57,3 @@ sources:
    url: freedesktop:mesa/drm.git
-   ref: libdrm-2.4.120-0-g75254bf2390c10644ffb35a90fc8f18f196f9f0c
+   ref: libdrm-2.4.121-0-g70c4f836ccffa972978bc58c9cc0434f85984be8
    track: libdrm-*
 -- kind: patch
 -  path: patches/libdrm/libdrm-do-not-break-abi.patch
 diff --git a/patches/libdrm/libdrm-do-not-break-abi.patch b/patches/libdrm/libdrm-do-not-break-abi.patch
 deleted file mode 100644
-index 7cf7b7aef3..0000000000
+index 7cf7b7aef..000000000
 --- a/patches/libdrm/libdrm-do-not-break-abi.patch
 +++ /dev/null
 @@ -1,46 +0,0 @@
@@ -78,6 +60,3 @@ index 7cf7b7aef3..0000000000
 - {
 - 	struct drm_mode_closefb closefb;
 - 
--- 
-2.44.0
-

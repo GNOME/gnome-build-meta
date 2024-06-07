@@ -4,12 +4,11 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08.*
-  ref: freedesktop-sdk-23.08.19-0-gc4a135e4a4dd8fb0d0e0c402a1a4d1a7a39d84b6
+  ref: freedesktop-sdk-23.08.20-0-g340e8727a724faa0a29a2ab1c452e6a9cb2e7617
 - kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
 - kind: patch
-  path: 
-    patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
+  path: patches/freedesktop-sdk/0001-gstreamer-Backport-meson-patch-for-the-rsvg-element.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-libdrm-add-back-the-api.patch
 - kind: patch
