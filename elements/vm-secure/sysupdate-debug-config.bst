@@ -5,4 +5,4 @@ sources:
   path: files/sysupdate-debug/gnomeos-debug.conf
 
 config:
-  target: "%{sysupdatedir}"
+  target: /usr/lib/sysregistry.d

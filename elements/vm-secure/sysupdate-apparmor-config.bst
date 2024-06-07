@@ -5,6 +5,6 @@ sources:
   path: files/sysupdate-apparmor/gnomeos-kernel-apparmor.conf
 
 config:
-  # This will be shipped in `/usr/share/factory/etc` and will
-  # need to be manually enabled
-  target: "%{sysconfdir}/sysupdate.d"
+  # This is an optional extension, which will need to be manually
+  # enabled by symlinking the config. into `sysupdate.d`
+  target: /usr/lib/sysregistry.d

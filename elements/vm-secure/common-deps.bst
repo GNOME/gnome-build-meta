@@ -7,6 +7,9 @@ depends:
 - vm-secure/kernel-modules-only.bst
 - vm-secure/sysupdate-config.bst
 - vm-secure/sysupdate-apparmor-config.bst
+- vm-secure/sysupdate-debug-config.bst
+- vm-secure/sysupdate-devel-config.bst
+- vm-secure/sysupdate-snapd-config.bst
 - vm-secure/ld-config.bst
 - vm-secure/preset-all.bst
 - vm-secure/import-deployment-pub-key.bst
@@ -17,3 +20,9 @@ depends:
 - vm-deps/efitools-maybe.bst
 - vm-secure/reload-sysext.bst
 - vm-deps/mokutil.bst
+
+(?):
+- arch in ["x86_64"]:
+    depends:
+      (>):
+      - vm-secure/sysupdate-nvidia-config.bst
