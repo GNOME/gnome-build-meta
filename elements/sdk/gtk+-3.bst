@@ -19,7 +19,7 @@ depends:
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/pango.bst
-- sdk/tracker.bst
+- sdk/tinysparql.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/cups.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst

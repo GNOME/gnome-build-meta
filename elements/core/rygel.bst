@@ -18,7 +18,7 @@ depends:
 - core-deps/gupnp.bst
 - core-deps/libmediaart.bst
 - sdk/libgee.bst
-- sdk/tracker.bst
+- sdk/tinysparql.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:

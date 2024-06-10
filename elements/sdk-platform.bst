@@ -47,7 +47,7 @@ depends:
 - sdk/pango.bst
 - sdk/pinentry.bst
 - sdk/pygobject.bst
-- sdk/tracker.bst
+- sdk/tinysparql.bst
 - sdk/webkit2gtk-4.1.bst
 - sdk/webkitgtk-6.0.bst
 - sdk/webp-pixbuf-loader.bst

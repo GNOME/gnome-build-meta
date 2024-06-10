@@ -21,5 +21,5 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/pygobject.bst
-- sdk/tracker.bst
+- sdk/tinysparql.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

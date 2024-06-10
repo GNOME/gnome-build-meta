@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:tracker.git
-  track: master
+  url: gnome:tinysparql.git
+  track: main
   ref: 3.7.3-45-g2545f05c1dc23e33a102ae5b9298622687d49932
 - kind: git_module
   url: gnome:gvdb.git
