@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: git_repo
-  url: gnome:tracker-miners.git
-  track: master
+  url: gnome:localsearch.git
+  track: main
   ref: 3.7.3-36-g519ae49d8e4df7e8e5f66cf161460e7cce90571b
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst

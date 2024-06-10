@@ -12,7 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/tracker-miners.bst
+- core-deps/localsearch.bst
 - sdk/adwaita-icon-theme.bst
 
 depends:

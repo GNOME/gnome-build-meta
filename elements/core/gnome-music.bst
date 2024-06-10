@@ -15,7 +15,7 @@ depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
 - core-deps/libmediaart.bst
-- core-deps/tracker-miners.bst
+- core-deps/localsearch.bst
 - core/gvfs-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk.bst
