@@ -10,6 +10,9 @@ depends:
 - vm-deps/fish.bst
 - vm-deps/git-lfs.bst
 
+# Useful utilities for building extensions in CI
+- core-deps/sysext-utils.bst
+
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
