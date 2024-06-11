@@ -4,9 +4,9 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
+- core-deps/sysext-utils.bst
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/podman-config.bst
 - freedesktop-sdk.bst:components/podman.bst
@@ -14,7 +14,6 @@ depends:
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk.bst:components/vim.bst
 - freedesktop-sdk.bst:components/xmlto.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - sdk-deps/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
