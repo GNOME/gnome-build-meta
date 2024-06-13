@@ -1,7 +1,7 @@
-From 3e7434d7722454eb4b93c4ffb7d0279f1de9366a Mon Sep 17 00:00:00 2001
+From 5d38e18ecc573818bd7649b21c5e36d5d3c5853f Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Wed, 19 Jul 2023 17:55:18 -0400
-Subject: [PATCH 7/9] sysupdate: Split reboot_now into utils
+Subject: [PATCH 7/8] sysupdate: Split reboot_now into utils
 
 This will let us reuse reboot_now in updatectl
 ---
@@ -68,7 +68,7 @@ index 0000000000..fdd6c8318e
 +
 +int reboot_now(void);
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 4ee7a2032d..e7f837c2c1 100644
+index b33a8cddf4..4c844cffed 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
 @@ -4,8 +4,6 @@
@@ -100,7 +100,7 @@ index 4ee7a2032d..e7f837c2c1 100644
  #include "terminal-util.h"
  #include "utf8.h"
  #include "verbs.h"
-@@ -880,23 +878,6 @@ static int context_apply(
+@@ -886,23 +884,6 @@ static int context_apply(
          return 1;
  }
  

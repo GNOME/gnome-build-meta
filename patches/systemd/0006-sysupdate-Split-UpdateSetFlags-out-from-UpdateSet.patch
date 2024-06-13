@@ -1,7 +1,7 @@
-From 38e24ba75cbc1e8538e1c57b6db7cf407842670c Mon Sep 17 00:00:00 2001
+From 1dc6efcb1b94bc89995e9f281a4c31b1dd37b408 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 13 Jul 2023 14:47:30 -0400
-Subject: [PATCH 6/9] sysupdate: Split UpdateSetFlags out from UpdateSet
+Subject: [PATCH 6/8] sysupdate: Split UpdateSetFlags out from UpdateSet
 
 This will let us reuse UpdateSetFlags in updatectl
 ---
@@ -229,10 +229,10 @@ index 5dd94bce41..0b9bbfbe67 100644
 -const char *update_set_flags_to_color(UpdateSetFlags flags);
 -const char *update_set_flags_to_glyph(UpdateSetFlags flags);
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 9d3d2c5f8b..4ee7a2032d 100644
+index b4bb2a7f20..b33a8cddf4 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
-@@ -380,60 +380,6 @@ static int context_discover_update_sets(Context *c) {
+@@ -381,60 +381,6 @@ static int context_discover_update_sets(Context *c) {
          return 0;
  }
  
