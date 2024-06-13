@@ -45,3 +45,25 @@ config:
       for conffile in `find gdm-config/ -name "*.pam"`; do
         install -m 644 $conffile %{install-root}%{pamdir}/$(basename ${conffile%.pam})
       done
+
+public:
+  bst:
+    integration-commands:
+    - |
+      cat > /etc/gdm/custom.conf <<EOF
+      # GDM configuration storage
+
+      [daemon]
+      # Uncomment the line below to force the login screen to use Xorg
+      #WaylandEnable=false
+
+      [security]
+
+      [xdmcp]
+
+      [chooser]
+
+      [debug]
+      # YES to debug! We are trying to solve openqa-tests issue 62!
+      Enable=true
+      EOF
