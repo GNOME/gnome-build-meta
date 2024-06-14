@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 46.0-214-g9edcd430c3ddc9f1cbc0708f25eabb2f63e3b452
+  ref: 46.0-223-g25f445f4d7f38f501090cca88566ffd319d69463
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/localsearch.bst
 - sdk/adwaita-icon-theme.bst
 
 depends:
@@ -20,6 +19,8 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/libcloudproviders.bst
 - core-deps/libportal.bst
+# Build dep of tests, and runtime dep otherwise
+- core-deps/localsearch.bst
 - core/gnome-desktop.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
