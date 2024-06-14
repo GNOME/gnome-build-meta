@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-software.git
   track: main
-  ref: 46.0-411-g798445bd9f152f428c3593a0e65372278021579b
+  ref: 46.0-450-gf9ff9c3a2b1abe64e22d0af906c0121dc2ee6f2e
 - kind: git_module
   url: gnome_gitlab:mwleeds/gnome-pwa-list.git
   path: subprojects/gnome-pwa-list
@@ -14,6 +14,7 @@ build-depends:
 - core-deps/eos-updater.bst
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
