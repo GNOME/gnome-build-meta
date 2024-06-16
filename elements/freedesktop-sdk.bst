@@ -18,8 +18,6 @@ sources:
 - kind: patch
   path: patches/freedesktop-sdk/0001-components-linux.bst-strictly-depend-on-linux-module.patch
 - kind: patch
-  path: patches/freedesktop-sdk/0001-components-wayland.bst-update-to-1.23.patch
-- kind: patch
   path: patches/freedesktop-sdk/drm-i915-module.patch
 - kind: patch
   path: patches/freedesktop-sdk/0001-Backport-gst-patch-for-glib-2.82.patch
