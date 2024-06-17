@@ -637,6 +637,7 @@ def inherit_package(config, workspace_config):
 
             items[key] = workspace_value
 
+
 # inherit_lints()
 #
 # Inherits lints from the workspace. Lints are either completely overwritten by
@@ -647,9 +648,10 @@ def inherit_package(config, workspace_config):
 #    config (dict): The crate config
 #    workspace_config (dict): The workspace config
 def inherit_lints(config, workspace_config):
-    if config.get('lints', {}).get('workspace'):
-        if workspace_config.get('lints'):
-            config['lints'] = workspace_config.get('lints')
+    if config.get("lints", {}).get("workspace"):
+        if workspace_config.get("lints"):
+            config["lints"] = workspace_config.get("lints")
+
 
 # inherit_deps()
 #
