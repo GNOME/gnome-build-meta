@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-41-g04289d0205255246601c6e2447a9b3ceaa1eedf8
+  ref: 1.0.1-78-g98c7774bae0d3d9d193e793bb09daa1e02409f3e
 - kind: cargo2
   ref:
   - kind: registry
@@ -175,10 +175,24 @@ sources:
     name: cairo-rs
     version: 0.19.2
     sha: 2650f66005301bd33cc486dec076e1293c4cecf768bc7ba9bf5d2b1be339b99c
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: cairo-rs
+    version: 0.20.0
   - kind: registry
     name: cairo-sys-rs
     version: 0.19.2
     sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: cairo-sys-rs
+    version: 0.20.0
   - kind: registry
     name: cast
     version: 0.3.0
@@ -443,22 +457,34 @@ sources:
     name: fxhash
     version: 0.2.1
     sha: c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c
-  - kind: registry
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: gdk-pixbuf
-    version: 0.19.2
-    sha: f6a23f8a0b5090494fd04924662d463f8386cc678dd3915015a838c1a3679b92
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: gdk-pixbuf-sys
-    version: 0.19.0
-    sha: 3dcbd04c1b2c4834cc008b4828bc917d062483b88d26effde6342e5622028f96
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: d1c8a6fedad4d21dfbdb09abe607bf1875cada7e
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4
-    version: 0.8.0
-    sha: 6771942f85a2beaa220c64739395e4401b9fab4a52aba9b503fa1e6ed4d4d806
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: d1c8a6fedad4d21dfbdb09abe607bf1875cada7e
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-sys
-    version: 0.8.0
-    sha: 1eb95854fab65072023a7814434f003db571d6e45c287c0b0c540c1c78bdf6ae
+    version: 0.9.0
   - kind: registry
     name: generic-array
     version: 0.14.7
@@ -481,24 +507,59 @@ sources:
     sha: 4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253
   - kind: registry
     name: gio
-    version: 0.19.2
-    sha: 2eae10b27b6dd27e22ed0d812c6387deba295e6fc004a8b379e459b663b05a02
+    version: 0.19.5
+    sha: be548be810e45dd31d3bbb89c6210980bb7af9bca3ea1292b5f16b75f8e394a7
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gio
+    version: 0.20.0
   - kind: registry
     name: gio-sys
     version: 0.19.0
     sha: bcf8e1d9219bb294636753d307b030c1e8a032062cba74f493c431a5c8b81ce4
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gio-sys
+    version: 0.20.0
   - kind: registry
     name: glib
     version: 0.19.2
     sha: ab9e86540b5d8402e905ad4ce7d6aa544092131ab564f3102175af176b90a053
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib
+    version: 0.20.0
   - kind: registry
     name: glib-macros
     version: 0.19.2
     sha: 0f5897ca27a83e4cdc7b4666850bade0a2e73e17689aabafcc9acddad9d823b8
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib-macros
+    version: 0.20.0
   - kind: registry
     name: glib-sys
     version: 0.19.0
     sha: 630f097773d7c7a0bb3258df4e8157b47dc98bbfa0e60ad9ab56174813feced4
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib-sys
+    version: 0.20.0
   - kind: registry
     name: glob
     version: 0.3.1
@@ -508,14 +569,26 @@ sources:
     version: 0.19.0
     sha: c85e2b1080b9418dd0c58b498da3a5c826030343e0ef07bde6a955d28de54979
   - kind: git
-    commit: bae0a89920859c657cb971910083acba7b1a7fa8
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gobject-sys
+    version: 0.20.0
+  - kind: git
+    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-common
     version: 0.1.0
   - kind: git
-    commit: bae0a89920859c657cb971910083acba7b1a7fa8
+    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-exif
+    version: 0.1.0
+  - kind: git
+    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-jpeg
     version: 0.1.0
   - kind: registry
     name: half
@@ -529,6 +602,14 @@ sources:
     name: heck
     version: 0.4.1
     sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
+  - kind: registry
+    name: heck
+    version: 0.5.0
+    sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
+  - kind: registry
+    name: hermit-abi
+    version: 0.3.9
+    sha: d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024
   - kind: registry
     name: hex
     version: 0.4.3
@@ -627,8 +708,8 @@ sources:
     sha: a96cfd5557eb82f2b83fed4955246c988d331975a002961b07c81584d107e7f7
   - kind: registry
     name: libheif-rs
-    version: 1.0.0
-    sha: fc66735697217d6676b6fe89b33cbd0e7c580e5beffbc3861bdf42eb1ce1aa70
+    version: 1.0.2
+    sha: 40c32c0a0c970782707070f11c8612bced800b916af4ddaf6229161dc3ceb907
   - kind: registry
     name: libheif-sys
     version: 2.1.0+1.17.4
@@ -691,8 +772,8 @@ sources:
     sha: 8ea1f30cedd69f0a2954655f7188c6a834246d2bcf1e315e2ac40c4b24dc9519
   - kind: registry
     name: memchr
-    version: 2.7.1
-    sha: 523dc4f511e55ab87b694dc30d0f820d60906ef06413f93d4d7a1385599cc149
+    version: 2.7.2
+    sha: 6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d
   - kind: registry
     name: memfd
     version: 0.6.4
@@ -774,6 +855,10 @@ sources:
     version: 0.2.18
     sha: da0df0e5185db44f69b44f26786fe401b6c293d1907744beaa7fa62b2e5a517a
   - kind: registry
+    name: num_cpus
+    version: 1.16.0
+    sha: 4161fcb6d602d4d2081af7c3a45852d875a03dd337a6bfdd6e06407b61342a43
+  - kind: registry
     name: objc
     version: 0.2.7
     sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
@@ -801,10 +886,24 @@ sources:
     name: pango
     version: 0.19.2
     sha: 7809e8af4df8d024a066106b72ca6bc7253a484ae3867041a96103ef8a13188d
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: pango
+    version: 0.20.0
   - kind: registry
     name: pango-sys
     version: 0.19.0
     sha: f52ef6a881c19fbfe3b1484df5cad411acaaba29dbec843941c3110d19f340ea
+  - kind: git
+    commit: bfbba2af8d2c1f09134919d378ea833caff32b4b
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: pango-sys
+    version: 0.20.0
   - kind: registry
     name: pangocairo
     version: 0.19.2
@@ -1158,6 +1257,10 @@ sources:
     version: 1.37.0
     sha: 1adbebffeca75fcfd058afa480fb6c0b81e165a0323f9c9d39c9697e37c46787
   - kind: registry
+    name: tokio-stream
+    version: 0.1.15
+    sha: 267ac89e0bec6e691e5813911606935d77c476ff49024f98abcea3e7b15e37af
+  - kind: registry
     name: toml
     version: 0.8.10
     sha: 9a9aad4a3066010876e8dcf5a8a06e70a558751117a145c6ce2b82c2e2054290
@@ -1373,21 +1476,18 @@ sources:
     name: xml5ever
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+  - kind: registry
     name: zbus
-    version: 4.2.2
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+    version: 4.3.0
+    sha: 23915fcb26e7a9a9dc05fd93a9870d336d6d032cd7e8cebf1c5c37666489fdd5
+  - kind: registry
     name: zbus_macros
-    version: 4.2.2
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+    version: 4.3.0
+    sha: 02bcca0b586d2f8589da32347b4784ba424c4891ed86aa5b50d5e88f6b2c4f5d
+  - kind: registry
     name: zbus_names
     version: 3.0.0
+    sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
   - kind: registry
     name: zune-core
     version: 0.4.12
@@ -1400,21 +1500,18 @@ sources:
     name: zune-jpeg
     version: 0.4.11
     sha: ec866b44a2a1fd6133d363f073ca1b179f438f99e7e5bfb1e33f7181facfe448
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+  - kind: registry
     name: zvariant
     version: 4.1.1
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+    sha: 9aa6d31a02fbfb602bfde791de7fedeb9c2c18115b3d00f3a36e489f46ffbbc7
+  - kind: registry
     name: zvariant_derive
     version: 4.1.1
-  - kind: git
-    commit: 872d60debb471cd4477fb7e4777a5f458460cd96
-    repo: https://github.com/dbus2/zbus.git
+    sha: 642bf1b6b6d527988b3e8193d20969d53700a36eac734d21ae6639db168701c8
+  - kind: registry
     name: zvariant_utils
     version: 2.0.0
+    sha: fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
