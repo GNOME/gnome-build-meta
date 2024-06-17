@@ -4,14 +4,14 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 46.rc-88-gdfd74b060f33a8665e370347dfa15dc8581c3ab8
+  ref: 46.rc-92-g92c1751887f918f545ce31786b3d5e940d5ab2d4
 - kind: cargo2
 
   ref:
   - kind: registry
     name: addr2line
-    version: 0.21.0
-    sha: 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
+    version: 0.22.0
+    sha: 6e4503c46a5c0c7844e948c9a4d6acd9f50cccb4de1c48eb9e291ea17470c678
   - kind: registry
     name: adler
     version: 1.0.2
@@ -34,8 +34,8 @@ sources:
     sha: c03a11a9034d92058ceb6ee011ce58af4a9bf61491aa7e1e59ecd24bd40d22d4
   - kind: registry
     name: anstyle-query
-    version: 1.0.3
-    sha: a64c907d4e79225ac72e2a354c9ce84d50ebb4586dee56c82b3ee73004f537f5
+    version: 1.1.0
+    sha: ad186efb764318d35165f1758e7dcef3b10628e26d41a44bc5550652e6804391
   - kind: registry
     name: anstyle-wincon
     version: 3.0.3
@@ -48,22 +48,25 @@ sources:
     name: arc-swap
     version: 1.7.1
     sha: 69f7f8c3906b62b754cd5326047894316021dcfe5a194c8ea52bdd94934a3457
-  - kind: registry
+  - kind: git
+    commit: 8c147159f4de1d2e7c8fee8f040810509f218ed3
+    repo: https://github.com/sophie-h/ashpd.git
+    query:
+      branch: wip/sophie-h/gtk-rs-0.20
     name: ashpd
-    version: 0.8.1
-    sha: dd884d7c72877a94102c3715f3b1cd09ff4fac28221add3e57cfbe25c236d093
+    version: 0.9.0
   - kind: registry
     name: async-broadcast
-    version: 0.7.0
-    sha: 258b52a1aa741b9f09783b2d86cf0aeeb617bbf847f6933340a39644227acbdb
+    version: 0.7.1
+    sha: 20cd0e2e25ea8e5f7e9df04578dc6cf5c83577fd09b1a46aaf5c85e1c33f2a7e
   - kind: registry
     name: async-channel
     version: 2.3.1
     sha: 89b47800b0be77592da0afd425cc03468052844aff33b84e33cc696f64e77b6a
   - kind: registry
     name: async-executor
-    version: 1.11.0
-    sha: b10202063978b3351199d68f8b22c4e47e4b1b822f8d43fd862d5ea8c006b29a
+    version: 1.12.0
+    sha: c8828ec6e544c02b0d6691d21ed9f9218d0384a82542855073c2a3f58304aaf0
   - kind: registry
     name: async-fs
     version: 2.1.2
@@ -74,28 +77,28 @@ sources:
     sha: 05b1b633a2115cd122d73b955eadd9916c18c8f510ec9cd1686404c60ad1c29c
   - kind: registry
     name: async-io
-    version: 2.3.2
-    sha: dcccb0f599cfa2f8ace422d3555572f47424da5648a4382a9dd0310ff8210884
+    version: 2.3.3
+    sha: 0d6baa8f0178795da0e71bc42c9e5d13261aac7ee549853162e66a241ba17964
   - kind: registry
     name: async-lock
-    version: 3.3.0
-    sha: d034b430882f8381900d3fe6f0aaa3ad94f2cb4ac519b429692a1bc2dda4ae7b
+    version: 3.4.0
+    sha: ff6e472cdea888a4bd64f342f09b3f50e1886d32afe8df3d663c01140b811b18
   - kind: registry
     name: async-net
     version: 2.0.0
     sha: b948000fad4873c1c9339d60f2623323a0cfd3816e5181033c6a5cb68b2accf7
   - kind: registry
     name: async-process
-    version: 2.2.2
-    sha: a53fc6301894e04a92cb2584fedde80cb25ba8e02d9dc39d4a87d036e22f397d
+    version: 2.2.3
+    sha: f7eda79bbd84e29c2b308d1dc099d7de8dcc7035e48f4bf5dc4a531a44ff5e2a
   - kind: registry
     name: async-recursion
     version: 1.1.1
     sha: 3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11
   - kind: registry
     name: async-signal
-    version: 0.2.6
-    sha: afe66191c335039c7bb78f99dc7520b0cbb166b3a1cb33a03f53d8a1c6f2afda
+    version: 0.2.8
+    sha: 794f185324c2f00e771cd9f1ae8b5ac68be2ca7abb129a87afd6e86d228bc54d
   - kind: registry
     name: async-task
     version: 4.7.1
@@ -114,8 +117,8 @@ sources:
     sha: 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
   - kind: registry
     name: backtrace
-    version: 0.3.71
-    sha: 26b05800d2e817c8b3b4b54abd461726265fa9789ae34330622f2db9ee696f9d
+    version: 0.3.73
+    sha: 5cc23269a4f8976d0a4d2e7109211a419fe30e8d88d677cd60b6bc79c5732e0a
   - kind: registry
     name: bitflags
     version: 1.3.2
@@ -134,8 +137,8 @@ sources:
     sha: 3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71
   - kind: registry
     name: blocking
-    version: 1.6.0
-    sha: 495f7104e962b7356f0aeb34247aca1fe7d2e783b346582db7f2904cb5717e88
+    version: 1.6.1
+    sha: 703f41c54fc768e63e091340b424302bb1c29ef4aa0c7f10fe849dfb114d29ea
   - kind: registry
     name: bytemuck
     version: 1.16.0
@@ -144,18 +147,24 @@ sources:
     name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
-  - kind: registry
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: cairo-rs
-    version: 0.19.4
-    sha: b2ac2a4d0e69036cf0062976f6efcba1aaee3e448594e6514bb2ddf87acce562
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: cairo-sys-rs
-    version: 0.19.2
-    sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
+    version: 0.20.0
   - kind: registry
     name: cc
-    version: 1.0.98
-    sha: 41c270e7540d725e65ac7f1b212ac8ce349719624d7bcff99f8e2e488e8cf03f
+    version: 1.0.99
+    sha: 96c51067fd44124faa7f870b4b1c969379ad32b2ba805aa959430ceaa384f695
   - kind: registry
     name: cfg-expr
     version: 0.15.8
@@ -197,6 +206,10 @@ sources:
     version: 0.10.7
     sha: 9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292
   - kind: registry
+    name: displaydoc
+    version: 0.2.4
+    sha: 487585f4d0c6655fe74905e2504d8ad6908e4db67f744eb140876906c2f3175d
+  - kind: registry
     name: dunce
     version: 1.0.4
     sha: 56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b
@@ -206,12 +219,12 @@ sources:
     sha: a3d8a32ae18130a3c84dd492d4215c3d913c3b07c6b63c2eb3eb7ff1101ab7bf
   - kind: registry
     name: enumflags2
-    version: 0.7.9
-    sha: 3278c9d5fb675e0a51dabcf4c0d355f692b064171535ba72361be1528a9d8e8d
+    version: 0.7.10
+    sha: d232db7f5956f3f14313dc2f87985c58bd2c695ce124c8cdd984e08e15ac133d
   - kind: registry
     name: enumflags2_derive
-    version: 0.7.9
-    sha: 5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4
+    version: 0.7.10
+    sha: de0d48a183585823424a4ce1aa132d174a6a81bd540895822eb4c8373a8e49e8
   - kind: registry
     name: env_filter
     version: 0.1.0
@@ -230,16 +243,8 @@ sources:
     sha: 534c5cf6194dfab3db3242765c03bbe257cf92f22b38f6bc0c58d59108a820ba
   - kind: registry
     name: event-listener
-    version: 4.0.3
-    sha: 67b215c49b2b248c855fb73579eb1f4f26c38ffdc12973e20e07b91d78d5646e
-  - kind: registry
-    name: event-listener
-    version: 5.3.0
-    sha: 6d9944b8ca13534cdfb2800775f8dd4902ff3fc75a50101466decadfdf322a24
-  - kind: registry
-    name: event-listener-strategy
-    version: 0.4.0
-    sha: 958e4d70b6d5e81971bebec42271ec641e7ff4e170a6fa605f2b8a8b65cb97d3
+    version: 5.3.1
+    sha: 6032be9bd27023a771701cc49f9f053c751055f71efb2e0ae5c15809093675ba
   - kind: registry
     name: event-listener-strategy
     version: 0.5.2
@@ -308,38 +313,62 @@ sources:
     name: futures-util
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
-  - kind: registry
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: gdk-pixbuf
-    version: 0.19.2
-    sha: f6a23f8a0b5090494fd04924662d463f8386cc678dd3915015a838c1a3679b92
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: gdk-pixbuf-sys
-    version: 0.19.5
-    sha: 1fdbf021f8b9d19e30fb9ea6d6e5f2b6a712fe4645417c69f86f6ff1e1444a8f
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4
-    version: 0.8.2
-    sha: db265c9dd42d6a371e09e52deab3a84808427198b86ac792d75fd35c07990a07
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-sys
-    version: 0.8.2
-    sha: c9418fb4e8a67074919fe7604429c45aa74eb9df82e7ca529767c6d4e9dc66dd
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-wayland
-    version: 0.8.2
-    sha: f620a0ecbe4c574e3fec6bef6bebcefe19cb1b9a81569245ca4503c95f9b1371
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-wayland-sys
-    version: 0.8.2
-    sha: 7a5fd3927c917184b0e8712624eebabdc7f0909b645d468c825f8ec627e61803
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-x11
-    version: 0.8.2
-    sha: ec6da3e3527007c14b27ddafe19496c49696a2a74dccb6ab75ba58dfa478b7ab
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gdk4-x11-sys
-    version: 0.8.2
-    sha: 0bb4e987ec77b7b2fb72c0943ccbec5c3834d9d7165fe762af8ff2414f0ae23d
+    version: 0.9.0
   - kind: registry
     name: generic-array
     version: 0.14.7
@@ -358,70 +387,143 @@ sources:
     sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
   - kind: registry
     name: gimli
-    version: 0.28.1
-    sha: 4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253
+    version: 0.29.0
+    sha: 40ecd4077b5ae9fd2e9e169b102c6c330d0605168eb0e8bf79952b256dbefffd
   - kind: registry
     name: gio
     version: 0.19.5
     sha: be548be810e45dd31d3bbb89c6210980bb7af9bca3ea1292b5f16b75f8e394a7
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gio
+    version: 0.20.0
   - kind: registry
     name: gio-sys
     version: 0.19.5
     sha: d4bdbef451b0f0361e7f762987cc6bebd5facab1d535e85a3cf1115dfb08db40
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gio-sys
+    version: 0.20.0
   - kind: registry
     name: glib
-    version: 0.19.6
-    sha: b0116c428e4841cab183a32a71b900fd6712194c20f9c424f01d2c016c96bd23
+    version: 0.19.7
+    sha: e52355166df21c7ed16b6a01f615669c7911ed74e27ef60eba339c0d2da12490
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib
+    version: 0.20.0
   - kind: registry
     name: glib-macros
-    version: 0.19.5
-    sha: 6ed782fa3e949c31146671da6e7a227a5e7d354660df1db6d0aac4974dc82a3c
+    version: 0.19.7
+    sha: 70025dbfa1275cf7d0531c3317ba6270dae15d87e63342229d638246ff45202e
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib-macros
+    version: 0.20.0
   - kind: registry
     name: glib-sys
     version: 0.19.5
     sha: 767d23ead9bbdfcbb1c2242c155c8128a7d13dde7bf69c176f809546135e2282
   - kind: git
-    commit: ccf13e82c4746cc5ea401c1f3ff5b108ad321a6f
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: glib-sys
+    version: 0.20.0
+  - kind: git
+    commit: 98c7774bae0d3d9d193e793bb09daa1e02409f3e
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin
-    version: 1.0.2
+    version: 2.0.0-alpha
   - kind: git
-    commit: ccf13e82c4746cc5ea401c1f3ff5b108ad321a6f
+    commit: 98c7774bae0d3d9d193e793bb09daa1e02409f3e
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin-utils
-    version: 1.0.2
+    version: 2.0.0-alpha
   - kind: registry
     name: gobject-sys
     version: 0.19.5
     sha: c3787b0bfacca12bb25f8f822b0dbee9f7e4a86e6469a29976d332d2c14c945b
-  - kind: registry
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
+    name: gobject-sys
+    version: 0.20.0
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: graphene-rs
-    version: 0.19.2
-    sha: 99e4d388e96c5f29e2b2f67045d229ddf826d0a8d6d282f94ed3b34452222c91
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: graphene-sys
-    version: 0.19.5
-    sha: 2a60e7381afdd7be43bd10a89d3b6741d162aabbca3a8db73505afb6a3aea59d
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gsk4
-    version: 0.8.2
-    sha: 7563884bf6939f4468e5d94654945bdd9afcaf8c3ba4c5dd17b5342b747221be
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gsk4-sys
-    version: 0.8.2
-    sha: 23024bf2636c38bbd1f822f58acc9d1c25b28da896ff0f291a1a232d4272b3dc
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gtk4
-    version: 0.8.2
-    sha: b04e11319b08af11358ab543105a9e49b0c491faca35e2b8e7e36bfba8b671ab
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gtk4-macros
-    version: 0.8.2
-    sha: ec655a7ef88d8ce9592899deb8b2d0fa50bab1e6dd69182deb764e643c522408
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs.git
+    query:
+      branch: master
     name: gtk4-sys
-    version: 0.8.2
-    sha: 8c8aa86b7f85ea71d66ea88c1d4bae1cfacf51ca4856274565133838d77e57b5
+    version: 0.9.0
+  - kind: git
+    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-common
+    version: 0.1.0
+  - kind: git
+    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-exif
+    version: 0.1.0
   - kind: registry
     name: gvdb
     version: 0.6.1
@@ -440,16 +542,12 @@ sources:
     sha: e5274423e17b7c9fc20b6e7e208532f9b19825d82dfd615708b70edd83df41f1
   - kind: registry
     name: heck
-    version: 0.4.1
-    sha: 95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8
-  - kind: registry
-    name: heck
     version: 0.5.0
     sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
   - kind: registry
     name: hermit-abi
-    version: 0.3.9
-    sha: d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024
+    version: 0.4.0
+    sha: fbf6a919d6cf397374f7dfeeea91d974c7c0a7221d0d0f4f20d859d329e53fcc
   - kind: registry
     name: hex
     version: 0.4.3
@@ -459,9 +557,49 @@ sources:
     version: 2.1.0
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
   - kind: registry
+    name: icu_collections
+    version: 1.5.0
+    sha: db2fa452206ebee18c4b5c2274dbf1de17008e874b4dc4f0aea9d01ca79e4526
+  - kind: registry
+    name: icu_locid
+    version: 1.5.0
+    sha: 13acbb8371917fc971be86fc8057c41a64b521c184808a698c02acc242dbf637
+  - kind: registry
+    name: icu_locid_transform
+    version: 1.5.0
+    sha: 01d11ac35de8e40fdeda00d9e1e9d92525f3f9d887cdd7aa81d727596788b54e
+  - kind: registry
+    name: icu_locid_transform_data
+    version: 1.5.0
+    sha: fdc8ff3388f852bede6b579ad4e978ab004f139284d7b28715f773507b946f6e
+  - kind: registry
+    name: icu_normalizer
+    version: 1.5.0
+    sha: 19ce3e0da2ec68599d193c93d088142efd7f9c5d6fc9b803774855747dc6a84f
+  - kind: registry
+    name: icu_normalizer_data
+    version: 1.5.0
+    sha: f8cafbf7aa791e9b22bec55a167906f9e1215fd475cd22adfcf660e03e989516
+  - kind: registry
+    name: icu_properties
+    version: 1.5.0
+    sha: 1f8ac670d7422d7f76b32e17a5db556510825b29ec9154f235977c9caba61036
+  - kind: registry
+    name: icu_properties_data
+    version: 1.5.0
+    sha: 67a8effbc3dd3e4ba1afa8ad918d5684b8868b3b26500753effea8d2eed19569
+  - kind: registry
+    name: icu_provider
+    version: 1.5.0
+    sha: 6ed421c8a8ef78d3e2dbc98a973be2f3770cb42b606e3ab18d6237c4dfde68d9
+  - kind: registry
+    name: icu_provider_macros
+    version: 1.5.0
+    sha: 1ec89e9337638ecdc08744df490b221a7399bf8d164eb52a665454e60e075ad6
+  - kind: registry
     name: idna
-    version: 0.5.0
-    sha: 634d9b1461af396cad843f47fdba5597a4f9e6ddd4bfb6ff5d85028c25cb12f6
+    version: 1.0.0
+    sha: 4716a3a0933a1d01c2f72450e89596eb51dd34ef3c211ccd875acdf1f8fe47ed
   - kind: registry
     name: indexmap
     version: 2.2.6
@@ -494,14 +632,20 @@ sources:
     name: lcms2-sys
     version: 4.0.5
     sha: 593265f9a3172180024fb62580ee31348f31be924b19416da174ebb7fb623d2e
-  - kind: registry
+  - kind: git
+    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs.git
+    query:
+      branch: master
     name: libadwaita
-    version: 0.6.0
-    sha: 91b4990248b9e1ec5e72094a2ccaea70ec3809f88f6fd52192f2af306b87c5d9
-  - kind: registry
+    version: 0.7.0
+  - kind: git
+    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs.git
+    query:
+      branch: master
     name: libadwaita-sys
-    version: 0.6.0
-    sha: 23a748e4e92be1265cd9e93d569c0b5dfc7814107985aa6743d670ab281ea1a8
+    version: 0.7.0
   - kind: registry
     name: libc
     version: 0.2.155
@@ -523,6 +667,10 @@ sources:
     version: 0.4.14
     sha: 78b3ae25bc7c8c38cec158d1f2757ee79e9b3740fbc7ccf0e59e4b08d793fa89
   - kind: registry
+    name: litemap
+    version: 0.7.3
+    sha: 643cb0b8d4fcc284004d5fd0d67ccf61dfffadb7f75e1e71bc420f4688a3a704
+  - kind: registry
     name: litrs
     version: 0.4.1
     sha: b4ce301924b7887e9d637144fdade93f9dfff9b60981d4ac161db09720d39aa5
@@ -540,8 +688,8 @@ sources:
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - kind: registry
     name: memchr
-    version: 2.7.2
-    sha: 6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d
+    version: 2.7.4
+    sha: 78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3
   - kind: registry
     name: memfd
     version: 0.6.4
@@ -571,6 +719,10 @@ sources:
     version: 0.28.0
     sha: ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4
   - kind: registry
+    name: num-traits
+    version: 0.2.19
+    sha: 071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841
+  - kind: registry
     name: objc
     version: 0.2.7
     sha: 915b1b472bc21c53464d6c8461c9d3af805ba1ef837e1cac254428f4a77177b1
@@ -584,8 +736,8 @@ sources:
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - kind: registry
     name: object
-    version: 0.32.2
-    sha: a6a622008b6e321afc04970976f62ee297fdbaa6f95318ca343e3eebb9648441
+    version: 0.36.0
+    sha: 576dfe1fc8f9df304abb159d767a29d0476f7750fbf8aa7ad07816004a207434
   - kind: registry
     name: once_cell
     version: 1.19.0
@@ -594,18 +746,28 @@ sources:
     name: ordered-stream
     version: 0.2.0
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
-  - kind: registry
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: pango
-    version: 0.19.5
-    sha: 504ce6e805439ea2c6791168fe7ef8e3da0c1b2ef82c44bc450dbc330592920d
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 5daf5021b68f539611434a4f95bfb8cc8d026c73
+    repo: https://github.com/gtk-rs/gtk-rs-core.git
+    query:
+      branch: master
     name: pango-sys
-    version: 0.19.5
-    sha: e4829555bdbb83692ddeaf5a6927fb2d025c8131e5ecaa4f7619fff6985d3505
+    version: 0.20.0
   - kind: registry
     name: parking
     version: 2.2.0
     sha: bb813b8af86854136c6922af0598d719255ecb2179515e6e7730d468f05c9cae
+  - kind: registry
+    name: paste
+    version: 1.0.15
+    sha: 57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a
   - kind: registry
     name: percent-encoding
     version: 2.3.1
@@ -620,16 +782,16 @@ sources:
     sha: 8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184
   - kind: registry
     name: piper
-    version: 0.2.2
-    sha: 464db0c665917b13ebb5d453ccdec4add5658ee1adc7affc7677615356a8afaf
+    version: 0.2.3
+    sha: ae1d5c74c9876f070d3e8fd503d748c7d974c3e48da8f41350fa5222ef9b4391
   - kind: registry
     name: pkg-config
     version: 0.3.30
     sha: d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec
   - kind: registry
     name: polling
-    version: 3.7.0
-    sha: 645493cf344456ef24219d02a768cf1fb92ddf8c92161679ae3d91b91a637be3
+    version: 3.7.2
+    sha: a3ed00ed3fbf728b5816498ecd316d1716eecaced9c0c8d2c5a6740ca214985b
   - kind: registry
     name: ppv-lite86
     version: 0.2.17
@@ -640,8 +802,8 @@ sources:
     sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
   - kind: registry
     name: proc-macro2
-    version: 1.0.83
-    sha: 0b33eb56c327dec362a9e55b3ad14f9d2f0904fb5a5b03b513ab5465399e9f43
+    version: 1.0.85
+    sha: 22244ce15aa966053a896d1accb3a6e68469b97c7f33f284b99f0d576879fc23
   - kind: registry
     name: quick-xml
     version: 0.31.0
@@ -664,16 +826,24 @@ sources:
     sha: ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c
   - kind: registry
     name: regex
-    version: 1.10.4
-    sha: c117dbdfde9c8308975b6a18d71f3f385c89461f7b3fb054288ecf2a2058ba4c
+    version: 1.10.5
+    sha: b91213439dad192326a0d7c6ee3955910425f441d7038e0d6933b0aec5c4517f
   - kind: registry
     name: regex-automata
-    version: 0.4.6
-    sha: 86b83b8b9847f9bf95ef68afb0b8e6cdb80f498442f5179a29fad448fcc1eaea
+    version: 0.4.7
+    sha: 38caf58cc5ef2fed281f89292ef23f6365465ed9a41b7a7754eb4e26496c92df
   - kind: registry
     name: regex-syntax
-    version: 0.8.3
-    sha: adad44e29e4c806119491a7f06f03de4d1af22c3a680dd47f1e6e179439d1f56
+    version: 0.8.4
+    sha: 7a66a03ae7c801facd77a29370b4faec201768915ac14a721ba36f20bc9c209b
+  - kind: registry
+    name: rmp
+    version: 0.8.14
+    sha: 228ed7c16fa39782c3b3468e974aec2795e9089153cd08ee2e9aefb3613334c4
+  - kind: registry
+    name: rmp-serde
+    version: 1.3.0
+    sha: 52e599a477cf9840e92f2cde9a7189e67b42c57532749bf90aea6ec10facd4db
   - kind: registry
     name: rustc-demangle
     version: 0.1.24
@@ -708,12 +878,12 @@ sources:
     sha: 61697e0a1c7e512e84a621326239844a24d8207b4669b41bc18b32ea5cbf988b
   - kind: registry
     name: serde
-    version: 1.0.202
-    sha: 226b61a0d411b2ba5ff6d7f73a476ac4f8bb900373459cd00fab8512828ba395
+    version: 1.0.203
+    sha: 7253ab4de971e72fb7be983802300c30b5a7f0c2e56fab8abfc6a214307c0094
   - kind: registry
     name: serde_derive
-    version: 1.0.202
-    sha: 6048858004bcff69094cd972ed40a32500f153bd3be9f716b2eed2e8217c4838
+    version: 1.0.203
+    sha: 500cbc0ebeb6f46627f50f3f5811ccf6bf00643be300b4c3eabc0ef55dc5b5ba
   - kind: registry
     name: serde_json
     version: 1.0.117
@@ -743,6 +913,10 @@ sources:
     version: 1.13.2
     sha: 3c5e1a9a646d36c3599cd173a41282daf47c44583ad367b8e6837255952e5c67
   - kind: registry
+    name: stable_deref_trait
+    version: 1.2.0
+    sha: a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3
+  - kind: registry
     name: static_assertions
     version: 1.1.0
     sha: a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f
@@ -752,12 +926,16 @@ sources:
     sha: 5d8cec3501a5194c432b2b7976db6b7d10ec95c253208b45f83f7136aa985e29
   - kind: registry
     name: strum_macros
-    version: 0.26.2
-    sha: c6cf59daf282c0a494ba14fd21610a0325f9f90ec9d1231dea26bcb1d696c946
+    version: 0.26.4
+    sha: 4c6bee85a5a24955dc440386795aa378cd9cf82acd5f764469152d2270e581be
   - kind: registry
     name: syn
-    version: 2.0.65
-    sha: d2863d96a84c6439701d7a38f9de935ec562c8832cc55d1dde0f513b52fad106
+    version: 2.0.66
+    sha: c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5
+  - kind: registry
+    name: synstructure
+    version: 0.13.1
+    sha: c8af7666ab7b6390ab78131fb5b0fce11d6b7a6951602017c35fa82800708971
   - kind: registry
     name: system-deps
     version: 6.2.2
@@ -783,17 +961,13 @@ sources:
     version: 1.0.61
     sha: 46c3384250002a6d5af4d114f2845d37b57521033f30d5c3f46c4d70e1197533
   - kind: registry
-    name: tinyvec
-    version: 1.6.0
-    sha: 87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50
-  - kind: registry
-    name: tinyvec_macros
-    version: 0.1.1
-    sha: 1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20
+    name: tinystr
+    version: 0.7.6
+    sha: 9117f5d4db391c1cf6927e7bea3db74b9a1c1add8f7eda9ffd5364f40f57b82f
   - kind: registry
     name: toml
-    version: 0.8.13
-    sha: a4e43f8cc456c9704c851ae29c67e17ef65d2c30017c17a9765b89c382dc8bba
+    version: 0.8.14
+    sha: 6f49eb2ab21d2f26bd6db7bf383edc527a7ebaee412d17af4d40fdccd442f335
   - kind: registry
     name: toml_datetime
     version: 0.6.6
@@ -804,8 +978,8 @@ sources:
     sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
   - kind: registry
     name: toml_edit
-    version: 0.22.13
-    sha: c127785850e8c20836d49732ae6abfa47616e60bf9d9f57c43c250361a9db96c
+    version: 0.22.14
+    sha: f21c7aaf97f1bd9ca9d4f9e73b0a6c74bd5afef56f2bc931943a6e1c37e04e38
   - kind: registry
     name: tracing
     version: 0.1.40
@@ -827,25 +1001,25 @@ sources:
     version: 1.1.0
     sha: 89daebc3e6fd160ac4aa9fc8b3bf71e1f74fbf92367ae71fb83a037e8bf164b9
   - kind: registry
-    name: unicode-bidi
-    version: 0.3.15
-    sha: 08f95100a766bf4f8f28f90d77e0a5461bbdb219042e7679bebe79004fed8d75
-  - kind: registry
     name: unicode-ident
     version: 1.0.12
     sha: 3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b
   - kind: registry
-    name: unicode-normalization
-    version: 0.1.23
-    sha: a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5
-  - kind: registry
     name: url
-    version: 2.5.0
-    sha: 31e6302e3bb753d46e83516cae55ae196fc0c309407cf11ab35cc51a4c2a4633
+    version: 2.5.1
+    sha: f7c25da092f0a868cdf09e8674cd3b7ef3a7d92a24253e663a2fb85e2496de56
+  - kind: registry
+    name: utf16_iter
+    version: 1.0.5
+    sha: c8232dd3cdaed5356e0f716d285e4b40b932ac434100fe9b7e0e8e935b9e6246
+  - kind: registry
+    name: utf8_iter
+    version: 1.0.4
+    sha: b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be
   - kind: registry
     name: utf8parse
-    version: 0.2.1
-    sha: 711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a
+    version: 0.2.2
+    sha: 06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821
   - kind: registry
     name: version-compare
     version: 0.2.0
@@ -924,24 +1098,56 @@ sources:
     sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
   - kind: registry
     name: winnow
-    version: 0.6.8
-    sha: c3c52e9c97a68071b23e836c9380edae937f17b9c4667bd021973efc689f618d
+    version: 0.6.13
+    sha: 59b5e5f6c299a3c7890b876a2a587f3115162487e704907d9b6cd29473052ba1
+  - kind: registry
+    name: write16
+    version: 1.0.0
+    sha: d1890f4022759daae28ed4fe62859b1236caebfc61ede2f63ed4e695f3f6d936
+  - kind: registry
+    name: writeable
+    version: 0.5.5
+    sha: 1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51
   - kind: registry
     name: xdg-home
-    version: 1.1.0
-    sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e
+    version: 1.2.0
+    sha: ca91dcf8f93db085f3a0a29358cd0b9d670915468f4290e8b85d118a34211ab8
+  - kind: registry
+    name: yoke
+    version: 0.7.4
+    sha: 6c5b1314b079b0930c31e3af543d8ee1757b1951ae1e1565ec704403a7240ca5
+  - kind: registry
+    name: yoke-derive
+    version: 0.7.4
+    sha: 28cc31741b18cb6f1d5ff12f5b7523e3d6eb0852bbbad19d73905511d9849b95
   - kind: registry
     name: zbus
-    version: 4.2.2
-    sha: 989c3977a7aafa97b12b9a35d21cdcff9b0d2289762b14683f45d66b1ba6c48f
+    version: 4.3.0
+    sha: 23915fcb26e7a9a9dc05fd93a9870d336d6d032cd7e8cebf1c5c37666489fdd5
   - kind: registry
     name: zbus_macros
-    version: 4.2.2
-    sha: 6fe9de53245dcf426b7be226a4217dd5e339080e5d46e64a02d6e5dcbf90fca1
+    version: 4.3.0
+    sha: 02bcca0b586d2f8589da32347b4784ba424c4891ed86aa5b50d5e88f6b2c4f5d
   - kind: registry
     name: zbus_names
     version: 3.0.0
     sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
+  - kind: registry
+    name: zerofrom
+    version: 0.1.4
+    sha: 91ec111ce797d0e0784a1116d0ddcdbea84322cd79e5d5ad173daeba4f93ab55
+  - kind: registry
+    name: zerofrom-derive
+    version: 0.1.4
+    sha: 0ea7b4a3637ea8669cedf0f1fd5c286a17f3de97b8dd5a70a6c167a1730e63a5
+  - kind: registry
+    name: zerovec
+    version: 0.10.2
+    sha: bb2cc8827d6c0994478a15c53f374f46fbd41bea663d809b14744bc42e6b109c
+  - kind: registry
+    name: zerovec-derive
+    version: 0.10.2
+    sha: 97cf56601ee5052b4417d90c8755c6683473c926039908196cf35d99f893ebe7
   - kind: registry
     name: zvariant
     version: 4.1.1
