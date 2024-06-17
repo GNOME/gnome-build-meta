@@ -83,7 +83,7 @@ import tarfile
 import threading
 import urllib.error
 import urllib.parse
-from urllib.parse import urlparse
+from urllib.parse import parse_qsl, urlencode, urlparse
 import urllib.request
 
 # We prefer tomli that was put into standard library as tomllib
@@ -99,20 +99,6 @@ from buildstream import utils
 import dulwich
 from dulwich.repo import Repo
 import tomlkit
-
-# This automatically goes into .cargo/config
-#
-_default_vendor_config_template = (
-    "[source.crates-io]\n"
-    + 'registry = "{vendorurl}"\n'
-    + 'replace-with = "vendored-sources"\n'
-    + "{git_vendors}"
-    + "\n[source.vendored-sources]\n"
-    + 'directory = "{vendordir}"\n'
-)
-
-# Added as {git_vendors} in template above
-_git_vendor_config_template = '\n[source."git+{git_repo}"]\ngit = "{git_repo}"\nreplace-with = "vendored-sources"\n'
 
 
 # CrateRegistry()
@@ -386,7 +372,7 @@ REPO_LOCKS = {}  # type: dict[str, threading.Lock]
 #    repo (str): Repository URL
 #    commit (str): Sha of the git commit
 class CrateGit(SourceFetcher):
-    def __init__(self, cargo, name, version, repo, commit):
+    def __init__(self, cargo, name, version, repo, commit, query):
         super().__init__()
 
         self.cargo = cargo
@@ -394,6 +380,7 @@ class CrateGit(SourceFetcher):
         self.version = str(version)
         self.repo = repo
         self.commit = commit
+        self.query = query
         self.repo_mirrored = cargo.mirrored_git_url(repo)
 
         self.mark_download_url(self.repo_mirrored)
@@ -425,13 +412,18 @@ class CrateGit(SourceFetcher):
     ########################################################
 
     def ref_node(self):
-        return {
+        node = {
             "kind": "git",
             "name": self.name,
             "version": self.version,
             "repo": self.repo,
             "commit": self.commit,
         }
+
+        if self.query:
+            node["query"] = self.query
+
+        return node
 
     # stage()
     #
@@ -735,7 +727,7 @@ class CargoSource(Source):
         return
 
     def get_unique_key(self):
-        return [self.original_url, self.cargo_lock, self.vendor_dir, self.ref]
+        return [self.original_url, self.cargo_lock, self.vendor_dir, self.ref, "x"]
 
     def is_resolved(self):
         return (self.ref is not None) and all(
@@ -800,10 +792,17 @@ class CargoSource(Source):
             if kind == "git":
                 url_parsed = urlparse(url)
                 ref["commit"] = url_parsed.fragment
+
                 # Remove extra information since it confused URL translation
                 ref["repo"] = url_parsed._replace(
                     fragment="", query=""
                 ).geturl()
+
+                # Store the query information since cargo checks it with the commit
+                # The query contains branch, tag, or rev
+                query_list = parse_qsl(url_parsed.query)
+                if query_list:
+                    ref["query"] = dict(query_list)
 
             ref.update(
                 {"name": package["name"], "version": str(package["version"])}
@@ -845,30 +844,45 @@ class CargoSource(Source):
     def stage(self, directory):
         # Stage the crates into the vendor directory
         vendor_dir = os.path.join(directory, self.vendor_dir)
+        cargo_config = {"source": {}}
 
-        git_repos = set()
+        cargo_config["source"]["crates-io"] = {
+            "registry": self.translate_url(self.url),
+            "replace-with": "vendored-sources",
+        }
+
+        # Every git repo needs an extra entry in the config
         for crate in self.crates:
             crate.stage(vendor_dir)
             if isinstance(crate, CrateGit):
-                git_repos.add(crate.repo)
+                section = {
+                    "git": crate.repo,
+                    "replace-with": "vendored-sources",
+                }
 
-        # Every git repo needs an extra entry in the config
-        # Using a set since the config entry cannot appear twice
-        vendor_cfg_git = ""
-        for repo in git_repos:
-            vendor_cfg_git += _git_vendor_config_template.format(git_repo=repo)
+                # Options like branch, tag, rev have to be specified in the config
+                # if they were specified in the Cargo.toml. Otherwise cargo will not
+                # find the crate.
+                if crate.query:
+                    query = "?" + urlencode(crate.query)
+                    for key, value in crate.query.items():
+                        section[key] = value
+                else:
+                    query = ""
 
-        # Stage our vendor config
-        vendor_config = _default_vendor_config_template.format(
-            vendorurl=self.translate_url(self.url),
-            vendordir=self.vendor_dir,
-            git_vendors=vendor_cfg_git,
-        )
+                source_id = f"git+{crate.repo}{query}"
+
+                cargo_config["source"][source_id] = section
+
+        cargo_config["source"]["vendored-sources"] = {
+            "directory": self.vendor_dir
+        }
+
         conf_dir = os.path.join(directory, ".cargo")
-        conf_file = os.path.join(conf_dir, "config")
+        conf_file = os.path.join(conf_dir, "config.toml")
         os.makedirs(conf_dir, exist_ok=True)
         with open(conf_file, "w", encoding="utf-8") as f:
-            f.write(vendor_config)
+            tomlkit.dump(cargo_config, f)
 
     def get_source_fetchers(self):
         return self.crates
@@ -940,6 +954,10 @@ class CargoSource(Source):
                         crate.get_str("version"),
                         crate.get_str("repo"),
                         crate.get_str("commit"),
+                        {
+                            k: v.as_str()
+                            for k, v in crate.get_mapping("query", {}).items()
+                        },
                     )
                 )
             else:
