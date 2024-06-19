@@ -1,54 +1,76 @@
-From c6f625d1c91df9986d79a928b01399dce4beb1cc Mon Sep 17 00:00:00 2001
-From: Michael Catanzaro <mcatanzaro@redhat.com>
-Date: Sat, 18 May 2024 08:25:37 -0500
-Subject: [PATCH] Revert "Cherry-pick 276798@main (f91aeb92bd8e).
- https://bugs.webkit.org/show_bug.cgi?id=260455"
+From fc158b61f4bedc9bc1a7dd01689a64c225c813d2 Mon Sep 17 00:00:00 2001
+From: Philippe Normand <philn@igalia.com>
+Date: Wed, 19 Jun 2024 05:15:08 -0700
+Subject: [PATCH] REGRESSION(274853@main): [GLib][MSE] Excessive CPU usage from
+ cached web process after closing ksdk.com page, failure to display web
+ content after reopening page, part 2
+ https://bugs.webkit.org/show_bug.cgi?id=274802
 
-Unreviewed. This reverts commit 30ad9a720e6b12a6c958fcef0d7dd3f52da485bd.
+Reviewed by Xabier Rodriguez-Calvar.
 
-See: https://bugs.webkit.org/show_bug.cgi?id=274261
-Canonical link: https://commits.webkit.org/274313.257@webkitglib/2.44
+The excessive CPU usage was due to mediaPlayerReadyStateChanged() recursing on itself forever after
+being triggered due to the MediaSource closing procedure. In the WPE/GTK ports at least, the
+isSuspended() condition is always true in this situation. The proposed workaround is to attempt a
+fixed amount of recursions.
+
+* Source/WebCore/html/HTMLMediaElement.cpp:
+(WebCore::HTMLMediaElement::mediaPlayerReadyStateChanged):
+* Source/WebCore/html/HTMLMediaElement.h:
+
+Canonical link: https://commits.webkit.org/280171@main
 ---
- ...e-muted-scroll-and-seek-crash-expected.txt |  4 --
- ...ia-source-muted-scroll-and-seek-crash.html | 65 -------------------
- .../gstreamer/MediaPlayerPrivateGStreamer.cpp | 14 +---
- 3 files changed, 3 insertions(+), 80 deletions(-)
- delete mode 100644 LayoutTests/media/media-source/media-source-muted-scroll-and-seek-crash-expected.txt
- delete mode 100644 LayoutTests/media/media-source/media-source-muted-scroll-and-seek-crash.html
+ Source/WebCore/html/HTMLMediaElement.cpp | 19 ++++++++++++++++---
+ Source/WebCore/html/HTMLMediaElement.h   |  3 +++
+ 2 files changed, 19 insertions(+), 3 deletions(-)
 
-diff --git a/Source/WebCore/platform/graphics/gstreamer/MediaPlayerPrivateGStreamer.cpp b/Source/WebCore/platform/graphics/gstreamer/MediaPlayerPrivateGStreamer.cpp
-index 7b28083fae71..a5fb5d679153 100644
---- a/Source/WebCore/platform/graphics/gstreamer/MediaPlayerPrivateGStreamer.cpp
-+++ b/Source/WebCore/platform/graphics/gstreamer/MediaPlayerPrivateGStreamer.cpp
-@@ -328,8 +328,8 @@ void MediaPlayerPrivateGStreamer::load(const String& urlString)
-         m_fillTimer.stop();
+diff --git a/Source/WebCore/html/HTMLMediaElement.cpp b/Source/WebCore/html/HTMLMediaElement.cpp
+index 341830fc09fa..a77313bf5f69 100644
+--- a/Source/WebCore/html/HTMLMediaElement.cpp
++++ b/Source/WebCore/html/HTMLMediaElement.cpp
+@@ -2889,9 +2889,19 @@ void HTMLMediaElement::changeNetworkStateFromLoadingToIdle()
+ void HTMLMediaElement::mediaPlayerReadyStateChanged()
+ {
+     if (isSuspended()) {
+-        queueTaskKeepingObjectAlive(*this, TaskSource::MediaElement, [this] {
+-            mediaPlayerReadyStateChanged();
+-        });
++        // FIXME: In some situations the MediaSource closing procedure triggerring a readyState
++        // update on the player, while the media element is suspended would lead to infinite
++        // recursion. The workaround is to attempt a fixed amount of recursions.
++        if (!m_isChangingReadyStateWhileSuspended) {
++            m_isChangingReadyStateWhileSuspended = true;
++            m_remainingReadyStateChangedAttempts.store(128);
++        }
++
++        if (m_remainingReadyStateChangedAttempts.exchangeSub(1)) {
++            queueTaskKeepingObjectAlive(*this, TaskSource::MediaElement, [this] {
++                mediaPlayerReadyStateChanged();
++            });
++        }
+         return;
+     }
  
-     ASSERT(m_pipeline);
--    setPlaybinURL(url);
-     setVisibleInViewport(player->isVisibleInViewport());
-+    setPlaybinURL(url);
+@@ -2900,6 +2910,9 @@ void HTMLMediaElement::mediaPlayerReadyStateChanged()
+     setReadyState(m_player->readyState());
  
-     GST_DEBUG_OBJECT(pipeline(), "preload: %s", convertEnumerationToString(m_preload).utf8().data());
-     if (m_preload == MediaPlayer::Preload::None && !isMediaSource()) {
-@@ -4027,18 +4027,10 @@ void MediaPlayerPrivateGStreamer::setVisibleInViewport(bool isVisible)
-     if (!isVisible) {
-         GstState currentState;
-         gst_element_get_state(m_pipeline.get(), &currentState, nullptr, 0);
--        // WebKitMediaSrc cannot properly handle PAUSED -> READY -> PAUSED currently, so we have to avoid transitioning
--        // back to READY when the player becomes visible.
--        GstState minimumState = isMediaSource() ? GST_STATE_PAUSED : GST_STATE_READY;
--        if (currentState >= minimumState)
-+        if (currentState > GST_STATE_NULL)
-             m_invisiblePlayerState = currentState;
-         m_isVisibleInViewport = false;
--        // Avoid setting the pipeline to PAUSED unless the playbin URL has already been set,
--        // otherwise it will fail, and may leave the pipeline stuck on READY with PAUSE pending.
--        if (!m_url.isValid())
--            return;
--        [[maybe_unused]] auto setStateResult = gst_element_set_state(m_pipeline.get(), GST_STATE_PAUSED);
--        ASSERT(setStateResult != GST_STATE_CHANGE_FAILURE);
-+        gst_element_set_state(m_pipeline.get(), GST_STATE_PAUSED);
-     } else {
-         m_isVisibleInViewport = true;
-         if (m_invisiblePlayerState != GST_STATE_VOID_PENDING)
-
+     endProcessingMediaPlayerCallback();
++
++    m_isChangingReadyStateWhileSuspended = false;
++    m_remainingReadyStateChangedAttempts.store(0);
+ }
+ 
+ Expected<void, MediaPlaybackDenialReason> HTMLMediaElement::canTransitionFromAutoplayToPlay() const
+diff --git a/Source/WebCore/html/HTMLMediaElement.h b/Source/WebCore/html/HTMLMediaElement.h
+index 0a87c1f42471..45ca559b80c8 100644
+--- a/Source/WebCore/html/HTMLMediaElement.h
++++ b/Source/WebCore/html/HTMLMediaElement.h
+@@ -1397,6 +1397,9 @@ class HTMLMediaElement
+ #if ENABLE(WIRELESS_PLAYBACK_TARGET)
+     Ref<RemotePlayback> m_remote;
+ #endif
++
++    bool m_isChangingReadyStateWhileSuspended { false };
++    Atomic<unsigned> m_remainingReadyStateChangedAttempts;
+ };
+ 
+ String convertEnumerationToString(HTMLMediaElement::AutoplayEventPlaybackState);
