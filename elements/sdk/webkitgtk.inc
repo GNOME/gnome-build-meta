@@ -6,6 +6,8 @@ sources:
   path: patches/webkitgtk/nicosia-crashes.patch
 - kind: patch
   path: patches/webkitgtk/excessive-cpu-usage.patch
+- kind: patch
+  path: patches/webkitgtk/fix-process-suspension.patch
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
