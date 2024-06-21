@@ -297,3 +297,26 @@ index 4ba7b1996747..db6428263495 100644
          didFinishLaunchingProcess(m_processID, IPC::Connection::Identifier { serverSocket });
      });
  }
+
+diff --git a/Source/WebKit/UIProcess/glib/WebProcessProxyGLib.cpp b/Source/WebKit/UIProcess/glib/WebProcessProxyGLib.cpp
+index 1f692ba43626..01da2cecfe9d 100644
+--- a/Source/WebKit/UIProcess/glib/WebProcessProxyGLib.cpp
++++ b/Source/WebKit/UIProcess/glib/WebProcessProxyGLib.cpp
+@@ -70,7 +70,7 @@ void WebProcessProxy::platformSuspendProcess()
+     if (!id)
+         return;
+ 
+-    RELEASE_LOG(Process, "%p - [PID=%i] WebProcessProxy::platformSuspendProcess", this, id);
++WTFLogAlways("%p - [PID=%i] WebProcessProxy::platformSuspendProcess", this, id);
+     kill(id, SIGSTOP);
+ }
+ 
+@@ -80,7 +80,7 @@ void WebProcessProxy::platformResumeProcess()
+     if (!id)
+         return;
+ 
+-    RELEASE_LOG(Process, "%p - [PID=%i] WebProcessProxy::platformResumeProcess", this, id);
++WTFLogAlways("%p - [PID=%i] WebProcessProxy::platformResumeProcess", this, id);
+     kill(id, SIGCONT);
+ }
+
