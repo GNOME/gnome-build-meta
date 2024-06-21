@@ -320,3 +320,56 @@ index 1f692ba43626..01da2cecfe9d 100644
      kill(id, SIGCONT);
  }
 
+diff --git a/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.cpp b/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.cpp
+index 8cb7b23c41e4..41856e1c9d88 100644
+--- a/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.cpp
++++ b/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.cpp
+@@ -33,7 +33,7 @@
+ 
+ namespace WebKit {
+ 
+-GRefPtr<GSubprocess> flatpakSpawn(GSubprocessLauncher* launcher, const WebKit::ProcessLauncher::LaunchOptions& launchOptions, char** argv, int childProcessSocket, GError** error)
++GRefPtr<GSubprocess> flatpakSpawn(GSubprocessLauncher* launcher, const WebKit::ProcessLauncher::LaunchOptions& launchOptions, char** argv, int childProcessSocket, int pidSocket, GError** error)
+ {
+     ASSERT(launcher);
+ 
+@@ -41,10 +41,12 @@ GRefPtr<GSubprocess> flatpakSpawn(GSubprocessLauncher* launcher, const WebKit::P
+     // bubblewrap sandbox we do outside but flatpak offers the ability to create new sandboxes
+     // for us using flatpak-spawn.
+ 
+-    GUniquePtr<gchar> childProcessSocketArg(g_strdup_printf("--forward-fd=%d", childProcessSocket));
++    GUniquePtr<char> childProcessSocketArg(g_strdup_printf("--forward-fd=%d", childProcessSocket));
++    GUniquePtr<char> pidSocketArg(g_strdup_printf("--forward-fd=%d", pidSocket));
+     Vector<CString> flatpakArgs = {
+         "flatpak-spawn",
+         childProcessSocketArg.get(),
++        pidSocketArg.get(),
+         "--watch-bus"
+     };
+ 
+diff --git a/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.h b/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.h
+index bb5a766d15e7..2f30ce6b24f5 100644
+--- a/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.h
++++ b/Source/WebKit/UIProcess/Launcher/glib/FlatpakLauncher.h
+@@ -36,7 +36,7 @@ typedef struct _GSubprocessLauncher GSubprocessLauncher;
+ 
+ namespace WebKit {
+ 
+-GRefPtr<GSubprocess> flatpakSpawn(GSubprocessLauncher*, const WebKit::ProcessLauncher::LaunchOptions&, char** argv, int childProcessSocket, GError**);
++GRefPtr<GSubprocess> flatpakSpawn(GSubprocessLauncher*, const WebKit::ProcessLauncher::LaunchOptions&, char** argv, int childProcessSocket, int pidSocket, GError**);
+ 
+ };
+ 
+diff --git a/Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp b/Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
+index db6428263495..815d7998bd43 100644
+--- a/Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
++++ b/Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
+@@ -229,7 +229,7 @@ void ProcessLauncher::launchProcess()
+     bool sandboxEnabled = isSandboxEnabled(m_launchOptions);
+ 
+     if (sandboxEnabled && isFlatpakSpawnUsable())
+-        process = flatpakSpawn(launcher.get(), m_launchOptions, argv, webkitSocketPair.client, &error.outPtr());
++        process = flatpakSpawn(launcher.get(), m_launchOptions, argv, webkitSocketPair.client, pidSocketPair.client, &error.outPtr());
+ #if ENABLE(BUBBLEWRAP_SANDBOX)
+     // You cannot use bubblewrap within Flatpak or some containers so lets ensure it never happens.
+     // Snap can allow it but has its own limitations that require workarounds.
