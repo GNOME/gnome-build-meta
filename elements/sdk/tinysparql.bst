@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tinysparql.git
   track: main
-  ref: 3.7.3-64-g59c06aac8a8323bbba8366c7d9de01489bb72253
+  ref: 3.7.3-67-g0e8a408375169f22930bfc79940789a9a8f53f40
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
