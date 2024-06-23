@@ -1,7 +1,7 @@
-From 50141a33870351542133dee8f9ed326dc8a2d3c8 Mon Sep 17 00:00:00 2001
+From 2ff6faf066e156a116e35ccd59f0fc33f66fecc0 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Tue, 11 Jul 2023 18:35:54 -0400
-Subject: [PATCH 2/8] sysupdate: Add --offline mode
+Subject: [PATCH 2/9] sysupdate: Add --offline mode
 
 This prevents sysupdate from going out to the network to enumerate
 available instances. When combined with the list command, this lets us
@@ -33,7 +33,7 @@ index 8c1228c7d9..4acc3595e3 100644
        <xi:include href="standard-options.xml" xpointer="no-legend" />
        <xi:include href="standard-options.xml" xpointer="json" />
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 71d88e5585..9d2f5ff0e0 100644
+index ef9253666a..cc018ea1d7 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
 @@ -48,6 +48,7 @@ static bool arg_reboot = false;

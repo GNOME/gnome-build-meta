@@ -1,7 +1,7 @@
-From 4231348bee3e0816fc7fe0cca065e99150c03132 Mon Sep 17 00:00:00 2001
+From 6d0d9ee7493b5e49c77619815a2a7a1dc3df4730 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 13 Jul 2023 20:23:12 -0400
-Subject: [PATCH 8/8] sysupdate: Implement updatectl
+Subject: [PATCH 8/9] sysupdate: Implement updatectl
 
 This is the command-line tool to manage systemd-sysudpated
 ---
@@ -9,16 +9,16 @@ This is the command-line tool to manage systemd-sysudpated
  man/systemd-sysupdated.service.xml |    1 +
  man/updatectl.xml                  |  201 +++++
  src/sysupdate/meson.build          |   12 +
- src/sysupdate/updatectl.c          | 1226 ++++++++++++++++++++++++++++
- 5 files changed, 1441 insertions(+)
+ src/sysupdate/updatectl.c          | 1227 ++++++++++++++++++++++++++++
+ 5 files changed, 1442 insertions(+)
  create mode 100644 man/updatectl.xml
  create mode 100644 src/sysupdate/updatectl.c
 
 diff --git a/man/rules/meson.build b/man/rules/meson.build
-index afc94cb8ec..f950fb48ed 100644
+index 8c2d5c8b2a..0c33a47bba 100644
 --- a/man/rules/meson.build
 +++ b/man/rules/meson.build
-@@ -1279,6 +1279,7 @@ manpages = [
+@@ -1281,6 +1281,7 @@ manpages = [
   ['udev_new', '3', ['udev_ref', 'udev_unref'], ''],
   ['udevadm', '8', [], ''],
   ['ukify', '1', [], 'ENABLE_UKIFY'],
@@ -277,10 +277,10 @@ index c8ba86a6ca..d2ed6cd8e4 100644
  if conf.get('ENABLE_SYSUPDATE') == 1
 diff --git a/src/sysupdate/updatectl.c b/src/sysupdate/updatectl.c
 new file mode 100644
-index 0000000000..3068bd3aa7
+index 0000000000..25a1931a6e
 --- /dev/null
 +++ b/src/sysupdate/updatectl.c
-@@ -0,0 +1,1226 @@
+@@ -0,0 +1,1227 @@
 +/* SPDX-License-Identifier: LGPL-2.1-or-later */
 +
 +#include <getopt.h>
@@ -295,11 +295,12 @@ index 0000000000..3068bd3aa7
 +#include "bus-map-properties.h"
 +#include "errno-list.h"
 +#include "format-table.h"
-+#include "json.h"
++#include "json-util.h"
 +#include "main-func.h"
 +#include "pager.h"
 +#include "pretty-print.h"
 +#include "string-table.h"
++#include "strv.h"
 +#include "sysupdate-update-set-flags.h"
 +#include "sysupdate-util.h"
 +#include "terminal-util.h"
@@ -597,13 +598,13 @@ index 0000000000..3068bd3aa7
 +                        return table_log_add_error(r);
 +        }
 +
-+        return table_print_with_pager(table, JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
++        return table_print_with_pager(table, SD_JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
 +}
 +
 +static int parse_describe(sd_bus_message *reply, Version *ret) {
 +        _cleanup_(version_clear) Version v = {};
 +        char *version_json = NULL;
-+        _cleanup_(json_variant_unrefp) JsonVariant *json = NULL;
++        _cleanup_(sd_json_variant_unrefp) sd_json_variant *json = NULL;
 +        int r;
 +
 +        assert(reply);
@@ -611,49 +612,49 @@ index 0000000000..3068bd3aa7
 +
 +        r = sd_bus_message_read_basic(reply, 's', &version_json);
 +
-+        r = json_parse(version_json, 0, &json, NULL, NULL);
++        r = sd_json_parse(version_json, 0, &json, NULL, NULL);
 +        if (r < 0)
 +                return log_error_errno(r, "Failed to parse JSON: %m");
 +
-+        assert(json_variant_is_object(json));
++        assert(sd_json_variant_is_object(json));
 +
 +        const char *key;
-+        JsonVariant *value;
++        sd_json_variant *value;
 +        JSON_VARIANT_OBJECT_FOREACH(key, value, json) {
 +                if (streq(key, "version")) {
-+                        assert(json_variant_is_string(value));
-+                        assert_se(v.version = strdup(json_variant_string(value)));
++                        assert(sd_json_variant_is_string(value));
++                        assert_se(v.version = strdup(sd_json_variant_string(value)));
 +                } else if (streq(key, "newest")) {
-+                        assert(json_variant_is_boolean(value));
-+                        if (json_variant_boolean(value))
++                        assert(sd_json_variant_is_boolean(value));
++                        if (sd_json_variant_boolean(value))
 +                                v.flags |= UPDATE_NEWEST;
 +                } else if (streq(key, "available")) {
-+                        assert(json_variant_is_boolean(value));
-+                        if (json_variant_boolean(value))
++                        assert(sd_json_variant_is_boolean(value));
++                        if (sd_json_variant_boolean(value))
 +                                v.flags |= UPDATE_AVAILABLE;
 +                } else if (streq(key, "installed")) {
-+                        assert(json_variant_is_boolean(value));
-+                        if (json_variant_boolean(value))
++                        assert(sd_json_variant_is_boolean(value));
++                        if (sd_json_variant_boolean(value))
 +                                v.flags |= UPDATE_INSTALLED;
 +                } else if (streq(key, "obsolete")) {
-+                        assert(json_variant_is_boolean(value));
-+                        if (json_variant_boolean(value))
++                        assert(sd_json_variant_is_boolean(value));
++                        if (sd_json_variant_boolean(value))
 +                                v.flags |= UPDATE_OBSOLETE;
 +                } else if (streq(key, "protected")) {
-+                        assert(json_variant_is_boolean(value));
-+                        if (json_variant_boolean(value))
++                        assert(sd_json_variant_is_boolean(value));
++                        if (sd_json_variant_boolean(value))
 +                                v.flags |= UPDATE_PROTECTED;
 +                } else if (streq(key, "changelog-url")) {
-+                        JsonVariant *entry;
-+                        assert(json_variant_is_array(value));
++                        sd_json_variant *entry;
++                        assert(sd_json_variant_is_array(value));
 +                        JSON_VARIANT_ARRAY_FOREACH(entry, value) {
-+                                assert(json_variant_is_string(entry));
-+                                r = strv_extend(&v.changelog, json_variant_string(entry));
++                                assert(sd_json_variant_is_string(entry));
++                                r = strv_extend(&v.changelog, sd_json_variant_string(entry));
 +                                if (r < 0)
 +                                        log_error_errno(r, "Failed to parse JSON: %m");
 +                        }
 +                } else if (streq(key, "contents")) {
-+                        r = json_variant_format(value, 0, &v.contents_json);
++                        r = sd_json_variant_format(value, 0, &v.contents_json);
 +                        if (r < 0)
 +                                log_error_errno(r, "Failed to parse JSON: %m");
 +                } else
@@ -759,18 +760,18 @@ index 0000000000..3068bd3aa7
 +        if (r < 0)
 +                return r;
 +
-+        return table_print_with_pager(table, JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
++        return table_print_with_pager(table, SD_JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
 +}
 +
 +static int describe(sd_bus *bus, const char *target_path, const char *version) {
 +        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
 +        _cleanup_(sd_bus_error_free) sd_bus_error error = SD_BUS_ERROR_NULL;
 +        _cleanup_(table_unrefp) Table *table = NULL;
-+        _cleanup_(json_variant_unrefp) JsonVariant *json = NULL;
++        _cleanup_(sd_json_variant_unrefp) sd_json_variant *json = NULL;
 +        _cleanup_(version_clear) Version v = {};
 +        _cleanup_free_ char *changelog_link = NULL;
 +        _cleanup_strv_free_ char **changelog_links = NULL;
-+        JsonVariant *entry;
++        sd_json_variant *entry;
 +        const char *color;
 +        int r;
 +
@@ -800,19 +801,19 @@ index 0000000000..3068bd3aa7
 +                }
 +        printf("\n");
 +
-+        r = json_parse(v.contents_json, 0, &json, NULL, NULL);
++        r = sd_json_parse(v.contents_json, 0, &json, NULL, NULL);
 +        if (r < 0)
 +                return log_error_errno(r, "Failed to parse JSON: %m");
 +
-+        assert(json_variant_is_array(json));
++        assert(sd_json_variant_is_array(json));
 +
 +        JSON_VARIANT_ARRAY_FOREACH(entry, json) {
-+                assert(json_variant_is_object(entry));
++                assert(sd_json_variant_is_object(entry));
 +                const char *key;
-+                JsonVariant *value;
++                sd_json_variant *value;
 +
 +                if (!table) {
-+                         table = table_new_raw(json_variant_elements(entry) / 2);
++                         table = table_new_raw(sd_json_variant_elements(entry) / 2);
 +                         if (!table)
 +                                return log_oom();
 +
@@ -830,18 +831,18 @@ index 0000000000..3068bd3aa7
 +                        bool boolean;
 +                        const void *data;
 +
-+                        if (json_variant_is_string(value)) {
++                        if (sd_json_variant_is_string(value)) {
 +                                type = TABLE_STRING;
-+                                assert_se(data = json_variant_string(value));
-+                        } else if (json_variant_is_unsigned(value)) {
++                                assert_se(data = sd_json_variant_string(value));
++                        } else if (sd_json_variant_is_unsigned(value)) {
 +                                type = TABLE_UINT64;
-+                                number = json_variant_unsigned(value);
++                                number = sd_json_variant_unsigned(value);
 +                                data = &number;
-+                        } else if (json_variant_is_boolean(value)) {
++                        } else if (sd_json_variant_is_boolean(value)) {
 +                                type = TABLE_BOOLEAN;
-+                                boolean = json_variant_boolean(value);
++                                boolean = sd_json_variant_boolean(value);
 +                                data = &boolean;
-+                        } else if (json_variant_is_null(value)) {
++                        } else if (sd_json_variant_is_null(value)) {
 +                                type = TABLE_EMPTY;
 +                                data = NULL;
 +                        } else
@@ -862,7 +863,7 @@ index 0000000000..3068bd3aa7
 +                }
 +        }
 +
-+        return table_print_with_pager(table, JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
++        return table_print_with_pager(table, SD_JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
 +}
 +
 +static int verb_list(int argc, char **argv, void *userdata) {
@@ -1009,7 +1010,7 @@ index 0000000000..3068bd3aa7
 +        if (r < 0)
 +                return r;
 +
-+        return table_print_with_pager(table, JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
++        return table_print_with_pager(table, SD_JSON_FORMAT_OFF, arg_pager_flags, arg_legend);
 +}
 +
 +#define UPDATE_PROGRESS_FAILED INT_MIN

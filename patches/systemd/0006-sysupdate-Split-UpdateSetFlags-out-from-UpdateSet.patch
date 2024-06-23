@@ -1,7 +1,7 @@
-From 1dc6efcb1b94bc89995e9f281a4c31b1dd37b408 Mon Sep 17 00:00:00 2001
+From 8d656cbafd77a6fde1bd45c34423b9a54cdd7698 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 13 Jul 2023 14:47:30 -0400
-Subject: [PATCH 6/8] sysupdate: Split UpdateSetFlags out from UpdateSet
+Subject: [PATCH 6/9] sysupdate: Split UpdateSetFlags out from UpdateSet
 
 This will let us reuse UpdateSetFlags in updatectl
 ---
@@ -147,7 +147,7 @@ index 0000000000..6f954d7c22
 +const char *update_set_flags_to_glyph(UpdateSetFlags flags);
 +const char *update_set_flags_to_string(UpdateSetFlags flags);
 diff --git a/src/sysupdate/sysupdate-update-set.c b/src/sysupdate/sysupdate-update-set.c
-index 6d6051d15a..5682102d61 100644
+index f5a800429f..5682102d61 100644
 --- a/src/sysupdate/sysupdate-update-set.c
 +++ b/src/sysupdate/sysupdate-update-set.c
 @@ -1,10 +1,8 @@
@@ -166,7 +166,7 @@ index 6d6051d15a..5682102d61 100644
          return -strverscmp_improved((*a)->version, (*b)->version);
  }
 -
--const char *update_set_flags_to_color(UpdateSetFlags flags) {
+-const char* update_set_flags_to_color(UpdateSetFlags flags) {
 -
 -        if (flags == 0 || (flags & UPDATE_OBSOLETE))
 -                return (flags & UPDATE_NEWEST) ? ansi_highlight_grey() : ansi_grey();
@@ -183,7 +183,7 @@ index 6d6051d15a..5682102d61 100644
 -        return NULL;
 -}
 -
--const char *update_set_flags_to_glyph(UpdateSetFlags flags) {
+-const char* update_set_flags_to_glyph(UpdateSetFlags flags) {
 -
 -        if (flags == 0 || (flags & UPDATE_OBSOLETE))
 -                return special_glyph(SPECIAL_GLYPH_MULTIPLICATION_SIGN);
@@ -200,7 +200,7 @@ index 6d6051d15a..5682102d61 100644
 -        return " ";
 -}
 diff --git a/src/sysupdate/sysupdate-update-set.h b/src/sysupdate/sysupdate-update-set.h
-index 5dd94bce41..0b9bbfbe67 100644
+index 981535aedf..0b9bbfbe67 100644
 --- a/src/sysupdate/sysupdate-update-set.h
 +++ b/src/sysupdate/sysupdate-update-set.h
 @@ -8,14 +8,7 @@
@@ -226,13 +226,13 @@ index 5dd94bce41..0b9bbfbe67 100644
 -
  int update_set_cmp(UpdateSet *const*a, UpdateSet *const*b);
 -
--const char *update_set_flags_to_color(UpdateSetFlags flags);
--const char *update_set_flags_to_glyph(UpdateSetFlags flags);
+-const char* update_set_flags_to_color(UpdateSetFlags flags);
+-const char* update_set_flags_to_glyph(UpdateSetFlags flags);
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index b4bb2a7f20..b33a8cddf4 100644
+index 084e3f75a4..0c55835ec0 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
-@@ -381,60 +381,6 @@ static int context_discover_update_sets(Context *c) {
+@@ -382,60 +382,6 @@ static int context_discover_update_sets(Context *c) {
          return 0;
  }
  

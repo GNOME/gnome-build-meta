@@ -1,7 +1,7 @@
-From 5d38e18ecc573818bd7649b21c5e36d5d3c5853f Mon Sep 17 00:00:00 2001
+From e96ba120810438aff40b7d47f374dc5253be7f82 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Wed, 19 Jul 2023 17:55:18 -0400
-Subject: [PATCH 7/8] sysupdate: Split reboot_now into utils
+Subject: [PATCH 7/9] sysupdate: Split reboot_now into utils
 
 This will let us reuse reboot_now in updatectl
 ---
@@ -68,7 +68,7 @@ index 0000000000..fdd6c8318e
 +
 +int reboot_now(void);
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index b33a8cddf4..4c844cffed 100644
+index 0c55835ec0..01d69b85fe 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
 @@ -4,8 +4,6 @@
@@ -80,15 +80,15 @@ index b33a8cddf4..4c844cffed 100644
  #include "chase.h"
  #include "conf-files.h"
  #include "constants.h"
-@@ -15,7 +13,6 @@
- #include "format-table.h"
+@@ -16,7 +14,6 @@
  #include "glyph-util.h"
  #include "hexdecoct.h"
+ #include "json-util.h"
 -#include "login-util.h"
  #include "main-func.h"
  #include "mount-util.h"
  #include "os-util.h"
-@@ -29,9 +26,10 @@
+@@ -30,9 +27,10 @@
  #include "sort-util.h"
  #include "string-util.h"
  #include "strv.h"
@@ -100,7 +100,7 @@ index b33a8cddf4..4c844cffed 100644
  #include "terminal-util.h"
  #include "utf8.h"
  #include "verbs.h"
-@@ -886,23 +884,6 @@ static int context_apply(
+@@ -902,23 +900,6 @@ static int context_apply(
          return 1;
  }
  

@@ -1,7 +1,7 @@
-From 6c0549900267e993007ebef810e9fb6d2fa19d82 Mon Sep 17 00:00:00 2001
+From bb8e6dd6e8e7319c2117b0de046f4c08e9989ae2 Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 22 Jun 2023 19:47:20 -0400
-Subject: [PATCH 1/8] sysupdate: Report download progress via sd_notify
+Subject: [PATCH 1/9] sysupdate: Report download progress via sd_notify
 
 We set up a NOTIFY_SOCKET to get download progress notifications from
 each individual import helper. Along with the number of import jobs we
@@ -349,7 +349,7 @@ index b0c2a6e455..f613aef8cf 100644
  
  int transfer_install_instance(Transfer *t, Instance *i, const char *root);
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 9565b68e05..71d88e5585 100644
+index 9a8915c3fe..ef9253666a 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
 @@ -25,6 +25,7 @@
