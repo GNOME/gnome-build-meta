@@ -21,6 +21,7 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dman=false
+    -Dothers=enabled
 
 public:
   bst:
