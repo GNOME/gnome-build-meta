@@ -2,7 +2,7 @@ kind: import
 
 sources:
 - kind: local
-  path: files/sysupdate-apparmor/gnomeos-kernel-apparmor.conf
+  path: files/sysupdate-apparmor/40-gnomeos-kernel-apparmor.conf
 
 config:
   # This is an optional extension, which will need to be manually
