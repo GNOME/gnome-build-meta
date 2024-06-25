@@ -1,11 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.45.3.tar.xz
-  ref: 9b5fbfa6c9ddc92508ca9f32cc8aa2e68cf50fcfada8f2f45775d559570713b3
-- kind: patch
-  path: patches/webkitgtk/nicosia-crashes.patch
-- kind: patch
-  path: patches/webkitgtk/excessive-cpu-usage.patch
+  url: webkitgtk:webkitgtk-2.45.4.tar.xz
+  ref: bdc4c197a25c6fd8fd8e85b360842d490817b0326eba73149424687133d502ac
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -57,7 +53,11 @@ public:
   cpe:
     product: webkitgtk+
 
-# https://skia.org/docs/user/build/#supported-and-preferred-compilers
-environment:
-  CC: clang
-  CXX: clang++
+# Clang is strongly recommended:
+#  https://skia.org/docs/user/build/#supported-and-preferred-compilers
+#
+# However, it is also currently broken:
+#  https://bugs.webkit.org/show_bug.cgi?id=275872
+#environment:
+#  CC: clang
+#  CXX: clang++
