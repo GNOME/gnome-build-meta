@@ -12,3 +12,8 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+variables:
+  # configure script struggles with checking for largefile.
+  # So we disable it for now.
+  conf-local: >-
+    --disable-largefile
