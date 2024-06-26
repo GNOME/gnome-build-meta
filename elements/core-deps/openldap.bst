@@ -15,3 +15,6 @@ depends:
 variables:
   conf-local: >-
     --disable-slapd
+  local_flags: >-
+    -Wno-error=implicit-int
+    -Wno-error=int-conversion

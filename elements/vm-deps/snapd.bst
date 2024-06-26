@@ -25,6 +25,8 @@ depends:
 environment:
   GOPATH: "%{build-root}"
   GO111MODULE: 'off'
+  # There is an issue with xfsprogs header that need to be fixed
+  CGO_CPPFLAGS: "-Wno-error=implicit-function-declaration"
 
 variables:
   mount-dir: '/snap'

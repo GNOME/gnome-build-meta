@@ -62,6 +62,12 @@ variables:
     MYGUID=%{gnomeos-keys-uuid}
 
 config:
+  configure-commands:
+  - |
+    cat <<EOF >>Make.rules
+    CFLAGS+=-Wno-error=implicit-function-declaration
+    EOF
+
   build-commands:
     (>):
     # Create another set of keys PK-mic,KEK-mic,DB-mic

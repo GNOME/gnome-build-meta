@@ -19,3 +19,5 @@ depends:
 
 variables:
   meson: meson %{build-dir} */ %{meson-args}
+  local_flags: >-
+    -Wno-error=implicit-function-declaration

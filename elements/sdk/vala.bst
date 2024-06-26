@@ -23,3 +23,5 @@ variables:
     --enable-unversioned
     --disable-valadoc
   make: make bootstrap
+  local_flags: >-
+    -Wno-error=incompatible-pointer-types

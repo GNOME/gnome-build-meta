@@ -30,3 +30,7 @@ depends:
 - sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  local_flags: >-
+    -Wno-error=int-conversion

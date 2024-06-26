@@ -31,6 +31,9 @@ config:
     base_name="$(basename *.run .run)"
     cd "${base_name}/kernel"
     kernel_version=$(basename /usr/lib/modules/*)
+    cat <<EOF >>Kbuild
+    EXTRA_CFLAGS+=-Wno-error=incompatible-pointer-types
+    EOF
     make KERNEL_UNAME="${kernel_version}"
 
   - |

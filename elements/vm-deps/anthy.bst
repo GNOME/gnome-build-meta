@@ -10,3 +10,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  local_flags: >-
+    -Wno-error=implicit-function-declaration

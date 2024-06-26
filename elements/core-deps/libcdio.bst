@@ -10,3 +10,5 @@ depends:
 variables:
   conf-local: >-
     --without-cdda-player
+  local_flags: >-
+    -Wno-error=implicit-function-declaration

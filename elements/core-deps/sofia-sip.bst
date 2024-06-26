@@ -11,3 +11,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  local_flags: >-
+    -Wno-error=incompatible-pointer-types

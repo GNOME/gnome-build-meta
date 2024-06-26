@@ -19,3 +19,5 @@ variables:
     autoreconf -fvi
   conf-local: >-
     --enable-doc
+  local_flags: >-
+    -Wno-error=incompatible-pointer-types
