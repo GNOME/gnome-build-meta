@@ -48,7 +48,6 @@ depends:
 - sdk/tinysparql.bst
 - sdk/webkit2gtk-4.1.bst
 - sdk/webkitgtk-6.0.bst
-- sdk/webp-pixbuf-loader.bst
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
