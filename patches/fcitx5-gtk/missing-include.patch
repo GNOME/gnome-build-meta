@@ -1,0 +1,11 @@
+diff -ur fcitx5-gtk.old/gtk3/inputwindow.cpp fcitx5-gtk/gtk3/inputwindow.cpp
+--- fcitx5-gtk.old/gtk3/inputwindow.cpp	2024-01-02 18:34:42.000000000 +0100
++++ fcitx5-gtk/gtk3/inputwindow.cpp	2024-06-26 19:48:55.447546902 +0200
+@@ -11,6 +11,7 @@
+ #include <initializer_list>
+ #include <limits>
+ #include <pango/pangocairo.h>
++#include <algorithm>
+ 
+ namespace fcitx::gtk {
+ 

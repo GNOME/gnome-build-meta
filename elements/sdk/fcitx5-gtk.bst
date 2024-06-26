@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: github_files:fcitx/fcitx5-gtk/archive/5.1.1.tar.gz
   ref: 32e8a0365e51e1a6317c48966f3b028c7fb7596be0d6b7588b5b152eb280009e
+- kind: patch
+  path: patches/fcitx5-gtk/missing-include.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst
