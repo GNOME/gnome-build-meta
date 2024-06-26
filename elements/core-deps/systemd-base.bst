@@ -46,7 +46,6 @@ build-depends:
 - freedesktop-sdk.bst:components/libmicrohttpd.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - core-deps/python-pefile.bst
-- core-deps/libbpf.bst
 
 config:
   install-commands:
@@ -88,6 +87,7 @@ variables:
     -Dgnutls=disabled
     -Dglib=disabled
     -Ddbus=disabled
+    -Dbpf-framework=disabled
 
 public:
   cpe:

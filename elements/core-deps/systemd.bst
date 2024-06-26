@@ -27,7 +27,6 @@ runtime-depends:
 - freedesktop-sdk.bst:components/libqrencode.bst
 - freedesktop-sdk.bst:components/iptables.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
-- core-deps/libbpf.bst
 
 config:
   exclude:
