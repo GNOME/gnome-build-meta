@@ -19,7 +19,6 @@ runtime-depends:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
-- sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
 - sdk/pango.bst
@@ -33,6 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libavif.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
 - freedesktop-sdk.bst:components/libwebp.bst

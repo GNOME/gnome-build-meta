@@ -11,10 +11,10 @@ build-depends:
 
 runtime-depends:
 - sdk/gdk-pixbuf.bst
-- sdk/libjxl.bst
 - sdk/librsvg.bst
 - sdk/webp-pixbuf-loader.bst
 - freedesktop-sdk.bst:components/jpeg.bst
+- freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libpng.bst
 
 depends:

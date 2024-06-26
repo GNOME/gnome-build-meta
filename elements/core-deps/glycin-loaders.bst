@@ -1116,6 +1116,6 @@ build-depends:
 depends:
 - core-deps/libheif.bst
 - sdk/gtk.bst
-- sdk/libjxl.bst
+- freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
