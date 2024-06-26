@@ -3,7 +3,7 @@ kind: make
 sources:
 - kind: git_repo
   url: github:streambinder/vpnc.git
-  ref: 43780cecd7a61668002f73b6f8b9f9ba61af74ad
+  ref: d0fd23d9432d54e7f354ecf3ced1e35d92d3dbde
 
 variables:
   make-args: >-
