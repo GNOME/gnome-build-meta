@@ -1,0 +1,15 @@
+diff -ur efitools.old/Make.rules efitools/Make.rules
+--- efitools.old/Make.rules	2024-06-26 22:03:33.519532504 +0200
++++ efitools/Make.rules	2024-06-26 22:06:36.222134709 +0200
+@@ -51,11 +51,6 @@
+   FORMAT = -O binary
+ endif
+ 
+-ifeq ($(ARCH),aarch64)
+-  LDFLAGS += --defsym=EFI_SUBSYSTEM=0x0a
+-  FORMAT = -O binary
+-endif
+-
+ %.efi: %.so
+ 	$(OBJCOPY) -j .text -j .sdata -j .data -j .dynamic -j .dynsym \
+ 		   -j .rel -j .rela -j .rel.* -j .rela.* -j .rel* -j .rela* \
