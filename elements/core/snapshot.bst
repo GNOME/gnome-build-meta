@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 46.1-64-ga76fbfd4ed273c7de02a59a85cd54c1030307842
+  ref: 46.1-67-gd43babdc127a75523d17e7a481729cc7b6ad72d5
 - kind: cargo2
   ref:
   - kind: registry
@@ -23,10 +23,13 @@ sources:
     name: anyhow
     version: 1.0.86
     sha: b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da
-  - kind: registry
+  - kind: git
+    commit: 8c147159f4de1d2e7c8fee8f040810509f218ed3
+    repo: https://github.com/sophie-h/ashpd
+    query:
+      branch: wip/sophie-h/gtk-rs-0.20
     name: ashpd
-    version: 0.8.1
-    sha: dd884d7c72877a94102c3715f3b1cd09ff4fac28221add3e57cfbe25c236d093
+    version: 0.9.0
   - kind: registry
     name: async-broadcast
     version: 0.7.1
@@ -65,8 +68,8 @@ sources:
     sha: 3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11
   - kind: registry
     name: async-signal
-    version: 0.2.7
-    sha: 329972aa325176e89114919f2a80fdae4f4c040f66a370b1a1159c6c0f94e7aa
+    version: 0.2.8
+    sha: 794f185324c2f00e771cd9f1ae8b5ac68be2ca7abb129a87afd6e86d228bc54d
   - kind: registry
     name: async-task
     version: 4.7.1
@@ -89,8 +92,8 @@ sources:
     sha: 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
   - kind: registry
     name: bitflags
-    version: 2.5.0
-    sha: cf4b9d6a944f767f8e5e0db018570623c85f3d925ac718db4e06d0187adb21c1
+    version: 2.6.0
+    sha: b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de
   - kind: registry
     name: block
     version: 0.1.6
@@ -107,18 +110,24 @@ sources:
     name: bumpalo
     version: 3.16.0
     sha: 79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c
-  - kind: registry
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: cairo-rs
-    version: 0.19.4
-    sha: b2ac2a4d0e69036cf0062976f6efcba1aaee3e448594e6514bb2ddf87acce562
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: cairo-sys-rs
-    version: 0.19.2
-    sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
+    version: 0.20.0
   - kind: registry
     name: cc
-    version: 1.0.99
-    sha: 96c51067fd44124faa7f870b4b1c969379ad32b2ba805aa959430ceaa384f695
+    version: 1.0.100
+    sha: c891175c3fb232128f48de6590095e59198bbeb8620c310be349bfc3afd12c7b
   - kind: registry
     name: cfg-expr
     version: 0.15.8
@@ -239,46 +248,76 @@ sources:
     name: futures-util
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
-  - kind: registry
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: gdk-pixbuf
-    version: 0.19.2
-    sha: f6a23f8a0b5090494fd04924662d463f8386cc678dd3915015a838c1a3679b92
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: gdk-pixbuf-sys
-    version: 0.19.5
-    sha: 1fdbf021f8b9d19e30fb9ea6d6e5f2b6a712fe4645417c69f86f6ff1e1444a8f
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4
-    version: 0.8.2
-    sha: db265c9dd42d6a371e09e52deab3a84808427198b86ac792d75fd35c07990a07
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-sys
-    version: 0.8.2
-    sha: c9418fb4e8a67074919fe7604429c45aa74eb9df82e7ca529767c6d4e9dc66dd
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-wayland
-    version: 0.8.2
-    sha: f620a0ecbe4c574e3fec6bef6bebcefe19cb1b9a81569245ca4503c95f9b1371
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-wayland-sys
-    version: 0.8.2
-    sha: 7a5fd3927c917184b0e8712624eebabdc7f0909b645d468c825f8ec627e61803
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-win32
-    version: 0.8.2
-    sha: 3294d0d08b179198a01ac2623786e6227e3d7a98e042e26e4d020f31ba8fac41
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-win32-sys
-    version: 0.8.2
-    sha: 6682a82d3a1616fbe17a9a757528bd3ef0ede3eab7487f0ecf6ed2a499de117d
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-x11
-    version: 0.8.2
-    sha: ec6da3e3527007c14b27ddafe19496c49696a2a74dccb6ab75ba58dfa478b7ab
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gdk4-x11-sys
-    version: 0.8.2
-    sha: 0bb4e987ec77b7b2fb72c0943ccbec5c3834d9d7165fe762af8ff2414f0ae23d
+    version: 0.9.0
   - kind: registry
     name: generic-array
     version: 0.14.7
@@ -295,138 +334,237 @@ sources:
     name: gettext-sys
     version: 0.21.3
     sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
-  - kind: registry
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: gio
-    version: 0.19.5
-    sha: be548be810e45dd31d3bbb89c6210980bb7af9bca3ea1292b5f16b75f8e394a7
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: gio-sys
-    version: 0.19.5
-    sha: d4bdbef451b0f0361e7f762987cc6bebd5facab1d535e85a3cf1115dfb08db40
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: glib
-    version: 0.19.7
-    sha: e52355166df21c7ed16b6a01f615669c7911ed74e27ef60eba339c0d2da12490
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: glib-macros
-    version: 0.19.7
-    sha: 70025dbfa1275cf7d0531c3317ba6270dae15d87e63342229d638246ff45202e
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: glib-sys
-    version: 0.19.5
-    sha: 767d23ead9bbdfcbb1c2242c155c8128a7d13dde7bf69c176f809546135e2282
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: gobject-sys
-    version: 0.19.5
-    sha: c3787b0bfacca12bb25f8f822b0dbee9f7e4a86e6469a29976d332d2c14c945b
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: graphene-rs
-    version: 0.19.2
-    sha: 99e4d388e96c5f29e2b2f67045d229ddf826d0a8d6d282f94ed3b34452222c91
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: graphene-sys
-    version: 0.19.5
-    sha: 2a60e7381afdd7be43bd10a89d3b6741d162aabbca3a8db73505afb6a3aea59d
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gsk4
-    version: 0.8.2
-    sha: 7563884bf6939f4468e5d94654945bdd9afcaf8c3ba4c5dd17b5342b747221be
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gsk4-sys
-    version: 0.8.2
-    sha: 23024bf2636c38bbd1f822f58acc9d1c25b28da896ff0f291a1a232d4272b3dc
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: dbad98132fe6a5e2bd234671345679b2e0777e97
+    repo: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
+    query:
+      branch: main
     name: gst-plugin-gtk4
-    version: 0.12.6
-    sha: 7091d1c39049e6cbe819ea5b77a4373728b096d33b851c7eb7faa81a6c358700
-  - kind: registry
+    version: 0.13.0-alpha.1
+  - kind: git
+    commit: dbad98132fe6a5e2bd234671345679b2e0777e97
+    repo: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
+    query:
+      branch: main
     name: gst-plugin-version-helper
-    version: 0.8.2
-    sha: 4e5e874f1660252fd2ec81c602066df3633b3a6fcbe2b196f7f93c27cf069b2a
-  - kind: registry
+    version: 0.8.1
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer
-    version: 0.22.5
-    sha: 56b59fdce2dfacda226d4b1b71ce4700b2f04228909b52252c197d8e30bd54a6
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-audio
-    version: 0.22.5
-    sha: 703e65074d4f5dce207e855d8f36697ec93f953e5412780dcffc70cb5483337e
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-audio-sys
-    version: 0.22.5
-    sha: 2dfb1c22539b9b31fde5513fd68e2f0edeeaa5591d92daaaadbfa392736e820f
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-base
-    version: 0.22.0
-    sha: 514c71195b53c7eced4842b66ca9149833e41cf6a1d949e45e2ca4a4fa929850
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-base-sys
-    version: 0.22.5
-    sha: 2d8d11de9d94072657f2e9ca294b72326874a1e53de9f45613a9bf00773a5938
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl
-    version: 0.22.0
-    sha: 7d21c0c5fbf74018a0254b3ab77bca0a5b2c0f002bcfd910c09113ae90a95d98
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-egl
-    version: 0.22.0
-    sha: dfde7bf67f5f7c87e1ff29cdeea4918530d677b51e3f4847121ada44f1fab139
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-egl-sys
-    version: 0.22.5
-    sha: 11aebab3245bc0b271f8bfb97d72f56850a5a62c801007c74d40c110adcee19f
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-sys
-    version: 0.22.5
-    sha: 57116ddc5dc45d9af1fcfd700e1b30958c7c0754519ddd7961dd2547d9eed6e1
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-wayland
-    version: 0.22.0
-    sha: f9fbfe3d0c2469023b73df8408a4b19daaf7bd30141e9fc67e4ab63d41db5ee2
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-wayland-sys
-    version: 0.22.5
-    sha: 6fe4c64bc48ff54704047e9fa6b1a7f769d988389ae3b24ee5191c17f6c16c29
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-x11
-    version: 0.22.0
-    sha: 42ed82941c84668d89dbf81f220083422268c22ec6ab4991806649ed6758cec8
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-gl-x11-sys
-    version: 0.22.5
-    sha: e32e55003727d84746d15f2bd409a1e0f3d22313ac2595eb184b1fd2f6afaf0c
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-pbutils
-    version: 0.22.5
-    sha: 8d004276940d3b2c91526262ea2c16d3db4f90dfaf25b72435e042ff8960d420
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-pbutils-sys
-    version: 0.22.5
-    sha: 9d1621d1fef2b1f30dcb312e0f6cd6a4df085272bb9bb1058c9f36897cd2e4bb
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-sys
-    version: 0.22.5
-    sha: 4975a75279a9cf658bac1798dcf57100c6ec89fca7886572c8250ea4d94b76bd
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-video
-    version: 0.22.5
-    sha: 2a7900a4c4d7a48bd73405fb23289d2604c5efe483eb224cbe252d6a7517a6d5
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
     name: gstreamer-video-sys
-    version: 0.22.5
-    sha: 1cbe811de2cc60da42eb6d374a106bb5446e8fcd2134a97319dd2b8cc11450c7
-  - kind: registry
+    version: 0.23.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gtk4
-    version: 0.8.2
-    sha: b04e11319b08af11358ab543105a9e49b0c491faca35e2b8e7e36bfba8b671ab
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gtk4-macros
-    version: 0.8.2
-    sha: ec655a7ef88d8ce9592899deb8b2d0fa50bab1e6dd69182deb764e643c522408
-  - kind: registry
+    version: 0.9.0
+  - kind: git
+    commit: f0e1d9e1f44fc71403bae0de88f55296a93cc09a
+    repo: https://github.com/gtk-rs/gtk4-rs
+    query:
+      branch: master
     name: gtk4-sys
-    version: 0.8.2
-    sha: 8c8aa86b7f85ea71d66ea88c1d4bae1cfacf51ca4856274565133838d77e57b5
+    version: 0.9.0
   - kind: registry
     name: hashbrown
     version: 0.14.5
@@ -437,8 +575,8 @@ sources:
     sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
   - kind: registry
     name: hermit-abi
-    version: 0.3.9
-    sha: d231dfb89cfffdbc30e7fc41579ed6066ad03abda9e567ccafae602b97ec5024
+    version: 0.4.0
+    sha: fbf6a919d6cf397374f7dfeeea91d974c7c0a7221d0d0f4f20d859d329e53fcc
   - kind: registry
     name: hex
     version: 0.4.3
@@ -469,16 +607,18 @@ sources:
     sha: 29c15563dc2726973df627357ce0c9ddddbea194836909d655df6a75d2cf296d
   - kind: registry
     name: lazy_static
-    version: 1.4.0
-    sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
-  - kind: registry
+    version: 1.5.0
+    sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
+  - kind: git
+    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs
     name: libadwaita
-    version: 0.6.0
-    sha: 91b4990248b9e1ec5e72094a2ccaea70ec3809f88f6fd52192f2af306b87c5d9
-  - kind: registry
+    version: 0.7.0
+  - kind: git
+    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs
     name: libadwaita-sys
-    version: 0.6.0
-    sha: 23a748e4e92be1265cd9e93d569c0b5dfc7814107985aa6743d670ab281ea1a8
+    version: 0.7.0
   - kind: registry
     name: libc
     version: 0.2.155
@@ -501,8 +641,8 @@ sources:
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - kind: registry
     name: memchr
-    version: 2.7.2
-    sha: 6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d
+    version: 2.7.4
+    sha: 78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3
   - kind: registry
     name: memoffset
     version: 0.9.1
@@ -559,14 +699,20 @@ sources:
     name: overload
     version: 0.1.1
     sha: b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39
-  - kind: registry
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: pango
-    version: 0.19.5
-    sha: 504ce6e805439ea2c6791168fe7ef8e3da0c1b2ef82c44bc450dbc330592920d
-  - kind: registry
+    version: 0.20.0
+  - kind: git
+    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    repo: https://github.com/gtk-rs/gtk-rs-core
+    query:
+      branch: master
     name: pango-sys
-    version: 0.19.5
-    sha: e4829555bdbb83692ddeaf5a6927fb2d025c8131e5ecaa4f7619fff6985d3505
+    version: 0.20.0
   - kind: registry
     name: parking
     version: 2.2.0
@@ -597,8 +743,8 @@ sources:
     sha: d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec
   - kind: registry
     name: polling
-    version: 3.7.1
-    sha: 5e6a007746f34ed64099e88783b0ae369eaa3da6392868ba262e2af9b8fbaea1
+    version: 3.7.2
+    sha: a3ed00ed3fbf728b5816498ecd316d1716eecaced9c0c8d2c5a6740ca214985b
   - kind: registry
     name: ppv-lite86
     version: 0.2.17
@@ -609,8 +755,8 @@ sources:
     sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
   - kind: registry
     name: proc-macro2
-    version: 1.0.85
-    sha: 22244ce15aa966053a896d1accb3a6e68469b97c7f33f284b99f0d576879fc23
+    version: 1.0.86
+    sha: 5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77
   - kind: registry
     name: quote
     version: 1.0.36
@@ -629,16 +775,16 @@ sources:
     sha: ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c
   - kind: registry
     name: regex
-    version: 1.10.4
-    sha: c117dbdfde9c8308975b6a18d71f3f385c89461f7b3fb054288ecf2a2058ba4c
+    version: 1.10.5
+    sha: b91213439dad192326a0d7c6ee3955910425f441d7038e0d6933b0aec5c4517f
   - kind: registry
     name: regex-automata
-    version: 0.4.6
-    sha: 86b83b8b9847f9bf95ef68afb0b8e6cdb80f498442f5179a29fad448fcc1eaea
+    version: 0.4.7
+    sha: 38caf58cc5ef2fed281f89292ef23f6365465ed9a41b7a7754eb4e26496c92df
   - kind: registry
     name: regex-syntax
-    version: 0.8.3
-    sha: adad44e29e4c806119491a7f06f03de4d1af22c3a680dd47f1e6e179439d1f56
+    version: 0.8.4
+    sha: 7a66a03ae7c801facd77a29370b4faec201768915ac14a721ba36f20bc9c209b
   - kind: registry
     name: rustc_version
     version: 0.4.0
@@ -693,12 +839,16 @@ sources:
     sha: a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f
   - kind: registry
     name: syn
-    version: 2.0.66
-    sha: c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5
+    version: 2.0.68
+    sha: 901fa70d88b9d6c98022e23b4136f9f3e54e4662c3bc1bd1d84a42a9a0f0c1e9
   - kind: registry
     name: system-deps
     version: 6.2.2
     sha: a3e535eb8dded36d55ec13eddacd30dec501792ff23a0b1682c38601b8cf2349
+  - kind: registry
+    name: system-deps
+    version: 7.0.1
+    sha: 6c81f13d9a334a6c242465140bd262fae382b752ff2011c4f7419919a9c97922
   - kind: registry
     name: target-lexicon
     version: 0.12.14
@@ -725,8 +875,8 @@ sources:
     sha: 8b9ef9bad013ada3808854ceac7b46812a6465ba368859a37e2100283d2d719c
   - kind: registry
     name: tinyvec
-    version: 1.6.0
-    sha: 87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50
+    version: 1.6.1
+    sha: c55115c6fbe2d2bef26eb09ad74bde02d8255476fc0c7b515ef09fbb35742d82
   - kind: registry
     name: tinyvec_macros
     version: 0.1.1
@@ -789,8 +939,8 @@ sources:
     sha: a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5
   - kind: registry
     name: url
-    version: 2.5.0
-    sha: 31e6302e3bb753d46e83516cae55ae196fc0c309407cf11ab35cc51a4c2a4633
+    version: 2.5.2
+    sha: 22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c
   - kind: registry
     name: valuable
     version: 0.1.0
@@ -893,16 +1043,16 @@ sources:
     sha: 59b5e5f6c299a3c7890b876a2a587f3115162487e704907d9b6cd29473052ba1
   - kind: registry
     name: xdg-home
-    version: 1.1.0
-    sha: 21e5a325c3cb8398ad6cf859c1135b25dd29e186679cf2da7581d9679f63b38e
+    version: 1.2.0
+    sha: ca91dcf8f93db085f3a0a29358cd0b9d670915468f4290e8b85d118a34211ab8
   - kind: registry
     name: zbus
-    version: 4.2.2
-    sha: 989c3977a7aafa97b12b9a35d21cdcff9b0d2289762b14683f45d66b1ba6c48f
+    version: 4.3.0
+    sha: 23915fcb26e7a9a9dc05fd93a9870d336d6d032cd7e8cebf1c5c37666489fdd5
   - kind: registry
     name: zbus_macros
-    version: 4.2.2
-    sha: 6fe9de53245dcf426b7be226a4217dd5e339080e5d46e64a02d6e5dcbf90fca1
+    version: 4.3.0
+    sha: 02bcca0b586d2f8589da32347b4784ba424c4891ed86aa5b50d5e88f6b2c4f5d
   - kind: registry
     name: zbus_names
     version: 3.0.0
