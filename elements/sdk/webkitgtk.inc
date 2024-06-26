@@ -19,7 +19,6 @@ runtime-depends:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
-- sdk/libavif.bst
 - sdk/libjxl.bst
 - sdk/libmanette.bst
 - sdk/libsecret.bst
@@ -32,6 +31,7 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/hyphen.bst
 - freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libavif.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
