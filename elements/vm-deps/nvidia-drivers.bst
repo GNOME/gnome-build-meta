@@ -2,8 +2,8 @@ kind: manual
 
 sources:
 - kind: remote
-  url: nvidia:XFree86/Linux-x86_64/550.54.14/NVIDIA-Linux-x86_64-550.54.14.run
-  ref: 8c497ff1cfc7c310fb875149bc30faa4fd26d2237b2cba6cd2e8b0780157cfe3
+  url: nvidia:XFree86/Linux-x86_64/555.52.04/NVIDIA-Linux-x86_64-555.52.04.run
+  ref: 9d53ae6dbef32ae95786ec7d02bb944d5050c1c70516e6065ab5356626a44402
 - kind: local
   path: files/nvidia-config/modprobe.conf
   directory: local-config
@@ -51,7 +51,7 @@ config:
   - | # installer
     base_name="$(basename *.run .run)"
     cd "${base_name}"
-    
+
     install -Dm755 -t "%{install-root}%{bindir}/nvidia-bug-report.sh" nvidia-bug-report.sh
     install -Dm755 -t "%{install-root}${bindir}/nvidia-modprobe" nvidia-modprobe
 
@@ -237,7 +237,7 @@ config:
     cd "${base_name}"
 
     # FIXME: better way to get the version
-    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/550.54.14/" firmware/gsp_*.bin
+    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/555.52.04/" firmware/gsp_*.bin
     
   - | # so symlinks
 
