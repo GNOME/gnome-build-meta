@@ -5,8 +5,6 @@ sources:
   url: gnome:gnome-initial-setup.git
   track: master
   ref: 46.1-10-g6c74fe5a11f193d457d3b5456eac73ab9455f54c
-- kind: local
-  path: files/gnome-initial-setup/tmpfiles.conf
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -38,10 +36,3 @@ depends:
 variables:
   meson-local: >-
     -Dparental_controls=enabled
-
-config:
-  install-commands:
-    (>):
-    - |
-      tmpfilesdir="$(pkg-config --variable=tmpfilesdir systemd)"
-      install -Dm644 tmpfiles.conf "%{install-root}${tmpfilesdir}/gnome-initial-setup.conf"
