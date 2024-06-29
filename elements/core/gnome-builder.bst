@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-builder.git
   track: main
-  ref: 46.0-246-gf8d123d51d68f2e576723eadc43a725f54340bf5
+  ref: 47.alpha-4-g33eba1efb272c22151477df1e88b3a68e84f2467
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

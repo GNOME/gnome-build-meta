@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:tchx84/sysext-utils.git
   track: main
-  ref: v0.2.0-0-gc2b667a740af199e610502ac64d67007ecd06352
+  ref: v0.2.0-1-g3ee3c1f68180c6831925925a6c269dba88f219d0
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.0.1-83-gacdca33b6ba9541959fd9688697ac32617437c1b
+  ref: 1.1.alpha-1-g64af9c79de3d11e17f9611d6c89389546f417382
 - kind: cargo2
   ref:
   - kind: registry
@@ -89,8 +89,8 @@ sources:
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
   - kind: registry
     name: bitflags
-    version: 2.5.0
-    sha: cf4b9d6a944f767f8e5e0db018570623c85f3d925ac718db4e06d0187adb21c1
+    version: 2.6.0
+    sha: b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de
   - kind: registry
     name: block-buffer
     version: 0.10.4
@@ -101,8 +101,8 @@ sources:
     sha: 703f41c54fc768e63e091340b424302bb1c29ef4aa0c7f10fe849dfb114d29ea
   - kind: registry
     name: bytemuck
-    version: 1.16.0
-    sha: 78834c15cb5d5efe3452d58b1e8ba890dd62d21907f867f383358198e56ebca5
+    version: 1.16.1
+    sha: b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e
   - kind: registry
     name: byteorder
     version: 1.5.0
@@ -120,7 +120,7 @@ sources:
     version: 0.19.4
     sha: b2ac2a4d0e69036cf0062976f6efcba1aaee3e448594e6514bb2ddf87acce562
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -131,7 +131,7 @@ sources:
     version: 0.19.2
     sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -139,8 +139,8 @@ sources:
     version: 0.20.0
   - kind: registry
     name: cc
-    version: 1.0.99
-    sha: 96c51067fd44124faa7f870b4b1c969379ad32b2ba805aa959430ceaa384f695
+    version: 1.0.101
+    sha: ac367972e516d45567c7eafc73d24e1c193dcf200a8d94e9db7b3d38b349572d
   - kind: registry
     name: cexpr
     version: 0.6.0
@@ -235,8 +235,8 @@ sources:
     sha: 56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b
   - kind: registry
     name: either
-    version: 1.12.0
-    sha: 3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b
+    version: 1.13.0
+    sha: 60b1af1c220855b6ceac025d3f6ecdd2b7c4894bfe9cd9bda4fbb4bc7c0d4cf0
   - kind: registry
     name: endi
     version: 1.1.0
@@ -346,7 +346,7 @@ sources:
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -354,10 +354,10 @@ sources:
     version: 0.20.0
   - kind: registry
     name: gdk-pixbuf-sys
-    version: 0.19.5
-    sha: 1fdbf021f8b9d19e30fb9ea6d6e5f2b6a712fe4645417c69f86f6ff1e1444a8f
+    version: 0.19.8
+    sha: 4efa05a4f83c8cc50eb4d883787b919b85e5f1d8dd10b5a1df53bf5689782379
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -395,10 +395,10 @@ sources:
     sha: 40ecd4077b5ae9fd2e9e169b102c6c330d0605168eb0e8bf79952b256dbefffd
   - kind: registry
     name: gio
-    version: 0.19.5
-    sha: be548be810e45dd31d3bbb89c6210980bb7af9bca3ea1292b5f16b75f8e394a7
+    version: 0.19.8
+    sha: 4c49f117d373ffcc98a35d114db5478bc223341cff53e39a5d6feced9e2ddffe
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -406,10 +406,10 @@ sources:
     version: 0.20.0
   - kind: registry
     name: gio-sys
-    version: 0.19.5
-    sha: d4bdbef451b0f0361e7f762987cc6bebd5facab1d535e85a3cf1115dfb08db40
+    version: 0.19.8
+    sha: 2cd743ba4714d671ad6b6234e8ab2a13b42304d0e13ab7eba1dcdd78a7d6d4ef
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -417,10 +417,10 @@ sources:
     version: 0.20.0
   - kind: registry
     name: glib
-    version: 0.19.7
-    sha: e52355166df21c7ed16b6a01f615669c7911ed74e27ef60eba339c0d2da12490
+    version: 0.19.9
+    sha: 39650279f135469465018daae0ba53357942a5212137515777d5fdca74984a44
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -428,10 +428,10 @@ sources:
     version: 0.20.0
   - kind: registry
     name: glib-macros
-    version: 0.19.7
-    sha: 70025dbfa1275cf7d0531c3317ba6270dae15d87e63342229d638246ff45202e
+    version: 0.19.9
+    sha: 4429b0277a14ae9751350ad9b658b1be0abb5b54faa5bcdf6e74a3372582fad7
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -439,10 +439,10 @@ sources:
     version: 0.20.0
   - kind: registry
     name: glib-sys
-    version: 0.19.5
-    sha: 767d23ead9bbdfcbb1c2242c155c8128a7d13dde7bf69c176f809546135e2282
+    version: 0.19.8
+    sha: 5c2dc18d3a82b0006d470b13304fbbb3e0a9bd4884cf985a60a7ed733ac2c4a5
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -454,30 +454,27 @@ sources:
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
   - kind: registry
     name: gobject-sys
-    version: 0.19.5
-    sha: c3787b0bfacca12bb25f8f822b0dbee9f7e4a86e6469a29976d332d2c14c945b
+    version: 0.19.8
+    sha: 2e697e252d6e0416fd1d9e169bda51c0f1c926026c39ca21fbe8b1bb5c3b8b9e
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: gobject-sys
     version: 0.20.0
-  - kind: git
-    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
-    repo: https://github.com/gufo-rs/gufo.git
+  - kind: registry
     name: gufo-common
-    version: 0.1.0
-  - kind: git
-    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.1.0-alpha
+    sha: bdbc72e291765d0bdb342d2d91dee7046ed3225d1378da2f0ddfd9b60a7837df
+  - kind: registry
     name: gufo-exif
-    version: 0.1.0
-  - kind: git
-    commit: 24eea4b5d7109c034c4cedb159d9a200d895f724
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.1.0-alpha
+    sha: e14eb8a2d4c8ccd4b1520809482d742663bd57c057f0dbcbb614a96ae507fe61
+  - kind: registry
     name: gufo-jpeg
-    version: 0.1.0
+    version: 0.1.0-alpha
+    sha: 8be51c0a622d5c41af16d62297aabfaaddcc6f0b1a1afd3e66e7d0a7889c33f2
   - kind: registry
     name: half
     version: 2.4.1
@@ -548,8 +545,8 @@ sources:
     sha: ef4fc70d0ab7e5b6bafa30216a6b48705ea964cdfc29c050f2412295eba58077
   - kind: registry
     name: lazy_static
-    version: 1.4.0
-    sha: e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646
+    version: 1.5.0
+    sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: lazycell
     version: 1.3.0
@@ -580,15 +577,15 @@ sources:
     sha: f60b29be1ef3ab2aba61344f09a18c3edf552bf4f9fbec9bd68b9ea6f98e71f8
   - kind: registry
     name: libloading
-    version: 0.8.3
-    sha: 0c2a198fb6b0eada2a8df47933734e6d35d350665a33a3593d7164fa52c75c19
+    version: 0.8.4
+    sha: e310b3a6b5907f99202fcdb4960ff45b93735d7c7d96b760fcff8db2dc0e103d
   - kind: git
-    commit: 3e7addb9ee6589d5e1d80322d65ce3ce6bdc75a2
+    commit: 86e041db9c09a8c106a5276364b2310149af44e9
     repo: https://gitlab.gnome.org/sophie-h/librsvg-rebind.git
     name: librsvg-rebind
     version: 0.1.0
   - kind: git
-    commit: 3e7addb9ee6589d5e1d80322d65ce3ce6bdc75a2
+    commit: 86e041db9c09a8c106a5276364b2310149af44e9
     repo: https://gitlab.gnome.org/sophie-h/librsvg-rebind.git
     name: librsvg-rebind-sys
     version: 0.1.0
@@ -677,14 +674,14 @@ sources:
     version: 0.2.0
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: pango
     version: 0.20.0
   - kind: git
-    commit: c69f816d53925c5e7d17bd09ad8ef33aecb4947d
+    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -736,8 +733,8 @@ sources:
     sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
   - kind: registry
     name: proc-macro2
-    version: 1.0.85
-    sha: 22244ce15aa966053a896d1accb3a6e68469b97c7f33f284b99f0d576879fc23
+    version: 1.0.86
+    sha: 5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77
   - kind: registry
     name: qoi
     version: 0.4.1
@@ -864,16 +861,16 @@ sources:
     sha: 7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f
   - kind: registry
     name: syn
-    version: 2.0.66
-    sha: c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5
+    version: 2.0.68
+    sha: 901fa70d88b9d6c98022e23b4136f9f3e54e4662c3bc1bd1d84a42a9a0f0c1e9
   - kind: registry
     name: system-deps
     version: 6.2.2
     sha: a3e535eb8dded36d55ec13eddacd30dec501792ff23a0b1682c38601b8cf2349
   - kind: registry
     name: system-deps
-    version: 7.0.0
-    sha: 221396b853ccd1c7c6fb90c3ad84ac0bda62b8f6acd6ca72098ed9fca2152841
+    version: 7.0.1
+    sha: 6c81f13d9a334a6c242465140bd262fae382b752ff2011c4f7419919a9c97922
   - kind: registry
     name: target-lexicon
     version: 0.12.14
