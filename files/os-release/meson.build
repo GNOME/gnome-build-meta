@@ -50,13 +50,13 @@ else
         input : 'org.gnome.Platform.appdata.xml.in',
         output : 'org.gnome.Platform.appdata.xml',
         configuration : conf_data,
-        install_dir : get_option('datadir') / 'appdata'
+        install_dir : get_option('datadir') / 'metainfo'
     )
     configure_file(
         input : 'org.gnome.Sdk.appdata.xml.in',
         output : 'org.gnome.Sdk.appdata.xml',
         configuration : conf_data,
-        install_dir : get_option('datadir') / 'appdata'
+        install_dir : get_option('datadir') / 'metainfo'
     )
 
     configure_file(

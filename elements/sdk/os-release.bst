@@ -4,7 +4,7 @@ sources:
   path: files/os-release
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- sdk/appstream-glib.bst
+- freedesktop-sdk.bst:components/appstream-minimal.bst
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
