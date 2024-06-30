@@ -6,7 +6,6 @@
 kind: stack
 depends:
 - sdk-platform.bst
-- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - sdk/sysprof-agent.bst
 - sdk/sysprof-minimal.bst
