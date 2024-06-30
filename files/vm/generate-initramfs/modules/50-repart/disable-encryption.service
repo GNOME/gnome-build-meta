@@ -13,7 +13,6 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/bin/cp -rT /sysusr/usr/lib/repart.d /run/repart.d
 ExecStart=/usr/bin/sed -i '/^Encrypt=/d' /run/repart.d/50-root.conf
-ExecStart=/usr/bin/sed -i '/^Encrypt=/d' /run/repart.d/60-home.conf
 ExecStart=/usr/bin/touch /run/recovery-password
 
 [Install]
