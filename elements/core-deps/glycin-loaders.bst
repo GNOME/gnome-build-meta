@@ -1134,6 +1134,12 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/libheif.bst
 - sdk/gtk.bst
+- sdk/librsvg.bst
 - freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  # Only build loaders, not the C bindings
+  meson-local: >-
+    -Dlibglycin=false
