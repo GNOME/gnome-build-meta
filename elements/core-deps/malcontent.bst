@@ -2,13 +2,13 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:pwithnall/malcontent/-/archive/0.11.0/malcontent-0.11.0.tar.gz
-  ref: e6b94831afe255818a881813ed161bd75e713cca0a052d909ec7e683f0e76960
-
+  url: tecnocode:malcontent/malcontent-0.12.0.tar.xz
+  ref: 8fe59e081a6cad3a15c1fa839d8c7126e32bb3a17a4b7b48e0b8c253ab6c6d41
 build-depends:
 - core-deps/glib-testing.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
