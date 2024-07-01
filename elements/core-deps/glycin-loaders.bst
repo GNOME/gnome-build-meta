@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.alpha-1-g64af9c79de3d11e17f9611d6c89389546f417382
+  ref: 1.1.alpha-4-ge5d229d058d892ad5700d98179adcec82abe8770
 - kind: cargo2
   ref:
   - kind: registry
@@ -1116,6 +1116,11 @@ build-depends:
 depends:
 - core-deps/libheif.bst
 - sdk/gtk.bst
+- sdk/librsvg.bst
 - freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dlibglycin=false
