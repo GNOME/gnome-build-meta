@@ -23,3 +23,4 @@ variables:
     -Dlibcolordcompat=false
     -Dman=false
     -Dvapi=true
+    -Ddocs=false
