@@ -11,11 +11,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
-- core-deps/flatpak-builder.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gjs.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/flatpak-builder.bst
 
 depends:
 - core-deps/cmark.bst
