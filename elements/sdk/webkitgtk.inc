@@ -54,10 +54,6 @@ public:
     product: webkitgtk+
 
 # Clang is strongly recommended:
-#  https://skia.org/docs/user/build/#supported-and-preferred-compilers
-#
-# However, it is also currently broken:
-#  https://bugs.webkit.org/show_bug.cgi?id=275872
-#environment:
-#  CC: clang
-#  CXX: clang++
+environment:
+  CC: clang
+  CXX: clang++
