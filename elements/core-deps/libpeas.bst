@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libpeas/2.0/libpeas-2.0.2.tar.xz
-  ref: f30dffed63ca2f40477b40e171c0a31f80d91425ba1e1e47320ee6425480ecc3
+  url: gnome_downloads:libpeas/2.0/libpeas-2.0.3.tar.xz
+  ref: 39e3b507c29d2d01df1345e9b3380fd7a9d0aeb5b2e657d38e6c2bea5023e5f0
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
