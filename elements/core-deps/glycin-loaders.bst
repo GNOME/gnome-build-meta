@@ -1130,7 +1130,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libheif.bst
+- freedesktop-sdk.bst:components/libheif.bst
 - sdk/gtk.bst
 - freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
