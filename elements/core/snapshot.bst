@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 46.1-81-g0758a3dff9e92436aef9fb9a667e83cee7c82071
+  ref: 47.alpha-2-g58c3434eb242b6befb16115384e35b881c35a18a
 - kind: cargo2
   ref:
   - kind: registry
@@ -92,6 +92,10 @@ sources:
     sha: 0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0
   - kind: registry
     name: bitflags
+    version: 1.3.2
+    sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
+  - kind: registry
+    name: bitflags
     version: 2.6.0
     sha: b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de
   - kind: registry
@@ -110,15 +114,23 @@ sources:
     name: bumpalo
     version: 3.16.0
     sha: 79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c
+  - kind: registry
+    name: bytemuck
+    version: 1.16.1
+    sha: b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e
+  - kind: registry
+    name: byteorder
+    version: 1.5.0
+    sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: cairo-rs
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
@@ -126,8 +138,8 @@ sources:
     version: 0.20.0
   - kind: registry
     name: cc
-    version: 1.0.100
-    sha: c891175c3fb232128f48de6590095e59198bbeb8620c310be349bfc3afd12c7b
+    version: 1.0.104
+    sha: 74b6a57f98764a267ff415d50a25e6e166f3831a5071af4995296ea97d210490
   - kind: registry
     name: cfg-expr
     version: 0.15.8
@@ -138,8 +150,8 @@ sources:
     sha: baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd
   - kind: registry
     name: cfg_aliases
-    version: 0.1.1
-    sha: fd16c4719339c4530435d38e511904438d07cce7950afa3718a84ac36c10e89e
+    version: 0.2.1
+    sha: 613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724
   - kind: registry
     name: chrono
     version: 0.4.38
@@ -169,9 +181,13 @@ sources:
     version: 0.10.7
     sha: 9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292
   - kind: registry
+    name: dunce
+    version: 1.0.4
+    sha: 56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b
+  - kind: registry
     name: either
-    version: 1.12.0
-    sha: 3dca9240753cf90908d7e4aac30f630662b02aebaa1b58a3cadabdb23385b58b
+    version: 1.13.0
+    sha: 60b1af1c220855b6ceac025d3f6ecdd2b7c4894bfe9cd9bda4fbb4bc7c0d4cf0
   - kind: registry
     name: endi
     version: 1.1.0
@@ -208,6 +224,18 @@ sources:
     name: field-offset
     version: 0.3.6
     sha: 38e2275cc4e4fc009b0669731a1e5ab7ebf11f469eaede2bab9309a5b4d6057f
+  - kind: registry
+    name: foreign-types
+    version: 0.5.0
+    sha: d737d9aa519fb7b749cbc3b962edcf310a8dd1f4b67c91c4f83975dbdd17d965
+  - kind: registry
+    name: foreign-types-macros
+    version: 0.2.3
+    sha: 1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742
+  - kind: registry
+    name: foreign-types-shared
+    version: 0.3.1
+    sha: aa9a19cbb55df58761df49b23516a86d432839add4af60fc256da840f66ed35b
   - kind: registry
     name: form_urlencoded
     version: 1.2.1
@@ -249,14 +277,14 @@ sources:
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: gdk-pixbuf
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
@@ -335,56 +363,66 @@ sources:
     version: 0.21.3
     sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: gio
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: gio-sys
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: glib
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: glib-macros
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: glib-sys
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: e5d229d058d892ad5700d98179adcec82abe8770
+    repo: https://gitlab.gnome.org/sophie-h/glycin
+    name: glycin
+    version: 2.0.0-alpha
+  - kind: git
+    commit: e5d229d058d892ad5700d98179adcec82abe8770
+    repo: https://gitlab.gnome.org/sophie-h/glycin
+    name: glycin-utils
+    version: 2.0.0-alpha
+  - kind: git
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: gobject-sys
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: graphene-rs
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
@@ -405,140 +443,154 @@ sources:
     name: gsk4-sys
     version: 0.9.0
   - kind: git
-    commit: dbad98132fe6a5e2bd234671345679b2e0777e97
+    commit: 95ae67752f0f5ad848df2dce1cd97b480903b2e9
     repo: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
     query:
       branch: main
     name: gst-plugin-gtk4
     version: 0.13.0-alpha.1
   - kind: git
-    commit: dbad98132fe6a5e2bd234671345679b2e0777e97
+    commit: 95ae67752f0f5ad848df2dce1cd97b480903b2e9
     repo: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
     query:
       branch: main
     name: gst-plugin-version-helper
     version: 0.8.1
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
+    name: gstreamer-allocators
+    version: 0.23.0
+  - kind: git
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
+    repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
+    query:
+      branch: main
+    name: gstreamer-allocators-sys
+    version: 0.23.0
+  - kind: git
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-audio
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-audio-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-base
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-base-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-egl
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-egl-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-wayland
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-wayland-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-x11
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-gl-x11-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-pbutils
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-pbutils-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-sys
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
     name: gstreamer-video
     version: 0.23.0
   - kind: git
-    commit: 7a5096b1e4d1c0ff32c7a5b4abdb70eccc814b30
+    commit: adf3e9236aa6974147866242617cf651938e0ccc
     repo: https://gitlab.freedesktop.org/gstreamer/gstreamer-rs
     query:
       branch: main
@@ -565,6 +617,14 @@ sources:
       branch: master
     name: gtk4-sys
     version: 0.9.0
+  - kind: registry
+    name: gufo-common
+    version: 0.1.0-alpha
+    sha: bdbc72e291765d0bdb342d2d91dee7046ed3225d1378da2f0ddfd9b60a7837df
+  - kind: registry
+    name: gufo-exif
+    version: 0.1.0-alpha
+    sha: e14eb8a2d4c8ccd4b1520809482d742663bd57c057f0dbcbb614a96ae507fe61
   - kind: registry
     name: hashbrown
     version: 0.14.5
@@ -602,6 +662,10 @@ sources:
     version: 0.13.0
     sha: 413ee7dfc52ee1a4949ceeb7dbc8a33f2d6c088194d9f922fb8318faf1f01186
   - kind: registry
+    name: jobserver
+    version: 0.1.31
+    sha: d2b099aaa34a9751c5bf0878add70444e1ed2dd73f347be99003d4577277de6e
+  - kind: registry
     name: js-sys
     version: 0.3.69
     sha: 29c15563dc2726973df627357ce0c9ddddbea194836909d655df6a75d2cf296d
@@ -609,13 +673,21 @@ sources:
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
+  - kind: registry
+    name: lcms2
+    version: 6.1.0
+    sha: 680ec3fa42c36e0af9ca02f20a3742a82229c7f1ee0e6754294de46a80be6f74
+  - kind: registry
+    name: lcms2-sys
+    version: 4.0.5
+    sha: 593265f9a3172180024fb62580ee31348f31be924b19416da174ebb7fb623d2e
   - kind: git
-    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    commit: 2faebad724af2c1444d97a302fd39fff1bff83eb
     repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs
     name: libadwaita
     version: 0.7.0
   - kind: git
-    commit: 4faeb2e8b501c86a80718724b488b9fe65bd114f
+    commit: 2faebad724af2c1444d97a302fd39fff1bff83eb
     repo: https://gitlab.gnome.org/World/Rust/libadwaita-rs
     name: libadwaita-sys
     version: 0.7.0
@@ -623,6 +695,14 @@ sources:
     name: libc
     version: 0.2.155
     sha: 97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c
+  - kind: registry
+    name: libseccomp
+    version: 0.3.0
+    sha: 21c57fd8981a80019807b7b68118618d29a87177c63d704fc96e6ecd003ae5b3
+  - kind: registry
+    name: libseccomp-sys
+    version: 0.2.1
+    sha: 9a7cbbd4ad467251987c6e5b47d53b11a5a05add08f2447a9e2d70aef1e0d138
   - kind: registry
     name: linux-raw-sys
     version: 0.4.14
@@ -633,8 +713,8 @@ sources:
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
   - kind: registry
     name: log
-    version: 0.4.21
-    sha: 90ed8c1e510134f979dbc4f070f87d4313098b704861a105fe34231c70a3901c
+    version: 0.4.22
+    sha: a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24
   - kind: registry
     name: malloc_buf
     version: 0.0.6
@@ -643,6 +723,14 @@ sources:
     name: memchr
     version: 2.7.4
     sha: 78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3
+  - kind: registry
+    name: memfd
+    version: 0.6.4
+    sha: b2cffa4ad52c6f791f4f8b15f0c05f9824b2ced1160e88cc393d64fff9a8ac64
+  - kind: registry
+    name: memmap2
+    version: 0.9.4
+    sha: fe751422e4a8caa417e13c3ea66452215d7d63e19e604f4980461212f3ae1322
   - kind: registry
     name: memoffset
     version: 0.9.1
@@ -653,8 +741,8 @@ sources:
     sha: 956787520e75e9bd233246045d19f42fb73242759cc57fba9611d940ae96d4b0
   - kind: registry
     name: nix
-    version: 0.28.0
-    sha: ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4
+    version: 0.29.0
+    sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
   - kind: registry
     name: nu-ansi-term
     version: 0.46.0
@@ -700,14 +788,14 @@ sources:
     version: 0.1.1
     sha: b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
     name: pango
     version: 0.20.0
   - kind: git
-    commit: 06b350c9cc86809338fa6ddb4cc34388b092aaa8
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core
     query:
       branch: master
@@ -785,6 +873,14 @@ sources:
     name: regex-syntax
     version: 0.8.4
     sha: 7a66a03ae7c801facd77a29370b4faec201768915ac14a721ba36f20bc9c209b
+  - kind: registry
+    name: rmp
+    version: 0.8.14
+    sha: 228ed7c16fa39782c3b3468e974aec2795e9089153cd08ee2e9aefb3613334c4
+  - kind: registry
+    name: rmp-serde
+    version: 1.3.0
+    sha: 52e599a477cf9840e92f2cde9a7189e67b42c57532749bf90aea6ec10facd4db
   - kind: registry
     name: rustc_version
     version: 0.4.0
@@ -1047,24 +1143,24 @@ sources:
     sha: ca91dcf8f93db085f3a0a29358cd0b9d670915468f4290e8b85d118a34211ab8
   - kind: registry
     name: zbus
-    version: 4.3.0
-    sha: 23915fcb26e7a9a9dc05fd93a9870d336d6d032cd7e8cebf1c5c37666489fdd5
+    version: 4.3.1
+    sha: 851238c133804e0aa888edf4a0229481c753544ca12a60fd1c3230c8a500fe40
   - kind: registry
     name: zbus_macros
-    version: 4.3.0
-    sha: 02bcca0b586d2f8589da32347b4784ba424c4891ed86aa5b50d5e88f6b2c4f5d
+    version: 4.3.1
+    sha: 8d5a3f12c20bd473be3194af6b49d50d7bb804ef3192dc70eddedb26b85d9da7
   - kind: registry
     name: zbus_names
     version: 3.0.0
     sha: 4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c
   - kind: registry
     name: zvariant
-    version: 4.1.1
-    sha: 9aa6d31a02fbfb602bfde791de7fedeb9c2c18115b3d00f3a36e489f46ffbbc7
+    version: 4.1.2
+    sha: 1724a2b330760dc7d2a8402d841119dc869ef120b139d29862d6980e9c75bfc9
   - kind: registry
     name: zvariant_derive
-    version: 4.1.1
-    sha: 642bf1b6b6d527988b3e8193d20969d53700a36eac734d21ae6639db168701c8
+    version: 4.1.2
+    sha: 55025a7a518ad14518fb243559c058a2e5b848b015e31f1d90414f36e3317859
   - kind: registry
     name: zvariant_utils
     version: 2.0.0
@@ -1083,3 +1179,4 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
+- freedesktop-sdk.bst:components/libseccomp.bst
