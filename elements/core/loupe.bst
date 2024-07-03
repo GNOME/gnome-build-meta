@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.alpha-2-g798f2584ee69bfdda4cc64eef0dadc79e7010c76
+  ref: 47.alpha-6-gecc32af66490a63192a296e65743519f936e3caa
 - kind: cargo2
 
   ref:
@@ -144,14 +144,14 @@ sources:
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: cairo-rs
     version: 0.20.0
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -202,9 +202,17 @@ sources:
     version: 0.1.6
     sha: 1bfb12502f3fc46cca1bb51ac28df9d618d813cdc3d2f25b9fe775a34af26bb3
   - kind: registry
+    name: cstr
+    version: 0.2.12
+    sha: 68523903c8ae5aacfa32a0d9ae60cadeb764e1da14ee0d26b1f3089f13a54636
+  - kind: registry
     name: digest
     version: 0.10.7
     sha: 9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292
+  - kind: registry
+    name: dlib
+    version: 0.5.2
+    sha: 330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412
   - kind: registry
     name: dunce
     version: 1.0.4
@@ -306,18 +314,22 @@ sources:
     version: 0.3.30
     sha: 38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004
   - kind: registry
+    name: futures-timer
+    version: 3.0.3
+    sha: f288b0a4f20f9a56b5d1da57e2227c661b7b16168e2f72365f57b63326e29b24
+  - kind: registry
     name: futures-util
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: gdk-pixbuf
     version: 0.20.0
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -390,7 +402,7 @@ sources:
     version: 0.19.8
     sha: 4c49f117d373ffcc98a35d114db5478bc223341cff53e39a5d6feced9e2ddffe
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -401,7 +413,7 @@ sources:
     version: 0.19.8
     sha: 2cd743ba4714d671ad6b6234e8ab2a13b42304d0e13ab7eba1dcdd78a7d6d4ef
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -412,7 +424,7 @@ sources:
     version: 0.19.9
     sha: 39650279f135469465018daae0ba53357942a5212137515777d5fdca74984a44
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -423,7 +435,7 @@ sources:
     version: 0.19.9
     sha: 4429b0277a14ae9751350ad9b658b1be0abb5b54faa5bcdf6e74a3372582fad7
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -434,19 +446,19 @@ sources:
     version: 0.19.8
     sha: 5c2dc18d3a82b0006d470b13304fbbb3e0a9bd4884cf985a60a7ed733ac2c4a5
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: glib-sys
     version: 0.20.0
   - kind: git
-    commit: 82107d35195b4cb7580286f946bab28f52cc6a59
+    commit: 8dc103d88ed8d4dbce7cd9a09842121f0d101734
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin
     version: 2.0.0-alpha
   - kind: git
-    commit: 82107d35195b4cb7580286f946bab28f52cc6a59
+    commit: 8dc103d88ed8d4dbce7cd9a09842121f0d101734
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin-utils
     version: 2.0.0-alpha
@@ -455,7 +467,7 @@ sources:
     version: 0.19.8
     sha: 2e697e252d6e0416fd1d9e169bda51c0f1c926026c39ca21fbe8b1bb5c3b8b9e
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -609,6 +621,10 @@ sources:
     version: 4.4.0
     sha: 2cb8f774df868ceca45c30e19945b5895d599ed1ed33b28092eec9f38d4e3ba3
   - kind: registry
+    name: libloading
+    version: 0.8.4
+    sha: e310b3a6b5907f99202fcdb4960ff45b93735d7c7d96b760fcff8db2dc0e103d
+  - kind: registry
     name: libseccomp
     version: 0.3.0
     sha: 21c57fd8981a80019807b7b68118618d29a87177c63d704fc96e6ecd003ae5b3
@@ -697,14 +713,14 @@ sources:
     version: 0.2.0
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: pango
     version: 0.20.0
   - kind: git
-    commit: 942aaafc7c28a15bca4710db4355edd334aaf66a
+    commit: ffdad007c26dc06b8be47e966be6677a74726987
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -1054,6 +1070,10 @@ sources:
     name: xdg-home
     version: 1.2.0
     sha: ca91dcf8f93db085f3a0a29358cd0b9d670915468f4290e8b85d118a34211ab8
+  - kind: registry
+    name: yeslogic-fontconfig-sys
+    version: 5.0.0
+    sha: ffb6b23999a8b1a997bf47c7bb4d19ad4029c3327bb3386ebe0a5ff584b33c7a
   - kind: registry
     name: zbus
     version: 4.3.0

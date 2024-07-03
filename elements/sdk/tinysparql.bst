@@ -4,11 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tinysparql.git
   track: main
-  ref: 3.7.3-71-gb52867f7e79b7424322ebda114e3aeeb5ee7fc8d
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 0854af0fdb6d527a8d1999835ac2c5059976c210
+  ref: 3.7.3-130-g7f464c2b965165b0dfcc255edbedcc36b920f23c
 
 build-depends:
 - sdk/gobject-introspection.bst

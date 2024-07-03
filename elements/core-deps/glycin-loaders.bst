@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.alpha-1-g64af9c79de3d11e17f9611d6c89389546f417382
+  ref: 1.1.alpha-8-g8dc103d88ed8d4dbce7cd9a09842121f0d101734
 - kind: cargo2
   ref:
   - kind: registry
@@ -202,6 +202,10 @@ sources:
     version: 0.1.6
     sha: 1bfb12502f3fc46cca1bb51ac28df9d618d813cdc3d2f25b9fe775a34af26bb3
   - kind: registry
+    name: cstr
+    version: 0.2.12
+    sha: 68523903c8ae5aacfa32a0d9ae60cadeb764e1da14ee0d26b1f3089f13a54636
+  - kind: registry
     name: darling
     version: 0.20.9
     sha: 83b2eb4d90d12bdda5ed17de686c2acb4c57914f8f921b8da7e112b5a36f3fe1
@@ -229,6 +233,10 @@ sources:
     name: digest
     version: 0.10.7
     sha: 9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292
+  - kind: registry
+    name: dlib
+    version: 0.5.2
+    sha: 330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412
   - kind: registry
     name: dunce
     version: 1.0.4
@@ -341,6 +349,10 @@ sources:
     name: futures-task
     version: 0.3.30
     sha: 38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004
+  - kind: registry
+    name: futures-timer
+    version: 3.0.3
+    sha: f288b0a4f20f9a56b5d1da57e2227c661b7b16168e2f72365f57b63326e29b24
   - kind: registry
     name: futures-util
     version: 0.3.30
@@ -1071,6 +1083,10 @@ sources:
     name: xdg-home
     version: 1.2.0
     sha: ca91dcf8f93db085f3a0a29358cd0b9d670915468f4290e8b85d118a34211ab8
+  - kind: registry
+    name: yeslogic-fontconfig-sys
+    version: 5.0.0
+    sha: ffb6b23999a8b1a997bf47c7bb4d19ad4029c3327bb3386ebe0a5ff584b33c7a
   - kind: registry
     name: zbus
     version: 4.3.0

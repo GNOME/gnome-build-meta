@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calendar.git
   track: main
-  ref: 46.1-31-gcf8768f0760d3bda01471ac96a58915fcbd04256
+  ref: 46.1-36-g02116592e09a296b6a94f2370c2a06bb71c61326
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
