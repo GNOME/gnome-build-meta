@@ -37,13 +37,11 @@ config:
     components/libnotify.bst: sdk/libnotify.bst
     components/librsvg.bst: sdk/librsvg.bst
     components/libsoup.bst: sdk/libsoup.bst
-    components/noopenh264.bst: sdk/noopenh264.bst
     components/pango.bst: sdk/pango.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
     components/zenity.bst: void/zenity.bst
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
     components/linux-module-cert.bst: vm-secure/linux-module-cert.bst
-    components/meson.bst: sdk/meson.bst
     components/systemd-base.bst: core-deps/systemd-base.bst
     components/systemd.bst: core-deps/systemd.bst

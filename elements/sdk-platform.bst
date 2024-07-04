@@ -41,7 +41,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/mozjs.bst
-- sdk/noopenh264.bst
 - sdk/nuspell.bst
 - sdk/pango.bst
 - sdk/pinentry.bst
@@ -52,5 +51,6 @@ depends:
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
+- freedesktop-sdk.bst:components/noopenh264.bst
 - freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:platform.bst
