@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop:xorg/xserver/-/archive/xorg-server-21.1.8/xserver-xorg-server-21.1.8.tar.bz2
+  url: freedesktop_files:xorg/xserver/-/archive/xorg-server-21.1.8/xserver-xorg-server-21.1.8.tar.bz2
   ref: 508ccfcb35c45fd9eb6037770ce559ccdbec411432d95c79f7424e504b452e49
 - kind: remote
   url: fedora_rpms:xorg-x11-server/raw/rawhide/f/xvfb-run.sh

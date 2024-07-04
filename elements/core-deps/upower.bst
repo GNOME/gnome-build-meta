@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop:upower/upower/-/archive/v1.90.0/upower-v1.90.0.tar.bz2
+  url: freedesktop_files:upower/upower/-/archive/v1.90.0/upower-v1.90.0.tar.bz2
   ref: eafa0a367dc0417390984eeb81e9d1a2b449999ba6ad20ed39bf270d0b4e5e77
 
 build-depends:
