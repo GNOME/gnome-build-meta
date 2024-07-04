@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: freedesktop:upower/power-profiles-daemon.git
-  track: refs/tags/*
-  ref: 0.21-0-gae9076ab19e649103ebf07846aaf2b6d1b8240e3
+- kind: tar
+  url: freedesktop_files:upower/power-profiles-daemon/-/archive/0.21/power-profiles-daemon-0.21.tar.gz
+  ref: c15a368a59f2cae1474bdfccdd9357f06b0abc9eb7638a87f68c091aaf570349
 
 build-depends:
 - sdk/gtk-doc.bst
