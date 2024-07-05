@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
-  track: master
+  track: main
   ref: 46.0-15-g3146f5c23e61e82b9cb6088ef98b591d5ffa51d8
 - kind: cargo2
   ref:
