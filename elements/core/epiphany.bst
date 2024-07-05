@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:epiphany.git
-  track: master
+  track: main
   ref: 47.alpha-7-gb8cf4e2e750a46743bdc89ed09ebc18c839cdaf6
 
 build-depends:
