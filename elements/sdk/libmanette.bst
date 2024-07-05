@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:libmanette.git
-  track: master
+  track: main
   ref: 0.2.7-15-gba80c34f799efbb9b58bdf4fb233895ec045ebcc
 
 build-depends:
