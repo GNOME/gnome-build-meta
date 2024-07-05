@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-calculator.git
-  track: master
+  track: main
   ref: 47.alpha-7-g2fc525084ff4d398b3e16c22f32e59c615432b8e
 
 build-depends:
