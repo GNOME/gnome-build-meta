@@ -71,6 +71,7 @@ config:
     C /etc/isns
     C /etc/kernel
     C /etc/ld.so.conf
+    C /etc/ld.so.conf.d
     C /etc/libaudit.conf
     C /etc/libblockdev
     C /etc/libinput
