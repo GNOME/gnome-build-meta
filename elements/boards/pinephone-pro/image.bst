@@ -47,7 +47,8 @@ config:
          --karg="loglevel=10" \
          --karg="console=ttyS2,1500000n8" \
          --karg="console=tty0" \
-         --karg="consoleblank=0"
+         --karg="consoleblank=0" \
+         --karg="systemd.firstboot=no"
 
   - |
     mkdir -p "%{sysroot}/etc/ostree"

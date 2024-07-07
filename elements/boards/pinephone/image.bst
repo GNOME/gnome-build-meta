@@ -45,7 +45,8 @@ config:
          --karg="rw" --karg="splash" \
          --karg="root=LABEL=root" \
          --karg="console=ttyS0,115200n8" \
-         --karg="earlycon=ttyS0,115200n8" 
+         --karg="earlycon=ttyS0,115200n8" \
+         --karg="systemd.firstboot=no"
 
   - |
     mkdir -p "%{sysroot}/etc/ostree"
