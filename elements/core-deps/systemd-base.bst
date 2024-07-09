@@ -5,10 +5,9 @@ kind: meson
 #  - freedestkop-sdk.bst:components/systemd-libs.bst
 
 sources:
-- kind: git_repo
-  url: github:systemd/systemd.git
-  track: main
-  ref: v256-671-g0443f7e722c1a4b64325e20c3a83e6b8d73b5f8d
+- kind: tar
+  url: https://github.com/systemd/systemd/archive/refs/tags/v256.2.tar.gz
+  ref: 81ed336d36e48b1f31b876540f437755f33c7c389ba6e8efb8d3512129f0096d
 - kind: patch_queue
   path: patches/systemd
 

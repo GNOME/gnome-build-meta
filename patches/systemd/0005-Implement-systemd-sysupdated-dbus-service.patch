@@ -1,7 +1,7 @@
-From 0092268174ff5a2503ab9fcd7d3c75b507982e6b Mon Sep 17 00:00:00 2001
+From 9eacc289b6f4db8252a8d418c37ce8d438ad9e4b Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 29 Jun 2023 22:58:41 -0400
-Subject: [PATCH 5/9] Implement systemd-sysupdated dbus service
+Subject: [PATCH 5/8] Implement systemd-sysupdated dbus service
 
 ---
  man/org.freedesktop.sysupdate1.xml            |  433 ++++
@@ -31,7 +31,7 @@ Subject: [PATCH 5/9] Implement systemd-sysupdated dbus service
 
 diff --git a/man/org.freedesktop.sysupdate1.xml b/man/org.freedesktop.sysupdate1.xml
 new file mode 100644
-index 0000000000..f132a6b271
+index 0000000000..b873afb17d
 --- /dev/null
 +++ b/man/org.freedesktop.sysupdate1.xml
 @@ -0,0 +1,433 @@
@@ -443,7 +443,7 @@ index 0000000000..f132a6b271
 +      <para><function>ListTargets()</function>,
 +      <function>ListJobs()</function>,
 +      <function>ListAppStream()</function>, and
-+      <function>JobRemoved()</function> were added in version 257.</para>
++      <function>JobRemoved()</function> were added in version 256.</para>
 +    </refsect2>
 +    <refsect2>
 +      <title>The Target Object</title>
@@ -456,7 +456,7 @@ index 0000000000..f132a6b271
 +      <function>GetVersion()</function>,
 +      <varname>Class</varname>,
 +      <varname>Name</varname>, and
-+      <varname>Path</varname> were added in version 257.</para>
++      <varname>Path</varname> were added in version 256.</para>
 +    </refsect2>
 +    <refsect2>
 +      <title>The Job Object</title>
@@ -464,12 +464,12 @@ index 0000000000..f132a6b271
 +      <varname>Id</varname>,
 +      <varname>Type</varname>,
 +      <varname>Offline</varname>, and
-+      <varname>Progress</varname> were added in version 257.</para>
++      <varname>Progress</varname> were added in version 256.</para>
 +    </refsect2>
 +  </refsect1>
 +</refentry>
 diff --git a/man/rules/meson.build b/man/rules/meson.build
-index 9b8a29c564..8c2d5c8b2a 100644
+index a9a2a25c0d..afc94cb8ec 100644
 --- a/man/rules/meson.build
 +++ b/man/rules/meson.build
 @@ -65,6 +65,7 @@ manpages = [
@@ -480,7 +480,7 @@ index 9b8a29c564..8c2d5c8b2a 100644
   ['org.freedesktop.timedate1', '5', [], 'ENABLE_TIMEDATED'],
   ['os-release', '5', ['extension-release', 'initrd-release'], ''],
   ['pam_systemd', '8', [], 'HAVE_PAM'],
-@@ -1099,6 +1100,10 @@ manpages = [
+@@ -1097,6 +1098,10 @@ manpages = [
     'systemd-sysupdate.service',
     'systemd-sysupdate.timer'],
    'ENABLE_SYSUPDATE'],
@@ -564,7 +564,7 @@ index 0000000000..7e58ff1692
 +
 +</refentry>
 diff --git a/meson.build b/meson.build
-index dd335c1244..5a2fc47e8f 100644
+index ea4e12aa1c..2ea87fc9a9 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -270,6 +270,7 @@ conf.set_quoted('SYSTEMD_LANGUAGE_FALLBACK_MAP',              pkgdatadir / 'lang
@@ -833,10 +833,10 @@ index 0000000000..67e1a29078
 +User=root
 +SystemdService=dbus-org.freedesktop.sysupdate1.service
 diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 121d6238d0..084e3f75a4 100644
+index d5afdb30eb..b4bb2a7f20 100644
 --- a/src/sysupdate/sysupdate.c
 +++ b/src/sysupdate/sysupdate.c
-@@ -906,7 +906,9 @@ static int context_apply(
+@@ -890,7 +890,9 @@ static int context_apply(
          log_info("Selected update '%s' for install.", us->version);
  
          (void) sd_notifyf(false,
@@ -849,7 +849,7 @@ index 121d6238d0..084e3f75a4 100644
           * removing stuff we'll protect the version we are trying to acquire. Why that? Maybe an earlier
 diff --git a/src/sysupdate/sysupdated.c b/src/sysupdate/sysupdated.c
 new file mode 100644
-index 0000000000..95fbc736c4
+index 0000000000..ab45967e3d
 --- /dev/null
 +++ b/src/sysupdate/sysupdated.c
 @@ -0,0 +1,1891 @@
@@ -869,7 +869,7 @@ index 0000000000..95fbc736c4
 +#include "escape.h"
 +#include "fd-util.h"
 +#include "fileio.h"
-+#include "json-util.h"
++#include "json.h"
 +#include "main-func.h"
 +#include "memfd-util.h"
 +#include "missing_capability.h"
@@ -939,7 +939,7 @@ index 0000000000..95fbc736c4
 +
 +typedef struct Job Job;
 +
-+typedef int (*JobComplete)(sd_bus_message *, const Job *, sd_json_variant *, sd_bus_error *);
++typedef int (*JobComplete)(sd_bus_message *, const Job *, JsonVariant *, sd_bus_error *);
 +
 +struct Job {
 +        Manager *manager;
@@ -959,7 +959,7 @@ index 0000000000..95fbc736c4
 +        int status_errno;
 +        unsigned n_cancelled;
 +
-+        sd_json_variant *json;
++        JsonVariant *json;
 +
 +        JobComplete complete_cb;
 +        sd_bus_message *dbus_msg;
@@ -997,7 +997,7 @@ index 0000000000..95fbc736c4
 +        free(j->object_path);
 +        free(j->version);
 +
-+        sd_json_variant_unref(j->json);
++        json_variant_unref(j->json);
 +
 +        sd_bus_message_unref(j->dbus_msg);
 +
@@ -1045,8 +1045,8 @@ index 0000000000..95fbc736c4
 +        return 0;
 +}
 +
-+static int job_parse_child_output(int _fd, sd_json_variant **ret) {
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
++static int job_parse_child_output(int _fd, JsonVariant **ret) {
++        _cleanup_(json_variant_unrefp) JsonVariant *v = NULL;
 +        _cleanup_close_ int fd = _fd;
 +        _cleanup_fclose_ FILE *f = NULL;
 +        struct stat st;
@@ -1069,7 +1069,7 @@ index 0000000000..95fbc736c4
 +        if (!f)
 +                return log_error_errno(errno, "Failed to reopen memfd: %m");
 +
-+        r = sd_json_parse_file(f, "stdout", 0, &v, NULL, NULL);
++        r = json_parse_file(f, "stdout", 0, &v, NULL, NULL);
 +        if (r < 0)
 +                return log_error_errno(r, "Failed to parse JSON: %m");
 +
@@ -1158,7 +1158,7 @@ index 0000000000..95fbc736c4
 +static int job_on_exit(sd_event_source *s, const siginfo_t *si, void *userdata) {
 +        Job *j = ASSERT_PTR(userdata);
 +        _cleanup_(sd_bus_error_free) sd_bus_error error = SD_BUS_ERROR_NULL;
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *json = NULL;
++        _cleanup_(json_variant_unrefp) JsonVariant *json = NULL;
 +        int r;
 +
 +        assert(j);
@@ -1565,19 +1565,19 @@ index 0000000000..95fbc736c4
 +        return 0;
 +}
 +
-+static int cache_string_from_json(char **ret, const char *key, sd_json_variant *json) {
-+        sd_json_variant *v;
++static int cache_string_from_json(char **ret, const char *key, JsonVariant *json) {
++        JsonVariant *v;
 +        const char *j;
 +        _cleanup_free_ char *s = NULL;
 +
-+        v = sd_json_variant_by_key(json, key);
++        v = json_variant_by_key(json, key);
 +        if (!v)
 +                return -EINVAL;
 +
-+        if (sd_json_variant_is_null(v))
++        if (json_variant_is_null(v))
 +                j = "";
 +        else
-+                j = sd_json_variant_string(v);
++                j = json_variant_string(v);
 +        if (!j)
 +                return -EINVAL;
 +
@@ -1589,19 +1589,19 @@ index 0000000000..95fbc736c4
 +        return 0;
 +}
 +
-+static int cache_strv_from_json(char ***ret, const char *key, sd_json_variant *json) {
-+        sd_json_variant *v;
++static int cache_strv_from_json(char ***ret, const char *key, JsonVariant *json) {
++        JsonVariant *v;
 +        _cleanup_free_ char **s = NULL;
 +        int r;
 +
-+        v = sd_json_variant_by_key(json, key);
++        v = json_variant_by_key(json, key);
 +        if (!v)
 +                return -EINVAL;
 +
-+        if (sd_json_variant_is_null(v))
++        if (json_variant_is_null(v))
 +                s = NULL;
 +        else {
-+                r = sd_json_variant_strv(v, &s);
++                r = json_variant_strv(v, &s);
 +                if (r < 0)
 +                        return -EINVAL;
 +        }
@@ -1609,11 +1609,11 @@ index 0000000000..95fbc736c4
 +        return 0;
 +}
 +
-+static int sysupdate_run_simple(sd_json_variant **ret, ...) {
++static int sysupdate_run_simple(JsonVariant **ret, ...) {
 +        _cleanup_close_pair_ int pipe[2] = EBADF_PAIR;
 +        _cleanup_(pidref_done_sigkill_wait) PidRef pid = PIDREF_NULL;
 +        _cleanup_fclose_ FILE *f = NULL;
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
++        _cleanup_(json_variant_unrefp) JsonVariant *v = NULL;
 +        int r;
 +
 +        r = pipe2(pipe, O_CLOEXEC);
@@ -1674,7 +1674,7 @@ index 0000000000..95fbc736c4
 +        if (!f)
 +                return -errno;
 +
-+        r = sd_json_parse_file(f, "stdout", 0, &v, NULL, NULL);
++        r = json_parse_file(f, "stdout", 0, &v, NULL, NULL);
 +        if (r < 0)
 +                return log_error_errno(r, "Failed to parse JSON: %m");
 +
@@ -1683,7 +1683,7 @@ index 0000000000..95fbc736c4
 +}
 +
 +static int target_ensure_properties(Target *t) {
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
++        _cleanup_(json_variant_unrefp) JsonVariant *v = NULL;
 +        _cleanup_free_ char *target_arg = NULL;
 +        int r;
 +
@@ -1716,10 +1716,10 @@ index 0000000000..95fbc736c4
 +static int target_method_list_finish(
 +                sd_bus_message *msg,
 +                const Job *j,
-+                sd_json_variant *json,
++                JsonVariant *json,
 +                sd_bus_error *error) {
 +
-+        sd_json_variant *v;
++        JsonVariant *v;
 +        _cleanup_strv_free_ char **versions = NULL;
 +        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
 +        int r;
@@ -1730,11 +1730,11 @@ index 0000000000..95fbc736c4
 +        (void) cache_string_from_json(&j->target->version, "current", json);
 +        (void) cache_strv_from_json(&j->target->appstream, "appstream-url", json);
 +
-+        v = sd_json_variant_by_key(json, "all");
++        v = json_variant_by_key(json, "all");
 +        if (!v)
 +                return -EINVAL;
 +
-+        r = sd_json_variant_strv(v, &versions);
++        r = json_variant_strv(v, &versions);
 +        if (r < 0)
 +                return r;
 +
@@ -1796,7 +1796,7 @@ index 0000000000..95fbc736c4
 +static int target_method_describe_finish(
 +                sd_bus_message *msg,
 +                const Job *j,
-+                sd_json_variant *json,
++                JsonVariant *json,
 +                sd_bus_error *error) {
 +        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
 +        _cleanup_free_ char *text = NULL;
@@ -1804,7 +1804,7 @@ index 0000000000..95fbc736c4
 +
 +        assert(json);
 +
-+        r = sd_json_variant_format(json, 0, &text);
++        r = json_variant_format(json, 0, &text);
 +        if (r < 0)
 +                return r;
 +
@@ -1867,16 +1867,16 @@ index 0000000000..95fbc736c4
 +static int target_method_check_new_finish(
 +                sd_bus_message *msg,
 +                const Job *j,
-+                sd_json_variant *json,
++                JsonVariant *json,
 +                sd_bus_error *error) {
 +        const char *reply;
 +
 +        assert(json);
 +
-+        if (sd_json_variant_is_null(json))
++        if (json_variant_is_null(json))
 +                reply = "";
 +        else
-+                reply = sd_json_variant_string(json);
++                reply = json_variant_string(json);
 +        if (!reply)
 +                return -EINVAL;
 +
@@ -1923,7 +1923,7 @@ index 0000000000..95fbc736c4
 +static int target_method_update_finished_early(
 +                sd_bus_message *msg,
 +                const Job *j,
-+                sd_json_variant *json,
++                JsonVariant *json,
 +                sd_bus_error *error) {
 +
 +        /* Called when job finishes w/ a successful exit code, but before any work begins.
@@ -1988,11 +1988,11 @@ index 0000000000..95fbc736c4
 +static int target_method_vacuum_finish(
 +                sd_bus_message *msg,
 +                const Job *j,
-+                sd_json_variant *json,
++                JsonVariant *json,
 +                sd_bus_error *error) {
 +
 +        assert(json);
-+        return sd_bus_reply_method_return(msg, "u", sd_json_variant_unsigned(json));
++        return sd_bus_reply_method_return(msg, "u", json_variant_unsigned(json));
 +}
 +
 +static int target_method_vacuum(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
@@ -2063,10 +2063,10 @@ index 0000000000..95fbc736c4
 +}
 +
 +static int target_list_components(Target *t, char ***ret_components, bool *ret_have_default) {
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *json = NULL;
++        _cleanup_(json_variant_unrefp) JsonVariant *json = NULL;
 +        _cleanup_strv_free_ char **components = NULL;
 +        _cleanup_free_ char *target_arg = NULL;
-+        sd_json_variant *v;
++        JsonVariant *v;
 +        bool have_default;
 +        int r;
 +
@@ -2080,15 +2080,15 @@ index 0000000000..95fbc736c4
 +        if (r < 0)
 +                return r;
 +
-+        v = sd_json_variant_by_key(json, "default");
++        v = json_variant_by_key(json, "default");
 +        if (!v)
 +                return -EINVAL;
-+        have_default = sd_json_variant_boolean(v);
++        have_default = json_variant_boolean(v);
 +
-+        v = sd_json_variant_by_key(json, "components");
++        v = json_variant_by_key(json, "components");
 +        if (!v)
 +                return -EINVAL;
-+        r = sd_json_variant_strv(v, &components);
++        r = json_variant_strv(v, &components);
 +        if (r < 0)
 +                return r;
 +
