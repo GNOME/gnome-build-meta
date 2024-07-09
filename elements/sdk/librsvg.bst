@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:librsvg.git
-  track: main
-  ref: 2.59.0-beta.1-77-gf909cddcf7b62061bb73712c88a420d4d76667b3
+- kind: tar
+  url: gnome_downloads:librsvg/2.58/librsvg-2.58.91.tar.xz
+  ref: 65846ae57c11aba288bf3a6fe517f800f7e38e7fbc79b98c99a8177634ed29f7
 - kind: cargo2
   ref:
   - kind: registry

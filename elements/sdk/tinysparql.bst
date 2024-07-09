@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tinysparql.git
-  track: main
-  ref: 3.8.alpha-19-g481d9138e036708c650d93f99dca5e09791d80b3
-
+- kind: tar
+  url: gnome_downloads:tinysparql/3.8/tinysparql-3.8.alpha.tar.xz
+  ref: fc4900f3214d177047aa6f2d55f792780b5555f07b17df6543882c6154f33fbf
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

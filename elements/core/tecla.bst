@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tecla.git
-  track: main
-  ref: 46.0-10-g73fad8f1d5a69827f1ae57760c27c998fe29cfbc
-
+- kind: tar
+  url: gnome_downloads:tecla/46/tecla-46.0.tar.xz
+  ref: 4a081eab867a5a8b09758991cad7645920f323aabca954408290fb6f44591b0f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

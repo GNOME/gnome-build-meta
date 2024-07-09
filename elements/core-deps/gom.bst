@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:gom.git
-  track: master
-  ref: 0.5.2-2-gec9a5388091f8d4d5726bd39e994b2936881c981
+- kind: tar
+  url: gnome_downloads:gom/0.5/gom-0.5.2.tar.xz
+  ref: 4cde83adf6f826836ed575d420f987ad1f559606b218224b69bf559f2ed7e205
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

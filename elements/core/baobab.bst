@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:baobab.git
-  track: main
-  ref: 46.0-50-g4fe23d3862391ad0591e920581f70d8cd15a7363
-
+- kind: tar
+  url: gnome_downloads:baobab/47/baobab-47.alpha.tar.xz
+  ref: d36715445809ea11a2ad2970cea80b35d9d1a7271f08049654279b474821451c
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

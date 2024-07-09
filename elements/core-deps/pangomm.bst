@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pangomm.git
-  track: master
-  ref: 2.52.0-4-ga109dd3ebaabd9aa56599e15eacad22dffdfb4ea
-
+- kind: tar
+  url: gnome_downloads:pangomm/2.52/pangomm-2.52.0.tar.xz
+  ref: 34a134126a6484ff12f774358c36ecc44d0e9df094e1b83796d9774bb7d24947
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:epiphany.git
-  track: main
-  ref: 47.alpha-30-g773949f0b93923385d9d013ae45a441f33831365
-
+- kind: tar
+  url: gnome_downloads:epiphany/47/epiphany-47.alpha.tar.xz
+  ref: 75e969c85e6c3509e7920527f9082b1e8b425b4b4c4ae651d3bc168b1730c7d7
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

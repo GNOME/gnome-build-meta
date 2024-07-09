@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:connections.git
-  track: master
-  ref: 46.0-20-g11a9a39ec12f748cb1cbfc429a3e6d804885ff71
-- kind: git_module
-  url: gnome:gtk-frdp.git
-  path: subprojects/gtk-frdp
-  ref: 6cfdc840159bb349310c3b81cd2df949f1522760
-
+- kind: tar
+  url: gnome_downloads:gnome-connections/46/gnome-connections-46.0.tar.xz
+  ref: fb1cea68e7930bbdc1db28b7cd0a9a37cd310d4b4e7872fe814f50a16a8d25d3
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-music.git
-  track: master
-  ref: 46.0-27-g9a0be3336af3e688960c40c22f29654df373c179
-
+- kind: tar
+  url: gnome_downloads:gnome-music/46/gnome-music-46.0.tar.xz
+  ref: a450d5ce016892f6af2f8ab71fc7c394382e22c7b620ba92a6e15cf66bc5ec5f
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

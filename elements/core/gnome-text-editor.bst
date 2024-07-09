@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-text-editor.git
-  track: main
-  ref: 47.alpha-24-g061ef242c2e5d98afdbe9c22db64f24cc8756e12
-
+- kind: tar
+  url: gnome_downloads:gnome-text-editor/47/gnome-text-editor-47.alpha.tar.xz
+  ref: 50be618d0b077ac1979cd83b21231ae6617c89762c79d47dd1ddee765ffe3883
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
