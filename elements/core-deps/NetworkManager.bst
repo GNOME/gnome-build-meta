@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.46/NetworkManager-1.46.0.tar.xz
-  ref: 722649e25362693b334371473802a729b0ec9ee283375096905f868808e74068
+  url: gnome_downloads:NetworkManager/1.46/NetworkManager-1.46.2.tar.xz
+  ref: db1dd523b0e9ebd968de3557124e2d7b8643645ab583af6e5acf54c90402ea47
 build-depends:
 - core-deps/intltool.bst
 - sdk/gobject-introspection.bst

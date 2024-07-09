@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:vte/0.76/vte-0.76.2.tar.xz
-  ref: e3dc6082d5bd70f8aafaaad2cdfcaf7e51da6ba00a919b11ddac6efa09c72847
+  url: gnome_downloads:vte/0.76/vte-0.76.3.tar.xz
+  ref: f678e94c056f377fd0021214adff5450cb172e9a08b160911181ddff7b7d5d60
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

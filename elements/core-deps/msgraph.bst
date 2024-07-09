@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:msgraph/0.2/msgraph-0.2.2.tar.xz
-  ref: 12cc954f750bb137ace8500fe9355d26e6e00ef6ccaab2950e9d360e92758335
+  url: gnome_downloads:msgraph/0.2/msgraph-0.2.3.tar.xz
+  ref: ed42e800cb7f0a07477cd9e3e744cdc1a240a6ad7ab96b8a875806267a9fddb0
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst
