@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.alpha-10-gae744119835f197ec38ddcc92c56de2d9cd32d7e
+  ref: 47.alpha-12-gebbec6ed7f804c75fac772eb7a3be1f26cd4f9e5
 - kind: cargo2
 
   ref:
@@ -144,14 +144,14 @@ sources:
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: cairo-rs
     version: 0.20.0
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -314,14 +314,14 @@ sources:
     version: 0.3.30
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: gdk-pixbuf
     version: 0.20.0
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -394,7 +394,7 @@ sources:
     version: 0.19.8
     sha: 4c49f117d373ffcc98a35d114db5478bc223341cff53e39a5d6feced9e2ddffe
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -405,7 +405,7 @@ sources:
     version: 0.19.8
     sha: 2cd743ba4714d671ad6b6234e8ab2a13b42304d0e13ab7eba1dcdd78a7d6d4ef
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -416,7 +416,7 @@ sources:
     version: 0.19.9
     sha: 39650279f135469465018daae0ba53357942a5212137515777d5fdca74984a44
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -427,7 +427,7 @@ sources:
     version: 0.19.9
     sha: 4429b0277a14ae9751350ad9b658b1be0abb5b54faa5bcdf6e74a3372582fad7
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -438,19 +438,19 @@ sources:
     version: 0.19.8
     sha: 5c2dc18d3a82b0006d470b13304fbbb3e0a9bd4884cf985a60a7ed733ac2c4a5
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: glib-sys
     version: 0.20.0
   - kind: git
-    commit: 139a6b1ba489b97ab14f0d7e0bd3b2793acbc248
+    commit: 48a6c39c8e92b5c08fe2134063b474c61911f54e
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin
     version: 2.0.0-alpha
   - kind: git
-    commit: 139a6b1ba489b97ab14f0d7e0bd3b2793acbc248
+    commit: 48a6c39c8e92b5c08fe2134063b474c61911f54e
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin-utils
     version: 2.0.0-alpha
@@ -459,7 +459,7 @@ sources:
     version: 0.19.8
     sha: 2e697e252d6e0416fd1d9e169bda51c0f1c926026c39ca21fbe8b1bb5c3b8b9e
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
@@ -713,14 +713,14 @@ sources:
     version: 0.1.1
     sha: b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master
     name: pango
     version: 0.20.0
   - kind: git
-    commit: b269ab29dde25dc67131266b7416e65622b5ad76
+    commit: a9c1b6a1b8630b07dbe3b4a0da36fedb2d5ac0b1
     repo: https://github.com/gtk-rs/gtk-rs-core.git
     query:
       branch: master

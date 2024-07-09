@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk-doc.git
   track: master
-  ref: 1.34.0-16-g195f5abb7e2f39abea9c72e91713a7373a8d4f05
+  ref: 1.34.0-17-gc5d41ae5f9a7046e4d033c82ca8dacd3aaca0482
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
