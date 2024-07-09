@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-# We need to use git_repo rather than a tarball because cairographics.org is unreliable.
-# https://gitlab.freedesktop.org/freedesktop/freedesktop/-/issues/1184
 - kind: tar
-  url: gnome_downloads:cairomm/1.15/cairomm-1.15.4.tar.xz
-  ref: 4cd9fd959538953dfa606aaa7a31381e3193eebf14d814d97ef928684ee9feb5
+  url: cairo:releases/cairomm-1.18.0.tar.xz
+  ref: b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
