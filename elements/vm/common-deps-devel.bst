@@ -4,7 +4,7 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
-- core-deps/sysext-utils.bst
+- vm/sysext-utils.bst
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
