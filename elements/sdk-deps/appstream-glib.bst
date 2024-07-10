@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_3.tar.gz
-  ref: 15ad7690b0132d883bd066699a7b55f6cef4c0f266d18d781ce5d8112fb4ee63
-
+  url: 
+    freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.3.tar.xz
+  ref: 84754064c560fca6e1ab151dc64354fc235a5798f016b91b38c9617253a8cf11
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
