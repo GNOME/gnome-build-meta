@@ -5,6 +5,8 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-24.08*
   ref: freedesktop-sdk-24.08beta.2-0-gd4ad23887670af5ecc8a3af55080db9607b5b96e
+- kind: patch
+  path: patches/freedesktop-sdk/mesa-nvk-should-not-break-nvidia-proprietary-driver.patch
 
 config:
   options:
