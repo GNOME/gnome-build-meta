@@ -1235,6 +1235,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:components/gettext.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
