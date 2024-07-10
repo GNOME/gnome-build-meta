@@ -18,8 +18,8 @@ depends:
 - core/gnome-settings-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gtk.bst
-- sdk/libadwaita.bst
+- sdk/gtk+-3.bst
+- sdk/libhandy.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/pwquality.bst
