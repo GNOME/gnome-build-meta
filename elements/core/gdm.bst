@@ -7,8 +7,6 @@ sources:
 - kind: local
   path: files/gdm
   directory: gdm-config
-- kind: patch
-  path: patches/gdm/nvidia.patch
 build-depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
