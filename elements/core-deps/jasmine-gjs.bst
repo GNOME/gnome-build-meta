@@ -1,12 +1,11 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: github:ptomato/jasmine-gjs.git
-  # FIXME: Before 47.alpha we will need to have a tarball or tag to depend on
-  track: master
-  ref: 2.6.4-22-gf6a42dbdbf4d0790358cd17aac09b2d66a22c38c
-
+- kind: tar
+  url: github_files:ptomato/jasmine-gjs/releases/download/2.6.4/jasmine-gjs-2.6.4.tar.xz
+  ref: 66f52852d14c81411e6a1cee04c78f313b3bdae44ee55bce3a9d116650f6a384
+- kind: patch_queue
+  path: patches/jasmine-gjs
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
