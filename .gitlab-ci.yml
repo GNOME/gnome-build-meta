@@ -96,6 +96,11 @@ default:
   when: manual
   allow_failure: true
   script:
+  - echo "Running build for ${IMAGE} with arch ${ARCH}"
+  - echo "ARCH=${ARCH}"
+  - echo "IMAGE=${IMAGE}"
+  - echo "BST_NO_PUSH=${BST_NO_PUSH}"
+  - echo "BST=${BST}"
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
