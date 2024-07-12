@@ -13,6 +13,7 @@ depends:
 - sdk/gcr-3.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
