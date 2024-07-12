@@ -39,6 +39,9 @@ config:
     - mkdir -p %{install-root}%{sysusersdir}
     - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
 
+    - mkdir -p /etc/gdm
+    - install -m 644 gdm-config/custom.conf /etc/gdm/custom.conf
+
     - mkdir -p %{install-root}%{pamdir}
     - |
       # Our configuration is similar to redhat but without selinux
