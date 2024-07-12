@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-weather.git
   track: main
-  ref: 46.0-19-ge364ecd439608f46eb842674851513895349e48c
+  ref: 47.alpha-1-g481074a37ce4bd272da983b3ef2d3e7cddb3df70
 
 build-depends:
 - sdk/gobject-introspection.bst
