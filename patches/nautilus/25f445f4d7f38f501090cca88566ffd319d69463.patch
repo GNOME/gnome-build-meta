@@ -1,0 +1,38 @@
+From 25f445f4d7f38f501090cca88566ffd319d69463 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ant=C3=B3nio=20Fernandes?= <antoniof@gnome.org>
+Date: Wed, 12 Jun 2024 11:24:24 +0100
+Subject: [PATCH] tests: Use localsearch3 test-sandbox
+
+Test sandbox program has been moved from the `TinySPARQL` (previously
+`tracker`) project to `localsearch` (previously `tracker-miners`).
+
+https://gitlab.gnome.org/GNOME/tinysparql/-/commit/067e855151cf47609bdeccadd9baa314016c4152
+https://gitlab.gnome.org/GNOME/localsearch/-/commit/abc100fa6b259b9281231e6c8daf27723d62a3ed
+---
+ test/automated/displayless/meson.build | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/test/automated/displayless/meson.build b/test/automated/displayless/meson.build
+index 9d50c5084e..13616a2608 100644
+--- a/test/automated/displayless/meson.build
++++ b/test/automated/displayless/meson.build
+@@ -1,6 +1,4 @@
+-trackertestutils = dependency('tracker-testutils-3.0')
+-
+-tracker_sandbox = find_program(trackertestutils.get_variable('command'))
++tracker_sandbox = find_program('localsearch3')
+ 
+ tests = [
+   ['test-directory', [
+@@ -75,7 +73,7 @@ foreach t: tracker_tests
+   test(
+     t[0],
+     tracker_sandbox,
+-    args: ['--store-tmpdir', '--index-recursive-tmpdir', test_exe],
++    args: ['test-sandbox', '--store-tmpdir', '--index-recursive-tmpdir', test_exe],
+     env: [
+       test_env,
+       'G_TEST_BUILDDIR=@0@'.format(meson.current_build_dir()),
+-- 
+GitLab
+

@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: gnome_downloads:nautilus/46/nautilus-46.2.tar.xz
   ref: 6ee8c99019b9e3447f6918d68232a20deca89e5525c05805432b7d8840ca71fa
+- kind: patch_queue
+  path: patches/nautilus
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
