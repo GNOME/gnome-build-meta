@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.45.4.tar.xz
-  ref: bdc4c197a25c6fd8fd8e85b360842d490817b0326eba73149424687133d502ac
-- kind: patch
-  path: patches/webkitgtk/gi-annotations.patch
+  url: webkitgtk:webkitgtk-2.45.5.tar.xz
+  ref: bebdb270b4109a5ed22e71a8597c5ed57d563c9b63ca512b7b5e06413bc1d3db
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
