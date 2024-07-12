@@ -1166,3 +1166,12 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+
+config:
+  # Remove vendored crates
+  # https://gitlab.gnome.org/GNOME/snapshot/-/issues/206
+  # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/855
+  configure-commands:
+    (<):
+    - rm .cargo/config
+    - rm -r vendor
