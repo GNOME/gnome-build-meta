@@ -1,10 +1,10 @@
-From 0092268174ff5a2503ab9fcd7d3c75b507982e6b Mon Sep 17 00:00:00 2001
+From 924d8b79ce79b030a7aba04c93556d0781b8cf8f Mon Sep 17 00:00:00 2001
 From: Adrian Vovk <adrianvovk@gmail.com>
 Date: Thu, 29 Jun 2023 22:58:41 -0400
-Subject: [PATCH 5/9] Implement systemd-sysupdated dbus service
+Subject: [PATCH 1/4] sysupdate: Implement systemd-sysupdated dbus service
 
 ---
- man/org.freedesktop.sysupdate1.xml            |  433 ++++
+ man/org.freedesktop.sysupdate1.xml            |  437 ++++
  man/rules/meson.build                         |    5 +
  man/systemd-sysupdate.xml                     |    1 +
  man/systemd-sysupdated.service.xml            |   54 +
@@ -16,11 +16,10 @@ Subject: [PATCH 5/9] Implement systemd-sysupdated dbus service
  src/sysupdate/org.freedesktop.sysupdate1.conf |   88 +
  .../org.freedesktop.sysupdate1.policy         |   61 +
  .../org.freedesktop.sysupdate1.service        |   14 +
- src/sysupdate/sysupdate.c                     |    4 +-
- src/sysupdate/sysupdated.c                    | 1891 +++++++++++++++++
+ src/sysupdate/sysupdated.c                    | 1857 +++++++++++++++++
  units/meson.build                             |    5 +
  units/systemd-sysupdated.service.in           |   31 +
- 16 files changed, 2615 insertions(+), 1 deletion(-)
+ 15 files changed, 2582 insertions(+)
  create mode 100644 man/org.freedesktop.sysupdate1.xml
  create mode 100644 man/systemd-sysupdated.service.xml
  create mode 100644 src/sysupdate/org.freedesktop.sysupdate1.conf
@@ -31,10 +30,10 @@ Subject: [PATCH 5/9] Implement systemd-sysupdated dbus service
 
 diff --git a/man/org.freedesktop.sysupdate1.xml b/man/org.freedesktop.sysupdate1.xml
 new file mode 100644
-index 0000000000..f132a6b271
+index 0000000000..9594385496
 --- /dev/null
 +++ b/man/org.freedesktop.sysupdate1.xml
-@@ -0,0 +1,433 @@
+@@ -0,0 +1,437 @@
 +<?xml version='1.0'?>
 +<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
 +  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" >
@@ -76,10 +75,10 @@ index 0000000000..f132a6b271
 +  interface org.freedesktop.sysupdate1.Manager {
 +    methods:
 +      ListTargets(out a(sso) targets);
-+      ListJobs(out a(usuo) jobs);
++      ListJobs(out a(tsuo) jobs);
 +      ListAppStream(out as urls);
 +    signals:
-+      JobRemoved(u id,
++      JobRemoved(t id,
 +                 o path,
 +                 i status);
 +  };
@@ -118,8 +117,9 @@ index 0000000000..f132a6b271
 +      <varname>Type</varname> property below for an explanation of the possible values), the job's progress,
 +      and the job's object path.</para>
 +
-+      <para><function>ListAppStream()</function> returns an array of all the appstream catalog URLs that
-+      this service knows about. See Target's <varname>AppStream</varname> property below for more details.</para>
++      <para><function>ListAppStream()</function> returns an array of all the appstream catalog URLs that this
++      service knows about. See Target's <varname>GetAppStream()</varname> method below for more
++      details.</para>
 +    </refsect2>
 +
 +    <refsect2>
@@ -155,7 +155,7 @@ index 0000000000..f132a6b271
 +      CheckNew(out s new_version);
 +      Update(in  s new_version,
 +             out s new_version,
-+             out u job_id,
++             out t job_id,
 +             out o job_path);
 +      Vacuum(out u count);
 +      GetAppStream(out as appstream);
@@ -211,20 +211,20 @@ index 0000000000..f132a6b271
 +      target. Use <function>Describe()</function> to query more information about each version returned by
 +      this method.</para>
 +
-+      <para><function>Describe()</function> returns all known information about a given version.
-+      When <varname>offline</varname> is true, this method avoids network access and will only
-+      return information available about versions installed locally. Otherwise, this method pulls
-+      metadata from the network and can return all available information about all available versions.
-+      This method returns a dictionary with the following known keys: <literal>version</literal> is a
-+      string that contains the version number, <literal>newest</literal> is a boolean that indicates
-+      whether this is the latest version available for the target, <literal>available</literal> is a
-+      boolean that indicates whether this version is available for download via the network,
-+      <literal>installed</literal> is a boolean that indicates whether this version is locally installed,
-+      <literal>obsolete</literal> is a boolean that indicates whether this version is considered obsolete
-+      by the service and thus cannot be installed, <literal>protected</literal> is a boolean that
-+      indicates whether this version is exempt from deletion by a <function>Vacuum()</function> operation,
-+      and <literal>changelog-url</literal> is a string that contains a user-presentable URL to a changelog
-+      for this version. New keys may be added in the future.</para>
++      <para><function>Describe()</function> returns all known information about a given version.  When
++      <varname>offline</varname> is true, this method avoids network access and will only return information
++      available about versions installed locally. Otherwise, this method pulls metadata from the network and
++      can return all available information about all available versions.  This method returns a JSON object
++      with the following known keys: <literal>version</literal> is a string that contains the version number,
++      <literal>newest</literal> is a boolean that indicates whether this is the latest version available for
++      the target, <literal>available</literal> is a boolean that indicates whether this version is available
++      for download via the network, <literal>installed</literal> is a boolean that indicates whether this
++      version is locally installed, <literal>obsolete</literal> is a boolean that indicates whether this
++      version is considered obsolete by the service and thus cannot be installed,
++      <literal>protected</literal> is a boolean that indicates whether this version is exempt from deletion
++      by a <function>Vacuum()</function> operation, and <literal>changelog_urls</literal> is a list of
++      strings that contain user-presentable URLs to a change-logs associated with this version. New keys may
++      be added in the future.</para>
 +
 +      <para><function>CheckNew()</function> checks if a newer version is available for this target. This
 +      method pulls metadata from the network. If a newer version is found, this method returns the
@@ -232,7 +232,7 @@ index 0000000000..f132a6b271
 +      <function>Describe()</function> to query more information about the version returned by this method.
 +      </para>
 +
-+      <para><function>Update()</function> installs an update for this target. If a <varname>version</varname>
++      <para><function>Update()</function> installs an update for this target. If a <varname>new_version</varname>
 +      is specified, that is the version that gets installed. Otherwise, the latest version is installed.
 +      Unlike all the other methods in this interface, <function>Update()</function> does not wait for its
 +      job to complete. Instead, it returns the job's numeric ID and object path as soon as the job begins,
@@ -245,11 +245,11 @@ index 0000000000..f132a6b271
 +      It returns the number of instances that have been deleted.</para>
 +
 +      <para><function>GetAppStream()</function> returns a list of HTTP/HTTPS URLs to this target's <ulink url="https://wwww.freedesktop.org/software/appstream/docs/chap-CatalogData.html">appstream catalog</ulink>
-+      XML files. If this target has no appstream catalog, the property will return an empty list. This
-+      catalog file can be used by software centers (such as GNOME Software or KDE Discover) to present rich
-+      metadata about the target, including a display name, changelog, icon, and more. The returned catalog
++      XML files. If this target has no appstream catalogs, the method will return an empty list. These
++      catalog files can be used by software centers (such as GNOME Software or KDE Discover) to present rich
++      metadata about the target, including a display name, changelog, icon, and more. The returned catalogs
 +      will include <ulink url="https://systemd.io/APPSTREAM_BUNDLE">special metadata</ulink> to allow the
-+      software center to correctly associate the catalog with this target.</para>
++      software center to correctly associate the catalogs with this target.</para>
 +
 +      <para><function>GetVersion()</function> returns the current version of this target, if any. If the
 +      target has no current version, the function will return an empty string.</para>
@@ -308,6 +308,9 @@ index 0000000000..f132a6b271
 +      <interfacename>org.freedesktop.sysupdate1.vacuum</interfacename>. By default, this action requires
 +      administrator authentication.</para>
 +
++      <para><function>GetAppStream()</function> and <function>GetVersion()</function> are unauthenticated and
++      may be called by anybody.</para>
++
 +      <para>All methods called on this interface expose additional variables to the polkit rules.
 +      <literal>class</literal> contains the class of the Target being acted upon, and <literal>name</literal>
 +      contains the name of the same Target. Additionally, each method exposes its arguments to
@@ -329,7 +332,7 @@ index 0000000000..f132a6b271
 +      Cancel();
 +    properties:
 +      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
-+      readonly u Id = ...;
++      readonly t Id = ...;
 +      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
 +      readonly s Type = '...';
 +      @org.freedesktop.DBus.Property.EmitsChangedSignal("const")
@@ -469,7 +472,7 @@ index 0000000000..f132a6b271
 +  </refsect1>
 +</refentry>
 diff --git a/man/rules/meson.build b/man/rules/meson.build
-index 9b8a29c564..8c2d5c8b2a 100644
+index fda14d55bd..abe2b1e92f 100644
 --- a/man/rules/meson.build
 +++ b/man/rules/meson.build
 @@ -65,6 +65,7 @@ manpages = [
@@ -480,7 +483,7 @@ index 9b8a29c564..8c2d5c8b2a 100644
   ['org.freedesktop.timedate1', '5', [], 'ENABLE_TIMEDATED'],
   ['os-release', '5', ['extension-release', 'initrd-release'], ''],
   ['pam_systemd', '8', [], 'HAVE_PAM'],
-@@ -1099,6 +1100,10 @@ manpages = [
+@@ -1100,6 +1101,10 @@ manpages = [
     'systemd-sysupdate.service',
     'systemd-sysupdate.timer'],
    'ENABLE_SYSUPDATE'],
@@ -492,7 +495,7 @@ index 9b8a29c564..8c2d5c8b2a 100644
   ['systemd-sysv-generator', '8', [], 'HAVE_SYSV_COMPAT'],
   ['systemd-time-wait-sync.service',
 diff --git a/man/systemd-sysupdate.xml b/man/systemd-sysupdate.xml
-index 4acc3595e3..1aa9c00beb 100644
+index f77bd3d0d9..dffe835c04 100644
 --- a/man/systemd-sysupdate.xml
 +++ b/man/systemd-sysupdate.xml
 @@ -322,6 +322,7 @@
@@ -564,10 +567,10 @@ index 0000000000..7e58ff1692
 +
 +</refentry>
 diff --git a/meson.build b/meson.build
-index dd335c1244..5a2fc47e8f 100644
+index 14a3960f88..25c2116f26 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -270,6 +270,7 @@ conf.set_quoted('SYSTEMD_LANGUAGE_FALLBACK_MAP',              pkgdatadir / 'lang
+@@ -277,6 +277,7 @@ conf.set_quoted('SYSTEMD_LANGUAGE_FALLBACK_MAP',              pkgdatadir / 'lang
  conf.set_quoted('SYSTEMD_MAKEFS_PATH',                        libexecdir / 'systemd-makefs')
  conf.set_quoted('SYSTEMD_PULL_PATH',                          libexecdir / 'systemd-pull')
  conf.set_quoted('SYSTEMD_SHUTDOWN_BINARY_PATH',               libexecdir / 'systemd-shutdown')
@@ -616,10 +619,10 @@ index 4f50a9727f..8116aa27c0 100644
  extern const BusLocator* const bus_timesync_mgr;
  
 diff --git a/src/sysupdate/meson.build b/src/sysupdate/meson.build
-index 417b47a136..5afba200c8 100644
+index b1b1204a2a..c8ba86a6ca 100644
 --- a/src/sysupdate/meson.build
 +++ b/src/sysupdate/meson.build
-@@ -11,6 +11,10 @@ systemd_sysupdate_sources = files(
+@@ -13,6 +13,10 @@ systemd_sysupdate_sources = files(
          'sysupdate.c',
  )
  
@@ -630,7 +633,7 @@ index 417b47a136..5afba200c8 100644
  executables += [
          libexec_template + {
                  'name' : 'systemd-sysupdate',
-@@ -28,4 +32,20 @@ executables += [
+@@ -30,4 +34,20 @@ executables += [
                          threads,
                  ],
          },
@@ -747,7 +750,7 @@ index 0000000000..30cb1eec24
 +</busconfig>
 diff --git a/src/sysupdate/org.freedesktop.sysupdate1.policy b/src/sysupdate/org.freedesktop.sysupdate1.policy
 new file mode 100644
-index 0000000000..47bfbc9393
+index 0000000000..d686cb63f2
 --- /dev/null
 +++ b/src/sysupdate/org.freedesktop.sysupdate1.policy
 @@ -0,0 +1,61 @@
@@ -792,7 +795,7 @@ index 0000000000..47bfbc9393
 +        </action>
 +
 +        <action id="org.freedesktop.sysupdate1.update-to-version">
-+                <description gettext-domain="systemd">Install</description>
++                <description gettext-domain="systemd">Install specific system version</description>
 +                <message gettext-domain="systemd">Authentication is required to update the system to a specific (possibly old) version</message>
 +                <defaults>
 +                        <allow_any>auth_admin</allow_any>
@@ -832,32 +835,18 @@ index 0000000000..67e1a29078
 +Exec=/bin/false
 +User=root
 +SystemdService=dbus-org.freedesktop.sysupdate1.service
-diff --git a/src/sysupdate/sysupdate.c b/src/sysupdate/sysupdate.c
-index 121d6238d0..084e3f75a4 100644
---- a/src/sysupdate/sysupdate.c
-+++ b/src/sysupdate/sysupdate.c
-@@ -906,7 +906,9 @@ static int context_apply(
-         log_info("Selected update '%s' for install.", us->version);
- 
-         (void) sd_notifyf(false,
--                          "STATUS=Making room for '%s'.", us->version);
-+                          "READY=1\n" /* Tell sysupdated that we've started working */
-+                          "X_UPDATE_VERSION=%s\n"
-+                          "STATUS=Making room for '%s'.", us->version, us->version);
- 
-         /* Let's make some room. We make sure for each transfer we have one free space to fill. While
-          * removing stuff we'll protect the version we are trying to acquire. Why that? Maybe an earlier
 diff --git a/src/sysupdate/sysupdated.c b/src/sysupdate/sysupdated.c
 new file mode 100644
-index 0000000000..95fbc736c4
+index 0000000000..59c89d9e37
 --- /dev/null
 +++ b/src/sysupdate/sysupdated.c
-@@ -0,0 +1,1891 @@
+@@ -0,0 +1,1857 @@
 +/* SPDX-License-Identifier: LGPL-2.1-or-later */
 +
 +#include "sd-bus.h"
 +
 +#include "build-path.h"
++#include "bus-error.h"
 +#include "bus-get-properties.h"
 +#include "bus-label.h"
 +#include "bus-log-control-api.h"
@@ -869,18 +858,16 @@ index 0000000000..95fbc736c4
 +#include "escape.h"
 +#include "fd-util.h"
 +#include "fileio.h"
-+#include "json-util.h"
 +#include "main-func.h"
 +#include "memfd-util.h"
-+#include "missing_capability.h"
 +#include "mkdir-label.h"
 +#include "os-util.h"
 +#include "process-util.h"
++#include "sd-json.h"
 +#include "service-util.h"
 +#include "signal-util.h"
 +#include "socket-util.h"
 +#include "string-table.h"
-+#include "user-util.h"
 +
 +typedef struct Manager {
 +        sd_event *event;
@@ -919,8 +906,6 @@ index 0000000000..95fbc736c4
 +        TargetClass class;
 +        char *name;
 +        char *path;
-+        char *version;
-+        char **appstream;
 +
 +        char *id;
 +        ImageType image_type;
@@ -939,7 +924,7 @@ index 0000000000..95fbc736c4
 +
 +typedef struct Job Job;
 +
-+typedef int (*JobComplete)(sd_bus_message *, const Job *, sd_json_variant *, sd_bus_error *);
++typedef int (*JobComplete)(sd_bus_message *msg, const Job *job, sd_json_variant *response, sd_bus_error *error);
 +
 +struct Job {
 +        Manager *manager;
@@ -991,8 +976,11 @@ index 0000000000..95fbc736c4
 +        if (!j)
 +                return NULL;
 +
-+        if (j->manager)
++        if (j->manager) {
 +                hashmap_remove(j->manager->jobs, &j->id);
++                if (hashmap_isempty(j->manager->jobs))
++                        hashmap_clear(j->manager->targets);
++        }
 +
 +        free(j->object_path);
 +        free(j->version);
@@ -1098,9 +1086,9 @@ index 0000000000..95fbc736c4
 +
 +        j->complete_cb = NULL;
 +
-+        r = sd_bus_reply_method_return(msg, "suo", j->version, j->id, j->object_path);
++        r = sd_bus_reply_method_return(msg, "sto", j->version, j->id, j->object_path);
 +        if (r < 0)
-+                log_warning_errno(r, "Failed to reply to method call: %m");
++                log_warning_errno(r, "Failed to reply to method call, ignoring: %m");
 +}
 +
 +static void job_on_errno(Job *j, char *b) {
@@ -1113,7 +1101,7 @@ index 0000000000..95fbc736c4
 +
 +        r = parse_errno(buf);
 +        if (r < 0) {
-+                log_warning("Got invalid errno value, ignoring.");
++                log_warning_errno(r, "Got invalid errno value, ignoring: %m");
 +                return;
 +        }
 +
@@ -1192,7 +1180,7 @@ index 0000000000..95fbc736c4
 +                        "/org/freedesktop/sysupdate1",
 +                        "org.freedesktop.sysupdate1.Manager",
 +                        "JobRemoved",
-+                        "uoi",
++                        "toi",
 +                        j->id,
 +                        j->object_path,
 +                        j->status_errno != 0 ? -j->status_errno : si->si_status);
@@ -1200,12 +1188,15 @@ index 0000000000..95fbc736c4
 +                log_warning_errno(r, "Cannot emit JobRemoved message, ignoring: %m");
 +
 +        if (j->dbus_msg && j->complete_cb) {
-+                if (sd_bus_error_is_set(&error))
++                if (sd_bus_error_is_set(&error)) {
++                        log_warning("Bus error occurred, ignoring callback for job: %s", error.message);
 +                        sd_bus_reply_method_error(j->dbus_msg, &error);
-+                else {
++                } else {
 +                        r = j->complete_cb(j->dbus_msg, j, json, &error);
-+                        if (r < 0 || sd_bus_error_is_set(&error))
++                        if (r < 0 || sd_bus_error_is_set(&error)) {
++                                log_warning_errno(r, "Error during execution of job callback: %s", bus_error_message(&error, r));
 +                                sd_bus_reply_method_errno(j->dbus_msg, r, &error);
++                        }
 +                }
 +        }
 +
@@ -1247,19 +1238,21 @@ index 0000000000..95fbc736c4
 +
 +        assert(j);
 +
-+        if (IN_SET(j->type, JOB_UPDATE, JOB_VACUUM) && j->target->busy)
++        if (IN_SET(j->type, JOB_UPDATE, JOB_VACUUM) && j->target->busy) {
++                log_info("Target %s busy, ignoring job.", j->target->name);
 +                return -EBUSY;
++        }
 +
 +        stdout_fd = memfd_new("sysupdate-stdout");
 +        if (stdout_fd < 0)
-+                return stdout_fd;
++                return log_error_errno(errno, "Failed to create memfd: %m");
 +
 +        r = pidref_safe_fork_full("(sd-sysupdate)",
 +                                  (int[]) { -EBADF, stdout_fd, STDERR_FILENO }, NULL, 0,
 +                                  FORK_RESET_SIGNALS|FORK_CLOSE_ALL_FDS|FORK_DEATHSIG_SIGTERM|
 +                                  FORK_REARRANGE_STDIO|FORK_LOG|FORK_REOPEN_LOG, &pid);
 +        if (r < 0)
-+                return r;
++                return log_error_errno(r, "Failed to fork (sd-sysupdate): %m");
 +        if (r == 0) {
 +                /* Child */
 +
@@ -1346,11 +1339,11 @@ index 0000000000..95fbc736c4
 +
 +        r = event_add_child_pidref(j->manager->event, &j->child, &pid, WEXITED, job_on_exit, j);
 +        if (r < 0)
-+                return r;
++                return log_error_errno(r, "Failed to add child process to event loop: %m");
 +
 +        r = sd_event_source_set_child_process_own(j->child, true);
 +        if (r < 0)
-+                return r;
++                return log_error_errno(r, "Event loop failed to take ownership of child process: %m");
 +        TAKE_PIDREF(pid);
 +
 +        j->stdout_fd = TAKE_FD(stdout_fd);
@@ -1488,7 +1481,7 @@ index 0000000000..95fbc736c4
 +static const sd_bus_vtable job_vtable[] = {
 +        SD_BUS_VTABLE_START(0),
 +
-+        SD_BUS_PROPERTY("Id", "u", NULL, offsetof(Job, id), SD_BUS_VTABLE_PROPERTY_CONST),
++        SD_BUS_PROPERTY("Id", "t", NULL, offsetof(Job, id), SD_BUS_VTABLE_PROPERTY_CONST),
 +        SD_BUS_PROPERTY("Type", "s", job_property_get_type, offsetof(Job, type), SD_BUS_VTABLE_PROPERTY_CONST),
 +        SD_BUS_PROPERTY("Offline", "b", NULL, offsetof(Job, offline), SD_BUS_VTABLE_PROPERTY_CONST),
 +        SD_BUS_PROPERTY("Progress", "u", NULL, offsetof(Job, progress_percent), SD_BUS_VTABLE_PROPERTY_EMITS_CHANGE),
@@ -1514,8 +1507,6 @@ index 0000000000..95fbc736c4
 +
 +        free(t->name);
 +        free(t->path);
-+        free(t->version);
-+        strv_free(t->appstream);
 +        free(t->id);
 +
 +        return mfree(t);
@@ -1551,7 +1542,7 @@ index 0000000000..95fbc736c4
 +                return -ENOMEM;
 +
 +        if (class == TARGET_HOST)
-+                t->id = strdup(".host"); /* This is what appears in the object path */
++                t->id = strdup("host"); /* This is what appears in the object path */
 +        else
 +                t->id = strjoin(target_class_to_string(class), ":", name);
 +        if (!t->id)
@@ -1562,50 +1553,6 @@ index 0000000000..95fbc736c4
 +                return r;
 +
 +        *ret = TAKE_PTR(t);
-+        return 0;
-+}
-+
-+static int cache_string_from_json(char **ret, const char *key, sd_json_variant *json) {
-+        sd_json_variant *v;
-+        const char *j;
-+        _cleanup_free_ char *s = NULL;
-+
-+        v = sd_json_variant_by_key(json, key);
-+        if (!v)
-+                return -EINVAL;
-+
-+        if (sd_json_variant_is_null(v))
-+                j = "";
-+        else
-+                j = sd_json_variant_string(v);
-+        if (!j)
-+                return -EINVAL;
-+
-+        s = strdup(j);
-+        if (!s)
-+                return -ENOMEM;
-+
-+        *ret = TAKE_PTR(s);
-+        return 0;
-+}
-+
-+static int cache_strv_from_json(char ***ret, const char *key, sd_json_variant *json) {
-+        sd_json_variant *v;
-+        _cleanup_free_ char **s = NULL;
-+        int r;
-+
-+        v = sd_json_variant_by_key(json, key);
-+        if (!v)
-+                return -EINVAL;
-+
-+        if (sd_json_variant_is_null(v))
-+                s = NULL;
-+        else {
-+                r = sd_json_variant_strv(v, &s);
-+                if (r < 0)
-+                        return -EINVAL;
-+        }
-+        *ret = TAKE_PTR(s);
 +        return 0;
 +}
 +
@@ -1682,35 +1629,6 @@ index 0000000000..95fbc736c4
 +        return 0;
 +}
 +
-+static int target_ensure_properties(Target *t) {
-+        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
-+        _cleanup_free_ char *target_arg = NULL;
-+        int r;
-+
-+        assert(t);
-+
-+        if (t->version && t->appstream)
-+                return 0;
-+
-+        r = target_get_argument(t, &target_arg);
-+        if (r < 0)
-+                return r;
-+
-+        r = sysupdate_run_simple(&v, "--offline", "list", target_arg, NULL);
-+        if (r < 0)
-+                return r;
-+
-+        r = cache_string_from_json(&t->version, "current", v);
-+        if (r < 0)
-+                return r;
-+
-+        r = cache_strv_from_json(&t->appstream, "appstream-url", v);
-+        if (r < 0)
-+                return r;
-+
-+        return 0;
-+}
-+
 +static BUS_DEFINE_PROPERTY_GET_ENUM(target_property_get_class, target_class, TargetClass);
 +
 +static int target_method_list_finish(
@@ -1725,10 +1643,6 @@ index 0000000000..95fbc736c4
 +        int r;
 +
 +        assert(json);
-+
-+        /* Try our best since we have the data anyway, but isn't fatal if it fails */
-+        (void) cache_string_from_json(&j->target->version, "current", json);
-+        (void) cache_strv_from_json(&j->target->appstream, "appstream-url", json);
 +
 +        v = sd_json_variant_by_key(json, "all");
 +        if (!v)
@@ -1752,7 +1666,7 @@ index 0000000000..95fbc736c4
 +static int target_method_list(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
 +        Target *t = ASSERT_PTR(userdata);
 +        _cleanup_(job_freep) Job *j = NULL;
-+        bool offline;
++        int offline;
 +        int r;
 +
 +        assert(msg);
@@ -1798,7 +1712,6 @@ index 0000000000..95fbc736c4
 +                const Job *j,
 +                sd_json_variant *json,
 +                sd_bus_error *error) {
-+        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
 +        _cleanup_free_ char *text = NULL;
 +        int r;
 +
@@ -1815,7 +1728,7 @@ index 0000000000..95fbc736c4
 +        Target *t = ASSERT_PTR(userdata);
 +        _cleanup_(job_freep) Job *j = NULL;
 +        const char *version;
-+        bool offline;
++        int offline;
 +        int r;
 +
 +        assert(msg);
@@ -1873,10 +1786,14 @@ index 0000000000..95fbc736c4
 +
 +        assert(json);
 +
-+        if (sd_json_variant_is_null(json))
++        sd_json_variant *v = sd_json_variant_by_key(json, "available");
++        if (!v)
++                return -EINVAL;
++
++        if (sd_json_variant_is_null(v))
 +                reply = "";
 +        else
-+                reply = sd_json_variant_string(json);
++                reply = sd_json_variant_string(v);
 +        if (!reply)
 +                return -EINVAL;
 +
@@ -1898,11 +1815,11 @@ index 0000000000..95fbc736c4
 +        };
 +
 +        r = bus_verify_polkit_async(
-+                msg,
-+                "org.freedesktop.sysupdate1.check",
-+                details,
-+                &t->manager->polkit_registry,
-+                error);
++                        msg,
++                        "org.freedesktop.sysupdate1.check",
++                        details,
++                        &t->manager->polkit_registry,
++                        error);
 +        if (r < 0)
 +                return r;
 +        if (r == 0)
@@ -1957,11 +1874,11 @@ index 0000000000..95fbc736c4
 +        };
 +
 +        r = bus_verify_polkit_async(
-+                msg,
-+                action,
-+                details,
-+                &t->manager->polkit_registry,
-+                error);
++                        msg,
++                        action,
++                        details,
++                        &t->manager->polkit_registry,
++                        error);
 +        if (r < 0)
 +                return r;
 +        if (r == 0)
@@ -1991,8 +1908,13 @@ index 0000000000..95fbc736c4
 +                sd_json_variant *json,
 +                sd_bus_error *error) {
 +
++        uint64_t instances;
++        
 +        assert(json);
-+        return sd_bus_reply_method_return(msg, "u", sd_json_variant_unsigned(json));
++
++        instances = sd_json_variant_unsigned(sd_json_variant_by_key(json, "removed"));
++        
++        return sd_bus_reply_method_return(msg, "u", instances);
 +}
 +
 +static int target_method_vacuum(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
@@ -2033,21 +1955,62 @@ index 0000000000..95fbc736c4
 +
 +static int target_method_get_version(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
 +        Target *t = ASSERT_PTR(userdata);
++        _cleanup_free_ char *target_arg = NULL;
++        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
 +        int r;
 +
-+        r = target_ensure_properties(t);
++        r = target_get_argument(t, &target_arg);
 +        if (r < 0)
 +                return r;
 +
-+        return sd_bus_reply_method_return(msg, "s", t->version);
++        r = sysupdate_run_simple(&v, "--offline", "list", target_arg, NULL);
++        if (r < 0)
++                return r;
++
++        sd_json_variant *version_json = sd_json_variant_by_key(v, "current");
++        if (!version_json)
++                return -EINVAL;
++
++        if (sd_json_variant_is_null(version_json))
++                return sd_bus_reply_method_return(msg, "s", "");
++
++        if (!sd_json_variant_is_string(version_json))
++                return -EINVAL;
++
++        return sd_bus_reply_method_return(msg, "s", sd_json_variant_string(version_json));
++}
++
++static int target_get_appstream(char ***ret, Target *t) {
++        _cleanup_free_ char *target_arg = NULL;
++        _cleanup_(sd_json_variant_unrefp) sd_json_variant *v = NULL;
++        int r;
++
++        r = target_get_argument(t, &target_arg);
++        if (r < 0)
++                return r;
++
++        r = sysupdate_run_simple(&v, "--offline", "list", target_arg, NULL);
++        if (r < 0)
++                return r;
++
++        sd_json_variant *appstream_url_json = sd_json_variant_by_key(v, "appstream_urls");
++        if (!appstream_url_json)
++                return -EINVAL;
++
++        r = sd_json_variant_strv(appstream_url_json, ret);
++        if (r < 0)
++                return -EINVAL;
++
++        return 0;
 +}
 +
 +static int target_method_get_appstream(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
 +        Target *t = ASSERT_PTR(userdata);
-+         _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
++        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
++        _cleanup_strv_free_ char **appstream_urls = NULL;
 +        int r;
 +
-+        r = target_ensure_properties(t);
++        r = target_get_appstream(&appstream_urls, t);
 +        if (r < 0)
 +                return r;
 +
@@ -2055,7 +2018,7 @@ index 0000000000..95fbc736c4
 +        if (r < 0)
 +                return r;
 +
-+        r = sd_bus_message_append_strv(reply, t->appstream);
++        r = sd_bus_message_append_strv(reply, appstream_urls);
 +        if (r < 0)
 +                return r;
 +
@@ -2213,7 +2176,7 @@ index 0000000000..95fbc736c4
 +
 +        SD_BUS_METHOD_WITH_ARGS("Update",
 +                                SD_BUS_ARGS("s", new_version),
-+                                SD_BUS_RESULT("s", new_version, "u", job_id, "o", job_path),
++                                SD_BUS_RESULT("s", new_version, "t", job_id, "o", job_path),
 +                                target_method_update,
 +                                SD_BUS_VTABLE_UNPRIVILEGED),
 +
@@ -2354,7 +2317,7 @@ index 0000000000..95fbc736c4
 +
 +        assert(ret);
 +
-+        m = new(Manager, 1);
++        m = new0(Manager, 1);
 +        if (!m)
 +                return -ENOMEM;
 +
@@ -2459,7 +2422,7 @@ index 0000000000..95fbc736c4
 +                return r;
 +
 +        if (have_default) {
-+                r = target_new(m, TARGET_HOST, ".host", "sysupdate.d", &t);
++                r = target_new(m, TARGET_HOST, "host", "sysupdate.d", &t);
 +                if (r < 0)
 +                        return r;
 +        }
@@ -2563,12 +2526,12 @@ index 0000000000..95fbc736c4
 +        if (r < 0)
 +                return r;
 +
-+        r = sd_bus_message_open_container(reply, 'a', "(usuo)");
++        r = sd_bus_message_open_container(reply, 'a', "(tsuo)");
 +        if (r < 0)
 +                return r;
 +
 +        HASHMAP_FOREACH(j, m->jobs) {
-+                r = sd_bus_message_append(reply, "(usuo)",
++                r = sd_bus_message_append(reply, "(tsuo)",
 +                                          j->id,
 +                                          job_type_to_string(j->type),
 +                                          j->progress_percent,
@@ -2584,6 +2547,7 @@ index 0000000000..95fbc736c4
 +        return sd_bus_send(NULL, reply, NULL);
 +}
 +
++
 +static int method_list_appstream(sd_bus_message *msg, void *userdata, sd_bus_error *error) {
 +        _cleanup_strv_free_ char **urls = NULL;
 +        _cleanup_(sd_bus_message_unrefp) sd_bus_message *reply = NULL;
@@ -2598,14 +2562,12 @@ index 0000000000..95fbc736c4
 +                return r;
 +
 +        HASHMAP_FOREACH(t, m->targets) {
-+                r = target_ensure_properties(t);
++                _cleanup_strv_free_ char **target_appstream = NULL;
++                r = target_get_appstream(&target_appstream, t);
 +                if (r < 0)
 +                        return r;
 +
-+                if (strv_isempty(t->appstream))
-+                        continue;
-+
-+                r = strv_extend_strv(&urls, t->appstream, true);
++                r = strv_extend_strv(&urls, target_appstream, true);
 +                if (r < 0)
 +                        return r;
 +        }
@@ -2632,7 +2594,7 @@ index 0000000000..95fbc736c4
 +
 +        SD_BUS_METHOD_WITH_ARGS("ListJobs",
 +                                SD_BUS_NO_ARGS,
-+                                SD_BUS_RESULT("a(usuo)", jobs),
++                                SD_BUS_RESULT("a(tsuo)", jobs),
 +                                method_list_jobs,
 +                                SD_BUS_VTABLE_UNPRIVILEGED),
 +
@@ -2643,7 +2605,7 @@ index 0000000000..95fbc736c4
 +                                SD_BUS_VTABLE_UNPRIVILEGED),
 +
 +        SD_BUS_SIGNAL_WITH_ARGS("JobRemoved",
-+                                SD_BUS_ARGS("u", id, "o", path, "i", status),
++                                SD_BUS_ARGS("t", id, "o", path, "i", status),
 +                                0),
 +
 +        SD_BUS_VTABLE_END
@@ -2685,14 +2647,6 @@ index 0000000000..95fbc736c4
 +
 +        if (!hashmap_isempty(m->jobs))
 +                return false;
-+
-+        /* The daemon is completely idle, and we will exit in ~30s as long as
-+         * no new clients appear. This is the only time we can safely clear
-+         * out our targets, so that when a new client appears it will see
-+         * up-to-date information.
-+         */
-+        hashmap_clear(m->targets);
-+        log_debug("Cleared target cache");
 +
 +        return true;
 +}
@@ -2745,10 +2699,10 @@ index 0000000000..95fbc736c4
 +
 +DEFINE_MAIN_FUNCTION(run);
 diff --git a/units/meson.build b/units/meson.build
-index b231341a1f..bc64507448 100644
+index bdc34e6f2c..004c5f92d4 100644
 --- a/units/meson.build
 +++ b/units/meson.build
-@@ -635,6 +635,11 @@ units = [
+@@ -640,6 +640,11 @@ units = [
            'file' : 'systemd-sysupdate.service.in',
            'conditions' : ['ENABLE_SYSUPDATE'],
          },
