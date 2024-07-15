@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.59.0-beta.1-77-gf909cddcf7b62061bb73712c88a420d4d76667b3
+  ref: 2.59.0-beta.2-0-gb8ee7fca46e4f335444379e5c97a7511d89c12c8
 - kind: cargo2
   ref:
   - kind: registry
@@ -109,8 +109,8 @@ sources:
     sha: c3ac9f8b63eca6fd385229b3675f6cc0dc5c8a5c8a54a59d4f52ffd670d87b0c
   - kind: registry
     name: bytemuck
-    version: 1.15.0
-    sha: 5d6d68c57235a3a081186990eca2867354726650f42f7516ca50c28d6281fd15
+    version: 1.16.1
+    sha: b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e
   - kind: registry
     name: byteorder
     version: 1.5.0
@@ -805,8 +805,8 @@ sources:
     sha: adad44e29e4c806119491a7f06f03de4d1af22c3a680dd47f1e6e179439d1f56
   - kind: registry
     name: rgb
-    version: 0.8.37
-    sha: 05aaa8004b64fd573fc9d002f4e632d51ad4f026c2b5ba95fcb6c2f32c2c47d8
+    version: 0.8.44
+    sha: 1aee83dc281d5a3200d37b299acd13b81066ea126a7f16f0eae70fc9aed241d9
   - kind: registry
     name: rustix
     version: 0.38.34

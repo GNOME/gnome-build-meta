@@ -5,7 +5,7 @@ sources:
   url: github:ptomato/jasmine-gjs.git
   # FIXME: Before 47.alpha we will need to have a tarball or tag to depend on
   track: master
-  ref: 2.6.4-22-gf6a42dbdbf4d0790358cd17aac09b2d66a22c38c
+  ref: 3.10.1-5-gc524a1e420a73fdad661296d16b78686fb14223c
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
