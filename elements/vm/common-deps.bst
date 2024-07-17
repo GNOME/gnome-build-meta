@@ -5,6 +5,7 @@ depends:
 - core/meta-gnome-core-os-services.bst
 - core/meta-gnome-core-shell.bst
 - core/systemd-presets.bst
+- incubator/meta-gnome-incubator-apps.bst
 - sdk-platform.bst
 
 - freedesktop-sdk.bst:components/xdg-desktop-portal.bst
