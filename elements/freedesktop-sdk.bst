@@ -6,6 +6,11 @@ sources:
   track: freedesktop-sdk-24.08*
   ref: freedesktop-sdk-24.08beta.3-0-ga40f463715e3467274aadca0b3e41e6b3041eb60
 
+- kind: patch
+  path: files/linux/0001-components-linux.bst-Group-PinePhone-Pro-configs.patch
+- kind: patch
+  path: files/linux/0002-components-linux.bst-Remove-redundant-LEDS_CLASS_FLA.patch
+
 config:
   options:
     target_arch: '%{arch}'

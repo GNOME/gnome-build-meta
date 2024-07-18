@@ -1,0 +1,29 @@
+From 4588c33753e4224cf54b5f51872226954ade158d Mon Sep 17 00:00:00 2001
+From: Tanvir Roshid <tanvirroshid786123@gmail.com>
+Date: Thu, 18 Jul 2024 22:43:34 +0100
+Subject: [PATCH 2/2] components/linux.bst: Remove redundant LEDS_CLASS_FLASH
+ module
+
+The LEDS_CLASS_FLASH module is redundantly inside the PinePhone Pro
+group because this was already added inside 98e7e2b67e according to the
+git blame command:
+- git blame -L 2017,2017 files/linux/fdsdk-config.sh
+---
+ files/linux/fdsdk-config.sh | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index eee335cd1..2fc4e94e6 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -36,7 +36,6 @@ case "$arch" in
+ 
+         module DRM_PANEL_HIMAX_HX8394
+ 
+-        module LEDS_CLASS_FLASH
+         module LEDS_SGM3140
+     ;;
+ esac
+-- 
+2.34.1
+
