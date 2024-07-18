@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: github_files:storaged-project/udisks/releases/download/udisks-2.10.0/udisks-2.10.0.tar.bz2
   ref: 4f5a7a592526f7f32795a1f2211c67b9a649ab40386752f9a71ebaa2fc2090bc
+- kind: patch
+  path: patches/udisks2/calculate-drive-size-from-all-attached-nvme.patch
 
 build-depends:
 - sdk/gtk-doc.bst
