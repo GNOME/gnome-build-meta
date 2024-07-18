@@ -126,9 +126,6 @@ PINEPHONE_PRO_DIALOGS = {
         'cat running.config | grep DRM_PANEL_HIMAX_HX8394',
         'CONFIG_DRM_PANEL_HIMAX_HX8394=',
 
-        # Check for LEDS_CLASS_FLASH config
-        'cat running.config | grep LEDS_CLASS_FLASH',
-        'CONFIG_LEDS_CLASS_FLASH=',
         # Check for LEDS_SGM3140 config
         'cat running.config | grep LEDS_SGM3140',
         'CONFIG_LEDS_SGM3140=',
