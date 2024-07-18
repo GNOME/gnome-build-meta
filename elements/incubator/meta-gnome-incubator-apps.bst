@@ -5,4 +5,5 @@
 kind: stack
 depends:
 - incubator/decibels.bst
+- incubator/papers.bst
 - incubator/showtime.bst
