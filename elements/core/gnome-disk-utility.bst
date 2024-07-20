@@ -20,7 +20,6 @@ depends:
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- sdk/libnotify.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
