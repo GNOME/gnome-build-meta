@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.alpha-18-gcd68778890a9004660bca5f298035c376a1063fa
+  ref: 47.alpha-39-ge08866a1da8ae5c78de71036078e63457fb6f203
 - kind: cargo2
 
   ref:
@@ -397,12 +397,12 @@ sources:
     version: 0.20.0
     sha: 4958c26e5a01c9af00dea669a97369eccbec29a8e6d125c24ea2d85ee7467b60
   - kind: git
-    commit: 4b0759839322fad9277c7f823438abe4937e4027
+    commit: 590eb454995a2d7913e9f34053d272ab9d1a0e07
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin
     version: 2.0.0-alpha
   - kind: git
-    commit: 4b0759839322fad9277c7f823438abe4937e4027
+    commit: 590eb454995a2d7913e9f34053d272ab9d1a0e07
     repo: https://gitlab.gnome.org/sophie-h/glycin
     name: glycin-utils
     version: 2.0.0-alpha
