@@ -6,11 +6,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
-  track: main
-  ref: v256-709-g3addeada790241ccdbf85498a07b83769878feb4
-- kind: patch_queue
-  path: patches/systemd
+  url: github:CodethinkLabs/systemd.git
+  track: sysupdate-integration
+  ref: v256-889-g57ba29b861a4494c895429a80758c4733571ecdb
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
