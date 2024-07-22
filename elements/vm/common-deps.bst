@@ -40,6 +40,7 @@ depends:
 - vm-deps/NetworkManager-vpnc.bst
 
 - vm-deps/noto-cjk.bst
+- vm-deps/words.bst
 
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
