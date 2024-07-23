@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:jsonrpc-glib.git
   track: main
-  ref: 3.44.0-1-g67d6b14d621b19f30d697c2e883db59aeb064f3e
+  ref: 3.44.0-3-ge4395ff72f7358913b39e776da3b0f26f744cb0b
 
 build-depends:
 - sdk/gobject-introspection.bst
