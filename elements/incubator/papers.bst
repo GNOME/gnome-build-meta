@@ -722,6 +722,7 @@ sources:
     sha: fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786
 
 build-depends:
+- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/rust.bst
@@ -745,5 +746,4 @@ variables:
     -Dcomics=disabled
     -Ddjvu=disabled
     -Dintrospection=disabled
-    -Ddocumentation=false
     -Dnautilus=true
