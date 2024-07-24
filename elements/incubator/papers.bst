@@ -723,6 +723,7 @@ sources:
 
 build-depends:
 - sdk-deps/gi-docgen.bst
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/rust.bst
@@ -745,5 +746,4 @@ variables:
   meson-local: >-
     -Dcomics=disabled
     -Ddjvu=disabled
-    -Dintrospection=disabled
     -Dnautilus=true
