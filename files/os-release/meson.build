@@ -44,6 +44,16 @@ elif get_option('mode') == 'sysupdate'
         configuration : conf_data,
         install_dir : get_option('prefix') / 'lib'
     )
+elif get_option('mode') == 'oci'
+    conf_data.set('ISSUE_NAME', 'GNOME OS')
+    conf_data.set('FULL_NAME', 'GNOME OS')
+    conf_data.set('IMAGE_VERSION', get_option('image-version'))
+    configure_file(
+        input : 'os-release.oci.in',
+        output : 'os-release',
+        configuration : conf_data,
+        install_dir : get_option('prefix') / 'lib'
+    )
 else
     conf_data.set('ISSUE_NAME', 'GNOME Platform')
     configure_file(

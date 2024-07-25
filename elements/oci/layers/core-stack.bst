@@ -28,7 +28,7 @@ depends:
 - core.bst
 - sdk-platform.bst
 - sdk.bst
-- sdk/os-release.bst
+- oci/os-release.bst
 
 public:
   bst:

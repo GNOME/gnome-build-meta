@@ -1,0 +1,10 @@
+NAME="GNOME OS"
+VERSION="@SDK_BRANCH@ (Container Image)"
+VERSION_ID=@SDK_BRANCH@
+ID=org.gnome.os
+ID_LIKE=org.freedesktop.platform
+PRETTY_NAME="@FULL_NAME@ @SDK_BRANCH@ (Container Image)"
+BUG_REPORT_URL="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new"
+HOME_URL="https://www.gnome.org/"
+IMAGE_VERSION=@IMAGE_VERSION@
+SYSEXT_LEVEL=@IMAGE_VERSION@
