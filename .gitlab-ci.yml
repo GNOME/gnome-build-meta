@@ -306,16 +306,6 @@ sysupdate-image-aarch64:
         ./utils/publish-sysupdate-to-s3.sh
     fi
 
-pinebook-pro-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: boards/pinebook-pro/image.bst
-
 pinephone-image:
   extends:
   - .manual-image-template

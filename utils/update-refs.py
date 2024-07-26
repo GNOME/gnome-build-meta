@@ -25,7 +25,6 @@ core_elements = [
 ]
 
 boards_elements = [
-    "boards/pinebook-pro/image.bst",
     "boards/pinephone/image.bst",
     "boards/pinephone-pro/image.bst",
     "boards/rock64/image.bst",
