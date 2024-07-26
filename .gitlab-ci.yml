@@ -297,7 +297,7 @@ vm-image-x86_64:
   - !reference [.deploy-rules, rules]
   - !reference [.do-not-run-with-update-bot, rules]
   # Also allow to manually trigger it for normal branches
-  - if: '$CI_COMMIT_BRANCH'
+  - if: $CI_COMMIT_BRANCH && $UPDATE_REFS != "yes"
     when: manual
     allow_failure: true
   stage: deploy
