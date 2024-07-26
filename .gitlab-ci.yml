@@ -326,16 +326,6 @@ pinephone-pro-image:
   variables:
     IMAGE: boards/pinephone-pro/image.bst
 
-rock64-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: boards/rock64/image.bst
-
 iso-installer-x86_64:
   extends:
   - .manual-image-template

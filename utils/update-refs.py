@@ -27,7 +27,6 @@ core_elements = [
 boards_elements = [
     "boards/pinephone/image.bst",
     "boards/pinephone-pro/image.bst",
-    "boards/rock64/image.bst",
 ]
 
 def git(*args):
