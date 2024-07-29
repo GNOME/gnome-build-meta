@@ -12,3 +12,4 @@ variables:
     -Dbranch=%{branch}
     -Dmode=ostree
     -Dvariant=user
+    -Dimage-version=%{image-version}

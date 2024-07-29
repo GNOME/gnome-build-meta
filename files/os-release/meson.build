@@ -12,6 +12,7 @@ conf_data = configuration_data({
 if get_option('mode') == 'ostree'
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('VARIANT_ID', get_option('variant'))
+    conf_data.set('IMAGE_VERSION', get_option('image-version'))
     if get_option('variant') == 'devel'
       conf_data.set('VARIANT', 'Development')
       conf_data.set('FULL_NAME', 'GNOME OS Development')
