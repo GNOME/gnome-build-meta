@@ -7,4 +7,4 @@ url="$1"
 destination="$2"
 
 mkdir -p "$(dirname "$destination")"
-curl --get --location "$url" --output "$destination"
+curl --fail --get --location "$url" --output "$destination"
