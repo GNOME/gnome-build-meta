@@ -1,7 +1,7 @@
 #!/bin/bash
 # Fetch test media from cloud storage.
 
-set -eu
+set -eux
 
 url="$1"
 destination="$2"
