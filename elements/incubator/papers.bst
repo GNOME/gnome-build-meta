@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.alpha-130-ga45edebf6cbc30289567f5ddc85d181c26f70c77
+  ref: 47.alpha-144-gc15496a4cdf0a01247ffdd19eba3e1931a23cef0
 - kind: cargo2
   cargo-lock: shell-rs/Cargo.lock
   ref:
@@ -200,6 +200,10 @@ sources:
     name: field-offset
     version: 0.3.6
     sha: 38e2275cc4e4fc009b0669731a1e5ab7ebf11f469eaede2bab9309a5b4d6057f
+  - kind: registry
+    name: futures
+    version: 0.3.30
+    sha: 645c6916888f6cb6350d2550b80fb63e734897a8498abe35cfb732b6487804b0
   - kind: registry
     name: futures-channel
     version: 0.3.30
@@ -720,7 +724,6 @@ sources:
     name: zvariant_utils
     version: 2.0.0
     sha: fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786
-
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk/gobject-introspection.bst

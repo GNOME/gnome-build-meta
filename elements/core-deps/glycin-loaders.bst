@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.alpha-31-gccac2af9717c43ab2c64771ae66d01b8f17d8472
+  ref: 1.1.alpha-34-g75245d5c92b455fc433a102b9f112d9c0cafd4b0
 - kind: cargo2
   ref:
   - kind: registry
@@ -121,8 +121,8 @@ sources:
     sha: 703f41c54fc768e63e091340b424302bb1c29ef4aa0c7f10fe849dfb114d29ea
   - kind: registry
     name: bytemuck
-    version: 1.16.1
-    sha: b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e
+    version: 1.16.3
+    sha: 102087e286b4677862ea56cf8fc58bb2cdfa8725c40ffb80fe3a008eb7f2fc83
   - kind: registry
     name: byteorder
     version: 1.5.0
@@ -133,20 +133,12 @@ sources:
     sha: 8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495
   - kind: registry
     name: bytes
-    version: 1.6.1
-    sha: a12916984aab3fa6e39d655a33e09c0071eb36d6ab3aea5c2d78551f1df6d952
-  - kind: registry
-    name: cairo-rs
-    version: 0.19.4
-    sha: b2ac2a4d0e69036cf0062976f6efcba1aaee3e448594e6514bb2ddf87acce562
+    version: 1.7.1
+    sha: 8318a53db07bb3f8dca91a600466bdb3f2eaadeedfdbcf02e1accbad9271ba50
   - kind: registry
     name: cairo-rs
     version: 0.20.0
     sha: 797fd5a634dcb0ad0d7d583df794deb0a236d88e759cd34b7da20198c6c9d145
-  - kind: registry
-    name: cairo-sys-rs
-    version: 0.19.2
-    sha: fd3bb3119664efbd78b5e6c93957447944f16bdbced84c17a9f41c7829b81e64
   - kind: registry
     name: cairo-sys-rs
     version: 0.20.0
@@ -381,10 +373,6 @@ sources:
     sha: 28bb53ecb56857c683c9ec859908e076dd3969c7d67598bd8b1ce095d211304a
   - kind: registry
     name: gdk-pixbuf-sys
-    version: 0.19.8
-    sha: 4efa05a4f83c8cc50eb4d883787b919b85e5f1d8dd10b5a1df53bf5689782379
-  - kind: registry
-    name: gdk-pixbuf-sys
     version: 0.20.0
     sha: 9f6681a0c1330d1d3968bec1529f7172d62819ef0bdbb0d18022320654158b03
   - kind: registry
@@ -413,40 +401,20 @@ sources:
     sha: 40ecd4077b5ae9fd2e9e169b102c6c330d0605168eb0e8bf79952b256dbefffd
   - kind: registry
     name: gio
-    version: 0.19.8
-    sha: 4c49f117d373ffcc98a35d114db5478bc223341cff53e39a5d6feced9e2ddffe
-  - kind: registry
-    name: gio
     version: 0.20.0
     sha: 398e3da68749fdc32783cbf7521ec3f65c9cf946db8c7774f8460af49e52c6e2
-  - kind: registry
-    name: gio-sys
-    version: 0.19.8
-    sha: 2cd743ba4714d671ad6b6234e8ab2a13b42304d0e13ab7eba1dcdd78a7d6d4ef
   - kind: registry
     name: gio-sys
     version: 0.20.0
     sha: e4feb96b31c32730ea3e1e89aecd2e4e37ecb1c473ad8f685e3430a159419f63
   - kind: registry
     name: glib
-    version: 0.19.9
-    sha: 39650279f135469465018daae0ba53357942a5212137515777d5fdca74984a44
-  - kind: registry
-    name: glib
     version: 0.20.0
     sha: fee90a615ce05be7a32932cfb8adf2c4bbb4700e80d37713c981fb24c0c56238
   - kind: registry
     name: glib-macros
-    version: 0.19.9
-    sha: 4429b0277a14ae9751350ad9b658b1be0abb5b54faa5bcdf6e74a3372582fad7
-  - kind: registry
-    name: glib-macros
     version: 0.20.0
     sha: 4da558d8177c0c8c54368818b508a4244e1286fce2858cef4e547023f0cfa5ef
-  - kind: registry
-    name: glib-sys
-    version: 0.19.8
-    sha: 5c2dc18d3a82b0006d470b13304fbbb3e0a9bd4884cf985a60a7ed733ac2c4a5
   - kind: registry
     name: glib-sys
     version: 0.20.0
@@ -457,10 +425,6 @@ sources:
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
   - kind: registry
     name: gobject-sys
-    version: 0.19.8
-    sha: 2e697e252d6e0416fd1d9e169bda51c0f1c926026c39ca21fbe8b1bb5c3b8b9e
-  - kind: registry
-    name: gobject-sys
     version: 0.20.0
     sha: c6908864f5ffff15b56df7e90346863904f49b949337ed0456b9287af61903b8
   - kind: registry
@@ -469,8 +433,8 @@ sources:
     sha: d1af2c3c6b244761a93e30989fa0868b92e386b6eb817fc6ced405462af4a7db
   - kind: registry
     name: gufo-exif
-    version: 0.1.0
-    sha: ad6bc9ecb1ed5067a3825d7a9aef23bd5b0b54dd4995beffbcb2be24730131c3
+    version: 0.1.1
+    sha: f2aff5e56872f03d477b55cccef818e6cdae482485c39c130ff9b3b31b69ea10
   - kind: registry
     name: gufo-jpeg
     version: 0.1.0
@@ -521,8 +485,8 @@ sources:
     sha: f79afb8cbee2ef20f59ccd477a218c12a93943d075b492015ecb1bb81f8ee904
   - kind: registry
     name: indexmap
-    version: 2.2.6
-    sha: 168fb715dda47215e360912c096649d23d58bf392ac62f73919e831745e40f26
+    version: 2.3.0
+    sha: de3fc2e30ba82dd1b3911c8de1ffc143c74a914a14e99514d7637e3099df5ea0
   - kind: registry
     name: is_terminal_polyfill
     version: 1.70.1
@@ -587,16 +551,14 @@ sources:
     name: libloading
     version: 0.8.5
     sha: 4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4
-  - kind: git
-    commit: 86e041db9c09a8c106a5276364b2310149af44e9
-    repo: https://gitlab.gnome.org/sophie-h/librsvg-rebind.git
+  - kind: registry
     name: librsvg-rebind
     version: 0.1.0
-  - kind: git
-    commit: 86e041db9c09a8c106a5276364b2310149af44e9
-    repo: https://gitlab.gnome.org/sophie-h/librsvg-rebind.git
+    sha: 15630f09af77f5e84889ce244a8402a1f9ac0b5546171ad77a02fe514a830d06
+  - kind: registry
     name: librsvg-rebind-sys
     version: 0.1.0
+    sha: 635a4abf7b375659c9bab1839779487eb2a964934ad4f67ceb4e0364b75c37e2
   - kind: registry
     name: libseccomp
     version: 0.3.0
@@ -887,16 +849,12 @@ sources:
     sha: dc4b9b9bf2add8093d3f2c0204471e951b2285580335de42f9d2534f3ae7a8af
   - kind: registry
     name: system-deps
-    version: 6.2.2
-    sha: a3e535eb8dded36d55ec13eddacd30dec501792ff23a0b1682c38601b8cf2349
-  - kind: registry
-    name: system-deps
     version: 7.0.1
     sha: 6c81f13d9a334a6c242465140bd262fae382b752ff2011c4f7419919a9c97922
   - kind: registry
     name: target-lexicon
-    version: 0.12.15
-    sha: 4873307b7c257eddcb50c9bedf158eb669578359fb28428bef438fec8e6ba7c2
+    version: 0.12.16
+    sha: 61c41af27dd6d1e27b1b16b489db798443478cef1f06a660c96db617ba5de3b1
   - kind: registry
     name: tempfile
     version: 3.10.1
@@ -927,20 +885,20 @@ sources:
     sha: 267ac89e0bec6e691e5813911606935d77c476ff49024f98abcea3e7b15e37af
   - kind: registry
     name: toml
-    version: 0.8.16
-    sha: 81967dd0dd2c1ab0bc3468bd7caecc32b8a4aa47d0c8c695d8c2b2108168d62c
+    version: 0.8.19
+    sha: a1ed1f98e3fdc28d6d910e6737ae6ab1a93bf1985935a1193e68f93eeb68d24e
   - kind: registry
     name: toml_datetime
-    version: 0.6.7
-    sha: f8fb9f64314842840f1d940ac544da178732128f1c78c21772e876579e0da1db
+    version: 0.6.8
+    sha: 0dd7358ecb8fc2f8d014bf86f6f638ce72ba252a2c3a2572f2a795f1d23efb41
   - kind: registry
     name: toml_edit
     version: 0.21.1
     sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
   - kind: registry
     name: toml_edit
-    version: 0.22.17
-    sha: 8d9f8729f5aea9562aac1cc0441f5d6de3cff1ee0c5d67293eeca5eb36ee7c16
+    version: 0.22.20
+    sha: 583c44c02ad26b0c3f3066fe629275e50627026c51ac2e595cca4c230ce1ce1d
   - kind: registry
     name: tracing
     version: 0.1.40
@@ -1071,8 +1029,8 @@ sources:
     sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
   - kind: registry
     name: winnow
-    version: 0.6.16
-    sha: b480ae9340fc261e6be3e95a1ba86d54ae3f9171132a73ce8d4bbaf68339507c
+    version: 0.6.18
+    sha: 68a9bda4691f099d435ad181000724da8e5899daa10713c2d432552b9ccd3a6f
   - kind: registry
     name: xdg-home
     version: 1.2.0
