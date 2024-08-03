@@ -37,9 +37,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_gnome_connections.pm");
     autotest::loadtest("tests/app_gnome_console.pm");
     autotest::loadtest("tests/app_gnome_contacts.pm");
-    # Disabled as GTK4 migration is happening during GNOME 46 cycle.
-    # See: <https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/322>
-    #autotest::loadtest("tests/app_gnome_disk_utility.pm");
+    autotest::loadtest("tests/app_gnome_disk_utility.pm");
     autotest::loadtest("tests/app_gnome_font_viewer.pm");
     autotest::loadtest("tests/app_gnome_weather.pm");
     autotest::loadtest("tests/app_gnome_logs.pm");
@@ -70,7 +68,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_text_to_speech.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
     # Disabled temporarily due to https://gitlab.gnome.org/GNOME/openqa-tests/-/issues/113
-    #autotest::loadtest("tests/a11y_screen_keyboard.pm");
+    autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
 } elsif ($testsuite eq "gnome_mobile") {
     # Triggers resize_app_to_mobile function
