@@ -21,7 +21,6 @@ depends:
 - core-deps/fwupd.bst
 - core-deps/glib-testing.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/gspell.bst
 - core-deps/liboauth.bst
 - core-deps/malcontent.bst
 - core-deps/snapd-glib.bst
