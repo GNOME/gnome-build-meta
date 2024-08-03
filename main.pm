@@ -68,7 +68,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/a11y_text_to_speech.pm");
     autotest::loadtest("tests/a11y_zoom.pm");
     # Disabled temporarily due to https://gitlab.gnome.org/GNOME/openqa-tests/-/issues/113
-    #autotest::loadtest("tests/a11y_screen_keyboard.pm");
+    autotest::loadtest("tests/a11y_screen_keyboard.pm");
 
 } elsif ($testsuite eq "gnome_mobile") {
     # Triggers resize_app_to_mobile function
