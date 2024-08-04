@@ -1,4 +1,4 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: git_repo
@@ -10,7 +10,7 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/enchant-2.bst
