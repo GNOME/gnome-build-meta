@@ -39,6 +39,9 @@ bst_command = os.environ.get("BST", "bst").split()
 def bst(*args):
     return subprocess.check_call(bst_command + ["--on-error", "continue"] + list(args))
 
+
+bst("workspace", "close", "--all")
+
 track_elements = boards_elements if args.track_boards else core_elements
 bst("source", "track", "--deps", "all", *track_elements)
 
