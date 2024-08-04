@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:simple-scan.git
   track: master
-  ref: 46.0-22-g72d4dab3637b62912bc89cef6da56a6a84b8ce05
+  ref: 46.0-24-g08e239bf33e76c88e1afc473a6e007e9bccef284
 
 build-depends:
 - sdk/vala.bst

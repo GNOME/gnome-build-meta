@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.alpha-61-g64afae590cb8c977525424b3512bddea86360582
+  ref: 47.beta-1-g4a58d2f8b22c46e6fd642a138d4181c6221754e5
 - kind: cargo2
 
   ref:
@@ -364,16 +364,14 @@ sources:
     name: glib-sys
     version: 0.20.0
     sha: 4958c26e5a01c9af00dea669a97369eccbec29a8e6d125c24ea2d85ee7467b60
-  - kind: git
-    commit: ccac2af9717c43ab2c64771ae66d01b8f17d8472
-    repo: https://gitlab.gnome.org/sophie-h/glycin
+  - kind: registry
     name: glycin
-    version: 2.0.0-alpha
-  - kind: git
-    commit: ccac2af9717c43ab2c64771ae66d01b8f17d8472
-    repo: https://gitlab.gnome.org/sophie-h/glycin
+    version: 2.0.0-beta
+    sha: 8ad0e7b971597fd206fbf0a6fb37608fd7983705ef8adfb8781fcbc155ef8f83
+  - kind: registry
     name: glycin-utils
-    version: 2.0.0-alpha
+    version: 2.0.0-beta
+    sha: d32e5bd3f73d2df60927b5eca9cdc9aee064dc7df8720c8bfb73f815f6a17d97
   - kind: registry
     name: gobject-sys
     version: 0.20.0
@@ -668,8 +666,8 @@ sources:
     sha: ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c
   - kind: registry
     name: regex
-    version: 1.10.5
-    sha: b91213439dad192326a0d7c6ee3955910425f441d7038e0d6933b0aec5c4517f
+    version: 1.10.6
+    sha: 4219d74c6b67a3654a9fbebc4b419e22126d13d2f3c4a07ee0cb61ff79a79619
   - kind: registry
     name: regex-automata
     version: 0.1.10
@@ -728,8 +726,8 @@ sources:
     sha: e0cd7e117be63d3c3678776753929474f3b04a43a080c744d6b0ae2a8c28e222
   - kind: registry
     name: serde_json
-    version: 1.0.121
-    sha: 4ab380d7d9f22ef3f21ad3e6c1ebe8e4fc7a2000ccba2e4d71fc96f15b2cb609
+    version: 1.0.122
+    sha: 784b6203951c57ff748476b126ccb5e8e2959a5c19e5c617ab1956be3dbc68da
   - kind: registry
     name: serde_repr
     version: 0.1.19
