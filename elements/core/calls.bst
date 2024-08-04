@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:calls.git
   track: main
-  ref: v47_alpha.0-17-gf3956b51865fec2aacc94fc68ab650699381244d
+  ref: v47_beta.0-1-g15765687b26936cc5a5a7d8e8491b0fe28a2231d
 - kind: git_module
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   path: subprojects/libcall-ui
@@ -23,9 +23,9 @@ depends:
 - core-deps/feedbackd.bst
 - core-deps/folks.bst
 - core-deps/gom.bst
-- core-deps/libpeas-1.bst
+- core-deps/libpeas.bst
 - core-deps/sofia-sip.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
