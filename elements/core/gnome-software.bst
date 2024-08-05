@@ -39,6 +39,9 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
+runtime-depends:
+- core-deps/gnome-app-list.bst
+
 variables:
   meson-local: >-
     -Dfwupd=true
