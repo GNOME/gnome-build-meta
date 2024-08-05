@@ -6,9 +6,9 @@ sources:
   ref: a0b56ed11f0ae8045b465535d468b14a230535a30d4a703ff9113fc5dd236ba4
 
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/cmake.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/liberation-fonts.bst

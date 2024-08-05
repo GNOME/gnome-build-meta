@@ -7,7 +7,7 @@ sources:
   ref: 1.3.beta-1-g70ecf715ee6ec3832e612d985ab4a0880fdbf365
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst

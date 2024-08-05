@@ -1204,11 +1204,11 @@ sources:
     version: 0.4.13
     sha: 16099418600b4d8f028622f73ff6e3deaabdff330fb9a2a131dea781ee8b0768
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - sdk-deps/cargo-c.bst
-- sdk-deps/gi-docgen.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -7,7 +7,7 @@ sources:
   ref: 3.51.0-66-g3555ea5a8fdaed4dbe7b6fe3346ffe4141d4e038
 
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

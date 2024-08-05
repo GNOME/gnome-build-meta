@@ -5,8 +5,8 @@ kind: meson
 build-depends:
   (>):
   - freedesktop-sdk.bst:components/python3-docutils.bst
-  - sdk-deps/gi-docgen.bst
   - sdk-deps/gobject-introspection-stage1.bst
+  - sdk/gi-docgen.bst
 
 depends:
   (>):

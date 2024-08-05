@@ -15,10 +15,10 @@ depends:
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk.bst:components/vim.bst
 - freedesktop-sdk.bst:components/xmlto.bst
-- sdk-deps/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
 - sdk.bst
+- sdk/gi-docgen.bst
 - vm-deps/deviced.bst
 - vm-deps/distrobox.bst
 - vm-deps/swtpm.bst

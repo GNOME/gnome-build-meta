@@ -5,7 +5,7 @@ sources:
   track: main
   ref: AT_SPI2_CORE_2_53_0-11-gb2125f2687bc142afa28cb66363c33a353abeafd
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/python3-sphinx.bst

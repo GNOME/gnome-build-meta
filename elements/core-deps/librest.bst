@@ -5,7 +5,7 @@ sources:
   track: master
   ref: 0.9.1-24-g23f2d27e5ea5479fb7a0d844afe5ef8d98ae2a6d
 build-depends:
-- sdk-deps/gi-docgen.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

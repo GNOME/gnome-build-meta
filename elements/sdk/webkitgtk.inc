@@ -3,8 +3,8 @@ sources:
   url: webkitgtk:webkitgtk-2.45.6.tar.xz
   ref: 982bfecc213fc8c484f1aa78e39ef5170b8de559b1ad7c333e6ee946a6c3e6f4
 build-depends:
-- sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/llvm.bst
