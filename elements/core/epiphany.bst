@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/45/epiphany-45.3.tar.xz
-  ref: 6c302e9bdd66290cb0e26f62843cd4c435a4955abdbb4f151f07dc80495d6730
+  url: gnome_downloads:epiphany/45/epiphany-45.4.tar.xz
+  ref: 5a039da5686ca3f30ea7017751f807ce0e1e9889aca7d18ed6b3fd020104b91b
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
