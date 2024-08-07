@@ -16,7 +16,6 @@ build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 
 depends:
-- freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/icu.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
@@ -44,7 +43,6 @@ config:
     ac_add_options --enable-release
     ac_add_options --enable-debug-symbols
     ac_add_options --with-intl-api
-    ac_add_options --with-system-nspr
     ac_add_options --with-system-zlib
     ac_add_options --with-system-icu
     ac_add_options --enable-readline
