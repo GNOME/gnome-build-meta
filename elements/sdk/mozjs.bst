@@ -2,9 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: mozilla:firefox/releases/115.9.1esr/source/firefox-115.9.1esr.source.tar.xz
-  base-dir: 'firefox-115.9.1'
-  ref: 23657808bfefb8ba33a191645d4df776d5b8d99d453edde32b785d2a8846f929
+  url: mozilla:firefox/releases/128.1.0esr/source/firefox-128.1.0esr.source.tar.xz
+  base-dir: 'firefox-128.1.0'
+  ref: ccdab622a395622abc6d80040a11715ad81a614f601db6672c05b98ac91fd9b5
 
 build-depends:
 - freedesktop-sdk.bst:components/llvm.bst
@@ -14,6 +14,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/rust.bst
+- freedesktop-sdk.bst:components/rust-cbindgen.bst
 
 depends:
 - freedesktop-sdk.bst:components/icu.bst
@@ -23,7 +24,7 @@ variables:
   optimize-debug: "false"
 
 environment:
-  MACH_USE_SYSTEM_PYTHON: '1'
+  MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE: 'system'
   MAXJOBS: '%{max-jobs}'
   CC: clang
   CXX: clang++
