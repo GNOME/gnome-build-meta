@@ -10,6 +10,7 @@ build-depends:
 
 variables:
   uuidnamespace: aea54278-2587-4075-ae67-8688ace4ce3d
+  sysroot: '%{build-root}/sysroot'
 
 config:
   ostree-branch: '%{ostree-branch}'
