@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gom/0.5/gom-0.5.1.tar.xz
-  ref: 15dc4d1302f8210cf08ccba9b2696417fd946d9911bbaf5183cbe36d25d570e0
+  url: gnome_downloads:gom/0.5/gom-0.5.3.tar.xz
+  ref: 069d0909fbdc6b4d27edf7a879366194e3ab508b03548bf5b89ff63546d20177
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

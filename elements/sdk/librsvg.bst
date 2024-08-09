@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.58/librsvg-2.58.1.tar.xz
-  ref: 3728596290a8576d305d06ec8afdf473516feee9dff22e03235eac433d56824e
+  url: gnome_downloads:librsvg/2.58/librsvg-2.58.2.tar.xz
+  ref: 18e9d70c08cf25f50d610d6d5af571561d67cf4179f962e04266475df6e2e224
 - kind: cargo
   ref:
   - name: adler

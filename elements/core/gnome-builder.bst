@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-builder/46/gnome-builder-46.2.tar.xz
-  ref: 0c857b89003b24787f2b1d2aae12d275a074c6684b48803b48c00276d9371963
+  url: gnome_downloads:gnome-builder/46/gnome-builder-46.3.tar.xz
+  ref: 12f27c0e2a4a7316f9f7e21859df6bf1b77570d2966f957a43306f699ec54612
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
