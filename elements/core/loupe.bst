@@ -1011,7 +1011,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/glycin-loaders.bst
+- core-deps/glycin.bst
 - core-deps/libgweather.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
