@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.51.0-67-g6172749314e762242ce15f31d742f21cf6f761e9
+  ref: 3.51.0-68-ge927ab381277f4b9dcdf6116523cdc1c26761cbf
 
 build-depends:
 - sdk/gi-docgen.bst
