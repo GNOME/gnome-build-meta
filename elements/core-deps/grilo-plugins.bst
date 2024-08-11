@@ -8,7 +8,6 @@ build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
-- core-deps/gmime.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/gom.bst
 - core-deps/grilo.bst
