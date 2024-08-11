@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_repo
-  url: gnome:gmime.git
-  track: master
-  ref: 3.2.3-51-g6bff5288f9c108160dd56dd20a9c6608aa55f791
+- kind: tar
+  url: github_files:jstedfast/gmime/releases/download/3.2.15/gmime-3.2.15.tar.xz
+  ref: 84cd2a481a27970ec39b5c95f72db026722904a2ccf3fdbd57b280cf2d02b5c4
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
