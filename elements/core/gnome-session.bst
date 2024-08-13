@@ -25,3 +25,4 @@ depends:
 variables:
   meson-local: >-
     -Dmimeapps=false
+    -Dx11=false
