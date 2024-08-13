@@ -21,3 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-ice.bst
 - freedesktop-sdk.bst:components/xorg-lib-sm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dx11=false
