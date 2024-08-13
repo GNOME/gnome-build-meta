@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gcr.git
-  track: master
-  ref: 4.3.0-11-gabf1858d541c7ae2037f308388e66969128ecccc
-
+- kind: tar
+  url: gnome_downloads:gcr/4.3/gcr-4.3.0.tar.xz
+  ref: c3ee8728e4364b0397f435fa20f92f901ab139d2b264f4e059d67b3c0f43cd36
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

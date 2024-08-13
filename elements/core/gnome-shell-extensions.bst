@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:gnome-shell-extensions.git
-  track: main
-  ref: 47.beta-2-g69f3132f4c786a9fc3db04c2155741b54cd08c18
+- kind: tar
+  url: gnome_downloads:gnome-shell-extensions/47/gnome-shell-extensions-47.beta.tar.xz
+  ref: 9dbbaa7cb1f7c0d9ff636c010cde85844e188c9c85525fb8d28b2327c0fa222c
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

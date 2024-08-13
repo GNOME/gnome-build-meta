@@ -1,12 +1,10 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:loupe.git
-  track: main
-  ref: 47.beta-20-gd670bd7f0f69f073731d67301c8d7cf436de7641
+- kind: tar
+  url: gnome_downloads:loupe/47/loupe-47.beta.1.tar.xz
+  ref: 09d4008aef5a5f1c5666e67c81668bcfe07a13d932fef5b07546007639dbf792
 - kind: cargo2
-
   ref:
   - kind: registry
     name: adler
@@ -1004,6 +1002,7 @@ sources:
     name: zvariant_utils
     version: 2.1.0
     sha: c51bcff7cc3dbb5055396bcf774748c3dab426b4b8659046963523cee4808340
+
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

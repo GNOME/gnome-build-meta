@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gdk-pixbuf.git
-  track: master
-  ref: 2.42.12-1-g5a5d37bd6696c96d5567c2199cac0fbc5b86d0e8
-
+- kind: tar
+  url: gnome_downloads:gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz
+  ref: b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

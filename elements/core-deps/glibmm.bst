@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:glibmm.git
-  track: master
-
-  ref: 2.80.0-28-gd1e1f43f78e9f9b1e88cc0e615975c754a84bd3d
+- kind: tar
+  url: gnome_downloads:glibmm/2.80/glibmm-2.80.0.tar.xz
+  ref: 539b0a29e15a96676c4f0594541250566c5ca44da5d4d87a3732fa2d07909e4a
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-shell.git
-  track: main
-  ref: 47.beta-7-ge6b4a048cd03be2adc662abbecac6f9d2f5de824
-# FIXME: Keep this in sync with the repo until we can use wraps as sources
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
-#
-# Shell dropped the git submodule and it's only using the meson wrap now
-# https://gitlab.gnome.org/GNOME/gnome-shell/-/commit/5649ad6752f0d1fa6f9f580d90b3784c699e4a1f
+- kind: tar
+  url: gnome_downloads:gnome-shell/47/gnome-shell-47.beta.tar.xz
+  ref: d2fe3fb0aef12e8b845ab36948352262693191409f15c47a942e6fc89f234889
 - kind: git_repo
   url: gnome:libgnome-volume-control.git
   directory: subprojects/gvc

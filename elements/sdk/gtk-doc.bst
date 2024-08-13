@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:gtk-doc.git
-  track: master
-  ref: 1.34.0-17-gc5d41ae5f9a7046e4d033c82ca8dacd3aaca0482
+- kind: tar
+  url: gnome_downloads:gtk-doc/1.34/gtk-doc-1.34.0.tar.xz
+  ref: b20b72b32a80bc18c7f975c9d4c16460c2276566a0b50f87d6852dff3aa7861c
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

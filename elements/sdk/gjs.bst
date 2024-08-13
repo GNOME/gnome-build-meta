@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gjs.git
-  track: master
-  ref: 1.81.2-8-g9b32195505e8260aab63fadb9b47ff49cb2e5e24
-
+- kind: tar
+  url: gnome_downloads:gjs/1.81/gjs-1.81.2.tar.xz
+  ref: 2f09302392d7088d01db9625b7371f172a6013667b4ae4cfa8d5a0bd105429d3
 build-depends:
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

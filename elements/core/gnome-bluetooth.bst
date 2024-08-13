@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-bluetooth.git
-  track: master
-  ref: 47.beta-4-g0e323c62a880604f2a3c4aa145aca3d82cc342e2
-
+- kind: tar
+  url: gnome_downloads:gnome-bluetooth/47/gnome-bluetooth-47.beta.tar.xz
+  ref: a0d2a536c76b60a751e26ba09c008c6411237bcb079eaa00470db039b5871e4d
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

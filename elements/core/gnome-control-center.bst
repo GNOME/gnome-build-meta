@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 47.beta-11-gc8e69b35d04011107b5ff4c1db5b9c05b6a26ea9
-- kind: git_module
-  url: gnome:libgnome-volume-control.git
-  path: subprojects/gvc
-  ref: 91f3f41490666a526ed78af744507d7ee1134323
-
+- kind: tar
+  url: gnome_downloads:gnome-control-center/47/gnome-control-center-47.beta.tar.xz
+  ref: 196b32ccaca26a33be4f8301fb2d3e59a164de6df112846e618f27f893031e3e
 build-depends:
 # These two are more like runtime deps of the tests suite
 - core-deps/setxkbmap.bst

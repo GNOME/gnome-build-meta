@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtkmm.git
-  track: master
-  ref: 4.15.0-1-g6aa075f50a645c76be0fd985d81ccf916de8c0c2
-
+- kind: tar
+  url: gnome_downloads:gtkmm/4.15/gtkmm-4.15.0.tar.xz
+  ref: 215b820ebd59bf37c9d5491157a924d97b8f0c63508f731f2f8836d2bbffe315
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
