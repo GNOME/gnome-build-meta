@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-online-accounts.git
-  track: master
-  ref: 3.51.0-72-gaf5eaf4222b3638284b813263c747a79948a40af
-
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.51/gnome-online-accounts-3.51.1.tar.xz
+  ref: 2dfa2494c0c23bc96632096eb8bc7359193fefcd3e442353ba0a8c347345b432
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome_gitlab:sophie-h/glycin.git
-  track: main
-  ref: 1.1.beta-3-g799c2437c4dda194328ed388564541f941d190d5
+- kind: tar
+  url: gnome_downloads:glycin/1.1/glycin-1.1.beta.tar.xz
+  ref: fdaf62ce1bbfcdd677f73283e8a58198d61d3977921c2bb16147cf69291329ca
 - kind: cargo2
   ref:
   - kind: registry
@@ -19,6 +18,26 @@ sources:
     name: aho-corasick
     version: 1.1.3
     sha: 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
+  - kind: registry
+    name: anstream
+    version: 0.6.15
+    sha: 64e15c1ab1f89faffbf04a634d5e1962e9074f2741eef6d97f3c4e322426d526
+  - kind: registry
+    name: anstyle
+    version: 1.0.8
+    sha: 1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1
+  - kind: registry
+    name: anstyle-parse
+    version: 0.2.5
+    sha: eb47de1e80c2b463c735db5b217a0ddc39d612e7ac9e2e96a5aed1f57616c1cb
+  - kind: registry
+    name: anstyle-query
+    version: 1.1.1
+    sha: 6d36fc52c7f6c869915e99412912f22093507da8d9e942ceaf66fe4b7c14422a
+  - kind: registry
+    name: anstyle-wincon
+    version: 3.0.4
+    sha: 5bf74e1b6e971609db8ca7a9ce79fd5768ab6ae46441c572e46cf596f59e57f8
   - kind: registry
     name: async-broadcast
     version: 0.7.1
@@ -151,6 +170,10 @@ sources:
     name: color_quant
     version: 1.1.0
     sha: 3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b
+  - kind: registry
+    name: colorchoice
+    version: 1.0.2
+    sha: d3fd119d74b830634cea2a0f58bbd0d54540518a14397557951e79340abc28c0
   - kind: registry
     name: concurrent-queue
     version: 2.5.0
@@ -400,6 +423,14 @@ sources:
     version: 0.3.1
     sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
   - kind: registry
+    name: glycin
+    version: 2.0.0-beta
+    sha: 8ad0e7b971597fd206fbf0a6fb37608fd7983705ef8adfb8781fcbc155ef8f83
+  - kind: registry
+    name: glycin-utils
+    version: 2.0.0-beta
+    sha: d32e5bd3f73d2df60927b5eca9cdc9aee064dc7df8720c8bfb73f815f6a17d97
+  - kind: registry
     name: gobject-sys
     version: 0.20.0
     sha: c6908864f5ffff15b56df7e90346863904f49b949337ed0456b9287af61903b8
@@ -463,6 +494,10 @@ sources:
     name: indexmap
     version: 2.3.0
     sha: de3fc2e30ba82dd1b3911c8de1ffc143c74a914a14e99514d7637e3099df5ea0
+  - kind: registry
+    name: is_terminal_polyfill
+    version: 1.70.1
+    sha: 7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf
   - kind: registry
     name: itertools
     version: 0.12.1
@@ -903,6 +938,10 @@ sources:
     name: unicode-ident
     version: 1.0.12
     sha: 3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b
+  - kind: registry
+    name: utf8parse
+    version: 0.2.2
+    sha: 06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821
   - kind: registry
     name: valuable
     version: 0.1.0

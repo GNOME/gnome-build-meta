@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mutter.git
-  track: main
-  ref: 47.beta-102-g4ea693bc20ae2169a5c3c5a65c59cf37035ac142
-
+- kind: tar
+  url: gnome_downloads:mutter/47/mutter-47.beta.tar.xz
+  ref: c89e8044d9d5cb61663a38bde9a19329363e3171f9aafe8ee9ea9bdf1805b7b5
 build-depends:
 - core-deps/python-dbusmock.bst
 - core-deps/xvfb.bst

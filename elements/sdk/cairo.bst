@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: freedesktop:cairo/cairo.git
-  track: master
-  ref: 1.18.0-121-gbbf385d35c5b3913cf7dce369d2e363a460aafcc
+- kind: tar
+  url: cairo:releases/cairo-1.18.0.tar.xz
+  ref: 243a0736b978a33dee29f9cca7521733b78a65b5418206fef7bd1c3d4cf10b64
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

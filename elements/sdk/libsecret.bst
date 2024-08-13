@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libsecret.git
-  track: master
-  ref: 0.21.4-16-g54ee246e450e27d95a92658b9dcaf64ae6df9c33
-
+- kind: tar
+  url: gnome_downloads:libsecret/0.21/libsecret-0.21.4.tar.xz
+  ref: 163d08d783be6d4ab9a979ceb5a4fecbc1d9660d3c34168c581301cd53912b20
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

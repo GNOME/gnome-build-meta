@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:d-spy.git
-  track: main
-  ref: 47.alpha-5-g2c8bd1f37918d13ccb46569a3a346f86123d119f
-
+- kind: tar
+  url: gnome_downloads:d-spy/47/d-spy-47.alpha.tar.xz
+  ref: edf0ba36fc57a27bd9468a166ea5b89e73e6b9445e7a9dfa17167351949b08a0
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
