@@ -427,6 +427,31 @@ s3-image-static:
 
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
+
+s3-image-static-stable:
+  extends: .arch-indep
+  stage: reports
+  needs:
+  - job: s3-image
+    artifacts: false
+  rules:
+  - if: $CI_COMMIT_TAG
+  script:
+  - |
+    # For 47.x tag use 47 branch
+    branch=$(echo $CI_COMMIT_TAG | cut -d . -f 1)
+
+    echo tag/$CI_COMMIT_TAG/disk_$CI_COMMIT_TAG.img.xz > stable-$branch-disk
+    echo tag/$CI_COMMIT_TAG/disk_sysupdate_$CI_COMMIT_TAG-x86_64.img.xz > stable-$branch-sysupdate-x86_64-disk
+    echo tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso > stable-$branch-iso
+  - |
+    aws s3 cp --acl public-read stable-$branch-disk s3://gnome-build-meta/stable-$branch-disk
+    aws s3 cp --acl public-read stable-$branch-sysupdate-x86_64-disk s3://gnome-build-meta/stable-$branch-sysupdate-x86_64-disk
+    aws s3 cp --acl public-read stable-$branch-iso s3://gnome-build-meta/stable-$branch-iso
+
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
+
+
 ostree-x86_64:
   extends:
   - .ostree-template
