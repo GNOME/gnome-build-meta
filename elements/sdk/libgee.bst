@@ -10,6 +10,11 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+config:
+  configure-commands:
+    (>):
+      - make distclean
+      - "%{configure}"
 public:
   bst:
     split-rules:
