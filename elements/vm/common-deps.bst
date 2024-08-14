@@ -16,6 +16,7 @@ depends:
 - vm/gnome-nightly-config.bst
 - vm/plymouth-gnome-theme.bst
 - vm-deps/spice-vdagent.bst
+- core-deps/phodav.bst
 - vm/wpa-supplicant-config.bst
 - vm/nsswitch-config.bst
 - vm/disable-iscsi.bst
