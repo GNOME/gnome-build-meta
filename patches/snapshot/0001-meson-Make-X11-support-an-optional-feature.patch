@@ -1,0 +1,82 @@
+From f2cc0802f60bc86ef431281347cbb03acdf8a8b8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Thu, 15 Aug 2024 22:43:16 +0100
+Subject: [PATCH] meson: Make X11 support an optional feature
+
+---
+ Cargo.toml        | 3 ++-
+ meson.build       | 3 +++
+ meson_options.txt | 8 +++++++-
+ src/meson.build   | 4 ++++
+ 4 files changed, 16 insertions(+), 2 deletions(-)
+
+diff --git a/Cargo.toml b/Cargo.toml
+index c75e9ab..f614355 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -25,6 +25,7 @@ rust-version.workspace = true
+ # This is manually enabled by meson
+ [features]
+ portal = ["dep:ashpd"]
++x11 = ["ashpd/gtk4_x11"]
+ 
+ [profile.release]
+ lto = true
+@@ -32,7 +33,7 @@ lto = true
+ [dependencies]
+ adw = { package = "libadwaita", version = "0.7", features = ["v1_6"] }
+ anyhow = "1.0"
+-ashpd = { version = "0.9", features = ["gtk4", "tracing"], optional = true }
++ashpd = { version = "0.9", features = ["gtk4_wayland", "tracing"], optional = true }
+ futures-channel = "0.3.26"
+ gettext-rs = { version = "0.7", features = ["gettext-system"] }
+ glycin = { version = "2.0.0-beta", features = ["gdk4"] }
+diff --git a/meson.build b/meson.build
+index eaf7829..a3c0e96 100644
+--- a/meson.build
++++ b/meson.build
+@@ -19,6 +19,9 @@ dependency('gstreamer-video-1.0', version: '>= 1.20')
+ # Needed for camerabin
+ dependency('gstreamer-plugins-bad-1.0', version: '>= 1.20')
+ 
++# Optional dependencies
++gtk4_x11 = dependency('gtk4-x11', required: get_option('x11'))
++
+ glib_compile_resources = find_program('glib-compile-resources', required: true)
+ glib_compile_schemas = find_program('glib-compile-schemas', required: true)
+ desktop_file_validate = find_program('desktop-file-validate', required: false)
+diff --git a/meson_options.txt b/meson_options.txt
+index 686162a..ac79c36 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -14,4 +14,10 @@ option(
+   type: 'boolean',
+   value: false,
+   description: 'Enables the usage of the XDG Camera Portal. By default this is Disabled. This is subject to change in a future major release'
+-)
+\ No newline at end of file
++)
++
++option(
++  'x11',
++  type: 'feature',
++  description: 'Enable X11 specific features.'
++)
+diff --git a/src/meson.build b/src/meson.build
+index 98879b7..458c89c 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -36,6 +36,10 @@ else
+   message('Building in release mode')
+ endif
+ 
++if gtk4_x11.found()
++  cargo_options += [ '--features', 'x11' ]
++endif
++
+ if get_option('portal') == true
+   cargo_options += [ '--features', 'portal' ]
+ endif
+-- 
+2.45.2
+

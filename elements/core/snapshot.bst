@@ -1,9 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: gnome_downloads:snapshot/47/snapshot-47.beta.tar.xz
-  ref: d06c673457acd61b928b8a4f64a0bb4b9f3b42b4c03ae39e8737768d93d146bc
+- kind: git_repo
+  url: gnome:snapshot.git
+  track: main
+  ref: 47.alpha-41-g42dd404699e6f0391585fc7174950e48c91912c9
+- kind: patch
+  path: patches/snapshot/0001-meson-Make-X11-support-an-optional-feature.patch
 - kind: cargo2
   ref:
   - kind: registry
