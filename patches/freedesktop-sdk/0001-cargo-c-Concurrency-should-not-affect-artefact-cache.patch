@@ -1,0 +1,34 @@
+From f49928ea211916005d311f74c6818ed7f1372055 Mon Sep 17 00:00:00 2001
+From: bbhtt <bbhtt.zn0i8@slmail.me>
+Date: Sat, 17 Aug 2024 00:59:06 +0530
+Subject: [PATCH] cargo-c: Concurrency should not affect artefact cache key
+ calculation
+
+---
+ elements/components/cargo-c.bst | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/elements/components/cargo-c.bst b/elements/components/cargo-c.bst
+index 103c95c5c..a1e66833a 100644
+--- a/elements/components/cargo-c.bst
++++ b/elements/components/cargo-c.bst
+@@ -9,9 +9,15 @@ depends:
+ - components/openssl.bst
+ - components/curl.bst
+ 
++environment:
++  MAXJOBS: "%{max-jobs}"
++
++environment-nocache:
++- MAXJOBS
++
+ config:
+   build-commands:
+-  - cargo build --release --frozen --offline --jobs %{max-jobs}
++  - cargo build --release --frozen --offline --jobs "${MAXJOBS}"
+ 
+   install-commands:
+   - |
+-- 
+2.45.2
+
