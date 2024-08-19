@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell-extensions.git
   track: main
-  ref: 47.beta-2-g69f3132f4c786a9fc3db04c2155741b54cd08c18
+  ref: 47.beta-4-gc2c57c8e29032235c74b78aad0f9c3e5bf2535e3
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
