@@ -1,5 +1,11 @@
 kind: manual
 
+environment:
+  MAXJOBS: "%{max-jobs}"
+
+environment-nocache:
+- MAXJOBS
+
 build-depends:
 - sdk-deps/cargo-c.bst
 - freedesktop-sdk.bst:components/rust.bst
@@ -557,3 +563,5 @@ config:
     --destdir=%{install-root}
     --features=wayland,x11glx,x11egl,dmabuf,gtk_v4_14
     --library-type=cdylib
+    --jobs "${MAXJOBS}"
+
