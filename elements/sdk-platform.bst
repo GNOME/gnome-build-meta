@@ -24,6 +24,7 @@ depends:
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gssproxy.bst
+- sdk/gst-plugin-gtk4.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
 - sdk/gtksourceview.bst

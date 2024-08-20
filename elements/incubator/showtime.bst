@@ -12,11 +12,11 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- incubator-deps/gst-plugin-gtk4.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/pygobject.bst
+- sdk/gst-plugin-gtk4.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/pygobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
