@@ -1036,3 +1036,7 @@ depends:
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+
+variables:
+  meson-local: >-
+    -Dx11=disabled
