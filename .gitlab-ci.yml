@@ -65,6 +65,7 @@ default:
 
     echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
     export IMAGE_VERSION
+    cat include/image-version.yml
 
 
   retry:
