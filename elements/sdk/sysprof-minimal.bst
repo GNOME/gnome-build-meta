@@ -13,6 +13,7 @@ variables:
   meson-local: >-
     -Dexamples=false
     -Dgtk=false
+    -Dpolkit-agent=disabled
     -Dtests=false
     -Dtools=false
     -Dlibsysprof=false
