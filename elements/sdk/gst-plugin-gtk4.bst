@@ -7,7 +7,7 @@ environment-nocache:
 - MAXJOBS
 
 build-depends:
-- sdk-deps/cargo-c.bst
+- freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 

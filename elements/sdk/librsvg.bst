@@ -1206,8 +1206,8 @@ build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- sdk-deps/cargo-c.bst
 - sdk/gi-docgen.bst
+- freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
