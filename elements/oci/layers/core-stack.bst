@@ -25,6 +25,8 @@ depends:
 - freedesktop-sdk.bst:components/sudo.bst
 - freedesktop-sdk.bst:components/xmlto.bst
 
+- freedesktop-sdk.bst:vm/mesa-default.bst
+
 - core.bst
 - sdk-platform.bst
 - sdk.bst

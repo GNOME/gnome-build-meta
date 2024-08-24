@@ -5,6 +5,7 @@ depends:
 - sdk/os-release.bst
 - freedesktop-sdk.bst:components/sudo.bst
 - freedesktop-sdk.bst:components/shadow.bst
+- freedesktop-sdk.bst:vm/mesa-default.bst
 
 public:
   bst:
