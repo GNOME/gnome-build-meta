@@ -24,6 +24,12 @@ depends:
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:components/sudo.bst
 - freedesktop-sdk.bst:components/xmlto.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
+- freedesktop-sdk.bst:components/bash-config.bst
+
+- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
+- core-deps/xdg-desktop-portal-gnome.bst
+- core-deps/xdg-desktop-portal-gtk.bst
 
 - freedesktop-sdk.bst:vm/mesa-default.bst
 
