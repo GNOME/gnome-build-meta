@@ -1,0 +1,32 @@
+From 6fb63f5e031fab725eaf8ea71c5a0b7a4f96076b Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Fri, 9 Aug 2024 21:36:52 +0300
+Subject: [PATCH] Temporarily revert back to the 6.9 kernel series
+
+---
+ elements/include/linux.yml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index 5b8d8330e3..c0ca351be8 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -1,13 +1,13 @@
+ sources:
+ - kind: git_repo
+   url: kernel:linux/kernel/git/stable/linux.git
+-  track: v*
++  track: v6.9.*
+   exclude:
+   - '*-rc*'
+-  ref: v6.10.6-0-g7ba498d9d1bb67bcbc2a79f19a9054cdc8b95098
++  ref: v6.9.12-0-gbb67b270b37e8bd9c96829d58ffe758635651e90
+ - kind: local
+   path: files/linux/config-utils.sh
+ - kind: local
+   path: files/linux/fdsdk-config.sh
+ - kind: patch
+   path: patches/linux/0001-riscv-sifive-fu740-cpu-1-2-3-4-set-compatible-to-sif.patch
+-- 
+2.46.0
+
