@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:jwestman/blueprint-compiler.git
   track: main
-  ref: v0.12.0-33-gb308adc3af939b27bd18941710b4499b1131e090
+  ref: v0.14.0-0-g8e10fcf8692108b9d4ab78f41086c5d7773ef864
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
