@@ -23,9 +23,15 @@ depends:
   - sdk/sysprof-minimal.bst
 
 variables:
+  glib_debug: "enabled"
+  (?):
+  - channel != "nightly":
+      glib_debug: "disabled"
+
   meson-local: >-
     -Ddocumentation=true
     -Ddtrace=disabled
+    -Dglib_debug="%{glib_debug}"
     -Dinstalled_tests=true
     -Dintrospection=enabled
     -Dselinux=disabled
