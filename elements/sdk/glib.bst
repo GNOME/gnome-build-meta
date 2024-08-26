@@ -26,6 +26,7 @@ variables:
   meson-local: >-
     -Ddocumentation=true
     -Ddtrace=disabled
+    -Dglib_debug=disabled
     -Dinstalled_tests=true
     -Dintrospection=enabled
     -Dselinux=disabled
