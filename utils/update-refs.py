@@ -18,7 +18,6 @@ now = datetime.now()
 
 core_elements = [
     "core.bst",
-    "flatpak-runtimes.bst",
     "vm/image.bst",
     "vm/repo-devel.bst",
     "iso/image.bst",
@@ -43,7 +42,8 @@ def bst(*args):
 bst("workspace", "close", "--all")
 
 track_elements = boards_elements if args.track_boards else core_elements
-bst("source", "track", "--deps", "all", *track_elements)
+bst("source", "track", "--deps", "all", "flatpak-runtimes.bst")
+bst("-o", "x86_64_v3", "true", "source", "track", "--deps", "all", *track_elements)
 
 if args.new_branch:
     git(
