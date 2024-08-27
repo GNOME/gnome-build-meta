@@ -4,10 +4,14 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.beta-65-g126aca825eb15a1b22a31b391d852d86ed59f3c9
+  ref: 47.beta-67-g28567202a392ba57eec4dcd68c0d9b1602dadcf0
 - kind: cargo2
   cargo-lock: shell-rs/Cargo.lock
   ref:
+  - kind: registry
+    name: aes
+    version: 0.8.4
+    sha: b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
   - kind: registry
     name: ahash
     version: 0.8.11
@@ -65,6 +69,10 @@ sources:
     version: 3.4.0
     sha: ff6e472cdea888a4bd64f342f09b3f50e1886d32afe8df3d663c01140b811b18
   - kind: registry
+    name: async-net
+    version: 2.0.0
+    sha: b948000fad4873c1c9339d60f2623323a0cfd3816e5181033c6a5cb68b2accf7
+  - kind: registry
     name: async-process
     version: 2.2.4
     sha: a8a07789659a4d385b79b18b9127fc27e1a59e1e89117c78c5ea3b806f016374
@@ -105,6 +113,10 @@ sources:
     version: 0.10.4
     sha: 3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71
   - kind: registry
+    name: block-padding
+    version: 0.3.3
+    sha: a8894febbff9f758034a5b8e12d87918f56dfc64a8e1fe757d65e29041538d93
+  - kind: registry
     name: blocking
     version: 1.6.1
     sha: 703f41c54fc768e63e091340b424302bb1c29ef4aa0c7f10fe849dfb114d29ea
@@ -121,6 +133,10 @@ sources:
     version: 0.20.0
     sha: 428290f914b9b86089f60f5d8a9f6e440508e1bcff23b25afd51502b0a2da88f
   - kind: registry
+    name: cbc
+    version: 0.1.2
+    sha: 26b52a9543ae338f279b96b0b9fed9c8093744685043739079ce85cd58f289a6
+  - kind: registry
     name: cc
     version: 1.1.13
     sha: 72db2f7947ecee9b03b510377e8bb9077afa27176fdbff55c51027e976fdcc48
@@ -136,6 +152,10 @@ sources:
     name: cfg_aliases
     version: 0.2.1
     sha: 613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724
+  - kind: registry
+    name: cipher
+    version: 0.4.4
+    sha: 773f3b9af64447d2ce9850330c473515014aa235e6a783b02db81ff39e4a3dad
   - kind: registry
     name: colorchoice
     version: 1.0.2
@@ -345,6 +365,14 @@ sources:
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
   - kind: registry
+    name: hkdf
+    version: 0.12.4
+    sha: 7b5f8eb2ad728638ea2c7d47a21db23b7b58a72ed6a38256b8a1849f15fbbdf7
+  - kind: registry
+    name: hmac
+    version: 0.12.1
+    sha: 6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e
+  - kind: registry
     name: humantime
     version: 2.1.0
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
@@ -352,6 +380,10 @@ sources:
     name: indexmap
     version: 2.4.0
     sha: 93ead53efc7ea8ed3cfb0c79fc8023fbb782a5432b52830b6518941cebe6505c
+  - kind: registry
+    name: inout
+    version: 0.1.3
+    sha: a0c10553d664a4d0bcff9f4215d0aac67a639cc68ef660840afe309b807bc9f5
   - kind: registry
     name: is_terminal_polyfill
     version: 1.70.1
@@ -373,6 +405,10 @@ sources:
     version: 0.2.158
     sha: d8adc4bb1803a324070e64a98ae98f38934d91957a99cfb3a43dcbc01bc56439
   - kind: registry
+    name: libm
+    version: 0.2.8
+    sha: 4ec2a862134d2a7d32d7983ddcdd1c4923530833c9f2ea1a44fc5fa473989058
+  - kind: registry
     name: linux-raw-sys
     version: 0.4.14
     sha: 78b3ae25bc7c8c38cec158d1f2757ee79e9b3740fbc7ccf0e59e4b08d793fa89
@@ -393,6 +429,10 @@ sources:
     version: 0.0.6
     sha: 62bb907fe88d54d8d9ce32a3cceab4218ed2f6b7d35617cafe9adf84e43919cb
   - kind: registry
+    name: md-5
+    version: 0.10.6
+    sha: d89e7ee0cfbedfc4da3340218492196241d89eefb6dab27de5df917a6d2e78cf
+  - kind: registry
     name: memchr
     version: 2.7.4
     sha: 78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3
@@ -404,6 +444,38 @@ sources:
     name: nix
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
+  - kind: registry
+    name: num
+    version: 0.4.3
+    sha: 35bd024e8b2ff75562e5f34e7f4905839deb4b22955ef5e73d2fea1b9813cb23
+  - kind: registry
+    name: num-bigint
+    version: 0.4.6
+    sha: a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9
+  - kind: registry
+    name: num-bigint-dig
+    version: 0.8.4
+    sha: dc84195820f291c7697304f3cbdadd1cb7199c0efc917ff5eafd71225c136151
+  - kind: registry
+    name: num-complex
+    version: 0.4.6
+    sha: 73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495
+  - kind: registry
+    name: num-integer
+    version: 0.1.46
+    sha: 7969661fd2958a5cb096e56c8e1ad0444ac2bbcd0061bd28660485a44879858f
+  - kind: registry
+    name: num-iter
+    version: 0.1.45
+    sha: 1429034a0490724d0075ebb2bc9e875d6503c3cf69e235a8941aa757d83ef5bf
+  - kind: registry
+    name: num-rational
+    version: 0.4.2
+    sha: f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824
+  - kind: registry
+    name: num-traits
+    version: 0.2.19
+    sha: 071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841
   - kind: registry
     name: objc
     version: 0.2.7
@@ -421,6 +493,10 @@ sources:
     version: 1.19.0
     sha: 3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92
   - kind: registry
+    name: oo7
+    version: 0.3.3
+    sha: 8fc6ce4692fbfd044ce22ca07dcab1a30fa12432ca2aa5b1294eca50d3332a24
+  - kind: registry
     name: ordered-stream
     version: 0.2.0
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
@@ -436,6 +512,10 @@ sources:
     name: parking
     version: 2.2.0
     sha: bb813b8af86854136c6922af0598d719255ecb2179515e6e7730d468f05c9cae
+  - kind: registry
+    name: pbkdf2
+    version: 0.12.2
+    sha: f8ed6a7761f76e3b9f92dfb0a60a6a6477c61024b775147ff0973a02653abaf2
   - kind: registry
     name: pin-project-lite
     version: 0.2.14
@@ -529,6 +609,10 @@ sources:
     version: 0.10.6
     sha: e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba
   - kind: registry
+    name: sha2
+    version: 0.10.8
+    sha: 793db75ad2bcafc3ffa7c68b215fee268f537982cd901d132f89c6343f3a3dc8
+  - kind: registry
     name: shell-words
     version: 1.1.0
     sha: 24188a676b6ae68c3b2cb3a01be17fbf7240ce009799bb56d5b1409051e78fde
@@ -549,9 +633,17 @@ sources:
     version: 1.13.2
     sha: 3c5e1a9a646d36c3599cd173a41282daf47c44583ad367b8e6837255952e5c67
   - kind: registry
+    name: spin
+    version: 0.9.8
+    sha: 6980e8d7511241f8acf4aebddbb1ff938df5eebe98691418c4468d0b72a96a67
+  - kind: registry
     name: static_assertions
     version: 1.1.0
     sha: a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f
+  - kind: registry
+    name: subtle
+    version: 2.6.1
+    sha: 13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292
   - kind: registry
     name: syn
     version: 2.0.75
@@ -716,6 +808,14 @@ sources:
     name: zerocopy-derive
     version: 0.7.35
     sha: fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
+  - kind: registry
+    name: zeroize
+    version: 1.8.1
+    sha: ced3678a2879b30306d323f4542626697a464a97c0a07c9aebf7ebca65cd4dde
+  - kind: registry
+    name: zeroize_derive
+    version: 1.4.2
+    sha: ce36e65b0d2999d2aafac989fb249189a141aee1f53c612c1f37d72631959f69
   - kind: registry
     name: zvariant
     version: 4.2.0
