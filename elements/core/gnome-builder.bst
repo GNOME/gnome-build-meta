@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-builder.git
   track: main
-  ref: 47.beta-7-g710c6f434548de984c8b84469253c293eccaae4d
+  ref: 47.beta-52-g2d9c4e68639b018ccfef9cd26bdf7b44b553f7cc
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
@@ -25,6 +25,7 @@ depends:
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
 - core-deps/libportal.bst
+- core-deps/libspelling.bst
 - core-deps/template-glib.bst
 - core-deps/vte.bst
 - core/d-spy.bst
