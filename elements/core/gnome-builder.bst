@@ -23,6 +23,7 @@ depends:
 - core-deps/libgit2-glib.bst
 - core-deps/libpeas.bst
 - core-deps/libportal.bst
+- core-deps/libspelling.bst
 - core-deps/template-glib.bst
 - core-deps/vte.bst
 - core/d-spy.bst
