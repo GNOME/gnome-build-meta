@@ -50,3 +50,5 @@ variables:
     -Deos_updater=true
     -Dpackagekit=false
     -Dsnap=true
+    -Dhardcoded_curated=false
+    -Ddefault_featured_apps=false
