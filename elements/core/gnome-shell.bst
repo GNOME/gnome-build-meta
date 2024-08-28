@@ -12,8 +12,7 @@ sources:
 build-depends:
 - sdk-deps/sassc.bst
 - core-deps/jasmine-gjs.bst
-- freedesktop-sdk.bst:components/asciidoc.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
