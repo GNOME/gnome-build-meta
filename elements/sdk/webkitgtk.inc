@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.45.91.tar.xz
   ref: c6dc57c8a46b41eb43e79122a66a9e76c44d74c4019d664edb450153e5cc7d68
+- kind: patch
+  path: patches/webkitgtk/a11y.patch
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
