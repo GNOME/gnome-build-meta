@@ -16,6 +16,8 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/libnotify.bst
+- freedesktop-sdk.bst:components/bluez-libs.bst
+- freedesktop-sdk.bst:components/bluez.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
