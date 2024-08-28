@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 47.beta-35-g8ad392bf3c520092f09e55a64b29222c64f802ea
+  ref: 47.beta-43-gbabf69f6baeaa1bba30be1d3eaf65ec8cd139355
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -18,8 +18,7 @@ sources:
 build-depends:
 - sdk-deps/sassc.bst
 - core-deps/jasmine-gjs.bst
-- freedesktop-sdk.bst:components/asciidoc.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
