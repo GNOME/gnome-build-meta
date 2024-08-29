@@ -16,6 +16,7 @@ depends:
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - sdk/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
