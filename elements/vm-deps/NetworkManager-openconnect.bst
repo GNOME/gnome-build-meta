@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager-openconnect/1.2/NetworkManager-openconnect-1.2.6.tar.xz
-  ref: 95109803596a9782680a5dca3b51c4ad8ff7e126169d5431278cab694112975a
+  url: gnome_downloads:NetworkManager-openconnect/1.2/NetworkManager-openconnect-1.2.10.tar.xz
+  ref: 844b6bf64ecadb97b4a68c776db89aa5e6ee7e59bd24b0180228406863136464
 - kind: local
   path: files/NetworkManager-openconnect/sysusers.conf
 
@@ -13,8 +13,10 @@ build-depends:
 - core-deps/intltool.bst
 
 depends:
-- sdk/gcr-3.bst
-- sdk/gtk+-3.bst
+- sdk/gcr.bst
+- sdk/gtk.bst
+- sdk/webkit2gtk-4.1.bst
+- core-deps/libnma.bst
 - core-deps/NetworkManager.bst
 - vm-deps/openconnect.bst
 
