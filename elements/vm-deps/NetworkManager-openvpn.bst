@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager-openvpn/1.10/NetworkManager-openvpn-1.10.2.tar.xz
-  ref: 62f0f2a8782221b923f212ac2a8ebbc1002efd6a90ee945dad4adfb56d076d21
+  url: gnome_downloads:NetworkManager-openvpn/1.12/NetworkManager-openvpn-1.12.0.tar.xz
+  ref: 903fd4c0aebd2aa7ac70c9d8c2bed8df922655d22d764514403566ae89b7e886
 - kind: local
   path: files/NetworkManager-openvpn/sysusers.conf
 
