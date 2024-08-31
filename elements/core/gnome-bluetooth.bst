@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-bluetooth.git
   track: master
-  ref: 47.rc-0-g0714ef68ddc0b8bebab341a5d879060aa0912464
+  ref: 47.rc-4-g1c222d50a810c6c88489cd07bb51b982307bc30b
 
 build-depends:
 - sdk/gobject-introspection.bst

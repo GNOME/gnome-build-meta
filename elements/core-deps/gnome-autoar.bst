@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-autoar.git
   track: master
-  ref: 0.4.4-6-g643139bfa2b9e380bec4d153b806bc54bc60661e
+  ref: 0.4.5-0-g7ca0791c85256084eb6c9e06ef64daff5c0918d1
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
