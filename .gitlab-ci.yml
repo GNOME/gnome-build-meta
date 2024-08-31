@@ -366,7 +366,7 @@ s3-image:
   - !reference [".arch_opt", "script"]
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build vm/image.bst iso/image.bst
   - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm/image.bst --directory image
-  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/image.bst --directory image
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
   - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
