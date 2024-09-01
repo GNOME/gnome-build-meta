@@ -3,7 +3,7 @@ kind: compose
 build-depends:
 - vm/deps-devel.bst
 - vm/initramfs.bst
-- vm/cleanup-debug.bst
+- vm-deps/cleanup-debug.bst
 - vm/manifest-devel.bst
 
 config:

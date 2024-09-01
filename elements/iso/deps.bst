@@ -6,9 +6,9 @@ depends:
 - iso/public-key.bst
 
 - core-deps/plymouth.bst
-- vm/plymouth-gnome-theme.bst
+- vm-deps/plymouth-gnome-theme.bst
 
-- vm/common-deps.bst
+- vm-deps/deps.bst
 
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/systemd.bst

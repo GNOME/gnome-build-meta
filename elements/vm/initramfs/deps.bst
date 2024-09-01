@@ -13,5 +13,5 @@ depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/ostree.bst
-- vm/plymouth-gnome-theme.bst
+- vm-deps/plymouth-gnome-theme.bst
 

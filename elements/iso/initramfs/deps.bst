@@ -4,7 +4,7 @@ depends:
 - core-deps/plymouth.bst
 - iso-deps/isomd5sum.bst
 - sdk/os-release.bst
-- vm/plymouth-gnome-theme.bst
+- vm-deps/plymouth-gnome-theme.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/dracut.bst
 - freedesktop-sdk.bst:components/gzip.bst

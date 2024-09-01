@@ -1,5 +1,5 @@
 kind: stack
 
 depends:
-- vm-secure/common-deps.bst
+- vm-secure/deps.bst
 - vm-deps/nvidia-drivers-libs.bst

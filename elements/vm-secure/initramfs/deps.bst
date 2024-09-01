@@ -14,7 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/tpm2-tools.bst
 - freedesktop-sdk.bst:components/tzdata.bst
 - freedesktop-sdk.bst:components/util-linux.bst
-- vm/plymouth-gnome-theme.bst
+- vm-deps/plymouth-gnome-theme.bst
 - vm-secure/initramfs/signed-modules.bst
 - vm-deps/efitools-maybe.bst
 - vm-deps/shim-maybe.bst

@@ -17,32 +17,32 @@ depends:
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 
-- vm/flathub-config.bst
-- vm/gnome-nightly-config.bst
-- vm/plymouth-gnome-theme.bst
-- vm-deps/spice-vdagent.bst
 - core-deps/phodav.bst
-- vm/wpa-supplicant-config.bst
-- vm/nsswitch-config.bst
-- vm/disable-iscsi.bst
-- vm/journald-config.bst
+- vm-deps/disable-iscsi.bst
+- vm-deps/flathub-config.bst
+- vm-deps/gnome-nightly-config.bst
+- vm-deps/journald-config.bst
+- vm-deps/nsswitch-config.bst
+- vm-deps/plymouth-gnome-theme.bst
+- vm-deps/spice-vdagent.bst
+- vm-deps/wpa-supplicant-config.bst
 
+- vm-deps/alsa-ucm-conf.bst
+- vm-deps/android-udev-rules.bst
 - vm-deps/fish.bst
+- vm-deps/fprintd.bst
 - vm-deps/nss-mdns.bst
 - vm-deps/opensc.bst
 - vm-deps/uresourced.bst
-- vm-deps/android-udev-rules.bst
-- vm-deps/alsa-ucm-conf.bst
-- vm-deps/fprintd.bst
 - core-deps/boltd.bst
 
 - vm-deps/ibus-anthy.bst
 - vm-deps/ibus-hangul.bst
 - vm-deps/ibus-libpinyin.bst
 
-- vm-deps/NetworkManager-openvpn.bst
-- vm-deps/NetworkManager-openconnect.bst
 - vm-deps/NetworkManager-fortisslvpn.bst
+- vm-deps/NetworkManager-openconnect.bst
+- vm-deps/NetworkManager-openvpn.bst
 - vm-deps/NetworkManager-vpnc.bst
 
 - vm-deps/noto-cjk.bst

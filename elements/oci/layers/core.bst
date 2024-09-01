@@ -2,7 +2,7 @@ kind: compose
 
 build-depends:
 - oci/layers/core-stack.bst
-- vm/cleanup-debug.bst
+- vm-deps/cleanup-debug.bst
 
 config:
   exclude:

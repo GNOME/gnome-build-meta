@@ -11,7 +11,7 @@ depends:
 - vm-deps/fish.bst
 
 # Useful utilities for building extensions in CI
-- vm/sysext-utils.bst
+- vm-deps/sysext-utils.bst
 
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst
