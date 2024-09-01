@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:calls.git
   track: main
-  ref: v47_beta.0-20-gef5467fb643a04fd2f42a91d7ff626b162e86be3
+  ref: v47_rc.1-1-gd28be039c3c4a87759b714382c66a7db28f1e8b1
 - kind: git_module
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   path: subprojects/libcall-ui

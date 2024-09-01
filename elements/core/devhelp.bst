@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:devhelp.git
   track: main
-  ref: 43.0-21-gd9ec95d71230122b24fd01768cbd6948e1249cc4
+  ref: 43.0-22-g1d0cd28e4a9d9b1b2e8f4a7ef5e6275ba9fcc28b
 
 build-depends:
 - sdk/gobject-introspection.bst
