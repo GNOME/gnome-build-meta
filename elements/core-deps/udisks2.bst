@@ -13,6 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 runtime-depends:
+- core-deps/ntfs3g-progs.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - freedesktop-sdk.bst:components/dosfstools.bst
 - freedesktop-sdk.bst:components/e2fsprogs.bst
