@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.beta-73-gc23d5a44163d0e1017a240cc34fe7619631ac18b
+  ref: 47.beta-77-g54aed2e182b7c6e7dfc8d27b283b4ab93df0eba3
 - kind: cargo2
   cargo-lock: shell-rs/Cargo.lock
   ref:
@@ -90,8 +90,8 @@ sources:
     sha: 8b75356056920673b02621b35afd0f7dda9306d03c79a30f5c56c44cf256e3de
   - kind: registry
     name: async-trait
-    version: 0.1.81
-    sha: 6e0c28dcc82d7c8ead5cb13beb15405b57b8546e93215673ff8ca0349a028107
+    version: 0.1.82
+    sha: a27b8a3a6e1a44fa4c8baf1f653e4172e81486d4941f2237e20dc2d0cf4ddff1
   - kind: registry
     name: atomic-waker
     version: 1.1.2
@@ -138,8 +138,8 @@ sources:
     sha: 26b52a9543ae338f279b96b0b9fed9c8093744685043739079ce85cd58f289a6
   - kind: registry
     name: cc
-    version: 1.1.13
-    sha: 72db2f7947ecee9b03b510377e8bb9077afa27176fdbff55c51027e976fdcc48
+    version: 1.1.15
+    sha: 57b6a275aa2903740dc87da01c62040406b8812552e97129a63ea8850a17c6e6
   - kind: registry
     name: cfg-expr
     version: 0.16.0
@@ -218,8 +218,8 @@ sources:
     sha: 0f214dc438f977e6d4e3500aaa277f5ad94ca83fbbd9b1a15713ce2344ccc5a1
   - kind: registry
     name: fastrand
-    version: 2.1.0
-    sha: 9fc0510504f03c51ada170672ac806f1f105a88aa97a5281117e1ddc3368e51a
+    version: 2.1.1
+    sha: e8c02a5121d4ea3eb16a80748c74f5549a5665e4c21333c6098f283870fbdea6
   - kind: registry
     name: field-offset
     version: 0.3.6
@@ -290,12 +290,12 @@ sources:
     sha: c4567c8db10ae91089c99af84c68c38da3ec2f087c3f82960bcdbf3656b6f4d7
   - kind: registry
     name: gettext-rs
-    version: 0.7.0
-    sha: e49ea8a8fad198aaa1f9655a2524b64b70eb06b2f3ff37da407566c93054f364
+    version: 0.7.1
+    sha: 4a6716b8a0db461a2720b850ba1623e5b69e4b1aa0224cf5e1fb23a0fe49e65c
   - kind: registry
     name: gettext-sys
-    version: 0.21.3
-    sha: c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d
+    version: 0.21.4
+    sha: f7b8797f28f2dabfbe2caadb6db4f7fd739e251b5ede0a2ba49e506071edcf67
   - kind: registry
     name: gio
     version: 0.20.1
@@ -306,16 +306,16 @@ sources:
     sha: 5237611e97e9b86ab5768adc3eef853ae713ea797aa3835404acdfacffc9fb38
   - kind: registry
     name: glib
-    version: 0.20.1
-    sha: b19429cb83fcbf1f00b31ae3a123fab5cd3761bdd15b0cc07905804742f0d0e4
+    version: 0.20.2
+    sha: 9c1ea829497810f8e87f5ee6d05c4879af641704add879e6b6080607cceeefe4
   - kind: registry
     name: glib-macros
-    version: 0.20.1
-    sha: 960349f56469b75794157e93bf04f0bc8a622d0a6612d6a8f8d7eac41e0e1ee1
+    version: 0.20.2
+    sha: 951aa19c5e89555c0ca5e94ee874b24b2594ece8412b387bd84ee3266b8a3ea0
   - kind: registry
     name: glib-sys
-    version: 0.20.1
-    sha: 44edae63bea922f18f7e63977ee60a257ec27c4613aff1a6a9bb572ad0d88269
+    version: 0.20.2
+    sha: 92eee4531c1c9abba945d19378b205031b5890e1f99c319ba0503b6e0c06a163
   - kind: registry
     name: gobject-sys
     version: 0.20.1
@@ -338,12 +338,12 @@ sources:
     sha: 6aa69614a26d8760c186c3690f1b0fbb917572ca23ef83137445770ceddf8cde
   - kind: registry
     name: gtk4
-    version: 0.9.0
-    sha: eaffc6c743c9160514cc9b67eace364e5dc5798369fa809cdb04e035c21c5c5d
+    version: 0.9.1
+    sha: f4fe572bf318e5dbc6f5a2f8a25d853f1ae3f42768c0b08af6ca20a18f4057e1
   - kind: registry
     name: gtk4-macros
-    version: 0.9.0
-    sha: 188211f546ce5801f6d0245c37b6249143a2cb4fa040e54829ca1e76796e9f09
+    version: 0.9.1
+    sha: e9e7b362c8fccd2712297903717d65d30defdab2b509bc9d209cbe5ffb9fabaf
   - kind: registry
     name: gtk4-sys
     version: 0.9.0
@@ -378,8 +378,8 @@ sources:
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
   - kind: registry
     name: indexmap
-    version: 2.4.0
-    sha: 93ead53efc7ea8ed3cfb0c79fc8023fbb782a5432b52830b6518941cebe6505c
+    version: 2.5.0
+    sha: 68b900aa2f7301e21c36462b170ee99994de34dff39a4a6a528e80e7376d07e5
   - kind: registry
     name: inout
     version: 0.1.3
@@ -542,16 +542,16 @@ sources:
     sha: 77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04
   - kind: registry
     name: proc-macro-crate
-    version: 3.1.0
-    sha: 6d37c51ca738a55da99dc0c4a34860fd675453b8b36209178c2249bb13651284
+    version: 3.2.0
+    sha: 8ecf48c7ca261d60b74ab1a7b20da18bede46776b2e55535cb958eb595c5fa7b
   - kind: registry
     name: proc-macro2
     version: 1.0.86
     sha: 5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77
   - kind: registry
     name: quote
-    version: 1.0.36
-    sha: 0fa76aaf39101c457836aec0ce2316dbdc3ab723cdda1c6bd4e6ad4208acaca7
+    version: 1.0.37
+    sha: b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af
   - kind: registry
     name: rand
     version: 0.8.5
@@ -578,24 +578,24 @@ sources:
     sha: 7a66a03ae7c801facd77a29370b4faec201768915ac14a721ba36f20bc9c209b
   - kind: registry
     name: rustc_version
-    version: 0.4.0
-    sha: bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366
+    version: 0.4.1
+    sha: cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92
   - kind: registry
     name: rustix
-    version: 0.38.34
-    sha: 70dc5ec042f7a43c4a73241207cecc9873a06d45debb38b329f8541d85c2730f
+    version: 0.38.35
+    sha: a85d50532239da68e9addb745ba38ff4612a242c1c7ceea689c4bc7c2f43c36f
   - kind: registry
     name: semver
     version: 1.0.23
     sha: 61697e0a1c7e512e84a621326239844a24d8207b4669b41bc18b32ea5cbf988b
   - kind: registry
     name: serde
-    version: 1.0.208
-    sha: cff085d2cb684faa248efb494c39b68e522822ac0de72ccf08109abde717cfb2
+    version: 1.0.209
+    sha: 99fce0ffe7310761ca6bf9faf5115afbc19688edd00171d81b1bb1b116c63e09
   - kind: registry
     name: serde_derive
-    version: 1.0.208
-    sha: 24008e81ff7613ed8e5ba0cfaf24e2c2f1e5b8a0495711e44fcd4882fca62bcf
+    version: 1.0.209
+    sha: a5831b979fd7b5439637af1752d535ff49f4860c0f341d1baeb6faf0f4242170
   - kind: registry
     name: serde_repr
     version: 0.1.19
@@ -646,8 +646,8 @@ sources:
     sha: 13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292
   - kind: registry
     name: syn
-    version: 2.0.75
-    sha: f6af063034fc1935ede7be0122941bafa9bacb949334d090b77ca98b5817c7d9
+    version: 2.0.77
+    sha: 9f35bcdf61fd8e7be6caf75f429fdca8beb3ed76584befb503b1569faee373ed
   - kind: registry
     name: system-deps
     version: 7.0.2
@@ -672,10 +672,6 @@ sources:
     name: toml_datetime
     version: 0.6.8
     sha: 0dd7358ecb8fc2f8d014bf86f6f638ce72ba252a2c3a2572f2a795f1d23efb41
-  - kind: registry
-    name: toml_edit
-    version: 0.21.1
-    sha: 6a8534fd7f78b5405e860340ad6575217ce99f38d4d5c8f2442cb5ecb50090e1
   - kind: registry
     name: toml_edit
     version: 0.22.20
@@ -776,10 +772,6 @@ sources:
     name: windows_x86_64_msvc
     version: 0.52.6
     sha: 589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec
-  - kind: registry
-    name: winnow
-    version: 0.5.40
-    sha: f593a95398737aeed53e489c785df13f3618e41dbcd6718c6addbf1395aa6876
   - kind: registry
     name: winnow
     version: 0.6.18
