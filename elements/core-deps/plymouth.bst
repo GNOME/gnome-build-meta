@@ -12,9 +12,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/cairo.bst
 - sdk/gtk+-3.bst
 - sdk/pango.bst
+- freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/freetype.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libevdev.bst

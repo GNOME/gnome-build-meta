@@ -23,7 +23,6 @@ config:
 
   overrides:
     components/at-spi2-core.bst: sdk/at-spi2-core.bst
-    components/cairo.bst: sdk/cairo.bst
     components/fcitx5.bst: sdk/fcitx5-gtk.bst
     components/gcab.bst: sdk/gcab.bst
     components/gdk-pixbuf.bst: sdk/gdk-pixbuf.bst
