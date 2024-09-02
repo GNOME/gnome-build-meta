@@ -1,4 +1,4 @@
-From 6fb63f5e031fab725eaf8ea71c5a0b7a4f96076b Mon Sep 17 00:00:00 2001
+From 26cf848be5229e1849eadad83160e25cc49eb8ef Mon Sep 17 00:00:00 2001
 From: Jordan Petridis <jpetridis@gnome.org>
 Date: Fri, 9 Aug 2024 21:36:52 +0300
 Subject: [PATCH] Temporarily revert back to the 6.9 kernel series
@@ -8,7 +8,7 @@ Subject: [PATCH] Temporarily revert back to the 6.9 kernel series
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index 5b8d8330e3..c0ca351be8 100644
+index 517005afe7..c0ca351be8 100644
 --- a/elements/include/linux.yml
 +++ b/elements/include/linux.yml
 @@ -1,13 +1,13 @@
@@ -19,7 +19,7 @@ index 5b8d8330e3..c0ca351be8 100644
 +  track: v6.9.*
    exclude:
    - '*-rc*'
--  ref: v6.10.6-0-g7ba498d9d1bb67bcbc2a79f19a9054cdc8b95098
+-  ref: v6.10.7-0-g24873d2e5fe32f4635cf8406ff3b8d16f6e47505
 +  ref: v6.9.12-0-gbb67b270b37e8bd9c96829d58ffe758635651e90
  - kind: local
    path: files/linux/config-utils.sh
