@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:orca/47/orca-47.alpha.tar.xz
-  ref: 69b64aeacf128a19dc54efd5a42e60781002ddc0cda938e6201fc2e16d12468b
+  url: gnome_downloads:orca/47/orca-47.rc.tar.xz
+  ref: 6d258d171b3098eec0c32cdaf87ca6e2f883f2c01fff84e826af629ccb237222
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-disk-utility/46/gnome-disk-utility-46.0.tar.xz
-  ref: 464649148c6d6771f1ac2ebfe43a4e519205b11c2d914a09f2a001821d06957d
+  url: gnome_downloads:gnome-disk-utility/46/gnome-disk-utility-46.1.tar.xz
+  ref: c24e9439a04d70bcfae349ca134c7005435fe2b6f452114df878bff0b89bbffe
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
