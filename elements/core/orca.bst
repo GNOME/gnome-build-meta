@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: ORCA_47_RC-13-g9e72d850ae3d3a5dc11b98c4ebff09e23e2546ce
+  ref: ORCA_47_RC-18-g1e65617d19fa3a70ca913221f618495f79919135
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
