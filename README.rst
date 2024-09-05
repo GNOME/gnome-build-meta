@@ -77,3 +77,36 @@ so you should be aware that the containers created locally for development will
 become stale and you will need to remove and recreate them with an up to date
 image often. Their main usecase is for gitlab-ci which always pulls the latest
 image.
+
+Continuous Integration
+----------------------
+
+The following is a summary of what is being exported by this repository CI pipelines:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Output
+     - When
+     - Example
+   * - Flatpak runtimes (master)
+     - Merged to master
+     - :code:`flatpak install flathub org.gnome.Platform//master`
+   * - Flatpak runtimes (beta)
+     - Merged to stable branch (and flagged as "beta")
+     - :code:`flatpak install flathub-beta org.gnome.Platform//47beta`
+   * - Flatpak runtimes (stable)
+     - Merged to stable branch
+     - :code:`flatpak install flathub org.gnome.Platform//46`
+   * - GNOME OS installer and disks images (latest)
+     - Merged to master (and tests passed or ran manually)
+     - :code:`wget https://os.gnome.org/download/latest/gnome_os_installer.iso`
+   * - GNOME OS installer and disks images (stable)
+     - On tag added
+     - :code:`wget https://os.gnome.org/download/stable/47/gnome_os_installer_x86_64.iso`
+   * - OCI Images (latest, master and nightly)
+     - Merged to master
+     - :code:`podman pull quay.io/gnome_infrastructure/gnome-build-meta:core-nightly`
+   * - OCI Images (stable)
+     - On tag added
+     - :code:`podman pull quay.io/gnome_infrastructure/gnome-build-meta:core-47`
