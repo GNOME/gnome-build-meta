@@ -605,7 +605,7 @@ config:
     --prefix=%{prefix}
     --libdir=%{libdir}
     --destdir=%{install-root}
-    --features=wayland,x11glx,x11egl,dmabuf,gtk_v4_20
+    --features=wayland,dmabuf,gtk_v4_20
     --library-type=cdylib
     --jobs "${MAXJOBS}"
   - |
