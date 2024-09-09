@@ -4,9 +4,9 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-24.08*
-  ref: freedesktop-sdk-24.08.12-0-gd32454bc715e17adb013de9f66a683379d963462
-- kind: patch_queue
-  path: patches/freedesktop-sdk
+  ref: freedesktop-sdk-24.08.13-9-gcf4c8b07b195ab3489670e33d39ed2bfd12481f0
+- kind: patch
+  path: patches/freedesktop-sdk/add-bpf.patch
 
 config:
   options:
