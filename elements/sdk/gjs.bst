@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gjs.git
   track: master
-  ref: 1.81.90-0-g6beff4510dec9127408910a8952cfd424b3614c8
+  ref: 1.81.90-2-ga65dc6ec0da49d51dee990da825277101d4c92a1
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
