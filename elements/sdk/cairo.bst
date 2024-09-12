@@ -3,13 +3,14 @@ sources:
 - kind: git_repo
   url: freedesktop:cairo/cairo.git
   track: master
-  ref: 1.18.2-8-g65a29e787aedde9ec8d8c6248bbd761791d72d04
+  ref: 1.18.2-10-g62d99c8a654ff67f34e9c3b3496b4eb5269f6694
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/freetype.bst
+- freedesktop-sdk.bst:components/lzo.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xext.bst
