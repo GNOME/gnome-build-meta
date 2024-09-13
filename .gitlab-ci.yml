@@ -167,6 +167,65 @@ default:
   - mv $(pwd)/image/disk.img.xz ./disk.img.xz
   - unxz -T$(nproc) disk.img.xz
 
+.test-openqa-template:
+  stage: test
+  image:
+    name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
+    entrypoint: ["/bin/bash", "-c"]
+  variables:
+    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
+    CI: 1
+    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+  needs:
+  - job: 's3-image'
+    artifacts: false
+  script:
+  - |
+    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
+    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
+  - |
+    rm /etc/openqa/*
+    cat >/etc/openqa/client.conf <<EOF
+    [openqa.gnome.org]
+    key = $OPENQA_API_KEY
+    secret = $OPENQA_API_SECRET
+    EOF
+  - |
+    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
+    ln -s $(pwd)/openqa /tests
+  - |
+    worker_class=qemu_x86_64-${CI_JOB_ID}
+    openqa/utils/setup_worker.sh ${worker_class}
+    /run_openqa_worker.sh &> worker.log &
+  - |
+    version="master"
+    casedir="$(pwd)/openqa"
+    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
+  - |
+    echo "Test jobs have been started. To see progress, visit:"
+    for job_id in $(cat /tmp/job_ids); do
+      echo "  * $OPENQA_HOST/tests/$job_id"
+    done
+  - openqa/utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
+  - exit $(cat /tmp/exit_code)
+  after_script:
+  - |
+    if [ ! -e /tmp/exit_code ]; then
+        echo "Job creation failed, log below."
+        cat openqa.log
+    fi
+  - |
+    openqa/utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
+  artifacts:
+    when: always
+    paths:
+    - junit.xml
+    - openqa.log
+    - worker.log
+    reports:
+      junit: junit.xml
+    expire_in: '1 week'
+
 #
 # "Real" CI jobs
 #
@@ -525,22 +584,9 @@ cve_report:
 
 test-s3-image:
   extends:
+  - .test-openqa-template
   - .x86_64
-  stage: test
-  image:
-    name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
-    entrypoint: ["/bin/bash", "-c"]
-  variables:
-    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
-    CI: 1
-    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
-  needs:
-  - job: 's3-image'
-    artifacts: false
   before_script:
-  - |
-    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
-    echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
   - |
     echo "Fetching test media"
     if [ -n "$CI_COMMIT_TAG" ]; then
@@ -560,49 +606,6 @@ test-s3-image:
     disk_size_gb=15
     echo "Expanding disk image to ${disk_size_gb}GB"
     dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
-  script:
-  - |
-    rm /etc/openqa/*
-    cat >/etc/openqa/client.conf <<EOF
-    [openqa.gnome.org]
-    key = $OPENQA_API_KEY
-    secret = $OPENQA_API_SECRET
-    EOF
-  - |
-    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
-    ln -s $(pwd)/openqa /tests
-  - |
-    worker_class=qemu_x86_64-${CI_JOB_ID}
-    openqa/utils/setup_worker.sh ${worker_class}
-    /run_openqa_worker.sh &> worker.log &
-  - |
-    version="master"
-    casedir="$(pwd)/openqa"
-    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
-  - |
-    echo "Test jobs have been started. To see progress, visit:"
-    for job_id in $(cat /tmp/job_ids); do
-      echo "  * $OPENQA_HOST/tests/$job_id"
-    done
-  - openqa/utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
-  - exit $(cat /tmp/exit_code)
-  after_script:
-  - |
-    if [ ! -e /tmp/exit_code ]; then
-        echo "Job creation failed, log below."
-        cat openqa.log
-    fi
-  - |
-    openqa/utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
-  artifacts:
-    when: always
-    paths:
-    - junit.xml
-    - openqa.log
-    - worker.log
-    reports:
-      junit: junit.xml
-    expire_in: '1 week'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
