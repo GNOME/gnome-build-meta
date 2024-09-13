@@ -26,6 +26,7 @@ config:
     cat <<EOF >/sysroot-debug/usr/lib/extension-release.d/extension-release.debug
     ID=org.gnome.os
     VERSION_ID=${version_id}
+    SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
