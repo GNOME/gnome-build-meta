@@ -198,15 +198,16 @@ default:
     openqa/utils/setup_worker.sh ${worker_class}
     /run_openqa_worker.sh &> worker.log &
   - |
+    echo "Starting jobs: "
+    echo
     version="master"
     casedir="$(pwd)/openqa"
-    openqa/utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
-  - |
-    echo "Test jobs have been started. To see progress, visit:"
-    for job_id in $(cat /tmp/job_ids); do
-      echo "  * $OPENQA_HOST/tests/$job_id"
+    for testsuite in $TESTSUITES; do
+      openqa/utils/start_job.sh "${worker_class}" "${version}" "${casedir}" "${testsuite}" > /tmp/job_id
+      echo " * ${testsuite}: $OPENQA_HOST/tests/$(cat /tmp/job_id)"
+      cat /tmp/job_id >> /tmp/all_job_ids
     done
-  - openqa/utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
+  - openqa/utils/wait_for_job.sh $(cat /tmp/all_job_ids) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
   after_script:
   - |
@@ -215,7 +216,7 @@ default:
         cat openqa.log
     fi
   - |
-    openqa/utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
+    openqa/utils/openqa_junit_report.py $(cat /tmp/all_job_ids) > ./junit.xml
   artifacts:
     when: always
     paths:
@@ -479,7 +480,7 @@ s3-image-static:
     artifacts: false
   - job: sysupdate-image-x86_64
     artifacts: false
-  - job: test-s3-image
+  - job: test-openqa-installer
     artifacts: false
   rules:
   - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "master"
@@ -581,30 +582,46 @@ cve_report:
     when: "manual"
     allow_failure: true
 
-
-test-s3-image:
+test-openqa-installer:
   extends:
   - .test-openqa-template
   - .x86_64
+  variables:
+    TESTSUITES: "gnome_install"
   before_script:
   - |
-    echo "Fetching test media"
+    echo "Preparing test media for installer test"
     if [ -n "$CI_COMMIT_TAG" ]; then
         S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/gnome_os_installer_${CI_COMMIT_TAG}.iso
-        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/disk_sysupdate_${CI_COMMIT_TAG}-x86_64.img.xz
     else
         S3_ISO_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/gnome_os_installer_${CI_PIPELINE_ID}.iso
+    fi
+    mkdir -p /data/factory/iso
+    curl --fail --get --location $S3_ISO_IMAGE_URL --output /data/factory/iso/installer.iso
+    sha256sum /data/factory/iso/installer.iso
+  rules:
+  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_TAG
+
+test-openqa-desktop:
+  extends:
+  - .test-openqa-template
+  - .x86_64
+  variables:
+    TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
+  before_script:
+  - |
+    echo "Preparing test media for desktop test"
+    if [ -n "$CI_COMMIT_TAG" ]; then
+        S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_COMMIT_TAG}/disk_sysupdate_${CI_COMMIT_TAG}-x86_64.img.xz
+    else
         S3_DISK_IMAGE_URL=https://os.gnome.org/download/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}-x86_64.img.xz
     fi
-    openqa/utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
-    openqa/utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
+    mkdir -p /data/factory/hdd
+    curl --fail --get --location $S3_DISK_IMAGE_URL --output /data/factory/hdd/disk.img.xz
     unxz /data/factory/hdd/disk.img.xz
-  - |
-    echo "Calculating checksums of test media"
-    sha256sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
-  - |
+    sha256sum /data/factory/hdd/disk.img
     disk_size_gb=15
-    echo "Expanding disk image to ${disk_size_gb}GB"
     dd if=/dev/zero of=/data/factory/hdd/disk.img seek=$disk_size_gb obs=1GB count=0
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
