@@ -486,20 +486,23 @@ cve_report:
   extends: .x86_64
   variables:
     CVE_MOUNTS: "--mount cve /buildstream-build --mount cve-reports /cve-reports --mount manifests /manifests"
-    GEN_CVE_REPORT: "${BST} shell freedesktop-sdk.bst:utils/generate-cve-report.bst --mount cve /buildstream-build"
+    GEN_CVE_REPORT: "${BST} ${ARCH_OPT[@]} shell freedesktop-sdk.bst:utils/generate-cve-report.bst --mount cve /buildstream-build"
   stage: 'deploy'
   needs:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst
+  - !reference [".arch_opt", "script"]
+
+  - ${BST} "${ARCH_OPT[@]}" artifact pull vm/manifest-devel.bst vm-secure/manifest-devel.bst
+  - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
   - ${BST} build freedesktop-sdk.bst:utils/generate-cve-report.bst
 
   - mkdir -p cve manifests/ cve-reports/
   - ${BST} artifact checkout flatpak/platform-manifest.bst --directory manifests/platform
   - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory manifests/sdk
-  - ${BST} artifact checkout vm/manifest-devel.bst --directory manifests/vm
-  - ${BST} artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout vm/manifest-devel.bst --directory manifests/vm
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
 
   - ${GEN_CVE_REPORT} -- update_local_cve_database
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/platform/usr/manifest.json /cve-reports/platform.html
