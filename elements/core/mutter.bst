@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 47.rc-41-g756992c84147b0efcde72d7cfc906afd2867ca29
+  ref: 47.rc-46-gaf250506fbe85ae54af7b0f64fac276fb4f4786d
 
 build-depends:
 - core-deps/python-dbusmock.bst

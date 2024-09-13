@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-app-list.git
   track: main
-  ref: 0.2-2-g09d4048209f2fe29635bbced6dd403317c561001
+  ref: 1.0-0-gd102d33eddd011b005f3df95056f62c052742ccc
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

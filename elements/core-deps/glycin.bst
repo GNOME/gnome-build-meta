@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.beta-12-g0242f0b021bb35030062e9e9a3556c67edfff6ef
+  ref: 1.1.0-0-g902aa03fe89b8117eb599e76b23d491020225618
 - kind: cargo2
   ref:
   - kind: registry
@@ -477,12 +477,12 @@ sources:
     sha: f5d4a7da358eff58addd2877a45865158f0d78c911d43a5784ceb7bbf52833b0
   - kind: registry
     name: jpegxl-rs
-    version: 0.10.2+libjxl-0.10.2
-    sha: 1b294b9fbfa1bce055538fb369b3068d42d540c02a36e823de0dbcf241248e7e
+    version: 0.10.3+libjxl-0.10.2
+    sha: e697c7532d4a244d91306a19c63763769366fbc61e75d5a08cc602923e478a7a
   - kind: registry
     name: jpegxl-sys
-    version: 0.10.2+libjxl-0.10.2
-    sha: 13873ea3c631d31b143c14dab4b3d76c352bb34c7ee48eb877c6022e03b9cb78
+    version: 0.10.3+libjxl-0.10.2
+    sha: c8262d19ed55829441dc2a2b1315c8f15e040139443fc1dbc48551890020a5c2
   - kind: registry
     name: kamadak-exif
     version: 0.5.5
