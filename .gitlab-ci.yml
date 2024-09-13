@@ -518,6 +518,9 @@ cve_report:
     - cve-reports
   rules:
   - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+  - if: $CI_COMMIT_REF_NAME != "master"
+    when: "manual"
+    allow_failure: true
 
 
 test-s3-image:
