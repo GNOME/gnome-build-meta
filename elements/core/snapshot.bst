@@ -4,33 +4,13 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 47.beta-41-gc560e75e4f99cbbe63a1bad80ec785096079d589
+  ref: 47.0-0-g744435981b5a5186259ee0ce50f37a1684ed9000
 - kind: cargo2
   ref:
   - kind: registry
     name: aho-corasick
     version: 1.1.3
     sha: 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
-  - kind: registry
-    name: anstream
-    version: 0.6.15
-    sha: 64e15c1ab1f89faffbf04a634d5e1962e9074f2741eef6d97f3c4e322426d526
-  - kind: registry
-    name: anstyle
-    version: 1.0.8
-    sha: 1bec1de6f59aedf83baf9ff929c98f2ad654b97c9510f4e70cf6f661d49fd5b1
-  - kind: registry
-    name: anstyle-parse
-    version: 0.2.5
-    sha: eb47de1e80c2b463c735db5b217a0ddc39d612e7ac9e2e96a5aed1f57616c1cb
-  - kind: registry
-    name: anstyle-query
-    version: 1.1.1
-    sha: 6d36fc52c7f6c869915e99412912f22093507da8d9e942ceaf66fe4b7c14422a
-  - kind: registry
-    name: anstyle-wincon
-    version: 3.0.4
-    sha: 5bf74e1b6e971609db8ca7a9ce79fd5768ab6ae46441c572e46cf596f59e57f8
   - kind: registry
     name: anyhow
     version: 1.0.86
@@ -151,10 +131,6 @@ sources:
     name: cfg_aliases
     version: 0.2.1
     sha: 613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724
-  - kind: registry
-    name: colorchoice
-    version: 1.0.2
-    sha: d3fd119d74b830634cea2a0f58bbd0d54540518a14397557951e79340abc28c0
   - kind: registry
     name: concurrent-queue
     version: 2.5.0
@@ -357,12 +333,12 @@ sources:
     sha: 44edae63bea922f18f7e63977ee60a257ec27c4613aff1a6a9bb572ad0d88269
   - kind: registry
     name: glycin
-    version: 2.0.0-beta
-    sha: 8ad0e7b971597fd206fbf0a6fb37608fd7983705ef8adfb8781fcbc155ef8f83
+    version: 2.0.0
+    sha: eb4d58cff95a0fdbfd60e348ce0c5d4a05af5d7f3b7750656ec142501cf7c9c6
   - kind: registry
     name: glycin-utils
-    version: 2.0.0-beta
-    sha: d32e5bd3f73d2df60927b5eca9cdc9aee064dc7df8720c8bfb73f815f6a17d97
+    version: 2.0.0
+    sha: 7c6132ef2817b05110f3b1f98c53dbddaac74ea8366472354ab486d02442f08f
   - kind: registry
     name: gobject-sys
     version: 0.20.1
@@ -471,10 +447,6 @@ sources:
     name: indexmap
     version: 2.4.0
     sha: 93ead53efc7ea8ed3cfb0c79fc8023fbb782a5432b52830b6518941cebe6505c
-  - kind: registry
-    name: is_terminal_polyfill
-    version: 1.70.1
-    sha: 7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf
   - kind: registry
     name: itertools
     version: 0.13.0
@@ -847,10 +819,6 @@ sources:
     name: url
     version: 2.5.2
     sha: 22784dbdf76fdde8af1aeda5622b546b422b6fc585325248a2bf9f5e41e94d6c
-  - kind: registry
-    name: utf8parse
-    version: 0.2.2
-    sha: 06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821
   - kind: registry
     name: valuable
     version: 0.1.0

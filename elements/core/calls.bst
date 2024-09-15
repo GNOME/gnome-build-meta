@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:calls.git
   track: main
-  ref: v47_rc.1-23-g200ade2674be9db5171b63887195c686bed35355
+  ref: v47.0-0-g11ce0eae72f6f6eeb1c1de2cfe71046087368121
 - kind: git_module
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   path: subprojects/libcall-ui
-  ref: 7ff3e6649a2ef44bc96d3179cd8b1dac2fdd681d
+  ref: f66056ace818ff19b507335634dd67138a92c77f
 
 build-depends:
 - sdk/vala.bst
