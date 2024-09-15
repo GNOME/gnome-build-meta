@@ -174,6 +174,7 @@ install() {
 
     install_files /usr/lib/sysusers.d/basic.conf
     install_files /usr/lib/tmpfiles.d/systemd.conf
+    install_files /usr/lib/tmpfiles.d/20-systemd-stub.conf
 
     systemctl -q --root "${root}" enable systemd-sysext.service
 }
