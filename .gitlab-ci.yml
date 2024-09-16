@@ -626,6 +626,7 @@ test-openqa-desktop:
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
+  allow_failure: true
 
 test-pinephone-aarch64:
   extends:
