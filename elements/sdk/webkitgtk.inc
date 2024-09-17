@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.44.3.tar.xz
-  ref: dc82d042ecaca981a4852357c06e5235743319cf10a94cd36ad41b97883a0b54
-- kind: patch
-  path: patches/webkitgtk/fix-wasm.patch
+  url: webkitgtk:webkitgtk-2.46.0.tar.xz
+  ref: d4d433040f190151560c50bde840850089f87bad4fefa9ebdb4aae856a3df43a
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
@@ -55,6 +53,8 @@ public:
   cpe:
     product: webkitgtk+
 
-environment:
-  CC: clang
-  CXX: clang++
+# Clang is strongly recommended:
+# But disabled due to: https://bugs.webkit.org/show_bug.cgi?id=275872
+#environment:
+#  CC: clang
+#  CXX: clang++
