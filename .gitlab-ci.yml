@@ -8,7 +8,7 @@ variables:
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
   OCI_BRANCH: "47"
-  FLATPAK_BRANCH: 47beta
+  FLATPAK_BRANCH: '47'
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
   OPENQA_TESTS_BRANCH: master

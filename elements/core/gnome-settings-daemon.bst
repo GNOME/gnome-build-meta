@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-settings-daemon/47/gnome-settings-daemon-47.rc.tar.xz
-  ref: 0da62fd81ac0a2555811f9ac918a18dc675ca9271a0f063dbd350779ca55fc98
+  url: gnome_downloads:gnome-settings-daemon/47/gnome-settings-daemon-47.1.tar.xz
+  ref: f2aacbe55fa38e8708583eec0a6651049e537eb505a3ed2ce0baa4e9b64246d1
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

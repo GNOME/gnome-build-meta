@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtkmm/4.15/gtkmm-4.15.1.tar.xz
-  ref: 1b3576c951c96796fa36efa379ad614e34d86f91c0f8b56f4443011e0b10d157
+  url: gnome_downloads:gtkmm/4.16/gtkmm-4.16.0.tar.xz
+  ref: 3b23fd3abf8fb223b00e9983b6010af2db80e38c89ab6994b8b6230aa85d60f9
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

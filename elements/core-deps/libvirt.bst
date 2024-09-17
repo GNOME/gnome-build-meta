@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: libvirt:libvirt-10.6.0.tar.xz
-  ref: a495b2a26faca841ac0073c7dd7f60857ca81adac9047dac5f698fd75f1342cd
+  url: libvirt:libvirt-10.7.0.tar.xz
+  ref: ca757322eed998013b21f474c6c0c15dc08320ba6c8bae54aa16a93a1c3b7054
 - kind: local
   path: files/libvirt/80-libvirt.preset
 build-depends:

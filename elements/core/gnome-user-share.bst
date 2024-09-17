@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-user-share/47/gnome-user-share-47.alpha.tar.xz
-  ref: f9d75d1b23ea76753f63747f06dd5ba2df9e62cfffd4ec39e3d91cb5e9e3f79b
+  url: gnome_downloads:gnome-user-share/47/gnome-user-share-47.0.tar.xz
+  ref: c842f352fe7f0f0ea18ff9186ba9482b6c90d2f6b365abb5b11d68c906dba490
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
