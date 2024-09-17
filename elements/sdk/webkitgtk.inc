@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.44.3.tar.xz
-  ref: dc82d042ecaca981a4852357c06e5235743319cf10a94cd36ad41b97883a0b54
-- kind: patch
-  path: patches/webkitgtk/fix-wasm.patch
+  url: webkitgtk:webkitgtk-2.44.4.tar.xz
+  ref: 2ce4ec1b78413035037aba8326b31ed72696626b7bea7bace5e46ac0d8cbe796
 build-depends:
 - sdk-deps/gi-docgen.bst
 - sdk-deps/unifdef.bst
