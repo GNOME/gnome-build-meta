@@ -18,3 +18,4 @@ variables:
     -Dlibsysprof=false
     -Dsysprofd=none
     -Dhelp=false
+    -Dpolkit-agent=disabled
