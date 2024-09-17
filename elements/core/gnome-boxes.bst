@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-boxes/47/gnome-boxes-47.beta.tar.xz
-  ref: b6b9a60a90920f1889a7538727a0473335865917e53e42daf47876e5346d77be
+  url: gnome_downloads:gnome-boxes/47/gnome-boxes-47.0.tar.xz
+  ref: 65bf6c2de1bf4d51695c9192c5b1e6285cb32c98a18aa948a376ea32038bc78f
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
