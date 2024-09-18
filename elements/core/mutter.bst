@@ -4,7 +4,13 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 47.rc-46-gaf250506fbe85ae54af7b0f64fac276fb4f4786d
+  ref: 47.0-7-g846fc458d301105e514cf133df557f215241d564
+# FIXME: Keep this in sync with the repo until we can use wraps as sources
+# https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
+- kind: git_repo
+  url: gnome:gvdb.git
+  directory: subprojects/gvdb
+  ref: b54bc5da25127ef416858a3ad92e57159ff565b3
 
 build-depends:
 - core-deps/python-dbusmock.bst
