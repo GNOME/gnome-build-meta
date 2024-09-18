@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 47.rc-2-gc03cc52874fbb4b0000faa03f0a64eab3cc27ba8
+  ref: 47.0-1-g055d5b60d8826bdba3547193ea54b4fe800e1db5
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.0-3-gccf329a0965888cd653dedf0652efb7aff6c1a28
+  ref: 47.0-13-g21e7bed0b0457607aa38642bc7bbf037c26b1cb2
 - kind: cargo2
 
   ref:
@@ -366,12 +366,12 @@ sources:
     sha: 4958c26e5a01c9af00dea669a97369eccbec29a8e6d125c24ea2d85ee7467b60
   - kind: registry
     name: glycin
-    version: 2.0.0-beta
-    sha: 8ad0e7b971597fd206fbf0a6fb37608fd7983705ef8adfb8781fcbc155ef8f83
+    version: 2.0.1
+    sha: 99ceb553ed23c012e4e16ba9212b495eb458ad831eb5f892b6b44406f0966286
   - kind: registry
     name: glycin-utils
-    version: 2.0.0-beta
-    sha: d32e5bd3f73d2df60927b5eca9cdc9aee064dc7df8720c8bfb73f815f6a17d97
+    version: 2.0.0
+    sha: 7c6132ef2817b05110f3b1f98c53dbddaac74ea8366472354ab486d02442f08f
   - kind: registry
     name: gobject-sys
     version: 0.20.0
@@ -490,8 +490,8 @@ sources:
     sha: 1c44d8bdbad31d6639e1f20cc9c1424f1a8e02d751fc28d44659bf743fb9eca6
   - kind: registry
     name: libc
-    version: 0.2.155
-    sha: 97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c
+    version: 0.2.158
+    sha: d8adc4bb1803a324070e64a98ae98f38934d91957a99cfb3a43dcbc01bc56439
   - kind: registry
     name: libgweather
     version: 4.5.0
