@@ -81,7 +81,6 @@ config:
   - |
     install -Dm755 -t '%{install-root}%{libexecdir}' \
       bins/snapd \
-      bins/snap \
       bins/snap-failure \
       bins/snap-seccomp \
       bins/snap-update-ns \
@@ -90,8 +89,8 @@ config:
       bins/snapd-apparmor
 
   - |
-    install -Dm755 -d '%{install-root}%{bindir}'
-    ln -sr '%{install-root}%{libexecdir}/snap' '%{install-root}%{bindir}/snap'
+    install -Dm755 -t '%{install-root}%{bindir}' \
+      bins/snap
 
   - |
     systemdsystemunitdir="$(pkg-config --variable=systemdsystemunitdir systemd)"
