@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.58/librsvg-2.58.2.tar.xz
-  ref: 18e9d70c08cf25f50d610d6d5af571561d67cf4179f962e04266475df6e2e224
+  url: gnome_downloads:librsvg/2.58/librsvg-2.58.4.tar.xz
+  ref: 296e3760d2347d0767c3e291dec962ab36baecd25c4898c6e8150a731f967c7b
 - kind: cargo
   ref:
   - name: adler
@@ -73,8 +73,8 @@ sources:
     version: 3.14.0
     sha: 7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec
   - name: bytemuck
-    version: 1.14.2
-    sha: ea31d69bda4949c1c1562c1e6f042a1caefac98cdc8a298260a2ff41c1e2d42b
+    version: 1.16.3
+    sha: 102087e286b4677862ea56cf8fc58bb2cdfa8725c40ffb80fe3a008eb7f2fc83
   - name: byteorder
     version: 1.5.0
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
@@ -129,9 +129,6 @@ sources:
   - name: colorchoice
     version: 1.0.0
     sha: acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7
-  - name: const-cstr
-    version: 0.3.0
-    sha: ed3d0b5ff30645a68f35ece8cea4556ca14ef8a1651455f789a099a0513532a6
   - name: core-foundation-sys
     version: 0.8.6
     sha: 06ea2b9bc92be3c2baa9334a323ebca2d6f074ff852cd1d7b11064035cd3868f
@@ -844,8 +841,8 @@ sources:
     version: 0.17.0
     sha: 4034e1d05af98b51ad7214527730626f019682d797ba38b51689212118d8e650
   - name: yeslogic-fontconfig-sys
-    version: 4.0.1
-    sha: ec657fd32bbcbeaef5c7bc8e10b3db95b143fab8db0a50079773dbf936fd4f73
+    version: 5.0.0
+    sha: ffb6b23999a8b1a997bf47c7bb4d19ad4029c3327bb3386ebe0a5ff584b33c7a
   - name: zune-inflate
     version: 0.2.54
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
