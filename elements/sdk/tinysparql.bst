@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tinysparql.git
   track: main
-  ref: 3.8.0-0-ga5f3c82f093f9e4c137270c443fd94ddf4f8009c
+  ref: 3.8.0-1-gf561266f970934d0f8b1c0759d0680352f1cf3f5
 
 build-depends:
 - sdk/gobject-introspection.bst

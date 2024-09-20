@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:msgraph.git
   track: main
-  ref: 0.2.3-1-g21cc5ba93442b23593099926aa6d1e5beb65b7b3
+  ref: 0.2.3-4-g41a8b54b637a1a63d34ca43dd374e331dea76b58
 
 build-depends:
 - sdk/gi-docgen.bst
