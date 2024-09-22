@@ -4,7 +4,7 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: release/23.08
   track-tags: true
-  ref: freedesktop-sdk-23.08.22-0-g8147be903b9914516e4e960dd92f3d93d7fc6e13
+  ref: freedesktop-sdk-23.08.22-119-ga3785eefb1135d2e99f7d1cdb3b828f0935a62a1
 # Replicates functionality found in https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/19389. Patch can be removed once it lands in the freedesktop-sdk used by g-b-m.
 - kind: patch
   path: patches/freedesktop-sdk/0001-utils-generate-cve-report.bst.patch
