@@ -13,7 +13,6 @@ build-depends:
 depends:
 - core-deps/colord-gtk.bst
 - core-deps/exiv2.bst
-- core-deps/libcanberra.bst
 - core-deps/vte.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
