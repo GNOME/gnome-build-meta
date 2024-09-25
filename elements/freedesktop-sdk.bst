@@ -5,6 +5,8 @@ sources:
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-24.08*
   ref: freedesktop-sdk-24.08.2-0-gf32dcee77566401b5e58ca04e6adeb21dc7c0df2
+- kind: patch_queue
+  path: patches/freedesktop-sdk
 
 config:
   options:
