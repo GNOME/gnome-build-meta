@@ -12,6 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
+- core-deps/xdg-user-dirs-gtk.bst
 - sdk/adwaita-icon-theme.bst
 
 depends:
