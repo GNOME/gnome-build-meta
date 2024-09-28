@@ -1,0 +1,58 @@
+diff -ur webkit.old/Source/JavaScriptCore/CMakeLists.txt webkit/Source/JavaScriptCore/CMakeLists.txt
+--- webkit.old/Source/JavaScriptCore/CMakeLists.txt	2024-08-19 08:28:35.483390808 +0200
++++ webkit/Source/JavaScriptCore/CMakeLists.txt	2024-08-23 17:09:21.343280616 +0200
+@@ -275,8 +275,6 @@
+     set(OFFLINE_ASM_BACKEND "ARM64")
+ elseif (ARM_THUMB2_DETECTED)
+     set(OFFLINE_ASM_BACKEND "ARMv7")
+-elseif (WTF_CPU_RISCV64)
+-    set(OFFLINE_ASM_BACKEND "RISCV64")
+ endif ()
+ 
+ if (NOT ENABLE_JIT)
+diff -ur webkit.old/Source/WTF/wtf/PlatformCPU.h webkit/Source/WTF/wtf/PlatformCPU.h
+--- webkit.old/Source/WTF/wtf/PlatformCPU.h	2024-08-19 08:28:38.539297819 +0200
++++ webkit/Source/WTF/wtf/PlatformCPU.h	2024-08-23 17:08:51.219240508 +0200
+@@ -285,14 +285,6 @@
+ 
+ #endif /* ARM */
+ 
+-/* CPU(RISCV64) - RISC-V 64-bit */
+-#if    defined(__riscv) \
+-    && defined(__riscv_xlen) \
+-    && (__riscv_xlen == 64)
+-#define WTF_CPU_RISCV64 1
+-#define WTF_CPU_KNOWN 1
+-#endif
+-
+ #if !CPU(KNOWN)
+ #define WTF_CPU_UNKNOWN 1
+ #endif
+diff -ur webkit.old/Source/cmake/WebKitCommon.cmake webkit/Source/cmake/WebKitCommon.cmake
+--- webkit.old/Source/cmake/WebKitCommon.cmake	2024-08-19 08:28:40.271245241 +0200
++++ webkit/Source/cmake/WebKitCommon.cmake	2024-08-23 17:09:08.847263977 +0200
+@@ -125,8 +125,6 @@
+         set(WTF_CPU_PPC64 1)
+     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64le")
+         set(WTF_CPU_PPC64LE 1)
+-    elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "^riscv64")
+-        set(WTF_CPU_RISCV64 1)
+     elseif (LOWERCASE_CMAKE_SYSTEM_PROCESSOR MATCHES "^loongarch64")
+         set(WTF_CPU_LOONGARCH64 1)
+     else ()
+diff -ur webkit.old/Source/cmake/WebKitFeatures.cmake webkit/Source/cmake/WebKitFeatures.cmake
+--- webkit.old/Source/cmake/WebKitFeatures.cmake	2024-08-19 08:28:40.271245241 +0200
++++ webkit/Source/cmake/WebKitFeatures.cmake	2024-08-23 17:09:38.311303215 +0200
+@@ -116,12 +116,6 @@
+         set(USE_SYSTEM_MALLOC_DEFAULT OFF)
+         set(ENABLE_C_LOOP_DEFAULT ON)
+         set(ENABLE_SAMPLING_PROFILER_DEFAULT OFF)
+-    elseif (WTF_CPU_RISCV64)
+-        set(ENABLE_JIT_DEFAULT ON)
+-        set(ENABLE_FTL_DEFAULT ON)
+-        set(USE_SYSTEM_MALLOC_DEFAULT OFF)
+-        set(ENABLE_C_LOOP_DEFAULT OFF)
+-        set(ENABLE_SAMPLING_PROFILER_DEFAULT OFF)
+     else ()
+         set(ENABLE_JIT_DEFAULT OFF)
+         set(ENABLE_FTL_DEFAULT OFF)

@@ -2,6 +2,9 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.46.0.tar.xz
   ref: d4d433040f190151560c50bde840850089f87bad4fefa9ebdb4aae856a3df43a
+- kind: patch
+  path: patches/webkit/riscv.patch
+
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
