@@ -26,8 +26,6 @@ depends:
 
 variables:
   conf-local: >-
-    --disable-dependency-tracking
-    --disable-silent-rules
     --disable-sharp
     --disable-ocaml
     --disable-r
