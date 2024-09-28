@@ -8,7 +8,6 @@
 kind: stack
 depends:
 - core/baobab.bst
-- core/epiphany.bst
 - core/evince.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
@@ -31,4 +30,3 @@ depends:
 - core/simple-scan.bst
 - core/snapshot.bst
 - core/totem.bst
-- sdk/yelp.bst
