@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:evince.git
-  track: main
-  ref: 46.0-19-g2a2e4070353978bea2fc7e2c65862c0faea31c7f
+  track: gnome-46
+  ref: 46.3.1-1-g2d42749e2ee1a4c274719249ffa51b9fe228f232
 
 build-depends:
 - sdk/gtk-doc.bst
