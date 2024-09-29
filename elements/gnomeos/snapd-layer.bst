@@ -30,10 +30,6 @@ config:
        --noboot >/dev/null
 
   - |
-    mkdir -p /sysroot/usr/share/factory
-    mv -T /sysroot/etc /sysroot/usr/share/factory/etc
-
-  - |
     prepare-image.sh \
        --sysroot /sysroot-snapd \
        --initscripts /etc/fdsdk/initial_scripts-snapd \
@@ -44,15 +40,11 @@ config:
        --noboot >'%{install-root}/vars.txt'
 
   - |
-    mkdir -p /sysroot-snapd/usr/share/factory
-    mv -T /sysroot-snapd/etc /sysroot-snapd/usr/share/factory/etc
-
-  - |
     cat >/sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
-    C /etc/apparmor
-    C /etc/apparmor.d
-    f /etc/profile.d/snapd.sh
-    f /etc/xdg/autostart/snap-userd-autostart.desktop
+    L /etc/apparmor
+    L /etc/apparmor.d
+    L /etc/profile.d/snapd.sh
+    L /etc/xdg/autostart/snap-userd-autostart.desktop
     d /snap
     EOF
 
@@ -75,6 +67,15 @@ config:
   - |
     mkdir -p /tmp/output
     make-layer /sysroot/usr /sysroot-snapd/usr /tmp/output/usr
+
+  - |
+    mkdir -p /tmp/output/usr/share/factory/etc
+    cp -rT /sysroot-snapd/etc/apparmor /tmp/output/usr/share/factory/etc/apparmor
+    cp -rT /sysroot-snapd/etc/apparmor.d /tmp/output/usr/share/factory/etc/apparmor.d
+    mkdir -p /tmp/output/usr/share/factory/etc/profile.d
+    cp -rT /sysroot-snapd/etc/profile.d/snapd.sh /tmp/output/usr/share/factory/etc/profile.d/snapd.sh
+    mkdir -p /tmp/output/usr/share/factory/etc/xdg/autostart
+    cp -rT /etc/xdg/autostart/snap-userd-autostart.desktop /tmp/output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
 
   - |
     mkdir -p /tmp/output/etc
