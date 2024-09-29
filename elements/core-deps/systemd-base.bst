@@ -9,11 +9,14 @@ sources:
   url: github:systemd/systemd.git
   track: main
   ref: v257-rc3-23-g144d291f1809cc9070eae89155db9f1a4ddb8625
+- kind: patch
+  path: patches/systemd/include-dir.patch
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/audit.bst
+- freedesktop-sdk.bst:components/bpf.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/libcap.bst
@@ -43,6 +46,7 @@ build-depends:
 - freedesktop-sdk.bst:components/llvm.bst # for compiling bpf
 - freedesktop-sdk.bst:components/libmicrohttpd.bst
 - freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:components/libbpf.bst
 - core-deps/python-pefile.bst
 
 config:
@@ -85,8 +89,8 @@ variables:
     -Dgnutls=disabled
     -Dglib=disabled
     -Ddbus=disabled
-    -Dbpf-framework=disabled
     -Dstatus-unit-format-default=combined
+    -Dbpf-framework=disabled
 
 public:
   cpe:

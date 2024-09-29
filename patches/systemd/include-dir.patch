@@ -1,0 +1,20 @@
+diff --git a/meson.build b/meson.build
+index 6d96996acb..106184b277 100644
+--- a/meson.build
++++ b/meson.build
+@@ -1834,6 +1834,15 @@ if conf.get('BPF_FRAMEWORK') == 1
+                 endif
+         endif
+ 
++        gcc_multiarch_cmd = run_command('gcc', '--print-multiarch', check: false)
++        if gcc_multiarch_cmd.returncode() == 0
++                gcc_multiarch = gcc_multiarch_cmd.stdout().strip()
++                bpf_o_unstripped_cmd += [
++                        '-idirafter',
++                        '@0@/@1@'.format(libbpf_include_dir, gcc_multiarch),
++                ]
++        endif
++
+         bpf_o_unstripped_cmd += [
+                 '-idirafter',
+                 libbpf_include_dir,
