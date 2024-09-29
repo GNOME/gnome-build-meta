@@ -30,10 +30,6 @@ config:
        --noboot >/dev/null
 
   - |
-    mkdir -p /sysroot/usr/share/factory
-    mv -T /sysroot/etc /sysroot/usr/share/factory/etc
-
-  - |
     prepare-image.sh \
        --sysroot /sysroot-devel \
        --initscripts /etc/fdsdk/initial_scripts-devel \
@@ -44,24 +40,70 @@ config:
        --noboot >'%{install-root}/vars.txt'
 
   - |
-    mkdir -p /sysroot-devel/usr/share/factory
-    mv -T /sysroot-devel/etc /sysroot-devel/usr/share/factory/etc
+    mkdir -p /tmp/output/etc
+    make-layer /sysroot/etc /sysroot-devel/etc /tmp/output/etc/etc
 
   - |
     cat >/sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
-    f /etc/bash_completion.d/perf
-    C /etc/containers
-    f /etc/gitconfig
-    f /etc/gprofng.rc
-    C /etc/iproute2
-    C /etc/libvirt
-    f /etc/logrotate.d/libvirtd
-    f /etc/logrotate.d/libvirtd.libxl
-    f /etc/logrotate.d/libvirtd.lxc
-    f /etc/logrotate.d/libvirtd.qemu
-    C /etc/sasl2
-    f /etc/slsh.rc
+    L /etc/apparmor.d
+    # freedesktop-sdk.bst:components/perf.bst
+    # FIXME: move to /usr/share/bash-completion/completions/
+    L /etc/bash_completion.d/perf
+    # freedesktop-sdk.bst:components/toolbox.bst?
+    L /etc/containers/toolbox.conf
+    # freedesktop-sdk.bst:components/podman-config.bst
+    L /etc/containers/policy.json
+    L /etc/containers/registries.conf
+    # freedesktop-sdk.bst:components/git-lfs.bst
+    L /etc/gitconfig
+    # freedesktop-sdk.bst:components/binutils.bst
+    L /etc/gprofng.rc
+    # core-deps/libvirt.bst
+    L /etc/libvirt
+    L /etc/sasl2
+    L /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
+    # freedesktop-sdk.bst:components/slang.bst
+    L /etc/slsh.rc
+    # vm-deps/swtpm.bst
+    L /etc/swtpm-localca.conf
+    L /etc/swtpm-localca.options
+    L /etc/swtpm_setup.conf
     EOF
+
+  - |
+    find /tmp/output/etc
+
+  - |
+    mkdir -p /tmp/output/factory
+    for p in $(grep -v "^#" </sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
+      mkdir -p "$(dirname "/tmp/output/factory${p}")"
+      cp -rlTP "/tmp/output/etc${p}" "/tmp/output/factory${p}"
+      rm -rf "/tmp/output/etc${p}"
+    done
+
+  - |
+    find /tmp/output/etc/etc -depth -type d -empty -delete
+
+  - |
+    unknown=()
+    for p in /tmp/output/etc/etc/*; do
+      rel="${p#/tmp/output/etc}"
+      case "${rel}" in
+        /etc/systemd|/etc/ld.so.cache)
+          # Those are created another way
+        ;;
+        /etc/logrotate.d)
+          # Those should not exist
+        ;;
+        *)
+          unknown+=("${rel}")
+        ;;
+      esac
+    done
+    if [ "${#unknown[*]}" -gt 0 ]; then
+      echo "Unknown paths:" "${unknown[@]}"
+      exit 1
+    fi
 
   - |
     mkdir -p /sysroot-devel/usr/lib/extension-release.d
@@ -82,6 +124,10 @@ config:
   - |
     mkdir -p /tmp/output
     make-layer /sysroot/usr /sysroot-devel/usr /tmp/output/usr
+
+  - |
+    mkdir -p /tmp/output/usr/share/factory/etc
+    cp -rT /tmp/output/factory /tmp/output/usr/share/factory/etc
 
   - |
     mkdir -p /tmp/output/etc
