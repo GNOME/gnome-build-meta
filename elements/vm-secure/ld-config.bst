@@ -1,5 +1,8 @@
 kind: manual
 
+depends:
+- vm-secure/ldconfig-always.bst
+
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/systemd.bst
