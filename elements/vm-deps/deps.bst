@@ -41,6 +41,7 @@ depends:
 - vm-deps/ibus-libpinyin.bst
 
 - vm-deps/NetworkManager-fortisslvpn.bst
+- vm-deps/NetworkManager-openconnect.bst
 - vm-deps/NetworkManager-openvpn.bst
 - vm-deps/NetworkManager-vpnc.bst
 
