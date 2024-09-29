@@ -70,3 +70,5 @@ depends:
 
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/nano.bst
+
+- freedesktop-sdk.bst:components/iproute2.bst
