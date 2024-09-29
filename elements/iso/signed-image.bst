@@ -2,9 +2,6 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
-- filename: vm-secure/image.bst
-  config:
-    location: /sysupdate
 - filename: vm/image.bst  
   config:
     location: /ostree
@@ -20,7 +17,6 @@ environment:
 config:
   commands:
   - mv /ostree/disk.img.xz "/images/%{basename}.ostree.img.xz"
-  - mv /sysupdate/disk.img.xz "/images/%{basename}.sysupdate.img.xz"
 
   - mkdir "${GNUPGHOME}"
   - |
@@ -42,7 +38,7 @@ config:
     echo "default-key ${default_key}" >${GNUPGHOME}/gpg.conf
 
   - |
-    for image in %{basename}.ostree.img.xz %{basename}.sysupdate.img.xz; do
+    for image in %{basename}.ostree.img.xz; do
       gpg --batch --yes -sbao \
         "/images/${image}.asc" \
         "/images/${image}"
