@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:sass/sassc/archive/refs/tags/3.6.1.tar.gz
-  ref: 8cee391c49a102b4464f86fc40c4ceac3a2ada52a89c4c933d8348e3e4542a60
+  url: github_files:sass/sassc/archive/refs/tags/3.6.2.tar.gz
+  ref: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

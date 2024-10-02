@@ -1,8 +1,8 @@
 kind: cmake
 sources:
 - kind: tar
-  url: github_files:nuspell/nuspell/archive/refs/tags/v5.1.4.tar.gz
-  ref: bdf344c5adbcc6797940f8f8cb75cb59f5a3794eb21b9547751a11782a792ef7
+  url: github_files:nuspell/nuspell/archive/refs/tags/v5.1.6.tar.gz
+  ref: 5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
@@ -11,6 +11,7 @@ depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   cmake-local: >-
+    -DBUILD_DOCS=OFF
     -DBUILD_TESTING=OFF
 public:
   bst:

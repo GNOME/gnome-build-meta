@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_files:AbiWord/enchant/releases/download/v2.6.7/enchant-2.6.7.tar.gz
-  ref: a1c2e5b59acca000bbfb24810af4a1165733d407f2154786588e076c8cd57bfc
+  url: github_files:rrthomas/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz
+  ref: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
