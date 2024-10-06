@@ -26,6 +26,7 @@ FILES=(
     /usr/lib/systemd/system-generators/systemd-fstab-generator
     /usr/lib/systemd/system-generators/systemd-hibernate-resume-generator
     /usr/lib/systemd/system-generators/systemd-debug-generator
+    /usr/lib/systemd/system-generators/systemd-tpm2-generator
     /usr/lib/systemd/systemd-veritysetup
     /usr/lib/systemd/systemd-integritysetup
     /usr/lib/systemd/systemd-cryptsetup
@@ -80,6 +81,7 @@ UNITS+=(
     veritysetup-pre.target
     veritysetup.target
     sysinit.target.wants/veritysetup.target
+    tpm2.target
 )
 
 UNITS+=(
@@ -136,6 +138,8 @@ UNITS+=(
     sysinit.target.wants/systemd-tmpfiles-setup.service
     systemd-vconsole-setup.service
     systemd-volatile-root.service
+    systemd-tpm2-setup-early.service
+    sysinit.target.wants/systemd-tpm2-setup-early.service
 )
 
 install() {
