@@ -4,7 +4,14 @@ sources:
 - kind: git_repo
   url: gnome:pygobject.git
   track: main
-  ref: 3.50.0-28-g9c72ec06ec5065cf1dce391cdf60b7708665f8cc
+  ref: 3.50.0-36-gdfc54e24177a98d9a737384cb916c0c61c39aaff
+# FIXME: Keep this in sync with the repo until we can use wraps as sources
+#
+# https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/gobject-introspection-tests.wrap
+- kind: git_repo
+  url: gnome:gobject-introspection-tests.git
+  directory: subprojects/gobject-introspection-tests
+  ref: ca387326e2161b4608190417c26e45931e00b265
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
