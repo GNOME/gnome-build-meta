@@ -53,7 +53,13 @@ depends:
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/config/useradd-default.bst
+
 - freedesktop-sdk.bst:vm/mesa-default.bst
+# system libdrm
+- freedesktop-sdk.bst:components/libdrm.bst
+# libdrm backends
+- freedesktop-sdk.bst:extensions/mesa/libdrm.bst
+
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/bash-config.bst
 - freedesktop-sdk.bst:components/ccid.bst
