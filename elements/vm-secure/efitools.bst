@@ -37,6 +37,8 @@ sources:
 - kind: local
   path: files/boot-keys/extra-db-mic
   directory: extra-db-mic
+- kind: patch
+  path: patches/efitools/0001-Make.rules-Disable-aarch64-block-to-fix-compilation-.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/gnu-efi.bst

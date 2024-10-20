@@ -1,0 +1,33 @@
+From 157516eb3b797e3c6761f70d81883cd2bd501ad1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Tue, 22 Oct 2024 17:01:25 +0100
+Subject: [PATCH] Make.rules: Disable aarch64 block to fix compilation to
+ gnu-efi
+
+This fix the issue as it defaults to objcopy
+
+See
+https://github.com/ncroxon/gnu-efi/issues/7#issuecomment-2122741592
+---
+ Make.rules | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/Make.rules b/Make.rules
+index 903a5a4..59eca2f 100644
+--- a/Make.rules
++++ b/Make.rules
+@@ -51,11 +51,6 @@ ifeq ($(ARCH),arm)
+   FORMAT = -O binary
+ endif
+ 
+-ifeq ($(ARCH),aarch64)
+-  LDFLAGS += --defsym=EFI_SUBSYSTEM=0x0a
+-  FORMAT = -O binary
+-endif
+-
+ %.efi: %.so
+ 	$(OBJCOPY) -j .text -j .sdata -j .data -j .dynamic -j .dynsym \
+ 		   -j .rel -j .rela -j .rel.* -j .rela.* -j .rel* -j .rela* \
+-- 
+2.46.2
+

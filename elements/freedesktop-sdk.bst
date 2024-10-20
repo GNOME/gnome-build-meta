@@ -4,14 +4,11 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08.*
-  ref: freedesktop-sdk-23.08.23-0-g50138310131e28a0fb0c62e7371f289f3b24f369
+  ref: freedesktop-sdk-23.08.24-0-g7dbee3a6a85fccf542168c6b42b912c12350c4d8
 - kind: patch
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
   path: patches/freedesktop-sdk/drop-openh264-runtime-version-checks.patch
-# Replicates functionality found in https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/merge_requests/19389. Patch can be removed once it lands in the freedesktop-sdk used by g-b-m.
-- kind: patch
-  path: patches/freedesktop-sdk/0001-utils-generate-cve-report.bst.patch
 
 config:
   options:
