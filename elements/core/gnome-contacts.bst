@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-contacts/47/gnome-contacts-47.alpha.tar.xz
-  ref: 492c7f7616f26f1fa5210d52585ce9f714c1d9bde7d2c352fcf6f21c48d8637c
+  url: gnome_downloads:gnome-contacts/47/gnome-contacts-47.0.tar.xz
+  ref: 25e3c6f79728188afa5f0cd5d0be85dc467d12db6a2d98b54af3df0dcb4290d0
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

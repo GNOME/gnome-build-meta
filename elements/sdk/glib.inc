@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glib/2.82/glib-2.82.0.tar.xz
-  ref: f4c82ada51366bddace49d7ba54b33b4e4d6067afa3008e4847f41cb9b5c38d3
+  url: gnome_downloads:glib/2.82/glib-2.82.2.tar.xz
+  ref: ab45f5a323048b1659ee0fbda5cecd94b099ab3e4b9abf26ae06aeb3e781fd63
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
