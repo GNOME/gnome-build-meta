@@ -2,11 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd-efi/archive/refs/tags/1.4.tar.gz
-  ref: b1f5fe72e16d4e2f4c616da416dc93bd79331057336208465da37bafe8f8f83d
+  url: github_files:fwupd/fwupd-efi/archive/refs/tags/1.7.tar.gz
+  ref: 96d4fc45467159b2664ce86ee7d5030e265fdb4d4a4d774080654d2f5b1561ff
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/genpeimg.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - core-deps/python-pefile.bst
 
