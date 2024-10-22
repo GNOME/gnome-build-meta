@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.0-48-g39231761f33b618e4c0466eb90cee4548d474511
+  ref: 47.0-54-g5640ac894c3ccb1445b258db48ed8d7479ba65bc
 - kind: cargo2
 
   ref:
@@ -238,40 +238,40 @@ sources:
     sha: eac8f7d7865dcb88bd4373ab671c8cf4508703796caa2b1985a9ca867b3fcb78
   - kind: registry
     name: futures-core
-    version: 0.3.30
-    sha: dfc6580bb841c5a68e9ef15c77ccc837b40a7504914d52e47b8b0e9bbda25a1d
+    version: 0.3.31
+    sha: 05f29059c0c2090612e8d742178b0580d2dc940c837851ad723096f87af6663e
   - kind: registry
     name: futures-executor
     version: 0.3.30
     sha: a576fc72ae164fca6b9db127eaa9a9dda0d61316034f33a0a0d4eda41f02b01d
   - kind: registry
     name: futures-io
-    version: 0.3.30
-    sha: a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1
+    version: 0.3.31
+    sha: 9e5c1b78ca4aae1ac06c48a526a655760685149f0d465d21f37abfe57ce075c6
   - kind: registry
     name: futures-lite
     version: 2.3.0
     sha: 52527eb5074e35e9339c6b4e8d12600c7128b68fb25dcb9fa9dec18f7c25f3a5
   - kind: registry
     name: futures-macro
-    version: 0.3.30
-    sha: 87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac
+    version: 0.3.31
+    sha: 162ee34ebcb7c64a8abebc059ce0fee27c2262618d7b60ed8faf72fef13c3650
   - kind: registry
     name: futures-sink
-    version: 0.3.30
-    sha: 9fb8e00e87438d937621c1c6269e53f536c14d3fbd6a042bb24879e57d474fb5
+    version: 0.3.31
+    sha: e575fab7d1e0dcb8d0c7bcf9a63ee213816ab51902e6d244a95819acacf1d4f7
   - kind: registry
     name: futures-task
-    version: 0.3.30
-    sha: 38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004
+    version: 0.3.31
+    sha: f90f7dce0722e95104fcb095585910c0977252f286e354b5e3bd38902cd99988
   - kind: registry
     name: futures-timer
     version: 3.0.3
     sha: f288b0a4f20f9a56b5d1da57e2227c661b7b16168e2f72365f57b63326e29b24
   - kind: registry
     name: futures-util
-    version: 0.3.30
-    sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
+    version: 0.3.31
+    sha: 9fa08315bb612088cc391249efdc3bc77536f16c91f6cf495e6fbe85b20a4a81
   - kind: registry
     name: gdk-pixbuf
     version: 0.20.4
