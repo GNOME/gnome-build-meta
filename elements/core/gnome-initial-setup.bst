@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/46/gnome-initial-setup-46.4.tar.xz
-  ref: b976e91f74fc1ed32e9b6fe6a49a314128a25d0669992eb626f10613a8de1bd7
+  url: gnome_downloads:gnome-initial-setup/46/gnome-initial-setup-46.6.tar.xz
+  ref: 38259f1f1ee0b7d34314b804f1d345811332aa3321dc50d2cc88e0b81b2397f8
 - kind: local
   path: files/gnome-initial-setup/tmpfiles.conf
 

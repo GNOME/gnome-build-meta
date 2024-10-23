@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: samba:samba/stable/samba-4.19.8.tar.gz
-  ref: 1aeff76c207f383477ce4badebd154691c408d2e15b01b333c85eb775468ddf6
+  url: samba:samba/stable/samba-4.19.9.tar.gz
+  ref: 71ed406444714c90bb9d36c576d807b67af15449f297e91106d42b3ca2fa5549
 - kind: patch
   path: patches/samba/fix-root-build.patch
 
