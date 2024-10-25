@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libmanette.git
   track: main
-  ref: 0.2.9-1-g0613dda0a81437be4faa822a6b0c7a606574123c
+  ref: 0.2.9-9-g51d2f4b39cbdd6d1794e5a9f70a7980b71b18dd9
 
 build-depends:
 - sdk/gtk-doc.bst
@@ -13,6 +13,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
+- sdk-deps/hidapi.bst
 - freedesktop-sdk.bst:components/libevdev.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
