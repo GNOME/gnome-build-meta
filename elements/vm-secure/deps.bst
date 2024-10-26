@@ -4,7 +4,7 @@ depends:
 - vm-deps/deps.bst
 
 - vm-secure/repart-config.bst
-- vm-secure/kernel-modules-only.bst
+- vm-secure/initramfs/signed-modules.bst
 - vm-secure/sysupdate-config.bst
 - vm-secure/sysupdate-apparmor-config.bst
 - vm-secure/sysupdate-debug-config.bst

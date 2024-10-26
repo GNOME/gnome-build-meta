@@ -24,10 +24,6 @@ config:
   - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
   - rm /etc/machine-id
 
-  - mkdir -p '%{install-root}/usr/lib/'
-  - cp -rT /usr/lib/modules '%{install-root}/usr/lib/modules'
-  - rm -rf '%{install-root}/usr/lib/modules'/"${version}"/kernel/drivers/video/nvidia*.ko*
-
   - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |
@@ -66,6 +62,7 @@ config:
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
+    mkdir -p "%{install-root}/usr/lib/modules/${version}"
     (
       case '%{arch}' in
         x86_64)

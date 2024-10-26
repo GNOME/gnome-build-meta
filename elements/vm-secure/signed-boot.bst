@@ -3,6 +3,8 @@ kind: manual
 build-depends:
 - core-deps/python-pefile.bst
 - vm-secure/os-release-user.bst
+- filename: freedesktop-sdk.bst:components/linux.bst
+  strict: true
 - filename: vm-secure/initramfs.bst
   strict: true
 - filename: vm-secure/usr-image.bst
@@ -75,7 +77,7 @@ config:
       --phases="enter-initrd,enter-initrd:leave-initrd,enter-initrd:leave-initrd:sysinit" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --linux="/usr/lib/modules/${version}/vmlinuz" \
+      --linux="/boot/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img"
 
 sources:
