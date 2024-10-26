@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vte.git
   track: master
-  ref: 0.77.0-85-g1035b8295ed0146f1cb4a2ce085197982769c194
+  ref: 0.77.0-96-g9dbb6fd2ad0b565fd01b52ef7f46fc1f0b50b1d8
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -16,6 +16,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
+- core-deps/fast-float.bst
 - freedesktop-sdk.bst:components/fribidi.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/icu.bst
