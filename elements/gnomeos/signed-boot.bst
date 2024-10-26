@@ -18,6 +18,7 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 
 variables:
+  devicetree-args: ''
   (?):
   - arch == 'i686':
       efi-arch: ia32
@@ -25,6 +26,8 @@ variables:
       efi-arch: x64
   - arch == 'aarch64':
       efi-arch: aa64
+      devicetree-args: >-
+        --devicetree-auto="/boot/dtbs/rockchip/rk3588-rock-5b.dtb"
   - arch == 'riscv64':
       efi-arch: riscv64
   kcmdline: >-
@@ -113,6 +116,7 @@ config:
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img" \
+      %{devicetree-args} \
       "${MICROCODE[@]}"
 
 sources:
