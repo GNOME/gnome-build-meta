@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.0-111-gf37d64c2e27d0f1508bc63c331667d9129e2ba02
+  ref: 47.0-114-gce4b10977d8281eb1ea1c6cc6ca66f2616a5999f
 - kind: cargo2
   cargo-lock: shell-rs/Cargo.lock
   ref:
