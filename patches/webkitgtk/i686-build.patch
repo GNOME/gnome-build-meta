@@ -1,0 +1,45 @@
+From bda228aea58acc5f578f4a35ab6ce6a5fa7d6edf Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Wed, 30 Oct 2024 11:31:18 -0500
+Subject: [PATCH] REGRESSION(282580@main): Static assertions failing in
+ CalculationTree.h and CSSCalcTree.h on i686
+ https://bugs.webkit.org/show_bug.cgi?id=282288
+
+Reviewed by NOBODY (OOPS!).
+
+The assertions incorrectly expect the size of the Child variants to be
+larger than they actually are. This should be fine because presumably
+the goal of the assertions is just to ensure the variants are small.
+
+* Source/WebCore/css/calc/CSSCalcTree.h:
+* Source/WebCore/platform/calc/CalculationTree.h:
+---
+ Source/WebCore/css/calc/CSSCalcTree.h          | 2 +-
+ Source/WebCore/platform/calc/CalculationTree.h | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Source/WebCore/css/calc/CSSCalcTree.h b/Source/WebCore/css/calc/CSSCalcTree.h
+index 4e5cfc1f75a0f..ee04eb99521a4 100644
+--- a/Source/WebCore/css/calc/CSSCalcTree.h
++++ b/Source/WebCore/css/calc/CSSCalcTree.h
+@@ -768,7 +768,7 @@ struct AnchorSize {
+ 
+ // MARK: Size assertions
+ 
+-static_assert(sizeof(Child) == 24);
++static_assert(sizeof(Child) <= 24, "Child should stay small");
+ 
+ // MARK: Reverse mappings
+ 
+diff --git a/Source/WebCore/platform/calc/CalculationTree.h b/Source/WebCore/platform/calc/CalculationTree.h
+index 78f5d528f7d79..eead8a47333ff 100644
+--- a/Source/WebCore/platform/calc/CalculationTree.h
++++ b/Source/WebCore/platform/calc/CalculationTree.h
+@@ -509,7 +509,7 @@ struct Blend {
+     bool operator==(const Blend&) const = default;
+ };
+ 
+-static_assert(sizeof(Child) == 16);
++static_assert(sizeof(Child) <= 16, "Child should stay small");
+ 
+ // MARK: Construction
