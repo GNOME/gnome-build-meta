@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.0-117-gddc7a00d1ec6fb104a777b299a3e652bf8ee8c8c
+  ref: 47.0-127-g7774bb260c5b200f87bb0e8b81d5508d55623047
 - kind: cargo2
   cargo-lock: shell-rs/Cargo.lock
   ref:
@@ -126,8 +126,8 @@ sources:
     sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: registry
     name: cairo-rs
-    version: 0.20.1
-    sha: e8a0ea147c94108c9613235388f540e4d14c327f7081c9e471fc8ee8a2533e69
+    version: 0.20.5
+    sha: d7fa699e1d7ae691001a811dda5ef0e3e42e1d4119b26426352989df9e94e3e6
   - kind: registry
     name: cairo-sys-rs
     version: 0.20.0
@@ -266,20 +266,20 @@ sources:
     sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
   - kind: registry
     name: gdk-pixbuf
-    version: 0.20.1
-    sha: 8730751991b97419fc3f0c2dca2c9e45b48edf46e48e0f965964ecf33889812f
+    version: 0.20.4
+    sha: c4c29071a9e92337d8270a85cb0510cda4ac478be26d09ad027cc1d081911b19
   - kind: registry
     name: gdk-pixbuf-sys
-    version: 0.20.1
-    sha: 1ffbf649fd5b1c8c0f0feeb015b7533c3ef92da2887fb95ddd338bc2b1644a7c
+    version: 0.20.4
+    sha: 687343b059b91df5f3fbd87b4307038fa9e647fcc0461d0d3f93e94fee20bf3d
   - kind: registry
     name: gdk4
-    version: 0.9.0
-    sha: 4b7d7237c1487ed4b300aac7744efcbf1319e12d60d7afcd6f505414bd5b5dea
+    version: 0.9.3
+    sha: d3fb4af2d606b0ac4e81f982f0d064bcb71ca73859ce5f30475f7eb2e2be4bc3
   - kind: registry
     name: gdk4-sys
-    version: 0.9.0
-    sha: a67576c8ec012156d7f680e201a807b4432a77babb3157e0555e990ab6bcd878
+    version: 0.9.3
+    sha: 3642625b384ad43c006871462e6c498488b503dbf219542591f4ddf0f5f2032b
   - kind: registry
     name: generic-array
     version: 0.14.7
@@ -298,56 +298,56 @@ sources:
     sha: f7b8797f28f2dabfbe2caadb6db4f7fd739e251b5ede0a2ba49e506071edcf67
   - kind: registry
     name: gio
-    version: 0.20.1
-    sha: dcacaa37401cad0a95aadd266bc39c72a131d454fc012f6dfd217f891d76cc52
+    version: 0.20.5
+    sha: d8569975884fdfdbed536b682448fbd8c70bafbd69cac2d45eb1a7a372702241
   - kind: registry
     name: gio-sys
-    version: 0.20.1
-    sha: 5237611e97e9b86ab5768adc3eef853ae713ea797aa3835404acdfacffc9fb38
+    version: 0.20.5
+    sha: 217f464cad5946ae4369c355155e2d16b488c08920601083cb4891e352ae777b
   - kind: registry
     name: glib
-    version: 0.20.2
-    sha: 9c1ea829497810f8e87f5ee6d05c4879af641704add879e6b6080607cceeefe4
+    version: 0.20.5
+    sha: 358431b0e0eb15b9d02db52e1f19c805b953c5c168099deb3de88beab761768c
   - kind: registry
     name: glib-macros
-    version: 0.20.2
-    sha: 951aa19c5e89555c0ca5e94ee874b24b2594ece8412b387bd84ee3266b8a3ea0
+    version: 0.20.5
+    sha: e7d21ca27acfc3e91da70456edde144b4ac7c36f78ee77b10189b3eb4901c156
   - kind: registry
     name: glib-sys
-    version: 0.20.2
-    sha: 92eee4531c1c9abba945d19378b205031b5890e1f99c319ba0503b6e0c06a163
+    version: 0.20.5
+    sha: 8a5911863ab7ecd4a6f8d5976f12eeba076b23669c49b066d877e742544aa389
   - kind: registry
     name: gobject-sys
-    version: 0.20.1
-    sha: fa3d1dcd8a1eb2e7c22be3d5e792b14b186f3524f79b25631730f9a8c169d49a
+    version: 0.20.4
+    sha: a4c674d2ff8478cf0ec29d2be730ed779fef54415a2fb4b565c52def62696462
   - kind: registry
     name: graphene-rs
-    version: 0.20.1
-    sha: 80aac87f74e81c0e13433e892a047237abdc37945c86887f5eed905038356e69
+    version: 0.20.4
+    sha: 1f53144c7fe78292705ff23935f1477d511366fb2f73c43d63b37be89076d2fe
   - kind: registry
     name: graphene-sys
-    version: 0.20.1
-    sha: cc2f91ecd32989efad60326cc20a8fb252bd2852239a08e4e70cde8c100de9ca
+    version: 0.20.4
+    sha: e741797dc5081e59877a4d72c442c72d61efdd99161a0b1c1b29b6b988934b99
   - kind: registry
     name: gsk4
-    version: 0.9.0
-    sha: 1f3cf2091e1af185b347b3450817d93dea6fe435df7abd4c2cd7fb5bcb4cfda8
+    version: 0.9.3
+    sha: 3deb9ae5a7fb759b2405e248d52850d9ef733079b90af2d6b01638f5b9eeafe1
   - kind: registry
     name: gsk4-sys
-    version: 0.9.0
-    sha: 6aa69614a26d8760c186c3690f1b0fbb917572ca23ef83137445770ceddf8cde
+    version: 0.9.3
+    sha: 2226662e97948f3f241c9a6c432cd95eeca662daf4a327e201458bb540ad9590
   - kind: registry
     name: gtk4
-    version: 0.9.1
-    sha: f4fe572bf318e5dbc6f5a2f8a25d853f1ae3f42768c0b08af6ca20a18f4057e1
+    version: 0.9.3
+    sha: d34465497f5a4c182c9c94a582a187db7d6af0863f28e87ccf4379f21f0e2a22
   - kind: registry
     name: gtk4-macros
-    version: 0.9.1
-    sha: e9e7b362c8fccd2712297903717d65d30defdab2b509bc9d209cbe5ffb9fabaf
+    version: 0.9.3
+    sha: a7c518d5dd41c57385c7cd30af52e261820c897fc1144e558bb88c303d048ae2
   - kind: registry
     name: gtk4-sys
-    version: 0.9.0
-    sha: 1114a207af8ada02cf4658a76692f4190f06f093380d5be07e3ca8b43aa7c666
+    version: 0.9.3
+    sha: f11c7812e28542edb4d0495a2fde1f4588899e2accfcebaa80115f27dc7358a3
   - kind: registry
     name: hashbrown
     version: 0.14.5
@@ -394,12 +394,12 @@ sources:
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: libadwaita
-    version: 0.7.0
-    sha: 2ff9c222b5c783729de45185f07b2fec2d43a7f9c63961e777d3667e20443878
+    version: 0.7.1
+    sha: 8611ee9fb85e7606c362b513afcaf5b59853f79e4d98caaaf581d99465014247
   - kind: registry
     name: libadwaita-sys
-    version: 0.7.0
-    sha: 1c44d8bdbad31d6639e1f20cc9c1424f1a8e02d751fc28d44659bf743fb9eca6
+    version: 0.7.1
+    sha: b099a223560118d4d4fa04b6d23f3ea5b7171fe1d83dfb7e6b45b54cdfc83af9
   - kind: registry
     name: libc
     version: 0.2.158
@@ -502,12 +502,12 @@ sources:
     sha: 9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50
   - kind: registry
     name: pango
-    version: 0.20.1
-    sha: 5764e5a174a5a0ec054fe5962ce6d4fc7052e2d0dcc23bbc77202b40a4a403d3
+    version: 0.20.4
+    sha: aa26aa54b11094d72141a754901cd71d9356432bb8147f9cace8d9c7ba95f356
   - kind: registry
     name: pango-sys
-    version: 0.20.1
-    sha: fd317e1de76b14b3d3efe05518c08b360327f1ab7fec150473a89ffcad4b072d
+    version: 0.20.4
+    sha: 84fd65917bf12f06544ae2bbc200abf9fc0a513a5a88a0fa81013893aef2b838
   - kind: registry
     name: parking
     version: 2.2.0
