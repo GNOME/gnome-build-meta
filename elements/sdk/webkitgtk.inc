@@ -4,6 +4,8 @@ sources:
   ref: 2fa7ff54586d364ae648adc016807e9a096961566d59f5f8223f4f079a622d5f
 - kind: patch
   path: patches/webkitgtk/i686-build.patch
+- kind: patch
+  path: patches/webkitgtk/remove-layer.patch
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst

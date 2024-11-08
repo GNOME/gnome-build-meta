@@ -1,0 +1,35 @@
+From 6bc3466dad2bdb14fc7b2515e8f1d9a37f310cd9 Mon Sep 17 00:00:00 2001
+From: Carlos Garcia Campos <cgarcia@igalia.com>
+Date: Fri, 8 Nov 2024 00:31:39 -0800
+Subject: [PATCH] REGRESSION(285694@main): [CoordinatedGraphics] Tiling broken
+ on zillow.com https://bugs.webkit.org/show_bug.cgi?id=282514
+
+Reviewed by Miguel Gomez.
+
+When a layer no longer has a backing store it has to be removed from
+the backing stores map.
+
+* Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp:
+(WebKit::CoordinatedGraphicsScene::updateSceneState):
+
+Canonical link: https://commits.webkit.org/286321@main
+---
+ .../WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp  | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp b/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp
+index 0dbcdf65c72c5..1fecc491be37e 100644
+--- a/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp
++++ b/Source/WebKit/WebProcess/WebPage/CoordinatedGraphics/CoordinatedGraphicsScene.cpp
+@@ -290,8 +290,10 @@ void CoordinatedGraphicsScene::updateSceneState()
+                         if (layerState.backingStore) {
+                             layer.acceptDamageVisitor(*this);
+                             layersByBacking.backingStore.append({ std::ref(layer), layerState.backingStore->takePendingUpdate() });
+-                        } else
++                        } else {
+                             layer.setBackingStore(nullptr);
++                            m_backingStores.remove(&layer);
++                        }
+ 
+                         if (layerState.contentLayer) {
+                             layersByBacking.contentLayer.append(
