@@ -19,10 +19,9 @@ depends:
 - core-deps/libgweather.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/webkit2gtk-4.1.bst
 - sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
@@ -33,6 +32,8 @@ variables:
   cmake-local: >-
     -DLIB_INSTALL_DIR=%{libdir}
     -DSYSCONF_INSTALL_DIR=%{sysconfdir}
+    -DENABLE_GTK=OFF
+    -DENABLE_GTK4=ON
     -DENABLE_INTROSPECTION=ON
     -DENABLE_VALA_BINDINGS=ON
     -DENABLE_UOA=OFF
