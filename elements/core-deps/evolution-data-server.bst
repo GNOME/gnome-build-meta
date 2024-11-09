@@ -5,6 +5,8 @@ sources:
   url: gnome:evolution-data-server.git
   track: master
   ref: 3.54.0-20-g2357ec8b1ab79c9335bfcb07986b54bafda01e0b
+- kind: patch_queue
+  path: patches/evolution-data-server/
 
 build-depends:
 - sdk/vala.bst
