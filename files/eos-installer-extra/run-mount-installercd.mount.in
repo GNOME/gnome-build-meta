@@ -5,5 +5,5 @@ Description=Mount installer CD
 What=LABEL=@VOLUME_ID@
 Where=/run/mount/installercd
 Type=iso9660
-Options=ro,nodev,nosuid,noexec,nofail,allow_other
+Options=ro,nodev,nosuid,noexec,nofail
 
