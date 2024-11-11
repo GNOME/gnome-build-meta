@@ -6,6 +6,8 @@ sources:
   path: patches/webkitgtk/i686-build.patch
 - kind: patch
   path: patches/webkitgtk/remove-layer.patch
+- kind: patch
+  path: patches/webkitgtk/fix-related-views.patch
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
