@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: gnome_downloads:NetworkManager/1.50/NetworkManager-1.50.0.tar.xz
   ref: fc03e7388a656cebc454c5d89481626122b1975d7c26babc64dc7e488faa66e3
+- kind: patch_queue
+  path: patches/NetworkManager
 build-depends:
 - core-deps/intltool.bst
 - sdk/gobject-introspection.bst
@@ -41,3 +43,4 @@ variables:
     -Dselinux=false
     -Dqt=false
     -Dovs=false
+    -Dnm_cloud_setup=false

@@ -41,7 +41,6 @@ boards_elements = [
 #
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
-    ("sdk/pygobject.bst", "Blocked by the girepository-2.0 ports. See https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/3236"),
 ]
 
 def git(*args):
