@@ -2,11 +2,7 @@ kind: import
 
 sources:
 - kind: local
-  path: files/sysupdate/81-gnomeos-usr.conf
-- kind: local
-  path: files/sysupdate/80-gnomeos-usr-verity.conf
-- kind: local
-  path: files/sysupdate/90-gnomeos-kernel.conf
+  path: files/sysupdate
 
 config:
-  target: /usr/lib/sysupdate.d
+  target: '%{indep-libdir}/sysupdate.d'

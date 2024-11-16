@@ -1,5 +1,6 @@
 [Transfer]
 ProtectVersion=%A
+Features=snapd
 
 [Source]
 Type=url-file
