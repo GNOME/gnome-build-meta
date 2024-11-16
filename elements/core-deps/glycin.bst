@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.1-9-ga887f4246b1dc0a40fd10dbfe96e734b3799d9a3
+  ref: 1.1.1-11-g35401d5faf9aa0980dc04e51629b3f4eda541dbf
 - kind: cargo2
   ref:
   - kind: registry
@@ -92,10 +92,6 @@ sources:
     version: 0.3.74
     sha: 8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a
   - kind: registry
-    name: bindgen
-    version: 0.69.5
-    sha: 271383c67ccabffb7381723dea0672a673f292304fcb45c01cc648c7a8d58088
-  - kind: registry
     name: bit_field
     version: 0.10.2
     sha: dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61
@@ -152,10 +148,6 @@ sources:
     version: 1.1.31
     sha: c2e7962b54006dcfcc61cb72735f4d89bb97061dd6a7ed882ec6b8ee53714c6f
   - kind: registry
-    name: cexpr
-    version: 0.6.0
-    sha: 6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766
-  - kind: registry
     name: cfg-expr
     version: 0.17.0
     sha: d0890061c4d3223e7267f3bad2ec40b997d64faac1c2815a4a9d95018e2b9e9c
@@ -171,10 +163,6 @@ sources:
     name: chrono
     version: 0.4.38
     sha: a21f936df1771bf62b77f047b726c4625ff2e8aa607c01ec06e5a05bd8463401
-  - kind: registry
-    name: clang-sys
-    version: 1.8.1
-    sha: 0b023947811758c97c59bf9d1c188fd619ad4718dcaa767947df1cadb14f39f4
   - kind: registry
     name: color_quant
     version: 1.1.0
@@ -432,25 +420,61 @@ sources:
     version: 0.20.5
     sha: 8a5911863ab7ecd4a6f8d5976f12eeba076b23669c49b066d877e742544aa389
   - kind: registry
-    name: glob
-    version: 0.3.1
-    sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
-  - kind: registry
     name: gobject-sys
     version: 0.20.4
     sha: a4c674d2ff8478cf0ec29d2be730ed779fef54415a2fb4b565c52def62696462
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo
+    version: 0.2.0
   - kind: registry
     name: gufo-common
     version: 0.1.3
     sha: 269bc5c70016d1e90449d71263a72dd2035a2ecbf9cda6305774fa44844bd662
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-common
+    version: 0.2.0
   - kind: registry
     name: gufo-exif
     version: 0.1.3
     sha: f4066b9e0375d2b44da9e7f0282c2bd65136fe5e7d033259b2181f499e312e1b
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-exif
+    version: 0.2.0
   - kind: registry
     name: gufo-jpeg
     version: 0.1.3
     sha: 91cc69894bf1a6c6cf2276cdecef43d4bfdfd6cefec756204d93677cd7a177fd
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-jpeg
+    version: 0.2.0
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-png
+    version: 0.2.0
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-tiff
+    version: 0.2.0
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-webp
+    version: 0.2.0
+  - kind: git
+    commit: 1a103af39b2fd3a1e0f08e75f9e930b029b96613
+    repo: https://github.com/gufo-rs/gufo.git
+    name: gufo-xmp
+    version: 0.2.0
   - kind: registry
     name: half
     version: 2.4.1
@@ -480,10 +504,6 @@ sources:
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
   - kind: registry
-    name: home
-    version: 0.5.9
-    sha: e3d1354bf6b7235cb4a0576c2619fd4ed18183f689b12b006a0ee7329eeff9a5
-  - kind: registry
     name: humantime
     version: 2.1.0
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
@@ -512,10 +532,6 @@ sources:
     version: 2.6.0
     sha: 707907fe3c25f5424cce2cb7e1cbcafee6bdbe735ca90ef77c29e84591e5b9da
   - kind: registry
-    name: itertools
-    version: 0.12.1
-    sha: ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569
-  - kind: registry
     name: jobserver
     version: 0.1.32
     sha: 48d1dbcbbeb6a7fec7e059840aa538bd62aaccf972c7346c4d9d2059312853d0
@@ -523,6 +539,10 @@ sources:
     name: jpeg-decoder
     version: 0.3.1
     sha: f5d4a7da358eff58addd2877a45865158f0d78c911d43a5784ceb7bbf52833b0
+  - kind: registry
+    name: jpeg-encoder
+    version: 0.6.0
+    sha: 2fefe5a4fb12fa836172dc53cc36c37af693f6197ae702f931faad8774caf926
   - kind: registry
     name: jpegxl-rs
     version: 0.10.3+libjxl-0.10.2
@@ -536,17 +556,9 @@ sources:
     version: 0.3.72
     sha: 6a88f1bda2bd75b0452a14784937d796722fdebfe50df998aeb3f0b7603019a9
   - kind: registry
-    name: kamadak-exif
-    version: 0.5.5
-    sha: ef4fc70d0ab7e5b6bafa30216a6b48705ea964cdfc29c050f2412295eba58077
-  - kind: registry
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
-  - kind: registry
-    name: lazycell
-    version: 1.3.0
-    sha: 830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55
   - kind: registry
     name: lcms2
     version: 6.1.0
@@ -628,10 +640,6 @@ sources:
     version: 0.9.1
     sha: 488016bfae457b036d996092f6cb448677611ce4449e970ceaf42695203f218a
   - kind: registry
-    name: minimal-lexical
-    version: 0.2.1
-    sha: 68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a
-  - kind: registry
     name: miniz_oxide
     version: 0.8.0
     sha: e2d80299ef12ff69b16a84bb182e3b9df68b5a91574d3d4fa6e41b65deec4df1
@@ -648,10 +656,6 @@ sources:
     version: 0.7.4
     sha: 79a74ddee9e0c27d2578323c13905793e91622148f138ba29738f9dddb835e90
   - kind: registry
-    name: mutate_once
-    version: 0.1.1
-    sha: 16cf681a23b4d0a43fc35024c176437f9dcd818db34e0f42ab456a0ee5ad497b
-  - kind: registry
     name: nalgebra
     version: 0.32.6
     sha: 7b5c17de023a86f59ed79891b2e5d5a94c705dbe904a5b5c9c952ea6221b03e4
@@ -663,10 +667,6 @@ sources:
     name: nix
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
-  - kind: registry
-    name: nom
-    version: 7.1.3
-    sha: d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a
   - kind: registry
     name: nu-ansi-term
     version: 0.46.0
@@ -756,10 +756,6 @@ sources:
     version: 0.2.20
     sha: 77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04
   - kind: registry
-    name: prettyplease
-    version: 0.2.25
-    sha: 64d1ec885c64d0457d564db4ec299b2dae3f9c02808b8ad9c3a089c591b18033
-  - kind: registry
     name: proc-macro-crate
     version: 1.3.1
     sha: 7f4c021e1093a56626774e81216a4ce732a735e5bad4868a03f3ed65ca0c3919
@@ -839,10 +835,6 @@ sources:
     name: rustc-demangle
     version: 0.1.24
     sha: 719b953e2095829ee67db738b3bfa9fa368c94900df327b3f07fe6e794d2fe1f
-  - kind: registry
-    name: rustc-hash
-    version: 1.1.0
-    sha: 08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2
   - kind: registry
     name: rustix
     version: 0.38.38
@@ -1072,10 +1064,6 @@ sources:
     version: 0.1.8
     sha: 53a85b86a771b1c87058196170769dd264f66c0782acf1ae6cc51bfd64b39082
   - kind: registry
-    name: which
-    version: 4.4.2
-    sha: 87ba24419a2078cd2b0f2ede2691b6c66d8e47836da3b6db8265ebad47afbfc7
-  - kind: registry
     name: wide
     version: 0.7.28
     sha: b828f995bf1e9622031f8009f8481a85406ce1f4d4588ff746d872043e855690
@@ -1191,6 +1179,10 @@ sources:
     name: xdg-home
     version: 1.3.0
     sha: ec1cdab258fb55c0da61328dc52c8764709b249011b2cad0454c72f0bf10a1f6
+  - kind: registry
+    name: xml-rs
+    version: 0.8.23
+    sha: af310deaae937e48a26602b730250b4949e125f468f11e6990be3e5304ddd96f
   - kind: registry
     name: yeslogic-fontconfig-sys
     version: 6.0.0

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.0-67-g9156533fea93ae7c332a3a3537169a3b24ee2b1e
+  ref: 47.0-70-g689401dffc0649faf0cc97756632ca5ffed0eb1d
 - kind: cargo2
 
   ref:
@@ -401,10 +401,8 @@ sources:
     version: 0.9.3
     sha: f11c7812e28542edb4d0495a2fde1f4588899e2accfcebaa80115f27dc7358a3
   - kind: git
-    commit: 95b178197ae0556a9c4f7b6e6efab65376222b5d
+    commit: ca335180352b161e02f5c8807fcd17bf439721a2
     repo: https://github.com/gufo-rs/gufo.git
-    query:
-      rev: 95b178197ae0556a9c4f7b6e6efab65376222b5d
     name: gufo
     version: 0.2.0
   - kind: registry
@@ -412,10 +410,8 @@ sources:
     version: 0.1.3
     sha: 269bc5c70016d1e90449d71263a72dd2035a2ecbf9cda6305774fa44844bd662
   - kind: git
-    commit: 95b178197ae0556a9c4f7b6e6efab65376222b5d
+    commit: ca335180352b161e02f5c8807fcd17bf439721a2
     repo: https://github.com/gufo-rs/gufo.git
-    query:
-      rev: 95b178197ae0556a9c4f7b6e6efab65376222b5d
     name: gufo-common
     version: 0.2.0
   - kind: registry
@@ -423,17 +419,13 @@ sources:
     version: 0.1.3
     sha: f4066b9e0375d2b44da9e7f0282c2bd65136fe5e7d033259b2181f499e312e1b
   - kind: git
-    commit: 95b178197ae0556a9c4f7b6e6efab65376222b5d
+    commit: ca335180352b161e02f5c8807fcd17bf439721a2
     repo: https://github.com/gufo-rs/gufo.git
-    query:
-      rev: 95b178197ae0556a9c4f7b6e6efab65376222b5d
     name: gufo-exif
     version: 0.2.0
   - kind: git
-    commit: 95b178197ae0556a9c4f7b6e6efab65376222b5d
+    commit: ca335180352b161e02f5c8807fcd17bf439721a2
     repo: https://github.com/gufo-rs/gufo.git
-    query:
-      rev: 95b178197ae0556a9c4f7b6e6efab65376222b5d
     name: gufo-xmp
     version: 0.2.0
   - kind: registry
