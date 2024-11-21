@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:console.git
   track: main
-  ref: 47.0-41-gcdaa479f9148c1ad3a68d1cc8f539068530352ca
+  ref: 47.0-42-gc60c4d5458f28fa5b965fa50fa1db5479a1159b1
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
