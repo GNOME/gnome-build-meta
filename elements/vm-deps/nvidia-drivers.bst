@@ -239,8 +239,10 @@ config:
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
-    # FIXME: better way to get the version
-    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/555.52.04/" firmware/gsp_*.bin
+    # This assumes that the README format doesn't change, probably not the best detection method, but better than hardcoding the version
+    driver_version=$(cat README.txt | grep "Driver Version" | awk 'BEGIN {FS=": "}; {print $2};')
+
+    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/%{driver_version}/" firmware/gsp_*.bin
     
   - | # so symlinks
 
