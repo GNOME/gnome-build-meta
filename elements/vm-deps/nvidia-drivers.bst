@@ -242,7 +242,7 @@ config:
     # This assumes that the README format doesn't change, probably not the best detection method, but better than hardcoding the version
     driver_version=$(cat README.txt | grep "Driver Version" | awk 'BEGIN {FS=": "}; {print $2};')
 
-    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/%{driver_version}/" firmware/gsp_*.bin
+    install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/${driver_version}/" firmware/gsp_*.bin
     
   - | # so symlinks
 
