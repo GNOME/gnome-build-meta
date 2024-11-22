@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:upower/upower/-/archive/v1.90.0/upower-v1.90.0.tar.bz2
-  ref: eafa0a367dc0417390984eeb81e9d1a2b449999ba6ad20ed39bf270d0b4e5e77
+  url: freedesktop_files:upower/upower/-/archive/v1.90.6/upower-v1.90.6.tar.bz2
+  ref: aed4e42a21307512ad236ad58d7ee4e0196670c8524a168a0edccdc32964ea0c
 
 build-depends:
 - sdk/gtk-doc.bst
@@ -15,4 +15,5 @@ depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libusb.bst
+- freedesktop-sdk.bst:components/polkit-gobject.bst
 - freedesktop-sdk.bst:bootstrap-import.bst

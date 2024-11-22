@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tecnocode:malcontent/malcontent-0.12.0.tar.xz
-  ref: 8fe59e081a6cad3a15c1fa839d8c7126e32bb3a17a4b7b48e0b8c253ab6c6d41
+  url: tecnocode:malcontent/malcontent-0.13.0.tar.xz
+  ref: 5432b821739597724b2a07b4d274b0273eded091bc5901d92e8163e932224bba
 build-depends:
 - core-deps/glib-testing.bst
 - sdk/gobject-introspection.bst
