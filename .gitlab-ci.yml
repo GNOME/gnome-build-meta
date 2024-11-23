@@ -453,22 +453,17 @@ s3-image:
     artifacts: false
   script:
   - !reference [".arch_opt", "script"]
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build vm/image.bst iso/image.bst
-  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm/image.bst --directory image
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build vm-secure/image.bst iso/image.bst
   - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
   - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
-        aws --endpoint $AWS_ENDPOINT_URL s3 cp --acl public-read image/disk.img.xz \
-            s3://gnome-build-meta/tag/$CI_COMMIT_TAG/disk_$CI_COMMIT_TAG.img.xz
         aws --$AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
             "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_sysupdate_${CI_COMMIT_TAG}-${ARCH}.img.xz"
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso
     else
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read image/disk.img.xz \
-            s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
             "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_sysupdate_${CI_PIPELINE_ID}-${ARCH}.img.xz"
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read iso/installer.iso \
@@ -557,7 +552,6 @@ s3-image-static:
   script:
   - |
     echo nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso > latest-iso
-    echo nightly/$CI_PIPELINE_ID/disk_$CI_PIPELINE_ID.img.xz > latest-disk
 
     echo nightly/$CI_PIPELINE_ID/gnome_os_sysupdate_installer_$CI_PIPELINE_ID-x86_64.iso > latest-sysupdate-x86_64-iso
     echo nightly/$CI_PIPELINE_ID/disk_sysupdate_$CI_PIPELINE_ID-x86_64.img.xz > latest-sysupdate-x86_64-disk
@@ -587,7 +581,6 @@ s3-image-static-stable:
     # For 47.x tag use 47 branch
     branch=$(echo $CI_COMMIT_TAG | cut -d . -f 1)
 
-    echo tag/$CI_COMMIT_TAG/disk_$CI_COMMIT_TAG.img.xz > stable-$branch-disk
     echo tag/$CI_COMMIT_TAG/disk_sysupdate_$CI_COMMIT_TAG-x86_64.img.xz > stable-$branch-sysupdate-x86_64-disk
     echo tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso > stable-$branch-iso
   - |
