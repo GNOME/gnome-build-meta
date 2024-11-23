@@ -482,6 +482,32 @@ s3-image:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
+s3-image-aarch64:
+  extends: .aarch64
+  stage: deploy
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_TAG
+  script:
+  - !reference [".arch_opt", "script"]
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) "${ARCH_OPT[@]}" build vm-secure/image.bst
+  - ${BST} "${ARCH_OPT[@]}" artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
+
+  - |
+    if [ -n "$CI_COMMIT_TAG" ]; then
+        aws --$AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
+            "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}-${ARCH}.img.xz"
+    else
+        aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
+            "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}-${ARCH}.img.xz"
+    fi
+
+  - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
+
 openh264-x86_64:
   extends:
   - .x86_64
@@ -511,6 +537,10 @@ s3-image-static:
     artifacts: false
   - job: sysupdate-image-x86_64
     artifacts: false
+  - job: s3-image-aarch64
+    artifacts: false
+  - job: sysupdate-image-aarch64
+    artifacts: false
   - job: test-openqa-installer
     artifacts: false
   rules:
@@ -531,12 +561,14 @@ s3-image-static:
 
     echo nightly/$CI_PIPELINE_ID/gnome_os_sysupdate_installer_$CI_PIPELINE_ID-x86_64.iso > latest-sysupdate-x86_64-iso
     echo nightly/$CI_PIPELINE_ID/disk_sysupdate_$CI_PIPELINE_ID-x86_64.img.xz > latest-sysupdate-x86_64-disk
+    echo nightly/$CI_PIPELINE_ID/disk_sysupdate_$CI_PIPELINE_ID-aarch64.img.xz > latest-sysupdate-aarch64-disk
   - |
     aws $AWS_ENDPOINT_URL s3 cp --acl public-read latest-iso s3://gnome-build-meta/latest-iso
     aws $AWS_ENDPOINT_URL s3 cp --acl public-read latest-disk s3://gnome-build-meta/latest-disk
 
     aws $AWS_ENDPOINT_URL s3 cp --acl public-read latest-sysupdate-x86_64-iso s3://gnome-build-meta/latest-sysupdate-x86_64-iso
     aws $AWS_ENDPOINT_URL s3 cp --acl public-read latest-sysupdate-x86_64-disk s3://gnome-build-meta/latest-sysupdate-x86_64-disk
+    aws $AWS_ENDPOINT_URL s3 cp --acl public-read latest-sysupdate-aarch64-disk s3://gnome-build-meta/latest-sysupdate-aarch64-disk
 
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
 
