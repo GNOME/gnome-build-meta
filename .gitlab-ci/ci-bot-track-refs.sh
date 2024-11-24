@@ -4,7 +4,7 @@ set -eu
 
 # Setup ssh
 eval $(ssh-agent -s)
-if [ -z $BOT_SSH_PRIVATE_KEY ]; then
+if [ -z "$BOT_SSH_PRIVATE_KEY" ]; then
     echo "SSH KEY IS EMPTY"
     exit 1
 fi
@@ -25,8 +25,8 @@ ssh -Tv git@ssh.gitlab.gnome.org
 git config --global user.email "sysadmin@gnome.org"
 git config --global user.name "gnome-build-meta-bot"
 
-OPEN_MRS=$(gitlab project-merge-request list --project-id $CI_PROJECT_ID --author-id 121419 --state opened)
-echo $OPEN_MRS
+OPEN_MRS=$(gitlab project-merge-request list --project-id "$CI_PROJECT_ID" --author-id 121419 --state opened)
+echo "$OPEN_MRS"
 # If the bot has already opened a merge request, abort
 if [ -n "$OPEN_MRS" ]; then
   echo "There's already an update MR open by me!"
