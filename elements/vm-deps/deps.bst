@@ -34,6 +34,7 @@ depends:
 - vm-deps/nss-mdns.bst
 - vm-deps/opensc.bst
 - vm-deps/uresourced.bst
+- vm-deps/zram-generator.bst
 - core-deps/boltd.bst
 
 - vm-deps/ibus-anthy.bst
