@@ -35,7 +35,7 @@ fi
 
 # the default before_script overwrites the file, but we don't want it
 # as we are going to commit all the changes
-git checkout master include/image-version.yml
+git checkout origin/master include/image-version.yml
 
 python3 utils/update-refs.py --new-branch
 
