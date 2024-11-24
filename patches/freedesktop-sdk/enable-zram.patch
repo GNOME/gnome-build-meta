@@ -1,0 +1,18 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index b027bb56d..0c37502e3 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -1939,6 +1939,13 @@ fi
+ # ZSWAP
+ enable ZSWAP
+ 
++# ZRAM
++module ZRAM
++enable ZRAM_WRITEBACK
++enable ZRAM_MEMORY_TRACKING
++enable ZRAM_MULTI_COMP
++value_str ZRAM_DEF_COMP "zstd"
++
+ # Secure boot
+ enable SYSTEM_BLACKLIST_KEYRING
+ enable SYSTEM_TRUSTED_KEYRING
