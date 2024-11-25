@@ -50,9 +50,9 @@ fi
 
 if [ "${buildid+set}" = set ]; then
     mkdir -p "${STATE_DIR}/builds"
-    if ! [ -f "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz" ]; then
-        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_sysupdate_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz.tmp"
-        mv "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz"
+    if ! [ -f "${STATE_DIR}/builds/disk_${buildid}.img.xz" ]; then
+        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp"
+        mv "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_${buildid}.img.xz"
     fi
 fi
 
@@ -87,7 +87,7 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
     cleanup_dirs+=("${checkout}")
 
     if [ "${buildid+set}" = set ]; then
-        cp "${STATE_DIR}/builds/disk_sysupdate_${buildid}.img.xz" "${checkout}/disk.img.xz"
+        cp "${STATE_DIR}/builds/disk_${buildid}.img.xz" "${checkout}/disk.img.xz"
     else
         make -C files/boot-keys generate-keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
