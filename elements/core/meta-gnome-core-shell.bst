@@ -16,7 +16,6 @@ depends:
 - core/gnome-remote-desktop.bst
 - core/gnome-session.bst
 - core/gnome-settings-daemon.bst
-- core/gnome-shell-extensions.bst
 - core/gnome-shell.bst
 - core/gnome-tour.bst
 - core/gnome-user-docs.bst
