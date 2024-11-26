@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:sophie-h/glycin.git
   track: main
-  ref: 1.1.1-26-ge90be65d7603aeb2039fc715e85c34880d14e1a6
+  ref: 1.1.1-29-gf06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
 - kind: cargo2
   ref:
   - kind: registry
@@ -428,42 +428,42 @@ sources:
     version: 0.20.4
     sha: a4c674d2ff8478cf0ec29d2be730ed779fef54415a2fb4b565c52def62696462
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-common
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-exif
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-jpeg
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-png
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-tiff
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-webp
     version: 0.2.0
   - kind: git
-    commit: 959e7688a3bbf41acde2a4dacfd7b778b2d2bdc8
+    commit: 704168362f788ddf984920261a7171406bc7c1c0
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-xmp
     version: 0.2.0
