@@ -1,13 +1,9 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.47.1.tar.xz
-  ref: 2fa7ff54586d364ae648adc016807e9a096961566d59f5f8223f4f079a622d5f
+  url: webkitgtk:webkitgtk-2.47.2.tar.xz
+  ref: dd74466cae2c0dfd3427b13e7daa7bc69c1ae270c5c6313b39a06c7cbf97ad5d
 - kind: patch
   path: patches/webkitgtk/i686-build.patch
-- kind: patch
-  path: patches/webkitgtk/remove-layer.patch
-- kind: patch
-  path: patches/webkitgtk/fix-related-views.patch
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst

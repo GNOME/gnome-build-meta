@@ -1,45 +1,55 @@
-From bda228aea58acc5f578f4a35ab6ce6a5fa7d6edf Mon Sep 17 00:00:00 2001
+From b552924d69a1d865ab807621246625cdac3fc5c2 Mon Sep 17 00:00:00 2001
 From: Michael Catanzaro <mcatanzaro@redhat.com>
-Date: Wed, 30 Oct 2024 11:31:18 -0500
-Subject: [PATCH] REGRESSION(282580@main): Static assertions failing in
- CalculationTree.h and CSSCalcTree.h on i686
- https://bugs.webkit.org/show_bug.cgi?id=282288
+Date: Wed, 27 Nov 2024 17:56:03 -0600
+Subject: [PATCH] SVGToOTFFontConversion.cpp:169:29: error: use of overloaded
+ operator '[]' is ambiguous (with operand types 'ASCIILiteral' and 'int')
+ https://bugs.webkit.org/show_bug.cgi?id=283768
 
 Reviewed by NOBODY (OOPS!).
 
-The assertions incorrectly expect the size of the Child variants to be
-larger than they actually are. This should be fine because presumably
-the goal of the assertions is just to ensure the variants are small.
+Specify the type of the integer literal to be size_t to disambiguate
+which operator[] to use. I'm not actually sure where the built-in
+operator[]s are coming from, but that probably doesn't matter since we
+surely want to use the one defined in ASCIILiteral.
 
-* Source/WebCore/css/calc/CSSCalcTree.h:
-* Source/WebCore/platform/calc/CalculationTree.h:
+* Source/WebCore/svg/SVGToOTFFontConversion.cpp:
+(WebCore::SVGToOTFFontConverter::append32BitCode):
+(WebCore::SVGToOTFFontConverter::appendTable):
 ---
- Source/WebCore/css/calc/CSSCalcTree.h          | 2 +-
- Source/WebCore/platform/calc/CalculationTree.h | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ Source/WebCore/svg/SVGToOTFFontConversion.cpp | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/Source/WebCore/css/calc/CSSCalcTree.h b/Source/WebCore/css/calc/CSSCalcTree.h
-index 4e5cfc1f75a0f..ee04eb99521a4 100644
---- a/Source/WebCore/css/calc/CSSCalcTree.h
-+++ b/Source/WebCore/css/calc/CSSCalcTree.h
-@@ -768,7 +768,7 @@ struct AnchorSize {
+diff --git a/Source/WebCore/svg/SVGToOTFFontConversion.cpp b/Source/WebCore/svg/SVGToOTFFontConversion.cpp
+index 73bb3f90c3ec3..418067b1d93d7 100644
+--- a/Source/WebCore/svg/SVGToOTFFontConversion.cpp
++++ b/Source/WebCore/svg/SVGToOTFFontConversion.cpp
+@@ -166,10 +166,10 @@ class SVGToOTFFontConverter : public CanMakeWeakPtr<SVGToOTFFontConverter> {
  
- // MARK: Size assertions
+     void append32BitCode(ASCIILiteral code)
+     {
+-        m_result.append(code[0]);
+-        m_result.append(code[1]);
+-        m_result.append(code[2]);
+-        m_result.append(code[3]);
++        m_result.append(code[0UZ]);
++        m_result.append(code[1UZ]);
++        m_result.append(code[2UZ]);
++        m_result.append(code[3UZ]);
+     }
  
--static_assert(sizeof(Child) == 24);
-+static_assert(sizeof(Child) <= 24, "Child should stay small");
- 
- // MARK: Reverse mappings
- 
-diff --git a/Source/WebCore/platform/calc/CalculationTree.h b/Source/WebCore/platform/calc/CalculationTree.h
-index 78f5d528f7d79..eead8a47333ff 100644
---- a/Source/WebCore/platform/calc/CalculationTree.h
-+++ b/Source/WebCore/platform/calc/CalculationTree.h
-@@ -509,7 +509,7 @@ struct Blend {
-     bool operator==(const Blend&) const = default;
- };
- 
--static_assert(sizeof(Child) == 16);
-+static_assert(sizeof(Child) <= 16, "Child should stay small");
- 
- // MARK: Construction
+     void append16(uint16_t value)
+@@ -1505,10 +1505,10 @@ void SVGToOTFFontConverter::appendTable(ASCIILiteral identifier, FontAppendingFu
+         m_result.append(0);
+     ASSERT(isFourByteAligned(m_result.size()));
+     size_t directoryEntryOffset = headerSize + m_tablesAppendedCount * directoryEntrySize;
+-    m_result[directoryEntryOffset] = identifier[0];
+-    m_result[directoryEntryOffset + 1] = identifier[1];
+-    m_result[directoryEntryOffset + 2] = identifier[2];
+-    m_result[directoryEntryOffset + 3] = identifier[3];
++    m_result[directoryEntryOffset] = identifier[0UZ];
++    m_result[directoryEntryOffset + 1] = identifier[1UZ];
++    m_result[directoryEntryOffset + 2] = identifier[2UZ];
++    m_result[directoryEntryOffset + 3] = identifier[3UZ];
+     overwrite32(directoryEntryOffset + 4, calculateChecksum(offset, m_result.size()));
+     overwrite32(directoryEntryOffset + 8, offset);
+     overwrite32(directoryEntryOffset + 12, unpaddedSize);
