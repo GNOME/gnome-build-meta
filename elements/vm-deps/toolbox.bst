@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:containers/toolbox/releases/download/0.0.99.5/toolbox-0.0.99.5-vendored.tar.xz
-  ref: fb716c1a9d587c931e33a67cb1e7dce890d850dff6f863014c7413804169d917
+  url: github_files:containers/toolbox/releases/download/0.1.1/toolbox-0.1.1-vendored.tar.xz
+  ref: ce9b024ef7ca98053359c70ed309eb263bde4df409a8488dc3284dfe3419bdae
 - kind: patch_queue
   path: patches/toolbox/
 
@@ -16,6 +16,7 @@ build-depends:
 - freedesktop-sdk.bst:components/strace.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - vm-deps/fake-toolbox-env.bst
+- vm-deps/fish.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst
