@@ -13,5 +13,5 @@ config:
 
 sources:
 - kind: tar
-  url: github_files:89luca89/distrobox/archive/refs/tags/1.5.0.2.tar.gz
-  ref: 84262770026af306d1e263258445d91790bdedecf30c813316a45adeb2a67de6
+  url: github_files:89luca89/distrobox/archive/refs/tags/1.8.0.tar.gz
+  ref: 72d8d825b6aad63e03e0b92376e6ead9c053c1e676acab3c7eaac9be2929d0a2
