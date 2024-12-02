@@ -707,7 +707,7 @@ update_refs:
   - gnome-build-meta
   variables:
     SSH_SERVER_HOSTKEYS: "ssh.gitlab.gnome.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHG6b3deoYMPwKEu9Sj+y6MBHYYUKQiAnta/go3aNv7R"
-  timeout: '45m'
+  timeout: '90m'
   rules:
     - !reference [".stage-only-rules", "rules"]
   script:
