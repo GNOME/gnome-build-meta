@@ -711,9 +711,11 @@ update_refs:
   rules:
     - !reference [".stage-only-rules", "rules"]
   script:
-    - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
+  # Fetch the sources and push them into the source cache
+  - bst source push
   after_script:
-    - rm -rf ~/.ssh
+  - rm -rf ~/.ssh
 
 pages:
   stage: 'reports'
