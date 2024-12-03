@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:snapcore/snapd-glib/releases/download/1.64/snapd-glib-1.64.tar.xz
-  ref: f1302d20fddbd7161b552fab9efa0d46b942e5c67c80b9a6dbe40e1d14ed1887
+  url: github_files:canonical/snapd-glib/releases/download/1.66/snapd-glib-1.66.tar.xz
+  ref: e197b2e8ea7b55f9ee4cc619b262d4457b915cc1e83fc77e3e0ca4115523337c
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -16,5 +16,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Dqt-bindings=false
+    -Dqt5=false
+    -Dqt6=false
     -Dvala-bindings=false
