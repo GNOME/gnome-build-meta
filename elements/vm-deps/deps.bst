@@ -1,10 +1,5 @@
 kind: stack
 
-(?):
-- (not x86_64_v3) and (arch == "x86_64"):
-    (!): |
-        "You need to enable x86_64_v3"
-
 depends:
 - core/meta-gnome-core-apps.bst
 - core/meta-gnome-core-os-services.bst
