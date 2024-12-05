@@ -713,7 +713,7 @@ update_refs:
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache
-  - bst source push
+  - ${BST} source push
   after_script:
   - rm -rf ~/.ssh
 
