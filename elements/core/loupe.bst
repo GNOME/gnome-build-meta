@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:loupe/47/loupe-47.1.tar.xz
-  ref: f603569a94e17301f2dac34b02c12c6d8e3ca6aeb9be6ab5b983393f955ed87a
+  url: gnome_downloads:loupe/47/loupe-47.2.tar.xz
+  ref: 6e046efe4f7ae57ee2748d52d1d07356c7449d204a3d31d0b42367a801974a15
 - kind: cargo2
   ref:
   - kind: registry
@@ -260,40 +260,40 @@ sources:
     sha: eac8f7d7865dcb88bd4373ab671c8cf4508703796caa2b1985a9ca867b3fcb78
   - kind: registry
     name: futures-core
-    version: 0.3.30
-    sha: dfc6580bb841c5a68e9ef15c77ccc837b40a7504914d52e47b8b0e9bbda25a1d
+    version: 0.3.31
+    sha: 05f29059c0c2090612e8d742178b0580d2dc940c837851ad723096f87af6663e
   - kind: registry
     name: futures-executor
     version: 0.3.30
     sha: a576fc72ae164fca6b9db127eaa9a9dda0d61316034f33a0a0d4eda41f02b01d
   - kind: registry
     name: futures-io
-    version: 0.3.30
-    sha: a44623e20b9681a318efdd71c299b6b222ed6f231972bfe2f224ebad6311f0c1
+    version: 0.3.31
+    sha: 9e5c1b78ca4aae1ac06c48a526a655760685149f0d465d21f37abfe57ce075c6
   - kind: registry
     name: futures-lite
     version: 2.3.0
     sha: 52527eb5074e35e9339c6b4e8d12600c7128b68fb25dcb9fa9dec18f7c25f3a5
   - kind: registry
     name: futures-macro
-    version: 0.3.30
-    sha: 87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac
+    version: 0.3.31
+    sha: 162ee34ebcb7c64a8abebc059ce0fee27c2262618d7b60ed8faf72fef13c3650
   - kind: registry
     name: futures-sink
-    version: 0.3.30
-    sha: 9fb8e00e87438d937621c1c6269e53f536c14d3fbd6a042bb24879e57d474fb5
+    version: 0.3.31
+    sha: e575fab7d1e0dcb8d0c7bcf9a63ee213816ab51902e6d244a95819acacf1d4f7
   - kind: registry
     name: futures-task
-    version: 0.3.30
-    sha: 38d84fa142264698cdce1a9f9172cf383a0c82de1bddcf3092901442c4097004
+    version: 0.3.31
+    sha: f90f7dce0722e95104fcb095585910c0977252f286e354b5e3bd38902cd99988
   - kind: registry
     name: futures-timer
     version: 3.0.3
     sha: f288b0a4f20f9a56b5d1da57e2227c661b7b16168e2f72365f57b63326e29b24
   - kind: registry
     name: futures-util
-    version: 0.3.30
-    sha: 3d6401deb83407ab3da39eba7e33987a73c3df0c82b4bb5813ee871c19c41d48
+    version: 0.3.31
+    sha: 9fa08315bb612088cc391249efdc3bc77536f16c91f6cf495e6fbe85b20a4a81
   - kind: registry
     name: gdk-pixbuf
     version: 0.20.0
@@ -364,12 +364,12 @@ sources:
     sha: 4958c26e5a01c9af00dea669a97369eccbec29a8e6d125c24ea2d85ee7467b60
   - kind: registry
     name: glycin
-    version: 2.0.0-beta
-    sha: 8ad0e7b971597fd206fbf0a6fb37608fd7983705ef8adfb8781fcbc155ef8f83
+    version: 2.0.2
+    sha: 8c4206f0d933268b06a8809c496d7f7d7b0626bb33aa97a4a209e795913157c6
   - kind: registry
     name: glycin-utils
-    version: 2.0.0-beta
-    sha: d32e5bd3f73d2df60927b5eca9cdc9aee064dc7df8720c8bfb73f815f6a17d97
+    version: 2.0.2
+    sha: 2d4ea3c2b8d5aa43d87d60bb7f944c58aaade41d870e4258e69e204bbcd73a09
   - kind: registry
     name: gobject-sys
     version: 0.20.0

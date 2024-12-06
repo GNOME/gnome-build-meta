@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:localsearch/3.8/localsearch-3.8.0.tar.xz
-  ref: e4e83a1daebb5263915b45b719731e3f7041d959cbd637ea29afbe910c92bbf9
+  url: gnome_downloads:localsearch/3.8/localsearch-3.8.1.tar.xz
+  ref: a7b24a4f07805df7543a4dd023684fcde5ee699ca00eb5b09123a049d3aeccd8
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

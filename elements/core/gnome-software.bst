@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/47/gnome-software-47.1.tar.xz
-  ref: 93ca500366316745594ef05fcad1c05cf43f02ef8f66080c17f7ebb8ca3f34bf
+  url: gnome_downloads:gnome-software/47/gnome-software-47.2.tar.xz
+  ref: 112338f8a98e7e5125de3f57229873534215b77eeef37d3fd4262f02151c7cea
 build-depends:
 - core-deps/eos-updater.bst
 - sdk/gtk-doc.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/1.1/glycin-1.1.1.tar.xz
-  ref: 560ee42167c1ed22826618e61d83e49140db5bf47a65a9ba8ece2cd73d2a4aa8
+  url: gnome_downloads:glycin/1.1/glycin-1.1.2.tar.xz
+  ref: 41c72be1ec9ba55da90c82fc18573b742dff582b09afc37b4565c47e99cc8ff4
 - kind: cargo2
   ref:
   - kind: registry
@@ -75,10 +75,6 @@ sources:
     version: 0.3.73
     sha: 5cc23269a4f8976d0a4d2e7109211a419fe30e8d88d677cd60b6bc79c5732e0a
   - kind: registry
-    name: bindgen
-    version: 0.69.4
-    sha: a00dc851838a2120612785d195287475a3ac45514741da670b735818822129a0
-  - kind: registry
     name: bit_field
     version: 0.10.2
     sha: dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61
@@ -127,10 +123,6 @@ sources:
     version: 1.1.7
     sha: 26a5c3fd7bfa1ce3897a3a3501d362b2d87b7f2583ebcb4a949ec25911025cbc
   - kind: registry
-    name: cexpr
-    version: 0.6.0
-    sha: 6fac387a98bb7c37292057cffc56d62ecb629900026402633ae9160df93a8766
-  - kind: registry
     name: cfg-expr
     version: 0.16.0
     sha: 345c78335be0624ed29012dc10c49102196c6882c12dde65d9f35b02da2aada8
@@ -142,10 +134,6 @@ sources:
     name: cfg_aliases
     version: 0.2.1
     sha: 613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724
-  - kind: registry
-    name: clang-sys
-    version: 1.8.1
-    sha: 0b023947811758c97c59bf9d1c188fd619ad4718dcaa767947df1cadb14f39f4
   - kind: registry
     name: color_quant
     version: 1.1.0
@@ -218,10 +206,6 @@ sources:
     name: dunce
     version: 1.0.4
     sha: 56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b
-  - kind: registry
-    name: either
-    version: 1.13.0
-    sha: 60b1af1c220855b6ceac025d3f6ecdd2b7c4894bfe9cd9bda4fbb4bc7c0d4cf0
   - kind: registry
     name: endi
     version: 1.1.0
@@ -395,17 +379,13 @@ sources:
     version: 0.20.0
     sha: 4958c26e5a01c9af00dea669a97369eccbec29a8e6d125c24ea2d85ee7467b60
   - kind: registry
-    name: glob
-    version: 0.3.1
-    sha: d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b
-  - kind: registry
     name: glycin
-    version: 2.0.1
-    sha: 99ceb553ed23c012e4e16ba9212b495eb458ad831eb5f892b6b44406f0966286
+    version: 2.0.2
+    sha: 8c4206f0d933268b06a8809c496d7f7d7b0626bb33aa97a4a209e795913157c6
   - kind: registry
     name: glycin-utils
-    version: 2.0.0
-    sha: 7c6132ef2817b05110f3b1f98c53dbddaac74ea8366472354ab486d02442f08f
+    version: 2.0.2
+    sha: 2d4ea3c2b8d5aa43d87d60bb7f944c58aaade41d870e4258e69e204bbcd73a09
   - kind: registry
     name: gobject-sys
     version: 0.20.0
@@ -447,10 +427,6 @@ sources:
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
   - kind: registry
-    name: home
-    version: 0.5.9
-    sha: e3d1354bf6b7235cb4a0576c2619fd4ed18183f689b12b006a0ee7329eeff9a5
-  - kind: registry
     name: humantime
     version: 2.1.0
     sha: 9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4
@@ -470,10 +446,6 @@ sources:
     name: indexmap
     version: 2.3.0
     sha: de3fc2e30ba82dd1b3911c8de1ffc143c74a914a14e99514d7637e3099df5ea0
-  - kind: registry
-    name: itertools
-    version: 0.12.1
-    sha: ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569
   - kind: registry
     name: jobserver
     version: 0.1.32
@@ -498,10 +470,6 @@ sources:
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
-  - kind: registry
-    name: lazycell
-    version: 1.3.0
-    sha: 830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55
   - kind: registry
     name: lcms2
     version: 6.1.0
@@ -579,10 +547,6 @@ sources:
     version: 0.9.1
     sha: 488016bfae457b036d996092f6cb448677611ce4449e970ceaf42695203f218a
   - kind: registry
-    name: minimal-lexical
-    version: 0.2.1
-    sha: 68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a
-  - kind: registry
     name: miniz_oxide
     version: 0.7.4
     sha: b8a240ddb74feaf34a79a7add65a741f3167852fba007066dcac1ca548d89c08
@@ -598,10 +562,6 @@ sources:
     name: nix
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
-  - kind: registry
-    name: nom
-    version: 7.1.3
-    sha: d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a
   - kind: registry
     name: nu-ansi-term
     version: 0.46.0
@@ -671,10 +631,6 @@ sources:
     version: 0.2.20
     sha: 77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04
   - kind: registry
-    name: prettyplease
-    version: 0.2.20
-    sha: 5f12335488a2f3b0a83b14edad48dca9879ce89b2edd10e80237e4e852dd645e
-  - kind: registry
     name: proc-macro-crate
     version: 3.2.0
     sha: 8ecf48c7ca261d60b74ab1a7b20da18bede46776b2e55535cb958eb595c5fa7b
@@ -743,10 +699,6 @@ sources:
     version: 0.1.24
     sha: 719b953e2095829ee67db738b3bfa9fa368c94900df327b3f07fe6e794d2fe1f
   - kind: registry
-    name: rustc-hash
-    version: 1.1.0
-    sha: 08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2
-  - kind: registry
     name: rustix
     version: 0.38.34
     sha: 70dc5ec042f7a43c4a73241207cecc9873a06d45debb38b329f8541d85c2730f
@@ -786,10 +738,6 @@ sources:
     name: sharded-slab
     version: 0.1.7
     sha: f40ca3c46823713e0d4209592e8d6e826aa57e928f09752619fc696c499637f6
-  - kind: registry
-    name: shlex
-    version: 1.3.0
-    sha: 0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64
   - kind: registry
     name: signal-hook-registry
     version: 1.4.2
@@ -934,10 +882,6 @@ sources:
     name: weezl
     version: 0.1.8
     sha: 53a85b86a771b1c87058196170769dd264f66c0782acf1ae6cc51bfd64b39082
-  - kind: registry
-    name: which
-    version: 4.4.2
-    sha: 87ba24419a2078cd2b0f2ede2691b6c66d8e47836da3b6db8265ebad47afbfc7
   - kind: registry
     name: winapi
     version: 0.3.9
