@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:pango.git
   track: main
-  ref: 1.55.0-18-gc04d790043d0bfba5b76115f7081f00d25b4b69e
+  ref: 1.55.0-20-gdedb80e1209753c11f313f9dbc2825a1122865e8
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
