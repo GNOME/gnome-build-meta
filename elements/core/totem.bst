@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:totem.git
   track: master
-  ref: 43.0-267-g4abec9d7965ac186ca60ebfb5b40171152a21f5e
+  ref: 43.0-289-g3f5e7a479c6df963e411e8dd4408f3845586c9a2
 - kind: git_module
   url: gnome:libgd.git
   path: subprojects/libgd
@@ -21,7 +21,7 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/libpeas-1.bst
+- core-deps/libpeas.bst
 - core-deps/libportal.bst
 - core-deps/totem-pl-parser.bst
 - core/gnome-desktop.bst
