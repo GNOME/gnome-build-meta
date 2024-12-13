@@ -5,6 +5,8 @@ sources:
   url: mozilla:firefox/releases/128.1.0esr/source/firefox-128.1.0esr.source.tar.xz
   base-dir: 'firefox-128.1.0'
   ref: ccdab622a395622abc6d80040a11715ad81a614f601db6672c05b98ac91fd9b5
+- kind: patch
+  path: patches/mozjs/python-compat.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/llvm.bst
