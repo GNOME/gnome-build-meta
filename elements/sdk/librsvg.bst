@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.59.2-50-g3500f5464c83fb7348f53d9e67eaeff3d435a395
+  ref: 2.59.2-52-g80a6ce5cc639aa1b00b304d0607601d96bad0808
 - kind: cargo2
   ref:
   - kind: registry
@@ -1261,8 +1261,8 @@ sources:
     sha: 3f423a2c17029964870cfaabb1f13dfab7d092a62a29a89264f4d36990ca414a
   - kind: registry
     name: zune-jpeg
-    version: 0.4.13
-    sha: 16099418600b4d8f028622f73ff6e3deaabdff330fb9a2a131dea781ee8b0768
+    version: 0.4.14
+    sha: 99a5bab8d7dedf81405c4bb1f2b83ea057643d9cb28778cea9eecddeedd2e028
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
