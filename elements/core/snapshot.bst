@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 47.0.1-32-g67cdd2c3d6dd02a47bdbe48f11b65a9791b60285
+  ref: 48.alpha-0-g00c755710e4cf6469e8990a4e82ed7c7159b23f6
 - kind: cargo2
   ref:
   - kind: registry
@@ -117,8 +117,8 @@ sources:
     sha: 428290f914b9b86089f60f5d8a9f6e440508e1bcff23b25afd51502b0a2da88f
   - kind: registry
     name: cc
-    version: 1.2.2
-    sha: f34d93e62b03caf570cccc334cbc6c2fceca82f39211051345108adcba3eebdc
+    version: 1.2.4
+    sha: 9157bbaa6b165880c27a4293a474c91cdcf265cc68cc829bf10be0964a391caf
   - kind: registry
     name: cfg-expr
     version: 0.17.2
@@ -205,8 +205,8 @@ sources:
     sha: 3c3e4e0dd3673c1139bf041f3008816d9cf2946bbfac2945c09e523b8d7b05b2
   - kind: registry
     name: fastrand
-    version: 2.2.0
-    sha: 486f806e73c5707928240ddc295403b1b93c96a02038563881c4a2fd84b81ac4
+    version: 2.3.0
+    sha: 37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be
   - kind: registry
     name: field-offset
     version: 0.3.6
@@ -525,8 +525,8 @@ sources:
     sha: b099a223560118d4d4fa04b6d23f3ea5b7171fe1d83dfb7e6b45b54cdfc83af9
   - kind: registry
     name: libc
-    version: 0.2.167
-    sha: 09d6582e104315a817dff97f75133544b2e094ee22447d2acf4a74e189ba06fc
+    version: 0.2.168
+    sha: 5aaeb2981e0606ca11d79718f8bb01164f1d6ed75080182d3abf017e6d244b6d
   - kind: registry
     name: libloading
     version: 0.8.6
@@ -721,20 +721,20 @@ sources:
     sha: cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92
   - kind: registry
     name: rustix
-    version: 0.38.41
-    sha: d7f649912bc1495e167a6edee79151c84b1bad49748cb4f1f1167f459f6224f6
+    version: 0.38.42
+    sha: f93dc38ecbab2eb790ff964bb77fa94faf256fd3e73285fd7ba0903b76bedb85
   - kind: registry
     name: semver
-    version: 1.0.23
-    sha: 61697e0a1c7e512e84a621326239844a24d8207b4669b41bc18b32ea5cbf988b
+    version: 1.0.24
+    sha: 3cb6eb87a131f756572d7fb904f6e7b68633f09cca868c5df1c4b8d1a694bbba
   - kind: registry
     name: serde
-    version: 1.0.215
-    sha: 6513c1ad0b11a9376da888e3e0baa0077f1aed55c17f50e7b2397136129fb88f
+    version: 1.0.216
+    sha: 0b9781016e935a97e8beecf0c933758c97a5520d32930e460142b4cd80c6338e
   - kind: registry
     name: serde_derive
-    version: 1.0.215
-    sha: ad1e866f866923f252f05c889987993144fb74e722403468a4ebd70c3cd756c0
+    version: 1.0.216
+    sha: 46f859dbbf73865c6627ed570e78961cd3ac92407a2d117204c49232485da55e
   - kind: registry
     name: serde_repr
     version: 0.1.19
