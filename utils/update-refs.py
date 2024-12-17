@@ -75,6 +75,6 @@ if args.new_branch:
         "update-bot/" + now.strftime("%F-%H-%M"),
     )
 
-    git("add", "--update", ".")
+    git("add", "--update", "elements")
 
     git("commit", "--message", "Update element refs")

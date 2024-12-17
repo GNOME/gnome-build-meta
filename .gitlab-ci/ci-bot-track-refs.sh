@@ -36,10 +36,6 @@ fi
 # Append the sourcedir into the bst config so we don't clone all the sources again
 echo -e "\nsourcedir: /cache/buildstream/sources" >> "${CI_PROJECT_DIR}/.gitlab-ci/buildstream.conf"
 
-# the default before_script overwrites the file, but we don't want it
-# as we are going to commit all the changes
-git checkout origin/master include/image-version.yml
-
 python3 utils/update-refs.py --new-branch
 
 git show
