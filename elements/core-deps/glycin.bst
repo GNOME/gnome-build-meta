@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome_gitlab:sophie-h/glycin.git
+  url: gnome:glycin.git
   track: main
-  ref: 1.1.1-29-gf06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
+  ref: 1.1.1-32-gcdfa5b75d3b7b571196f64c501c6020299b6e732
 - kind: cargo2
   ref:
   - kind: registry
