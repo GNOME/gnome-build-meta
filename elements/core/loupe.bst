@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.0-79-gcd6e0d4f69821fb1bdc6617089815919e46cc4c8
+  ref: 47.0-80-g7253be890596db585d3820c34882811b8e4ca61e
 - kind: cargo2
 
   ref:
@@ -362,14 +362,14 @@ sources:
     sha: 3d0b1827e8621fc42c0dfb228e5d57ff6a71f9699e666ece8113f979ad87c2de
   - kind: git
     commit: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
-    repo: https://gitlab.gnome.org/sophie-h/glycin.git
+    repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
       rev: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
     name: glycin
     version: 2.0.1
   - kind: git
     commit: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
-    repo: https://gitlab.gnome.org/sophie-h/glycin.git
+    repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
       rev: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
     name: glycin-utils
