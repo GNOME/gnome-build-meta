@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-software.git
-  track: main
-  ref: 47.0-210-gcb81015e3b1afd991a89ed3634d238c0c8d1c380
+  track: refs/merge-requests/2004/merge
+  ref: 47.0-216-g42c2f479ee449763022ab125429e9e6037540d96
 - kind: git_module
   url: gnome_gitlab:mwleeds/gnome-pwa-list.git
   path: subprojects/gnome-pwa-list
@@ -50,3 +50,4 @@ variables:
     -Deos_updater=true
     -Dpackagekit=false
     -Dsnap=true
+    -Dsystemd-sysupdate=true
