@@ -1,0 +1,14 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index bb7f0badd..69447fa55 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -37,6 +37,9 @@ case "$arch" in
+         module DRM_PANEL_HIMAX_HX8394
+ 
+         module LEDS_SGM3140
++
++        # Camera support
++        enable VIDEO_CAMERA_SENSOR
+     ;;
+ esac
+ 
