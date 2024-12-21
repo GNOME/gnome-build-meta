@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.59.2-58-g3289f997cafc234a859afb6a4fbb207248e837a8
+  ref: 2.59.2-60-ga8bf99c7c085635f2f067bf6ef412c7e306e52d4
 - kind: cargo2
   ref:
   - kind: registry
@@ -397,8 +397,8 @@ sources:
     sha: 8826d2a9ad56ce3de1f04bea0bea0daff6f5f1c913cc834996cfea1f9401361c
   - kind: registry
     name: gio-sys
-    version: 0.20.6
-    sha: b965df6f3534c84816b5c1a7d9efcb5671ae790822de5abe8e299797039529bc
+    version: 0.20.8
+    sha: 8446d9b475730ebef81802c1738d972db42fde1c5a36a627ebc4d665fc87db04
   - kind: registry
     name: glib
     version: 0.20.6

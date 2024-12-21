@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.1.1-34-g23e5efaf29606daf88df34f3e09cb37e5168b56f
+  ref: 1.1.1-38-g583b6e128aa2bb9294a06a4924a4baff31cc2d7e
 - kind: cargo2
   ref:
   - kind: registry
@@ -377,8 +377,8 @@ sources:
     sha: 687343b059b91df5f3fbd87b4307038fa9e647fcc0461d0d3f93e94fee20bf3d
   - kind: registry
     name: gdk4
-    version: 0.9.4
-    sha: 75933c4a86e8a2428814d367e22c733304fdfabc87f415750fd2f55409b6ee48
+    version: 0.9.5
+    sha: d0196720118f880f71fe7da971eff58cc43a89c9cf73f46076b7cb1e60889b15
   - kind: registry
     name: gdk4-sys
     version: 0.9.4
