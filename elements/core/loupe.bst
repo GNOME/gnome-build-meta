@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 47.0-80-g7253be890596db585d3820c34882811b8e4ca61e
+  ref: 47.0-110-g4a09750864e20193f4903bed1270b035c034b6fd
 - kind: cargo2
 
   ref:
@@ -298,8 +298,8 @@ sources:
     sha: 687343b059b91df5f3fbd87b4307038fa9e647fcc0461d0d3f93e94fee20bf3d
   - kind: registry
     name: gdk4
-    version: 0.9.4
-    sha: 75933c4a86e8a2428814d367e22c733304fdfabc87f415750fd2f55409b6ee48
+    version: 0.9.5
+    sha: d0196720118f880f71fe7da971eff58cc43a89c9cf73f46076b7cb1e60889b15
   - kind: registry
     name: gdk4-sys
     version: 0.9.4
@@ -361,17 +361,17 @@ sources:
     version: 0.20.6
     sha: 3d0b1827e8621fc42c0dfb228e5d57ff6a71f9699e666ece8113f979ad87c2de
   - kind: git
-    commit: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
+    commit: a7922d4435d3d8db392b33f4733ea164bc78c77f
     repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
-      rev: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
+      rev: a7922d4435d3d8db392b33f4733ea164bc78c77f
     name: glycin
     version: 2.0.1
   - kind: git
-    commit: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
+    commit: a7922d4435d3d8db392b33f4733ea164bc78c77f
     repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
-      rev: f06d5f0bf0baf2de74f5eca47c9d5280d2a8911c
+      rev: a7922d4435d3d8db392b33f4733ea164bc78c77f
     name: glycin-utils
     version: 3.0.0
   - kind: registry
@@ -396,8 +396,8 @@ sources:
     sha: 0877a9d485bd9ba5262b0c9bce39e63750e525e3aebeb359d271ca1f0e111f1d
   - kind: registry
     name: gtk4
-    version: 0.9.4
-    sha: 9376d14d7e33486c54823a42bef296e882b9f25cb4c52b52f4d1d57bbadb5b6d
+    version: 0.9.5
+    sha: b697ff938136625f6acf75f01951220f47a45adcf0060ee55b4671cf734dac44
   - kind: registry
     name: gtk4-macros
     version: 0.9.3
@@ -412,12 +412,12 @@ sources:
     name: gufo
     version: 0.2.0
   - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
+    commit: 63033763825c4b68cd631aa7d0c9d4ff6680752e
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-common
     version: 0.2.0
   - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
+    commit: 63033763825c4b68cd631aa7d0c9d4ff6680752e
     repo: https://github.com/gufo-rs/gufo.git
     name: gufo-exif
     version: 0.2.0
