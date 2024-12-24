@@ -820,6 +820,7 @@ sources:
     name: zvariant_utils
     version: 2.1.0
     sha: c51bcff7cc3dbb5055396bcf774748c3dab426b4b8659046963523cee4808340
+
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -830,16 +831,17 @@ build-depends:
 
 depends:
 - core-deps/libgxps.bst
+- core-deps/libspelling.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/libsecret.bst
-- freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+- freedesktop-sdk.bst:components/poppler.bst
 
 variables:
   meson-local: >-
