@@ -4,9 +4,9 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 47.0-312-g32d916c308ca732888ef4a195871feac9354808d
+  ref: 47.0-320-g301ac0e869e8c5684f0dc5d59d9c1f5969f4212f
 - kind: cargo2
-  cargo-lock: shell-rs/Cargo.lock
+  cargo-lock: shell/Cargo.lock
   ref:
   - kind: registry
     name: aes
