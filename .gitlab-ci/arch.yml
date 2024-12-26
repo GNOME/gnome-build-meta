@@ -8,6 +8,15 @@
   - gnome-build-meta
   variables:
     ARCH: x86_64
+    ARCH_OPT: -o arch x86_64
+
+.x86_64_v3:
+  tags:
+  - x86_64
+  - gnome-build-meta
+  variables:
+    ARCH: x86_64_v3
+    ARCH_OPT: -o arch x86_64 -o x86_64_v3 true
 
 .i686:
   tags:
@@ -15,6 +24,7 @@
   - gnome-build-meta
   variables:
     ARCH: i686
+    ARCH_OPT: -o arch i686
 
 .aarch64:
   tags:
@@ -22,6 +32,7 @@
   - gnome-build-meta
   variables:
     ARCH: aarch64
+    ARCH_OPT: -o arch aarch64
 
 .arch-indep:
   tags:
