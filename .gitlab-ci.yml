@@ -333,7 +333,7 @@ deploy-oci:
   rules:
     - !reference [.deploy-rules, rules]
   needs:
-  - job: 'build-x86_64'
+  - job: 'build-x86_64_v3'
     artifacts: false
   # Sometimes podman push will timeout
   retry: 2
