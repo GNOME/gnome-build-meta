@@ -20,4 +20,4 @@ depends:
 
 - vm-deps/spice-vdagent.bst
 
-- vm/os-release-user.bst
+- vm-secure/os-release-user.bst

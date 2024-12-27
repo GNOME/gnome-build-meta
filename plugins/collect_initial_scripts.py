@@ -9,7 +9,7 @@ file permissions another way.
 
 This is where collect_initial_scripts works around the issue. It provides a
 way to have integration scripts that we execute when we pack into an image
-(filesystem, tar, ostree, etc.)
+(filesystem, tar, ddi, etc.)
 """
 
 import os

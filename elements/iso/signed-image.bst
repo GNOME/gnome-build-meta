@@ -5,21 +5,17 @@ build-depends:
 - filename: vm-secure/image.bst
   config:
     location: /sysupdate
-- filename: vm/image.bst  
-  config:
-    location: /ostree
 
 variables:
   install-root: /images
   # This name format is required by eos-installer
-  basename: GNOMEOS-%{branch}-%{arch}-%{arch}.%{ostree-layer}
+  basename: GNOMEOS-%{branch}-%{arch}-%{arch}.user
 
 environment:
   GNUPGHOME: /tmp/gpg
 
 config:
   commands:
-  - mv /ostree/disk.img.xz "/images/%{basename}.ostree.img.xz"
   - mv /sysupdate/disk.img.xz "/images/%{basename}.sysupdate.img.xz"
 
   - mkdir "${GNUPGHOME}"
@@ -42,7 +38,7 @@ config:
     echo "default-key ${default_key}" >${GNUPGHOME}/gpg.conf
 
   - |
-    for image in %{basename}.ostree.img.xz %{basename}.sysupdate.img.xz; do
+    for image in %{basename}.sysupdate.img.xz; do
       gpg --batch --yes -sbao \
         "/images/${image}.asc" \
         "/images/${image}"

@@ -11,26 +11,7 @@ conf_data = configuration_data({
   'SDK_BRANCH': branch_name
 })
 
-if get_option('mode') == 'ostree'
-    conf_data.set('ISSUE_NAME', 'GNOME OS')
-    conf_data.set('VARIANT_ID', get_option('variant'))
-    conf_data.set('IMAGE_VERSION', get_option('image-version'))
-    conf_data.set('GNOMEOS_COMMIT', vcs_tag)
-    if get_option('variant') == 'devel'
-      conf_data.set('VARIANT', 'Development')
-      conf_data.set('FULL_NAME', 'GNOME OS Development')
-    elif get_option('variant') == 'user'
-      conf_data.set('VARIANT', 'User')
-      conf_data.set('FULL_NAME', 'GNOME OS')
-    endif
-
-    configure_file(
-        input : 'os-release.bootable.in',
-        output : 'os-release',
-        configuration : conf_data,
-        install_dir : get_option('prefix') / 'lib'
-    )
-elif get_option('mode') == 'sysupdate'
+if get_option('mode') == 'sysupdate'
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('VARIANT_ID', get_option('variant'))
     conf_data.set('IMAGE_VERSION', get_option('image-version'))

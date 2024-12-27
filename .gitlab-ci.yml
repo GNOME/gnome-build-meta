@@ -132,32 +132,6 @@ default:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
-.ostree-template:
-  rules:
-    - !reference [.deploy-rules, rules]
-  stage: deploy
-  script:
-  - |
-    export FLAT_MANAGER_SERVER=https://flat-manager-ostree.gnome.org/
-    export FLAT_MANAGER_REPO=gnomeos
-    export REPO_TOKEN=$OSTREE_REPO_TOKEN
-
-  - ostree init --repo repo/ --mode archive
-
-  - ${BST} ${ARCH_OPT} artifact pull vm/repo.bst vm/repo-devel.bst
-
-  - |
-    for element in vm/repo.bst vm/repo-devel.bst; do
-        ${BST} ${ARCH_OPT} artifact checkout --hardlinks $element --directory checkout-repo/
-        ostree pull-local --repo=repo/ checkout-repo/
-        rm -rf checkout-repo/
-    done
-
-  - BUILD_ID=$(flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
-  - flat-manager-client purge $BUILD_ID
-  - exit $result
-
 .test-phone-image-template:
   extends:
   - .aarch64
@@ -346,26 +320,6 @@ deploy-oci:
     if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
         ./utils/publish-oci-quay.sh
     fi
-
-vm-image-aarch64:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: vm/image.bst
-
-vm-image-x86_64:
-  extends:
-  - .manual-image-template
-  - .x86_64_v3
-  needs:
-  - job: 'build-x86_64_v3'
-    artifacts: false
-  variables:
-    IMAGE: vm/image.bst
 
 sysupdate-image-x86_64:
   extends:
@@ -574,15 +528,6 @@ s3-image-static-stable:
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
-ostree-x86_64:
-  extends:
-  - .ostree-template
-  - .x86_64_v3
-  needs:
-  - job: 'build-x86_64_v3'
-    artifacts: false
-
-
 cve_report:
   extends: .aarch64
   variables:
@@ -593,20 +538,18 @@ cve_report:
   - job: 'build-aarch64'
     artifacts: false
   script:
-  - ${BST} ${ARCH_OPT} artifact pull vm/manifest-devel.bst vm-secure/manifest-devel.bst
+  - ${BST} ${ARCH_OPT} artifact pull vm-secure/manifest-devel.bst
   - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
   - ${BST} build freedesktop-sdk.bst:utils/generate-cve-report.bst
 
   - mkdir -p cve manifests/ cve-reports/
   - ${BST} artifact checkout flatpak/platform-manifest.bst --directory manifests/platform
   - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory manifests/sdk
-  - ${BST} ${ARCH_OPT} artifact checkout vm/manifest-devel.bst --directory manifests/vm
   - ${BST} ${ARCH_OPT} artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
 
   - ${GEN_CVE_REPORT} -- update_local_cve_database
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/platform/usr/manifest.json /cve-reports/platform.html
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/sdk/usr/manifest.json /cve-reports/sdk.html
-  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm/usr/manifest.json /cve-reports/vm.html
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm-secure/usr/manifest.json /cve-reports/vm-secure.html
   cache:
     key: cve
