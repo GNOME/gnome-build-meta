@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libmediaart.git
   track: master
-  ref: 1.9.6-1-g6697c6e001b2759ea75373e318192ad060fa2516
+  ref: 1.9.6-3-g85756605089a7c9284c5a93996ab41f83827c676
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
