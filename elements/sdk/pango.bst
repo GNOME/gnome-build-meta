@@ -29,5 +29,4 @@ public:
 variables:
   meson-local: >-
     -Dgtk_doc=true
-    -Dlibthai=disabled
     -Dxft=disabled
