@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.1.1-40-ga7922d4435d3d8db392b33f4733ea164bc78c77f
+  ref: 1.2.alpha.9-0-g869aab254feca0d5572ff300e8d2c61e68cb7fd8
 - kind: cargo2
   ref:
   - kind: registry
@@ -427,46 +427,38 @@ sources:
     name: gobject-sys
     version: 0.20.4
     sha: a4c674d2ff8478cf0ec29d2be730ed779fef54415a2fb4b565c52def62696462
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+  - kind: registry
     name: gufo
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: 123269a8dd94cffac4b2d1d84dde8b184c4597da6b0e838a649c0133b964a903
+  - kind: registry
     name: gufo-common
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: 34b07b8af7ba58b6c455183ca059e6e39e461996582ec6b140a374b3201c3c05
+  - kind: registry
     name: gufo-exif
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: 7a90da76eeeba60af557e129950bdfc826fa30a04d1f05288ce5c6e0188abc91
+  - kind: registry
     name: gufo-jpeg
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: f9739424d512b0b43a569cb670c4689dd220f49a57180e4b541464f1a1e989ea
+  - kind: registry
     name: gufo-png
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: d47afa71314cc4e68405050ae096cb86eea8d180c63f476c364ff381ad7ec3d2
+  - kind: registry
     name: gufo-tiff
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: a108daa4daceb9f40bad4e572a728fe0cdef0eeac29655e5accf520a30f12c56
+  - kind: registry
     name: gufo-webp
-    version: 0.2.0
-  - kind: git
-    commit: 704168362f788ddf984920261a7171406bc7c1c0
-    repo: https://github.com/gufo-rs/gufo.git
+    version: 0.2.0-alpha.1
+    sha: 6d9d8e69137a99731e2a8abc854318bc406b6c73d10ef34a44b89d38de4fd0aa
+  - kind: registry
     name: gufo-xmp
-    version: 0.2.0
+    version: 0.2.0-alpha.1
+    sha: abf34848989c0ebd3015faebd175140f83c4b64a9450ae68dc9d9f4faee458a7
   - kind: registry
     name: half
     version: 2.4.1
@@ -1233,8 +1225,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.13
-    sha: 16099418600b4d8f028622f73ff6e3deaabdff330fb9a2a131dea781ee8b0768
+    version: 0.4.14
+    sha: 99a5bab8d7dedf81405c4bb1f2b83ea057643d9cb28778cea9eecddeedd2e028
   - kind: registry
     name: zvariant
     version: 4.2.0
