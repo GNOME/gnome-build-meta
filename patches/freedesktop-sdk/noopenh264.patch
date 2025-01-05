@@ -1,0 +1,54 @@
+From 4c31aa7d89c93441c9d7f4999f0a1d9a3d951ae8 Mon Sep 17 00:00:00 2001
+From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date: Mon, 23 Dec 2024 03:02:41 +0000
+Subject: [PATCH 1/2] Update elements/components/noopenh264.bst to v2.5.0-0
+
+Updates elements/components/noopenh264.bst to v2.5.0-0 (6e575e4)
+Previous version was v2.4.1-2-0 (96d0e58)
+
+diff --git a/elements/components/noopenh264.bst b/elements/components/noopenh264.bst
+index 616540de2..df7814a52 100644
+--- a/elements/components/noopenh264.bst
++++ b/elements/components/noopenh264.bst
+@@ -40,4 +40,4 @@ sources:
+ - kind: git_repo
+   url: fdsdk_git:noopenh264.git
+   track: v*
+-  ref: v2.4.1-2-0-g96d0e58260580ee6fcab4331bfc792309e3c6128
++  ref: v2.5.0-0-g6e575e43922a7620165637b2596c9686aad1f923
+-- 
+2.45.2.windows.1
+
+From 12e3de4f63c6a7714aaafee21785561af7db023a Mon Sep 17 00:00:00 2001
+From: Seppo Yli-Olli <seppo.yliolli@gmail.com>
+Date: Fri, 3 Jan 2025 12:05:25 +0200
+Subject: [PATCH 2/2] Fix OpenH264 version definition
+
+
+diff --git a/elements/components/noopenh264.bst b/elements/components/noopenh264.bst
+index df7814a52..1f9f2948c 100644
+--- a/elements/components/noopenh264.bst
++++ b/elements/components/noopenh264.bst
+@@ -15,7 +15,8 @@ variables:
+ config:
+   configure-commands:
+     (<):
+-    - grep "matching_version = '%{openh264-version}'" %{build-root}/meson.build
++    - |
++      grep "version : '%{openh264-version}'" %{build-root}/meson.build
+ 
+   install-commands:
+     (>):
+diff --git a/include/repo_branches.yml b/include/repo_branches.yml
+index c770711ed..ee372a1c3 100644
+--- a/include/repo_branches.yml
++++ b/include/repo_branches.yml
+@@ -4,4 +4,4 @@
+ freedesktop-sdk-flatpak-branch: '24.08'
+ freedesktop-sdk-flatpak-branch-extra: '24.08extra'
+ freedesktop-sdk-snap-branch: '2408'
+-openh264-version: '2.4.1'
++openh264-version: '2.5.0'
+-- 
+2.45.2.windows.1
+
