@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 48.alpha-3-gc3a2ea97dfb333145030b7e57bb66633349e10e6
+  ref: 48.alpha-5-gf55b927a2309b4a73f5b4138f2658e4bfbe58fff
 - kind: cargo2
   ref:
   - kind: registry
@@ -65,8 +65,8 @@ sources:
     sha: 8b75356056920673b02621b35afd0f7dda9306d03c79a30f5c56c44cf256e3de
   - kind: registry
     name: async-trait
-    version: 0.1.83
-    sha: 721cae7de5c34fbb2acd27e21e6d2cf7b886dce0c27388d46c4e6c47ea4318dd
+    version: 0.1.84
+    sha: 1b1244b10dcd56c92219da4e14caa97e312079e185f04ba3eea25061561dc0a0
   - kind: registry
     name: atomic-waker
     version: 1.1.2
@@ -117,8 +117,8 @@ sources:
     sha: f18b6bb8e43c7eb0f2aac7976afe0c61b6f5fc2ab7bc4c139537ea56c92290df
   - kind: registry
     name: cc
-    version: 1.2.5
-    sha: c31a0499c1dc64f458ad13872de75c0eb7e3fdb0e67964610c914b034fc5956e
+    version: 1.2.7
+    sha: a012a0df96dd6d06ba9a1b29d6402d1a5d77c6befd2566afdc26e10603dc93d7
   - kind: registry
     name: cfg-expr
     version: 0.17.2
@@ -337,8 +337,8 @@ sources:
     sha: b360ff0f90d71de99095f79c526a5888c9c92fc9ee1b19da06c6f5e75f0c2a53
   - kind: registry
     name: glycin
-    version: 2.0.2
-    sha: 8c4206f0d933268b06a8809c496d7f7d7b0626bb33aa97a4a209e795913157c6
+    version: 2.0.3
+    sha: a0c0c43ba80d02ea8cd540163e7cb49eced263fe3100c91c505acf5f9399ccb5
   - kind: registry
     name: glycin-utils
     version: 2.0.2
@@ -681,8 +681,8 @@ sources:
     sha: 37d3544b3f2748c54e147655edb5025752e2303145b5aefb3c3ea2c78b973bb0
   - kind: registry
     name: quote
-    version: 1.0.37
-    sha: b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af
+    version: 1.0.38
+    sha: 0e4dccaaaf89514f546c693ddc140f729f958c247918a13380cccc6078391acc
   - kind: registry
     name: rand
     version: 0.8.5
@@ -729,12 +729,12 @@ sources:
     sha: 3cb6eb87a131f756572d7fb904f6e7b68633f09cca868c5df1c4b8d1a694bbba
   - kind: registry
     name: serde
-    version: 1.0.216
-    sha: 0b9781016e935a97e8beecf0c933758c97a5520d32930e460142b4cd80c6338e
+    version: 1.0.217
+    sha: 02fc4265df13d6fa1d00ecff087228cc0a2b5f3c0e87e258d8b94a156e984c70
   - kind: registry
     name: serde_derive
-    version: 1.0.216
-    sha: 46f859dbbf73865c6627ed570e78961cd3ac92407a2d117204c49232485da55e
+    version: 1.0.217
+    sha: 5a9bf7cf98d04a2b28aead066b7496853d4779c9cc183c440dbac457641e19a0
   - kind: registry
     name: serde_repr
     version: 0.1.19
@@ -777,8 +777,8 @@ sources:
     sha: a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f
   - kind: registry
     name: syn
-    version: 2.0.91
-    sha: d53cbcb5a243bd33b7858b1d7f4aca2153490815872d86d955d6ea29f743c035
+    version: 2.0.94
+    sha: 987bc0be1cdea8b10216bd06e2ca407d40b9543468fafd3ddfb02f36e77f71f3
   - kind: registry
     name: synstructure
     version: 0.13.1
@@ -797,8 +797,8 @@ sources:
     sha: bc1ee6eef34f12f765cb94725905c6312b6610ab2b0940889cfe58dae7bc3c72
   - kind: registry
     name: tempfile
-    version: 3.14.0
-    sha: 28cce251fcbc87fac86a866eeb0d6c2d536fc16d06f184bb61aeae11aa4cee0c
+    version: 3.15.0
+    sha: 9a8a559c81686f576e8cd0290cd2a24a2a9ad80c98b3478856500fcbd7acd704
   - kind: registry
     name: thiserror
     version: 1.0.69
@@ -953,8 +953,8 @@ sources:
     sha: 589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec
   - kind: registry
     name: winnow
-    version: 0.6.20
-    sha: 36c1fec1a2bb5866f07c25f68c26e565c4c200aebb96d7e55710c19d3e8ac49b
+    version: 0.6.22
+    sha: 39281189af81c07ec09db316b302a3e67bf9bd7cbf6c820b50e35fee9c2fa980
   - kind: registry
     name: write16
     version: 1.0.0
