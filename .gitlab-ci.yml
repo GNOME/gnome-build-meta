@@ -501,7 +501,10 @@ openh264-x86_64:
   - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
   - cd openh264-extension
   - ${BST} build flatpak-repo.bst
-  - ${BST} artifact checkout flatpak-repo.bst --directory repo
+  - ${BST} artifact checkout flatpak-repo.bst --directory flatpak-repo.bst
+  - test -e repo || ostree init --repo=repo --mode=archive
+  - flatpak build-commit-from --src-repo=flatpak-repo.bst --subject $(git rev-parse HEAD) repo
+  - rm -rf flatpak-repo.bst
   - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
   - flat-manager-client purge $BUILD_ID
