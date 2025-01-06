@@ -507,7 +507,7 @@ openh264-x86_64:
   - flatpak build-update-repo --generate-static-deltas repo/
   - rm -rf flatpak-repo.bst
   - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
+  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ || result=$?
   - flat-manager-client purge $BUILD_ID
   - exit $result
 
