@@ -504,6 +504,7 @@ openh264-x86_64:
   - ${BST} artifact checkout flatpak-repo.bst --directory flatpak-repo.bst
   - test -e repo || ostree init --repo=repo --mode=archive
   - flatpak build-commit-from --src-repo=flatpak-repo.bst --subject $(git rev-parse HEAD) repo
+  - flatpak build-update-repo --generate-static-deltas repo/
   - rm -rf flatpak-repo.bst
   - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
   - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
