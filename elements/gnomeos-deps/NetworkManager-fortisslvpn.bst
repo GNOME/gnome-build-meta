@@ -7,7 +7,6 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
-- core-deps/intltool.bst
 
 depends:
 - sdk/gtk+-3.bst

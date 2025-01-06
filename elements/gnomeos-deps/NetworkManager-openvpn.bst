@@ -8,7 +8,6 @@ sources:
   path: files/NetworkManager-openvpn/sysusers.conf
 
 build-depends:
-- core-deps/intltool.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 

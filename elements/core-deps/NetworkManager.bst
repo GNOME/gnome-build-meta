@@ -6,7 +6,6 @@ sources:
 - kind: patch_queue
   path: patches/NetworkManager
 build-depends:
-- core-deps/intltool.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst

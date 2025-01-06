@@ -9,7 +9,6 @@ sources:
 
 build-depends:
 - sdk/glib.bst
-- core-deps/intltool.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
