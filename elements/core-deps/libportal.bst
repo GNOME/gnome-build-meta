@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:flatpak/libportal/releases/download/0.8.1/libportal-0.8.1.tar.xz
-  ref: 281e54e4f8561125a65d20658f1462ab932b2b1258c376fed2137718441825ac
+  url: github_files:flatpak/libportal/releases/download/0.9.0/libportal-0.9.0.tar.xz
+  ref: 113910f06f39387328805397053d20c7acafb7388d8e6cd5e06e05efb9690735
 
 build-depends:
 - sdk/gi-docgen.bst
