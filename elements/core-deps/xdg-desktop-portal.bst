@@ -2,24 +2,27 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:flatpak/xdg-desktop-portal/releases/download/1.18.4/xdg-desktop-portal-1.18.4.tar.xz
-  ref: b858aa1e74e80c862790dbb912906e6eab8b1e4db9339cd759473af62b461e65
+  url: github_files:flatpak/xdg-desktop-portal/releases/download/1.19.1/xdg-desktop-portal-1.19.1.tar.xz
+  ref: a09ad4d8b0697b6670ce75437b61a620373641625b4e505c4a012273f5000cea
+- kind: patch
+  path: patches/xdg-desktop-portal/1548.patch
+- kind: patch
+  path: patches/xdg-desktop-portal/1533.patch
 
 build-depends:
+- freedesktop-sdk.bst:components/flatpak.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libportal.bst
 - sdk/glib.bst
-- freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:components/flatpak.bst
-- freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/geoclue.bst
+- freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/pipewire.bst
-- freedesktop-sdk.bst:components/python3-docutils.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/xmlto.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 public:
@@ -31,5 +34,9 @@ public:
       - "%{datadir}/dbus-1/interfaces/org.freedesktop.portal*"
 
 variables:
+  # Documentation needs sphinx plugins that aren't in freedesktop-sdk
+  # sphinxext.opengraph, sphinx_copybutton, furo
   meson-local: >-
     -Dpytest=disabled
+    -Dtests=disabled
+    -Ddocumentation=disabled

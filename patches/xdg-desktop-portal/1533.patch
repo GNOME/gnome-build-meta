@@ -1,0 +1,52 @@
+From 39bfd1550a76ce1231799d069bfe1a1e473e342c Mon Sep 17 00:00:00 2001
+From: sewn <sewn@disroot.org>
+Date: Wed, 11 Dec 2024 05:34:18 +0000
+Subject: [PATCH] meson: Allow test cases to be optional
+
+---
+ meson.build       | 9 ++++++++-
+ meson_options.txt | 4 ++++
+ 2 files changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index adac2c7a5..bd3d5e2e1 100644
+--- a/meson.build
++++ b/meson.build
+@@ -213,7 +213,13 @@ pkgconfig.generate(
+ subdir('data')
+ subdir('src')
+ subdir('document-portal')
+-subdir('tests')
++
++enable_pytest = false
++enable_tests = get_option('tests').enabled()
++if enable_tests
++    subdir('tests')
++endif
++
+ subdir('po')
+ subdir('doc')
+ 
+@@ -227,6 +233,7 @@ summary({
+     'Enable libportal support': have_libportal,
+     'Enable gudev support': have_gudev,
+     'Enable installed tests:': enable_installed_tests,
++    'Enable test suite': enable_tests,
+     'Enable python test suite': enable_pytest,
+     'Build man pages': rst2man.found(),
+     'Build flatpak interfaces': flatpak_intf_dir != '',
+diff --git a/meson_options.txt b/meson_options.txt
+index 64d9bd3d3..650989b5e 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -38,6 +38,10 @@ option('datarootdir',
+         type: 'string',
+         value: '',
+         description: 'Define the datarootdir for the pkgconf file')
++option('tests',
++        type: 'feature',
++        value: 'enabled',
++        description: 'Build unit tests')
+ option('installed-tests',
+         type: 'boolean',
+         value: false,
