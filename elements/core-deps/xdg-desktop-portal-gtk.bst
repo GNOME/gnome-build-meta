@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:flatpak/xdg-desktop-portal-gtk/releases/download/1.15.1/xdg-desktop-portal-gtk-1.15.1.tar.xz
-  ref: 425551ca5f36451d386d53599d95a3a05b94020f1a4927c5111a2c3ba3a0fe4c
+  url: github_files:flatpak/xdg-desktop-portal-gtk/releases/download/1.15.2/xdg-desktop-portal-gtk-1.15.2.tar.xz
+  ref: 0295af247fc0d8c94e722731c29a2db7a045d38b132325b22e508709a235300b
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
