@@ -4,11 +4,12 @@ sources:
 - kind: tar
   url: gnupg:ftp/gcrypt/pinentry/pinentry-1.3.1.tar.bz2
   ref: bc72ee27c7239007ab1896c3c2fae53b076e2c9bd2483dc2769a16902bce8c04
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- sdk/gcr-3.bst
+- sdk/gcr.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/libgpg-error.bst
 - freedesktop-sdk.bst:components/libassuan.bst
