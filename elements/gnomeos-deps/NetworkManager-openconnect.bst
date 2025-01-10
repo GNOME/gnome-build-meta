@@ -13,7 +13,7 @@ build-depends:
 - core-deps/intltool.bst
 
 depends:
-- sdk/gcr.bst
+- sdk/gcr-3.bst
 - sdk/gtk.bst
 - sdk/webkit2gtk-4.1.bst
 - core-deps/libnma.bst
