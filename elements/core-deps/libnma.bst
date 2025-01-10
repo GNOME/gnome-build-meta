@@ -16,7 +16,7 @@ depends:
 - core-deps/NetworkManager.bst
 - core-deps/mobile-broadband-provider-info.bst
 - sdk/adwaita-icon-theme.bst
-- sdk/gcr-3.bst
+- sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
