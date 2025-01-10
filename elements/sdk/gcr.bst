@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gcr.git
   track: main
-  ref: 4.3.0-18-g1b9edc7ff573d06b23db6377c29d877d736b60d5
+  ref: 4.3.90.3-1-g138ee0c0912651ef6b37ab74ef7c0f9f43fc02ed
 
 build-depends:
 - sdk/gi-docgen.bst
