@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gcr.git
-  track: master
+  track: main
   ref: 4.3.0-18-g1b9edc7ff573d06b23db6377c29d877d736b60d5
 
 build-depends:
