@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:Incubator/decibels.git
+  url: gnome:decibels.git
   track: main
-  ref: 46.0-181-g9f658964c524fc0276d1f6c06a5f5432bfca3fa2
+  ref: 48.0.alpha-3-g95063c6c37160aa6a20af05e7351125c6631e834
 - kind: git_module
   url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
   path: gi-types
