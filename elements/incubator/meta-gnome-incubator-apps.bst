@@ -4,6 +4,5 @@
 # https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/blob/main/AppCriteria.md#incubation-criteria
 kind: stack
 depends:
-- incubator/decibels.bst
 - incubator/papers.bst
 - incubator/showtime.bst

@@ -8,6 +8,7 @@
 kind: stack
 depends:
 - core/baobab.bst
+- core/decibels.bst
 - core/epiphany.bst
 - core/evince.bst
 - core/gnome-calculator.bst
