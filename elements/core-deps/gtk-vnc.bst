@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtk-vnc.git
-  track: master
-  ref: 1.4.0-1-g57a3f5981a8426b9dfe2aaadc13784331a99e878
-- kind: git_module
-  url: gitlab:keycodemap/keycodemapdb.git
-  path: subprojects/keycodemapdb
-  ref: e15649b83a78f89f57205927022115536d2c1698
-
+- kind: tar
+  url: gnome_downloads:gtk-vnc/1.4/gtk-vnc-1.4.0.tar.xz
+  ref: 1be64c4e4760c52b3ec33067290d1efa40ad4cecab6c673813804e3c559d9683
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

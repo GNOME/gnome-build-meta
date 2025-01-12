@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libadwaita.git
-  track: main
-  ref: 1.7.alpha-16-g723b6e480cb3b6f8d004f154d22ebd8ba1df5ea7
-
+- kind: tar
+  url: gnome_downloads:libadwaita/1.7/libadwaita-1.7.alpha.tar.xz
+  ref: fe02d98669a27bdbaf03aa81be680e59130921b4f054c6a1bb1a2f177ceb91b6
 build-depends:
 - sdk-deps/sassc.bst
 - sdk/gi-docgen.bst
