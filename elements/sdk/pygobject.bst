@@ -1,13 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pygobject.git
-  track: main
-  ref: 3.50.0-107-g2c3462a5747ed10751499f929bfacb06ee56f44f
-# FIXME: Keep this in sync with the repo until we can use wraps as sources
-#
-# https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/gobject-introspection-tests.wrap
+- kind: tar
+  url: gnome_downloads:pygobject/3.50/pygobject-3.50.0.tar.xz
+  ref: 8d836e75b5a881d457ee1622cae4a32bcdba28a0ba562193adb3bbb472472212
 - kind: git_repo
   url: gnome:gobject-introspection-tests.git
   directory: subprojects/gobject-introspection-tests

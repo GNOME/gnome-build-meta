@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:xdg-desktop-portal-gnome.git
-  track: main
-  ref: 48.alpha-2-g49ae994357f56e910ec7b5e6ed9fe00449290481
+- kind: tar
+  url: gnome_downloads:xdg-desktop-portal-gnome/48/xdg-desktop-portal-gnome-48.alpha.tar.xz
+  ref: 4da24ddcc8c689c9ce3b2d1c8892a49865972ac1009cd9a5588c95fcb533bdad
 - kind: git_repo
   url: gnome:libgxdp.git
   track: main

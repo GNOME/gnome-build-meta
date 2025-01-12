@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-app-list.git
-  track: main
-  ref: 1.0-0-gd102d33eddd011b005f3df95056f62c052742ccc
-
+- kind: tar
+  url: gnome_downloads:gnome-app-list/1.0/gnome-app-list-1.0.tar.xz
+  ref: b7c2eb35595033ac094a75d99fddaecf6219dec590ca96ee03920b6bbb2eab73
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:snapshot.git
-  track: main
-  ref: 48.alpha.2-9-gafaae9e2e5e8e8e5945626381a7b106e96ff401f
+- kind: tar
+  url: gnome_downloads:snapshot/48/snapshot-48.alpha.2.tar.xz
+  ref: da16d4503f81566be7fce904179ff75d271ca89181c3efe02007f0b5b18508da
 - kind: cargo2
   ref:
   - kind: registry

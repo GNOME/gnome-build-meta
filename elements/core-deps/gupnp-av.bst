@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gupnp-av.git
-  track: master
-  ref: gupnp-av-0.14.3-0-gde581894b2e6d3557339d68bbf1b848b4bf0fd3a
-
+- kind: tar
+  url: gnome_downloads:gupnp-av/0.14/gupnp-av-0.14.3.tar.xz
+  ref: abe2046043e66a9529365d89059be12219c21a4ede0c4743703b0fd9aaf17bb4
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

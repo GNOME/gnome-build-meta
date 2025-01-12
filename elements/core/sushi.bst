@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:sushi.git
-  track: master
-  ref: 46.0-11-g1b9e009d26a2a8414b92bfd01a26b8ba4e8f6019
-
+- kind: tar
+  url: gnome_downloads:sushi/46/sushi-46.0.tar.xz
+  ref: 96085baaa430ab2142c606aab5c47e2fbb2fd3eb70a352137e65c59a58a0f2c6
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:orca.git
-  track: main
-  ref: 48.alpha-15-g9e363f138775c7d494dac80a3f37a9f1c4abc5bd
+- kind: tar
+  url: gnome_downloads:orca/48/orca-48.alpha.tar.xz
+  ref: ec3be11de440328fdc2faa30d52d0d14233ec445cf9bf393baa7e2a410d51a61
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
