@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:tracker-miners/3.7/tracker-miners-3.7.3.tar.xz
-  ref: e74388154b5c197b4b7ee42f0dce8c5fbbddd4d361093ef88d4fb303e33da5fe
+  url: gnome_downloads:tracker-miners/3.7/tracker-miners-3.7.4.tar.xz
+  ref: 486ae8ed4ae4f2fb15b4146fdd38d46b374ba58a39de98d3809df07422fa9043
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

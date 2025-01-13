@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/46/mutter-46.7.tar.xz
-  ref: fbbc15c0b076092d16c01d5c6f0c6f54d211f38322cb8c23b1e17dc56d4c525d
+  url: gnome_downloads:mutter/46/mutter-46.8.tar.xz
+  ref: fbc083544afb3b8567d7ca686c217f837b06f9478d6e2574159ff9a1c8e1c962
 - kind: patch
   path: patches/mutter/0001-Revert-backend-native-Use-drmModeCloseFB-for-flicker.patch
 build-depends:
