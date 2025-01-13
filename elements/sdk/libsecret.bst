@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:libsecret.git
-  track: master
+  track: main
   ref: 0.21.4-27-gb30d5e72c56fe38712b15f69be904c237070b416
 
 build-depends:

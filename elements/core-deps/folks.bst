@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:folks.git
-  track: master
+  track: main
   ref: 0.15.9-6-g8cd60eeaab11a7e5227cb265575e80d35bda58e5
 
 build-depends:

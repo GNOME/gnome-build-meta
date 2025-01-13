@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-keyring.git
-  track: master
+  track: main
   ref: 46.2-12-gf3111b2e1a1e05a02aa5c96ca1c1d4878e78abf1
 
 build-depends:
