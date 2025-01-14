@@ -2,6 +2,8 @@ sources:
 - kind: tar
   url: gnome_downloads:glib/2.83/glib-2.83.2.tar.xz
   ref: 8428d672c8485636d940f03ce8dcdc174f9b3892ac8b2eea76dd281af6a6e937
+- kind: patch_queue
+  path: patches/glib
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
