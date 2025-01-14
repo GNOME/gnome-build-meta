@@ -1,0 +1,40 @@
+From 5f06bca1260782578b2af2d0d834ca4d5ad5cd55 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Tue, 14 Jan 2025 21:46:13 +0200
+Subject: [PATCH] initialize g_paste to zero
+
+https://gitlab.gnome.org/GNOME/glib/-/issues/3582
+---
+ glib/gmacros.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/glib/gmacros.h b/glib/gmacros.h
+index d5b2f30c1..d02f89ffa 100644
+--- a/glib/gmacros.h
++++ b/glib/gmacros.h
+@@ -1232,21 +1232,21 @@
+  * The G_LIKELY and G_UNLIKELY macros let the programmer give hints to 
+  * the compiler about the expected result of an expression. Some compilers
+  * can use this information for optimizations.
+  *
+  * The _G_BOOLEAN_EXPR macro is intended to trigger a gcc warning when
+  * putting assignments in g_return_if_fail ().  
+  */
+ #if G_GNUC_CHECK_VERSION(2, 0) && defined(__OPTIMIZE__)
+ #define _G_BOOLEAN_EXPR_IMPL(uniq, expr)        \
+  G_GNUC_EXTENSION ({                            \
+-   int G_PASTE (_g_boolean_var_, uniq);         \
++   int G_PASTE (_g_boolean_var_, uniq) = 0;         \
+    if (expr)                                    \
+       G_PASTE (_g_boolean_var_, uniq) = 1;      \
+    else                                         \
+       G_PASTE (_g_boolean_var_, uniq) = 0;      \
+    G_PASTE (_g_boolean_var_, uniq);             \
+ })
+ #define _G_BOOLEAN_EXPR(expr) _G_BOOLEAN_EXPR_IMPL (__COUNTER__, expr)
+ #define G_LIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR(expr), 1))
+ #define G_UNLIKELY(expr) (__builtin_expect (_G_BOOLEAN_EXPR(expr), 0))
+ #else
+-- 
+2.47.1
+
