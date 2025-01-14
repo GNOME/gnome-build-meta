@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: samba:samba/stable/samba-4.19.4.tar.gz
-  ref: 4026d93b866db198c8ca1685b0f5d52793f65c6e63cb364163af661fdff0968c
+  url: samba:samba/stable/samba-4.21.3.tar.gz
+  ref: ae2179a613e7a5d4088735ab100d4ca1cae0f92374d6307e22eaec13ad90125c
 - kind: patch
   path: patches/samba/fix-root-build.patch
 
@@ -30,6 +30,7 @@ variables:
     --enable-fhs
     --without-ad-dc
     --without-json
+    --without-ldb-lmdb
     --with-system-mitkrb5
 
 config:
