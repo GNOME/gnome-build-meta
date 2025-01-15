@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: github:rhboot/shim.git
   track: main
-  ref: latest-release-23-g314aecf89318d31697a3fabf14cf49a0dc359331
+  ref: latest-release-32-g0345331fa871650faaa5a34baa9c3b30fea10667
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
-  ref: 328951d3dcb5ff97f5a7c7a362b006626fada000
+  ref: 23ecc160fd35638edafb9e337d1aab67a59ba058
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys
