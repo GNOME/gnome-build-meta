@@ -19,16 +19,20 @@ build-depends:
 
 depends:
 - sdk/glib.bst
+# bash-completion is a build-dep but we need libsecret to runtime
+# depend on it so we will always stage above it and the overlap
+# will work.
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/3364#note_2324071
+- freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
-variables:
-  # FIXME: https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/3364
-  meson-local: >-
-    -Dbash_completion=disabled
-
 public:
   bst:
+    overlap-whitelist:
+    # bash-completion itself provides one
+    # https://github.com/scop/bash-completion/blob/main/completions/secret-tool
+    - '%{datadir}/bash-completion/completions/secret-tool'
     split-rules:
       devel:
         (>):
