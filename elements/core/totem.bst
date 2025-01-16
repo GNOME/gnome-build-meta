@@ -21,7 +21,7 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
-- core-deps/libpeas.bst
+- core-deps/libpeas-1.bst
 - core-deps/libportal.bst
 - core-deps/totem-pl-parser.bst
 - core/gnome-desktop.bst
