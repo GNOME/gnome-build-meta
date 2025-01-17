@@ -20,6 +20,7 @@ depends:
 - sdk/gi-docgen.bst
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
+- core-deps/umockdev.bst
 
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/shadow.bst
