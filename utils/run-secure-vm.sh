@@ -36,7 +36,7 @@ done
 : ${SWTPM_UNIT=swtpm-$(echo -n "$(realpath .)" | sha1sum | head -c 8)}
 : ${BST:=bst}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
-: ${IMAGE_ELEMENT:="vm-secure/image.bst"}
+: ${IMAGE_ELEMENT:="gnomeos/image.bst"}
 
 BST_OPTIONS=()
 

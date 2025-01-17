@@ -6,9 +6,9 @@ depends:
 - iso/public-key.bst
 
 - core-deps/plymouth.bst
-- vm-deps/plymouth-gnome-theme.bst
+- gnomeos-deps/plymouth-gnome-theme.bst
 
-- vm-deps/deps.bst
+- gnomeos-deps/deps.bst
 
 - freedesktop-sdk.bst:components/wayland.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -18,6 +18,6 @@ depends:
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:vm/config/journald.bst
 
-- vm-deps/spice-vdagent.bst
+- gnomeos-deps/spice-vdagent.bst
 
-- vm-secure/os-release-user.bst
+- gnomeos/os-release-user.bst

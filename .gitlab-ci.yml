@@ -346,9 +346,9 @@ sysupdate-image-aarch64:
     allow_failure: true
   stage: deploy
   script:
-  - ${BST_NO_PUSH} ${ARCH_OPT} --max-jobs $(( $(nproc) / 4 ))  build vm-secure/update-images.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} --max-jobs $(( $(nproc) / 4 ))  build gnomeos/update-images.bst
 
-  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks vm-secure/update-images.bst --directory update-images/
+  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/update-images.bst --directory update-images/
 
   - |
     if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
@@ -392,8 +392,8 @@ s3-image:
   - job: 'build-x86_64_v3'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build vm-secure/image.bst iso/image.bst
-  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst iso/image.bst
+  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks iso/image.bst --directory iso
 
   - |
@@ -427,8 +427,8 @@ s3-image-aarch64:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build vm-secure/image.bst
-  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks vm-secure/image.bst --directory secure-image
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst
+  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
@@ -538,19 +538,19 @@ cve_report:
   - job: 'build-aarch64'
     artifacts: false
   script:
-  - ${BST} ${ARCH_OPT} artifact pull vm-secure/manifest-devel.bst
+  - ${BST} ${ARCH_OPT} artifact pull gnomeos/manifest-devel.bst
   - ${BST} artifact pull flatpak/platform-manifest.bst flatpak/sdk-manifest.bst
   - ${BST} build freedesktop-sdk.bst:utils/generate-cve-report.bst
 
   - mkdir -p cve manifests/ cve-reports/
   - ${BST} artifact checkout flatpak/platform-manifest.bst --directory manifests/platform
   - ${BST} artifact checkout flatpak/sdk-manifest.bst --directory manifests/sdk
-  - ${BST} ${ARCH_OPT} artifact checkout vm-secure/manifest-devel.bst --directory manifests/vm-secure
+  - ${BST} ${ARCH_OPT} artifact checkout gnomeos/manifest-devel.bst --directory manifests/gnomeos
 
   - ${GEN_CVE_REPORT} -- update_local_cve_database
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/platform/usr/manifest.json /cve-reports/platform.html
   - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/sdk/usr/manifest.json /cve-reports/sdk.html
-  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/vm-secure/usr/manifest.json /cve-reports/vm-secure.html
+  - ${GEN_CVE_REPORT} ${CVE_MOUNTS} -- generate_cve_report /manifests/gnomeos/usr/manifest.json /cve-reports/gnomeos.html
   cache:
     key: cve
     paths:

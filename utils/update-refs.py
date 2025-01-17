@@ -22,8 +22,8 @@ now = datetime.now()
 
 core_elements = [
     "core.bst",
-    "vm-secure/filesystem.bst",
-    "vm-secure/filesystem-devel.bst",
+    "gnomeos/filesystem.bst",
+    "gnomeos/filesystem-devel.bst",
     "iso/image.bst",
 ]
 

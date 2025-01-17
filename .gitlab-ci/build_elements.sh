@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 TARGETS_RUNTIME=(flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
-TARGETS_GNOMEOS=(core.bst vm-secure/manifest-devel.bst vm-secure/build-non-images.bst)
+TARGETS_GNOMEOS=(core.bst gnomeos/manifest-devel.bst gnomeos/build-non-images.bst)
 
 # Build the runtime with x86_64_v1 and GNOME OS with x86_64_v3
 # We don't need to build gnomeos on i686

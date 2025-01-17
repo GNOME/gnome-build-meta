@@ -8,10 +8,10 @@ depends:
 - freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
-- vm-deps/fish.bst
+- gnomeos-deps/fish.bst
 
 # Useful utilities for building extensions in CI
-- vm-deps/sysext-utils.bst
+- gnomeos-deps/sysext-utils.bst
 
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst

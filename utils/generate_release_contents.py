@@ -9,7 +9,7 @@ import requests
 CALENDAR = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/jekyll/_data/calendar.json"
 GITLAB_PAGES_FILENAME = "public/release-contents.html"
 
-RELEASE_MANIFESTS = {"platform": "Platform", "sdk": "SDK", "vm": "VM", "vm-secure": "Secure VM"}
+RELEASE_MANIFESTS = {"platform": "Platform", "sdk": "SDK", "vm": "VM", "gnomeos": "Secure VM"}
 
 def populate_branch_html(release_contents, branch: str) -> None:
     """CVE report html template."""

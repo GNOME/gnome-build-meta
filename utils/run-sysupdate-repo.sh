@@ -66,9 +66,9 @@ checkout="$(mktemp -d --tmpdir="${REPO_STATE}" checkout.XXXXXXXXXX)"
 cleanup_dirs+=("${checkout}")
 
 if [ "${devel+set}" = set ]; then
-    image=(vm-secure/update-images.bst)
+    image=(gnomeos/update-images.bst)
 else
-    image=(vm-secure/update-images-user-only.bst)
+    image=(gnomeos/update-images-user-only.bst)
 fi
 
 "${BST}" "${BST_OPTIONS[@]}" build "${image}"

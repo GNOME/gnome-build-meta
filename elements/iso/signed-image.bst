@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
-- filename: vm-secure/image.bst
+- filename: gnomeos/image.bst
   config:
     location: /sysupdate
 
