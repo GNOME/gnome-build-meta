@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell/47/gnome-shell-47.2.tar.xz
-  ref: 4184d01a1ab82cb421d1ca2e2bcce0292ceb46c4c749e61b0bde4b75004d2e00
+  url: gnome_downloads:gnome-shell/47/gnome-shell-47.3.tar.xz
+  ref: 783deb9a086511e4a53db10574bfbba695576f698078218ca6c80cb1efec293e
 - kind: git_repo
   url: gnome:libgnome-volume-control.git
   directory: subprojects/gvc

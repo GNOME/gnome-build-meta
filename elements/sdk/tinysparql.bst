@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:tinysparql/3.8/tinysparql-3.8.1.tar.xz
-  ref: 53e04add1ecb4d08caa1317f477fdf0e7148eaac5462831f2374880092ffb295
+  url: gnome_downloads:tinysparql/3.8/tinysparql-3.8.2.tar.xz
+  ref: bb8643386c8edc591a03205d4a0eda661dcdd2094473bffb9bbdb94e93589cb2
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
