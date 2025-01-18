@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:rhboot/shim.git
   track: main
-  ref: latest-release-32-g0345331fa871650faaa5a34baa9c3b30fea10667
+  ref: latest-release-41-g70366a286552760863bacb521fb00c654586b494
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git

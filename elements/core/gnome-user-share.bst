@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-user-share.git
   track: master
-  ref: 48.alpha.1-2-gd48ab9ac6db280cb58f1357f9638adf670436599
+  ref: 48.alpha.1-3-gcb8bad31625e51381cd705d127b139c0d42fbb5b
 - kind: cargo2
   ref:
   - kind: registry
