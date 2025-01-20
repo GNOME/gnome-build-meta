@@ -678,4 +678,4 @@ make-git-archive:
   - xz $ARCHIVE_TARBALL_VERSION.tar
   artifacts:
     paths:
-    - "ARCHIVE_TARBALL_VERSION.tar.xz"
+    - "$ARCHIVE_TARBALL_VERSION.tar.xz"
