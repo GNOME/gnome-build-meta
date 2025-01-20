@@ -13,7 +13,7 @@ PathRelativeTo=boot
 MatchPattern=gnomeos_@v+@l-@d.efi \
              gnomeos_@v+@l.efi \
              gnomeos_@v.efi
-Mode=0444
+Mode=0600
 TriesLeft=3
 TriesDone=0
 InstancesMax=2

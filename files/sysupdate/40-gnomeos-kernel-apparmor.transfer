@@ -12,5 +12,5 @@ Type=regular-file
 Path=/EFI/Linux
 PathRelativeTo=boot
 MatchPattern=gnomeos_@v.efi.extra.d/apparmor.addon.efi
-Mode=0444
+Mode=0600
 InstancesMax=2
