@@ -672,6 +672,7 @@ pages:
 make-git-archive:
   stage: "deploy"
   needs: []
+  before_script: []
   script:
   - git archive --prefix ${CI_COMMIT_TAG}/ -o ${CI_COMMIT_TAG}.tar ${CI_COMMIT_TAG}
   - xz ${CI_COMMIT_TAG}.tar
