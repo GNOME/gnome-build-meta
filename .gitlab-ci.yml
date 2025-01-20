@@ -1,4 +1,10 @@
-include: .gitlab-ci/arch.yml
+include:
+  - local: ".gitlab-ci/arch.yml"
+  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+    inputs:
+      job-stage: "deploy"
+      dist-job-name: "make-git-archive"
+      tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -578,3 +584,15 @@ pages:
     - 'public'
   rules:
   - if: $CI_COMMIT_REF_NAME == "master"
+
+make-git-archive:
+  stage: "deploy"
+  needs: []
+  before_script: []
+  script:
+  - version=${CI_COMMIT_TAG:-HEAD}
+  - git archive --prefix $version/ -o ${CI_PROJECT_NAME}-$version.tar $version
+  - xz ${CI_PROJECT_NAME}-$version.tar
+  artifacts:
+    paths:
+    - "*.tar.xz"
