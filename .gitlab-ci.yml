@@ -1,4 +1,10 @@
-include: .gitlab-ci/arch.yml
+include:
+  - local: ".gitlab-ci/arch.yml"
+  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+    inputs:
+      job-stage: "deploy"
+      dist-job-name: "make-git-archive"
+      tarball-artifact-path: "${ARCHIVE_TARBALL_VERSION}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -9,6 +15,7 @@ variables:
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
   OCI_BRANCH: master
   FLATPAK_BRANCH: 48beta
+  ARCHIVE_TARBALL_VERSION: "48.alpha"
   OPENQA_HOST: https://openqa.gnome.org
   OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
   OPENQA_TESTS_BRANCH: master
@@ -662,3 +669,13 @@ pages:
   rules:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
+
+make-git-archive:
+  stage: "deploy"
+  needs: []
+  script:
+  - git archive --prefix $ARCHIVE_TARBALL_VERSION/ -o $ARCHIVE_TARBALL_VERSION.tar $ARCHIVE_TARBALL_VERSION
+  - xz $ARCHIVE_TARBALL_VERSION.tar
+  artifacts:
+    paths:
+    - "ARCHIVE_TARBALL_VERSION.tar.xz"
