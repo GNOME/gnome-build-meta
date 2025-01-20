@@ -9,6 +9,7 @@ depends:
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
 - gnomeos-deps/fish.bst
+- gnomeos-deps/foundry.bst
 
 # Useful utilities for building extensions in CI
 - gnomeos-deps/sysext-utils.bst

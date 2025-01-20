@@ -21,5 +21,6 @@ depends:
 - sdk.bst
 - gnomeos-deps/deviced.bst
 - gnomeos-deps/distrobox.bst
+- gnomeos-deps/foundry.bst
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/toolbox.bst
