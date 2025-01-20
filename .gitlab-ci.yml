@@ -112,31 +112,6 @@ default:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
-.ostree-template:
-  extends: .deploy-rules
-  stage: deploy
-  script:
-  - |
-    export FLAT_MANAGER_SERVER=https://flat-manager-ostree.gnome.org/
-    export FLAT_MANAGER_REPO=gnomeos
-    export REPO_TOKEN=$OSTREE_REPO_TOKEN
-
-  - ostree init --repo repo/ --mode archive
-
-  - ${BST} -o arch "${ARCH}" artifact pull vm/repo.bst vm/repo-devel.bst
-
-  - |
-    for element in vm/repo.bst vm/repo-devel.bst; do
-        ${BST} -o arch "${ARCH}" artifact checkout --hardlinks $element --directory checkout-repo/
-        ostree pull-local --repo=repo/ checkout-repo/
-        rm -rf checkout-repo/
-    done
-
-  - BUILD_ID=$(flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ $(ostree --repo=repo/ refs) || result=$?
-  - flat-manager-client purge $BUILD_ID
-  - exit $result
-
 .test-phone-image-template:
   extends:
   - .aarch64
@@ -475,15 +450,6 @@ s3-image-static:
     aws s3 cp --acl public-read latest-sysupdate-x86_64-disk s3://gnome-build-meta/latest-sysupdate-x86_64-disk
 
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
-
-ostree-x86_64:
-  extends:
-  - .ostree-template
-  - .x86_64
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-
 
 cve_report:
   extends: .x86_64
