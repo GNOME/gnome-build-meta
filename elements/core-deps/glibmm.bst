@@ -5,7 +5,7 @@ sources:
   url: gnome:glibmm.git
   track: master
 
-  ref: 2.82.0-15-g11521ed036adadfbee0fef0cc25baf3ad60cad56
+  ref: 2.82.0-16-g9794846e7c4271d001af0e7e80bf68f074062b99
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
