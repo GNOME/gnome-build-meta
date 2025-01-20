@@ -3,10 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:msgraph.git
-  # Track 0.1 branch until gvfs is updated
-  # https://gitlab.gnome.org/GNOME/gvfs/-/merge_requests/240#note_2239759
-  track: msgraph-0.1
-  ref: 0.2.3-3-g43560cca4691e71dae2db593e1aed12f75a7ccc3
+  track: main
+  ref: 0.2.3-12-g885462796e49b548b324b4a7515845032e4ccd6f
 
 build-depends:
 - sdk/gi-docgen.bst
