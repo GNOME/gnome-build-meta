@@ -1,0 +1,27 @@
+From d6aa7687281b36852fd91ebfc3d780ce4b1ff3c2 Mon Sep 17 00:00:00 2001
+From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date: Fri, 24 Jan 2025 14:34:29 +0000
+Subject: [PATCH 4/6] Update elements/include/linux.yml to v6.13-0
+
+Updates elements/include/linux.yml to v6.13-0 (ffd294d)
+Previous version was v6.12.9-0 (5996393)
+---
+ elements/include/linux.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index 249b0059a..05dff1f9f 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,7 +4,7 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.12.9-0-g5996393469d99560b7845d22c9eff00661de0724
++  ref: v6.13-0-gffd294d346d185b70e28b1a28abe367bbfe53c04
+ - kind: local
+   path: files/linux/config-utils.sh
+ - kind: local
+-- 
+2.47.2
+
