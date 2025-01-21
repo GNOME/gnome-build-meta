@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome_gitlab:jwestman/blueprint-compiler.git
-  track: main
-  ref: v0.16.0-1-g404ae767870b6da6005f2f4aaa878deed82829e5
+- kind: tar
+  url: gnome_gitlab_files:jwestman/blueprint-compiler/-/archive/v0.16.0/blueprint-compiler-v0.16.0.tar.gz
+  ref: 01feb8263fe7a450b0a9fed0fd54cf88947aaf00f86cc7da345f8b39a0e7bd30
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

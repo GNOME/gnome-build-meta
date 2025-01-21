@@ -26,6 +26,7 @@ aliases:
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
+  gnome_gitlab_files: https://gitlab.gnome.org/
   gnome_nightly: https://nightly.gnome.org/
   gnupg: https://www.gnupg.org/
   gstreamer: https://gstreamer.freedesktop.org/
