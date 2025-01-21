@@ -34,4 +34,8 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/vte-2.91-gtk4'
+        - '%{bindir}/vte-2.91'
+        - '%{datadir}/applications/vte-gtk3.desktop '
+        - '%{datadir}/applications/vte-gtk4.desktop '
         - '%{libdir}/libvte-2.91.so'
