@@ -7,7 +7,7 @@ sources:
   ref: 031fb6f2a85d10f77f971246f40f1283b8d5adf5
 
 build-depends:
-- incubator-deps/blueprint-compiler.bst
+- core-deps/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

@@ -6,7 +6,7 @@ sources:
   ref: f47d21b40c99188b4158f8a444f132207957d528b1f80ccbc019ce9c4765c3d1
 
 depends:
-- incubator-deps/nodejs.bst
+- core-deps/nodejs.bst
 
 config:
   install-commands:

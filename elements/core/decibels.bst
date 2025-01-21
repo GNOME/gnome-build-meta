@@ -11,8 +11,8 @@ sources:
   ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
 
 build-depends:
-- incubator-deps/blueprint-compiler.bst
-- incubator-deps/typescript.bst
+- core-deps/blueprint-compiler.bst
+- core-deps/typescript.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
