@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:connections.git
   track: master
-  ref: 47.0-14-g0b764ebcd78a4c098cf02ccf4106a246edcddaaf
+  ref: 47.0-15-g2b3e2eb154d1d3ce12704796ff6b0ab74acf65d7
 - kind: git_module
   url: gnome:gtk-frdp.git
   path: subprojects/gtk-frdp
-  ref: 6cfdc840159bb349310c3b81cd2df949f1522760
+  ref: 46ca0beb9b5bf8c9b245a596231016bcca9baf6b
 
 build-depends:
 - sdk/gobject-introspection.bst

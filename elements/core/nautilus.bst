@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 47.0-110-g9d5769c73d82280129ab3ff1156d3d9f2eac625d
+  ref: 47.0-112-g107ab277354bbc8469eef02eb0319703ec215642
 
 build-depends:
 - sdk/gobject-introspection.bst
