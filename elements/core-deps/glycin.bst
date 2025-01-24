@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.2.alpha.10-1-g177aea6dcfc42d46edebe2edbbcffb9c6b6a0e18
+  ref: 1.2.alpha.10-2-ge02da7ed28a89a33a40a8452675e091963c24115
 - kind: cargo2
   ref:
   - kind: registry
@@ -23,6 +23,10 @@ sources:
     name: aho-corasick
     version: 1.1.3
     sha: 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
+  - kind: registry
+    name: allocator-api2
+    version: 0.2.21
+    sha: 683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923
   - kind: registry
     name: android-tzdata
     version: 0.1.1
@@ -277,8 +281,8 @@ sources:
     sha: f83197f59927b46c04a183a619b7c29df34e63e63c7869320862268c0ef687e0
   - kind: registry
     name: fallible_collections
-    version: 0.4.9
-    sha: a88c69768c0a15262df21899142bc6df9b9b823546d4b4b9a7bc2d6c448ec6fd
+    version: 0.5.1
+    sha: 8b3e85d14d419ba3e1db925519461c0d17a49bdd2d67ea6316fa965ca7acdf74
   - kind: registry
     name: fastrand
     version: 2.3.0
@@ -441,8 +445,8 @@ sources:
     sha: 6dd08c532ae367adf81c312a4580bc67f1d0fe8bc9c460520283f4c0ff277888
   - kind: registry
     name: hashbrown
-    version: 0.13.2
-    sha: 43a3c133739dddd0d2990f9a4bdf8eb4b21ef50e4851ca85ab661199821d510e
+    version: 0.14.5
+    sha: e5274423e17b7c9fc20b6e7e208532f9b19825d82dfd615708b70edd83df41f1
   - kind: registry
     name: hashbrown
     version: 0.15.2
@@ -549,8 +553,8 @@ sources:
     sha: fc2f4eb4bc735547cfed7c0a4922cbd04a4655978c09b54f1f7b228750664c34
   - kind: registry
     name: libopenraw
-    version: 0.4.0-alpha.7
-    sha: ffeb9300b9b792ac3d948ccedbecc324d296ac359aec6aba7f9d5ccdd5b2f3be
+    version: 0.4.0-alpha.9
+    sha: a44a1a700a8ed52408f19b8d3b8e28be61d010dad30068f178be5bae93e0f396
   - kind: registry
     name: librsvg-rebind
     version: 0.1.0
