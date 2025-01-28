@@ -28,6 +28,10 @@ variables:
       efi-arch: aa64
       devicetree-args: >-
         --devicetree-auto="/boot/dtbs/rockchip/rk3588-rock-5b.dtb"
+        --devicetree-auto="/boot/dtbs/rockchip/rk3399-pinephone-pro.dtb"
+        --devicetree-auto="/boot/dtbs/allwinner/sun50i-a64-pinephone-1.0.dtb"
+        --devicetree-auto="/boot/dtbs/allwinner/sun50i-a64-pinephone-1.2.dtb"
+        --devicetree-auto="/boot/dtbs/allwinner/sun50i-a64-pinephone-1.1.dtb"
   - arch == 'riscv64':
       efi-arch: riscv64
   kcmdline: >-
