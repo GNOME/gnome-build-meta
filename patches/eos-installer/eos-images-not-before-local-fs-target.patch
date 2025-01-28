@@ -1,0 +1,13 @@
+diff -ur eos-installer.old/eos-installer-data/run-mount-eosimages.mount eos-installer/eos-installer-data/run-mount-eosimages.mount
+--- eos-installer.old/eos-installer-data/run-mount-eosimages.mount	2025-01-28 19:37:13.842287198 +0100
++++ eos-installer/eos-installer-data/run-mount-eosimages.mount	2025-01-28 19:38:54.481123860 +0100
+@@ -1,5 +1,9 @@
+ [Unit]
+ Description=Endless OS reformatter images partition
++DefaultDependencies=no
++Before=umount.target
++Conflicts=umount.target
++After=local-fs-pre.target
+ 
+ [Mount]
+ What=LABEL=eosimages

@@ -27,6 +27,8 @@ sources:
   path: patches/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
 - kind: patch
   path: patches/eos-installer/usrfs.patch
+- kind: patch
+  path: patches/eos-installer/eos-images-not-before-local-fs-target.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
