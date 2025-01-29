@@ -355,6 +355,26 @@ sysupdate-image-aarch64:
         ./utils/publish-sysupdate-to-s3.sh
     fi
 
+disk-image-aarch64:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+  variables:
+    IMAGE: gnomeos/image.bst
+
+disk-image-x86_64:
+  extends:
+  - .manual-image-template
+  - .x86_64_v3
+  needs:
+  - job: 'build-x86_64_v3'
+    artifacts: false
+  variables:
+    IMAGE: gnomeos/image.bst
+
 pinephone-image:
   extends:
   - .manual-image-template
