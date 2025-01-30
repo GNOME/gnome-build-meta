@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:librest.git
   track: master
-  ref: 0.9.1-24-g23f2d27e5ea5479fb7a0d844afe5ef8d98ae2a6d
+  ref: 0.9.1-25-g0bccab03328e162f7e4435ff83821bac04b20269
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
