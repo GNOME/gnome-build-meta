@@ -3,12 +3,13 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.9.alpha-6-g6cfe6ae27620a72af0265456e06b2ad75b384acd
+  ref: 3.9.alpha-32-g58df1ac173f1fe97968f366ed4e44f353ee6f2db
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - core-deps/NetworkManager.bst
@@ -26,7 +27,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
