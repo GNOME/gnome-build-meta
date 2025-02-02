@@ -1,4 +1,4 @@
-kind: pip
+kind: pyproject
 
 sources:
 - kind: tar
@@ -6,7 +6,7 @@ sources:
   ref: 57434ce5f62548eb12949ca8217f066f4eeb21a5d6ab8b13471dce350e380c90
 
 build-depends:
-- freedesktop-sdk.bst:components/python3-pip.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
 
 depends:
 - freedesktop-sdk.bst:components/cups.bst
