@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gjs.git
-  track: master
-  ref: 1.83.2-10-gfdb7d0aec692be7c083766e20089bb52b782f938
+  url: gnome_gitlab:ptomato/gjs.git
+  track: tag-types
+  ref: 1.50.0-3803-g8b6647b4fb7ebb19d43661377d3611c883afc3ba
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
