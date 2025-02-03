@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:ptomato/gjs.git
   track: tag-types
-  ref: 1.50.0-3803-g8b6647b4fb7ebb19d43661377d3611c883afc3ba
+  ref: 24840e701cd5c416ed64f61f0734fbffce09ddfe
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
