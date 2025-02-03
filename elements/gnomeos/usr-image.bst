@@ -186,6 +186,7 @@ config:
         --no-pager \
         --seed %{repart-seed} \
         --root=/sysroot \
+        --sector-size=512 \
         --split=true \
         '%{install-root}/disk.raw' \
         --json=pretty \

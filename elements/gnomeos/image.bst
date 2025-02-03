@@ -61,6 +61,7 @@ config:
         --no-pager \
         --seed=%{repart-seed} \
         --root=/sysroot \
+        --sector-size 512 \
         '%{install-root}/disk.raw'
 
   - mv "%{install-root}/disk.raw" "%{install-root}/disk.img"
