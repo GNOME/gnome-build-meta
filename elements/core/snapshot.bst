@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 48.alpha.2-15-g97050c0df6f6e448b4256ea3656f795465cc9609
+  ref: 48.beta-0-g23cf036411e9231c85c54643a5c0ade8991e0e26
 - kind: cargo2
   ref:
   - kind: registry
@@ -333,12 +333,12 @@ sources:
     sha: b360ff0f90d71de99095f79c526a5888c9c92fc9ee1b19da06c6f5e75f0c2a53
   - kind: registry
     name: glycin
-    version: 2.1.0-alpha.1
-    sha: 59b275abc43bd4978478dbade045416ef1bfdc301eeab948ad91957f69f4471c
+    version: 2.1.0-beta
+    sha: 5a0156b1f142e88a923d8e122bbacc7ae893a9da975771ea8c4db33cf7a5a317
   - kind: registry
     name: glycin-utils
-    version: 3.0.0-alpha.1
-    sha: 124823a6e4f700eceda1f6ca2a066bbe0d85bb2def82995ca6d68b02994df2df
+    version: 3.0.0-beta
+    sha: 5be81f5ab01eec2fe54b24ab58f2c435275684916c3842b1157cd7351e07caa2
   - kind: registry
     name: gobject-sys
     version: 0.20.7

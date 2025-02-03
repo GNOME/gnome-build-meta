@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:connections.git
   track: master
-  ref: 47.0-15-g2b3e2eb154d1d3ce12704796ff6b0ab74acf65d7
+  ref: 48.beta-0-g6a12b35baab12f77bf30fc63b5f289c03725706b
 - kind: git_module
   url: gnome:gtk-frdp.git
   path: subprojects/gtk-frdp
