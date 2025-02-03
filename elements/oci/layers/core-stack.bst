@@ -2,11 +2,13 @@ kind: stack
 
 depends:
 # Useful utilities for testing in CI
+- core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/nano.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/vim.bst
 - gnomeos-deps/fish.bst
 - gnomeos-deps/foundry.bst

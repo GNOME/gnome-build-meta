@@ -1,6 +1,7 @@
 kind: stack
 
 depends:
+- core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
