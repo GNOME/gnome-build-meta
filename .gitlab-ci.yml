@@ -82,7 +82,12 @@ default:
 
     echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
     export IMAGE_VERSION
-    cat include/image-version.yml
+
+  - |
+    commit_time=$(git log -1 --format=format:%ct)
+    echo "filesystem-time: ${commit_time}" >> include/image-version.yml
+
+  - cat include/image-version.yml
 
 
   retry:
