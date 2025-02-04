@@ -13,6 +13,9 @@ variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
 
+environment:
+  SYSTEMD_REPART_MKFS_OPTIONS_SQUASHFS: -all-time %{filesystem-time}
+
 config:
   commands:
   - |
@@ -174,6 +177,9 @@ config:
     mkdir -p /var/tmp
 
   - |
+    # conflicts with -all-time
+    unset SOURCE_DATE_EPOCH
+
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
         --defer-partitions=esp \
