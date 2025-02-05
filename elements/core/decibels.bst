@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:decibels.git
-  track: main
-  ref: 48.0.alpha-47-g14ab7c8a1c872e4cc22db7dd2a9608f57e8ff83b
-- kind: git_module
-  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
-  path: gi-types
-  ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
-
+- kind: tar
+  url: gnome_downloads:decibels/48/decibels-48.0.alpha.tar.xz
+  ref: 6e5ba0722b4afc441dcbe629a5e724ad3eb006cc0cb1ef9aa24e11da989122fc
 build-depends:
 - core-deps/blueprint-compiler.bst
 - core-deps/typescript.bst

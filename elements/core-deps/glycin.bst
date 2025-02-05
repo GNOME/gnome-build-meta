@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:glycin.git
-  track: main
-  ref: 1.2.beta.1-0-g0b125f1b1c04a1eda5a7319513b75fac5ea77ad3
+- kind: tar
+  url: gnome_downloads:glycin/1.2/glycin-1.2.beta.1.tar.xz
+  ref: f6952ed2854641bf521b430c088c953edf53d39fcfb9e0a30eb6872c7482ec26
 - kind: cargo2
   ref:
   - kind: registry
@@ -407,6 +406,14 @@ sources:
     name: glib-sys
     version: 0.20.7
     sha: b360ff0f90d71de99095f79c526a5888c9c92fc9ee1b19da06c6f5e75f0c2a53
+  - kind: registry
+    name: glycin
+    version: 2.1.0-beta
+    sha: 5a0156b1f142e88a923d8e122bbacc7ae893a9da975771ea8c4db33cf7a5a317
+  - kind: registry
+    name: glycin-utils
+    version: 3.0.0-beta
+    sha: 5be81f5ab01eec2fe54b24ab58f2c435275684916c3842b1157cd7351e07caa2
   - kind: registry
     name: gobject-sys
     version: 0.20.7

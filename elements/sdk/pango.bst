@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pango.git
-  track: main
-  ref: 1.56.0-14-gc61fc2b04f8cdd8ac4b577ba1977f5e80fa16b76
-
+- kind: tar
+  url: gnome_downloads:pango/1.56/pango-1.56.1.tar.xz
+  ref: 426be66460c98b8378573e7f6b0b2ab450f6bb6d2ec7cecc33ae81178f246480
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

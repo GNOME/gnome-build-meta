@@ -1,16 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mutter.git
-  track: main
-  ref: 48.beta-4-g0605f35a675b79a0cdefa821032ff85fced0bd98
-# FIXME: Keep this in sync with the repo until we can use wraps as sources
-# https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
-- kind: git_repo
-  url: gnome:gvdb.git
-  directory: subprojects/gvdb
-  ref: b54bc5da25127ef416858a3ad92e57159ff565b3
+- kind: tar
+  url: gnome_downloads:mutter/48/mutter-48.beta.tar.xz
+  ref: 2e2fd6a024d4a5b0fed9a34f4ca25fc9505fe84f04da0cd5dc901b70d868ba31
 
 build-depends:
 - core-deps/python-argcomplete.bst

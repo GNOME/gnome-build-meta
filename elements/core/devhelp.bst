@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:devhelp.git
-  track: main
-  ref: 43.0-26-gaa6a5447f0a9bd7890ef17fe6d78ab99a73f7bd7
-
+- kind: tar
+  url: gnome_downloads:devhelp/43/devhelp-43.0.tar.xz
+  ref: 63ceeefd05392e02044881ef1ecd724293553da5735b7efc082b2d13fe85dd04
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:Incubator/papers.git
-  track: main
-  ref: 47.0-422-g4427d3c949c9c2b351ef1688b58807c01a30329e
+- kind: tar
+  url: gnome_downloads:papers/48/papers-48.beta.tar.xz
+  ref: 358df30dca1a7150f0552614c68ef4309566b398951b81ebaf25311fd04886c6
 - kind: cargo2
   ref:
   - kind: registry

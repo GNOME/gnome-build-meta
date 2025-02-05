@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:Incubator/showtime.git
-  track: main
-  ref: 48.beta.1-1-gf4059614272decebae80439cdd1b18af356ff77d
-
+- kind: tar
+  url: gnome_downloads:showtime/48/showtime-48.beta.1.tar.xz
+  ref: 38237b0c90539b5262f3323e10a63ed4d421e8d374cde68b7a3a29d9ea18bc35
 build-depends:
 - core-deps/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

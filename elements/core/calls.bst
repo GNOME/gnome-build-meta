@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:calls.git
-  track: main
-  ref: v47.0-27-gd275a1cedc2e132f6f019c78bd97e9fb9edcda47
-- kind: git_module
-  url: gnome_gitlab:World/Phosh/libcall-ui.git
-  path: subprojects/libcall-ui
-  ref: f66056ace818ff19b507335634dd67138a92c77f
-
+- kind: tar
+  url: gnome_downloads:calls/47/calls-47.0.tar.xz
+  ref: e78c7e77efeadea4f4c880560f7a58b203c5719fb803e1ed711794896a117046
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

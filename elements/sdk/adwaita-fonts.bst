@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:adwaita-fonts.git
-  track: main
-  ref: 48.2-3-g0fe69e16f27f7b5afe9e97e8b612d7ccb24b5414
+- kind: tar
+  url: gnome_downloads:adwaita-fonts/48/adwaita-fonts-48.2.tar.xz
+  ref: 156f7e92f2f82e527fc73c309dbb237c0a4a5c3a95bc5ee94a5efb6947c553e0
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

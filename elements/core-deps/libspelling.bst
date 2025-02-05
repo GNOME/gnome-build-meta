@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libspelling.git
-  track: main
-  ref: 0.4.6-2-g512be0e74541c2bfedebb9328c84557bf7ca2dd9
-
+- kind: tar
+  url: gnome_downloads:libspelling/0.4/libspelling-0.4.6.tar.xz
+  ref: 3248a9b5336ea2f727d2db912d2f0083accc0505ce707679b3d9b8266c0101f5
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

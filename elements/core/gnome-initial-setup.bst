@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-initial-setup.git
-  track: master
-  ref: 48.beta-0-g764900873c85851ddf2dde8fcbe80472cc907399
-
+- kind: tar
+  url: gnome_downloads:gnome-initial-setup/48/gnome-initial-setup-48.beta.tar.xz
+  ref: ae697c7808bd5149d78ce7b988cda19b3ef6613179e8a6308065272ea755d33c
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

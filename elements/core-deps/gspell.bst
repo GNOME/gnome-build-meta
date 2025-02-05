@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gspell.git
-  track: master
-  ref: 1.14.0-0-g719723a269a793f82f7566b732eb007ef821e244
-
+- kind: tar
+  url: gnome_downloads:gspell/1.14/gspell-1.14.0.tar.xz
+  ref: 64ea1d8e9edc1c25b45a920e80daf67559d1866ffcd7f8432fecfea6d0fe8897
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

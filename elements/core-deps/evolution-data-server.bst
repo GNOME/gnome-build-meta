@@ -1,11 +1,9 @@
 kind: cmake
 
 sources:
-- kind: git_repo
-  url: gnome:evolution-data-server.git
-  track: master
-  ref: 3.55.2-6-g12ed38447f639879daf6af2e6673b19e3002b8d8
-
+- kind: tar
+  url: gnome_downloads:evolution-data-server/3.55/evolution-data-server-3.55.2.tar.xz
+  ref: 12f82c37d43424fb5ad3bd243c55b6a24cad21d0bb68e9cec16878f3bc6e5367
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
