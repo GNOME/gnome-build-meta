@@ -42,7 +42,6 @@ boards_elements = [
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
     ("sdk/pygobject.bst", "Fails to build because of pythoncapi-compat, see https://gitlab.gnome.org/GNOME/pygobject/-/issues/670"),
-    ("sdk/gobject-introspection.inc", "Introduced new attribute which isn't  yet handled by gi-docgen, see https://gitlab.gnome.org/GNOME/gi-docgen/-/issues/211"),
 ]
 
 def git(*args):
