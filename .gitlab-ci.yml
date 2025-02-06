@@ -1,5 +1,5 @@
 include:
-  - local: ".gitlab-ci/arch.yml"
+- local: ".gitlab-ci/arch.yml"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
