@@ -3,10 +3,11 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-system-monitor.git
-  track: master
-  ref: 48.alpha-0-geefdce8d0e993726067a3e111e753f99fa50c0aa
+  track: main
+  ref: 48.beta-2-g4e88c3c72245d4b0339bbe52630c30c39eb600c1
 
 build-depends:
+- core-deps/catch2.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
