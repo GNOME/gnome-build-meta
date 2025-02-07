@@ -36,11 +36,15 @@ variables:
       efi-arch: riscv64
   kcmdline: >-
     rw
-    quiet splash
     mount.usrflags=ro
     mount.usrfstype=squashfs
     lockdown=confidentiality
     systemd.firstboot=no
+    root=LABEL=root
+    loglevel=10
+    console=ttyS2,1500000n8
+    console=tty0
+    consoleblank=0
 
 config:
   install-commands:
