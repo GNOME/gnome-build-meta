@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gcr/4.3/gcr-4.3.0.tar.xz
-  ref: c3ee8728e4364b0397f435fa20f92f901ab139d2b264f4e059d67b3c0f43cd36
+  url: gnome_downloads:gcr/4.3/gcr-4.3.1.tar.xz
+  ref: b2f070fff1840eef70546a28be80235427c116aadc593b5b68ccc869be3aa09d
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
