@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="block", KERNEL=="sr*", ENV{ID_FS_PUBLISHER_ID}=="GNOME", ENV{ID_FS_LABEL}=="GNOME-OS-*", ENV{SYSTEMD_WANTS}+="sr-loop@%k.service", TAG+="systemd"

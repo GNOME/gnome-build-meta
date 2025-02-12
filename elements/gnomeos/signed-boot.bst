@@ -40,8 +40,8 @@ config:
   - |
     set -x
 
-    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/repart.json)
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/repart.json)
+    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/mini.repart.json)
+    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
     image_version="${label##gnomeos_usr_v_}"
 
     version="$(ls -1 /usr/lib/modules | head -n1)"
@@ -63,10 +63,23 @@ config:
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
+      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service" \
+      --sbat=@sbat.txt \
+      --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/volatile.addon.efi"
+
+    ukify build \
+      --secureboot-private-key=VENDOR.key \
+      --secureboot-certificate=VENDOR.crt \
       --cmdline='module_blacklist=nouveau nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1' \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi"
 
+    # Note: because we sign root=tmpfs, it is important we do not use
+    # a pcr key for ready pcrphase or later. Otherwise we allow the live ISO
+    # to unlock encrypted disks, since you can log in as root on it.
+    # Encrypted mounts should be mounted before local-fs.target, that
+    # is before sysinit.target. That means we can allow up to
+    # leave-initrd.
     ukify build \
       --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" \
       --os-release=@/etc/os-release \
@@ -74,7 +87,7 @@ config:
       --uname="${version}" \
       --pcr-private-key=tpm2-pcr-private.pem \
       --pcr-public-key=tpm2-pcr-public.pem \
-      --phases="enter-initrd,enter-initrd:leave-initrd,enter-initrd:leave-initrd:sysinit" \
+      --phases="enter-initrd,enter-initrd:leave-initrd" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \

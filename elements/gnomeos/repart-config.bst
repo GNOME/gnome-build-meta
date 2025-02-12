@@ -5,4 +5,4 @@ config:
 
 sources:
 - kind: local
-  path: files/secure-repart-config
+  path: files/secure-repart-config/main
