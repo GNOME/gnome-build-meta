@@ -1,10 +1,12 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/repart-config.bst
+- gnomeos/repart-config-mini.bst
 - filename: gnomeos/filesystem.bst
   config:
     location: '/sysroot'
@@ -182,6 +184,36 @@ config:
 
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
+        --definitions=/usr/lib/repart.d.mini \
+        --empty=create \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --seed %{repart-seed} \
+        --split=true \
+        --root=/sysroot \
+        '%{install-root}/mini.raw' \
+        --json=pretty \
+        >'%{install-root}/mini.repart.json'
+
+  - |
+    rm '%{install-root}/mini.raw'
+
+  - |
+    usr_uuid=$(jq -r '.[0].uuid' '%{install-root}/mini.repart.json')
+    usr_verity_uuid=$(jq -r '.[1].uuid' '%{install-root}/mini.repart.json')
+    cat <<EOF >>definitions/21-usr-A.conf
+    UUID=${usr_uuid}
+    EOF
+    cat <<EOF >>definitions/20-usr-verity-A.conf
+    UUID=${usr_verity_uuid}
+    EOF
+
+  - |
+    SYSTEMD_LOG_LEVEL=debug \
+      systemd-repart \
         --defer-partitions=esp \
         --definitions=definitions \
         --empty=create \
@@ -191,7 +223,7 @@ config:
         --offline=true \
         --no-pager \
         --seed %{repart-seed} \
-        --root=/sysroot \
+        --root='%{install-root}' \
         --split=true \
         '%{install-root}/disk.raw' \
         --json=pretty \
