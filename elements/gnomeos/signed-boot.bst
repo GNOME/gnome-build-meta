@@ -40,8 +40,8 @@ config:
   - |
     set -x
 
-    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/repart.json)
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/repart.json)
+    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/mini.repart.json)
+    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
     image_version="${label##gnomeos_usr_v_}"
 
     version="$(ls -1 /usr/lib/modules | head -n1)"
@@ -59,6 +59,13 @@ config:
       --cmdline='security=apparmor' \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi"
+
+    ukify build \
+      --secureboot-private-key=VENDOR.key \
+      --secureboot-certificate=VENDOR.crt \
+      --cmdline='root=tmpfs systemd.mask=systemd-repart.service' \
+      --sbat=@sbat.txt \
+      --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/volatile.addon.efi"
 
     ukify build \
       --secureboot-private-key=VENDOR.key \
