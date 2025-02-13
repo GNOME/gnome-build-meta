@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-keyring.git
   track: main
-  ref: 48.alpha-27-g1813567a7ab202c093b968520c3432cad751e0db
+  ref: 48.alpha-29-gf2bdcdeaf9466f145ae5263ff115020bf1d74bfb
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
