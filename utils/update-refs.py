@@ -41,7 +41,6 @@ boards_elements = [
 #
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
-    ("sdk/pygobject.bst", "Fails to build because of pythoncapi-compat, see https://gitlab.gnome.org/GNOME/pygobject/-/issues/670"),
     ("sdk/gobject-introspection.inc", "Vala errors for new elements atm, see https://gitlab.gnome.org/GNOME/vala/-/issues/1586"),
 ]
 
