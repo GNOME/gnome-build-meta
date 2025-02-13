@@ -10,6 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/libgit2.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libpeas.bst
 - gnomeos-deps/deviced.bst
