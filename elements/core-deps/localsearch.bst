@@ -35,4 +35,3 @@ depends:
 variables:
   meson-local: >-
     -Diptc=disabled
-    -Dminer_rss=false
