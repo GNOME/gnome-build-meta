@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 48.beta-3-ga042bad7e66794ca9e53fe84c48525e7806a51c6
+  ref: 48.beta-6-g7d3cdb93b931d16a95ea975efbe66c3fc55af7d7
 - kind: cargo2
 
   ref:
@@ -328,14 +328,20 @@ sources:
     name: glib-sys
     version: 0.20.7
     sha: b360ff0f90d71de99095f79c526a5888c9c92fc9ee1b19da06c6f5e75f0c2a53
-  - kind: registry
+  - kind: git
+    commit: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+    repo: https://gitlab.gnome.org/GNOME/glycin.git
+    query:
+      rev: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
     name: glycin
     version: 2.1.0-beta
-    sha: 5a0156b1f142e88a923d8e122bbacc7ae893a9da975771ea8c4db33cf7a5a317
-  - kind: registry
+  - kind: git
+    commit: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+    repo: https://gitlab.gnome.org/GNOME/glycin.git
+    query:
+      rev: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
     name: glycin-utils
     version: 3.0.0-beta
-    sha: 5be81f5ab01eec2fe54b24ab58f2c435275684916c3842b1157cd7351e07caa2
   - kind: registry
     name: gobject-sys
     version: 0.20.7

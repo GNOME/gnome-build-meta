@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:chergert/foundry.git
   track: main
-  ref: 1e3186ebc5baf106e7dfc585db6fbec004c45d9c
+  ref: 8e617fb5d8c63f4068156d931e7b997870d3b502
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
