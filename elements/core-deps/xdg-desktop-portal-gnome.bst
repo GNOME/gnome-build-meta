@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 48.beta.2-5-g887e14d408666097acb463feef03087b15b60d3b
+  ref: 48.beta.2-6-g3389d9100ae776e63632d5bd4ffe8093f5cd85ae
 - kind: git_repo
   url: gnome:libgxdp.git
   track: main
