@@ -16,6 +16,7 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos/reload-sysext.bst
 - gnomeos-deps/mokutil.bst
+- gnomeos/guest-no-password.bst
 
 (?):
 - arch in ["x86_64"]:

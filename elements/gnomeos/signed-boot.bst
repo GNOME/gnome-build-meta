@@ -60,10 +60,32 @@ config:
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi"
 
+    cat <<EOF >sysusers.conf
+    g guest 1000
+    u guest 1000:1000 "Guest" /home/guest /bin/bash
+    m guest wheel
+    m guest users
+    EOF
+
+    cat <<EOF >gdm.conf
+    [daemon]
+    AutomaticLoginEnable=True
+    AutomaticLogin=guest
+    EOF
+    gdm=$(cat gdm.conf | base64 -w0)
+
+    cat <<EOF >tmpfiles.conf
+    C /home/guest - - - - /usr/share/factory/etc/skel
+    Z /home/guest - guest guest
+    f+~ /etc/gdm/custom.conf - - - - ${gdm}
+    EOF
+    sysusers=$(cat sysusers.conf | base64 -w0)
+    tmpfiles=$(cat tmpfiles.conf | base64 -w0)
+
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service" \
+      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service systemd.set-credential-binary=sysusers.extra:${sysusers} systemd.set-credential-binary=tmpfiles.extra:${tmpfiles}" \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/volatile.addon.efi"
 
