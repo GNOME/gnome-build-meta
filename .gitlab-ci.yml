@@ -166,6 +166,7 @@ default:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+  timeout: '90m'
   needs:
   - job: 's3-image'
     artifacts: false
