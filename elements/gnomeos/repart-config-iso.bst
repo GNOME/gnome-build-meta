@@ -1,7 +1,7 @@
 kind: import
 
 config:
-  target: '%{indep-libdir}/repart.d.iso'
+  target: '%{indep-libdir}/repart.iso.d'
 
 sources:
 - kind: local

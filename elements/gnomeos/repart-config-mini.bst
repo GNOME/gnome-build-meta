@@ -1,7 +1,7 @@
 kind: import
 
 config:
-  target: '%{indep-libdir}/repart.d.mini'
+  target: '%{indep-libdir}/repart.mini.d'
 
 sources:
 - kind: local

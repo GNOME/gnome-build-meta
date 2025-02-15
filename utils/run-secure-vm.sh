@@ -7,6 +7,12 @@ cmdline=()
 
 while [ $# -gt 0 ]; do
     case "$1" in
+        --live-disk)
+            live=disk
+            ;;
+        --live-cdrom)
+            live=cdrom
+            ;;
         --reset)
             reset=1
             ;;
@@ -35,10 +41,22 @@ done
 : ${SWTPM_STATE:="${STATE_DIR}/swtpm-state"}
 : ${SWTPM_UNIT=swtpm-$(echo -n "$(realpath .)" | sha1sum | head -c 8)}
 : ${BST:=bst}
+: ${ARCH:="x86_64"}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
-: ${IMAGE_ELEMENT:="gnomeos/image.bst"}
 
-BST_OPTIONS=()
+if [ "${live+set}" = set ]; then
+    : ${IMAGE_ELEMENT:="gnomeos/live-image.bst"}
+else
+    : ${IMAGE_ELEMENT:="gnomeos/image.bst"}
+fi
+
+BST_OPTIONS=(-o arch ${ARCH})
+
+case "${ARCH}" in
+    x86_64)
+        BST_OPTIONS+=(-o x86_64_v3 true)
+    ;;
+esac
 
 if [ "${#args[@]}" -ge 1 ]; then
     IMAGE_ELEMENT="${args[0]}"
@@ -49,6 +67,10 @@ if [ "${#args[@]}" -ge 2 ]; then
 fi
 
 if [ "${buildid+set}" = set ]; then
+    if [ "${live+set}" = set ]; then
+        echo "--live-* and --buildid together are not yet supported" 1>&2
+        exit 1
+    fi
     mkdir -p "${STATE_DIR}/builds"
     if ! [ -f "${STATE_DIR}/builds/disk_${buildid}.img.xz" ]; then
         wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp"
@@ -82,7 +104,12 @@ cleanup() {
 }
 trap cleanup EXIT
 
-if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
+img_ext=img
+if [ "${live+set}" = set ]; then
+    img_ext=iso
+fi
+
+if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.${img_ext}" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
 
@@ -93,16 +120,20 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.img" ]; then
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
-    unxz "${checkout}/disk.img.xz"
-    truncate --size 50G "${checkout}/disk.img"
-    mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
+    if [ "${live+set}" = set ]; then
+        mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
+    else
+        unxz "${checkout}/disk.img.xz"
+        truncate --size 50G "${checkout}/disk.img"
+        mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
+    fi
     rm -rf "${checkout}"
 fi
 
 if ! [ -f "${STATE_DIR}/OVMF_CODE.fd" ] || ! [ -f "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
-    bst build freedesktop-sdk.bst:components/ovmf.bst
+    "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf.bst
     "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
     cp "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd"
     cp "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd"
@@ -115,9 +146,10 @@ fi
 QEMU_ARGS=()
 QEMU_ARGS+=(-m 8G)
 QEMU_ARGS+=(-M q35,accel=kvm)
+QEMU_ARGS+=(-cpu host)
 QEMU_ARGS+=(-smp 4)
-QEMU_ARGS+=(-net nic,model=virtio)
-QEMU_ARGS+=(-net user)
+QEMU_ARGS+=(-netdev user,id=net1)
+QEMU_ARGS+=(-device virtio-net-pci,netdev=net1,bootindex=-1,romfile="")
 QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_CODE.fd,readonly=on,format=raw")
 QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_VARS.fd,format=raw")
 if ! [ "${no_tpm+set}" = set ]; then
@@ -125,7 +157,20 @@ if ! [ "${no_tpm+set}" = set ]; then
     QEMU_ARGS+=(-tpmdev emulator,id=tpm0,chardev=chrtpm)
     QEMU_ARGS+=(-device tpm-tis,tpmdev=tpm0)
 fi
-QEMU_ARGS+=(-drive "if=virtio,file=${STATE_DIR}/disk.img,media=disk,format=raw")
+
+readonly=off
+if [ "${live-}" = cdrom ]; then
+    readonly=on
+fi
+
+QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.${img_ext},media=${live-disk},format=raw,readonly=${readonly}")
+
+if [ "${live-disk}" = disk ]; then
+    QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
+elif [ "${live}" = cdrom ]; then
+    QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
+    QEMU_ARGS+=(-device "scsi-cd,drive=boot-disk,bootindex=1")
+fi
 QEMU_ARGS+=(-device virtio-vga-gl -display gtk,gl=on)
 QEMU_ARGS+=(-full-screen)
 QEMU_ARGS+=(-device ich9-intel-hda)

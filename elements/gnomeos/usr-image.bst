@@ -178,7 +178,7 @@ config:
   - |
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
-        --definitions=/usr/lib/repart.d.mini \
+        --definitions=/usr/lib/repart.mini.d \
         --empty=create \
         --size=auto \
         --dry-run=no \
