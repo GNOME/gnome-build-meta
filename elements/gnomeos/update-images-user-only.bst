@@ -20,10 +20,10 @@ config:
   - |
     set -x
 
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/repart.json)
+    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
     image_version="${label##gnomeos_usr_v_}"
 
-    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/repart.json)
+    roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/mini.repart.json)
 
     usr_part_uuid="$(jq -r '(.[] | select(.file | match("/21-usr-A.conf$"))).uuid' /usr-image/repart.json)"
     usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/repart.json)
@@ -36,7 +36,7 @@ config:
   - |
     set -x
 
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/repart.json)
+    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
     image_version="${label##gnomeos_usr_v_}"
 
     cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi" "%{install-root}/gnomeos-%{systemd-arch}_${image_version}.efi"

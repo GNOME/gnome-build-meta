@@ -35,7 +35,7 @@ config:
   commands:
   - mkdir -p definitions
   - |
-    cp /usr/lib/repart.d.iso/*.conf definitions/
+    cp /usr/lib/repart.iso.d/*.conf definitions/
 
   - |
     for extra in /sysroot/efi/EFI/Linux/gnomeos_*.efi.extra.d/*; do
