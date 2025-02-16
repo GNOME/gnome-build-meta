@@ -28,6 +28,7 @@ depends:
 - gnomeos-deps/fprintd.bst
 - gnomeos-deps/nss-mdns.bst
 - gnomeos-deps/opensc.bst
+- gnomeos-deps/switcheroo-control.bst
 - gnomeos-deps/uresourced.bst
 - gnomeos-deps/zram-generator.bst
 - core-deps/boltd.bst
