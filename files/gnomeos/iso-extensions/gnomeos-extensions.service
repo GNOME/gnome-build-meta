@@ -1,0 +1,13 @@
+[Unit]
+DefaultDependencies=no
+ConditionKernelCommandLine=gnomeos.extensions
+Wants=extensions.mount
+After=extensions.mount
+Conflicts=shutdown.target
+Before=shutdown.target
+Before=systemd-sysext.service
+
+[Service]
+Type=oneshot
+ExecStart=mkdir -p /run/extensions
+ExecStart=bash -c 'ln -s /extensions/sysext/*.raw /run/extensions/'

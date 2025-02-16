@@ -1,0 +1,15 @@
+diff --git a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+index 7ce16b9f..e519c528 100644
+--- a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
++++ b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+@@ -599,8 +599,8 @@ gis_diskimage_page_mount (GisPage *page)
+ 
+       dev = udisks_block_get_preferred_device (block);
+ 
+-      if (!((is_live && g_str_equal (uuid, udisks_block_get_id_uuid (block))) ||
+-          g_str_equal (label, udisks_block_get_id_label (block))))
++      if (!((is_live && 0 == g_strcmp0 (uuid, udisks_block_get_id_uuid (block))) ||
++          0 == g_strcmp0 (label, udisks_block_get_id_label (block))))
+         continue;
+ 
+       if (udisks_block_get_hint_ignore (block))

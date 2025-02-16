@@ -16,6 +16,7 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos/reload-sysext.bst
 - gnomeos-deps/mokutil.bst
+- gnomeos/iso-extensions.bst
 
 (?):
 - arch in ["x86_64"]:

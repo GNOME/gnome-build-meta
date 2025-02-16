@@ -1,0 +1,8 @@
+[Unit]
+ConditionKernelCommandLine=gnomeos.extensions
+Before=systemd-sysext.service
+
+[Mount]
+What=/dev/disk/by-partlabel/gnomeos_ext_%A
+Where=/extensions
+Options=ro

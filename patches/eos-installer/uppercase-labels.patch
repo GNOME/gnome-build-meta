@@ -1,0 +1,18 @@
+FAT are not suppose to have lower case, and systemd-repart refuses it.
+
+diff --git a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+index 7ce16b9f..32098d05 100644
+--- a/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
++++ b/gnome-image-installer/pages/diskimage/gis-diskimage-page.c
+@@ -581,9 +581,9 @@ gis_diskimage_page_mount (GisPage *page)
+   const gchar *label;
+ 
+   if (gis_store_is_live_install ())
+-    label = "eoslive";
++    label = "EOSLIVE";
+   else
+-    label = "eosimages";
++    label = "EOSIMAGES";
+ 
+   for (l = objects; l != NULL; l = l->next)
+     {

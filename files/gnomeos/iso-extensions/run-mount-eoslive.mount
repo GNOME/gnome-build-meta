@@ -1,0 +1,6 @@
+[Mount]
+What=LABEL=EOSLIVE
+Where=/run/mount/eoslive
+Type=vfat
+Options=ro,noatime,nodev,nosuid,noexec,nofail
+DirectoryMode=0755

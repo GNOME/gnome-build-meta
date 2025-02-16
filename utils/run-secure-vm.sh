@@ -171,6 +171,12 @@ elif [ "${live}" = cdrom ]; then
     QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
     QEMU_ARGS+=(-device "scsi-cd,drive=boot-disk,bootindex=1")
 fi
+
+if [ "${live+set}" = set ]; then
+    truncate --size 50G "${STATE_DIR}/disk.img"
+    QEMU_ARGS+=(-drive "if=virtio,file=${STATE_DIR}/disk.img,media=disk,format=raw")
+fi
+
 QEMU_ARGS+=(-device virtio-vga-gl -display gtk,gl=on)
 QEMU_ARGS+=(-full-screen)
 QEMU_ARGS+=(-device ich9-intel-hda)

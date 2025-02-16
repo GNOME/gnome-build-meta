@@ -27,6 +27,12 @@ sources:
   path: patches/eos-installer/0001-polkit-rules-tweak-to-be-ecma-5-compatible.patch
 - kind: patch
   path: patches/eos-installer/usrfs.patch
+- kind: patch
+  path: patches/eos-installer/null-label.patch
+- kind: patch
+  path: patches/eos-installer/show.patch
+- kind: patch
+  path: patches/eos-installer/uppercase-labels.patch
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst

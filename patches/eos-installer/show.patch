@@ -1,0 +1,9 @@
+diff --git a/eos-installer-data/com.endlessm.Installer.desktop.in.in b/eos-installer-data/com.endlessm.Installer.desktop.in.in
+index 0f9233e5..1b189826 100644
+--- a/eos-installer-data/com.endlessm.Installer.desktop.in.in
++++ b/eos-installer-data/com.endlessm.Installer.desktop.in.in
+@@ -7,4 +7,3 @@ Type=Application
+ StartupNotify=true
+ Categories=GNOME;GTK;System;
+ OnlyShowIn=GNOME;
+-NoDisplay=true

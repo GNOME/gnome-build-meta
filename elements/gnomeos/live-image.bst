@@ -6,6 +6,8 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/dosfstools.bst
 - freedesktop-sdk.bst:components/mtools.bst
+- freedesktop-sdk.bst:components/e2fsprogs.bst
+- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 - iso-deps/libisoburn.bst
 - gnomeos/repart-config-iso.bst
@@ -21,6 +23,12 @@ build-depends:
 - filename: gnomeos/os-release-user.bst
   config:
     location: '/sysroot'
+- filename: gnomeos/eos-installer-layer-signature.bst
+  config:
+    location: '/sysroot/extensions/sysext'
+- filename: iso/signed-image-only.bst
+  config:
+    location: '/sysroot/eoslive'
 
 environment:
   XZFLAGS: -T%{max-jobs}

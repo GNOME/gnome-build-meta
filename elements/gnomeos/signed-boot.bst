@@ -63,7 +63,7 @@ config:
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service" \
+      --cmdline="root=tmpfs rd.systemd.mask=systemd-repart.service systemd.mask=systemd-repart.service endless.live_boot gnomeos.extensions" \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/volatile.addon.efi"
 
