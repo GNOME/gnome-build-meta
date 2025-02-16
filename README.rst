@@ -49,12 +49,12 @@ To build the GNOME OS "secure boot" image locally:
 2. Build the disk image (first command) or the ISO installer (second command)::
 
       $ bst build gnomeos/image.bst
-      $ bst build iso/image.bst
+      $ bst build gnomeos/live-image.bst
 
 3. Checkout the image or installer::
 
       $ bst artifact checkout gnomeos/image.bst --directory ./disk
-      $ bst artifact checkout iso/image.bst --directory ./iso
+      $ bst artifact checkout gnomeos/live-image.bst --directory ./iso
 
 OCI Images
 ~~~~~~~~~~
