@@ -4,12 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 48.beta.2-6-g3389d9100ae776e63632d5bd4ffe8093f5cd85ae
+  ref: 48.beta.2-8-gd769222a560dab41e9c651af8d39c99da5591e87
 - kind: git_repo
   url: gnome:libgxdp.git
   track: main
   directory: subprojects/libgxdp
-  ref: 917c82bbb9accb543e403b398e9c43dda7b4fcc7
+  ref: e68375c7aced97705953b8e3b30af9f17991153b
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
