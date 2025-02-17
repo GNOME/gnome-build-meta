@@ -21,6 +21,7 @@ depends:
 - gnomeos/reload-sysext.bst
 - gnomeos/os-release-user.bst
 - gnomeos/replace-signed-systemd-boot.bst
+- gnomeos/live.bst
 
 (?):
 - arch in ["x86_64"]:

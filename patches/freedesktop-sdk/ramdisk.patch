@@ -1,0 +1,10 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 3dc8dd3d8..fb90a0915 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -2208,3 +2208,5 @@ case "$arch" in
+         module INTEL_RAPL
+     ;;
+ esac
++
++module BLK_DEV_RAM
