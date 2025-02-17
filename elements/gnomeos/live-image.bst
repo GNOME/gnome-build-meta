@@ -40,8 +40,8 @@ config:
   - |
     for extra in /sysroot/efi/EFI/Linux/gnomeos_*.efi.extra.d/*; do
       case "${extra}" in
-        */volatile.addon.efi)
-          # Keep root=tmpfs
+        */live.addon.efi)
+          # Keep root=live:gnomeos
           ;;
         *)
           rm -rf "${extra}"
@@ -61,8 +61,9 @@ config:
     # remove MOK manager so we do not write MOKs
     rm /sysroot/efi/EFI/BOOT/mm*.efi
 
-    # The iso should never enroll secure boot keys
-    rm -rf /sysroot/efi/loader/keys
+  - |
+    # The iso should not enroll secure boot keys automatically
+    mv /sysroot/efi/loader/keys/auto /sysroot/efi/loader/keys/safe
 
   - |
     mkdir -p /var/tmp

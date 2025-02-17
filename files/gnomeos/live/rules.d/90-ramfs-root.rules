@@ -1,0 +1,3 @@
+SUBSYSTEM=="block", KERNEL=="ram*", TAG+="systemd"
+SUBSYSTEM=="block", KERNEL=="ram*", ACTION!="remove", IMPORT{builtin}="blkid"
+SUBSYSTEM=="block", KERNEL=="ram*", ENV{DEVTYPE}=="partition", ENV{ID_FS_TYPE}=="btrfs", SYMLINK+="gnomeos-ram-root"

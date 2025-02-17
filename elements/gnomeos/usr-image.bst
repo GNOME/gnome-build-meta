@@ -32,7 +32,12 @@ config:
 
   - |
     mkdir -p /sysroot/usr/share/factory
+
+  - |
     mv -T /sysroot/etc /sysroot/usr/share/factory/etc
+
+  - |
+    mv -T /sysroot/efi /sysroot/usr/share/factory/efi
 
   - |
     cat >/sysroot/usr/lib/tmpfiles.d/extra-etc.conf<<EOF

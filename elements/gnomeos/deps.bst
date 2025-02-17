@@ -4,6 +4,7 @@ depends:
 - gnomeos-deps/deps.bst
 
 - gnomeos/repart-config.bst
+- gnomeos/repart-config-fromlive.bst
 - gnomeos/initramfs/signed-modules.bst
 - gnomeos/sysupdate-config.bst
 - gnomeos/ld-config.bst
@@ -16,6 +17,8 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos/reload-sysext.bst
 - gnomeos-deps/mokutil.bst
+- gnomeos/live.bst
+- gnomeos/signed-boot-common.bst
 
 (?):
 - arch in ["x86_64"]:

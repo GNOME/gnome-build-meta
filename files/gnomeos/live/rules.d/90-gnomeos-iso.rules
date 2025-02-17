@@ -1,0 +1,9 @@
+SUBSYSTEM!="block", GOTO="gnomeos_iso_end"
+
+KERNEL!="sr*", ENV{ID_FS_PUBLISHER_ID}=="GNOME", ENV{ID_FS_LABEL}=="GNOME-OS-*", SYMLINK+="gnomeos-installer/gpt", ENV{GNOMEOS_INSTALLER}="1"
+IMPORT{parent}="GNOMEOS_INSTALLER"
+ENV{DEVTYPE}=="partition", ENV{GNOMEOS_INSTALLER}=="1", ENV{ID_PART_ENTRY_TYPE}=="c12a7328-f81f-11d2-ba4b-00a0c93ec93b", SYMLINK+="gnomeos-installer/esp"
+ENV{DEVTYPE}=="partition", ENV{ID_FS_TYPE}=="DM_verity_hash", , ENV{ID_PART_ENTRY_NAME}=="gnomeos_usr_v_*", SYMLINK+="gnomeos-installer/verity"
+ENV{DEVTYPE}=="partition", ENV{ID_FS_TYPE}=="squashfs", ENV{ID_PART_ENTRY_NAME}=="gnomeos_usr_*", SYMLINK+="gnomeos-installer/usr"
+
+LABEL="gnomeos_iso_end"
