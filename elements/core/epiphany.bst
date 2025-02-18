@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:epiphany.git
   track: main
-  ref: 48.beta-12-g2cd56f82d775f6ce58126728be1807bbd1d94477
+  ref: 48.beta-13-g621eb7f019de5393e86b8c03a66b6fcb1b12794a
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
