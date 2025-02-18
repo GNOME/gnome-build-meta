@@ -5,6 +5,7 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
+- core-deps/zenity.bst
 - gnomeos-deps/sysext-utils.bst
 - core/meta-gnome-core-developer-tools.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

@@ -9,6 +9,7 @@ build-depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/xvfb.bst
+- core-deps/zenity.bst
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
