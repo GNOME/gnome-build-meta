@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 48.beta-62-g33761eb2afd165c7ccd48c3f4a385e598775d366
+  ref: 48.beta-73-g45f60a2cd40905765a1912d91ae73112f1fd8d1c
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
 - kind: git_repo
@@ -16,6 +16,7 @@ build-depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/xvfb.bst
+- core-deps/zenity.bst
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst

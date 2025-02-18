@@ -45,7 +45,15 @@ config:
     components/pipewire-base.bst: sdk-deps/pipewire.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
+
+    # While freedesktop-sdk provides a zenity element, it's the
+    # gtk3 version which we don't want, and we also override it
+    # to a void element to avoid zenity ending up in our Runtime.
+    # However mutter depends on zenity when building the tests,
+    # so we will add it to core-deps, oci images and gnomeos but
+    # not the Flatpak runtime, as its easy to bundle when needed.
     components/zenity.bst: void/zenity.bst
+
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
     components/linux-module-cert.bst: gnomeos/linux-module-cert.bst
     components/systemd-base.bst: core-deps/systemd-base.bst
