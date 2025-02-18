@@ -6,6 +6,7 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
+- core-deps/zenity.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
