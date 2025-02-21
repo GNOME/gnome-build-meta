@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 48.beta-8-gd42a7c1d0315850d53172c0cd7f29be81842927e
+  ref: 48.beta-13-g8c64b0ced6dd18e2d367460e4b57722bb0a82752
 - kind: cargo2
 
   ref:
@@ -310,24 +310,24 @@ sources:
     sha: bb45773f5b8945f12aecd04558f545964f943dacda1b1155b3d738f5469ef661
   - kind: registry
     name: gio
-    version: 0.20.7
-    sha: a517657589a174be9f60c667f1fec8b7ac82ed5db4ebf56cf073a3b5955d8e2e
+    version: 0.20.9
+    sha: a4f00c70f8029d84ea7572dd0e1aaa79e5329667b4c17f329d79ffb1e6277487
   - kind: registry
     name: gio-sys
-    version: 0.20.8
-    sha: 8446d9b475730ebef81802c1738d972db42fde1c5a36a627ebc4d665fc87db04
+    version: 0.20.9
+    sha: 160eb5250a26998c3e1b54e6a3d4ea15c6c7762a6062a19a7b63eff6e2b33f9e
   - kind: registry
     name: glib
-    version: 0.20.7
-    sha: f969edf089188d821a30cde713b6f9eb08b20c63fc2e584aba2892a7984a8cc0
+    version: 0.20.9
+    sha: 707b819af8059ee5395a2de9f2317d87a53dbad8846a2f089f0bb44703f37686
   - kind: registry
     name: glib-macros
     version: 0.20.7
     sha: 715601f8f02e71baef9c1f94a657a9a77c192aea6097cf9ae7e5e177cd8cde68
   - kind: registry
     name: glib-sys
-    version: 0.20.7
-    sha: b360ff0f90d71de99095f79c526a5888c9c92fc9ee1b19da06c6f5e75f0c2a53
+    version: 0.20.9
+    sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: git
     commit: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
     repo: https://gitlab.gnome.org/GNOME/glycin.git
@@ -364,16 +364,16 @@ sources:
     sha: bca10fc65d68528a548efa3d8747934adcbe7058b73695c9a7f43a25352fce14
   - kind: registry
     name: gtk4
-    version: 0.9.5
-    sha: b697ff938136625f6acf75f01951220f47a45adcf0060ee55b4671cf734dac44
+    version: 0.9.6
+    sha: af1c491051f030994fd0cde6f3c44f3f5640210308cff1298c7673c47408091d
   - kind: registry
     name: gtk4-macros
     version: 0.9.5
     sha: 0ed1786c4703dd196baf7e103525ce0cf579b3a63a0570fe653b7ee6bac33999
   - kind: registry
     name: gtk4-sys
-    version: 0.9.5
-    sha: 3af4b680cee5d2f786a2f91f1c77e95ecf2254522f0ca4edf3a2dce6cb35cecf
+    version: 0.9.6
+    sha: 41e03b01e54d77c310e1d98647d73f996d04b2f29b9121fe493ea525a7ec03d6
   - kind: registry
     name: gufo
     version: 0.2.0-alpha.1
