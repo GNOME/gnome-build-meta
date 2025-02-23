@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 48.beta-4-gfaa23abcca465db96cc6099612e95a7220bf5511
+  ref: 48.beta-6-gf5630ffd9296a69eb5c960a3e8cadfcf5e84ba06
 - kind: cargo2
   ref:
   - kind: registry
