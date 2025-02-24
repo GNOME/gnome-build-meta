@@ -2,8 +2,8 @@ kind: pyproject
 
 sources:
 - kind: tar
-  url: github_files:OpenPrinting/pycups/releases/download/v2.0.1/pycups-2.0.1.tar.gz
-  ref: 57434ce5f62548eb12949ca8217f066f4eeb21a5d6ab8b13471dce350e380c90
+  url: github_files:OpenPrinting/pycups/releases/download/v2.0.4/pycups-2.0.4.tar.gz
+  ref: 843e385c1dbf694996ca84ef02a7f30c28376035588f5fbeacd6bae005cf7c8d
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
