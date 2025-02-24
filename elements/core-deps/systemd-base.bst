@@ -87,6 +87,7 @@ variables:
     -Ddbus=disabled
     -Dbpf-framework=disabled
     -Dstatus-unit-format-default=combined
+    -Dselinux=disabled
 
 public:
   cpe:
