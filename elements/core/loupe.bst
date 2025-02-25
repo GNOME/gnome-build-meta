@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 48.beta-16-g8ffb45b1a5a554ae77e2cb733503e4b3fea5d398
+  ref: 48.beta-21-gfe275ae3a7fb5297d674e46f17d63d9f0ba5c9aa
 - kind: cargo2
 
   ref:
@@ -329,17 +329,17 @@ sources:
     version: 0.20.9
     sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: git
-    commit: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+    commit: 1fa8de634adb5d5e5fcac3aee58290b4374b09da
     repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
-      rev: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+      rev: 1fa8de634adb5d5e5fcac3aee58290b4374b09da
     name: glycin
     version: 2.1.0-beta
   - kind: git
-    commit: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+    commit: 1fa8de634adb5d5e5fcac3aee58290b4374b09da
     repo: https://gitlab.gnome.org/GNOME/glycin.git
     query:
-      rev: 08d7799d6c29c544bfe6914d4e7921bbbeb5f3ff
+      rev: 1fa8de634adb5d5e5fcac3aee58290b4374b09da
     name: glycin-utils
     version: 3.0.0-beta
   - kind: registry
@@ -380,8 +380,8 @@ sources:
     sha: 123269a8dd94cffac4b2d1d84dde8b184c4597da6b0e838a649c0133b964a903
   - kind: registry
     name: gufo-common
-    version: 0.2.0-alpha.1
-    sha: 34b07b8af7ba58b6c455183ca059e6e39e461996582ec6b140a374b3201c3c05
+    version: 0.2.0-alpha.2
+    sha: 90c3526dee6b3d1a2a8314538086d70092603c3363025d2b047e3abea1054336
   - kind: registry
     name: gufo-exif
     version: 0.2.0-alpha.1
