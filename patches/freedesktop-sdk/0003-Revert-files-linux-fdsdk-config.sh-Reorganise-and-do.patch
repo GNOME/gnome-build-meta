@@ -1,20 +1,18 @@
-commit 158b5ed504a03b4fedd8b58cabcbdd1c464e378f
-Author: Tanvir Roshid <tanvirroshid786123@gmail.com>
-Date:   Tue Jan 14 18:47:30 2025 +0000
+From 487b18e9c7854c9ba29177145b5b39731867542a Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Sun, 2 Mar 2025 08:00:53 +0100
+Subject: [PATCH 3/7] Revert "files/linux/fdsdk-config.sh: Reorganise and
+ document"
 
-    files/linux/fdsdk-config.sh: Reorganise and document
-    
-    This commit reorganises the existing PinePhone Pro kernel configurations
-    to group related configs logically, and add comments to document each one.
-    
-    There are no functional changes introduced.
-    
-    (cherry picked from commit c9b02326aad00f8e55823e16aa9f3362f5ab1172)
+This reverts commit 158b5ed504a03b4fedd8b58cabcbdd1c464e378f.
+---
+ files/linux/fdsdk-config.sh | 61 ++++++++++++++++---------------------
+ 1 file changed, 27 insertions(+), 34 deletions(-)
 
-diff --git b/files/linux/fdsdk-config.sh a/files/linux/fdsdk-config.sh
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
 index ffabc9769..3dc8dd3d8 100644
---- b/files/linux/fdsdk-config.sh
-+++ a/files/linux/fdsdk-config.sh
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
 @@ -10,40 +10,33 @@ arch=$1
  # PinePhone Pro kernel configs
  case "$arch" in
@@ -83,3 +81,6 @@ index ffabc9769..3dc8dd3d8 100644
      ;;
  esac
  
+-- 
+2.47.2
+
