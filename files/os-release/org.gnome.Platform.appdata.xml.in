@@ -28,6 +28,7 @@
     </ul>
   </description>
   <url type="homepage">http://www.gnome.org/</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues</url>
   <project_group>GNOME</project_group>
   <update_contact>richard@hughsie.com</update_contact>
 </component>
