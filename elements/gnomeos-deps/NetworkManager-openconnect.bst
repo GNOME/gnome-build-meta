@@ -20,6 +20,10 @@ depends:
 - core-deps/NetworkManager.bst
 - gnomeos-deps/openconnect.bst
 
+variables:
+  conf-local: >-
+    --with-gtk4
+
 config:
   install-commands:
     (>):
