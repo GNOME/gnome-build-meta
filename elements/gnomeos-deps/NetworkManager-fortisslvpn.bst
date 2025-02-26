@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
 - gnomeos-deps/openfortivpn.bst
@@ -17,3 +17,4 @@ depends:
 variables:
   conf-local: >-
     --without-libnm-glib
+    --with-gtk4
