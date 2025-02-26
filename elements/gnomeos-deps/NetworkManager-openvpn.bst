@@ -12,11 +12,15 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/libsecret.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
 - gnomeos-deps/openvpn.bst
+
+variables:
+  conf-local: >-
+    --with-gtk4
 
 config:
   install-commands:
