@@ -5,9 +5,12 @@ sources:
   url: cpan:authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz
   ref: 3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5
 
+build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+
 depends:
 - freedesktop-sdk.bst:components/perl.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   configure-commands:

@@ -2,13 +2,14 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/xz.bst
 - filename: gnomeos/usr-image.bst
   config:
     location: /usr-image
 - filename: gnomeos/signed-boot.bst
   config:
     location: /signed-boot
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 environment:
   XZFLAGS: '-T%{max-jobs}'

@@ -28,9 +28,14 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/aspell.bst
+- freedesktop-sdk.bst:components/findutils.bst
+
   
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  strip-binaries: ''
 
 config:
   build-commands:

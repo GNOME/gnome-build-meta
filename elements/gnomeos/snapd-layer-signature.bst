@@ -16,6 +16,7 @@ environment-nocache:
 
 variables:
   repart-seed: c4ffa971-b583-4d0d-bcc8-a9bc6a109aec
+  strip-binaries: ''
 
 sources:
 - kind: local

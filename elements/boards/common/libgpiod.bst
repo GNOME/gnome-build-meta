@@ -7,7 +7,7 @@ sources:
   ref: v1.6.3-0-gbb4e5ce7071feed41bd3f0d9a62b5033fd483a18
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 variables:

@@ -1,9 +1,10 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/squashfs-tools.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/repart-config.bst
 - gnomeos/repart-config-mini.bst
@@ -17,9 +18,12 @@ variables:
 
 environment:
   SYSTEMD_REPART_MKFS_OPTIONS_SQUASHFS: -all-time %{filesystem-time}
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
 
 config:
   commands:
+  - mkdir /fakecap
   - |
     prepare-image.sh \
        --sysroot /sysroot \

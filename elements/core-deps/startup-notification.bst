@@ -8,4 +8,4 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/xcb-util.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

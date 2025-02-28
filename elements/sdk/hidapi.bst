@@ -9,9 +9,10 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 
 variables:
   cmake-local: >-
     -DHIDAPI_WITH_LIBUSB=OFF
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5

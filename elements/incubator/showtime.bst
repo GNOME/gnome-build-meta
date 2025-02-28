@@ -17,7 +17,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst

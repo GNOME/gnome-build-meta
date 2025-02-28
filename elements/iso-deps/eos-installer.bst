@@ -29,7 +29,7 @@ sources:
   path: patches/eos-installer/usrfs.patch
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gnupg.bst
 - core-deps/udisks2.bst
 - core/gnome-desktop.bst

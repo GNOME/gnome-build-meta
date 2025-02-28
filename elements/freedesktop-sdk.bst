@@ -3,8 +3,8 @@ kind: junction
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-24.08*
-  ref: freedesktop-sdk-24.08.17-0-g3fdd23052bf2bd22ff6928b307faa2672cae994e
+  track: master
+  ref: 24.08-branchpoint-1823-gff50805d557cf5a892a5203dc69c92d46fb1c672
 - kind: patch_queue
   path: patches/freedesktop-sdk
 
@@ -26,7 +26,7 @@ config:
   overrides:
     components/at-spi2-core.bst: sdk/at-spi2-core.bst
     components/cairo.bst: sdk/cairo.bst
-    components/fcitx5.bst: sdk/fcitx5-gtk.bst
+    components/fcitx5-gtk.bst: sdk/fcitx5-gtk.bst
     components/gcab.bst: sdk/gcab.bst
     components/gdk-pixbuf.bst: sdk/gdk-pixbuf.bst
     components/glib-networking.bst: sdk/glib-networking.bst
@@ -45,6 +45,7 @@ config:
     components/pango.bst: sdk/pango.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
+    components/libsecret.bst: sdk/libsecret.bst
 
     # While freedesktop-sdk provides a zenity element, it's the
     # gtk3 version which we don't want, and we also override it

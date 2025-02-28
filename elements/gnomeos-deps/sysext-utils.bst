@@ -14,4 +14,4 @@ depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/squashfs-tools.bst

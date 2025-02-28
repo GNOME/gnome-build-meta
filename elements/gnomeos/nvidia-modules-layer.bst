@@ -1,8 +1,9 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/squashfs-tools.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/initramfs/signed-nvidia-modules.bst
   config:
@@ -11,8 +12,13 @@ build-depends:
 variables:
   repart-seed: a19b0f25-42ac-4c92-8921-d8d4079ec140
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
+  - mkdir /fakecap
   - |
     mkdir -p /sysroot-nvidia-modules/usr/lib/extension-release.d
     case "%{branch}" in

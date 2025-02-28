@@ -10,4 +10,4 @@ build-depends:
 
 depends:
 - core-deps/plist.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

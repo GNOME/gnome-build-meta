@@ -25,7 +25,7 @@ depends:
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/3364#note_2324071
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 public:
   bst:

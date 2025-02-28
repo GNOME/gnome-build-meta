@@ -20,7 +20,7 @@ depends:
 - sdk/webkit2gtk-4.1.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 public:
   bst:

@@ -17,7 +17,7 @@ depends:
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/shared-mime-info.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

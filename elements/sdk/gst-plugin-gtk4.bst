@@ -7,6 +7,7 @@ environment-nocache:
 - MAXJOBS
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
@@ -15,7 +16,7 @@ depends:
 - sdk/gtk.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 sources:
 - kind: tar

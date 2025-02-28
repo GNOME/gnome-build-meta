@@ -20,7 +20,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/xdg-desktop-portal.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   # libgxdp tests depend on mutter

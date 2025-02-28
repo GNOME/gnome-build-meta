@@ -17,7 +17,7 @@ build-depends:
 depends:
 - sdk/gtk.bst
 - freedesktop-sdk.bst:components/appstream.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

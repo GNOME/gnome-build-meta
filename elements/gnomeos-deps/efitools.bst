@@ -41,12 +41,13 @@ sources:
   directory: extra-db-mic
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/perl-slurp.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 

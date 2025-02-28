@@ -19,7 +19,7 @@ depends:
 - core-deps/cairomm.bst
 - core-deps/glibmm.bst
 - sdk/pango.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

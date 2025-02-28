@@ -2,6 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/gnupg.bst
+- freedesktop-sdk.bst:components/sed.bst
 - filename: gnomeos/image.bst
   config:
     location: /sysupdate

@@ -12,7 +12,7 @@ depends:
 - freedesktop-sdk.bst:components/jpeg.bst
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/pixman.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   conf-local: >-
     --enable-smartcard

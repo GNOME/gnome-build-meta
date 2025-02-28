@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 
@@ -20,6 +20,9 @@ sources:
   ref: 2f0630f88752d50b11a427bdd71f20f7178219e647c56cbaf36c032dbe1ed9d0
 - kind: local
   path: files/noto-cjk/generate-config.sh
+
+variables:
+  strip-binaries: ''
 
 config:
   build-commands:

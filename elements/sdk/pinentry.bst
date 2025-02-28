@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnupg:ftp/gcrypt/pinentry/pinentry-1.3.1.tar.bz2
+  url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.1.tar.bz2
   ref: bc72ee27c7239007ab1896c3c2fae53b076e2c9bd2483dc2769a16902bce8c04
 
 build-depends:

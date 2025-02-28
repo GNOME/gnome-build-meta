@@ -13,4 +13,4 @@ depends:
 - core-deps/libssh2.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

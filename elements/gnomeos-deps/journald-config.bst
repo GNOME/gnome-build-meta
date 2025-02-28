@@ -5,6 +5,7 @@ depends:
 
 variables:
   journald-config: "%{install-root}%{indep-libdir}/systemd/journald.conf.d"
+  strip-binaries: ''
 
 config:
   install-commands:

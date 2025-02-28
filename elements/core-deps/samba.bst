@@ -14,6 +14,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - core-deps/openldap.bst
@@ -23,7 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   # not a real autotools project
