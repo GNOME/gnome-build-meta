@@ -4,9 +4,12 @@ depends:
 - gnomeos/ldconfig-always.bst
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
+
+variables:
+  strip-binaries: ''
 
 config:
   install-commands:

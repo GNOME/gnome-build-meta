@@ -1,7 +1,7 @@
 kind: manual
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/systemd.bst
 
 runtime-depends:
@@ -13,6 +13,7 @@ runtime-depends:
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
+- freedesktop-sdk.bst:components/sed.bst
 
 sources:
 - kind: local
@@ -37,6 +38,9 @@ sources:
   path: files/eos-installer-extra/eos-installer.json
 - kind: local
   path: files/eos-installer-extra/session.conf
+
+variables:
+  strip-binaries: ''
 
 config:
   build-commands:

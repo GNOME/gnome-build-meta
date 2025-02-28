@@ -4,6 +4,7 @@ build-depends:
 - core-deps/systemd-base.bst
 
 runtime-depends:
+- freedesktop-sdk.bst:bootstrap/libxcrypt.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/systemd-hwdb.bst
 - freedesktop-sdk.bst:components/audit.bst
@@ -26,6 +27,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libqrencode.bst
 - freedesktop-sdk.bst:components/iptables.bst
+- freedesktop-sdk.bst:components/libmicrohttpd.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 
 config:

@@ -5,10 +5,15 @@ sources:
   path: files/gnomeos/generate-initramfs
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/python3-pyelftools.bst
+- freedesktop-sdk.bst:components/gcc.bst
+- freedesktop-sdk.bst:components/lvm2.bst
+
+variables:
+  strip-binaries: ''
 
 config:
   install-commands:

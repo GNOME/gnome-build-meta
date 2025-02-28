@@ -22,4 +22,4 @@ depends:
 - sdk/libadwaita.bst
 - sdk/pygobject.bst
 - sdk/tinysparql.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

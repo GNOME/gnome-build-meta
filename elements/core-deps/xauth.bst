@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - core-deps/xorg-lib-xmu.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xau.bst
 - freedesktop-sdk.bst:components/xorg-lib-xext.bst

@@ -19,4 +19,4 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - freedesktop-sdk.bst:components/icu.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

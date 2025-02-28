@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 
 variables:
+  strip-binaries: ''
   (?):
   - arch == 'i686':
       efi-arch: ia32

@@ -19,7 +19,7 @@ depends:
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 # CLIENT_SDL is depending on webkit2gtk-4.0
 # https://github.com/FreeRDP/FreeRDP/blob/87557b1e4ef636e18a7dea58f0cae76fa5dff4fb/client/SDL/aad/CMakeLists.txt#L42

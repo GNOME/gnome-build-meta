@@ -3,7 +3,7 @@ kind: script
 build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/squashfs-tools.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/repart-config.bst
 - gnomeos/repart-config-mini.bst

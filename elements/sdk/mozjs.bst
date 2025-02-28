@@ -9,6 +9,7 @@ sources:
   path: patches/mozjs/python-compat.patch
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
@@ -20,7 +21,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/icu.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   optimize-debug: "false"

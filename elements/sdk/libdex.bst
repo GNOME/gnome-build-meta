@@ -15,7 +15,7 @@ depends:
 - sdk/glib.bst
 - sdk/liburing.bst
 - sdk/sysprof-minimal.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   meson-local: >-
     -Ddocs=true

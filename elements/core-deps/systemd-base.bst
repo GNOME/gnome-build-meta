@@ -11,10 +11,12 @@ sources:
   ref: v257-2390-gda2498352635921621a636014fee0547c53058b2
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/bpf.bst
+- freedesktop-sdk.bst:components/gawk.bst
+- freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/libcap.bst

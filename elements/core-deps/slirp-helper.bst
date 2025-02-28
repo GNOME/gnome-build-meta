@@ -1,6 +1,7 @@
 kind: manual
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/libffi.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
@@ -8,7 +9,7 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/libslirp.bst
 - freedesktop-sdk.bst:components/dbus.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 sources:
 - kind: tar

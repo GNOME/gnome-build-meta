@@ -68,6 +68,9 @@ config:
     L /etc/swtpm-localca.conf
     L /etc/swtpm-localca.options
     L /etc/swtpm_setup.conf
+    # freedesktop-sdk.bst:components/gawk.bst
+    L /etc/profile.d/gawk.sh
+    L /etc/profile.d/gawk.csh
     EOF
 
   - |

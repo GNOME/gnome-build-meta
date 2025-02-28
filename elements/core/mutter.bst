@@ -56,7 +56,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:components/xwayland.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

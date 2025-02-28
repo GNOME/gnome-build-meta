@@ -33,7 +33,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xdamage.bst
 - freedesktop-sdk.bst:components/xorg-lib-xi.bst
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   local_flags: '-DG_ENABLE_DEBUG -DG_DISABLE_CAST_CHECKS'

@@ -14,4 +14,4 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/xdg-user-dirs.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

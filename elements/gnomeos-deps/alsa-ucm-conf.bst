@@ -8,6 +8,9 @@ sources:
 depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - install -d %{install-root}%{datadir}/alsa

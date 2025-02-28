@@ -17,7 +17,7 @@ build-depends:
   strict: true
   config:
     location: /debug-only
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 (?):
 - arch in ["x86_64"]:
