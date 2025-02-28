@@ -32,6 +32,7 @@ config:
     components/glib-networking.bst: sdk/glib-networking.bst
     components/glib.bst: sdk/glib.bst
     components/gobject-introspection.bst: sdk/gobject-introspection.bst
+    components/python3-gi-docgen.bst: sdk/gi-docgen.bst
     components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
