@@ -64,7 +64,7 @@ default:
   stage: build
   interruptible: true
   script:
-  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst oci/platform.bst oci/sdk.bst oci/core.bst)
+  - TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst)
 
   - |
     case "${ARCH}" in
@@ -222,7 +222,7 @@ deploy-oci:
   # Sometimes podman push will timeout
   retry: 2
   script:
-  - ${BST} -o arch "${ARCH}" artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" build oci/platform.bst oci/sdk.bst oci/core.bst
   - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/platform.bst | podman load
   - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/sdk.bst | podman load
   - ${BST} -o arch "${ARCH}" artifact checkout --tar - oci/core.bst | podman load
