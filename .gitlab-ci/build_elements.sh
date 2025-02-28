@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst oci/platform.bst oci/sdk.bst oci/core.bst)
+TARGETS=(core.bst flatpak-runtimes.bst flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst vm/manifest-devel.bst vm-secure/manifest-devel.bst)
 
 case "${ARCH}" in
     aarch64)
