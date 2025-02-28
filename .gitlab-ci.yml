@@ -324,7 +324,7 @@ deploy-oci:
   # Sometimes podman push will timeout
   retry: 2
   script:
-  - ${BST} ${ARCH_OPT} artifact pull oci/platform.bst oci/sdk.bst oci/core.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build oci/platform.bst oci/sdk.bst oci/core.bst
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/platform.bst | podman load
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/sdk.bst | podman load
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/core.bst | podman load
