@@ -10,7 +10,7 @@ TARGETS_GNOMEOS=(core.bst gnomeos/manifest-devel.bst gnomeos/build-non-images.bs
 case "${ARCH}" in
     x86_64)
         if [[ "${X86_64_V3:-0}" == "1" ]]; then
-            TARGETS=(${TARGETS_GNOMEOS[@]} oci/platform.bst oci/sdk.bst oci/core.bst)
+            TARGETS=(${TARGETS_GNOMEOS[@]})
         else
             TARGETS=(${TARGETS_RUNTIME[@]})
         fi
