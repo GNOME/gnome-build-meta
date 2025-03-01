@@ -1,0 +1,25 @@
+commit 15b9d31b2cc9bab3d7046ef9f8eaa44c49d02252
+Author: Abderrahim Kitouni <akitouni@gnome.org>
+Date:   Fri Jan 24 17:43:08 2025 +0100
+
+    components/linux.bst: add option needed for HDMI output on the Rock 5B
+
+diff --git b/files/linux/fdsdk-config.sh a/files/linux/fdsdk-config.sh
+index 3dc8dd3d8..df64d67b7 100644
+--- b/files/linux/fdsdk-config.sh
++++ a/files/linux/fdsdk-config.sh
+@@ -629,14 +629,6 @@ case "$arch" in
+     ;;
+ esac
+ 
+-# Needed for HDMI display on Rock 5B
+-case "$arch" in
+-    aarch64)
+-        module PHY_ROCKCHIP_SAMSUNG_HDPTX
+-        enable ROCKCHIP_DW_HDMI_QP
+-    ;;
+-esac
+-
+ # DRM for virtual machines
+ enable DRM_VIRTIO_GPU
+ case "$arch" in

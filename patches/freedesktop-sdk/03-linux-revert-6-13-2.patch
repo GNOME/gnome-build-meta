@@ -1,0 +1,22 @@
+commit db920ce12ba91cf621c7fc1e861dc4c81f8c49f6
+Author: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date:   Mon Feb 17 03:03:39 2025 +0000
+
+    Update elements/include/linux.yml to v6.13.2-0
+    
+    Updates elements/include/linux.yml to v6.13.2-0 (0da4b4b)
+    Previous version was v6.13.1-0 (16dc8d5)
+
+diff --git b/elements/include/linux.yml a/elements/include/linux.yml
+index 438d5ab28..1e760a4a9 100644
+--- b/elements/include/linux.yml
++++ a/elements/include/linux.yml
+@@ -4,7 +4,7 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.13.2-0-g0da4b4b84ffe5efe12f5fd96dd294aa9d20ba2de
++  ref: v6.13.1-0-g16dc8d5d6fc132f09b3fa6021f94f11c60e39957
+ - kind: local
+   path: files/linux/config-utils.sh
+ - kind: local
