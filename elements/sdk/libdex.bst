@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libdex/0.9/libdex-0.9.0.tar.xz
-  ref: b46a8613d923eb425d24f7e8149836a01d4f2533141ec666ea9f149fe128ac04
+  url: gnome_downloads:libdex/0.9/libdex-0.9.1.tar.xz
+  ref: d2b5ec6577fc3e6af03dda48b8c0be144e31baaa1cc9224acb956e41e174c15b
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

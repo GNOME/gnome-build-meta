@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libshumate/1.4/libshumate-1.4.beta.tar.xz
-  ref: 2535feddc17975c063859c52fc096ee7249cee0344e635b087bbe47166ef603b
+  url: gnome_downloads:libshumate/1.4/libshumate-1.4.rc.tar.xz
+  ref: a57b97dbbda55bcb07c6f0197ff006128518c2b2c88fbee8bea5168acbc9baee
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
