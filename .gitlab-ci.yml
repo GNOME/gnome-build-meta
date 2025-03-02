@@ -1,10 +1,10 @@
 include:
-  - local: ".gitlab-ci/arch.yml"
-  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
-    inputs:
-      job-stage: "deploy"
-      dist-job-name: "make-git-archive"
-      tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+- local: ".gitlab-ci/arch.yml"
+- component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+  inputs:
+    job-stage: "deploy"
+    dist-job-name: "make-git-archive"
+    tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -39,9 +39,9 @@ stages:
     # Allow forcing a specific stage to run, useful for scheduled pipelines to save up runners.
     # Set this to the stage you want to trigger in a scheduled pipeline
     # Example: RUN_THIS_STAGE_ONLY="track-refs"
-    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
-      when: never
-    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
+  - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
+    when: never
+  - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -317,7 +317,7 @@ deploy-oci:
   extends:
   - .x86_64_v3
   rules:
-    - !reference [.deploy-rules, rules]
+  - !reference [.deploy-rules, rules]
   needs:
   - job: 'build-x86_64_v3'
     artifacts: false
@@ -670,7 +670,7 @@ update_refs:
     SSH_SERVER_HOSTKEYS: "ssh.gitlab.gnome.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHG6b3deoYMPwKEu9Sj+y6MBHYYUKQiAnta/go3aNv7R"
   timeout: '90m'
   rules:
-    - !reference [".stage-only-rules", "rules"]
+  - !reference [".stage-only-rules", "rules"]
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache
