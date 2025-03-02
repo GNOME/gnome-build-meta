@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.59/librsvg-2.59.90.tar.xz
-  ref: d3d623a9839d2b7eb76a5b0b621c15d02abc4d9a886376c3a53b568206ebf545
+  url: gnome_downloads:librsvg/2.59/librsvg-2.59.91.tar.xz
+  ref: b1ff70d5b04441ba2ba3f80404b7d98127128fba1020211e3d99b7bf400e4f83
 - kind: cargo2
   ref:
   - kind: registry

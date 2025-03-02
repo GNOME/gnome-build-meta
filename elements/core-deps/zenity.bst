@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:zenity.git
-  track: master
-  ref: 4.1.90-7-g0fdc38700f21bcb60a986ac9e9f9b101e5a49783
-
+- kind: tar
+  url: gnome_downloads:zenity/4.1/zenity-4.1.90.tar.xz
+  ref: bf3679c6205ff48dcebd1e1dff3a3a4a6a0b3a53e1cbc3b098a9ec0b62bd7236
 build-depends:
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/itstool.bst
