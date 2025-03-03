@@ -16,7 +16,7 @@ build-depends:
 depends:
 - core-deps/librest.bst
 - sdk/gcr.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/json-glib.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
