@@ -10,9 +10,13 @@ build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
+variables:
+  meson-local: >-
+    -Denable-test=false
+
 depends:
 - sdk/glib.bst
-- sdk/gtk+-3.bst
+- freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
