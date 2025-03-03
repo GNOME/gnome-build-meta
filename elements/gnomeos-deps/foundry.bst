@@ -11,6 +11,7 @@ build-depends:
 
 depends:
 - core-deps/jsonrpc-glib.bst
+- core-deps/libgit2.bst
 - core-deps/libpeas.bst
 - gnomeos-deps/deviced.bst
 - sdk/glib.bst
