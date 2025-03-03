@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: github_files:fwupd/fwupd/releases/download/1.9.21/fwupd-1.9.21.tar.xz
   ref: a0b56ed11f0ae8045b465535d468b14a230535a30d4a703ff9113fc5dd236ba4
+- kind: patch
+  path: patches/fwupd/new-pango.patch
 
 build-depends:
 - sdk/gi-docgen.bst
