@@ -16,7 +16,7 @@ build-depends:
 
 depends:
 - sdk/gobject-introspection.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/mozjs.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/dbus.bst
