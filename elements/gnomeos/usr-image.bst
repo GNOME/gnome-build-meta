@@ -64,7 +64,6 @@ config:
     C /etc/fstab
     C /etc/fuse.conf
     C /etc/fwupd
-    C /etc/gamemode.ini
     C /etc/gdm
     C /etc/geoclue
     C /etc/grub.d
