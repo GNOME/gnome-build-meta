@@ -204,11 +204,22 @@ config:
   - |
     usr_uuid=$(jq -r '.[0].uuid' '%{install-root}/mini.repart.json')
     usr_verity_uuid=$(jq -r '.[1].uuid' '%{install-root}/mini.repart.json')
+    usr_label=$(jq -r '.[0].label' '%{install-root}/mini.repart.json')
+    usr_verity_label=$(jq -r '.[1].label' '%{install-root}/mini.repart.json')
+    # Because we do not use --root=/sysroot, then repart does not see
+    # os-release and cannot expand %A. So we have to copy the label
+    # from the first stage.
+    sed -i "/^Label=/d" definitions/21-usr-A.conf
+    sed -i "/^Label=/d" definitions/20-usr-verity-A.conf
     cat <<EOF >>definitions/21-usr-A.conf
+    CopyBlocks=/mini.usr.raw
     UUID=${usr_uuid}
+    Label=${usr_label}
     EOF
     cat <<EOF >>definitions/20-usr-verity-A.conf
+    CopyBlocks=/mini.usr-verity.raw
     UUID=${usr_verity_uuid}
+    Label=${usr_verity_label}
     EOF
 
   - |
