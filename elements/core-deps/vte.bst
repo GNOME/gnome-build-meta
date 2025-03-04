@@ -14,7 +14,6 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/gtk+-3.bst
 - sdk/gtk.bst
 - core-deps/fast-float.bst
 - freedesktop-sdk.bst:components/fribidi.bst
@@ -25,6 +24,7 @@ depends:
 
 variables:
   meson-local: >-
+    -Dgtk3=false
     -Dgtk4=true
     -Ddocs=true
     -Dglade=false
