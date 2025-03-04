@@ -22,6 +22,7 @@ MODULES=(
     fs/btrfs
     drivers/nvme
     drivers/scsi
+    drivers/pci/controller
 )
 
 MODULES_BY_NAME=(
