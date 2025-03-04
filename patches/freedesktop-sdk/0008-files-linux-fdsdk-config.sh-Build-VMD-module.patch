@@ -1,0 +1,30 @@
+From ee05cf9d7202018e782798b7eda742db48901d08 Mon Sep 17 00:00:00 2001
+From: Jian-Hong Pan <jhp@endlessos.org>
+Date: Tue, 25 Feb 2025 18:30:35 +0800
+Subject: [PATCH] files/linux/fdsdk-config.sh: Build VMD module
+
+More and more laptops enable the Intel VMD feature by default. System
+cannot detect the VMD mapped storages until the VMD driver is built.
+---
+ files/linux/fdsdk-config.sh | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 1052aeecf..c32e89f92 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -1570,6 +1570,11 @@ if has HAVE_PCI; then
+             enable PCIE_EDR
+         fi
+     fi
++    case "$arch" in
++        i686|x86_64)
++            module VMD
++        ;;
++    esac
+ fi
+ 
+ # RISC-V
+-- 
+2.48.1
+
