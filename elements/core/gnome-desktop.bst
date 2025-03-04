@@ -27,3 +27,4 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dinstalled_tests=true
+    -Dlegacy_library=false
