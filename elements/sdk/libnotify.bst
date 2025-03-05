@@ -12,14 +12,15 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- sdk/gdk-pixbuf.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-
     -Ddocbook_docs=disabled
     -Dman=false
+    -Dtests=false
 
 public:
   bst:
