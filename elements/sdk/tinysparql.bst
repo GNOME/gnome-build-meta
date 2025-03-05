@@ -7,6 +7,8 @@ sources:
   ref: 3.9.rc-13-ga046f04697e14219d996f86577d7a4ce8bc306ac
 
 build-depends:
+- core-deps/graphviz.bst
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - sdk/pygobject.bst
@@ -25,7 +27,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Ddocs=false
     -Davahi=disabled
     -Dunicode_support=icu
     -Dstemmer=disabled
