@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - sdk/cairo.bst
-- sdk/gtk+-3.bst
+- sdk/cantarell-fonts.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/freetype.bst
 - freedesktop-sdk.bst:components/libdrm.bst
@@ -24,3 +24,5 @@ depends:
 
 variables:
   meson: meson %{build-dir} */ %{meson-args}
+  meson-local: >-
+    -Dgtk=disabled
