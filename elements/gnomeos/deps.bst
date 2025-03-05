@@ -16,6 +16,7 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos/reload-sysext.bst
 - gnomeos-deps/mokutil.bst
+- gnomeos-deps/vte-config.bst
 
 (?):
 - arch in ["x86_64"]:
