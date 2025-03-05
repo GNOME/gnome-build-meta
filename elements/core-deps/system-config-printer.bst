@@ -14,7 +14,6 @@ build-depends:
 - freedesktop-sdk.bst:components/xmlto.bst
 
 depends:
-- sdk/gtk+-3.bst
 - sdk/pygobject.bst
 - core-deps/pycups.bst
 - freedesktop-sdk.bst:components/cups-daemon.bst
