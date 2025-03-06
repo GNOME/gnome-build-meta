@@ -18,13 +18,6 @@
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Michael Catanzaro</foaf:name>
-      <foaf:mbox rdf:resource="mailto:mcatanzaro@gnome.org" />
-      <gnome:userid>mcatanzaro</gnome:userid>
-    </foaf:Person>
-  </maintainer>
-  <maintainer>
-    <foaf:Person>
       <foaf:name>Javier Jardón</foaf:name>
       <foaf:mbox rdf:resource="mailto:jjardon@gnome.org" />
       <gnome:userid>jjardon</gnome:userid>
