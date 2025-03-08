@@ -74,12 +74,12 @@ config:
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi"
 
-    # Note: because we sign root=tmpfs, it is important we do not use
-    # a pcr key for ready pcrphase or later. Otherwise we allow the live ISO
-    # to unlock encrypted disks, since you can log in as root on it.
-    # Encrypted mounts should be mounted before local-fs.target, that
-    # is before sysinit.target. That means we can allow up to
-    # leave-initrd.
+    # Note: Our security model allows for an attacker to replace the rootfs
+    # with a maliciously crafted one. This means that it's only safe to
+    # unlock the real rootfs's encryption keys while in the initrd, before
+    # we reach the leave-initrd pcrphase. For more details, including a
+    # walkthrough of how such an attack would work, check out:
+    # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/928
     ukify build \
       --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" \
       --os-release=@/etc/os-release \
@@ -87,7 +87,7 @@ config:
       --uname="${version}" \
       --pcr-private-key=tpm2-pcr-private.pem \
       --pcr-public-key=tpm2-pcr-public.pem \
-      --phases="enter-initrd,enter-initrd:leave-initrd" \
+      --phases="enter-initrd" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
