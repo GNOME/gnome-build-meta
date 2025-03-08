@@ -66,6 +66,12 @@ variables:
   - arch in ["x86_64", "i686", "arm", "aarch64", "riscv64"]:
       efi: 'true'
       bootloader: 'enabled'
+  fallback-ntp-servers: "{0..3}.gnome.pool.ntp.org"
+  fallback-dns-servers: >-
+    1.1.1.1#one.one.one.one
+    1.0.0.1#one.one.one.one
+    2606:4700:4700::1111#one.one.one.one
+    2606:4700:4700::1001#one.one.one.one
   meson-local: >-
     -Dsysvinit-path=%{sysconfdir}/init.d
     -Dsystem-uid-max=999
@@ -74,6 +80,8 @@ variables:
     -Dbootloader=%{bootloader}
     -Defi=%{efi}
     -Dfirstboot=true
+    -Dntp-servers="$(echo %{fallback-ntp-servers})"
+    -Ddns-servers="%{fallback-dns-servers}"
     -Ddefault-dnssec=no
     -Didn=true
     -Dman=enabled
