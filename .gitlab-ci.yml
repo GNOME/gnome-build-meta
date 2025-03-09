@@ -340,6 +340,11 @@ sysupdate-image-x86_64:
   needs:
   - job: 'build-x86_64_v3'
     artifacts: false
+  # Wait for the aarch64 job to complete before
+  # running, so we don't race when replacing
+  # the SHA256SUMS file
+  - job: "sysupdate-image-aarch64"
+    artifacts: false
 
 sysupdate-image-aarch64:
   extends:
