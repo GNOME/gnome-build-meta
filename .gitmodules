@@ -1,0 +1,4 @@
+[submodule "utils"]
+	path = utils
+	url = https://gitlab.gnome.org/GNOME/openqa-utils/
+	branch = sam/submodule
