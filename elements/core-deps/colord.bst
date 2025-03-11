@@ -3,6 +3,8 @@ sources:
 - kind: tar
   url: freedesktop_software:colord/releases/colord-1.4.7.tar.xz
   ref: de02d9910634ae159547585cec414e450f711c27235453b4f9b38a9f2361a653
+- kind: patch_queue
+  path: patches/colord
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
