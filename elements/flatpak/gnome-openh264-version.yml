@@ -2,4 +2,4 @@
 # newer version of the OpenH264 extension than freedesktop-sdk. This allows us
 # use newer versions of OpenH264 for the GNOME master runtime than we do for
 # stable runtimes, which is important because OpenH264 updates are risky.
-gnome-openh264-version: '2.4.1'
+gnome-openh264-version: '2.5.1'
