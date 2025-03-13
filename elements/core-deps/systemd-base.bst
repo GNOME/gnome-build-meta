@@ -35,6 +35,7 @@ build-depends:
 - freedesktop-sdk.bst:components/libidn2.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/python3-jinja2.bst
+- freedesktop-sdk.bst:components/python3-lxml.bst
 - freedesktop-sdk.bst:components/apparmor.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/curl.bst
