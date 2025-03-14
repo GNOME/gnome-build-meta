@@ -11,6 +11,7 @@ depends:
 variables:
   cmake-local: >-
     -DPORT=GTK
+    -DENABLE_SPEECH_SYNTHESIS=OFF
     -DENABLE_WEBDRIVER=OFF
     -DUSE_LIBBACKTRACE=OFF
     -DUSE_GTK4=OFF
