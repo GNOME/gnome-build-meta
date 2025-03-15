@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.2.rc-0-ge9022e39b1188330ac0a2924f52ab29063e3d1c2
+  ref: 1.2.0-0-gc886add2e54f916a8158e491ed973581a2c7b3d0
 - kind: cargo2
   ref:
   - kind: registry
@@ -35,10 +35,6 @@ sources:
     name: android_system_properties
     version: 0.1.5
     sha: 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
-  - kind: registry
-    name: anyhow
-    version: 1.0.96
-    sha: 6b964d184e89d9b6b67dd2715bc8e74cf3107fb2b529990c90cf517326150bf4
   - kind: registry
     name: approx
     version: 0.5.1
@@ -572,10 +568,6 @@ sources:
     version: 0.2.1
     sha: 9a7cbbd4ad467251987c6e5b47d53b11a5a05add08f2447a9e2d70aef1e0d138
   - kind: registry
-    name: libyml
-    version: 0.0.5
-    sha: 3302702afa434ffa30847a83305f0a69d6abd74293b6554c18ec85c7ef30c980
-  - kind: registry
     name: linux-raw-sys
     version: 0.4.15
     sha: d26c52dbd32dccf2d10cac7725f8eae5296885fb5703b261f7d0a0739ec807ab
@@ -844,9 +836,9 @@ sources:
     version: 0.6.8
     sha: 87607cb1398ed59d48732e575a4c28a7a8ebf2454b964fe3f224f2afc07909e1
   - kind: registry
-    name: serde_yml
-    version: 0.0.12
-    sha: 59e2dd588bf1597a252c3b920e0143eb99b0f76e4e082f4c92ce34fbc9e71ddd
+    name: serde_yaml_ng
+    version: 0.10.0
+    sha: 7b4db627b98b36d4203a7b458cf3573730f2bb591b28871d916dfa9efabfd41f
   - kind: registry
     name: sharded-slab
     version: 0.1.7
@@ -999,6 +991,10 @@ sources:
     name: unicode-width
     version: 0.1.14
     sha: 7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af
+  - kind: registry
+    name: unsafe-libyaml
+    version: 0.2.11
+    sha: 673aac59facbab8a9007c7f6108d11f63b603f7cabff99fabf650fea5c32b861
   - kind: registry
     name: valuable
     version: 0.1.1
