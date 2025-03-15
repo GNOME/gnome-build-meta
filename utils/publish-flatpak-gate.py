@@ -3,6 +3,7 @@
 import os
 import sys
 
+from ruamel.yaml import YAML
 
 server_url = os.environ.get("FLAT_MANAGER_SERVER")
 env_name = os.environ.get("ENVIRONMENT_NAME")
@@ -16,7 +17,9 @@ protected = os.environ.get("CI_COMMIT_REF_PROTECTED")
 is_tag = os.environ.get("CI_COMMIT_TAG")
 
 
-def print_env():
+def print_env(qualifier):
+    print(f"Project conf qualifier: {qualifier}")
+
     print(f"Flatpak Branch: {flatpak_branch}")
     print(f"Server: {server_url}")
     print(f"Environment name: {env_name}")
@@ -30,7 +33,15 @@ def print_env():
 
 
 def main():
-    print_env()
+    yaml = YAML(typ='safe', pure=True)
+    with open('project.conf') as f:
+        conf = yaml.load(f)
+
+    qualifier = conf['variables']['qualifier']
+    # Empty string is fine, None means its probably undefined
+    assert qualifier is not None
+
+    print_env(qualifier)
 
     # asser our build is from a protected branch
     assert protected == "true"
@@ -42,13 +53,16 @@ def main():
         assert flatpak_branch != "master"
         assert not flatpak_branch.endswith("beta")
         assert flatpak_branch.isnumeric()
+        assert qualifier.is_empty()
         assert server_url == "https://hub.flathub.org/"
     elif repo_name == "beta":
         assert flatpak_branch.endswith("beta")
         assert server_url == "https://hub.flathub.org/"
+        assert qualifier == "beta"
     elif repo_name == "nightly":
         assert flatpak_branch == "master"
         assert server_url == "https://flat-manager.gnome.org/"
+        assert qualifier.is_empty()
     else:
         print("Unknown value")
         sys.exit(42)
