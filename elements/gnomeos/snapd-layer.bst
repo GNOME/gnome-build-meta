@@ -75,7 +75,7 @@ config:
     mkdir -p /tmp/output/usr/share/factory/etc/profile.d
     cp -rT /sysroot-snapd/etc/profile.d/snapd.sh /tmp/output/usr/share/factory/etc/profile.d/snapd.sh
     mkdir -p /tmp/output/usr/share/factory/etc/xdg/autostart
-    cp -rT /etc/xdg/autostart/snap-userd-autostart.desktop /tmp/output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
+    cp -rT /sysroot-snapd/etc/xdg/autostart/snap-userd-autostart.desktop /tmp/output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
 
   - |
     mkdir -p /tmp/output/etc
