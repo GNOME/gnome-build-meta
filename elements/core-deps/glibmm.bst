@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glibmm/2.83/glibmm-2.83.1.tar.xz
-  ref: 68350a823c33da8acfb1263715bb002a36c68346bd44c19ac4c3f0bd190fd2b1
+  url: gnome_downloads:glibmm/2.84/glibmm-2.84.0.tar.xz
+  ref: 56ee5f51c8acfc0afdf46959316e4c8554cb50ed2b6bc5ce389d979cbb642509
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

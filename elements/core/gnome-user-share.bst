@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-user-share/48/gnome-user-share-48.alpha.1.tar.xz
-  ref: 461d398c5568dc6f620339a1017fdf6583c5c0de03b24f0136273cab884bb674
+  url: gnome_downloads:gnome-user-share/48/gnome-user-share-48.0.tar.xz
+  ref: b55805070195c2f658415b9cd2c85b2cd14ea981d61823a500d4d62b8bf83801
 - kind: cargo2
   ref:
   - kind: registry

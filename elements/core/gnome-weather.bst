@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-weather/48/gnome-weather-48.beta.tar.xz
-  ref: 739754834d880fe88a8f31cc99556125d356d6fcb7cb8226129a4ed682aab5d8
+  url: gnome_downloads:gnome-weather/48/gnome-weather-48.0.tar.xz
+  ref: 4c0569b3d815ae2f9416d47134cbd3056340640ff186d31a94c865813b4bdbb5
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

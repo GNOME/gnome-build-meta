@@ -1,4 +1,4 @@
 sources:
 - kind: tar
-  url: gnome_downloads:sysprof/48/sysprof-48.beta.tar.xz
-  ref: d11d7d4ed2515d7a1c6370770b0f1d053a93c9d7cadad5637a3102ee473f8dde
+  url: gnome_downloads:sysprof/48/sysprof-48.0.tar.xz
+  ref: 1b0f0380f2f30708ba87829321a06fee1db36dfa87797bbf07f0a7acf4498d18

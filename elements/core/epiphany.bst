@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/48/epiphany-48.rc.tar.xz
-  ref: e21c33356c75f89b3b9f6b46651f68b2fcbf2c844bd1bd58706054ad20ac6d51
+  url: gnome_downloads:epiphany/48/epiphany-48.0.tar.xz
+  ref: c9d1f6dffbad03b0916436901c770da302879ca60a636d2b72b25b142ec05f80
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

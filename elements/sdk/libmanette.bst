@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libmanette/0.2/libmanette-0.2.9.tar.xz
-  ref: 29366be5452f60a74c65fc64ffe2d74eddd4e6e6824c2cefa567a43bd92b688f
+  url: gnome_downloads:libmanette/0.2/libmanette-0.2.11.tar.xz
+  ref: b812b94e08632ba62a30960a8de29217a73a2fff5da2f12acc8a5d4771a49a70
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/48/gnome-initial-setup-48.rc.tar.xz
-  ref: 0ed422b1a0cf7628d5070364b2dd14b49d7aa0e058e83d47cac976a644dbb2e6
+  url: gnome_downloads:gnome-initial-setup/48/gnome-initial-setup-48.0.tar.xz
+  ref: 7ab30dddeacbe385968ff0d85b409f9286fb745193309fcab36be52798141589
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
