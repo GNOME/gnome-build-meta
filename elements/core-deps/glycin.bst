@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/1.2/glycin-1.2.rc.tar.xz
-  ref: 9fd92a40474c209cd403be4604bd5c4f8da36a1ea65e7b86d03dca3f1edbc611
+  url: gnome_downloads:glycin/1.2/glycin-1.2.0.tar.xz
+  ref: 16ab4a48398639ef701c7c3e27a2d31075b30e0dcaf3f1652c907b188f4290d0
 - kind: cargo2
   ref:
   - kind: registry
@@ -34,10 +34,6 @@ sources:
     name: android_system_properties
     version: 0.1.5
     sha: 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
-  - kind: registry
-    name: anyhow
-    version: 1.0.96
-    sha: 6b964d184e89d9b6b67dd2715bc8e74cf3107fb2b529990c90cf517326150bf4
   - kind: registry
     name: approx
     version: 0.5.1
@@ -404,12 +400,12 @@ sources:
     sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: registry
     name: glycin
-    version: 2.1.0-rc
-    sha: 93e02c0e978d6fb9f59613f8e51c968afd02458fee5c1fc8c4b75729298fd9ff
+    version: 2.1.0
+    sha: c1496acef16890b0022c61298052d4ca3e1a121dd4696166c3d19242581bdb9a
   - kind: registry
     name: glycin-utils
-    version: 3.0.0-rc
-    sha: 0f8038a20171ca3145c8ebbdc665048d72da89d84e383ce1d72643c724565c25
+    version: 3.0.0
+    sha: 4348643b905fc981acf8ed0315ab8e315ce771cedb65034562f477cbaa4b1ee1
   - kind: registry
     name: gobject-sys
     version: 0.20.9
@@ -578,10 +574,6 @@ sources:
     name: libseccomp-sys
     version: 0.2.1
     sha: 9a7cbbd4ad467251987c6e5b47d53b11a5a05add08f2447a9e2d70aef1e0d138
-  - kind: registry
-    name: libyml
-    version: 0.0.5
-    sha: 3302702afa434ffa30847a83305f0a69d6abd74293b6554c18ec85c7ef30c980
   - kind: registry
     name: linux-raw-sys
     version: 0.4.15
@@ -851,9 +843,9 @@ sources:
     version: 0.6.8
     sha: 87607cb1398ed59d48732e575a4c28a7a8ebf2454b964fe3f224f2afc07909e1
   - kind: registry
-    name: serde_yml
-    version: 0.0.12
-    sha: 59e2dd588bf1597a252c3b920e0143eb99b0f76e4e082f4c92ce34fbc9e71ddd
+    name: serde_yaml_ng
+    version: 0.10.0
+    sha: 7b4db627b98b36d4203a7b458cf3573730f2bb591b28871d916dfa9efabfd41f
   - kind: registry
     name: sharded-slab
     version: 0.1.7
@@ -1006,6 +998,10 @@ sources:
     name: unicode-width
     version: 0.1.14
     sha: 7dd6e30e90baa6f72411720665d41d89b9a3d039dc45b8faea1ddd07f617f6af
+  - kind: registry
+    name: unsafe-libyaml
+    version: 0.2.11
+    sha: 673aac59facbab8a9007c7f6108d11f63b603f7cabff99fabf650fea5c32b861
   - kind: registry
     name: valuable
     version: 0.1.1

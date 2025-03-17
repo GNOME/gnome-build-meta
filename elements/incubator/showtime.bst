@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:showtime/48/showtime-48.beta.1.tar.xz
-  ref: 38237b0c90539b5262f3323e10a63ed4d421e8d374cde68b7a3a29d9ea18bc35
+  url: gnome_downloads:showtime/48/showtime-48.0.tar.xz
+  ref: 03e5e62b37d3a7d34344b9b0c8805dd041987a7305bd70e4c596bc4ccaec30e4
 build-depends:
 - core-deps/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
