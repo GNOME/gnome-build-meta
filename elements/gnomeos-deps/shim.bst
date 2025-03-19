@@ -6,11 +6,11 @@ sources:
   track: '*.*'
   exclude:
   - '*-rc*'
-  ref: 15.8-0-g5914984a1ffeab841f482c791426d7ca9935a5e6
+  ref: 16.0-0-g18d98bfb34be583a5fe2987542e4b15e0db9cb61
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
-  ref: 328951d3dcb5ff97f5a7c7a362b006626fada000
+  ref: 0d74e15af1ed17a7502829bef70b745287348e3d
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys

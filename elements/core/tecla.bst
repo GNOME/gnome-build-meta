@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tecla.git
   track: main
-  ref: 48.rc-2-gd8f7543c2868ab0e6659d3731a985f83dbb59b0f
+  ref: 48.0.2-0-g58525386bf99e50d0370e04216539a0dc6a7c538
 # FIXME: This needs to be kept in sync with the wrap file ideally,
 # but this will do for now
 # https://gitlab.gnome.org/GNOME/tecla/-/blob/main/subprojects/libgxdp.wrap?ref_type=heads
