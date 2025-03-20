@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 48.0-11-gca85db7d5daf921d63cfcf0b10ede9670439ed4c
+  ref: 48.0-24-g4c06d68167fe39da914f2bc34360d7fddc951cfa
 - kind: cargo2
   ref:
   - kind: registry
@@ -397,12 +397,12 @@ sources:
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: libadwaita
-    version: 0.7.1
-    sha: 8611ee9fb85e7606c362b513afcaf5b59853f79e4d98caaaf581d99465014247
+    version: 0.7.2
+    sha: 500135d29c16aabf67baafd3e7741d48e8b8978ca98bac39e589165c8dc78191
   - kind: registry
     name: libadwaita-sys
-    version: 0.7.1
-    sha: b099a223560118d4d4fa04b6d23f3ea5b7171fe1d83dfb7e6b45b54cdfc83af9
+    version: 0.7.2
+    sha: 6680988058c2558baf3f548a370e4e78da3bf7f08469daa822ac414842c912db
   - kind: registry
     name: libc
     version: 0.2.169
