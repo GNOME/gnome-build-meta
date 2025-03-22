@@ -16,11 +16,5 @@ case "${ARCH}" in
     ;;
 esac
 
-case "${ARCH}" in
-    aarch64|x86_64)
-        TARGETS+=(vm-secure/build-non-images.bst)
-    ;;
-esac
-
 : ${BST:=bst}
 $BST --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
