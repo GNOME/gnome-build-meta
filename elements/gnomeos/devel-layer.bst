@@ -127,7 +127,7 @@ config:
 
   - |
     mkdir -p /tmp/output/usr/share/factory/etc
-    cp -rT /tmp/output/factory /tmp/output/usr/share/factory/etc
+    cp -rlTP /tmp/output/factory /tmp/output/usr/share/factory
 
   - |
     mkdir -p /tmp/output/etc
