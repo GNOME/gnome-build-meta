@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libgweather.git
   track: main
-  ref: 4.4.4-30-g9c456ba2a470ebbfc39bb64eef79fbac03481734
+  ref: 4.4.4-31-gb85bd82059bd6ac104af9e95591fff6b911c4501
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
