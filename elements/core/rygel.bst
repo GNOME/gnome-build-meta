@@ -8,6 +8,7 @@ sources:
 
 build-depends:
 - sdk/vala.bst
+- sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -25,3 +26,4 @@ depends:
 variables:
   meson-local: >-
     -Dplugins=external,gst-launch,media-export,mpris,playbin,ruih,localsearch
+    -Dintrospection=enabled
