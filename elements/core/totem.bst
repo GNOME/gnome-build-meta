@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:totem.git
   track: master
-  ref: 43.0-340-g5d51d410b28d25d952c50805798d57de46e32209
+  ref: 43.0-342-gdad25a1221385e057de36aeff1fd4cf913b1f60b
 - kind: git_module
   url: gnome:libgd.git
   path: subprojects/libgd
