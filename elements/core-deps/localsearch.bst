@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.9.0-20-gad45f7b6468bb6b59460cea7a72b417392297366
+  ref: 3.9.0-34-g99221bd78127a7eafe283f471c3b74e8f208caf8
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
