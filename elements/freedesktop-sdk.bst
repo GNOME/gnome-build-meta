@@ -43,7 +43,6 @@ config:
     components/librsvg.bst: sdk/librsvg.bst
     components/libsoup.bst: sdk/libsoup.bst
     components/pango.bst: sdk/pango.bst
-    components/pipewire-base.bst: sdk-deps/pipewire.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
 
