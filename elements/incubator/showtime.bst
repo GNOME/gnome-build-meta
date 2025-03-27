@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/showtime.git
   track: main
-  ref: 48.0-1-gd2a60abf3d2bc87470bc0e959977087254c59574
+  ref: 48.0-2-g3a3685969329c0d6342036e104ddaa4605042237
 
 build-depends:
 - core-deps/blueprint-compiler.bst
