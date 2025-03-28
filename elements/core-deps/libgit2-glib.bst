@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:libgit2-glib/1.2/libgit2-glib-1.2.0.tar.xz
-  ref: 1331dada838f4e1f591b26459d44126a325de762dc3cd26153a31afbdfe18190
+  url: gnome_downloads:libgit2-glib/1.2/libgit2-glib-1.2.1.tar.xz
+  ref: 97423a779002b3be8751c75f9d79049dfccca3616a26159fc162486772ba785f
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
