@@ -25,6 +25,7 @@ depends:
 
 - gnomeos-deps/alsa-ucm-conf.bst
 - gnomeos-deps/android-udev-rules.bst
+- gnomeos-deps/bindfs.bst
 - gnomeos-deps/fish.bst
 - gnomeos-deps/fprintd.bst
 - gnomeos-deps/nss-mdns.bst
