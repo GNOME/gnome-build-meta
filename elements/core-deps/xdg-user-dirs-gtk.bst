@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-user-dirs-gtk.git
   track: master
-  ref: 0.14-1-g16196402bccb5c8c6f2033437b8a9217ba79e711
+  ref: 0.14-2-gce21f15d6d620c10842eb4bd3a52528a27631bf4
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

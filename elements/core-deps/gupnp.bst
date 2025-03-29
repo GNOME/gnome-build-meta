@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gupnp.git
   track: master
-  ref: gupnp-1.6.8-6-g20d77346f441352dd0800fb6458aa7f91b5d8ddd
+  ref: gupnp-1.6.8-7-g3990212ac5e22ed8f9f6f83c76de0ec3651564c9
 
 build-depends:
 - sdk/gobject-introspection.bst
