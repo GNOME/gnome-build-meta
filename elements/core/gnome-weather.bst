@@ -3,11 +3,16 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-weather.git
-  track: main
-  ref: 48.0-9-gc9cde58339a0a85e6b0993dc4a8c9688a4f8e43d
+  track: cdavis/typescript
+  ref: 48.0-28-g9144bc9f3e04160485bd4e495f0b06cc4f6ac980
+- kind: git_module
+  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
+  path: gi-types
+  ref: e70b4992aa71f5298c4a98f0e9e42b7761601c5b
 
 build-depends:
 - sdk/gobject-introspection.bst
+- core-deps/typescript.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
