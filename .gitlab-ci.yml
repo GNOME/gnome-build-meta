@@ -177,7 +177,7 @@ default:
     artifacts: false
   script:
   - |
-    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" ./openqa
+    git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" --recurse-submodules ./openqa
     echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
   - |
     rm /etc/openqa/*
