@@ -35,6 +35,7 @@ depends:
 - sdk/libgee.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
+- sdk/libmanette-0.2.bst
 - sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/librsvg.bst
