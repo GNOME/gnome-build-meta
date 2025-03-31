@@ -18,7 +18,7 @@ depends:
 - core/gnome-connections.bst
 - core/gnome-console.bst
 - core/gnome-contacts.bst
-- core/gnome-disk-utility.bst
+#- core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
 - core/gnome-maps.bst
