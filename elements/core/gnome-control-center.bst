@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: main
-  ref: 48.0-22-ga623dd2a3b4839d614f9bdd72c4ac8f866fd7609
+  ref: 48.0-23-gc3994d40127bf150bd81ae9a5dce2d2cd32147a1
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
