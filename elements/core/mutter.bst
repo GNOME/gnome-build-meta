@@ -25,10 +25,6 @@ build-depends:
 - freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
-runtime-depends:
-  # xwayland crashes when gnome-control-center not present
-- core/gnome-control-center.bst
-
 depends:
 - core-deps/colord.bst
 - core-deps/libdisplay-info.bst

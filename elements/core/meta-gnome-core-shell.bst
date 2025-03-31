@@ -7,7 +7,7 @@ depends:
 - core/gdm.bst
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
-- core/gnome-control-center.bst
+#- core/gnome-control-center.bst
 - core/gnome-desktop.bst
 - core/gnome-initial-setup.bst
 - core/gnome-keyring.bst
