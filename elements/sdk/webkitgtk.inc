@@ -19,7 +19,7 @@ runtime-depends:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
-- sdk/libmanette.bst
+- sdk/libmanette-0.2.bst
 - sdk/libsecret.bst
 - sdk/pango.bst
 - sdk/woff2.bst

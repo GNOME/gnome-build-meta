@@ -2,8 +2,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:libmanette.git
-  track: main
-  ref: 0.2.11-30-g3e61927a4f798824f53ab261b04e4e37a92e1404
+  track: manette-0-2
+  ref: 0.2.11-3-gf6687c9a144f45016c86f18e630c1ec7eb251776
 
 build-depends:
 - sdk/gi-docgen.bst
