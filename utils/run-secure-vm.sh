@@ -110,6 +110,7 @@ if [ "${live+set}" = set ]; then
 fi
 
 if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.${img_ext}" ]; then
+    mkdir -p "${STATE_DIR}"
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
 
