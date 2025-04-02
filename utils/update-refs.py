@@ -42,6 +42,7 @@ boards_elements = [
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html")
+    ("core-deps/glycin.bst", "https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/951")
 ]
 
 def git(*args):
