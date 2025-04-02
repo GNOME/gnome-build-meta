@@ -422,6 +422,16 @@ iso-installer-x86_64:
   - job: 'build-x86_64_v3'
     artifacts: false
 
+live-image-x86_64:
+  extends:
+  - .manual-image-template
+  - .x86_64_v3
+  variables:
+    IMAGE: gnomeos/live-image.bst
+  needs:
+  - job: 'build-x86_64_v3'
+    artifacts: false
+
 s3-image:
   extends: .x86_64_v3
   stage: deploy
