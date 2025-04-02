@@ -27,10 +27,12 @@ files/boot-keys/extra-db/*.crt
 files/boot-keys/extra-db/*.owner
 files/boot-keys/extra-db-mic/*.crt
 files/boot-keys/extra-db-mic/*.owner
+files/boot-keys/extra-db-mic/*.cer
 files/boot-keys/extra-kek/*.crt
 files/boot-keys/extra-kek/*.owner
 files/boot-keys/extra-kek-mic/*.crt
 files/boot-keys/extra-kek-mic/*.owner
+files/boot-keys/extra-kek-mic/*.cer
 files/boot-keys/import-pubring.gpg
 files/boot-keys/private-key/
 files/boot-keys/VENDOR.der

@@ -9,12 +9,18 @@ DIST_KEYS=private-key import-pubring.gpg
 KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
 KERNEL_KEYRING=MODULES.crt SYSEXT.crt
 
-MICROSOFT_KEYS=							\
-	extra-kek-mic/mic-kek.crt extra-kek-mic/mic-kek.owner	\
-	extra-db-mic/mic-win.crt extra-db-mic/mic-win.owner	\
-	extra-db-mic/mic-other.crt extra-db-mic/mic-other.owner
+MICROSOFT_KEYS=					\
+	extra-kek-mic/mic-kek-2011.crt		\
+	extra-kek-mic/mic-kek-2023.crt		\
+	extra-db-mic/mic-win-2011.crt		\
+	extra-db-mic/mic-win-2023.crt		\
+	extra-db-mic/mic-other-2011.crt		\
+	extra-db-mic/mic-other-2023.crt		\
+	extra-db-mic/mic-optionrom-2023.crt
 
-generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS) $(MICROSOFT_KEYS)
+MICROSOFT_KEYS_OWNER=$(MICROSOFT_KEYS:.crt=.owner)
+
+generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS) $(MICROSOFT_KEYS) $(MICROSOFT_KEYS_OWNER)
 
 modules/linux-module-cert.crt: $(KERNEL_KEYRING)
 	cat $(KERNEL_KEYRING) >$@
@@ -89,19 +95,39 @@ else
 	openssl req -new -x509 -newkey rsa:2048 -subj "/CN=$(KEY_ID) $(basename $(notdir $@)) key/" -keyout "$(basename $@).key" -out "$(basename $@).crt" -days 3650 -nodes -sha256
 endif
 
-extra-kek-mic/mic-kek.cer:
-	curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt -o $@.tmp
-	echo "a6b068c3a84d31785b0745546546efed1ed1faa0db85144f99ff3a12524564212e09b493bd8d54773270bb2376eba28a29f84dfa5df5cea20e1dbf628c969a0c  extra-kek-mic/mic-kek.cer.tmp" sha512sum -c
+extra-kek-mic/mic-kek-2011.cer:
+	curl https://www.microsoft.com/pkiops/certs/MicCorKEKCA2011_2011-06-24.crt -o $@.tmp
+	echo "35c385cbf73c78e6b834406eca29edfbd9dd1de6a05e9d1d916c121b7999f4587ce308416b92f8d131021c19d4604479c08c6ca4ae050684d276a7eecaf03aac  $@.tmp" | sha512sum -c
 	mv $@.tmp $@
 
-extra-db-mic/mic-win.cer:
+extra-kek-mic/mic-kek-2023.cer:
+	curl https://www.microsoft.com/pkiops/certs/microsoft%20corporation%20kek%202k%20ca%202023.crt -o $@.tmp
+	echo "378891143b38e3665aeede69659d53f78e42db8502728213f0de3e12824872716bd3ce1ff548c4e483d1c677121844d86faa53b1a12364d60e7665630324bb90  $@.tmp" | sha512sum -c
+	mv $@.tmp $@
+
+extra-db-mic/mic-win-2011.cer:
 	curl https://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt -o $@.tmp
-	echo "a30b1e92b99b839d0076808e38f1c65fb42b1a9608778a0596f5350b3ef80dd15f2e226e1624298ff44135e736717d27642225adfe8a9d10e24b5fa22d912c18  extra-db-mic/mic-win.cer.tmp" sha512sum -c
+	echo "a30b1e92b99b839d0076808e38f1c65fb42b1a9608778a0596f5350b3ef80dd15f2e226e1624298ff44135e736717d27642225adfe8a9d10e24b5fa22d912c18  $@.tmp" | sha512sum -c
 	mv $@.tmp $@
 
-extra-db-mic/mic-other.cer:
+extra-db-mic/mic-win-2023.cer:
+	curl https://www.microsoft.com/pkiops/certs/windows%20uefi%20ca%202023.crt -o $@.tmp
+	echo "0d50602060fdb388b89761236b02f526ffba448b5735e324c292608df060ae17187f06f3a477b1a31cd13c8ce5b23f3889c73883011160a7e5ef761feb9b28fd  $@.tmp" | sha512sum -c
+	mv $@.tmp $@
+
+extra-db-mic/mic-other-2011.cer:
 	curl https://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt -o $@.tmp
-	echo "a6b068c3a84d31785b0745546546efed1ed1faa0db85144f99ff3a12524564212e09b493bd8d54773270bb2376eba28a29f84dfa5df5cea20e1dbf628c969a0c  extra-db-mic/mic-other.cer.tmp" sha512sum -c
+	echo "a6b068c3a84d31785b0745546546efed1ed1faa0db85144f99ff3a12524564212e09b493bd8d54773270bb2376eba28a29f84dfa5df5cea20e1dbf628c969a0c  $@.tmp" | sha512sum -c
+	mv $@.tmp $@
+
+extra-db-mic/mic-other-2023.cer:
+	curl https://www.microsoft.com/pkiops/certs/microsoft%20uefi%20ca%202023.crt -o $@.tmp
+	echo "32029942c3b3a60feb2cfaa1e8378961e046967fce96e60eac9aeb69cef54c461d664c1e835fdb4c21b9116a3cc971b6217684edcc9463dd2a816e3d3617c5e7  $@.tmp" | sha512sum -c
+	mv $@.tmp $@
+
+extra-db-mic/mic-optionrom-2023.cer:
+	curl https://www.microsoft.com/pkiops/certs/microsoft%20option%20rom%20uefi%20ca%202023.crt -o $@.tmp
+	echo "ea4b0b3da50d14d86f390885d3f695c2afce468299d284479badf3260b700209717f0139c52ddebe6f41b40a76f14f4e119b6ee7506ae5b9c839c6884b5ca746  $@.tmp" | sha512sum -c
 	mv $@.tmp $@
 
 extra-kek-mic/mic-%.crt: extra-kek-mic/mic-%.cer
