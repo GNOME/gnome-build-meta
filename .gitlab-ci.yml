@@ -439,9 +439,10 @@ s3-image:
   - job: 'build-x86_64_v3'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst iso/image.bst
+  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst iso/image.bst gnomeos/live-image.bst
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks iso/image.bst --directory iso
+  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/live-image.bst --directory live-image
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
@@ -449,11 +450,15 @@ s3-image:
             "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}-${ARCH}.img.xz"
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/tag/$CI_COMMIT_TAG/gnome_os_installer_$CI_COMMIT_TAG.iso
+        aws $AWS_ENDPOINT_URL s3 cp --acl public-read live-image/disk.iso \
+            "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/live_${CI_COMMIT_TAG}-${ARCH}.iso"
     else
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
             "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}-${ARCH}.img.xz"
         aws $AWS_ENDPOINT_URL s3 cp --acl public-read iso/installer.iso \
             s3://gnome-build-meta/nightly/$CI_PIPELINE_ID/gnome_os_installer_$CI_PIPELINE_ID.iso
+        aws $AWS_ENDPOINT_URL s3 cp --acl public-read live-image/disk.iso \
+            "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/live_${CI_PIPELINE_ID}-${ARCH}.iso"
     fi
 
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
