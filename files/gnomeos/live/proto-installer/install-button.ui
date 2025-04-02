@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.1 -->
+<interface>
+  <requires lib="gtk" version="4.12"/>
+  <template class="InstallButton" parent="GtkButton">
+    <property name="label">Install</property>
+    <signal name="clicked" handler="doInstall"/>
+  </template>
+</interface>

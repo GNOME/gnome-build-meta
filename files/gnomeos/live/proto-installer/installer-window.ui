@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.1 -->
+<interface>
+  <requires lib="libadwaita" version="1.4"/>
+  <template class="InstallerWindow" parent="AdwApplicationWindow">
+    <child>
+      <object class="AdwToolbarView" id="ToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="Header">
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title">Install GNOME OS</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

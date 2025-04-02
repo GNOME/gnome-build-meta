@@ -20,6 +20,7 @@ depends:
 - gnomeos/live.bst
 - gnomeos/systemd-pcrlock-workaround.bst
 - gnomeos/public-keys.bst
+- gnomeos/signed-boot-common.bst
 
 (?):
 - arch in ["x86_64"]:
