@@ -1,0 +1,12 @@
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.gnome.Installer1.InstallAuth" &&
+        subject.active == true && subject.local == true &&
+        subject.isInGroup("wheel")) {
+        try {
+          polkit.spawn(["/usr/bin/cat", "/run/gnomeos/is-live"]);
+          return polkit.Result.YES;
+        } catch (error) {
+          return polkit.Result.NO;
+        }
+    }
+});

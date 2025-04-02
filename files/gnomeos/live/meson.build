@@ -30,6 +30,26 @@ executable(
   install : true,
 )
 
+executable(
+  'env-gnomeos-live',
+  [
+    'env-generator.c',
+  ],
+  link_with : [common],
+  install_dir : systemd.get_pkgconfig_variable('systemdutildir') / 'user-environment-generators',
+  install : true,
+)
+
+executable(
+  'swap-verity',
+  [
+    'swap-verity.c',
+  ],
+  dependencies : [devmapper],
+  install_dir: get_option('prefix') / 'lib' / 'gnomeos-installer',
+  install: true,
+)
+
 subdir('rules.d')
 
 systemdsystemunitdir = systemd.get_pkgconfig_variable('systemdsystemunitdir')
@@ -53,3 +73,5 @@ install_data(
   'live.conf',
   install_dir : systemdsystemunitdir / 'systemd-pcrlock-make-policy.service.d'
 )
+
+subdir('proto-installer')
