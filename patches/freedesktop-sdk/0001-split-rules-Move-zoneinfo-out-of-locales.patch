@@ -1,0 +1,40 @@
+From 3e5b7588b7117cc2d5b27715e78bd135094d61a0 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Mon, 17 Mar 2025 17:33:42 +0100
+Subject: [PATCH] split-rules: Move zoneinfo out of locales
+
+Zoneinfo files are not locales. Also they take very little space.
+---
+ include/_private/split-rules.yml | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/include/_private/split-rules.yml b/include/_private/split-rules.yml
+index b44aa9f18b..148d69754a 100644
+--- a/include/_private/split-rules.yml
++++ b/include/_private/split-rules.yml
+@@ -37,10 +37,22 @@ doc:
+   - "%{datadir}/examples"
+   - "%{datadir}/examples/**"
+   - "%{datadir}/help"
+   - "%{datadir}/help/**"
+   - "%{datadir}/ri"
+   - "%{datadir}/ri/**"
+   - "%{datadir}/cmake-*/Help"
+   - "%{datadir}/cmake-*/Help/**"
+ 
+ static-blocklist: []
++
++locale:
++  - "%{datadir}/locale"
++  - "%{datadir}/locale/**"
++  - "%{datadir}/i18n"
++  - "%{datadir}/i18n/**"
++
++zoneinfo:
++  - "%{datadir}/zoneinfo"
++  - "%{datadir}/zoneinfo/**"
++  - "%{datadir}/zoneinfo-leaps"
++  - "%{datadir}/zoneinfo-leaps/**"
+-- 
+2.48.1
+
