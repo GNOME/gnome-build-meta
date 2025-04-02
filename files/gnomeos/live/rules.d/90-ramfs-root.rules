@@ -1,0 +1,1 @@
+KERNEL=="zram1", SYMLINK+="gnomeos-ram-root", TAG+="systemd"

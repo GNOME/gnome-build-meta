@@ -40,8 +40,8 @@ config:
   - |
     for extra in /sysroot/efi/EFI/Linux/gnomeos_*.efi.extra.d/*; do
       case "${extra}" in
-        */volatile.addon.efi)
-          # Keep root=tmpfs
+        */live.addon.efi)
+          # Keep root=live:gnomeos
           ;;
         *)
           rm -rf "${extra}"

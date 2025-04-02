@@ -1,5 +1,6 @@
 [Unit]
 DefaultDependencies=no
+ConditionKernelCommandLine=root=live:gnomeos
 
 [Service]
 Type=oneshot
