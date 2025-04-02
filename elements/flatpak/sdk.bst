@@ -20,6 +20,7 @@ config:
   - debug
   - docs
   - locale
+  - zoneinfo
 
   metadata:
     Runtime:

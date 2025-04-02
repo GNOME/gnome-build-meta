@@ -1,0 +1,95 @@
+From 6290a64718fa2f410fe48af4d2d951ab5f13e353 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Mon, 17 Mar 2025 17:33:42 +0100
+Subject: [PATCH] split-rules: Move zoneinfo out of locales
+
+Zoneinfo files are not locales. Also they take very little space.
+---
+ elements/flatpak-images/platform.bst |  1 +
+ elements/flatpak-images/sdk.bst      |  1 +
+ include/_private/split-rules.yml     | 13 +++++++++++++
+ 3 files changed, 15 insertions(+)
+
+diff --git a/elements/flatpak-images/platform.bst b/elements/flatpak-images/platform.bst
+index 6b5806332d..e5f9791aef 100644
+--- a/elements/flatpak-images/platform.bst
++++ b/elements/flatpak-images/platform.bst
+@@ -2,20 +2,21 @@ kind: flatpak_image
+ 
+ (@):
+ - elements/flatpak-images/include/platform-vars.yml
+ 
+ config:
+   directory: '%{prefix}'
+   exclude:
+   - debug
+   - docs
+   - locale
++  - zoneinfo
+ 
+   metadata:
+     Runtime:
+       name: org.freedesktop.Platform
+       runtime: org.freedesktop.Platform/%{flatpak_arch}/%{branch}
+       sdk: org.freedesktop.Sdk/%{flatpak_arch}/%{branch}
+ 
+     Environment:
+       GI_TYPELIB_PATH: /app/lib/girepository-1.0
+       GST_PLUGIN_SYSTEM_PATH: /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:%{libdir}/gstreamer-1.0
+diff --git a/elements/flatpak-images/sdk.bst b/elements/flatpak-images/sdk.bst
+index 1ebdc40cb7..8de79e1823 100644
+--- a/elements/flatpak-images/sdk.bst
++++ b/elements/flatpak-images/sdk.bst
+@@ -2,20 +2,21 @@ kind: flatpak_image
+ 
+ (@):
+ - elements/flatpak-images/include/platform-vars.yml
+ 
+ config:
+   directory: '%{prefix}'
+   exclude:
+   - debug
+   - docs
+   - locale
++  - zoneinfo
+ 
+   metadata:
+     Runtime:
+       name: org.freedesktop.Sdk
+       runtime: org.freedesktop.Platform/%{flatpak_arch}/%{branch}
+       sdk: org.freedesktop.Sdk/%{flatpak_arch}/%{branch}
+ 
+     Environment:
+       GI_TYPELIB_PATH: /app/lib/girepository-1.0
+       GST_PLUGIN_SYSTEM_PATH: /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:%{libdir}/gstreamer-1.0
+diff --git a/include/_private/split-rules.yml b/include/_private/split-rules.yml
+index b44aa9f18b..3445585099 100644
+--- a/include/_private/split-rules.yml
++++ b/include/_private/split-rules.yml
+@@ -37,10 +37,23 @@ doc:
+   - "%{datadir}/examples"
+   - "%{datadir}/examples/**"
+   - "%{datadir}/help"
+   - "%{datadir}/help/**"
+   - "%{datadir}/ri"
+   - "%{datadir}/ri/**"
+   - "%{datadir}/cmake-*/Help"
+   - "%{datadir}/cmake-*/Help/**"
+ 
+ static-blocklist: []
++
++locale:
++  - "%{datadir}/locale"
++  - "%{datadir}/locale/**"
++  - "%{datadir}/i18n"
++  - "%{datadir}/i18n/**"
++
++zoneinfo:
++  - "%{datadir}/zoneinfo"
++  - "%{datadir}/zoneinfo/**"
++  - "%{datadir}/zoneinfo-leaps"
++  - "%{datadir}/zoneinfo-leaps/**"
++  - "%{datadir}/zoneinfo-posix"
+-- 
+2.49.0
+
