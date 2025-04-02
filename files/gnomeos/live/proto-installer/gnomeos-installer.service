@@ -1,0 +1,11 @@
+[Unit]
+ConditionKernelCommandLine=root=live:gnomeos
+
+[Service]
+Type=dbus
+BusName=org.gnome.Installer1
+ExecStart=/usr/lib/gnomeos-installer/installer-daemon.py
+StandardOutput=journal
+
+[Install]
+WantedBy=graphical.target

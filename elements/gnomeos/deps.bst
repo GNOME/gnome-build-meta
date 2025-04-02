@@ -18,6 +18,7 @@ depends:
 - gnomeos-deps/mokutil.bst
 - gnomeos-deps/vte-config.bst
 - gnomeos/live.bst
+- gnomeos/signed-boot-common.bst
 
 (?):
 - arch in ["x86_64"]:

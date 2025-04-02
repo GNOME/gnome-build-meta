@@ -53,6 +53,9 @@ config:
     rm -rf /sysroot/etc/pam.d
 
   - |
+    mv -T /sysroot/efi /sysroot/usr/share/factory/efi
+
+  - |
     cat >/sysroot/usr/lib/tmpfiles.d/extra-etc.conf<<EOF
     # core-deps/ModemManager.bst (just directories)
     C /etc/ModemManager

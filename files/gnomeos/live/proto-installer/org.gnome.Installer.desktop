@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=GNOME OS proto-installer
+Comment=Installs GNOME OS onto a disk
+Exec=/usr/lib/gnomeos-installer/installer.py
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;

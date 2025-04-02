@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="window">
+    <property name="title" translatable="yes">Select the installation disk</property>
+    <property name="default-width">320</property>
+    <property name="default-height">240</property>
+  </object>
+</interface>

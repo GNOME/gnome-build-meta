@@ -1,0 +1,17 @@
+SUBSYSTEM!="block", GOTO="gnomeos_pab_end"
+
+TEST=="/run/gnomeos-pab/%k", ENV{GNOMEOS_PAB_INSTALL}="1"
+
+ENV{DEVTYPE}!="partition", GOTO="gnomeos_pab_end"
+
+IMPORT{parent}="GNOMEOS_PAB_INSTALL"
+
+ENV{GNOMEOS_PAB_INSTALL}!="1", GOTO="gnomeos_pab_end"
+
+TAG+="systemd"
+ENV{ID_FS_TYPE}=="DM_verity_hash", , ENV{ID_PART_ENTRY_NAME}=="gnomeos_usr_v_*", SYMLINK+="gnomeos-pab-install/verity"
+ENV{ID_FS_TYPE}=="squashfs", ENV{ID_PART_ENTRY_NAME}=="gnomeos_usr_*", SYMLINK+="gnomeos-pab-install/usr"
+ENV{ID_FS_TYPE}=="crypto_LUKS", ENV{ID_PART_ENTRY_NAME}=="root", SYMLINK+="gnomeos-pab-install/root-luks"
+ENV{ID_PART_ENTRY_TYPE}=="c12a7328-f81f-11d2-ba4b-00a0c93ec93b", SYMLINK+="gnomeos-pab-install/esp"
+
+LABEL="gnomeos_pab_end"

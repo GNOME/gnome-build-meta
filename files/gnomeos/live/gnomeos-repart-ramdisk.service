@@ -1,0 +1,14 @@
+[Unit]
+Description=Repartition Ram Disk
+
+DefaultDependencies=no
+Wants=modprobe@loop.service modprobe@dm_mod.service dev-gnomeos\x2dram\x2dgpt.device
+After=initrd-usr-fs.target modprobe@loop.service modprobe@dm_mod.service dev-gnomeos\x2dram\x2dgpt.device
+Before=initrd-root-device.target
+Conflicts=shutdown.target initrd-switch-root.target
+Before=shutdown.target initrd-switch-root.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=systemd-repart --dry-run=no --empty=require --definition=/sysusr/usr/lib/repart.ramdisk.d /dev/gnomeos-ram-gpt
