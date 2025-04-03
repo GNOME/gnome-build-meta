@@ -22,13 +22,13 @@ variables:
   OPENQA_NEEDLES_BRANCH: master
 
   # Docker Images
-  DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
   DOCKER_IMAGE_ID: "848c0e376cc9de4da9f656cab3cb29546bd53706"
 
   # RUN_THIS_STAGE_ONLY: "track-refs"
 
 stages:
 - track-refs
+- prepare
 - build
 - deploy
 - test
@@ -54,7 +54,7 @@ workflow:
   - if: '$CI_COMMIT_TAG'
 
 default:
-  image: "${DOCKER_REGISTRY}/bst2:${DOCKER_IMAGE_ID}"
+  image: "${OCI_IMAGE_NAME}:fdsdk-bst2-${DOCKER_IMAGE_ID}"
   before_script:
   # Ensure the log directory exists
   - mkdir -p logs
@@ -105,6 +105,9 @@ default:
 .build-template:
   stage: build
   interruptible: true
+  needs: 
+  - job: "republish-docker-image"
+    optional: true
   rules:
   - !reference [".stage-only-rules", "rules"]
   # We want still execute by default even if neither of the stage rules match.
@@ -731,3 +734,18 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
+
+republish-docker-image:
+  image:
+    name: "quay.io/containers/skopeo:v1.18"
+    entrypoint: [""]
+  stage: "prepare"
+  needs: []
+  extends: ".aarch64"
+  rules:
+    - !reference [".stage-only-rules", "rules"]
+    # - if: $OCI_REGISTRY_PASSWORD && CI_COMMIT_REF_PROTECTED
+    - if: "$CI_COMMIT_REF_NAME"
+  before_script: []
+  script:
+  - bash "$CI_PROJECT_DIR/utils/republish-docker-image.sh" "${DOCKER_IMAGE_ID}"
