@@ -47,6 +47,9 @@ depends:
 - gnomeos-deps/noto-cjk.bst
 - gnomeos-deps/words.bst
 
+# For gvfs
+- gnomeos-deps/wsdd.bst
+
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
 
