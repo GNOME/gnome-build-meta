@@ -64,3 +64,4 @@ variables:
   meson-local: >-
     -Ddocumentation=true
     -Dmalcontent=true
+    -Dx11-support=false
