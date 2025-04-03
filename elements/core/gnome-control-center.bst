@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
-  track: main
-  ref: 48.0-78-g1c5d85d0585cb0a079dd5f284c6125f7616a4900
+  track: jjardon/stub-x11
+  ref: 48.0-35-g24dcc99b88df37fc1ecd33a7999ce036af6f75d4
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -64,3 +64,4 @@ variables:
   meson-local: >-
     -Ddocumentation=true
     -Dmalcontent=true
+    -Dx11-support=false
