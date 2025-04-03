@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
   track: freedesktop-sdk-23.08.*
-  ref: freedesktop-sdk-23.08.29-0-g0bed1cf953d55a629e761d9136485890d64fd670
+  ref: freedesktop-sdk-23.08.29-105-g42d877b82f2eedd21eb0ea7dac76befb5cb82bc9
 - kind: patch
   path: patches/freedesktop-sdk/sysupdate-dir.patch
 - kind: patch
