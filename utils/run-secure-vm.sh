@@ -13,6 +13,9 @@ while [ $# -gt 0 ]; do
         --live-cdrom)
             live=cdrom
             ;;
+        --reset-installed)
+            reset_installed=1
+            ;;
         --reset)
             reset=1
             ;;
@@ -163,18 +166,27 @@ if ! [ "${no_tpm+set}" = set ]; then
     QEMU_ARGS+=(-device tpm-tis,tpmdev=tpm0)
 fi
 
-readonly=off
-if [ "${live-}" = cdrom ]; then
-    readonly=on
-fi
+QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.img,media=disk,format=raw")
+QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
 
-QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.${img_ext},media=${live-disk},format=raw,readonly=${readonly}")
+if [ "${live+set}" = set ]; then
+    readonly=off
+    if [ "${live-}" = cdrom ]; then
+        readonly=on
+    fi
 
-if [ "${live-disk}" = disk ]; then
-    QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
-elif [ "${live}" = cdrom ]; then
-    QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
-    QEMU_ARGS+=(-device "scsi-cd,drive=boot-disk,bootindex=1")
+    QEMU_ARGS+=(-drive "if=none,id=live-disk,file=${STATE_DIR}/disk.iso,media=${live-disk},format=raw,readonly=${readonly}")
+    if [ "${live}" = disk ]; then
+        QEMU_ARGS+=(-device "virtio-blk-pci,drive=live-disk,bootindex=2")
+    elif [ "${live}" = cdrom ]; then
+        QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
+        QEMU_ARGS+=(-device "scsi-cd,drive=live-disk,bootindex=2")
+    fi
+
+    if [ "${reset_installed+set}" = set ]; then
+        rm -f "${STATE_DIR}/disk.img"
+    fi
+    truncate --size 50G "${STATE_DIR}/disk.img"
 fi
 
 if [ "${serial+set}" = set ]; then
