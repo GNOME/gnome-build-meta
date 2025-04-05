@@ -74,14 +74,17 @@ if [ "${#args[@]}" -ge 2 ]; then
 fi
 
 if [ "${buildid+set}" = set ]; then
-    if [ "${live+set}" = set ]; then
-        echo "--live-* and --buildid together are not yet supported" 1>&2
-        exit 1
-    fi
     mkdir -p "${STATE_DIR}/builds"
-    if ! [ -f "${STATE_DIR}/builds/disk_${buildid}.img.xz" ]; then
-        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp"
-        mv "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_${buildid}.img.xz"
+    if [ "${live+set}" = set ]; then
+        if ! [ -f "${STATE_DIR}/builds/live_${buildid}.iso" ]; then
+            wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}.img.xz" -O "${STATE_DIR}/builds/live_${buildid}.iso.tmp"
+            mv "${STATE_DIR}/builds/live_${buildid}.iso.tmp" "${STATE_DIR}/builds/live_${buildid}.iso"
+        fi
+    else
+        if ! [ -f "${STATE_DIR}/builds/disk_${buildid}.img.xz" ]; then
+            wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}.img.xz" -O "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp"
+            mv "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_${buildid}.img.xz"
+        fi
     fi
 fi
 
@@ -122,7 +125,11 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.${img_ext}" ]; then
     cleanup_dirs+=("${checkout}")
 
     if [ "${buildid+set}" = set ]; then
-        cp "${STATE_DIR}/builds/disk_${buildid}.img.xz" "${checkout}/disk.img.xz"
+        if [ "${live+set}" = set ]; then
+            cp "${STATE_DIR}/builds/live_${buildid}.iso" "${checkout}/disk.iso"
+        else
+            cp "${STATE_DIR}/builds/disk_${buildid}.img.xz" "${checkout}/disk.img.xz"
+        fi
     else
         make -C files/boot-keys generate-keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
