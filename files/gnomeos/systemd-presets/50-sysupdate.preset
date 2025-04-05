@@ -1,0 +1,2 @@
+mask systemd-sysupdate-reboot.*
+mask systemd-sysupdate.*
