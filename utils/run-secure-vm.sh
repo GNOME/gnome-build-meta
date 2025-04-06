@@ -166,7 +166,7 @@ if ! [ "${no_tpm+set}" = set ]; then
     QEMU_ARGS+=(-device tpm-tis,tpmdev=tpm0)
 fi
 
-QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.img,media=disk,format=raw")
+QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.img,media=disk,format=raw,discard=on")
 QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
 
 if [ "${live+set}" = set ]; then
