@@ -291,18 +291,30 @@ class InstallerObject(dbus.service.Object):
         if swap_verity.returncode != 0:
             raise InstallerException("swap-verity failed")
 
+    async def _allow_discards(self):
+        cryptsetup_refresh = await asyncio.create_subprocess_exec(
+            "cryptsetup", "refresh", "--allow-discards", "--persistent", "--key-file=/run/cryptsetup-keys.d/root.key", "root"
+        )
+
+        await cryptsetup_refresh.communicate()
+        if cryptsetup_refresh.returncode != 0:
+            raise InstallerException("cryptsetup refresh")
+
+    async def _cryptsetup_root(self):
+        cryptsetup = self.systemd.start_unit("systemd-cryptsetup@root.service", "replace")
+        finished = self.asyncioloop.create_future()
+        def on_finished(obj):
+            finished.set_result(obj)
+        cryptsetup.on_finished(on_finished)
+        await finished
+
+        if cryptsetup.active_state() != "active":
+            raise InstallerException("cryptsetup failed")
+
     async def _swap_root(self, root):
         if self.has_tpm2:
-            cryptsetup = self.systemd.start_unit("systemd-cryptsetup@root.service", "replace")
-            finished = self.asyncioloop.create_future()
-            def on_finished(obj):
-                finished.set_result(obj)
-            cryptsetup.on_finished(on_finished)
-            await finished
-
-            if cryptsetup.active_state() != "active":
-                raise InstallerException("cryptsetup failed")
-
+            await self._cryptsetup_root()
+            await self._allow_discards()
             root = "/dev/mapper/root"
 
         btrfs_replace = await asyncio.create_subprocess_exec(
@@ -349,6 +361,14 @@ class InstallerObject(dbus.service.Object):
         await btrfs_rename.communicate()
         if btrfs_rename.returncode != 0:
             raise InstallerException("btrfs rename failed")
+
+        fstrim = await asyncio.create_subprocess_exec(
+            "fstrim", "/"
+        )
+
+        await fstrim.communicate()
+        if fstrim.returncode != 0:
+            raise InstallerException("fstrim failed")
 
         zramctl_reset = await asyncio.create_subprocess_exec(
             "zramctl", "-r", "/dev/zram1"
