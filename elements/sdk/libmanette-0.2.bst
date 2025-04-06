@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk-deps/hidapi.bst
+- sdk/hidapi.bst
 - freedesktop-sdk.bst:components/libevdev.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
