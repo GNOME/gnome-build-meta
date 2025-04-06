@@ -19,6 +19,7 @@ depends:
 - gnomeos-deps/vte-config.bst
 - gnomeos/live.bst
 - gnomeos/systemd-pcrlock-workaround.bst
+- gnomeos/public-keys.bst
 
 (?):
 - arch in ["x86_64"]:

@@ -89,6 +89,16 @@ config:
     # we reach the leave-initrd pcrphase. For more details, including a
     # walkthrough of how such an attack would work, check out:
     # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/928
+    #
+    # We have an extra key for /etc/fstab entries, but this should
+    # only be used for things that cannot take control of the
+    # system. So for example /etc cannot be mounted like that. But
+    # /home can. If you want to enroll such a disk, use
+    # `--tpm2-public-key=/usr/share/gnomeos/fstab-key.pem`.
+    #
+    # It is important that --pcrpkey points the the initrd-only
+    # key. Not the fstab key. This is the key that will be
+    # automatically used to enroll /.
     ukify build \
       --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" \
       --os-release=@/etc/os-release \
@@ -97,6 +107,10 @@ config:
       --pcr-private-key=tpm2-pcr-private.pem \
       --pcr-public-key=tpm2-pcr-public.pem \
       --phases="enter-initrd" \
+      --pcrpkey=tpm2-pcr-public.pem \
+      --pcr-private-key=fstab-tpm2-pcr-private.pem \
+      --pcr-public-key=fstab-tpm2-pcr-public.pem \
+      --phases="enter-initrd:leave-initrd" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
@@ -112,3 +126,7 @@ sources:
   path: files/boot-keys/tpm2-pcr-public.pem
 - kind: local
   path: files/boot-keys/tpm2-pcr-private.pem
+- kind: local
+  path: files/boot-keys/fstab-tpm2-pcr-public.pem
+- kind: local
+  path: files/boot-keys/fstab-tpm2-pcr-private.pem

@@ -4,7 +4,12 @@ KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES SYSEXT
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
 BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep $(KERNEL_KEYRING_FILE)
-KERNEL_KEYS=tpm2-pcr-private.pem tpm2-pcr-public.pem
+KERNEL_KEYS= \
+	tpm2-pcr-private.pem \
+	tpm2-pcr-public.pem \
+	fstab-tpm2-pcr-private.pem \
+	fstab-tpm2-pcr-public.pem
+
 DIST_KEYS=private-key import-pubring.gpg
 KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
 KERNEL_KEYRING=MODULES.crt SYSEXT.crt
@@ -28,16 +33,25 @@ modules/linux-module-cert.crt: $(KERNEL_KEYRING)
 ifeq ($(IMPORT_MODE),import)
 tpm2-pcr-private.pem:
 	echo "$${SECURE_BOOT_TPM_PCR_KEY}" >$@
+fstab-tpm2-pcr-private.pem:
+	echo "$${SECURE_BOOT_FSTAB_TPM_PCR_KEY}" >$@
 else ifeq ($(IMPORT_MODE),snakeoil)
 tpm2-pcr-private.pem:
 	cp snakeoil/SECURE_BOOT_TPM_PCR_KEY $@
+fstab-tpm2-pcr-private.pem:
+	cp snakeoil/SECURE_BOOT_FSTAB_TPM_PCR_KEY $@
 else
 # Also no IMPORT_MODE=local
 tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
+fstab-tpm2-pcr-private.pem:
+	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
 endif
 
 tpm2-pcr-public.pem: tpm2-pcr-private.pem
+	openssl rsa -pubout -in $< -out $@
+
+fstab-tpm2-pcr-public.pem: fstab-tpm2-pcr-private.pem
 	openssl rsa -pubout -in $< -out $@
 
 extra-db/.keep extra-kek/.keep:
