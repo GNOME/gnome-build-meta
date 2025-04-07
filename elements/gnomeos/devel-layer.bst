@@ -24,20 +24,14 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >/dev/null
+       --noroot --noboot >/dev/null
 
   - |
     prepare-image.sh \
        --sysroot /sysroot-devel \
        --initscripts /etc/fdsdk/initial_scripts-devel \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot >'%{install-root}/vars.txt'
 
   - |
     mkdir -p /tmp/output/etc

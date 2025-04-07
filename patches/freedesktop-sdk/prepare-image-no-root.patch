@@ -1,0 +1,47 @@
+commit 8f888b542f66ca131f16c211086bc5a0ac384f25
+Author: Valentin David <me@valentindavid.com>
+Date:   Mon Apr 7 20:31:40 2025 +0200
+
+    files/vm/prepare-image.sh: Allow no root in fstab
+    
+    Because gpt-auto on systemd generates the mount for /, we do not need
+    it in fstab. So we need a way to not add it to fstab.
+
+diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
+index 98506a15b..999c80efd 100755
+--- a/files/vm/prepare-image.sh
++++ b/files/vm/prepare-image.sh
+@@ -12,6 +12,7 @@ uuidnamespace="$(uuidgen -r)"
+ rootfstype="ext4"
+ rootfsopts="errors=remount-ro,relatime"
+ root_source=
++noroot=
+ 
+ while [ $# -gt 0 ]; do
+     param="$1"
+@@ -64,6 +65,10 @@ while [ $# -gt 0 ]; do
+             rootfsopts="$1"
+             shift
+             ;;
++        --noroot)
++            noroot="1"
++            shift
++            ;;
+     esac
+ done
+ 
+@@ -125,9 +130,11 @@ if [ -z "${root_source}" ]; then
+     root_source="UUID=${uuid_root}"
+ fi
+ 
+-cat >"${sysroot}/etc/fstab" <<EOF
+-${root_source} / ${rootfstype} ${rootfsopts} 0 1
+-EOF
++if [ -z "${noroot}" ]; then
++  cat >>"${sysroot}/etc/fstab" <<EOF
++  ${root_source} / ${rootfstype} ${rootfsopts} 0 1
++  EOF
++fi
+ 
+ if [ -z "${noboot}" ]; then
+     cat >>"${sysroot}/etc/fstab" <<EOF

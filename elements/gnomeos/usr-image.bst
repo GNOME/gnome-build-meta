@@ -25,10 +25,7 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot >'%{install-root}/vars.txt'
 
   - |
     # Those files may be coming from systemd.
@@ -169,7 +166,6 @@ config:
     C /etc/fish
     C /etc/flatpak
     C /etc/fonts
-    C /etc/fstab
     C /etc/fuse.conf
     C /etc/fwupd
     C /etc/gdm

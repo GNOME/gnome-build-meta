@@ -24,20 +24,14 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >/dev/null
+       --noroot --noboot >/dev/null
 
   - |
     prepare-image.sh \
        --sysroot /sysroot-snapd \
        --initscripts /etc/fdsdk/initial_scripts-snapd \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot >'%{install-root}/vars.txt'
 
   - |
     cat >/sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF

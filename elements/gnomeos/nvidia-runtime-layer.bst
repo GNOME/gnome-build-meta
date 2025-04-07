@@ -24,10 +24,7 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >/dev/null
+       --noroot --noboot >/dev/null
 
   - |
     mkdir -p /sysroot/usr/share/factory
@@ -38,10 +35,7 @@ config:
        --sysroot /sysroot-nvidia-runtime \
        --initscripts /etc/fdsdk/initial_scripts-nvidia-runtime \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot >'%{install-root}/vars.txt'
 
   - |
     chmod 0711 '/sysroot-nvidia-runtime/bin/nvidia-sleep.sh' '/sysroot-nvidia-runtime/lib/systemd/system-sleep/nvidia'

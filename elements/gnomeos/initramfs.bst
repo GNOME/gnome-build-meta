@@ -15,10 +15,7 @@ config:
   - |
     prepare-image.sh \
        --seed "%{sysroot-seed}" \
-       --rootsource /dev/gpt-auto-root \
-       --rootfstype btrfs \
-       --rootfsopts relatime \
-       --noboot >/dev/null
+       --noroot --noboot >/dev/null
 
   - dbus-uuidgen >/etc/machine-id
   - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
