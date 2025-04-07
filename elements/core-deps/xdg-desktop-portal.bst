@@ -8,6 +8,8 @@ sources:
   path: patches/xdg-desktop-portal/1548.patch
 - kind: patch
   path: patches/xdg-desktop-portal/1533.patch
+- kind: patch
+  path: patches/xdg-desktop-portal/1624.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/flatpak.bst
