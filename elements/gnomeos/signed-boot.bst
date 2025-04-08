@@ -74,6 +74,15 @@ config:
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi"
 
+    case '%{arch}' in
+      x86_64)
+        MICROCODE=("--microcode=/usr/lib/modules/${version}/microcode.img")
+      ;;
+      *)
+        MICROCODE=()
+      ;;
+    esac
+
     # Note: Our security model allows for an attacker to replace the rootfs
     # with a maliciously crafted one. This means that it's only safe to
     # unlock the real rootfs's encryption keys while in the initrd, before
@@ -91,7 +100,8 @@ config:
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
-      --initrd="/usr/lib/modules/${version}/initramfs.img"
+      --initrd="/usr/lib/modules/${version}/initramfs.img" \
+      "${MICROCODE[@]}"
 
 sources:
 - kind: local
