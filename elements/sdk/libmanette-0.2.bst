@@ -2,7 +2,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:libmanette.git
-  track: manette-0-2
+  track: libmanette-0-2
   ref: 0.2.11-3-gf6687c9a144f45016c86f18e630c1ec7eb251776
 
 build-depends:
