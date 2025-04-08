@@ -42,6 +42,7 @@ config:
     Minimize=best
     Format=squashfs
     SplitName=usr
+    AddValidateFS=no
     EOF
 
   - |

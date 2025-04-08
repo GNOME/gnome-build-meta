@@ -85,6 +85,7 @@ config:
     Minimize=best
     Format=squashfs
     SplitName=root
+    AddValidateFS=no
     EOF
 
   - |
