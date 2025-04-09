@@ -1,0 +1,11 @@
+diff '--color=auto' -ur libosinfo.orig/osinfo/osinfo_loader.c libosinfo/osinfo/osinfo_loader.c
+--- libosinfo.orig/osinfo/osinfo_loader.c	2024-10-29 18:28:59.000000000 +0100
++++ libosinfo/osinfo/osinfo_loader.c	2025-04-08 12:14:49.897914207 +0100
+@@ -26,6 +26,7 @@
+ 
+ #include <string.h>
+ #include <ctype.h>
++#include <ansidecl.h>
+ #include <libxml/parser.h>
+ #include <libxml/tree.h>
+ #include <libxml/xpath.h>
