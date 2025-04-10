@@ -840,7 +840,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libgxps.bst
 - core-deps/libspelling.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
