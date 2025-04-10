@@ -9,7 +9,7 @@ sources:
   url: gnome:libgxdp.git
   track: main
   directory: subprojects/libgxdp
-  ref: e68375c7aced97705953b8e3b30af9f17991153b
+  ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
