@@ -27,10 +27,6 @@ config:
        --noroot --noboot >/dev/null
 
   - |
-    mkdir -p /sysroot/usr/share/factory
-    mv -T /sysroot/etc /sysroot/usr/share/factory/etc
-
-  - |
     prepare-image.sh \
        --sysroot /sysroot-nvidia-runtime \
        --initscripts /etc/fdsdk/initial_scripts-nvidia-runtime \
@@ -39,10 +35,6 @@ config:
 
   - |
     chmod 0711 '/sysroot-nvidia-runtime/bin/nvidia-sleep.sh' '/sysroot-nvidia-runtime/lib/systemd/system-sleep/nvidia'
-
-  - |
-    mkdir -p /sysroot-nvidia-runtime/usr/share/factory
-    mv -T /sysroot-nvidia-runtime/etc /sysroot-nvidia-runtime/usr/share/factory/etc
 
   - |
     mkdir -p /sysroot-nvidia-runtime/usr/lib/extension-release.d
