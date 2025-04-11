@@ -8,6 +8,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
+- gnomeos-deps/python3-zstd.bst
 - freedesktop-sdk.bst:components/python3-pyelftools.bst
 - freedesktop-sdk.bst:components/gcc.bst
 - freedesktop-sdk.bst:components/lvm2.bst

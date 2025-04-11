@@ -7,6 +7,8 @@ import os.path
 import shutil
 import subprocess
 import sys
+import io
+import zstd
 
 class ParseError(RuntimeError):
     pass
@@ -123,6 +125,9 @@ def get_dependencies_elf(file, module_resolver, library_resolver):
 def get_dependencies_xz(file, module_resolver, library_resolver):
     yield from get_dependencies_file(lzma.open(file, format=lzma.FORMAT_XZ), module_resolver, library_resolver)
 
+def get_dependencies_zstd(file, module_resolver, library_resolver):
+    yield from get_dependencies_file(io.BytesIO(zstd.decompress(file.read())), module_resolver, library_resolver)
+
 def get_dependencies_file(file, module_resolver, library_resolver):
     data = file.read(5)
     file.seek(0, 0)
@@ -130,6 +135,8 @@ def get_dependencies_file(file, module_resolver, library_resolver):
         yield from get_dependencies_elf(file, module_resolver, library_resolver)
     elif data[:5] == b'\xfd7zXZ':
         yield from get_dependencies_xz(file, module_resolver, library_resolver)
+    elif data[:4] == b'\x28\xb5\x2f\xfd':
+        yield from get_dependencies_zstd(file, module_resolver, library_resolver)
 
 def get_dependencies(path, module_resolver, library_resolver, unit_resolver):
     base, ext = os.path.splitext(path)
