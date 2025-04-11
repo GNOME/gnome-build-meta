@@ -28,6 +28,7 @@ MODULES_BY_NAME=(
     crypto-sha256
     crypto-hmac
     crypto-xts
+    crc32c
 )
 
 FILES=(
