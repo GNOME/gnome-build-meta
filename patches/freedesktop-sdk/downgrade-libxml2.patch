@@ -1,0 +1,14 @@
+diff --git a/elements/components/libxml2.bst b/elements/components/libxml2.bst
+index 21ade7a82..c6b9d68b5 100644
+--- a/elements/components/libxml2.bst
++++ b/elements/components/libxml2.bst
+@@ -34,7 +34,7 @@ public:
+ sources:
+ - kind: git_repo
+   url: gnome:libxml2.git
+-  track: v*
+-  ref: v2.14.0-0-ga372cbf5821302ebaf757235b29ba812df78204d
++  track: v2.13.*
++  ref: v2.13.7-0-g9b8fbe99ad14fe32c5dd5913743046d80cf347fe
+ - kind: patch
+   path: patches/libxml2/libxml2-python-in-nodeWrap-deal-with-name-is-None-case.patch
