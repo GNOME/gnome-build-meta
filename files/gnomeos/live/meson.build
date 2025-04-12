@@ -1,6 +1,7 @@
 project(
   'gnomeos-live',
   'c',
+  'rust',
   default_options: [
     'c_std=gnu17',
   ],
@@ -75,3 +76,26 @@ install_data(
 )
 
 subdir('proto-installer')
+
+cargo  = find_program('cargo')
+
+cargo_tgt = custom_target(
+  'cargo',
+  build_by_default: true,
+  output: [
+    'installer-daemon',
+  ],
+  install: true,
+  install_dir: [
+    get_option('prefix') / 'lib' / 'gnomeos-installer',
+  ],
+  env: {
+    'CARGO': cargo.full_path(),
+    'CARGO_HOME': meson.current_build_dir() / 'cargo-home',
+    'CARGO_TARGET_DIR': meson.current_build_dir() / 'target',
+    'MANIFEST': meson.current_source_dir() / 'Cargo.toml',
+  },
+  command: [
+    meson.current_source_dir() / 'run-cargo.sh', '@OUTPUT@',
+  ]
+)

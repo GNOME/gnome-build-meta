@@ -7,9 +7,63 @@ from gi.repository import Gtk, Adw, GObject, Gio
 import dbus
 import dbus.mainloop.glib
 import sys
+import os
+
 
 gresource = Gio.Resource.load('/usr/share/gnomeos-installer/org.gnome.Installer.gresource')
 Gio.Resource._register(gresource)
+
+
+class Udisks:
+    def __init__(self):
+        self.system_bus = dbus.SystemBus()
+        udisks_obj = self.system_bus.get_object('org.freedesktop.UDisks2', '/org/freedesktop/UDisks2')
+        self.manager_interface = dbus.Interface(udisks_obj, dbus_interface='org.freedesktop.UDisks2.Manager')
+        self.objman_interface = dbus.Interface(udisks_obj, dbus_interface='org.freedesktop.DBus.ObjectManager')
+
+    def get_disks(self):
+        ret = []
+        drives = {}
+        blocks = {}
+        partitions = {}
+        for path, interfaces in self.objman_interface.GetManagedObjects().items():
+            if 'org.freedesktop.UDisks2.Drive' in interfaces:
+                drives[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
+            if 'org.freedesktop.UDisks2.Block' in interfaces and 'org.freedesktop.UDisks2.Partition' not in interfaces:
+                blocks[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
+            if 'org.freedesktop.UDisks2.Block' in interfaces and 'org.freedesktop.UDisks2.Partition'in interfaces:
+                partitions[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
+
+        has_partitions = set()
+        for path, partition in partitions.items():
+            drive_path = partition.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
+            drive = drives.get(drive_path)
+            if drive is None:
+                continue
+            has_partitions.add(drive)
+
+        for path, block in blocks.items():
+            drive_path = block.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
+            drive = drives.get(drive_path)
+            if drive is None:
+                continue
+            if drive in has_partitions:
+                continue
+            if block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
+                continue
+            if not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
+                continue
+            model = drive.Get('org.freedesktop.UDisks2.Drive', 'Model', dbus_interface=dbus.PROPERTIES_IFACE)
+            device_bytes = block.Get('org.freedesktop.UDisks2.Block', 'Device', dbus_interface=dbus.PROPERTIES_IFACE)
+            device_path = bytearray()
+            for b in device_bytes:
+                device_path.append(b)
+            device = device_path.rstrip(b'\0').decode('utf-8')
+            size = block.Get('org.freedesktop.UDisks2.Block', 'Size', dbus_interface=dbus.PROPERTIES_IFACE)
+
+            ret.append((os.path.relpath(device, '/dev'), model, size))
+
+        return ret
 
 def human_readable_size(size):
     for suffix in ["B", "KB", "MB", "GB", "TB"]:
@@ -45,9 +99,6 @@ class Installer:
         self._installer = dbus.Interface(obj, dbus_interface='org.gnome.Installer1')
         self._installer.connect_to_signal('InstallationFinished', self._installation_finished)
         self._installer.connect_to_signal('InstallationFailed', self._installation_failed)
-
-    def get_devices(self):
-        return self._installer.GetDevices()
 
     def install(self, device, oem_install):
         return self._installer.Install(device, oem_install)
@@ -124,6 +175,7 @@ class InstallerApp(Adw.Application):
 
     def on_activate(self, app):
         self.installer = Installer(self._on_finished, self._on_error)
+        self.udisks = Udisks()
 
         self.win = InstallerWindow()
         self.win.set_application(self)
@@ -134,7 +186,7 @@ class InstallerApp(Adw.Application):
         desc_expr = Gtk.PropertyExpression.new(InstallableDisk, None, "description")
         disk_selector.DropDown.props.model = liststore
         disk_selector.DropDown.set_expression(desc_expr)
-        for name, description, size in self.installer.get_devices():
+        for name, description, size in self.udisks.get_disks():
             liststore.append(InstallableDisk(name, description, size))
 
         self._install_button = InstallButton(self, self.installer, disk_selector)

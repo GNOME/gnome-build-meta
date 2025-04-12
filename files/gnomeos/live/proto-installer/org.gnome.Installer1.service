@@ -1,5 +1,5 @@
 [D-BUS Service]
 Name=org.gnome.Installer1
-Exec=/usr/lib/gnomeos-installer/installer-daemon.py
+Exec=/usr/lib/gnomeos-installer/installer-daemon
 User=root
 SystemdService=gnomeos-installer.service
