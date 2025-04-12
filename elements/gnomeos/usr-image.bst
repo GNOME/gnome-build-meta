@@ -44,6 +44,20 @@ config:
     rm /sysroot/usr/share/factory/etc/pam.d/other
     rm /sysroot/usr/share/factory/etc/pam.d/system-auth
 
+    # These are symlinks and need to be created, not copied
+    rm /sysroot/etc/audit/rules.d/10-base-config.rules
+    rm /sysroot/etc/localtime
+
+    # Those are taken care in /usr/lib/tmpfiles.d/20-systemd-ssh-generator.conf
+    rm /sysroot/etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+    rm /sysroot/etc/ssh/sshd_config.d/20-systemd-userdb.conf
+
+  - |
+    cat >/sysroot/usr/lib/tmpfiles.d/extra-etc-symlinks.conf<<EOF
+    L! /etc/audit/rules.d/10-base-config.rules - - - - /usr/share/audit-rules/10-base-config.rules
+    L! /etc/localtime - - - - /usr/share/zoneinfo/UTC
+    EOF
+
   - |
     # FIXME: move that in pam-config
     cp -rlTP /sysroot/etc/pam.d /sysroot/usr/lib/pam.d
@@ -66,16 +80,15 @@ config:
     # FIMXE: This looks like a development file.
     L /etc/anthy-conf
     # freedesktop-sdk.bst:components/audit.bst
-    # FIXME: we are missing initial /etc/audit/audit.rules (which should not be a symlink)
     L! /etc/audit/audisp-filter.conf
     L! /etc/audit/audisp-remote.conf
-    L! /etc/audit/auditd.conf
+    # auditd does not want to follow symlink for auditd.conf
+    C! /etc/audit/auditd.conf
     L! /etc/audit/audit-stop.rules
     L! /etc/audit/plugins.d/af_unix.conf
     L! /etc/audit/plugins.d/au-remote.conf
     L! /etc/audit/plugins.d/filter.conf
     L! /etc/audit/plugins.d/syslog.conf
-    L! /etc/audit/rules.d/10-base-config.rules
     L! /etc/libaudit.conf
     # freedesktop-sdk.bst:components/avahi.bst
     L /etc/avahi/avahi-autoipd.action
@@ -145,9 +158,6 @@ config:
     # FIXME: do we need to have the directory
     d /etc/binfmt.d
 
-    L /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
-    L /etc/ssh/sshd_config.d/20-systemd-userdb.conf
-
     L /etc/dbus-1/session.conf
     L /etc/dbus-1/system.conf
 
@@ -181,7 +191,6 @@ config:
     C /etc/libinput
     C /etc/libnl
     C /etc/locale.conf
-    C /etc/localtime
     C /etc/login.defs
     C /etc/logrotate.d
     C /etc/lvm
@@ -271,7 +280,7 @@ config:
     failures=()
     for p in $(grep -v "^#" </sysroot/usr/lib/tmpfiles.d/extra-etc.conf | grep -v "^$" | cut -d" " -f2); do
       mkdir -p "$(dirname "/sysroot/usr/share/factory${p}")"
-      if cp -rlTP "/sysroot${p}" "/sysroot/usr/share/factory${p}"; then
+      if ! [ -L "/sysroot${p}" ] && cp -rlTP "/sysroot${p}" "/sysroot/usr/share/factory${p}"; then
         rm -rf "/sysroot${p}"
       else
         failures+=("${p}")
