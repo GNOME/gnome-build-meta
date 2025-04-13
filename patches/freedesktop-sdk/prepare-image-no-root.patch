@@ -1,5 +1,5 @@
 diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
-index 98506a15b..52026526e 100755
+index 98506a15b..069ec6d38 100755
 --- a/files/vm/prepare-image.sh
 +++ b/files/vm/prepare-image.sh
 @@ -12,6 +12,7 @@ uuidnamespace="$(uuidgen -r)"
@@ -10,18 +10,17 @@ index 98506a15b..52026526e 100755
  
  while [ $# -gt 0 ]; do
      param="$1"
-@@ -64,6 +65,10 @@ while [ $# -gt 0 ]; do
+@@ -64,6 +65,9 @@ while [ $# -gt 0 ]; do
              rootfsopts="$1"
              shift
              ;;
 +        --noroot)
 +            noroot="1"
-+            shift
 +            ;;
      esac
  done
  
-@@ -125,9 +130,11 @@ if [ -z "${root_source}" ]; then
+@@ -125,9 +129,11 @@ if [ -z "${root_source}" ]; then
      root_source="UUID=${uuid_root}"
  fi
  
