@@ -2,20 +2,16 @@
 <!-- Created with Cambalache 0.94.1 -->
 <interface>
   <requires lib="gtk" version="4.8"/>
-  <template class="DiskSelector" parent="GtkCenterBox">
-    <child type="center">
-      <object class="GtkCenterBox">
-        <property name="orientation">vertical</property>
-        <child type="center">
+  <requires lib="libadwaita" version="1.4"/>
+  <template class="DiskSelector" parent="AdwNavigationPage">
+    <property name="title">Select disk</property>
+    <child>
+      <object class="AdwStatusPage">
+        <property name="child">
           <object class="GtkBox">
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkLabel">
-                <property name="label">Choose the destination disk</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkDropDown" id="DropDown"/>
+              <object class="GtkListBox" id="DiskList"/>
             </child>
             <child>
               <object class="GtkCheckButton" id="OEMInstall">
@@ -23,7 +19,9 @@
               </object>
             </child>
           </object>
-        </child>
+        </property>
+        <property name="description">Choose the destination disk</property>
+        <property name="icon-name">drive-harddisk-symbolic</property>
       </object>
     </child>
   </template>

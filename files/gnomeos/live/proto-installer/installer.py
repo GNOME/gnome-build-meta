@@ -43,16 +43,17 @@ class Udisks:
             has_partitions.add(drive)
 
         for path, block in blocks.items():
+            invalid = None
             drive_path = block.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
             drive = drives.get(drive_path)
             if drive is None:
                 continue
             if drive in has_partitions:
-                continue
+                invalid = "<b>Disk has partitions</b>\nTo use this disk, you first need to format it in GNOME Disks."
             if block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
-                continue
+                invalid = "<b>Disk is read-only</b>"
             if not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
-                continue
+                invalid = "<b>Disk cannot be partitioned</b>"
             model = drive.Get('org.freedesktop.UDisks2.Drive', 'Model', dbus_interface=dbus.PROPERTIES_IFACE)
             device_bytes = block.Get('org.freedesktop.UDisks2.Block', 'Device', dbus_interface=dbus.PROPERTIES_IFACE)
             device_path = bytearray()
@@ -61,7 +62,9 @@ class Udisks:
             device = device_path.rstrip(b'\0').decode('utf-8')
             size = block.Get('org.freedesktop.UDisks2.Block', 'Size', dbus_interface=dbus.PROPERTIES_IFACE)
 
-            ret.append((os.path.relpath(device, '/dev'), model, size))
+            media = drive.Get('org.freedesktop.UDisks2.Drive', 'MediaCompatibility', dbus_interface=dbus.PROPERTIES_IFACE)
+
+            ret.append((os.path.relpath(device, '/dev'), model, size, media, invalid))
 
         return ret
 
@@ -116,7 +119,8 @@ class InstallButton(Gtk.Button):
 
     @Gtk.Template.Callback()
     def doInstall(self, *args):
-        recovery_key = self._installer.install(self._selector.DropDown.get_selected_item().device, self._selector.OEMInstall.get_active())
+        selected_row = self._selector.DiskList.get_selected_row()
+        recovery_key = self._installer.install(selected_row.get_device_name(), self._selector.OEMInstall.get_active())
         self._app.display_recovery(recovery_key)
 
     def __init__(self, app, installer, selector):
@@ -126,24 +130,20 @@ class InstallButton(Gtk.Button):
         self._selector = selector
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-selector.ui")
-class DiskSelector(Gtk.CenterBox):
+class DiskSelector(Adw.NavigationPage):
     __gtype_name__ = "DiskSelector"
 
-    DropDown = Gtk.Template.Child()
+    DiskList = Gtk.Template.Child()
     OEMInstall = Gtk.Template.Child()
 
-@Gtk.Template(resource_path="/org/gnome/os/proto-installer/recovery-key-display.ui")
-class RecoveryKeyDisplay(Gtk.CenterBox):
-    __gtype_name__ = "RecoveryKeyDisplay"
-
-    RecoveryKey = Gtk.Template.Child()
-    InstallationStatus = Gtk.Template.Child()
-
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/status-display.ui")
-class StatusDisplay(Gtk.CenterBox):
+class StatusDisplay(Adw.NavigationPage):
     __gtype_name__ = "StatusDisplay"
 
-    InstallationStatus = Gtk.Template.Child()
+    Spinner = Gtk.Template.Child()
+    StatusPage = Gtk.Template.Child()
+    RecoveryKey = Gtk.Template.Child()
+    RecoveryKeyDisplay = Gtk.Template.Child()
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/installer-window.ui")
 class InstallerWindow(Adw.ApplicationWindow):
@@ -151,6 +151,55 @@ class InstallerWindow(Adw.ApplicationWindow):
 
     Header = Gtk.Template.Child()
     ToolbarView = Gtk.Template.Child()
+    NavigationView = Gtk.Template.Child()
+
+@Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-row.ui")
+class DiskRow(Adw.ActionRow):
+    __gtype_name__ = "DiskRow"
+
+    def __init__(self, name, description, size, media, invalid):
+        super().__init__()
+        self._device_name = name
+        self.set_title(description)
+        self.set_subtitle(human_readable_size(size))
+        if invalid is not None:
+            self.set_selectable(False)
+            self.add_suffix(WarningIcon(invalid))
+
+        icon = 'drive-harddisk-symbolic'
+        for m in media:
+            if m.startswith('flash'):
+                icon = 'media-flash-symbolic'
+                break
+            if m == 'thumb':
+                icon = 'drive-harddisk-usb-symbolic'
+                break
+            if m.startswith('floppy'):
+                icon = 'media-floppy-symbolic'
+                break
+            if m.startswith('optical'):
+                icon = 'media-optical-symbolic'
+                break
+        icon_widget = Gtk.Button.new()
+        icon_widget.set_icon_name(icon)
+        icon_widget.set_has_frame(False)
+        icon_widget.set_can_target(False)
+        self.add_prefix(icon_widget)
+
+    def get_device_name(self):
+        return self._device_name
+
+
+@Gtk.Template(resource_path="/org/gnome/os/proto-installer/warning-icon.ui")
+class WarningIcon(Gtk.Box):
+    __gtype_name__ = "WarningIcon"
+
+    WarningLabel = Gtk.Template.Child()
+
+    def __init__(self, text):
+        super().__init__()
+        self.WarningLabel.set_markup(text)
+
 
 class InstallerApp(Adw.Application):
     def __init__(self, **kwargs):
@@ -158,20 +207,29 @@ class InstallerApp(Adw.Application):
         self.connect('activate', self.on_activate)
 
     def _on_finished(self):
-        self._status_content.InstallationStatus.set_label("Installation finished.")
+        self._status_content.Spinner.set_visible(False)
+        self._status_content.StatusPage.set_icon_name("checkmark-symbolic")
+        self._status_content.StatusPage.set_description("Installation finished.")
 
     def _on_error(self, message):
-        self._status_content.InstallationStatus.set_label(f"Installation failed: {message}.")
+        self._status_content.Spinner.set_visible(False)
+        self._status_content.StatusPage.set_icon_name("computer-fail-symbolic")
+        self._status_content.StatusPage.set_description(f"Installation failed: {message}.")
 
     def display_recovery(self, key):
         self.win.Header.remove(self._install_button)
+        self._status_content = StatusDisplay()
         if key:
-            self._status_content = RecoveryKeyDisplay()
             self._status_content.RecoveryKey.set_label(key)
+            self._status_content.RecoveryKeyDisplay.set_visible(True)
         else:
-            self._status_content = StatusDisplay()
-        self._status_content.InstallationStatus.set_label("Installing...")
-        self.win.ToolbarView.set_content(self._status_content)
+            self._status_content.RecoveryKeyDisplay.set_visible(False)
+        self._status_content.StatusPage.set_icon_name("computer-symbolic")
+        self._status_content.StatusPage.set_description("Installing...")
+        self.win.NavigationView.push(self._status_content)
+
+    def _disk_selected(self, from_list, selected):
+        self._install_button.set_can_target(True)
 
     def on_activate(self, app):
         self.installer = Installer(self._on_finished, self._on_error)
@@ -181,17 +239,16 @@ class InstallerApp(Adw.Application):
         self.win.set_application(self)
         disk_selector = DiskSelector()
 
-        liststore = Gio.ListStore.new(InstallableDisk)
+        for name, description, size, media, invalid in self.udisks.get_disks():
+            disk_selector.DiskList.append(DiskRow(name, description, size, media, invalid))
 
-        desc_expr = Gtk.PropertyExpression.new(InstallableDisk, None, "description")
-        disk_selector.DropDown.props.model = liststore
-        disk_selector.DropDown.set_expression(desc_expr)
-        for name, description, size in self.udisks.get_disks():
-            liststore.append(InstallableDisk(name, description, size))
+        disk_selector.DiskList.connect("row-selected", self._disk_selected)
 
         self._install_button = InstallButton(self, self.installer, disk_selector)
+        self._install_button.set_can_target(False)
+        self.win.add_css_class("devel")
         self.win.Header.pack_end(self._install_button)
-        self.win.ToolbarView.set_content(disk_selector)
+        self.win.NavigationView.push(disk_selector)
         self.win.present()
 
 if __name__ == '__main__':

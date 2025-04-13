@@ -2,14 +2,50 @@
 <!-- Created with Cambalache 0.94.1 -->
 <interface>
   <requires lib="gtk" version="4.6"/>
-  <template class="StatusDisplay" parent="GtkCenterBox">
-    <child type="center">
-      <object class="GtkCenterBox">
-        <property name="orientation">vertical</property>
-        <child type="center">
-          <object class="GtkLabel" id="InstallationStatus"/>
-        </child>
+  <requires lib="libadwaita" version="1.6"/>
+  <template class="StatusDisplay" parent="AdwNavigationPage">
+    <property name="can-pop">False</property>
+    <property name="child">
+      <object class="AdwStatusPage" id="StatusPage">
+        <property name="child">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="AdwBin">
+                <property name="height-request">24</property>
+                <property name="width-request">24</property>
+                <child>
+                  <object class="AdwSpinner" id="Spinner">
+                    <property name="height-request">24</property>
+                    <property name="width-request">24</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="center">
+              <object class="GtkBox" id="RecoveryKeyDisplay">
+                <property name="halign">center</property>
+                <property name="margin-top">10</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Your recovery key is:</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="RecoveryKey">
+                    <property name="selectable">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="description">Installing...</property>
+        <property name="height-request">24</property>
+        <property name="icon-name">computer-symbolic</property>
+        <property name="width-request">24</property>
       </object>
-    </child>
+    </property>
+    <property name="title">Installing</property>
   </template>
 </interface>

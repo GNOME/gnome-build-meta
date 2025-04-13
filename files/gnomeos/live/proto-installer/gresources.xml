@@ -4,7 +4,8 @@
     <file>disk-selector.ui</file>
     <file>install-button.ui</file>
     <file>installer-window.ui</file>
-    <file>recovery-key-display.ui</file>
     <file>status-display.ui</file>
+    <file>disk-row.ui</file>
+    <file>warning-icon.ui</file>
   </gresource>
 </gresources>
