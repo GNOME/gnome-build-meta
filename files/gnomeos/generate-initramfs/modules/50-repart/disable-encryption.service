@@ -2,6 +2,7 @@
 Description=Disable encryption
 AssertPathExists=/etc/initrd-release
 ConditionSecurity=!tpm2
+ConditionKernelCommandLine=!root=live:gnomeos
 DefaultDependencies=no
 Conflicts=shutdown.target
 After=initrd-usr-fs.target
