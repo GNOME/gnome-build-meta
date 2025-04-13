@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libspelling.git
   track: main
-  ref: 0.4.7-3-gfa50aa417b52e2f8fce44ee2694f1be026a53d3b
+  ref: 0.4.7-5-g736881f31acf704bc9a8040ed8fc156eed5846b0
 
 build-depends:
 - sdk/gi-docgen.bst
