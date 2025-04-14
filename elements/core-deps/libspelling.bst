@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libspelling/0.4/libspelling-0.4.6.tar.xz
-  ref: 3248a9b5336ea2f727d2db912d2f0083accc0505ce707679b3d9b8266c0101f5
+  url: gnome_downloads:libspelling/0.4/libspelling-0.4.7.tar.xz
+  ref: 42f130f295f5addb6e9e8e74ccfbb709794bd2dfd021293e2875b9481bbd4e88
 
 build-depends:
 - sdk/gi-docgen.bst

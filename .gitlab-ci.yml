@@ -1,10 +1,10 @@
 include:
-  - local: ".gitlab-ci/arch.yml"
-  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
-    inputs:
-      job-stage: "deploy"
-      dist-job-name: "make-git-archive"
-      tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+- local: ".gitlab-ci/arch.yml"
+- component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+  inputs:
+    job-stage: "deploy"
+    dist-job-name: "make-git-archive"
+    tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3

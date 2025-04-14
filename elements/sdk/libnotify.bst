@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libnotify/0.8/libnotify-0.8.3.tar.xz
-  ref: ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0
+  url: gnome_downloads:libnotify/0.8/libnotify-0.8.6.tar.xz
+  ref: c5540aaefb60e1d63b1c587c05f2284ebe72ece7d0c0e5e4a778cfd5844b6b58
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gi-docgen.bst
