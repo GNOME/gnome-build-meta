@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mutter.git
   track: main
-  ref: 48.1-21-g9655bcbb66b93e62838d6217cf9f5a899624246a
+  ref: 48.2-12-g73626ef5a1924d13a0d4ad7720469291ad2d7240
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
 - kind: git_repo
