@@ -3,7 +3,7 @@
 import gi
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-from gi.repository import Gtk, Adw, GObject, Gio
+from gi.repository import Gtk, Adw, GObject, Gio, GLib
 import dbus
 import dbus.mainloop.glib
 import sys
@@ -120,21 +120,21 @@ class InstallButton(Gtk.Button):
     @Gtk.Template.Callback()
     def doInstall(self, *args):
         selected_row = self._selector.DiskList.get_selected_row()
-        recovery_key = self._installer.install(selected_row.get_device_name(), self._selector.OEMInstall.get_active())
+        recovery_key = self._installer.install(selected_row.get_device_name(), self._oem_mode)
         self._app.display_recovery(recovery_key)
 
-    def __init__(self, app, installer, selector):
+    def __init__(self, app, installer, selector, oem_mode):
         super().__init__()
         self._app = app
         self._installer = installer
         self._selector = selector
+        self._oem_mode = oem_mode
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-selector.ui")
 class DiskSelector(Adw.NavigationPage):
     __gtype_name__ = "DiskSelector"
 
     DiskList = Gtk.Template.Child()
-    OEMInstall = Gtk.Template.Child()
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/status-display.ui")
 class StatusDisplay(Adw.NavigationPage):
@@ -205,6 +205,14 @@ class InstallerApp(Adw.Application):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate', self.on_activate)
+        self.add_main_option('send-notification', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, "Send notification instead of starting installer", None)
+        self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, "Install in OEM mode", None)
+        self.connect('handle-local-options', self.handle_local_options)
+        self.install_action = Gio.SimpleAction.new('install', None)
+        self.install_action.connect('activate', self.on_activate_installer)
+        self.add_action(self.install_action)
+        self.notify_mode = False
+        self.om_mode = False
 
     def _on_finished(self):
         self._status_content.Spinner.set_visible(False)
@@ -231,8 +239,26 @@ class InstallerApp(Adw.Application):
     def _disk_selected(self, from_list, selected):
         self._install_button.set_can_target(True)
 
+    def handle_local_options(self, app, option):
+        self.oem_mode = bool(option.lookup_value('oem-mode'))
+        self.notify_mode = bool(option.lookup_value('send-notification'))
+        return -1
+
+    def nothing(self):
+        return True
+
     def on_activate(self, app):
+        if self.notify_mode:
+            notification = Gio.Notification.new("Install GNOME OS")
+            notification.set_body("Your session is not saved to disk. If you want to keep your session, please install GNOME OS to a disk.")
+            notification.set_default_action('app.install')
+            self.send_notification('start-installer', notification)
+        else:
+            self.install_action.activate(None)
+
+    def on_activate_installer(self, app, parameter):
         self.installer = Installer(self._on_finished, self._on_error)
+        #self.installer = None
         self.udisks = Udisks()
 
         self.win = InstallerWindow()
@@ -244,7 +270,7 @@ class InstallerApp(Adw.Application):
 
         disk_selector.DiskList.connect("row-selected", self._disk_selected)
 
-        self._install_button = InstallButton(self, self.installer, disk_selector)
+        self._install_button = InstallButton(self, self.installer, disk_selector, self.oem_mode)
         self._install_button.set_can_target(False)
         self.win.add_css_class("devel")
         self.win.Header.pack_end(self._install_button)

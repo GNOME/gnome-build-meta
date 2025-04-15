@@ -14,7 +14,18 @@ install_data(
 
 install_data(
   'org.gnome.Installer.desktop',
-  install_dir: get_option('datadir') / 'gnomeos-live' / 'applications',
+  install_dir: get_option('datadir') / 'gnomeos-live' / 'data' / 'applications',
+)
+
+install_data(
+  'org.gnome.Installer-autostart.desktop',
+  rename: 'org.gnome.Installer.desktop',
+  install_dir: get_option('datadir') / 'gnomeos-live' / 'config' / 'autostart',
+)
+
+install_data(
+  'org.gnome.Installer.service',
+  install_dir: get_option('datadir') / 'dbus-1' / 'services',
 )
 
 install_data(

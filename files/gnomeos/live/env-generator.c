@@ -21,9 +21,15 @@ int main() {
          */
         original = getenv("XDG_DATA_DIRS");
         if (original)
-                printf("XDG_DATA_DIRS=%s:/usr/share/gnomeos-live", original);
+                printf("XDG_DATA_DIRS=%s:/usr/share/gnomeos-live/data\n", original);
         else
-                printf("XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gnomeos-live");
+                printf("XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gnomeos-live/data\n");
+
+        original = getenv("XDG_CONFIG_DIRS");
+        if (original)
+                printf("XDG_CONFIG_DIRS=%s:/usr/share/gnomeos-live/config\n", original);
+        else
+                printf("XDG_CONFIG_DIRS=/etc/xdg:/usr/share/gnomeos-live/config\n");
 
         return 0;
 }

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Created with Cambalache 0.94.1 -->
 <interface>
-  <requires lib="gtk" version="4.8"/>
+  <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.4"/>
   <template class="DiskSelector" parent="AdwNavigationPage">
     <property name="title">Select disk</property>
@@ -12,11 +12,6 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="GtkListBox" id="DiskList"/>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="OEMInstall">
-                <property name="label">OEM installation</property>
-              </object>
             </child>
           </object>
         </property>
