@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell/48/gnome-shell-48.0.tar.xz
-  ref: 36aac2edcdc7588aaadb658cd4687df262b37ba0b667102dcbefbff0c2232bc3
+  url: gnome_downloads:gnome-shell/48/gnome-shell-48.1.tar.xz
+  ref: ba4f455afd6213f387545946e3cd9daa39c904f7ab16dd830ac77a73ff1002ca
 
 build-depends:
 - sdk-deps/sassc.bst
