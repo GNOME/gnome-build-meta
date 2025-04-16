@@ -1,3 +1,5 @@
+subdir('po')
+
 gnome.compile_resources(
   'org.gnome.Installer',
   'gresources.xml',
@@ -12,14 +14,21 @@ install_data(
   install_dir: get_option('prefix') / 'lib' / 'gnomeos-installer',
 )
 
-install_data(
-  'org.gnome.Installer.desktop',
+i18n.merge_file(
+  input: 'org.gnome.Installer.desktop.in',
+  output: 'org.gnome.Installer.desktop',
+  type: 'desktop',
+  po_dir: 'po',
+  install: true,
   install_dir: get_option('datadir') / 'gnomeos-live' / 'data' / 'applications',
 )
 
-install_data(
-  'org.gnome.Installer-autostart.desktop',
-  rename: 'org.gnome.Installer.desktop',
+i18n.merge_file(
+  input: 'org.gnome.Installer-autostart.desktop.in',
+  output: 'org.gnome.Installer-autostart.desktop',
+  type: 'desktop',
+  po_dir: 'po',
+  install: true,
   install_dir: get_option('datadir') / 'gnomeos-live' / 'config' / 'autostart',
 )
 

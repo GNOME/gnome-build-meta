@@ -12,7 +12,7 @@
           <object class="AdwHeaderBar" id="Header">
             <property name="title-widget">
               <object class="AdwWindowTitle">
-                <property name="title">Install GNOME OS</property>
+                <property name="title" translatable="yes">Install GNOME OS</property>
               </object>
             </property>
           </object>

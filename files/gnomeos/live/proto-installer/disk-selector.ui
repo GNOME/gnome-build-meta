@@ -15,7 +15,7 @@
             </child>
           </object>
         </property>
-        <property name="description">Choose the destination disk</property>
+        <property name="description" translatable="yes">Choose the destination disk</property>
         <property name="icon-name">drive-harddisk-symbolic</property>
       </object>
     </child>

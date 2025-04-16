@@ -8,6 +8,11 @@ import dbus
 import dbus.mainloop.glib
 import sys
 import os
+import gettext
+import locale
+
+gettext.install('org.gnome.Installer')
+locale.textdomain('org.gnome.Installer')
 
 
 gresource = Gio.Resource.load('/usr/share/gnomeos-installer/org.gnome.Installer.gresource')
@@ -49,11 +54,11 @@ class Udisks:
             if drive is None:
                 continue
             if drive in has_partitions:
-                invalid = "<b>Disk has partitions</b>\nTo use this disk, you first need to format it in GNOME Disks."
+                invalid = _("<b>Disk has partitions</b>\nTo use this disk, you first need to format it in GNOME Disks.")
             if block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
-                invalid = "<b>Disk is read-only</b>"
+                invalid = _("<b>Disk is read-only</b>")
             if not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
-                invalid = "<b>Disk cannot be partitioned</b>"
+                invalid = _("<b>Disk cannot be partitioned</b>")
             model = drive.Get('org.freedesktop.UDisks2.Drive', 'Model', dbus_interface=dbus.PROPERTIES_IFACE)
             device_bytes = block.Get('org.freedesktop.UDisks2.Block', 'Device', dbus_interface=dbus.PROPERTIES_IFACE)
             device_path = bytearray()
@@ -205,8 +210,8 @@ class InstallerApp(Adw.Application):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate', self.on_activate)
-        self.add_main_option('send-notification', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, "Send notification instead of starting installer", None)
-        self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, "Install in OEM mode", None)
+        self.add_main_option('send-notification', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Send notification instead of starting installer"), None)
+        self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Install in OEM mode"), None)
         self.connect('handle-local-options', self.handle_local_options)
         self.install_action = Gio.SimpleAction.new('install', None)
         self.install_action.connect('activate', self.on_activate_installer)
@@ -217,12 +222,12 @@ class InstallerApp(Adw.Application):
     def _on_finished(self):
         self._status_content.Spinner.set_visible(False)
         self._status_content.StatusPage.set_icon_name("checkmark-symbolic")
-        self._status_content.StatusPage.set_description("Installation finished.")
+        self._status_content.StatusPage.set_description(_("Installation finished."))
 
     def _on_error(self, message):
         self._status_content.Spinner.set_visible(False)
         self._status_content.StatusPage.set_icon_name("computer-fail-symbolic")
-        self._status_content.StatusPage.set_description(f"Installation failed: {message}.")
+        self._status_content.StatusPage.set_description(_(f"Installation failed: {message}."))
 
     def display_recovery(self, key):
         self.win.Header.remove(self._install_button)
@@ -233,7 +238,7 @@ class InstallerApp(Adw.Application):
         else:
             self._status_content.RecoveryKeyDisplay.set_visible(False)
         self._status_content.StatusPage.set_icon_name("computer-symbolic")
-        self._status_content.StatusPage.set_description("Installing...")
+        self._status_content.StatusPage.set_description(_("Installing..."))
         self.win.NavigationView.push(self._status_content)
 
     def _disk_selected(self, from_list, selected):
@@ -249,8 +254,8 @@ class InstallerApp(Adw.Application):
 
     def on_activate(self, app):
         if self.notify_mode:
-            notification = Gio.Notification.new("Install GNOME OS")
-            notification.set_body("Your session is not saved to disk. If you want to keep your session, please install GNOME OS to a disk.")
+            notification = Gio.Notification.new(_("Install GNOME OS"))
+            notification.set_body(_("Your session is not saved to disk. If you want to keep your session, please install GNOME OS to a disk."))
             notification.set_default_action('app.install')
             self.send_notification('start-installer', notification)
         else:

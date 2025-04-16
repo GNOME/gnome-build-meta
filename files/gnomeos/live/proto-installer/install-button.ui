@@ -3,7 +3,7 @@
 <interface>
   <requires lib="gtk" version="4.12"/>
   <template class="InstallButton" parent="GtkButton">
-    <property name="label">Install</property>
+    <property name="label" translatable="yes">Install</property>
     <signal name="clicked" handler="doInstall"/>
   </template>
 </interface>

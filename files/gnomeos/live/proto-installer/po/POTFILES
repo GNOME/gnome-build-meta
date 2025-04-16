@@ -1,0 +1,9 @@
+proto-installer/disk-row.ui
+proto-installer/disk-selector.ui
+proto-installer/install-button.ui
+proto-installer/installer-window.ui
+proto-installer/status-display.ui
+proto-installer/warning-icon.ui
+proto-installer/installer.py
+proto-installer/org.gnome.Installer-autostart.desktop.in
+proto-installer/org.gnome.Installer.desktop.in
