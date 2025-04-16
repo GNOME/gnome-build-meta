@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/47/mutter-47.6.tar.xz
-  ref: dae1b69373b3b63d61f4d2fbb68e1d003b90a72a11e5e7b65ce7b78fe1bb576d
+  url: gnome_downloads:mutter/47/mutter-47.7.tar.xz
+  ref: ef04d4c21c63baea678cbd905b73cf86692fa30eaf5426c279a751ce4edbea76
 build-depends:
 - core-deps/python-dbusmock.bst
 - core-deps/xvfb.bst
