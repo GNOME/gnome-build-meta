@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/1.2/glycin-1.2.0.tar.xz
-  ref: 16ab4a48398639ef701c7c3e27a2d31075b30e0dcaf3f1652c907b188f4290d0
+  url: gnome_downloads:glycin/1.2/glycin-1.2.1.tar.xz
+  ref: ccc578e9a3e83d0dc1535737d1fda09baa95c7167f5e5ecb15f786654094eed5
 - kind: cargo2
   ref:
   - kind: registry
@@ -400,36 +400,36 @@ sources:
     sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: registry
     name: glycin
-    version: 2.1.0
-    sha: c1496acef16890b0022c61298052d4ca3e1a121dd4696166c3d19242581bdb9a
+    version: 2.1.1
+    sha: 37cb9e103cb6b8925bf5e8a1cf8a1166797d8aaefaabd03e68cf6ad7443a1baa
   - kind: registry
     name: glycin-utils
-    version: 3.0.0
-    sha: 4348643b905fc981acf8ed0315ab8e315ce771cedb65034562f477cbaa4b1ee1
+    version: 3.0.1
+    sha: c0816d1db00696479cda3cd6c914fb07115982b019dac96555d203c0d5b6d37a
   - kind: registry
     name: gobject-sys
     version: 0.20.9
     sha: c773a3cb38a419ad9c26c81d177d96b4b08980e8bdbbf32dace883e96e96e7e3
   - kind: registry
     name: gufo
-    version: 0.2.0
-    sha: 2a9601cdbed208693a6ab7a084cb1e2e78bffdfcd96210ec97f5f5eb19ae5fe8
+    version: 0.2.3
+    sha: 6d94d1ca1f46778f74bec14c6cc73f99bd6f3f856dcb380deae1d87fe65bca28
   - kind: registry
     name: gufo-common
     version: 0.2.0
     sha: ccb2b4c040e67e6d6ad954f04693a11864df82bce6c6c468524b6a78bb75581f
   - kind: registry
     name: gufo-exif
-    version: 0.2.0
-    sha: ca82b09b4055d19955579ac4d3fc9ead97392d616624863bd55af500d3232ff0
+    version: 0.2.2
+    sha: 1448d72e2458b35dd10c0f148ea913b38c61b649552b22a97fa836ec376189ff
   - kind: registry
     name: gufo-jpeg
     version: 0.2.0
     sha: 047379e4825d1a8581f0bf0daa841d71eff1503229bcdef004ad1d18e17b39f0
   - kind: registry
     name: gufo-png
-    version: 0.2.0
-    sha: b07a166e53b637b2ccc4eb4ab61b9daaccc806e150af227f596a099448f10752
+    version: 0.2.3
+    sha: bad9fd59eaa8aa35ac015d9b8d396a780b586cf39509f9e121f9fd67bfde5d00
   - kind: registry
     name: gufo-tiff
     version: 0.2.0
@@ -940,8 +940,8 @@ sources:
     sha: ba1310fcea54c6a9a4fd1aad794ecc02c31682f6bfbecdf460bf19533eed1e3e
   - kind: registry
     name: tokio
-    version: 1.43.0
-    sha: 3d61fa4ffa3de412bfea335c6ecff681de2b609ba3c77ef3e00e521813a9ed9e
+    version: 1.44.2
+    sha: e6b88822cbe49de4185e3a4cbf8321dd487cf5fe0c5c65695fef6346371e9c48
   - kind: registry
     name: tokio-stream
     version: 0.1.17
