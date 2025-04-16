@@ -424,6 +424,17 @@ async fn remove_loop() -> Result<(), InstallerError> {
     Ok(())
 }
 
+async fn allow_discards() -> Result<(), InstallerError> {
+    let cmd = Command::new("cryptsetup")
+        .arg("refresh").arg("--allow-discards").arg("--persistent")
+        .arg("--key-file=/run/cryptsetup-keys.d/root.key").arg("root")
+        .spawn()?
+        .wait().await?;
+    cmd.code().filter(|code| *code == 0)
+        .ok_or(CommandError::new("cryptsetup refresh --allow-discards", cmd))?;
+    Ok(())
+}
+
 async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(), InstallerError> {
     let mut real_root = root.to_string();
 
@@ -438,6 +449,8 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
             "active" => (),
             _ => return Err(InstallerError::Unit(UnitError::new("systemd-cryptsetup@root.service"))),
         }
+
+        allow_discards().await?;
 
         real_root = "/dev/mapper/root".to_string();
     }
