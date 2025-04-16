@@ -1,8 +1,8 @@
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 0c37502e3..d696993d2 100644
+index 957b0ff5b..3a4cf6168 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
-@@ -625,6 +625,7 @@ case "$arch" in
+@@ -630,6 +630,7 @@ case "$arch" in
      x86_64|i686)
          remove DRM_I915; module DRM_I915
          module DRM_GMA500
@@ -10,11 +10,34 @@ index 0c37502e3..d696993d2 100644
      ;;
      aarch64)
          module DRM_PANFROST
-@@ -1164,6 +1165,7 @@ case "$arch" in
+@@ -1174,9 +1175,30 @@ case "$arch" in
+         # pinctrl_amd might not work as module if it is loaded to late
+         enable PINCTRL_AMD
+         enable INTEL_IOMMU
++        enable INTEL_IOMMU_SVM
          enable IRQ_REMAP
          enable X86_AMD_PLATFORM_DEVICE
          enable CONFIG_X86_USER_SHADOW_STACK
 +        enable PINCTRL_INTEL_PLATFORM
++        enable PINCTRL_ALDERLAKE
++        enable PINCTRL_BAYTRAIL
++        enable PINCTRL_BROXTON
++        enable PINCTRL_CANNONLAKE
++        enable PINCTRL_CEDARFORK
++        enable PINCTRL_CHERRYVIEW
++        enable PINCTRL_DENVERTON
++        enable PINCTRL_ELKHARTLAKE
++        enable PINCTRL_EMMITSBURG
++        enable PINCTRL_GEMINILAKE
++        enable PINCTRL_ICELAKE
++        enable PINCTRL_INTEL_PLATFORM
++        enable PINCTRL_JASPERLAKE
++        enable PINCTRL_LAKEFIELD
++        enable PINCTRL_LEWISBURG
++        enable PINCTRL_METEORLAKE
++        enable PINCTRL_METEORPOINT
++        enable PINCTRL_SUNRISEPOINT
++        enable PINCTRL_TIGERLAKE
      ;;
  esac
  
