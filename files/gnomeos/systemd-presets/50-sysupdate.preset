@@ -1,2 +1,2 @@
-mask systemd-sysupdate-reboot.*
-mask systemd-sysupdate.*
+disable systemd-sysupdate-reboot.*
+disable systemd-sysupdate.*
