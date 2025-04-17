@@ -28,7 +28,7 @@
                 <property name="margin-top">10</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="label" translatable="yes">Your recovery key is:</property>
+                    <property name="label" translatable="yes">Your recovery key is: </property>
                   </object>
                 </child>
                 <child>
