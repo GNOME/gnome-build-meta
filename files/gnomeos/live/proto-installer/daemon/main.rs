@@ -504,6 +504,26 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
 }
 
 async fn do_install(conn: &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool) -> Result<(), InstallerError> {
+    let repart_d = tempfile::tempdir()?;
+    let repart_d_path = repart_d.path().to_str().ok_or(GenericInstallError::new("bad path for repart.d"))?;
+
+    write_repart_d(repart_d.path(), has_tpm2).await?;
+    debug!("generated repart.d configuration");
+
+    let mut dry_run = Command::new("systemd-repart");
+
+    dry_run.args([
+        "--dry-run=yes",
+        "--empty=require",
+    ]);
+
+    dry_run.arg(format!("--definitions={repart_d_path}"));
+    dry_run.arg(format!("/dev/{device}"));
+
+    let dry_run_status = dry_run.spawn()?.wait().await?;
+
+    dry_run_status.code().filter(|code| *code == 0).ok_or(CommandError::new("systemd-repart dry run", dry_run_status))?;
+
     let logind = LogindProxy::new(&conn).await?;
     let _inihibit_fd = logind.inhibit("shutdown:sleep",
                                       "GNOME OS Installer",
@@ -537,13 +557,6 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
     }
 
     debug!("made pcrlock policy");
-
-    let repart_d = tempfile::tempdir()?;
-    let repart_d_path = repart_d.path().to_str().ok_or(GenericInstallError::new("bad path FIXME"))?;
-
-    write_repart_d(repart_d.path(), has_tpm2).await?;
-
-    debug!("generated repart.d configuration");
 
     let mut cmd = Command::new("systemd-repart");
 
