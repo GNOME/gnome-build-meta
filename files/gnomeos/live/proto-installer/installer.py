@@ -82,21 +82,6 @@ def human_readable_size(size):
             return f"{r}{suffix}"
         size /= 1024
 
-class InstallableDisk(GObject.GObject):
-    __gtype_name__ = "InstallableDisk"
-
-    device = GObject.Property(type=GObject.TYPE_STRING, default="")
-    description = GObject.Property(type=GObject.TYPE_STRING, default="")
-
-    def __init__(self, device, description, size):
-        super().__init__()
-
-        self.device = device
-        if size == 0:
-            self.description = description
-        else:
-            s = human_readable_size(size)
-            self.description = f"{description} ({s})"
 
 class Installer:
     def __init__(self, on_finished, on_error):
