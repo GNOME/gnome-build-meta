@@ -207,7 +207,7 @@ QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
 
 if [ ${#cmdline[@]} -gt 0 ]; then
-    QEMU_ARGS+=(-smbios "type=11,value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]}")
+    QEMU_ARGS+=(-smbios "type=11,value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]//,/,,}")
 fi
 
 exec qemu-system-x86_64 "${QEMU_ARGS[@]}"
