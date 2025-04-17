@@ -151,7 +151,8 @@ class DiskRow(Adw.ActionRow):
         super().__init__()
         self._device_name = name
         self.set_title(description)
-        self.set_subtitle(human_readable_size(size))
+        if size != 0:
+            self.set_subtitle(human_readable_size(size))
         if invalid is not None:
             self.set_selectable(False)
             self.add_suffix(WarningIcon(invalid))
