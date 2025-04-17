@@ -7,7 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:components/dosfstools.bst
 - freedesktop-sdk.bst:components/mtools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
-- iso-deps/libisoburn.bst
+- gnomeos-deps/libisoburn.bst
 - gnomeos/repart-config-iso.bst
 - filename: gnomeos/usr-image.bst
   config:
