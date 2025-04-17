@@ -4,4 +4,8 @@ ConditionKernelCommandLine=root=live:gnomeos
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/losetup -f -P /dev/%I
+# It would be tempting to use --partscan here, but the kernel seems to
+# have a bug where the disk is scanned twice. This makes the
+# partitions disappear for a short time and causes services to not
+# start correctly.  For that reason, we use partx separatly.
+ExecStart=/usr/bin/losetup -f /dev/%I
