@@ -7,5 +7,6 @@
     <file>status-display.ui</file>
     <file>disk-row.ui</file>
     <file>warning-icon.ui</file>
+    <file>error-icon.ui</file>
   </gresource>
 </gresources>

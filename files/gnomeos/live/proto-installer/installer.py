@@ -30,35 +30,22 @@ class Udisks:
         ret = []
         drives = {}
         blocks = {}
-        partitions = {}
+        partition_table_type = {}
+
         for path, interfaces in self.objman_interface.GetManagedObjects().items():
             if 'org.freedesktop.UDisks2.Drive' in interfaces:
                 drives[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
             if 'org.freedesktop.UDisks2.Block' in interfaces and 'org.freedesktop.UDisks2.Partition' not in interfaces:
-                blocks[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
-            if 'org.freedesktop.UDisks2.Block' in interfaces and 'org.freedesktop.UDisks2.Partition'in interfaces:
-                partitions[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
-
-        has_partitions = set()
-        for path, partition in partitions.items():
-            drive_path = partition.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
-            drive = drives.get(drive_path)
-            if drive is None:
-                continue
-            has_partitions.add(drive)
+                block = self.system_bus.get_object('org.freedesktop.UDisks2', path)
+                blocks[path] = block
+                if 'org.freedesktop.UDisks2.PartitionTable' in interfaces:
+                    partition_table_type[path] = block.Get('org.freedesktop.UDisks2.PartitionTable', 'Type', dbus_interface=dbus.PROPERTIES_IFACE)
 
         for path, block in blocks.items():
-            invalid = None
             drive_path = block.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
             drive = drives.get(drive_path)
             if drive is None:
                 continue
-            if drive in has_partitions:
-                invalid = _("<b>Disk has partitions</b>\nTo use this disk, you first need to format it in GNOME Disks.")
-            if block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
-                invalid = _("<b>Disk is read-only</b>")
-            if not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
-                invalid = _("<b>Disk cannot be partitioned</b>")
             model = drive.Get('org.freedesktop.UDisks2.Drive', 'Model', dbus_interface=dbus.PROPERTIES_IFACE)
             device_bytes = block.Get('org.freedesktop.UDisks2.Block', 'Device', dbus_interface=dbus.PROPERTIES_IFACE)
             device_path = bytearray()
@@ -67,11 +54,26 @@ class Udisks:
             device = device_path.rstrip(b'\0').decode('utf-8')
             size = block.Get('org.freedesktop.UDisks2.Block', 'Size', dbus_interface=dbus.PROPERTIES_IFACE)
 
+            invalid = None
+            if path in partition_table_type:
+                invalid = ('error', _("<b>Disk has a partition table.</b>\nTo use this disk, you first need to format it without partition table in GNOME Disks."))
+            elif block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
+                invalid = ('error', _("<b>Disk is read-only</b>"))
+            elif not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
+                invalid = ('error', _("<b>Disk cannot be partitioned</b>"))
+            elif size != 0 and size < 10*1024*1024*1024:
+                invalid = ('error', _("<b>Disk is too small.</b>"))
+            elif size != 0 and size < 30*1024*1024*1024:
+                invalid = ('warning', _("<b>Disk is small.</b>\nWe recommend to use a disk with at least 30GB."))
+            elif size == 0:
+                invalid = ('warning', _("<b>Size is unknown.</b>"))
+
             media = drive.Get('org.freedesktop.UDisks2.Drive', 'MediaCompatibility', dbus_interface=dbus.PROPERTIES_IFACE)
 
             ret.append((os.path.relpath(device, '/dev'), model, size, media, invalid))
 
         return ret
+
 
 def human_readable_size(size):
     for suffix in ["B", "KB", "MB", "GB", "TB"]:
@@ -154,8 +156,11 @@ class DiskRow(Adw.ActionRow):
         if size != 0:
             self.set_subtitle(human_readable_size(size))
         if invalid is not None:
-            self.set_selectable(False)
-            self.add_suffix(WarningIcon(invalid))
+            if invalid[0] == 'warning':
+                self.add_suffix(WarningIcon(invalid[1]))
+            else:
+                self.set_selectable(False)
+                self.add_suffix(ErrorIcon(invalid[1]))
 
         icon = 'drive-harddisk-symbolic'
         for m in media:
@@ -190,6 +195,17 @@ class WarningIcon(Gtk.Box):
     def __init__(self, text):
         super().__init__()
         self.WarningLabel.set_markup(text)
+
+
+@Gtk.Template(resource_path="/org/gnome/os/proto-installer/error-icon.ui")
+class ErrorIcon(Gtk.Box):
+    __gtype_name__ = "ErrorIcon"
+
+    ErrorLabel = Gtk.Template.Child()
+
+    def __init__(self, text):
+        super().__init__()
+        self.ErrorLabel.set_markup(text)
 
 
 class InstallerApp(Adw.Application):
