@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: openldap:software/download/OpenLDAP/openldap-release/openldap-2.6.0.tgz
-  ref: b71c580eac573e9aba15d95f33dd4dd08f2ed4f0d7fc09e08ad4be7ed1e41a4f
+  url: openldap:software/download/OpenLDAP/openldap-release/openldap-2.6.9.tgz
+  ref: 2cb7dc73e9c8340dff0d99357fbaa578abf30cc6619f0521972c555681e6b2ff
 
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst
