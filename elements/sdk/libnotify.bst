@@ -28,3 +28,6 @@ public:
       devel:
         (>):
         - '%{libdir}/libnotify.so'
+
+  cpe:
+    vendor: 'gnome'
