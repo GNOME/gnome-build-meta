@@ -14,3 +14,8 @@ depends:
 variables:
   conf-local: >-
     --without-cython
+
+public:
+  cpe:
+    vendor: 'libimobiledevice'
+    product: 'libplist'
