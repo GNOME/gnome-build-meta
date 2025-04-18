@@ -27,3 +27,7 @@ variables:
 
 environment:
   GOFLAGS: -mod=vendor
+
+public:
+  cpe:
+    vendor: 'containers_project'
