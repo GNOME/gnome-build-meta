@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.2.0-24-g45bf550eef2c42f9ff1985dbe1326cee8dcdba01
+  ref: 1.2.0-27-g2972a1866d22b720aaf8397437337fdd2e6da8eb
 - kind: cargo2
   ref:
   - kind: registry
