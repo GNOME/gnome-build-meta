@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libmanette.git
   track: main
-  ref: d0d24e9a341ecbc9de1ab03f5986aa86c6c16793
+  ref: da8ec205321d30dd9968a0e49fb007a74ce2a453
 
 build-depends:
 - sdk/gi-docgen.bst
