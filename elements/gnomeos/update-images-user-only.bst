@@ -25,12 +25,12 @@ config:
 
     roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/mini.repart.json)
 
-    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/21-usr-A.conf$"))).uuid' /usr-image/repart.json)"
-    usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/repart.json)
+    usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/mini.repart.json)"
+    usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/mini.repart.json)
 
-    cp /usr-image/disk.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_verity_part_uuid}.verity"
+    cp /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_verity_part_uuid}.verity"
     xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_verity_part_uuid}.verity"
-    cp /usr-image/disk.usr.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_part_uuid}.raw"
+    cp /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_part_uuid}.raw"
     xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_part_uuid}.raw"
 
   - |
