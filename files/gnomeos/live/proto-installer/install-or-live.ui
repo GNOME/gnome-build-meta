@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.0 -->
+<interface>
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.4"/>
+  <template class="InstallOrLive" parent="AdwNavigationPage">
+    <property name="child">
+      <object class="AdwStatusPage">
+        <property name="child">
+          <object class="GtkBox">
+            <property name="halign">center</property>
+            <property name="spacing">10</property>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Try GNOME OS</property>
+                <signal name="clicked" handler="clicked_try"/>
+                <style>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Install now</property>
+                <signal name="clicked" handler="clicked_install"/>
+                <style>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="description" translatable="yes">Your current session is not yet saved on disk.
+You can choose to install now, or continue trying GNOME OS and install later.</property>
+        <property name="title" translatable="yes">Welcome to GNOME OS!</property>
+        <style/>
+      </object>
+    </property>
+  </template>
+</interface>

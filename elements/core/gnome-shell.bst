@@ -14,6 +14,8 @@ sources:
   url: gnome:libgnome-volume-control.git
   directory: subprojects/gvc
   ref: 5f9768a2eac29c1ed56f1fbb449a77a3523683b6
+- kind: patch
+  path: patches/gnome-shell/launch-installer.patch
 
 build-depends:
 - sdk-deps/sassc.bst

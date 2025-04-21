@@ -1,0 +1,27 @@
+diff --git a/js/ui/welcomeDialog.js b/js/ui/welcomeDialog.js
+index 8dbfba83a..fabc92f3f 100644
+--- a/js/ui/welcomeDialog.js
++++ b/js/ui/welcomeDialog.js
+@@ -22,6 +22,7 @@ class WelcomeDialog extends ModalDialog.ModalDialog {
+ 
+         const appSystem = Shell.AppSystem.get_default();
+         this._tourAppInfo = appSystem.lookup_app('org.gnome.Tour.desktop');
++        this._installerAppInfo = appSystem.lookup_app('org.gnome.Installer.desktop');
+ 
+         this._buildLayout();
+     }
+@@ -70,8 +71,14 @@ class WelcomeDialog extends ModalDialog.ModalDialog {
+ 
+     _sendResponse(response) {
+         if (response === DialogResponse.TAKE_TOUR) {
++            if (this._installerAppInfo) {
++                this._installerAppInfo.launch_action('wait-for-tour-mode', 0, -1);
++            }
+             this._tourAppInfo.launch(0, -1, Shell.AppLaunchGpu.APP_PREF);
+             Main.overview.hide();
++        } else if (this._installerAppInfo) {
++            this._installerAppInfo.launch(0, -1, Shell.AppLaunchGpu.APP_PREF);
++            Main.overview.hide();
+         }
+ 
+         this.close();

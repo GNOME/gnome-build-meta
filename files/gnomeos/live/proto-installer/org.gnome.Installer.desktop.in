@@ -8,8 +8,12 @@ StartupNotify=true
 OnlyShowIn=GNOME;
 Categories=System;GNOME;GTK;
 X-GNOME-UsesNotifications=true
-Actions=oem-install;
+Actions=oem-install;wait-for-tour-mode;
 
 [Desktop Action oem-install]
 Exec=/usr/lib/gnomeos-installer/installer.py --oem-mode
 Name=OEM installation
+
+[Desktop Action wait-for-tour-mode]
+Exec=/usr/lib/gnomeos-installer/installer.py --wait-for-tour-mode
+Name=Launch after Tour

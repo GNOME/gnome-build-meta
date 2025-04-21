@@ -122,6 +122,23 @@ class InstallButton(Gtk.Button):
         self._selector = selector
         self._oem_mode = oem_mode
 
+@Gtk.Template(resource_path="/org/gnome/os/proto-installer/install-or-live.ui")
+class InstallOrLive(Adw.NavigationPage):
+    __gtype_name__ = "InstallOrLive"
+
+    @Gtk.Template.Callback()
+    def clicked_install(self, *args):
+        self._on_install()
+
+    @Gtk.Template.Callback()
+    def clicked_try(self, *args):
+        self._on_try()
+
+    def __init__(self, on_try, on_install):
+        super().__init__()
+        self._on_try = on_try
+        self._on_install = on_install
+
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-selector.ui")
 class DiskSelector(Adw.NavigationPage):
     __gtype_name__ = "DiskSelector"
@@ -209,17 +226,18 @@ class ErrorIcon(Gtk.Box):
 
 
 class InstallerApp(Adw.Application):
-    def __init__(self, **kwargs):
+    def __init__(self, mainloop, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate', self.on_activate)
-        self.add_main_option('send-notification', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Send notification instead of starting installer"), None)
+        self.add_main_option('wait-for-tour-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Wait for Tour to be finished"), None)
         self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Install in OEM mode"), None)
         self.connect('handle-local-options', self.handle_local_options)
         self.install_action = Gio.SimpleAction.new('install', None)
         self.install_action.connect('activate', self.on_activate_installer)
         self.add_action(self.install_action)
-        self.notify_mode = False
+        self.wait_for_tour_mode = False
         self.om_mode = False
+        self.mainloop = mainloop
 
     def _on_finished(self):
         self._status_content.Spinner.set_visible(False)
@@ -248,24 +266,27 @@ class InstallerApp(Adw.Application):
 
     def handle_local_options(self, app, option):
         self.oem_mode = bool(option.lookup_value('oem-mode'))
-        self.notify_mode = bool(option.lookup_value('send-notification'))
+        self.wait_for_tour_mode = bool(option.lookup_value('wait-for-tour-mode'))
         return -1
 
-    def nothing(self):
-        return True
-
     def on_activate(self, app):
-        if self.notify_mode:
-            notification = Gio.Notification.new(_("Install GNOME OS"))
-            notification.set_body(_("Your session is not saved to disk. If you want to keep your session, please install GNOME OS to a disk."))
-            notification.set_default_action('app.install')
-            self.send_notification('start-installer', notification)
+        if self.wait_for_tour_mode:
+            self.hold()
+            def on_name_owner_changed(name, old_owner, new_owner):
+                if name == "org.gnome.Tour" and new_owner == "":
+                    self.install_action.activate(None)
+                    self.release()
+                    return False
+                else:
+                    return True
+            bus = dbus.SessionBus()
+            dbus_obj = bus.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus')
+            dbus_obj.connect_to_signal('NameOwnerChanged', on_name_owner_changed, dbus_interface='org.freedesktop.DBus')
         else:
             self.install_action.activate(None)
 
     def on_activate_installer(self, app, parameter):
         self.installer = Installer(self._on_finished, self._on_error)
-        #self.installer = None
         self.udisks = Udisks()
 
         self.win = InstallerWindow()
@@ -281,10 +302,16 @@ class InstallerApp(Adw.Application):
         self._install_button.set_can_target(False)
         self.win.add_css_class("devel")
         self.win.Header.pack_end(self._install_button)
-        self.win.NavigationView.push(disk_selector)
+        def on_try():
+            self.quit()
+        def on_install():
+            self.win.NavigationView.push(disk_selector)
+        install_or_live = InstallOrLive(on_try, on_install)
+        self.win.NavigationView.push(install_or_live)
         self.win.present()
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
-    app = InstallerApp(application_id="org.gnome.Installer")
+    mainloop = GLib.MainLoop()
+    app = InstallerApp(mainloop, application_id="org.gnome.Installer")
     app.run(sys.argv)

@@ -8,5 +8,6 @@
     <file>disk-row.ui</file>
     <file>warning-icon.ui</file>
     <file>error-icon.ui</file>
+    <file>install-or-live.ui</file>
   </gresource>
 </gresources>
