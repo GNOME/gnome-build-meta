@@ -36,7 +36,7 @@ fi
 # Append the sourcedir into the bst config so we don't clone all the sources again
 echo -e "\nsourcedir: /cache/buildstream/sources" >> "${CI_PROJECT_DIR}/.gitlab-ci/buildstream.conf"
 
-python3 utils/update-refs.py --new-branch
+python3 .gitlab-ci/scripts/update-refs.py --new-branch
 
 git show
 

@@ -113,7 +113,7 @@ default:
   # as a fake: always kind of rule
   - if: "$CI_COMMIT_REF_NAME"
   script:
-  - $CI_PROJECT_DIR/.gitlab-ci/build_elements.sh
+  - $CI_PROJECT_DIR/.gitlab-ci/scripts/build_elements.sh
   # Store artifacts so we can inspect build failures
   artifacts:
     when: always
@@ -289,7 +289,7 @@ deploy-flatpak:
   - echo $TARGETS
 
   # Sanity chck where we going to push
-  - python3 $CI_PROJECT_DIR/utils/publish-flatpak-gate.py
+  - python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/publish-flatpak-gate.py
 
   - ostree init --repo repo/ --mode archive
   - |
@@ -330,7 +330,7 @@ deploy-oci:
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/core.bst | podman load
   - |
     if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./utils/publish-oci-quay.sh
+        ./.gitlab-ci/scripts/publish-oci-quay.sh
     fi
 
 sysupdate-image-x86_64:
@@ -369,7 +369,7 @@ sysupdate-image-aarch64:
 
   - |
     if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./utils/publish-sysupdate-to-s3.sh
+        ./.gitlab-ci/scripts/publish-sysupdate-to-s3.sh
     fi
 
 disk-image-aarch64:
@@ -544,7 +544,7 @@ s3-image-static:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: on_success
   script:
-  - ./utils/publish-s3-static.sh $CI_PIPELINE_ID
+  - ./.gitlab-ci/scripts/publish-s3-static.sh $CI_PIPELINE_ID
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
@@ -682,7 +682,7 @@ update_refs:
   rules:
     - !reference [".stage-only-rules", "rules"]
   script:
-  - bash "$CI_PROJECT_DIR/.gitlab-ci/ci-bot-track-refs.sh"
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache
   - ${BST} source push
   after_script:
@@ -696,8 +696,8 @@ pages:
   script:
   - mkdir -p public/master/
   - mv cve-reports/ public/master/
-  - python3 utils/download_cve_reports.py
-  - python3 utils/generate_release_contents.py
+  - python3 .gitlab-ci/scripts/download_cve_reports.py
+  - python3 .gitlab-ci/scripts/generate_release_contents.py
   artifacts:
     paths:
     - 'public'

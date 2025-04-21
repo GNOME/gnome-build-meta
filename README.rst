@@ -14,11 +14,11 @@ project. Instructions for building GNOME can be `found here <https://wiki.gnome.
 Updating the refs
 -----------------
 
-To update the refs you can use Toolbox along with the script in ``utils/update-refs.py`` and
+To update the refs you can use Toolbox along with the script in ``.gitlab-ci/scripts/update-refs.py`` and
 git push options to create a merge request.
 ::
   $ toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
-  $ toolbox run -c bst2 ./utils/update-refs.py --new-branch
+  $ toolbox run -c bst2 ./.gitlab-ci/scripts/update-refs.py --new-branch
   $ git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin -u HEAD
 
 Build outputs
