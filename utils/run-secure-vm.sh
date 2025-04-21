@@ -5,8 +5,65 @@ set -eu
 args=()
 cmdline=()
 
+print_help() {
+    cat <<EOF
+Usage: $@ [OPTIONS] [--] [ELEMENT]
+Run GNOME OS image under qemu-system with secure boot and TPM.
+
+You can optionally set the BuildStream element to be built and run.
+The default element will be gnomeos/image.bst or
+gnomeos/live-image.bst if a --live-* option is used.
+
+A 50G primary disk will be used. It will be inititialized with the
+data from the element, unless a --live-* option is used.
+
+When using a --live-* option, a secondary disk will be initialized
+with the data of the element instead.
+
+Successive calls of this script will not remove data unless a --reset*
+option is used.
+
+Options:
+  --help                     Print this help message.
+
+  --live-disk                Attach the secondary disk. If the secondary disk
+                             not initialized yet, initialize it with the
+                             element.
+
+  --live-cdrom               Attach the secondary disk as a CD-ROM. If the
+                             secondary disk not initialized yet, initialize
+                             it with the element.
+
+  --reset                    Force re-initializing disk element.
+
+  --reset-installed          Clear the primary disk. This is useful when using
+                             --live-* options, as --reset would not reset the
+                             primary disk.
+
+  --reset-secure-state       Clear TPM and UEFI firmware state.
+
+  --buildid NNNNN            Instead of building the element locally, download
+                             the image from CI. The ID is the pipeline number.
+                             OVMF will still need to be built locally.
+
+  --notpm                    Do not use TPM.
+
+  --serial                   Connect the console to the VM serial port.
+                             Exit with C-x a.
+
+  --cmdline CMD              Add a kernel command line option. You can use
+                             this multiple times. For example:
+                             --cmdline systemd.debug_shell=1 --cmdline
+                             systemd.journald.forward_to_journal=1
+EOF
+}
+
 while [ $# -gt 0 ]; do
     case "$1" in
+        --help)
+            print_help
+            exit 0
+            ;;
         --live-disk)
             live=disk
             ;;
@@ -36,6 +93,11 @@ while [ $# -gt 0 ]; do
         --cmdline)
             shift
             cmdline+=("$1")
+            ;;
+        --)
+            shift
+            args+=("$@")
+            break
             ;;
         *)
             args+=("$1")

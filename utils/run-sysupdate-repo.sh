@@ -4,13 +4,55 @@ set -eu
 
 args=()
 
+print_help() {
+    cat <<EOF
+Usage: $@ [OPTIONS] [--]
+Build sysupdate images and serve them through a local HTTP server.
+
+Each call will increment the image version, from l.1, l.2, l.3... unless
+--same-version was used.
+
+By default, only the kernel and the /usr image will be served. If
+--devel option is used, all images will be built and served.
+
+The server will serve on port 8080. To sysupdate to the images,
+the sysupdate.d configuration will need to point to the server.
+The files /usr/lib/sysupdate.d/*.transfer should copied to /etc/sysupdate.d/
+and in section [Source], Path should be modified to point to:
+  * http://10.0.2.2:8080/ for VMs run from run-secure-vm.sh
+  * http://localhost:8080/ for the host
+
+Local builds will be signed with a different key. Either add
+files/boot-keys/import-pubring.gpg to /etc/systemd/import-pubring.gpg
+or use --verify=no to systemd-sysupdate. If secure boot is enabled,
+also enroll files/boot-keys/VENDOR.der to MOKs with "mokutil
+--import".
+
+Options:
+  --help                     Print this help message.
+
+  --same-version             Do not bump the version of the image.
+
+  --devel                    Build and serve all images including extensions.
+EOF
+}
+
 while [ $# -gt 0 ]; do
     case "$1" in
+        --help)
+            print_help
+            exit 0
+            ;;
         --same-version)
             same_version=1
             ;;
         --devel)
             devel=1
+            ;;
+        --)
+            shift
+            args+=("$@")
+            break
             ;;
         *)
             args+=("$1")
