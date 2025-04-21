@@ -6,10 +6,11 @@ build-depends:
 - freedesktop-sdk.bst:components/dosfstools.bst
 - freedesktop-sdk.bst:components/mtools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:components/jq.bst
 - gnomeos/repart-config.bst
 - filename: gnomeos/usr-image.bst
   config:
-    location: '/usr-image'
+    location: '/sysroot'
 - filename: gnomeos/signed-boot.bst
   config:
     location: '/sysroot'
@@ -45,16 +46,27 @@ config:
     rm -rf /sysroot/efi/EFI/Linux/gnomeos_*.efi.extra.d
 
   - |
-    cp /usr-image/disk.raw '%{install-root}/disk.raw'
+    mkdir -p /var/tmp
 
   - |
-    mkdir -p /var/tmp
+    usr_uuid=$(jq -r '.[0].uuid' '/sysroot/mini.repart.json')
+    usr_verity_uuid=$(jq -r '.[1].uuid' '/sysroot/mini.repart.json')
+
+    cat <<EOF >>definitions/21-usr-A.conf
+    CopyBlocks=/mini.usr.raw
+    UUID=${usr_uuid}
+    EOF
+    cat <<EOF >>definitions/20-usr-verity-A.conf
+    CopyBlocks=/mini.usr-verity.raw
+    UUID=${usr_verity_uuid}
+    EOF
 
   - |
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
         --definitions=definitions \
-        --empty=refuse \
+        --empty=create \
+        --size=auto \
         --dry-run=no \
         --discard=no \
         --offline=true \
