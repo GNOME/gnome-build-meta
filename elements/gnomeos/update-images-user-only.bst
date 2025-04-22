@@ -20,31 +20,25 @@ config:
   - |
     set -x
 
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
-    image_version="${label##gnomeos_usr_v_}"
-
     usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/mini.repart.json)"
     usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/mini.repart.json)
 
-    cp /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_verity_part_uuid}.verity"
-    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_verity_part_uuid}.verity"
-    cp /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_part_uuid}.raw"
-    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_${image_version}_${usr_part_uuid}.raw"
+    cp /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
+    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
+    cp /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
+    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
 
   - |
     set -x
 
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
-    image_version="${label##gnomeos_usr_v_}"
-
-    cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi" "%{install-root}/gnomeos-%{systemd-arch}_${image_version}.efi"
-    xz ${XZFLAGS} "%{install-root}/gnomeos-%{systemd-arch}_${image_version}.efi"
-    cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi" "%{install-root}/gnomeos-apparmor-%{systemd-arch}_${image_version}.efi"
-    xz ${XZFLAGS} "%{install-root}/gnomeos-apparmor-%{systemd-arch}_${image_version}.efi"
+    cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi" "%{install-root}/gnomeos-%{systemd-arch}_%{image-version}.efi"
+    xz ${XZFLAGS} "%{install-root}/gnomeos-%{systemd-arch}_%{image-version}.efi"
+    cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/apparmor.addon.efi" "%{install-root}/gnomeos-apparmor-%{systemd-arch}_%{image-version}.efi"
+    xz ${XZFLAGS} "%{install-root}/gnomeos-apparmor-%{systemd-arch}_%{image-version}.efi"
     case '%{arch}' in
       x86_64)
-        cp "/signed-boot/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi" "%{install-root}/gnomeos-nvidia-%{systemd-arch}_${image_version}.addon.efi"
-        xz ${XZFLAGS} "%{install-root}/gnomeos-nvidia-%{systemd-arch}_${image_version}.addon.efi"
+        cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/nvidia.addon.efi" "%{install-root}/gnomeos-nvidia-%{systemd-arch}_%{image-version}.addon.efi"
+        xz ${XZFLAGS} "%{install-root}/gnomeos-nvidia-%{systemd-arch}_%{image-version}.addon.efi"
       ;;
     esac
 

@@ -1,7 +1,6 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/debug-layer.bst
@@ -77,15 +76,11 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        debug.raw \
-        --json=pretty \
-        >repart.json
+        debug.raw
 
   - |
     xz ${XZFLAGS} debug.raw
 
   install-commands:
   - |
-    label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
-    image_version="${label##gnomeos_dbg_dev_v_}"
-    install -Dm644 debug.raw.xz "%{install-root}/debug-%{systemd-arch}_${image_version}.raw.xz"
+    install -Dm644 debug.raw.xz "%{install-root}/debug-%{systemd-arch}_%{image-version}.raw.xz"

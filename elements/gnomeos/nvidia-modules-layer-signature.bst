@@ -1,7 +1,6 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/nvidia-modules-layer.bst
@@ -77,15 +76,11 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        nvidia-modules.raw \
-        --json=pretty \
-        >repart.json
+        nvidia-modules.raw
 
   - |
     xz ${XZFLAGS} nvidia-modules.raw
 
   install-commands:
   - |
-    label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
-    image_version="${label##gnomeos_usr_nvm_v_}"
-    install -Dm644 nvidia-modules.raw.xz "%{install-root}/nvidia-modules-%{systemd-arch}_${image_version}.raw.xz"
+    install -Dm644 nvidia-modules.raw.xz "%{install-root}/nvidia-modules-%{systemd-arch}_%{image-version}.raw.xz"

@@ -1,7 +1,6 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/snapd-layer.bst
@@ -80,13 +79,9 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        "%{install-root}/snapd.raw" \
-        --json=pretty \
-        >repart.json
+        "%{install-root}/snapd.raw"
 
   install-commands:
   - |
-    label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
-    image_version="${label##gnomeos_usr_snapd_v_}"
-    mv "%{install-root}/snapd.raw" "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw"
-    xz ${XZFLAGS} "%{install-root}/snapd-%{systemd-arch}_${image_version}.raw"
+    mv "%{install-root}/snapd.raw" "%{install-root}/snapd-%{systemd-arch}_%{image-version}.raw"
+    xz ${XZFLAGS} "%{install-root}/snapd-%{systemd-arch}_%{image-version}.raw"

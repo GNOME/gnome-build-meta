@@ -41,12 +41,10 @@ config:
     set -x
 
     roothash=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).roothash' /usr-image/mini.repart.json)
-    label=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).label' /usr-image/mini.repart.json)
-    image_version="${label##gnomeos_usr_v_}"
 
     version="$(ls -1 /usr/lib/modules | head -n1)"
 
-    mkdir -p "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d"
+    mkdir -p "%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d"
 
     cat <<EOF >sbat.txt
     sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
@@ -58,21 +56,21 @@ config:
       --secureboot-certificate=VENDOR.crt \
       --cmdline='security=apparmor' \
       --sbat=@sbat.txt \
-      --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/apparmor.addon.efi"
+      --output="%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/apparmor.addon.efi"
 
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --cmdline="root=live:gnomeos" \
       --sbat=@sbat.txt \
-      --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/live.addon.efi"
+      --output="%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/live.addon.efi"
 
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --cmdline='module_blacklist=nouveau nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1' \
       --sbat=@sbat.txt \
-      --output="%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi.extra.d/nvidia.addon.efi"
+      --output="%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/nvidia.addon.efi"
 
     case '%{arch}' in
       x86_64)
@@ -100,7 +98,7 @@ config:
     # key. Not the fstab key. This is the key that will be
     # automatically used to enroll /.
     ukify build \
-      --output "%{install-root}/efi/EFI/Linux/gnomeos_${image_version}.efi" \
+      --output "%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi" \
       --os-release=@/etc/os-release \
       --cmdline="%{kcmdline} usrhash=${roothash}" \
       --uname="${version}" \

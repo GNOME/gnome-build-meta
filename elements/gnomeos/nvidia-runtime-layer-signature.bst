@@ -1,7 +1,6 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/nvidia-runtime-layer.bst
@@ -77,15 +76,11 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        nvidia-runtime.raw \
-        --json=pretty \
-        >repart.json
+        nvidia-runtime.raw
 
   - |
     xz ${XZFLAGS} nvidia-runtime.raw
 
   install-commands:
   - |
-    label="$(jq -r '(.[] | select(.type | match("^root-.*-verity$"))).label' repart.json)"
-    image_version="${label##gnomeos_usr_nvr_v_}"
-    install -Dm644 nvidia-runtime.raw.xz "%{install-root}/nvidia-runtime-%{systemd-arch}_${image_version}.raw.xz"
+    install -Dm644 nvidia-runtime.raw.xz "%{install-root}/nvidia-runtime-%{systemd-arch}_%{image-version}.raw.xz"
