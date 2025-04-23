@@ -84,4 +84,3 @@ config:
   install-commands:
   - |
     mv "%{install-root}/snapd.raw" "%{install-root}/snapd-%{systemd-arch}_%{image-version}.raw"
-    xz ${XZFLAGS} "%{install-root}/snapd-%{systemd-arch}_%{image-version}.raw"

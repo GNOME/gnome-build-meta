@@ -4,19 +4,19 @@ build-depends:
 - filename: gnomeos/update-images-user-only.bst
   strict: true
   config:
-    location: /user-only
+    location: "%{install-root}"
 - filename: gnomeos/devel-layer-signature.bst
   strict: true
   config:
-    location: /devel-only
+    location: "%{install-root}"
 - filename: gnomeos/snapd-layer-signature.bst
   strict: true
   config:
-    location: /snapd-only
+    location: "%{install-root}"
 - filename: gnomeos/debug-layer-signature.bst
   strict: true
   config:
-    location: /debug-only
+    location: "%{install-root}"
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 (?):
@@ -26,36 +26,15 @@ build-depends:
       - filename: gnomeos/nvidia-modules-layer-signature.bst
         strict: true
         config:
-          location: /nvidia-modules-only
+          location: "%{install-root}"
       - filename: gnomeos/nvidia-runtime-layer-signature.bst
         strict: true
         config:
-          location: /nvidia-runtime-only
+          location: "%{install-root}"
 
 config:
   commands:
   - |
-    cp /user-only/*.xz '%{install-root}'
-
-  - |
-    cp /devel-only/*.xz '%{install-root}'
-
-  - |
-    cp /snapd-only/*.xz '%{install-root}'
-
-  - |
-    if [ -d /nvidia-modules-only ]; then
-      cp /nvidia-modules-only/*.xz '%{install-root}'
-    fi
-
-  - |
-    if [ -d /nvidia-modules-only ]; then
-      cp /nvidia-runtime-only/*.xz '%{install-root}'
-    fi
-
-  - |
-    cp /debug-only/*.xz '%{install-root}'
-
-  - |
     cd "%{install-root}"
-    sha256sum *.xz *.*hash | tee SHA256SUMS
+    rm SHA256SUMS
+    sha256sum * | tee SHA256SUMS

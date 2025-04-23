@@ -10,11 +10,6 @@ build-depends:
     location: /signed-boot
 - freedesktop-sdk.bst:bootstrap-import.bst
 
-environment:
-  XZFLAGS: '-T%{max-jobs}'
-environment-nocache:
-- XZFLAGS
-
 config:
   commands:
   - |
@@ -24,24 +19,19 @@ config:
     usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/mini.repart.json)
 
     cp /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
-    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
     cp /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
-    xz ${XZFLAGS} "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
 
   - |
     set -x
 
     cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi" "%{install-root}/gnomeos-%{systemd-arch}_%{image-version}.efi"
-    xz ${XZFLAGS} "%{install-root}/gnomeos-%{systemd-arch}_%{image-version}.efi"
     cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/apparmor.addon.efi" "%{install-root}/gnomeos-apparmor-%{systemd-arch}_%{image-version}.efi"
-    xz ${XZFLAGS} "%{install-root}/gnomeos-apparmor-%{systemd-arch}_%{image-version}.efi"
     case '%{arch}' in
       x86_64)
         cp "/signed-boot/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/nvidia.addon.efi" "%{install-root}/gnomeos-nvidia-%{systemd-arch}_%{image-version}.addon.efi"
-        xz ${XZFLAGS} "%{install-root}/gnomeos-nvidia-%{systemd-arch}_%{image-version}.addon.efi"
       ;;
     esac
 
   - |
     cd "%{install-root}"
-    sha256sum *.xz | tee SHA256SUMS
+    sha256sum * | tee SHA256SUMS

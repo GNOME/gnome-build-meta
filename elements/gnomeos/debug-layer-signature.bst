@@ -8,11 +8,6 @@ build-depends:
   config:
     location: '/debug-layer'
 
-environment:
-  XZFLAGS: '-T%{max-jobs}'
-environment-nocache:
-- XZFLAGS
-
 variables:
   repart-seed: fd7f6520-abde-47a2-9430-7514914232be
 
@@ -78,9 +73,6 @@ config:
         --seed %{repart-seed} \
         debug.raw
 
-  - |
-    xz ${XZFLAGS} debug.raw
-
   install-commands:
   - |
-    install -Dm644 debug.raw.xz "%{install-root}/debug-%{systemd-arch}_%{image-version}.raw.xz"
+    install -Dm644 debug.raw "%{install-root}/debug-%{systemd-arch}_%{image-version}.raw"

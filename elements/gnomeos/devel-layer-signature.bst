@@ -8,11 +8,6 @@ build-depends:
   config:
     location: '/devel-layer'
 
-environment:
-  XZFLAGS: '-T%{max-jobs}'
-environment-nocache:
-- XZFLAGS
-
 variables:
   repart-seed: fd7f6520-abde-47a2-9430-7514914232be
 
@@ -84,4 +79,3 @@ config:
   install-commands:
   - |
     mv "%{install-root}/devel.raw" "%{install-root}/devel-%{systemd-arch}_%{image-version}.raw"
-    xz ${XZFLAGS} "%{install-root}/devel-%{systemd-arch}_%{image-version}.raw"

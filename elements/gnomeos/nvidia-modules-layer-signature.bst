@@ -8,11 +8,6 @@ build-depends:
   config:
     location: '/nvidia-modules-layer'
 
-environment:
-  XZFLAGS: '-T%{max-jobs}'
-environment-nocache:
-- XZFLAGS
-
 variables:
   repart-seed: fd7f6520-abde-47a2-9430-7514914232be
 
@@ -78,9 +73,6 @@ config:
         --seed %{repart-seed} \
         nvidia-modules.raw
 
-  - |
-    xz ${XZFLAGS} nvidia-modules.raw
-
   install-commands:
   - |
-    install -Dm644 nvidia-modules.raw.xz "%{install-root}/nvidia-modules-%{systemd-arch}_%{image-version}.raw.xz"
+    install -Dm644 nvidia-modules.raw "%{install-root}/nvidia-modules-%{systemd-arch}_%{image-version}.raw"
