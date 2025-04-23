@@ -5,7 +5,7 @@ Features=nvidia-driver
 [Source]
 Type=url-file
 Path=https://1270333429.rsc.cdn77.org/nightly/sysupdate/
-MatchPattern=nvidia-runtime-%a_@v.raw.xz
+MatchPattern=nvidia-runtime-%a_@v.raw nvidia-runtime-%a_@v.raw.xz
 
 [Target]
 Type=regular-file
