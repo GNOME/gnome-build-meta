@@ -78,9 +78,6 @@ config:
         --seed %{repart-seed} \
         nvidia-runtime.raw
 
-  - |
-    xz ${XZFLAGS} nvidia-runtime.raw
-
   install-commands:
   - |
-    install -Dm644 nvidia-runtime.raw.xz "%{install-root}/nvidia-runtime-%{systemd-arch}_%{image-version}.raw.xz"
+    install -Dm644 nvidia-runtime.raw "%{install-root}/nvidia-runtime-%{systemd-arch}_%{image-version}.raw"
