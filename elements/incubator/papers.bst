@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 48.0-99-ge270e1135a2fc856f98b7b719e72e957d2866a0b
+  ref: 48.0-105-ga0a6d3919f331af4c2fc0ee218a5f08887c8d26f
 - kind: cargo2
   ref:
   - kind: registry
@@ -307,6 +307,14 @@ sources:
     name: gio-sys
     version: 0.20.9
     sha: 160eb5250a26998c3e1b54e6a3d4ea15c6c7762a6062a19a7b63eff6e2b33f9e
+  - kind: registry
+    name: git-version
+    version: 0.3.9
+    sha: 1ad568aa3db0fcbc81f2f116137f263d7304f512a1209b35b85150d3ef88ad19
+  - kind: registry
+    name: git-version-macro
+    version: 0.3.9
+    sha: 53010ccb100b96a67bc32c0175f0ed1426b31b655d562898e57325f81c023ac0
   - kind: registry
     name: glib
     version: 0.20.9
