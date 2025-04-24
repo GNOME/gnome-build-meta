@@ -69,6 +69,7 @@ config:
     CopyFiles=/usr
     Minimize=best
     Format=squashfs
+    Compression=zstd
     SplitName=root
     AddValidateFS=no
     EOF
