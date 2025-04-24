@@ -66,7 +66,9 @@ for ty, override in quirks.override.items():
 
 # Generate the output
 with open(args.output, "w") as output:
-    print("[Default Applications]", file=output)
+    print(quirks.heading.strip(), file=output)
+
+    print("\n[Default Applications]", file=output)
     for type in sorted(types):
         apps = ';'.join(types[type])
         print(f"{type}={apps}", file=output)

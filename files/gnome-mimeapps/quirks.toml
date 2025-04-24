@@ -1,3 +1,11 @@
+# Heading that appears at the top of the generated file
+heading = """
+# Maintained by gnome-build-meta. DO NOT EDIT!
+#
+# Upstream changes can be made at https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gnome-mimeapps/quirks.toml
+# Downstream changes can be easily applied with https://gitlab.gnome.org/heftig/gnome-mimeapps
+"""
+
 # Only look for apps in these directories:
 datadirs = [
     "/usr/share"
