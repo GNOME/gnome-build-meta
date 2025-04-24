@@ -1,0 +1,36 @@
+# Only look for apps in these directories:
+datadirs = [
+    "/usr/share"
+]
+
+# Skip these apps
+skip_apps = [
+#EX:    "org.myapp.App",
+]
+
+# List incubator apps here. Incubator apps listed here will be given priority
+# over the core app they're replacing when generating the default apps list.
+# Both will be listed, so operating systems without the incubator apps installed
+# will default to the core apps in the absence of the incubating alternatives
+[incubating]
+"org.gnome.Papers" = "org.gnome.Evince"
+
+[override]
+# Baobab can open directories and alphabetically comes before Nautilus. Also,
+# it doesn't make sense to ever default to Baobab as a file browser, even without
+# Nautilus installed.
+"inode/directory" = "org.gnome.Nautilus"
+
+# TIFF images are strange. They were originally designed as an output
+# format for scanners. But they've since been appropriated for other things,
+# most of which are non-document-related. Other operating systems seem to
+# treat TIFF files as images first and foremost. So let's make sure that
+# we do that as well.
+"image/tiff" = ["org.gnome.Loupe", "org.gnome.Papers", "org.gnome.Evince"]
+
+# Both Epiphany and Builder can open HTML files. It makes more sense for the
+# browser to open plain HTML files by default, rather than an IDE. We completely
+# remove Builder here, because users tend to replace the OS's default browser;
+# if a user switches to Chrome or Firefox, we still shouldn't default to opening
+# HTML files in Builder
+"text/html" = "org.gnome.Epiphany"
