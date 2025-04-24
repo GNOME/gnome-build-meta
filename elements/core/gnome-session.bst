@@ -15,9 +15,13 @@ build-depends:
 depends:
 - core-deps/upower.bst
 - core/gnome-desktop.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/xorg-lib-ice.bst
 - freedesktop-sdk.bst:components/xorg-lib-sm.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
+
+variables:
+  meson-local: >-
+    -Dmimeapps=false
