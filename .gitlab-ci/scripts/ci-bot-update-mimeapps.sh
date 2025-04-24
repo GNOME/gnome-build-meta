@@ -33,15 +33,20 @@ else
     git clone --depth=1 https://gitlab.gnome.org/GNOME/gnome-session.git
 fi
 
-cd gnome-session
-
-if cmp ../gnome-mimeapps.list data/gnome-mimeapps.list; then
-    echo "gnome-mimeapps.list didn't change. Nothing to do."
+if cmp gnome-mimeapps.list gnome-session/data/gnome-mimeapps.list; then
+    # Mimeapps didn't change, so there's nothing to do!
     exit 0;
 fi
 
-echo "gnome-mimeapps.list was changed! Please review these changes"
+if [ -n "$CI_MERGE_REQUEST_IID" ]; then
+    (diff -d -U0 gnome-session/data/gnome-mimeapps.list gnome-mimeapps.list || true) > primary.diff
+    sed -i -e '1,3d' -e '/@@/s/.*//' primary.diff
+    sed -e '/[+-]#OVERRIDE/!d' -e 's/#OVERRIDE //' primary.diff > override.diff
+    sed -i '/[+-]#OVERRIDE/d' primary.diff
+    python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-comment-mimeapps.py primary.diff override.diff
+fi
 
+cd gnome-session
 git switch -c gnome-os-bot/update-mimeapps
 
 rm data/gnome-mimeapps.list

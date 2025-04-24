@@ -55,7 +55,13 @@ for _type, apps in types.items():
     apps.sort(key = cmp_to_key(_cmp_incubating))
 
 # Apply overrides.
+overridden_types = {}
 for ty, override in quirks.override.items():
+    if ty not in overridden_types:
+        if ty in types:
+            overridden_types[ty] = ' '.join(types[ty])
+        else:
+            overridden_types[ty] = '<none>'
     if isinstance(override, list):
         if len(override) == 0:
             del types[ty]
@@ -72,3 +78,8 @@ with open(args.output, "w") as output:
     for type in sorted(types):
         apps = ';'.join(types[type])
         print(f"{type}={apps}", file=output)
+
+    if len(overridden_types) > 0:
+        print("\n# Tracking data to catch stale overrides:", file=output)
+        for type in sorted(overridden_types):
+            print(f"#OVERRIDE {type} WAS {overridden_types[type]}", file=output)
