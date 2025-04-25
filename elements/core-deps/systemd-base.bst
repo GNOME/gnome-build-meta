@@ -8,7 +8,7 @@ sources:
 - kind: git_repo
   url: github:systemd/systemd.git
   track: main
-  ref: v257-3041-gdcedcb443c209e7dc56df0ec4eac78e99318dc86
+  ref: v257-3053-gc2ba4a2864a8c5ef8b97d2484a46cbeb0b8fdf88
 
 build-depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
