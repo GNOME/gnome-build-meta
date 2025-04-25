@@ -4,7 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:dconf.git
   track: main
-  ref: 0.40.0-46-g07eb32a80ee78a24f38c56c61b6bf4a723763e2a
+  ref: 0.40.0-48-g7683ac9510b19808e34225ccbe9ccabd39b66a69
+- kind: git_module
+  url: gnome:gvdb.git
+  path: subprojects/gvdb
+  ref: 4758f6fb7f889e074e13df3f914328f3eecb1fd3
 
 build-depends:
 - sdk/vala.bst
