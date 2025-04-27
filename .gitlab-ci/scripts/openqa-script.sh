@@ -29,5 +29,8 @@ for testsuite in $TESTSUITES; do
     cat /tmp/job_id >> /tmp/all_job_ids
 done
 
-openqa/utils/wait_for_job.sh "$(cat /tmp/all_job_ids)" > /tmp/exit_code
+# There are multiple ids and we want them to be split instead
+# of being passed as strings
+# shellcheck disable=SC2046
+openqa/utils/wait_for_job.sh $(cat /tmp/all_job_ids) > /tmp/exit_code
 exit "$(cat /tmp/exit_code)"
