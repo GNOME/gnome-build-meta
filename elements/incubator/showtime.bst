@@ -7,9 +7,9 @@ sources:
   ref: 48.0-13-g904dff8935b47c8f26b5e7987813679f00e69c6e
 
 build-depends:
-- core-deps/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/blueprint-compiler.bst
 
 depends:
 - sdk/adwaita-icon-theme.bst

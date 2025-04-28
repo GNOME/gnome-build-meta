@@ -8,6 +8,7 @@ depends:
 - sdk/adwaita-fonts.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/at-spi2-core.bst
+- sdk/blueprint-compiler.bst
 - sdk/cairo.bst
 - sdk/cantarell-fonts.bst
 - sdk/enchant-2.bst
