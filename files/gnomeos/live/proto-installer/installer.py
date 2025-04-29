@@ -301,10 +301,10 @@ class InstallerApp(Adw.Application):
         self._install_button = InstallButton(self, self.installer, disk_selector, self.oem_mode)
         self._install_button.set_can_target(False)
         self.win.add_css_class("devel")
-        self.win.Header.pack_end(self._install_button)
         def on_try():
             self.quit()
         def on_install():
+            self.win.Header.pack_end(self._install_button)
             self.win.NavigationView.push(disk_selector)
         install_or_live = InstallOrLive(on_try, on_install)
         self.win.NavigationView.push(install_or_live)
