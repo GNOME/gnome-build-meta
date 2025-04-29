@@ -177,7 +177,6 @@ config:
     C /etc/environment
     C /etc/ethertypes
     C /etc/fish
-    C /etc/flatpak
     C /etc/fonts
     C /etc/fuse.conf
     C /etc/fwupd
