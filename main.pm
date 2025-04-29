@@ -15,10 +15,11 @@ $testapi::password = 'testingtesting123';
 my $testsuite = testapi::get_required_var('TEST');
 
 if ($testsuite eq "gnome_install") {
-    autotest::loadtest("tests/gnome_install.pm");
     autotest::loadtest("tests/gnome_welcome.pm");
     autotest::loadtest("tests/gnome_disable_update_notification.pm");
-    autotest::loadtest("tests/gnome_desktop.pm");
+    autotest::loadtest("tests/gnome_installer.pm");
+    autotest::loadtest("tests/gnome_reboot.pm");
+    autotest::loadtest("tests/gnome_login.pm");
     autotest::loadtest("tests/show_core_dumps.pm");
     autotest::loadtest("tests/gnome_shutdown.pm");
 } elsif ($testsuite eq "gnome_apps") {
