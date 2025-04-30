@@ -20,7 +20,7 @@ sources:
 - kind: git_repo
   url: gnome:mm-common.git
   track: master
-  ref: 1.0.6-16-gfffc05dd3b52e312ffa063646aac923ccf72c8f6
+  ref: 1.0.6-18-g4306cf37ff15c145239f631e0a1cea210ee20937
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/
