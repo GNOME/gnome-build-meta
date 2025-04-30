@@ -358,7 +358,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     usr_b.write_all(
         "[Partition]\n\
          Type=usr\n\
-         Label=gnomeos_usr_%A\n\
+         Label=gnomeos_usr_empty\n\
          SizeMinBytes=4G\n\
          SizeMaxBytes=4G\n"
             .as_bytes())?;
