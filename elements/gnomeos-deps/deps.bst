@@ -69,7 +69,9 @@ depends:
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
 - freedesktop-sdk.bst:components/iio-sensor-proxy.bst
 
+- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/nano.bst
+- freedesktop-sdk.bst:components/vim.bst
 
 - freedesktop-sdk.bst:components/iproute2.bst
