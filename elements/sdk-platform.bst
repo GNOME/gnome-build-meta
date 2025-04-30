@@ -39,7 +39,6 @@ depends:
 - sdk/libhandy.bst
 - sdk/libibus.bst
 - sdk/libmanette-0.2.bst
-- sdk/libmanette.bst
 - sdk/libnotify.bst
 - sdk/librice.bst
 - sdk/librsvg.bst
@@ -58,6 +57,12 @@ depends:
 - sdk/yelp.bst
 - freedesktop-sdk.bst:platform.bst
 
-# Currently only for testing in Nightly
-# Made sure to remove for stable releases
-- sdk/xwayland-satellite.bst
+(?):
+- channel == "nightly":
+    depends:
+      (>):
+      # Only for testing atm
+      - sdk/xwayland-satellite.bst
+
+      # WIP with no stable release planned yet
+      - sdk/libmanette.bst
