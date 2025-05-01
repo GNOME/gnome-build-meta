@@ -24,7 +24,7 @@ core_elements = [
     "core.bst",
     "gnomeos/filesystem.bst",
     "gnomeos/filesystem-devel.bst",
-    "iso/image.bst",
+    "gnomeos/live-image.bst",
 ]
 
 boards_elements = [
