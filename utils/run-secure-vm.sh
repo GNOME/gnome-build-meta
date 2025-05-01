@@ -11,8 +11,7 @@ Usage: $@ [OPTIONS] [--] [ELEMENT]
 Run GNOME OS image under qemu-system with secure boot and TPM.
 
 You can optionally set the BuildStream element to be built and run.
-The default element will be gnomeos/image.bst or
-gnomeos/live-image.bst if a --live-* option is used.
+The default element will be gnomeos/live-image.bst.
 
 A 50G primary disk will be used. It will be inititialized with the
 data from the element, unless a --live-* option is used.
@@ -113,11 +112,7 @@ done
 : ${ARCH:="x86_64"}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
 
-if [ "${live+set}" = set ]; then
-    : ${IMAGE_ELEMENT:="gnomeos/live-image.bst"}
-else
-    : ${IMAGE_ELEMENT:="gnomeos/image.bst"}
-fi
+: ${IMAGE_ELEMENT:="gnomeos/live-image.bst"}
 
 BST_OPTIONS=(-o arch ${ARCH})
 
@@ -137,16 +132,9 @@ fi
 
 if [ "${buildid+set}" = set ]; then
     mkdir -p "${STATE_DIR}/builds"
-    if [ "${live+set}" = set ]; then
-        if ! [ -f "${STATE_DIR}/builds/live_${buildid}.iso" ]; then
-            wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/live_${buildid}-${ARCH}.iso" -O "${STATE_DIR}/builds/live_${buildid}.iso.tmp"
-            mv "${STATE_DIR}/builds/live_${buildid}.iso.tmp" "${STATE_DIR}/builds/live_${buildid}.iso"
-        fi
-    else
-        if ! [ -f "${STATE_DIR}/builds/disk_${buildid}.img.xz" ]; then
-            wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/disk_${buildid}-${ARCH}.img.xz" -O "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp"
-            mv "${STATE_DIR}/builds/disk_${buildid}.img.xz.tmp" "${STATE_DIR}/builds/disk_${buildid}.img.xz"
-        fi
+    if ! [ -f "${STATE_DIR}/builds/live_${buildid}.iso" ]; then
+        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/live_${buildid}-${ARCH}.iso" -O "${STATE_DIR}/builds/live_${buildid}.iso.tmp"
+        mv "${STATE_DIR}/builds/live_${buildid}.iso.tmp" "${STATE_DIR}/builds/live_${buildid}.iso"
     fi
 fi
 
@@ -176,10 +164,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-img_ext=img
-if [ "${live+set}" = set ]; then
-    img_ext=iso
-fi
+img_ext=iso
 
 if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.${img_ext}" ]; then
     mkdir -p "${STATE_DIR}"
@@ -187,23 +172,13 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.${img_ext}" ]; then
     cleanup_dirs+=("${checkout}")
 
     if [ "${buildid+set}" = set ]; then
-        if [ "${live+set}" = set ]; then
-            cp "${STATE_DIR}/builds/live_${buildid}.iso" "${checkout}/disk.iso"
-        else
-            cp "${STATE_DIR}/builds/disk_${buildid}.img.xz" "${checkout}/disk.img.xz"
-        fi
+        cp "${STATE_DIR}/builds/live_${buildid}.iso" "${checkout}/disk.iso"
     else
         make -C files/boot-keys generate-keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
-    if [ "${live+set}" = set ]; then
-        mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
-    else
-        unxz "${checkout}/disk.img.xz"
-        truncate --size 50G "${checkout}/disk.img"
-        mv "${checkout}/disk.img" "${STATE_DIR}/disk.img"
-    fi
+    mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
     rm -rf "${checkout}"
 fi
 
@@ -238,25 +213,19 @@ fi
 QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.img,media=disk,format=raw,discard=on")
 QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
 
-if [ "${live+set}" = set ]; then
-    readonly=off
-    if [ "${live-}" = cdrom ]; then
-        readonly=on
-    fi
-
-    QEMU_ARGS+=(-drive "if=none,id=live-disk,file=${STATE_DIR}/disk.iso,media=${live-disk},format=raw,readonly=${readonly}")
-    if [ "${live}" = disk ]; then
-        QEMU_ARGS+=(-device "virtio-blk-pci,drive=live-disk,bootindex=2")
-    elif [ "${live}" = cdrom ]; then
-        QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
-        QEMU_ARGS+=(-device "scsi-cd,drive=live-disk,bootindex=2")
-    fi
-
-    if [ "${reset_installed+set}" = set ]; then
-        rm -f "${STATE_DIR}/disk.img"
-    fi
-    truncate --size 50G "${STATE_DIR}/disk.img"
+readonly=on
+QEMU_ARGS+=(-drive "if=none,id=live-disk,file=${STATE_DIR}/disk.iso,media=${live-disk},format=raw,readonly=${readonly}")
+if [ "${live}" = disk ]; then
+    QEMU_ARGS+=(-device "virtio-blk-pci,drive=live-disk,bootindex=2")
+elif [ "${live}" = cdrom ]; then
+    QEMU_ARGS+=(-device "virtio-scsi-pci,id=scsi")
+    QEMU_ARGS+=(-device "scsi-cd,drive=live-disk,bootindex=2")
 fi
+
+if [ "${reset_installed+set}" = set ]; then
+    rm -f "${STATE_DIR}/disk.img"
+fi
+truncate --size 50G "${STATE_DIR}/disk.img"
 
 if [ "${serial+set}" = set ]; then
     QEMU_ARGS+=(-serial stdio)
