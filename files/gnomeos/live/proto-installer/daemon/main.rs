@@ -484,6 +484,13 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
         return Err(InstallerError::Command(CommandError::new("btrfs replace", btrfs_replace)))
     }
 
+    let btrfs_label = Command::new("btrfs")
+        .arg("filesystem").arg("label").arg("/").arg("root")
+        .spawn()?
+        .wait().await?;
+    btrfs_label.code().filter(|code| *code == 0)
+        .ok_or(CommandError::new("btrfs filesystem label", btrfs_label))?;
+
     let btrfs_resize = Command::new("btrfs")
         .arg("filesystem").arg("resize").arg("1:max").arg("/")
         .spawn()?
@@ -496,7 +503,7 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
         .spawn()?
         .wait().await?;
     zramctl.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("btrfs filesystem resize", zramctl))?;
+        .ok_or(CommandError::new("zramctl", zramctl))?;
 
     Ok(())
 }
