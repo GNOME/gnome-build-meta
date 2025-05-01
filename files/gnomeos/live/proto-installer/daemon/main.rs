@@ -9,7 +9,6 @@ use std::{error::Error, string::String};
 use tempfile;
 use tokio::process::Command;
 use zbus::{connection, Connection, interface, zvariant::OwnedValue, message::Header, fdo::Error::Failed};
-use blkid;
 
 mod polkit;
 use polkit::{PolkitAuthorityProxy, CheckAuthorizationFlags, Subject};
@@ -106,7 +105,6 @@ enum InstallerError {
     Io(std::io::Error),
     FromUtf8Error(std::string::FromUtf8Error),
     Json(serde_json::Error),
-    Blkid(blkid::BlkIdError),
     Join(tokio::task::JoinError),
 }
 
@@ -152,12 +150,6 @@ impl From<serde_json::Error> for InstallerError {
     }
 }
 
-impl From<blkid::BlkIdError> for InstallerError {
-    fn from(e: blkid::BlkIdError) -> Self {
-        InstallerError::Blkid(e)
-    }
-}
-
 impl From<tokio::task::JoinError> for InstallerError {
     fn from(e: tokio::task::JoinError) -> Self {
         InstallerError::Join(e)
@@ -174,7 +166,6 @@ impl std::fmt::Display for InstallerError {
             InstallerError::Io(e) => e.fmt(f),
             InstallerError::FromUtf8Error(e) => e.fmt(f),
             InstallerError::Json(e) => e.fmt(f),
-            InstallerError::Blkid(e) => e.fmt(f),
             InstallerError::Join(e) => e.fmt(f),
         }
     }
@@ -270,26 +261,6 @@ async fn make_policy() -> Result<(), InstallerError> {
     Ok(())
 }
 
-struct PartitionID {
-    uuid  : String,
-    label : String,
-}
-
-fn part_id_blocking(dev : &str) -> Result<PartitionID, InstallerError> {
-    let probe = blkid::prober::Prober::new_from_filename(std::path::Path::new(dev))?;
-    probe.enable_partitions(true)?;
-    probe.set_partitions_flags(blkid::PartitionsFlags::ENTRY_DETAILS)?;
-    probe.do_safe_probe()?;
-    let uuid = probe.lookup_value("PART_ENTRY_UUID")?;
-    let label = probe.lookup_value("PART_ENTRY_NAME")?;
-    Ok(PartitionID{uuid: uuid, label: label})
-}
-
-async fn part_id(dev : &str) -> Result<PartitionID, InstallerError> {
-    let p = dev.to_string();
-    tokio::task::spawn_blocking(move || part_id_blocking(p.as_str())).await?
-}
-
 async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), InstallerError> {
     let encrypt : String;
     if has_tpm2 {
@@ -297,16 +268,6 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     } else {
         encrypt = "off".to_string();
     }
-
-    let (usr_id, verity_id) = try_join!(
-        part_id("/dev/gnomeos-installer/usr"),
-        part_id("/dev/gnomeos-installer/verity"),
-    )?;
-
-    let usr_uuid = usr_id.uuid;
-    let usr_label = usr_id.label;
-    let verity_uuid = verity_id.uuid;
-    let verity_label = verity_id.label;
 
     let mut esp = std::fs::File::create(path.join("10-esp.conf"))?;
     esp.write_all(
@@ -323,23 +284,21 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     verity_a.write_all(format!(
         "[Partition]\n\
          Type=usr-verity\n\
+         Label=gnomeos_usr_v_%A\n\
          # verity for 4G, algo sha256, block size 512 and hash size 512 is 275M\n\
          SizeMinBytes=275M\n\
          SizeMaxBytes=275M\n\
-         CopyBlocks=/dev/gnomeos-installer/verity\n\
-         Label={verity_label}\n\
-         UUID={verity_uuid}\n"
+         CopyBlocks=auto\n"
     ).as_bytes())?;
 
     let mut usr_a = std::fs::File::create(path.join("21-usr-A.conf"))?;
     usr_a.write_all(format!(
         "[Partition]\n\
          Type=usr\n\
+         Label=gnomeos_usr_%A\n\
          SizeMinBytes=4G\n\
          SizeMaxBytes=4G\n\
-         CopyBlocks=/dev/gnomeos-installer/usr\n\
-         Label={usr_label}\n\
-         UUID={usr_uuid}\n"
+         CopyBlocks=auto\n"
     ).as_bytes())?;
 
     let mut verity_b = std::fs::File::create(path.join("30-usr-verity-B.conf"))?;
