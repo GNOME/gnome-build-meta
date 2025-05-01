@@ -15,11 +15,6 @@ variables:
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
   OCI_BRANCH: master
   FLATPAK_BRANCH: master
-  OPENQA_HOST: https://openqa.gnome.org
-  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
-  OPENQA_TESTS_BRANCH: master
-  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
-  OPENQA_NEEDLES_BRANCH: master
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -137,7 +132,12 @@ default:
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
+    OPENQA_HOST: https://openqa.gnome.org
+    OPENQA_NEEDLES_BRANCH: master
+    OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+    OPENQA_TESTS_BRANCH: master
+    OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
   timeout: '90m'
   needs:
   - job: 's3-image'
