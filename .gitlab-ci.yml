@@ -409,12 +409,8 @@ live-image-x86_64:
   - job: 'build-x86_64_v3'
     artifacts: false
 
-s3-image:
-  extends: .x86_64_v3
+.s3-image:
   stage: deploy
-  needs:
-  - job: 'build-x86_64_v3'
-    artifacts: false
   script:
   - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst gnomeos/live-image.bst
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
@@ -434,36 +430,27 @@ s3-image:
     fi
 
   - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
-
   rules:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
+s3-image:
+  extends:
+    - ".x86_64_v3"
+    - ".s3-image"
+  needs:
+  - job: 'build-x86_64_v3'
+    artifacts: false
+
 s3-image-aarch64:
-  extends: .aarch64
+  extends:
+    - ".aarch64"
+    - ".s3-image"
   stage: deploy
   needs:
   - job: 'build-aarch64'
     artifacts: false
-  rules:
-  - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
-  - if: $CI_COMMIT_TAG
-  script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst
-  - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
-
-  - |
-    if [ -n "$CI_COMMIT_TAG" ]; then
-        aws --$AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
-            "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}-${ARCH}.img.xz"
-    else
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
-            "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}-${ARCH}.img.xz"
-    fi
-
-  - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 openh264-x86_64:
   extends:
