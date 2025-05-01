@@ -6,7 +6,7 @@ ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bs
 ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
 ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/live-image.bst --directory live-image
 
-if [ -n "$CI_COMMIT_TAG" ]; then
+if [[ -n "${CI_COMMIT_TAG:-}" ]]; then
     aws s3 cp --acl public-read secure-image/disk.img.xz \
         "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}-${ARCH}.img.xz"
     aws s3 cp --acl public-read live-image/disk.iso \
