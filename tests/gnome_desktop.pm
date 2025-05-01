@@ -6,6 +6,9 @@ sub run {
     my $self = shift;
 
     assert_and_click('gnome_desktop_tour', timeout => 120, button => 'left');
+    assert_and_click('gnome_desktop_installer', timeout => 120, button => 'left');
+    # FIXME: the installer exits activities mode.
+    send_key('super');
     assert_screen('gnome_desktop_desktop', 20);
 }
 

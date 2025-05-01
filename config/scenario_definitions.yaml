@@ -38,25 +38,25 @@ job_templates:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      ISO: /installer.iso
+      ISO: /disk.iso
   gnome_apps:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      HDD_1: /disk.img
+      ISO: /disk.iso
   gnome_accessibility:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      HDD_1: /disk.img
+      ISO: /disk.iso
   gnome_mobile:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      HDD_1: /disk.img
+      ISO: /disk.iso
   gnome_locales:
     product: gnomeos
     machine: qemu_x86_64
     settings:
-      HDD_1: /disk.img
+      ISO: /disk.iso
 

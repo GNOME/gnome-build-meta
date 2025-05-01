@@ -8,8 +8,7 @@ variables:
   OPENQA_TESTS_BRANCH: master
   OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
   OPENQA_NEEDLES_BRANCH: master
-  S3_ISO_IMAGE_URL: https://os.gnome.org/download/latest/installer_x86_64.iso
-  S3_DISK_IMAGE_URL: https://os.gnome.org/download/latest/disk_sysupdate_x86_64.img.xz
+  S3_ISO_LIVE_URL: https://os.gnome.org/download/latest/live_x86_64.iso
 
 stages:
 - test
@@ -26,22 +25,15 @@ test-s3-image:
   before_script:
   - |
     echo "$(date -Iseconds): Fetching test media"
-    utils/fetch_test_media.sh $S3_ISO_IMAGE_URL /data/factory/iso/installer.iso
-    utils/fetch_test_media.sh $S3_DISK_IMAGE_URL /data/factory/hdd/disk.img.xz
-  - |
-    echo "$(date -Iseconds): Uncompressing disk image"
-    unxz --threads 4 /data/factory/hdd/disk.img.xz
+    utils/fetch_test_media.sh $S3_ISO_LIVE_URL /data/factory/iso/disk.iso
   - |
     echo "$(date -Iseconds): Calculating checksums of test media"
-    md5sum /data/factory/iso/installer.iso /data/factory/hdd/disk.img
-  - |
-    echo "$(date -Iseconds): Expanding disk image"
-    utils/expand_disk.sh /data/factory/hdd/disk.img 40 GB
+    md5sum /data/factory/iso/disk.iso
   - |
     echo "$(date -Iseconds): Setup complete"
   script:
   - |
-    rm /etc/openqa/*
+    rm -rf /etc/openqa/*
     cat >/etc/openqa/client.conf <<EOF
     [openqa.gnome.org]
     key = $OPENQA_API_KEY
