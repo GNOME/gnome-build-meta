@@ -110,3 +110,25 @@ The following is a summary of what is being exported by this repository CI pipel
    * - OCI Images (stable)
      - On tag added
      - :code:`podman pull quay.io/gnome_infrastructure/gnome-build-meta:core-47`
+
+Build for different architectures
+~~~~~~~~
+
+It's possible to build for another architecture using BuildStream and Qemu
+
+This can be combined with the toolbox image we use for bst2 as it
+has qemu and everything else needed.
+
+1. Open Workspace for the element you need (Optional)::
+
+      $ toolbox enter bst2
+      $ bst workspace open --no-checkout sdk/gjs.bst --directory ~/Projects/gjs/
+
+2. Build the element::
+
+      $  bst -o arch i686 build sdk/gjs.bst
+
+3. Get a build or runtime shell for testing::
+      $  bst -o arch i686 build --shell sdk/gjs.bst
+      $  bst -o arch i686 shell sdk/gjs.bst
+
