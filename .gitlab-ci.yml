@@ -189,6 +189,8 @@ default:
   needs:
   - job: 's3-image'
     artifacts: false
+  before_script:
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-prepare.sh"
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-script.sh"
   after_script:
@@ -598,8 +600,6 @@ test-openqa-installer:
   - .x86_64
   variables:
     TESTSUITES: "gnome_install"
-  before_script:
-  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-installer-prepare.sh"
   rules:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
@@ -611,8 +611,6 @@ test-openqa-desktop:
   - .x86_64
   variables:
     TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
-  before_script:
-  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-desktop-prepare.sh"
   rules:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
