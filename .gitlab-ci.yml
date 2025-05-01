@@ -418,18 +418,18 @@ live-image-x86_64:
 
   - |
     if [ -n "$CI_COMMIT_TAG" ]; then
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
+        aws s3 cp --acl public-read secure-image/disk.img.xz \
             "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/disk_${CI_COMMIT_TAG}-${ARCH}.img.xz"
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read live-image/disk.iso \
+        aws s3 cp --acl public-read live-image/disk.iso \
             "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/live_${CI_COMMIT_TAG}-${ARCH}.iso"
     else
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read secure-image/disk.img.xz \
+        aws s3 cp --acl public-read secure-image/disk.img.xz \
             "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/disk_${CI_PIPELINE_ID}-${ARCH}.img.xz"
-        aws $AWS_ENDPOINT_URL s3 cp --acl public-read live-image/disk.iso \
+        aws s3 cp --acl public-read live-image/disk.iso \
             "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/live_${CI_PIPELINE_ID}-${ARCH}.iso"
     fi
 
-  - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
   rules:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
@@ -504,7 +504,7 @@ s3-image-static:
     when: on_success
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/publish-s3-static.sh" "$CI_PIPELINE_ID"
-  - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
 s3-image-static-stable:
@@ -518,9 +518,9 @@ s3-image-static-stable:
   - if: $CI_COMMIT_TAG
   script:
   - |
-    aws $AWS_ENDPOINT_URL s3 cp --acl public-read stable-$branch-x86_64-disk s3://gnome-build-meta/stable-$branch-x86_64-disk
+    aws s3 cp --acl public-read stable-$branch-x86_64-disk s3://gnome-build-meta/stable-$branch-x86_64-disk
 
-  - aws $AWS_ENDPOINT_URL s3 ls --recursive --human-readable s3://gnome-build-meta/
+  - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
 cve_report:
