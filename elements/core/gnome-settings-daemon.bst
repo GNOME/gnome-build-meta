@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-settings-daemon.git
-  track: master
+  track: main
   ref: 48.1-0-g306e33d135cdced34c8ed4e2bf257727a079c75a
 - kind: git_module
   url: gnome:libgnome-volume-control.git

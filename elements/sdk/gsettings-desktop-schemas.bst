@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gsettings-desktop-schemas.git
-  track: master
+  track: main
   ref: 48.0-2-ge8599d1666999db7313fefe0456b871faa4580b4
 
 build-depends:
