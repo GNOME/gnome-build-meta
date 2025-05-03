@@ -409,6 +409,16 @@ live-image-x86_64:
   - job: 'build-x86_64_v3'
     artifacts: false
 
+live-image-aarch64:
+  extends:
+  - .manual-image-template
+  - .aarch64
+  variables:
+    IMAGE: gnomeos/live-image.bst
+  needs:
+  - job: 'build-aarch64'
+    artifacts: false
+
 .s3-image:
   stage: deploy
   script:
