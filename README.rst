@@ -39,21 +39,19 @@ To build a runtime locally, for debugging:
 GNOME OS
 ~~~~~~~~
 
-To build the GNOME OS "secure boot" image locally:
+To build the GNOME OS ISO installer  locally:
 
 1. Generate keys::
 
       $ make -C files/boot-keys clean
       $ make -C files/boot-keys
 
-2. Build the disk image (first command) or the ISO installer (second command)::
+2. Build the image::
 
-      $ bst build gnomeos/image.bst
       $ bst build gnomeos/live-image.bst
 
-3. Checkout the image or installer::
+3. Checkout image::
 
-      $ bst artifact checkout gnomeos/image.bst --directory ./disk
       $ bst artifact checkout gnomeos/live-image.bst --directory ./iso
 
 OCI Images

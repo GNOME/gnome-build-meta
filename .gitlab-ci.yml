@@ -240,26 +240,6 @@ deploy-oci:
         ./.gitlab-ci/scripts/publish-oci-quay.sh
     fi
 
-disk-image-aarch64:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: 'build-aarch64'
-    artifacts: false
-  variables:
-    IMAGE: gnomeos/image.bst
-
-disk-image-x86_64:
-  extends:
-  - .manual-image-template
-  - .x86_64
-  needs:
-  - job: 'build-x86_64'
-    artifacts: false
-  variables:
-    IMAGE: gnomeos/image.bst
-
 pinephone-image:
   extends:
   - .manual-image-template
