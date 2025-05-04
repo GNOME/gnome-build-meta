@@ -1,0 +1,14 @@
+diff -ur NetworkManager-openconnect.old/configure.ac NetworkManager-openconnect/configure.ac
+--- NetworkManager-openconnect.old/configure.ac	2025-05-04 21:58:32.990408678 +0200
++++ NetworkManager-openconnect/configure.ac	2025-05-04 21:58:45.941387895 +0200
+@@ -160,8 +160,9 @@
+ 		with_authdlg=yes
+ 	fi
+ fi
++
++PKG_CHECK_MODULES(OPENCONNECT, openconnect >= 3.02)
+ if test x"$with_authdlg" != xno; then
+-	PKG_CHECK_MODULES(OPENCONNECT, openconnect >= 3.02)
+ 	PKG_CHECK_MODULES(WEBKIT, webkit2gtk-4.1, [wekbit=4.1],
+ 				  [PKG_CHECK_MODULES(WEBKIT, webkit2gtk-4.0,
+ 				  [webkit=4.0], AC_MSG_ERROR(Neither webkit2gtk-4.0 nor wekit2gtk-4.1 found))])

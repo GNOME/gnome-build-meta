@@ -6,6 +6,8 @@ sources:
   ref: 844b6bf64ecadb97b4a68c776db89aa5e6ee7e59bd24b0180228406863136464
 - kind: patch
   path: patches/NetworkManager-openconnect/0001-build-Require-webkitgtk-only-if-with-authdlg.patch
+- kind: patch
+  path: patches/NetworkManager-openconnect/link-against-openconnect.patch
 - kind: local
   path: files/NetworkManager-openconnect/sysusers.conf
 
