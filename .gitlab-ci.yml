@@ -476,9 +476,14 @@ s3-image-static-stable:
   - !reference [".stage-only-rules", "rules"]
   - if: $CI_COMMIT_TAG
   script:
-  - |
-    aws s3 cp --acl public-read stable-$branch-x86_64-disk s3://gnome-build-meta/stable-$branch-x86_64-disk
+  # For 47.x tag use 47 branch
+  - branch=$(echo $CI_COMMIT_TAG | cut -d . -f 1)
 
+  - echo tag/$CI_COMMIT_TAG/live_${CI_COMMIT_TAG}-x86_64.iso > stable-$branch-x86_64-iso
+  - echo tag/$CI_COMMIT_TAG/live_${CI_COMMIT_TAG}-aarch64.iso > stable-$branch-aarch64-iso
+
+  - aws s3 cp --acl public-read stable-$branch-x86_64-iso s3://gnome-build-meta/stable-$branch-x86_64-iso
+  - aws s3 cp --acl public-read stable-$branch-aarch64-iso s3://gnome-build-meta/stable-$branch-aarch64-iso
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
