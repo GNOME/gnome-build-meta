@@ -32,5 +32,4 @@ depends:
 - core/showtime.bst
 - core/simple-scan.bst
 - core/snapshot.bst
-- core/totem.bst
 - sdk/yelp.bst
