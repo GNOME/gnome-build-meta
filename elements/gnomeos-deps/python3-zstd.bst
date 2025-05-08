@@ -15,4 +15,4 @@ sources:
 - kind: git_repo
   url: github:sergey-dryabzhinsky/python-zstd.git
   track: 'v*'
-  ref: v1.5.6.8-0-g1dc1fb610b3ef7dd449ea9628d1f2f712a811fc5
+  ref: v1.5.7.0-0-g84f2b096098a0250814105cc9c80ca7c8699ec3b
