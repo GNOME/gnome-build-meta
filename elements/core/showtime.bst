@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:Incubator/showtime.git
+  url: gnome:showtime.git
   track: main
-  ref: 48.0-16-g975b4058d0f76a7fc231638c072e670ef4d5fdb9
+  ref: 48.1-1-g999c4def1376e7afdfca859d6bafe3b0f2c4e823
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

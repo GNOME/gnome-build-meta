@@ -5,4 +5,3 @@
 kind: stack
 depends:
 - incubator/papers.bst
-- incubator/showtime.bst
