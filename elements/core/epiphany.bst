@@ -4,12 +4,13 @@ sources:
 - kind: git_repo
   url: gnome:epiphany.git
   track: main
-  ref: 48.0-75-g2f09de26f8b7e4f3c67faad3cdc4af1baeed9f48
+  ref: 48.0-102-g4262e03f239a3404494df15a1e8b5def121a8ba8
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/blueprint-compiler.bst
 
 depends:
 - core-deps/libportal.bst
