@@ -52,7 +52,7 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_snapshot.pm");
     autotest::loadtest("tests/app_settings.pm");
     autotest::loadtest("tests/app_simple_scan.pm");
-    autotest::loadtest("tests/app_totem.pm");
+    autotest::loadtest("tests/app_showtime.pm");
     autotest::loadtest("tests/app_yelp.pm");
     autotest::loadtest("tests/show_core_dumps.pm");
 
