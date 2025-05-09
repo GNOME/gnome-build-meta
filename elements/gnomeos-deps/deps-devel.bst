@@ -1,6 +1,7 @@
 kind: stack
 
 depends:
+- core-deps/foundry.bst
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/python-pefile.bst
@@ -25,6 +26,5 @@ depends:
 - sdk.bst
 - gnomeos-deps/deviced.bst
 - gnomeos-deps/distrobox.bst
-- gnomeos-deps/foundry.bst
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/toolbox.bst

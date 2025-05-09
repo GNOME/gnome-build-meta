@@ -4,8 +4,9 @@
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#technical-conditions-to-enter-gnome-core
 kind: stack
 depends:
-- core/dconf-editor.bst
 - core/d-spy.bst
+- core/dconf-editor.bst
 - core/gnome-boxes.bst
 - core/gnome-builder.bst
+- core/manuals.bst
 - core/sysprof-app.bst
