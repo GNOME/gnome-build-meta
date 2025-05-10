@@ -4,13 +4,14 @@ sources:
 - kind: git_repo
   url: gnome:d-spy.git
   track: main
-  ref: 48.0-25-gca07a72dc8a3023141d017758a73933a05fe0bc9
+  ref: 48.0-143-g0e519352242a01ebea489b1f0446e7792973aab4
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/libadwaita.bst
 - sdk/gtk.bst
+- sdk/libadwaita.bst
+- sdk/libdex.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
