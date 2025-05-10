@@ -38,7 +38,7 @@ if cmp gnome-mimeapps.list gnome-session/data/gnome-mimeapps.list; then
     exit 0;
 fi
 
-if [ -n "$CI_MERGE_REQUEST_IID" ]; then
+if [ -n "${CI_MERGE_REQUEST_IID-}" ]; then
     (diff -d -U0 gnome-session/data/gnome-mimeapps.list gnome-mimeapps.list || true) > primary.diff
     sed -i -e '1,3d' -e '/@@/s/.*//' primary.diff
     sed -e '/[+-]#OVERRIDE/!d' -e 's/#OVERRIDE //' primary.diff > override.diff
