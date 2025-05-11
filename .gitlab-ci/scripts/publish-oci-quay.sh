@@ -6,7 +6,7 @@ podman login -u "$OCI_REGISTRY_USER" -p "$OCI_REGISTRY_PASSWORD" "$OCI_REGISTRY"
 
 set -x
 
-tags=("$CI_COMMIT_SHA" "$OCI_BRANCH")
+tags=("$OCI_BRANCH")
 
 if [ "$OCI_BRANCH" = "master" ]; then
     tags+=("latest" "nightly")
