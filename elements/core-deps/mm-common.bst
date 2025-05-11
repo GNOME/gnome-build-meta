@@ -28,6 +28,7 @@ build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 variables:
   meson-local: >-
