@@ -1,14 +1,16 @@
 #! /bin/bash
 
-set -ex
+set -e
 set -o pipefail
-
-# Ensure the log directory exists
-mkdir -p logs
 
 # Setup certificate for pushing to the cache
 echo "$CASD_CLIENT_CERT" > client.crt
 echo "$CASD_CLIENT_KEY" > client.key
+
+set -x
+
+# Ensure the log directory exists
+mkdir -p logs
 
 # Setup certificates and image version for sysupdate
 if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
