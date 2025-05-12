@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/glycin.bst
+- sdk/libglycin.bst
 - freedesktop-sdk.bst:components/jpeg.bst
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libtiff.bst

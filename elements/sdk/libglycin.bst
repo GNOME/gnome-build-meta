@@ -1,7 +1,5 @@
-# This builds
-# - libglycin-gtk4
-# - glycin-thumbnailer
-# - some loaders
+# Build libglycin independently from libglycin-gtk4 to avoid
+# cyclic dependencies with gdk-pixbuf
 
 kind: meson
 
@@ -1260,6 +1258,7 @@ sources:
     name: zvariant_utils
     version: 3.2.0
     sha: e16edfee43e5d7b553b77872d99bc36afdda75c223ca7ad5e3fbecd82ca5fc34
+
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
@@ -1267,17 +1266,13 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- freedesktop-sdk.bst:components/libheif.bst
-- sdk/gtk.bst
-- sdk/libglycin.bst
-- sdk/librsvg.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/lcms.bst
-- freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
-  # Don't build libglycin since it's already built in libglycin.bst
   meson-local: >-
-    -Dlibglycin=false
+    -Dlibglycin-gtk4=false
+    -Dthumbnailer=false
+    -Dglycin-loaders=false
