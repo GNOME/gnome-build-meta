@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gdk-pixbuf.git
   track: master
-  ref: 2.42.12-8-g24702ac930f7f86362d4b8a2f294be7ad66a8f6b
+  ref: 2.42.12-21-g03c110dec10cf69e0cf34effe90e8195a885d27c
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -13,6 +13,7 @@ build-depends:
 
 depends:
 - sdk/glib.bst
+- sdk/glycin.bst
 - freedesktop-sdk.bst:components/jpeg.bst
 - freedesktop-sdk.bst:components/libpng.bst
 - freedesktop-sdk.bst:components/libtiff.bst
@@ -23,6 +24,7 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dman=false
+    -Dthumbnailer=disabled
 
 public:
   bst:
