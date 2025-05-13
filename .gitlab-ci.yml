@@ -92,7 +92,7 @@ default:
     when: manual
     allow_failure: true
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build "${IMAGE}"
+  - ${BST_NO_PUSH} ${ARCH_OPT} build "${IMAGE}"
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
@@ -321,7 +321,7 @@ live-image-aarch64:
     allow_failure: true
   stage: deploy
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/live-image.bst gnomeos/update-images.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos/live-image.bst gnomeos/update-images.bst
 
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/live-image.bst --directory live-image/
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/update-images.bst --directory update-images/

@@ -25,4 +25,4 @@ esac
 
 : ${BST:=bst}
 
-$BST --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build "${TARGETS[@]}"
+$BST ${ARCH_OPT} build "${TARGETS[@]}"
