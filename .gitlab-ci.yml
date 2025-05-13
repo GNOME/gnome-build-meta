@@ -129,7 +129,7 @@ default:
     when: manual
     allow_failure: true
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build "${IMAGE}"
+  - ${BST_NO_PUSH} ${ARCH_OPT} build "${IMAGE}"
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
@@ -358,7 +358,7 @@ sysupdate-image-aarch64:
     allow_failure: true
   stage: deploy
   script:
-  - ${BST_NO_PUSH} ${ARCH_OPT} --max-jobs $(( $(nproc) / 4 ))  build gnomeos/update-images.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos/update-images.bst
 
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/update-images.bst --directory update-images/
 
@@ -424,7 +424,7 @@ s3-image:
   - job: 'build-x86_64_v3'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst iso/image.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos/image.bst iso/image.bst
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks iso/image.bst --directory iso
 
@@ -459,7 +459,7 @@ s3-image-aarch64:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) ${ARCH_OPT} build gnomeos/image.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos/image.bst
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/image.bst --directory secure-image
 
   - |
