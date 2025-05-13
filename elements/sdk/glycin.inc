@@ -1254,6 +1254,9 @@ sources:
     version: 3.2.0
     sha: e16edfee43e5d7b553b77872d99bc36afdda75c223ca7ad5e3fbecd82ca5fc34
 
+runtime-depends:
+- freedesktop-sdk.bst:components/bubblewrap.bst
+
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
