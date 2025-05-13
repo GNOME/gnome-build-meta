@@ -24,7 +24,12 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dman=false
+    -Dbuiltin_loaders='glycin'
     -Dthumbnailer=disabled
+    -Dpng=disabled
+    -Dtiff=disabled
+    -Djpeg=disabled
+    -Dgif=disabled
 
 public:
   bst:
