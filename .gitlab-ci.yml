@@ -79,7 +79,7 @@ default:
          ;;
     esac
 
-  - ${BST} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+  - ${BST} -o arch "${ARCH}" build "${TARGETS[@]}"
 
   # Store artifacts so we can inspect build failures
   artifacts:
@@ -93,7 +93,7 @@ default:
   when: manual
   allow_failure: true
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${IMAGE}"
+  - ${BST_NO_PUSH} -o arch "${ARCH}" build "${IMAGE}"
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks "${IMAGE}" --directory image
   artifacts:
     when: always
@@ -311,7 +311,7 @@ s3-image:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build vm/image.bst iso/image.bst
+  - ${BST_NO_PUSH} -o arch "${ARCH}" build vm/image.bst iso/image.bst
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks vm/image.bst --directory image
   - ${BST} -o arch "${ARCH}" artifact checkout --hardlinks iso/image.bst --directory iso
 
