@@ -18,6 +18,7 @@ depends:
 - sdk/at-spi2-core.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
+- sdk/glycin.bst
 - sdk/pango.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:components/cairo.bst
