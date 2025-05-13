@@ -1,5 +1,4 @@
 # This builds
-# - libglycin-gtk4
 # - glycin-thumbnailer
 # - some loaders
 
@@ -9,7 +8,6 @@ kind: meson
 
 depends:
   (>):
-  - sdk/gtk.bst
   - sdk/libglycin.bst
   - sdk/librsvg.bst
   - freedesktop-sdk.bst:components/libheif.bst
@@ -17,5 +15,7 @@ depends:
 
 variables:
   # Don't build libglycin since it's already built in libglycin.bst
+  # Don't build libglycin-gtk4 since it's already built in libglycin-gtk4.bst
   meson-local: >-
     -Dlibglycin=false
+    -Dlibglycin-gtk4=false
