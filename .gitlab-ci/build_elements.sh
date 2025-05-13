@@ -17,4 +17,4 @@ case "${ARCH}" in
 esac
 
 : ${BST:=bst}
-$BST --max-jobs $(( $(nproc) / 4 )) -o arch "${ARCH}" build "${TARGETS[@]}"
+$BST -o arch "${ARCH}" build "${TARGETS[@]}"
