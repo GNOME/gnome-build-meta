@@ -303,12 +303,12 @@ deploy-flatpak:
   - ostree fsck --repo repo/ --all
   - flatpak build-update-repo --generate-static-deltas repo/
 
-  - flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-  - flat-manager-client push $(cat build.txt) repo/
-  - flat-manager-client commit --wait $(cat build.txt)
-  - flat-manager-client publish --wait $(cat build.txt)
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" push $(cat build.txt) repo/
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" commit --wait $(cat build.txt)
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" publish --wait $(cat build.txt)
   after_script:
-  - flat-manager-client purge $(cat build.txt)
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" purge $(cat build.txt)
   environment:
     name: $ENVIRONMENT_NAME
 
@@ -492,9 +492,9 @@ openh264-x86_64:
   - flatpak build-commit-from --src-repo=flatpak-repo.bst --subject $(git rev-parse HEAD) repo
   - flatpak build-update-repo --generate-static-deltas repo/
   - rm -rf flatpak-repo.bst
-  - BUILD_ID=$(flat-manager-client create https://nightly.gnome.org/ nightly)
-  - flat-manager-client push --commit --publish --wait $BUILD_ID repo/ || result=$?
-  - flat-manager-client purge $BUILD_ID
+  - BUILD_ID=$(flat-manager-client --token-file "${REPO_TOKEN_FILE}" create https://nightly.gnome.org/ nightly)
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" push --commit --publish --wait $BUILD_ID repo/ || result=$?
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" purge $BUILD_ID
   - exit $result
 
 
