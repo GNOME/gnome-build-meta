@@ -7,10 +7,11 @@ sources:
   ref: 48.0-126-g331255fd6292eccfeb2a88b4b8dfe4a3f7e0305c
 
 build-depends:
+- sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- sdk/blueprint-compiler.bst
 
 depends:
 - core-deps/libportal.bst
