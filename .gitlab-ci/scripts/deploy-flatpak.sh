@@ -22,7 +22,7 @@ done
 ostree fsck --repo repo/ --all
 flatpak build-update-repo --generate-static-deltas repo/
 
-flat-manager-client create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
-flat-manager-client push $(cat build.txt) repo/
-flat-manager-client commit --wait $(cat build.txt)
-flat-manager-client publish --wait $(cat build.txt)
+flat-manager-client --token-file "${REPO_TOKEN_FILE}" create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
+flat-manager-client --token-file "${REPO_TOKEN_FILE}" push $(cat build.txt) repo/
+flat-manager-client --token-file "${REPO_TOKEN_FILE}" commit --wait $(cat build.txt)
+flat-manager-client --token-file "${REPO_TOKEN_FILE}" publish --wait $(cat build.txt)
