@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
   track: main
-  ref: 48.1-2-g8fb04c7e2cb92df639d17d03d624b2d9cd052f7e
+  ref: 48.1-10-ge2db3afb9031e9bf17f68961815aabf71d739604
 - kind: cargo2
   ref:
   - kind: registry
@@ -53,8 +53,8 @@ sources:
     sha: f18b6bb8e43c7eb0f2aac7976afe0c61b6f5fc2ab7bc4c139537ea56c92290df
   - kind: registry
     name: cc
-    version: 1.2.16
-    sha: be714c154be609ec7f5dad223a33bf1482fff90472de28f7362806e6d4832b8c
+    version: 1.2.18
+    sha: 525046617d8376e3db1deffb079e91cef90a89fc3ca5c185bbf8c9ecdd15cd5c
   - kind: registry
     name: cfg-expr
     version: 0.17.2
@@ -69,8 +69,8 @@ sources:
     sha: 186e05a59d4c50738528153b83b0b0194d3a29507dfec16eccd4b342903397d0
   - kind: registry
     name: env_logger
-    version: 0.11.7
-    sha: c3716d7a920fb4fac5d84e9d4bce8ceb321e9414b4409da61b07b75c1e3d0697
+    version: 0.11.8
+    sha: 13c863f0904021b108aa8b2f55046443e6b1ebde8fd4a15c399893aae4fa069f
   - kind: registry
     name: equivalent
     version: 1.0.2
@@ -193,32 +193,32 @@ sources:
     sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
   - kind: registry
     name: indexmap
-    version: 2.8.0
-    sha: 3954d50fe15b02142bf25d3b8bdadb634ec3948f103d04ffe3031bc8fe9d7058
+    version: 2.9.0
+    sha: cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e
   - kind: registry
     name: is_terminal_polyfill
     version: 1.70.1
     sha: 7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf
   - kind: registry
     name: jiff
-    version: 0.2.4
-    sha: d699bc6dfc879fb1bf9bdff0d4c56f0884fc6f0d0eb0fba397a6d00cd9a6b85e
+    version: 0.2.6
+    sha: 1f33145a5cbea837164362c7bd596106eb7c5198f97d1ba6f6ebb3223952e488
   - kind: registry
     name: jiff-static
-    version: 0.2.4
-    sha: 8d16e75759ee0aa64c57a56acbf43916987b20c77373cb7e808979e02b93c9f9
+    version: 0.2.6
+    sha: 43ce13c40ec6956157a3635d97a1ee2df323b263f09ea14165131289cb0f5c19
   - kind: registry
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: libadwaita
-    version: 0.7.1
-    sha: 8611ee9fb85e7606c362b513afcaf5b59853f79e4d98caaaf581d99465014247
+    version: 0.7.2
+    sha: 500135d29c16aabf67baafd3e7741d48e8b8978ca98bac39e589165c8dc78191
   - kind: registry
     name: libadwaita-sys
-    version: 0.7.1
-    sha: b099a223560118d4d4fa04b6d23f3ea5b7171fe1d83dfb7e6b45b54cdfc83af9
+    version: 0.7.2
+    sha: 6680988058c2558baf3f548a370e4e78da3bf7f08469daa822ac414842c912db
   - kind: registry
     name: libc
     version: 0.2.171
@@ -229,8 +229,8 @@ sources:
     sha: 08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934
   - kind: registry
     name: log
-    version: 0.4.26
-    sha: 30bde2b3dc3671ae49d8e2e9f044c7c005836e7a023ee57cffa25ab82764bb9e
+    version: 0.4.27
+    sha: 13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94
   - kind: registry
     name: malloc_buf
     version: 0.0.6
@@ -257,8 +257,8 @@ sources:
     sha: c92d4ddb4bd7b50d730c215ff871754d0da6b2178849f8a2a2ab69712d0c073b
   - kind: registry
     name: once_cell
-    version: 1.21.1
-    sha: d75b0bedcc4fe52caa0e03d9f1151a323e4aa5e2d78ba3580400cd3c9e2bc4bc
+    version: 1.21.3
+    sha: 42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d
   - kind: registry
     name: pango
     version: 0.20.9
@@ -341,8 +341,8 @@ sources:
     sha: 8f92a496fb766b417c996b9c5e57daf2f7ad3b0bebe1ccfca4856390e3d3bb67
   - kind: registry
     name: smallvec
-    version: 1.14.0
-    sha: 7fcf8323ef1faaee30a44a340193b1ac6814fd9b7b4e88e9d4519a3e4abe1cfd
+    version: 1.15.0
+    sha: 8917285742e9f3e1683f0a9c4e6b57960b7314d0b08d30d1ecd426713ee2eee9
   - kind: registry
     name: syn
     version: 2.0.100
@@ -437,8 +437,8 @@ sources:
     sha: 589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec
   - kind: registry
     name: winnow
-    version: 0.7.4
-    sha: 0e97b544156e9bebe1a0ffbc03484fc1ffe3100cbce3ffb17eac35f7cdd7ab36
+    version: 0.7.6
+    sha: 63d3fcd9bba44b03821e7d699eeee959f3126dcc4aa8e4ae18ec617c2a5cea10
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst
