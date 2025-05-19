@@ -80,8 +80,7 @@ config:
     # freedesktop-sdk.bst:components/alsa-plugins.bst
     L /etc/alsa
     # vm-deps/anthy.bst
-    # FIMXE: This looks like a development file.
-    L /etc/anthy-conf
+    L /etc/anthy-unicode.conf
     # freedesktop-sdk.bst:components/audit.bst
     L! /etc/audit/audisp-filter.conf
     L! /etc/audit/audisp-remote.conf
