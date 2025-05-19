@@ -2,7 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: https://bindfs.org/downloads/bindfs-1.17.7.tar.gz
+  url: bindfs:bindfs-1.17.7.tar.gz
   ref: c0b060e94c3a231a1d4aa0bcf266ff189981a4ef38e42fbe23296a7d81719b7a
 
 build-depends:

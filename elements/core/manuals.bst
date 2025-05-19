@@ -2,9 +2,7 @@ kind: meson
 
 sources:
 - kind: git_repo
-  # FIXME:
-  # url: gnome:Incubator/manuals.git
-  url: https://gitlab.gnome.org/chergert/manuals.git
+  url: gnome:manuals.git
   track: main
   ref: 48.0-41-g220914fb27e384804e88d9ed165e02783334b696
 
