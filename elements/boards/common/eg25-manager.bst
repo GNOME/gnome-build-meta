@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: https://gitlab.com/mobian1/eg25-manager.git
+  url: gitlab:mobian1/eg25-manager.git
   track: "*.*.*"
   ref: 0.4.6-0-ge7790f941c053837e596dccd92ba97051a2d4cc1
 

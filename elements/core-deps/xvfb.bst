@@ -4,9 +4,9 @@ sources:
 - kind: tar
   url: freedesktop_files:xorg/xserver/-/archive/xorg-server-21.1.8/xserver-xorg-server-21.1.8.tar.bz2
   ref: 508ccfcb35c45fd9eb6037770ce559ccdbec411432d95c79f7424e504b452e49
-- kind: remote
-  url: fedora_rpms:xorg-x11-server/raw/rawhide/f/xvfb-run.sh
-  ref: fcaafe9e467fa003a89c0b543255e6e315b09772cfdf75a9d4f044505fd84206
+- kind: git_repo
+  url: fedora_rpms:xorg-x11-server.git
+  ref: dd5395436b87a535ea27a644b004feeea949a4a1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
