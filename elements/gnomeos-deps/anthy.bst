@@ -2,15 +2,13 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: debian_salsa:debian/anthy/-/archive/upstream/0.4/anthy-upstream-0.4.tar.bz2
-  ref: f9d5c80d657fcf05f1bcd45b2372df59e28c582b57f32caa0bebf0fccd52061f
+  url: github_files:fujiwarat/anthy-unicode/releases/download/1.0.0.20240502/anthy-unicode-1.0.0.20240502.tar.gz
+  ref: 43a13f24cc4749a1248bc6d0ce7796743b176ae68ee524cb4331bef64ac133b0
+- kind: patch
+  path: patches/anthy/no-passwd.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - freedesktop-sdk.bst:bootstrap-import.bst
-
-variables:
-  local_flags: >-
-    -Wno-error=implicit-function-declaration
