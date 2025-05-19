@@ -136,14 +136,14 @@ sources:
     sha: 1e401f977ab385c9e4e3ab30627d6f26d00e2c73eef317493c4ec6d468726cf8
   - kind: git
     commit: 85b7afba1a9d9bd445779800e5bcafeb732e4421
-    repo: https://github.com/fish-shell/rust-pcre2
+    repo: github:fish-shell/rust-pcre2
     query:
       tag: 0.2.9-utf32
     name: pcre2
     version: 0.2.9
   - kind: git
     commit: 85b7afba1a9d9bd445779800e5bcafeb732e4421
-    repo: https://github.com/fish-shell/rust-pcre2
+    repo: github:fish-shell/rust-pcre2
     query:
       tag: 0.2.9-utf32
     name: pcre2-sys

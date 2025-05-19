@@ -709,7 +709,7 @@ sources:
     sha: 42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825
   - kind: git
     commit: 001e0c02830a4a229adb99207250b275c79261a2
-    repo: https://github.com/FineFindus/udisks-rs.git
+    repo: github:FineFindus/udisks-rs.git
     query:
       rev: 001e0c02830a4a229adb99207250b275c79261a2
     name: udisks2
