@@ -10,11 +10,9 @@ aliases:
   # file aliases (e.g. tarballs)
   0pointer: https://0pointer.de/
   bindfs: https://bindfs.org/downloads/
-  cairo: https://cairographics.org/
   cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
   dbmx: https://dbmx.net/
-  debian_salsa: https://salsa.debian.org/
   dotat: https://dotat.at/prog/
   fedora_rpms: https://src.fedoraproject.org/rpms/
   flathub: https://flathub.org/repo/
@@ -23,11 +21,9 @@ aliases:
   freedesktop_software: https://www.freedesktop.org/software/
   freerdp: https://pub.freerdp.com/
   ftp_gnu_org: https://ftp.gnu.org/gnu/
-  gimp: https://download.gimp.org/pub/
   github_files: https://github.com/
   gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
-  gnome_gitlab_files: https://gitlab.gnome.org/
   gnome_nightly: https://nightly.gnome.org/
   gnupg_ftp: https://www.gnupg.org/ftp/
   gstreamer: https://gstreamer.freedesktop.org/
@@ -37,9 +33,7 @@ aliases:
   launchpad: https://launchpad.net/
   libburnia: http://files.libburnia-project.org/releases/
   libopenraw: https://libopenraw.freedesktop.org/
-  libraw: https://www.libraw.org/
   libvirt: https://libvirt.org/sources/
-  linuxcontainers: https://linuxcontainers.org/downloads/
   mozilla: https://ftp.mozilla.org/pub/
   netfilter_pub: https://www.netfilter.org/pub/
   nvidia: https://us.download.nvidia.com/
@@ -57,8 +51,6 @@ aliases:
   thekelleys: http://www.thekelleys.org.uk/
   videolan_pub: https://download.videolan.org/pub/
   webkitgtk: https://webkitgtk.org/releases/
-  wpewebkit: https://wpewebkit.org/releases/
-  megous: https://megous.com/
 
   # git aliases go here
   freedesktop: https://gitlab.freedesktop.org/
