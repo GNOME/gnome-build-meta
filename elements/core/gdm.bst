@@ -3,12 +3,10 @@ sources:
 - kind: git_repo
   url: gnome:gdm.git
   track: main
-  ref: 48.0-14-g948038938b7b24019ff0c5dcf1e6de63fd6246d6
+  ref: 48.0-18-gc4c0ccf0ac8b089c4b1310ac5f9d2689424def25
 - kind: local
   path: files/gdm
   directory: gdm-config
-- kind: patch
-  path: patches/gdm/nvidia.patch
 build-depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

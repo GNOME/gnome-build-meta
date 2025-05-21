@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tinysparql.git
   track: main
-  ref: 3.9.2-44-g7f321932fe2008805403c87dc1b711c133cf9a2a
+  ref: 3.9.2-49-g94552cffce7f162d8e88d400d2d2c15f0c5ca115
 
 build-depends:
 - core-deps/graphviz.bst
