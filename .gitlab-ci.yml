@@ -151,7 +151,7 @@ build-aarch64:
   - .aarch64
 
 deploy-flatpak:
-  extends: .arch-indep
+  extends: .x86_64
   stage: deploy
   needs:
   - job: 'build-x86_64'
