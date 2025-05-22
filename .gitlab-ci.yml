@@ -178,11 +178,6 @@ build-x86_64_v3:
   - .build-template
   - .x86_64_v3
 
-build-i386:
-  extends:
-  - .build-template
-  - .i686
-
 build-aarch64:
   extends:
   - .build-template
@@ -193,8 +188,6 @@ deploy-flatpak:
   stage: deploy
   needs:
   - job: 'build-x86_64'
-    artifacts: false
-  - job: 'build-i386'
     artifacts: false
   - job: 'build-aarch64'
     artifacts: false
@@ -543,8 +536,6 @@ make-git-archive:
   - job: 'build-x86_64_v3'
     artifacts: false
   - job: 'build-x86_64'
-    artifacts: false
-  - job: 'build-i386'
     artifacts: false
   - job: 'build-aarch64'
     artifacts: false
