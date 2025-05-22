@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libadwaita.git
   track: main
-  ref: 1.7.0-55-g95e63f841f7f126e9f2dc278bb92d26c92394db0
+  ref: 1.7.0-58-g29b3e89595660ae36cabb314bad948b32c6540a7
 
 build-depends:
 - sdk-deps/sassc.bst
