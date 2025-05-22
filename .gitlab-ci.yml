@@ -232,11 +232,6 @@ build-x86_64:
   - .build-template
   - .x86_64
 
-build-x86_64_v3:
-  extends:
-  - .build-template
-  - .x86_64_v3
-
 build-i386:
   extends:
   - .build-template
@@ -315,11 +310,11 @@ deploy-flatpak:
 deploy-oci:
   stage: deploy
   extends:
-  - .x86_64_v3
+  - .x86_64
   rules:
   - !reference [.deploy-rules, rules]
   needs:
-  - job: 'build-x86_64_v3'
+  - job: 'build-x86_64'
     artifacts: false
   # Sometimes podman push will timeout
   retry: 2
@@ -338,7 +333,7 @@ sysupdate-image-x86_64:
   - .x86_64_v3
   - .sysupdate-image
   needs:
-  - job: 'build-x86_64_v3'
+  - job: 'build-x86_64'
     artifacts: false
 
 sysupdate-image-aarch64:
@@ -380,9 +375,9 @@ disk-image-aarch64:
 disk-image-x86_64:
   extends:
   - .manual-image-template
-  - .x86_64_v3
+  - .x86_64
   needs:
-  - job: 'build-x86_64_v3'
+  - job: 'build-x86_64'
     artifacts: false
   variables:
     IMAGE: gnomeos/image.bst
@@ -410,18 +405,18 @@ pinephone-pro-image:
 iso-installer-x86_64:
   extends:
   - .manual-image-template
-  - .x86_64_v3
+  - .x86_64
   variables:
     IMAGE: iso/image.bst
   needs:
-  - job: 'build-x86_64_v3'
+  - job: 'build-x86_64'
     artifacts: false
 
 s3-image:
-  extends: .x86_64_v3
-  stage: deploy
+  extends:
+    - ".x86_64"
   needs:
-  - job: 'build-x86_64_v3'
+  - job: 'build-x86_64'
     artifacts: false
   script:
   - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos/image.bst iso/image.bst
@@ -698,8 +693,6 @@ pages:
 make-git-archive:
   stage: "deploy"
   needs:
-  - job: 'build-x86_64_v3'
-    artifacts: false
   - job: 'build-x86_64'
     artifacts: false
   - job: 'build-i386'

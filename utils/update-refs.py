@@ -57,7 +57,7 @@ def bst(*args):
 bst("workspace", "close", "--all")
 
 track_elements = boards_elements if args.track_boards else core_elements
-bst("-o", "x86_64_v3", "true", "source", "track", "--deps", "all", *track_elements)
+bst("source", "track", "--deps", "all", *track_elements)
 bst("source", "track", "--deps", "all", "flatpak-runtimes.bst")
 
 print("Track completed!")
