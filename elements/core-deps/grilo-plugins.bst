@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo-plugins.git
   track: master
-  ref: grilo-plugins-0.3.16-46-gea3afa8c45c654d16413910c58f5c872b41a44c9
+  ref: grilo-plugins-0.3.16-53-g335e0109e7219f7cec5ed62e360be9ec0af26846
 
 build-depends:
 - core-deps/localsearch.bst
