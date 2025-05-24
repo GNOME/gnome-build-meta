@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:chergert/foundry.git
   track: main
-  ref: ba6be522dfe8087c3b68ddde2c6b0edd7ab8901a
+  ref: 5308fa9de07c6a7f221caae38930a3a19872e87e
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
@@ -14,8 +14,10 @@ depends:
 - core-deps/jsonrpc-glib.bst
 - core-deps/libgit2.bst
 - core-deps/libpeas.bst
+- core-deps/libspelling.bst
 - gnomeos-deps/deviced.bst
 - sdk/glib.bst
+- sdk/gtksourceview.bst
 - sdk/libdex.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
