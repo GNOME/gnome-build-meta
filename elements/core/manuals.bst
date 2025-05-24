@@ -6,7 +6,7 @@ sources:
   # url: gnome:Incubator/manuals.git
   url: https://gitlab.gnome.org/chergert/manuals.git
   track: main
-  ref: 48.0-38-g495a7106f30dbeaa5cef5387aadaffc2c343c076
+  ref: 48.0-40-g57ac22884b7c02c3f1b5f49343e1ecb6adbf56dd
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
