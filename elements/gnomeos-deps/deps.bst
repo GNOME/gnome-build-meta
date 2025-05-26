@@ -40,7 +40,6 @@ depends:
 - gnomeos-deps/ibus-hangul.bst
 - gnomeos-deps/ibus-libpinyin.bst
 
-- gnomeos-deps/NetworkManager-fortisslvpn.bst
 - gnomeos-deps/NetworkManager-openconnect.bst
 - gnomeos-deps/NetworkManager-openvpn.bst
 - gnomeos-deps/NetworkManager-vpnc.bst
