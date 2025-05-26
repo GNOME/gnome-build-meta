@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
 
 depends:
 - freedesktop-sdk.bst:components/pcsc-lite.bst

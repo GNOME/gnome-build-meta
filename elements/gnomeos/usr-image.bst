@@ -102,29 +102,6 @@ config:
     L /etc/avahi/services/ssh.service
     # Various, we should move them to /usr/share:
     L /etc/bash_completion.d/000_bash_completion_compat.bash
-    L /etc/bash_completion.d/cardos-tool
-    L /etc/bash_completion.d/cryptoflex-tool
-    L /etc/bash_completion.d/dnie-tool
-    L /etc/bash_completion.d/egk-tool
-    L /etc/bash_completion.d/eidenv
-    L /etc/bash_completion.d/gids-tool
-    L /etc/bash_completion.d/goid-tool
-    L /etc/bash_completion.d/iasecc-tool
-    L /etc/bash_completion.d/netkey-tool
-    L /etc/bash_completion.d/npa-tool
-    L /etc/bash_completion.d/openpgp-tool
-    L /etc/bash_completion.d/opensc-asn1
-    L /etc/bash_completion.d/opensc-explorer
-    L /etc/bash_completion.d/opensc-notify
-    L /etc/bash_completion.d/opensc-tool
-    L /etc/bash_completion.d/piv-tool
-    L /etc/bash_completion.d/pkcs11-register
-    L /etc/bash_completion.d/pkcs11-tool
-    L /etc/bash_completion.d/pkcs15-crypt
-    L /etc/bash_completion.d/pkcs15-init
-    L /etc/bash_completion.d/pkcs15-tool
-    L /etc/bash_completion.d/sc-hsm-tool
-    L /etc/bash_completion.d/westcos-tool
 
     # freedesktop-sdk.bst:components/bash-config.bst
     L /etc/bashrc
