@@ -12,3 +12,8 @@ depends:
 - core-deps/libpcap.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/openssl.bst
+
+config:
+  install-commands:
+    (>):
+    - mv %{install-root}%{sysconfdir}/ppp %{install-root}%{datadir}/
