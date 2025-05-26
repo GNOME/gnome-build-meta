@@ -119,12 +119,6 @@ done
 
 BST_OPTIONS=(-o arch ${ARCH})
 
-case "${ARCH}" in
-    x86_64)
-        BST_OPTIONS+=(-o x86_64_v3 true)
-    ;;
-esac
-
 if [ "${#args[@]}" -ge 1 ]; then
     IMAGE_ELEMENT="${args[0]}"
 fi

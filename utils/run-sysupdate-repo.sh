@@ -74,9 +74,6 @@ fi
 BST_OPTIONS=()
 
 case "${ARCH}" in
-    x86_64)
-        BST_OPTIONS+=(-o x86_64_v3 true -o arch ${ARCH})
-    ;;
     *)
         BST_OPTIONS+=(-o arch ${ARCH})
     ;;
