@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:brailcom/speechd/releases/download/0.11.0/speech-dispatcher-0.11.0.tar.gz
-  ref: 254c4279c7637ee815c9daee99597d208681f811af5188051f0c2e11f2ec77c7
+  url: github_files:brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz
+  ref: b14a5238d287d2dcce4dd42bbd66ca65fa228e7e683708267f7b34036f7ba4b4
 
 build-depends:
 - freedesktop-sdk.bst:components/texinfo.bst

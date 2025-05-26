@@ -1,17 +1,14 @@
 kind: autotools
+
 sources:
 - kind: tar
-  url: samba:ppp/ppp-2.4.9.tar.gz
-  ref: f938b35eccde533ea800b15a7445b2f1137da7f88e32a16898d02dee8adc058d
+  url: samba:ppp/ppp-2.5.2.tar.gz
+  ref: 47da358de54a10cb10bf6ff2cf9b1c03c0d3555518f6182e8f701b8e55733cb2
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - core-deps/libpcap.bst
 - freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/openssl.bst
-variables:
-  # not a real autotools project
-  autogen: ''
-  make-install: make -j1 INSTROOT="%{install-root}" BINDIR="%{install-root}%{bindir}" install
-  conf-local: >-
-    --cflags=-Wno-error=incompatible-pointer-types
