@@ -130,7 +130,6 @@ config:
     L /etc/dbus-1/system.d/avahi-dbus.conf
 
     L /etc/dbus-1/system.d/gdm.conf
-    L /etc/dbus-1/system.d/nm-fortisslvpn-service.conf
     L /etc/dbus-1/system.d/org.freedesktop.Flatpak.SystemHelper.conf
     L /etc/dbus-1/system.d/org.freedesktop.ModemManager1.conf
 
@@ -178,7 +177,6 @@ config:
     C /etc/modules-load.d
     C /etc/moduli
     C /etc/netconfig
-    C /etc/openfortivpn
     C /etc/openldap
     C /etc/opensc.conf
     C /etc/ostree
