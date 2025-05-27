@@ -43,6 +43,7 @@ boards_elements = [
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html"),
     ("core/gnome-session.bst", "Breaks Initial Setup because gnome-session still talks to gnome-shell using xsmp"),
+    ("core-deps/systemd-base.bst", "Logind regression https://github.com/systemd/systemd/issues/37579"),
 ]
 
 def git(*args):
