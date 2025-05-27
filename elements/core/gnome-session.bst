@@ -18,8 +18,6 @@ depends:
 - sdk/gtk.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/xorg-lib-ice.bst
-- freedesktop-sdk.bst:components/xorg-lib-sm.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

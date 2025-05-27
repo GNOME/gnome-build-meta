@@ -15,14 +15,12 @@ sources:
 build-depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
-- core-deps/xvfb.bst
 - core-deps/zenity.bst
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcvt.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
@@ -51,10 +49,6 @@ depends:
 - freedesktop-sdk.bst:components/libinput.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/wayland.bst
-- freedesktop-sdk.bst:components/xorg-lib-ice.bst
-- freedesktop-sdk.bst:components/xorg-lib-sm.bst
-- freedesktop-sdk.bst:components/xorg-lib-xcursor.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:components/xwayland.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
@@ -62,3 +56,4 @@ variables:
   meson-local: >-
     -Dxwayland_initfd=enabled
     -Dprofiler=true
+    -Dx11=false
