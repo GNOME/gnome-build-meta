@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.2.0-63-g950ccda38e9873a9a9ae9449b9687120d566aa70
+  ref: 1.2.0-65-g11c2935c66bbd03d0660927deb3faf382635245a
 - kind: cargo2
   ref:
   - kind: registry
@@ -230,6 +230,10 @@ sources:
     version: 1.15.0
     sha: 48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719
   - kind: registry
+    name: encoding_rs
+    version: 0.8.35
+    sha: 75030f3c4f45dafd7586dd6780965a8c7e8e285a5ecb86713e63a79c5b2766f3
+  - kind: registry
     name: endi
     version: 1.1.0
     sha: a3d8a32ae18130a3c84dd492d4215c3d913c3b07c6b63c2eb3eb7ff1101ab7bf
@@ -401,38 +405,46 @@ sources:
     name: gobject-sys
     version: 0.20.9
     sha: c773a3cb38a419ad9c26c81d177d96b4b08980e8bdbbf32dace883e96e96e7e3
-  - kind: registry
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo
-    version: 0.2.3
-    sha: 6d94d1ca1f46778f74bec14c6cc73f99bd6f3f856dcb380deae1d87fe65bca28
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-common
-    version: 0.2.0
-    sha: ccb2b4c040e67e6d6ad954f04693a11864df82bce6c6c468524b6a78bb75581f
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-exif
-    version: 0.2.2
-    sha: 1448d72e2458b35dd10c0f148ea913b38c61b649552b22a97fa836ec376189ff
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-jpeg
-    version: 0.2.0
-    sha: 047379e4825d1a8581f0bf0daa841d71eff1503229bcdef004ad1d18e17b39f0
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-png
-    version: 0.2.3
-    sha: bad9fd59eaa8aa35ac015d9b8d396a780b586cf39509f9e121f9fd67bfde5d00
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-tiff
-    version: 0.2.1
-    sha: 6807032eba68c31ef3c0f099cd4af52e88d1d186a2eef7d0c1d4c49370218d3d
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-webp
-    version: 0.2.1
-    sha: 3b2b8aacb9edd4e7970621a1d0e6a4d4b124ca582ceca68d7d0a5d9bc6d906c9
-  - kind: registry
+    version: 0.3.0
+  - kind: git
+    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
+    repo: github:gufo-rs/gufo.git
     name: gufo-xmp
-    version: 0.2.0
-    sha: 46c6dd9093b5167ca6808e07d163d215d5a1747999579df320e1259d9cec7e6b
+    version: 0.3.0
   - kind: registry
     name: half
     version: 2.5.0
@@ -1253,7 +1265,6 @@ sources:
     name: zvariant_utils
     version: 3.2.0
     sha: e16edfee43e5d7b553b77872d99bc36afdda75c223ca7ad5e3fbecd82ca5fc34
-
 runtime-depends:
 - freedesktop-sdk.bst:components/bubblewrap.bst
 
