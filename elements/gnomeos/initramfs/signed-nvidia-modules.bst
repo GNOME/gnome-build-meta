@@ -24,6 +24,9 @@ config:
     install -Dm644 -t '%{install-root}%{indep-libdir}/modprobe.d' '%{indep-libdir}/modprobe.d/nvidia.conf'
     install -Dm644 -t '%{install-root}%{indep-libdir}/modules-load.d' '%{indep-libdir}/modules-load.d/nvidia.conf'
 
+  - |
+    cp -rT /usr/lib/firmware '%{install-root}%{indep-libdir}/firmware'
+
 sources:
 - kind: local
   path: files/boot-keys/MODULES.key

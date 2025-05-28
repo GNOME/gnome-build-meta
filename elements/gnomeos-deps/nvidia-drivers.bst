@@ -269,6 +269,7 @@ public:
   bst:
     split-rules:
       modules:
+      - '%{indep-libdir}/firmware/**'
       - '%{indep-libdir}/modules/**'
       - '%{indep-libdir}/modprobe.d/**'
       - '%{indep-libdir}/modules-load.d/**'
