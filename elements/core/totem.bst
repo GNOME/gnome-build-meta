@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:totem/43/totem-43.1.tar.xz
-  ref: 5668291e9c6444985cb3ffe4ea4f0212f54c2bbe60dd01114c1a950f94759e6d
+  url: gnome_downloads:totem/43/totem-43.2.tar.xz
+  ref: 0b007d30fbb93b95a604f14848a497f57fc333a75c2e638a249972e99c01e6a4
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
