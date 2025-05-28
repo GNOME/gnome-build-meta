@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-online-accounts/3.54/gnome-online-accounts-3.54.2.tar.xz
-  ref: 0f7f3d29c0666ffbcc503f3e0f3396362effdb9317d41664ce65df147ef35372
+  url: gnome_downloads:gnome-online-accounts/3.54/gnome-online-accounts-3.54.3.tar.xz
+  ref: bcf655dd1ddc22bc25793b6840da19f5cad7ba0b7227ff969ed9c252f036aac5
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

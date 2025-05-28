@@ -414,7 +414,7 @@ iso-installer-x86_64:
 
 s3-image:
   extends:
-    - ".x86_64"
+  - ".x86_64"
   needs:
   - job: 'build-x86_64'
     artifacts: false

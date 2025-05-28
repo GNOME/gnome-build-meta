@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/48/mutter-48.2.tar.xz
-  ref: 3c18ba4e093ea9a378113dcafa7bdb5c1f9d6f5af9765026b7e66cb78daf614e
+  url: gnome_downloads:mutter/48/mutter-48.3.tar.xz
+  ref: afb238b45ec40f8c3fa97ff31b36bf3ea4fa5630624e5b297fb83e2c59825dc1
 
 build-depends:
 - core-deps/python-argcomplete.bst
