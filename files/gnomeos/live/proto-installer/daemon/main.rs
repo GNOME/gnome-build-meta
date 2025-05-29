@@ -1,13 +1,14 @@
 use env_logger;
 use futures::try_join;
 use log::{debug, warn};
-use rand::{distr::Alphanumeric, Rng};
+use rand::{Rng};
 use std::collections::HashMap;
 use std::io::Write;
 use std::os::unix::fs::OpenOptionsExt;
 use std::{error::Error, string::String};
 use tempfile;
 use tokio::process::Command;
+use tokio::io::AsyncWriteExt;
 use zbus::{connection, Connection, interface, zvariant::OwnedValue, message::Header, fdo::Error::Failed};
 
 mod polkit;
@@ -560,6 +561,32 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
         partitions.insert(file_name, node);
     }
 
+    if !oem_install && has_tpm2 {
+        let root_partition = partitions.get("50-root.conf").ok_or(GenericInstallError::new("missing 50-root.conf"))?;
+
+        let mut cryptsetup_token = Command::new("cryptsetup");
+        // We assume keyslot 0 is the password we need to mark as recovery.
+        cryptsetup_token.args([
+            "token", "--key-slot", "0", "import", "--json-file=-"
+        ]);
+        cryptsetup_token.arg(root_partition);
+        cryptsetup_token.stdin(std::process::Stdio::piped());
+        let mut cryptsetup_token_child = cryptsetup_token.spawn()?;
+        let mut cryptsetup_token_stdin = cryptsetup_token_child.stdin.take().ok_or(GenericInstallError::new("cannot get stdin for cryptsetup-token"))?;
+        let write_token : tokio::task::JoinHandle<Result<(), InstallerError>> = tokio::spawn(async move {
+            cryptsetup_token_stdin.write_all(b"{\"type\":\"systemd-recovery\",\"keyslots\":[]}").await?;
+            drop(cryptsetup_token_stdin);
+            Ok(())
+        });
+
+        let cryptsetup_token_status = cryptsetup_token_child.wait().await?;
+        write_token.await??;
+
+        cryptsetup_token_status.code().filter(|code| *code == 0).ok_or(CommandError::new("cryptsetup token", cryptsetup_token_status))?;
+
+        debug!("cryptsetup token finished");
+    }
+
     if !oem_install {
         if has_tpm2 {
             match std::fs::remove_dir_all("/var/lib/gnomeos/install-credentials") {
@@ -610,6 +637,10 @@ impl InstallerObject {
     }
 }
 
+pub const MODHEX: [char; 16] = ['c', 'b', 'd', 'e', 'f',
+                                'g', 'h', 'i', 'j', 'k',
+                                'l', 'n', 'r', 't', 'u', 'v'];
+
 #[interface(name = "org.gnome.Installer1")]
 impl InstallerObject {
     async fn install(&mut self,
@@ -642,15 +673,23 @@ impl InstallerObject {
             return Err(Failed("Not allowed!".to_string()))
         }
 
-        let recovery_passphrase : String;
+        let mut recovery_passphrase : String;
         if oem_install || !self.has_tpm2 {
             recovery_passphrase = "".to_string();
         } else {
-            recovery_passphrase  = rand::rng()
-                .sample_iter(&Alphanumeric)
-                .take(10)
-                .map(char::from)
-                .collect();
+            let mut recovery_raw = [0u8; 32];
+            rand::rng().fill(&mut recovery_raw);
+            recovery_passphrase = String::new();
+            for (i, byte) in recovery_raw.into_iter().enumerate() {
+                recovery_passphrase.push(MODHEX[((byte>>4)&0xf) as usize]);
+                recovery_passphrase.push(MODHEX[(byte&0xf) as usize]);
+                if i % 4 == 3 {
+                    recovery_passphrase.push('-');
+                }
+            }
+            if recovery_passphrase.ends_with("-") {
+                recovery_passphrase.pop();
+            }
         }
 
         let mut taken : Option<tokio::sync::oneshot::Sender<InstallationRecipe>> = None;
