@@ -119,7 +119,8 @@ UNITS+=(
     systemd-reboot.service
     systemd-sysctl.service
     sysinit.target.wants/systemd-sysctl.service
-    systemd-sysext.service
+    systemd-sysext-initrd.service
+    initrd.target.wants/systemd-sysext-initrd.service
     systemd-udevd-control.socket
     systemd-udevd-kernel.socket
     systemd-udevd.service
@@ -181,6 +182,4 @@ install() {
     install_files /usr/lib/sysusers.d/basic.conf
     install_files /usr/lib/tmpfiles.d/systemd.conf
     install_files /usr/lib/tmpfiles.d/20-systemd-stub.conf
-
-    systemctl -q --root "${root}" enable systemd-sysext.service
 }
