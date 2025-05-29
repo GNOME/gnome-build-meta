@@ -29,7 +29,7 @@ config:
 
   - |
     base_name="$(basename *.run .run)"
-    cd "${base_name}/kernel"
+    cd "${base_name}/kernel-open"
     kernel_version=$(basename /usr/lib/modules/*)
     cat <<EOF >>Kbuild
     EXTRA_CFLAGS+=-Wno-error=incompatible-pointer-types
@@ -46,7 +46,7 @@ config:
   install-commands:
   - | # Kernel Modules
     base_name="$(basename *.run .run)"
-    cd "${base_name}/kernel"
+    cd "${base_name}/kernel-open"
     kernel_version=$(basename /usr/lib/modules/*)
     make -j1 KERNEL_UNAME="${kernel_version}" modules_install INSTALL_MOD_PATH='%{install-root}%{prefix}'
 
