@@ -1,0 +1,29 @@
+enable systemd-pcrlock-make-policy.service
+
+# Locks:
+
+# machine-id is safe to lock
+enable systemd-pcrlock-machine-id.service
+
+# file-system does not look like working correctly.
+disable systemd-pcrlock-file-system.service
+
+# Until fwupd can unlock on firmware update, we should disable firmware-code
+# lock by default.
+disable systemd-pcrlock-firmware-code.service
+
+# Firmware config should not be locked by default. It should be locked
+# by users who want to lock their BIOS configuration.
+disable systemd-pcrlock-firmware-config.service
+
+# It should be safe to lock secureboot-authority for now since we
+# do not update shim. But once when we add support for update of shim,
+# we should make sure to unlock it.
+enable systemd-pcrlock-secureboot-authority.service
+
+# Until KEK/dbx update from fwupd is able to unlock secureboot policy,
+# we should not lock it.
+disable systemd-pcrlock-secureboot-policy.service
+
+# Disable any new locks
+disable systemd-pcrlock-*.service

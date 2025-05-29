@@ -23,6 +23,7 @@ depends:
 - gnomeos-deps/spice-vdagent.bst
 - gnomeos-deps/wpa-supplicant-config.bst
 - gnomeos-deps/sysupdate-config.bst
+- gnomeos-deps/pcrlock-config.bst
 
 - gnomeos-deps/alsa-ucm-conf.bst
 - gnomeos-deps/android-udev-rules.bst
