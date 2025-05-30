@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:snap-images/squashfs-tools.bst
+- freedesktop-sdk.bst:components/squashfs-tools.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/filesystem-debug.bst
   config:
