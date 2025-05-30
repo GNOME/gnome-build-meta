@@ -41,6 +41,7 @@ sources:
   directory: extra-db-mic
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/perl-slurp.bst
@@ -67,7 +68,7 @@ config:
   configure-commands:
   - |
     cat <<EOF >>Make.rules
-    CFLAGS+=-Wno-error=implicit-function-declaration
+    CFLAGS+=-Wno-error=implicit-function-declaration -std=gnu17
     EOF
 
   build-commands:

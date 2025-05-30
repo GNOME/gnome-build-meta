@@ -18,7 +18,7 @@ sources:
   directory: boot-keys
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - gnomeos-deps/efitools.bst
