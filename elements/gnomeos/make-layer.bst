@@ -4,6 +4,9 @@ depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/squashfs-tools.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

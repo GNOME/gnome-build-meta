@@ -24,6 +24,9 @@ config:
   - |
     find '%{install-root}/usr/lib/modules' -type f -name "*.ko" -exec sign-file sha512 MODULES.key linux-module-cert.cer {} ';' -exec xz --lzma2=dict=2MiB {} ';'
 
+variables:
+  strip-binaries: ''
+
 sources:
 - kind: local
   path: files/boot-keys/MODULES.key

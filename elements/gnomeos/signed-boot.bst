@@ -18,6 +18,7 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 
 variables:
+  strip-binaries: ''
   (?):
   - arch == 'i686':
       efi-arch: ia32

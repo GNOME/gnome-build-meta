@@ -10,6 +10,9 @@ runtime-depends:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - install -Dm644 -t "%{install-root}%{datadir}/pixmaps" gnome-boot-logo.png

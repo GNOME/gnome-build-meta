@@ -7,6 +7,9 @@ sources:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - mkdir -p "%{install-root}%{sysconfdir}"

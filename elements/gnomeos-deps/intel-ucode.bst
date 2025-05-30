@@ -9,6 +9,9 @@ sources:
 build-depends:
 - gnomeos-deps/iucode-tool.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   build-commands:
   - |

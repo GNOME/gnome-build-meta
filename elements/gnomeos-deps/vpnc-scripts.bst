@@ -6,6 +6,9 @@ sources:
   track: master
   ref: 4ed41c21e3857f96ab935b45092bbb07c3ccd5be
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

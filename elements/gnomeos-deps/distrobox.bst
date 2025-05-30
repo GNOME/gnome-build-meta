@@ -6,6 +6,9 @@ depends:
 runtime-depends:
 - freedesktop-sdk.bst:components/podman.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |
