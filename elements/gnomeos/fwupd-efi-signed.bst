@@ -13,6 +13,7 @@ variables:
       efi-arch: x64
   - arch == 'aarch64':
       efi-arch: aa64
+  strip-binaries: ''
 
 config:
   build-commands:

@@ -8,6 +8,9 @@ sources:
 - kind: local
   path: files/gnomeos/reload-sysext/reload-sysext.service
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

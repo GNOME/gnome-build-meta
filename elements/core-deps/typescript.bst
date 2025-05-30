@@ -8,6 +8,9 @@ sources:
 depends:
 - core-deps/nodejs.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - mkdir -p "%{install-root}%{libdir}/node_modules/typescript"

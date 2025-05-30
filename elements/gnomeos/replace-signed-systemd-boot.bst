@@ -14,6 +14,7 @@ variables:
       efi-arch: aa64
   - arch == 'riscv64':
       efi-arch: riscv64
+  strip-binaries: ''
 
 config:
   build-commands:

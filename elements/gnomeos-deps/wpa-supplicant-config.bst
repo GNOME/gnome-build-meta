@@ -11,6 +11,9 @@ build-depends:
 runtime-depends:
 - freedesktop-sdk.bst:components/wpa-supplicant.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |
