@@ -15,6 +15,7 @@ variables:
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:components/libgcrypt.bst
