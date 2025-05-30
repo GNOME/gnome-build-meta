@@ -16,7 +16,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - gnomeos-deps/kyotocabinet.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   conf-local: >-

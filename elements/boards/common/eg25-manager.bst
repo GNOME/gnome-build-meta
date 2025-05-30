@@ -7,7 +7,7 @@ sources:
   ref: 0.4.6-0-ge7790f941c053837e596dccd92ba97051a2d4cc1
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

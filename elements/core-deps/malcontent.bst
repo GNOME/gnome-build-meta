@@ -20,7 +20,7 @@ depends:
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - sdk/pygobject.bst

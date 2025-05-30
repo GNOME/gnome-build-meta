@@ -28,4 +28,4 @@ depends:
 - sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libarchive.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

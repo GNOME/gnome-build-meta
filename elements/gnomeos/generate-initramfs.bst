@@ -5,7 +5,7 @@ sources:
   path: files/gnomeos/generate-initramfs
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - gnomeos-deps/python3-zstd.bst

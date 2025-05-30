@@ -10,7 +10,7 @@ build-depends:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   conf-local: >-
     --with-python=python3

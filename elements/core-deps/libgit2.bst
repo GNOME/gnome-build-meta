@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - core-deps/libssh2.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   cmake-local: >-

@@ -8,7 +8,7 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/freetype.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   conf-local: >-
     --disable-bdjava-jar

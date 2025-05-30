@@ -46,7 +46,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl-slurp.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 

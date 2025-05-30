@@ -15,7 +15,7 @@ depends:
 - sdk/gjs.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

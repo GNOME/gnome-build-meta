@@ -9,4 +9,4 @@ sources:
   path: patches/atinout
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

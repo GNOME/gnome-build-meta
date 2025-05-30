@@ -8,7 +8,7 @@ build-depends:
 depends:
 - core-deps/ibus-daemon.bst
 - gnomeos-deps/libpinyin.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   conf-local: >-
     --disable-lua-extension

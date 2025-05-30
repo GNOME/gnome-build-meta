@@ -24,7 +24,7 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/feedbackd.bst
 - sdk/libhandy.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: |

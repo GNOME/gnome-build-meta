@@ -21,7 +21,7 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

@@ -6,7 +6,7 @@ sources:
   ref: fba564a24db7b97ebe9329713ac970627b902e5e9e8b14e19e024eb6e278d10b
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   make-args: >-

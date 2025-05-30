@@ -20,7 +20,7 @@ depends:
 - sdk/gtksourceview.bst
 - sdk/libdex.bst
 - sdk/sysprof-minimal.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/flatpak-builder.bst
 - freedesktop-sdk.bst:components/gnutls.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

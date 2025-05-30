@@ -24,7 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   cmake-local: >-

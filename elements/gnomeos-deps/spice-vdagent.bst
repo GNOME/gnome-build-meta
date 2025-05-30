@@ -21,7 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/xorg-lib-xrandr.bst
 - freedesktop-sdk.bst:components/xorg-lib-xfixes.bst
 - freedesktop-sdk.bst:components/xorg-lib-xinerama.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   conf-local: >-

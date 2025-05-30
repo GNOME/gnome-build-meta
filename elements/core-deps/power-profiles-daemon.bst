@@ -14,7 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   # Tests depend on umockdev which we don't have

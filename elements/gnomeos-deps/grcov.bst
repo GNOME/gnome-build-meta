@@ -792,7 +792,7 @@ build-depends:
 - freedesktop-sdk.bst:bootstrap/findutils.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 environment:
   MAXJOBS: "%{max-jobs}"

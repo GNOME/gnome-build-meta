@@ -14,7 +14,7 @@ depends:
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xext.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 public:
   bst:
     split-rules:

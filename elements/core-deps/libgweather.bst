@@ -14,4 +14,4 @@ depends:
 - sdk/glib.bst
 - sdk/libsoup.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

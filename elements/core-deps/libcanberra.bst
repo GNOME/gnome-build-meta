@@ -12,7 +12,7 @@ depends:
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libtool.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - core-deps/xdg-sound-theme.bst

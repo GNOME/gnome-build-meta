@@ -10,7 +10,7 @@ build-depends:
 
 depends:
 - core-deps/graphviz.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:components/openssl.bst
 

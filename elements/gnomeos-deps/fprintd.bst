@@ -19,7 +19,7 @@ build-depends:
 - gnomeos-deps/pam-wrapper.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/linux-pam-base.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - gnomeos-deps/libfprint.bst

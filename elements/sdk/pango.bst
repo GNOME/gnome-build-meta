@@ -21,7 +21,7 @@ depends:
 - freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:components/libthai.bst
 - freedesktop-sdk.bst:components/xorg-lib-xft.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

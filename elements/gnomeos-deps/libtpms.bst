@@ -14,4 +14,4 @@ depends:
 - freedesktop-sdk.bst:components/iproute2.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
