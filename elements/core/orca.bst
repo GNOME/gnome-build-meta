@@ -14,4 +14,4 @@ depends:
 - sdk/gtk+-3.bst
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

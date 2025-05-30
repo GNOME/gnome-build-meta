@@ -7,7 +7,7 @@ sources:
   ref: ec0ef36b8b897ed1ae6bb0d0de13d5776f5d3659
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   install-commands:

@@ -20,4 +20,4 @@ depends:
 - sdk/libdex.bst
 - sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/flatpak.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

@@ -10,7 +10,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/nss.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   conf-local: >-

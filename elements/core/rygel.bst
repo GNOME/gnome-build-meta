@@ -21,7 +21,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libgee.bst
 - sdk/tinysparql.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

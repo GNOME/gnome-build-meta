@@ -23,7 +23,7 @@ depends:
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   # not a real autotools project

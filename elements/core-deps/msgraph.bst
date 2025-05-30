@@ -14,7 +14,7 @@ build-depends:
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/librest.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 # Tests needs uhttpmock 0.9 + one commit
 # https://gitlab.gnome.org/GNOME/msgraph/-/issues/3

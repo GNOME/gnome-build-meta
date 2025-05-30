@@ -10,4 +10,4 @@ build-depends:
 
 depends:
 - sdk/gjs.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

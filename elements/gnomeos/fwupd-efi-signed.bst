@@ -5,7 +5,7 @@ build-depends:
 - core-deps/fwupd-efi.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   (?):

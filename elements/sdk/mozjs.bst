@@ -20,7 +20,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/icu.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   optimize-debug: "false"

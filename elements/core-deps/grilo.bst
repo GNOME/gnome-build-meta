@@ -16,7 +16,7 @@ depends:
 - core-deps/totem-pl-parser.bst
 - sdk/glib.bst
 - sdk/libsoup.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

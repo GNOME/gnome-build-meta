@@ -10,4 +10,4 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

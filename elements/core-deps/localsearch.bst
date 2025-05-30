@@ -32,7 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/poppler.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   meson-local: >-
     -Diptc=disabled

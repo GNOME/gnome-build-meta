@@ -20,7 +20,7 @@ depends:
 - freedesktop-sdk.bst:snap-images/squashfs-tools.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/xfsprogs.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 environment:
   GOPATH: "%{build-root}"

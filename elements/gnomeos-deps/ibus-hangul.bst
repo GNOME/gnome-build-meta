@@ -11,7 +11,7 @@ build-depends:
 depends:
 - core-deps/ibus-daemon.bst
 - gnomeos-deps/libhangul.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   configure-commands:

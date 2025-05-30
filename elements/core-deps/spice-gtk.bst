@@ -27,7 +27,7 @@ depends:
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

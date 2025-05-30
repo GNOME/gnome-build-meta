@@ -17,7 +17,7 @@ build-depends:
 depends:
 - core-deps/libsigcplusplus.bst
 - freedesktop-sdk.bst:components/cairo.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

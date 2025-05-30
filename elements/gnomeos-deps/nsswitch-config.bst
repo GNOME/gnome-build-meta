@@ -5,7 +5,7 @@ sources:
   path: files/gnomeos/nsswitch.conf
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   install-commands:
