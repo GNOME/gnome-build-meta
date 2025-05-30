@@ -15,8 +15,9 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/freerdp.bst
 - core-deps/LibVNCServer.bst
+- core-deps/fdk-aac-free.bst
+- core-deps/freerdp.bst
 - sdk/glib.bst
 - sdk/libnotify.bst
 - sdk/libsecret.bst
@@ -25,7 +26,6 @@ depends:
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/libei.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
-- freedesktop-sdk.bst:components/libfdk-aac.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/polkit-gobject.bst
