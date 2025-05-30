@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
 - sdk/glib.bst
-- sdk/liburing.bst
+- freedesktop-sdk.bst:components/liburing.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
