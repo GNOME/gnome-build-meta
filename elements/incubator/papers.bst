@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 48.0-187-gda4cef28dc795b47d8bb90a5f28ab9245b66aa36
+  ref: 48.0-212-ge3bb3547c6674ae354c062198ccf0f440f48e6ef
 - kind: cargo2
   ref:
   - kind: registry
@@ -984,6 +984,7 @@ sources:
     version: 3.2.0
     sha: e16edfee43e5d7b553b77872d99bc36afdda75c223ca7ad5e3fbecd82ca5fc34
 build-depends:
+- sdk/blueprint-compiler.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
