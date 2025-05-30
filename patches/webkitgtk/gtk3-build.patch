@@ -1,0 +1,143 @@
+From e2e4647281ff5f666597e979f582ce780cb31604 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Fri, 30 May 2025 15:35:03 -0500
+Subject: [PATCH] [GTK] 2.49.2 does not build for GTK 3
+ https://bugs.webkit.org/show_bug.cgi?id=293816
+
+Unreviewed build fixes.
+---
+ .../WebCore/Modules/mediastream/MediaStreamTrack.cpp   |  6 ++++++
+ Source/WebCore/Modules/mediastream/MediaStreamTrack.h  |  2 +-
+ .../API/gtk/DOM/WebKitDOMCharacterData.cpp             |  2 ++
+ .../API/gtk/DOM/WebKitDOMDOMSelection.cpp              | 10 +++++-----
+ .../InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp |  1 +
+ .../WebCoreSupport/glib/WebEditorClientGLib.cpp        |  1 +
+ Tools/TestWebKitAPI/Tests/WebKitGLib/TestUIClient.cpp  |  2 +-
+ Tools/TestWebKitAPI/glib/WebKitGLib/TestMain.h         |  2 ++
+ 8 files changed, 19 insertions(+), 7 deletions(-)
+
+diff --git a/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp b/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
+index a401952f20b7..41df25b748e5 100644
+--- a/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
++++ b/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
+@@ -31,6 +31,7 @@
+ #if ENABLE(MEDIA_STREAM)
+ 
+ #include "CommonAtomStrings.h"
++#include "ContextDestructionObserverInlines.h"
+ #include "Document.h"
+ #include "Event.h"
+ #include "EventNames.h"
+@@ -645,6 +646,11 @@ Ref<MediaStreamTrack> MediaStreamTrack::create(ScriptExecutionContext& context,
+     return track;
+ }
+ 
++ScriptExecutionContext* MediaStreamTrack::scriptExecutionContext() const
++{
++    return ActiveDOMObject::scriptExecutionContext();
++}
++
+ #if !RELEASE_LOG_DISABLED
+ WTFLogChannel& MediaStreamTrack::logChannel() const
+ {
+diff --git a/Source/WebCore/Modules/mediastream/MediaStreamTrack.h b/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
+index 9beb8a93fc42..cd42ed010b4c 100644
+--- a/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
++++ b/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
+@@ -189,7 +189,7 @@ class MediaStreamTrack
+ protected:
+     MediaStreamTrack(ScriptExecutionContext&, Ref<MediaStreamTrackPrivate>&&);
+ 
+-    ScriptExecutionContext* scriptExecutionContext() const final { return ActiveDOMObject::scriptExecutionContext(); }
++    ScriptExecutionContext* scriptExecutionContext() const final;
+ 
+ private:
+     explicit MediaStreamTrack(MediaStreamTrack&);
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
+index 200689e76721..c1fec9da2d2c 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
+@@ -24,8 +24,10 @@
+ #include "DOMObjectCache.h"
+ #include <WebCore/DOMException.h>
+ #include <WebCore/Document.h>
++#include <WebCore/DocumentInlines.h>
+ #include "GObjectEventListener.h"
+ #include <WebCore/JSExecState.h>
++#include <WebCore/ShadowRoot.h>
+ #include "WebKitDOMCharacterDataPrivate.h"
+ #include "WebKitDOMElementPrivate.h"
+ #include "WebKitDOMEventPrivate.h"
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
+index c5e283b08eab..2233726e3752 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
+@@ -397,7 +397,7 @@ void webkit_dom_dom_selection_set_base_and_extent(WebKitDOMDOMSelection* self, W
+     WebCore::DOMSelection* item = WebKit::core(self);
+     WebCore::Node* convertedBaseNode = WebKit::core(baseNode);
+     WebCore::Node* convertedExtentNode = WebKit::core(extentNode);
+-    item->setBaseAndExtent(convertedBaseNode, baseOffset, convertedExtentNode, extentOffset);
++    item->setBaseAndExtent(*convertedBaseNode, baseOffset, *convertedExtentNode, extentOffset);
+ }
+ 
+ void webkit_dom_dom_selection_set_position(WebKitDOMDOMSelection* self, WebKitDOMNode* node, gulong offset)
+@@ -500,7 +500,7 @@ WebKitDOMNode* webkit_dom_dom_selection_get_base_node(WebKitDOMDOMSelection* sel
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
+     WebCore::DOMSelection* item = WebKit::core(self);
+-    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->baseNode());
++    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->anchorNode());
+     return WebKit::kit(gobjectResult.get());
+ }
+ 
+@@ -509,7 +509,7 @@ gulong webkit_dom_dom_selection_get_base_offset(WebKitDOMDOMSelection* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
+     WebCore::DOMSelection* item = WebKit::core(self);
+-    gulong result = item->baseOffset();
++    gulong result = item->anchorOffset();
+     return result;
+ }
+ 
+@@ -518,7 +518,7 @@ WebKitDOMNode* webkit_dom_dom_selection_get_extent_node(WebKitDOMDOMSelection* s
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
+     WebCore::DOMSelection* item = WebKit::core(self);
+-    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->extentNode());
++    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->focusNode());
+     return WebKit::kit(gobjectResult.get());
+ }
+ 
+@@ -527,7 +527,7 @@ gulong webkit_dom_dom_selection_get_extent_offset(WebKitDOMDOMSelection* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
+     WebCore::DOMSelection* item = WebKit::core(self);
+-    gulong result = item->extentOffset();
++    gulong result = item->focusOffset();
+     return result;
+ }
+ 
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
+index 472a8d0d00eb..10a093a4ef5d 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
+@@ -23,6 +23,7 @@
+ #include <WebCore/DOMException.h>
+ #include <WebCore/Document.h>
+ #include <WebCore/Element.h>
++#include <WebCore/EventTargetInlines.h>
+ #include <WebCore/JSExecState.h>
+ #include <WebCore/HTMLCollection.h>
+ #include "WebKitDOMDocumentPrivate.h"
+diff --git a/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp b/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
+index ab382eed0311..c0691f3fba51 100644
+--- a/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
++++ b/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
+@@ -26,6 +26,7 @@
+ #include <WebCore/FrameDestructionObserverInlines.h>
+ #include <WebCore/KeyboardEvent.h>
+ #include <WebCore/LocalFrame.h>
++#include <WebCore/LocalFrameInlines.h>
+ #include <WebCore/Node.h>
+ #include <WebCore/NodeInlines.h>
+ #include <WebCore/PlatformKeyboardEvent.h>
