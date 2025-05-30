@@ -3,10 +3,8 @@ kind: junction
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-24.08*
-  ref: freedesktop-sdk-24.08.22-0-gb586eff57a98db393c1ba25730a265e0b3900196
-- kind: patch_queue
-  path: patches/freedesktop-sdk
+  track: freedesktop-sdk-25.08*
+  ref: freedesktop-sdk-25.08beta.1-0-g357efe6bb5214728bd1bd2ec31c05b6f84a3cedc
 
 config:
   options:
@@ -26,7 +24,7 @@ config:
   overrides:
     components/at-spi2-core.bst: sdk/at-spi2-core.bst
     components/cairo.bst: sdk/cairo.bst
-    components/fcitx5.bst: sdk/fcitx5-gtk.bst
+    components/fcitx5-gtk.bst: sdk/fcitx5-gtk.bst
     components/gcab.bst: sdk/gcab.bst
     components/gdk-pixbuf.bst: sdk/gdk-pixbuf.bst
     components/glib-networking.bst: sdk/glib-networking.bst
@@ -37,7 +35,7 @@ config:
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
-    components/ibus.bst: sdk/libibus.bst
+    components/libibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
     components/libnotify.bst: sdk/libnotify.bst
     components/librsvg.bst: sdk/librsvg.bst
@@ -45,6 +43,7 @@ config:
     components/pango.bst: sdk/pango.bst
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
+    components/libsecret.bst: sdk/libsecret.bst
 
     # While freedesktop-sdk provides a zenity element, it's the
     # gtk3 version which we don't want, and we also override it
