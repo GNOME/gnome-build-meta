@@ -9,6 +9,9 @@ sources:
 depends:
 - freedesktop-sdk.bst:components/python3.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

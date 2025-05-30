@@ -4,6 +4,9 @@ build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/systemd.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

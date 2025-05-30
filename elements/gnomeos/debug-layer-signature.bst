@@ -10,6 +10,7 @@ build-depends:
 
 variables:
   repart-seed: fd7f6520-abde-47a2-9430-7514914232be
+  strip-binaries: ''
 
 sources:
 - kind: local

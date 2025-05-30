@@ -5,6 +5,9 @@ build-depends:
   strict: true
 - freedesktop-sdk.bst:components/sign-file.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
   - |

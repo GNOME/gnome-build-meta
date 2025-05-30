@@ -11,6 +11,9 @@ runtime-depends:
 - gnomeos-deps/python3-zstd.bst
 - freedesktop-sdk.bst:components/python3-pyelftools.bst
 
+variables:
+  strip-binaries: ''
+
 config:
   install-commands:
     - install -Dm755 generate-initramfs.sh "%{install-root}%{bindir}/generate-initramfs"

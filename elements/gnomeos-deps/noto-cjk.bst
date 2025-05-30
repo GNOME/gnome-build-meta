@@ -21,6 +21,9 @@ sources:
 - kind: local
   path: files/noto-cjk/generate-config.sh
 
+variables:
+  strip-binaries: ''
+
 config:
   build-commands:
   - |
