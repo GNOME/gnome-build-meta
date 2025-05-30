@@ -1,4 +1,5 @@
 kind: cmake
+
 sources:
 - kind: tar
   url: github_files:google/woff2/archive/v1.0.2.tar.gz
@@ -8,9 +9,15 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+
 depends:
 - freedesktop-sdk.bst:components/brotli.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  cmake-local: >-
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 public:
   bst:
     split-rules:

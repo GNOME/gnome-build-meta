@@ -15,3 +15,4 @@ depends:
 variables:
   cmake-local: >-
     -DHIDAPI_WITH_LIBUSB=OFF
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
