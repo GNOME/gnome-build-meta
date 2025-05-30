@@ -8,7 +8,7 @@ build-depends:
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   cmake-local: >-
     -DBUILD_SHARED_LIBS=ON

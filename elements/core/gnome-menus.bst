@@ -9,4 +9,4 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

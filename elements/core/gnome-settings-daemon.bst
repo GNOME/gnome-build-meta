@@ -35,4 +35,4 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

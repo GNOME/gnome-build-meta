@@ -19,7 +19,7 @@ depends:
 - sdk/libdex.bst
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

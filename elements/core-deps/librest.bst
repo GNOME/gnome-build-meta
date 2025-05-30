@@ -15,7 +15,7 @@ depends:
 - sdk/libadwaita.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   meson-local: >-
     -Dsoup2=false

@@ -10,7 +10,7 @@ depends:
 - sdk/glib.bst
 - sdk/nuspell.bst
 - freedesktop-sdk.bst:components/hunspell.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   conf-local: >-
     --with-hunspell

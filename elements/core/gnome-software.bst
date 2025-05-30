@@ -36,7 +36,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/polkit.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - core-deps/gnome-app-list.bst

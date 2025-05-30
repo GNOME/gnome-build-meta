@@ -20,4 +20,4 @@ depends:
 - sdk/libadwaita.bst
 - sdk/libgee.bst
 - sdk/libsoup.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

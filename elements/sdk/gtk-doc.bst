@@ -13,7 +13,7 @@ depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3-pygments.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   meson-local: >-
     -Dtests=false

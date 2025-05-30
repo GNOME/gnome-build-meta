@@ -6,7 +6,7 @@ sources:
   ref: f622682848b33677adb2b6ad08264618a2ae0a01da486a93fd8cd91186b3d153
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   make-install: make -j1 BINDIR=%{sbindir} PREFIX="%{prefix}" DESTDIR="%{install-root}"

@@ -1041,7 +1041,7 @@ depends:
 - sdk/gst-plugin-gtk4.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gettext.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst

@@ -13,7 +13,7 @@ depends:
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libxml2.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   local_flags: >-
     -Wno-error=incompatible-pointer-types

@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - core-deps/libusbmuxd.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 

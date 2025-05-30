@@ -30,7 +30,7 @@ depends:
 - freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/polkit-gobject.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   meson-local: >-

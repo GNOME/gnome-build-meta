@@ -14,7 +14,7 @@ depends:
 - sdk/glib.bst
 - sdk/pygobject.bst
 - gnomeos-deps/anthy.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   conf-local: >-

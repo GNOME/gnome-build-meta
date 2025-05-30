@@ -8,7 +8,7 @@ build-depends:
 - filename: gnomeos/signed-boot.bst
   config:
     location: /signed-boot
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   commands:

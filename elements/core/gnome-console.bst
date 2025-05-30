@@ -19,4 +19,4 @@ depends:
 - core/nautilus.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

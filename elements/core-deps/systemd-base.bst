@@ -11,7 +11,7 @@ sources:
   ref: v257-3425-g8ebe9f1da24e99cb08a8eef6e426602d283feb29 
 
 build-depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/bpf.bst

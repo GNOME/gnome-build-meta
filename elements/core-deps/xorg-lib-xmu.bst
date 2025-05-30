@@ -10,7 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:components/xorg-util-macros.bst
 
 depends:
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/xorg-lib-x11.bst
 - freedesktop-sdk.bst:components/xorg-lib-xext.bst
 - freedesktop-sdk.bst:components/xorg-lib-xt.bst

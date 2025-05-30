@@ -11,7 +11,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/e2fsprogs.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
   command-subdir: src
