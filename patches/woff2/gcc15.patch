@@ -1,0 +1,12 @@
+diff --git a/include/woff2/output.h b/include/woff2/output.h
+index c325f67be..024638812 100644
+--- a/include/woff2/output.h
++++ b/include/woff2/output.h
+@@ -11,6 +11,7 @@
+ 
+ #include <algorithm>
+ #include <cstring>
++#include <cstdint>
+ #include <memory>
+ #include <string>
+ 

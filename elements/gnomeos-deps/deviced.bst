@@ -17,3 +17,6 @@ depends:
 - freedesktop-sdk.bst:components/avahi-gobject.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/gnutls.bst
+
+variables:
+  local_flags: -DHAVE_STDARG_H
