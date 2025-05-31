@@ -1,6 +1,7 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
@@ -17,8 +18,13 @@ variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   repart-seed: 42a68ae3-36dd-4549-a0e6-47404842b63e
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
+  - mkdir /fakecap
   - |
     prepare-image.sh \
        --sysroot /sysroot \
