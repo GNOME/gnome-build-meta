@@ -26,6 +26,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/libqrencode.bst
 - freedesktop-sdk.bst:components/iptables.bst
+- freedesktop-sdk.bst:components/libmicrohttpd.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 
 config:
