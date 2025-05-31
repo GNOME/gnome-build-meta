@@ -10,3 +10,6 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  local_flags: -Wno-error=incompatible-pointer-types
