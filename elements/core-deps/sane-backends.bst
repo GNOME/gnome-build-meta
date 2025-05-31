@@ -27,3 +27,6 @@ config:
       install -Dm 644 tools/udev/libsane.rules %{install-root}$(pkg-config --variable=udevdir udev)/rules.d/60-libsane.rules
     - |
       install -Dm 644 sysusers.conf %{install-root}$(pkg-config --variable=sysusersdir systemd)/libsane.conf
+
+variables:
+  local_flags: -std=c17

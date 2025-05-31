@@ -1,0 +1,29 @@
+diff --git a/source-checkout/core-deps-ppp/pppd/session.c b/core-deps/ppp/pppd/session.c
+index f08d8e191..9cc753899 100644
+--- a/pppd/session.c
++++ b/pppd/session.c
+@@ -182,7 +182,6 @@ session_start(const int flags, const char *user, const char *passwd, const char
+     char *cbuf;
+ #ifdef HAVE_SHADOW_H
+     struct spwd *spwd;
+-    struct spwd *getspnam();
+     long now = 0;
+ #endif /* #ifdef HAVE_SHADOW_H */
+ #endif /* #ifdef PPP_WITH_PAM */
+diff --git a/source-checkout/core-deps-ppp/pppdump/pppdump.c b/core-deps/ppp/pppdump/pppdump.c
+index c24208af5..c8c693016 100644
+--- a/pppdump/pppdump.c
++++ b/pppdump/pppdump.c
+@@ -42,9 +42,9 @@ int tot_sent, tot_rcvd;
+ extern int optind;
+ extern char *optarg;
+ 
+-void dumplog();
+-void dumpppp();
+-void show_time();
++void dumplog(FILE*);
++void dumpppp(FILE*);
++void show_time(FILE*, int);
+ 
+ int
+ main(ac, av)

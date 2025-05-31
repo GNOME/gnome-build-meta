@@ -14,3 +14,6 @@ depends:
 - freedesktop-sdk.bst:components/efivar.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/keyutils.bst
+
+variables:
+  local_flags: -Wno-error=unterminated-string-initialization
