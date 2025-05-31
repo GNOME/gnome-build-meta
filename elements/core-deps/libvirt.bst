@@ -39,7 +39,6 @@ depends:
 - freedesktop-sdk.bst:components/parted.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/xorg-lib-pciaccess.bst
-- freedesktop-sdk.bst:components/yajl.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
