@@ -5,6 +5,7 @@ sources:
   ref: 6bcb0c42c4580436fea262ced56f68a6afe20f7390b1bea2116718cc034a0283
 - kind: local
   path: files/libvirt/80-libvirt.preset
+
 build-depends:
 - core-deps/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
@@ -12,6 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

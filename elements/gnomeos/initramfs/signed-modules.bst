@@ -3,6 +3,7 @@ kind: manual
 build-depends:
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
+- freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/sign-file.bst
 
 config:

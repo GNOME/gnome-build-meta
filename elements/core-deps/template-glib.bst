@@ -11,6 +11,7 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
+- freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

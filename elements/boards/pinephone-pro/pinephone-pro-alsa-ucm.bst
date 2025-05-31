@@ -8,6 +8,8 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/findutils.bst
+- freedesktop-sdk.bst:components/sed.bst
 
 variables:
   strip-binaries: ''
