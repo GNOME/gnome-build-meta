@@ -49,11 +49,13 @@ config:
     # freedesktop-sdk.bst:components/perf.bst
     # FIXME: move to /usr/share/bash-completion/completions/
     L /etc/bash_completion.d/perf
-    # freedesktop-sdk.bst:components/toolbox.bst?
+    # gnomeos-deps/toolbox.bst
     L /etc/containers/toolbox.conf
-    # freedesktop-sdk.bst:components/podman-config.bst
+    # freedesktop-sdk.bst:components/containers-common.bst
     L /etc/containers/policy.json
     L /etc/containers/registries.conf
+    L /etc/containers/registries.conf.d/000-shortnames.conf
+    L /etc/containers/registries.d/default.yaml
     # freedesktop-sdk.bst:components/git-lfs.bst
     L /etc/gitconfig
     # freedesktop-sdk.bst:components/binutils.bst
@@ -68,6 +70,9 @@ config:
     L /etc/swtpm-localca.conf
     L /etc/swtpm-localca.options
     L /etc/swtpm_setup.conf
+    # freedesktop-sdk.bst:components/gawk.bst
+    L /etc/profile.d/gawk.sh
+    L /etc/profile.d/gawk.csh
     EOF
 
   - |
