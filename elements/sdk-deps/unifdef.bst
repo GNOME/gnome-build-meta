@@ -12,5 +12,6 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
+  local_flags: -std=c17 -D_POSIX_C_SOURCE=200809L
   make-args: >-
     prefix="%{prefix}"
