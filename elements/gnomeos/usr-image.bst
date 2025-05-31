@@ -1,6 +1,7 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/squashfs-tools.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
@@ -17,9 +18,12 @@ variables:
 
 environment:
   SYSTEMD_REPART_MKFS_OPTIONS_SQUASHFS: -all-time %{filesystem-time}
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
 
 config:
   commands:
+  - mkdir /fakecap
   - |
     prepare-image.sh \
        --sysroot /sysroot \
