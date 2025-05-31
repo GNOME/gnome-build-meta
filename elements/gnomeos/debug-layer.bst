@@ -1,6 +1,7 @@
 kind: script
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/squashfs-tools.bst
 - gnomeos/os-release-user.bst
@@ -11,8 +12,13 @@ build-depends:
 variables:
   repart-seed: 0dc2e590-c162-4ed3-992f-75ddb3fdbb65
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
+  - mkdir /fakecap
   - |
     mkdir -p /sysroot-debug/usr/lib/extension-release.d
     case "%{branch}" in

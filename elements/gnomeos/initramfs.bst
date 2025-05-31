@@ -4,14 +4,19 @@ build-depends:
 - gnomeos/generate-initramfs.bst
 - gnomeos/initramfs/deps.bst
 - gnomeos/initramfs/initial-scripts.bst
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 
 variables:
   sysroot-seed: 9473a621-1617-4679-87e5-031afef28359
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
-  - mkdir -p /tmp /efi /var/tmp
+  - mkdir -p /tmp /efi /var/tmp /fakecap
   - |
     prepare-image.sh \
        --seed "%{sysroot-seed}" \
