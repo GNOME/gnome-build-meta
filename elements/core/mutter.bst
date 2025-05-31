@@ -22,6 +22,7 @@ build-depends:
 - core/sysprof-app.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:

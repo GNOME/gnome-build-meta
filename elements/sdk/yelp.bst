@@ -9,7 +9,7 @@ sources:
 build-depends:
 - sdk-deps/appstream-glib.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/grep.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:

@@ -3,6 +3,7 @@ kind: manual
 build-depends:
 - filename: gnomeos-deps/nvidia-drivers-modules.bst
   strict: true
+- freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/sign-file.bst
 
 variables:
