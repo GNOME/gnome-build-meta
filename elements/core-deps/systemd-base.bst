@@ -15,6 +15,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/bpf.bst
+- freedesktop-sdk.bst:components/gawk.bst
+- freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/libcap.bst
