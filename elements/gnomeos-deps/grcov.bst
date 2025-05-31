@@ -788,8 +788,10 @@ sources:
     sha: edfc5ee405f504cd4984ecc6f14d02d55cfda60fa4b689434ef4102aae150cd7
 
 build-depends:
+- freedesktop-sdk.bst:components/findutils.bst
+- freedesktop-sdk.bst:components/gcc.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:bootstrap/findutils.bst
+- freedesktop-sdk.bst:components/stripper.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
