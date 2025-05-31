@@ -8,9 +8,6 @@ depends:
   - freedesktop-sdk.bst:components/python3-markdown.bst
   - sdk/glib.bst
 
-runtime-depends:
-- freedesktop-sdk.bst:components/python3-setuptools.bst
-
 variables:
   meson-local: >-
     -Dcairo=disabled

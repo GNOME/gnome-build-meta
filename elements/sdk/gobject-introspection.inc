@@ -15,6 +15,7 @@ build-depends:
 - sdk/gtk-doc.bst
 
 depends:
+- freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 public:
