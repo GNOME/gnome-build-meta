@@ -8,6 +8,7 @@ sources:
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -23,8 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/libslirp.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:components/sdl2.bst
-- freedesktop-sdk.bst:components/sdl2-image.bst
+- freedesktop-sdk.bst:components/sdl2-compat.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
@@ -51,7 +51,7 @@ variables:
     --enable-usb-redir
     --enable-gtk
     --enable-sdl
-    --enable-sdl-image
+    --disable-sdl-image
     --enable-virglrenderer
     --enable-slirp
 
