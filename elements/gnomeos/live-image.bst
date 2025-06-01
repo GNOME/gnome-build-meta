@@ -87,6 +87,7 @@ config:
   - |
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
+        --sector-size=512 \
         --definitions=definitions \
         --empty=create \
         --dry-run=no \
