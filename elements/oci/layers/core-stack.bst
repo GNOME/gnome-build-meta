@@ -26,6 +26,8 @@ depends:
 - sdk-deps/libsass.bst
 - sdk-deps/sassc.bst
 - core-deps/umockdev.bst
+# Used by gdm tests
+- core-deps/libcheck.bst
 
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/shadow.bst

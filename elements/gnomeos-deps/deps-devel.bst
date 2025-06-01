@@ -2,6 +2,7 @@ kind: stack
 
 depends:
 - core-deps/foundry.bst
+- core-deps/libcheck.bst
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/python-pefile.bst

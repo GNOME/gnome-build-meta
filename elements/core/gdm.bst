@@ -8,6 +8,7 @@ sources:
   path: files/gdm
   directory: gdm-config
 build-depends:
+- core-deps/libcheck.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
