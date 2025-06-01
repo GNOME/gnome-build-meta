@@ -5,6 +5,8 @@ sources:
   url: gnome:gnome-session.git
   track: main
   ref: 47.0.1-69-g7347f630b692c6421e3ecc92f56d720fbe6be49d
+- kind: patch
+  path: patches/gnome-session/0001-doc-skip-validation-of-xml.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
