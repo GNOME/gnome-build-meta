@@ -1,10 +1,12 @@
 kind: meson
+
 sources:
 - kind: tar
-  url: gnome_downloads:NetworkManager/1.50/NetworkManager-1.50.0.tar.xz
-  ref: fc03e7388a656cebc454c5d89481626122b1975d7c26babc64dc7e488faa66e3
+  url: freedesktop_files:NetworkManager/NetworkManager/-/releases/1.52.0/downloads/NetworkManager-1.52.0.tar.xz
+  ref: 356f21a15da51e4218fd4d0fd78cea61e067b1116a25cddee4af9df05062e92d
 - kind: patch_queue
   path: patches/NetworkManager
+
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
@@ -12,6 +14,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/ModemManager.bst
 - core-deps/mobile-broadband-provider-info.bst
@@ -29,6 +32,7 @@ depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   meson-local: >-
     -Dmore_asserts=no
