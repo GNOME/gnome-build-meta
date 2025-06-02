@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:christgau/wsdd.git
   track: v*
-  ref: v0.8-0-g486e054ec73bc12a79d465d1fbd0c11c12b0f014
+  ref: v0.9-0-ge9325b5ce312423f9b83f7175949694097a161b2
 
 depends:
 - freedesktop-sdk.bst:components/python3.bst
