@@ -2,6 +2,7 @@ use env_logger;
 use futures::try_join;
 use log::{debug, warn};
 use rand::{Rng};
+use std::env;
 use std::collections::HashMap;
 use std::io::Write;
 use std::os::unix::fs::OpenOptionsExt;
@@ -172,9 +173,9 @@ impl std::fmt::Display for InstallerError {
     }
 }
 
-async fn do_install_handle_errors(obj_server: &zbus::ObjectServer, conn : &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool) -> zbus::Result<()> {
+async fn do_install_handle_errors(obj_server: &zbus::ObjectServer, conn : &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool, has_pcrlock : bool) -> zbus::Result<()> {
     debug!("installation started");
-    match do_install(conn, device, recovery_passphrase, oem_install, has_tpm2).await {
+    match do_install(conn, device, recovery_passphrase, oem_install, has_tpm2, has_pcrlock).await {
         Err(err) => {
             warn!("installation failed: {err}");
             obj_server.interface("/org/gnome/Installer").await?.installation_failed(err.to_string()).await?
@@ -468,7 +469,7 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
     Ok(())
 }
 
-async fn do_install(conn: &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool) -> Result<(), InstallerError> {
+async fn do_install(conn: &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool, has_pcrlock : bool) -> Result<(), InstallerError> {
     let repart_d = tempfile::tempdir()?;
     let repart_d_path = repart_d.path().to_str().ok_or(GenericInstallError::new("bad path for repart.d"))?;
 
@@ -517,7 +518,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
 
     debug!("marked device for udev");
 
-    if has_tpm2 && !oem_install {
+    if has_tpm2 && has_pcrlock && !oem_install {
         make_policy().await?;
     }
 
@@ -719,13 +720,17 @@ impl InstallerObject {
 async fn main() -> Result<(), Box<dyn Error>> {
     env_logger::init();
 
-    let systemd_analyze  = Command::new("systemd-analyze").arg("-q").arg("has-tpm2")
-        .spawn()?.wait().await?;
-    let systemd_analyze_exit = systemd_analyze.code()
-        .filter(|code| (code & !0x7) == 0)
-        .ok_or(CommandError::new("systemd-analyze", systemd_analyze))?;
+    let has_tpm2 = !env::var("GNOMEOS_INSTALL_DISABLE_TPM").is_ok() && {
+        let systemd_analyze  = Command::new("systemd-analyze").arg("-q").arg("has-tpm2")
+            .spawn()?.wait().await?;
+        let systemd_analyze_exit = systemd_analyze.code()
+            .filter(|code| (code & !0x7) == 0)
+            .ok_or(CommandError::new("systemd-analyze", systemd_analyze))?;
 
-    let has_tpm2 = systemd_analyze_exit == 0;
+        systemd_analyze_exit == 0
+    };
+
+    let has_pcrlock = has_tpm2 && !env::var("GNOMEOS_INSTALL_DISABLE_PCRLOCK").is_ok();
 
     let (tx, rx) = tokio::sync::oneshot::channel();
 
@@ -737,7 +742,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .await?;
 
     match rx.await {
-        Ok(recipe) => do_install_handle_errors(conn.object_server(), &conn, recipe.device, recipe.recovery_passphrase, recipe.oem_install, has_tpm2).await?,
+        Ok(recipe) => do_install_handle_errors(conn.object_server(), &conn, recipe.device, recipe.recovery_passphrase, recipe.oem_install, has_tpm2, has_pcrlock).await?,
         Err(err) => Err(err)?
     };
 
