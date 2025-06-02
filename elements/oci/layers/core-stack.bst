@@ -53,6 +53,7 @@ public:
     - groupadd root -r -g 0
     - useradd root -rm -u 0 -g 0 -d /root
     - groupadd -r wheel
+    - useradd --system --groups wheel --shell /bin/bash containeruser
     - |
       cat <<EOF >>/etc/sudoers
       %wheel ALL=(ALL) NOPASSWD: ALL
