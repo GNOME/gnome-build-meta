@@ -59,5 +59,5 @@ public:
       EOF
     - mkdir -p /media
     - mkdir -p /home
-    - useradd --groups wheel --home-dir /home/containeruser --shell /bin/bash containeruser
+    - useradd --groups wheel --create-home --shell /bin/bash containeruser
     - touch /etc/machine-id
