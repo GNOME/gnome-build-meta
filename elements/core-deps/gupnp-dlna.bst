@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gupnp-dlna.git
   track: master
-  ref: gupnp-dlna-0.12.0-9-g8dd1cf53263a8347276b98fe1028e632fe50f851
+  ref: gupnp-dlna-0.12.0-11-g77ad9dc3d6e89f32bd9d85be70bb3efb4a9e960a
 
 build-depends:
 - sdk/gobject-introspection.bst
