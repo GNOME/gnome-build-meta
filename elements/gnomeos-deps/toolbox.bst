@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:containers/toolbox/releases/download/0.1.1/toolbox-0.1.1-vendored.tar.xz
-  ref: ce9b024ef7ca98053359c70ed309eb263bde4df409a8488dc3284dfe3419bdae
+  url: github_files:containers/toolbox/releases/download/0.1.2/toolbox-0.1.2-vendored.tar.xz
+  ref: f376cabd161b2d17a28349b960358318a763cf91797c2c78b217ebf65c5df735
 - kind: patch_queue
   path: patches/toolbox/
 
@@ -20,6 +20,7 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst
+- freedesktop-sdk.bst:components/p11-kit.bst
 
 variables:
   optimize-debug: "false"
