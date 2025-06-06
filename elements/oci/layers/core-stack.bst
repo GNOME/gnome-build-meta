@@ -58,5 +58,9 @@ public:
       EOF
     - mkdir -p /media
     - mkdir -p /home
-    - useradd --groups wheel --create-home --shell /bin/bash containeruser
     - touch /etc/machine-id
+  initial-script:
+    script: |
+      #!/bin/sh
+      sysroot="${1}"
+      useradd --groups wheel --create-home --shell /bin/bash containeruser
