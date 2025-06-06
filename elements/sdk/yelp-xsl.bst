@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp-xsl.git
   track: master
-  ref: 42.1-30-gccb25c4945c1aa4bb84c41d84edd5d8df8ec4318
+  ref: 42.1-34-g40677dbe843edd8eafbe46c93155654992449ec7
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
