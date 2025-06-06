@@ -76,6 +76,24 @@ become stale and you will need to remove and recreate them with an up to date
 image often. Their main usecase is for gitlab-ci which always pulls the latest
 image.
 
+Build OCI images locally:
+
+1. Build the elements::
+
+      $ bst build build oci/platform.bst oci/sdk.bst oci/core.bst
+
+2. Import them into Podman::
+
+      $ bst artifact checkout --tar - oci/platform.bst | podman load
+      $ bst artifact checkout --tar - oci/sdk.bst | podman load
+      $ bst artifact checkout --tar - oci/core.bst | podman load
+
+3. (Optional) Create a toolbox from the core image::
+
+      $ bst artifact checkout --tar - oci/core.bst | podman load
+      $ toolbox create core-nightly -i quay.io/gnome_infrastructure/gnome-build-meta:core-nightly
+      $ toolbox enter core-nightly
+
 Continuous Integration
 ----------------------
 
