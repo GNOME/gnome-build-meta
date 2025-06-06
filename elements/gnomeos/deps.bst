@@ -17,6 +17,7 @@ depends:
 - gnomeos/reload-sysext.bst
 - gnomeos-deps/mokutil.bst
 - gnomeos-deps/vte-config.bst
+- gnomeos-deps/nano-default-editor.bst
 - gnomeos/live.bst
 - gnomeos/systemd-pcrlock-workaround.bst
 - gnomeos/public-keys.bst
