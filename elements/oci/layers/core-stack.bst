@@ -51,7 +51,6 @@ depends:
 public:
   bst:
     integration-commands:
-    - groupadd -r wheel
     - |
       cat <<EOF >>/etc/sudoers
       %wheel ALL=(ALL) NOPASSWD: ALL
@@ -63,4 +62,5 @@ public:
     script: |
       #!/bin/sh
       sysroot="${1}"
+      groupadd -r wheel
       useradd --groups wheel --create-home --shell /bin/bash containeruser
