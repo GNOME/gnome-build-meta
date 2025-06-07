@@ -14,11 +14,11 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/libei.bst
-- freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:
   meson-local: >-
     -Ddocs=true
+    -Dx11=disabled
 public:
   bst:
     split-rules:
