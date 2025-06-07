@@ -6,8 +6,6 @@ depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/python-pefile.bst
-- core-deps/setxkbmap.bst
-- core-deps/xvfb.bst
 - core-deps/zenity.bst
 - gnomeos-deps/grcov.bst
 - gnomeos-deps/sysext-utils.bst
