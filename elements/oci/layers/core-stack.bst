@@ -58,9 +58,14 @@ public:
     - mkdir -p /media
     - mkdir -p /home
     - touch /etc/machine-id
+    - groupadd -r wheel
+    - useradd --groups wheel --create-home --shell /bin/bash containeruser
   initial-script:
     script: |
       #!/bin/sh
       sysroot="${1}"
-      groupadd -r wheel
-      useradd --groups wheel --create-home --shell /bin/bash containeruser
+      chmod 755 ${sysroot}/home/
+      chmod 755 ${sysroot}/home/containeruser
+      # FIMXE: can't run chown since we do not run against
+      # the sysroot and have no containeruser
+      # chown containeruser:containeruser ${sysroot}/home/containeruser
