@@ -19,9 +19,6 @@ sources:
   ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
 
 build-depends:
-# These two are more like runtime deps of the tests suite
-- core-deps/setxkbmap.bst
-- core-deps/xvfb.bst
 - sdk/gtk-doc.bst
 - sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
