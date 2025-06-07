@@ -19,11 +19,13 @@ config:
   - |
     cat <<EOF >"%{install-root}/etc/passwd"
     root:x:0:0:root:/root:/bin/bash
+    containeruser:x:1000:1000::/home/containeruser:/bin/bash
     EOF
 
   - |
     cat <<EOF >"%{install-root}/etc/group"
     root:x:0:
+    containeruser:x:1000:
     EOF
 
 public:

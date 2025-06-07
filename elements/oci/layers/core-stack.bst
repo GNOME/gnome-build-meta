@@ -63,4 +63,5 @@ public:
       #!/bin/sh
       sysroot="${1}"
       groupadd -r wheel
-      useradd --groups wheel --create-home --shell /bin/bash containeruser
+      # 1000 cause we also hardcode it in extra-fs
+      useradd --uid 1000 --groups wheel --create-home --shell /bin/bash containeruser
