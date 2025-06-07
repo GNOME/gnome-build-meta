@@ -31,7 +31,6 @@ runtime-depends:
 depends:
 - core-deps/colord.bst
 - core-deps/libdisplay-info.bst
-- core-deps/startup-notification.bst
 - core-deps/upower.bst
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
@@ -58,3 +57,4 @@ variables:
     -Dprofiler=true
     -Dxwaylad=false
     -Dx11=false
+    -Dstartup_notifiaction=disabled
