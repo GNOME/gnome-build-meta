@@ -1,16 +1,16 @@
-kind: autotools
+kind: meson
 
 sources:
 - kind: git_repo
   url: gnome:yelp.git
   track: master
-  ref: 42.2-25-gdb6dd391aee382a5d32c84ab807c17a0042c6274
+  ref: 42.2-41-gb63b0bfdf5247a582e6bf2198aafd5684a48ad4d
 
 build-depends:
 - sdk-deps/appstream-glib.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/adwaita-icon-theme.bst
