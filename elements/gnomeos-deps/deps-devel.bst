@@ -7,6 +7,7 @@ depends:
 - core-deps/python-dbusmock.bst
 - core-deps/python-pefile.bst
 - core-deps/setxkbmap.bst
+- core-deps/umockdev.bst
 - core-deps/xvfb.bst
 - core-deps/zenity.bst
 - gnomeos-deps/grcov.bst
