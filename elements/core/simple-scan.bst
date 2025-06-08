@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/colord-gtk.bst
 - core-deps/sane-backends.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst

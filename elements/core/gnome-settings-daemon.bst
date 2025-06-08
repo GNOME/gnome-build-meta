@@ -18,7 +18,6 @@ build-depends:
 depends:
 - core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
-- core-deps/colord.bst
 - core-deps/cups-pk-helper.bst
 - core-deps/geocode-glib.bst
 - core-deps/ibus-daemon.bst

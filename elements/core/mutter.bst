@@ -29,7 +29,6 @@ runtime-depends:
 - core/gnome-control-center.bst
 
 depends:
-- core-deps/colord.bst
 - core-deps/libdisplay-info.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
