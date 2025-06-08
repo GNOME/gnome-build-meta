@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:upower/power-profiles-daemon/-/archive/0.23/power-profiles-daemon-0.23.tar.gz
-  ref: ccf6e00093dc5300be48d66d439540bb6239460b602bbd85001c937860de2e5f
+  url: freedesktop_files:upower/power-profiles-daemon/-/archive/0.30/power-profiles-daemon-0.30.tar.gz
+  ref: 90f2c95024861d9f4062abedd514084939224e7a49edd468f001af7260ec8e6c
 
 build-depends:
 - sdk/gtk-doc.bst
