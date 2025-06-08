@@ -7,6 +7,9 @@ sources:
 
 build-depends:
 - sdk/gtk-doc.bst
+- sdk/pygobject.bst
+- core-deps/python-dbusmock.bst
+- core-deps/umockdev.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -17,7 +20,6 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  # Tests depend on umockdev which we don't have
   # Disable manpage until we have argparse-manpage
   # Disable bash completions until we have shtab
   meson-local: >-
@@ -25,4 +27,3 @@ variables:
     -Dgtk_doc=true
     -Dmanpage=disabled
     -Dpylint=disabled
-    -Dtests=false
