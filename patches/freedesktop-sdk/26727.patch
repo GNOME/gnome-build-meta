@@ -1,0 +1,32 @@
+From 6b4ba0b63a612f7d5573dd289fc65a3eaa532da5 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Sun, 8 Jun 2025 01:18:55 +0300
+Subject: [PATCH] oci_builder: Write the image to /var/tmp rather than /tmp
+
+We create a temp file to write the image, but since the images
+can be multiple gigabytes in size its more wise to write them
+to /var/tmp rather than /tmp to avoid running out of space.
+
+https://systemd.io/TEMPORARY_DIRECTORIES/
+---
+ files/oci/oci_builder/image_builder.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/files/oci/oci_builder/image_builder.py b/files/oci/oci_builder/image_builder.py
+index 52d79600b87..fce28b38802 100644
+--- a/files/oci/oci_builder/image_builder.py
++++ b/files/oci/oci_builder/image_builder.py
+@@ -128,7 +128,9 @@ def build_layer(upper, lowers, legacy_config, global_conf):
+     new_legacy_parent = None
+ 
+     with ExitStack() as stack:
+-        tfile = stack.enter_context(tempfile.TemporaryFile(mode="w+b"))
++        # By default tempfile will place it in /tmp, but since its an image we should
++        # use /var/tmp to avoid writing all of it into ram
++        tfile = stack.enter_context(tempfile.TemporaryFile(mode="w+b", dir="/var/tmp"))
+         tar = stack.enter_context(tarfile.open(fileobj=tfile, mode="w:"))
+         lower_tars = []
+         read_mode = "r:gz" if global_conf.compression == Compression.gzip else "r:"
+-- 
+GitLab
+

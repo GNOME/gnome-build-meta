@@ -68,4 +68,6 @@ public:
       chmod 755 ${sysroot}/home/containeruser
       # FIMXE: can't run chown since we do not run against
       # the sysroot and have no containeruser
-      # chown containeruser:containeruser ${sysroot}/home/containeruser
+      groupadd -r wheel
+      useradd --groups wheel --create-home --shell /bin/bash containeruser
+      chown containeruser:containeruser --recursive ${sysroot}/home/containeruser
