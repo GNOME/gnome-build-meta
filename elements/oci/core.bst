@@ -32,7 +32,6 @@ config:
       layer: /layer
       comment: "Import Core layer from GNOME OS"
       config:
-        User: containeruser
         Labels:
           'com.github.containers.toolbox': 'true'
       index-annotations:
