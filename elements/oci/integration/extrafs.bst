@@ -16,16 +16,6 @@ config:
     mkdir -p "%{install-root}/etc"
     mkdir -p "%{install-root}/root"
 
-  - |
-    cat <<EOF >"%{install-root}/etc/passwd"
-    root:x:0:0:root:/root:/bin/bash
-    EOF
-
-  - |
-    cat <<EOF >"%{install-root}/etc/group"
-    root:x:0:
-    EOF
-
 public:
   initial-script:
     script: |

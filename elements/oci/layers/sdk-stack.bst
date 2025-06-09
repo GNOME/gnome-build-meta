@@ -11,6 +11,8 @@ depends:
 public:
   bst:
     integration-commands:
+    - groupadd root -r -g 0
+    - useradd root -rm -u 0 -g 0 -d /root
     - groupadd -r wheel
     - |
       cat <<EOF >>/etc/sudoers
