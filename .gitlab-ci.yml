@@ -235,6 +235,14 @@ deploy-oci:
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/platform.bst | podman load
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/sdk.bst | podman load
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/core.bst | podman load
+
+  # Test that the container can be created
+  # Avoid issues that would prevent the container to start at all
+  # Ex. Error response from daemon: unable to find user containeruser: no matching entries in passwd file
+  - podman run --rm -ti quay.io/gnome_infrastructure/gnome-build-meta:core-$OCI_BRANCH echo hello
+  # Test that PAM is working as well
+  - podman run --rm -ti quay.io/gnome_infrastructure/gnome-build-meta:core-$OCI_BRANCH sudo echo world!
+
   - |
     if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
         ./.gitlab-ci/scripts/publish-oci-quay.sh
