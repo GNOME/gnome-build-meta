@@ -4,9 +4,10 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calendar.git
   track: main
-  ref: 48.1-111-gef5eb8c15503f0e73c3ce4295f1423783ff3fb4a
+  ref: 48.1-128-g33d87c35115f80480775ae5ff5fc7eea526464e3
 
 build-depends:
+- sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
