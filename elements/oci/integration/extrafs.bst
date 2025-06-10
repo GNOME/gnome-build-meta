@@ -14,6 +14,7 @@ config:
     mkdir -p "%{install-root}/dev"
     mkdir -p "%{install-root}/proc"
     mkdir -p "%{install-root}/etc"
+    mkdir -p "%{install-root}/etc/sudoers.d"
     mkdir -p "%{install-root}/root"
 
 public:
@@ -23,5 +24,6 @@ public:
       sysroot="${1}"
       chmod 1777 ${sysroot}/tmp
       chmod 1777 ${sysroot}/var/tmp
+      chmod 755 ${sysroot}/etc/sudoers.d
       chmod 700 ${sysroot}/root
 

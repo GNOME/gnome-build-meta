@@ -61,3 +61,11 @@ public:
     - mkdir -p /home
     - touch /etc/machine-id
     - groupadd -r wheel
+    - useradd --uid 1000 --groups wheel --create-home --shell /bin/bash containeruser
+  initial-script:
+    script: |
+      #!/bin/sh
+      sysroot="${1}"
+      chmod 755 ${sysroot}/home/
+      chmod 755 ${sysroot}/home/containeruser
+      chown 1000:1000 --recursive ${sysroot}/home/containeruser
