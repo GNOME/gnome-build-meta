@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gsettings-desktop-schemas.git
   track: main
-  ref: 48.0-2-ge8599d1666999db7313fefe0456b871faa4580b4
+  ref: 48.0-3-gb87cc677a354d0089d71daa997a4dd9b6fbbf54c
 
 build-depends:
 - sdk/gobject-introspection.bst
