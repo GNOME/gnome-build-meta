@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gdk-pixbuf.git
   track: master
-  ref: 2.42.12-43-g4ff782cd7582748d67689a8d4e4905d7d0eefb5b
+  ref: 2.42.12-46-g77eeed6899c852de98d23ec89abcd7f454c292fe
 
 build-depends:
 - sdk/gi-docgen.bst
