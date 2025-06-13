@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 1.2.0-77-gb0a7232c0230ae3b19ae657cb98d1ddfcaaf4c0d
+  ref: 2.0.alpha.2-0-g37b8c422d2548482d174fa474afd92d7a71901bc
 - kind: cargo2
   ref:
   - kind: registry
@@ -405,46 +405,38 @@ sources:
     name: gobject-sys
     version: 0.20.9
     sha: c773a3cb38a419ad9c26c81d177d96b4b08980e8bdbbf32dace883e96e96e7e3
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+  - kind: registry
     name: gufo
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 7a501190eb09012d91565b52ee9bb927d9ed9a34649e90b77ae0deaf2fcdd3f8
+  - kind: registry
     name: gufo-common
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 8cb5af73614babb20f5f4500717610d59a9e8231def2f56dfb92662104d10ce3
+  - kind: registry
     name: gufo-exif
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 005e335f23848568d44652823834de7b65a861241e6f6e40e44a7d5f03908a98
+  - kind: registry
     name: gufo-jpeg
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 20c9d27fcd8cd5bc32c47784a9fcb808fb9c2203b96333a06a57792a5b709ebd
+  - kind: registry
     name: gufo-png
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 03759e1097203f420e098433f9759e0ace4a3eefef86dad2da9b0bb7fe91e653
+  - kind: registry
     name: gufo-tiff
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: e56111e257bdfde9a1faec1d373bcd629c02ecf6a136d45f87eabddf31d42675
+  - kind: registry
     name: gufo-webp
-    version: 0.3.0
-  - kind: git
-    commit: a379d120ac91748ead8fdd0e0f76dbef9b77d46c
-    repo: github:gufo-rs/gufo.git
+    version: 0.3.0-alpha
+    sha: 8c20825644cc8f8a1cd594e818ab585925ad32bd0dad79b55504112f56b8248e
+  - kind: registry
     name: gufo-xmp
-    version: 0.3.0
+    version: 0.3.0-alpha
+    sha: e0225bd9d5bf73ab3785b7a455554a49f4e78c7653253da60b79841af34be644
   - kind: registry
     name: half
     version: 2.5.0
