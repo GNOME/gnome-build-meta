@@ -730,7 +730,14 @@ async fn main() -> Result<(), Box<dyn Error>> {
         systemd_analyze_exit == 0
     };
 
-    let has_pcrlock = has_tpm2 && !env::var("GNOMEOS_INSTALL_DISABLE_PCRLOCK").is_ok();
+    let has_pcrlock = has_tpm2 && !env::var("GNOMEOS_INSTALL_DISABLE_PCRLOCK").is_ok() && {
+        let systemd_pcrlock  = Command::new("/usr/lib/systemd/systemd-pcrlock").arg("-q").arg("is-supported")
+            .spawn()?.wait().await?;
+        let systemd_pcrlock_exit = systemd_pcrlock.code()
+            .ok_or(CommandError::new("systemd-pcrlock", systemd_pcrlock))?;
+
+        systemd_pcrlock_exit == 0
+    };
 
     let (tx, rx) = tokio::sync::oneshot::channel();
 
