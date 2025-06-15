@@ -8,7 +8,8 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/gyp.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:components/pkg-config.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:components/icu.bst
@@ -18,7 +19,7 @@ depends:
 
 variables:
   optimize-debug: "false"
-  make-install: make -j1 install %{make-args} DESTDIR='%{install-root}'
+  debug_flags: "-g1"
 
 config:
   configure-commands:
