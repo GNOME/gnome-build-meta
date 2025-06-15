@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: jjardon/stub-x11
-  ref: 48.0-148-g79e0a6236362f3ce8f7214ac09a0657f7a595630
+  ref: 48.0-170-ge1110ceef196cc4e3dd549c9c69c114de8d2a235
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
