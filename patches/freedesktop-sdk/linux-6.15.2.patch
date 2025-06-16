@@ -1,0 +1,13 @@
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index e0a76d392..ca71dbe22 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,7 +4,7 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.15.1-0-g3ef49626da6dd67013fc2cf0a4e4c9e158bb59f7
++  ref: v6.15.2-0-gfc85704c3dae5ac1cb3c94045727241cd72871ff
+ - kind: local
+   path: files/linux/config-utils.sh
+ - kind: local
