@@ -1,0 +1,1 @@
+ACTION!="remove", SUBSYSTEM=="block", ENV{ID_PART_ENTRY_TYPE}=="b550423b-dab2-43ff-a91a-3491c31190ea", TAG+="systemd", SYMLINK+="disk/gnomeos/debug", ENV{SYSTEMD_WANTS}+="dump-journal.service"

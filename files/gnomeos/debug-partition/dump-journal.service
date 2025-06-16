@@ -1,0 +1,7 @@
+[Unit]
+DefaultDependencies=no
+RequiresMountsFor=/run/gnomeos/debug
+
+[Service]
+ExecStart=journalctl -b0 --no-tail -f
+StandardOutput=append:/run/gnomeos/debug/%m-%b.log

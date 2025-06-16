@@ -24,6 +24,7 @@ depends:
 - gnomeos/os-release-user.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/live.bst
+- gnomeos/debug-partition.bst
 
 (?):
 - arch in ["x86_64"]:

@@ -1,0 +1,6 @@
+[Unit]
+BindsTo=dev-disk-gnomeos-debug.device
+After=dev-disk-gnomeos-debug.device
+[Mount]
+What=/dev/disk/gnomeos/debug
+Where=/run/gnomeos/debug
