@@ -54,3 +54,20 @@ install_data(
   'gnomeos-installer.service',
   install_dir: systemdsystemunitdir,
 )
+
+install_data(
+  'data/icons/hicolor/scalable/apps/org.gnome.Installer.Devel.svg',
+  'data/icons/hicolor/scalable/apps/org.gnome.Installer.svg',
+  install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps',
+)
+
+install_data(
+  'data/icons/hicolor/symbolic/apps/org.gnome.Installer-symbolic.svg',
+  install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'symbolic' / 'apps',
+)
+
+install_data(
+  'data/icons/hicolor/symbolic/apps/org.gnome.Installer-symbolic.svg',
+  rename: 'org.gnome.Installer.Devel-symbolic.svg',
+  install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'symbolic' / 'apps',
+)

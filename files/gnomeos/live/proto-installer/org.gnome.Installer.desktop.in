@@ -9,6 +9,7 @@ OnlyShowIn=GNOME;
 Categories=System;GNOME;GTK;
 X-GNOME-UsesNotifications=true
 Actions=oem-install;wait-for-tour-mode;
+Icon=org.gnome.Installer.Devel
 
 [Desktop Action oem-install]
 Exec=/usr/lib/gnomeos-installer/installer.py --oem-mode
