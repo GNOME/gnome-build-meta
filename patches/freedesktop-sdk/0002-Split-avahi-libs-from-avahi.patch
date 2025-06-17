@@ -1,0 +1,166 @@
+From 24ccfef117deee8b0f5061225e9b43bd909a47e5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ignacy=20Kuchci=C5=84ski?= <ignacykuchcinski@gmail.com>
+Date: Sun, 22 Jun 2025 12:44:50 +0200
+Subject: [PATCH 2/5] Split avahi-libs from avahi
+
+Make it possible to add avahi-libs as a dependency for elements that get
+pulled into flatpak, without pulling avahi-daemon as well.
+---
+ elements/components.bst                 |  1 +
+ elements/components/avahi-base.bst      | 14 ++++++++++++++
+ elements/components/avahi-gobject.bst   |  1 +
+ elements/components/avahi-libs.bst      | 20 ++++++++++++++++++++
+ elements/components/avahi.bst           |  3 +--
+ elements/components/geoclue-base.bst    |  1 +
+ elements/components/ostree.bst          |  1 +
+ elements/components/pipewire-base.bst   |  1 +
+ elements/components/pipewire-daemon.bst |  1 +
+ 9 files changed, 41 insertions(+), 2 deletions(-)
+ create mode 100644 elements/components/avahi-libs.bst
+
+diff --git a/elements/components.bst b/elements/components.bst
+index 351b10d69..a9cde4198 100644
+--- a/elements/components.bst
++++ b/elements/components.bst
+@@ -21,6 +21,7 @@ depends:
+ - components/autoconf2.69.bst
+ - components/automake.bst
+ - components/avahi-base.bst
++- components/avahi-libs.bst
+ - components/avahi-gobject.bst
+ - components/avahi-manifest.bst
+ - components/avahi-ui.bst
+diff --git a/elements/components/avahi-base.bst b/elements/components/avahi-base.bst
+index ca42d9a3e..1c18c71ae 100644
+--- a/elements/components/avahi-base.bst
++++ b/elements/components/avahi-base.bst
+@@ -45,6 +45,20 @@ sources:
+ public:
+   bst:
+     split-rules:
++      libs:
++      - "%{includedir}/avahi-client"
++      - "%{includedir}/avahi-client/**"
++      - "%{includedir}/avahi-common"
++      - "%{includedir}/avahi-common/**"
++      - "%{libdir}/pkgconfig/avahi-client.pc"
++      - "%{libdir}/libavahi-client.so*"
++      - "%{libdir}/libavahi-common.so*"
++      - "%{debugdir}%{libdir}/libavahi-client.so*.debug"
++      - "%{debugdir}%{libdir}/libavahi-common.so*.debug"
++      - "%{sourcedir}/%{element-name}/avahi-client"
++      - "%{sourcedir}/%{element-name}/avahi-client/**"
++      - "%{sourcedir}/%{element-name}/avahi-common"
++      - "%{sourcedir}/%{element-name}/avahi-common/**"
+       ui:
+       - "%{bindir}/bssh"
+       - "%{bindir}/bvnc"
+diff --git a/elements/components/avahi-gobject.bst b/elements/components/avahi-gobject.bst
+index d1deafa8a..4df8ca96a 100644
+--- a/elements/components/avahi-gobject.bst
++++ b/elements/components/avahi-gobject.bst
+@@ -5,6 +5,7 @@ build-depends:
+ 
+ runtime-depends:
+ - components/avahi.bst
++- components/avahi-libs.bst
+ - components/pygobject.bst
+ - components/python3-dbus.bst
+ 
+diff --git a/elements/components/avahi-libs.bst b/elements/components/avahi-libs.bst
+new file mode 100644
+index 000000000..bdf964e3e
+--- /dev/null
++++ b/elements/components/avahi-libs.bst
+@@ -0,0 +1,20 @@
++kind: filter
++
++build-depends:
++- components/avahi-base.bst
++
++runtime-depends:
++- public-stacks/runtime-minimal.bst
++- components/libdbus.bst
++
++config:
++  include:
++  - libs
++
++public:
++  bst:
++    split-rules:
++      devel:
++        (>):
++        - "%{libdir}/libavahi-common.so"
++        - "%{libdir}/libavahi-client.so"
+diff --git a/elements/components/avahi.bst b/elements/components/avahi.bst
+index aa8c40081..cdfbfc1d3 100644
+--- a/elements/components/avahi.bst
++++ b/elements/components/avahi.bst
+@@ -15,6 +15,7 @@ runtime-depends:
+ 
+ config:
+   exclude:
++  - libs
+   - ui
+   - gobject
+   include-orphans: True
+@@ -24,7 +25,5 @@ public:
+     split-rules:
+       devel:
+         (>):
+-        - "%{libdir}/libavahi-client.so"
+-        - "%{libdir}/libavahi-common.so"
+         - "%{libdir}/libavahi-core.so"
+         - "%{libdir}/libavahi-glib.so"
+diff --git a/elements/components/geoclue-base.bst b/elements/components/geoclue-base.bst
+index d8eac21df..641fc27e0 100644
+--- a/elements/components/geoclue-base.bst
++++ b/elements/components/geoclue-base.bst
+@@ -12,6 +12,7 @@ build-depends:
+ - components/glib.bst
+ - components/libsoup.bst
+ - components/avahi-gobject.bst
++- components/avahi-libs.bst
+ 
+ variables:
+   # FIXME: Need modem-manager
+diff --git a/elements/components/ostree.bst b/elements/components/ostree.bst
+index accc45a3b..de12a6cdf 100644
+--- a/elements/components/ostree.bst
++++ b/elements/components/ostree.bst
+@@ -16,6 +16,7 @@ depends:
+ - components/systemd.bst
+ - components/libarchive.bst
+ - components/avahi.bst
++- components/avahi-libs.bst
+ - components/gnupg.bst
+ 
+ variables:
+diff --git a/elements/components/pipewire-base.bst b/elements/components/pipewire-base.bst
+index 7af8bf22b..892480494 100644
+--- a/elements/components/pipewire-base.bst
++++ b/elements/components/pipewire-base.bst
+@@ -8,6 +8,7 @@ build-depends:
+ - bootstrap-import.bst
+ - components/alsa-lib.bst
+ - components/avahi.bst
++- components/avahi-libs.bst
+ - components/bluez.bst
+ - components/bluez-libs.bst
+ - components/dbus.bst
+diff --git a/elements/components/pipewire-daemon.bst b/elements/components/pipewire-daemon.bst
+index acbb44930..68ea0ef5d 100644
+--- a/elements/components/pipewire-daemon.bst
++++ b/elements/components/pipewire-daemon.bst
+@@ -5,6 +5,7 @@ build-depends:
+ 
+ runtime-depends:
+ - components/avahi.bst
++- components/avahi-libs.bst
+ - components/pipewire.bst
+ - components/sbc.bst
+ - components/bluez.bst
+-- 
+2.49.0
+
