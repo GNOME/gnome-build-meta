@@ -1,0 +1,44 @@
+From 1e9d5573ee709e1e444dd0ae214fe24adaa436f2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ignacy=20Kuchci=C5=84ski?= <ignacykuchcinski@gmail.com>
+Date: Mon, 16 Jun 2025 13:20:34 +0200
+Subject: [PATCH] vim: Hide from app grid
+
+Hide vim icon from GNOME Shell app grid by setting NoDisplay=true in
+the desktop file.
+---
+ elements/components/vim.bst             |  2 ++
+ patches/vim/vim-not-show-in-gnome.patch | 12 ++++++++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 patches/vim/vim-not-show-in-gnome.patch
+
+diff --git a/elements/components/vim.bst b/elements/components/vim.bst
+index bd2d35c8b..3f5a8484c 100644
+--- a/elements/components/vim.bst
++++ b/elements/components/vim.bst
+@@ -14,3 +14,5 @@ sources:
+   url: github:vim/vim.git
+   track: v*
+   ref: v9.1.1436-0-gce2769b5fe4e036afeaaf47b2a1e7d919ecc20f3
++- kind: patch
++  path: patches/vim/vim-not-show-in-gnome.patch
+diff --git a/patches/vim/vim-not-show-in-gnome.patch b/patches/vim/vim-not-show-in-gnome.patch
+new file mode 100644
+index 000000000..b335ae981
+--- /dev/null
++++ b/patches/vim/vim-not-show-in-gnome.patch
+@@ -0,0 +1,12 @@
++diff --git a/runtime/vim.desktop b/runtime/vim.desktop
++index a8672cb2c..715d07182 100644
++--- a/runtime/vim.desktop
+++++ b/runtime/vim.desktop
++@@ -111,6 +111,7 @@ Comment[zh_TW]=編輯文字檔
++ TryExec=vim
++ Exec=vim %F
++ Terminal=true
+++NoDisplay=true
++ Type=Application
++ # Translators: Search terms to find this application. Do NOT change the semicolons! The list MUST also end with a semicolon!
++ Keywords[ca]=Text;editor;
+-- 
+2.49.0
+
