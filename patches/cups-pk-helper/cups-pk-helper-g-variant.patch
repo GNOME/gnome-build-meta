@@ -1,0 +1,13 @@
+diff --git a/src/cups-pk-helper-mechanism.c b/src/cups-pk-helper-mechanism.c
+index 18534e9..daae40a 100644
+--- a/src/cups-pk-helper-mechanism.c
++++ b/src/cups-pk-helper-mechanism.c
+@@ -699,7 +699,7 @@ cph_mechanism_devices_get (CphIfaceMechanism      *object,
+                                     &devices);
+ 
+         if (devices == NULL)
+-                devices = g_variant_new_array (G_VARIANT_TYPE_DICT_ENTRY, NULL, 0);
++                devices = g_variant_new_array (G_VARIANT_TYPE("{ss}"), NULL, 0);
+ 
+         cph_iface_mechanism_complete_devices_get (
+                         object, context,

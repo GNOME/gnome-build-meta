@@ -6,6 +6,8 @@ sources:
   ref: 66070ddb448fe9fcee76aa26be2ede5a80f85563e3a4afd59d2bfd79fbe2e831
 - kind: local
   path: files/cups-pk-helper/cups-pk-helper.service
+- kind: patch
+  path: patches/cups-pk-helper/cups-pk-helper-g-variant.patch
 
 build-depends:
 - sdk/glib.bst
