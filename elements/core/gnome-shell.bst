@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 49.alpha.0-16-g57b537851a78bac4ef4bfa6f8e3a7416e8f3be7f
+  ref: 49.alpha.0-18-g375f8e4c210fb6c09d0bffca200acca746bd7eff
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -14,6 +14,10 @@ sources:
   url: gnome:libgnome-volume-control.git
   directory: subprojects/gvc
   ref: 5f9768a2eac29c1ed56f1fbb449a77a3523683b6
+- kind: git_repo
+  url: gnome:libshew.git
+  directory: subprojects/libshew
+  ref: ed782477cb5164320ae4f731d49bc5d475ab2a52
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
 
