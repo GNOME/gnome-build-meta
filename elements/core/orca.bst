@@ -3,10 +3,11 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: 48.rc-126-g2581e5ccbe3aab4248484a1de09ea14099008b39
+  ref: 48.rc-138-gb02a3af2ef2317e70c8a87b73da1a80bb800f644
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
+- core-deps/dasbus.bst
 - core-deps/pyatspi.bst
 - core-deps/speech-dispatcher.bst
 - sdk/at-spi2-core.bst
