@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/papers.git
   track: main
-  ref: 48.0-290-ga790e4ddddc20cf840c56d37f7f3da79b950de19
+  ref: 48.0-291-g78329110baa29726b10c7b1909e9056e4d525039
 - kind: cargo2
   ref:
   - kind: registry
