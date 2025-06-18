@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: jjardon/stub-x11
-  ref: 48.0-170-ge1110ceef196cc4e3dd549c9c69c114de8d2a235
+  ref: 48.0-214-g4a745c5856ba74156df91270056e9e8511349a87
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -22,8 +22,9 @@ build-depends:
 # These two are more like runtime deps of the tests suite
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/gtk-doc.bst
+- sdk/blueprint-compiler.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst
