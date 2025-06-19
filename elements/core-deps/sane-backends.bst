@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gitlab_files:sane-project/backends/uploads/104f09c07d35519cc8e72e604f11643f/sane-backends-1.0.32.tar.gz
-  ref: 3a28c237c0a72767086202379f6dc92dbb63ec08dfbab22312cba80e238bb114
+  url: gitlab_files:-/project/429008/uploads/843c156420e211859e974f78f64c3ea3/sane-backends-1.4.0.tar.gz
+  ref: f99205c903dfe2fb8990f0c531232c9a00ec9c2c66ac7cb0ce50b4af9f407a72
 - kind: local
   path: files/sane-backends/sysusers.conf
 
@@ -19,5 +19,7 @@ depends:
 config:
   install-commands:
     (>):
-    - install -Dm 644 tools/udev/libsane.rules %{install-root}$(pkg-config --variable=udevdir udev)/rules.d/60-libsane.rules
-    - install -Dm 644 sysusers.conf %{install-root}$(pkg-config --variable=sysusersdir systemd)/libsane.conf
+    - |
+      install -Dm 644 tools/udev/libsane.rules %{install-root}$(pkg-config --variable=udevdir udev)/rules.d/60-libsane.rules
+    - |
+      install -Dm 644 sysusers.conf %{install-root}$(pkg-config --variable=sysusersdir systemd)/libsane.conf
