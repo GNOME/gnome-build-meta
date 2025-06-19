@@ -8,6 +8,7 @@ kind: meson
 depends:
   (>):
   - sdk/gtk.bst
+  - sdk/libglycin.bst
 
 variables:
   meson-local: >-

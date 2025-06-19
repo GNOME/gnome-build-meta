@@ -35,6 +35,7 @@ depends:
 - sdk/libadwaita.bst
 - sdk/libdex.bst
 - sdk/libgee.bst
+- sdk/libglycin-gtk4.bst
 - sdk/libhandy.bst
 - sdk/libibus.bst
 - sdk/libmanette-0.2.bst
