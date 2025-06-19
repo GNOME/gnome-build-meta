@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 48.0-29-gcf8d17f2af657e830659ce5adc42c347f40a7b02
+  ref: 48.0-30-g020ea74ba965a9e26cbca3d7f7cc6b514af1f9b8
 - kind: cargo2
 
   ref:
@@ -90,8 +90,8 @@ sources:
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
   - kind: registry
     name: bitflags
-    version: 2.8.0
-    sha: 8f68f53c83ab957f72c32642f3868eec03eb974d1fb82e453128456482613d36
+    version: 2.9.1
+    sha: 1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967
   - kind: registry
     name: block
     version: 0.1.6
@@ -145,9 +145,21 @@ sources:
     version: 1.4.2
     sha: a97769d94ddab943e4510d138150169a2758b5ef3eb191a9ee688de3e23ef7b3
   - kind: registry
+    name: crossbeam-deque
+    version: 0.8.6
+    sha: 9dd111b7b7f7d55b72c0a6ae361660ee5853c9af73f70c3c2ef6858b950e2e51
+  - kind: registry
+    name: crossbeam-epoch
+    version: 0.9.18
+    sha: 5b82ac4a3c2ca9c3460964f020e1402edd5753411d7737aa39c3714ad1b5420e
+  - kind: registry
     name: crossbeam-utils
     version: 0.8.21
     sha: d0a5c400df2834b80a4c3327b3aad3a4c4cd4de0629063962b03235697506a28
+  - kind: registry
+    name: crunchy
+    version: 0.2.3
+    sha: 43da5946c66ffcc7745f48db692ffbb10a83bfe0afd96235c5c2a4fb23994929
   - kind: registry
     name: displaydoc
     version: 0.2.5
@@ -160,6 +172,14 @@ sources:
     name: dunce
     version: 1.0.5
     sha: 92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813
+  - kind: registry
+    name: either
+    version: 1.15.0
+    sha: 48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719
+  - kind: registry
+    name: encoding_rs
+    version: 0.8.35
+    sha: 75030f3c4f45dafd7586dd6780965a8c7e8e285a5ecb86713e63a79c5b2766f3
   - kind: registry
     name: endi
     version: 1.1.0
@@ -326,12 +346,12 @@ sources:
     sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: registry
     name: glycin
-    version: 2.1.1
-    sha: 37cb9e103cb6b8925bf5e8a1cf8a1166797d8aaefaabd03e68cf6ad7443a1baa
+    version: 3.0.0-alpha
+    sha: 50c311a183eadcf8775c816f8802b032f211dfa627f6bfeb59e8ecc5879e219a
   - kind: registry
     name: glycin-utils
-    version: 3.0.1
-    sha: c0816d1db00696479cda3cd6c914fb07115982b019dac96555d203c0d5b6d37a
+    version: 4.0.0-alpha
+    sha: 783271f52742ac92a8f4557f954ed9a7377f6f216bbfc12253fc510abfc9a2b1
   - kind: registry
     name: gobject-sys
     version: 0.20.9
@@ -366,36 +386,36 @@ sources:
     sha: 41e03b01e54d77c310e1d98647d73f996d04b2f29b9121fe493ea525a7ec03d6
   - kind: registry
     name: gufo
-    version: 0.2.0
-    sha: 2a9601cdbed208693a6ab7a084cb1e2e78bffdfcd96210ec97f5f5eb19ae5fe8
+    version: 0.3.0-alpha
+    sha: 7a501190eb09012d91565b52ee9bb927d9ed9a34649e90b77ae0deaf2fcdd3f8
   - kind: registry
     name: gufo-common
-    version: 0.2.0
-    sha: ccb2b4c040e67e6d6ad954f04693a11864df82bce6c6c468524b6a78bb75581f
+    version: 0.3.0-alpha
+    sha: 8cb5af73614babb20f5f4500717610d59a9e8231def2f56dfb92662104d10ce3
   - kind: registry
     name: gufo-exif
-    version: 0.2.0
-    sha: ca82b09b4055d19955579ac4d3fc9ead97392d616624863bd55af500d3232ff0
+    version: 0.3.0-alpha
+    sha: 005e335f23848568d44652823834de7b65a861241e6f6e40e44a7d5f03908a98
   - kind: registry
     name: gufo-jpeg
-    version: 0.2.0
-    sha: 047379e4825d1a8581f0bf0daa841d71eff1503229bcdef004ad1d18e17b39f0
+    version: 0.3.0-alpha
+    sha: 20c9d27fcd8cd5bc32c47784a9fcb808fb9c2203b96333a06a57792a5b709ebd
   - kind: registry
     name: gufo-png
-    version: 0.2.0
-    sha: b07a166e53b637b2ccc4eb4ab61b9daaccc806e150af227f596a099448f10752
+    version: 0.3.0-alpha
+    sha: 03759e1097203f420e098433f9759e0ace4a3eefef86dad2da9b0bb7fe91e653
   - kind: registry
     name: gufo-tiff
-    version: 0.2.0
-    sha: 84e69f1a75908282b76dddc5e643de72b1598a6cf837b97786461514550be4ed
+    version: 0.3.0-alpha
+    sha: e56111e257bdfde9a1faec1d373bcd629c02ecf6a136d45f87eabddf31d42675
   - kind: registry
     name: gufo-webp
-    version: 0.2.0
-    sha: 846f879d7abcab5b6bb32adae0f8006bbaab3eec9d2a17859d5090925389cf5f
+    version: 0.3.0-alpha
+    sha: 8c20825644cc8f8a1cd594e818ab585925ad32bd0dad79b55504112f56b8248e
   - kind: registry
     name: gufo-xmp
-    version: 0.2.0
-    sha: 46c6dd9093b5167ca6808e07d163d215d5a1747999579df320e1259d9cec7e6b
+    version: 0.3.0-alpha
+    sha: e0225bd9d5bf73ab3785b7a455554a49f4e78c7653253da60b79841af34be644
   - kind: registry
     name: gvdb
     version: 0.8.0
@@ -408,6 +428,10 @@ sources:
     name: gweather-sys
     version: 4.5.0
     sha: 7e3b0a9e7c2ee9b88ba86e80e75a4f54c374c50ac2e02e8df5d6e08909ed9d2e
+  - kind: registry
+    name: half
+    version: 2.6.0
+    sha: 459196ed295495a68f7d7fe1d84f6c4b7ff0e21fe3017b2f283c6fac3ad803c9
   - kind: registry
     name: hashbrown
     version: 0.15.2
@@ -684,6 +708,14 @@ sources:
     name: rand_core
     version: 0.9.2
     sha: 7a509b1a2ffbe92afab0e55c8fd99dea1c280e8171bd2d88682bb20bc41cbc2c
+  - kind: registry
+    name: rayon
+    version: 1.10.0
+    sha: b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa
+  - kind: registry
+    name: rayon-core
+    version: 1.12.1
+    sha: 1465873a3dfdaa8ae7cb14b4383657caab0b3e8a0aa9ae8e04b044854c8dfce2
   - kind: registry
     name: regex
     version: 1.11.1
