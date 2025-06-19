@@ -1,0 +1,20 @@
+commit fd52a67c910e0bc1dc27369eb036c92c6ed26787
+Author: Valentin David <me@valentindavid.com>
+Date:   Thu Jun 19 19:33:01 2025 +0200
+
+    linux: Add IWLMLD missing module
+    
+    Some of the Intel WiFi cards were moved in this module.
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 6fb4bf806..7f58a2260 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -405,6 +405,7 @@ enable WLAN
+ module IWLWIFI
+ module IWLMVM
+ module IWLDVM
++module IWLMLD
+ module ATH9K
+ module ATH10K
+ module ATH10K_PCI
