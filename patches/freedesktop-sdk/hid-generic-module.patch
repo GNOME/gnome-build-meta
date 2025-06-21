@@ -1,0 +1,13 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index e1129ff15..43400430a 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -1149,7 +1149,7 @@ esac
+ 
+ # HID drivers
+ module HID_MULTITOUCH
+-module HID_GENERIC
++remove HID_GENERIC; module HID_GENERIC
+ if has ACPI && has I2C; then
+     module I2C_HID_ACPI
+ fi
