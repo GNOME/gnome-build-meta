@@ -465,7 +465,8 @@ update_refs:
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache
-  - ${BST} source push
+  - ${BST} source push --deps all flatpak-runtimes.bst gnomeos/build-non-images.bst gnomeos/live-image.bst
+
 
 update_mimeapps:
   extends:
