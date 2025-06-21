@@ -7,5 +7,5 @@ install() {
           install_file "${command}"
       fi
   done
-  install_file /usr/bin/dmsetup
+  install_files /usr/bin/dmsetup /usr/bin/lvm
 }
