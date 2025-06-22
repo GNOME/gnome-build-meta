@@ -37,7 +37,7 @@ config:
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
-    components/ibus.bst: sdk/libibus.bst
+    components/libibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
     components/libnotify.bst: sdk/libnotify.bst
     components/librsvg.bst: sdk/librsvg.bst
