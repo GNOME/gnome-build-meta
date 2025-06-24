@@ -1,143 +1,425 @@
-From e2e4647281ff5f666597e979f582ce780cb31604 Mon Sep 17 00:00:00 2001
-From: Michael Catanzaro <mcatanzaro@redhat.com>
-Date: Fri, 30 May 2025 15:35:03 -0500
-Subject: [PATCH] [GTK] 2.49.2 does not build for GTK 3
- https://bugs.webkit.org/show_bug.cgi?id=293816
+From 38464a7003c6bf54820f6504fcd871892562c6a5 Mon Sep 17 00:00:00 2001
+From: Diego Pino Garcia <dpino@igalia.com>
+Date: Fri, 27 Jun 2025 08:58:20 -0700
+Subject: [PATCH] [GTK] Unreviewed, fix build after 296441@main
+ https://bugs.webkit.org/show_bug.cgi?id=294750
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Unreviewed build fixes.
+Fix build error: 'error: use of ‘window’ before deduction of ‘auto’'.
+
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp:
+(webkit_dom_dom_window_webkit_message_handlers_post_message):
+
+Canonical link: https://commits.webkit.org/296729@main
 ---
- .../WebCore/Modules/mediastream/MediaStreamTrack.cpp   |  6 ++++++
- Source/WebCore/Modules/mediastream/MediaStreamTrack.h  |  2 +-
- .../API/gtk/DOM/WebKitDOMCharacterData.cpp             |  2 ++
- .../API/gtk/DOM/WebKitDOMDOMSelection.cpp              | 10 +++++-----
- .../InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp |  1 +
- .../WebCoreSupport/glib/WebEditorClientGLib.cpp        |  1 +
- Tools/TestWebKitAPI/Tests/WebKitGLib/TestUIClient.cpp  |  2 +-
- Tools/TestWebKitAPI/glib/WebKitGLib/TestMain.h         |  2 ++
- 8 files changed, 19 insertions(+), 7 deletions(-)
+ .../InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp       | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp b/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
-index a401952f20b7..41df25b748e5 100644
---- a/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
-+++ b/Source/WebCore/Modules/mediastream/MediaStreamTrack.cpp
-@@ -31,6 +31,7 @@
- #if ENABLE(MEDIA_STREAM)
- 
- #include "CommonAtomStrings.h"
-+#include "ContextDestructionObserverInlines.h"
- #include "Document.h"
- #include "Event.h"
- #include "EventNames.h"
-@@ -645,6 +646,11 @@ Ref<MediaStreamTrack> MediaStreamTrack::create(ScriptExecutionContext& context,
-     return track;
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp
+index faa6ac17b7e6..9ab5ef182740 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMWindow.cpp
+@@ -1048,14 +1048,14 @@ glong webkit_dom_dom_window_get_orientation(WebKitDOMDOMWindow* self)
+ #endif /* ENABLE(ORIENTATION_EVENTS) */
  }
  
-+ScriptExecutionContext* MediaStreamTrack::scriptExecutionContext() const
-+{
-+    return ActiveDOMObject::scriptExecutionContext();
-+}
-+
- #if !RELEASE_LOG_DISABLED
- WTFLogChannel& MediaStreamTrack::logChannel() const
+-gboolean webkit_dom_dom_window_webkit_message_handlers_post_message(WebKitDOMDOMWindow* window, const gchar* handlerName, const gchar* message)
++gboolean webkit_dom_dom_window_webkit_message_handlers_post_message(WebKitDOMDOMWindow* self, const gchar* handlerName, const gchar* message)
  {
-diff --git a/Source/WebCore/Modules/mediastream/MediaStreamTrack.h b/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
-index 9beb8a93fc42..cd42ed010b4c 100644
---- a/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
-+++ b/Source/WebCore/Modules/mediastream/MediaStreamTrack.h
-@@ -189,7 +189,7 @@ class MediaStreamTrack
- protected:
-     MediaStreamTrack(ScriptExecutionContext&, Ref<MediaStreamTrackPrivate>&&);
+-    g_return_val_if_fail(WEBKIT_DOM_IS_DOM_WINDOW(window), FALSE);
++    g_return_val_if_fail(WEBKIT_DOM_IS_DOM_WINDOW(self), FALSE);
+     g_return_val_if_fail(handlerName, FALSE);
+     g_return_val_if_fail(message, FALSE);
  
--    ScriptExecutionContext* scriptExecutionContext() const final { return ActiveDOMObject::scriptExecutionContext(); }
-+    ScriptExecutionContext* scriptExecutionContext() const final;
+ #if ENABLE(USER_MESSAGE_HANDLERS)
+-    auto* window = WebKit::core(window);
++    auto* window = WebKit::core(self);
+     if (!window->shouldHaveWebKitNamespaceForWorld(WebCore::mainThreadNormalWorldSingleton()))
+         return FALSE;
  
- private:
-     explicit MediaStreamTrack(MediaStreamTrack&);
-diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
-index 200689e76721..c1fec9da2d2c 100644
---- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
-+++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMCharacterData.cpp
-@@ -24,8 +24,10 @@
- #include "DOMObjectCache.h"
- #include <WebCore/DOMException.h>
- #include <WebCore/Document.h>
-+#include <WebCore/DocumentInlines.h>
- #include "GObjectEventListener.h"
- #include <WebCore/JSExecState.h>
-+#include <WebCore/ShadowRoot.h>
- #include "WebKitDOMCharacterDataPrivate.h"
- #include "WebKitDOMElementPrivate.h"
- #include "WebKitDOMEventPrivate.h"
-diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
-index c5e283b08eab..2233726e3752 100644
---- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
-+++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDOMSelection.cpp
-@@ -397,7 +397,7 @@ void webkit_dom_dom_selection_set_base_and_extent(WebKitDOMDOMSelection* self, W
-     WebCore::DOMSelection* item = WebKit::core(self);
-     WebCore::Node* convertedBaseNode = WebKit::core(baseNode);
-     WebCore::Node* convertedExtentNode = WebKit::core(extentNode);
--    item->setBaseAndExtent(convertedBaseNode, baseOffset, convertedExtentNode, extentOffset);
-+    item->setBaseAndExtent(*convertedBaseNode, baseOffset, *convertedExtentNode, extentOffset);
+ 
+From 31e27a58c3e3fe92faee345e0f626cf70070f422 Mon Sep 17 00:00:00 2001
+From: Diego Pino Garcia <dpino@igalia.com>
+Date: Fri, 27 Jun 2025 17:35:33 +0200
+Subject: [PATCH] [GTK3] Fix build after 296427@main
+ https://bugs.webkit.org/show_bug.cgi?id=289440
+
+Reviewed by NOBODY (OOPS!).
+
+Rename setter/getter functions, according to changes in 296427@main.
+
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp:
+(webkit_dom_html_base_element_set_href):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp:
+(webkit_dom_html_button_element_set_button_type):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp:
+(webkit_dom_html_canvas_element_set_width):
+(webkit_dom_html_canvas_element_set_height):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLElement.cpp:
+(webkit_dom_html_element_set_dir):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp:
+(webkit_dom_html_embed_element_get_height):
+(webkit_dom_html_embed_element_get_width):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLFormElement.cpp:
+(webkit_dom_html_form_element_set_enctype):
+(webkit_dom_html_form_element_set_encoding):
+(webkit_dom_html_form_element_set_method):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLImageElement.cpp:
+(webkit_dom_html_image_element_set_height):
+(webkit_dom_html_image_element_get_hspace):
+(webkit_dom_html_image_element_get_vspace):
+(webkit_dom_html_image_element_set_width):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLInputElement.cpp:
+(webkit_dom_html_input_element_set_height):
+(webkit_dom_html_input_element_set_input_type):
+(webkit_dom_html_input_element_get_default_value):
+(webkit_dom_html_input_element_set_default_value):
+(webkit_dom_html_input_element_set_width):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLLIElement.cpp:
+(webkit_dom_html_li_element_get_value):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOListElement.cpp:
+(webkit_dom_html_o_list_element_set_start):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp:
+(webkit_dom_html_object_element_get_hspace):
+(webkit_dom_html_object_element_get_vspace):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp:
+(webkit_dom_html_option_element_set_label):
+(webkit_dom_html_option_element_set_value):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLPreElement.cpp:
+(webkit_dom_html_pre_element_get_width):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp:
+(webkit_dom_html_table_cell_element_set_scope):
+* Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp:
+(webkit_dom_html_text_area_element_set_default_value):
+---
+ .../API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp           |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp         |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp         |  4 ++--
+ .../API/gtk/DOM/WebKitDOMHTMLElement.cpp               |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp          |  4 ++--
+ .../API/gtk/DOM/WebKitDOMHTMLFormElement.cpp           |  6 +++---
+ .../API/gtk/DOM/WebKitDOMHTMLImageElement.cpp          |  8 ++++----
+ .../API/gtk/DOM/WebKitDOMHTMLInputElement.cpp          | 10 +++++-----
+ .../API/gtk/DOM/WebKitDOMHTMLLIElement.cpp             |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLOListElement.cpp          |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp         |  4 ++--
+ .../API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp         |  4 ++--
+ .../API/gtk/DOM/WebKitDOMHTMLPreElement.cpp            |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp      |  2 +-
+ .../API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp       |  2 +-
+ 15 files changed, 28 insertions(+), 28 deletions(-)
+
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp
+index 78d53de55852..be2f36ebeefd 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLBaseElement.cpp
+@@ -184,7 +184,7 @@ void webkit_dom_html_base_element_set_href(WebKitDOMHTMLBaseElement* self, const
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_BASE_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLBaseElement* item = WebKit::core(self);
+-    item->setHref(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::hrefAttr, WTF::AtomString::fromUTF8(value));
  }
  
- void webkit_dom_dom_selection_set_position(WebKitDOMDOMSelection* self, WebKitDOMNode* node, gulong offset)
-@@ -500,7 +500,7 @@ WebKitDOMNode* webkit_dom_dom_selection_get_base_node(WebKitDOMDOMSelection* sel
-     WebCore::JSMainThreadNullState state;
-     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
-     WebCore::DOMSelection* item = WebKit::core(self);
--    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->baseNode());
-+    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->anchorNode());
-     return WebKit::kit(gobjectResult.get());
+ gchar* webkit_dom_html_base_element_get_target(WebKitDOMHTMLBaseElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp
+index 17e146e09bdf..09cb7ceb074f 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLButtonElement.cpp
+@@ -307,7 +307,7 @@ void webkit_dom_html_button_element_set_button_type(WebKitDOMHTMLButtonElement*
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_BUTTON_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLButtonElement* item = WebKit::core(self);
+-    item->setType(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::typeAttr, WTF::AtomString::fromUTF8(value));
  }
  
-@@ -509,7 +509,7 @@ gulong webkit_dom_dom_selection_get_base_offset(WebKitDOMDOMSelection* self)
+ gchar* webkit_dom_html_button_element_get_name(WebKitDOMHTMLButtonElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp
+index 0ca47d0ef1ee..dd8c7fc11a47 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLCanvasElement.cpp
+@@ -181,7 +181,7 @@ void webkit_dom_html_canvas_element_set_width(WebKitDOMHTMLCanvasElement* self,
      WebCore::JSMainThreadNullState state;
-     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
-     WebCore::DOMSelection* item = WebKit::core(self);
--    gulong result = item->baseOffset();
-+    gulong result = item->anchorOffset();
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_CANVAS_ELEMENT(self));
+     WebCore::HTMLCanvasElement* item = WebKit::core(self);
+-    item->setWidth(value);
++    item->setIntegralAttribute(WebCore::HTMLNames::widthAttr, value);
+ }
+ 
+ glong webkit_dom_html_canvas_element_get_height(WebKitDOMHTMLCanvasElement* self)
+@@ -198,7 +198,7 @@ void webkit_dom_html_canvas_element_set_height(WebKitDOMHTMLCanvasElement* self,
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_CANVAS_ELEMENT(self));
+     WebCore::HTMLCanvasElement* item = WebKit::core(self);
+-    item->setHeight(value);
++    item->setUnsignedIntegralAttribute(WebCore::HTMLNames::heightAttr, value);
+ }
+ 
+ G_GNUC_END_IGNORE_DEPRECATIONS;
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLElement.cpp
+index 33667b56133b..18acbcf35e83 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLElement.cpp
+@@ -447,7 +447,7 @@ void webkit_dom_html_element_set_dir(WebKitDOMHTMLElement* self, const gchar* va
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLElement* item = WebKit::core(self);
+-    item->setDir(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::dirAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ glong webkit_dom_html_element_get_tab_index(WebKitDOMHTMLElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp
+index b73741772853..efb2b7d98595 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLEmbedElement.cpp
+@@ -260,7 +260,7 @@ glong webkit_dom_html_embed_element_get_height(WebKitDOMHTMLEmbedElement* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_EMBED_ELEMENT(self), 0);
+     WebCore::HTMLEmbedElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::heightAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::heightAttr);
      return result;
  }
  
-@@ -518,7 +518,7 @@ WebKitDOMNode* webkit_dom_dom_selection_get_extent_node(WebKitDOMDOMSelection* s
+@@ -331,7 +331,7 @@ glong webkit_dom_html_embed_element_get_width(WebKitDOMHTMLEmbedElement* self)
      WebCore::JSMainThreadNullState state;
-     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
-     WebCore::DOMSelection* item = WebKit::core(self);
--    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->extentNode());
-+    RefPtr<WebCore::Node> gobjectResult = WTF::getPtr(item->focusNode());
-     return WebKit::kit(gobjectResult.get());
- }
- 
-@@ -527,7 +527,7 @@ gulong webkit_dom_dom_selection_get_extent_offset(WebKitDOMDOMSelection* self)
-     WebCore::JSMainThreadNullState state;
-     g_return_val_if_fail(WEBKIT_DOM_IS_DOM_SELECTION(self), 0);
-     WebCore::DOMSelection* item = WebKit::core(self);
--    gulong result = item->extentOffset();
-+    gulong result = item->focusOffset();
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_EMBED_ELEMENT(self), 0);
+     WebCore::HTMLEmbedElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::widthAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::widthAttr);
      return result;
  }
  
-diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
-index 472a8d0d00eb..10a093a4ef5d 100644
---- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
-+++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMDeprecated.cpp
-@@ -23,6 +23,7 @@
- #include <WebCore/DOMException.h>
- #include <WebCore/Document.h>
- #include <WebCore/Element.h>
-+#include <WebCore/EventTargetInlines.h>
- #include <WebCore/JSExecState.h>
- #include <WebCore/HTMLCollection.h>
- #include "WebKitDOMDocumentPrivate.h"
-diff --git a/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp b/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
-index ab382eed0311..c0691f3fba51 100644
---- a/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
-+++ b/Source/WebKit/WebProcess/WebCoreSupport/glib/WebEditorClientGLib.cpp
-@@ -26,6 +26,7 @@
- #include <WebCore/FrameDestructionObserverInlines.h>
- #include <WebCore/KeyboardEvent.h>
- #include <WebCore/LocalFrame.h>
-+#include <WebCore/LocalFrameInlines.h>
- #include <WebCore/Node.h>
- #include <WebCore/NodeInlines.h>
- #include <WebCore/PlatformKeyboardEvent.h>
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLFormElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLFormElement.cpp
+index a8bf64b52d77..aebf4887a2e7 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLFormElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLFormElement.cpp
+@@ -349,7 +349,7 @@ void webkit_dom_html_form_element_set_enctype(WebKitDOMHTMLFormElement* self, co
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_FORM_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLFormElement* item = WebKit::core(self);
+-    item->setEnctype(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::enctypeAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_form_element_get_encoding(WebKitDOMHTMLFormElement* self)
+@@ -367,7 +367,7 @@ void webkit_dom_html_form_element_set_encoding(WebKitDOMHTMLFormElement* self, c
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_FORM_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLFormElement* item = WebKit::core(self);
+-    item->setEnctype(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::enctypeAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_form_element_get_method(WebKitDOMHTMLFormElement* self)
+@@ -385,7 +385,7 @@ void webkit_dom_html_form_element_set_method(WebKitDOMHTMLFormElement* self, con
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_FORM_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLFormElement* item = WebKit::core(self);
+-    item->setMethod(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::methodAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_form_element_get_name(WebKitDOMHTMLFormElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLImageElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLImageElement.cpp
+index 2e3eed819328..39f9699379ed 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLImageElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLImageElement.cpp
+@@ -512,7 +512,7 @@ void webkit_dom_html_image_element_set_height(WebKitDOMHTMLImageElement* self, g
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_IMAGE_ELEMENT(self));
+     WebCore::HTMLImageElement* item = WebKit::core(self);
+-    item->setHeight(value);
++    item->setUnsignedIntegralAttribute(WebCore::HTMLNames::heightAttr, value);
+ }
+ 
+ glong webkit_dom_html_image_element_get_hspace(WebKitDOMHTMLImageElement* self)
+@@ -520,7 +520,7 @@ glong webkit_dom_html_image_element_get_hspace(WebKitDOMHTMLImageElement* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_IMAGE_ELEMENT(self), 0);
+     WebCore::HTMLImageElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::hspaceAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::hspaceAttr);
+     return result;
+ }
+ 
+@@ -608,7 +608,7 @@ glong webkit_dom_html_image_element_get_vspace(WebKitDOMHTMLImageElement* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_IMAGE_ELEMENT(self), 0);
+     WebCore::HTMLImageElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::vspaceAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::vspaceAttr);
+     return result;
+ }
+ 
+@@ -634,7 +634,7 @@ void webkit_dom_html_image_element_set_width(WebKitDOMHTMLImageElement* self, gl
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_IMAGE_ELEMENT(self));
+     WebCore::HTMLImageElement* item = WebKit::core(self);
+-    item->setWidth(value);
++    item->setIntegralAttribute(WebCore::HTMLNames::widthAttr, value);
+ }
+ 
+ gboolean webkit_dom_html_image_element_get_complete(WebKitDOMHTMLImageElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLInputElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLInputElement.cpp
+index 0752d05673da..2946b1020b4e 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLInputElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLInputElement.cpp
+@@ -692,7 +692,7 @@ void webkit_dom_html_input_element_set_height(WebKitDOMHTMLInputElement* self, g
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_INPUT_ELEMENT(self));
+     WebCore::HTMLInputElement* item = WebKit::core(self);
+-    item->setHeight(value);
++    item->setUnsignedIntegralAttribute(WebCore::HTMLNames::heightAttr, value);
+ }
+ 
+ gboolean webkit_dom_html_input_element_get_indeterminate(WebKitDOMHTMLInputElement* self)
+@@ -841,7 +841,7 @@ void webkit_dom_html_input_element_set_input_type(WebKitDOMHTMLInputElement* sel
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_INPUT_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLInputElement* item = WebKit::core(self);
+-    item->setType(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::typeAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_input_element_get_default_value(WebKitDOMHTMLInputElement* self)
+@@ -849,7 +849,7 @@ gchar* webkit_dom_html_input_element_get_default_value(WebKitDOMHTMLInputElement
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_INPUT_ELEMENT(self), 0);
+     WebCore::HTMLInputElement* item = WebKit::core(self);
+-    gchar* result = convertToUTF8String(item->defaultValue());
++    gchar* result = convertToUTF8String(item->attributeWithoutSynchronization(WebCore::HTMLNames::valueAttr));
+     return result;
+ }
+ 
+@@ -859,7 +859,7 @@ void webkit_dom_html_input_element_set_default_value(WebKitDOMHTMLInputElement*
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_INPUT_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLInputElement* item = WebKit::core(self);
+-    item->setDefaultValue(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::valueAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_input_element_get_value(WebKitDOMHTMLInputElement* self)
+@@ -895,7 +895,7 @@ void webkit_dom_html_input_element_set_width(WebKitDOMHTMLInputElement* self, gu
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_INPUT_ELEMENT(self));
+     WebCore::HTMLInputElement* item = WebKit::core(self);
+-    item->setWidth(value);
++    item->setIntegralAttribute(WebCore::HTMLNames::widthAttr, value);
+ }
+ 
+ gboolean webkit_dom_html_input_element_get_will_validate(WebKitDOMHTMLInputElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLLIElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLLIElement.cpp
+index c22096e26f4d..66df49397c6a 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLLIElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLLIElement.cpp
+@@ -192,7 +192,7 @@ glong webkit_dom_html_li_element_get_value(WebKitDOMHTMLLIElement* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_LI_ELEMENT(self), 0);
+     WebCore::HTMLLIElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::valueAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::valueAttr);
+     return result;
+ }
+ 
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOListElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOListElement.cpp
+index 022ebe840bbf..3036ea1152c3 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOListElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOListElement.cpp
+@@ -217,7 +217,7 @@ void webkit_dom_html_o_list_element_set_start(WebKitDOMHTMLOListElement* self, g
+     WebCore::JSMainThreadNullState state;
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_O_LIST_ELEMENT(self));
+     WebCore::HTMLOListElement* item = WebKit::core(self);
+-    item->setStartForBindings(value);
++    item->setIntegralAttribute(WebCore::HTMLNames::startAttr, value);
+ }
+ 
+ gchar* webkit_dom_html_o_list_element_get_type_attr(WebKitDOMHTMLOListElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp
+index 3e2ad49c8d3b..690b1a0a9cee 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLObjectElement.cpp
+@@ -612,7 +612,7 @@ glong webkit_dom_html_object_element_get_hspace(WebKitDOMHTMLObjectElement* self
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_OBJECT_ELEMENT(self), 0);
+     WebCore::HTMLObjectElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::hspaceAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::hspaceAttr);
+     return result;
+ }
+ 
+@@ -694,7 +694,7 @@ glong webkit_dom_html_object_element_get_vspace(WebKitDOMHTMLObjectElement* self
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_OBJECT_ELEMENT(self), 0);
+     WebCore::HTMLObjectElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::vspaceAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::vspaceAttr);
+     return result;
+ }
+ 
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp
+index 7fa821976293..66b7e757fa30 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLOptionElement.cpp
+@@ -304,7 +304,7 @@ void webkit_dom_html_option_element_set_label(WebKitDOMHTMLOptionElement* self,
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_OPTION_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLOptionElement* item = WebKit::core(self);
+-    item->setLabel(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::labelAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gboolean webkit_dom_html_option_element_get_default_selected(WebKitDOMHTMLOptionElement* self)
+@@ -356,7 +356,7 @@ void webkit_dom_html_option_element_set_value(WebKitDOMHTMLOptionElement* self,
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_OPTION_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLOptionElement* item = WebKit::core(self);
+-    item->setValue(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::valueAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_option_element_get_text(WebKitDOMHTMLOptionElement* self)
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLPreElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLPreElement.cpp
+index 10631d7ee645..bfdcc1007e9e 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLPreElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLPreElement.cpp
+@@ -174,7 +174,7 @@ glong webkit_dom_html_pre_element_get_width(WebKitDOMHTMLPreElement* self)
+     WebCore::JSMainThreadNullState state;
+     g_return_val_if_fail(WEBKIT_DOM_IS_HTML_PRE_ELEMENT(self), 0);
+     WebCore::HTMLPreElement* item = WebKit::core(self);
+-    glong result = item->getIntegralAttribute(WebCore::HTMLNames::widthAttr);
++    glong result = item->integralAttribute(WebCore::HTMLNames::widthAttr);
+     return result;
+ }
+ 
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp
+index 3c450258090a..41ca69eabd78 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTableCellElement.cpp
+@@ -642,7 +642,7 @@ void webkit_dom_html_table_cell_element_set_scope(WebKitDOMHTMLTableCellElement*
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_TABLE_CELL_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLTableCellElement* item = WebKit::core(self);
+-    item->setScope(WTF::AtomString::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::scopeAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ G_GNUC_END_IGNORE_DEPRECATIONS;
+diff --git a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp
+index d92030734699..4f4b62c6397e 100644
+--- a/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp
++++ b/Source/WebKit/WebProcess/InjectedBundle/API/gtk/DOM/WebKitDOMHTMLTextAreaElement.cpp
+@@ -502,7 +502,7 @@ void webkit_dom_html_text_area_element_set_default_value(WebKitDOMHTMLTextAreaEl
+     g_return_if_fail(WEBKIT_DOM_IS_HTML_TEXT_AREA_ELEMENT(self));
+     g_return_if_fail(value);
+     WebCore::HTMLTextAreaElement* item = WebKit::core(self);
+-    item->setDefaultValue(WTF::String::fromUTF8(value));
++    item->setAttributeWithoutSynchronization(WebCore::HTMLNames::valueAttr, WTF::AtomString::fromUTF8(value));
+ }
+ 
+ gchar* webkit_dom_html_text_area_element_get_value(WebKitDOMHTMLTextAreaElement* self)
