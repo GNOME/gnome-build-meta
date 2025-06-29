@@ -77,3 +77,9 @@ depends:
 - freedesktop-sdk.bst:components/vim.bst
 
 - freedesktop-sdk.bst:components/iproute2.bst
+
+(?):
+- arch == "aarch64":
+    depends:
+      (>):
+      - gnomeos-deps/deps-aarch64.bst
