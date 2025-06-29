@@ -8,7 +8,7 @@ sources:
 - kind: git_repo
   url: github:systemd/systemd.git
   track: main
-  ref: v257-4310-g4d05a19c957737da0664004b16b3718ae417a1b2
+  ref: v257-4424-gdbe13de11c63b97b50df3a4dd374b9bb856eaa21
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

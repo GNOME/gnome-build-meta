@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.alpha.2-7-g95b6db2023de006007f8f1edaca1b060d94ce516
+  ref: 2.0.alpha.5-0-g3b3749e90abc608b92f2cf8b5c9bf5f8ee983a89
 - kind: cargo2
   ref:
   - kind: registry
@@ -423,8 +423,8 @@ sources:
     sha: 20c9d27fcd8cd5bc32c47784a9fcb808fb9c2203b96333a06a57792a5b709ebd
   - kind: registry
     name: gufo-png
-    version: 0.3.0-alpha
-    sha: 03759e1097203f420e098433f9759e0ace4a3eefef86dad2da9b0bb7fe91e653
+    version: 0.3.0-alpha.1
+    sha: 5316d485cc3a9143996dd7078c87db6ad1cdccb95b59226798e2620506ae0591
   - kind: registry
     name: gufo-tiff
     version: 0.3.0-alpha
@@ -475,8 +475,8 @@ sources:
     sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - kind: registry
     name: image
-    version: 0.25.5
-    sha: cd6f44aed642f18953a158afeb30206f4d50da59fbc66ecb53c66488de73563b
+    version: 0.25.6
+    sha: db35664ce6b9810857a38a906215e75a9c879f0696556a39f59c62829710251a
   - kind: registry
     name: image-webp
     version: 0.2.1
@@ -1243,8 +1243,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.17
-    sha: 0f6fe2e33d02a98ee64423802e16df3de99c43e5cf5ff983767e1128b394c8ac
+    version: 0.4.18
+    sha: 7384255a918371b5af158218d131530f694de9ad3815ebdd0453a940485cb0fa
   - kind: registry
     name: zvariant
     version: 5.4.0

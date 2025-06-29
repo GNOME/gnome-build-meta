@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:adwaita-fonts.git
   track: main
-  ref: 48.2-6-gdce31db11343827bef20e3cf4c6aefbbcffa65f2
+  ref: 49.0-0-gb289164c5591581b4ef3abe266e8924f765e0723
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
