@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -eu
+
+set_addr() {
+  serial="$(cat /sys/firmware/devicetree/base/serial-number)"
+  addr="$(uuidgen -n e267b266-1b27-4159-9ec7-464032c02e4e -s -N "${serial}" | cut -f5 -d- | sed "s/[0-9a-f]\{2\}/&:/g;s/:$//")"
+
+  bluetoothctl <<EOF
+mgmt.select ${1}
+mgmt.public-addr ${addr}
+EOF
+}
+
+case "${1}" in
+    hci0)
+        # FIXME: for some reason, the controller does not take keep
+        # change of address, even after bluetooth.target was reached.
+        sleep 2
+        set_addr "${1}"
+    ;;
+esac
