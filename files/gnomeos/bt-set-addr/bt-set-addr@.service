@@ -1,0 +1,8 @@
+[Unit]
+Description=Set Bluetooth controller %i address
+DefaultDependencies=no
+ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/bt-set-addr %i

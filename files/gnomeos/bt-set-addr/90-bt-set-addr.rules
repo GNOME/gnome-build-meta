@@ -1,0 +1,1 @@
+ACTION=="add|change|move|bind", SUBSYSTEM=="bluetooth", ENV{DEVTYPE}=="host", TAG+="systemd", ENV{SYSTEMD_WANTS}+="bt-set-addr@%k.service"
