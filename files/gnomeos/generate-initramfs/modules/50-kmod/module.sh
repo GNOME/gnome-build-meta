@@ -23,6 +23,8 @@ MODULES=(
     drivers/nvme
     drivers/scsi
     drivers/pci/controller
+    drivers/phy/qualcomm
+    drivers/ufs/host
 )
 
 MODULES_BY_NAME=(
