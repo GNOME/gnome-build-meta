@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -eu
+
+echo -n /usr/lib/firmware/postmarketos >/sys/module/firmware_class/parameters/path

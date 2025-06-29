@@ -1,0 +1,9 @@
+[Unit]
+Description=Set path for postmarket OS firmware
+DefaultDependencies=no
+Before=sysinit.target
+ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/postmarketos-firmware-path
