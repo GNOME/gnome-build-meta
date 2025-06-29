@@ -4,9 +4,10 @@ sources:
 - kind: git_repo
   url: gnome:gnome-contacts.git
   track: main
-  ref: 48.0-6-gea3b33949ceb9807bcb72be1cdc0dc47a44a0f0f
+  ref: 48.0-8-g90ea2061426502002d61a3912630b135f06a3817
 
 build-depends:
+- sdk/blueprint-compiler.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
