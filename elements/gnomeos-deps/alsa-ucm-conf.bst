@@ -1,9 +1,10 @@
 kind: manual
 
 sources:
-- kind: tar
-  url: github_files:alsa-project/alsa-ucm-conf/archive/b0497ca4b508d6f894d78b16e0e06616a2a36c16.tar.gz
-  ref: 5c1afbacbd6ac494d6d3ffebdd98f1ff3757d553a2953bbfc835a81ec1a60347
+- kind: git_repo
+  url: github:alsa-project/alsa-ucm-conf.git
+  track: 'v*'
+  ref: v1.2.14-0-gacaa985df3404207ddb6beae42677f60df94deb5
 
 depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst
