@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: freerdp:releases/freerdp-3.15.0.tar.xz
-  ref: 1dc89c26e05f539bb2614e83eef5bea8d05a49d4fbc5dec4e4a33448ad5240d8
+  url: freerdp:releases/freerdp-3.16.0.tar.xz
+  ref: 93624312792b18227a0cdab67ace5634edb8bb92e4a9a793cef3b3c142b385cd
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
