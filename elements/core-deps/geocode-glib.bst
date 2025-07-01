@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:geocode-glib.git
-  track: master
-  ref: 3.26.4-1-g8f1b5a9149156a03f62dfea14780e8fee030506d
-
+- kind: tar
+  url: gnome_downloads:geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
+  ref: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

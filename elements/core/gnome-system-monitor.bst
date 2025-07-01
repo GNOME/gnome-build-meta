@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-system-monitor.git
-  track: main
-  ref: 48.1-21-g631219ff702f8f666026ee51af3bdad08407a20a
-
+- kind: tar
+  url: gnome_downloads:gnome-system-monitor/48/gnome-system-monitor-48.1.tar.xz
+  ref: 133c3a6e286366e659fd2d80582409a7bd5edae456e63c4f69ccf66ed6fc6638
 build-depends:
 - core-deps/catch2.bst
 - freedesktop-sdk.bst:components/itstool.bst

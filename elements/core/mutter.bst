@@ -1,12 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mutter.git
-  track: main
-  ref: 49.alpha.1-6-gdb9425cf38eb59523cebd6c02eedb3e2bf19d7c9
-# FIXME: Keep this in sync with the repo until we can use wraps as sources
-# https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
+- kind: tar
+  url: gnome_downloads:mutter/49/mutter-49.alpha.1.tar.xz
+  ref: 8de15197ccf7c3617e932c6aacd35e91fd0d90883868ab9b64e0f2659b1f5c65
 - kind: git_repo
   url: gnome:gvdb.git
   directory: subprojects/gvdb

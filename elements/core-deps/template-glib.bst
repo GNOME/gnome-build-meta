@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:template-glib.git
-  track: main
-  ref: 3.37.0-1-gae339b7797397c8a66429ad5b2f21d7b6ae3f08d
-
+- kind: tar
+  url: gnome_downloads:template-glib/3.37/template-glib-3.37.0.tar.xz
+  ref: 21647d5e0502bd67d5ff5fb71b9f070c377e9e7bf7facf12e08c0b26d1170ce5
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
