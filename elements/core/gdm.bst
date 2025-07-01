@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gdm.git
   track: main
-  ref: 49.alpha.0-6-g015a54be9febc2f34159bd7b55148ae9ac5aa85d
+  ref: 49.alpha.0-8-g3461820e2065698a4187ba33307830a17ea524d3
 - kind: local
   path: files/gdm
   directory: gdm-config
@@ -36,7 +36,8 @@ config:
   install-commands:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
+    - install -m 644 gdm-config/gdm-sysusers.conf 
+      %{install-root}%{sysusersdir}/gdm.conf
 
     - mkdir -p %{install-root}%{pamdir}
     - |

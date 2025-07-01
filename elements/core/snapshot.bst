@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 48.0.1-32-ge10ebf09dc7cdeb7a05f4a10b5de3d146b40d87c
+  ref: 49.alpha-2-ge4a86edd7b6207b3e6669501e20c9c89199f542a
 - kind: cargo2
   ref:
   - kind: registry
@@ -345,12 +345,12 @@ sources:
     sha: 8ab79e1ed126803a8fb827e3de0e2ff95191912b8db65cee467edb56fc4cc215
   - kind: registry
     name: glycin
-    version: 3.0.0-alpha
-    sha: 50c311a183eadcf8775c816f8802b032f211dfa627f6bfeb59e8ecc5879e219a
+    version: 3.0.0-alpha.5
+    sha: 8016964f551c43438a8f0dba2bcfe52b8691e19149708492a83a830b605f05b8
   - kind: registry
     name: glycin-utils
-    version: 4.0.0-alpha
-    sha: 783271f52742ac92a8f4557f954ed9a7377f6f216bbfc12253fc510abfc9a2b1
+    version: 4.0.0-alpha.4
+    sha: 301cc1196f9ef49a11e98eb11fe6d587beae746f1f06ed99569ca34b50e49e66
   - kind: registry
     name: gobject-sys
     version: 0.20.10
@@ -489,8 +489,8 @@ sources:
     sha: 3acae9609540aa318d1bc588455225fb2085b9ed0c4f6bd0d9d5bcd86f1a0344
   - kind: registry
     name: indexmap
-    version: 2.9.0
-    sha: cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e
+    version: 2.10.0
+    sha: fe4cd85333e22411419a0bcae1297d25e58c9443848b11dc6a86fefe8c78a661
   - kind: registry
     name: itertools
     version: 0.14.0
@@ -595,10 +595,6 @@ sources:
     name: nix
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
-  - kind: registry
-    name: nix
-    version: 0.30.1
-    sha: 74523f3a35e05aba87a1d978330aef40f67b0304ac79c1c00b294c9830543db6
   - kind: registry
     name: nu-ansi-term
     version: 0.46.0
@@ -1024,6 +1020,10 @@ sources:
     version: 0.6.1
     sha: ea2f10b9bb0928dfb1b42b65e1f9e36f7f54dbdf08457afefb38afcdec4fa2bb
   - kind: registry
+    name: xdg-home
+    version: 1.3.0
+    sha: ec1cdab258fb55c0da61328dc52c8764709b249011b2cad0454c72f0bf10a1f6
+  - kind: registry
     name: yeslogic-fontconfig-sys
     version: 6.0.0
     sha: 503a066b4c037c440169d995b869046827dbc71263f6e8f3be6d77d4f3229dbd
@@ -1037,12 +1037,12 @@ sources:
     sha: 38da3c9736e16c5d3c8c597a9aaa5d1fa565d0532ae05e27c24aa62fb32c0ab6
   - kind: registry
     name: zbus
-    version: 5.7.1
-    sha: d3a7c7cee313d044fca3f48fa782cb750c79e4ca76ba7bc7718cd4024cdf6f68
+    version: 5.5.0
+    sha: 59c333f648ea1b647bc95dc1d34807c8e25ed7a6feff3394034dc4776054b236
   - kind: registry
     name: zbus_macros
-    version: 5.7.1
-    sha: a17e7e5eec1550f747e71a058df81a9a83813ba0f6a95f39c4e218bdc7ba366a
+    version: 5.5.0
+    sha: f325ad10eb0d0a3eb060203494c3b7ec3162a01a59db75d2deee100339709fc0
   - kind: registry
     name: zbus_names
     version: 4.2.0
@@ -1077,12 +1077,12 @@ sources:
     sha: 5b96237efa0c878c64bd89c436f661be4e46b2f3eff1ebb976f7ef2321d2f58f
   - kind: registry
     name: zvariant
-    version: 5.5.3
-    sha: 9d30786f75e393ee63a21de4f9074d4c038d52c5b1bb4471f955db249f9dffb1
+    version: 5.4.0
+    sha: b2df9ee044893fcffbdc25de30546edef3e32341466811ca18421e3cd6c5a3ac
   - kind: registry
     name: zvariant_derive
-    version: 5.5.3
-    sha: 75fda702cd42d735ccd48117b1630432219c0e9616bf6cb0f8350844ee4d9580
+    version: 5.4.0
+    sha: 74170caa85b8b84cc4935f2d56a57c7a15ea6185ccdd7eadb57e6edd90f94b2f
   - kind: registry
     name: zvariant_utils
     version: 3.2.0
