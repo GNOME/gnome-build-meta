@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tinysparql.git
-  track: main
-  ref: 3.10.alpha-0-ga7aa19e7b0af00346cf7d900ce381c4660f8a07f
-
+- kind: tar
+  url: gnome_downloads:tinysparql/3.10/tinysparql-3.10.alpha.tar.xz
+  ref: 5aa921cc4ef68abe9a4cb0207c669a4b0855f38d941e5c20361a7bd7691f0857
 build-depends:
 - core-deps/graphviz.bst
 - sdk/gi-docgen.bst

@@ -1,10 +1,10 @@
 include:
-  - local: ".gitlab-ci/arch.yml"
-  - component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
-    inputs:
-      job-stage: "deploy"
-      dist-job-name: "make-git-archive"
-      tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+- local: ".gitlab-ci/arch.yml"
+- component: "gitlab.gnome.org/GNOME/citemplates/release-service@master"
+  inputs:
+    job-stage: "deploy"
+    dist-job-name: "make-git-archive"
+    tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -13,8 +13,8 @@ variables:
   # This mirrors the project.conf
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
-  OCI_BRANCH: master
-  FLATPAK_BRANCH: master
+  OCI_BRANCH: '49'
+  FLATPAK_BRANCH: 49beta
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -34,9 +34,9 @@ stages:
     # Allow forcing a specific stage to run, useful for scheduled pipelines to save up runners.
     # Set this to the stage you want to trigger in a scheduled pipeline
     # Example: RUN_THIS_STAGE_ONLY="track-refs"
-    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
-      when: never
-    - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
+  - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
+    when: never
+  - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -224,7 +224,7 @@ deploy-oci:
   extends:
   - .x86_64
   rules:
-    - !reference [.deploy-rules, rules]
+  - !reference [.deploy-rules, rules]
   needs:
   - job: 'build-x86_64'
     artifacts: false
@@ -302,16 +302,16 @@ live-image-aarch64:
 
 s3-image:
   extends:
-    - ".x86_64"
-    - ".s3-image"
+  - ".x86_64"
+  - ".s3-image"
   needs:
   - job: 'build-x86_64'
     artifacts: false
 
 s3-image-aarch64:
   extends:
-    - ".aarch64"
-    - ".s3-image"
+  - ".aarch64"
+  - ".s3-image"
   stage: deploy
   needs:
   - job: 'build-aarch64'
@@ -461,7 +461,7 @@ update_refs:
   stage: "track-refs"
   timeout: '90m'
   rules:
-    - !reference [".stage-only-rules", "rules"]
+  - !reference [".stage-only-rules", "rules"]
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache

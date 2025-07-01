@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:vte.git
-  track: master
-  ref: 0.81.0-1-gf6aa7e623ae4565193b34bf9449c300a6320f993
-
+- kind: tar
+  url: gnome_downloads:vte/0.81/vte-0.81.0.tar.xz
+  ref: d54afc8bbe4a9f53984e17a73f7d3e436b886d71433c247bfd7b9ca658c2ae40
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

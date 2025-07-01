@@ -1,13 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tecla.git
-  track: main
-  ref: 48.0.2-14-g26115d18b9442a614408935ee1c258961e025bdd
-# FIXME: This needs to be kept in sync with the wrap file ideally,
-# but this will do for now
-# https://gitlab.gnome.org/GNOME/tecla/-/blob/main/subprojects/libgxdp.wrap?ref_type=heads
+- kind: tar
+  url: gnome_downloads:tecla/48/tecla-48.0.2.tar.xz
+  ref: 783d3464d2a2cf7eb1507649dbd9ff09ce24852c2a6c9a0d365db84063d3d401
 - kind: git_repo
   url: gnome:libgxdp.git
   track: main

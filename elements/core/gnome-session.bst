@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-session.git
-  track: main
-  ref: 49.alpha.1-1-g83410ba7d3e70b02bc8461e248ff15c9fa9a93ca
+- kind: tar
+  url: gnome_downloads:gnome-session/49/gnome-session-49.alpha.1.tar.xz
+  ref: c42b86661e6783614ab69a571d640eb42044792ffea3d57349fe72f0881c5d39
 - kind: patch
   path: patches/gnome-session/0001-doc-skip-validation-of-xml.patch
 

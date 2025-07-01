@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-maps.git
-  track: main
-  ref: 49.alpha-1-gf9b40d457e2391ede6b4470fe380189b4fe6441d
-
+- kind: tar
+  url: gnome_downloads:gnome-maps/49/gnome-maps-49.alpha.tar.xz
+  ref: e8d96350c59f7daa8bb94ba1e99125a376d5ad54a74e61b8954cc3c3951b334f
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
