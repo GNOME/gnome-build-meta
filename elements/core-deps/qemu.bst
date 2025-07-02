@@ -21,7 +21,9 @@ depends:
 - freedesktop-sdk.bst:components/dtc.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libcap.bst
+- freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/libslirp.bst
+- freedesktop-sdk.bst:components/pipewire.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/sdl2-compat.bst
@@ -54,6 +56,8 @@ variables:
     --disable-sdl-image
     --enable-virglrenderer
     --enable-slirp
+    --enable-pa
+    --enable-pipewire
 
   # --exec-prefix --disable-static are not accepted
   conf-args: >-
