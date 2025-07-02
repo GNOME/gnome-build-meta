@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:Incubator/papers.git
+  url: gnome:papers.git
   track: main
   ref: 49.alpha-7-gda5ecf624b984a1b5e1f3cb4de2a05f8a6e76d54
 - kind: cargo2

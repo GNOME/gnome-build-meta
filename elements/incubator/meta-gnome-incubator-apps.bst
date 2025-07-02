@@ -6,5 +6,3 @@
 # When updating this list, please also update the [incubating] section in
 # files/gnome-mimeapps/quirks.toml
 kind: stack
-depends:
-- incubator/papers.bst

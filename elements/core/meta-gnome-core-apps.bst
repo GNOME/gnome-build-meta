@@ -29,6 +29,7 @@ depends:
 - core/gnome-weather.bst
 - core/loupe.bst
 - core/nautilus.bst
+- core/papers.bst
 - core/showtime.bst
 - core/simple-scan.bst
 - core/snapshot.bst
