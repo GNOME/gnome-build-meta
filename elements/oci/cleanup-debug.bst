@@ -11,8 +11,6 @@ public:
     - rm -r '%{debugdir}%{libdir}/samba'
     - rm -r '%{debugdir}%{libdir}/sane'
 
-    - rm '%{debugdir}%{libdir}/libVkLayer_khronos_validation.so.debug'
-
     - rm '%{debugdir}%{bindir}/lto-dump.debug'
     - rm '%{debugdir}%{bindir}/fish_indent.debug'
     - rm '%{debugdir}%{bindir}/fish.debug'
