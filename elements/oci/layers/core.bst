@@ -2,7 +2,7 @@ kind: compose
 
 build-depends:
 - oci/layers/core-stack.bst
-- gnomeos-deps/cleanup-debug.bst
+- oci/cleanup-debug.bst
 
 config:
   exclude:
