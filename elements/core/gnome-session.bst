@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-session.git
   track: main
-  ref: 49.alpha.0-3-g9f966a9693ba16b54b77df728fdcf7e4234e45f2
+  ref: 49.alpha.1-0-gd7cc88fd20aa61f855074024b03a366d951de0ec
 - kind: patch
   path: patches/gnome-session/0001-doc-skip-validation-of-xml.patch
 
