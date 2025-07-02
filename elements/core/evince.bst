@@ -29,5 +29,8 @@ variables:
     -Ddjvu=disabled
     -Ddvi=disabled
     -Dintrospection=true
+    -Dpreviewer=false
+    -Dthumbnailer=false
+    -Dviewer=false
     -Dgtk_doc=false
     -Dnautilus=false
