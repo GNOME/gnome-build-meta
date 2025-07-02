@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:evince.git
-  track: gnome-46
-  ref: 48.rc-0-g58751e0047b1f06e3a1c73db09f5c0a8412361e2
+- kind: tar
+  url: gnome_downloads:evince/48/evince-48.1.tar.xz
+  ref: 7d8b9a6fa3a05d3f5b9048859027688c73a788ff6e923bc3945126884943fa10
 
 build-depends:
 - sdk/gtk-doc.bst
