@@ -40,6 +40,7 @@ depends:
 - core-deps/xdg-desktop-portal-gnome.bst
 - core-deps/xdg-desktop-portal-gtk.bst
 
+- core-deps/systemd.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
 
 - core.bst
