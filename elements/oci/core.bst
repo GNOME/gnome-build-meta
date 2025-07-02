@@ -10,8 +10,13 @@ build-depends:
   config:
     location: /layer
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
+  - mkdir /fakecap
   - |
     if [ -d /initial_scripts ]; then
       for i in /initial_scripts/*; do
