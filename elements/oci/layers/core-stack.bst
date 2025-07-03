@@ -47,8 +47,8 @@ depends:
 - core.bst
 - sdk-platform.bst
 - sdk.bst
-- oci/integration/extrafs.bst
 - oci/os-release.bst
+- freedesktop-sdk.bst:integration/extra-fs.bst
 
 public:
   bst:
