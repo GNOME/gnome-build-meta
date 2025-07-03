@@ -317,31 +317,6 @@ s3-image-aarch64:
   - job: 'build-aarch64'
     artifacts: false
 
-openh264-x86_64:
-  extends:
-  - .x86_64
-  stage: deploy
-  needs: []
-  allow_failure: true
-  rules:
-  - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
-    when: manual
-  script:
-  - git clone https://gitlab.com/freedesktop-sdk/openh264-extension.git
-  - cd openh264-extension
-  - ${BST} build flatpak-repo.bst
-  - ${BST} artifact checkout flatpak-repo.bst --directory flatpak-repo.bst
-  - test -e repo || ostree init --repo=repo --mode=archive
-  - flatpak build-commit-from --src-repo=flatpak-repo.bst --subject $(git rev-parse HEAD) repo
-  - flatpak build-update-repo --generate-static-deltas repo/
-  - rm -rf flatpak-repo.bst
-  - BUILD_ID=$(flat-manager-client --token-file "${REPO_TOKEN_FILE}" create https://nightly.gnome.org/ nightly)
-  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" push --commit --publish --wait $BUILD_ID repo/ || result=$?
-  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" purge $BUILD_ID
-  - exit $result
-
-
 s3-image-static:
   extends: .arch-indep
   stage: reports
