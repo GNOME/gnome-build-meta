@@ -10,7 +10,7 @@ KERNEL_KEYS= \
 	fstab-tpm2-pcr-private.pem \
 	fstab-tpm2-pcr-public.pem
 
-DIST_KEYS=private-key import-pubring.gpg
+DIST_KEYS=private-key import-pubring.pgp
 KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
 KERNEL_KEYRING=MODULES.crt SYSEXT.crt
 
@@ -167,7 +167,7 @@ else
 endif
 	echo "default-key $$(gpg --homedir=$@ -k --with-colons  | sed '/^fpr:/q;d' | cut -d: -f10)" >$@/gpg.conf
 
-import-pubring.gpg: private-key
+import-pubring.pgp: private-key
 	gpg --homedir=$< --export >$@
 
 show-keys-for-ci: generate-keys
@@ -194,7 +194,7 @@ export-snakeoil: generate-keys
 clean:
 	rm -f {PK,PK_MIC,KEK,KEK_MIC,DB,VENDOR,MODULES,SYSEXT}.{crt,key}
 	rm -rf private-key
-	rm -f import-pubring.gpg
+	rm -f import-pubring.pgp
 	rm -f extra-{db,kek}{,-mic}/*.{owner,crt}
 	rm -f tpm2-pcr-{private,public}.pem
 	rm -f modules/linux-module-cert.crt

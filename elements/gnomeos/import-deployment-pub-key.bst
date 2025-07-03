@@ -2,7 +2,7 @@ kind: import
 
 sources:
 - kind: local
-  path: files/boot-keys/import-pubring.gpg
+  path: files/boot-keys/import-pubring.pgp
 
 runtime-depends:
 - freedesktop-sdk.bst:components/systemd.bst
@@ -13,4 +13,4 @@ config:
 public:
   bst:
     overlap-whitelist:
-    - /usr/lib/systemd/import-pubring.gpg
+    - /usr/lib/systemd/import-pubring.pgp
