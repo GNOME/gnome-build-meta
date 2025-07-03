@@ -7,4 +7,9 @@ sources:
 build-depends:
 - core.bst
 - incubator/meta-gnome-incubator-apps.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+# We don't use the buildsystem stack to avoid staging git-minimal
+- freedesktop-sdk.bst:components/meson.bst
+- freedesktop-sdk.bst:components/ninja.bst
+
+variables:
+  strip-binaries: ''
