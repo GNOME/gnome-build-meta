@@ -29,7 +29,7 @@ depends:
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
-- sdk/gtk+-3.bst
+- sdk/gtk.bst
 - sdk/libnotify.bst
 - freedesktop-sdk.bst:components/alsa-lib.bst
 - freedesktop-sdk.bst:components/geoclue-libs.bst
