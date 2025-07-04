@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.alpha.5-6-g6993f19409247c85799d39101d72b164e39915f4
+  ref: 2.0.alpha.6-0-g424e5c17f772f27367e673beb740a7ff5ab05934
 - kind: cargo2
   ref:
   - kind: registry
@@ -543,12 +543,12 @@ sources:
     sha: 1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776
   - kind: registry
     name: libheif-rs
-    version: 1.1.0
-    sha: e4a26370abb4723a3ce73083e479b98017604206cadb0e35da5eac4813600d85
+    version: 2.2.0
+    sha: e6983874bba8c3f28525e908758a3988849fdc3fdc98c692bc884aa078aa190e
   - kind: registry
     name: libheif-sys
-    version: 3.1.0+1.18.2
-    sha: e663db80d4272b60c066c5a9d17370ffa0433a31d424152f95f1e1effb9b3860
+    version: 4.1.0+1.19.8
+    sha: 4c67e6e1fbf5a07f4a7d6ba8b74da25f518b57ebba3a2f3923055eac0da1e1ff
   - kind: registry
     name: libloading
     version: 0.8.8
