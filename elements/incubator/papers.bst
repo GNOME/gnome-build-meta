@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:papers/48/papers-48.3.tar.xz
-  ref: 2915e256dda131f9ef196281f6f862f69c31b387cc07465adb6b2a8926db9e39
+  url: gnome_downloads:papers/48/papers-48.4.tar.xz
+  ref: f11aa1c544ac211259e230b40c804ae64077339a57bdefa3dbbeb57f9166e3fd
 - kind: cargo2
   ref:
   - kind: registry

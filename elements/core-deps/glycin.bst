@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/1.2/glycin-1.2.1.tar.xz
-  ref: ccc578e9a3e83d0dc1535737d1fda09baa95c7167f5e5ecb15f786654094eed5
+  url: gnome_downloads:glycin/1.2/glycin-1.2.2.tar.xz
+  ref: 4ab446d58b10c76283227a65487b8bbdb74ba5009e9ed23045fcfa8ba3fb2861
 - kind: cargo2
   ref:
   - kind: registry
@@ -1224,8 +1224,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.14
-    sha: 99a5bab8d7dedf81405c4bb1f2b83ea057643d9cb28778cea9eecddeedd2e028
+    version: 0.4.18
+    sha: 7384255a918371b5af158218d131530f694de9ad3815ebdd0453a940485cb0fa
   - kind: registry
     name: zvariant
     version: 5.4.0
