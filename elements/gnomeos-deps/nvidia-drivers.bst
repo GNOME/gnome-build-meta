@@ -2,8 +2,8 @@ kind: manual
 
 sources:
 - kind: remote
-  url: nvidia:XFree86/Linux-x86_64/570.86.16/NVIDIA-Linux-x86_64-570.86.16.run
-  ref: 4563ea4bb654247f491005a57c72c676aacd95abe1691d71332cecf25261cbd5
+  url: nvidia:XFree86/Linux-x86_64/570.153.02/NVIDIA-Linux-x86_64-570.153.02.run
+  ref: 148886e4f69576fa8fa67140e6e5dd6e51f90b2ec74a65f1a7a7334dfa5de1b6
 - kind: local
   path: files/nvidia-config/modprobe.conf
   directory: local-config
@@ -29,7 +29,7 @@ config:
 
   - |
     base_name="$(basename *.run .run)"
-    cd "${base_name}/kernel"
+    cd "${base_name}/kernel-open"
     kernel_version=$(basename /usr/lib/modules/*)
     cat <<EOF >>Kbuild
     EXTRA_CFLAGS+=-Wno-error=incompatible-pointer-types
@@ -46,7 +46,7 @@ config:
   install-commands:
   - | # Kernel Modules
     base_name="$(basename *.run .run)"
-    cd "${base_name}/kernel"
+    cd "${base_name}/kernel-open"
     kernel_version=$(basename /usr/lib/modules/*)
     make -j1 KERNEL_UNAME="${kernel_version}" modules_install INSTALL_MOD_PATH='%{install-root}%{prefix}'
 
@@ -55,8 +55,8 @@ config:
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
-    install -Dm755 -t "%{install-root}%{bindir}/nvidia-bug-report.sh" nvidia-bug-report.sh
-    install -Dm755 -t "%{install-root}${bindir}/nvidia-modprobe" nvidia-modprobe
+    install -Dm755 -t "%{install-root}%{bindir}" nvidia-bug-report.sh
+    install -Dm755 -t "%{install-root}%{bindir}" nvidia-modprobe
 
     install -Dm755 -t '%{install-root}%{bindir}' systemd/nvidia-sleep.sh
     install -Dm755 -t '%{install-root}%{indep-libdir}/systemd/system-sleep' systemd/system-sleep/nvidia
