@@ -55,8 +55,8 @@ config:
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
-    install -Dm755 -t "%{install-root}%{bindir}/nvidia-bug-report.sh" nvidia-bug-report.sh
-    install -Dm755 -t "%{install-root}${bindir}/nvidia-modprobe" nvidia-modprobe
+    install -Dm755 -t "%{install-root}%{bindir}" nvidia-bug-report.sh
+    install -Dm755 -t "%{install-root}%{bindir}" nvidia-modprobe
 
     install -Dm755 -t '%{install-root}%{bindir}' systemd/nvidia-sleep.sh
     install -Dm755 -t '%{install-root}%{indep-libdir}/systemd/system-sleep' systemd/system-sleep/nvidia
