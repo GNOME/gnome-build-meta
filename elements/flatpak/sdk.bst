@@ -8,7 +8,6 @@ build-depends:
 variables:
   # Obtain the versions of the flatpak extensions
   (@):
-  - elements/flatpak/gnome-openh264-version.yml
   - freedesktop-sdk.bst:include/repo_branches.yml
 
 (@):
@@ -20,17 +19,18 @@ config:
   - debug
   - docs
   - locale
-  - zoneinfo
+  - tests
+  - shells
 
   metadata:
     Runtime:
       name: org.gnome.Sdk
-      runtime: org.gnome.Platform/%{gcc_arch}/%{flatpak-branch}
-      sdk: org.gnome.Sdk/%{gcc_arch}/%{flatpak-branch}
+      runtime: org.gnome.Platform/%{flatpak_arch}/%{flatpak-branch}
+      sdk: org.gnome.Sdk/%{flatpak_arch}/%{flatpak-branch}
 
     Environment:
       GI_TYPELIB_PATH: /app/lib/girepository-1.0
-      GST_PLUGIN_SYSTEM_PATH: /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:%{libdir}/gstreamer-1.0
+      GST_PLUGIN_SYSTEM_PATH: /app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:%{libdir}/codecs-extra/lib/gstreamer-1.0:%{libdir}/gstreamer-1.0
       XDG_DATA_DIRS: /app/share:/usr/share:/usr/share/runtime/share:/run/host/user-share:/run/host/share
       ALSA_CONFIG_DIR: /usr/share/alsa
       ALSA_CONFIG_PATH: /usr/share/alsa/alsa-flatpak.conf
@@ -109,19 +109,18 @@ config:
       version: '3.22'
       download-if: active-gtk-theme
 
-    Extension org.freedesktop.Platform.openh264:
-      directory: '%{lib}/openh264'
-      versions: '%{gnome-openh264-version}beta;%{gnome-openh264-version}'
-      version: '%{gnome-openh264-version}'
-      add-ld-path: extra
-      autodelete: 'true'
-
     Extension org.freedesktop.Sdk.Extension:
       subdirectories: 'true'
       directory: lib/sdk
       no-autodownload: 'true'
       add-ld-path: lib
       version: '%{freedesktop-sdk-flatpak-branch}'
+
+    Extension org.freedesktop.Platform.codecs-extra:
+      directory: '%{lib}/codecs-extra'
+      version: "%{freedesktop-sdk-flatpak-branch-extra}"
+      add-ld-path: lib
+      autodelete: 'true'
 
     Extension org.freedesktop.Platform.VAAPI.Intel:
       directory: '%{lib}/dri/intel-vaapi-driver'
@@ -131,30 +130,29 @@ config:
       autoprune-unless: have-intel-gpu
       version: '%{freedesktop-sdk-flatpak-branch}'
 
+    Extension org.freedesktop.Platform.VAAPI.nvidia:
+      directory: '%{lib}/dri/nvidia-vaapi-driver'
+      autodelete: 'false'
+      no-autodownload: 'true'
+      add-ld-path: lib
+      download-if: have-kernel-module-nvidia
+      autoprune-unless: have-kernel-module-nvidia
+      version: '%{freedesktop-sdk-flatpak-branch}'
+
     (?):
-    - arch in ["x86_64", "aarch64"]:
-        Extension org.gnome.Sdk.Compat.arm:
-          directory: 'lib/arm-linux-gnueabihf'
-          autodelete: 'true'
-          no-autodownload: 'true'
-          add-ld-path: '.'
-
-        Extension org.gnome.Sdk.Compat.arm.Debug:
-          directory: 'lib/arm-linux-gnueabihf'
-          autodelete: 'true'
-          no-autodownload: 'true'
-
     - arch == "x86_64":
-        Extension org.gnome.Sdk.Compat.i386:
+        Extension org.freedesktop.Sdk.Compat.i386:
           directory: 'lib/i386-linux-gnu'
           autodelete: 'true'
           no-autodownload: 'true'
           add-ld-path: '.'
+          version: '%{freedesktop-sdk-flatpak-branch}'
 
-        Extension org.gnome.Sdk.Compat.i386.Debug:
+        Extension org.freedesktop.Sdk.Compat.i386.Debug:
           directory: 'lib/debug/usr/lib/i386-linux-gnu'
           autodelete: 'true'
           no-autodownload: 'true'
+          version: '%{freedesktop-sdk-flatpak-branch}'
 
         Extension org.gnome.Sdk.Compat.aarch64:
           directory: 'lib/aarch64-linux-gnu'
