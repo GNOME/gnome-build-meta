@@ -1,15 +1,15 @@
-kind: autotools
+kind: meson
 sources:
 - kind: tar
-  url: freedesktop_software:libmbim/libmbim-1.26.4.tar.xz
-  ref: f688cec4c4586a17575f5e327448ce62f2000ef6a07c9e4589873d4a68568ad9
+  url: freedesktop_files:mobile-broadband/libmbim/-/archive/1.32.0/libmbim-1.32.0.tar.gz
+  ref: 7eca9f5af2eecfdb5e3a2a865a7f29d0ac9532ab187a9c6adce4d85f897eb385
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/help2man.bst
 depends:
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-variables:
-  conf-local: >-
-    --enable-more-warnings=no
