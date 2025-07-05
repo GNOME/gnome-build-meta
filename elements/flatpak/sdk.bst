@@ -144,6 +144,19 @@ config:
           no-autodownload: 'true'
 
     - arch == "x86_64":
+        Extension org.freedesktop.Sdk.Compat.i386:
+          directory: 'lib/i386-linux-gnu'
+          autodelete: 'true'
+          no-autodownload: 'true'
+          add-ld-path: '.'
+          version: '%{freedesktop-sdk-flatpak-branch}'
+
+        Extension org.freedesktop.Sdk.Compat.i386.Debug:
+          directory: 'lib/debug/usr/lib/i386-linux-gnu'
+          autodelete: 'true'
+          no-autodownload: 'true'
+          version: '%{freedesktop-sdk-flatpak-branch}'
+
         Extension org.gnome.Sdk.Compat.i386:
           directory: 'lib/i386-linux-gnu'
           autodelete: 'true'
