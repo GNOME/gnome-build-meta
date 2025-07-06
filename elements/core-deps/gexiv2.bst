@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gexiv2/0.14/gexiv2-0.14.5.tar.xz
-  ref: 0913c53daabab1f1ab586afd55bb55370796f2b8abcc6e37640ab7704ad99ce1
+  url: gnome_downloads:gexiv2/0.14/gexiv2-0.14.6.tar.xz
+  ref: 606c28aaae7b1f3ef5c8eabe5e7dffd7c5a1c866d25b7671fb847fe287a72b8b
 build-depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
