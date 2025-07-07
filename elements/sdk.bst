@@ -14,4 +14,5 @@ depends:
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/libabigail.bst
+- freedesktop-sdk.bst:components/ruby.bst
 - freedesktop-sdk.bst:sdk.bst
