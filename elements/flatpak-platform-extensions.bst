@@ -4,11 +4,13 @@ build-depends:
 - freedesktop-sdk.bst:components/flatpak.bst
 - filename:
   - freedesktop-sdk.bst:flatpak-images/mesa.bst
+  - freedesktop-sdk.bst:flatpak-images/platform-vaapi-nvidia.bst
   config:
     flatpak-image: true
     branch: '%{freedesktop-sdk-flatpak-branch}'
 - filename:
   - freedesktop-sdk.bst:flatpak-images/mesa-extra.bst
+  - freedesktop-sdk.bst:flatpak-images/platform-codecs-extra.bst
   config:
     flatpak-image: true
     branch: '%{freedesktop-sdk-flatpak-branch-extra}'
