@@ -211,7 +211,7 @@ deploy-flatpak:
   variables:
     RUNNER_AFTER_SCRIPT_TIMEOUT: 20m
     TARGETS: flatpak-runtimes.bst
-    TARGETS_nightly: 'flatpak-platform-extensions.bst flatpak-platform-extensions-extra.bst'
+    TARGETS_nightly: 'flatpak-platform-extensions.bst'
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/deploy-flatpak.sh"
   after_script:

@@ -6,6 +6,12 @@ build-depends:
   - freedesktop-sdk.bst:flatpak-images/mesa.bst
   config:
     flatpak-image: true
+    branch: '%{freedesktop-sdk-flatpak-branch}'
+- filename:
+  - freedesktop-sdk.bst:flatpak-images/mesa-extra.bst
+  config:
+    flatpak-image: true
+    branch: '%{freedesktop-sdk-flatpak-branch-extra}'
 
 (?):
 - x86_64_v3 and (arch == "x86_64"):
@@ -25,5 +31,4 @@ variables:
 
 config:
   arch: '%{gcc_arch}'
-  branch: '%{freedesktop-sdk-flatpak-branch}'
   repo-mode: bare-user-only
