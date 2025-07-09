@@ -23,6 +23,10 @@ skip_apps = [
 [incubating]
 
 [override]
+# Epiphany and Builder can both open XML files, but neither is a good default.
+# Let's prefer Text Editor.
+"application/xml" = "org.gnome.TextEditor"
+
 # Baobab can open directories and alphabetically comes before Nautilus. Also,
 # it doesn't make sense to ever default to Baobab as a file browser, even without
 # Nautilus installed.
