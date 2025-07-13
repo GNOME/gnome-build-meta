@@ -9,6 +9,8 @@ sources:
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
   ref: 91f3f41490666a526ed78af744507d7ee1134323
+- kind: patch_queue
+  path: patches/gnome-settings-daemon
 
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst
