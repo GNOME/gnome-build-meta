@@ -1,6 +1,7 @@
 kind: stack
 
 depends:
+- gnomeos-deps/81voltd.bst
 - gnomeos-deps/bt-set-addr.bst
 - gnomeos-deps/hexagonrpc.bst
 - gnomeos-deps/libssc.bst

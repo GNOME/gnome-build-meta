@@ -1,0 +1,12 @@
+[Unit]
+Description=IMS Data service on QMI/QRTR
+Wants=ModemManager.service
+After=ModemManager.service
+ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/81voltd
+
+[Install]
+WantedBy=multi-user.target
