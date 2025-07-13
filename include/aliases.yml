@@ -17,7 +17,8 @@ aliases:
   fedora_rpms: https://src.fedoraproject.org/rpms/
   flathub: https://flathub.org/repo/
   freedesktop_files: https://gitlab.freedesktop.org/
-  freedesktop_people: https://people.freedesktop.org/
+  # The tilde needs to be here for mirroring
+  freedesktop_people: https://people.freedesktop.org/~
   freedesktop_software: https://www.freedesktop.org/software/
   freerdp: https://pub.freerdp.com/
   ftp_gnu_org: https://ftp.gnu.org/gnu/

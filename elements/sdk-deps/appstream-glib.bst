@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: tar
   url: 
-    freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.3.tar.xz
+    freedesktop_people:hughsient/appstream-glib/releases/appstream-glib-0.8.3.tar.xz
   ref: 84754064c560fca6e1ab151dc64354fc235a5798f016b91b38c9617253a8cf11
 build-depends:
 - sdk/gobject-introspection.bst
