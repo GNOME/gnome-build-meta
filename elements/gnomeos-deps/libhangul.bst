@@ -1,9 +1,12 @@
 kind: autotools
+
 sources:
 - kind: tar
-  url: kldp:hangul/release/3442-libhangul-0.1.0.tar.gz
-  ref: 5905aa5c557d8d46e190fec1afdd75babf3bc086ef286b42007572703658295a
+  url: github_files:libhangul/libhangul/releases/download/libhangul-0.2.0/libhangul-0.2.0.tar.gz
+  ref: ea04e6a0cf4840a2a3b5641c1761068c78691036db839d0838f4e7a6553a5120
+
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
