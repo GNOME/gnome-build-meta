@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.alpha.6-0-g424e5c17f772f27367e673beb740a7ff5ab05934
+  ref: 2.0.alpha.7-1-g3d77926a72f76927d53c2deee967a7f32181c22e
 - kind: cargo2
   ref:
   - kind: registry
@@ -511,12 +511,12 @@ sources:
     sha: b454d911ac55068f53495488d8ccd0646eaa540c033a28ee15b07838afafb01f
   - kind: registry
     name: jpegxl-rs
-    version: 0.10.3+libjxl-0.10.2
-    sha: e697c7532d4a244d91306a19c63763769366fbc61e75d5a08cc602923e478a7a
+    version: 0.11.2+libjxl-0.11.1
+    sha: 875063ddd0cb50c5668b9c3214152ee54e6ca1f42b662d66c0855f76687033c0
   - kind: registry
     name: jpegxl-sys
-    version: 0.10.3+libjxl-0.10.2
-    sha: c8262d19ed55829441dc2a2b1315c8f15e040139443fc1dbc48551890020a5c2
+    version: 0.11.2+libjxl-0.11.1
+    sha: fdaef0388e8220dc89a4ab47f92f942b68dfc237fa2dd3c3881948c5d88ce2f0
   - kind: registry
     name: js-sys
     version: 0.3.77
@@ -1291,8 +1291,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.18
-    sha: 7384255a918371b5af158218d131530f694de9ad3815ebdd0453a940485cb0fa
+    version: 0.4.19
+    sha: 2c9e525af0a6a658e031e95f14b7f889976b74a11ba0eca5a5fc9ac8a1c43a6a
   - kind: registry
     name: zvariant
     version: 5.4.0

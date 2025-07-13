@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pygobject.git
   track: main
-  ref: 3.52.3-19-g21c295e4bc8cd4ba8c1da4ab90afb7e5d8e8c3bf
+  ref: 3.52.3-23-g2bb5e54a33d14d53481def261e8dbdf93a4255e3
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 #
 # https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/gobject-introspection-tests.wrap
