@@ -1,0 +1,20 @@
+commit 464d981af61d6472506da3e4aad571b41d46af7b
+Author: Valentin David <me@valentindavid.com>
+Date:   Sun Jul 13 12:08:34 2025 +0200
+
+    linux: Add support for OnePlus 6 touchscreen
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 45bcee89d..477cf6c32 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -2013,6 +2013,9 @@ module HID_PRIMAX
+ module HID_PRODIKEYS
+ module HID_RETRODE
+ module HID_RMI
++# Touchscreen for OnePlus 6
++module RMI4_I2C
++enable RMI4_F55
+ module HID_ROCCAT
+ module HID_SAITEK
+ module HID_SEMITEK
