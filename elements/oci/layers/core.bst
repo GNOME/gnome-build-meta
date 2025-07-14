@@ -9,4 +9,3 @@ config:
   - locale
   - extra
   - static-blocklist
-  - vm-only
