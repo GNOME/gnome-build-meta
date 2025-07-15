@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.alpha-11-g7f8d9f71723ee49e2cb1f469122b32b41fc56439
+  ref: 49.alpha-17-gfd6c476a4a9839d963abed2116b7798520e79df6
 - kind: cargo2
   ref:
   - kind: registry
@@ -345,12 +345,16 @@ sources:
     sha: 8ab79e1ed126803a8fb827e3de0e2ff95191912b8db65cee467edb56fc4cc215
   - kind: registry
     name: glycin
-    version: 3.0.0-alpha.5
-    sha: 8016964f551c43438a8f0dba2bcfe52b8691e19149708492a83a830b605f05b8
+    version: 3.0.0-alpha.7
+    sha: 96c2cf69d077fa279fc3a2e6941fd05fc2f3f161910b495bc55e8f2068a50c0b
+  - kind: registry
+    name: glycin-common
+    version: 1.0.0-alpha.7
+    sha: 72f726fe14063e230fd79a77a602469d1a7c721c6fe1037bb69786df08b79cdc
   - kind: registry
     name: glycin-utils
-    version: 4.0.0-alpha.4
-    sha: 301cc1196f9ef49a11e98eb11fe6d587beae746f1f06ed99569ca34b50e49e66
+    version: 4.0.0-alpha.7
+    sha: 5c87e6f0bedff21f6592368212277d232908f9d9fbf330a5f6558e6907a5b33c
   - kind: registry
     name: gobject-sys
     version: 0.20.10
@@ -1077,12 +1081,12 @@ sources:
     sha: 5b96237efa0c878c64bd89c436f661be4e46b2f3eff1ebb976f7ef2321d2f58f
   - kind: registry
     name: zvariant
-    version: 5.4.0
-    sha: b2df9ee044893fcffbdc25de30546edef3e32341466811ca18421e3cd6c5a3ac
+    version: 5.6.0
+    sha: d91b3680bb339216abd84714172b5138a4edac677e641ef17e1d8cb1b3ca6e6f
   - kind: registry
     name: zvariant_derive
-    version: 5.4.0
-    sha: 74170caa85b8b84cc4935f2d56a57c7a15ea6185ccdd7eadb57e6edd90f94b2f
+    version: 5.6.0
+    sha: 3a8c68501be459a8dbfffbe5d792acdd23b4959940fc87785fb013b32edbc208
   - kind: registry
     name: zvariant_utils
     version: 3.2.0
