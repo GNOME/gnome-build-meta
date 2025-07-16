@@ -6,4 +6,4 @@ sources:
 
 config:
   source: /
-  target: /usr/lib/systemd/system-preset
+  target: /usr/lib/systemd

@@ -1,0 +1,8 @@
+# Handles creation of the standard directories in
+# the user's home: Downloads/, Documents/, Music/, etc
+enable xdg-user-dirs.service
+
+# Ensures that autostart .desktop files installed by
+# the dynamic launcher portal are renamed whenever
+# an app is renamed via end-of-life-rebase
+enable xdg-desktop-portal-rewrite-launchers.service

@@ -1,11 +1,7 @@
-#
-# Configuration of systemd services to enable at boot time
-#
-enable gdm.service
-enable colord.service
-enable accounts-daemon.service
 enable avahi-daemon.*
+
 enable NetworkManager.service
+
 disable systemd-networkd.socket
 disable systemd-networkd.service
 disable systemd-networkd-wait-online.service
