@@ -34,6 +34,7 @@ files/boot-keys/extra-kek-mic/*.crt
 files/boot-keys/extra-kek-mic/*.owner
 files/boot-keys/extra-kek-mic/*.cer
 files/boot-keys/import-pubring.gpg
+files/boot-keys/import-pubring.pgp
 files/boot-keys/private-key/
 files/boot-keys/VENDOR.der
 current-secure-vm/
