@@ -26,6 +26,7 @@ depends:
 - gnomeos-deps/sysupdate-config.bst
 - gnomeos-deps/pcrlock-config.bst
 - gnomeos-deps/udev-hide-usr.bst
+- gnomeos-deps/hidraw-udev.bst
 
 - gnomeos-deps/alsa-ucm-conf.bst
 - gnomeos-deps/android-udev-rules.bst

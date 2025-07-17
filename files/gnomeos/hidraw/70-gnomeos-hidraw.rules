@@ -1,0 +1,1 @@
+ACTION=="add|change|move|bind", SUBSYSTEM=="hidraw", ENV{HIDRAW_UACCESS}=="1", TAG+="uaccess"
