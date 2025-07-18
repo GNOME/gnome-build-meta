@@ -15,6 +15,7 @@ build-depends:
 depends:
 - core-deps/libgphoto2.bst
 - freedesktop-sdk.bst:components/avahi.bst
+- freedesktop-sdk.bst:components/avahi-libs.bst
 - freedesktop-sdk.bst:components/jpeg.bst
 - freedesktop-sdk.bst:components/libtiff.bst
 - freedesktop-sdk.bst:components/libusb.bst
