@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-weather.git
   track: main
-  ref: 48.0-34-ge2aaae0208b6be533467974c3c8a64f907cf5365
+  ref: 48.0-42-ga54f3d168915fea654e425a84ffcfbd1ffdc3c9f
 - kind: git_module
   url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
   path: gi-types
