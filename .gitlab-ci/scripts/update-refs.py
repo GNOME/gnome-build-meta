@@ -43,6 +43,7 @@ boards_elements = [
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html"),
     ("core/gnome-session.bst", "https://gitlab.gnome.org/GNOME/gnome-session/-/issues/161"),
+    ("sdk/gjs.bst", "https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3801"),
 ]
 
 def git(*args):
