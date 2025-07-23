@@ -41,7 +41,8 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 
 - core-deps/systemd.bst
-- freedesktop-sdk.bst:components/systemd-hwdb.bst
+- core-deps/systemd-hwdb.bst
+
 - freedesktop-sdk.bst:vm/mesa-default.bst
 
 - core.bst

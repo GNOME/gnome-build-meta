@@ -78,6 +78,8 @@ depends:
 
 - freedesktop-sdk.bst:components/iproute2.bst
 
+- core-deps/systemd-hwdb.bst
+
 (?):
 - arch == "aarch64":
     depends:

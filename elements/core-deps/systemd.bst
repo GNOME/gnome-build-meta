@@ -7,7 +7,6 @@ runtime-depends:
 - core-deps/python-pefile.bst
 - freedesktop-sdk.bst:bootstrap/libxcrypt.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
-- freedesktop-sdk.bst:components/systemd-hwdb.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/libgpg-error.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
