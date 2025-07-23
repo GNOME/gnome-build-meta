@@ -1,0 +1,11 @@
+diff -ur freedesktop-sdk.old/files/linux/fdsdk-config.sh freedesktop-sdk/files/linux/fdsdk-config.sh
+--- freedesktop-sdk.old/files/linux/fdsdk-config.sh	2026-05-06 18:53:55.654349045 +0200
++++ freedesktop-sdk/files/linux/fdsdk-config.sh	2026-05-06 18:54:31.476223986 +0200
+@@ -2767,6 +2767,7 @@
+         enable X86_PLATFORM_DRIVERS_HP
+         module ALIENWARE_WMI
+         module ASUS_NB_WMI
++        module ASUS_ARMOURY
+         module ASUS_WMI
+         module ASUS_TF103C_DOCK
+         enable DELL_SMBIOS_WMI

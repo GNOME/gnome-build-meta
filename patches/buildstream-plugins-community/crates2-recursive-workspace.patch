@@ -1,0 +1,83 @@
+diff -ur buildstream-plugins-community.old/src/buildstream_plugins_community/sources/cargo2.py buildstream-plugins-community/src/buildstream_plugins_community/sources/cargo2.py
+--- buildstream-plugins-community.old/src/buildstream_plugins_community/sources/cargo2.py	2026-03-05 17:01:40.000000000 +0100
++++ buildstream-plugins-community/src/buildstream_plugins_community/sources/cargo2.py	2026-05-05 20:33:22.070038533 +0200
+@@ -596,6 +596,36 @@
+         # it will be part of a workspace if workspaces are used. In this case,
+         # inheritance also needs to be applied to the root manifest.
+         if "workspace" in root_toml:
++            def get_dependencies(path, toml):
++                for dep_details in toml.get("dependencies", {}).values():
++                    dep_path = (
++                        dep_details.get("path")
++                        if isinstance(dep_details, dict)
++                        else None
++                    )
++
++                    if not dep_path:
++                        continue
++
++                    sub_crate_path = os.path.join(path, dep_path)
++                    sub_crate_toml_path = os.path.join(sub_crate_path, "Cargo.toml")
++
++                    if not os.path.isfile(sub_crate_toml_path):
++                        continue
++
++                    with open(sub_crate_toml_path, "rb") as f:
++                        sub_crate_toml = tomllib.load(f)
++
++                    if "package" in sub_crate_toml:
++                        sub_crate_name = sub_crate_toml["package"]["name"]
++                        if sub_crate_name not in crates:
++                            crates[sub_crate_name] = {
++                                "config": sub_crate_toml,
++                                "path": sub_crate_path,
++                            }
++
++                            get_dependencies(sub_crate_path, sub_crate_toml)
++
+             workspace = root_toml["workspace"]
+             workspace_members = workspace.get("members", [])
+ 
+@@ -615,37 +645,17 @@
+ 
+                     with open(crate_toml_path, "rb") as f:
+                         crate_toml = tomllib.load(f)
+-                        crates[crate_toml["package"]["name"]] = {
++                        name = crate_toml["package"]["name"]
++                        crates[name] = {
+                             "config": crate_toml,
+                             "path": crate_path,
+                         }
+ 
++                        get_dependencies(crate_path, crate_toml)
++
+             # Crates specified under workspace.dependencies with the "path" key are
+             # implicitly part of workspace.members
+-            for dep_details in workspace.get("dependencies", {}).values():
+-                dep_path = (
+-                    dep_details.get("path")
+-                    if isinstance(dep_details, dict)
+-                    else None
+-                )
+-
+-                if not dep_path:
+-                    continue
+-
+-                crate_path = os.path.join(tmp_dir, dep_path)
+-                crate_toml_path = os.path.join(crate_path, "Cargo.toml")
+-
+-                if not os.path.isfile(crate_toml_path):
+-                    continue
+-
+-                with open(crate_toml_path, "rb") as f:
+-                    crate_toml = tomllib.load(f)
+-
+-                if "package" in crate_toml:
+-                    crates[crate_toml["package"]["name"]] = {
+-                        "config": crate_toml,
+-                        "path": crate_path,
+-                    }
++            get_dependencies(tmp_dir, workspace)
+ 
+             crate = crates.get(self.name)
+             if crate is None:

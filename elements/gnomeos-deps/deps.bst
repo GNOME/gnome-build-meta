@@ -118,6 +118,10 @@ depends:
     depends:
       (>):
       - gnomeos-deps/deps-aarch64.bst
+- arch == "x86_64":
+    depends:
+      (>):
+      - gnomeos-deps/deps-x86-64.bst
 - channel == "nightly":
     depends:
       (>):
