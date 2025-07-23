@@ -1,4 +1,4 @@
-commit 5bffc39ccb4c9c50d96c60b87c82999a76142df6
+commit a17864dcf78bc7d375edc529b867942577b837fd
 Author: Valentin David <me@valentindavid.com>
 Date:   Sun Jun 29 16:31:27 2025 +0200
 
@@ -12,17 +12,17 @@ Date:   Sun Jun 29 16:31:27 2025 +0200
     boot. And instead we can wait for mainlining.
 
 diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index fe1fe648d..46687b6f0 100644
+index 711353250..592061d72 100644
 --- a/elements/include/linux.yml
 +++ b/elements/include/linux.yml
 @@ -7,3 +7,5 @@ sources:
-   ref: v6.15.3-0-ga2b47f77e740a21dbdcb12e2f2ca3c840299545a
+   ref: v6.15.7-0-ge8af141440cebccb6554fc23f8d21ce063b976a1
  - kind: patch_queue
    path: patches/linux
 +- kind: patch_queue
 +  path: patches/linux-oneplus6
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 45bcee89d..3d5a78d5c 100644
+index dabdc29fb..907477eda 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
 @@ -681,6 +681,7 @@ case "$arch" in
