@@ -18,6 +18,7 @@ depends:
 - gnomeos-deps/flathub-config.bst
 - gnomeos-deps/gnome-nightly-config.bst
 - gnomeos-deps/journald-config.bst
+- gnomeos-deps/nm-connectivity-config.bst
 - gnomeos-deps/nsswitch-config.bst
 - gnomeos-deps/plymouth-gnome-theme.bst
 - gnomeos-deps/spice-vdagent.bst
