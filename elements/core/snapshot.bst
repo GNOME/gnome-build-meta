@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.alpha-18-g12308ef6407dcbe9ca047a896e32932d0bfa87b2
+  ref: 49.alpha-36-g28336a9f63f6720740eea26eed435cc7b8befc84
 - kind: cargo2
   ref:
   - kind: registry
@@ -757,8 +757,8 @@ sources:
     sha: 52e599a477cf9840e92f2cde9a7189e67b42c57532749bf90aea6ec10facd4db
   - kind: registry
     name: rqrr
-    version: 0.9.3
-    sha: f2260da7f69877ba68c49a0c2d9946829848236c708dd40d2a6baf8c868ee887
+    version: 0.10.0
+    sha: fbee31f6b3a594eca8afb8bf3359bcd52aa8aa4d90b561d201534558cfadae1b
   - kind: registry
     name: rustc_version
     version: 0.4.1
