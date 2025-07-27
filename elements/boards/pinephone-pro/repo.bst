@@ -1,6 +1,7 @@
 kind: ostree
 
 build-depends:
+- freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - freedesktop-sdk.bst:components/ostree.bst
 - boards/pinephone-pro/initial-scripts.bst
@@ -13,9 +14,14 @@ variables:
   sysroot: '%{build-root}/sysroot'
   ostree-branch: gnome-os/aarch64/pinephone-pro
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   ostree-branch: '%{ostree-branch}'
   initial-commands:
+  - mkdir /fakecap
   - |
     prepare-image.sh \
        --sysroot %{sysroot} \
