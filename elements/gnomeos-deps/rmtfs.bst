@@ -17,6 +17,10 @@ depends:
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - gnomeos-deps/qrtr.bst
 
+variables:
+  make-args: >-
+    prefix='%{prefix}'
+
 config:
   install-commands:
     (>):

@@ -15,8 +15,12 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - gnomeos-deps/qrtr.bst
 
+variables:
+  make-args: >-
+    prefix='%{prefix}'
+
 config:
   install-commands:
     (>):
     - |
-      install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/pd-mapper.sevice.d" condition.conf
+      install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/pd-mapper.service.d" condition.conf
