@@ -1,31 +1,50 @@
-commit 5bffc39ccb4c9c50d96c60b87c82999a76142df6
-Author: Valentin David <me@valentindavid.com>
-Date:   Sun Jun 29 16:31:27 2025 +0200
+From 61ea11f360c46592afab580c6c058e38a821347b Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Tue, 29 Jul 2025 12:28:49 +0200
+Subject: [PATCH] linux: Backport patches for OnePlus 6's panel
 
-    linux: Backport patches for OnePlus 6's panel
-    
-    Those patches come from either mainline or from the Linaro's branch for
-    sdm845 which should get mainlined soon.
-    
-    These are required to have minimally functional OnePlus 6. For now, I
-    will not backport other fixes that does not make it impossible to
-    boot. And instead we can wait for mainlining.
+Those patches come from either mainline or from the Linaro's branch for
+sdm845 which should get mainlined soon.
+
+These are required to have minimally functional OnePlus 6. For now, I
+will not backport other fixes that does not make it impossible to
+boot. And instead we can wait for mainlining.
+---
+ elements/include/linux.yml                    |   2 +
+ files/linux/fdsdk-config.sh                   |   1 +
+ ...samsung-sofef00-transition-to-mipi_d.patch | 135 ++++++++++++++++++
+ ...el-sofef00-move-DSI-calls-to-disable.patch |  44 ++++++
+ ...drm-panel-sofef00-prepare_prev_first.patch |  28 ++++
+ ...-sofef00-initialise-at-50-brightness.patch |  30 ++++
+ ...ef00-don-t-initialise-panel-in-reset.patch |  31 ++++
+ ...rm-panel-sofef00-don-t-use-unprepare.patch |  60 ++++++++
+ ...007-drm-panel-sofef00-fix-panel-name.patch |  28 ++++
+ ...anel-sofef00-proper-power-sequencing.patch | 120 ++++++++++++++++
+ 10 files changed, 479 insertions(+)
+ create mode 100644 patches/linux-oneplus6/0001-drm-panel-panel-samsung-sofef00-transition-to-mipi_d.patch
+ create mode 100644 patches/linux-oneplus6/0002-drm-panel-sofef00-move-DSI-calls-to-disable.patch
+ create mode 100644 patches/linux-oneplus6/0003-drm-panel-sofef00-prepare_prev_first.patch
+ create mode 100644 patches/linux-oneplus6/0004-drm-panel-sofef00-initialise-at-50-brightness.patch
+ create mode 100644 patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
+ create mode 100644 patches/linux-oneplus6/0006-drm-panel-sofef00-don-t-use-unprepare.patch
+ create mode 100644 patches/linux-oneplus6/0007-drm-panel-sofef00-fix-panel-name.patch
+ create mode 100644 patches/linux-oneplus6/0008-drm-panel-sofef00-proper-power-sequencing.patch
 
 diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index fe1fe648d..46687b6f0 100644
+index fba47abba..92dd08d1b 100644
 --- a/elements/include/linux.yml
 +++ b/elements/include/linux.yml
 @@ -7,3 +7,5 @@ sources:
-   ref: v6.15.3-0-ga2b47f77e740a21dbdcb12e2f2ca3c840299545a
+   ref: v6.16-0-g038d61fd642278bab63ee8ef722c50d10ab01e8f
  - kind: patch_queue
    path: patches/linux
 +- kind: patch_queue
 +  path: patches/linux-oneplus6
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 45bcee89d..3d5a78d5c 100644
+index 4fe71f012..b30d8717b 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
-@@ -681,6 +681,7 @@ case "$arch" in
+@@ -679,6 +679,7 @@ case "$arch" in
      aarch64)
          module DRM_PANFROST
          module DRM_MSM
@@ -557,3 +576,6 @@ index 000000000..1aa986122
 +-- 
 +2.49.0
 +
+-- 
+2.49.0
+
