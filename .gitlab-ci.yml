@@ -27,6 +27,7 @@ stages:
 - build
 - deploy
 - test
+- openqa-workflow
 - reports
 
 .stage-only-rules:
@@ -37,6 +38,28 @@ stages:
   - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY != $CI_JOB_STAGE
     when: never
   - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
+
+# Rebuild only when elements changed.
+.run_in_mr_build:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - elements/*
+        - files/*
+        - include/*
+        - keys/*
+        - patches/*
+        - plugins/*
+        - project.conf
+
+# Separate workflow for openQA test development.
+.run_in_mr_openqa_workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - .gitlab-ci/scripts/openqa-prepare.sh
+        - .gitlab-ci/scripts/openqa-script.sh
+        - tests/openqa/**/*
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -70,6 +93,7 @@ default:
   interruptible: true
   rules:
   - !reference [".stage-only-rules", "rules"]
+  - !reference [".run_in_mr_build", "rules"]
   # We want still execute by default even if neither of the stage rules match.
   # If we add a when: always/on_success rule it has the chance of triggering when we don't
   # expect it due to how gitlab behaves, so use a variable that will always exist
@@ -140,9 +164,6 @@ default:
     OPENQA_UTILS_BRANCH: main
     OPENQA_UTILS_GIT: https://gitlab.gnome.org/gnome/openqa-utils
   timeout: '90m'
-  needs:
-  - job: 's3-image'
-    artifacts: false
   before_script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-prepare.sh"
   script:
@@ -391,6 +412,9 @@ test-openqa-installer:
   extends:
   - .test-openqa-template
   - .x86_64
+  needs:
+  - job: 's3-image'
+    artifacts: false
   variables:
     TESTSUITES: "gnome_install"
   rules:
@@ -402,6 +426,9 @@ test-openqa-desktop:
   extends:
   - .test-openqa-template
   - .x86_64
+  needs:
+  - job: 's3-image'
+    artifacts: false
   variables:
     TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
   rules:
@@ -425,6 +452,20 @@ test-pinephone-pro-aarch64:
   - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
   needs:
   - job: "pinephone-pro-image"
+
+# Run openQA tests against a prebuilt live image, to validate
+# changes to the tests themselves before merge.
+openqa-test-workflow:
+  stage: "openqa-workflow"
+  extends:
+    - .test-openqa-template
+    - .x86_64
+  variables:
+    # Use the live image instead of building one.
+    S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/live_x86_64.iso"
+    TESTSUITES: "gnome_apps gnome_accessibility gnome_install gnome_mobile gnome_locales"
+  rules:
+  - !reference [".run_in_mr_openqa_workflow", "rules"]
 
 .bot-ssh:
   variables:
