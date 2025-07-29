@@ -20,4 +20,8 @@ esac
 
 : ${BST:=bst}
 
-$BST ${ARCH_OPT} build "${TARGETS[@]}"
+if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+    ${BST_NO_SOURCE_PUSH} ${ARCH_OPT} build "${TARGETS[@]}"
+else
+    $BST ${ARCH_OPT} build "${TARGETS[@]}"
+fi
