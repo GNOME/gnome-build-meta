@@ -1,0 +1,13 @@
+[Unit]
+Description=Mark boot successful on Qualcomm devices
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target
+Requires=boot-complete.target
+After=boot-complete.target
+ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=qbootctl -m
