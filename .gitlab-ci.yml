@@ -49,13 +49,13 @@ test-s3-image:
   - |
     version="master"
     casedir="$(pwd)"
-    utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > /tmp/job_ids
+    utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > ./job_ids
   - |
     echo "$(date -Iseconds): Test jobs have been started. To see progress, visit:"
-    for job_id in $(cat /tmp/job_ids); do
+    for job_id in $(cat ./job_ids); do
       echo "  * $OPENQA_HOST/tests/$job_id"
     done
-  - utils/wait_for_job.sh $(cat /tmp/job_ids) > /tmp/exit_code
+  - utils/wait_for_job.sh $(cat ./job_ids) > /tmp/exit_code
   - exit $(cat /tmp/exit_code)
   after_script:
   - |
@@ -66,13 +66,14 @@ test-s3-image:
         cat openqa.log
     fi
   - |
-    ./utils/openqa_junit_report.py $(cat /tmp/job_ids) > ./junit.xml
+    ./utils/openqa_junit_report.py $(cat ./job_ids) > ./junit.xml
   artifacts:
     when: always
     paths:
     - junit.xml
     - openqa.log
     - worker.log
+    - job_ids
     reports:
       junit: junit.xml
     expire_in: '1 week'
