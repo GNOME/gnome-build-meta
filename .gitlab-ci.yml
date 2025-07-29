@@ -137,8 +137,8 @@ default:
     OPENQA_NEEDLES_BRANCH: master
     OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
-    OPENQA_TESTS_BRANCH: master
-    OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
+    OPENQA_UTILS_BRANCH: main
+    OPENQA_UTILS_GIT: https://gitlab.gnome.org/gnome/openqa-utils
   timeout: '90m'
   needs:
   - job: 's3-image'
@@ -153,7 +153,7 @@ default:
         echo "Job creation failed, log below."
         cat openqa.log
     fi
-  - openqa/utils/openqa_junit_report.py $(cat /tmp/all_job_ids) > ./junit.xml
+  - tests/openqa/utils/openqa_junit_report.py $(cat /tmp/all_job_ids) > ./junit.xml
   artifacts:
     when: always
     paths:
