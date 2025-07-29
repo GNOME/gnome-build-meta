@@ -2,11 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: mozilla:firefox/releases/128.1.0esr/source/firefox-128.1.0esr.source.tar.xz
-  base-dir: 'firefox-128.1.0'
-  ref: ccdab622a395622abc6d80040a11715ad81a614f601db6672c05b98ac91fd9b5
-- kind: patch
-  path: patches/mozjs/python-compat.patch
+  url: mozilla:firefox/releases/128.13.0esr/source/firefox-128.13.0esr.source.tar.xz
+  base-dir: 'firefox-128.13.0'
+  ref: a4aad0a9aefae5f14ff68fd9854d4af54d04b341a54b1a6465555f0b635042f4
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
