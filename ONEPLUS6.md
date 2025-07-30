@@ -81,6 +81,25 @@ sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,s
 You can create unit in `/etc/systemd/system` to run this command. You
 should probably make it start after `tqftpserv.service`.
 
+For example
+
+```
+[Unit]
+After=tqftpserv.service
+Before=ModemManager.service
+StartLimitBurst=10
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=12:34:56:78:90:AB:CD:EF:01:23:45:67'
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### SMS and calls.
 
 Install Chats (aka Chatty) and Calls from flathub. RCS messages do not
