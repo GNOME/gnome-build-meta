@@ -1,0 +1,11 @@
+[Unit]
+Description=Qualcomm Hexagon SDSP virtual filesystem
+ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+Before=iio-sensor-proxy.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hexagonrpcd -f /dev/fastrpc-sdsp -d sdsp -s -R /usr/share/qcom/sdm845/OnePlus/oneplus6
+
+[Install]
+WantedBy=multi-user.target
