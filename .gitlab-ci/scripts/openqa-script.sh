@@ -3,8 +3,8 @@
 set -eux
 set -o pipefail
 
-git clone "$OPENQA_UTILS_GIT" --branch "$OPENQA_TESTS_BRANCH" --recurse-submodules ./tests/openqa/utils
-echo "Checked out $OPENQA_TESTS_GIT commit $(git -C ./openqa rev-parse HEAD)"
+git clone "$OPENQA_UTILS_GIT" --branch "$OPENQA_UTILS_BRANCH" --recurse-submodules ./tests/openqa/utils
+echo "Checked out $OPENQA_UTILS_GIT commit $(git -C ./tests/openqa/utils rev-parse HEAD)"
 
 rm --recursive --verbose /etc/openqa/*
 cat >/etc/openqa/client.conf <<EOF
