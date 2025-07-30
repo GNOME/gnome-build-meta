@@ -1,0 +1,9 @@
+[Unit]
+Description=Qualcomm Hexagon SDSP virtual filesystem
+Before=iio-sensor-proxy.service
+Requires=dev-fastrpc\x2dsdsp.device
+After=dev-fastrpc\x2dsdsp.device
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hexagonrpcd -f /dev/fastrpc-sdsp -d sdsp -s -R /run/hexagonrpcd-firmware

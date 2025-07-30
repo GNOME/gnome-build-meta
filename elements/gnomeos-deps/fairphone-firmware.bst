@@ -57,5 +57,5 @@ config:
     cp -rT modem_pr '%{install-root}%{indep-libdir}/firmware/qcom/qcm6490/fairphone5/modem_pr'
 
   - |
-    install -Dm755 -d '%{install-root}%{indep-libdir}/firmware/qcom/qcm6490/Fairphone/fairphone5'
-    cp -rT hexagonfs '%{install-root}%{indep-libdir}/firmware/qcom/qcm6490/Fairphone/fairphone5'
+    install -Dm755 -d '%{install-root}%{datadir}/qcom/qcm6490/Fairphone/fairphone5'
+    cp -rT hexagonfs '%{install-root}%{datadir}/qcom/qcm6490/Fairphone/fairphone5'

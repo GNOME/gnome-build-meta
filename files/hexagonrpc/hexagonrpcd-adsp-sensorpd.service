@@ -1,0 +1,8 @@
+[Unit]
+Description=Qualcomm Hexagon ADSP virtual filesystem for SensorPD
+Requires=dev-fastrpc\x2dadsp.device
+After=dev-fastrpc\x2dadsp.device
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hexagonrpcd -f /dev/fastrpc-adsp -d adsp -s -R /run/hexagonrpcd-firmware

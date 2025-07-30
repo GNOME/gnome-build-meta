@@ -1,0 +1,2 @@
+ACTION!="remove", KERNEL=="fastrpc-adsp", TAG+="systemd"
+ACTION!="remove", KERNEL=="fastrpc-sdsp", TAG+="systemd"

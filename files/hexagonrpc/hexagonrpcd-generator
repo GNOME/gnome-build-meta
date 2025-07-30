@@ -1,0 +1,45 @@
+#!/usr/bin/python3
+# TODO: convert that to C to make it dashing fast!
+import os
+import sys
+
+
+if os.path.islink('/run/hexagonrpcd-firmware'):
+  sys.exit(0)
+
+try:
+  with open('/sys/firmware/devicetree/base/compatible', 'r') as f:
+    compatibles = f.read().split('\0')
+except FileNotFoundError:
+  sys.exit(0)
+
+rootpd = '/usr/lib/systemd/system/hexagonrpcd-adsp-rootpd.service'
+sensorpd = '/usr/lib/systemd/system/hexagonrpcd-adsp-sensorpd.service'
+sdsp = '/usr/lib/systemd/system/hexagonrpcd-sdsp.service'
+
+firmware_path = None
+units = []
+for compatible in compatibles:
+  if compatible == 'oneplus,enchilada':
+    firmware_path = '/usr/share/qcom/sdm845/OnePlus/oneplus6'
+    units = [rootpd, sensorpd, sdsp]
+    break
+  elif compatible == 'fairphone,fp5':
+    firmware_path = '/usr/share/qcom/qcm6490/Fairphone/fairphone5'
+    units = [rootpd, sensorpd]
+    break
+
+system = sys.argv[1]
+
+def enable(target, unit):
+  target_dir = os.path.join(system, f'{target}.wants')
+  os.makedirs(target_dir, exist_ok=True)
+  lnk = os.path.join(target_dir, os.path.basename(unit))
+  if not os.path.islink(lnk):
+    os.symlink(unit, lnk)
+
+if firmware_path is not None:
+  for unit in units:
+    enable('multi-user.target', unit)
+
+  os.symlink(firmware_path, '/run/hexagonrpcd-firmware')
