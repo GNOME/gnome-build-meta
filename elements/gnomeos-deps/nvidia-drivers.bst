@@ -2,8 +2,8 @@ kind: manual
 
 sources:
 - kind: remote
-  url: nvidia:XFree86/Linux-x86_64/570.153.02/NVIDIA-Linux-x86_64-570.153.02.run
-  ref: 148886e4f69576fa8fa67140e6e5dd6e51f90b2ec74a65f1a7a7334dfa5de1b6
+  url: nvidia:XFree86/Linux-x86_64/570.172.08/NVIDIA-Linux-x86_64-570.172.08.run
+  ref: 0256867e082caf93d7b25fa7c8e69b316062a9c6c72c6e228fad7b238c6fa17d
 - kind: local
   path: files/nvidia-config/modprobe.conf
   directory: local-config
