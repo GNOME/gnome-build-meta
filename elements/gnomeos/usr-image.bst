@@ -105,6 +105,10 @@ config:
     L /etc/avahi/services/ssh.service
     # Various, we should move them to /usr/share:
     L /etc/bash_completion.d/000_bash_completion_compat.bash
+    # freedesktop-sdk.bst:components/gawk.bst
+    L /etc/profile.d/gawk.sh
+    L /etc/profile.d/gawk.csh
+
 
     # freedesktop-sdk.bst:components/bash-config.bst
     L /etc/bashrc

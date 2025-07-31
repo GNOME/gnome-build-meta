@@ -329,6 +329,9 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+runtime-depends:
+- freedesktop-sdk.bst:components/gawk.bst
+
 variables:
   cmake-local: >-
     -DCMAKE_INSTALL_SYSCONFDIR=%{sysconfdir}
