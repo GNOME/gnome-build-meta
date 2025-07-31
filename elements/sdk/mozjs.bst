@@ -2,11 +2,13 @@ kind: manual
 
 sources:
 - kind: tar
-  url: mozilla:firefox/releases/128.13.0esr/source/firefox-128.13.0esr.source.tar.xz
-  base-dir: 'firefox-128.13.0'
-  ref: a4aad0a9aefae5f14ff68fd9854d4af54d04b341a54b1a6465555f0b635042f4
+  url: mozilla:firefox/releases/140.1.0esr/source/firefox-140.1.0esr.source.tar.xz
+  base-dir: 'firefox-140.1.0'
+  ref: d15c65d790e0c371b5c95332141b1bdeb29fefc27f852d22a5f542b6d1bc1922
 - kind: patch
-  path: patches/mozjs/icu.patch
+  path: patches/mozjs/bmo1973993-fix-installed-headers.patch
+- kind: patch
+  path: patches/mozjs/bmo1973994-fix-os-dependent-headers.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
