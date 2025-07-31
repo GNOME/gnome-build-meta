@@ -25,6 +25,7 @@ depends:
 variables:
   optimize-debug: "false"
   compress-debug: "false"
+  local_ldflags: -Wl,-z,lazy
 
 environment:
   GOFLAGS: -mod=vendor
