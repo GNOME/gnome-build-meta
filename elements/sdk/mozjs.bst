@@ -5,6 +5,8 @@ sources:
   url: mozilla:firefox/releases/128.13.0esr/source/firefox-128.13.0esr.source.tar.xz
   base-dir: 'firefox-128.13.0'
   ref: a4aad0a9aefae5f14ff68fd9854d4af54d04b341a54b1a6465555f0b635042f4
+- kind: patch
+  path: patches/mozjs/icu.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
