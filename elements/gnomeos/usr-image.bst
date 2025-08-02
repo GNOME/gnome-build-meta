@@ -86,6 +86,7 @@ config:
     # vm-deps/anthy.bst
     L /etc/anthy-unicode.conf
     # freedesktop-sdk.bst:components/audit.bst
+    L /etc/bash_completion.d/audit.bash_completion
     L! /etc/audit/audisp-filter.conf
     L! /etc/audit/audisp-remote.conf
     # auditd does not want to follow symlink for auditd.conf
