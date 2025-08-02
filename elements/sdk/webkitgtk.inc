@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.49.3.tar.xz
-  ref: 25f465bd1f7d615da9f5089575c58c8fbaf26d951de6adc569690e59319d72c1
+  url: webkitgtk:webkitgtk-2.49.4.tar.xz
+  ref: 5b3e758f4cef804e227516a9bf1fe30ce88df6285d1a60d60926dec5bc5463e4
 - kind: patch
   path: patches/webkitgtk/gtk3-build.patch
 build-depends:
