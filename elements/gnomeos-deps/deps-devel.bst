@@ -5,7 +5,6 @@ depends:
 - core-deps/libcheck.bst
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
-- core-deps/python-pefile.bst
 - core-deps/setxkbmap.bst
 - core-deps/umockdev.bst
 - core-deps/xvfb.bst
@@ -20,6 +19,7 @@ depends:
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/buildstream2.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
+- freedesktop-sdk.bst:components/python3-pefile.bst
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
 - freedesktop-sdk.bst:components/xmlto.bst
