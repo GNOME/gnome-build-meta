@@ -48,7 +48,7 @@ build-depends:
 - freedesktop-sdk.bst:components/libmicrohttpd.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libbpf.bst
-- core-deps/python-pefile.bst
+- freedesktop-sdk.bst:components/python3-pefile.bst
 
 config:
   install-commands:

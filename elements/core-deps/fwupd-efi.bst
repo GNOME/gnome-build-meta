@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/grep.bst
-- core-deps/python-pefile.bst
+- freedesktop-sdk.bst:components/python3-pefile.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

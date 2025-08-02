@@ -1,7 +1,6 @@
 kind: manual
 
 build-depends:
-- core-deps/python-pefile.bst
 - gnomeos/os-release-user.bst
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
@@ -11,11 +10,12 @@ build-depends:
   strict: true
   config:
     location: /usr-image
+- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/python3-pefile.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
-- freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
-- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/util-linux.bst
 
 variables:
   strip-binaries: ''
