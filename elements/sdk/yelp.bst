@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp.git
   track: master
-  ref: 42.3-0-g4b7c355b0ee138b4f2bbef683441ad11ba96330c
+  ref: 49.beta-0-g41d33f9836eecc3c6b36560308c5aafe05d6e123
 
 build-depends:
 - sdk-deps/appstream-glib.bst
@@ -15,9 +15,9 @@ build-depends:
 depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
-- sdk/gtk+-3.bst
-- sdk/libhandy.bst
-- sdk/webkit2gtk-4.1.bst
+- sdk/gtk.bst
+- sdk/libadwaita.bst
+- sdk/webkitgtk-6.0.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
