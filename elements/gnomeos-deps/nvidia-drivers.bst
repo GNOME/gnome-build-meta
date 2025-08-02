@@ -18,6 +18,9 @@ build-depends:
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
 
+variables:
+  strip-binaries: ''
+
 environment:
   TAR_OPTIONS: >-
     --no-same-owner
