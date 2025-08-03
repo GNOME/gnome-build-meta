@@ -8,7 +8,7 @@ MatchPattern=usr-%a_@v_@u.raw usr-%a_@v_@u.raw.xz
 
 [Target]
 Type=partition
-Path=/
+Path=/usr
 MatchPattern=gnomeos_usr_@v
 MatchPartitionType=usr
 ReadOnly=true
