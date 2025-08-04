@@ -3,6 +3,9 @@
 set -e
 set -o pipefail
 
+./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
+./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
+
 # Setup certificate for pushing to the cache
 echo "$CASD_CLIENT_CERT" > client.crt
 echo "$CASD_CLIENT_KEY" > client.key
@@ -13,10 +16,10 @@ set -x
 mkdir -p logs
 
 # Setup certificates and image version for sysupdate
-if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-    make -C files/boot-keys generate-keys IMPORT_MODE=import
-else
+if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "schedule" ]; then
     make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+else
+    make -C files/boot-keys generate-keys IMPORT_MODE=import
 fi
 
 build_num="${CI_PIPELINE_ID}"
