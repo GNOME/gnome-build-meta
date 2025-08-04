@@ -8,5 +8,5 @@ kind: meson
 variables:
   meson-local: >-
     -Dlibglycin-gtk4=false
-    -Dthumbnailer=false
+    -Dglycin-thumbnailer=false
     -Dglycin-loaders=false

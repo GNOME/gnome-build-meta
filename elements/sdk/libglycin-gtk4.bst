@@ -14,5 +14,5 @@ variables:
   meson-local: >-
     -Dlibglycin-gtk4=true
     -Dlibglycin=false
-    -Dthumbnailer=false
+    -Dglycin-thumbnailer=false
     -Dglycin-loaders=false
