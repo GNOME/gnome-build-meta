@@ -4,13 +4,14 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:chergert/foundry.git
   track: main
-  ref: 1.0.alpha-383-g3adb176f58778079619e11332a10b5489cb96ae6
+  ref: 1.0.beta-23-gee317cab844e4aa20337cb0784fa95264fbce0ba
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/cmark.bst
+- core-deps/editorconfig-core-c.bst
 - core-deps/gom.bst
 - core-deps/jsonrpc-glib.bst
 - core-deps/libgit2.bst
@@ -23,7 +24,7 @@ depends:
 - sdk/libdex.bst
 - sdk/sysprof-minimal.bst
 - sdk/webkitgtk-6.0.bst
-- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/flatpak-builder.bst
+- freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
