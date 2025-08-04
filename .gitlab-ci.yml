@@ -9,7 +9,6 @@ include:
 variables:
   GET_SOURCES_ATTEMPTS: 3
   BST_NO_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nopush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
-  BST_NO_SOURCE_PUSH: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream-nosourcepush.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
   BST: "bst --config $CI_PROJECT_DIR/.gitlab-ci/buildstream.conf --log-file $CI_PROJECT_DIR/logs/build.log --colors"
   # This mirrors the project.conf
   # OCI_BRANCH is like branch and the tag that we use in the images
