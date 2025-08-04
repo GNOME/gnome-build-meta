@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+cat <<\EOF
 # This is the buildstream configuration used for CI
 
 # The log directory
@@ -40,12 +45,27 @@ logging:
 build:
   retry-failed: True
 
-# configuration for pulling from our cache server, even freedesktop-sdk stuff
+# Use the gnome mirror by default
+projects:
+  gnome:
+    default-mirror: gnome
+EOF
+
+if [ "${1-}" != nopush ]; then
+    cat <<EOF
 artifacts:
   servers:
-  - url: https://gbm.gnome.org:11003
+  - url: https://gbm.gnome.org:11004
+    push: true
+    auth:
+      client-key: client.key
+      client-cert: client.crt
+EOF
+fi
 
-# configuration for pushing, client key and cert will be written by CI
+# Never push sources from protected branches
+if [ "${PUSH_SOURCE-}" = 1 ]; then
+    cat <<EOF
 source-caches:
   servers:
   - url: https://gbm.gnome.org:11004
@@ -53,8 +73,5 @@ source-caches:
     auth:
       client-key: client.key
       client-cert: client.crt
-
-# Use the gnome mirror by default
-projects:
-  gnome:
-    default-mirror: gnome
+EOF
+fi
