@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-connections.git
   track: master
-  ref: 48.0-10-g76c96f6d44bd0af46ff277afe02db6ccb6750d8c
+  ref: 48.0-21-g4d3a9ecf7cad09084854f80ff0663754f885e25b
 - kind: git_module
   url: gnome:gtk-frdp.git
   path: subprojects/gtk-frdp
@@ -20,6 +20,7 @@ build-depends:
 depends:
 - core-deps/freerdp.bst
 - core-deps/gtk-vnc.bst
+- core-deps/spice-gtk.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk+-3.bst
 - sdk/libhandy.bst
