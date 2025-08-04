@@ -61,6 +61,10 @@ default:
     fi
 
   - |
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
+
+  - |
     build_num="${CI_PIPELINE_ID}"
     if [ "${CI_COMMIT_BRANCH-}" = master ]; then
       IMAGE_VERSION="nightly.$build_num"
