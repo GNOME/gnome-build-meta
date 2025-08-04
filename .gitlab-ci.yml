@@ -48,6 +48,10 @@ default:
   - echo "$CASD_CLIENT_KEY" > client.key
   - make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
 
+  - |
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
+
   retry:
     max: 2
     when:
