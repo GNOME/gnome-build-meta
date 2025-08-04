@@ -1,3 +1,8 @@
+#!/bin/bash
+
+set -eu
+
+cat <<\EOF
 # This is the buildstream configuration used for CI
 
 # The log directory
@@ -40,7 +45,14 @@ logging:
 build:
   retry-failed: True
 
-# configuration for pushing, client key and cert will be written by CI
+# Use the gnome mirror by default
+projects:
+  gnome:
+    default-mirror: gnome
+EOF
+
+if [ "${1-}" != nopush ]; then
+    cat <<EOF
 artifacts:
   servers:
   - url: https://gbm.gnome.org:11004
@@ -48,8 +60,18 @@ artifacts:
     auth:
       client-key: client.key
       client-cert: client.crt
+EOF
+fi
 
-# Use the gnome mirror by default
-projects:
-  gnome:
-    default-mirror: gnome
+# Never push sources from protected branches
+if [ "${PUSH_SOURCE-}" = 1 ]; then
+    cat <<EOF
+source-caches:
+  servers:
+  - url: https://gbm.gnome.org:11004
+    push: true
+    auth:
+      client-key: client.key
+      client-cert: client.crt
+EOF
+fi
