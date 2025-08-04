@@ -42,6 +42,10 @@ default:
   - echo "$CASD_CLIENT_CERT" > client.crt
   - echo "$CASD_CLIENT_KEY" > client.key
 
+  - |
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
+    ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
+
 #
 # Templates shared by multiple jobs
 #
