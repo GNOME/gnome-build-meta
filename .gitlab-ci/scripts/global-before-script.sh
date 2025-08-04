@@ -13,11 +13,15 @@ set -x
 mkdir -p logs
 
 # Setup certificates and image version for sysupdate
-if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-    make -C files/boot-keys generate-keys IMPORT_MODE=import
-else
+if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "schedule" ]; then
     make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+    export PUSH_SOURCE=1
+else
+    make -C files/boot-keys generate-keys IMPORT_MODE=import
 fi
+
+./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
+./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
 
 build_num="${CI_PIPELINE_ID}"
 if [ "${CI_COMMIT_BRANCH-}" = master ]; then
