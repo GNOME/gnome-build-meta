@@ -1,0 +1,47 @@
+From 896ad8576a5cf5079b5823e24821897e5ef020bc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Mon, 4 Aug 2025 08:04:30 +0200
+Subject: [PATCH 1/2] environment: Work around introspection issue
+
+Methods of all classes from GioUnix erroneously show up as static
+methods, see https://gitlab.gnome.org/GNOME/glib/-/issues/3744.
+
+Work around this by defining the methods ourselves if we detect
+that case.
+---
+ js/ui/environment.js | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/js/ui/environment.js b/js/ui/environment.js
+index 77f09bf10..bbbdf1d31 100644
+--- a/js/ui/environment.js
++++ b/js/ui/environment.js
+@@ -8,6 +8,7 @@ import Cairo from 'cairo';
+ import Clutter from 'gi://Clutter';
+ import Gdk from 'gi://Gdk';
+ import Gio from 'gi://Gio';
++import GioUnix from 'gi://GioUnix';
+ import GLib from 'gi://GLib';
+ import GObject from 'gi://GObject';
+ import Meta from 'gi://Meta';
+@@ -340,6 +341,17 @@ Object.prototype.toString = function () {
+     }
+ };
+ 
++// Work around https://gitlab.gnome.org/GNOME/glib/-/issues/3744
++if (!GioUnix.DesktopAppInfo.prototype.has_key) {
++    GioUnix.DesktopAppInfo.prototype.has_key = function (key) {
++        return GioUnix.DesktopAppInfo.has_key(this, key);
++    };
++
++    GioUnix.DesktopAppInfo.prototype.get_categories = function () {
++        return GioUnix.DesktopAppInfo.get_categories(this);
++    };
++}
++
+ const slowdownEnv = GLib.getenv('GNOME_SHELL_SLOWDOWN_FACTOR');
+ if (slowdownEnv) {
+     let factor = parseFloat(slowdownEnv);
+-- 
+2.50.1
+

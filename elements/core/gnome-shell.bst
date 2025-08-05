@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 49.alpha.1-35-g484928e80acb4b6d161dcdd50d48e7731b4f9bee
+  ref: 49.beta-10-g494e3c74df02c373e3b099cc38d2576e1c1686b4
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -20,6 +20,8 @@ sources:
   ref: ed782477cb5164320ae4f731d49bc5d475ab2a52
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
+- kind: patch_queue
+  path: patches/gnome-shell-gir2
 
 build-depends:
 - sdk-deps/sassc.bst
