@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 49.alpha.1-35-g484928e80acb4b6d161dcdd50d48e7731b4f9bee
+  ref: 49.beta-13-g012e7bbde8f3bcb12e098823d6dd0ec15843e7b9
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -20,6 +20,10 @@ sources:
   ref: ed782477cb5164320ae4f731d49bc5d475ab2a52
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
+- kind: patch
+  path: patches/gnome-shell/0001-environment-Work-around-introspection-issue.patch
+- kind: patch
+  path: patches/gnome-shell/0002-Port-to-gjs-1.85-girepository-2.0.patch
 
 build-depends:
 - sdk-deps/sassc.bst
