@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calendar.git
   track: main
-  ref: 49.alpha-29-gcec8a66e8803b6373a1be2a57b132107f02e5e10
+  ref: 49.alpha-33-gf2fb854e769a6ddd71bde9e0484a56d6c058e711
 
 build-depends:
 - sdk/blueprint-compiler.bst

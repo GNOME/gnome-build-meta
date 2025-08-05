@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pygobject.git
   track: main
-  ref: 3.52.3-29-g578a55982a76f62719a9d3e345335cfc05013956
+  ref: 3.52.3-31-gfc67f73f745e0ef10385935f7671e50b5d01f4fc
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 #
 # https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/gobject-introspection-tests.wrap
@@ -33,4 +33,5 @@ depends:
 config:
   configure-commands:
     (<):
-    - patch -p1  -d subprojects/pythoncapi-compat -i ../packagefiles/pythoncapi-compat-meson.diff
+    - patch -p1  -d subprojects/pythoncapi-compat -i 
+      ../packagefiles/pythoncapi-compat-meson.diff
