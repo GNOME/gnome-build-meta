@@ -7,8 +7,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:systemd/systemd.git
-  track: main
-  ref: v258-rc1-202-g1cca606c55399d067272ea8a150df77d22a79c1c
+  track: v*
+  ref: v258-rc2-0-gbebaaddd41e1aa86662032d9b1e8969e41faf195
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
