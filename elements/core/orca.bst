@@ -11,6 +11,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/brltty.bst
 - core-deps/dasbus.bst
 - core-deps/pyatspi.bst
 - core-deps/speech-dispatcher.bst
