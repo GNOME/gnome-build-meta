@@ -14,8 +14,8 @@ variables:
   # This mirrors the project.conf
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
-  OCI_BRANCH: master
-  FLATPAK_BRANCH: master
+  OCI_BRANCH: '49'
+  FLATPAK_BRANCH: 49beta
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"

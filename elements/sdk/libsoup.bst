@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libsoup.git
-  track: master
-  ref: 3.6.4-64-g1296cbf983f036f20262c453926dff77e1d6a852
-
+- kind: tar
+  url: gnome_downloads:libsoup/3.6/libsoup-3.6.5.tar.xz
+  ref: 6891765aac3e949017945c3eaebd8cc8216df772456dc9f460976fbdb7ada234
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

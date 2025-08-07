@@ -1,18 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tecla.git
-  track: main
-  ref: 48.0.2-17-g1ca100f5f3e10da1758904ec09727594aafbe227
-# FIXME: This needs to be kept in sync with the wrap file ideally,
-# but this will do for now
-# https://gitlab.gnome.org/GNOME/tecla/-/blob/main/subprojects/libgxdp.wrap?ref_type=heads
-- kind: git_repo
-  url: gnome:libgxdp.git
-  track: main
-  directory: subprojects/libgxdp
-  ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
+- kind: tar
+  url: gnome_downloads:tecla/48/tecla-48.0.2.tar.xz
+  ref: 783d3464d2a2cf7eb1507649dbd9ff09ce24852c2a6c9a0d365db84063d3d401
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

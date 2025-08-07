@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-user-share.git
-  track: master
-  ref: 48.0-14-g10ba68c6a1117996cf26f65862939e7f3babae1a
+- kind: tar
+  url: gnome_downloads:gnome-user-share/48/gnome-user-share-48.1.tar.xz
+  ref: 82bcfd4ef3ea7fd7b2af7fba9a45b474e174dcd828c1c4bfe7ff8a2ef858ba77
 - kind: cargo2
   ref:
   - kind: registry

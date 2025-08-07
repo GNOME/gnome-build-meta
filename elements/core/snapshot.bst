@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:snapshot.git
-  track: main
-  ref: 49.beta-4-ge482da5a332b2b105f5d6044bc0cbae1d048e2dd
+- kind: tar
+  url: gnome_downloads:snapshot/49/snapshot-49.beta.tar.xz
+  ref: 23005fde529c547f779952e041746d62d463839d0850221e06f2e3db614d5786
 - kind: cargo2
   ref:
   - kind: registry
@@ -345,16 +344,16 @@ sources:
     sha: 8ab79e1ed126803a8fb827e3de0e2ff95191912b8db65cee467edb56fc4cc215
   - kind: registry
     name: glycin
-    version: 3.0.0-beta.1
-    sha: 0ca9a2584f5315609d3284b8885ebd7f8475b991b2ae77b7fdfb22b723fe3321
+    version: 3.0.0-alpha.7
+    sha: 96c2cf69d077fa279fc3a2e6941fd05fc2f3f161910b495bc55e8f2068a50c0b
   - kind: registry
     name: glycin-common
-    version: 1.0.0-beta.1
-    sha: 3344437ebbb38f373d52a2636cefdae31689d32042bbed402438d29abe04d9e9
+    version: 1.0.0-alpha.7
+    sha: 72f726fe14063e230fd79a77a602469d1a7c721c6fe1037bb69786df08b79cdc
   - kind: registry
     name: glycin-utils
-    version: 4.0.0-beta.1
-    sha: 5bb0e781372a461edbf6efddf5fb5ea4b700581773ca6a962cbf9666c8765a46
+    version: 4.0.0-alpha.7
+    sha: 5c87e6f0bedff21f6592368212277d232908f9d9fbf330a5f6558e6907a5b33c
   - kind: registry
     name: gobject-sys
     version: 0.20.10
@@ -429,12 +428,12 @@ sources:
     sha: 41e03b01e54d77c310e1d98647d73f996d04b2f29b9121fe493ea525a7ec03d6
   - kind: registry
     name: gufo-common
-    version: 1.0.0-beta
-    sha: 6b369fe87840c7f9769e475e65500420072bf040c09b12d00fda83567190ea0f
+    version: 0.3.0-alpha
+    sha: 8cb5af73614babb20f5f4500717610d59a9e8231def2f56dfb92662104d10ce3
   - kind: registry
     name: gufo-exif
-    version: 0.3.0-beta
-    sha: 42ed15d1144c2ea214eaf8cb8a83168c9a4dccdbc3b18b889e5610f8cf33128d
+    version: 0.3.0-alpha
+    sha: 005e335f23848568d44652823834de7b65a861241e6f6e40e44a7d5f03908a98
   - kind: registry
     name: half
     version: 2.6.0
