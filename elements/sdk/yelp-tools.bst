@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:yelp-tools.git
-  track: master
-  ref: 42.1-1-g1b2476ba318f32f73933e5efb09d3915790ea069
+- kind: tar
+  url: gnome_downloads:yelp-tools/42/yelp-tools-42.1.tar.xz
+  ref: 3e496a4020d4145b99fd508a25fa09336a503a4e8900028421e72c6a4b11f905
 build-depends:
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

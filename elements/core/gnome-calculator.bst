@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-calculator.git
-  track: main
-  ref: 49.beta-13-gb21ea0b817c265f4e4ca2690ef57b6ceb2b4cff2
-
+- kind: tar
+  url: gnome_downloads:gnome-calculator/49/gnome-calculator-49.beta.tar.xz
+  ref: 1205c6c06180b027253939f2f10d72f52e89ce1f85ce940cdca266e75d094428
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/vala.bst

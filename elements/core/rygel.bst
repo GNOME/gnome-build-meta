@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:rygel.git
-  track: master
-  ref: 45.beta-0-g646fdcfd0cba8ca927331332011d54797578dea3
-
+- kind: tar
+  url: gnome_downloads:rygel/45/rygel-45.beta.tar.xz
+  ref: 5f46d272aca0cb1076a3ad7c7006598870e6cd0d044e586e2e72dfdc25f514cd
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst

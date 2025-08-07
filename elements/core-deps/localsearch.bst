@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:localsearch.git
-  track: main
-  ref: 3.10.beta-0-gb8eb899ea692e705ab7978038e31a0f4a1ce404d
+- kind: tar
+  url: gnome_downloads:localsearch/3.10/localsearch-3.10.beta.tar.xz
+  ref: 187cf49cb666ee6fd674dd8ff9fbbb87687c8f78b54a9fc1c9233dbd52e3c479
 build-depends:
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst

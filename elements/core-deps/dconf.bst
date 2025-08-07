@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:dconf.git
-  track: main
-  ref: 0.40.0-48-g7683ac9510b19808e34225ccbe9ccabd39b66a69
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 4758f6fb7f889e074e13df3f914328f3eecb1fd3
-
+- kind: tar
+  url: gnome_downloads:dconf/0.40/dconf-0.40.0.tar.xz
+  ref: cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/dbus.bst

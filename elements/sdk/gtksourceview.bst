@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtksourceview.git
-  track: master
-  ref: 5.17.0-57-g0bdea3c108dfed649ead59f5315807c314c64142
-
+- kind: tar
+  url: gnome_downloads:gtksourceview/5.17/gtksourceview-5.17.0.tar.xz
+  ref: dcf162b47cb51671ee66e6ae05f9d54165f2e5cadca0fed2ae94a3aa4704464c
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
