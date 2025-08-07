@@ -1,11 +1,15 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
   ref: 49.alpha-78-g1e7a4e6b8170525031506c5677c072c92d3d22fe
+
 build-depends:
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/dasbus.bst
 - core-deps/pyatspi.bst
