@@ -55,5 +55,4 @@ depends:
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst
-- freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:platform.bst
