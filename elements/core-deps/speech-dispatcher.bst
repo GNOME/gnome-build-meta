@@ -6,6 +6,7 @@ sources:
   ref: b14a5238d287d2dcce4dd42bbd66ca65fa228e7e683708267f7b34036f7ba4b4
 
 build-depends:
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/texinfo.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
@@ -13,6 +14,7 @@ depends:
 - core-deps/dotconf.bst
 - core-deps/espeak-ng.bst
 - sdk/glib.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/libpulse.bst
 - freedesktop-sdk.bst:components/sndfile.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
