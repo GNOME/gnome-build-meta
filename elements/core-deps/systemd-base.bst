@@ -5,10 +5,9 @@ kind: meson
 #  - freedestkop-sdk.bst:components/systemd-libs.bst
 
 sources:
-- kind: git_repo
-  url: github:systemd/systemd.git
-  track: v*
-  ref: v258-rc2-0-gbebaaddd41e1aa86662032d9b1e8969e41faf195
+- kind: tar
+  url: github_files:systemd/systemd/archive/refs/tags/v258-rc2.tar.gz
+  ref: a47f10d6b806b2a92fbec8501a4a58d20be8e475a9d9a455f5b7f4c5f414bfe6
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
