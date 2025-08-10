@@ -126,6 +126,7 @@ config:
     L /etc/cups/snmp.conf.default
     L /etc/cups/ppd
     L /etc/cups/ssl
+    L /etc/paperspecs
     # FIXME: move to /usr/share
     L /etc/dbus-1/system.d/cups.conf
     # core-deps/system-config-printer.bst
