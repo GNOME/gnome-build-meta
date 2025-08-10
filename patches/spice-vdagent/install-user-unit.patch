@@ -1,0 +1,15 @@
+diff -ur spice-vdagent-0.22.0.old/data/spice-vdagent.service spice-vdagent-0.22.0/data/spice-vdagent.service
+--- spice-vdagent-0.22.0.old/data/spice-vdagent.service	2022-02-07 14:44:48.000000000 +0100
++++ spice-vdagent-0.22.0/data/spice-vdagent.service	2025-08-10 13:21:46.699635543 +0200
+@@ -1,5 +1,11 @@
+ [Unit]
+ Description=Spice guest session agent
++ConditionVirtualization=|qemu
++ConditionVirtualization=|kvm
++After=gnome-session-initialized.target
+ 
+ [Service]
+ ExecStart=/usr/bin/spice-vdagent -x
++
++[Install]
++WantedBy=graphical-session.target
