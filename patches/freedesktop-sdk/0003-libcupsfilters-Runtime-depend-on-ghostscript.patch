@@ -1,0 +1,33 @@
+From 1e77475f106ce2dc021e89378f5787eb9ade7495 Mon Sep 17 00:00:00 2001
+From: Ignacy Kuchciński <ignacykuchcinski@gmail.com>
+Date: Sun, 10 Aug 2025 15:36:42 +0200
+Subject: [PATCH 1/2] libcupsfilters: Runtime depend on ghostscript
+
+Ghostscript binary is used in filter functions, so add runtime
+dependency as well.
+---
+ elements/components/libcupsfilters.bst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/components/libcupsfilters.bst b/elements/components/libcupsfilters.bst
+index 865d2f2ba..9517ffb59 100644
+--- a/elements/components/libcupsfilters.bst
++++ b/elements/components/libcupsfilters.bst
+@@ -2,13 +2,13 @@ kind: autotools
+ 
+ build-depends:
+ - public-stacks/buildsystem-autotools.bst
+-- components/ghostscript.bst
+ - components/mutool.bst
+ 
+ depends:
+ - components/cups.bst
+ - components/dbus.bst
+ - components/fontconfig.bst
++- components/ghostscript.bst
+ - components/jpeg.bst
+ - components/lcms.bst
+ - components/libexif.bst
+-- 
+2.51.0
+

@@ -127,6 +127,7 @@ config:
     # Needed for cups which tries to write PPDs there even driverless
     d /etc/cups/ppd
     L /etc/cups/ssl
+    L /etc/paperspecs
     # FIXME: move to /usr/share
     L /etc/dbus-1/system.d/cups.conf
     # core-deps/system-config-printer.bst
