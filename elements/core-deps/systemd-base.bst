@@ -49,6 +49,7 @@ build-depends:
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/python3-pefile.bst
+- freedesktop-sdk.bst:components/vmlinuxh.bst
 
 config:
   install-commands:
@@ -100,6 +101,8 @@ variables:
     -Ddbus=disabled
     -Dstatus-unit-format-default=combined
     -Dselinux=disabled
+    -Dvmlinux-h=provided
+    -Dvmlinux-h-path='%{includedir}/%{gcc_triplet}/linux/vmlinux.h'
 
 public:
   cpe:
