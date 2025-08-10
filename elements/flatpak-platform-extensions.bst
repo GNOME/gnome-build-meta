@@ -26,6 +26,7 @@ build-depends:
         - freedesktop-sdk.bst:flatpak-images/platform-vaapi-intel.bst
         config:
           flatpak-image: true
+          branch: '%{freedesktop-sdk-flatpak-branch}'
 
 variables:
   # Obtain the versions of the flatpak extensions
