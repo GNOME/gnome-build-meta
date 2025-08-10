@@ -31,4 +31,4 @@ config:
     - cd %{install-root}%{datadir}/system-config-printer &&
       rm -r icons/ troubleshoot/ ui/ xml/ &&
       rm applet.py check-device-ids.py HIG.py install-printerdriver.py SearchCriterion.py
-      serversettings.py system-config-printer.py timedops.py ToolbarSearchEntry.py userdefault.py
+      serversettings.py system-config-printer.py ToolbarSearchEntry.py userdefault.py
