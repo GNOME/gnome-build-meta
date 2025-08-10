@@ -4,6 +4,9 @@ sources:
 - kind: tar
   url: spice:releases/spice-vdagent-0.22.1.tar.bz2
   ref: 93b0d15aca4762cc7d379b179a7101149dbaed62b72112fffb2b3e90b11687a0
+- kind: local
+  path: files/spice-vdagent/
+  directory: local
 - kind: patch_queue
   path: patches/spice-vdagent/
 
@@ -33,3 +36,11 @@ config:
   configure-commands:
     (<):
     - rm configure
+
+  install-commands:
+    (>):
+    - |
+      rm -rf '%{install-root}%{sysconfdir}/xdg'
+
+    - |
+      install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/user-preset' local/80-spice-vdagent.preset
