@@ -124,7 +124,8 @@ config:
     L /etc/cups/cupsd.conf.default
     L /etc/cups/snmp.conf
     L /etc/cups/snmp.conf.default
-    L /etc/cups/ppd
+    # Needed for cups which tries to write PPDs there even driverless
+    d /etc/cups/ppd
     L /etc/cups/ssl
     # FIXME: move to /usr/share
     L /etc/dbus-1/system.d/cups.conf
