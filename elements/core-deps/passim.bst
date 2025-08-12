@@ -12,5 +12,5 @@ depends:
 
 sources:
 - kind: tar
-  url: github_files:hughsie/passim/releases/download/0.1.8/passim-0.1.8.tar.xz
-  ref: 2b5471a9ce78424d4b5b5a519ca9f5b5db27618af52db5e597cd3037f8a9ca74
+  url: github_files:hughsie/passim/releases/download/0.1.10/passim-0.1.10.tar.xz
+  ref: 53ede935a788fbb9bd569ca16347e02a2a4d39f6154beb672161dbb79f56419b
