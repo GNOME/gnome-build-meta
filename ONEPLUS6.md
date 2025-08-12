@@ -112,3 +112,11 @@ get all messages.
 
 Something to fix, the polkit configuration is probably wrong for
 ModemManager.
+
+### Selecting time zone in GNOME Initial Setup
+
+Right now, the time zone selector for `gnome-initial-setup` isn't 
+responsive, and it's not possible to maximize, resize, or move the 
+window off-screen. When running GNOME OS on a phone, this means there is no 
+way to press the "Next" button. As a workaround, select your time zone, press 
+"Previous", then "Next", then press Enter on the on-screen keyboard.
