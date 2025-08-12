@@ -15,7 +15,6 @@ if get_option('mode') == 'sysupdate'
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('VARIANT_ID', get_option('variant'))
     conf_data.set('IMAGE_VERSION', get_option('image-version'))
-    conf_data.set('GNOMEOS_COMMIT', vcs_tag)
     if get_option('variant') == 'devel'
       conf_data.set('VARIANT', 'Development')
       conf_data.set('FULL_NAME', 'GNOME OS Development')
@@ -34,7 +33,6 @@ elif get_option('mode') == 'oci'
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('FULL_NAME', 'GNOME OS')
     conf_data.set('IMAGE_VERSION', get_option('image-version'))
-    conf_data.set('GNOMEOS_COMMIT', vcs_tag)
     configure_file(
         input : 'os-release.oci.in',
         output : 'os-release',
