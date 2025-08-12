@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:hughsie/libjcat/archive/0.1.6.tar.gz
-  ref: 8de77399dd3f7cd055f07003e6fce438ef8339e2bfd90c29982b7ee0a2e72884
+  url: github_files:hughsie/libjcat/archive/0.2.3.tar.gz
+  ref: 9b94aa1915ff392c466c03aa3ad8de320eb625d7a074571de9ec669ab17d405a
 
 build-depends:
 - sdk/gobject-introspection.bst
