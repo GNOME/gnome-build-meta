@@ -2,10 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd/releases/download/1.9.21/fwupd-1.9.21.tar.xz
-  ref: a0b56ed11f0ae8045b465535d468b14a230535a30d4a703ff9113fc5dd236ba4
-- kind: patch
-  path: patches/fwupd/new-pango.patch
+  url: github_files:fwupd/fwupd/releases/download/2.0.13/fwupd-2.0.13.tar.xz
+  ref: da049e8616924b15d434d3eb616767f00f91611c3e7c8efd9e36c28099e1126f
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -17,6 +15,7 @@ build-depends:
 # Needed for docs/test-deps.py
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/valgrind.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
@@ -55,21 +54,13 @@ environment:
 
 variables:
   meson-local: >-
-    -Dlaunchd=disabled
-    -Dplugin_msr=%{plugin_msr}
-    -Dplugin_uefi_capsule=%{plugin_uefi_capsule}
     -Defi_binary=%{efi_binary}
     -Dplugin_flashrom=disabled
-    -Dplugin_logitech_bulkcontroller=disabled
+    -Dvendor_ids_dir='%{datadir}/hwdata'
+    -Dprotobuf=disabled
+    -Dumockdev_tests=disabled
 
-  plugin_msr: 'false'
-  plugin_uefi_capsule: 'false'
   efi_binary: 'false'
   (?):
-  - arch in ["arm", "aarch64"]:
-      plugin_uefi_capsule: 'true'
-      efi_binary: 'true'
-  - arch in ["i686", "x86_64"]:
-      plugin_msr: 'true'
-      plugin_uefi_capsule: 'true'
+  - arch in ["arm", "aarch64", "i686", "x86_64"]:
       efi_binary: 'true'
