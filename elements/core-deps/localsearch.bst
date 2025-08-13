@@ -29,6 +29,7 @@ depends:
 - freedesktop-sdk.bst:components/libexif.bst
 - freedesktop-sdk.bst:components/libflac.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+- freedesktop-sdk.bst:components/libwebp.bst
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
