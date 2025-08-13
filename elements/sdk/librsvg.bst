@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.60.0-223-g822f3229ab70312014a52c5d6124858a50d1d7ee
+  ref: 2.60.0-232-gb2f84017dc70aa6c376e1794536cbdad20e7d0f9
 - kind: cargo2
   ref:
   - kind: registry
@@ -1021,8 +1021,8 @@ sources:
     sha: 56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d
   - kind: registry
     name: slab
-    version: 0.4.10
-    sha: 04dc19736151f35336d325007ac991178d504a119863a2fcb3758cdb5e52c50d
+    version: 0.4.11
+    sha: 7a2ae44ef20feb57a68b23d846850f861394c2e02dc425a50098ae8c90267589
   - kind: registry
     name: smallvec
     version: 1.15.1
