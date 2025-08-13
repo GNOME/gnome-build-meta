@@ -1,12 +1,12 @@
-kind: cmake
+kind: meson
 
 sources:
 - kind: tar
-  url: github_files:catchorg/Catch2/archive/refs/tags/v3.8.0.tar.gz
-  ref: 1ab2de20460d4641553addfdfe6acd4109d871d5531f8f519a52ea4926303087
+  url: github_files:catchorg/Catch2/archive/refs/tags/v3.9.1.tar.gz
+  ref: a215c2a723bd7483efd236dc86066842a389cb4e344c61119c978acdf24d39be
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:simdutf/simdutf/archive/refs/tags/v6.4.2.tar.gz
-  ref: 4e58e35ba85fa914ed080c8075ac3fab8bc856d3b0a08fbacd860b9db4bbcf3b
+  url: github_files:simdutf/simdutf/archive/refs/tags/v7.3.5.tar.gz
+  ref: 788a081b39a7dfb3755e02df07c67cdd45456b1d7d5b58bdf34b9764b9e1165b
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

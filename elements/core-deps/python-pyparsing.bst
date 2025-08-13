@@ -2,11 +2,15 @@ kind: pyproject
 
 sources:
 - kind: tar
-  url: pypi:c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz
-  ref: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
+  url: 
+    pypi:bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz
+  ref: b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
+
+variables:
+  strip-binaries: ''
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-python-flit.bst
 
 depends:
 - freedesktop-sdk.bst:components/python3.bst

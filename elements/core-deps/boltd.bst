@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:bolt/bolt/-/archive/0.9.7/bolt-0.9.7.tar.bz2
-  ref: 2e77e3fb1836d8aedf93f850558bb2b154a1dabe5f1fb5123286a2b3213b1288
+  url: freedesktop_files:bolt/bolt/-/archive/0.9.10/bolt-0.9.10.tar.bz2
+  ref: b4e467ff098305f8dd53b12102b648cde0222c396e954e330190a264eb662418
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/polkit-gobject.bst

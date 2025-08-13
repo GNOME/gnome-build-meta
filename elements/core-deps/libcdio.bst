@@ -1,8 +1,9 @@
 kind: autotools
 sources:
 - kind: tar
-  url: ftp_gnu_org:libcdio/libcdio-2.1.0.tar.bz2
-  ref: 8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b
+  url: 
+    github_files:libcdio/libcdio/releases/download/2.2.0/libcdio-2.2.0.tar.bz2
+  ref: 6f8fbdf4d189cf63f2a7a1549c516cd720c7b222c7aaadbc924a26e745a48539
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

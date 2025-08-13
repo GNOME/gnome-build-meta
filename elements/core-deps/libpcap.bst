@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: tcpdump:release/libpcap-1.10.1.tar.gz
-  ref: ed285f4accaf05344f90975757b3dbfe772ba41d1c401c2648b7fa45b711bdd4
+  url: tcpdump:release/libpcap-1.10.5.tar.gz
+  ref: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst

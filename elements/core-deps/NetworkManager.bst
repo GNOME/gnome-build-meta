@@ -2,10 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:NetworkManager/NetworkManager/-/releases/1.52.0/downloads/NetworkManager-1.52.0.tar.xz
-  ref: 356f21a15da51e4218fd4d0fd78cea61e067b1116a25cddee4af9df05062e92d
-- kind: patch_queue
-  path: patches/NetworkManager
+  url: 
+    freedesktop_files:NetworkManager/NetworkManager/-/releases/1.54.0/downloads/NetworkManager-1.54.0.tar.xz
+  ref: 6c104c8e0bd5a3bbbb9ce28b7670e72924e058fa9303e90dab2815d70a530879
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -28,6 +27,7 @@ depends:
 - freedesktop-sdk.bst:components/iptables.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libndp.bst
+- freedesktop-sdk.bst:components/libnvme.bst
 - freedesktop-sdk.bst:components/libpsl.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:components/polkit.bst

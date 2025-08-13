@@ -2,8 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: github_files:Microsoft/Typescript/releases/download/v5.5.3/typescript-5.5.3.tgz
-  ref: f47d21b40c99188b4158f8a444f132207957d528b1f80ccbc019ce9c4765c3d1
+  url: 
+    github_files:Microsoft/Typescript/releases/download/v5.9.2/typescript-5.9.2.tgz
+  ref: 67a3bc82e822b8f45f653a80fc3a9730d23214d36c83ba85dd7f5abebee82062
 
 depends:
 - core-deps/nodejs.bst

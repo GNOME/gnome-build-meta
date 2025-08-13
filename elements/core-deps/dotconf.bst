@@ -1,8 +1,8 @@
 kind: autotools
 sources:
 - kind: tar
-  url: github_files:williamh/dotconf/archive/v1.3.tar.gz
-  ref: 7f1ecf40de1ad002a065a321582ed34f8c14242309c3547ad59710ae3c805653
+  url: github_files:williamh/dotconf/archive/v1.4.1.tar.gz
+  ref: 5922c46cacf99b2ecc4853d28a2bda4a489292e73276e604bd9cba29dfca892d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

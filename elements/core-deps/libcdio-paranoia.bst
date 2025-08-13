@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: ftp_gnu_org:libcdio/libcdio-paranoia-10.2+2.0.1.tar.gz
-  ref: 28d7d00e4a83d0221acda0fd2eb3e3240bf094db4c00a85998922201939fa952
+  url: ftp_gnu_org:libcdio/libcdio-paranoia-10.2+2.0.2.tar.gz
+  ref: 99488b8b678f497cb2e2f4a1a9ab4a6329c7e2537a366d5e4fef47df52907ff6
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

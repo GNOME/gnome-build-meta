@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: sourceforge:libmtp/libmtp/1.1.18/libmtp-1.1.18.tar.gz
-  ref: 7280fe50c044c818a06667f45eabca884deab3193caa8682e0b581e847a281f0
+  url: sourceforge:libmtp/libmtp/1.1.22/libmtp-1.1.22.tar.gz
+  ref: c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

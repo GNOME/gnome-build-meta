@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:DaveGamble/cJSON/archive/refs/tags/v1.7.17.tar.gz
-  ref: c91d1eeb7175c50d49f6ba2a25e69b46bd05cffb798382c19bfb202e467ec51c
+  url: github_files:DaveGamble/cJSON/archive/refs/tags/v1.7.18.tar.gz
+  ref: 3aa806844a03442c00769b83e99970be70fbef03735ff898f4811dd03b9f5ee5
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

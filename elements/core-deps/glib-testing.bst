@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: tecnocode:libglib-testing-0.1.0.tar.xz
-  ref: cf1e72007ce656a4e23432ac61082f7b87a9baaed57c4b0b0bf872ce7e2fb6e7
+  url: tecnocode:libglib-testing-0.1.1.tar.xz
+  ref: 1823d2e392c804e18985f8bdb89cc006994d7b832f4907c2934f9049f9844f47
 
 build-depends:
 - sdk/gtk-doc.bst

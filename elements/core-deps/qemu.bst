@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: qemu:qemu-10.0.2.tar.xz
-  ref: ef786f2398cb5184600f69aef4d5d691efd44576a3cff4126d38d4c6fec87759
+  url: qemu:qemu-10.0.3.tar.xz
+  ref: 5c891267b1534a774465db8b1a0dfcb0c5e6d7ecb6f71345625adf4e0889945b
 
 build-depends:
 - core-deps/spice-protocol.bst

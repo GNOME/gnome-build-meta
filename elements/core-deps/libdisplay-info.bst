@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:emersion/libdisplay-info/-/releases/0.2.0/downloads/libdisplay-info-0.2.0.tar.xz
-  ref: 5a2f002a16f42dd3540c8846f80a90b8f4bdcd067a94b9d2087bc2feae974176
+  url: 
+    freedesktop_files:emersion/libdisplay-info/-/releases/0.3.0/downloads/libdisplay-info-0.3.0.tar.xz
+  ref: 6ae77cd937f9cf7d1321d35c116062c4911e8447010a6a713ac4286f7a9d5987
 
 build-depends:
 - core-deps/hwdata.bst

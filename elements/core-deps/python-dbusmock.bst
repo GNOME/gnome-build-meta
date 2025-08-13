@@ -2,8 +2,9 @@ kind: pyproject
 
 sources:
 - kind: tar
-  url: pypi:bb/6f/9f958b3e9d3165b552e00c10f1c047fd2e235f6e58021be5225279f7b88b/python-dbusmock-0.31.1.tar.gz
-  ref: b23b8e1b51fe2a9b13e617fff6b60b3ed8e536c080cf3498019d223678d5ea49
+  url: 
+    pypi:a1/58/a3994e328b33e4cfa6ea9b6213c1ddff2fffdd6b342560fe92a400ab9eaf/python_dbusmock-0.36.0.tar.gz
+  ref: 2d3812ee6c1e15607bca882ed5dfcabaac449c1a3b9627080bbab3deefd56fd2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst

@@ -1,8 +1,9 @@
 kind: meson
 sources:
 - kind: tar
-  url: freedesktop_files:spice/libcacard/uploads/9d8f24b131bcbbd7846727ea92952cb5/libcacard-2.8.0.tar.xz
-  ref: 8005b93c3139ff739057efb19f9dac1d0993ffb0b913111505af6a91711ef22b
+  url: 
+    freedesktop_files:-/project/58/uploads/13b249e695a0d9aa7cb501b1a85ebab1/libcacard-2.8.1.tar.xz
+  ref: fbbf4de8cb7db5bdff5ecb672ff0dbe6939fb9f344b900d51ba6295329a332e7
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

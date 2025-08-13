@@ -2,8 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.29.0/pkcs11-helper-1.29.0.tar.bz2
-  ref: 996846a3c8395e03d8c0515111dc84d82e6e3648d44ba28cb2dbbbca2d4db7d6
+  url: 
+    github_files:OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2
+  ref: 4c5815ba910cabf26df08d449ca2909daf4538c9899aa7f7fadc61229d3488a9
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

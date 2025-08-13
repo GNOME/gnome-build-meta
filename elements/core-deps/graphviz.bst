@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gitlab_files:graphviz/graphviz/-/archive/2.47.1/graphviz-2.47.1.tar.gz
-  ref: b7f4d6819e4dc17c15e7e07bd1ea5e081ef6569b63f8427117dac32f0e3837b4
+  url: gitlab_files:graphviz/graphviz/-/archive/13.1.2/graphviz-13.1.2.tar.gz
+  ref: 0e79b8402e8ea13f05c0fc0e30604f1d0731cd3f60f85850cedac7e0ee420ef8
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst

@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gstreamer:src/gstreamer-editing-services/gst-editing-services-1.20.6.tar.xz
-  ref: 150e6f2acafce96d9f363a4af4b034f2cd034cf41e03fccfcee50181648761bb
+  url: 
+    gstreamer:src/gstreamer-editing-services/gst-editing-services-1.26.5.tar.xz
+  ref: 734900944f90ece5e2f3983c335178fda50023fe342aa75ecd9d8a9c38b64d9e
 
 build-depends:
 - sdk/gobject-introspection.bst

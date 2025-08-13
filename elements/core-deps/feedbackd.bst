@@ -2,11 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: purism_releases:feedbackd/feedbackd-0.2.1.tar.xz
-  ref: 4f0713d0f6b4491e5487a672db541d36de70952a6644580abeb2c6025fb31a7a
-- kind: patch
-  path: patches/freedbackd/38.patch
-  directory: subprojects/gmobile/
+  url: phosh:feedbackd/feedbackd-0.8.4.tar.xz
+  ref: b0b5b22216940b485d0d43679dce403583e33438f06c49a83cf1820cdbbca174
+- kind: tar
+  url: phosh:gmobile/gmobile-0.1.0.tar.xz
+  directory: subprojects/gmobile
+  ref: 47172e7b245fbb30b40c02135d2ff36987e36a8e825f9bf5932acd2aa6eabfcd
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
@@ -26,3 +27,4 @@ variables:
   # unitl the issue is fixed.
   meson-local: >-
     -Dintrospection=disabled
+    -Dtests=false

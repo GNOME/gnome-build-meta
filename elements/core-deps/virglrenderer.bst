@@ -2,11 +2,13 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:virgl/virglrenderer/-/archive/virglrenderer-1.0.1/virglrenderer-virglrenderer-1.0.1.tar.bz2
-  ref: 940b3b9a9cc91ba241182c8211f829e594b36745352fec4fc3c9bf22675ca392
+  url: 
+    freedesktop_files:virgl/virglrenderer/-/archive/virglrenderer-1.1.1/virglrenderer-virglrenderer-1.1.1.tar.bz2
+  ref: 8f0f4388de8a33e850cede06c5cef026b214a4d90206d8b211a2a5ba94f81160
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/python3-pyyaml.bst
 
 depends:
 - freedesktop-sdk.bst:components/dummy-gbm.bst

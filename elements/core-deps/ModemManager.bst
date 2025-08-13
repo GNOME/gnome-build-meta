@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:mobile-broadband/ModemManager/-/archive/1.24.0/ModemManager-1.24.0.tar.gz
-  ref: 50e166bb24acb00bcaed814483920dfbc5b26d5424faee974b54c702e425a7c7
+  url: 
+    freedesktop_files:mobile-broadband/ModemManager/-/archive/1.24.2/ModemManager-1.24.2.tar.gz
+  ref: fbc75adcc0d7b0565f256e7ff4e8872b0a37c4413ff576665f7470932d9c1b68
 
 build-depends:
 - sdk/gobject-introspection.bst
