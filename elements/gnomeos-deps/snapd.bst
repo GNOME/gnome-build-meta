@@ -2,8 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:canonical/snapd/releases/download/2.68.4/snapd_2.68.4.vendor.tar.xz
-  ref: 8c6ad7ee2c2a4cb5b59f836a74843cf8337e692dddd33b85c17418e7a6837e80
+  url: 
+    github_files:canonical/snapd/releases/download/2.70/snapd_2.70.vendor.tar.xz
+  ref: 4092c7e02d9d03c4c3c0546a0cddcff288ffffe484cd872f7df7565ab1428dbf
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
 
@@ -51,7 +52,7 @@ config:
     ln -sr . src/github.com/snapcore/snapd
 
   - |
-    ./mkversion.sh 2.68.4
+    ./mkversion.sh 2.70
 
   - |
     cd cmd
@@ -135,4 +136,4 @@ public:
     script: |
       #!/bin/bash
       sysroot="${1}"
-      chmod 4755 "${sysroot}%{indep-libdir}/snapd/snap-confine"
+      setcap -q - "${sysroot}%{indep-libdir}/snapd/snap-confine" <"${sysroot}%{indep-libdir}/snapd/snap-confine.caps"

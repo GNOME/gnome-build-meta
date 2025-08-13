@@ -2,10 +2,11 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:canonical/snapd-glib/releases/download/1.66/snapd-glib-1.66.tar.xz
-  ref: e197b2e8ea7b55f9ee4cc619b262d4457b915cc1e83fc77e3e0ca4115523337c
+  url: github_files:canonical/snapd-glib/archive/refs/tags/1.70.tar.gz
+  ref: 022df48e519fe2e80f90eba2043aaa54f829f05c87ec38bc1ba794aec8e3c0a4
 
 build-depends:
+- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
