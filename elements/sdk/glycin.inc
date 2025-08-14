@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.beta.2-17-ga4c60e6c74da3ade2e46cd7c19498cafb86bb68a
+  ref: 2.0.beta.2-20-gab93aa4b9406cd16f9b8b33791f75057ad0b2416
 - kind: cargo2
   ref:
   - kind: registry
@@ -139,12 +139,12 @@ sources:
     sha: d71b6127be86fdcfddb610f7182ac57211d4b18a3e9c82eb2d17662f2227ad6a
   - kind: registry
     name: cairo-rs
-    version: 0.20.12
-    sha: 91e3bd0f4e25afa9cabc157908d14eeef9067d6448c49414d17b3fb55f0eadd0
+    version: 0.21.1
+    sha: 1158f326d7b755a9ae2b36c5b5391400e3431f3b77418cedb6d7130126628f10
   - kind: registry
     name: cairo-sys-rs
-    version: 0.20.10
-    sha: 059cc746549898cbfd9a47754288e5a958756650ef4652bbb6c5f71a6bda4f8b
+    version: 0.21.1
+    sha: b963177900ec8e783927e5ed99e16c0ec1b723f1f125dff8992db28ef35c62c3
   - kind: registry
     name: cc
     version: 1.2.32
@@ -355,20 +355,20 @@ sources:
     sha: 9fa08315bb612088cc391249efdc3bc77536f16c91f6cf495e6fbe85b20a4a81
   - kind: registry
     name: gdk-pixbuf
-    version: 0.20.10
-    sha: 2fd242894c084f4beed508a56952750bce3e96e85eb68fdc153637daa163e10c
+    version: 0.21.1
+    sha: 3c7330cdbbc653df431331ae3d9d59e985a0fecaf33d74c7c1c5d13ab0245f6c
   - kind: registry
     name: gdk-pixbuf-sys
-    version: 0.20.10
-    sha: 5b34f3b580c988bd217e9543a2de59823fafae369d1a055555e5f95a8b130b96
+    version: 0.21.1
+    sha: e25899cc931dc28cba912ebec793b730f53d2d419f90a562fcb29b53bd10aa82
   - kind: registry
     name: gdk4
-    version: 0.9.6
-    sha: 4850c9d9c1aecd1a3eb14fadc1cdb0ac0a2298037e116264c7473e1740a32d60
+    version: 0.10.0
+    sha: 0a67b064d2f35e649232455c7724f56f977555d2608c43300eabc530eaa4e359
   - kind: registry
     name: gdk4-sys
-    version: 0.9.6
-    sha: 6f6eb95798e2b46f279cf59005daf297d5b69555428f185650d71974a910473a
+    version: 0.10.0
+    sha: 2edbda0d879eb85317bdb49a3da591ed70a804a10776e358ef416be38c6db2c5
   - kind: registry
     name: getopts
     version: 0.2.23
@@ -387,28 +387,28 @@ sources:
     sha: 07e28edb80900c19c28f1072f2e8aeca7fa06b23cd4169cefe1af5aa3260783f
   - kind: registry
     name: gio
-    version: 0.20.12
-    sha: 8e27e276e7b6b8d50f6376ee7769a71133e80d093bdc363bd0af71664228b831
+    version: 0.21.1
+    sha: 52b5e3f390d01b79e30da451dd00e27cd1ac2de81658e3abf6c1fc3229b24c5f
   - kind: registry
     name: gio-sys
-    version: 0.20.10
-    sha: 521e93a7e56fc89e84aea9a52cfc9436816a4b363b030260b699950ff1336c83
+    version: 0.21.1
+    sha: a03f2234671e5a588cfe1f59c2b22c103f5772ea351be9cc824a9ce0d06d99fd
   - kind: registry
     name: glib
-    version: 0.20.12
-    sha: ffc4b6e352d4716d84d7dde562dd9aee2a7d48beb872dd9ece7f2d1515b2d683
+    version: 0.21.1
+    sha: 60bdc26493257b5794ba9301f7cbaf7ab0d69a570bfbefa4d7d360e781cb5205
   - kind: registry
     name: glib-macros
-    version: 0.20.12
-    sha: e8084af62f09475a3f529b1629c10c429d7600ee1398ae12dd3bf175d74e7145
+    version: 0.21.0
+    sha: e772291ebea14c28eb11bb75741f62f4a4894f25e60ce80100797b6b010ef0f9
   - kind: registry
     name: glib-sys
-    version: 0.20.10
-    sha: 8ab79e1ed126803a8fb827e3de0e2ff95191912b8db65cee467edb56fc4cc215
+    version: 0.21.1
+    sha: dc7c43cff6a7dc43821e45ebf172399437acd6716fa2186b6852d2b397bf622d
   - kind: registry
     name: gobject-sys
-    version: 0.20.10
-    sha: ec9aca94bb73989e3cfdbf8f2e0f1f6da04db4d291c431f444838925c4c63eda
+    version: 0.21.1
+    sha: 3e9a190eef2bce144a6aa8434e306974c6062c398e0a33a146d60238f9062d5c
   - kind: registry
     name: gufo
     version: 0.3.0-beta
@@ -565,14 +565,16 @@ sources:
     name: libopenraw
     version: 0.4.0-alpha.11
     sha: 3150b73fb6716d84e7fc2b28d195296ff306b1a3ec5292af9265bc5e734d3387
-  - kind: registry
+  - kind: git
+    commit: 3ffe8ac328e27ecdacfa8c60064f5be3f8c2eca6
+    repo: gnome:librsvg.git
     name: librsvg-rebind
     version: 0.1.0
-    sha: 15630f09af77f5e84889ce244a8402a1f9ac0b5546171ad77a02fe514a830d06
-  - kind: registry
+  - kind: git
+    commit: 3ffe8ac328e27ecdacfa8c60064f5be3f8c2eca6
+    repo: gnome:librsvg.git
     name: librsvg-rebind-sys
     version: 0.1.0
-    sha: 635a4abf7b375659c9bab1839779487eb2a964934ad4f67ceb4e0364b75c37e2
   - kind: registry
     name: libseccomp
     version: 0.3.0
@@ -699,12 +701,12 @@ sources:
     sha: b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39
   - kind: registry
     name: pango
-    version: 0.20.12
-    sha: 6576b311f6df659397043a5fa8a021da8f72e34af180b44f7d57348de691ab5c
+    version: 0.21.1
+    sha: ab47feb3403aa564edaeb68620c5b9159f8814733a7dd45f0b1a27d19de362fe
   - kind: registry
     name: pango-sys
-    version: 0.20.10
-    sha: 186909673fc09be354555c302c0b3dcf753cd9fa08dcb8077fa663c80fb243fa
+    version: 0.21.1
+    sha: 1f855bccb447644e149fae79086e1f81514c30fe5e9b8bd257d9d3c941116c86
   - kind: registry
     name: parking
     version: 2.2.1
