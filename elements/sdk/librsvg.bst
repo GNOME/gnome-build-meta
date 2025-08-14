@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.60.0-234-g17300273e71251c9330115763b81320c922e9115
+  ref: 2.60.0-241-g3ffe8ac328e27ecdacfa8c60064f5be3f8c2eca6
 - kind: cargo2
   ref:
   - kind: registry
@@ -141,12 +141,12 @@ sources:
     sha: d71b6127be86fdcfddb610f7182ac57211d4b18a3e9c82eb2d17662f2227ad6a
   - kind: registry
     name: cairo-rs
-    version: 0.20.10
-    sha: b58e62a27cd02fb3f63f82bb31fdda7e6c43141497cbe97e8816d7c914043f55
+    version: 0.21.0
+    sha: f6466a563dea2e99f59f6ffbb749fd0bdf75764f5e6e93976b5e7bd73c4c9efb
   - kind: registry
     name: cairo-sys-rs
-    version: 0.20.10
-    sha: 059cc746549898cbfd9a47754288e5a958756650ef4652bbb6c5f71a6bda4f8b
+    version: 0.21.0
+    sha: cab7e9f13c802625aad1ad2b4ae3989f4ce9339ff388f335a6f109f9338705e2
   - kind: registry
     name: cast
     version: 0.3.0
@@ -397,12 +397,12 @@ sources:
     sha: c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c
   - kind: registry
     name: gdk-pixbuf
-    version: 0.20.10
-    sha: 2fd242894c084f4beed508a56952750bce3e96e85eb68fdc153637daa163e10c
+    version: 0.21.0
+    sha: 688dc7eaf551dbac1f5b11d000d089c3db29feb25562455f47c1a2080cc60bda
   - kind: registry
     name: gdk-pixbuf-sys
-    version: 0.20.10
-    sha: 5b34f3b580c988bd217e9543a2de59823fafae369d1a055555e5f95a8b130b96
+    version: 0.21.0
+    sha: 5af1823d3d1cb72616873ba0a593bd440eb92da700fdfb047505a21ee3ec3e10
   - kind: registry
     name: generic-array
     version: 0.14.7
@@ -421,28 +421,28 @@ sources:
     sha: 3fb2d69b19215e18bb912fa30f7ce15846e301408695e44e0ef719f1da9e19f2
   - kind: registry
     name: gio
-    version: 0.20.11
-    sha: d2a5c3829f5794cb15120db87707b2ec03720edff7ad09eb7b711b532e3fe747
+    version: 0.21.0
+    sha: 273d64c833fbbf7cd86c4cdced893c5d3f2f5d6aeb30fd0c30d172456ce8be2e
   - kind: registry
     name: gio-sys
-    version: 0.20.10
-    sha: 521e93a7e56fc89e84aea9a52cfc9436816a4b363b030260b699950ff1336c83
+    version: 0.21.0
+    sha: 2c8130f5810a839d74afc3a929c34a700bf194972bb034f2ecfe639682dd13cc
   - kind: registry
     name: glib
-    version: 0.20.10
-    sha: c501c495842c2b23cdacead803a5a343ca2a5d7a7ddaff14cc5f6cf22cfb92c2
+    version: 0.21.0
+    sha: 690e8bcf8a819b5911d6ae79879226191d01253a4f602748072603defd5b9553
   - kind: registry
     name: glib-macros
-    version: 0.20.10
-    sha: ebe6dc9ce29887c4b3b74d78d5ba473db160a258ae7ed883d23632ac7fed7bc9
+    version: 0.21.0
+    sha: e772291ebea14c28eb11bb75741f62f4a4894f25e60ce80100797b6b010ef0f9
   - kind: registry
     name: glib-sys
-    version: 0.20.10
-    sha: 8ab79e1ed126803a8fb827e3de0e2ff95191912b8db65cee467edb56fc4cc215
+    version: 0.21.0
+    sha: 4b2be4c74454fb4a6bd3328320737d0fa3d6939e2d570f5d846da00cb222f6a0
   - kind: registry
     name: gobject-sys
-    version: 0.20.10
-    sha: ec9aca94bb73989e3cfdbf8f2e0f1f6da04db4d291c431f444838925c4c63eda
+    version: 0.21.0
+    sha: ab318a786f9abd49d388013b9161fa0ef8218ea6118ee7111c95e62186f7d31f
   - kind: registry
     name: half
     version: 2.6.0
@@ -713,20 +713,20 @@ sources:
     sha: d6790f58c7ff633d8771f42965289203411a5e5c68388703c06e14f24770b41e
   - kind: registry
     name: pango
-    version: 0.20.10
-    sha: d88d37c161f2848f0d9382597f0168484c9335ac800995f3956641abb7002938
+    version: 0.21.0
+    sha: 2d4803f086c4f49163c31ac14db162112a22401c116435080e4be8678c507d61
   - kind: registry
     name: pango-sys
-    version: 0.20.10
-    sha: 186909673fc09be354555c302c0b3dcf753cd9fa08dcb8077fa663c80fb243fa
+    version: 0.21.0
+    sha: 66872b3cfd328ad6d1a4f89ebd5357119bd4c592a4ddbb8f6bc2386f8ce7b898
   - kind: registry
     name: pangocairo
-    version: 0.20.10
-    sha: 58890dc451db9964ac2d8874f903a4370a4b3932aa5281ff0c8d9810937ad84f
+    version: 0.21.0
+    sha: dbd3cbd828068961d396de731fd60bbed51dcd2deea704c612b2a589587aa188
   - kind: registry
     name: pangocairo-sys
-    version: 0.20.10
-    sha: b9952903f88aa93e2927e7bca2d1ebae64fc26545a9280b4ce6bddeda26b5c42
+    version: 0.21.0
+    sha: d612b47ee72aaceda8e37afee371a05a4de1259b48622bce4656a5f7f51e37af
   - kind: registry
     name: parking_lot
     version: 0.12.4
@@ -1053,8 +1053,8 @@ sources:
     sha: 7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f
   - kind: registry
     name: syn
-    version: 2.0.103
-    sha: e4307e30089d6fd6aff212f2da3a1f9e32f3223b1f010fb09b7c95f90f3ca1e8
+    version: 2.0.104
+    sha: 17b6f705963418cdb9927482fa304bc562ece2fdd4f616084c50b7023b435a40
   - kind: registry
     name: synstructure
     version: 0.13.2
