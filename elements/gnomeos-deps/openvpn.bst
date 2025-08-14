@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: openvpn:openvpn-2.6.12.tar.gz
-  ref: 1c610fddeb686e34f1367c347e027e418e07523a10f4d8ce4a2c2af2f61a1929
+  url: openvpn:openvpn-2.6.14.tar.gz
+  ref: 9eb6a6618352f9e7b771a9d38ae1631b5edfeed6d40233e243e602ddf2195e7a
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
