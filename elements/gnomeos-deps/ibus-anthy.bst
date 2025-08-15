@@ -2,8 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ibus/ibus-anthy/releases/download/1.5.12/ibus-anthy-1.5.12.tar.gz
-  ref: e9e758ddd46ae292376eab171187fa8f20630f0a57cd128a41208fdcdfdf57bb
+  url: 
+    github_files:ibus/ibus-anthy/releases/download/1.5.17/ibus-anthy-1.5.17.tar.gz
+  ref: 9e1d28ad7da2be5e0d9c0eb0d8fb7557fc89770aa2237272debe197bd61abd40
 
 build-depends:
 - sdk/gobject-introspection.bst

@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: bindfs:bindfs-1.17.7.tar.gz
-  ref: c0b060e94c3a231a1d4aa0bcf266ff189981a4ef38e42fbe23296a7d81719b7a
+  url: bindfs:bindfs-1.18.1.tar.gz
+  ref: 2a7064d993a5f255c52d72385ef14e349c131bc44195766e2173428e06d279fd
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

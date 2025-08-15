@@ -2,8 +2,9 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:lathiat/nss-mdns/releases/download/v0.14.1/nss-mdns-0.14.1.tar.gz
-  ref: a2094101b735cade45048764ea594bdae2bfa9399837f3c852a5b264416e9c8c
+  url: 
+    github_files:lathiat/nss-mdns/releases/download/v0.15.1/nss-mdns-0.15.1.tar.gz
+  ref: ddf71453d7a7cdc5921fe53ef387b24fd0c3c49f4dcf94a2a437498596761a21
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst

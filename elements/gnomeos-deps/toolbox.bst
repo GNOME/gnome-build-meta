@@ -2,8 +2,9 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:containers/toolbox/releases/download/0.1.2/toolbox-0.1.2-vendored.tar.xz
-  ref: f376cabd161b2d17a28349b960358318a763cf91797c2c78b217ebf65c5df735
+  url: 
+    github_files:containers/toolbox/releases/download/0.2/toolbox-0.2-vendored.tar.xz
+  ref: ffb6c6b8d634d327d0b2fdf9e8fb9c97829997f8a5aec8e5d0f6767b5d6e043b
 - kind: patch_queue
   path: patches/toolbox/
 

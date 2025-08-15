@@ -2,8 +2,9 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: github_files:fish-shell/fish-shell/releases/download/4.0.0/fish-4.0.0.tar.xz
-  ref: 2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3
+  url: 
+    github_files:fish-shell/fish-shell/releases/download/4.0.2/fish-4.0.2.tar.xz
+  ref: 6e1ecdb164285fc057b2f35acbdc20815c1623099e7bb47bbfc011120adf7e83
 - kind: cargo2
   ref:
   - kind: registry

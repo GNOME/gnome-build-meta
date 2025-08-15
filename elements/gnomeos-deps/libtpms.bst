@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:stefanberger/libtpms/archive/refs/tags/v0.9.6.tar.gz
-  ref: 2807466f1563ebe45fdd12dd26e501e8a0c4fbb99c7c428fbb508789efd221c0
+  url: github_files:stefanberger/libtpms/archive/refs/tags/v0.10.1.tar.gz
+  ref: ebc24f3191d90f6cf0b4d4200cd876db4bd224b3c565708bbea0a82ee275e0fb
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
