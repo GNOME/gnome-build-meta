@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    gitlab_files:mobian1/callaudiod/-/archive/0.1.10/callaudiod-0.1.10.tar.bz2
-  ref: 17070205024a4bb75016dad3cc132039dff28d9f3a40226eb283ae3a78ce0ecf
+- kind: git_repo
+  url: gitlab:mobian1/callaudiod.git
+  track: '*.*'
+  ref: 0.1.10-0-g56831297817afb6b30062b7cee3e40225ac39cac
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

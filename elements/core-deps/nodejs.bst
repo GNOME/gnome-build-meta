@@ -1,9 +1,10 @@
 kind: make
 
 sources:
-- kind: tar
-  url: github_files:nodejs/node/archive/refs/tags/v24.5.0.tar.gz
-  ref: dd7e31ba6ee8a9600253019a8d42774760eb8747f6e5bfdf588ba133fb2297a9
+- kind: git_repo
+  url: github:nodejs/node.git
+  track: 'v*'
+  ref: v24.5.0-0-g931ec10d87730925f0baf10a571330459a1a2fcd
 
 build-depends:
 - freedesktop-sdk.bst:components/gyp.bst

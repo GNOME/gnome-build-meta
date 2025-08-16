@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:xorg/lib/libxmu/-/archive/libXmu-1.2.1/libxmu-libXmu-1.2.1.tar.bz2
-  ref: 98b090fe76cd5b8ba990eedede2275d440471ec8e593c7c1ae90142c7e06f019
+- kind: git_repo
+  url: freedesktop:xorg/lib/libxmu.git
+  track: 'libXmu-*'
+  ref: libXmu-1.2.1-0-g792f80402ee06ce69bca3a8f2a84295999c3a170
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

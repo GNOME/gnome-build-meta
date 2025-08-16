@@ -1,8 +1,9 @@
 kind: meson
 sources:
-- kind: tar
-  url: freedesktop_files:mobile-broadband/libmbim/-/archive/1.32.0/libmbim-1.32.0.tar.gz
-  ref: 7eca9f5af2eecfdb5e3a2a865a7f29d0ac9532ab187a9c6adce4d85f897eb385
+- kind: git_repo
+  url: freedesktop:mobile-broadband/libmbim.git
+  track: '*.*'
+  ref: 1.33.1-dev-0-ge10df4b6b3edfe6a46d93f7f5f5cab31c29a7091
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

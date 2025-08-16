@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:freeswitch/sofia-sip/archive/refs/tags/v1.13.17.tar.gz
-  ref: daca3d961b6aa2974ad5d3be69ed011726c3e4d511b2a0d4cb6d878821a2de7a
+- kind: git_repo
+  url: github:freeswitch/sofia-sip.git
+  track: 'v*'
+  ref: v1.13.17-0-g6198851a610b7889c17e2d98fb84617bc1dd7aec
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

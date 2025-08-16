@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:libgit2/libgit2/archive/v1.9.0.tar.gz
-  ref: 75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2
+- kind: git_repo
+  url: github:libgit2/libgit2.git
+  track: 'v*'
+  ref: v1.9.0-0-g338e6fb681369ff0537719095e22ce9dc602dbf0
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

@@ -1,8 +1,9 @@
 kind: autotools
 sources:
-- kind: tar
-  url: github_files:thkukuk/rpcsvc-proto/archive/v1.4.4.tar.gz
-  ref: 7988641deae8463303b6273d7af98ece09111c385d4c9134a142a5fad3cdfef8
+- kind: git_repo
+  url: github:thkukuk/rpcsvc-proto.git
+  track: 'v*'
+  ref: v1.4.4-0-gc65926005e50da02a4da3e26abc42eded36cd19d
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

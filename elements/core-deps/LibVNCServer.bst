@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:LibVNC/libvncserver/archive/LibVNCServer-0.9.15.tar.gz
-  ref: 62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7
+- kind: git_repo
+  url: github:LibVNC/libvncserver.git
+  track: 'LibVNCServer-*'
+  ref: LibVNCServer-0.9.15-0-g9b54b1ec32731bd23158ca014dc18014db4194c3
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

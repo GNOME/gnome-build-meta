@@ -1,5 +1,11 @@
 kind: manual
 
+sources:
+- kind: git_repo
+  url: github:89luca89/distrobox.git
+  track: '*.*'
+  ref: 1.8.1.2-0-g3b9f0e8d3d8bd102e1636a22afffafe00777d30b
+
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
@@ -13,8 +19,3 @@ config:
   install-commands:
   - |
     bash install --prefix '%{install-root}%{prefix}'
-
-sources:
-- kind: tar
-  url: github_files:89luca89/distrobox/archive/refs/tags/1.8.1.2.tar.gz
-  ref: 3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc

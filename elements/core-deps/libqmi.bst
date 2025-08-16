@@ -1,8 +1,11 @@
 kind: meson
 sources:
-- kind: tar
-  url: freedesktop_files:mobile-broadband/libqmi/-/archive/1.36.0/libqmi-1.36.0.tar.gz
-  ref: e254fafdd916a78a27126e6d72ae436662487f59c7de84d4d40286059af89093
+- kind: git_repo
+  url: freedesktop:mobile-broadband/libqmi.git
+  track: '*.*'
+  exclude:
+  - '*-dev'
+  ref: 1.36.0-0-gdefb13dcab0adc7f44f6741807244507a14a30c5
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

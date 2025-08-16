@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:virgl/virglrenderer/-/archive/virglrenderer-1.1.1/virglrenderer-virglrenderer-1.1.1.tar.bz2
-  ref: 8f0f4388de8a33e850cede06c5cef026b214a4d90206d8b211a2a5ba94f81160
+- kind: git_repo
+  url: freedesktop:virgl/virglrenderer.git
+  track: '*.*'
+  ref: 1.1.1-0-g0f1f43929724a6a414c01a29bc51feccb445c2f0
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

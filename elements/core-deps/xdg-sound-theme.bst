@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: freedesktop_files:xdg/xdg-sound-theme/-/archive/0.8/xdg-sound-theme-0.8.tar.bz2
-  ref: 0fabaa8fd86d2887380590a3f6e305a3dde5c41783dcae9a6ba67122d51b55f9
+- kind: git_repo
+  url: freedesktop:xdg/xdg-sound-theme.git
+  track: '*.*'
+  ref: 0.8-0-g9d2ac65a2f88263f0eec8b777ef3bdc023b93c25
 
 build-depends:
 - core-deps/intltool.bst
