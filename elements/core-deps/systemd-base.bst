@@ -49,7 +49,16 @@ build-depends:
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/python3-pefile.bst
-- freedesktop-sdk.bst:components/vmlinuxh.bst
+
+(?):
+- arch in ["x86_64", "aarch64"]:
+    build-depends:
+      (>):
+      - core-deps/vmlinuxh.bst
+- arch not in ["x86_64", "aarch64"]:
+    build-depends:
+      (>):
+      - freedesktop-sdk.bst:components/vmlinuxh.bst
 
 config:
   install-commands:
