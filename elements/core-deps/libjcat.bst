@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: github_files:hughsie/libjcat/archive/0.2.3.tar.gz
-  ref: 9b94aa1915ff392c466c03aa3ad8de320eb625d7a074571de9ec669ab17d405a
+- kind: git_repo
+  url: github:hughsie/libjcat.git
+  track: '*.*'
+  ref: 0.2.3-0-gf284d18a694ed98f49ddb06e6920265781a30125
 
 build-depends:
 - sdk/gobject-introspection.bst

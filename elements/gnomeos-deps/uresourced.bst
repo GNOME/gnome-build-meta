@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:benzea/uresourced/-/archive/v0.5.4/uresourced-v0.5.4.tar.bz2
-  ref: 4c3b586bcd51f4221c80790c23c6560a3c48ff7b11fe0f2a5c98f33b9da615a3
+- kind: git_repo
+  url: freedesktop:benzea/uresourced.git
+  track: 'v*'
+  ref: v0.5.4-0-g907d91989f50842caaf9d681e82a9d6791701927
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

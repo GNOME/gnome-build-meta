@@ -1,9 +1,10 @@
 kind: manual
 
 sources:
-- kind: tar
-  url: github_files:mozilla/grcov/archive/refs/tags/v0.10.5.tar.gz
-  ref: afba6d38b56898575273f4639cb31dfcfa28de60eca0b157524ca96bc36bc320
+- kind: git_repo
+  url: github:mozilla/grcov.git
+  track: 'v*'
+  ref: v0.10.5-0-gc42a09f29de605fa896a6848fd3d6d6c7163ee64
 - kind: cargo2
   ref:
   - kind: registry

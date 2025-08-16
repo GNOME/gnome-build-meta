@@ -1,10 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: 
-    github_files:editorconfig/editorconfig-core-c/archive/refs/tags/v0.12.9.tar.gz
-  ref: 4aaa4e3883332aac7ec19c169dcf128f5f0f963f61d09beb299eb2bce5944e2c
+- kind: git_repo
+  url: github:editorconfig/editorconfig-core-c.git
+  track: 'v*'
+  ref: v0.12.9-0-ge082c947e7f7b14240195d55c060a6e1eda1b0a1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:xorg/app/xauth/-/archive/xauth-1.1.4/xauth-xauth-1.1.4.tar.bz2
-  ref: 0ee692eebcfa82cfe00d16ec06112ba7cdd65ddab894e3bc30088d4716c5130e
+- kind: git_repo
+  url: freedesktop:xorg/app/xauth.git
+  track: '*.*'
+  ref: xauth-1.1.4-0-gf71ca21cf1ab840e9664b7c3e99c229bd977a6a4
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

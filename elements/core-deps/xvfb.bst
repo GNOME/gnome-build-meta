@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:xorg/xserver/-/archive/xorg-server-21.1.18/xserver-xorg-server-21.1.18.tar.bz2
-  ref: 01b03400d4342ee231ad5fd25cab2b20d89d66eb98903d415ba95c38cd940a6e
+- kind: git_repo
+  url: freedesktop:xorg/xserver.git
+  track: 'xorg-server-*'
+  ref: xorg-server-21.1.18-0-g2403cd5352b2a60d045b7f53c3c30002eb877f57
 - kind: git_repo
   url: fedora_rpms:xorg-x11-server.git
   ref: dd5395436b87a535ea27a644b004feeea949a4a1

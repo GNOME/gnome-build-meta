@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:Exiv2/exiv2/archive/v0.28.5.tar.gz
-  ref: e1671f744e379a87ba0c984617406fdf8c0ad0c594e5122f525b2fb7c28d394d
+- kind: git_repo
+  url: github:Exiv2/exiv2.git
+  track: 'v*'
+  ref: v0.28.5-0-g907169fa643c2c74c14fd4106e55eaeee3634d9f
 
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst

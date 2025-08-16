@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: github_files:catchorg/Catch2/archive/refs/tags/v3.9.1.tar.gz
-  ref: a215c2a723bd7483efd236dc86066842a389cb4e344c61119c978acdf24d39be
+- kind: git_repo
+  url: github:catchorg/Catch2.git
+  track: 'v*'
+  ref: v3.9.1-0-g644821ce28cb25d7992a4d0375b1d83214392592
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

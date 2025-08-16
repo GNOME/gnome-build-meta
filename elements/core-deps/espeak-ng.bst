@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:espeak-ng/espeak-ng/archive/refs/tags/1.52.0.tar.gz
-  ref: bb4338102ff3b49a81423da8a1a158b420124b055b60fa76cfb4b18677130a23
+- kind: git_repo
+  url: github:espeak-ng/espeak-ng.git
+  track: '*.*'
+  ref: 1.52.0-0-g4870adfa25b1a32b4361592f1be8a40337c58d6c
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:commonmark/cmark/archive/refs/tags/0.31.1.tar.gz
-  ref: 3da93db5469c30588cfeb283d9d62edfc6ded9eb0edc10a4f5bbfb7d722ea802
+- kind: git_repo
+  url: github:commonmark/cmark.git
+  track: '*.*'
+  ref: 0.31.1-0-gbb3678d7a73cb02d35c8876ecd097072636200a8
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:libssh2/libssh2/archive/libssh2-1.11.1.tar.gz
-  ref: 82b35c61c78b475647bdc981a183c5b5ab0d979e1caee94186e8f9150f2b0d0d
+- kind: git_repo
+  url: github:libssh2/libssh2.git
+  track: 'libssh2-*'
+  ref: libssh2-1.11.1-0-ga312b43325e3383c865a87bb1d26cb52e3292641
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

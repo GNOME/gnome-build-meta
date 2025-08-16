@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:stefanberger/swtpm/archive/refs/tags/v0.10.1.tar.gz
-  ref: f8da11cadfed27e26d26c5f58a7b8f2d14d684e691927348906b5891f525c684
+- kind: git_repo
+  url: github:stefanberger/swtpm.git
+  track: 'v*'
+  ref: v0.10.1-0-g53841482b0a9a1dfe63a120b00283acfe588ee72
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

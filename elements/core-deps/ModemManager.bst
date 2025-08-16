@@ -1,10 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:mobile-broadband/ModemManager/-/archive/1.24.2/ModemManager-1.24.2.tar.gz
-  ref: fbc75adcc0d7b0565f256e7ff4e8872b0a37c4413ff576665f7470932d9c1b68
+- kind: git_repo
+  url: freedesktop:mobile-broadband/ModemManager.git
+  track: '*.*'
+  exclude:
+  - '*-dev'
+  ref: 1.24.2-0-gf2b9ab1ad78d322f32134a444b5b54c6e8160e19
 
 build-depends:
 - sdk/gobject-introspection.bst

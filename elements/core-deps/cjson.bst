@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:DaveGamble/cJSON/archive/refs/tags/v1.7.18.tar.gz
-  ref: 3aa806844a03442c00769b83e99970be70fbef03735ff898f4811dd03b9f5ee5
+- kind: git_repo
+  url: github:DaveGamble/cJSON.git
+  track: 'v*'
+  ref: v1.7.18-0-gacc76239bee01d8e9c858ae2cab296704e52d916
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
