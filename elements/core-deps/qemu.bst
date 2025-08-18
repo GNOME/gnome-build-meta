@@ -4,6 +4,8 @@ sources:
 - kind: tar
   url: qemu:qemu-10.0.3.tar.xz
   ref: 5c891267b1534a774465db8b1a0dfcb0c5e6d7ecb6f71345625adf4e0889945b
+- kind: patch
+  path: patches/qemu/6ad034e71232c2929ed546304c9d249312bb632f.patch
 
 build-depends:
 - core-deps/spice-protocol.bst
