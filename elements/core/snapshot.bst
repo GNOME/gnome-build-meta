@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.beta-11-g410dfafd0cf62ac13adc674c0b2eb04eeae124fb
+  ref: 49.beta-20-g33df44f268e4e64165058efefec42adaea0a34cd
 - kind: cargo2
   ref:
   - kind: registry
@@ -805,8 +805,8 @@ sources:
     sha: 9203b8055f63a2a00e2f593bb0510367fe707d7ff1e5c872de2f537b339e5410
   - kind: registry
     name: slab
-    version: 0.4.10
-    sha: 04dc19736151f35336d325007ac991178d504a119863a2fcb3758cdb5e52c50d
+    version: 0.4.11
+    sha: 7a2ae44ef20feb57a68b23d846850f861394c2e02dc425a50098ae8c90267589
   - kind: registry
     name: smallvec
     version: 1.15.1
