@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.beta.2-27-g526917231ce2581671e7aec1aa95f61418f928f5
+  ref: 2.0.beta.2-30-gd6e9cea3559e5d90511f07f0ee89ac7e354bac28
 - kind: cargo2
   ref:
   - kind: registry
@@ -83,8 +83,8 @@ sources:
     sha: 8b75356056920673b02621b35afd0f7dda9306d03c79a30f5c56c44cf256e3de
   - kind: registry
     name: async-trait
-    version: 0.1.88
-    sha: e539d3fca749fcee5236ab05e93a52867dd549cc157c8cb7f99595f3cedffdb5
+    version: 0.1.89
+    sha: 9035ad2d096bed7955a320ee7e2230574d28fd3c3a0f186cbea1ff3c7eed5dbb
   - kind: registry
     name: atomic-waker
     version: 1.1.2
@@ -95,8 +95,8 @@ sources:
     sha: c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8
   - kind: registry
     name: backtrace
-    version: 0.3.74
-    sha: 8d82cb332cdfaed17ae235a638438ac4d4839913cc2af585c3c6746e8f8bee1a
+    version: 0.3.75
+    sha: 6806a6321ec58106fea15becdad98371e28d92ccbc7c8f1b3b6dd724fe8f1002
   - kind: registry
     name: bit_field
     version: 0.10.2
@@ -107,8 +107,8 @@ sources:
     sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
   - kind: registry
     name: bitflags
-    version: 2.9.1
-    sha: 1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967
+    version: 2.9.2
+    sha: 6a65b545ab31d687cff52899d4890855fec459eb6afe0da6417b8a18da87aa29
   - kind: registry
     name: bitreader
     version: 0.3.11
@@ -147,8 +147,8 @@ sources:
     sha: b963177900ec8e783927e5ed99e16c0ec1b723f1f125dff8992db28ef35c62c3
   - kind: registry
     name: cc
-    version: 1.2.32
-    sha: 2352e5597e9c544d5e6d9c95190d5d27738ade584fa8db0a16e130e5c2b5296e
+    version: 1.2.33
+    sha: 3ee0f8803222ba5a7e2777dd72ca451868909b1ac410621b676adf07280e9b5f
   - kind: registry
     name: cfg-expr
     version: 0.18.0
@@ -565,16 +565,14 @@ sources:
     name: libopenraw
     version: 0.4.0-alpha.11
     sha: 3150b73fb6716d84e7fc2b28d195296ff306b1a3ec5292af9265bc5e734d3387
-  - kind: git
-    commit: 3ffe8ac328e27ecdacfa8c60064f5be3f8c2eca6
-    repo: gnome:librsvg.git
+  - kind: registry
     name: librsvg-rebind
-    version: 0.1.0
-  - kind: git
-    commit: 3ffe8ac328e27ecdacfa8c60064f5be3f8c2eca6
-    repo: gnome:librsvg.git
+    version: 0.2.1
+    sha: 163f9e31a1a0475beb7ab182a520564cfa9f8ee014f40b73c6d14297f47629e2
+  - kind: registry
     name: librsvg-rebind-sys
-    version: 0.1.0
+    version: 0.2.1
+    sha: de0830536aea2f46438cd2490501e5a5b513de010275336909240659c25d0fe9
   - kind: registry
     name: libseccomp
     version: 0.3.0
@@ -757,8 +755,8 @@ sources:
     sha: edce586971a4dfaa28950c6f18ed55e0406c1ab88bbce2c6f6293a7aaba73d35
   - kind: registry
     name: proc-macro2
-    version: 1.0.97
-    sha: d61789d7719defeb74ea5fe81f2fdfdbd28a803847077cecce2ff14e1472f6f1
+    version: 1.0.101
+    sha: 89ae43fd86e4158d6db51ad8e2b80f313af9cc74f5c0e03ccb87de09998732de
   - kind: registry
     name: qoi
     version: 0.4.1
@@ -793,12 +791,12 @@ sources:
     sha: 60a357793950651c4ed0f3f52338f53b2f809f32d83a07f72909fa13e4c6c1e3
   - kind: registry
     name: rayon
-    version: 1.10.0
-    sha: b418a60154510ca1a002a752ca9714984e21e4241e804d32555251faf8b78ffa
+    version: 1.11.0
+    sha: 368f01d005bf8fd9b1206fb6fa653e6c4a81ceb1466406b81792d87c5677a58f
   - kind: registry
     name: rayon-core
-    version: 1.12.1
-    sha: 1465873a3dfdaa8ae7cb14b4383657caab0b3e8a0aa9ae8e04b044854c8dfce2
+    version: 1.13.0
+    sha: 22e18b0f0062d30d4230b2e85ff77fdfe4326feb054b9783a3460d8435c8ab91
   - kind: registry
     name: regex
     version: 1.11.1
@@ -925,8 +923,8 @@ sources:
     sha: 7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f
   - kind: registry
     name: syn
-    version: 2.0.104
-    sha: 17b6f705963418cdb9927482fa304bc562ece2fdd4f616084c50b7023b435a40
+    version: 2.0.106
+    sha: ede7c438028d4436d71104916910f5bb611972c5cfd7f89b8300a8186e6fada6
   - kind: registry
     name: system-deps
     version: 7.0.5
@@ -945,12 +943,12 @@ sources:
     sha: e8a64e3985349f2441a1a9ef0b853f869006c3855f2cda6862a94d26ebb9d6a1
   - kind: registry
     name: thiserror
-    version: 2.0.14
-    sha: 0b0949c3a6c842cbde3f1686d6eea5a010516deb7085f79db747562d4102f41e
+    version: 2.0.15
+    sha: 80d76d3f064b981389ecb4b6b7f45a0bf9fdac1d5b9204c7bd6714fecc302850
   - kind: registry
     name: thiserror-impl
-    version: 2.0.14
-    sha: cc5b44b4ab9c2fdd0e0512e6bece8388e214c0749f5862b114cc5b7a25daf227
+    version: 2.0.15
+    sha: 44d29feb33e986b6ea906bd9c3559a856983f92371b3eaa5e83782a351623de0
   - kind: registry
     name: thread_local
     version: 1.1.9
