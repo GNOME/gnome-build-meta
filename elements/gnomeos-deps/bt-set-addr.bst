@@ -16,3 +16,5 @@ config:
     install -Dm644 -t '%{install-root}%{indep-libdir}/udev/rules.d' 90-bt-set-addr.rules
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system' bt-set-addr@.service
     install -Dm755 -t '%{install-root}%{libexecdir}' bt-set-addr
+  - |
+    %{install-extra}

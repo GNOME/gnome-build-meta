@@ -17,3 +17,6 @@ config:
 
   - |
     install -Dm644 -t "%{install-root}%{indep-libdir}/tmpfiles.d" 50-gnomeos-vte.conf
+
+  - |
+    %{install-extra}

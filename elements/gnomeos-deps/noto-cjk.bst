@@ -37,3 +37,5 @@ config:
     install -Dm644 -t "%{install-root}${confdir}/conf.available" 65-noto-cjk.conf
     install -d "%{install-root}${confdir}/conf.d"
     ln -sr "%{install-root}${confdir}/conf.available/65-noto-cjk.conf" "%{install-root}${confdir}/conf.d/65-noto-cjk.conf"
+  - |
+    %{install-extra}

@@ -13,6 +13,8 @@ config:
   install-commands:
   - |
     install -Dm755 -t '%{install-root}%{datadir}/vpnc-scripts' vpnc-script*
+  - |
+    %{install-extra}
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

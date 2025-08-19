@@ -27,3 +27,5 @@ config:
   install-commands:
   - |
     install -Dm 644 -t "%{install-root}$(pkg-config udev --variable udevdir)/rules.d" 90-hide-usr.rules
+  - |
+    %{install-extra}

@@ -14,3 +14,4 @@ config:
   install-commands:
   - mkdir -p "%{install-root}%{sysconfdir}"
   - install nsswitch.conf "%{install-root}%{sysconfdir}"
+  - "%{install-extra}"
