@@ -27,3 +27,6 @@ config:
     mkdir -p '%{install-root}%{indep-libdir}'
     cp -rT lib/firmware '%{install-root}%{indep-libdir}/firmware'
     cp -rT usr/share '%{install-root}/usr/share'
+
+  - |
+    %{install-extra}

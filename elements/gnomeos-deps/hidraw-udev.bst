@@ -14,6 +14,9 @@ config:
   - |
     install -Dm644 -t '%{install-root}%{indep-libdir}/udev/hwdb.d' 80-solaar.hwdb
 
+  - |
+    %{install-extra}
+
 sources:
 - kind: local
   path: files/gnomeos/hidraw/70-gnomeos-hidraw.rules

@@ -19,3 +19,6 @@ config:
 
   - |
     install -Dm644 -t "%{install-root}%{mandir}/man8" man/wsdd.8
+
+  - |
+    %{install-extra}
