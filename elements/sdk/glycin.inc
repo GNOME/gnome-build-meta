@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.beta.2-30-gd6e9cea3559e5d90511f07f0ee89ac7e354bac28
+  ref: 2.0.beta.2-32-gb90f91c6fa73ec900e2111b06b890e9c2962b90c
 - kind: cargo2
   ref:
   - kind: registry
@@ -646,10 +646,6 @@ sources:
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
   - kind: registry
-    name: nix
-    version: 0.30.1
-    sha: 74523f3a35e05aba87a1d978330aef40f67b0304ac79c1c00b294c9830543db6
-  - kind: registry
     name: nu-ansi-term
     version: 0.46.0
     sha: 77a8165726e8236064dbb45459242600304b42a5ea24ee2948e18e023bf7ba84
@@ -1247,8 +1243,8 @@ sources:
     sha: 503a066b4c037c440169d995b869046827dbc71263f6e8f3be6d77d4f3229dbd
   - kind: registry
     name: zbus
-    version: 5.9.0
-    sha: 4bb4f9a464286d42851d18a605f7193b8febaf5b0919d71c6399b7b26e5b0aad
+    version: 5.6.0
+    sha: 2522b82023923eecb0b366da727ec883ace092e7887b61d3da5139f26b44da58
   - kind: registry
     name: zbus_macros
     version: 5.9.0
