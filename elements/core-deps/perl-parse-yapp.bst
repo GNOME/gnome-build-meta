@@ -14,3 +14,4 @@ config:
   - perl Makefile.PL PREFIX="%{prefix}" DESTDIR="%{install-root}"
   install-commands:
   - make -j1 install
+  - "%{install-extra}"
