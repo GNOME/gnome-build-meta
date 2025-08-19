@@ -1,0 +1,19 @@
+install-licenses: |
+  set -euo pipefail
+
+  NAME=%{element-name}
+  NAME=${NAME%.bst}        # Strip .bst suffix
+
+  [ -n "%{license-element-name}" ] && NAME=%{license-element-name}
+
+  for pattern in %{license-files-final}; do
+    for file in "%{license-root}"/$pattern; do
+      [ -f "$file" ] || continue
+
+      RESOLVED=${file#"%{license-root}"/} # Strip off root from the path
+
+      [ -n "$NAME" ] && [ -n "$RESOLVED" ] || continue
+      DEST_PATH="%{install-root}%{datadir}/licenses/gnome-build-meta/$NAME/$RESOLVED"
+      [ -f "$DEST_PATH" ] || install -Dm0644 "$file" "$DEST_PATH"
+    done
+  done
