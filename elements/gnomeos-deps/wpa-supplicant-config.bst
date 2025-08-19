@@ -19,3 +19,5 @@ config:
   - |
     systemdsystempresetdir="$(pkg-config --variable systemdsystempresetdir systemd)"
     install -Dm644 -t "%{install-root}${systemdsystempresetdir}" wpa-supplicant.preset
+  - |
+    %{install-extra}

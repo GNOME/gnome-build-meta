@@ -19,3 +19,4 @@ config:
   - mkdir -p "%{install-root}%{bindir}"
   - ln -s "%{libdir}/node_modules/typescript/bin/tsc" "%{install-root}%{bindir}/tsc"
   - ln -s "%{libdir}/node_modules/typescript/bin/tsserver" "%{install-root}%{bindir}/tsserver"
+  - "%{install-extra}"

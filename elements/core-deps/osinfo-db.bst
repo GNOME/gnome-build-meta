@@ -14,3 +14,4 @@ config:
   install-commands:
   - osinfo-db-import --root '%{install-root}' --dir '%{datadir}/osinfo' 
     osinfo-db-*.tar.xz
+  - "%{install-extra}"

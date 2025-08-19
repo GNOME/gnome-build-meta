@@ -23,3 +23,5 @@ config:
   - |
     sed -i 's/\"\(HiFi\|VoiceCall\).conf\"/\"\/PinePhone\/\1.conf\"/' %{install-root}%{datadir}/alsa/ucm2/PinePhone/PinePhone.conf
     ln -sr %{install-root}%{datadir}/alsa/ucm2/PinePhone/PinePhone.conf %{install-root}%{datadir}/alsa/ucm2/conf.d/simple-card/simple-card.conf
+  - |
+    %{install-extra}

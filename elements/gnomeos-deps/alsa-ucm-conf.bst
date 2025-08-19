@@ -16,3 +16,4 @@ config:
   install-commands:
   - install -d %{install-root}%{datadir}/alsa
   - cp -r ucm/ ucm2/ %{install-root}%{datadir}/alsa
+  - "%{install-extra}"
