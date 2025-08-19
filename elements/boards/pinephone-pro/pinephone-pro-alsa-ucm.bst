@@ -19,3 +19,5 @@ config:
     sed -i 's/\"\(HiFi\|VoiceCall\).conf\"/\"\/PinePhonePro\/\1.conf\"/' %{install-root}%{datadir}/alsa/ucm2/PinePhonePro/PinePhonePro.conf
     ln -sr %{install-root}%{datadir}/alsa/ucm2/PinePhonePro/PinePhonePro.conf %{install-root}%{datadir}/alsa/ucm2/conf.d/simple-card/simple-card.conf
     ln -sr %{install-root}%{datadir}/alsa/ucm2/PinePhonePro/PinePhonePro.conf %{install-root}%{datadir}/alsa/ucm2/conf.d/simple-card/PINE64-PinePhonePro-.conf
+  - |
+    %{install-extra}

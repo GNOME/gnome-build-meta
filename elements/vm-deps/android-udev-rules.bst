@@ -16,3 +16,4 @@ config:
   install-commands:
   - install -Dm 644 android-udev.conf -t %{install-root}$(pkg-config systemd --variable sysusersdir)
   - install -Dm 644 51-android.rules -t %{install-root}$(pkg-config udev --variable udevdir)/rules.d
+  - "%{install-extra}"

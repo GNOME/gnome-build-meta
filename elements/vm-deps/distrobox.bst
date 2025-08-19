@@ -10,6 +10,8 @@ config:
   install-commands:
   - |
     bash install --prefix '%{install-root}%{prefix}'
+  - |
+    %{install-extra}
 
 sources:
 - kind: tar

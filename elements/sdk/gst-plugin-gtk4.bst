@@ -583,4 +583,5 @@ config:
     --features=wayland,x11glx,x11egl,dmabuf,gtk_v4_14
     --library-type=cdylib
     --jobs "${MAXJOBS}"
-
+  - |
+    %{install-extra}
