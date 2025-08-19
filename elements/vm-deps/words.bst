@@ -47,3 +47,5 @@ config:
   install-commands:
   - |
     install -Dm644 -t "%{install-root}%{datadir}/dict/" install_files/*.utf8
+  - |
+    %{install-extra}
