@@ -30,3 +30,4 @@ depends:
 - gnomeos-deps/distrobox.bst
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/toolbox.bst
+- gnomeos-deps/wl-clipboard.bst
