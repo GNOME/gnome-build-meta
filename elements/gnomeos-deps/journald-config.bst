@@ -11,6 +11,8 @@ config:
   - |
     mkdir -p "%{journald-config}"
     install -m 644 -t "%{journald-config}" 90-persistent-journal.conf
+  - |
+    %{install-extra}
 
 sources:
 - kind: local

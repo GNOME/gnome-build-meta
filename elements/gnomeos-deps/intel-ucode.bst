@@ -17,3 +17,5 @@ config:
   install-commands:
   - |
     install -Dm644 -t '%{install-root}/usr/lib/firmware/intel-ucode' GenuineIntel.bin
+  - |
+    %{install-extra}

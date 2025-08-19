@@ -130,6 +130,9 @@ config:
   - |
     ln -sr '%{install-root}%{indep-libdir}/snapd/snapctl' '%{install-root}%{bindir}/snapctl'
 
+  - |
+    %{install-extra}
+
 public:
   initial-script:
     script: |

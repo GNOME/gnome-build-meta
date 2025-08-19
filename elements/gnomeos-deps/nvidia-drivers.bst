@@ -265,6 +265,9 @@ config:
     install -Dm644 local-config/modprobe.conf "%{install-root}%{indep-libdir}/modprobe.d/nvidia.conf"
     install -Dm644 local-config/modules-load.conf "%{install-root}%{indep-libdir}/modules-load.d/nvidia.conf"
 
+  - |
+    %{install-extra}
+
 public:
   bst:
     split-rules:
