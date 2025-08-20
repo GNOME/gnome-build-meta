@@ -12,6 +12,7 @@ depends:
 - gnomeos-deps/grcov.bst
 - gnomeos-deps/sysext-utils.bst
 - core/meta-gnome-core-developer-tools.bst
+- freedesktop-sdk.bst:components/debuginfod.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/libxslt.bst
