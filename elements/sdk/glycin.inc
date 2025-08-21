@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.beta.2-32-gb90f91c6fa73ec900e2111b06b890e9c2962b90c
+  ref: 2.0.beta.2-33-g7364628df98ae017e8fb1a4149df30a6bc036cd3
 - kind: cargo2
   ref:
   - kind: registry
@@ -415,8 +415,8 @@ sources:
     sha: e9435439d70fa59b423987deab75a19d54d05491b50f87da0eae5ad8687e7b40
   - kind: registry
     name: gufo-common
-    version: 1.0.0-beta.1
-    sha: 56466a12b409255e161e146f24fa257856147d5296e9f75257189632992408b5
+    version: 1.0.0-beta.2
+    sha: 08092cfc847b6a9df0d088fb4226a4807d0a14dcc93c54f25de1302bc8a3cafa
   - kind: registry
     name: gufo-exif
     version: 0.3.0-beta
