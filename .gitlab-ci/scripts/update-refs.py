@@ -5,13 +5,16 @@ import os
 import subprocess
 from datetime import datetime
 from typing import List, Tuple
+from enum import Enum
+import yaml
+from collections.abc import Mapping, Sequence
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "--new-branch", help="Commit to a new branch after tracking", action="store_true"
 )
 parser.add_argument(
-    "--track-boards", help="Track elements used by board images", action="store_true"
+    "--track-dependencies", help="Track dependencies elements instead of gnome elements", action="store_true"
 )
 parser.add_argument(
     "--no-ignore-elements", help="Do not ignore elements with known issues", action="store_true"
@@ -20,17 +23,63 @@ args = parser.parse_args()
 
 now = datetime.now()
 
-core_elements = [
-    "core.bst",
-    "gnomeos/filesystem.bst",
-    "gnomeos/filesystem-devel.bst",
-    "gnomeos/live-image.bst",
-]
+class ElementType(Enum):
+    NOT_TRACKABLE = 1
+    DEPENDENCY = 2
+    GNOME = 3
 
-boards_elements = [
-    "boards/pinephone/image.bst",
-    "boards/pinephone-pro/image.bst",
-]
+def merge_element_type(a, b):
+    for t in [ElementType.GNOME, ElementType.DEPENDENCY, ElementType.NOT_TRACKABLE]:
+        if t in (a, b):
+            return t
+
+def get_element_type(filepath):
+    if filepath.startswith('freedesktop-sdk.bst:'):
+        return ElementType.NOT_TRACKABLE
+    with open(filepath, 'r') as f:
+        data = yaml.safe_load(f)
+
+    trackable = ElementType.NOT_TRACKABLE
+    sources = data.get('sources', [])
+    if isinstance(sources, Sequence):
+        for source in sources:
+            if not isinstance(source, Mapping):
+                continue
+
+            if source.get('kind') == "git_repo":
+                if source.get('track') is None:
+                    continue
+
+            if source.get('url', '').startswith('gnome:'):
+                return ElementType.GNOME
+            else:
+                trackable = merge_element_type(trackable, ElementType.DEPENDENCY)
+
+    include = data.get('(@)')
+    if include is not None:
+        if not isinstance(include, list):
+            include = [include]
+
+        for i in include:
+            trackable = merge_element_type(trackable, get_element_type(i))
+            if trackable == ElementType.GNOME:
+                return ElementType.GNOME
+
+    return trackable
+
+gnome_elements = []
+dependencies_elements = []
+
+for dirpath, dirnames, filenames in os.walk('elements'):
+    for filename in filenames:
+        if filename.endswith(".bst"):
+            filepath = os.path.join(dirpath, filename)
+            element_name = os.path.relpath(filepath, 'elements')
+            element_type = get_element_type(filepath)
+            if element_type == ElementType.GNOME:
+                gnome_elements.append(element_name)
+            elif element_type == ElementType.DEPENDENCY:
+                dependencies_elements.append(element_name)
 
 # A list of elements to reset/checkout from master, effectively ignoring
 # them from tracking any newer refs.
@@ -59,8 +108,8 @@ def bst(*args):
 
 bst("workspace", "close", "--all")
 
-track_elements = boards_elements if args.track_boards else core_elements
-bst("source", "track", "--deps", "all", *track_elements, "flatpak-runtimes.bst")
+track_elements = dependencies_elements if args.track_dependencies else gnome_elements
+bst("source", "track", *track_elements)
 
 print("Track completed!")
 
