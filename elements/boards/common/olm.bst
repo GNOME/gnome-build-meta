@@ -1,7 +1,7 @@
 kind: cmake
 sources:
 - kind: git_repo
-  url: https://gitlab.matrix.org/matrix-org/olm
+  url: matrix:matrix-org/olm
   track: 3.2.10
 
   ref: 3.2.10-0-g9908862979147a71dc6abaecd521be526ae77be1
