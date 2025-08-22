@@ -59,6 +59,7 @@ variables:
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dprotobuf=disabled
     -Dumockdev_tests=disabled
+    -Defi_os_dir=org.gnome.os
 
   efi_binary: 'false'
   (?):
