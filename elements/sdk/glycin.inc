@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.beta.2-33-g7364628df98ae017e8fb1a4149df30a6bc036cd3
+  ref: 2.0.beta.3-0-g7935d1a27a7f1038748dc9040973855e6a6d153f
 - kind: cargo2
   ref:
   - kind: registry
@@ -147,16 +147,16 @@ sources:
     sha: b963177900ec8e783927e5ed99e16c0ec1b723f1f125dff8992db28ef35c62c3
   - kind: registry
     name: cc
-    version: 1.2.33
-    sha: 3ee0f8803222ba5a7e2777dd72ca451868909b1ac410621b676adf07280e9b5f
+    version: 1.2.34
+    sha: 42bc4aea80032b7bf409b0bc7ccad88853858911b7713a8062fdc0623867bedc
   - kind: registry
     name: cfg-expr
     version: 0.18.0
     sha: 1a2b34126159980f92da2a08bdec0694fd80fb5eb9e48aff25d20a0d8dfa710d
   - kind: registry
     name: cfg-if
-    version: 1.0.1
-    sha: 9555578bc9e57714c812a1f84e4fc5b4d21fcb063490c624de019f7464c91268
+    version: 1.0.3
+    sha: 2fd1289c04a9ea8cb22300a459a72a385d7c73d3259e2ed7dcb2af674838cfa9
   - kind: registry
     name: cfg_aliases
     version: 0.2.1
@@ -575,12 +575,12 @@ sources:
     sha: de0830536aea2f46438cd2490501e5a5b513de010275336909240659c25d0fe9
   - kind: registry
     name: libseccomp
-    version: 0.3.0
-    sha: 21c57fd8981a80019807b7b68118618d29a87177c63d704fc96e6ecd003ae5b3
+    version: 0.4.0
+    sha: 0e5310a2c5b6ffbc094b5f70a2ca7b79ed36ad90e6f90994b166489a1bce3fcc
   - kind: registry
     name: libseccomp-sys
-    version: 0.2.1
-    sha: 9a7cbbd4ad467251987c6e5b47d53b11a5a05add08f2447a9e2d70aef1e0d138
+    version: 0.3.0
+    sha: 60276e2d41bbb68b323e566047a1bfbf952050b157d8b5cdc74c07c1bf4ca3b6
   - kind: registry
     name: linux-raw-sys
     version: 0.4.15
@@ -611,8 +611,8 @@ sources:
     sha: b2cffa4ad52c6f791f4f8b15f0c05f9824b2ced1160e88cc393d64fff9a8ac64
   - kind: registry
     name: memmap2
-    version: 0.9.7
-    sha: 483758ad303d734cec05e5c12b41d7e93e6a6390c5e9dae6bdeb7c1259012d28
+    version: 0.9.8
+    sha: 843a98750cd611cc2965a8213b53b43e715f13c37a9e096c6408e69990961db7
   - kind: registry
     name: memoffset
     version: 0.9.1
@@ -645,6 +645,10 @@ sources:
     name: nix
     version: 0.29.0
     sha: 71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46
+  - kind: registry
+    name: nix
+    version: 0.30.1
+    sha: 74523f3a35e05aba87a1d978330aef40f67b0304ac79c1c00b294c9830543db6
   - kind: registry
     name: nu-ansi-term
     version: 0.46.0
@@ -935,16 +939,16 @@ sources:
     sha: e502f78cdbb8ba4718f566c418c52bc729126ffd16baee5baa718cf25dd5a69a
   - kind: registry
     name: tempfile
-    version: 3.20.0
-    sha: e8a64e3985349f2441a1a9ef0b853f869006c3855f2cda6862a94d26ebb9d6a1
+    version: 3.21.0
+    sha: 15b61f8f20e3a6f7e0649d825294eaf317edce30f82cf6026e7e4cb9222a7d1e
   - kind: registry
     name: thiserror
-    version: 2.0.15
-    sha: 80d76d3f064b981389ecb4b6b7f45a0bf9fdac1d5b9204c7bd6714fecc302850
+    version: 2.0.16
+    sha: 3467d614147380f2e4e374161426ff399c91084acd2363eaf549172b3d5e60c0
   - kind: registry
     name: thiserror-impl
-    version: 2.0.15
-    sha: 44d29feb33e986b6ea906bd9c3559a856983f92371b3eaa5e83782a351623de0
+    version: 2.0.16
+    sha: 6c5e1be1c48b9172ee610da68fd9cd2770e7a4056cb3fc98710ee6906f0c7960
   - kind: registry
     name: thread_local
     version: 1.1.9
@@ -1079,8 +1083,8 @@ sources:
     sha: ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6
   - kind: registry
     name: winapi-util
-    version: 0.1.9
-    sha: cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb
+    version: 0.1.10
+    sha: 0978bf7171b3d90bac376700cb56d606feb40f251a475a5d6634613564460b22
   - kind: registry
     name: winapi-x86_64-pc-windows-gnu
     version: 0.4.0
