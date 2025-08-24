@@ -1421,6 +1421,7 @@ depends:
 variables:
   meson-local: >-
     -Dpkgconfig.relocatable=false
+    -Dpixbuf-loader=disabled
 
 public:
   bst:
