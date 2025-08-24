@@ -46,6 +46,7 @@ config:
     components/pygobject.bst: sdk/pygobject.bst
     components/vala.bst: sdk/vala.bst
     components/libsecret.bst: sdk/libsecret.bst
+    components/libavif.bst: sdk/libavif.bst
 
     # While freedesktop-sdk provides a zenity element, it's the
     # gtk3 version which we don't want, and we also override it
