@@ -34,8 +34,6 @@ variables:
 
 public:
   bst:
-    integration-commands:
-    - gdk-pixbuf-query-loaders --update-cache
     split-rules:
       devel:
         (>):
