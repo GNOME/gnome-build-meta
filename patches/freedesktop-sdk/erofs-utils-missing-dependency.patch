@@ -1,0 +1,12 @@
+diff --git a/elements/components/erofs-utils.bst b/elements/components/erofs-utils.bst
+index c793320..43bc656 100644
+--- a/elements/components/erofs-utils.bst
++++ b/elements/components/erofs-utils.bst
+@@ -5,6 +5,7 @@ build-depends:
+ 
+ depends:
+ - public-stacks/runtime-minimal.bst
++- bootstrap/xxhash.bst
+ - components/util-linux.bst
+ - components/lz4.bst
+ # FIXME: No fuse3 support yet

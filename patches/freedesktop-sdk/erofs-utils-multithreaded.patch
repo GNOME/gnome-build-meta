@@ -1,0 +1,12 @@
+diff --git a/elements/components/erofs-utils.bst b/elements/components/erofs-utils.bst
+index c793320..38ff3af 100644
+--- a/elements/components/erofs-utils.bst
++++ b/elements/components/erofs-utils.bst
+@@ -15,6 +15,7 @@ variables:
+     --enable-lzma
+     --enable-lz4
+     --disable-fuse
++    --enable-multithreading
+ 
+ sources:
+ - kind: git_repo
