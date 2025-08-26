@@ -3,7 +3,7 @@ kind: script
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/squashfs-tools.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - gnomeos/os-release-user.bst
 - filename: gnomeos/initramfs/signed-nvidia-modules.bst
   config:
@@ -13,6 +13,7 @@ variables:
   repart-seed: a19b0f25-42ac-4c92-8921-d8d4079ec140
 
 environment:
+  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
 
@@ -50,7 +51,7 @@ config:
     Label=gnomeos_usr_dev_%A
     CopyFiles=/usr
     Minimize=best
-    Format=squashfs
+    Format=erofs
     Compression=zstd
     SplitName=usr
     AddValidateFS=no

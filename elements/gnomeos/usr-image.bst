@@ -3,7 +3,7 @@ kind: script
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/jq.bst
-- freedesktop-sdk.bst:components/squashfs-tools.bst
+- freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/repart-config.bst
@@ -17,7 +17,7 @@ variables:
   repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
 
 environment:
-  SYSTEMD_REPART_MKFS_OPTIONS_SQUASHFS: -all-time %{filesystem-time}
+  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
 
@@ -324,9 +324,6 @@ config:
     mkdir -p /var/tmp
 
   - |
-    # conflicts with -all-time
-    unset SOURCE_DATE_EPOCH
-
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
         --definitions=/usr/lib/repart.mini.d \
