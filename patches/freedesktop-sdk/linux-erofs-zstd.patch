@@ -1,0 +1,12 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 4fe71f0..9994dc0 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -239,6 +239,7 @@ enable EROFS_FS_SECURITY
+ enable EROFS_FS_ZIP
+ enable EROFS_FS_ZIP_LZMA
+ enable EROFS_FS_ZIP_DEFLATE
++enable EROFS_FS_ZIP_ZSTD
+ 
+ # Some useful drivers when running as virtual machine
+ enable EXCLUSIVE_SYSTEM_RAM
