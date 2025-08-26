@@ -19,6 +19,7 @@ variables:
   repart-seed: 53752261-a988-42fb-a585-b35ae0ab2af4
 
 environment:
+  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
 
@@ -143,7 +144,7 @@ config:
     Label=gnomeos_usr_dev_%A
     CopyFiles=/usr
     Minimize=best
-    Format=squashfs
+    Format=erofs
     Compression=zstd
     SplitName=usr
     AddValidateFS=no

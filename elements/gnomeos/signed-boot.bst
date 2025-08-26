@@ -32,7 +32,7 @@ variables:
     rw
     quiet splash
     mount.usrflags=ro
-    mount.usrfstype=squashfs
+    mount.usrfstype=erofs
     lockdown=confidentiality
     systemd.firstboot=no
 
