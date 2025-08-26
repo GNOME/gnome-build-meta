@@ -5,7 +5,9 @@ Features=debug
 [Source]
 Type=url-file
 Path=https://1270333429.rsc.cdn77.org/nightly/sysupdate/
-MatchPattern=debug-%a_@v.raw debug-%a_@v.raw.xz
+MatchPattern=debug-%a_@v.raw \
+             debug-%a_@v.raw.xz \
+             debug-%a_@v.raw.zst
 
 [Target]
 Type=regular-file
