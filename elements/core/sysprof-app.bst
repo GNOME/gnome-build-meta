@@ -30,3 +30,5 @@ public:
     - '%{includedir}/sysprof-6/*.h'
     - '%{libdir}/libsysprof-capture-4.a'
     - '%{libdir}/pkgconfig/sysprof-capture-4.pc'
+    - '%{datadir}/licenses/gnome/sysprof/COPYING'
+    - '%{datadir}/licenses/gnome/sysprof/COPYING.gpl-2'
