@@ -302,7 +302,7 @@ config:
       esac
     done
     if [ "${#unknown[*]}" -gt 0 ]; then
-      echo "Unknown paths:" "${unknown[@]}"
+      echo "Unknown paths:" "${unknown[@]}" >&2
       exit 1
     fi
 
