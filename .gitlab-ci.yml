@@ -51,6 +51,7 @@ workflow:
 default:
   image: "${DOCKER_REGISTRY}/bst2:${DOCKER_IMAGE_ID}"
   before_script:
+  - df -h
   - |
     . "$CI_PROJECT_DIR/.gitlab-ci/scripts/global-before-script.sh"
   retry:
