@@ -453,11 +453,11 @@ update_mimeapps:
   stage: deploy
   rules:
   - !reference [".stage-only-rules", "rules"]
-  # We want still execute by default even if neither of the stage rules match.
-  # If we add a when: always/on_success rule it has the chance of triggering when we don't
-  # expect it due to how gitlab behaves, so use a variable that will always exist
-  # as a fake: always kind of rule
-  - if: "$CI_COMMIT_REF_NAME"
+  # Ideally we'd also be updating the stable branches of gnome-session,
+  # But until then, only have the job run for nightly.
+  # Use FLATPAK_BRANCH as a shortcut to figure out what branch we
+  # are targetting atm, since we don't expose the branch from project.conf
+  - if: $FLATPAK_BRANCH == "master"
   needs:
   - job: 'build-x86_64'
     artifacts: false
