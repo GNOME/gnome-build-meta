@@ -1,16 +1,16 @@
 diff --git a/elements/include/systemd.yml b/elements/include/systemd.yml
-index a4863fd..0b0b287 100644
+index 04256207b..12f200640 100644
 --- a/elements/include/systemd.yml
 +++ b/elements/include/systemd.yml
-@@ -7,3 +7,5 @@ sources:
-   ref: v254.5-0-gef6c2daf9947d23e2ba6d50c42e4a0d79fe8d32c
+@@ -8,3 +8,5 @@ sources:
  - kind: patch
-   path: patches/systemd/0001-repart-Fix-a-check-for-CopyBlocks-on-data-partition.patch
+   path: 
+     patches/systemd/0001-repart-Fix-a-check-for-CopyBlocks-on-data-partition.patch
 +- kind: patch
 +  path: patches/systemd/sysupdate-dir.patch
 diff --git a/patches/systemd/sysupdate-dir.patch b/patches/systemd/sysupdate-dir.patch
 new file mode 100644
-index 0000000..0677baa
+index 000000000..0677baae3
 --- /dev/null
 +++ b/patches/systemd/sysupdate-dir.patch
 @@ -0,0 +1,362 @@
