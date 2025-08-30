@@ -29,7 +29,6 @@ build-depends:
 - buildsystems/meson.bst
 - core-deps/python-pyparsing.bst
 - sdk/gi-docgen.bst
-- freedesktop-sdk-extra.bst:components/python3-six.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/sed.bst
 
