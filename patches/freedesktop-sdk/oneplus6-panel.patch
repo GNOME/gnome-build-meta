@@ -1,4 +1,4 @@
-From d09e8551b4302f08f649691c3fc0ffd08d857d3e Mon Sep 17 00:00:00 2001
+From 0c54f170ab6bd614d6b810b0fb2d556a0ecd1484 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 24 Aug 2025 23:39:36 +0100
 Subject: [PATCH] linux: Backport patches for OnePlus 6's panel
@@ -29,20 +29,20 @@ boot. And instead we can wait for mainlining.
  create mode 100644 patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
 
 diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index 96b9b4072..33d31e0a6 100644
+index d251a1d12..bb709685b 100644
 --- a/elements/include/linux.yml
 +++ b/elements/include/linux.yml
 @@ -7,3 +7,5 @@ sources:
-   ref: v6.16.3-0-gfd590381da18a801b7fea1a258e1760335607b10
+   ref: v6.16.4-0-gbe15dab9a451155bdf3f5278608fe8dc67e07cc1
  - kind: patch_queue
    path: patches/linux
 +- kind: patch_queue
 +  path: patches/linux-oneplus6
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 9a212c5aa..f3be6cfbf 100644
+index 8247f11a4..07ab0ebac 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
-@@ -679,6 +679,7 @@ case "$arch" in
+@@ -680,6 +680,7 @@ case "$arch" in
      aarch64)
          module DRM_PANFROST
          module DRM_MSM
@@ -434,5 +434,5 @@ index 000000000..22f21e935
 +2.49.0
 +
 -- 
-2.50.1
+2.51.0
 
