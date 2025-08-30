@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: freedesktop_files:NetworkManager/NetworkManager/-/releases/1.52.0/downloads/NetworkManager-1.52.0.tar.xz
-  ref: 356f21a15da51e4218fd4d0fd78cea61e067b1116a25cddee4af9df05062e92d
+  url: gnome_downloads:NetworkManager/1.51/NetworkManager-1.51.4.tar.xz
+  ref: 865a7cc5686a51d7efe81d7dcb3c5246bfa3b996a58629135354972804ff4d3c
 - kind: patch_queue
   path: patches/NetworkManager
 

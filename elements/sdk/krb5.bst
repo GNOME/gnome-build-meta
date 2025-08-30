@@ -2,8 +2,7 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: kerberos:dist/krb5/1.22/krb5-1.22.tar.gz
-  ref: 652be617b4647f3c5dcac21547d47c7097101aad4e306f1778fb48e17b220ba3
+  url: kerberos:dist/krb5/1.22/krb5-1.22.1.tar.gz
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/perl.bst

@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:adwaita-icon-theme/48/adwaita-icon-theme-48.1.tar.xz
-  ref: cbfe9b86ebcd14b03ba838c49829f7e86a7b132873803b90ac10be7d318a6e12
+  url: gnome_downloads:adwaita-icon-theme/49/adwaita-icon-theme-49.beta.tar.xz
+  ref: acc6cd6c6947823ec00da5ad73387eecddc2766e5318c5033c12beeba7708684
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

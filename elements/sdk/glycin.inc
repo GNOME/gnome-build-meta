@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.0/glycin-2.0.beta.2.tar.xz
-  ref: 288ed7a52914d7ab790fd70d898332c29281b498655e6b87d17d2a25613a2aba
+  url: gnome_downloads:glycin/2.0/glycin-2.0.rc.tar.xz
+  ref: 9a4444215b43d5bd985325b408ae250b44b802b6ff49e1af0825d70008b9673f
 - kind: cargo2
   ref:
   - kind: registry

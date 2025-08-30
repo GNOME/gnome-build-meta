@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-contacts/48/gnome-contacts-48.0.tar.xz
-  ref: a2762995b59427ec3f185f28b5594e37077b72a70cd7c19217ed634637ecc1b5
+  url: gnome_downloads:gnome-contacts/49/gnome-contacts-49.beta.tar.xz
+  ref: 9a2209f25007dc6a49d886dc1640898608f29da598d523a00b4cdf8db3f974d6
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/vala.bst

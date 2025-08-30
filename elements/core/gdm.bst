@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:gdm/49/gdm-49.beta.tar.xz
-  ref: ba81047e6a76c36a51079f5ba5fcddfc9c7a754cde10d5da33cb698fe77a13dd
+  url: gnome_downloads:gdm/49/gdm-49.rc.tar.xz
+  ref: bd075db95d916e25d1864fe7d11498f18a528a23180d4e23a2d5f0ba4460c816
 - kind: local
   path: files/gdm
   directory: gdm-config
@@ -34,8 +34,7 @@ config:
   install-commands:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gdm-config/gdm-sysusers.conf 
-      %{install-root}%{sysusersdir}/gdm.conf
+    - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
 
     - mkdir -p %{install-root}%{pamdir}
     - |
