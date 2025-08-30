@@ -11,23 +11,6 @@ logdir: ${CI_PROJECT_DIR}/logs
 # build area and artifacts
 cachedir: ${CI_PROJECT_DIR}/cache
 
-# Use the buildbox-casd running on the runner for cache storage and execution
-cache:
-  storage-service:
-    url: unix:/run/casd/casd.sock
-    connection-config:
-      keepalive-time: 60
-
-remote-execution:
-  execution-service:
-    url: unix:/run/casd/casd.sock
-    connection-config:
-      keepalive-time: 60
-  action-cache-service:
-    url: unix:/run/casd/casd.sock
-    connection-config:
-      keepalive-time: 60
-
 scheduler:
   # Keep building and find all the errors
   on-error: continue
@@ -73,5 +56,30 @@ source-caches:
     auth:
       client-key: client.key
       client-cert: client.crt
+EOF
+fi
+
+# Use the buildbox-casd running on the runner (if available) for cache storage and execution
+if [ -S /run/casd/casd.sock ]; then
+    cat <<EOF
+cache:
+  storage-service:
+    url: unix:/run/casd/casd.sock
+    connection-config:
+      keepalive-time: 60
+EOF
+fi
+
+if .gitlab-ci/scripts/remote-execution-supported.py unix:/run/casd/casd.sock; then
+    cat <<EOF
+remote-execution:
+  execution-service:
+    url: unix:/run/casd/casd.sock
+    connection-config:
+      keepalive-time: 60
+  action-cache-service:
+    url: unix:/run/casd/casd.sock
+    connection-config:
+      keepalive-time: 60
 EOF
 fi
