@@ -10,8 +10,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/evince.bst
 - core-deps/gtksourceview-4.bst
-- core/evince.bst
 - sdk/gjs.bst
 - sdk/gtk+-3.bst
 - sdk/webkit2gtk-4.1.bst
