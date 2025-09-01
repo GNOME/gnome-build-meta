@@ -10,7 +10,6 @@ depends:
 - core/baobab.bst
 - core/decibels.bst
 - core/epiphany.bst
-- core/evince.bst
 - core/gnome-calculator.bst
 - core/gnome-calendar.bst
 - core/gnome-characters.bst
