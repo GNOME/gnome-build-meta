@@ -45,6 +45,7 @@ aliases:
   pypi: https://files.pythonhosted.org/packages/
   qemu: https://download.qemu.org/
   samba_pub: https://download.samba.org/pub/
+  snowballstem: https://snowballstem.org/dist/
   sourceforge: https://downloads.sourceforge.net/
   spice: https://www.spice-space.org/download/
   tcpdump: https://www.tcpdump.org/
