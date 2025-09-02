@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-weather/48/gnome-weather-48.0.tar.xz
-  ref: 4c0569b3d815ae2f9416d47134cbd3056340640ff186d31a94c865813b4bdbb5
+  url: gnome_downloads:gnome-weather/49/gnome-weather-49.rc.tar.xz
+  ref: 805c15994d76a356a9e7ef7902008d9ccdaf36caa6a710f93f0b9058b1e581ac
 build-depends:
 - sdk/gobject-introspection.bst
 - core-deps/typescript.bst
