@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:hadess/switcheroo-control.git
   track: master
-  ref: 2.6-18-gda06df4432022f57456c9d9f54c6c534e6131d81
+  ref: 3.0-0-g2adfa2dff85b9886ce0fddca6863fe9f2eaf54a0
 
 build-depends:
 - sdk/gtk-doc.bst

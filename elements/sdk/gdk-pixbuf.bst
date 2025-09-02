@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gdk-pixbuf/2.43/gdk-pixbuf-2.43.3.tar.xz
-  ref: ed4c5d16346a5b4e95326731de9700fad70d03bbd2f9324732e6c94f42d869d7
+  url: gnome_downloads:gdk-pixbuf/2.43/gdk-pixbuf-2.43.5.tar.xz
+  ref: a723ec2428427f857b8727dfbbe9dab77142a13fb6d0c47f95222251ae36ff15
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calendar/49/gnome-calendar-49.alpha.tar.xz
-  ref: b70d92c63223e9f610aed21293280c599f527b963124c254ce2b69c735d74727
+  url: gnome_downloads:gnome-calendar/49/gnome-calendar-49.rc.tar.xz
+  ref: 80e2cda5acee0f2b5c7e2166634fb59efe734ed983dfbe5c53f01b1088801f32
 build-depends:
 - sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
