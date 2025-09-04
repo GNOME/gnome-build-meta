@@ -26,4 +26,6 @@ config:
     (>):
     - |
       install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/rmtfs.service.d" condition.conf
-      install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/rmtfs-dir.service.d" condition.conf
+
+    - |
+      rm "%{install-root}%{indep-libdir}/systemd/system/rmtfs-dir.service"

@@ -5,7 +5,8 @@ Conflicts=shutdown.target
 Before=shutdown.target
 Requires=boot-complete.target
 After=boot-complete.target
-ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+ConditionFirmware|=device-tree-compatible(oneplus,enchilada)
+ConditionFirmware|=device-tree-compatible(fairphone,fp5)
 
 [Service]
 Type=oneshot

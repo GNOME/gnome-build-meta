@@ -1,7 +1,8 @@
 [Unit]
 Description=Set Bluetooth controller %i address
 DefaultDependencies=no
-ConditionFirmware=device-tree-compatible(oneplus,enchilada)
+ConditionFirmware|=device-tree-compatible(oneplus,enchilada)
+ConditionFirmware|=device-tree-compatible(fairphone,fp5)
 
 [Service]
 Type=oneshot

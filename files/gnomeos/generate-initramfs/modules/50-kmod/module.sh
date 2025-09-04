@@ -25,6 +25,7 @@ MODULES=(
     drivers/pci/controller
     drivers/phy/qualcomm
     drivers/ufs/host
+    drivers/clk/qcom
 )
 
 MODULES_BY_NAME=(
@@ -32,6 +33,18 @@ MODULES_BY_NAME=(
     crypto-hmac
     crypto-xts
     crc32c
+    pmic-glink
+    pmic-glink-altmode
+    fsa4480
+    ptn36502
+    libcomposite
+    usb-f-ncm
+    icc-osm-l3
+    qrtr-smd
+    spi-geni-qcom
+    i2c-qcom-geni
+    qcom-pon
+    goodix-berlin-spi
 )
 
 FILES=(

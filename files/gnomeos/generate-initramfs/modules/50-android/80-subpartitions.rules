@@ -1,0 +1,2 @@
+# Android user data
+ACTION=="add", SUBSYSTEM=="block", ENV{ID_PART_ENTRY_TYPE}=="1b81e7e6-f50d-419b-a739-2aeef8da3335", ENV{SYSTEMD_WANTS}+="subpartitions@%k.service", TAG+="systemd"

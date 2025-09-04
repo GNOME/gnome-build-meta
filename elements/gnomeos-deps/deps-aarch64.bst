@@ -7,3 +7,4 @@ depends:
 - gnomeos-deps/qbootctl.bst
 - gnomeos-deps/rmtfs.bst
 - gnomeos-deps/tqftpserv.bst
+- gnomeos-deps/fairphone-firmware.bst

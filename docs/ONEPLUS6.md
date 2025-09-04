@@ -47,7 +47,7 @@ sudo systemd-repart --architecture=arm64 --defer-partitions=root --definitions=u
 
 If that looks ok, re-run with `--dry-run=no`.
 
-## Known bugs, workaounds
+## Known bugs, workarounds
 
 ### Sound does not work
 
