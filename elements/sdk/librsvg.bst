@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.0-22-g25b7b52284e0489f0ffb71864808254ffd71fa2b
+  ref: 2.61.0-26-g471260496e0387798882020a757931b0d454d962
 - kind: cargo2
   ref:
   - kind: registry
@@ -85,10 +85,6 @@ sources:
     sha: 5e764a1d40d510daf35e07be9eb06e75770908c27d411ee6c92109c9840eaaf7
   - kind: registry
     name: bitflags
-    version: 1.3.2
-    sha: bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a
-  - kind: registry
-    name: bitflags
     version: 2.9.3
     sha: 34efbcccd345379ca2868b2b2c9d3782e9cc58ba87bc7d79d5b53d9c9ae6f25d
   - kind: registry
@@ -157,8 +153,8 @@ sources:
     sha: 26b52a9543ae338f279b96b0b9fed9c8093744685043739079ce85cd58f289a6
   - kind: registry
     name: cc
-    version: 1.2.34
-    sha: 42bc4aea80032b7bf409b0bc7ccad88853858911b7713a8062fdc0623867bedc
+    version: 1.2.35
+    sha: 590f9024a68a8c40351881787f1934dc11afd69090f5edb6831464694d836ea3
   - kind: registry
     name: cfg-expr
     version: 0.20.2
@@ -189,12 +185,12 @@ sources:
     sha: 773f3b9af64447d2ce9850330c473515014aa235e6a783b02db81ff39e4a3dad
   - kind: registry
     name: clap
-    version: 4.5.45
-    sha: 1fc0e74a703892159f5ae7d3aac52c8e6c392f5ae5f359c70b5881d60aaac318
+    version: 4.5.46
+    sha: 2c5e4fcf9c21d2e544ca1ee9d8552de13019a42aa7dbf32747fa7aaf1df76e57
   - kind: registry
     name: clap_builder
-    version: 4.5.44
-    sha: b3e7f4214277f3c7aa526a59dd3fbe306a370daee1f8b7b8c987069cd8e888a8
+    version: 4.5.46
+    sha: fecb53a0e6fcfb055f686001bc2e2592fa527efaf38dbe81a6a9563562e57d41
   - kind: registry
     name: clap_complete
     version: 4.5.57
@@ -229,12 +225,12 @@ sources:
     sha: 9481c1c90cbf2ac953f07c8d4a58aa3945c425b7185c9154d67a65e4230da511
   - kind: registry
     name: criterion
-    version: 0.6.0
-    sha: 3bf7af66b0989381bd0be551bd7cc91912a655a58c6918420c9527b1fd8b4679
+    version: 0.7.0
+    sha: e1c047a62b0cc3e145fa84415a3191f628e980b194c2755aa12300a4e6cbd928
   - kind: registry
     name: criterion-plot
-    version: 0.5.0
-    sha: 6b50826342786a51a89e2da3a28f1c32b06e387201bc2d19791f622c673706b1
+    version: 0.6.0
+    sha: 9b1bcc0dc7dfae599d84ad0b1a55f80cde8af3725da8313b528da95ef783e338
   - kind: registry
     name: crossbeam-deque
     version: 0.8.6
@@ -281,8 +277,8 @@ sources:
     sha: c3c91aea6668645415331133ed6f8ddf0e7f40160cd97a12d59e68716a58704b
   - kind: registry
     name: deranged
-    version: 0.4.0
-    sha: 9c9e6a11ca8224451684bc0d7d5a7adbf8f2fd6887261a1cfc3c0432f9d4068e
+    version: 0.5.3
+    sha: d630bccd429a5bb5a64b5e94f693bfc48c9f8566418fda4c494cc94f911f87cc
   - kind: registry
     name: derive_more
     version: 2.0.1
@@ -351,6 +347,10 @@ sources:
     name: fdeflate
     version: 0.3.7
     sha: 1e6853b52649d4ac5c0bd02320cddc5ba956bdb407c4b75a2c6b75bf51500f8c
+  - kind: registry
+    name: find-msvc-tools
+    version: 0.1.0
+    sha: e178e4fba8a2726903f6ba98a6d221e76f9c12c650d5dc0e6afdc50677b49650
   - kind: registry
     name: flate2
     version: 1.1.2
@@ -509,12 +509,12 @@ sources:
     sha: 3acae9609540aa318d1bc588455225fb2085b9ed0c4f6bd0d9d5bcd86f1a0344
   - kind: registry
     name: image
-    version: 0.25.6
-    sha: db35664ce6b9810857a38a906215e75a9c879f0696556a39f59c62829710251a
+    version: 0.25.7
+    sha: 1c6a3ce16143778e24df6f95365f12ed105425b22abefd289dd88a64bab59605
   - kind: registry
     name: image-webp
-    version: 0.2.3
-    sha: f6970fe7a5300b4b42e62c52efa0187540a5bef546c60edaf554ef595d2e6f0b
+    version: 0.2.4
+    sha: 525e9ff3e1a4be2fbea1fdf0e98686a6d98b4d8f937e1bf7402245af1909e8c3
   - kind: registry
     name: indexmap
     version: 2.11.0
@@ -527,10 +527,6 @@ sources:
     name: is_terminal_polyfill
     version: 1.70.1
     sha: 7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf
-  - kind: registry
-    name: itertools
-    version: 0.10.5
-    sha: b0fd2260e829bddf4cb6ea802289de2f86d6a7a690192fbe91b3f46e0f2c8473
   - kind: registry
     name: itertools
     version: 0.13.0
@@ -635,6 +631,10 @@ sources:
     name: miniz_oxide
     version: 0.8.9
     sha: 1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316
+  - kind: registry
+    name: moxcms
+    version: 0.7.5
+    sha: ddd32fa8935aeadb8a8a6b6b351e40225570a37c43de67690383d87ef170cd08
   - kind: registry
     name: mp4parse
     version: 0.17.0
@@ -793,8 +793,8 @@ sources:
     sha: 51bae2ac328883f7acdfea3d66a7c35751187f870bc81f94563733a154d7a670
   - kind: registry
     name: png
-    version: 0.17.16
-    sha: 82151a2fc869e011c153adc57cf2789ccb8d9906ce52c0b39a6b5697749d7526
+    version: 0.18.0
+    sha: 97baced388464909d42d89643fe4361939af9b7ce7a31ee32a168f832a70f2a0
   - kind: registry
     name: portable-atomic
     version: 1.11.1
@@ -805,8 +805,8 @@ sources:
     sha: d8a2f0d8d040d7848a709caf78912debcc3f33ee4b3cac47d73d1e1069e83507
   - kind: registry
     name: potential_utf
-    version: 0.1.2
-    sha: e5a7c30837279ca13e7c867e9e40053bc68740f988cb07f7ca6df43cc734b585
+    version: 0.1.3
+    sha: 84df19adbe5b5a0782edcab45899906947ab039ccf4573713735ee7de1e6b08a
   - kind: registry
     name: powerfmt
     version: 0.2.0
@@ -843,6 +843,10 @@ sources:
     name: proptest
     version: 1.7.0
     sha: 6fcdab19deb5195a31cf7726a210015ff1496ba1464fd42cb4f537b8b01b471f
+  - kind: registry
+    name: pxfm
+    version: 0.1.20
+    sha: 6e790881194f6f6e86945f0a42a6981977323669aeb6c40e9c7ec253133b96f8
   - kind: registry
     name: quick-error
     version: 1.2.3
@@ -909,16 +913,16 @@ sources:
     sha: 5407465600fb0548f1442edf71dd20683c6ed326200ace4b1ef0763521bb3b77
   - kind: registry
     name: regex
-    version: 1.11.1
-    sha: b544ef1b4eac5dc2db33ea63606ae9ffcfac26c1416a2806ae0bf5f56b201191
+    version: 1.11.2
+    sha: 23d7fd106d8c02486a8d64e778353d1cffe08ce79ac2e82f540c86d0facf6912
   - kind: registry
     name: regex-automata
-    version: 0.4.9
-    sha: 809e8dc61f6de73b46c85f4c96486310fe304c434cfa43669d7b40f711150908
+    version: 0.4.10
+    sha: 6b9458fa0bfeeac22b5ca447c63aaf45f28439a709ccd244698632f9aa6394d6
   - kind: registry
     name: regex-syntax
-    version: 0.8.5
-    sha: 2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c
+    version: 0.8.6
+    sha: caf4aa5b0f434c91fe5c7f1ecb6a5ece2130b02ad2a590589dda5146df959001
   - kind: registry
     name: rgb
     version: 0.8.52
@@ -1061,32 +1065,24 @@ sources:
     sha: 8f50febec83f5ee1df3015341d8bd429f2d1cc62bcba7ea2076759d315084683
   - kind: registry
     name: thiserror
-    version: 1.0.69
-    sha: b6aaf5339b578ea85b50e080feb250a3e8ae8cfcdff9a461c9ec2904bc923f52
-  - kind: registry
-    name: thiserror
     version: 2.0.16
     sha: 3467d614147380f2e4e374161426ff399c91084acd2363eaf549172b3d5e60c0
-  - kind: registry
-    name: thiserror-impl
-    version: 1.0.69
-    sha: 4fee6c4efc90059e10f81e6d42c60a18f76588c3d74cb83a0b242a2b6c7504c1
   - kind: registry
     name: thiserror-impl
     version: 2.0.16
     sha: 6c5e1be1c48b9172ee610da68fd9cd2770e7a4056cb3fc98710ee6906f0c7960
   - kind: registry
     name: time
-    version: 0.3.41
-    sha: 8a7619e19bc266e0f9c5e6686659d394bc57973859340060a69221e57dbc0c40
+    version: 0.3.42
+    sha: 8ca967379f9d8eb8058d86ed467d81d03e81acd45757e4ca341c24affbe8e8e3
   - kind: registry
     name: time-core
-    version: 0.1.4
-    sha: c9e9a38711f559d9e3ce1cdb06dd7c5b8ea546bc90052da6d06bb76da74bb07c
+    version: 0.1.5
+    sha: a9108bb380861b07264b950ded55a44a14a4adc68b9f5efd85aafc3aa4d40a68
   - kind: registry
     name: time-macros
-    version: 0.2.22
-    sha: 3526739392ec93fd8b359c8e98514cb3e8e021beb4e5f597b00a0221f8ed8a49
+    version: 0.2.23
+    sha: 7182799245a7264ce590b349d90338f1c1affad93d2639aed5f8f69c090b334c
   - kind: registry
     name: tinystr
     version: 0.8.1
@@ -1141,8 +1137,8 @@ sources:
     sha: e70f2a8b45122e719eb623c01822704c4e0907e7e426a05927e1a1cfff5b75d0
   - kind: registry
     name: url
-    version: 2.5.6
-    sha: 137a3c834eaf7139b73688502f3f1141a0337c5d8e4d9b536f9b8c796e26a7c4
+    version: 2.5.7
+    sha: 08bc136a29a3d1758e07a9cca267be308aeebf5cfd5a10f3f67ab2097683ef5b
   - kind: registry
     name: utf-8
     version: 0.7.6
@@ -1173,8 +1169,8 @@ sources:
     sha: 29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b
   - kind: registry
     name: wasi
-    version: 0.14.2+wasi-0.2.4
-    sha: 9683f9a5a998d873c0d21fcbe3c083009670149a8fab228644b8bd36b2c48cb3
+    version: 0.14.3+wasi-0.2.4
+    sha: 6a51ae83037bdd272a9e28ce236db8c07016dd0d50c27038b3f407533c030c95
   - kind: registry
     name: wasm-bindgen
     version: 0.2.100
@@ -1336,9 +1332,9 @@ sources:
     version: 0.7.13
     sha: 21a0236b59786fed61e2a80582dd500fe61f18b5dca67a4a067d0bc9039339cf
   - kind: registry
-    name: wit-bindgen-rt
-    version: 0.39.0
-    sha: 6f42320e61fe2cfd34354ecb597f86f413484a798ba44a8ca1165c58d42da6c1
+    name: wit-bindgen
+    version: 0.45.0
+    sha: 052283831dbae3d879dc7f51f3d92703a316ca49f91540417d38591826127814
   - kind: registry
     name: writeable
     version: 0.6.1

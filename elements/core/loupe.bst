@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 49.rc-2-gd50cdc20b6968a6044e42a571df62c1e09b025da
+  ref: 49.rc-4-gd7e19643208a35e8c3c05c3b837fe97a366637a4
 - kind: cargo2
 
   ref:
@@ -86,8 +86,8 @@ sources:
     sha: c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8
   - kind: registry
     name: bitflags
-    version: 2.9.3
-    sha: 34efbcccd345379ca2868b2b2c9d3782e9cc58ba87bc7d79d5b53d9c9ae6f25d
+    version: 2.9.4
+    sha: 2261d10cca569e4643e526d8dc2e62e433cc8aba21ab764233731f8d369bf394
   - kind: registry
     name: block
     version: 0.1.6
@@ -118,8 +118,8 @@ sources:
     sha: 590f9024a68a8c40351881787f1934dc11afd69090f5edb6831464694d836ea3
   - kind: registry
     name: cfg-expr
-    version: 0.18.0
-    sha: 1a2b34126159980f92da2a08bdec0694fd80fb5eb9e48aff25d20a0d8dfa710d
+    version: 0.20.2
+    sha: c8d458d63f0f0f482c8da9b7c8b76c21bd885a02056cc94c6404d861ca2b8206
   - kind: registry
     name: cfg-if
     version: 1.0.3
@@ -394,8 +394,8 @@ sources:
     sha: fbd1a9cdb84d3166fa067fa352651f9212567af36701230e7dd7044919e1ce78
   - kind: registry
     name: gufo-common
-    version: 1.0.0
-    sha: c51075301871a558c79a76f238cac4ef0673ff1802656a174262e4c6106a8fbc
+    version: 1.0.1
+    sha: 98bebe9ba4be92d3932246ecfbe261106e3013266604f8cbf0ca9ee9df7edf99
   - kind: registry
     name: gufo-exif
     version: 0.3.0
