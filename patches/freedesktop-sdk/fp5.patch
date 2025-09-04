@@ -1,0 +1,42 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 8247f11a4..2340d4ec4 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -44,6 +44,9 @@ case "$arch" in
+         # Backlight and LED
+         enable BACKLIGHT_CLASS_DEVICE    # Low-level backlight control
+         module LEDS_SGM3140              # SGM3140 LED driver (500mA Buck/Boost Charge Pump)
++
++	# fp5 panel
++	module DRM_PANEL_RAYDIUM_RM692E5
+     ;;
+ esac
+ 
+@@ -785,6 +788,7 @@ module TYPEC_NVIDIA_ALTMODE
+ module TYPEC_FUSB302
+ module TYPEC_TCPM
+ module TYPEC_TPS6598X
++module TYPEC_MUX_PTN36502
+ 
+ # USB audio
+ module SND_USB_AUDIO
+@@ -1714,6 +1718,9 @@ case "$arch" in
+         module LPC_SCH
+         module MFD_INTEL_PMC_BXT
+     ;;
++    aarch64)
++        module MFD_QCOM_PM8008
++    ;;
+ esac
+ module MFD_AXP20X_I2C
+ 
+@@ -2364,6 +2371,9 @@ case "$arch" in
+         module LEDS_APU
+         module LEDS_INTEL_SS4200
+     ;;
++    aarch64)
++	module LEDS_QCOM_FLASH
++    ;;
+ esac
+ 
+ enable CPU_FREQ
