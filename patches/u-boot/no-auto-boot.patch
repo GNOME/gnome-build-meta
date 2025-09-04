@@ -1,0 +1,14 @@
+diff -ur u-boot.old/board/qualcomm/qcom-phone.env u-boot/board/qualcomm/qcom-phone.env
+--- u-boot.old/board/qualcomm/qcom-phone.env	2025-09-16 16:48:43.022060179 +0200
++++ u-boot/board/qualcomm/qcom-phone.env	2025-09-16 16:49:23.095371253 +0200
+@@ -21,7 +21,7 @@
+ # bootretry will run this command over and over, if we fail once
+ # then bail out to the boot menu instead (with a pause to read
+ # the error message)
+-bootcmd=bootefi bootmgr; pause; run menucmd
++bootcmd=pause; run menucmd
+ 
+ # When entering the menu (either from button press or failed boot)
+ # remap bootcmd so it will re-open the menu and we won't get stuck
+Only in u-boot.old/: .bstproject.yaml
+Binary files u-boot.old/.git/index and u-boot/.git/index differ

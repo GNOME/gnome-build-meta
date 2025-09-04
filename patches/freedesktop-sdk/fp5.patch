@@ -1,0 +1,68 @@
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 8247f11..8647848 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -44,6 +44,35 @@ case "$arch" in
+         # Backlight and LED
+         enable BACKLIGHT_CLASS_DEVICE    # Low-level backlight control
+         module LEDS_SGM3140              # SGM3140 LED driver (500mA Buck/Boost Charge Pump)
++
++	# fp5 panel
++	module DRM_PANEL_RAYDIUM_RM692E5
++	# fp5
++	enable REGULATOR_QCOM_PM8008
++
++	#module TOUCHSCREEN_FTS
++	#module INPUT_AW86927
++	#module VIDEO_IMX858
++	#module VIDEO_S5KJN1
++	module DRM_SIMPLEDRM
++	#module DRM_PANEL_SHIFT_SH8804B
++	module BACKLIGHT_QCOM_WLED
++	enable USB_XHCI_SIDEBAND
++	module SND_USB_AUDIO_QMI
++	module SND_SOC_USB
++	module SND_SOC_QDSP6_USB
++	module SND_SOC_AW88261
++	remove QCOM_QSEECOM
++	remove ARM64_VA_BITS_52
++	enable ARM64_VA_BITS_48
++	enable BLK_INLINE_ENCRYPTION
++	enable UEVENT_HELPER
++	enable OF_OVERLAY
++	enable USB_HIDDEV
++	enable USB_ANNOUNCE_NEW_DEVICES
++	enable SCSI_UFS_CRYPTO
++	enable UDMABUF
++	enable FS_ENCRYPTION_INLINE_CRYPT
+     ;;
+ esac
+ 
+@@ -785,6 +815,7 @@ module TYPEC_NVIDIA_ALTMODE
+ module TYPEC_FUSB302
+ module TYPEC_TCPM
+ module TYPEC_TPS6598X
++module TYPEC_MUX_PTN36502
+ 
+ # USB audio
+ module SND_USB_AUDIO
+@@ -1714,6 +1745,9 @@ case "$arch" in
+         module LPC_SCH
+         module MFD_INTEL_PMC_BXT
+     ;;
++    aarch64)
++        module MFD_QCOM_PM8008
++    ;;
+ esac
+ module MFD_AXP20X_I2C
+ 
+@@ -2364,6 +2398,9 @@ case "$arch" in
+         module LEDS_APU
+         module LEDS_INTEL_SS4200
+     ;;
++    aarch64)
++	module LEDS_QCOM_FLASH
++    ;;
+ esac
+ 
+ enable CPU_FREQ
