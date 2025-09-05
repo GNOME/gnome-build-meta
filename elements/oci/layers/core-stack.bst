@@ -18,6 +18,10 @@ depends:
 # Useful utilities for building extensions in CI
 - gnomeos-deps/sysext-utils.bst
 
+# Currently for sysprof-ebpf but useful in general
+- freedesktop-sdk.bst:components/bpf.bst
+- freedesktop-sdk.bst:components/vmlinuxh.bst
+
 # Common build deps that do not make it to the runtime
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
