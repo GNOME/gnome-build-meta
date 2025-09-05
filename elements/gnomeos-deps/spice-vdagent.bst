@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: spice:releases/spice-vdagent-0.22.1.tar.bz2
-  ref: 93b0d15aca4762cc7d379b179a7101149dbaed62b72112fffb2b3e90b11687a0
+- kind: git_repo
+  url: freedesktop:spice/linux/vd_agent
+  track: spice-vdagent*
+  ref: spice-vdagent-0.22.1-0-ga9bb1752cede50757c47f6f8e1f52fb6bed93cd6
 - kind: local
   path: files/spice-vdagent/
   directory: local
@@ -31,12 +32,7 @@ variables:
     --with-session-info=systemd
     --with-init-script=systemd
 
-# force autogen
 config:
-  configure-commands:
-    (<):
-    - rm configure
-
   install-commands:
     (>):
     - |
