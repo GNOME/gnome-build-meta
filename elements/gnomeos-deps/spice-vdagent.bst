@@ -5,9 +5,6 @@ sources:
   url: freedesktop:spice/linux/vd_agent
   track: spice-vdagent*
   ref: spice-vdagent-0.22.1-0-ga9bb1752cede50757c47f6f8e1f52fb6bed93cd6
-- kind: local
-  path: files/spice-vdagent/
-  directory: local
 - kind: patch_queue
   path: patches/spice-vdagent/
 
@@ -37,6 +34,3 @@ config:
     (>):
     - |
       rm -rf '%{install-root}%{sysconfdir}/xdg'
-
-    - |
-      install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/user-preset' local/80-spice-vdagent.preset
