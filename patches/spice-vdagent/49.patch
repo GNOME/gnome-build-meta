@@ -1,0 +1,35 @@
+From 553cb85f103c0efa0e5693f05db272e287a91774 Mon Sep 17 00:00:00 2001
+From: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
+Date: Sun, 7 Jul 2024 13:10:58 -0400
+Subject: [PATCH] systemd services: add Documentation key (point to manpage)
+
+---
+ data/spice-vdagent.service  | 1 +
+ data/spice-vdagentd.service | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/data/spice-vdagent.service b/data/spice-vdagent.service
+index 91734ff..7c320ca 100644
+--- a/data/spice-vdagent.service
++++ b/data/spice-vdagent.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Spice guest session agent
++Documentation=man:spice-vdagent(1)
+ # Make sure the display is reachable
+ After=graphical-session.target
+ 
+diff --git a/data/spice-vdagentd.service b/data/spice-vdagentd.service
+index 9c70b30..55b426d 100644
+--- a/data/spice-vdagentd.service
++++ b/data/spice-vdagentd.service
+@@ -1,5 +1,6 @@
+ [Unit]
+ Description=Agent daemon for Spice guests
++Documentation=man:spice-vdagentd(1)
+ After=dbus.target
+ Requires=spice-vdagentd.socket
+ 
+-- 
+GitLab
+

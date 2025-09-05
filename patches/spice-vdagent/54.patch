@@ -1,0 +1,307 @@
+From ad58c5f2828d7e93c3c21eae33c4b14011678fe4 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 17:59:43 -0400
+Subject: [PATCH 1/8] spice-vdagentd.service: Remove [Install] section
+
+This install section wasn't valid: it told systemd that you could enable
+spice-vdagentd.service by enabling spice-vdagentd.socket. However,
+spice-vdagentd.socket is a static unit, and cannot be enabled or
+disabled. Instead, the socket is automatically started by udev whenever
+a SPICE virtio channel is detected
+
+Fixes https://gitlab.freedesktop.org/spice/linux/vd_agent/-/issues/42
+---
+ data/spice-vdagentd.service | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/data/spice-vdagentd.service b/data/spice-vdagentd.service
+index 55b426d..cdf2e8c 100644
+--- a/data/spice-vdagentd.service
++++ b/data/spice-vdagentd.service
+@@ -11,6 +11,3 @@ ExecStart=/usr/sbin/spice-vdagentd $SPICE_VDAGENTD_EXTRA_ARGS
+ PIDFile=/run/spice-vdagentd/spice-vdagentd.pid
+ PrivateTmp=true
+ Restart=on-failure
+-
+-[Install]
+-Also=spice-vdagentd.socket
+-- 
+GitLab
+
+
+From 71b4eac3d63f60ccef941b60a15582de6f71a8c0 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 18:14:25 -0400
+Subject: [PATCH 2/8] spice-vdagentd.service: Don't use Type=forking
+
+systemd explicitly recommends against this: systemd already forks for
+us, so we don't need to fork a second time
+---
+ data/spice-vdagentd.service | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/data/spice-vdagentd.service b/data/spice-vdagentd.service
+index cdf2e8c..7676318 100644
+--- a/data/spice-vdagentd.service
++++ b/data/spice-vdagentd.service
+@@ -5,9 +5,8 @@ After=dbus.target
+ Requires=spice-vdagentd.socket
+ 
+ [Service]
+-Type=forking
+ EnvironmentFile=-/etc/sysconfig/spice-vdagentd
+-ExecStart=/usr/sbin/spice-vdagentd $SPICE_VDAGENTD_EXTRA_ARGS
++ExecStart=/usr/sbin/spice-vdagentd -x $SPICE_VDAGENTD_EXTRA_ARGS
+ PIDFile=/run/spice-vdagentd/spice-vdagentd.pid
+ PrivateTmp=true
+ Restart=on-failure
+-- 
+GitLab
+
+
+From af2355784bc9f6e44886bb98428485a099881e41 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 18:18:31 -0400
+Subject: [PATCH 3/8] spice-vdagentd.service: Replace "dbus.target"
+
+dbus.target doesn't exist: instead you should be using dbus.socket
+
+But upon further investigation of spice-vdagentd, it appears that the
+only place dbus is used is when trying to talk to logind (or console
+kit, which won't be used in tandem with systemd). So really the service
+depends on logind, not dbus. So let's represent that in the unit file
+---
+ data/spice-vdagentd.service | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/data/spice-vdagentd.service b/data/spice-vdagentd.service
+index 7676318..8c66ea9 100644
+--- a/data/spice-vdagentd.service
++++ b/data/spice-vdagentd.service
+@@ -1,8 +1,8 @@
+ [Unit]
+ Description=Agent daemon for Spice guests
+ Documentation=man:spice-vdagentd(1)
+-After=dbus.target
+-Requires=spice-vdagentd.socket
++Requires=spice-vdagentd.socket systemd-logind.service
++After=systemd-logind.service
+ 
+ [Service]
+ EnvironmentFile=-/etc/sysconfig/spice-vdagentd
+-- 
+GitLab
+
+
+From 9b6a71e3201ee408ac73ae838866b2853a16b412 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 18:24:21 -0400
+Subject: [PATCH 4/8] spice-vdagent.service: Only run with system daemon
+
+No need to start the vdagent binary if there's no system daemon running,
+and no way to communicate through the spice channel to the VMM
+---
+ data/spice-vdagent.service | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/data/spice-vdagent.service b/data/spice-vdagent.service
+index 7c320ca..aa006d5 100644
+--- a/data/spice-vdagent.service
++++ b/data/spice-vdagent.service
+@@ -1,7 +1,12 @@
+ [Unit]
+ Description=Spice guest session agent
+ Documentation=man:spice-vdagent(1)
+-# Make sure the display is reachable
++
++# Only run whenever the system daemon is running, since this
++# service isn't useful on its own
++ConditionPathExists=/run/spice-vdagentd/spice-vdagent-sock
++
++# Ensure display server is already running
+ After=graphical-session.target
+ 
+ [Service]
+-- 
+GitLab
+
+
+From 12f36594a6d539534abac15732e7316e6ccec59b Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 18:45:13 -0400
+Subject: [PATCH 5/8] spice-vdagent.service: Statically enable
+
+In a previous commit, we configured spice-vdagent.service to only run if
+the system socket is running, and the system socket is configured to run
+whenever a SPICE virtio channel exists. For the agent to work correctly,
+we always want to run the user service whenever the system service is
+running.
+
+To that end, we statically enable spice-vdagent.service for any
+graphical session. If a SPICE virtio channel exists, the system socket
+will exist, and so systemd will start the service. If a channel doesn't
+exist, then no socket will exist and systemd will make no attempt to run
+the user service.
+---
+ Makefile.am                | 16 ++++++++++++++++
+ data/spice-vdagent.service |  3 ---
+ 2 files changed, 16 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index b368c82..02bdc0e 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -158,6 +158,10 @@ initdir = $(sysconfdir)/rc.d/init.d
+ init_SCRIPTS = $(top_srcdir)/data/spice-vdagentd
+ endif
+ 
++.PHONY: install-systemd uninstall-systemd
++
++install-systemd uninstall-systemd: ;
++
+ if INIT_SCRIPT_SYSTEMD
+ systemdunitdir = $(SYSTEMDSYSTEMUNITDIR)
+ systemdunit_DATA = \
+@@ -173,6 +177,14 @@ udevrules_DATA = $(top_srcdir)/data/70-spice-vdagentd.rules
+ 
+ tmpfilesdir = $(prefix)/lib/tmpfiles.d
+ tmpfiles_DATA = $(top_srcdir)/data/tmpfiles.d/spice-vdagentd.conf
++
++install-systemd:
++	$(MKDIR_P) $(DESTDIR)$(SYSTEMDUSERUNITDIR)/graphical-session.target.wants
++	ln -sf ../spice-vdagent.service $(DESTDIR)$(SYSTEMDUSERUNITDIR)/graphical-session.target.wants/spice-vdagent.service
++
++uninstall-systemd:
++	rm -f $(DESTDIR)$(SYSTEMDUSERUNITDIR)/graphical-session.target.wants/spice-vdagent.service
++
+ endif
+ 
+ manpagedir = $(mandir)/man1
+@@ -204,3 +216,7 @@ tests_test_device_info_CFLAGS = $(src_spice_vdagent_CFLAGS)
+ check_PROGRAMS += tests/test-device-info
+ 
+ check_PROGRAMS += tests/test-termination
++
++install-data-hook: install-systemd
++
++uninstall-hook: uninstall-systemd
+diff --git a/data/spice-vdagent.service b/data/spice-vdagent.service
+index aa006d5..5b4dcae 100644
+--- a/data/spice-vdagent.service
++++ b/data/spice-vdagent.service
+@@ -11,6 +11,3 @@ After=graphical-session.target
+ 
+ [Service]
+ ExecStart=/usr/bin/spice-vdagent -x
+-
+-[Install]
+-WantedBy=graphical-session.target
+-- 
+GitLab
+
+
+From 2e0ba08f8533958f7c961913267dd437cbdfb748 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 18:54:21 -0400
+Subject: [PATCH 6/8] spice-vdagent.desktop: Delete GDM autostart dirs
+
+Starting with GNOME 49, GDM doesn't use these directories. GNOME no
+longer launches any services via .desktop files, and instead relies only
+on systemd user units.
+
+spice-vdagent is already configured to run for any graphical session,
+including the GDM greeter. So we can simply drop the .desktop files now
+---
+ Makefile.am | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 02bdc0e..563fa3e 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -147,12 +147,6 @@ endif
+ xdgautostartdir = $(sysconfdir)/xdg/autostart
+ xdgautostart_DATA = $(top_srcdir)/data/spice-vdagent.desktop
+ 
+-gdmautostartdir = $(datadir)/gdm/greeter/autostart
+-gdmautostart_DATA = $(top_srcdir)/data/spice-vdagent.desktop
+-
+-gdmautostart2dir = $(datadir)/gdm/autostart/LoginWindow
+-gdmautostart2_DATA = $(top_srcdir)/data/spice-vdagent.desktop
+-
+ if INIT_SCRIPT_RED_HAT
+ initdir = $(sysconfdir)/rc.d/init.d
+ init_SCRIPTS = $(top_srcdir)/data/spice-vdagentd
+-- 
+GitLab
+
+
+From 799d66d10dacf9f86518244668863d388d229ae4 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 19:36:30 -0400
+Subject: [PATCH 7/8] spice-vdagent.service: Add missing PartOf dep
+
+Without this dependency, systemd doesn't try to shut down the agent when
+the graphical session ends, and instead the agent crashes when it loses
+its connection to the display server
+---
+ data/spice-vdagent.service | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/spice-vdagent.service b/data/spice-vdagent.service
+index 5b4dcae..1931988 100644
+--- a/data/spice-vdagent.service
++++ b/data/spice-vdagent.service
+@@ -7,6 +7,7 @@ Documentation=man:spice-vdagent(1)
+ ConditionPathExists=/run/spice-vdagentd/spice-vdagent-sock
+ 
+ # Ensure display server is already running
++PartOf=graphical-session.target
+ After=graphical-session.target
+ 
+ [Service]
+-- 
+GitLab
+
+
+From 8b0f9cf1e207eb1160d8b453a77b662e783ea9d7 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 11 Aug 2025 19:50:12 -0400
+Subject: [PATCH 8/8] spice-vdagent[d].service: Fix duplicated logs
+
+spice-vdagent uses openlog() and syslog(), configured in such a way that
+output goes to stderr and to the syslog daemon. This causes duplicated
+log lines: the ones the agent sends directly to the journal, and a
+second set that systemd captures from the service's stderr
+---
+ data/spice-vdagent.service  | 4 ++++
+ data/spice-vdagentd.service | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/data/spice-vdagent.service b/data/spice-vdagent.service
+index 1931988..7f01a45 100644
+--- a/data/spice-vdagent.service
++++ b/data/spice-vdagent.service
+@@ -12,3 +12,7 @@ After=graphical-session.target
+ 
+ [Service]
+ ExecStart=/usr/bin/spice-vdagent -x
++
++# spice-vdagent logs via syslog() and to stderr, causing duplicated
++# logs. Instead of sending stderr to the journal, disconnect it
++StandardError=null
+diff --git a/data/spice-vdagentd.service b/data/spice-vdagentd.service
+index 8c66ea9..07d42ae 100644
+--- a/data/spice-vdagentd.service
++++ b/data/spice-vdagentd.service
+@@ -10,3 +10,7 @@ ExecStart=/usr/sbin/spice-vdagentd -x $SPICE_VDAGENTD_EXTRA_ARGS
+ PIDFile=/run/spice-vdagentd/spice-vdagentd.pid
+ PrivateTmp=true
+ Restart=on-failure
++
++# spice-vdagentd logs via syslog() and to stderr, causing duplicated
++# logs. Instead of sending stderr to the journal, disconnect it
++StandardError=null
+-- 
+GitLab
+
