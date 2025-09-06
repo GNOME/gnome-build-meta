@@ -30,7 +30,10 @@ url_local="http://localhost:8080"
 
 args=()
 
-default_pubring="$(dirname ${0})/../files/boot-keys/import-pubring.gpg"
+default_pubring="$(dirname ${0})/../files/boot-keys/import-pubring.pgp"
+
+local_sysext="$(dirname ${0})/../files/boot-keys/SYSEXT.crt"
+upstream_sysext="$(dirname ${0})/sysext-upstream.crt"
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -46,6 +49,7 @@ while [ $# -gt 0 ]; do
             if [ "${pubring+set}" != set ]; then
                 pubring="${default_pubring}"
             fi
+            set_sysext=1
             ;;
         --vm)
             url="${url_vm}"
@@ -78,12 +82,12 @@ done
 
 import_pubring() {
     tmp=$(mktemp --tmpdir -d "localrepo.XXXXXXXXXX")
-    if [ -r /etc/systemd/import-pubring.gpg ]; then
-        gpg --homedir="${tmp}" --import </etc/systemd/import-pubring.gpg
+    if [ -r /etc/systemd/import-pubring.pgp ]; then
+        gpg --homedir="${tmp}" --import </etc/systemd/import-pubring.pgp
     fi
-    gpg --homedir="${tmp}" --import </usr/lib/systemd/import-pubring.gpg
+    gpg --homedir="${tmp}" --import </usr/lib/systemd/import-pubring.pgp
     gpg --homedir="${tmp}" --import <"${1}"
-    gpg --homedir="${tmp}" --export >/etc/systemd/import-pubring.gpg
+    gpg --homedir="${tmp}" --export >/etc/systemd/import-pubring.pgp
     rm -rf "${tmp}"
 }
 
@@ -108,9 +112,15 @@ else
     if [ "${url+set}" != set ]; then
         url="${url_local}"
         pubring="${default_pubring}"
+        set_sysext=1
     fi
     if [ "${pubring+set}" = set ]; then
         import_pubring "${pubring}"
+    fi
+    if [ "${set_sysext+set}" = set ]; then
+        mkdir -p /etc/verity.d
+        cp "${local_sysext}" /etc/verity.d/sysext-local.crt
+        cp "${upstream_sysext}" /etc/verity.d/sysext-upstream.crt
     fi
     set_url "${url}"
 fi
