@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.0-26-g471260496e0387798882020a757931b0d454d962
+  ref: 2.61.0-34-geb26981fb62360fa832cc68cc33d1231b92c3b7e
 - kind: cargo2
   ref:
   - kind: registry
@@ -509,8 +509,8 @@ sources:
     sha: 3acae9609540aa318d1bc588455225fb2085b9ed0c4f6bd0d9d5bcd86f1a0344
   - kind: registry
     name: image
-    version: 0.25.7
-    sha: 1c6a3ce16143778e24df6f95365f12ed105425b22abefd289dd88a64bab59605
+    version: 0.25.8
+    sha: 529feb3e6769d234375c4cf1ee2ce713682b8e76538cb13f9fc23e1400a591e7
   - kind: registry
     name: image-webp
     version: 0.2.4
