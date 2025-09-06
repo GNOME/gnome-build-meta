@@ -78,4 +78,4 @@ config:
         >repart.json
 
   - |
-    install -Dm644 -t '%{install-root}' "nvidia-modules.usr.raw"
+    mv nvidia-modules.usr.raw %{install-root}

@@ -117,4 +117,4 @@ config:
         >repart.json
 
   - |
-    install -Dm644 -t '%{install-root}' snapd.root.raw
+    mv snapd.root.raw %{install-root}

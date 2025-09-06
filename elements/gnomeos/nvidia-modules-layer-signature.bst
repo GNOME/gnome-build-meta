@@ -76,4 +76,4 @@ config:
 
   install-commands:
   - |
-    install -Dm644 nvidia-modules.raw "%{install-root}/nvidia-modules-%{systemd-arch}_%{image-version}.raw"
+    mv nvidia-modules.raw "%{install-root}/nvidia-modules-%{systemd-arch}_%{image-version}.raw"

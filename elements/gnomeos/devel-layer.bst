@@ -171,4 +171,4 @@ config:
         >repart.json
 
   - |
-    install -Dm644 -t '%{install-root}' "devel.usr.raw"
+    mv devel.usr.raw %{install-root}

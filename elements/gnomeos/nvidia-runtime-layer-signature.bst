@@ -81,4 +81,4 @@ config:
 
   install-commands:
   - |
-    install -Dm644 nvidia-runtime.raw "%{install-root}/nvidia-runtime-%{systemd-arch}_%{image-version}.raw"
+    mv nvidia-runtime.raw %{install-root}/nvidia-runtime-%{systemd-arch}_%{image-version}.raw

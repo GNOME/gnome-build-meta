@@ -102,4 +102,4 @@ config:
         >repart.json
 
   - |
-    install -Dm644 -t '%{install-root}' "nvidia-runtime.root.raw"
+    mv nvidia-runtime.root.raw %{install-root}
