@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -eux
+set -eu
 set -o pipefail
 
 git clone "$OPENQA_TESTS_GIT" --branch "$OPENQA_TESTS_BRANCH" --recurse-submodules ./openqa
