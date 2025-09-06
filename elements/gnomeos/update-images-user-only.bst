@@ -18,8 +18,8 @@ config:
     usr_part_uuid="$(jq -r '(.[] | select(.file | match("/10-usr.conf$"))).uuid' /usr-image/mini.repart.json)"
     usr_verity_part_uuid=$(jq -r '(.[] | select(.type | match("^usr-.*-verity$"))).uuid' /usr-image/mini.repart.json)
 
-    cp /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
-    cp /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
+    mv /usr-image/mini.usr-verity.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_verity_part_uuid}.verity"
+    mv /usr-image/mini.usr.raw "%{install-root}/usr-%{systemd-arch}_%{image-version}_${usr_part_uuid}.raw"
 
   - |
     set -x

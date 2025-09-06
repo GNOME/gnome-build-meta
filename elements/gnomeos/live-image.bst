@@ -71,8 +71,8 @@ config:
     mkdir -p /build
 
   - |
-    cp /usr-image/mini.usr.raw /sysroot/
-    cp /usr-image/mini.usr-verity.raw /sysroot/
+    mv /usr-image/mini.usr.raw /sysroot/
+    mv /usr-image/mini.usr-verity.raw /sysroot/
 
   - |
     usr_uuid=$(jq -r '.[0].uuid' /usr-image/mini.repart.json)
@@ -106,7 +106,7 @@ config:
     mkdir -p /build/iso-root
 
   - |
-    cp /build/disk.esp.raw /build/iso-root/esp.img
+    mv /build/disk.esp.raw /build/iso-root/esp.img
 
   - |
     xorrisofs -o "/build/image.iso" /build/iso-root -partition_offset 480 -e /esp.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image -sysid LINUX -publisher GNOME -volid "%{installer-volume-id}"
@@ -122,4 +122,4 @@ config:
     dd if=/build/image.iso of=/build/disk.raw bs=512 skip="${skip}" seek="${skip}" count=608 conv=notrunc
 
   - |
-    cp /build/disk.raw "%{install-root}/disk.iso"
+    mv /build/disk.raw "%{install-root}/disk.iso"
