@@ -262,8 +262,8 @@ config:
       done
     done
 
-    mkdir -p "%{install-root}%{libdir}/GL/lib/gbm/"
-    ln -sr "%{install-root}%{libdir}/GL/default/lib/libnvidia-allocator.so.1" "%{install-root}%{libdir}/GL/lib/gbm/nvidia-drm_gbm.so"
+    mkdir -p "%{install-root}%{libdir}/GL/default/lib/gbm/"
+    ln -sr "%{install-root}%{libdir}/GL/default/lib/libnvidia-allocator.so.1" "%{install-root}%{libdir}/GL/default/lib/gbm/nvidia-drm_gbm.so"
 
   - |
     install -Dm644 local-config/modprobe.conf "%{install-root}%{indep-libdir}/modprobe.d/nvidia.conf"
