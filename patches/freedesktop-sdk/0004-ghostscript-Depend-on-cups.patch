@@ -1,0 +1,28 @@
+From ba7dac4222e5179a80b728d84e6325a324c1e055 Mon Sep 17 00:00:00 2001
+From: Ignacy Kuchciński <ignacykuchcinski@gmail.com>
+Date: Sun, 7 Sep 2025 18:35:05 +0200
+Subject: [PATCH] ghostscript: Depend on cups
+
+Ghostscript doesn't build with support for appleraster device which is
+needed for URF support when it can't detect cups installation.
+
+Fix that by adding cups to the dependencies.
+---
+ elements/components/ghostscript.bst | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/elements/components/ghostscript.bst b/elements/components/ghostscript.bst
+index 20d5b61e0..18eb5bbe4 100644
+--- a/elements/components/ghostscript.bst
++++ b/elements/components/ghostscript.bst
+@@ -13,6 +13,7 @@ depends:
+ - components/libtiff.bst
+ - components/openjpeg.bst
+ - components/xorg-lib-xt.bst
++- components/cups.bst
+ 
+ variables:
+   local_flags: -std=gnu17
+-- 
+2.51.0
+
