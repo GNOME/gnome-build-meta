@@ -14,6 +14,7 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 
 - core-deps/phodav.bst
+- gnomeos-deps/desync.bst
 - gnomeos-deps/disable-iscsi.bst
 - gnomeos-deps/flathub-config.bst
 - gnomeos-deps/gnome-nightly-config.bst
