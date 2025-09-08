@@ -13,9 +13,13 @@ variables:
   repart-seed: a19b0f25-42ac-4c92-8921-d8d4079ec140
 
 environment:
-  SYSTEMD_REPART_MKFS_OPTIONS_EROFS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
+  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
+  EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
+
+environment-nocache:
+- EROFS_WORKERS
 
 config:
   commands:
@@ -63,6 +67,7 @@ config:
   - |
     TMPDIR=/var/tmp \
     SYSTEMD_LOG_LEVEL=debug \
+    SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
         --definitions=definitions \
         --empty=create \
