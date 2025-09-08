@@ -75,4 +75,4 @@ config:
         >repart.json
 
   - |
-    install -Dm644 -t '%{install-root}' "debug.usr.raw"
+    mv debug.usr.raw %{install-root}

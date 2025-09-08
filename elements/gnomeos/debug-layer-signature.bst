@@ -76,4 +76,4 @@ config:
 
   install-commands:
   - |
-    install -Dm644 debug.raw "%{install-root}/debug-%{systemd-arch}_%{image-version}.raw"
+    mv debug.raw %{install-root}/debug-%{systemd-arch}_%{image-version}.raw
