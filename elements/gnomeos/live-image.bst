@@ -22,12 +22,6 @@ build-depends:
   config:
     location: '/sysroot'
 
-environment:
-  XZFLAGS: -T%{max-jobs}
-
-environment-nocache:
-- XZFLAGS
-
 variables:
   repart-seed: 9473a621-1617-4679-87e5-031afef28359
 

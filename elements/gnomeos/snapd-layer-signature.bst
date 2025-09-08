@@ -8,11 +8,6 @@ build-depends:
   config:
     location: '/snapd-layer'
 
-environment:
-  XZFLAGS: '-T%{max-jobs}'
-environment-nocache:
-- XZFLAGS
-
 variables:
   repart-seed: c4ffa971-b583-4d0d-bcc8-a9bc6a109aec
   strip-binaries: ''
