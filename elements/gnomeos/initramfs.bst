@@ -13,6 +13,10 @@ variables:
 environment:
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
+  XZFLAGS: -T%{max-jobs}
+
+environment-nocache:
+- XZFLAGS
 
 config:
   commands:
@@ -46,7 +50,7 @@ config:
   - |
     (
       cd /initramfs-root
-      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | xz --check=crc32 --lzma2=dict=1MiB -T0 >/initramfs.img
+      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | xz --check=crc32 --lzma2=dict=1MiB ${XZFLAGS} >/initramfs.img
     )
 
   - |
