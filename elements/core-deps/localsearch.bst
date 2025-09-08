@@ -5,6 +5,7 @@ sources:
   track: main
   ref: 3.10.rc-11-g565a2031deb1c81e890585661616b84795dca47d
 build-depends:
+- core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
