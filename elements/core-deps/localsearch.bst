@@ -4,6 +4,7 @@ sources:
   url: gnome_downloads:localsearch/3.10/localsearch-3.10.rc.tar.xz
   ref: 11e8a15bb41e173ca71aa2f49479ca508c2695e5a607f040d4032f8dbc8d6855
 build-depends:
+- core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
