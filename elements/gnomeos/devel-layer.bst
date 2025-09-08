@@ -154,6 +154,7 @@ config:
     mkdir -p /var/tmp
 
   - |
+    TMPDIR=/var/tmp \
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
         --definitions=definitions \
