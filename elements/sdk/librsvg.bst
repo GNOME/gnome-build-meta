@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.0-34-geb26981fb62360fa832cc68cc33d1231b92c3b7e
+  ref: 2.61.1-0-g7a19a9216b4d81ba48c834351ab1e75793ae80f7
 - kind: cargo2
   ref:
   - kind: registry
@@ -768,6 +768,10 @@ sources:
     version: 0.11.3
     sha: 67eabc2ef2a60eb7faa00097bd1ffdb5bd28e62bf39990626a582201b7a754e5
   - kind: registry
+    name: phf_shared
+    version: 0.13.1
+    sha: e57fef6bc5981e38c2ce2d63bfa546861309f875b8a75f092d1d54ae2d64f266
+  - kind: registry
     name: pin-project-lite
     version: 0.2.16
     sha: 3b3cff922bd51709b605d9ead9aa71031d81447142d828eb4a6eba76fe619f9b
@@ -1023,6 +1027,10 @@ sources:
     name: string_cache
     version: 0.8.9
     sha: bf776ba3fa74f83bf4b63c3dcbbf82173db2632ed8452cb2d891d33f459de70f
+  - kind: registry
+    name: string_cache
+    version: 0.9.0
+    sha: a18596f8c785a729f2819c0f6a7eae6ebeebdfffbfe4214ae6b087f690e31901
   - kind: registry
     name: string_cache_codegen
     version: 0.5.4
