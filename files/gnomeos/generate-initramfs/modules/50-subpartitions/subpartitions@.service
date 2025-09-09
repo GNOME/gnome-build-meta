@@ -1,0 +1,6 @@
+[Unit]
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/losetup -P -f /dev/%I
