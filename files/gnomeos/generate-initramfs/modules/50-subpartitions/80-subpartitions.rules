@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="block", ENV{PARTNAME}=="GNOMEOS-SUBPARTS", ENV{SYSTEMD_WANTS}+="subpartitions@%k.service", TAG+="systemd"

@@ -30,22 +30,34 @@ One of them has a partition 17 with name `userdata`. Delete that partition.
 
 Download the [aarch64 iso](https://os.gnome.org/download/latest/live-aarch64.iso) for GNOME OS.
 
-In the checkout of gnome-build-meta, add file
-`utils/repart.raw.d/50-root.conf` with the following content (this
-file is only to fix padding issues with existing partitions, but it will be skipped):
+In the checkout of gnome-build-meta, if the disk is /dev/sda, then run:
 
 ```
-[Partition]
-Type=root
-```
-
-If the disk is /dev/sda, then run:
-
-```
-sudo systemd-repart --architecture=arm64 --defer-partitions=root --definitions=utils/repart.raw.d/ --dry-run=yes --image=live.iso /dev/sda
+sudo systemd-repart --architecture=arm64 --defer-partitions=root --definitions=utils/repart.android.d/ --dry-run=yes --image=live.iso /dev/sda
 ```
 
 If that looks ok, re-run with `--dry-run=no`.
+
+Now create a loopback device for `/dev/sda18` (do verify this is partition GNOMEOS-SUBPARTS).
+
+```
+losetup -f --show /dev/sda18
+```
+
+This will show you which loop device was created. Let's say it is
+`/dev/loopX`. Run:
+
+```
+sudo systemd-repart --create enforce --architecture=arm64 --definitions=utils/repart.android.d/ --dry-run=no --image=live.iso /dev/loopX
+```
+
+If that looks ok, re-run with `--dry-run=no`.
+
+Then remove the loop device with:
+
+```
+sudo losetup -d /dev/loopX
+```
 
 ## Known bugs, workaounds
 
