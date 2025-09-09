@@ -11,7 +11,8 @@ MatchPattern=usr-%a_@v_@u.raw \
 [Target]
 Type=partition
 Path=/
-MatchPattern=gnomeos_usr_@v
+MatchPattern=G@v \
+             gnomeos_usr_@v
 MatchPartitionType=usr
 ReadOnly=true
 PartitionFlags=0

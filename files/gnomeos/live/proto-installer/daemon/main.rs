@@ -286,7 +286,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     verity_a.write_all(format!(
         "[Partition]\n\
          Type=usr-verity\n\
-         Label=gnomeos_usr_v_%A\n\
+         Label=G%A\n\
          # verity for 4G, algo sha256, block size 512 and hash size 512 is 275M\n\
          SizeMinBytes=275M\n\
          SizeMaxBytes=275M\n\
@@ -297,7 +297,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     usr_a.write_all(format!(
         "[Partition]\n\
          Type=usr\n\
-         Label=gnomeos_usr_%A\n\
+         Label=G%A\n\
          SizeMinBytes=4G\n\
          SizeMaxBytes=4G\n\
          CopyBlocks=auto\n"
@@ -307,7 +307,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     verity_b.write_all(
         "[Partition]\n\
          Type=usr-verity\n\
-         Label=gnomeos_usr_v_empty\n\
+         Label=Gempty\n\
          # verity for 4G, algo sha256, block size 512 and hash size 512 is 275M\n\
          SizeMinBytes=275M\n\
          SizeMaxBytes=275M\n"
@@ -317,7 +317,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     usr_b.write_all(
         "[Partition]\n\
          Type=usr\n\
-         Label=gnomeos_usr_empty\n\
+         Label=Gempty\n\
          SizeMinBytes=4G\n\
          SizeMaxBytes=4G\n"
             .as_bytes())?;

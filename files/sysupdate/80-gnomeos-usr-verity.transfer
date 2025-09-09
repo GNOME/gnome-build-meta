@@ -9,7 +9,8 @@ MatchPattern=usr-%a_@v_@u.verity usr-%a_@v_@u.verity.xz
 [Target]
 Type=partition
 Path=/
-MatchPattern=gnomeos_usr_v_@v
+MatchPattern=G@v \
+             gnomeos_usr_v_@v
 MatchPartitionType=usr-verity
 ReadOnly=true
 PartitionFlags=0
