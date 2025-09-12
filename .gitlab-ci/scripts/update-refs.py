@@ -91,7 +91,6 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html"),
-    ("sdk/gjs.bst", "https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3801"),
     ("core/gnome-disk-utility.bst", "https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/455"),
 ]
 
