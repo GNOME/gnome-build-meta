@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gweather-locations.git
   track: main
-  ref: 0bbed95b4b8894499b7d39fae3cc07ffc5599e32
+  ref: 70bdb67d7217a08899da69c5fb5259afa0dd74b0
 
 build-depends:
 - sdk/pygobject.bst
