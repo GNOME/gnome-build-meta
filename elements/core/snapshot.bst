@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.rc-22-g204b7eeae810c1babbaaae106e08ba1bd2a08b27
+  ref: 49.0-0-g90a6db8fa417dc6e396533f664630ed79e0391b6
 - kind: cargo2
   ref:
   - kind: registry
@@ -345,16 +345,16 @@ sources:
     sha: dc7c43cff6a7dc43821e45ebf172399437acd6716fa2186b6852d2b397bf622d
   - kind: registry
     name: glycin
-    version: 3.0.0-rc
-    sha: 0f2706e5dc89542e2a52cde591a7486cc9d09f8cbb7ff44915b771ba6e4adebf
+    version: 3.0.0
+    sha: 3b70ebfc9e7c504e99580122d58174a3976f086ec55834692e44dd7489d36ed9
   - kind: registry
     name: glycin-common
-    version: 1.0.0-rc
-    sha: 944a5eef3b886c5a82bacaac9dceb0a5716e4ef6062825f34806d5c60d66c8e2
+    version: 1.0.0
+    sha: a2382f0d91d42f750486e7c8316cba4781404e574458b5f28d91daff1656e73b
   - kind: registry
     name: glycin-utils
-    version: 4.0.0-rc
-    sha: 9380034f0c0e30ab8cda562b4d9014cc0a5d2f3d1f6eb17feae35c1fe5819868
+    version: 4.0.0
+    sha: 127d5f71bf307364e30ef0b6720a7a9557b2b642a933c2e048ac5f5fba2dc1c3
   - kind: registry
     name: gobject-sys
     version: 0.21.1
@@ -429,8 +429,8 @@ sources:
     sha: a923bdcf00e46723801162de24432cbce38a6810e0178a2d0b6dd4ecc26a1c74
   - kind: registry
     name: gufo-common
-    version: 1.0.0
-    sha: c51075301871a558c79a76f238cac4ef0673ff1802656a174262e4c6106a8fbc
+    version: 1.0.1
+    sha: 98bebe9ba4be92d3932246ecfbe261106e3013266604f8cbf0ca9ee9df7edf99
   - kind: registry
     name: gufo-exif
     version: 0.3.0
