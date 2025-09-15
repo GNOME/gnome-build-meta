@@ -48,14 +48,16 @@ config:
     sed 's/__USER__/root/g' nvidia-persistenced-init/systemd/nvidia-persistenced.service.template >nvidia-persistenced.service
 
   install-commands:
-  - | # Kernel Modules
+  # Kernel Modules
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}/kernel-open"
     kernel_version=$(basename /usr/lib/modules/*)
     make -j1 KERNEL_UNAME="${kernel_version}" modules_install INSTALL_MOD_PATH='%{install-root}%{prefix}'
 
-    # Components names are taken from the .manifest file inside the archive
-  - | # installer
+  # Components names are taken from the .manifest file inside the archive
+  # installer
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -71,7 +73,8 @@ config:
     ln -s ../nvidia-resume.service '%{install-root}%{indep-libdir}'/systemd/system/systemd-resume.service.wants/
     ln -s ../nvidia-resume.service '%{install-root}%{indep-libdir}'/systemd/system/systemd-hibernate.service.wants/
   
-  - | # nvml
+  # nvml
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -80,7 +83,8 @@ config:
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-debugdump
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-ml.so*
 
-  - | # gpgpu
+  # gpgpu
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -92,20 +96,23 @@ config:
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libOpenCL.so*
     install -Dm644 -t "%{install-root}/etc/OpenCL/vendors/" nvidia.icd*
 
-  - | # gpgpucomp
+  # gpgpucomp
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-ptxjitcompiler.so*
 
-  - | # gpgpudbg
+  # gpgpudbg
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libcudadebugger.so*
 
   
-  - | # nvpd
+  # nvpd
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -123,26 +130,30 @@ config:
     After=sysext-reload.service
     EOF
 
-  - | # compiler
+  # compiler
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-nvvm.so*
 
-  - | # nvgpucomp
+  # nvgpucomp
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-gpucomp.so*
 
-  - | # nvapi
+  # nvapi
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-api.so*
 
     
-  - | # powerd
+  # powerd
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -150,7 +161,8 @@ config:
     install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/" systemd/system/nvidia-powerd.service
     install -Dm644 -t "%{install-root}%{datadir}/dbus-1/systemd.d/" nvidia-dbus.conf
 
-  - | # opengl and egl (dont like being decoupled)
+  # opengl and egl (dont like being decoupled)
+  - |
      base_name="$(basename *.run .run)"
      cd "${base_name}"
 
@@ -173,39 +185,45 @@ config:
        libnvidia-egl-wayland.so* \
        libnvidia-egl-gbm.so* \
        
-  - | # xutils (partial)
+  # xutils (partial)
+  - |
      base_name="$(basename *.run .run)"
      cd "${base_name}"
 
      install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-cfg.so*
      install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-wayland-client.so*
        
-  - | # vdpau
+  # vdpau
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/vdpau/" libvdpau_nvidia.so*
 
-  - | # nvalloc
+  # nvalloc
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-allocator.so*
 
-  - | # raytracing
+  # raytracing
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-rtcore.so*
 
-  - | # optix
+  # optix
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvoptix.so*
     install -Dm644 -t "%{install-root}%{datadir}/nvidia/" nvoptix.bin
 
-  - | # ngx
+  # ngx
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -214,32 +232,37 @@ config:
     install -Dm644 -t "%{install-root}%{libdir}/nvidia/wine/" _nvngx.dll*
     install -Dm644 -t "%{install-root}%{libdir}/nvidia/wine/" nvngx.dll*
 
-  - | # nvfbc
+  # nvfbc
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-fbc.so*
 
-  - | # nvcuvid
+  # nvcuvid
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-encode.so*
 
-  - | # opticalflow
+  # opticalflow
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-opticalflow.so*
 
-  - | # nvlibpkcs11
+  # nvlibpkcs11
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-pkcs11.so*
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-pkcs11-openssl3.so*
 
-  - | # firmware
+  # firmware
+  - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
@@ -248,7 +271,8 @@ config:
 
     install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/${driver_version}/" firmware/gsp_*.bin
     
-  - | # so symlinks
+  # so symlinks
+  - |
 
     for dir in "%{install-root}%{libdir}/GL/default"/{lib,lib/vdpau}; do
       for lib in "${dir}"/*.so*; do
