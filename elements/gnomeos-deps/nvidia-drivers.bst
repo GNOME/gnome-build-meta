@@ -136,6 +136,7 @@ config:
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-nvvm.so*
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-nvvm70.so*
 
   # nvgpucomp
   - |
@@ -151,7 +152,6 @@ config:
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" libnvidia-api.so*
 
-    
   # powerd
   - |
     base_name="$(basename *.run .run)"
@@ -239,12 +239,19 @@ config:
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-fbc.so*
 
-  # nvcuvid
+  # encodeapi
   - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-encode.so*
+
+  # nvcuvid
+  - |
+    base_name="$(basename *.run .run)"
+    cd "${base_name}"
+
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvcuvid.so*
 
   # opticalflow
   - |
@@ -260,6 +267,20 @@ config:
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-pkcs11.so*
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-pkcs11-openssl3.so*
+
+  # nvpresent
+  - |
+    base_name="$(basename *.run .run)"
+    cd "${base_name}"
+
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-present.so*
+
+  # nvsandboxutils
+  - |
+    base_name="$(basename *.run .run)"
+    cd "${base_name}"
+
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-sandboxutils.so*
 
   # firmware
   - |
