@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:rygel/45/rygel-45.rc.tar.xz
-  ref: f6aba84c09be45d886711ff9239b50e24e93fae948fa7592703d297db343ceeb
+  url: gnome_downloads:rygel/45/rygel-45.0.tar.xz
+  ref: 82667b902fc0672e64cf91eb727a70137a8fdfe7a3d9a4c158b0f4b1fc700882
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst

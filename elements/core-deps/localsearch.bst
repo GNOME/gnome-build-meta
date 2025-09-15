@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:localsearch/3.10/localsearch-3.10.rc.tar.xz
-  ref: 11e8a15bb41e173ca71aa2f49479ca508c2695e5a607f040d4032f8dbc8d6855
+  url: gnome_downloads:localsearch/3.10/localsearch-3.10.0.tar.xz
+  ref: 58d66ea44aee1649c8d981f934373b83e1ab4a4a1a84ba0304f5af391e7e0080
 build-depends:
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
@@ -11,6 +11,7 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- core-deps/python-dbusmock.bst
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst

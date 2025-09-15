@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-logs/49/gnome-logs-49.rc.tar.xz
-  ref: 160a822ff3765a097ac45b1b452c8665a8cc245405d421f9ff164c936ab7855e
+  url: gnome_downloads:gnome-logs/49/gnome-logs-49.0.tar.xz
+  ref: f8f579eb0bb6d9a8d6ae5ee1423f9447af91200785178b50bbadd4ac2d255d45
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

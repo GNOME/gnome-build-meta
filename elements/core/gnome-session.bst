@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-session/49/gnome-session-49.rc.tar.xz
-  ref: c6bedc45ca2c196bcbb12579ae06b3836a3eed4d84e03c5220437641ce5ff887
+  url: gnome_downloads:gnome-session/49/gnome-session-49.0.tar.xz
+  ref: 5a75622e63d1b75145c9ebe67e828367a75f5ace4b6237f64e54661e6a545ef3
 
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calculator/49/gnome-calculator-49.rc.tar.xz
-  ref: 0baccb61509f73f2a9f8c89450dcf2c3201d72f5d68d693bee519945d81ea380
+  url: gnome_downloads:gnome-calculator/49/gnome-calculator-49.0.tar.xz
+  ref: df44acbdec1043d04b52c74db288f713cfc0752c17bd67171b941d6d13ead049
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/vala.bst

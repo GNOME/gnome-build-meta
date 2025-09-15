@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:xdg-desktop-portal-gnome/49/xdg-desktop-portal-gnome-49.rc.tar.xz
-  ref: 260078db67216adc3723783696faedaba87191581d80b4f405f624af016a4dae
+  url: gnome_downloads:xdg-desktop-portal-gnome/49/xdg-desktop-portal-gnome-49.0.tar.xz
+  ref: 401dafcdf8cb911f09c08d2813f774dd864127abfca93ff4caf1fc4c9b5ec4d2
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
