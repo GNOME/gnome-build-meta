@@ -35,3 +35,9 @@ runtime-depends:
 config:
   exclude:
   - gvfs-client
+
+public:
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/gvfs"
+    - "%{project_licensedir}/gvfs/**"

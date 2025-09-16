@@ -10,4 +10,11 @@ runtime-depends:
 config:
   include:
   - gvfs-client
+  - gvfs-license
   include-orphans: false
+
+public:
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/gvfs"
+    - "%{project_licensedir}/gvfs/**"

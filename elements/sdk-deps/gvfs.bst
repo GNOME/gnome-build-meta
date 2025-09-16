@@ -55,3 +55,6 @@ public:
       - '%{debugdir}/dwz/**'
       - '%{sourcedir}/%{element-name}/common/**'
       - '%{sourcedir}/%{element-name}/client/**'
+      gvfs-license:
+      - '%{project_licensedir}'
+      - '%{project_licensedir}/**'
