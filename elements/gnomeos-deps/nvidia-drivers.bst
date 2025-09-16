@@ -336,3 +336,6 @@ public:
       - '%{datadir}/egl/**'
       - '%{indep-libdir}/systemd/**'
       - '%{bindir}/*'
+      license:
+      - '%{project_licensedir}'
+      - '%{project_licensedir}/**'

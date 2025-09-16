@@ -6,6 +6,7 @@ build-depends:
 config:
   include:
   - libs
+  - license
   include-orphans: false
 
 public:
@@ -15,3 +16,7 @@ public:
       set -eu
       sysroot="${1}"
       chmod 4755 "${sysroot}%{bindir}/nvidia-modprobe"
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/nvidia-drivers"
+    - "%{project_licensedir}/nvidia-drivers/**"
