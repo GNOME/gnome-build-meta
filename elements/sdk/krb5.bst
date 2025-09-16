@@ -14,6 +14,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
+  license-files-extra: NOTICE
   command-subdir: src
 
   # krb5 configure script doesnt like --disable-Werror
