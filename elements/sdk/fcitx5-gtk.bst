@@ -17,6 +17,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
+  license-files-extra: LICENSES/*
   cmake-local: >-
     -DENABLE_GIR=Off
     -DENABLE_GTK4_IM_MODULE=On
