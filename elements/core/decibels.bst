@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:decibels/48/decibels-48.0.alpha.tar.xz
-  ref: 6e5ba0722b4afc441dcbe629a5e724ad3eb006cc0cb1ef9aa24e11da989122fc
+  url: gnome_downloads:decibels/48/decibels-48.0.tar.xz
+  ref: 229b11a9263147bcb8c3e21ff0d4af659fb26262f8aece547adcf8c65e031f74
 build-depends:
 - core-deps/blueprint-compiler.bst
 - core-deps/typescript.bst

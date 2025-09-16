@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/1.2/glycin-1.2.3.tar.xz
-  ref: 380aafe2bfb4eca0c45b42660ebff449600d00a43b609d5b1c83f795f5c8fb3c
+  url: gnome_downloads:glycin/1.2/glycin-1.2.4.tar.xz
+  ref: 298c4d17bcb82487ba0a1e53261174363227ccefbd5a5652bb3cc386542144a1
 - kind: cargo2
   ref:
   - kind: registry
@@ -372,8 +372,8 @@ sources:
     sha: 43a49c392881ce6d5c3b8cb70f98717b7c07aabbdff06687b9030dbfbe2725f8
   - kind: registry
     name: gif
-    version: 0.13.1
-    sha: 3fb2d69b19215e18bb912fa30f7ce15846e301408695e44e0ef719f1da9e19f2
+    version: 0.13.3
+    sha: 4ae047235e33e2829703574b54fdec96bfbad892062d97fed2f76022287de61b
   - kind: registry
     name: gimli
     version: 0.31.1
@@ -400,8 +400,8 @@ sources:
     sha: a8928869a44cfdd1fccb17d6746e4ff82c8f82e41ce705aa026a52ca8dc3aefb
   - kind: registry
     name: glycin
-    version: 2.1.1
-    sha: 37cb9e103cb6b8925bf5e8a1cf8a1166797d8aaefaabd03e68cf6ad7443a1baa
+    version: 2.1.4
+    sha: c1f1e56df35354cc8c01b9985bad1be480e9027db72209ce2696bdda5ba16445
   - kind: registry
     name: glycin-utils
     version: 3.0.1
@@ -424,8 +424,8 @@ sources:
     sha: 1448d72e2458b35dd10c0f148ea913b38c61b649552b22a97fa836ec376189ff
   - kind: registry
     name: gufo-jpeg
-    version: 0.2.0
-    sha: 047379e4825d1a8581f0bf0daa841d71eff1503229bcdef004ad1d18e17b39f0
+    version: 0.2.4
+    sha: 16c6e58402c266360c8afd453f6d1c85502299416757598cc352f90718d629ba
   - kind: registry
     name: gufo-png
     version: 0.2.3
@@ -484,16 +484,16 @@ sources:
     sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - kind: registry
     name: image
-    version: 0.25.5
-    sha: cd6f44aed642f18953a158afeb30206f4d50da59fbc66ecb53c66488de73563b
+    version: 0.25.6
+    sha: db35664ce6b9810857a38a906215e75a9c879f0696556a39f59c62829710251a
   - kind: registry
     name: image-webp
     version: 0.2.1
     sha: b77d01e822461baa8409e156015a1d91735549f0f2c17691bd2d996bef238f7f
   - kind: registry
     name: indexmap
-    version: 2.7.1
-    sha: 8c9c992b02b5b4c94ea26e32fe5bccb7aa7d9f390ab5c1221ff895bc7ea8b652
+    version: 2.10.0
+    sha: fe4cd85333e22411419a0bcae1297d25e58c9443848b11dc6a86fefe8c78a661
   - kind: registry
     name: itoa
     version: 1.0.14
@@ -508,8 +508,8 @@ sources:
     sha: f5d4a7da358eff58addd2877a45865158f0d78c911d43a5784ceb7bbf52833b0
   - kind: registry
     name: jpeg-encoder
-    version: 0.6.0
-    sha: 2fefe5a4fb12fa836172dc53cc36c37af693f6197ae702f931faad8774caf926
+    version: 0.6.1
+    sha: b454d911ac55068f53495488d8ccd0646eaa540c033a28ee15b07838afafb01f
   - kind: registry
     name: jpegxl-rs
     version: 0.10.3+libjxl-0.10.2
@@ -1052,8 +1052,8 @@ sources:
     sha: 1a05d73b933a847d6cccdda8f838a22ff101ad9bf93e33684f39c1f5f0eece3d
   - kind: registry
     name: weezl
-    version: 0.1.8
-    sha: 53a85b86a771b1c87058196170769dd264f66c0782acf1ae6cc51bfd64b39082
+    version: 0.1.10
+    sha: a751b3277700db47d3e574514de2eced5e54dc8a5436a3bf7a0b248b2cee16f3
   - kind: registry
     name: wide
     version: 0.7.32
@@ -1224,8 +1224,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.19
-    sha: 2c9e525af0a6a658e031e95f14b7f889976b74a11ba0eca5a5fc9ac8a1c43a6a
+    version: 0.4.20
+    sha: fc1f7e205ce79eb2da3cd71c5f55f3589785cb7c79f6a03d1c8d1491bda5d089
   - kind: registry
     name: zvariant
     version: 5.4.0
