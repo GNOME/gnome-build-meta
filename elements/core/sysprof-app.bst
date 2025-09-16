@@ -32,3 +32,5 @@ public:
     - '%{libdir}/pkgconfig/sysprof-capture-4.pc'
     - '%{datadir}/licenses/gnome/sysprof/COPYING'
     - '%{datadir}/licenses/gnome/sysprof/COPYING.gpl-2'
+    - "%{project_licensedir}/sysprof"
+    - "%{project_licensedir}/sysprof/**"

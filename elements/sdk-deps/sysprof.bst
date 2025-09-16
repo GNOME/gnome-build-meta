@@ -54,3 +54,6 @@ public:
       - '%{libdir}/libsysprof-memory-6.so'
       - '%{libdir}/libsysprof-speedtrack-6.so'
       - '%{libdir}/libsysprof-tracer-6.so'
+      sysprof-license:
+      - '%{project_licensedir}'
+      - '%{project_licensedir}/**'

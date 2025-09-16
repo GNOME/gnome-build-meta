@@ -13,4 +13,11 @@ runtime-depends:
 config:
   include:
   - sysprof-agent
+  - sysprof-license
   include-orphans: false
+
+public:
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/sysprof"
+    - "%{project_licensedir}/sysprof/**"
