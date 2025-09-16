@@ -53,3 +53,6 @@ public:
       - '%{datadir}/gir-1.0/**'
       - '%{datadir}/gtk-doc/**'
       - '%{datadir}/vala/vapi/**'
+      ibus-license:
+      - '%{project_licensedir}'
+      - '%{project_licensedir}/**'
