@@ -13,3 +13,9 @@ runtime-depends:
 config:
   exclude:
     - libibus
+
+public:
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/ibus"
+    - "%{project_licensedir}/ibus/**"
