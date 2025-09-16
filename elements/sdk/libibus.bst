@@ -12,6 +12,7 @@ runtime-depends:
 config:
   include:
     - libibus
+    - ibus-license
   include-orphans: false
 
 public:
@@ -20,3 +21,6 @@ public:
       devel:
         (>):
         - '%{libdir}/libibus-1.0.so'
+    overlap-whitelist:
+    - "%{project_licensedir}/ibus"
+    - "%{project_licensedir}/ibus/**"
