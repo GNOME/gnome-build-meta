@@ -57,3 +57,6 @@ public:
         - '%{datadir}/zsh/**'
         - '%{sysconfdir}/**'
         - '%{localstatedir}/**'
+    overlap-whitelist:
+    - "%{project_licensedir}/systemd"
+    - "%{project_licensedir}/systemd/**"
