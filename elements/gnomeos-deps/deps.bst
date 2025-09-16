@@ -83,6 +83,8 @@ depends:
 
 - core-deps/systemd-hwdb.bst
 
+- gnomeos-deps/nftables.bst
+
 (?):
 - arch == "aarch64":
     depends:

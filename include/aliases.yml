@@ -62,5 +62,6 @@ aliases:
   gnome_gitlab: https://gitlab.gnome.org/
   kernel: https://git.kernel.org/pub/scm/
   matrix: https://gitlab.matrix.org/
+  netfilter: https://git.netfilter.org/
   purism: https://source.puri.sm/
   sipsolutions: https://git.sipsolutions.net/

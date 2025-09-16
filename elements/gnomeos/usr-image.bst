@@ -176,6 +176,9 @@ config:
     # vm/mesa-default.bst
     L /etc/ld.so.conf.d/00_mesa.conf
 
+    # gnomeos-deps/nftables.bst
+    L /etc/nftables/osf/pf.os
+
     # FIXME: sort those and make them symlinks
     C /etc/dconf
     C /etc/debuginfod
