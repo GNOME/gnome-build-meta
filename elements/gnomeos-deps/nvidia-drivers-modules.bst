@@ -6,4 +6,11 @@ build-depends:
 config:
   include:
   - modules
+  - license
   include-orphans: false
+
+public:
+  bst:
+    overlap-whitelist:
+    - "%{project_licensedir}/nvidia-drivers"
+    - "%{project_licensedir}/nvidia-drivers/**"
