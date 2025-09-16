@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:DaveGamble/cJSON.git
   track: 'v*'
-  ref: v1.7.18-0-gacc76239bee01d8e9c858ae2cab296704e52d916
+  ref: v1.7.19-0-gc859b25da02955fef659d658b8f324b5cde87be3
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
