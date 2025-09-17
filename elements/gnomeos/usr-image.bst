@@ -179,6 +179,9 @@ config:
     # gnomeos-deps/nftables.bst
     L /etc/nftables/osf/pf.os
 
+    # gnomeos-deps/firewalld.bst
+    L /etc/firewalld/firewalld.conf
+
     # FIXME: sort those and make them symlinks
     C /etc/dconf
     C /etc/debuginfod

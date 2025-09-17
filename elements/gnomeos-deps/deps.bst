@@ -84,6 +84,7 @@ depends:
 - core-deps/systemd-hwdb.bst
 
 - gnomeos-deps/nftables.bst
+- gnomeos-deps/firewalld.bst
 
 (?):
 - arch == "aarch64":
