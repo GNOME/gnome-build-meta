@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:dconf.git
   track: main
-  ref: 0.49.0-0-ga6b86bd66d3b42d8cfeacc2cc71a4fc78abadb71
+  ref: 0.49.0-2-g1f3a995aed4f64b356972cf0b7100ca5ccfeb4ba
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
