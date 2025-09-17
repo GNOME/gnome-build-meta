@@ -159,7 +159,7 @@ config:
 
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-powerd
     install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system/" systemd/system/nvidia-powerd.service
-    install -Dm644 -t "%{install-root}%{datadir}/dbus-1/systemd.d/" nvidia-dbus.conf
+    install -Dm644 -t "%{install-root}%{datadir}/dbus-1/system.d/" nvidia-dbus.conf
 
   # opengl and egl (dont like being decoupled)
   - |
