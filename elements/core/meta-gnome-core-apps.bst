@@ -17,6 +17,7 @@ depends:
 - core/gnome-connections.bst
 - core/gnome-console.bst
 - core/gnome-contacts.bst
+- core/gnome-control-center.bst
 - core/gnome-disk-utility.bst
 - core/gnome-font-viewer.bst
 - core/gnome-logs.bst
@@ -25,6 +26,7 @@ depends:
 - core/gnome-software.bst
 - core/gnome-system-monitor.bst
 - core/gnome-text-editor.bst
+- core/gnome-tour.bst
 - core/gnome-weather.bst
 - core/loupe.bst
 - core/nautilus.bst

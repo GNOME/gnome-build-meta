@@ -8,7 +8,6 @@ depends:
 - core/gnome-backgrounds.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
-- core/gnome-control-center.bst
 - core/gnome-desktop.bst
 - core/gnome-initial-setup.bst
 - core/gnome-keyring.bst
@@ -17,7 +16,6 @@ depends:
 - core/gnome-session.bst
 - core/gnome-settings-daemon.bst
 - core/gnome-shell.bst
-- core/gnome-tour.bst
 - core/gnome-user-docs.bst
 - core/gnome-user-share.bst
 - core/gvfs-daemon.bst
