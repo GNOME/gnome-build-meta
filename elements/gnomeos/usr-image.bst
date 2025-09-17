@@ -12,6 +12,12 @@ build-depends:
   config:
     location: '/sysroot'
 
+(?):
+- arch in ["x86_64"]:
+    build-depends:
+      (>):
+      - gnomeos/initramfs/signed-nvidia-modules.bst
+
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   repart-seed: 35e34b2b-1fcf-4ab1-ae63-bcda061741c1
@@ -34,6 +40,17 @@ config:
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot >'%{install-root}/vars.txt'
+
+  - |
+    case '%{arch}' in
+      x86_64)
+        version="$(ls -1 /lib/modules | head -n1)"
+        mkdir -p /sysroot/usr/lib/modules/"${version}"/kernel/drivers/video
+        cp /usr/lib/modules/"${version}"/kernel/drivers/video/nvidia*.ko* /sysroot/usr/lib/modules/"${version}"/kernel/drivers/video/
+        depmod -a -b /sysroot/usr "${version}"
+        rm -rf /sysroot/usr/lib/modules/"${version}"/kernel/drivers/video/nvidia*.ko*
+        ;;
+    esac
 
   - |
     # Those files may be coming from systemd.
