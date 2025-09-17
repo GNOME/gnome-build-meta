@@ -34,3 +34,4 @@ depends:
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/toolbox.bst
 - gnomeos-deps/wl-clipboard.bst
+- gnomeos-deps/bpftop.bst
