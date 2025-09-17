@@ -35,14 +35,14 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot >/dev/null
+       --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
        --sysroot /sysroot-snapd \
        --initscripts /etc/fdsdk/initial_scripts-snapd \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot --nodepmod >'%{install-root}/vars.txt'
 
   - |
     cat >/sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF

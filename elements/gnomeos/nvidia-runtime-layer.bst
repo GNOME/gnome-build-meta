@@ -35,14 +35,14 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot >/dev/null
+       --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
        --sysroot /sysroot-nvidia-runtime \
        --initscripts /etc/fdsdk/initial_scripts-nvidia-runtime \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot >'%{install-root}/vars.txt'
+       --noroot --noboot --nodepmod >'%{install-root}/vars.txt'
 
   - |
     chmod 0711 '/sysroot-nvidia-runtime/bin/nvidia-sleep.sh' '/sysroot-nvidia-runtime/lib/systemd/system-sleep/nvidia'

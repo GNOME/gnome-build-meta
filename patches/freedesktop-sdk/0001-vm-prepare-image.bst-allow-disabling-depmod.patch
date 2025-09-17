@@ -1,0 +1,49 @@
+From e7421067e283cca6697dbe0a0dcd91768f770bdf Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Wed, 17 Sep 2025 19:27:06 +0100
+Subject: [PATCH] vm/prepare-image.bst: allow disabling depmod
+
+---
+ files/vm/prepare-image.sh | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
+index d70b25747..fd5c9d3b8 100755
+--- a/files/vm/prepare-image.sh
++++ b/files/vm/prepare-image.sh
+@@ -13,6 +13,7 @@ rootfstype="ext4"
+ rootfsopts="errors=remount-ro,relatime"
+ root_source=
+ noroot=
++nodepmod=
+ 
+ while [ $# -gt 0 ]; do
+     param="$1"
+@@ -68,15 +69,19 @@ while [ $# -gt 0 ]; do
+         --noroot)
+             noroot="1"
+             ;;
++        --nodepmod)
++            nodepmod="1"
++            ;;
+     esac
+ done
+ 
+-echo "Running depmod" 1>&2
+-
+-for version in $(ls "${sysroot}"/lib/modules/); do
+-    depmod -b "${sysroot}" -a "${version}";
+-done
++if [ -z "${nodepmod}" ]; then
++    echo "Running depmod" 1>&2
+ 
++    for version in $(ls "${sysroot}"/lib/modules/); do
++        depmod -b "${sysroot}" -a "${version}";
++    done
++fi
+ 
+ mkdir -p "${sysroot}/etc"
+ 
+-- 
+2.51.0
+
