@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp.git
   track: master
-  ref: 49.0-0-geba079a1727fe3e281afded59f74ee3a8f92baaa
+  ref: 49.0-1-g88ae6ded49873328663edd41fd8f3884b438af35
 
 build-depends:
 - sdk-deps/appstream-glib.bst
