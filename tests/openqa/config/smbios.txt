@@ -1,0 +1,1 @@
+io.systemd.stub.kernel-cmdline-extra=console=ttyS0 systemd.journald.forward_to_console=1
