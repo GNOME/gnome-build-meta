@@ -86,6 +86,8 @@ depends:
 - gnomeos-deps/nftables.bst
 - gnomeos-deps/firewalld.bst
 
+- gnomeos-deps/uinput.bst
+
 (?):
 - arch == "aarch64":
     depends:
