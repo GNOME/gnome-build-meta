@@ -1,0 +1,16 @@
+diff --git a/Source/JavaScriptCore/llint/LowLevelInterpreter.asm b/Source/JavaScriptCore/llint/LowLevelInterpreter.asm
+index 96aeb5dfba8e..3d495e673eca 100644
+--- a/Source/JavaScriptCore/llint/LowLevelInterpreter.asm
++++ b/Source/JavaScriptCore/llint/LowLevelInterpreter.asm
+@@ -3088,6 +3088,11 @@ _wasm_ipint_call_return_location_wide16:
+ _wasm_ipint_call_return_location_wide32:
+     crash()
+ 
++_op_instanceof_return_location:
++_op_instanceof_return_location_wide16:
++_op_instanceof_return_location_wide32:
++    crash()
++
+ end # WEBASSEMBLY
+ 
+ include? LowLevelInterpreterAdditions

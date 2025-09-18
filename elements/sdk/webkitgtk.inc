@@ -2,6 +2,9 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.50.0.tar.xz
   ref: e564b8099f9a3ae32409539b290bbd2ad084e99b6d22d4aac5e51e4554df8bc2
+- kind: patch
+  path: patches/webkit/webkit_fix_i386.patch
+
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
