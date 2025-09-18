@@ -238,6 +238,7 @@ async fn make_policy() -> Result<(), InstallerError> {
     let cmd = Command::new("/usr/lib/systemd/systemd-pcrlock")
         .arg("make-policy")
         .arg("--location=770")
+        .arg("--pcr=0+1+2+3+4+5+7+11+14+15")
         .env("SYSTEMD_ESP_PATH", fake_esp.path().as_os_str())
         .env("SYSTEMD_RELAX_ESP_CHECKS", "1")
         .spawn()?
