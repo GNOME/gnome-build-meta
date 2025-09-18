@@ -1,0 +1,81 @@
+include:
+  - template: 'Workflows/MergeRequest-Pipelines.gitlab-ci.yml'
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  OPENQA_HOST: https://openqa.gnome.org
+  OPENQA_TESTS_GIT: https://gitlab.gnome.org/gnome/openqa-tests
+  OPENQA_TESTS_BRANCH: master
+  OPENQA_NEEDLES_GIT: https://gitlab.gnome.org/gnome/openqa-needles
+  OPENQA_NEEDLES_BRANCH: master
+  S3_ISO_LIVE_URL: https://os.gnome.org/download/latest/live_x86_64.iso
+
+stages:
+- test
+
+test-s3-image:
+  stage: test
+  image:
+    name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
+    entrypoint: ["/bin/bash", "-c"]
+  variables:
+    # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
+    CI: 1
+    OPENQA_TEST_TIMEOUT_SCALE_CI: 4
+  before_script:
+  - |
+    echo "$(date -Iseconds): Fetching test media"
+    utils/fetch_test_media.sh $S3_ISO_LIVE_URL /data/factory/iso/disk.iso
+  - |
+    echo "$(date -Iseconds): Calculating checksums of test media"
+    md5sum /data/factory/iso/disk.iso
+  - |
+    echo "$(date -Iseconds): Setup complete"
+  script:
+  - |
+    rm -rf /etc/openqa/*
+    cat >/etc/openqa/client.conf <<EOF
+    [openqa.gnome.org]
+    key = $OPENQA_API_KEY
+    secret = $OPENQA_API_SECRET
+    EOF
+  - |
+    # Kludge so we can use `/tests/config/smbios.txt` to locate the smbios file.
+    ln -s $(pwd) /tests
+  - |
+    worker_class=qemu_x86_64-${CI_JOB_ID}
+    utils/setup_worker.sh ${worker_class}
+    /run_openqa_worker.sh &> worker.log &
+  - |
+    version="master"
+    casedir="$(pwd)"
+    utils/start_all_jobs.sh "${worker_class}" "${version}" "${casedir}" > ./job_ids
+  - |
+    echo "$(date -Iseconds): Test jobs have been started. To see progress, visit:"
+    for job_id in $(cat ./job_ids); do
+      echo "  * $OPENQA_HOST/tests/$job_id"
+    done
+  - utils/wait_for_job.sh $(cat ./job_ids) > /tmp/exit_code
+  - exit $(cat /tmp/exit_code)
+  after_script:
+  - |
+    echo "$(date -Iseconds): Tests complete"
+  - |
+    if [ ! -e /tmp/exit_code ]; then
+        echo "Job creation failed, log below."
+        cat openqa.log
+    fi
+  - |
+    ./utils/openqa_junit_report.py $(cat ./job_ids) > ./junit.xml
+  artifacts:
+    when: always
+    paths:
+    - junit.xml
+    - openqa.log
+    - worker.log
+    - job_ids
+    reports:
+      junit: junit.xml
+    expire_in: '1 week'
+  tags:
+  - kvm
