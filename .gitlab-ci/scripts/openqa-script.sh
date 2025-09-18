@@ -3,8 +3,8 @@
 set -eu
 set -o pipefail
 
-git clone "$OPENQA_UTILS_GIT" --branch "$OPENQA_UTILS_BRANCH" --recurse-submodules ./tests/openqa/utils
-echo "Checked out $OPENQA_UTILS_GIT commit $(git -C ./tests/openqa/utils rev-parse HEAD)"
+# git clone "$OPENQA_UTILS_GIT" --branch "$OPENQA_UTILS_BRANCH" --recurse-submodules ./tests/openqa/utils
+# echo "Checked out $OPENQA_UTILS_GIT commit $(git -C ./tests/openqa/utils rev-parse HEAD)"
 
 rm --recursive --verbose /etc/openqa/*
 cat >/etc/openqa/client.conf <<EOF
@@ -22,7 +22,7 @@ tests/openqa/utils/setup_worker.sh "${worker_class}"
 echo "Starting jobs: "
 echo
 version="master"
-casedir="$(pwd)/openqa"
+casedir="$(pwd)/tests/openqa"
 for testsuite in $TESTSUITES; do
     tests/openqa/utils/start_job.sh "${worker_class}" "${version}" "${casedir}" "${testsuite}" > /tmp/job_id
     echo " * ${testsuite}: $OPENQA_HOST/tests/$(cat /tmp/job_id)"

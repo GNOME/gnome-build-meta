@@ -460,7 +460,9 @@ openqa-test-workflow:
   extends:
     - .test-openqa-template
     - .x86_64
+  needs: []
   variables:
+    GIT_SUBMODULE_STRATEGY: recursive
     # Use the live image instead of building one.
     S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/live_x86_64.iso"
     TESTSUITES: "gnome_apps gnome_accessibility gnome_install gnome_mobile gnome_locales"
