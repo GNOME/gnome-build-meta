@@ -1,0 +1,3 @@
+[submodule "tests/openqa/utils"]
+	path = tests/openqa/utils
+	url = https://gitlab.gnome.org/GNOME/openqa-utils.git
