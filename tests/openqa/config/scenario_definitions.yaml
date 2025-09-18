@@ -1,0 +1,62 @@
+# This is the toplevel configuration for the OpenQA scenarios
+
+products:
+  gnomeos:
+    distri: gnomeos
+    flavor: iso
+    version: "master"
+    arch: "x86_64"
+
+machines:
+  qemu_x86_64:
+    backend: "qemu"
+    settings:
+      CDMODEL: scsi-cd
+      DESKTOP: gnomeos
+      HDDMODEL: virtio-blk
+      HDDSIZEGB: '40'
+      NICMAC: 52:54:00:12:34:56
+      NICMODEL: virtio-net
+      NICTYPE: user
+      NICVLAN: '0'
+      NUMDISKS: '1'
+      PART_TABLE_TYPE: gpt
+      QEMUCPU: host
+      QEMUCPUS: '2'
+      QEMUPORT: '20012'
+      QEMURAM: '2560'
+      QEMU_SMBIOS: 'type=11,path=/tests/config/smbios.txt'
+      QEMU_VIDEO_DEVICE: virtio-vga
+      UEFI: '1'
+      UEFI_PFLASH_CODE: /usr/share/qemu/ovmf-x86_64-code.bin
+      UEFI_PFLASH_VARS: /usr/share/qemu/ovmf-x86_64-vars.bin
+      VIRTIO_CONSOLE: '1'
+      VNC_TYPING_LIMIT: '5'
+
+job_templates:
+  gnome_install:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: /disk.iso
+  gnome_apps:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: /disk.iso
+  gnome_accessibility:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: /disk.iso
+  gnome_mobile:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: /disk.iso
+  gnome_locales:
+    product: gnomeos
+    machine: qemu_x86_64
+    settings:
+      ISO: /disk.iso
+
