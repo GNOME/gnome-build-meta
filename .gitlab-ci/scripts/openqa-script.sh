@@ -22,7 +22,7 @@ tests/openqa/utils/setup_worker.sh "${worker_class}"
 echo "Starting jobs: "
 echo
 version="master"
-casedir="$(pwd)/openqa"
+casedir="$(pwd)/tests/openqa"
 for testsuite in $TESTSUITES; do
     tests/openqa/utils/start_job.sh "${worker_class}" "${version}" "${casedir}" "${testsuite}" > /tmp/job_id
     echo " * ${testsuite}: $OPENQA_HOST/tests/$(cat /tmp/job_id)"
