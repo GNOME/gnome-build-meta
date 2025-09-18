@@ -1,4 +1,4 @@
-From e681c80e4cc90f39b8d69d7d0fbee26b35d6b693 Mon Sep 17 00:00:00 2001
+From 7a55344952601ddd08ade3269d4eaa4debcf322d Mon Sep 17 00:00:00 2001
 From: Jordan Petridis <jpetridis@gnome.org>
 Date: Fri, 12 Sep 2025 09:55:47 +0300
 Subject: [PATCH] xdg-user-dirs: Backport systemd service patches
@@ -19,7 +19,7 @@ https://gitlab.freedesktop.org/xdg/xdg-user-dirs/-/merge_requests/12
  create mode 100644 patches/xdg-user-dirs/12.patch
 
 diff --git a/elements/components/xdg-user-dirs.bst b/elements/components/xdg-user-dirs.bst
-index 767a8f817f..c979374422 100644
+index 767a8f817f..c468ac51c5 100644
 --- a/elements/components/xdg-user-dirs.bst
 +++ b/elements/components/xdg-user-dirs.bst
 @@ -1,21 +1,26 @@
@@ -29,10 +29,10 @@ index 767a8f817f..c979374422 100644
  - public-stacks/buildsystem-autotools.bst
  - components/docbook-xsl.bst
  - components/libxslt.bst
++- components/systemd.bst
  
  depends:
  - public-stacks/runtime-minimal.bst
-+- components/systemd.bst
  
  variables:
    autogen: autoreconf -ivf -I %{datadir}/gettext/m4
