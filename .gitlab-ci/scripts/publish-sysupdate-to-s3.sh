@@ -14,6 +14,11 @@ fi
 
 if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
     (cd update-images && zstd --rm -T0 *.raw && sha256sum * | tee SHA256SUMS)
+
+    aws s3 sync --acl public-read \
+        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
+        --exclude "*" --include "*.xz" --include "*.efi" --include "*.raw" --include "*.verity" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
+
     aws s3 cp --acl public-read \
         "s3://gnome-build-meta/${target_dir}/sysupdate/" update-images/ \
         --recursive --exclude "*" --include "SHA256SUMS.version.*"
@@ -23,10 +28,6 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
     gpg --homedir=files/boot-keys/private-key \
         --output "update-images/SHA256SUMS.gpg" \
         --detach-sig "update-images/SHA256SUMS"
-
-    aws s3 sync --acl public-read \
-        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
-        --exclude "*" --include "*.xz" --include "*.zst" --include "*.efi" --include "*.raw" --include "*.verity" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     # keep SHA256SUMS files at the end to minimize time for which files are not available
     aws s3 sync --acl public-read \
