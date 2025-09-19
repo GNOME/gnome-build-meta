@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk.git
   track: main
-  ref: 4.20.1-27-g025dc89b10dc70db7f66cde7563a4ff6e6a5e7a4
+  ref: 4.20.1-60-g68425ede66e5127cf02ea0769fc3e3061d62d470
 
 build-depends:
 - sdk-deps/sassc.bst
