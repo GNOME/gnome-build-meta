@@ -2,13 +2,14 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: purism:Librem5/chatty.git
-  track: master
-  ref: v0.7.3-45-g4355af485f8fec53ea07745e6f41f8b1fa7a8e33
-- kind: git_module
+  url: gnome_gitlab:World/chatty.git
+  track: main
+  ref: v0.8.8-19-g82aad9f864bfd5b08c5be8b311ffb39a4bb0020b
+- kind: git_repo
   url: purism:Librem5/libcmatrix.git
-  path: subprojects/libcmatrix
-  ref: ec50358d3bf102e7f8f1843e537bcf1f150d2b7a
+  directory: subprojects/libcmatrix
+  track: v0.0.3 # from the wrap file
+  ref: v0.0.3-0-gd3e0ae0c7f80b1b88fa6c704a89d4c363d3a4ec7
 
 build-depends:
 - core-deps/ModemManager.bst
@@ -19,6 +20,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core/gnome-desktop.bst
 - boards/common/libphonenumber.bst
 - boards/common/olm.bst
 - core-deps/evolution-data-server.bst
