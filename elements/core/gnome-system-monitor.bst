@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-system-monitor.git
   track: main
-  ref: 49.0-1-ge17cf0fc862f9b9b0b9db2116a01a86c6f564e6f
+  ref: 49.0-2-g750baa47bcd546ce7b2b5cd8af03d260571e9d4f
 
 build-depends:
 - core-deps/catch2.bst
