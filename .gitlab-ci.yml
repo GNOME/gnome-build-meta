@@ -319,6 +319,7 @@ live-image-aarch64:
   rules:
   - !reference [.deploy-rules, rules]
   - if: '$CI_COMMIT_TAG'
+  - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $ARCH == "x86_64"'
   # Also allow to manually trigger it for normal branches
   - if: '$CI_COMMIT_REF_NAME'
     when: manual
@@ -330,9 +331,9 @@ live-image-aarch64:
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/live-image.bst --directory live-image/
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/update-images.bst --directory update-images/
 
+  - ./.gitlab-ci/scripts/publish-s3-image.sh
   - |
     if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-        ./.gitlab-ci/scripts/publish-s3-image.sh
         ./.gitlab-ci/scripts/publish-sysupdate-to-s3.sh
     fi
 
