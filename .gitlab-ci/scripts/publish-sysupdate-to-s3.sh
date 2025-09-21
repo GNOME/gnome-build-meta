@@ -14,6 +14,7 @@ fi
 
 if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
     (cd update-images && zstd --rm -T0 *.raw && sha256sum * | tee SHA256SUMS)
+    mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     aws s3 sync --acl public-read \
         update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
@@ -23,7 +24,6 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         "s3://gnome-build-meta/${target_dir}/sysupdate/" update-images/ \
         --recursive --exclude "*" --include "SHA256SUMS.version.*"
 
-    mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
     cat update-images/SHA256SUMS.version.* > update-images/SHA256SUMS
     gpg --homedir=files/boot-keys/private-key \
         --output "update-images/SHA256SUMS.gpg" \
