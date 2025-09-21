@@ -19,8 +19,8 @@ depends:
 
 sources:
 - kind: tar
-  url: crates:crates/gst-plugin-gtk4/gst-plugin-gtk4-0.13.6.crate
-  ref: ec62b64c5401ea55d961a0c5980f2ef9caf46f8744135140878125600df782c8
+  url: crates:crates/gst-plugin-gtk4/gst-plugin-gtk4-0.13.7.crate
+  ref: a4cb890d0df1814d2f61ad7d5a4db8ec4fed0e2ac287af26d3c342be1dfae75b
 - kind: cargo2
   ref:
   - kind: registry
@@ -53,8 +53,8 @@ sources:
     sha: 1628fb46dfa0b37568d12e5edd512553eccf6a22a78e8bde00bb4aed84d5bdbf
   - kind: registry
     name: cairo-rs
-    version: 0.20.10
-    sha: b58e62a27cd02fb3f63f82bb31fdda7e6c43141497cbe97e8816d7c914043f55
+    version: 0.20.12
+    sha: 91e3bd0f4e25afa9cabc157908d14eeef9067d6448c49414d17b3fb55f0eadd0
   - kind: registry
     name: cairo-sys-rs
     version: 0.20.10
@@ -177,20 +177,20 @@ sources:
     sha: 070bd50a053f90d7fdf6be1d75672ea0f97c0e5da3a10dc6d02e5defcb0db32f
   - kind: registry
     name: gio
-    version: 0.20.10
-    sha: ab2a654c887546d14fdb214cc04641cd30450c9b4fa4525fd989d25fd5a5561e
+    version: 0.20.12
+    sha: 8e27e276e7b6b8d50f6376ee7769a71133e80d093bdc363bd0af71664228b831
   - kind: registry
     name: gio-sys
     version: 0.20.10
     sha: 521e93a7e56fc89e84aea9a52cfc9436816a4b363b030260b699950ff1336c83
   - kind: registry
     name: glib
-    version: 0.20.10
-    sha: c501c495842c2b23cdacead803a5a343ca2a5d7a7ddaff14cc5f6cf22cfb92c2
+    version: 0.20.12
+    sha: ffc4b6e352d4716d84d7dde562dd9aee2a7d48beb872dd9ece7f2d1515b2d683
   - kind: registry
     name: glib-macros
-    version: 0.20.10
-    sha: ebe6dc9ce29887c4b3b74d78d5ba473db160a258ae7ed883d23632ac7fed7bc9
+    version: 0.20.12
+    sha: e8084af62f09475a3f529b1629c10c429d7600ee1398ae12dd3bf175d74e7145
   - kind: registry
     name: glib-sys
     version: 0.20.10
@@ -221,8 +221,8 @@ sources:
     sha: 4e5e874f1660252fd2ec81c602066df3633b3a6fcbe2b196f7f93c27cf069b2a
   - kind: registry
     name: gstreamer
-    version: 0.23.6
-    sha: 50ab4c88f731596a2511a6f14cabdd666e0d8efab62a1d58e6ddb57faa96e22e
+    version: 0.23.7
+    sha: 8757a87f3706560037a01a9f06a59fcc7bdb0864744dcf73546606e60c4316e1
   - kind: registry
     name: gstreamer-allocators
     version: 0.23.5
@@ -241,8 +241,8 @@ sources:
     sha: 87f2fb0037b6d3c5b51f60dea11e667910f33be222308ca5a101450018a09840
   - kind: registry
     name: gstreamer-gl
-    version: 0.23.6
-    sha: 34aa19feafc4da2c7635abce0e0768892ff97ad73586bef02d9a60b251d9fe09
+    version: 0.23.7
+    sha: 2c5fe4cfc154d1aef2d5bddaf45c8fcb80af5ae4416795650a01c38e01d6d5bd
   - kind: registry
     name: gstreamer-gl-egl
     version: 0.23.6
@@ -285,8 +285,8 @@ sources:
     sha: 0a70f0947f12d253b9de9bc3fd92f981e4d025336c18389c7f08cdf388a99f5c
   - kind: registry
     name: gtk4
-    version: 0.9.6
-    sha: af1c491051f030994fd0cde6f3c44f3f5640210308cff1298c7673c47408091d
+    version: 0.9.7
+    sha: f274dd0102c21c47bbfa8ebcb92d0464fab794a22fad6c3f3d5f165139a326d6
   - kind: registry
     name: gtk4-macros
     version: 0.9.5
@@ -369,8 +369,8 @@ sources:
     sha: 7c26d27bb1aeab65138e4bf7666045169d1717febcc9ff870166be8348b223d0
   - kind: registry
     name: pango
-    version: 0.20.10
-    sha: d88d37c161f2848f0d9382597f0168484c9335ac800995f3956641abb7002938
+    version: 0.20.12
+    sha: 6576b311f6df659397043a5fa8a021da8f72e34af180b44f7d57348de691ab5c
   - kind: registry
     name: pango-sys
     version: 0.20.10
