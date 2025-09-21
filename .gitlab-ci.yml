@@ -44,22 +44,16 @@ stages:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
-        - elements/*
-        - files/*
-        - include/*
-        - keys/*
-        - patches/*
-        - plugins/*
-        - project.conf
-
-# Separate workflow for openQA test development.
-.run_in_mr_openqa_workflow:
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        - .gitlab-ci/scripts/openqa-prepare.sh
-        - .gitlab-ci/scripts/openqa-script.sh
-        - tests/openqa/**/*
+        paths:
+          # Buildstream
+          - "elements/*"
+          - "files/*"
+          - "include/*"
+          - "keys/*"
+          - "patches/*"
+          - "plugins/*"
+          - "project.conf"
+          - ".gitlab-ci.yml"
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -163,6 +157,23 @@ default:
     OPENQA_TEST_TIMEOUT_SCALE_CI: 4
     OPENQA_UTILS_BRANCH: main
     OPENQA_UTILS_GIT: https://gitlab.gnome.org/gnome/openqa-utils
+    GIT_SUBMODULE_STRATEGY: recursive
+  rules:
+    - !reference [".stage-only-rules", "rules"]
+    # Run the OpenQA tests against the image built
+    - !reference [".run_in_mr_build", "rules"]
+    # Run openQA tests against a prebuilt live image, if the
+    # changes are only in openqa files.
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        paths:
+          - ".gitlab-ci/scripts/openqa-prepare.sh"
+          - ".gitlab-ci/scripts/openqa-script.sh"
+          - "tests/openqa/**/*"
+          - ".gitlab-ci.yml"
+      variables:
+        S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/live_x86_64.iso"
+      needs: []
   timeout: '90m'
   before_script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/openqa-prepare.sh"
@@ -418,7 +429,7 @@ test-openqa-installer:
   variables:
     TESTSUITES: "gnome_install"
   rules:
-  - !reference [".stage-only-rules", "rules"]
+  - !reference [".test-openqa-template", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
 
@@ -432,7 +443,7 @@ test-openqa-desktop:
   variables:
     TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
   rules:
-  - !reference [".stage-only-rules", "rules"]
+  - !reference [".test-openqa-template", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
   allow_failure: true
@@ -452,22 +463,6 @@ test-pinephone-pro-aarch64:
   - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
   needs:
   - job: "pinephone-pro-image"
-
-# Run openQA tests against a prebuilt live image, to validate
-# changes to the tests themselves before merge.
-openqa-test-workflow:
-  stage: "openqa-workflow"
-  extends:
-    - .test-openqa-template
-    - .x86_64
-  needs: []
-  variables:
-    GIT_SUBMODULE_STRATEGY: recursive
-    # Use the live image instead of building one.
-    S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/live_x86_64.iso"
-    TESTSUITES: "gnome_apps gnome_accessibility gnome_install gnome_mobile gnome_locales"
-  rules:
-  - !reference [".run_in_mr_openqa_workflow", "rules"]
 
 .bot-ssh:
   variables:
