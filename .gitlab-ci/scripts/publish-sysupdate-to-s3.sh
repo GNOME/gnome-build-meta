@@ -13,7 +13,7 @@ else
 fi
 
 if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
-    (cd update-images && zstd --rm -T0 *.raw && sha256sum * | tee SHA256SUMS)
+    (cd update-images && zstd --rm -T0 *.raw && rm SHA256SUMS && sha256sum * | tee SHA256SUMS)
     mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     aws s3 sync --acl public-read \
