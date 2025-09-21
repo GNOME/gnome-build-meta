@@ -17,8 +17,7 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
     mv update-images/SHA256SUMS "update-images/SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
 
     aws s3 sync --acl public-read \
-        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/" \
-        --exclude "*" --include "*.xz" --include "*.efi" --include "*.raw" --include "*.verity" --include "*.*hash" --include "SHA256SUMS.version.${IMAGE_VERSION}-${ARCH}"
+        update-images/ "s3://gnome-build-meta/$target_dir/sysupdate/"
 
     aws s3 cp --acl public-read \
         "s3://gnome-build-meta/${target_dir}/sysupdate/" update-images/ \
