@@ -35,8 +35,6 @@ variables:
   (?):
   - arch == "x86_64":
       targets: --target-list=x86_64-softmmu,i386-softmmu
-  - arch == "i686":
-      targets: --target-list=x86_64-softmmu,i386-softmmu
   - arch == "aarch64":
       targets: --target-list=aarch64-softmmu,arm-softmmu
   - arch == "arm":

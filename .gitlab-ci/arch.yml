@@ -19,14 +19,6 @@
     X86_64_V3: "1"
     ARCH_OPT: -o arch x86_64 -o x86_64_v3 true
 
-.i686:
-  tags:
-  - x86_64
-  - gnome-build-meta
-  variables:
-    ARCH: i686
-    ARCH_OPT: -o arch i686
-
 .aarch64:
   tags:
   - aarch64

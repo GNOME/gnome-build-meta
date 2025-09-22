@@ -75,7 +75,7 @@ variables:
     2606:4700:4700::1111#one.one.one.one
     2606:4700:4700::1001#one.one.one.one
   (?):
-  - arch in ["x86_64", "i686", "aarch64", "riscv64"]:
+  - arch in ["x86_64", "aarch64", "riscv64"]:
       efi: 'true'
   - arch in ["x86_64", "aarch64"]:
       bpf-framework: 'enabled'
