@@ -298,7 +298,7 @@ live-image-aarch64:
   - ${BST} ${ARCH_OPT} artifact checkout --hardlinks gnomeos/update-images.bst --directory update-images/
 
   - |
-    if [ -n "$AWS_ACCESS_KEY_ID" ] && [ -n "$SECURE_BOOT_DISTRIBUTION_KEY" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
+    if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
         ./.gitlab-ci/scripts/publish-s3-image.sh
         ./.gitlab-ci/scripts/publish-sysupdate-to-s3.sh
     fi
