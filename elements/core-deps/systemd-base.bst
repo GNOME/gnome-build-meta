@@ -68,7 +68,7 @@ variables:
   efi: 'false'
   bootloader: 'disabled'
   (?):
-  - arch in ["x86_64", "i686", "arm", "aarch64", "riscv64"]:
+  - arch in ["x86_64", "arm", "aarch64", "riscv64"]:
       efi: 'true'
       bootloader: 'enabled'
   fallback-ntp-servers: "gnome.pool.ntp.org"

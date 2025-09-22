@@ -14,7 +14,7 @@ config:
     (?):
     - x86_64_v3:
         x86_64_v3: true
-    - arch in ('x86_64', 'i686'):
+    - arch == 'x86_64':
         bootstrap_build_arch: 'x86_64'
     - arch in ('aarch64', 'arm'):
         bootstrap_build_arch: 'aarch64'

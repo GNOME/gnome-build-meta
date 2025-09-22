@@ -25,8 +25,6 @@ build-depends:
 
 variables:
   (?):
-  - arch == 'i686':
-      efi-arch: ia32
   - arch == 'x86_64':
       efi-arch: x64
   - arch == 'aarch64':

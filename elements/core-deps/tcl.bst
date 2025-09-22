@@ -13,12 +13,7 @@ depends:
 
 variables:
   conf-cmd: ./unix/configure
-  arch-conf: ''
-  (?):
-  - arch == "i686":
-      arch-conf: --disable-64bit
-  - arch != "i686":
-      arch-conf: --enable-64bit
+  arch-conf: '--enable-64bit'
   conf-local: >-
     --disable-rpath
     --disable-zipfs

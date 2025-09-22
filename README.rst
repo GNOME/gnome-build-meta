@@ -142,9 +142,9 @@ has qemu and everything else needed.
 
 2. Build the element::
 
-      $  bst -o arch i686 build sdk/gjs.bst
+      $  bst -o arch aarch64 build sdk/gjs.bst
 
 3. Get a build or runtime shell for testing::
-      $  bst -o arch i686 build --shell sdk/gjs.bst
-      $  bst -o arch i686 shell sdk/gjs.bst
+      $  bst -o arch aarch64 build --shell sdk/gjs.bst
+      $  bst -o arch aarch64 shell sdk/gjs.bst
 

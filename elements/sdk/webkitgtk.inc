@@ -46,7 +46,7 @@ depends:
 variables:
   optimize-debug: 'false'
   (?):
-  - arch == "i686" or arch == "arm":
+  - arch == "arm":
       debug_flags: "-g1"
 
 public:
