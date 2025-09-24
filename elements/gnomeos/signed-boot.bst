@@ -13,6 +13,7 @@ build-depends:
     location: /usr-image
 - freedesktop-sdk.bst:components/sbsigntools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/jq.bst
