@@ -16,16 +16,6 @@ build-depends:
         config:
           flatpak-image: true
 
-# platform compat is only built on 32 bit
-- arch == 'arm':
-    build-depends:
-      (>):
-      - filename:
-        - flatpak/platform-arch-libs.bst
-        - flatpak/platform-arch-libs-debug.bst
-        config:
-          flatpak-image: true
-
 # sdk compat is not built on x86_64
 - arch != 'x86_64':
     build-depends:

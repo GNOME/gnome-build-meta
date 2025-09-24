@@ -45,9 +45,6 @@ depends:
 
 variables:
   optimize-debug: 'false'
-  (?):
-  - arch == "arm":
-      debug_flags: "-g1"
 
 public:
   cpe:
