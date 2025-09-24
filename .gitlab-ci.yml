@@ -173,7 +173,8 @@ default:
           - "tests/openqa/**/*"
           - ".gitlab-ci.yml"
       variables:
-        S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/live_x86_64.iso"
+        S3_DISK_IMAGE_NAME: "live_x86_64.iso"
+        S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/$S3_DISK_IMAGE_NAME"
   timeout: '90m'
   needs:
   - job: 's3-image'
