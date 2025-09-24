@@ -1,3 +1,5 @@
+# See `README.md` for some guidance on what this Makefile does.
+
 all: generate-keys
 
 KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES SYSEXT
