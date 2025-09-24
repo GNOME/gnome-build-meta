@@ -27,21 +27,22 @@ depends:
 - sdk/glib.bst
 - sdk/pango.bst
 - sdk/pygobject.bst
-- freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
+- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:components/libcbor.bst
+- freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
+- freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
-- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
-- freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:extensions/mesa/libdrm.bst
 
 (?):
