@@ -13,7 +13,6 @@ build-depends:
 
 depends:
 - core-deps/xauth.bst
-- freedesktop-sdk.bst:bootstrap-import.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
@@ -24,6 +23,8 @@ depends:
 - freedesktop-sdk.bst:components/xorg-font-util.bst
 - freedesktop-sdk.bst:components/xorg-lib-xdmcp.bst
 - freedesktop-sdk.bst:components/xorg-lib-xfont2.bst
+- freedesktop-sdk.bst:components/xorg-lib-xkbfile.bst
+- freedesktop-sdk.bst:bootstrap-import.bst
 
 variables:
   meson-local: >-
