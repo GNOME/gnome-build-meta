@@ -57,4 +57,3 @@ config:
 
     components/linux-module-cert.bst: gnomeos/linux-module-cert.bst
     components/systemd-base.bst: core-deps/systemd-base.bst
-    components/systemd.bst: core-deps/systemd.bst
