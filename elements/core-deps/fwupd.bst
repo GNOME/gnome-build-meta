@@ -45,7 +45,7 @@ depends:
 - freedesktop-sdk.bst:extensions/mesa/libdrm.bst
 
 (?):
-- arch in ["arm", "aarch64", "x86_64"]:
+- arch in ["aarch64", "x86_64"]:
     depends:
       (>):
       - core-deps/fwupd-efi.bst
@@ -64,5 +64,5 @@ variables:
 
   efi_binary: 'false'
   (?):
-  - arch in ["arm", "aarch64", "x86_64"]:
+  - arch in ["aarch64", "x86_64"]:
       efi_binary: 'true'

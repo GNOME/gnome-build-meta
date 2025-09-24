@@ -16,7 +16,7 @@ config:
         x86_64_v3: true
     - arch == 'x86_64':
         bootstrap_build_arch: 'x86_64'
-    - arch in ('aarch64', 'arm'):
+    - arch == 'aarch64':
         bootstrap_build_arch: 'aarch64'
     - arch == "ppc64le":
         bootstrap_build_arch: "ppc64le"

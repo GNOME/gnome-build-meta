@@ -37,8 +37,6 @@ variables:
       targets: --target-list=x86_64-softmmu,i386-softmmu
   - arch == "aarch64":
       targets: --target-list=aarch64-softmmu,arm-softmmu
-  - arch == "arm":
-      targets: --target-list=arm-softmmu
   - arch == "ppc64le":
       targets: --target-list=ppc64-softmmu
   - arch == "riscv64":

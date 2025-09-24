@@ -16,16 +16,6 @@ build-depends:
         config:
           flatpak-image: true
 
-# platform compat is only built on 32 bit
-- arch == 'arm':
-    build-depends:
-      (>):
-      - filename:
-        - flatpak/platform-arch-libs.bst
-        - flatpak/platform-arch-libs-debug.bst
-        config:
-          flatpak-image: true
-
 # sdk compat is not built on x86_64
 - arch != 'x86_64':
     build-depends:
@@ -41,17 +31,6 @@ config:
   branch: '%{flatpak-branch}'
   repo-mode: bare-user-only
   (?):
-  - arch == 'arm':
-      copy-refs:
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}/aarch64/%{flatpak-branch}
-      - src: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
-        dest: runtime/org.gnome.Platform.Compat.%{gcc_arch}.Debug/aarch64/%{flatpak-branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/x86_64/%{flatpak-branch}
-      - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/%{gcc_arch}/%{flatpak-branch}
-        dest: runtime/org.gnome.Sdk.Compat.%{gcc_arch}.Debug/x86_64/%{flatpak-branch}
-
   - arch == 'aarch64':
       copy-refs:
       - src: runtime/org.gnome.Sdk.Compat.%{gcc_arch}/%{gcc_arch}/%{flatpak-branch}
