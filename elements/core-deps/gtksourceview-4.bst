@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtksourceview.git
   track: 'gtksourceview-4-8'
-  ref: 4.8.4-34-g9e48966fbe83d4de8e7357afbe26434a86e4a34c
+  ref: 4.8.4-35-g6a20871c39f6c839ea440b7dfce9795415dfea87
 
 build-depends:
 - sdk/gobject-introspection.bst

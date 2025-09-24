@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.10.0-16-g2498760581f88ab18d44fa5f0feefe72e390d23b
+  ref: 3.10.0-21-g7647fc9783d4d034e1ca43286904e6da8deef467
 build-depends:
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
