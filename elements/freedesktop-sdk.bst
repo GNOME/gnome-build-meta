@@ -43,3 +43,6 @@ config:
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal.bst
     components/linux-module-cert.bst: vm-secure/linux-module-cert.bst
     components/systemd-base.bst: core-deps/systemd-base.bst
+    components/systemd.bst: core-deps/systemd.bst
+    components/systemd-ukify.bst: core-deps/systemd-ukify.bst
+    components/systemd-libs.bst: core-deps/systemd-libs.bst
