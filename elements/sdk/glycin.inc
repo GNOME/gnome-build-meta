@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.0-13-g93916e1bdec985181cf31918c2320a25750de2ab
+  ref: 2.0.1-0-gd992950c412494f7d3bfa8f943776bddd0280e04
 - kind: cargo2
   ref:
   - kind: registry
@@ -495,8 +495,8 @@ sources:
     sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - kind: registry
     name: image
-    version: 0.25.7
-    sha: 1c6a3ce16143778e24df6f95365f12ed105425b22abefd289dd88a64bab59605
+    version: 0.25.8
+    sha: 529feb3e6769d234375c4cf1ee2ce713682b8e76538cb13f9fc23e1400a591e7
   - kind: registry
     name: image-webp
     version: 0.2.4
