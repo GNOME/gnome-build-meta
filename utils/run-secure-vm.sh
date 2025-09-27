@@ -51,6 +51,10 @@ Options:
                              this multiple times. For example:
                              --cmdline systemd.debug_shell=1 --cmdline
                              systemd.journald.forward_to_journal=1
+
+  --debug-glib               Enable debug logs for GLib
+
+  --debug-systemd            Enable debug logs for systemd
 EOF
 }
 
@@ -95,6 +99,12 @@ while [ $# -gt 0 ]; do
         --cmdline)
             shift
             cmdline+=("$1")
+            ;;
+        --debug-glib)
+            debug_glib=1
+            ;;
+        --debug-systemd)
+            cmdline+=("systemd.log_level=debug")
             ;;
         --)
             shift
@@ -243,8 +253,32 @@ QEMU_ARGS+=(-device ich9-intel-hda)
 QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
 
+TYPE11=()
+
 if [ ${#cmdline[@]} -gt 0 ]; then
-    QEMU_ARGS+=(-smbios "type=11,value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]//,/,,}")
+    TYPE11+=("value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]//,/,,}")
+fi
+
+if [ "${debug_glib+set}" = set ]; then
+    tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
+    cleanup_dirs+=("${tmpfiles}")
+
+    cat <<EOF >"${tmpfiles}"/glib-debug.conf
+[Manager]
+DefaultEnvironment=G_MESSAGES_DEBUG=all
+EOF
+
+    cat <<EOF >"${tmpfiles}"/tmpfiles-glib-debug.conf
+f~ /run/systemd/system.conf.d/glib-debug.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/glib-debug.conf)
+f~ /run/systemd/user.conf.d/glib-debug.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/glib-debug.conf)
+EOF
+
+    TYPE11+=("value=io.systemd.credential.binary:tmpfiles.extra=$(base64 -w0 "${tmpfiles}"/tmpfiles-glib-debug.conf)")
+fi
+
+if [ ${#TYPE11[@]} -gt 0 ]; then
+    TYPE11ALL="$(IFS=,; echo "${TYPE11[*]}")"
+    QEMU_ARGS+=(-smbios "type=11,${TYPE11ALL}")
 fi
 
 exec qemu-system-x86_64 "${QEMU_ARGS[@]}"
