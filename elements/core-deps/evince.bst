@@ -12,7 +12,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/gspell.bst
 - core-deps/libgxps.bst
 - core/nautilus.bst
 - sdk/adwaita-icon-theme.bst
@@ -28,6 +27,7 @@ variables:
     -Dcomics=disabled
     -Ddjvu=disabled
     -Ddvi=disabled
+    -Dgspell=disabled
     -Dintrospection=true
     -Dpreviewer=false
     -Dthumbnailer=false
