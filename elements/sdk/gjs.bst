@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gjs.git
   track: master
-  ref: 1.86.0-2-gb5e337ee220a1a7a288c981d85e1fe7e79f3afeb
+  ref: 1.86.0-27-gdc74b4c216d681f18ae1114e51f742d75027a3b2
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
-  ref: 1c26953b926a5dd0b310f6375bfc897a75bbc739
+  ref: b255f43b4d81953e8474a2f8919a4117e3cd3f62
 
 build-depends:
 - sdk/sysprof-minimal.bst

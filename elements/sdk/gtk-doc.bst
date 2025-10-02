@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk-doc.git
   track: master
-  ref: 1.34.0-20-gdd11b3d6f0dc715a39532e18e177df356f8969b5
+  ref: 1.35.0-0-g519e65379a9278950c848084cf6686bdd333567c
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
