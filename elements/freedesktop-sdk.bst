@@ -60,3 +60,5 @@ config:
     components/systemd.bst: core-deps/systemd.bst
     components/systemd-ukify.bst: core-deps/systemd-ukify.bst
     components/systemd-libs.bst: core-deps/systemd-libs.bst
+
+    components/linux.bst: linux-fp5.bst
