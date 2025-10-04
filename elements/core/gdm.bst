@@ -44,3 +44,6 @@ config:
       for conffile in `find gdm-config/ -name "*.pam"`; do
         install -m 644 $conffile %{install-root}%{pamdir}/$(basename ${conffile%.pam})
       done
+
+    - |
+      install -Dm644 -t "%{install-root}%{datadir}/glib-2.0/schemas" gdm-config/org.gnome.login-screen.gschema.override
