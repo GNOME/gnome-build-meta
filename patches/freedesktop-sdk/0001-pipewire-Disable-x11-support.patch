@@ -1,0 +1,25 @@
+From 79592b37afaea3177f282f36bc7e32b2bebd60a2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sat, 4 Oct 2025 15:56:23 +0200
+Subject: [PATCH] pipewire: Disable x11 support
+
+---
+ elements/components/pipewire-base.bst | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/elements/components/pipewire-base.bst b/elements/components/pipewire-base.bst
+index f381c77e7..9c1c59bc1 100644
+--- a/elements/components/pipewire-base.bst
++++ b/elements/components/pipewire-base.bst
+@@ -54,6 +54,8 @@ variables:
+     -Dlibffado=disabled
+     -Dsdl2=disabled
+     -Dsnap=disabled
++    -Dx11=disabled
++    -Dx11-xfixes=disabled
+ 
+ config:
+   install-commands:
+-- 
+2.51.0
+
