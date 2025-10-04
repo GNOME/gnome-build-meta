@@ -37,3 +37,8 @@ depends:
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  meson-local: >-
+    -Dx11=false
+    -Dxwayland=false
