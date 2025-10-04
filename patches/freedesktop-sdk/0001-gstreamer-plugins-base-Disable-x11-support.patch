@@ -1,0 +1,27 @@
+From 0152bd1380fae6915498305ab8879694f32fe261 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Sat, 4 Oct 2025 15:30:03 +0200
+Subject: [PATCH] gstreamer-plugins-base: Disable x11 support
+
+---
+ elements/components/gstreamer-plugins-base.bst | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/elements/components/gstreamer-plugins-base.bst b/elements/components/gstreamer-plugins-base.bst
+index eaf23d4eb..dfffd998f 100644
+--- a/elements/components/gstreamer-plugins-base.bst
++++ b/elements/components/gstreamer-plugins-base.bst
+@@ -50,6 +50,10 @@ variables:
+     -Dlibvisual=disabled
+     -Dtremor=disabled
+     -Dexamples=disabled
++    -Dx11=disabled
++    -Dxi=disabled
++    -Dxshm=disabled
++    -Dxvideo=disabled
+ 
+ public:
+   bst:
+-- 
+2.51.0
+
