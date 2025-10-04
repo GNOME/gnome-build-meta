@@ -35,7 +35,6 @@ depends:
 - gnomeos-deps/fprintd.bst
 - gnomeos-deps/nss-mdns.bst
 - gnomeos-deps/opensc.bst
-- gnomeos-deps/pam-pkcs11.bst
 - gnomeos-deps/switcheroo-control.bst
 - gnomeos-deps/uresourced.bst
 - gnomeos-deps/zram-generator.bst
