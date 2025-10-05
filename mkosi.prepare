@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -eux -o pipefail
+
+if [[ "$1" != "final" ]]; then
+	exit 0
+fi
+
+cd /work/src/project
+
+cat <<EOF > bst.conf
+cachedir: /work/src/bstcache
+EOF
+
+mv $BUILDROOT/boot /work/test-boot
+mv $BUILDROOT/efi /work/test-efi
+
+ls -RlA $BUILDROOT
+
+bst -c bst.conf artifact checkout gnomeos/filesystem.bst --directory "$BUILDROOT"
+
+bst -c bst.conf artifact checkout gnomeos/initramfs.bst --directory /work/initramfs
+mkdir -p $ARTIFACTDIR/io.mkosi.{initrd,microcode}/
+cp /work/initramfs/usr/lib/modules/*/initramfs.img $ARTIFACTDIR/io.mkosi.initrd/initramfs.img
+cp /work/initramfs/usr/lib/modules/*/microcode.img $ARTIFACTDIR/io.mkosi.microcode/microcode.img
+
+rm $BUILDROOT/efi/loader/keys -rvf || true
+rm $BUILDROOT/boot/loader/keys -rvf || true
+
+mv /work/test-boot $BUILDROOT/boot
+mv /work/test-efi $BUILDROOT/efi
