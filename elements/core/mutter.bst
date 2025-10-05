@@ -59,3 +59,4 @@ variables:
     -Dxwayland=false
     -Dx11=false
     -Dstartup_notification=false
+    -Dtests=disabled
