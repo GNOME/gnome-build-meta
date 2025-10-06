@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
-  track: main
-  ref: 49.1-143-g9dfa625d10c11c287b090ee5a6f39b4678a4c408
+  track: ignapk/malcontent-ignore-button
+  ref: 09bfd8d785588aca3b75edf171961c98a535e893
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -42,6 +42,7 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
+- core-deps/malcontent.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst

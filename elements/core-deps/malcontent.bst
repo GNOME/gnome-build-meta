@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: freedesktop:pwithnall/malcontent.git
+  url: freedesktop:ignapk/malcontent.git
   track: "*.*.*"
-  ref: 0.14.alpha-0-g5d1b799a97f7c986269529baff73f44b193338d4
+  ref: cf40fd14aac055d8f47f8b00a22f27fdecf4016a
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
@@ -31,6 +31,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/libsoup.bst
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/polkit.bst
