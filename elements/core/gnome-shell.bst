@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 49.1-169-gc71616f2fedcf6568c0465e1aefa6ee380b78328
+  ref: 8aaeec00030de3b9b4feb122c96a8ff75d3828f2
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -42,6 +42,7 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
+- core-deps/malcontent.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst
