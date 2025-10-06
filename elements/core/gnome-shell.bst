@@ -42,6 +42,7 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
+- core-deps/malcontent.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst
