@@ -2,9 +2,8 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-shell.git
-  track: main
-  ref: 49.0-17-gc9a0c8e65c456310b4bf1987e58a94b1240b3190
+  url: gnome_gitlab:ignapk/gnome-shell.git
+  ref: e0d521b24433cab71561bb71947ee446852089a8
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
@@ -42,6 +41,7 @@ depends:
 - core-deps/gnome-autoar.bst
 - core-deps/startup-notification.bst
 - core-deps/upower.bst
+- core-deps/malcontent.bst
 - core/gdm.bst
 - core/gnome-bluetooth.bst
 - core/gnome-desktop.bst

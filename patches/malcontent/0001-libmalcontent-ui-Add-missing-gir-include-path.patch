@@ -1,0 +1,59 @@
+From 2c0364be2b0d61b4e5f5059bc6a41bfe2707c637 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ignacy=20Kuchci=C5=84ski?= <ignacykuchcinski@gnome.org>
+Date: Tue, 7 Oct 2025 20:30:17 +0200
+Subject: [PATCH] libmalcontent-ui: Add missing gir include path
+
+Currently, when building on a system that does not have malcontent
+installed at all, during generation of documentation for
+libmalcontent-ui build fails due to missing GIR dependency
+`Malcontent-0`.
+
+Fix that by adding missing gir include path argument to `gi-docgen
+generate`.
+---
+ libmalcontent-ui/docs/libmalcontent-ui.toml.in | 6 ------
+ libmalcontent-ui/docs/meson.build              | 3 ++-
+ 2 files changed, 2 insertions(+), 7 deletions(-)
+
+diff --git a/libmalcontent-ui/docs/libmalcontent-ui.toml.in b/libmalcontent-ui/docs/libmalcontent-ui.toml.in
+index 5b48ecc..3ab7478 100644
+--- a/libmalcontent-ui/docs/libmalcontent-ui.toml.in
++++ b/libmalcontent-ui/docs/libmalcontent-ui.toml.in
+@@ -13,15 +13,9 @@ docs_url = "https://pwithnall.pages.freedesktop.org/malcontent/docs/libmalconten
+ authors = "malcontent Development Team"
+ license = "LGPL-2.1-or-later"
+ description = "Widget library for parental controls"
+-related = [ "Malcontent-0" ]
+ devhelp = true
+ search_index = true
+ 
+-  [related."Malcontent-0"]
+-  name = "Malcontent"
+-  description = "malcontent provides parental controls functionality on Linux systems"
+-  docs_url = "https://pwithnall.pages.freedesktop.org/malcontent/docs/libmalcontent-0/"
+-
+ [theme]
+ name = "basic"
+ show_index_summary = true
+diff --git a/libmalcontent-ui/docs/meson.build b/libmalcontent-ui/docs/meson.build
+index f30d47b..a1caa8f 100644
+--- a/libmalcontent-ui/docs/meson.build
++++ b/libmalcontent-ui/docs/meson.build
+@@ -21,6 +21,7 @@ custom_target('libmalcontent-ui-docs',
+     '--config=@INPUT0@',
+     '--output-dir=@OUTPUT@',
+     '--no-namespace-dir',
++    '--add-include-path=@0@'.format(meson.current_build_dir() / '../../libmalcontent'),
+     '--content-dir=@0@'.format(meson.current_source_dir()),
+     '@INPUT1@',
+   ],
+@@ -41,4 +42,4 @@ test('libmalcontent-ui-docs',
+   ],
+   depends: libmalcontent_ui_gir[0],
+   suite: ['docs'],
+-)
+\ No newline at end of file
++)
+-- 
+2.51.0
+
