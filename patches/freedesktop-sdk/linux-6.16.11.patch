@@ -1,0 +1,12 @@
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index 741e0d028..74551b8e8 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,6 +4,6 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.16.8-0-g62dae019823123ce3baa50e680219e2beb9a63a5
++  ref: v6.16.11-0-g683320aeb0e83deac1b6c6794b0567969de09548
+ - kind: patch_queue
+   path: patches/linux
