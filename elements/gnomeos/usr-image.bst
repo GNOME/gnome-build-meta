@@ -135,9 +135,6 @@ config:
     # freedesktop-sdk.bst:components/bash-config.bst
     L /etc/bashrc
 
-    # TODO: sort the rest of this mess
-    C /etc/bindresvport.blacklist
-
     # freedesktop-sdk.bst:components/cups-daemon-only.bst
     L /etc/cups/cups-files.conf
     L /etc/cups/cups-files.conf.default
@@ -213,7 +210,6 @@ config:
     C /etc/mke2fs.conf
     C /etc/modules-load.d
     C /etc/moduli
-    C /etc/netconfig
     C /etc/openldap
     C /etc/opensc.conf
     C /etc/ostree
