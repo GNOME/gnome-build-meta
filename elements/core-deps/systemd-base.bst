@@ -127,11 +127,15 @@ public:
       - '%{indep-libdir}/kernel'
       - '%{indep-libdir}/kernel/**'
       - '%{mandir}/man8/kernel-install.8'
+      - '%{docdir}/systemd/html/kernel-install.html'
       - '%{debugdir}%{bindir}/kernel-install.debug'
+      - '%{sysconfdir}/kernel'
+      - '%{sysconfdir}/kernel/**'
       ukify:
       - '%{bindir}/ukify'
       - '%{indep-libdir}/systemd/ukify'
       - '%{mandir}/man1/ukify.1'
+      - '%{docdir}/systemd/html/ukify.html'
       systemd-libs:
       - '%{libdir}'
       - '%{libdir}/libsystemd*.so*'
