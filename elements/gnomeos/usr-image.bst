@@ -201,7 +201,6 @@ config:
     C /etc/init.d
     C /etc/iscsi
     C /etc/isns
-    C /etc/kernel
     C /etc/libblockdev
     C /etc/libinput
     C /etc/libnl
