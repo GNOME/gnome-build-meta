@@ -11,7 +11,6 @@ depends:
 - core-deps/feedbackd.bst
 
 - freedesktop-sdk.bst:components/iputils.bst
-- freedesktop-sdk.bst:components/usbutils.bst
 
 - boards/common/alsa-utils.bst
 - boards/common/atinout.bst

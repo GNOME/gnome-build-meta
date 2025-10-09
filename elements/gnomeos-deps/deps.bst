@@ -80,6 +80,7 @@ depends:
 - freedesktop-sdk.bst:components/vim.bst
 
 - freedesktop-sdk.bst:components/iproute2.bst
+- freedesktop-sdk.bst:components/usbutils.bst
 
 - core-deps/systemd-hwdb.bst
 
