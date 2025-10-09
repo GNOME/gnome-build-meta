@@ -1,7 +1,7 @@
-From 1beb01fc9e7c3d1dd3dd8d5b98b4c9cf30130084 Mon Sep 17 00:00:00 2001
+From e9052296d505603999da193a173c61aa371c1422 Mon Sep 17 00:00:00 2001
 From: Abderrahim Kitouni <akitouni@gnome.org>
 Date: Fri, 26 Sep 2025 14:46:55 +0100
-Subject: [PATCH 4/4] components/xdg-user-dirs.bst: update to 0.19
+Subject: [PATCH 4/5] components/xdg-user-dirs.bst: update to 0.19
 
 ---
  elements/components/xdg-user-dirs.bst | 5 +++--

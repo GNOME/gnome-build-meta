@@ -1,7 +1,7 @@
-From 7a4adf4a8aba9e5782cd1402d9f1881e226829c5 Mon Sep 17 00:00:00 2001
+From eeaa1aacdd55651a7ff56327da87940ccffa179e Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 24 Aug 2025 23:39:36 +0100
-Subject: [PATCH 3/4] linux: Backport patches for OnePlus 6's panel
+Subject: [PATCH 3/5] linux: Backport patches for OnePlus 6's panel
 
 Those patches come from either mainline or from the Linaro's branch for
 sdm845 which should get mainlined soon.
@@ -13,13 +13,13 @@ boot. And instead we can wait for mainlining.
  elements/include/linux.yml                    |   2 +
  files/linux/fdsdk-config.sh                   |   1 +
  ...el-sofef00-move-DSI-calls-to-disable.patch |  44 +++++++
- ...drm-panel-sofef00-prepare_prev_first.patch |  28 ++++
+ ...drm-panel-sofef00-prepare_prev_first.patch |  29 +++++
  ...-sofef00-initialise-at-50-brightness.patch |  30 +++++
  ...ef00-don-t-initialise-panel-in-reset.patch |  31 +++++
  ...rm-panel-sofef00-don-t-use-unprepare.patch |  60 +++++++++
  ...006-drm-panel-sofef00-fix-panel-name.patch |  28 ++++
  ...anel-sofef00-proper-power-sequencing.patch | 120 ++++++++++++++++++
- 9 files changed, 344 insertions(+)
+ 9 files changed, 345 insertions(+)
  create mode 100644 patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
  create mode 100644 patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
  create mode 100644 patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
@@ -52,11 +52,11 @@ index 34dea4b0f..ef8eba78e 100644
  
 diff --git a/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch b/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
 new file mode 100644
-index 000000000..4c9998d9c
+index 000000000..598c99146
 --- /dev/null
 +++ b/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
 @@ -0,0 +1,44 @@
-+From 2360b48875a8f2814699698a694804144b4bb27e Mon Sep 17 00:00:00 2001
++From 2b3f7e31064f54fa46896fda5137a8b077843aff Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Sat, 10 Dec 2022 02:50:18 +0000
 +Subject: [PATCH 1/7] drm/panel: sofef00: move DSI calls to disable
@@ -67,7 +67,7 @@ index 000000000..4c9998d9c
 + 1 file changed, 3 insertions(+), 2 deletions(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index d92ae6b6100f..cf7d0d27ab0f 100644
++index 064258217d50..1f43b042ff5b 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 +@@ -67,8 +67,9 @@ static int sofef00_panel_on(struct sofef00_panel *ctx)
@@ -98,15 +98,15 @@ index 000000000..4c9998d9c
 + 	.get_modes = sofef00_panel_get_modes,
 + };
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch b/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
 new file mode 100644
-index 000000000..0c1459650
+index 000000000..fba567837
 --- /dev/null
 +++ b/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
-@@ -0,0 +1,28 @@
-+From 962884eba95fb7ad56521ae5da26e3b738c2f590 Mon Sep 17 00:00:00 2001
+@@ -0,0 +1,29 @@
++From aee5adac2a23c86bcda7abfb2056bbf1e66ce232 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 16:11:31 +0100
 +Subject: [PATCH 2/7] drm/panel: sofef00: prepare_prev_first
@@ -116,31 +116,32 @@ index 000000000..0c1459650
 +
 +Signed-off-by: Caleb Connolly <caleb.connolly@linaro.org>
 +---
-+ drivers/gpu/drm/panel/panel-samsung-sofef00.c | 1 +
-+ 1 file changed, 1 insertion(+)
++ drivers/gpu/drm/panel/panel-samsung-sofef00.c | 2 ++
++ 1 file changed, 2 insertions(+)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index cf7d0d27ab0f..1a4f0475a04a 100644
++index 1f43b042ff5b..2958b0bcb7e8 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+@@ -214,6 +214,7 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
++@@ -214,6 +214,8 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
++ 	dsi->lanes = 4;
++ 	dsi->format = MIPI_DSI_FMT_RGB888;
 + 
-+ 	drm_panel_init(&ctx->panel, dev, &sofef00_panel_panel_funcs,
-+ 		       DRM_MODE_CONNECTOR_DSI);
 ++	ctx->panel.prepare_prev_first = true;
-+ 
+++
 + 	ctx->panel.backlight = sofef00_create_backlight(dsi);
 + 	if (IS_ERR(ctx->panel.backlight))
++ 		return dev_err_probe(dev, PTR_ERR(ctx->panel.backlight),
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch b/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
 new file mode 100644
-index 000000000..c4faf7c58
+index 000000000..038c88c3e
 --- /dev/null
 +++ b/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
 @@ -0,0 +1,30 @@
-+From 45fd8dae418bae6a9ab68b402767032bbc7c6898 Mon Sep 17 00:00:00 2001
++From 8046b8cda974c9d4bfc5083d66b119c1f3b988d3 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 14:20:35 +0100
 +Subject: [PATCH 3/7] drm/panel: sofef00: initialise at 50% brightness
@@ -155,7 +156,7 @@ index 000000000..c4faf7c58
 + 1 file changed, 1 insertion(+), 1 deletion(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index 1a4f0475a04a..c5d6d4d1b095 100644
++index 2958b0bcb7e8..96360e272d4c 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 +@@ -178,7 +178,7 @@ sofef00_create_backlight(struct mipi_dsi_device *dsi)
@@ -168,15 +169,15 @@ index 000000000..c4faf7c58
 + 	};
 + 
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch b/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
 new file mode 100644
-index 000000000..39390c5b3
+index 000000000..6d3d351f7
 --- /dev/null
 +++ b/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
 @@ -0,0 +1,31 @@
-+From 6eedaaedd218bafe091214598696b143b4e9954e Mon Sep 17 00:00:00 2001
++From f1bd58c383fa75bf636b75933315591e8d94efff Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 14:23:39 +0100
 +Subject: [PATCH 4/7] drm/panel: sofef00: don't initialise panel in reset
@@ -192,10 +193,10 @@ index 000000000..39390c5b3
 + 1 file changed, 1 insertion(+), 1 deletion(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index c5d6d4d1b095..cb5a882e6d45 100644
++index 96360e272d4c..b8bb0b1f4ee8 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+@@ -201,7 +201,7 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
++@@ -203,7 +203,7 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
 + 		return dev_err_probe(dev, PTR_ERR(ctx->supply),
 + 				     "Failed to get vddio regulator\n");
 + 
@@ -205,15 +206,15 @@ index 000000000..39390c5b3
 + 		return dev_err_probe(dev, PTR_ERR(ctx->reset_gpio),
 + 				     "Failed to get reset-gpios\n");
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch b/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch
 new file mode 100644
-index 000000000..1c17d4b2b
+index 000000000..70a9b21fe
 --- /dev/null
 +++ b/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch
 @@ -0,0 +1,60 @@
-+From cc6b4fe58e135f014270d6e8b5f1468cd2d1dc44 Mon Sep 17 00:00:00 2001
++From 481bcf0439613a139e0ed7715e779db896bc4d76 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 15:26:42 +0100
 +Subject: [PATCH 5/7] drm/panel: sofef00: don't use unprepare
@@ -227,7 +228,7 @@ index 000000000..1c17d4b2b
 + 1 file changed, 11 insertions(+), 4 deletions(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index cb5a882e6d45..d3a746c8a6d7 100644
++index b8bb0b1f4ee8..52e3d82a8a45 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 +@@ -67,9 +67,8 @@ static int sofef00_panel_on(struct sofef00_panel *ctx)
@@ -271,15 +272,15 @@ index 000000000..1c17d4b2b
 + };
 + 
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch b/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch
 new file mode 100644
-index 000000000..2a82e8190
+index 000000000..b4c532f82
 --- /dev/null
 +++ b/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch
 @@ -0,0 +1,28 @@
-+From 3458d3afad762e530d4f675b79937978d918112f Mon Sep 17 00:00:00 2001
++From 2277b6cc30ca2f44291401cf5b22a36e135f2baa Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 15:29:11 +0100
 +Subject: [PATCH 6/7] drm/panel: sofef00: fix panel name
@@ -292,7 +293,7 @@ index 000000000..2a82e8190
 + 1 file changed, 1 insertion(+), 1 deletion(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index d3a746c8a6d7..d781b8586d60 100644
++index 52e3d82a8a45..37d3be4cc2ef 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 +@@ -262,7 +262,7 @@ static struct mipi_dsi_driver sofef00_panel_driver = {
@@ -305,15 +306,15 @@ index 000000000..2a82e8190
 + 	},
 + };
 +-- 
-+2.49.0
++2.51.0
 +
 diff --git a/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch b/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
 new file mode 100644
-index 000000000..22f21e935
+index 000000000..8a1f5cec5
 --- /dev/null
 +++ b/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
 @@ -0,0 +1,120 @@
-+From de89e2d4104c17d707ab6e79fa37f9a2f6a12657 Mon Sep 17 00:00:00 2001
++From 1c3d893a133a0dfe81702805eb7d0c5370187193 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
 +Date: Wed, 17 Apr 2024 15:31:06 +0100
 +Subject: [PATCH 7/7] drm/panel: sofef00: proper power sequencing
@@ -350,7 +351,7 @@ index 000000000..22f21e935
 + 1 file changed, 34 insertions(+), 6 deletions(-)
 +
 +diff --git a/drivers/gpu/drm/panel/panel-samsung-sofef00.c b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
-+index d781b8586d60..08c6da224055 100644
++index 37d3be4cc2ef..8f2b5130b739 100644
 +--- a/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 ++++ b/drivers/gpu/drm/panel/panel-samsung-sofef00.c
 +@@ -20,7 +20,8 @@
@@ -402,9 +403,9 @@ index 000000000..22f21e935
 + 
 + 	return 0;
 + }
-+@@ -203,11 +218,24 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
-+ 	if (!ctx)
-+ 		return -ENOMEM;
++@@ -205,11 +220,24 @@ static int sofef00_panel_probe(struct mipi_dsi_device *dsi)
++ 	if (IS_ERR(ctx))
++ 		return PTR_ERR(ctx);
 + 
 +-	ctx->supply = devm_regulator_get(dev, "vddio");
 +-	if (IS_ERR(ctx->supply))
@@ -431,7 +432,7 @@ index 000000000..22f21e935
 + 	if (IS_ERR(ctx->reset_gpio))
 + 		return dev_err_probe(dev, PTR_ERR(ctx->reset_gpio),
 +-- 
-+2.49.0
++2.51.0
 +
 -- 
 2.51.0

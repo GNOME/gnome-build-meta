@@ -1,0 +1,57 @@
+From 798f175226d4b39b3ed685797ea24e1bbdf1e41f Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Thu, 9 Oct 2025 12:17:11 +0200
+Subject: [PATCH 5/5] linux.bst: Update to 6.17.2
+
+---
+ elements/include/linux.yml  |  2 +-
+ files/linux/fdsdk-config.sh | 10 +++-------
+ 2 files changed, 4 insertions(+), 8 deletions(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index ce860509f..1b6cb2b14 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,7 +4,7 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.16.8-0-g62dae019823123ce3baa50e680219e2beb9a63a5
++  ref: v6.17.2-0-g449d48b1b99fdaa076166e200132705ac2bee711
+ - kind: patch_queue
+   path: patches/linux
+ - kind: patch_queue
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index ef8eba78e..300fa8753 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -121,16 +121,9 @@ case "$arch" in
+     x86_64)
+         module CRYPTO_AES_NI_INTEL
+         module CRYPTO_GHASH_CLMUL_NI_INTEL
+-        module CRYPTO_SHA1_SSSE3
+-        module CRYPTO_SHA256_X86_64
+-        module CRYPTO_SHA512_SSSE3
+         module CRYPTO_DES3_EDE_X86_64
+     ;;
+     aarch64)
+-        module CRYPTO_SHA256_ARM64
+-        module CRYPTO_SHA512_ARM64
+-        module CRYPTO_SHA1_ARM64_CE
+-        module CRYPTO_SHA512_ARM64_CE
+         module CRYPTO_GHASH_ARM64_CE
+         module CRYPTO_AES_ARM64
+         module CRYPTO_AES_ARM64_CE
+@@ -2094,6 +2087,9 @@ enable FB_EFI
+ enable DRM_FBDEV_EMULATION
+ enable FRAMEBUFFER_CONSOLE
+ 
++# TODO: remove NETFILTER_XTABLES_LEGACY
++enable NETFILTER_XTABLES_LEGACY
++
+ # Network
+ module BRIDGE
+ module BRIDGE_NETFILTER
+-- 
+2.51.0
+
