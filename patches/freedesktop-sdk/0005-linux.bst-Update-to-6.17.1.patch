@@ -1,0 +1,50 @@
+From f7c9ea5dca655342f241009e57d0c1b604bf6bbb Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Thu, 9 Oct 2025 12:17:11 +0200
+Subject: [PATCH 5/5] linux.bst: Update to 6.17.1
+
+---
+ elements/include/linux.yml  | 2 +-
+ files/linux/fdsdk-config.sh | 6 +++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index ce860509f..e5157a764 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,7 +4,7 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.16.8-0-g62dae019823123ce3baa50e680219e2beb9a63a5
++  ref: v6.17.1-0-g4a245d5610b1706a1ede4cf1b5f462bb3cf84f1c
+ - kind: patch_queue
+   path: patches/linux
+ - kind: patch_queue
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index ef8eba78e..0883c67ce 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -121,9 +121,6 @@ case "$arch" in
+     x86_64)
+         module CRYPTO_AES_NI_INTEL
+         module CRYPTO_GHASH_CLMUL_NI_INTEL
+-        module CRYPTO_SHA1_SSSE3
+-        module CRYPTO_SHA256_X86_64
+-        module CRYPTO_SHA512_SSSE3
+         module CRYPTO_DES3_EDE_X86_64
+     ;;
+     aarch64)
+@@ -2094,6 +2091,9 @@ enable FB_EFI
+ enable DRM_FBDEV_EMULATION
+ enable FRAMEBUFFER_CONSOLE
+ 
++# TODO: remove NETFILTER_XTABLES_LEGACY
++enable NETFILTER_XTABLES_LEGACY
++
+ # Network
+ module BRIDGE
+ module BRIDGE_NETFILTER
+-- 
+2.51.0
+

@@ -1,7 +1,7 @@
-From 0c98ace37748d2af588d4fa889e6236599f265b1 Mon Sep 17 00:00:00 2001
+From a812e51eb2a7d8b57c383dffa3c2fc734baa7ccc Mon Sep 17 00:00:00 2001
 From: Jordan Petridis <jpetridis@gnome.org>
 Date: Mon, 4 Aug 2025 20:22:27 +0300
-Subject: [PATCH 2/4] project.conf: Add GNOME CAS servers
+Subject: [PATCH 2/5] project.conf: Add GNOME CAS servers
 
 This is meant as a downstream patch. Till now everyone
 has to configure the servers in their buildstream config,
