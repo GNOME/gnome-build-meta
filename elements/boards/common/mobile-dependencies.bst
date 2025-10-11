@@ -10,8 +10,6 @@ depends:
 - core-deps/ModemManager.bst
 - core-deps/feedbackd.bst
 
-- freedesktop-sdk.bst:components/iputils.bst
-
 - boards/common/alsa-utils.bst
 - boards/common/atinout.bst
 - boards/common/chatty.bst
