@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:at-spi2-core/2.58/at-spi2-core-2.58.0.tar.xz
-  ref: dfdd3300da2783a21969ffade2889817fb7c1906a4ef92497eba65969b3dab5a
+  url: gnome_downloads:at-spi2-core/2.58/at-spi2-core-2.58.1.tar.xz
+  ref: 7f374a6a38cd70ff4b32c9d3a0310bfa804d946fed4c9e69a7d49facdcb95e9c
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:pygobject/3.54/pygobject-3.54.2.tar.gz
-  ref: 03cffeb49d8a1879b621d8f606ac904218019a0ae699b1cd3780a8ee611e696b
+  url: gnome_downloads:pygobject/3.54/pygobject-3.54.3.tar.gz
+  ref: a8da09134a0f7d56491cf2412145e35aa74e91d760e8f337096a1cda0b92bae7
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

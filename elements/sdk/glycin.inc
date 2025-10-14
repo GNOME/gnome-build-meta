@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.0/glycin-2.0.0.tar.xz
-  ref: e39c3ca4f5bd6905f19f090456940650c8de1f217d2edb1f46ee17e04e7ae502
+  url: gnome_downloads:glycin/2.0/glycin-2.0.3.tar.xz
+  ref: c6228dfa16b547db0fe5b065f32dda2c114ee5a62616de73f273c9b21cd1a929
 - kind: cargo2
   ref:
   - kind: registry
@@ -422,16 +422,16 @@ sources:
     sha: dc7c43cff6a7dc43821e45ebf172399437acd6716fa2186b6852d2b397bf622d
   - kind: registry
     name: glycin
-    version: 3.0.0
-    sha: 3b70ebfc9e7c504e99580122d58174a3976f086ec55834692e44dd7489d36ed9
+    version: 3.0.3
+    sha: 04fbbe8670e734650c5a96e6107ab52dd14e25b339067e6e6bc1f0e919a3aea4
   - kind: registry
     name: glycin-common
-    version: 1.0.0
-    sha: a2382f0d91d42f750486e7c8316cba4781404e574458b5f28d91daff1656e73b
+    version: 1.0.3
+    sha: 6e9b31c7fa5ccb9d91317c956e767daef59be9fee3ae9df30468470368678482
   - kind: registry
     name: glycin-utils
-    version: 4.0.0
-    sha: 127d5f71bf307364e30ef0b6720a7a9557b2b642a933c2e048ac5f5fba2dc1c3
+    version: 4.0.3
+    sha: c1653ce5042ac6ebee1130347ef2f820a965c0cdd849be60fba492c0117eb131
   - kind: registry
     name: gobject-sys
     version: 0.21.1
@@ -506,8 +506,8 @@ sources:
     sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - kind: registry
     name: image
-    version: 0.25.7
-    sha: 1c6a3ce16143778e24df6f95365f12ed105425b22abefd289dd88a64bab59605
+    version: 0.25.8
+    sha: 529feb3e6769d234375c4cf1ee2ce713682b8e76538cb13f9fc23e1400a591e7
   - kind: registry
     name: image-webp
     version: 0.2.4

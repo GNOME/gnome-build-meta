@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:tinysparql/3.10/tinysparql-3.10.0.tar.xz
-  ref: fb0af98355ea1db700764cf4fa245884a199ca145ed42ed55f9a18c68552ca30
+  url: gnome_downloads:tinysparql/3.10/tinysparql-3.10.1.tar.xz
+  ref: 5a7f3e789db6671a550ed6280ed4f60a60bea77368da92be68dc7d8d7e230265
 # Need to be updated manually until we get a meson wrap source
 - kind: remote
   url: snowballstem:libstemmer_c-3.0.1.tar.gz

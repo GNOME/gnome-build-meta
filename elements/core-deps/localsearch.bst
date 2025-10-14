@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:localsearch/3.10/localsearch-3.10.0.tar.xz
-  ref: 58d66ea44aee1649c8d981f934373b83e1ab4a4a1a84ba0304f5af391e7e0080
+  url: gnome_downloads:localsearch/3.10/localsearch-3.10.1.tar.xz
+  ref: 5caef38160e0495dad8fd1555a6999f4d4d536d9d7eba18fd49ec177338c5dc2
 build-depends:
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
