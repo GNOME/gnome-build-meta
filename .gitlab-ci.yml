@@ -147,6 +147,8 @@ default:
   image:
     name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
+  # Not all our build runners have the required KVM setup to also run openQA atm
+  tags: [ "openqa" ]
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
