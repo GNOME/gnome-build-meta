@@ -4,6 +4,7 @@ set -eu
 
 args=()
 cmdline=()
+TYPE11=()
 
 print_help() {
     cat <<EOF
@@ -55,6 +56,16 @@ Options:
   --debug-glib               Enable debug logs for GLib
 
   --debug-systemd            Enable debug logs for systemd
+
+  --local-updates            Configure sysupdate to download from local
+                             repository provided by run-sysupdate-repo.sh.
+
+  --spice-app                Run a spice app.
+
+  --home-disk PATH           Also mount home disk as an image file
+
+  --home-disk-key PATH       Use public key for signing home disk. By default,
+                             it will take the local signing key.
 EOF
 }
 
@@ -106,6 +117,20 @@ while [ $# -gt 0 ]; do
         --debug-systemd)
             cmdline+=("systemd.log_level=debug")
             ;;
+        --local-updates)
+            local_updates=1
+            ;;
+        --spice-app)
+            spice_app=1
+            ;;
+        --home-disk)
+            shift
+            home_disk="$1"
+            ;;
+        --home-disk-key)
+            shift
+            home_disk_key="$1"
+            ;;
         --)
             shift
             args+=("$@")
@@ -124,6 +149,8 @@ done
 : ${BST:=bst}
 : ${ARCH:="x86_64"}
 : ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
+: ${VM_NAME:="${PWD}"}
+: ${GUEST_CID:=777}
 
 : ${IMAGE_ELEMENT:="gnomeos/live-image.bst"}
 
@@ -169,7 +196,7 @@ cleanup() {
         rm -rf "${cleanup_dirs[@]}"
     fi
 }
-trap cleanup EXIT
+trap cleanup EXIT INT
 
 if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.iso" ]; then
     mkdir -p "${STATE_DIR}"
@@ -243,26 +270,76 @@ fi
 
 truncate --size 50G "${STATE_DIR}/disk.img"
 
+if [ "${home_disk+set}" = set ]; then
+    QEMU_ARGS+=(-drive "if=none,id=home-disk,file=${home_disk},media=disk,format=raw,discard=on")
+    QEMU_ARGS+=(-device "virtio-blk-pci,drive=home-disk")
+
+    if [ "${home_disk_key+set}" ]; then
+        TYPE11+=("value=io.systemd.credential.binary:home.add-signing-key.host.public=$(base64 -w0 <"${home_disk_key}")")
+    else
+        TYPE11+=("value=io.systemd.credential.binary:home.add-signing-key.host.public=$(homectl get-signing-key | base64 -w0)")
+    fi
+
+    cmdline+=("gnome.initial-setup=0")
+fi
+
 if [ "${serial+set}" = set ]; then
     QEMU_ARGS+=(-serial stdio)
 fi
 
-QEMU_ARGS+=(-device virtio-vga-gl -display gtk,gl=on)
-QEMU_ARGS+=(-full-screen)
+QEMU_ARGS+=(-name "${VM_NAME}")
+
+QEMU_ARGS+=(-device virtio-vga-gl)
+if [ "${spice_app+set}" = set ]; then
+    QEMU_ARGS+=(-display spice-app,gl=on)
+    QEMU_ARGS+=(-device virtio-serial-pci
+                -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0
+                -chardev spicevmc,id=spicechannel0,name=vdagent)
+else
+    QEMU_ARGS+=(-display gtk,gl=on)
+    QEMU_ARGS+=(-full-screen)
+fi
+
 QEMU_ARGS+=(-device ich9-intel-hda)
 QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
 
-TYPE11=()
+QEMU_ARGS+=(-device vhost-vsock-pci,id=vhost-vsock-pci0,guest-cid="${GUEST_CID}")
+# We need to start sshd to create host keys
+cmdline+=("systemd.wants=sshd.service")
 
 if [ ${#cmdline[@]} -gt 0 ]; then
     TYPE11+=("value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]//,/,,}")
 fi
 
-if [ "${debug_glib+set}" = set ]; then
-    tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
-    cleanup_dirs+=("${tmpfiles}")
+tmpfiles_extra=()
 
+tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
+cleanup_dirs+=("${tmpfiles}")
+
+if [ "${local_updates+set}" = set ]; then
+    cat <<EOF >"${tmpfiles}"/tmpfiles-import-pubring.conf
+f~ /etc/systemd/import-pubring.pgp 0644 root root - $(base64 -w0 files/boot-keys/import-pubring.pgp)
+EOF
+
+    tmpfiles_extra+=("${tmpfiles}"/tmpfiles-import-pubring.conf)
+
+    cat <<EOF >"${tmpfiles}"/local.conf
+[Source]
+Path=http://10.0.2.2:8080
+EOF
+
+    for t in files/sysupdate/*.transfer; do
+        transfer="$(basename "${t}")"
+        cat <<EOF >"${tmpfiles}"/tmpfiles-local-transfer-"${transfer}".conf
+f~ /etc/sysupdate.d/${transfer}.d/local.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/local.conf)
+EOF
+        tmpfiles_extra+=("${tmpfiles}"/tmpfiles-local-transfer-"${transfer}".conf)
+   done
+
+fi
+
+if [ "${debug_glib+set}" = set ]; then
     cat <<EOF >"${tmpfiles}"/glib-debug.conf
 [Manager]
 DefaultEnvironment=G_MESSAGES_DEBUG=all
@@ -273,12 +350,18 @@ f~ /run/systemd/system.conf.d/glib-debug.conf 0644 root root - $(base64 -w0 "${t
 f~ /run/systemd/user.conf.d/glib-debug.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/glib-debug.conf)
 EOF
 
-    TYPE11+=("value=io.systemd.credential.binary:tmpfiles.extra=$(base64 -w0 "${tmpfiles}"/tmpfiles-glib-debug.conf)")
+    tmpfiles_extra+=("${tmpfiles}"/tmpfiles-glib-debug.conf)
+fi
+
+if [ ${#tmpfiles_extra[@]} -gt 0 ]; then
+    TYPE11+=("value=io.systemd.credential.binary:tmpfiles.extra=$(cat "${tmpfiles_extra[@]}" | base64 -w0)")
 fi
 
 if [ ${#TYPE11[@]} -gt 0 ]; then
     TYPE11ALL="$(IFS=,; echo "${TYPE11[*]}")"
     QEMU_ARGS+=(-smbios "type=11,${TYPE11ALL}")
 fi
+
+cleanup
 
 exec qemu-system-x86_64 "${QEMU_ARGS[@]}"
