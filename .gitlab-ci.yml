@@ -211,7 +211,7 @@ deploy-flatpak:
 
   - flat-manager-client --token-file "${REPO_TOKEN_FILE}" create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
   - flat-manager-client --token-file "${REPO_TOKEN_FILE}" push $(cat build.txt) repo/
-  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" commit --wait $(cat build.txt)
+  - flat-manager-client --token-file "${REPO_TOKEN_FILE}" commit --end-of-life="The GNOME 47 runtime is no longer supported as of October 15, 2025. Please ask your application developer to migrate to a supported platform." --wait $(cat build.txt)
   - flat-manager-client --token-file "${REPO_TOKEN_FILE}" publish --wait $(cat build.txt)
   after_script:
   - flat-manager-client --token-file "${REPO_TOKEN_FILE}" purge $(cat build.txt)
