@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libmanette.git
   track: main
-  ref: 0.2.11-36-g54f317a6b354bd90b11a6da97545d038db2498f2
+  ref: 0.2.11-39-g9b1b45e2aa3221938cd23e5f87a79b69e1996f64
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -14,6 +14,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - sdk/hidapi.bst
+- sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/libevdev.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
