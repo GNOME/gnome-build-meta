@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gom.git
   track: master
-  ref: 0.5.4-2-g80d0631e6ff4a3a5cfb7cea22a307288290d62bb
+  ref: 0.5.4-10-g4c74dc28681e87741dcff16d747b96acae9b86ff
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:
