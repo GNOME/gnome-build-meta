@@ -45,12 +45,12 @@ stages:
       changes:
         paths:
           # Buildstream
-          - "elements/*"
-          - "files/*"
-          - "include/*"
-          - "keys/*"
-          - "patches/*"
-          - "plugins/*"
+          - "elements/**/*"
+          - "files/**/*"
+          - "include/**/*"
+          - "keys/**/*"
+          - "patches/**/*"
+          - "plugins/**/*"
           - "project.conf"
           - ".gitlab-ci.yml"
 
