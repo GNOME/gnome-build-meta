@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: freedesktop:accountsservice/accountsservice.git
-  track: refs/tags/*
-  ref: 23.13.9-0-g57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d
+  track: main
+  ref: 23.13.9-76-g4a74a4c9aa0b9235f829d35098e891231e9f2b36
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -18,7 +18,3 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-
-variables:
-  local_flags: >-
-    -Wno-error=implicit-function-declaration

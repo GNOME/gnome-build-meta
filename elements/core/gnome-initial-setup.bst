@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-initial-setup.git
-  track: master
-  ref: 49.0-16-g1c189ee4522bca5f1fa6b404b7f4422d945ac137
+  url: gnome_gitlab:alatiera/gnome-initial-setup.git
+  track: alatiera/homed
+  ref: 49.0-24-g65e1ea7013bb3f311397a2628ae1591967542c23
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
