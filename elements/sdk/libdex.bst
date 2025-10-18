@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libdex.git
   track: main
-  ref: 1.0.0-33-g17b96f81de8ba93ed6e095999bc7c8430150d0a1
+  ref: 1.0.0-34-g5ba43355fe448210c0f020b5b1a92b7301651df9
 
 build-depends:
 - sdk/gi-docgen.bst
