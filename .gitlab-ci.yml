@@ -147,8 +147,16 @@ default:
   image:
     name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
+  extends: ".x86_64"
   # Not all our build runners have the required KVM setup to also run openQA atm
-  tags: [ "openqa" ]
+  tags:
+  - openqa
+  # We also need to copy the tags from the arch template as they
+  # don't get merged
+  # And !reference doesn't work for tags
+  # https://gitlab.com/gitlab-org/gitlab/-/issues/344455
+  - x86_64
+  - gnome-build-meta
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
@@ -426,7 +434,6 @@ cve_report:
 test-openqa-installer:
   extends:
   - .test-openqa-template
-  - .x86_64
   variables:
     TESTSUITES: "gnome_install"
   rules:
@@ -437,7 +444,6 @@ test-openqa-installer:
 test-openqa-desktop:
   extends:
   - .test-openqa-template
-  - .x86_64
   variables:
     TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
   rules:
