@@ -131,6 +131,7 @@ static bool mark_live() {
 
 static bool handle_live(const char *generator_path, bool in_initrd) {
         _cleanup_(fclosep) FILE* file = NULL;
+        _cleanup_(fclosep) FILE* file2 = NULL;
 
         if (in_initrd) {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
@@ -153,6 +154,11 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
                 }
                 fprintf(file, "[zram1]\nmount-point=/\nfs-type=btrfs\n");
                 fclosep(&file);
+
+                mkdir("run/systemd/homed.conf.d", 0777);
+                file2 = fopen("/run/systemd/homed.conf.d/00-force-subvolume.conf", "w");
+                fprintf(file2, "[Home]\nDefaultStorage=subvolume\n");
+                fclosep(&file2);
 
                 if (!mark_live())
                         return false;
