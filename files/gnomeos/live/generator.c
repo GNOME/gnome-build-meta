@@ -107,6 +107,7 @@ static void mark_live() {
 
 int main(int argc, char *argv[]) {
         _cleanup_(fclosep) FILE* file = NULL;
+        _cleanup_(fclosep) FILE* file2 = NULL;
         char *in_initrd_str;
         int in_initrd;
         bool is_live;
@@ -142,6 +143,11 @@ int main(int argc, char *argv[]) {
                 file = fopen("/run/systemd/zram-generator.conf.d/zram1.conf", "w");
                 fprintf(file, "[zram1]\nmount-point=/\nfs-type=btrfs\n");
                 fclosep(&file);
+
+                mkdir("run/systemd/homed.conf.d", 0777);
+                file2 = fopen("/run/systemd/homed.conf.d/00-force-subvolume.conf", "w");
+                fprintf(file2, "[Home]\nDefaultStorage=subvolume\n");
+                fclosep(&file2);
 
                 mark_live();
 
