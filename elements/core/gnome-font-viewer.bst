@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-font-viewer.git
   track: main
-  ref: 49.0-2-gca27452298f5b0dd5f188880aa71e9d0903644b6
+  ref: 49.0-3-g9e36083bf0ff1a13aa601426a0f3ffa3b635c160
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
