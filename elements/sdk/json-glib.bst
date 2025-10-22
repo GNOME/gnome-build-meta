@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:json-glib.git
   track: main
-  ref: 1.10.8-6-g8640ee10e89229ffa052523d96f3668429244539
+  ref: 1.10.8-10-g65ffd51a364ea21d92705cfb8446bcab5904f2a7
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

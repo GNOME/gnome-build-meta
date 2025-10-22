@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 49.0-4-gb59a69b2cce84aff2d43221d7b8771d2104e9e7e
+  ref: 49.0-10-gc6022e7b97f99e9680666aafbe7b9ffbf300918d
 - kind: cargo2
 
   ref:
@@ -44,6 +44,10 @@ sources:
     name: async-fs
     version: 2.1.3
     sha: 09f7e37c0ed80b2a977691c47dae8625cfb21e205827106c64f7c588766b2e50
+  - kind: registry
+    name: async-global-executor
+    version: 3.1.0
+    sha: 13f937e26114b93193065fd44f507aa2e9169ad0cdabbb996920b1fe1ddea7ba
   - kind: registry
     name: async-io
     version: 2.5.0
@@ -346,16 +350,16 @@ sources:
     sha: dc7c43cff6a7dc43821e45ebf172399437acd6716fa2186b6852d2b397bf622d
   - kind: registry
     name: glycin
-    version: 3.0.0
-    sha: 3b70ebfc9e7c504e99580122d58174a3976f086ec55834692e44dd7489d36ed9
+    version: 3.0.4
+    sha: 70036c016aba916ccf079a5f0149027c4016d6a5fdaae09019a77e93062f2bd3
   - kind: registry
     name: glycin-common
     version: 1.0.0
     sha: a2382f0d91d42f750486e7c8316cba4781404e574458b5f28d91daff1656e73b
   - kind: registry
     name: glycin-utils
-    version: 4.0.0
-    sha: 127d5f71bf307364e30ef0b6720a7a9557b2b642a933c2e048ac5f5fba2dc1c3
+    version: 4.0.4
+    sha: 7dfec0cd29d5ecfb1dd723868e22e2c49441020f35d5f14307018ff0a1679e2f
   - kind: registry
     name: gobject-sys
     version: 0.21.1
@@ -949,10 +953,6 @@ sources:
     version: 0.1.3
     sha: 5e6ad25900d524eaabdbbb96d20b4311e1e7ae1699af4fb28c17ae66c80d798a
   - kind: registry
-    name: windows-link
-    version: 0.2.0
-    sha: 45e46c0661abb7180e7b9c281db115305d49ca1709ab8242adf09666d2173c65
-  - kind: registry
     name: windows-sys
     version: 0.52.0
     sha: 282be5f36a8ce781fad8c8ae18fa3f9beff57ec1b52cb3de0789201425d9a33d
@@ -960,10 +960,6 @@ sources:
     name: windows-sys
     version: 0.60.2
     sha: f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb
-  - kind: registry
-    name: windows-sys
-    version: 0.61.0
-    sha: e201184e40b2ede64bc2ea34968b28e33622acdbbf37104f0e4a33f7abe657aa
   - kind: registry
     name: windows-targets
     version: 0.52.6
