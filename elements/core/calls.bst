@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:calls.git
   track: main
-  ref: v49.1.1-0-g798c698463aa5781d56f2f77bd7abd97129a2c23
+  ref: v49.1.1-13-gf98f2871decb2219fef481f775ddacb7b56392e8
 - kind: git_module
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   path: subprojects/libcall-ui
@@ -22,8 +22,10 @@ depends:
 - core-deps/evolution-data-server.bst
 - core-deps/feedbackd.bst
 - core-deps/folks.bst
+- core-deps/gmobile.bst
 - core-deps/gom.bst
 - core-deps/libpeas.bst
+- core-deps/mobile-broadband-provider-info.bst
 - core-deps/sofia-sip.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
