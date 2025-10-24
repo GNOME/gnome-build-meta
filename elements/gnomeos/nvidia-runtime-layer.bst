@@ -89,6 +89,10 @@ config:
     mkdir -p /var/tmp
 
   - |
+    # Work-around broken copy-or-link of buildbox
+    find /output -type d -exec chmod go-w {} ';'
+
+  - |
     TMPDIR=/var/tmp \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \

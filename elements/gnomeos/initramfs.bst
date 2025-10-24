@@ -48,6 +48,10 @@ config:
     esac
 
   - |
+    # Work-around broken copy-or-link of buildbox
+    find /initramfs-root -type d -exec chmod go-w {} ';'
+
+  - |
     (
       cd /initramfs-root
       find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | xz --check=crc32 --lzma2=dict=1MiB ${XZFLAGS} >/initramfs.img

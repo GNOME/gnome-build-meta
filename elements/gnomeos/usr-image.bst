@@ -352,7 +352,12 @@ config:
     mkdir -p /var/tmp
 
   - |
+    # Work-around broken copy-or-link of buildbox
+    find /sysroot -type d -exec chmod go-w {} ';'
+
+  - |
     if [ "$(stat -c %a /sysroot/usr/bin)" != "755" ]; then
+      stat -c %a /sysroot/usr/bin
       echo "We have a bad builder here!" 1>&2
       exit 1
     fi

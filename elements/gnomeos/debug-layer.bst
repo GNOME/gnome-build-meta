@@ -2,6 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
+- freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
 - gnomeos/os-release-user.bst
@@ -59,6 +60,10 @@ config:
 
   - |
     mkdir -p /var/tmp
+
+  - |
+    # Work-around broken copy-or-link of buildbox
+    find /sysroot-debug -type d -exec chmod go-w {} ';'
 
   - |
     TMPDIR=/var/tmp \

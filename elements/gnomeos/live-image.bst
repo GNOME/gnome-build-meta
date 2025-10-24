@@ -2,6 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/dosfstools.bst
@@ -77,6 +78,10 @@ config:
     cat <<EOF >>definitions/20-usr-verity.conf
     UUID=${usr_verity_uuid}
     EOF
+
+  - |
+    # Work-around broken copy-or-link of buildbox
+    find /sysroot -type d -exec chmod go-w {} ';'
 
   - |
     SYSTEMD_LOG_LEVEL=debug \
