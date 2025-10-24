@@ -352,6 +352,12 @@ config:
     mkdir -p /var/tmp
 
   - |
+    if [ "$(stat -c %a /sysroot/usr/bin)" != "755" ]; then
+      echo "We have a bad builder here!" 1>&2
+      exit 1
+    fi
+
+  - |
     TMPDIR=/var/tmp \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
