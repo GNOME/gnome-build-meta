@@ -1,7 +1,7 @@
-From fba07874eaad30f05588e237f443cc27e6e2224a Mon Sep 17 00:00:00 2001
+From 0c553e620ff30d90eed33475481e5be4cf70d96f Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Thu, 9 Oct 2025 12:17:11 +0200
-Subject: [PATCH 4/4] linux.bst: Update to 6.17.2
+Subject: [PATCH 4/5] linux.bst: Update to 6.17.5
 
 ---
  elements/include/linux.yml  |  2 +-
@@ -9,7 +9,7 @@ Subject: [PATCH 4/4] linux.bst: Update to 6.17.2
  2 files changed, 4 insertions(+), 8 deletions(-)
 
 diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index ce860509f..1b6cb2b14 100644
+index ce860509f..00b409282 100644
 --- a/elements/include/linux.yml
 +++ b/elements/include/linux.yml
 @@ -4,7 +4,7 @@ sources:
@@ -17,7 +17,7 @@ index ce860509f..1b6cb2b14 100644
    exclude:
    - '*-rc*'
 -  ref: v6.16.8-0-g62dae019823123ce3baa50e680219e2beb9a63a5
-+  ref: v6.17.2-0-g449d48b1b99fdaa076166e200132705ac2bee711
++  ref: v6.17.5-0-g99efbd4259f384718dd16a7423d8e944396b65d4
  - kind: patch_queue
    path: patches/linux
  - kind: patch_queue
