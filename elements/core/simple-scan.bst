@@ -21,3 +21,6 @@ depends:
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/libgusb.bst
+
+runtime-depends:
+- core-deps/sane-airscan.bst
