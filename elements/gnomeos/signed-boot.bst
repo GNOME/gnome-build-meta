@@ -74,9 +74,14 @@ config:
     case '%{arch}' in
       x86_64)
         MICROCODE=("--microcode=/usr/lib/modules/${version}/microcode.img")
+        DEVICETREES=()
       ;;
       *)
         MICROCODE=()
+        DEVICETREES=(
+        "--devicetree-auto=/boot/dtbs/qcom/qcm6490-fairphone-fp5.dtb"
+        "--devicetree-auto=/boot/dtbs/rockchip/rk3588-rock-5b.dtb"
+        )
       ;;
     esac
 
@@ -112,7 +117,7 @@ config:
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img" \
-      "${MICROCODE[@]}"
+      "${MICROCODE[@]}" "${DEVICETREES[@]}"
 
 sources:
 - kind: local
