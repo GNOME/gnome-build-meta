@@ -211,7 +211,6 @@ config:
     C /etc/man_db.conf
     C /etc/mke2fs.conf
     C /etc/modules-load.d
-    C /etc/moduli
     C /etc/netconfig
     C /etc/openldap
     C /etc/opensc.conf
@@ -235,8 +234,9 @@ config:
     C /etc/shells
     C /etc/skel
     C /etc/speech-dispatcher
-    C /etc/ssh_config
-    C /etc/sshd_config
+    C /etc/ssh/moduli
+    C /etc/ssh/ssh_config
+    C /etc/ssh/sshd_config
     C /etc/ssl
     C /etc/sudo.conf
     C /etc/sudo_logsrvd.conf

@@ -1,7 +1,7 @@
-From d61e24ab18fb3d79b8b6187c5807a38cb056bd8a Mon Sep 17 00:00:00 2001
+From 139b7a80e91bbd08b4bc6b9cb547ae90f0876610 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 24 Aug 2025 23:39:36 +0100
-Subject: [PATCH 3/5] linux: Backport patches for OnePlus 6's panel
+Subject: [PATCH 3/8] linux: Backport patches for OnePlus 6's panel
 
 Those patches come from either mainline or from the Linaro's branch for
 sdm845 which should get mainlined soon.
