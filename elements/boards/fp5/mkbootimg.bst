@@ -18,4 +18,4 @@ sources:
 - kind: git_repo
   url: android:platform/system/tools/mkbootimg
   track: android-platform-*
-  ref: android-platform-15.0.0_r10-0-gc40a04c0620c5a0dab87497857805b8d9b8a827a
+  ref: android-platform-15.0.0_r11-0-gc40a04c0620c5a0dab87497857805b8d9b8a827a

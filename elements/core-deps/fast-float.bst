@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fastfloat/fast_float.git
   track: 'v*'
-  ref: v8.0.2-0-g50a80a73ab2ab256ba1c3bf86923ddd8b4202bc7
+  ref: v8.1.0-0-g88b1e5321c6918cbe091afd76728296290668403
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

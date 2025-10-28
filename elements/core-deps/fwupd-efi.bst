@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd-efi.git
   track: '*.*'
-  ref: 1.7-0-gcfd0be286a9b050c1aa4bfa3f0820256903a264a
+  ref: 1.8-0-g8572a93e81e7110b88445d1907fdd73982557347
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:World/chatty.git
   track: main
-  ref: v0.8.8-19-g82aad9f864bfd5b08c5be8b311ffb39a4bb0020b
+  ref: v0.8.8-30-g9a52ea352b933992f06779001370ba4c796de096
 - kind: git_repo
   url: purism:Librem5/libcmatrix.git
   directory: subprojects/libcmatrix

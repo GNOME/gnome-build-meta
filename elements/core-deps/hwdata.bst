@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:vcrhonek/hwdata.git
   track: 'v*'
-  ref: v0.399-0-g7ba0e54565843faee300ca885699e4c42ed674b2
+  ref: v0.400-0-gf5ce55230206fd647bbcae42012094eb04640740
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

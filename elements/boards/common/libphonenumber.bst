@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:google/libphonenumber
   track: v*
-  ref: v8.13.39-0-gff7fbcb477d829a7e5087fea85d9831e5b8dc9cd
+  ref: v9.0.17-0-g543b9e8d513753f61024b3112fc6b3280ee3d6e2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

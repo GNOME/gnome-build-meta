@@ -40,7 +40,7 @@ sources:
   url: github:u-boot/u-boot.git
   track: v*
   exclude:
-    - "*-rc*"
-  ref: v2025.07-0-ge37de002fac3895e8d0b60ae2015e17bb33e2b5b
+  - "*-rc*"
+  ref: v2025.10-0-ge50b1e8715011def8aff1588081a2649a2c6cd47
 - kind: patch
   path: patches/u-boot/nested-esp.patch

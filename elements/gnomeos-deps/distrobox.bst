@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:89luca89/distrobox.git
   track: '*.*'
-  ref: 1.8.1.2-0-g3b9f0e8d3d8bd102e1636a22afffafe00777d30b
+  ref: 1.8.2.0-0-g216ea8b25757f81ed238ee0c6a1808d8169e78ca
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
