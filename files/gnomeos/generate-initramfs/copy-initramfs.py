@@ -218,6 +218,11 @@ def reallinkpath(path):
     dirname = os.path.realpath(dirname)
     return os.path.join(dirname, os.path.basename(path))
 
+def is_already_copied(source, target, targetroot):
+    target = reallinkpath(target)
+    dest = os.path.normpath(os.path.join(targetroot, os.path.relpath(target, '/')))
+    return os.path.lexists(dest)
+
 def copy(source, target, targetroot):
     target = reallinkpath(target)
     dest = os.path.normpath(os.path.join(targetroot, os.path.relpath(target, '/')))
@@ -258,6 +263,9 @@ def main():
 
     while len(queue) > 0:
         source, target = queue.pop()
+        if is_already_copied(source, target, args.targetroot):
+            continue
+
         if target in dependencies:
             continue
         dependencies[target] = set()
