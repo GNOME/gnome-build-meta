@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mobile-broadband-provider-info.git
   track: main
-  ref: 20250613-18-g4cb30d912bf4dca4b5283b224c02c62ca5047d1b
+  ref: 20250613-20-g225c28eb51d77b76b6a5e377bef308766dfeb5d7
 
 build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
