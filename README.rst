@@ -145,6 +145,45 @@ has qemu and everything else needed.
       $  bst -o arch aarch64 build sdk/gjs.bst
 
 3. Get a build or runtime shell for testing::
+
       $  bst -o arch aarch64 build --shell sdk/gjs.bst
       $  bst -o arch aarch64 shell sdk/gjs.bst
+
+Developing and Modifying components
+~~~~~~~~
+
+If you want to test a local change, you can use workspaces to instruct Buildstream to
+build the element from there (If you don't have an existing checkout, omit --no-checkout).
+::
+    $ bst workspace open --no-checkout core/gnome-initial-setup.bst --directory ../gnome-initial-setup/
+    $ cd ../gnome-initial-setup/
+    $ cat .bstproject.yaml
+    projects:
+    - project-path: /home/alatiera/Projects/gnome-build-meta
+      element-name: core/gnome-initial-setup.bst
+    format-version: 1
+    $ bst build core/gnome-initial-setup.bst
+
+Afterwards you can drop into a runtime shell with following command
+::
+    $ bst -o toolbox true shell core/gnome-initial-setup.bst
+    $ /usr/libexec/gnome-initial-setup
+
+You can also get a build shell to inspect the environment the similarly.
+Note that only the specified dependencies are staged. If you need a utility for debugging (vim, strace, etc) you will have to add them as build-dependencies.
+::
+    $ bst shell --build core/gnome-initial-setup.bst
+
+If you are developing on GNOME OS already, you can build systemd-sysext images and overlay them on the system like this:
+
+Note that sysexts are applied alphabetically, so you might want to prefix them in order to avoid being overwritten by other images that will be loaded.
+::
+    $ bst build sdk/gnome-text-editor.bst
+    $ sysext-build-element --ignore-release --verbose zz-text-editor sdk/gnome-text-editor.bst
+    $ run0 sysext-add --persistent zz-gnome-text-editor.sysext.raw
+    $ run0 systemd-sysext refresh
+
+And optionally reload services if applicable to your usecase.
+::
+    $ run0 systemctl daemon-reload
 
