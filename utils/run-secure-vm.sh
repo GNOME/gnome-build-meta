@@ -357,6 +357,26 @@ if [ ${#tmpfiles_extra[@]} -gt 0 ]; then
     TYPE11+=("value=io.systemd.credential.binary:tmpfiles.extra=$(cat "${tmpfiles_extra[@]}" | base64 -w0)")
 fi
 
+tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
+cleanup_dirs+=("${tmpfiles}")
+
+if ! [ -r ssh/ephemeral.pub ] || ! [ -r ssh/ephemeral ]; then
+    rm -rf ssh
+    (umask 0077 &&
+         mkdir -p ssh &&
+         ssh-keygen -t ed25519 -f ssh/ephemeral -N '')
+    cat ssh/ephemeral.pub
+fi
+
+TYPE11+=("value=io.systemd.credential.binary:ssh.ephemeral-authorized_keys-all=$(base64 -w0 <ssh/ephemeral.pub)")
+
+cat <<EOF
+When the machine is started, you may connect using:
+
+ssh -i ssh/ephemeral root@vsock/${GUEST_CID}
+
+EOF
+
 if [ ${#TYPE11[@]} -gt 0 ]; then
     TYPE11ALL="$(IFS=,; echo "${TYPE11[*]}")"
     QEMU_ARGS+=(-smbios "type=11,${TYPE11ALL}")
