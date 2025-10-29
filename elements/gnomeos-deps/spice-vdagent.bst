@@ -4,9 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:spice/linux/vd_agent
   track: spice-vdagent*
-  ref: spice-vdagent-0.22.1-0-ga9bb1752cede50757c47f6f8e1f52fb6bed93cd6
-- kind: patch_queue
-  path: patches/spice-vdagent/
+  ref: spice-vdagent-0.23.0-0-g761770bf10455563375a022315039779bf8aac36
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
