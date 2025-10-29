@@ -9,6 +9,7 @@ import subprocess
 import sys
 import io
 import zstd
+import json
 
 class ParseError(RuntimeError):
     pass
@@ -100,6 +101,40 @@ def get_dependencies_libs(elffile, library_resolver):
     for tag in dynamic.iter_tags(type='DT_NEEDED'):
         yield library_resolver.resolve_library(tag.needed)
 
+class MissingFeature(RuntimeError):
+    pass
+
+def get_dependencies_dlopen(elffile, library_resolver):
+    dlopen_note = elffile.get_section_by_name('.note.dlopen')
+    if dlopen_note is None:
+        return
+    if not isinstance(dlopen_note, elftools.elf.sections.NoteSection):
+        return
+    ignores_var = os.environ.get("DLOPEN_NOTE_IGNORE")
+    if ignores_var is not None:
+        ignores = set(ignores_var.split(':'))
+    else:
+        ignores = set()
+
+    for note in dlopen_note.iter_notes():
+        if note['n_type'] != 0x407c0c0a or note['n_name'] != 'FDO':
+            continue
+        doc = json.loads(note['n_desc'].decode('utf-8').rstrip('\0'))
+        for feature in doc:
+            name = feature.get('feature')
+            if name in ignores:
+                continue
+            found = False
+            for soname in feature.get('soname', []):
+                resolved = library_resolver.resolve_library(soname)
+                if os.path.exists(resolved):
+                    found = True
+                    yield resolved
+                    break
+            if not found:
+                description = feature.get('description')
+                raise MissingFeature(f'{name}: {description}')
+
 def get_dependencies_modules(elffile, module_resolver):
     modinfo = elffile.get_section_by_name('.modinfo')
     if modinfo is None:
@@ -119,6 +154,7 @@ def get_dependencies_modules(elffile, module_resolver):
 def get_dependencies_elf(file, module_resolver, library_resolver):
     elf = elftools.elf.elffile.ELFFile(file)
     yield from get_dependencies_libs(elf, library_resolver)
+    yield from get_dependencies_dlopen(elf, library_resolver)
     yield from get_dependencies_modules(elf, module_resolver)
     yield from get_dependencies_interp(elf)
 

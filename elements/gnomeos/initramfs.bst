@@ -14,6 +14,7 @@ environment:
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
   XZFLAGS: -T%{max-jobs}
+  DLOPEN_NOTE_IGNORE: archive:fido2:qrencode:ip4tc
 
 environment-nocache:
 - XZFLAGS

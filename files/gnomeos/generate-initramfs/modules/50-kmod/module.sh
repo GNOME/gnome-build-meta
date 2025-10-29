@@ -47,16 +47,9 @@ MODULES_BY_NAME=(
     goodix-berlin-spi
 )
 
-FILES=(
-    /usr/lib/${multiarch}/libkmod.so.2
-)
-
 install() {
     for b in "${BINARIES[@]}"; do
         install_file "/usr/bin/${b}"
-    done
-    for f in "${FILES[@]}"; do
-        install_file "${f}"
     done
 
     for name in ${MODULES_BY_NAME[@]}; do
