@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gdm.git
   track: main
-  ref: 49.1-4-g54a0590378ece4b2dd7ada87a33adc740ed7c480
+  ref: 49.1-5-g9480ae374a47eb99759314c0de7559a64e7541e6
 - kind: local
   path: files/gdm
   directory: gdm-config
