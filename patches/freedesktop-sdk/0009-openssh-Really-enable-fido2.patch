@@ -1,0 +1,65 @@
+From 07bd5a57ed356b5e78f57a5278e609df75468e1b Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Wed, 29 Oct 2025 22:38:43 +0100
+Subject: [PATCH 9/9] openssh: Really enable fido2
+
+First the builtin part was missing. And we were missing dependencies
+from fido. Also this disable static fido2.
+---
+ elements/components/libfido2.bst | 11 +++++++++++
+ elements/components/openssh.bst  |  4 +++-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+
+diff --git a/elements/components/libfido2.bst b/elements/components/libfido2.bst
+index 651a55c36..18595e17e 100644
+--- a/elements/components/libfido2.bst
++++ b/elements/components/libfido2.bst
+@@ -7,6 +7,17 @@ build-depends:
+ depends:
+ - components/libcbor.bst
+ 
++variables:
++  cmake-local: >-
++    -DBUILD_STATIC_LIBS=FALSE
++
++public:
++  bst:
++    split-rules:
++      devel:
++        (>):
++        - '%{libdir}/libfido2.so'
++
+ sources:
+ - kind: git_repo
+   url: github:Yubico/libfido2.git
+diff --git a/elements/components/openssh.bst b/elements/components/openssh.bst
+index a8f0b952a..57736861b 100644
+--- a/elements/components/openssh.bst
++++ b/elements/components/openssh.bst
+@@ -2,13 +2,14 @@ kind: autotools
+ 
+ build-depends:
+ - public-stacks/buildsystem-autotools.bst
+-- components/libfido2.bst
+ - components/linux-pam.bst
+ - components/openssl.bst
+ 
+ depends:
+ - bootstrap/libxcrypt.bst
+ - public-stacks/runtime-minimal.bst
++- components/libfido2.bst
++- components/systemd-libs.bst # libfido2 depends on udev
+ 
+ runtime-depends:
+ - components/grep.bst
+@@ -30,6 +31,7 @@ variables:
+     --with-pam-service=sshd
+     --without-zlib-version-check
+     --with-pid-dir=/run
++    --with-security-key-builtin
+     %{arch_options}
+ 
+ config:
+-- 
+2.51.0
+

@@ -1,7 +1,7 @@
-From f82ebaa64cce3e491c44426111dae373b864d92d Mon Sep 17 00:00:00 2001
+From 7ace87299464ca4de6808f9d8790e3ea6cfaaef6 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sat, 25 Oct 2025 15:11:09 +0200
-Subject: [PATCH 5/8] components/linux-firmware.bst: Update to 2025102
+Subject: [PATCH 5/9] components/linux-firmware.bst: Update to 2025102
 
 ---
  elements/components/linux-firmware.bst | 2 +-

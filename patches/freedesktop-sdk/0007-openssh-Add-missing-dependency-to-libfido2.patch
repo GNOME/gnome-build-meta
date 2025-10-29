@@ -1,7 +1,7 @@
-From 38fc95dd6797e785e0db715cf8b8ee24a9cee9cd Mon Sep 17 00:00:00 2001
+From bfb65b3f6907c34d63bf01e34d32f1d125ec37c1 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 26 Oct 2025 11:07:13 +0100
-Subject: [PATCH 7/8] openssh: Add missing dependency to libfido2
+Subject: [PATCH 7/9] openssh: Add missing dependency to libfido2
 
 This is needed to use fido2 cards as ssh key.
 ---
