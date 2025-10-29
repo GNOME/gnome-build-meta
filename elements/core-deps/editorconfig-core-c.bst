@@ -4,10 +4,13 @@ sources:
 - kind: git_repo
   url: github:editorconfig/editorconfig-core-c.git
   track: 'v*'
-  ref: v0.12.9-0-ge082c947e7f7b14240195d55c060a6e1eda1b0a1
+  ref: v0.12.10-0-g99d757d197677d270644791f13fffe2644659985
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  local_flags: -Wno-error=stringop-truncation
