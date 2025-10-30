@@ -1,7 +1,8 @@
 kind: stack
 
 depends:
-- gnomeos/deps-devel.bst
+- gnomeos-deps/deps.bst
+- gnomeos-deps/deps-devel.bst
 
 - core.bst
 - sdk-platform.bst
@@ -12,8 +13,8 @@ depends:
 public:
   bst:
     integration-commands:
-    - groupadd root -r -g 0
-    - useradd root -rm -u 0 -g 0 -d /root
+    # - groupadd root -r -g 0
+    # - useradd root -rm -u 0 -g 0 -d /root
     - |
       cat <<EOF >>/etc/sudoers
       %wheel ALL=(ALL) NOPASSWD: ALL

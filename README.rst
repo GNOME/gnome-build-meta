@@ -80,17 +80,17 @@ Build OCI images locally:
 
 1. Build the elements::
 
-      $ bst build oci/platform.bst oci/sdk.bst oci/core.bst
+      $ bst build oci/platform.bst oci/sdk.bst oci/gnomeos-devel.bst
 
 2. Import them into Podman::
 
       $ bst artifact checkout --tar - oci/platform.bst | podman load
       $ bst artifact checkout --tar - oci/sdk.bst | podman load
-      $ bst artifact checkout --tar - oci/core.bst | podman load
+      $ bst artifact checkout --tar - oci/gnomeos-devel.bst | podman load
 
 3. (Optional) Create a toolbox from the core image::
 
-      $ bst artifact checkout --tar - oci/core.bst | podman load
+      $ bst artifact checkout --tar - oci/gnomeos-devel.bst | podman load
       $ toolbox create core-nightly -i quay.io/gnome_infrastructure/gnome-build-meta:core-nightly
       $ toolbox enter core-nightly
 

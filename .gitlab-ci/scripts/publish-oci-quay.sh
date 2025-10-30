@@ -12,8 +12,12 @@ if [ "$OCI_BRANCH" = "master" ]; then
     tags+=("latest" "nightly")
 fi
 
+# FIXME:
+# retag gnome-devel with this for backwards compat
+# 'quay.io/gnome_infrastructure/gnome-build-meta:core-%{branch}'
+
 for tag in "${tags[@]}"; do
-    for name in platform sdk core; do
+    for name in platform sdk gnomeos gnomeos-devel; do
         echo "Uploading $name:$tag"
         podman push "$OCI_IMAGE_NAME:$name-$OCI_BRANCH" docker://"$OCI_IMAGE_NAME:$name-$tag"
     done
