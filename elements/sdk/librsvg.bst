@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.2-15-gf3a5945e2e2d3579087a27a248368a05a1efba5c
+  ref: 2.61.2-22-g333877a5b254c0c5881f239797c3ac2d3be141b0
 - kind: cargo2
   ref:
   - kind: registry
