@@ -166,9 +166,9 @@ fi
 
 if [ "${buildid+set}" = set ]; then
     mkdir -p "${STATE_DIR}/builds"
-    if ! [ -f "${STATE_DIR}/builds/live_${buildid}.iso" ]; then
-        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/live_${buildid}-${ARCH}.iso" -O "${STATE_DIR}/builds/live_${buildid}.iso.tmp"
-        mv "${STATE_DIR}/builds/live_${buildid}.iso.tmp" "${STATE_DIR}/builds/live_${buildid}.iso"
+    if ! [ -f "${STATE_DIR}/builds/gnome_os_${buildid}.iso" ]; then
+        wget "https://1270333429.rsc.cdn77.org/nightly/${buildid}/gnome_os_${buildid}-${ARCH}.iso" -O "${STATE_DIR}/builds/gnome_os_${buildid}.iso.tmp"
+        mv "${STATE_DIR}/builds/gnome_os_${buildid}.iso.tmp" "${STATE_DIR}/builds/gnome_os_${buildid}.iso"
     fi
 fi
 
@@ -204,7 +204,7 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.iso" ]; then
     cleanup_dirs+=("${checkout}")
 
     if [ "${buildid+set}" = set ]; then
-        cp "${STATE_DIR}/builds/live_${buildid}.iso" "${checkout}/disk.iso"
+        cp "${STATE_DIR}/builds/gnome_os_${buildid}.iso" "${checkout}/disk.iso"
     else
         make -C files/boot-keys generate-keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
