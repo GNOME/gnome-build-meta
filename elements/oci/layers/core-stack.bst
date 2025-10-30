@@ -49,6 +49,12 @@ depends:
 
 - freedesktop-sdk.bst:vm/mesa-default.bst
 
+# Add the kernel to experiment with things
+- freedesktop-sdk.bst:components/linux.bst
+- freedesktop-sdk.bst:components/linux-firmware.bst
+- gnomeos/initramfs.bst
+- gnomeos/deps-all.bst
+
 - core.bst
 - sdk-platform.bst
 - sdk.bst
