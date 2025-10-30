@@ -13,8 +13,12 @@ if [ "$OCI_BRANCH" = "master" ]; then
 fi
 
 for tag in "${tags[@]}"; do
-    for name in platform sdk core; do
+    for name in platform sdk gnomeos gnomeos-devel; do
         echo "Uploading $name:$tag"
         podman push --retry 3 "$OCI_IMAGE_NAME:$name-$OCI_BRANCH" docker://"$OCI_IMAGE_NAME:$name-$tag"
     done
+    # This is the tag we were using for the image before !4255
+    # Tag and push it for backwards compatibility
+    podman tag "$OCI_IMAGE_NAME:gnomeos-devel-$OCI_BRANCH" "$OCI_IMAGE_NAME:core-$tag"
+    podman push --retry 3  "$OCI_IMAGE_NAME:core-$tag"
 done

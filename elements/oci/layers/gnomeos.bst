@@ -1,11 +1,12 @@
 kind: compose
 
 build-depends:
-- oci/layers/core-stack.bst
-- oci/cleanup-debug.bst
+- oci/layers/gnomeos-stack.bst
 
 config:
   exclude:
-  - locale
+  - debug
+  - devel
+  - doc
   - extra
   - static-blocklist

@@ -2,11 +2,11 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:oci/oci-builder.bst
-- oci/layers/core-init-scripts.bst
-- filename: oci/sdk.bst
+- oci/layers/gnomeos-devel-init-scripts.bst
+- filename: oci/gnomeos.bst
   config:
     location: /parent
-- filename: oci/layers/core.bst
+- filename: oci/layers/gnomeos-devel.bst
   config:
     location: /layer
 
@@ -35,12 +35,12 @@ config:
       parent:
         image: /parent
       layer: /layer
-      comment: "Import Core layer from GNOME OS"
+      comment: "Import the OS-devel layer from GNOME OS"
       config:
         Labels:
           'com.github.containers.toolbox': 'true'
           'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:core-%{branch}'
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:gnomeos-devel-%{branch}'
     EOF

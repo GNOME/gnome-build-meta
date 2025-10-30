@@ -1,12 +1,11 @@
 kind: stack
 
 depends:
-- oci/integration/extrafs.bst
-- sdk.bst
-- sdk/os-release.bst
-- freedesktop-sdk.bst:components/sudo.bst
+- oci/layers/platform-stack.bst
+
 - freedesktop-sdk.bst:components/shadow.bst
-- freedesktop-sdk.bst:vm/mesa-default.bst
+- freedesktop-sdk.bst:components/sudo.bst
+- sdk.bst
 
 public:
   bst:

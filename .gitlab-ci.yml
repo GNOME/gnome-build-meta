@@ -276,10 +276,11 @@ deploy-oci:
   # Sometimes podman push will timeout
   retry: 2
   script:
-  - ${BST_NO_PUSH} ${ARCH_OPT} build oci/platform.bst oci/sdk.bst oci/core.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build oci/platform.bst oci/sdk.bst oci/gnomeos.bst oci/gnomeos-devel.bst
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/platform.bst | podman load
   - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/sdk.bst | podman load
-  - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/core.bst | podman load
+  - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/gnomeos.bst | podman load
+  - ${BST} ${ARCH_OPT} artifact checkout --tar - oci/gnomeos-devel.bst | podman load
   - |
     if [ -n "$OCI_REGISTRY_PASSWORD" ] && [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
         ./.gitlab-ci/scripts/publish-oci-quay.sh

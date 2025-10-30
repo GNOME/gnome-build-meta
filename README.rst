@@ -57,42 +57,7 @@ To build the GNOME OS ISO installer  locally:
 OCI Images
 ~~~~~~~~~~
 
-OCI images are built and pushed to the container registry through the CI job
-'deploy-oci'. Currently there are three images 'platform', 'sdk' and 'core':
-
-1. platform - the same ``/usr`` tree as the ``org.gnome.Platform`` flatpak runtime
-
-2. sdk - the same as the ``org.gnome.Sdk`` flatpak runtime and ``toolbox`` compatible
-
-3. core - core devel OS tree including the dependencies to build all (most)
-   of the 'core' elements in 'core.bst', but without the cli tools and
-   utilities (podman, toolbox, bst, etc)
-
-These images can be found in the container registry `quay.io <https://quay.io/repository/gnome_infrastructure/gnome-build-meta?tab=tags&tag=latest>`_.
-
-While they are "toolbox compatible", there isn't any update mechanism in them,
-so you should be aware that the containers created locally for development will
-become stale and you will need to remove and recreate them with an up to date
-image often. Their main usecase is for gitlab-ci which always pulls the latest
-image.
-
-Build OCI images locally:
-
-1. Build the elements::
-
-      $ bst build oci/platform.bst oci/sdk.bst oci/core.bst
-
-2. Import them into Podman::
-
-      $ bst artifact checkout --tar - oci/platform.bst | podman load
-      $ bst artifact checkout --tar - oci/sdk.bst | podman load
-      $ bst artifact checkout --tar - oci/core.bst | podman load
-
-3. (Optional) Create a toolbox from the core image::
-
-      $ bst artifact checkout --tar - oci/core.bst | podman load
-      $ toolbox create core-nightly -i quay.io/gnome_infrastructure/gnome-build-meta:core-nightly
-      $ toolbox enter core-nightly
+We provide OCI images for development. See the Readme.md in the oci directory.
 
 Continuous Integration
 ----------------------
