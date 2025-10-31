@@ -1,14 +1,5 @@
-From f34426a10bd36a8bfe1f1282ba8b6a7a525f2436 Mon Sep 17 00:00:00 2001
-From: Valentin David <me@valentindavid.com>
-Date: Fri, 31 Oct 2025 10:28:19 +0100
-Subject: [PATCH 6/6] components/linux: add initial support for fp5
-
----
- files/linux/fdsdk-config.sh | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
-
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 7b603e488..e882e836a 100644
+index 34dea4b..d4c9a7c 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
 @@ -44,6 +44,27 @@ case "$arch" in
@@ -39,7 +30,7 @@ index 7b603e488..e882e836a 100644
      ;;
  esac
  
-@@ -782,6 +803,7 @@ module TYPEC_NVIDIA_ALTMODE
+@@ -788,6 +809,7 @@ module TYPEC_NVIDIA_ALTMODE
  module TYPEC_FUSB302
  module TYPEC_TCPM
  module TYPEC_TPS6598X
@@ -47,7 +38,7 @@ index 7b603e488..e882e836a 100644
  
  # USB audio
  module SND_USB_AUDIO
-@@ -1719,6 +1741,9 @@ case "$arch" in
+@@ -1717,6 +1739,9 @@ case "$arch" in
          module LPC_SCH
          module MFD_INTEL_PMC_BXT
      ;;
@@ -57,7 +48,7 @@ index 7b603e488..e882e836a 100644
  esac
  module MFD_AXP20X_I2C
  
-@@ -2540,6 +2565,9 @@ case "$arch" in
+@@ -2535,6 +2560,9 @@ case "$arch" in
          module LEDS_APU
          module LEDS_INTEL_SS4200
      ;;
@@ -67,6 +58,3 @@ index 7b603e488..e882e836a 100644
  esac
  
  enable CPU_FREQ
--- 
-2.51.0
-
