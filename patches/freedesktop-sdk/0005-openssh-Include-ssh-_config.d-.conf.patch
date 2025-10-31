@@ -1,7 +1,7 @@
-From 434b277dbfd4b51ca05ace51e5f912d8d04bbced Mon Sep 17 00:00:00 2001
+From b4eb684892aad3826e256f88f17d3d91732df832 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 26 Oct 2025 16:06:02 +0100
-Subject: [PATCH 8/8] openssh: Include ssh*_config.d/*.conf
+Subject: [PATCH 5/6] openssh: Include ssh*_config.d/*.conf
 
 Most distributions include system-wide configuration fragments from
 and some software expect it: systemd, libvirt.
