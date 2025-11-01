@@ -5,15 +5,15 @@ build-depends:
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/devel-layer-signature.bst
+- filename: gnomeos/devel-layer.bst
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/snapd-layer-signature.bst
+- filename: gnomeos/snapd-layer.bst
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/debug-layer-signature.bst
+- filename: gnomeos/debug-layer.bst
   strict: true
   config:
     location: "%{install-root}"
@@ -23,11 +23,11 @@ build-depends:
 - arch in ["x86_64"]:
     build-depends:
       (>):
-      - filename: gnomeos/nvidia-modules-layer-signature.bst
+      - filename: gnomeos/nvidia-modules-layer.bst
         strict: true
         config:
           location: "%{install-root}"
-      - filename: gnomeos/nvidia-runtime-layer-signature.bst
+      - filename: gnomeos/nvidia-runtime-layer.bst
         strict: true
         config:
           location: "%{install-root}"

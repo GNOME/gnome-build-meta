@@ -1,4 +1,4 @@
-kind: script
+kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
@@ -14,42 +14,51 @@ build-depends:
   config:
     location: '/sysroot-devel'
 
+sources:
+- kind: local
+  path: files/boot-keys/SYSEXT.key
+- kind: local
+  path: files/boot-keys/SYSEXT.crt
+
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   repart-seed: 53752261-a988-42fb-a585-b35ae0ab2af4
+  strip-binaries: ''
 
 environment:
-  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
+  EROFS_OPTIONS: -z zstd --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
-  FAKECAP_DB: /fakecap
+  FAKECAP_DB: '%{build-root}/fakecap'
 
 environment-nocache:
 - EROFS_WORKERS
 
 config:
-  commands:
-  - mkdir /fakecap
+  build-commands:
+  - mkdir fakecap
+  - cp -a /sysroot sysroot
+  - cp -a /sysroot-devel sysroot-devel
   - |
     prepare-image.sh \
-       --sysroot /sysroot \
+       --sysroot sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
-       --sysroot /sysroot-devel \
+       --sysroot sysroot-devel \
        --initscripts /etc/fdsdk/initial_scripts-devel \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot --nodepmod >'%{install-root}/vars.txt'
+       --noroot --noboot --nodepmod >/dev/null
 
   - |
-    mkdir -p /tmp/output/etc
-    make-layer /sysroot/etc /sysroot-devel/etc /tmp/output/etc/etc
+    mkdir -p output/etc
+    make-layer sysroot/etc sysroot-devel/etc output/etc/etc
 
   - |
-    cat >/sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
+    cat >sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
     L /etc/apparmor.d
     # freedesktop-sdk.bst:components/perf.bst
     # FIXME: move to /usr/share/bash-completion/completions/
@@ -78,23 +87,23 @@ config:
     EOF
 
   - |
-    find /tmp/output/etc
+    find output/etc
 
   - |
-    mkdir -p /tmp/output/factory
-    for p in $(grep -v "^#" </sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
-      mkdir -p "$(dirname "/tmp/output/factory${p}")"
-      cp -rlTP "/tmp/output/etc${p}" "/tmp/output/factory${p}"
-      rm -rf "/tmp/output/etc${p}"
+    mkdir -p output/factory
+    for p in $(grep -v "^#" <sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
+      mkdir -p "$(dirname "output/factory${p}")"
+      cp -rlTP "output/etc${p}" "output/factory${p}"
+      rm -rf "output/etc${p}"
     done
 
   - |
-    find /tmp/output/etc/etc -depth -type d -empty -delete
+    find 'output/etc/etc' -depth -type d -empty -delete
 
   - |
     unknown=()
-    for p in /tmp/output/etc/etc/*; do
-      rel="${p#/tmp/output/etc}"
+    for p in output/etc/etc/*; do
+      rel="${p#output/etc}"
       case "${rel}" in
         /etc/systemd|/etc/ld.so.cache)
           # Those are created another way
@@ -113,7 +122,7 @@ config:
     fi
 
   - |
-    mkdir -p /sysroot-devel/usr/lib/extension-release.d
+    mkdir -p sysroot-devel/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -122,59 +131,45 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >/sysroot-devel/usr/lib/extension-release.d/extension-release.devel_%{image-version}
+    cat <<EOF >sysroot-devel/usr/lib/extension-release.d/extension-release.devel_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    mkdir -p /tmp/output
-    make-layer /sysroot/usr /sysroot-devel/usr /tmp/output/usr
+    mkdir -p output
+    make-layer sysroot/usr sysroot-devel/usr output/usr
 
   - |
-    mkdir -p /tmp/output/usr/share/factory/etc
-    cp -rlTP /tmp/output/factory /tmp/output/usr/share/factory
+    mkdir -p output/usr/share/factory/etc
+    cp -rlTP output/factory output/usr/share/factory
 
   - |
-    mkdir -p /tmp/output/etc
-    cp -T /sysroot-devel/usr/lib/os-release /tmp/output/etc/os-release
-
-  - mkdir -p definitions
-  - |
-    cat <<EOF >definitions/10-devel.conf
-    [Partition]
-    Type=root
-    Label=gnomeos_usr_dev_%A
-    CopyFiles=/usr
-    Minimize=best
-    Format=erofs
-    Compression=zstd
-    SplitName=usr
-    AddValidateFS=no
-    EOF
+    mkdir -p output/etc
+    cp -T sysroot-devel/usr/lib/os-release output/etc/os-release
 
   - |
-    mkdir -p /var/tmp
+    mkdir -p tmp
 
   - |
-    TMPDIR=/var/tmp \
+    TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
-        --definitions=definitions \
+        --make-ddi=sysext \
         --empty=create \
         --size=auto \
         --dry-run=no \
         --discard=no \
         --offline=true \
         --no-pager \
-        --split=true \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --root=/tmp/output \
-        devel.raw \
-        --json=pretty \
-        >repart.json
+        --copy-source=output \
+        devel-%{systemd-arch}_%{image-version}.raw
 
+  install-commands:
   - |
-    mv devel.usr.raw %{install-root}
+    mv devel-%{systemd-arch}_%{image-version}.raw %{install-root}

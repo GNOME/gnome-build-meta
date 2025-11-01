@@ -1,4 +1,4 @@
-kind: script
+kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
@@ -14,38 +14,47 @@ build-depends:
   config:
     location: '/sysroot-snapd'
 
+sources:
+- kind: local
+  path: files/boot-keys/SYSEXT.key
+- kind: local
+  path: files/boot-keys/SYSEXT.crt
+
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6
   repart-seed: 42a68ae3-36dd-4549-a0e6-47404842b63e
+  strip-binaries: ''
 
 environment:
-  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
+  EROFS_OPTIONS: -z zstd --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
-  FAKECAP_DB: /fakecap
+  FAKECAP_DB: '%{build-root}/fakecap'
 
 environment-nocache:
 - EROFS_WORKERS
 
 config:
-  commands:
-  - mkdir /fakecap
+  build-commands:
+  - mkdir fakecap
+  - cp -a /sysroot sysroot
+  - cp -a /sysroot-snapd sysroot-snapd
   - |
     prepare-image.sh \
-       --sysroot /sysroot \
+       --sysroot sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
-       --sysroot /sysroot-snapd \
+       --sysroot sysroot-snapd \
        --initscripts /etc/fdsdk/initial_scripts-snapd \
        --seed "%{sysroot-seed}" \
-       --noroot --noboot --nodepmod >'%{install-root}/vars.txt'
+       --noroot --noboot --nodepmod >/dev/null
 
   - |
-    cat >/sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
+    cat >sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
     L /etc/apparmor
     L /etc/apparmor.d
     L /etc/profile.d/snapd.sh
@@ -54,7 +63,7 @@ config:
     EOF
 
   - |
-    mkdir -p /sysroot-snapd/usr/lib/extension-release.d
+    mkdir -p sysroot-snapd/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -63,64 +72,50 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >/sysroot-snapd/usr/lib/extension-release.d/extension-release.snapd_%{image-version}
+    cat <<EOF >sysroot-snapd/usr/lib/extension-release.d/extension-release.snapd_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    mkdir -p /tmp/output
-    make-layer /sysroot/usr /sysroot-snapd/usr /tmp/output/usr
+    mkdir -p output
+    make-layer sysroot/usr sysroot-snapd/usr output/usr
 
   - |
-    mkdir -p /tmp/output/usr/share/factory/etc
-    cp -rT /sysroot-snapd/etc/apparmor /tmp/output/usr/share/factory/etc/apparmor
-    cp -rT /sysroot-snapd/etc/apparmor.d /tmp/output/usr/share/factory/etc/apparmor.d
-    mkdir -p /tmp/output/usr/share/factory/etc/profile.d
-    cp -rT /sysroot-snapd/etc/profile.d/snapd.sh /tmp/output/usr/share/factory/etc/profile.d/snapd.sh
-    mkdir -p /tmp/output/usr/share/factory/etc/xdg/autostart
-    cp -rT /sysroot-snapd/etc/xdg/autostart/snap-userd-autostart.desktop /tmp/output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
+    mkdir -p output/usr/share/factory/etc
+    cp -rT sysroot-snapd/etc/apparmor output/usr/share/factory/etc/apparmor
+    cp -rT sysroot-snapd/etc/apparmor.d output/usr/share/factory/etc/apparmor.d
+    mkdir -p output/usr/share/factory/etc/profile.d
+    cp -rT sysroot-snapd/etc/profile.d/snapd.sh output/usr/share/factory/etc/profile.d/snapd.sh
+    mkdir -p output/usr/share/factory/etc/xdg/autostart
+    cp -rT sysroot-snapd/etc/xdg/autostart/snap-userd-autostart.desktop output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
 
   - |
-    mkdir -p /tmp/output/etc
-    cp -T /sysroot-snapd/usr/lib/os-release /tmp/output/etc/os-release
-
-  - mkdir -p definitions
-  - |
-    cat <<EOF >definitions/10-snapd.conf
-    [Partition]
-    Type=root
-    Label=gnomeos_usr_snapd_%A
-    CopyFiles=/usr
-    Minimize=best
-    Format=erofs
-    Compression=zstd
-    SplitName=root
-    AddValidateFS=no
-    EOF
+    mkdir -p output/etc
+    cp -T sysroot-snapd/usr/lib/os-release output/etc/os-release
 
   - |
-    mkdir -p /var/tmp
+    mkdir -p tmp
 
   - |
-    TMPDIR=/var/tmp \
+    TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
-        --definitions=definitions \
         --empty=create \
+        --make-ddi=sysext \
         --size=auto \
         --dry-run=no \
         --discard=no \
         --offline=true \
         --no-pager \
-        --split=true \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --root=/tmp/output \
-        snapd.raw \
-        --json=pretty \
-        >repart.json
+        --copy-source=output \
+        snapd-%{systemd-arch}_%{image-version}.raw
 
+  install-commands:
   - |
-    mv snapd.root.raw %{install-root}
+    mv snapd-%{systemd-arch}_%{image-version}.raw %{install-root}
