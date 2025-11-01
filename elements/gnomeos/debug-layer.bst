@@ -1,4 +1,4 @@
-kind: script
+kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
@@ -9,23 +9,31 @@ build-depends:
   config:
     location: '/sysroot-debug'
 
+sources:
+- kind: local
+  path: files/boot-keys/SYSEXT.key
+- kind: local
+  path: files/boot-keys/SYSEXT.crt
+
 variables:
   repart-seed: 0dc2e590-c162-4ed3-992f-75ddb3fdbb65
+  strip-binaries: ''
 
 environment:
-  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E fragments,fragdedupe=inode
+  EROFS_OPTIONS: -z zstd --all-time -T %{filesystem-time} -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
-  FAKECAP_DB: /fakecap
+  FAKECAP_DB: '%{build-root}/fakecap'
 
 environment-nocache:
 - EROFS_WORKERS
 
 config:
-  commands:
-  - mkdir /fakecap
+  build-commands:
+  - mkdir fakecap
+  - cp -a /sysroot-debug sysroot-debug
   - |
-    mkdir -p /sysroot-debug/usr/lib/extension-release.d
+    mkdir -p sysroot-debug/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -34,50 +42,36 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >/sysroot-debug/usr/lib/extension-release.d/extension-release.debug
+    cat <<EOF >sysroot-debug/usr/lib/extension-release.d/extension-release.debug
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    cp /etc/os-release /sysroot-debug/etc/os-release
-
-  - mkdir -p definitions
-  - |
-    cat <<EOF >definitions/10-debug.conf
-    [Partition]
-    Type=root
-    Label=gnomeos_usr_dev_%A
-    CopyFiles=/usr
-    Minimize=best
-    Format=erofs
-    Compression=zstd
-    SplitName=usr
-    AddValidateFS=no
-    EOF
+    cp /etc/os-release sysroot-debug/etc/os-release
 
   - |
-    mkdir -p /var/tmp
+    mkdir -p tmp
 
   - |
-    TMPDIR=/var/tmp \
+    TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
-        --definitions=definitions \
+        --make-ddi=sysext \
         --empty=create \
         --size=auto \
         --dry-run=no \
         --discard=no \
         --offline=true \
         --no-pager \
-        --split=true \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --root=/sysroot-debug \
-        debug.raw \
-        --json=pretty \
-        >repart.json
+        --copy-source=sysroot-debug \
+        debug-%{systemd-arch}_%{image-version}.raw
 
+  install-commands:
   - |
-    mv debug.usr.raw %{install-root}
+    mv debug-%{systemd-arch}_%{image-version}.raw %{install-root}/

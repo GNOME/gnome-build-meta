@@ -1,4 +1,4 @@
-kind: script
+kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
@@ -9,23 +9,31 @@ build-depends:
   config:
     location: '/sysroot-nvidia-modules'
 
+sources:
+- kind: local
+  path: files/boot-keys/SYSEXT.key
+- kind: local
+  path: files/boot-keys/SYSEXT.crt
+
 variables:
   repart-seed: a19b0f25-42ac-4c92-8921-d8d4079ec140
+  strip-binaries: ''
 
 environment:
-  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E fragments,fragdedupe=inode
+  EROFS_OPTIONS: -z zstd --all-time -T %{filesystem-time} -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
-  FAKECAP_DB: /fakecap
+  FAKECAP_DB: '%{build-root}/fakecap'
 
 environment-nocache:
 - EROFS_WORKERS
 
 config:
-  commands:
-  - mkdir /fakecap
+  build-commands:
+  - mkdir fakecap
+  - cp -a /sysroot-nvidia-modules sysroot-nvidia-modules
   - |
-    mkdir -p /sysroot-nvidia-modules/usr/lib/extension-release.d
+    mkdir -p sysroot-nvidia-modules/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -34,54 +42,40 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >/sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version}
+    cat <<EOF >sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     SYSEXT_SCOPE=initrd system
     EOF
-    cp /sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version} \
-       /sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules
+    cp sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version} \
+       sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules
 
   - |
-    mkdir /sysroot-nvidia-modules/etc
-    cp /etc/os-release /sysroot-nvidia-modules/etc/os-release
-
-  - mkdir -p definitions
-  - |
-    cat <<EOF >definitions/10-nvidia-modules.conf
-    [Partition]
-    Type=root
-    Label=gnomeos_usr_dev_%A
-    CopyFiles=/usr
-    Minimize=best
-    Format=erofs
-    Compression=zstd
-    SplitName=usr
-    AddValidateFS=no
-    EOF
+    mkdir sysroot-nvidia-modules/etc
+    cp /etc/os-release sysroot-nvidia-modules/etc/os-release
 
   - |
-    mkdir -p /var/tmp
+    mkdir -p tmp
 
   - |
-    TMPDIR=/var/tmp \
+    TMPDIR='%{build-root}/tmp' \
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
-        --definitions=definitions \
+        --make-ddi=sysext \
         --empty=create \
         --size=auto \
         --dry-run=no \
         --discard=no \
         --offline=true \
         --no-pager \
-        --split=true \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --root=/sysroot-nvidia-modules \
-        nvidia-modules.raw \
-        --json=pretty \
-        >repart.json
+        --copy-source=sysroot-nvidia-modules \
+        nvidia-modules-%{systemd-arch}_%{image-version}.raw
 
+  install-commands:
   - |
-    mv nvidia-modules.usr.raw %{install-root}
+    mv nvidia-modules-%{systemd-arch}_%{image-version}.raw %{install-root}
