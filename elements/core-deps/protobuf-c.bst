@@ -11,7 +11,11 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:components/protobuf.bst
 
-variables:
-  conf-local: >-
-    --disable-protoc
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{bindir}/*'

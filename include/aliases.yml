@@ -55,6 +55,7 @@ aliases:
   webkitgtk: https://webkitgtk.org/releases/
 
   # git aliases go here
+  codeberg: https://codeberg.org/
   freedesktop: https://gitlab.freedesktop.org/
   github: https://github.com/
   gitlab: https://gitlab.com/
