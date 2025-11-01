@@ -82,7 +82,7 @@ depends:
 - freedesktop-sdk.bst:components/sof-firmware.bst
 - freedesktop-sdk.bst:components/steam-devices.bst
 - freedesktop-sdk.bst:components/wireless-regdb-bin.bst
-- freedesktop-sdk.bst:components/iio-sensor-proxy.bst
+- gnomeos-deps/iio-sensor-proxy.bst
 
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/less.bst
