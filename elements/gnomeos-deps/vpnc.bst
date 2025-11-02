@@ -8,9 +8,8 @@ sources:
 variables:
   make-args: >-
     PREFIX='%{prefix}'
+    SBINDIR='%{sbindir}'
     SCRIPT_PATH='/usr/share/vpnc-script'
-  make: make %{make-args}
-  make-install: make -j1 DESTDIR='%{install-root}' %{make-args}
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst
