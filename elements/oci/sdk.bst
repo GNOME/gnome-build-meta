@@ -39,6 +39,8 @@ config:
       config:
         Labels:
           'com.github.containers.toolbox': 'true'
+          'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+          'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
       index-annotations:
         'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:sdk-%{branch}'
     EOF
