@@ -182,6 +182,9 @@ config:
     # gnomeos-deps/firewalld.bst
     L /etc/firewalld/firewalld.conf
 
+    # gnomeos-deps/vpnc.bst
+    L /etc/vpnc/default.conf
+
     # FIXME: sort those and make them symlinks
     C /etc/dconf
     C /etc/debuginfod
