@@ -31,6 +31,10 @@ config:
         image: /parent
       layer: /layer
       comment: "Import platform layer from GNOME SDK"
+      config:
+        Labels:
+          'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+          'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
       index-annotations:
         'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:platform-%{branch}'
     EOF
