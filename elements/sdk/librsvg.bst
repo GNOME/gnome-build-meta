@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.2-25-g66fb23debe6d1cded85fa008daf21668e2697d89
+  ref: 2.61.3-0-g65d2189af6d7bd30529a25dc7f8b3c2490d5db61
 - kind: cargo2
   ref:
   - kind: registry
@@ -145,12 +145,12 @@ sources:
     sha: 26b52a9543ae338f279b96b0b9fed9c8093744685043739079ce85cd58f289a6
   - kind: registry
     name: cc
-    version: 1.2.43
-    sha: 739eb0f94557554b3ca9a86d2d37bebd49c5e6d0c1d2bda35ba5bdac830befc2
+    version: 1.2.44
+    sha: 37521ac7aabe3d13122dc382493e20c9416f299d2ccd5b3a5340a2570cdeb0f3
   - kind: registry
     name: cfg-expr
-    version: 0.20.3
-    sha: 1a2c5f3bf25ec225351aa1c8e230d04d880d3bd89dea133537dafad4ae291e5c
+    version: 0.20.4
+    sha: 9acd0bdbbf4b2612d09f52ba61da432140cb10930354079d0d53fafc12968726
   - kind: registry
     name: cfg-if
     version: 1.0.4
@@ -1045,12 +1045,12 @@ sources:
     sha: 728a70f3dbaf5bab7f0c4b1ac8d7ae5ea60a4b5549c8a5914361c99147a709d2
   - kind: registry
     name: system-deps
-    version: 7.0.6
-    sha: c236d79f20808ca0084bfcd1a2fd6c686216b7f7a0c4fc39deb0cbf5eaab3713
+    version: 7.0.7
+    sha: 48c8f33736f986f16d69b6cb8b03f55ddcad5c41acc4ccc39dd88e84aa805e7f
   - kind: registry
     name: target-lexicon
-    version: 0.13.2
-    sha: e502f78cdbb8ba4718f566c418c52bc729126ffd16baee5baa718cf25dd5a69a
+    version: 0.13.3
+    sha: df7f62577c25e07834649fc3b39fafdc597c0a3527dc1c60129201ccfcbaa50c
   - kind: registry
     name: tempfile
     version: 3.23.0
@@ -1165,8 +1165,8 @@ sources:
     sha: 06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821
   - kind: registry
     name: version-compare
-    version: 0.2.0
-    sha: 852e951cb7832cb45cb1169900d19760cfa39b82bc0ea9c0e5a14ae88411c98b
+    version: 0.2.1
+    sha: 03c2856837ef78f57382f06b2b8563a2f512f7185d732608fd9176cb3b8edf0e
   - kind: registry
     name: version_check
     version: 0.9.5
