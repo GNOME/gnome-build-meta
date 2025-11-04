@@ -22,6 +22,7 @@ depends:
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
+- freedesktop-sdk.bst:components/skopeo.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
 - freedesktop-sdk.bst:components/vmlinuxh.bst
