@@ -57,7 +57,18 @@ then retry.
 
 ### No modem
 
-Restart ModemManager.
+For the modem to still work after suspend without restarting ModemManager,
+you need to use `--test-quick-suspend-resume` to its command line. For this,
+run `systemctl edit ModemManager.service` and write:
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/ModemManager --test-quick-suspend-resume
+```
+
+If the modem does not appear in other cases, maybe try to restart
+ModemManager.
 
 ### No SIM
 
