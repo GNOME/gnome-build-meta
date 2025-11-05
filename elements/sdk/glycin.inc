@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.4-5-ga42c6dc9e44f3dbac1b76ef85633f9d0d097c36e
+  ref: 2.0.5-0-g714b20f48c55738b0e3ff44ef0f3fc68aef3462e
 - kind: cargo2
   ref:
   - kind: registry
@@ -1295,8 +1295,8 @@ sources:
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
   - kind: registry
     name: zune-jpeg
-    version: 0.4.20
-    sha: fc1f7e205ce79eb2da3cd71c5f55f3589785cb7c79f6a03d1c8d1491bda5d089
+    version: 0.4.21
+    sha: 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
   - kind: registry
     name: zvariant
     version: 5.7.0

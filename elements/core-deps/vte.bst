@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vte.git
   track: master
-  ref: 0.81.0-38-g9d49c0f55b01f71fb3b2b079ff4d518f4fcdc2ed
+  ref: 0.81.0-39-gd8650a4fdb844538dfa7f8f5c7658e7dae7349f4
 
 build-depends:
 - sdk/gi-docgen.bst
