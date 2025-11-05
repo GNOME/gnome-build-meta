@@ -45,6 +45,7 @@ depends:
 - gnomeos-deps/ibus-anthy.bst
 - gnomeos-deps/ibus-hangul.bst
 - gnomeos-deps/ibus-libpinyin.bst
+- gnomeos-deps/ibus-typing-booster.bst
 
 - gnomeos-deps/NetworkManager-openconnect.bst
 - gnomeos-deps/NetworkManager-openvpn.bst
