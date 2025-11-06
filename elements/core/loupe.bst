@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 49.1-3-ge777805524fd81e69aeba0689169da66fec5ad77
+  ref: 49.1-4-g7c8ef48a5b9610def1cbb6a849a728c6183cb7a9
 - kind: cargo2
 
   ref:

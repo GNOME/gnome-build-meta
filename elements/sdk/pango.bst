@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pango.git
   track: main
-  ref: 1.57.0-8-g0f27f82b162c3d03dea064fad63004ec9cf876b4
+  ref: 1.57.0-10-gec1c5d62ea0138c33a3ceaf458adf0bcf13cd912
 
 build-depends:
 - sdk/gi-docgen.bst
