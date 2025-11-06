@@ -1,16 +1,19 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:gdm.git
   track: main
-  ref: 49.1-7-g6720f5e25b5c2cded36154f63dfbdb832b21b93b
+  ref: 49.1-32-g8a5d59769f8c8486660d59ad5f8d09dbd738e32b
 - kind: local
   path: files/gdm
   directory: gdm-config
+
 build-depends:
 - core-deps/libcheck.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/accountsservice.bst
 - core-deps/dconf.bst
@@ -19,6 +22,7 @@ depends:
 - core-deps/upower.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   sysusersdir: '%{prefix}/lib/sysusers.d'
   pamdir: '%{sysconfdir}/pam.d'
@@ -29,14 +33,12 @@ variables:
     -Dplymouth=enabled
     -Drun-dir=/run/gdm
     -Dselinux=disabled
-    -Dxdmcp=disabled
 
 config:
   install-commands:
     (>):
     - mkdir -p %{install-root}%{sysusersdir}
-    - install -m 644 gdm-config/gdm-sysusers.conf 
-      %{install-root}%{sysusersdir}/gdm.conf
+    - install -m 644 gdm-config/gdm-sysusers.conf %{install-root}%{sysusersdir}/gdm.conf
 
     - mkdir -p %{install-root}%{pamdir}
     - |
