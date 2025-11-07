@@ -19,7 +19,16 @@ public:
       cat <<EOF >>/etc/sudoers
       %wheel ALL=(ALL) NOPASSWD: ALL
       EOF
+
+    - rm -rf /usr/local /srv /home
+    - mkdir -p /var /sysroot /boot
+
+    - ln -s /var/home /home
+    - ln -s /var/roothome /root
+    - ln -s /var/srv /srv
+    - ln -s sysroot/ostree ostree
+    - ln -s /var/usrlocal /usr/local
+
     - mkdir -p /media
-    - mkdir -p /home
     - touch /etc/machine-id
     - groupadd -r wheel
