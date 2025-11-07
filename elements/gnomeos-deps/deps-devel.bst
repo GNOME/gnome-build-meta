@@ -27,6 +27,9 @@ depends:
 - freedesktop-sdk.bst:components/_private/bpf.bst
 - freedesktop-sdk.bst:components/vmlinuxh.bst
 
+# Include /usr/src and System.map for the kernel
+- gnomeos-deps/kernel-devel.bst
+
 # Common build deps that do not make it to the runtime
 - core-deps/python-argcomplete.bst
 - core-deps/umockdev.bst
