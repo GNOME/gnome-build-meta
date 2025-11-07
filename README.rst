@@ -80,7 +80,7 @@ Build OCI images locally:
 
 1. Build the elements::
 
-      $ bst build build oci/platform.bst oci/sdk.bst oci/core.bst
+      $ bst build oci/platform.bst oci/sdk.bst oci/core.bst
 
 2. Import them into Podman::
 
