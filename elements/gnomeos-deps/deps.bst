@@ -1,14 +1,16 @@
 kind: stack
 
 depends:
+# This is core.bst without the mobile and dev-tools categories
 - core/meta-gnome-core-apps.bst
 - core/meta-gnome-core-os-services.bst
 - core/meta-gnome-core-shell.bst
+- sdk-platform.bst
+
 - core/systemd-presets.bst
 - gnomeos-deps/preset-all.bst
 - incubator/meta-gnome-incubator-apps.bst
 - gnomeos-deps/gnome-mimeapps.bst
-- sdk-platform.bst
 
 - freedesktop-sdk.bst:components/xdg-desktop-portal.bst
 - core-deps/xdg-desktop-portal-gnome.bst
