@@ -5,6 +5,7 @@ depends:
 - core/meta-gnome-core-os-services.bst
 - core/meta-gnome-core-shell.bst
 - core/systemd-presets.bst
+- gnomeos-deps/preset-all.bst
 - incubator/meta-gnome-incubator-apps.bst
 - gnomeos-deps/gnome-mimeapps.bst
 - sdk-platform.bst
@@ -28,6 +29,8 @@ depends:
 - gnomeos-deps/pcrlock-config.bst
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos-deps/hidraw-udev.bst
+- gnomeos-deps/vte-config.bst
+- gnomeos-deps/ld-config.bst
 
 - gnomeos-deps/alsa-ucm-conf.bst
 - gnomeos-deps/android-udev-rules.bst
@@ -54,6 +57,9 @@ depends:
 - gnomeos-deps/noto-cjk.bst
 - gnomeos-deps/words.bst
 
+- gnomeos-deps/efitools-maybe.bst
+- gnomeos-deps/mokutil.bst
+
 # For gvfs
 - gnomeos-deps/wsdd.bst
 
@@ -65,6 +71,7 @@ depends:
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/bash-config.bst
+- freedesktop-sdk.bst:components/btrfs-progs.bst
 - freedesktop-sdk.bst:components/ccid.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/man-db.bst
@@ -80,6 +87,7 @@ depends:
 - freedesktop-sdk.bst:components/less.bst
 - freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/vim.bst
+- gnomeos-deps/nano-default-editor.bst
 
 - freedesktop-sdk.bst:components/iproute2.bst
 - freedesktop-sdk.bst:components/iputils.bst
