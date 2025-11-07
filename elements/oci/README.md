@@ -30,11 +30,13 @@ They are built and pushed to the (container registry [quay.io)](https://quay.io/
 - GNOME OS: Mirror of the OS /usr tree
     - Includes Locales
     - Toolbox compatible
+    - Bootc compatible
 - GNOME OS Devel: The Development System Extension on top of the OS image
     - Includes Locales
     - Includes Docs
     - Includes Debug Symbols (Until we have debuginfod)
     - Toolbox compatible
+    - Bootc compatible
 
 ## Build OCI images locally:
 
@@ -73,3 +75,21 @@ You can use the container images with toolbox or distrobox as an easy way to cre
 ## Caveats
 
 Toolbox containers are updated using an update mechanism inside the container that will directly modify the container filesystem. GNOME OS does not have such mechanism. When used in combination with Toolbox you will need to re-create the container if you want to update it and the toolchain it includes.
+
+
+## Bootc
+
+While some of the OCI images are compatible with `bootc` its not a supported distribution channel. This is only for testing reasons and there are be no plans of supporting a GNOME OS `bootc` image.
+
+We think [Discoverable Disk Image](https://uapi-group.org/specifications/specs/discoverable_disk_image/) and systemd is a better fit for our usecase and requirements.
+
+The only supported channel is and will remain the DDI images found in `elements/gnomeos`.
+
+More details on the subject can be found in this [Thread](https://discourse.gnome.org/t/why-did-gnome-os-choose-systemd-sysupdate-over-bootc/24642/2).
+
+To generate and test a bootc image you will need the following:
+
+```bash
+./utils/generate-bootc-image.sh gnomeos /tmp
+./utils/run-secure-vm.sh --image /tmp/bootable.img
+```

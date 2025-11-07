@@ -68,7 +68,6 @@ depends:
 - freedesktop-sdk.bst:components/wireplumber.bst
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
-- freedesktop-sdk.bst:vm/config/useradd-default.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/bash-config.bst
