@@ -1,4 +1,8 @@
 install() {
+    if [ "${INITRD_MODE-sysupdate}" != sysupdate ]; then
+        exit 0
+    fi
+
     install_file_at_path "${moddir}/gen-recovery-key.sh" "/usr/bin/gen-recovery-key"
     install_file_at_path "${moddir}/gnomeos.conf" "/usr/lib/systemd/system/systemd-repart.service.d/gnomeos.conf"
 
