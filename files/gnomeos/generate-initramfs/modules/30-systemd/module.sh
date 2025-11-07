@@ -113,7 +113,6 @@ UNITS+=(
     initrd.target.wants/systemd-pcrphase-initrd.service
     systemd-poweroff.service
     systemd-repart.service
-    systemd-repart.service.d/live.conf
     initrd-root-fs.target.wants/systemd-repart.service
     sysinit.target.wants/systemd-repart.service
     systemd-reboot.service
@@ -141,7 +140,6 @@ UNITS+=(
     systemd-vconsole-setup.service
     systemd-volatile-root.service
     systemd-tpm2-setup-early.service
-    systemd-tpm2-setup-early.service.d/live.conf
     sysinit.target.wants/systemd-tpm2-setup-early.service
 )
 

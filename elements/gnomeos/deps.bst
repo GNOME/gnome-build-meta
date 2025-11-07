@@ -15,6 +15,7 @@ depends:
 - gnomeos/systemd-pcrlock-workaround.bst
 - gnomeos/public-keys.bst
 - gnomeos/signed-boot-common.bst
+- freedesktop-sdk.bst:vm/config/useradd-default.bst
 
 (?):
 - arch in ["x86_64"]:
