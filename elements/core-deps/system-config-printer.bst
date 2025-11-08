@@ -7,7 +7,6 @@ sources:
   ref: b1a69e1b4ec2add569a87aeca811a37c5361ee6ae327ec852b79e64223e34bee
 
 build-depends:
-- core-deps/intltool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
