@@ -55,10 +55,6 @@ config:
   - |
     # Those files may be coming from systemd.
 
-    # This one is a bit better than the one we provide.
-    # FIXME: we should maybe backport things to it.
-    rm /sysroot/etc/nsswitch.conf
-
     # This one is a fallback. We should start with en_US.UTF-8 set rather than C.UTF-8
     rm /sysroot/usr/share/factory/etc/locale.conf
 
