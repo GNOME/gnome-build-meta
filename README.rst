@@ -2,6 +2,7 @@
    :target: https://gnome.pages.gitlab.gnome.org/gnome-build-meta/release-contents.html
    :alt: CVE reports
 
+====================
 GNOME Build Metadata
 ====================
 
@@ -22,12 +23,12 @@ git push options to create a merge request.::
   $ git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin -u HEAD
 
 Build outputs
--------------
+=============
 
 Some of the possible build outputs are documented below.
 
 Flatpak runtimes
-~~~~~~~~~~~~~~~~
+----------------
 
 To build a runtime locally, for debugging:::
 
@@ -37,7 +38,7 @@ To build a runtime locally, for debugging:::
   $ flatpak install testrepo org.gnome.Platform
 
 GNOME OS
-~~~~~~~~
+--------
 
 To build the GNOME OS ISO installer  locally:
 
@@ -55,7 +56,7 @@ To build the GNOME OS ISO installer  locally:
       $ bst artifact checkout gnomeos/live-image.bst --directory ./iso
 
 OCI Images
-~~~~~~~~~~
+----------
 
 OCI images are built and pushed to the container registry through the CI job
 'deploy-oci'. Currently there are three images 'platform', 'sdk' and 'core':
@@ -128,7 +129,7 @@ The following is a summary of what is being exported by this repository CI pipel
      - :code:`podman pull quay.io/gnome_infrastructure/gnome-build-meta:core-47`
 
 Build for different architectures
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 It's possible to build for another architecture using BuildStream and Qemu
 
@@ -150,7 +151,7 @@ has qemu and everything else needed.
       $  bst -o arch aarch64 shell sdk/gjs.bst
 
 Developing and Modifying components
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 If you want to test a local change, you can use workspaces to instruct Buildstream to
 build the element from there (If you don't have an existing checkout, omit --no-checkout).::
