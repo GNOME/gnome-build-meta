@@ -17,6 +17,7 @@ include:
     theme-git-url: "https://gitlab.gnome.org/jimmac/gnome-mdbook-style.git"
     extra-rules:
     - !reference [".stage-only-rules", "rules"]
+    - !reference [".run_with_elements", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -50,22 +51,30 @@ stages:
     when: never
   - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
 
+.changes-elements-paths: &element-paths
+  paths:
+  # Buildstream
+  - "elements/**/*"
+  - "files/**/*"
+  - "include/**/*"
+  - "keys/**/*"
+  - "patches/**/*"
+  - "plugins/**/*"
+  - "project.conf"
+  - ".gitlab-ci/**/*"
+  - ".gitlab-ci.yml"
+
 # Rebuild only when elements changed.
 .run_in_mr_build:
   rules:
-  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        <<: *element-paths
+
+.run_with_elements:
+  rules:
     changes:
-      paths:
-      # Buildstream
-      - "elements/**/*"
-      - "files/**/*"
-      - "include/**/*"
-      - "keys/**/*"
-      - "patches/**/*"
-      - "plugins/**/*"
-      - "project.conf"
-      - ".gitlab-ci/**/*"
-      - ".gitlab-ci.yml"
+      <<: *element-paths
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
