@@ -48,6 +48,7 @@ stages:
   - "patches/**/*"
   - "plugins/**/*"
   - "project.conf"
+  - ".gitlab-ci/**/*"
   - ".gitlab-ci.yml"
 
 # Rebuild only when elements changed.
