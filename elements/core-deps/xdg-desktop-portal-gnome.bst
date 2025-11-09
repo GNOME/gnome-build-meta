@@ -9,7 +9,7 @@ sources:
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
-  ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
+  ref: b292f7f9b6ed019e98800386f233819be6481fc4
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
