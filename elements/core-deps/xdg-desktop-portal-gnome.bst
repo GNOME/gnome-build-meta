@@ -5,11 +5,12 @@ sources:
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
   ref: 49.0-8-g11e9babeddb7d31f99c23fe4a7707ff48140da56
+# needs to be kept in sync manually until we have a wrap plugin
 - kind: git_repo
   url: gnome:libgxdp.git
-  track: main
   directory: subprojects/libgxdp
   ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
+
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

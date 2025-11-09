@@ -14,7 +14,6 @@ sources:
 # https://gitlab.gnome.org/GNOME/gnome-control-center/-/blob/main/subprojects/libgxdp.wrap
 - kind: git_repo
   url: gnome:libgxdp.git
-  track: main
   directory: subprojects/libgxdp
   ref: e6c11f2812cad0a43e847ec97bfc1c67bf50be52
 
