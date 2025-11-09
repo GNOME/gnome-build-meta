@@ -15,8 +15,8 @@ Updating the refs
 -----------------
 
 To update the refs you can use Toolbox along with the script in ``.gitlab-ci/scripts/update-refs.py`` and
-git push options to create a merge request.
-::
+git push options to create a merge request.::
+
   $ toolbox create -i registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images/bst2
   $ toolbox run -c bst2 ./.gitlab-ci/scripts/update-refs.py --new-branch
   $ git push -o merge_request.create -o merge_request.assign="marge-bot" -o merge_request.remove_source_branch -f origin -u HEAD
@@ -29,8 +29,8 @@ Some of the possible build outputs are documented below.
 Flatpak runtimes
 ~~~~~~~~~~~~~~~~
 
-To build a runtime locally, for debugging:
-::
+To build a runtime locally, for debugging:::
+
   $ bst build flatpak-runtimes.bst
   $ bst checkout flatpak-runtimes.bst repo
   $ flatpak remote-add --user --no-gpg-verify testrepo repo
@@ -128,7 +128,7 @@ The following is a summary of what is being exported by this repository CI pipel
      - :code:`podman pull quay.io/gnome_infrastructure/gnome-build-meta:core-47`
 
 Build for different architectures
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's possible to build for another architecture using BuildStream and Qemu
 
@@ -150,11 +150,11 @@ has qemu and everything else needed.
       $  bst -o arch aarch64 shell sdk/gjs.bst
 
 Developing and Modifying components
-~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to test a local change, you can use workspaces to instruct Buildstream to
-build the element from there (If you don't have an existing checkout, omit --no-checkout).
-::
+build the element from there (If you don't have an existing checkout, omit --no-checkout).::
+
     $ bst workspace open --no-checkout core/gnome-initial-setup.bst --directory ../gnome-initial-setup/
     $ cd ../gnome-initial-setup/
     $ cat .bstproject.yaml
@@ -164,26 +164,26 @@ build the element from there (If you don't have an existing checkout, omit --no-
     format-version: 1
     $ bst build core/gnome-initial-setup.bst
 
-Afterwards you can drop into a runtime shell with following command
-::
+Afterwards you can drop into a runtime shell with following command::
+
     $ bst -o toolbox true shell core/gnome-initial-setup.bst
     $ /usr/libexec/gnome-initial-setup
 
 You can also get a build shell to inspect the environment the similarly.
-Note that only the specified dependencies are staged. If you need a utility for debugging (vim, strace, etc) you will have to add them as build-dependencies.
-::
+Note that only the specified dependencies are staged. If you need a utility for debugging (vim, strace, etc) you will have to add them as build-dependencies.::
+
     $ bst shell --build core/gnome-initial-setup.bst
 
 If you are developing on GNOME OS already, you can build systemd-sysext images and overlay them on the system like this:
 
-Note that sysexts are applied alphabetically, so you might want to prefix them in order to avoid being overwritten by other images that will be loaded.
-::
+Note that sysexts are applied alphabetically, so you might want to prefix them in order to avoid being overwritten by other images that will be loaded.::
+
     $ bst build sdk/gnome-text-editor.bst
     $ sysext-build-element --ignore-release --verbose zz-text-editor sdk/gnome-text-editor.bst
     $ run0 sysext-add --persistent zz-gnome-text-editor.sysext.raw
     $ run0 systemd-sysext refresh
 
-And optionally reload services if applicable to your usecase.
-::
+And optionally reload services if applicable to your usecase.::
+
     $ run0 systemctl daemon-reload
 
