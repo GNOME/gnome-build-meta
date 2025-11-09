@@ -11,9 +11,9 @@ depends:
 - gnomeos/systemd-pcrlock-workaround.bst
 
 # Add the kernel to experiment with things
-- gnomeos/initramfs.bst
-- freedesktop-sdk.bst:components/linux.bst
+- oci/initramfs.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
+- gnomeos/initramfs/signed-modules.bst
 # - gnomeos/signed-boot.bst
 # - gnomeos/signed-boot-common.bst
 
