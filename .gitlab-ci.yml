@@ -38,21 +38,24 @@ stages:
     when: never
   - if: $RUN_THIS_STAGE_ONLY != null && $RUN_THIS_STAGE_ONLY == $CI_JOB_STAGE
 
+.changes-elements-paths: &element-paths
+  paths:
+  # Buildstream
+  - "elements/**/*"
+  - "files/**/*"
+  - "include/**/*"
+  - "keys/**/*"
+  - "patches/**/*"
+  - "plugins/**/*"
+  - "project.conf"
+  - ".gitlab-ci.yml"
+
 # Rebuild only when elements changed.
 .run_in_mr_build:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       changes:
-        paths:
-          # Buildstream
-          - "elements/**/*"
-          - "files/**/*"
-          - "include/**/*"
-          - "keys/**/*"
-          - "patches/**/*"
-          - "plugins/**/*"
-          - "project.conf"
-          - ".gitlab-ci.yml"
+        <<: *element-paths
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -92,6 +95,9 @@ default:
   # expect it due to how gitlab behaves, so use a variable that will always exist
   # as a fake: always kind of rule
   - if: "$CI_COMMIT_REF_NAME"
+    changes:
+      <<: *element-paths
+
   script:
   - $CI_PROJECT_DIR/.gitlab-ci/scripts/build_elements.sh
   # Store artifacts so we can inspect build failures
@@ -330,6 +336,8 @@ live-image-aarch64:
   - !reference [.deploy-rules, rules]
   - if: '$CI_COMMIT_TAG'
   - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $ARCH == "x86_64"'
+    changes:
+      <<: *element-paths
   # Also allow to manually trigger it for normal branches
   - if: '$CI_COMMIT_REF_NAME'
     when: manual
