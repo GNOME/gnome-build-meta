@@ -114,6 +114,10 @@ depends:
 - gnomeos-deps/kmscon.bst
 
 (?):
+- arch == "x86_64":
+    depends:
+      (>):
+      - gnomeos-deps/deps-x86_64.bst
 - arch == "aarch64":
     depends:
       (>):
