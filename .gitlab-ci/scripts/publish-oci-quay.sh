@@ -15,6 +15,6 @@ fi
 for tag in "${tags[@]}"; do
     for name in platform sdk core; do
         echo "Uploading $name:$tag"
-        podman push "$OCI_IMAGE_NAME:$name-$OCI_BRANCH" docker://"$OCI_IMAGE_NAME:$name-$tag"
+        podman push --retry 3 "$OCI_IMAGE_NAME:$name-$OCI_BRANCH" docker://"$OCI_IMAGE_NAME:$name-$tag"
     done
 done
