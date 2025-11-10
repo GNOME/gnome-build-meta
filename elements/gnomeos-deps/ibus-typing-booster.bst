@@ -13,3 +13,15 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - sdk/libibus.bst
+
+runtime-depends:
+- gnomeos-deps/m17n-db.bst
+- gnomeos-deps/m17n-lib.bst
+
+config:
+  install-commands:
+    (>):
+    - |
+      cat <<EOF >>'%{install-root}%{datadir}/applications/emoji-picker.desktop'
+      NoDisplay=true
+      EOF
