@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-shell.git
   track: main
-  ref: 49.1-81-g32a013304f8c507cb72a5419c7f4b7c553253520
+  ref: 49.1-82-g53bf921bd398d824116441ebd3fa12129cb1eb9b
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
