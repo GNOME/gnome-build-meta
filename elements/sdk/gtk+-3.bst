@@ -66,5 +66,24 @@ public:
         - '%{libdir}/libgailutil-3.so'
         - '%{libdir}/libgdk-3.so'
         - '%{libdir}/libgtk-3.so'
+
+        # development utilities
+        - '%{bindir}/gtk-builder-tool'
+
+        # demos
+        - '%{bindir}/gtk3-demo-application'
+        - '%{bindir}/gtk3-demo'
+        - '%{bindir}/gtk3-icon-browser'
+        - '%{bindir}/gtk3-widget-factory'
+
+        - '%{datadir}/applications/gtk3-demo.desktop'
+        - '%{datadir}/applications/gtk3-icon-browser.desktop'
+        - '%{datadir}/applications/gtk3-widget-factory.desktop'
+        - '%{datadir}/icons/hicolor/*/apps/gtk3-demo-symbolic.symbolic.png'
+        - '%{datadir}/icons/hicolor/*/apps/gtk3-demo.png'
+        - '%{datadir}/icons/hicolor/*/apps/gtk3-widget-factory-symbolic.symbolic.png'
+        - '%{datadir}/icons/hicolor/*/apps/gtk3-widget-factory-symbolic.symbolic.png'
+        - '%{datadir}/icons/hicolor/*/apps/gtk3-widget-factory.png'
+
   cpe:
     product: gtk+
