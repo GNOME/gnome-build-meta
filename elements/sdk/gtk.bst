@@ -48,22 +48,41 @@ public:
     split-rules:
       devel:
         (>):
-        - '%{bindir}/gtk4-demo'
-        - '%{bindir}/gtk4-demo'
+        # development utilities
+        - '%{bindir}/gtk-builder-tool'
+
+        # demos
         - '%{bindir}/gtk4-demo-application'
+        - '%{bindir}/gtk4-demo'
         - '%{bindir}/gtk4-icon-editor'
         - '%{bindir}/gtk4-node-editor'
         - '%{bindir}/gtk4-print-editor'
         - '%{bindir}/gtk4-widget-factory'
+
         - '%{datadir}/applications/org.gtk.Demo4.desktop'
+        - '%{datadir}/applications/org.gtk.gtk4.NodeEditor.desktop'
         - '%{datadir}/applications/org.gtk.IconBrowser4.desktop'
         - '%{datadir}/applications/org.gtk.PrintEditor4.desktop'
         - '%{datadir}/applications/org.gtk.Shaper.desktop'
         - '%{datadir}/applications/org.gtk.WidgetFactory4.desktop'
-        - '%{datadir}/applications/org.gtk.gtk4.NodeEditor.desktop'
         - '%{datadir}/metainfo/org.gtk.Demo4.appdata.xml'
+        - '%{datadir}/metainfo/org.gtk.gtk4.NodeEditor.appdata.xml'
         - '%{datadir}/metainfo/org.gtk.IconBrowser4.appdata.xml'
         - '%{datadir}/metainfo/org.gtk.PrintEditor4.appdata.xml'
         - '%{datadir}/metainfo/org.gtk.WidgetFactory4.appdata.xml'
-        - '%{datadir}/metainfo/org.gtk.gtk4.NodeEditor.appdata.xml'
+
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.Demo4.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.Devel.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.gtk4.NodeEditor.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.Devel.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.PrintEditor4.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.Shaper.Devel.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.Shaper.svg'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gtk.WidgetFactory4.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.Demo4-symbolic.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.gtk4.NodeEditor-symbolic.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.PrintEditor4-symbolic.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.Shaper-symbolic.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg'
+
         - '%{libdir}/libgtk-4.so'
