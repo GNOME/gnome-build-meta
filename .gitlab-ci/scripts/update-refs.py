@@ -92,7 +92,6 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html"),
     ("core/gnome-disk-utility.bst", "https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/455"),
-    ("core-deps/evolution-data-server.bst", "https://gitlab.gnome.org/GNOME/folks/-/merge_requests/73"),
 ]
 
 def git(*args):
