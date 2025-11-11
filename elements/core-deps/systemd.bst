@@ -6,6 +6,7 @@ build-depends:
 runtime-depends:
 - freedesktop-sdk.bst:bootstrap/libxcrypt.bst
 - freedesktop-sdk.bst:bootstrap/xz.bst
+- freedesktop-sdk.bst:bootstrap/zstd.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/systemd-hwdb.bst
 - freedesktop-sdk.bst:components/audit.bst

@@ -13,11 +13,11 @@ variables:
 environment:
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
-  XZFLAGS: -T%{max-jobs}
+  ZSTDFLAGS: -T%{max-jobs}
   DLOPEN_NOTE_IGNORE: archive:fido2:qrencode:ip4tc
 
 environment-nocache:
-- XZFLAGS
+- ZSTDFLAGS
 
 config:
   commands:
@@ -51,7 +51,7 @@ config:
   - |
     (
       cd /initramfs-root
-      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | xz --check=crc32 --lzma2=dict=1MiB ${XZFLAGS} >/initramfs.img
+      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | zstd ${ZSTDFLAGS} >/initramfs.img
     )
 
   - |
