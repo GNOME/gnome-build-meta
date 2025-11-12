@@ -19,7 +19,7 @@ variables:
   repart-seed: 53752261-a988-42fb-a585-b35ae0ab2af4
 
 environment:
-  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E all-fragments,fragdedupe=inode
+  EROFS_OPTIONS: --all-time -T %{filesystem-time} -E fragments,fragdedupe=inode
   EROFS_WORKERS: --workers=%{max-jobs}
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
