@@ -7,7 +7,7 @@ build-depends:
 - gnomeos/os-release-user.bst
 - filename: gnomeos/filesystem-debug.bst
   config:
-    location: '/sysroot-debug'
+    location: '/sysroot'
 
 sources:
 - kind: local
@@ -31,9 +31,9 @@ environment-nocache:
 config:
   build-commands:
   - mkdir fakecap
-  - cp -a /sysroot-debug sysroot-debug
+  - cp -a /sysroot sysroot
   - |
-    mkdir -p sysroot-debug/usr/lib/extension-release.d
+    mkdir -p sysroot/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -42,14 +42,14 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >sysroot-debug/usr/lib/extension-release.d/extension-release.debug
+    cat <<EOF >sysroot/usr/lib/extension-release.d/extension-release.debug
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    cp /etc/os-release sysroot-debug/etc/os-release
+    cp /etc/os-release sysroot/etc/os-release
 
   - |
     mkdir -p tmp
@@ -69,9 +69,9 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --copy-source=sysroot-debug \
+        --copy-source=sysroot \
         debug-%{systemd-arch}_%{image-version}.raw
 
   install-commands:
   - |
-    mv debug-%{systemd-arch}_%{image-version}.raw %{install-root}/
+    mv debug-%{systemd-arch}_%{image-version}.raw %{install-root}

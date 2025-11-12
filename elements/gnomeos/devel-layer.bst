@@ -2,17 +2,17 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/initial-scripts-devel.bst
 - filename: gnomeos/filesystem.bst
   config:
-    location: '/sysroot'
+    location: '/sysroot-lower'
 - filename: gnomeos/filesystem-devel.bst
   config:
-    location: '/sysroot-devel'
+    location: '/sysroot-upper'
 
 sources:
 - kind: local
@@ -37,28 +37,28 @@ environment-nocache:
 config:
   build-commands:
   - mkdir fakecap
-  - cp -a /sysroot sysroot
-  - cp -a /sysroot-devel sysroot-devel
+  - cp -a /sysroot-lower sysroot-lower
+  - cp -a /sysroot-upper sysroot-upper
   - |
     prepare-image.sh \
-       --sysroot sysroot \
+       --sysroot sysroot-lower \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
-       --sysroot sysroot-devel \
+       --sysroot sysroot-upper \
        --initscripts /etc/fdsdk/initial_scripts-devel \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
-    mkdir -p output/etc
-    make-layer sysroot/etc sysroot-devel/etc output/etc/etc
+    mkdir -p etc
+    make-layer sysroot-lower/etc sysroot-upper/etc sysroot/etc
 
   - |
-    cat >sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
+    cat >sysroot-upper/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
     L /etc/apparmor.d
     # freedesktop-sdk.bst:components/perf.bst
     # FIXME: move to /usr/share/bash-completion/completions/
@@ -87,23 +87,23 @@ config:
     EOF
 
   - |
-    find output/etc
+    find etc
 
   - |
-    mkdir -p output/factory
-    for p in $(grep -v "^#" <sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
-      mkdir -p "$(dirname "output/factory${p}")"
-      cp -rlTP "output/etc${p}" "output/factory${p}"
-      rm -rf "output/etc${p}"
+    mkdir -p sysroot/factory
+    for p in $(grep -v "^#" <sysroot-upper/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
+      echo mkdir -p "$(dirname "sysroot/factory${p}")"
+      echo cp -rlTP "${p}" "sysroot/factory${p}"
+      echo rm -rf "${p}"
     done
 
   - |
-    find 'output/etc/etc' -depth -type d -empty -delete
+    find sysroot/etc -depth -type d -empty -delete
 
   - |
     unknown=()
-    for p in output/etc/etc/*; do
-      rel="${p#output/etc}"
+    for p in sysroot/etc/*; do
+      rel="${p#sysroot}"
       case "${rel}" in
         /etc/systemd|/etc/ld.so.cache)
           # Those are created another way
@@ -122,7 +122,7 @@ config:
     fi
 
   - |
-    mkdir -p sysroot-devel/usr/lib/extension-release.d
+    mkdir -p sysroot-upper/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -131,23 +131,23 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >sysroot-devel/usr/lib/extension-release.d/extension-release.devel_%{image-version}
+    cat <<EOF >sysroot-upper/usr/lib/extension-release.d/extension-release.devel_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    mkdir -p output
-    make-layer sysroot/usr sysroot-devel/usr output/usr
+    mkdir -p sysroot
+    make-layer sysroot-lower/usr sysroot-upper/usr sysroot/usr
 
   - |
-    mkdir -p output/usr/share/factory/etc
-    cp -rlTP output/factory output/usr/share/factory
+    mkdir -p sysroot/usr/share/factory/etc
+    cp -rlTP sysroot/factory sysroot/usr/share/factory
 
   - |
-    mkdir -p output/etc
-    cp -T sysroot-devel/usr/lib/os-release output/etc/os-release
+    mkdir -p sysroot/etc
+    cp -T sysroot-upper/usr/lib/os-release sysroot/etc/os-release
 
   - |
     mkdir -p tmp
@@ -167,7 +167,7 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --copy-source=output \
+        --copy-source=sysroot \
         devel-%{systemd-arch}_%{image-version}.raw
 
   install-commands:

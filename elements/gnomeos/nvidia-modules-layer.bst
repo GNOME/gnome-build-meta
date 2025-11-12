@@ -7,7 +7,7 @@ build-depends:
 - gnomeos/os-release-user.bst
 - filename: gnomeos/initramfs/signed-nvidia-modules.bst
   config:
-    location: '/sysroot-nvidia-modules'
+    location: '/sysroot'
 
 sources:
 - kind: local
@@ -31,9 +31,9 @@ environment-nocache:
 config:
   build-commands:
   - mkdir fakecap
-  - cp -a /sysroot-nvidia-modules sysroot-nvidia-modules
+  - cp -a /sysroot sysroot
   - |
-    mkdir -p sysroot-nvidia-modules/usr/lib/extension-release.d
+    mkdir -p sysroot/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -42,18 +42,18 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version}
+    cat <<EOF >sysroot/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     SYSEXT_SCOPE=initrd system
     EOF
-    cp sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version} \
-       sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules
+    cp sysroot/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version} \
+       sysroot/usr/lib/extension-release.d/extension-release.nvidia-modules
 
   - |
-    mkdir sysroot-nvidia-modules/etc
-    cp /etc/os-release sysroot-nvidia-modules/etc/os-release
+    mkdir sysroot/etc
+    cp /etc/os-release sysroot/etc/os-release
 
   - |
     mkdir -p tmp
@@ -73,7 +73,7 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --copy-source=sysroot-nvidia-modules \
+        --copy-source=sysroot \
         nvidia-modules-%{systemd-arch}_%{image-version}.raw
 
   install-commands:

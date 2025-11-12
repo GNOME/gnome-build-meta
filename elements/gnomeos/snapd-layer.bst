@@ -2,17 +2,17 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/initial-scripts-snapd.bst
 - filename: gnomeos/filesystem.bst
   config:
-    location: '/sysroot'
+    location: '/sysroot-lower'
 - filename: gnomeos/filesystem-snapd.bst
   config:
-    location: '/sysroot-snapd'
+    location: '/sysroot-upper'
 
 sources:
 - kind: local
@@ -37,24 +37,24 @@ environment-nocache:
 config:
   build-commands:
   - mkdir fakecap
-  - cp -a /sysroot sysroot
-  - cp -a /sysroot-snapd sysroot-snapd
+  - cp -a /sysroot-lower sysroot-lower
+  - cp -a /sysroot-upper sysroot-upper
   - |
     prepare-image.sh \
-       --sysroot sysroot \
+       --sysroot sysroot-lower \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
-       --sysroot sysroot-snapd \
+       --sysroot sysroot-upper \
        --initscripts /etc/fdsdk/initial_scripts-snapd \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
-    cat >sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
+    cat >sysroot-upper/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
     L /etc/apparmor
     L /etc/apparmor.d
     L /etc/profile.d/snapd.sh
@@ -63,7 +63,7 @@ config:
     EOF
 
   - |
-    mkdir -p sysroot-snapd/usr/lib/extension-release.d
+    mkdir -p sysroot-upper/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -72,28 +72,28 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >sysroot-snapd/usr/lib/extension-release.d/extension-release.snapd_%{image-version}
+    cat <<EOF >sysroot-upper/usr/lib/extension-release.d/extension-release.snapd_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    mkdir -p output
-    make-layer sysroot/usr sysroot-snapd/usr output/usr
+    mkdir -p sysroot
+    make-layer sysroot-lower/usr sysroot-upper/usr sysroot/usr
 
   - |
-    mkdir -p output/usr/share/factory/etc
-    cp -rT sysroot-snapd/etc/apparmor output/usr/share/factory/etc/apparmor
-    cp -rT sysroot-snapd/etc/apparmor.d output/usr/share/factory/etc/apparmor.d
-    mkdir -p output/usr/share/factory/etc/profile.d
-    cp -rT sysroot-snapd/etc/profile.d/snapd.sh output/usr/share/factory/etc/profile.d/snapd.sh
-    mkdir -p output/usr/share/factory/etc/xdg/autostart
-    cp -rT sysroot-snapd/etc/xdg/autostart/snap-userd-autostart.desktop output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
+    mkdir -p sysroot/usr/share/factory/etc
+    cp -rT sysroot-upper/etc/apparmor sysroot/usr/share/factory/etc/apparmor
+    cp -rT sysroot-upper/etc/apparmor.d sysroot/usr/share/factory/etc/apparmor.d
+    mkdir -p sysroot/usr/share/factory/etc/profile.d
+    cp -rT sysroot-upper/etc/profile.d/snapd.sh sysroot/usr/share/factory/etc/profile.d/snapd.sh
+    mkdir -p sysroot/usr/share/factory/etc/xdg/autostart
+    cp -rT sysroot-upper/etc/xdg/autostart/snap-userd-autostart.desktop sysroot/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
 
   - |
-    mkdir -p output/etc
-    cp -T sysroot-snapd/usr/lib/os-release output/etc/os-release
+    mkdir -p sysroot/etc
+    cp -T sysroot-upper/usr/lib/os-release sysroot/etc/os-release
 
   - |
     mkdir -p tmp
@@ -103,8 +103,8 @@ config:
     SYSTEMD_LOG_LEVEL=debug \
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
-        --empty=create \
         --make-ddi=sysext \
+        --empty=create \
         --size=auto \
         --dry-run=no \
         --discard=no \
@@ -113,7 +113,7 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --copy-source=output \
+        --copy-source=sysroot \
         snapd-%{systemd-arch}_%{image-version}.raw
 
   install-commands:

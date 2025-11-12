@@ -2,17 +2,17 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/initial-scripts-nvidia-runtime.bst
 - filename: gnomeos/filesystem.bst
   config:
-    location: '/sysroot'
+    location: '/sysroot-lower'
 - filename: gnomeos/filesystem-nvidia-runtime.bst
   config:
-    location: '/sysroot-nvidia-runtime'
+    location: '/sysroot-upper'
 
 sources:
 - kind: local
@@ -37,27 +37,27 @@ environment-nocache:
 config:
   build-commands:
   - mkdir fakecap
-  - cp -a /sysroot sysroot
-  - cp -a /sysroot-nvidia-runtime sysroot-nvidia-runtime
+  - cp -a /sysroot-lower sysroot-lower
+  - cp -a /sysroot-upper sysroot-upper
   - |
     prepare-image.sh \
-       --sysroot sysroot \
+       --sysroot sysroot-lower \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
     prepare-image.sh \
-       --sysroot sysroot-nvidia-runtime \
+       --sysroot sysroot-upper \
        --initscripts /etc/fdsdk/initial_scripts-nvidia-runtime \
        --seed "%{sysroot-seed}" \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
-    chmod 0711 'sysroot-nvidia-runtime/bin/nvidia-sleep.sh' 'sysroot-nvidia-runtime/lib/systemd/system-sleep/nvidia'
+    chmod 0711 'sysroot-upper/bin/nvidia-sleep.sh' 'sysroot-upper/lib/systemd/system-sleep/nvidia'
 
   - |
-    mkdir -p sysroot-nvidia-runtime/usr/lib/extension-release.d
+    mkdir -p sysroot-upper/usr/lib/extension-release.d
     case "%{branch}" in
       master)
         version_id=Nightly
@@ -66,19 +66,19 @@ config:
         version_id="%{branch}"
         ;;
     esac
-    cat <<EOF >sysroot-nvidia-runtime/usr/lib/extension-release.d/extension-release.nvidia-runtime_%{image-version}
+    cat <<EOF >sysroot-upper/usr/lib/extension-release.d/extension-release.nvidia-runtime_%{image-version}
     ID=org.gnome.os
     VERSION_ID=${version_id}
     SYSEXT_LEVEL=%{image-version}
     EOF
 
   - |
-    mkdir -p output
-    make-layer sysroot/usr sysroot-nvidia-runtime/usr output/usr
+    mkdir -p sysroot
+    make-layer sysroot-lower/usr sysroot-upper/usr sysroot/usr
 
   - |
-    mkdir -p output/etc
-    cp -T sysroot-nvidia-runtime/usr/lib/os-release output/etc/os-release
+    mkdir -p sysroot/etc
+    cp -T sysroot-upper/usr/lib/os-release sysroot/etc/os-release
 
   - |
     mkdir -p tmp
@@ -98,7 +98,7 @@ config:
         --private-key=SYSEXT.key \
         --certificate=SYSEXT.crt \
         --seed %{repart-seed} \
-        --copy-source=output \
+        --copy-source=sysroot \
         nvidia-runtime-%{systemd-arch}_%{image-version}.raw
 
   install-commands:

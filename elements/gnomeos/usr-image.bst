@@ -2,7 +2,6 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
-- freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - gnomeos/initial-scripts.bst
