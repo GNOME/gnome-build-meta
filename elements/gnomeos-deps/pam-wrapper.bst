@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: samba_pub:cwrap/pam_wrapper-1.1.8.tar.gz
-  ref: 6549c0b3e41d1ebe0c94a1be63c25eec918191462b602ab6f47d4a5fa709c3e4
+- kind: git_repo
+  url: samba:pam_wrapper.git
+  track: 'pam_wrapper-*'
+  ref: pam_wrapper-1.1.8-0-gb44cd4497a9fdfe271e1adda11c0d65ba462555c
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
