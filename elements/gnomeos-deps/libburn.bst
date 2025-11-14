@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: libburnia:libburn-1.5.6.tar.gz
-  ref: 7295491b4be5eeac5e7a3fb2067e236e2955ffdc6bbd45f546466edee321644b
+- kind: git_repo
+  url: lovelyhq:libburnia/libburn.git
+  track: 'release-*'
+  ref: release-1.5.6-0-g4628231cece66949e08b2f1c1ee2ac9d8797814f
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

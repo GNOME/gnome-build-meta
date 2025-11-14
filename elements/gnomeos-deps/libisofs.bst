@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: libburnia:libisofs-1.5.6.tar.gz
-  ref: 0152d66a9d340b659fe9c880eb9190f3570fb477ac07cf52e8bcd134a1d30d70
+- kind: git_repo
+  url: lovelyhq:libburnia/libisofs.git
+  track: 'release-*'
+  ref: release-1.5.6.pl01-0-gfa3da9b0f3ad2b1fef4873d8d9c8c64b82109abc
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

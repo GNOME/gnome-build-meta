@@ -32,7 +32,6 @@ aliases:
   kerberos: https://kerberos.org/
   kldp: https://kldp.net/
   launchpad: https://launchpad.net/
-  libburnia: http://files.libburnia-project.org/releases/
   libopenraw: https://libopenraw.freedesktop.org/
   libvirt: https://libvirt.org/sources/
   mozilla: https://ftp.mozilla.org/pub/
@@ -62,6 +61,7 @@ aliases:
   gnome: https://gitlab.gnome.org/GNOME/
   gnome_gitlab: https://gitlab.gnome.org/
   kernel: https://git.kernel.org/pub/scm/
+  lovelyhq: https://dev.lovelyhq.com/
   matrix: https://gitlab.matrix.org/
   netfilter: https://git.netfilter.org/
   purism: https://source.puri.sm/
