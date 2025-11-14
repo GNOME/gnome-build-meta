@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: infradead:openconnect/download/openconnect-9.12.tar.gz
-  ref: a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e
+- kind: git_repo
+  url: gitlab:openconnect/openconnect.git
+  track: 'v*'
+  ref: v9.12-0-g59f2e59eb3e436364ef82e630e5a2f88f32acd58
 
 variables:
   conf-local: >-
