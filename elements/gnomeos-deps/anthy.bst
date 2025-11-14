@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:fujiwarat/anthy-unicode/releases/download/1.0.0.20240502/anthy-unicode-1.0.0.20240502.tar.gz
-  ref: 43a13f24cc4749a1248bc6d0ce7796743b176ae68ee524cb4331bef64ac133b0
+- kind: git_repo
+  url: github:fujiwarat/anthy-unicode.git
+  track: '*.*'
+  ref: 1.0.0.20240502-0-ge63d1d67caa95886076ac1f6033469e03b36c990
 - kind: patch
   path: patches/anthy/no-passwd.patch
 

@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:OpenSC/OpenSC/releases/download/0.26.1/opensc-0.26.1.tar.gz
-  ref: f16291a031d86e570394762e9f35eaf2fcbc2337a49910f3feae42d54e1688cb
+- kind: git_repo
+  url: github:OpenSC/OpenSC.git
+  track: '*.*'
+  ref: 0.26.1-0-g043343d2df7b09d1938bc3dc313d86a96be457cc
 - kind: local
   path: files/opensc/opensc.module
 

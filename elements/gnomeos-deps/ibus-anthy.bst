@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    github_files:ibus/ibus-anthy/releases/download/1.5.17/ibus-anthy-1.5.17.tar.gz
-  ref: 9e1d28ad7da2be5e0d9c0eb0d8fb7557fc89770aa2237272debe197bd61abd40
+- kind: git_repo
+  url: github:ibus/ibus-anthy.git
+  track: '*.*'
+  ref: 1.5.17-0-g901fdec1208d11c293e43add60fe5c143f0817a7
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -21,8 +21,3 @@ variables:
   conf-local: >-
     --enable-private-png=yes
     --with-python=python3
-
-config:
-  configure-commands:
-    (<):
-    - rm {setup,engine}/python3/_config.py
