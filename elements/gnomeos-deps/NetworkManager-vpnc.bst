@@ -1,9 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: gnome_downloads:NetworkManager-vpnc/1.4/NetworkManager-vpnc-1.4.0.tar.xz
-  ref: e3b2a98880275a1b75154bc317a78643cfdf9ea7e70df4eed9648f29ea253730
+- kind: git_repo
+  url: gnome:NetworkManager-vpnc.git
+  track: '*.*'
+  exclude:
+  - '*dev*'
+  ref: 1.4.0-0-ge915b09ed53edda9536858cab9a67ec491c2e2f2
 
 variables:
   conf-local: >-

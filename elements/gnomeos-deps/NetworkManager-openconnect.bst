@@ -1,9 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: gnome_downloads:NetworkManager-openconnect/1.2/NetworkManager-openconnect-1.2.10.tar.xz
-  ref: 844b6bf64ecadb97b4a68c776db89aa5e6ee7e59bd24b0180228406863136464
+- kind: git_repo
+  url: gnome:NetworkManager-openconnect.git
+  track: '*.*'
+  exclude:
+  - '*dev*'
+  ref: 1.2.10-0-ga28d393b5fc9e0df9c19292065187e7145e83f51
 - kind: patch
   path: patches/NetworkManager-openconnect/0001-build-Require-webkitgtk-only-if-with-authdlg.patch
 - kind: patch
@@ -26,12 +29,9 @@ variables:
   conf-local: >-
     --with-gtk4
     --without-gnome
+  autogen: autoreconf -is && intltoolize --force && autoreconf -fvi
 
 config:
-  configure-commands:
-    (<):
-    # force autogen
-    - rm configure
   install-commands:
     (>):
     - |
