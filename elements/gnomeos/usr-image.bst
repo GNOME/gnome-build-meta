@@ -153,6 +153,9 @@ config:
     # vm/mesa-default.bst
     L /etc/ld.so.conf.d/00_mesa.conf
 
+    # freedesktop-sdk.bst:components/slang.bst
+    L /etc/slsh.rc
+
     # FIXME: sort those and make them symlinks
     C /etc/dconf
     C /etc/debuginfod
