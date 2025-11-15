@@ -78,8 +78,6 @@ config:
     L /etc/libvirt
     L /etc/sasl2
     L /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
-    # freedesktop-sdk.bst:components/slang.bst
-    L /etc/slsh.rc
     # vm-deps/swtpm.bst
     L /etc/swtpm-localca.conf
     L /etc/swtpm-localca.options

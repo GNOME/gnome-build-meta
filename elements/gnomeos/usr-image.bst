@@ -181,6 +181,9 @@ config:
     # gnomeos-deps/vpnc.bst
     L /etc/vpnc/default.conf
 
+    # freedesktop-sdk.bst:components/slang.bst
+    L /etc/slsh.rc
+
     # FIXME: sort those and make them symlinks
     C /etc/dconf
     C /etc/debuginfod
