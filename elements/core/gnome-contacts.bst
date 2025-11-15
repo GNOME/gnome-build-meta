@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-contacts.git
   track: main
-  ref: 49.0-12-g4826c80b5c7725436966ba00b1ffb9d1b509c1c0
+  ref: 49.0-15-g0a3104f38267aa3330437924faf415e707b3c8d0
 
 build-depends:
 - sdk/blueprint-compiler.bst
@@ -23,6 +23,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/libgee.bst
+- sdk/libglycin-gtk4.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libqrencode.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
