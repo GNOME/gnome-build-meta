@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 50.0-200-ga7c6a857f345003aca5fec7ee15304035d1174ef
+  url: gnome_gitlab:AdrianVovk/gnome-control-center.git
+  track: homed
+  ref: 50.0-51-g9e0362c63d6630958b3b8c72213ade20784b92ea
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -15,8 +15,7 @@ sources:
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
-  track: main
-  ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b
+  ref: 1fe6de799f39b3126e8d0db66fa4f16c10fd9bd6
 
 build-depends:
 # These two are more like runtime deps of the tests suite
