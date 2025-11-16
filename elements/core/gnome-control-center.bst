@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 51.rc.1-2-g3c7c7660062356c3d25a94282e2f7bc3666e3757
+  url: gnome_gitlab:AdrianVovk/gnome-control-center.git
+  track: homed
+  ref: 51.rc.1-4-g40574492ed848fe503aa44cb9f941c7853c18b07
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -80,4 +80,4 @@ variables:
   meson-local: >-
     -Ddocumentation=true
     -Dmalcontent="%{parental_controls}"
-    -Dcannot-add-users="%{single_user}"
+    # -Dcannot-add-users="%{single_user}"
