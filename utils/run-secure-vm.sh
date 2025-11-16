@@ -28,6 +28,8 @@ Options:
   --pre-install              Convert the ISO to installed disk.
                              (implies --no-install)
 
+  --image FILE               Use a preinstalled image
+
   --no-install               Do not attach secondary drive with installation
                              medium.
 
@@ -131,6 +133,11 @@ while [ $# -gt 0 ]; do
             shift
             home_disk_key="$1"
             ;;
+        --image)
+            shift
+            unset live
+            from_image="$1"
+            ;;
         --)
             shift
             args+=("$@")
@@ -198,7 +205,7 @@ cleanup() {
 }
 trap cleanup EXIT INT
 
-if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.iso" ]; then
+if [ "${reset+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${live+set}" = set ]); then
     mkdir -p "${STATE_DIR}"
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
@@ -210,7 +217,7 @@ if [ "${reset+set}" = set ] || ! [ -f "${STATE_DIR}/disk.iso" ]; then
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
-        mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
+    mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
     rm -rf "${checkout}"
 fi
 
@@ -266,6 +273,8 @@ elif [ "${pre_install+set}" = set ]; then
     definitions="$(dirname ${0})/repart.raw.d"
     truncate --size 50G "${STATE_DIR}/disk.img"
     run0 -- systemd-repart --dry-run=no --image="${STATE_DIR}/disk.iso" --definitions="${definitions}" --empty=force --size=auto "${STATE_DIR}/disk.img"
+elif [ "${from_image+set}" = set ]; then
+    cp "${from_image}" "${STATE_DIR}/disk.img"
 fi
 
 truncate --size 50G "${STATE_DIR}/disk.img"
