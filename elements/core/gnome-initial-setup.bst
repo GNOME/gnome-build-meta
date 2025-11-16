@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-initial-setup.git
-  track: master
-  ref: 50.0-42-g5b6f08afd3e1af23f5348cefe0e9a9b88f1f46c8
+  url: gnome_gitlab:AdrianVovk/gnome-initial-setup.git
+  track: homed
+  ref: 50.0-10-g952d28e3e3aefe67bc0dd2d37a0be964d2b69d66
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
