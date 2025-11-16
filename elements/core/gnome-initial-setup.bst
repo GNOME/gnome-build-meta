@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-initial-setup.git
-  track: master
-  ref: 50.0-66-g77be510de42c5b14c0967b6f61609990d0c2505b
+  url: gnome_gitlab:AdrianVovk/gnome-initial-setup.git
+  track: homed
+  ref: 50.0-69-g904ae37d797db7074c479cd15dedfce003896ab6
 
 build-depends:
 - (@): include/gcc-for-recc.yml
