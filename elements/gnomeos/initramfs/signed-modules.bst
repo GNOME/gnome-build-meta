@@ -30,7 +30,7 @@ variables:
   strip-binaries: ''
 
 sources:
-- kind: local
-  path: files/boot-keys/MODULES.key
-- kind: local
-  path: files/boot-keys/modules/linux-module-cert.crt
+- kind: generated
+  path: MODULES.key
+- kind: generated
+  path: modules/linux-module-cert.crt

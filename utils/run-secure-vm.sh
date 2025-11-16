@@ -272,7 +272,6 @@ if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${l
     if [ "${buildid+set}" = set ]; then
         cp "${STATE_DIR}/builds/gnome_os_${buildid}.iso" "${checkout}/disk.iso"
     else
-        make -C files/boot-keys generate-keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
@@ -385,6 +384,7 @@ tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
 cleanup_dirs+=("${tmpfiles}")
 
 if [ "${local_updates+set}" = set ]; then
+    make -C files/boot-keys IMPORT_MODE=snakeoil
     cat <<EOF >"${tmpfiles}"/tmpfiles-import-pubring.conf
 f~ /etc/systemd/import-pubring.pgp 0644 root root - $(base64 -w0 files/boot-keys/import-pubring.pgp)
 EOF
