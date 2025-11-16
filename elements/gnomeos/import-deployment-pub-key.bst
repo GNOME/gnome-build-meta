@@ -1,8 +1,8 @@
 kind: import
 
 sources:
-- kind: local
-  path: files/boot-keys/import-pubring.pgp
+- kind: generated
+  path: import-pubring.pgp
 
 runtime-depends:
 - freedesktop-sdk.bst:components/systemd.bst
