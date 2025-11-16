@@ -106,6 +106,8 @@ clean() {
     rm -f /etc/sysupdate.d/*-gnomeos-*.transfer.d/local.conf
 }
 
+make -C files/boot-keys IMPORT_MODE=snakeoil
+
 if [ "${clean+set}" = set ]; then
     clean
 else

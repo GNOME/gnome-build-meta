@@ -46,7 +46,7 @@ config:
     esac
 
 sources:
-- kind: local
-  path: files/boot-keys/DB.key
-- kind: local
-  path: files/boot-keys/DB.crt
+- kind: generated
+  path: DB.key
+- kind: generated
+  path: DB.crt

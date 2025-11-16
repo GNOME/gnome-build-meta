@@ -4,5 +4,5 @@ config:
   target: /keys
 
 sources:
-- kind: local
-  path: files/boot-keys/modules
+- kind: generated
+  path: modules
