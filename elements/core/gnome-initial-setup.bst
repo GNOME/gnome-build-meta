@@ -2,9 +2,19 @@ kind: meson
 
 sources:
 - kind: git_repo
+<<<<<<< HEAD
   url: gnome:gnome-initial-setup.git
   track: master
   ref: 51.alpha-0-g7e8da984302c5b737e393918b77b53393c30ea28
+||||||| parent of ae586dc66 (homed branches)
+  url: gnome:gnome-initial-setup.git
+  track: master
+  ref: 50.0-66-g77be510de42c5b14c0967b6f61609990d0c2505b
+=======
+  url: gnome_gitlab:AdrianVovk/gnome-initial-setup.git
+  track: homed
+  ref: 50.0-69-g904ae37d797db7074c479cd15dedfce003896ab6
+>>>>>>> ae586dc66 (homed branches)
 
 build-depends:
 - (@): include/gcc-for-recc.yml
