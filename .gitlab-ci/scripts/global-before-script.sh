@@ -14,10 +14,10 @@ mkdir -p logs
 
 # Setup certificates and image version for sysupdate
 if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "schedule" ]; then
-    make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+    export KEY_MODE=snakeoil
     export PUSH_SOURCE=1
 else
-    make -C files/boot-keys generate-keys IMPORT_MODE=import
+    export KEY_MODE=import
 fi
 
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
@@ -57,3 +57,6 @@ echo "commit: '${commit}'" >> include/image-version.yml
 echo "commit-date-pretty: '${commit_date_pretty}'" >> include/image-version.yml
 
 cat include/image-version.yml
+
+export BST="${BST} -o key_mode ${KEY_MODE}"
+export BST_NO_PUSH="${BST_NO_PUSH} -o key_mode ${KEY_MODE}"

@@ -15,10 +15,10 @@ build-depends:
     location: '/sysroot-devel'
 
 sources:
-- kind: local
-  path: files/boot-keys/SYSEXT.key
-- kind: local
-  path: files/boot-keys/SYSEXT.crt
+- kind: generated
+  path: SYSEXT.key
+- kind: generated
+  path: SYSEXT.crt
 
 variables:
   sysroot-seed: df2427db-01ec-4c99-96b1-be3edb3cd9f6

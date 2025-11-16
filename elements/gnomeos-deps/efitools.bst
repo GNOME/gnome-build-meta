@@ -7,37 +7,37 @@ sources:
   ref: v1.9.2-0-g392836a46ce3c92b55dc88a1aebbcfdfc5dcddce
 - kind: patch
   path: patches/efitools/aarch64-on-newer-gnu-efi.patch
-- kind: local
-  path: files/boot-keys/PK.key
-- kind: local
-  path: files/boot-keys/PK.crt
-- kind: local
-  path: files/boot-keys/PK_MIC.key
-- kind: local
-  path: files/boot-keys/PK_MIC.crt
-- kind: local
-  path: files/boot-keys/KEK.key
-- kind: local
-  path: files/boot-keys/KEK.crt
-- kind: local
-  path: files/boot-keys/KEK_MIC.key
-- kind: local
-  path: files/boot-keys/KEK_MIC.crt
-- kind: local
-  path: files/boot-keys/DB.key
-- kind: local
-  path: files/boot-keys/DB.crt
-- kind: local
-  path: files/boot-keys/extra-kek
+- kind: generated
+  path: PK.key
+- kind: generated
+  path: PK.crt
+- kind: generated
+  path: PK_MIC.key
+- kind: generated
+  path: PK_MIC.crt
+- kind: generated
+  path: KEK.key
+- kind: generated
+  path: KEK.crt
+- kind: generated
+  path: KEK_MIC.key
+- kind: generated
+  path: KEK_MIC.crt
+- kind: generated
+  path: DB.key
+- kind: generated
+  path: DB.crt
+- kind: generated
+  path: extra-kek
   directory: extra-kek
-- kind: local
-  path: files/boot-keys/extra-db
+- kind: generated
+  path: extra-db
   directory: extra-db
-- kind: local
-  path: files/boot-keys/extra-kek-mic
+- kind: generated
+  path: extra-kek-mic
   directory: extra-kek-mic
-- kind: local
-  path: files/boot-keys/extra-db-mic
+- kind: generated
+  path: extra-db-mic
   directory: extra-db-mic
 
 build-depends:

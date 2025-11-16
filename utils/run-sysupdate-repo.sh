@@ -113,6 +113,7 @@ fi
 "${BST}" "${BST_OPTIONS[@]}" build "${image}"
 
 "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
+make -C files/boot-keys IMPORT_MODE=snakeoil
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if [ "${next_version+set}" = set ]; then

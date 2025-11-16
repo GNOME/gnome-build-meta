@@ -1,10 +1,10 @@
 kind: manual
 
 sources:
-- kind: local
-  path: files/boot-keys/tpm2-pcr-public.pem
-- kind: local
-  path: files/boot-keys/fstab-tpm2-pcr-public.pem
+- kind: generated
+  path: tpm2-pcr-public.pem
+- kind: generated
+  path: fstab-tpm2-pcr-public.pem
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
