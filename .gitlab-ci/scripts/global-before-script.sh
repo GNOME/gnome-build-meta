@@ -14,10 +14,10 @@ mkdir -p logs
 
 # Setup certificates and image version for sysupdate
 if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "schedule" ]; then
-    make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+    export KEY_MODE=snakeoil
     export PUSH_SOURCE=1
 else
-    make -C files/boot-keys generate-keys IMPORT_MODE=import
+    export KEY_MODE=import
 fi
 
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
@@ -52,3 +52,6 @@ commit_time=$(git log -1 --format=format:%ct "${CI_MERGE_REQUEST_DIFF_BASE_SHA-H
 echo "filesystem-time: ${commit_time}" >> include/image-version.yml
 
 cat include/image-version.yml
+
+export BST="${BST} -o key_mode ${KEY_MODE}"
+export BST_NO_PUSH="${BST_NO_PUSH} -o key_mode ${KEY_MODE}"
