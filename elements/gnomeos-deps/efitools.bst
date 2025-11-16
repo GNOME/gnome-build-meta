@@ -9,29 +9,29 @@ sources:
   path: patches/efitools/aarch64-on-newer-gnu-efi.patch
 - kind: patch
   path: patches/efitools/binutils_2_46.patch
-- kind: local
-  path: files/boot-keys/PK.key
-- kind: local
-  path: files/boot-keys/PK.crt
-- kind: local
-  path: files/boot-keys/PK_MIC.key
-- kind: local
-  path: files/boot-keys/PK_MIC.crt
-- kind: local
-  path: files/boot-keys/KEK.key
-- kind: local
-  path: files/boot-keys/KEK.crt
-- kind: local
-  path: files/boot-keys/KEK_MIC.key
-- kind: local
-  path: files/boot-keys/KEK_MIC.crt
-- kind: local
-  path: files/boot-keys/DB.crt
-- kind: local
-  path: files/boot-keys/extra-kek
+- kind: generated
+  path: PK.key
+- kind: generated
+  path: PK.crt
+- kind: generated
+  path: PK_MIC.key
+- kind: generated
+  path: PK_MIC.crt
+- kind: generated
+  path: KEK.key
+- kind: generated
+  path: KEK.crt
+- kind: generated
+  path: KEK_MIC.key
+- kind: generated
+  path: KEK_MIC.crt
+- kind: generated
+  path: DB.crt
+- kind: generated
+  path: extra-kek
   directory: extra-kek
-- kind: local
-  path: files/boot-keys/extra-db
+- kind: generated
+  path: extra-db
   directory: extra-db
 - kind: git_repo
   url: github:microsoft/secureboot_objects.git
