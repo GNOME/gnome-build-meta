@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 51.0-73-g385e2d501b8a08a27d1f1ac46b9313a7860f9b5b
+  url: gnome_gitlab:AdrianVovk/gnome-control-center.git
+  track: homed
+  ref: 51.0-75-g6ae626a9f4f7ae827cfb8445142349d17aa3bda1
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
