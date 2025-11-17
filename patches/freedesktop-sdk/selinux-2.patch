@@ -1,0 +1,145 @@
+diff --git a/files/fakecap/fakecap.c b/files/fakecap/fakecap.c
+index a3b1ad63a..a8b3fb119 100644
+--- a/files/fakecap/fakecap.c
++++ b/files/fakecap/fakecap.c
+@@ -42,6 +42,9 @@ int handle_cap(const char* name) {
+   if (strcmp(name, "security.capability") == 0) {
+     return 1;
+   }
++  if (strcmp(name, "security.selinux") == 0) {
++    return 1;
++  }
+   if (strncmp(name, "user.validatefs.", 16) == 0) {
+     return 1;
+   }
+@@ -50,15 +53,30 @@ int handle_cap(const char* name) {
+ 
+ static
+ int open_metadata(struct stat *st, const char* name, int flags, mode_t mode) {
+-  char *path = NULL;
++  char *dir, *path = NULL;
+   int r, fd;
+ 
+-  r = asprintf(&path,
+-               "%s/%u-%u-%lu-%s",
++  r = asprintf(&dir,
++               "%s/%u-%u-%lu",
+                getenv("FAKECAP_DB"),
+                major(st->st_dev), minor(st->st_dev),
+-               st->st_ino,
++               st->st_ino);
++
++  if (r < 0) {
++    if (dir != NULL)
++      free(dir);
++    return r;
++  }
++
++  if ((flags & O_CREAT)) {
++    mkdir(dir, 0777);
++  }
++
++  r = asprintf(&path,
++               "%s/%s",
++               dir, name,
+                name);
++  free(dir);
+   if (r < 0) {
+     if (path != NULL)
+       free(path);
+@@ -294,61 +312,57 @@ static
+ ssize_t list_metadata(struct stat *st, char *list, size_t size, char *previous_list, size_t previous_size) {
+   DIR *db = NULL;
+   struct dirent *ent;
+-  char *prefix = NULL;
+-  int prefix_len;
++  char *dir = NULL;
++  int r;
+   ssize_t written = 0;
+   size_t name_len;
+ 
+-  db = opendir(getenv("FAKECAP_DB"));
+-  if (db == NULL)
+-    return 0;
+-
+-  prefix_len = asprintf(&prefix,
+-                        "%u-%u-%lu-",
+-                        major(st->st_dev), minor(st->st_dev),
+-                        st->st_ino);
+-  if (prefix_len < 0) {
+-    closedir(db);
+-    if (prefix != NULL)
+-      free(prefix);
++  r = asprintf(&dir,
++               "%s/%u-%u-%lu",
++               getenv("FAKECAP_DB"),
++               major(st->st_dev), minor(st->st_dev),
++               st->st_ino);
++  if (r < 0) {
++    if (dir != NULL)
++      free(dir);
+     return -1;
+   }
++  db = opendir(dir);
++  free(dir);
++  if (db == NULL)
++    return 0;
+ 
+   while (1) {
+     ent = readdir(db);
+     if (ent == NULL)
+       break;
+-    if (strncmp(ent->d_name, prefix, prefix_len) == 0) {
+-      if (previous_list) {
+-        int already_listed = 0;
+-        for (size_t i = 0; i < previous_size;) {
+-          if (strcmp(previous_list + i, ent->d_name + prefix_len) == 0) {
+-            already_listed = 1;
+-            break ;
+-          }
+-          i += strlen(previous_list + i) + 1;
++    if (previous_list) {
++      int already_listed = 0;
++      for (size_t i = 0; i < previous_size;) {
++        if (strcmp(previous_list + i, ent->d_name) == 0) {
++          already_listed = 1;
++          break ;
+         }
+-        if (already_listed)
+-          continue ;
++        i += strlen(previous_list + i) + 1;
+       }
+-      name_len = strlen(ent->d_name + prefix_len);
+-      if (list != NULL) {
+-        if (size <= name_len) {
+-          closedir(db);
+-          free(prefix);
+-          errno = ERANGE;
+-          return -1;
+-        }
+-        strcpy(list, ent->d_name + prefix_len);
+-        list += name_len + 1;
+-        size -= name_len + 1;
++      if (already_listed)
++        continue ;
++    }
++    name_len = strlen(ent->d_name);
++    if (list != NULL) {
++      if (size <= name_len) {
++        closedir(db);
++        errno = ERANGE;
++        return -1;
+       }
+-      written += name_len + 1;
++      strcpy(list, ent->d_name);
++      list += name_len + 1;
++      size -= name_len + 1;
+     }
++    written += name_len + 1;
+   }
+ 
+   closedir(db);
+-  free(prefix);
+ 
+   return written;
+ }

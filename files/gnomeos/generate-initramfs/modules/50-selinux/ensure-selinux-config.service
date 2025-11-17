@@ -1,0 +1,21 @@
+[Unit]
+Description=Ensure SELinux configuration is present
+AssertPathExists=/etc/initrd-release
+ConditionPathExists=!/sysroot/etc/selinux
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=initrd-root-fs.target
+Before=initrd-fs.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/mkdir -p /sysroot/etc/selinux
+ExecStart=/usr/bin/ln -s /usr/share/factory/etc/selinux/refpolicy /sysroot/etc/selinux/refpolicy
+ExecStart=/usr/bin/ln -s /usr/share/factory/etc/selinux/semanage.conf /sysroot/etc/selinux/semanage.conf
+ExecStart=/usr/bin/ln -s /usr/share/factory/etc/sestatus.conf /sysroot/etc/sestatus.conf
+ExecStart=/usr/bin/cp /sysusr/usr/share/factory/etc/selinux/config /sysroot/etc/selinux/config
+
+[Install]
+WantedBy=initrd.target

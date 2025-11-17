@@ -33,4 +33,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dselinux=false
+    -Dselinux=true

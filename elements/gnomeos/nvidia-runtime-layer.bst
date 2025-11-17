@@ -7,6 +7,7 @@ build-depends:
 - gnomeos/make-layer.bst
 - gnomeos/initial-scripts.bst
 - gnomeos/initial-scripts-nvidia-runtime.bst
+- gnomeos-deps/selinux-policycoreutils.bst
 - filename: gnomeos/filesystem.bst
   config:
     location: '/sysroot'
@@ -44,6 +45,7 @@ config:
        --sysroot sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
+       --setfiles refpolicy \
        --noroot --noboot --nodepmod >/dev/null
 
   - |
@@ -51,6 +53,7 @@ config:
        --sysroot sysroot-nvidia-runtime \
        --initscripts /etc/fdsdk/initial_scripts-nvidia-runtime \
        --seed "%{sysroot-seed}" \
+       --setfiles refpolicy \
        --noroot --noboot --nodepmod >/dev/null
 
   - |

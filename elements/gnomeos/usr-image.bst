@@ -8,6 +8,7 @@ build-depends:
 - gnomeos/initial-scripts.bst
 - gnomeos/repart-config.bst
 - gnomeos/repart-config-mini.bst
+- gnomeos-deps/selinux-policycoreutils.bst
 - filename: gnomeos/filesystem.bst
   config:
     location: '/sysroot'
@@ -39,6 +40,7 @@ config:
        --sysroot /sysroot \
        --initscripts /etc/fdsdk/initial_scripts \
        --seed "%{sysroot-seed}" \
+       --setfiles refpolicy \
        --noroot --noboot >'%{install-root}/vars.txt'
 
   - |
@@ -183,6 +185,12 @@ config:
 
     # freedesktop-sdk.bst:components/slang.bst
     L /etc/slsh.rc
+
+    # gnomeos-deps/selinux-refpolicy.bst
+    L /etc/selinux/refpolicy
+    L /etc/selinux/semanage.conf
+    C /etc/selinux/config
+    L /etc/sestatus.conf
 
     # FIXME: sort those and make them symlinks
     C /etc/dconf

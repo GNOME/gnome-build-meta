@@ -44,7 +44,7 @@ variables:
     -Dtests=no
     -Dlibaudit=no
     -Dnmtui=false
-    -Dselinux=false
+    -Dselinux=true
     -Dqt=false
     -Dovs=false
     -Dnm_cloud_setup=false

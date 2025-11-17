@@ -106,7 +106,7 @@ variables:
     -Dglib=disabled
     -Ddbus=disabled
     -Dstatus-unit-format-default=combined
-    -Dselinux=disabled
+    -Dselinux=enabled
     -Dukify=%{efi}
     -Dkernel-install=true
     -Dvmlinux-h=provided

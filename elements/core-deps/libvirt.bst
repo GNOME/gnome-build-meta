@@ -73,8 +73,8 @@ variables:
     -Dsasl=enabled
     -Dsanlock=disabled
     -Dsecdriver_apparmor=enabled
-    -Dsecdriver_selinux=disabled
-    -Dselinux=disabled
+    -Dsecdriver_selinux=enabled
+    -Dselinux=enabled
     -Dstorage_disk=enabled
     -Dstorage_gluster=disabled
     -Dstorage_iscsi=enabled

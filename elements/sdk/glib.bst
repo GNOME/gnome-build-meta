@@ -28,6 +28,6 @@ variables:
     -Ddtrace=disabled
     -Dinstalled_tests=true
     -Dintrospection=enabled
-    -Dselinux=disabled
+    -Dselinux=enabled
     -Dsysprof=enabled
     -Dsystemtap=disabled

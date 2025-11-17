@@ -7,3 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  conf-local: >-
+    --disable-opt

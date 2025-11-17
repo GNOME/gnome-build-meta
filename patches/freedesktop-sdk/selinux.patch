@@ -1,0 +1,159 @@
+diff --git a/elements/components/dbus-base.bst b/elements/components/dbus-base.bst
+index 394996cfb..d8c4b06e6 100644
+--- a/elements/components/dbus-base.bst
++++ b/elements/components/dbus-base.bst
+@@ -20,7 +20,7 @@ variables:
+     -Dqt_help=disabled
+     -Dmodular_tests=disabled
+     -Drelocation=disabled
+-    -Dselinux=disabled
++    -Dselinux=enabled
+     -Dkqueue=disabled
+     -Dlaunchd=disabled
+     -Dx11_autolaunch=disabled
+diff --git a/elements/components/flatpak.bst b/elements/components/flatpak.bst
+index 9989a2a9e..80f346eb4 100644
+--- a/elements/components/flatpak.bst
++++ b/elements/components/flatpak.bst
+@@ -32,6 +32,7 @@ depends:
+ - components/xdg-dbus-proxy.bst
+ 
+ variables:
++  # FIXME we need development files from selinux refpolicy
+   meson-local: >-
+     -Dgtkdoc=disabled
+     -Dsystem_bubblewrap=bwrap
+diff --git a/elements/components/glib.bst b/elements/components/glib.bst
+index 7ce473e3f..746d2de19 100644
+--- a/elements/components/glib.bst
++++ b/elements/components/glib.bst
+@@ -22,7 +22,7 @@ runtime-depends:
+ 
+ variables:
+   meson-local: >-
+-    -Dselinux=disabled
++    -Dselinux=enabled
+     -Dman-pages=disabled
+     -Ddocumentation=false
+     -Ddtrace=disabled
+diff --git a/elements/components/libsemanage.bst b/elements/components/libsemanage.bst
+new file mode 100644
+index 000000000..b19f89a1d
+--- /dev/null
++++ b/elements/components/libsemanage.bst
+@@ -0,0 +1,36 @@
++kind: make
++
++sources:
++- kind: git_repo
++  url: github:SELinuxProject/selinux.git
++  track: 'libsemanage-*'
++  exclude:
++  - '*rc*'
++  ref: semodule-utils-3.9-0-g919e9e64cc4b20f5a1e4df1e38cce1bfe15aff09
++
++build-depends:
++- public-stacks/buildsystem-make.bst
++- components/bison.bst
++- components/flex.bst
++
++depends:
++- public-stacks/runtime-minimal.bst
++- components/audit.bst
++
++variables:
++  command-subdir: libsemanage
++  make-args: >-
++    LIBDIR='%{libdir}'
++
++config:
++  install-commands:
++    (>):
++    - |
++      rm '%{install-root}%{libdir}/libsemanage.a'
++
++public:
++  bst:
++    split-rules:
++      devel:
++        (>):
++        - '%{libdir}/libsemanage.so'
+diff --git a/elements/components/linux-pam-base.bst b/elements/components/linux-pam-base.bst
+index de8f04bf5..5b84cf7fe 100644
+--- a/elements/components/linux-pam-base.bst
++++ b/elements/components/linux-pam-base.bst
+@@ -15,7 +15,7 @@ variables:
+     -Dexamples=false
+     -Dlogind=disabled
+     -Dnis=disabled
+-    -Dselinux=disabled
++    -Dselinux=enabled
+     -Ddocs=disabled
+     -Delogind=disabled
+ 
+diff --git a/elements/components/shadow.bst b/elements/components/shadow.bst
+index 9ba97a8a2..7b2a0337a 100644
+--- a/elements/components/shadow.bst
++++ b/elements/components/shadow.bst
+@@ -10,6 +10,7 @@ build-depends:
+ depends:
+ - public-stacks/runtime-minimal.bst
+ - components/linux-pam.bst
++- components/libsemanage.bst
+ 
+ variables:
+   autogen: autoreconf -fvi
+@@ -17,7 +18,7 @@ variables:
+   build-dir: ''
+   conf-local: >-
+     --with-libpam
+-    --without-selinux
++    --with-selinux
+     --without-libbsd
+     --enable-man
+ 
+@@ -30,7 +31,6 @@ config:
+     - |
+       # remove pam_selinux and pam_console from the config
+       # as we don't build them
+-      sed -i /pam_selinux/d %{install-root}%{sysconfdir}/pam.d/*
+       sed -i /pam_console/d %{install-root}%{sysconfdir}/pam.d/*
+ 
+     - touch '%{install-root}%{sysconfdir}/subuid'
+diff --git a/files/vm/prepare-image.sh b/files/vm/prepare-image.sh
+index fd5c9d3b8..15f57a257 100755
+--- a/files/vm/prepare-image.sh
++++ b/files/vm/prepare-image.sh
+@@ -14,6 +14,7 @@ rootfsopts="errors=remount-ro,relatime"
+ root_source=
+ noroot=
+ nodepmod=
++setfiles=
+ 
+ while [ $# -gt 0 ]; do
+     param="$1"
+@@ -72,6 +73,10 @@ while [ $# -gt 0 ]; do
+         --nodepmod)
+             nodepmod="1"
+             ;;
++        --setfiles)
++            setfiles="$1"
++            shift
++            ;;
+     esac
+ done
+ 
+@@ -157,5 +162,13 @@ echo "uuid_root='${uuid_root}'"
+ echo "id_efi='${id_efi}'"
+ echo "uuid_efi='${uuid_efi}'"
+ 
++if [ -n "${setfiles}" ]; then
++    if [ -n "${sysroot}" ]; then
++        setfiles -r "${sysroot}" "${sysroot}/etc/selinux/${setfiles}/contexts/files/file_contexts" "${sysroot}"
++    else
++        setfiles "/etc/selinux/${setfiles}/contexts/files/file_contexts" /
++    fi
++fi
++
+ echo "Resetting timestamps in /etc" 1>&2
+ find "${sysroot}/etc" -depth -exec touch -h --date="@${SOURCE_DATE_EPOCH}" {} ";"

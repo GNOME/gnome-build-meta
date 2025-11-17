@@ -32,7 +32,7 @@ variables:
     -Dpam-prefix=%{sysconfdir}
     -Dplymouth=enabled
     -Drun-dir=/run/gdm
-    -Dselinux=disabled
+    -Dselinux=enabled
 
 config:
   install-commands:

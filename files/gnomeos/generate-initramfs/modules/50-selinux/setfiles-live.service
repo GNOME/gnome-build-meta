@@ -1,0 +1,18 @@
+[Unit]
+Description=Ensure SELinux configuration is present
+AssertPathExists=/etc/initrd-release
+ConditionKernelCommandLine=root=live:gnomeos
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=initrd-root-fs.target
+After=ensure-selinux-config.service
+Before=initrd-fs.target
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/setfiles -r /sysroot /sysusr/usr/share/factory/etc/selinux/refpolicy/contexts/files/file_contexts /sysroot
+
+[Install]
+WantedBy=initrd.target

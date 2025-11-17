@@ -100,6 +100,9 @@ depends:
 
 - gnomeos-deps/uinput.bst
 
+- gnomeos-deps/selinux-refpolicy.bst
+- gnomeos-deps/selinux-policycoreutils.bst
+
 (?):
 - arch == "aarch64":
     depends:

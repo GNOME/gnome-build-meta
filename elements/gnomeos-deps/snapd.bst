@@ -33,7 +33,7 @@ variables:
   conf-local: >-
     --enable-merged-usr
     --enable-apparmor
-    --disable-selinux
+    --enable-selinux
     --with-snap-mount-dir="%{mount-dir}"
     --without-unit-tests
   libexecdir: '%{indep-libdir}/snapd'
