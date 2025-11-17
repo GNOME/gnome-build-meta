@@ -22,6 +22,7 @@ depends:
 - gnomeos-deps/bpftop.bst
 - gnomeos-deps/deviced.bst
 - gnomeos-deps/grcov.bst
+- gnomeos-deps/just.bst
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/sysext-utils.bst
 - gnomeos-deps/virtiofsd.bst
