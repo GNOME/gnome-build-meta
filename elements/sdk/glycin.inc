@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.0.7-15-gd7714f2fd5307ac885faef0674f4c3ec71b12833
+  ref: 2.0.7-18-g36b835b25e63c1e283600bad812d01b2f9a3ece9
 - kind: cargo2
   ref:
   - kind: registry
@@ -294,10 +294,6 @@ sources:
     version: 0.3.7
     sha: 1e6853b52649d4ac5c0bd02320cddc5ba956bdb407c4b75a2c6b75bf51500f8c
   - kind: registry
-    name: field-offset
-    version: 0.3.6
-    sha: 38e2275cc4e4fc009b0669731a1e5ab7ebf11f469eaede2bab9309a5b4d6057f
-  - kind: registry
     name: find-msvc-tools
     version: 0.1.5
     sha: 3a3076410a55c90011c298b04d0cfa770b00fa04e1e3c97d3f6c9de105a03844
@@ -413,34 +409,6 @@ sources:
     name: gobject-sys
     version: 0.21.2
     sha: 538e41d8776173ec107e7b0f2aceced60abc368d7e1d81c1f0e2ecd35f59080d
-  - kind: registry
-    name: graphene-rs
-    version: 0.21.2
-    sha: e7749aaf5d3b955bf3bfce39e3423705878a666b561384134da0e7786a45ddc3
-  - kind: registry
-    name: graphene-sys
-    version: 0.21.2
-    sha: 250abaee850a90a276509890a78029c356173f9573412bded5f155b0e41fa568
-  - kind: registry
-    name: gsk4
-    version: 0.10.1
-    sha: b6687e9f92ca89c000c376400cfaf7914d099413d72fdf4f84a25775a0b1fb2d
-  - kind: registry
-    name: gsk4-sys
-    version: 0.10.1
-    sha: 5e76bcf64d9c4846f19651f45b400cc0c9c4c17b651849da520f3d77c6988c52
-  - kind: registry
-    name: gtk4
-    version: 0.10.2
-    sha: 58ea71795b91a0725b0e926e72e3d209d920ce60166e3a8f9f4dd46f287fee87
-  - kind: registry
-    name: gtk4-macros
-    version: 0.10.1
-    sha: 821160b4f17e7e4ed748818c23682d0a46bed04c287dbaac54dd4869d2c5e06a
-  - kind: registry
-    name: gtk4-sys
-    version: 0.10.1
-    sha: d274cbaf7d9aa55b7aff78cb21b43299d64e514e1300671469b66f691cc5a011
   - kind: registry
     name: gufo
     version: 0.3.0
@@ -826,10 +794,6 @@ sources:
     version: 1.3.0
     sha: 52e599a477cf9840e92f2cde9a7189e67b42c57532749bf90aea6ec10facd4db
   - kind: registry
-    name: rustc_version
-    version: 0.4.1
-    sha: cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92
-  - kind: registry
     name: rustix
     version: 1.1.2
     sha: cd15f8a2c5551a84d56efdc1cd049089e409ac19a3072d5037a17fd70719ff3e
@@ -853,10 +817,6 @@ sources:
     name: same-file
     version: 1.0.6
     sha: 93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502
-  - kind: registry
-    name: semver
-    version: 1.0.27
-    sha: d767eb0aabc880b29956c35734170f26ed551a859dbd361d140cdbeca61ab1e2
   - kind: registry
     name: serde
     version: 1.0.228
