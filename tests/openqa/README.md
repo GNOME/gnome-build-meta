@@ -64,22 +64,23 @@ You will need a Linux computer with the following programs installed:
 Fetch the tests, and the needles:
 
 ```
-git clone https://gitlab.gnome.org/gnome/openqa-tests
-cd openqa-tests && git clone https://gitlab.gnome.org/gnome/openqa-needles needles
+cd tests/openqa
+git clone https://gitlab.gnome.org/gnome/openqa-utils utils
+git clone https://gitlab.gnome.org/gnome/openqa-needles needles
 ```
 
 Fetch and prepare the required test media (note: large files):
 
 ```
-curl --get --location $(./utils/test_media_url.py --latest --kind iso) --output gnome_os_installer.iso
-curl --get --location $(./utils/test_media_url.py --latest --kind disk) | unxz > gnome_os_disk.img
-./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
+curl --get --location $(./utils/test_media_url.py --latest) --output gnome_os_installer.iso
+sudo ./../../utils/to-raw.sh gnome_os_installer.iso gnome_os_disk.img
+sudo ./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
 ```
 
 Download the openQA worker container image:
 
 ```
-podman pull registry.opensuse.org/devel/openqa/containers15.5/openqa_worker:latest
+podman pull registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
 ```
 
 Now run `ssam_openqa`, which will launch the openQA worker container and run the
