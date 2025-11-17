@@ -22,7 +22,6 @@ depends:
 
 - oci/integration/bootc-config.bst
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
-- freedesktop-sdk.bst:vm/config/sudo-nopasswd.bst
 
 public:
   bst:
