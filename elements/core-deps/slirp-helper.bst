@@ -1,5 +1,11 @@
 kind: manual
 
+environment:
+  MAXJOBS: "%{max-jobs}"
+
+environment-nocache:
+- MAXJOBS
+
 build-depends:
 - freedesktop-sdk.bst:components/gcc.bst
 - freedesktop-sdk.bst:components/stripper.bst
@@ -625,7 +631,7 @@ sources:
 
 config:
   install-commands:
-  - cargo install --all-features --path . --root "%{install-root}%{prefix}"
+  - cargo install --jobs "${MAXJOBS}" --all-features --path . --root "%{install-root}%{prefix}"
   - rm "%{install-root}%{prefix}"/.crates*
   - ln -s libslirp-helper "%{install-root}%{bindir}/slirp-helper"
   - "%{install-extra}"
