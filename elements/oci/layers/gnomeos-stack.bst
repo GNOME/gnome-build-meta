@@ -36,9 +36,15 @@ public:
     - ln -s sysroot/ostree ostree
 
     - rm --verbose --recursive --force /root
-    # It doesn't exist but it will get created
-    # by the 10-booc.conf tmpfiles
+    # These also get created by 10-booc.conf tmpfiles
+    # but we need them to exist for the OCI image to
+    # be usable as a container as well
+    - mkdir /var/home
+    - mkdir /var/roothome
+    - mkdir /var/opt
+
     - ln -s /var/home /home
     - ln -s /var/roothome /root
+    - ln -s /var/opt /opt
 
     - touch /etc/machine-id
