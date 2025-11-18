@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glib.git
   track: main
-  ref: 2.87.0-17-g5f256ba23fdb6931a50576a677252eed03836387
+  ref: 2.87.0-19-ga0631ca294cf47eef728d976ce93f6c24cd502f5
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
