@@ -10,6 +10,7 @@ depends:
 # Containers
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/skopeo.bst
+- gnomeos-deps/bootc.bst
 - gnomeos-deps/distrobox.bst
 - gnomeos-deps/toolbox.bst
 
