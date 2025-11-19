@@ -409,17 +409,18 @@ s3-image-static-stable:
   - aws s3 cp --acl public-read stable-$branch-aarch64-iso s3://gnome-build-meta/stable-$branch-aarch64-iso
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
+# FIXME: with libdir gir-1.0 we will need per-arch uploads
 export_metadata:
   stage: "deploy"
-  extends: ".aarch64"
+  extends: ".x86_64"
   needs:
-  - job: 'build-aarch64'
+  - job: 'build-x86_64'
     artifacts: false
   script:
-    - ./utils/export-metadata.sh
+    - ./.gitlab-ci/scripts/export-metadata.sh
     - |-
       if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-          ./utils/publish-metadata-to-s3.sh
+          ./.gitlab-ci/scripts/publish-metadata-to-s3.sh
       fi
   artifacts:
     when: "always"

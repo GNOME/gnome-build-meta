@@ -15,17 +15,14 @@ else
     version="nightly"
 fi
 
-# same as .gitlab-ci/scripts/build-elements.sh
-TARGETS_METADATA=(export-sdk-gir.bst export-sdk-docs.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst gnomeos/manifest.bst gnomeos/manifest-devel.bst)
+# same as .gitlab-ci/scripts/build_elements.sh
+TARGETS_METADATA=(sdk-metadata.bst flatpak/platform-manifest.bst flatpak/sdk-manifest.bst gnomeos/manifest.bst gnomeos/manifest-devel.bst)
 
 : ${BST:=bst}
+: ${ARCH_OPT:=}
 ${BST} ${ARCH_OPT} artifact pull "${TARGETS_METADATA[@]}"
 
-${BST} ${ARCH_OPT} artifact checkout export-sdk-gir.bst --directory sdk-girs
-${BST} ${ARCH_OPT} artifact checkout export-sdk-docs.bst --directory sdk-docs
-
-tar --create --auto-compress --file "$top_dir/metadata/sdk-girs-$version.tar.xz" --directory "$top_dir/sdk-girs" .
-tar --create --auto-compress --file "$top_dir/metadata/sdk-docs-$version.tar.xz" --directory "$top_dir/sdk-docs" .
+${BST} ${ARCH_OPT} artifact checkout sdk-metadata.bst --compression xz --tar "$top_dir/metadata/sdk-metadata-$version.tar.xz"
 
 ${BST} ${ARCH_OPT} artifact checkout flatpak/platform-manifest.bst --directory platform-manifest
 ${BST} ${ARCH_OPT} artifact checkout flatpak/sdk-manifest.bst --directory sdk-manifest
