@@ -13,8 +13,8 @@ sources:
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
   ref: 328951d3dcb5ff97f5a7c7a362b006626fada000
-- kind: local
-  path: files/boot-keys/VENDOR.crt
+- kind: configuration
+  path: VENDOR.crt
   directory: boot-keys
 
 build-depends:

@@ -12,12 +12,16 @@ set -x
 # Ensure the log directory exists
 mkdir -p logs
 
+rm -rf "${HOME}/.config/bst-configuration/gnomeos-keys"
+mkdir -p "${HOME}/.config/bst-configuration"
+cp -r files/boot-keys "${HOME}/.config/bst-configuration/gnomeos-keys"
+
 # Setup certificates and image version for sysupdate
 if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "schedule" ]; then
-    make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
+    make -C "${HOME}/.config/bst-configuration/gnomeos-keys" IMPORT_MODE=snakeoil
     export PUSH_SOURCE=1
 else
-    make -C files/boot-keys generate-keys IMPORT_MODE=import
+    make -C "${HOME}/.config/bst-configuration/gnomeos-keys" IMPORT_MODE=import
 fi
 
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf

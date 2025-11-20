@@ -113,7 +113,13 @@ fi
 "${BST}" "${BST_OPTIONS[@]}" build "${image}"
 
 "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
-gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
+
+keys="${XDG_CONFIG_HOME-${HOME}/.config}/bst-configuration/gnomeos-keys"
+if ! [ -d "${keys}" ]; then
+    cp -r files/boot-keys "${keys}"
+    make -C "${keys}" IMPORT_MODE=snakeoil
+fi
+gpg --homedir="${keys}/private-key" --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if [ "${next_version+set}" = set ]; then
     echo "${next_version}" >"${REPO_STATE}/next_version"

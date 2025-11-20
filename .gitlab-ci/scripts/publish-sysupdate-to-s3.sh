@@ -24,7 +24,7 @@ if [ -n "${target_dir}" ] && [ -n "${IMAGE_VERSION}" ]; then
         --recursive --exclude "*" --include "SHA256SUMS.version.*"
 
     cat update-images/SHA256SUMS.version.* > update-images/SHA256SUMS
-    gpg --homedir=files/boot-keys/private-key \
+    gpg --homedir="${HOME}/.config/bst-configuration/gnomeos-keys/private-key" \
         --output "update-images/SHA256SUMS.gpg" \
         --detach-sig "update-images/SHA256SUMS"
 

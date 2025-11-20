@@ -115,5 +115,3 @@ reading. Here are some links:
   * Arch Linux wiki: [Unified Extensible Firmware Interface/Secure Boot](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot)
   * Microsoft Windows Hardware Developer documentation: ["Secure Boot overview"](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/secure-boot-landing)
   * Proxmox wiki: [Secure Boot Setup](https://pve.proxmox.com/wiki/Secure_Boot_Setup)
-
-

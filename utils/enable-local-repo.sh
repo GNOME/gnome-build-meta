@@ -30,9 +30,10 @@ url_local="http://localhost:8080"
 
 args=()
 
-default_pubring="$(dirname ${0})/../files/boot-keys/import-pubring.pgp"
+keys="${XDG_CONFIG_HOME-${HOME}/.config}/bst-configuration/gnomeos-keys"
+default_pubring="${keys}/import-pubring.pgp"
 
-local_sysext="$(dirname ${0})/../files/boot-keys/SYSEXT.crt"
+local_sysext="${keys}/SYSEXT.crt"
 upstream_sysext="$(dirname ${0})/sysext-upstream.crt"
 
 while [ $# -gt 0 ]; do
