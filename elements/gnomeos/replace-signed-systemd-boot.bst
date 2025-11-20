@@ -29,7 +29,7 @@ public:
     - "%{indep-libdir}/systemd/boot/efi/systemd-boot%{efi-arch}.efi"
 
 sources:
-- kind: local
-  path: files/boot-keys/VENDOR.key
-- kind: local
-  path: files/boot-keys/VENDOR.crt
+- kind: configuration
+  path: VENDOR.key
+- kind: configuration
+  path: VENDOR.crt

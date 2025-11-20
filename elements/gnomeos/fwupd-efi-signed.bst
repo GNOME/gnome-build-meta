@@ -25,7 +25,7 @@ config:
     install -Dm644 -t "%{install-root}%{libexecdir}/fwupd/efi" "fwupd%{efi-arch}.efi.signed"
 
 sources:
-- kind: local
-  path: files/boot-keys/VENDOR.key
-- kind: local
-  path: files/boot-keys/VENDOR.crt
+- kind: configuration
+  path: VENDOR.key
+- kind: configuration
+  path: VENDOR.crt
