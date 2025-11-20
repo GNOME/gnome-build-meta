@@ -39,12 +39,13 @@ To build a runtime locally, for debugging:::
 GNOME OS
 ~~~~~~~~
 
-To build the GNOME OS ISO installer  locally:
+To build the GNOME OS ISO installer locally:
 
 1. Generate keys::
 
-      $ make -C files/boot-keys clean
-      $ make -C files/boot-keys
+      $ mkdir -p "${HOME}/.config/bst-configuration"
+      $ cp -rT files/boot-keys "${HOME}/.config/bst-configuration/gnomeos-keys"
+      $ make -C "${HOME}/.config/bst-configuration/gnomeos-keys"
 
 2. Build the image::
 

@@ -120,15 +120,15 @@ config:
       "${MICROCODE[@]}" "${DEVICETREES[@]}"
 
 sources:
-- kind: local
-  path: files/boot-keys/VENDOR.key
-- kind: local
-  path: files/boot-keys/VENDOR.crt
-- kind: local
-  path: files/boot-keys/tpm2-pcr-public.pem
-- kind: local
-  path: files/boot-keys/tpm2-pcr-private.pem
-- kind: local
-  path: files/boot-keys/fstab-tpm2-pcr-public.pem
-- kind: local
-  path: files/boot-keys/fstab-tpm2-pcr-private.pem
+- kind: configuration
+  path: VENDOR.key
+- kind: configuration
+  path: VENDOR.crt
+- kind: configuration
+  path: tpm2-pcr-public.pem
+- kind: configuration
+  path: tpm2-pcr-private.pem
+- kind: configuration
+  path: fstab-tpm2-pcr-public.pem
+- kind: configuration
+  path: fstab-tpm2-pcr-private.pem

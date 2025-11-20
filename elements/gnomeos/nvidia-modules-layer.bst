@@ -10,10 +10,10 @@ build-depends:
     location: '/sysroot-nvidia-modules'
 
 sources:
-- kind: local
-  path: files/boot-keys/SYSEXT.key
-- kind: local
-  path: files/boot-keys/SYSEXT.crt
+- kind: configuration
+  path: SYSEXT.key
+- kind: configuration
+  path: SYSEXT.crt
 
 variables:
   repart-seed: a19b0f25-42ac-4c92-8921-d8d4079ec140

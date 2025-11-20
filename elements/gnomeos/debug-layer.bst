@@ -10,10 +10,10 @@ build-depends:
     location: '/sysroot-debug'
 
 sources:
-- kind: local
-  path: files/boot-keys/SYSEXT.key
-- kind: local
-  path: files/boot-keys/SYSEXT.crt
+- kind: configuration
+  path: SYSEXT.key
+- kind: configuration
+  path: SYSEXT.crt
 
 variables:
   repart-seed: 0dc2e590-c162-4ed3-992f-75ddb3fdbb65

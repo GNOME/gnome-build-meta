@@ -198,7 +198,7 @@ clean:
 	rm -rf private-key
 	rm -f import-pubring.pgp
 	rm -f extra-{db,kek}{,-mic}/*.{owner,crt}
-	rm -f tpm2-pcr-{private,public}.pem
+	rm -f {fstab-,}tpm2-pcr-{private,public}.pem
 	rm -f modules/linux-module-cert.crt
 
 .PHONY: generate-keys download-microsoft-keys show-keys-for-ci clean

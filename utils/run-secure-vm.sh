@@ -264,6 +264,16 @@ cleanup() {
 }
 trap cleanup EXIT INT
 
+keys="${XDG_CONFIG_HOME-${HOME}/.config}/bst-configuration/gnomeos-keys"
+
+ensure_keys() {
+    if ! [ -d "${keys}" ]; then
+        mkdir -p "$(dirname "${keys}")"
+        cp -r files/boot-keys "${keys}"
+        make -C "${keys}" IMPORT_MODE=snakeoil
+    fi
+}
+
 if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${live+set}" = set ]); then
     mkdir -p "${STATE_DIR}"
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
@@ -272,7 +282,7 @@ if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${l
     if [ "${buildid+set}" = set ]; then
         cp "${STATE_DIR}/builds/gnome_os_${buildid}.iso" "${checkout}/disk.iso"
     else
-        make -C files/boot-keys generate-keys
+        ensure_keys
         "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
@@ -385,8 +395,9 @@ tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
 cleanup_dirs+=("${tmpfiles}")
 
 if [ "${local_updates+set}" = set ]; then
+    ensure_keys
     cat <<EOF >"${tmpfiles}"/tmpfiles-import-pubring.conf
-f~ /etc/systemd/import-pubring.pgp 0644 root root - $(base64 -w0 files/boot-keys/import-pubring.pgp)
+f~ /etc/systemd/import-pubring.pgp 0644 root root - $(base64 -w0 "${keys}/boot-keys/import-pubring.pgp")
 EOF
 
     tmpfiles_extra+=("${tmpfiles}"/tmpfiles-import-pubring.conf)
