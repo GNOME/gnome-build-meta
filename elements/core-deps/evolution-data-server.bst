@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:evolution-data-server.git
   track: master
-  ref: 3.58.0-57-g86e5b7fafad6e9961718e606e6d294fb06cbeafd
+  ref: 3.58.0-59-g5e1345324f356b72125bb49117751725c37560d2
 
 build-depends:
 - sdk/vala.bst
