@@ -17,4 +17,4 @@ environment-nocache:
 config:
   commands:
   - |
-    tar -c --zstd -f '%{install-root}/debug.tar.zst' -C /sysroot-debug .
+    tar -c --zstd -f '%{install-root}/debug-%{systemd-arch}_%{image-version}.tar.zst' -C /sysroot-debug .
