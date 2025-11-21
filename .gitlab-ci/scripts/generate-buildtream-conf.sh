@@ -10,14 +10,16 @@ logdir: ${CI_PROJECT_DIR}/logs
 
 # build area and artifacts
 cachedir: ${CI_PROJECT_DIR}/cache
+EOF
 
+cat <<EOF
 scheduler:
   # Keep building and find all the errors
   on-error: continue
   # Maximum number of simultaneous downloading tasks.
   fetchers: 32
   # Unlimited builds, they will be limited by buildbox-casd
-  builders: 0
+  builders: $(( $(nproc) / 4 ))
 
 # Get a lot of output in case of errors
 logging:
