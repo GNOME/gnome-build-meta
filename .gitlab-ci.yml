@@ -200,10 +200,11 @@ deploy-flatpak:
 
   - ostree init --repo repo/ --mode archive
   - |
+    subject="Build of the GNOME Runtime from: $(git describe HEAD)"
     for ARCH in $SUPPORTED_ARCHES; do
       for target in $TARGETS; do
         $BST -o arch $ARCH artifact checkout $target --directory checkout-repo/
-        ostree pull-local --repo repo/ checkout-repo/
+        flatpak build-commit-from --subject="$subject" --disable-fsync --src-repo=checkout-repo/ repo/
         rm -rf checkout-repo/
       done
     done
