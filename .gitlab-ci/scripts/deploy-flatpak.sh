@@ -3,11 +3,14 @@
 set -eux
 set -o pipefail
 
+: ${BST:=bst}
+subject="Build of the GNOME Runtime from: $(git describe HEAD)"
+
 TARGETS_REPO=TARGETS_${FLAT_MANAGER_REPO}
 TARGETS="$TARGETS ${!TARGETS_REPO}"
 echo $TARGETS
 
-# Sanity chck where we going to push
+# Sanity check where we going to push
 python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/publish-flatpak-gate.py
 
 ostree init --repo repo/ --mode archive
@@ -15,7 +18,7 @@ ostree init --repo repo/ --mode archive
 for ARCH in $SUPPORTED_ARCHES; do
     for target in $TARGETS; do
         $BST -o arch $ARCH artifact checkout $target --directory checkout-repo/
-        ostree pull-local --repo repo/ checkout-repo/
+        flatpak build-commit-from --subject="$subject" --disable-fsync --src-repo=checkout-repo/ repo/
         rm -rf checkout-repo/
     done
 done
