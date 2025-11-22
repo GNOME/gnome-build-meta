@@ -156,7 +156,6 @@ default:
   # And !reference doesn't work for tags
   # https://gitlab.com/gitlab-org/gitlab/-/issues/344455
   - x86_64
-  - gnome-build-meta
   variables:
     # CI needs to be set so OPENQA_TEST_TIMEOUT_SCALE_CI has an effect.
     CI: 1
