@@ -5,6 +5,9 @@ include:
     job-stage: "deploy"
     dist-job-name: "make-git-archive"
     tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
+- component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
+  inputs:
+    job-stage: "reports"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -558,3 +561,4 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
+

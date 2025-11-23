@@ -1,0 +1,9 @@
+# rumdl configuration file
+
+[MD013]
+# line-length = 100
+# Exclude code blocks from line length check
+code-blocks = false
+# Exclude tables from line length check
+tables = false
+
