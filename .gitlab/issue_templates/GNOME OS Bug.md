@@ -5,7 +5,6 @@ there if there isn't one. If you are unsure, you can open an issue here.
 -->
 
 # Summary
-
 <!--
 Describe the problem you experienced. Please describe the
 behaviour you expected and the behaviour that you instead observed.
@@ -13,8 +12,7 @@ Did you recently change something in your system?
 Have you encountered this problem in another operating systems?
 -->
 
-## System Information
-
+# System Information
 <!--
 Please provide the version of GNOME OS you are using, the features or
 extensions you have enabled and, if relevant, details about your hardware.
@@ -26,14 +24,12 @@ You can see your current version by running `cat /usr/lib/os-release`
 and enabled features with `updatectl features`
 -->
 
-## Steps to reproduce
-
+# Steps to reproduce
 <!--
 Detail the actions you took to run into this issue.
 -->
 
-## Other
-
+# Other
 <!--
 Any other relevant information like logs, error messages or screenshots.
 

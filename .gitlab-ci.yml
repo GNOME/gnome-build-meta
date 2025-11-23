@@ -572,11 +572,11 @@ markdown-lint:
     - $CI_PROJECT_DIR/bin/rumdl check --output-format gitlab $CI_PROJECT_DIR > "$CI_PROJECT_DIR/rumdl.json"
   after_script:
     - cat "$CI_PROJECT_DIR/rumdl.json"
-  rules:
-    - changes:
-        paths:
-          - "*.md"
-          - "**/*.md"
+  # rules:
+  #   - changes:
+  #       paths:
+  #         - "*.md"
+  #         - "**/*.md"
   artifacts:
     when: always
     paths:
