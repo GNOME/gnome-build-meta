@@ -144,6 +144,7 @@ default:
 
 .test-openqa-template:
   stage: test
+  interruptible: true
   image:
     name: registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
     entrypoint: ["/bin/bash", "-c"]
