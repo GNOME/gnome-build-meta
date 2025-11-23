@@ -548,3 +548,29 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
+
+markdown-lint:
+  # has curl builtin still unlike debian or alpine
+  image: "fedora:latest"
+  needs: []
+  stage: "reports"
+  before_script:
+    - rumdl_tag="v0.0.181"
+    - mkdir -p "$CI_PROJECT_DIR/bin"
+    - curl -LsSf "https://github.com/rvben/rumdl/releases/download/$rumdl_tag/rumdl-$rumdl_tag-x86_64-unknown-linux-gnu.tar.gz" | tar xzf - -C "$CI_PROJECT_DIR/bin"
+  script:
+    - $CI_PROJECT_DIR/bin/rumdl check --output-format gitlab $CI_PROJECT_DIR > "$CI_PROJECT_DIR/rumdl.json"
+  after_script:
+    - cat "$CI_PROJECT_DIR/rumdl.json"
+  rules:
+    - changes:
+        paths:
+          - "*.md"
+          - "**/*.md"
+  artifacts:
+    when: always
+    paths:
+    - rumdl.json
+    reports:
+      codequality: rumdl.json
+
