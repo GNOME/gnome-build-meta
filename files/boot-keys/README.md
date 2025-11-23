@@ -5,26 +5,27 @@ for GNOME OS.
 
 The Makefile has the following targets:
 
-  * `generate-keys` (default): obtain keys following `IMPORT_MODE`.
-  * `clean`: delete all generated files
+* `generate-keys` (default): obtain keys following `IMPORT_MODE`.
+* `clean`: delete all generated files
 
 There are various modes for obtaining keys, controlled by the `IMPORT_MODE`
 variable:
 
-  * unset (default): generate a full set of new keys locally.
-  * `snakeoil`: use pregenerated 'snakeoil' keys which are committed to the repo
-  * `local`: use 'snakeoil' for the root keys (PK, KEK and DB), generate the rest locally.
-  * `import`: read pregenerated keys from environment variables
+* unset (default): generate a full set of new keys locally.
+* `snakeoil`: use pregenerated 'snakeoil' keys which are committed to the repo
+* `local`: use 'snakeoil' for the root keys (PK, KEK and DB), generate the rest
+  locally.
+* `import`: read pregenerated keys from environment variables
 
 See below for some guidance on which mode to use.
 
 ## Use cases
 
-UEFI Secure Boot ensures that a machine's firmware will only boot operating systems
-and UEFI applications that are trusted by the machine owner.
+UEFI Secure Boot ensures that a machine's firmware will only boot operating
+systems and UEFI applications that are trusted by the machine owner.
 
-It does this by embedding a chain of trust in the firmware, and requiring that UEFI
-applications are signed by a key that's allowed by the chain of trust.
+It does this by embedding a chain of trust in the firmware, and requiring that
+UEFI applications are signed by a key that's allowed by the chain of trust.
 
 Most desktop and laptop vendors ship with a chain of trust controlled by
 Microsoft, and they enable Secure Boot by default in the firmware.  This
@@ -38,9 +39,9 @@ boot GNOME OS on a modern laptop or desktop, you must be the machine owner and
 you'll need to modify the Secure Boot configuration in the firmware to trust
 the keys.
 
-If you downloaded an automated build from os.gnome.org, this is signed with
-keys stored in GNOME's Gitlab. You don't need to generate new keys in this case.
-You can go straight to adding the existing keys to the firmware's chain of trust.
+If you downloaded an automated build from os.gnome.org, this is signed with keys
+stored in GNOME's Gitlab. You don't need to generate new keys in this case. You
+can go straight to adding the existing keys to the firmware's chain of trust.
 
 If you're building GNOME OS locally, you will need to decide what signing
 keys to use. You have several options.
@@ -87,12 +88,12 @@ Everything else (kernel, modules, sysexts) gets a new locally generated key.
 
 The Makefile will output the following keys:
 
-  * `PK`: Platform Key
-  * `KEK`: Key Enrollment key
-  * `DB`: Signature Database
-  * `VENDOR`: Vendor key for signing UEFI applications
-  * `MODULES`: Vendor key for signing kernel modules
-  * `SYSEXT`: Vendor key for signing system extensions
+* `PK`: Platform Key
+* `KEK`: Key Enrollment key
+* `DB`: Signature Database
+* `VENDOR`: Vendor key for signing UEFI applications
+* `MODULES`: Vendor key for signing kernel modules
+* `SYSEXT`: Vendor key for signing system extensions
 
 It will additionally output `-MIC` variants of the first two keys. These are
 alternatives which include Microsoft keys in the chain of trust.
@@ -112,8 +113,7 @@ machine to dual boot into other operating systems.
 There is lots of documentation online about UEFI Secure Boot for further
 reading. Here are some links:
 
-  * Arch Linux wiki: [Unified Extensible Firmware Interface/Secure Boot](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot)
-  * Microsoft Windows Hardware Developer documentation: ["Secure Boot overview"](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/secure-boot-landing)
-  * Proxmox wiki: [Secure Boot Setup](https://pve.proxmox.com/wiki/Secure_Boot_Setup)
-
-
+* Arch Linux wiki: [Unified Extensible Firmware Interface/Secure Boot](https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot)
+* Microsoft Windows Hardware Developer documentation:
+  ["Secure Boot overview"](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/secure-boot-landing)
+* Proxmox wiki: [Secure Boot Setup](https://pve.proxmox.com/wiki/Secure_Boot_Setup)

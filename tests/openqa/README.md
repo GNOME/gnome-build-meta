@@ -5,8 +5,12 @@ Welcome!
 This repo holds end-to-end tests for GNOME OS, written
 using the openQA test API.
 
-For more information about this project, you could watch the following
-video: ["The best testing tools we've ever had: an introduction to openQA for GNOME"](https://www.youtube.com/watch?v=jIDk0frev7M&t=6732s). Or just keep reading :-)
+For more information about this project, you could watch the following video:
+<!-- rumdl-disable-next-line MD013 -->
+["The best testing tools we've ever had: an introduction to openQA for GNOME"][talk].
+Or just keep reading :-)
+
+[talk]: https://www.youtube.com/watch?v=jIDk0frev7M&t=6732s
 
 Complete documentation can be found here:
 <https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/openqa/OpenQA-for-GNOME-developers>
@@ -15,15 +19,15 @@ Complete documentation can be found here:
 
 The tests in this repo aim to cover the following areas:
 
-  * the GNOME OS installer and initial setup
-  * basic GNOME Shell functionality
-  * system services provided by GNOME and Freedesktop modules, such as
-    app launching, content indexing, fonts, and so on.
-  * core apps, especially where they interact with system services
+* the GNOME OS installer and initial setup
+* basic GNOME Shell functionality
+* system services provided by GNOME and Freedesktop modules, such as app
+    launching, content indexing, fonts, and so on.
+* core apps, especially where they interact with system services
     and each other.
-  * features that affect all components such as accessibility,
-    adaptive UI, and localization.
-  * anything an end-user might expect to do with a system
+* features that affect all components such as accessibility, adaptive UI, and
+    localization.
+* anything an end-user might expect to do with a system
 
 The aim is for a full run of the tests to complete within 10 or 15 minutes
 so that the tests can be used for pre-merge testing of changes to
@@ -31,10 +35,11 @@ gnome-build-meta.
 
 The following is specifically out of scope for the GNOME OS end-to-end tests:
 
-  * apps that are not in GNOME core
-  * functionality used only by developers and testers
-  * being a comprehensive specification of everything the system can do
-  * testing focused on specific small components, where a unit test is more appropriate
+* apps that are not in GNOME core
+* functionality used only by developers and testers
+* being a comprehensive specification of everything the system can do
+* testing focused on specific small components, where a unit test is more
+  appropriate
 
 GNOME modules will soon be able to have their own set of openQA end-to-end
 tests, see the corresponding issue to track this work.
@@ -57,13 +62,13 @@ the [full documentation](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis
 
 You will need a Linux computer with the following programs installed:
 
-  * Git
-  * Podman
-  * The [`ssam_openqa` helper tool](https://gitlab.gnome.org/sthursfield/ssam_openqa/)
+* Git
+* Podman
+* The [`ssam_openqa` helper tool](https://gitlab.gnome.org/sthursfield/ssam_openqa/)
 
 Fetch the tests, and the needles:
 
-```
+```bash
 cd tests/openqa
 git clone https://gitlab.gnome.org/gnome/openqa-utils utils
 git clone https://gitlab.gnome.org/gnome/openqa-needles needles
@@ -71,7 +76,7 @@ git clone https://gitlab.gnome.org/gnome/openqa-needles needles
 
 Fetch and prepare the required test media (note: large files):
 
-```
+```bash
 curl --get --location $(./utils/test_media_url.py --latest) --output gnome_os_installer.iso
 sudo ./../../utils/to-raw.sh gnome_os_installer.iso gnome_os_disk.img
 sudo ./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
@@ -79,14 +84,14 @@ sudo ./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
 
 Download the openQA worker container image:
 
-```
+```bash
 podman pull registry.opensuse.org/devel/openqa/containers15.6/openqa_worker:latest
 ```
 
 Now run `ssam_openqa`, which will launch the openQA worker container and run the
 test suite in a virtual machine that runs inside the container:
 
-```
+```bash
 ssam_openqa run --hdd-path ./gnome_os_disk.img --iso-path ./gnome_os_installer.iso --tests-path . --output-path ./out
 ```
 
@@ -98,7 +103,9 @@ openQA and the `ssam_openqa` helper tool have a few features that help with
 debugging and extending the testsuite.  See the README for `ssam_openqa` for
 more details.
 
-Running the tests locally requires KVM. See [VIRTUALIZATION.md](./VIRTUALIZATION.md) for more details and a troubleshooting guide. 
+Running the tests locally requires KVM. See
+[VIRTUALIZATION.md](./VIRTUALIZATION.md) for more details and a troubleshooting
+guide.
 
 ## Contributing to the tests
 

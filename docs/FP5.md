@@ -5,7 +5,8 @@
 ### Building
 
 Build the boot.img (on aarch64):
-```
+
+```bash
 bst build boards/fp5/boot-img.bst
 bst artifact checkout boards/fp5/boot-img.bst --directory boot-img
 ```
@@ -14,18 +15,18 @@ Download the [aarch64 iso](https://os.gnome.org/download/latest/live-aarch64.iso
 
 Create the disk to flash with: (FIXME: update to-raw.sh)
 
-```
+```bash
 sudo systemd-repart --empty=create --size=auto --sector-size=4096 --architecture=arm64 --definitions=utils/repart.raw.d/ --image=live.iso userdata.img
 ```
 
 ### Flashing to the phone
 
 Unlock the phone (TODO: give the instruction):
-See https://support.fairphone.com/hc/en-us/articles/10492476238865-How-to-unlock-and-re-lock-the-bootloader
+See <https://support.fairphone.com/hc/en-us/articles/10492476238865-How-to-unlock-and-re-lock-the-bootloader>
 
 Flash the boot image with:
 
-```
+```bash
 fastboot flash boot boot-img/boot.img
 ```
 
@@ -33,13 +34,13 @@ fastboot flash boot boot-img/boot.img
 
 Then flash the userdata image with:
 
-```
+```bash
 fastboot flash userdata userdata.img
 ```
 
 Then reboot the phone:
 
-```
+```bash
 fastboot reboot
 ```
 
@@ -61,7 +62,7 @@ For the modem to still work after suspend without restarting ModemManager,
 you need to use `--test-quick-suspend-resume` to its command line. For this,
 run `systemctl edit ModemManager.service` and write:
 
-```
+```ini
 [Service]
 ExecStart=
 ExecStart=/usr/bin/ModemManager --test-quick-suspend-resume
@@ -72,13 +73,13 @@ ModemManager.
 
 ### No SIM
 
-```
+```bash
 sudo qmicli -d qrtr://0 --uim-get-card-status
 ```
 
 Look for the application ID. Then use it in:
 
-```
+```bash
 sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX'
 ```
 
@@ -87,7 +88,7 @@ should probably make it start after `tqftpserv.service`.
 
 For example
 
-```
+```ini
 [Unit]
 After=tqftpserv.service
 Before=ModemManager.service

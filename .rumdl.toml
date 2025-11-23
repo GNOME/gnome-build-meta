@@ -1,4 +1,6 @@
 # rumdl configuration file
+[global]
+respect-gitignore = true
 
 [MD013]
 # line-length = 100
@@ -6,4 +8,5 @@
 code-blocks = false
 # Exclude tables from line length check
 tables = false
-
+# Enable automatic line wrapping (required for --fix)
+reflow = true
