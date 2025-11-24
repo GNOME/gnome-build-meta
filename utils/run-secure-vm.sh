@@ -306,7 +306,6 @@ if [ "${spice_app+set}" = set ]; then
                 -chardev spicevmc,id=spicechannel0,name=vdagent)
 else
     QEMU_ARGS+=(-display gtk,gl=on)
-    QEMU_ARGS+=(-full-screen)
 fi
 
 QEMU_ARGS+=(-device ich9-intel-hda)
