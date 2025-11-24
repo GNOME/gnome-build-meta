@@ -68,6 +68,10 @@ Options:
 
   --home-disk-key PATH       Use public key for signing home disk. By default,
                              it will take the local signing key.
+
+  --no-systemd               Do not use systemd to manage swtpm. This is useful
+                             when running in an OCI container.
+
 EOF
 }
 
@@ -138,6 +142,9 @@ while [ $# -gt 0 ]; do
             unset live
             from_image="$1"
             ;;
+        --no-systemd)
+            nosystemd=1
+            ;;
         --)
             shift
             args+=("$@")
@@ -155,7 +162,6 @@ done
 : ${SWTPM_UNIT=swtpm-$(echo -n "$(realpath .)" | sha1sum | head -c 8)}
 : ${BST:=bst}
 : ${ARCH:="x86_64"}
-: ${TPM_SOCK:="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"}
 : ${VM_NAME:="${PWD}"}
 : ${GUEST_CID:=777}
 
@@ -179,22 +185,50 @@ if [ "${buildid+set}" = set ]; then
     fi
 fi
 
-if ! [ "${no_tpm+set}" = set ]; then
-    if systemctl --user -q is-active "${SWTPM_UNIT}"; then
-        systemctl --user stop "${SWTPM_UNIT}"
+start_swtpm_systemd() {
+    unit="${SWTPM_UNIT}"
+
+    if systemctl --user -q is-active "${unit}"; then
+        systemctl --user stop "${unit}"
     fi
-    if systemctl --user -q is-failed "${SWTPM_UNIT}"; then
-        systemctl --user reset-failed "${SWTPM_UNIT}"
+    if systemctl --user -q is-failed "${unit}"; then
+        systemctl --user reset-failed "${unit}"
     fi
 
+    shift
+    systemd-run --user --service-type=simple --unit="${unit}" -- "${@}"
+}
+
+start_swtpm_daemon() {
+    pidfile="${STATE_DIR}/swtpm.pid"
+
+    if [ -r "${pidfile}" ]; then
+        pkill -F "${pidfile}" --logpidfile || true
+    fi
+    "${@}" --pid file="${pidfile}" --daemon
+}
+
+start_swtpm() {
+    if [ "${nosystemd+set}" = set ]; then
+        start_swtpm_daemon "${@}"
+    else
+        start_swtpm_systemd "${@}"
+    fi
+}
+
+if ! [ "${no_tpm+set}" = set ]; then
     if [ "${reset_secure+set}" = set ] ; then
         rm -rf "${SWTPM_STATE}"
     fi
-    [ -d "${SWTPM_STATE}" ] || mkdir -p "${SWTPM_STATE}"
+    mkdir -p "${SWTPM_STATE}"
 
-    TPM_SOCK_DIR="$(dirname "${TPM_SOCK}")"
-    [ -d "${TPM_SOCK_DIR}" ] ||  mkdir -p "${TPM_SOCK_DIR}"
-    systemd-run --user --service-type=simple --unit="${SWTPM_UNIT}" -- swtpm socket --tpm2 --tpmstate dir="${SWTPM_STATE}" --ctrl type=unixio,path="${TPM_SOCK}"
+    if [ "${nosystemd+set}" = set ]; then
+        TPM_SOCK="${STATE_DIR}/swtpm.sock"
+    else
+        TPM_SOCK="${XDG_RUNTIME_DIR}/${SWTPM_UNIT}/sock"
+        mkdir -p "$(dirname "${TPM_SOCK}")"
+    fi
+    start_swtpm swtpm socket --tpm2 --tpmstate dir="${SWTPM_STATE}" --ctrl type=unixio,path="${TPM_SOCK}"
 fi
 
 cleanup_dirs=()
