@@ -35,7 +35,7 @@ Options:
 
   --live-cdrom               Attach the secondary disk as a CD-ROM.
 
-  --reset                    Force re-initializing installation disk.
+  --rebuild-iso              Force re-initializing installation disk.
 
   --reset-installed          Clear the primary disk.
 
@@ -92,8 +92,8 @@ while [ $# -gt 0 ]; do
         --reset-installed)
             reset_installed=1
             ;;
-        --reset)
-            reset=1
+        --rebuild-iso)
+            rebuild_iso=1
             ;;
         --reset-secure-state)
             reset_secure=1
@@ -205,7 +205,7 @@ cleanup() {
 }
 trap cleanup EXIT INT
 
-if [ "${reset+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${live+set}" = set ]); then
+if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${live+set}" = set ]); then
     mkdir -p "${STATE_DIR}"
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
