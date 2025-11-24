@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.50.2.tar.xz
-  ref: 19ab61f2d44e62cd443673943d2d5341b84d08405f67a7c37b7a77ad3550f880
+  url: webkitgtk:webkitgtk-2.48.7.tar.xz
+  ref: 2c62aebb608e09f930a539f3623a5cc8023b5068029f42a208f45f9124da6e30
 - kind: patch
   path: patches/webkitgtk/build.patch
 build-depends:

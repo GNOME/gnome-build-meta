@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:pygobject/3.52/pygobject-3.52.3.tar.gz
-  ref: 00e427d291e957462a8fad659a9f9c8be776ff82a8b76bdf402f1eaeec086d82
+  url: gnome_downloads:pygobject/3.52/pygobject-3.52.4.tar.gz
+  ref: 5947250b27d8e5f4797e8e0ed801dcd1512a9433d5637a0b36065a850b3a5c5c
 - kind: git_repo
   url: gnome:gobject-introspection-tests.git
   directory: subprojects/gobject-introspection-tests

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:zenity/4.1/zenity-4.1.99.tar.xz
-  ref: 6fe2aa313c71e91ffa55b11dbec7904f31a40303e0a3f6016820ff6dee329ee2
+  url: gnome_downloads:zenity/4.2/zenity-4.2.1.tar.xz
+  ref: 5a9fd8d8316f90cb2e1a5a8f0d411eb9fcaf85957a8229ea3e803e81004a1ebd
 build-depends:
 - freedesktop-sdk.bst:components/help2man.bst
 - freedesktop-sdk.bst:components/itstool.bst
