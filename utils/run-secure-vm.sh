@@ -4,7 +4,23 @@ set -eu
 
 args=()
 cmdline=()
+credentials=()
 TYPE11=()
+
+add_credential() {
+    local encoded_value
+    local name="${1%%=*}"
+    local value="${1#*=}"
+    case "${value}" in
+        @*)
+            encoded_value="$(base64 -w0 <"${value#@}")"
+            ;;
+        *)
+            encoded_value="$(echo "${value}" | base64 -w0)"
+            ;;
+    esac
+    credentials+=("${name}=${encoded_value}")
+}
 
 print_help() {
     cat <<EOF
@@ -72,6 +88,8 @@ Options:
   --no-systemd               Do not use systemd to manage swtpm. This is useful
                              when running in an OCI container.
 
+  --credential KEY=VALUE     Add credential. VALUE can start with '@' to point
+                             to a file.
 EOF
 }
 
@@ -144,6 +162,10 @@ while [ $# -gt 0 ]; do
             ;;
         --no-systemd)
             nosystemd=1
+            ;;
+        --credential)
+            shift
+            add_credential "$1"
             ;;
         --)
             shift
@@ -322,9 +344,9 @@ if [ "${home_disk+set}" = set ]; then
     QEMU_ARGS+=(-device "virtio-blk-pci,drive=home-disk")
 
     if [ "${home_disk_key+set}" ]; then
-        TYPE11+=("value=io.systemd.credential.binary:home.add-signing-key.host.public=$(base64 -w0 <"${home_disk_key}")")
+        credentials+=("home.add-signing-key.host.public=$(base64 -w0 <"${home_disk_key}")")
     else
-        TYPE11+=("value=io.systemd.credential.binary:home.add-signing-key.host.public=$(homectl get-signing-key | base64 -w0)")
+        credentials+=("home.add-signing-key.host.public=$(homectl get-signing-key | base64 -w0)")
     fi
 
     cmdline+=("gnome.initial-setup=0")
@@ -400,7 +422,7 @@ EOF
 fi
 
 if [ ${#tmpfiles_extra[@]} -gt 0 ]; then
-    TYPE11+=("value=io.systemd.credential.binary:tmpfiles.extra=$(cat "${tmpfiles_extra[@]}" | base64 -w0)")
+    credentials+=("tmpfiles.extra=$(cat "${tmpfiles_extra[@]}" | base64 -w0)")
 fi
 
 tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
@@ -414,7 +436,7 @@ if ! [ -r ssh/ephemeral.pub ] || ! [ -r ssh/ephemeral ]; then
     cat ssh/ephemeral.pub
 fi
 
-TYPE11+=("value=io.systemd.credential.binary:ssh.ephemeral-authorized_keys-all=$(base64 -w0 <ssh/ephemeral.pub)")
+credentials+=("ssh.ephemeral-authorized_keys-all=$(base64 -w0 <ssh/ephemeral.pub)")
 
 cat <<EOF
 When the machine is started, you may connect using:
@@ -422,6 +444,10 @@ When the machine is started, you may connect using:
 ssh -i ssh/ephemeral root@vsock/${GUEST_CID}
 
 EOF
+
+for cred in "${credentials[@]}"; do
+    TYPE11+=("value=io.systemd.credential.binary:${cred}")
+done
 
 if [ ${#TYPE11[@]} -gt 0 ]; then
     TYPE11ALL="$(IFS=,; echo "${TYPE11[*]}")"
