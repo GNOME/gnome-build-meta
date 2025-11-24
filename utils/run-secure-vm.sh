@@ -6,6 +6,7 @@ args=()
 cmdline=()
 credentials=()
 TYPE11=()
+QEMU_ARGS=()
 
 add_credential() {
     local encoded_value
@@ -63,8 +64,13 @@ Options:
 
   --notpm                    Do not use TPM.
 
-  --serial                   Connect the console to the VM serial port.
-                             Exit with C-x a.
+  --serial                   Create a PTY serial device and attach it to the VM.
+                             Qemu will print the path of the PTY device once it starts
+                             and you can connect to it using screen or similar.
+
+                             Example:
+                             qemu: char device redirected to /dev/pts/0 (label term0)
+                             screen /dev/pts/0
 
   --cmdline CMD              Add a kernel command line option. You can use
                              this multiple times. For example:
@@ -134,7 +140,8 @@ while [ $# -gt 0 ]; do
             no_tpm=1
             ;;
         --serial)
-            serial=1
+            QEMU_ARGS+=(-chardev pty,id=term0)
+            QEMU_ARGS+=(-serial chardev:term0)
             cmdline+=("console=ttyS0")
             ;;
         --cmdline)
@@ -324,7 +331,6 @@ if [ "${reset_secure+set}" = set ] || ! [ -f "${STATE_DIR}/OVMF_VARS.fd" ]; then
     cp "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" "${STATE_DIR}/OVMF_VARS.fd"
 fi
 
-QEMU_ARGS=()
 QEMU_ARGS+=(-m 8G)
 QEMU_ARGS+=(-M q35,accel=kvm)
 QEMU_ARGS+=(-cpu host)
@@ -380,10 +386,6 @@ if [ "${home_disk+set}" = set ]; then
     fi
 
     cmdline+=("gnome.initial-setup=0")
-fi
-
-if [ "${serial+set}" = set ]; then
-    QEMU_ARGS+=(-serial stdio)
 fi
 
 QEMU_ARGS+=(-name "${VM_NAME}")
