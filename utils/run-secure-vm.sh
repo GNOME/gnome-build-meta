@@ -238,7 +238,6 @@ if [ "${serial+set}" = set ]; then
 fi
 
 QEMU_ARGS+=(-device virtio-vga-gl -display gtk,gl=on)
-QEMU_ARGS+=(-full-screen)
 QEMU_ARGS+=(-device ich9-intel-hda)
 QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
