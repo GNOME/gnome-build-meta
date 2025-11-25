@@ -167,6 +167,10 @@ done
 
 : ${IMAGE_ELEMENT:="gnomeos/live-image.bst"}
 
+if [ "${TOOLBOX_PATH+set}" = set ] || [ "${DISTROBOX_ENTER_PATH+set}" = set ]; then
+    nosystemd=1
+fi
+
 BST_OPTIONS=(-o arch ${ARCH})
 
 if [ "${#args[@]}" -ge 1 ]; then
