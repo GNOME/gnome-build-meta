@@ -6,7 +6,7 @@ sources:
 - kind: git_repo
   url: freedesktop:cairo/cairomm.git
   track: 1.*
-  ref: 1.18.0-0-ge0bad547705348657d09db4c9375833d8890cf54
+  ref: 1.19.0-0-g398889aa0bf74521e7d9e71aae477e17664abc54
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/49/gnome-software-49.1.tar.xz
-  ref: 49dfeca77928801756d0c5386c1d20454ca077600a5d1ed66ec46ee33a32c66d
+  url: gnome_downloads:gnome-software/49/gnome-software-49.2.tar.xz
+  ref: b610b6932a8d666432bc58d6c78c4568cd63d442ae736db8be2c4ca01bbc946c
 build-depends:
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
