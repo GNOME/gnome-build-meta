@@ -22,7 +22,7 @@ for ARCH in $SUPPORTED_ARCHES; do
         rm -rf checkout-repo/
     done
 done
-flatpak build-update-repo --generate-static-deltas repo/
+flatpak build-update-repo --generate-static-deltas --static-delta-ignore-ref=*.Debug --static-delta-ignore-ref=*.Sources repo/
 
 flat-manager-client --token-file "${REPO_TOKEN_FILE}" create $FLAT_MANAGER_SERVER $FLAT_MANAGER_REPO > build.txt
 flat-manager-client --token-file "${REPO_TOKEN_FILE}" push $(cat build.txt) repo/
