@@ -24,6 +24,7 @@ depends:
 - gnomeos-deps/grcov.bst
 - gnomeos-deps/swtpm.bst
 - gnomeos-deps/sysext-utils.bst
+- gnomeos-deps/virtiofsd.bst
 - gnomeos-deps/wl-clipboard.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
