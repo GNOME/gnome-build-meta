@@ -1,0 +1,185 @@
+From 48e68eb17fb7ecf1b9d25c4101f06a200a185e08 Mon Sep 17 00:00:00 2001
+From: Antoine Quint <graouts@webkit.org>
+Date: Tue, 18 Nov 2025 22:37:37 -0800
+Subject: [PATCH] REGRESSION(303073@main): Twitch pages crash after exiting
+ fullscreen on iPad https://bugs.webkit.org/show_bug.cgi?id=302713
+ rdar://164913157
+
+Reviewed by Antti Koivisto.
+
+We made `KeyframeEffectStack::sortedEffects()` return a const reference in 303073@main whereas previously it would return a copy of
+the list of sorted effects.
+
+In the `updateCSSTransitionsForStyleableAndProperty()` function, called under `Style::TreeResolver::createAnimatedElementUpdate()`,
+where we update transitions as part of an animation update, in order to determine the before-change style [0], we manually update
+the underlying, non-animated style to the current state for animations that target the property in question. We use
+`KeyframeEffectStack::sortedEffects()` to get the list of effects applied to the element we're processing, but we use a method,
+`WebAnimation::resolve()`, to compute the animated styles that does more than just that, updating the finished state of the animation [1]
+which may change whether the animation in question is considered relevant [2] and thus affect its membership in the effect list
+we're iterating upon.
+
+One way to address this would be to make a copy of the effect list, but we should be able to iterate through the effect list here
+without it changing from under us. To that end, we now use `KeyframeEffect::apply()` instead of `WebAnimation::resolve()`. This change
+alone addresses the reported issue.
+
+However, this change yielded some test regressions in the WPT test `css/css-transitions/KeyframeEffect-setKeyframes.tentative.html`.
+As it turns out, the current style of a transition was cached under an overridden implementation of `WebAnimation::resolve()` in the
+`CSSTransition` class, and changing from calling `WebAnimation::resolve()` to `KeyframeEffect::apply()` meant that this style was no
+longer current. It appears now that this approach was fragile, and also overkill since this transition current style is only ever used
+in one of the branches of the CSS Transition update process and should be computed as requested. So on top of the change described above,
+we now remove the CSS Transition current style caching, removing the `CSSTransition::m_currentStyle` member, in favor of computing it
+directly as needed.
+
+[0] https://drafts.csswg.org/css-transitions-1/#before-change-style
+[1] https://drafts.csswg.org/web-animations-1/#updating-the-finished-state
+[2] https://drafts.csswg.org/web-animations-1/#relevant-animations-section
+
+* Source/WebCore/animation/CSSTransition.cpp:
+(WebCore::CSSTransition::create):
+(WebCore::CSSTransition::CSSTransition):
+(WebCore::CSSTransition::resolve): Deleted.
+* Source/WebCore/animation/CSSTransition.h:
+* Source/WebCore/animation/WebAnimation.h:
+* Source/WebCore/style/Styleable.cpp:
+(WebCore::updateCSSTransitionsForStyleableAndProperty):
+
+Canonical link: https://commits.webkit.org/303234@main
+---
+ Source/WebCore/animation/CSSTransition.cpp | 12 ++----------
+ Source/WebCore/animation/CSSTransition.h   |  5 +----
+ Source/WebCore/animation/WebAnimation.h    |  2 +-
+ Source/WebCore/style/Styleable.cpp         | 22 +++++++++++-----------
+ 4 files changed, 15 insertions(+), 26 deletions(-)
+
+diff --git a/Source/WebCore/animation/CSSTransition.cpp b/Source/WebCore/animation/CSSTransition.cpp
+index bc481b7335683..12340765b4e07 100644
+--- a/Source/WebCore/animation/CSSTransition.cpp
++++ b/Source/WebCore/animation/CSSTransition.cpp
+@@ -39,7 +39,7 @@ WTF_MAKE_TZONE_OR_ISO_ALLOCATED_IMPL(CSSTransition);
+ 
+ Ref<CSSTransition> CSSTransition::create(const Styleable& owningElement, const AnimatableCSSProperty& property, MonotonicTime generationTime, const Style::Transition& backingStyleTransition, const RenderStyle& oldStyle, const RenderStyle& newStyle, Seconds delay, Seconds duration, const RenderStyle& reversingAdjustedStartStyle, double reversingShorteningFactor)
+ {
+-    auto result = adoptRef(*new CSSTransition(owningElement, property, generationTime, backingStyleTransition, oldStyle, newStyle, reversingAdjustedStartStyle, reversingShorteningFactor));
++    auto result = adoptRef(*new CSSTransition(owningElement, property, generationTime, backingStyleTransition, newStyle, reversingAdjustedStartStyle, reversingShorteningFactor));
+     result->initialize(&oldStyle, newStyle, { nullptr });
+     result->setTimingProperties(delay, duration);
+ 
+@@ -48,12 +48,11 @@ Ref<CSSTransition> CSSTransition::create(const Styleable& owningElement, const A
+     return result;
+ }
+ 
+-CSSTransition::CSSTransition(const Styleable& styleable, const AnimatableCSSProperty& property, MonotonicTime generationTime, const Style::Transition& backingStyleTransition, const RenderStyle& oldStyle, const RenderStyle& targetStyle, const RenderStyle& reversingAdjustedStartStyle, double reversingShorteningFactor)
++CSSTransition::CSSTransition(const Styleable& styleable, const AnimatableCSSProperty& property, MonotonicTime generationTime, const Style::Transition& backingStyleTransition, const RenderStyle& targetStyle, const RenderStyle& reversingAdjustedStartStyle, double reversingShorteningFactor)
+     : StyleOriginatedAnimation(styleable)
+     , m_property(property)
+     , m_generationTime(generationTime)
+     , m_targetStyle(RenderStyle::clonePtr(targetStyle))
+-    , m_currentStyle(RenderStyle::clonePtr(oldStyle))
+     , m_reversingAdjustedStartStyle(RenderStyle::clonePtr(reversingAdjustedStartStyle))
+     , m_reversingShorteningFactor(reversingShorteningFactor)
+     , m_backingStyleTransition(backingStyleTransition)
+@@ -62,13 +61,6 @@ CSSTransition::CSSTransition(const Styleable& styleable, const AnimatableCSSProp
+ 
+ CSSTransition::~CSSTransition() = default;
+ 
+-OptionSet<AnimationImpact> CSSTransition::resolve(RenderStyle& targetStyle, const Style::ResolutionContext& resolutionContext, EndpointInclusiveActiveInterval endpointInclusiveActiveInterval)
+-{
+-    auto impact = StyleOriginatedAnimation::resolve(targetStyle, resolutionContext, endpointInclusiveActiveInterval);
+-    m_currentStyle = RenderStyle::clonePtr(targetStyle);
+-    return impact;
+-}
+-
+ void CSSTransition::animationDidFinish()
+ {
+     StyleOriginatedAnimation::animationDidFinish();
+diff --git a/Source/WebCore/animation/CSSTransition.h b/Source/WebCore/animation/CSSTransition.h
+index 5ccd71c24287b..0b6cf0a9775ba 100644
+--- a/Source/WebCore/animation/CSSTransition.h
++++ b/Source/WebCore/animation/CSSTransition.h
+@@ -50,17 +50,15 @@ class CSSTransition final : public StyleOriginatedAnimation {
+     AnimatableCSSProperty property() const { return m_property; }
+     MonotonicTime generationTime() const { return m_generationTime; }
+     const RenderStyle& targetStyle() const { return *m_targetStyle; }
+-    const RenderStyle& currentStyle() const { return *m_currentStyle; }
+     const RenderStyle& reversingAdjustedStartStyle() const { return *m_reversingAdjustedStartStyle; }
+     double reversingShorteningFactor() const { return m_reversingShorteningFactor; }
+ 
+     const Style::Transition& backingStyleTransition() const { return m_backingStyleTransition; }
+ 
+ private:
+-    CSSTransition(const Styleable&, const AnimatableCSSProperty&, MonotonicTime generationTime, const Style::Transition&, const RenderStyle& oldStyle, const RenderStyle& targetStyle, const RenderStyle& reversingAdjustedStartStyle, double);
++    CSSTransition(const Styleable&, const AnimatableCSSProperty&, MonotonicTime generationTime, const Style::Transition&, const RenderStyle& targetStyle, const RenderStyle& reversingAdjustedStartStyle, double);
+     void setTimingProperties(Seconds delay, Seconds duration);
+     Ref<StyleOriginatedAnimationEvent> createEvent(const AtomString& eventType, std::optional<Seconds> scheduledTime, double elapsedTime, const std::optional<Style::PseudoElementIdentifier>&) final;
+-    OptionSet<AnimationImpact> resolve(RenderStyle& targetStyle, const Style::ResolutionContext&, EndpointInclusiveActiveInterval = EndpointInclusiveActiveInterval::No) final;
+     void animationDidFinish() final;
+     bool isCSSTransition() const final { return true; }
+ 
+@@ -70,7 +68,6 @@ class CSSTransition final : public StyleOriginatedAnimation {
+     AnimatableCSSProperty m_property;
+     MonotonicTime m_generationTime;
+     std::unique_ptr<RenderStyle> m_targetStyle;
+-    std::unique_ptr<RenderStyle> m_currentStyle;
+     std::unique_ptr<RenderStyle> m_reversingAdjustedStartStyle;
+     double m_reversingShorteningFactor;
+ 
+diff --git a/Source/WebCore/animation/WebAnimation.h b/Source/WebCore/animation/WebAnimation.h
+index b858674d51a93..51c16da743562 100644
+--- a/Source/WebCore/animation/WebAnimation.h
++++ b/Source/WebCore/animation/WebAnimation.h
+@@ -157,7 +157,7 @@ class WebAnimation : public RefCounted<WebAnimation>, public EventTarget, public
+     bool needsTick() const;
+     virtual void tick();
+     WEBCORE_EXPORT Seconds timeToNextTick() const;
+-    virtual OptionSet<AnimationImpact> resolve(RenderStyle& targetStyle, const Style::ResolutionContext&, EndpointInclusiveActiveInterval = EndpointInclusiveActiveInterval::No);
++    OptionSet<AnimationImpact> resolve(RenderStyle& targetStyle, const Style::ResolutionContext&, EndpointInclusiveActiveInterval = EndpointInclusiveActiveInterval::No);
+     void effectTargetDidChange(const std::optional<const Styleable>& previousTarget, const std::optional<const Styleable>& newTarget);
+     void acceleratedStateDidChange();
+     void willChangeRenderer();
+diff --git a/Source/WebCore/style/Styleable.cpp b/Source/WebCore/style/Styleable.cpp
+index b098d6eaf7585..3e657df868c60 100644
+--- a/Source/WebCore/style/Styleable.cpp
++++ b/Source/WebCore/style/Styleable.cpp
+@@ -589,14 +589,6 @@ static void updateCSSTransitionsForStyleableAndProperty(const Styleable& styleab
+         hasMatchingTransitionProperty = true;
+     }
+ 
+-    auto effectTargetsProperty = [&property](KeyframeEffect& effect) {
+-        if (effect.animatesProperty(property))
+-            return true;
+-        if (auto* transition = dynamicDowncast<CSSTransition>(effect.animation()))
+-            return transition->property() == property;
+-        return false;
+-    };
+-
+     // https://drafts.csswg.org/css-transitions-1/#before-change-style
+     // Define the before-change style as the computed values of all properties on the element as of the previous style change event, except with
+     // any styles derived from declarative animations such as CSS Transitions, CSS Animations, and SMIL Animations updated to the current time.
+@@ -605,8 +597,8 @@ static void updateCSSTransitionsForStyleableAndProperty(const Styleable& styleab
+             auto style = RenderStyle::clone(*lastStyleChangeEventStyle);
+             if (auto* keyframeEffectStack = styleable.keyframeEffectStack()) {
+                 for (const auto& effect : keyframeEffectStack->sortedEffects()) {
+-                    if (effectTargetsProperty(*effect))
+-                        Ref { *effect->animation() }->resolve(style, { nullptr });
++                    if (effect->animatesProperty(property))
++                        Ref { *effect }->apply(style, { nullptr });
+                 }
+             }
+             return style;
+@@ -690,7 +682,15 @@ static void updateCSSTransitionsForStyleableAndProperty(const Styleable& styleab
+     ASSERT(hasMatchingTransitionProperty);
+     if (hasRunningTransition && !propertyInStyleMatchesValueForTransitionInMap(property, afterChangeStyle, styleable.ensureRunningTransitionsByProperty(), document)) {
+         auto previouslyRunningTransition = styleable.ensureRunningTransitionsByProperty().take(property);
+-        auto& previouslyRunningTransitionCurrentStyle = previouslyRunningTransition->currentStyle();
++        auto previouslyRunningTransitionCurrentStyle = [&] {
++            if (auto* lastStyleChangeEventStyle = styleable.lastStyleChangeEventStyle()) {
++                auto style = RenderStyle::clone(*lastStyleChangeEventStyle);
++                ASSERT(previouslyRunningTransition->keyframeEffect());
++                Ref { *previouslyRunningTransition->keyframeEffect() }->apply(style, { nullptr });
++                return style;
++            }
++            return RenderStyle::clone(currentStyle);
++        }();
+         // 4. If the element has a running transition for the property, there is a matching transition-property value, and the end value of the running
+         //    transition is not equal to the value of the property in the after-change style, then:
+         if (Style::Interpolation::equals(property, previouslyRunningTransitionCurrentStyle, afterChangeStyle, document) || !propertyCanBeInterpolated(property, currentStyle, afterChangeStyle)) {
