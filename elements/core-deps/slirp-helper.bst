@@ -631,7 +631,7 @@ sources:
 
 config:
   install-commands:
-  - cargo install --jobs "${MAXJOBS}" --all-features --path . --root "%{install-root}%{prefix}"
+  - cargo install --jobs "${MAXJOBS}" --frozen --all-features --path . --root "%{install-root}%{prefix}"
   - rm "%{install-root}%{prefix}"/.crates*
   - ln -s libslirp-helper "%{install-root}%{bindir}/slirp-helper"
   - "%{install-extra}"
