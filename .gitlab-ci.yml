@@ -24,6 +24,7 @@ variables:
 
 stages:
 - track-refs
+- lints
 - build
 - deploy
 - test
@@ -558,3 +559,22 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
+
+ruff lint:
+  stage: "lints"
+  image: "ghcr.io/astral-sh/ruff:0.14.6-debian-slim"
+  before_script: []
+  needs: []
+  script:
+    - ruff --version
+    - ruff check --output-format=gitlab > "$CI_PROJECT_DIR/code-quality-report.json"
+  after_script:
+    - ruff format --diff
+  rules:
+    - changes:
+        paths:
+          - "*.py"
+          - "**/*.py"
+  artifacts:
+    reports:
+      codequality: "code-quality-report.json"

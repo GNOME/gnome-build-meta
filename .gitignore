@@ -39,3 +39,5 @@ files/boot-keys/private-key/
 files/boot-keys/VENDOR.der
 current-secure-vm/
 secure-vm-repo/
+
+.ruff_cache/
