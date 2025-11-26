@@ -221,7 +221,6 @@ start_swtpm_systemd() {
         systemctl --user reset-failed "${unit}"
     fi
 
-    shift
     systemd-run --user --service-type=simple --unit="${unit}" -- "${@}"
 }
 
