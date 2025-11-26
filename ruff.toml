@@ -1,0 +1,13 @@
+[lint]
+# E402 Module level import not at top of file
+# gi.require_version goes above imports and ruff complains
+# gi.require_version("GLib", "2.0")
+# from gi.repository import Gio
+#
+# F821 Undefined name `_`
+# This comes from gettext
+# _("Installing...")
+ignore = ["E402", "F821"]
+
+[format]
+quote-style = "preserve"

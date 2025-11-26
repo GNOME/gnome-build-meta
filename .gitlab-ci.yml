@@ -8,6 +8,9 @@ include:
 - component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
   inputs:
     job-stage: "reports"
+- component: "gitlab.gnome.org/alatiera/citemplates/ruff-lint@alatiera/ruff-lint"
+  inputs:
+    job-stage: "reports"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -27,6 +30,7 @@ variables:
 
 stages:
 - track-refs
+- lints
 - build
 - deploy
 - test
@@ -563,4 +567,3 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
-
