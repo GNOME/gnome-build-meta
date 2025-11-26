@@ -1,10 +1,4 @@
-kind: manual
-
-environment:
-  MAXJOBS: "%{max-jobs}"
-
-environment-nocache:
-- MAXJOBS
+kind: cargo
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
@@ -557,8 +551,3 @@ sources:
     name: zerocopy-derive
     version: 0.8.25
     sha: 28a6e20d751156648aa063f3800b706ee209a32c0b4d9f24be3d980b01be55ef
-config:
-  install-commands:
-  - cargo install --jobs "${MAXJOBS}" --all-features --frozen --path . --root "%{install-root}%{prefix}"
-  - rm "%{install-root}%{prefix}"/.crates*
-  - "%{install-extra}"

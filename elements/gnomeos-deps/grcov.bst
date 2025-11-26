@@ -1,4 +1,4 @@
-kind: manual
+kind: cargo
 
 sources:
 - kind: git_repo
@@ -836,19 +836,6 @@ build-depends:
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
-environment:
-  MAXJOBS: "%{max-jobs}"
-
-environment-nocache:
-- MAXJOBS
-
-config:
-  build-commands:
-  - cargo build --release --frozen --offline --jobs "${MAXJOBS}"
-
-  install-commands:
-  - |
-    find "target/release" -maxdepth 1 -type f -executable -exec install -Dm755 -t "%{install-root}%{bindir}" {} +
-
-  - |
-    %{install-extra}
+variables:
+  cargo-install-features: >-
+    --features default

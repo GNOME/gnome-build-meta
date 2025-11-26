@@ -1,4 +1,4 @@
-kind: manual
+kind: cargo
 
 sources:
 - kind: git_repo
@@ -589,16 +589,3 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/elfutils.bst
 - freedesktop-sdk.bst:components/zlib.bst
-
-environment:
-  MAXJOBS: "%{max-jobs}"
-
-environment-nocache:
-- MAXJOBS
-
-config:
-  build-commands:
-  - cargo build --release --frozen --offline --jobs "${MAXJOBS}"
-
-  install-commands:
-  - install -Dm755 -t '%{install-root}%{bindir}' target/release/bpftop

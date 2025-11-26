@@ -1,4 +1,4 @@
-kind: manual
+kind: cargo
 
 sources:
 - kind: git_repo
@@ -482,16 +482,3 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
-
-environment:
-  MAXJOBS: "%{max-jobs}"
-
-environment-nocache:
-- MAXJOBS
-
-config:
-  install-commands:
-  - cargo install --all-features --frozen --jobs "${MAXJOBS}" --path . --root "%{install-root}%{prefix}"
-  - rm "%{install-root}%{prefix}"/.crates*
-  - |
-    %{install-extra}

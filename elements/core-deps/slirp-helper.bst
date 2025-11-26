@@ -1,10 +1,4 @@
-kind: manual
-
-environment:
-  MAXJOBS: "%{max-jobs}"
-
-environment-nocache:
-- MAXJOBS
+kind: cargo
 
 build-depends:
 - freedesktop-sdk.bst:components/gcc.bst
@@ -628,10 +622,3 @@ sources:
     name: zvariant_derive
     version: 2.10.0
     sha: e4ca5e22593eb4212382d60d26350065bf2a02c34b85bc850474a74b589a3de9
-
-config:
-  install-commands:
-  - cargo install --jobs "${MAXJOBS}" --frozen --all-features --path . --root "%{install-root}%{prefix}"
-  - rm "%{install-root}%{prefix}"/.crates*
-  - ln -s libslirp-helper "%{install-root}%{bindir}/slirp-helper"
-  - "%{install-extra}"

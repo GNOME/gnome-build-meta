@@ -1,0 +1,36 @@
+variables:
+  cargo: cargo
+
+  cargo-install: >-
+    %{cargo}
+    install
+    --jobs "${MAXJOBS}"
+    %{cargo-install-flags}
+
+  cargo-install-flags: >-
+    %{cargo-install-features}
+    %{cargo-install-local}
+    --frozen
+    --path '%{build-root}'
+    --root '%{install-root}%{prefix}'
+
+  cargo-install-features: >-
+    --all-features
+
+  cargo-install-local: ''
+
+config:
+  install-commands:
+  - |
+    %{cargo-install}
+  - rm '%{install-root}%{prefix}'/.crates*
+
+  strip-commands:
+  - |
+    %{strip-binaries}
+
+environment:
+  MAXJOBS: '%{max-jobs}'
+
+environment-nocache:
+- MAXJOBS
