@@ -5,13 +5,6 @@ sources:
   url: gnome:tecla.git
   track: main
   ref: 49.0-11-g388db5813da4507038375eee84626f0cb5a6c9ad
-# FIXME: This needs to be kept in sync with the wrap file ideally,
-# but this will do for now
-# https://gitlab.gnome.org/GNOME/tecla/-/blob/main/subprojects/libgxdp.wrap?ref_type=heads
-- kind: git_repo
-  url: gnome:libgxdp.git
-  directory: subprojects/libgxdp
-  ref: d45e1c572752604a7a8dd8651657342bb6ac0961
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
