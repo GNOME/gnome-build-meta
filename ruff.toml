@@ -1,3 +1,2 @@
 [format]
-# Avoid reformatting all the strings
-quote-style = "preserve"
+quote-style = "single"

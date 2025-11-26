@@ -570,11 +570,11 @@ ruff lint:
     - ruff check --output-format=gitlab > "$CI_PROJECT_DIR/code-quality-report.json"
   after_script:
     - ruff format --diff
-  rules:
-    - changes:
-        paths:
-          - "*.py"
-          - "**/*.py"
+  # rules:
+  #   - changes:
+  #       paths:
+  #         - "*.py"
+  #         - "**/*.py"
   artifacts:
     reports:
       codequality: "code-quality-report.json"
