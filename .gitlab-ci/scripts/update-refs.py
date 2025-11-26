@@ -14,24 +14,31 @@ parser.add_argument(
     "--new-branch", help="Commit to a new branch after tracking", action="store_true"
 )
 parser.add_argument(
-    "--track-dependencies", help="Track dependencies elements instead of gnome elements", action="store_true"
+    "--track-dependencies",
+    help="Track dependencies elements instead of gnome elements",
+    action="store_true",
 )
 parser.add_argument(
-    "--no-ignore-elements", help="Do not ignore elements with known issues", action="store_true"
+    "--no-ignore-elements",
+    help="Do not ignore elements with known issues",
+    action="store_true",
 )
 args = parser.parse_args()
 
 now = datetime.now()
+
 
 class ElementType(Enum):
     NOT_TRACKABLE = 1
     DEPENDENCY = 2
     GNOME = 3
 
+
 def merge_element_type(a, b):
     for t in [ElementType.GNOME, ElementType.DEPENDENCY, ElementType.NOT_TRACKABLE]:
         if t in (a, b):
             return t
+
 
 def get_element_type(filepath):
     if filepath.startswith('freedesktop-sdk.bst:'):
@@ -67,6 +74,7 @@ def get_element_type(filepath):
 
     return trackable
 
+
 gnome_elements = []
 dependencies_elements = []
 
@@ -90,9 +98,16 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 #
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
-    ("gnomeos-deps/shim.bst", "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html"),
-    ("core/gnome-disk-utility.bst", "https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/455"),
+    (
+        "gnomeos-deps/shim.bst",
+        "https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html",
+    ),
+    (
+        "core/gnome-disk-utility.bst",
+        "https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/issues/455",
+    ),
 ]
+
 
 def git(*args):
     return subprocess.check_call(["git"] + list(args))
@@ -113,7 +128,7 @@ bst("source", "track", *track_elements)
 print("Track completed!")
 
 if not args.no_ignore_elements:
-    for (element, reason) in ignore_elements:
+    for element, reason in ignore_elements:
         print(f"Ignoring {element} due to: {reason}")
         git("restore", f"elements/{element}")
 

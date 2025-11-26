@@ -16,8 +16,8 @@ import os
 import re
 from buildstream import Element
 
-class ExtractInitialScriptsElement(Element):
 
+class ExtractInitialScriptsElement(Element):
     BST_MIN_VERSION = "2.0"
     BST_FORBID_RDEPENDS = True
     BST_FORBID_SOURCES = True
@@ -61,6 +61,7 @@ class ExtractInitialScriptsElement(Element):
                     os.chmod(f.fileno(), 0o755)
 
         return os.sep
+
 
 def setup():
     return ExtractInitialScriptsElement

@@ -62,4 +62,5 @@ def main():
         assert repo_name == "nightly"
         assert flatpak_branch == "master"
 
+
 main()
