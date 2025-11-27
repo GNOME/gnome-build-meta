@@ -1,7 +1,7 @@
-From de4793fc4063a26914c5be790829179122339cce Mon Sep 17 00:00:00 2001
+From 029eec29a4f441af176706905edb45ede30eef6f Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 24 Aug 2025 23:39:36 +0100
-Subject: [PATCH 3/6] linux: Backport patches for OnePlus 6's panel
+Subject: [PATCH 3/3] linux: Backport patches for OnePlus 6's panel
 
 Those patches come from either mainline or from the Linaro's branch for
 sdm845 which should get mainlined soon.
@@ -10,7 +10,6 @@ These are required to have minimally functional OnePlus 6. For now, I
 will not backport other fixes that does not make it impossible to
 boot. And instead we can wait for mainlining.
 ---
- elements/include/linux.yml                    |   2 +
  files/linux/fdsdk-config.sh                   |   1 +
  ...el-sofef00-move-DSI-calls-to-disable.patch |  44 +++++++
  ...drm-panel-sofef00-prepare_prev_first.patch |  29 +++++
@@ -19,27 +18,17 @@ boot. And instead we can wait for mainlining.
  ...rm-panel-sofef00-don-t-use-unprepare.patch |  60 +++++++++
  ...006-drm-panel-sofef00-fix-panel-name.patch |  28 ++++
  ...anel-sofef00-proper-power-sequencing.patch | 120 ++++++++++++++++++
- 9 files changed, 345 insertions(+)
- create mode 100644 patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
- create mode 100644 patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
- create mode 100644 patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
- create mode 100644 patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
- create mode 100644 patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch
- create mode 100644 patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch
- create mode 100644 patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
+ 8 files changed, 343 insertions(+)
+ create mode 100644 patches/linux/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
+ create mode 100644 patches/linux/0002-drm-panel-sofef00-prepare_prev_first.patch
+ create mode 100644 patches/linux/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
+ create mode 100644 patches/linux/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
+ create mode 100644 patches/linux/0005-drm-panel-sofef00-don-t-use-unprepare.patch
+ create mode 100644 patches/linux/0006-drm-panel-sofef00-fix-panel-name.patch
+ create mode 100644 patches/linux/0007-drm-panel-sofef00-proper-power-sequencing.patch
 
-diff --git a/elements/include/linux.yml b/elements/include/linux.yml
-index a90a2ab93..764894b42 100644
---- a/elements/include/linux.yml
-+++ b/elements/include/linux.yml
-@@ -7,3 +7,5 @@ sources:
-   ref: v6.17.6-0-g371f1e070fa95c71356104a406855a361aad5668
- - kind: patch_queue
-   path: patches/linux
-+- kind: patch_queue
-+  path: patches/linux-oneplus6
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 0ce0061c4..7b603e488 100644
+index bfd9059cd..563343351 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
 @@ -676,6 +676,7 @@ case "$arch" in
@@ -50,11 +39,11 @@ index 0ce0061c4..7b603e488 100644
      ;;
  esac
  
-diff --git a/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch b/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
+diff --git a/patches/linux/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch b/patches/linux/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
 new file mode 100644
 index 000000000..598c99146
 --- /dev/null
-+++ b/patches/linux-oneplus6/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
++++ b/patches/linux/0001-drm-panel-sofef00-move-DSI-calls-to-disable.patch
 @@ -0,0 +1,44 @@
 +From 2b3f7e31064f54fa46896fda5137a8b077843aff Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -100,11 +89,11 @@ index 000000000..598c99146
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch b/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
+diff --git a/patches/linux/0002-drm-panel-sofef00-prepare_prev_first.patch b/patches/linux/0002-drm-panel-sofef00-prepare_prev_first.patch
 new file mode 100644
 index 000000000..fba567837
 --- /dev/null
-+++ b/patches/linux-oneplus6/0002-drm-panel-sofef00-prepare_prev_first.patch
++++ b/patches/linux/0002-drm-panel-sofef00-prepare_prev_first.patch
 @@ -0,0 +1,29 @@
 +From aee5adac2a23c86bcda7abfb2056bbf1e66ce232 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -135,11 +124,11 @@ index 000000000..fba567837
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch b/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
+diff --git a/patches/linux/0003-drm-panel-sofef00-initialise-at-50-brightness.patch b/patches/linux/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
 new file mode 100644
 index 000000000..038c88c3e
 --- /dev/null
-+++ b/patches/linux-oneplus6/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
++++ b/patches/linux/0003-drm-panel-sofef00-initialise-at-50-brightness.patch
 @@ -0,0 +1,30 @@
 +From 8046b8cda974c9d4bfc5083d66b119c1f3b988d3 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -171,11 +160,11 @@ index 000000000..038c88c3e
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch b/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
+diff --git a/patches/linux/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch b/patches/linux/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
 new file mode 100644
 index 000000000..6d3d351f7
 --- /dev/null
-+++ b/patches/linux-oneplus6/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
++++ b/patches/linux/0004-drm-panel-sofef00-don-t-initialise-panel-in-reset.patch
 @@ -0,0 +1,31 @@
 +From f1bd58c383fa75bf636b75933315591e8d94efff Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -208,11 +197,11 @@ index 000000000..6d3d351f7
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch b/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch
+diff --git a/patches/linux/0005-drm-panel-sofef00-don-t-use-unprepare.patch b/patches/linux/0005-drm-panel-sofef00-don-t-use-unprepare.patch
 new file mode 100644
 index 000000000..70a9b21fe
 --- /dev/null
-+++ b/patches/linux-oneplus6/0005-drm-panel-sofef00-don-t-use-unprepare.patch
++++ b/patches/linux/0005-drm-panel-sofef00-don-t-use-unprepare.patch
 @@ -0,0 +1,60 @@
 +From 481bcf0439613a139e0ed7715e779db896bc4d76 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -274,11 +263,11 @@ index 000000000..70a9b21fe
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch b/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch
+diff --git a/patches/linux/0006-drm-panel-sofef00-fix-panel-name.patch b/patches/linux/0006-drm-panel-sofef00-fix-panel-name.patch
 new file mode 100644
 index 000000000..b4c532f82
 --- /dev/null
-+++ b/patches/linux-oneplus6/0006-drm-panel-sofef00-fix-panel-name.patch
++++ b/patches/linux/0006-drm-panel-sofef00-fix-panel-name.patch
 @@ -0,0 +1,28 @@
 +From 2277b6cc30ca2f44291401cf5b22a36e135f2baa Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -308,11 +297,11 @@ index 000000000..b4c532f82
 +-- 
 +2.51.0
 +
-diff --git a/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch b/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
+diff --git a/patches/linux/0007-drm-panel-sofef00-proper-power-sequencing.patch b/patches/linux/0007-drm-panel-sofef00-proper-power-sequencing.patch
 new file mode 100644
 index 000000000..8a1f5cec5
 --- /dev/null
-+++ b/patches/linux-oneplus6/0007-drm-panel-sofef00-proper-power-sequencing.patch
++++ b/patches/linux/0007-drm-panel-sofef00-proper-power-sequencing.patch
 @@ -0,0 +1,120 @@
 +From 1c3d893a133a0dfe81702805eb7d0c5370187193 Mon Sep 17 00:00:00 2001
 +From: Caleb Connolly <caleb.connolly@linaro.org>
@@ -435,5 +424,5 @@ index 000000000..8a1f5cec5
 +2.51.0
 +
 -- 
-2.51.0
+2.51.2
 
