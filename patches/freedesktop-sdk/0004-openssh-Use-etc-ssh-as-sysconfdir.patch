@@ -1,7 +1,7 @@
-From 312a7d973fa9f493ea26c5f41adc61d2f3353730 Mon Sep 17 00:00:00 2001
+From 66510c10099d7007d029529daaafabe4934ccd68 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 26 Oct 2025 11:03:32 +0100
-Subject: [PATCH 4/6] openssh: Use /etc/ssh as sysconfdir
+Subject: [PATCH 4/7] openssh: Use /etc/ssh as sysconfdir
 
 All other distros use that. And there are expectations from systemd
 for it to be configured so.
@@ -12,10 +12,10 @@ Also fix a /var/run
  1 file changed, 2 insertions(+)
 
 diff --git a/elements/components/openssh.bst b/elements/components/openssh.bst
-index d49095287..87e8076a7 100644
+index dce91b9af..04758d472 100644
 --- a/elements/components/openssh.bst
 +++ b/elements/components/openssh.bst
-@@ -15,6 +15,7 @@ runtime-depends:
+@@ -16,6 +16,7 @@ runtime-depends:
  - components/sed.bst
  
  variables:
@@ -23,14 +23,14 @@ index d49095287..87e8076a7 100644
    arch_options: ''
    (?):
    # ppc64le doesn't support --fzero-call-used-regs=used flag
-@@ -28,6 +29,7 @@ variables:
+@@ -29,6 +30,7 @@ variables:
      --with-pam
      --with-pam-service=sshd
      --without-zlib-version-check
 +    --with-pid-dir=/run
+     --with-security-key-builtin
      %{arch_options}
  
- config:
 -- 
-2.51.0
+2.51.2
 

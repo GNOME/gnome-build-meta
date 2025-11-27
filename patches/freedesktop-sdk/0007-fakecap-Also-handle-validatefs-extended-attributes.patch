@@ -1,3 +1,14 @@
+From 276b3fcd8d52508ea196118599f182d6c6822b36 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Sun, 23 Nov 2025 10:39:52 +0100
+Subject: [PATCH 7/7] fakecap: Also handle validatefs extended attributes
+
+This is needed to run systemd-repart with `AddValidateFS=yes`
+(default).
+---
+ files/fakecap/fakecap.c | 23 +++++++++++++++++------
+ 1 file changed, 17 insertions(+), 6 deletions(-)
+
 diff --git a/files/fakecap/fakecap.c b/files/fakecap/fakecap.c
 index 9e5bbb369..a3b1ad63a 100644
 --- a/files/fakecap/fakecap.c
@@ -74,3 +85,6 @@ index 9e5bbb369..a3b1ad63a 100644
      return next(fd, name, value, size, flags);
    }
    if (fstat(fd, &st) != 0) {
+-- 
+2.51.2
+
