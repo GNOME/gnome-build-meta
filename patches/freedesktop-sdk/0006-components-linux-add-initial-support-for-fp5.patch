@@ -1,14 +1,14 @@
-From f34426a10bd36a8bfe1f1282ba8b6a7a525f2436 Mon Sep 17 00:00:00 2001
+From 350461af0f1dce72914e8e7625dc4d53f6806fc5 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Fri, 31 Oct 2025 10:28:19 +0100
-Subject: [PATCH 6/6] components/linux: add initial support for fp5
+Subject: [PATCH 6/7] components/linux: add initial support for fp5
 
 ---
  files/linux/fdsdk-config.sh | 28 ++++++++++++++++++++++++++++
  1 file changed, 28 insertions(+)
 
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 7b603e488..e882e836a 100644
+index 563343351..b11840388 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
 @@ -44,6 +44,27 @@ case "$arch" in
@@ -57,7 +57,7 @@ index 7b603e488..e882e836a 100644
  esac
  module MFD_AXP20X_I2C
  
-@@ -2540,6 +2565,9 @@ case "$arch" in
+@@ -2541,6 +2566,9 @@ case "$arch" in
          module LEDS_APU
          module LEDS_INTEL_SS4200
      ;;
@@ -68,5 +68,5 @@ index 7b603e488..e882e836a 100644
  
  enable CPU_FREQ
 -- 
-2.51.0
+2.51.2
 
