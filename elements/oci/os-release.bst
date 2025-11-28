@@ -14,5 +14,7 @@ depends:
 variables:
   meson-local: >-
     -Dbranch=%{branch}
-    -Dmode=oci
+    -Dcommit-date='%{commit-date-pretty}'
+    -Dcommit='%{commit}'
     -Dimage-version=%{image-version}
+    -Dmode=oci

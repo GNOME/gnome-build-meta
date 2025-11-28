@@ -1,5 +1,7 @@
 option('branch', type : 'string', value : 'master')
 option('image-version', type : 'string')
+option('commit', type : 'string')
+option('commit-date', type : 'string')
 option('mode',  type : 'combo',
        choices : ['sysupdate', 'flatpak', 'oci'], value : 'flatpak')
 option('variant',  type : 'combo',

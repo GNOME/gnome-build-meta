@@ -48,7 +48,12 @@ fi
 echo "image-version: ${IMAGE_VERSION}" > include/image-version.yml
 export IMAGE_VERSION
 
+commit=$(git rev-parse "${CI_MERGE_REQUEST_DIFF_BASE_SHA-HEAD}")
 commit_time=$(git log -1 --format=format:%ct "${CI_MERGE_REQUEST_DIFF_BASE_SHA-HEAD}")
+commit_date_pretty=$(git show -s --format=%ci "${CI_MERGE_REQUEST_DIFF_BASE_SHA-HEAD}")
+
 echo "filesystem-time: ${commit_time}" >> include/image-version.yml
+echo "commit: '${commit}'" >> include/image-version.yml
+echo "commit-date-pretty: '${commit_date_pretty}'" >> include/image-version.yml
 
 cat include/image-version.yml

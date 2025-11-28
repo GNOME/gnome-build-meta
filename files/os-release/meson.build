@@ -5,16 +5,19 @@ if branch_name == 'master'
   branch_name = 'Nightly'
 endif
 
-vcs_tag = run_command('git', 'rev-parse', '--short', '@', check: false).stdout().strip()
-
 conf_data = configuration_data({
   'SDK_BRANCH': branch_name
 })
 
 if get_option('mode') == 'sysupdate'
+    commits_url = 'https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/' + get_option('commit')
+
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('VARIANT_ID', get_option('variant'))
     conf_data.set('IMAGE_VERSION', get_option('image-version'))
+    conf_data.set('GNOMEOS_COMMIT', get_option('commit'))
+    conf_data.set('GNOMEOS_COMMIT_DATE', get_option('commit-date'))
+    conf_data.set('GNOMEOS_COMMITS_URL', commits_url)
     if get_option('variant') == 'devel'
       conf_data.set('VARIANT', 'Development')
       conf_data.set('FULL_NAME', 'GNOME OS Development')
@@ -30,9 +33,14 @@ if get_option('mode') == 'sysupdate'
         install_dir : get_option('prefix') / 'lib'
     )
 elif get_option('mode') == 'oci'
+    commits_url = 'https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/' + get_option('commit')
+
     conf_data.set('ISSUE_NAME', 'GNOME OS')
     conf_data.set('FULL_NAME', 'GNOME OS')
     conf_data.set('IMAGE_VERSION', get_option('image-version'))
+    conf_data.set('GNOMEOS_COMMIT', get_option('commit'))
+    conf_data.set('GNOMEOS_COMMIT_DATE', get_option('commit-date'))
+    conf_data.set('GNOMEOS_COMMITS_URL', commits_url)
     configure_file(
         input : 'os-release.oci.in',
         output : 'os-release',

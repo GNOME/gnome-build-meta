@@ -1,3 +1,9 @@
 # l for local
 image-version: 'l.1'
 filesystem-time: 1321009871
+# These get replaced in CI.
+# We should also set them for local builds, but that's for later
+# git rev-parse --long HEAD
+commit: 'unkown'
+# git show -s --format=%ci HEAD
+commit-date-pretty: 'unkown'

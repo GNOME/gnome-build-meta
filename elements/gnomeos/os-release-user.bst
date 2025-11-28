@@ -10,6 +10,8 @@ depends:
 variables:
   meson-local: >-
     -Dbranch=%{branch}
+    -Dcommit-date='%{commit-date-pretty}'
+    -Dcommit='%{commit}'
+    -Dimage-version=%{image-version}
     -Dmode=sysupdate
     -Dvariant=user
-    -Dimage-version=%{image-version}
