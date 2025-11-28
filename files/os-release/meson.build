@@ -5,11 +5,17 @@ if branch_name == 'master'
   branch_name = 'Nightly'
 endif
 
-vcs_tag = run_command('git', 'rev-parse', '--short', '@', check: false).stdout().strip()
-
 conf_data = configuration_data({
   'SDK_BRANCH': branch_name
 })
+
+if get_option('commit') != ''
+  conf_data.set('COMMIT', get_option('commit'))
+endif
+
+if get_option('date') != ''
+  conf_data.set('DATE', get_option('date'))
+endif
 
 if get_option('mode') == 'sysupdate'
     conf_data.set('ISSUE_NAME', 'GNOME OS')

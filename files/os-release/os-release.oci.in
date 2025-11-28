@@ -8,3 +8,5 @@ BUG_REPORT_URL="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new"
 HOME_URL="https://www.gnome.org/"
 IMAGE_VERSION=@IMAGE_VERSION@
 SYSEXT_LEVEL=@IMAGE_VERSION@
+GNOMEOS_COMMIT=@COMMIT@
+GNOMEOS_DATE=@DATE@
