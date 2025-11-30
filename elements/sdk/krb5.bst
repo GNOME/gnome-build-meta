@@ -11,6 +11,8 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/e2fsprogs.bst
+- freedesktop-sdk.bst:components/keyutils.bst
+- freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
@@ -26,6 +28,7 @@ variables:
     --disable-rpath
     --with-system-et
     --with-system-ss
+    --with-keyutils
 
 public:
   bst:
