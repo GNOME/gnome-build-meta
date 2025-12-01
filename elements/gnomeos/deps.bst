@@ -7,7 +7,7 @@ depends:
 - gnomeos/initramfs/signed-modules.bst
 - gnomeos/sysupdate-config.bst
 - gnomeos/import-deployment-pub-key.bst
-- gnomeos/os-release-user.bst
+- gnomeos/os-release.bst
 - gnomeos/fwupd-efi-signed-maybe.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/reload-sysext.bst

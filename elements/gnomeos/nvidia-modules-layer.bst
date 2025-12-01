@@ -4,7 +4,7 @@ build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
-- gnomeos/os-release-user.bst
+- gnomeos/os-release.bst
 - filename: gnomeos/initramfs/signed-nvidia-modules.bst
   config:
     location: '/sysroot-nvidia-modules'

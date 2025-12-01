@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- gnomeos/os-release-user.bst
+- gnomeos/os-release.bst
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
 - filename: gnomeos/initramfs.bst

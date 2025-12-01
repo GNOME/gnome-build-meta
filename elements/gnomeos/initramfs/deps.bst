@@ -21,7 +21,7 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos-deps/shim-maybe.bst
 - gnomeos/reload-sysext.bst
-- gnomeos/os-release-user.bst
+- gnomeos/os-release.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/live.bst
 

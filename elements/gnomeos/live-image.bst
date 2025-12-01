@@ -18,7 +18,7 @@ build-depends:
 - filename: gnomeos/signed-boot-common.bst
   config:
     location: '/sysroot'
-- filename: gnomeos/os-release-user.bst
+- filename: gnomeos/os-release.bst
   config:
     location: '/sysroot'
 

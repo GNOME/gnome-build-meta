@@ -3,7 +3,7 @@ description: generic common zone for dependencies related to the PinePhone Pro &
 
 depends:
 - gnomeos-deps/deps.bst
-- gnomeos/os-release-user.bst
+- gnomeos/os-release.bst
 
 - core/meta-gnome-core-mobile.bst
 
