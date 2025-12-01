@@ -242,12 +242,14 @@ class ModuleResolver:
 
     def resolve_firmware(self, path):
         path = os.path.join(self.root_path, 'usr', 'lib', 'firmware', path.decode('utf-8'))
-        compressed_path = path + ".xz"
-        if os.path.exists(compressed_path):
-            return compressed_path
-        if os.path.exists(path):
-            return path
-        return compressed_path
+
+        for ext in ["", ".xz", ".zst"]:
+          if os.path.exists(path+ext):
+            return path+ext
+
+        # It doesn't eixst but return it anyway
+        # it's how the script always worked
+        return path+".zstd"
 
 def reallinkpath(path):
     dirname = os.path.dirname(path)
