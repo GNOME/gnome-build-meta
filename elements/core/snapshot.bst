@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.0-28-gb1eeed700a19ac1cac39e5191383f9f0ff62a6c4
+  ref: 49.0-29-g8cddb03868a9945f0903f3342415e0ce5a535ee9
 - kind: cargo2
   ref:
   - kind: registry
@@ -445,12 +445,12 @@ sources:
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: libadwaita
-    version: 0.8.0
-    sha: 4df6715d1257bd8c093295b77a276ed129d73543b10304fec5829ced5d5b7c41
+    version: 0.8.1
+    sha: fb09e12bf8f73342b3315c839d0a7668cc0ccebd78490c49fec48bab15d5484b
   - kind: registry
     name: libadwaita-sys
-    version: 0.8.0
-    sha: fdf8950090cc180250cdb1ff859a39748feeda7a53a9f28ead3a17a14cc37ae2
+    version: 0.8.1
+    sha: 6d7f94227ba87eb596fecada2491f04e357d507324142f77bf76d9e6be4a3e31
   - kind: registry
     name: libc
     version: 0.2.177
@@ -931,7 +931,6 @@ sources:
     name: zvariant_utils
     version: 3.2.1
     sha: c6949d142f89f6916deca2232cf26a8afacf2b9fdc35ce766105e104478be599
-
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst

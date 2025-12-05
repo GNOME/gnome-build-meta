@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:gobject-introspection.git
   track: main
-  ref: 1.86.0-1-g2bf55a9b00ff6b8094e3f8c6ad62be96f5dfcb12
+  ref: 1.86.0-2-g43ae0b53c23b39b0a700b66a9640c1180b10de00
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: gobject-introspection-tests
