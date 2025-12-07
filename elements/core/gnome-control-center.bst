@@ -15,7 +15,8 @@ sources:
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
-  ref: d45e1c572752604a7a8dd8651657342bb6ac0961
+  track: main
+  ref: d5eca997aa2fea5af54fdd286d5c1e1aa7c76389
 
 build-depends:
 # These two are more like runtime deps of the tests suite
