@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 49.1-24-gf2dbee5ef8f912b706ee7e00f663c239a13aef9d
+  ref: 49.1-25-g3c7278611680adce3201af377b1bd60d210a2fad
 - kind: cargo2
 
   ref:
@@ -406,8 +406,8 @@ sources:
     sha: 98bebe9ba4be92d3932246ecfbe261106e3013266604f8cbf0ca9ee9df7edf99
   - kind: registry
     name: gufo-exif
-    version: 0.3.0
-    sha: 9d2b06ed83ed41cff519aeac7bc7ae4580c7b8ffd8f5688f4dcc362df1f1d349
+    version: 0.3.1
+    sha: e611ff8dfb0816bdadf498bb05f43868fff9ea5d71b7a0f2dc7c782b62a7bc1f
   - kind: registry
     name: gufo-jpeg
     version: 0.3.0
