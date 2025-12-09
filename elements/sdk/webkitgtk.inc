@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.51.2.tar.xz
-  ref: 46b13c339b1154e8d70b08bbb702667f5928fe514f0c26ec0c071894f99ee81c
-- kind: patch
-  path: patches/webkitgtk/updateCSSTransitionsForStyleableAndProperty.patch
+  url: webkitgtk:webkitgtk-2.51.3.tar.xz
+  ref: fdf6767ebcbb88b5c36f687529ac5a138f9cd9d290f54f1d2416efbbbd31fbca
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
