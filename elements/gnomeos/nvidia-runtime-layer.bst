@@ -69,12 +69,12 @@ config:
 
     commits_url="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/%{commit}"
     cat <<EOF >sysroot-nvidia-runtime/usr/lib/extension-release.d/extension-release.nvidia-runtime_%{image-version}
-    ID=org.gnome.os
-    VERSION_ID=${version_id}
-    SYSEXT_LEVEL=%{image-version}
-    GNOMEOS_COMMIT=%{commit}
-    GNOMEOS_COMMIT_DATE=%{commit-date-pretty}
-    GNOMEOS_COMMITS_URL=${commits_url}
+    ID="org.gnome.os"
+    VERSION_ID="${version_id}"
+    SYSEXT_LEVEL="%{image-version}"
+    GNOMEOS_COMMIT="%{commit}"
+    GNOMEOS_COMMIT_DATE="%{commit-date-pretty}"
+    GNOMEOS_COMMITS_URL="${commits_url}"
     EOF
 
   - |
