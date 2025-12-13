@@ -98,6 +98,12 @@ depends:
 - gnomeos-deps/nftables.bst
 - gnomeos-deps/firewalld.bst
 
+# Containers
+- freedesktop-sdk.bst:components/podman.bst
+- freedesktop-sdk.bst:components/skopeo.bst
+- gnomeos-deps/distrobox.bst
+- gnomeos-deps/toolbox.bst
+
 - gnomeos-deps/uinput.bst
 
 (?):

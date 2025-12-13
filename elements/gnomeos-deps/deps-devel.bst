@@ -7,12 +7,6 @@ depends:
 - freedesktop-sdk.bst:components/debuginfod.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 
-# Containers
-- freedesktop-sdk.bst:components/podman.bst
-- freedesktop-sdk.bst:components/skopeo.bst
-- gnomeos-deps/distrobox.bst
-- gnomeos-deps/toolbox.bst
-
 # Useful utilities for testing and CI
 - core-deps/foundry.bst
 - core-deps/python-dbusmock.bst

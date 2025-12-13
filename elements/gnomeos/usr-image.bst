@@ -127,6 +127,13 @@ config:
     L /etc/profile.d/gawk.sh
     L /etc/profile.d/gawk.csh
 
+    # gnomeos-deps/toolbox.bst
+    L /etc/containers/toolbox.conf
+    # freedesktop-sdk.bst:components/containers-common.bst
+    L /etc/containers/policy.json
+    L /etc/containers/registries.conf
+    L /etc/containers/registries.conf.d/000-shortnames.conf
+    L /etc/containers/registries.d/default.yaml
 
     # freedesktop-sdk.bst:components/bash-config.bst
     L /etc/bashrc
