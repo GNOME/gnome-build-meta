@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
   track: main
-  ref: 49.0-5-g17579c8357d4fb49aad5882fd68e8423c2adb4c2
+  ref: 49.0-6-g87770e3a0812b2c4399a4839faf22b84c526dc82
 - kind: cargo2
   ref:
   - kind: registry
