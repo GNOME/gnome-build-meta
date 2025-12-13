@@ -1,7 +1,7 @@
-From 09ca9ae80c5b41955d407f7601fed8b0885e7d90 Mon Sep 17 00:00:00 2001
+From 1aedb281eb62564c7b413e20ef6223d17dd2411a Mon Sep 17 00:00:00 2001
 From: Matt Turner <mattst88@gmail.com>
 Date: Thu, 6 Jul 2023 10:17:10 -0400
-Subject: [PATCH] build: Require webkitgtk only if --with-authdlg
+Subject: [PATCH 1/2] build: Require webkitgtk only if --with-authdlg
 
 Fixes: 1e86b38 ("Support AnyConnect SAML SSO/MFA")
 Closes: https://gitlab.gnome.org/GNOME/NetworkManager-openconnect/-/issues/99
@@ -12,7 +12,7 @@ https://gitlab.gnome.org/GNOME/NetworkManager-openconnect/-/merge_requests/62
  1 file changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index c9ac073..18fe010 100644
+index a204906..49ad700 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -145,10 +145,6 @@ if test x"$with_gtk4" != xno; then
@@ -37,5 +37,5 @@ index c9ac073..18fe010 100644
  AM_CONDITIONAL(WITH_AUTHDLG, test x"$with_authdlg" != xno)
  
 -- 
-2.47.2
+2.52.0
 

@@ -7,10 +7,8 @@ sources:
   exclude:
   - '*dev*'
   ref: 1.2.10-0-ga28d393b5fc9e0df9c19292065187e7145e83f51
-- kind: patch
-  path: patches/NetworkManager-openconnect/0001-build-Require-webkitgtk-only-if-with-authdlg.patch
-- kind: patch
-  path: patches/NetworkManager-openconnect/link-against-openconnect.patch
+- kind: patch_queue
+  path: patches/NetworkManager-openconnect
 - kind: local
   path: files/NetworkManager-openconnect/sysusers.conf
 
@@ -21,6 +19,7 @@ build-depends:
 
 depends:
 - sdk/gtk.bst
+- sdk/webkitgtk-6.0.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
 - gnomeos-deps/openconnect.bst
@@ -28,7 +27,6 @@ depends:
 variables:
   conf-local: >-
     --with-gtk4
-    --without-gnome
   autogen: autoreconf -is && intltoolize --force && autoreconf -fvi
 
 config:
