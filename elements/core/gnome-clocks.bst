@@ -4,12 +4,15 @@ sources:
 - kind: git_repo
   url: gnome:gnome-clocks.git
   track: master
-  ref: 49.0-48-g992d28f949b5ca387c9fe72a7e404a6ff88dc05f
+  ref: 49.0-73-g72409d3d25e7b2bd28eb077518a527a4abbe739d
 
 build-depends:
 - sdk/vala.bst
-- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/ffmpeg.bst
+- freedesktop-sdk.bst:components/itstool.bst
+# workaround: ffmpeg is not declaring sdl3 as a dependency
+- freedesktop-sdk.bst:components/sdl3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
