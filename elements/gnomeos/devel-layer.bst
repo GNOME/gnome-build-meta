@@ -63,8 +63,6 @@ config:
     # freedesktop-sdk.bst:components/perf.bst
     # FIXME: move to /usr/share/bash-completion/completions/
     L /etc/bash_completion.d/perf
-    # freedesktop-sdk.bst:components/git-lfs.bst
-    L /etc/gitconfig
     # freedesktop-sdk.bst:components/binutils.bst
     L /etc/gprofng.rc
     # core-deps/libvirt.bst

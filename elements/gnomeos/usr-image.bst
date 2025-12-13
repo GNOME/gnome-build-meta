@@ -135,6 +135,9 @@ config:
     L /etc/containers/registries.conf.d/000-shortnames.conf
     L /etc/containers/registries.d/default.yaml
 
+    # freedesktop-sdk.bst:components/git-lfs.bst
+    L /etc/gitconfig
+
     # freedesktop-sdk.bst:components/bash-config.bst
     L /etc/bashrc
 

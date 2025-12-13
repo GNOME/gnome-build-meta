@@ -5,7 +5,6 @@ depends:
 
 - freedesktop-sdk.bst:components/buildstream2.bst
 - freedesktop-sdk.bst:components/debuginfod.bst
-- freedesktop-sdk.bst:components/git-lfs.bst
 
 # Useful utilities for testing and CI
 - core-deps/foundry.bst

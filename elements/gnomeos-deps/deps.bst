@@ -104,6 +104,9 @@ depends:
 - gnomeos-deps/distrobox.bst
 - gnomeos-deps/toolbox.bst
 
+- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/git-lfs.bst
+
 - gnomeos-deps/uinput.bst
 
 (?):
