@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:virtio-fs/virtiofsd.git
   track: 'v*'
-  ref: v1.13.2-0-g720245d0857e9837484488ff69c2f8c577466851
+  ref: v1.13.3-0-gbbf82173682a3e48083771a0a23331e5c23b4924
 - kind: cargo2
   cargo-lock: Cargo.lock
   ref:
@@ -206,8 +206,8 @@ sources:
     sha: 112c678d4050afce233f4f2852bb2eb519230b3cf12f33585275537d7e41578d
   - kind: registry
     name: libc
-    version: 0.2.155
-    sha: 97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c
+    version: 0.2.177
+    sha: 2874a2af47a2325c2001a6e6fad9b16a53b802102b528163885171cf92b15976
   - kind: registry
     name: libseccomp-sys
     version: 0.2.1
@@ -482,3 +482,6 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
+
+variables:
+  cargo-install-features: ''
