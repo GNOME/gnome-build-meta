@@ -24,7 +24,7 @@ add_credential() {
 
 print_help() {
     cat <<EOF
-Usage: $@ [OPTIONS] [--] [ELEMENT]
+Usage: $0 [OPTIONS] [--] [ELEMENT]
 Run GNOME OS image under qemu-system with secure boot and TPM.
 
 You can optionally set the BuildStream element to be built and run.
@@ -90,6 +90,9 @@ Options:
 
   --credential KEY=VALUE     Add credential. VALUE can start with '@' to point
                              to a file.
+
+  --home PATH                Mount PATH as home directory of user test-user
+                             with automatic login.
 EOF
 }
 
@@ -166,6 +169,10 @@ while [ $# -gt 0 ]; do
         --credential)
             shift
             add_credential "$1"
+            ;;
+        --home)
+            shift
+            home="$1"
             ;;
         --)
             shift
@@ -294,7 +301,10 @@ if [ "${reset_secure+set}" = set ] || ! [ -f "${STATE_DIR}/OVMF_VARS.fd" ]; then
 fi
 
 QEMU_ARGS=()
-QEMU_ARGS+=(-m 8G)
+memory="8G"
+QEMU_ARGS+=(-m "${memory}"
+            -object "memory-backend-memfd,id=mem,size=${memory},share=on"
+            -numa node,memdev=mem)
 QEMU_ARGS+=(-M q35,accel=kvm)
 QEMU_ARGS+=(-cpu host)
 QEMU_ARGS+=(-smp 4)
@@ -372,17 +382,75 @@ QEMU_ARGS+=(-audiodev pa,id=sound0)
 QEMU_ARGS+=(-device hda-output,audiodev=sound0)
 
 QEMU_ARGS+=(-device vhost-vsock-pci,id=vhost-vsock-pci0,guest-cid="${GUEST_CID}")
+
 # We need to start sshd to create host keys
 cmdline+=("systemd.wants=sshd.service")
+
+tmpfiles_extra=()
+tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
+cleanup_dirs+=("${tmpfiles}")
+
+if [ "${home+set}" = set ]; then
+    home="$(realpath "${home}")"
+
+    mkdir -p "${home}"
+
+    user_maps=(--map-user=1000
+               --map-group=1000)
+    if [ "${nosystemd+set}" = set ]; then
+        VIRTIOFS_SOCK="${STATE_DIR}/virtiofsd.sock"
+        VIRTIOFS_PIDFILE="${STATE_DIR}/virtiofsd.sock.pid"
+        pkill -F "${VIRTIOFS_PIDFILE}" --logpidfile || true
+        unshare "${user_maps[@]}" -- virtiofsd --shared-dir "${home}" --socket-path "${VIRTIOFS_SOCK}" --xattr --no-announce-submounts &
+    else
+        VIRTIOFS_UNIT="virtiofs-$(realpath "${home}" | sha1sum | head -c 8)"
+        VIRTIOFS_SOCK="${XDG_RUNTIME_DIR}/${VIRTIOFS_UNIT}/sock"
+        mkdir -p "$(dirname "${VIRTIOFS_SOCK}")"
+
+        for unit in "${VIRTIOFS_UNIT}.socket" "${VIRTIOFS_UNIT}.service"; do
+            if systemctl --user -q is-active "${unit}"; then
+                systemctl --user stop "${unit}"
+            fi
+
+            if systemctl --user -q is-failed "${unit}"; then
+                systemctl --user reset-failed "${unit}"
+            fi
+        done
+
+        systemd-run --user --socket-property="ListenStream=${VIRTIOFS_SOCK}" --unit="${VIRTIOFS_UNIT}.service" -- unshare "${user_maps[@]}" -- virtiofsd --shared-dir "${home}" --fd=3 --xattr --no-announce-submounts
+    fi
+
+    QEMU_ARGS+=(-chardev socket,id=char-virtiofs-home,path="${VIRTIOFS_SOCK}"
+                -device vhost-user-fs-pci,chardev=char-virtiofs-home,tag=homefs)
+
+    cmdline+=("systemd.mount-extra=homefs:/home/test-user:virtiofs")
+    sysusers="$((echo 'g test-user 1000'; echo 'u test-user 1000:1000 "Test User" /home/test-user /bin/bash'; echo 'm test-user wheel') | base64 -w0)"
+    credentials+=("sysusers.extra=${sysusers}")
+
+    if ! [ -e "${home}/.config/dconf/user" ]; then
+        mkdir -p "${home}/.config/dconf"
+        dconf compile "${home}/.config/dconf/user" "$(dirname "$0")/dconf-profile"
+    fi
+
+    cat <<EOF >"${tmpfiles}"/gdm-custom.conf
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=test-user
+EOF
+
+    cat <<EOF >"${tmpfiles}"/auto-login-user.conf
+C /home/test-user/.bashrc - - - - /usr/share/factory/etc/skel/.bashrc
+z /home/test-user/.bashrc 0644 test-user test-user
+C /home/test-user/.profile - - - - /usr/share/factory/etc/skel/.profile
+z /home/test-user/.profile 0644 test-user test-user
+f+~ /etc/gdm/custom.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/gdm-custom.conf)
+EOF
+    tmpfiles_extra+=("${tmpfiles}"/auto-login-user.conf)
+fi
 
 if [ ${#cmdline[@]} -gt 0 ]; then
     TYPE11+=("value=io.systemd.stub.kernel-cmdline-extra=${cmdline[*]//,/,,}")
 fi
-
-tmpfiles_extra=()
-
-tmpfiles="$(mktemp -d --tmpdir="${STATE_DIR}" tmpfiles.XXXXXXXXXX)"
-cleanup_dirs+=("${tmpfiles}")
 
 if [ "${local_updates+set}" = set ]; then
     cat <<EOF >"${tmpfiles}"/tmpfiles-import-pubring.conf
