@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:d-spy.git
   track: main
-  ref: 49.1-17-gc6eabe504f63810948d661309800c9d9362700e1
+  ref: 49.1-18-ge9b562271254b4a28c7e2a1799af12da0876540d
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
