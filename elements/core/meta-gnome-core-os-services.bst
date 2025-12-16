@@ -4,6 +4,7 @@
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#technical-conditions-to-enter-gnome-core
 kind: stack
 depends:
+- core/gst-thumbnailers.bst
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/upower.bst
