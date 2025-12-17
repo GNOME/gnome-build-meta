@@ -41,3 +41,20 @@ skip_apps = [
 # if a user switches to Chrome or Firefox, we still shouldn't default to opening
 # HTML files in Builder
 "text/html" = "org.gnome.Epiphany"
+
+# GNOME Disks is undergoing a large rewrite, and the last stable release was 46.1. During
+# the GNOME 47 development cycle, Disks dropped their gnome-disk-image-writer.desktop file
+# and everything was consolidated into a unified mount/write dialog under the existing
+# gnome-disk-image-mounter.desktop. However, a 47 release never came!
+#
+# The problem is that GNOME OS Nightly ships the latest tip of the main branch, which would
+# normally become the next stable release. But since the stable release never happened, we have
+# to downgrade back to Disks 46.1 for GNOME's stable branches. We don't capture this downgrade
+# in GNOME's upstream mimeapps.list file. Thus: once we downgrade GNOME Disks, this re-introduces
+# gnome-disk-image-writer.desktop, and we fail to account for that in the mimeapps.list we ship.
+#
+# This quirk solves the problem by manually making a config that works right for both Disks 46.1
+# (shipped by most every distro) and Disks git main (shipped by GNOME OS Nightly). It should be
+# dropped once there's a Disks release > 46.x
+"application/x-raw-disk-image" = ["gnome-disk-image-writer", "gnome-disk-image-mounter"]
+"application/x-raw-disk-image-xz-compressed" = ["gnome-disk-image-writer", "gnome-disk-image-mounter"]
