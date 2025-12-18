@@ -12,6 +12,7 @@ depends:
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/reload-sysext.bst
 - gnomeos/live.bst
+- gnomeos/live-setup.bst
 - gnomeos/systemd-pcrlock-workaround.bst
 - gnomeos/public-keys.bst
 - gnomeos/signed-boot-common.bst

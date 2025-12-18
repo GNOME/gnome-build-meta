@@ -21,6 +21,7 @@ depends:
 - gnomeos/os-release.bst
 - gnomeos/live.bst
 - gnomeos/confext.bst
+- gnomeos/live-setup.bst
 
 (?):
 - arch in ["x86_64"]:
