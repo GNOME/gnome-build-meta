@@ -1,10 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:NetworkManager/NetworkManager/-/releases/1.54.0/downloads/NetworkManager-1.54.0.tar.xz
-  ref: 6c104c8e0bd5a3bbbb9ce28b7670e72924e058fa9303e90dab2815d70a530879
+- kind: git_repo
+  url: freedesktop:NetworkManager/NetworkManager.git
+  track: "*.*"
+  exclude:
+  - "*-dev"
+  ref: 1.56-rc2-0-gc978963ee7939cad1ff8947b3b9a70a59d65d90a
 
 build-depends:
 - sdk/gobject-introspection.bst
