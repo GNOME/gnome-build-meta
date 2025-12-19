@@ -1,7 +1,7 @@
-From 276b3fcd8d52508ea196118599f182d6c6822b36 Mon Sep 17 00:00:00 2001
+From e44f11ba8c4e4ac53d3f847cadf7bd79e8d65524 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 23 Nov 2025 10:39:52 +0100
-Subject: [PATCH 7/7] fakecap: Also handle validatefs extended attributes
+Subject: [PATCH 7/9] fakecap: Also handle validatefs extended attributes
 
 This is needed to run systemd-repart with `AddValidateFS=yes`
 (default).
@@ -86,5 +86,5 @@ index 9e5bbb369..a3b1ad63a 100644
    }
    if (fstat(fd, &st) != 0) {
 -- 
-2.51.2
+2.51.0
 
