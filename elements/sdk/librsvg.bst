@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.3-23-g810bb137d46989acfbe62dd1ebe612ddcc1a1dcb
+  ref: 2.61.3-29-g5bf47e852751fdea90e29672dc5025391c8b6abc
 - kind: cargo2
   ref:
   - kind: registry
@@ -627,6 +627,10 @@ sources:
     name: mp4parse
     version: 0.17.0
     sha: 63a35203d3c6ce92d5251c77520acb2e57108c88728695aa883f70023624c570
+  - kind: registry
+    name: mutants
+    version: 0.0.3
+    sha: bc0287524726960e07b119cebd01678f852f147742ae0d925e6a520dca956126
   - kind: registry
     name: nalgebra
     version: 0.33.2

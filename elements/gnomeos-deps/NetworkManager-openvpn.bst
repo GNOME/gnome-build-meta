@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:NetworkManager-openvpn.git
   track: '*.*'
-  ref: 1.12.3-0-gf41f4cb615e24d2a20ff465d64c0fa2ff1c29079
+  ref: 1.12.4-0-g6fdc1c29e3513035fec603899ad5691f62f56a6b
 - kind: local
   path: files/NetworkManager-openvpn/sysusers.conf
 
