@@ -80,6 +80,8 @@ Options:
 
   --spice-app                Run a spice app.
 
+  --vnc                      Run as a vnc server.
+
   --home-disk PATH           Also mount home disk as an image file
 
   --home-disk-key PATH       Use public key for signing home disk. By default,
@@ -148,7 +150,10 @@ while [ $# -gt 0 ]; do
             local_updates=1
             ;;
         --spice-app)
-            spice_app=1
+            display=spice
+            ;;
+        --vnc)
+            display=vnc
             ;;
         --home-disk)
             shift
@@ -367,15 +372,23 @@ fi
 
 QEMU_ARGS+=(-name "${VM_NAME}")
 
-QEMU_ARGS+=(-device virtio-vga-gl)
-if [ "${spice_app+set}" = set ]; then
-    QEMU_ARGS+=(-display spice-app,gl=on)
-    QEMU_ARGS+=(-device virtio-serial-pci
-                -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0
-                -chardev spicevmc,id=spicechannel0,name=vdagent)
-else
-    QEMU_ARGS+=(-display gtk,gl=on)
-fi
+case "${display-gtk}" in
+    spice)
+        QEMU_ARGS+=(-device virtio-vga-gl)
+        QEMU_ARGS+=(-display spice-app,gl=on)
+        QEMU_ARGS+=(-device virtio-serial-pci
+                    -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0
+                    -chardev spicevmc,id=spicechannel0,name=vdagent)
+        ;;
+    gtk)
+        QEMU_ARGS+=(-device virtio-vga-gl)
+        QEMU_ARGS+=(-display gtk,gl=on)
+        ;;
+    vnc)
+        QEMU_ARGS+=(-device virtio-vga)
+        QEMU_ARGS+=(-display vnc=:0)
+        ;;
+esac
 
 QEMU_ARGS+=(-device ich9-intel-hda)
 QEMU_ARGS+=(-audiodev pa,id=sound0)
