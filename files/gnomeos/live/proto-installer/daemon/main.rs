@@ -395,6 +395,19 @@ async fn allow_discards() -> Result<(), InstallerError> {
     Ok(())
 }
 
+async fn stop_zram(conn : &Connection) -> Result<(), InstallerError> {
+    let systemd = SystemdProxy::new(conn).await?;
+    let zram = systemd.load_unit("systemd-zram-setup@zram1.service").await?;
+    let _ = systemd.stop_unit("systemd-zram-setup@zram1.service", "replace").await?;
+    while !matches!(zram.active_state().await?.as_str(), "inactive"|"failed") {
+        zram.receive_active_state_changed().await;
+    }
+    match zram.active_state().await?.as_str() {
+        "inactive" => Ok(()),
+        _ => Err(InstallerError::Unit(UnitError::new("systemd-zram-setup@zram1.service"))),
+    }
+}
+
 async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(), InstallerError> {
     let mut real_root = root.to_string();
 
@@ -460,12 +473,7 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
     btrfs_resize.code().filter(|code| *code == 0)
         .ok_or(CommandError::new("btrfs filesystem resize", btrfs_resize))?;
 
-    let zramctl = Command::new("zramctl")
-        .arg("-r").arg("/dev/zram1")
-        .spawn()?
-        .wait().await?;
-    zramctl.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("zramctl", zramctl))?;
+    stop_zram(conn).await?;
 
     Ok(())
 }

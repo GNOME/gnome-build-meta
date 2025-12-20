@@ -25,6 +25,8 @@ pub trait SystemdUnit {
 pub trait Systemd {
     #[zbus(object="SystemdJob")]
     async fn start_unit(&self, name : &str, mode : &str) -> zbus::Result<SystemdJobProxy>;
+    #[zbus(object="SystemdJob")]
+    async fn stop_unit(&self, name : &str, mode : &str) -> zbus::Result<SystemdJobProxy>;
     #[zbus(object="SystemdUnit")]
     async fn get_unit(&self, name : &str) -> zbus::Result<SystemdUnitProxy>;
     #[zbus(object="SystemdUnit")]
