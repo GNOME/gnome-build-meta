@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 49.0-31-g6833ad3b95c9560fb3e742979dfda9d482b6f833
+  ref: 49.0-32-g61a040dee4ca2bd5ab6b5ccce14d19a1179217d4
 - kind: cargo2
   ref:
   - kind: registry
@@ -187,6 +187,10 @@ sources:
     name: form_urlencoded
     version: 1.2.2
     sha: cb4cb245038516f5f85277875cdaa4f7d2c9a0fa0468de06ed190163b1581fcf
+  - kind: registry
+    name: formatx
+    version: 0.2.4
+    sha: d8866fac38f53fc87fa3ae1b09ddd723e0482f8fa74323518b4c59df2c55a00a
   - kind: registry
     name: futures-channel
     version: 0.3.31
