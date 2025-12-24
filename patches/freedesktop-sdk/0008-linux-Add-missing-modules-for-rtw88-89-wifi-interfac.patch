@@ -1,7 +1,7 @@
-From f45476e84ede3dd0ece2fdae4f64b6063482d515 Mon Sep 17 00:00:00 2001
+From 31d0b316bf52cdcc6e3d6667736458d6c9a44539 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sat, 13 Dec 2025 12:47:23 +0100
-Subject: [PATCH 8/9] linux: Add missing modules for rtw88/89 wifi interfaces
+Subject: [PATCH 08/11] linux: Add missing modules for rtw88/89 wifi interfaces
 
 ---
  files/linux/fdsdk-config.sh | 19 +++++++++++++++++++
@@ -38,5 +38,5 @@ index b11840388..83743d9bf 100644
  module AR5523
  module ATH10K_USB
 -- 
-2.51.0
+2.52.0
 

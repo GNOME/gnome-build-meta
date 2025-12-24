@@ -1,7 +1,7 @@
-From 6bdbeebabe90ffa704ef5e2e407a490756afafdf Mon Sep 17 00:00:00 2001
-From: Ignacy Kuchciński <ignacykuchcinski@gmail.com>
+From cc2f0924fd714a3efc0807e1372f8297bebcafa0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ignacy=20Kuchci=C5=84ski?= <ignacykuchcinski@gmail.com>
 Date: Sun, 21 Dec 2025 06:26:14 +0100
-Subject: [PATCH] linux: Add missing sensor modules
+Subject: [PATCH 10/11] linux: Add missing sensor modules
 
 Fix tablet mode detection via iio-sensor-proxy on Framework 12 by adding
 missing kernel modules for the sensors.
@@ -13,10 +13,10 @@ https://github.com/openSUSE/kernel-source/commit/e391104603479cbff509139c4a0e397
  1 file changed, 6 insertions(+)
 
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index e8e413956..120d88938 100644
+index 9550d46ca..eaa7c21d4 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
-@@ -1934,6 +1934,12 @@ module MAX31856
+@@ -1937,6 +1937,12 @@ module MAX31856
  module MAXIM_THERMOCOUPLE
  module MLX90614
  module MLX90632

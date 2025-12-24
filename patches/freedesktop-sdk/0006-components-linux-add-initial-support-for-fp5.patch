@@ -1,7 +1,7 @@
-From a9727c3327ffdf186d0c64abd3a34f6520851817 Mon Sep 17 00:00:00 2001
+From 384981ac57b3bdeead6ef51969ffa577b757d36c Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Fri, 31 Oct 2025 10:28:19 +0100
-Subject: [PATCH 6/9] components/linux: add initial support for fp5
+Subject: [PATCH 06/11] components/linux: add initial support for fp5
 
 ---
  files/linux/fdsdk-config.sh | 28 ++++++++++++++++++++++++++++
@@ -68,5 +68,5 @@ index 563343351..b11840388 100644
  
  enable CPU_FREQ
 -- 
-2.51.0
+2.52.0
 

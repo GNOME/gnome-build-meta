@@ -1,7 +1,7 @@
-From 2d28ccf4a1e1f0757b5da4d59a3c22d784ad1555 Mon Sep 17 00:00:00 2001
+From 4602321ea42c5a2669e491b10006523136fdc795 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Thu, 27 Nov 2025 23:07:47 +0100
-Subject: [PATCH 9/9] linux: Add VHOST related linux configs
+Subject: [PATCH 09/11] linux: Add VHOST related linux configs
 
 ---
  files/linux/fdsdk-config.sh | 5 +++++
@@ -24,5 +24,5 @@ index 83743d9bf..9550d46ca 100644
  # Useful filesystems
  for fs in XFS BTRFS EXFAT VFAT F2FS ISO9660 UDF NTFS3; do
 -- 
-2.51.0
+2.52.0
 
