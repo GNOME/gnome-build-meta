@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtkmm.git
   track: master
-  ref: 4.21.1-3-g2aba1bbe5e350a91e18159d62291fb90fe46976f
+  ref: 4.21.1-5-g1628a52f408ffcf4b682b54f57de7e895a3ac5e4
 
 build-depends:
 - core-deps/graphviz.bst
