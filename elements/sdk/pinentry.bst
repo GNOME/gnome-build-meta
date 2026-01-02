@@ -16,7 +16,7 @@ depends:
 
 variables:
   conf-local: >-
-    --enable-pinentry-gome
+    --enable-pinentry-gnome3
     --enable-fallback-curses
     --disable-pinentry-curses
     --disable-pinentry-qt
