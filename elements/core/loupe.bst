@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 49.1-38-g36ba0edc041f75debbed51975d6cbe35c69910b2
+  ref: 50.alpha-1-gf0c065c128285b13e8a58ea92ab5ed028acadda3
 - kind: cargo2
 
   ref:
@@ -354,8 +354,8 @@ sources:
     sha: 2d95e1a3a19ae464a7286e14af9a90683c64d70c02532d88d87ce95056af3e6c
   - kind: registry
     name: glycin
-    version: 3.0.7
-    sha: 502ac59dc785b95521e7deea20e292f3501a11752600c4f37cf34676f794b4e3
+    version: 3.1.0-alpha
+    sha: bbb0cd42213f65c833ae9e080c0fb1c92ab07eafe7e36a36dd23aaef667643a6
   - kind: registry
     name: glycin-common
     version: 1.0.3
