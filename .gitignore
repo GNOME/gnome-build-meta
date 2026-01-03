@@ -37,5 +37,9 @@ files/boot-keys/import-pubring.gpg
 files/boot-keys/import-pubring.pgp
 files/boot-keys/private-key/
 files/boot-keys/VENDOR.der
+
 current-secure-vm/
 secure-vm-repo/
+mkosi.local.conf
+mkosi.local
+mkosi.output/

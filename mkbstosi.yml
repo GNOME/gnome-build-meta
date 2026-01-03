@@ -1,0 +1,5 @@
+keys:
+  TODO: path/to/keys
+
+#image-dir: boards
+tools-element: mkosi/tools.bst
