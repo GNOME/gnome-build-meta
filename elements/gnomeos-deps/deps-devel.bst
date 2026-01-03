@@ -5,6 +5,7 @@ depends:
 
 - freedesktop-sdk.bst:components/buildstream2.bst
 - freedesktop-sdk.bst:components/debuginfod.bst
+- gnomeos-deps/mkbstosi.bst
 
 # Useful utilities for testing and CI
 - core-deps/foundry.bst
