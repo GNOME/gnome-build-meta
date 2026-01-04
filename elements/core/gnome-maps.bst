@@ -4,11 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:gnome-maps.git
   track: main
-  ref: 49.rc-113-g13bd63c908d5536c77b81e203a02fbb6c939d055
+  ref: 50.alpha-1-gf7b2ca705934a68aaabf93d0f20468c1068ba696
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- sdk/blueprint-compiler.bst
 
 runtime-depends:
 - sdk/adwaita-icon-theme.bst
