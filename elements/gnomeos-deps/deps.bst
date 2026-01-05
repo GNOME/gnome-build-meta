@@ -66,6 +66,7 @@ depends:
 
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
+- gnomeos-deps/noise-suppression-for-voice.bst
 
 - freedesktop-sdk.bst:vm/config/sudo.bst
 - freedesktop-sdk.bst:vm/mesa-default.bst
