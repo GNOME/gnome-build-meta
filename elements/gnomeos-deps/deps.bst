@@ -109,6 +109,7 @@ depends:
 - freedesktop-sdk.bst:components/git-lfs.bst
 
 - gnomeos-deps/uinput.bst
+- gnomeos-deps/nvme-cli.bst
 
 (?):
 - arch == "aarch64":
