@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:libsigcplusplus/libsigcplusplus.git
-  track: master
+  track: "*.*.*"
   ref: 3.8.0-0-g653447171e2358933781ccaab0840dda7cff64ad
 
 build-depends:

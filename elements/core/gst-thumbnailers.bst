@@ -2,10 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome_gitlab:sophie-h/gst-thumbnailers.git
+  url: gnome:gst-thumbnailers.git
   track: main
   ref: 1.0.alpha.1-0-g0c9198ffe2d3f7ea71c0e1e0abd22468363afc06
-
 - kind: cargo2
   ref:
   - kind: registry
@@ -500,6 +499,7 @@ sources:
     name: zerocopy-derive
     version: 0.8.30
     sha: cf955aa904d6040f70dc8e9384444cb1030aed272ba3cb09bbc4ab9e7c1f34f5
+
 build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
