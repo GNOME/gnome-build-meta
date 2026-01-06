@@ -2,8 +2,8 @@ kind: manual
 
 sources:
 - kind: remote
-  url: pagure_releases:libosinfo/osinfo-db-20250606.tar.xz
-  ref: 9940aa47df298073c51dcf8a4dcc855f494ab864c24cdbda46bd897957357fe1
+  url: pagure_releases:libosinfo/osinfo-db-20251212.tar.xz
+  ref: 06379250c91306c98cb9726af44eae5909dfdd5449f90331e904ae1221d8d5e7
 build-depends:
 - core-deps/osinfo-db-tools.bst
 
@@ -12,6 +12,5 @@ variables:
 
 config:
   install-commands:
-  - osinfo-db-import --root '%{install-root}' --dir '%{datadir}/osinfo' 
-    osinfo-db-*.tar.xz
+  - osinfo-db-import --root '%{install-root}' --dir '%{datadir}/osinfo' osinfo-db-*.tar.xz
   - "%{install-extra}"
