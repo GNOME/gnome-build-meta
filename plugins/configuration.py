@@ -27,15 +27,20 @@ class GeneratedSource(Source):
     __digest = None
 
     def configure(self, node):
-        node.validate_keys(["name", "path", *Source.COMMON_CONFIG_KEYS])
+        node.validate_keys(["name", "path", "project-fallback", *Source.COMMON_CONFIG_KEYS])
         name = node.get_str("name")
         config_home = os.environ.get('XDG_CONFIG_HOME', os.path.expanduser('~/.config'))
         self.directory = os.path.join(config_home, 'bst-configuration', name)
         self.path = node.get_str("path")
         self.fullpath = os.path.join(self.directory, self.path)
+        project_fallback = node.get_scalar("project-fallback", None)
+        if not os.path.isdir(self.fullpath) and project_fallback.as_str() is not None:
+            self.directory = None
+            self.path = os.path.join(self.node_get_project_path(project_fallback), self.path)
+            self.fullpath = os.path.join(self.get_project_directory(), self.path)
 
     def preflight(self):
-        if not os.path.isdir(self.directory):
+        if self.directory is not None and not os.path.isdir(self.directory):
             raise SourceError(f'Path {self.directory} does not exist. Please configure it first')
 
     def is_resolved(self):

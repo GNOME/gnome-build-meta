@@ -34,6 +34,8 @@ build:
 projects:
   gnome:
     default-mirror: gnome
+    options:
+      allow_snakeoil: ${ALLOW_SNAKEOIL}
 EOF
 
 if [ "${1-}" != nopush ]; then

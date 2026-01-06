@@ -43,9 +43,7 @@ To build the GNOME OS ISO installer locally:
 
 1. Generate keys::
 
-      $ mkdir -p "${HOME}/.config/bst-configuration"
-      $ cp -rT files/boot-keys "${HOME}/.config/bst-configuration/gnomeos-keys"
-      $ make -C "${HOME}/.config/bst-configuration/gnomeos-keys"
+      $ make -C files/boot-keys install
 
 2. Build the image::
 

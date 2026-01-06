@@ -201,4 +201,16 @@ clean:
 	rm -f {fstab-,}tpm2-pcr-{private,public}.pem
 	rm -f modules/linux-module-cert.crt
 
-.PHONY: generate-keys download-microsoft-keys show-keys-for-ci clean
+.PHONY: generate-keys download-microsoft-keys show-keys-for-ci clean install
+
+INSTALL_KEYS=$(ALL_KEYS) $(ALL_CERTS) import-pubring.pgp $(KERNEL_KEYRING_FILE) $(KERNEL_KEYS) $(MICROSOFT_KEYS) $(MICROSOFT_KEYS_OWNER)
+
+XDG_CONFIG_HOME ?= $(HOME)/.config
+CONFIG_PATH := $(XDG_CONFIG_HOME)/bst-configuration/gnomeos-keys
+
+install_key_fun = mkdir -p $(CONFIG_PATH)/$(dir $(1)); cp -T $(1) $(CONFIG_PATH)/$(1);
+
+install: $(INSTALL_KEYS)
+	$(foreach KEY,$(INSTALL_KEYS),$(call install_key_fun,$(KEY)))
+	cp -rT extra-kek $(CONFIG_PATH)/extra-kek
+	cp -rT extra-db $(CONFIG_PATH)/extra-db
