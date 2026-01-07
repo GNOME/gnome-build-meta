@@ -33,9 +33,7 @@ One of them has a partition 17 with name `userdata`. Delete that partition.
 
 Download the [aarch64 iso](https://os.gnome.org/download/latest/live-aarch64.iso) for GNOME OS.
 
-In the checkout of gnome-build-meta, add file `utils/repart.raw.d/50-root.conf`
-with the following content (this file is only to fix padding issues with
-existing partitions, but it will be skipped):
+In the checkout of gnome-build-meta, add file `utils/repart.raw.d/50-root.conf` with the following content (this file is only to fix padding issues with existing partitions, but it will be skipped):
 
 ```ini
 [Partition]
@@ -62,9 +60,7 @@ Still need patches not mainlined yet.
 
 ### USB host
 
-Because it has to be switched manually throught debugfs, but this is not
-accessible on GNOME OS due to lockdown, it is not possible at the point the
-switch to host mode.
+Because it has to be switched manually throught debugfs, but this is not accessible on GNOME OS due to lockdown, it is not possible at the point the switch to host mode.
 
 ### No modem
 
@@ -82,8 +78,7 @@ Look for the application ID. Then use it in:
 sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX'
 ```
 
-You can create unit in `/etc/systemd/system` to run this command. You
-should probably make it start after `tqftpserv.service`.
+You can create unit in `/etc/systemd/system` to run this command. You should probably make it start after `tqftpserv.service`.
 
 For example
 
@@ -106,21 +101,14 @@ WantedBy=multi-user.target
 
 ### SMS and calls
 
-Install Chats (aka Chatty) and Calls from flathub. RCS messages do not
-work, if you have multiple SIM on the same phone number, you might not
-get all messages.
+Install Chats (aka Chatty) and Calls from flathub. RCS messages do not work, if you have multiple SIM on the same phone number, you might not get all messages.
 
 (Calls were not yet tested).
 
 ### Modem wants authentication when starting
 
-Something to fix, the polkit configuration is probably wrong for
-ModemManager.
+Something to fix, the polkit configuration is probably wrong for ModemManager.
 
 ### Selecting time zone in GNOME Initial Setup
 
-Right now, the time zone selector for `gnome-initial-setup` isn't
-responsive, and it's not possible to maximize, resize, or move the
-window off-screen. When running GNOME OS on a phone, this means there is no
-way to press the "Next" button. As a workaround, select your time zone, press
-"Previous", then "Next", then press Enter on the on-screen keyboard.
+Right now, the time zone selector for `gnome-initial-setup` isn't responsive, and it's not possible to maximize, resize, or move the window off-screen. When running GNOME OS on a phone, this means there is no way to press the "Next" button. As a workaround, select your time zone, press "Previous", then "Next", then press Enter on the on-screen keyboard.
