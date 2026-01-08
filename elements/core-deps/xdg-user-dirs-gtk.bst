@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:xdg-user-dirs-gtk/0.14/xdg-user-dirs-gtk-0.14.tar.xz
-  ref: 537fbe142b24736ed7894e4a01f69fd758cb6c7a677a382879529d217f4a2873
+  url: gnome_downloads:xdg-user-dirs-gtk/0.16/xdg-user-dirs-gtk-0.16.tar.xz
+  ref: be825de7f89175db5ead0cd3744d2761109c70943251a87092259163025520a9
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
