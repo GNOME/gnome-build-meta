@@ -6,7 +6,7 @@ sources:
   track: v*.*.*
   exclude:
   - "*beta*"
-  ref: v0.4.0-0-gfb21129f5d31a6e640225415a25118d8f16363a1
+  ref: v0.6.0-0-g75c1a95ce5cb6b17c6cf05a8a22f57a3921831bf
 
 build-depends:
 - sdk/gobject-introspection.bst

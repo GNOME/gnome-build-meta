@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:FairBlobs/FP5-firmware.git
   track: main
-  ref: ebb4d6a47865e78a9fd6689394221a5bb3d621dd
+  ref: a4908f548e6f88965e78b1478af1751b6a854fc9
 
 build-depends:
 - gnomeos-deps/pil-squasher.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:linux-msm/tqftpserv.git
   track: 'v*.*'
-  ref: v1.1-0-gf803b4d573006c013fcb4b76af98a363f0904112
+  ref: v1.1.1-0-g443c82aadae2862dc7c12af48ac0b900f4bb0fe7
 - kind: local
   path: files/gnomeos/qrtr/condition.conf
 

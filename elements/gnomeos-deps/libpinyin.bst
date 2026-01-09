@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libpinyin/libpinyin.git
   track: '*.*.*'
-  ref: 2.10.3-0-g954ecc3522686fb30a78d12080da1145df3f24da
+  ref: 2.11.91-0-g0c5e80e1200f84fab185d1c5bde458b770a0636c
 - kind: tar
   url: sourceforge:libpinyin/models/model20.text.tar.gz
   ref: 59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155
