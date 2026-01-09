@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libcloudproviders/0.3/libcloudproviders-0.3.6.tar.xz
-  ref: 3b75110b3a4fdef4c5c5a440e48701fe054d2ae061d156c89136bb5ba05e74b7
+  url: gnome_downloads:libcloudproviders/0.4/libcloudproviders-0.4.0.tar.xz
+  ref: 247b228d1027b2683868e7d7080d38693a457e908aadd0c119d52de59a398064
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
