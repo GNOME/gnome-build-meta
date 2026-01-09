@@ -26,5 +26,4 @@ depends:
 - arch in ["x86_64"]:
     depends:
       (>):
-      - gnomeos-deps/intel-ucode.bst
       - gnomeos/initramfs/signed-nvidia-modules.bst

@@ -17,6 +17,13 @@ build-depends:
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 
+(?):
+- arch == "x86_64":
+    build-depends:
+      (>):
+      - filename: gnomeos-deps/microcode.bst
+        strict: true
+
 variables:
   strip-binaries: ''
   kcmdline: >-
@@ -66,7 +73,7 @@ config:
 
     case '%{arch}' in
       x86_64)
-        MICROCODE=("--microcode=/usr/lib/modules/${version}/microcode.img")
+        MICROCODE=("--microcode=/usr/lib/firmware/microcode.cpio")
         DEVICETREES=()
       ;;
       *)
