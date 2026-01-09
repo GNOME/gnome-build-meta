@@ -55,26 +55,8 @@ config:
     )
 
   - |
-    case '%{arch}' in
-      x86_64)
-        mkdir -p /microcode/kernel/x86/microcode
-        cat /usr/lib/firmware/amd-ucode/microcode_amd*.bin >/microcode/kernel/x86/microcode/AuthenticAMD.bin
-        cp /usr/lib/firmware/intel-ucode/GenuineIntel.bin /microcode/kernel/x86/microcode/GenuineIntel.bin
-        (
-          cd /microcode
-          find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet >/microcode.img
-        )
-      ;;
-    esac
-
-  - |
     version="$(ls -1 /lib/modules | head -n1)"
     mkdir -p "%{install-root}/usr/lib/modules/${version}"
-    case '%{arch}' in
-      x86_64)
-        cp /microcode.img "%{install-root}/usr/lib/modules/${version}/microcode.img"
-        ;;
-    esac
     cp /initramfs.img "%{install-root}/usr/lib/modules/${version}/initramfs.img"
 
   - |

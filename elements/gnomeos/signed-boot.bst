@@ -6,6 +6,8 @@ build-depends:
   strict: true
 - filename: gnomeos/initramfs.bst
   strict: true
+- filename: gnomeos-deps/microcode-maybe.bst
+  strict: true
 - filename: gnomeos/usr-image.bst
   strict: true
   config:
@@ -73,7 +75,7 @@ config:
 
     case '%{arch}' in
       x86_64)
-        MICROCODE=("--microcode=/usr/lib/modules/${version}/microcode.img")
+        MICROCODE=("--microcode=/usr/lib/modules/microcode.img")
         DEVICETREES=()
       ;;
       *)
