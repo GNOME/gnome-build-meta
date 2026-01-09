@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: 49.0-170-g351cb7ee7c0c65d0d0c14bc9ac7cc97018764247
+  ref: 49.0-175-gd39a8e1c6e06af290ae59629265b43c9caf6384f
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
