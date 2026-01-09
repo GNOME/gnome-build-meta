@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: postmarketos:modem/81voltd.git
   track: v*
-  ref: v1.0.0-2-g7d3b9a533a4bbe35598bb3dca8ed15647593d808
+  ref: v1.1.0-0-g67ef50a2877287603b845680e05dac444301b73d
 - kind: local
   path: files/81voltd/81voltd.service
 

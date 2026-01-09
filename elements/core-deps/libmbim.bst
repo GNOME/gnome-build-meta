@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: freedesktop:mobile-broadband/libmbim.git
   track: '*.*'
-  ref: 1.33.1-dev-0-ge10df4b6b3edfe6a46d93f7f5f5cab31c29a7091
+  ref: 1.34.0-0-g2bca5d22137883f348cb117597746483637491db
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

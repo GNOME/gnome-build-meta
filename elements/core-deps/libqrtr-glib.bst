@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:mobile-broadband/libqrtr-glib.git
   track: '*.*'
-  ref: 1.2.2-0-g8991f0e93713ebf4da48ae4f23940ead42f64c8c
+  ref: 1.4.0-0-g69791f8f2a092d0ec8eb83cbe51dfc3d157c3079
 
 build-depends:
 - sdk/gobject-introspection.bst

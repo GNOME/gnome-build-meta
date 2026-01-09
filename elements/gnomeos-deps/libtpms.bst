@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:stefanberger/libtpms.git
   track: 'v*'
-  ref: v0.10.1-0-g56c9f8b0b816391135f5a3112cb2feac4298caac
+  ref: v0.10.2-0-g03ff2481e133540be3b3ffe3daa1483d2a73d967
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

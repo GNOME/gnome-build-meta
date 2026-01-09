@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:cairo/cairo.git
   track: "*.*.*"
-  ref: 1.18.4-50-g04656d7450e229622546fd2b11496aa58c44181d
+  ref: 1.18.4-0-g4541e0cd3a751b85e52e2a83d02ac6145a5efa85
 
 build-depends:
 - sdk/gtk-doc.bst
