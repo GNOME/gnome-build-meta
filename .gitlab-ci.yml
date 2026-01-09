@@ -293,26 +293,6 @@ deploy-oci:
         ./.gitlab-ci/scripts/publish-oci-quay.sh
     fi
 
-pinephone-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: "build-aarch64"
-    artifacts: false
-  variables:
-    IMAGE: boards/pinephone/image.bst
-
-pinephone-pro-image:
-  extends:
-  - .manual-image-template
-  - .aarch64
-  needs:
-  - job: "build-aarch64"
-    artifacts: false
-  variables:
-    IMAGE: boards/pinephone-pro/image.bst
-
 live-image-x86_64:
   extends:
   - .manual-image-template
@@ -464,22 +444,6 @@ test-openqa-desktop:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_TAG
   allow_failure: true
-
-test-pinephone-aarch64:
-  extends:
-  - .test-phone-image-template
-  script:
-  - python3 utils/test_phone_image.py test-pinephone-aarch64
-  needs:
-  - job: "pinephone-image"
-
-test-pinephone-pro-aarch64:
-  extends:
-  - .test-phone-image-template
-  script:
-  - python3 utils/test_phone_image.py test-pinephone-pro-aarch64
-  needs:
-  - job: "pinephone-pro-image"
 
 .bot-ssh:
   variables:
