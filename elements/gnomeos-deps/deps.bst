@@ -32,6 +32,7 @@ depends:
 - gnomeos-deps/hidraw-udev.bst
 - gnomeos-deps/vte-config.bst
 - gnomeos-deps/ld-config.bst
+- gnomeos-deps/modprobe-config.bst
 
 - gnomeos-deps/alsa-ucm-conf.bst
 - gnomeos-deps/android-udev-rules.bst
