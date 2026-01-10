@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gst-thumbnailers.git
-  track: main
-  ref: 1.0.alpha.1-1-g218eb9143feb68bac7e97c4070ec4ff08bda349c
+- kind: tar
+  url: gnome_downloads:gst-thumbnailers/1.0/gst-thumbnailers-1.0.alpha.3.tar.xz
+  ref: e97fed4401021cdde0e6df7b27683b5d82530e6c7a394f1c8398113b188a491a
 - kind: cargo2
   ref:
   - kind: registry

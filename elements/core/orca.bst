@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:orca.git
-  track: main
-  ref: 49.0-175-gd39a8e1c6e06af290ae59629265b43c9caf6384f
-
+- kind: tar
+  url: gnome_downloads:orca/49/orca-49.5.tar.xz
+  ref: 53df41558319e97c1e84ad604989957a02b5d0ff531419190f0587ea6b256034
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

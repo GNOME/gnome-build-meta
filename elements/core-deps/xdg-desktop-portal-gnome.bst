@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:xdg-desktop-portal-gnome.git
-  track: main
-  ref: 50.alpha-1-gd862ea1da494f68752efa05680aeea503ed51fc1
-# FIXME: should be kept in sync manually until we have a wrap plugin
+- kind: tar
+  url: gnome_downloads:xdg-desktop-portal-gnome/50/xdg-desktop-portal-gnome-50.alpha.tar.xz
+  ref: fae410eab25eec6cbd13f27952d72895e2cfbe1db55912966a6910e30c5d73d4
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp

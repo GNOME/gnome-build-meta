@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: freedesktop:pwithnall/malcontent.git
-  track: "*.*.*"
-  ref: 0.14.alpha-0-g5d1b799a97f7c986269529baff73f44b193338d4
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 466fc22016cf0981424e7121557611942191992f
-# Need to be updated manually until we get a meson wrap source
+- kind: tar
+  url: tecnocode:malcontent/malcontent-0.14.alpha.tar.xz
+  ref: 60eb2d95cfb08278205723e0fde4033b44163f424a14c888dfe883d4471e29b1
 - kind: remote
   url: corpit:tinycdb/tinycdb-0.81.tar.gz
   ref: 469de2d445bf54880f652f4b6dc95c7cdf6f5502c35524a45b2122d70d47ebc2

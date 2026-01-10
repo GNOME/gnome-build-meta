@@ -16,8 +16,8 @@ variables:
   # This mirrors the project.conf
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
-  OCI_BRANCH: master
-  FLATPAK_BRANCH: master
+  OCI_BRANCH: '50'
+  FLATPAK_BRANCH: 50beta
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
@@ -44,18 +44,18 @@ stages:
 # Rebuild only when elements changed.
 .run_in_mr_build:
   rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      changes:
-        paths:
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    changes:
+      paths:
           # Buildstream
-          - "elements/**/*"
-          - "files/**/*"
-          - "include/**/*"
-          - "keys/**/*"
-          - "patches/**/*"
-          - "plugins/**/*"
-          - "project.conf"
-          - ".gitlab-ci.yml"
+      - "elements/**/*"
+      - "files/**/*"
+      - "include/**/*"
+      - "keys/**/*"
+      - "patches/**/*"
+      - "plugins/**/*"
+      - "project.conf"
+      - ".gitlab-ci.yml"
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -170,21 +170,21 @@ default:
     OPENQA_UTILS_BRANCH: main
     OPENQA_UTILS_GIT: https://gitlab.gnome.org/gnome/openqa-utils
   rules:
-    - !reference [".stage-only-rules", "rules"]
+  - !reference [".stage-only-rules", "rules"]
     # Run the OpenQA tests against the image built
-    - !reference [".run_in_mr_build", "rules"]
+  - !reference [".run_in_mr_build", "rules"]
     # Run openQA tests against a prebuilt live image, if the
     # changes are only in openqa files.
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      needs: []
-      changes:
-        paths:
-          - ".gitlab-ci/scripts/openqa-prepare.sh"
-          - ".gitlab-ci/scripts/openqa-script.sh"
-          - "tests/openqa/**/*"
-          - ".gitlab-ci.yml"
-      variables:
-        S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/gnome_os_x86_64.iso"
+  - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    needs: []
+    changes:
+      paths:
+      - ".gitlab-ci/scripts/openqa-prepare.sh"
+      - ".gitlab-ci/scripts/openqa-script.sh"
+      - "tests/openqa/**/*"
+      - ".gitlab-ci.yml"
+    variables:
+      S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/gnome_os_x86_64.iso"
   timeout: '90m'
   needs:
   - job: 's3-image'
