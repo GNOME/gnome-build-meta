@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-backgrounds.git
-  track: main
-  ref: 49.0-9-g1c1a516f342351a1ee0f0df5ed249f5935d5ff27
-
+- kind: tar
+  url: gnome_downloads:gnome-backgrounds/49/gnome-backgrounds-49.0.tar.xz
+  ref: 01fe260de58ba00e44aba589a998e33e8bc7aecc701df0bee64cf4cfba44f4b5
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

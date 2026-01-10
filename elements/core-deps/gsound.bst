@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:gsound.git
-  track: master
-  ref: 1.0.3-1-g5f6a56f89b7dd13e3f56f123c672e609c5fd8728
+- kind: tar
+  url: gnome_downloads:gsound/1.0/gsound-1.0.3.tar.xz
+  ref: ca2d039e1ebd148647017a7f548862350bc9af01986d39f10cfdc8e95f07881a
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

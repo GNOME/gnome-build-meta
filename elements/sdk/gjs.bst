@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gjs.git
-  track: master
-  ref: 1.87.1-4-gbb5bb59af99dd79829f5f7bdecbe62f44a8147f9
-- kind: git_module
-  url: gnome:gobject-introspection-tests.git
-  path: subprojects/gobject-introspection-tests
-  ref: 67432ee4ebf74349cb3c848f73945b21a767e276
-
+- kind: tar
+  url: gnome_downloads:gjs/1.87/gjs-1.87.1.tar.xz
+  ref: 95f7a73acc5b2dbe643a6851ba5b4001230a75e1e859afc9a81fbf4861b899cf
 build-depends:
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

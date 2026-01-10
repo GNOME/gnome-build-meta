@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: github:libsigcplusplus/libsigcplusplus.git
-  track: "*.*.*"
-  ref: 3.8.0-0-g653447171e2358933781ccaab0840dda7cff64ad
-
+- kind: tar
+  url: gnome_downloads:libsigc++/3.6/libsigc++-3.6.0.tar.xz
+  ref: c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

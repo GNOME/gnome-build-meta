@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:pyatspi2.git
-  track: master
-  ref: 2.58.0-6-g76ca7bae2d3c69a770d93cf42a351b7069332348
+- kind: tar
+  url: gnome_downloads:pyatspi/2.58/pyatspi-2.58.0.tar.xz
+  ref: e9d290d53cc7e3066d972fd18a50ee885efb8be0aa25262f19ef7f884fea0eff
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

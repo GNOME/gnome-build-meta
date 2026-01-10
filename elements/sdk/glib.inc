@@ -1,13 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:glib.git
-  track: main
-  ref: 2.87.1-10-g4e8e8c072e74ca242d7582093a04989179f73d71
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
-
+- kind: tar
+  url: gnome_downloads:glib/2.87/glib-2.87.1.tar.xz
+  ref: fc2ce0f948ee163f8adc5bdde2f38612b8a3f270022aa1b0d087cb9f1f0ac5c2
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

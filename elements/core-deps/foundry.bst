@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:foundry.git
-  track: main
-  ref: 1.0.0-734-g9f6649b7d7ec4a3b125873e8b80fcb1ad51892a4
-
+- kind: tar
+  url: gnome_downloads:foundry/1.0/foundry-1.0.1.tar.xz
+  ref: c0768906feb34dd58199e28544739ea217bbd7883e58f24f12322986bc899339
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

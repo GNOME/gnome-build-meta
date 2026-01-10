@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:decibels.git
-  track: main
-  ref: 49.0-18-g1e2c1be12105ad47cb7103ad87be6eee853bd817
-- kind: git_module
-  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
-  path: gi-types
-  ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
-
+- kind: tar
+  url: gnome_downloads:decibels/49/decibels-49.0.tar.xz
+  ref: 29b79ba2e2967e69141e39f0ad2c677e38fe3ffb9fba0fa5c7531f94d3f673ca
 build-depends:
 - core-deps/typescript.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

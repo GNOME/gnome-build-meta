@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-color-manager.git
-  track: master
-  ref: 3.36.2-69-g19b97168c11db39acd5609c24a5b6d087b7f5053
-
+- kind: tar
+  url: gnome_downloads:gnome-color-manager/3.36/gnome-color-manager-3.36.2.tar.xz
+  ref: 3904d42abb4ea566df0b880e82bf0b9f86386c692f15b318469a4c7be33a887f
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
