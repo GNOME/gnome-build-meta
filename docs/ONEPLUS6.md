@@ -26,7 +26,7 @@ On the last release, get `u-boot-enchilada-boot.img`
 fastboot flash boot u-boot-enchilada-boot.img
 ```
 
-Reboot the phone. When u-boot menu shows up, select "USB mass storage".
+Reboot the phone. When u-boot menu shows up, select "Enable USB mass storage".
 
 The different logical unit number (LUN) will appear as USB mass storage disks.
 One of them has a partition 17 with name `userdata`. Delete that partition.
@@ -48,6 +48,8 @@ sudo systemd-repart --architecture=arm64 --defer-partitions=root --definitions=u
 
 If that looks ok, re-run with `--dry-run=no`.
 
+Once the flash is completed, restart the phone by holding down the power button.
+
 ## Known bugs, workarounds
 
 ### Sound does not work
@@ -56,11 +58,11 @@ Not sure why yet.
 
 ### No camera
 
-Still need patches not mainlined yet.
+Still needs patches that are not mainlined yet.
 
 ### USB host
 
-Because it has to be switched manually throught debugfs, but this is not accessible on GNOME OS due to lockdown, it is not possible at the point the switch to host mode.
+It has to be switched manually through debugfs, which is not accessible on GNOME OS due to lockdown. Thus it is not possible to switch to host mode.
 
 ### No modem
 
@@ -80,7 +82,7 @@ sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,s
 
 You can create unit in `/etc/systemd/system` to run this command. You should probably make it start after `tqftpserv.service`.
 
-For example
+For example:
 
 ```ini
 [Unit]
@@ -111,4 +113,38 @@ Something to fix, the polkit configuration is probably wrong for ModemManager.
 
 ### Selecting time zone in GNOME Initial Setup
 
-Right now, the time zone selector for `gnome-initial-setup` isn't responsive, and it's not possible to maximize, resize, or move the window off-screen. When running GNOME OS on a phone, this means there is no way to press the "Next" button. As a workaround, select your time zone, press "Previous", then "Next", then press Enter on the on-screen keyboard.
+#### Cannot choose a timezone via the textbox
+
+Clicking on the map to select your timezone, should be working instead.
+
+#### "Next" button is off-screen
+
+Moving the window to the left, should expose the "Next" button.
+Alternatively, select your time zone, press "Previous", then "Next", then press Enter on the on-screen keyboard.
+
+### Device crashes when the screen turns off
+
+Some devices periodically crash when the screen turns off (either due to inactivity or when suspending).
+The notification LED lights up and turns solid white. After a bit, the phone enters "QUALCOMM CrashDump" mode.
+
+### wifi connection keeps dropping
+
+Occasionally, the wifi chipset restarts and briefly drops the current wifi connection. Actively using the connection (e.g: ssh connection, downloading sth.) seems to increase the frequency of disconnects. Bluetooth connections do not drop at all.
+
+### plymouth does not work
+
+Plymouth tries to launch, renders incorrectly and exits (first few seconds of bootup). Does not affect the boot process.
+
+### RTC clock is incorrect
+
+RTC clock shows current time as 'Epoch + time since GnomeOS was installed'.
+
+```bash
+[kawaiicvnt@retard ~]$ timedatectl status
+        Local time: Wed 2026-01-07 21:00:01 EET
+    Universal time: Wed 2026-01-07 19:00:01 UTC # Actual date
+          RTC time: Fri 1970-01-02 22:45:29     # Epoch + time since install
+```
+
+RTC time is not lost between reboots, but there appears to be no RTC available when trying to set the time manually.
+
