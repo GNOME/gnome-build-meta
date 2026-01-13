@@ -95,6 +95,7 @@ config:
     C /etc/NetworkManager
     # core-deps/upower.bst
     L /etc/UPower/UPower.conf
+    L /etc/UPower/UPower.conf.d/README.md
     # core-deps/systemd.bst
     # FIXME: remove this from factory
     # /etc/X11
