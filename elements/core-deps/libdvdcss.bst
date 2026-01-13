@@ -1,15 +1,14 @@
 kind: meson
 sources:
 - kind: tar
-  url: videolan_pub:videolan/libdvdread/7.0.1/libdvdread-7.0.1.tar.xz
-  ref: 2e3e04a305c15c3963aa03ae1b9a83c1d239880003fcf3dde986d3943355d407
+  url: videolan_pub:videolan/libdvdcss/1.5.0/libdvdcss-1.5.0.tar.xz
+  ref: 529463e4d1befef82e5c6e470db7661a2db0343e092a2fb0d6c037cab8a5c399
 
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libdvdcss.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
