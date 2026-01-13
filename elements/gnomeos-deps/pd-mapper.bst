@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:linux-msm/pd-mapper.git
   track: 'v*.*'
-  ref: v1.0-0-g9d78fc0c6143c4d1b7198c57be72a6699ce764c4
+  ref: v1.1-0-g5ecd2fe926aca7abfe40724177f63b942cff3947
 - kind: local
   path: files/gnomeos/qrtr/condition.conf
 

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:xorg/app/xauth.git
   track: '*.*'
-  ref: xauth-1.1.4-0-gf71ca21cf1ab840e9664b7c3e99c229bd977a6a4
+  ref: xauth-1.1.5-0-g6fe9365f11181a043f151f2e67f36015c278791d
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

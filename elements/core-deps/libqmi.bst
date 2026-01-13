@@ -5,7 +5,7 @@ sources:
   track: '*.*'
   exclude:
   - '*-dev'
-  ref: 1.36.0-0-gdefb13dcab0adc7f44f6741807244507a14a30c5
+  ref: 1.38.0-0-ge3d79ed3f7fdc6a7fa8b374860b1c23a8f172812
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

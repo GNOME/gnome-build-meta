@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:graphviz/graphviz.git
   track: '*.*'
-  ref: 14.0.2-0-g8fe0778817801d0d88406c28e22c4b170cdbd517
+  ref: 14.1.1-0-ga74b50c20fc624f46f72e24f981b261f6e5edf71
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
