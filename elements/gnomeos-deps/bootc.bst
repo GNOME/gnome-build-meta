@@ -1339,4 +1339,4 @@ depends:
 
 variables:
   make-install-args: >-
-    PREFIX="%{prefix}" LIBDIR="%{lib}" DESTDIR="%{install-root}" install-all install-initramfs-dracut
+    PREFIX="%{prefix}" LIBDIR="%{lib}" DESTDIR="%{install-root}" install-all
