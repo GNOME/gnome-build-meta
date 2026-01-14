@@ -57,6 +57,3 @@ depends:
 - sdk/yelp.bst
 - freedesktop-sdk.bst:platform.bst
 
-# Currently only for testing in Nightly
-# Made sure to remove for stable releases
-- sdk/xwayland-satellite.bst
