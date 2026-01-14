@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo.git
   track: master
-  ref: grilo-0.3.19-1-g98dab06a3f4df363f336f95dbfaddb84488f7e5a
+  ref: grilo-0.3.19-2-g8df42733ba1299b9184e0a9c2cc696ef8bda6cc3
 
 build-depends:
 - sdk/gobject-introspection.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gst-thumbnailers.git
   track: main
-  ref: 1.0.alpha.1-1-g218eb9143feb68bac7e97c4070ec4ff08bda349c
+  ref: 1.0.alpha.3-0-g3f2e64ec7c83afd04c04947510f49115858aceb0
 - kind: cargo2
   ref:
   - kind: registry
