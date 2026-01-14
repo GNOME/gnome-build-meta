@@ -111,6 +111,11 @@ And optionally reload services if applicable to your usecase.::
 
   $ run0 systemctl daemon-reload
 
+Additional platforms
+^^^^^^^^^^^^^^^^^^^^
+
+We experimentally support the `OnePlus 6 <docs/ONEPLUS5.md>_` and `Fairphone 5 <docs/FP5.md>_`. Installation on those devices requires special steps and some things may not work, so please consult the respective linked documentation.
+
 OCI Images
 ~~~~~~~~~~
 
