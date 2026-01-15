@@ -12,9 +12,7 @@ public:
     - rm -r '%{debugdir}%{libdir}/sane'
 
     - rm '%{debugdir}%{bindir}/lto-dump.debug'
-    - rm '%{debugdir}%{bindir}/fish_indent.debug'
     - rm '%{debugdir}%{bindir}/fish.debug'
-    - rm '%{debugdir}%{bindir}/fish_key_reader.debug'
     - rm '%{debugdir}%{bindir}/smbtorture.debug'
     - rm -f '%{debugdir}%{bindir}/gen_binary_files.debug'
 
