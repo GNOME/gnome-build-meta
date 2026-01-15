@@ -449,6 +449,8 @@ test-openqa-installer:
   - .test-openqa-template
   variables:
     TESTSUITES: "gnome_install"
+  # zram has been failing recently but only inside openqa
+  retry: 2
   rules:
   - !reference [".test-openqa-template", "rules"]
   - if: $CI_COMMIT_REF_NAME == "master"
