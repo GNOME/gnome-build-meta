@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 50.alpha-1-gcf24b94cf874950e4ca282fe63178fcfb288446f
+  ref: 50.alpha-53-gc970b4613fbe73cf496ab0ce09aac42cda9a059c
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -27,6 +27,7 @@ depends:
 - sdk/gsettings-desktop-schemas.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/libglycin-gtk4.bst
 - sdk/pango.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
