@@ -2,4 +2,4 @@ sources:
 - kind: git_repo
   url: gnome:sysprof.git
   track: master
-  ref: 50.alpha-2-g53c9bb91b0fc8eb000ba0d05c748365a004b93d6
+  ref: 50.alpha-4-g286543475bd9c8e1ba392016b9b65b586c10dbdd
