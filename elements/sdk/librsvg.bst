@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.61.3-34-g3f9b71e5515d8cae02f8a52b98db7be15d0a9599
+  ref: 2.62.0-beta.0-0-gfc0e7a8d148124e20431254d3d971073db4e5977
 - kind: cargo2
   ref:
   - kind: registry
@@ -436,6 +436,70 @@ sources:
     version: 0.22.0-alpha.2
     sha: 4e3986791476b314e75d7b84d51156b1212a600beeff46f0915c225c7c986a46
   - kind: registry
+    name: glam
+    version: 0.14.0
+    sha: 333928d5eb103c5d4050533cec0384302db6be8ef7d3cebd30ec6a35350353da
+  - kind: registry
+    name: glam
+    version: 0.15.2
+    sha: 3abb554f8ee44336b72d522e0a7fe86a29e09f839a36022fa869a7dfe941a54b
+  - kind: registry
+    name: glam
+    version: 0.16.0
+    sha: 4126c0479ccf7e8664c36a2d719f5f2c140fbb4f9090008098d2c291fa5b3f16
+  - kind: registry
+    name: glam
+    version: 0.17.3
+    sha: e01732b97afd8508eee3333a541b9f7610f454bb818669e66e90f5f57c93a776
+  - kind: registry
+    name: glam
+    version: 0.18.0
+    sha: 525a3e490ba77b8e326fb67d4b44b4bd2f920f44d4cc73ccec50adc68e3bee34
+  - kind: registry
+    name: glam
+    version: 0.19.0
+    sha: 2b8509e6791516e81c1a630d0bd7fbac36d2fa8712a9da8662e716b52d5051ca
+  - kind: registry
+    name: glam
+    version: 0.20.5
+    sha: f43e957e744be03f5801a55472f593d43fabdebf25a4585db250f04d86b1675f
+  - kind: registry
+    name: glam
+    version: 0.21.3
+    sha: 518faa5064866338b013ff9b2350dc318e14cc4fcd6cb8206d7e7c9886c98815
+  - kind: registry
+    name: glam
+    version: 0.22.0
+    sha: 12f597d56c1bd55a811a1be189459e8fad2bbc272616375602443bdfb37fa774
+  - kind: registry
+    name: glam
+    version: 0.23.0
+    sha: 8e4afd9ad95555081e109fe1d21f2a30c691b5f0919c67dfa690a2e1eb6bd51c
+  - kind: registry
+    name: glam
+    version: 0.24.2
+    sha: b5418c17512bdf42730f9032c74e1ae39afc408745ebb2acf72fbc4691c17945
+  - kind: registry
+    name: glam
+    version: 0.25.0
+    sha: 151665d9be52f9bb40fc7966565d39666f2d1e69233571b71b87791c7e0528b3
+  - kind: registry
+    name: glam
+    version: 0.27.0
+    sha: 9e05e7e6723e3455f4818c7b26e855439f7546cf617ef669d1adedb8669e5cb9
+  - kind: registry
+    name: glam
+    version: 0.28.0
+    sha: 779ae4bf7e8421cf91c0b3b64e7e8b40b862fba4d393f59150042de7c4965a94
+  - kind: registry
+    name: glam
+    version: 0.29.3
+    sha: 8babf46d4c1c9d92deac9f7be466f76dfc4482b6452fc5024b5e8daf6ffeb3ee
+  - kind: registry
+    name: glam
+    version: 0.30.10
+    sha: 19fc433e8437a212d1b6f1e68c7824af3aed907da60afa994e7f542d18d12aa9
+  - kind: registry
     name: glib
     version: 0.22.0-alpha.2
     sha: 6d97df62440eff82e6c4dd9874b5ac268eecff9395ea34eeec12364ab948bee8
@@ -649,12 +713,12 @@ sources:
     sha: bc0287524726960e07b119cebd01678f852f147742ae0d925e6a520dca956126
   - kind: registry
     name: nalgebra
-    version: 0.33.2
-    sha: 26aecdf64b707efd1310e3544d709c5c0ac61c13756046aaaba41be5c4f66a3b
+    version: 0.34.1
+    sha: c4d5b3eff5cd580f93da45e64715e8c20a3996342f1e466599cf7a267a0c2f5f
   - kind: registry
     name: nalgebra-macros
-    version: 0.2.2
-    sha: 254a5372af8fc138e36684761d3c0cdb758a4410e938babcff1c860ce14ddbfc
+    version: 0.3.0
+    sha: 973e7178a678cfd059ccec50887658d482ce16b0aa9da3888ddeab5cd5eb4889
   - kind: registry
     name: new_debug_unreachable
     version: 1.0.6
