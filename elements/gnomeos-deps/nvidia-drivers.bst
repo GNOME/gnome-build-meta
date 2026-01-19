@@ -183,7 +183,7 @@ config:
        libGLESv2_nvidia.so* \
        libGLESv1_CM_nvidia.so* \
        libnvidia-egl-wayland.so* \
-       libnvidia-egl-gbm.so* \
+       libnvidia-egl-gbm.so*
        
   # xutils (partial)
   - |
