@@ -24,3 +24,6 @@ config:
   - |
     install -Dt %{install-root}%{indep-libdir}/systemd/system -m644 \
             deployments/systemd/nvidia-cdi-refresh.{service,path}
+
+variables:
+  local_ldflags: -Wl,-z,lazy
