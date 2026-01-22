@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:papers.git
   track: main
-  ref: 50.alpha-12-gdc0e7421c32f058e83eb04e4429ffb2671ee1c5a
+  ref: 50.alpha-18-gb4f50095b48086934868f4b01ad889786fcae95f
 - kind: cargo2
   ref:
   - kind: registry
@@ -267,6 +267,10 @@ sources:
     name: form_urlencoded
     version: 1.2.2
     sha: cb4cb245038516f5f85277875cdaa4f7d2c9a0fa0468de06ed190163b1581fcf
+  - kind: registry
+    name: formatx
+    version: 0.2.4
+    sha: d8866fac38f53fc87fa3ae1b09ddd723e0482f8fa74323518b4c59df2c55a00a
   - kind: registry
     name: futures
     version: 0.3.31
