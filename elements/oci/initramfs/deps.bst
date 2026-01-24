@@ -24,6 +24,7 @@ depends:
 - oci/os-release.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos-deps/bootc.bst
+- oci/integration/lvm2-enable-activation.bst
 
 (?):
 - arch in ["x86_64"]:

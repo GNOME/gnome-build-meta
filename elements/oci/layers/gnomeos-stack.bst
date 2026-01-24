@@ -24,6 +24,8 @@ depends:
 - freedesktop-sdk.bst:vm/config/useradd-ostree.bst
 - freedesktop-sdk.bst:vm/config/sudo-nopasswd.bst
 
+- oci/integration/lvm2-enable-activation.bst
+
 public:
   bst:
     integration-commands:
