@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:baobab.git
   track: main
-  ref: 49.1-27-gdddbdeea990a1c6ec5b46d4272b7f0c732f24b20
+  ref: 49.1-28-g3f841e6fea1e44c84473e4e33c8ccf18fedd7289
 
 build-depends:
 - sdk/vala.bst

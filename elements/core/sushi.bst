@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:sushi.git
   track: master
-  ref: 46.0-22-g4a7449ecdde60b0d3851b03d37447db769933e36
+  ref: 46.0-23-ge9c943f1465dbcea113c750fa2970bba062ad3d1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
