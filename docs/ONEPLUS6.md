@@ -33,7 +33,9 @@ One of them has a partition 17 with name `userdata`. Delete that partition.
 
 Download the [aarch64 iso](https://os.gnome.org/download/latest/live-aarch64.iso) for GNOME OS.
 
-In the checkout of gnome-build-meta, add file `utils/repart.raw.d/50-root.conf` with the following content (this file is only to fix padding issues with existing partitions, but it will be skipped):
+In the checkout of gnome-build-meta, add file `utils/repart.raw.d/50-root.conf`
+with the following content (this file is only to fix padding issues with
+existing partitions, but it will be skipped):
 
 ```ini
 [Partition]
@@ -62,7 +64,8 @@ Still needs patches that are not mainlined yet.
 
 ### USB host
 
-It has to be switched manually through debugfs, which is not accessible on GNOME OS due to lockdown. Thus it is not possible to switch to host mode.
+It has to be switched manually through debugfs, which is not accessible on GNOME
+OS due to lockdown. Thus it is not possible to switch to host mode.
 
 ### No modem
 
@@ -80,7 +83,8 @@ Look for the application ID. Then use it in:
 sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX'
 ```
 
-You can create unit in `/etc/systemd/system` to run this command. You should probably make it start after `tqftpserv.service`.
+You can create unit in `/etc/systemd/system` to run this command. You should
+probably make it start after `tqftpserv.service`.
 
 For example:
 
@@ -103,7 +107,8 @@ WantedBy=multi-user.target
 
 ### SMS and calls
 
-Install Chats (aka Chatty) and Calls from flathub. RCS messages do not work, if you have multiple SIM on the same phone number, you might not get all messages.
+Install Chats (aka Chatty) and Calls from flathub. RCS messages do not work, if
+you have multiple SIM on the same phone number, you might not get all messages.
 
 (Calls were not yet tested).
 
@@ -119,21 +124,27 @@ Clicking on the map to select your timezone, should be working instead.
 
 #### "Next" button is off-screen
 
-Moving the window to the left, should expose the "Next" button.
-Alternatively, select your time zone, press "Previous", then "Next", then press Enter on the on-screen keyboard.
+Moving the window to the left, should expose the "Next" button. Alternatively,
+select your time zone, press "Previous", then "Next", then press Enter on the
+on-screen keyboard.
 
 ### Device crashes when the screen turns off
 
-Some devices periodically crash when the screen turns off (either due to inactivity or when suspending).
-The notification LED lights up and turns solid white. After a bit, the phone enters "QUALCOMM CrashDump" mode.
+Some devices periodically crash when the screen turns off (either due to
+inactivity or when suspending). The notification LED lights up and turns solid
+white. After a bit, the phone enters "QUALCOMM CrashDump" mode.
 
 ### wifi connection keeps dropping
 
-Occasionally, the wifi chipset restarts and briefly drops the current wifi connection. Actively using the connection (e.g: ssh connection, downloading sth.) seems to increase the frequency of disconnects. Bluetooth connections do not drop at all.
+Occasionally, the wifi chipset restarts and briefly drops the current wifi
+connection. Actively using the connection (e.g: ssh connection, downloading
+sth.) seems to increase the frequency of disconnects. Bluetooth connections do
+not drop at all.
 
 ### plymouth does not work
 
-Plymouth tries to launch, renders incorrectly and exits (first few seconds of bootup). Does not affect the boot process.
+Plymouth tries to launch, renders incorrectly and exits (first few seconds of
+bootup). Does not affect the boot process.
 
 ### RTC clock is incorrect
 
@@ -146,5 +157,5 @@ RTC clock shows current time as 'Epoch + time since GnomeOS was installed'.
           RTC time: Fri 1970-01-02 22:45:29     # Epoch + time since install
 ```
 
-RTC time is not lost between reboots, but there appears to be no RTC available when trying to set the time manually.
-
+RTC time is not lost between reboots, but there appears to be no RTC available
+when trying to set the time manually.
