@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-boxes.git
   track: main
-  ref: 49.1-20-g03a5e4c99401a6a8492dbb96a52bf5c1470bd85b
+  ref: 49.1-21-g0ea63f28d4c83a47f10748a19ffe8d150aa4ff91
 - kind: git_module
   url: gnome_gitlab:felipeborges/libovf-glib.git
   path: subprojects/libovf-glib

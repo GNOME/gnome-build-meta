@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:papers.git
   track: main
-  ref: 50.alpha-24-g1fe884a2731c0fb68880fe45f7c8616eae28f342
+  ref: 50.alpha-47-gee7bc1a8a7612ca1b8c33bdc9536bb66c63f85da
 - kind: cargo2
   ref:
   - kind: registry
@@ -43,6 +43,10 @@ sources:
     name: anstyle-wincon
     version: 3.0.11
     sha: 291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d
+  - kind: registry
+    name: approx
+    version: 0.5.1
+    sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
   - kind: registry
     name: ashpd
     version: 0.12.0
@@ -135,6 +139,10 @@ sources:
     name: bytemuck
     version: 1.24.0
     sha: 1fbdf580320f38b612e485521afda1ee26d10cc9884efaaa750d383e13e3c5f4
+  - kind: registry
+    name: byteorder
+    version: 1.5.0
+    sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: registry
     name: byteorder-lite
     version: 0.1.0
@@ -260,6 +268,10 @@ sources:
     version: 1.1.5
     sha: bfe33edd8e85a12a67454e37f8c75e730830d83e313556ab9ebf9ee7fbeb3bfb
   - kind: registry
+    name: float_next_after
+    version: 1.0.0
+    sha: 8bf7cc16383c4b8d58b9905a8509f02926ce3058053c056376248d958c9df1e8
+  - kind: registry
     name: foldhash
     version: 0.2.0
     sha: 77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb
@@ -331,6 +343,18 @@ sources:
     name: generic-array
     version: 0.14.7
     sha: 85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a
+  - kind: registry
+    name: geo
+    version: 0.30.0
+    sha: 4416397671d8997e9a3e7ad99714f4f00a22e9eaa9b966a5985d2194fc9e02e1
+  - kind: registry
+    name: geo-types
+    version: 0.7.17
+    sha: 75a4dcd69d35b2c87a7c83bce9af69fd65c9d68d3833a0ded568983928f3fc99
+  - kind: registry
+    name: geographiclib-rs
+    version: 0.2.5
+    sha: f611040a2bb37eaa29a78a128d1e92a378a03e0b6e66ae27398d42b1ba9a7841
   - kind: registry
     name: getrandom
     version: 0.2.16
@@ -408,9 +432,17 @@ sources:
     version: 0.10.3
     sha: 842577fe5a1ee15d166cd3afe804ce0cab6173bc789ca32e21308834f20088dd
   - kind: registry
+    name: hash32
+    version: 0.3.1
+    sha: 47d60b12902ba28e2730cd37e95b8c9223af2808df9e902d4df49588d1470606
+  - kind: registry
     name: hashbrown
     version: 0.16.1
     sha: 841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100
+  - kind: registry
+    name: heapless
+    version: 0.8.0
+    sha: 0bfb9eb618601c89945a70e254898da93b13be0388091d42117462b265bb3fad
   - kind: registry
     name: heck
     version: 0.5.0
@@ -431,6 +463,26 @@ sources:
     name: hmac
     version: 0.12.1
     sha: 6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e
+  - kind: registry
+    name: i_float
+    version: 1.7.0
+    sha: 85df3a416829bb955fdc2416c7b73680c8dcea8d731f2c7aa23e1042fe1b8343
+  - kind: registry
+    name: i_key_sort
+    version: 0.2.0
+    sha: 347c253b4748a1a28baf94c9ce133b6b166f08573157e05afe718812bc599fcd
+  - kind: registry
+    name: i_overlay
+    version: 2.0.5
+    sha: 0542dfef184afdd42174a03dcc0625b6147fb73e1b974b1a08a2a42ac35cee49
+  - kind: registry
+    name: i_shape
+    version: 1.7.0
+    sha: 0a38f5a42678726718ff924f6d4a0e79b129776aeed298f71de4ceedbd091bce
+  - kind: registry
+    name: i_tree
+    version: 0.8.3
+    sha: 155181bc97d770181cf9477da51218a19ee92a8e5be642e796661aee2b601139
   - kind: registry
     name: icu_collections
     version: 2.1.1
@@ -475,6 +527,10 @@ sources:
     name: indexmap
     version: 2.12.1
     sha: 0ad4bb2b565bca0645f4d68c5c9af97fba094e9791da685bf83cb5f3ce74acf2
+  - kind: registry
+    name: ink-stroke-modeler-rs
+    version: 0.1.0
+    sha: fd1c3066d5abcd42e8fcfd14f76e5397b373e202b3fdf7628d269b05b889bdd6
   - kind: registry
     name: inout
     version: 0.1.4
@@ -732,6 +788,14 @@ sources:
     version: 0.8.8
     sha: 7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58
   - kind: registry
+    name: robust
+    version: 1.2.0
+    sha: 4e27ee8bb91ca0adcf0ecb116293afa12d393f9c2b9b9cd54d33e8078fe19839
+  - kind: registry
+    name: rstar
+    version: 0.12.2
+    sha: 421400d13ccfd26dfa5858199c30a5d76f9c54e0dba7575273025b43c5175dbb
+  - kind: registry
     name: rustc_version
     version: 0.4.1
     sha: cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92
@@ -835,6 +899,14 @@ sources:
     name: tempfile
     version: 3.23.0
     sha: 2d31c77bdf42a745371d260a26ca7163f1e0924b64afa0b688e61b5a9fa02f16
+  - kind: registry
+    name: thiserror
+    version: 2.0.18
+    sha: 4288b5bcbc7920c07a1149a35cf9590a2aa808e0bc1eafaade0b80947865fbc4
+  - kind: registry
+    name: thiserror-impl
+    version: 2.0.18
+    sha: ebc4ee7f67670e9b64d05fa4253e753e016c6c95ff35b89b7941d6b856dec1d5
   - kind: registry
     name: tinystr
     version: 0.8.2

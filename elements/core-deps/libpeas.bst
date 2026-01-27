@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libpeas.git
   track: main
-  ref: 2.2.0-9-g5765ddd66a050559ac27341f70a7e19a74206210
+  ref: 2.2.0-10-g0503984978f26aba1dd794e917776df8fd155c5a
 
 build-depends:
 - sdk/gi-docgen.bst
