@@ -100,7 +100,7 @@ openQA test runner will appear in the `out/` directory, grouped by
 each individual testsuite.
 
 openQA and the `ssam_openqa` helper tool have a few features that help with
-debugging and extending the testsuite.  See the README for `ssam_openqa` for
+debugging and extending the testsuite. See the README for `ssam_openqa` for
 more details.
 
 Running the tests locally requires KVM. See

@@ -28,7 +28,7 @@ It does this by embedding a chain of trust in the firmware, and requiring that
 UEFI applications are signed by a key that's allowed by the chain of trust.
 
 Most desktop and laptop vendors ship with a chain of trust controlled by
-Microsoft, and they enable Secure Boot by default in the firmware.  This
+Microsoft, and they enable Secure Boot by default in the firmware. This
 means that Microsoft Windows can start out-of-the-box on a modern machine. Any
 Linux distribution whose first-stage bootloader is signed by Microsoft can also
 start without any need to reconfigure firmware. That includes many mainstream
@@ -79,7 +79,7 @@ existing installation of GNOME OS, and you are deploying your local build
 as an update rather than installing from scratch.
 
 In this mode, the insecure 'snakeoil' keys are used for the bootloader
-components.  Those are not updated when you install GNOME OS as an update to an
+components. Those are not updated when you install GNOME OS as an update to an
 existing system, so you may as well take the fast path.
 
 Everything else (kernel, modules, sysexts) gets a new locally generated key.
