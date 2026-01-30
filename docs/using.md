@@ -28,6 +28,24 @@ updatectl update
 
 After that you can directly reboot into the new image.
 
+## Use an older version of the operating system
+
+There are always 2 versions of the operating system kept installed. If you need to use an older version, you can choose an older version from the menu at start-up.
+
+## Install an older version of the operating system
+
+You can install an even older version if it is still available to download using updatectl, for example version `nightly.1234`:
+
+```bash
+updatectl update host@nightly.1234
+```
+
+List all available versions for your system:
+
+```bash
+updatectl list host
+```
+
 ## Enable development tooling and utilities
 
 If you want to install the development toolchain of GNOME OS you can do so by enabling the following System Extensions. These include compilers, headers, along with common utilities used for GNOME development, such as flatpak-builder, GNOME Builder and so on.
