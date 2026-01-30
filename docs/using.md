@@ -18,6 +18,14 @@ By default we encrypt your hard drive if there's a tpm2 device available. The lo
 sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto --tpm2-pcrs='' /dev/disk/by-partlabel/root
 ```
 
+## Enable discard on the disks
+
+There is no way currently to enable allow-disards on encrypted disks with systemd-gpt-auto-generator. There is also no way from systemd-repart to set it as default option on the volumes. So you will need to manually enable it.
+
+```bash
+sudo cryptsetup refresh root --allow-discards --persistent
+```
+
 ## Update via command line
 
 System updates are handled by systemd-sysupdate. GNOME Software should work just fine for that, but you can also do updates via terminal like so:
