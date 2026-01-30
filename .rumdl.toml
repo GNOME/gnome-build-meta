@@ -3,7 +3,7 @@
 respect-gitignore = true
 
 [MD013]
-# line-length = 100
+line-length = 0
 # Exclude code blocks from line length check
 code-blocks = false
 # Exclude tables from line length check
