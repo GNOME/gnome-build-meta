@@ -1,0 +1,14 @@
+[Unit]
+Description=Migrating existing /etc to confext
+ConditionPathExists=/sysroot/etc/machine-id
+ConditionPathExists=!/sysroot/var/lib/extensions.mutable/etc
+ConditionPathExists=/etc/initrd-release
+
+RequiresMountsFor=/sysroot/usr
+After=initrd-root-fs.target
+Before=initrd-fs.target initrd-parse-etc.service
+Before=initrd-confext.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/gnomeos/migrate-confext

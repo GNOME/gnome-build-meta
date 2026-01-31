@@ -1,0 +1,17 @@
+[Unit]
+Description=Merge System Configuration Images into sysroot's /etc/
+Documentation=man:systemd-confext.service(8)
+
+ConditionCapability=CAP_SYS_ADMIN
+ConditionDirectoryNotEmpty=|/sysroot/var/lib/confexts
+ConditionDirectoryNotEmpty=|/sysroot/usr/local/lib/confexts
+ConditionDirectoryNotEmpty=|/sysroot/usr/lib/confexts
+ConditionPathExists=/etc/initrd-release
+
+RequiresMountsFor=/sysroot/usr
+After=initrd-root-fs.target
+Before=initrd-fs.target initrd-parse-etc.service
+
+[Service]
+Type=oneshot
+ExecStart=systemd-confext --mutable=yes --root=/sysroot refresh

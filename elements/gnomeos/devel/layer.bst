@@ -54,61 +54,29 @@ config:
        --noroot --noboot --nodepmod >/dev/null
 
   - |
-    mkdir -p output/etc
-    make-layer sysroot/etc sysroot-devel/etc output/etc/etc
+    mkdir -p sysroot-devel/etc/extension-release.d
+    case "%{branch}" in
+      master)
+        version_id=Nightly
+        ;;
+      *)
+        version_id="%{branch}"
+        ;;
+    esac
 
-  - |
-    cat >sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf<<EOF
-    L /etc/apparmor.d
-    # freedesktop-sdk.bst:components/perf.bst
-    # FIXME: move to /usr/share/bash-completion/completions/
-    L /etc/bash_completion.d/perf
-    # freedesktop-sdk.bst:components/binutils.bst
-    L /etc/gprofng.rc
-    # core-deps/libvirt.bst
-    L /etc/libvirt
-    L /etc/sasl2
-    L /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
-    # vm-deps/swtpm.bst
-    L /etc/swtpm-localca.conf
-    L /etc/swtpm-localca.options
-    L /etc/swtpm_setup.conf
+    commits_url="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/%{commit}"
+    cat <<EOF >sysroot-devel/etc/extension-release.d/extension-release.devel_%{image-version}
+    ID="org.gnome.os"
+    VERSION_ID="${version_id}"
+    CONFEXT_LEVEL="%{image-version}"
+    GNOMEOS_COMMIT="%{commit}"
+    GNOMEOS_COMMIT_DATE="%{commit-date-pretty}"
+    GNOMEOS_COMMITS_URL="${commits_url}"
     EOF
 
   - |
-    find output/etc
-
-  - |
-    mkdir -p output/factory
-    for p in $(grep -v "^#" <sysroot-devel/usr/lib/tmpfiles.d/extra-etc-devel.conf | grep -v "^$" | cut -d" " -f2); do
-      mkdir -p "$(dirname "output/factory${p}")"
-      cp -rlTP "output/etc${p}" "output/factory${p}"
-      rm -rf "output/etc${p}"
-    done
-
-  - |
-    find 'output/etc/etc' -depth -type d -empty -delete
-
-  - |
-    unknown=()
-    for p in output/etc/etc/*; do
-      rel="${p#output/etc}"
-      case "${rel}" in
-        /etc/systemd|/etc/ld.so.cache)
-          # Those are created another way
-        ;;
-        /etc/logrotate.d)
-          # Those should not exist
-        ;;
-        *)
-          unknown+=("${rel}")
-        ;;
-      esac
-    done
-    if [ "${#unknown[*]}" -gt 0 ]; then
-      echo "Unknown paths:" "${unknown[@]}"
-      exit 1
-    fi
+    mkdir -p output/etc
+    make-layer sysroot/etc sysroot-devel/etc output/etc
 
   - |
     mkdir -p sysroot-devel/usr/lib/extension-release.d
@@ -136,14 +104,6 @@ config:
     make-layer sysroot/usr sysroot-devel/usr output/usr
 
   - |
-    mkdir -p output/usr/share/factory/etc
-    cp -rlTP output/factory output/usr/share/factory
-
-  - |
-    mkdir -p output/etc
-    cp -T sysroot-devel/usr/lib/os-release output/etc/os-release
-
-  - |
     mkdir -p tmp
 
   - |
@@ -164,6 +124,25 @@ config:
         --copy-source=output \
         devel-%{systemd-arch}_%{image-version}.raw
 
+  - |
+    TMPDIR='%{build-root}/tmp' \
+    SYSTEMD_LOG_LEVEL=debug \
+    SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
+      systemd-repart \
+        --make-ddi=confext \
+        --empty=create \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
+        --seed %{repart-seed} \
+        --copy-source=output \
+        devel-confext-%{systemd-arch}_%{image-version}.raw
+
   install-commands:
   - |
     mv devel-%{systemd-arch}_%{image-version}.raw %{install-root}
+    mv devel-confext-%{systemd-arch}_%{image-version}.raw %{install-root}

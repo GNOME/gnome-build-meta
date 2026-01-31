@@ -54,15 +54,6 @@ config:
        --noroot --noboot --nodepmod >/dev/null
 
   - |
-    cat >sysroot-snapd/usr/lib/tmpfiles.d/extra-etc-snapd.conf<<EOF
-    L /etc/apparmor
-    L /etc/apparmor.d
-    L /etc/profile.d/snapd.sh
-    L /etc/xdg/autostart/snap-userd-autostart.desktop
-    d /snap
-    EOF
-
-  - |
     mkdir -p sysroot-snapd/usr/lib/extension-release.d
     case "%{branch}" in
       master)
@@ -84,21 +75,34 @@ config:
     EOF
 
   - |
+    mkdir -p sysroot-snapd/etc/extension-release.d
+    case "%{branch}" in
+      master)
+        version_id=Nightly
+        ;;
+      *)
+        version_id="%{branch}"
+        ;;
+    esac
+
+    commits_url="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/%{commit}"
+    cat <<EOF >sysroot-snapd/etc/extension-release.d/extension-release.snapd_%{image-version}
+    ID="org.gnome.os"
+    VERSION_ID="${version_id}"
+    CONFEXT_LEVEL="%{image-version}"
+    GNOMEOS_COMMIT="%{commit}"
+    GNOMEOS_COMMIT_DATE="%{commit-date-pretty}"
+    GNOMEOS_COMMITS_URL="${commits_url}"
+    EOF
+
+  - |
     mkdir -p output
+
+  - |
     make-layer sysroot/usr sysroot-snapd/usr output/usr
 
   - |
-    mkdir -p output/usr/share/factory/etc
-    cp -rT sysroot-snapd/etc/apparmor output/usr/share/factory/etc/apparmor
-    cp -rT sysroot-snapd/etc/apparmor.d output/usr/share/factory/etc/apparmor.d
-    mkdir -p output/usr/share/factory/etc/profile.d
-    cp -rT sysroot-snapd/etc/profile.d/snapd.sh output/usr/share/factory/etc/profile.d/snapd.sh
-    mkdir -p output/usr/share/factory/etc/xdg/autostart
-    cp -rT sysroot-snapd/etc/xdg/autostart/snap-userd-autostart.desktop output/usr/share/factory/etc/xdg/autostart/snap-userd-autostart.desktop
-
-  - |
-    mkdir -p output/etc
-    cp -T sysroot-snapd/usr/lib/os-release output/etc/os-release
+    make-layer sysroot/etc sysroot-snapd/etc output/etc
 
   - |
     mkdir -p tmp
@@ -121,6 +125,25 @@ config:
         --copy-source=output \
         snapd-%{systemd-arch}_%{image-version}.raw
 
+  - |
+    TMPDIR='%{build-root}/tmp' \
+    SYSTEMD_LOG_LEVEL=debug \
+    SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
+      systemd-repart \
+        --empty=create \
+        --make-ddi=sysext \
+        --size=auto \
+        --dry-run=no \
+        --discard=no \
+        --offline=true \
+        --no-pager \
+        --private-key=SYSEXT.key \
+        --certificate=SYSEXT.crt \
+        --seed %{repart-seed} \
+        --copy-source=output \
+        snapd-confext-%{systemd-arch}_%{image-version}.raw
+
   install-commands:
   - |
     mv snapd-%{systemd-arch}_%{image-version}.raw %{install-root}
+    mv snapd-confext-%{systemd-arch}_%{image-version}.raw %{install-root}
