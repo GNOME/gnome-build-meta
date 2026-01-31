@@ -1,6 +1,7 @@
 kind: compose
 
 build-depends:
+- oci/layers/sdk-manifest.bst
 - oci/layers/sdk-stack.bst
 
 config:
