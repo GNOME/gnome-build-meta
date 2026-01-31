@@ -24,6 +24,7 @@ depends:
 - gnomeos/os-release.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/live.bst
+- gnomeos/confext.bst
 
 (?):
 - arch in ["x86_64"]:

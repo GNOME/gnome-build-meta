@@ -16,6 +16,7 @@ depends:
 - gnomeos/public-keys.bst
 - gnomeos/signed-boot-common.bst
 - freedesktop-sdk.bst:vm/config/useradd-default.bst
+- gnomeos/confext.bst
 
 (?):
 - arch in ["x86_64"]:
