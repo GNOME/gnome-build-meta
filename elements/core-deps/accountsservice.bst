@@ -5,6 +5,8 @@ sources:
   url: freedesktop:accountsservice/accountsservice.git
   track: refs/tags/*
   ref: 23.13.9-0-g57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d
+- kind: patch
+  path: patches/accountsservice/tmpfiles.patch
 
 build-depends:
 - sdk/gobject-introspection.bst
