@@ -1,0 +1,14 @@
+diff -ru accountsservice.old/data/accounts-daemon.service.in accountsservice/data/accounts-daemon.service.in
+--- accountsservice.old/data/accounts-daemon.service.in	2026-01-31 18:44:32.698418179 +0100
++++ accountsservice/data/accounts-daemon.service.in	2026-01-31 18:45:47.544478762 +0100
+@@ -7,6 +7,10 @@
+ After=nss-user-lookup.target
+ Wants=nss-user-lookup.target
+ 
++# For ProtectSystem=strict to work and /home to be writable
++# /home has to exist. So tmpfiles should have run first
++After=systemd-tmpfiles-setup.service
++
+ [Service]
+ Type=dbus
+ BusName=org.freedesktop.Accounts
