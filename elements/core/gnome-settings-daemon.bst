@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-settings-daemon.git
   track: main
-  ref: 50.alpha-4-g051cd8112b75e892fd14739de6d339b7cdf7c53d
+  ref: 50.alpha-15-gd0796a974528e2fc65b7abd13e1152861883c526
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 91f3f41490666a526ed78af744507d7ee1134323
+  ref: 47c47a423ff2f55bb038d92517e4782cf051496a
 
 build-depends:
 - freedesktop-sdk.bst:components/perl.bst

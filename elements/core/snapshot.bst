@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 50.alpha-9-g756444222dd1190321b8e57dfacba659afade90b
+  ref: 50.beta-0-gc0df12040a38c7102f91ed0033546bf33ed5ffba
 - kind: cargo2
   ref:
   - kind: registry
@@ -165,8 +165,8 @@ sources:
     sha: 8591b0bcc8a98a64310a2fae1bb3e9b8564dd10e381e6e28010fde8e8e8568db
   - kind: registry
     name: foldhash
-    version: 0.1.5
-    sha: d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2
+    version: 0.2.0
+    sha: 77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb
   - kind: registry
     name: formatx
     version: 0.2.4
@@ -353,10 +353,6 @@ sources:
     sha: 9ab9b52e9e34d2833f58dbfdc5027314dc50f3af1ac2ed9f90145b349905a259
   - kind: registry
     name: hashbrown
-    version: 0.15.5
-    sha: 9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1
-  - kind: registry
-    name: hashbrown
     version: 0.16.1
     sha: 841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100
   - kind: registry
@@ -413,8 +409,8 @@ sources:
     sha: 87dda7e4990809b3fffc763bb55b707a1b49fad5bd044a25e72e1c8c294f1392
   - kind: registry
     name: libglycin-rebind
-    version: 0.1.0-alpha.3
-    sha: 6d812877ba3cdbbf1964cab1f16e6754646f258f2b27052bdb8e43a8300d5925
+    version: 0.1.0-beta
+    sha: ec155ab00baf45d1e63f97331d2e6c755d64d9ce36750cbe9b7ea9ee6db50da3
   - kind: registry
     name: libglycin-rebind-sys
     version: 0.1.0-alpha.3
@@ -433,8 +429,8 @@ sources:
     sha: 5e5032e24019045c762d3c0f28f5b6b8bbf38563a65908389bf7978758920897
   - kind: registry
     name: lru
-    version: 0.12.5
-    sha: 234cf4f4a04dc1f57e24b96cc0cd600cf2af460d4161ac5ecdd0af8e1f3b2a38
+    version: 0.16.3
+    sha: a1dc47f592c06f33f8e3aea9591776ec7c9f9e4124778ff8a3c3b87159f7e593
   - kind: registry
     name: malloc_buf
     version: 0.0.6
@@ -557,8 +553,8 @@ sources:
     sha: 7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58
   - kind: registry
     name: rqrr
-    version: 0.10.0
-    sha: fbee31f6b3a594eca8afb8bf3359bcd52aa8aa4d90b561d201534558cfadae1b
+    version: 0.10.1
+    sha: ffbe87d9e8db95652c25ded2418150e00b08c2fde09e23ec15896d2c470c6631
   - kind: registry
     name: rustc_version
     version: 0.4.1
