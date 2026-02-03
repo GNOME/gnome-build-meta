@@ -4,9 +4,10 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 50.alpha-103-g147ae3769277cc1c2cbeea7db13dbfddad7226a3
+  ref: 50.beta-4-geacb675de249f43ed68e6bcd7405886a9fd3e304
 
 build-depends:
+- sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
