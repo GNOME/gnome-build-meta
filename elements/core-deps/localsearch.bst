@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.11.alpha-37-geb2c8fabafeb862370c5c25addee3bab83be6344
+  ref: 3.11.alpha-45-ge9713466b2b0e0d68bc541dd8b92cacf2eeb21c6
 build-depends:
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
@@ -21,6 +21,7 @@ depends:
 - core-deps/libgsf.bst
 - core-deps/libgxps.bst
 - core-deps/libosinfo.bst
+- core-deps/libzip.bst
 - core-deps/totem-pl-parser.bst
 - core-deps/upower.bst
 - sdk/gdk-pixbuf.bst
