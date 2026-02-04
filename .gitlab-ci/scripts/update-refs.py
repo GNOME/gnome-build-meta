@@ -50,6 +50,9 @@ def get_element_type(filepath):
                 if source.get('track') is None:
                     continue
 
+            if source.get('kind') in ("tar", "zip", "patch", "patch_queue", "remote", "local"):
+                continue
+
             if source.get('url', '').startswith('gnome:'):
                 return ElementType.GNOME
             else:
