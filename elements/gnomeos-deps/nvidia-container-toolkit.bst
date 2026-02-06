@@ -6,9 +6,7 @@ sources:
   track: v*.*.*
   exclude:
   - "*rc*"
-  ref: v1.18.1-0-gefe99418ef87500dbe059cadc9ab418b2815b9d5
-- kind: patch
-  path: patches/nvidia-container-toolkit/1518.patch
+  ref: v1.18.2-0-g9e88ed39710fd94c7e49fbb26d96492c45e574fb
 
 build-depends:
 - freedesktop-sdk.bst:components/go.bst
