@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:phodav.git
-  track: master
-  ref: v3.0-26-ge13dc85c7faaabdc7d3d7302ce18967a3326f2b4
-
+- kind: tar
+  url: gnome_downloads:phodav/3.0/phodav-3.0.tar.xz
+  ref: 392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst

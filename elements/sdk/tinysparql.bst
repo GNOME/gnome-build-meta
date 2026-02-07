@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tinysparql.git
-  track: main
-  ref: 3.11.alpha-9-g5bac0e412a37ea95366e8b7525f318f2ef07a076
-# Need to be updated manually until we get a meson wrap source
-- kind: remote
-  url: snowballstem:libstemmer_c-3.0.1.tar.gz
-  ref: 419db89961cf2e30e6417265a4f3c903632d47d6917e7f8c6ae0e4d998743aad
-  directory: subprojects/packagecache
+- kind: tar
+  url: gnome_downloads:tinysparql/3.11/tinysparql-3.11.alpha.tar.xz
+  ref: 3d5648a488bc0e5f6ad1f1e7f5a4a2d29feae0661883befa4a5edf64485f57f4
 
 build-depends:
 - core-deps/graphviz.bst

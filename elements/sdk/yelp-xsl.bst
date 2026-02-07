@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:yelp-xsl.git
-  track: master
-  ref: 49.0-6-gdcf47400b3864d15f2af9cf45744603d2ccc99cf
-
+- kind: tar
+  url: gnome_downloads:yelp-xsl/49/yelp-xsl-49.0.tar.xz
+  ref: 59d43a8f8fe67b784f14f9a04dd4a7a092a7f4a64a65e71b90fe02a47a50fbec
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/grep.bst

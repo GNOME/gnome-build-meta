@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:nautilus.git
-  track: main
-  ref: 50.beta-11-g89a41209501f46e8272f32e27007e33174b25cbf
-
+- kind: tar
+  url: gnome_downloads:nautilus/50/nautilus-50.beta.tar.xz
+  ref: 3a57ff18331e1a7cd081763d3a1ce9232175d522bb40cbdf9b150cdc46936940
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst

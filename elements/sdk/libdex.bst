@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libdex.git
-  track: main
-  ref: 1.1.alpha-2-g62d08b7875ee0421d577feab3021ff1e80bd1aaf
-
+- kind: tar
+  url: gnome_downloads:libdex/1.1/libdex-1.1.alpha.tar.xz
+  ref: 5a50c38c39df77cd765fe0b404ab3d3aa65998a48642c054a460a479ee03f7b5
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:msgraph.git
-  track: main
-  ref: 0.3.4-0-g765ce74bd03e946bbc97cb2904fb0d0a43a88a8d
-
+- kind: tar
+  url: gnome_downloads:msgraph/0.3/msgraph-0.3.4.tar.xz
+  ref: 0731ece6b02b32eeffbbbd98efdc77bc03ddd20651eeae3a4343f0879b04d6c7
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

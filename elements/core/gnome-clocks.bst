@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-clocks.git
-  track: master
-  ref: 50.beta-5-g934eb4f5e90302cfe3d2488b1137e6d114bca3d1
-
+- kind: tar
+  url: gnome_downloads:gnome-clocks/50/gnome-clocks-50.beta.tar.xz
+  ref: 6ad97d4207204f5903cd3847c6413b2e28889eaf70600fd3d792b05c976484a8
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

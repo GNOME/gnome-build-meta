@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libgweather.git
-  track: main
-  ref: 4.5.0-2-g6a7bf87f68de0510a2f4dc5f98ae1695c69c62a7
-
+- kind: tar
+  url: gnome_downloads:libgweather/4.5/libgweather-4.5.0.tar.xz
+  ref: e464c1aebe8117c8a170206d7baefe730393b7e98044c2cd97b3aa8604ef12aa
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst

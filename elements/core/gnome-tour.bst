@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-tour.git
-  track: main
-  ref: 49.0-8-g32fc30eed11f13f9fcb692741df4b2d935913437
+- kind: tar
+  url: gnome_downloads:gnome-tour/49/gnome-tour-49.0.tar.xz
+  ref: 2d7d8a2a0cd1178063a414da58093d26c0fb1a77608d8ad7fbd7911a5d6264d3
 - kind: cargo2
   ref:
   - kind: registry

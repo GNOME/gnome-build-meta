@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-weather.git
-  track: main
-  ref: 50.beta-16-gf5308df9eb270fbe1acd5bafb67199b5aa3515bf
-- kind: git_module
-  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
-  path: gi-types
-  ref: e70b4992aa71f5298c4a98f0e9e42b7761601c5b
-
+- kind: tar
+  url: gnome_downloads:gnome-weather/50/gnome-weather-50.beta.tar.xz
+  ref: f9ffc262aab2267d9fb93ce0d6b38d4c25a1b81bdab2667532df9160d2ab3d2e
 build-depends:
 - sdk/gobject-introspection.bst
 - core-deps/typescript.bst

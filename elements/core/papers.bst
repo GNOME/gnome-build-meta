@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:papers.git
-  track: main
-  ref: 50.beta-6-g5104c7313b7c92ba80855b1a4be6e97ee313cd33
+- kind: tar
+  url: gnome_downloads:papers/50/papers-50.beta.tar.xz
+  ref: 518a6bd2207efca80bf4e0a59efd667c7723cbdd2d294138713770a46fff8674
 - kind: cargo2
   ref:
   - kind: registry

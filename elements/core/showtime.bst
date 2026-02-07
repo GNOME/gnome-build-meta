@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:showtime.git
-  track: main
-  ref: 50.beta-10-g61a759c0080d783312a251a73ec8ded4e68000ad
-
+- kind: tar
+  url: gnome_downloads:showtime/50/showtime-50.beta.tar.xz
+  ref: 7b32498f5cba516b8e60c5573669c7a27a82292af17a98bdd06c2f68c82ea013
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

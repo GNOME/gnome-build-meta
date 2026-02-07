@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gdm.git
-  track: main
-  ref: 50.beta-2-g3b796a9cda58ccfb1dbeb4f4e968d7e6e33ab5ca
+- kind: tar
+  url: gnome_downloads:gdm/50/gdm-50.beta.tar.xz
+  ref: bd0c4127fc7da2bb3e7b5e88d48038cb321d39ef4ab2def73cb4ebae22e0dfd0
 - kind: local
   path: files/gdm
   directory: gdm-config

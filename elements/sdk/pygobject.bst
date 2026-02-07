@@ -1,24 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pygobject.git
-  track: main
-  ref: 3.55.3-1-ga165c010cbccc4133ac87cde42eb4fb9a1696191
-# FIXME: Keep this in sync with the repo until we can use wraps as sources
-#
-# https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/gobject-introspection-tests.wrap
-- kind: git_repo
-  url: gnome:gobject-introspection-tests.git
-  directory: subprojects/gobject-introspection-tests
-  ref: ddd662bb9cdc29f047b239789fb7e56e68fa66bb
-# FIXME: Keep this (plus the patching below) in sync with the repo until we can use wraps as sources
-#
-# https://gitlab.gnome.org/GNOME/pygobject/-/blob/main/subprojects/pythoncapi-compat.wrap
-- kind: git_repo
-  url: github:python/pythoncapi-compat.git
-  directory: subprojects/pythoncapi-compat
-  ref: 22811c3f0e69908894d2bd724f572b32667f2141
+- kind: tar
+  url: gnome_downloads:pygobject/3.55/pygobject-3.55.3.tar.gz
+  ref: 14f52750312bd689dde3a75e968849e3e16c4a0803f1c7734dffb00a1c847af9
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

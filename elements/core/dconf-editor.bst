@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:dconf-editor.git
-  track: master
-  ref: 49.0-14-gea3625b1370edc003678aa192845b76db8c4fa92
-
+- kind: tar
+  url: gnome_downloads:dconf-editor/49/dconf-editor-49.0.tar.xz
+  ref: 90a8ccfadf51dff31e0028324fb9a358b2d26c5ae861a71c7dbf9f4dd9bdd399
 build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

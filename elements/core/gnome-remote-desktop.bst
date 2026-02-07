@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-remote-desktop.git
-  track: master
-  ref: 49.2-13-g1ecbfbb540e1cfd4f812b44d91ad7c9fc682c919
-
+- kind: tar
+  url: gnome_downloads:gnome-remote-desktop/50/gnome-remote-desktop-50.beta.tar.xz
+  ref: c792e81e37c5cd3ddfae9c13186f8667a6307b19dd37595e7c1545cab9bb57ad
 build-depends:
 - core-deps/nv-codec-headers.bst
 - freedesktop-sdk.bst:components/spirv-tools.bst

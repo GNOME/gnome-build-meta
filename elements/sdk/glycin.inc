@@ -1,8 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:glycin.git
-  track: main
-  ref: 2.1.beta-4-gc9f6151ead7e45740c4ada43e3442cbf09b8d551
+- kind: tar
+  url: gnome_downloads:glycin/2.1/glycin-2.1.beta.tar.xz
+  ref: 386241867f28d7114ca5b1955f041dbd37b55ed70a57b47d6cd7882176d2fa1c
 - kind: cargo2
   ref:
   - kind: registry
@@ -406,6 +405,18 @@ sources:
     version: 0.22.0-alpha.2
     sha: 4579f9083d705e2018e769be800688f159577f7afee6db1d13e2f570cc8c8efe
   - kind: registry
+    name: glycin
+    version: 3.1.0-beta
+    sha: 43ac30bedcb44f72335069d4cb9c0de0d4cb5a24db7166ac05c622127a8232bc
+  - kind: registry
+    name: glycin-common
+    version: 1.0.4-beta
+    sha: 6c364fbf4d882217f2840c5146af46bcbfee49b016bebd43fb52fcdafc007017
+  - kind: registry
+    name: glycin-utils
+    version: 4.1.0-beta
+    sha: 6d17d5b5398fc5f3eac5f31e24947fd9b6a7a99b0f31cea836d941112e775320
+  - kind: registry
     name: gobject-sys
     version: 0.22.0-alpha.2
     sha: d4b1e4e515a0325dfaabc6368150bdb0b930c095c5ee7cd06044b0e7c07918dc
@@ -553,6 +564,14 @@ sources:
     name: libc
     version: 0.2.180
     sha: bcc35a38544a891a5f7c865aca548a982ccb3b8650a5b06d0fd33a10283c56fc
+  - kind: registry
+    name: libglycin-rebind
+    version: 0.1.0-beta
+    sha: ec155ab00baf45d1e63f97331d2e6c755d64d9ce36750cbe9b7ea9ee6db50da3
+  - kind: registry
+    name: libglycin-rebind-sys
+    version: 0.1.0-beta
+    sha: 10b6ed1f0f684e15b05dc454db2eed91f9740a5c62914f028a89f1234d63c251
   - kind: registry
     name: libheif-rs
     version: 2.6.1
@@ -853,10 +872,6 @@ sources:
     name: sharded-slab
     version: 0.1.7
     sha: f40ca3c46823713e0d4209592e8d6e826aa57e928f09752619fc696c499637f6
-  - kind: registry
-    name: shell-words
-    version: 1.1.1
-    sha: dc6fe69c597f9c37bfeeeeeb33da3530379845f10be461a66d16d03eca2ded77
   - kind: registry
     name: shlex
     version: 1.3.0

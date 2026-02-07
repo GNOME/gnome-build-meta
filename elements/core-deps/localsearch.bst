@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:localsearch.git
-  track: main
-  ref: 3.11.alpha-48-ge26951702b8096dd7d335dc6dcdc91de18a1015e
+- kind: tar
+  url: gnome_downloads:localsearch/3.11/localsearch-3.11.alpha.tar.xz
+  ref: c2696c222d8b2ceaf618ddd5e21b2e37ffcdabc3502eaeff8cf05cca3fcd239f
 build-depends:
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst

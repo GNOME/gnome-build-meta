@@ -1,9 +1,8 @@
 kind: autotools
 sources:
-- kind: git_repo
-  url: gnome:libgtop.git
-  track: master
-  ref: 2.41.3-17-g6a21532ff67060718eb5ebcdae050d03eaff111e
+- kind: tar
+  url: gnome_downloads:libgtop/2.41/libgtop-2.41.3.tar.xz
+  ref: 775676df958e2ea2452f7568f28b2ea581063d312773dd5c0b7624c1b9b2da8c
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

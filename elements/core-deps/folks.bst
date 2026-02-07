@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:folks.git
-  track: main
-  ref: 0.15.12-2-ga39a252fbf5612063e7bda277720146fdf6d0729
-
+- kind: tar
+  url: gnome_downloads:folks/0.15/folks-0.15.12.tar.xz
+  ref: 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
 build-depends:
 - core-deps/python-dbusmock.bst
 - sdk/gobject-introspection.bst

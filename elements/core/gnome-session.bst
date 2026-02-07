@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-session.git
-  track: main
-  ref: 50.beta-1-g9f6d94ccbff79af43054610dfbdb42af2aa9ab69
-
+- kind: tar
+  url: gnome_downloads:gnome-session/50/gnome-session-50.beta.tar.xz
+  ref: 62c7b3dc37550d9db80dce35b373e4c7169f95c4ab1a485bf2533a164082fe02
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:yelp.git
-  track: master
-  ref: 49.0-20-g327d824b1177cba9ed82a3f7320d2dd198ee34bb
-
+- kind: tar
+  url: gnome_downloads:yelp/49/yelp-49.0.tar.xz
+  ref: e6614e0b1f4ba5fe7b8d149bdd42673f030656fbdcd736ae9860719197c63457
 build-depends:
 - sdk-deps/appstream-glib.bst
 - sdk/gtk-doc.bst

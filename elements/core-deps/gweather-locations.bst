@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gweather-locations.git
-  track: main
-  ref: 2026.1-3-g55ba734a93f0ca3fde8761eb51d8afa5d4efed69
-
+- kind: tar
+  url: gnome_downloads:gweather-locations/2025/gweather-locations-2025.1.tar.xz
+  ref: 5609ee04cf6ac4cc7721f3241bd8d69ffebf0f1b60210fadd88c869a4b884d87
 build-depends:
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
