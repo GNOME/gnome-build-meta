@@ -2,7 +2,7 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:components/jq.bst
-- filename: gnomeos/usr-image.bst
+- filename: gnomeos/usr/image.bst
   config:
     location: /usr-image
 - filename: gnomeos/signed-boot.bst

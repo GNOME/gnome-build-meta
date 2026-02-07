@@ -6,7 +6,7 @@ build-depends:
   strict: true
 - filename: gnomeos/initramfs.bst
   strict: true
-- filename: gnomeos/usr-image.bst
+- filename: gnomeos/usr/image.bst
   strict: true
   config:
     location: /usr-image

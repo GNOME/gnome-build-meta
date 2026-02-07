@@ -5,10 +5,10 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
-- gnomeos/initial-scripts.bst
+- gnomeos/usr/initial-scripts.bst
 - gnomeos/repart-config.bst
 - gnomeos/repart-config-mini.bst
-- filename: gnomeos/filesystem.bst
+- filename: gnomeos/usr/filesystem.bst
   config:
     location: '/sysroot'
 

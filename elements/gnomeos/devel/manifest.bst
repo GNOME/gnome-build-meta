@@ -1,7 +1,7 @@
 kind: collect_manifest
 
 build-depends:
-- gnomeos/deps-nvidia-runtime.bst
+- gnomeos/devel/deps.bst
 
 config:
   path: /usr/manifest.json

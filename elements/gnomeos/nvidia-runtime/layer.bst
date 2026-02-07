@@ -5,12 +5,12 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
-- gnomeos/initial-scripts.bst
-- gnomeos/initial-scripts-nvidia-runtime.bst
-- filename: gnomeos/filesystem.bst
+- gnomeos/usr/initial-scripts.bst
+- gnomeos/nvidia-runtime/initial-scripts.bst
+- filename: gnomeos/usr/filesystem.bst
   config:
     location: '/sysroot'
-- filename: gnomeos/filesystem-nvidia-runtime.bst
+- filename: gnomeos/nvidia-runtime/filesystem.bst
   config:
     location: '/sysroot-nvidia-runtime'
 

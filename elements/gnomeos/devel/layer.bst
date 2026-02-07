@@ -5,12 +5,12 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
-- gnomeos/initial-scripts.bst
-- gnomeos/initial-scripts-devel.bst
-- filename: gnomeos/filesystem.bst
+- gnomeos/usr/initial-scripts.bst
+- gnomeos/devel/initial-scripts.bst
+- filename: gnomeos/usr/filesystem.bst
   config:
     location: '/sysroot'
-- filename: gnomeos/filesystem-devel.bst
+- filename: gnomeos/devel/filesystem.bst
   config:
     location: '/sysroot-devel'
 

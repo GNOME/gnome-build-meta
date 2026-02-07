@@ -1,12 +1,12 @@
 kind: stack
 depends:
 - gnomeos/make-layer.bst
-- gnomeos/initial-scripts.bst
-- gnomeos/initial-scripts-snapd.bst
-- gnomeos/initial-scripts-devel.bst
-- gnomeos/filesystem.bst
-- gnomeos/filesystem-snapd.bst
-- gnomeos/filesystem-devel.bst
+- gnomeos/usr/initial-scripts.bst
+- gnomeos/snapd/initial-scripts.bst
+- gnomeos/devel/initial-scripts.bst
+- gnomeos/usr/filesystem.bst
+- gnomeos/snapd/filesystem.bst
+- gnomeos/devel/filesystem.bst
 # Temporarily disabling because the artifact cache currently fails to push usr-image.
 #- gnomeos/signed-boot.bst
-#- gnomeos/usr-image.bst
+#- gnomeos/usr/image.bst

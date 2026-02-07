@@ -1,8 +1,8 @@
 kind: compose
 
 build-depends:
-- gnomeos/deps-devel.bst
-- gnomeos/manifest-devel.bst
+- gnomeos/devel/deps.bst
+- gnomeos/devel/manifest.bst
 
 config:
   exclude:

@@ -5,12 +5,12 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
 - gnomeos/make-layer.bst
-- gnomeos/initial-scripts.bst
-- gnomeos/initial-scripts-snapd.bst
-- filename: gnomeos/filesystem.bst
+- gnomeos/usr/initial-scripts.bst
+- gnomeos/snapd/initial-scripts.bst
+- filename: gnomeos/usr/filesystem.bst
   config:
     location: '/sysroot'
-- filename: gnomeos/filesystem-snapd.bst
+- filename: gnomeos/snapd/filesystem.bst
   config:
     location: '/sysroot-snapd'
 

@@ -1,8 +1,8 @@
 kind: compose
 
 build-depends:
-- gnomeos/deps.bst
-- gnomeos/manifest.bst
+- gnomeos/nvidia-runtime/deps.bst
+- gnomeos/nvidia-runtime/manifest.bst
 
 config:
   exclude:

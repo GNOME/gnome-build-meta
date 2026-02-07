@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 - gnomeos-deps/libisoburn.bst
 - gnomeos/repart-config-iso.bst
-- filename: gnomeos/usr-image.bst
+- filename: gnomeos/usr/image.bst
   config:
     location: '/usr-image'
 - filename: gnomeos/signed-boot.bst

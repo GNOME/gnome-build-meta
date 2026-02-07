@@ -1,7 +1,7 @@
 kind: collect_manifest
 
 build-depends:
-- gnomeos/deps-devel.bst
+- gnomeos/usr/deps.bst
 
 config:
   path: /usr/manifest.json

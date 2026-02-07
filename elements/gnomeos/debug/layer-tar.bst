@@ -4,7 +4,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/tar.bst
 - freedesktop-sdk.bst:components/zstd.bst
-- filename: gnomeos/filesystem-debug.bst
+- filename: gnomeos/debug/filesystem.bst
   config:
     location: '/sysroot-debug'
 

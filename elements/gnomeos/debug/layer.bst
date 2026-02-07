@@ -5,7 +5,7 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
 - gnomeos/os-release.bst
-- filename: gnomeos/filesystem-debug.bst
+- filename: gnomeos/debug/filesystem.bst
   config:
     location: '/sysroot-debug'
 
