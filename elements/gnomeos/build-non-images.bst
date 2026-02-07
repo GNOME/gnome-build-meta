@@ -7,6 +7,7 @@ depends:
 - gnomeos/usr/filesystem.bst
 - gnomeos/snapd/filesystem.bst
 - gnomeos/devel/filesystem.bst
+- gnomeos/codecs-extra/filesystem.bst
 # Temporarily disabling because the artifact cache currently fails to push usr-image.
 #- gnomeos/signed-boot.bst
 #- gnomeos/usr/image.bst

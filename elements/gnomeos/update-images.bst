@@ -20,6 +20,9 @@ build-depends:
 - filename: gnomeos/debug/layer-tar.bst
   config:
     location: "%{install-root}"
+- filename: gnomeos/codecs-extra/layer.bst
+  config:
+    location: "%{install-root}"
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 (?):
