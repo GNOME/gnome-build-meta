@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-color-manager.git
   track: master
-  ref: 3.36.2-73-gd2892f30e43aaec19bdbcc32a0400064bee83bef
+  ref: 3.36.2-74-ga9bb5bf18ae62548148fe7896a9b3cf4a947bb88
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst

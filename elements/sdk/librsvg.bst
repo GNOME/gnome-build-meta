@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.62.0-beta.0-3-g46b936c45875fb6d050b1a7b10a6e21d7a6c37b9
+  ref: 2.62.0-beta.1-0-g6812caef7dca6279eeb4b270fe52930cb38ff51d
 - kind: cargo2
   ref:
   - kind: registry
@@ -125,8 +125,8 @@ sources:
     sha: 8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495
   - kind: registry
     name: bytes
-    version: 1.11.0
-    sha: b35204fbdc0b3f4446b89fc1ac2cf84a8a68971995d0bf2e925ec7cd960f9cb3
+    version: 1.11.1
+    sha: 1e748733b7cbc798e1434b6ac524f0c1ff2ab456fe201501e6497c8417a4fc33
   - kind: registry
     name: cairo-rs
     version: 0.22.0-alpha.2
@@ -409,8 +409,8 @@ sources:
     sha: 899def5c37c4fd7b2664648c28120ecec138e4d395b459e5ca34f9cce2dd77fd
   - kind: registry
     name: gif
-    version: 0.13.3
-    sha: 4ae047235e33e2829703574b54fdec96bfbad892062d97fed2f76022287de61b
+    version: 0.14.1
+    sha: f5df2ba84018d80c213569363bdcd0c64e6933c67fe4c1d60ecf822971a3c35e
   - kind: registry
     name: gio
     version: 0.22.0-alpha.2
@@ -577,8 +577,8 @@ sources:
     sha: 3acae9609540aa318d1bc588455225fb2085b9ed0c4f6bd0d9d5bcd86f1a0344
   - kind: registry
     name: image
-    version: 0.25.8
-    sha: 529feb3e6769d234375c4cf1ee2ce713682b8e76538cb13f9fc23e1400a591e7
+    version: 0.25.9
+    sha: e6506c6c10786659413faa717ceebcb8f70731c0a60cbae39795fdf114519c1a
   - kind: registry
     name: image-webp
     version: 0.2.4
@@ -1401,12 +1401,12 @@ sources:
     sha: 02aae0f83f69aafc94776e879363e9771d7ecbffe2c7fbb6c14c5e00dfe88439
   - kind: registry
     name: zune-core
-    version: 0.4.12
-    sha: 3f423a2c17029964870cfaabb1f13dfab7d092a62a29a89264f4d36990ca414a
+    version: 0.5.1
+    sha: cb8a0807f7c01457d0379ba880ba6322660448ddebc890ce29bb64da71fb40f9
   - kind: registry
     name: zune-jpeg
-    version: 0.4.21
-    sha: 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
+    version: 0.5.12
+    sha: 410e9ecef634c709e3831c2cfdb8d9c32164fae1c67496d5b68fff728eec37fe
 build-depends:
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
