@@ -5,4 +5,9 @@ kind: stack
 depends:
 - gnomeos/devel/deps.bst
 - gnomeos/snapd/deps.bst
-- gnomeos/nvidia-runtime/deps.bst
+
+(?):
+- arch in ["x86_64"]:
+    depends:
+      (>):
+      - gnomeos/nvidia-runtime/deps.bst
