@@ -11,7 +11,7 @@ depends:
 
 sources:
 - kind: git_repo
-  url: github:casey/just
+  url: github:casey/just.git
   track: '*.*.*'
   ref: 1.46.0-0-gf028de5b258a0cc4696b9dea729cc7d4d5828baa
 - kind: cargo2

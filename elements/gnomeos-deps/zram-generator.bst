@@ -11,7 +11,7 @@ depends:
 
 sources:
 - kind: git_repo
-  url: github:systemd/zram-generator
+  url: github:systemd/zram-generator.git
   track: 'v*.*.*'
   ref: v1.2.1-0-gc2685d18e596c5843b7d9027f6b8379168d753dc
 - kind: gen_cargo_lock

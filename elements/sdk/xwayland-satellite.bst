@@ -14,7 +14,7 @@ depends:
 
 sources:
 - kind: git_repo
-  url: github:Supreeeme/xwayland-satellite
+  url: github:Supreeeme/xwayland-satellite.git
   track: 'v*'
   ref: v0.8-0-g9a71e77b1e06dbad4a472265e59b52ac83cbe00c
 - kind: cargo2
