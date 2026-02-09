@@ -1,4 +1,8 @@
 install() {
+    if [ "${INITRD_MODE-sysupdate}" != sysupdate ]; then
+        exit 0
+    fi
+
     install_files \
         "/usr/lib/systemd/system/initrd-confext.service" \
         "/usr/lib/systemd/system/initrd-migrate-confext.service" \
