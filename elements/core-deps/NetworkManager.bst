@@ -50,3 +50,11 @@ variables:
     -Dqt=false
     -Dovs=false
     -Dnm_cloud_setup=false
+
+config:
+  install-commands:
+    (>):
+    - |
+      rm '%{install-root}%{indep-libdir}/systemd/system/NetworkManager-config-initrd.service'
+      rm '%{install-root}%{indep-libdir}/systemd/system/NetworkManager-initrd.service'
+      rm '%{install-root}%{indep-libdir}/systemd/system/NetworkManager-wait-online-initrd.service'
