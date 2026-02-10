@@ -1,8 +1,8 @@
 kind: compose
 
 build-depends:
-- oci/layers/platform-manifest.bst
-- oci/layers/platform-stack.bst
+- oci/platform/manifest.bst
+- oci/platform/stack.bst
 
 config:
   exclude:

@@ -2,16 +2,21 @@ kind: script
 
 build-depends:
 - freedesktop-sdk.bst:oci/oci-builder.bst
-- oci/layers/platform-init-scripts.bst
-- filename: freedesktop-sdk.bst:oci/platform-oci.bst
+- oci/sdk/init-scripts.bst
+- filename: oci/platform/image.bst
   config:
     location: /parent
-- filename: oci/layers/platform.bst
+- filename: oci/sdk/filesystem.bst
   config:
     location: /layer
 
+environment:
+  LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
+  FAKECAP_DB: /fakecap
+
 config:
   commands:
+  - mkdir /fakecap
   - |
     if [ -d /initial_scripts ]; then
       for i in /initial_scripts/*; do
@@ -30,11 +35,12 @@ config:
       parent:
         image: /parent
       layer: /layer
-      comment: "Import platform layer from GNOME SDK"
+      comment: "Import SDK layer from GNOME SDK"
       config:
         Labels:
+          'com.github.containers.toolbox': 'true'
           'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:platform-%{branch}'
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:sdk-%{branch}'
     EOF

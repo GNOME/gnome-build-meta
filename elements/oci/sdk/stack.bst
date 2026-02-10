@@ -1,7 +1,7 @@
 kind: stack
 
 depends:
-- oci/layers/platform-stack.bst
+- oci/platform/stack.bst
 
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:components/sudo.bst

@@ -21,7 +21,7 @@ depends:
 - gnomeos-deps/efitools-maybe.bst
 - gnomeos-deps/shim-maybe.bst
 - gnomeos/reload-sysext.bst
-- oci/os-release.bst
+- oci/integration/os-release.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos-deps/bootc.bst
 - oci/integration/lvm2-enable-activation.bst

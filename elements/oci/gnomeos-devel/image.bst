@@ -4,11 +4,11 @@ build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/oci-builder.bst
 - freedesktop-sdk.bst:vm/prepare-image.bst
-- oci/layers/gnomeos-init-scripts.bst
-- filename: oci/platform.bst
+- oci/gnomeos-devel/init-scripts.bst
+- filename: oci/gnomeos/image.bst
   config:
     location: /parent
-- filename: oci/layers/gnomeos.bst
+- filename: oci/gnomeos-devel/filesystem.bst
   config:
     location: /layer
 
@@ -43,7 +43,7 @@ config:
       parent:
         image: /parent
       layer: /layer
-      comment: "Import the OS layer from GNOME OS"
+      comment: "Import the OS-devel layer from GNOME OS"
       config:
         Labels:
           'com.github.containers.toolbox': 'true'
@@ -51,5 +51,5 @@ config:
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'containers.bootc': '1'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:gnomeos-%{branch}'
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:gnomeos-devel-%{branch}'
     EOF
