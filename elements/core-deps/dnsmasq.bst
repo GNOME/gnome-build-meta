@@ -2,9 +2,8 @@ kind: make
 
 sources:
 - kind: tar
-  url: thekelleys:dnsmasq/dnsmasq-2.91.tar.xz
-  ref: f622682848b33677adb2b6ad08264618a2ae0a01da486a93fd8cd91186b3d153
-
+  url: thekelleys:dnsmasq/dnsmasq-2.92.tar.xz
+  ref: 4bf50c2c1018f9fbc26037df51b90ecea0cb73d46162846763b92df0d6c3a458
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
