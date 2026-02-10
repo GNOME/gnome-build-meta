@@ -8,7 +8,7 @@ include:
 - component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
   inputs:
     job-stage: "reports"
-- component: "gitlab.gnome.org/alatiera/citemplates/ruff-lint@alatiera/ruff-lint"
+- component: "gitlab.gnome.org/GNOME/citemplates/ruff-lint@master"
   inputs:
     job-stage: "reports"
 
