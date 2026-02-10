@@ -1,6 +1,6 @@
 kind: flatpak_image
 depends:
-- filename: flatpak/platform-image.bst
+- filename: flatpak/platform/filesystem.bst
   type: build
 config:
   directory: '%{datadir}/runtime/locale'

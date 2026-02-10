@@ -1,6 +1,6 @@
 kind: flatpak_image
 build-depends:
-- flatpak/platform-image.bst
+- flatpak/platform/filesystem.bst
 - freedesktop-sdk.bst:integration/platform-integration.bst
 
 variables:

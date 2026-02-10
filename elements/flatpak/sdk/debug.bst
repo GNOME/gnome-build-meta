@@ -1,7 +1,7 @@
 kind: flatpak_image
 
 build-depends:
-- flatpak/sdk-image.bst
+- flatpak/sdk/filesystem.bst
 - freedesktop-sdk.bst:integration/debug-gl-dir.bst
 
 config:

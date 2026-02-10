@@ -1,7 +1,7 @@
 kind: flatpak_image
 
 build-depends:
-- flatpak/sdk-image.bst
+- flatpak/platform/filesystem.bst
 - freedesktop-sdk.bst:integration/debug-gl-dir.bst
 
 config:
@@ -11,6 +11,7 @@ config:
 
   metadata:
     Runtime:
-      name: org.gnome.Sdk.Compat.%{gcc_arch}.Debug
+      name: org.gnome.Platform.Compat.%{gcc_arch}.Debug
     ExtensionOf:
-      ref: runtime/org.gnome.Sdk/%{gcc_arch}/%{flatpak-branch}
+      ref: runtime/org.gnome.Platform/%{gcc_arch}/%{flatpak-branch}
+

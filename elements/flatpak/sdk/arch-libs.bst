@@ -1,6 +1,6 @@
 kind: flatpak_image
 depends:
-- filename: flatpak/sdk-image.bst
+- filename: flatpak/sdk/filesystem.bst
   type: build
 
 config:
