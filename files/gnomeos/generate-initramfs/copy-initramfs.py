@@ -6,17 +6,19 @@ import lzma
 import os.path
 import shutil
 import subprocess
-import sys
 import io
 import zstd
 import json
 
+
 class ParseError(RuntimeError):
     pass
+
 
 def parse_systemd(file):
     content = file.read()
     data = {}
+
     def set_value(section, key, value):
         if key not in data[section]:
             data[section][key] = []
@@ -59,26 +61,30 @@ def parse_systemd(file):
 
     return data
 
+
 def get_dependencies_systemd(file, unit_resolver):
     conf = parse_systemd(file)
     units = set()
-    for prop in [('Unit', 'Wants'),
-                 ('Unit', 'Requires'),
-                 ('Unit', 'Upholds'),
-                 ('Unit', 'BindsTo')]:
+    for prop in [
+        ('Unit', 'Wants'),
+        ('Unit', 'Requires'),
+        ('Unit', 'Upholds'),
+        ('Unit', 'BindsTo'),
+    ]:
         for unit in ' '.join(conf.get(prop[0], {}).get(prop[1], [])).split(' '):
             if len(unit) != 0:
                 units.add(unit)
     for unit in units:
         if '%' not in unit:
             yield unit_resolver.resolve_unit(unit)
-    for prop in [('Service', 'ExecStart'),
-                 ('Service', 'ExecStartPost'),
-                 ('Service', 'ExecStartPre'),
-                 ('Service', 'ExecStop'),
-                 ('Service', 'ExecStopPost'),
-                 ('Service', 'ExecStopPre'),
-                 ]:
+    for prop in [
+        ('Service', 'ExecStart'),
+        ('Service', 'ExecStartPost'),
+        ('Service', 'ExecStartPre'),
+        ('Service', 'ExecStop'),
+        ('Service', 'ExecStopPost'),
+        ('Service', 'ExecStopPre'),
+    ]:
         value = ' '.join(conf.get(prop[0], {}).get(prop[1], []))
         if value == '':
             continue
@@ -88,9 +94,11 @@ def get_dependencies_systemd(file, unit_resolver):
         exe = values[0]
         yield unit_resolver.resolve_exe(exe)
 
+
 def get_dependencies_interp(elffile):
     for seg in elffile.iter_segments(type='PT_INTERP'):
         yield seg.get_interp_name()
+
 
 def get_dependencies_libs(elffile, library_resolver):
     dynamic = elffile.get_section_by_name('.dynamic')
@@ -101,8 +109,10 @@ def get_dependencies_libs(elffile, library_resolver):
     for tag in dynamic.iter_tags(type='DT_NEEDED'):
         yield library_resolver.resolve_library(tag.needed)
 
+
 class MissingFeature(RuntimeError):
     pass
+
 
 def get_dependencies_dlopen(elffile, library_resolver):
     dlopen_note = elffile.get_section_by_name('.note.dlopen')
@@ -117,7 +127,7 @@ def get_dependencies_dlopen(elffile, library_resolver):
         ignores = set()
 
     for note in dlopen_note.iter_notes():
-        if note['n_type'] != 0x407c0c0a or note['n_name'] != 'FDO':
+        if note['n_type'] != 0x407C0C0A or note['n_name'] != 'FDO':
             continue
         doc = json.loads(note['n_desc'].decode('utf-8').rstrip('\0'))
         for feature in doc:
@@ -135,6 +145,7 @@ def get_dependencies_dlopen(elffile, library_resolver):
                 description = feature.get('description')
                 raise MissingFeature(f'{name}: {description}')
 
+
 def get_dependencies_modules(elffile, module_resolver):
     modinfo = elffile.get_section_by_name('.modinfo')
     if modinfo is None:
@@ -151,6 +162,7 @@ def get_dependencies_modules(elffile, module_resolver):
             for dep in data[1].split(b','):
                 yield module_resolver.resolve_firmware(dep)
 
+
 def get_dependencies_elf(file, module_resolver, library_resolver):
     elf = elftools.elf.elffile.ELFFile(file)
     yield from get_dependencies_libs(elf, library_resolver)
@@ -158,11 +170,18 @@ def get_dependencies_elf(file, module_resolver, library_resolver):
     yield from get_dependencies_modules(elf, module_resolver)
     yield from get_dependencies_interp(elf)
 
+
 def get_dependencies_xz(file, module_resolver, library_resolver):
-    yield from get_dependencies_file(lzma.open(file, format=lzma.FORMAT_XZ), module_resolver, library_resolver)
+    yield from get_dependencies_file(
+        lzma.open(file, format=lzma.FORMAT_XZ), module_resolver, library_resolver
+    )
+
 
 def get_dependencies_zstd(file, module_resolver, library_resolver):
-    yield from get_dependencies_file(io.BytesIO(zstd.decompress(file.read())), module_resolver, library_resolver)
+    yield from get_dependencies_file(
+        io.BytesIO(zstd.decompress(file.read())), module_resolver, library_resolver
+    )
+
 
 def get_dependencies_file(file, module_resolver, library_resolver):
     data = file.read(5)
@@ -174,6 +193,7 @@ def get_dependencies_file(file, module_resolver, library_resolver):
     elif data[:4] == b'\x28\xb5\x2f\xfd':
         yield from get_dependencies_zstd(file, module_resolver, library_resolver)
 
+
 def get_dependencies(path, module_resolver, library_resolver, unit_resolver):
     base, ext = os.path.splitext(path)
     if os.path.islink(path):
@@ -184,19 +204,22 @@ def get_dependencies(path, module_resolver, library_resolver, unit_resolver):
         yield link
     elif os.path.isdir(path):
         pass
-    elif ext in ['.service',
-                 '.socket',
-                 '.mount',
-                 '.automount',
-                 '.path',
-                 '.slice',
-                 '.target',
-                 '.timer']:
+    elif ext in [
+        '.service',
+        '.socket',
+        '.mount',
+        '.automount',
+        '.path',
+        '.slice',
+        '.target',
+        '.timer',
+    ]:
         with open(path, "r") as f:
             yield from get_dependencies_systemd(f, unit_resolver)
     else:
         with open(path, "rb") as f:
             yield from get_dependencies_file(f, module_resolver, library_resolver)
+
 
 class LibraryResolver:
     def __init__(self, root_path, libdirs):
@@ -210,6 +233,7 @@ class LibraryResolver:
                 return path
         return os.path.join(self.root_path, os.path.relpath(self.libdirs[0], '/'), name)
 
+
 class SystemdResolver:
     def __init__(self, root_path):
         self.root_path = root_path
@@ -221,7 +245,9 @@ class SystemdResolver:
         if '@' in name:
             base, ext = os.path.splitext(path)
             split = base.split('@')
-            template_path = os.path.join(self.root_path, 'usr/lib/systemd/system', f'{split[0]}@{ext}')
+            template_path = os.path.join(
+                self.root_path, 'usr/lib/systemd/system', f'{split[0]}@{ext}'
+            )
             if os.path.exists(template_path):
                 return template_path
         return path
@@ -232,34 +258,52 @@ class SystemdResolver:
         else:
             return os.path.join(self.root_path, 'usr/bin', name)
 
+
 class ModuleResolver:
     def __init__(self, root_path, version):
         self.root_path = root_path
         self.version = version
 
     def resolve_module(self, name):
-        return subprocess.check_output(['modinfo', '-k', self.version, '-b', os.path.join(self.root_path, 'usr'), '-0', '-n', name.decode('utf-8')], encoding='utf-8').rstrip('\0')
+        return subprocess.check_output(
+            [
+                'modinfo',
+                '-k',
+                self.version,
+                '-b',
+                os.path.join(self.root_path, 'usr'),
+                '-0',
+                '-n',
+                name.decode('utf-8'),
+            ],
+            encoding='utf-8',
+        ).rstrip('\0')
 
     def resolve_firmware(self, path):
-        path = os.path.join(self.root_path, 'usr', 'lib', 'firmware', path.decode('utf-8'))
+        path = os.path.join(
+            self.root_path, 'usr', 'lib', 'firmware', path.decode('utf-8')
+        )
 
         for ext in ["", ".xz", ".zst"]:
-          if os.path.exists(path+ext):
-            return path+ext
+            if os.path.exists(path + ext):
+                return path + ext
 
         # It doesn't eixst but return it anyway
         # it's how the script always worked
-        return path+".zstd"
+        return path + ".zstd"
+
 
 def reallinkpath(path):
     dirname = os.path.dirname(path)
     dirname = os.path.realpath(dirname)
     return os.path.join(dirname, os.path.basename(path))
 
+
 def is_already_copied(source, target, targetroot):
     target = reallinkpath(target)
     dest = os.path.normpath(os.path.join(targetroot, os.path.relpath(target, '/')))
     return os.path.lexists(dest)
+
 
 def copy(source, target, targetroot):
     target = reallinkpath(target)
@@ -267,17 +311,18 @@ def copy(source, target, targetroot):
     if os.path.lexists(dest):
         print(f"Already there: {dest}")
         return
-    #os.makedirs(os.path.dirname(dest), exist_ok=True)
+    # os.makedirs(os.path.dirname(dest), exist_ok=True)
     if source is None:
         os.mkdir(dest)
     elif os.path.islink(source):
         os.symlink(os.readlink(source), dest)
     elif os.path.isdir(source):
         os.mkdir(dest)
-        #os.makedirs(dest, exist_ok=True)
+        # os.makedirs(dest, exist_ok=True)
         shutil.copystat(source, dest)
     else:
         shutil.copy2(source, dest)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -289,8 +334,6 @@ def main():
     args = parser.parse_args()
 
     queue = [(args.source, args.dest)]
-
-    found = set()
 
     module_resolver = ModuleResolver('/', args.kernelver)
     library_resolver = LibraryResolver('/', args.libdir)
@@ -312,7 +355,9 @@ def main():
             continue
         source_of[target] = source
 
-        for dep in get_dependencies(source, module_resolver, library_resolver, systemd_resolver):
+        for dep in get_dependencies(
+            source, module_resolver, library_resolver, systemd_resolver
+        ):
             dependencies[target].add(dep)
             queue.append((dep, dep))
         if source == target:
@@ -333,6 +378,7 @@ def main():
             queue.append((d, d))
 
     processed = set()
+
     def process(target):
         if target in processed:
             return
@@ -346,6 +392,7 @@ def main():
         copy(source, target, args.targetroot)
 
     process(args.dest)
+
 
 if __name__ == '__main__':
     main()

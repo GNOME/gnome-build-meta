@@ -12,19 +12,16 @@ import os
 import signal
 
 PINEPHONE_PRO_DIALOGS = {
-    'default':
-    [
+    'default': [
         # Login
         'login:',
         'root',
         'Password:',
         'root',
         '#',
-
         # Check release
         'cat /etc/os-release',
         'ID=org.gnome.os',
-
         # Modem status
         'eg25-manager',
         '#',  # currently errors
@@ -47,23 +44,18 @@ PINEPHONE_PRO_DIALOGS = {
         # Test calls and feedbackd
         'fbcli',
         'Triggering feedback for event \'phone-incoming-call\'',
-
         # Check expected kernel configs
         'cat /proc/config.gz | gunzip > running.config',
         '#',
-
         # Check for goodix touchscreen config
         'cat running.config | grep GOODIX',
         'CONFIG_TOUCHSCREEN_GOODIX=',
-
         # Check touchscreen enabled config
         'cat running.config | grep TOUCHSCREEN',
         'CONFIG_INPUT_TOUCHSCREEN=',
-
         # Check for net_vendor_broadcom wifi config
         'cat running.config | grep NET_VENDOR',
         'CONFIG_NET_VENDOR_BROADCOM=',
-
         # Check for VIDEO_ROCKCHIP_ISP1 config
         'cat running.config | grep VIDEO_ROCKCHIP_ISP1',
         'CONFIG_VIDEO_ROCKCHIP_ISP1=',
@@ -85,7 +77,6 @@ PINEPHONE_PRO_DIALOGS = {
         # Check for VIDEO_DW9714 config
         'cat running.config | grep VIDEO_DW9714',
         'CONFIG_VIDEO_DW9714=',
-
         # Check for ROCKCHIP_SARADC config
         'cat running.config | grep ROCKCHIP_SARADC',
         'CONFIG_ROCKCHIP_SARADC=',
@@ -98,47 +89,38 @@ PINEPHONE_PRO_DIALOGS = {
         # Check for ROCKCHIP_RGB config
         'cat running.config | grep ROCKCHIP_RGB',
         'CONFIG_ROCKCHIP_RGB=y',
-
         # Check for CRYPTO_DEV_ROCKCHIP config
         'cat running.config | grep CRYPTO_DEV_ROCKCHIP',
         'CONFIG_CRYPTO_DEV_ROCKCHIP=',
-
         # Check for PHY_ROCKCHIP_DPHY_RX0 config
         'cat running.config | grep PHY_ROCKCHIP_DPHY_RX0',
         'CONFIG_PHY_ROCKCHIP_DPHY_RX0=',
-
         # Check for BACKLIGHT_CLASS_DEVICE config
         'cat running.config | grep BACKLIGHT_CLASS_DEVICE',
         'CONFIG_BACKLIGHT_CLASS_DEVICE=y',
-
         # Check for V4L2_FLASH_LED_CLASS config
         'cat running.config | grep V4L2_FLASH_LED_CLASS',
         'CONFIG_V4L2_FLASH_LED_CLASS=',
-
         # Check for INPUT_GPIO_VIBRA config
         'cat running.config | grep INPUT_GPIO_VIBRA',
         'CONFIG_INPUT_GPIO_VIBRA=',
         # Check for KEYBOARD_PINEPHONE config
         'cat running.config | grep KEYBOARD_PINEPHONE',
         'CONFIG_KEYBOARD_PINEPHONE=',
-
         # Check for DRM_PANEL_HIMAX_HX8394 config
         'cat running.config | grep DRM_PANEL_HIMAX_HX8394',
         'CONFIG_DRM_PANEL_HIMAX_HX8394=',
-
         # Check for LEDS_SGM3140 config
         'cat running.config | grep LEDS_SGM3140',
         'CONFIG_LEDS_SGM3140=',
-
         # Test poweroff
         'sudo shutdown now',
-        'Power down'
+        'Power down',
     ]
 }
 
 PINEPHONE_DIALOGS = {
-    'default':
-    [
+    'default': [
         # Login
         'login:',
         'root',
@@ -184,7 +166,7 @@ PINEPHONE_DIALOGS = {
         'CONFIG_RTL8723CS=',
         # Test poweroff
         'sudo shutdown now',
-        'Power down'
+        'Power down',
     ]
 }
 
@@ -195,21 +177,32 @@ PINEPHONE_ARG = 'test-pinephone-aarch64'
 
 
 def argument_parser(phone_model):
-    parser = argparse.ArgumentParser(
-        description="Execute {}".format(phone_model)
+    parser = argparse.ArgumentParser(description="Execute {}".format(phone_model))
+    parser.add_argument(
+        'phone_model',
+        help='determine phone to test',
+        choices=[PINEPHONE_PRO_ARG, PINEPHONE_ARG],
     )
-    parser.add_argument('phone_model', help='determine phone to test',
-                        choices=[PINEPHONE_PRO_ARG, PINEPHONE_ARG])
     if phone_model == PINEPHONE_PRO_ARG:
-        parser.add_argument('--dialog', dest='dialog', default='default',
-                            help='dialog to follow\
-                                (valid values {}, default: default)'
-                            .format(PINEPHONE_PRO_DIALOGS.keys()))
+        parser.add_argument(
+            '--dialog',
+            dest='dialog',
+            default='default',
+            help='dialog to follow\
+                                (valid values {}, default: default)'.format(
+                PINEPHONE_PRO_DIALOGS.keys()
+            ),
+        )
     else:
-        parser.add_argument('--dialog', dest='dialog', default='default',
-                            help='dialog to follow\
-                                (valid values {}, default: default)'
-                            .format(PINEPHONE_DIALOGS.keys()))
+        parser.add_argument(
+            '--dialog',
+            dest='dialog',
+            default='default',
+            help='dialog to follow\
+                                (valid values {}, default: default)'.format(
+                PINEPHONE_DIALOGS.keys()
+            ),
+        )
     return parser
 
 
@@ -242,7 +235,8 @@ async def run_test(command, phone_model, dialog):
         *command,
         stdin=asyncio.subprocess.PIPE,
         stdout=asyncio.subprocess.PIPE,
-        start_new_session=True)
+        start_new_session=True,
+    )
 
     success = False
     try:
@@ -270,8 +264,9 @@ async def run_test(command, phone_model, dialog):
 
 
 def fail_timeout(qemu_task):
-    sys.stderr.write("Test failed as timeout of %i seconds was reached.\n" %
-                     FAILURE_TIMEOUT)
+    sys.stderr.write(
+        "Test failed as timeout of %i seconds was reached.\n" % FAILURE_TIMEOUT
+    )
     qemu_task.cancel()
 
 
@@ -279,14 +274,28 @@ def main(phone_model):
     args = argument_parser(phone_model).parse_args()
 
     cmd = [
-        'qemu-system-aarch64', '-nographic', '-machine',
-        'virt,gic-version=max', '-m', '4096M', '-cpu', 'cortex-a72',
-        '-smp', '8', '-netdev', 'user,id=vnet,hostfwd=:127.0.0.1:0-:22',
-        '-device', 'virtio-net-pci,netdev=vnet',
-        '-device', 'virtio-blk,drive=drive0,bootindex=0',
-        '-drive', 'file=disk.img,format=raw,if=none,id=drive0,cache=writeback',
-        '-drive', 'file=flash0.img,format=raw,if=pflash',
-        '-drive', 'file=flash1.img,format=raw,if=pflash'
+        'qemu-system-aarch64',
+        '-nographic',
+        '-machine',
+        'virt,gic-version=max',
+        '-m',
+        '4096M',
+        '-cpu',
+        'cortex-a72',
+        '-smp',
+        '8',
+        '-netdev',
+        'user,id=vnet,hostfwd=:127.0.0.1:0-:22',
+        '-device',
+        'virtio-net-pci,netdev=vnet',
+        '-device',
+        'virtio-blk,drive=drive0,bootindex=0',
+        '-drive',
+        'file=disk.img,format=raw,if=none,id=drive0,cache=writeback',
+        '-drive',
+        'file=flash0.img,format=raw,if=pflash',
+        '-drive',
+        'file=flash1.img,format=raw,if=pflash',
     ]
 
     loop = asyncio.new_event_loop()
@@ -306,7 +315,7 @@ if __name__ == '__main__':
     ARG_SIZE = 2
     if len(sys.argv) != ARG_SIZE:
         raise Exception(
-            'Required number of additional arguments: {}'.format(ARG_SIZE-1)
+            'Required number of additional arguments: {}'.format(ARG_SIZE - 1)
         )
     phone_model = str(sys.argv[1])
     result = main(phone_model)

@@ -13,27 +13,43 @@ parser.add_argument('output')
 
 args = parser.parse_args()
 
+
 def copy_parent_dirs(rel):
     if not os.path.isdir(os.path.join(args.output, rel)):
         if rel != '':
             copy_parent_dirs(os.path.dirname(rel))
         os.mkdir(os.path.join(args.output, rel))
-        shutil.copystat(os.path.join(args.upper, rel), os.path.join(args.output, rel), follow_symlinks=False)
+        shutil.copystat(
+            os.path.join(args.upper, rel),
+            os.path.join(args.output, rel),
+            follow_symlinks=False,
+        )
+
 
 def copy_dir(rel):
     copy_parent_dirs(rel)
 
+
 def copy_link(rel):
     copy_parent_dirs(os.path.dirname(rel))
-    os.symlink(os.readlink(os.path.join(args.upper, rel)), os.path.join(args.output, rel))
+    os.symlink(
+        os.readlink(os.path.join(args.upper, rel)), os.path.join(args.output, rel)
+    )
+
 
 def copy_file(rel):
     copy_parent_dirs(os.path.dirname(rel))
-    shutil.copy2(os.path.join(args.upper, rel), os.path.join(args.output, rel), follow_symlinks=False)
+    shutil.copy2(
+        os.path.join(args.upper, rel),
+        os.path.join(args.output, rel),
+        follow_symlinks=False,
+    )
+
 
 def get_stat(path):
     st = os.lstat(path)
     return (st.st_mode, st.st_size, st.st_mtime, st.st_mtime_ns, st.st_uid, st.st_gid)
+
 
 def compare_files(a, b):
     sa = get_stat(a)
@@ -42,17 +58,22 @@ def compare_files(a, b):
         return False
     with open(a, 'rb') as fa, open(b, 'rb') as fb:
         while True:
-            bufa = fa.read(16*1024)
-            bufb = fb.read(16*1024)
+            bufa = fa.read(16 * 1024)
+            bufb = fb.read(16 * 1024)
             if bufa != bufb:
                 return False
             if not bufa:
                 return True
 
+
 def create_white(rel):
-    base = os.path.basename(rel)
     copy_parent_dirs(os.path.dirname(rel))
-    os.mknod(os.path.join(args.output, rel), mode=stat.S_IFCHR|0o600, device=os.makedev(0, 0))
+    os.mknod(
+        os.path.join(args.output, rel),
+        mode=stat.S_IFCHR | 0o600,
+        device=os.makedev(0, 0),
+    )
+
 
 for root, dirs, files in os.walk(args.upper):
     real_dirs = []
@@ -76,11 +97,11 @@ for root, dirs, files in os.walk(args.upper):
         override = False
         if not os.path.isdir(lower) or os.path.islink(lower):
             copy_dir(rel)
-    for l in real_links:
-        rel = os.path.relpath(l, args.upper)
+    for link in real_links:
+        rel = os.path.relpath(link, args.upper)
         lower = os.path.join(args.lower, rel)
         if os.path.islink(lower):
-            new_link = os.readlink(l)
+            new_link = os.readlink(link)
             old_link = os.readlink(lower)
             if new_link != old_link:
                 copy_link(rel)

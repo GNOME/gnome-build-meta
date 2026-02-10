@@ -5,7 +5,9 @@ import hashlib
 from gitlab import Gitlab
 from gitlab.mixins import ListMixin
 
-gitlab = Gitlab(os.environ["CI_SERVER_URL"], private_token = os.environ["MIMEAPPS_BOT_TOKEN"])
+gitlab = Gitlab(
+    os.environ["CI_SERVER_URL"], private_token=os.environ["MIMEAPPS_BOT_TOKEN"]
+)
 project = gitlab.projects.get(os.environ["CI_PROJECT_ID"])
 mr = project.mergerequests.get(os.environ["CI_MERGE_REQUEST_IID"])
 
@@ -52,7 +54,6 @@ for discussion in mr.discussions.list(iterator=True):
     note = notes[0]
 
     if "<!-- mimeapps-bot" in note.body:
-
         if stamp in note.body:
             print("Note is up to date!")
             exit()
@@ -64,7 +65,5 @@ for discussion in mr.discussions.list(iterator=True):
             exit()
 
 # If no open note exists, create one
-mr.discussions.create(data={
-    'body': comment
-})
+mr.discussions.create(data={'body': comment})
 print("Created a new note")

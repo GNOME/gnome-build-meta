@@ -5,19 +5,23 @@ from functools import cmp_to_key
 import tomllib
 import os
 import gi
+
 gi.require_version("GLib", "2.0")
 from gi.repository import Gio
 
 # Parse CLI arguments
-args = ArgumentParser(description="Scan installed applications to generate GNOME's mimeapps.list")
+args = ArgumentParser(
+    description="Scan installed applications to generate GNOME's mimeapps.list"
+)
 args.add_argument("quirks", type=Path, help="Quirks file to control output")
 args.add_argument("output", type=Path, help="Location of output file")
-args = args.parse_args();
-
+args = args.parse_args()
 # Load quirks
 with open(args.quirks, "rb") as f:
+
     class wrapped(dict):
         __getattr__ = dict.get
+
     quirks = wrapped(tomllib.load(f))
 
 os.environ["XDG_DATA_DIRS"] = ":".join(quirks.datadirs)
@@ -33,6 +37,7 @@ for app in Gio.AppInfo.get_all():
         else:
             types[type] = [app.get_id()]
 
+
 # Sort
 def _cmp_incubating(a, b):
     a = a.removesuffix('.desktop')
@@ -43,16 +48,17 @@ def _cmp_incubating(a, b):
         # defaults list. Takes priority = appears earlier in the list, so A < B
         return -1
     elif quirks.incubating.get(b) == a:
-        return 1 # The opposite situation
+        return 1  # The opposite situation
     else:
-        return 0 # These apps aren't related
+        return 0  # These apps aren't related
+
 
 for _type, apps in types.items():
     # First sort: ensure reproducible (alphabetical) order
     apps.sort()
 
     # Second sort: make incubator apps come before others
-    apps.sort(key = cmp_to_key(_cmp_incubating))
+    apps.sort(key=cmp_to_key(_cmp_incubating))
 
 # Apply overrides.
 overridden_types = {}

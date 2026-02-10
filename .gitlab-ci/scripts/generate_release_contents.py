@@ -9,7 +9,13 @@ import requests
 CALENDAR = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/jekyll/_data/calendar.json"
 GITLAB_PAGES_FILENAME = "public/release-contents.html"
 
-RELEASE_MANIFESTS = {"platform": "Platform", "sdk": "SDK", "vm": "VM", "gnomeos": "Secure VM"}
+RELEASE_MANIFESTS = {
+    "platform": "Platform",
+    "sdk": "SDK",
+    "vm": "VM",
+    "gnomeos": "Secure VM",
+}
+
 
 def populate_branch_html(release_contents, branch: str) -> None:
     """CVE report html template."""
@@ -21,7 +27,10 @@ def populate_branch_html(release_contents, branch: str) -> None:
     for name, pretty_name in RELEASE_MANIFESTS.items():
         path = f"{branch}/cve-reports/{name}.html"
         if os.path.exists(f"public/{path}"):
-            release_contents.write(f"""<p><a href="{path}">{pretty_name} CVE Report</a></p>""")
+            release_contents.write(
+                f"""<p><a href="{path}">{pretty_name} CVE Report</a></p>"""
+            )
+
 
 def main():
     """Generates html for page containing links to CVE
@@ -34,7 +43,6 @@ def main():
     branches = ["master", *(f"gnome-{release}" for release in releases)]
 
     with open(GITLAB_PAGES_FILENAME, "w", encoding="UTF-8") as release_contents:
-
         head_template = """<html>
             <head>
             <title>Release Contents</title>
@@ -49,6 +57,7 @@ def main():
             populate_branch_html(release_contents, branch)
 
         print("Release Contents page has been generated and published.")
+
 
 if __name__ == "__main__":
     main()

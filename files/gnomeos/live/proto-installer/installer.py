@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 import gi
+
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
-from gi.repository import Gtk, Adw, GObject, Gio, GLib
+from gi.repository import Gtk, Adw, Gio, GLib
 import dbus
 import dbus.mainloop.glib
 import sys
@@ -15,16 +16,24 @@ gettext.install('org.gnome.Installer')
 locale.textdomain('org.gnome.Installer')
 
 
-gresource = Gio.Resource.load('/usr/share/gnomeos-installer/org.gnome.Installer.gresource')
+gresource = Gio.Resource.load(
+    '/usr/share/gnomeos-installer/org.gnome.Installer.gresource'
+)
 Gio.Resource._register(gresource)
 
 
 class Udisks:
     def __init__(self):
         self.system_bus = dbus.SystemBus()
-        udisks_obj = self.system_bus.get_object('org.freedesktop.UDisks2', '/org/freedesktop/UDisks2')
-        self.manager_interface = dbus.Interface(udisks_obj, dbus_interface='org.freedesktop.UDisks2.Manager')
-        self.objman_interface = dbus.Interface(udisks_obj, dbus_interface='org.freedesktop.DBus.ObjectManager')
+        udisks_obj = self.system_bus.get_object(
+            'org.freedesktop.UDisks2', '/org/freedesktop/UDisks2'
+        )
+        self.manager_interface = dbus.Interface(
+            udisks_obj, dbus_interface='org.freedesktop.UDisks2.Manager'
+        )
+        self.objman_interface = dbus.Interface(
+            udisks_obj, dbus_interface='org.freedesktop.DBus.ObjectManager'
+        )
 
     def get_disks(self):
         ret = []
@@ -34,41 +43,88 @@ class Udisks:
 
         for path, interfaces in self.objman_interface.GetManagedObjects().items():
             if 'org.freedesktop.UDisks2.Drive' in interfaces:
-                drives[path] = self.system_bus.get_object('org.freedesktop.UDisks2', path)
-            if 'org.freedesktop.UDisks2.Block' in interfaces and 'org.freedesktop.UDisks2.Partition' not in interfaces:
+                drives[path] = self.system_bus.get_object(
+                    'org.freedesktop.UDisks2', path
+                )
+            if (
+                'org.freedesktop.UDisks2.Block' in interfaces
+                and 'org.freedesktop.UDisks2.Partition' not in interfaces
+            ):
                 block = self.system_bus.get_object('org.freedesktop.UDisks2', path)
                 blocks[path] = block
                 if 'org.freedesktop.UDisks2.PartitionTable' in interfaces:
-                    partition_table_type[path] = block.Get('org.freedesktop.UDisks2.PartitionTable', 'Type', dbus_interface=dbus.PROPERTIES_IFACE)
+                    partition_table_type[path] = block.Get(
+                        'org.freedesktop.UDisks2.PartitionTable',
+                        'Type',
+                        dbus_interface=dbus.PROPERTIES_IFACE,
+                    )
 
         for path, block in blocks.items():
-            drive_path = block.Get('org.freedesktop.UDisks2.Block', 'Drive', dbus_interface=dbus.PROPERTIES_IFACE)
+            drive_path = block.Get(
+                'org.freedesktop.UDisks2.Block',
+                'Drive',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            )
             drive = drives.get(drive_path)
             if drive is None:
                 continue
-            model = drive.Get('org.freedesktop.UDisks2.Drive', 'Model', dbus_interface=dbus.PROPERTIES_IFACE)
-            device_bytes = block.Get('org.freedesktop.UDisks2.Block', 'Device', dbus_interface=dbus.PROPERTIES_IFACE)
+            model = drive.Get(
+                'org.freedesktop.UDisks2.Drive',
+                'Model',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            )
+            device_bytes = block.Get(
+                'org.freedesktop.UDisks2.Block',
+                'Device',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            )
             device_path = bytearray()
             for b in device_bytes:
                 device_path.append(b)
             device = device_path.rstrip(b'\0').decode('utf-8')
-            size = block.Get('org.freedesktop.UDisks2.Block', 'Size', dbus_interface=dbus.PROPERTIES_IFACE)
+            size = block.Get(
+                'org.freedesktop.UDisks2.Block',
+                'Size',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            )
 
             invalid = None
             if path in partition_table_type:
-                invalid = ('error', _("<b>Disk has a partition table.</b>\nTo use this disk, you first need to format it without partition table in GNOME Disks."))
-            elif block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
+                invalid = (
+                    'error',
+                    _(
+                        "<b>Disk has a partition table.</b>\nTo use this disk, you first need to format it without partition table in GNOME Disks."
+                    ),
+                )
+            elif block.Get(
+                'org.freedesktop.UDisks2.Block',
+                'ReadOnly',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            ):
                 invalid = ('error', _("<b>Disk is read-only</b>"))
-            elif not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
+            elif not block.Get(
+                'org.freedesktop.UDisks2.Block',
+                'HintPartitionable',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            ):
                 invalid = ('error', _("<b>Disk cannot be partitioned</b>"))
-            elif size != 0 and size < 10*1024*1024*1024:
+            elif size != 0 and size < 10 * 1024 * 1024 * 1024:
                 invalid = ('error', _("<b>Disk is too small.</b>"))
-            elif size != 0 and size < 30*1024*1024*1024:
-                invalid = ('warning', _("<b>Disk is small.</b>\nWe recommend to use a disk with at least 30GB."))
+            elif size != 0 and size < 30 * 1024 * 1024 * 1024:
+                invalid = (
+                    'warning',
+                    _(
+                        "<b>Disk is small.</b>\nWe recommend to use a disk with at least 30GB."
+                    ),
+                )
             elif size == 0:
                 invalid = ('warning', _("<b>Size is unknown.</b>"))
 
-            media = drive.Get('org.freedesktop.UDisks2.Drive', 'MediaCompatibility', dbus_interface=dbus.PROPERTIES_IFACE)
+            media = drive.Get(
+                'org.freedesktop.UDisks2.Drive',
+                'MediaCompatibility',
+                dbus_interface=dbus.PROPERTIES_IFACE,
+            )
 
             ret.append((os.path.relpath(device, '/dev'), model, size, media, invalid))
 
@@ -92,8 +148,12 @@ class Installer:
         self.system_bus = dbus.SystemBus()
         obj = self.system_bus.get_object('org.gnome.Installer1', '/org/gnome/Installer')
         self._installer = dbus.Interface(obj, dbus_interface='org.gnome.Installer1')
-        self._installer.connect_to_signal('InstallationFinished', self._installation_finished)
-        self._installer.connect_to_signal('InstallationFailed', self._installation_failed)
+        self._installer.connect_to_signal(
+            'InstallationFinished', self._installation_finished
+        )
+        self._installer.connect_to_signal(
+            'InstallationFailed', self._installation_failed
+        )
 
     def install(self, device, oem_install):
         return self._installer.Install(device, oem_install)
@@ -112,7 +172,9 @@ class InstallButton(Gtk.Button):
     @Gtk.Template.Callback()
     def doInstall(self, *args):
         selected_row = self._selector.DiskList.get_selected_row()
-        recovery_key = self._installer.install(selected_row.get_device_name(), self._oem_mode)
+        recovery_key = self._installer.install(
+            selected_row.get_device_name(), self._oem_mode
+        )
         self._app.display_recovery(recovery_key)
 
     def __init__(self, app, installer, selector, oem_mode):
@@ -121,6 +183,7 @@ class InstallButton(Gtk.Button):
         self._installer = installer
         self._selector = selector
         self._oem_mode = oem_mode
+
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/install-or-live.ui")
 class InstallOrLive(Adw.NavigationPage):
@@ -139,11 +202,13 @@ class InstallOrLive(Adw.NavigationPage):
         self._on_try = on_try
         self._on_install = on_install
 
+
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-selector.ui")
 class DiskSelector(Adw.NavigationPage):
     __gtype_name__ = "DiskSelector"
 
     DiskList = Gtk.Template.Child()
+
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/status-display.ui")
 class StatusDisplay(Adw.NavigationPage):
@@ -154,6 +219,7 @@ class StatusDisplay(Adw.NavigationPage):
     RecoveryKey = Gtk.Template.Child()
     RecoveryKeyDisplay = Gtk.Template.Child()
 
+
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/installer-window.ui")
 class InstallerWindow(Adw.ApplicationWindow):
     __gtype_name__ = "InstallerWindow"
@@ -161,6 +227,7 @@ class InstallerWindow(Adw.ApplicationWindow):
     Header = Gtk.Template.Child()
     ToolbarView = Gtk.Template.Child()
     NavigationView = Gtk.Template.Child()
+
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/disk-row.ui")
 class DiskRow(Adw.ActionRow):
@@ -229,8 +296,22 @@ class InstallerApp(Adw.Application):
     def __init__(self, mainloop, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate', self.on_activate)
-        self.add_main_option('wait-for-tour-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Wait for Tour to be finished"), None)
-        self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Install in OEM mode"), None)
+        self.add_main_option(
+            'wait-for-tour-mode',
+            0,
+            GLib.OptionFlags.NONE,
+            GLib.OptionArg.NONE,
+            _("Wait for Tour to be finished"),
+            None,
+        )
+        self.add_main_option(
+            'oem-mode',
+            0,
+            GLib.OptionFlags.NONE,
+            GLib.OptionArg.NONE,
+            _("Install in OEM mode"),
+            None,
+        )
         self.connect('handle-local-options', self.handle_local_options)
         self.install_action = Gio.SimpleAction.new('install', None)
         self.install_action.connect('activate', self.on_activate_installer)
@@ -247,7 +328,9 @@ class InstallerApp(Adw.Application):
     def _on_error(self, message):
         self._status_content.Spinner.set_visible(False)
         self._status_content.StatusPage.set_icon_name("computer-fail-symbolic")
-        self._status_content.StatusPage.set_description(_(f"Installation failed: {message}."))
+        self._status_content.StatusPage.set_description(
+            _(f"Installation failed: {message}.")
+        )
 
     def display_recovery(self, key):
         self.win.Header.remove(self._install_button)
@@ -272,6 +355,7 @@ class InstallerApp(Adw.Application):
     def on_activate(self, app):
         if self.wait_for_tour_mode:
             self.hold()
+
             def on_name_owner_changed(name, old_owner, new_owner):
                 if name == "org.gnome.Tour" and new_owner == "":
                     self.install_action.activate(None)
@@ -279,9 +363,14 @@ class InstallerApp(Adw.Application):
                     return False
                 else:
                     return True
+
             bus = dbus.SessionBus()
             dbus_obj = bus.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus')
-            dbus_obj.connect_to_signal('NameOwnerChanged', on_name_owner_changed, dbus_interface='org.freedesktop.DBus')
+            dbus_obj.connect_to_signal(
+                'NameOwnerChanged',
+                on_name_owner_changed,
+                dbus_interface='org.freedesktop.DBus',
+            )
         else:
             self.install_action.activate(None)
 
@@ -294,21 +383,29 @@ class InstallerApp(Adw.Application):
         disk_selector = DiskSelector()
 
         for name, description, size, media, invalid in self.udisks.get_disks():
-            disk_selector.DiskList.append(DiskRow(name, description, size, media, invalid))
+            disk_selector.DiskList.append(
+                DiskRow(name, description, size, media, invalid)
+            )
 
         disk_selector.DiskList.connect("row-selected", self._disk_selected)
 
-        self._install_button = InstallButton(self, self.installer, disk_selector, self.oem_mode)
+        self._install_button = InstallButton(
+            self, self.installer, disk_selector, self.oem_mode
+        )
         self._install_button.set_can_target(False)
         self.win.add_css_class("devel")
+
         def on_try():
             self.quit()
+
         def on_install():
             self.win.Header.pack_end(self._install_button)
             self.win.NavigationView.push(disk_selector)
+
         install_or_live = InstallOrLive(on_try, on_install)
         self.win.NavigationView.push(install_or_live)
         self.win.present()
+
 
 if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
