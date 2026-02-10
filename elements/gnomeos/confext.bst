@@ -21,5 +21,5 @@ config:
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system' \
         initrd-confext.service \
         initrd-migrate-confext.service
-    install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system/systemd-confext.service.d' mutable.conf
+    install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/confext.conf.d' mutable.conf
     install -Dm755 -t '%{install-root}%{indep-libdir}/gnomeos' migrate-confext
