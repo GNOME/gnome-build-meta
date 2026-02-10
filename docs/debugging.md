@@ -22,6 +22,21 @@ First you should check if you can get a VT (Virtual Terminal) by using the
 control-alt-f2 shortcut. You can also use f3-f6 to get additional terminals.
 control-alt-f1 and control-alt-f7 are reserved for the display server.
 
+### Boot to the working version and read the logs of the failing one
+
+If the latest version does not boot, you can inspect the logs by restarting
+and selecting the older one.
+
+GNOME OS keeps two versions of the system around at all times. You can select
+the previous one from the boot menu as mentioned above.
+
+Once you are in a working version you can inspect the failed build with the
+following command:
+
+```bash
+journalctl --boot=-1
+```
+
 ### GDM does not start / crashes on a loop
 
 If GDM or Shell is crashing or you don't get into a session for some reason you
