@@ -52,16 +52,16 @@ through the CI job `deploy-oci` .
 1. Build the elements
 
     ```bash
-    bst build oci/platform.bst oci/sdk.bst oci/gnomeos.bst oci/gnomeos-devel.bst
+    bst build oci/platform/image.bst oci/sdk/image.bst oci/gnomeos/image.bst oci/gnomeos-devel/image.bst
     ```
 
 2. Import them into Podman:
 
     ```bash
-    bst artifact checkout --tar - oci/platform.bst | podman load
-    bst artifact checkout --tar - oci/sdk.bst | podman load
-    bst artifact checkout --tar - oci/gnomeos.bst | podman load
-    bst artifact checkout --tar - oci/gnomeos-devel.bst | podman load
+    bst artifact checkout --tar - oci/platform/image.bst | podman load
+    bst artifact checkout --tar - oci/sdk/image.bst | podman load
+    bst artifact checkout --tar - oci/gnomeos/image.bst | podman load
+    bst artifact checkout --tar - oci/gnomeos-devel/image.bst | podman load
     ```
 
 ## Use with Toolbox/distrobox
@@ -72,7 +72,7 @@ create containers.
 1. Import the local build of the image:
 
     ```bash
-    bst artifact checkout --tar - oci/gnomeos-devel.bst | podman load
+    bst artifact checkout --tar - oci/gnomeos-devel/image.bst | podman load
     ```
 
 2. Create a toolbox from an image:

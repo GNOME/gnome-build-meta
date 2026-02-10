@@ -1,7 +1,7 @@
 kind: stack
 
 depends:
-- oci/os-release.bst
+- oci/integration/os-release.bst
 - gnomeos-deps/deps.bst
 
 # OS-related config

@@ -1,5 +1,5 @@
 kind: stack
 
 depends:
-  - oci/layers/gnomeos-stack.bst
+  - oci/gnomeos/stack.bst
   - gnomeos-deps/deps-devel.bst

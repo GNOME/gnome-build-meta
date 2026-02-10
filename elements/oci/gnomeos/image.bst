@@ -1,12 +1,14 @@
 kind: script
 
 build-depends:
-- freedesktop-sdk.bst:oci/oci-builder.bst
-- oci/layers/sdk-init-scripts.bst
-- filename: oci/platform.bst
+- freedesktop-sdk.bst:components/fakecap.bst
+- freedesktop-sdk.bst:components/oci-builder.bst
+- freedesktop-sdk.bst:vm/prepare-image.bst
+- oci/gnomeos/init-scripts.bst
+- filename: oci/platform/image.bst
   config:
     location: /parent
-- filename: oci/layers/sdk.bst
+- filename: oci/gnomeos/filesystem.bst
   config:
     location: /layer
 
@@ -14,15 +16,21 @@ environment:
   LD_PRELOAD: /usr/libexec/fakecap/fakecap.so
   FAKECAP_DB: /fakecap
 
+variables:
+  sysroot-seed: b57666f6-0fe5-4310-adff-f256936d164d
+
 config:
   commands:
   - mkdir /fakecap
   - |
-    if [ -d /initial_scripts ]; then
-      for i in /initial_scripts/*; do
-        "${i}" /layer
-      done
-    fi
+    prepare-image.sh \
+       --sysroot /layer \
+       --initscripts /initial_scripts \
+       --seed "%{sysroot-seed}" \
+       --noroot --noboot >/dev/null
+
+  - |
+    systemd-sysusers --root /layer
 
   - |
     cd "%{install-root}"
@@ -35,12 +43,13 @@ config:
       parent:
         image: /parent
       layer: /layer
-      comment: "Import SDK layer from GNOME SDK"
+      comment: "Import the OS layer from GNOME OS"
       config:
         Labels:
           'com.github.containers.toolbox': 'true'
           'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+          'containers.bootc': '1'
       index-annotations:
-        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:sdk-%{branch}'
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:gnomeos-%{branch}'
     EOF

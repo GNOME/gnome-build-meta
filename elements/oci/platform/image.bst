@@ -1,0 +1,40 @@
+kind: script
+
+build-depends:
+- freedesktop-sdk.bst:oci/oci-builder.bst
+- oci/platform/init-scripts.bst
+- filename: freedesktop-sdk.bst:oci/platform-oci.bst
+  config:
+    location: /parent
+- filename: oci/platform/filesystem.bst
+  config:
+    location: /layer
+
+config:
+  commands:
+  - |
+    if [ -d /initial_scripts ]; then
+      for i in /initial_scripts/*; do
+        "${i}" /layer
+      done
+    fi
+
+  - |
+    cd "%{install-root}"
+    build-oci <<EOF
+    mode: oci
+    gzip: disabled
+    images:
+    - os: linux
+      architecture: "%{go-arch}"
+      parent:
+        image: /parent
+      layer: /layer
+      comment: "Import platform layer from GNOME SDK"
+      config:
+        Labels:
+          'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+          'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+      index-annotations:
+        'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:platform-%{branch}'
+    EOF
