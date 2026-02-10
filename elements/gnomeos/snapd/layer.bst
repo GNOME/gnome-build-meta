@@ -131,7 +131,7 @@ config:
     SYSTEMD_REPART_MKFS_OPTIONS_EROFS="${EROFS_OPTIONS} ${EROFS_WORKERS}" \
       systemd-repart \
         --empty=create \
-        --make-ddi=sysext \
+        --make-ddi=confext \
         --size=auto \
         --dry-run=no \
         --discard=no \
