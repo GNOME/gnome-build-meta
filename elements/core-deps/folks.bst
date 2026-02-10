@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:folks/0.15/folks-0.15.9.tar.xz
-  ref: 2311b37355c351f33f163fdc394874a22a0a0682c319493d6d8a6e420711415f
+  url: gnome_downloads:folks/0.15/folks-0.15.12.tar.xz
+  ref: 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
 build-depends:
 - core-deps/python-dbusmock.bst
 - sdk/gobject-introspection.bst

@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.50.4.tar.xz
-  ref: d3bfa473845acfab72635bada5e0d134fda6792c5b95c5c5cd141b46125bd8e4
+  url: webkitgtk:webkitgtk-2.50.5.tar.xz
+  ref: 8737631bac3e9c7ad3e5208f9370e076c09d9c45b39980021ce54edadcc6f94f
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
