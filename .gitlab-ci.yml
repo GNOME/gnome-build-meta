@@ -256,8 +256,8 @@ deploy-flatpak:
       SUPPORTED_ARCHES: "x86_64 aarch64"
   variables:
     RUNNER_AFTER_SCRIPT_TIMEOUT: 20m
-    TARGETS: flatpak-runtimes.bst
-    TARGETS_nightly: 'flatpak-platform-extensions.bst'
+    TARGETS: flatpak/runtimes-repo.bst
+    TARGETS_nightly: 'flatpak/extensions-repo.bst'
     TARGETS_beta: ''
     TARGETS_stable: ''
   script:
@@ -500,7 +500,7 @@ update_refs:
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
   # Fetch the sources and push them into the source cache
-  - ${BST} source push --deps all flatpak-runtimes.bst gnomeos/build-non-images.bst gnomeos/live-image.bst
+  - ${BST} source push --deps all flatpak/runtimes-repo.bst gnomeos/build-non-images.bst gnomeos/live-image.bst
 
 
 update_mimeapps:
@@ -563,4 +563,3 @@ make-git-archive:
     expire_in: "2 days"
     paths:
     - "*.tar.xz"
-

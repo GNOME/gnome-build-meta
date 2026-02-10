@@ -72,8 +72,8 @@ Flatpak runtimes
 
 To build and use a runtime locally::
 
-  $ bst build flatpak-runtimes.bst
-  $ bst checkout flatpak-runtimes.bst repo
+  $ bst build flatpak/runtimes-repo.bst
+  $ bst checkout flatpak/runtimes-repo.bst repo
   $ flatpak remote-add --user --no-gpg-verify testrepo repo
   $ flatpak install testrepo org.gnome.Platform
 

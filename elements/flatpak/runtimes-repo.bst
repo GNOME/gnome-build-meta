@@ -7,12 +7,12 @@ build-depends:
     build-depends:
       (>):
       - filename:
-        - flatpak/platform.bst
-        - flatpak/platform-locale.bst
-        - flatpak/sdk.bst
-        - flatpak/sdk-debug.bst
-        - flatpak/sdk-docs.bst
-        - flatpak/sdk-locale.bst
+        - flatpak/platform/platform.bst
+        - flatpak/platform/locale.bst
+        - flatpak/sdk/sdk.bst
+        - flatpak/sdk/debug.bst
+        - flatpak/sdk/docs.bst
+        - flatpak/sdk/locale.bst
         config:
           flatpak-image: true
 
@@ -21,8 +21,8 @@ build-depends:
     build-depends:
       (>):
       - filename:
-        - flatpak/sdk-arch-libs.bst
-        - flatpak/sdk-arch-libs-debug.bst
+        - flatpak/sdk/arch-libs.bst
+        - flatpak/sdk/arch-libs-debug.bst
         config:
           flatpak-image: true
 

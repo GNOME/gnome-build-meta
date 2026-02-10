@@ -1,6 +1,6 @@
 kind: compose
 build-depends:
-- flatpak/sdk-manifest.bst
+- flatpak/sdk/manifest.bst
 - sdk.bst
 - sdk/os-release.bst
 - freedesktop-sdk.bst:components/fontconfig-flatpak-config.bst
