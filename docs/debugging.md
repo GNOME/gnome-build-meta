@@ -11,10 +11,10 @@ debugging options in the OS.
 
 When booting the machine, you can hold the Spacebar to see the persistent
 Boot Menu that comes from systemd-boot. You can press `?` or `h` to see all
-the available options. Pressing `e` will allow you to edit the kerenl
+the available options. Pressing `e` will allow you to edit the kernel
 command line (cli) arguments (also commonly referred to as boot arguments).
 
-## Failed boots
+## Failed boot
 
 Here are some tips and tricks for diagnosing and debugging a failed boot.
 
@@ -124,7 +124,7 @@ command line arguments
 Animations may be disabled in certain situations, such as when using software
 rendering for Graphics, such as llvmpipe.
 
-However its sometimes needed to be able to toggle them on demand for testing.
+However, its sometimes needed to be able to toggle them on demand for testing.
 This can be done easily from the lookingglass interface in GNOME Shell.
 
 Simply type `alt+f2` to bring up the command runner, then type `lg`. Then
