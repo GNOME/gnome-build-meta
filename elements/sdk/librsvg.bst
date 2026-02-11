@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.62.0-beta.1-0-g6812caef7dca6279eeb4b270fe52930cb38ff51d
+  ref: 2.62.0-beta.1-17-gd5f1aa3f751391aa2302899f2dde9c1a0f865f7a
 - kind: cargo2
   ref:
   - kind: registry
@@ -1157,16 +1157,16 @@ sources:
     sha: ebc4ee7f67670e9b64d05fa4253e753e016c6c95ff35b89b7941d6b856dec1d5
   - kind: registry
     name: time
-    version: 0.3.46
-    sha: 9da98b7d9b7dad93488a84b8248efc35352b0b2657397d4167e7ad67e5d535e5
+    version: 0.3.47
+    sha: 743bd48c283afc0388f9b8827b976905fb217ad9e647fae3a379a9283c4def2c
   - kind: registry
     name: time-core
     version: 0.1.8
     sha: 7694e1cfe791f8d31026952abf09c69ca6f6fa4e1a1229e18988f06a04a12dca
   - kind: registry
     name: time-macros
-    version: 0.2.26
-    sha: 78cc610bac2dcee56805c99642447d4c5dbde4d01f752ffea0199aee1f601dc4
+    version: 0.2.27
+    sha: 2e70e4c5a0e0a8a4823ad65dfe1a6930e4f4d756dcd9dd7939022b5e8c501215
   - kind: registry
     name: tinystr
     version: 0.8.2

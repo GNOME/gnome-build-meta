@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-music.git
   track: master
-  ref: 49.rc-74-ga9b91b9032fe4533304007564f57ed26aa809466
+  ref: 49.rc-75-g1840ae420cb24598d50e2888236012caacaf51e0
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

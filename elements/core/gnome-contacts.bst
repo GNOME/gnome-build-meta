@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-contacts.git
   track: main
-  ref: 50.alpha-15-gc0b42801811edc5fe130d47bb19de1a76762bd54
+  ref: 50.alpha-16-g99764ce10f0fce5c34e5c189ef7217e312c3d764
 
 build-depends:
 - sdk/blueprint-compiler.bst
