@@ -1,0 +1,13 @@
+[Unit]
+Description=Create initial /etc
+
+ConditionPathExists=/etc/initrd-release
+
+RequiresMountsFor=/sysroot/usr
+After=initrd-root-fs.target
+Before=initrd-confext.service
+
+[Service]
+Type=oneshot
+ExecStart=systemd-tmpfiles --root=/sysroot --create --boot mutable-etc.conf
+SuccessExitStatus=DATAERR CANTCREAT
