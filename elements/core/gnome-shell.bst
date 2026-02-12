@@ -13,11 +13,11 @@ sources:
 - kind: git_repo
   url: gnome:libgnome-volume-control.git
   directory: subprojects/gvc
-  ref: 5f9768a2eac29c1ed56f1fbb449a77a3523683b6
+  ref: d2442f455844e5292cb4a74ffc66ecc8d7595a9f
 - kind: git_repo
   url: gnome:libshew.git
   directory: subprojects/libshew
-  ref: ed782477cb5164320ae4f731d49bc5d475ab2a52
+  ref: d16afc40412b565d2bbecf80335f54a19a978009
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
 
