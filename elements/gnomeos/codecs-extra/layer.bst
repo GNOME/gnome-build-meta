@@ -53,7 +53,7 @@ config:
     esac
 
     commits_url="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/%{commit}"
-    cat <<EOF >extension-release.codecs-extra_%{image-version}
+    cat <<EOF >output/usr/lib/extension-release.d/extension-release.codecs-extra_%{image-version}
     ID="org.gnome.os"
     VERSION_ID="${version_id}"
     SYSEXT_LEVEL="%{image-version}"
@@ -62,13 +62,26 @@ config:
     GNOMEOS_COMMITS_URL="${commits_url}"
     EOF
 
-  - |
-    mkdir -p output/usr/lib/extension-release.d
-    cp extension-release.codecs-extra_%{image-version} output/usr/lib/extension-release.d/
 
   - |
-    mkdir -p output/etc/extension-release.d
-    cp extension-release.codecs-extra_%{image-version} output/etc/extension-release.d/
+    case "%{branch}" in
+      master)
+        version_id=Nightly
+        ;;
+      *)
+        version_id="%{branch}"
+        ;;
+    esac
+
+    commits_url="https://gitlab.gnome.org/GNOME/gnome-build-meta/-/commits/%{commit}"
+    cat <<EOF >extension-release.codecs-extra_%{image-version} output/etc/extension-release.d/extension-release.codecs-extra_%{image-version}
+    ID="org.gnome.os"
+    VERSION_ID="${version_id}"
+    CONFEXT_LEVEL="%{image-version}"
+    GNOMEOS_COMMIT="%{commit}"
+    GNOMEOS_COMMIT_DATE="%{commit-date-pretty}"
+    GNOMEOS_COMMITS_URL="${commits_url}"
+    EOF
 
   - |
     mkdir -p output/etc/ld.so.conf.d
