@@ -5,6 +5,7 @@ ConditionPathExists=/etc/initrd-release
 
 RequiresMountsFor=/sysroot/usr
 After=initrd-root-fs.target
+After=initrd-migrate-confext.service
 Before=initrd-confext.service
 
 [Service]
