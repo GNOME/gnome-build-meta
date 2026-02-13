@@ -17,6 +17,7 @@ depends:
 - gnomeos/signed-boot-common.bst
 - freedesktop-sdk.bst:vm/config/useradd-default.bst
 - gnomeos/confext.bst
+- gnomeos/binfmt-from-sysext.bst
 
 (?):
 - arch in ["x86_64"]:

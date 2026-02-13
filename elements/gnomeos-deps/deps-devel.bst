@@ -45,3 +45,5 @@ depends:
 - core-deps/zenity.bst
 
 - sdk.bst
+
+- gnomeos-deps/qemu-user.bst
