@@ -47,3 +47,4 @@ depends:
 - sdk.bst
 
 - gnomeos-deps/qemu-user.bst
+- gnomeos-deps/arch-test.bst
