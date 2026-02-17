@@ -120,4 +120,5 @@ depends:
 - channel == "nightly":
     depends:
       (>):
+      - gnomeos-deps/flathub-beta-config.bst
       - gnomeos-deps/gnome-nightly-config.bst
