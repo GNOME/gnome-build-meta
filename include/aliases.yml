@@ -17,8 +17,7 @@ aliases:
   dbmx: https://dbmx.net/
   dotat: https://dotat.at/prog/
   fedora_rpms: https://src.fedoraproject.org/rpms/
-  flathub: https://flathub.org/repo/
-  flathub_beta: https://dl.flathub.org/beta-repo/
+  flathub: https://dl.flathub.org/
   freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_people: https://people.freedesktop.org/
   freedesktop_software: https://www.freedesktop.org/software/
