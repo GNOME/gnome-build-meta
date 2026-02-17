@@ -20,7 +20,6 @@ depends:
 - core-deps/dnsmasq.bst
 - gnomeos-deps/disable-iscsi.bst
 - gnomeos-deps/flathub-config.bst
-- gnomeos-deps/gnome-nightly-config.bst
 - gnomeos-deps/journald-config.bst
 - gnomeos-deps/nm-connectivity-config.bst
 - gnomeos-deps/plymouth-gnome-theme.bst
@@ -117,3 +116,7 @@ depends:
     depends:
       (>):
       - gnomeos-deps/deps-aarch64.bst
+- channel == "nightly":
+    depends:
+      (>):
+      - gnomeos-deps/gnome-nightly-config.bst
