@@ -7,6 +7,7 @@ build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 
 depends:
+- freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/xcb-util-cursor.bst
 - freedesktop-sdk.bst:components/xcb-util.bst
 - freedesktop-sdk.bst:components/xorg-lib-xcb.bst
@@ -16,7 +17,7 @@ sources:
 - kind: git_repo
   url: github:Supreeeme/xwayland-satellite.git
   track: 'v*'
-  ref: v0.8-0-g9a71e77b1e06dbad4a472265e59b52ac83cbe00c
+  ref: v0.8.1-0-g536bd32efc935bf876d6de385ec18a1b715c9358
 - kind: cargo2
   ref:
   - kind: registry
@@ -124,6 +125,10 @@ sources:
     version: 0.20.2
     sha: ab63b0e2bf4d5928aff72e83a7dace85d7bba5fe12dcc3c5a572d78caffd3f3c
   - kind: registry
+    name: dlib
+    version: 0.5.2
+    sha: 330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412
+  - kind: registry
     name: downcast-rs
     version: 1.2.1
     sha: 75b325c5dbd37f80359721ad39aca5a29fb04c89279657cffdda8736d0c0b9d2
@@ -163,6 +168,10 @@ sources:
     name: foldhash
     version: 0.1.5
     sha: d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2
+  - kind: registry
+    name: fontconfig
+    version: 0.10.0
+    sha: b19c4bca8c705ea23bfb3e3403a9e699344d1ee3205b631f03fe4dbf1e52429f
   - kind: registry
     name: fontdue
     version: 0.9.3
@@ -525,16 +534,16 @@ sources:
     sha: 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
   - kind: registry
     name: xcb
-    version: 1.6.0
-    sha: f07c123b796139bfe0603e654eaf08e132e52387ba95b252c78bad3640ba37ea
+    version: 1.7.0
+    sha: ee4c580d8205abb0a5cf4eb7e927bd664e425b6c3263f9c5310583da96970cf6
   - kind: registry
     name: xcb-util-cursor
-    version: 0.3.5
-    sha: bf6417c51a1f5eda49156061175021bd3ccf0a759bc7c402bbea6a6a1ae14239
+    version: 0.4.0
+    sha: c256d10270e6789ebbed752ec17fcf98a04363dc97aa9b7b92ab1af3a7bc5744
   - kind: registry
     name: xcb-util-cursor-sys
-    version: 0.1.6
-    sha: 4c78acb131647687ee62f9e64c988457f23ecb8f3a078a37a312f989b320cb47
+    version: 0.2.0
+    sha: 8346f6cad5cb6b38645c53431ffe35bd0634e8154f529fa9d3f5f762c03c98b6
   - kind: registry
     name: xcursor
     version: 0.3.10
@@ -543,6 +552,10 @@ sources:
     name: xkeysym
     version: 0.2.1
     sha: b9cc00251562a284751c9973bace760d86c0276c471b4be569fe6b068ee97a56
+  - kind: registry
+    name: yeslogic-fontconfig-sys
+    version: 6.0.0
+    sha: 503a066b4c037c440169d995b869046827dbc71263f6e8f3be6d77d4f3229dbd
   - kind: registry
     name: zerocopy
     version: 0.8.31
