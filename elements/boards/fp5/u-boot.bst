@@ -41,6 +41,6 @@ sources:
   track: v*
   exclude:
   - "*-rc*"
-  ref: v2025.10-0-ge50b1e8715011def8aff1588081a2649a2c6cd47
+  ref: v2026.01-0-g127a42c7257a6ffbbd1575ed1cbaa8f5408a44b3
 - kind: patch
   path: patches/u-boot/nested-esp.patch

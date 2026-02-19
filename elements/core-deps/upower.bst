@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:upower/upower.git
   track: 'v*'
-  ref: v1.91.0-0-gd79841fe402fd23b18bcbf460bffab46fa14e740
+  ref: v1.91.1-0-g57f59b584e066dddafaa11cb8137b32e6e3d15c7
 
 build-depends:
 - sdk/gtk-doc.bst

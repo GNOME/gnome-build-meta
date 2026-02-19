@@ -6,7 +6,7 @@ sources:
   track: "*.*"
   exclude:
   - "*-dev"
-  ref: 1.56-rc2-0-gc978963ee7939cad1ff8947b3b9a70a59d65d90a
+  ref: 1.56.0-0-g56b51b98fbb8627c4c09a483702e18fd8aee7ce1
 
 build-depends:
 - sdk/gobject-introspection.bst
