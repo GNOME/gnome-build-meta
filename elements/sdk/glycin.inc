@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.1.beta-8-gf96144d7bdf8fb65dface14712795a0b6da6c748
+  ref: 2.1.beta-15-g9ca55acb0b12d2b1549b2bfa51a2a3f9fadb534a
 - kind: cargo2
   ref:
   - kind: registry
@@ -407,20 +407,20 @@ sources:
     sha: 328c4630834dfcc5863ccee812e51a4b98464d9c5f8729be00795b858ed120bc
   - kind: registry
     name: gufo
-    version: 0.4.0-alpha
-    sha: ade0696d48fa3000f01aa0e98b440afa0354c0e06245140f654fa02dc83596a5
+    version: 0.4.0-alpha.1
+    sha: 25bb36e115a73dc49551e5cb9586f197862060f78a1d185a2dcea2b5f794659a
   - kind: registry
     name: gufo-common
-    version: 1.1.0-alpha
-    sha: 4847cdf6a7b3ad3e4a21e050241c473ea3693558fbcedc8895343305da4b2c6d
+    version: 1.1.0-alpha.1
+    sha: bf031e363552b34969ef9057c865ed90897cf4a5c856666aa9e1ba8a21c7a243
   - kind: registry
     name: gufo-exif
-    version: 0.4.0-alpha
-    sha: a113e6d0bc82a44f0e0b4418ddc06f380d6d83eadb76bac576718a184c3c5b92
+    version: 0.4.0-alpha.1
+    sha: 72da709ab8a2882e47f5110b83b9884220ce8a95804cde097b7886ea098d99c1
   - kind: registry
     name: gufo-jpeg
-    version: 0.4.0-alpha
-    sha: 0e1620f6ed5ebde5926e048ec443b0d1ccc1d954d15e82a8916cfcbea0870655
+    version: 0.4.0-alpha.1
+    sha: fad101e63372fab40ee967b7d45aa53dbb1c0d16f7312e1c992eec03e77d26da
   - kind: registry
     name: gufo-png
     version: 0.4.0-alpha
@@ -451,8 +451,8 @@ sources:
     sha: 841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100
   - kind: registry
     name: hayro-jpeg2000
-    version: 0.3.1
-    sha: 7e94b34463cd6309fdfe9a541f07e8343ffe5738534cbca6845960ec41cc077a
+    version: 0.3.2
+    sha: 08198f836e50c101095b1e2e9f3c44d2d31f28bd0e0217839b1dadad4b8d3a3a
   - kind: registry
     name: heck
     version: 0.5.0
