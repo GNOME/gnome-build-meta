@@ -146,3 +146,18 @@ You can inspect the config of the kernel with the following command
 ```bash
 zcat /proc/config.gz | less
 ```
+
+### Inspect the System
+
+Here are a couple of files with metadata that can help you identify the versions
+of the software running. They can also be attached in bug reports.
+
+The `/usr/lib/os-release` file will print the version of the OS currently running,
+along with the commit it was build from and date.
+
+The `/usr/manifest.json` file contains the version of the source of every module in the
+system.
+
+With `updatectl features` you will get a list of all the available features and their state.
+
+Last, you can find the installed versions of the OS with `updatectl list host`.
