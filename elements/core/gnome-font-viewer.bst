@@ -6,6 +6,7 @@ sources:
   ref: 7c018925c285771b55d7d1a6f15711c0c193d7450ed9871e20d44f2548562404
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 
 depends:
 - core/gnome-desktop.bst
