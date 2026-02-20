@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.62.0-beta.1-22-g23694b0e6ff087713b00af7bf6da9b7dd08ebffa
+  ref: 2.62.0-beta.1-38-gfb97451c13e5ddb95a5c0af07fb3a314bd679f43
 - kind: cargo2
   ref:
   - kind: registry
@@ -279,6 +279,10 @@ sources:
     name: derive_more-impl
     version: 2.1.1
     sha: 799a97264921d8623a957f6c3b9011f3b5492f557bbb7a5a19b7fa6d06ba8dcb
+  - kind: registry
+    name: diff
+    version: 0.1.13
+    sha: 56254986775e3233ffa9c4d7d3faaf6d36a2c09d30b20687e9f88bc8bafc16c8
   - kind: registry
     name: difflib
     version: 0.4.0
@@ -908,6 +912,10 @@ sources:
     version: 1.0.12
     sha: 72dd2d6d381dfb73a193c7fca536518d7caee39fc8503f74e7dc0be0531b425c
   - kind: registry
+    name: pretty_assertions
+    version: 1.4.1
+    sha: 3ae130e2f271fbc2ac3a40fb1d07180839cdbbe443c7a27e1e3c13c5cac0116d
+  - kind: registry
     name: proc-macro2
     version: 1.0.106
     sha: 8fd00f0bb2e90d81d1044c2b32617f68fcb9fa3bb7640c23e9c748e53fb30934
@@ -1355,6 +1363,10 @@ sources:
     name: xml5ever
     version: 0.35.0
     sha: ee3f1e41afb31a75aef076563b0ad3ecc24f5bd9d12a72b132222664eb76b494
+  - kind: registry
+    name: yansi
+    version: 1.0.1
+    sha: cfe53a6657fd280eaa890a3bc59152892ffa3e30101319d168b781ed6529b049
   - kind: registry
     name: yeslogic-fontconfig-sys
     version: 6.0.0

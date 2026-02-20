@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-clocks.git
   track: master
-  ref: 50.beta-18-g87bf0f1584c7765ffbd527a4c641653ad6dedd44
+  ref: 50.beta-19-gd7301a44c9d3456e1417a752e018939bc804464e
 
 build-depends:
 - core-deps/vorbis-tools.bst
