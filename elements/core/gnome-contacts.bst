@@ -16,7 +16,6 @@ build-depends:
 depends:
 - core-deps/folks.bst
 - core-deps/gnome-online-accounts.bst
-- core-deps/libportal.bst
 - core/gnome-desktop.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
@@ -24,6 +23,7 @@ depends:
 - sdk/libadwaita.bst
 - sdk/libgee.bst
 - sdk/libglycin-gtk4.bst
+- sdk/libportal.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libqrencode.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

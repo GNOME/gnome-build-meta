@@ -15,7 +15,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/libportal.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
@@ -24,6 +23,7 @@ depends:
 - sdk/gtk.bst
 - sdk/json-glib.bst
 - sdk/libadwaita.bst
+- sdk/libportal.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst

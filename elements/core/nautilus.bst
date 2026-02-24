@@ -20,7 +20,6 @@ depends:
 - core-deps/gexiv2.bst
 - core-deps/gnome-autoar.bst
 - core-deps/libcloudproviders.bst
-- core-deps/libportal.bst
 # Build dep of tests, and runtime dep otherwise
 - core-deps/localsearch.bst
 - core/gnome-desktop.bst
@@ -29,6 +28,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/libglycin-gtk4.bst
+- sdk/libportal.bst
 - sdk/pango.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
