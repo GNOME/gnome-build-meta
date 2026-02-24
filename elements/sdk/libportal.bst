@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    github_files:flatpak/libportal/releases/download/0.9.1/libportal-0.9.1.tar.xz
-  ref: de801ee349ed3c255a9af3c01b1a401fab5b3fc1c35eb2fd7dfb35d4b8194d7f
+- kind: git_repo
+  url: github:flatpak/libportal.git
+  track: "*.*.*"
+  ref: 0.9.1-0-g8f5dc8d192f6e31dafe69e35219e3b707bde71ce
 
 build-depends:
 - sdk/gi-docgen.bst

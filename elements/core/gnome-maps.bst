@@ -18,7 +18,6 @@ runtime-depends:
 
 depends:
 - core-deps/libgweather.bst
-- core-deps/libportal.bst
 - core-deps/librest.bst
 - core-deps/libshumate.bst
 - sdk/gjs.bst
@@ -26,5 +25,6 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/libportal.bst
 - freedesktop-sdk.bst:components/geoclue.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

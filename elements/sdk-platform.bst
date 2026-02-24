@@ -14,8 +14,8 @@ depends:
 - sdk/enchant-2.bst
 - sdk/fcitx5-gtk.bst
 - sdk/gcab.bst
-- sdk/gcr.bst
 - sdk/gcr-3.bst
+- sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gjs.bst
 - sdk/glib-networking.bst
@@ -40,6 +40,7 @@ depends:
 - sdk/libibus.bst
 - sdk/libmanette-0.2.bst
 - sdk/libnotify.bst
+- sdk/libportal.bst
 - sdk/librice.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
