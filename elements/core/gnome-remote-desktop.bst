@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-remote-desktop/50/gnome-remote-desktop-50.beta.tar.xz
-  ref: c792e81e37c5cd3ddfae9c13186f8667a6307b19dd37595e7c1545cab9bb57ad
+  url: gnome_downloads:gnome-remote-desktop/50/gnome-remote-desktop-50.rc.tar.xz
+  ref: 2f37b286cb748ffaa2c40c6f11f40b7909ab5d5698d688bda92bf4dad31ca47c
 build-depends:
 - core-deps/nv-codec-headers.bst
 - freedesktop-sdk.bst:components/spirv-tools.bst

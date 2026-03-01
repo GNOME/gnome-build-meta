@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fish-shell/fish-shell.git
   track: '*.*'
-  ref: 4.4.0-0-ge1a0df68fc87bebe1890b1205f6e91f5bc867458
+  ref: 4.5.0-0-g3478f78a0536414af623467c2addda4e9700a75d
 - kind: cargo2
   ref:
   - kind: registry
@@ -128,10 +128,6 @@ sources:
     version: 0.1.9
     sha: 5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582
   - kind: registry
-    name: fnv
-    version: 1.0.7
-    sha: 3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1
-  - kind: registry
     name: foldhash
     version: 0.2.0
     sha: 77ce24cb58228fbb8aa041425bb1050850ac19177686ea6e0f41a70416f56fdb
@@ -204,17 +200,9 @@ sources:
     version: 2.7.6
     sha: f52b00d39961fc5b2736ea853c9cc86238e165017a493d1d5c8eac6bdc4cc273
   - kind: registry
-    name: minimal-lexical
-    version: 0.2.1
-    sha: 68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a
-  - kind: registry
     name: nix
     version: 0.31.1
     sha: 225e7cfe711e0ba79a68baeddb2982723e4235247aefce1482f2f16c27865b66
-  - kind: registry
-    name: nom
-    version: 7.1.3
-    sha: d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a
   - kind: registry
     name: num-traits
     version: 0.2.19
@@ -259,32 +247,16 @@ sources:
     version: 0.2.9
   - kind: registry
     name: phf
-    version: 0.11.3
-    sha: 1fd6780a80ae0c52cc120a26a1a42c1ae51b247a253e4e06113d23d2c2edd078
-  - kind: registry
-    name: phf
     version: 0.13.1
     sha: c1562dc717473dbaa4c1f85a36410e03c047b2e7df7f45ee938fbef64ae7fadf
-  - kind: registry
-    name: phf_codegen
-    version: 0.11.3
-    sha: aef8048c789fa5e851558d709946d6d79a8ff88c0440c587967f8e94bfb1216a
   - kind: registry
     name: phf_codegen
     version: 0.13.1
     sha: 49aa7f9d80421bca176ca8dbfebe668cc7a2684708594ec9f3c0db0805d5d6e1
   - kind: registry
     name: phf_generator
-    version: 0.11.3
-    sha: 3c80231409c20246a13fddb31776fb942c38553c51e871f8cbd687a4cfb5843d
-  - kind: registry
-    name: phf_generator
     version: 0.13.1
     sha: 135ace3a761e564ec88c03a77317a7c6b80bb7f7135ef2544dbe054243b89737
-  - kind: registry
-    name: phf_shared
-    version: 0.11.3
-    sha: 67eabc2ef2a60eb7faa00097bd1ffdb5bd28e62bf39990626a582201b7a754e5
   - kind: registry
     name: phf_shared
     version: 0.13.1
@@ -315,20 +287,12 @@ sources:
     sha: 69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f
   - kind: registry
     name: rand
-    version: 0.8.5
-    sha: 34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404
-  - kind: registry
-    name: rand
     version: 0.9.2
     sha: 6db2770f06117d490610c7488547d543617b21bfa07796d7a12f6f1bd53850d1
   - kind: registry
     name: rand_chacha
     version: 0.9.0
     sha: d3022b5f1df60f26e1ffddd6c66e8aa15de382ae63b3a0c1bfc0e4d3e3f325cb
-  - kind: registry
-    name: rand_core
-    version: 0.6.4
-    sha: ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c
   - kind: registry
     name: rand_core
     version: 0.9.5
@@ -429,10 +393,6 @@ sources:
     name: syn
     version: 2.0.114
     sha: d4d107df263a3013ef9b1879b0df87d706ff80f65a86ea879bd9c31f9b307c2a
-  - kind: registry
-    name: terminfo
-    version: 0.9.0
-    sha: d4ea810f0692f9f51b382fff5893887bb4580f5fa246fde546e0b13e7fcee662
   - kind: registry
     name: thiserror
     version: 2.0.18

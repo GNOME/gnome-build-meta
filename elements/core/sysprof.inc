@@ -1,4 +1,4 @@
 sources:
 - kind: tar
-  url: gnome_downloads:sysprof/50/sysprof-50.beta.tar.xz
-  ref: 8a9ab3dac51266dad49b5c608610401e19c98141747ce797b2f8f2caa1d3c07e
+  url: gnome_downloads:sysprof/50/sysprof-50.rc.tar.xz
+  ref: 6c3851c0a829f67323d580c97b20cec9f898f4db5018b0586ea90782f9d2c1a2

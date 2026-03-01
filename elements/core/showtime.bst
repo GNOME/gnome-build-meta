@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:showtime/50/showtime-50.beta.tar.xz
-  ref: 7b32498f5cba516b8e60c5573669c7a27a82292af17a98bdd06c2f68c82ea013
+  url: gnome_downloads:showtime/50/showtime-50.rc.tar.xz
+  ref: 960940b0cc2bef18f51af0390429374919e3b7486bb1626a4450d1f0fb1ef744
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

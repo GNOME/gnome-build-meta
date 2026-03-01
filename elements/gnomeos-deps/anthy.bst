@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fujiwarat/anthy-unicode.git
   track: '*.*'
-  ref: 1.0.0.20260127-0-g924994eebf13d87022ddcf07eac485f784c4e17d
+  ref: 1.0.0.20260213-0-g35cb19e6434e25bc7b9e1e4838e4416c972914ba
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

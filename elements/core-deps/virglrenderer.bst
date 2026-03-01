@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:virgl/virglrenderer.git
   track: '*.*'
-  ref: 1.2.0-0-g500b41d5c8638f9b80dd558f4044f3301c7457a4
+  ref: 1.3.0-0-gca50e008863837e094747a69974dde3ae148aeaa
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

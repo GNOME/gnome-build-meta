@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.beta.tar.xz
-  ref: 58034a7c511fc2de429bb363db78a7dffea93ac1580975d8ff431cfacd9ddf52
+  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.rc.tar.xz
+  ref: e597648a49dff1c871e71bc92589bf8594decfe82e5461403ba669a023264159
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
