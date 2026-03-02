@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome_gitlab:World/chatty.git
-  track: main
-  ref: v0.8.8-51-gf83c336973cf9578c22949d8bbb24e1b1ffd8a0a
+  track: 'v*'
+  ref: v0.8.9-0-g8fcf8387917bf9d25a005c9e6b506026e77a4876
 - kind: git_repo
   url: purism:Librem5/libcmatrix.git
   directory: subprojects/libcmatrix

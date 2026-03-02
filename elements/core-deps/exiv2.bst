@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:Exiv2/exiv2.git
   track: 'v*'
-  ref: v0.28.7-0-gafcb7a8ba84a7de36d2f1ee7689394e078697956
+  ref: v0.28.8-0-g2cd987a731236037b6b78cbff897d08685a8ef49
 
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst

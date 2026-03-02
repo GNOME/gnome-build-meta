@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: codeberg:DylanVanAssche/libssc.git
   track: 'v*'
-  ref: v0.4.0-0-g26f252c1176b399053993a6b4584650659bc8db6
+  ref: v0.4.1-0-gfd58c74d81848a75cbe12b45e39486ebe7d89832
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

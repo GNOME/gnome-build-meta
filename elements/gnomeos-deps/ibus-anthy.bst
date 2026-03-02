@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:ibus/ibus-anthy.git
   track: '*.*'
-  ref: 1.5.17-0-g901fdec1208d11c293e43add60fe5c143f0817a7
+  ref: 1.5.18-0-gd2cebdebfd74bd8f9ecd242b6a86ff15c3858447
 
 build-depends:
 - sdk/gobject-introspection.bst
