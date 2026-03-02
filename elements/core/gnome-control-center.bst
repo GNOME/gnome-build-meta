@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: main
-  ref: 50.beta-68-g91e6379ac3df1e416c28a8a9b390b913f50700fc
+  ref: 50.rc-5-g930fc1d81a4b02bbae3dff86e0e41aa35ff961d0
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 47c47a423ff2f55bb038d92517e4782cf051496a
+  ref: d2442f455844e5292cb4a74ffc66ecc8d7595a9f
 # FIXME: This needs to be kept in sync with the wrap file ideally,
 # but this will do for now
 # https://gitlab.gnome.org/GNOME/gnome-control-center/-/blob/main/subprojects/libgxdp.wrap
