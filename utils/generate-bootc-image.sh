@@ -18,7 +18,7 @@ fi
 
 set -eux
 
-img="oci/$tag.bst"
+img="oci/$tag/image.bst"
 bst --strict build $img
 bst artifact checkout --tar - $img | run0 podman load
 
