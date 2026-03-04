@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calculator.git
   track: main
-  ref: 50.beta-37-gc1f30c185391d08f52afd3f0c4c2d68fc9688336
+  ref: 50.beta-38-gcc33ea3a175fae595018ca07cb90bef941a9409a
 
 build-depends:
 - sdk/blueprint-compiler.bst
