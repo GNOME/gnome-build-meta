@@ -50,10 +50,14 @@ if ($testsuite eq "gnome_install") {
     autotest::loadtest("tests/app_nautilus.pm");
     autotest::loadtest("tests/app_papers.pm");
     autotest::loadtest("tests/app_snapshot.pm");
-    autotest::loadtest("tests/app_settings.pm");
     autotest::loadtest("tests/app_simple_scan.pm");
     autotest::loadtest("tests/app_showtime.pm");
     autotest::loadtest("tests/app_yelp.pm");
+    # Settings tests switch settings that can affect the rendering of
+    # the system and applications. If they fail the test, they do so
+    # without reverting back (while not being fatal), and can cause
+    # all the subsequent application tests to fail with false positive
+    autotest::loadtest("tests/app_settings.pm");
     autotest::loadtest("tests/show_core_dumps.pm");
 
 } elsif ($testsuite eq "gnome_accessibility") {
