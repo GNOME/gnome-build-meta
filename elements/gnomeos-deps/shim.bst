@@ -11,6 +11,8 @@ sources:
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
   ref: dc7fd96f23d6b582416f672844362d776d175cf4
+- kind: patch
+  path: patches/shim/binutils_2_46.patch
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys
