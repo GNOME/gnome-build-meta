@@ -112,6 +112,8 @@ depends:
 - gnomeos-deps/uinput.bst
 - gnomeos-deps/nvme-cli.bst
 
+- gnomeos-deps/kmscon.bst
+
 (?):
 - arch == "aarch64":
     depends:
