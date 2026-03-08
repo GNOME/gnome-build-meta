@@ -3,16 +3,15 @@ kind: make
 sources:
 - kind: git_repo
   url: github:rhboot/shim.git
-  # Shim 16.0 broke systemd stub
-  # https://lists.freedesktop.org/archives/systemd-devel/2025-March/051297.html
-  track: '15.*'
+  track: '*.*'
   exclude:
   - '*-rc*'
-  ref: 15.8-0-g5914984a1ffeab841f482c791426d7ca9935a5e6
+  - '16.0'
+  ref: 16.1-0-gafc49558b34548644c1cd0ad1b6526a9470182ed
 - kind: git_module
   path: gnu-efi
   url: github:rhboot/gnu-efi.git
-  ref: 328951d3dcb5ff97f5a7c7a362b006626fada000
+  ref: dc7fd96f23d6b582416f672844362d776d175cf4
 - kind: local
   path: files/boot-keys/VENDOR.crt
   directory: boot-keys
