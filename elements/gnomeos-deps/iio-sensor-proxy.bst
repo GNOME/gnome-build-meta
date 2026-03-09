@@ -6,9 +6,7 @@ sources:
   track: '*.*'
   exclude:
   - '*RC*'
-  ref: 3.8-0-g7fec9326aa785127d0ebaea53ba2e89d37d7bca0
-- kind: patch_queue
-  path: patches/iio-sensor-proxy
+  ref: 3.9-0-g0085ddf8ecb173a1c5fcf2344aa40e561125354f
 
 build-depends:
 - sdk/gtk-doc.bst
