@@ -1,25 +1,53 @@
 kind: manual
 
 build-depends:
-- gnomeos/initramfs.bst
 - gnomeos/replace-signed-systemd-boot.bst
+- gnomeos-deps/efitools-maybe.bst
+- gnomeos-deps/shim-maybe.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
-- freedesktop-sdk.bst:components/util-linux.bst
 
 variables:
   strip-binaries: ''
 
 config:
   install-commands:
+  # UEFI secure boot keys
   - |
-    cp -rT /efi "%{install-root}/efi"
+    case "%{arch}" in
+      x86_64|aarch64)
+        mkdir -p '%{install-root}/efi/loader/keys/auto'
+        for key in PK KEK DB; do
+          cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
+        done
+      ;;
+    esac
 
   - |
-    rm -rf "%{install-root}/efi/EFI/Linux"
+    case "%{arch}" in
+      x86_64|aarch64)
+        mkdir -p '%{install-root}/efi/loader/keys/private'
+        for key in PK KEK DB; do
+          cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
+        done
+      ;;
+    esac
+
+  - mkdir -p %{install-root}/efi/EFI/
+  - cp -rT /efi/EFI "%{install-root}/efi/EFI"
+
+  # systemd-boot config file
+  - mkdir -p "%{install-root}/efi/loader"
+  - |
+    cat <<EOF >%{install-root}/efi/loader/loader.conf
+    timeout 3
+    editor yes
+    console-mode keep
+    EOF
 
   - |
     install -Dm644 %{indep-libdir}/systemd/boot/efi/systemd-boot%{efi-arch}.efi "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
+  # Sign and install shim (or systemd-boot) as default bootloader
   - |
     case '%{arch}' in
       x86_64|aarch64)

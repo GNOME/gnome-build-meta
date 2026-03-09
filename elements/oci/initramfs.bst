@@ -22,17 +22,11 @@ environment-nocache:
 
 config:
   commands:
-  - mkdir -p /tmp /efi /var/tmp /fakecap
+  - mkdir -p /fakecap
   - |
     prepare-image.sh \
        --seed "%{sysroot-seed}" \
        --noroot --noboot >/dev/null
-
-  - dbus-uuidgen >/etc/machine-id
-  - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
-  - rm /etc/machine-id
-
-  - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
@@ -68,6 +62,3 @@ config:
     esac
     initrds+=(/initramfs.img)
     cat "${initrds[@]}" >"%{install-root}/usr/lib/modules/${version}/initramfs.img"
-
-  - mkdir -p "%{install-root}/efi/EFI"
-  - cp -rT /efi/EFI "%{install-root}/efi/EFI"
