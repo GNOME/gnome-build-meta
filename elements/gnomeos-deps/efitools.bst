@@ -26,8 +26,6 @@ sources:
 - kind: local
   path: files/boot-keys/KEK_MIC.crt
 - kind: local
-  path: files/boot-keys/DB.key
-- kind: local
   path: files/boot-keys/DB.crt
 - kind: local
   path: files/boot-keys/extra-kek
@@ -64,6 +62,8 @@ variables:
     KEYBLACKLISTAUTH=''
     KEYHASHBLACKLISTAUTH=''
     MYGUID=%{gnomeos-keys-uuid}
+    EFIFILES='Dummy.efi'
+    EFISIGNED=''
 
 config:
   configure-commands:
@@ -142,10 +142,15 @@ config:
     - |
       %{make}
 
+    # Work around some useless install rule
+    - |
+      touch Dummy.efi
+
   install-commands:
     (>):
     - |
-      install -Dm644 -t '%{install-root}%{datadir}/efitools/efi' *-signed.efi
+      rm '%{install-root}%{datadir}/efitools/efi/Dummy.efi'
+      rmdir '%{install-root}%{datadir}/efitools/efi'
 
     - |
       install -Dm644 -t '%{install-root}%{datadir}/efitools/efi' {PK,KEK,DB}.auth
