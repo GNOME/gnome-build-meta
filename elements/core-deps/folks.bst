@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:folks.git
   track: main
-  ref: 0.15.12-2-ga39a252fbf5612063e7bda277720146fdf6d0729
+  ref: 0.15.12-3-g4cf295f21e74e02946dc9621afbbf734906979ed
 
 build-depends:
 - core-deps/python-dbusmock.bst

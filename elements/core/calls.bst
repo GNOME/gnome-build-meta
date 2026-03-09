@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:calls.git
   track: main
-  ref: v50_rc.0-1-g90af156fc3b82a923bb74b39ef0f873797faa630
+  ref: v50_rc.0-3-g6cc02b8478baad2884953d761f2bf83357abe886
 # Needs to be updated manually until we have a wrap-git plugin
 - kind: git_repo
   url: gnome_gitlab:World/Phosh/libcall-ui.git

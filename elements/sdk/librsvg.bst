@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.62.0-0-g74f5c7bb538a177f3d36eaa399118c8b09b4aa55
+  ref: 2.62.0-12-g7f0cbf75e1fdd84559b2575a2e3dfd3bdf530e91
 - kind: cargo2
   ref:
   - kind: registry
@@ -55,6 +55,10 @@ sources:
     name: approx
     version: 0.5.1
     sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
+  - kind: registry
+    name: arbitrary
+    version: 1.4.2
+    sha: c3d036a3c4ab069c7b410a2ce876bd74808d2d0888a82667669f8e783a898bf1
   - kind: registry
     name: assert_cmd
     version: 2.1.2
@@ -628,6 +632,10 @@ sources:
     version: 0.1.3
     sha: 875a5a69ac2bab1a891711cf5eccbec1ce0341ea805560dcd90b7a2e925132e8
   - kind: registry
+    name: jobserver
+    version: 0.1.34
+    sha: 9afb3de4395d6b3e67a780b6de64b51c978ecf11cb9a462c66be7d4ca9039d33
+  - kind: registry
     name: js-sys
     version: 0.3.85
     sha: 8c942ebf8e95485ca0d52d97da7c5a2c387d0e7f0ba4c35e93bfcaee045955b3
@@ -643,6 +651,10 @@ sources:
     name: libc
     version: 0.2.180
     sha: bcc35a38544a891a5f7c865aca548a982ccb3b8650a5b06d0fd33a10283c56fc
+  - kind: registry
+    name: libfuzzer-sys
+    version: 0.4.12
+    sha: f12a681b7dd8ce12bff52488013ba614b869148d54dd79836ab85aafdd53f08d
   - kind: registry
     name: libloading
     version: 0.8.9

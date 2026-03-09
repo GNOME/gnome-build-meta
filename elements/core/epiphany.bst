@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:epiphany.git
   track: main
-  ref: 50.rc-10-gb91370929d53e99a10cd9bc0d7da6b31bc34d224
+  ref: 50.rc-22-gabad926de2a3d8868008a84dcf10f29f0400cbd6
 
 build-depends:
 - sdk/blueprint-compiler.bst
