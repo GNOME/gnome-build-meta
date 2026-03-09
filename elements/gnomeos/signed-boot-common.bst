@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- gnomeos/initramfs.bst
+- gnomeos/signed-boot-common-stage1.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 
