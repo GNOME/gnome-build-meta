@@ -7,7 +7,6 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
-- freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
@@ -18,11 +17,8 @@ depends:
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos-deps/zram-generator.bst
 - gnomeos/initramfs/signed-modules.bst
-- gnomeos-deps/efitools-maybe.bst
-- gnomeos-deps/shim-maybe.bst
 - gnomeos/reload-sysext.bst
 - gnomeos/os-release.bst
-- gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/live.bst
 - gnomeos/confext.bst
 

@@ -21,13 +21,11 @@ environment-nocache:
 
 config:
   commands:
-  - mkdir -p /tmp /efi /var/tmp /fakecap
+  - mkdir -p /fakecap
   - |
     prepare-image.sh \
        --seed "%{sysroot-seed}" \
        --noroot --noboot >/dev/null
-
-  - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |
     version="$(ls -1 /lib/modules | head -n1)"
@@ -72,35 +70,3 @@ config:
         ;;
     esac
     cp /initramfs.img "%{install-root}/usr/lib/modules/${version}/initramfs.img"
-
-  - |
-    case "%{arch}" in
-      x86_64|aarch64)
-        mkdir -p '%{install-root}/efi/loader/keys/auto'
-        for key in PK KEK DB; do
-          cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
-        done
-      ;;
-    esac
-
-  - |
-    case "%{arch}" in
-      x86_64|aarch64)
-        mkdir -p '%{install-root}/efi/loader/keys/private'
-        for key in PK KEK DB; do
-          cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
-        done
-      ;;
-    esac
-
-  - mkdir -p "%{install-root}/efi/EFI"
-  - cp -rT /efi/EFI "%{install-root}/efi/EFI"
-
-  - mkdir -p "%{install-root}/efi/loader"
-  - |
-    cat <<EOF >%{install-root}/efi/loader/loader.conf
-    timeout 3
-    editor yes
-    console-mode keep
-    EOF
-
