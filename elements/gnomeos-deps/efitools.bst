@@ -33,12 +33,11 @@ sources:
 - kind: local
   path: files/boot-keys/extra-db
   directory: extra-db
-- kind: local
-  path: files/boot-keys/extra-kek-mic
-  directory: extra-kek-mic
-- kind: local
-  path: files/boot-keys/extra-db-mic
-  directory: extra-db-mic
+- kind: git_repo
+  url: github:microsoft/secureboot_objects.git
+  track: 'v*-signed'
+  directory: microsoft_objects
+  ref: v1.6.3-signed-0-g0390604da6adb6d293e52cc34bf7b80ea46f9558
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
@@ -70,6 +69,25 @@ config:
     cat <<EOF >>Make.rules
     CFLAGS+=-Wno-error=implicit-function-declaration -std=gnu17
     EOF
+
+  - |
+    mkdir -p extra-kek-mic
+    for key in "MicCorKEKCA2011_2011-06-24" \
+               "microsoft corporation kek 2k ca 2023"; do
+      openssl x509 -inform der -outform pem -in "microsoft_objects/PreSignedObjects/KEK/Certificates/${key}.der" -out "extra-kek-mic/${key// /_}.crt"
+      echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >"extra-kek-mic/${key// /_}.owner"
+    done
+
+  - |
+    mkdir -p extra-db-mic
+    for key in "MicCorUEFCA2011_2011-06-27" \
+               "MicWinProPCA2011_2011-10-19" \
+               "microsoft option rom uefi ca 2023" \
+               "microsoft uefi ca 2023" \
+               "windows uefi ca 2023"; do
+      openssl x509 -inform der -outform pem -in "microsoft_objects/PreSignedObjects/DB/Certificates/${key}.der" -out "extra-db-mic/${key// /_}.crt"
+      echo 77fa9abd-0359-4d32-bd60-28f4e78f784b >"extra-db-mic/${key// /_}.owner"
+    done
 
   build-commands:
     (>):
