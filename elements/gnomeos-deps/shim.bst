@@ -22,7 +22,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/openssl.bst
-- gnomeos-deps/efitools.bst
+- freedesktop-sdk.bst:components/sbsigntools.bst
 
 variables:
   gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
@@ -36,5 +36,4 @@ variables:
 
 config:
   configure-commands:
-  - |
-    cert-to-efi-sig-list -g '%{gnomeos-keys-uuid}' boot-keys/VENDOR.crt boot-keys/VENDOR.esl
+  - sbsiglist --owner '%{gnomeos-keys-uuid}' --type x509 boot-keys/VENDOR.crt --output boot-keys/VENDOR.esl
