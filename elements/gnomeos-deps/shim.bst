@@ -25,13 +25,6 @@ build-depends:
 - gnomeos-deps/efitools.bst
 
 variables:
-  (?):
-  - arch == 'x86_64':
-      efi-arch: x64
-  - arch == 'aarch64':
-      efi-arch: aa64
-  - arch == 'riscv64':
-      efi-arch: riscv64
   gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
   notparallel: true
 

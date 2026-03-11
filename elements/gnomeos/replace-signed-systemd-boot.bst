@@ -5,15 +5,6 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 variables:
-  (?):
-  - arch == 'i686':
-      efi-arch: ia32
-  - arch == 'x86_64':
-      efi-arch: x64
-  - arch == 'aarch64':
-      efi-arch: aa64
-  - arch == 'riscv64':
-      efi-arch: riscv64
   strip-binaries: ''
 
 config:

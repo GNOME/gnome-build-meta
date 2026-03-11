@@ -7,13 +7,6 @@ build-depends:
 
 variables:
   strip-binaries: ''
-  (?):
-  - arch == 'x86_64':
-      efi-arch: x64
-  - arch == 'aarch64':
-      efi-arch: aa64
-  - arch == 'riscv64':
-      efi-arch: riscv64
 
 config:
   install-commands:

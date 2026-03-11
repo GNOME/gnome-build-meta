@@ -8,11 +8,6 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
-  (?):
-  - arch == 'x86_64':
-      efi-arch: x64
-  - arch == 'aarch64':
-      efi-arch: aa64
   strip-binaries: ''
 
 config:
