@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.1.rc-1-g16371ada9486cd79480f3f9267d95b71c524c17f
+  ref: 2.1.rc-4-g9a317f3f631d601b6248c23a348b9ec7cf2abe46
 - kind: cargo2
   ref:
   - kind: registry
@@ -147,8 +147,8 @@ sources:
     sha: aebf35691d1bfb0ac386a69bac2fde4dd276fb618cf8bf4f5318fe285e821bb2
   - kind: registry
     name: cfg-expr
-    version: 0.20.6
-    sha: 78cef5b5a1a6827c7322ae2a636368a573006b27cfa76c7ebd53e834daeaab6a
+    version: 0.20.7
+    sha: 3c6b04e07d8080154ed4ac03546d9a2b303cc2fe1901ba0b35b301516e289368
   - kind: registry
     name: cfg-if
     version: 1.0.4
@@ -387,8 +387,8 @@ sources:
     sha: f5df2ba84018d80c213569363bdcd0c64e6933c67fe4c1d60ecf822971a3c35e
   - kind: registry
     name: gio
-    version: 0.22.1
-    sha: bb018ae3f3967134a833fac8a2568c3e698f4b95c658865360772d73803cc5de
+    version: 0.22.2
+    sha: 816b6743c46b217aa8fba679095ac6f2162fd53259dc8f186fcdbff9c555db03
   - kind: registry
     name: gio-sys
     version: 0.22.0
@@ -403,12 +403,12 @@ sources:
     sha: 44bab97ce39112040216e268f074645f50b31caeb53af708ab5d7e4e67f0dbfd
   - kind: registry
     name: glib
-    version: 0.22.0
-    sha: 9a3b79a62980e85d61aae88988e5bcca6a35f05b0008e1333aa43bd61ef9bf35
+    version: 0.22.2
+    sha: 16877c6e619447e0bcb6de326a42a8bd02b36328cfeeda210135425e576efa3d
   - kind: registry
     name: glib-macros
-    version: 0.22.0
-    sha: 8b48a968528354e04603ae96205f00cf7e77347ffde0fc943a2159948d7d6d80
+    version: 0.22.2
+    sha: bda575994e3689b1bc12f89c3df621ead46ff292623b76b4710a3a5b79be54bb
   - kind: registry
     name: glib-sys
     version: 0.22.0
@@ -467,8 +467,8 @@ sources:
     sha: 841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100
   - kind: registry
     name: hayro-jpeg2000
-    version: 0.3.2
-    sha: 08198f836e50c101095b1e2e9f3c44d2d31f28bd0e0217839b1dadad4b8d3a3a
+    version: 0.3.3
+    sha: 16bca62a003c7e4f4bedc659500e0be1b8fd7b0a432b1884418a86d35de5b04c
   - kind: registry
     name: heck
     version: 0.5.0
@@ -519,12 +519,12 @@ sources:
     sha: 92ecc6618181def0457392ccd0ee51198e065e016d1d527a7ac1b6dc7c1f09d2
   - kind: registry
     name: jiff
-    version: 0.2.21
-    sha: b3e3d65f018c6ae946ab16e80944b97096ed73c35b221d1c478a6c81d8f57940
+    version: 0.2.23
+    sha: 1a3546dc96b6d42c5f24902af9e2538e82e39ad350b0c766eb3fbf2d8f3d8359
   - kind: registry
     name: jiff-static
-    version: 0.2.21
-    sha: a17c2b211d863c7fde02cbea8a3c1a439b98e109286554f2860bdded7ff83818
+    version: 0.2.23
+    sha: 2a8c8b344124222efd714b73bb41f8b5120b27a7cc1c75593a6ff768d9d05aa4
   - kind: registry
     name: jobserver
     version: 0.1.34
@@ -547,8 +547,8 @@ sources:
     sha: d07cb5b362c69ced9ebfcdb3301dc6cadf7d186a3e6a3d8f4fcb9094a83ab408
   - kind: registry
     name: js-sys
-    version: 0.3.90
-    sha: 14dc6f6450b3f6d4ed5b16327f38fed626d375a886159ca555bd7822c0c3a5a6
+    version: 0.3.91
+    sha: b49715b7073f385ba4bc528e5747d02e66cb39c6146efb66b781f131f0fb399c
   - kind: registry
     name: lazy_static
     version: 1.5.0
@@ -571,8 +571,8 @@ sources:
     sha: 7a79a3332a6609480d7d0c9eab957bca6b455b91bb84e66d19f5ff66294b85b8
   - kind: registry
     name: libc
-    version: 0.2.182
-    sha: 6800badb6cb2082ffd7b6a67e6125bb39f18782f793520caee8cb8846be06112
+    version: 0.2.183
+    sha: b5b646652bf6661599e1da8901b3b9522896f01e736bad5f723fe7a3a27f899d
   - kind: registry
     name: libheif-rs
     version: 2.7.0
@@ -591,12 +591,12 @@ sources:
     sha: cb7af949edc773f32dd45ff5a0692860b619b03d2fa3741c1db1acfd1db3a553
   - kind: registry
     name: librsvg-rebind
-    version: 0.3.0-beta.0
-    sha: f648fd17121a0e4490125e534a966fcebec7bae706c3e2e23e4f468054edc825
+    version: 0.3.0
+    sha: 8e29b54b27b49901092b20ef1177d42a068beec0ce5f3344a664118d586d2443
   - kind: registry
     name: librsvg-rebind-sys
-    version: 0.3.0-beta.0
-    sha: 38a89ce7bae968004a0030c0a8c22d9570783344430c936cebc347144f961894
+    version: 0.3.0
+    sha: 4ab4a782ee37dfa57e9f03a169cc7ea652d20164e9e023f3df355d5d8b4e6c34
   - kind: registry
     name: libseccomp
     version: 0.4.0
@@ -731,12 +731,12 @@ sources:
     sha: 57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a
   - kind: registry
     name: pin-project-lite
-    version: 0.2.16
-    sha: 3b3cff922bd51709b605d9ead9aa71031d81447142d828eb4a6eba76fe619f9b
+    version: 0.2.17
+    sha: a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd
   - kind: registry
     name: piper
-    version: 0.2.4
-    sha: 96c8c490f422ef9a4efd2cb5b42b76c8613d7e7dfc1caf667b8a3350a5acc066
+    version: 0.2.5
+    sha: c835479a4443ded371d6c535cbfd8d31ad92c5d23ae9770a61bc155e4992a3c1
   - kind: registry
     name: pkg-config
     version: 0.3.32
@@ -771,8 +771,8 @@ sources:
     sha: 8fd00f0bb2e90d81d1044c2b32617f68fcb9fa3bb7640c23e9c748e53fb30934
   - kind: registry
     name: pxfm
-    version: 0.1.27
-    sha: 7186d3822593aa4393561d186d1393b3923e9d6163d3fbfd6e825e3e6cf3e6a8
+    version: 0.1.28
+    sha: b5a041e753da8b807c9255f28de81879c78c876392ff2469cde94799b2896b9d
   - kind: registry
     name: qoi
     version: 0.4.1
@@ -783,8 +783,8 @@ sources:
     sha: a993555f31e5a609f617c12db6250dedcac1b0a85076912c436e6fc9b2c8e6a3
   - kind: registry
     name: quote
-    version: 1.0.44
-    sha: 21b2ebcf727b7760c461f091f9f0f539b77b8e87f2fd88131e7f1b433b3cece4
+    version: 1.0.45
+    sha: 41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924
   - kind: registry
     name: r-efi
     version: 5.3.0
@@ -911,8 +911,8 @@ sources:
     sha: 67b1b7a3b5fe4f1376887184045fcf45c69e92af734b7aaddc05fb777b6fbd03
   - kind: registry
     name: socket2
-    version: 0.6.2
-    sha: 86f4aa3ad99f2088c990dfa82d367e19cb29268ed67c574d10d0a4bfe71f07e0
+    version: 0.6.3
+    sha: 3a766e1110788c36f4fa1c2b71b387a7815aa65f88ce0229841826633d93723e
   - kind: registry
     name: static_assertions
     version: 1.1.0
@@ -959,8 +959,8 @@ sources:
     sha: af9605de7fee8d9551863fd692cce7637f548dbd9db9180fcc07ccc6d26c336f
   - kind: registry
     name: tokio
-    version: 1.49.0
-    sha: 72a2903cd7736441aac9df9d7688bd0ce48edccaadf181c3b90be801e81d3d86
+    version: 1.50.0
+    sha: 27ad5e34374e03cfffefc301becb44e9dc3c17584f414349ebe29ed26661822d
   - kind: registry
     name: tokio-stream
     version: 0.1.18
@@ -1011,8 +1011,8 @@ sources:
     sha: 562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb
   - kind: registry
     name: uds_windows
-    version: 1.1.0
-    sha: 89daebc3e6fd160ac4aa9fc8b3bf71e1f74fbf92367ae71fb83a037e8bf164b9
+    version: 1.2.0
+    sha: 51b70b87d15e91f553711b40df3048faf27a7a04e01e0ddc0cf9309f0af7c2ca
   - kind: registry
     name: unicode-ident
     version: 1.0.24
@@ -1031,8 +1031,8 @@ sources:
     sha: 673aac59facbab8a9007c7f6108d11f63b603f7cabff99fabf650fea5c32b861
   - kind: registry
     name: uuid
-    version: 1.21.0
-    sha: b672338555252d43fd2240c714dc444b8c6fb0a5c5335e65a07bba7742735ddb
+    version: 1.22.0
+    sha: a68d3c8f01c0cfa54a75291d83601161799e4a89a39e0929f4b0354d88757a37
   - kind: registry
     name: valuable
     version: 0.1.1
@@ -1067,20 +1067,20 @@ sources:
     sha: 5428f8bf88ea5ddc08faddef2ac4a67e390b88186c703ce6dbd955e1c145aca5
   - kind: registry
     name: wasm-bindgen
-    version: 0.2.113
-    sha: 60722a937f594b7fde9adb894d7c092fc1bb6612897c46368d18e7a20208eff2
+    version: 0.2.114
+    sha: 6532f9a5c1ece3798cb1c2cfdba640b9b3ba884f5db45973a6f442510a87d38e
   - kind: registry
     name: wasm-bindgen-macro
-    version: 0.2.113
-    sha: 0fac8c6395094b6b91c4af293f4c79371c163f9a6f56184d2c9a85f5a95f3950
+    version: 0.2.114
+    sha: 18a2d50fcf105fb33bb15f00e7a77b772945a2ee45dcf454961fd843e74c18e6
   - kind: registry
     name: wasm-bindgen-macro-support
-    version: 0.2.113
-    sha: ab3fabce6159dc20728033842636887e4877688ae94382766e00b180abac9d60
+    version: 0.2.114
+    sha: 03ce4caeaac547cdf713d280eda22a730824dd11e6b8c3ca9e42247b25c631e3
   - kind: registry
     name: wasm-bindgen-shared
-    version: 0.2.113
-    sha: de0e091bdb824da87dc01d967388880d017a0a9bc4f3bdc0d86ee9f9336e3bb5
+    version: 0.2.114
+    sha: 75a326b8c223ee17883a4251907455a2431acc2791c98c26279376490c378c16
   - kind: registry
     name: wasm-encoder
     version: 0.244.0
@@ -1102,21 +1102,9 @@ sources:
     version: 0.7.33
     sha: 0ce5da8ecb62bcd8ec8b7ea19f69a51275e91299be594ea5cc6ef7819e16cd03
   - kind: registry
-    name: winapi
-    version: 0.3.9
-    sha: 5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419
-  - kind: registry
-    name: winapi-i686-pc-windows-gnu
-    version: 0.4.0
-    sha: ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6
-  - kind: registry
     name: winapi-util
     version: 0.1.11
     sha: c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22
-  - kind: registry
-    name: winapi-x86_64-pc-windows-gnu
-    version: 0.4.0
-    sha: 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
   - kind: registry
     name: windows-core
     version: 0.62.2
@@ -1143,52 +1131,12 @@ sources:
     sha: 7837d08f69c77cf6b07689544538e017c1bfcf57e34b4c0ff58e6c2cd3b37091
   - kind: registry
     name: windows-sys
-    version: 0.60.2
-    sha: f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb
-  - kind: registry
-    name: windows-sys
     version: 0.61.2
     sha: ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc
   - kind: registry
-    name: windows-targets
-    version: 0.53.5
-    sha: 4945f9f551b88e0d65f3db0bc25c33b8acea4d9e41163edf90dcd0b19f9069f3
-  - kind: registry
-    name: windows_aarch64_gnullvm
-    version: 0.53.1
-    sha: a9d8416fa8b42f5c947f8482c43e7d89e73a173cead56d044f6a56104a6d1b53
-  - kind: registry
-    name: windows_aarch64_msvc
-    version: 0.53.1
-    sha: b9d782e804c2f632e395708e99a94275910eb9100b2114651e04744e9b125006
-  - kind: registry
-    name: windows_i686_gnu
-    version: 0.53.1
-    sha: 960e6da069d81e09becb0ca57a65220ddff016ff2d6af6a223cf372a506593a3
-  - kind: registry
-    name: windows_i686_gnullvm
-    version: 0.53.1
-    sha: fa7359d10048f68ab8b09fa71c3daccfb0e9b559aed648a8f95469c27057180c
-  - kind: registry
-    name: windows_i686_msvc
-    version: 0.53.1
-    sha: 1e7ac75179f18232fe9c285163565a57ef8d3c89254a30685b57d83a38d326c2
-  - kind: registry
-    name: windows_x86_64_gnu
-    version: 0.53.1
-    sha: 9c3842cdd74a865a8066ab39c8a7a473c0778a3f29370b5fd6b4b9aa7df4a499
-  - kind: registry
-    name: windows_x86_64_gnullvm
-    version: 0.53.1
-    sha: 0ffa179e2d07eee8ad8f57493436566c7cc30ac536a3379fdf008f47f6bb7ae1
-  - kind: registry
-    name: windows_x86_64_msvc
-    version: 0.53.1
-    sha: d6bbff5f0aada427a1e5a6da5f1f98158182f26556f345ac9e04d36d0ebed650
-  - kind: registry
     name: winnow
-    version: 0.7.14
-    sha: 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
+    version: 0.7.15
+    sha: df79d97927682d2fd8adb29682d1140b343be4ac0f08fd68b7765d9c059d3945
   - kind: registry
     name: wit-bindgen
     version: 0.51.0
@@ -1235,12 +1183,12 @@ sources:
     sha: ffd8af6d5b78619bab301ff3c560a5bd22426150253db278f164d6cf3b72c50f
   - kind: registry
     name: zerocopy
-    version: 0.8.40
-    sha: a789c6e490b576db9f7e6b6d661bcc9799f7c0ac8352f56ea20193b2681532e5
+    version: 0.8.42
+    sha: f2578b716f8a7a858b7f02d5bd870c14bf4ddbbcf3a4c05414ba6503640505e3
   - kind: registry
     name: zerocopy-derive
-    version: 0.8.40
-    sha: f65c489a7071a749c849713807783f70672b28094011623e200cb86dcb835953
+    version: 0.8.42
+    sha: 7e6cc098ea4d3bd6246687de65af3f920c430e236bee1e3bf2e441463f08a02f
   - kind: registry
     name: zmij
     version: 1.0.21
