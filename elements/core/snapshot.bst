@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:snapshot/50/snapshot-50.rc.tar.xz
-  ref: ed92c93ffbc21e46b1090718c7be1c54b7f7fd331da9b6660586b57f2f69ade7
+  url: gnome_downloads:snapshot/50/snapshot-50.0.tar.xz
+  ref: ec9daf9883eb90330911bb51e6b69eed8c9dbdd5438e864adc90ee55a5fe9eed
 - kind: cargo2
   ref:
   - kind: registry
