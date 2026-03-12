@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:foundry.git
   track: main
-  ref: 1.1.rc-22-g603509c7700456f2941abad323226af4cba65316
+  ref: 1.1.rc-23-g351435b8c8e7282af8258689f847ef15dafa9459
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
