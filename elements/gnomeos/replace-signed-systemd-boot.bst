@@ -2,6 +2,8 @@ kind: manual
 
 build-depends:
 - freedesktop-sdk.bst:components/sbsigntools.bst
+
+depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 variables:
