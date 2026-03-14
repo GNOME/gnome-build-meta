@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libadwaita.git
   track: main
-  ref: 1.9.rc-14-gb1a206bfe80ad87343d6f2e8601913d5bdac3365
+  ref: 1.9.0-4-g7352d8c8c79a3ac939892473a489ae84375b36b4
 
 build-depends:
 - sdk-deps/sassc.bst
@@ -16,7 +16,7 @@ build-depends:
 
 depends:
 - sdk/gtk.bst
-- freedesktop-sdk.bst:components/appstream.bst
+- sdk/ministream.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
