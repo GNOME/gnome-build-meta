@@ -6,11 +6,11 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
-  track: v*
+  url: github:valentindavid/systemd.git
+  track: refs/heads/valentindavid/repart-btrfs-replace
   exclude:
   - '*-rc*'
-  ref: v259.2-0-gf2b815a9a166ee14f8c5a827b878806db1d88bbd
+  ref: v250-rc2-32019-g01cafcfbe76bd779b8abba53c4924137ad61963a
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
