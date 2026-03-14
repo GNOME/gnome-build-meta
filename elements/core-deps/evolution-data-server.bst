@@ -7,6 +7,7 @@ sources:
   ref: 3.60.0-10-g0b0e7ef8cf5be93b78bc1141cda2e656cddbbb12
 
 build-depends:
+- sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

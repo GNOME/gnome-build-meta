@@ -7,6 +7,7 @@ sources:
   ref: 50.0-2-g908d86152403e2f87e61a791231aef44cac18a71
 
 build-depends:
+- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 

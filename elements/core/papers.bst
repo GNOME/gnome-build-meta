@@ -1051,10 +1051,12 @@ sources:
     name: zvariant_utils
     version: 3.3.0
     sha: f75c23a64ef8f40f13a6989991e643554d9bef1d682a281160cf0c1bc389c5e9
+
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/rust.bst
