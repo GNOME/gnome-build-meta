@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 50.rc-6-g12f1ddbbd5fb7502a0e5a3cb1b1f77b02d096556
+  ref: 50.0-0-g61d50537d1b54eafc64e05f37cf52c71b818dd3c
 - kind: cargo2
 
   ref:
@@ -26,8 +26,8 @@ sources:
     sha: f9f3647c145568cec02c42054e07bdf9a5a698e15b466fb2341bfc393cd24aa5
   - kind: registry
     name: ashpd
-    version: 0.13.2
-    sha: 0848bedd08067dca1c02c31cbb371a94ad4f2f8a61a82f2c43d96ec36a395244
+    version: 0.13.5
+    sha: 0b09507a218cf6eb4ab0659883e54880cea3984e3dbaa4989b6cda3f8f8a97a5
   - kind: registry
     name: async-broadcast
     version: 0.7.2
@@ -326,8 +326,8 @@ sources:
     sha: 4ea859ab0dd7e70ff823032b3e077d03d39c965d68c6c10775add60e999d8ee9
   - kind: registry
     name: gio
-    version: 0.22.1
-    sha: bb018ae3f3967134a833fac8a2568c3e698f4b95c658865360772d73803cc5de
+    version: 0.22.2
+    sha: 816b6743c46b217aa8fba679095ac6f2162fd53259dc8f186fcdbff9c555db03
   - kind: registry
     name: gio-sys
     version: 0.22.0
@@ -346,16 +346,16 @@ sources:
     sha: 48073e3b228419faa80b9b7f7122759d4ab2f44cd52a065fde7ca08f34c03147
   - kind: registry
     name: glycin
-    version: 3.1.0-rc
-    sha: 4cc3e8da4a6f6b3b4608c583575ca394d53823ff625ade1f74735a32c43e305a
+    version: 3.1.0
+    sha: 923674c1f2b1a28f69ebdc0f572672e63874e17ce0e60c96b8bfaff47a8ef4e9
   - kind: registry
     name: glycin-common
-    version: 1.0.4-rc
-    sha: 33112e981e223f51c48bf4b50415f27f401084bcdb3381048eb2693f4157a12f
+    version: 1.0.4
+    sha: db28cec888051ccbf68f9f352d57ba2a292179863524a0769e54dbb72d152a03
   - kind: registry
     name: glycin-utils
-    version: 4.1.0-rc
-    sha: 9f5ee82ae148565401bbcb337f6f7c61f6faa5fff79c772d842ede61a0460cb6
+    version: 4.1.0
+    sha: b49cd2451bced7416341a5e89d74f547e92b85b67e8f66c8723a7505930a50ab
   - kind: registry
     name: gobject-sys
     version: 0.22.0
@@ -430,8 +430,8 @@ sources:
     sha: e9ead18b3ca995ee40dc08121c75ffc2d8695fbd1a1ced48c3632c7c1ce00b2c
   - kind: registry
     name: gweather-sys
-    version: 4.8.0-alpha.0
-    sha: 636e135bd85cbe5e9e5b0b0a8e8f103e377e68d2056589b61e13bf1230b0d32a
+    version: 4.8.0
+    sha: 5bd48d8a64d00703dc2a77efb2284c07192a1345d0162e0bc15488b55d577f0e
   - kind: registry
     name: half
     version: 2.7.1
@@ -510,12 +510,12 @@ sources:
     sha: aaee067051c5d3c058d050d167688b80b67de1950cfca77730549aa761fc5d7d
   - kind: registry
     name: libc
-    version: 0.2.182
-    sha: 6800badb6cb2082ffd7b6a67e6125bb39f18782f793520caee8cb8846be06112
+    version: 0.2.183
+    sha: b5b646652bf6661599e1da8901b3b9522896f01e736bad5f723fe7a3a27f899d
   - kind: registry
     name: libgweather
-    version: 4.8.0-alpha.0
-    sha: 67f833cd31eaec72f6c8a6ba226a0ff9297a0b265aae77ebf63d362bed2411f3
+    version: 4.8.0
+    sha: 18dd39da07edc7e068f1b02da95d5813030343cfd94ae1f132d25695ba8e6c9f
   - kind: registry
     name: libloading
     version: 0.8.9
@@ -846,8 +846,8 @@ sources:
     sha: db97caf9d906fbde555dd62fa95ddba9eecfd14cb388e4f491a66d74cd5fb79a
   - kind: registry
     name: tracing-subscriber
-    version: 0.3.22
-    sha: 2f30143827ddab0d256fd843b7a66d164e9f271cfa0dde49142c5ca0ca291f1e
+    version: 0.3.23
+    sha: cb7f578e5945fb242538965c2d0b04418d38ec25c79d160cd279bf0731c8d319
   - kind: registry
     name: uds_windows
     version: 1.1.0

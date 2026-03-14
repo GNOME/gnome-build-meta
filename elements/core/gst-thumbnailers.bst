@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gst-thumbnailers.git
   track: main
-  ref: 1.0.rc-0-g7aa47977d15d81b2b56d6384f2d15955e979419a
+  ref: 1.0.0-0-ga6592d65da4c6d6ee53569d654f065899d055186
 - kind: cargo2
   ref:
   - kind: registry
@@ -57,8 +57,8 @@ sources:
     sha: aebf35691d1bfb0ac386a69bac2fde4dd276fb618cf8bf4f5318fe285e821bb2
   - kind: registry
     name: cfg-expr
-    version: 0.20.6
-    sha: 78cef5b5a1a6827c7322ae2a636368a573006b27cfa76c7ebd53e834daeaab6a
+    version: 0.20.7
+    sha: 3c6b04e07d8080154ed4ac03546d9a2b303cc2fe1901ba0b35b301516e289368
   - kind: registry
     name: cfg-if
     version: 1.0.4
@@ -77,20 +77,20 @@ sources:
     sha: 57663b653d948a338bfb3eeba9bb2fd5fcfaecb9e199e87e1eda4d9e8b240fd9
   - kind: registry
     name: clap
-    version: 4.5.60
-    sha: 2797f34da339ce31042b27d23607e051786132987f595b02ba4f6a6dffb7030a
+    version: 4.6.0
+    sha: b193af5b67834b676abd72466a96c1024e6a6ad978a1f484bd90b85c94041351
   - kind: registry
     name: clap_builder
-    version: 4.5.60
-    sha: 24a241312cea5059b13574bb9b3861cabf758b879c15190b37b6d6fd63ab6876
+    version: 4.6.0
+    sha: 714a53001bf66416adb0e2ef5ac857140e7dc3a0c48fb28b2f10762fc4b5069f
   - kind: registry
     name: clap_derive
-    version: 4.5.55
-    sha: a92793da1a46a5f2a02a6f4c46c6496b28c43638adea8306fcb0caa1634f24e5
+    version: 4.6.0
+    sha: 1110bd8a634a1ab8cb04345d8d878267d57c3cf1b38d91b71af6686408bbca6a
   - kind: registry
     name: clap_lex
-    version: 1.0.0
-    sha: 3a822ea5bc7590f9d40f1ba12c0dc3c2760f3482c6984db1573ad11031420831
+    version: 1.1.0
+    sha: c8d4a3bb8b1e0c1050499d1815f5ab16d04f0959b233085fb31653fbfc9d98f9
   - kind: registry
     name: criterion
     version: 0.8.2
@@ -229,8 +229,8 @@ sources:
     sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
   - kind: registry
     name: image
-    version: 0.25.9
-    sha: e6506c6c10786659413faa717ceebcb8f70731c0a60cbae39795fdf114519c1a
+    version: 0.25.10
+    sha: 85ab80394333c02fe689eaf900ab500fbd0c2213da414687ebf995a65d5a6104
   - kind: registry
     name: indexmap
     version: 2.13.0
@@ -257,24 +257,24 @@ sources:
     sha: 558bf9508a558512042d3095138b1f7b8fe90c5467d94f9f1da28b3731c5dbd1
   - kind: registry
     name: libc
-    version: 0.2.182
-    sha: 6800badb6cb2082ffd7b6a67e6125bb39f18782f793520caee8cb8846be06112
+    version: 0.2.183
+    sha: b5b646652bf6661599e1da8901b3b9522896f01e736bad5f723fe7a3a27f899d
   - kind: registry
     name: libglycin-rebind
-    version: 0.1.0-rc
-    sha: c25970ac1b75e53d24e91e49ad7f7b2b7dbc4e2fba546f47188852f6fc936a99
+    version: 0.1.0
+    sha: 79a080d11cbd053f65de1a9c7efd096fe2a0fde6244185bd452bb11fdeb98db3
   - kind: registry
     name: libglycin-rebind-sys
-    version: 0.1.0-rc
-    sha: 025ea38f70fa3da6228897f9a67016592308421a575a24d9c201acbd7c518483
+    version: 0.1.0
+    sha: 65fecb1928f26a984b937deadbb0998f1a0f3c3db7fa2b9a493322e80b1f9f4b
   - kind: registry
     name: memchr
     version: 2.8.0
     sha: f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79
   - kind: registry
     name: moxcms
-    version: 0.7.11
-    sha: ac9557c559cd6fc9867e122e20d2cbefc9ca29d80d027a8e39310920ed2f0a97
+    version: 0.8.1
+    sha: bb85c154ba489f01b25c0d36ae69a87e4a1c73a72631fc6c0eb6dde34a73e44b
   - kind: registry
     name: muldiv
     version: 1.0.1
@@ -293,8 +293,8 @@ sources:
     sha: 071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841
   - kind: registry
     name: once_cell
-    version: 1.21.3
-    sha: 42f5e15c9953c5e4ccceeb2e7382a716482c34515315f7b03532b8b4e8393d2d
+    version: 1.21.4
+    sha: 9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50
   - kind: registry
     name: oorandom
     version: 11.1.5
@@ -341,8 +341,8 @@ sources:
     sha: b5a041e753da8b807c9255f28de81879c78c876392ff2469cde94799b2896b9d
   - kind: registry
     name: quote
-    version: 1.0.44
-    sha: 21b2ebcf727b7760c461f091f9f0f539b77b8e87f2fd88131e7f1b433b3cece4
+    version: 1.0.45
+    sha: 41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924
   - kind: registry
     name: rayon
     version: 1.11.0
@@ -505,16 +505,16 @@ sources:
     sha: ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc
   - kind: registry
     name: winnow
-    version: 0.7.14
-    sha: 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
+    version: 0.7.15
+    sha: df79d97927682d2fd8adb29682d1140b343be4ac0f08fd68b7765d9c059d3945
   - kind: registry
     name: zerocopy
-    version: 0.8.40
-    sha: a789c6e490b576db9f7e6b6d661bcc9799f7c0ac8352f56ea20193b2681532e5
+    version: 0.8.42
+    sha: f2578b716f8a7a858b7f02d5bd870c14bf4ddbbcf3a4c05414ba6503640505e3
   - kind: registry
     name: zerocopy-derive
-    version: 0.8.40
-    sha: f65c489a7071a749c849713807783f70672b28094011623e200cb86dcb835953
+    version: 0.8.42
+    sha: 7e6cc098ea4d3bd6246687de65af3f920c430e236bee1e3bf2e441463f08a02f
   - kind: registry
     name: zmij
     version: 1.0.21
