@@ -90,6 +90,8 @@ Options:
 
   --credential KEY=VALUE     Add credential. VALUE can start with '@' to point
                              to a file.
+
+  --snapshot NAME            Create or revert to snapshot.
 EOF
 }
 
@@ -166,6 +168,10 @@ while [ $# -gt 0 ]; do
         --credential)
             shift
             add_credential "$1"
+            ;;
+        --snapshot)
+            shift
+            snapshot="$1"
             ;;
         --)
             shift
@@ -280,17 +286,28 @@ if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${l
     rm -rf "${checkout}"
 fi
 
-if ! [ -f "${STATE_DIR}/OVMF_CODE.fd" ] || ! [ -f "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" ]; then
+if ! [ -f "${STATE_DIR}/OVMF_CODE.fd.qcow2" ] || ! [ -f "${STATE_DIR}/OVMF_VARS.fd.qcow2" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
     "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf.bst
     "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
-    cp "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd"
-    cp "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd"
+    qemu-img convert -f raw -O qcow2 "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd.qcow2"
+    qemu-img convert -f raw -O qcow2 "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS.fd.qcow2"
+    qemu-img snapshot -c template -f qcow2 "${STATE_DIR}/OVMF_VARS.fd.qcow2"
 fi
 
-if [ "${reset_secure+set}" = set ] || ! [ -f "${STATE_DIR}/OVMF_VARS.fd" ]; then
-    cp "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" "${STATE_DIR}/OVMF_VARS.fd"
+if [ "${reset_secure+set}" = set ]; then
+    qemu-img snapshot -a template -f qcow2 "${STATE_DIR}/OVMF_VARS.fd.qcow2"
+fi
+
+if [ "${snapshot+set}" = set ]; then
+    for disk in "${STATE_DIR}/OVMF_VARS.fd.qcow2" "${STATE_DIR}/disk.qcow2"; do
+        if [ "$(qemu-img info "${disk}" --output json | jq -r --arg snapshot "${snapshot}" '.snapshots|map(select(.name == $snapshot))|length')" -eq 0 ]; then
+            qemu-img snapshot -c "${snapshot}" -f qcow2 "${disk}"
+        else
+            qemu-img snapshot -a "${snapshot}" -f qcow2 "${disk}"
+        fi
+    done
 fi
 
 QEMU_ARGS=()
@@ -300,15 +317,15 @@ QEMU_ARGS+=(-cpu host)
 QEMU_ARGS+=(-smp 4)
 QEMU_ARGS+=(-netdev user,id=net1)
 QEMU_ARGS+=(-device virtio-net-pci,netdev=net1,bootindex=-1,romfile="")
-QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_CODE.fd,readonly=on,format=raw")
-QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_VARS.fd,format=raw")
+QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_CODE.fd.qcow2,readonly=on,format=qcow2")
+QEMU_ARGS+=(-drive "if=pflash,file=${STATE_DIR}/OVMF_VARS.fd.qcow2,format=qcow2")
 if ! [ "${no_tpm+set}" = set ]; then
     QEMU_ARGS+=(-chardev "socket,id=chrtpm,path=${TPM_SOCK}")
     QEMU_ARGS+=(-tpmdev emulator,id=tpm0,chardev=chrtpm)
     QEMU_ARGS+=(-device tpm-tis,tpmdev=tpm0)
 fi
 
-QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.img,media=disk,format=raw,discard=on")
+QEMU_ARGS+=(-drive "if=none,id=boot-disk,file=${STATE_DIR}/disk.qcow2,media=disk,format=qcow2,discard=on")
 QEMU_ARGS+=(-device "virtio-blk-pci,drive=boot-disk,bootindex=1")
 
 readonly=off
@@ -317,7 +334,7 @@ if [ "${live-}" = cdrom ]; then
 fi
 
 if [ "${reset_installed+set}" = set ]; then
-    rm -f "${STATE_DIR}/disk.img"
+    rm -f "${STATE_DIR}/disk.qcow2"
 fi
 
 if [ "${live+set}" = set ]; then
@@ -332,11 +349,16 @@ elif [ "${pre_install+set}" = set ]; then
     definitions="$(dirname ${0})/repart.raw.d"
     truncate --size 50G "${STATE_DIR}/disk.img"
     run0 -- systemd-repart --dry-run=no --image="${STATE_DIR}/disk.iso" --definitions="${definitions}" --empty=force --size=auto "${STATE_DIR}/disk.img"
+    qemu-img convert -f raw -O qcow2 "${STATE_DIR}/disk.img" "${STATE_DIR}/disk.qcow2"
+    rm "${STATE_DIR}/disk.img"
 elif [ "${from_image+set}" = set ]; then
-    cp "${from_image}" "${STATE_DIR}/disk.img"
+    qemu-img convert -f raw -O qcow2 "${from_image}" "${STATE_DIR}/disk.qcow2"
+    qemu-img resize -f qcow2 "${STATE_DIR}/disk.qcow2" 50G
 fi
 
-truncate --size 50G "${STATE_DIR}/disk.img"
+if ! [ -f "${STATE_DIR}/disk.qcow2" ]; then
+    qemu-img create -f qcow2 "${STATE_DIR}/disk.qcow2" 50G
+fi
 
 if [ "${home_disk+set}" = set ]; then
     QEMU_ARGS+=(-drive "if=none,id=home-disk,file=${home_disk},media=disk,format=raw,discard=on")
