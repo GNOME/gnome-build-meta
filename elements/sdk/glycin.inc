@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.1.rc-4-g9a317f3f631d601b6248c23a348b9ec7cf2abe46
+  ref: 2.1.rc-5-gc71ff2ff2b14209ba60cf91a5d5ec6a84bf07f35
 - kind: cargo2
   ref:
   - kind: registry
@@ -467,8 +467,8 @@ sources:
     sha: 841d1cc9bed7f9236f321df977030373f4a4163ae1a7dbfe1a51a2c1a51d9100
   - kind: registry
     name: hayro-jpeg2000
-    version: 0.3.3
-    sha: 16bca62a003c7e4f4bedc659500e0be1b8fd7b0a432b1884418a86d35de5b04c
+    version: 0.3.4
+    sha: c1a74cfc18c0093ef8009a0d6c1ba3024df0cce228503a14c1372e1e23eed43e
   - kind: registry
     name: heck
     version: 0.5.0
@@ -499,8 +499,8 @@ sources:
     sha: b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39
   - kind: registry
     name: image
-    version: 0.25.9
-    sha: e6506c6c10786659413faa717ceebcb8f70731c0a60cbae39795fdf114519c1a
+    version: 0.25.10
+    sha: 85ab80394333c02fe689eaf900ab500fbd0c2213da414687ebf995a65d5a6104
   - kind: registry
     name: image-extras
     version: 0.1.0
@@ -651,8 +651,8 @@ sources:
     sha: a69bcab0ad47271a0234d9422b131806bf3968021e5dc9328caf2d4cd58557fc
   - kind: registry
     name: moxcms
-    version: 0.7.11
-    sha: ac9557c559cd6fc9867e122e20d2cbefc9ca29d80d027a8e39310920ed2f0a97
+    version: 0.8.1
+    sha: bb85c154ba489f01b25c0d36ae69a87e4a1c73a72631fc6c0eb6dde34a73e44b
   - kind: registry
     name: multiversion
     version: 0.8.0
@@ -955,8 +955,8 @@ sources:
     sha: f60246a4944f24f6e018aa17cdeffb7818b76356965d03b07d6a9886e8962185
   - kind: registry
     name: tiff
-    version: 0.10.3
-    sha: af9605de7fee8d9551863fd692cce7637f548dbd9db9180fcc07ccc6d26c336f
+    version: 0.11.3
+    sha: b63feaf3343d35b6ca4d50483f94843803b0f51634937cc2ec519fc32232bc52
   - kind: registry
     name: tokio
     version: 1.50.0
@@ -1195,20 +1195,12 @@ sources:
     sha: b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
   - kind: registry
     name: zune-core
-    version: 0.4.12
-    sha: 3f423a2c17029964870cfaabb1f13dfab7d092a62a29a89264f4d36990ca414a
-  - kind: registry
-    name: zune-core
     version: 0.5.1
     sha: cb8a0807f7c01457d0379ba880ba6322660448ddebc890ce29bb64da71fb40f9
   - kind: registry
     name: zune-inflate
     version: 0.2.54
     sha: 73ab332fe2f6680068f3582b16a24f90ad7096d5d39b974d1c0aff0125116f02
-  - kind: registry
-    name: zune-jpeg
-    version: 0.4.21
-    sha: 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
   - kind: registry
     name: zune-jpeg
     version: 0.5.12
