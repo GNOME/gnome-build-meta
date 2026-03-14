@@ -257,12 +257,16 @@ async fn make_policy() -> Result<(), InstallerError> {
 async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), InstallerError> {
     let encrypt : String;
     let discard : String;
+    let volume_name : String;
     if has_tpm2 {
         encrypt = "key-file+tpm2".to_string();
         discard = "Discard=yes\n".to_string();
+        volume_name = "VolumeName=root\n".to_string();
+
     } else {
         encrypt = "off".to_string();
         discard = "".to_string();
+        volume_name = "".to_string();
     }
 
     let mut esp = std::fs::File::create(path.join("10-esp.conf"))?;
@@ -323,7 +327,8 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
         Label=root\n\
         Encrypt={encrypt}\n\
         {discard}\
-        CopyBlocks=/dev/null\n"
+        BlockDeviceReplace=/\n\
+        {volume_name}"
     ).as_bytes())?;
 
     Ok(())
@@ -391,74 +396,6 @@ async fn stop_zram(conn : &Connection) -> Result<(), InstallerError> {
     }
 }
 
-async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(), InstallerError> {
-    let mut real_root = root.to_string();
-
-    if has_tpm2 {
-        let systemd = SystemdProxy::new(conn).await?;
-        let cryptsetup = systemd.load_unit("systemd-cryptsetup@root.service").await?;
-        let _ = systemd.start_unit("systemd-cryptsetup@root.service", "replace").await?;
-        while !matches!(cryptsetup.active_state().await?.as_str(), "active"|"failed") {
-            cryptsetup.receive_active_state_changed().await;
-        }
-        match cryptsetup.active_state().await?.as_str() {
-            "active" => (),
-            _ => return Err(InstallerError::Unit(UnitError::new("systemd-cryptsetup@root.service"))),
-        }
-
-        real_root = "/dev/mapper/root".to_string();
-    }
-
-    let btrfs_replace = Command::new("btrfs")
-        .arg("replace").arg("start").arg("1").arg(real_root).arg("/")
-        .spawn()?
-        .wait().await?;
-    btrfs_replace.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("btrfs replace", btrfs_replace))?;
-
-    let mut has_started = false;
-    for _ in 0..20 {
-        let btrfs_status = Command::new("btrfs")
-            .arg("replace").arg("status").arg("/")
-            .output().await?;
-        let never_started = match String::from_utf8(btrfs_status.stdout) {
-            Err(_) => false,
-            Ok(s) => match s.as_str() {
-                "Never started\n" => true,
-                _ => false
-            }
-        };
-        if !never_started {
-            btrfs_status.status.code().filter(|code| *code == 0)
-                .ok_or(CommandError::new("btrfs replace status", btrfs_status.status))?;
-            has_started = true;
-            break;
-        }
-        tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
-    }
-    if !has_started {
-        return Err(InstallerError::Command(CommandError::new("btrfs replace", btrfs_replace)))
-    }
-
-    let btrfs_label = Command::new("btrfs")
-        .arg("filesystem").arg("label").arg("/").arg("root")
-        .spawn()?
-        .wait().await?;
-    btrfs_label.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("btrfs filesystem label", btrfs_label))?;
-
-    let btrfs_resize = Command::new("btrfs")
-        .arg("filesystem").arg("resize").arg("1:max").arg("/")
-        .spawn()?
-        .wait().await?;
-    btrfs_resize.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("btrfs filesystem resize", btrfs_resize))?;
-
-    stop_zram(conn).await?;
-
-    Ok(())
-}
-
 async fn do_install(conn: &Connection, device: String, recovery_passphrase : String, oem_install : bool, has_tpm2 : bool, has_pcrlock : bool) -> Result<(), InstallerError> {
     let repart_d = tempfile::tempdir()?;
     let repart_d_path = repart_d.path().to_str().ok_or(GenericInstallError::new("bad path for repart.d"))?;
@@ -471,6 +408,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
     dry_run.args([
         "--dry-run=yes",
         "--empty=require",
+        "--offline=no",
     ]);
 
     dry_run.arg(format!("--definitions={repart_d_path}"));
@@ -520,6 +458,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
         "--dry-run=no",
         "--empty=require",
         "--json=short",
+        "--offline=no",
     ]);
 
     cmd.arg(format!("--definitions={repart_d_path}"));
@@ -597,11 +536,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
                 partitions.get("21-usr-A.conf").ok_or(GenericInstallError::new("missing 21-usr-A.conf"))?,
                 partitions.get("20-usr-verity-A.conf").ok_or(GenericInstallError::new("missing 20-usr-verity-A.conf"))?
             ),
-            swap_root(
-                conn,
-                has_tpm2,
-                partitions.get("50-root.conf").ok_or(GenericInstallError::new("missing 50-root.conf"))?,
-            )
+            stop_zram(conn)
         )?;
         remove_loop().await?;
      }
