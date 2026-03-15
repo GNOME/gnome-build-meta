@@ -281,7 +281,8 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
          # verity for 4G, algo sha256, block size 512 and hash size 512 is 275M\n\
          SizeMinBytes=275M\n\
          SizeMaxBytes=275M\n\
-         CopyBlocks=auto\n"
+         CopyBlocks=auto\n\
+         VerityHashReplace=usr\n"
     ).as_bytes())?;
 
     let mut usr_a = std::fs::File::create(path.join("21-usr-A.conf"))?;
@@ -291,7 +292,8 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
          Label=gnomeos_usr_%A\n\
          SizeMinBytes=4G\n\
          SizeMaxBytes=4G\n\
-         CopyBlocks=auto\n"
+         CopyBlocks=auto\n\
+         VerityDataReplace=usr\n"
     ).as_bytes())?;
 
     let mut verity_b = std::fs::File::create(path.join("30-usr-verity-B.conf"))?;
@@ -337,16 +339,6 @@ async fn enable_efi(conn : &Connection) -> Result<(), InstallerError> {
         "active" => Ok(()),
         _ => Err(InstallerError::Unit(UnitError::new("efi.automount"))),
     }
-}
-
-async fn swap_verity(new_usr : &str, new_verity : &str) -> Result<(), InstallerError> {
-    let cmd = Command::new("/usr/lib/gnomeos-installer/swap-verity")
-        .arg("usr").arg(new_usr).arg(new_verity)
-        .spawn()?
-        .wait().await?;
-    cmd.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("swap-verity", cmd))?;
-    Ok(())
 }
 
 async fn remove_loop() -> Result<(), InstallerError> {
@@ -535,10 +527,6 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
 
         try_join!(
             enable_efi(conn),
-            swap_verity(
-                partitions.get("21-usr-A.conf").ok_or(GenericInstallError::new("missing 21-usr-A.conf"))?,
-                partitions.get("20-usr-verity-A.conf").ok_or(GenericInstallError::new("missing 20-usr-verity-A.conf"))?
-            ),
             stop_zram(conn)
         )?;
         remove_loop().await?;

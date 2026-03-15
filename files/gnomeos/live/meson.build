@@ -41,16 +41,6 @@ executable(
   install : true,
 )
 
-executable(
-  'swap-verity',
-  [
-    'swap-verity.c',
-  ],
-  dependencies : [devmapper],
-  install_dir: get_option('prefix') / 'lib' / 'gnomeos-installer',
-  install: true,
-)
-
 subdir('rules.d')
 
 systemdsystemunitdir = systemd.get_pkgconfig_variable('systemdsystemunitdir')

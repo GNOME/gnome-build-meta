@@ -7,10 +7,10 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:valentindavid/systemd.git
-  track: refs/heads/valentindavid/repart-btrfs-replace
+  track: refs/heads/valentindavid/repart-verity-replace
   exclude:
   - '*-rc*'
-  ref: v250-rc2-32033-g08385cb02ae94520c275aeb199f8362d2ac83d88
+  ref: v250-rc2-32020-g7197200f8af8cb8b4c434ba4fd3ac8489f0eba41
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
