@@ -80,6 +80,8 @@ Options:
 
   --spice-app                Run a spice app.
 
+  --gtk                      Use gtk ui.
+
   --home-disk PATH           Also mount home disk as an image file
 
   --home-disk-key PATH       Use public key for signing home disk. By default,
@@ -146,6 +148,9 @@ while [ $# -gt 0 ]; do
             ;;
         --spice-app)
             spice_app=1
+            ;;
+        --gtk)
+            gtk=1
             ;;
         --home-disk)
             shift
@@ -358,6 +363,15 @@ fi
 QEMU_ARGS+=(-name "${VM_NAME}")
 
 QEMU_ARGS+=(-device virtio-vga-gl)
+
+if [ "${spice_app+set}" != set ] && [ "${gtk+set}" != set ]; then
+    if [ "$(gdbus call --session --dest org.freedesktop.portal.Desktop --object-path /org/freedesktop/portal/desktop --method org.freedesktop.portal.OpenURI.SchemeSupported "spice" {})" = "(true,)" ]; then
+        spice_app=1
+    else
+        gtk=1
+    fi
+fi
+
 if [ "${spice_app+set}" = set ]; then
     QEMU_ARGS+=(-display spice-app,gl=on)
     QEMU_ARGS+=(-device virtio-serial-pci
