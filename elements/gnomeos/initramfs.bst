@@ -27,10 +27,6 @@ config:
        --seed "%{sysroot-seed}" \
        --noroot --noboot >/dev/null
 
-  - dbus-uuidgen >/etc/machine-id
-  - SYSTEMD_ESP_PATH=/efi bootctl --no-variables install
-  - rm /etc/machine-id
-
   - mkdir -p "%{install-root}/efi/EFI/Linux"
 
   - |

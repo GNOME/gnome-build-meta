@@ -2,6 +2,7 @@ kind: manual
 
 build-depends:
 - gnomeos/initramfs.bst
+- gnomeos/replace-signed-systemd-boot.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
 
@@ -17,7 +18,7 @@ config:
     rm -rf "%{install-root}/efi/EFI/Linux"
 
   - |
-    install -Dm644 "/efi/EFI/systemd/systemd-boot%{efi-arch}.efi" "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
+    install -Dm644 %{indep-libdir}/systemd/boot/efi/systemd-boot%{efi-arch}.efi "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
   - |
     case '%{arch}' in
