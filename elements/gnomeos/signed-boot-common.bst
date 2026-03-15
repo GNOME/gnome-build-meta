@@ -1,9 +1,11 @@
 kind: manual
 
 build-depends:
-- gnomeos/replace-signed-systemd-boot.bst
-- gnomeos-deps/efitools-maybe.bst
-- gnomeos-deps/shim-maybe.bst
+- filename:
+  - gnomeos/efi-keys.bst
+  - gnomeos-deps/shim-maybe.bst
+  - gnomeos/replace-signed-systemd-boot.bst
+  strict: true
 - freedesktop-sdk.bst:components/sbsigntools.bst
 
 variables:
@@ -17,7 +19,7 @@ config:
       x86_64|aarch64)
         mkdir -p '%{install-root}/efi/loader/keys/auto'
         for key in PK KEK DB; do
-          cp "%{datadir}/efitools/efi/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
+          cp "%{datadir}/efi-keys/${key}-mic.auth" "%{install-root}/efi/loader/keys/auto/${key}.auth"
         done
       ;;
     esac
@@ -27,7 +29,7 @@ config:
       x86_64|aarch64)
         mkdir -p '%{install-root}/efi/loader/keys/private'
         for key in PK KEK DB; do
-          cp "%{datadir}/efitools/efi/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
+          cp "%{datadir}/efi-keys/${key}.auth" "%{install-root}/efi/loader/keys/private/${key}.auth"
         done
       ;;
     esac

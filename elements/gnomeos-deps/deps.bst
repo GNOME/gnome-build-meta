@@ -59,7 +59,6 @@ depends:
 - gnomeos-deps/noto-cjk.bst
 - gnomeos-deps/words.bst
 
-- gnomeos-deps/efitools-maybe.bst
 - gnomeos-deps/mokutil.bst
 
 # For gvfs
