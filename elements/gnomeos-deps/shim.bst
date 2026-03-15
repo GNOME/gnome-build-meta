@@ -36,4 +36,5 @@ variables:
 
 config:
   configure-commands:
-  - sbsiglist --owner '%{gnomeos-keys-uuid}' --type x509 boot-keys/VENDOR.crt --output boot-keys/VENDOR.esl
+  - openssl x509 -inform PEM -in boot-keys/VENDOR.crt -outform DER -out boot-keys/VENDOR.der
+  - sbsiglist --owner '%{gnomeos-keys-uuid}' --type x509 boot-keys/VENDOR.der --output boot-keys/VENDOR.esl
