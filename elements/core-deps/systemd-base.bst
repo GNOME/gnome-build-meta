@@ -6,16 +6,11 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
-  (?):
-  - channel == "nightly":
-      track: main
-  - channel == "stable":
-      track: v*
-      version-guess-pattern: '(\d+)(?:\.(\d+))?'
-      exclude:
-      - '*-rc*'
-  ref: v261-rc1-9-g4d18eac5a99dbc8198f25cde9175e66f27e92cbc
+  url: github:valentindavid/systemd.git
+  track: refs/heads/valentindavid/repart-verity-replace
+  exclude:
+  - '*-rc*'
+  ref: v250-rc2-34277-g1c84ba95069aba110fd87d6ae1134dfbc676de2b
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
