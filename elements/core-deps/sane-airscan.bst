@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:alexpevzner/sane-airscan.git
   track: '*.*'
-  ref: 0.99.36-0-g48cfe8d3ae4ad22006fa002852c9363627d0f78d
+  ref: 0.99.37-0-g03eddd0d8058c482462bccabadad0e56e8400cb4
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst

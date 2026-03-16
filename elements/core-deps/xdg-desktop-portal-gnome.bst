@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:xdg-desktop-portal-gnome/50/xdg-desktop-portal-gnome-50.rc.tar.xz
-  ref: a6be38338ad510124b475ca68c40f24c93e5c97470a5240e6aff812064c94dee
+  url: gnome_downloads:xdg-desktop-portal-gnome/50/xdg-desktop-portal-gnome-50.0.tar.xz
+  ref: ceeef2fb68b34b3f66a3def0a332a22a70af272641fb6c50065b7a2fde3d5759
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-keyring/48/gnome-keyring-48.0.tar.xz
-  ref: f20518c920e9ea3f9c9b8b44be8c50d8d7feecd0dd5624960f77bd2ca4fbeb9d
+  url: gnome_downloads:gnome-keyring/50/gnome-keyring-50.0.tar.xz
+  ref: cbd72062c53c9702bc2c4733991ad5f051ca682882b30905a2829bcf1a8ecc7c
 build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst

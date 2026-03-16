@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:manuals/50/manuals-50.rc.tar.xz
-  ref: 30acd5e6cb70f8d5415cdd51898605209cf9c9ded0856f474c2dcd5831ddba77
+  url: gnome_downloads:manuals/50/manuals-50.1.tar.xz
+  ref: 7e8441755d0de717428c800e45ae06c85ec964af46ac53b9dc65b41bc3a32c74
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

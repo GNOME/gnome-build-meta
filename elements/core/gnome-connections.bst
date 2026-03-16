@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-connections/50/gnome-connections-50.rc.tar.xz
-  ref: 645432ce883c75efcb2c231cfeeaebb55ea67e735423a30344b7decf9ecb5d95
+  url: gnome_downloads:gnome-connections/50/gnome-connections-50.0.tar.xz
+  ref: 567bf635c6d303ae84c74f37c84df9fb8fcf6a5e9dff452e1414c671744d95d0
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

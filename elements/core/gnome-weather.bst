@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-weather/50/gnome-weather-50.beta.tar.xz
-  ref: f9ffc262aab2267d9fb93ce0d6b38d4c25a1b81bdab2667532df9160d2ab3d2e
+  url: gnome_downloads:gnome-weather/50/gnome-weather-50.0.tar.xz
+  ref: 57de7578605f91f9ab400551ce7738db7505bc88f42a33c70ce7a70167fdb513
 build-depends:
 - sdk/gobject-introspection.bst
 - core-deps/typescript.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:calls/49/calls-49.1.1.tar.xz
-  ref: ae8b9ff044c8805175de8a6ff39c86119e9152efe7da9e6395c1eaf933aa05de
+  url: gnome_downloads:calls/50/calls-50.0.tar.xz
+  ref: f28ccc8e6fbc5079e7b8b5d11a551969bb70d905e5ed90d1b1d868f12045c72f
 
 build-depends:
 - sdk/vala.bst

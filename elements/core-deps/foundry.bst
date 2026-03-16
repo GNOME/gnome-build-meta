@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:foundry/1.1/foundry-1.1.rc.tar.xz
-  ref: 39c22df83e471f08b76404ccb428fc7dcf3a5700e08327e1c6dc8f04db5823c4
+  url: gnome_downloads:foundry/1.1/foundry-1.1.1.tar.xz
+  ref: 46db0d64436c313611cafdfb4ca0d5cec2b97be7d7a5f1be7ee8d0150d4f25c8
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
