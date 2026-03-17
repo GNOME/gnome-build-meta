@@ -374,17 +374,6 @@ async fn remove_loop() -> Result<(), InstallerError> {
     Ok(())
 }
 
-async fn allow_discards() -> Result<(), InstallerError> {
-    let cmd = Command::new("cryptsetup")
-        .arg("refresh").arg("--allow-discards").arg("--persistent")
-        .arg("--key-file=/run/cryptsetup-keys.d/root.key").arg("root")
-        .spawn()?
-        .wait().await?;
-    cmd.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("cryptsetup refresh --allow-discards", cmd))?;
-    Ok(())
-}
-
 async fn stop_zram(conn : &Connection) -> Result<(), InstallerError> {
     let systemd = SystemdProxy::new(conn).await?;
     let zram = systemd.load_unit("systemd-zram-setup@zram1.service").await?;
@@ -412,8 +401,6 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
             "active" => (),
             _ => return Err(InstallerError::Unit(UnitError::new("systemd-cryptsetup@root.service"))),
         }
-
-        allow_discards().await?;
 
         real_root = "/dev/mapper/root".to_string();
     }
@@ -479,6 +466,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
 
     dry_run.args([
         "--dry-run=yes",
+        "--discard=yes",
         "--empty=require",
     ]);
 
@@ -528,6 +516,7 @@ async fn do_install(conn: &Connection, device: String, recovery_passphrase : Str
     cmd.args([
         "--dry-run=no",
         "--empty=require",
+        "--discard=yes",
         "--json=short",
     ]);
 
