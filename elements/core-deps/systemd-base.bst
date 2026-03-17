@@ -15,6 +15,8 @@ sources:
   path: patches/systemd/fix-sysupdate.patch
 - kind: patch
   path: patches/systemd/eltorito.patch
+- kind: patch
+  path: patches/systemd/repart-allow-discards.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

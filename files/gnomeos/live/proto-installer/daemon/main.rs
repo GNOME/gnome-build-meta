@@ -256,10 +256,13 @@ async fn make_policy() -> Result<(), InstallerError> {
 
 async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), InstallerError> {
     let encrypt : String;
+    let discard : String;
     if has_tpm2 {
         encrypt = "key-file+tpm2".to_string();
+        discard = "Discard=yes\n".to_string();
     } else {
         encrypt = "off".to_string();
+        discard = "".to_string();
     }
 
     let mut esp = std::fs::File::create(path.join("10-esp.conf"))?;
@@ -319,6 +322,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
         Type=root\n\
         Label=root\n\
         Encrypt={encrypt}\n\
+        {discard}\
         CopyBlocks=/dev/null\n"
     ).as_bytes())?;
 
@@ -374,17 +378,6 @@ async fn remove_loop() -> Result<(), InstallerError> {
     Ok(())
 }
 
-async fn allow_discards() -> Result<(), InstallerError> {
-    let cmd = Command::new("cryptsetup")
-        .arg("refresh").arg("--allow-discards").arg("--persistent")
-        .arg("--key-file=/run/cryptsetup-keys.d/root.key").arg("root")
-        .spawn()?
-        .wait().await?;
-    cmd.code().filter(|code| *code == 0)
-        .ok_or(CommandError::new("cryptsetup refresh --allow-discards", cmd))?;
-    Ok(())
-}
-
 async fn stop_zram(conn : &Connection) -> Result<(), InstallerError> {
     let systemd = SystemdProxy::new(conn).await?;
     let zram = systemd.load_unit("systemd-zram-setup@zram1.service").await?;
@@ -412,8 +405,6 @@ async fn swap_root(conn : &Connection, has_tpm2 : bool, root : &str) -> Result<(
             "active" => (),
             _ => return Err(InstallerError::Unit(UnitError::new("systemd-cryptsetup@root.service"))),
         }
-
-        allow_discards().await?;
 
         real_root = "/dev/mapper/root".to_string();
     }
