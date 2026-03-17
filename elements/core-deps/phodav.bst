@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:phodav.git
   track: master
-  ref: v3.0-26-ge13dc85c7faaabdc7d3d7302ce18967a3326f2b4
+  ref: v3.0-27-ge146b12bae68fcc554e77b81cea0acd464b1226b
 
 build-depends:
 - sdk/gtk-doc.bst

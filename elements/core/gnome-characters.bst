@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-characters.git
   track: main
-  ref: 50.alpha-42-gaca62be6efe01f688dc7313fcdbb44f464ce9306
+  ref: 50.0-0-g1c86ba27ad401cda20f8eb592757b0800a342930
 
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
