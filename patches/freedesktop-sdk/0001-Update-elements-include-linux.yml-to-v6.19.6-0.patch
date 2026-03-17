@@ -1,0 +1,41 @@
+From 6748cda2d1a6017e11cf389efef8c6900018fb1e Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Sat, 7 Mar 2026 16:08:48 +0100
+Subject: [PATCH] Update elements/include/linux.yml to v6.19.6-0
+
+Updates elements/include/linux.yml to v6.19.6-0 (6a75390)
+Previous version was v6.18.9-0 (adb851e)
+
+This also removes CRYPTO_ANSI_CPRNG, dropped upstream
+---
+ elements/include/linux.yml  | 2 +-
+ files/linux/fdsdk-config.sh | 1 -
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index 29c1f74c2..cd09493d1 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -4,6 +4,6 @@ sources:
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.18.7-0-g5dfbc5357c34bdf81c84aa78bc8e3d6d9ba10aad
++  ref: v6.19.6-0-g6a753907865e35ae986b7b2ad48daa1eab4bcf3a
+ - kind: patch_queue
+   path: patches/linux
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 120d88938..bd4395419 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -89,7 +89,6 @@ module CRYPTO_ADIANTUM
+ module CRYPTO_AEGIS128
+ module CRYPTO_AES
+ module CRYPTO_AES_TI
+-module CRYPTO_ANSI_CPRNG
+ module CRYPTO_ARC4
+ module CRYPTO_BLOWFISH
+ module CRYPTO_CAMELLIA
+-- 
+2.53.0
+
