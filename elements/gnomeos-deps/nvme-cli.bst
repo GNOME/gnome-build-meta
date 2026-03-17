@@ -4,6 +4,8 @@ sources:
 - kind: git_repo
   url: github:linux-nvme/nvme-cli.git
   track: 'v*'
+  exclude:
+  - "*-a*"
   ref: v2.16-0-gfaf7326a2997dea91687fd3daa17fc405910a4c1
 
 build-depends:
