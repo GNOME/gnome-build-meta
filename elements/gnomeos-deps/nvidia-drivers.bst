@@ -72,14 +72,14 @@ config:
     ln -s ../nvidia-suspend.service '%{install-root}%{indep-libdir}'/systemd/system/systemd-suspend.service.wants/
     ln -s ../nvidia-resume.service '%{install-root}%{indep-libdir}'/systemd/system/systemd-resume.service.wants/
     ln -s ../nvidia-resume.service '%{install-root}%{indep-libdir}'/systemd/system/systemd-hibernate.service.wants/
-  
+
   # nvml
   - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-smi
-    
+
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-debugdump
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-ml.so*
 
@@ -90,7 +90,7 @@ config:
 
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-cuda-mps-control
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-cuda-mps-server
-    
+
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libcuda.so*
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-opencl.so*
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libOpenCL.so*
@@ -110,14 +110,14 @@ config:
 
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libcudadebugger.so*
 
-  
+
   # nvpd
   - |
     base_name="$(basename *.run .run)"
     cd "${base_name}"
 
     install -Dm755 -t '%{install-root}%{bindir}' nvidia-persistenced
-    
+
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system' nvidia-persistenced.service
     install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.upholds/'
     ln -s ../nvidia-persistenced.service '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.upholds/'
@@ -163,36 +163,36 @@ config:
 
   # opengl and egl (dont like being decoupled)
   - |
-     base_name="$(basename *.run .run)"
-     cd "${base_name}"
+    base_name="$(basename *.run .run)"
+    cd "${base_name}"
 
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/share/glvnd/egl_vendor.d" 10_nvidia.json
-     install -Dm644 -t "%{install-root}%{datadir}/egl/egl_external_platform.d" 10_nvidia_wayland.json 15_nvidia_gbm.json
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/share/glvnd/egl_vendor.d" 10_nvidia.json
+    install -Dm644 -t "%{install-root}%{datadir}/egl/egl_external_platform.d" 10_nvidia_wayland.json 15_nvidia_gbm.json
 
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/share/vulkan/implicit_layer.d" nvidia_layers.json
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/vulkan/icd.d" nvidia_icd.json
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/share/vulkan/implicit_layer.d" nvidia_layers.json
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/vulkan/icd.d" nvidia_icd.json
 
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" \
-       libnvidia-glcore.so* \
-       libGLX_nvidia.so* \
-       libnvidia-glsi.so* \
-       libnvidia-glvkspirv.so* \
-       libnvidia-eglcore.so* \
-       libnvidia-tls.so* \
-       libEGL_nvidia.so* \
-       libGLESv2_nvidia.so* \
-       libGLESv1_CM_nvidia.so* \
-       libnvidia-egl-wayland.so* \
-       libnvidia-egl-gbm.so*
-       
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib" \
+      libnvidia-glcore.so* \
+      libGLX_nvidia.so* \
+      libnvidia-glsi.so* \
+      libnvidia-glvkspirv.so* \
+      libnvidia-eglcore.so* \
+      libnvidia-tls.so* \
+      libEGL_nvidia.so* \
+      libGLESv2_nvidia.so* \
+      libGLESv1_CM_nvidia.so* \
+      libnvidia-egl-wayland.so* \
+      libnvidia-egl-gbm.so*
+
   # xutils (partial)
   - |
-     base_name="$(basename *.run .run)"
-     cd "${base_name}"
+    base_name="$(basename *.run .run)"
+    cd "${base_name}"
 
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-cfg.so*
-     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-wayland-client.so*
-       
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-cfg.so*
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-wayland-client.so*
+
   # vdpau
   - |
     base_name="$(basename *.run .run)"
@@ -291,10 +291,9 @@ config:
     driver_version=$(cat README.txt | grep "Driver Version" | awk 'BEGIN {FS=": "}; {print $2};')
 
     install -Dm644 -t "%{install-root}%{indep-libdir}/firmware/nvidia/${driver_version}/" firmware/gsp_*.bin
-    
+
   # so symlinks
   - |
-
     for dir in "%{install-root}%{libdir}/GL/default"/{lib,lib/vdpau}; do
       for lib in "${dir}"/*.so*; do
         soname="$(objdump -p "${lib}" | sed "/ *SONAME */{;s///;q;};d")"
