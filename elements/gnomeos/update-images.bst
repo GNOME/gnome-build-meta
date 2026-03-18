@@ -5,22 +5,22 @@ build-depends:
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/devel/layer.bst
+- filename: gnomeos/devel/image.bst
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/snapd/layer.bst
+- filename: gnomeos/snapd/image.bst
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/debug/layer.bst
+- filename: gnomeos/debug/image.bst
   strict: true
   config:
     location: "%{install-root}"
 - filename: gnomeos/debug/layer-tar.bst
   config:
     location: "%{install-root}"
-- filename: gnomeos/codecs-extra/layer.bst
+- filename: gnomeos/codecs-extra/image.bst
   config:
     location: "%{install-root}"
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -29,11 +29,11 @@ build-depends:
 - arch in ["x86_64"]:
     build-depends:
       (>):
-      - filename: gnomeos/nvidia-modules/layer.bst
+      - filename: gnomeos/nvidia-modules/image.bst
         strict: true
         config:
           location: "%{install-root}"
-      - filename: gnomeos/nvidia-runtime/layer.bst
+      - filename: gnomeos/nvidia-runtime/image.bst
         strict: true
         config:
           location: "%{install-root}"
