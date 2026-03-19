@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:pwithnall/malcontent.git
   track: "*.*.*"
-  ref: 0.14.alpha-0-g5d1b799a97f7c986269529baff73f44b193338d4
+  ref: 0.14.0-0-gd28f6635359d02d1068d8b21fb5810e5074b7903
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
