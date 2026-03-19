@@ -61,4 +61,7 @@ config:
     components/systemd-ukify.bst: core-deps/systemd-ukify.bst
     components/systemd-libs.bst: core-deps/systemd-libs.bst
 
+    components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
+    components/xdg-desktop-portal.bst: core-deps/xdg-desktop-portal.bst
+
     components/geoclue-base.bst: gnomeos-deps/geoclue-base.bst
