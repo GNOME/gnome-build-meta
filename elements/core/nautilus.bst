@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/48/nautilus-48.6.tar.xz
-  ref: ad1a2bec66b526ff536981a1760c08212b0fe638e3bf4f0e42110373c75f0d38
+  url: gnome_downloads:nautilus/48/nautilus-48.7.tar.xz
+  ref: 60a7a371b5536fe329ced90cce46fff9b7b3ae256d448e1cb796df29d32ee235
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
