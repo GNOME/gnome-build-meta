@@ -13,6 +13,8 @@ sources:
   ref: v260-0-g3e52279684a53ebf84d1d73d528bf400c5fb3497
 - kind: patch
   path: patches/systemd/fix-sysupdate.patch
+- kind: patch
+  path: patches/systemd/eltorito.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

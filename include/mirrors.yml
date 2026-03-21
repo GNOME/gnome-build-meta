@@ -47,8 +47,6 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kldp_net/tar-files/-/raw/master/
     launchpad:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/tar-files/-/raw/master/
-    libburnia:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_libburnia-project_org/tar-files/-/raw/master/releases/
     libopenraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
     libraw:

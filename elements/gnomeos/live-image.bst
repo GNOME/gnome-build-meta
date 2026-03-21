@@ -7,7 +7,6 @@ build-depends:
 - freedesktop-sdk.bst:components/dosfstools.bst
 - freedesktop-sdk.bst:components/mtools.bst
 - freedesktop-sdk.bst:components/util-linux.bst
-- gnomeos-deps/libisoburn.bst
 - gnomeos/repart-config-iso.bst
 - filename: gnomeos/usr/image.bst
   config:
@@ -81,6 +80,10 @@ config:
   - |
     SYSTEMD_LOG_LEVEL=debug \
       systemd-repart \
+        --el-torito=yes \
+        --el-torito-volume="%{installer-volume-id}" \
+        --el-torito-system=LINUX \
+        --el-torito-publisher=GNOME \
         --sector-size=512 \
         --definitions=definitions \
         --empty=create \
@@ -95,25 +98,6 @@ config:
         /build/disk.raw \
         --json=pretty \
         >'/build/disk.repart.json'
-
-  - |
-    mkdir -p /build/iso-root
-
-  - |
-    mv /build/disk.esp.raw /build/iso-root/esp.img
-
-  - |
-    xorrisofs -o "/build/image.iso" /build/iso-root -partition_offset 480 -e /esp.img -no-emul-boot -boot-load-size 4 -efi-boot-part --efi-boot-image -sysid LINUX -publisher GNOME -volid "%{installer-volume-id}"
-
-  - |
-    dd if=/build/image.iso of=/build/disk.raw bs=2048 skip=16 count=496 seek=16 conv=notrunc
-
-  - |
-    esp_raw_size=$(jq -r '.[]|select(.type=="esp").raw_size' /build/disk.repart.json)
-    esp_offset=$(jq -r '.[]|select(.type=="esp").offset' /build/disk.repart.json)
-    skip=$(((${esp_offset}+${esp_raw_size})/512))
-    # FIXME: not sure what this is and why it is 608*512 in size
-    dd if=/build/image.iso of=/build/disk.raw bs=512 skip="${skip}" seek="${skip}" count=608 conv=notrunc
 
   - |
     mv /build/disk.raw "%{install-root}/disk.iso"
