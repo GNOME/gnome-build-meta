@@ -40,4 +40,5 @@ config:
     GNOMEOS_COMMITS_URL="${commits_url}"
     EOF
 
-  - save-perms.py /sysroot/perms-usr.json /sysroot/usr
+  - mkdir -p /sysroot/usr/lib/tmpfiles.d/
+  - save-perms.py /sysroot /sysroot/usr/lib/tmpfiles.d/gnomeos-initial-debug.conf /usr /etc
