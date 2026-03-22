@@ -33,8 +33,7 @@ config:
   build-commands:
   - mkdir fakecap
   - cp -a /sysroot sysroot
-  - save-perms.py --restore sysroot/perms-usr.json sysroot/usr
-  - save-perms.py --restore sysroot/perms-etc.json sysroot/etc
+  - systemd-tmpfiles --root=sysroot --create --prefix=/usr --prefix=/etc gnomeos-initial-devel.conf
 
   - |
     mkdir -p tmp

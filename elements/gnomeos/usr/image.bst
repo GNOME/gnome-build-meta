@@ -26,7 +26,7 @@ environment-nocache:
 config:
   commands:
   - mkdir /fakecap
-  - save-perms.py --restore /sysroot/perms-usr.json /sysroot/usr
+  - systemd-tmpfiles --root=/sysroot --create --prefix=/usr --prefix=/etc gnomeos-initial-usr.conf
 
   - mkdir -p definitions
   - |

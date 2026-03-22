@@ -82,8 +82,8 @@ config:
     mv -T '/sysroot-codecs-extra/%{libdir}/codecs-extra' '/output/%{libdir}/codecs-extra'
 
   - |
-    mkdir -p '/output/%{libdir}/GL'
+    mkdir -p /'output/%{libdir}/GL'
     mv -T '/sysroot-codecs-extra/%{libdir}/GL/default' '/output/%{libdir}/GL/default'
 
-  - save-perms.py /output/perms-usr.json /output/usr
-  - save-perms.py /output/perms-etc.json /output/etc
+  - mkdir -p /output/usr/lib/tmpfiles.d/
+  - save-perms.py /output /output/usr/lib/tmpfiles.d/gnomeos-initial-codecs-extra.conf /usr /etc

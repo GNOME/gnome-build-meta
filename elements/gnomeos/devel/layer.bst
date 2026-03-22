@@ -90,5 +90,5 @@ config:
     mkdir -p /output
     make-layer /sysroot/usr sysroot-devel/usr /output/usr
 
-  - save-perms.py /output/perms-usr.json /output/usr
-  - save-perms.py /output/perms-etc.json /output/etc
+  - mkdir -p /output/usr/lib/tmpfiles.d/
+  - save-perms.py /output /output/usr/lib/tmpfiles.d/gnomeos-initial-devel.conf /usr /etc

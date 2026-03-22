@@ -33,7 +33,7 @@ config:
   build-commands:
   - mkdir fakecap
   - cp -a /sysroot sysroot
-  - save-perms.py --restore sysroot/perms-usr.json sysroot/usr
+  - systemd-tmpfiles --root=sysroot --create --prefix=/usr --prefix=/etc gnomeos-initial-nvidia-modules.conf
 
   - |
     mkdir -p tmp

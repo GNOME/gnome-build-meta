@@ -39,4 +39,5 @@ config:
     cp /sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules_%{image-version} \
        /sysroot-nvidia-modules/usr/lib/extension-release.d/extension-release.nvidia-modules
 
-  - save-perms.py /sysroot-nvidia-modules/perms-usr.json /sysroot-nvidia-modules/usr
+  - mkdir -p /sysroot-nvidia-modules/usr/lib/tmpfiles.d/
+  - save-perms.py /sysroot-nvidia-modules /sysroot-nvidia-modules/usr/lib/tmpfiles.d/gnomeos-initial-nvidia-modules.conf /usr /etc
