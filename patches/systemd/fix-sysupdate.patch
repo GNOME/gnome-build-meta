@@ -1,0 +1,32 @@
+diff --git a/src/shared/discover-image.c b/src/shared/discover-image.c
+index dd92452315..07331f3a7e 100644
+--- a/src/shared/discover-image.c
++++ b/src/shared/discover-image.c
+@@ -1110,6 +1110,10 @@ int image_discover(
+                         if (dot_or_dot_dot(fname))
+                                 continue;
+ 
++                        /* Ignore sysupdate temporary files */
++                        if (startswith(fname, ".sysupdate."))
++                                continue;
++
+                         fname_path = path_join(search_path, fname);
+                         if (!fname_path)
+                                 return -ENOMEM;
+diff --git a/src/sysupdate/sysupdate-transfer.c b/src/sysupdate/sysupdate-transfer.c
+index 46f3129f5d..35c0e05083 100644
+--- a/src/sysupdate/sysupdate-transfer.c
++++ b/src/sysupdate/sysupdate-transfer.c
+@@ -1609,8 +1609,10 @@ int transfer_process_partial_and_pending_instance(Transfer *t, Instance *i) {
+ 
+         /* Does this instance already exist in the target but isn’t pending? */
+         existing = resource_find_instance(&t->target, i->metadata.version);
+-        if (existing && !existing->is_pending)
+-                return log_error_errno(SYNTHETIC_ERRNO(EINVAL), "Failed to acquire '%s', instance is already in the target but is not pending.", i->path);
++        if (existing && !existing->is_pending) {
++                log_info("Resource '%s' instance is already in the target but is not pending.", i->path);
++                return 0;
++        }
+ 
+         /* All we need to do is compute the temporary paths. We don’t need to do any of the other work in
+          * transfer_acquire_instance(). */
