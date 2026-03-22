@@ -68,5 +68,5 @@ config:
     mkdir -p /output
     make-layer /sysroot/usr /sysroot-nvidia-runtime/usr /output/usr
 
-  - save-perms.py /output/perms-usr.json /output/usr
-
+  - mkdir -p /output/usr/lib/tmpfiles.d
+  - save-perms.py /output /output/usr/lib/tmpfiles.d/gnomeos-initial-nvidia-runtime.conf /usr /etc

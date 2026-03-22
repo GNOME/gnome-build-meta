@@ -2,86 +2,82 @@
 # This saves extended attributes and permissions that BuildStream would lose
 
 import argparse
-import json
 import os
 import stat
+import re
+import subprocess
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--restore', action='store_true')
+parser.add_argument('sysroot')
 parser.add_argument('backup')
-parser.add_argument('root')
+parser.add_argument('roots', nargs='+')
 args = parser.parse_args()
 
-def apply_one(doc, root, rel):
-    p = os.path.join(root, rel)
-    if rel in doc:
-        data = doc[rel]
-        mode = data.get('mode')
-        if mode is not None:
-            os.chmod(p, mode, follow_symlinks=False)
-        for attribute, value in data.get('attributes', {}).items():
-            os.setxattr(p, attribute, bytes.fromhex(value), flags=os.XATTR_CREATE, follow_symlinks=False)
+def escape_bytes(bs):
+    ret = []
+    for b in bs:
+        ret += f'\\x{b:02x}'
+    return ''.join(ret)
 
-def apply(doc, root):
-    for dirpath, dirnames, filenames in os.walk(root):
-        for d in dirnames:
-            p = os.path.join(dirpath, d)
-            if os.path.islink(p):
-                continue
-            apply_one(doc, root, os.path.relpath(p, root))
-        for f in filenames:
-            p = os.path.join(dirpath, f)
-            if os.path.islink(p):
-                continue
-            apply_one(doc, root, os.path.relpath(p, root))
+def escape_char(m):
+    value = ord(m.group(0))
+    if value < (1<<7):
+        return f'\\x{value:02x}'
+    elif value < (1 << 15):
+        return f'\\u{value:04x}'
+    else:
+        return f'\\U{value:08x}'
 
-def retrieve_one(doc, root, rel):
+def escape_value(value):
+    return re.sub(r'[^0-9a-zA-Z._/-]', escape_char, value)
+
+def retrieve_one(sysroot, root, rel):
+    configs = []
     mode = None
     attributes = {}
     p = os.path.join(root, rel)
+    tmpfiles_path = os.path.join('/', os.path.relpath(p, sysroot))
     st = os.lstat(p)
     if stat.S_ISREG(st.st_mode):
         if stat.S_IMODE(st.st_mode) != 0o755 and stat.S_IMODE(st.st_mode) != 0o644:
             mode = stat.S_IMODE(st.st_mode)
+            configs.append(f'z {escape_value(tmpfiles_path)} {mode:04o}')
     elif stat.S_ISDIR(st.st_mode):
         if stat.S_IMODE(st.st_mode) != 0o755:
             mode = stat.S_IMODE(st.st_mode)
+            configs.append(f'z {escape_value(tmpfiles_path)} {mode:04o}')
     else:
-        return None
+        return []
     for attribute in os.listxattr(p, follow_symlinks=False):
-        value = os.getxattr(p, attribute, follow_symlinks=False)
-        print(type(attribute))
-        print(type(value))
-        attributes[attribute] = value.hex()
-    ret = {}
-    if mode is not None:
-        ret['mode'] = mode
-        print('mode', rel, mode)
-    if len(attributes) > 0:
-        ret['attributes'] = attributes
-        print('attrs', rel, attributes)
-    if len(ret) > 0:
-        doc[rel] = ret
+        if attribute == "security.capability":
+            out = subprocess.check_output(['getcap', p], encoding='ascii')
+            _, value = out.splitlines()[0].split(' ', 1)
+            configs.append(f'k {escape_value(tmpfiles_path)} - - - - {value}')
+        else:
+            value = os.getxattr(p, attribute, follow_symlinks=False)
+            configs.append(f't {escape_value(tmpfiles_path)} - - - - {escape_value(attribute)}={value.decode("ascii")}')
 
-def retrieve(root):
-    doc = {}
-    for dirpath, dirnames, filenames in os.walk(root):
-        for d in dirnames:
-            p = os.path.join(dirpath, d)
-            if os.path.islink(p):
-                continue
-            retrieve_one(doc, root, os.path.relpath(p, root))
-        for f in filenames:
-            p = os.path.join(dirpath, f)
-            if os.path.islink(p):
-                continue
-            retrieve_one(doc, root, os.path.relpath(p, root))
-    return doc
+    return configs
 
-if args.restore:
-    with open(args.backup, 'r') as f:
-        apply(json.load(f), args.root)
-else:
-    doc = retrieve(args.root)
-    with open(args.backup, 'w') as f:
-        json.dump(doc, f)
+def retrieve(sysroot, roots):
+    configs = []
+    for r in roots:
+        root = os.path.join(sysroot, os.path.relpath(r, '/'))
+        for dirpath, dirnames, filenames in os.walk(root):
+            for d in dirnames:
+                p = os.path.join(dirpath, d)
+                if os.path.islink(p):
+                    continue
+                configs.extend(retrieve_one(sysroot, root, os.path.relpath(p, root)))
+            for f in filenames:
+                p = os.path.join(dirpath, f)
+                if os.path.islink(p):
+                    continue
+                configs.extend(retrieve_one(sysroot, root, os.path.relpath(p, root)))
+    return configs
+
+configs = retrieve(args.sysroot, args.roots)
+with open(args.backup, 'w') as f:
+    for config in configs:
+        f.write(config)
+        f.write('\n')

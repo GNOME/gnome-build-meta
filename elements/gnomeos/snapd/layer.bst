@@ -91,5 +91,5 @@ config:
   - |
     make-layer sysroot/etc sysroot-snapd/etc /output/etc
 
-  - save-perms.py /output/perms-usr.json /output/usr
-  - save-perms.py /output/perms-etc.json /output/etc
+  - mkdir -p /output/usr/lib/tmpfiles.d/
+  - save-perms.py /output /output/usr/lib/tmpfiles.d/gnomeos-initial-snapd.conf /usr /etc
