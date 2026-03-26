@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.0/glycin-2.0.7.tar.xz
-  ref: c416ac29b6d3ecdc67b90c15537ba1293ceb7af96fa101cae67b7d1d37e50ab0
+  url: gnome_downloads:glycin/2.0/glycin-2.0.8.tar.xz
+  ref: 6b9aef4f626bf969dfd04b563b83d521271a30c3d6df6a6a8463fd55490891df
 - kind: cargo2
   ref:
   - kind: registry
@@ -422,8 +422,8 @@ sources:
     sha: dc7c43cff6a7dc43821e45ebf172399437acd6716fa2186b6852d2b397bf622d
   - kind: registry
     name: glycin
-    version: 3.0.7
-    sha: 502ac59dc785b95521e7deea20e292f3501a11752600c4f37cf34676f794b4e3
+    version: 3.0.8
+    sha: ec917084d2ef710c4321bf217e8782ed155418fc5173a9e1e4f725ad8a4b1d70
   - kind: registry
     name: glycin-common
     version: 1.0.3
@@ -1310,16 +1310,16 @@ sources:
     sha: 29ce2c8a9384ad323cf564b67da86e21d3cfdff87908bc1223ed5c99bc792713
   - kind: registry
     name: zvariant
-    version: 5.7.0
-    sha: 999dd3be73c52b1fccd109a4a81e4fcd20fab1d3599c8121b38d04e1419498db
+    version: 5.9.2
+    sha: 68b64ef4f40c7951337ddc7023dd03528a57a3ce3408ee9da5e948bd29b232c4
   - kind: registry
     name: zvariant_derive
-    version: 5.7.0
-    sha: 6643fd0b26a46d226bd90d3f07c1b5321fe9bb7f04673cb37ac6d6883885b68e
+    version: 5.9.2
+    sha: 484d5d975eb7afb52cc6b929c13d3719a20ad650fea4120e6310de3fc55e415c
   - kind: registry
     name: zvariant_utils
-    version: 3.2.1
-    sha: c6949d142f89f6916deca2232cf26a8afacf2b9fdc35ce766105e104478be599
+    version: 3.3.0
+    sha: f75c23a64ef8f40f13a6989991e643554d9bef1d682a281160cf0c1bc389c5e9
 runtime-depends:
 - freedesktop-sdk.bst:components/bubblewrap.bst
 
