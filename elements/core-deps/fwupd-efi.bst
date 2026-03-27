@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd-efi/archive/refs/tags/1.6.tar.gz
-  ref: 59f90974efb29e17445e62d537c9402992fbf9f83f130317defed659222ca909
+  url: github_files:fwupd/fwupd-efi/archive/refs/tags/1.8.tar.gz
+  ref: c9f1f9b9b967ea50eb0b478f0d7693d6673d4cd76c8e7eb80c55fc44ec928925
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
