@@ -37,6 +37,7 @@ build-depends:
 variables:
   gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
   strip-binaries: ''
+  var-attrs: NON_VOLATILE,RUNTIME_ACCESS,BOOTSERVICE_ACCESS,TIME_BASED_AUTHENTICATED_WRITE_ACCESS
 
 config:
   build-commands:
@@ -118,14 +119,14 @@ config:
       done
 
     # Sign the signature lists
-    - sbvarsign --key PK.key --cert PK.crt PK PK.esl --output PK.auth
-    - sbvarsign --key PK_MIC.key --cert PK_MIC.crt PK PK-mic.esl --output PK-mic.auth
+    - sbvarsign --attrs "%{var-attrs}" --key PK.key --cert PK.crt PK PK.esl --output PK.auth
+    - sbvarsign --attrs "%{var-attrs}" --key PK_MIC.key --cert PK_MIC.crt PK PK-mic.esl --output PK-mic.auth
 
-    - sbvarsign --key PK.key --cert PK.crt KEK KEK.esl --output KEK.auth
-    - sbvarsign --key PK_MIC.key --cert PK_MIC.crt KEK KEK-mic.esl --output KEK-mic.auth
+    - sbvarsign --attrs "%{var-attrs}" --key PK.key --cert PK.crt KEK KEK.esl --output KEK.auth
+    - sbvarsign --attrs "%{var-attrs}" --key PK_MIC.key --cert PK_MIC.crt KEK KEK-mic.esl --output KEK-mic.auth
 
-    - sbvarsign --key KEK.key --cert KEK.crt db DB.esl --output DB.auth
-    - sbvarsign --key KEK_MIC.key --cert KEK_MIC.crt db DB-mic.esl --output DB-mic.auth
+    - sbvarsign --attrs "%{var-attrs}" --key KEK.key --cert KEK.crt db DB.esl --output DB.auth
+    - sbvarsign --attrs "%{var-attrs}" --key KEK_MIC.key --cert KEK_MIC.crt db DB-mic.esl --output DB-mic.auth
 
   install-commands:
   - install -Dm644 -t '%{install-root}%{datadir}/efi-keys' {PK,KEK,DB}.auth
