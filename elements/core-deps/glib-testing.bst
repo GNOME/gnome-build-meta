@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: tecnocode:libglib-testing-0.1.1.tar.xz
-  ref: 1823d2e392c804e18985f8bdb89cc006994d7b832f4907c2934f9049f9844f47
+- kind: git_repo
+  url: gnome_gitlab:pwithnall/libglib-testing.git
+  track: "*.*.*"
+  ref: 0.2.0-0-g3195a83d703acfaf93bc0663ec3d183e1c03cf8e
 
 build-depends:
 - sdk/gtk-doc.bst

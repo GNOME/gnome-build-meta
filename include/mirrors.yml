@@ -71,8 +71,6 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
     spice:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_spice-space_org/tar-files/-/raw/master/download/
-    tecnocode:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/tecnocode_co_uk/tar-files/-/raw/master/downloads/
     tcpdump:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_tcpdump_org/tar-files/-/raw/master/
     thekelleys:
