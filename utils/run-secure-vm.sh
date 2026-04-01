@@ -410,7 +410,7 @@ EOF
 Path=http://10.0.2.2:8080
 EOF
 
-    for t in files/sysupdate/*.transfer; do
+    for t in files/sysupdate{,-nvidia}/*.transfer; do
         transfer="$(basename "${t}")"
         cat <<EOF >"${tmpfiles}"/tmpfiles-local-transfer-"${transfer}".conf
 f~ /etc/sysupdate.d/${transfer}.d/local.conf 0644 root root - $(base64 -w0 "${tmpfiles}"/local.conf)
