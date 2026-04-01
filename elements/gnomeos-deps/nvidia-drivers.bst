@@ -21,10 +21,14 @@ build-depends:
 variables:
   strip-binaries: ''
 
+environment-nocache:
+- MAKEFLAGS
+
 environment:
   TAR_OPTIONS: >-
     --no-same-owner
     --no-same-permissions
+  MAKEFLAGS: -j%{max-jobs}
 
 config:
   build-commands:
