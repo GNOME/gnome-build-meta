@@ -33,6 +33,7 @@ FILES=(
     /usr/lib/systemd/systemd-shutdown
     /usr/lib/nvpcr/cryptsetup.nvpcr
     /usr/lib/nvpcr/hardware.nvpcr
+    /usr/lib/nvpcr/verity.nvpcr
 )
 
 UNITS=(
