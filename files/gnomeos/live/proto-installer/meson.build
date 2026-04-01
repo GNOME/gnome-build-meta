@@ -48,7 +48,7 @@ install_data(
   install_dir: get_option('datadir') / 'dbus-1' / 'system-services',
 )
 
-systemdsystemunitdir = systemd.get_pkgconfig_variable('systemdsystemunitdir')
+systemdsystemunitdir = systemd.get_variable(pkgconfig : 'systemdsystemunitdir')
 
 install_data(
   'gnomeos-installer.service',

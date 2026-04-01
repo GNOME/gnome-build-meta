@@ -27,7 +27,7 @@ executable(
     'generator.c',
   ],
   link_with : [common],
-  install_dir : systemd.get_pkgconfig_variable('systemdsystemgeneratordir'),
+  install_dir : systemd.get_variable(pkgconfig : 'systemdsystemgeneratordir'),
   install : true,
 )
 
@@ -37,7 +37,7 @@ executable(
     'env-generator.c',
   ],
   link_with : [common],
-  install_dir : systemd.get_pkgconfig_variable('systemdutildir') / 'user-environment-generators',
+  install_dir : systemd.get_variable(pkgconfig : 'systemdutildir') / 'user-environment-generators',
   install : true,
 )
 
@@ -53,7 +53,7 @@ executable(
 
 subdir('rules.d')
 
-systemdsystemunitdir = systemd.get_pkgconfig_variable('systemdsystemunitdir')
+systemdsystemunitdir = systemd.get_variable(pkgconfig : 'systemdsystemunitdir')
 
 install_data(
   'live.conf',
