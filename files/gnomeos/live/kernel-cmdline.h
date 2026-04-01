@@ -3,6 +3,6 @@
 
 #include <stdbool.h>
 
-bool parse_cmdline(bool *is_live);
+bool parse_cmdline(bool *is_live, bool *is_safe, bool *is_nvidia);
 
 #endif

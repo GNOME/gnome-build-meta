@@ -67,7 +67,7 @@ config:
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --cmdline='module_blacklist=nouveau nvidia_drm.modeset=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1' \
+      --cmdline='gnomeos.nvidia-mode=1' \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/nvidia.addon.efi"
 
@@ -84,6 +84,11 @@ config:
         )
       ;;
     esac
+
+    ukify build \
+      --profile="TITLE=Safe mode" \
+      --cmdline="%{kcmdline} usrhash=${roothash} gnomeos.safe-mode=1" \
+      --output="profile-safe-mode.efi"
 
     # Note: Our security model allows for an attacker to replace the rootfs
     # with a maliciously crafted one. This means that it's only safe to
@@ -117,6 +122,7 @@ config:
       --secureboot-certificate=VENDOR.crt \
       --linux="/boot/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img" \
+      --join-profile="profile-safe-mode.efi" \
       "${MICROCODE[@]}" "${DEVICETREES[@]}"
 
 sources:

@@ -115,7 +115,7 @@ static char *kernel_cmdline() {
         return strdup(buf);
 }
 
-bool parse_cmdline(bool *is_live) {
+bool parse_cmdline(bool *is_live, bool *is_safe, bool *is_nvidia) {
         _cleanup_(freestr) char* cmdline = NULL;
         char *current, *param, *val;
 
@@ -123,14 +123,32 @@ bool parse_cmdline(bool *is_live) {
         if (!cmdline)
                 return false;
 
-        *is_live = false;
+        if (is_live)
+                *is_live = false;
+        if (is_safe)
+                *is_safe = false;
+        if (is_nvidia)
+                *is_nvidia = false;
 
         current = cmdline;
         while (*current) {
                 current = kernel_next_arg(current, &param, &val);
                 if (strcmp(param, "root") == 0) {
                         if (strcmp(val, "live:gnomeos") == 0) {
-                                *is_live = true;
+                                if (is_live)
+                                        *is_live = true;
+                        }
+                }
+                if (strcmp(param, "gnomeos.safe-mode") == 0) {
+                        if (strcmp(val, "1") == 0) {
+                                if (is_safe)
+                                        *is_safe = true;
+                        }
+                }
+                if (strcmp(param, "gnomeos.nvidia-mode") == 0) {
+                        if (strcmp(val, "1") == 0) {
+                                if (is_nvidia)
+                                        *is_nvidia = true;
                         }
                 }
         }

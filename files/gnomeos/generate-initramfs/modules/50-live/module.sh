@@ -6,7 +6,7 @@ install() {
     install_files \
         /usr/bin/systemd-detect-virt \
         /usr/lib/systemd/systemd-makefs \
-        /usr/lib/systemd/system-generators/gnomeos-live \
+        /usr/lib/systemd/system-generators/gnomeos-generator \
         /usr/lib/udev/rules.d/90-ramfs-root.rules \
         /usr/lib/systemd/system-generators/zram-generator \
         /usr/lib/systemd/system/systemd-zram-setup@.service \
