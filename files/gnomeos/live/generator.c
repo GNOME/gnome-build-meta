@@ -39,6 +39,24 @@ static void fclosep(FILE **p) {
         }
 }
 
+static bool mask_unit(const char *generator_path, const char* name) {
+        _cleanup_(freestr) char* path = NULL;
+        int r;
+
+        if (0 > asprintf(&path, "%s/%s", generator_path, name)) {
+                kmsg(3, "Could not format string\n");
+                return false;
+        }
+
+        r = symlink("/dev/null", path);
+        if (r < 0) {
+                kmsg(3, "Cannot symlink %s: %s\n", path, STRERROR(errno));
+                return false;
+        }
+
+        return true;
+}
+
 static bool generate_unit(const char *generator_path, const char* name, const char *format, ...) __attribute__ ((format (printf, 3, 4)));
 
 static bool generate_unit(const char *generator_path, const char* name, const char *format, ...) {
@@ -95,7 +113,7 @@ static bool enable_unit(const char *generator_path, const char *from, const char
         return true;
 }
 
-static void mark_live() {
+static bool mark_live() {
         /*
          * This is a marker we can easily check in polkit rules.
          * See files/gnomeos/proto-installer/org.gnome.Installer1.rules
@@ -103,27 +121,16 @@ static void mark_live() {
         _cleanup_(closep) int fd = -EBADF;
         mkdir("/run/gnomeos", 0777);
         fd = open("/run/gnomeos/is-live", O_CREAT|O_WRONLY|O_TRUNC, 0666);
-}
-
-int main(int argc, char *argv[]) {
-        _cleanup_(fclosep) FILE* file = NULL;
-        char *in_initrd_str;
-        int in_initrd;
-        bool is_live;
-
-        if (argc != 4) {
-                kmsg(3, "Wrong number of parameters\n");
-                return 1;
+        if (fd < 0) {
+                kmsg(3, "Cannot create /run/gnomeos/is-live: %s\n", STRERROR(errno));
+                return false;
         }
 
-        if (!parse_cmdline(&is_live))
-                return 1;
+        return true;
+}
 
-        if (!is_live)
-                return 0;
-
-        in_initrd_str = getenv("SYSTEMD_IN_INITRD");
-        in_initrd = in_initrd_str && (strcmp(in_initrd_str, "") != 0) && (strcmp(in_initrd_str, "0") != 0);
+static bool handle_live(const char *generator_path, bool in_initrd) {
+        _cleanup_(fclosep) FILE* file = NULL;
 
         if (in_initrd) {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
@@ -131,21 +138,26 @@ int main(int argc, char *argv[]) {
                 fprintf(file, "[zram1]\nmount-point=/sysroot\nfs-type=btrfs\n");
                 fclosep(&file);
 
-                if (!enable_unit(argv[1], "initrd-root-device.target.wants", "systemd-zram-setup@zram1.service", "/usr/lib/systemd/system"))
-                        return 1;
+                if (!enable_unit(generator_path, "initrd-root-device.target.wants", "systemd-zram-setup@zram1.service", "/usr/lib/systemd/system"))
+                        return false;
 
-                if (!enable_unit(argv[1], "initrd-root-fs.target.wants", "sysroot.mount", ".."))
-                        return 1;
+                if (!enable_unit(generator_path, "initrd-root-fs.target.wants", "sysroot.mount", ".."))
+                        return false;
 
         } else {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
                 file = fopen("/run/systemd/zram-generator.conf.d/zram1.conf", "w");
+                if (!file) {
+                        kmsg(3, "Cannot write /run/systemd/zram-generator.conf.d/zram1.conf: %s\n", STRERROR(errno));
+                        return false;
+                }
                 fprintf(file, "[zram1]\nmount-point=/\nfs-type=btrfs\n");
                 fclosep(&file);
 
-                mark_live();
+                if (!mark_live())
+                        return false;
 
-                if (!generate_unit(argv[1], "var-lib-gnomeos-installer\\x2desp.mount",
+                if (!generate_unit(generator_path, "var-lib-gnomeos-installer\\x2desp.mount",
                                    "[Unit]\n"
                                    "BindsTo=dev-gnomeos\\x2dinstaller-esp.device\n"
                                    "After=dev-gnomeos\\x2dinstaller-esp.device\n"
@@ -155,20 +167,20 @@ int main(int argc, char *argv[]) {
                                    "Where=/var/lib/gnomeos/installer-esp\n"
                                    "Type=vfat\n"
                                    "Options=fmask=0177,dmask=0077,ro,nodev,nosuid,noexec,nosymfollow\n"))
-                        return 1;
+                        return false;
 
-                if (!generate_unit(argv[1], "var-lib-gnomeos-installer\\x2desp.automount",
+                if (!generate_unit(generator_path, "var-lib-gnomeos-installer\\x2desp.automount",
                                    "[Automount]\n"
                                    "Where=/var/lib/gnomeos/installer-esp\n"
                                    "TimeoutIdleSec=120\n"))
-                        return 1;
+                        return false;
 
 
-                if (!enable_unit(argv[1], "local-fs.target.wants", "var-lib-gnomeos-installer\\x2desp.automount", ".."))
-                        return 1;
+                if (!enable_unit(generator_path, "local-fs.target.wants", "var-lib-gnomeos-installer\\x2desp.automount", ".."))
+                        return false;
 
                 /* This is needed for the installer. We just prepare it, so it is loaded. But we not enable it. */
-                if (!generate_unit(argv[1], "systemd-cryptsetup@root.service",
+                if (!generate_unit(generator_path, "systemd-cryptsetup@root.service",
                                    "[Unit]\n"
                                    "Description=Cryptography Setup for %%I\n"
                                    "\n"
@@ -190,10 +202,10 @@ int main(int argc, char *argv[]) {
                                    "OOMScoreAdjust=500\n"
                                    "ExecStart=/usr/bin/systemd-cryptsetup attach root /dev/gnomeos-pab-install/root-luks\n"
                                    "ExecStop=/usr/bin/systemd-cryptsetup detach root\n"))
-                        return 1;
+                        return false;
 
                 /* This is needed for the installer. We just prepare it, so it is loaded. But we not enable it. */
-                if (!generate_unit(argv[1], "efi.mount",
+                if (!generate_unit(generator_path, "efi.mount",
                                    "[Unit]\n"
                                    "BindsTo=dev-gnomeos\\x2dpab\\x2dinstall-esp.device\n"
                                    "After=dev-gnomeos\\x2dpab\\x2dinstall-esp.device\n"
@@ -203,15 +215,73 @@ int main(int argc, char *argv[]) {
                                    "Where=/efi\n"
                                    "Type=vfat\n"
                                    "Options=fmask=0177,dmask=0077,rw,nodev,nosuid,noexec,nosymfollow\n"))
-                        return 1;
+                        return false;
 
                 /* This is needed for the installer. We just prepare it, so it is loaded. But we not enable it. */
-                if (!generate_unit(argv[1], "efi.automount",
+                if (!generate_unit(generator_path, "efi.automount",
                                    "[Automount]\n"
                                    "Where=/efi\n"
                                    "TimeoutIdleSec=120\n"))
-                        return 1;
+                        return false;
         }
+
+        return true;
+}
+
+static bool handle_safe(const char *generator_path, bool in_initrd) {
+        if (in_initrd) {
+                if (!mask_unit(generator_path, "systemd-sysext-initrd.service"))
+                        return false;
+        } else {
+                if (!mask_unit(generator_path, "systemd-sysext.service"))
+                        return false;
+        }
+
+        return true;
+}
+
+static bool handle_nvidia(const char *generator_path) {
+        _cleanup_(fclosep) FILE* file = NULL;
+
+        mkdir("/run/modprobe.d", 0777);
+        file = fopen("/run/modprobe.d/gnomeos-nvidia.conf", "w");
+        if (!file) {
+                kmsg(3, "Cannot write /run/modprobe.d/gnomeos-nvidia.conf: %s\n", STRERROR(errno));
+                return false;
+        }
+        fprintf(file, "blacklist nouveau\noptions nvidia_drm modeset=1 NVreg_PreserveVideoMemoryAllocations=1\n");
+        fclosep(&file);
+
+        return true;
+}
+
+int main(int argc, char *argv[]) {
+        char *in_initrd_str;
+        int in_initrd;
+        bool is_live, is_safe, is_nvidia;
+
+        if (argc != 4) {
+                kmsg(3, "Wrong number of parameters\n");
+                return 1;
+        }
+
+        if (!parse_cmdline(&is_live, &is_safe, &is_nvidia))
+                return 1;
+
+        in_initrd_str = getenv("SYSTEMD_IN_INITRD");
+        in_initrd = in_initrd_str && (strcmp(in_initrd_str, "") != 0) && (strcmp(in_initrd_str, "0") != 0);
+
+        if (is_live)
+                if (!handle_live(argv[1], in_initrd))
+                        return 1;
+
+        if (is_safe)
+                if (!handle_safe(argv[1], in_initrd))
+                        return 1;
+
+        if (!is_safe && is_nvidia)
+                if (!handle_nvidia(argv[1]))
+                                return 1;
 
         return 0;
 }

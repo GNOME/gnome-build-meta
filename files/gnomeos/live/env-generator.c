@@ -9,7 +9,7 @@ int main() {
         const char* original;
         bool is_live;
 
-        if (!parse_cmdline(&is_live))
+        if (!parse_cmdline(&is_live, NULL, NULL))
                 return 1;
 
         if (!is_live)

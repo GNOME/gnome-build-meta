@@ -22,7 +22,7 @@ common = static_library(
 )
 
 executable(
-  'gnomeos-live',
+  'gnomeos-generator',
   [
     'generator.c',
   ],
