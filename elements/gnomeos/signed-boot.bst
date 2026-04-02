@@ -31,7 +31,7 @@ variables:
     quiet splash
     mount.usrflags=ro
     mount.usrfstype=erofs
-    lockdown=confidentiality
+    lockdown=integrity
     systemd.firstboot=no
 
 config:
