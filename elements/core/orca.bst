@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: 50.0-64-gd60f7ec7e30aaca293284ad652db1a613fb10b1b
+  ref: 50.0-138-gc7a6ed888f0f7ba8e7f48b8b431858d1f7127af0
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
@@ -21,3 +21,7 @@ depends:
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  meson-local: >-
+    -Dmathcat=false
