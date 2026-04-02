@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:zenity.git
   track: master
-  ref: 4.2.0-28-gafb5eb7f7b15a53d9feab1e3891e4fef25eb33d2
+  ref: 4.2.0-30-g025d9e51a99d2e5c4f9090f065b06cdf732e518f
 
 build-depends:
 - freedesktop-sdk.bst:components/help2man.bst
