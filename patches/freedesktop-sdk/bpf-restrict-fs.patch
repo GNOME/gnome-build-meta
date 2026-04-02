@@ -1,0 +1,11 @@
+diff -ur freedesktop-sdk.old/files/linux/fdsdk-config.sh freedesktop-sdk/files/linux/fdsdk-config.sh
+--- freedesktop-sdk.old/files/linux/fdsdk-config.sh	2026-04-02 11:08:36.185149555 +0200
++++ freedesktop-sdk/files/linux/fdsdk-config.sh	2026-04-02 11:09:42.085624110 +0200
+@@ -2373,6 +2373,7 @@
+ 
+ # BPF
+ enable FTRACE
++enable FUNCTION_TRACER
+ if has HAVE_KPROBES; then
+     enable KPROBES
+ fi
