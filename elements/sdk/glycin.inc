@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.1.rc-9-g20b22f138736731f8f9b0715dc93f55021600964
+  ref: 2.1.rc-46-g22bc6366e48d999291af1c2271337aae65eabe11
 - kind: cargo2
   ref:
   - kind: registry
@@ -341,6 +341,10 @@ sources:
     name: futures-macro
     version: 0.3.32
     sha: e835b70203e41293343137df5c0664546da5745f82ec9b84d40be8336958447b
+  - kind: registry
+    name: futures-sink
+    version: 0.3.32
+    sha: c39754e157331b013978ec91992bde1ac089843443c49cbc7f46150b0fad0893
   - kind: registry
     name: futures-task
     version: 0.3.32
