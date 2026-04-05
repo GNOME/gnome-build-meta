@@ -47,6 +47,10 @@ depends:
 
 variables:
   optimize-debug: 'false'
+  (?):
+  - arch == "aarch64":
+      local_flags: >-
+        -mbranch-protection=pac-ret
 
 public:
   cpe:
