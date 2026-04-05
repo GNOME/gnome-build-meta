@@ -9,6 +9,8 @@ sources:
   url: gnome_gitlab:mwleeds/gnome-pwa-list.git
   path: subprojects/gnome-pwa-list
   ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
+- kind: patch
+  path: patches/gnome-software-sysupdate-timeouts.patch
 
 build-depends:
 - sdk/gtk-doc.bst
