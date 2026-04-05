@@ -51,6 +51,10 @@ variables:
   - arch == "i686" or arch == "arm":
       debug_flags: "-g1"
 
+  - arch == "aarch64":
+      local_flags: >-
+        -mbranch-protection=pac-ret
+
 public:
   cpe:
     product: webkitgtk+
