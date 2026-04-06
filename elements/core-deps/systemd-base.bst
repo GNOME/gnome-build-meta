@@ -115,10 +115,10 @@ variables:
     -Dvmlinux-h-path='%{includedir}/%{gcc_triplet}/linux/vmlinux.h'
 
 public:
-  cpe:
-    vendor: 'freedesktop'
-    product: 'systemd'
-    version-match: '\d+'
+  # cpe:
+  #   vendor: 'freedesktop'
+  #   product: 'systemd'
+  #   version-match: '\d+'
 
   bst:
     split-rules:
