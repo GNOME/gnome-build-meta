@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-control-center.git
   track: main
-  ref: 50.0-62-gcb6f3c74f01c8a7dd93592f6ebe93a3dd715ab93
+  ref: 50.0-59-ga3be93224c1ebc8fa23c22085f779a1620eb8da6
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
@@ -16,7 +16,7 @@ sources:
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
   track: main
-  ref: 1fe6de799f39b3126e8d0db66fa4f16c10fd9bd6
+  ref: d5eca997aa2fea5af54fdd286d5c1e1aa7c76389
 
 build-depends:
 # These two are more like runtime deps of the tests suite

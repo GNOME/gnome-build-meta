@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-tour.git
   track: main
-  ref: 50.0-3-g6eefedc74e687455c7dac1a192597a921da40e06
+  ref: 50.rc-2-g7177dc503aab9e3f9430ce28ac583dba9cd694ec
 - kind: cargo2
   ref:
   - kind: registry
@@ -83,10 +83,6 @@ sources:
     name: find-msvc-tools
     version: 0.1.9
     sha: 5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582
-  - kind: registry
-    name: formatx
-    version: 0.2.4
-    sha: d8866fac38f53fc87fa3ae1b09ddd723e0482f8fa74323518b4c59df2c55a00a
   - kind: registry
     name: futures-channel
     version: 0.3.32
