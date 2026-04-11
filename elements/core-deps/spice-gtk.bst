@@ -1,9 +1,28 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: spice:gtk/spice-gtk-0.42.tar.xz
-  ref: 9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58
+- kind: git_repo
+  url: freedesktop:spice/spice-gtk.git
+  track: "v*"
+  ref: v0.42-0-gf04479c16f0969fb394ebe74b6eff74e560a42f0
+- kind: git_module
+  url: gitlab:keycodemap/keycodemapdb.git
+  path: subprojects/keycodemapdb
+  ref: 14cdba29ecd7448310fe4ff890e67830b1a40f64
+- kind: git_module
+  url: freedesktop:spice/spice-common.git
+  path: subprojects/spice-common
+  ref: 58d375e5eadc6fb9e587e99fd81adcb95d01e8d6
+- kind: git_module
+  url: github:c3d/recorder.git
+  directory: subprojects/spice-common
+  path: common/recorder
+  ref: d5cbf6caba60d580401c72d0cd18c316cf1be211
+- kind: git_module
+  url: github:c3d/make-it-quick.git
+  directory: subprojects/spice-common/common/recorder
+  path: make-it-quick
+  ref: 7a3a86be7c3fa184bcda6882173bd8ab776ad662
 
 build-depends:
 - core-deps/python-pyparsing.bst

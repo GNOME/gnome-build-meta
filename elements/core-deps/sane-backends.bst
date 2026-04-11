@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: gitlab_files:-/project/429008/uploads/843c156420e211859e974f78f64c3ea3/sane-backends-1.4.0.tar.gz
-  ref: f99205c903dfe2fb8990f0c531232c9a00ec9c2c66ac7cb0ce50b4af9f407a72
+- kind: git_repo
+  url: gitlab:sane-project/backends.git
+  track: '*.*.*'
+  ref: 1.4.0-0-gc7e4b5e35e3d614d2b1181d760a717bfc395a203
 - kind: local
   path: files/sane-backends/sysusers.conf
 

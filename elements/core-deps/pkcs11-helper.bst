@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    github_files:OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.30.0/pkcs11-helper-1.30.0.tar.bz2
-  ref: 4c5815ba910cabf26df08d449ca2909daf4538c9899aa7f7fadc61229d3488a9
+- kind: git_repo
+  url: github:OpenSC/pkcs11-helper.git
+  track: 'pkcs11-helper-*.*.*'
+  ref: pkcs11-helper-1.30.0-0-g8bed16034f629a0361fa8ff89deed2b43dc45d8b
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

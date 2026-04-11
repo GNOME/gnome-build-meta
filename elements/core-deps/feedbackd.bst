@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: phosh:feedbackd/feedbackd-0.8.4.tar.xz
-  ref: b0b5b22216940b485d0d43679dce403583e33438f06c49a83cf1820cdbbca174
+- kind: git_repo
+  url: freedesktop:agx/feedbackd.git
+  track: 'v*.*.*'
+  ref: v0.8.4-0-g69a4ee2538029b97a4bf3a3cd011cd3922e2f3f9
 
 build-depends:
 - sdk/gobject-introspection.bst

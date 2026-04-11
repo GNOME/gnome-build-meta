@@ -1,8 +1,9 @@
 kind: meson
 sources:
-- kind: tar
-  url: videolan_pub:videolan/libdvdcss/1.5.0/libdvdcss-1.5.0.tar.xz
-  ref: 529463e4d1befef82e5c6e470db7661a2db0343e092a2fb0d6c037cab8a5c399
+- kind: git_repo
+  url: videolan:libdvdcss.git
+  track: '*.*.*'
+  ref: 1.5.0-0-gc838ca97553aeb8505b7baf02b9a90f8505de212
 
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst

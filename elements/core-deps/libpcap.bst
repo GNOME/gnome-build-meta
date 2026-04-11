@@ -1,10 +1,14 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: tcpdump:release/libpcap-1.10.5.tar.gz
-  ref: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
+- kind: git_repo
+  url: github:the-tcpdump-group/libpcap.git
+  track: 'libpcap-*'
+  exclude:
+  - '*rc*'
+  - '*.*-bp'
 
+  ref: libpcap-1.10.5-0-gbbcbc9174df3298a854daee2b3e666a4b6e5383a
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

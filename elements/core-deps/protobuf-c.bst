@@ -1,11 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    github_files:protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz
-
-  ref: e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24
+- kind: git_repo
+  url: github:protobuf-c/protobuf-c.git
+  track: 'v*.*.*'
+  ref: v1.5.2-0-g4719fdd7760624388c2c5b9d6759eb6a47490626
 - kind: patch
   path: patches/protobuf-c/compatibility_with_protobuf_34.x.patch
 

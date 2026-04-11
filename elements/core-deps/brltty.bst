@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: brltty:brltty-6.8.tar.xz
-  ref: 9f3c6dc2b65059d20f60836e8f9ebc58d8e518d6a8f8fee33e1d1e50ab43c3bc
+- kind: git_repo
+  url: github:brltty/brltty.git
+  track: 'BRLTTY-*'
+  ref: BRLTTY-6.8-0-g0c47ee1654cac541f2fc3b447987cf00dadd0c16
 
 build-depends:
 - core-deps/tcl.bst

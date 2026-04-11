@@ -1,9 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: samba_pub:samba/stable/samba-4.23.6.tar.gz
-  ref: e3dabd8b5e42dc97669fa0faef032510a94e496b58f7067082e5036d88f0e702
+- kind: git_repo
+  url: gitlab:samba-team/samba
+  track: 'samba-*.*.*'
+  exclude:
+  - '*rc*'
+  ref: samba-4.24.0-0-g86f97e92d182c19435a8b60221a4ca383da77111
 - kind: patch
   path: patches/samba/fix-root-build.patch
 

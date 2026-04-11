@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: freedesktop_software:colord/releases/colord-gtk-0.3.1.tar.xz
-  ref: c176b889b75630a17f4e3d7ef24c09a3e12368e633496087459c8b53ac3a122d
+- kind: git_repo
+  url: github:hughsie/colord-gtk.git
+  track: '*.*.*'
+  ref: 0.3.1-0-gb5a0ca3c512277842011757d9ce2efbfd6a8d888
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
