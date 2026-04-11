@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: github_files:fwupd/fwupd/releases/download/2.1.1/fwupd-2.1.1.tar.xz
-  ref: 0ae697f1f2011571310cef5d96429d8a5d541f73b0025bd2b622c9c7f4fe05b6
+- kind: git_repo
+  url: github:fwupd/fwupd.git
+  track: '*.*.*'
+  ref: 2.1.1-0-g0a3ee12574d05af621c1c0add6b2df73ac66eaca
 
 build-depends:
 - sdk/gi-docgen.bst

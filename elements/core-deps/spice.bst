@@ -1,12 +1,43 @@
 kind: meson
 sources:
-- kind: tar
-  url: spice:releases/spice-server/spice-0.16.0.tar.bz2
-  ref: 0a6ec9528f05371261bbb2d46ff35e7b5c45ff89bb975a99af95a5f20ff4717d
+- kind: git_repo
+  url: freedesktop:spice/spice.git
+  track: "v*.*.*"
+  exclude:
+  # .90 and after are unstable versions
+  - "*.*.9[0-9]*"
+  ref: v0.16.0-0-gb0374ff7da557c509d777283a2779190389536f8
+- kind: git_module
+  url: freedesktop:spice/spice-common.git
+  path: subprojects/spice-common
+  ref: 492c22f4447eec9d430a7c737bdd20cbe93263c4
+- kind: git_module
+  url: github:c3d/recorder.git
+  directory: subprojects/spice-common
+  path: common/recorder
+  ref: d5cbf6caba60d580401c72d0cd18c316cf1be211
+- kind: git_module
+  url: github:c3d/make-it-quick.git
+  directory: subprojects/spice-common/common/recorder
+  path: make-it-quick
+  ref: 7a3a86be7c3fa184bcda6882173bd8ab776ad662
 build-depends:
 - core-deps/python-pyparsing.bst
 - core-deps/spice-protocol.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/sed.bst
+
+# public-stacks/buildsystem-meson.bst depends on git-minimal
+# but spice has a script, build-aux/meson/check-spice-common
+# that runs git ls-files on submodules and thus we need git.bst
+# which can't overlap with git-minimal. Copy over the deps from
+# buildsystem-meson and repalce git-minimal.
+- freedesktop-sdk.bst:components/gcc.bst
+- freedesktop-sdk.bst:components/stripper.bst
+- freedesktop-sdk.bst:components/gettext.bst
+- freedesktop-sdk.bst:components/meson.bst
+- freedesktop-sdk.bst:components/ninja.bst
+- freedesktop-sdk.bst:components/pkg-config.bst
+- freedesktop-sdk.bst:components/git.bst
 depends:
 - core-deps/libcacard.bst
 - sdk/glib.bst

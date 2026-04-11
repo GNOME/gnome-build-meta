@@ -9,8 +9,6 @@
 aliases:
   # file aliases (e.g. tarballs)
   0pointer: https://0pointer.de/
-  bindfs: https://bindfs.org/downloads/
-  brltty: https://brltty.app/archive/
   corpit: https://www.corpit.ru/mjt/
   cpan: https://cpan.metacpan.org/
   crates: https://static.crates.io/
@@ -18,13 +16,9 @@ aliases:
   dotat: https://dotat.at/prog/
   fedora_rpms: https://src.fedoraproject.org/rpms/
   flathub: https://dl.flathub.org/
-  freedesktop_files: https://gitlab.freedesktop.org/
   freedesktop_people: https://people.freedesktop.org/
-  freedesktop_software: https://www.freedesktop.org/software/
-  freerdp: https://pub.freerdp.com/
   ftp_gnu_org: https://ftp.gnu.org/gnu/
   github_files: https://github.com/
-  gitlab_files: https://gitlab.com/
   gnome_downloads: https://download.gnome.org/sources/
   gnome_nightly: https://nightly.gnome.org/
   gnupg_ftp: https://www.gnupg.org/ftp/
@@ -33,24 +27,16 @@ aliases:
   kerberos: https://kerberos.org/
   kldp: https://kldp.net/
   launchpad: https://launchpad.net/
-  libopenraw: https://libopenraw.freedesktop.org/
-  libvirt: https://libvirt.org/sources/
   mozilla: https://ftp.mozilla.org/pub/
   netfilter_pub: https://www.netfilter.org/pub/
   nvidia: https://us.download.nvidia.com/
-  openldap: https://openldap.org/
   openvpn: https://swupdate.openvpn.org/community/releases/
   pagure_releases: https://releases.pagure.org/
   phosh: https://sources.phosh.mobi/releases/
   pypi: https://files.pythonhosted.org/packages/
   qemu: https://download.qemu.org/
-  samba_pub: https://download.samba.org/pub/
   snowballstem: https://snowballstem.org/dist/
   sourceforge: https://downloads.sourceforge.net/
-  spice: https://www.spice-space.org/download/
-  tcpdump: https://www.tcpdump.org/
-  thekelleys: http://www.thekelleys.org.uk/
-  videolan_pub: https://download.videolan.org/pub/
   webkitgtk: https://webkitgtk.org/releases/
 
   # git aliases go here
@@ -64,10 +50,13 @@ aliases:
   lovelyhq: https://dev.lovelyhq.com/
   matrix: https://gitlab.matrix.org/
   netfilter: https://git.netfilter.org/
+  openldap: https://git.openldap.org/openldap/
   purism: https://source.puri.sm/
   sipsolutions: https://git.sipsolutions.net/
   android: https://android.googlesource.com/
   postmarketos: https://gitlab.postmarketos.org/
   samba: https://git.samba.org/
+  thekelleys: http://thekelleys.org.uk/git/
   savannah: https://git.savannah.gnu.org/git/
+  videolan: https://code.videolan.org/videolan/
   xiph: https://gitlab.xiph.org/xiph/

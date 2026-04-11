@@ -1,10 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: 
-    github_files:storaged-project/udisks/releases/download/udisks-2.10.1/udisks-2.10.1.tar.bz2
-  ref: b75734ccf602540dedb4068bec206adcb508a4c003725e117ae8f994d92d8ece
+- kind: git_repo
+  url: github:storaged-project/udisks.git
+  track: 'udisks-*.*.*'
+  ref: udisks-2.10.1-0-g18c9faf089e306ad6f3f51f5cb887a6b9aa08350
 - kind: patch
   path: patches/udisks2/calculate-drive-size-from-all-attached-nvme.patch
 

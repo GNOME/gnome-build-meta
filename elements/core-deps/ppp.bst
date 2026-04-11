@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: samba_pub:ppp/ppp-2.5.2.tar.gz
-  ref: 47da358de54a10cb10bf6ff2cf9b1c03c0d3555518f6182e8f701b8e55733cb2
+- kind: git_repo
+  url: github:ppp-project/ppp.git
+  track: 'v*.*.*'
+  ref: v2.5.2-0-g9f612dc02c34509f062ed63b60bcc7e937e25178
 - kind: patch
   path: patches/ppp/gcc15.patch
 

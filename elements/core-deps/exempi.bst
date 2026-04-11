@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: libopenraw:download/exempi-2.6.6.tar.bz2
-  ref: 7513b7e42c3bd90a58d77d938c60d2e87c68f81646e7cb8b12d71fe334391c6f
+- kind: git_repo
+  url: freedesktop:libopenraw/exempi.git
+  track: '*.*.*'
+  ref: 2.6.6-0-gf9e868388ce7740ce27409f8629da3e9666cc04f
 
 build-depends:
 - freedesktop-sdk.bst:components/expat.bst

@@ -1,10 +1,10 @@
 kind: make
 
 sources:
-- kind: tar
-  url: 
-    github_files:FFmpeg/nv-codec-headers/releases/download/n13.0.19.0/nv-codec-headers-13.0.19.0.tar.gz
-  ref: 13da39edb3a40ed9713ae390ca89faa2f1202c9dda869ef306a8d4383e242bee
+- kind: git_repo
+  url: github:FFmpeg/nv-codec-headers.git
+  track: 'n*.*.*.*'
+  ref: n13.0.19.0-0-ge844e5b26f46bb77479f063029595293aa8f812d
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst

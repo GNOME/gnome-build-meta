@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: github_files:ptomato/jasmine-gjs/releases/download/3.10.1/jasmine-gjs-3.10.1.tar.xz
-  ref: 2a42dfe57bb65a880df299f1f7cabaa8257d175e50422bc6b7c2173266a35e80
+- kind: git_repo
+  url: github:ptomato/jasmine-gjs.git
+  track: '*.*.*'
+  ref: 3.10.1-0-g0b419384c7446ae74cd2fac295b9db5a18ce4ab1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

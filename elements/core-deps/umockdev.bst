@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    github_files:martinpitt/umockdev/releases/download/0.19.3/umockdev-0.19.3.tar.xz
-  ref: 46e45eab6f656bfc092438d7e0e5df4c5f51d18e3a83360c2be680b207a1a0b7
+- kind: git_repo
+  url: github_files:martinpitt/umockdev.git
+  track: '*.*.*'
+  ref: 0.19.3-0-g5f641ca355d419f7b746371ae42d442c11f103cc
 
 build-depends:
 - sdk/gobject-introspection.bst

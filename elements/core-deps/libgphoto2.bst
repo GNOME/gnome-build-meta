@@ -1,9 +1,9 @@
 kind: autotools
 sources:
-- kind: tar
-  url: 
-    github_files:gphoto/libgphoto2/releases/download/v2.5.32/libgphoto2-2.5.32.tar.xz
-  ref: 495a347be21b8f970607a81e739aa91513a8479cbd73b79454a339c73e2b860e
+- kind: git_repo
+  url: github:gphoto/libgphoto2.git
+  track: 'v*.*.*'
+  ref: v2.5.32-0-gde1f0617b1ffa39c1980d1306343709c7dc0120e
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

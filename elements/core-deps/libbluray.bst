@@ -1,8 +1,13 @@
 kind: meson
 sources:
-- kind: tar
-  url: videolan_pub:videolan/libbluray/1.4.1/libbluray-1.4.1.tar.xz
-  ref: 76b5dc40097f28dca4ebb009c98ed51321b2927453f75cc72cf74acd09b9f449
+- kind: git_repo
+  url: videolan:libbluray.git
+  track: '*.*.*'
+  ref: 1.4.1-0-g7d94f2660af5bfc16015291a03539329135c18f1
+- kind: git_module
+  url: videolan:libudfread.git
+  path: contrib/libudfread
+  ref: 139a2194525f2745b98a98e4d8fa627d07440176
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

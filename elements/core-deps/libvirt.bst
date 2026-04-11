@@ -1,8 +1,15 @@
 kind: meson
 sources:
-- kind: tar
-  url: libvirt:libvirt-12.2.0.tar.xz
-  ref: ac93cd0da743a6c231911fb549399b415102ecfee775329bebbf61ed843b9786
+- kind: git_repo
+  url: gitlab:libvirt/libvirt.git
+  track: 'v*.*.*'
+  exclude:
+  - '*rc*'
+  ref: v12.2.0-0-g93a00a3db8c8b5e3ee4a97ff2539193e5e7accff
+- kind: git_module
+  url: gitlab:keycodemap/keycodemapdb.git
+  path: subprojects/keycodemapdb
+  ref: 22b8996dba9041874845c7446ce89ec4ae2b713d
 - kind: local
   path: files/libvirt/80-libvirt.preset
 
@@ -83,9 +90,12 @@ variables:
     -Dstorage_vstorage=disabled
     -Dstorage_zfs=disabled
     -Dwireshark_dissector=disabled
-    -Dgit_werror=disabled
     -Dnbdkit=disabled
     -Dnbdkit_config_default=disabled
+    -Dno_git=true
+    -Dtests=disabled
+    -Dexpensive_tests=disabled
+    -Dgit_werror=disabled
 config:
   install-commands:
     (>):

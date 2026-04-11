@@ -19,10 +19,6 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/salsa_debian_org/tar-files/-/raw/master/
     freedesktop:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/
-    freedesktop_files:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_freedesktop_org/tar-files/-/raw/master/
-    freedesktop_software:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_freedesktop_org/tar-files/-/raw/master/software/
     freerdp:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/pub_freerdp_com/tar-files/-/raw/master/
     ftp_gnu_org:
@@ -33,8 +29,6 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/github_com/tar-files/-/raw/master/
     gitlab:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/
-    gitlab_files:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/gitlab_com/tar-files/-/raw/master/
     gnupg:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_gnupg_org/tar-files/-/raw/master/
     gstreamer:
@@ -47,34 +41,18 @@ mirrors:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/kldp_net/tar-files/-/raw/master/
     launchpad:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/launchpad_net/tar-files/-/raw/master/
-    libopenraw:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libopenraw_freedesktop_org/tar-files/-/raw/master/
     libraw:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_libraw_org/tar-files/-/raw/master/
-    libvirt:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/libvirt_org/tar-files/-/raw/master/sources/
     linuxcontainers:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/linuxcontainers_org/tar-files/-/raw/master/downloads/
-    netfilter:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/ftp_netfilter_org/tar-files/-/raw/master/
-    openldap:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/openldap_org/tar-files/-/raw/master/
     pagure_releases:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/releases_pagure_org/tar-files/-/raw/master/
     purism:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/source_puri_sm/
     pypi:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/files_pythonhosted_org/tar-files/-/raw/master/packages/
-    samba:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_samba_org/tar-files/-/raw/master/pub/
     sourceforge:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/downloads_sourceforge_net/tar-files/-/raw/master/
-    spice:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_spice-space_org/tar-files/-/raw/master/download/
-    tcpdump:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_tcpdump_org/tar-files/-/raw/master/
-    thekelleys:
-    - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/www_thekelleys_org_uk/tar-files/-/raw/master/
     videolan:
     - https://gitlab.gnome.org/Infrastructure/Mirrors/lorry-mirrors/download_videolan_org/tar-files/-/raw/master/
     webkitgtk:

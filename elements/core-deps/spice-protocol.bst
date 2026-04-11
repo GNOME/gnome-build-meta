@@ -1,8 +1,9 @@
 kind: meson
 sources:
-- kind: tar
-  url: spice:releases/spice-protocol-0.14.5.tar.xz
-  ref: baf58449f6e89d19f475899ad5fb9196fdc46c03cc53233f4e39cf2978f9cff7
+- kind: git_repo
+  url: freedesktop:spice/spice-protocol.git
+  track: "v*.*.*"
+  ref: v0.14.5-0-gc5c2f26422b44e3143c87814af73c38125d4ccfc
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 depends:

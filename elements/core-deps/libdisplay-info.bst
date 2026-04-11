@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_files:emersion/libdisplay-info/-/releases/0.3.0/downloads/libdisplay-info-0.3.0.tar.xz
-  ref: 6ae77cd937f9cf7d1321d35c116062c4911e8447010a6a713ac4286f7a9d5987
+- kind: git_repo
+  url: freedesktop:emersion/libdisplay-info.git
+  track: '*.*.*'
+  ref: 0.3.0-0-g47a5590e9c4eb35d67651b8c05a55f1a48259329
 
 build-depends:
 - core-deps/hwdata.bst
