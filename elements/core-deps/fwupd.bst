@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: github_files:fwupd/fwupd/releases/download/2.0.13/fwupd-2.0.13.tar.xz
-  ref: da049e8616924b15d434d3eb616767f00f91611c3e7c8efd9e36c28099e1126f
+  url: github_files:fwupd/fwupd/releases/download/2.1.1/fwupd-2.1.1.tar.xz
+  ref: 0ae697f1f2011571310cef5d96429d8a5d541f73b0025bd2b622c9c7f4fe05b6
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -32,10 +32,10 @@ depends:
 - freedesktop-sdk.bst:components/genpeimg.bst
 - freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
-- freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/libcbor.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libgudev.bst
+- freedesktop-sdk.bst:components/libmnl.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
 - freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/polkit.bst
@@ -58,7 +58,6 @@ variables:
     -Defi_binary=%{efi_binary}
     -Dplugin_flashrom=disabled
     -Dvendor_ids_dir='%{datadir}/hwdata'
-    -Dprotobuf=disabled
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
 
