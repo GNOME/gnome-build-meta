@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fish-shell/fish-shell.git
   track: '*.*'
-  ref: 4.5.0-0-g3478f78a0536414af623467c2addda4e9700a75d
+  ref: 4.6.0-0-gc7ecc3bd78cb8a9ec08cefe77166a23bd93db3fc
 - kind: cargo2
   ref:
   - kind: registry
@@ -371,8 +371,8 @@ sources:
     sha: a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283
   - kind: registry
     name: shellexpand
-    version: 3.1.1
-    sha: 8b1fdf65dd6331831494dd616b30351c38e96e45921a27745cf98490458b90bb
+    version: 3.1.2
+    sha: 32824fab5e16e6c4d86dc1ba84489390419a39f97699852b66480bb87d297ed8
   - kind: registry
     name: shlex
     version: 1.3.0

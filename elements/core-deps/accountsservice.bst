@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:accountsservice/accountsservice.git
   track: refs/tags/*
-  ref: 26.12.8-0-gb17fc69b9b361f160c61855fa164c9a764496a57
+  ref: 26.13.3-0-g97a902fe8a550d8447cf60648e7b5f00c770a4fc
 
 build-depends:
 - sdk/gobject-introspection.bst

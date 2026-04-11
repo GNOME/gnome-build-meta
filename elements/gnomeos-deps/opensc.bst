@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:OpenSC/OpenSC.git
   track: '*.*'
-  ref: 0.27.0-rc1-0-gc7b3d41676e0ba8104775a785bc6eba366002877
+  ref: 0.27.1-0-g19868984dc4dc697af6a86d65ab32a1f19a43ea4
 - kind: local
   path: files/opensc/opensc.module
 

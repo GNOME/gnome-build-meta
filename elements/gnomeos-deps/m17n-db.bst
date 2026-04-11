@@ -6,7 +6,7 @@ sources:
   track: 'REL-*'
   exclude:
   - '*alpha*'
-  ref: REL-1-8-10-0-g8bc612e2fbcac7f65c7caa95246f8cf594eb68c8
+  ref: REL-1-8-11-0-g486a5537315d4e0f58e65b691947222b53689dd2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

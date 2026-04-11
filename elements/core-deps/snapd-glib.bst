@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:canonical/snapd-glib.git
   track: '*.*'
-  ref: 1.70-0-gc7dd8f2cc12c8823e658c5e42e34a97f7a3ddd97
+  ref: 1.72-0-g7d45a89444e38872f2afa1266c4d696752d7e2cd
 
 build-depends:
 - sdk/gi-docgen.bst

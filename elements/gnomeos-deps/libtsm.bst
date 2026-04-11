@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:kmscon/libtsm.git
   track: 'v*'
-  ref: v4.4.2-0-gb052e48cc776be1cdb940be2dcc1603457c01c96
+  ref: v4.4.3-0-g6cdacfc452bf29d98e297fe3a96e55e94a88ce3e
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

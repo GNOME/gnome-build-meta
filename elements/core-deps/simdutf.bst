@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:simdutf/simdutf.git
   track: 'v*'
-  ref: v8.0.0-0-g7f3757fba1b426e7f583011ba7bc4e700a8fbb1a
+  ref: v8.2.0-0-gfd476229424b40ae71a58dd5a205795c3d76b5f1
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

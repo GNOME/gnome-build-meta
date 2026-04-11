@@ -1,9 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: videolan_pub:videolan/libbluray/1.4.0/libbluray-1.4.0.tar.xz
-  ref: 77937baf07eadda4b2b311cf3af4c50269d2ea3165041f5843d96476c4c92777
-
+  url: videolan_pub:videolan/libbluray/1.4.1/libbluray-1.4.1.tar.xz
+  ref: 76b5dc40097f28dca4ebb009c98ed51321b2927453f75cc72cf74acd09b9f449
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

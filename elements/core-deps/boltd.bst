@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:bolt/bolt.git
   track: '*.*'
-  ref: 0.9.10-0-gc0d4cb2f4399e86417907a37c0d8ef3bb9fb406f
+  ref: 0.9.11-0-g9d1d66380353dab94c28466f34adb2ba6c7e4393
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/polkit-gobject.bst

@@ -7,7 +7,7 @@ sources:
   exclude:
   - '*_beta*'
   - '*-rc*'
-  ref: v2.2.1-0-g3eb912c274042cd5deed6b478b39908a12f37498
+  ref: v2.3.0-0-g67a7b937895bceec1ae5ccebb10216f63f70ca1b
 
 build-depends:
 - freedesktop-sdk.bst:components/wayland-protocols.bst
