@@ -1,0 +1,29 @@
+From ce06df2d4ad9dce166e18dbb1a7738d31a5ffa91 Mon Sep 17 00:00:00 2001
+From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date: Sun, 22 Mar 2026 06:23:49 +0000
+Subject: [PATCH] Update elements/include/linux.yml to v6.19.9-0
+
+Updates elements/include/linux.yml to v6.19.9-0 (4a2b0ed)
+Previous version was v6.19.6-0 (6a75390)
+---
+ elements/include/linux.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index cd09493d1..1b24905e1 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -1,9 +1,9 @@
+ sources:
+ - kind: git_repo
+   url: kernel:linux/kernel/git/stable/linux.git
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v6.19.6-0-g6a753907865e35ae986b7b2ad48daa1eab4bcf3a
++  ref: v6.19.9-0-g4a2b0ed2ac7abe9743e1559d212075a0ebac96b3
+ - kind: patch_queue
+   path: patches/linux
+-- 
+2.53.0
+
