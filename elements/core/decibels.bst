@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:decibels/49/decibels-49.0.tar.xz
-  ref: 29b79ba2e2967e69141e39f0ad2c677e38fe3ffb9fba0fa5c7531f94d3f673ca
+  url: gnome_downloads:decibels/49/decibels-49.6.1.tar.xz
+  ref: 9a67ba14df23517c849fcfdea764c73a241e59055299b125e98aeab2a7801ad5
 build-depends:
 - core-deps/typescript.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

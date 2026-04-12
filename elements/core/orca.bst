@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:orca/49/orca-49.6.tar.xz
-  ref: 0e1792b3da8dac8e6c66cbc927e9735a1cd1537e62abadefdcd14c99bf8b461f
+  url: gnome_downloads:orca/49/orca-49.7.tar.xz
+  ref: b27ccc5aa39d23bbe5f9b0d0b9700a66def68aa988640260ad8c902d23e18e1d
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
