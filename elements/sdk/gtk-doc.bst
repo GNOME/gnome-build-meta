@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk-doc/1.36/gtk-doc-1.36.0.tar.xz
-  ref: 3b84bac36efbe59017469040dfee58f17cf0853b5f54dfae26347daf55b6d337
+  url: gnome_downloads:gtk-doc/1.36/gtk-doc-1.36.1.tar.xz
+  ref: 0e517a5f97069831181be177516bde8aa8b3922398f2bdb09e265d22aecadbc5
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/sed.bst

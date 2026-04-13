@@ -2,13 +2,13 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.0.tar.xz
-  ref: 20e8d5b13b9f390581004cab34b74372c0ff4a16f9c11bffd93d8386fbcdeeb3
+  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.1.tar.xz
+  ref: eb832491d088e4f7426e8a592b10428a45a5736c0bffe2105c51c4c68c3a51dd
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
   track: main
-  ref: d5eca997aa2fea5af54fdd286d5c1e1aa7c76389
+  ref: 1fe6de799f39b3126e8d0db66fa4f16c10fd9bd6
 
 build-depends:
 # These two are more like runtime deps of the tests suite

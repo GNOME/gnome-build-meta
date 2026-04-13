@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:accountsservice/accountsservice.git
   track: refs/tags/*
-  ref: 23.13.9-0-g57e491f5e6f3da2d5a949f4f8747c8f4e8ed799d
+  ref: 26.13.3-0-g97a902fe8a550d8447cf60648e7b5f00c770a4fc
 - kind: patch
   path: patches/accountsservice/tmpfiles.patch
 

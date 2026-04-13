@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.1/glycin-2.1.0.tar.xz
-  ref: 59f3742b3f231738738766afffa2874c839bfdabffcfa5fcb0f8ffe5509ad4e0
+  url: gnome_downloads:glycin/2.1/glycin-2.1.1.tar.xz
+  ref: 8e8e92e312b14d2c5f3a047bdc5305adcb9931ef0150cf74bf526a3741e6fb32
 - kind: cargo2
   ref:
   - kind: registry
@@ -430,8 +430,8 @@ sources:
     sha: 18eda93f09d3778f38255b231b17ef67195013a592c91624a4daf8bead875565
   - kind: registry
     name: gufo
-    version: 0.4.0
-    sha: 79cc07454317e1e3baa8c731397f404b183850457a2006fbc9d076a5bb994df7
+    version: 0.4.1
+    sha: 99a86855fe55303654418ebd8b07312057a32b5887fb768a38170fd54ed944db
   - kind: registry
     name: gufo-common
     version: 1.1.0
@@ -446,8 +446,8 @@ sources:
     sha: 5606b919ea2538d6e761781be87eaf5186427c3d64849c1013359aa3681e68d2
   - kind: registry
     name: gufo-png
-    version: 0.4.0
-    sha: 48293353510101aa3791932172f864c9acdf2125d730f50910cac965ea2e66d5
+    version: 0.4.1
+    sha: aa9d6a919b2c9f4b5f344bf0e2991b08b23ab69ab336b65195657a6c624fb8a5
   - kind: registry
     name: gufo-tiff
     version: 0.4.0

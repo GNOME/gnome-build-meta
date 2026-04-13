@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:totem-pl-parser/3.26/totem-pl-parser-3.26.6.tar.xz
-  ref: c0df0f68d5cf9d7da43c81c7f13f11158358368f98c22d47722f3bd04bd3ac1c
+  url: gnome_downloads:totem-pl-parser/3.26/totem-pl-parser-3.26.7.tar.xz
+  ref: 60d517c1acabe54ae337f64451264fc76730696eaae26b5480fb37166689b5f3
 build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

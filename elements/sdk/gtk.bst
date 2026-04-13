@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk/4.22/gtk-4.22.1.tar.xz
-  ref: cd7b5a9c41127da6fb321c5a842ad73c62e6996f9ce3f1960ca509f6559d55fc
+  url: gnome_downloads:gtk/4.22/gtk-4.22.2.tar.xz
+  ref: b1c987370a0c30780cde351bdbee02eef816728f1c1c2ec7c8093281c0709ee8
 build-depends:
 - sdk-deps/sassc.bst
 - sdk/gi-docgen.bst

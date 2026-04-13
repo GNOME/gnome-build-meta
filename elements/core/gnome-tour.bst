@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-tour/50/gnome-tour-50.rc.tar.xz
-  ref: d411d9950539f4a35d95716467d8ebfa2f6f3c2abfe67a0fdeabbc7976e79629
+  url: gnome_downloads:gnome-tour/50/gnome-tour-50.0.tar.xz
+  ref: 6ce1187031a365bf226a0cd146f17b4773e7ed450883f7cd502f5ecf432b5325
 - kind: cargo2
   ref:
   - kind: registry
