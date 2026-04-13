@@ -13,7 +13,7 @@ sources:
 
 build-depends:
 - core-deps/ModemManager.bst
-- sdk-deps/appstream-glib.bst
+- freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/cmake.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst

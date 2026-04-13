@@ -7,7 +7,7 @@ sources:
   ref: 49.0-23-gb96450ac5156aab597fc9cc34621175f2ef28cfe
 
 build-depends:
-- sdk-deps/appstream-glib.bst
+- freedesktop-sdk.bst:components/appstream.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/grep.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
