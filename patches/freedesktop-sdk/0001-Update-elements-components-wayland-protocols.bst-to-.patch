@@ -1,0 +1,31 @@
+From 9444fcf09c71cc5eb98d35cfb2e9a4e4dfcf70a8 Mon Sep 17 00:00:00 2001
+From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date: Fri, 3 Apr 2026 05:21:35 +0000
+Subject: [PATCH] Update elements/components/wayland-protocols.bst to 1.48-0
+
+Updates elements/components/wayland-protocols.bst to 1.48-0 (02e63e7)
+Previous version was 1.47-0 (8822301)
+---
+ elements/components/wayland-protocols.bst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/components/wayland-protocols.bst b/elements/components/wayland-protocols.bst
+index d591377bc..d239621f1 100644
+--- a/elements/components/wayland-protocols.bst
++++ b/elements/components/wayland-protocols.bst
+@@ -8,11 +8,11 @@ depends:
+ - components/wayland.bst
+ 
+ variables:
+   meson-local: >-
+     -Dtests=false
+ 
+ sources:
+ - kind: git_repo
+   url: freedesktop:wayland/wayland-protocols.git
+   track: '*.*'
+-  ref: 1.47-0-g88223018d1b578d0d8869866da66d9608e05f928
++  ref: 1.48-0-g02e63e74a807afed95bc25a386173110afef24e3
+-- 
+2.53.0
+
