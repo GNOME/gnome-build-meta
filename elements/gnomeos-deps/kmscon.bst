@@ -6,7 +6,7 @@ sources:
   track: 'v*'
   ref: v9.3.3-0-g03e50c7db0489daaa41b5f62946fd6aaeab63a6e
 - kind: local
-  path: files/kmscon/91-kmscon.preset
+  path: files/kmscon/80-kmscon.preset
 - kind: local
   path: files/kmscon/gdm-kmscon.conf
 - kind: local
@@ -32,7 +32,7 @@ config:
   install-commands:
     (>):
     - |
-      install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system-preset" 91-kmscon.preset
+      install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/system-preset" 80-kmscon.preset
 
     - |
       install -Dm644 gdm-kmscon.conf "%{install-root}%{indep-libdir}/systemd/system/gdm.service.d/kmscon.conf"
