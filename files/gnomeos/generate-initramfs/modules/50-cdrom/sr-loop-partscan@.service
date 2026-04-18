@@ -1,7 +1,0 @@
-[Unit]
-DefaultDependencies=no
-ConditionKernelCommandLine=root=live:gnomeos
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/partx -u /dev/%I
