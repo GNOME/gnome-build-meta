@@ -12,6 +12,7 @@ BINARIES=(
     systemd-sysusers
     systemd-tmpfiles
     systemd-tty-ask-password-agent
+    systemd-dissect
     udevadm
     halt
     loadkeys
@@ -144,6 +145,7 @@ UNITS+=(
     systemd-volatile-root.service
     systemd-tpm2-setup-early.service
     sysinit.target.wants/systemd-tpm2-setup-early.service
+    systemd-loop@.service
 )
 
 install() {
