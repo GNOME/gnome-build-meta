@@ -34,6 +34,10 @@ Options:
   --same-version             Do not bump the version of the image.
 
   --devel                    Build and serve all images including extensions.
+
+  --no-strict                Use --no-strict on BuildStream
+
+  --interactive              Run BuildStream in interactive mode
 EOF
 }
 
@@ -48,6 +52,12 @@ while [ $# -gt 0 ]; do
             ;;
         --devel)
             devel=1
+            ;;
+        --no-strict)
+            nostrict=1
+            ;;
+        --interactive)
+            interactive=1
             ;;
         --)
             shift
@@ -78,6 +88,22 @@ case "${ARCH}" in
         BST_OPTIONS+=(-o arch ${ARCH})
     ;;
 esac
+
+if [ "${interactive+set}" != set ]; then
+    BST_OPTIONS+=(--no-interactive)
+fi
+
+if [ "${nostrict-}" = 1 ]; then
+    BST_OPTIONS+=(--no-strict)
+fi
+
+inhibit() {
+    if [ "${TOOLBOX_PATH+set}" = set ] || [ "${DISTROBOX_ENTER_PATH+set}" = set ] || [ "${interactive+set}" = set ]; then
+        "$@"
+    else
+        systemd-inhibit --what=sleep:idle --why="Building GNOME OS" "$@"
+    fi
+}
 
 [ -d "${REPO_STATE}" ] || mkdir -p "${REPO_STATE}"
 
@@ -110,7 +136,7 @@ else
     image=(gnomeos/update-images-user-only.bst)
 fi
 
-"${BST}" "${BST_OPTIONS[@]}" build "${image}"
+inhibit "${BST}" "${BST_OPTIONS[@]}" build "${image}"
 
 "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
