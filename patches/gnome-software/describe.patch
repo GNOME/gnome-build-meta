@@ -1,4 +1,4 @@
-commit dae27ea08152f3aefeb5fd548f795216c8e17baa
+commit f03e361084c96769bc0c3607aba10872e7939198
 Author: Valentin David <me@valentindavid.com>
 Date:   Wed Apr 15 20:05:37 2026 +0200
 
@@ -7,7 +7,7 @@ Date:   Wed Apr 15 20:05:37 2026 +0200
     An update could be fully installed, pending, partial or incomplete.
 
 diff --git a/plugins/systemd-sysupdate/gs-plugin-systemd-sysupdate.c b/plugins/systemd-sysupdate/gs-plugin-systemd-sysupdate.c
-index 001c919c4..6e982cf67 100644
+index 001c919c4..0ba325226 100644
 --- a/plugins/systemd-sysupdate/gs-plugin-systemd-sysupdate.c
 +++ b/plugins/systemd-sysupdate/gs-plugin-systemd-sysupdate.c
 @@ -11,6 +11,7 @@
@@ -18,6 +18,15 @@ index 001c919c4..6e982cf67 100644
  #include <malloc.h>
  #include <xmlb.h>
  
+@@ -45,7 +46,7 @@
+ #define SYSUPDATED_JOB_CANCEL_TIMEOUT_MS (1000)
+ #define SYSUPDATED_MANAGER_LIST_TARGET_TIMEOUT_MS (1000)
+ #define SYSUPDATED_TARGET_CHECK_NEW_TIMEOUT_MS (10000)
+-#define SYSUPDATED_TARGET_DESCRIBE_TIMEOUT_MS (1000)
++#define SYSUPDATED_TARGET_DESCRIBE_TIMEOUT_MS (10000)
+ #define SYSUPDATED_TARGET_GET_APP_STREAM_TIMEOUT_MS (1000)
+ #define SYSUPDATED_TARGET_GET_VERSION_TIMEOUT_MS (1000)
+ #define SYSUPDATED_TARGET_ACQUIRE_TIMEOUT_MS (-1)
 @@ -62,6 +63,10 @@
  typedef struct {
  	GsSystemdSysupdateTarget *proxy;
@@ -37,14 +46,14 @@ index 001c919c4..6e982cf67 100644
 +target_item_is_pending (TargetItem *target)
  {
 -	return target->latest_version != NULL;
-+	return target->is_installed && target->is_pending && !target->is_partial  && !target->is_incomplete;
++	return target->is_installed && target->is_pending && !target->is_partial && !target->is_incomplete;
  }
  
  static gboolean
  target_item_is_installed (TargetItem *target)
  {
 -	return target->current_version != NULL;
-+	return target->is_installed && !target->is_pending && !target->is_partial  && !target->is_incomplete;
++	return target->is_installed && !target->is_pending && !target->is_partial && !target->is_incomplete;
  }
  
  static gboolean
@@ -110,7 +119,7 @@ index 001c919c4..6e982cf67 100644
  
  	/* currently, the returned result contains only one string
  	 * representing the latest version found in the server. However,
-@@ -2039,6 +2057,71 @@ gs_plugin_systemd_sysupdate_target_refresh_metadata_check_new_cb (GObject      *
+@@ -2039,6 +2057,72 @@ gs_plugin_systemd_sysupdate_target_refresh_metadata_check_new_cb (GObject      *
  		data->target->latest_version = g_steal_pointer (&latest_version);
  	}
  
@@ -152,32 +161,33 @@ index 001c919c4..6e982cf67 100644
 +
 +	json_parser = json_parser_new_immutable ();
 +	if (!json_parser_load_from_data (json_parser, json, -1, &local_error)) {
-+		g_task_return_error (task, g_steal_pointer (&local_error));
++		g_task_return_new_error (task, G_IO_ERROR, GS_PLUGIN_ERROR_FAILED,
++		                         "json from describe call for target %s has no root: %s", target_item_get_id (data->target), local_error->message);
 +		return;
 +	}
 +
 +	json_root = json_parser_get_root (json_parser);
 +	if (json_root == NULL) {
 +		g_task_return_new_error (task, G_IO_ERROR, GS_PLUGIN_ERROR_FAILED,
-+		                         "json from describe call has no root: %s", target_item_get_id (data->target));
++		                         "json from describe call for target %s has no root", target_item_get_id (data->target));
 +		return;
 +	}
 +	if (json_node_get_node_type (json_root) != JSON_NODE_OBJECT) {
 +		g_task_return_new_error (task, G_IO_ERROR, GS_PLUGIN_ERROR_FAILED,
-+		                         "json from describe call is not an object: %s", target_item_get_id (data->target));
++		                         "json from describe call for target %s is not an object", target_item_get_id (data->target));
 +		return;
 +	}
 +	json_item = json_node_get_object (json_root);
 +	if (json_item == NULL) {
 +		g_task_return_new_error (task, G_IO_ERROR, GS_PLUGIN_ERROR_FAILED,
-+		                         "json from describe call is not an object: %s", target_item_get_id (data->target));
++		                         "json from describe call for target %s is not an object", target_item_get_id (data->target));
 +		return;
 +	}
 +
-+	data->target->is_installed = json_object_get_boolean_member (json_item, "installed");
-+	data->target->is_pending = json_object_get_boolean_member (json_item, "pending");
-+	data->target->is_partial = json_object_get_boolean_member (json_item, "partial");
-+	data->target->is_incomplete = json_object_get_boolean_member (json_item, "incomplete");
++	data->target->is_installed = json_object_get_boolean_member_with_default (json_item, "installed", false);
++	data->target->is_pending = json_object_get_boolean_member_with_default (json_item, "pending", false);
++	data->target->is_partial = json_object_get_boolean_member_with_default (json_item, "partial", false);
++	data->target->is_incomplete = json_object_get_boolean_member_with_default (json_item, "incomplete", false);
 +
  	/* update app state base on the target's new version */
  	app = get_or_create_app_for_target (self, data->target, &local_error);
