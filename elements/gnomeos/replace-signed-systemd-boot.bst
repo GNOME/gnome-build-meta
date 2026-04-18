@@ -4,7 +4,8 @@ build-depends:
 - freedesktop-sdk.bst:components/sbsigntools.bst
 
 depends:
-- freedesktop-sdk.bst:components/systemd.bst
+- filename: freedesktop-sdk.bst:components/systemd.bst
+  strict: true
 
 variables:
   strip-binaries: ''

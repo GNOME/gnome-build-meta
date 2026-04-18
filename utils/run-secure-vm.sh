@@ -92,6 +92,10 @@ Options:
 
   --credential KEY=VALUE     Add credential. VALUE can start with '@' to point
                              to a file.
+
+  --no-strict                Use --no-strict on BuildStream
+
+  --interactive              Run BuildStream in interactive mode
 EOF
 }
 
@@ -172,6 +176,12 @@ while [ $# -gt 0 ]; do
             shift
             add_credential "$1"
             ;;
+        --no-strict)
+            nostrict=1
+            ;;
+        --interactive)
+            interactive=1
+            ;;
         --)
             shift
             args+=("$@")
@@ -199,6 +209,14 @@ if [ "${TOOLBOX_PATH+set}" = set ] || [ "${DISTROBOX_ENTER_PATH+set}" = set ]; t
 fi
 
 BST_OPTIONS=(-o arch ${ARCH})
+
+if [ "${interactive+set}" != set ]; then
+    BST_OPTIONS+=(--no-interactive)
+fi
+
+if [ "${nostrict-}" = 1 ]; then
+    BST_OPTIONS+=(--no-strict)
+fi
 
 if [ "${#args[@]}" -ge 1 ]; then
     IMAGE_ELEMENT="${args[0]}"
@@ -269,6 +287,14 @@ cleanup() {
 }
 trap cleanup EXIT INT
 
+inhibit() {
+    if [ "${nosystemd+set}" = set ] || [ "${interactive+set}" = set ]; then
+        "$@"
+    else
+        systemd-inhibit --what=sleep:idle --why="Building GNOME OS" "$@"
+    fi
+}
+
 if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${live+set}" = set ]); then
     mkdir -p "${STATE_DIR}"
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
@@ -278,7 +304,7 @@ if [ "${rebuild_iso+set}" = set ] || (! [ -f "${STATE_DIR}/disk.iso" ] && [ "${l
         cp "${STATE_DIR}/builds/gnome_os_${buildid}.iso" "${checkout}/disk.iso"
     else
         make -C files/boot-keys generate-keys
-        "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
+        inhibit "${BST}" "${BST_OPTIONS[@]}" build "${IMAGE_ELEMENT}"
         "${BST}" "${BST_OPTIONS[@]}" artifact checkout "${IMAGE_ELEMENT}" --directory "${checkout}"
     fi
     mv "${checkout}/disk.iso" "${STATE_DIR}/disk.iso"
@@ -288,7 +314,7 @@ fi
 if ! [ -f "${STATE_DIR}/OVMF_CODE.fd" ] || ! [ -f "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
-    "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf.bst
+    systemd-inhibit "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf.bst
     "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
     cp "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd"
     cp "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd"
