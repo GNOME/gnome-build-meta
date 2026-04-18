@@ -7,20 +7,10 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:systemd/systemd.git
-  track: v*
+  track: refs/heads/main
   exclude:
   - '*-rc*'
-  ref: v260-0-g3e52279684a53ebf84d1d73d528bf400c5fb3497
-- kind: patch
-  path: patches/systemd/fix-sysupdate.patch
-- kind: patch
-  path: patches/systemd/eltorito.patch
-- kind: patch
-  path: patches/systemd/repart-allow-discards.patch
-- kind: patch
-  path: patches/systemd/fix-sysupdate-2.patch
-- kind: patch
-  path: patches/systemd/fix-sysupdate-3.patch
+  ref: v260-901-gfa6eb2e016a53d741ec48a784a8ea075ec3d4fe0
 - kind: patch
   path: patches/systemd/fix-sysupdate-4.patch
 
