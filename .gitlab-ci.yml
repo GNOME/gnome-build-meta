@@ -60,6 +60,9 @@ default:
     - 'stuck_or_timeout_failure'
     - 'scheduler_failure'
     - 'api_failure'
+  id_tokens:
+    CACHE_TOKEN:
+      aud: gbm.gnome.org
 
 #
 # Templates shared by multiple jobs
