@@ -2,11 +2,6 @@
 
 set -e
 set -o pipefail
-
-# Setup certificate for pushing to the cache
-echo "$CASD_CLIENT_CERT" > client.crt
-echo "$CASD_CLIENT_KEY" > client.key
-
 set -x
 
 # Ensure the log directory exists
@@ -19,6 +14,9 @@ if [ "${CI_COMMIT_REF_PROTECTED-}" != true ] || [ "${CI_PIPELINE_SOURCE-}" = "sc
 else
     make -C files/boot-keys generate-keys IMPORT_MODE=import
 fi
+
+# Setup the token for pushing to the cache
+echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
