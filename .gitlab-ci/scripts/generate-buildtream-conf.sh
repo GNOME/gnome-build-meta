@@ -41,8 +41,7 @@ artifacts:
   - url: https://gbm.gnome.org:11004
     push: true
     auth:
-      client-key: client.key
-      client-cert: client.crt
+      access-token: ${CI_PROJECT_DIR}/.gitlab-ci/gbm-cache-token
 EOF
 fi
 
@@ -54,8 +53,7 @@ source-caches:
   - url: https://gbm.gnome.org:11004
     push: true
     auth:
-      client-key: client.key
-      client-cert: client.crt
+      access-token: ${CI_PROJECT_DIR}/.gitlab-ci/gbm-cache-token
 EOF
 fi
 

@@ -59,10 +59,6 @@ default:
   # Ensure the log directory exists
   - mkdir -p logs
 
-  # Setup certificate for pushing to the cache
-  - echo "$CASD_CLIENT_CERT" > client.crt
-  - echo "$CASD_CLIENT_KEY" > client.key
-
   # Setup certificates and image version for sysupdate
   - |
     if [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
@@ -70,6 +66,9 @@ default:
     else
       make -C files/boot-keys generate-keys IMPORT_MODE=snakeoil
     fi
+
+  # Setup the token for pushing to the cache
+  - echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 
   - |
     ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
@@ -101,6 +100,9 @@ default:
     - 'stuck_or_timeout_failure'
     - 'scheduler_failure'
     - 'api_failure'
+  id_tokens:
+    CACHE_TOKEN:
+      aud: gbm.gnome.org
 
 #
 # Templates shared by multiple jobs
