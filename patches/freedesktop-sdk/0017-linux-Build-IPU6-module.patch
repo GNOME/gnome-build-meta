@@ -1,0 +1,24 @@
+From 793a610945639bd4a10a70c9bd1e09e6c42bd149 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Sat, 18 Apr 2026 12:45:35 +0200
+Subject: [PATCH 17/17] linux: Build IPU6 module
+
+---
+ files/linux/fdsdk-config.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 08c64e119..5f7be5fb7 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -908,6 +908,7 @@ enable USB_PWC_INPUT_EVDEV
+ if has ACPI && has I2C && has X86; then
+     module IPU_BRIDGE
+     module VIDEO_IPU3_CIO2
++    module VIDEO_INTEL_IPU6
+ fi
+ 
+ # PHY controllers
+-- 
+2.53.0
+

@@ -1,7 +1,7 @@
-From a8f6913a0bdb71591aba9df8083d3e6ba7783d45 Mon Sep 17 00:00:00 2001
+From ff6f70f8325f7b3a1f19d0d1e502075bf994685c Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Fri, 17 Apr 2026 10:45:48 +0100
-Subject: [PATCH 09/11] linux: Enable FUNCTION_TRACER
+Subject: [PATCH 09/17] linux: Enable FUNCTION_TRACER
 
 This is needed by bpf-restrict-fs, otherwise we get EBUSY.
 ---

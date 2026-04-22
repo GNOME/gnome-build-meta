@@ -1,7 +1,7 @@
-From 9c9adbf3445d11875ff293834183638d58292d78 Mon Sep 17 00:00:00 2001
+From 182682fce1ea4ef85ae9ac8306c1f5eea48c50e5 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sat, 24 Jan 2026 12:13:27 +0100
-Subject: [PATCH 08/11] lvm2: Disable event activation by default
+Subject: [PATCH 08/17] lvm2: Disable event activation by default
 
 Because lvm2 does not have a distro wide configuration in /usr and all
 is in /etc, configuring it is not compatible with systemd-sysupdate

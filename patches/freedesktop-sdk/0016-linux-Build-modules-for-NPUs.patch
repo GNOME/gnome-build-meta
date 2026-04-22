@@ -1,0 +1,40 @@
+From 9f36ef148833b773e08fbd6fa067d0833cc72884 Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Sat, 18 Apr 2026 12:15:02 +0200
+Subject: [PATCH 16/17] linux: Build modules for NPUs
+
+---
+ files/linux/fdsdk-config.sh | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index a6b5c1e86..08c64e119 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -726,6 +726,23 @@ case "$arch" in
+     ;;
+ esac
+ 
++# NPUs
++enable DRM_ACCEL
++module DRM_ACCEL_QAIC
++case "$arch" in
++    x86_64)
++        module DRM_ACCEL_IVPU
++        module DRM_ACCEL_AMDXDNA
++        module DRM_ACCEL_HABANALABS
++    ;;
++    aarch64)
++        module DRM_ACCEL_ROCKET
++        # ACCEL_ARM_ETHOSU can build on other architectures but not
++        # sure if there is any hardware.
++        module DRM_ACCEL_ARM_ETHOSU
++    ;;
++esac
++
+ # VFIO
+ module VFIO
+ module VFIO_PCI
+-- 
+2.53.0
+

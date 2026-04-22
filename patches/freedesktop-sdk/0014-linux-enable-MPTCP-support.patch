@@ -1,0 +1,28 @@
+From 8b24dfa5a6a81f07b8b5cdf5b5b800ea4f5a3ecc Mon Sep 17 00:00:00 2001
+From: Daniel Foster <daniel@amesite.me>
+Date: Fri, 6 Feb 2026 20:31:16 +1000
+Subject: [PATCH 14/17] linux: enable MPTCP support
+
+MPTCP is an extension to TCP which can use multiple network interfaces,
+which allows potentially lower latency and higher throughput, as well as
+connections surviving between network handovers (e.g. WiFi->5G). Most
+distributions already have this enabled.
+---
+ files/linux/fdsdk-config.sh | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 5df8c6f5a..eda162a2e 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -2816,3 +2816,7 @@ enable IDLE_PAGE_TRACKING
+ if has ACPI; then
+   module INPUT_SOC_BUTTON_ARRAY
+ fi
++
++# MPTCP support
++enable MPTCP
++enable MPTCP_IPV6
+-- 
+2.53.0
+

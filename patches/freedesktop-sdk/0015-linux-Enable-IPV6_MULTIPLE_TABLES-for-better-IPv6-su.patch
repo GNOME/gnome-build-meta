@@ -1,0 +1,31 @@
+From 0f62c598d31bfac77ff2048a4e7733b23e1019bc Mon Sep 17 00:00:00 2001
+From: Felicitas Pojtinger <felicitas@pojtinger.com>
+Date: Mon, 16 Feb 2026 18:16:33 -0800
+Subject: [PATCH 15/17] linux: Enable `IPV6_MULTIPLE_TABLES` for better IPv6
+ support in VPNs
+
+Fixes https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/1244
+
+Signed-off-by: Felicitas Pojtinger <felicitas@pojtinger.com>
+---
+ files/linux/fdsdk-config.sh | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index eda162a2e..a6b5c1e86 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -194,6 +194,10 @@ enable VIRTIO_PCI
+ 
+ # Strongly Recommended
+ enable IPV6
++
++# Required for IPv6 support in Tailscale and other VPNs
++enable IPV6_MULTIPLE_TABLES
++
+ enable AUTOFS_FS
+ enable TMPFS_XATTR
+ enable TMPFS_POSIX_ACL
+-- 
+2.53.0
+
