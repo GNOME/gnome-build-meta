@@ -20,7 +20,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/sbsigntools.bst
 
