@@ -26,9 +26,9 @@ sources:
 
 build-depends:
 - core-deps/python-pyparsing.bst
+- core-deps/python3-six.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/perl.bst
-- freedesktop-sdk.bst:components/python3-six.bst
 - freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
