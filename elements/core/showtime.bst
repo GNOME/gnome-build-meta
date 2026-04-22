@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:showtime.git
   track: main
-  ref: 50.0-8-g4c081b1e9bf5a2f9096587cb50695d8cd53c11e2
+  ref: 50.0-10-gdbc559075c825510e8950b76e3e7855bba575ac9
 
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
