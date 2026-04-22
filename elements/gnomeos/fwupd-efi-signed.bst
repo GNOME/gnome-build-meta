@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 - core-deps/fwupd-efi.bst
 
 depends:
