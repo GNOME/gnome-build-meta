@@ -8,6 +8,7 @@ sources:
 
 build-depends:
 - buildsystems/make.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - core-deps/osinfo-db-tools.bst
 - freedesktop-sdk.bst:components/gettext.bst
 
