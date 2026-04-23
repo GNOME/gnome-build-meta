@@ -16,6 +16,7 @@ build-depends:
 - freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 (?):
 - arch == "x86_64":

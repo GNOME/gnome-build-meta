@@ -5,6 +5,7 @@ sources:
   url: pagure_releases:libosinfo/osinfo-db-20251212.tar.xz
   ref: 06379250c91306c98cb9726af44eae5909dfdd5449f90331e904ae1221d8d5e7
 build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - core-deps/osinfo-db-tools.bst
 
 variables:

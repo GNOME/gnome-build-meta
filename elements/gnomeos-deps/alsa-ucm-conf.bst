@@ -6,6 +6,9 @@ sources:
   track: 'v*'
   ref: v1.2.15.3-0-g858d3a2443c66a7d5a2b5598308619237e8fc75d
 
+build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
+
 depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst
 
