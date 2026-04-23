@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/erofs-utils.bst
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - filename: gnomeos/nvidia-runtime/layer.bst
   config:
     location: '/sysroot'

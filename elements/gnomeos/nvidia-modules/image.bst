@@ -5,6 +5,7 @@ build-depends:
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - gnomeos/os-release.bst
 - filename: gnomeos/nvidia-modules/layer.bst
   config:

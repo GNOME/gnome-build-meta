@@ -33,6 +33,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:components/sbsigntools-maybe.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 variables:
   gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
