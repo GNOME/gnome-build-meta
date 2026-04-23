@@ -1,6 +1,7 @@
 kind: flatpak_repo
 build-depends:
 - freedesktop-sdk.bst:components/flatpak.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 (?):
 # platform and sdk should not be built on 64bit
 - arch in ["x86_64", "aarch64", "riscv64", "ppc64le"]:
