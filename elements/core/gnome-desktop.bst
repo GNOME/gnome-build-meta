@@ -4,7 +4,13 @@ sources:
 - kind: git_repo
   url: gnome:gnome-desktop.git
   track: master
-  ref: 44.4-48-g21100f318b78046736f103e750074c9179210bfd
+  ref: 44.4-112-g80cac3060536542d1f995f0941e661f182f6ebca
+# Needs to be kept in sync with the repo until we get a wrap source plugin
+# https://gitlab.gnome.org/GNOME/gnome-desktop/-/blob/master/subprojects/qrcodegen.wrap
+- kind: git_repo
+  directory: subprojects/qrcodegen
+  url: github:nayuki/QR-Code-generator.git
+  ref: 8329a7108fc22be3e1eec0a9f9318978579e3621
 
 build-depends:
 - sdk/gobject-introspection.bst
@@ -27,3 +33,8 @@ variables:
   meson-local: >-
     -Dgtk_doc=true
     -Dinstalled_tests=true
+
+config:
+  configure-commands:
+    (<):
+    - cp -r subprojects/packagefiles/qrcodegen/* subprojects/qrcodegen
