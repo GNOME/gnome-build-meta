@@ -229,13 +229,11 @@ class InstallerApp(Adw.Application):
     def __init__(self, mainloop, **kwargs):
         super().__init__(**kwargs)
         self.connect('activate', self.on_activate)
-        self.add_main_option('wait-for-tour-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Wait for Tour to be finished"), None)
         self.add_main_option('oem-mode', 0, GLib.OptionFlags.NONE, GLib.OptionArg.NONE, _("Install in OEM mode"), None)
         self.connect('handle-local-options', self.handle_local_options)
         self.install_action = Gio.SimpleAction.new('install', None)
         self.install_action.connect('activate', self.on_activate_installer)
         self.add_action(self.install_action)
-        self.wait_for_tour_mode = False
         self.om_mode = False
         self.mainloop = mainloop
 
@@ -266,24 +264,10 @@ class InstallerApp(Adw.Application):
 
     def handle_local_options(self, app, option):
         self.oem_mode = bool(option.lookup_value('oem-mode'))
-        self.wait_for_tour_mode = bool(option.lookup_value('wait-for-tour-mode'))
         return -1
 
     def on_activate(self, app):
-        if self.wait_for_tour_mode:
-            self.hold()
-            def on_name_owner_changed(name, old_owner, new_owner):
-                if name == "org.gnome.Tour" and new_owner == "":
-                    self.install_action.activate(None)
-                    self.release()
-                    return False
-                else:
-                    return True
-            bus = dbus.SessionBus()
-            dbus_obj = bus.get_object('org.freedesktop.DBus', '/org/freedesktop/DBus')
-            dbus_obj.connect_to_signal('NameOwnerChanged', on_name_owner_changed, dbus_interface='org.freedesktop.DBus')
-        else:
-            self.install_action.activate(None)
+        self.install_action.activate(None)
 
     def on_activate_installer(self, app, parameter):
         self.installer = Installer(self._on_finished, self._on_error)

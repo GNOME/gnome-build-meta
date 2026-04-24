@@ -18,8 +18,6 @@ sources:
   url: gnome:libshew.git
   directory: subprojects/libshew
   ref: d16afc40412b565d2bbecf80335f54a19a978009
-- kind: patch
-  path: patches/gnome-shell/launch-installer.patch
 
 build-depends:
 - sdk-deps/sassc.bst

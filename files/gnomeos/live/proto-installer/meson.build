@@ -23,6 +23,15 @@ i18n.merge_file(
   install_dir: get_option('datadir') / 'gnomeos-live' / 'data' / 'applications',
 )
 
+i18n.merge_file(
+  input: 'org.gnome.Installer-autostart.desktop.in',
+  output: 'org.gnome.Installer-autostart.desktop',
+  type: 'desktop',
+  po_dir: 'po',
+  install: true,
+  install_dir: get_option('datadir') / 'gnomeos-live' / 'config' / 'autostart',
+)
+
 install_data(
   'org.gnome.Installer.service',
   install_dir: get_option('datadir') / 'dbus-1' / 'services',
@@ -54,6 +63,8 @@ install_data(
   'gnomeos-installer.service',
   install_dir: systemdsystemunitdir,
 )
+
+systemduserunitdir = systemd.get_variable(pkgconfig : 'systemduserunitdir')
 
 install_data(
   'data/icons/hicolor/scalable/apps/org.gnome.Installer.Devel.svg',
