@@ -9,6 +9,8 @@ sources:
   path: patches/mozjs/bmo1973993-fix-installed-headers.patch
 - kind: patch
   path: patches/mozjs/bmo1973994-fix-os-dependent-headers.patch
+- kind: patch
+  path: patches/mozjs/python-3.14.patch
 
 build-depends:
 - (@): include/clang-for-recc.yml
