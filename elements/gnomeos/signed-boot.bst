@@ -120,7 +120,7 @@ config:
       --phases="enter-initrd:leave-initrd" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --linux="/boot/vmlinuz" \
+      --linux="/usr/lib/modules/${version}/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img" \
       --join-profile="profile-safe-mode.efi" \
       "${MICROCODE[@]}" "${DEVICETREES[@]}"
