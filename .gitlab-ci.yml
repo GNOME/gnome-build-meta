@@ -21,7 +21,7 @@ variables:
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"
-  DOCKER_IMAGE_ID: "f89b4aef847ef040b345acceda15a850219eb8f1"
+  DOCKER_IMAGE_ID: "486c348e3f53264f75e6e91f68c91356c3681d2b"
 
   # RUN_THIS_STAGE_ONLY: "track-refs"
 
