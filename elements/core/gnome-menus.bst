@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-menus.git
   track: master
-  ref: 3.38.1-6-g7c30438ef8d6b5e5c32798be461332e70795d67a
+  ref: 3.38.1-7-gb6ca12f2b34f78f8cb28471beefd854edc58f666
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:
