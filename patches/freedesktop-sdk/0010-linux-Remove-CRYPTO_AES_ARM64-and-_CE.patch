@@ -1,0 +1,42 @@
+From 8f2ff5138cc1ac200a72c2d6e5a7f9541189b8bc Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Sun, 26 Apr 2026 20:35:39 +0300
+Subject: [PATCH 10/14] linux: Remove CRYPTO_AES_ARM64 and _CE
+
+This was removed in 7.0 [1]
+
+[1] https://github.com/torvalds/linux/commit/2b1ef7aeeb184ee78523f3d24e221296574c6f2d
+---
+ files/linux/fdsdk-config.sh | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 5f7be5fb7..bc8238c14 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -139,22 +139,20 @@ enable CRYPTO_USER_API_HASH
+ enable CRYPTO_USER_API_SKCIPHER
+ 
+ case "$arch" in
+     x86_64)
+         module CRYPTO_AES_NI_INTEL
+         module CRYPTO_GHASH_CLMUL_NI_INTEL
+         module CRYPTO_DES3_EDE_X86_64
+     ;;
+     aarch64)
+         module CRYPTO_GHASH_ARM64_CE
+-        module CRYPTO_AES_ARM64
+-        module CRYPTO_AES_ARM64_CE
+         module CRYPTO_AES_ARM64_CE_CCM
+         module CRYPTO_AES_ARM64_CE_BLK
+         module CRYPTO_AES_ARM64_NEON_BLK
+         module CRYPTO_AES_ARM64_BS
+     ;;
+ esac
+ 
+ case "$arch" in
+ esac
+ 
+-- 
+2.54.0
+
