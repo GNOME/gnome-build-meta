@@ -23,12 +23,11 @@ fi
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
 
-build_num="${CI_PIPELINE_ID}"
 if [ "${CI_COMMIT_BRANCH-}" = master ]; then
-    IMAGE_VERSION="nightly.$build_num"
+    version_num=$(TZ=UTC git log --format="%cd" --date="format-local:%Y%m%d" | uniq -c | head -n1 | awk '{print ($2"."($1-1))}')
+    IMAGE_VERSION="nightly.$version_num"
 elif [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
-    # Assume this will always be a stable branch string like "gnome-44"
-    IMAGE_VERSION=$(echo "${CI_COMMIT_REF_SLUG}.$build_num" | sed "s/-/_/g")
+    IMAGE_VERSION=$(git describe | cut -d - -f 1-2)
 else
     target="${CI_MERGE_REQUEST_TARGET_BRANCH_NAME-unknown}"
     if [ "${target}" = master ]; then
