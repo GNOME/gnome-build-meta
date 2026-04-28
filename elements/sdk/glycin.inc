@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.1.rc-9-g20b22f138736731f8f9b0715dc93f55021600964
+  ref: 2.1.rc-62-ge934e9f25865d4f33775b39ff1f324ac51357a9d
 - kind: cargo2
   ref:
   - kind: registry
@@ -342,6 +342,10 @@ sources:
     version: 0.3.32
     sha: e835b70203e41293343137df5c0664546da5745f82ec9b84d40be8336958447b
   - kind: registry
+    name: futures-sink
+    version: 0.3.32
+    sha: c39754e157331b013978ec91992bde1ac089843443c49cbc7f46150b0fad0893
+  - kind: registry
     name: futures-task
     version: 0.3.32
     sha: 037711b3d59c33004d3856fbdc83b99d4ff37a24768fa1be9ce3538a1cde4393
@@ -625,10 +629,6 @@ sources:
     name: memchr
     version: 2.8.0
     sha: f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79
-  - kind: registry
-    name: memfd
-    version: 0.6.5
-    sha: ad38eb12aea514a0466ea40a80fd8cc83637065948eb4a426e4aa46261175227
   - kind: registry
     name: memmap2
     version: 0.9.10
