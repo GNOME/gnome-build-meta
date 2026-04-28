@@ -4,7 +4,7 @@ build-depends:
 - gnomeos/os-release.bst
 - filename: freedesktop-sdk.bst:components/linux.bst
   strict: true
-- filename: gnomeos/initramfs.bst
+- filename: gnomeos/initramfs/image.bst
   strict: true
 - filename: gnomeos/usr/image.bst
   strict: true

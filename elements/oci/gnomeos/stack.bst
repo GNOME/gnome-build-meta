@@ -15,7 +15,7 @@ depends:
 # Add the kernel
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - gnomeos/initramfs/signed-modules.bst
-- oci/initramfs.bst
+- oci/initramfs/image.bst
 
 # Currently only in -devel
 - gnomeos-deps/bootc.bst
