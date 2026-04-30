@@ -9,13 +9,16 @@ sources:
   url: github:systemd/systemd.git
   (?):
   - channel == "nightly":
-      track: main
+      # track: main
+      # https://github.com/systemd/systemd/pull/41633
+      url: github:alatiera/systemd.git
+      track: alatiera/homed-lock-plumbing-may
   - channel == "stable":
       track: v*
       version-guess-pattern: '(\d+)(?:\.(\d+))?'
       exclude:
       - '*-rc*'
-  ref: v261-rc1-9-g4d18eac5a99dbc8198f25cde9175e66f27e92cbc
+  ref: v260-2007-gf75bb6c9509a7b37df1cced169b037bbad9a9b08
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

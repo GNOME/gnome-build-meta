@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome_gitlab:AdrianVovk/gnome-control-center.git
-  track: homed
-  ref: 50.0-51-g9e0362c63d6630958b3b8c72213ade20784b92ea
+  url: gnome_gitlab:alatiera/gnome-control-center.git
+  track: alatiera/homed-plus-secure-lock-config
+  ref: 50.0-165-g6f8cee57bb9fc35a99786b5c30d1e2ffa54ac464
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
