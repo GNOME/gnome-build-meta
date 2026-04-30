@@ -12,7 +12,9 @@ sub run {
     send_key('super');
 
     # Wait for the installer to autostart
-    assert_and_click('gnome_installer_install', timeout => 10, button => 'left');
+    # When there is a high cpu load on the runner, it can take a while for the VM
+    # to spawn the installer.
+    assert_and_click('gnome_installer_install', timeout => 20, button => 'left');
     assert_and_click('gnome_installer_disk', button => 'left');
     assert_and_click('gnome_installer_install_button', button => 'left');
     assert_screen('gnome_installer_installing');
