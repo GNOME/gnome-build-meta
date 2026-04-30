@@ -2,9 +2,10 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gdm.git
-  track: main
-  ref: 51.0-9-gba34b08db7f0f0dee914b4ace21f79b6f6fbf01a
+  url: gnome_gitlab:AdrianVovk/gdm.git
+  # https://gitlab.gnome.org/GNOME/gdm/-/merge_requests/252
+  track: homed-systemd
+  ref: 51.0-11-gfeda3f94a849641e051be8c60e597056fe8f2f1a
 - kind: local
   path: files/gdm
   directory: gdm-config
