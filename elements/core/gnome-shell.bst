@@ -2,9 +2,10 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-shell.git
-  track: main
-  ref: 51.beta-37-ga23b436f0346de8b1819a7cd46cfb00dd992f2b7
+  url: gnome_gitlab:alatiera/gnome-shell.git
+  # https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3279
+  track: homed-secure-lock
+  ref: 50.1-143-ge86795502d9a6c8d2f5e35beedcf34241776a76c
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #

@@ -2,13 +2,14 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:gnome-settings-daemon.git
-  track: main
-  ref: 51.beta-1-g90bc2a078a1eb06c92b9c3315c48196b1a885572
+  url: gnome_gitlab:AdrianVovk/gnome-settings-daemon.git
+  # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/-/merge_requests/367
+  track: secure-lock-keybind
+  ref: 50.1-5-gdfff12c0365478349460d9098082d6d56b4f3d3d
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 0a4eda0cdc2deb352bebc70ec697c42af46094e4
+  ref: 47c47a423ff2f55bb038d92517e4782cf051496a
 
 build-depends:
 - (@): include/gcc-for-recc.yml
