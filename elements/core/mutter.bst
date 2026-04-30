@@ -18,6 +18,7 @@ build-depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/umockdev.bst
+- core-deps/zenity.bst
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
@@ -37,6 +38,7 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - sdk/glib.bst
+- sdk/glycin.bst
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
