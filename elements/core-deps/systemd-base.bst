@@ -9,13 +9,16 @@ sources:
   url: github:systemd/systemd.git
   (?):
   - channel == "nightly":
-      track: main
+      # track: main
+      # https://github.com/systemd/systemd/pull/41633
+      url: github:alatiera/systemd.git
+      track: alatiera/homed-lock-plumbing-very-wip
   - channel == "stable":
       track: v*
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-rc2-7-g8615027695a2406d8405e27c94d84b025ae557b6
+  ref: v262-rc1-70-gc11b81e2423072cc93c5a0f0ace64305a3c6dff0
 
 build-depends:
 - (@): include/gcc-for-recc.yml
