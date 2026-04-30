@@ -6,11 +6,12 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
-  track: refs/heads/main
+  url: github:alatiera/systemd.git
+  # https://github.com/systemd/systemd/pull/41633
+  track: alatiera/homed-lock-plumbing
   exclude:
   - '*-rc*'
-  ref: v260-901-gfa6eb2e016a53d741ec48a784a8ea075ec3d4fe0
+  ref: v260-782-gc78d1add99484b6a8f6cf068fd54aa81a27e93b1
 - kind: patch
   path: patches/systemd/fix-sysupdate-4.patch
 
