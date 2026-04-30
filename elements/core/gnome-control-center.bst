@@ -3,8 +3,9 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome_gitlab:AdrianVovk/gnome-control-center.git
-  track: homed
-  ref: 51.rc.1-4-g40574492ed848fe503aa44cb9f941c7853c18b07
+  # https://gitlab.gnome.org/GNOME/gnome-control-center/-/merge_requests/2547
+  track: secure-lock-keybind
+  ref: 51.rc.1-5-gccd879538a11f32db017e5bf62d986297c90ff72
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
