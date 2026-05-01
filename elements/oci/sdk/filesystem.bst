@@ -6,6 +6,7 @@ build-depends:
 
 config:
   exclude:
+  - debug
   - locale
   - extra
   - static-blocklist
