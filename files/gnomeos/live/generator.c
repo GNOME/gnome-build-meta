@@ -249,7 +249,7 @@ static bool handle_nvidia(const char *generator_path) {
                 kmsg(3, "Cannot write /run/modprobe.d/gnomeos-nvidia.conf: %s\n", STRERROR(errno));
                 return false;
         }
-        fprintf(file, "blacklist nouveau\noptions nvidia_drm modeset=1 NVreg_PreserveVideoMemoryAllocations=1\n");
+        fprintf(file, "blacklist nouveau\noptions nvidia_drm modeset=1\noptions nvidia NVreg_PreserveVideoMemoryAllocations=1\n");
         fclosep(&file);
 
         return true;
