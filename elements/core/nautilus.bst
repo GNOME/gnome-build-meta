@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 50.0-113-gf8c9d87bfbb41ab4261ce1f980093a0f8dd8c8b4
+  ref: 50.0-114-g7cacc72c2dfafb9b71fe40aa31d690cd902d95aa
 
 build-depends:
 - sdk/blueprint-compiler.bst
