@@ -2,12 +2,14 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: qemu:qemu-10.1.3.tar.xz
-  ref: fbaa7a0d7a9a1deb5695b125916746ec28fe0de6275d4454f3e3bbaf8b339b53
+  url: qemu:qemu-11.0.0.tar.xz
+  ref: c04ca36012653f32d11c674d370cf52a710e7d3f18c2d8b63e4932052a4854d6
 
 build-depends:
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
+- freedesktop-sdk.bst:components/python3-wheel.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
