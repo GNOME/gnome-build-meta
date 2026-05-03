@@ -15,3 +15,7 @@ depends:
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+variables:
+  meson-local: >-
+    -Dvenus=true
