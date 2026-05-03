@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:canonical/snapd/releases/download/2.72/snapd_2.72.vendor.tar.xz
-  ref: 53d74e663527bae667a254da8a029aa4b0b8f559ca515d214da8dbb29dc6ccc7
+  url: github_files:canonical/snapd/releases/download/2.75.2/snapd_2.75.2.vendor.tar.xz
+  ref: b59998e0e7f2b683d04999d968ef29f9b9933cdb2c85ffc83cf1505bc3efccf1
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
 
@@ -51,7 +51,7 @@ config:
     ln -sr . src/github.com/snapcore/snapd
 
   - |
-    ./mkversion.sh 2.72
+    ./mkversion.sh 2.75.2
 
   - |
     cd cmd
