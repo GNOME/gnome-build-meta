@@ -43,7 +43,9 @@ sources:
   # Meson wrap file
   # https://github.com/flatpak/xdg-desktop-portal/blob/main/subprojects/libglnx.wrap
   ref: ccea836b799256420788c463a638ded0636b1632
-- kind: git_module
+- kind: git_repo
   url: gnome:gvdb.git
-  path: subprojects/gvdb
+  directory: subprojects/gvdb
+  # meson wrap file
+  # https://github.com/flatpak/xdg-desktop-portal/blob/main/subprojects/gvdb.wrap
   ref: c6f2359cc1d00f16e0a0e2527fa0bc1882b8b5ab
