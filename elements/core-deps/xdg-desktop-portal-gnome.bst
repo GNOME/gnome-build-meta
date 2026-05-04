@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 50.0-12-g531b1bbedf969f2517ceca75a9009d8471a63afe
+  ref: 50.0-14-g90636fe4289a2940e5320a748e0005a5c8a2f156
 # FIXME: should be kept in sync manually until we have a wrap plugin
 - kind: git_repo
   url: gnome:libgxdp.git

@@ -4,13 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-software.git
   track: main
-  ref: 50.0-108-gbe259b704b3c107d9ceb50f9346a6e82382d4cae
+  ref: 50.0-115-gf1534d994f04a2cd4d5886a47ba085f804ea4618
 - kind: git_module
   url: gnome_gitlab:mwleeds/gnome-pwa-list.git
   path: subprojects/gnome-pwa-list
   ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
-- kind: patch
-  path: patches/gnome-software/sysupdate-components.patch
 
 build-depends:
 - sdk/gtk-doc.bst
