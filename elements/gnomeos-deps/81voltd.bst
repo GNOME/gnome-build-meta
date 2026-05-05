@@ -12,7 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/ModemManager.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - gnomeos-deps/qrtr.bst
 
 config:

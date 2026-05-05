@@ -16,7 +16,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/colord.bst
 - core-deps/cups-pk-helper.bst
@@ -35,6 +34,7 @@ depends:
 - freedesktop-sdk.bst:components/geoclue-libs.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libwacom.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/xorg-lib-xtst.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
