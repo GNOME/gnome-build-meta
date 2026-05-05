@@ -22,4 +22,10 @@ depends:
 variables:
   conf-local: >-
     --with-dbm=KyotoCabinet
-  notparallel: true
+
+config:
+  build-commands:
+    (<):
+    # build these first to avoid race conditions
+    - make -C src
+    - make -C utils
