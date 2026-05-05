@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: freedesktop:libfprint/fprintd.git
-  track: v1.94.2
-  ref: v1.94.2-0-g0d2e2a6742cbec847aa756da25afd4b73d9ec53f
+  track: v*
+  ref: v1.94.5-0-gb54a007ccf58ac0ae074c7151b223f35cbd17306
 
 build-depends:
 - freedesktop-sdk.bst:components/patch.bst
