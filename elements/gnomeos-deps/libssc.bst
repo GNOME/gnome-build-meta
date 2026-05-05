@@ -10,6 +10,6 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- freedesktop-sdk.bst:components/libqmi.bst
 - sdk/glib.bst
-- core-deps/libqmi.bst
 - core-deps/protobuf-c.bst
