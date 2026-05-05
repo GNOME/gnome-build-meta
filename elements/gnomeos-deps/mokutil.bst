@@ -3,8 +3,8 @@ kind: autotools
 sources:
 - kind: git_repo
   url: github:lcp/mokutil.git
-  track: 0.6.0
-  ref: 0.6.0-0-gb4d8693f04bcf43986aba061845947534b384152
+  track: '*.*'
+  ref: 0.7.2-0-ga0e52a974e3ef222ee454bab76602afd7f4c0440
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
