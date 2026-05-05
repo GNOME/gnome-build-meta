@@ -30,7 +30,6 @@ runtime-depends:
 - core-deps/power-profiles-daemon.bst
 
 depends:
-- core-deps/ModemManager.bst
 - core-deps/NetworkManager.bst
 - core-deps/accountsservice.bst
 - core-deps/colord-gtk.bst
@@ -59,6 +58,7 @@ depends:
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libwacom.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 

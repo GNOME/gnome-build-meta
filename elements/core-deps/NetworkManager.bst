@@ -19,7 +19,6 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 depends:
-- core-deps/ModemManager.bst
 - core-deps/mobile-broadband-provider-info.bst
 - core-deps/ppp.bst
 - sdk/glib.bst
@@ -32,6 +31,7 @@ depends:
 - freedesktop-sdk.bst:components/libndp.bst
 - freedesktop-sdk.bst:components/libnvme.bst
 - freedesktop-sdk.bst:components/libpsl.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
