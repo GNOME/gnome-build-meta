@@ -22,4 +22,3 @@ depends:
 variables:
   conf-local: >-
     --with-dbm=KyotoCabinet
-  notparallel: true
