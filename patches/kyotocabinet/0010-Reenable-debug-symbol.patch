@@ -1,0 +1,23 @@
+From: Boyuan Yang <byang@debian.org>
+Date: Tue, 20 Jul 2021 15:16:14 -0400
+Subject: Reenable debug symbol
+
+---
+ configure.in | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/configure.in b/configure.in
+index 34c9f1b..4a32912 100644
+--- a/configure.in
++++ b/configure.in
+@@ -35,8 +35,8 @@ MYDOCUMENTFILES="COPYING FOSSEXCEPTION ChangeLog doc kyotocabinet.idl"
+ MYPCFILES="kyotocabinet.pc"
+ 
+ # Building flags
+-MYCFLAGS="-Wall -ansi -pedantic -fPIC -fsigned-char -g0 -O2"
+-MYCXXFLAGS="-Wall -fPIC -fsigned-char -g0 -O2"
++MYCFLAGS="-Wall -ansi -pedantic -fPIC -fsigned-char -O2"
++MYCXXFLAGS="-Wall -fPIC -fsigned-char -O2"
+ MYCPPFLAGS="-I. -I\$(INCLUDEDIR) -I/usr/local/include"
+ MYCPPFLAGS="$MYCPPFLAGS -DNDEBUG -D_GNU_SOURCE=1"
+ MYCPPFLAGS="$MYCPPFLAGS -D_FILE_OFFSET_BITS=64 -D_REENTRANT -D__EXTENSIONS__"
