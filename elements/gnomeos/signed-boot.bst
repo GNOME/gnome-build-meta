@@ -60,7 +60,7 @@ config:
     ukify build \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --cmdline="root=live:gnomeos" \
+      --cmdline="root=live:gnomeos rd.systemd.gpt_auto=0 systemd.gpt_auto=0" \
       --sbat=@sbat.txt \
       --output="%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi.extra.d/live.addon.efi"
 
