@@ -27,3 +27,7 @@ depends:
     depends:
       (>):
       - gnomeos/initramfs/signed-nvidia-modules.bst
+- arch in ["aarch64"]:
+    depends:
+      (>):
+      - gnomeos-deps/fairphone-firmware.bst

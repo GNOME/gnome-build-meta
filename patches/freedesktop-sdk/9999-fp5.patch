@@ -1,0 +1,72 @@
+diff -Nur freedesktop-sdk.old/elements/components/linux.bst freedesktop-sdk/elements/components/linux.bst
+--- freedesktop-sdk.old/elements/components/linux.bst	2026-05-06 19:55:46.088324288 +0200
++++ freedesktop-sdk/elements/components/linux.bst	2026-05-06 19:56:39.282094522 +0200
+@@ -146,3 +146,5 @@
+     path: files/linux/config-utils.sh
+   - kind: local
+     path: files/linux/fdsdk-config.sh
++  - kind: patch
++    path: patches/linux-kernel-only/a86f9e5bdb016838a678a3e384825f00492e1147.patch
+diff -Nur freedesktop-sdk.old/files/linux/fdsdk-config.sh freedesktop-sdk/files/linux/fdsdk-config.sh
+--- freedesktop-sdk.old/files/linux/fdsdk-config.sh	2026-05-06 19:55:46.121180483 +0200
++++ freedesktop-sdk/files/linux/fdsdk-config.sh	2026-05-06 19:57:51.990550564 +0200
+@@ -50,12 +50,14 @@
+ 	# fp5
+ 	module DRM_PANEL_RAYDIUM_RM692E5
+ 	enable REGULATOR_QCOM_PM8008
++	enable REGULATOR_QCOM_REFGEN
+ 	module DRM_SIMPLEDRM
+ 	module BACKLIGHT_QCOM_WLED
+ 	enable USB_XHCI_SIDEBAND
+ 	module SND_USB_AUDIO_QMI
+ 	module SND_SOC_USB
+ 	module SND_SOC_QDSP6_USB
++	enable SCSI_UFS_QCOM
+ 
+ 	# FIXME: Because ARM_SMMU is built-in and will try to probe
+ 	# the clocks, we need to have them built-in. We should try to
+@@ -1786,7 +1788,7 @@
+         module MFD_INTEL_PMC_BXT
+     ;;
+     aarch64)
+-        module MFD_QCOM_PM8008
++        enable MFD_QCOM_PM8008
+     ;;
+ esac
+ module MFD_AXP20X_I2C
+diff -Nur freedesktop-sdk.old/patches/linux-kernel-only/a86f9e5bdb016838a678a3e384825f00492e1147.patch freedesktop-sdk/patches/linux-kernel-only/a86f9e5bdb016838a678a3e384825f00492e1147.patch
+--- freedesktop-sdk.old/patches/linux-kernel-only/a86f9e5bdb016838a678a3e384825f00492e1147.patch	1970-01-01 01:00:00.000000000 +0100
++++ freedesktop-sdk/patches/linux-kernel-only/a86f9e5bdb016838a678a3e384825f00492e1147.patch	2026-05-06 19:56:39.282597881 +0200
+@@ -0,0 +1,32 @@
++commit a86f9e5bdb016838a678a3e384825f00492e1147
++Author: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
++Date:   Tue Mar 17 17:30:05 2026 +0200
++
++    FROMGIT drm/msm/dpu: don't try using 2 LMs if only one DSC is available
++    
++    Current topology code will try using 2 LMs with just one DSC, which
++    breaks cases like SC7280 / Fairphone5. Forbid using 2 LMs split in such
++    a case.
++    
++    Fixes: 1ce69c265a53 ("drm/msm/dpu: move resource allocation to CRTC")
++    Reported-by: Luca Weiss <luca.weiss@fairphone.com>
++    Closes: https://lore.kernel.org/r/DH1IKLU0YZYU.2SW4WYO7H3H4R@fairphone.com/
++    Tested-by: Luca Weiss <luca.weiss@fairphone.com> # qcm6490-fairphone-fp5
++    Patchwork: https://patchwork.freedesktop.org/patch/712386/
++    Link: https://lore.kernel.org/r/20260317-fix-3d-dsc-v1-1-88b54f62f659@oss.qualcomm.com
++    Signed-off-by: Dmitry Baryshkov <dmitry.baryshkov@oss.qualcomm.com>
++
++diff --git a/drivers/gpu/drm/msm/disp/dpu1/dpu_crtc.c b/drivers/gpu/drm/msm/disp/dpu1/dpu_crtc.c
++index 0f4921b1a892..cbb7caa194c1 100644
++--- a/drivers/gpu/drm/msm/disp/dpu1/dpu_crtc.c
+++++ b/drivers/gpu/drm/msm/disp/dpu1/dpu_crtc.c
++@@ -1410,7 +1410,8 @@ static struct msm_display_topology dpu_crtc_get_topology(
++ 		topology.num_lm = 2;
++ 	else if (topology.num_dsc == 2)
++ 		topology.num_lm = 2;
++-	else if (dpu_kms->catalog->caps->has_3d_merge)
+++	else if (dpu_kms->catalog->caps->has_3d_merge &&
+++		 topology.num_dsc == 0)
++ 		topology.num_lm = (mode->hdisplay > MAX_HDISPLAY_SPLIT) ? 2 : 1;
++ 	else
++ 		topology.num_lm = 1;
