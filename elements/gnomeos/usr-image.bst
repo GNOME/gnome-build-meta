@@ -162,7 +162,6 @@ config:
     C /etc/debuginfod
     C /etc/default
     C /etc/e2scrub.conf
-    C /etc/environment
     C /etc/ethertypes
     C /etc/fish
     C /etc/fonts
