@@ -7,7 +7,8 @@ sources:
   ref: v0.20.0-19-g13003896052eb68e56773fd1c33df9ce5adc7385
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - sdk/pygobject.bst

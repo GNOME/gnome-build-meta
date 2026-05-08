@@ -14,7 +14,8 @@ build-depends:
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - gnomeos-deps/fake-toolbox-env.bst
 - gnomeos-deps/fish.bst
 

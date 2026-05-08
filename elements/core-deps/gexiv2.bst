@@ -9,7 +9,8 @@ sources:
 build-depends:
 - sdk/pygobject.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/exiv2.bst

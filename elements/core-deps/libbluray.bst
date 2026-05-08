@@ -10,7 +10,8 @@ sources:
   ref: 139a2194525f2745b98a98e4d8fa627d07440176
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst

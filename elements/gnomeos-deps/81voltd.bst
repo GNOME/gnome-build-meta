@@ -9,7 +9,8 @@ sources:
   path: files/81voltd/81voltd.service
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/ModemManager.bst

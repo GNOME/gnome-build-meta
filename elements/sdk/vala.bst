@@ -12,7 +12,8 @@ build-depends:
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/vala-bootstrap.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - sdk/glib.bst

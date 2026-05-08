@@ -7,7 +7,8 @@ sources:
   ref: v1.1.6-0-g95f82543dcc76bb00e257d2af75a1d1cfd2c7fe8
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/bison.bst

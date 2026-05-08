@@ -7,7 +7,8 @@ environment-nocache:
 - MAXJOBS
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/pkg-config.bst

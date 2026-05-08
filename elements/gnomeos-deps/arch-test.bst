@@ -11,7 +11,8 @@ build-depends:
 - freedesktop-sdk.bst:cross-compilers/binutils-riscv64.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-x86-64.bst
 - freedesktop-sdk.bst:components/git.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

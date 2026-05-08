@@ -9,7 +9,8 @@ sources:
   path: files/gnomeos/qrtr/condition.conf
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

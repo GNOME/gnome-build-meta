@@ -12,7 +12,8 @@ sources:
 
 build-depends:
 - sdk/sysprof-minimal.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - sdk/gobject-introspection.bst

@@ -8,7 +8,8 @@ sources:
   path: files/snapd/tmpfiles-snapd.conf
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/systemd.bst

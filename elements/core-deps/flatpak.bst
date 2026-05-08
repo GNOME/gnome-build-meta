@@ -11,7 +11,8 @@ sources:
   ref: 1.18.0-1-g96ad6825f3e7115eb95abeba55600b2a39b71178
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- buildsystems/meson.bst
+- (@): include/gcc-for-recc.yml
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/gettext.bst

@@ -7,7 +7,8 @@ sources:
   ref: v2.5.3-0-g4b02040f4838237ecd08852c77acd2c89c32f392
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - core-deps/libpcap.bst

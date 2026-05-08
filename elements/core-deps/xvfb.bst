@@ -10,7 +10,8 @@ sources:
   ref: dd5395436b87a535ea27a644b004feeea949a4a1
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/xauth.bst

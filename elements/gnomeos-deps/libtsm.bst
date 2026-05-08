@@ -7,7 +7,8 @@ sources:
   ref: v4.5.0-0-g556373437d1c5f57f4dfc7c6cc1330e5088a4174
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 - core-deps/libcheck.bst
 

@@ -1552,7 +1552,8 @@ build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/zstd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 
 depends:
 - freedesktop-sdk.bst:components/composefs.bst

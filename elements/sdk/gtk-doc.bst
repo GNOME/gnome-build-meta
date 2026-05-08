@@ -9,7 +9,8 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- buildsystems/meson.bst
+- (@): include/gcc-for-recc.yml
 
 depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst

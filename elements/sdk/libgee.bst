@@ -7,7 +7,8 @@ sources:
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

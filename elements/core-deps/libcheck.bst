@@ -10,7 +10,8 @@ sources:
   path: patches/libcheck/361.patch
 build-depends:
 - freedesktop-sdk.bst:components/texinfo.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:

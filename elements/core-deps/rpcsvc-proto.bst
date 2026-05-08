@@ -5,7 +5,8 @@ sources:
   track: 'v*'
   ref: v1.4.4-0-gc65926005e50da02a4da3e26abc42eded36cd19d
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 variables:

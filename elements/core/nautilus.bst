@@ -15,7 +15,8 @@ build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 runtime-depends:
 - core-deps/xdg-user-dirs-gtk.bst

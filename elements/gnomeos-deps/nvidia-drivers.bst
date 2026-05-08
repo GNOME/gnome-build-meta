@@ -12,7 +12,8 @@ sources:
   directory: local-config
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/tar.bst
 - filename: freedesktop-sdk.bst:components/linux.bst

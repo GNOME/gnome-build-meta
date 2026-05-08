@@ -1,0 +1,17 @@
+environment:
+  PATH: /usr/recc/bin:/usr/bin
+  RECC_SERVER: unix:/tmp/casd.sock
+  RECC_DEPS_GLOBAL_PATHS: true
+  RECC_NO_PATH_REWRITE: true
+  RECC_INVALID_INPUT_PATHS_REGEX: .*/CMakeFiles/CMakeScratch/.*,.*/Modules/CMakeCCompilerABI.c,.*/Modules/CMakeCXXCompilerABI.cpp,.*/conftest.*
+
+environment-nocache:
+- RECC_CACHE_ONLY
+- RECC_PASSTHROUGH
+- RECC_CACHE_UPLOAD_LOCAL_BUILD
+- RECC_USE_LOCALCAS
+- RECC_USE_JOBSERVER
+
+sandbox:
+  remote-apis-socket:
+    path: /tmp/casd.sock

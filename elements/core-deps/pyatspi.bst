@@ -6,7 +6,8 @@ sources:
   ref: 2.58.2-1-ga0df428cfe6713be5769e1a3d3ca9942b6b4645d
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 depends:
 - sdk/at-spi2-core.bst
 - sdk/pygobject.bst

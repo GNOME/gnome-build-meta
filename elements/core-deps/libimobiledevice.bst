@@ -7,7 +7,8 @@ sources:
   ref: 1.4.0-0-g149f7623c672c1fa73122c7119a12bfc0012f2ac
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/git.bst
 
 depends:

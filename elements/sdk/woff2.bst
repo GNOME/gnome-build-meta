@@ -8,7 +8,8 @@ sources:
   path: patches/woff2/gcc15.patch
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 
 depends:
 - freedesktop-sdk.bst:components/brotli.bst

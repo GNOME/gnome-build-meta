@@ -9,7 +9,8 @@ sources:
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/gssdp.bst

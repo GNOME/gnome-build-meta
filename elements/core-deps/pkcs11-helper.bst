@@ -7,7 +7,8 @@ sources:
   ref: pkcs11-helper-1.31.0-0-g286b4415b95f298ab35d62508a37c2aefc055037
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - core-deps/graphviz.bst

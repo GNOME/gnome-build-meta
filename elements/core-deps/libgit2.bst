@@ -7,7 +7,8 @@ sources:
   ref: v1.9.4-0-gf7164261c9bc0a7e0ebf767c584e5192810a8b24
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 - freedesktop-sdk.bst:components/python3.bst
 
 depends:

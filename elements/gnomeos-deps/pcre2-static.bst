@@ -9,7 +9,8 @@ sources:
   ref: pcre2-10.47-0-gf454e231fe5006dd7ff8f4693fd2b8eb94333429
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 variables:
   conf-local: >-

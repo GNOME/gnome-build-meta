@@ -23,7 +23,8 @@ build-depends:
 - core-deps/xvfb.bst
 - sdk/gtk-doc.bst
 - sdk/blueprint-compiler.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst

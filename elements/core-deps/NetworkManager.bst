@@ -15,7 +15,7 @@ build-depends:
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- buildsystems/meson.bst
 
 depends:
 - core-deps/ModemManager.bst
@@ -50,6 +50,11 @@ variables:
     -Dqt=false
     -Dovs=false
     -Dnm_cloud_setup=false
+
+environment:
+  # Don't use the RECC wrapper
+  # See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108108#c5
+  PATH: /usr/bin
 
 config:
   install-commands:

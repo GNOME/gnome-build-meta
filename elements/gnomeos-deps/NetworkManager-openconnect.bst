@@ -13,7 +13,8 @@ sources:
   path: files/NetworkManager-openconnect/sysusers.conf
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - core-deps/intltool.bst
 

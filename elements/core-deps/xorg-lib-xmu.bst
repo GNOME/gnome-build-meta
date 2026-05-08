@@ -7,7 +7,8 @@ sources:
   ref: libXmu-1.3.1-0-gcdf280f6611932f79ab872832974e8043b1cad6d
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/xorg-util-macros.bst
 
 depends:

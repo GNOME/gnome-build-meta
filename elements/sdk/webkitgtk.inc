@@ -2,6 +2,7 @@ sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.53.3.tar.xz
   ref: 369863f6c32672d1b10b4e749e7e22f6f081aacab02b92b0bdf5c0706eebf7f8
+
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
@@ -10,7 +11,8 @@ build-depends:
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/clang-for-recc.yml
+- buildsystems/cmake.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/gstreamer-libav.bst

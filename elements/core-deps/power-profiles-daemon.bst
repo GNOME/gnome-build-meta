@@ -11,7 +11,8 @@ build-depends:
 - sdk/pygobject.bst
 - core-deps/python-dbusmock.bst
 - core-deps/umockdev.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/upower.bst

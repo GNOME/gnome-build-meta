@@ -12,7 +12,8 @@ build-depends:
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-dbus.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-dbusmock.bst
 - sdk/gtk-doc.bst
 - sdk/pygobject.bst

@@ -1435,7 +1435,8 @@ build-depends:
 - freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

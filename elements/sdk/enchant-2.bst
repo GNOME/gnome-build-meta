@@ -5,7 +5,8 @@ sources:
   ref: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 depends:
 - sdk/glib.bst
 - sdk/nuspell.bst

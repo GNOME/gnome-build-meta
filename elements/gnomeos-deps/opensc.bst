@@ -9,7 +9,8 @@ sources:
   path: files/opensc/opensc.module
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 
 depends:
