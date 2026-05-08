@@ -24,6 +24,7 @@ depends:
 variables:
   meson-local: >-
     -Dprofiler=enabled
+    -Db_pch=false
 
 public:
   bst:
