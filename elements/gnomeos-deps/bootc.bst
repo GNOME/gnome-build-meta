@@ -1545,14 +1545,16 @@ sources:
     name: zstd-sys
     version: 2.0.16+zstd.1.5.7
     sha: 91e19ebc2adc8f83e43039e79776e3fda8ca919132d68a1fed6a5faca2683748
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/openssl.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/zstd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:components/composefs.bst

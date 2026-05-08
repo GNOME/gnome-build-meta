@@ -7,6 +7,8 @@ sources:
   ref: 4.23.1-248-g8c24db702c62f72c4da55eea05b69369fd64cb9b
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk-deps/sassc.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -15,7 +17,6 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/at-spi2-core.bst

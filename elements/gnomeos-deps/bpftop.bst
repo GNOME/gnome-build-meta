@@ -911,10 +911,12 @@ sources:
     name: wit-parser
     version: 0.244.0
     sha: ecc8ac4bc1dc3381b7f59c34f00b67e18f910c2c0f50015669dde7def656a736
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

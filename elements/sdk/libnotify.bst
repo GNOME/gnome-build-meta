@@ -7,9 +7,10 @@ sources:
   ref: 0.8.8-1-g243adf21a3495d28c520afa8915c2a3b57370a23
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gi-docgen.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

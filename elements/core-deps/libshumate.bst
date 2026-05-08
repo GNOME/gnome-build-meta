@@ -7,11 +7,12 @@ sources:
   ref: 1.6.0-17-ge8e918100c0d5195eb1af16ad17869c0d76a9da7
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/protobuf-c.bst

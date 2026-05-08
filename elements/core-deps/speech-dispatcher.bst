@@ -7,9 +7,10 @@ sources:
   ref: 0.12.1-0-g6781ff1709eca1c3d7f748e5361a6aa157dd5f18
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/texinfo.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - core-deps/dotconf.bst

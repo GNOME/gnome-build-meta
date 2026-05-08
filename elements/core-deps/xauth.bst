@@ -7,7 +7,8 @@ sources:
   ref: xauth-1.1.5-0-g6fe9365f11181a043f151f2e67f36015c278791d
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/xorg-util-macros.bst
 
 depends:

@@ -10,9 +10,10 @@ sources:
   path: patches/graphviz/fix-build.patch
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

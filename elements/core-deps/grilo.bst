@@ -7,10 +7,11 @@ sources:
   ref: grilo-0.3.19-6-gbe66dd2c0cbe3b4178391d9a141d9e7bf88d7356
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/totem-pl-parser.bst

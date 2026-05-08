@@ -474,7 +474,8 @@ sources:
     sha: fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/rust.bst
 

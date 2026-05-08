@@ -7,9 +7,10 @@ sources:
   ref: 0.16.0-0-g33ac4052bb4132e16fdf2bf043cbddca9c716be6
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/pygobject.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/exiv2.bst

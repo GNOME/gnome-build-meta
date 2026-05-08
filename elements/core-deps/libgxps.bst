@@ -7,8 +7,9 @@ sources:
   ref: 0.3.2-14-g32f7c5009aeaff4cd75e9531783852557463b2ee
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 variables:
   meson-local: >-

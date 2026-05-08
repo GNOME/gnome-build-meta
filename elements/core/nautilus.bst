@@ -12,10 +12,11 @@ sources:
   directory: subprojects/libgxdp
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - core-deps/xdg-user-dirs-gtk.bst

@@ -7,9 +7,10 @@ sources:
   ref: 3.24.52-24-g369c97465c780b25e43b30747de0734ddf420770
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - sdk/cantarell-fonts.bst

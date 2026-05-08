@@ -7,7 +7,8 @@ sources:
   ref: 0.99.37-0-g03eddd0d8058c482462bccabadad0e56e8400cb4
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 
 depends:

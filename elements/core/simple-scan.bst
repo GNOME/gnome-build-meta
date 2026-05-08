@@ -7,9 +7,10 @@ sources:
   ref: 50.0-7-gab4ef9f4cffb3106d6bbbc1ab0371d25f6ba32e4
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/colord-gtk.bst

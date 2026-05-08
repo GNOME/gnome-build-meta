@@ -7,9 +7,10 @@ sources:
   ref: 50.0-23-geea85fb8c830e8bd0328d2d8bf8472bfaff3f067
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - sdk/adwaita-icon-theme.bst

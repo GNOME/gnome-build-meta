@@ -7,8 +7,9 @@ sources:
   ref: 0.3.0-0-g47a5590e9c4eb35d67651b8c05a55f1a48259329
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/hwdata.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

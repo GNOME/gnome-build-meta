@@ -18,8 +18,9 @@ sources:
   ref: v261-rc3-173-gaeaea4e62f01bca423087ff07bb25ac375cc8ee2
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- (@): include/clang-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:bootstrap/sed.bst
 - freedesktop-sdk.bst:bootstrap/gawk.bst
 - freedesktop-sdk.bst:bootstrap/grep.bst
@@ -58,6 +59,7 @@ build-depends:
 - freedesktop-sdk.bst:components/bpf-maybe.bst
 - freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
   install-commands:

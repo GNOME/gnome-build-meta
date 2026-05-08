@@ -13,10 +13,11 @@ sources:
   ref: 8329a7108fc22be3e1eec0a9f9318978579e3621
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

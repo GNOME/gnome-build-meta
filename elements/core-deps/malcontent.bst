@@ -16,13 +16,14 @@ sources:
   directory: subprojects/packagecache
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/glib-testing.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/accountsservice.bst

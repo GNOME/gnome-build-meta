@@ -7,10 +7,11 @@ sources:
   ref: 1.57.1-11-gede591ca6ffc749d367a17b5d923dd6ec5d395f4
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

@@ -16,6 +16,7 @@
 #   https://gitlab.com/BuildStream/buildstream/issues/163
 
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:mm-common.git
@@ -24,12 +25,16 @@ sources:
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   meson-local: >-
     -Duse-network=false

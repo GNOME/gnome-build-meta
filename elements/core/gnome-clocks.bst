@@ -7,11 +7,12 @@ sources:
   ref: 50.0-17-g8955429fcf5e75a90641fdc71abb1ef1411c6bd0
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/vorbis-tools.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/geocode-glib.bst

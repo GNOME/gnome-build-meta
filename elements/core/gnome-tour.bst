@@ -419,10 +419,12 @@ sources:
     name: winnow
     version: 0.7.14
     sha: 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/adwaita-icon-theme.bst

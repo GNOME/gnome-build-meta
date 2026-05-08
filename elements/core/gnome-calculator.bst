@@ -7,10 +7,11 @@ sources:
   ref: 51.alpha-5-g9cda122becba7cad42a6acf24b43f299f6932031
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/mpc.bst

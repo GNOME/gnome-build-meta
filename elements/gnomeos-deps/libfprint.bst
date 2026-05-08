@@ -7,10 +7,11 @@ sources:
   ref: v1.94.10-0-g0c97a47d8ef405cd577b87058c1e89cae9d242e7
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- freedesktop-sdk.bst:components/systemd.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
+- freedesktop-sdk.bst:components/systemd.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

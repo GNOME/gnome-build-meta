@@ -7,9 +7,10 @@ sources:
   ref: 49.0-33-g0aa1f166b0241694173ad56e97805a9b22235567
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/dconf.bst

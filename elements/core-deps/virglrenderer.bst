@@ -7,7 +7,8 @@ sources:
   ref: 1.3.0-0-gca50e008863837e094747a69974dde3ae148aeaa
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/python3-pyyaml.bst
 
 depends:

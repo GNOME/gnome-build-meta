@@ -3,6 +3,8 @@ kind: meson
 (@): elements/core/sysprof.inc
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk-deps/libpanel.bst
 - sdk/gtk.bst
 - sdk/json-glib.bst
@@ -13,7 +15,6 @@ build-depends:
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

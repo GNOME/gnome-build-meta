@@ -7,13 +7,14 @@ sources:
   ref: 3.11.1-88-g6ef1a2ead9653ccdc6ff0678a844c0e9bba18eef
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/libmediainfo.bst
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/NetworkManager.bst

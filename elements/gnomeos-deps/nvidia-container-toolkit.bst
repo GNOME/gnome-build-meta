@@ -9,8 +9,9 @@ sources:
   ref: v1.19.1-0-g09ceee5dde66ba9ce25c7cc69b1ebd5e6e3266fa
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/go.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

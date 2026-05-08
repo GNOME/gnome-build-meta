@@ -6,7 +6,8 @@ sources:
   ref: 1fe43ea1b03d19e0f1eda3c82ba5bd8bba04e9bc7e629c117dad094d0a6fc1de
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - sdk/krb5.bst

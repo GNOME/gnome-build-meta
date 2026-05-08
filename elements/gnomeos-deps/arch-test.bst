@@ -7,11 +7,12 @@ sources:
   ref: v0.22-0-ga14e749c3a09acc95fc486103e96516e0f02d187
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-aarch64.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-riscv64.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-x86-64.bst
 - freedesktop-sdk.bst:components/git.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

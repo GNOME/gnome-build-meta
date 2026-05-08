@@ -25,12 +25,13 @@ sources:
   ref: 7a3a86be7c3fa184bcda6882173bd8ab776ad662
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-pyparsing.bst
 - core-deps/python3-six.bst
 - sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/phodav.bst

@@ -7,11 +7,12 @@ sources:
   ref: 3.0-2-g78f973615284c4447c60a8ff6fbc70bd44c19f4f
 
 build-depends:
-- sdk/gtk-doc.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-dbusmock.bst
 - core-deps/umockdev.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

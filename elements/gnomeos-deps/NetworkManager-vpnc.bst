@@ -14,7 +14,8 @@ variables:
     --with-gtk4
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - core-deps/intltool.bst
 
 depends:

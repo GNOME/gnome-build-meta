@@ -1000,12 +1000,14 @@ sources:
     name: zvariant_utils
     version: 2.1.0
     sha: c51bcff7cc3dbb5055396bcf774748c3dab426b4b8659046963523cee4808340
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libdvdread.bst

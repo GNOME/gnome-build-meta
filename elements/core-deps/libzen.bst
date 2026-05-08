@@ -7,7 +7,8 @@ sources:
   ref: v0.4.41-0-g894980d3ecbc843d6ac685493f8f2ed5c2b6864c
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 
 variables:
   command-subdir: Project/CMake

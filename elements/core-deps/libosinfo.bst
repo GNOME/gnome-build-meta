@@ -11,11 +11,12 @@ sources:
   path: files/libosinfo/usb.ids
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/osinfo-db-tools.bst

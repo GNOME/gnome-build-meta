@@ -7,7 +7,8 @@ sources:
   ref: v1.4.3-0-g235540c05ad3f9cdc673ca09c237c9a9b5bda6eb
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - freedesktop-sdk.bst:components/libvorbis.bst

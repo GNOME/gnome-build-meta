@@ -7,6 +7,8 @@ sources:
   ref: 0.21.7-11-gb57273d0f92db9b9d77a026056df1a62bc90408c
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
@@ -15,7 +17,6 @@ build-depends:
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/valgrind-maybe.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

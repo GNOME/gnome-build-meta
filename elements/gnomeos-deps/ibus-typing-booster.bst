@@ -7,7 +7,8 @@ sources:
   ref: 2.30.10-0-g6d8dd1bd9ca0654d9a223a852979c212db1c429b
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/python3.bst
 
 depends:

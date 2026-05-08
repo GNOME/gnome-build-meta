@@ -7,9 +7,10 @@ sources:
   ref: grilo-plugins-0.3.18-14-g1c69b4ffef102e39f1ace6a0d2bc09911570ba57
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/localsearch.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/gnome-online-accounts.bst

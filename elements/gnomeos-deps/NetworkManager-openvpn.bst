@@ -9,8 +9,9 @@ sources:
   path: files/NetworkManager-openvpn/sysusers.conf
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - sdk/gtk.bst

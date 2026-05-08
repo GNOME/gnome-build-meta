@@ -20,12 +20,13 @@ sources:
   ref: d16afc40412b565d2bbecf80335f54a19a978009
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk-deps/sassc.bst
 - core-deps/jasmine-gjs.bst
 - core-deps/umockdev.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - core-deps/libgweather.bst

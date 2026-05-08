@@ -7,11 +7,12 @@ sources:
   ref: 50.0-9-gf7bbefbf30f23c2ed1feea0cafea6f13a6769252
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/folks.bst

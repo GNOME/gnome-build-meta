@@ -7,10 +7,11 @@ sources:
   ref: gssdp-1.6.5-0-ge27555e6cdf2849220c073ee19a151846f9a1dba
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

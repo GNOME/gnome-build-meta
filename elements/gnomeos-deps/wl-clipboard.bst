@@ -10,8 +10,9 @@ sources:
   ref: v2.3.0-0-g67a7b937895bceec1ae5ccebb10216f63f70ca1b
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/wayland-protocols.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/wayland.bst

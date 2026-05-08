@@ -7,12 +7,13 @@ sources:
   ref: 0.57.0-384-gc5d31b3fcdb9d564dc3340714a129f72a072391f
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/vala-bootstrap.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - sdk/glib.bst

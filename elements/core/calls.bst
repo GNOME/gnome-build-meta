@@ -12,10 +12,11 @@ sources:
   ref: 3a2044f8e7c45387954ed35d22c6b6309e6751d6
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/ModemManager.bst

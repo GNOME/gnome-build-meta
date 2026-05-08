@@ -18,12 +18,13 @@ sources:
   ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 # These two are more like runtime deps of the tests suite
 - core-deps/setxkbmap.bst
 - core-deps/xvfb.bst
 - sdk/gtk-doc.bst
 - sdk/blueprint-compiler.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - core-deps/power-profiles-daemon.bst

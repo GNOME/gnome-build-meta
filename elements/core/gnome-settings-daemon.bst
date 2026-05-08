@@ -11,9 +11,10 @@ sources:
   ref: 47c47a423ff2f55bb038d92517e4782cf051496a
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/ModemManager.bst

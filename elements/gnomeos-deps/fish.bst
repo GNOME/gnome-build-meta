@@ -509,8 +509,10 @@ sources:
     name: zerocopy-derive
     version: 0.8.37
     sha: 1328722bbf2115db7e19d69ebcc15e795719e2d66b60827c6a69a117365e37a0
+
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/sed.bst
 

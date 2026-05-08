@@ -9,9 +9,10 @@ sources:
   path: files/sane-backends/sysusers.conf
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - core-deps/libgphoto2.bst

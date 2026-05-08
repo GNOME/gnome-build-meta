@@ -7,11 +7,12 @@ sources:
   ref: 45.1-38-g28d87c726e2fe8e0ce084cdc3b39466bf1a65d35
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/vala.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/python3-pyyaml.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/gssdp.bst

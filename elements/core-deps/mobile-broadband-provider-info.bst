@@ -7,8 +7,9 @@ sources:
   ref: 20251101-42-g052f1e6999f205ba88cc3557627f260b9ae0840e
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/grep.bst
 
 depends:

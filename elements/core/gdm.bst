@@ -10,9 +10,10 @@ sources:
   directory: gdm-config
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/libcheck.bst
 - sdk/yelp-tools.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/accountsservice.bst

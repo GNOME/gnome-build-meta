@@ -6,16 +6,17 @@ sources:
   track: 'v*.*.*'
   exclude:
   - '*rc*'
-
   ref: v5.0.0-0-g9b26bec8828a38fcb3bc0e5f6f33b03fa99c4b68
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/make.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libvirt.bst

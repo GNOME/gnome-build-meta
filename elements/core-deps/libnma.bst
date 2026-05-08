@@ -7,10 +7,11 @@ sources:
   ref: 1.10.7-dev-46-g3b25a43e8e224894dc122594568d2b25edf6b866
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/NetworkManager.bst

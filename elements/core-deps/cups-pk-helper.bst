@@ -11,9 +11,10 @@ sources:
   path: patches/cups-pk-helper/cups-pk-helper-g-variant.patch
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/cups.bst

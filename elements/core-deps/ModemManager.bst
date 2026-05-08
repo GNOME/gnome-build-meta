@@ -9,9 +9,10 @@ sources:
   ref: 1.24.2-0-gf2b9ab1ad78d322f32134a444b5b54c6e8160e19
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/systemd.bst
 
 depends:

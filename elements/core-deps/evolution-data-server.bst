@@ -7,10 +7,11 @@ sources:
   ref: 3.60.0-92-g84c82435863edb8d9ded720bf6f745008a33461f
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gperf.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
 - core-deps/gnome-online-accounts.bst

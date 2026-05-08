@@ -11,8 +11,9 @@ sources:
   ref: 67432ee4ebf74349cb3c848f73945b21a767e276
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/sysprof-minimal.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gobject-introspection.bst
@@ -21,6 +22,7 @@ depends:
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   meson-local: >-
     -Dprofiler=enabled

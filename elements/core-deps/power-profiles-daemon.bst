@@ -7,11 +7,12 @@ sources:
   ref: 0.30-0-g5b4994c8a91290481bef87a5bae95391d0ec677f
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gtk-doc.bst
 - sdk/pygobject.bst
 - core-deps/python-dbusmock.bst
 - core-deps/umockdev.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/upower.bst

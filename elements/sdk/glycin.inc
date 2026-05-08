@@ -1317,14 +1317,16 @@ sources:
     name: zvariant_utils
     version: 3.3.1
     sha: 6d464f5733ffa07a3164d656f18533caace9d0638596721355d73256a410d691
+
 runtime-depends:
 - freedesktop-sdk.bst:components/bubblewrap.bst
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst

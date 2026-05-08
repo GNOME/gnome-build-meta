@@ -7,8 +7,9 @@ sources:
   ref: 50.0-131-gdb55853ec62bc1393bfd455d82ddbc8d7b877f90
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core/papers.bst

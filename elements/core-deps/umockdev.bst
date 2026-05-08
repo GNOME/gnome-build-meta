@@ -7,11 +7,12 @@ sources:
   ref: 0.19.7-0-g39f785a74e3fcfa27ea5096fd7945ad080420d35
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libpcap.bst

@@ -7,9 +7,10 @@ sources:
   ref: 47.1-112-g30a81f13dbc8e6d28fad1af572e903073dac8462
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/gsound.bst

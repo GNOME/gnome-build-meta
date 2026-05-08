@@ -1,12 +1,16 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:totem-pl-parser.git
   track: master
   ref: 3.26.7-2-g10652d7f6714bd7108e0c4e24eb003b3262f3f86
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libarchive.bst

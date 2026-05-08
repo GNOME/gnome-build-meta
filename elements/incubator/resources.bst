@@ -6,7 +6,6 @@ sources:
   track: main
   ref: v1.10.2-154-gff6cf9ddf2f610d071b74b1e5dd1a047da0747a1
 - kind: cargo2
-
   ref:
   - kind: registry
     name: aho-corasick
@@ -812,11 +811,13 @@ sources:
     name: zmij
     version: 1.0.21
     sha: b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/adwaita-icon-theme.bst

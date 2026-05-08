@@ -12,8 +12,9 @@ sources:
   ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core/gnome-desktop.bst

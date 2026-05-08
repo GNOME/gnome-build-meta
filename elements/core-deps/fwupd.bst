@@ -7,6 +7,8 @@ sources:
   ref: 2.1.4-2-0-g2496d94c1840802566306f1a14ceb0714479a2e5
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
@@ -17,7 +19,6 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/valgrind.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/ModemManager.bst

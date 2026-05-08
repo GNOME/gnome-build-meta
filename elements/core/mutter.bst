@@ -13,6 +13,8 @@ sources:
   ref: b54bc5da25127ef416858a3ad92e57159ff565b3
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst
 - core-deps/umockdev.bst
@@ -23,7 +25,6 @@ build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
   # xwayland crashes when gnome-control-center not present

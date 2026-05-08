@@ -7,10 +7,11 @@ sources:
   ref: gupnp-av-0.14.5-0-g9fe909ba5adf4b817825773886bd5f053a6453b7
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/gupnp.bst

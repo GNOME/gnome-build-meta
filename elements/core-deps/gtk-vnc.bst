@@ -11,12 +11,13 @@ sources:
   ref: e15649b83a78f89f57205927022115536d2c1698
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

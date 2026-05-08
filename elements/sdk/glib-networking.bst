@@ -5,7 +5,8 @@ sources:
   track: master
   ref: 2.80.0.97-68-g12c89867c3eb5bcfce40057611146b3a3bd9f2bf
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 depends:
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst

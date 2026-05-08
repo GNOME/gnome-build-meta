@@ -11,10 +11,11 @@ sources:
   ref: e70b4992aa71f5298c4a98f0e9e42b7761601c5b
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - core-deps/typescript.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libgweather.bst

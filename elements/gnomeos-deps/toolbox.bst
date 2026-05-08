@@ -8,15 +8,16 @@ sources:
   path: patches/toolbox/
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
+- gnomeos-deps/fake-toolbox-env.bst
+- gnomeos-deps/fish.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/ca-certificates.bst
 - freedesktop-sdk.bst:components/go.bst
 - freedesktop-sdk.bst:components/go-md2man.bst
 - freedesktop-sdk.bst:components/strace.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- gnomeos-deps/fake-toolbox-env.bst
-- gnomeos-deps/fish.bst
 
 depends:
 - freedesktop-sdk.bst:components/podman.bst

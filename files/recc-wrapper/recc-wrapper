@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -z "$RECC_REMOTE_PLATFORM_chrootRootDigest" ]; then
+    echo Need to set RECC_REMOTE_PLATFORM_chrootRootDigest to use RECC
+    exit 1
+fi
+
+exec recc "/usr/bin/`basename $0`" "$@"

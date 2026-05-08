@@ -1459,7 +1459,10 @@ sources:
     name: zvariant_utils
     version: 3.4.0
     sha: 1e8535915cfa75547e559d8c68e8139909a4aeee076831e4ef7fc59d8172c4d6
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/blueprint-compiler.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -1467,7 +1470,6 @@ build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libspelling.bst

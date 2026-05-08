@@ -4,10 +4,12 @@ sources:
 - kind: tar
   url: kerberos:dist/krb5/1.22/krb5-1.22.2.tar.gz
   ref: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/perl.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 depends:
 - freedesktop-sdk.bst:components/e2fsprogs.bst

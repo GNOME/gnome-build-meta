@@ -7,9 +7,10 @@ sources:
   ref: udisks-2.11.1-0-g6375ff14d3fed5f20c66ff50cfc02844473294a1
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/btrfs-progs.bst

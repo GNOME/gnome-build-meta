@@ -7,8 +7,9 @@ sources:
   ref: 0.16-7-g2517b1681578168a89850731de5620cbc9721d76
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

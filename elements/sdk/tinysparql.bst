@@ -12,6 +12,8 @@ sources:
   directory: subprojects/packagecache
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/graphviz.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
@@ -19,7 +21,6 @@ build-depends:
 - sdk/pygobject.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

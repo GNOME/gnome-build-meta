@@ -7,16 +7,17 @@ sources:
   ref: v1.94.5-0-gb54a007ccf58ac0ae074c7151b223f35cbd17306
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
+- core-deps/python-dbusmock.bst
+- gnomeos-deps/pam-wrapper.bst
+- sdk/gtk-doc.bst
+- sdk/pygobject.bst
 - freedesktop-sdk.bst:components/patch.bst
 - freedesktop-sdk.bst:components/perl.bst # for man pages
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-dbus.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-- core-deps/python-dbusmock.bst
-- sdk/gtk-doc.bst
-- sdk/pygobject.bst
-- gnomeos-deps/pam-wrapper.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

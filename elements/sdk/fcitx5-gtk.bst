@@ -8,8 +8,9 @@ sources:
   path: patches/fcitx5-gtk/missing-include.patch
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 - freedesktop-sdk.bst:components/extra-cmake-modules.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
 
 depends:
 - sdk/gtk+-3.bst

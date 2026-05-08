@@ -7,9 +7,10 @@ sources:
   ref: 50.0-0-gd8ef863e4f657c1fdd7afa77ec4a7cd20dda5b38
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/grilo-plugins.bst

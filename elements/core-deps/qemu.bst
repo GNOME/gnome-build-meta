@@ -6,12 +6,13 @@ sources:
   ref: c04ca36012653f32d11c674d370cf52a710e7d3f18c2d8b63e4932052a4854d6
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
+- buildsystems/meson.bst
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst
 - freedesktop-sdk.bst:components/python3-wheel.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gtk+-3.bst

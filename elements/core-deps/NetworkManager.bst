@@ -9,13 +9,14 @@ sources:
   ref: 1.56.1-0-gb829f838fc5d8c93437faa5db44a5396b67893de
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/ModemManager.bst
@@ -50,6 +51,11 @@ variables:
     -Dqt=false
     -Dovs=false
     -Dnm_cloud_setup=false
+
+environment:
+  # Don't use the RECC wrapper
+  # See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=108108#c5
+  PATH: /usr/bin
 
 config:
   install-commands:

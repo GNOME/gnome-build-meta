@@ -1427,7 +1427,10 @@ sources:
     name: zune-jpeg
     version: 0.5.13
     sha: ec5f41c76397b7da451efd19915684f727d7e1d516384ca6bd0ec43ec94de23c
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
@@ -1435,7 +1438,6 @@ build-depends:
 - freedesktop-sdk.bst:components/cargo-c.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/rust.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/gdk-pixbuf.bst

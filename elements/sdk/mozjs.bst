@@ -11,7 +11,8 @@ sources:
   path: patches/mozjs/bmo1973994-fix-os-dependent-headers.patch
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
+- (@): include/clang-for-recc.yml
+- buildsystems/make.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst

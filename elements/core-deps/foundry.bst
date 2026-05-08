@@ -7,7 +7,8 @@ sources:
   ref: 1.1.1-61-g00c9d786a74dca1784922361381844dbbbbb66d6
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/cmark.bst

@@ -11,13 +11,14 @@ sources:
   path: patches/samba/fix-root-build.patch
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/make.bst
 - core-deps/perl-parse-yapp.bst
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
 - core-deps/openldap.bst

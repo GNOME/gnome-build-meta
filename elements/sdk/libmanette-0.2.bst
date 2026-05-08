@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:libmanette.git
@@ -6,10 +7,11 @@ sources:
   ref: 0.2.13-2-gb083b38874fb2204370c1ee62dd16833eec71aff
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

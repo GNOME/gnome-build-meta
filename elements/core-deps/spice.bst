@@ -21,23 +21,14 @@ sources:
   directory: subprojects/spice-common/common/recorder
   path: make-it-quick
   ref: 7a3a86be7c3fa184bcda6882173bd8ab776ad662
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-pyparsing.bst
 - core-deps/spice-protocol.bst
 - freedesktop-sdk.bst:components/sed.bst
 
-# public-stacks/buildsystem-meson.bst depends on git-minimal
-# but spice has a script, build-aux/meson/check-spice-common
-# that runs git ls-files on submodules and thus we need git.bst
-# which can't overlap with git-minimal. Copy over the deps from
-# buildsystem-meson and repalce git-minimal.
-- freedesktop-sdk.bst:components/gcc.bst
-- freedesktop-sdk.bst:components/stripper.bst
-- freedesktop-sdk.bst:components/gettext.bst
-- freedesktop-sdk.bst:components/meson.bst
-- freedesktop-sdk.bst:components/ninja.bst
-- freedesktop-sdk.bst:components/pkg-config.bst
-- freedesktop-sdk.bst:components/git.bst
 depends:
 - core-deps/libcacard.bst
 - sdk/glib.bst
@@ -48,6 +39,7 @@ depends:
 - freedesktop-sdk.bst:components/opus.bst
 - freedesktop-sdk.bst:components/pixman.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   conf-local: >-
     -Dgstreamer=1.0

@@ -11,10 +11,11 @@ sources:
   ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gtk-doc.bst
 - sdk/sysprof-minimal.bst
 - freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/fwupd.bst

@@ -6,6 +6,8 @@ sources:
   ref: 4d6d70a4217a7c07caaf4d0bb41de4572913be817951a1fcd2d879385a97d506
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - core-deps/dconf.bst
 - sdk/glib.bst
 - sdk/gobject-introspection.bst
@@ -15,7 +17,6 @@ build-depends:
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

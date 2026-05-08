@@ -7,12 +7,13 @@ sources:
   ref: 3.7.1-7-g19b81b655f309026e5c76ddc18aee687f14636e4
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 runtime-depends:
 - sdk/glib-networking.bst

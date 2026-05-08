@@ -11,10 +11,11 @@ sources:
   ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/typescript.bst
-- freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - sdk/blueprint-compiler.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
 
 depends:
 - sdk/adwaita-icon-theme.bst

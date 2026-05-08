@@ -7,9 +7,10 @@ sources:
   ref: v1.91.2-0-g17f9e8dc5a967fde13be688634a465c71fb79dd0
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/libimobiledevice.bst

@@ -7,10 +7,11 @@ sources:
   ref: 0.15.12-6-gbb8cc4e53fea4d49b0f6a949c43cc1c89720998e
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/python-dbusmock.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - core-deps/evolution-data-server.bst

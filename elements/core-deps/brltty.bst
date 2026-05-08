@@ -7,9 +7,10 @@ sources:
   ref: BRLTTY-6.9.1-0-g4fddd533bf6023820266879203839db511808d63
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - core-deps/tcl.bst
 - freedesktop-sdk.bst:components/cython.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
 
 depends:

@@ -1,4 +1,5 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: videolan:libbluray.git
@@ -8,9 +9,11 @@ sources:
   url: videolan:libudfread.git
   path: contrib/libudfread
   ref: 139a2194525f2745b98a98e4d8fa627d07440176
+
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/doxygen.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst

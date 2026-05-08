@@ -14,6 +14,8 @@ sources:
   path: files/libvirt/80-libvirt.preset
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - core-deps/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libxslt.bst
@@ -21,7 +23,6 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/glib.bst

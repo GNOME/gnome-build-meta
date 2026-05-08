@@ -7,11 +7,12 @@ sources:
   ref: 0.4.10-12-gdfc604ea4159ab8f4db7fdd93f439bbeb756ed21
 
 build-depends:
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
 - sdk/enchant-2.bst
