@@ -6,7 +6,8 @@ sources:
 - kind: patch_queue
   path: patches/intltool/
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 runtime-depends:
 - freedesktop-sdk.bst:components/gettext.bst
 depends:

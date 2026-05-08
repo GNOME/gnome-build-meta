@@ -7,7 +7,8 @@ sources:
   ref: libhangul-0.2.0-0-g41c702f5d3581325b646ef6249f1f641b0427ae0
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

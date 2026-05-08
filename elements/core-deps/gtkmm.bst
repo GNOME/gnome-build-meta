@@ -12,7 +12,8 @@ build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:components/m4.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/cairomm.bst

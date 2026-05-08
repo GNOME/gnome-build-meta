@@ -7,7 +7,8 @@ sources:
   ref: 2026.1-4-g1f4e51a1f13e4d8de1a95505ccc5b717e36bb516
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/python3-jinja2.bst

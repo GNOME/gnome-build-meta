@@ -7,7 +7,8 @@ sources:
   ref: libssh2-1.11.1-0-ga312b43325e3383c865a87bb1d26cb52e3292641
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

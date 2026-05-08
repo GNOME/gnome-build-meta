@@ -5,7 +5,8 @@ sources:
   track: master
   ref: 50.0-2-gd78e7194cd8319914959e2abd40442108fe2805f
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 depends:
 - sdk/gtk.bst
 - sdk/librsvg.bst

@@ -1,0 +1,5 @@
+filename:
+- freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:components/zlib.bst
+config:
+  digest-environment: RECC_REMOTE_PLATFORM_chrootRootDigest

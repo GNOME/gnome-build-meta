@@ -7,7 +7,8 @@ sources:
   ref: spice-vdagent-0.23.0-0-g761770bf10455563375a022315039779bf8aac36
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - sdk/glib.bst

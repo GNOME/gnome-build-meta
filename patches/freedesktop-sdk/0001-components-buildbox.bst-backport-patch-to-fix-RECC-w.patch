@@ -1,0 +1,110 @@
+From 970e6d919c9201121858704eb442e4a8bfc20ed4 Mon Sep 17 00:00:00 2001
+From: Abderrahim Kitouni <akitouni@gnome.org>
+Date: Thu, 7 May 2026 17:21:15 +0100
+Subject: [PATCH] components/buildbox.bst: backport patch to fix RECC with
+ clang
+
+---
+ elements/components/buildbox.bst              |  2 +
+ ...cc-fix-crash-getting-deps-from-clang.patch | 79 +++++++++++++++++++
+ 2 files changed, 81 insertions(+)
+ create mode 100644 patches/buildbox/0001-recc-fix-crash-getting-deps-from-clang.patch
+
+diff --git a/elements/components/buildbox.bst b/elements/components/buildbox.bst
+index 6f917aa94..81e5f64ba 100644
+--- a/elements/components/buildbox.bst
++++ b/elements/components/buildbox.bst
+@@ -35,3 +35,5 @@ sources:
+   url: gitlab:BuildGrid/buildbox/buildbox.git
+   track: '*.*.*'
+   ref: 1.4.4-0-gd811a8fc41dadbcb9e88965f7ed37fc5bd749ff8
++- kind: patch
++  path: patches/buildbox/0001-recc-fix-crash-getting-deps-from-clang.patch
+diff --git a/patches/buildbox/0001-recc-fix-crash-getting-deps-from-clang.patch b/patches/buildbox/0001-recc-fix-crash-getting-deps-from-clang.patch
+new file mode 100644
+index 000000000..15c3eea98
+--- /dev/null
++++ b/patches/buildbox/0001-recc-fix-crash-getting-deps-from-clang.patch
+@@ -0,0 +1,79 @@
++From 0b95b7f533ba60f0cfaf41e62423224b240fb167 Mon Sep 17 00:00:00 2001
++From: Abderrahim Kitouni <akitouni@gnome.org>
++Date: Thu, 7 May 2026 15:35:38 +0100
++Subject: [PATCH] recc: fix crash getting deps from clang
++
++Getting deps from clang tries to parse the output using a single regex. This
++can have a lot of backtracking, and lead to a stack overflow if the output in
++question is huge (for large codebases such as WebKit).
++
++This changes to try to match regexes on individual lines instead.
++---
++ recc/deps.cpp | 47 ++++++++++++++++++++++++++++++++++++-----------
++ 1 file changed, 36 insertions(+), 11 deletions(-)
++
++diff --git a/recc/deps.cpp b/recc/deps.cpp
++index eac7b28d..23a54db4 100644
++--- a/recc/deps.cpp
+++++ b/recc/deps.cpp
++@@ -103,21 +103,46 @@ std::string Deps::crtbegin_from_clang_v(const std::string &str)
++     // Reference:
++     // https://github.com/llvm-mirror/clang/blob/69f63a0cc21da9f587125760f10610146c8c47c3/lib/Driver/ToolChains/Gnu.cpp#L1747
++ 
++-    std::regex re(
++-        "Selected GCC installation: ([^\n]*).*Selected multilib: ([^;\n]*)",
++-        std::regex::extended);
++-    std::smatch m;
++-    if (!std::regex_search(str, m, re)) {
+++    std::regex install_re("Selected GCC installation: (.*)");
+++    std::regex multilib_re("Selected multilib: ([^;]*).*");
+++
+++    bool found_install = false;
+++    bool found_multilib = false;
+++
+++    std::ostringstream s;
+++
+++    std::stringstream ss(str);
+++    std::string line;
+++
+++    while (std::getline(ss, line)) {
+++        std::smatch m;
+++
+++        if (!found_install) {
+++            if (std::regex_match(line, m, install_re)) {
+++                found_install = true;
+++                s << m[1];
+++                continue;
+++            }
+++        }
+++        else {
+++
+++            if (std::regex_match(line, m, multilib_re)) {
+++                found_multilib = true;
+++
+++                if (m[1] != ".") {
+++                    // Avoid redundant .'s in the path.
+++                    s << "/" << m[1];
+++                }
+++                break;
+++            }
+++        }
+++    }
+++
+++    if (!found_install || !found_multilib) {
++         BUILDBOX_LOG_DEBUG("Failed to locate crtbegin.o for clang");
++         return "";
++     }
++ 
++-    std::ostringstream s;
++-    s << m[1];
++-    if (m[2] != ".") {
++-        // Avoid redundant .'s in the path.
++-        s << "/" << m[2];
++-    }
++     s << "/crtbegin.o";
++ 
++     std::string crtbegin_file = s.str();
++-- 
++2.54.0
++
+-- 
+2.54.0
+

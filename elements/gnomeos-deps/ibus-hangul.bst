@@ -7,7 +7,8 @@ sources:
   ref: 1.5.5-0-gaa4b71c69cf9d77466e9c6713c99d6bdffee6a68
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - core-deps/ibus-daemon.bst

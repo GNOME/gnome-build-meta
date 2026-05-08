@@ -9,7 +9,8 @@ sources:
   ref: REL-1-8-6-0-g86c100d99243e89ce037a1226597744e1b7e1773
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

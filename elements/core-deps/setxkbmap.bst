@@ -7,7 +7,8 @@ sources:
   ref: setxkbmap-1.3.5-0-g66d92298f83dd3406303fd2b376d70f5cb1b704d
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/xorg-util-macros.bst
 
 depends:

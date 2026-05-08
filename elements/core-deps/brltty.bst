@@ -9,7 +9,8 @@ sources:
 build-depends:
 - core-deps/tcl.bst
 - freedesktop-sdk.bst:components/cython.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-setuptools.bst
 
 depends:

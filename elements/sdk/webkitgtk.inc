@@ -4,6 +4,7 @@ sources:
   ref: 79f03692f65149685c32c64c66c6f4696c91e652a2abfab0614532da323b8bb9
 - kind: patch
   path: patches/webkitgtk/build.patch
+
 build-depends:
 - sdk-deps/unifdef.bst
 - sdk/gi-docgen.bst
@@ -12,7 +13,8 @@ build-depends:
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/ruby.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/clang-for-recc.yml
+- buildsystems/cmake.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/gstreamer-libav.bst

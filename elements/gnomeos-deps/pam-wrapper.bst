@@ -7,7 +7,8 @@ sources:
   ref: pam_wrapper-1.1.8-0-gb44cd4497a9fdfe271e1adda11c0d65ba462555c
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst
 
 depends:

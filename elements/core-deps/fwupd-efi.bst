@@ -7,7 +7,8 @@ sources:
   ref: 1.8-0-g8572a93e81e7110b88445d1907fdd73982557347
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - freedesktop-sdk.bst:components/grep.bst

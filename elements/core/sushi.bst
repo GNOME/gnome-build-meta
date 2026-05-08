@@ -7,7 +7,8 @@ sources:
   ref: 50.0-2-g0db2b7fec2d0aa412beb728ff6befba21bd498d5
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/evince.bst

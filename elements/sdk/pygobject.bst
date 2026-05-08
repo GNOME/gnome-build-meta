@@ -21,7 +21,8 @@ sources:
   ref: 22811c3f0e69908894d2bd724f572b32667f2141
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/patch.bst
 
 depends:

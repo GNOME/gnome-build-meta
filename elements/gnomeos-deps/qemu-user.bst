@@ -27,7 +27,8 @@ sources:
   ref: e7af9751d9f9fd3b47911f51a5cfd08af256a9ab
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/meson.bst
 - freedesktop-sdk.bst:components/ninja.bst
 - freedesktop-sdk.bst:components/python3-setuptools.bst

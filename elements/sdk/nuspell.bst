@@ -4,7 +4,8 @@ sources:
   url: github_files:nuspell/nuspell/archive/refs/tags/v5.1.6.tar.gz
   ref: 5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/cmake.bst
 depends:
 - freedesktop-sdk.bst:components/hunspell.bst
 - freedesktop-sdk.bst:components/icu.bst

@@ -9,7 +9,8 @@ build-depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/libxml2.bst
 - freedesktop-sdk.bst:components/python3-sphinx.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/dbus.bst

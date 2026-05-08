@@ -4,7 +4,8 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 - freedesktop-sdk.bst:components/flatpak-minimal.bst
 - freedesktop-sdk.bst:components/fontconfig.bst
 - freedesktop-sdk.bst:components/fuse3.bst

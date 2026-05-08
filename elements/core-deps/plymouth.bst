@@ -9,7 +9,8 @@ sources:
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/sed.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - sdk/cairo.bst

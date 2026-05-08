@@ -3,7 +3,8 @@ kind: meson
 (@): elements/core/sysprof.inc
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - freedesktop-sdk.bst:components/libunwind.bst

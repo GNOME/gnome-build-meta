@@ -11,7 +11,8 @@ variables:
     --with-vpnc-script=/usr/share/vpnc-scripts
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - freedesktop-sdk.bst:components/libxml2.bst

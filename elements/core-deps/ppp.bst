@@ -9,7 +9,8 @@ sources:
   path: patches/ppp/gcc15.patch
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - core-deps/libpcap.bst

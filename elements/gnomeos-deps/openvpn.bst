@@ -11,7 +11,8 @@ sources:
   ref: v2.7.4-0-g8e9e91f4caff9a80961f32a1f9eda7e5a489176e
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 - freedesktop-sdk.bst:components/git-minimal.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 

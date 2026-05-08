@@ -12,7 +12,8 @@ build-depends:
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst
 - freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 runtime-depends:
 - sdk/glib-networking.bst

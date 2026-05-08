@@ -9,7 +9,8 @@ sources:
   ref: 2.3.3-0-g12731092979c6d07f42da27da673a9f6c7b13586
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 variables:
   conf-args: >-

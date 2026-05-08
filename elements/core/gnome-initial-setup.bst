@@ -7,7 +7,8 @@ sources:
   ref: 50.0-62-gf03e9f165130ca8558b4cbce536ee29d1bb1464f
 
 build-depends:
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/meson.bst
 
 depends:
 - core-deps/NetworkManager.bst

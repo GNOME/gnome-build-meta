@@ -8,7 +8,8 @@ sources:
 
 build-depends:
 - sdk/gobject-introspection.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
+- (@): include/gcc-for-recc.yml
+- buildsystems/autotools.bst
 
 depends:
 - core-deps/ibus-daemon.bst

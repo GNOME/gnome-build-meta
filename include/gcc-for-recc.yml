@@ -1,0 +1,4 @@
+filename:
+- freedesktop-sdk.bst:components/gcc.bst
+config:
+  digest-environment: RECC_REMOTE_PLATFORM_chrootRootDigest
