@@ -11,8 +11,6 @@ sources:
   exclude:
   - '*-rc*'
   ref: v260-1272-ga3502284def364235a9c31b016738607a75ddddc
-- kind: patch
-  path: patches/systemd/fix-sysupdate-4.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
