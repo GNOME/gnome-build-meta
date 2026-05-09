@@ -10,6 +10,12 @@ build-depends:
   config:
     location: /layer
 
+variables:
+  quay_expire: "never"
+  (?):
+  - channel == "nightly":
+      quay_expire: "2w"
+
 config:
   commands:
   - |
@@ -35,6 +41,7 @@ config:
         Labels:
           'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
+          'quay.expires-after': "%{quay_expire}"
       index-annotations:
         'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:platform-%{branch}'
     EOF

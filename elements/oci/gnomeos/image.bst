@@ -18,6 +18,10 @@ environment:
 
 variables:
   sysroot-seed: b57666f6-0fe5-4310-adff-f256936d164d
+  quay_expire: "never"
+  (?):
+  - channel == "nightly":
+      quay_expire: "2w"
 
 config:
   commands:
@@ -50,6 +54,7 @@ config:
           'org.opencontainers.image.source': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'org.opencontainers.image.url': 'https://gitlab.gnome.org/GNOME/gnome-build-meta/'
           'containers.bootc': '1'
+          'quay.expires-after': "%{quay_expire}"
       index-annotations:
         'org.opencontainers.image.ref.name': 'quay.io/gnome_infrastructure/gnome-build-meta:gnomeos-%{branch}'
     EOF
