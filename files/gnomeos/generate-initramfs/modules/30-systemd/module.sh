@@ -115,6 +115,10 @@ UNITS+=(
     sysinit.target.wants/systemd-modules-load.service
     systemd-pcrphase-initrd.service
     initrd.target.wants/systemd-pcrphase-initrd.service
+    systemd-pcrosseparator.service
+    sysinit.target.wants/systemd-pcrosseparator.service
+    systemd-pcrphase-storage-target-mode.service
+    storage-target-mode.target.wants/systemd-pcrphase-storage-target-mode.service
     systemd-poweroff.service
     systemd-repart.service
     initrd-root-fs.target.wants/systemd-repart.service

@@ -42,9 +42,9 @@ def parse_systemd(file):
             data[current_section] = {}
         elif current_key is not None:
             if line.endswith("\\"):
-                current_value.append(line[:-1] + " ")
+                current_value += line[:-1] + " "
             else:
-                current_value.append(line)
+                current_value += line
                 set_value(current_section, current_key, current_value)
                 current_value = None
         else:
