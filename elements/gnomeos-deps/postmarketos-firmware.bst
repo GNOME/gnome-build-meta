@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:sdm845-mainline/firmware-oneplus-sdm845.git
   track: refs/heads/prepackaged-release
-  ref: 176ca713448c5237a983fb1f158cf3a5c251d775
+  ref: 3e31a0c3e5a061645c09f805387b49fa9d35acbf
 - kind: local
   path: files/gnomeos/postmarketos-firmware
   directory: local

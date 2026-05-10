@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd.git
   track: '*.*.*'
-  ref: 2.1.1-0-g0a3ee12574d05af621c1c0add6b2df73ac66eaca
+  ref: 2.1.2-0-g2f9790bab88a0c3bb68e693b4f20404bd816db3a
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -57,12 +57,17 @@ environment:
 variables:
   meson-local: >-
     -Defi_binary=%{efi_binary}
+    -Dhsi=%{hsi_feature}
     -Dplugin_flashrom=disabled
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
 
   efi_binary: 'false'
+  hsi_feature: 'disabled'
+
   (?):
   - arch in ["aarch64", "x86_64"]:
       efi_binary: 'true'
+  - arch in ["x86_64"]:
+      hsi_feature: 'enabled'

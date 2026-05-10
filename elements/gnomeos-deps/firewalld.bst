@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:firewalld/firewalld.git
   track: 'v*'
-  ref: v2.4.0-0-g2ad14b7fbd6ccb15bdb3ad80159c474143dcc32d
+  ref: v2.4.1-0-gb189f5478cd7dad9ce59b6df5527a04c32b21015
 - kind: local
   path: files/firewalld/lax.xml
 
@@ -63,4 +63,4 @@ config:
       rm '%{install-root}%{datadir}/applications/firewall-config.desktop'
       rm '%{install-root}%{datadir}/firewalld/firewall-config.glade'
       rm '%{install-root}%{mandir}/man1/firewall-config.1'
-      rm '%{install-root}%{datadir}/metainfo/firewall-config.appdata.xml'
+      rm '%{install-root}%{datadir}/metainfo/org.firewalld.firewall-config.metainfo.xml'

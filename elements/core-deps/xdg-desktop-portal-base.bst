@@ -36,13 +36,13 @@ sources:
 - kind: git_repo
   url: github:flatpak/xdg-desktop-portal.git
   track: 'main'
-  ref: 1.21.1-53-g5be2d11b1c4f74823fe9cb4d19945660b818563c
+  ref: 1.21.2-1-gc6f217875485e28799a524b643c34474a289ba4f
 - kind: git_repo
   url: gnome:libglnx.git
   directory: subprojects/libglnx
   # Meson wrap file
   # https://github.com/flatpak/xdg-desktop-portal/blob/main/subprojects/libglnx.wrap
-  ref: ccea836b799256420788c463a638ded0636b1632
+  ref: ff64d52116ae74f0d25e24f089db28921ea171ff
 - kind: git_repo
   url: gnome:gvdb.git
   directory: subprojects/gvdb

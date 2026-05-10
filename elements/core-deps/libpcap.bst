@@ -8,7 +8,7 @@ sources:
   - '*rc*'
   - '*.*-bp'
 
-  ref: libpcap-1.10.5-0-gbbcbc9174df3298a854daee2b3e666a4b6e5383a
+  ref: libpcap-1.10.6-0-ga999701dca5c873779281938baee6bc185a8d4dc
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst

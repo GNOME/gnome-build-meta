@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:agx/feedbackd.git
   track: 'v*.*.*'
-  ref: v0.8.4-0-g69a4ee2538029b97a4bf3a3cd011cd3922e2f3f9
+  ref: v0.8.9-0-g1be162a2e5aad10760f34b734e062c4fa250b159
 
 build-depends:
 - sdk/gobject-introspection.bst

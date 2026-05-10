@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: freedesktop:spice/libcacard.git
   track: 'v*.*.*'
-  ref: v2.8.1-0-g7b07684ea6698d4885ff2062350ad8798a04de42
+  ref: v2.8.2-0-gdf2d3c05a250741632184c2cc66df247039a70d7
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
