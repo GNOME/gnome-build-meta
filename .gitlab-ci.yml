@@ -55,6 +55,7 @@ stages:
           - "patches/**/*"
           - "plugins/**/*"
           - "project.conf"
+          - ".gitlab-ci/**/*"
           - ".gitlab-ci.yml"
 
 workflow:
@@ -185,6 +186,7 @@ default:
           - ".gitlab-ci/scripts/openqa-prepare.sh"
           - ".gitlab-ci/scripts/openqa-script.sh"
           - "tests/openqa/**/*"
+          - ".gitlab-ci/**/*"
           - ".gitlab-ci.yml"
       variables:
         S3_DISK_IMAGE_URL: "https://os.gnome.org/download/latest/gnome_os_x86_64.iso"
