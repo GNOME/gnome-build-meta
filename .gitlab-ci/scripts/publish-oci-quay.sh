@@ -9,7 +9,7 @@ set -x
 tags=("$OCI_BRANCH")
 
 if [ "$OCI_BRANCH" = "master" ]; then
-    tags+=("$CI_COMMIT_SHA" "latest" "nightly")
+    tags+=("$CI_COMMIT_SHA" "nightly")
 fi
 
 for tag in "${tags[@]}"; do
