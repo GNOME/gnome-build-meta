@@ -61,7 +61,9 @@ config:
     components/systemd-ukify.bst: core-deps/systemd-ukify.bst
     components/systemd-libs.bst: core-deps/systemd-libs.bst
 
+    # swick has signed up for dealing with all the issues from building these from git
     components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
     components/xdg-desktop-portal.bst: core-deps/xdg-desktop-portal.bst
+    components/flatpak.bst: core-deps/flatpak.bst
 
     components/geoclue-base.bst: gnomeos-deps/geoclue-base.bst
