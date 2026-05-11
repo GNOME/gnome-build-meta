@@ -4,7 +4,6 @@ build-depends:
 - sdk-deps/gvfs.bst
 
 runtime-depends:
-- sdk/gvfs-client.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
@@ -12,13 +11,14 @@ runtime-depends:
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
 - core-deps/libnfs.bst
+- core-deps/libplist.bst
 - core-deps/msgraph.bst
-- core-deps/plist.bst
 - core-deps/samba.bst
 - core-deps/udisks2.bst
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
+- sdk/gvfs-client.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - freedesktop-sdk.bst:components/avahi.bst
