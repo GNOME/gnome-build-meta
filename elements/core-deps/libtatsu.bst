@@ -2,15 +2,14 @@ kind: autotools
 
 sources:
 - kind: git_repo
-  url: github:libimobiledevice/libusbmuxd.git
+  url: github:libimobiledevice/libtatsu.git
   track: '*.*.*'
-  ref: 2.0.2-0-gce98c346b7c1dc2a21faea4fd3f32c88e27ca2af
+  ref: 1.0.5-0-g42329cb756682535c7c0f087987b78d1dd5b16c8
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/git.bst
 
 depends:
-- core-deps/libimobiledevice-glue.bst
 - core-deps/libplist.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

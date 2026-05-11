@@ -11,6 +11,9 @@ build-depends:
 - freedesktop-sdk.bst:components/git.bst
 
 depends:
+- core-deps/libimobiledevice-glue.bst
+- core-deps/libplist.bst
+- core-deps/libtatsu.bst
 - core-deps/libusbmuxd.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gnutls.bst
