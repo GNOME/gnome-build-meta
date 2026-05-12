@@ -433,10 +433,6 @@ cve_report:
     artifacts: false
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/cve-report.sh"
-  cache:
-    key: cve
-    paths:
-    - cve
   artifacts:
     paths:
     - cve-reports
