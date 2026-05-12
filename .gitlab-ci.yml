@@ -8,6 +8,9 @@ include:
 - component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
   inputs:
     job-stage: "reports"
+    rumdl-version: "0.1.11"
+    extra-rules:
+      - !reference [".stage-only-rules", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
