@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:intel/Intel-Linux-Processor-Microcode-Data-Files.git
   track: microcode-*
-  ref: microcode-20260227-0-g250941fb670645d7d91f761cc63656ad3a1ec367
+  ref: microcode-20260512-0-g98f8d817ca3d560c48ae988bd805d1b53b48a631
 
 build-depends:
 - gnomeos-deps/iucode-tool.bst

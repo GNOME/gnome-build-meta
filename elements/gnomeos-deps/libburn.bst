@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: lovelyhq:libburnia/libburn.git
   track: 'release-*'
-  ref: release-1.5.6-0-g4628231cece66949e08b2f1c1ee2ac9d8797814f
+  ref: release-1.5.8-0-gede593bbf4f30cdb9f7adb21fa193487e5f9337f
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

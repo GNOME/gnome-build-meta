@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:brltty/brltty.git
   track: 'BRLTTY-*'
-  ref: BRLTTY-6.8-0-g0c47ee1654cac541f2fc3b447987cf00dadd0c16
+  ref: BRLTTY-6.9.1-0-g4fddd533bf6023820266879203839db511808d63
 
 build-depends:
 - core-deps/tcl.bst

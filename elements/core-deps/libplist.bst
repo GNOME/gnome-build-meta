@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libimobiledevice/libplist.git
   track: '*.*.*'
-  ref: 2.2.0-0-gc5a30e9267068436a75b5d00fcbf95cb9c1f4dcd
+  ref: 2.7.0-0-gcf5897a71ea412ea2aeb1e2f6b5ea74d4fabfd8c
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

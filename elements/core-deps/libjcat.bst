@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:hughsie/libjcat.git
   track: '*.*'
-  ref: 0.2.5-0-g8b4336b0df0b00e66129535f1f15eb3862641816
+  ref: 0.2.6-0-g4f4bf849c1728ba291f28cea86d140785368fdd0
 
 build-depends:
 - sdk/gobject-introspection.bst

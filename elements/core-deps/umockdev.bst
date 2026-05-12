@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github_files:martinpitt/umockdev.git
   track: '*.*.*'
-  ref: 0.19.3-0-g5f641ca355d419f7b746371ae42d442c11f103cc
+  ref: 0.19.7-0-g39f785a74e3fcfa27ea5096fd7945ad080420d35
 
 build-depends:
 - sdk/gobject-introspection.bst

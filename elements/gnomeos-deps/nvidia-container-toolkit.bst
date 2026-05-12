@@ -6,7 +6,7 @@ sources:
   track: v*.*.*
   exclude:
   - "*rc*"
-  ref: v1.18.2-0-g9e88ed39710fd94c7e49fbb26d96492c45e574fb
+  ref: v1.19.0-0-gec7b4e2fa2caecad6d89be4a26029b831fe7503a
 
 build-depends:
 - freedesktop-sdk.bst:components/go.bst

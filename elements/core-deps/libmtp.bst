@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libmtp/libmtp.git
   track: 'v*.*.*'
-  ref: v1.1.22-0-g32b0375913115786a73ffa33706cb148ff9a9921
+  ref: v1.1.23-0-g55fa074240b703adb48c78d31d156879cb9e4959
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
