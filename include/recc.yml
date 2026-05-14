@@ -5,6 +5,15 @@ environment:
   RECC_NO_PATH_REWRITE: true
   RECC_INVALID_INPUT_PATHS_REGEX: .*/CMakeFiles/CMakeScratch/.*,.*/Modules/CMakeCCompilerABI.c,.*/Modules/CMakeCXXCompilerABI.cpp,.*/conftest.*
 
+  (?):
+  - recc == "passthrough":
+      RECC_PASSTHROUGH: true
+  - recc == "cache-only":
+      RECC_CACHE_ONLY: true
+  - recc == "upload-local-build":
+      RECC_CACHE_ONLY: true
+      RECC_CACHE_UPLOAD_LOCAL_BUILD: true
+
 environment-nocache:
 - RECC_CACHE_ONLY
 - RECC_PASSTHROUGH
@@ -15,3 +24,6 @@ environment-nocache:
 sandbox:
   remote-apis-socket:
     path: /tmp/casd.sock
+    (?):
+    - recc == "upload-local-build":
+        action-cache-enable-update: true
