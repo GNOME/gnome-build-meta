@@ -12,7 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 
 depends:
-- core-deps/foundry.bst
+- core/foundry.bst
 - core-deps/gom.bst
 - sdk-deps/libpanel.bst
 - sdk/glib.bst
