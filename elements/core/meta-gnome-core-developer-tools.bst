@@ -6,6 +6,7 @@ kind: stack
 depends:
 - core/d-spy.bst
 - core/dconf-editor.bst
+- core/foundry.bst
 - core/gnome-boxes.bst
 - core/gnome-builder.bst
 - core/manuals.bst

@@ -7,7 +7,6 @@ depends:
 - freedesktop-sdk.bst:components/debuginfod.bst
 
 # Useful utilities for testing and CI
-- core-deps/foundry.bst
 - core-deps/python-dbusmock.bst
 - core-deps/setxkbmap.bst
 - core-deps/umockdev.bst

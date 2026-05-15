@@ -11,7 +11,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- core-deps/foundry.bst
+- core/foundry.bst
 - core-deps/gom.bst
 - sdk-deps/libpanel.bst
 - sdk/glib.bst
