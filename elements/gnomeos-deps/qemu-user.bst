@@ -6,7 +6,7 @@ sources:
   track: v*
   exclude:
   - "*-rc*"
-  ref: v10.2.2-0-gf8ed81651e61d9c2166df6121ce2af0f44f06b3e
+  ref: v11.0.0-0-g98b060da3a4f92b2a994ead5b16a87e783baf77c
 
 # subprojects
 - kind: git_repo
@@ -30,6 +30,8 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 - freedesktop-sdk.bst:components/meson.bst
 - freedesktop-sdk.bst:components/ninja.bst
+- freedesktop-sdk.bst:components/python3-setuptools.bst
+- freedesktop-sdk.bst:components/python3-wheel.bst
 - gnomeos-deps/pcre2-static.bst
 - gnomeos-deps/glib-static.bst
 - gnomeos-deps/zlib-ng-static.bst
