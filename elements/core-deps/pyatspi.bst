@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:pyatspi2.git
   track: master
-  ref: 2.58.2-0-gf2fb289a9d2e4dac65fca8db0f4d3d65607a0cf2
+  ref: 2.58.2-1-ga0df428cfe6713be5769e1a3d3ca9942b6b4645d
 build-depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

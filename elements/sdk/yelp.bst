@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp.git
   track: master
-  ref: 49.1-0-g7856e7f79070f515282875212e1a90f09cfa5538
+  ref: 49.1-1-g34c1bd9a78abeb3f77775907dd801cdf62e91780
 
 build-depends:
 - freedesktop-sdk.bst:components/appstream.bst
