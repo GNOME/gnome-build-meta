@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:catchorg/Catch2.git
   track: 'v*'
-  ref: v3.14.0-0-gb670de4fe12ac7c5e858b7de3a14fb4bd18c760e
+  ref: v3.15.0-0-g6ee0826dcae55ed1e06b2c5701981221e979e1e6
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

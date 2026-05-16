@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:bootc-dev/bootc.git
   track: v*
-  ref: v1.15.0-0-gd8785c6c380db9afee054d39b54e643b26054b73
+  ref: v1.15.2-0-g12faf08c26107eb1ed4f4050a6c09faae1200f71
 - kind: cargo2
   ref:
   - kind: registry
@@ -80,10 +80,10 @@ sources:
     version: 0.21.7
     sha: 9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567
   - kind: git
-    commit: 33b4bccc89596fb7b95e3975388f13d0828b1960
+    commit: f4dd05a74ccb54084093c9167317a14356ca53e4
     repo: github:bootc-dev/bcvk.git
     query:
-      rev: 33b4bccc89596fb7b95e3975388f13d0828b1960
+      rev: f4dd05a74ccb54084093c9167317a14356ca53e4
     name: bcvk-qemu
     version: 0.1.0
   - kind: registry
@@ -144,8 +144,8 @@ sources:
     sha: 6fe962d42e07c22aec2618191c3683412735b7e6dcd7bab2eec811ab4697c58e
   - kind: registry
     name: cap-std-ext
-    version: 5.1.1
-    sha: 56f9d7cf114dea582f663f03f4c563d0fc5ca2c8fa4c496eb538d8f01981ea51
+    version: 5.1.2
+    sha: 6c6c5ac70c4465b47c3a322330f87c2df31e42ac527497d94dc1f1d1cb8989f9
   - kind: registry
     name: cap-tempfile
     version: 3.4.5
@@ -1063,12 +1063,12 @@ sources:
     sha: e320a6c5ad31d271ad523dcf3ad13e2767ad8b1cb8f047f75a8aeaf8da139da2
   - kind: registry
     name: similar
-    version: 2.7.0
-    sha: bbbb5d9659141646ae647b42fe094daf6c6192d1620870b449d9557f748b2daa
+    version: 3.0.0
+    sha: 26d0b06eba54f0ca0770f970a3e89823e766ca638dd940f8469fa0fa50c75396
   - kind: registry
     name: similar-asserts
-    version: 1.7.0
-    sha: b5b441962c817e33508847a22bd82f03a30cff43642dc2fae8b050566121eb9a
+    version: 2.0.0
+    sha: 997e6ca38e97437973fc9f7f50a50d1274cacd874341a4960fea90067291038c
   - kind: registry
     name: slab
     version: 0.4.11

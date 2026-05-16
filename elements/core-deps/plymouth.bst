@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:plymouth/plymouth.git
   track: main
-  ref: 24.004.60-217-g016708af9748219265229e1ee28dc7fdeafb649f
+  ref: 26.134.222-2-g668011c9e8ed0b83648d11059f7c16c02cc4233d
 
 build-depends:
 - sdk/gtk-doc.bst

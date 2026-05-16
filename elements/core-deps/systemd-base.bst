@@ -10,7 +10,7 @@ sources:
   track: main
   exclude:
   - '*-rc*'
-  ref: v260-1412-gb7be9ccc8f4299269f72bde49e426a7a9d484da9
+  ref: v260-1691-gc043b9018733382c49d3d40f7ca406c43e9ae9fc
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
