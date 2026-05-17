@@ -7,9 +7,14 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:systemd/systemd.git
-  track: main
-  exclude:
-  - '*-rc*'
+  (?):
+  - channel == "nightly":
+      track: main
+  - channel == "stable":
+      track: v*
+      version-guess-pattern: '(\d+)(?:\.(\d+))?'
+      exclude:
+      - '*-rc*'
   ref: v261-rc1-9-g4d18eac5a99dbc8198f25cde9175e66f27e92cbc
 
 build-depends:

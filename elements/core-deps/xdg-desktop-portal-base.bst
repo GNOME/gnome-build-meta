@@ -35,7 +35,11 @@ public:
 sources:
 - kind: git_repo
   url: github:flatpak/xdg-desktop-portal.git
-  track: 'main'
+  (?):
+  - channel == "nightly":
+      track: main
+  - channel == "stable":
+      track: 1.[0-8][02468].*
   ref: 1.21.2-1-gc6f217875485e28799a524b643c34474a289ba4f
 - kind: git_repo
   url: gnome:libglnx.git

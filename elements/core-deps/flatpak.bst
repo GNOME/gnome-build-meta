@@ -3,7 +3,11 @@ kind: meson
 sources:
 - kind: git_repo
   url: github:flatpak/flatpak.git
-  track: main
+  (?):
+  - channel == "nightly":
+      track: main
+  - channel == "stable":
+      track: 1.[0-8][02468].*
   ref: 1.17.7-6-g588eef8e65c94af037c4855577535769994a2e05
 
 build-depends:
