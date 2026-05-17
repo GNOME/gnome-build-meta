@@ -66,10 +66,9 @@ cache:
     connection-config:
       keepalive-time: 60
 EOF
-fi
 
-if .gitlab-ci/scripts/remote-execution-supported.py unix:/run/casd/casd.sock; then
-    cat <<EOF
+    if .gitlab-ci/scripts/remote-execution-supported.py unix:/run/casd/casd.sock; then
+        cat <<EOF
 remote-execution:
   execution-service:
     url: unix:/run/casd/casd.sock
@@ -80,4 +79,14 @@ remote-execution:
     connection-config:
       keepalive-time: 60
 EOF
+    else
+        cat <<EOF
+remote-execution:
+  action-cache-service:
+    url: unix:/run/casd/casd.sock
+    push: true
+    connection-config:
+      keepalive-time: 60
+EOF
+    fi
 fi
