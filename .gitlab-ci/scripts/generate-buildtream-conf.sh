@@ -18,8 +18,6 @@ scheduler:
   on-error: continue
   # Maximum number of simultaneous downloading tasks.
   fetchers: 32
-  # Unlimited builds, they will be limited by buildbox-casd
-  builders: $(( $(nproc) / 4 ))
 
 # Get a lot of output in case of errors
 logging:
