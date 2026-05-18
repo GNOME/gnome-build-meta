@@ -1,14 +1,61 @@
 kind: cmake
 
-(@):
-  - elements/sdk/webkitgtk.inc
+sources:
+- kind: tar
+  url: webkitgtk:webkitgtk-2.54.0.tar.xz
+  ref: 846fd19ccedbae1dbfe904f26dbf2d68a800a33a50caf2ad5222c8dcb3f25682
+
+build-depends:
+- (@): include/clang-for-recc.yml
+- buildsystems/cmake.bst
+- sdk-deps/unifdef.bst
+- sdk/gi-docgen.bst
+- sdk/gobject-introspection.bst
+- freedesktop-sdk.bst:components/gperf.bst
+- freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/ruby.bst
+
+runtime-depends:
+- freedesktop-sdk.bst:components/gstreamer-libav.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-good.bst
 
 depends:
-  (>):
-  - sdk/gtk.bst
-  - sdk/libsoup.bst
+- sdk/at-spi2-core.bst
+- sdk/enchant-2.bst
+- sdk/gtk.bst
+- sdk/libmanette-0.2.bst
+- sdk/libsecret.bst
+- sdk/libsoup.bst
+- sdk/pango.bst
+- sdk/woff2.bst
+- freedesktop-sdk.bst:components/brotli.bst
+- freedesktop-sdk.bst:components/bubblewrap.bst
+- freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
+- freedesktop-sdk.bst:components/hyphen.bst
+- freedesktop-sdk.bst:components/lcms.bst
+- freedesktop-sdk.bst:components/libavif.bst
+- freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libevent.bst
+- freedesktop-sdk.bst:components/libjxl.bst
+- freedesktop-sdk.bst:components/libseccomp.bst
+- freedesktop-sdk.bst:components/libtasn1.bst
+- freedesktop-sdk.bst:components/libwebp.bst
+- freedesktop-sdk.bst:components/libxslt.bst
+- freedesktop-sdk.bst:components/systemd-libs.bst
+- freedesktop-sdk.bst:components/wayland.bst
+- freedesktop-sdk.bst:components/xdg-dbus-proxy.bst
+- freedesktop-sdk.bst:components/xorg-lib-xt.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
+  optimize-debug: 'false'
+  (?):
+  - arch == "aarch64":
+      local_flags: >-
+        -mbranch-protection=pac-ret
   cmake-local: >-
     -DPORT=GTK
     -DENABLE_SPEECH_SYNTHESIS=OFF
@@ -16,7 +63,14 @@ variables:
     -DUSE_LIBBACKTRACE=OFF
     -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 
+# Clang is strongly recommended:
+environment:
+  CC: clang
+  CXX: clang++
+
 public:
+  cpe:
+    product: webkitgtk+
   bst:
     split-rules:
       devel:
