@@ -27,7 +27,7 @@ depends:
 - sdk/libportal.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libarchive.bst
 - freedesktop-sdk.bst:components/pwquality.bst

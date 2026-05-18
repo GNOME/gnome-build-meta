@@ -48,8 +48,7 @@ depends:
 - sdk/pinentry.bst
 - sdk/pygobject.bst
 - sdk/tinysparql.bst
-- sdk/webkit2gtk-4.1.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - sdk/woff2.bst
 - sdk/yelp-xsl.bst
 - sdk/yelp.bst

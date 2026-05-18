@@ -1,3 +1,5 @@
+kind: cmake
+
 sources:
 - kind: tar
   url: webkitgtk:webkitgtk-2.54.0.tar.xz
@@ -21,8 +23,10 @@ runtime-depends:
 depends:
 - sdk/at-spi2-core.bst
 - sdk/enchant-2.bst
+- sdk/gtk.bst
 - sdk/libmanette-0.2.bst
 - sdk/libsecret.bst
+- sdk/libsoup.bst
 - sdk/pango.bst
 - sdk/woff2.bst
 - freedesktop-sdk.bst:components/brotli.bst
@@ -52,12 +56,27 @@ variables:
   - arch == "aarch64":
       local_flags: >-
         -mbranch-protection=pac-ret
-
-public:
-  cpe:
-    product: webkitgtk+
+  cmake-local: >-
+    -DPORT=GTK
+    -DENABLE_SPEECH_SYNTHESIS=OFF
+    -DUSE_GTK4=ON
+    -DUSE_LIBBACKTRACE=OFF
+    -DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 
 # Clang is strongly recommended:
 environment:
   CC: clang
   CXX: clang++
+
+public:
+  cpe:
+    product: webkitgtk+
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libdir}/libjavascriptcoregtk-6.0.so'
+        - '%{libdir}/libwebkitgtk-6.0.so'
+      webkit-debug:
+      - '%{debugdir}'
+      - '%{debugdir}/**'

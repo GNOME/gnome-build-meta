@@ -40,7 +40,7 @@ depends:
 - sdk/libportal.bst
 - sdk/librsvg.bst
 - sdk/libsoup.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
