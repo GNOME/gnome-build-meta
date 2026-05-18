@@ -20,7 +20,7 @@ build-depends:
 
 depends:
 - sdk/gtk.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - core-deps/libnma.bst
 - core-deps/NetworkManager.bst
 - gnomeos-deps/openconnect.bst

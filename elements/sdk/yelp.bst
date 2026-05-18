@@ -18,7 +18,7 @@ depends:
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - sdk/yelp-xsl.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

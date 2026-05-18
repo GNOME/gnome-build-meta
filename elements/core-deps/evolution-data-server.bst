@@ -23,7 +23,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst

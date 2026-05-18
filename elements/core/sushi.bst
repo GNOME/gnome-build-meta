@@ -18,7 +18,7 @@ depends:
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/libadwaita.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

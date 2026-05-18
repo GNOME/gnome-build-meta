@@ -26,7 +26,7 @@ depends:
 - sdk/json-glib.bst
 - sdk/libadwaita.bst
 - sdk/libdex.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/webkitgtk.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/libyaml.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
