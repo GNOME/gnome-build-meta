@@ -14,7 +14,6 @@ depends:
 - sdk/enchant-2.bst
 - sdk/fcitx5-gtk.bst
 - sdk/gcab.bst
-- sdk/gcr-3.bst
 - sdk/gcr.bst
 - sdk/gdk-pixbuf.bst
 - sdk/gjs.bst

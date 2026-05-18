@@ -14,7 +14,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
-- sdk/gcr-3.bst
+- core-deps/gcr-3.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libgcrypt.bst
 - freedesktop-sdk.bst:components/linux-pam.bst
