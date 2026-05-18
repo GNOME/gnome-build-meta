@@ -21,6 +21,9 @@ echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
 
+# Check that the commit timestamps are increasing, as our version numbers depend on that
+git log --format=%cd --date=unix | sort --check --reverse --numeric-sort
+
 if [ "${CI_COMMIT_BRANCH-}" = master ]; then
     version_num=$(TZ=UTC git log --format="%cd" --date="format-local:%Y%m%d" | uniq -c | head -n1 | awk '{print ($2"."($1-1))}')
     IMAGE_VERSION="nightly.$version_num"
