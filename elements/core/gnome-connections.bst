@@ -20,10 +20,10 @@ build-depends:
 depends:
 - core-deps/freerdp.bst
 - core-deps/gtk-vnc.bst
+- core-deps/libhandy.bst
 - core-deps/spice-gtk.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk+-3.bst
-- sdk/libhandy.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/fuse3.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

@@ -1031,5 +1031,5 @@ depends:
 - channel == "stable":
     depends:
       (>):
+      - core-deps/libhandy.bst
       - sdk/gtk+-3.bst
-      - sdk/libhandy.bst

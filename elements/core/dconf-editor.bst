@@ -13,7 +13,7 @@ build-depends:
 
 depends:
 - core-deps/dconf.bst
+- core-deps/libhandy.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
-- sdk/libhandy.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

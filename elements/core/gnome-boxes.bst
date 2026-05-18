@@ -17,6 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
+- core-deps/libhandy.bst
 - core-deps/libosinfo.bst
 - core-deps/libvirt-glib.bst
 - core-deps/osinfo-db.bst
@@ -25,7 +26,6 @@ depends:
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
-- sdk/libhandy.bst
 - sdk/libportal.bst
 - sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/libgudev.bst

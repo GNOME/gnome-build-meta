@@ -25,7 +25,7 @@ depends:
 - boards/common/olm.bst
 - core-deps/evolution-data-server.bst
 - core-deps/feedbackd.bst
-- sdk/libhandy.bst
+- core-deps/libhandy.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
