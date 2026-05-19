@@ -4,6 +4,7 @@ build-depends:
 - gnomeos/save-perms.bst
 - freedesktop-sdk.bst:components/fakecap.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
+- freedesktop-sdk.bst:components/util-linux.bst
 - freedesktop-sdk.bst:vm/deploy-tools.bst
 - gnomeos/repart-config.bst
 - gnomeos/repart-config-mini.bst
