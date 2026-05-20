@@ -32,7 +32,7 @@ sources:
   ref: v1.6.4-signed-0-gbd7abe3cc73734cf364f6a4bc529ef12a9439ec8
 
 build-depends:
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 
 variables:
   gnomeos-keys-uuid: 8dd6b2b4-3dc4-4ee2-a226-635467997f0e
