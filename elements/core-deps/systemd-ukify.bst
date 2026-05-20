@@ -1,7 +1,7 @@
 kind: filter
 
 build-depends:
-- freedesktop-sdk.bst:components/systemd-base.bst
+- freedesktop-sdk.bst:components/_private/systemd-base.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/python3.bst

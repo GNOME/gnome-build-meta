@@ -55,12 +55,12 @@ config:
     components/zenity.bst: void/zenity.bst
 
     components/linux-module-cert.bst: gnomeos/linux-module-cert.bst
-    components/systemd-base.bst: core-deps/systemd-base.bst
+    components/_private/systemd-base.bst: core-deps/systemd-base.bst
     components/systemd.bst: core-deps/systemd.bst
     components/systemd-ukify.bst: core-deps/systemd-ukify.bst
     components/systemd-libs.bst: core-deps/systemd-libs.bst
 
     # swick has signed up for dealing with all the issues from building these from git
-    components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
+    components/_private/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
     components/xdg-desktop-portal.bst: core-deps/xdg-desktop-portal.bst
     components/flatpak.bst: core-deps/flatpak.bst
