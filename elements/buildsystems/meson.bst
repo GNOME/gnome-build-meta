@@ -10,3 +10,4 @@ depends:
 - freedesktop-sdk.bst:components/ninja.bst
 - freedesktop-sdk.bst:components/pkg-config.bst
 - freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst

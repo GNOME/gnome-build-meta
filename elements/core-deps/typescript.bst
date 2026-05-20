@@ -5,6 +5,9 @@ sources:
   url: github_files:Microsoft/Typescript/releases/download/v5.9.3/typescript-5.9.3.tgz
   ref: 10e108c9cf7d5f2879053dff18515fb405abf2ccef63eaaf017d9c571687a1d3
 
+build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
+
 depends:
 - core-deps/nodejs.bst
 

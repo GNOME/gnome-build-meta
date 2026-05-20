@@ -1,7 +1,7 @@
 kind: stack
 
 depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - freedesktop-sdk.bst:components/cpio.bst
 - freedesktop-sdk.bst:components/dbus.bst

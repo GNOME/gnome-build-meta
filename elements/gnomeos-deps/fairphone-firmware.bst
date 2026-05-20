@@ -7,6 +7,7 @@ sources:
   ref: a4908f548e6f88965e78b1478af1751b6a854fc9
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - gnomeos-deps/pil-squasher.bst
 
 depends:
