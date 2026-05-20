@@ -3,8 +3,8 @@ kind: junction
 sources:
 - kind: git_repo
   url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: freedesktop-sdk-25.08*
-  ref: freedesktop-sdk-25.08.14-0-g57149392fe26548b0e7c50a2e171e3aac005a412
+  track: master
+  ref: freedesktop-sdk-26.08beta.1-10-gdae6745586026a351d5a4950c327464246bc7a7f
 - kind: patch_queue
   path: patches/freedesktop-sdk
 
@@ -31,6 +31,7 @@ config:
     components/gdk-pixbuf.bst: sdk/gdk-pixbuf.bst
     components/glib-networking.bst: sdk/glib-networking.bst
     components/glib.bst: sdk/glib.bst
+    components/glycin.bst: sdk/glycin.bst
     components/gobject-introspection.bst: sdk/gobject-introspection.bst
     components/python3-gi-docgen.bst: sdk/gi-docgen.bst
     components/graphene.bst: sdk/graphene.bst
@@ -38,6 +39,7 @@ config:
     components/gtk3.bst: sdk/gtk+-3.bst
     components/libibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
+    components/libglycin.bst: sdk/libglycin.bst
     components/libnotify.bst: sdk/libnotify.bst
     components/librsvg.bst: sdk/librsvg.bst
     components/libsoup.bst: sdk/libsoup.bst
@@ -55,17 +57,16 @@ config:
     components/zenity.bst: void/zenity.bst
 
     components/linux-module-cert.bst: gnomeos/linux-module-cert.bst
-    components/systemd-base.bst: core-deps/systemd-base.bst
+    components/_private/systemd-base.bst: core-deps/systemd-base.bst
     components/systemd.bst: core-deps/systemd.bst
     components/systemd-ukify.bst: core-deps/systemd-ukify.bst
     components/systemd-libs.bst: core-deps/systemd-libs.bst
 
     # swick has signed up for dealing with all the issues from building these from git
-    components/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
+    components/_private/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
     components/xdg-desktop-portal.bst: core-deps/xdg-desktop-portal.bst
     components/flatpak.bst: core-deps/flatpak.bst
 
-    components/geoclue-base.bst: gnomeos-deps/geoclue-base.bst
     # Epiphany requires nettle 3.x.
     # https://gitlab.gnome.org/GNOME/epiphany/-/work_items/2892
     components/nettle.bst: core-deps/nettle3.bst

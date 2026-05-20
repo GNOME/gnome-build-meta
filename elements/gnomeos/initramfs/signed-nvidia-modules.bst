@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/sign-file.bst
 - freedesktop-sdk.bst:components/zstd.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 variables:
   strip-binaries: ''

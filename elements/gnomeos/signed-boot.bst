@@ -13,9 +13,10 @@ build-depends:
 - freedesktop-sdk.bst:components/jq.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:components/util-linux.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 (?):
 - arch == "x86_64":
@@ -121,7 +122,7 @@ config:
       --phases="enter-initrd:leave-initrd" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
-      --linux="/boot/vmlinuz" \
+      --linux="/usr/lib/modules/${version}/vmlinuz" \
       --initrd="/usr/lib/modules/${version}/initramfs.img" \
       --join-profile="profile-safe-mode.efi" \
       "${MICROCODE[@]}" "${DEVICETREES[@]}"

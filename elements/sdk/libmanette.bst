@@ -15,8 +15,8 @@ build-depends:
 
 depends:
 - sdk/glib.bst
-- sdk/hidapi.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk.bst:components/hidapi.bst
 - freedesktop-sdk.bst:components/libevdev.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
