@@ -10,7 +10,7 @@ build-depends:
 - freedesktop-sdk.bst:cross-compilers/binutils-aarch64.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-riscv64.bst
 - freedesktop-sdk.bst:cross-compilers/binutils-x86-64.bst
-- freedesktop-sdk.bst:components/git-minimal.bst
+- freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-make.bst
 
 depends:
