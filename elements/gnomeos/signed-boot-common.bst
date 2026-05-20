@@ -37,15 +37,6 @@ config:
   - mkdir -p %{install-root}/efi/EFI/
   - cp -rT /efi/EFI "%{install-root}/efi/EFI"
 
-  # systemd-boot config file
-  - mkdir -p "%{install-root}/efi/loader"
-  - |
-    cat <<EOF >%{install-root}/efi/loader/loader.conf
-    timeout 3
-    editor yes
-    console-mode keep
-    EOF
-
   - |
     install -Dm644 %{indep-libdir}/systemd/boot/efi/systemd-boot%{efi-arch}.efi "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
 
