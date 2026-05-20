@@ -1,7 +1,7 @@
 kind: filter
 
 build-depends:
-- freedesktop-sdk.bst:components/xdg-desktop-portal-base.bst
+- freedesktop-sdk.bst:components/_private/xdg-desktop-portal-base.bst
 
 runtime-depends:
 - freedesktop-sdk.bst:components/flatpak.bst

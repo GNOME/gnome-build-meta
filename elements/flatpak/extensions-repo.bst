@@ -1,6 +1,7 @@
 kind: flatpak_repo
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - filename:
   - freedesktop-sdk.bst:flatpak-images/mesa.bst

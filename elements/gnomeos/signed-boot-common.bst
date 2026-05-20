@@ -6,7 +6,8 @@ build-depends:
   - gnomeos-deps/shim-maybe.bst
   - gnomeos/replace-signed-systemd-boot.bst
   strict: true
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 variables:
   strip-binaries: ''
