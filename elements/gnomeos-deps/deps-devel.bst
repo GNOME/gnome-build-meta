@@ -22,7 +22,7 @@ depends:
 - gnomeos-deps/wl-clipboard.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 
 # Currently for sysprof-ebpf but useful in general
 - freedesktop-sdk.bst:components/bpf.bst

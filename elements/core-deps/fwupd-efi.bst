@@ -9,7 +9,7 @@ sources:
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
-- freedesktop-sdk.bst:components/gnu-efi.bst
+- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/grep.bst
 - freedesktop-sdk.bst:components/python3-pefile.bst
 

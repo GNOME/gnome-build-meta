@@ -16,7 +16,7 @@ build-depends:
 # Needed for docs/test-deps.py
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/valgrind.bst
+- freedesktop-sdk.bst:components/valgrind-maybe.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
