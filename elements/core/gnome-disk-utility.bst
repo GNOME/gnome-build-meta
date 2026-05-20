@@ -6,7 +6,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-disk-utility.git
   track: main
-  ref: 44.0-767-gb0056847968bd38b8f80055d77d1af861f0a88df
+  ref: 44.0-796-gefbb34a88ba0b286486e870b8e5345d5c554ac18
 - kind: cargo2
   ref:
   - kind: registry
