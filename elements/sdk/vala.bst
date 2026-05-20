@@ -13,7 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/flex.bst
 - freedesktop-sdk.bst:components/git.bst
-- freedesktop-sdk.bst:components/vala-bootstrap.bst
+- freedesktop-sdk.bst:components/_private/vala-bootstrap.bst
 
 depends:
 - sdk/glib.bst

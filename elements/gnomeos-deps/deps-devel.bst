@@ -24,7 +24,7 @@ depends:
 - freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 
 # Currently for sysprof-ebpf but useful in general
-- freedesktop-sdk.bst:components/bpf.bst
+- freedesktop-sdk.bst:components/_private/bpf.bst
 - freedesktop-sdk.bst:components/vmlinuxh.bst
 
 # Common build deps that do not make it to the runtime
