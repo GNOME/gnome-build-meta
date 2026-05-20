@@ -1,7 +1,7 @@
 kind: manual
 
 build-depends:
-- freedesktop-sdk.bst:components/sbsigntools.bst
+- freedesktop-sdk.bst:components/sbsigntools-maybe.bst
 
 depends:
 - filename: freedesktop-sdk.bst:components/systemd.bst
