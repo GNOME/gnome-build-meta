@@ -23,7 +23,7 @@ build-depends:
 - filename: gnomeos/codecs-extra/image.bst
   config:
     location: "%{install-root}"
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 (?):
 - arch in ["x86_64"]:

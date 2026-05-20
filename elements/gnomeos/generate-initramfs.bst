@@ -4,8 +4,8 @@ sources:
 - kind: local
   path: files/gnomeos/generate-initramfs
 
-depends:
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 runtime-depends:
 - gnomeos-deps/python3-zstd.bst

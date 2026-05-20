@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:components/gcc.bst
 - freedesktop-sdk.bst:components/stripper.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

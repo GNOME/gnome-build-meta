@@ -3,6 +3,7 @@ kind: manual
 depends:
 - freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/erofs-utils.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 variables:
   strip-binaries: ''

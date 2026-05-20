@@ -9,6 +9,7 @@ config:
 
 runtime-depends:
 - freedesktop-sdk.bst:components/buildbox.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 public:
   bst:

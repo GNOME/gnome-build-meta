@@ -6,6 +6,7 @@ build-depends:
 - freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/sign-file.bst
 - freedesktop-sdk.bst:components/zstd.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 config:
   install-commands:
@@ -15,7 +16,7 @@ config:
 
   - |
     version="$(ls -1 /usr/lib/modules | head -n1)"
-    cp /boot/vmlinuz "%{install-root}/usr/lib/modules/${version}"
+    cp /usr/lib/modules/${version}/vmlinuz "%{install-root}/usr/lib/modules/${version}"
 
   - |
     openssl x509 -inform PEM -outform DER -in "linux-module-cert.crt" -out "linux-module-cert.cer"
