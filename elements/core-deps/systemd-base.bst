@@ -42,7 +42,7 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-pyelftools.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
-- freedesktop-sdk.bst:components/cryptsetup-lvm2-stage1.bst
+- freedesktop-sdk.bst:components/_private/cryptsetup-lvm2-stage1.bst
 - freedesktop-sdk.bst:components/p11-kit.bst
 - freedesktop-sdk.bst:components/libfido2.bst
 - freedesktop-sdk.bst:components/libidn2.bst

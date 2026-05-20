@@ -18,10 +18,9 @@ build-depends:
 # Needed for docs/test-deps.py
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/valgrind.bst
+- freedesktop-sdk.bst:components/valgrind-maybe.bst
 
 depends:
-- core-deps/ModemManager.bst
 - core-deps/passim.bst
 - sdk/gcab.bst
 - sdk/glib.bst
@@ -40,6 +39,7 @@ depends:
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
 - freedesktop-sdk.bst:components/libusb.bst
 - freedesktop-sdk.bst:components/libxmlb.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:components/python3-pil.bst

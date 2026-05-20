@@ -8,6 +8,7 @@ sources:
 
 build-depends:
 - gnomeos-deps/iucode-tool.bst
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 variables:
   strip-binaries: ''

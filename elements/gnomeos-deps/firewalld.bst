@@ -17,7 +17,7 @@ build-depends:
 - freedesktop-sdk.bst:components/libxslt.bst
 
 depends:
-- gnomeos-deps/nftables.bst
+- freedesktop-sdk.bst:components/nftables.bst
 - freedesktop-sdk.bst:components/python3.bst
 
 environment:

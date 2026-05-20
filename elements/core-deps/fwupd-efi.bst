@@ -10,7 +10,7 @@ build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
 - freedesktop-sdk.bst:components/genpeimg.bst
-- freedesktop-sdk.bst:components/gnu-efi.bst
+- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/grep.bst
 - freedesktop-sdk.bst:components/python3-pefile.bst
 
