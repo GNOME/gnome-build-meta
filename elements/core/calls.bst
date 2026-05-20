@@ -19,7 +19,6 @@ build-depends:
 - freedesktop-sdk.bst:components/python3-docutils.bst
 
 depends:
-- core-deps/ModemManager.bst
 - core-deps/callaudiod.bst
 - core-deps/evolution-data-server.bst
 - core-deps/feedbackd.bst
@@ -32,4 +31,5 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
+- freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
