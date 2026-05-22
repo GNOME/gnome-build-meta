@@ -2,9 +2,9 @@ kind: junction
 
 sources:
 - kind: git_repo
-  url: gitlab:freedesktop-sdk/freedesktop-sdk.git
-  track: master
-  ref: freedesktop-sdk-25.08rc.3-1994-g46b28d7b78d294844b61014a4f9fb7daee8ef3de
+  url: gitlab:samthursfield/freedesktop-sdk.git
+  track: sam/choose-your-own-userland
+  ref: freedesktop-sdk-25.08beta.1-2498-gd5daea1911a9707d2dec2570903d098abb8fbee9
 - kind: patch_queue
   path: patches/freedesktop-sdk
 

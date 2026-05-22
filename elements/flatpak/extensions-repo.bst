@@ -14,6 +14,7 @@ build-depends:
   config:
     flatpak-image: true
     branch: '%{freedesktop-sdk-flatpak-branch-extra}'
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 (?):
 - x86_64_v3 and (arch == "x86_64"):
