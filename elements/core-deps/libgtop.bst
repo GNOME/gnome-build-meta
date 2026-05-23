@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libgtop.git
   track: master
-  ref: 2.41.3-17-g6a21532ff67060718eb5ebcdae050d03eaff111e
+  ref: 2.41.3-18-g990b6cc1b8383778b263254ec38aa4e24635e6c4
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
