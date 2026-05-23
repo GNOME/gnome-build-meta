@@ -6,7 +6,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-disk-utility.git
   track: main
-  ref: 44.0-796-gefbb34a88ba0b286486e870b8e5345d5c554ac18
+  ref: 44.0-816-gd70d8a127f04d559c8effe1c060aaede74a84639
 - kind: cargo2
   ref:
   - kind: registry
@@ -1001,6 +1001,7 @@ sources:
     version: 2.1.0
     sha: c51bcff7cc3dbb5055396bcf774748c3dab426b4b8659046963523cee4808340
 build-depends:
+- sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
