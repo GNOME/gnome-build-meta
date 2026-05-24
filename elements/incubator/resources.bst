@@ -6,7 +6,6 @@ sources:
   track: main
   ref: v1.10.2-85-g0aecf1c5ba5c809b2067ee70128ede8fe3361494
 - kind: cargo2
-
   ref:
   - kind: registry
     name: aho-corasick
@@ -804,6 +803,7 @@ sources:
     name: zmij
     version: 1.0.21
     sha: b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa
+
 build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
@@ -817,3 +817,6 @@ depends:
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
+variables:
+  meson-local: >-
+    -Dprofile=default
