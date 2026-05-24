@@ -1,0 +1,27 @@
+From bfa901a1cd695df7362e81d1689518e29f74ddf7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Sun, 24 May 2026 20:03:11 +0300
+Subject: [PATCH 10/10] Update linux to 7.0.10
+
+---
+ elements/include/linux.yml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/include/linux.yml b/elements/include/linux.yml
+index 81f82350a..ccef862e6 100644
+--- a/elements/include/linux.yml
++++ b/elements/include/linux.yml
+@@ -1,9 +1,9 @@
+ sources:
+ - kind: git_repo
+   url: kernel:linux/kernel/git/stable/linux.git
+   track: v*
+   exclude:
+   - '*-rc*'
+-  ref: v7.0.7-0-g4d7dbcd7f2c86c830517b827cbc2bc633a489818
++  ref: v7.0.10-0-g7e98da22115d049ca74373caddd43e0952becfef
+ - kind: patch_queue
+   path: patches/linux
+-- 
+2.54.0
+

@@ -1,7 +1,7 @@
 From 3a7e4a38ebae9c70f288bd3ed4fc9bed679febdc Mon Sep 17 00:00:00 2001
 From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
 Date: Thu, 19 Feb 2026 17:09:11 +0000
-Subject: [PATCH 7/9] Update elements/components/pipewire-base.bst to 1.6.0-0
+Subject: [PATCH 07/10] Update elements/components/pipewire-base.bst to 1.6.0-0
 
 Updates elements/components/pipewire-base.bst to 1.6.0-0 (700cea7)
 ---
