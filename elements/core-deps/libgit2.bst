@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libgit2/libgit2.git
   track: 'v*'
-  ref: v1.9.3-0-g1affb8b19346c4f90e163a9a0364959ff1410f64
+  ref: v1.9.4-0-gf7164261c9bc0a7e0ebf767c584e5192810a8b24
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst
