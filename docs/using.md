@@ -95,7 +95,7 @@ If you update your firmware or reset the uefi settings, you might be asked to ma
 ```bash
 sudo /usr/lib/systemd/systemd-pcrlock remove-policy
 sudo /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+14+15
-sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs='' /dev/disk/by-partlabel/root
+sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/disk/by-partlabel/root
 ```
 
 ## Troubleshooting
