@@ -4,14 +4,6 @@ sources:
 - kind: tar
   url: gnome_downloads:gnome-shell/50/gnome-shell-50.0.tar.xz
   ref: 85952fbd4929cfe613b876b2237e0d13464b0c2788b8a9867fb51c260255b0e3
-- kind: git_repo
-  url: gnome:libgnome-volume-control.git
-  directory: subprojects/gvc
-  ref: 5f9768a2eac29c1ed56f1fbb449a77a3523683b6
-- kind: git_repo
-  url: gnome:libshew.git
-  directory: subprojects/libshew
-  ref: ed782477cb5164320ae4f731d49bc5d475ab2a52
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
 
