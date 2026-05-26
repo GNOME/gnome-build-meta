@@ -25,7 +25,7 @@ echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 git log --format=%cd --date=unix | sort --check --reverse --numeric-sort
 
 if [ "${CI_COMMIT_BRANCH-}" = master ]; then
-    version_num=$(TZ=UTC git log --format="%cd" --date="format-local:%Y%m%d" | uniq -c | head -n1 | awk '{print ($2"."($1-1))}')
+    version_num=$(TZ=UTC git log --format="%cd" --date="format-local:%Y%m%d" | uniq -c | (head -n1 && cat >/dev/null) | awk '{print ($2"."($1-1))}')
     IMAGE_VERSION="nightly.$version_num"
 elif [ "${CI_COMMIT_REF_PROTECTED-}" = true ]; then
     IMAGE_VERSION=$(git describe | cut -d - -f 1-2)
