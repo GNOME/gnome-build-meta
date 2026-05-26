@@ -16,6 +16,10 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/protobuf.bst
 
+variables:
+  local_flags: >-
+    -std=c++20
+
 public:
   bst:
     split-rules:
