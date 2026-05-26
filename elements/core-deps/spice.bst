@@ -21,6 +21,8 @@ sources:
   directory: subprojects/spice-common/common/recorder
   path: make-it-quick
   ref: 7a3a86be7c3fa184bcda6882173bd8ab776ad662
+- kind: patch_queue
+  path: patches/spice
 
 build-depends:
 - (@): include/gcc-for-recc.yml
