@@ -37,10 +37,9 @@ else
     IMAGE_VERSION=$(echo "${target}-branch" | sed "s/-/_/g")
 fi
 
-# The longest GPT label is of shape "gnomeos_usr_XXXX_v_%A" where
-# XXXX is the layer name. The longest layer name is 4. The longest
-# possible label is 36. So the longest version is 17.
-if [ "${#IMAGE_VERSION}" -gt 17 ]; then
+# The longest GPT label is of shape "gnomeos_usr_v_%A".
+# The longest possible label is 36. So the longest version is 22.
+if [ "${#IMAGE_VERSION}" -gt 22 ]; then
     echo "Version is too long" 1>&2
     exit 1
 fi
