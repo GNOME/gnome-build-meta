@@ -22,11 +22,11 @@ The tests in this repo aim to cover the following areas:
 * the GNOME OS installer and initial setup
 * basic GNOME Shell functionality
 * system services provided by GNOME and Freedesktop modules, such as app
-    launching, content indexing, fonts, and so on.
+  launching, content indexing, fonts, and so on.
 * core apps, especially where they interact with system services
-    and each other.
+  and each other.
 * features that affect all components such as accessibility, adaptive UI, and
-    localization.
+  localization.
 * anything an end-user might expect to do with a system
 
 The aim is for a full run of the tests to complete within 10 or 15 minutes

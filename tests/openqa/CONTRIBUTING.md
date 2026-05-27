@@ -27,7 +27,7 @@ end-to-end tests:
 * At least 20GB of disk space free
 * At least 4GB of RAM free
 * Support for x86_64 hardware virtualization. See
-    [VIRTUALIZATION.md](./VIRTUALIZATION.md) for more details on that.
+  [VIRTUALIZATION.md](./VIRTUALIZATION.md) for more details on that.
 
 Additionally, you'll need to download the test media which are around 10GB in
 size.
