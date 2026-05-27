@@ -1,6 +1,8 @@
 # Installation Guide
 
-> [!warning] Experimental software
+> [!warning]
+> **Experimental software**
+>
 > You can run GNOME OS on real hardware now, with a few caveats: Hardware support is limited, there is no dedicated security team and some features are missing.
 > This is bleeding edge, in-development software, and not recommended for daily usage if you're not a developer.
 
