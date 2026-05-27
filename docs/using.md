@@ -170,6 +170,16 @@ If you want to install the development toolchain of GNOME OS you can do so by en
 sudo updatectl enable devel --now
 ```
 
+## Enable extra codecs on the host system
+
+The host system does not come with support for some patent-encumbered codecs by default. The system video player will not be able to play these formats, neither will thumbnails be generated for them. You can enable support for these codecs by enabling an optional extension.
+
+```bash
+sudo updatectl enable codecs-extra --now
+```
+
+Flatpak applications do not need this to open the same files.
+
 ## Enable the Nvidia driver
 
 GNOME OS ships with the upstream open source drivers for Nvidia graphics cards, which are enough for light use but have subpar performance and don't support features like CUDA. If you want the best performance or need to use features like CUDA and OptiX, you should enable the Nvidia driver extension like so:
