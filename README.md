@@ -6,6 +6,8 @@ The GNOME Build Metadata repository is where the GNOME release team manages buil
 
 ## Getting started
 
-If you'd like to **use** GNOME OS, please see the [installation guide](./docs/install.md) and the [user guide](./docs/using.md). For an overview of the project, visit the [GNOME OS website](https://os.gnome.org/).
+If you'd like to **use** GNOME OS, please see the [installation guide](https://gnome.pages.gitlab.gnome.org/gnome-build-meta/docs/install.html) and the [user guide](https://gnome.pages.gitlab.gnome.org/gnome-build-meta/docs/using.html). For an overview of the project, visit the [GNOME OS website](https://os.gnome.org/).
 
-To **contribute** to the GNOME Flatpak runtime, GNOME OS or GNOME OCI images, see the [contribution guide](./docs/contributing.md) to get started, and the [debugging guide](./docs/debugging.md) for common troubleshooting steps.
+To **contribute** to the GNOME Flatpak runtime, GNOME OS or GNOME OCI images, see the [contribution guide](https://gnome.pages.gitlab.gnome.org/gnome-build-meta/docs/contributing.html) to get started, and the [debugging guide](https://gnome.pages.gitlab.gnome.org/gnome-build-meta/docs/debugging.html) for common troubleshooting steps.
+
+You can also read the markdown source of the documentation in [docs](./docs/)
