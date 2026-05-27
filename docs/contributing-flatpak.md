@@ -18,7 +18,7 @@ flatpak remote-add --user --no-gpg-verify testrepo repo
 flatpak install testrepo org.gnome.Sdk org.gnome.Platform
 ```
 
-The extensions (`org.gnome.Sdk.Debug`, `org.gnome.Sdk.Docs`, `org.gnome.Platform.Locale`, arch-compat layers, etc.) at [`flatpak/extensions-repo.bst`](../elements/flatpak/extensions-repo.bst) can be built and installed by following the same pattern (see also the [published build outputs](./ci-outputs.md)).
+The extensions (`org.gnome.Sdk.Debug`, `org.gnome.Sdk.Docs`, `org.gnome.Platform.Locale`, arch-compat layers, etc.) at [`flatpak/extensions-repo.bst`](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/elements/flatpak/extensions-repo.bst) can be built and installed by following the same pattern (see also the [published build outputs](./ci-outputs.md)).
 
 To remove the runtime again, simply remove the remote:
 

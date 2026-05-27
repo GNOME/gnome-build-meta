@@ -297,7 +297,7 @@ To debug tests interactively or follow along as they are running, press <kbd>Ctr
 flatpak run org.tigervnc.vncviewer localhost:43681 -Shared -ViewOnly
 ```
 
-For more information on OpenQA, see [End-to-end tests for GNOME OS](../tests/openqa/README.md).
+For more information on OpenQA, see [End-to-end tests for GNOME OS](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/tests/openqa/README.md).
 
 ## 6. Troubleshooting
 
