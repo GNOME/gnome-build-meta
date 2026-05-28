@@ -17,6 +17,7 @@
   - [GNOME OS](contributing-os.md)
   - [Flatpak runtime](contributing-flatpak.md)
   - [OCI](contributing-oci.md)
+- [OpenQA Testing](openqa.md)
 
 ## System reference
 
