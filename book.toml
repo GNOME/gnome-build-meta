@@ -2,3 +2,6 @@
 title = "GNOME Build Metadata"
 language = "en"
 src = "docs"
+
+[output.html]
+additional-css = ["theme/gnome.css"]
