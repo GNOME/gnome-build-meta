@@ -48,12 +48,8 @@ systemd.unit=multi-user.target
 
 ### Boot without System Extensions
 
-If you have installed a System Extension (sysext) that is causing
-issues, you can disable all the extensions with the following cli argument.
-
-```txt
-systemd.mask=systemd-sysext.service
-```
+If you have installed a System Extension (sysext) that is causing issues
+you can disable all extensions by selecting the "Safe Mode" boot option.
 
 ### Enable Debug Shell
 
