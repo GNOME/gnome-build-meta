@@ -2,3 +2,7 @@
 title = "GNOME Build Metadata"
 language = "en"
 src = "docs"
+
+# FIXME handbook theme
+jakub has something: https://gitlab.gnome.org/jimmac/gnome-mdbook-style
+is git submodule the best way to do this? can we include this in ci some other way?
