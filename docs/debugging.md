@@ -48,8 +48,16 @@ systemd.unit=multi-user.target
 
 ### Boot without System Extensions
 
-If you have installed a System Extension (sysext) that is causing
-issues, you can disable all the extensions with the following cli argument.
+If you have installed a System Extension (sysext) that is causing issues
+you can disable all extensions by selecting the "Safe Mode" boot option.
+
+Alternatively, you can add the following argument to the command line yourself:
+
+```txt
+gnomeos.safe-mode=1
+```
+
+If you do not have the nvidia feature enabled, you can also just add:
 
 ```txt
 systemd.mask=systemd-sysext.service
