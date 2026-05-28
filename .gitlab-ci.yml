@@ -11,6 +11,12 @@ include:
     rumdl-version: "0.2.5"
     extra-rules:
       - !reference [".stage-only-rules", "rules"]
+- component: "gitlab.gnome.org/GNOME/citemplates/mdbook@master"
+  inputs:
+    job-stage: "deploy"
+    mdbook-version: "0.5.3"
+    extra-rules:
+      - !reference [".stage-only-rules", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -497,9 +503,12 @@ pages:
   needs:
   - job: 'cve_report'
     artifacts: true
+  - job: 'mdbook'
+    artifacts: true
   script:
   - mkdir -p public/master/
   - mv cve-reports/ public/master/
+  - mv mdbook/book public/docs/
   - python3 .gitlab-ci/scripts/download_cve_reports.py
   - python3 .gitlab-ci/scripts/generate_release_contents.py
   artifacts:
