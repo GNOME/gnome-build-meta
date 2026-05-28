@@ -10,14 +10,6 @@ You can also use snap after enabling it and rebooting:
 updatectl enable --now snapd apparmor
 ```
 
-## Setup a pin to unlock the disk
-
-By default we encrypt your hard drive if there's a tpm2 device available. The long term plan is to use systemd homed to encrypt user data, but until then you can replace the unattended luks decryption with a tpm2+pin key in luks using the following command.
-
-```bash
-sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto --tpm2-pcrs='' /dev/disk/by-partlabel/root
-```
-
 ## Enable discard on the disks
 
 There is no way currently to enable allow-disards on encrypted disks with systemd-gpt-auto-generator. There is also no way from systemd-repart to set it as default option on the volumes. So you will need to manually enable it.
