@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vala.git
   track: main
-  ref: 0.57.0-379-g7a80e9901b4640dab0a11e96a9158545df6d6937
+  ref: 0.57.0-384-gc5d31b3fcdb9d564dc3340714a129f72a072391f
 
 build-depends:
 - sdk/gobject-introspection.bst
