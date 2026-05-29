@@ -404,7 +404,7 @@ s3-image-static:
   - if: $CI_COMMIT_REF_NAME == "master"
     when: on_success
   script:
-  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/publish-s3-static.sh" "$CI_PIPELINE_ID"
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/publish-s3-static.sh" "$IMAGE_VERSION"
   - aws s3 ls --recursive --human-readable s3://gnome-build-meta/
 
 
