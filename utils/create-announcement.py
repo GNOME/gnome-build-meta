@@ -18,7 +18,7 @@ GNOME {major}.{minor} is now available!
 
 This is a stable bugfix release for GNOME {major}. All operating systems shipping GNOME {major} are encouraged to upgrade.
 {final_notice}
-* Review the list of [updated modules and changes](https://download.gnome.org/teams/releng/{major}.{minor}/NEWS).
+* Review the list of [updated modules and changes](https://download.gnome.org/sources/gnome-build-meta/{major}/gnome-build-meta-{major}.{minor}.news).
 * Use [the official BuildStream project snapshot](https://download.gnome.org/sources/gnome-build-meta/{major}/gnome-build-meta-{major}.{minor}.tar.xz) to compile GNOME {major}.{minor}.
 
 GNOME {major}.{minor} is designed to be a boring bugfix update for GNOME {major} so it should be a safe and uneventful upgrade from earlier versions of GNOME {major}.
