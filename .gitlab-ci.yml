@@ -4,6 +4,7 @@ include:
   inputs:
     job-stage: "deploy"
     dist-job-name: "make-git-archive"
+    service-url: "https://gnome-release-route-sandbox-gnome-release-service.apps.openshift.gnome.org"
 - component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
   inputs:
     job-stage: "reports"
