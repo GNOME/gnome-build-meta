@@ -12,6 +12,7 @@ build-depends:
 depends:
 - core/papers.bst
 - sdk/gjs.bst
+- sdk/glycin.bst
 - sdk/gtk.bst
 - sdk/gtksourceview.bst
 - sdk/libadwaita.bst
