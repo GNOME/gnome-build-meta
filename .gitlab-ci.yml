@@ -10,7 +10,7 @@ include:
     job-stage: "reports"
     rumdl-version: "0.1.11"
     extra-rules:
-      - !reference [".stage-only-rules", "rules"]
+    - !reference [".stage-only-rules", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3

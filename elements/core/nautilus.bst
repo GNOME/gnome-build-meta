@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/50/nautilus-50.1.tar.xz
-  ref: d62793b9659771b66a6b6e052b52229f868ddbec1388a0b669eef0bd211212ee
+  url: gnome_downloads:nautilus/50/nautilus-50.2.2.tar.xz
+  ref: e1e285efddf42ed30dda5b29f7f8d242dab4bc1409a9054863b367bad4b34d5a
 build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:evince.git
-  track: '48.*'
-  ref: 48.4-0-g6fcb30b3ba9e0a51a53f356d8eddd85dec20bed7
-
+- kind: tar
+  url: gnome_downloads:evince/48/evince-48.4.tar.xz
+  ref: f296c5c662886635d4cd597e8ac0afcde7982be4486533c2b7f095b268be8668
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

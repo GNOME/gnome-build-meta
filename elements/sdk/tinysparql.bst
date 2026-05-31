@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:tinysparql/3.11/tinysparql-3.11.0.tar.xz
-  ref: 011e758a53f31112a8c45700fd6039ae55617f0dac70119d9eddafc03cf68fe5
+  url: gnome_downloads:tinysparql/3.11/tinysparql-3.11.1.tar.xz
+  ref: cfd46021ee1514ad435e714f7aa1ec7a787c7f516a94f4c7438897ee3d6eca1e
 
 build-depends:
 - core-deps/graphviz.bst
