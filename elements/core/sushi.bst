@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:sushi.git
-  track: master
+  track: main
   ref: 50.0-36-ge80c764d83eb855e2a37cf631f25c0a18d911158
 
 build-depends:
