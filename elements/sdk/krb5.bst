@@ -4,6 +4,10 @@ sources:
 - kind: tar
   url: kerberos:dist/krb5/1.22/krb5-1.22.2.tar.gz
   ref: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
+# This fix is not yet released.
+- kind: patch
+  path: patches/krb5/fix-strchr-conformance-to-c23.patch
+
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
 - freedesktop-sdk.bst:components/perl.bst
