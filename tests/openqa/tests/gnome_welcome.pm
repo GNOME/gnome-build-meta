@@ -30,14 +30,17 @@ sub run {
 
     # User setup
     assert_screen('gnome_firstboot_aboutyou_1', 10);
-    type_string($testapi::username);
-    assert_and_click('gnome_firstboot_aboutyou_2', timeout => 10, button => 'left');
-    assert_screen('gnome_firstboot_password_1', 10);
-    type_string($testapi::password);
+    type_string($testapi::username, max_interval => SLOW_TYPING_SPEED);
+    wait_still_screen(2);
+    assert_and_click('gnome_firstboot_aboutyou_2', timeout => 20, button => 'left');
+    assert_screen('gnome_firstboot_password_1', 20);
+    type_string($testapi::password, max_interval => SLOW_TYPING_SPEED);
+    wait_still_screen(2);
     send_key('tab');
     send_key('tab');
-    type_string($testapi::password);
-    assert_and_click('gnome_firstboot_password_2', timeout => 10, button => 'left');
+    type_string($testapi::password, max_interval => SLOW_TYPING_SPEED);
+    wait_still_screen(2);
+    assert_and_click('gnome_firstboot_password_2', timeout => 20, button => 'left');
 
     # Complete
     assert_and_click('gnome_firstboot_complete', timeout => 10, button => 'left');
