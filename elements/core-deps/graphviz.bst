@@ -4,7 +4,10 @@ sources:
 - kind: git_repo
   url: gitlab:graphviz/graphviz.git
   track: '*.*'
-  ref: 14.1.2-0-g397dc2a41288a28663c87b6e03438758b2f6d029
+  ref: 15.0.0-0-g8080495d6e6b56597ab24ed042daaf243fd0854f
+# https://gitlab.com/graphviz/graphviz/-/work_items/2839
+- kind: patch
+  path: patches/graphviz/fix-build.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
