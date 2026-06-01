@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd.git
   track: '*.*.*'
-  ref: 2.1.3-0-gaf55b0bc26231e4bd2ef46e68a7adcd35e82709d
+  ref: 2.1.4-2-0-g2496d94c1840802566306f1a14ceb0714479a2e5
 
 build-depends:
 - sdk/gi-docgen.bst
@@ -21,7 +21,6 @@ build-depends:
 
 depends:
 - core-deps/ModemManager.bst
-- core-deps/libjcat.bst
 - core-deps/passim.bst
 - sdk/gcab.bst
 - sdk/glib.bst
@@ -38,6 +37,7 @@ depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libmnl.bst
 - freedesktop-sdk.bst:components/libsmbios-maybe.bst
+- freedesktop-sdk.bst:components/libusb.bst
 - freedesktop-sdk.bst:components/libxmlb.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/pycairo.bst
@@ -58,7 +58,6 @@ variables:
   meson-local: >-
     -Defi_binary=%{efi_binary}
     -Dhsi=%{hsi_feature}
-    -Dplugin_flashrom=disabled
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
