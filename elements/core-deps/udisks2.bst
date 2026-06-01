@@ -4,9 +4,7 @@ sources:
 - kind: git_repo
   url: github:storaged-project/udisks.git
   track: 'udisks-*.*.*'
-  ref: udisks-2.10.1-0-g18c9faf089e306ad6f3f51f5cb887a6b9aa08350
-- kind: patch
-  path: patches/udisks2/calculate-drive-size-from-all-attached-nvme.patch
+  ref: udisks-2.11.1-0-g6375ff14d3fed5f20c66ff50cfc02844473294a1
 
 build-depends:
 - sdk/gtk-doc.bst
