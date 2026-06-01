@@ -35,7 +35,6 @@ config:
     components/python3-gi-docgen.bst: sdk/gi-docgen.bst
     components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
-    components/gtk-doc.bst: sdk/gtk-doc.bst
     components/gtk3.bst: sdk/gtk+-3.bst
     components/libibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
