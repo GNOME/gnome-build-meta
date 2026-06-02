@@ -10,3 +10,6 @@ code-blocks = false
 tables = false
 # Enable automatic line wrapping (required for --fix)
 reflow = true
+
+[MD033]
+allowed-elements = ["kbd", "details", "summary"]
