@@ -11,3 +11,7 @@ git archive --prefix "$project_name-$version/" -o "$project_name-$version.tar" "
 
 echo "Compressing archive"
 xz "$project_name-$version.tar"
+sha256sum "$project_name-$version.tar.xz" > "$project_name-$version.tar.xz.sha256sum"
+
+mkdir -p public-dist
+mv "$project_name-$version.tar.xz" "$project_name-$version.tar.xz.sha256sum" public-dist/

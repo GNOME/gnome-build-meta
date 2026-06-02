@@ -4,7 +4,6 @@ include:
   inputs:
     job-stage: "deploy"
     dist-job-name: "make-git-archive"
-    tarball-artifact-path: "${CI_PROJECT_NAME}-${CI_COMMIT_TAG}.tar.xz"
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -506,4 +505,5 @@ make-git-archive:
   artifacts:
     expire_in: "2 days"
     paths:
-    - "*.tar.xz"
+    - "public-dist/*.tar.xz"
+    - "public-dist/*.tar.xz.sha256sum"
