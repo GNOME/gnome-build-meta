@@ -480,7 +480,7 @@ credentials+=("ssh.ephemeral-authorized_keys-all=$(base64 -w0 <ssh/ephemeral.pub
 cat <<EOF
 When the machine is started, you may connect using:
 
-ssh -i ssh/ephemeral root@vsock/${GUEST_CID}
+ssh -i ssh/ephemeral -o IdentitiesOnly=yes root@vsock/${GUEST_CID}
 
 EOF
 

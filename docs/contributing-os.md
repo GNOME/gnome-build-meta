@@ -87,7 +87,7 @@ After booting, you should install GNOME OS to disk by following the [install sec
 
 While it's possible to rebuild the GNOME OS images on each change and reinstall them each time you make changes, this leads to a very slow iteration cycle and is not recommended. Instead, use the `systemd-sysext` and/or `systemd-sysupdate` workflows described in the following sections to build and deploy your changes to your local workstation, a remote machine, or a virtual machine in a much faster way.
 
-The following uses `$SSH_ARGS` as placeholder SSH arguments when targeting a virtual machine or a remote machine. For a virtual machine started with `./utils/run-secure-vm.sh`, use the arguments printed after running `./utils/run-secure-vm.sh` (e.g. `export SSH_ARGS="-i ssh/ephemeral root@vsock/777"`). For a remote machine, set `export SSH_ARGS="user@remote-machine-hostname-or-ip"`.
+The following uses `$SSH_ARGS` as placeholder SSH arguments when targeting a virtual machine or a remote machine. For a virtual machine started with `./utils/run-secure-vm.sh`, use the arguments printed after running `./utils/run-secure-vm.sh` (e.g. `export SSH_ARGS="-i ssh/ephemeral -o IdentitiesOnly=yes root@vsock/777"`). For a remote machine, set `export SSH_ARGS="user@remote-machine-hostname-or-ip"`.
 
 ### 4.1 Option 1: By building and installing a system extension (`systemd-sysext`)
 
