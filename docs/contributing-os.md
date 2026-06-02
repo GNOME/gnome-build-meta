@@ -5,6 +5,12 @@ This guide covers the GNOME OS-specific parts of contributing. Read the [contrib
 For [automated integration tests](#5-running-automated-integration-tests), you also need to install the [ssam_openqa](https://gitlab.gnome.org/sthursfield/ssam_openqa) tool manually like so:
 
 ```shell
+cargo install --git https://gitlab.gnome.org/sthursfield/ssam_openqa.git
+```
+
+Or if you don't have a [rust](https://rustup.rs/) toolchain already setup, you could use the precompiled the binaries:
+
+```shell
 curl -Lo ~/.local/bin/ssam_openqa "https://gitlab.gnome.org/api/v4/projects/sthursfield%2Fssam_openqa/packages/generic/$(uname -m)-unknown-linux-gnu/$(curl "https://gitlab.gnome.org/api/v4/projects/sthursfield%2Fssam_openqa/packages?package_name=$(uname -m)-unknown-linux-gnu&sort=desc" | jq -r '.[0].version')/ssam_openqa"
 chmod +x ~/.local/bin/ssam_openqa
 ```
