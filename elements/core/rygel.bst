@@ -22,8 +22,3 @@ depends:
 - sdk/libgee.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-
-variables:
-  meson-local: >-
-    -Dplugins=external,gst-launch,media-export,mpris,playbin,ruih,localsearch
-    -Dintrospection=enabled
