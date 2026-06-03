@@ -15,7 +15,9 @@ sources:
       version-guess-pattern: '(\d+)(?:\.(\d+))?'
       exclude:
       - '*-rc*'
-  ref: v261-rc1-9-g4d18eac5a99dbc8198f25cde9175e66f27e92cbc
+  ref: v261-rc2-111-g88b9acbc2b6a5d95bf483660022c832e0996af6d
+- kind: patch
+  path: patches/systemd/pcrnvdone-initrd.patch
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

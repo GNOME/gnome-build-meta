@@ -150,6 +150,8 @@ UNITS+=(
     systemd-tpm2-setup-early.service
     sysinit.target.wants/systemd-tpm2-setup-early.service
     systemd-loop@.service
+    systemd-pcrnvdone.service
+    sysinit.target.wants/systemd-pcrnvdone.service
 )
 
 install() {
