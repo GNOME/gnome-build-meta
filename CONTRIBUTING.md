@@ -87,6 +87,9 @@ projects:
 EOT
 ```
 
+> [!warning]
+> Make sure to revert this configuration after you are done, as it can cause broken builds.
+
 </details>
 
 <details>
@@ -102,6 +105,9 @@ source-caches:
   override-project-caches: true
 EOT
 ```
+
+> [!warning]
+> Make sure to revert this configuration when updating to a new upstream commit, as it can cause large rebuilds of the stack since it can not pull compiled cached artifacts.
 
 By default, the local cache is stored in `~/.cache/buildstream`. Note that disabling the remote cache lookups will cause a slow fresh build from scratch without the caches the first time you run a `bst` command afterwards.
 
