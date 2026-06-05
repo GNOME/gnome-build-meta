@@ -1,0 +1,22 @@
+commit ebd4d82bd7a6b8c57870dbfb492e4c186cf584d8
+Author: Ralph Little <skelband@gmail.com>
+Date:   Mon Feb 23 11:52:19 2026 -0800
+
+    gphoto: Fix for error triggered by ISO C23 changes.
+    
+    ISO C23 makes strchr() const sensitive.
+    Argument cast is pointless and therefore removed.
+
+diff --git a/backend/gphoto2.c b/backend/gphoto2.c
+index 386cecb20..45a87c60b 100644
+--- a/backend/gphoto2.c
++++ b/backend/gphoto2.c
+@@ -584,7 +584,7 @@ get_info (void)
+ 	{
+ 	  gp_list_get_name (dir_list, n, &val);
+ 	  folder_list[n] = strdup (val);
+-	  if (strchr ((const char *) folder_list[n], ' '))
++	  if (strchr (folder_list[n], ' '))
+ 	    {
+ 	      *strchr (folder_list[n], ' ') = '\0';
+ 	    }
