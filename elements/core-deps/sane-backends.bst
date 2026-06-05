@@ -7,6 +7,8 @@ sources:
   ref: 1.4.0-0-gc7e4b5e35e3d614d2b1181d760a717bfc395a203
 - kind: local
   path: files/sane-backends/sysusers.conf
+- kind: patch_queue
+  path: patches/sane-backends
 
 build-depends:
 - (@): include/gcc-for-recc.yml
