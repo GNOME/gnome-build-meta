@@ -1,0 +1,31 @@
+commit fc8820cfaa8b5e17328f731df93911f6ab92443b
+Author: Stefan Berger <stefanb@linux.ibm.com>
+Date:   Fri Jan 2 11:37:31 2026 -0500
+
+    Fix a compilation error in TPMLIB_GetPlaintext
+    
+    Fix a compilation error that newer gcc versions may complain about:
+    
+    tpm_library.c: In function 'TPMLIB_GetPlaintext':
+    tpm_library.c:441:11: error: assignment discards 'const' qualifier from pointer target type [-Werror=discarded-qualifiers]
+      441 |     start = strstr(stream, starttag);
+          |           ^
+    At top level:
+    cc1: note: unrecognized command-line option '-Wno-self-assign' may have been intended to silence earlier diagnostics
+    cc1: all warnings being treated as errors
+    
+    Signed-off-by: Stefan Berger <stefanb@linux.ibm.com>
+
+diff --git a/src/tpm_library.c b/src/tpm_library.c
+index f48f4fd3..7b2ea687 100644
+--- a/src/tpm_library.c
++++ b/src/tpm_library.c
+@@ -435,7 +435,7 @@ static unsigned char *TPMLIB_GetPlaintext(const char *stream,
+                                           const char *endtag,
+                                           size_t *length)
+ {
+-    char *start, *end;
++    const char *start, *end;
+     unsigned char *plaintext = NULL;
+ 
+     start = strstr(stream, starttag);
