@@ -5,6 +5,8 @@ sources:
   url: github:nodejs/node.git
   track: 'v*'
   ref: v26.5.0-0-gbebd1b8d92bf4cc917844d6335ed1ecf9c2a75fb
+- kind: patch
+  path: patches/nodejs/fix-v8-build-failures.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml
