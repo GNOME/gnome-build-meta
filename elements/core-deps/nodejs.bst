@@ -5,6 +5,8 @@ sources:
   url: github:nodejs/node.git
   track: 'v*'
   ref: v26.2.0-0-gcfd7920d5a2d84905c4292362d01d07870047e93
+- kind: patch
+  path: patches/nodejs/fix-v8-build-failures.patch
 
 build-depends:
 - freedesktop-sdk.bst:components/gyp.bst
