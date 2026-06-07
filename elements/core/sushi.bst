@@ -4,9 +4,10 @@ sources:
 - kind: git_repo
   url: gnome:sushi.git
   track: main
-  ref: 50.0-61-gc50e7a42b397d1299686c59c44714eaf28e374d9
+  ref: 50.0-122-g4a784d20527d4baa387be7c11b4dc836512aff3b
 
 build-depends:
+- sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 
 depends:
