@@ -1,17 +1,20 @@
 kind: meson
+
 sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.11.1-21-g98d82fd97acfdceb2c1bff3a8f3612f3b16381db
+  ref: 3.11.1-41-g06a8e6ba633c7610ed220f09aae4d366a8132c84
+
 build-depends:
+- core-deps/libmediainfo.bst
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/ffmpeg.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/dconf.bst
@@ -36,6 +39,7 @@ depends:
 - freedesktop-sdk.bst:components/openjpeg.bst
 - freedesktop-sdk.bst:components/poppler.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
 variables:
   meson-local: >-
     -Diptc=disabled
