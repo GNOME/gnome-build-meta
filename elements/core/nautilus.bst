@@ -4,7 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 50.0-173-gc54fbc2d8a5e8aafa67bfde4aa18135fe93806ca
+  ref: 50.0-189-g6580937b110d1a6b6b491fdff6c7b098464caaa1
+# please keep in sync with https://gitlab.gnome.org/GNOME/nautilus/-/blob/main/subprojects/libgxdp.wrap
+- kind: git_repo
+  url: gnome:libgxdp.git
+  ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b
+  directory: subprojects/libgxdp
 
 build-depends:
 - sdk/blueprint-compiler.bst
