@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk.git
   track: gtk-3-24
-  ref: 3.24.52-16-geb46fe83cd4e3e54fb9f2dfa6d00a84fb95eed76
+  ref: 3.24.52-18-gb6e270b1821d39d4631f28d0e7d3b029dbbee06a
 
 build-depends:
 - sdk/gobject-introspection.bst
