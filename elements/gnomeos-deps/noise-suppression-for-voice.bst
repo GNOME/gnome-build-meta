@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:werman/noise-suppression-for-voice.git
   track: 'v*'
-  ref: v1.10-0-g9c4e5c28d8950e2cef837d8a0abd36c2fd9b5c2d
+  ref: v1.21-0-g4b0a6f76fc8bcfb5a3603ae2cb6619dfcb0e19f2
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-cmake.bst

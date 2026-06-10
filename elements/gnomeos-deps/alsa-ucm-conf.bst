@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:alsa-project/alsa-ucm-conf.git
   track: 'v*'
-  ref: v1.2.15.3-0-g858d3a2443c66a7d5a2b5598308619237e8fc75d
+  ref: v1.2.16-0-g9cbe98256fe7077c05f92ac561be12ae56825b12
 
 depends:
 - freedesktop-sdk.bst:components/alsa-lib.bst

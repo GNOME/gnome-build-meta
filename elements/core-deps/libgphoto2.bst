@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: github:gphoto/libgphoto2.git
   track: 'v*.*.*'
-  ref: v2.5.33-0-gfb8bd54bf1fbf019ea7fd262d7de98bce3a28701
+  ref: v2.5.34-0-ga4ec9cc8b799d3e620c89feeaeb3ec86f362a12f
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
 depends:

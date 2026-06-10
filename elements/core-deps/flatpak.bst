@@ -8,7 +8,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.17.7-6-g588eef8e65c94af037c4855577535769994a2e05
+  ref: 1.18.0-1-g96ad6825f3e7115eb95abeba55600b2a39b71178
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
