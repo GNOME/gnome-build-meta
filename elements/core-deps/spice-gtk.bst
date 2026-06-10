@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:spice/spice-gtk.git
   track: "v*"
-  ref: v0.42-0-gf04479c16f0969fb394ebe74b6eff74e560a42f0
+  ref: v0.43-0-gf028f45a573926736223548887e18ac65dabb50b
 - kind: git_module
   url: gitlab:keycodemap/keycodemapdb.git
   path: subprojects/keycodemapdb
@@ -12,7 +12,7 @@ sources:
 - kind: git_module
   url: freedesktop:spice/spice-common.git
   path: subprojects/spice-common
-  ref: 58d375e5eadc6fb9e587e99fd81adcb95d01e8d6
+  ref: 492c22f4447eec9d430a7c737bdd20cbe93263c4
 - kind: git_module
   url: github:c3d/recorder.git
   directory: subprojects/spice-common
@@ -26,7 +26,7 @@ sources:
 
 build-depends:
 - core-deps/python-pyparsing.bst
-- sdk/gtk-doc.bst
+- sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/python3-six.bst
 - freedesktop-sdk.bst:components/sed.bst
