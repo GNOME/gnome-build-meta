@@ -12,6 +12,7 @@ build-depends:
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/pipewire.bst
+- sdk/libdex.bst
 
 variables:
   meson-local: >-
@@ -40,7 +41,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.21.2-1-gc6f217875485e28799a524b643c34474a289ba4f
+  ref: 1.22.0-29-g89f2f5e3d219bc5fd66a2505ee772b16022e8575
 - kind: git_repo
   url: gnome:libglnx.git
   directory: subprojects/libglnx

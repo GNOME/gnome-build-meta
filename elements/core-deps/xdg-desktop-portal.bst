@@ -13,6 +13,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/xdg-desktop-portal-manifest.bst
 - freedesktop-sdk.bst:components/xdg-portal-interfaces.bst
+- sdk/libdex.bst
 
 config:
   include-orphans: true
