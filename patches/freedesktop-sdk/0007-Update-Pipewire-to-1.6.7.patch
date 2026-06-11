@@ -1,7 +1,7 @@
 From 34bfea9f255123a4c828b1697fe0af53f765365e Mon Sep 17 00:00:00 2001
 From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
 Date: Thu, 19 Feb 2026 17:09:11 +0000
-Subject: [PATCH 7/7] Update Pipewire to 1.6.7
+Subject: [PATCH 7/8] Update Pipewire to 1.6.7
 
 ---
  elements/components/pipewire-base.bst | 7 ++++++-

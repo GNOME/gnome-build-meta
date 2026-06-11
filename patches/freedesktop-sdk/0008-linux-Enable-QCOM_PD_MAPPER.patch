@@ -1,0 +1,32 @@
+From 4f63e7d9a2580b847da8e7dd4f7e5d1f0b96e3fc Mon Sep 17 00:00:00 2001
+From: Achill Gilgenast <achill@achill.org>
+Date: Thu, 11 Jun 2026 10:26:27 +0200
+Subject: [PATCH 8/8] linux: Enable QCOM_PD_MAPPER
+
+See https://lwn.net/Articles/973399/
+
+Allows the removal of the user-space pd-mapper service in GNOME OS,
+which should not be used anymore (See also
+https://github.com/linux-msm/pd-mapper/pull/15#issuecomment-3480801412)
+
+Signed-off-by: Achill Gilgenast <achill@achill.org>
+---
+ files/linux/fdsdk-config.sh | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index fd4337eeff7b..12301221822f 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -67,6 +67,8 @@ case "$arch" in
+ 	enable SC_LPASS_CORECC_7280
+ 	enable SC_VIDEOCC_7280
+ 	enable SC_GCC_7280
++
++	enable QCOM_PD_MAPPER
+     ;;
+ esac
+ 
+-- 
+2.54.0
+
