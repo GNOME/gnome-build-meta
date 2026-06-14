@@ -22,6 +22,7 @@ depends:
 - core-deps/upower.bst
 - core/gdm.bst
 - core/gnome-desktop.bst
+- core/gnome-keyring.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/gtk.bst

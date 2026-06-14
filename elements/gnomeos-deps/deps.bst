@@ -113,8 +113,6 @@ depends:
 
 - gnomeos-deps/kmscon.bst
 
-- gnomeos-deps/oo7-cli.bst
-
 (?):
 - arch == "x86_64":
     depends:
