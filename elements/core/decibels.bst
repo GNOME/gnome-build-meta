@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:decibels.git
   track: main
-  ref: 49.6.1-9-ge2b21d21253be851a93cf482a1aa68f2d69bd7c6
+  ref: 49.6.1-10-gbfd7fceffca1570ec995a030940c5b3599d1b813
 - kind: git_module
   url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
   path: gi-types
