@@ -4,6 +4,7 @@ build-depends:
 - sdk-deps/gvfs.bst
 
 runtime-depends:
+- sdk-deps/gvfs-manifest.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 

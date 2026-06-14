@@ -4,6 +4,7 @@ build-depends:
 - sdk-deps/ibus.bst
 
 runtime-depends:
+- sdk-deps/ibus-manifest.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

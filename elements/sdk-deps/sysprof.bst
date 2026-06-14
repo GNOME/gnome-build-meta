@@ -3,22 +3,17 @@ kind: meson
 (@): elements/core/sysprof.inc
 
 build-depends:
-- freedesktop-sdk.bst:components/desktop-file-utils.bst
-- freedesktop-sdk.bst:components/itstool.bst
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-
-runtime-depends:
-- sdk/adwaita-icon-theme.bst
-
-depends:
 - sdk-deps/libpanel.bst
 - sdk/gtk.bst
 - sdk/json-glib.bst
 - sdk/libadwaita.bst
 - sdk/libdex.bst
+- freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/itstool.bst
 - freedesktop-sdk.bst:components/libunwind.bst
 - freedesktop-sdk.bst:components/polkit.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

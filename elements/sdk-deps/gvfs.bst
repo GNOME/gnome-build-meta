@@ -7,10 +7,6 @@ sources:
   ref: 1.60.0-25-g7db465b8235d2f433b62d91fe7a768a3322c743f
 
 build-depends:
-- freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
-
-depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
@@ -36,6 +32,8 @@ depends:
 - freedesktop-sdk.bst:components/openssh.bst
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
+- freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

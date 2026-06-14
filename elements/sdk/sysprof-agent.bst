@@ -4,6 +4,7 @@ build-depends:
 - sdk-deps/sysprof.bst
 
 runtime-depends:
+- sdk-deps/sysprof-manifest.bst
 - sdk/glib.bst
 - sdk/json-glib.bst
 - freedesktop-sdk.bst:components/libunwind.bst

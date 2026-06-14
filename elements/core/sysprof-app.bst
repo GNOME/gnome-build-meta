@@ -4,6 +4,7 @@ build-depends:
 - sdk-deps/sysprof.bst
 
 runtime-depends:
+- sdk-deps/sysprof-manifest.bst
 - sdk-deps/libpanel.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
