@@ -136,9 +136,9 @@ else
     image=(gnomeos/update-images-user-only.bst)
 fi
 
-inhibit "${BST}" "${BST_OPTIONS[@]}" build "${image}"
+inhibit "${BST}" "${BST_OPTIONS[@]}" --no-strict build "${image}"
 
-"${BST}" "${BST_OPTIONS[@]}" artifact checkout "${image}" --directory "${checkout}"
+"${BST}" "${BST_OPTIONS[@]}" --no-strict artifact checkout "${image}" --directory "${checkout}"
 gpg --homedir=files/boot-keys/private-key --output  "${checkout}/SHA256SUMS.gpg" --detach-sig "${checkout}/SHA256SUMS"
 
 if [ "${next_version+set}" = set ]; then

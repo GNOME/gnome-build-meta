@@ -1,5 +1,5 @@
 # l for local
-image-version: 'l.1'
+image-version: 'l.3'
 filesystem-time: 1321009871
 # These get replaced in CI.
 # We should also set them for local builds, but that's for later
