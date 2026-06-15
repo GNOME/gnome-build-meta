@@ -2,12 +2,13 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ibus/ibus/releases/download/1.5.34/ibus-1.5.34.tar.gz
-  ref: 12a72210ce5250f8a66df562a75e034e67b2bce74c4df2983dc86d1154894943
+  url: github_files:ibus/ibus/releases/download/1.5.35-alpha1/ibus-1.5.35-alpha1.tar.gz
+  ref: 4d6d70a4217a7c07caaf4d0bb41de4572913be817951a1fcd2d879385a97d506
 
 build-depends:
 - sdk/vala.bst
 - sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
@@ -51,4 +52,5 @@ public:
       - '%{includedir}/**'
       - '%{libdir}/**'
       - '%{datadir}/gir-1.0/**'
+      - '%{datadir}/gtk-doc/**'
       - '%{datadir}/vala/vapi/**'
