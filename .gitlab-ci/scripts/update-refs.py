@@ -93,7 +93,6 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 #
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
-    ("gnomeos-deps/ibus-typing-booster.bst", "It makes portals timeout in openqa, needs to be debugged"),
     ("gnomeos-deps/bootc.bst", "We have manually overwritten the sources to append .git at a couple github urls"),
     ("sdk/glycin.inc", "Recent glycin hangs GDM. We need to investigate."),
 ]
