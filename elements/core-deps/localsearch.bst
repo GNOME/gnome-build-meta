@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.11.1-41-g06a8e6ba633c7610ed220f09aae4d366a8132c84
+  ref: 3.11.1-88-g6ef1a2ead9653ccdc6ff0678a844c0e9bba18eef
 
 build-depends:
 - core-deps/libmediainfo.bst
