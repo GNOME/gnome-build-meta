@@ -4,12 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:xdg-desktop-portal-gnome.git
   track: main
-  ref: 50.0-41-gded26624cfd6d838038997e3ca62ad0862352f23
+  ref: 50.0-45-g4e6023eb9dde68a2cef734994c5d321d95be3270
 # FIXME: should be kept in sync manually until we have a wrap plugin
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp
-  ref: d5eca997aa2fea5af54fdd286d5c1e1aa7c76389
+  ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
