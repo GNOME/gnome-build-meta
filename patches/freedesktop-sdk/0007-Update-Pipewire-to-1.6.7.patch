@@ -1,15 +1,14 @@
-From 3a7e4a38ebae9c70f288bd3ed4fc9bed679febdc Mon Sep 17 00:00:00 2001
+From 34bfea9f255123a4c828b1697fe0af53f765365e Mon Sep 17 00:00:00 2001
 From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
 Date: Thu, 19 Feb 2026 17:09:11 +0000
-Subject: [PATCH 07/10] Update elements/components/pipewire-base.bst to 1.6.0-0
+Subject: [PATCH 7/7] Update Pipewire to 1.6.7
 
-Updates elements/components/pipewire-base.bst to 1.6.0-0 (700cea7)
 ---
- elements/components/pipewire-base.bst | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ elements/components/pipewire-base.bst | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/elements/components/pipewire-base.bst b/elements/components/pipewire-base.bst
-index a09759fdf..f73a623c9 100644
+index a09759fdf..9b4ee6c76 100644
 --- a/elements/components/pipewire-base.bst
 +++ b/elements/components/pipewire-base.bst
 @@ -49,20 +49,24 @@ variables:
@@ -37,7 +36,7 @@ index a09759fdf..f73a623c9 100644
            patchelf --remove-rpath "${module}"
          fi
        done
-@@ -135,11 +139,11 @@ public:
+@@ -135,11 +139,12 @@ public:
        - '%{debugdir}%{libdir}/pipewire-0.3/libpipewire-module-spa-node-factory.so.debug'
        - '%{debugdir}%{libdir}/pipewire-0.3/libpipewire-module-spa-node.so.debug'
        - '%{debugdir}%{libdir}/pipewire-0.3/libpipewire-module-zeroconf-discover.so.debug'
@@ -49,7 +48,8 @@ index a09759fdf..f73a623c9 100644
  - kind: git_repo
    url: freedesktop:PipeWire/pipewire.git
 -  ref: 1.4.9-0-gfd60e04525f3a04d90bf50085222e0cc9139b4a4
-+  ref: 1.6.0-0-g700cea78dbe7564131d51b21a7795e2567ee048a
++  track: "*.*.*"
++  ref: 1.6.7-0-g3b2cb4fb037bf6033b87d3c87ee917b2f686d309
 -- 
 2.54.0
 
