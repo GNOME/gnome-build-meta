@@ -1,6 +1,7 @@
 kind: stack
 
 depends:
+- buildsystems/jobserver-pool.bst
 - buildsystems/recc-wrapper.bst
 - freedesktop-sdk.bst:components/gcc.bst
 - freedesktop-sdk.bst:components/stripper.bst
