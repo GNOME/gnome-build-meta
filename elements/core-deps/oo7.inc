@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: github:linux-credentials/oo7.git
   track: main
-  ref: v0.6.0-alpha-144-g5caf72634adc405fe017069e491ae8406f033050
+  ref: v0.6.0-alpha-163-gdad163ad31cc2609e4b5b4446345be07f099c660
 - kind: cargo2
   ref:
   - kind: registry
@@ -267,8 +267,8 @@ sources:
     sha: 00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b
   - kind: registry
     name: formatx
-    version: 0.2.4
-    sha: d8866fac38f53fc87fa3ae1b09ddd723e0482f8fa74323518b4c59df2c55a00a
+    version: 0.3.0
+    sha: c40f9ee993b100102723f778c82d3daf1808c494ce2fd6e9a06d58d6e8e59748
   - kind: registry
     name: futures-channel
     version: 0.3.32
@@ -715,8 +715,8 @@ sources:
     sha: 13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292
   - kind: registry
     name: syn
-    version: 2.0.117
-    sha: e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99
+    version: 2.0.118
+    sha: 1b9ae57f904213ebb649ce6895b8a66c66f0203b9319718f69a5612a065b1422
   - kind: registry
     name: target-lexicon
     version: 0.13.5
