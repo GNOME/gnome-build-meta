@@ -95,7 +95,6 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 ignore_elements: List[Tuple[str, str]] = [
     ("core-deps/vte.bst", "Crashes kgx and is very annoying https://gitlab.gnome.org/GNOME/vte/-/work_items/2949"),
     ("gnomeos-deps/bootc.bst", "We have manually overwritten the sources to append .git at a couple github urls"),
-    ("sdk/glycin.inc", "Recent glycin hangs GDM. We need to investigate."),
 ]
 
 def git(*args):
