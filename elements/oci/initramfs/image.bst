@@ -17,17 +17,17 @@ variables:
 config:
   build-commands:
   - |
-    (
-      cd /initramfs
-      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | zstd ${ZSTDFLAGS} > %{build-root}/initramfs.img
-    )
-
-  - |
     case '%{arch}' in
       x86_64)
-        cat %{indep-libdir}/firmware/microcode.cpio >> initramfs.img
+        cat %{indep-libdir}/firmware/microcode.cpio > initramfs.img
       ;;
     esac
+
+  - |
+    (
+      cd /initramfs
+      find . -print0 | sort -z | cpio --reproducible --null -H newc -o --quiet | zstd ${ZSTDFLAGS} >> %{build-root}/initramfs.img
+    )
 
   install-commands:
   - |
