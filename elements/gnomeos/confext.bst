@@ -19,7 +19,6 @@ config:
   install-commands:
   - |
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system' \
-        initrd-confext.service \
         initrd-migrate-confext.service \
         initrd-create-mutable-etc.service
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/confext.conf.d' mutable.conf
