@@ -148,10 +148,10 @@ Then copy the system extension to the target. For a **remote machine** use `scp`
 scp zz-gnome-control-center.sysext.raw $SSH_ARGS:/tmp/
 ```
 
-For a **virtual machine**, `scp` can't parse the vsock address, so pipe the file over `ssh` instead:
+For a **virtual machine**, `scp` requires a different syntax for the vsock address. Mainly note the `%`:
 
 ```shell
-$ ssh $SSH_ARGS "cat > /tmp/zz-gnome-control-center.sysext.raw" < zz-gnome-control-center.sysext.raw
+scp -i ssh/ephemeral -o IdentitiesOnly=yes zz-gnome-control-center.sysext.raw youruser@vsock%777:/tmp
 ```
 
 Then apply the system extension by running the following:
