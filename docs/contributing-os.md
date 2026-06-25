@@ -148,10 +148,10 @@ Then copy the system extension to the target. For a **remote machine** use `scp`
 scp zz-gnome-control-center.sysext.raw $SSH_ARGS:/tmp/
 ```
 
-For a **virtual machine**, `scp` can't parse the vsock address, so pipe the file over `ssh` instead:
+For a **virtual machine**, `scp` requires a different syntax for the vsock address. Mainly note the `%`:
 
 ```shell
-$ ssh $SSH_ARGS "cat > /tmp/zz-gnome-control-center.sysext.raw" < zz-gnome-control-center.sysext.raw
+scp -i ssh/ephemeral -o IdentitiesOnly=yes zz-gnome-control-center.sysext.raw youruser@vsock%777:/tmp
 ```
 
 Then apply the system extension by running the following:
@@ -215,10 +215,11 @@ ssh $SSH_ARGS mkdir -p /tmp/gnome-build-meta
 scp -r utils/ files/boot-keys/ $SSH_ARGS:/tmp/gnome-build-meta/
 ```
 
-For a **virtual machine**, `scp` can't parse the vsock address, so pipe a tar stream over `ssh` instead:
+For a **virtual machine**, `scp` requires a different syntax for the vsock address. Mainly note the `%`:
 
 ```shell
-tar -cf - utils/ files/boot-keys/ | ssh $SSH_ARGS "mkdir -p /tmp/gnome-build-meta && tar -xf - -C /tmp/gnome-build-meta"
+ssh $SSH_ARGS mkdir -p /tmp/gnome-build-meta
+scp -i ssh/ephemeral -o IdentitiesOnly=yes -r utils/ files/boot-keys/ youruser@vsock%777:/tmp/gnome-build-meta
 ```
 
 Then enable the local repository. For a **remote machine** point at the host serving the repository:
