@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:epiphany.git
   track: main
-  ref: 50.4-55-g32d9f6bf16136fd92f9e0025d4bd75c4e3066c46
+  ref: 51.alpha-2-ge79d6b4085c43c6f442e479964a6c98c97e47ccc
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -30,4 +30,5 @@ depends:
 - sdk/webkitgtk-6.0.bst
 - freedesktop-sdk.bst:components/iso-codes.bst
 - freedesktop-sdk.bst:components/libarchive.bst
+- freedesktop-sdk.bst:components/pwquality.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

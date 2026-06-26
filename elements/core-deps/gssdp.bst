@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gssdp.git
   track: master
-  ref: gssdp-1.6.5-0-ge27555e6cdf2849220c073ee19a151846f9a1dba
+  ref: gssdp-1.6.6-0-g273598c2a436593787be864692418751777ff144
 
 build-depends:
 - (@): include/gcc-for-recc.yml
