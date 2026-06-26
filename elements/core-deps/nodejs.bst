@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:nodejs/node.git
   track: 'v*'
-  ref: v26.3.0-0-gb7e6a5d37e7a14ef0f2cc95214b95d66c4081415
+  ref: v26.4.0-0-g2022edf3e32ce28ee08b17f8566243a090dacd95
 
 build-depends:
 - (@): include/gcc-for-recc.yml

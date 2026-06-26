@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:flatpak/libportal.git
   track: "*.*.*"
-  ref: 0.9.1-0-g8f5dc8d192f6e31dafe69e35219e3b707bde71ce
+  ref: 0.10.0-0-gc23024018c8eb076549a1517fcb2d7f80d3e2ed5
 
 build-depends:
 - (@): include/gcc-for-recc.yml

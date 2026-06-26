@@ -8,7 +8,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.18.0-1-g96ad6825f3e7115eb95abeba55600b2a39b71178
+  ref: 1.18.0-41-gd34956a0d8fc73a4133f5cf7bc5fea43b6ce911c
 
 build-depends:
 - (@): include/gcc-for-recc.yml
