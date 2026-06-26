@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: github:linux-credentials/oo7.git
   track: main
-  ref: v0.6.0-alpha-169-gb6f8f1222ebaa2748ac0d327f7944d0a48233b37
+  ref: v0.6.0-alpha-170-g04c44e14d8e71110aec45ef5e3e3b12658e1002b
 - kind: cargo2
   ref:
   - kind: registry
