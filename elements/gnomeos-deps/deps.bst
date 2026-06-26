@@ -60,6 +60,7 @@ depends:
 - gnomeos-deps/words.bst
 
 - gnomeos-deps/mokutil.bst
+- gnomeos-deps/sysext-utils.bst
 
 # For gvfs
 - gnomeos-deps/wsdd.bst
