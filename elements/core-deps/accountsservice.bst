@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:accountsservice/accountsservice.git
   track: refs/tags/*
-  ref: 26.13.3-0-g97a902fe8a550d8447cf60648e7b5f00c770a4fc
+  ref: 26.26.9-0-g2205cc63b4a6841df780fe449f62d3f7b0fd19b7
 
 build-depends:
 - (@): include/gcc-for-recc.yml
