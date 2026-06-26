@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gvfs.git
   track: master
-  ref: 1.60.0-25-g7db465b8235d2f433b62d91fe7a768a3322c743f
+  ref: 1.61.1-1-gd815a5aac3260fa41c8a3764c9fd9e792e46e6c5
 
 build-depends:
 - core-deps/gnome-online-accounts.bst
