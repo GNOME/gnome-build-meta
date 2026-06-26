@@ -13,6 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/pipewire.bst
+- freedesktop-sdk.bst:components/wireplumber.bst
 - sdk/libdex.bst
 
 variables:
@@ -42,7 +43,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.22.0-29-g89f2f5e3d219bc5fd66a2505ee772b16022e8575
+  ref: 1.22.0-61-ge8286f74ac96204efbeae8b31df366707e69065a
 - kind: git_repo
   url: gnome:libglnx.git
   directory: subprojects/libglnx

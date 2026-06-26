@@ -10,6 +10,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/geoclue-libs.bst
 - freedesktop-sdk.bst:components/glib.bst
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
+- freedesktop-sdk.bst:components/wireplumber.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/xdg-desktop-portal-manifest.bst
 - freedesktop-sdk.bst:components/xdg-portal-interfaces.bst
