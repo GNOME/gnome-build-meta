@@ -21,6 +21,14 @@ echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
 
+mkdir -p "/cache/buildstream/sources/git_repo/gnome_gnome_backgrounds.git/"
+cd "/cache/buildstream/sources/git_repo/gnome_gnome_backgrounds.git/"
+git remote add origin https://gitlab.gnome.org/GNOME/gnome-backgrounds.git || true
+git fetch origin main
+# git checkout main
+# git fetch --all 
+
+
 # Check that the commit timestamps are increasing, as our version numbers depend on that
 git log --format=%cd --date=unix | sort --check --reverse --numeric-sort
 
