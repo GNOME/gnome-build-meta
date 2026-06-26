@@ -170,7 +170,7 @@ ssh $SSH_ARGS run0 systemctl daemon-reload
 To remove the system extension from the target, run the following:
 
 ```shell
-ssh $SSH_ARGS run0 rm /var/lib/extensions/zz-gnome-control-center.sysext.raw
+ssh $SSH_ARGS run0 sysext-remove zz-gnome-control-center.sysext.raw
 ssh $SSH_ARGS run0 systemd-sysext refresh --force
 ```
 
