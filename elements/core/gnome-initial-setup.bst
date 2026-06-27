@@ -4,7 +4,8 @@ sources:
 - kind: git_repo
   url: gnome_gitlab:AdrianVovk/gnome-initial-setup.git
   track: homed
-  ref: 50.0-69-g904ae37d797db7074c479cd15dedfce003896ab6
+  # ref: 50.0-69-g904ae37d797db7074c479cd15dedfce003896ab6
+  ref: 50.0-10-g952d28e3e3aefe67bc0dd2d37a0be964d2b69d66
 
 build-depends:
 - (@): include/gcc-for-recc.yml
