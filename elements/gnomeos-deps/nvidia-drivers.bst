@@ -124,11 +124,11 @@ config:
     install -Dm755 -t '%{install-root}%{bindir}' nvidia-persistenced
 
     install -Dm644 -t '%{install-root}%{indep-libdir}/systemd/system' nvidia-persistenced.service
-    install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.upholds/'
-    ln -s ../nvidia-persistenced.service '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.upholds/'
-    install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/gdm.service.upholds'
+    install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.wants/'
+    ln -s ../nvidia-persistenced.service '%{install-root}%{indep-libdir}/systemd/system/multi-user.target.wants/'
+    install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/gdm.service.wants'
     install -d -m755 '%{install-root}%{indep-libdir}/systemd/system/gdm.service.d'
-    ln -s ../nvidia-persistenced.service '%{install-root}%{indep-libdir}/systemd/system/gdm.service.upholds/'
+    ln -s ../nvidia-persistenced.service '%{install-root}%{indep-libdir}/systemd/system/gdm.service.wants/'
     cat <<EOF >'%{install-root}%{indep-libdir}/systemd/system/gdm.service.d/nvidia-persistenced.conf'
     [Unit]
     After=nvidia-persistenced.service

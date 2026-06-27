@@ -17,7 +17,6 @@ depends:
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos-deps/zram-generator.bst
 - gnomeos/initramfs/signed-modules.bst
-- gnomeos/reload-sysext.bst
 - gnomeos/os-release.bst
 - gnomeos/live.bst
 - gnomeos/confext.bst

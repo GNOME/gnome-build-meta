@@ -17,7 +17,6 @@ depends:
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos-deps/zram-generator.bst
 - gnomeos/initramfs/signed-modules.bst
-- gnomeos/reload-sysext.bst
 - oci/integration/os-release.bst
 - gnomeos-deps/bootc.bst
 - oci/integration/lvm2-enable-activation.bst
