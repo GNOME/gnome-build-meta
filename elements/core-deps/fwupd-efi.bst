@@ -7,6 +7,7 @@ sources:
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/genpeimg.bst
 - freedesktop-sdk.bst:components/gnu-efi.bst
 - core-deps/python-pefile.bst
 
