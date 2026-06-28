@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gexiv2.git
   track: "*.*.*"
-  ref: 0.16.0-0-g33ac4052bb4132e16fdf2bf043cbddca9c716be6
+  ref: 0.16.1-0-g467ac9910ab8ae5d13ae6322e3d352d9982aac23
 
 build-depends:
 - (@): include/gcc-for-recc.yml
