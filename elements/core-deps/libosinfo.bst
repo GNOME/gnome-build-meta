@@ -1,10 +1,13 @@
 kind: meson
 sources:
-- kind: tar
-  url: pagure_releases:libosinfo/libosinfo-1.12.0.tar.xz
-  ref: ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6
+- kind: git_repo
+  url: gitlab:libosinfo/libosinfo.git
+  track: 'v*.*.*'
+  ref: v1.12.0-0-gb505ef5161d2552102a743acd4ad83298d3d8f99
 - kind: patch
   path: patches/libosinfo/attribute-unused.patch
+- kind: patch
+  path: patches/libosinfo/0001-build-Avoid-hardcoded-werror.patch
 - kind: local
   path: files/libosinfo/pci.ids
 - kind: local

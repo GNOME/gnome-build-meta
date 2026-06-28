@@ -1,10 +1,12 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:libusb/hidapi/archive/refs/tags/hidapi-0.14.0.tar.gz
-  ref: a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd
-
+- kind: git_repo
+  url: github:libusb/hidapi.git
+  track: "hidapi-*.*.*"
+  exclude:
+  - "hidapi-*.*.*-rc*"
+  ref: hidapi-0.14.0-0-gd3013f0af3f4029d82872c1a9487ea461a56dee4
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst

@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:google/woff2/archive/v1.0.2.tar.gz
-  ref: add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594
+- kind: git_repo
+  url: github:google/woff2.git
+  track: '*.*.*'
+  ref: v1.0.2-0-g1bccf208bca986e53a647dfe4811322adb06ecf8
 - kind: patch
   path: patches/woff2/gcc15.patch
 

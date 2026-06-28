@@ -1,9 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: pagure_releases:libosinfo/osinfo-db-tools-1.12.0.tar.xz
-  ref: f3315f675d18770f25dea8ed04b20b8fc80efb00f60c37ee5e815f9c3776e7f3
+- kind: git_repo
+  url: gitlab:libosinfo/osinfo-db-tools.git
+  track: 'v*.*.*'
+  ref: v1.12.0-0-ge5564be303bfac49cc3490bd0fada342cd65566f
 
 build-depends:
 - (@): include/gcc-for-recc.yml

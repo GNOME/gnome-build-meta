@@ -1,10 +1,10 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: 
-    freedesktop_people:~hughsient/appstream-glib/releases/appstream-glib-0.8.3.tar.xz
-  ref: 84754064c560fca6e1ab151dc64354fc235a5798f016b91b38c9617253a8cf11
+- kind: git_repo
+  url: github:hughsie/appstream-glib.git
+  track: 'appstream_glib_*_*_*'
+  ref: appstream_glib_0_8_3-0-g830cdbd0581110bdb74188e7a66c272cd059f5bb
 
 build-depends:
 - (@): include/gcc-for-recc.yml

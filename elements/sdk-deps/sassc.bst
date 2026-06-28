@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:sass/sassc/archive/refs/tags/3.6.2.tar.gz
-  ref: 608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03
+- kind: git_repo
+  url: github:sass/sassc.git
+  track: "*.*.*"
+  ref: 3.6.2-0-g66f0ef37e7f0ad3a65d2f481eff09d09408f42d0
 
 build-depends:
 - (@): include/gcc-for-recc.yml

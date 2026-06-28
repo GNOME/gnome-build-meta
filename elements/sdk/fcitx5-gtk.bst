@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:fcitx/fcitx5-gtk/archive/5.1.3.tar.gz
-  ref: 1892fcaeed0e710cb992a87982a8af78f9a9922805a84da13f7e3d416e2a28d1
+- kind: git_repo
+  url: github:fcitx/fcitx5-gtk.git
+  track: '*.*.*'
+  ref: 5.1.3-0-g11e4af22f986f4bfda10a59cd5e57a6b5de45202
 - kind: patch
   path: patches/fcitx5-gtk/missing-include.patch
 

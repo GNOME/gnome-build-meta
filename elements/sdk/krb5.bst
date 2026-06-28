@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: kerberos:dist/krb5/1.22/krb5-1.22.2.tar.gz
-  ref: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
+- kind: git_repo
+  url: github:krb5/krb5.git
+  track: "krb5-*.*.*-final"
+  ref: krb5-1.22.2-final-0-g8570e77819563e036027e1da789d08ec9333ed4d
 
 build-depends:
 - (@): include/gcc-for-recc.yml

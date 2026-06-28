@@ -1,9 +1,10 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: github_files:google/highway/archive/refs/tags/1.2.0.tar.gz
-  ref: 7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343
+- kind: git_repo
+  url: github:google/highway.git
+  track: '*.*.*'
+  ref: 1.2.0-0-g457c891775a7397bdb0376bb1031e6e027af1c48
 
 build-depends:
 - (@): include/gcc-for-recc.yml

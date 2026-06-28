@@ -1,9 +1,10 @@
 kind: make
 
 sources:
-- kind: tar
-  url: dotat:unifdef/unifdef-2.12.tar.gz
-  ref: fba564a24db7b97ebe9329713ac970627b902e5e9e8b14e19e024eb6e278d10b
+- kind: git_repo
+  url: github:fanf2/unifdef.git
+  track: 'unifdef-*.*'
+  ref: unifdef-2.12-0-g99d17074b9ba66cc9da2ce60fb29c6b1beb0370a
 
 build-depends:
 - (@): include/gcc-for-recc.yml

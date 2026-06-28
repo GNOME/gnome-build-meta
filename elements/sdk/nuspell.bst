@@ -1,8 +1,9 @@
 kind: cmake
 sources:
-- kind: tar
-  url: github_files:nuspell/nuspell/archive/refs/tags/v5.1.6.tar.gz
-  ref: 5d4baa1daf833a18dc06ae0af0571d9574cc849d47daff6b9ce11dac0a5ded6a
+- kind: git_repo
+  url: github:nuspell/nuspell.git
+  track: "v*.*.*"
+  ref: v5.1.6-0-g9d7686de0c1656c5a3f0a33c91f0afdd6994cd5e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst
