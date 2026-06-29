@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gexiv2.git
-  track: "*.*.*"
-  ref: 0.16.1-0-g467ac9910ab8ae5d13ae6322e3d352d9982aac23
-
+- kind: tar
+  url: gnome_downloads:gexiv2/0.16/gexiv2-0.16.1.tar.xz
+  ref: 18e9a05c637a77e800b001d87f70e4d02a7ba41b7745400a314a1072a1ddc943
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

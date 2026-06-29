@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libadwaita.git
-  track: main
-  ref: 1.10.alpha-1-ge45ecd4fb5c8f64fe5962feecc0c238b7627c52d
-
+- kind: tar
+  url: gnome_downloads:libadwaita/1.10/libadwaita-1.10.alpha.tar.xz
+  ref: 50b7bbd886d946ab7a23c8fe7825f43c7a234b55ae3dfb3462453838ba200683
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

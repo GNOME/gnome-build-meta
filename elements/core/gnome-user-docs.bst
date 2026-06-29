@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-user-docs.git
-  track: master
-  ref: 50.0-12-g4c44cad1e25de524e713b0687d2f7e5cbaa7168b
+- kind: tar
+  url: gnome_downloads:gnome-user-docs/51/gnome-user-docs-51.alpha.tar.xz
+  ref: ea94d6a0b0e8f6cf855922c3b56e4e1832465a2648ef880e6769231ef9d6df26
 
 build-depends:
 - (@): include/gcc-for-recc.yml

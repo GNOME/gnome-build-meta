@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:rygel.git
-  track: master
-  ref: 46.alpha-0-gdae064693cdb139e3fef7d7ce9d5429491c7ebb4
-
+- kind: tar
+  url: gnome_downloads:rygel/46/rygel-46.alpha.tar.xz
+  ref: 4dae03b8f1d486a5728a00148c941ac54f55d59d214c1a720498f33d371a0fc0
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

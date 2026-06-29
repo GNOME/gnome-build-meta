@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:yelp.git
-  track: master
-  ref: 49.1-3-g5537e5f51e82157f81acc647f8a68d3144a26e06
+- kind: tar
+  url: gnome_downloads:yelp/49/yelp-49.1.tar.xz
+  ref: 3e3e94ef2d2c9487cc51062e3afbfa1578cebd29d80c84357b6d7ee6dcfd8a74
 - kind: patch
   path: patches/yelp/96850f19a6dd000ef848031c4a23e60227aff6af.patch
 

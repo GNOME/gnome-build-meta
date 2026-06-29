@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-tour.git
-  track: main
-  ref: 50.0-5-g2653c133897d903007c1d7e9d9aaf6e2cd6caab6
+- kind: tar
+  url: gnome_downloads:gnome-tour/50/gnome-tour-50.0.tar.xz
+  ref: 6ce1187031a365bf226a0cd146f17b4773e7ed450883f7cd502f5ecf432b5325
 - kind: cargo2
   ref:
   - kind: registry
@@ -83,10 +82,6 @@ sources:
     name: find-msvc-tools
     version: 0.1.9
     sha: 5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582
-  - kind: registry
-    name: formatx
-    version: 0.2.4
-    sha: d8866fac38f53fc87fa3ae1b09ddd723e0482f8fa74323518b4c59df2c55a00a
   - kind: registry
     name: futures-channel
     version: 0.3.32
@@ -419,7 +414,6 @@ sources:
     name: winnow
     version: 0.7.14
     sha: 5a5364e9d77fcdeeaa6062ced926ee3381faa2ee02d3eb83a5c27a8825540829
-
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

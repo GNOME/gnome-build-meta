@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-connections.git
-  track: master
-  ref: 50.0-23-gea09626d31491a88a0b83776a02a6a97c48bd2f0
-- kind: git_module
-  url: gnome:gtk-frdp.git
-  path: subprojects/gtk-frdp
-  ref: 05919e9958b655252a0e5572c215fc9aee0aa863
-
+- kind: tar
+  url: gnome_downloads:gnome-connections/50/gnome-connections-50.0.tar.xz
+  ref: 567bf635c6d303ae84c74f37c84df9fb8fcf6a5e9dff452e1414c671744d95d0
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

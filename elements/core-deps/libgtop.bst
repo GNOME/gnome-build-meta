@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:libgtop.git
-  track: master
-  ref: 2.41.3-19-ge220052365b9f5f9e4d66d0edaa6ba16a0eec6d6
-
+- kind: tar
+  url: gnome_downloads:libgtop/2.41/libgtop-2.41.3.tar.xz
+  ref: 775676df958e2ea2452f7568f28b2ea581063d312773dd5c0b7624c1b9b2da8c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst

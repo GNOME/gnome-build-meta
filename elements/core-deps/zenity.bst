@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:zenity.git
-  track: master
-  ref: 4.2.0-37-g03014568c0d79523b2e1d9fb40d250603f8ec8b4
-
+- kind: tar
+  url: gnome_downloads:zenity/4.2/zenity-4.2.2.tar.xz
+  ref: 019186a996096ef4fc356e21577b5673f5baa3a29ac8e3d608b753371c18018d
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

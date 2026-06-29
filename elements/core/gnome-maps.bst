@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-maps.git
-  track: main
-  ref: 51.alpha-1-g3c656689d806487e4fd22bdeb2b154cfd7476f5b
-
+- kind: tar
+  url: gnome_downloads:gnome-maps/51/gnome-maps-51.alpha.tar.xz
+  ref: 56cdec0080d3045a928cef6426c089c71a2de37d085df710cd144fbea4efebd3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

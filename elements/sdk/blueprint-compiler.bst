@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:blueprint-compiler.git
-  track: main
-  ref: v0.20.0-19-g13003896052eb68e56773fd1c33df9ce5adc7385
-
+- kind: tar
+  url: gnome_downloads:blueprint-compiler/0.20/blueprint-compiler-0.20.4.tar.xz
+  ref: 1f1ecc84bcd698902d422f7de83d39229a209dd3016f6d2c3b0ed0ab123f6891
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-font-viewer.git
-  track: main
-  ref: 50.0-11-gc0734db252f63578b21afcb57608f5ebe3793266
-
+- kind: tar
+  url: gnome_downloads:gnome-font-viewer/50/gnome-font-viewer-50.0.tar.xz
+  ref: 9564b088c5b150c54e2a3a7bc7014deec6ee551261e98488f891b1f1b8dc6b80
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

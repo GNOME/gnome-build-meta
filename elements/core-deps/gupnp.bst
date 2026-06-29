@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gupnp.git
-  track: master
-  ref: gupnp-1.6.10-1-g3e633bcb73dcb9055feb00115273c19d5281b45e
-
+- kind: tar
+  url: gnome_downloads:gupnp/1.6/gupnp-1.6.10.tar.xz
+  ref: a1ee07b7b12673c32d7fc73ca158a50c1a4dc69ab35b65e94d24d38ac875345e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

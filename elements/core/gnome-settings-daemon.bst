@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-settings-daemon.git
-  track: main
-  ref: 51.alpha-0-gb38441bc35b58f36d52e039959b2f3d86258be2d
-- kind: git_module
-  url: gnome:libgnome-volume-control.git
-  path: subprojects/gvc
-  ref: 0a4eda0cdc2deb352bebc70ec697c42af46094e4
-
+- kind: tar
+  url: gnome_downloads:gnome-settings-daemon/51/gnome-settings-daemon-51.alpha.tar.xz
+  ref: 7e0b24102cd7c2c6b9f4fe13a2c239c0b20b9562e50264cf6da1c495b011cd88
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

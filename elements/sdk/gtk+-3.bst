@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtk.git
-  track: gtk-3-24
-  ref: 3.24.52-34-gbfd40b0153023f7d3736ab885b2531c0edeb4eed
-
+- kind: tar
+  url: gnome_downloads:gtk/3.24/gtk-3.24.52.tar.xz
+  ref: 80931fa472a77b9a164f6740e3c0b444fac6770054632d35a7ff9d679e5e7b9f
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

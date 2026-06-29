@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libmanette.git
-  track: main
-  ref: 0.2.11-42-gcf43018293f48c51b1ac4486bdea0e8b0f07ab71
-
+- kind: tar
+  url: gnome_downloads:libmanette/0.2/libmanette-0.2.13.tar.xz
+  ref: 287cc2fde0de092919366af757d85e7b3a0248eb1b395344726e97955a77d8ae
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

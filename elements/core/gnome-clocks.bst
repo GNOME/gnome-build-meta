@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-clocks.git
-  track: master
-  ref: 50.0-17-g8955429fcf5e75a90641fdc71abb1ef1411c6bd0
-
+- kind: tar
+  url: gnome_downloads:gnome-clocks/50/gnome-clocks-50.0.tar.xz
+  ref: bf167f7f44f4f2fb424d4716652c9ba1f29e16e49071e26a1bb833f8dce794c6
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

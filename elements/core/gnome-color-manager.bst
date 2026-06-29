@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-color-manager.git
-  track: master
-  ref: 3.36.2-93-g8b9a9f5feca4d02130ff537d76ff71039a3a2739
-
+- kind: tar
+  url: gnome_downloads:gnome-color-manager/3.36/gnome-color-manager-3.36.2.tar.xz
+  ref: 3904d42abb4ea566df0b880e82bf0b9f86386c692f15b318469a4c7be33a887f
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

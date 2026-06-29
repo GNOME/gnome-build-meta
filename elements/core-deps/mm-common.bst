@@ -18,10 +18,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mm-common.git
-  track: master
-  ref: 1.0.7-5-g07fa550bc9f1b812f3dea3ad2a7e1d21b70666a6
+- kind: tar
+  url: gnome_downloads:mm-common/1.0/mm-common-1.0.8.tar.xz
+  ref: b189ee636e839d12c00dabefae099fd488ab2358dec24d264761c011950b02a9
 - kind: local
   path: files/mm-common/libstdc++.tag
   directory: doctags/

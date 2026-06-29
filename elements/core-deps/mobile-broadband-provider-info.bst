@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:mobile-broadband-provider-info.git
-  track: main
-  ref: 20251101-42-g052f1e6999f205ba88cc3557627f260b9ae0840e
-
+- kind: tar
+  url: gnome_downloads:mobile-broadband-provider-info/20240407/mobile-broadband-provider-info-20240407.tar.xz
+  ref: 89bfeff215f4bff8e9c3ff2ec25250fdb080d11e9bfa59c6fc71982ac01c814a
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

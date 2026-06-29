@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-online-accounts.git
-  track: master
-  ref: 3.58.1-8-g0a85e7c8079fb85311e1b768da13e69666b51b0d
-
+- kind: tar
+  url: gnome_downloads:gnome-online-accounts/3.58/gnome-online-accounts-3.58.1.tar.xz
+  ref: 9ec1900cc51409c2067c07c828c10be06fe3bf68d2999bb72d7d5ed325ed9bbc
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

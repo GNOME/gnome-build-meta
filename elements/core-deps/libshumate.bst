@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libshumate.git
-  track: main
-  ref: 1.7.alpha-1-gbdc0087b1d3c5320aab632b45f0cccbe206ac4e3
-
+- kind: tar
+  url: gnome_downloads:libshumate/1.7/libshumate-1.7.alpha.tar.xz
+  ref: db0f75a969bec76b4a736a0d45339ea5d243d60a0dfae07367df8a86e07c0369
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:decibels.git
-  track: main
-  ref: 49.6.1-10-gbfd7fceffca1570ec995a030940c5b3599d1b813
-- kind: git_module
-  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
-  path: gi-types
-  ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
-
+- kind: tar
+  url: gnome_downloads:decibels/49/decibels-49.6.1.tar.xz
+  ref: 9a67ba14df23517c849fcfdea764c73a241e59055299b125e98aeab2a7801ad5
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

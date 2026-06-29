@@ -1,8 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:glycin.git
-  track: main
-  ref: 2.2.alpha.4-0-g61f344b5f46c8755a01b1d99edb49074fa64da8a
+- kind: tar
+  url: gnome_downloads:glycin/2.2/glycin-2.2.alpha.5.tar.xz
+  ref: 57fd6e9981d0a36b34af2f0f0952d038ea75cc1f5931212a31d3cb543175df41
 - kind: cargo2
   ref:
   - kind: registry
@@ -473,6 +472,38 @@ sources:
     name: glib-sys
     version: 0.22.6
     sha: 5f7fbac234ed5bc2a28359b7bde8e1b9cdf1441cc2d7f068e4824672d7db9445
+  - kind: registry
+    name: glycin
+    version: 4.0.0-alpha
+    sha: ab0d95230ccbc60d168eca33984e3ee2c75d75bb844eb11eb97907eaffc92886
+  - kind: registry
+    name: glycin-builtin
+    version: 4.0.0-alpha
+    sha: 5c5a3cd8219bdee0cd16a26c3728c075604a2a293b211c4e95d0eb2eb55fbe7e
+  - kind: registry
+    name: glycin-common
+    version: 2.0.0-alpha
+    sha: daf97898ba7a2356b941983ab1ef5634f2e1567eb290fe801bde60da185e2085
+  - kind: registry
+    name: glycin-core
+    version: 4.0.0-alpha
+    sha: c624b4182686e793e8dd897108b972d66814d925e66a5acefde25d8faaab1b77
+  - kind: registry
+    name: glycin-external
+    version: 4.0.0-alpha
+    sha: 60368043c6a9d7ffc234d93a410ffc8af46b5e8bf1c3a0fffeb62d9440b2e587
+  - kind: registry
+    name: glycin-image-rs
+    version: 2.2.0-alpha
+    sha: c9ea3f09d2ae3a76aa548982abfbef05156007d822a3020ae9d9172b5ccc1793
+  - kind: registry
+    name: glycin-test
+    version: 2.2.0-alpha
+    sha: e0fdaa52924d487159d4d55ed879209281c8b6e33cb1fd97b39608953a89c9a5
+  - kind: registry
+    name: glycin-utils
+    version: 5.0.0-alpha
+    sha: 8c0c35adeb97c0e2324cc6c1a65b65bf8abf3ecea5bfc238d476bdee67a7ea4d
   - kind: registry
     name: gobject-sys
     version: 0.22.6

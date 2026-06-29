@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-software.git
-  track: main
-  ref: 51.alpha-3-g875d07e9dd931514cd565775e7364d6c58d6fdee
-- kind: git_module
-  url: gnome_gitlab:mwleeds/gnome-pwa-list.git
-  path: subprojects/gnome-pwa-list
-  ref: 48ac9f7ed6a639eab7648f3e3b19105694eaf306
-
+- kind: tar
+  url: gnome_downloads:gnome-software/51/gnome-software-51.alpha.tar.xz
+  ref: 3a3f47a71ee0887d9e35b01eadbebe73ac838b5b70aa139ce0233331f73f2f6b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

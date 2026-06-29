@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-characters.git
-  track: main
-  ref: 50.0-18-gdf013fa088e0d72ed6561a90df46fdebc6beecf9
-
+- kind: tar
+  url: gnome_downloads:gnome-characters/50/gnome-characters-50.0.tar.xz
+  ref: 4070734dd639b3094be467bb055a5461b2fc301cdfc9feddcb4a68f476ed5aad
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

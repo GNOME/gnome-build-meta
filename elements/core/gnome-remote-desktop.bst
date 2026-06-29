@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-remote-desktop.git
-  track: master
-  ref: 49.2-13-g1ecbfbb540e1cfd4f812b44d91ad7c9fc682c919
-
+- kind: tar
+  url: gnome_downloads:gnome-remote-desktop/51/gnome-remote-desktop-51.alpha.tar.xz
+  ref: d7add77b76f060667630892dda9a17384d8b594bcb082ccb5bb796526972cade
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

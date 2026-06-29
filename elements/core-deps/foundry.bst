@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:foundry.git
-  track: main
-  ref: 1.1.1-63-ga27f904cb9cb5411752ff4347b3d0310f805c5f5
-
+- kind: tar
+  url: gnome_downloads:foundry/1.2/foundry-1.2.alpha.tar.xz
+  ref: 76e952a8085b6bf374ac94d5abe2c25386a6765587ed2f3484b12fc8122f79de
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
