@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: github:nuspell/nuspell.git
   track: "v*.*.*"
-  ref: v5.1.6-0-g9d7686de0c1656c5a3f0a33c91f0afdd6994cd5e
+  ref: v5.1.7-0-g6d84c501354751af3960fd89fa6bff6c27c8266e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst

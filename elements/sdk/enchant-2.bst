@@ -4,15 +4,15 @@ sources:
 - kind: git_repo
   url: github:rrthomas/enchant.git
   track: "v*.*.*"
-  ref: v2.8.2-0-g2e2739acea4926ae2584823b5f75480243b191df
+  ref: v2.8.16-0-gf4098289e4ca5bba79598f8afd2ab94d5497dcce
 - kind: git_module
   path: gnulib
   url: savannah:gnulib.git
-  ref: 648aeb575db7af9ddd51cf17d1b56ee91e9ef3c5
+  ref: d8dc57fe59a06056caf3561da1d48f5f8c80f655
 - kind: git_module
   path: gl-mod/bootstrap
   url: github:gnulib-modules/bootstrap.git
-  ref: 037f83765b6e8f90dfabdfac4889be22a5a3f4a4
+  ref: a42785aaa63db8a824292f87bc1a3f8863942601
 
 build-depends:
 - (@): include/gcc-for-recc.yml

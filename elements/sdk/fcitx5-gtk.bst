@@ -4,9 +4,7 @@ sources:
 - kind: git_repo
   url: github:fcitx/fcitx5-gtk.git
   track: '*.*.*'
-  ref: 5.1.3-0-g11e4af22f986f4bfda10a59cd5e57a6b5de45202
-- kind: patch
-  path: patches/fcitx5-gtk/missing-include.patch
+  ref: 5.1.7-0-g3b18d2ab7401d4233daf38bbc5896f1703685a43
 
 build-depends:
 - (@): include/gcc-for-recc.yml

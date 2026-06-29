@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:linux-msm/rmtfs.git
   track: 'v*.*'
-  ref: v1.2-0-g14cb1ee69f556873dc271832b77163669e1d6459
+  ref: v1.3-0-gb30a3eb38f9af283f18dbd3c7755653efc52c094
 - kind: local
   path: files/gnomeos/qrtr/condition.conf
 

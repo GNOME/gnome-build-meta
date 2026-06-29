@@ -6,7 +6,8 @@ sources:
   track: "hidapi-*.*.*"
   exclude:
   - "hidapi-*.*.*-rc*"
-  ref: hidapi-0.14.0-0-gd3013f0af3f4029d82872c1a9487ea461a56dee4
+  ref: hidapi-0.15.0-0-gd6b2a974608dec3b76fb1e36c189f22b9cf3650c
+
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst

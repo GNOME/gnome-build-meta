@@ -2,9 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: 
-    gstreamer:src/gstreamer-editing-services/gst-editing-services-1.26.5.tar.xz
-  ref: 734900944f90ece5e2f3983c335178fda50023fe342aa75ecd9d8a9c38b64d9e
+  url: gstreamer:src/gstreamer-editing-services/gst-editing-services-1.26.11.tar.xz
+  ref: a36e87900b44ac1608612f2d616fc032f9d7d920327c4d231affb6fe9349714d
 
 build-depends:
 - (@): include/gcc-for-recc.yml
