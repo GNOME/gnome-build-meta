@@ -1,7 +1,17 @@
 sources:
 - kind: git_repo
   url: github:linux-credentials/oo7.git
-  track: main
+  # Temporary, once bugs are squashed we should switch nightly to
+  # tags as well
+  (?):
+  - channel == "nightly":
+      track: main
+  - channel == "stable":
+      track: "*.*"
+      exclude:
+      - '*-alpha*'
+      - '*-beta*'
+      - '*-rc*'
   ref: v0.6.0-alpha-185-g1a2785fa829847ea953a793b360da8d733240d9f
 - kind: cargo2
   ref:
