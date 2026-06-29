@@ -21,6 +21,8 @@ echo $CACHE_TOKEN >.gitlab-ci/gbm-cache-token
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh nopush >.gitlab-ci/buildstream-nopush.conf
 ./.gitlab-ci/scripts/generate-buildtream-conf.sh >.gitlab-ci/buildstream.conf
 
+bash ./utils/bst-git.sh
+
 mkdir -p "/cache/buildstream/sources/git_repo/gnome_gnome_backgrounds.git/"
 cd "/cache/buildstream/sources/git_repo/gnome_gnome_backgrounds.git/"
 git remote add origin https://gitlab.gnome.org/GNOME/gnome-backgrounds.git || true
