@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 50.0-39-g167fb7007273aac684bd6fa5116457db0a70fabb
+  ref: 51.alpha-0-gd751acaf6f9146cdde23e6ea6cc9ce8cc6453507
 - kind: cargo2
 
   ref:
@@ -22,12 +22,12 @@ sources:
     sha: 250f629c0161ad8107cf89319e990051fae62832fd343083bea452d93e2205fd
   - kind: registry
     name: anyhow
-    version: 1.0.102
-    sha: 7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c
+    version: 1.0.103
+    sha: 2a4385e2e34eb35d6b3efe798b9eb88096925d87726c0798709bf56d9ed84af3
   - kind: registry
     name: arc-swap
-    version: 1.9.1
-    sha: 6a3a1fd6f75306b68087b831f025c712524bcb19aad54e557b1129cfa0a2b207
+    version: 1.9.2
+    sha: c049c0be4daef0b145cb3555416b3b8ef5b7888a38aea1a3a155801fe7b0810b
   - kind: registry
     name: ashpd
     version: 0.13.12
@@ -334,24 +334,24 @@ sources:
     sha: 48f31b37b1fc4b48b54f6b91b7ef04c18e00b4585d98359dd7b998774bbd91fb
   - kind: registry
     name: gdk4
-    version: 0.11.2
-    sha: fd42fdbbf48612c6e8f47c65fb92d2e8f39c25aecd6af047e83897c1a22d2a4e
+    version: 0.11.4
+    sha: d81e2a6c6ecba2aab60633a98df1868b03fa0bfdce8105edc27c1bccf71f0e39
   - kind: registry
     name: gdk4-sys
-    version: 0.11.2
-    sha: 9d974ac4f15e67472c3a9728daf612590b4a5762a4b33f0edd298df0b80d043c
+    version: 0.11.4
+    sha: 3d8f608d8d7d229975c4d0d026f5d3071598c4ddab3c5262b0a31840fec78d13
   - kind: registry
     name: gdk4-wayland
-    version: 0.11.0
-    sha: 7027433b8f19075ab22f01d0e0ba4373e303ffdb4ce4f846a2763cb020ea9bdc
+    version: 0.11.4
+    sha: 32d95828dadc0357dee236cc6a5712808bd894d3217159982592ce24f2b8aaf7
   - kind: registry
     name: gdk4-wayland-sys
     version: 0.11.0
     sha: 653cafb8715f2ac1c56edaf8060d9360ae3acbe3c6fb61b676a2917d42b668cf
   - kind: registry
     name: gdk4-x11
-    version: 0.11.0
-    sha: 13a00e4c617d6570633e44ba3ff221350669edf6cf3447a40f882dfb6f1dfdc3
+    version: 0.11.4
+    sha: 9d892b4cf5a07e90e1390e93cd792975746c68b59f790a2de9e96ce77211ea9a
   - kind: registry
     name: gdk4-x11-sys
     version: 0.11.0
@@ -378,32 +378,32 @@ sources:
     sha: ee8cfcc411d9adbbaba82fb72661cc1bcca13e8bba98b364e62b2dba8f960159
   - kind: registry
     name: gio
-    version: 0.22.6
-    sha: e3848bcba3a35cc0a71df8ba8ecfd799d6bfb862342a53a4a915fb62213aa4e6
+    version: 0.22.8
+    sha: 8b3e1f669909c326b9413bde5a742097b8c90a7d78f45326db13668984769ded
   - kind: registry
     name: gio-sys
-    version: 0.22.0
-    sha: 64729ba2772c080448f9f966dba8f4456beeb100d8c28a865ef8a0f2ef4987e1
+    version: 0.22.8
+    sha: 353fdc7da7cd16da916104b1e0e4e7de380ec9c8aaa20d4d742d66310ab4b0d5
   - kind: registry
     name: gio-unix
-    version: 0.22.6
-    sha: f9241b3df1288f8b59027e9499a999c54ec6993111e21644e72d4527fdafdb7c
+    version: 0.22.8
+    sha: ce8d768735e229742c135afa3d3326604088d2df0679901cdb05e791fe2fbe0a
   - kind: registry
     name: gio-unix-sys
     version: 0.22.0
     sha: 44bab97ce39112040216e268f074645f50b31caeb53af708ab5d7e4e67f0dbfd
   - kind: registry
     name: glib
-    version: 0.22.7
-    sha: c207e04e51605dcf7b2924c41591b3a10e1438eaac5bcf448fb91f325381104a
+    version: 0.22.8
+    sha: ddbcf514bd1881fc1b960e4e52b4e82873f4da3bceddbd58d42827b508888100
   - kind: registry
     name: glib-macros
     version: 0.22.6
     sha: 506d23499707c7142898429757e8d9a3871d965239a2cb66dfa05052be6d6f19
   - kind: registry
     name: glib-sys
-    version: 0.22.6
-    sha: 5f7fbac234ed5bc2a28359b7bde8e1b9cdf1441cc2d7f068e4824672d7db9445
+    version: 0.22.8
+    sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: registry
     name: glycin
     version: 4.0.0-alpha
@@ -438,32 +438,32 @@ sources:
     sha: 22a861859b887a79cf461359c192c97a57d8fb0229dd291232e57aa11f6fa72c
   - kind: registry
     name: graphene-rs
-    version: 0.22.0
-    sha: c7d1b7881f96869f49808b6adfe906a93a57a34204952253444d68c3208d71f1
+    version: 0.22.8
+    sha: eb856b9c558971c3f13ab692358926da710b046932a4e087aedcc35b040d7dff
   - kind: registry
     name: graphene-sys
-    version: 0.22.0
-    sha: 517f062f3fd6b7fd3e57a3f038a74b3c23ca32f51199ff028aa704609943f79c
+    version: 0.22.8
+    sha: 5c7ffdfde88f3570d3705e0d8a2433e036d387a1f2930bbf47eafcb5f569fd04
   - kind: registry
     name: gsk4
-    version: 0.11.1
-    sha: 53c912dfcbd28acace5fc99c40bb9f25e1dcb73efb1f2608327f66a99acdcb62
+    version: 0.11.4
+    sha: b867be1c5f14dcb8f552c0eff6e9a9b1da5f8b43943e8efc3a63c889d84952ff
   - kind: registry
     name: gsk4-sys
-    version: 0.11.1
-    sha: d7d54bbc7a9d8b6ffe4f0c95eede15ccfb365c8bf521275abe6bcfb57b18fb8a
+    version: 0.11.4
+    sha: 5b7c7eb2e681ee896646cfb8872b431f24d09f53ba9283289d9b10caa6707088
   - kind: registry
     name: gtk4
-    version: 0.11.3
-    sha: 7181b837f04cbe93f79441475f7a00560a92cba7a72e38cc1a68b6f8b78eaae2
+    version: 0.11.4
+    sha: 98a0a0466484f64b07b5b8184d43fa46be78eb0b8e04ae4e179af31d770b76d9
   - kind: registry
     name: gtk4-macros
-    version: 0.11.0
-    sha: 3581b242ba62fdff122ebb626ea641582ec326031622bd19d60f85029c804a87
+    version: 0.11.4
+    sha: 5ac7179400a36a04de039c24206bb841c5596992b907b43b23ee8d5bdc40d00e
   - kind: registry
     name: gtk4-sys
-    version: 0.11.3
-    sha: 20ba8e695e2640455561274e65e45f0a151619e450746007667f4b23ceae4e1b
+    version: 0.11.4
+    sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
   - kind: registry
     name: gufo
     version: 0.5.0-alpha
@@ -714,8 +714,8 @@ sources:
     sha: 3c7028bdd3d43083f6d8d4d5187680d0d3560d54df4cc9d752005268b41e64d0
   - kind: registry
     name: pango
-    version: 0.22.6
-    sha: 251bdc6e6487b811be0e406a21e301e07e45c0aa8fa39e00c0c8e12a91752438
+    version: 0.22.8
+    sha: 5d800d8d0de2ad5d0fb046f5344dbaba14a003cf3dd27cc21d85893d35ea316c
   - kind: registry
     name: pango-sys
     version: 0.22.0
@@ -788,10 +788,6 @@ sources:
     name: quick-error
     version: 2.0.1
     sha: a993555f31e5a609f617c12db6250dedcac1b0a85076912c436e6fc9b2c8e6a3
-  - kind: registry
-    name: quick-xml
-    version: 0.38.4
-    sha: b66c2058c55a409d601666cffe35f04333cf1013010882cec174a7467cd4e21c
   - kind: registry
     name: quick-xml
     version: 0.39.4

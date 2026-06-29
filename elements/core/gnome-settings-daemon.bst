@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-settings-daemon.git
   track: main
-  ref: 50.1-7-ge503f7a5f11ece711ce2b14efabb1d1c595036b3
+  ref: 51.alpha-0-gb38441bc35b58f36d52e039959b2f3d86258be2d
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc
-  ref: 47c47a423ff2f55bb038d92517e4782cf051496a
+  ref: 0a4eda0cdc2deb352bebc70ec697c42af46094e4
 
 build-depends:
 - (@): include/gcc-for-recc.yml
