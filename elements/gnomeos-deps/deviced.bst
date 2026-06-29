@@ -13,7 +13,7 @@ build-depends:
 depends:
 - core-deps/NetworkManager.bst
 - core-deps/jsonrpc-glib.bst
-- sdk-deps/appstream-glib.bst
+- gnomeos-deps/appstream-glib.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/avahi-gobject.bst
 - freedesktop-sdk.bst:components/flatpak.bst
