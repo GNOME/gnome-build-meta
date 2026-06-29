@@ -1,13 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:gobject-introspection.git
-  track: main
-  ref: 1.86.0-15-g106c020326e00a08eb35b700f3a26e4f074bb060
-- kind: git_module
-  url: gnome:gobject-introspection-tests.git
-  path: gobject-introspection-tests
-  ref: 67a03e86da0636c02cac2390ee2f0d5d981875a8
-
+- kind: tar
+  url: gnome_downloads:gobject-introspection/1.86/gobject-introspection-1.86.0.tar.xz
+  ref: 920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

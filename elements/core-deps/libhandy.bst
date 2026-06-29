@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libhandy.git
-  track: main
-  ref: 1.8.0-42-g9e72e732861fb6f58c0f69f9a1b89ea83843a05f
-
+- kind: tar
+  url: gnome_downloads:libhandy/1.8/libhandy-1.8.3.tar.xz
+  ref: 05b497229073ff557f10b326e074c5066f8743a302d4820ab97bcb5cd2dab087
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:nautilus.git
-  track: main
-  ref: 51.alpha-1-gd95ce4060b39911fb68c0cb3626e47f52bd9d0b8
-# please keep in sync with https://gitlab.gnome.org/GNOME/nautilus/-/blob/main/subprojects/libgxdp.wrap
+- kind: tar
+  url: gnome_downloads:nautilus/51/nautilus-51.alpha.tar.xz
+  ref: a21fc5cfa78d26d05ca73682291a35f249d2f16943fce49bdb9603889ad7f00b
 - kind: git_repo
   url: gnome:libgxdp.git
   ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b

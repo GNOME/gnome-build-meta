@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:grilo-plugins.git
-  track: master
-  ref: grilo-plugins-0.3.18-14-g1c69b4ffef102e39f1ace6a0d2bc09911570ba57
-
+- kind: tar
+  url: gnome_downloads:grilo-plugins/0.3/grilo-plugins-0.3.18.tar.xz
+  ref: 8e3ce74ee717c3c322d0cb0f8df26bb0914028a5d016e28055ffb49cc9a46c5e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

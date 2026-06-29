@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-backgrounds.git
-  track: main
-  ref: 51.alpha.0-1-ga0e2ae23b945adaf00d5af256d4249b1802dcef1
-
+- kind: tar
+  url: gnome_downloads:gnome-backgrounds/51/gnome-backgrounds-51.alpha.0.tar.xz
+  ref: 6005084c8987f0db5f46731b24a2153146a6b59c18174a352cd82da969fd8dee
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

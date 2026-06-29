@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:adwaita-fonts.git
-  track: main
-  ref: 50.0-0-gbd828c71418f7ae3af76687d6ca2a809111770f2
+- kind: tar
+  url: gnome_downloads:adwaita-fonts/50/adwaita-fonts-50.0.tar.xz
+  ref: 4c927fbfeec1c503801ba510c2c94e0054c82c522cf7ba0d3be5d4d41fcf5c86
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

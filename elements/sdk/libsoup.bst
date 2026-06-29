@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libsoup.git
-  track: master
-  ref: 3.7.1-7-g19b81b655f309026e5c76ddc18aee687f14636e4
-
+- kind: tar
+  url: gnome_downloads:libsoup/3.7/libsoup-3.7.1.tar.xz
+  ref: 9c96e11bb91641fe21948013499ca716393c9e9336562f9ff849c41d4edab80e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

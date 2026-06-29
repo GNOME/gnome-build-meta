@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:grilo.git
-  track: master
-  ref: grilo-0.3.19-6-gbe66dd2c0cbe3b4178391d9a141d9e7bf88d7356
-
+- kind: tar
+  url: gnome_downloads:grilo/0.3/grilo-0.3.19.tar.xz
+  ref: 0869c81d19ab139c667d79567c14ddcb6cb5cbfc0108d04cade287eb29536706
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libgweather.git
-  track: main
-  ref: 4.6.0-4-gfa98aed8752d43f46745fda0c92b8d73d2478944
-
+- kind: tar
+  url: gnome_downloads:libgweather/4.6/libgweather-4.6.0.tar.xz
+  ref: 7f5d0e8c9685ef2ff46c2f3a57cae48d7bf3540b2d83921f889ef28e6a876788
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

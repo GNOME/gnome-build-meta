@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gcab.git
-  track: master
-  ref: v1.6-10-g9b7e9e49f97f517981204a768623ad25e74fc4ba
-
+- kind: tar
+  url: gnome_downloads:gcab/1.6/gcab-1.6.tar.xz
+  ref: 2f0c9615577c4126909e251f9de0626c3ee7a152376c15b5544df10fc87e560b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gjs.git
-  track: master
-  ref: 1.89.1-0-g64735996883c8c3d55707cb4aa0ec5de0918b7fe
-- kind: git_module
-  url: gnome:gobject-introspection-tests.git
-  path: subprojects/gobject-introspection-tests
-  ref: 67432ee4ebf74349cb3c848f73945b21a767e276
-
+- kind: tar
+  url: gnome_downloads:gjs/1.89/gjs-1.89.1.tar.xz
+  ref: d881e7ae45e2918a787f83d2235d9ab9ea492ac89e7e2e7d5e8af62a561f92e4
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

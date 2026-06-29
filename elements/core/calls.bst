@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:calls.git
-  track: main
-  ref: v50.0-19-g7186d5e2b9f46f5374621a0959a385b3f66b5f68
-# Needs to be updated manually until we have a wrap-git plugin
+- kind: tar
+  url: gnome_downloads:calls/50/calls-50.0.tar.xz
+  ref: f28ccc8e6fbc5079e7b8b5d11a551969bb70d905e5ed90d1b1d868f12045c72f
 - kind: git_repo
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   directory: subprojects/libcall-ui

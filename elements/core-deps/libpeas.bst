@@ -1,10 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:libpeas.git
-  track: main
-  ref: 2.2.1-2-gdbe4e39a2def7326595451e2800aa9cec1dae744
-
+- kind: tar
+  url: gnome_downloads:libpeas/2.2/libpeas-2.2.1.tar.xz
+  ref: 589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -3,10 +3,9 @@ kind: meson
 sources:
 # NOTE: Whenever the rewrite is completed and the new version will be released in the next stable,
 #       go and update files/gnome-mimeapps/quirks.toml
-- kind: git_repo
-  url: gnome:gnome-disk-utility.git
-  track: main
-  ref: 44.0-859-gafcfbccbfe28d14f7a8e45f40407380423a29d21
+- kind: tar
+  url: gnome_downloads:gnome-disk-utility/46/gnome-disk-utility-46.1.tar.xz
+  ref: c24e9439a04d70bcfae349ca134c7005435fe2b6f452114df878bff0b89bbffe
 
 build-depends:
 - (@): include/gcc-for-recc.yml

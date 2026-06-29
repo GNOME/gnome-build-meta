@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:template-glib.git
-  track: main
-  ref: 3.40.0-4-gd853e3fcf16838993d2de4ce5fc213edfe63818d
-
+- kind: tar
+  url: gnome_downloads:template-glib/3.40/template-glib-3.40.0.tar.xz
+  ref: e533ec2f6c24cc6df66ac55ac824fadd1b4a5f433a11cbf3a6b25815c0cfcfd5
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

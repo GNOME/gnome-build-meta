@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:geocode-glib.git
-  track: master
-  ref: 3.26.4-3-g31b7f9ca703a8f30cfea60f9be5a0fa57e539ef8
-
+- kind: tar
+  url: gnome_downloads:geocode-glib/3.26/geocode-glib-3.26.4.tar.xz
+  ref: 2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

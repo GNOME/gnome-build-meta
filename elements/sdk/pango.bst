@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pango.git
-  track: main
-  ref: 1.58.0-1-g792093ce369373dbde14fb3832b54b725034c40f
-
+- kind: tar
+  url: gnome_downloads:pango/1.58/pango-1.58.0.tar.xz
+  ref: bc5bad6213ad4886a47d1e80292fd850b64159b50db67917a43d9ea80ee2298a
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

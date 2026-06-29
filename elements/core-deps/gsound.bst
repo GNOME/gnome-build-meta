@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gsound.git
-  track: master
-  ref: 1.0.3-7-g7860b15645570d94d2fee29af8c7e827d37e5703
-
+- kind: tar
+  url: gnome_downloads:gsound/1.0/gsound-1.0.3.tar.xz
+  ref: ca2d039e1ebd148647017a7f548862350bc9af01986d39f10cfdc8e95f07881a
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

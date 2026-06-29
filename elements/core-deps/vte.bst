@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:vte.git
-  track: master
-  ref: 0.81.0-81-gfc2760558f98f8a5808154264c3f4b74d7a3e19c
-
+- kind: tar
+  url: gnome_downloads:vte/0.84/vte-0.84.0.tar.xz
+  ref: 0414e31583836aeb7878da25f67c515f7e8879917ecc37c92e26b83e8d8fc3e3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

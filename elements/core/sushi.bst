@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:sushi.git
-  track: main
-  ref: 50.0-131-gdb55853ec62bc1393bfd455d82ddbc8d7b877f90
-
+- kind: tar
+  url: gnome_downloads:sushi/50/sushi-50.0.tar.xz
+  ref: ab25177908d5ccc58568769a81eb9b4f32306786e6c73618193ebf61a127ee00
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

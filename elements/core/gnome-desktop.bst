@@ -1,12 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-desktop.git
-  track: master
-  ref: 51.alpha-0-ge29e9eb0f03fcdaf632682e4b78b3e3d5524073b
-# Needs to be kept in sync with the repo until we get a wrap source plugin
-# https://gitlab.gnome.org/GNOME/gnome-desktop/-/blob/master/subprojects/qrcodegen.wrap
+- kind: tar
+  url: gnome_downloads:gnome-desktop/51/gnome-desktop-51.alpha.tar.xz
+  ref: 8a4d09618fec88fff1549e5b80ac41776efaccb8d65db3fb77345b5394819932
 - kind: git_repo
   directory: subprojects/qrcodegen
   url: github:nayuki/QR-Code-generator.git

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:console.git
-  track: main
-  ref: 50.0-23-geea85fb8c830e8bd0328d2d8bf8472bfaff3f067
-
+- kind: tar
+  url: gnome_downloads:gnome-console/50/gnome-console-50.0.tar.xz
+  ref: e4950207f0547e6a6c0f18eebfcf6e1a10461eab0f2fae0aae512b1044c7ac6e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
