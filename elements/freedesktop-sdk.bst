@@ -64,3 +64,7 @@ config:
     components/_private/xdg-desktop-portal-base.bst: core-deps/xdg-desktop-portal-base.bst
     components/xdg-desktop-portal.bst: core-deps/xdg-desktop-portal.bst
     components/flatpak.bst: core-deps/flatpak.bst
+
+    # Epiphany requires nettle 3.x.
+    # https://gitlab.gnome.org/GNOME/epiphany/-/work_items/2892
+    components/nettle.bst: core-deps/nettle3.bst
