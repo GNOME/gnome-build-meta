@@ -16,6 +16,7 @@ build-depends:
 depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
+- core-deps/libical3.bst
 - core-deps/libgweather.bst
 - core-deps/openldap.bst
 - sdk/gcr.bst
@@ -24,7 +25,6 @@ depends:
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
-- freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
