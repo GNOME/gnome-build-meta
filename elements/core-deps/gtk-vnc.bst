@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk-vnc.git
   track: master
-  ref: 1.5.0-52-gad2dd3efadfdc43d99b2fcbd0f7180db2a8230e1
+  ref: 1.5.0-55-g6ceff7c200ce3708b5419c29d5b027657b9fae2c
 - kind: git_module
   url: gitlab:keycodemap/keycodemapdb.git
   path: subprojects/keycodemapdb
