@@ -48,3 +48,6 @@ depends:
 
 - gnomeos-deps/qemu-user.bst
 - gnomeos-deps/arch-test.bst
+
+# This is needed to report bugs upstream alsa
+- gnomeos-deps/alsa-utils.bst
