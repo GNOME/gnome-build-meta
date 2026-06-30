@@ -66,3 +66,7 @@ config:
     components/flatpak.bst: core-deps/flatpak.bst
 
     components/geoclue-base.bst: gnomeos-deps/geoclue-base.bst
+
+    # gnome-calendar still requires libical 3.x. Nothing in the flatpak runtimes depends
+    # on it, so this can be reverted in a stable branch
+    components/libical.bst: core-deps/libical3.bst
