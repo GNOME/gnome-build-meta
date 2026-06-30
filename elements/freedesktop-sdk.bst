@@ -66,3 +66,6 @@ config:
     components/flatpak.bst: core-deps/flatpak.bst
 
     components/geoclue-base.bst: gnomeos-deps/geoclue-base.bst
+    # Epiphany requires nettle 3.x.
+    # https://gitlab.gnome.org/GNOME/epiphany/-/work_items/2892
+    components/nettle.bst: core-deps/nettle3.bst
