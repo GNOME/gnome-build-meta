@@ -68,3 +68,5 @@ config:
     # Epiphany requires nettle 3.x.
     # https://gitlab.gnome.org/GNOME/epiphany/-/work_items/2892
     components/nettle.bst: core-deps/nettle3.bst
+    # evolution-data-server requires libical 3.x.
+    components/libical.bst: core-deps/libical3.bst
