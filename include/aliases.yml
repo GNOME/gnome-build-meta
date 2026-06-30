@@ -29,6 +29,7 @@ aliases:
   launchpad: https://launchpad.net/
   mozilla: https://ftp.mozilla.org/pub/
   netfilter_pub: https://www.netfilter.org/pub/
+  nettle: https://git.lysator.liu.se/nettle/
   nvidia: https://us.download.nvidia.com/
   openvpn: https://swupdate.openvpn.org/community/releases/
   pagure_releases: https://releases.pagure.org/
