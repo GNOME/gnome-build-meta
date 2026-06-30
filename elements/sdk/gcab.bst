@@ -9,8 +9,8 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
+- sdk/gtk-doc.bst
 - sdk/vala.bst
 
 depends:
