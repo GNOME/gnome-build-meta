@@ -10,13 +10,11 @@ build-depends:
 - sdk/blueprint-compiler.bst
 
 depends:
-- core/papers.bst
+- core-deps/evince.bst
+- core-deps/gtksourceview-4.bst
 - sdk/gjs.bst
-- sdk/glycin.bst
-- sdk/gtk.bst
-- sdk/gtksourceview.bst
-- sdk/libadwaita.bst
-- sdk/webkitgtk-6.0.bst
+- sdk/gtk+-3.bst
+- sdk/webkit2gtk-4.1.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
