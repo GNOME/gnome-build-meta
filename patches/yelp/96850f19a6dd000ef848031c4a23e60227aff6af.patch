@@ -1,0 +1,50 @@
+From 96850f19a6dd000ef848031c4a23e60227aff6af Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jpetridis@gnome.org>
+Date: Thu, 21 May 2026 16:32:18 +0300
+Subject: [PATCH] build: Remove include of gdkkeysyms.h
+
+18bd5e8cd2cf73e2a6c5d54e2fc5414177151868 in GTK [1] added a guard against
+the direct inclusion of the header and we should be including gdk.h
+instead.
+
+```
+error "Only <gdk/gdk.h> can be included directly."
+```
+
+Additionally gtk.h will include gdk.h for us so we can just remove it.
+
+[1] https://gitlab.gnome.org/GNOME/gtk/-/commit/18bd5e8cd2cf73e2a6c5d54e2fc5414177151868
+
+Part-of: <https://gitlab.gnome.org/GNOME/yelp/-/merge_requests/79>
+---
+ src/yelp-search-entry.c | 1 -
+ src/yelp-window.c       | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/src/yelp-search-entry.c b/src/yelp-search-entry.c
+index 7d830167..9e75dc15 100644
+--- a/src/yelp-search-entry.c
++++ b/src/yelp-search-entry.c
+@@ -24,7 +24,6 @@
+ #include <config.h>
+ #endif
+ 
+-#include <gdk/gdkkeysyms.h>
+ #include <gtk/gtk.h>
+ #include <glib/gi18n.h>
+ #include <gio/gio.h>
+diff --git a/src/yelp-window.c b/src/yelp-window.c
+index a65be6e9..3dff75da 100644
+--- a/src/yelp-window.c
++++ b/src/yelp-window.c
+@@ -25,7 +25,6 @@
+ 
+ #include <math.h>
+ 
+-#include <gdk/gdkkeysyms.h>
+ #include <glib/gi18n.h>
+ #include <gio/gio.h>
+ #include <gtk/gtk.h>
+-- 
+GitLab
+
