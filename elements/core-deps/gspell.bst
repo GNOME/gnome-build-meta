@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gspell/1.14/gspell-1.14.3.tar.xz
-  ref: e8b39c67556f75495362952f81ca241b5a3c17c75960b77fc93fa702c612a5a4
+  url: gnome_downloads:gspell/1.14/gspell-1.14.4.tar.xz
+  ref: e73a89d68c70f8748aefb6b0f5cfdfec3ff173cf4449837fd6cb17d1e9fcf486
 build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst

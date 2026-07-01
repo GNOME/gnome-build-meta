@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-shell/49/gnome-shell-49.7.tar.xz
-  ref: 4967c50a9b01618c2522d440bc4e90551648ec1a59114a6b61157a655403d88f
+  url: gnome_downloads:gnome-shell/49/gnome-shell-49.8.tar.xz
+  ref: 606febdf9504642c6dafc44c8b947bd4be688bac3a4278e091dbcdb71e7bf252
 - kind: patch
   path: patches/gnome-shell/launch-installer.patch
 
