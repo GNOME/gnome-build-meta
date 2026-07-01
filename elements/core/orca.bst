@@ -22,7 +22,3 @@ depends:
 - sdk/pygobject.bst
 - sdk/yelp-tools.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-
-variables:
-  meson-local: >-
-    -Dmathcat=false
