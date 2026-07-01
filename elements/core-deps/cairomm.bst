@@ -4,8 +4,8 @@ sources:
 # We need to use git_repo rather than a tarball because cairographics.org is unreliable.
 # https://gitlab.freedesktop.org/freedesktop/freedesktop/-/issues/1184
 - kind: tar
-  url: cairo:releases/cairomm-1.18.0.tar.xz
-  ref: b81255394e3ea8e8aa887276d22afa8985fc8daef60692eb2407d23049f03cfb
+  url: cairo:releases/cairomm-1.18.1.tar.xz
+  ref: e0e996a979ee52c840dca3ee74f5d005e3259b94ddce58f255d3b6f47c8cb41d
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:pangomm/2.56/pangomm-2.56.1.tar.xz
-  ref: 539f5aa60e9bdc6b955bb448e2a62cc14562744df690258040fbb74bf885755d
+  url: gnome_downloads:pangomm/2.56/pangomm-2.56.2.tar.xz
+  ref: f1e984c85a85b6a0e61616366521f51dd8282a072bb45d15b5084762b62f4c0e
 build-depends:
 - core-deps/graphviz.bst
 - core-deps/mm-common.bst
