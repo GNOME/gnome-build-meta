@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnupg_ftp:gcrypt/pinentry/pinentry-1.3.2.tar.bz2
-  ref: 8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e
+  url: gnupg_ftp:gcrypt/pinentry/pinentry-1.3.3.tar.bz2
+  ref: c2970f16d6afb66ecddfca767d743936c86239bff936eed7fd7597a678414b63
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.1/glycin-2.1.1.tar.xz
-  ref: 8e8e92e312b14d2c5f3a047bdc5305adcb9931ef0150cf74bf526a3741e6fb32
+  url: gnome_downloads:glycin/2.1/glycin-2.1.5.tar.xz
+  ref: 6c09757ee906330a60b6705753aa56bca007ad219b95e6e3537510d41bc341c8
 - kind: cargo2
   ref:
   - kind: registry
@@ -650,8 +650,8 @@ sources:
     sha: ad38eb12aea514a0466ea40a80fd8cc83637065948eb4a426e4aa46261175227
   - kind: registry
     name: memmap2
-    version: 0.9.10
-    sha: 714098028fe011992e1c3962653c96b2d578c4b4bce9036e15ff220319b1e0e3
+    version: 0.9.11
+    sha: d1219ed1b7f229ee7104d281dd01d6802fe28bb6e95d292942c4daacdeb798c0
   - kind: registry
     name: memoffset
     version: 0.9.1
@@ -1026,8 +1026,8 @@ sources:
     sha: 562d481066bde0658276a35467c4af00bdc6ee726305698a55b86e61d7ad82bb
   - kind: registry
     name: uds_windows
-    version: 1.2.0
-    sha: 51b70b87d15e91f553711b40df3048faf27a7a04e01e0ddc0cf9309f0af7c2ca
+    version: 1.2.1
+    sha: f2f6fb2847f6742cd76af783a2a2c49e9375d0a111c7bef6f71cd9e738c72d6e
   - kind: registry
     name: unicode-ident
     version: 1.0.24

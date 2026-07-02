@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:librsvg/2.62/librsvg-2.62.2.tar.xz
-  ref: c0c1367e381e1ae4842a78f1b57c656ff19b25637e3a6527cb44ae5a1cc68d65
+  url: gnome_downloads:librsvg/2.62/librsvg-2.62.3.tar.xz
+  ref: 7eb449b2722a768021356f66dfee3202c229b54ed4e6a70ce40c090e97ff16f2
 - kind: cargo2
   ref:
   - kind: registry
@@ -940,12 +940,12 @@ sources:
     sha: 69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f
   - kind: registry
     name: rand
-    version: 0.8.5
-    sha: 34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404
+    version: 0.8.6
+    sha: 5ca0ecfa931c29007047d1bc58e623ab12e5590e8c7cc53200d5202b69266d8a
   - kind: registry
     name: rand
-    version: 0.9.2
-    sha: 6db2770f06117d490610c7488547d543617b21bfa07796d7a12f6f1bd53850d1
+    version: 0.9.4
+    sha: 44c5af06bb1b7d3216d91932aed5265164bf384dc89cd6ba05cf59a35f5f76ea
   - kind: registry
     name: rand_chacha
     version: 0.9.0
