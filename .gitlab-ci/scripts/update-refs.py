@@ -93,6 +93,7 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 #
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
+    ("core-deps/systemd-base.bst", "https://github.com/systemd/systemd/issues/42873"),
     ("core-deps/vte.bst", "Crashes kgx and is very annoying https://gitlab.gnome.org/GNOME/vte/-/work_items/2949"),
     ("gnomeos-deps/bootc.bst", "We have manually overwritten the sources to append .git at a couple github urls"),
 ]
