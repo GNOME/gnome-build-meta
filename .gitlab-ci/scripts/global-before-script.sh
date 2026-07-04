@@ -56,3 +56,5 @@ echo "commit: '${commit}'" >> include/image-version.yml
 echo "commit-date-pretty: '${commit_date_pretty}'" >> include/image-version.yml
 
 cat include/image-version.yml
+
+set +x
