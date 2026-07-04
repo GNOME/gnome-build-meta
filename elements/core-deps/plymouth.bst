@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: freedesktop:plymouth/plymouth.git
-  track: main
-  ref: 26.134.222-6-g96f5c0100eb9b6bbaede82e4cd064e5bac67cd8f
+  track: "*.*.*"
+  ref: 26.134.222-0-gd15928a8e06c217aad0f2e3579df23fec93dc009
 
 build-depends:
 - sdk/gtk-doc.bst
