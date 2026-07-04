@@ -8,7 +8,7 @@ sources:
   - '*rc*'
   - '*beta*'
   - '*alpha*'
-  ref: v2.7.4-0-g8e9e91f4caff9a80961f32a1f9eda7e5a489176e
+  ref: v2.7.5-0-gb25bb2a8bda814edab39b4246d4e296330a7a29e
 
 build-depends:
 - (@): include/gcc-for-recc.yml

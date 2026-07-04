@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: github:rrthomas/enchant.git
   track: "v*.*.*"
-  ref: v2.8.16-0-gf4098289e4ca5bba79598f8afd2ab94d5497dcce
+  ref: v2.8.18-0-g45b801ccecff1aaee91df2762a7f7b1fa1a649e3
 - kind: git_module
   path: gnulib
   url: savannah:gnulib.git
-  ref: d8dc57fe59a06056caf3561da1d48f5f8c80f655
+  ref: 491f1bb7d3049f3ab7825f3ee665c209658e9965
 - kind: git_module
   path: gl-mod/bootstrap
   url: github:gnulib-modules/bootstrap.git
