@@ -5,7 +5,8 @@ sources:
   url: freedesktop:mobile-broadband/ModemManager.git
   track: '*.*'
   exclude:
-  - '*-dev'
+  - "*-dev*"
+  - "*-rc*"
   ref: 1.24.2-0-gf2b9ab1ad78d322f32134a444b5b54c6e8160e19
 
 build-depends:

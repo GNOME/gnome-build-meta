@@ -5,7 +5,8 @@ sources:
   url: freedesktop:NetworkManager/NetworkManager.git
   track: "*.*"
   exclude:
-  - "*-dev"
+  - "*-dev*"
+  - "*-rc*"
   ref: 1.56.1-0-gb829f838fc5d8c93437faa5db44a5396b67893de
 
 build-depends:
