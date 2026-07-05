@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:kmscon/kmscon.git
   track: 'v*'
-  ref: v10.0.0-0-gb54cf7512abcb7c8f015c762cd6361cca51b7b77
+  ref: v10.0.1-0-gc9d0e23336c6bb7645a1f5f48a4a82f1d5a589d9
 - kind: local
   path: files/kmscon/80-kmscon.preset
 - kind: local
@@ -15,20 +15,20 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
+- core-deps/libcheck.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 - freedesktop-sdk.bst:components/mesa-headers.bst
-- core-deps/libcheck.bst
 
 depends:
+- gnomeos-deps/libtsm.bst
+- sdk/pango.bst
 - freedesktop-sdk.bst:components/dummy-gbm.bst
+- freedesktop-sdk.bst:components/libdbus.bst
 - freedesktop-sdk.bst:components/libdrm.bst
-- freedesktop-sdk.bst:components/libseat.bst
 - freedesktop-sdk.bst:components/libxkbcommon.bst
 - freedesktop-sdk.bst:components/systemd.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- gnomeos-deps/libtsm.bst
-- sdk/pango.bst
 
 config:
   install-commands:
