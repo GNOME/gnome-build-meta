@@ -491,6 +491,28 @@ update_mimeapps:
   - mv out/usr/share/applications/gnome-mimeapps.list ./gnome-mimeapps.list
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-mimeapps.sh"
 
+update_intentapps:
+  extends:
+  - .x86_64
+  - .bot-ssh
+  stage: deploy
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  # Ideally we'd also be updating the stable branches of gnome-session,
+  # But until then, only have the job run for nightly.
+  # Use FLATPAK_BRANCH as a shortcut to figure out what branch we
+  # are targetting atm, since we don't expose the branch from project.conf
+  - if: $FLATPAK_BRANCH == "master"
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  script:
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos-deps/gnome-intentapps.bst
+  - ${BST} ${ARCH_OPT} artifact checkout --directory out gnomeos-deps/gnome-intentapps.bst
+  - mv out/usr/share/applications/gnome-intentapps.list ./gnome-intentapps.list
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-intentapps.sh"
+
+
 pages:
   stage: 'reports'
   needs:

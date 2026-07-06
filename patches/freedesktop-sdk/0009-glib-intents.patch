@@ -1,0 +1,27 @@
+diff --git a/elements/include/glib-source.yml b/elements/include/glib-source.yml
+index 51198aa27..03c4c89fb 100644
+--- a/elements/include/glib-source.yml
++++ b/elements/include/glib-source.yml
+@@ -1,8 +1,7 @@
+ sources:
+ - kind: git_repo
+-  url: gnome:glib.git
+-  track: 2.84.*
+-  ref: 2.84.4-0-g41eca60845d3fc309af361f5e7f801ba339099aa
++  url: ignapk:glib.git
++  ref: 9b7952e8622e728ab9f2448ff70409061ba56dab
+ - kind: git_module
+   path: subprojects/gvdb
+   url: gnome:gvdb.git
+diff --git a/include/_private/aliases.yml b/include/_private/aliases.yml
+index 6675dae11..44d9a246a 100644
+--- a/include/_private/aliases.yml
++++ b/include/_private/aliases.yml
+@@ -15,6 +15,7 @@ ghostscript: https://git.ghostscript.com/
+ github: https://github.com/
+ gitlab: https://gitlab.com/
+ gnome: https://gitlab.gnome.org/GNOME/
++ignapk: https://gitlab.gnome.org/ignapk/
+ gnupg: https://dev.gnupg.org/source/
+ # The ~ here is intentional, as our mirrors can't have ~ in their name
+ sourcehut: https://git.sr.ht/~

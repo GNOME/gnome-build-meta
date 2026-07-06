@@ -1,0 +1,28 @@
+# Heading that appears at the top of the generated file
+heading = """
+# Maintained by gnome-build-meta. DO NOT EDIT!
+#
+# Upstream changes can be made at https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gnome-intentapps/quirks.toml
+"""
+
+# Only look for apps in these directories:
+datadirs = [
+    "/usr/share"
+]
+
+# Skip these apps
+skip_apps = [
+#EX:    "org.myapp.App",
+]
+
+# List incubator apps here. Incubator apps listed here will be given priority
+# over the core app they're replacing when generating the default apps list.
+# Both will be listed, so operating systems without the incubator apps installed
+# will default to the core apps in the absence of the incubating alternatives
+[incubating]
+
+[override]
+"org.freedesktop.Terminal1" = [
+    "org.gnome.Ptyxis.Devel;scope2,scope1",
+    "org.gnome.Console"
+]
