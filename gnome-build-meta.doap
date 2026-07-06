@@ -9,7 +9,6 @@
   <shortdesc xml:lang="en">GNOME Build Metadata</shortdesc>
   <description xml:lang="en">GNOME Build Metadata</description>
   <homepage rdf:resource="https://gitlab.gnome.org/GNOME/gnome-build-meta/" />
-  <mailing-list rdf:resource="https://mail.gnome.org/mailman/listinfo/release-team" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-build-meta/" />
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#core" />
