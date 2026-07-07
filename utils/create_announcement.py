@@ -22,14 +22,14 @@ def is_stable(major: int, minor: str) -> bool:
 
     raise ValueError("Run out of numbers")
 
-def create_stable_announcement(major: int, minor: int, is_final: bool) -> str:
+def create_stable_announcement(major: int, minor: int) -> str:
     # .0 announcments are skipped as we handle the release notes through press releases
     if minor == 0:
         return ""
 
     # This hardcodes that we only support 2 versions at a time
     final_notice = ""
-    if is_final:
+    if minor == 10:
         final_notice = f"\nThis is the final release of GNOME {major}. Please upgrade to GNOME {major + 1} or GNOME {major + 2}.\n"
 
     stable_txt = f"""
@@ -63,9 +63,8 @@ def main():
 
     stable = is_stable(major, minor)
 
-    if stable and minor != 0:
-        final = minor == 10
-        print(create_stable_announcement(major, minor, final))
+    if stable:
+        print(create_stable_announcement(major, minor))
 
     # TODO:
     # alpha/beta/rc and .0 are slightly different
