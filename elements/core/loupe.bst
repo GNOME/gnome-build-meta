@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 51.alpha-1-g1409025ce267c1f61034734e521bc13bef75b64f
+  ref: 51.alpha-6-gb5cf827585778520119f62b4e3565c4d9baa0b9a
 - kind: cargo2
 
   ref:
@@ -193,10 +193,6 @@ sources:
     version: 0.5.3
     sha: ab8ecd87370524b461f8557c119c405552c396ed91fc0a8eec68679eab26f94a
   - kind: registry
-    name: dunce
-    version: 1.0.5
-    sha: 92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813
-  - kind: registry
     name: either
     version: 1.16.0
     sha: 91622ff5e7162018101f2fea40d6ebf4a78bbe5a49736a2020649edf9693679e
@@ -273,18 +269,6 @@ sources:
     version: 1.1.9
     sha: 843fba2746e448b37e26a819579957415c8cef339bf08564fe8b7ddbd959573c
   - kind: registry
-    name: foreign-types
-    version: 0.5.0
-    sha: d737d9aa519fb7b749cbc3b962edcf310a8dd1f4b67c91c4f83975dbdd17d965
-  - kind: registry
-    name: foreign-types-macros
-    version: 0.2.3
-    sha: 1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742
-  - kind: registry
-    name: foreign-types-shared
-    version: 0.3.1
-    sha: aa9a19cbb55df58761df49b23516a86d432839add4af60fc256da840f66ed35b
-  - kind: registry
     name: futures-channel
     version: 0.3.32
     sha: 07bbe89c50d7a535e539b8c17bc0b49bdb77747034daa8087407d655f3f7cc1d
@@ -358,10 +342,6 @@ sources:
     sha: 24d41f2e28f62378b081288914325d73bddbb6ccbbadb41aa6392afc71d27002
   - kind: registry
     name: getrandom
-    version: 0.3.4
-    sha: 899def5c37c4fd7b2664648c28120ecec138e4d395b459e5ca34f9cce2dd77fd
-  - kind: registry
-    name: getrandom
     version: 0.4.3
     sha: 300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099
   - kind: registry
@@ -404,34 +384,55 @@ sources:
     name: glib-sys
     version: 0.22.8
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
-  - kind: registry
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin
-    version: 4.0.0-alpha
-    sha: ab0d95230ccbc60d168eca33984e3ee2c75d75bb844eb11eb97907eaffc92886
-  - kind: registry
+    version: 4.0.0-alpha.1
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-builtin
-    version: 4.0.0-alpha
-    sha: 5c5a3cd8219bdee0cd16a26c3728c075604a2a293b211c4e95d0eb2eb55fbe7e
-  - kind: registry
+    version: 4.0.0-alpha.1
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-common
-    version: 2.0.0-alpha
-    sha: daf97898ba7a2356b941983ab1ef5634f2e1567eb290fe801bde60da185e2085
-  - kind: registry
+    version: 2.0.0-alpha.1
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-core
-    version: 4.0.0-alpha
-    sha: c624b4182686e793e8dd897108b972d66814d925e66a5acefde25d8faaab1b77
-  - kind: registry
+    version: 4.0.0-alpha.1
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-external
-    version: 4.0.0-alpha
-    sha: 60368043c6a9d7ffc234d93a410ffc8af46b5e8bf1c3a0fffeb62d9440b2e587
-  - kind: registry
+    version: 4.0.0-alpha.1
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-image-rs
-    version: 2.2.0-alpha
-    sha: c9ea3f09d2ae3a76aa548982abfbef05156007d822a3020ae9d9172b5ccc1793
-  - kind: registry
+    version: 2.2.0-alpha.6
+  - kind: git
+    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    repo: gnome:glycin.git
+    query:
+      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
     name: glycin-utils
-    version: 5.0.0-alpha
-    sha: 8c0c35adeb97c0e2324cc6c1a65b65bf8abf3ecea5bfc238d476bdee67a7ea4d
+    version: 5.0.0-alpha.1
   - kind: registry
     name: gobject-sys
     version: 0.22.6
@@ -464,42 +465,54 @@ sources:
     name: gtk4-sys
     version: 0.11.4
     sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
-  - kind: registry
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo
-    version: 0.5.0-alpha
-    sha: d97d857a79df06e10cd669541ed0a42d471a45a5201ce99535baf99b18c4129a
-  - kind: registry
+    version: 0.5.0-alpha.4
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo-common
-    version: 2.0.0-alpha
-    sha: 970e26402b2750cf3fbbf49116dca9fc010c939013125623c94da632f1ba76e8
+    version: 2.0.0-alpha.2
   - kind: registry
     name: gufo-exif
-    version: 0.5.0-alpha.1
-    sha: 1597401629a6778cbea663e6af6680fbcd07ab243cc8eee9bc5ef5d2c9e5eab8
+    version: 0.5.0-alpha.3
+    sha: e68d453f54f396ca43664463e3fa93de6ece835e113dd63f694349d669382821
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
+    name: gufo-exif
+    version: 0.5.0-alpha.4
   - kind: registry
     name: gufo-jpeg
-    version: 0.5.0-alpha
-    sha: 004fec8f321842386ba7decc6ee03dde7ed35f29c3586861a5c708cca1e4259b
-  - kind: registry
+    version: 0.5.0-alpha.2
+    sha: fa46d802b33586d3a1fd412b3fbb2b10ffbcde5aecbe5fddb4d61c827a001b9e
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
+    name: gufo-jpeg
+    version: 0.5.0-alpha.4
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo-png
-    version: 0.5.0-alpha
-    sha: 810e7750b869abb84c6162ad01a240f388a924d2d469ae30a0c2c11a28e81813
-  - kind: registry
-    name: gufo-svg
-    version: 0.5.0-alpha
-    sha: c4d74e7f2578608f76c0eff9c517dabf6a7fa8769b1af36ad994d70ec01d5deb
-  - kind: registry
+    version: 0.5.0-alpha.4
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo-tiff
-    version: 0.5.0-alpha
-    sha: 0a937aa0a245c9602aa9ed4857b6fc8f184cc43cf91e18d982c74c698e20afd5
-  - kind: registry
+    version: 0.5.0-alpha.4
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo-webp
-    version: 0.5.0-alpha
-    sha: 662c18ba5eef44d65c1694ebede033783ab5b48eb81366c1625deaaf75c47a18
-  - kind: registry
+    version: 0.5.0-alpha.4
+  - kind: git
+    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    repo: github:gufo-rs/gufo.git
     name: gufo-xmp
-    version: 0.5.0-alpha
-    sha: ea3cc4abbf29cddc6ffc1a4473eec79f11cf742bc113f9bd319ca1d7fcedfc39
+    version: 0.5.0-alpha.4
   - kind: registry
     name: gvdb
     version: 0.10.0
@@ -569,10 +582,6 @@ sources:
     version: 0.2.29
     sha: 0666b5ab5ecaca213fc2a85b8c0083d9004e84ee2d5f9a7e0017aaf50986f25f
   - kind: registry
-    name: jobserver
-    version: 0.1.34
-    sha: 9afb3de4395d6b3e67a780b6de64b51c978ecf11cb9a462c66be7d4ca9039d33
-  - kind: registry
     name: jpeg-encoder
     version: 0.7.0
     sha: 0b0b36cbb4e6704f12f5b5d7b01dac593982c6550859ebd5a66fb15c9ea27fd5
@@ -584,14 +593,6 @@ sources:
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
-  - kind: registry
-    name: lcms2
-    version: 6.1.1
-    sha: b75877b724685dd49310bdbadbf973fc69b1d01992a6d4a861b928fc3943f87b
-  - kind: registry
-    name: lcms2-sys
-    version: 4.0.7
-    sha: 264db0b78119c5a37d78bb41fb355daab29b3b29430b53cd92e3da51f0ab06cc
   - kind: registry
     name: lebe
     version: 0.5.3
@@ -796,10 +797,6 @@ sources:
     name: quote
     version: 1.0.46
     sha: dfbc457d0c7a0759a614551b11a6409e5951f6c7537be1f1b7682b9ae9230368
-  - kind: registry
-    name: r-efi
-    version: 5.3.0
-    sha: 69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f
   - kind: registry
     name: r-efi
     version: 6.0.0
@@ -1009,10 +1006,6 @@ sources:
     version: 2.5.0
     sha: 29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b
   - kind: registry
-    name: wasip2
-    version: 1.0.4+wasi-0.2.12
-    sha: b67efb37e106e55ce722a510d6b5f9c17f083e5fc79afc2badeb12cc313d9487
-  - kind: registry
     name: wasm-bindgen
     version: 0.2.126
     sha: 4b067c0c11094aef6b7a801c1e34a26affafdf3d051dba08456b868789aaf9a4
@@ -1060,10 +1053,6 @@ sources:
     name: winnow
     version: 1.0.3
     sha: 0592e1c9d151f854e6fd382574c3a0855250e1d9b2f99d9281c6e6391af352f1
-  - kind: registry
-    name: wit-bindgen
-    version: 0.57.1
-    sha: 1ebf944e87a7c253233ad6766e082e3cd714b5d03812acc24c318f549614536e
   - kind: registry
     name: x11-dl
     version: 2.21.0
@@ -1143,5 +1132,4 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
-- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst

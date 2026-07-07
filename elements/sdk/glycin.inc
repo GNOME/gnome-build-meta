@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.alpha.6-0-gc7e2a3a0a99fd583b8cdb2257361f8e8e43dab84
+  ref: 2.2.alpha.6-22-gf76960d249b5c5721a347636378c20bf2bc2b5ea
 - kind: cargo2
   ref:
   - kind: registry
@@ -1261,6 +1261,5 @@ build-depends:
 
 depends:
 - freedesktop-sdk.bst:components/fontconfig.bst
-- freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
