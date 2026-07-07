@@ -4,6 +4,23 @@
 
 import argparse
 
+def is_stable(major: int, minor: str) -> bool:
+    major = int(major)
+    minor = str(minor)
+    if minor.startswith("alpha"):
+        return False
+    elif minor.startswith("beta"):
+        return False
+    elif minor.startswith("rc"):
+        return False
+    else:
+        minor_ = int(minor)
+        if minor_ > 10:
+            raise ValueError(f"Minor release number is bigger than 10: {minor_}")
+
+        return True
+
+    raise ValueError("Run out of numbers")
 
 def create_stable_announcement(major: int, minor: int, is_final: bool) -> str:
     # .0 announcments are skipped as we handle the release notes through press releases
@@ -42,8 +59,9 @@ def main():
 
     full_version = args.version.split(".")
     major = int(full_version[0])
-    minor = int(full_version[1])
-    stable = True
+    minor = str(full_version[1])
+
+    stable = is_stable(major, minor)
 
     if stable and minor != 0:
         final = minor == 10
