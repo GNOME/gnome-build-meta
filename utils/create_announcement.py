@@ -5,7 +5,11 @@
 import argparse
 
 
-def create_stable_announcement(major: int, minor: int, is_final: bool):
+def create_stable_announcement(major: int, minor: int, is_final: bool) -> str:
+    # .0 announcments are skipped as we handle the release notes through press releases
+    if minor == 0:
+        return ""
+
     # This hardcodes that we only support 2 versions at a time
     final_notice = ""
     if is_final:
@@ -25,7 +29,7 @@ GNOME {major}.{minor} is designed to be a boring bugfix update for GNOME {major}
 
 Enjoy! ❤️
 GNOME Release Team
-    """
+"""
 
     return stable_txt
 
