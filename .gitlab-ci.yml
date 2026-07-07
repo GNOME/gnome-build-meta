@@ -529,3 +529,23 @@ make-git-archive:
     paths:
     - "public-dist/*.tar.xz"
     - "public-dist/*.tar.xz.sha256sum"
+
+create discourse announcement:
+  stage: "deploy"
+  needs:
+  - job: "release-service"
+    artifacts: false
+    optional: True
+  before_script: []
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  - if: $CI_COMMIT_TAG
+  - if: $CI_COMMIT_SHORT_SHA
+    when: "manual"
+    allow_failure: true
+    variables:
+      DRY_RUN: "--dry-run"
+  script:
+  - pip3 install pydiscourse
+  - python3 utils/create_announcement.py ${CI_COMMIT_TAG} ${DRY_RUN}
+
