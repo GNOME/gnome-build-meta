@@ -2,8 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-import pytest
-from create_announcement import create_stable_announcement
+from create_announcement import create_stable_announcement, is_stable
 
 expected_48_9 = """
 Hi,
@@ -47,3 +46,17 @@ def test_create_stable_announcement():
 
     # .0 announcments are skipped as we handle the release notes through press releases
     assert create_stable_announcement(48, 0, False) == "" 
+
+def test_is_stable():
+    assert not is_stable(48, "alpha")
+    assert not is_stable(48, "alpha0")
+    assert not is_stable(48, "alpha1")
+    assert not is_stable(48, "alpha.1")
+    assert not is_stable(48, "beta")
+    assert not is_stable(48, "rc")
+    assert is_stable(48, "0")
+    assert is_stable(48, 0)
+    assert is_stable(48, 1)
+    assert is_stable(48, 9)
+    assert is_stable(48, 10)
+
