@@ -39,13 +39,16 @@ GNOME Release Team
 """
 
 def test_create_stable_announcement():
-    r48_9 = create_stable_announcement(48, 9)
+    subj_9, r48_9 = create_stable_announcement(48, 9)
+    assert subj_9 == "GNOME 48.9 is released"
     assert r48_9 == expected_48_9
-    r48_10 = create_stable_announcement(48, 10)
+
+    subj_10, r48_10 = create_stable_announcement(48, 10)
+    assert subj_10 == "GNOME 48.10 is released"
     assert r48_10 == expected_48_10
 
     # .0 announcments are skipped as we handle the release notes through press releases
-    assert create_stable_announcement(48, 0) == "" 
+    assert create_stable_announcement(48, 0) == ("", "")
 
 def test_is_stable():
     assert not is_stable(48, "alpha")
