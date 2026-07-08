@@ -61,6 +61,12 @@ def main():
     major = int(full_version[0])
     minor = str(full_version[1])
 
+    if minor == "0":
+        print(
+            "Skipping stable .0 release. Enjoy the release party and press announcment."
+        )
+        return
+
     stable = is_stable(major, minor)
 
     if stable:
