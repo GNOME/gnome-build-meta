@@ -5,8 +5,8 @@ sources:
   url: github:krb5/krb5.git
   track: "krb5-*.*.*-final"
   ref: krb5-1.22.2-final-0-g8570e77819563e036027e1da789d08ec9333ed4d
-- kind: patch
-  path: patches/krb5/fix-strchr-conformance-to-c23.patch
+- kind: patch_queue
+  path: patches/krb5
 
 build-depends:
 - (@): include/gcc-for-recc.yml
