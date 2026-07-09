@@ -41,8 +41,3 @@ Now you should have a working GNOME OS setup on real hardware. Since GNOME OS is
 ## Note on Dual-Booting
 
 Dual-booting GNOME OS is not recommended or officially supported. If you need to dual-boot GNOME OS with another OS, follow the [manual dual-boot instructions](./manual-dual-boot.md).
-
-## Optional: Running in a VM on Apple Devices
-
-<!-- TODO -->
-To run GNOME OS in a virtual machine on Apple devices, see the [UTM setup guide].
