@@ -10,7 +10,7 @@ include:
     rumdl-version: "0.2.5"
     extra-rules:
       - !reference [".stage-only-rules", "rules"]
-- component: "gitlab.gnome.org/GNOME/citemplates/mdbook@master"
+- component: "gitlab.gnome.org/GNOME/citemplates/mdbook@ada-magicat/add-mdbook"
   inputs:
     job-stage: "deploy"
     mdbook-version: "0.5.3"
