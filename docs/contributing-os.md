@@ -225,13 +225,13 @@ scp -i ssh/ephemeral -o IdentitiesOnly=yes -r utils/ files/boot-keys/ youruser@v
 Then enable the local repository. For a **remote machine** point at the host serving the repository:
 
 ```shell
-ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/files/boot-keys/import-pubring.pgp http://your-hostname-or-ip:8080
+ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://your-hostname-or-ip:8080
 ```
 
 For a **virtual machine**, point at the QEMU user-networking gateway to the host:
 
 ```shell
-ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/files/boot-keys/import-pubring.pgp http://10.0.2.2:8080
+ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://10.0.2.2:8080
 ```
 
 Finally, update and reboot:
