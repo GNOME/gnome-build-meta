@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:libpeas.git
   track: main
-  ref: 2.2.1-2-gdbe4e39a2def7326595451e2800aa9cec1dae744
+  ref: 2.2.1-3-g91baf7eae55d325b593e9a2dddbb7519587ef587
 
 build-depends:
 - (@): include/gcc-for-recc.yml

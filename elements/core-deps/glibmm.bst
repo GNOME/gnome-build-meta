@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:glibmm.git
   track: master
-  ref: 2.88.1-4-g00508a702de117967ee8ae8c70f3786c4d73f958
+  ref: 2.88.1-5-g289433385cb9d94e87e18a226042a0334cf1c947
 
 build-depends:
 - (@): include/gcc-for-recc.yml

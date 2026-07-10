@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-system-monitor.git
   track: main
-  ref: 50.0-19-g9405afe745af7d5de30dfdc3776c02a6748ea0f1
+  ref: 50.0-20-g89e5548fd1af18b0d50b7685540efd73071ac8cc
 
 build-depends:
 - (@): include/gcc-for-recc.yml

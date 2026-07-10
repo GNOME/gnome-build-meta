@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gi-docgen.git
   track: main
-  ref: 2026.1-25-g32926a53220287e648e7a5997ad16330aa8c439b
+  ref: 2026.1-27-gb27747121ae6045a6e0dfce5e268a65b642361cd
 
 build-depends:
 - (@): include/gcc-for-recc.yml
