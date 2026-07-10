@@ -18,7 +18,7 @@ The goals of the GNOME OCI images are:
 
 Deploying applications against the images is a non-goal. We have Flatpak and Flathub.
 
-These OCI images are currently available (see also the [published build outputs](../README.md#published-build-outputs)):
+These OCI images are currently available (see also the [published build outputs](./ci-outputs.md)):
 
 - Platform: Mirror of the `org.gnome.Platform` Flatpak runtime
 - Sdk: Mirror of the `org.gnome.Sdk` Flatpak runtime

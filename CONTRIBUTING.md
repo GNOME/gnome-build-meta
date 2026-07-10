@@ -42,7 +42,7 @@ If you need help with your contributions, ask for help in [`#gnome-os:gnome.org`
 
 ## 3. Making changes
 
-You can find definitions for components, their build steps and dependencies under `elements/`. Elements can depend on other elements and be composed together to build complete targets like the ones in [published build outputs](./README.md#published-build-outputs). Adding a new component or dependency generally means adding a new BuildStream element and modifying existing ones to include it in its list of dependencies.
+You can find definitions for components, their build steps and dependencies under `elements/`. Elements can depend on other elements and be composed together to build complete targets like the ones in [published build outputs](./ci-outputs.md). Adding a new component or dependency generally means adding a new BuildStream element and modifying existing ones to include it in its list of dependencies.
 
 We use the [Freedesktop SDK](https://freedesktop-sdk.io/) as a base for a lot of our components, using a [BuildStream junction](https://docs.buildstream.build/2.7/junctions/junction-elements.html). This means that some components are shared and changes to those components should be done upstream in the Freedesktop SDK. Such components are prefixed with `freedesktop-sdk.bst:` when listed as a dependency, so they are easy to spot.
 
@@ -142,7 +142,7 @@ Once you have carefully reviewed and tested your changes, you can contribute the
 
 How to do so depends on the individual project you've made changes to, since each project has its own contribution conventions and guidelines. For components such as the Linux kernel, GNOME Shell, or GNOME Settings, these are usually described in each project's repository. If you've used `bst workspace open`, you can find them in the workspace directory you checked out to (e.g. `../linux/` or `../gnome-control-center/`).
 
-Once your change has been merged upstream and a new release has been created, the next [`update_refs`](.gitlab-ci.yml) job in CI/CD will usually automatically update the references to include the new upstream version with your changes. Once merged, CI/CD will build and deploy new prebuilt [published build outputs](./README.md#published-build-outputs).
+Once your change has been merged upstream and a new release has been created, the next [`update_refs`](.gitlab-ci.yml) job in CI/CD will usually automatically update the references to include the new upstream version with your changes. Once merged, CI/CD will build and deploy new prebuilt [published build outputs](./ci-outputs.md).
 
 ### 4.2 Option 2: Changes to GNOME Build Metadata itself
 
@@ -150,4 +150,4 @@ If you've made a change to GNOME Build Metadata itself, such as adding or modify
 
 Be sure to select the correct target branch; the default is `master`, so if you're contributing a change to a different version, switch it to that version's branch, e.g. `gnome-50`. Fill out the merge request description (it might be helpful to look at [recently merged MRs](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/?sort=created_date&state=merged&first_page_size=20) for inspiration), submit it, and someone will review it for you.
 
-Once approved, CI/CD will build your MR and run the automated integration tests to make sure nothing breaks. Once merged, either directly or via an upstream release picked up by [`update_refs`](.gitlab-ci.yml), CI/CD will build and deploy new prebuilt [published build outputs](./README.md#published-build-outputs).
+Once approved, CI/CD will build your MR and run the automated integration tests to make sure nothing breaks. Once merged, either directly or via an upstream release picked up by [`update_refs`](.gitlab-ci.yml), CI/CD will build and deploy new prebuilt [published build outputs](./ci-outputs.md).
