@@ -87,7 +87,7 @@ After booting, you should install GNOME OS to disk by following the [install sec
 
 While it's possible to rebuild the GNOME OS images on each change and reinstall them each time you make changes, this leads to a very slow iteration cycle and is not recommended. Instead, use the `systemd-sysext` and/or `systemd-sysupdate` workflows described in the following sections to build and deploy your changes to your local workstation, a remote machine, or a virtual machine in a much faster way.
 
-The following uses `$SSH_ARGS` as placeholder SSH arguments when targeting a virtual machine or a remote machine. For a virtual machine started with `./utils/run-secure-vm.sh`, use the arguments printed after running `./utils/run-secure-vm.sh` (e.g. `export SSH_ARGS="-i ssh/ephemeral -o IdentitiesOnly=yes root@vsock/777"`). For a remote machine, set `export SSH_ARGS="user@remote-machine-hostname-or-ip"`.
+The following uses `$SSH_ARGS` as placeholder SSH arguments when targeting a virtual machine or a remote machine. For a virtual machine started with `./utils/run-secure-vm.sh`, use the arguments printed after running `./utils/run-secure-vm.sh` (e.g. `export SSH_ARGS="-i ssh/ephemeral -o IdentitiesOnly=yes root@vsock/777"`). For a remote machine, set `export SSH_ARGS="-tt user@remote-machine-hostname-or-ip"`.
 
 ### 4.1 Option 1: By building and installing a system extension (`systemd-sysext`)
 
@@ -138,8 +138,8 @@ First, enable the `devel` extension to get `sysext-add` (skip this step if it's 
 On a virtual machine, enabling the `devel` extension pulls from the local sysupdate repository, so `utils/run-sysupdate-repo.sh --devel` must be running as described in [In a virtual machine](#21-option-1-in-a-virtual-machine).
 
 ```shell
-ssh $SSH_ARGS run0 updatectl enable devel --now
-ssh $SSH_ARGS run0 systemd-sysext refresh --force
+ssh -tt $SSH_ARGS run0 updatectl enable devel --now
+ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
 ```
 
 Then copy the system extension to the target. For a **remote machine** use `scp`:
@@ -157,21 +157,21 @@ scp -i ssh/ephemeral -o IdentitiesOnly=yes zz-gnome-control-center.sysext.raw yo
 Then apply the system extension by running the following:
 
 ```shell
-ssh $SSH_ARGS run0 sysext-add --persistent /tmp/zz-gnome-control-center.sysext.raw
-ssh $SSH_ARGS run0 systemd-sysext refresh --force
+ssh -tt $SSH_ARGS run0 sysext-add --persistent /tmp/zz-gnome-control-center.sysext.raw
+ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
 ```
 
 If the component includes systemd units, reload the daemon by running the following:
 
 ```shell
-ssh $SSH_ARGS run0 systemctl daemon-reload
+ssh -tt $SSH_ARGS run0 systemctl daemon-reload
 ```
 
 To remove the system extension from the target, run the following:
 
 ```shell
-ssh $SSH_ARGS run0 sysext-remove zz-gnome-control-center.sysext.raw
-ssh $SSH_ARGS run0 systemd-sysext refresh --force
+ssh -tt $SSH_ARGS run0 sysext-remove zz-gnome-control-center.sysext.raw
+ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
 ```
 
 </details>
@@ -225,20 +225,20 @@ scp -i ssh/ephemeral -o IdentitiesOnly=yes -r utils/ files/boot-keys/ youruser@v
 Then enable the local repository. For a **remote machine** point at the host serving the repository:
 
 ```shell
-ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://your-hostname-or-ip:8080
+ssh -tt $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://your-hostname-or-ip:8080
 ```
 
 For a **virtual machine**, point at the QEMU user-networking gateway to the host:
 
 ```shell
-ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://10.0.2.2:8080
+ssh -tt $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubring /tmp/gnome-build-meta/boot-keys/import-pubring.pgp http://10.0.2.2:8080
 ```
 
 Finally, update and reboot:
 
 ```shell
-ssh $SSH_ARGS run0 updatectl update host@l.1 # Without passing `--same-version` to run-sysupdate-repo.sh, the number after `l.` increments on each run
-ssh $SSH_ARGS run0 systemctl reboot
+ssh -tt $SSH_ARGS run0 updatectl update host@l.1 # Without passing `--same-version` to run-sysupdate-repo.sh, the number after `l.` increments on each run
+ssh -tt $SSH_ARGS run0 systemctl reboot
 ```
 
 After rebooting, select the new version (`l.1`) from the `systemd-boot` menu. If the target uses disk encryption, at the TPM PIN prompt enter your disk recovery key, not your TPM PIN.
@@ -264,7 +264,7 @@ run0 utils/enable-local-repo.sh --clean
 On a virtual machine not started with `./utils/run-secure-vm.sh --local-updates`, or on a remote machine, run the following:
 
 ```shell
-ssh $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --clean
+ssh -tt $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --clean
 ```
 
 </details>
