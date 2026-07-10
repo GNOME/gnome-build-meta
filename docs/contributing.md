@@ -70,9 +70,9 @@ Now make the changes you want to make in your workspace, for example in `../linu
 
 How to build, deploy and test depends on which build output you're contributing to. Follow the dedicated guide for each:
 
-- **GNOME OS**: see the [GNOME OS contribution guide](./docs/contributing-os.md)
-- **GNOME Flatpak runtimes**: see the [Flatpak runtimes contribution guide](./docs/contributing-flatpak.md)
-- **GNOME OCI images**: see the [OCI images contribution guide](./docs/contributing-oci.md)
+- **GNOME OS**: see the [GNOME OS contribution guide](./contributing-os.md)
+- **GNOME Flatpak runtimes**: see the [Flatpak runtimes contribution guide](./contributing-flatpak.md)
+- **GNOME OCI images**: see the [OCI images contribution guide](./contributing-oci.md)
 
 <details>
 <summary>Expand instructions for advanced users wanting to speed up rebuilds by disabling strict mode</summary>

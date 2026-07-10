@@ -1,6 +1,6 @@
 # Contributing to the GNOME Flatpak runtimes
 
-This guide covers the Flatpak runtime-specific parts of contributing. Read the [contribution guide](../CONTRIBUTING.md) first for the general setup.
+This guide covers the Flatpak runtime-specific parts of contributing. Read the [contribution guide](./contributing.md) first for the general setup.
 
 ## 1. Building and installing the runtimes locally
 
@@ -38,4 +38,4 @@ Or build an app of yours against the locally installed runtime using [GNOME Buil
 
 ## 3. Opening a merge request with your changes
 
-See [Opening a merge request with your changes](../CONTRIBUTING.md#4-opening-a-merge-request-with-your-changes).
+See [Opening a merge request with your changes](./contributing.md#4-opening-a-merge-request-with-your-changes).

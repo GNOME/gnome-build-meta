@@ -1,6 +1,6 @@
 # Contributing to GNOME OS
 
-This guide covers the GNOME OS-specific parts of contributing. Read the [contribution guide](../CONTRIBUTING.md) first for the general setup.
+This guide covers the GNOME OS-specific parts of contributing. Read the [contribution guide](./contributing.md) first for the general setup.
 
 For [automated integration tests](#5-running-automated-integration-tests), you also need to install the [ssam_openqa](https://gitlab.gnome.org/sthursfield/ssam_openqa) tool manually like so:
 
@@ -95,7 +95,7 @@ This option works best if you want to temporarily and quickly deploy your change
 
 While this works for any of the included apps too, not just system components, iterating on apps directly using Flatpak via for example [GNOME Builder](https://apps.gnome.org/Builder/) or [Foundry](https://gitlab.gnome.org/GNOME/foundry) is preferred.
 
-First, open a workspace for the component you want to work on as described in [Making changes](../CONTRIBUTING.md#3-making-changes). Then, each time you want to build a system extension with your changes, run the following:
+First, open a workspace for the component you want to work on as described in [Making changes](./contributing.md#3-making-changes). Then, each time you want to build a system extension with your changes, run the following:
 
 ```shell
 sysext-build-element --verbose zz-gnome-control-center core/gnome-control-center.bst
@@ -180,7 +180,7 @@ ssh $SSH_ARGS run0 systemd-sysext refresh --force
 
 This option works best if you want to permanently deploy your changes to your local workstation, a remote machine, or a virtual machine. A reboot is required to see your changes in action. Unlike with the [`systemd-sysext` option](#41-option-1-by-building-and-installing-a-system-extension-systemd-sysext), this option can be used to iterate on the kernel.
 
-First, open a workspace for the component you want to work on as described in [Making changes](../CONTRIBUTING.md#3-making-changes). Then, each time you want to build a `systemd-sysupdate` image with your changes and serve it from a local repository, run the following:
+First, open a workspace for the component you want to work on as described in [Making changes](./contributing.md#3-making-changes). Then, each time you want to build a `systemd-sysupdate` image with your changes and serve it from a local repository, run the following:
 
 ```shell
 utils/run-sysupdate-repo.sh --devel # Append `--same-version` to avoid rebuilding the whole chain on the next run
@@ -305,4 +305,4 @@ For common troubleshooting steps, see the [debugging guide](./debugging.md).
 
 ## 7. Opening a merge request with your changes
 
-See [Opening a merge request with your changes](../CONTRIBUTING.md#4-opening-a-merge-request-with-your-changes).
+See [Opening a merge request with your changes](./contributing.md#4-opening-a-merge-request-with-your-changes).
