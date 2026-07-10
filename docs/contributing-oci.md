@@ -1,6 +1,6 @@
 # Contributing to the GNOME OCI images
 
-This guide covers the OCI-image-specific parts of contributing. Read the [contribution guide](../CONTRIBUTING.md) first for the general setup.
+This guide covers the OCI-image-specific parts of contributing. Read the [contribution guide](./contributing.md) first for the general setup.
 
 We provide OCI images that are as close as possible to the other formats we pack images into (Flatpak, DDIs). This is done because sometimes it's easier to leverage existing OCI tooling for certain tasks. Unlike our other images, the OCI images are not "supported" in the same ways and only exist for testing and development. They are not meant to be used for any kind of deployment.
 
@@ -81,4 +81,4 @@ See the [GNOME OS contribution guide](./contributing-os.md) for more information
 
 ## 3. Opening a merge request with your changes
 
-See [Opening a merge request with your changes](../CONTRIBUTING.md#4-opening-a-merge-request-with-your-changes).
+See [Opening a merge request with your changes](./contributing.md#4-opening-a-merge-request-with-your-changes).

@@ -70,9 +70,9 @@ Now make the changes you want to make in your workspace, for example in `../linu
 
 How to build, deploy and test depends on which build output you're contributing to. Follow the dedicated guide for each:
 
-- **GNOME OS**: see the [GNOME OS contribution guide](./docs/contributing-os.md)
-- **GNOME Flatpak runtimes**: see the [Flatpak runtimes contribution guide](./docs/contributing-flatpak.md)
-- **GNOME OCI images**: see the [OCI images contribution guide](./docs/contributing-oci.md)
+- **GNOME OS**: see the [GNOME OS contribution guide](./contributing-os.md)
+- **GNOME Flatpak runtimes**: see the [Flatpak runtimes contribution guide](./contributing-flatpak.md)
+- **GNOME OCI images**: see the [OCI images contribution guide](./contributing-oci.md)
 
 <details>
 <summary>Expand instructions for advanced users wanting to speed up rebuilds by disabling strict mode</summary>
@@ -134,6 +134,10 @@ bst -o arch aarch64 build sdk/gjs.bst
 bst -o arch aarch64 shell --build sdk/gjs.bst
 ```
 
+### Making changes to documentation
+
+Missing something? This documentation is written in markdown and is kept in the [docs/](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/tree/master/docs) subdirectory of the repository. We are happy to get more contributions to improve our documentation!
+
 ## 4. Opening a merge request with your changes
 
 Once you have carefully reviewed and tested your changes, you can contribute them upstream. Please also see the [GNOME Project Handbook](https://handbook.gnome.org/development/change-submission.html) for a general GNOME GitLab usage guide.
@@ -151,9 +155,3 @@ If you've made a change to GNOME Build Metadata itself, such as adding or modify
 Be sure to select the correct target branch; the default is `master`, so if you're contributing a change to a different version, switch it to that version's branch, e.g. `gnome-50`. Fill out the merge request description (it might be helpful to look at [recently merged MRs](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/?sort=created_date&state=merged&first_page_size=20) for inspiration), submit it, and someone will review it for you.
 
 Once approved, CI/CD will build your MR and run the automated integration tests to make sure nothing breaks. Once merged, either directly or via an upstream release picked up by [`update_refs`](.gitlab-ci.yml), CI/CD will build and deploy new prebuilt [published build outputs](./ci-outputs.md).
-
-### Exploring Further
-
-You can find more contributor docs in the docs/ folder.
-
-Missing something? We are happy to get more contributions to improve our documentation!
