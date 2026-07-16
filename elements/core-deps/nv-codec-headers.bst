@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:FFmpeg/nv-codec-headers.git
   track: 'n*.*.*.*'
-  ref: n13.0.19.0-0-ge844e5b26f46bb77479f063029595293aa8f812d
+  ref: n13.1.15.0-0-g0a6fba9a2820628b8103464f4c8753ee05838baa
 
 build-depends:
 - (@): include/gcc-for-recc.yml

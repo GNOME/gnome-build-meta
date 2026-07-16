@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fish-shell/fish-shell.git
   track: '*.*'
-  ref: 4.8.0-0-gd573dd9f79df334baf879928c3733730e1762eec
+  ref: 4.8.1-0-gacdaf2fbdb62b9af34694ccea7e8cb4c43f22c2f
 - kind: cargo2
   ref:
   - kind: registry

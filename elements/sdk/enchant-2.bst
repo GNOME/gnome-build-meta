@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:rrthomas/enchant.git
   track: "v*.*.*"
-  ref: v2.8.18-0-g45b801ccecff1aaee91df2762a7f7b1fa1a649e3
+  ref: v2.8.19-0-g6e57bd8ade169f62036720f64529c3913678fe4e
 - kind: git_module
   path: gnulib
   url: savannah:gnulib.git

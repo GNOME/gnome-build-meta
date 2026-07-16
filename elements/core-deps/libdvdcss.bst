@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: videolan:libdvdcss.git
   track: '*.*.*'
-  ref: 1.5.0-0-gc838ca97553aeb8505b7baf02b9a90f8505de212
+  ref: 1.6.0-0-g9de0528e142d6dd31c4d198130d4a48ff3397d2b
 
 build-depends:
 - (@): include/gcc-for-recc.yml

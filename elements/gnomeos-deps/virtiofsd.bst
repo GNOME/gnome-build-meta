@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:virtio-fs/virtiofsd.git
   track: 'v*'
-  ref: v1.13.3-0-gbbf82173682a3e48083771a0a23331e5c23b4924
+  ref: v1.14.0-0-gc2540f8db14caba81c1e37fba23fc7bf2cd7f0dd
 - kind: cargo2
   cargo-lock: Cargo.lock
   ref:
@@ -262,12 +262,12 @@ sources:
     sha: 77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04
   - kind: registry
     name: proc-macro2
-    version: 1.0.63
-    sha: 7b368fba921b0dce7e60f5e04ec15e565b3303972b42bcfde1d0713b881959eb
+    version: 1.0.103
+    sha: 5ee95bc4ef87b8d5ba32e8b7714ccc834865276eab0aed5c9958d00ec45f49e8
   - kind: registry
     name: quote
-    version: 1.0.29
-    sha: 573015e8ab27661678357f27dc26460738fd2b6c86e46f386fde94cb5d913105
+    version: 1.0.42
+    sha: a338cc41d27e6cc6dce6cefc13a0729dfbb81c262b1f519331575dd80ef3067f
   - kind: registry
     name: rand
     version: 0.8.5
@@ -342,8 +342,8 @@ sources:
     sha: c50aef8a904de4c23c788f104b7dddc7d6f79c647c7c8ce4cc8f73eb0ca773dd
   - kind: registry
     name: syn
-    version: 2.0.32
-    sha: 239814284fd6f1a4ffe4ca893952cdd93c224b6a1571c9a9eadd670295c0c9e2
+    version: 2.0.111
+    sha: 390cc9a294ab71bdb1aa2e99d13be9c753cd2d7bd6560c77118597410c4d2e87
   - kind: registry
     name: syslog
     version: 6.1.1
@@ -354,12 +354,12 @@ sources:
     sha: bab24d30b911b2376f3a13cc2cd443142f0c81dda04c118693e35b3835757755
   - kind: registry
     name: thiserror
-    version: 1.0.41
-    sha: c16a64ba9387ef3fdae4f9c1a7f07a0997fce91985c0336f1ddc1822b3b37802
+    version: 2.0.17
+    sha: f63587ca0f12b72a0600bcba1d40081f830876000bb46dd2337a3051618f4fc8
   - kind: registry
     name: thiserror-impl
-    version: 1.0.41
-    sha: d14928354b01c4d6a4f0e549069adef399a284e7995c7ccca94e8a07a5346c59
+    version: 2.0.17
+    sha: 3ff15c8ecd7de3849db632e14d18d2571fa09dfc5ed93479bc4485c7a517c913
   - kind: registry
     name: time
     version: 0.3.11
@@ -377,37 +377,33 @@ sources:
     version: 1.11.0
     sha: f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a
   - kind: registry
-    name: uuid-macro-internal
-    version: 1.11.0
-    sha: 6b91f57fe13a38d0ce9e28a03463d8d3c2468ed03d75375110ec71d93b449a08
-  - kind: registry
     name: version_check
     version: 0.9.4
     sha: 49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f
   - kind: registry
     name: vhost
-    version: 0.13.0
-    sha: bce0aad4d8776cb64f1ac591e908a561c50ba6adac4416296efee590b155623f
+    version: 0.16.0
+    sha: ee90657203a8644e9a0860a0db6a7887d8ef0c7bc09fc22dfa4ae75df65bac86
   - kind: registry
     name: vhost-user-backend
-    version: 0.17.0
-    sha: daa03d476437d005abd2dec0970c468ed2a692e6a0604b834699680e171de942
+    version: 0.22.0
+    sha: d5925983d8fb537752ad3e26604c0a17abfa5de77cb6773a096c8a959c9eca0f
   - kind: registry
     name: virtio-bindings
-    version: 0.2.4
-    sha: 1711e61c00f8cb450bd15368152a1e37a12ef195008ddc7d0f4812f9e2b30a68
+    version: 0.2.7
+    sha: 091f1f09cfbf2a78563b562e7a949465cce1aef63b6065645188d995162f8868
   - kind: registry
     name: virtio-queue
-    version: 0.14.0
-    sha: 872e2f3fbd70a7e6f01689720cce3d5c2c5efe52b484dd07b674246ada0e9a8d
+    version: 0.17.0
+    sha: e358084f32ed165fddb41d98ff1b7ff3c08b9611d8d6114a1b422e2e85688baf
   - kind: registry
     name: vm-memory
-    version: 0.16.0
-    sha: e2919f87420b6998a131eb7c78843890295e91a3f8f786ccc925c8d387b75121
+    version: 0.17.1
+    sha: f39348a049689cabd3377cdd9182bf526ec76a6f823b79903896452e9d7a7380
   - kind: registry
     name: vmm-sys-util
-    version: 0.12.1
-    sha: 1d1435039746e20da4f8d507a72ee1b916f7b4b05af7a91c093d2c6561934ede
+    version: 0.15.0
+    sha: 506c62fdf617a5176827c2f9afbcf1be155b03a9b4bf9617a60dbc07e3a1642f
   - kind: registry
     name: wasi
     version: 0.11.0+wasi-snapshot-preview1
@@ -472,7 +468,6 @@ sources:
     name: zerocopy-derive
     version: 0.7.35
     sha: fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e
-
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/make.bst

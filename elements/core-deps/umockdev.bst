@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github_files:martinpitt/umockdev.git
   track: '*.*.*'
-  ref: 0.19.7-0-g39f785a74e3fcfa27ea5096fd7945ad080420d35
+  ref: 0.19.8-0-gb0e239fca33ca9e9663be8aa18778a2ce18cb207
 
 build-depends:
 - (@): include/gcc-for-recc.yml
