@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:at-spi2-core.git
   track: main
-  ref: 2.61.0-2-g92615fc514f7f0834273d75186acc896f9c8661c
+  ref: 2.61.0-4-gae9a26ad5e1c34b1482dbbde9db59f2c094c6e7e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
