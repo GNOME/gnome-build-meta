@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:sushi.git
   track: main
-  ref: 51.alpha-70-g87dc40cad3f9a4bfa2e28d04370c8bb1570394ba
+  ref: 51.alpha-81-gaf3db54bdd0a43c928be5491a736cae9ee45ce2e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
