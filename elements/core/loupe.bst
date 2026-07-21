@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 51.alpha-6-gb5cf827585778520119f62b4e3565c4d9baa0b9a
+  ref: 51.alpha-7-g2112f8716815eea2d7621279f75a8862a67d044e
 - kind: cargo2
 
   ref:
@@ -385,52 +385,52 @@ sources:
     version: 0.22.8
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin
-    version: 4.0.0-alpha.1
+    version: 4.0.0-alpha.7
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-builtin
-    version: 4.0.0-alpha.1
+    version: 4.0.0-alpha.7
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-common
     version: 2.0.0-alpha.1
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-core
-    version: 4.0.0-alpha.1
+    version: 4.0.0-alpha.7
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-external
-    version: 4.0.0-alpha.1
+    version: 4.0.0-alpha.7
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-image-rs
-    version: 2.2.0-alpha.6
+    version: 2.2.0-alpha.7
   - kind: git
-    commit: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+    commit: 882965515fc0de4f00f52318f2c35098a76855c9
     repo: gnome:glycin.git
     query:
-      rev: 32083724ee730fb6b35b6382fb8af7b6ab1f2992
+      rev: 882965515fc0de4f00f52318f2c35098a76855c9
     name: glycin-utils
     version: 5.0.0-alpha.1
   - kind: registry
@@ -466,13 +466,17 @@ sources:
     version: 0.11.4
     sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo
     version: 0.5.0-alpha.4
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-common
     version: 2.0.0-alpha.2
   - kind: registry
@@ -480,8 +484,10 @@ sources:
     version: 0.5.0-alpha.3
     sha: e68d453f54f396ca43664463e3fa93de6ece835e113dd63f694349d669382821
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-exif
     version: 0.5.0-alpha.4
   - kind: registry
@@ -489,28 +495,38 @@ sources:
     version: 0.5.0-alpha.2
     sha: fa46d802b33586d3a1fd412b3fbb2b10ffbcde5aecbe5fddb4d61c827a001b9e
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-jpeg
     version: 0.5.0-alpha.4
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-png
     version: 0.5.0-alpha.4
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-tiff
     version: 0.5.0-alpha.4
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-webp
     version: 0.5.0-alpha.4
   - kind: git
-    commit: 2079c478a108141d4507e93d2d74360b353f5d83
+    commit: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     repo: github:gufo-rs/gufo.git
+    query:
+      rev: 25ae7f4d68532314fe8b43b0f27360b952d5a0b6
     name: gufo-xmp
     version: 0.5.0-alpha.4
   - kind: registry
