@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librest.git
   track: master
-  ref: 0.10.2-1-g0694f9c71d71fa1b6efef406e8b3bc088ed8acba
+  ref: 0.10.2-3-g78c08fda521350a8f11e9034fa1b429c1d98d6d1
 
 build-depends:
 - (@): include/gcc-for-recc.yml
