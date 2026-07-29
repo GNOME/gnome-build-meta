@@ -6,7 +6,7 @@ sub run {
     my $self = shift;
 
     # Skip tour first
-    assert_and_click('gnome_installer_tour', timeout => 120, button => 'left');
+    assert_and_click('gnome_desktop_tour', timeout => 120, button => 'left');
 
     # We are still in overview after skipping the tour
     send_key('super');
