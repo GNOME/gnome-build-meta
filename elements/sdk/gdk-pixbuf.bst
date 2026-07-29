@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gdk-pixbuf.git
   track: master
-  ref: 2.44.7-4-gdea0c566541f27fdb90c56698808afaded69c01f
+  ref: 2.44.7-6-g80cdfd2db3ce20b3ad122cee9374c9136627f95f
 
 build-depends:
 - (@): include/gcc-for-recc.yml
