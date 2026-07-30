@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: videolan:libbluray.git
   track: '*.*.*'
-  ref: 1.4.1-0-g7d94f2660af5bfc16015291a03539329135c18f1
+  ref: 1.5.0-0-gd75c88e54c893e5cbf4c61d356477655eb435769
 - kind: git_module
   url: videolan:libudfread.git
   path: contrib/libudfread

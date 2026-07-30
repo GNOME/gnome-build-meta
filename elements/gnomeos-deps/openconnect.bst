@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:openconnect/openconnect.git
   track: 'v*'
-  ref: v9.12-0-g59f2e59eb3e436364ef82e630e5a2f88f32acd58
+  ref: v9.21-0-g8b702bf2dbaf11302ed98629214b1df5d50a12aa
 
 variables:
   conf-local: >-

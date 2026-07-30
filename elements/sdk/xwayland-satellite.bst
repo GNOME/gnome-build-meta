@@ -17,7 +17,7 @@ sources:
 - kind: git_repo
   url: github:Supreeeme/xwayland-satellite.git
   track: 'v*'
-  ref: v0.8.1-0-g536bd32efc935bf876d6de385ec18a1b715c9358
+  ref: v0.8.2-0-g8d135d3b2854b30fd01ea6cd6c27e523dd50a839
 - kind: cargo2
   ref:
   - kind: registry

@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: videolan:libdvdread.git
   track: '*.*.*'
-  ref: 7.0.1-0-gc7f373951bae9642e1ce1fbb2cd02f92c09756e0
+  ref: 7.1.1-0-g8e43bfea6cc731f48902ce55e41c540b497b6a84
 build-depends:
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:emersion/libdisplay-info.git
   track: '*.*.*'
-  ref: 0.3.0-0-g47a5590e9c4eb35d67651b8c05a55f1a48259329
+  ref: 0.4.0-0-gc67a3e9bedb05ab61c7443704a1a107e76254595
 
 build-depends:
 - core-deps/hwdata.bst

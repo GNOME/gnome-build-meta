@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:hughsie/passim.git
   track: '*.*.*'
-  ref: 0.1.11-0-g5a688cb32891441956f0fa0ed0929880de13b8a0
+  ref: 0.1.12-0-g30d8fb64b4b6f45460a2e6767d8197fa5ce6008e
 
 build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
