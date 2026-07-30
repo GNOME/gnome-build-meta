@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:hughsie/appstream-glib.git
   track: 'appstream_glib_*_*_*'
-  ref: appstream_glib_0_8_3-0-g830cdbd0581110bdb74188e7a66c272cd059f5bb
+  ref: appstream_glib_0_8_4-0-g5bce4d6fda44cb107cdb71a990c23f312bff38d8
 
 build-depends:
 - (@): include/gcc-for-recc.yml

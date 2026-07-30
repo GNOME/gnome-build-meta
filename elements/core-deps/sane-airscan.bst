@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:alexpevzner/sane-airscan.git
   track: '*.*'
-  ref: 0.99.37-0-g03eddd0d8058c482462bccabadad0e56e8400cb4
+  ref: 0.99.38-0-g9da18d88c88f542671b24fc0433dd7d69dcb0132
 
 build-depends:
 - (@): include/gcc-for-recc.yml

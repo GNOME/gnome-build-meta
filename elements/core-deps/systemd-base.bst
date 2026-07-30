@@ -15,7 +15,7 @@ sources:
       version-guess-pattern: '(\d+)(?:\.(\d+))?'
       exclude:
       - '*-rc*'
-  ref: v261.1-0-geff9446d505d62c075bed37d606860b38cfe51fb
+  ref: v261.2-0-g4925d9f07fc697efccd98a93046ff535b8832445
 
 build-depends:
 - (@): include/gcc-for-recc.yml

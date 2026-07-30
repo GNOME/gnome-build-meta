@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: videolan:libdvdread.git
   track: '*.*.*'
-  ref: 7.1.0-0-g97c3d8f6157ecb745a55be9886308dabe1daad24
+  ref: 7.1.1-0-g8e43bfea6cc731f48902ce55e41c540b497b6a84
 
 build-depends:
 - (@): include/gcc-for-recc.yml
