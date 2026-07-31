@@ -7,7 +7,7 @@ sources:
   exclude:
   - "*-dev*"
   - "*-rc*"
-  ref: 1.56.1-0-gb829f838fc5d8c93437faa5db44a5396b67893de
+  ref: 1.58.0-0-g61302aac7f2e7411f3b42159544926484eacd37e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -15,6 +15,8 @@ build-depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk-doc.bst
 - sdk/vala.bst
+- freedesktop-sdk.bst:components/bpf.bst
+- freedesktop-sdk.bst:components/llvm.bst
 - freedesktop-sdk.bst:components/perl-xml-parser.bst
 - freedesktop-sdk.bst:components/sed.bst
 - freedesktop-sdk.bst:components/systemd.bst
@@ -29,6 +31,7 @@ depends:
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/iptables.bst
+- freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:components/libndp.bst
 - freedesktop-sdk.bst:components/libnvme.bst
