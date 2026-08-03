@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 51.alpha-5-gecc3a54678e099fedf2ea1252e9de42512eef338
+  ref: 51.alpha-7-g30956c5d28ca270c5080f237a45bc25f687c4727
 - kind: cargo2
   ref:
   - kind: registry
@@ -405,20 +405,20 @@ sources:
     sha: 68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66
   - kind: registry
     name: libglycin-gtk4-rebind
-    version: 0.1.0
-    sha: f06eb8570574e13c83b856f422a559704e6c1ed471c20f163e2ca05e505bfa7a
+    version: 0.2.0-beta
+    sha: 4c8292c567b69c04657110f034350be65401870ba983f4ccf5ea5d692d50a196
   - kind: registry
     name: libglycin-gtk4-rebind-sys
-    version: 0.1.0
-    sha: d5942c92d31c0a2a79cc2f64890c46952c91bccf0263d7ac4558bbdd116bab51
+    version: 0.2.0-beta
+    sha: b336784a77ad36ae307fbbec239d4ea05892c47052b4bdbe559b601d6a3491c1
   - kind: registry
     name: libglycin-rebind
-    version: 0.1.0
-    sha: 79a080d11cbd053f65de1a9c7efd096fe2a0fde6244185bd452bb11fdeb98db3
+    version: 0.2.0-beta
+    sha: dc64feeade86a0c7d4ea7e25ead4723853a2816373e8c4c0151313939c5f1ed4
   - kind: registry
     name: libglycin-rebind-sys
-    version: 0.1.0
-    sha: 65fecb1928f26a984b937deadbb0998f1a0f3c3db7fa2b9a493322e80b1f9f4b
+    version: 0.2.0-beta
+    sha: 064c0a9d4e06aa13063bcc35deec51c48844082b0c80659a26307cfc28b4c6c8
   - kind: registry
     name: linux-raw-sys
     version: 0.12.1

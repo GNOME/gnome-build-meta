@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:papers.git
   track: main
-  ref: 51.alpha-24-ga3ee91d55b0b0cfd1585f6276bab1d879bba2112
+  ref: 51.beta-1-ga008b947fbb9fc28bd7b115d0952c298487d1074
 - kind: cargo2
   ref:
   - kind: registry
@@ -196,10 +196,6 @@ sources:
     version: 1.25.0
     sha: c8efb64bd706a16a1bdde310ae86b351e4d21550d98d056f22f8a7f7a2183fec
   - kind: registry
-    name: byteorder
-    version: 1.5.0
-    sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
-  - kind: registry
     name: byteorder-lite
     version: 0.1.0
     sha: 8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495
@@ -360,10 +356,6 @@ sources:
     version: 1.1.9
     sha: 843fba2746e448b37e26a819579957415c8cef339bf08564fe8b7ddbd959573c
   - kind: registry
-    name: float_next_after
-    version: 1.0.0
-    sha: 8bf7cc16383c4b8d58b9905a8509f02926ce3058053c056376248d958c9df1e8
-  - kind: registry
     name: foldhash
     version: 0.1.5
     sha: d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2
@@ -435,18 +427,6 @@ sources:
     name: generic-array
     version: 0.14.7
     sha: 85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a
-  - kind: registry
-    name: geo
-    version: 0.30.0
-    sha: 4416397671d8997e9a3e7ad99714f4f00a22e9eaa9b966a5985d2194fc9e02e1
-  - kind: registry
-    name: geo-types
-    version: 0.7.19
-    sha: 94776032c45f950d30a13af6113c2ad5625316c9abfbccee4dd5a6695f8fe0f5
-  - kind: registry
-    name: geographiclib-rs
-    version: 0.2.7
-    sha: c5a7f08910fd98737a6eda7568e7c5e645093e073328eeef49758cfe8b0489c7
   - kind: registry
     name: getrandom
     version: 0.3.4
@@ -604,10 +584,6 @@ sources:
     version: 2.7.1
     sha: 6ea2d84b969582b4b1864a92dc5d27cd2b77b622a8d79306834f1be5ba20d84b
   - kind: registry
-    name: hash32
-    version: 0.3.1
-    sha: 47d60b12902ba28e2730cd37e95b8c9223af2808df9e902d4df49588d1470606
-  - kind: registry
     name: hashbrown
     version: 0.15.5
     sha: 9229cfe53dfd69f0609a49f65461bd93001ea1ef889cd5529dd176593f5338a1
@@ -619,10 +595,6 @@ sources:
     name: hashbrown
     version: 0.17.1
     sha: ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a
-  - kind: registry
-    name: heapless
-    version: 0.8.0
-    sha: 0bfb9eb618601c89945a70e254898da93b13be0388091d42117462b265bb3fad
   - kind: registry
     name: heck
     version: 0.5.0
@@ -643,26 +615,6 @@ sources:
     name: hmac
     version: 0.12.1
     sha: 6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e
-  - kind: registry
-    name: i_float
-    version: 1.7.0
-    sha: 85df3a416829bb955fdc2416c7b73680c8dcea8d731f2c7aa23e1042fe1b8343
-  - kind: registry
-    name: i_key_sort
-    version: 0.2.0
-    sha: 347c253b4748a1a28baf94c9ce133b6b166f08573157e05afe718812bc599fcd
-  - kind: registry
-    name: i_overlay
-    version: 2.0.5
-    sha: 0542dfef184afdd42174a03dcc0625b6147fb73e1b974b1a08a2a42ac35cee49
-  - kind: registry
-    name: i_shape
-    version: 1.7.0
-    sha: 0a38f5a42678726718ff924f6d4a0e79b129776aeed298f71de4ceedbd091bce
-  - kind: registry
-    name: i_tree
-    version: 0.8.3
-    sha: 155181bc97d770181cf9477da51218a19ee92a8e5be642e796661aee2b601139
   - kind: registry
     name: iana-time-zone
     version: 0.1.65
@@ -1064,14 +1016,6 @@ sources:
     version: 0.8.53
     sha: 47b34b781b31e5d73e9fbc8689c70551fd1ade9a19e3e28cfec8580a79290cc4
   - kind: registry
-    name: robust
-    version: 1.2.0
-    sha: 4e27ee8bb91ca0adcf0ecb116293afa12d393f9c2b9b9cd54d33e8078fe19839
-  - kind: registry
-    name: rstar
-    version: 0.12.2
-    sha: 421400d13ccfd26dfa5858199c30a5d76f9c54e0dba7575273025b43c5175dbb
-  - kind: registry
     name: rustc_version
     version: 0.4.1
     sha: cfcb3a22ef46e85b45de6ee7e79d063319ebb6594faafcf1c225ea92ab6e9b92
@@ -1459,7 +1403,6 @@ sources:
     name: zvariant_utils
     version: 3.4.0
     sha: 1e8535915cfa75547e559d8c68e8139909a4aeee076831e4ef7fc59d8172c4d6
-
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

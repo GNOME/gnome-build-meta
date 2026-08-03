@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 51.alpha-66-gb0ce3692801ab940755449b20ec60a6821ca4793
+  ref: 51.alpha-93-gb9d3cdc258c15c8ad73c955db3a77aaba6d57aca
 # please keep in sync with https://gitlab.gnome.org/GNOME/nautilus/-/blob/main/subprojects/libgxdp.wrap
 - kind: git_repo
   url: gnome:libgxdp.git

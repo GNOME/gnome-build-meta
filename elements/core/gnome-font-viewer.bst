@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-font-viewer.git
   track: main
-  ref: 50.0-12-g4b52a132cace0cbca5d529ee2c5643d6d344fba1
+  ref: 50.0-17-gd860d2d37f7d55eef72bceed2486fbeafc5ba64d
 
 build-depends:
 - (@): include/gcc-for-recc.yml

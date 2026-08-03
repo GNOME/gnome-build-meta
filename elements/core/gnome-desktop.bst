@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-desktop.git
   track: master
-  ref: 51.alpha-0-ge29e9eb0f03fcdaf632682e4b78b3e3d5524073b
+  ref: 51.alpha-2-g33c8ec9c3f2aee670a5d242df6da5e949a3ac42c
 # Needs to be kept in sync with the repo until we get a wrap source plugin
 # https://gitlab.gnome.org/GNOME/gnome-desktop/-/blob/master/subprojects/qrcodegen.wrap
 - kind: git_repo
