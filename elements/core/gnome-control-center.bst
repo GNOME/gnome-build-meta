@@ -2,9 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.3.tar.xz
-  ref: 06eebb0fd3056c4d8d78bbd3754c96108f381d70b760da423c5024946944287c
-
+  url: gnome_downloads:gnome-control-center/50/gnome-control-center-50.4.tar.xz
+  ref: 5856c73999bedf45e74f73bac3d61e2b5ec1689f8bcf1943737baeee8204fb11
 build-depends:
 # These two are more like runtime deps of the tests suite
 - core-deps/setxkbmap.bst

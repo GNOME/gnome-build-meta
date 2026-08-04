@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/50/mutter-50.3.tar.xz
-  ref: 25663fa7afc96a4c092448990c0da664b7f04dd8d9f5e3b9be2b498b1b303cb4
+  url: gnome_downloads:mutter/50/mutter-50.4.tar.xz
+  ref: 273d33c875abcb4b6cbea3f4ec045d18155fbc510c3521fc7e47926371310988
 build-depends:
 - core-deps/python-argcomplete.bst
 - core-deps/python-dbusmock.bst

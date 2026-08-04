@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gdm/50/gdm-50.1.tar.xz
-  ref: 770159373512192410f412b5d0c4678ec1573f1ae4b39c81fe75861fe8890174
+  url: gnome_downloads:gdm/50/gdm-50.2.tar.xz
+  ref: 8a4679e47cddfe8b0a1bd9d3836042deb68fb3e1b0e7e62dfd0631dc5b6fc541
 - kind: local
   path: files/gdm
   directory: gdm-config
