@@ -123,13 +123,13 @@ index 31e4ab16b0fb..8d55ca73850d 100644
  
      // Pass offsetFromRoot if known.
 
-From 780aa84a1ca224e565e6c1fed1e64fd283dd30be Mon Sep 17 00:00:00 2001
+From a727aa27c537e8ba89d35f20cd35dc033a6e358e Mon Sep 17 00:00:00 2001
 From: Carlos Garcia Campos <cgarcia@igalia.com>
-Date: Thu, 23 Jul 2026 15:27:17 +0200
+Date: Tue, 4 Aug 2026 09:00:35 -0700
 Subject: [PATCH] [GTK][WPE] Content view broken on GitLab
  https://bugs.webkit.org/show_bug.cgi?id=295662
 
-Reviewed by NOBODY (OOPS!).
+Reviewed by Simon Fraser.
 
 A layer clipped by an ancestor in one axis while the other axis stays
 overflow:visible has a semi-infinite clip rect: finite in one axis and
@@ -141,8 +141,9 @@ coordinated graphics based ports. With an empty cover rect we basically
 stopped producing new tiles for the layer, which caused that contents
 were not rendered in GitLab diff page after scrolling down a bit.
 
-We should fall back to the descendant union if ancestor clipped only one
-axis in RenderLayer::calculateLayerBounds().
+This patch clips again passing the document rectangle as constraining
+rectangle to clipRectRelativeToAncestor(), like selfClipRect() does,
+to ensure we return a finite rectangle.
 
 Test: compositing/geometry/composited-bounds-with-single-axis-clip.html
 
@@ -150,32 +151,39 @@ Test: compositing/geometry/composited-bounds-with-single-axis-clip.html
 * LayoutTests/compositing/geometry/composited-bounds-with-single-axis-clip.html: Added.
 * Source/WebCore/platform/graphics/LayoutRect.h:
 (WebCore::LayoutRect::renderableInfiniteRect):
+(WebCore::LayoutRect::infiniteRect):
 * Source/WebCore/rendering/RenderLayer.cpp:
 (WebCore::RenderLayer::calculateClipRects const):
 * Source/WebCore/rendering/RenderLayerCompositor.cpp:
 (WebCore::RenderLayerCompositor::computeAncestorClippingStack const):
-* LayoutTests/platform/ios/compositing/geometry/composited-bounds-with-single-axis-clip-expected.txt: Added.
+
+Canonical link: https://commits.webkit.org/318557@main
 ---
  ...-bounds-with-single-axis-clip-expected.txt | 24 ++++++++
  ...mposited-bounds-with-single-axis-clip.html | 58 +++++++++++++++++++
- ...-bounds-with-single-axis-clip-expected.txt | 24 ++++++++
- Source/WebCore/platform/graphics/LayoutRect.h |  6 ++
- Source/WebCore/rendering/RenderLayer.cpp      | 11 +++-
+ Source/WebCore/platform/graphics/LayoutRect.h |  8 ++-
+ Source/WebCore/rendering/RenderLayer.cpp      | 14 ++++-
  .../rendering/RenderLayerCompositor.cpp       |  6 +-
- 6 files changed, 123 insertions(+), 6 deletions(-)
+ 5 files changed, 103 insertions(+), 7 deletions(-)
  create mode 100644 LayoutTests/compositing/geometry/composited-bounds-with-single-axis-clip-expected.txt
  create mode 100644 LayoutTests/compositing/geometry/composited-bounds-with-single-axis-clip.html
- create mode 100644 LayoutTests/platform/ios/compositing/geometry/composited-bounds-with-single-axis-clip-expected.txt
 
 diff --git a/Source/WebCore/platform/graphics/LayoutRect.h b/Source/WebCore/platform/graphics/LayoutRect.h
-index 0a75d18762eab..348b079fcaadb 100644
+index 0a75d18762ea..ee5378431924 100644
 --- a/Source/WebCore/platform/graphics/LayoutRect.h
 +++ b/Source/WebCore/platform/graphics/LayoutRect.h
-@@ -223,6 +223,12 @@ class LayoutRect {
+@@ -217,12 +217,18 @@ class LayoutRect {
+     LayoutRect transposedRect() const { return LayoutRect(m_location.transposedPoint(), m_size.transposedSize()); }
+     bool isInfinite() const;
+ 
+-    static LayoutRect infiniteRect()
++    static constexpr LayoutRect infiniteRect()
+     {
+         // Return a rect that is slightly smaller than the true max rect to allow pixelSnapping to round up to the nearest IntRect without overflowing.
          return LayoutRect(LayoutUnit::nearlyMin() / 2, LayoutUnit::nearlyMin() / 2, LayoutUnit::nearlyMax(), LayoutUnit::nearlyMax());
      }
  
-+    static LayoutRect renderableInfiniteRect()
++    static constexpr LayoutRect renderableInfiniteRect()
 +    {
 +        // Return a infinite-like rect whose values are such that, when converted to float pixel values, they can reasonably represent device pixels.
 +        return LayoutRect(LayoutUnit::nearlyMin() / 32, LayoutUnit::nearlyMin() / 32, LayoutUnit::nearlyMax() / 16, LayoutUnit::nearlyMax() / 16);
@@ -185,30 +193,34 @@ index 0a75d18762eab..348b079fcaadb 100644
  
      friend bool operator==(const LayoutRect&, const LayoutRect&) = default;
 diff --git a/Source/WebCore/rendering/RenderLayer.cpp b/Source/WebCore/rendering/RenderLayer.cpp
-index b7f5b034a4e9e..061f9ab8e5c0c 100644
+index 74a713bbf047..4340e399ae52 100644
 --- a/Source/WebCore/rendering/RenderLayer.cpp
 +++ b/Source/WebCore/rendering/RenderLayer.cpp
-@@ -5664,8 +5664,17 @@ LayoutRect RenderLayer::calculateLayerBounds(const RenderLayer* ancestorLayer, c
+@@ -5627,9 +5627,21 @@ LayoutRect RenderLayer::calculateLayerBounds(const RenderLayer* ancestorLayer, c
          const RenderLayer* clippingRootLayer = flags & UseLocalClipRectExcludingCompositingIfPossible ? this : clippingRootForPainting();
          LayoutSize offsetFromRoot = offsetFromAncestor(clippingRootLayer);
          LayoutRect clipRect = clipRectRelativeToAncestor(clippingRootLayer, offsetFromRoot, infiniteRect);
 -        if (clipRect == infiniteRect)
++        if (clipRect.isInfinite())
+             return infiniteRect;
+ 
 +        auto renderableInfiniteRect = LayoutRect::renderableInfiniteRect();
 +        if (clipRect.width() > renderableInfiniteRect.width() || clipRect.height() > renderableInfiniteRect.height()) {
-+            // Similar to the CSS clip check below, fall back to the descendant union if ancestor clipped
-+            // only one axis, leaving the other one unbounded. The clipRect.isInfinte() check doesn't
-+            // work here because it checks both axis. Checking either width or height matches
-+            // LayoutRect::infiniteRect doesn't work either because clipRectRelativeToAncestor() returns
-+            // a rectangle that has been moved and intersected, so it's close to infinite but not exactly
-+            // infinite. Comparing to LayoutRect::renderableInfiniteRect() we make sure that we don't return
-+            // a rectnagle that can't be handled as layer bounds.
-             return infiniteRect;
++            // When ancestor clips only one axis, leaving the other one unbounded, clip again passing
++            // document rectangle as constraining rectangle to clipRectRelativeToAncestor(),
++            // like selfClipRect() does, to ensure we return a finite rectangle. Checking either width or
++            // height matches LayoutRect::infiniteRect doesn't work either because clipRectRelativeToAncestor()
++            // returns a rectangle that has been moved and intersected, so it's close to infinite but not exactly
++            // infinite. So, comparing to LayoutRect::renderableInfiniteRect() we make sure that we don't return
++            // a rectangle that can't be handled as layer bounds.
++            clipRect = clipRectRelativeToAncestor(clippingRootLayer, offsetFromRoot, renderer().view().documentRect());
 +        }
- 
++
          if (renderer().hasClip()) {
              if (CheckedPtr box = dynamicDowncast<RenderBox>(renderer())) {
+                 // CSS clip may be larger than our border box.
 diff --git a/Source/WebCore/rendering/RenderLayerCompositor.cpp b/Source/WebCore/rendering/RenderLayerCompositor.cpp
-index cf86f89a13814..b604b60d0ce2d 100644
+index f2d883125bed..7fa551f426e8 100644
 --- a/Source/WebCore/rendering/RenderLayerCompositor.cpp
 +++ b/Source/WebCore/rendering/RenderLayerCompositor.cpp
 @@ -3684,11 +3684,7 @@ Vector<CompositedClipData> RenderLayerCompositor::computeAncestorClippingStack(c
