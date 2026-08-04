@@ -5,6 +5,8 @@ sources:
   url: gnome:epiphany.git
   track: main
   ref: 51.alpha-8-g03b78694405fbbe09ecbe2d76c3bc3aa59a16025
+- kind: patch
+  path: patches/epiphany/a8c7c95efc7d6bd259dea55a8caf75d7cdbc675e.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml
