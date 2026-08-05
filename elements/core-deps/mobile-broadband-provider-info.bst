@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:mobile-broadband-provider-info.git
   track: main
-  ref: 20251101-60-g73b2f9b4b9bcb230a61a0bd317fa72349f7e1527
+  ref: 20251101-62-g70bf4a223ad19d2d23a693967066da3e19494770
 
 build-depends:
 - (@): include/gcc-for-recc.yml

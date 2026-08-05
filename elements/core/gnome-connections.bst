@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gnome-connections.git
   track: master
-  ref: 50.0-35-g8b9061185dbd9460a98c2da281222129403cef34
+  ref: 51.beta2-0-g0276be3efb680a225c251a5bda9727eeefedf7d7
 - kind: git_module
   url: gnome:gtk-frdp.git
   path: subprojects/gtk-frdp
-  ref: 05919e9958b655252a0e5572c215fc9aee0aa863
+  ref: 83854a24e31d1c07519f6e4393fe280d3b59e080
 
 build-depends:
 - (@): include/gcc-for-recc.yml

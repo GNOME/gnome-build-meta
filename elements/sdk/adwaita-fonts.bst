@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:adwaita-fonts.git
   track: main
-  ref: 50.0-0-gbd828c71418f7ae3af76687d6ca2a809111770f2
+  ref: 51.0-0-g0c79765f2bef25b38902fd8497616ac28185254c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
