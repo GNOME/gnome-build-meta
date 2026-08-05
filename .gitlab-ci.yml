@@ -513,7 +513,7 @@ create discourse announcement:
   needs:
   - job: "release-service"
     artifacts: false
-    optional: True
+    optional: true
   before_script: []
   rules:
   - !reference [".stage-only-rules", "rules"]
