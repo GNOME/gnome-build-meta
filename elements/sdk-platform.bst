@@ -39,7 +39,6 @@ depends:
 - sdk/libmanette-0.2.bst
 - sdk/libnotify.bst
 - sdk/libportal.bst
-- sdk/librice.bst
 - sdk/librsvg.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
