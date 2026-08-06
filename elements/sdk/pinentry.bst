@@ -1,13 +1,16 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: gnupg_ftp:gcrypt/pinentry/pinentry-1.3.2.tar.bz2
-  ref: 8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e
+- kind: git_repo
+  url: github:gpg/pinentry.git
+  track: pinentry-*.*.*
+  ref: pinentry-1.3.3-0-g9a7b78e9882b8261b0be439cccf5651b9dd971a8
 
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst
+- freedesktop-sdk.bst:components/git.bst
+- freedesktop-sdk.bst:components/texinfo.bst
 
 depends:
 - sdk/gcr.bst
@@ -17,6 +20,7 @@ depends:
 
 variables:
   conf-local: >-
+    --enable-maintainer-mode
     --enable-pinentry-gnome3
     --enable-fallback-curses
     --disable-pinentry-curses
