@@ -40,23 +40,24 @@ aliases:
   webkitgtk: https://webkitgtk.org/releases/
 
   # git aliases go here
+  android: https://android.googlesource.com/
   codeberg: https://codeberg.org/
   freedesktop: https://gitlab.freedesktop.org/
   github: https://github.com/
   gitlab: https://gitlab.com/
   gnome: https://gitlab.gnome.org/GNOME/
   gnome_gitlab: https://gitlab.gnome.org/
+  inria: https://gitlab.inria.fr/
   kernel: https://git.kernel.org/pub/scm/
   lovelyhq: https://dev.lovelyhq.com/
   matrix: https://gitlab.matrix.org/
   netfilter: https://git.netfilter.org/
   openldap: https://git.openldap.org/openldap/
-  purism: https://source.puri.sm/
-  sipsolutions: https://git.sipsolutions.net/
-  android: https://android.googlesource.com/
   postmarketos: https://gitlab.postmarketos.org/
+  purism: https://source.puri.sm/
   samba: https://git.samba.org/
-  thekelleys: http://thekelleys.org.uk/git/
   savannah: https://git.savannah.gnu.org/git/
+  sipsolutions: https://git.sipsolutions.net/
+  thekelleys: http://thekelleys.org.uk/git/
   videolan: https://code.videolan.org/videolan/
   xiph: https://gitlab.xiph.org/xiph/
