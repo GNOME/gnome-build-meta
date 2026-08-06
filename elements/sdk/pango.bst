@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pango.git
   track: main
-  ref: 1.58.1-1-g18cb4149852c88ef4cd3e6e2358ce5ad2fb6964c
+  ref: 1.58.2-2-g9c3834a26c4999d3b92ed6c089456cbdf6fddda4
 
 build-depends:
 - (@): include/gcc-for-recc.yml
