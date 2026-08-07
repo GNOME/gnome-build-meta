@@ -1,9 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.53.4.tar.xz
-  ref: bc0f4dd7c105b0b78420eb15e581a6c87086a19c7133e9058970086e5cb0eb31
-- kind: patch
-  path: patches/webkitgtk/fix-gitlab.patch
+  url: webkitgtk:webkitgtk-2.53.90.tar.xz
+  ref: 56b99f7b482221da2b6acc307cac3b8fb777e8dcb7720c56d5d77161a837c8e6
 
 build-depends:
 - (@): include/clang-for-recc.yml
