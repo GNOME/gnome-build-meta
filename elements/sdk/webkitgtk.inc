@@ -34,6 +34,7 @@ depends:
 - freedesktop-sdk.bst:components/lcms.bst
 - freedesktop-sdk.bst:components/libavif.bst
 - freedesktop-sdk.bst:components/libepoxy.bst
+- freedesktop-sdk.bst:components/libevent.bst
 - freedesktop-sdk.bst:components/libjxl.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/libtasn1.bst
