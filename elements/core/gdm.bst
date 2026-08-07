@@ -30,7 +30,6 @@ variables:
   meson-local: >-
     -Ddefault-pam-config=none
     -Dlibaudit=disabled
-    -Dpam-prefix=%{sysconfdir}
     -Dplymouth=enabled
     -Drun-dir=/run/gdm
     -Dselinux=disabled
