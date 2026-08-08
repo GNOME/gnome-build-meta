@@ -5,6 +5,8 @@ sources:
   url: gnome:gnome-calendar.git
   track: main
   ref: 51.beta-8-ga7f7733eb1f84aceaaa3d99b6ce4cb72e7a9db2e
+- kind: patch
+  path: patches/gnome-calendar/763.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml
