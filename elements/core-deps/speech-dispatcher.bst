@@ -26,8 +26,3 @@ variables:
     --with-espeak-ng
     --with-pulse
     --with-oss=no
-
-config:
-  install-commands:
-    (>):
-    - rm '%{install-root}%{infodir}/dir'
