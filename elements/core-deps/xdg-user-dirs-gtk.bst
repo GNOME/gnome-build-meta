@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:xdg-user-dirs-gtk.git
-  track: master
-  ref: 0.16-7-g2517b1681578168a89850731de5620cbc9721d76
-
+- kind: tar
+  url: gnome_downloads:xdg-user-dirs-gtk/0.16/xdg-user-dirs-gtk-0.16.tar.xz
+  ref: be825de7f89175db5ead0cd3744d2761109c70943251a87092259163025520a9
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

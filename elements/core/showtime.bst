@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:showtime.git
-  track: main
-  ref: 50.0-44-g21fbb47476f7db861625e575481d07c134b92e17
-
+- kind: tar
+  url: gnome_downloads:showtime/50/showtime-50.0.tar.xz
+  ref: 4399c9fa7f61e5984242e279acd1519beec246b98a676d44a4b2ab94e9eecb01
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

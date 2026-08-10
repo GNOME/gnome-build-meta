@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:yelp-tools.git
-  track: master
-  ref: 42.1-5-g5fa6444af95ea5d46fafcf6097734142c9f9daca
-
+- kind: tar
+  url: gnome_downloads:yelp-tools/42/yelp-tools-42.1.tar.xz
+  ref: 3e496a4020d4145b99fd508a25fa09336a503a4e8900028421e72c6a4b11f905
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-builder.git
-  track: main
-  ref: 50.0-55-g8c3c1e4b5f8084b9f741c65f8dbcf206c15b9eb1
-
+- kind: tar
+  url: gnome_downloads:gnome-builder/50/gnome-builder-50.0.tar.xz
+  ref: 46d54fd13f4f4bdb6eed7d004b499d0b6d9a76a6fafc68ad16c389953fd92f46
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

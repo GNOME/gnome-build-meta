@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:glibmm.git
-  track: master
-  ref: 2.88.1-5-g289433385cb9d94e87e18a226042a0334cf1c947
+- kind: tar
+  url: gnome_downloads:glibmm/2.89/glibmm-2.89.0.tar.xz
+  ref: 4ce71263b28731bc305409da0cfd851eabdfe65baf5cbf17543ff883f7952426
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gi-docgen.git
-  track: main
-  ref: 2026.1-27-gb27747121ae6045a6e0dfce5e268a65b642361cd
-
+- kind: tar
+  url: gnome_downloads:gi-docgen/2026/gi-docgen-2026.1.tar.xz
+  ref: c316d6c04699976b6823912aae1fb2a6a3ffa2553b422be88fb56eb881acf479
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

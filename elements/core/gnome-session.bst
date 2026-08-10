@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-session.git
-  track: main
-  ref: 51.beta-0-g02c8fd4da748d36f3394ebb50f406035b4d50d42
-
+- kind: tar
+  url: gnome_downloads:gnome-session/51/gnome-session-51.beta.tar.xz
+  ref: 2e3e3b6da20c9746741750df9bd71abad02b2a8c8602e4d97c5cc7f8359c8d04
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

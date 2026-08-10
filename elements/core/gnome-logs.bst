@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-logs.git
-  track: master
-  ref: 50.0-38-gac72f8ce877ea2bf5d4056f39998e6facbec4df5
-
+- kind: tar
+  url: gnome_downloads:gnome-logs/50/gnome-logs-50.0.tar.xz
+  ref: b466c6660155521ba8135339c6df080a0e071a46f9911b99172b21f9e2dfd808
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

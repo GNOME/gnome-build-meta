@@ -1,15 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-boxes.git
-  track: main
-  ref: 50.0-30-g4bbe91651274def8bddf5c48e0991e1461ea6f27
-- kind: git_module
-  url: gnome_gitlab:felipeborges/libovf-glib.git
-  path: subprojects/libovf-glib
-  ref: 52d35970d385d0beda4b765a7264d77e79736549
-
+- kind: tar
+  url: gnome_downloads:gnome-boxes/50/gnome-boxes-50.0.tar.xz
+  ref: fd6a5de18d1090946ca99f1f5a34aa3e15dc8183f6a72226e8d1504a13672d67
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

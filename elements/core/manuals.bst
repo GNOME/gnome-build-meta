@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:manuals.git
-  track: main
-  ref: 50.1-28-g9d208c19df3e7b0a67adc93f1b756a5d3d0ad038
-
+- kind: tar
+  url: gnome_downloads:manuals/50/manuals-50.1.tar.xz
+  ref: 7e8441755d0de717428c800e45ae06c85ec964af46ac53b9dc65b41bc3a32c74
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

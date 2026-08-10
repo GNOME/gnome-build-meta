@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gdk-pixbuf.git
-  track: master
-  ref: 2.44.7-6-g80cdfd2db3ce20b3ad122cee9374c9136627f95f
-
+- kind: tar
+  url: gnome_downloads:gdk-pixbuf/2.44/gdk-pixbuf-2.44.8.tar.xz
+  ref: 919f529512961a12e81cd4b4b466a48c3933469e7f9a310c6513cd4fb252ba3c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

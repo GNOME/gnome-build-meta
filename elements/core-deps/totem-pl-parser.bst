@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:totem-pl-parser.git
-  track: master
-  ref: 3.26.7-2-g10652d7f6714bd7108e0c4e24eb003b3262f3f86
-
+- kind: tar
+  url: gnome_downloads:totem-pl-parser/3.26/totem-pl-parser-3.26.7.tar.xz
+  ref: 60d517c1acabe54ae337f64451264fc76730696eaae26b5480fb37166689b5f3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

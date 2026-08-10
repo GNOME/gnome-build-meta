@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:simple-scan.git
-  track: master
-  ref: 50.0-10-gd17b03b2ae360b520b92824d14761be034747014
-
+- kind: tar
+  url: gnome_downloads:simple-scan/50/simple-scan-50.0.tar.xz
+  ref: cc32b561ae227182d31a94466632e311723756e3ac90538c3c7e2a2c9aaa4a09
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

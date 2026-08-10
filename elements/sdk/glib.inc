@@ -1,13 +1,7 @@
 sources:
-- kind: git_repo
-  url: gnome:glib.git
-  track: main
-  ref: 2.89.3-41-g7aefb7a8a0b53c4c51f1e801f607687b4ac6c237
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
-
+- kind: tar
+  url: gnome_downloads:glib/2.89/glib-2.89.3.tar.xz
+  ref: 09fd1e99f991067749ad66090e482ec4bd6514ad53abb4e9fbbdc2a4d2753532
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

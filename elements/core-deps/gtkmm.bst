@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtkmm.git
-  track: master
-  ref: 4.23.0-17-g1ed5e281dcd9d59d4f98cdfc0e0aa303e3205fd5
-
+- kind: tar
+  url: gnome_downloads:gtkmm/4.23/gtkmm-4.23.2.tar.xz
+  ref: 6562de077fd7a94e9fb125bce26499b50788cae2541b037d4c4fbe23f0be124d
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

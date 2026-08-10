@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:Incubator/resources.git
-  track: main
-  ref: 51.beta-1-g51f3c0f81708e5069dc52447ce21164262df5af4
+- kind: tar
+  url: gnome_downloads:resources/51/resources-51.beta.tar.xz
+  ref: f2fb3a6c5836068bed4b92e3069a9d4c76e22bf42d51d4a9e3b006d58eff77c0
 - kind: cargo2
   ref:
   - kind: registry

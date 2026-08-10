@@ -1,9 +1,8 @@
 kind: meson
 sources:
-- kind: git_repo
-  url: gnome:glib-networking.git
-  track: master
-  ref: 2.90.alpha-8-g96b68273c7173b5cbae4b6ee17e0dfbc5817adde
+- kind: tar
+  url: gnome_downloads:glib-networking/2.90/glib-networking-2.90.alpha.tar.xz
+  ref: be7fbc29ab11cd90a6aa1a82524745cd88331630b9a644323a5b907f793fdfc3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

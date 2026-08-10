@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-system-monitor.git
-  track: main
-  ref: 51.beta-3-gde627d72ee5eb7a7e6bd0290a674669b1549123a
-
+- kind: tar
+  url: gnome_downloads:gnome-system-monitor/51/gnome-system-monitor-51.beta.tar.xz
+  ref: d416c5dcd14a03951410f2db61b50687c2bce4a3d133d42c20b4d39015c6cc2c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

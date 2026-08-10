@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libcloudproviders.git
-  track: '*.*.*'
-  ref: 0.4.0-0-g510f0eee666e4f99e8b11eb55945347db371b47c
-
+- kind: tar
+  url: gnome_downloads:libcloudproviders/0.4/libcloudproviders-0.4.0.tar.xz
+  ref: 247b228d1027b2683868e7d7080d38693a457e908aadd0c119d52de59a398064
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

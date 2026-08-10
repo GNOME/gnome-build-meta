@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gsettings-desktop-schemas.git
-  track: main
-  ref: 51.beta-9-g50d514622b57c544b900169121b56933b6692248
-
+- kind: tar
+  url: gnome_downloads:gsettings-desktop-schemas/51/gsettings-desktop-schemas-51.beta.tar.xz
+  ref: 4b8d487c312ed345543778a92d974afcfce8b7cc2c908808f25b725b91528914
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

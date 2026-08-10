@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-music.git
-  track: master
-  ref: 50.0-6-g9095682eec9719c14a691efb628b97f930a4b000
-
+- kind: tar
+  url: gnome_downloads:gnome-music/50/gnome-music-50.0.tar.xz
+  ref: c72890ca7e5809cefeb876b01199f8b197146b5c25e9d5745301a284c0f3cdaa
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

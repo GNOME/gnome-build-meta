@@ -1,10 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:loupe.git
-  track: main
-  ref: 51.beta-8-gf97558cb68972370b242e4b2de273848d68e9299
+- kind: tar
+  url: gnome_downloads:loupe/51/loupe-51.beta.tar.xz
+  ref: ef755408a12f39ea2e50a9588cdf113ff7af7065b81cdc0de82d752420c3fab9
 - kind: cargo2
 
   ref:
@@ -446,36 +445,36 @@ sources:
     sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
   - kind: registry
     name: gufo
-    version: 0.5.0-beta.1
-    sha: 13dfc7feee4f49b9ba9e056787e45dc183094e82facd30134ac1264250b77e40
+    version: 0.5.0-beta
+    sha: 07754113742ddc758c0f690b6a8fb56dd40bc0624bff5a9622377fed986e8b15
   - kind: registry
     name: gufo-common
-    version: 2.0.0-beta.1
-    sha: aa7226c8f146ccdea8d7a8cbfa03f7b87372092e0f39655cf19bade7d2fe0c8e
+    version: 2.0.0-beta
+    sha: 444e56237f62b33b806db1f4789e5d23e789189acde09447bd6a42c0906fefc7
   - kind: registry
     name: gufo-exif
-    version: 0.5.0-beta.1
-    sha: f6d580a20163c7a7d277c8cf9169dc18deb3003de4f08fb6c56d6c878901dfa0
+    version: 0.5.0-beta
+    sha: e4890d98eb8dcc85d024aab583e79b6fd2874d91d099a7378fd7a180ee58c5b1
   - kind: registry
     name: gufo-jpeg
-    version: 0.5.0-beta.1
-    sha: f970f6a7ec35035ab893b394ced211205747d58c92d3b46665142d275aedca55
+    version: 0.5.0-beta
+    sha: 00f802c22b5d57c8d69896d87b8712a799dc4ce206b214840ff9130f9fbed6ad
   - kind: registry
     name: gufo-png
-    version: 0.5.0-beta.1
-    sha: 57702bf2885289ea8a77a842d2792aca42975f2d1f237d785f45d30e78be363a
+    version: 0.5.0-beta
+    sha: 4578074437e7705ad02eba9966e6f9414327301c7561dddd634add8e559ab55a
   - kind: registry
     name: gufo-tiff
-    version: 0.5.0-beta.1
-    sha: fcf3a0dbc580a3653ac9cc6234d66cddc1fd0af5cc7b6f3cde63c9a2ad70d83e
+    version: 0.5.0-beta
+    sha: 80e6cb4ce3a9c91c7db5246a70a95bdf0bcdbb5e5ddcdad241fd5b8780fa99f3
   - kind: registry
     name: gufo-webp
-    version: 0.5.0-beta.1
-    sha: 4e1998271aa38387aa572f957d4cc7e64841dd34e6354e2008aa8f74f25f0e4c
+    version: 0.5.0-beta
+    sha: 09e6291b098983044281ac2e8ed23e229d872d20b0df8c5eeb06e15642cb5781
   - kind: registry
     name: gufo-xmp
-    version: 0.5.0-beta.1
-    sha: 41d62245a5d579d9748465f91f99df9da6d984c253a8179c8e6d98a267f0f9ff
+    version: 0.5.0-beta
+    sha: cbce01e62cfb7f6e749a0de280249d8e30a871702031e76bc729036f131619c3
   - kind: registry
     name: gvdb
     version: 0.10.0

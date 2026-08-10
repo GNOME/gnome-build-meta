@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:vala.git
-  track: main
-  ref: 0.57.0-384-gc5d31b3fcdb9d564dc3340714a129f72a072391f
-
+- kind: tar
+  url: gnome_downloads:vala/0.56/vala-0.56.19.tar.xz
+  ref: 5ad7cbbfcc0de61b403d6797c9ef60455bfbebd8e162aec33b5b0b097adfb9d5
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst

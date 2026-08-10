@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libnotify.git
-  track: master
-  ref: 0.8.8-1-g243adf21a3495d28c520afa8915c2a3b57370a23
-
+- kind: tar
+  url: gnome_downloads:libnotify/0.8/libnotify-0.8.8.tar.xz
+  ref: 23420ef619dc2cb5aebad613f4823a2fa41c07e5a1d05628d40f6ec4b35bfddd
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -1,17 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-control-center.git
-  track: main
-  ref: 51.beta-15-ga438a60371c0b070a69d67fb62533a78cc682e2e
-- kind: git_module
-  url: gnome:libgnome-volume-control.git
-  path: subprojects/gvc
-  ref: d2442f455844e5292cb4a74ffc66ecc8d7595a9f
-# FIXME: This needs to be kept in sync with the wrap file ideally,
-# but this will do for now
-# https://gitlab.gnome.org/GNOME/gnome-control-center/-/blob/main/subprojects/libgxdp.wrap
+- kind: tar
+  url: gnome_downloads:gnome-control-center/51/gnome-control-center-51.beta.tar.xz
+  ref: 98d3e8d3d5a840e7bb6ba28a00e5a37106ee84df7a523aeeec5b1e73b08f9439
 - kind: git_repo
   url: gnome:libgxdp.git
   directory: subprojects/libgxdp

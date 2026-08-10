@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:d-spy.git
-  track: main
-  ref: 50.0-26-g6043d590a01681126dfd621888b98902479f2bb1
-
+- kind: tar
+  url: gnome_downloads:d-spy/50/d-spy-50.0.tar.xz
+  ref: 1bddc86d8a2cf67b4f652dc461ccd8353112f088753420037c75f5454deaad10
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

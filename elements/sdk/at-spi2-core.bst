@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:at-spi2-core.git
-  track: main
-  ref: 2.61.1-3-g1f12dc9351c21f7a4082724a3311dff1cbe8fbc3
-
+- kind: tar
+  url: gnome_downloads:at-spi2-core/2.61/at-spi2-core-2.61.1.tar.xz
+  ref: 0f88d443b8e3a4f7c701c4f6625032a989b8a0244cb2bdb3d3bd9872f00506f4
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

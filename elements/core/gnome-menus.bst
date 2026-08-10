@@ -1,11 +1,9 @@
 kind: autotools
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-menus.git
-  track: master
-  ref: 3.38.1-8-g55cf567b7bb3fd146f85c34dd8a5b3647edb3858
-
+- kind: tar
+  url: gnome_downloads:gnome-menus/3.38/gnome-menus-3.38.1.tar.xz
+  ref: 1198a91cdbdcfb232df94e71ef5427617d26029e327be3f860c3b0921c448118
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst

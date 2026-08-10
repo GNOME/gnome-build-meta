@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:pyatspi2.git
-  track: master
-  ref: 2.58.2-1-ga0df428cfe6713be5769e1a3d3ca9942b6b4645d
-
+- kind: tar
+  url: gnome_downloads:pyatspi/2.58/pyatspi-2.58.2.tar.xz
+  ref: 24590e5b60fec8dfb59fcd27d2a90de7034060be318ca3f7770e0f984f1f94e2
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

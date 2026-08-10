@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gssdp.git
-  track: master
-  ref: gssdp-1.6.6-0-g273598c2a436593787be864692418751777ff144
-
+- kind: tar
+  url: gnome_downloads:gssdp/1.6/gssdp-1.6.6.tar.xz
+  ref: 767d2275254ce0efeaeac64419ff9f4f0ad470d134ef672f5c556b2abb786bcb
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

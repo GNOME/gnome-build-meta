@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtksourceview.git
-  track: master
-  ref: 5.21.0-10-gcaf9fb31cc7a104676c5db21c960b50d8782523d
-
+- kind: tar
+  url: gnome_downloads:gtksourceview/5.21/gtksourceview-5.21.0.tar.xz
+  ref: 65f7ce9d2ec683c6ff9b27a50d909f3abef65f742d11011e1b8f8b848cadf0f7
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

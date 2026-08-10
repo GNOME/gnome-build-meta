@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-text-editor.git
-  track: main
-  ref: 51.beta-1-g17e128913677208b3fa50d22eb647df387dc70b6
-
+- kind: tar
+  url: gnome_downloads:gnome-text-editor/51/gnome-text-editor-51.beta.tar.xz
+  ref: 5588dd99bebf27369361ff1fda1db37570199eda165e55d0d332197c1b540274
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

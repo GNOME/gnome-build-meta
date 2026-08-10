@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:dconf-editor.git
-  track: master
-  ref: 49.0-34-g9abed5c9864398c6045fb9beb768efeb091bb99a
-
+- kind: tar
+  url: gnome_downloads:dconf-editor/49/dconf-editor-49.0.tar.xz
+  ref: 90a8ccfadf51dff31e0028324fb9a358b2d26c5ae861a71c7dbf9f4dd9bdd399
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

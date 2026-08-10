@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-bluetooth.git
-  track: master
-  ref: 47.1-112-g30a81f13dbc8e6d28fad1af572e903073dac8462
-
+- kind: tar
+  url: gnome_downloads:gnome-bluetooth/47/gnome-bluetooth-47.2.tar.xz
+  ref: 41f20e6d6176b72590af63552b232d83f2fffdd77ecfaa5eaf32c5a4a86fad64
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

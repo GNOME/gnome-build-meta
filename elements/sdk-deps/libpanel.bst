@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libpanel.git
-  track: main
-  ref: 1.10.4-16-g5222e6996f0748c9071a547fb237f3500b663a2a
-
+- kind: tar
+  url: gnome_downloads:libpanel/1.10/libpanel-1.10.4.tar.xz
+  ref: 593888a7691f0af8aaa6e193c9e14afa86a810c0c2f27515c6d813f18733b1cd
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

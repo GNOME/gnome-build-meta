@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:libspelling.git
-  track: main
-  ref: 0.4.10-17-g0900ba12a10a9c1b481dde8ce92b472704239357
-
+- kind: tar
+  url: gnome_downloads:libspelling/0.4/libspelling-0.4.10.tar.xz
+  ref: 56e3f01a3a18b575beea4c34349f99cdaba316e1f7c271b1231f7bcf5d9af73b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

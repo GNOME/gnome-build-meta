@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gnome-calendar.git
-  track: main
-  ref: 51.beta-9-g6d44af6656399977c13369509de9c627d8f69ac6
-
+- kind: tar
+  url: gnome_downloads:gnome-calendar/51/gnome-calendar-51.beta.tar.xz
+  ref: 505bde4b77c63d89aa14b88d374e114e2a250fed7a2869d6af6fbfe613383214
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

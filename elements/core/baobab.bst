@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:baobab.git
-  track: main
-  ref: 50.0-11-gde1abfe9f1666b205db6a9ff091eff7f6afd5885
-
+- kind: tar
+  url: gnome_downloads:baobab/50/baobab-50.0.tar.xz
+  ref: 573c84f15f5f963a440500f6f43412c928ac2335f6b69dcb58f1a1fe5201024b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

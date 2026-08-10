@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:librest.git
-  track: master
-  ref: 0.10.2-5-ge9113a15c937ee9c36b553850d1dd2718aa66f3a
-
+- kind: tar
+  url: gnome_downloads:librest/0.10/librest-0.10.2.tar.xz
+  ref: 7b6cb912bb3a22cfa7dcf005925dcb62883024db0c09099486e7d6851185c9b8
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

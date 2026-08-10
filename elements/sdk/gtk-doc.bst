@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gtk-doc.git
-  track: master
-  ref: 1.36.1-2-g15504b1cfa330e1f4cf39f39929923569d7b9c1d
-
+- kind: tar
+  url: gnome_downloads:gtk-doc/1.36/gtk-doc-1.36.1.tar.xz
+  ref: 0e517a5f97069831181be177516bde8aa8b3922398f2bdb09e265d22aecadbc5
 build-depends:
 - buildsystems/meson.bst
 - (@): include/gcc-for-recc.yml

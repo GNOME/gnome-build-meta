@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:folks.git
-  track: main
-  ref: 0.15.12-6-gbb8cc4e53fea4d49b0f6a949c43cc1c89720998e
-
+- kind: tar
+  url: gnome_downloads:folks/0.15/folks-0.15.12.tar.xz
+  ref: 21f44e2bdabb1ee7f8e41bb996d10ac7daf35c78c498177db0c00f580a20a914
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

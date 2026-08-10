@@ -1,14 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:dconf.git
-  track: main
-  ref: 51.beta-0-g09c9bcad45d861527c1828a6bd67612714bea7a4
-- kind: git_module
-  url: gnome:gvdb.git
-  path: subprojects/gvdb
-  ref: 4758f6fb7f889e074e13df3f914328f3eecb1fd3
+- kind: tar
+  url: gnome_downloads:dconf/51/dconf-51.beta.tar.xz
+  ref: d0de088527735aa72c09b397779d5b1fcad56e70ad73184044dd635dff08c4b8
 
 build-depends:
 - (@): include/gcc-for-recc.yml

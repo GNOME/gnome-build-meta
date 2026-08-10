@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:tecla.git
-  track: main
-  ref: 51.beta-1-gba1cdcf48d14a82b54297bb75bce6478d0f36c20
-
+- kind: tar
+  url: gnome_downloads:tecla/51/tecla-51.beta.tar.xz
+  ref: ec97bf9730e2307b2a3936f16ce90368487d23fdc5e3083cb07268cc45813fb8
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

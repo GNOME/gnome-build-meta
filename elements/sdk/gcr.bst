@@ -1,11 +1,9 @@
 kind: meson
 
 sources:
-- kind: git_repo
-  url: gnome:gcr.git
-  track: main
-  ref: 4.4.0.1-28-gf3f7578842423cd6cfc0b9d1f08fe9d7e394ec8f
-
+- kind: tar
+  url: gnome_downloads:gcr/4.4/gcr-4.4.0.1.tar.xz
+  ref: 0c3c341e49f9f4f2532a4884509804190a0c2663e6120360bb298c5d174a8098
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
