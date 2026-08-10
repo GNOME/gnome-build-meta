@@ -12,9 +12,9 @@ sources:
       track: main
   - channel == "stable":
       track: v*
-      version-guess-pattern: '(\d+)(?:\.(\d+))?'
       exclude:
       - '*-rc*'
+  version-guess-pattern: '(\d+)(?:\.(\d+))?'
   ref: v261.2-0-g4925d9f07fc697efccd98a93046ff535b8832445
 
 build-depends:
