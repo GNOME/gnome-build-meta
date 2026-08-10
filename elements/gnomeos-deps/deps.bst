@@ -9,7 +9,6 @@ depends:
 
 - core/systemd-presets.bst
 - gnomeos-deps/preset-all.bst
-- incubator/meta-gnome-incubator-apps.bst
 - gnomeos-deps/gnome-mimeapps.bst
 
 - freedesktop-sdk.bst:components/xdg-desktop-portal.bst
@@ -119,4 +118,6 @@ depends:
 - channel == "nightly":
     depends:
       (>):
+      - incubator/meta-gnome-incubator-apps.bst
+      - gnomeos-deps/flathub-beta-config.bst
       - gnomeos-deps/gnome-nightly-config.bst
