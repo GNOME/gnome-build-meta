@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:ibus/ibus/releases/download/1.5.35-alpha2/ibus-1.5.35-alpha2.tar.gz
-  ref: afbb3a27abf406f890f5e4e69d4b1f22994d51f28d6a697121dbde6c14a06e41
+  url: github_files:ibus/ibus/releases/download/1.5.35-beta1/ibus-1.5.35-beta1.tar.gz
+  ref: a254419e25597e6e56a7f14c9b9fcc2ab33e2cfed0c0357339b94b40fdd2da38
 
 build-depends:
 - (@): include/gcc-for-recc.yml
