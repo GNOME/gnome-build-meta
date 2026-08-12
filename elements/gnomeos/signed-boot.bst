@@ -80,9 +80,9 @@ config:
       *)
         MICROCODE=()
         DEVICETREES=(
-        "--devicetree-auto=/boot/dtbs/qcom/qcm6490-fairphone-fp5.dtb"
-        "--devicetree-auto=/boot/dtbs/qcom/sdm845-oneplus-enchilada.dtb"
-        "--devicetree-auto=/boot/dtbs/rockchip/rk3588-rock-5b.dtb"
+        "--devicetree-auto=/usr/lib/modules/${version}/dtbs/qcom/qcm6490-fairphone-fp5.dtb"
+        "--devicetree-auto=/usr/lib/modules/${version}/dtbs/qcom/sdm845-oneplus-enchilada.dtb"
+        "--devicetree-auto=/usr/lib/modules/${version}/dtbs/rockchip/rk3588-rock-5b.dtb"
         )
       ;;
     esac
