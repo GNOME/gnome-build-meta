@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:libosinfo/osinfo-db.git
   track: 'v*'
-  ref: v20251212-0-g70fe571c605541e7be76b50f430c1cd13959c5b9
+  ref: v20260812-0-gae7a0bfe36940a7dde23fcd95ce60c0608cb7e33
 
 build-depends:
 - buildsystems/make.bst

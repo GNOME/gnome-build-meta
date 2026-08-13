@@ -4,9 +4,7 @@ sources:
 - kind: git_repo
   url: github:sahlberg/libnfs.git
   track: '*.*'
-  ref: libnfs-6.0.2-0-g18c5c73ee88bb7dc8da0d55dc95164bb77e49dc6
-- kind: patch_queue
-  path: patches/libnfs
+  ref: libnfs-7.0.0-0-g8563deedbedcbf88130460de4d01fbf68dad58ad
 
 build-depends:
 - (@): include/gcc-for-recc.yml

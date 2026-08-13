@@ -14,13 +14,13 @@ sources:
 - kind: git_repo
   url: github:casey/just.git
   track: '*.*.*'
-  ref: 1.57.0-0-ge01a6bd7e7a30baf86bc86d2b95b0998ebbdc36f
+  ref: 1.58.0-0-g7f4ef81bd6a93faa2b28430912c8e9ab0e3dd29a
 - kind: cargo2
   ref:
   - kind: registry
     name: aho-corasick
-    version: 1.1.4
-    sha: ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
+    version: 1.1.5
+    sha: c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba
   - kind: registry
     name: android_system_properties
     version: 0.1.5
@@ -87,12 +87,12 @@ sources:
     sha: 175812e0be2bccb6abe50bb8d566126198344f707e304f45c648fd8f2cc0365e
   - kind: registry
     name: camino
-    version: 1.2.4
-    sha: 5f2d30e4173c4026932d51d31d6b0613b1fd3014bf3f9f8943d4ba139c437ba0
+    version: 1.2.5
+    sha: bb1307f12aa967b5a58416e87b3653360e0fd614a016b6e970db08fecbb1b80d
   - kind: registry
     name: cc
-    version: 1.3.0
-    sha: c89588d05638b5b4594a3348a2d6c20277e43a7f5c5202b05cc56888475a47b8
+    version: 1.4.0
+    sha: 5add81bb678e6cb321aff7fa0dc7689ad82b112dbc032cea19f91d6b8e3582b9
   - kind: registry
     name: cfg-if
     version: 1.0.4
@@ -111,20 +111,20 @@ sources:
     sha: 1aa79e62e7697b8e29b513a68abacf485adcd1fe8284a4316c5ae868e6633327
   - kind: registry
     name: clap
-    version: 4.6.2
-    sha: dd059f9da4f5c36b3787f65d38ccaab1cc315f07b01f89abc8359ee6a8205011
+    version: 4.6.5
+    sha: 301b56658598e48f3648647ac6fc887be7e7108eddfa4e9b63fcf3ec58c0cadf
   - kind: registry
     name: clap_builder
-    version: 4.6.2
-    sha: f09628afdcc538b57f3c6341e9c8e9970f18e4a481690a64974d7023bd33548b
+    version: 4.6.5
+    sha: 94a65403d1a1bd28f7dc68eb8506e8874808ee5eecb59298de588e2e1407a078
   - kind: registry
     name: clap_complete
-    version: 4.6.7
-    sha: db8b397918185f0161ff3d6fcaa9e4bfc09b8367caf6e1d4a2848e5477ed027b
+    version: 4.6.8
+    sha: b1f84a88507dbd05c695f2cb5e8558e747179134005e9893882dec964190ed89
   - kind: registry
     name: clap_derive
-    version: 4.6.1
-    sha: f2ce8604710f6733aa641a2b3731eaa1e8b3d9973d5e3565da11800813f997a9
+    version: 4.6.4
+    sha: d012d2b9d65aca7f18f4d9878a045bc17899bba951561ba5ec3c2ba1eed9a061
   - kind: registry
     name: clap_lex
     version: 1.1.0
@@ -211,8 +211,8 @@ sources:
     sha: 39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb
   - kind: registry
     name: fastrand
-    version: 2.4.1
-    sha: 9f1f227452a390804cdb637b74a86990f2a7d7ba4b7d5693aac9b4dd6defd8d6
+    version: 2.5.0
+    sha: da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223
   - kind: registry
     name: find-msvc-tools
     version: 0.1.9
@@ -263,8 +263,8 @@ sources:
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
   - kind: registry
     name: hybrid-array
-    version: 0.4.13
-    sha: 818356c5132c1fede50f837ca96afbe78ff42413047f4abb886217845e1b6c8c
+    version: 0.4.14
+    sha: 707114b52a152fa7bdb290cd7cd5912d9467273b6d74e21b8d81aca1f8533f6b
   - kind: registry
     name: iana-time-zone
     version: 0.1.65
@@ -295,12 +295,12 @@ sources:
     sha: 53b44bfcdb3f8d5837a46dae1ca9660a837176eee74a28b229bc626816589102
   - kind: registry
     name: libc
-    version: 0.2.186
-    sha: 68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66
+    version: 0.2.189
+    sha: 3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2
   - kind: registry
     name: libredox
-    version: 0.1.18
-    sha: c943259e342f1e06ff2da7a83eabdfe7f92ce10262688dbf1895ff0b3e6e4652
+    version: 0.1.19
+    sha: 2026a5056764a10b2bf5d56488cba40da507f5493a6a429340e2004d9ed085fa
   - kind: registry
     name: linux-raw-sys
     version: 0.12.1
@@ -463,8 +463,8 @@ sources:
     sha: e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348
   - kind: registry
     name: serde_json
-    version: 1.0.150
-    sha: e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9
+    version: 1.0.151
+    sha: c841b55ecdae098c80dcae9cf767f6f8a0c2cdb3416bbef72181df4d0fe73f14
   - kind: registry
     name: serde_yaml
     version: 0.9.34+deprecated
@@ -491,12 +491,12 @@ sources:
     sha: 0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5
   - kind: registry
     name: snafu
-    version: 0.9.1
-    sha: d1a012328be2e3f5d5f6f3218147ca02588cea4cb865e876849ab6debcf36522
+    version: 0.9.2
+    sha: e45cb604038abb7b926b679887b3226d8d0f23874b66623625a0454be425a4b7
   - kind: registry
     name: snafu-derive
-    version: 0.9.1
-    sha: 5f103c50866b8743da9429b8a581d81a27c2d3a9c4ac7df8f8571c1dd7896eda
+    version: 0.9.2
+    sha: 287f59010008f0d7cf5e3b03196d666c1acc46c8d3e9cf34c28a1a7157601e72
   - kind: registry
     name: strsim
     version: 0.11.1
@@ -515,8 +515,8 @@ sources:
     sha: 872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297
   - kind: registry
     name: syn
-    version: 3.0.0
-    sha: f2fac314a64dc9a36e61a9eb4261a5e9bbfbc922b27e518af97bc32b926cf967
+    version: 3.0.3
+    sha: 53e9bae58849f64dfa4f5d5ae372c8341f7305f82a3868709269343628b659a3
   - kind: registry
     name: tabled
     version: 0.18.0
