@@ -1,6 +1,7 @@
 kind: manual
 
 build-depends:
+- freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 - freedesktop-sdk.bst:components/cpio.bst
 - freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/zstd.bst
