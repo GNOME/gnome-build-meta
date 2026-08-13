@@ -6,6 +6,7 @@ depends:
 - freedesktop-sdk.bst:components/cpio.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/fuse3.bst
+- freedesktop-sdk.bst:components/gzip.bst
 - freedesktop-sdk.bst:components/linux-firmware.bst
 - freedesktop-sdk.bst:components/shadow.bst
 - freedesktop-sdk.bst:components/systemd.bst
