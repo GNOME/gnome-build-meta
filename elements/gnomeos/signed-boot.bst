@@ -32,6 +32,7 @@ variables:
     quiet splash
     mount.usrflags=ro
     mount.usrfstype=erofs
+    systemd.verity_usr_options=panic-on-corruption
     lockdown=integrity
     systemd.firstboot=no
 
