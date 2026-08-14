@@ -27,7 +27,6 @@ public:
     - rm '%{debugdir}%{bindir}/cpack.debug'
     - rm '%{debugdir}%{bindir}/cmake.debug'
     - rm '%{debugdir}%{bindir}/ccmake.debug'
-    - rm '%{debugdir}%{bindir}/c-index-test.debug'
     - rm '%{debugdir}%{bindir}/llvm-exegesis.debug'
     - rm '%{debugdir}%{bindir}/gdb.debug'
     - rm -f '%{debugdir}%{bindir}/dwp.debug'
