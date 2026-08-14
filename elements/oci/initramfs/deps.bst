@@ -21,9 +21,3 @@ depends:
 - oci/integration/os-release.bst
 - gnomeos-deps/bootc.bst
 - oci/integration/lvm2-enable-activation.bst
-
-(?):
-- arch in ["x86_64"]:
-    depends:
-      (>):
-      - gnomeos-deps/intel-ucode.bst
