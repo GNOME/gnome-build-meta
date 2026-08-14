@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libgsf.git
   track: master
-  ref: LIBGSF_1_14_58-15-g35035f2c8143a6ca6a8233f5181283f527c4afec
+  ref: LIBGSF_1_14_58-16-gcda017ac3b4b7184e938b16c68d9245252dee6ee
 
 build-depends:
 - (@): include/gcc-for-recc.yml
