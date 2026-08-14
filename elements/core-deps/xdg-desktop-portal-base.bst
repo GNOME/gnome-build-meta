@@ -43,7 +43,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.22.0-86-g28e7697de1d112456bb5468c40ffd7b2541da020
+  ref: 1.22.0-125-g78a05dfd0168206846b3b1f9b434abed0ddf720b
 - kind: git_repo
   url: gnome:libglnx.git
   directory: subprojects/libglnx
