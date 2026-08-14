@@ -5,12 +5,17 @@ build-depends:
 - freedesktop-sdk.bst:components/cpio.bst
 - freedesktop-sdk.bst:components/findutils.bst
 - freedesktop-sdk.bst:components/zstd.bst
-- filename: gnomeos-deps/microcode.bst
-  strict: true
 - filename: oci/initramfs/filesystem.bst
   strict: true
   config:
     location: /initramfs
+
+(?):
+- arch == "x86_64":
+    build-depends:
+      (>):
+      - filename: gnomeos-deps/microcode.bst
+        strict: true
 
 variables:
   strip-binaries: ''
