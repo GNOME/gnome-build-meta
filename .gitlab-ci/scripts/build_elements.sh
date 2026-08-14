@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 TARGETS_RUNTIME=(flatpak/runtimes-repo.bst flatpak/extensions-repo.bst flatpak/platform/manifest.bst flatpak/sdk/manifest.bst)
-TARGETS_GNOMEOS=(core.bst gnomeos/devel/manifest.bst gnomeos/build-non-images.bst)
+TARGETS_GNOMEOS=(core.bst gnomeos/devel/manifest.bst gnomeos/build-non-images.bst oci/gnomeos/stack.bst)
 
 case "${ARCH}" in
     x86_64)
