@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-menus.git
   track: master
-  ref: 3.38.1-8-g55cf567b7bb3fd146f85c34dd8a5b3647edb3858
+  ref: 3.38.1-9-gb57f6b39b261498bc4c22bf5c426ff9c436bf638
 
 build-depends:
 - (@): include/gcc-for-recc.yml

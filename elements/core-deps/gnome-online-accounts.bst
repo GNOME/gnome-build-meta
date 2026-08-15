@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-online-accounts.git
   track: master
-  ref: 3.58.1-8-g0a85e7c8079fb85311e1b768da13e69666b51b0d
+  ref: 3.58.1-9-g325a6d401e660cbaab554e3e8ca509205269c738
 
 build-depends:
 - (@): include/gcc-for-recc.yml

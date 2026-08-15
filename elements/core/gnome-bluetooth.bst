@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-bluetooth.git
   track: master
-  ref: 47.1-112-g30a81f13dbc8e6d28fad1af572e903073dac8462
+  ref: 47.1-113-g4c2a6c2f81d29b28045692760e44db41d20b2677
 
 build-depends:
 - (@): include/gcc-for-recc.yml
