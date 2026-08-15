@@ -314,8 +314,8 @@ fi
 if ! [ -f "${STATE_DIR}/OVMF_CODE.fd" ] || ! [ -f "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd" ]; then
     checkout="$(mktemp -d --tmpdir="${STATE_DIR}" checkout.XXXXXXXXXX)"
     cleanup_dirs+=("${checkout}")
-    systemd-inhibit "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf.bst
-    "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf.bst --directory "${checkout}"
+    systemd-inhibit "${BST}" "${BST_OPTIONS[@]}" build freedesktop-sdk.bst:components/ovmf-maybe.bst
+    "${BST}" "${BST_OPTIONS[@]}" artifact checkout freedesktop-sdk.bst:components/ovmf-maybe.bst --directory "${checkout}"
     cp "${checkout}/usr/share/ovmf/OVMF_CODE.fd" "${STATE_DIR}/OVMF_CODE.fd"
     cp "${checkout}/usr/share/ovmf/OVMF_VARS.fd" "${STATE_DIR}/OVMF_VARS_TEMPLATE.fd"
 fi
