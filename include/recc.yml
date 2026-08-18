@@ -4,6 +4,7 @@ environment:
   RECC_DEPS_GLOBAL_PATHS: true
   RECC_NO_PATH_REWRITE: true
   RECC_INVALID_INPUT_PATHS_REGEX: .*/CMakeFiles/CMakeScratch/.*,.*/Modules/CMakeCCompilerABI.c,.*/Modules/CMakeCXXCompilerABI.cpp,.*/conftest.*
+  RECC_USE_LOCALCAS: true
 
   (?):
   - recc == "passthrough":
@@ -14,7 +15,6 @@ environment:
       RECC_CACHE_ONLY: true
       RECC_CACHE_UPLOAD_LOCAL_BUILD: true
   - recc_optimisations:
-      RECC_USE_LOCALCAS: true
       RECC_USE_JOBSERVER: true
 
 environment-nocache:
