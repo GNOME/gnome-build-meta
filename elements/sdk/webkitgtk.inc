@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.53.90.tar.xz
-  ref: 56b99f7b482221da2b6acc307cac3b8fb777e8dcb7720c56d5d77161a837c8e6
+  url: webkitgtk:webkitgtk-2.53.91.tar.xz
+  ref: aeb40f03d4cbce9eac39a27da15261ac9ed889e10799d0a246f7788299483f3c
 
 build-depends:
 - (@): include/clang-for-recc.yml
