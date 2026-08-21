@@ -1,9 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: gnome_downloads:mutter/51/mutter-51.beta.tar.xz
-  ref: a55d16face852322c2a6dd3fd4a8d920954f6362ca91b581789a9303846cc754
+- kind: git_repo
+  url: gnome_gitlab:World/MobileShell/mutter-mobile.git
+  track: mobile
+  ref: 48.0-2439-g179766601c36db7a54fd11e8216d9e6a9cf58c34
+# FIXME: Keep this in sync with the repo until we can use wraps as sources
+# https://gitlab.gnome.org/GNOME/mutter/-/blob/main/subprojects/gvdb.wrap?ref_type=heads
 - kind: git_repo
   url: gnome:gvdb.git
   directory: subprojects/gvdb

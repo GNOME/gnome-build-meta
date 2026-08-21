@@ -1,9 +1,15 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: gnome_downloads:gnome-settings-daemon/51/gnome-settings-daemon-51.beta.tar.xz
-  ref: ce90f4bc04196e493c6d3462ed37171e0cd061494f72cc2f70f04c5d5efa1f40
+- kind: git_repo
+  url: gnome_gitlab:World/MobileShell/gnome-settings-daemon-mobile.git
+  track: mobile
+  ref: 48.0-204-g3b63d99f79b1152ccdc20cc8bffc14649b6515b5
+- kind: git_module
+  url: gnome:libgnome-volume-control.git
+  path: subprojects/gvc
+  ref: 0a4eda0cdc2deb352bebc70ec697c42af46094e4
+
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
