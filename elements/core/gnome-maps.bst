@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-maps.git
   track: main
-  ref: 51.beta-20-g0d5aebdd7799c939689d080685744e728231d18a
+  ref: 51.beta-21-g81f56eb1ad2e746a14856c8049d1cff5da6ad1b6
 
 build-depends:
 - (@): include/gcc-for-recc.yml
