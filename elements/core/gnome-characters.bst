@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-characters.git
   track: main
-  ref: 50.0-24-g1a93c084b5f8ab3c34a634df698058bdf411ef3f
+  ref: 50.0-25-gf3e8d6cde6983dd53b1b5614b124f2b92e99075a
 
 build-depends:
 - (@): include/gcc-for-recc.yml
