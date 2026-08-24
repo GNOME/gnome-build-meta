@@ -28,35 +28,23 @@ class ElementType(Enum):
     DEPENDENCY = 2
     GNOME = 3
 
-def merge_element_type(a, b):
-    for t in [ElementType.GNOME, ElementType.DEPENDENCY, ElementType.NOT_TRACKABLE]:
-        if t in (a, b):
-            return t
-
 def get_element_type(filepath):
-    if filepath.startswith('freedesktop-sdk.bst:'):
-        return ElementType.NOT_TRACKABLE
     with open(filepath, 'r') as f:
         data = yaml.safe_load(f)
 
-    trackable = ElementType.NOT_TRACKABLE
-    sources = data.get('sources', [])
-    if isinstance(sources, Sequence):
-        for source in sources:
-            if not isinstance(source, Mapping):
-                continue
+    sources = data.get('sources')
+    if sources:
+        first_source = sources[0]
 
-            if source.get('kind') == "git_repo":
-                if source.get('track') is None:
-                    continue
+        if first_source.get('kind') in ("tar", "zip", "remote", "local"):
+            return ElementType.NOT_TRACKABLE
+        elif first_source.get('kind') != 'git_repo':
+            print("Warning: unknown source kind", first_source.get('kind'))
 
-            if source.get('kind') in ("tar", "zip", "patch", "patch_queue", "remote", "local"):
-                continue
-
-            if source.get('url', '').startswith('gnome:'):
-                return ElementType.GNOME
-            else:
-                trackable = merge_element_type(trackable, ElementType.DEPENDENCY)
+        if first_source.get('url', '').startswith('gnome:'):
+            return ElementType.GNOME
+        else:
+            return ElementType.DEPENDENCY
 
     include = data.get('(@)')
     if include is not None:
@@ -64,11 +52,14 @@ def get_element_type(filepath):
             include = [include]
 
         for i in include:
-            trackable = merge_element_type(trackable, get_element_type(i))
-            if trackable == ElementType.GNOME:
-                return ElementType.GNOME
+            if i.startswith('freedesktop-sdk.bst:'):
+                continue
 
-    return trackable
+            trackable = get_element_type(i)
+            if trackable:
+                return trackable
+
+    return None
 
 gnome_elements = []
 dependencies_elements = []
