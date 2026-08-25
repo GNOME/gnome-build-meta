@@ -120,4 +120,7 @@ if args.new_branch:
 
     git("add", "--update", "elements")
 
-    git("commit", "--message", "Update element refs")
+    if args.track_dependencies:
+        git("commit", "--message", "Update external dependencies")
+    else:
+        git("commit", "--message", "Update element refs")
