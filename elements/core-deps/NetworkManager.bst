@@ -7,7 +7,7 @@ sources:
   exclude:
   - "*-dev*"
   - "*-rc*"
-  ref: 1.58.0-0-g61302aac7f2e7411f3b42159544926484eacd37e
+  ref: 1.58.1-0-g7406dfbcc35beed79bf2734e3e7376ead320bd99
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -27,7 +27,7 @@ sources:
 - kind: git_repo
   url: github:linux-msm/hexagonrpc.git
   track: 'v*'
-  ref: v0.4.0-0-g23a69640bf10dc498226c602c5b5db11d8cb3d8e
+  ref: v0.5.0-0-g435ed1cd68e20f8a9fe4871233ed1f8ce7ccf9e8
 - kind: local
   path: files/hexagonrpc/hexagonrpcd-adsp-rootpd.service
 - kind: local
