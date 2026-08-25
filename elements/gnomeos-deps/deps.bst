@@ -44,6 +44,7 @@ depends:
 - gnomeos-deps/switcheroo-control.bst
 - gnomeos-deps/uresourced.bst
 - freedesktop-sdk-extra.bst:components/zram-generator.bst
+- gnomeos-deps/zswap-generator.bst
 - core-deps/boltd.bst
 
 - gnomeos-deps/ibus-anthy.bst
