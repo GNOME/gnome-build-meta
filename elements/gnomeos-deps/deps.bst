@@ -44,6 +44,7 @@ depends:
 - gnomeos-deps/switcheroo-control.bst
 - gnomeos-deps/uresourced.bst
 - gnomeos-deps/zram-generator.bst
+- gnomeos-deps/zswap-generator.bst
 - core-deps/boltd.bst
 
 - gnomeos-deps/ibus-anthy.bst

@@ -192,13 +192,3 @@ sources:
 variables:
   make-args: >-
     NOMAN=true
-
-config:
-  install-commands:
-    (>):
-    - |
-      cat << EOF> '%{install-root}%{indep-libdir}/systemd/zram-generator.conf'
-      [zram0]
-      zram-size = ram / 2
-      compression-algorithm = zstd
-      EOF
