@@ -36,6 +36,7 @@ variables:
     lockdown=integrity
     systemd.firstboot=no
     rootflags=x-systemd.device-timeout=900
+    zswap.max_pool_percent=35
 
 config:
   install-commands:
