@@ -21,7 +21,7 @@ config:
     - arch == "ppc64le":
         bootstrap_build_arch: "ppc64le"
     - arch == "riscv64":
-        bootstrap_build_arch: "x86_64"
+        bootstrap_build_arch: "riscv64"
 
   overrides:
     components/at-spi2-core.bst: sdk/at-spi2-core.bst
