@@ -49,11 +49,15 @@ config:
 
     # BOOT/BOOTX64.EFI will boot instead
     rm -rf /sysroot/efi/EFI/org.gnome.os
-    # remove the fallback so we do not register boot entries
-    rm /sysroot/efi/EFI/BOOT/fb*.efi
-    # remove MOK manager so we do not write MOKs
-    rm /sysroot/efi/EFI/BOOT/mm*.efi
-
+    # We build shim only for x86_64 and aarch64
+    case "%{arch}" in
+      x86_64|aarch64)
+        # remove the fallback so we do not register boot entries
+        rm /sysroot/efi/EFI/BOOT/fb*.efi
+        # remove MOK manager so we do not write MOKs
+        rm /sysroot/efi/EFI/BOOT/mm*.efi
+      ;;
+    esac
     # The iso should never enroll secure boot keys
     rm -rf /sysroot/efi/loader/keys
 
