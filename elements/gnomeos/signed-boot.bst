@@ -77,13 +77,24 @@ config:
         MICROCODE=("--microcode=/usr/lib/firmware/microcode.cpio")
         DEVICETREES=()
       ;;
-      *)
+      aarch64)
         MICROCODE=()
         DEVICETREES=(
         "--devicetree-auto=/usr/lib/modules/${version}/dtbs/qcom/qcm6490-fairphone-fp5.dtb"
         "--devicetree-auto=/usr/lib/modules/${version}/dtbs/qcom/sdm845-oneplus-enchilada.dtb"
         "--devicetree-auto=/usr/lib/modules/${version}/dtbs/rockchip/rk3588-rock-5b.dtb"
         )
+      ;;
+      riscv64)
+        MICROCODE=()
+        DEVICETREES=(
+        "--devicetree-auto=/boot/dtbs/spacemit/k3-pico-itx.dtb"
+        "--devicetree-auto=/boot/dtbs/sophgo/sg2042-milkv-pioneer.dtb"
+        )
+      ;;
+      *)
+        MICROCODE=()
+        DEVICETREES=()
       ;;
     esac
 

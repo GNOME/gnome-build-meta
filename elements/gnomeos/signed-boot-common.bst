@@ -36,7 +36,13 @@ config:
     esac
 
   - mkdir -p %{install-root}/efi/EFI/
-  - cp -rT /efi/EFI "%{install-root}/efi/EFI"
+  # We build shim only for x86_64 and aarch64
+  - |
+    case "%{arch}" in
+      x86_64|aarch64)
+        cp -rT /efi/EFI "%{install-root}/efi/EFI"
+      ;;
+    esac
 
   - |
     install -Dm644 %{indep-libdir}/systemd/boot/efi/systemd-boot%{efi-arch}.efi "%{install-root}/efi/EFI/systemd/systemd-boot%{efi-arch}.efi"
