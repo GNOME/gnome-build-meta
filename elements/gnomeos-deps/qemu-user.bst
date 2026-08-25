@@ -89,10 +89,7 @@ variables:
 config:
   configure-commands:
     (<):
-    - |
-      # patch subprojects on behalf of meson
-      cp -v subprojects/packagefiles/berkeley-softfloat-3/* subprojects/berkeley-softfloat-3/
-      cp -v subprojects/packagefiles/berkeley-testfloat-3/* subprojects/berkeley-testfloat-3/
+    - meson subprojects packagefiles --apply
 
   install-commands:
     (>):

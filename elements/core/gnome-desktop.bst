@@ -35,4 +35,4 @@ variables:
 config:
   configure-commands:
     (<):
-    - cp -r subprojects/packagefiles/qrcodegen/* subprojects/qrcodegen
+    - meson subprojects packagefiles --apply
