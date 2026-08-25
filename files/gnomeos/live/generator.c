@@ -232,6 +232,8 @@ static bool handle_safe(const char *generator_path, bool in_initrd) {
         if (in_initrd) {
                 if (!mask_unit(generator_path, "systemd-sysext-initrd.service"))
                         return false;
+                if (!mask_unit(generator_path, "systemd-sysext-sysroot.service"))
+                        return false;
         } else {
                 if (!mask_unit(generator_path, "systemd-sysext.service"))
                         return false;
