@@ -8,7 +8,19 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.19.0-2-g242e9893e7977cdda871771bf8c2aaa5806c8a7b
+  ref: 1.19.0-34-ge182111ad07fdc11f6b811645700eac95a909303
+- kind: git_repo
+  url: gnome:libglnx.git
+  directory: subprojects/libglnx
+  # Meson wrap file
+  # https://github.com/flatpak/flatpak/blob/main/subprojects/libglnx.wrap
+  ref: c18b9671443c4098ee734f04184808632ece154c
+- kind: git_repo
+  url: gnome_gitlab:alexl/variant-schema-compiler.git
+  directory: subprojects/variant-schema-compiler
+  # meson wrap file
+  # https://github.com/flatpak/flatpak/blob/main/subprojects/variant-schema-compiler.wrap
+  ref: 4c18b9ef404bb97ba4cfd1312f9de7cffea62334
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -49,3 +61,7 @@ variables:
     -Dtests=false
     -Dsystem_dbus_proxy=xdg-dbus-proxy
 
+config:
+  configure-commands:
+    (<):
+    - meson subprojects packagefiles --apply
