@@ -62,12 +62,16 @@ variables:
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
+    -Dvalgrind=%{valgrind}
 
   efi_binary: 'false'
   hsi_feature: 'disabled'
+  valgrind: 'disabled'
 
   (?):
   - arch in ["aarch64", "x86_64"]:
       efi_binary: 'true'
   - arch in ["x86_64"]:
       hsi_feature: 'enabled'
+  - arch in ["aarch64", "x86_64"]:
+      valgrind: 'disabled'
