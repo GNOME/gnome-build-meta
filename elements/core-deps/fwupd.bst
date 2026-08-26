@@ -18,7 +18,6 @@ build-depends:
 # Needed for docs/test-deps.py
 - freedesktop-sdk.bst:components/python3-packaging.bst
 - freedesktop-sdk.bst:components/systemd.bst
-- freedesktop-sdk.bst:components/valgrind-maybe.bst
 
 depends:
 - core-deps/passim.bst
@@ -62,6 +61,7 @@ variables:
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
+    -Dvalgrind=disabled
 
   efi_binary: 'false'
   hsi_feature: 'disabled'
