@@ -42,6 +42,12 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:
+  # clat depends on bpf, which for now is properly enabled only on
+  # our aarch64 and x86_64 kernels only.
+  bpf: 'false'
+  (?):
+  - arch in ["aarch64", "x86_64"]:
+      bpf: 'true'
   meson-local: >-
     -Dmore_asserts=no
     -Dcrypto=gnutls
@@ -55,6 +61,7 @@ variables:
     -Dqt=false
     -Dovs=false
     -Dnm_cloud_setup=false
+    -Dclat=%{bpf}
 
 environment:
   # Don't use the RECC wrapper
