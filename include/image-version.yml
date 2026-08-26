@@ -4,6 +4,6 @@ filesystem-time: 1321009871
 # These get replaced in CI.
 # We should also set them for local builds, but that's for later
 # git rev-parse --long HEAD
-commit: 'unkown'
+commit: 'unknown'
 # git show -s --format=%ci HEAD
-commit-date-pretty: 'unkown'
+commit-date-pretty: 'unknown'
