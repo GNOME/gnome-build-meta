@@ -12,7 +12,7 @@ sources:
       - '*-alpha*'
       - '*-beta*'
       - '*-rc*'
-  ref: v0.6.0-alpha-240-g6fef31c30ad200c35c507794caa4306501b0c79d
+  ref: v0.6.0-alpha-244-ge830f53dd84aefaec72e6971596062b395673ba0
 - kind: cargo2
   ref:
   - kind: registry
@@ -225,8 +225,8 @@ sources:
     sha: f1dd6dbb5841937940781866fa1281a1ff7bd3bf827091440879f9994983d5c2
   - kind: registry
     name: ecb
-    version: 0.2.0
-    sha: fbfbf3db731928d6912bc3beda911d55b834cee3df6131ba79b337a1298a3fa9
+    version: 0.2.1
+    sha: 26f2a8b3e564eba0877223dc343703ad0385794e882e6d13f3a4dd5c6b1f41ac
   - kind: registry
     name: endi
     version: 1.1.1
@@ -945,12 +945,12 @@ sources:
     sha: 3c50655cbb0fe3fc43170059e702f1ce5e19b84cec58dc87b037a09935c2f328
   - kind: registry
     name: zgvariant
-    version: 1.0.0
-    sha: 60f1fd025a5215c4071378b7660d019b5588210c8645fb01f99fe30ecb382923
+    version: 1.1.0
+    sha: 63e0c3a9bc69ca818b5281575046ec75ff9a0f66fdfe35f4b94abbdc85968e83
   - kind: registry
     name: zgvariant_derive
-    version: 1.0.0
-    sha: 9e85114cc9a835a222b21d5be18e488d7eb3c41a66c9be4ec9b9b58b94b9e5b8
+    version: 1.1.0
+    sha: a67e56f4a51d6e02ab7faa5237abbaaa1fa4358af8d0cadfede6663e59211d1f
   - kind: registry
     name: zmij
     version: 1.0.23

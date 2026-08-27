@@ -15,7 +15,7 @@ sources:
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v261-1459-gebe4dbf426e7faf4ba95a67ff8eb7d0443b14968
+  ref: v261-1575-g6ac199824d5500ef310a2faaeda1d4d11a04e49e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -88,7 +88,6 @@ variables:
       bpf-framework: 'enabled'
 
   meson-local: >-
-    -Dsysvinit-path=%{sysconfdir}/init.d
     -Dsystem-uid-max=999
     -Dsystem-gid-max=999
     -Dusers-gid=100
