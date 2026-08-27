@@ -135,25 +135,6 @@ default:
   - if: $CI_COMMIT_REF_NAME == "master"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
-.test-phone-image-template:
-  extends:
-  - .aarch64
-  stage: test
-  needs:
-    artifacts: true
-  rules:
-  - !reference [".stage-only-rules", "rules"]
-  - if: "$CI_COMMIT_REF_NAME"
-    when: manual
-    allow_failure: true
-  before_script:
-  - dd if=/dev/zero of=flash1.img bs=1M count=64
-  - dd if=/dev/zero of=flash0.img bs=1M count=64
-  - dd if=/usr/share/qemu/edk2-aarch64-code.fd of=flash0.img conv=notrunc
-
-  - mv $(pwd)/image/disk.img.xz ./disk.img.xz
-  - unxz -T$(nproc) disk.img.xz
-
 .test-openqa-template:
   stage: test
   image:
