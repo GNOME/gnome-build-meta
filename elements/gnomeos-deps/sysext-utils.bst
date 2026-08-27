@@ -2,7 +2,7 @@ kind: pyproject
 
 sources:
 - kind: git_repo
-  url: gnome_gitlab:tchx84/sysext-utils.git
+  url: gnome_gitlab:World/sysext-utils.git
   track: main
   ref: v0.3.0-22-g8c3145126a11b6673f66e9144f8a5b33b1bf7d93
 
