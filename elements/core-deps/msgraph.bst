@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:msgraph.git
   track: main
-  ref: 0.3.4-0-g765ce74bd03e946bbc97cb2904fb0d0a43a88a8d
+  ref: 0.3.5-0-gc89b1b6359cebc410e94141325eff97b65b99fe4
 
 build-depends:
 - (@): include/gcc-for-recc.yml

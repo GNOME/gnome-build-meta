@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:orca.git
   track: main
-  ref: 51.beta-55-g61d47f9e647f65a667dde03170b73bffdf0d7847
+  ref: 51.beta-78-g422e2453eb64f59989e3fadf4fed18987a099402
 
 build-depends:
 - (@): include/gcc-for-recc.yml

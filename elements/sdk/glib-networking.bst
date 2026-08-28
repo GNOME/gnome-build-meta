@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:glib-networking.git
   track: master
-  ref: 2.90.alpha-19-g8fee49858e81f53b81eb0860ae2a6c4b68ebfd6b
+  ref: 2.90.alpha-20-gdd5e6de7d4e1179e89f5d1d5da2de5bdd1a5fc7d
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

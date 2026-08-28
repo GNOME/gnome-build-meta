@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-autoar.git
   track: master
-  ref: 0.4.5-1-ga5312e6970f5893f6e8f089e7339e127721ecfaa
+  ref: 0.5.1-1-g3add7f26063eb49bb567a8244f80ee305fe7275b
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -20,5 +20,4 @@ depends:
 
 variables:
   meson-local: >-
-    -Dgtk=false
     -Dvapi=true

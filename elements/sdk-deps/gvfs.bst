@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gvfs.git
   track: master
-  ref: 1.61.90-6-g3971da84bca176e4a346f8b7375951ffacc70058
+  ref: 1.61.91-1-g061802831d94e8aff45172f3ca18f953cf348b61
 
 build-depends:
 - (@): include/gcc-for-recc.yml
