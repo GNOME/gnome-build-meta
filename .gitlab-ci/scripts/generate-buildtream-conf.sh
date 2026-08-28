@@ -32,8 +32,6 @@ build:
 projects:
   gnome:
     default-mirror: gnome
-    options:
-      recc_optimisations: true
 EOF
 
 if [ "${1-}" != nopush ]; then
