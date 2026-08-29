@@ -34,6 +34,7 @@ variables:
     mount.usrfstype=erofs
     lockdown=integrity
     systemd.firstboot=no
+    rootflags=x-systemd.device-timeout=900
 
 config:
   install-commands:
