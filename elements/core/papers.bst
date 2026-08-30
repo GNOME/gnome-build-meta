@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:papers.git
   track: main
-  ref: 51.beta-25-g7005e66d800aff56c75de56b0941510dc9034a8a
+  ref: 51.beta-26-ged15e42ae4ab7af0fe5034592e67f60f521144b0
 - kind: cargo2
   ref:
   - kind: registry

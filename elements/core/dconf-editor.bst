@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:dconf-editor.git
   track: master
-  ref: 49.0-39-gb0e4fced43bfb6a6159b9234b3e3443ef2c30292
+  ref: 49.0-40-g58f933804e7825278dcf43d91e116b2313ea0868
 
 build-depends:
 - (@): include/gcc-for-recc.yml
