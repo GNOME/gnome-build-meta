@@ -131,16 +131,7 @@ sysext-remove zz-gnome-control-center
 <details>
 <summary>Expand instructions for deploying to a virtual or remote machine</summary>
 
-First, enable the `devel` extension to get `sysext-add` (skip this step if it's already enabled):
-
-On a virtual machine, enabling the `devel` extension pulls from the local sysupdate repository, so `utils/run-sysupdate-repo.sh --devel` must be running as described in [In a virtual machine](#21-option-1-in-a-virtual-machine).
-
-```shell
-ssh -tt $SSH_ARGS run0 updatectl enable devel --now
-ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
-```
-
-Then copy the system extension to the target. For a **remote machine** use `scp`:
+Copy the system extension to the target. For a **remote machine** use `scp`:
 
 ```shell
 scp zz-gnome-control-center.sysext.raw $SSH_ARGS:/tmp/
