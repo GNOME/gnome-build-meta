@@ -111,8 +111,7 @@ System extensions are applied alphabetically, so you want to prefix them (as we 
 To deploy the system extension on your local workstation, run the following:
 
 ```shell
-run0 sysext-add --persistent zz-gnome-control-center.sysext.raw
-run0 systemd-sysext refresh --force
+sysext-add --persistent zz-gnome-control-center.sysext.raw
 ```
 
 If the component includes systemd units, reload the daemon by running the following:
@@ -124,8 +123,7 @@ run0 systemctl daemon-reload
 To remove the system extension from your local workstation, run the following:
 
 ```shell
-run0 rm /var/lib/extensions/zz-gnome-control-center.sysext.raw
-run0 systemd-sysext refresh --force
+sysext-remove zz-gnome-control-center
 ```
 
 </details>
@@ -157,8 +155,7 @@ scp -i ssh/ephemeral -o IdentitiesOnly=yes zz-gnome-control-center.sysext.raw yo
 Then apply the system extension by running the following:
 
 ```shell
-ssh -tt $SSH_ARGS run0 sysext-add --persistent /tmp/zz-gnome-control-center.sysext.raw
-ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
+ssh -tt $SSH_ARGS sysext-add --persistent /tmp/zz-gnome-control-center.sysext.raw
 ```
 
 If the component includes systemd units, reload the daemon by running the following:
@@ -170,8 +167,7 @@ ssh -tt $SSH_ARGS run0 systemctl daemon-reload
 To remove the system extension from the target, run the following:
 
 ```shell
-ssh -tt $SSH_ARGS run0 sysext-remove zz-gnome-control-center.sysext.raw
-ssh -tt $SSH_ARGS run0 systemd-sysext refresh --force
+ssh -tt $SSH_ARGS sysext-remove zz-gnome-control-center
 ```
 
 </details>
