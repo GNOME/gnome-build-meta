@@ -37,7 +37,6 @@ depends:
 - core/gnome-desktop.bst
 - core/gnome-settings-daemon.bst
 - sdk/glib.bst
-- sdk/glycin.bst
 - sdk/gobject-introspection.bst
 - sdk/graphene.bst
 - sdk/gsettings-desktop-schemas.bst
