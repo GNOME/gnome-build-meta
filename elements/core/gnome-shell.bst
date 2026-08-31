@@ -44,6 +44,7 @@ depends:
 - sdk/gcr.bst
 - sdk/gjs.bst
 - sdk/glib.bst
+- sdk/glycin.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk.bst
 - sdk/libsoup.bst
