@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-settings-daemon.git
   track: main
-  ref: 51.beta-15-g2a41909758839ae9fd2d169f327e3e1a63a22545
+  ref: 51.rc-1-g2b85e21b7d86fd1666ea3aa187349ac37178d431
 - kind: git_module
   url: gnome:libgnome-volume-control.git
   path: subprojects/gvc

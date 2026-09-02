@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-contacts.git
   track: main
-  ref: 50.0-11-g3655cfbfeeb0ff2f46b1b6f025b78e27e53ceb7d
+  ref: 50.0-12-g8c48434899df5e75a81070c7bc677815eacacc45
 
 build-depends:
 - (@): include/gcc-for-recc.yml
