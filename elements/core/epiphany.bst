@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/51/epiphany-51.beta.tar.xz
-  ref: 24fd6331fa168caadc36bf4914a9ae5cdffc9d00b769c91bb9fcdaeb1119fb43
+  url: gnome_downloads:epiphany/51/epiphany-51.rc.tar.xz
+  ref: 14d585c0fa509a089f52a95621992cc2f9fec4fbd60d4a6c794b7f94e73bbd0c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

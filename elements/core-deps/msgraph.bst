@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:msgraph/0.3/msgraph-0.3.4.tar.xz
-  ref: 0731ece6b02b32eeffbbbd98efdc77bc03ddd20651eeae3a4343f0879b04d6c7
+  url: gnome_downloads:msgraph/0.3/msgraph-0.3.5.tar.xz
+  ref: e3dadbf638d0207040f6da6d852db516e463423da710af6cbc35d00572f17d9b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

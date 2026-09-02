@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:kmscon/libtsm.git
   track: 'v*'
-  ref: v4.7.0-0-gfacadce47638f52dfc8939b463e98f0962863aad
+  ref: v4.7.1-0-gef0a1a40c30d164913f413c47de5bbd8383a6daa
 
 build-depends:
 - (@): include/gcc-for-recc.yml

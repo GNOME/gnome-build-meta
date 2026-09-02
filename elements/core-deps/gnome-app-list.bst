@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-app-list/3.0/gnome-app-list-3.0.tar.xz
-  ref: 98a911d85cae9651081994ba9ac6b6e9a3131c72e3dd368d227a1ada9bbfc4a0
+  url: gnome_downloads:gnome-app-list/2026/gnome-app-list-2026.08.tar.xz
+  ref: 4142563951a5897cdc42db080d50edea2e7decf2d85da1d1e7fba2b02ec9f455
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

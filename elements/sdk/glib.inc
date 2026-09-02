@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glib/2.89/glib-2.89.3.tar.xz
-  ref: 09fd1e99f991067749ad66090e482ec4bd6514ad53abb4e9fbbdc2a4d2753532
+  url: gnome_downloads:glib/2.89/glib-2.89.4.tar.xz
+  ref: 1cdbb799f558832e6f14b8337b5fd599c6918ab144977b55e05e00a5e2e84a2c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

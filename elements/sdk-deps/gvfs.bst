@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gvfs/1.61/gvfs-1.61.90.tar.xz
-  ref: 20cb568822acec2173adca10cb9285074c5f72b9c7815cd8752372d2d71adab7
+  url: gnome_downloads:gvfs/1.61/gvfs-1.61.91.tar.xz
+  ref: 4b55615b351f64183e636800cd45da0c0d9295fe839c73b097a1972d7a8718e2
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

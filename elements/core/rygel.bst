@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:rygel/46/rygel-46.beta.tar.xz
-  ref: 194e9fb12bc4153a2a8cc25176dd8f3fc344b5eaa4f571258b7c5673797abfe2
+  url: gnome_downloads:rygel/46/rygel-46.rc.0.tar.xz
+  ref: afa619f2176db8d2252ccfbbff13afd7822bf7eaa8ac1c09e88e23f8db3494e4
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
