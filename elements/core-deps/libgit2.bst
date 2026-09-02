@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libgit2/libgit2.git
   track: 'v*'
-  ref: v1.9.6-0-g26055f5af74ab1cf636d272e8a34315496d3f06f
+  ref: v1.9.7-0-g49e408b3208bc3093757a1c2db938d3590f3f412
 
 build-depends:
 - (@): include/gcc-for-recc.yml

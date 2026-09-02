@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/51/mutter-51.beta.tar.xz
-  ref: a55d16face852322c2a6dd3fd4a8d920954f6362ca91b581789a9303846cc754
+  url: gnome_downloads:mutter/51/mutter-51.rc.tar.xz
+  ref: 6f24f0fe70a32aad2fb5170a81860360a0564eb5591de6b4b0ec9f22d09f5298
 - kind: git_repo
   url: gnome:gvdb.git
   directory: subprojects/gvdb

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:stefanberger/swtpm.git
   track: 'v*'
-  ref: v0.10.1-0-g53841482b0a9a1dfe63a120b00283acfe588ee72
+  ref: v0.10.2-0-g32b5a0575991a73398de9749d63cafd847008af2
 
 build-depends:
 - (@): include/gcc-for-recc.yml

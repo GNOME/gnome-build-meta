@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:dconf/51/dconf-51.beta.tar.xz
-  ref: d0de088527735aa72c09b397779d5b1fcad56e70ad73184044dd635dff08c4b8
+  url: gnome_downloads:dconf/51/dconf-51.rc.tar.xz
+  ref: 71d75ce73e19335dd789d30b22fe65e2c6c3fbd8ff682d4962671181c044c2d0
 
 build-depends:
 - (@): include/gcc-for-recc.yml

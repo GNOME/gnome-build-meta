@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:localsearch/3.12/localsearch-3.12.beta.tar.xz
-  ref: 77218608ea929e866a213a5bdf510a264c91b36759eb0b8759ca668a10eba42f
+  url: gnome_downloads:localsearch/3.12/localsearch-3.12.rc.tar.xz
+  ref: fe46a18511610af3ff1e99922c34dd6f92476d3be4f11c87129efb38f85e247a
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

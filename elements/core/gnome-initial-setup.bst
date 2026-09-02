@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-initial-setup/51/gnome-initial-setup-51.beta.tar.xz
-  ref: 511a8f9c297db1bf601821c05d2cdbd295d95661070d49aacd39473460656dd7
+  url: gnome_downloads:gnome-initial-setup/51/gnome-initial-setup-51.rc.tar.xz
+  ref: 1057a0409406825ead9b5316de500d9e48071f9e15e560bfa2eaea2e1a4480d3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

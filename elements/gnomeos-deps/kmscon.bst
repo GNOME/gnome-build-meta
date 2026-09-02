@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:kmscon/kmscon.git
   track: 'v*'
-  ref: v10.0.1-0-gc9d0e23336c6bb7645a1f5f48a4a82f1d5a589d9
+  ref: v10.0.3-0-gad9c77bc04f718d0f0d6dfc51291b7d652336429
 - kind: local
   path: files/kmscon/80-kmscon.preset
 - kind: local

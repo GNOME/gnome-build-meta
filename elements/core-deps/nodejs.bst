@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:nodejs/node.git
   track: 'v*'
-  ref: v26.7.0-0-gb4f23d3619c98bed09af93a21192f6080197a8c6
+  ref: v26.8.1-0-g7be6d3af31a65adea57c94c41e50c2b071ed0b3a
 - kind: patch
   path: patches/nodejs/fix-v8-build-failures.patch
 
