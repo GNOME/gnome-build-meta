@@ -94,7 +94,7 @@ depends:
 - freedesktop-sdk.bst:components/iputils.bst
 - freedesktop-sdk.bst:components/usbutils.bst
 
-- freedesktop-sdk.bst:components/systemd-hwdb-maybe.bst
+- core-deps/systemd-hwdb.bst
 
 - freedesktop-sdk.bst:components/nftables.bst
 - gnomeos-deps/firewalld.bst
