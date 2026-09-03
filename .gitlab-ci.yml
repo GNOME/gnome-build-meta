@@ -450,9 +450,6 @@ update_refs:
   - !reference [".stage-only-rules", "rules"]
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
-  # Fetch the sources and push them into the source cache
-  - ${BST} source push --deps all flatpak/runtimes-repo.bst gnomeos/build-non-images.bst gnomeos/live-image.bst
-
 
 update_mimeapps:
   extends:

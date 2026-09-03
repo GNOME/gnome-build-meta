@@ -19,6 +19,9 @@ parser.add_argument(
 parser.add_argument(
     "--no-ignore-elements", help="Do not ignore elements with known issues", action="store_true"
 )
+parser.add_argument(
+    "--push-sources", help="Push tracked sources to the source cache", action="store_true"
+)
 args = parser.parse_args()
 
 now = datetime.now()
@@ -124,3 +127,6 @@ if args.new_branch:
         git("commit", "--message", "Update external dependencies")
     else:
         git("commit", "--message", "Update element refs")
+
+if args.push_sources:
+    bst("source", "push", *track_elements)
