@@ -5,7 +5,7 @@ sources:
   url: gnome_gitlab:AdrianVovk/gdm.git
   # https://gitlab.gnome.org/GNOME/gdm/-/merge_requests/252
   track: homed-systemd
-  ref: 51.rc-9-gb09f4fac8ff9c5addcd9c1f7d9e2371abb28c64f
+  ref: 51.rc-12-gb5b5da562dbf406194492399a9111902ace13118
 - kind: local
   path: files/gdm
   directory: gdm-config

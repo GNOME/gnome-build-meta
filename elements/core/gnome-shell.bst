@@ -5,7 +5,7 @@ sources:
   url: gnome_gitlab:AdrianVovk/gnome-shell.git
   # https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/3279
   track: homed-secure-lock
-  ref: 51.rc-7-g6e22914d5fd71869b3f25041719ac89afce3a46a
+  ref: 51.rc-19-g6c33f737ca2993fb504839923a76502fdffdbd8a
 # FIXME: Keep this in sync with the repo until we can use wraps as sources
 # https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/subprojects/gvc.wrap?ref_type=heads
 #
