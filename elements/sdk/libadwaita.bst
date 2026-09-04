@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libadwaita.git
   track: main
-  ref: 1.10.beta.1-29-g6e88877f04c5b0eab434e50238ff8545a2506bbd
+  ref: 1.10.beta.1-32-g1f95b6c0926d1b1c2f9132eb0b0d63866e63f543
 
 build-depends:
 - (@): include/gcc-for-recc.yml

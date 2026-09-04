@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:d-spy.git
   track: main
-  ref: 50.0-42-ge2529397c44e2cc94241ad1f1368fc407f8c566d
+  ref: 50.0-44-g4317bbcab9e311bfb059bb85489b12b9d6422508
 
 build-depends:
 - (@): include/gcc-for-recc.yml

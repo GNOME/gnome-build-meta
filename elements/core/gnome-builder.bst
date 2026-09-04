@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-builder.git
   track: main
-  ref: 50.0-75-g88f324f2417aab69b6d7bf0f53eeea6640b65d79
+  ref: 50.0-76-ge061d2efaf9921ec5b6589137bc8bf2583f4a251
 
 build-depends:
 - (@): include/gcc-for-recc.yml
