@@ -8,6 +8,8 @@ sources:
   url: gnome:gvdb.git
   directory: subprojects/gvdb
   ref: b54bc5da25127ef416858a3ad92e57159ff565b3
+- kind: patch
+  path: patches/mutter/0001-onscreen-native-Disable-FBO-path-by-default-with-sof.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml
