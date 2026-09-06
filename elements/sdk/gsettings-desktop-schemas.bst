@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gsettings-desktop-schemas.git
   track: main
-  ref: 51.rc-15-g6b4cc5ab6ac338987472199f769f980625b66b00
+  ref: 51.rc-17-gedee77ae0378847d92f0b0753eae78bd47eb5c0e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
