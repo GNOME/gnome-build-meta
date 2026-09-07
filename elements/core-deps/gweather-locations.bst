@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gweather-locations.git
   track: main
-  ref: 2026.2-15-gc5cac5adbf048fe7ca32caa6aa17c0b11ed33617
+  ref: 2026.2-16-gc19949841464821278250e0eed872d38322dd327
 
 build-depends:
 - (@): include/gcc-for-recc.yml

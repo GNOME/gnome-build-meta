@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-user-docs.git
   track: master
-  ref: 51.beta-15-gb9587ada99b0ea70ded1a05a4a0f7ad855076ac6
+  ref: 51.beta-16-gbeeef11c3923ee659cd4fdd1ed14bf8a4981efef
 
 build-depends:
 - (@): include/gcc-for-recc.yml
