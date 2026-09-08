@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:showtime.git
   track: main
-  ref: 50.0-59-g5169d3368e0c6482859cecec28eadce56fe10daa
+  ref: 50.0-60-g1fe05a4831ecdd424ee11cd1ab848c78f2c37e69
 
 build-depends:
 - (@): include/gcc-for-recc.yml

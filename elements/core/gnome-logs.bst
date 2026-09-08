@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-logs.git
   track: master
-  ref: 50.0-46-g7916e8b1304a53a262881f2c6f32e2c0a9db657e
+  ref: 50.0-47-g21f78bc6428981f3824ff99a0e54197275d4ef33
 
 build-depends:
 - (@): include/gcc-for-recc.yml
