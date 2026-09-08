@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-initial-setup.git
-  track: master
+  track: main
   ref: 51.rc-4-g793ff2b957a43d912984265b7f2ee13616296ff2
 
 build-depends:
