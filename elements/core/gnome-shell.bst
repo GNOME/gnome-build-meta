@@ -18,9 +18,6 @@ sources:
   url: gnome:libshew.git
   directory: subprojects/libshew
   ref: d16afc40412b565d2bbecf80335f54a19a978009
-# Work around for https://gitlab.gnome.org/GNOME/mutter/-/work_items/4998
-- kind: local
-  path: files/gnome-shell
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -64,8 +61,3 @@ depends:
 variables:
   meson-local: >-
     -Dextensions-tool:bash_completion=disabled
-
-config:
-  install-commands:
-    (>):
-    - install -Dm644 -t "%{install-root}%{indep-libdir}/systemd/user/org.gnome.Shell@.service.d" env.conf
