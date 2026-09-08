@@ -4,11 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:gnome-initial-setup.git
   track: main
-  ref: 51.rc-4-g793ff2b957a43d912984265b7f2ee13616296ff2
+  ref: 51.rc-6-g2f8d6f7e9b4c08b3c0cfd39c42c7a4c1ff4b4493
 
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
+- sdk/blueprint-compiler.bst
 
 depends:
 - core-deps/NetworkManager.bst
