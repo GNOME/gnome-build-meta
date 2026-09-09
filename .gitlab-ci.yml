@@ -10,13 +10,6 @@ include:
     rumdl-version: "0.2.69"
     extra-rules:
     - !reference [".stage-only-rules", "rules"]
-- component: "gitlab.gnome.org/GNOME/citemplates/mdbook@master"
-  inputs:
-    job-stage: "deploy"
-    mdbook-version: "0.5.3"
-    theme-git-url: "https://gitlab.gnome.org/jimmac/gnome-mdbook-style.git"
-    extra-rules:
-    - !reference [".stage-only-rules", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -478,6 +471,24 @@ update_mimeapps:
   - ${BST} ${ARCH_OPT} artifact checkout --directory out gnomeos-deps/gnome-mimeapps.bst
   - mv out/usr/share/applications/gnome-mimeapps.list ./gnome-mimeapps.list
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-mimeapps.sh"
+
+mdbook:
+  extends:
+  - .x86_64
+  stage: deploy
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  needs:
+  - job: 'build-x86_64'
+    artifacts: false
+  script:
+  - ${BST} ${ARCH_OPT} build website.bst
+  - ${BST} ${ARCH_OPT} artifact checkout --directory mdbook website.bst
+  artifacts:
+    when: "always"
+    expire_in: "2 days"
+    paths:
+      - "mdbook/book"
 
 pages:
   stage: 'reports'
