@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fish-shell/fish-shell.git
   track: '*.*'
-  ref: 4.8.1-0-gacdaf2fbdb62b9af34694ccea7e8cb4c43f22c2f
+  ref: 4.9.3-0-g6cf31373e9468f1a261319aceb8730e5d1c47e58
 - kind: cargo2
   ref:
   - kind: registry
@@ -147,10 +147,6 @@ sources:
     name: equivalent
     version: 1.0.2
     sha: 877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f
-  - kind: registry
-    name: errno
-    version: 0.3.14
-    sha: 39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb
   - kind: registry
     name: fastrand
     version: 2.4.1

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:vcrhonek/hwdata.git
   track: 'v*'
-  ref: v0.410-0-g8bb6c48dc2e683777e625d1c9ef02c1b25b741cd
+  ref: v0.411-0-g7fc63d411377e40aab66bfbf77dce6a439c3fe87
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -7,7 +7,7 @@ sources:
   exclude:
   - '*rc*'
   - '*.*-bp'
-  ref: libpcap-1.10.6-0-ga999701dca5c873779281938baee6bc185a8d4dc
+  ref: libpcap-1.10.7-0-g1926f4163e4eef978c71fde28a3f6d51fff183a8
 
 build-depends:
 - (@): include/gcc-for-recc.yml

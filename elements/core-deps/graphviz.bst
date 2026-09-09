@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gitlab:graphviz/graphviz.git
   track: '*.*'
-  ref: 16.0.0-0-g06fff22d8e1a2aead6de0042e5e5ec2f7749be29
+  ref: 16.1.0-0-ge41c710710be080ad37af1b51c6e2f8beffa9ee5
 
 build-depends:
 - (@): include/gcc-for-recc.yml
