@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.beta.1-6-g0b38b4d9cd644bf3395a8559c6adc7c76c742f41
+  ref: 2.2.0-0-ga5c2d58d6ae0bd7233f6705781b17dd083ebde73
 - kind: cargo2
   ref:
   - kind: registry
@@ -459,40 +459,40 @@ sources:
     sha: 22a861859b887a79cf461359c192c97a57d8fb0229dd291232e57aa11f6fa72c
   - kind: registry
     name: gufo
-    version: 0.5.0-beta.1
-    sha: 13dfc7feee4f49b9ba9e056787e45dc183094e82facd30134ac1264250b77e40
+    version: 0.5.0
+    sha: 6a16d7faeeb03e2925ac6b0f40630b15b1992d08c50add402f35fde495e44f64
   - kind: registry
     name: gufo-common
-    version: 2.0.0-beta.1
-    sha: aa7226c8f146ccdea8d7a8cbfa03f7b87372092e0f39655cf19bade7d2fe0c8e
+    version: 2.0.0
+    sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.0-beta.1
-    sha: f6d580a20163c7a7d277c8cf9169dc18deb3003de4f08fb6c56d6c878901dfa0
+    version: 0.5.0
+    sha: e99100988e312c22c6f209663b289e727db3918d06fbcbbc2315149457b42b75
   - kind: registry
     name: gufo-jpeg
-    version: 0.5.0-beta.1
-    sha: f970f6a7ec35035ab893b394ced211205747d58c92d3b46665142d275aedca55
+    version: 0.5.1
+    sha: 383907a5c532bff484b2914d649e368e98ce6426829458353fe40070225b07a5
   - kind: registry
     name: gufo-png
-    version: 0.5.0-beta.1
-    sha: 57702bf2885289ea8a77a842d2792aca42975f2d1f237d785f45d30e78be363a
+    version: 0.5.0
+    sha: e5c3065acab6cf458afbe53f73462a0dbf17348a2af3c889183f8714b3bff6fc
   - kind: registry
     name: gufo-svg
-    version: 0.5.0-beta.1
-    sha: d1c368a09cab9f790c1c0c098eb485fcd15ffdec217e51f83f6785e742666b2b
+    version: 0.5.0
+    sha: c536908b63d5952fa5e8ebdfaff406b92bb8096d3cbbd402afd112340383ad93
   - kind: registry
     name: gufo-tiff
-    version: 0.5.0-beta.1
-    sha: fcf3a0dbc580a3653ac9cc6234d66cddc1fd0af5cc7b6f3cde63c9a2ad70d83e
+    version: 0.5.0
+    sha: e9c77c38e7815b76e08b1943dc67517e02543504c14a29e071a4ddf9bee111ec
   - kind: registry
     name: gufo-webp
-    version: 0.5.0-beta.1
-    sha: 4e1998271aa38387aa572f957d4cc7e64841dd34e6354e2008aa8f74f25f0e4c
+    version: 0.5.0
+    sha: 04d6d3dc0ccd22a30619df68ce347c844d8adb49b822f42660d9a92e6ae14540
   - kind: registry
     name: gufo-xmp
-    version: 0.5.0-beta.1
-    sha: 41d62245a5d579d9748465f91f99df9da6d984c253a8179c8e6d98a267f0f9ff
+    version: 0.5.0
+    sha: 903aaa13213b860bbad3565e62f3fbd1087ca9404692ebe53728654653470561
   - kind: registry
     name: half
     version: 2.7.1

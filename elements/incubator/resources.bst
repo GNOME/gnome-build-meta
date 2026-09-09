@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:Incubator/resources.git
   track: main
-  ref: 51.beta-12-g9e57d890322b4e58fc2c9bcce9e8008c6409f770
+  ref: 51.beta-13-g8f2c308d1028147e77ed93cb506a857acdd0747c
 - kind: cargo2
   ref:
   - kind: registry
