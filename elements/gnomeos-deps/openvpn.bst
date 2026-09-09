@@ -8,7 +8,7 @@ sources:
   - '*rc*'
   - '*beta*'
   - '*alpha*'
-  ref: v2.7.5-0-gb25bb2a8bda814edab39b4246d4e296330a7a29e
+  ref: v2.7.7-0-g85f07f7b784009adf90129b3854c5b742ca3cef9
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

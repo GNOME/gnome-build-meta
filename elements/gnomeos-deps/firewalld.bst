@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:firewalld/firewalld.git
   track: 'v*'
-  ref: v2.5.0-0-g694f4bcbcf492e8ef8399ec029d033c3d9b01852
+  ref: v2.5.1-0-g27da71f6cabff580096122a8e3f3db04af6dffd4
 - kind: local
   path: files/firewalld/lax.xml
 

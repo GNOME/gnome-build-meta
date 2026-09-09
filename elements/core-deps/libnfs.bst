@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:sahlberg/libnfs.git
   track: '*.*'
-  ref: libnfs-6.0.2-0-g18c5c73ee88bb7dc8da0d55dc95164bb77e49dc6
+  ref: libnfs-7.0.2-0-gb6a27bed572ee94a5e4d9db0d96e524455d86a42
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
