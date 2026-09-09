@@ -6,7 +6,7 @@ of master and all supported, release branches, that are also stored on pages
 import os
 import requests
 
-CALENDAR = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/jekyll/_data/calendar.json"
+CALENDAR = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/main/data/calendar.json"
 GITLAB_PAGES_FILENAME = "public/release-contents.html"
 
 RELEASE_MANIFESTS = {"platform": "Platform", "sdk": "SDK", "vm": "VM", "gnomeos": "Secure VM"}
