@@ -8,7 +8,7 @@ import zipfile
 
 import requests
 
-calendar = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/jekyll/_data/calendar.json"
+calendar = "https://gitlab.gnome.org/Teams/Websites/release.gnome.org/-/raw/main/data/calendar.json"
 
 resp = requests.get(calendar, timeout=20)
 data = resp.json()
