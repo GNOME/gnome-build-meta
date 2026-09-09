@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:canonical/snapd/releases/download/2.75.2/snapd_2.75.2.vendor.tar.xz
-  ref: b59998e0e7f2b683d04999d968ef29f9b9933cdb2c85ffc83cf1505bc3efccf1
+  url: github_files:canonical/snapd/releases/download/2.77.1/snapd_2.77.1.vendor.tar.xz
+  ref: 10c824694cd9c9954ba7a826d245458d8fa1006d49937fe480dc9f36b57b1efc
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
 
@@ -24,8 +24,6 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 environment:
-  GOPATH: "%{build-root}"
-  GO111MODULE: 'off'
   # There is an issue with xfsprogs header that need to be fixed
   CGO_CPPFLAGS: "-Wno-error=implicit-function-declaration"
 
@@ -38,21 +36,19 @@ variables:
     --with-snap-mount-dir="%{mount-dir}"
     --without-unit-tests
   libexecdir: '%{indep-libdir}/snapd'
-  go-flags: |
-    -buildmode=pie \
+  go-flags: >-
+    -mod=vendor
+    -buildmode=pie
     -ldflags "-s -linkmode external -extldflags '$LDFLAGS'"
-  go-static-flags: |
-    -buildmode=pie \
+  go-static-flags: >-
+    -mod=vendor
+    -buildmode=pie
     -ldflags "-s -linkmode external -extldflags '$LDFLAGS -static'"
 
 config:
   configure-commands:
   - |
-    mkdir -p src/github.com/snapcore
-    ln -sr . src/github.com/snapcore/snapd
-
-  - |
-    ./mkversion.sh 2.75.2
+    ./mkversion.sh 2.77.1
 
   - |
     cd cmd
@@ -63,17 +59,13 @@ config:
     ./configure %{conf-args}
 
   build-commands:
-  - go build -o bins/snapd %{go-flags} github.com/snapcore/snapd/cmd/snapd
-  - go build -o bins/snap %{go-flags} github.com/snapcore/snapd/cmd/snap
-  - go build -o bins/snap-failure %{go-flags} github.com/snapcore/snapd/cmd/snap-failure
-  - go build -o bins/snap-seccomp %{go-flags} github.com/snapcore/snapd/cmd/snap-seccomp
-  - go build -o bins/snap-update-ns %{go-static-flags} github.com/snapcore/snapd/cmd/snap-update-ns
-  - |
-    go build -o bins/snap-exec %{go-static-flags} github.com/snapcore/snapd/cmd/snap-exec
-  - |
-    go build -o bins/snapctl %{go-static-flags} github.com/snapcore/snapd/cmd/snapctl
-  - |
-    go build -o bins/snapd-apparmor %{go-flags} github.com/snapcore/snapd/cmd/snapd-apparmor
+  - go build -o bins/snapd %{go-flags} ./cmd/snapd
+  - go build -o bins/snap-failure %{go-flags} ./cmd/snap-failure
+  - go build -o bins/snap-seccomp %{go-flags} ./cmd/snap-seccomp
+  - go build -o bins/snap-update-ns %{go-static-flags} ./cmd/snap-update-ns
+  - go build -o bins/snap-exec %{go-static-flags} ./cmd/snap-exec
+  - go build -o bins/snapctl %{go-static-flags} ./cmd/snapctl
+  - go build -o bins/snapd-apparmor %{go-flags} ./cmd/snapd-apparmor
 
   - |
     make -C cmd
@@ -90,8 +82,8 @@ config:
       bins/snapd-apparmor
 
   - |
-    install -Dm755 -t '%{install-root}%{bindir}' \
-      bins/snap
+    install -Dm755 -d '%{install-root}%{bindir}'
+    ln -sr '%{install-root}%{libexecdir}/snapd' '%{install-root}%{bindir}/snap'
 
   - |
     systemdsystemunitdir="$(pkg-config --variable=systemdsystemunitdir systemd)"
