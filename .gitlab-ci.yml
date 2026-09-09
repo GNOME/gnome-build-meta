@@ -7,7 +7,7 @@ include:
 - component: "gitlab.gnome.org/GNOME/citemplates/markdown-lint@master"
   inputs:
     job-stage: "reports"
-    rumdl-version: "0.2.5"
+    rumdl-version: "0.2.69"
     extra-rules:
     - !reference [".stage-only-rules", "rules"]
 - component: "gitlab.gnome.org/GNOME/citemplates/mdbook@master"
