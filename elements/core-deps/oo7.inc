@@ -12,13 +12,13 @@ sources:
       - '*-alpha*'
       - '*-beta*'
       - '*-rc*'
-  ref: v0.6.0-alpha-244-ge830f53dd84aefaec72e6971596062b395673ba0
+  ref: v0.6.0-alpha-251-gda576e4332043bb886b123bb6e1dc344c2530613
 - kind: cargo2
   ref:
   - kind: registry
     name: aes
-    version: 0.9.2
-    sha: f8eb277bec05f56a0e0591f155a484cbd0f4f07ff2905051a48c72f004f7ed58
+    version: 0.9.3
+    sha: 35f0f96ce78e38c3dc6d8948aa8163d06385be74000f3c7a95bf1eef35d3ea32
   - kind: registry
     name: aho-corasick
     version: 1.1.5
@@ -125,8 +125,8 @@ sources:
     sha: 710f1dd022ef4e93f8a438b4ba958de7f64308434fa6a87104481645cc30068b
   - kind: registry
     name: blocking
-    version: 1.6.2
-    sha: e83f8d02be6967315521be875afa792a316e28d57b5a2d401897e2a7921b7f21
+    version: 1.7.0
+    sha: a70e4329df6cb94385eed412ec92375c3cdd8a6e502493d1229b6414e4036dfa
   - kind: registry
     name: blowfish
     version: 0.10.0
@@ -705,8 +705,8 @@ sources:
     sha: 872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297
   - kind: registry
     name: syn
-    version: 3.0.3
-    sha: 53e9bae58849f64dfa4f5d5ae372c8341f7305f82a3868709269343628b659a3
+    version: 3.0.4
+    sha: e6275cddf4610d1775e6d1fe9469b2e77d0f39fd98fb7450901b821e0c53649f
   - kind: registry
     name: target-lexicon
     version: 0.13.5

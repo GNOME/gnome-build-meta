@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: openldap:openldap.git
   track: 'OPENLDAP_REL_ENG_*_*_*'
-  ref: OPENLDAP_REL_ENG_2_7_0-0-gcbc3211e0f9c01e4fbf5c795ccdffd57d9ce660b
+  ref: OPENLDAP_REL_ENG_2_7_1-0-gc585a93bf4708f7ea5e0c323b16f6b2c9b6db380
 
 build-depends:
 - (@): include/gcc-for-recc.yml
