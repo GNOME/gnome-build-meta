@@ -29,21 +29,21 @@ These steps are taken from the Arch Linux wiki:
     LC_ALL=C lscpu | grep Virtualization
     ```
 
-    You should see a line similar to this in the output:
+   You should see a line similar to this in the output:
 
     ```bash
     Virtualization:                     VT-x
     ```
 
-    If you don't see any output, hardware virtualization is missing. Nearly all
-    x86_64 processors since around 2013 support this feature but some laptop
-    vendors choose to disable it by default.
+   If you don't see any output, hardware virtualization is missing. Nearly all
+   x86_64 processors since around 2013 support this feature but some laptop
+   vendors choose to disable it by default.
 
-    You should be able to find instructions for enabling it if you search online
-    for the make and model of your laptop or mainboard plus "enable hardware
-    virtualization". You'll likely need to reboot the laptop, and hold down a
-    specific key to enter the UEFI or BIOS setup menu, and configure the setting
-    there.
+   You should be able to find instructions for enabling it if you search online
+   for the make and model of your laptop or mainboard plus "enable hardware
+   virtualization". You'll likely need to reboot the laptop, and hold down a
+   specific key to enter the UEFI or BIOS setup menu, and configure the setting
+   there.
 
 2. Check kernel support. Run this command in a terminal:
 
@@ -51,9 +51,9 @@ These steps are taken from the Arch Linux wiki:
     lsmod | grep kvm
     ```
 
-    You should see some modules listed including 'kvm'. If you don't see
-    anything, your OS probably didn't built Linux with KVM support enabled. Try
-    the latest version of Fedora or Ubuntu instead.
+   You should see some modules listed including 'kvm'. If you don't see
+   anything, your OS probably didn't built Linux with KVM support enabled. Try
+   the latest version of Fedora or Ubuntu instead.
 
 ### Troubleshooting inside containers
 
