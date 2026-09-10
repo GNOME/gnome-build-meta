@@ -78,8 +78,8 @@ Fetch and prepare the required test media (note: large files):
 
 ```bash
 curl --get --location $(./utils/test_media_url.py --latest) --output gnome_os_installer.iso
-sudo ./../../utils/to-raw.sh gnome_os_installer.iso gnome_os_disk.img
-sudo ./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
+run0 ./../../utils/to-raw.sh gnome_os_installer.iso gnome_os_disk.img
+run0 ./utils/expand_disk.sh ./gnome_os_disk.img 12 GB
 ```
 
 Download the openQA worker container image:

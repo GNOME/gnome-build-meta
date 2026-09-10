@@ -19,7 +19,7 @@ Download the GNOME OS [aarch64 ISO](https://os.gnome.org/download/latest/gnome_o
 Create the disk to flash with: (FIXME: update to-raw.sh)
 
 ```bash
-sudo systemd-repart --empty=create --size=auto --sector-size=4096 --architecture=arm64 --definitions=utils/repart.raw.d/ --image=gnome_os-aarch64.iso userdata.img
+run0 systemd-repart --empty=create --size=auto --sector-size=4096 --architecture=arm64 --definitions=utils/repart.raw.d/ --image=gnome_os-aarch64.iso userdata.img
 ```
 
 (replace `gnome_os-aarch64.iso` with the actual filename)
@@ -90,13 +90,13 @@ ModemManager.
 ### No SIM
 
 ```bash
-sudo qmicli -d qrtr://0 --uim-get-card-status
+run0 qmicli -d qrtr://0 --uim-get-card-status
 ```
 
 Look for the application ID. Then use it in:
 
 ```bash
-sudo qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX'
+run0 qmicli -d qrtr://0 --uim-change-provisioning-session='slot=1,activate=yes,session-type=primary-gw-provisioning,aid=XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX'
 ```
 
 You can create unit in `/etc/systemd/system` to run this command. You
