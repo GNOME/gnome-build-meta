@@ -224,7 +224,7 @@ ssh -tt $SSH_ARGS run0 /tmp/gnome-build-meta/utils/enable-local-repo.sh --pubrin
 Finally, update and reboot:
 
 ```shell
-ssh -tt $SSH_ARGS run0 updatectl update host@l.1 # Without passing `--same-version` to run-sysupdate-repo.sh, the number after `l.` increments on each run
+ssh -tt $SSH_ARGS updatectl update host@l.1 # Without passing `--same-version` to run-sysupdate-repo.sh, the number after `l.` increments on each run
 ssh -tt $SSH_ARGS run0 systemctl reboot
 ```
 
