@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gjs.git
   track: master
-  ref: 1.89.90-29-gd20d21e62d5d9965447a5d9ffdfdc1b9eaef224c
+  ref: 1.89.90-36-g4296eafe7961537de9c692773e5f30a15f1f28ae
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
@@ -13,6 +13,7 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
+- sdk-deps/wabt.bst
 - sdk/sysprof-minimal.bst
 
 depends:
