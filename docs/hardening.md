@@ -94,7 +94,7 @@ systemctl enable clear-lockout.service
 By default we encrypt your hard drive if there's a tpm2 device available. The long term plan is to use systemd homed to encrypt user data, but until then you can replace the unattended luks decryption with a tpm2+pin key in luks using the following command.
 
 ```bash
-sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto /dev/disk/by-partlabel/root
+run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto /dev/disk/by-partlabel/root
 ```
 
 ### Enabling secure boot
@@ -130,7 +130,7 @@ This will disallow firmware update.
 
 ## uinput, hidraw
 
-Because of Steam, user has access to `uinput` which can create new input devices, like a keyboard. Applications that get access to `/dev/uinput` could inject commands into a terminal, and hitchhike a `sudo` session.
+Because of Steam, user has access to `uinput` which can create new input devices, like a keyboard. Applications that get access to `/dev/uinput` could inject commands into a terminal, and hitchhike a `run0` session.
 
 To disable it:
 

@@ -43,7 +43,7 @@ updatectl list host
 If you want to install the development toolchain of GNOME OS you can do so by enabling the following System Extensions. These include compilers, headers, along with common utilities used for GNOME development, such as flatpak-builder, GNOME Builder and so on.
 
 ```bash
-sudo updatectl enable devel --now
+run0 updatectl enable devel --now
 ```
 
 ## Enable extra codecs on the host system
@@ -51,7 +51,7 @@ sudo updatectl enable devel --now
 The host system does not come with support for some patent-encumbered codecs by default. The system video player will not be able to play these formats, neither will thumbnails be generated for them. You can enable support for these codecs by enabling an optional extension.
 
 ```bash
-sudo updatectl enable codecs-extra --now
+run0 updatectl enable codecs-extra --now
 ```
 
 Flatpak applications do not need this to open the same files.
@@ -61,7 +61,7 @@ Flatpak applications do not need this to open the same files.
 GNOME OS ships with the upstream open source drivers for Nvidia graphics cards, which are enough for light use but have subpar performance and don't support features like CUDA. If you want the best performance or need to use features like CUDA and OptiX, you should enable the Nvidia driver extension like so:
 
 ```bash
-sudo updatectl enable nvidia-driver --now
+run0 updatectl enable nvidia-driver --now
 ```
 
 After rebooting, you should be using the Nvidia driver.
@@ -78,8 +78,8 @@ If an update breaks something, you can always boot into an older version. You ca
 Before applying a firmware update, you need to unlock the firmware PCR values. This will automatically recreate a pcrlock policy on next boot
 
 ```bash
-sudo /usr/lib/systemd/systemd-pcrlock unlock-firmware-code
-sudo /usr/lib/systemd/systemd-pcrlock unlock-firmware-config
+run0 /usr/lib/systemd/systemd-pcrlock unlock-firmware-code
+run0 /usr/lib/systemd/systemd-pcrlock unlock-firmware-config
 ```
 
 ## Re-enroll tpm2 if needed
@@ -87,9 +87,9 @@ sudo /usr/lib/systemd/systemd-pcrlock unlock-firmware-config
 If you update your firmware or reset the uefi settings, you might be asked to manually unlock your hard drive, instead of happening automatically. This is because the state of the machine has changed without the OS knowing about it. In such case you will need to re-enroll the tpm2 values for the updated firmware keys. (We are exploring ways to make this easier in the future)
 
 ```bash
-sudo /usr/lib/systemd/systemd-pcrlock remove-policy
-sudo /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+14+15
-sudo systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/disk/by-partlabel/root
+run0 /usr/lib/systemd/systemd-pcrlock remove-policy
+run0 /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+14+15
+run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/disk/by-partlabel/root
 ```
 
 ## Troubleshooting
