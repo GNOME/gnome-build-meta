@@ -16,7 +16,7 @@ include:
     mdbook-version: "0.5.3"
     theme-git-url: "https://gitlab.gnome.org/jimmac/gnome-mdbook-style.git"
     extra-rules:
-    - !reference [".stage-only-rules", "rules"]
+    - !reference [".pages-rules", "rules"]
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -66,6 +66,11 @@ stages:
       - "project.conf"
       - ".gitlab-ci/**/*"
       - ".gitlab-ci.yml"
+
+.pages-rules:
+  rules:
+  - !reference [".stage-only-rules", "rules"]
+  - if: $CI_COMMIT_REF_NAME == "master"
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -496,8 +501,7 @@ pages:
     paths:
     - 'public'
   rules:
-  - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+    - !reference [".pages-rules", "rules"]
 
 make-git-archive:
   stage: "deploy"
