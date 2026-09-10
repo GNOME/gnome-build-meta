@@ -24,7 +24,7 @@ machines:
       QEMUCPU: host
       QEMUCPUS: '2'
       QEMUPORT: '20012'
-      QEMURAM: '2560'
+      QEMURAM: '4096'
       QEMU_SMBIOS: 'type=11,path=/tests/config/smbios.txt'
       QEMU_VIDEO_DEVICE: virtio-vga
       UEFI: '1'
