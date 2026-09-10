@@ -5,7 +5,7 @@ set -eux
 git config --global user.email "sysadmin@gnome.org"
 git config --global user.name "gnome-build-meta-bot"
 
-if [ "$CI_COMMIT_REF_NAME" == "master" ]; then
+if [ "$CI_COMMIT_REF_NAME" == "$CI_DEFAULT_BRANCH" ]; then
     set +x
 
     # Setup ssh
@@ -62,7 +62,7 @@ EOF
 
 git show
 
-if [ "$CI_COMMIT_REF_NAME" == "master" ]; then
+if [ "$CI_COMMIT_REF_NAME" == "$CI_DEFAULT_BRANCH" ]; then
     git push \
         -o merge_request.create \
         -o merge_request.remove_source_branch \
