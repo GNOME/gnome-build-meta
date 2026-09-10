@@ -70,7 +70,7 @@ stages:
 .pages-rules:
   rules:
   - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
 
 workflow:
   # https://docs.gitlab.com/ee/ci/yaml/index.html#switch-between-branch-pipelines-and-merge-request-pipelines
@@ -144,7 +144,7 @@ default:
   interruptible: false
   rules:
   - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
   - if: $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/ && $CI_PIPELINE_SOURCE != "schedule"
 
 .test-openqa-template:
@@ -237,7 +237,7 @@ deploy-flatpak:
     artifacts: false
   rules:
   - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
     variables:
       FLAT_MANAGER_SERVER: https://flat-manager.gnome.org/
       ENVIRONMENT_NAME: flatpak-nightly
@@ -371,12 +371,12 @@ s3-image-static:
     artifacts: false
   rules:
   - !reference [".stage-only-rules", "rules"]
-  - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
     when: manual
     needs:
     - job: s3-image
       artifacts: false
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
     when: on_success
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/publish-s3-static.sh" "$IMAGE_VERSION"
@@ -418,7 +418,7 @@ cve_report:
     - cve-reports
   rules:
   - !reference [".stage-only-rules", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH" || $CI_COMMIT_REF_NAME =~ /^gnome-\d\d$/
   - if: $CI_COMMIT_REF_NAME != "master"
     when: "manual"
     allow_failure: true
@@ -432,7 +432,7 @@ test-openqa-installer:
   retry: 2
   rules:
   - !reference [".test-openqa-template", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
   - if: $CI_COMMIT_TAG
 
 test-openqa-desktop:
@@ -442,7 +442,7 @@ test-openqa-desktop:
     TESTSUITES: "gnome_apps gnome_accessibility gnome_mobile gnome_locales"
   rules:
   - !reference [".test-openqa-template", "rules"]
-  - if: $CI_COMMIT_REF_NAME == "master"
+  - if: $CI_COMMIT_REF_NAME == "$CI_DEFAULT_BRANCH"
   - if: $CI_COMMIT_TAG
   allow_failure: true
 
