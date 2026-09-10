@@ -7,18 +7,15 @@ sources:
   exclude:
   - "*-a*"
   - "*-b*"
-  ref: v2.16-0-gfaf7326a2997dea91687fd3daa17fc405910a4c1
+  - "*-rc*"
+  ref: v3.1-0-gf73ecd53751cd74bc8e46b60c973ea63edf41403
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
+- freedesktop-sdk.bst:components/swig.bst
 
 depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/json-c.bst
+- freedesktop-sdk.bst:components/kmod.bst
 - freedesktop-sdk.bst:components/libnvme.bst
-
-config:
-  install-commands:
-    (>):
-    - rm '%{install-root}%{sysconfdir}/nvme/discovery.conf'
-    - rmdir '%{install-root}%{sysconfdir}/nvme'
