@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:nautilus.git
-  track: main
-  ref: 51.rc-12-g301d1849c3900eac9957f074b14b2c0eee1eeef3
+  url: gnome_gitlab:ignapk/nautilus.git
+  track: terminal-intent
+  ref: b421751a6e98f7389fba43066f639d45da690011
 # please keep in sync with https://gitlab.gnome.org/GNOME/nautilus/-/blob/main/subprojects/libgxdp.wrap
 - kind: git_repo
   url: gnome:libgxdp.git

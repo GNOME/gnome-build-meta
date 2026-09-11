@@ -1,8 +1,8 @@
 sources:
 - kind: git_repo
-  url: gnome:glib.git
-  track: main
-  ref: 2.89.4-22-g6f98b0b8ad9cb7f9be237b4a0dba3833331a8f37
+  url: gnome_gitlab:ignapk/glib.git
+  track: gnomeos-intents
+  ref: efdaef27c8c6d568182646d9c5238c386652f240
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb

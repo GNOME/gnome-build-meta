@@ -2,9 +2,9 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: gnome:console.git
-  track: main
-  ref: 51.rc-7-g6e64bb946b431673d6b324b432c39bb5c09a8ead
+  url: gnome_gitlab:ignapk/console.git
+  track: wip/intents
+  ref: 62907a3f18d6159041d8901e69946e1b03813675
 
 build-depends:
 - (@): include/gcc-for-recc.yml
