@@ -42,6 +42,11 @@ artifacts:
     push: true
     auth:
       access-token: ${CI_PROJECT_DIR}/.gitlab-ci/gbm-cache-token
+    connection-config:
+      keepalive-time: 60
+      retry-limit: 5
+      retry-delay: 500
+      request-timeout: 180
 EOF
 fi
 
@@ -54,6 +59,11 @@ source-caches:
     push: true
     auth:
       access-token: ${CI_PROJECT_DIR}/.gitlab-ci/gbm-cache-token
+    connection-config:
+      keepalive-time: 60
+      retry-limit: 5
+      retry-delay: 500
+      request-timeout: 180
 EOF
 fi
 
