@@ -1,0 +1,25 @@
+From 1a94be84ad6adaec603dd0bd0a2dbeff5e3a1731 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ignacy=20Kuchci=C5=84ski?= <ignacykuchcinski@gmail.com>
+Date: Mon, 14 Sep 2026 13:04:24 +0200
+Subject: [PATCH] Use intent-aware desktop-file-utils
+
+---
+ elements/components/desktop-file-utils.bst | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/elements/components/desktop-file-utils.bst b/elements/components/desktop-file-utils.bst
+index 54588a309..1a6eb0469 100644
+--- a/elements/components/desktop-file-utils.bst
++++ b/elements/components/desktop-file-utils.bst
+@@ -20,6 +20,6 @@ public:
+ 
+ sources:
+ - kind: git_repo
+-  url: freedesktop:xdg/desktop-file-utils.git
++  url: freedesktop:swick/desktop-file-utils.git
+   track: '*.*'
+-  ref: 0.28-0-gbc403b7e9ea4847b1590c41eb1581aa3f1d24b36
++  ref: 5cf816534bc5019ee8299be0c2040e9cfd0733c9
+-- 
+2.55.0
+
