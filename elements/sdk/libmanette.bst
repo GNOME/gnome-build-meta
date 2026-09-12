@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libmanette.git
   track: main
-  ref: 0.2.11-44-gaa188cd6a9ae2e2b29442d7e07aed8a8b3fb0102
+  ref: 0.2.11-45-g006e17b2184a3098a14081d50d2b5303c5cf172c
 
 build-depends:
 - (@): include/gcc-for-recc.yml

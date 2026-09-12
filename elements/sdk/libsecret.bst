@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libsecret.git
   track: main
-  ref: 0.21.7-16-g98fc993200bedc925b6779a2998de1c3e58f0cad
+  ref: 0.21.8-0-g257547ed7a541fc63400f91578216d3b53721c57
 
 build-depends:
 - (@): include/gcc-for-recc.yml

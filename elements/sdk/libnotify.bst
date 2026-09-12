@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libnotify.git
   track: master
-  ref: 0.8.8-1-g243adf21a3495d28c520afa8915c2a3b57370a23
+  ref: 0.8.8-4-g97c8122ca449804616145314f2f8ee3ff685a82f
 
 build-depends:
 - (@): include/gcc-for-recc.yml
