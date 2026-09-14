@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libsoup.git
   track: master
-  ref: 3.7.2-15-gc0e3586f0e7d0d6f6c7069bb25f15e606d73046f
+  ref: 3.7.3-0-g402d0fa189abfdd2071bab9fa3fc926f4ed7f70d
 
 build-depends:
 - (@): include/gcc-for-recc.yml
