@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.0-0-ga5c2d58d6ae0bd7233f6705781b17dd083ebde73
+  ref: 2.2.1-5-g1e548285d16ebbd2411f82cfa8030694e10e4317
 - kind: cargo2
   ref:
   - kind: registry
@@ -219,8 +219,8 @@ sources:
     sha: 773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b
   - kind: registry
     name: crc32fast
-    version: 1.5.0
-    sha: 9481c1c90cbf2ac953f07c8d4a58aa3945c425b7185c9154d67a65e4230da511
+    version: 1.5.2
+    sha: 01a7799fd6b852db0e61728dde9a204c423b44d689dbd432522543614b490e78
   - kind: registry
     name: criterion
     version: 0.8.2
@@ -805,6 +805,11 @@ sources:
     name: png
     version: 0.18.1
     sha: 60769b8b31b2a9f263dae2776c37b1b28ae246943cf719eb6946a1db05128a61
+  - kind: git
+    commit: e917d6a04f198c0b49df0ee5d0a65732bb6a337c
+    repo: github:image-rs/image-png.git
+    name: png
+    version: 0.18.1
   - kind: registry
     name: polling
     version: 3.11.0

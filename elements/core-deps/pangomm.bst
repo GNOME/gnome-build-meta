@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:pangomm.git
   track: master
-  ref: 2.56.2-2-ge0e53f3a80466ca3be6192824a288ae55026a631
+  ref: 2.56.2-4-g738317df0d2545971dc9177a596d739b4096b9e6
 
 build-depends:
 - (@): include/gcc-for-recc.yml
