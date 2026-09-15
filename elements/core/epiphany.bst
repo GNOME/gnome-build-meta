@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:epiphany.git
   track: main
-  ref: 51.beta-143-gf217025953ebd8c04fa3bf4b6fa948d299643271
+  ref: 51.beta-146-gea5d4f2ca72ff07c099556fe01d1f79395901b6e
 
 build-depends:
 - (@): include/gcc-for-recc.yml

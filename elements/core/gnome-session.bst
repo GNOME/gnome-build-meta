@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-session.git
   track: main
-  ref: 51.rc-3-gc05ae7c5d1a48c296f0a3d21339595dc07c7c308
+  ref: 51.0-0-gaed00cf18229a98231c23e14f5798ddb918c4956
 
 build-depends:
 - (@): include/gcc-for-recc.yml
