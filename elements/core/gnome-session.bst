@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-session/51/gnome-session-51.rc.tar.xz
-  ref: 0cee026698e6af79b41c6ed32a9fdccbf2f67e92b157b17a046ec5a643f112e5
+  url: gnome_downloads:gnome-session/51/gnome-session-51.0.tar.xz
+  ref: 5195c4f60542a953ab6ebd288f3785b8e7746292d8c167e0c99d353438a184d1
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

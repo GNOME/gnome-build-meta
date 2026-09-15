@@ -2,8 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: gnome_downloads:evolution-data-server/3.61/evolution-data-server-3.61.3.tar.xz
-  ref: 1cb9c9b6a12fa53473f5c0332ac39fff32586fb22a932a26aa973c260bb13a83
+  url: gnome_downloads:evolution-data-server/3.62/evolution-data-server-3.62.0.tar.xz
+  ref: 78be88e9a511f5afe7ff2e363eade84b622dd0282647fc576edb2d4ff2962cba
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst

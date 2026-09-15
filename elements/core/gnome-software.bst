@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-software/51/gnome-software-51.rc.tar.xz
-  ref: 10e200589bacd551121d4e805174e7b0271495a16589179fd4dbb50738f2e937
+  url: gnome_downloads:gnome-software/51/gnome-software-51.0.tar.xz
+  ref: 834b6035e61e36dd72339eb3e15d299b472ae0b393467a5bb36bb0045e0ba123
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:orca/51/orca-51.rc.tar.xz
-  ref: f0543b8e638404b9eb23148d2462ff6d42842f03f0ef80b4311c9e5f3a5f977f
+  url: gnome_downloads:orca/51/orca-51.0.tar.xz
+  ref: 8bc3e44bc5b7b66ec7e0cc5c82695c0075661922745d25724f5fc84a25602108
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

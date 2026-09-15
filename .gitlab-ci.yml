@@ -19,7 +19,7 @@ variables:
   # OCI_BRANCH is like branch and the tag that we use in the images
   # FLATPAK_BRANCH is branch+qualifier (ex. 46beta)
   OCI_BRANCH: '51'
-  FLATPAK_BRANCH: 51beta
+  FLATPAK_BRANCH: '51'
 
   # Docker Images
   DOCKER_REGISTRY: "registry.gitlab.com/freedesktop-sdk/infrastructure/freedesktop-sdk-docker-images"

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gsettings-desktop-schemas/51/gsettings-desktop-schemas-51.rc.tar.xz
-  ref: 4eb16e9315cf1182fa50a4bd49ee98bec253d78db0113cd41644cc0c9a25ae2e
+  url: gnome_downloads:gsettings-desktop-schemas/51/gsettings-desktop-schemas-51.0.tar.xz
+  ref: 1e2419a5f21d26c324b28ae1c00e29e9175e8b596fff385a04c2172b36652226
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

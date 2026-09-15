@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-characters/51/gnome-characters-51.rc.tar.xz
-  ref: e95da72ec9ba6579ab101309cb9b8ee6350940b64910939f4148dc1a60e9018c
+  url: gnome_downloads:gnome-characters/51/gnome-characters-51.0.tar.xz
+  ref: 8b90e9d7fcff43622ed34677f0029cd74b440185f1639af48c439f63bebadc31
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

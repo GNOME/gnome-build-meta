@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-system-monitor/51/gnome-system-monitor-51.rc.tar.xz
-  ref: 7967fe230d33591cd33c268df5d01a035a0826d4d2f0ed8feb9106f0f47604bd
+  url: gnome_downloads:gnome-system-monitor/51/gnome-system-monitor-51.0.tar.xz
+  ref: 8887b03427230ac0816d4b0c801ce6628ad1fc9139ed3072914e9faa881ba868
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

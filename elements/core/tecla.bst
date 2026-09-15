@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:tecla/51/tecla-51.beta.tar.xz
-  ref: ec97bf9730e2307b2a3936f16ce90368487d23fdc5e3083cb07268cc45813fb8
+  url: gnome_downloads:tecla/51/tecla-51.0.tar.xz
+  ref: ddf1a8555044171d0d84b580d6d541c3c621ae77996f6bc5edde598de2f8625b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

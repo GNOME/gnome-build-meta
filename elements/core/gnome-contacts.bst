@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-contacts/50/gnome-contacts-50.0.tar.xz
-  ref: 2a3bea343171be244f12b7c21a40ca38e9a92dea9890393af5e8ac139bc0dab3
+  url: gnome_downloads:gnome-contacts/51/gnome-contacts-51.0.tar.xz
+  ref: c8b60752f65a966e0a2c0cbf7c1e1607ee3b4a49318b50b19bdad2ab7fc6706d
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

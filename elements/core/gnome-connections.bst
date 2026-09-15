@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-connections/51/gnome-connections-51.rc.1.tar.xz
-  ref: 24474c17080cc1ef97edf745b6f23cf77096f268ce2f6cf3c782ff03fdb43ce1
+  url: gnome_downloads:gnome-connections/51/gnome-connections-51.0.tar.xz
+  ref: e3a73728cf30f1e542aed3aa4f18a342e09349b97fe01dfaef86e1603e53af3c
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

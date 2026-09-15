@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-console/51/gnome-console-51.rc.tar.xz
-  ref: 8f72e0de17c70344ca843b89618a5259fe93849a9e837154bf8d5a8468333c86
+  url: gnome_downloads:gnome-console/51/gnome-console-51.0.tar.xz
+  ref: f40d13903b1f067f0c02e0812f78df8ec25d8cd129794e7e46bd56ca0c156f2f
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
