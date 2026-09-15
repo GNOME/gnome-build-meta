@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libsecret/0.21/libsecret-0.21.7.tar.xz
-  ref: 6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e
+  url: gnome_downloads:libsecret/0.21/libsecret-0.21.8.2.tar.xz
+  ref: 142948339c5b971d8f6a8c7099521f6fd319b6fe73d2694b4e6d3310ed28b6e6
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

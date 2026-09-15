@@ -2,14 +2,12 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mutter/51/mutter-51.rc.tar.xz
-  ref: 6f24f0fe70a32aad2fb5170a81860360a0564eb5591de6b4b0ec9f22d09f5298
+  url: gnome_downloads:mutter/51/mutter-51.0.tar.xz
+  ref: 5d28f3ae225692428fcafb96500d673f34328b698b86960c9c1460d0b1d983b3
 - kind: git_repo
   url: gnome:gvdb.git
   directory: subprojects/gvdb
   ref: b54bc5da25127ef416858a3ad92e57159ff565b3
-- kind: patch
-  path: patches/mutter/0001-onscreen-native-Disable-FBO-path-by-default-with-sof.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml

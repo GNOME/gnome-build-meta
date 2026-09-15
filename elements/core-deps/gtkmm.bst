@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtkmm/4.23/gtkmm-4.23.2.tar.xz
-  ref: 6562de077fd7a94e9fb125bce26499b50788cae2541b037d4c4fbe23f0be124d
+  url: gnome_downloads:gtkmm/4.24/gtkmm-4.24.0.tar.xz
+  ref: 7fd9cea356e7d3b74bf7d2a51d7e0e6763f3f9f1cddc5e77c8b0b5b7fa9d5e5a
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

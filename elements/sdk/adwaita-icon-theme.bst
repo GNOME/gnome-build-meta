@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: gnome_downloads:adwaita-icon-theme/51/adwaita-icon-theme-51.beta.tar.xz
-  ref: b55b60b406f6e73ca925875a30144691e347971d3785d44808ed9ef09b3f2dc3
+  url: gnome_downloads:adwaita-icon-theme/51/adwaita-icon-theme-51.0.tar.xz
+  ref: ba561cf3c96305a47179fa5605856ad695c9238ea07f7093aebd9ba80c4e323b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

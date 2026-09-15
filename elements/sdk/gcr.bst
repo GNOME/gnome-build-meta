@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gcr/4.4/gcr-4.4.0.1.tar.xz
-  ref: 0c3c341e49f9f4f2532a4884509804190a0c2663e6120360bb298c5d174a8098
+  url: gnome_downloads:gcr/4.4/gcr-4.4.1.tar.xz
+  ref: c4442c15d4330f17a1f5194df08c576877af68412ab2521446a93bd5e24c931b
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

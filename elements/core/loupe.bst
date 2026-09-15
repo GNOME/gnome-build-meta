@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:loupe/51/loupe-51.rc.tar.xz
-  ref: 66c2a8bf1a6d52d353ff8d899d1be85df33f1ec823ea0a26146954f067c690e3
+  url: gnome_downloads:loupe/51/loupe-51.0.tar.xz
+  ref: 13fa9990565ef917902f777cfce091ab60adb8a114a9f6cca274dfc5c0aae661
 - kind: cargo2
 
   ref:
@@ -385,32 +385,32 @@ sources:
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: registry
     name: glycin
-    version: 4.0.0-beta.1
-    sha: 6e63b783b3024958cc5dba0844867be5979dba473eced20ec5847c79b1bbaf47
+    version: 4.0.0
+    sha: dc9bb9cfa3d4db9eab0e2394f0e60fe4071fd31affd1704f2ecccc6bdd24c7b9
   - kind: registry
     name: glycin-builtin
-    version: 4.0.0-beta.1
-    sha: 478cc2ec0f9a3eae43485c139e683ac7880d4a9c5157704ab5ab72454e853442
+    version: 4.0.0
+    sha: b801b326426a0ccb61899174b0a08c2316defd323cfe78be9aa6232a2efdfeac
   - kind: registry
     name: glycin-common
-    version: 2.0.0-beta.1
-    sha: 90f682024e248da40a61c1f2176941d7d1492489969765f07ff6afa505a215db
+    version: 2.0.0
+    sha: f34692fa7314e5108eafaba7621460d958caba839a6d5040f1caba98d7b4a692
   - kind: registry
     name: glycin-core
-    version: 4.0.0-beta.1
-    sha: 935a44dbb054344d24d3d141d63460544b039af8b7cd1e48fc86ce4fc9bc5351
+    version: 4.0.0
+    sha: 9466e4f18a53312faee414ea85813d6674d4cb5badad059365c4882984b40201
   - kind: registry
     name: glycin-external
-    version: 4.0.0-beta.1
-    sha: 0966ed359a4824ab4985915e48bf403a35c2826b77eaa4724889162443d65abd
+    version: 4.0.0
+    sha: a7d335778b14437e1339d703afd1ce69e61df8ab5420882b4b7821b9a2ca9d4a
   - kind: registry
     name: glycin-image-rs
-    version: 2.2.0-beta.1
-    sha: 8c2f9228ea82df0710f9bd64ec487ebdb224b1749bd24ecb2dc1148e9f935d87
+    version: 2.2.0
+    sha: 3df0cbc11fe5d5523575b04f724c82d8d50e2c03830622b655e7d4015eba6472
   - kind: registry
     name: glycin-utils
-    version: 5.0.0-beta
-    sha: a22f2105cf122cf99304f24f3c2a071942ff86babf15804eb5d6db775e9dd53f
+    version: 5.0.0
+    sha: 68b112ddb84bd9c1453b119292e38788aa18015d5c12158c1d6fab1b9e353ee7
   - kind: registry
     name: gobject-sys
     version: 0.22.6
@@ -445,36 +445,36 @@ sources:
     sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
   - kind: registry
     name: gufo
-    version: 0.5.0-beta.1
-    sha: 13dfc7feee4f49b9ba9e056787e45dc183094e82facd30134ac1264250b77e40
+    version: 0.5.0
+    sha: 6a16d7faeeb03e2925ac6b0f40630b15b1992d08c50add402f35fde495e44f64
   - kind: registry
     name: gufo-common
-    version: 2.0.0-beta.1
-    sha: aa7226c8f146ccdea8d7a8cbfa03f7b87372092e0f39655cf19bade7d2fe0c8e
+    version: 2.0.0
+    sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.0-beta.1
-    sha: f6d580a20163c7a7d277c8cf9169dc18deb3003de4f08fb6c56d6c878901dfa0
+    version: 0.5.0
+    sha: e99100988e312c22c6f209663b289e727db3918d06fbcbbc2315149457b42b75
   - kind: registry
     name: gufo-jpeg
-    version: 0.5.0-beta.1
-    sha: f970f6a7ec35035ab893b394ced211205747d58c92d3b46665142d275aedca55
+    version: 0.5.1
+    sha: 383907a5c532bff484b2914d649e368e98ce6426829458353fe40070225b07a5
   - kind: registry
     name: gufo-png
-    version: 0.5.0-beta.1
-    sha: 57702bf2885289ea8a77a842d2792aca42975f2d1f237d785f45d30e78be363a
+    version: 0.5.0
+    sha: e5c3065acab6cf458afbe53f73462a0dbf17348a2af3c889183f8714b3bff6fc
   - kind: registry
     name: gufo-tiff
-    version: 0.5.0-beta.1
-    sha: fcf3a0dbc580a3653ac9cc6234d66cddc1fd0af5cc7b6f3cde63c9a2ad70d83e
+    version: 0.5.0
+    sha: e9c77c38e7815b76e08b1943dc67517e02543504c14a29e071a4ddf9bee111ec
   - kind: registry
     name: gufo-webp
-    version: 0.5.0-beta.1
-    sha: 4e1998271aa38387aa572f957d4cc7e64841dd34e6354e2008aa8f74f25f0e4c
+    version: 0.5.0
+    sha: 04d6d3dc0ccd22a30619df68ce347c844d8adb49b822f42660d9a92e6ae14540
   - kind: registry
     name: gufo-xmp
-    version: 0.5.0-beta.1
-    sha: 41d62245a5d579d9748465f91f99df9da6d984c253a8179c8e6d98a267f0f9ff
+    version: 0.5.0
+    sha: 903aaa13213b860bbad3565e62f3fbd1087ca9404692ebe53728654653470561
   - kind: registry
     name: gvdb
     version: 0.10.0

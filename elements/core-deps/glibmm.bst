@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:glibmm/2.89/glibmm-2.89.1.tar.xz
-  ref: f24b3298078730fb96ed7066f900bf476f3baea8b283a2975d3bf3f4e8def513
+  url: gnome_downloads:glibmm/2.90/glibmm-2.90.0.tar.xz
+  ref: e2efa45643f16b9fea2d6299f2f403d672eaeacddf0ff7f8094e1af9b0f5980b
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libdex/1.2/libdex-1.2.beta.tar.xz
-  ref: 23f8b8c3be6a35f80cf7b23f81f47f20119739bb5e9b4f55ba5ec5d9d2718b19
+  url: gnome_downloads:libdex/1.2/libdex-1.2.0.tar.xz
+  ref: 69f5b244c21f6402831c3ab8af85a01772f72fb118677388436f12f32bfb06d9
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
