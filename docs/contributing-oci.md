@@ -81,4 +81,4 @@ See the [GNOME OS contribution guide](./contributing-os.md) for more information
 
 ## 3. Opening a merge request with your changes
 
-See [Opening a merge request with your changes](./contributing.md#4-opening-a-merge-request-with-your-changes).
+See [Opening a merge request with your changes](./contributing.md#5-opening-a-merge-request-with-your-changes).

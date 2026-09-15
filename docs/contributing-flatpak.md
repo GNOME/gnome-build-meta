@@ -38,4 +38,4 @@ Or build an app of yours against the locally installed runtime using [GNOME Buil
 
 ## 3. Opening a merge request with your changes
 
-See [Opening a merge request with your changes](./contributing.md#4-opening-a-merge-request-with-your-changes).
+See [Opening a merge request with your changes](./contributing.md#5-opening-a-merge-request-with-your-changes).

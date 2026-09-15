@@ -32,15 +32,27 @@ By default this will clone the `master` branch of the repository. If you want to
 $ git checkout gnome-50
 ```
 
+### 2.1 Branches
+
+- `master` is where the nightly gnome-build-meta releases originate and should be the target for most development, it tracks the latest nightly versions of GNOME.
+- `gnome-<series>` are stable branches of gnome-build-meta and they each target a corresponding stable branch of GNOME. The branches are created at the beta release of the corresponding GNOME branch. To see the status of the GNOME branches and releases see [the GNOME release calendar](https://release.gnome.org/calendar).
+- `gnome-<series>-alpha` branches are unstable branches of gnome-build-meta, and they may target alpha releases of GNOME and created as necessary.
+- `<username>/<change summary>`, `<change summary>`, and any other branches are for development, it is recommended to namespace development branches with your username.
+
+See [CI Outputs](./ci-outputs.md) for details on what each branch produces in CI.
+
+## 3. Create a new development branch
+
 Now create a branch to make your changes in:
 
 ```shell
-$ git checkout -b my-intended-change
+# Adjust your-intended-change to describe your intended change
+$ git checkout -b your-intended-change
 ```
 
 If you need help with your contributions, ask for help in [`#gnome-os:gnome.org` on Matrix](https://matrix.to/#/#gnome-os:gnome.org).
 
-## 3. Making changes
+## 4. Making changes
 
 You can find definitions for components, their build steps and dependencies under `elements/`. Elements can depend on other elements and be composed together to build complete targets like the ones in [published build outputs](./ci-outputs.md). Adding a new component or dependency generally means adding a new BuildStream element and modifying existing ones to include it in its list of dependencies.
 
@@ -138,17 +150,17 @@ bst -o arch aarch64 shell --build sdk/gjs.bst
 
 Missing something? This documentation is written in markdown and is kept in the [docs/](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/tree/master/docs) subdirectory of the repository. We are happy to get more contributions to improve our documentation!
 
-## 4. Opening a merge request with your changes
+## 5. Opening a merge request with your changes
 
 Once you have carefully reviewed and tested your changes, you can contribute them upstream. Please also see the [GNOME Project Handbook](https://handbook.gnome.org/development/change-submission.html) for a general GNOME GitLab usage guide.
 
-### 4.1 Option 1: Changes to an upstream component
+### 5.1 Option 1: Changes to an upstream component
 
 How to do so depends on the individual project you've made changes to, since each project has its own contribution conventions and guidelines. For components such as the Linux kernel, GNOME Shell, or GNOME Settings, these are usually described in each project's repository. If you've used `bst workspace open`, you can find them in the workspace directory you checked out to (e.g. `../linux/` or `../gnome-control-center/`).
 
 Once your change has been merged upstream and a new release has been created, the next [`update_refs`](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/.gitlab-ci.yml) job in CI/CD will usually automatically update the references to include the new upstream version with your changes. Once merged, CI/CD will build and deploy new prebuilt [published build outputs](./ci-outputs.md).
 
-### 4.2 Option 2: Changes to GNOME Build Metadata itself
+### 5.2 Option 2: Changes to GNOME Build Metadata itself
 
 If you've made a change to GNOME Build Metadata itself, such as adding or modifying a BuildStream element, configuration, or board, you can `git add` your changes, `git commit` them, `git push` them to your fork, and open a merge request by visiting <https://gitlab.gnome.org/your-username/gnome-build-meta/-/merge_requests/new?merge_request%5Bsource_branch%5D=my-intended-change> (adjust `your-username` to your GNOME GitLab username and `my-intended-change` to your branch name).
 
