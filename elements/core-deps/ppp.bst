@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:ppp-project/ppp.git
   track: 'v*.*.*'
-  ref: v2.5.3-0-g4b02040f4838237ecd08852c77acd2c89c32f392
+  ref: v2.5.4-0-g28a7472ef74569c011e8909aab889eeefa4bf720
 
 build-depends:
 - (@): include/gcc-for-recc.yml

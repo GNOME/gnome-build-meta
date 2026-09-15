@@ -6,7 +6,7 @@ sources:
   track: 'samba-*.*.*'
   exclude:
   - '*rc*'
-  ref: samba-4.24.6-0-gf6577b760995c2bffa44c50650e8d0fbe1807f0b
+  ref: samba-4.24.7-0-g1aab718aaf61b38106b361797c7c40b1f70d013b
 - kind: patch
   path: patches/samba/fix-root-build.patch
 
