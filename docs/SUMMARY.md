@@ -22,4 +22,5 @@
 ## System reference
 
 - [Secure Boot keys](keys.md)
-- [CI Outputs](ci-outputs.md)
+- [Project Outputs](project-outputs.md)
+- [Published Build Outputs](ci-outputs.md)
