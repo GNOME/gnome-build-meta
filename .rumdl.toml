@@ -13,3 +13,6 @@ reflow = true
 
 [MD033]
 allowed-elements = ["kbd", "details", "summary"]
+
+[per-file-ignores]
+"docs/SUMMARY.md" = ["MD025"] # Allow multiple H1 in table of contents
