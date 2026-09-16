@@ -4,6 +4,9 @@ set -eu
 
 args=()
 
+devel=0
+debug=0
+
 print_help() {
     cat <<EOF
 Usage: $@ [OPTIONS] [--]
@@ -33,7 +36,10 @@ Options:
 
   --same-version             Do not bump the version of the image.
 
-  --devel                    Build and serve all images including extensions.
+  --devel                    Build and serve development images including extensions.
+                             Does not include debug symbols.
+
+  --debug                    Implies --devel. Also builds and serves debug symbols.
 
   --no-strict                Use --no-strict on BuildStream
 
@@ -52,6 +58,9 @@ while [ $# -gt 0 ]; do
             ;;
         --devel)
             devel=1
+            ;;
+        --debug)
+            debug=1
             ;;
         --no-strict)
             nostrict=1
@@ -130,7 +139,10 @@ trap cleanup EXIT
 checkout="$(mktemp -d --tmpdir="${REPO_STATE}" checkout.XXXXXXXXXX)"
 cleanup_dirs+=("${checkout}")
 
-if [ "${devel+set}" = set ]; then
+# Debug also builds devel
+if [ $debug == 1 ]; then
+    image=(gnomeos/update-images-with-debug.bst)
+elif [ $devel == 1 ]; then
     image=(gnomeos/update-images.bst)
 else
     image=(gnomeos/update-images-user-only.bst)

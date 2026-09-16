@@ -13,13 +13,6 @@ build-depends:
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/debug/image.bst
-  strict: true
-  config:
-    location: "%{install-root}"
-- filename: gnomeos/debug/layer-tar.bst
-  config:
-    location: "%{install-root}"
 - filename: gnomeos/codecs-extra/image.bst
   config:
     location: "%{install-root}"
