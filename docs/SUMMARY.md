@@ -1,8 +1,8 @@
-# Introduction
+# Summary
 
 [GNOME Build Metadata](index.md)
 
-## GNOME OS
+# GNOME OS
 
 - [Install GNOME OS](install.md)
   - [Install on a phone](phones.md)
@@ -11,7 +11,9 @@
 - [Debugging the OS](debugging.md)
 - [Security Hardening](hardening.md)
 
-## Developer Documentation
+---
+
+# Developer Documentation
 
 - [Contributing guide](contributing.md)
   - [GNOME OS](contributing-os.md)
@@ -19,7 +21,9 @@
   - [OCI](contributing-oci.md)
 - [OpenQA Testing](openqa.md)
 
-## System reference
+---
+
+# System reference
 
 - [Secure Boot keys](keys.md)
 - [Project Outputs](project-outputs.md)
