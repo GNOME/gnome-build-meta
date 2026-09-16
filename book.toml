@@ -5,3 +5,13 @@ src = "docs"
 
 [output.html]
 additional-css = ["theme/gnome.css"]
+
+[build]
+extra-watch-dirs = [ "README.md"]
+
+[preprocessor.fix-readme-links]
+after = [ "links" ]
+command = "utils/mdbook_fix_readme_links.py"
+[preprocessor.fix-readme-links.replace]
+"(docs/" = "("
+"./docs/" = "https://gitlab.gnome.org/GNOME/gnome-build-meta/-/tree/master/docs"

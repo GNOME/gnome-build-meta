@@ -17,6 +17,9 @@ include:
     theme-git-url: "https://gitlab.gnome.org/jimmac/gnome-mdbook-style.git"
     extra-rules:
     - !reference [".pages-rules", "rules"]
+    before-script:
+      - apt update --assume-yes --quiet=1
+      - apt install --assume-yes --quiet=1 python3 # for utils/mdbook_fix_readme_links.py
 
 variables:
   GET_SOURCES_ATTEMPTS: 3
@@ -541,4 +544,3 @@ create discourse announcement:
   script:
   - pip3 install pydiscourse
   - python3 utils/create_announcement.py ${CI_COMMIT_TAG} ${DRY_RUN}
-

@@ -16,3 +16,4 @@ allowed-elements = ["kbd", "details", "summary"]
 
 [per-file-ignores]
 "docs/SUMMARY.md" = ["MD025"] # Allow multiple H1 in table of contents
+"docs/index.md" = ["MD041"] # Allow missing first line heading, as we are doing an include from README.md
