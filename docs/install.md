@@ -6,9 +6,13 @@
 > You can run GNOME OS on real hardware now, with a few caveats: Hardware support is limited, there is no dedicated security team and some features are missing.
 > This is bleeding edge, in-development software, and not recommended for daily usage if you're not a developer.
 
-## Prepare USB Drive
+## Hardware Support
 
 The standard GNOME OS Nightly ISO can be installed and should just work on many computers, depending on how well the hardware components are supported by Linux. We keep a public document of [hardware support](https://pad.gnome.org/L6jFCDo8TiKpojF3eq8xBw) submitted by users, you can consult it to see if your hardware is supported or help us expand it. We want to improve our hardware support, so if you run into issues with your hardware please [report them here](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/new).
+
+We also [experimentally support some Android phones](./phones.md). Installation on those devices requires special steps and some things may not work, so please consult the linked documentation.
+
+## Prepare USB Drive
 
 1. Download the latest [GNOME OS ISO](https://os.gnome.org/)
 2. Plug in a USB drive and select it in GNOME Disks
