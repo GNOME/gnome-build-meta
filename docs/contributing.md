@@ -167,3 +167,11 @@ If you've made a change to GNOME Build Metadata itself, such as adding or modify
 Be sure to select the correct target branch; the default is `master`, so if you're contributing a change to a different version, switch it to that version's branch, e.g. `gnome-50`. Fill out the merge request description (it might be helpful to look at [recently merged MRs](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/merge_requests/?sort=created_date&state=merged&first_page_size=20) for inspiration), submit it, and someone will review it for you.
 
 Once approved, CI/CD will build your MR and run the automated integration tests to make sure nothing breaks. Once merged, either directly or via an upstream release picked up by [`update_refs`](https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/.gitlab-ci.yml), CI/CD will build and deploy new prebuilt [published build outputs](./ci-outputs.md).
+
+## Further Reading
+
+Depending what you're contributing to, you can follow the dedicated guide for each:
+
+- **GNOME OS**: see the [GNOME OS contribution guide](./contributing-os.md)
+- **GNOME Flatpak runtimes**: see the [Flatpak runtimes contribution guide](./contributing-flatpak.md)
+- **GNOME OCI images**: see the [OCI images contribution guide](./contributing-oci.md)
