@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:phodav.git
   track: master
-  ref: v3.0-27-ge146b12bae68fcc554e77b81cea0acd464b1226b
+  ref: v3.0-28-g2ac0629324923a9882d74c665a27f1e311f9a3cb
 
 build-depends:
 - (@): include/gcc-for-recc.yml

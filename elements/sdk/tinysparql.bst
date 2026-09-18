@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tinysparql.git
   track: main
-  ref: 3.12.0-0-geb8ae5c29b489fdbdfb7cb814267d6258be6d13e
+  ref: 3.12.0-1-g119e8b0f9e6ce47e9700080327c56c3afc05ef7b
 # Need to be updated manually until we get a meson wrap source
 - kind: remote
   url: snowballstem:libstemmer_c-3.0.1.tar.gz
