@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:totem-pl-parser.git
   track: master
-  ref: 3.26.7-2-g10652d7f6714bd7108e0c4e24eb003b3262f3f86
+  ref: 3.26.7-3-gd644ef2e5eb82c55efc55809b18a78f5868b8f1b
 
 build-depends:
 - (@): include/gcc-for-recc.yml
