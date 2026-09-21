@@ -29,7 +29,7 @@ sources:
   url: github:microsoft/secureboot_objects.git
   track: 'v*-signed'
   directory: microsoft_objects
-  ref: v1.6.5-signed-0-g798cdc513e0c192fe90e99637105748ed3bb4ca5
+  ref: v1.7.0-signed-0-g9a2bbf82e86b62694e44aba3a4068d8dd0c943d7
 
 build-depends:
 - freedesktop-sdk.bst:components/sbsigntools.bst

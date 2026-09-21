@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: netfilter:nftables
   track: 'v*'
-  ref: v1.1.6-0-g95f82543dcc76bb00e257d2af75a1d1cfd2c7fe8
+  ref: v1.1.7-0-g8c2f60661c9e8e85869f82db25961b45a8d07554
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

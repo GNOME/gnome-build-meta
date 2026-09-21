@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:epiphany/50/epiphany-50.4.tar.xz
-  ref: 1e26f9901f0f08bfe943aa70163c953334c7ec3d4aefc8d354e8a9c140b334a7
+  url: gnome_downloads:epiphany/50/epiphany-50.6.tar.xz
+  ref: 458222a8694cfc914e7a2d6de9879067001a8d65e00a907d96112059c67ad446
 build-depends:
 - sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst

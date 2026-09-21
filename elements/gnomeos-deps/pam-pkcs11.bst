@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:OpenSC/pam_pkcs11.git
   track: 'pam_pkcs11-*'
-  ref: pam_pkcs11-0.6.13-0-gb8dbe6370d36a6a11a466d5f0ee285804103e030
+  ref: pam_pkcs11-0.6.14-0-g70fbcd57f0adfd73d321920c30bcef4a6085cfb3
 - kind: local
   path: files/pam-pkcs11/pam-pkcs11.preset
 
