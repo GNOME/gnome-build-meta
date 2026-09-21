@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:yelp/49/yelp-49.1.tar.xz
-  ref: 3e3e94ef2d2c9487cc51062e3afbfa1578cebd29d80c84357b6d7ee6dcfd8a74
+  url: gnome_downloads:yelp/49/yelp-49.2.tar.xz
+  ref: 5afc8e77308451ee45ee919efee5a154ca3c153a90e2a1b58cebf7827ab88ad0
 build-depends:
 - sdk-deps/appstream-glib.bst
 - sdk/gtk-doc.bst

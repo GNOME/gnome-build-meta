@@ -1,8 +1,8 @@
 kind: meson
 sources:
 - kind: tar
-  url: cairo:releases/cairo-1.18.4.tar.xz
-  ref: 445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb
+  url: cairo:releases/cairo-1.18.6.tar.xz
+  ref: 1c767308174337a74694da0f3ec069c271452163a1ef4540964c50c301f157d4
 build-depends:
 - sdk/gtk-doc.bst
 - freedesktop-sdk.bst:public-stacks/buildsystem-meson.bst
