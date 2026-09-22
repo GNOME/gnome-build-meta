@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libnma.git
   track: main
-  ref: 1.10.7-dev-46-g3b25a43e8e224894dc122594568d2b25edf6b866
+  ref: 1.10.7-dev-47-g513be68b39c3db3b16f4432c1e55ed9f7aa9e5a4
 
 build-depends:
 - (@): include/gcc-for-recc.yml
