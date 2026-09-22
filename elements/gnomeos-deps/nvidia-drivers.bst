@@ -4,8 +4,8 @@ sources:
 - kind: remote
   # Find the latest version from here https://www.nvidia.com/en-us/drivers/unix/ 
   # or https://download.nvidia.com/XFree86/Linux-x86_64/latest.txt for the "production" branch
-  url: nvidia:XFree86/Linux-x86_64/610.57.04/NVIDIA-Linux-x86_64-610.57.04.run
-  ref: b2e935c66b83bb00c0c857bc8e0ee0fd52de9286b40c9cc1eec29a7ce7eb116d
+  url: nvidia:XFree86/Linux-x86_64/615.71.09/NVIDIA-Linux-x86_64-615.71.09.run
+  ref: cdceed22bbeb61248d1a6deabc2596673e3a6501698ee71ac8d2fdc28f3b70fe
 - kind: local
   path: files/nvidia-config/modprobe.conf
   directory: local-config
