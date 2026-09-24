@@ -65,6 +65,8 @@ depends:
 # For gvfs
 - gnomeos-deps/wsdd.bst
 
+- core-deps/usbmuxd.bst
+
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/wireplumber.bst
 - gnomeos-deps/noise-suppression-for-voice.bst
