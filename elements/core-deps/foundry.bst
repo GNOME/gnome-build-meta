@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:foundry.git
   track: main
-  ref: 1.2.0-14-g43426e4e004cf6828da4b735fd181800ce44525c
+  ref: 1.2.0-15-gcddb5c37b92b293322e38827b814a1cf2ce30e78
 
 build-depends:
 - (@): include/gcc-for-recc.yml
