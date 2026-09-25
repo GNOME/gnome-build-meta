@@ -17,6 +17,7 @@ depends:
 
 - core-deps/phodav.bst
 - core-deps/dnsmasq.bst
+- core-deps/evolution-ews.bst
 - gnomeos-deps/disable-iscsi.bst
 - gnomeos-deps/flathub-config.bst
 - gnomeos-deps/journald-config.bst
