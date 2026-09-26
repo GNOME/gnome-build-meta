@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:console.git
   track: main
-  ref: 51.0-1-g73cfbbf164238d6ffa16e0bb576e9d3082549452
+  ref: 51.0-2-g3dc98b5f079802352033824d7a5413273ffaeef1
 
 build-depends:
 - (@): include/gcc-for-recc.yml
