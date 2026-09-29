@@ -4,11 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:decibels.git
   track: main
-  ref: 49.6.1-53-g4fb9ebf88a645ab0847e121d37fd39c6c0621d44
-- kind: git_module
-  url: gnome_gitlab:BrainBlasted/gi-typescript-definitions.git
-  path: gi-types
-  ref: dbbaa0527556cd3ce5434c4a5072cd99348eff7a
+  ref: 49.6.1-56-gbb6c4ff3e95f4de31c5e840f174aa30862ba3266
 
 build-depends:
 - (@): include/gcc-for-recc.yml
