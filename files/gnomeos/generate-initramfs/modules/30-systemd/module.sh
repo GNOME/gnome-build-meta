@@ -32,6 +32,7 @@ FILES=(
     /usr/lib/systemd/systemd-integritysetup
     /usr/lib/systemd/systemd-cryptsetup
     /usr/lib/systemd/systemd-shutdown
+    /usr/lib/systemd/systemd-keyring-setup
     /usr/lib/nvpcr/cryptsetup.nvpcr
     /usr/lib/nvpcr/hardware.nvpcr
     /usr/lib/nvpcr/verity.nvpcr
@@ -155,6 +156,7 @@ UNITS+=(
     systemd-loop@.service
     systemd-pcrnvdone.service
     sysinit.target.wants/systemd-pcrnvdone.service
+    systemd-keyring-setup.service
 )
 
 install() {
@@ -195,5 +197,5 @@ install() {
     install_files /usr/lib/tmpfiles.d/systemd.conf
     install_files /usr/lib/tmpfiles.d/20-systemd-stub.conf
 
-    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service
+    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service systemd-keyring-setup.service
 }

@@ -6,16 +6,16 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
+  url: github:brauner/systemd.git
   (?):
   - channel == "nightly":
-      track: main
+      track: refs/heads/work.systemd.keyring
   - channel == "stable":
       track: v*
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-rc2-7-g8615027695a2406d8405e27c94d84b025ae557b6
+  ref: v230-65862-g4b7d38a8489eafea3707c07547e30c26ff8a3b7f
 
 build-depends:
 - (@): include/gcc-for-recc.yml
