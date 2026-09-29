@@ -1,0 +1,30 @@
+From d37348e6feac1059cbe475bb653ad4233c3b209a Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Thu, 10 Sep 2026 21:41:41 +0200
+Subject: [PATCH 2/3] linux: Enable zswap by default
+
+GNOME OS is switch to using zswap. And it makes it more
+convenient to have a sensible default configuration: enabled
+an using zstd.
+---
+ files/linux/fdsdk-config.sh | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 1f3a53bb0..2909d53fe 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -2382,6 +2382,10 @@ module BLK_DEV_RAM
+ 
+ # ZSWAP
+ enable ZSWAP
++enable ZSWAP_COMPRESSOR_DEFAULT_ZSTD
++remove ZSWAP_COMPRESSOR_DEFAULT_LZO
++enable ZSWAP_DEFAULT_ON
++enable ZSWAP_SHRINKER_DEFAULT_ON
+ 
+ # ZRAM
+ module ZRAM
+-- 
+2.55.0
+

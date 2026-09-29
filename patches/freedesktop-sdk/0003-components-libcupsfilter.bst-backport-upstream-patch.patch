@@ -1,5 +1,16 @@
+From df70cd7d6c95dc68bee36e350fe6a200e4dab4ff Mon Sep 17 00:00:00 2001
+From: Valentin David <me@valentindavid.com>
+Date: Tue, 29 Sep 2026 10:25:07 +0200
+Subject: [PATCH 3/3] components/libcupsfilter.bst: backport upstream patch
+
+---
+ elements/components/libcupsfilters.bst        |  2 ++
+ .../libcupsfilters/missing-root-object.patch  | 22 +++++++++++++++++++
+ 2 files changed, 24 insertions(+)
+ create mode 100644 patches/libcupsfilters/missing-root-object.patch
+
 diff --git a/elements/components/libcupsfilters.bst b/elements/components/libcupsfilters.bst
-index 26b6ef5..57952fc 100644
+index 26b6ef538..57952fced 100644
 --- a/elements/components/libcupsfilters.bst
 +++ b/elements/components/libcupsfilters.bst
 @@ -34,3 +34,5 @@ sources:
@@ -10,7 +21,7 @@ index 26b6ef5..57952fc 100644
 +  path: patches/libcupsfilters/missing-root-object.patch
 diff --git a/patches/libcupsfilters/missing-root-object.patch b/patches/libcupsfilters/missing-root-object.patch
 new file mode 100644
-index 0000000..0a1d513
+index 000000000..0a1d513e4
 --- /dev/null
 +++ b/patches/libcupsfilters/missing-root-object.patch
 @@ -0,0 +1,22 @@
@@ -36,3 +47,6 @@ index 0000000..0a1d513
 +   // Open the temp file with pdfio
 +   pdfio_file_t *pdf = pdfioFileOpen(temp_filename, NULL, NULL, NULL, NULL);
 + 
+-- 
+2.55.0
+
