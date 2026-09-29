@@ -12,7 +12,7 @@ GNOME OS will automatically encrypt the root filesystem with the TPM if this is 
 It is of course possible to use both approaches. But only one is needed.
 
 > [!note]
-> At this point, homed is not used by default, and we are not encrypting user accounts separatly.
+> At this point, homed is not used by default, and we are not encrypting user accounts separately.
 
 ### Setting the dictionary attack lockout
 
