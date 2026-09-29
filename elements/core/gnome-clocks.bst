@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-clocks.git
   track: master
-  ref: 51.0-1-g96caafcbf793270652390564469254aa8a7ff128
+  ref: 51.0-2-g9b71e41a45a8bd2606f0ded019bd1bff27e13cf6
 
 build-depends:
 - (@): include/gcc-for-recc.yml
