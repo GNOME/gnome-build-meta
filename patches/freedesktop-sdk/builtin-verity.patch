@@ -1,0 +1,18 @@
+Only in freedesktop-sdk.old/: .bstproject.yaml
+diff -ur freedesktop-sdk.old/files/linux/fdsdk-config.sh freedesktop-sdk/files/linux/fdsdk-config.sh
+--- freedesktop-sdk.old/files/linux/fdsdk-config.sh	2026-09-29 15:07:36.393919043 +0200
++++ freedesktop-sdk/files/linux/fdsdk-config.sh	2026-09-30 12:26:28.816831103 +0200
+@@ -767,7 +767,11 @@
+ enable DM_UEVENT
+ module DM_RAID
+ module DM_SNAPSHOT
+-module DM_VERITY
++# Verity owns its keyring keys and needs to be built-in, otherwise the
++# key can be overridden by unloading and reloading the dm-verity
++# module.
++enable DAX
++enable DM_VERITY
+ enable DM_VERITY_VERIFY_ROOTHASH_SIG
+ enable DM_VERITY_VERIFY_ROOTHASH_SIG_SECONDARY_KEYRING
+ 
+Binary files freedesktop-sdk.old/.git/index and freedesktop-sdk/.git/index differ

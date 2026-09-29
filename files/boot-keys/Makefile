@@ -14,9 +14,12 @@ KERNEL_KEYS= \
 
 DIST_KEYS=private-key import-pubring.pgp
 KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
-KERNEL_KEYRING=MODULES.crt SYSEXT.crt
+KERNEL_KEYRING=MODULES.crt
 
-generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS) $(MICROSOFT_KEYS) $(MICROSOFT_KEYS_OWNER)
+generate-keys: $(BOOT_KEYS) $(KERNEL_KEYS) $(MICROSOFT_KEYS) $(MICROSOFT_KEYS_OWNER) gnomeos-certificate.pem
+
+gnomeos-certificate.pem: SYSEXT.crt
+	cp $< $@
 
 modules/linux-module-cert.crt: $(KERNEL_KEYRING)
 	cat $(KERNEL_KEYRING) >$@

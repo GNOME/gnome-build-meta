@@ -19,6 +19,7 @@ depends:
 - gnomeos-deps/plymouth-gnome-theme.bst
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos/initramfs/signed-modules.bst
+- gnomeos/initramfs/sysext-key.bst
 - gnomeos/os-release.bst
 - gnomeos/live.bst
 - gnomeos/confext.bst

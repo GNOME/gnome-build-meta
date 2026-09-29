@@ -19,6 +19,7 @@ depends:
 - gnomeos-deps/plymouth-gnome-theme.bst
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos/initramfs/signed-modules.bst
+- gnomeos/initramfs/sysext-key.bst
 - oci/integration/os-release.bst
 - gnomeos-deps/bootc.bst
 - oci/integration/lvm2-enable-activation.bst

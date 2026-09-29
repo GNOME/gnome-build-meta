@@ -37,6 +37,7 @@ variables:
     systemd.firstboot=no
     rootflags=x-systemd.device-timeout=900
     zswap.max_pool_percent=35
+    dm_verity.keyring_unsealed=1
 
 config:
   install-commands:
