@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-autoar.git
-  track: master
+  track: main
   ref: 0.5.1-18-g7baed94d6578c9360b81b473136c8f401d5790ec
 
 build-depends:
