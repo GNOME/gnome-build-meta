@@ -25,6 +25,9 @@ depends:
 
 - oci/integration/lvm2-enable-activation.bst
 
+- gnomeos-deps/account-utils.bst
+- gnomeos-deps/defused.bst
+
 public:
   bst:
     integration-commands:
