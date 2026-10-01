@@ -116,6 +116,9 @@ depends:
 
 - gnomeos-deps/oo7-cli.bst
 
+- gnomeos-deps/account-utils.bst
+- gnomeos-deps/defused.bst
+
 (?):
 - arch == "x86_64":
     depends:
