@@ -2,10 +2,8 @@ kind: cmake
 
 sources:
 - kind: tar
-  url: webkitgtk:webkitgtk-2.54.0.tar.xz
-  ref: 846fd19ccedbae1dbfe904f26dbf2d68a800a33a50caf2ad5222c8dcb3f25682
-- kind: patch
-  path: patches/webkitgtk/main-thread.patch
+  url: webkitgtk:webkitgtk-2.54.1.tar.xz
+  ref: ea0bbb02dbdbc596874a4e7ad35b66645b3e0a232bd0e4081de5ed92eb0a397d
 
 build-depends:
 - (@): include/clang-for-recc.yml
