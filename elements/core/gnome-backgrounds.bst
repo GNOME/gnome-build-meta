@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-backgrounds.git
   track: main
-  ref: 51.0-1-g3e0962c0184a6ddebb7af3ff632eae095edb778d
+  ref: 51.0-6-g4734ab722ac85df24f03993fdb30ebd79bb64a61
 
 build-depends:
 - (@): include/gcc-for-recc.yml

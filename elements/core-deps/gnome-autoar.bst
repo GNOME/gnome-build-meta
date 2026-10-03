@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-autoar.git
   track: main
-  ref: 0.5.1-18-g7baed94d6578c9360b81b473136c8f401d5790ec
+  ref: 0.5.1-33-gdc722cade48554b179256d28f264578b7ca02eda
 
 build-depends:
 - (@): include/gcc-for-recc.yml
