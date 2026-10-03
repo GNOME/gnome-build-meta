@@ -10,7 +10,6 @@ build-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/accountsservice.bst
 - core-deps/geocode-glib.bst
 - core-deps/gnome-online-accounts.bst
 - core-deps/ibus-daemon.bst
@@ -26,6 +25,7 @@ depends:
 - sdk/gtk.bst
 - sdk/libadwaita.bst
 - sdk/webkitgtk-6.0.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk.bst:components/geoclue-libs.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/pwquality.bst

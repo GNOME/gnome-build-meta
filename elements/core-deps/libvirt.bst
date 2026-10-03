@@ -16,22 +16,22 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- core-deps/rpcsvc-proto.bst
+- freedesktop-sdk-extra.bst:components/rpcsvc-proto.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/libxslt.bst
-- freedesktop-sdk.bst:components/python3.bst
-- freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
+- freedesktop-sdk.bst:components/python3-docutils.bst
+- freedesktop-sdk.bst:components/python3.bst
 - freedesktop-sdk.bst:components/sed.bst
 
 depends:
-- sdk/glib.bst
-- core-deps/dnsmasq.bst
 - core-deps/ebtables.bst
-- core-deps/qemu.bst
-- core-deps/libpcap.bst
-- core-deps/libssh2.bst
 - core-deps/slirp-helper.bst
+- sdk/glib.bst
+- freedesktop-sdk-extra.bst:components/dnsmasq.bst
+- freedesktop-sdk-extra.bst:components/libpcap.bst
+- freedesktop-sdk-extra.bst:components/libssh2.bst
+- freedesktop-sdk-extra.bst:components/qemu.bst
 - freedesktop-sdk.bst:components/audit.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst

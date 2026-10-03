@@ -26,12 +26,12 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 depends:
-- core-deps/accountsservice.bst
 - core-deps/libgsystemservice.bst
 - core/gnome-desktop.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk.bst:components/appstream.bst
 - freedesktop-sdk.bst:components/flatpak.bst
 - freedesktop-sdk.bst:components/polkit.bst

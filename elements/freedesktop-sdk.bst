@@ -37,6 +37,7 @@ config:
     components/graphene.bst: sdk/graphene.bst
     components/gsettings-desktop-schemas.bst: sdk/gsettings-desktop-schemas.bst
     components/gtk3.bst: sdk/gtk+-3.bst
+    components/krb5.bst: sdk/krb5.bst
     components/libibus.bst: sdk/libibus.bst
     components/json-glib.bst: sdk/json-glib.bst
     components/libglycin.bst: sdk/libglycin.bst

@@ -15,13 +15,13 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
 - core-deps/libgweather.bst
-- core-deps/openldap.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst
 - sdk/libsecret.bst
 - sdk/libsoup.bst
 - sdk/webkitgtk-6.0.bst
+- freedesktop-sdk-extra.bst:components/openldap.bst
 - freedesktop-sdk.bst:components/libical.bst
 - freedesktop-sdk.bst:components/nspr.bst
 - freedesktop-sdk.bst:components/nss.bst

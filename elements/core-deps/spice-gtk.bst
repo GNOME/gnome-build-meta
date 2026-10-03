@@ -28,23 +28,23 @@ build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
 - core-deps/python-pyparsing.bst
-- core-deps/python3-six.bst
 - sdk/gi-docgen.bst
+- freedesktop-sdk-extra.bst:components/python3-six.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/sed.bst
 
 depends:
 - core-deps/phodav.bst
-- core-deps/spice-protocol.bst
-- core-deps/usbredir.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst
 - sdk/libsoup.bst
 - sdk/vala.bst
+- freedesktop-sdk-extra.bst:components/spice-protocol.bst
+- freedesktop-sdk-extra.bst:components/usbredir.bst
 - freedesktop-sdk.bst:components/cyrus-sasl.bst
-- freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
+- freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/libcap-ng.bst
 - freedesktop-sdk.bst:components/libdrm.bst
 - freedesktop-sdk.bst:components/polkit.bst
