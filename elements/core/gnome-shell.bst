@@ -22,9 +22,9 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk-deps/sassc.bst
 - core-deps/jasmine-gjs.bst
 - core-deps/umockdev.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/perl.bst
 
@@ -35,7 +35,6 @@ runtime-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst
@@ -54,6 +53,7 @@ depends:
 - sdk/gobject-introspection.bst
 - sdk/gtk.bst
 - sdk/libsoup.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

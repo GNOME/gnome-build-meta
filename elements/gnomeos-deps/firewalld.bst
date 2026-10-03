@@ -11,8 +11,8 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst
-- core-deps/intltool.bst
 - sdk/glib.bst
+- freedesktop-sdk-extra.bst:components/intltool.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
 

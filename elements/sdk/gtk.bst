@@ -9,11 +9,11 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk-deps/sassc.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/pygobject.bst
 - sdk/sysprof-minimal.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/shaderc.bst
 - freedesktop-sdk.bst:components/vulkan-headers.bst
@@ -24,10 +24,10 @@ depends:
 - sdk/glib.bst
 - sdk/glycin.bst
 - sdk/graphene.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
-- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - sdk/pango.bst
 - freedesktop-sdk.bst:components/cups.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-bad.bst
+- freedesktop-sdk.bst:components/gstreamer-plugins-base.bst
 - freedesktop-sdk.bst:components/gstreamer.bst
 - freedesktop-sdk.bst:components/hicolor-icon-theme.bst
 - freedesktop-sdk.bst:components/libepoxy.bst

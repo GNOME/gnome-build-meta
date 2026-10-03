@@ -16,13 +16,13 @@ depends:
 - core-deps/xdg-desktop-portal-gtk.bst
 
 - core-deps/phodav.bst
-- core-deps/dnsmasq.bst
+- freedesktop-sdk-extra.bst:components/dnsmasq.bst
 - gnomeos-deps/disable-iscsi.bst
 - gnomeos-deps/flathub-config.bst
 - gnomeos-deps/journald-config.bst
 - gnomeos-deps/nm-connectivity-config.bst
 - gnomeos-deps/plymouth-gnome-theme.bst
-- gnomeos-deps/spice-vdagent.bst
+- freedesktop-sdk-extra.bst:components/spice-vdagent.bst
 - gnomeos-deps/wpa-supplicant-config.bst
 - gnomeos-deps/sysupdate-config.bst
 - gnomeos-deps/pcrlock-config.bst
@@ -34,16 +34,16 @@ depends:
 - gnomeos-deps/debuginfod-config.bst
 
 - gnomeos-deps/alsa-ucm-conf.bst
-- gnomeos-deps/android-udev-rules.bst
+- freedesktop-sdk-extra.bst:components/android-udev-rules.bst
 - gnomeos-deps/bindfs.bst
-- gnomeos-deps/fish.bst
+- freedesktop-sdk-extra.bst:components/fish.bst
 - gnomeos-deps/fprintd.bst
-- gnomeos-deps/nss-mdns.bst
-- gnomeos-deps/opensc.bst
+- freedesktop-sdk-extra.bst:components/nss-mdns.bst
+- freedesktop-sdk-extra.bst:components/opensc.bst
 - gnomeos-deps/pam-pkcs11.bst
 - gnomeos-deps/switcheroo-control.bst
 - gnomeos-deps/uresourced.bst
-- gnomeos-deps/zram-generator.bst
+- freedesktop-sdk-extra.bst:components/zram-generator.bst
 - gnomeos-deps/zswap-generator.bst
 - core-deps/boltd.bst
 
@@ -57,9 +57,9 @@ depends:
 - gnomeos-deps/NetworkManager-vpnc.bst
 
 - gnomeos-deps/noto-cjk.bst
-- gnomeos-deps/words.bst
+- freedesktop-sdk-extra.bst:components/words.bst
 
-- gnomeos-deps/mokutil.bst
+- freedesktop-sdk-extra.bst:components/mokutil.bst
 - gnomeos-deps/sysext-utils.bst
 
 # For gvfs
@@ -103,14 +103,14 @@ depends:
 # Containers
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/skopeo.bst
-- gnomeos-deps/distrobox.bst
-- gnomeos-deps/toolbox.bst
+- freedesktop-sdk-extra.bst:components/distrobox.bst
+- freedesktop-sdk-extra.bst:components/toolbox.bst
 
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 
 - gnomeos-deps/uinput.bst
-- gnomeos-deps/nvme-cli.bst
+- freedesktop-sdk-extra.bst:components/nvme-cli.bst
 
 - gnomeos-deps/kmscon.bst
 

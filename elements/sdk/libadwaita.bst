@@ -9,11 +9,11 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk-deps/sassc.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
 - sdk/vala.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 
 depends:
 - sdk/gtk.bst

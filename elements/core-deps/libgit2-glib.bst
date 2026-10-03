@@ -13,8 +13,8 @@ build-depends:
 - sdk/vala.bst
 
 depends:
-- core-deps/libgit2.bst
-- core-deps/libssh2.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
+- freedesktop-sdk-extra.bst:components/libgit2.bst
+- freedesktop-sdk-extra.bst:components/libssh2.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

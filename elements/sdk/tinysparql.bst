@@ -14,11 +14,11 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- core-deps/graphviz.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
-- sdk/vala.bst
 - sdk/pygobject.bst
+- sdk/vala.bst
+- freedesktop-sdk-extra.bst:components/graphviz.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/systemd.bst
 

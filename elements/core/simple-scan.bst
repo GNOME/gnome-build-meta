@@ -14,14 +14,14 @@ build-depends:
 
 depends:
 - core-deps/colord-gtk.bst
-- core-deps/sane-backends.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
-- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+- freedesktop-sdk-extra.bst:components/sane-backends.bst
 - freedesktop-sdk.bst:components/libgusb.bst
+- freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 runtime-depends:
 - core-deps/sane-airscan.bst

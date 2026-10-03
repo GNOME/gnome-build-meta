@@ -16,12 +16,12 @@ build-depends:
 - sdk/yelp-tools.bst
 
 depends:
-- core-deps/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/libcanberra.bst
 - core-deps/plymouth.bst
 - core-deps/upower.bst
 - sdk/glib.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

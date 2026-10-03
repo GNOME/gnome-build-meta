@@ -23,9 +23,9 @@ build-depends:
 
 depends:
 - core-deps/mobile-broadband-provider-info.bst
-- core-deps/ppp.bst
 - sdk/glib.bst
 - sdk/pygobject.bst
+- freedesktop-sdk-extra.bst:components/ppp.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/dbus.bst
 - freedesktop-sdk.bst:components/gnutls.bst
