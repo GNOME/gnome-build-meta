@@ -26,7 +26,7 @@ build-depends:
 - freedesktop-sdk.bst:components/systemd.bst
 
 depends:
-- core-deps/accountsservice.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/libgsystemservice.bst
 - core/gnome-desktop.bst
 - sdk/glib.bst

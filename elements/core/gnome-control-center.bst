@@ -31,7 +31,7 @@ runtime-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/accountsservice.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst
 - core-deps/gnome-online-accounts.bst
@@ -40,7 +40,7 @@ depends:
 - core-deps/libgtop.bst
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
-- core-deps/samba.bst
+- freedesktop-sdk-extra.bst:components/samba.bst
 - core-deps/system-config-printer.bst
 - core-deps/udisks2.bst
 - core-deps/upower.bst

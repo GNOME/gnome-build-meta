@@ -15,7 +15,7 @@ build-depends:
 - freedesktop-sdk.bst:components/sed.bst
 
 depends:
-- core-deps/libpcap.bst
+- freedesktop-sdk-extra.bst:components/libpcap.bst
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/libgudev.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

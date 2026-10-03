@@ -10,7 +10,7 @@ build-depends:
 - buildsystems/cmake.bst
 
 depends:
-- core-deps/pkcs11-helper.bst
+- freedesktop-sdk-extra.bst:components/pkcs11-helper.bst
 - core-deps/cjson.bst
 - sdk/krb5.bst
 - freedesktop-sdk.bst:components/cups.bst

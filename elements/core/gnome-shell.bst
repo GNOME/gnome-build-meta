@@ -22,7 +22,7 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk-deps/sassc.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 - core-deps/jasmine-gjs.bst
 - core-deps/umockdev.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
@@ -35,7 +35,7 @@ runtime-depends:
 
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/accountsservice.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst

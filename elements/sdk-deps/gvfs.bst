@@ -12,13 +12,13 @@ build-depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libbluray.bst
 - core-deps/libcdio-paranoia.bst
-- core-deps/libgphoto2.bst
+- freedesktop-sdk-extra.bst:components/libgphoto2.bst
 - core-deps/libimobiledevice.bst
 - core-deps/libmtp.bst
 - core-deps/libnfs.bst
 - core-deps/libplist.bst
 - core-deps/msgraph.bst
-- core-deps/samba.bst
+- freedesktop-sdk-extra.bst:components/samba.bst
 - core-deps/udisks2.bst
 - sdk/gcr.bst
 - sdk/glib.bst

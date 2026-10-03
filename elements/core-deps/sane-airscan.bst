@@ -15,7 +15,7 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 - freedesktop-sdk.bst:components/gnutls.bst
 - freedesktop-sdk.bst:components/libxml2.bst
-- core-deps/sane-backends.bst
+- freedesktop-sdk-extra.bst:components/sane-backends.bst
 
 variables:
   # No compression of man pages, we have a compressed erofs

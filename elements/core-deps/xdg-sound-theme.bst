@@ -9,5 +9,5 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst
-- core-deps/intltool.bst
+- freedesktop-sdk-extra.bst:components/intltool.bst
 - sdk/glib.bst

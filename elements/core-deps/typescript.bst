@@ -9,7 +9,7 @@ build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 depends:
-- core-deps/nodejs.bst
+- freedesktop-sdk-extra.bst:components/nodejs.bst
 
 variables:
   strip-binaries: ''

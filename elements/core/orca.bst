@@ -15,7 +15,7 @@ depends:
 - core-deps/brltty.bst
 - core-deps/dasbus.bst
 - core-deps/pyatspi.bst
-- core-deps/speech-dispatcher.bst
+- freedesktop-sdk-extra.bst:components/speech-dispatcher.bst
 - sdk/at-spi2-core.bst
 - sdk/gobject-introspection.bst
 - sdk/gtk+-3.bst

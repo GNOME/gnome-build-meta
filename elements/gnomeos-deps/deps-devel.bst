@@ -15,10 +15,10 @@ depends:
 - gnomeos-deps/bpftop.bst
 - gnomeos-deps/deviced.bst
 - gnomeos-deps/grcov.bst
-- gnomeos-deps/just.bst
-- gnomeos-deps/swtpm.bst
-- gnomeos-deps/virtiofsd.bst
-- gnomeos-deps/wl-clipboard.bst
+- freedesktop-sdk-extra.bst:components/just.bst
+- freedesktop-sdk-extra.bst:components/swtpm.bst
+- freedesktop-sdk-extra.bst:components/virtiofsd.bst
+- freedesktop-sdk-extra.bst:components/wl-clipboard.bst
 - freedesktop-sdk.bst:components/systemd-ukify.bst
 - freedesktop-sdk.bst:components/tpm2-tools.bst
 - freedesktop-sdk.bst:components/sbsigntools-maybe.bst
@@ -38,8 +38,8 @@ depends:
 - freedesktop-sdk.bst:components/mtools.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
-- sdk-deps/libsass.bst
-- sdk-deps/sassc.bst
+- freedesktop-sdk-extra.bst:components/libsass.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 - sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/xmlto.bst
 # Used by gdm tests
@@ -49,9 +49,9 @@ depends:
 
 - sdk.bst
 
-- gnomeos-deps/qemu.bst
-- gnomeos-deps/qemu-user.bst
-- gnomeos-deps/arch-test.bst
+- freedesktop-sdk-extra.bst:components/qemu.bst
+- freedesktop-sdk-extra.bst:components/qemu-user.bst
+- freedesktop-sdk-extra.bst:components/arch-test.bst
 
 # This is needed to report bugs upstream alsa
-- gnomeos-deps/alsa-utils.bst
+- freedesktop-sdk-extra.bst:components/alsa-utils.bst

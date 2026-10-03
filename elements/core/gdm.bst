@@ -16,7 +16,7 @@ build-depends:
 - sdk/yelp-tools.bst
 
 depends:
-- core-deps/accountsservice.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/libcanberra.bst
 - core-deps/plymouth.bst

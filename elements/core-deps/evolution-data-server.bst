@@ -17,7 +17,7 @@ depends:
 - core-deps/gnome-online-accounts.bst
 - core-deps/libcanberra.bst
 - core-deps/libgweather.bst
-- core-deps/openldap.bst
+- freedesktop-sdk-extra.bst:components/openldap.bst
 - sdk/gcr.bst
 - sdk/gtk+-3.bst
 - sdk/gtk.bst

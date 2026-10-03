@@ -14,7 +14,7 @@ depends:
 - core-deps/cmark.bst
 - core-deps/editorconfig-core-c.bst
 - core-deps/gom.bst
-- core-deps/libgit2.bst
+- freedesktop-sdk-extra.bst:components/libgit2.bst
 - core-deps/libpeas.bst
 - core-deps/libspelling.bst
 - core-deps/template-glib.bst

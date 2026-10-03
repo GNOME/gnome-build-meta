@@ -9,7 +9,7 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- core-deps/graphviz.bst
+- freedesktop-sdk-extra.bst:components/graphviz.bst
 - core-deps/mm-common.bst
 - freedesktop-sdk.bst:components/doxygen.bst
 - freedesktop-sdk.bst:components/m4.bst

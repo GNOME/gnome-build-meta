@@ -14,7 +14,7 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- core-deps/graphviz.bst
+- freedesktop-sdk-extra.bst:components/graphviz.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst

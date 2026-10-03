@@ -28,15 +28,15 @@ build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
 - core-deps/python-pyparsing.bst
-- core-deps/python3-six.bst
+- freedesktop-sdk-extra.bst:components/python3-six.bst
 - sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/perl.bst
 - freedesktop-sdk.bst:components/sed.bst
 
 depends:
 - core-deps/phodav.bst
-- core-deps/spice-protocol.bst
-- core-deps/usbredir.bst
+- freedesktop-sdk-extra.bst:components/spice-protocol.bst
+- freedesktop-sdk-extra.bst:components/usbredir.bst
 - sdk/glib.bst
 - sdk/gtk+-3.bst
 - sdk/json-glib.bst

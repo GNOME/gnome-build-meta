@@ -16,7 +16,7 @@ depends:
 - freedesktop-sdk.bst:components/util-linux.bst
 - gnomeos-deps/plymouth-gnome-theme.bst
 - gnomeos-deps/udev-hide-usr.bst
-- gnomeos-deps/zram-generator.bst
+- freedesktop-sdk-extra.bst:components/zram-generator.bst
 - gnomeos/initramfs/signed-modules.bst
 - oci/integration/os-release.bst
 - gnomeos-deps/bootc.bst

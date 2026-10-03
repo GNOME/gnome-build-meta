@@ -14,7 +14,7 @@ build-depends:
 
 depends:
 - core-deps/colord-gtk.bst
-- core-deps/sane-backends.bst
+- freedesktop-sdk-extra.bst:components/sane-backends.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gdk-pixbuf.bst
 - sdk/glib.bst

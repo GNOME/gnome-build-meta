@@ -5,7 +5,7 @@
 kind: stack
 depends:
 - core-deps/NetworkManager.bst
-- core-deps/accountsservice.bst
+- freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/oo7-daemon.bst
 - core-deps/oo7-pam.bst
 - core-deps/oo7-portal.bst

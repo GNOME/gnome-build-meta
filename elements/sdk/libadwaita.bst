@@ -9,7 +9,7 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- sdk-deps/sassc.bst
+- freedesktop-sdk-extra.bst:components/sassc.bst
 - sdk/gi-docgen.bst
 - sdk/gobject-introspection.bst
 - sdk/sysprof-minimal.bst
