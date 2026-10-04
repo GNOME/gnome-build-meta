@@ -3,7 +3,7 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gexiv2.git
-  track: "*.*.*"
+  track: main
   ref: 0.16.2-0-g3b30dae74e6cd30cc584b71482abd2a40ff5dc77
 
 build-depends:
