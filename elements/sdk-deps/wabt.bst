@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:WebAssembly/wabt.git
   track: "*.*.*"
-  ref: 1.0.41-0-g03a00a1334e6121fb0cce4fccbd6bb109b68acaa
+  ref: 1.0.42-0-gff0ef7e0009402740c805a9744c09b05be063e48
 - kind: git_module
   url: github:WebAssembly/wasm-c-api.git
   path: third_party/wasm-c-api

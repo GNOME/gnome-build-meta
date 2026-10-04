@@ -6,7 +6,7 @@ sources:
   track: pcre2-*
   exclude:
   - '*-RC*'
-  ref: pcre2-10.48-0-g7978954dbd2efc6f2196869290553cf1871b4ce6
+  ref: pcre2-10.49-0-g6f9d7c1373262c541324a16a358785b33ef116cf
 
 build-depends:
 - (@): include/gcc-for-recc.yml

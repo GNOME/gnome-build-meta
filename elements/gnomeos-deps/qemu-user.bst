@@ -6,7 +6,7 @@ sources:
   track: v*
   exclude:
   - "*-rc*"
-  ref: v11.1.1-0-gc3d48b7d1e89604920e5b81b91140c2ad39a1943
+  ref: v11.1.2-0-g4fc49f46dc95d4a27de2509e7fceb2931e91faeb
 
 # subprojects
 - kind: git_repo
