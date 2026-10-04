@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gexiv2.git
-  track: "*.*.*"
-  ref: 0.16.2-0-g3b30dae74e6cd30cc584b71482abd2a40ff5dc77
+  track: main
+  ref: 0.16.2-11-g80723af7b01b2b18f54a1720783f9eaae971e3f9
 
 build-depends:
 - (@): include/gcc-for-recc.yml
