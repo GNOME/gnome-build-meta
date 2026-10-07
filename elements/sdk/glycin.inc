@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.1-8-g5cc441739be38360ed4de9fc0b29f2dccee3b6b9
+  ref: 2.2.1-12-gfb7fc1e62ebc74112e7a4e6923bac4bb16ae361b
 - kind: cargo2
   ref:
   - kind: registry
@@ -454,6 +454,10 @@ sources:
     version: 0.22.8
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: registry
+    name: glob
+    version: 0.3.4
+    sha: e4eba85ea1d0a966a983acd07deee566e67395d2d96b6fb39e62b5a833f1eb0b
+  - kind: registry
     name: gobject-sys
     version: 0.22.6
     sha: 22a861859b887a79cf461359c192c97a57d8fb0229dd291232e57aa11f6fa72c
@@ -574,6 +578,10 @@ sources:
     version: 0.2.35
     sha: 3a69dcb3a21cfb32ce1cd056169337ca284af0766dd766e7878819b251a49204
   - kind: registry
+    name: jobserver
+    version: 0.1.35
+    sha: 1c00acbd29eabad4a2392fa0e921c874934dbbf4194312ad20f04a0ed67a3cb3
+  - kind: registry
     name: jpeg-decoder
     version: 0.3.2
     sha: 00810f1d8b74be64b13dbf3db89ac67740615d6c891f0e7b6179326533011a07
@@ -641,6 +649,10 @@ sources:
     name: libseccomp-sys
     version: 0.3.0
     sha: 60276e2d41bbb68b323e566047a1bfbf952050b157d8b5cdc74c07c1bf4ca3b6
+  - kind: registry
+    name: libwebp-sys
+    version: 0.9.6
+    sha: 54cd30df7c7165ce74a456e4ca9732c603e8dc5e60784558c1c6dc047f876733
   - kind: registry
     name: linux-raw-sys
     version: 0.12.1
@@ -1162,6 +1174,10 @@ sources:
     name: web-sys
     version: 0.3.103
     sha: 8622dcb61c0bcc9fffa6938bed81210af2da9a7e4a1a834b2e37a59b6dfb6141
+  - kind: registry
+    name: webp
+    version: 0.3.1
+    sha: c071456adef4aca59bf6a583c46b90ff5eb0b4f758fc347cea81290288f37ce1
   - kind: registry
     name: weezl
     version: 0.1.12

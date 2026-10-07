@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:json-glib.git
   track: main
-  ref: 1.10.8-27-g8e1bba694bfdc53df02e3bfb2eeb6534f4c5c5f9
+  ref: 1.10.8-28-gde76d985d2d6d3ec5343b033d182c1f25f5d0f83
 
 build-depends:
 - (@): include/gcc-for-recc.yml

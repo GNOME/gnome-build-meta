@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:decibels.git
   track: main
-  ref: 49.6.1-57-g9dd7d966658430b8984190d672193b330b33ced0
+  ref: 49.6.1-58-gb9b7199dff9c156e88dc54181e6ecbb98b40773b
 # Doing this manually for now, we need a plugin to do this
 # See https://gitlab.gnome.org/GNOME/decibels/-/merge_requests/182#note_2884304
 - kind: tar
