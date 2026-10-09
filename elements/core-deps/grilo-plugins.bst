@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo-plugins.git
   track: master
-  ref: grilo-plugins-0.3.18-17-g754aadde95ce93cf808ab2db923dce7a9632cd87
+  ref: grilo-plugins-0.3.18-18-g8ccac2544a0172be38ba6a73af38b485fd9257fa
 
 build-depends:
 - (@): include/gcc-for-recc.yml
