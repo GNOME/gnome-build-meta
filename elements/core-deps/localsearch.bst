@@ -9,7 +9,6 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-- core-deps/libmediainfo.bst
 - core-deps/python-dbusmock.bst
 - freedesktop-sdk.bst:components/asciidoc.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
@@ -24,6 +23,7 @@ depends:
 - core-deps/libcue.bst
 - core-deps/libgsf.bst
 - core-deps/libgxps.bst
+- core-deps/libmediainfo.bst
 - core-deps/libosinfo.bst
 - core-deps/libzip.bst
 - core-deps/totem-pl-parser.bst
