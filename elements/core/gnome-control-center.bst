@@ -20,9 +20,6 @@ sources:
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
-# These two are more like runtime deps of the tests suite
-- core-deps/setxkbmap.bst
-- core-deps/xvfb.bst
 - sdk/gtk-doc.bst
 - sdk/blueprint-compiler.bst
 

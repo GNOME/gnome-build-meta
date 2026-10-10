@@ -9,9 +9,7 @@ depends:
 # Useful utilities for testing and CI
 - core-deps/foundry.bst
 - core-deps/python-dbusmock.bst
-- core-deps/setxkbmap.bst
 - core-deps/umockdev.bst
-- core-deps/xvfb.bst
 - gnomeos-deps/bpftop.bst
 - gnomeos-deps/deviced.bst
 - gnomeos-deps/grcov.bst
