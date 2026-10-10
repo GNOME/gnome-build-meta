@@ -9,7 +9,7 @@ if [ "${CI_COMMIT_REF_PROTECTED:-}" = true ]; then
             "s3://gnome-build-meta/tag/${CI_COMMIT_TAG}/gnome_os_${CI_COMMIT_TAG}-${ARCH}.iso"
     else
         aws s3 cp --acl public-read live-image/disk.iso \
-            "s3://gnome-build-meta/nightly/${CI_PIPELINE_ID}/gnome_os_${CI_PIPELINE_ID}-${ARCH}.iso"
+            "s3://gnome-build-meta/iso/${CI_PIPELINE_ID}/gnome_os_${CI_PIPELINE_ID}-${ARCH}.iso"
     fi
 else
     aws s3 cp --acl public-read live-image/disk.iso \
