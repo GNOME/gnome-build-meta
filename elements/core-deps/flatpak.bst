@@ -8,7 +8,7 @@ sources:
       track: main
   - channel == "stable":
       track: 1.[0-8][02468].*
-  ref: 1.19.2-4-gacb9dc7959ad6eed865acb8fd1f2398095f54017
+  ref: 1.19.2-8-g9a032b2468f027f5b2bd0d330783cf459976dfb0
 - kind: git_repo
   url: gnome:libglnx.git
   directory: subprojects/libglnx

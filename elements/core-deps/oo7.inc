@@ -12,7 +12,7 @@ sources:
       - '*-alpha*'
       - '*-beta*'
       - '*-rc*'
-  ref: v0.6.0-alpha-272-gbf367dcadb38603f3ee9d394661a9e3ab952b0ae
+  ref: v0.6.0-alpha-278-g96e7424d8571fad1af2baa3c9c481f82ee4c074c
 - kind: cargo2
   ref:
   - kind: registry
@@ -145,8 +145,8 @@ sources:
     sha: fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04
   - kind: registry
     name: cargo-credential
-    version: 0.4.10
-    sha: aa57675b822ecda7f0be12eedbfabd890066271eedc7f2c45ed41e86e0f327a8
+    version: 0.4.11
+    sha: 5de74202293b2bc090da20d0b475aa74821caf0e901f29ba97003353886a5b42
   - kind: registry
     name: cbc
     version: 0.2.1
@@ -373,8 +373,8 @@ sources:
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
   - kind: registry
     name: libc
-    version: 0.2.189
-    sha: 3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2
+    version: 0.2.190
+    sha: ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78
   - kind: registry
     name: libm
     version: 0.2.16
@@ -553,28 +553,28 @@ sources:
     sha: 985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9
   - kind: registry
     name: pyo3
-    version: 0.29.2
-    sha: 4688ddedf473e32662b9b067670129a8afb8c18e351482c70d62ba4a88171e8b
+    version: 0.29.3
+    sha: 700d18fa267b73b9b521fd7e13580e2f446916f176cacee1ab63fcc8191f1655
   - kind: registry
     name: pyo3-async-runtimes
     version: 0.29.0
     sha: b3ef68daa7316a3fac65e5e18b2203f010346de1c1c53456811a2624673ab046
   - kind: registry
     name: pyo3-build-config
-    version: 0.29.2
-    sha: f41027e41b4bd03f6e60f9f417fe24a6341a6bb744edd62b6f709f2a52ea30e9
+    version: 0.29.3
+    sha: 7b3fc0c4d08f6bb10e71fe39dfb9e2f59c6eb6854e22ec8092f50c69a4499adb
   - kind: registry
     name: pyo3-ffi
-    version: 0.29.2
-    sha: e591a95526fead067432c3b3a33fc74770b87b1e04e73671090d9c2055a2b327
+    version: 0.29.3
+    sha: dfc0b8e19df29aad7086cf977bb0c2a2f143e30567eb113e9cf72b62ca698330
   - kind: registry
     name: pyo3-macros
-    version: 0.29.2
-    sha: 73225868fc1cd84eef2c3c230ddb91273bf1de46aeb8a4248da76d32a0924a1c
+    version: 0.29.3
+    sha: 6100e8a4b5eba53afaa5ed078364851a0b2499c553a44c31026b929049b49dc6
   - kind: registry
     name: pyo3-macros-backend
-    version: 0.29.2
-    sha: 571575aa3749fa6216757dd47d2a3e7ef360f329a40f0666a9fbd14889024952
+    version: 0.29.3
+    sha: 6143877a16e82b5a727b7127ff4cd86858a24a28d745d72f43e6f227c7b1bdb3
   - kind: registry
     name: quote
     version: 1.0.47
@@ -745,8 +745,8 @@ sources:
     sha: 7e689342a48d2ea927c87ea50cabf8594854bf940e9310208848d680d668ed85
   - kind: registry
     name: tokio
-    version: 1.53.1
-    sha: 202caea871b69668250d242070849eb495be178ed697a3e98aebce5bc81a0bed
+    version: 1.53.2
+    sha: e95f91fcc7a621e8b030f6aa23c71fe9838ae2fb4d8118b75602a328f5144044
   - kind: registry
     name: tokio-macros
     version: 2.7.2

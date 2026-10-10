@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libimobiledevice/libimobiledevice-glue.git
   track: '*.*.*'
-  ref: 1.3.2-0-gaef2bf0f5bfe961ad83d224166462d87b1df2b00
+  ref: 1.3.3-0-gecc0f1ba4fca96f3d7ef060b6c53f2e0bcfe829f
 
 build-depends:
 - (@): include/gcc-for-recc.yml

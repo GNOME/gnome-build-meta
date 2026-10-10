@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:nih-at/libzip.git
   track: 'v*'
-  ref: v1.11.4-0-g6f8a0cdd24a0dc6cce9dac4a7679da784ab124ea
+  ref: v1.12-0-gb26af3afd67e6b01e1e38a446ecb950e47fff146
 
 build-depends:
 - (@): include/gcc-for-recc.yml
