@@ -21,7 +21,7 @@ build-depends:
 # Need the whole thing over just the capture for the dbus interface.
 # /usr/share/dbus-1/interfaces/org.gnome.Sysprof3.Profiler.xml
 - core/sysprof-app.bst
-- sdk/gtk-doc.bst
+- sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/systemd.bst
 
@@ -55,5 +55,6 @@ depends:
 
 variables:
   meson-local: >-
-    -Dxwayland_initfd=enabled
+    -Ddocs=true
     -Dprofiler=true
+    -Dxwayland_initfd=enabled
