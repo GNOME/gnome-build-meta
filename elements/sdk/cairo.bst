@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:cairo/cairo.git
   track: "*.*.*"
-  ref: 1.18.4-0-g4541e0cd3a751b85e52e2a83d02ac6145a5efa85
+  ref: 1.18.6-0-g018b3424a10ecd37450360f21454ecf0f3007e17
 
 build-depends:
 - (@): include/gcc-for-recc.yml

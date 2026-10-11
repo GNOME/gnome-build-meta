@@ -6,7 +6,7 @@ sources:
   track: v*.*.*
   exclude:
   - "*rc*"
-  ref: v1.20.0-0-g5505e2f94d9aaa08561490db974ba3cd676af209
+  ref: v1.20.1-0-gdffc40b4f820ce5c512633bac9e0418d0e05a2ee
 
 build-depends:
 - (@): include/gcc-for-recc.yml

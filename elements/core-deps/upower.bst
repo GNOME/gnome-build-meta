@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:upower/upower.git
   track: 'v*'
-  ref: v1.91.4-0-gaf22b0bb6a97fff89b0e11101de9fc4937832864
+  ref: v1.91.5-0-g233615a1505166ef4a28c959836fe8c7781f5697
 
 build-depends:
 - (@): include/gcc-for-recc.yml

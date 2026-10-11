@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:MediaArea/MediaInfoLib.git
   track: v*.*
-  ref: v26.05-0-gf23e69ce89581343f3b7a42e06828a5331e290d5
+  ref: v26.10-0-g153ad67a62172534b401e9d9a5752dc759fff77b
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:catchorg/Catch2.git
   track: 'v*'
-  ref: v3.16.0-0-g317ac1ed4c0bb6e6b91eafc817e05c488feffcb3
+  ref: v3.16.1-0-g08092139210881f01a34e60c5f2fd6afa0ea4024
 
 build-depends:
 - (@): include/gcc-for-recc.yml
