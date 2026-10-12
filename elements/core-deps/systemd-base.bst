@@ -10,7 +10,8 @@ sources:
   track: v*
   exclude:
   - '*-rc*'
-  ref: v261.3-0-g3255daee1572366b74fe92f002a3d60ecbb27103
+  version-guess-pattern: '(\d+)(?:\.(\d+))?'
+  ref: v262-0-g8cc40e0c5e9234bf45084751ac53b1fbfe70b492
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
@@ -81,7 +82,6 @@ variables:
       bpf-framework: 'enabled'
 
   meson-local: >-
-    -Dsysvinit-path=%{sysconfdir}/init.d
     -Dsystem-uid-max=999
     -Dsystem-gid-max=999
     -Dusers-gid=100
