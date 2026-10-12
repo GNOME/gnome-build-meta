@@ -4,11 +4,12 @@ sources:
 - kind: git_repo
   url: gnome:gnome-music.git
   track: master
-  ref: 50.0-12-gf227312064a21efed84818ea845f381cf9acab86
+  ref: 50.0-20-g13a24b601db645d7ac64138809c961022684d5a8
 
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
+- sdk/blueprint-compiler.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 - freedesktop-sdk.bst:components/itstool.bst
 
