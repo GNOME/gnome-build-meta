@@ -132,11 +132,12 @@ UNITS+=(
     systemd-sysext-sysroot.service
     systemd-udevd-control.socket
     systemd-udevd-kernel.socket
+    systemd-udevd-varlink.socket
     systemd-udevd.service
     systemd-udev-settle.service
     systemd-udev-trigger.service
-    sockets.target.wants/systemd-udevd-control.socket
     sockets.target.wants/systemd-udevd-kernel.socket
+    sockets.target.wants/systemd-udevd-varlink.socket
     sysinit.target.wants/systemd-udevd.service
     sysinit.target.wants/systemd-udev-trigger.service
     systemd-sysusers.service
