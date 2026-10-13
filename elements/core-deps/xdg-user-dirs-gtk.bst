@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:xdg-user-dirs-gtk.git
   track: master
-  ref: 0.16-7-g2517b1681578168a89850731de5620cbc9721d76
+  ref: 0.16-8-gba89bb1ed509bf0c0f17e505f93f2b5aef010a07
 
 build-depends:
 - (@): include/gcc-for-recc.yml
