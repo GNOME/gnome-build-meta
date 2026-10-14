@@ -99,6 +99,10 @@ UNITS+=(
 UNITS+=(
     modprobe@.service
     debug-shell.service
+    breakpoint-pre-udev.service
+    breakpoint-pre-basic.service
+    breakpoint-pre-mount.service
+    breakpoint-pre-switch-root.service
     emergency.service
     systemd-confext.service
     systemd-fsck@.service
