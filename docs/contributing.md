@@ -94,7 +94,7 @@ If you're in a tight development loop where you're rebuilding the same component
 ```shell
 $ cat > ~/.config/buildstream.conf << 'EOT'
 projects:
-  gnome-build-meta:
+  gnome:
     strict: false
 EOT
 ```
