@@ -1,7 +1,7 @@
-From d37348e6feac1059cbe475bb653ad4233c3b209a Mon Sep 17 00:00:00 2001
+From 271415fc0f12836bb0cbaf31a0bdf34e6e24150d Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Thu, 10 Sep 2026 21:41:41 +0200
-Subject: [PATCH 2/3] linux: Enable zswap by default
+Subject: [PATCH 2/4] linux: Enable zswap by default
 
 GNOME OS is switch to using zswap. And it makes it more
 convenient to have a sensible default configuration: enabled
