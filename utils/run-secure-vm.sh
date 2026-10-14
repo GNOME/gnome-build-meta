@@ -71,6 +71,14 @@ Options:
                              --cmdline systemd.debug_shell=1 --cmdline
                              systemd.journald.forward_to_journal=1
 
+  --breakpoint-initrd POINT  Stop booting the initrd at a breakpoint and open
+                             a root shell on the console. POINT is one of
+                             pre-udev, pre-basic, pre-mount or pre-switch-root.
+
+  --breakpoint POINT         Stop booting the system at a breakpoint and open
+                             a root shell on the console. POINT is one of
+                             pre-udev or pre-basic.
+
   --debug-glib               Enable debug logs for GLib
 
   --debug-systemd            Enable debug logs for systemd
@@ -140,6 +148,34 @@ while [ $# -gt 0 ]; do
         --cmdline)
             shift
             cmdline+=("$1")
+            ;;
+        --breakpoint-initrd|--breakpoint-initrd=*)
+            if [ "$1" = --breakpoint-initrd ]; then
+                shift
+                breakpoint="${1-}"
+            else
+                breakpoint="${1#--breakpoint-initrd=}"
+            fi
+            if ! [[ "${breakpoint}" =~ ^(pre-udev|pre-basic|pre-mount|pre-switch-root)$ ]]; then
+                echo "Invalid initrd breakpoint '${breakpoint}'" 1>&2
+                exit 1
+            fi
+            cmdline+=("rd.systemd.break=${breakpoint}")
+            cmdline+=("rd.systemd.debug_shell=1")
+            ;;
+        --breakpoint|--breakpoint=*)
+            if [ "$1" = --breakpoint ]; then
+                shift
+                breakpoint="${1-}"
+            else
+                breakpoint="${1#--breakpoint=}"
+            fi
+            if ! [[ "${breakpoint}" =~ ^(pre-udev|pre-basic)$ ]]; then
+                echo "Invalid breakpoint '${breakpoint}'" 1>&2
+                exit 1
+            fi
+            cmdline+=("systemd.break=${breakpoint}")
+            cmdline+=("systemd.debug_shell=1")
             ;;
         --debug-glib)
             debug_glib=1
