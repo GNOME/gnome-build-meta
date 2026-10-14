@@ -4,6 +4,7 @@ depends:
 - core/meta-gnome-core-developer-tools.bst
 
 - freedesktop-sdk.bst:components/buildstream2.bst
+- freedesktop-sdk-extra.bst:components/buildstream-plugins.bst
 - freedesktop-sdk.bst:components/debuginfod.bst
 
 # Useful utilities for testing and CI
