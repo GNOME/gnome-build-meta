@@ -283,16 +283,17 @@ fn create(args : CreateArgs) -> Result<(), Box<dyn Error>> {
     }
     {
         let f = std::fs::File::create(&args.swapfile)?;
+
+        // TODO: Maybe do ioctl FS_IOC_SETFLAGS directly
+        let mut chattr = Command::new("chattr");
+        chattr.arg("+C").arg(format!("{}", args.swapfile.display()));
+        let chattr_status = chattr.status()?;
+        chattr_status.code().filter(|code| *code == 0).ok_or(CommandError::new("chattr", chattr_status))?;
+
         f.set_len(args.size)?;
         let perm = std::fs::Permissions::from_mode(0o600);
         f.set_permissions(perm)?;
     }
-
-    // TODO: Maybe do ioctl FS_IOC_SETFLAGS directly
-    let mut chattr = Command::new("chattr");
-    chattr.arg("+C").arg(format!("{}", args.swapfile.display()));
-    let chattr_status = chattr.status()?;
-    chattr_status.code().filter(|code| *code == 0).ok_or(CommandError::new("chattr", chattr_status))?;
 
     let mut mkswap = Command::new("mkswap");
     mkswap.arg("--label").arg(args.label).arg(format!("{}", args.swapfile.display()));
