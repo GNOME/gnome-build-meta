@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:freerdp/freerdp.git
   track: '*.*.*'
-  ref: 3.32.1-0-gbf217a504e54cc719880c228e82353382cd7d4fa
+  ref: 3.32.2-0-g97eff6ddfbbfaa8e42a126d362686bd001ff8bdc
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/cmake.bst
