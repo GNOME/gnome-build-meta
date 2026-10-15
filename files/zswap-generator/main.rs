@@ -64,7 +64,7 @@ impl fmt::Display for PhysicalRamUnknown {
 
 impl Error for PhysicalRamUnknown {}
 
-fn get_sparse_swapfile_size() -> Result<i64, Box<dyn Error>> {
+fn get_physical_memory_size() -> Result<i64, Box<dyn Error>> {
     let meminfo = fs::read_to_string("/proc/meminfo")?;
     for line in meminfo.lines() {
         match line.strip_prefix("MemTotal:") {
@@ -183,7 +183,7 @@ fn generator(args : GeneratorArgs) -> Result<(), Box<dyn Error>> {
                     path = "/swap/default-swap"
                 };
                 default.get_mut("default-swap").expect("missing default-swap").as_table_mut().expect("defaults-swap not mutable")
-                    .insert("size".to_string(), toml::Value::Integer(get_sparse_swapfile_size()?));
+                    .insert("size".to_string(), toml::Value::Integer(get_physical_memory_size()? * 4));
                 Ok(default)
             }
             _ => Err(error),
