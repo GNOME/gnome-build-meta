@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:M0Rf30/android-udev-rules.git
   track: '20*'
-  ref: 20260423-0-g5e7cef34d9e445b4a34d445d164f8cf862efd19a
+  ref: 20260922-0-gf45ef6c7716ee40056fa687aeac18a8ca40933aa
 
 build-depends:
 - freedesktop-sdk.bst:components/pkg-config.bst

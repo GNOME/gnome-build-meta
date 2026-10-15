@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:nodejs/node.git
   track: 'v*'
-  ref: v26.10.0-0-g151845ab90d3926ceb36eedf1eade09619c3adc9
+  ref: v26.12.0-0-g26e72d85a611e222e3f06025de8a3c496923bacd
 
 build-depends:
 - freedesktop-sdk.bst:components/gyp.bst
