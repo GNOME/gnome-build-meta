@@ -4,6 +4,8 @@ sources:
 - kind: git_repo
   url: github:libgit2/libgit2.git
   track: 'v*'
+  exclude:
+  - '*-rc*'
   ref: v1.9.7-0-g49e408b3208bc3093757a1c2db938d3590f3f412
 
 build-depends:
