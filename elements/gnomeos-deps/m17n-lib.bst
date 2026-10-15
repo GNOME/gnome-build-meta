@@ -6,7 +6,7 @@ sources:
   track: 'REL-*'
   exclude:
   - '*alpha*'
-  ref: REL-1-8-6-0-g86c100d99243e89ce037a1226597744e1b7e1773
+  ref: REL-1-8-7-0-g9c4641568c50d4c7197efa395257a638937d04db
 
 build-depends:
 - (@): include/gcc-for-recc.yml

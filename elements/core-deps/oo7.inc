@@ -12,7 +12,7 @@ sources:
       - '*-alpha*'
       - '*-beta*'
       - '*-rc*'
-  ref: v0.6.0-alpha-278-g96e7424d8571fad1af2baa3c9c481f82ee4c074c
+  ref: v0.6.0-alpha-279-g540d01e2625dc99a1eb51841611e2cc30325ec41
 - kind: cargo2
   ref:
   - kind: registry
@@ -897,8 +897,8 @@ sources:
     sha: ac4f328cf2f05d084e496c3e9c3f33ed0a183656a16e1fcec4d464d8373aec82
   - kind: registry
     name: zeroize
-    version: 1.9.0
-    sha: e13c156562582aa81c60cb29407084cdb54c4164760106ab78e6c5b0858cf64e
+    version: 1.9.1
+    sha: e13084392c5e4bc371903e2935a5eaeed24905a7511356b883835e18a78f6879
   - kind: registry
     name: zeroize_derive
     version: 1.5.0
