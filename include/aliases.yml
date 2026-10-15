@@ -31,7 +31,7 @@ aliases:
   netfilter_pub: https://www.netfilter.org/pub/
   nvidia: https://us.download.nvidia.com/
   openvpn: https://swupdate.openvpn.org/community/releases/
-  pagure_releases: https://releases.pagure.org/
+  osinfo: https://gitlab.com/libosinfo/
   phosh: https://sources.phosh.mobi/releases/
   pypi: https://files.pythonhosted.org/packages/
   qemu: https://download.qemu.org/

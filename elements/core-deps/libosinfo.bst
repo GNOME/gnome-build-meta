@@ -1,7 +1,7 @@
 kind: meson
 sources:
 - kind: tar
-  url: pagure_releases:libosinfo/libosinfo-1.12.0.tar.xz
+  url: osinfo:libosinfo/-/releases/v1.12.0/downloads/libosinfo-1.12.0.tar.xz
   ref: ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6
 - kind: patch
   path: patches/libosinfo/attribute-unused.patch
