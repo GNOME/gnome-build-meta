@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-settings-daemon/51/gnome-settings-daemon-51.0.tar.xz
-  ref: 7c6249118ddfffc4bb34d6b3edaa86b3ea02a1ad2b7711d79480749906767665
+  url: gnome_downloads:gnome-settings-daemon/51/gnome-settings-daemon-51.1.tar.xz
+  ref: e7de8d30ae2d63c7a9a21f8f0247219275cbc1d7f5ed09205e4a47642666f6ae
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

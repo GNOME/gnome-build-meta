@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-calculator/51/gnome-calculator-51.0.tar.xz
-  ref: 5bfb4c53eec61feb6c03faf85218804e87413ecb647e08fde6379bf2b1839190
+  url: gnome_downloads:gnome-calculator/51/gnome-calculator-51.1.tar.xz
+  ref: 03edf5972adc020b7e872233caba42f759e9879fc4b96f014580f136179c4fa0
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

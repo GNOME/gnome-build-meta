@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gtk/4.24/gtk-4.24.0.tar.xz
-  ref: 28ba4ac1c04f86eac09b79a163cb163a4c2b54442d9f7eccc04679062a581044
+  url: gnome_downloads:gtk/4.24/gtk-4.24.1.tar.xz
+  ref: e98abe720e16129c8c0f50761dee0a2e9ae2478055e31018f6cf977fcf6513e9
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
