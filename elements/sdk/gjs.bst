@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gjs/1.90/gjs-1.90.0.tar.xz
-  ref: 47e9f22b1d4aca841c6c492b449b6de32ff680972183e26fe7b98a45c5c3fee1
+  url: gnome_downloads:gjs/1.90/gjs-1.90.1.tar.xz
+  ref: 05ceaa80f48e3782e5c44938572fad863e02b8c4a6c55657a99aa81db8ce9efa
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

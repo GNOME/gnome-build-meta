@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:pangomm/2.56/pangomm-2.56.2.tar.xz
-  ref: f1e984c85a85b6a0e61616366521f51dd8282a072bb45d15b5084762b62f4c0e
+  url: gnome_downloads:pangomm/2.58/pangomm-2.58.0.tar.xz
+  ref: 217514c1a65035c2fce6e69e33b0d92bafa2594cc474e995a4473441b10f3a33
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

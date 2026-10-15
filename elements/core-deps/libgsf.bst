@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: gnome_downloads:libgsf/1.14/libgsf-1.14.58.tar.xz
-  ref: 06e07ea12b7a52b9e316faddfecb640b1717a4875c59f0efb3b0cec1e2ccf35a
+  url: gnome_downloads:libgsf/1.14/libgsf-1.14.60.tar.xz
+  ref: 83e12c36a099a8a7019bf425e2c24af66eeb2ef5874251e694431a07d9805dae
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:calls/50/calls-50.0.tar.xz
-  ref: f28ccc8e6fbc5079e7b8b5d11a551969bb70d905e5ed90d1b1d868f12045c72f
+  url: gnome_downloads:calls/51/calls-51.1.tar.xz
+  ref: b98b8d061264ee8ea65115facfcd0a3f979a0bace43fcfc71f603c7629b94feb
 - kind: git_repo
   url: gnome_gitlab:World/Phosh/libcall-ui.git
   directory: subprojects/libcall-ui
