@@ -72,7 +72,7 @@ fn get_sparse_swapfile_size() -> Result<i64, Box<dyn Error>> {
                 match v.trim_start().strip_suffix(" kB") {
                     Some(i) => {
                         let int_value : i64 = i.parse()?;
-                        return Ok(int_value * 1024);
+                        return Ok(4 * int_value * 1024);
                     },
                     None => ()
                 }
