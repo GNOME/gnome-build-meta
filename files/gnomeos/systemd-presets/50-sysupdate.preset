@@ -1,2 +1,2 @@
 disable systemd-sysupdate-reboot.*
-disable systemd-sysupdate.*
+disable systemd-sysupdate-update.*
