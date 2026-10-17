@@ -55,8 +55,10 @@ class Udisks:
             size = block.Get('org.freedesktop.UDisks2.Block', 'Size', dbus_interface=dbus.PROPERTIES_IFACE)
 
             invalid = None
+            empty = True
             if path in partition_table_type:
-                invalid = ('error', _("<b>Disk has a partition table.</b>\nTo use this disk, you first need to format it without partition table in GNOME Disks."))
+                invalid = ('warning', _("<b>Disk already has a partition table.</b>"))
+                empty = False
             elif block.Get('org.freedesktop.UDisks2.Block', 'ReadOnly', dbus_interface=dbus.PROPERTIES_IFACE):
                 invalid = ('error', _("<b>Disk is read-only</b>"))
             elif not block.Get('org.freedesktop.UDisks2.Block', 'HintPartitionable', dbus_interface=dbus.PROPERTIES_IFACE):
@@ -70,7 +72,7 @@ class Udisks:
 
             media = drive.Get('org.freedesktop.UDisks2.Drive', 'MediaCompatibility', dbus_interface=dbus.PROPERTIES_IFACE)
 
-            ret.append((os.path.relpath(device, '/dev'), model, size, media, invalid))
+            ret.append((os.path.relpath(device, '/dev'), model, size, media, empty, invalid, block))
 
         return ret
 
@@ -105,6 +107,26 @@ class Installer:
         self._on_error(message)
 
 
+@Gtk.Template(resource_path="/org/gnome/os/proto-installer/erase-disk.ui")
+class EraseDiskAlertDialog(Adw.AlertDialog):
+    __gtype_name__ = "EraseDiskAlertDialog"
+
+    def onResponse(self, source, result):
+        response = self.choose_finish(result)
+        if response == "erase":
+            self._selected_row.get_block().Format("empty", {}, signature='sa{sv}', dbus_interface='org.freedesktop.UDisks2.Block')
+            recovery_key = self._installer.install(self._selected_row.get_device_name(), self._oem_mode)
+            self._app.display_recovery(recovery_key)
+
+    def __init__(self, parent, app, installer, oem_mode, selected_row):
+        super().__init__()
+        self._app = app
+        self._installer = installer
+        self._oem_mode = oem_mode
+        self._selected_row = selected_row
+        self.choose(parent, None, self.onResponse)
+
+
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/install-button.ui")
 class InstallButton(Gtk.Button):
     __gtype_name__ = "InstallButton"
@@ -112,8 +134,11 @@ class InstallButton(Gtk.Button):
     @Gtk.Template.Callback()
     def doInstall(self, *args):
         selected_row = self._selector.DiskList.get_selected_row()
-        recovery_key = self._installer.install(selected_row.get_device_name(), self._oem_mode)
-        self._app.display_recovery(recovery_key)
+        if selected_row.is_empty():
+            recovery_key = self._installer.install(selected_row.get_device_name(), self._oem_mode)
+            self._app.display_recovery(recovery_key)
+        else:
+            EraseDiskAlertDialog(self, self._app, self._installer, self._oem_mode, selected_row)
 
     def __init__(self, app, installer, selector, oem_mode):
         super().__init__()
@@ -166,9 +191,11 @@ class InstallerWindow(Adw.ApplicationWindow):
 class DiskRow(Adw.ActionRow):
     __gtype_name__ = "DiskRow"
 
-    def __init__(self, name, description, size, media, invalid):
+    def __init__(self, name, description, size, media, empty, invalid, block):
         super().__init__()
         self._device_name = name
+        self._empty = empty
+        self._block = block
         self.set_title(description)
         if size != 0:
             self.set_subtitle(human_readable_size(size))
@@ -202,6 +229,11 @@ class DiskRow(Adw.ActionRow):
     def get_device_name(self):
         return self._device_name
 
+    def get_block(self):
+        return self._block
+
+    def is_empty(self):
+        return self._empty
 
 @Gtk.Template(resource_path="/org/gnome/os/proto-installer/warning-icon.ui")
 class WarningIcon(Gtk.Box):
@@ -277,8 +309,8 @@ class InstallerApp(Adw.Application):
         self.win.set_application(self)
         disk_selector = DiskSelector()
 
-        for name, description, size, media, invalid in self.udisks.get_disks():
-            disk_selector.DiskList.append(DiskRow(name, description, size, media, invalid))
+        for name, description, size, media, empty, invalid, block in self.udisks.get_disks():
+            disk_selector.DiskList.append(DiskRow(name, description, size, media, empty, invalid, block))
 
         disk_selector.DiskList.connect("row-selected", self._disk_selected)
 
