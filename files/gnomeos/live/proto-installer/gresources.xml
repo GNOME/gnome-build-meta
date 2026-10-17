@@ -9,5 +9,6 @@
     <file>warning-icon.ui</file>
     <file>error-icon.ui</file>
     <file>install-or-live.ui</file>
+    <file>erase-disk.ui</file>
   </gresource>
 </gresources>
