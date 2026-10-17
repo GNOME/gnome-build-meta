@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="libadwaita" version="1.6"/>
+  <template class="EraseDiskAlertDialog" parent="AdwAlertDialog">
+    <property name="body" translatable="yes">The selected disk contains data. Installing GNOME OS on this disk will erase it. GNOME OS Installer does not yet support multi-booting.</property>
+    <property name="heading" translatable="yes">Erase Disk?</property>
+    <property name="default-response">cancel</property>
+    <property name="close-response">cancel</property>
+    <responses>
+      <response id="cancel" translatable="yes">Cancel</response>
+      <response id="erase" translatable="yes" appearance="destructive">Erase All Data</response>
+    </responses>
+  </template>
+</interface>
