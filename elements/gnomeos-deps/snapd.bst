@@ -2,8 +2,8 @@ kind: autotools
 
 sources:
 - kind: tar
-  url: github_files:canonical/snapd/releases/download/2.77.1/snapd_2.77.1.vendor.tar.xz
-  ref: 10c824694cd9c9954ba7a826d245458d8fa1006d49937fe480dc9f36b57b1efc
+  url: github_files:canonical/snapd/releases/download/2.78/snapd_2.78.vendor.tar.xz
+  ref: 197d5e5870ae7f3681276cea37339d5ee528ddfaf47f53509f858fdad46e4aed
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
 
@@ -48,7 +48,7 @@ variables:
 config:
   configure-commands:
   - |
-    ./mkversion.sh 2.77.1
+    ./mkversion.sh 2.78
 
   - |
     cd cmd
@@ -63,9 +63,7 @@ config:
   - go build -o bins/snap-failure %{go-flags} ./cmd/snap-failure
   - go build -o bins/snap-seccomp %{go-flags} ./cmd/snap-seccomp
   - go build -o bins/snap-update-ns %{go-static-flags} ./cmd/snap-update-ns
-  - go build -o bins/snap-exec %{go-static-flags} ./cmd/snap-exec
   - go build -o bins/snapctl %{go-static-flags} ./cmd/snapctl
-  - go build -o bins/snapd-apparmor %{go-flags} ./cmd/snapd-apparmor
 
   - |
     make -C cmd
@@ -77,9 +75,11 @@ config:
       bins/snap-failure \
       bins/snap-seccomp \
       bins/snap-update-ns \
-      bins/snap-exec \
-      bins/snapctl \
-      bins/snapd-apparmor
+      bins/snapctl
+
+  - |
+    ln -s snapctl '%{install-root}%{libexecdir}/snap-exec'
+    ln -s snapd-tool-wrap '%{install-root}%{libexecdir}/snapd-apparmor'
 
   - |
     install -Dm755 -d '%{install-root}%{bindir}'
