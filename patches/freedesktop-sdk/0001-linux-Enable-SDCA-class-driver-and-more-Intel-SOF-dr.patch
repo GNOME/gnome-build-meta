@@ -1,0 +1,36 @@
+From 7cd1dc9ab3b5cdc0c2faabc187522bf5ab684da0 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
+Date: Tue, 13 Oct 2026 12:31:51 +0200
+Subject: [PATCH] linux: Enable SDCA class driver and more Intel SOF drivers
+
+The SDCA class driver is needed for SoundWire codecs like the Cirrus
+CS42L45, without it the sof_sdw sound card never finishes probing. Adding
+it fixes audio on the Dell XPS 14 2026.
+
+Also enable SND_SOC_INTEL_SOF_PCM512x_MACH and
+SND_SOC_INTEL_SOF_WM8804_MACH, matching the Fedora kernel configuration.
+---
+ files/linux/fdsdk-config.sh | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
+index 2909d53fe..bcef6a3e8 100644
+--- a/files/linux/fdsdk-config.sh
++++ b/files/linux/fdsdk-config.sh
+@@ -1217,9 +1217,13 @@ case "$arch" in
+         module SND_SOC_INTEL_SOF_DA7219_MACH
+         module SND_SOC_INTEL_SOF_ES8336_MACH
+         module SND_SOC_INTEL_SOF_NAU8825_MACH
++        module SND_SOC_INTEL_SOF_PCM512x_MACH
+         module SND_SOC_INTEL_SOF_RT5682_MACH
+         module SND_SOC_INTEL_SOF_SSP_AMP_MACH
++        module SND_SOC_INTEL_SOF_WM8804_MACH
+         module SND_SOC_INTEL_SOUNDWIRE_SOF_MACH
++        module SND_SOC_SDCA
++        module SND_SOC_SDCA_CLASS
+         module SND_SOC_SOF_AMD_REMBRANDT
+         module SND_SOC_SOF_AMD_TOPLEVEL
+     ;;
+-- 
+2.56.0
+
