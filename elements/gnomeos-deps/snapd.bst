@@ -17,6 +17,7 @@ build-depends:
 depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/apparmor.bst
+- freedesktop-sdk.bst:components/apparmor-profiles.bst
 - freedesktop-sdk.bst:components/libseccomp.bst
 - freedesktop-sdk.bst:components/squashfs-tools.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
