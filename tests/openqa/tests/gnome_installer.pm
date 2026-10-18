@@ -16,6 +16,13 @@ sub run {
     eject_cd;
 }
 
+sub post_fail_hook {
+    select_console('user-virtio-terminal');
+    assert_script_run('journalctl --merge --output export | xz > /tmp/journal.xz; chmod 777 /tmp/journal.xz');
+    upload_asset('/tmp/journal.xz');
+    select_console('x11');
+}
+
 sub test_flags {
     return { fatal => 1 };
 }
