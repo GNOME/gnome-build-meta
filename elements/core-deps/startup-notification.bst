@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: gnome_downloads:startup-notification/0.12/startup-notification-0.12.tar.xz
-  ref: 4bd1363a2f3b3eb2c4f7fc33b4977bb9c12b4741206f05109b0ff2b3b30b6bc0
+- kind: git_repo
+  url: freedesktop:xdg/startup-notification.git
+  track: STARTUP_NOTIFICATION_*
+  ref: STARTUP_NOTIFICATION_0_12-0-gfce365db713897a9cc6b52cac6536f4cb9c3abf1
 
 build-depends:
 - (@): include/gcc-for-recc.yml
