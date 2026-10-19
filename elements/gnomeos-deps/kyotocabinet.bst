@@ -1,9 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: dbmx:kyotocabinet/pkg/kyotocabinet-1.2.80.tar.gz
-  ref: 4c85d736668d82920bfdbdb92ac3d66b7db1108f09581a769dd9160a02def349
+- kind: anitya
+  project-id: 1530
+  url: dbmx:kyotocabinet/pkg/kyotocabinet-{version}.tar.gz
+  ref:
+    version: 1.2.80
+    sha256sum: 4c85d736668d82920bfdbdb92ac3d66b7db1108f09581a769dd9160a02def349
 - kind: patch_queue
   path: patches/kyotocabinet
 

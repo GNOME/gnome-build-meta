@@ -14,9 +14,12 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 sources:
-- kind: tar
-  url: crates:crates/libslirp/libslirp-4.3.2.crate
-  ref: 6b54688ec71b50947cafb52c990073a47dc384aea926e33e7fe0e91b0996470b
+- kind: anitya
+  project-id: 98335
+  url: crates:crates/libslirp/libslirp-{version}.crate
+  ref:
+    version: 4.3.2
+    sha256sum: 6b54688ec71b50947cafb52c990073a47dc384aea926e33e7fe0e91b0996470b
 - kind: cargo2
   ref:
   - kind: registry

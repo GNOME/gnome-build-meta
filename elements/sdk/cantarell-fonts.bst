@@ -1,10 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: gnome_downloads:cantarell-fonts/0.303/cantarell-fonts-0.303.1.tar.xz
-  ref: f9463a0659c63e57e381fdd753cf1929225395c5b49135989424761830530411
-
+- kind: anitya
+  project-id: 10888
+  url: cantarell:cantarell-fonts-{version}.tar.xz
+  ref:
+    version: 0.311
+    sha256sum: 706778e6f9468d534d7afe05e4f6e1586110395ef37d24df259746736fd6b702
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
