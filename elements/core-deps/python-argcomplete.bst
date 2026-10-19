@@ -1,11 +1,11 @@
 kind: pyproject
 
 sources:
-- kind: tar
-  url: 
-    pypi:16/0f/861e168fc813c56a78b35f3c30d91c6757d1fd185af1110f1aec784b35d0/argcomplete-3.6.2.tar.gz
-  ref: d0519b1bc867f5f4f4713c41ad0aba73a4a5f007449716b16f385f2166dc6adf
-
+- kind: pypi
+  name: argcomplete
+  ref:
+    sha256sum: aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9
+    suffix: 87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-python-flit.bst
 - freedesktop-sdk.bst:components/python3-hatchling.bst
