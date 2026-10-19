@@ -26,6 +26,7 @@ depends:
 - gnomeos-deps/wpa-supplicant-config.bst
 - gnomeos-deps/sysupdate-config.bst
 - gnomeos-deps/pcrlock-config.bst
+- gnomeos-deps/homed-config.bst
 - gnomeos-deps/udev-hide-usr.bst
 - gnomeos-deps/hidraw-udev.bst
 - gnomeos-deps/vte-config.bst
