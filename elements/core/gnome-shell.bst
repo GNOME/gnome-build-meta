@@ -34,7 +34,7 @@ runtime-depends:
 - freedesktop-sdk.bst:components/geoclue-libs.bst
 
 depends:
-- core-deps/accountsservice.bst
+- - freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/dconf.bst
 - core-deps/evolution-data-server.bst
 - core-deps/gnome-autoar.bst

@@ -27,7 +27,7 @@ runtime-depends:
 - core-deps/power-profiles-daemon.bst
 
 depends:
-- core-deps/accountsservice.bst
+- - freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/boltd.bst
 - core-deps/colord-gtk.bst
 - core-deps/colord.bst

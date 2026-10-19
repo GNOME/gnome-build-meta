@@ -1,0 +1,634 @@
+From 9907c340ece591cc4b623ff974f0a7de61504ac1 Mon Sep 17 00:00:00 2001
+From: Aleix Pol i Gonzalez <aleix.pol@codethink.co.uk>
+Date: Tue, 28 Jul 2026 17:06:28 +0200
+Subject: [PATCH] sources: Introduce the element_overlay
+
+Roughly, like applying (@) onto an element from the junction.
+
+Addresses
+https://gitlab.com/freedesktop-sdk/freedesktop-sdk/-/work_items/2025
+---
+ NEWS                                          |   1 +
+ doc/source/index.rst                          |   1 +
+ project.conf                                  |   1 +
+ pyproject.toml                                |   2 +
+ .../sources/element_overlay.py                | 206 ++++++++++++++++++
+ tests/sources/element_overlay.py              | 166 ++++++++++++++
+ .../elements/hello.bst                        |  11 +
+ .../elements/new-depend.bst                   |   4 +
+ .../elements/original-depend.bst              |   4 +
+ .../project.conf                              |   3 +
+ .../elements/missing-element-junction.bst     |   7 +
+ .../elements/variable-junction.bst            |   7 +
+ .../element_overlay/files/overrides/hello.yml |   5 +
+ .../files/overrides/missing.yml               |   2 +
+ tests/sources/element_overlay/project.conf    |   9 +
+ .../subproject/elements/hello.bst             |  10 +
+ .../subproject/elements/new-depend.bst        |   1 +
+ .../subproject/elements/original-depend.bst   |   1 +
+ .../element_overlay/subproject/project.conf   |   3 +
+ 19 files changed, 444 insertions(+)
+ create mode 100644 src/buildstream_plugins_community/sources/element_overlay.py
+ create mode 100644 tests/sources/element_overlay.py
+ create mode 100644 tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/hello.bst
+ create mode 100644 tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/new-depend.bst
+ create mode 100644 tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/original-depend.bst
+ create mode 100644 tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/project.conf
+ create mode 100644 tests/sources/element_overlay/elements/missing-element-junction.bst
+ create mode 100644 tests/sources/element_overlay/elements/variable-junction.bst
+ create mode 100644 tests/sources/element_overlay/files/overrides/hello.yml
+ create mode 100644 tests/sources/element_overlay/files/overrides/missing.yml
+ create mode 100644 tests/sources/element_overlay/project.conf
+ create mode 100644 tests/sources/element_overlay/subproject/elements/hello.bst
+ create mode 100644 tests/sources/element_overlay/subproject/elements/new-depend.bst
+ create mode 100644 tests/sources/element_overlay/subproject/elements/original-depend.bst
+ create mode 100644 tests/sources/element_overlay/subproject/project.conf
+
+diff --git a/NEWS b/NEWS
+index efac8155..93720216 100644
+--- a/NEWS
++++ b/NEWS
+@@ -3,6 +3,7 @@ buildstream-plugins-community 2.5.0 (unreleased)
+ ===================================
+ 
+ o Drop support for Python 3.10. Now requires Python >= 3.11.
++o element_overlay: add a source plugin for overlaying staged elements
+ 
+ ===================================
+ buildstream-plugins-community 2.4.0
+diff --git a/doc/source/index.rst b/doc/source/index.rst
+index d10ba965..2894803f 100644
+--- a/doc/source/index.rst
++++ b/doc/source/index.rst
+@@ -51,6 +51,7 @@ buildstream-plugins-community package and enabled it in your `project configurat
+    sources/git_tag
+    sources/git_module
+    sources/git_repo
++   sources/element_overlay
+    sources/go_module
+    sources/pypi
+    sources/zip
+diff --git a/project.conf b/project.conf
+index a5ff92e8..18763cb2 100644
+--- a/project.conf
++++ b/project.conf
+@@ -40,6 +40,7 @@ plugins:
+   - cargo2
+   - cpan
+   - deb
++  - element_overlay
+   - gen_cargo_lock
+   - git_module
+   - git_repo
+diff --git a/pyproject.toml b/pyproject.toml
+index f047596c..3be2bdba 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -33,6 +33,7 @@ dependencies = [
+ [project.optional-dependencies]
+ # Plugin specific dependencies
+ anitya = ["requests"]
++element_overlay = ["ruamel.yaml"]
+ pypi = [ "packaging" ]
+ deb = ["arpy"]
+ httpfetcher = ["requests"]
+@@ -108,6 +109,7 @@ git_module     = "buildstream_plugins_community.sources.git_module"
+ git_repo       = "buildstream_plugins_community.sources.git_repo"
+ git_tag        = "buildstream_plugins_community.sources.git_tag"
+ gnu            = "buildstream_plugins_community.sources.gnu"
++element_overlay = "buildstream_plugins_community.sources.element_overlay"
+ ostree         = "buildstream_plugins_community.sources.ostree"
+ patch_queue    = "buildstream_plugins_community.sources.patch_queue"
+ pypi           = "buildstream_plugins_community.sources.pypi"
+diff --git a/src/buildstream_plugins_community/sources/element_overlay.py b/src/buildstream_plugins_community/sources/element_overlay.py
+new file mode 100644
+index 00000000..646400bd
+--- /dev/null
++++ b/src/buildstream_plugins_community/sources/element_overlay.py
+@@ -0,0 +1,206 @@
++# SPDX-FileCopyrightText: 2026 Aleix Pol Gonzalez <aleixpol@kde.org>
++# SPDX-License-Identifier: LGPL-2.1-or-later
++"""
++element_overlay - modify an element in a staged junction
++=========================================================
++
++This source modifies an element file staged by earlier sources, typically in a
++junction. It is a source plugin, not an element plugin.
++
++**Usage:**
++
++.. code:: yaml
++
++   sources:
++   - kind: element_overlay
++     element: elements/hello.bst
++     overlay: files/overrides/hello.yml
++
++``element`` is relative to the staged source directory, including the project's
++element directory. ``overlay`` names a YAML file in the parent project
++containing only the changes to apply:
++
++.. code:: yaml
++
++   variables:
++     message: A different message
++   build-depends:
++     (>):
++     - new-depend.bst
++
++It modifies the target element using BuildStream's usual YAML composition rules.
++On lists, ``(>)`` can append to sequence values. Its contents are not expanded in the
++parent project, so they may refer to variables defined by the project where it's used.
++Other kinds of values will simply be replaced by their new overridden value.
++
++Dependency names are resolved in the staged project: ``new-depend.bst`` must
++exist there. Junction-qualified dependencies must also be reachable from that
++project.
++
++Local sources added by an overlay resolve paths in the staged project too.
++To use a parent-project file, first copy it into the junction with a separate
++``local`` source, then reference that staged path in the overlay.
++
++To add a dependency on the parent project's ``qt/qtbase.bst``, choose a new name
++inside the junction and map it to that element. In the junction's source list,
++declare the name with ``dependency-slots``; under ``config.overrides``, specify
++the parent-project element to use:
++
++.. code:: yaml
++
++   sources:
++   - kind: element_overlay
++     element: elements/components/appstream.bst
++     overlay: files/overrides/appstream.yml
++     dependency-slots:
++     - elements/downstream/qtbase.bst
++   config:
++     overrides:
++       downstream/qtbase.bst: qt/qtbase.bst
++
++Then add the dependency in ``files/overrides/appstream.yml``:
++
++.. code:: yaml
++
++   depends:
++     (>):
++     - downstream/qtbase.bst
++
++AppStream will now depend on the parent project's Qt element. Use a slot name
++that does not already exist in the junction. Include the element directory
++(``elements/`` here) in ``dependency-slots``, but omit it in the override key
++and dependency name.
++"""
++
++import hashlib
++from pathlib import Path
++
++from buildstream import Source, SourceError
++from ruamel.yaml import YAML, YAMLError
++
++
++class ElementOverlaySource(Source):
++    BST_MIN_VERSION = "2.5"
++    BST_REQUIRES_PREVIOUS_SOURCES_STAGE = True
++
++    def configure(self, node):
++        node.validate_keys(
++            Source.COMMON_CONFIG_KEYS
++            + ["element", "overlay", "dependency-slots"]
++        )
++        self.element_path = node.get_str("element")
++        self.dependency_slots = node.get_str_list("dependency-slots", [])
++        for path in self.dependency_slots:
++            if Path(path).is_absolute() or ".." in Path(path).parts:
++                raise SourceError(
++                    f"Dependency slot must be a relative staged path: '{path}'",
++                    reason="invalid-dependency-slot",
++                )
++        path = self.node_get_project_path(
++            node.get_scalar("overlay"), check_is_file=True
++        )
++        content = (Path(self.get_project_directory()) / path).read_bytes()
++        self.override = self._load_mapping(content)
++        self.override_digest = hashlib.sha256(content).hexdigest()
++
++    def preflight(self):
++        pass
++
++    def get_unique_key(self):
++        return [self.element_path, self.override_digest, self.dependency_slots]
++
++    def is_resolved(self):
++        return True
++
++    def is_cached(self):
++        return True
++
++    def get_ref(self):
++        return None
++
++    def set_ref(self, ref, node):
++        pass
++
++    def fetch(self):
++        pass
++
++    def stage(self, directory):
++        staging_root = Path(directory).resolve()
++        target = (staging_root / self.element_path).resolve()
++        if not target.is_relative_to(staging_root) or not target.is_file():
++            raise SourceError(
++                "element must refer to a regular file inside the staged source: "
++                "'{}'".format(self.element_path),
++                reason="invalid-element-path",
++            )
++
++        original_content = target.read_bytes()
++        override = self.override.copy()
++        kind = override.get("kind") or self._load_mapping(
++            original_content
++        ).get("kind")
++        if not isinstance(kind, str) or kind in ("junction", "link"):
++            raise SourceError(
++                "element must declare a kind supporting includes: '{}'".format(
++                    self.element_path
++                ),
++                reason="unsupported-element-kind",
++            )
++
++        for path in self.dependency_slots:
++            slot = (staging_root / path).resolve()
++            if not slot.is_relative_to(staging_root) or slot == staging_root:
++                raise SourceError(
++                    f"Dependency slot must be inside the staged source: '{path}'",
++                    reason="invalid-dependency-slot",
++                )
++            slot.parent.mkdir(parents=True, exist_ok=True)
++            try:
++                with slot.open("x") as stream:
++                    stream.write("kind: stack\n")
++            except FileExistsError as error:
++                raise SourceError(
++                    f"Dependency slot already exists: '{path}'",
++                    reason="dependency-slot-exists",
++                ) from error
++
++        index = 0
++        while True:
++            includes = target.parent / (".element-overlay-{}".format(index))
++            try:
++                includes.mkdir()
++                break
++            except FileExistsError:
++                index += 1
++
++        original = includes / "original.yml"
++        original.write_bytes(original_content)
++
++        existing_include = override.get("(@)", [])
++        if isinstance(existing_include, str):
++            existing_include = [existing_include]
++        existing_include.append(original.relative_to(staging_root).as_posix())
++        override["(@)"] = existing_include
++        override["kind"] = kind
++
++        YAML(typ="safe").dump(override, target)
++
++    @staticmethod
++    def _load_mapping(content):
++        try:
++            value = YAML(typ="base").load(content)
++        except YAMLError as error:
++            raise SourceError(
++                "Invalid element configuration: {}".format(error),
++                reason="invalid-yaml",
++            ) from error
++        if not isinstance(value, dict):
++            raise SourceError(
++                "Element configuration must be a YAML mapping",
++                reason="invalid-yaml",
++            )
++        return value
++
++
++def setup():
++    return ElementOverlaySource
+diff --git a/tests/sources/element_overlay.py b/tests/sources/element_overlay.py
+new file mode 100644
+index 00000000..31dc7ff8
+--- /dev/null
++++ b/tests/sources/element_overlay.py
+@@ -0,0 +1,166 @@
++#
++#  Copyright (C) 2026 Aleix Pol Gonzalez <aleix.pol@codethink.co.uk>
++#
++#  This program is free software; you can redistribute it and/or
++#  modify it under the terms of the GNU Lesser General Public
++#  License as published by the Free Software Foundation; either
++#  version 2 of the License, or (at your option) any later version.
++#
++#  This library is distributed in the hope that it will be useful,
++#  but WITHOUT ANY WARRANTY; without even the implied warranty of
++#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++#  Lesser General Public License for more details.
++#
++#  You should have received a copy of the GNU Lesser General Public
++#  License along with this library. If not, see <http://www.gnu.org/licenses/>.
++#
++
++# Pylint doesn't play well with fixtures and dependency injection from pytest
++# pylint: disable=redefined-outer-name
++
++import os
++from pathlib import Path
++
++import pytest
++
++from buildstream._testing import cli  # pylint: disable=unused-import
++from buildstream import _yaml
++
++DATA_DIR = os.path.join(
++    os.path.dirname(os.path.realpath(__file__)), "element_overlay"
++)
++
++
++@pytest.mark.datafiles(DATA_DIR)
++def test_override_element(cli, datafiles):
++    project = str(datafiles)
++
++    result = cli.run(
++        project=project,
++        args=[
++            "show",
++            "--format",
++            "%{vars}%{build-deps}",
++            "variable-junction.bst:hello.bst",
++        ],
++    )
++    result.assert_success()
++    assert "message: target message" in result.output
++    assert "unchanged: value" in result.output
++    assert "variable-junction.bst:original-depend.bst" in result.output
++    assert "variable-junction.bst:new-depend.bst" in result.output
++
++
++@pytest.mark.datafiles(DATA_DIR)
++def test_missing_element(cli, datafiles):
++    project = str(datafiles)
++    result = cli.run(
++        project=project,
++        args=["show", "missing-element-junction.bst:hello.bst"],
++    )
++    assert result.exit_code != 0
++    assert "elements/missing.bst" in result.stderr
++
++
++@pytest.mark.datafiles(DATA_DIR)
++def test_parent_dependency_is_not_visible(cli, datafiles):
++    project = str(datafiles)
++    _yaml.roundtrip_dump(
++        {"kind": "stack"}, os.path.join(project, "elements", "parent-only.bst")
++    )
++    _yaml.roundtrip_dump(
++        {"build-depends": {"(>)": ["parent-only.bst"]}},
++        os.path.join(project, "files", "overrides", "hello.yml"),
++    )
++
++    result = cli.run(
++        project=project,
++        args=["show", "variable-junction.bst:hello.bst"],
++    )
++    assert result.exit_code != 0
++    assert "parent-only.bst" in result.stderr
++    assert "Could not find" in result.stderr
++
++
++@pytest.mark.datafiles(DATA_DIR)
++def test_injected_local_source(cli, datafiles, tmp_path):
++    project = Path(str(datafiles))
++    (project / "files/config.sh").write_text("downstream configuration\n")
++    junction_path = project / "elements/variable-junction.bst"
++    junction = _yaml.roundtrip_load(str(junction_path))
++    junction["sources"].insert(
++        1, {"kind": "local", "path": "files/config.sh", "directory": "files"}
++    )
++    _yaml.roundtrip_dump(junction, str(junction_path))
++    (project / "files/overrides/hello.yml").write_text(
++        "sources:\n  (>):\n  - kind: local\n    path: files/config.sh\n"
++    )
++    # Avoid the upstream source's path: '.', which would also copy the file.
++    (project / "subproject/elements/hello.bst").write_text(
++        "kind: import\nsources: []\n"
++    )
++    checkout = tmp_path / "checkout"
++    result = cli.run(
++        project=str(project),
++        args=[
++            "source",
++            "checkout",
++            "--directory",
++            str(checkout),
++            "variable-junction.bst:hello.bst",
++        ],
++    )
++    result.assert_success()
++    assert (checkout / "variable-junction/hello/config.sh").read_text() == (
++        "downstream configuration\n"
++    )
++
++
++@pytest.mark.datafiles(DATA_DIR)
++def test_downstream_dependency_slot(cli, datafiles):
++    project = Path(str(datafiles))
++    (project / "elements/parent-only.bst").write_text("kind: stack\n")
++    junction_path = project / "elements/variable-junction.bst"
++    junction = _yaml.roundtrip_load(str(junction_path))
++    junction["sources"][-1]["dependency-slots"] = ["elements/downstream.bst"]
++    junction["config"] = {"overrides": {"downstream.bst": "parent-only.bst"}}
++    _yaml.roundtrip_dump(junction, str(junction_path))
++    (project / "files/overrides/hello.yml").write_text(
++        "build-depends:\n  (>):\n  - downstream.bst\n"
++    )
++    result = cli.run(
++        project=str(project),
++        args=[
++            "show",
++            "--deps",
++            "all",
++            "--format",
++            "%{name}",
++            "variable-junction.bst:hello.bst",
++        ],
++    )
++    result.assert_success()
++    assert "parent-only.bst" in result.output.splitlines()
++
++
++@pytest.mark.parametrize(
++    "slot, error",
++    [
++        ("../escape.bst", "Dependency slot must be a relative staged path"),
++        ("/tmp/escape.bst", "Dependency slot must be a relative staged path"),
++        ("elements/hello.bst", "Dependency slot already exists"),
++    ],
++)
++@pytest.mark.datafiles(DATA_DIR)
++def test_invalid_dependency_slot(cli, datafiles, slot, error):
++    project = str(datafiles)
++    junction_path = os.path.join(project, "elements", "variable-junction.bst")
++    junction = _yaml.roundtrip_load(junction_path)
++    junction["sources"][-1]["dependency-slots"] = [slot]
++    _yaml.roundtrip_dump(junction, junction_path)
++    result = cli.run(
++        project=project,
++        args=["show", "variable-junction.bst:hello.bst"],
++    )
++    assert result.exit_code != 0
++    assert error in result.stderr
+diff --git a/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/hello.bst b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/hello.bst
+new file mode 100644
+index 00000000..d1026398
+--- /dev/null
++++ b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/hello.bst
+@@ -0,0 +1,11 @@
++kind: import
++sources:
++- kind: local
++  path: .
++variables:
++  message: '%{target-message}'
++  target-message: target message
++  unchanged: value
++build-depends:
++- original-depend.bst
++- new-depend.bst
+diff --git a/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/new-depend.bst b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/new-depend.bst
+new file mode 100644
+index 00000000..4f0672f8
+--- /dev/null
++++ b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/new-depend.bst
+@@ -0,0 +1,4 @@
++kind: import
++sources:
++- kind: local
++  path: .
+diff --git a/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/original-depend.bst b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/original-depend.bst
+new file mode 100644
+index 00000000..4f0672f8
+--- /dev/null
++++ b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/elements/original-depend.bst
+@@ -0,0 +1,4 @@
++kind: import
++sources:
++- kind: local
++  path: .
+diff --git a/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/project.conf b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/project.conf
+new file mode 100644
+index 00000000..6f33f74f
+--- /dev/null
++++ b/tests/sources/element_overlay/.bst/staged-junctions/variable-junction.bst/bc7a328c84d9076176eea5b966f8f272163c701bf5a3cc121effd97e42a54305/project.conf
+@@ -0,0 +1,3 @@
++name: junction-override-subproject
++min-version: 2.0
++element-path: elements
+diff --git a/tests/sources/element_overlay/elements/missing-element-junction.bst b/tests/sources/element_overlay/elements/missing-element-junction.bst
+new file mode 100644
+index 00000000..02dfce85
+--- /dev/null
++++ b/tests/sources/element_overlay/elements/missing-element-junction.bst
+@@ -0,0 +1,7 @@
++kind: junction
++sources:
++- kind: local
++  path: subproject
++- kind: element_overlay
++  element: elements/missing.bst
++  overlay: files/overrides/missing.yml
+diff --git a/tests/sources/element_overlay/elements/variable-junction.bst b/tests/sources/element_overlay/elements/variable-junction.bst
+new file mode 100644
+index 00000000..af8eb2e6
+--- /dev/null
++++ b/tests/sources/element_overlay/elements/variable-junction.bst
+@@ -0,0 +1,7 @@
++kind: junction
++sources:
++- kind: local
++  path: subproject
++- kind: element_overlay
++  element: elements/hello.bst
++  overlay: files/overrides/hello.yml
+diff --git a/tests/sources/element_overlay/files/overrides/hello.yml b/tests/sources/element_overlay/files/overrides/hello.yml
+new file mode 100644
+index 00000000..5e41c6b0
+--- /dev/null
++++ b/tests/sources/element_overlay/files/overrides/hello.yml
+@@ -0,0 +1,5 @@
++variables:
++  message: "%{target-message}"
++build-depends:
++  (>):
++  - new-depend.bst
+diff --git a/tests/sources/element_overlay/files/overrides/missing.yml b/tests/sources/element_overlay/files/overrides/missing.yml
+new file mode 100644
+index 00000000..f803c97c
+--- /dev/null
++++ b/tests/sources/element_overlay/files/overrides/missing.yml
+@@ -0,0 +1,2 @@
++variables:
++  message: downstream message
+diff --git a/tests/sources/element_overlay/project.conf b/tests/sources/element_overlay/project.conf
+new file mode 100644
+index 00000000..06a44e88
+--- /dev/null
++++ b/tests/sources/element_overlay/project.conf
+@@ -0,0 +1,9 @@
++name: element-overlay-test
++min-version: 2.0
++element-path: elements
++
++plugins:
++- origin: pip
++  package-name: buildstream-plugins-community
++  sources:
++  - element_overlay
+diff --git a/tests/sources/element_overlay/subproject/elements/hello.bst b/tests/sources/element_overlay/subproject/elements/hello.bst
+new file mode 100644
+index 00000000..a99407b5
+--- /dev/null
++++ b/tests/sources/element_overlay/subproject/elements/hello.bst
+@@ -0,0 +1,10 @@
++kind: import
++sources:
++- kind: local
++  path: .
++variables:
++  message: upstream message
++  target-message: target message
++  unchanged: value
++build-depends:
++- original-depend.bst
+diff --git a/tests/sources/element_overlay/subproject/elements/new-depend.bst b/tests/sources/element_overlay/subproject/elements/new-depend.bst
+new file mode 100644
+index 00000000..066a0332
+--- /dev/null
++++ b/tests/sources/element_overlay/subproject/elements/new-depend.bst
+@@ -0,0 +1 @@
++kind: stack
+diff --git a/tests/sources/element_overlay/subproject/elements/original-depend.bst b/tests/sources/element_overlay/subproject/elements/original-depend.bst
+new file mode 100644
+index 00000000..066a0332
+--- /dev/null
++++ b/tests/sources/element_overlay/subproject/elements/original-depend.bst
+@@ -0,0 +1 @@
++kind: stack
+diff --git a/tests/sources/element_overlay/subproject/project.conf b/tests/sources/element_overlay/subproject/project.conf
+new file mode 100644
+index 00000000..60669a96
+--- /dev/null
++++ b/tests/sources/element_overlay/subproject/project.conf
+@@ -0,0 +1,3 @@
++name: element-overlay-subproject
++min-version: 2.0
++element-path: elements
+-- 
+GitLab
+

@@ -1,0 +1,84 @@
+From 3524341e16db3546c39d68bcdccf4cb96af78619 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Javier=20Jard=C3=B3n?= <jjardon@gnome.org>
+Date: Tue, 13 Oct 2026 14:49:37 +0100
+Subject: [PATCH] Drop support for Python 3.10
+
+Python 3.10 reaches end of life on 2026-10-31. Bump the minimum
+required version to >= 3.11 and stop testing it.
+
+Closes #107
+---
+ NEWS           |  6 ++++++
+ pyproject.toml |  3 +--
+ tox.ini        | 10 +++++-----
+ 3 files changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/NEWS b/NEWS
+index 42dc5141..efac8155 100644
+--- a/NEWS
++++ b/NEWS
+@@ -1,3 +1,9 @@
++===================================
++buildstream-plugins-community 2.5.0 (unreleased)
++===================================
++
++o Drop support for Python 3.10. Now requires Python >= 3.11.
++
+ ===================================
+ buildstream-plugins-community 2.4.0
+ ===================================
+diff --git a/pyproject.toml b/pyproject.toml
+index fe871a1a..bf86549d 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
+ name = "buildstream-plugins-community"
+ description = "A collection of community-maintained plugins for BuildStream 2"
+ readme = "README.rst"
+-requires-python = ">= 3.10"
++requires-python = ">= 3.11"
+ license = {text = "LGPL-2.1-or-later"}
+ authors = [
+     {name = "The BuildStream Community Contributors"},
+@@ -18,7 +18,6 @@ classifiers = [
+     "Operating System :: POSIX",
+     "Programming Language :: Python :: 3",
+     "Programming Language :: Python :: 3 :: Only",
+-    "Programming Language :: Python :: 3.10",
+     "Programming Language :: Python :: 3.11",
+     "Programming Language :: Python :: 3.12",
+     "Programming Language :: Python :: 3.13",
+diff --git a/tox.ini b/tox.ini
+index 8a70eeff..9990974f 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -2,7 +2,7 @@
+ # Tox global configuration
+ #
+ [tox]
+-envlist = py{310,311,312,313,314,315}-{bst-fixed,bst-master}
++envlist = py{311,312,313,314,315}-{bst-fixed,bst-master}
+ skip_missing_interpreters = true
+ 
+ #
+@@ -48,13 +48,13 @@ passenv =
+ # These keys are not inherited by any other sections
+ #
+ setenv =
+-    py{310,311,312,313,314,315}: XDG_CACHE_HOME = {envtmpdir}/cache
+-    py{310,311,312,313,314,315}: XDG_CONFIG_HOME = {envtmpdir}/config
+-    py{310,311,312,313,314,315}: XDG_DATA_HOME = {envtmpdir}/share
++    py{311,312,313,314,315}: XDG_CACHE_HOME = {envtmpdir}/cache
++    py{311,312,313,314,315}: XDG_CONFIG_HOME = {envtmpdir}/config
++    py{311,312,313,314,315}: XDG_DATA_HOME = {envtmpdir}/share
+     !master: BST_VERSION = {env:BST_VERSION:2.8.1}
+     master: BST_VERSION = master
+ allowlist_externals =
+-    py{310,311,312,313,314,315}:
++    py{311,312,313,314,315}:
+         mv
+         mkdir
+ 
+-- 
+GitLab
+

@@ -4,7 +4,7 @@
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/wikis/home#technical-conditions-to-enter-gnome-core
 kind: stack
 depends:
-- core-deps/accountsservice.bst
+- - freedesktop-sdk-extra.bst:components/accountsservice.bst
 - core-deps/NetworkManager.bst
 - core-deps/oo7-daemon.bst
 - core-deps/oo7-pam.bst
