@@ -1,0 +1,13 @@
+[Unit]
+AssertPathExists=/etc/initrd-release
+After=initrd-root-fs.target
+Before=initrd-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=systemd-tmpfiles --root=/sysroot --create --boot --graceful gnomeos-subvolumes.conf
+SuccessExitStatus=DATAERR CANTCREAT
+
+[Install]
+WantedBy=sysinit.target

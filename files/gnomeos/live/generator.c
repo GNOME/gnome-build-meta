@@ -9,6 +9,8 @@
 #include <fcntl.h>
 #include <stdarg.h>
 #include <stdbool.h>
+#include <libmount/libmount.h>
+#include <btrfsutil.h>
 
 #include "kernel-cmdline.h"
 #include "kmsg.h"
@@ -35,6 +37,20 @@ static void freestr(char **p) {
 static void fclosep(FILE **p) {
         if (*p) {
                 fclose(*p);
+                *p = NULL;
+        }
+}
+
+static void mnt_free_table_p(struct libmnt_table **p) {
+        if (*p) {
+                mnt_free_table(*p);
+                *p = NULL;
+        }
+}
+
+static void mnt_free_fs_p(struct libmnt_fs **p) {
+        if (*p) {
+                mnt_free_fs(*p);
                 *p = NULL;
         }
 }
@@ -135,7 +151,7 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
         if (in_initrd) {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
                 file = fopen("/run/systemd/zram-generator.conf.d/zram1.conf", "w");
-                fprintf(file, "[zram1]\nmount-point=/sysroot\nfs-type=btrfs\n");
+                fprintf(file, "[zram1]\nmount-point=/sysroot\nfs-type=btrfs\noptions=nodev,noexec,nosuid");
                 fclosep(&file);
 
                 if (!enable_unit(generator_path, "initrd-root-device.target.wants", "systemd-zram-setup@zram1.service", "/usr/lib/systemd/system"))
@@ -257,6 +273,69 @@ static bool handle_nvidia(const char *generator_path) {
         return true;
 }
 
+static bool handle_subvolume(const char *generator_path,
+                             const char *source,
+                             const char *fstype,
+                             const char *path,
+                             const char *unit,
+                             const char *subvol,
+                             const char *options) {
+       if (BTRFS_UTIL_OK == btrfs_util_subvolume_is_valid(path)) {
+                if (!generate_unit(generator_path, unit,
+                                   "[Unit]\n"
+                                   "\n"
+                                   "[Mount]\n"
+                                   "What=%s\n"
+                                   "Where=%s\n"
+                                   "Type=%s\n"
+                                   "Options=rw,%s,subvol=%s\n",
+                                   source, path, fstype, options, subvol))
+                        return false;
+                if (!enable_unit(generator_path, "local-fs.target.wants", unit, ".."))
+                        return false;
+        }
+
+       return true;
+}
+
+static bool handle_subvolumes(const char *generator_path) {
+        _cleanup_(mnt_free_table_p) struct libmnt_table *table = NULL;
+        _cleanup_(mnt_free_fs_p) struct libmnt_fs *mnt = NULL;
+
+        table = mnt_new_table();
+        if (table == NULL) {
+                kmsg(3, "Could not create new mnt table\n");
+                return false;
+        }
+
+        if (mnt_table_parse_mtab(table, NULL) != 0) {
+                kmsg(3, "Could not parse mtab\n");
+                return false;
+        }
+
+        mnt = mnt_table_find_target(table, "/", MNT_ITER_FORWARD);
+        if (mnt == NULL) {
+                kmsg(3, "Could not find root device\n");
+                return false;
+        }
+
+        const char* source = mnt_fs_get_srcpath(mnt);
+        const char* fstype = mnt_fs_get_fstype(mnt);
+
+        if (!handle_subvolume(generator_path, source, fstype,
+                              "/var/lib/flatpak", "var-lib-flatpak.mount",
+                              "var/lib/flatpak",
+                              "nodev,nosuid,exec"))
+                return false;
+
+        if (!handle_subvolume(generator_path, source, fstype,
+                              "/home", "home.mount", "home",
+                              "nodev,suid,exec"))
+                return false;
+
+        return true;
+}
+
 int main(int argc, char *argv[]) {
         char *in_initrd_str;
         int in_initrd;
@@ -283,7 +362,11 @@ int main(int argc, char *argv[]) {
 
         if (!is_safe && is_nvidia)
                 if (!handle_nvidia(argv[1]))
-                                return 1;
+                        return 1;
+
+        if (!in_initrd)
+                if (!handle_subvolumes(argv[3]))
+                        return 1;
 
         return 0;
 }

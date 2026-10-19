@@ -604,3 +604,4 @@ depends:
 - sdk/glib.bst
 - freedesktop-sdk.bst:components/lvm2.bst
 - freedesktop-sdk.bst:components/python3.bst
+- freedesktop-sdk.bst:components/btrfs-progs.bst

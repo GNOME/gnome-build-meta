@@ -35,7 +35,7 @@ variables:
     systemd.verity_usr_options=panic-on-corruption
     lockdown=integrity
     systemd.firstboot=no
-    rootflags=x-systemd.device-timeout=900
+    rootflags=x-systemd.device-timeout=900,nodev,noexec,nosuid
     zswap.max_pool_percent=35
 
 config:

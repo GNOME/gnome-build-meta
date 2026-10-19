@@ -11,6 +11,8 @@ systemd = dependency('systemd')
 devmapper = dependency('devmapper')
 udev = dependency('udev')
 gnome = import('gnome')
+libbtrfsutil = dependency('libbtrfsutil')
+mount = dependency('mount')
 
 common = static_library(
   'common',
@@ -26,6 +28,7 @@ executable(
   [
     'generator.c',
   ],
+  dependencies : [libbtrfsutil, mount],
   link_with : [common],
   install_dir : systemd.get_variable(pkgconfig : 'systemdsystemgeneratordir'),
   install : true,
@@ -73,6 +76,18 @@ install_data(
 install_data(
   'live.conf',
   install_dir : systemdsystemunitdir / 'systemd-pcrlock-make-policy.service.d'
+)
+
+tmpfilesdir = systemd.get_variable(pkgconfig : 'tmpfilesdir')
+
+install_data(
+  'gnomeos-subvolumes.conf',
+  install_dir : tmpfilesdir
+)
+
+install_data(
+  'gnomeos-subvolumes.service',
+  install_dir : systemdsystemunitdir
 )
 
 subdir('proto-installer')
