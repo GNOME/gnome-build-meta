@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.1-42-g115e63db4ff0d353443fc1a1d2f03c0784b2729b
+  ref: 2.2.1-60-gabfbd59e0c5e362a42a6b68681066b39fd746359
 - kind: cargo2
   ref:
   - kind: registry
@@ -21,6 +21,14 @@ sources:
     name: aliasable
     version: 0.1.3
     sha: 250f629c0161ad8107cf89319e990051fae62832fd343083bea452d93e2205fd
+  - kind: registry
+    name: alloc-no-stdlib
+    version: 3.0.0
+    sha: c2fb6cfd47bf496ff64095c20eaba0c201404ee38714d4142fcfa1dc334fcc7a
+  - kind: registry
+    name: alloc-stdlib
+    version: 0.3.0
+    sha: 0b5c1865780388bfa186411ab5f247819487fc4864c6e9c3106611fa347586e1
   - kind: registry
     name: alloca
     version: 0.4.0
@@ -45,6 +53,10 @@ sources:
     name: approx
     version: 0.5.1
     sha: cab112f0a86d568ea0e627cc1d6be74a1e9cd55214684db5561995f6dad897c6
+  - kind: registry
+    name: array-init
+    version: 2.1.0
+    sha: 3d62b7694a562cdf5a74227903507c56ab2cc8bdd1f781ed5cb4cf9c9f810bfc
   - kind: registry
     name: async-broadcast
     version: 0.7.2
@@ -123,12 +135,16 @@ sources:
     sha: e83f8d02be6967315521be875afa792a316e28d57b5a2d401897e2a7921b7f21
   - kind: registry
     name: bon
-    version: 3.9.3
-    sha: a602c73c7b0148ec6d12af6fd5cc7a46e2eacc8878271a999abac56eed12f561
+    version: 3.10.2
+    sha: 214f5df094ce551a10a30ffb9c70243d61f121a3d985a6495933e181dee6a7d2
   - kind: registry
     name: bon-macros
-    version: 3.9.3
-    sha: 6dee98b0db6a962de883bf5d20362dee4d7ca0d12fe39a7c6c73c844e1cd7c1f
+    version: 3.10.2
+    sha: 2706da6c749998cc555d04184909608956a69ad3f8ab1a076fbc867b4a3c3ce5
+  - kind: registry
+    name: brotli-decompressor
+    version: 6.0.0
+    sha: 46087801e40b785410c352bee60e9b6226312709cf52d5fff92776cdf5cf6490
   - kind: registry
     name: bumpalo
     version: 3.20.3
@@ -247,16 +263,16 @@ sources:
     sha: 460fbee9c2c2f33933d720630a6a0bac33ba7053db5344fac858d4b8952d77d5
   - kind: registry
     name: darling
-    version: 0.23.0
-    sha: 25ae13da2f202d56bd7f91c25fba009e7717a1e4a1cc98a76d844b65ae912e9d
+    version: 0.24.1
+    sha: ed17f5901b6630b993ca003def43f2f8ef4014fc13b047b57aad617ff32bc2ec
   - kind: registry
     name: darling_core
-    version: 0.23.0
-    sha: 9865a50f7c335f53564bb694ef660825eb8610e0a53d3e11bf1b0d3df31e03b0
+    version: 0.24.1
+    sha: 6837e2cf7485aaae18f86181d2f0e9a7ed297a025e220aeabf63fdebd3a2ddff
   - kind: registry
     name: darling_macro
-    version: 0.23.0
-    sha: ac3984ec7bd6cfa798e62b4a642426a5be0e68f9401cfc2a01e3fa9ea2fcdb8d
+    version: 0.24.1
+    sha: 2ac7135c3ef02b2f7833bbeb1be5ba7f966dcde8a87c6b87f65a778d71a02785
   - kind: registry
     name: defmt
     version: 1.1.1
@@ -602,6 +618,22 @@ sources:
     version: 0.3.103
     sha: 53b44bfcdb3f8d5837a46dae1ca9660a837176eee74a28b229bc626816589102
   - kind: registry
+    name: jxl
+    version: 0.7.4
+    sha: 43b041e4bd5bb931cf73b271bc3304eb135bb473914877d64bf77fdf5b4d4687
+  - kind: registry
+    name: jxl_macros
+    version: 0.7.4
+    sha: 7401c9c53e44e2efa17d7562c613f0972b93cf134aa91f08c14e00c8278ce663
+  - kind: registry
+    name: jxl_simd
+    version: 0.7.4
+    sha: ba1f65c01a3f807385be7a1200f78b9d958bff1321b753b859ecfcba63a0642d
+  - kind: registry
+    name: jxl_transforms
+    version: 0.7.4
+    sha: 8f72e196c6c1e938a4c7e2175d7c83464fa9e7f587224d310cac15d83fc80a37
+  - kind: registry
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
@@ -730,6 +762,10 @@ sources:
     version: 0.4.6
     sha: 73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495
   - kind: registry
+    name: num-derive
+    version: 0.4.2
+    sha: ed3955f1a9c7c0c15e092f9c887db08b1fc683305fdf6eb6684f22555355e202
+  - kind: registry
     name: num-integer
     version: 0.1.46
     sha: 7969661fd2958a5cb096e56c8e1ad0444ac2bbcd0061bd28660485a44879858f
@@ -832,8 +868,8 @@ sources:
     sha: c2a106d1259c23fac8e543272398ae0e3c0b8d33c88ed73d0cc71b0f1d902618
   - kind: registry
     name: prettyplease
-    version: 0.2.37
-    sha: 479ca8adacdd7ce8f1fb39ce9ecccbfe93a3f1344b3d0d97f20bc0196208f62b
+    version: 0.3.0
+    sha: 2bfe0f4c752e450fc2faf62654f1c134747922825d5b04ca717b8874f41a40c0
   - kind: registry
     name: proc-macro-crate
     version: 3.5.0

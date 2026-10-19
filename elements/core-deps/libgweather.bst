@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libgweather.git
   track: main
-  ref: 4.6.0-6-g632d15b201ad84000da782fef5346bf11701492d
+  ref: 4.6.0-7-g98fddcd0f5c3b623a68dfbec0bf46d2d562e8ab1
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-initial-setup.git
   track: main
-  ref: 51.rc-25-gd7958172d3629447db58f0661dddf39af7868c94
+  ref: 51.rc-27-g7ee9a4dd676968aa680631714ef1ec2080a97a1a
 
 build-depends:
 - (@): include/gcc-for-recc.yml

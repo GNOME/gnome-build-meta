@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:blueprint-compiler.git
   track: main
-  ref: v0.22.0-6-g8eca521ae720655c837fd1885940ed91f7517e6f
+  ref: v0.22.0-12-g71dc05b0d1e2b9007d00d63327690b5cf51c1a17
 
 build-depends:
 - (@): include/gcc-for-recc.yml

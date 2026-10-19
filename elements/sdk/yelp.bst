@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:yelp.git
   track: master
-  ref: 49.2-11-gddeb7b6f493b5b80cdc348edcadfc276b96e0872
+  ref: 49.2-12-gc9e19857a746d9820a278ed15dd90cdcf61fbf00
 
 build-depends:
 - (@): include/gcc-for-recc.yml

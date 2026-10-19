@@ -4,11 +4,11 @@ sources:
 - kind: git_repo
   url: gnome:gjs.git
   track: master
-  ref: 1.89.90-115-gfd1534ba5492cda3d00d97c2610a570f14efec47
+  ref: 1.89.90-119-g4bb9e937b0ef0f4b6658bb25de7230d7f2df67d2
 - kind: git_module
   url: gnome:gobject-introspection-tests.git
   path: subprojects/gobject-introspection-tests
-  ref: 67432ee4ebf74349cb3c848f73945b21a767e276
+  ref: 2d70188d700d7b0b60ba91210d633b1f745f0c9f
 
 build-depends:
 - (@): include/gcc-for-recc.yml

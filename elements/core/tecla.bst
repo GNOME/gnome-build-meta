@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:tecla.git
   track: main
-  ref: 51.0-1-ge86fbc33808d72aacadab9593d23cfee189e0a0d
+  ref: 51.0-3-gfe80f79119a9c2f93f48d3e1fcec8851ace95d9a
 
 build-depends:
 - (@): include/gcc-for-recc.yml

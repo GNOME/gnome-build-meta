@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:baobab.git
   track: main
-  ref: 50.0-22-g81e52fcefc7af5671c7c587bcb17c85e4f1fa950
+  ref: 50.0-23-g52f0bd2728a49cd50cf4018bce5ebcfabde23a75
 
 build-depends:
 - (@): include/gcc-for-recc.yml
