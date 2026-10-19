@@ -1,11 +1,11 @@
 kind: pyproject
 
 sources:
-- kind: tar
-  url: 
-    pypi:bb/22/f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60f/pyparsing-3.2.3.tar.gz
-  ref: b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be
-
+- kind: pypi
+  name: pyparsing
+  ref:
+    sha256sum: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
+    suffix: e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz
 variables:
   strip-binaries: ''
 
