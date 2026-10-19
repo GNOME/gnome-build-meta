@@ -1,10 +1,12 @@
 kind: meson
 
 sources:
-- kind: tar
-  url: gstreamer:src/gstreamer-editing-services/gst-editing-services-1.26.11.tar.xz
-  ref: a36e87900b44ac1608612f2d616fc032f9d7d920327c4d231affb6fe9349714d
-
+- kind: anitya
+  project-id: 230920
+  url: gstreamer:src/gstreamer-editing-services/gst-editing-services-{version}.tar.xz
+  ref:
+    version: 1.28.8
+    sha256sum: 4d93d2309b7d01529cd5e3375f99bf7e69c2e32cf59ce4533b31a5c7119b9b58
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

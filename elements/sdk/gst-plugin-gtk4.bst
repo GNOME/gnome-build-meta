@@ -20,9 +20,12 @@ depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 sources:
-- kind: tar
-  url: crates:crates/gst-plugin-gtk4/gst-plugin-gtk4-0.15.2.crate
-  ref: 9d22a27972c25e706b428e78356458446314c70eb31aef07d4a32b843a6dea94
+- kind: anitya
+  project-id: 369753
+  url: crates:crates/gst-plugin-gtk4/gst-plugin-gtk4-{version}.crate
+  ref:
+    version: 0.15.2
+    sha256sum: 9d22a27972c25e706b428e78356458446314c70eb31aef07d4a32b843a6dea94
 - kind: cargo2
   ref:
   - kind: registry

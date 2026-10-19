@@ -1,10 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: sourceforge:tcl/tcl9.0.1-src.tar.gz
-  ref: a72b1607d7a399c75148c80fcdead88ed3371a29884181f200f2200cdee33bbc
-
+- kind: anitya
+  project-id: 4941
+  url: sourceforge:tcl/tcl{version}-src.tar.gz
+  ref:
+    version: 9.0.1
+    sha256sum: a72b1607d7a399c75148c80fcdead88ed3371a29884181f200f2200cdee33bbc
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/autotools.bst
