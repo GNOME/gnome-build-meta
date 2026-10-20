@@ -60,25 +60,13 @@ We use the [Freedesktop SDK](https://freedesktop-sdk.io/) as a base for a lot of
 
 The first build might take a while depending on your workstation's specs. On a 2025 workstation with a fast SSD, 32 GB of RAM, 24 cores, and a 1 Gb/s internet connection, the first build takes about 25 minutes and requires about 50 GB of disk space. Subsequent rebuilds are much faster and take about one minute from making a change to seeing the change running on the workstation.
 
-First, create a workspace for the component you want to work on; for example for the Linux kernel:
-
-```shell
-bst workspace open freedesktop-sdk.bst:components/linux.bst --directory ../linux/
-```
-
-For [GNOME Shell](https://gitlab.gnome.org/GNOME/gnome-shell):
-
-```shell
-bst workspace open core/gnome-shell.bst --directory ../gnome-shell/
-```
-
-Or for [GNOME Settings](https://apps.gnome.org/Settings/):
+First, create a workspace for the component you want to work on; for example for [GNOME Settings](https://apps.gnome.org/Settings/):
 
 ```shell
 bst workspace open core/gnome-control-center.bst --directory ../gnome-control-center/
 ```
 
-Now make the changes you want to make in your workspace, for example in `../linux/` or `../gnome-control-center/`. BuildStream will pick up your changes from this workspace automatically after you make them.
+Now make the changes you want to make in your workspace, for example in `../gnome-control-center/`. BuildStream will pick up your changes from this workspace automatically after you make them.
 
 How to build, deploy and test depends on which build output you're contributing to. Follow the dedicated guide for each:
 
