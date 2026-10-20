@@ -212,6 +212,7 @@ fn generator(args : GeneratorArgs) -> Result<(), Box<dyn Error>> {
         writeln!(service_unit, "DefaultDependencies=no")?;
         writeln!(service_unit, "Before=shutdown.target")?;
         writeln!(service_unit, "Conflicts=shutdown.target")?;
+        writeln!(service_unit, "After=systemd-udev-trigger.service")?;
         match path.parent() {
             Some(parent) => {
                 writeln!(service_unit, "RequiresMountsFor={}", parent.display())?;
@@ -221,6 +222,12 @@ fn generator(args : GeneratorArgs) -> Result<(), Box<dyn Error>> {
         writeln!(service_unit, "[Service]")?;
         writeln!(service_unit, "Type=oneshot")?;
         writeln!(service_unit, "RemainAfterExit=yes")?;
+        // Very unfortunate, but there is something racy about loop devices
+        // on udev. Loop devices gets assigned and unassigned multiple times
+        // in a row. When processing cold events, udevd does blkid on the
+        // current state. Which might make the device appear and disappear
+        // multiple times.
+        writeln!(service_unit, "ExecStart=udevadm settle")?;
         writeln!(service_unit, "ExecStart=/usr/lib/zswap-generator/zswap-setup create {} %I {}", path.display(), size)?;
         writeln!(service_unit, "ExecStop=/usr/lib/zswap-generator/zswap-setup stop {} %I", path.display())?;
         service_unit.commit()?;
