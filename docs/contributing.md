@@ -66,6 +66,15 @@ First, create a workspace for the component you want to work on; for example for
 bst workspace open core/gnome-control-center.bst --directory ../gnome-control-center/
 ```
 
+Or if you already have an existing checkout at the destination, for example one that you were already working on, add the `--no-checkout` option as without it the workspace won't be created:
+
+```shell
+bst workspace open --no-checkout core/gnome-control-center.bst --directory ../gnome-control-center/
+```
+
+> [!caution]
+> **Do not** use the `--force` option as it would overwrite the existing directory with a new checkout of the element's repository.
+
 Now make the changes you want to make in your workspace, for example in `../gnome-control-center/`. BuildStream will pick up your changes from this workspace automatically after you make them.
 
 How to build, deploy and test depends on which build output you're contributing to. Follow the dedicated guide for each:
