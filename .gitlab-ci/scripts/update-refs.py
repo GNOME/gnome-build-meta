@@ -41,6 +41,8 @@ def get_element_type(filepath):
 
         if first_source.get('kind') in ("tar", "zip", "remote", "local"):
             return ElementType.NOT_TRACKABLE
+        elif first_source.get('kind') in ('anitya', 'pypi'):
+            return ElementType.DEPENDENCY
         elif first_source.get('kind') != 'git_repo':
             print("Warning: unknown source kind", first_source.get('kind'))
 
