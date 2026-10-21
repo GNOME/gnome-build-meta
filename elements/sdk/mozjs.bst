@@ -2,11 +2,9 @@ kind: manual
 
 sources:
 - kind: tar
-  url: mozilla:firefox/releases/140.1.0esr/source/firefox-140.1.0esr.source.tar.xz
-  base-dir: 'firefox-140.1.0'
-  ref: d15c65d790e0c371b5c95332141b1bdeb29fefc27f852d22a5f542b6d1bc1922
-- kind: patch
-  path: patches/mozjs/bmo1973993-fix-installed-headers.patch
+  url: mozilla:firefox/releases/140.17.0esr/source/firefox-140.17.0esr.source.tar.xz
+  base-dir: 'firefox-140.17.0'
+  ref: 4d6ed3b18b2069c55bab12d8ba95da6013ac0b036d8a031df8b9f39a25d05c33
 - kind: patch
   path: patches/mozjs/bmo1973994-fix-os-dependent-headers.patch
 
