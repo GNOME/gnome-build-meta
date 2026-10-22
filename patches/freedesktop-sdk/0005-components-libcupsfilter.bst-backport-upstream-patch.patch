@@ -1,7 +1,7 @@
-From 20db3199239c39ed364ab6cea2897d93ccbe4034 Mon Sep 17 00:00:00 2001
+From 6584230ea8408956e835e0248e58fe3b17a40957 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Tue, 29 Sep 2026 10:25:07 +0200
-Subject: [PATCH 3/4] components/libcupsfilter.bst: backport upstream patch
+Subject: [PATCH 5/6] components/libcupsfilter.bst: backport upstream patch
 
 ---
  elements/components/libcupsfilters.bst        |  2 ++

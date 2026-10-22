@@ -1,7 +1,8 @@
-From 7cd1dc9ab3b5cdc0c2faabc187522bf5ab684da0 Mon Sep 17 00:00:00 2001
+From ea06017f58e5aeee5523910b264868a7c65bb5ce Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
 Date: Tue, 13 Oct 2026 12:31:51 +0200
-Subject: [PATCH] linux: Enable SDCA class driver and more Intel SOF drivers
+Subject: [PATCH 1/6] linux: Enable SDCA class driver and more Intel SOF
+ drivers
 
 The SDCA class driver is needed for SoundWire codecs like the Cirrus
 CS42L45, without it the sof_sdw sound card never finishes probing. Adding
@@ -14,7 +15,7 @@ SND_SOC_INTEL_SOF_WM8804_MACH, matching the Fedora kernel configuration.
  1 file changed, 4 insertions(+)
 
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 2909d53fe..bcef6a3e8 100644
+index 1f3a53bb0..4730bf6f7 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
 @@ -1217,9 +1217,13 @@ case "$arch" in
@@ -32,5 +33,5 @@ index 2909d53fe..bcef6a3e8 100644
          module SND_SOC_SOF_AMD_TOPLEVEL
      ;;
 -- 
-2.56.0
+2.55.0
 

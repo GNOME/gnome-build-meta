@@ -1,7 +1,7 @@
-From 271415fc0f12836bb0cbaf31a0bdf34e6e24150d Mon Sep 17 00:00:00 2001
+From b6416a5ae196649be034a82a2a28e74135022bd7 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Thu, 10 Sep 2026 21:41:41 +0200
-Subject: [PATCH 2/4] linux: Enable zswap by default
+Subject: [PATCH 4/6] linux: Enable zswap by default
 
 GNOME OS is switch to using zswap. And it makes it more
 convenient to have a sensible default configuration: enabled
@@ -11,10 +11,10 @@ an using zstd.
  1 file changed, 4 insertions(+)
 
 diff --git a/files/linux/fdsdk-config.sh b/files/linux/fdsdk-config.sh
-index 1f3a53bb0..2909d53fe 100644
+index 4730bf6f7..bcef6a3e8 100644
 --- a/files/linux/fdsdk-config.sh
 +++ b/files/linux/fdsdk-config.sh
-@@ -2382,6 +2382,10 @@ module BLK_DEV_RAM
+@@ -2386,6 +2386,10 @@ module BLK_DEV_RAM
  
  # ZSWAP
  enable ZSWAP
