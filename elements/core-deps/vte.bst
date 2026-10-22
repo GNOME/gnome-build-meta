@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vte.git
   track: master
-  ref: 0.81.0-101-gf2a670608318253cc93dce1f85042dec995250aa
+  ref: 0.81.0-102-g5d75dcfd27bc2bfd17b1f6fddd6494abdc0355fc
 
 build-depends:
 - (@): include/gcc-for-recc.yml

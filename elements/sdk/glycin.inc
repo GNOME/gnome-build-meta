@@ -2,7 +2,7 @@ sources:
 - kind: git_repo
   url: gnome:glycin.git
   track: main
-  ref: 2.2.1-60-gabfbd59e0c5e362a42a6b68681066b39fd746359
+  ref: 2.2.1-71-g794d7a25d58115e87e5674ce34fda0461f4fc7c9
 - kind: cargo2
   ref:
   - kind: registry
@@ -143,8 +143,8 @@ sources:
     sha: 2706da6c749998cc555d04184909608956a69ad3f8ab1a076fbc867b4a3c3ce5
   - kind: registry
     name: brotli-decompressor
-    version: 6.0.0
-    sha: 46087801e40b785410c352bee60e9b6226312709cf52d5fff92776cdf5cf6490
+    version: 6.1.0
+    sha: 1473a798e9776ca115dd0bd3712d939d66dd293939864bd7d68bb2031ec66954
   - kind: registry
     name: bumpalo
     version: 3.20.3
@@ -487,8 +487,8 @@ sources:
     sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.3
-    sha: 4183c4b2bf6cfd58823cf02b2e8a4d955da3605f8e1b98adbd3456a97e35ae16
+    version: 0.5.4
+    sha: 4b334a76d1df73308ef010af6a5870b7fe0f175bd66c79dc8564ac3116781f69
   - kind: registry
     name: gufo-jpeg
     version: 0.5.1
@@ -619,20 +619,20 @@ sources:
     sha: 53b44bfcdb3f8d5837a46dae1ca9660a837176eee74a28b229bc626816589102
   - kind: registry
     name: jxl
-    version: 0.7.4
-    sha: 43b041e4bd5bb931cf73b271bc3304eb135bb473914877d64bf77fdf5b4d4687
+    version: 0.8.0
+    sha: b8379fc83d79477900c9aed78cb8370a556d834081bebcb771c6010381c4e230
   - kind: registry
     name: jxl_macros
-    version: 0.7.4
-    sha: 7401c9c53e44e2efa17d7562c613f0972b93cf134aa91f08c14e00c8278ce663
+    version: 0.8.0
+    sha: eeb27c06a9957bd9c8e65d0aeea0db6a555a9e1c85597e284f8304015c410c87
   - kind: registry
     name: jxl_simd
-    version: 0.7.4
-    sha: ba1f65c01a3f807385be7a1200f78b9d958bff1321b753b859ecfcba63a0642d
+    version: 0.8.0
+    sha: a645451b4d34b4017caf24110a14eb737e275b5d3d121bc754e67727ee65af0e
   - kind: registry
     name: jxl_transforms
-    version: 0.7.4
-    sha: 8f72e196c6c1e938a4c7e2175d7c83464fa9e7f587224d310cac15d83fc80a37
+    version: 0.8.0
+    sha: 21c4b7f8957f5ba578b2e28cd5ebbc97dad58a3ad5ff26765da61e8dab8f1cad
   - kind: registry
     name: lazy_static
     version: 1.5.0
