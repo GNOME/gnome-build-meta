@@ -1,7 +1,7 @@
-From 6c89faea12f143a5ae75db974fa03b0c988a24f2 Mon Sep 17 00:00:00 2001
+From 17821ac15e6ef950260bda7166ab431a1b26bad0 Mon Sep 17 00:00:00 2001
 From: Valentin David <me@valentindavid.com>
 Date: Sun, 18 Oct 2026 10:11:24 +0200
-Subject: [PATCH] sof-firmware: Update to 2026.09.2
+Subject: [PATCH 3/6] sof-firmware: Update to 2026.09.2
 
 ---
  elements/components/sof-firmware.bst | 4 ++--
@@ -20,5 +20,5 @@ index 730216e9c..8fd9ee1fc 100644
 +  url: github_files:thesofproject/sof-bin/releases/download/v2026.09.2/sof-bin-2026.09.2.tar.gz
 +  ref: 5f7bc30b2b5c1e6b0da55a33fc44e2b7f56ae9b06952edcde614f51ef6b943e1
 -- 
-2.56.0
+2.55.0
 
