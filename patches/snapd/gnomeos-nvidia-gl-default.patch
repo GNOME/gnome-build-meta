@@ -1,0 +1,39 @@
+--- a/cmd/snap-confine/mount-support-nvidia.c
++++ b/cmd/snap-confine/mount-support-nvidia.c
+@@ -347,6 +347,7 @@
+     static const char *native_sources[] = {
+         NATIVE_LIBDIR,
+         NATIVE_LIBDIR "/nvidia*",
++        NATIVE_LIBDIR "/GL/default/lib",  // GNOME OS
+     };
+     const size_t native_sources_len = SC_ARRAY_SIZE(native_sources);
+ 
+@@ -675,6 +676,7 @@
+ static void sc_mount_vulkan(const char *rootfs_dir) {
+     const char *vulkan_sources[] = {
+         SC_VULKAN_SOURCE_DIR,
++        NATIVE_LIBDIR "/GL/default/lib/vulkan",  // GNOME OS
+     };
+     const size_t vulkan_sources_len = SC_ARRAY_SIZE(vulkan_sources);
+ 
+@@ -683,7 +685,7 @@
+ }
+ 
+ static void sc_mount_egl(const char *rootfs_dir) {
+-    const char *egl_vendor_sources[] = {SC_EGL_VENDOR_SOURCE_DIR};
++    const char *egl_vendor_sources[] = {SC_EGL_VENDOR_SOURCE_DIR, NATIVE_LIBDIR "/GL/default/share/glvnd"};
+     const size_t egl_vendor_sources_len = SC_ARRAY_SIZE(egl_vendor_sources);
+ 
+     sc_mkdir_and_mount_and_glob_files(rootfs_dir, egl_vendor_sources, egl_vendor_sources_len, SC_GLVND_DIR,
+--- a/interfaces/builtin/opengl.go
++++ b/interfaces/builtin/opengl.go
+@@ -92,6 +92,9 @@
+ 
+ # Main bi-arch GL libraries
+ /var/lib/snapd/hostfs/{,usr/}lib{,32,64,x32}/{,@{multiarch}/}{,nvidia*/}lib{OpenGL,GL,GLU,GLESv1_CM,GLESv2,EGL,GLX}.so{,.*} rm,
++# GNOME OS
++/var/lib/snapd/hostfs/usr/lib/@{multiarch}/GL/default/lib/{lib{cuda,nv,*_nvidia}*.so{,.*},nvidia/wine/*.dll} rm,
++/var/lib/snapd/hostfs/usr/lib/@{multiarch}/GL/default/{lib/vulkan/icd.d,share/glvnd/egl_vendor.d}/*nvidia*.json r,
+ 
+ # GPU libraries exported by a snap. These directories are filled by
+ # sc_mount_exported_paths() in mount-support-nvidia.c. See also creation

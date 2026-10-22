@@ -236,8 +236,8 @@ config:
 
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-ngx-updater
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-ngx.so*
-    install -Dm644 -t "%{install-root}%{libdir}/nvidia/wine/" _nvngx.dll*
-    install -Dm644 -t "%{install-root}%{libdir}/nvidia/wine/" nvngx.dll*
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" _nvngx.dll*
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" nvngx*.dll*
 
   # nvfbc
   - |
