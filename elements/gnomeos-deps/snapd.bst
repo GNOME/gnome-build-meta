@@ -6,6 +6,8 @@ sources:
   ref: 197d5e5870ae7f3681276cea37339d5ee528ddfaf47f53509f858fdad46e4aed
 - kind: local
   path: files/snapd/tmpfiles-snapd.conf
+- kind: patch
+  path: patches/snapd/gnomeos-nvidia-gl-default.patch
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -34,6 +36,7 @@ variables:
     --enable-merged-usr
     --enable-apparmor
     --disable-selinux
+    --enable-nvidia-biarch
     --with-snap-mount-dir="%{mount-dir}"
     --without-unit-tests
   libexecdir: '%{indep-libdir}/snapd'
