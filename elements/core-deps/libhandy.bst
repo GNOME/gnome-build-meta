@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libhandy.git
   track: main
-  ref: 1.8.0-45-g9cbe91092c96b68136e2f0cb15694deaf3e1664a
+  ref: 1.8.0-46-g58fea40fe9a7f465b3942b6adbc05c9e5a508fd3
 
 build-depends:
 - (@): include/gcc-for-recc.yml

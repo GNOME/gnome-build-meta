@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:librsvg.git
   track: main
-  ref: 2.63.3-8-gcb472ff46449e305f482f704063a8ef3cd230bd4
+  ref: 2.63.4-0-g0c074d0a25adefd65843067306f9bc1fb609f68f
 - kind: cargo2
   ref:
   - kind: registry
@@ -161,8 +161,8 @@ sources:
     sha: ce2dc9ee5f88d11e0beb842c88b33c8a5cf0d1329c4b19494af42b07dbfe8896
   - kind: registry
     name: cc
-    version: 1.8.0
-    sha: 6651c9ed80effdc7db0ff72512157f901af5e3549e341e24b1dd4887d836d838
+    version: 1.10.0
+    sha: 86e055fa6e3e40ad6187ba25b6855eeb635d5271f8e0f0e1e9a5826b8d75bea0
   - kind: registry
     name: cfg-expr
     version: 0.20.10
@@ -249,8 +249,8 @@ sources:
     sha: 5ca28b0ae3115b884660db4118d803791fd6756b6e88f39c0f3f7859060d7566
   - kind: registry
     name: crc32fast
-    version: 1.5.2
-    sha: 01a7799fd6b852db0e61728dde9a204c423b44d689dbd432522543614b490e78
+    version: 1.5.3
+    sha: 0ba106e844045ddc02c20768ac4b0b7cb45f2cc2ecbd833ac9f5dacb183c2055
   - kind: registry
     name: criterion
     version: 0.8.2
@@ -389,8 +389,8 @@ sources:
     sha: 1e6853b52649d4ac5c0bd02320cddc5ba956bdb407c4b75a2c6b75bf51500f8c
   - kind: registry
     name: find-msvc-tools
-    version: 0.1.14
-    sha: aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484
+    version: 0.1.15
+    sha: 1c66915cc5391097de7a2b0b972e8505aa33c0df401fd3a6811dbdb32881ba48
   - kind: registry
     name: flate2
     version: 1.1.10
@@ -537,32 +537,32 @@ sources:
     sha: f31827a206f56af32e590ba56d5d2d085f558508192593743f16b2306495269f
   - kind: registry
     name: icu_collections
-    version: 2.3.0
-    sha: fa68d21081c4a05d5a901a1c62add574c77048b6a1c67be3b50ce0b60d4ca513
+    version: 2.4.0
+    sha: fe090a42a0d3140fed8c63263ed1fecc02422cb2f4bfe55cd8de2de1b8e105dd
   - kind: registry
     name: icu_locale_core
-    version: 2.3.0
-    sha: d56e28588da92eee5c3201a6eff33fabdd49b62269c8938d4ff050ce4d900deb
+    version: 2.4.0
+    sha: 25d29b57c17c6528d0dc4c2141cfa2d08200465acb537a3909c8b9b8a4a984c0
   - kind: registry
     name: icu_normalizer
-    version: 2.3.0
-    sha: 12f9cf5f235641ed274641dd81c3f28d870e276763d0797aeeab72317b1c646f
+    version: 2.4.0
+    sha: 404a3b8c486f205c87fe7f23ab6894d84a4ad76d6e4671ae1981ba7def87c599
   - kind: registry
     name: icu_normalizer_data
-    version: 2.3.0
-    sha: 1563da1ed3e0b3bf3d74c9b85917ac9c56464d2f57242270c09c9e752f8021a0
+    version: 2.4.0
+    sha: 20f0088bfb7441f7a37fa0c9e20cb1e9cba1cac6b9ce8cd2a6dc44294f8e8cbc
   - kind: registry
     name: icu_properties
-    version: 2.3.0
-    sha: 7e7ca276ad3145661a65914e6daf131ca5120cd3dcee8f8f3214b8875184a148
+    version: 2.4.0
+    sha: 2ea83d991c56158f7cf898bf86436c1dfe7c07ee82fe88951f2695c9f37a379f
   - kind: registry
     name: icu_properties_data
-    version: 2.3.0
-    sha: e590f038c1464a96894fd6d10127e90a8be4509f56ff7ecef851b15cee0b7caa
+    version: 2.4.0
+    sha: b98f29af82d02b163fe50161388350e743bb3107cc8e8c2f7314cb505faddfcf
   - kind: registry
     name: icu_provider
-    version: 2.3.1
-    sha: d27bbb9d3abbefac45d55f647c9de1d44aafcd1186eb91879afef17c396c3e73
+    version: 2.4.0
+    sha: 413099315636c588ee8f011190b329b971a09a8fae9d157e01dcae8379468514
   - kind: registry
     name: idna
     version: 1.1.0
@@ -585,8 +585,8 @@ sources:
     sha: cc4e190f5d26ca7051642629da2c52fc03bde85a03197c99408dcd291734c855
   - kind: registry
     name: inout
-    version: 0.2.4
-    sha: 3ce983bb6fb399067d101fbfc9e74174e07e9f29a2bc679efefeb8c645819c3f
+    version: 0.2.5
+    sha: 3b5cf4372d022092674a83b8febf5865f7a573cc0c5baec5e49c879b6a20978f
   - kind: registry
     name: is_terminal_polyfill
     version: 1.70.2
@@ -641,8 +641,8 @@ sources:
     sha: 20870f649af7073d53e38067b2a84312175d56ea15217e1b15bc83506ec50afb
   - kind: registry
     name: libc
-    version: 0.2.190
-    sha: ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78
+    version: 0.2.191
+    sha: 65cd87c9a6d60536580b316ad985726104730a5151c99845f2490428ef91240a
   - kind: registry
     name: libfuzzer-sys
     version: 0.4.13
@@ -1093,8 +1093,8 @@ sources:
     sha: 0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5
   - kind: registry
     name: smallvec
-    version: 1.16.3
-    sha: 5b3dc8af474f516a851ff4bd12db780f948b9250ad37211e4eec0bccea54e01b
+    version: 1.16.4
+    sha: d0d5d4b1981b8bbbb7aed204cae5726d683d5d6ac7e74ec54122ea28f315e7c8
   - kind: registry
     name: stable_deref_trait
     version: 1.2.1
@@ -1141,8 +1141,8 @@ sources:
     sha: 396a35feb67335377e0251fcbc1092fc85c484bd4e3a7a54319399da127796e7
   - kind: registry
     name: system-deps
-    version: 9.0.0
-    sha: 8a0dae2cbca1f0ff93795713cfe0a4c02f760e3c0b8ae2ab4ec4045808ff429f
+    version: 9.0.1
+    sha: db551ad38aac61d5e0343e0eeeb0163be3115c4e23b6a025959570ee0c03c67d
   - kind: registry
     name: target-lexicon
     version: 0.13.5
@@ -1181,8 +1181,8 @@ sources:
     sha: 7e689342a48d2ea927c87ea50cabf8594854bf940e9310208848d680d668ed85
   - kind: registry
     name: tinystr
-    version: 0.8.4
-    sha: b1e27c91459209c2986af3dcf603a5a74a4368754ce37414f59acc971167f643
+    version: 0.8.5
+    sha: abc840c238154d58f9e86b2792261edfde565a17696e1cda1a449de27979801a
   - kind: registry
     name: tinytemplate
     version: 1.2.1
@@ -1229,8 +1229,8 @@ sources:
     sha: a2c754d6c33795a1c324727428e5a7dedb5b06195f9890bdbcba760d3e246563
   - kind: registry
     name: unicode-normalization
-    version: 0.1.25
-    sha: 5fd4f6878c9cb28d874b009da9e8d183b5abc80117c40bbd187a1fde336be6e8
+    version: 0.1.26
+    sha: 75cd3fb03d5288b3ba9a1ee103ac7e9cbb59f0b03d64f8ddfcc04dd42758a85d
   - kind: registry
     name: unicode-properties
     version: 0.1.4
@@ -1365,8 +1365,8 @@ sources:
     sha: 1d8b8abf912b9a29ff112e1671c97c33636903d13a69712037190e6805af4f76
   - kind: registry
     name: yoke
-    version: 0.8.3
-    sha: 709fe23a0424b6a435d82152b1bd3fdfb0833487d5fa90d05d42762a9891fef5
+    version: 0.8.4
+    sha: 417ef3fcf6c300b7dbd25c85531a746931c02ad536f3cf4786ed1e88223340b3
   - kind: registry
     name: yoke-derive
     version: 0.8.4
@@ -1393,12 +1393,12 @@ sources:
     sha: 4ea269c3bd32f0a32c321907a2ae912ba6f4649bb0fc764a15627e99a7095a3f
   - kind: registry
     name: zerovec
-    version: 0.11.8
-    sha: bb0464e17806c1d976d5cba29399c7f08e516e279e2ba493f63123b5fca67dd8
+    version: 0.11.9
+    sha: f58a2799cfe9a1670c7ea8edbd52ef8edb93cb37a7f83bf31ba9e35d9dae6a40
   - kind: registry
     name: zerovec-derive
-    version: 0.11.6
-    sha: 34df6fc39dbd26ddc9c10e6a2984476e13acce22e64e4487636ef494369225da
+    version: 0.11.7
+    sha: c3743ddbf47738d929cd1ae2e199d40d0162979dfe31aef8ae646d2bf00bf97a
   - kind: registry
     name: zlib-rs
     version: 0.6.8
