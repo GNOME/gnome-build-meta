@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:mike-fabian/ibus-typing-booster.git
   track: '*.*'
-  ref: 2.31.1-0-g91230ba152bd132b898fa906530a44f0decd3463
+  ref: 2.31.2-0-g5b9fb087174ce54f8b7cf5f71ddbdbe42d228aeb
 
 build-depends:
 - (@): include/gcc-for-recc.yml
