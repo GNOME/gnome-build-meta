@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:simple-scan.git
   track: master
-  ref: 50.0-61-g9be044cde516fe4071fcb7a4ec88e43e5af77a62
+  ref: 50.0-62-ga8719233cadd1a85bb139cd0c7ca69e4298870c3
 
 build-depends:
 - (@): include/gcc-for-recc.yml
