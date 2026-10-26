@@ -90,6 +90,7 @@ for dirpath, dirnames, filenames in os.walk('elements'):
 # Please open an issue or MR before adding to the list.
 ignore_elements: List[Tuple[str, str]] = [
     ("gnomeos-deps/bootc.bst", "We have manually overwritten the sources to append .git at a couple github urls"),
+    ("sdk/libadwaita.bst", "https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/merge_requests/369"),
 ]
 
 def git(*args):
