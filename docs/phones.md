@@ -161,10 +161,10 @@ bootup). Does not affect the boot process.
 
 ### RTC clock is incorrect
 
-RTC clock shows current time as 'Epoch + time since GnomeOS was installed'.
+RTC clock shows current time as 'Epoch + time since GNOME OS was installed'.
 
 ```bash
-[kawaiicvnt@retard ~]$ timedatectl status
+[kawaiicvnt@hostname ~]$ timedatectl status
         Local time: Wed 2026-01-07 21:00:01 EET
     Universal time: Wed 2026-01-07 19:00:01 UTC # Actual date
           RTC time: Fri 1970-01-02 22:45:29     # Epoch + time since install
