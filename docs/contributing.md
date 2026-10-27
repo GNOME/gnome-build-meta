@@ -75,6 +75,24 @@ bst workspace open --no-checkout core/gnome-control-center.bst --directory ../gn
 > [!caution]
 > **Do not** use the `--force` option as it would overwrite the existing directory with a new checkout of the element's repository.
 
+> [!note]
+> If the element you opened in a no-checkout directory contains additional sources, you will have to manually add those sources to your source tree.
+>
+> For arbitrary files or patches, follow the path in the element's source definition and copy those files in your tree or apply the patches. For example if `element-name` uses a patch-queue source, you can run the following in your tree:
+>
+> ```shell
+> git am ../gnome-build-meta/patches/element-name/*
+> ```
+>
+> For meson subprojects, you can run `meson subprojects update` in your tree.
+>
+> For `cargo2` sources, you need to vendor the cargo dependencies and instruct cargo to use those. In your tree do:
+>
+> ```shell
+> mkdir .cargo/
+> cargo vendor > .cargo/config.toml
+> ```
+
 Now make the changes you want to make in your workspace, for example in `../gnome-control-center/`. BuildStream will pick up your changes from this workspace automatically after you make them.
 
 How to build, deploy and test depends on which build output you're contributing to. Follow the dedicated guide for each:
