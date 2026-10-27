@@ -1,0 +1,24 @@
+From 860b13745f2a8e857cf065efbdcfd9a52bde622c Mon Sep 17 00:00:00 2001
+From: freedesktop_sdk_updater <freedesktop_sdk_updater@libreml.com>
+Date: Thu, 22 Oct 2026 02:55:11 +0000
+Subject: [PATCH] Update elements/components/brotli.bst to v1.2.1-0
+
+Updates elements/components/brotli.bst to v1.2.1-0 (db24a98)
+Previous version was v1.2.0-0 (028fb5a)
+---
+ elements/components/brotli.bst | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/elements/components/brotli.bst b/elements/components/brotli.bst
+index fbc2f4ab8..9653724a6 100644
+--- a/elements/components/brotli.bst
++++ b/elements/components/brotli.bst
+@@ -23,4 +23,4 @@ sources:
+   track: v*
+   exclude:
+   - "*rc*"
+-  ref: v1.2.0-0-g028fb5a23661f123017c060daa546b55cf4bde29
++  ref: v1.2.1-0-gdb24a98aed38a16de78cc05ca15cdd8dc2a0d92d
+-- 
+2.56.0
+
