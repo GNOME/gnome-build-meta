@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gcab.git
   track: master
-  ref: v1.6-76-gb3f6cde5deeac4811f118c0ef7d42bfc0387a921
+  ref: v1.6-79-gc109fb69fb5560c981b460758b9966796f061efb
 
 build-depends:
 - (@): include/gcc-for-recc.yml
