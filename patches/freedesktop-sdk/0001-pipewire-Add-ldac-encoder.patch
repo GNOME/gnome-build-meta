@@ -1,0 +1,117 @@
+From 4bc78d266306c20bc75f2e737188aaa223792d1f Mon Sep 17 00:00:00 2001
+From: Lars Ellinger <lars.ellinger@outlook.de>
+Date: Sun, 25 Oct 2026 10:33:32 +0100
+Subject: [PATCH 1/1] pipewire: Add ldac encoder This allows using the ldac
+ codec with bluetooth headphones. Fixes
+ https://gitlab.gnome.org/GNOME/gnome-build-meta/-/work_items/1310
+
+(cherry picked from commit 601e5d458458ef5fdf9a0df761ec7d391bc87add)
+---
+ .../components/_private/pipewire-base.bst     |  5 ++--
+ elements/components/libldac.bst               | 24 +++++++++++++++++++
+ elements/components/pipewire-daemon.bst       |  1 +
+ include/_private/aliases.yml                  |  1 +
+ include/_private/mirrors.yml                  |  2 ++
+ 5 files changed, 31 insertions(+), 2 deletions(-)
+ create mode 100644 elements/components/libldac.bst
+
+diff --git a/elements/components/_private/pipewire-base.bst b/elements/components/_private/pipewire-base.bst
+index 3b29116b9..11bf3caa6 100644
+--- a/elements/components/_private/pipewire-base.bst
++++ b/elements/components/_private/pipewire-base.bst
+@@ -23,6 +23,7 @@ build-depends:
+ - components/libcamera.bst
+ - components/libebur128.bst
+ - components/liblc3.bst
++- components/libldac.bst
+ - components/libmysofa.bst
+ - components/libpulse.bst
+ - components/libusb.bst
+@@ -45,7 +46,8 @@ variables:
+     -Dvulkan=disabled
+     -Ddocs=enabled
+     -Dman=enabled
+-    -Dbluez5-codec-ldac=disabled
++    -Dbluez5-codec-ldac=enabled
++    -Dbluez5-codec-ldac-dec=disabled
+     -Dbluez5-codec-aptx=disabled
+     -Dbluez5-codec-aac=disabled
+     -Dlibcamera=enabled
+@@ -61,7 +63,6 @@ variables:
+     -Dsdl2=disabled
+     -Dsnap=disabled
+     -Dfftw=enabled
+-    -Dbluez5-codec-ldac-dec=disabled
+     -Dbluez5-plc-spandsp=disabled
+     -Donnxruntime=disabled
+ 
+diff --git a/elements/components/libldac.bst b/elements/components/libldac.bst
+new file mode 100644
+index 000000000..3c7df1c05
+--- /dev/null
++++ b/elements/components/libldac.bst
+@@ -0,0 +1,24 @@
++# SPDX-FileCopyrightText: Freedesktop-SDK Developers
++# SPDX-License-Identifier: MIT
++
++kind: cmake
++
++build-depends:
++- public-stacks/buildsystem-cmake.bst
++
++depends:
++- public-stacks/runtime-minimal.bst
++
++variables:
++  cmake-local: >-
++    -DINSTALL_LIBDIR=%{libdir}
++
++sources:
++- kind: git_repo
++  url: github:EHfive/ldacBT
++  track: 'v*'
++  ref: v2.0.2.6-0-g6579bd585a618f2e1612b3c1650d2b7fcfb1d43f
++- kind: git_module
++  url: android:platform/external/libldac
++  path: libldac
++  ref: 82b6a1abee84787b8fa167efe20290073f60db2d
+diff --git a/elements/components/pipewire-daemon.bst b/elements/components/pipewire-daemon.bst
+index 9aa0f2941..f2c1db13b 100644
+--- a/elements/components/pipewire-daemon.bst
++++ b/elements/components/pipewire-daemon.bst
+@@ -15,6 +15,7 @@ runtime-depends:
+ - components/libcamera.bst
+ - components/libebur128.bst
+ - components/liblc3.bst
++- components/libldac.bst
+ - components/libmysofa.bst
+ - components/libpulse.bst
+ - components/pipewire.bst
+diff --git a/include/_private/aliases.yml b/include/_private/aliases.yml
+index a4d780e3f..b06e7f34b 100644
+--- a/include/_private/aliases.yml
++++ b/include/_private/aliases.yml
+@@ -5,6 +5,7 @@
+ #
+ #
+ #Git source aliases
++android: https://android.googlesource.com/
+ chromium: https://chromium.googlesource.com/
+ codeberg: https://codeberg.org/
+ debian_salsa: https://salsa.debian.org/
+diff --git a/include/_private/mirrors.yml b/include/_private/mirrors.yml
+index ec4c6e237..c529a2372 100644
+--- a/include/_private/mirrors.yml
++++ b/include/_private/mirrors.yml
+@@ -7,6 +7,8 @@
+ mirrors:
+ - name: freedesktop-sdk-git-mirrors
+   aliases:
++    android: 
++    - https://gitlab.com/freedesktop-sdk/mirrors/android
+     chromium:
+     - https://gitlab.com/freedesktop-sdk/mirrors/chromium/
+     codeberg:
+-- 
+2.55.0
+
