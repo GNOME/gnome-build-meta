@@ -34,6 +34,7 @@ FILES=(
     /usr/lib/systemd/systemd-shutdown
     /usr/lib/nvpcr/cryptsetup.nvpcr
     /usr/lib/nvpcr/hardware.nvpcr
+    /usr/lib/nvpcr/login.nvpcr
     /usr/lib/nvpcr/verity.nvpcr
 )
 
@@ -113,6 +114,8 @@ UNITS+=(
     systemd-kexec.service
     systemd-modules-load.service
     sysinit.target.wants/systemd-modules-load.service
+    systemd-pcrextend.socket
+    systemd-pcrextend@.service
     systemd-pcrphase-initrd.service
     initrd.target.wants/systemd-pcrphase-initrd.service
     systemd-pcrosseparator.service
@@ -195,5 +198,5 @@ install() {
     install_files /usr/lib/tmpfiles.d/systemd.conf
     install_files /usr/lib/tmpfiles.d/20-systemd-stub.conf
 
-    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service
+    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service systemd-pcrextend.socket
 }
