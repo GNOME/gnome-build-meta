@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calendar.git
   track: main
-  ref: 51.0-125-g4defb0019b87319059240acf3dce2f05cf364b5b
+  ref: 51.0-131-geeea79bb9ff81832fef28cefd697b8c352a9bb15
 
 build-depends:
 - (@): include/gcc-for-recc.yml
