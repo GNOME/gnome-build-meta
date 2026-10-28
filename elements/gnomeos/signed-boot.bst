@@ -127,6 +127,7 @@ config:
       --os-release=@/etc/os-release \
       --cmdline="%{kcmdline} usrhash=${roothash}" \
       --uname="${version}" \
+      --sign-initrd-pcrs \
       --pcr-private-key=tpm2-pcr-private.pem \
       --pcr-public-key=tpm2-pcr-public.pem \
       --phases="enter-initrd" \
