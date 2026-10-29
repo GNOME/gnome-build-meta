@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libdex.git
   track: main
-  ref: 1.2.0-21-gc1abbaa81e327c35dece839a3966c98e26b5fd82
+  ref: 1.2.0-31-g89b671393868af2025a2698ad36122e19f5b4d58
 
 build-depends:
 - (@): include/gcc-for-recc.yml
