@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:loupe.git
   track: main
-  ref: 51.0-16-g1bc0ac7f595d2fc66376cefd6f667836bee7b190
+  ref: 51.0-22-ga1d685852a473e7a35554eddaa553c1300294667
 - kind: cargo2
 
   ref:
@@ -21,6 +21,14 @@ sources:
     version: 0.1.3
     sha: 250f629c0161ad8107cf89319e990051fae62832fd343083bea452d93e2205fd
   - kind: registry
+    name: alloc-no-stdlib
+    version: 3.0.0
+    sha: c2fb6cfd47bf496ff64095c20eaba0c201404ee38714d4142fcfa1dc334fcc7a
+  - kind: registry
+    name: alloc-stdlib
+    version: 0.3.0
+    sha: 0b5c1865780388bfa186411ab5f247819487fc4864c6e9c3106611fa347586e1
+  - kind: registry
     name: anyhow
     version: 1.0.104
     sha: 330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470
@@ -28,6 +36,10 @@ sources:
     name: arc-swap
     version: 1.9.2
     sha: c049c0be4daef0b145cb3555416b3b8ef5b7888a38aea1a3a155801fe7b0810b
+  - kind: registry
+    name: array-init
+    version: 2.1.0
+    sha: 3d62b7694a562cdf5a74227903507c56ab2cc8bdd1f781ed5cb4cf9c9f810bfc
   - kind: registry
     name: ashpd
     version: 0.13.13
@@ -109,6 +121,10 @@ sources:
     version: 1.7.0
     sha: a70e4329df6cb94385eed412ec92375c3cdd8a6e502493d1229b6414e4036dfa
   - kind: registry
+    name: brotli-decompressor
+    version: 6.2.0
+    sha: 34c6783f42c21c952ad7112b354f0ba2f10760e9decea5b1b60523d6e270faaf
+  - kind: registry
     name: bumpalo
     version: 3.20.3
     sha: 72f5acc6cb2ba439de613abc23857ec3d78374d8ed5ac84e9d11336e87da8649
@@ -116,6 +132,10 @@ sources:
     name: bytemuck
     version: 1.25.2
     sha: 95832e849adfb21180ccb6826a99da14e5d266ae5c2e668e1602cf234f153797
+  - kind: registry
+    name: byteorder
+    version: 1.5.0
+    sha: 1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b
   - kind: registry
     name: byteorder-lite
     version: 0.1.0
@@ -384,34 +404,55 @@ sources:
     name: glib-sys
     version: 0.22.8
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
-  - kind: registry
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin
-    version: 4.0.0
-    sha: dc9bb9cfa3d4db9eab0e2394f0e60fe4071fd31affd1704f2ecccc6bdd24c7b9
-  - kind: registry
+    version: 5.0.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-builtin
-    version: 4.0.0
-    sha: b801b326426a0ccb61899174b0a08c2316defd323cfe78be9aa6232a2efdfeac
-  - kind: registry
+    version: 5.0.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-common
-    version: 2.0.0
-    sha: f34692fa7314e5108eafaba7621460d958caba839a6d5040f1caba98d7b4a692
-  - kind: registry
+    version: 3.0.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-core
-    version: 4.0.0
-    sha: 9466e4f18a53312faee414ea85813d6674d4cb5badad059365c4882984b40201
-  - kind: registry
+    version: 5.0.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-external
-    version: 4.0.0
-    sha: a7d335778b14437e1339d703afd1ce69e61df8ab5420882b4b7821b9a2ca9d4a
-  - kind: registry
+    version: 5.0.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-image-rs
-    version: 2.2.0
-    sha: 3df0cbc11fe5d5523575b04f724c82d8d50e2c03830622b655e7d4015eba6472
-  - kind: registry
+    version: 2.3.0-alpha
+  - kind: git
+    commit: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
+    repo: gnome:glycin.git
+    query:
+      rev: a83c48d7506d2f02c573e0d686d62b6d4f2f77e9
     name: glycin-utils
-    version: 5.0.0
-    sha: 68b112ddb84bd9c1453b119292e38788aa18015d5c12158c1d6fab1b9e353ee7
+    version: 6.0.0-alpha
   - kind: registry
     name: gobject-sys
     version: 0.22.6
@@ -454,8 +495,8 @@ sources:
     sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.0
-    sha: e99100988e312c22c6f209663b289e727db3918d06fbcbbc2315149457b42b75
+    version: 0.5.5
+    sha: b7a91a52ac6ea8d25e0752b1f3552d7a8252dcdf0b0b8154d1118d5e2582129c
   - kind: registry
     name: gufo-jpeg
     version: 0.5.1
@@ -557,6 +598,22 @@ sources:
     version: 0.3.104
     sha: 0e0c1080212aad755ea003d18543e8768dd432c48819efd73a7bf1e39b7a5a3a
   - kind: registry
+    name: jxl
+    version: 0.8.0
+    sha: b8379fc83d79477900c9aed78cb8370a556d834081bebcb771c6010381c4e230
+  - kind: registry
+    name: jxl_macros
+    version: 0.8.0
+    sha: eeb27c06a9957bd9c8e65d0aeea0db6a555a9e1c85597e284f8304015c410c87
+  - kind: registry
+    name: jxl_simd
+    version: 0.8.0
+    sha: a645451b4d34b4017caf24110a14eb737e275b5d3d121bc754e67727ee65af0e
+  - kind: registry
+    name: jxl_transforms
+    version: 0.8.0
+    sha: 21c4b7f8957f5ba578b2e28cd5ebbc97dad58a3ad5ff26765da61e8dab8f1cad
+  - kind: registry
     name: lazy_static
     version: 1.5.0
     sha: bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe
@@ -656,6 +713,10 @@ sources:
     name: num-complex
     version: 0.4.6
     sha: 73f88a1307638156682bada9d7604135552957b7818057dcef22705b4d509495
+  - kind: registry
+    name: num-derive
+    version: 0.4.2
+    sha: ed3955f1a9c7c0c15e092f9c887db08b1fc683305fdf6eb6684f22555355e202
   - kind: registry
     name: num-traits
     version: 0.2.19
