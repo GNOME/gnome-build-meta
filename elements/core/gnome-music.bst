@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-music.git
   track: master
-  ref: 50.0-27-gf4a8a3afdd1433e299098add060b5f8c0985de06
+  ref: 50.0-29-g3552395faee593c86f61169b264c8056e8f4fc48
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -22,6 +22,7 @@ depends:
 - sdk/adwaita-icon-theme.bst
 - sdk/gtk.bst
 - sdk/libadwaita.bst
+- sdk/libglycin-gtk4.bst
 - sdk/pygobject.bst
 - sdk/tinysparql.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
