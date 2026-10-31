@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-calculator.git
   track: main
-  ref: 51.1-9-gbf92c82b98493489850932062ef1f594174e4134
+  ref: 51.1-10-ge4ba15b17f640eee70a047816c6586c6af899f66
 
 build-depends:
 - (@): include/gcc-for-recc.yml
