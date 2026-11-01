@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-color-manager.git
   track: master
-  ref: 3.36.2-100-g8e41e55519762520ba3b26655d33b4d87f2bdd06
+  ref: 3.36.2-101-gca90f4ceae2fb877af5692cce7716332e9074a00
 
 build-depends:
 - (@): include/gcc-for-recc.yml
