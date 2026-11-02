@@ -17,6 +17,16 @@ environment:
       RECC_USE_LOCALCAS: true
   - recc_jobserver:
       RECC_USE_JOBSERVER: true
+  # From https://github.com/bazelbuild/remote-apis/blob/main/build/bazel/remote/execution/v2/platform.md
+  - arch == "aarch64":
+      # https://gitlab.com/BuildGrid/buildbox/buildbox/-/work_items/186
+      RECC_REMOTE_PLATFORM_ISA: aarch64
+  - arch == "x86_64":
+      RECC_REMOTE_PLATFORM_ISA: x86-64
+  - arch == "ppc64le":
+      RECC_REMOTE_PLATFORM_ISA: power-isa-le
+  - arch == "riscv64":
+      RECC_REMOTE_PLATFORM_ISA: rv64g
 
 environment-nocache:
 - RECC_CACHE_ONLY
