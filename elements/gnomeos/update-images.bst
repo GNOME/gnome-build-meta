@@ -13,9 +13,6 @@ build-depends:
   strict: true
   config:
     location: "%{install-root}"
-- filename: gnomeos/codecs-extra/image.bst
-  config:
-    location: "%{install-root}"
 - freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 (?):

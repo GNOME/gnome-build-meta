@@ -8,6 +8,9 @@ build-depends:
 - filename: gnomeos/signed-boot.bst
   config:
     location: /signed-boot
+- filename: gnomeos/codecs-extra/image.bst
+  config:
+    location: "%{install-root}"
 - freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
 
 config:
