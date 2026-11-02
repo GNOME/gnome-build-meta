@@ -15,7 +15,7 @@ sources:
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-1010-g558da3129cce0f4ab52cc03d7444d12355300daa
+  ref: v262-1720-g8e1291abe30f14bb509c68ea6fddb0350b50a1f1
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -59,6 +59,8 @@ build-depends:
 - freedesktop-sdk.bst:components/bpf-maybe.bst
 - freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:components/rust-bindgen.bst
+- freedesktop-sdk.bst:components/rust.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
