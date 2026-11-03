@@ -54,7 +54,6 @@ depends:
 
 - gnomeos-deps/NetworkManager-openconnect.bst
 - gnomeos-deps/NetworkManager-openvpn.bst
-- gnomeos-deps/NetworkManager-vpnc.bst
 
 - gnomeos-deps/noto-cjk.bst
 - freedesktop-sdk-extra.bst:components/words.bst
