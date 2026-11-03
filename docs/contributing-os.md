@@ -51,7 +51,7 @@ If you're already running GNOME OS (e.g. if you installed it by using the [prebu
 First, build and serve a local sysupdate repository in a separate terminal so the virtual machine can later enable the `devel` extension and others:
 
 ```shell
-utils/run-sysupdate-repo.sh --devel # Append `--same-version` to avoid rebuilding the whole chain on the next run
+./utils/run-sysupdate-repo.sh --devel # Append `--same-version` to avoid rebuilding the whole chain on the next run
 ```
 
 Then, in another terminal, build and start a virtual machine with secure boot and a TPM by running the following; if you didn't already generate the secure boot keys in [Setting up secure boot keys](#1-setting-up-secure-boot-keys), they will be generated automatically:
