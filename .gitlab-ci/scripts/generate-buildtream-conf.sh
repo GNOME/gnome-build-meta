@@ -18,6 +18,8 @@ scheduler:
   on-error: continue
   # Maximum number of simultaneous downloading tasks.
   fetchers: 32
+  # Scale the number of builds according to the runner
+  builders: $(( $(nproc) / 4 ))
 
 # Get a lot of output in case of errors
 logging:
