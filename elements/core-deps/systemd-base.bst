@@ -6,16 +6,16 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
+  url: github:valentindavid/systemd.git
   (?):
   - channel == "nightly":
-      track: main
+      track: refs/heads/valentindavid/block-device-replace-dm-verity
   - channel == "stable":
       track: v*
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-1647-g2361f7b6881f0f69a88f6b151e6386479ee70154
+  ref: v250-rc2-39082-g109284e3818379bd01689344dd00d4357a7d5d51
 
 build-depends:
 - (@): include/gcc-for-recc.yml
