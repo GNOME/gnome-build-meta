@@ -10,6 +10,7 @@ install() {
         /usr/lib/udev/rules.d/90-ramfs-root.rules \
         /usr/lib/systemd/system-generators/zram-generator \
         /usr/lib/systemd/system/systemd-zram-setup@.service \
+        /usr/lib/systemd/system/systemd-zram-setup@.service.d/requires-device.conf \
         /usr/lib/systemd/system/systemd-repart.service.d/live.conf \
         /usr/lib/systemd/system/systemd-tpm2-setup-early.service.d/live.conf
 

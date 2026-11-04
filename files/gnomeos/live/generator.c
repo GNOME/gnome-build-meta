@@ -141,7 +141,7 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
                 if (!enable_unit(generator_path, "initrd-root-device.target.wants", "systemd-zram-setup@zram1.service", "/usr/lib/systemd/system"))
                         return false;
 
-                if (!enable_unit(generator_path, "initrd-root-fs.target.wants", "sysroot.mount", ".."))
+                if (!enable_unit(generator_path, "initrd-root-fs.target.requires", "sysroot.mount", ".."))
                         return false;
 
         } else {
