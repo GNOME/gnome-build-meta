@@ -75,6 +75,11 @@ install_data(
   install_dir : systemdsystemunitdir / 'systemd-pcrlock-make-policy.service.d'
 )
 
+install_data(
+  'requires-device.conf',
+  install_dir : systemdsystemunitdir / 'systemd-zram-setup@.service.d'
+)
+
 subdir('proto-installer')
 
 cargo  = find_program('cargo')
