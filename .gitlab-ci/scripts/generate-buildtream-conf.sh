@@ -76,6 +76,11 @@ cache:
     connection-config:
       keepalive-time: 60
 EOF
+    if [ "${1-}" == nopush ] || [ "${PUSH_SOURCE-}" != 1 ]; then
+        cat <<EOF
+    instance-name: local
+EOF
+    fi
 
     cat <<EOF
 remote-execution:
@@ -83,9 +88,22 @@ remote-execution:
     url: unix:/run/casd/casd.sock
     connection-config:
       keepalive-time: 60
+EOF
+    if [ "${1-}" == nopush ] || [ "${PUSH_SOURCE-}" != 1 ]; then
+        cat <<EOF
+    instance-name: local
+EOF
+    fi
+
+    cat <<EOF
   action-cache-service:
     url: unix:/run/casd/casd.sock
     connection-config:
       keepalive-time: 60
 EOF
+    if [ "${1-}" == nopush ] || [ "${PUSH_SOURCE-}" != 1 ]; then
+        cat <<EOF
+    instance-name: local
+EOF
+    fi
 fi
