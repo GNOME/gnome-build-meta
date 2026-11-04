@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd.git
   track: '*.*.*'
-  ref: 2.1.8-0-g3b7eca282bbe6cb4e8d5b4e42f984d2a1679977f
+  ref: 2.1.9-0-g27be80ac78856aeb297d7ce7b0c6eead6682d6ec
 
 build-depends:
 - (@): include/gcc-for-recc.yml

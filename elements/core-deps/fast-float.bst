@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fastfloat/fast_float.git
   track: 'v*'
-  ref: v8.3.2-0-g42f254836ee416ffcf2f4e6576260003ac33d48c
+  ref: v8.3.3-0-gdbeabeeb3e6791cb96994c2a7a084c36e62ccfb2
 
 build-depends:
 - (@): include/gcc-for-recc.yml

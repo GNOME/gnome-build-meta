@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:freeswitch/sofia-sip.git
   track: 'v*'
-  ref: v1.13.18-0-gad36ac8f755308e8b87f98a505e83d4e408e5cc3
+  ref: v1.13.19-0-g6dce59d35535e6dd3945c7b0f76dbf1ba884202d
 
 build-depends:
 - (@): include/gcc-for-recc.yml

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:gssapi/gssproxy.git
   track: "v*.*.*"
-  ref: v0.9.2-0-g27f883ff3a75dc7b52d0b0bd692f9eeb8ee53338
+  ref: v0.9.3-0-gb3f0827e190a6025f8510961fa6531ed60dcf644
 
 build-depends:
 - (@): include/gcc-for-recc.yml
