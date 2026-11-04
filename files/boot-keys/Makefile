@@ -6,11 +6,13 @@ KEY_TYPES=PK PK_MIC KEK KEK_MIC DB VENDOR MODULES SYSEXT
 ALL_CERTS=$(foreach KEY,$(KEY_TYPES),$(KEY).crt)
 ALL_KEYS=$(foreach KEY,$(KEY_TYPES),$(KEY).key)
 BOOT_KEYS=$(ALL_KEYS) $(ALL_CERTS) $(DIST_KEYS) extra-db/.keep extra-kek/.keep $(KERNEL_KEYRING_FILE)
-KERNEL_KEYS= \
-	tpm2-pcr-private.pem \
-	tpm2-pcr-public.pem \
-	fstab-tpm2-pcr-private.pem \
-	fstab-tpm2-pcr-public.pem
+KERNEL_KEYS=					\
+	legacy-tpm2-pcr-private.pem		\
+	legacy-tpm2-pcr-public.pem		\
+	legacy-fstab-tpm2-pcr-private.pem	\
+	legacy-fstab-tpm2-pcr-public.pem	\
+	system-tpm2-pcr-private.pem		\
+	system-tpm2-pcr-public.pem
 
 DIST_KEYS=private-key import-pubring.pgp
 KERNEL_KEYRING_FILE=modules/linux-module-cert.crt
@@ -25,27 +27,36 @@ modules/linux-module-cert.crt: $(KERNEL_KEYRING)
 	cat $(KERNEL_KEYRING) >$@
 
 ifeq ($(IMPORT_MODE),import)
-tpm2-pcr-private.pem:
+legacy-tpm2-pcr-private.pem:
 	echo "$${SECURE_BOOT_TPM_PCR_KEY}" >$@
-fstab-tpm2-pcr-private.pem:
+legacy-fstab-tpm2-pcr-private.pem:
 	echo "$${SECURE_BOOT_FSTAB_TPM_PCR_KEY}" >$@
+system-tpm2-pcr-private.pem:
+	echo "$${SECURE_BOOT_SYSTEM_TPM_PCR_KEY}" >$@
 else ifeq ($(IMPORT_MODE),snakeoil)
-tpm2-pcr-private.pem:
+legacy-tpm2-pcr-private.pem:
 	cp snakeoil/SECURE_BOOT_TPM_PCR_KEY $@
-fstab-tpm2-pcr-private.pem:
+legacy-fstab-tpm2-pcr-private.pem:
 	cp snakeoil/SECURE_BOOT_FSTAB_TPM_PCR_KEY $@
+system-tpm2-pcr-private.pem:
+	cp snakeoil/SECURE_BOOT_SYSTEM_TPM_PCR_KEY $@
 else
 # Also no IMPORT_MODE=local
-tpm2-pcr-private.pem:
+legacy-tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
-fstab-tpm2-pcr-private.pem:
+legacy-fstab-tpm2-pcr-private.pem:
+	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
+system-tpm2-pcr-private.pem:
 	openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out $@
 endif
 
-tpm2-pcr-public.pem: tpm2-pcr-private.pem
+legacy-tpm2-pcr-public.pem: legacy-tpm2-pcr-private.pem
 	openssl rsa -pubout -in $< -out $@
 
-fstab-tpm2-pcr-public.pem: fstab-tpm2-pcr-private.pem
+legacy-fstab-tpm2-pcr-public.pem: legacy-fstab-tpm2-pcr-private.pem
+	openssl rsa -pubout -in $< -out $@
+
+system-tpm2-pcr-public.pem: system-tpm2-pcr-private.pem
 	openssl rsa -pubout -in $< -out $@
 
 extra-db/.keep extra-kek/.keep:
@@ -125,7 +136,11 @@ show-keys-for-ci: generate-keys
 	  cat "$${key}.key";			\
 	done
 	@echo SECURE_BOOT_TPM_PCR_KEY
-	@cat tpm2-pcr-private.pem
+	@cat legacy-tpm2-pcr-private.pem
+	@echo SECURE_BOOT_FSTAB_TPM_PCR_KEY
+	@cat legacy-fstab-tpm2-pcr-private.pem
+	@echo SECURE_BOOT_SYSTEM_TPM_PCR_KEY
+	@cat system-tpm2-pcr-private.pem
 	@echo SECURE_BOOT_DISTRIBUTION_KEY
 	@gpg --homedir=private-key --export-secret-key --armor
 
@@ -135,7 +150,9 @@ export-snakeoil: generate-keys
 	  cat "$${key}.crt" >"snakeoil/SECURE_BOOT_$${key}_CRT";	\
 	  cat "$${key}.key" >"snakeoil/SECURE_BOOT_$${key}_KEY";	\
 	done
-	@cat tpm2-pcr-private.pem >snakeoil/SECURE_BOOT_TPM_PCR_KEY
+	@cat legacy-tpm2-pcr-private.pem >snakeoil/SECURE_BOOT_TPM_PCR_KEY
+	@cat legacy-fstab-tpm2-pcr-private.pem >snakeoil/SECURE_BOOT_FSTAB_TPM_PCR_KEY
+	@cat system-tpm2-pcr-private.pem >snakeoil/SECURE_BOOT_SYSTEM_TPM_PCR_KEY
 	@gpg --homedir=private-key --export-secret-key --armor >snakeoil/SECURE_BOOT_DISTRIBUTION_KEY
 
 clean:
@@ -143,7 +160,9 @@ clean:
 	rm -rf private-key
 	rm -f import-pubring.pgp
 	rm -f extra-{db,kek}/*.{owner,crt}
-	rm -f tpm2-pcr-{private,public}.pem
+	rm -f legacy-tpm2-pcr-{private,public}.pem
+	rm -f legacy-fstab-tpm2-pcr-{private,public}.pem
+	rm -f system-tpm2-pcr-{private,public}.pem
 	rm -f modules/linux-module-cert.crt
 
 .PHONY: generate-keys show-keys-for-ci clean

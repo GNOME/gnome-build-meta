@@ -103,7 +103,10 @@ If that does not says "yes", your TPM or firmware is too old. If it says yes, tr
 ```bash
 /usr/lib/systemd/systemd-pcrlock remove-policy
 /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+13+14+15
-systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs='' /dev/disk/by-partlabel/root
+systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs='' --tpm2-public-key-policyref=initrd /dev/disk/by-partlabel/root
 ```
+
+> [!note]
+> Version 51 and older should not use `--tpm2-public-key-policyref=initrd` in the command line.
 
 [^1]: UEFI can store multiple boot entries. They typically give a path to the EFI binary to call, and its parameters. Each disk also has a default boot, which is something like `EFI\BOOT\BOOT*.EFI`. If you want to boot that default, you need to boot the disk. So if you list UEFI boot entries, you will see names of operating systems as well as name of disks. Here we want to boot the disk the first time, so it will add the missing entry for GNOME OS.

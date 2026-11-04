@@ -2,9 +2,7 @@ kind: manual
 
 sources:
 - kind: local
-  path: files/boot-keys/tpm2-pcr-public.pem
-- kind: local
-  path: files/boot-keys/fstab-tpm2-pcr-public.pem
+  path: files/boot-keys/system-tpm2-pcr-public.pem
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-gnu.bst
@@ -15,6 +13,4 @@ variables:
 config:
   install-commands:
   - |
-    install -Dm644 tpm2-pcr-public.pem "%{install-root}%{datadir}/gnomeos/initrd-key.pem"
-  - |
-    install -Dm644 fstab-tpm2-pcr-public.pem "%{install-root}%{datadir}/gnomeos/fstab-key.pem"
+    install -Dm644 system-tpm2-pcr-public.pem "%{install-root}%{datadir}/gnomeos/system-key.pem"
