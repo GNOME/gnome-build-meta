@@ -94,8 +94,11 @@ systemctl enable clear-lockout.service
 By default we encrypt your hard drive if there's a tpm2 device available. The long term plan is to use systemd homed to encrypt user data, but until then you can replace the unattended luks decryption with a tpm2+pin key in luks using the following command.
 
 ```bash
-run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto /dev/disk/by-partlabel/root
+run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-with-pin=true --tpm2-device=auto --tpm2-public-key-policyref=initrd /dev/disk/by-partlabel/root
 ```
+
+> [!note]
+> Version 51 and older should not use `--tpm2-public-key-policyref=initrd` in the command line.
 
 ### Enabling secure boot
 

@@ -89,8 +89,11 @@ If you update your firmware or reset the uefi settings, you might be asked to ma
 ```bash
 run0 /usr/lib/systemd/systemd-pcrlock remove-policy
 run0 /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+14+15
-run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/disk/by-partlabel/root
+run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto --tpm2-public-key-policyref=initrd /dev/disk/by-partlabel/root
 ```
+
+> [!note]
+> Version 51 and older should not use `--tpm2-public-key-policyref=initrd` in the command line.
 
 ## Troubleshooting
 

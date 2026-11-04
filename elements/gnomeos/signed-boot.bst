@@ -107,35 +107,57 @@ config:
       --cmdline="%{kcmdline} usrhash=${roothash} gnomeos.safe-mode=1" \
       --output="profile-safe-mode.efi"
 
-    # Note: Our security model allows for an attacker to replace the rootfs
+    # There is one maine PCR key system-tpm2-pcr. It is used with 3 different
+    # policyref:
+    #  * initrd: To unlock only during initrd.
+    #  * fstab: To unlock during early boot.
+    #  * (no name): To unlock when the system is running.
+    #
+    # There are also 2 legacy keys without any policyref, only
+    # useful for migration:
+    #  * tpm2-pcr: The old initrd key, replaced with policyref "initrd".
+    #  * fstab-tpm2-pcr: The old fstab key, replaced with policyref "fstab".
+    #
+    # Our security model allows for an attacker to replace the rootfs
     # with a maliciously crafted one. This means that it's only safe to
     # unlock the real rootfs's encryption keys while in the initrd, before
     # we reach the leave-initrd pcrphase. For more details, including a
     # walkthrough of how such an attack would work, check out:
     # https://gitlab.gnome.org/GNOME/gnome-build-meta/-/issues/928
     #
-    # We have an extra key for /etc/fstab entries, but this should
-    # only be used for things that cannot take control of the
-    # system. So for example /etc cannot be mounted like that. But
-    # /home can. If you want to enroll such a disk, use
-    # `--tpm2-public-key=/usr/share/gnomeos/fstab-key.pem`.
+    # The fstab policyref is typically for /etc/fstab entries, but
+    # this should only be used for things that cannot take control of
+    # the system. So for example /etc cannot be mounted like that. But
+    # /home can.
     #
-    # It is important that --pcrpkey points the the initrd-only
-    # key. Not the fstab key. This is the key that will be
-    # automatically used to enroll /.
+    # It is important that cryptenroll and repart use policyref=initrd.
     ukify build \
       --output "%{install-root}/efi/EFI/Linux/gnomeos_%{image-version}.efi" \
       --os-release=@/etc/os-release \
       --cmdline="%{kcmdline} usrhash=${roothash}" \
       --uname="${version}" \
       --sign-initrd-pcrs \
+      --pcrpkey=system-tpm2-pcr-public.pem \
       --pcr-private-key=tpm2-pcr-private.pem \
       --pcr-public-key=tpm2-pcr-public.pem \
+      --policyref= \
       --phases="enter-initrd" \
-      --pcrpkey=tpm2-pcr-public.pem \
+      --pcr-private-key=system-tpm2-pcr-private.pem \
+      --pcr-public-key=system-tpm2-pcr-public.pem \
+      --policyref=initrd \
+      --phases="enter-initrd" \
+      --pcr-private-key=system-tpm2-pcr-private.pem \
+      --pcr-public-key=system-tpm2-pcr-public.pem \
+      --policyref=fstab \
+      --phases="enter-initrd:leave-initrd" \
       --pcr-private-key=fstab-tpm2-pcr-private.pem \
       --pcr-public-key=fstab-tpm2-pcr-public.pem \
+      --policyref= \
       --phases="enter-initrd:leave-initrd" \
+      --pcr-private-key=system-tpm2-pcr-private.pem \
+      --pcr-public-key=system-tpm2-pcr-public.pem \
+      --policyref= \
+      --phases="enter-initrd:leave-initrd enter-initrd:leave-initrd:sysinit enter-initrd:leave-initrd:sysinit:ready" \
       --secureboot-private-key=VENDOR.key \
       --secureboot-certificate=VENDOR.crt \
       --linux="/usr/lib/modules/${version}/vmlinuz" \
@@ -156,3 +178,7 @@ sources:
   path: files/boot-keys/fstab-tpm2-pcr-public.pem
 - kind: local
   path: files/boot-keys/fstab-tpm2-pcr-private.pem
+- kind: local
+  path: files/boot-keys/system-tpm2-pcr-public.pem
+- kind: local
+  path: files/boot-keys/system-tpm2-pcr-private.pem

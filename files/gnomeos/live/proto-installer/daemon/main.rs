@@ -258,15 +258,17 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
     let encrypt : String;
     let discard : String;
     let volume_name : String;
+    let policyref : String;
     if has_tpm2 {
         encrypt = "key-file+tpm2".to_string();
         discard = "Discard=yes\n".to_string();
         volume_name = "VolumeName=root\n".to_string();
-
+        policyref = "TPM2PublicKeyPolicyRef=initrd\n".to_string();
     } else {
         encrypt = "off".to_string();
         discard = "".to_string();
         volume_name = "".to_string();
+        policyref = "".to_string();
     }
 
     let mut esp = std::fs::File::create(path.join("10-esp.conf"))?;
@@ -326,6 +328,7 @@ async fn write_repart_d(path : &std::path::Path, has_tpm2 : bool) -> Result<(), 
         Type=root\n\
         Label=root\n\
         Encrypt={encrypt}\n\
+        {policyref}\
         {discard}\
         BlockDeviceReplace=/\n\
         {volume_name}"
