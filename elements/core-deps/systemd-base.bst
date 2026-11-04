@@ -6,16 +6,16 @@ kind: meson
 
 sources:
 - kind: git_repo
-  url: github:systemd/systemd.git
+  url: github:valentindavid/systemd.git
   (?):
   - channel == "nightly":
-      track: main
+      track: refs/heads/valentindavid/block-device-replace-dm-verity
   - channel == "stable":
       track: v*
       exclude:
       - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-1010-g558da3129cce0f4ab52cc03d7444d12355300daa
+  ref: v250-rc2-38585-g59d0d360b1b92c7e872cb6df3422ce5c853b4a0c
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -59,6 +59,8 @@ build-depends:
 - freedesktop-sdk.bst:components/bpf-maybe.bst
 - freedesktop-sdk.bst:components/libbpf.bst
 - freedesktop-sdk.bst:components/llvm.bst
+- freedesktop-sdk.bst:components/rust.bst
+- freedesktop-sdk.bst:components/rust-bindgen.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 config:
