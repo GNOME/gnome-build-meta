@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libshumate.git
   track: main
-  ref: 1.7.0-10-g5c9cd1e3d25116c187e5de1a97fe89ff3881bf92
+  ref: 1.7.0-12-g5985a5e475f26085774e5b0d3d93600f2880c5a3
 
 build-depends:
 - (@): include/gcc-for-recc.yml

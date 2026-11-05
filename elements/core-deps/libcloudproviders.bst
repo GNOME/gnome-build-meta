@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libcloudproviders.git
   track: '*.*.*'
-  ref: 0.4.1-0-g74def66cd39ab692b0d477f18250add12aafd394
+  ref: 0.4.2-0-gfffdc5c391807e8d00b26adf11182ccad4be8350
 
 build-depends:
 - (@): include/gcc-for-recc.yml
