@@ -57,6 +57,38 @@ static bool mask_unit(const char *generator_path, const char* name) {
         return true;
 }
 
+static bool generate_unit_config(const char *generator_path, const char* name, const char* config, const char *format, ...) __attribute__ ((format (printf, 4, 5)));
+
+static bool generate_unit_config(const char *generator_path, const char* name, const char* config, const char *format, ...) {
+        va_list args;
+        _cleanup_(freestr) char* dir_path = NULL;
+        _cleanup_(freestr) char* path = NULL;
+        _cleanup_(fclosep) FILE* file = NULL;
+
+        if (0 > asprintf(&dir_path, "%s/%s.d", generator_path, name)) {
+                kmsg(3, "Could not format string\n");
+                return false;
+        }
+        mkdir(dir_path, 0777);
+
+        if (0 > asprintf(&path, "%s/%s.d/%s", generator_path, name, config)) {
+                kmsg(3, "Could not format string\n");
+                return false;
+        }
+
+        file = fopen(path, "w");
+        if (!file) {
+                kmsg(3, "Cannot open %s: %s\n", path, STRERROR(errno));
+                return false;
+        }
+
+        va_start(args, format);
+        vfprintf(file, format, args);
+        va_end(args);
+
+        return true;
+}
+
 static bool generate_unit(const char *generator_path, const char* name, const char *format, ...) __attribute__ ((format (printf, 3, 4)));
 
 static bool generate_unit(const char *generator_path, const char* name, const char *format, ...) {
@@ -138,12 +170,27 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
                 fprintf(file, "[zram1]\nmount-point=/sysroot\nfs-type=btrfs\n");
                 fclosep(&file);
 
+                if (!generate_unit_config(generator_path, "systemd-zram-setup@zram1.service", "dependencies.conf",
+                                          "[Unit]\n"
+                                          "Before=initrd-root-device.target\n"))
+                        return false;
+
                 if (!enable_unit(generator_path, "initrd-root-device.target.wants", "systemd-zram-setup@zram1.service", "/usr/lib/systemd/system"))
+                        return false;
+
+                if (!generate_unit_config(generator_path, "sysroot.mount", "dependencies.conf",
+                                          "[Unit]\n"
+                                          "Before=initrd-root-fs.target\n"))
                         return false;
 
                 if (!enable_unit(generator_path, "initrd-root-fs.target.requires", "sysroot.mount", ".."))
                         return false;
 
+                if (!generate_unit_config(generator_path, "sysroot-usr.mount", "dependencies.conf",
+                                          "[Unit]\n"
+                                          "Requires=sysroot.mount\n"
+                                          "After=sysroot.mount\n"))
+                        return false;
         } else {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
                 file = fopen("/run/systemd/zram-generator.conf.d/zram1.conf", "w");
