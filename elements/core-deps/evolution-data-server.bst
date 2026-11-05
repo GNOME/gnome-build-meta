@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:evolution-data-server.git
   track: master
-  ref: 3.62.0-63-g92208d4bb1d76409bf47e3c9ed0f688a04397bc6
+  ref: 3.62.0-70-g961cfbb80572e28f809ac9e4702377b2e10ba163
 
 build-depends:
 - (@): include/gcc-for-recc.yml
