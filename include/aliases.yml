@@ -40,6 +40,7 @@ aliases:
   snowballstem: https://snowballstem.org/dist/
   sourceforge: https://downloads.sourceforge.net/
   webkitgtk: https://webkitgtk.org/releases/
+  nlnetlabs: https://www.nlnetlabs.nl/downloads/
 
   # git aliases go here
   android: https://android.googlesource.com/
