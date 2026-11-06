@@ -1,0 +1,38 @@
+From 3c82487d18226c197925ccdc14e38d51297fe75a Mon Sep 17 00:00:00 2001
+From: Sebastian Wick <sebastian.wick@redhat.com>
+Date: Fri, 30 Oct 2026 15:43:19 +0100
+Subject: [PATCH] linux: Enable CONFIG_RMI4_SMB
+
+Synaptics touchpads natively speak RMI4 but without the SMBus
+transport they fall back to PS/2 which is unreliable on some
+hardware. Enable RMI4_SMB so the kernel can hand these touchpads
+off to the rmi_smbus driver.
+---
+ files/linux/fdsdk-config.sh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git ./files/linux/fdsdk-config.sh ../files/linux/fdsdk-config.sh
+index 820eaacaa..baa538426 100644
+--- ./files/linux/fdsdk-config.sh
++++ ../files/linux/fdsdk-config.sh
+@@ -2056,16 +2056,17 @@ module HID_PLANTRONICS
+ module HID_PLAYSTATION
+ enable PLAYSTATION_FF
+ module HID_PRIMAX
+ module HID_PRODIKEYS
+ module HID_RETRODE
+ module HID_RMI
+ # Touchscreen for OnePlus 6
+ module RMI4_I2C
++module RMI4_SMB
+ enable RMI4_F55
+ module HID_ROCCAT
+ module HID_SAITEK
+ module HID_SEMITEK
+ module HID_SENSOR_ACCEL_3D
+ module HID_SENSOR_ALS
+ module HID_SENSOR_DEVICE_ROTATION
+ module HID_SENSOR_GYRO_3D
+-- 
+2.56.0
+
