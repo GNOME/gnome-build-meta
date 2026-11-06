@@ -1,0 +1,10 @@
+[Unit]
+Description=Relabel btrfs live filesystem
+Before=initrd-root-device.target
+Wants=systemd-zram-setup@zram1.service
+After=systemd-zram-setup@zram1.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=btrfs filesystem label /dev/zram1 root
