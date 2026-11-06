@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-text-editor.git
   track: main
-  ref: 51.0-7-g16542f0f4c37779465de29bebdf5c4e4f2a182d1
+  ref: 51.0-12-g78f0a4e108989148ab1073f3db5c315c78f43c34
 
 build-depends:
 - (@): include/gcc-for-recc.yml
