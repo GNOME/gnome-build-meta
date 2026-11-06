@@ -80,6 +80,11 @@ install_data(
   install_dir : systemdsystemunitdir / 'systemd-zram-setup@.service.d'
 )
 
+install_data(
+  'gnomeos-relabel-ram-disk.service',
+  install_dir: systemdsystemunitdir,
+)
+
 subdir('proto-installer')
 
 cargo  = find_program('cargo')

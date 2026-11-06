@@ -12,7 +12,8 @@ install() {
         /usr/lib/systemd/system/systemd-zram-setup@.service \
         /usr/lib/systemd/system/systemd-zram-setup@.service.d/requires-device.conf \
         /usr/lib/systemd/system/systemd-repart.service.d/live.conf \
-        /usr/lib/systemd/system/systemd-tpm2-setup-early.service.d/live.conf
+        /usr/lib/systemd/system/systemd-tpm2-setup-early.service.d/live.conf \
+        /usr/lib/systemd/system/gnomeos-relabel-ram-disk.service
 
     for path in $(modinfo -k "${kernelver}" -b /usr -n zram); do
         case "${path}" in
