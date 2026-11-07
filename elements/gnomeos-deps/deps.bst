@@ -10,6 +10,7 @@ depends:
 - core/systemd-presets.bst
 - gnomeos-deps/preset-all.bst
 - gnomeos-deps/gnome-mimeapps.bst
+- gnomeos-deps/ntsync.bst
 
 - freedesktop-sdk.bst:components/xdg-desktop-portal.bst
 - core-deps/xdg-desktop-portal-gnome.bst
