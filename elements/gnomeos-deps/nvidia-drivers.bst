@@ -4,8 +4,8 @@ sources:
 - kind: remote
   # Find the latest version from here https://www.nvidia.com/en-us/drivers/unix/ 
   # or https://download.nvidia.com/XFree86/Linux-x86_64/latest.txt for the "production" branch
-  url: nvidia:XFree86/Linux-x86_64/615.78.08/NVIDIA-Linux-x86_64-615.78.08.run
-  ref: 3e3f6dddc2ee767a08185300af7be3cb286ece76698d2dde3524599782d07ffe
+  url: nvidia:XFree86/Linux-x86_64/620.70.06/NVIDIA-Linux-x86_64-620.70.06.run
+  ref: 29118e3abd08c07559bcca3d9c76238d039490af0362a2e5bcfcbe7204afd4b1
 - kind: local
   path: files/nvidia-config/modprobe.conf
   directory: local-config
@@ -236,8 +236,9 @@ config:
 
     install -Dm755 -t "%{install-root}%{bindir}/" nvidia-ngx-updater
     install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/" libnvidia-ngx.so*
-    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" _nvngx.dll*
-    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" nvngx*.dll*
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" _nvngx.dll
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/" nvngx*.dll
+    install -Dm644 -t "%{install-root}%{libdir}/GL/default/lib/nvidia/wine/ngx-builtins/" ngx-builtins/*.dll
 
   # nvfbc
   - |
