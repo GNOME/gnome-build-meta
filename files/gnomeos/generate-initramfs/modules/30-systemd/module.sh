@@ -204,5 +204,7 @@ install() {
     install_files /usr/lib/tmpfiles.d/systemd.conf
     install_files /usr/lib/tmpfiles.d/20-systemd-stub.conf
 
-    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service systemd-pcrextend.socket systemd-keyring-setup.service
+    systemctl -q --root "${root}" enable systemd-confext-sysroot.service systemd-sysext-sysroot.service systemd-pcrextend.socket
+
+    systemctl -q --root "${root}" add-requires sysinit.target systemd-keyring-setup.service
 }
