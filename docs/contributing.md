@@ -66,6 +66,12 @@ First, create a workspace for the component you want to work on; for example for
 bst workspace open core/gnome-control-center.bst --directory ../gnome-control-center/
 ```
 
+You can also open a workspace for an element across a junction:
+
+```shell
+bst workspace open freedesktop-sdk.bst:components/wireplumber.bst --directory ../wireplumber/
+```
+
 Or if you already have an existing checkout at the destination, for example one that you were already working on, add the `--no-checkout` option as without it the workspace won't be created:
 
 ```shell
