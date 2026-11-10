@@ -1,0 +1,74 @@
+From abf96e082671051d1fc75eb67f89f9fa75cb73e8 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 9 Nov 2026 22:24:46 -0500
+Subject: [PATCH 1/2] linux-pam: Drop pam_lastlog
+
+In GNOME OS, pam_lastlog is noisy and we've had a long-standing issue
+[1] to silence it. Its output is highly technical, not very useful, and
+delays graphical log-in (GDM does an artificial 2-second wait to ensure
+you can read the PAM notice)
+
+pam_lastlog also happens to not be Y2K38 compliant. A replacement called
+pam_lastlog2 exists, but I spoke to the maintainer at All Systems Go
+this year and was told that it's not _really_ needed beyond
+backwards-compatibility with, like, scripts that use it on the
+command-line (which traditional distros like Fedora and OpenSUSE care
+enough about to make pam_lastlog2)
+
+Anyway, it seems that for us it's better to just drop lastlog entirely
+
+[1]: https://gitlab.gnome.org/GNOME/gnome-build-meta/-/work_items/650
+---
+ elements/components/linux-pam-base.bst | 1 -
+ files/linux-pam-config/postlogin       | 3 ---
+ 2 files changed, 4 deletions(-)
+
+diff --git a/elements/components/linux-pam-base.bst b/elements/components/linux-pam-base.bst
+index 6275e100d9..fb3cb9eb28 100644
+--- a/elements/components/linux-pam-base.bst
++++ b/elements/components/linux-pam-base.bst
+@@ -25,7 +25,6 @@ depends:
+ 
+ variables:
+   meson-local: >-
+-    -Dpam_lastlog=enabled
+     -Dexamples=false
+     -Dlogind=disabled
+     -Dnis=disabled
+diff --git a/files/linux-pam-config/postlogin b/files/linux-pam-config/postlogin
+index f71e4ebf0e..9222675a5c 100644
+--- a/files/linux-pam-config/postlogin
++++ b/files/linux-pam-config/postlogin
+@@ -1,4 +1 @@
+ session optional                   pam_umask.so silent
+-session [success=1 default=ignore] pam_succeed_if.so service !~ gdm* service !~ su* quiet
+-session [default=1]                pam_lastlog.so nowtmp showfailed
+-session optional                   pam_lastlog.so silent noupdate showfailed
+-- 
+GitLab
+
+
+From e9acc71542a6630ff13453ccbaa0e1aa25a79d89 Mon Sep 17 00:00:00 2001
+From: Adrian Vovk <adrianvovk@gmail.com>
+Date: Mon, 9 Nov 2026 22:38:13 -0500
+Subject: [PATCH 2/2] linux-pam-config: system-auth: Enable fprintd
+
+This allows polkit prompts to authenticate via the fingerprint sensor if
+configured, and matches Fedora's authconfig
+---
+ files/linux-pam-config/system-auth | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/files/linux-pam-config/system-auth b/files/linux-pam-config/system-auth
+index 40098e84b3..b1a72e1915 100644
+--- a/files/linux-pam-config/system-auth
++++ b/files/linux-pam-config/system-auth
+@@ -1,5 +1,6 @@
+ auth        required      pam_env.so
+ -auth       sufficient    pam_systemd_home.so
++-auth       sufficient    pam_fprintd.so
+ auth        sufficient    pam_unix.so try_first_pass nullok_secure
+ auth        required      pam_deny.so
+ 
+-- 
+GitLab
