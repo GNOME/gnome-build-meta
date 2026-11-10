@@ -5,7 +5,6 @@ depends:
 - gnomeos-deps/deps.bst
 
 # OS-related config
-- gnomeos/fwupd-efi-signed-maybe.bst
 - gnomeos/import-deployment-pub-key.bst
 - gnomeos/public-keys.bst
 - gnomeos/replace-signed-systemd-boot.bst

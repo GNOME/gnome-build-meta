@@ -28,8 +28,6 @@ depends:
 - freedesktop-sdk.bst:components/cairo.bst
 - freedesktop-sdk.bst:components/curl.bst
 - freedesktop-sdk.bst:components/efivar.bst
-- freedesktop-sdk.bst:components/genpeimg.bst
-- freedesktop-sdk.bst:components/gnu-efi-maybe.bst
 - freedesktop-sdk.bst:components/harfbuzz.bst
 - freedesktop-sdk.bst:components/libcbor.bst
 - freedesktop-sdk.bst:components/libdrm.bst
@@ -45,29 +43,19 @@ depends:
 - freedesktop-sdk.bst:components/tpm2-tss.bst
 - freedesktop-sdk.bst:extensions/mesa/libdrm.bst
 
-(?):
-- arch in ["aarch64", "x86_64"]:
-    depends:
-      (>):
-      - core-deps/fwupd-efi.bst
-
 environment:
   PKG_CONFIG_PATH: '%{libdir}/GL/default/lib/pkgconfig:'
 
 variables:
   meson-local: >-
-    -Defi_binary=%{efi_binary}
     -Dhsi=%{hsi_feature}
     -Dvendor_ids_dir='%{datadir}/hwdata'
     -Dumockdev_tests=disabled
     -Defi_os_dir=org.gnome.os
     -Dvalgrind=disabled
 
-  efi_binary: 'false'
   hsi_feature: 'disabled'
 
   (?):
-  - arch in ["aarch64", "x86_64"]:
-      efi_binary: 'true'
   - arch in ["x86_64"]:
       hsi_feature: 'enabled'

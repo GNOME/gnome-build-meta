@@ -8,7 +8,6 @@ depends:
 - gnomeos/sysupdate-config.bst
 - gnomeos/import-deployment-pub-key.bst
 - gnomeos/os-release.bst
-- gnomeos/fwupd-efi-signed-maybe.bst
 - gnomeos/replace-signed-systemd-boot.bst
 - gnomeos/live.bst
 - gnomeos/systemd-pcrlock-workaround.bst
