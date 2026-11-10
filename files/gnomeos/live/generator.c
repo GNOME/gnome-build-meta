@@ -194,6 +194,9 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
 
                 if (!enable_unit(generator_path, "initrd-root-device.target.wants", "gnomeos-relabel-ram-disk.service", "/usr/lib/systemd/system"))
                         return false;
+
+                if (!enable_unit(generator_path, "initrd.target.wants", "gnomeos-pcrextend-live.service", "/usr/lib/systemd/system"))
+                        return false;
         } else {
                 mkdir("/run/systemd/zram-generator.conf.d", 0777);
                 file = fopen("/run/systemd/zram-generator.conf.d/zram1.conf", "w");

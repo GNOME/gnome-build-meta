@@ -1,0 +1,12 @@
+[Unit]
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=tpm2.target systemd-pcrnvdone.service
+Before=initrd-switch-root.target shutdown.target
+ConditionPathExists=/etc/initrd-release
+ConditionSecurity=measured-os
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-pcrextend --pcr=15 gnomeos:live

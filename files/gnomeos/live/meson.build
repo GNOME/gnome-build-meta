@@ -85,6 +85,11 @@ install_data(
   install_dir: systemdsystemunitdir,
 )
 
+install_data(
+  'gnomeos-pcrextend-live.service',
+  install_dir: systemdsystemunitdir,
+)
+
 subdir('proto-installer')
 
 cargo  = find_program('cargo')
