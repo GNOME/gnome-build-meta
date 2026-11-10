@@ -104,29 +104,19 @@ You can enable secure boot by enrolling the keys we provide.
 > [!warning]
 > This might soft brick your computer if you do not know what you are doing. And even if done correctly, this might prevent firmware updates in some cases.
 
+First, prepare by unlocking some of the relevant PCRs, to prepare the TPM for the upcoming change in secure boot state. Doing this ahead of time lets you skip a TPM recovery step. Note that these locks will be re-enabled on the next boot.
+
+```bash
+run0 /usr/lib/systemd/systemd-pcrlock unlock-secureboot-policy
+```
+
+Then, enroll our secure boot keys:
+
 * Go in your firmware (BIOS) settings and find the Secure Boot options
 * Select "setup mode" or "clear keys". You might need to enable Secure Boot for the option to be available
 * Save your changes and reboot
 * The boot loader will provide two new entries. Select "default". This contains also the Microsoft keys which means it will allow firmware to be loaded from option ROMs. "private" will forbid those, which is a bad idea if you are not sure if you have option ROMs
 * Wait 15 seconds.
-
-Once you have enabled secure boot, you can lock the PCRs to that state with:
-
-```bash
-systemctl enable systemd-pcrlock-secureboot-authority.service
-systemctl enable systemd-pcrlock-secureboot-policy.service
-```
-
-### Locking firmware to PCRs
-
-You can lock the PCRs to the firmware with the following:
-
-```bash
-systemctl enable systemd-pcrlock-firmware-code.service
-systemctl enable systemd-pcrlock-firmware-config.service
-```
-
-This will disallow firmware update.
 
 ## uinput, hidraw
 

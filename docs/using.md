@@ -73,15 +73,6 @@ After rebooting, you should be using the Nvidia driver.
 
 If an update breaks something, you can always boot into an older version. You can do this quickly by pressing any key during boot to enter the menu, and then choosing a different version from the list.
 
-## Updating firmware
-
-Before applying a firmware update, you need to unlock the firmware PCR values. This will automatically recreate a pcrlock policy on next boot
-
-```bash
-run0 /usr/lib/systemd/systemd-pcrlock unlock-firmware-code
-run0 /usr/lib/systemd/systemd-pcrlock unlock-firmware-config
-```
-
 ## Re-enroll tpm2 if needed
 
 If you update your firmware or reset the uefi settings, you might be asked to manually unlock your hard drive, instead of happening automatically. This is because the state of the machine has changed without the OS knowing about it. In such case you will need to re-enroll the tpm2 values for the updated firmware keys. (We are exploring ways to make this easier in the future)
