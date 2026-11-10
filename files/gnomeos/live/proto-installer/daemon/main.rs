@@ -189,6 +189,15 @@ async fn do_install_handle_errors(obj_server: &zbus::ObjectServer, conn : &Conne
     Ok(())
 }
 
+async fn setup_srk() -> Result<(), InstallerError> {
+    let cmd = Command::new("/usr/lib/systemd/systemd-tpm2-setup")
+        .spawn()?
+        .wait().await?;
+    cmd.code().filter(|code| *code == 0 || *code == 69)
+        .ok_or(CommandError::new("systemd-tpm2-setup", cmd))?;
+    Ok(())
+}
+
 async fn pcrlock_unlock(what: &str) -> Result<(), InstallerError> {
     let cmd = Command::new("/usr/lib/systemd/systemd-pcrlock")
         .arg(format!("unlock-{what}"))
@@ -211,6 +220,7 @@ async fn remove_policy() -> Result<(), InstallerError> {
 
 async fn make_policy() -> Result<(), InstallerError> {
     try_join!(
+        setup_srk(),
         pcrlock_unlock("firmware-config"),
         remove_policy(),
     )?;
