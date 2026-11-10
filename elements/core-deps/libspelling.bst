@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libspelling.git
   track: main
-  ref: 0.4.10-36-gd0f19d2a56ed7abf70da3f9856c1c67843d20dd5
+  ref: 0.4.10-40-g6611595cdaad89d70768b8884c4614a1a2209d8f
 
 build-depends:
 - (@): include/gcc-for-recc.yml
