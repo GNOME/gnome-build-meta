@@ -1,0 +1,36 @@
+From 19314479a7be276a955e08dded284f6ff8b2dfa4 Mon Sep 17 00:00:00 2001
+From: Mario Limonciello <mario.limonciello@amd.com>
+Date: Mon, 9 Nov 2026 15:29:27 -0600
+Subject: [PATCH] lenovo-thinklmi: only inhibit on BootOrder lock when
+ fwupd-efi is needed
+
+Fixes: https://github.com/fwupd/fwupd/issues/11384
+(cherry picked from commit f8e5072f2e32a37f1fd912589f333944836a795f)
+---
+ plugins/lenovo-thinklmi/fu-lenovo-thinklmi-plugin.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/plugins/lenovo-thinklmi/fu-lenovo-thinklmi-plugin.c b/plugins/lenovo-thinklmi/fu-lenovo-thinklmi-plugin.c
+index 55f25f56cffa..3e19ba9f18a0 100644
+--- a/plugins/lenovo-thinklmi/fu-lenovo-thinklmi-plugin.c
++++ b/plugins/lenovo-thinklmi/fu-lenovo-thinklmi-plugin.c
+@@ -18,6 +18,8 @@ G_DEFINE_TYPE(FuLenovoThinklmiPlugin, fu_lenovo_thinklmi_plugin, FU_TYPE_PLUGIN)
+ #define BIOS_SETTING_BOOT_ORDER_LOCK "com.thinklmi.BootOrderLock"
+ #define BIOS_SETTING_SECURE_ROLLBACK "com.thinklmi.SecureRollBackPrevention"
+ 
++#define FU_UEFI_CAPSULE_DEVICE_FLAG_USE_FWUPD_EFI "use-fwupd-efi"
++
+ static gboolean
+ fu_lenovo_thinklmi_plugin_startup(FuPlugin *plugin, FuProgress *progress, GError **error)
+ {
+@@ -61,7 +63,9 @@ fu_lenovo_thinklmi_plugin_uefi_capsule_registered(FuContext *ctx, FuDevice *devi
+ 		g_debug("failed to find %s in cache", BIOS_SETTING_BOOT_ORDER_LOCK);
+ 		return;
+ 	}
+-	if (g_strcmp0(fwupd_bios_setting_get_current_value(attr), "Enable") == 0) {
++	/* bootloaders handling capsules themselves do not need to write BootOrder */
++	if (g_strcmp0(fwupd_bios_setting_get_current_value(attr), "Enable") == 0 &&
++	    fu_device_has_private_flag(device, FU_UEFI_CAPSULE_DEVICE_FLAG_USE_FWUPD_EFI)) {
+ 		fu_device_inhibit(device,
+ 				  "uefi-capsule-bootorder",
+ 				  "BootOrder is locked in firmware setup");
