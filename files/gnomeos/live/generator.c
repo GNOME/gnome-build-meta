@@ -273,6 +273,13 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
                                    "Where=/efi\n"
                                    "TimeoutIdleSec=120\n"))
                         return false;
+
+                /* pcrlock during live boot would lock pcr 15 that should not never be locked during live boot */
+                if (!mask_unit(generator_path, "systemd-sysupdate-notify-pcrlock@.service"))
+                        return false;
+
+                if (!mask_unit(generator_path, "systemd-sysupdate-notify-pcrlock.socket"))
+                        return false;
         }
 
         return true;
