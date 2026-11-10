@@ -116,6 +116,8 @@ depends:
 
 - gnomeos-deps/oo7-cli.bst
 
+- gnomeos-deps/lock-pcr4.bst
+
 (?):
 - arch == "x86_64":
     depends:

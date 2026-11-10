@@ -1,0 +1,10 @@
+[Unit]
+DefaultDependencies=no
+Conflicts=shutdown.target
+After=systemd-tpm2-setup.service
+After=systemd-remount-fs.service var.mount
+Before=shutdown.target
+ConditionPathExists=/var/lib/pcrlock.d/620-shim.pcrlock
+
+[Service]
+ExecStart=/usr/lib/gnomeos/lock-pcr4.sh make-policy

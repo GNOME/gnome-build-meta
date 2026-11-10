@@ -15,7 +15,7 @@ enable systemd-pcrlock-secureboot-policy.service
 
 # Firmware config should not be locked by default. It should be locked
 # by users who want to lock their BIOS configuration.
-disable systemd-pcrlock-firmware-config.service
+enable systemd-pcrlock-firmware-config.service
 
 # It should be safe to lock secureboot-authority for now since we
 # do not update shim. But once when we add support for update of shim,
@@ -24,3 +24,7 @@ enable systemd-pcrlock-secureboot-authority.service
 
 # Disable any new locks
 disable systemd-pcrlock-*.service
+
+disable systemd-sysupdate-notify-pcrlock.socket
+enable lock-pcr4.socket
+enable lock-pcr4.service
