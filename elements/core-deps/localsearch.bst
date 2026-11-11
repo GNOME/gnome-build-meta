@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:localsearch.git
   track: main
-  ref: 3.12.0-36-g944c1b8354be78bf11b95457a1041bbd1ee38fae
+  ref: 3.12.0-37-gd83b33342a172aa6599006f01328857ad72d6c8e
 
 build-depends:
 - (@): include/gcc-for-recc.yml

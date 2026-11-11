@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:folks.git
   track: main
-  ref: 0.15.12-14-g5348a1325448d9c44bf3573c82f6159e68787f0b
+  ref: 0.15.12-15-g6fcd34fd999de5d9e972306749ed1afdf104883e
 
 build-depends:
 - (@): include/gcc-for-recc.yml
