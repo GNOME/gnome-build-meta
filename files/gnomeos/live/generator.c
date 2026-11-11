@@ -273,6 +273,25 @@ static bool handle_live(const char *generator_path, bool in_initrd) {
                                    "Where=/efi\n"
                                    "TimeoutIdleSec=120\n"))
                         return false;
+
+                /* During live boot, we cannot allow pcr 15 to get locked */
+                const char* systemd_pcrlock_workaround =
+                        "[Service]\n"
+                        "ExecStart=\n"
+                        "ExecStart=/usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4+5+7+11+14\n";
+
+                if (!generate_unit_config(generator_path, "systemd-pcrlock-make-policy.service", "systemd-pcrlock-workaround.conf",
+                                          systemd_pcrlock_workaround))
+                        return false;
+
+                if (!generate_unit_config(generator_path, "systemd-pcrlock@.service", "systemd-pcrlock-workaround.conf",
+                                          systemd_pcrlock_workaround))
+                        return false;
+
+                if (!generate_unit_config(generator_path, "systemd-sysupdate-notify-pcrlock@.service", "systemd-pcrlock-workaround.conf",
+                                          systemd_pcrlock_workaround))
+                        return false;
+
         }
 
         return true;
