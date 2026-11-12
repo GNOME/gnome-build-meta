@@ -3,7 +3,7 @@ sources:
 - kind: git_repo
   url: gnome:adwaita-icon-theme.git
   track: master
-  ref: 51.0-4-g75a7cc2fbfc43226f82bbca6edf74ba5ebba211f
+  ref: 51.0-5-g2066120e58cf17939ac337dccfc1b67047dd19e3
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
