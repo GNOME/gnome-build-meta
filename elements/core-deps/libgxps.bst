@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libgxps.git
   track: master
-  ref: 0.3.2-40-gba8d4f6981f7ffc3572fc0afcb3a6b2637be3859
+  ref: 0.3.2-66-g87d5175aa8866d027e73d6c01e5ddc2f6679407d
 
 build-depends:
 - (@): include/gcc-for-recc.yml
