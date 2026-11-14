@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gdm.git
   track: main
-  ref: 51.0-26-g500a425bcf9017bf622e0d3d345434c8903b28fe
+  ref: 51.0-27-g8b11b8a50c3bb0863366fc8dc62c6f38b46fd25f
 - kind: local
   path: files/gdm
   directory: gdm-config
