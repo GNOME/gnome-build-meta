@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libpanel.git
   track: main
-  ref: 1.10.4-20-g1d8c714703111bb9f2e9dd22cc2b288c1beda09c
+  ref: 1.10.4-21-g2ccec37c18b7716034909d2e0712d2548c010cc3
 
 build-depends:
 - (@): include/gcc-for-recc.yml
