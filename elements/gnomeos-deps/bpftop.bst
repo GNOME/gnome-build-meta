@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:Netflix/bpftop.git
   track: 'v*'
-  ref: v0.9.0-0-g35de7182f1603c9e45d4b7d21bd79fc0da89a195
+  ref: v0.9.1-0-g2e13fd5240b96a6b0e7b5d0364dcd3bc43f30864
 - kind: cargo2
   ref:
   - kind: registry
@@ -109,8 +109,8 @@ sources:
     sha: 613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724
   - kind: registry
     name: circular-buffer
-    version: 1.1.0
-    sha: 23bdce1da528cadbac4654b5632bfcd8c6c63e25b1d42cea919a95958790b51d
+    version: 2.0.1
+    sha: 662f6b21c6e889ee4e3f449e197c40f03603472fcd40c709093d386e3dca07cf
   - kind: registry
     name: clap
     version: 4.5.45
@@ -911,7 +911,6 @@ sources:
     name: wit-parser
     version: 0.244.0
     sha: ecc8ac4bc1dc3381b7f59c34f00b67e18f910c2c0f50015669dde7def656a736
-
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/make.bst

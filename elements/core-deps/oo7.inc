@@ -12,7 +12,7 @@ sources:
       - '*alpha*'
       - '*beta*'
       - '*rc*'
-  ref: v0.6.0-alpha-311-g9b98307b405af3de93ee1768d3f845851da9f115
+  ref: v0.6.0-alpha-372-g5c3257f6706884d67b0cb41ef172d89ce7cc9bc3
 - kind: cargo2
   ref:
   - kind: registry
@@ -47,13 +47,10 @@ sources:
     name: anyhow
     version: 1.0.104
     sha: 330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470
-  - kind: git
-    commit: 9204635fed05c1ee880c0f8bd3c5888797dd1383
-    repo: github:bilelmoussaoui/ashpd
-    query:
-      branch: main
+  - kind: registry
     name: ashpd
-    version: 0.13.0
+    version: 0.14.0
+    sha: 8ba377f1fb1e3972907220f1f8e7c0a45164580905c981d872c1fb90d921cbcc
   - kind: registry
     name: async-channel
     version: 2.5.0
@@ -812,8 +809,8 @@ sources:
     sha: ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc
   - kind: registry
     name: winnow
-    version: 1.0.4
-    sha: 23b97319f7b8343df12cc98938e5c3eb436064524c8d2b4e30a1d3a36eecdf81
+    version: 1.0.5
+    sha: 8c3b93199df0ab874cdf0c6a94f0a0dc3423fe41f1cafb62b8bd7b1deb277aef
   - kind: registry
     name: wit-bindgen
     version: 0.57.1

@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:feedbackd/feedbackd.git
   track: 'v*.*.*'
-  ref: v0.8.10-0-g05e685aad1147d399f0e8c7b091b160afeb4fb94
+  ref: v0.8.11-0-g788c1a3255ccd437cf4d39d8e0edc84d581bc1d7
 
 build-depends:
 - (@): include/gcc-for-recc.yml
