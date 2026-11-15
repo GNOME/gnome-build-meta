@@ -9,9 +9,9 @@ sources:
   - channel == "stable":
       track: "*.*"
       exclude:
-      - '*-alpha*'
-      - '*-beta*'
-      - '*-rc*'
+      - '*alpha*'
+      - '*beta*'
+      - '*rc*'
   ref: v0.6.0-alpha-311-g9b98307b405af3de93ee1768d3f845851da9f115
 - kind: cargo2
   ref:
