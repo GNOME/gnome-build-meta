@@ -14,7 +14,7 @@ variable:
 * unset (default): generate a full set of new keys locally.
 * `snakeoil`: use pregenerated 'snakeoil' keys which are committed to the repo
 * `local`: use 'snakeoil' for the root keys (PK, KEK and DB), generate the rest
-  locally.
+  locally. This is useful when using a Machine Owner Key (MOK).
 * `import`: read pregenerated keys from environment variables
 
 See below for some guidance on which mode to use.
@@ -107,6 +107,56 @@ your chosen keys.
 The latter option means the firmware will additionally allow any software
 allowed by the Microsoft keys. This is useful if you want to allow the
 machine to dual boot into other operating systems.
+
+## Managing a Machine Owner Key
+
+Machine Owner Key (MOK) can be used for:
+
+* Locally built GNOME OS image.
+* Locally built kernel modules.
+* Locally build UKI addons (for custom kernel command lines).
+
+When building a local image of GNOME OS, after generating
+keys with `IMPORT_MODE=local`, the certificate file
+`files/boot-keys/VENDOR.der` can be used. In other
+cases, users can generation an x509 certificate
+in DER format.
+
+There are several ways to enable a MOK, eithe using
+`mokutil` or by running shim's MOK manager.
+
+### Enrolling a MOK using mokutil
+
+`mokutil` is available on the developement extension. You can enroll
+the key as follow.
+
+```bash
+mokutil --import files/boot-keys/VENDOR.der
+```
+
+`mokutil` will request a password as a challenge.
+
+Then reboot. During boot, the MOK manager will start automatically
+and propose to enroll the key asking for the password again.
+
+### Enrolling a MOK using MOK manager directly
+
+In some cases, for example when a kernel command line is required to
+have a function system, it is not possible to call `mokutil` with
+secure boot enabled. In that case it is possible to just enter the MOK
+manager directly.
+
+Create file `/boot/loader/entries/mm.conf` with the following content:
+
+```txt
+title MOK Manager
+efi   /EFI/BOOT/mmx64.efi
+```
+
+Copy `files/boot-keys/VENDOR.der` into `/boot`.
+
+Then the boot loader will have an entry "MOK Manager". Use that
+to enroll key from disk.
 
 ## Further reading
 

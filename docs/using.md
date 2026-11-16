@@ -83,6 +83,25 @@ run0 /usr/lib/systemd/systemd-pcrlock make-policy --location=770 --pcr=0+1+2+3+4
 run0 systemd-cryptenroll --wipe-slot=tpm2 --tpm2-device=auto /dev/disk/by-partlabel/root
 ```
 
+## Kernel command line
+
+If your hardware require a work-around as form of kernel command line
+you may set it as a Unified Kernel Image add-on. This can be generated
+by `ukify`. For example:
+
+```bash
+ukify build --cmdline='i915.enable_dc=0' --output=disable-dc.addon.efi
+```
+
+Place this file in `/boot/loader/addons/`.
+
+If you have enabled secure boot, you will need a Machine Owner Key and
+use it to sign the add-on. See
+[ukify(1)](https://www.freedesktop.org/software/systemd/man/latest/ukify.html)
+and
+[systemd-stub(7)](https://www.freedesktop.org/software/systemd/man/latest/systemd-stub.html)
+for more details.
+
 ## Troubleshooting
 
 See [our debugging guide](debugging.md) for common troubleshooting steps.
