@@ -38,7 +38,6 @@ depends:
 - core-deps/libnma.bst
 - core-deps/malcontent.bst
 - core-deps/system-config-printer.bst
-- core-deps/udisks2.bst
 - core-deps/upower.bst
 - core/gnome-bluetooth.bst
 - core/gnome-color-manager.bst
@@ -57,6 +56,7 @@ depends:
 - freedesktop-sdk.bst:components/libwacom.bst
 - freedesktop-sdk.bst:components/modemmanager.bst
 - freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:components/udisks.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

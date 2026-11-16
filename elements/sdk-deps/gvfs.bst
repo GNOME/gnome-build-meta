@@ -17,7 +17,6 @@ build-depends:
 - core-deps/libnfs.bst
 - core-deps/libplist.bst
 - core-deps/msgraph.bst
-- core-deps/udisks2.bst
 - sdk/gcr.bst
 - sdk/glib.bst
 - sdk/gsettings-desktop-schemas.bst
@@ -35,6 +34,7 @@ build-depends:
 - freedesktop-sdk.bst:components/polkit.bst
 - freedesktop-sdk.bst:components/systemd-libs.bst
 - freedesktop-sdk.bst:components/systemd.bst
+- freedesktop-sdk.bst:components/udisks.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 variables:

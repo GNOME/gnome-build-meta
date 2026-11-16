@@ -1011,12 +1011,12 @@ build-depends:
 
 depends:
 - core-deps/libdvdread.bst
-- core-deps/udisks2.bst
 - core/gnome-settings-daemon.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/glib.bst
 - sdk/libsecret.bst
 - freedesktop-sdk.bst:components/pwquality.bst
+- freedesktop-sdk.bst:components/udisks.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
 
 # Main is undergoing a rewrite and port to GTK 4
