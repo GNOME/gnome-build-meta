@@ -5,6 +5,8 @@ sources:
   url: github:fish-shell/fish-shell.git
   track: '*.*'
   ref: 4.9.3-0-g6cf31373e9468f1a261319aceb8730e5d1c47e58
+- kind: patch_queue
+  path: patches/fish
 - kind: cargo2
   ref:
   - kind: registry
@@ -758,4 +760,3 @@ public:
   bst:
     integration-commands:
     - echo %{bindir}/fish >> /etc/shells
-
