@@ -31,6 +31,7 @@ depends:
 
 # Common build deps that do not make it to the runtime
 - core-deps/python-argcomplete.bst
+- core-deps/typescript.bst
 - core-deps/umockdev.bst
 - freedesktop-sdk.bst:components/docbook-xsl.bst
 - freedesktop-sdk.bst:components/libxslt.bst
@@ -38,6 +39,7 @@ depends:
 - freedesktop-sdk.bst:components/python3-docutils.bst
 - freedesktop-sdk.bst:components/python3-tomlkit.bst
 - freedesktop-sdk-extra.bst:components/libsass.bst
+- freedesktop-sdk-extra.bst:components/nodejs.bst
 - freedesktop-sdk-extra.bst:components/sassc.bst
 - sdk/gi-docgen.bst
 - freedesktop-sdk.bst:components/xmlto.bst
