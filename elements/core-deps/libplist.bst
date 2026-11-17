@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libimobiledevice/libplist.git
   track: '*.*.*'
-  ref: 2.8.0-0-gfe3dc34dc3484006e12b403f7ceb06f0ad40b6f4
+  ref: 2.8.1-0-g678b1a34693b86ae1787fa470dcb7203ffd0ef3f
 
 build-depends:
 - (@): include/gcc-for-recc.yml

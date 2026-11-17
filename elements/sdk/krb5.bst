@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:krb5/krb5.git
   track: "krb5-*.*.*-final"
-  ref: krb5-1.22.2-final-0-g8570e77819563e036027e1da789d08ec9333ed4d
+  ref: krb5-1.22.3-final-0-gf5bee90a501da6c351b3db46c1ae837b033a714c
 - kind: patch_queue
   path: patches/krb5
 

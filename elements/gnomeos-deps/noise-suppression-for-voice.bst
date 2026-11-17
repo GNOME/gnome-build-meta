@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:werman/noise-suppression-for-voice.git
   track: 'v*'
-  ref: v1.21-0-g4b0a6f76fc8bcfb5a3603ae2cb6619dfcb0e19f2
+  ref: v1.22-0-g0b8c03b368ca609247a0cb65b0c8eb651759dd69
 
 build-depends:
 - (@): include/gcc-for-recc.yml

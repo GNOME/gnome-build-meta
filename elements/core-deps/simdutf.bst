@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:simdutf/simdutf.git
   track: 'v*'
-  ref: v9.3.2-0-g8d82299606e675b50de8dc16fd118aae4b65bfde
+  ref: v9.4.0-0-g358e33c97848dda568c5b113e1be6acb8d63dfb9
 
 build-depends:
 - (@): include/gcc-for-recc.yml

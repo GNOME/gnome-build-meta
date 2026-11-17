@@ -5,8 +5,8 @@ sources:
   project-id: 230920
   url: gstreamer:src/gstreamer-editing-services/gst-editing-services-{version}.tar.xz
   ref:
-    version: 1.28.8
-    sha256sum: 4d93d2309b7d01529cd5e3375f99bf7e69c2e32cf59ce4533b31a5c7119b9b58
+    version: 1.28.9
+    sha256sum: 23caf8439ba063091da226e7a1774915848105ff47ebdbe7773fffa21a094692
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
