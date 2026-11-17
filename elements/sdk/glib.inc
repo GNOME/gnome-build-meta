@@ -2,11 +2,11 @@ sources:
 - kind: git_repo
   url: gnome:glib.git
   track: main
-  ref: 2.90.1-238-gbeaf28de6b195836babb3618c1e457fc9c9dd2e6
+  ref: 2.90.1-258-g299b21b4ccb668504b206f6e972b58b4a9404d74
 - kind: git_module
   url: gnome:gvdb.git
   path: subprojects/gvdb
-  ref: 2b42fc75f09dbe1cd1057580b5782b08f2dcb400
+  ref: 93b9891602b0428e1303ba6e94b46de6a11314f8
 
 build-depends:
 - (@): include/gcc-for-recc.yml
