@@ -12,7 +12,7 @@ sources:
       - '*alpha*'
       - '*beta*'
       - '*rc*'
-  ref: v0.6.0-alpha-372-g5c3257f6706884d67b0cb41ef172d89ce7cc9bc3
+  ref: v0.6.0-alpha-378-g7fb0fd5d807e4afdc8cebee7555071ea5d39c260
 - kind: cargo2
   ref:
   - kind: registry

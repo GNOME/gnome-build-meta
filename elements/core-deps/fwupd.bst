@@ -4,14 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd.git
   track: '*.*.*'
-  ref: 2.1.9-0-g27be80ac78856aeb297d7ce7b0c6eead6682d6ec
-
-# Applies a bug fix that prevents updates to be applied in a specific
-# edge-case on certain Lenovo laptops. This patch has already been merged
-# and backported upstream, and will be safe to remove here once we update
-# to fwupd 2.1.10+ or 2.2+
-- kind: patch
-  path: patches/fwupd/lenovo-bootorder-lock-sd-boot-fix.patch
+  ref: 2.1.10-0-g985c4cdc618377cd8aac96a3866230ed5a8602a2
 
 build-depends:
 - (@): include/gcc-for-recc.yml

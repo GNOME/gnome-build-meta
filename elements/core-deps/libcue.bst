@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:lipnitsk/libcue.git
   track: 'v*'
-  ref: v2.3.0-0-gcfb98a060fd79dbc3463d85f0f29c3c335dfa0ea
+  ref: v2.4.2-0-g659c6340cc1845f88d74f116c46f4903f87c9e33
 
 build-depends:
 - (@): include/gcc-for-recc.yml
