@@ -1,120 +1,97 @@
 kind: stack
 
 depends:
-# This is core.bst without the mobile and dev-tools categories
+- core-deps/boltd.bst
+- core-deps/phodav.bst
+- core-deps/systemd-hwdb.bst
+- core-deps/xdg-desktop-portal-gnome.bst
+- core-deps/xdg-desktop-portal-gtk.bst
 - core/meta-gnome-core-apps.bst
 - core/meta-gnome-core-os-services.bst
 - core/meta-gnome-core-shell.bst
-- sdk-platform.bst
-
 - core/systemd-presets.bst
-- gnomeos-deps/preset-all.bst
-- gnomeos-deps/gnome-mimeapps.bst
-- gnomeos-deps/ntsync.bst
-
-- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
-- core-deps/xdg-desktop-portal-gnome.bst
-- core-deps/xdg-desktop-portal-gtk.bst
-
-- core-deps/phodav.bst
-- freedesktop-sdk-extra.bst:components/dnsmasq.bst
-- gnomeos-deps/disable-iscsi.bst
-- gnomeos-deps/flathub-config.bst
-- gnomeos-deps/journald-config.bst
-- gnomeos-deps/nm-connectivity-config.bst
-- gnomeos-deps/plymouth-gnome-theme.bst
-- freedesktop-sdk-extra.bst:components/spice-vdagent.bst
-- gnomeos-deps/wpa-supplicant-config.bst
-- gnomeos-deps/sysupdate-config.bst
-- gnomeos-deps/pcrlock-config.bst
-- gnomeos-deps/udev-hide-usr.bst
-- gnomeos-deps/hidraw-udev.bst
-- gnomeos-deps/vte-config.bst
-- gnomeos-deps/ld-config.bst
-- gnomeos-deps/modprobe-config.bst
-- gnomeos-deps/debuginfod-config.bst
-
+- gnomeos-deps/NetworkManager-openconnect.bst
+- gnomeos-deps/NetworkManager-openvpn.bst
 - gnomeos-deps/alsa-ucm-conf.bst
-- freedesktop-sdk-extra.bst:components/android-udev-rules.bst
 - gnomeos-deps/bindfs.bst
-- freedesktop-sdk-extra.bst:components/fish.bst
+- gnomeos-deps/debuginfod-config.bst
+- gnomeos-deps/disable-iscsi.bst
+- gnomeos-deps/firewalld.bst
+- gnomeos-deps/flathub-config.bst
 - gnomeos-deps/fprintd.bst
-- freedesktop-sdk-extra.bst:components/nss-mdns.bst
-- freedesktop-sdk-extra.bst:components/opensc.bst
-- gnomeos-deps/pam-pkcs11.bst
-- gnomeos-deps/switcheroo-control.bst
-- gnomeos-deps/uresourced.bst
-- freedesktop-sdk-extra.bst:components/zram-generator.bst
-- gnomeos-deps/zswap-generator.bst
-- core-deps/boltd.bst
-
+- gnomeos-deps/gnome-mimeapps.bst
+- gnomeos-deps/hidraw-udev.bst
 - gnomeos-deps/ibus-anthy.bst
 - gnomeos-deps/ibus-hangul.bst
 - gnomeos-deps/ibus-libpinyin.bst
 - gnomeos-deps/ibus-typing-booster.bst
-
-- gnomeos-deps/NetworkManager-openconnect.bst
-- gnomeos-deps/NetworkManager-openvpn.bst
-
-- gnomeos-deps/noto-cjk.bst
-- freedesktop-sdk-extra.bst:components/words.bst
-
-- freedesktop-sdk-extra.bst:components/mokutil.bst
-- gnomeos-deps/sysext-utils.bst
-
-# For gvfs
-- gnomeos-deps/wsdd.bst
-
-- freedesktop-sdk.bst:components/pipewire-daemon.bst
-- freedesktop-sdk.bst:components/wireplumber.bst
+- gnomeos-deps/iio-sensor-proxy.bst
+- gnomeos-deps/journald-config.bst
+- gnomeos-deps/kmscon.bst
+- gnomeos-deps/ld-config.bst
+- gnomeos-deps/modprobe-config.bst
+- gnomeos-deps/nano-default-editor.bst
+- gnomeos-deps/nm-connectivity-config.bst
 - gnomeos-deps/noise-suppression-for-voice.bst
-
-- freedesktop-sdk.bst:vm/config/sudo.bst
-- freedesktop-sdk.bst:vm/mesa-default.bst
+- gnomeos-deps/noto-cjk.bst
+- gnomeos-deps/ntsync.bst
+- gnomeos-deps/oo7-cli.bst
+- gnomeos-deps/pam-pkcs11.bst
+- gnomeos-deps/pcrlock-config.bst
+- gnomeos-deps/plymouth-gnome-theme.bst
+- gnomeos-deps/preset-all.bst
+- gnomeos-deps/switcheroo-control.bst
+- gnomeos-deps/sysext-utils.bst
+- gnomeos-deps/sysupdate-config.bst
+- gnomeos-deps/udev-hide-usr.bst
+- gnomeos-deps/uinput.bst
+- gnomeos-deps/uresourced.bst
+- gnomeos-deps/vte-config.bst
+- gnomeos-deps/wpa-supplicant-config.bst
+- gnomeos-deps/wsdd.bst
+- gnomeos-deps/zswap-generator.bst
+- sdk-platform.bst
+- freedesktop-sdk-extra.bst:components/android-udev-rules.bst
+- freedesktop-sdk-extra.bst:components/distrobox.bst
+- freedesktop-sdk-extra.bst:components/dnsmasq.bst
+- freedesktop-sdk-extra.bst:components/fish.bst
+- freedesktop-sdk-extra.bst:components/mokutil.bst
+- freedesktop-sdk-extra.bst:components/nss-mdns.bst
+- freedesktop-sdk-extra.bst:components/nvme-cli.bst
+- freedesktop-sdk-extra.bst:components/opensc.bst
+- freedesktop-sdk-extra.bst:components/spice-vdagent.bst
+- freedesktop-sdk-extra.bst:components/toolbox.bst
+- freedesktop-sdk-extra.bst:components/words.bst
+- freedesktop-sdk-extra.bst:components/zram-generator.bst
 - freedesktop-sdk.bst:components/bash-completion.bst
 - freedesktop-sdk.bst:components/bash-config.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - freedesktop-sdk.bst:components/ccid.bst
-- freedesktop-sdk.bst:components/linux-firmware.bst
-- freedesktop-sdk.bst:components/man-db.bst
-- freedesktop-sdk.bst:components/open-iscsi.bst
-- freedesktop-sdk.bst:components/openssh-systemd.bst
-- freedesktop-sdk.bst:components/rsync.bst
-- freedesktop-sdk.bst:components/sof-firmware.bst
-- freedesktop-sdk.bst:components/steam-devices.bst
-- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
-- gnomeos-deps/iio-sensor-proxy.bst
-
-- freedesktop-sdk.bst:components/jq.bst
-- freedesktop-sdk.bst:components/less.bst
-- freedesktop-sdk.bst:components/nano.bst
-- freedesktop-sdk.bst:components/vim.bst
-- gnomeos-deps/nano-default-editor.bst
-
+- freedesktop-sdk.bst:components/git-lfs.bst
+- freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/iproute2.bst
 - freedesktop-sdk.bst:components/iputils.bst
-- freedesktop-sdk.bst:components/usbutils.bst
-
-- core-deps/systemd-hwdb.bst
-
+- freedesktop-sdk.bst:components/jq.bst
+- freedesktop-sdk.bst:components/less.bst
+- freedesktop-sdk.bst:components/linux-firmware.bst
+- freedesktop-sdk.bst:components/man-db.bst
+- freedesktop-sdk.bst:components/nano.bst
 - freedesktop-sdk.bst:components/nftables.bst
-- gnomeos-deps/firewalld.bst
-
-# Containers
+- freedesktop-sdk.bst:components/open-iscsi.bst
+- freedesktop-sdk.bst:components/openssh-systemd.bst
+- freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/podman.bst
+- freedesktop-sdk.bst:components/rsync.bst
 - freedesktop-sdk.bst:components/skopeo.bst
-- freedesktop-sdk-extra.bst:components/distrobox.bst
-- freedesktop-sdk-extra.bst:components/toolbox.bst
-
-- freedesktop-sdk.bst:components/git.bst
-- freedesktop-sdk.bst:components/git-lfs.bst
-
-- gnomeos-deps/uinput.bst
-- freedesktop-sdk-extra.bst:components/nvme-cli.bst
-
-- gnomeos-deps/kmscon.bst
-
-- gnomeos-deps/oo7-cli.bst
+- freedesktop-sdk.bst:components/sof-firmware.bst
+- freedesktop-sdk.bst:components/steam-devices.bst
+- freedesktop-sdk.bst:components/usbutils.bst
+- freedesktop-sdk.bst:components/vim.bst
+- freedesktop-sdk.bst:components/wireless-regdb-bin.bst
+- freedesktop-sdk.bst:components/wireplumber.bst
+- freedesktop-sdk.bst:components/xdg-desktop-portal.bst
+- freedesktop-sdk.bst:vm/config/sudo.bst
+- freedesktop-sdk.bst:vm/mesa-default.bst
 
 (?):
 - arch == "x86_64":
