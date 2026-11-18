@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:fwupd/fwupd.git
   track: '*.*.*'
-  ref: 2.1.8-0-g3b7eca282bbe6cb4e8d5b4e42f984d2a1679977f
+  ref: 2.1.10-0-g985c4cdc618377cd8aac96a3866230ed5a8602a2
 
 build-depends:
 - sdk/gi-docgen.bst

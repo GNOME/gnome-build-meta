@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:lcp/mokutil.git
   track: '*.*'
-  ref: 0.7.2-0-ga0e52a974e3ef222ee454bab76602afd7f4c0440
+  ref: 0.7.3-0-g9ddb02fd2e3f5a2cc4dc3b4eacfe2f099916f548
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

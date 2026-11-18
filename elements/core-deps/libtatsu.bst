@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:libimobiledevice/libtatsu.git
   track: '*.*.*'
-  ref: 1.0.5-0-g42329cb756682535c7c0f087987b78d1dd5b16c8
+  ref: 1.1.1-0-g726b6fa32fc86d56c9022b260df2de525a444aea
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst
