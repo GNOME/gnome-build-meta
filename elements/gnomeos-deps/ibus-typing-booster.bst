@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:mike-fabian/ibus-typing-booster.git
   track: '*.*'
-  ref: 2.31.1-0-g91230ba152bd132b898fa906530a44f0decd3463
+  ref: 2.31.5-0-g417dd9fbb0ae1f917e825630f7b5b1588627dda8
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/buildsystem-autotools.bst

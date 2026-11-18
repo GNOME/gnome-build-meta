@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: openldap:openldap.git
   track: 'OPENLDAP_REL_ENG_*_*_*'
-  ref: OPENLDAP_REL_ENG_2_7_1-0-gc585a93bf4708f7ea5e0c323b16f6b2c9b6db380
+  ref: OPENLDAP_REL_ENG_2_7_2-0-g5030280ed039f03fe7725a21f892d7f4e0b98076
 
 build-depends:
 - freedesktop-sdk.bst:components/groff.bst

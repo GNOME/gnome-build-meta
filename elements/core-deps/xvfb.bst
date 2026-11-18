@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: freedesktop:xorg/xserver.git
   track: 'xorg-server-*'
-  ref: xorg-server-26.0.99.903-0-gf47c07e95d62f69313d6c2df04e4d521ddeb9c27
+  ref: xorg-server-26.0.99.904-0-g390dff465a114af46756fbbbb56db54d2b300df1
 - kind: git_repo
   url: fedora_rpms:xorg-x11-server.git
   ref: dd5395436b87a535ea27a644b004feeea949a4a1

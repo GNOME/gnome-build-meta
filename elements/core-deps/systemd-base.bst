@@ -11,7 +11,7 @@ sources:
   exclude:
   - '*-rc*'
   version-guess-pattern: '(\d+)(?:\.(\d+))?'
-  ref: v262-0-g8cc40e0c5e9234bf45084751ac53b1fbfe70b492
+  ref: v262.2-0-g63511d7283d7d0e2a2fc28075481afaf1a7be8f5
 
 build-depends:
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst

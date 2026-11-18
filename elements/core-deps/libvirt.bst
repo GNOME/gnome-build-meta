@@ -5,7 +5,7 @@ sources:
   track: 'v*.*.*'
   exclude:
   - '*rc*'
-  ref: v12.8.0-0-g940c2352cec2f7759d73ad8725d3ce7f3651cbe9
+  ref: v12.9.0-0-g7e809448198e629c48fd6862f2c1c1b909469472
 - kind: git_module
   url: gitlab:keycodemap/keycodemapdb.git
   path: subprojects/keycodemapdb
