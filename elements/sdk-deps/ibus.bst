@@ -1,9 +1,12 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: github_files:ibus/ibus/releases/download/1.5.35/ibus-1.5.35.tar.gz
-  ref: a4fe45deae5d751a3587a81deebe59e17962286f71af41675894fa2ab96f59f4
+- kind: anitya
+  project-id: 1352
+  url: github_files:ibus/ibus/releases/download/{version}/ibus-{version}.tar.gz
+  ref:
+    version: 1.5.35
+    sha256sum: a4fe45deae5d751a3587a81deebe59e17962286f71af41675894fa2ab96f59f4
 
 build-depends:
 - (@): include/gcc-for-recc.yml
