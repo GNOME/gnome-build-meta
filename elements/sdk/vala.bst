@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:vala.git
   track: main
-  ref: 0.57.0-385-g25ede52578acc706c07b8816eeceb914510505b3
+  ref: 0.57.0-393-gf9cc077c678b583c002b4c9ef191764c84b5631c
 
 build-depends:
 - (@): include/gcc-for-recc.yml
