@@ -1,9 +1,12 @@
 kind: cmake
 
 sources:
-- kind: tar
-  url: webkitgtk:webkitgtk-2.54.3.tar.xz
-  ref: 2779c1b46f88762e8400650271ba14452dc4e30b37059981552d8b562b7d0862
+- kind: anitya
+  project-id: 5355
+  url: webkitgtk:webkitgtk-{version}.tar.xz
+  ref:
+    version: 2.54.3
+    sha256sum: 2779c1b46f88762e8400650271ba14452dc4e30b37059981552d8b562b7d0862
 
 build-depends:
 - (@): include/clang-for-recc.yml
