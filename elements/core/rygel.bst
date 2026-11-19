@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:rygel.git
   track: master
-  ref: 46.1-12-gd00d205bd8acac6e114019d52e97bb81bfe51d1a
+  ref: 46.1-13-g1d8b54588bb34e1b0dbf2aceee3f1d5235f1da56
 
 build-depends:
 - (@): include/gcc-for-recc.yml

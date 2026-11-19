@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:libgtop.git
   track: master
-  ref: 2.41.4-0-g23696c6117230dccbe22812602b919bc1a592928
+  ref: 2.41.4-1-g4a82ba23d2c2271609c3a076f53795bbe34cb24f
 
 build-depends:
 - (@): include/gcc-for-recc.yml
