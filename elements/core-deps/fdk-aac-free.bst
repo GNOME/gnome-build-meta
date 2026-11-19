@@ -1,9 +1,10 @@
 kind: autotools
 
 sources:
-- kind: tar
-  url: freedesktop_people:~wtay/fdk-aac-free-2.0.0.tar.gz
-  ref: 5c4a27656463e22861e4e917796d586687abff418d5b5928724a728f10f39cd7
+- kind: git_repo
+  url: freedesktop:wtaymans/fdk-aac-stripped.git
+  track: stripped5
+  ref: android-9.0.0_r42-1498-g9896ddc0d08bb3f764f01d5e372bec1c068ad8f5
 
 build-depends:
 - (@): include/gcc-for-recc.yml
