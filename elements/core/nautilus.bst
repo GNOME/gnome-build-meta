@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:nautilus.git
   track: main
-  ref: 51.0.1-349-gf91a9a09cdf60c1a35adcadf4365d819370ce9ab
+  ref: 51.0.1-365-g2873caa502033eb2c3dc33b4eb044c91c01dbf01
 # please keep in sync with https://gitlab.gnome.org/GNOME/nautilus/-/blob/main/subprojects/libgxdp.wrap
 - kind: git_repo
   url: gnome:libgxdp.git
@@ -17,6 +17,7 @@ build-depends:
 - sdk/blueprint-compiler.bst
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
+- freedesktop-sdk.bst:components/systemd.bst
 
 runtime-depends:
 - core-deps/xdg-user-dirs-gtk.bst
