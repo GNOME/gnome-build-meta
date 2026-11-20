@@ -86,4 +86,6 @@ public:
         - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.Shaper-symbolic.svg'
         - '%{datadir}/icons/hicolor/symbolic/apps/org.gtk.WidgetFactory4-symbolic.svg'
 
+        - '%{datadir}/gtk-4.0/valgrind'
+        - '%{datadir}/gtk-4.0/valgrind/**'
         - '%{libdir}/libgtk-4.so'

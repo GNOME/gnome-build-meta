@@ -43,6 +43,8 @@ public:
         - '%{datadir}/glib-2.0/codegen/**'
         - '%{datadir}/glib-2.0/gdb'
         - '%{datadir}/glib-2.0/gdb/**'
+        - '%{datadir}/glib-2.0/valgrind'
+        - '%{datadir}/glib-2.0/valgrind/**'
         - '%{libdir}/libgio-2.0.so'
         - '%{libdir}/libglib-2.0.so'
         - '%{libdir}/libgmodule-2.0.so'

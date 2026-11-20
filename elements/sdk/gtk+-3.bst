@@ -64,6 +64,8 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{datadir}/gtk-3.0/valgrind'
+        - '%{datadir}/gtk-3.0/valgrind/**'
         - '%{libdir}/libgailutil-3.so'
         - '%{libdir}/libgdk-3.so'
         - '%{libdir}/libgtk-3.so'

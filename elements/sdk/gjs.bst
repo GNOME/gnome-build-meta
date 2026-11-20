@@ -34,5 +34,9 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{datadir}/gjs-1.0/lsan'
+        - '%{datadir}/gjs-1.0/lsan/**'
+        - '%{datadir}/gjs-1.0/valgrind'
+        - '%{datadir}/gjs-1.0/valgrind/**'
         - '%{libdir}/libgjs.so'
         - '%{datadir}/glib-2.0/schemas/org.gnome.GjsTest.gschema.xml'
