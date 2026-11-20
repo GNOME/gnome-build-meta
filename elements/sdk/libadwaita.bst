@@ -33,4 +33,6 @@ public:
         - '%{bindir}/adwaita-1-demo'
         - '%{datadir}/applications/org.gnome.Adwaita1.Demo.desktop'
         - '%{datadir}/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml'
+        - '%{datadir}/icons/hicolor/scalable/apps/org.gnome.Adwaita1.Demo.svg'
+        - '%{datadir}/icons/hicolor/symbolic/apps/org.gnome.Adwaita1.Demo-symbolic.svg'
         - '%{libdir}/libadwaita-1.so'
