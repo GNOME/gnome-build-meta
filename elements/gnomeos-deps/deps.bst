@@ -67,6 +67,10 @@ depends:
 - freedesktop-sdk.bst:components/bash-config.bst
 - freedesktop-sdk.bst:components/btrfs-progs.bst
 - freedesktop-sdk.bst:components/ccid.bst
+- freedesktop-sdk.bst:components/dosfstools.bst
+- freedesktop-sdk.bst:components/e2fsprogs.bst
+- freedesktop-sdk.bst:components/exfat-progs.bst
+- freedesktop-sdk.bst:components/f2fs-tools.bst
 - freedesktop-sdk.bst:components/git-lfs.bst
 - freedesktop-sdk.bst:components/git.bst
 - freedesktop-sdk.bst:components/iproute2.bst
@@ -79,6 +83,7 @@ depends:
 - freedesktop-sdk.bst:components/nftables.bst
 - freedesktop-sdk.bst:components/open-iscsi.bst
 - freedesktop-sdk.bst:components/openssh-systemd.bst
+- freedesktop-sdk.bst:components/parted.bst
 - freedesktop-sdk.bst:components/pipewire-daemon.bst
 - freedesktop-sdk.bst:components/podman.bst
 - freedesktop-sdk.bst:components/rsync.bst
