@@ -41,6 +41,8 @@ public:
         - '%{bindir}/gtester-report'
         - '%{datadir}/glib-2.0/codegen'
         - '%{datadir}/glib-2.0/codegen/**'
+        - '%{datadir}/glib-2.0/gdb'
+        - '%{datadir}/glib-2.0/gdb/**'
         - '%{libdir}/libgio-2.0.so'
         - '%{libdir}/libglib-2.0.so'
         - '%{libdir}/libgmodule-2.0.so'
