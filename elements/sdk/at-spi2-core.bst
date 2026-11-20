@@ -28,6 +28,11 @@ variables:
 public:
   bst:
     split-rules:
+      vm-only:
+        (>):
+        - '%{sysconfdir}/xdg/autostart/at-spi-dbus-bus.desktop'
+        - '%{sysconfdir}/xdg/Xwayland-session.d/00-at-spi'
+        - '%{libdir}/gnome-settings-daemon-3.0/gtk-modules/at-spi2-atk.desktop'
       devel:
         (>):
         - '%{libdir}/libatk-1.0.so'
