@@ -73,18 +73,27 @@ else
     meson.add_install_script('compose.sh', 'org.gnome.Sdk')
 endif
 
-configure_file(
-   input : 'issue.net.in',
-    output : 'issue.net',
-    configuration : conf_data,
-    install_dir : get_option('sysconfdir')
-)
+if get_option('mode') != 'flatpak'
+    configure_file(
+        input : 'issue.net.in',
+        output : 'issue.net',
+        configuration : conf_data,
+        install_dir : get_option('sysconfdir')
+    )
 
-configure_file(
-   input : 'issue.in',
-    output : 'issue',
-    configuration : conf_data,
-    install_dir : get_option('sysconfdir')
-)
+    configure_file(
+        input : 'issue.in',
+        output : 'issue',
+        configuration : conf_data,
+        install_dir : get_option('sysconfdir')
+    )
+endif
 
-meson.add_install_script('os-release-symlink.sh', get_option('sysconfdir'))
+fs = import('fs')
+prefix = get_option('prefix')
+sysconfdir = prefix / get_option('sysconfdir')
+install_symlink(
+    'os-release',
+    install_dir : sysconfdir,
+    pointing_to : fs.relative_to(prefix / 'lib' / 'os-release', sysconfdir)
+)
