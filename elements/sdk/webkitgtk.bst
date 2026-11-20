@@ -78,8 +78,10 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/WebKitWebDriver'
         - '%{libdir}/libjavascriptcoregtk-6.0.so'
         - '%{libdir}/libwebkitgtk-6.0.so'
+        - '%{libexecdir}/webkitgtk-*/MiniBrowser'
       webkit-debug:
       - '%{debugdir}'
       - '%{debugdir}/**'
