@@ -40,3 +40,4 @@ public:
         - '%{libdir}/libcairo-gobject.so'
         - '%{libdir}/libcairo.so'
         - '%{libdir}/cairo/libcairo-trace.so'
+        - '%{libdir}/cairo/libcairo-fdr.so'
