@@ -23,3 +23,10 @@ variables:
   meson-local: >-
     -Ddocs=true
     -Dsysprof=true
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{libexecdir}/libdex-1/dex-gdbus-codegen-extension.py'

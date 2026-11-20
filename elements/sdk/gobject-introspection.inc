@@ -24,6 +24,9 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/g-ir-*'
         - '%{datadir}/gobject-introspection-1.0'
         - '%{datadir}/gobject-introspection-1.0/**'
+        - '%{libdir}/gobject-introspection/giscanner'
+        - '%{libdir}/gobject-introspection/giscanner/**'
         - '%{libdir}/libgirepository-1.0.so'

@@ -30,8 +30,17 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/gdbus-codegen'
+        - '%{bindir}/gi-compile-repository'
+        - '%{bindir}/gi-decompile-typelib'
+        - '%{bindir}/gi-inspect-typelib'
+        - '%{bindir}/glib-compile-resources'
+        - '%{bindir}/glib-genmarshal'
+        - '%{bindir}/glib-mkenums'
         - '%{bindir}/gtester'
         - '%{bindir}/gtester-report'
+        - '%{datadir}/glib-2.0/codegen'
+        - '%{datadir}/glib-2.0/codegen/**'
         - '%{libdir}/libgio-2.0.so'
         - '%{libdir}/libglib-2.0.so'
         - '%{libdir}/libgmodule-2.0.so'

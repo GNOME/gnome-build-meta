@@ -39,4 +39,6 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/gdk-pixbuf-csource'
+        - '%{bindir}/gdk-pixbuf-pixdata'
         - '%{libdir}/libgdk_pixbuf-2.0.so'
