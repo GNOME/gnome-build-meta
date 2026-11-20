@@ -35,3 +35,4 @@ public:
       devel:
         (>):
         - '%{libdir}/libgjs.so'
+        - '%{datadir}/glib-2.0/schemas/org.gnome.GjsTest.gschema.xml'

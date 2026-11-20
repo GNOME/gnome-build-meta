@@ -30,6 +30,8 @@ public:
     split-rules:
       devel:
         (>):
+        - '%{bindir}/gtester'
+        - '%{bindir}/gtester-report'
         - '%{libdir}/libgio-2.0.so'
         - '%{libdir}/libglib-2.0.so'
         - '%{libdir}/libgmodule-2.0.so'

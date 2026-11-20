@@ -23,3 +23,15 @@ variables:
     -Dinstall-tests=true
     -Ddocumentation=true
     -Dsysprof=true
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{bindir}/gtksourceview5-widget'
+        - '%{datadir}/gtksourceview-5/language-specs/language.dtd'
+        - '%{datadir}/gtksourceview-5/language-specs/language.rng'
+        - '%{datadir}/gtksourceview-5/language-specs/language2.rng'
+        - '%{datadir}/gtksourceview-5/snippets/snippets.rng'
+        - '%{datadir}/gtksourceview-5/styles/styles.rng'

@@ -23,3 +23,10 @@ depends:
 variables:
   meson-local: >-
     -Ddoc=true
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{bindir}/manette-test'

@@ -30,3 +30,11 @@ depends:
 - sdk/gobject-introspection.bst
 - freedesktop-sdk.bst:components/pycairo.bst
 - freedesktop-sdk.bst:public-stacks/runtime-minimal.bst
+
+public:
+  bst:
+    split-rules:
+      devel:
+        (>):
+        - '%{indep-libdir}/python*/site-packages/gi/overrides/GIMarshallingTests.py'
+        - '%{indep-libdir}/python*/site-packages/gi/overrides/__pycache__/GIMarshallingTests.*.pyc'
