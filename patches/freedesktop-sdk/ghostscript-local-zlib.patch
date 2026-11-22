@@ -1,0 +1,18 @@
+diff --git a/elements/components/ghostscript.bst b/elements/components/ghostscript.bst
+index a9d7e87..2cd9890 100644
+--- a/elements/components/ghostscript.bst
++++ b/elements/components/ghostscript.bst
+@@ -18,11 +18,12 @@ depends:
+ - components/openjpeg.bst
+ - components/xorg-lib-xt.bst
+ 
++# Note zlib-ng crashes with ghostpdl.
+ variables:
+   conf-local: >-
+     --with-drivers=ALL
+     --with-system-libtiff=yes
+-    --with-local-zlib=no
++    --with-local-zlib=yes
+ 
+ config:
+   configure-commands:
