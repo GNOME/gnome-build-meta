@@ -3,8 +3,8 @@ kind: meson
 sources:
 - kind: git_repo
   url: gnome:gnome-music.git
-  track: master
-  ref: 51.0-32-g47b041560941d0cba6adb174cc8fc8a7eda12f06
+  track: main
+  ref: 51.0-34-g29ebc7491c05bef144faa3de7e011a5681b45b9c
 
 build-depends:
 - (@): include/gcc-for-recc.yml
