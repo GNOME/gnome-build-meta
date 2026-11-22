@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-music.git
   track: master
-  ref: 50.0-63-gf173e68d804ba71544e876c1f197f775bf55bd40
+  ref: 51.0-32-g47b041560941d0cba6adb174cc8fc8a7eda12f06
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -16,6 +16,7 @@ build-depends:
 depends:
 - core-deps/grilo-plugins.bst
 - core-deps/grilo.bst
+- core-deps/gst-python.bst
 - core-deps/libmediaart.bst
 - core-deps/localsearch.bst
 - core/gvfs-daemon.bst
