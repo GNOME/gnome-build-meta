@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:lipnitsk/libcue.git
   track: 'v*'
-  ref: v2.4.2-0-g659c6340cc1845f88d74f116c46f4903f87c9e33
+  ref: v2.4.3-0-g643a7649aa554ec4c77c79a49fa5e52a2c150fa4
 
 build-depends:
 - freedesktop-sdk.bst:components/bison.bst
