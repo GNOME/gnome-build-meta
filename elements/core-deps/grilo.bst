@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:grilo.git
   track: master
-  ref: grilo-0.3.19-12-g91a693b437568932d433d00f4eccd7549d25dc8e
+  ref: grilo-0.3.19-13-g1f740136f44afdbe51f19b3c7e4592708979d91e
 
 build-depends:
 - (@): include/gcc-for-recc.yml

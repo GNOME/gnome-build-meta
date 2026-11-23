@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gtk-doc.git
   track: master
-  ref: 1.37.0-3-g07ee5d8817ec471690dce9241223ba1be0a63158
+  ref: 1.37.0-4-g67bf943c228cbc46ded9247c0e0246f04a1b7060
 
 build-depends:
 - buildsystems/meson.bst

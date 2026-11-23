@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:snapshot.git
   track: main
-  ref: 51.0-8-g716b096d4234238ed5445abe36bc0640621a9a93
+  ref: 51.0-10-g9a419de94a4e5b5932bd0d6df07d13f8258a59d7
 - kind: cargo2
   ref:
   - kind: registry
@@ -21,52 +21,12 @@ sources:
     sha: 330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470
   - kind: registry
     name: ashpd
-    version: 0.13.13
-    sha: fb8421aaa9644a5faf26735f258b669b15f063313ef8f8e2bdb28912a1a6f111
-  - kind: registry
-    name: async-broadcast
-    version: 0.7.2
-    sha: 435a87a52755b8f27fcf321ac4f04b2802e337c8c4872923137471ec39c37532
-  - kind: registry
-    name: async-channel
-    version: 2.5.0
-    sha: 924ed96dd52d1b75e9c1a3e6275715fd320f5f9439fb5a4a11fa51f4221158d2
-  - kind: registry
-    name: async-executor
-    version: 1.14.0
-    sha: c96bf972d85afc50bf5ab8fe2d54d1586b4e0b46c97c50a0c9e71e2f7bcd812a
-  - kind: registry
-    name: async-io
-    version: 2.6.0
-    sha: 456b8a8feb6f42d237746d4b3e9a178494627745c3c56c6ea55d92ba50d026fc
-  - kind: registry
-    name: async-lock
-    version: 3.4.2
-    sha: 290f7f2596bd5b78a9fec8088ccd89180d7f9f55b94b0576823bbbdc72ee8311
-  - kind: registry
-    name: async-process
-    version: 2.5.0
-    sha: fc50921ec0055cdd8a16de48773bfeec5c972598674347252c0399676be7da75
-  - kind: registry
-    name: async-recursion
-    version: 1.1.1
-    sha: 3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11
-  - kind: registry
-    name: async-signal
-    version: 0.2.14
-    sha: 52b5aaafa020cf5053a01f2a60e8ff5dccf550f0f77ec54a4e47285ac2bab485
-  - kind: registry
-    name: async-task
-    version: 4.7.1
-    sha: 8b75356056920673b02621b35afd0f7dda9306d03c79a30f5c56c44cf256e3de
+    version: 0.14.1
+    sha: 72e703b2bc5ba8e903b7845ae92657c281391116ccb8eef89cf6a0ee68d96d76
   - kind: registry
     name: async-trait
     version: 0.1.92
     sha: 82f6aeea286b8eb4dd3431a1be1b59d290ace00f5bfd8e2a159bc2a05e2c1667
-  - kind: registry
-    name: atomic-waker
-    version: 1.1.2
-    sha: 1505bd5d3d116872e7271a6d4e16d81d0c8570876c8de68093a09ac269d8aac0
   - kind: registry
     name: atomic_refcell
     version: 0.1.14
@@ -83,10 +43,6 @@ sources:
     name: block
     version: 0.1.6
     sha: 0d8c1fef690941d3e7788d328517591fecc684c084084702d6ff1641e993699a
-  - kind: registry
-    name: blocking
-    version: 1.7.0
-    sha: a70e4329df6cb94385eed412ec92375c3cdd8a6e502493d1229b6414e4036dfa
   - kind: registry
     name: bumpalo
     version: 3.20.3
@@ -112,14 +68,6 @@ sources:
     version: 1.0.5
     sha: 4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600
   - kind: registry
-    name: concurrent-queue
-    version: 2.5.0
-    sha: 4ca0197aee26d1ae37445ee532fefce43251d24cc7c166799f4d46817f1d3973
-  - kind: registry
-    name: crossbeam-utils
-    version: 0.8.23
-    sha: a31eee39dddec8330830986fcd7625edb5a24ec90ea038215273bbc3adb08ac6
-  - kind: registry
     name: either
     version: 1.18.0
     sha: 252afb9ae5eaa683babdc6a068b3f5726eb19e05070c731f9b2a23a7c3e8ed34
@@ -128,14 +76,6 @@ sources:
     version: 1.1.1
     sha: 66b7e2430c6dff6a955451e2cfc438f09cea1965a9d6f87f7e3b90decc014099
   - kind: registry
-    name: enumflags2
-    version: 0.7.12
-    sha: 1027f7680c853e056ebcec683615fb6fbbc07dbaa13b4d5d9442b146ded4ecef
-  - kind: registry
-    name: enumflags2_derive
-    version: 0.7.12
-    sha: 67c78a4d8fdf9953a5c9d458f9efe940fd97a0cab0941c075a813ac594733827
-  - kind: registry
     name: equivalent
     version: 1.0.2
     sha: 877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f
@@ -143,14 +83,6 @@ sources:
     name: errno
     version: 0.3.14
     sha: 39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb
-  - kind: registry
-    name: event-listener
-    version: 5.4.2
-    sha: 5a23add41df1562121a9393cb065eab5146a1242410f23a644851e90cfd669d2
-  - kind: registry
-    name: event-listener-strategy
-    version: 0.5.4
-    sha: 8be9f3dfaaffdae2972880079a491a1a8bb7cbed0b8dd7a347f668b4150a3b93
   - kind: registry
     name: fastrand
     version: 2.5.0
@@ -187,10 +119,6 @@ sources:
     name: futures-io
     version: 0.3.34
     sha: 53c0fa8157de1303bfffdaa1cc2a673bfffb60102f76b0ef4441659124373fed
-  - kind: registry
-    name: futures-lite
-    version: 2.6.1
-    sha: f78e10609fe0e0b3f4157ffab1876319b5b0db102a2c60dc4626306dc46b44ad
   - kind: registry
     name: futures-macro
     version: 0.3.34
@@ -360,10 +288,6 @@ sources:
     version: 0.5.0
     sha: 2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea
   - kind: registry
-    name: hermit-abi
-    version: 0.5.3
-    sha: e17592d60ebacc7d5e169f4663c5f84f9161cc90328abcfe8456f41e4dfcb284
-  - kind: registry
     name: hex
     version: 0.4.3
     sha: 7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70
@@ -496,10 +420,6 @@ sources:
     version: 0.22.9
     sha: ca02d64761b74d56cdd4b437db6d73dc95e6c0d40f27e1c707952c0f09052948
   - kind: registry
-    name: parking
-    version: 2.2.1
-    sha: f38d5652c16fde515bb1ecef450ab0f6a219d619a7274976324d5e377f7dceba
-  - kind: registry
     name: pastey
     version: 0.2.3
     sha: 2ee67f1008b1ba2321834326597b8e186293b049a023cdef258527550b9935b4
@@ -508,17 +428,9 @@ sources:
     version: 0.2.17
     sha: a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd
   - kind: registry
-    name: piper
-    version: 0.2.5
-    sha: c835479a4443ded371d6c535cbfd8d31ad92c5d23ae9770a61bc155e4992a3c1
-  - kind: registry
     name: pkg-config
     version: 0.3.34
     sha: f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548
-  - kind: registry
-    name: polling
-    version: 3.11.0
-    sha: 5d0e4f59085d47d8241c88ead0f274e8a0cb551f3625263c05eb8dd897c34218
   - kind: registry
     name: proc-macro-crate
     version: 3.5.0
@@ -596,10 +508,6 @@ sources:
     version: 2.0.1
     sha: f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba
   - kind: registry
-    name: signal-hook-registry
-    version: 1.4.8
-    sha: c4db69cba1110affc0e9f7bcd48bbf87b3f4fc7c61fc9155afd4c469eb3d6c1b
-  - kind: registry
     name: slab
     version: 0.4.12
     sha: 0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5
@@ -607,6 +515,10 @@ sources:
     name: smallvec
     version: 1.16.1
     sha: ba467056f1b547ed52077911161fc86985becbc60e8e1857c8a144dab0def891
+  - kind: registry
+    name: socket2
+    version: 0.6.5
+    sha: c3d1e2c7f27f8d4cb10542a02c49005dbd6e93095799d6f3be745fae9f8fedd4
   - kind: registry
     name: static_assertions
     version: 1.1.0
@@ -757,32 +669,24 @@ sources:
     sha: 38735924fedd5314a6e548792904ed8c6de6636285cb9fec04d5b1db85c1516f
   - kind: registry
     name: zbus
-    version: 5.19.0
-    sha: 5db4be7c075cb421e4b7ee645541604239bd243ba7c357511f4ff3a74b555907
+    version: 6.5.0
+    sha: 9a7f9f5dd97fa527c1202ba1cb35d48e07f77d4de8542317c854f7aef22b0668
   - kind: registry
     name: zbus_macros
-    version: 5.19.0
-    sha: 2990635d09ade6df1868f72f8cac69a876a90981e8bd3c40b1be413f8dc88f40
+    version: 6.5.0
+    sha: 2f5aa7f2c4ea81b7ccfb26bafefdb4d1a44dd9d4f82c8426173a3727311743e4
   - kind: registry
-    name: zbus_names
-    version: 4.3.4
-    sha: d8bf88b4a3ff53e883001e0e0115b297a9d53c31b9c1edd2bfdd853e3428624e
+    name: zbus_utils
+    version: 6.1.0
+    sha: af55e52da295311b368c45bcae221f020e28e97a2420360170ce389218e76ec7
   - kind: registry
     name: zcheapstr
-    version: 1.1.0
-    sha: d1afec51604565183aeb5c54c20aeab286120d4e4460f7f76e3e8bb8c0d99473
+    version: 1.4.0
+    sha: 2da34e7164b75d803c3197b86e6cf61b874106fbd472c5082575a8bc5fbd0907
   - kind: registry
-    name: zvariant
-    version: 5.15.0
-    sha: c1d34c27cc6cdd1f458427519dd6b8612f7b7e3f7b9a0b2355d041dda9869147
-  - kind: registry
-    name: zvariant_derive
-    version: 5.15.0
-    sha: 864155e69b4352db0c7f374917bf45d1e0c8d17659c8b3dbf9795f3673f8c497
-  - kind: registry
-    name: zvariant_utils
-    version: 4.2.0
-    sha: bad0294361a320b694a328460dc73add56c306150f5cb6bfafc44446120008a3
+    name: zruntime
+    version: 0.2.4
+    sha: ac67096b97c00742108c4674db6bb6178adb78c4b66a506b0e4a7a9593aa5d9e
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst
