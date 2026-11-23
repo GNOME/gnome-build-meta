@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gupnp-av.git
   track: master
-  ref: gupnp-av-0.14.5-6-gcecab5069e63253c8c07042a3af7c07f1c3c759b
+  ref: gupnp-av-0.14.5-9-g2315e3087334592b5d2b18eee87b4877618bbdd8
 
 build-depends:
 - (@): include/gcc-for-recc.yml
