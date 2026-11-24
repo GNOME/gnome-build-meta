@@ -51,6 +51,7 @@ public:
         (>):
         # development utilities
         - '%{bindir}/gtk-builder-tool'
+        - '%{bindir}/gtk4-query-settings'
 
         # demos
         - '%{bindir}/gtk4-demo-application'

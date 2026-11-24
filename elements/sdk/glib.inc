@@ -37,6 +37,7 @@ public:
         - '%{bindir}/glib-compile-resources'
         - '%{bindir}/glib-genmarshal'
         - '%{bindir}/glib-mkenums'
+        - '%{bindir}/gobject-query'
         - '%{bindir}/gtester'
         - '%{bindir}/gtester-report'
         - '%{datadir}/glib-2.0/codegen'

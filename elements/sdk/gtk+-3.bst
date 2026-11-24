@@ -72,6 +72,7 @@ public:
 
         # development utilities
         - '%{bindir}/gtk-builder-tool'
+        - '%{bindir}/gtk-query-settings'
 
         # demos
         - '%{bindir}/gtk3-demo-application'
