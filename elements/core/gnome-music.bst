@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-music.git
   track: main
-  ref: 51.0-45-ge0b82e4516dcca61b76c9091cd47a9f7a8421e46
+  ref: 51.0-46-g275857a6d3150b86961e119e49a46ed4d8d69a59
 
 build-depends:
 - (@): include/gcc-for-recc.yml
