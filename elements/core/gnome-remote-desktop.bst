@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:gnome-remote-desktop.git
   track: main
-  ref: 51.0-19-gba1b66d554c5c3edddac5882ecba38ec9c6144f5
+  ref: 51.1-0-g06226107e50ccdb67b4139750fedd57b3aec9ef7
 
 build-depends:
 - (@): include/gcc-for-recc.yml
