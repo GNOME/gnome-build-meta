@@ -4,7 +4,11 @@ sources:
 - kind: git_repo
   url: github:ibus/ibus-anthy.git
   track: '*.*'
-  ref: 1.5.19-alpha3-0-g7b6d1d48e809b78ae570fc31debcdc9c6158329f
+  exclude:
+  - '*rc*'
+  - '*beta*'
+  - '*alpha*'
+  ref: 1.5.18-0-gd2cebdebfd74bd8f9ecd242b6a86ff15c3858447
 
 build-depends:
 - (@): include/gcc-for-recc.yml
