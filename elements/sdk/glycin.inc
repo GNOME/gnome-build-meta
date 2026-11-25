@@ -1,7 +1,7 @@
 sources:
 - kind: tar
-  url: gnome_downloads:glycin/2.2/glycin-2.2.3.tar.xz
-  ref: a767776442fce1fea7bda0178b4c443d241c33ac72e0ef83c6e06caeaaa7d9fa
+  url: gnome_downloads:glycin/2.2/glycin-2.2.6.tar.xz
+  ref: 6a114aa1117ec2d7bd578c8cefd235d993304dedfd1a62575dc31be9a146b791
 - kind: cargo2
   ref:
   - kind: registry
@@ -454,28 +454,28 @@ sources:
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: registry
     name: glycin
-    version: 4.0.3
-    sha: 72739235a1990a8ce4fcf35918b8109b83b17a4fe46ff187b399f6697cb721b1
+    version: 4.0.5
+    sha: 7e5b54873fd0e4ea8fe447e4f2b8c670c485862b5d9d0d624dcc886bb3a89ecd
   - kind: registry
     name: glycin-builtin
-    version: 4.0.3
-    sha: 4d0f24f915439a9b1aa51b63c4e0026fc5c29b3cfe727e6a90fc117b4fd8275b
+    version: 4.0.5
+    sha: c47ae9011448c83bfa8841543c41d3c3dd20759096a1b565e366fd39d54029f3
   - kind: registry
     name: glycin-common
     version: 2.0.0
     sha: f34692fa7314e5108eafaba7621460d958caba839a6d5040f1caba98d7b4a692
   - kind: registry
     name: glycin-core
-    version: 4.0.3
-    sha: 1bb9767eb1a57ae1b0177f181331fe8e8c3935ae631271e752940753d4adedbe
+    version: 4.0.5
+    sha: fdade20eb67ac75b5c306a99c594155e1096ea7aa536741f64158afa1ffdeb36
   - kind: registry
     name: glycin-external
-    version: 4.0.3
-    sha: 93859463358b481ab88eb16c25e5c78cfe08e924d6fadc1a945f03ba439e32f4
+    version: 4.0.5
+    sha: 2c9b985c8fe1d1c2cdc91566faa52f5d3226506201a4121580ae8cfcb71992e5
   - kind: registry
     name: glycin-image-rs
-    version: 2.2.3
-    sha: e52fbf938daf1c342f15804631989c28545c73455c04350ad1d39cf88d054d3a
+    version: 2.2.4
+    sha: 8418ef692d8582bfa6f2eaea9cf0855e9c2789c09c9dd53c68acaf19ba76265e
   - kind: registry
     name: glycin-test
     version: 2.2.0
@@ -498,8 +498,8 @@ sources:
     sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.3
-    sha: 4183c4b2bf6cfd58823cf02b2e8a4d955da3605f8e1b98adbd3456a97e35ae16
+    version: 0.5.5
+    sha: b7a91a52ac6ea8d25e0752b1f3552d7a8252dcdf0b0b8154d1118d5e2582129c
   - kind: registry
     name: gufo-jpeg
     version: 0.5.1

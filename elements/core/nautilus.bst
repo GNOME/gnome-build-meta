@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:nautilus/51/nautilus-51.1.tar.xz
-  ref: a703bc152d18d161d9dab957e2390a36e6246bb5c24de7b15c9624fcfa2f2816
+  url: gnome_downloads:nautilus/51/nautilus-51.2.tar.xz
+  ref: 11e3784441cd59a4696b47ed458dddaacf5b1b616f71686d6738fdbaa4809db1
 - kind: git_repo
   url: gnome:libgxdp.git
   ref: df896e3412b749947bc6f62a91a1aac8e6b6d19b

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:loupe/51/loupe-51.0.tar.xz
-  ref: 13fa9990565ef917902f777cfce091ab60adb8a114a9f6cca274dfc5c0aae661
+  url: gnome_downloads:loupe/51/loupe-51.2.tar.xz
+  ref: 64ae1f9b381227eada39cb659edf29656ff7e42348823391678fcc01cdac01b8
 - kind: cargo2
 
   ref:
@@ -385,24 +385,24 @@ sources:
     sha: 030967459f9f676851872c6304adea7825c6d462ec9b72554c733cf0c5952233
   - kind: registry
     name: glycin
-    version: 4.0.0
-    sha: dc9bb9cfa3d4db9eab0e2394f0e60fe4071fd31affd1704f2ecccc6bdd24c7b9
+    version: 4.0.5
+    sha: 7e5b54873fd0e4ea8fe447e4f2b8c670c485862b5d9d0d624dcc886bb3a89ecd
   - kind: registry
     name: glycin-builtin
-    version: 4.0.0
-    sha: b801b326426a0ccb61899174b0a08c2316defd323cfe78be9aa6232a2efdfeac
+    version: 4.0.5
+    sha: c47ae9011448c83bfa8841543c41d3c3dd20759096a1b565e366fd39d54029f3
   - kind: registry
     name: glycin-common
     version: 2.0.0
     sha: f34692fa7314e5108eafaba7621460d958caba839a6d5040f1caba98d7b4a692
   - kind: registry
     name: glycin-core
-    version: 4.0.0
-    sha: 9466e4f18a53312faee414ea85813d6674d4cb5badad059365c4882984b40201
+    version: 4.0.5
+    sha: fdade20eb67ac75b5c306a99c594155e1096ea7aa536741f64158afa1ffdeb36
   - kind: registry
     name: glycin-external
-    version: 4.0.0
-    sha: a7d335778b14437e1339d703afd1ce69e61df8ab5420882b4b7821b9a2ca9d4a
+    version: 4.0.5
+    sha: 2c9b985c8fe1d1c2cdc91566faa52f5d3226506201a4121580ae8cfcb71992e5
   - kind: registry
     name: glycin-image-rs
     version: 2.2.0
@@ -445,16 +445,16 @@ sources:
     sha: 82b8f954786af0b1984425c4446b77f5ff6594346181316be3f850caab1c6f01
   - kind: registry
     name: gufo
-    version: 0.5.0
-    sha: 6a16d7faeeb03e2925ac6b0f40630b15b1992d08c50add402f35fde495e44f64
+    version: 0.5.4
+    sha: ce5dedcdb354f15280779ccfe04957c81bb15a0026b3d394dac9488689dad010
   - kind: registry
     name: gufo-common
     version: 2.0.0
     sha: d583cdde9eb6985dbb6e596d27677e5d353d5eee44763cbf7c7ead3147d337bf
   - kind: registry
     name: gufo-exif
-    version: 0.5.0
-    sha: e99100988e312c22c6f209663b289e727db3918d06fbcbbc2315149457b42b75
+    version: 0.5.5
+    sha: b7a91a52ac6ea8d25e0752b1f3552d7a8252dcdf0b0b8154d1118d5e2582129c
   - kind: registry
     name: gufo-jpeg
     version: 0.5.1

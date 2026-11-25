@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libspelling/0.4/libspelling-0.4.10.tar.xz
-  ref: 56e3f01a3a18b575beea4c34349f99cdaba316e1f7c271b1231f7bcf5d9af73b
+  url: gnome_downloads:libspelling/0.4/libspelling-0.4.11.tar.xz
+  ref: 52e53ec3fba0f604cfd0931e26af7f7241a0d4f0208dd5574f43b3589f6d28b2
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

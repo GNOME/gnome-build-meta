@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:gnome-maps/51/gnome-maps-51.2.tar.xz
-  ref: 81038882a057702bad0991ab9faa2e2f0d621fbefb22f49013710425ff38fd5a
+  url: gnome_downloads:gnome-maps/51/gnome-maps-51.3.tar.xz
+  ref: dc5c2004219842972e01b1dc23b0863c865ddcbb95e396d932948c55d6fc7136
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:libsoup/3.8/libsoup-3.8.0.tar.xz
-  ref: bbf08fa3e03a88c31a3d27a0d87cb422e9490f2d08e149211103df6d638a2238
+  url: gnome_downloads:libsoup/3.8/libsoup-3.8.1.tar.xz
+  ref: 5013dcef9136f6f861e6529fca578af50c1f52a39219027fb5aff652d1371a04
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

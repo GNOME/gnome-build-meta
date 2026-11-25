@@ -2,8 +2,8 @@ kind: meson
 
 sources:
 - kind: tar
-  url: gnome_downloads:mobile-broadband-provider-info/20240407/mobile-broadband-provider-info-20240407.tar.xz
-  ref: 89bfeff215f4bff8e9c3ff2ec25250fdb080d11e9bfa59c6fc71982ac01c814a
+  url: gnome_downloads:mobile-broadband-provider-info/20261111/mobile-broadband-provider-info-20261111.tar.xz
+  ref: e591c1d327c296964b1ae99e6f9458952b1f8e27337a6bc4b3f3e8e55016a182
 build-depends:
 - (@): include/gcc-for-recc.yml
 - buildsystems/meson.bst

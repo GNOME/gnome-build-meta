@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: github:storaged-project/udisks.git
   track: 'udisks-*.*.*'
-  ref: udisks-2.11.2-0-gcaffebe56d8208365cf0d62e0d05d31260d91156
+  ref: udisks-2.12.0-0-ga0c93953d483f259164fb284d03691f11fe28009
 
 build-depends:
 - (@): include/gcc-for-recc.yml
