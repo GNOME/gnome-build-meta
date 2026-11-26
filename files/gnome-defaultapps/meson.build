@@ -1,8 +1,10 @@
-project('gnome-mimeapps')
+project('gnome-defaultapps')
 
 custom_target(
   input: 'quirks.toml',
-  output: 'gnome-mimeapps.list',
+  output: [
+    'gnome-mimeapps.list',
+  ],
   command: [
     find_program('python3'),
     files('generate.py'),

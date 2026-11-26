@@ -410,7 +410,7 @@ update_refs:
   script:
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-track-refs.sh"
 
-update_mimeapps:
+update_defaultapps:
   extends:
   - .x86_64
   - .bot-ssh
@@ -426,10 +426,10 @@ update_mimeapps:
   - job: 'build-x86_64'
     artifacts: false
   script:
-  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos-deps/gnome-mimeapps.bst
-  - ${BST} ${ARCH_OPT} artifact checkout --directory out gnomeos-deps/gnome-mimeapps.bst
+  - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos-deps/gnome-defaultapps.bst
+  - ${BST} ${ARCH_OPT} artifact checkout --directory out gnomeos-deps/gnome-defaultapps.bst
   - mv out/usr/share/applications/gnome-mimeapps.list ./gnome-mimeapps.list
-  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-mimeapps.sh"
+  - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-defaultapps.sh"
 
 pages:
   stage: 'reports'

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 - kind: local
-  path: files/gnome-mimeapps
+  path: files/gnome-defaultapps
 
 build-depends:
 - buildsystems/meson.bst

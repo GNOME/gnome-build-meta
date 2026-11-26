@@ -9,9 +9,9 @@ gi.require_version("GLib", "2.0")
 from gi.repository import Gio
 
 # Parse CLI arguments
-args = ArgumentParser(description="Scan installed applications to generate GNOME's mimeapps.list")
+args = ArgumentParser(description="Scan installed applications to generate GNOME's default app lists")
 args.add_argument("quirks", type=Path, help="Quirks file to control output")
-args.add_argument("output", type=Path, help="Location of output file")
+args.add_argument("mimeapps_output", type=Path, help="Location of mimeapps output file")
 args = args.parse_args();
 
 # Load quirks
@@ -56,7 +56,7 @@ for _type, apps in types.items():
 
 # Apply overrides.
 overridden_types = {}
-for ty, override in quirks.override.items():
+for ty, override in quirks.override_mimeapps.items():
     if ty not in overridden_types:
         if ty in types:
             overridden_types[ty] = ' '.join(types[ty])
@@ -71,8 +71,9 @@ for ty, override in quirks.override.items():
         types[ty] = [override + '.desktop']
 
 # Generate the output
-with open(args.output, "w") as output:
+with open(args.mimeapps_output, "w") as output:
     print(quirks.heading.strip(), file=output)
+    print(quirks.heading_mimeapps.strip(), file=output)
 
     print("\n[Default Applications]", file=output)
     for type in sorted(types):

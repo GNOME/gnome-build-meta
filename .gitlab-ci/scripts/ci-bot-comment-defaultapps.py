@@ -15,10 +15,12 @@ with open(sys.argv[1], "r") as f:
 override_comment = ""
 with open(sys.argv[2], "r") as f:
     override_diff = f.read().strip()
-if len(override_diff) > 0:
+total_override_diff_len = 0
+total_override_diff_len += len(override_diff)
+if total_override_diff_len > 0:
     override_comment = f"""\
-There are also some mime type associations that would have changed, had the
-mime type not been overridden in `files/gnome-mimeapps/quirks.toml`. Please
+There are also some associations that would have changed, had they
+not been overridden in `files/gnome-defaultapps/quirks.toml`. Please
 review these changes to ensure that the manual overrides are not out of date.
 
 ```patch
@@ -27,8 +29,8 @@ review these changes to ensure that the manual overrides are not out of date.
 """
 
 comment = f"""\
-This merge request changed the contents of GNOME's
-[default mimeapps.list](https://gitlab.gnome.org/GNOME/gnome-session/-/blob/main/data/gnome-mimeapps.list)!
+This merge request changed the contents of GNOME's:
+- [default mimeapps.list](https://gitlab.gnome.org/GNOME/gnome-session/-/blob/main/data/gnome-mimeapps.list)
 Please review the following changes to ensure that they make sense.
 
 ```patch
@@ -42,7 +44,7 @@ gnome-session to propagate these changes there
 """
 
 fingerprint = hashlib.sha256(comment.encode()).hexdigest()
-stamp = f"<!-- mimeapps-bot {fingerprint} -->"
+stamp = f"<!-- defaultapps-bot {fingerprint} -->"
 comment = f"{stamp}\n\n{comment}"
 
 # First, check for existing open note and update it
@@ -51,7 +53,7 @@ for discussion in mr.discussions.list(iterator=True):
     notes = ListMixin.list(discussion.notes)
     note = notes[0]
 
-    if "<!-- mimeapps-bot" in note.body:
+    if "<!-- defaultapps-bot" in note.body:
 
         if stamp in note.body:
             print("Note is up to date!")

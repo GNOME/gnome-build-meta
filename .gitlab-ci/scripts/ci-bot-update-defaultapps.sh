@@ -33,8 +33,10 @@ else
     git clone --depth=1 https://gitlab.gnome.org/GNOME/gnome-session.git
 fi
 
-if cmp gnome-mimeapps.list gnome-session/data/gnome-mimeapps.list; then
-    # Mimeapps didn't change, so there's nothing to do!
+changed=0
+cmp gnome-mimeapps.list gnome-session/data/gnome-mimeapps.list && changed=1
+if [ "$changed" -eq "0" ]; then
+    # No file was changed, so there's nothing to do!
     exit 0;
 fi
 
@@ -43,11 +45,12 @@ if [ -n "${CI_MERGE_REQUEST_IID-}" ]; then
     sed -i -e '1,3d' -e '/@@/s/.*//' primary.diff
     sed -e '/[+-]#OVERRIDE/!d' -e 's/#OVERRIDE //' primary.diff > override.diff
     sed -i '/[+-]#OVERRIDE/d' primary.diff
-    python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-comment-mimeapps.py primary.diff override.diff
+    python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-comment-defaultapps.py primary.diff override.diff \
+
 fi
 
 cd gnome-session
-git switch -c gnome-os-bot/update-mimeapps
+git switch -c gnome-os-bot/update-defaultapps
 
 rm data/gnome-mimeapps.list
 cp ../gnome-mimeapps.list data/gnome-mimeapps.list
@@ -60,7 +63,7 @@ GNOME's default mime type associations changed in
 $CI_PROJECT_URL/-/commit/$CI_COMMIT_SHA
 EOF
 
-git show
+git show main..
 
 if [ "$CI_COMMIT_REF_NAME" == "$CI_DEFAULT_BRANCH" ]; then
     git push \

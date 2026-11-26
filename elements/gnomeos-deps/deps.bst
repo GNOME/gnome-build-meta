@@ -19,7 +19,7 @@ depends:
 - gnomeos-deps/firewalld.bst
 - gnomeos-deps/flathub-config.bst
 - gnomeos-deps/fprintd.bst
-- gnomeos-deps/gnome-mimeapps.bst
+- gnomeos-deps/gnome-defaultapps.bst
 - gnomeos-deps/hidraw-udev.bst
 - gnomeos-deps/ibus-anthy.bst
 - gnomeos-deps/ibus-hangul.bst

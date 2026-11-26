@@ -4,7 +4,7 @@
 # https://gitlab.gnome.org/Teams/Releng/AppOrganization/-/blob/main/AppCriteria.md#incubation-criteria
 #
 # When updating this list, please also update the [incubating] section in
-# files/gnome-mimeapps/quirks.toml
+# files/gnome-defaultapps/quirks.toml
 kind: stack
 depends:
 - incubator/resources.bst

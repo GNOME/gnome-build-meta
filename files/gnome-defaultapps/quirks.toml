@@ -2,7 +2,9 @@
 heading = """
 # Maintained by gnome-build-meta. DO NOT EDIT!
 #
-# Upstream changes can be made at https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gnome-mimeapps/quirks.toml
+# Upstream changes can be made at https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gnome-defaultapps/quirks.toml
+"""
+heading_mimeapps = """
 # Downstream changes can be easily applied with https://gitlab.gnome.org/heftig/gnome-mimeapps
 """
 
@@ -22,7 +24,7 @@ skip_apps = [
 # will default to the core apps in the absence of the incubating alternatives
 [incubating]
 
-[override]
+[override_mimeapps]
 # Baobab can open directories and alphabetically comes before Nautilus. Also,
 # it doesn't make sense to ever default to Baobab as a file browser, even without
 # Nautilus installed.

@@ -2,7 +2,7 @@ kind: meson
 
 sources:
 # NOTE: Whenever the rewrite is completed and the new version will be released in the next stable,
-#       go and update files/gnome-mimeapps/quirks.toml
+#       go and update files/gnome-defaultapps/quirks.toml
 - kind: git_repo
   url: gnome:gnome-disk-utility.git
   track: main
