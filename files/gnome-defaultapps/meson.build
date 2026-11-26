@@ -4,6 +4,7 @@ custom_target(
   input: 'quirks.toml',
   output: [
     'gnome-mimeapps.list',
+    'gnome-intentapps.list',
   ],
   command: [
     find_program('python3'),

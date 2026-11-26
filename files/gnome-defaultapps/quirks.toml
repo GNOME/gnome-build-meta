@@ -60,3 +60,9 @@ skip_apps = [
 # dropped once there's a Disks release > 46.x
 "application/x-raw-disk-image" = ["gnome-disk-image-writer", "gnome-disk-image-mounter"]
 "application/x-raw-disk-image-xz-compressed" = ["gnome-disk-image-writer", "gnome-disk-image-mounter"]
+
+[override_intentapps]
+#EX:"org.freedesktop.Terminal1" = ["org.gnome.Console", "org.gnome.Ptyxis"]
+
+[override_intentapps_scoped]
+#EX:"org.freedesktop.handler.Deeplink1" = { "openstreetmaps.org" = ["org.gnome.Maps"], "osm.org" = ["org.gnome.Maps"], "extensions.gnome.org" = ["org.gnome.Extensions"] }
