@@ -11,12 +11,17 @@ mr = project.mergerequests.get(os.environ["CI_MERGE_REQUEST_IID"])
 
 with open(sys.argv[1], "r") as f:
     primary_diff = f.read().strip()
+with open(sys.argv[3], "r") as f:
+    primary_intentapps_diff = f.read().strip()
 
 override_comment = ""
 with open(sys.argv[2], "r") as f:
     override_diff = f.read().strip()
+with open(sys.argv[4], "r") as f:
+    override_intentapps_diff = f.read().strip()
 total_override_diff_len = 0
 total_override_diff_len += len(override_diff)
+total_override_diff_len += len(override_intentapps_diff)
 if total_override_diff_len > 0:
     override_comment = f"""\
 There are also some associations that would have changed, had they
@@ -26,15 +31,24 @@ review these changes to ensure that the manual overrides are not out of date.
 ```patch
 {override_diff}
 ```
+
+```patch
+{override_intentapps_diff}
+```
 """
 
 comment = f"""\
 This merge request changed the contents of GNOME's:
 - [default mimeapps.list](https://gitlab.gnome.org/GNOME/gnome-session/-/blob/main/data/gnome-mimeapps.list)
+- [default intentapps.list](https://gitlab.gnome.org/GNOME/gnome-session/-/blob/main/data/gnome-intentapps.list)
 Please review the following changes to ensure that they make sense.
 
 ```patch
 {primary_diff}
+```
+
+```patch
+{primary_intentapps_diff}
 ```
 
 {override_comment}

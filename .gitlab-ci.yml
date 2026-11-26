@@ -429,6 +429,7 @@ update_defaultapps:
   - ${BST_NO_PUSH} ${ARCH_OPT} build gnomeos-deps/gnome-defaultapps.bst
   - ${BST} ${ARCH_OPT} artifact checkout --directory out gnomeos-deps/gnome-defaultapps.bst
   - mv out/usr/share/applications/gnome-mimeapps.list ./gnome-mimeapps.list
+  - mv out/usr/share/applications/gnome-intentapps.list ./gnome-intentapps.list
   - bash "$CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-update-defaultapps.sh"
 
 pages:

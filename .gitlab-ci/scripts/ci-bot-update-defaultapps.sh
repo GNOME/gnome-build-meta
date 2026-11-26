@@ -35,6 +35,7 @@ fi
 
 changed=0
 cmp gnome-mimeapps.list gnome-session/data/gnome-mimeapps.list && changed=1
+cmp gnome-intentapps.list gnome-session/data/gnome-intentapps.list && changed=1
 if [ "$changed" -eq "0" ]; then
     # No file was changed, so there's nothing to do!
     exit 0;
@@ -42,10 +43,15 @@ fi
 
 if [ -n "${CI_MERGE_REQUEST_IID-}" ]; then
     (diff -d -U0 gnome-session/data/gnome-mimeapps.list gnome-mimeapps.list || true) > primary.diff
+    (diff -d -U0 gnome-session/data/gnome-intentapps.list gnome-intentapps.list || true) > primary_intentapps.diff
     sed -i -e '1,3d' -e '/@@/s/.*//' primary.diff
+    sed -i -e '1,3d' -e '/@@/s/.*//' primary_intentapps.diff
     sed -e '/[+-]#OVERRIDE/!d' -e 's/#OVERRIDE //' primary.diff > override.diff
+    sed -e '/[+-]#OVERRIDE/!d' -e 's/#OVERRIDE //' primary_intentapps.diff > override_intentapps.diff
     sed -i '/[+-]#OVERRIDE/d' primary.diff
+    sed -i '/[+-]#OVERRIDE/d' primary_intentapps.diff
     python3 $CI_PROJECT_DIR/.gitlab-ci/scripts/ci-bot-comment-defaultapps.py primary.diff override.diff \
+        primary_intentapps.diff override_intentapps.diff \
 
 fi
 
@@ -60,6 +66,17 @@ git commit -F- <<EOF
 Update mimeapps.list
 
 GNOME's default mime type associations changed in
+$CI_PROJECT_URL/-/commit/$CI_COMMIT_SHA
+EOF
+
+rm data/gnome-intentapps.list
+cp ../gnome-intentapps.list data/gnome-intentapps.list
+git add data/gnome-intentapps.list
+
+git commit -F- <<EOF
+Update intentapps.list
+
+GNOME's default intent associations changed in
 $CI_PROJECT_URL/-/commit/$CI_COMMIT_SHA
 EOF
 
