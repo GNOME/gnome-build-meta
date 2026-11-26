@@ -24,3 +24,4 @@ depends:
 variables:
   meson-local: >-
     -Dmimeapps=false
+    -Dintentapps=false
