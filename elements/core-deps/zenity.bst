@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:zenity.git
   track: master
-  ref: 4.4.beta-8-gdf687fdf2416b571216d358a2b6e7395bd31425e
+  ref: 4.4.beta-11-gb4a7e52f817e01174c299cd80b6a361f8fabaff0
 
 build-depends:
 - (@): include/gcc-for-recc.yml
