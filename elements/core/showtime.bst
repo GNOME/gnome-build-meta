@@ -4,7 +4,7 @@ sources:
 - kind: git_repo
   url: gnome:showtime.git
   track: main
-  ref: 50.0-130-g320a6db5fe09ecf4d467c9502603f9200d104e7f
+  ref: 50.0-134-gc27d0b81a67396271e7e6c4fc95ba61b5da07bff
 
 build-depends:
 - (@): include/gcc-for-recc.yml
@@ -13,6 +13,7 @@ build-depends:
 - freedesktop-sdk.bst:components/desktop-file-utils.bst
 
 depends:
+- core-deps/gst-python.bst
 - sdk/adwaita-icon-theme.bst
 - sdk/gst-plugin-gtk4.bst
 - sdk/gtk.bst
